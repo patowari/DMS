@@ -1,3 +1,8 @@
+4.5 (2023-XX-XX)
+================
+- Increase the size of the document indexing value field from 128 to 255
+  characters.
+
 4.4.2 (2023-01-23)
 ==================
 - Merge request !106. Do not show server communication modal
