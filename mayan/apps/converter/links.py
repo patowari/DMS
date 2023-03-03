@@ -18,12 +18,12 @@ from .transformations import BaseTransformation
 
 
 def conditional_active(context, resolved_link):
-    return resolved_link.link.view == resolved_link.current_view_name and context.get('layer_name', None) == resolved_link.link.layer_name
+    return resolved_link.link.view == resolved_link.current_view_name and context['layer'] == resolved_link.link.get_layer(context=context)
 
 
 def condition_valid_transformation_and_arguments(context, resolved_object):
     try:
-        transformation = BaseTransformation.get(name=context['object'].name)
+        transformation = BaseTransformation.get(name=resolved_object.name)
     except KeyError:
         return False
     else:
@@ -57,28 +57,24 @@ link_asset_list = Link(
     view='converter:asset_list'
 )
 
+# Transformations
+
 link_transformation_delete = LayerLink(
-    action='delete', kwargs={
-        'layer_name': 'layer_name', 'transformation_id': 'resolved_object.pk'
-    }, icon=icon_transformation_delete,
-    layer=layer_saved_transformations, tags='dangerous', text=_('Delete'),
-    view='converter:transformation_delete'
+    action='delete', icon=icon_transformation_delete, tags='dangerous',
+    text=_('Delete'), view='converter:transformation_delete'
 )
 link_transformation_edit = LayerLink(
     action='edit', condition=condition_valid_transformation_and_arguments,
-    kwargs={
-        'layer_name': 'layer_name', 'transformation_id': 'resolved_object.pk'
-    }, icon=icon_transformation_edit,
-    layer=layer_saved_transformations, text=_('Edit'),
+    icon=icon_transformation_edit, text=_('Edit'),
     view='converter:transformation_edit'
 )
 link_transformation_list = LayerLink(
-    action='list', conditional_active=conditional_active,
+    action='view', conditional_active=conditional_active,
     layer=layer_saved_transformations, text=_('Transformations'),
     view='converter:transformation_list'
 )
 link_transformation_select = LayerLink(
     action='select', icon=icon_transformation_select,
-    layer=layer_saved_transformations, text=_('Select new transformation'),
+    text=_('Select new transformation'),
     view='converter:transformation_select'
 )

@@ -3,6 +3,65 @@
 - Increase the size of the document indexing value field from 128 to 255
   characters.
 
+4.4.4 (2023-02-14)
+==================
+- Update image interface when generating QRCode image. Fixes OTP QRCode
+  rendering. Thanks to forum user Ken Robinson (@DocCyblade) for the report.
+- Simplify OTP QRCode generation to lower the changes of future regressions.
+- Add a custom REST API exception handler to workaround inconsistent
+  validation exception behavior in Django REST framework
+  (https://github.com/encode/django-rest-framework/issues/2145). Closes
+  GitLab issue #1128. Thanks to Jan Przychodniak (@janprzychodniak) for the
+  report and debug information.
+- Ensure correct index instance nodes are deleted. Don't delete all excluded
+  index instances nodes. Instead delete all the index instance nodes where
+  the document being processed is found but exclude the nodes recently
+  updated. Closes GitLab issue #1134. Thanks to Nicholas Buttigieg
+  (@nicholasbuttigieg) and Kyle Pullicino (@KPull) for the report and test
+  scenario.
+- Remove the Python Transifex client. The new Go based client is required
+  to be installed manually when working with translations
+  (https://github.com/transifex/cli).
+
+4.4.3 (2023-02-11)
+==================
+- Improve transformation views to always pass the object
+  having the transformation applied.
+- Add support to the ``Link`` class for dynamic view keyword arguments, icon,
+  resolved object, and permissions.
+- Update the transformation, decorations, and redactions links to use
+  dynamic view keyword arguments, icons, resolved objects, and permissions.
+- Move transformation and redactions links to either their own ``links.py``
+  module. In the case of the ``documents`` app, the module is named
+  ``miscellaneous_links.py``.
+- Improve permissions handling of the transformation, decorations, and
+  redactions links.
+- Improve transformation and redaction link testing.
+- Sanitize tag labels to avoid XSS abuse (CVE-2022-47419: Mayan EDMS Tag XSS).
+  This is a limited scope weakness of the tagging system markup that can be
+  used to display an arbitrary text when selecting a tag for attachment to
+  or removal from a document.
+
+  It is not possible to circumvent Mayan EDMS access control system or
+  expose arbitrary information with this weakness.
+
+  Attempting to exploit this weakness requires a privileged account and
+  is not possible to enable from a guest or an anonymous account. Visitors
+  to a Mayan EDMS installation cannot exploit this weakness.
+
+  Any usage of this weakness remains logged in the event system making
+  it easy to track down any bad actors.
+
+  Due to all these factors, the surface of attack of this weakness is
+  very limited, if any.
+
+  There are no known actual or theoretical attacks exploiting this
+  weakness to expose or destroy data.
+- Drop support for Python 3.7 and Python 3.8. Python 3.9 is now the minimum
+  version supported. This change happened in version 4.4 but was not
+  documented. Closes GitLab issue #1137. Thanks to joh-ku (@joh-ku)
+  for the report and research.
+
 4.4.2 (2023-01-23)
 ==================
 - Merge request !106. Do not show server communication modal
@@ -17,13 +76,13 @@
 
   - Add makefile targets to trigger standalone builds.
   - Increase artifact expiration.
-  - Add PIP and APT caching to documenation and python build stages.
-  - Add GitLab CI job dependecies.
+  - Add PIP and APT caching to documentation and python build stages.
+  - Add GitLab CI job dependencies.
   - Reuse Python build in stages.
   - Convert branches into literals.
   - Remove duplicated code in jobs.
 
-- Simplify installation documentation
+- Simplify installation documentation.
 
 4.4 (2023-01-16)
 ================
