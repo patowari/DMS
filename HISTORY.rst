@@ -16,6 +16,8 @@
   - Add escalations to the workflow preview.
   - Include escalation hash changes to invalidate workflow previews.
 
+- Add super user column to user list view.
+
 4.4.4 (2023-02-14)
 ==================
 - Update image interface when generating QRCode image. Fixes OTP QRCode

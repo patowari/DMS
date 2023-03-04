@@ -109,6 +109,9 @@ class UserManagementApp(MayanAppConfig):
             field_name='is_active'
         ).verbose_name = _('Is active?')
         User._meta.get_field(
+            field_name='is_superuser'
+        ).verbose_name = _('Is super user?')
+        User._meta.get_field(
             field_name='last_name'
         ).verbose_name = _('Last name')
         User._meta.get_field(
@@ -242,6 +245,10 @@ class UserManagementApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='is_active', include_label=True, is_sortable=True,
+            source=User, widget=TwoStateWidget
+        )
+        SourceColumn(
+            attribute='is_superuser', include_label=True, is_sortable=True,
             source=User, widget=TwoStateWidget
         )
         SourceColumn(
