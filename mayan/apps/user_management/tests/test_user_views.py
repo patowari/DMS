@@ -164,47 +164,47 @@ class SuperUserViewTestCase(
 ):
     def setUp(self):
         super().setUp()
-        self._create_test_superuser()
+        self._create_test_super_user()
 
-    def test_superuser_delete_view_with_access(self):
-        superuser_count = get_user_model().objects.filter(
+    def test_super_user_delete_view_with_access(self):
+        super_user_count = get_user_model().objects.filter(
             is_superuser=True
         ).count()
         self.grant_access(
-            obj=self._test_superuser, permission=permission_user_delete
+            obj=self._test_super_user, permission=permission_user_delete
         )
 
         self._clear_events()
 
-        response = self._request_test_superuser_delete_view()
+        response = self._request_test_super_user_delete_view()
         self.assertEqual(response.status_code, 404)
         self.assertEqual(
             get_user_model().objects.filter(is_superuser=True).count(),
-            superuser_count
+            super_user_count
         )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_superuser_detail_view_with_access(self):
+    def test_super_user_detail_view_with_access(self):
         self.grant_access(
-            obj=self._test_superuser, permission=permission_user_view
+            obj=self._test_super_user, permission=permission_user_view
         )
 
         self._clear_events()
 
-        response = self._request_test_superuser_detail_view()
+        response = self._request_test_super_user_detail_view()
         self.assertEqual(response.status_code, 404)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_superuser_normal_user_detail_view_with_access(self):
+    def test_super_user_normal_user_detail_view_with_access(self):
         self.grant_access(
-            obj=self._test_superuser, permission=permission_user_view
+            obj=self._test_super_user, permission=permission_user_view
         )
 
-        self._test_user = self._test_superuser
+        self._test_user = self._test_super_user
 
         self._clear_events()
 

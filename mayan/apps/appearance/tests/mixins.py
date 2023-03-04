@@ -59,14 +59,14 @@ class UserThemeSettingsViewTestMixin:
             user=self._test_case_user
         )
 
-    def _request_test_superuser_theme_settings_detail_view(self):
+    def _request_test_super_user_theme_settings_detail_view(self):
         return self._request_test_user_theme_settings_detail_view(
-            user=self._test_superuser
+            user=self._test_super_user
         )
 
-    def _request_test_superuser_theme_settings_edit_view(self):
+    def _request_test_super_user_theme_settings_edit_view(self):
         return self._request_test_user_theme_settings_edit_view(
-            user=self._test_superuser
+            user=self._test_super_user
         )
 
     def _request_test_user_theme_settings_detail_view(self, user=None):

@@ -18,8 +18,8 @@ class LoginViewTestMixin:
         default_data.update(data)
 
         return self.post(
-            follow=follow, viewname=settings.LOGIN_URL, data=default_data,
-            query=query
+            follow=follow, data=default_data, query=query,
+            viewname=settings.LOGIN_URL
         )
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_USERNAME)
@@ -27,16 +27,16 @@ class LoginViewTestMixin:
         AuthenticationBackend.cls_initialize()
 
         data = {
-            'username': self._test_case_user.username,
             'password': self._test_case_user.cleartext_password,
+            'username': self._test_case_user.username
         }
 
         return self._request_login_view(data=data, follow=follow, query=query)
 
     def _request_login_view_with_email(self, extra_data=None):
         data = {
-            'username': self._test_case_superuser.email,
-            'password': self._test_case_superuser.cleartext_password,
+            'password': self._test_case_super_user.cleartext_password,
+            'username': self._test_case_super_user.email
         }
 
         if extra_data:
@@ -48,8 +48,8 @@ class LoginViewTestMixin:
         self, extra_data=None, follow=None, query=None
     ):
         data = {
-            'username': self._test_case_superuser.username,
-            'password': self._test_case_superuser.cleartext_password,
+            'password': self._test_case_super_user.cleartext_password,
+            'username': self._test_case_super_user.username
         }
 
         if extra_data:
@@ -82,8 +82,8 @@ class PasswordResetViewTestMixin:
         return self.post(
             viewname='authentication:password_reset_confirm_view',
             kwargs={
-                'uidb64': uidb64,
-                'token': PasswordResetConfirmView.reset_url_token
+                'token': PasswordResetConfirmView.reset_url_token,
+                'uidb64': uidb64
             }, data={
                 'new_password1': new_password,
                 'new_password2': new_password
@@ -93,14 +93,14 @@ class PasswordResetViewTestMixin:
     def _request_password_reset_get_view(self):
         return self.get(
             viewname='authentication:password_reset_view', data={
-                'email': self._test_case_superuser.email,
+                'email': self._test_case_super_user.email
             }
         )
 
     def _request_password_reset_post_view(self):
         return self.post(
             viewname='authentication:password_reset_view', data={
-                'email': self._test_case_superuser.email,
+                'email': self._test_case_super_user.email
             }
         )
 
@@ -126,7 +126,8 @@ class UserImpersonationViewTestMixin:
 
     def _request_test_user_impersonate_start_view(self):
         return self.post(
-            follow=True, viewname='authentication:user_impersonate_start', kwargs={
+            follow=True, viewname='authentication:user_impersonate_start',
+            kwargs={
                 'user_id': self._test_user.pk
             }
         )

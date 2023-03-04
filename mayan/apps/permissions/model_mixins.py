@@ -107,14 +107,14 @@ class StoredPermissionBusinessLogicMixin:
         Helper method to check if a user has been granted this permission.
         The check is done sequentially over all of the user's groups and
         roles. The check is interrupted at the first positive result.
-        The check always returns True for superusers or staff users.
+        The check always returns True for super users or staff users.
         """
         Role = apps.get_model(app_label='permissions', model_name='Role')
 
         if user.is_superuser or user.is_staff:
             logger.debug(
-                'Permission "%s" granted to user "%s" as superuser or staff',
-                self, user
+                'Permission "%s" granted to user "%s" as super user or '
+                'staff', self, user
             )
             return True
 

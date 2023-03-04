@@ -64,7 +64,7 @@ class DocumentCheckoutTestCase(
         self.assertEqual(events[0].verb, event_document_auto_checked_in.id)
 
     def test_document_double_check_out(self):
-        self._create_test_case_superuser()
+        self._create_test_case_super_user()
         self._check_out_test_document()
 
         self._clear_events()
@@ -73,7 +73,7 @@ class DocumentCheckoutTestCase(
             DocumentCheckout.objects.check_out_document(
                 document=self._test_document,
                 expiration_datetime=self._check_out_expiration_datetime,
-                user=self._test_case_superuser,
+                user=self._test_case_super_user,
                 block_new_file=True
             )
 
@@ -143,7 +143,7 @@ class DocumentCheckoutTestCase(
             name='mayan.apps.documents.models.document_model_mixins'
         )
 
-        self._create_test_case_superuser()
+        self._create_test_case_super_user()
 
         self._check_out_test_document()
 

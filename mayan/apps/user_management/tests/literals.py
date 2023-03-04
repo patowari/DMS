@@ -1,8 +1,8 @@
 TEST_CASE_GROUP_NAME = 'test case group'
 
-TEST_CASE_SUPERUSER_EMAIL = 'test_case_superuser@example.com'
-TEST_CASE_SUPERUSER_PASSWORD = 'test case superuser password'
-TEST_CASE_SUPERUSER_USERNAME = 'test_case_superuser'
+TEST_CASE_SUPER_USER_EMAIL = 'test_case_super_user@example.com'
+TEST_CASE_SUPER_USER_PASSWORD = 'test case super user password'
+TEST_CASE_SUPER_USER_USERNAME = 'test_case_super_user'
 
 TEST_CASE_USER_EMAIL = 'test_case_user@example.com'
 TEST_CASE_USER_FIRST_NAME = 'test case user first name'

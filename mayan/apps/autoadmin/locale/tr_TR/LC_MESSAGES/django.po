@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Caner Başaran <basaran.caner@gmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # Bedreddin Şahbaz, 2023
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -28,7 +28,7 @@ msgstr "Otomatik yönetici"
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
 "Hoş Geldiniz Admin! Size süper kullanıcı ayrıcalıkları verildi. Onları "

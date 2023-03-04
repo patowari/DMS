@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Márcia Ferreira, 2023
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -28,7 +28,7 @@ msgstr "Administrador automático"
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
 "Bem vindo administrador! Foram-lhe atribuídos privilégios de super "

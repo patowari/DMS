@@ -22,7 +22,7 @@ msgstr ""
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
 

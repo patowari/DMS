@@ -9,9 +9,9 @@ class TransformationLinkConditionTestCase(
     TransformationTestMixin, TransformationViewTestMixin,
     GenericDocumentViewTestCase
 ):
-    create_test_case_superuser = True
+    auto_login_super_user = True
+    create_test_case_super_user = True
     create_test_case_user = False
-    auto_login_superuser = True
 
     def test_transformation_condition_link_view_with_super_user(self):
         self._create_test_transformation()

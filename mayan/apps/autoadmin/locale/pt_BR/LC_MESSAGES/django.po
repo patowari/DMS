@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aline Freitas <aline@alinefreitas.com.br>, 2023
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
@@ -10,7 +10,7 @@
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
 # Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatica@protonmail.com>, 2023
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -31,7 +31,7 @@ msgstr "Administrador do Sistema"
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
 "Bem-vindo Admin! Você recebeu privilégios de super-usuário. Use-os com "

@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # mizhgan <i@mizhgan.ru>, 2023
 # lilo.panic, 2023
 # Sergey Glita <gsv70@mail.ru>, 2023
 # Ilya Pavlov <spirkaa@gmail.com>, 2023
 # Oleg Sizov <olegsm35@gmail.com>, 2023
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -30,7 +30,7 @@ msgstr "Автоадмин"
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
 "Добро пожаловать, Админ! Вам предоставлены привилегии суперпользователя. "

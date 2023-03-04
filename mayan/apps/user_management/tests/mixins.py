@@ -4,8 +4,8 @@ from django.contrib.auth.models import Group
 from ..links import link_group_setup, link_user_setup
 
 from .literals import (
-    TEST_CASE_GROUP_NAME, TEST_CASE_SUPERUSER_EMAIL,
-    TEST_CASE_SUPERUSER_PASSWORD, TEST_CASE_SUPERUSER_USERNAME,
+    TEST_CASE_GROUP_NAME, TEST_CASE_SUPER_USER_EMAIL,
+    TEST_CASE_SUPER_USER_PASSWORD, TEST_CASE_SUPER_USER_USERNAME,
     TEST_CASE_USER_EMAIL, TEST_CASE_USER_FIRST_NAME, TEST_CASE_USER_LAST_NAME,
     TEST_CASE_USER_PASSWORD, TEST_CASE_USER_USERNAME,
     TEST_GROUP_NAME, TEST_GROUP_NAME_EDITED, TEST_USER_EMAIL,
@@ -302,9 +302,9 @@ class UserTestCaseMixin:
     to be used by other test case mixins like the ACLs test case mixin which
     adds shorthand methods to create ACL entries to test access control.
     """
-    auto_login_superuser = False
+    auto_login_super_user = False
     auto_login_user = True
-    create_test_case_superuser = False
+    create_test_case_super_user = False
     create_test_case_user = True
 
     def setUp(self):
@@ -317,11 +317,11 @@ class UserTestCaseMixin:
             if self.auto_login_user:
                 self.login_user()
 
-        if self.create_test_case_superuser:
-            self._create_test_case_superuser()
+        if self.create_test_case_super_user:
+            self._create_test_case_super_user()
 
-            if self.auto_login_superuser:
-                self.login_superuser()
+            if self.auto_login_super_user:
+                self.login_super_user()
 
     def tearDown(self):
         self.client.logout()
@@ -332,13 +332,13 @@ class UserTestCaseMixin:
             name=TEST_CASE_GROUP_NAME
         )
 
-    def _create_test_case_superuser(self):
-        self._test_case_superuser = get_user_model().objects.create_superuser(
-            email=TEST_CASE_SUPERUSER_EMAIL,
-            password=TEST_CASE_SUPERUSER_PASSWORD,
-            username=TEST_CASE_SUPERUSER_USERNAME
+    def _create_test_case_super_user(self):
+        self._test_case_super_user = get_user_model().objects.create_superuser(
+            email=TEST_CASE_SUPER_USER_EMAIL,
+            password=TEST_CASE_SUPER_USER_PASSWORD,
+            username=TEST_CASE_SUPER_USER_USERNAME
         )
-        self._test_case_superuser.cleartext_password = TEST_CASE_SUPERUSER_PASSWORD
+        self._test_case_super_user.cleartext_password = TEST_CASE_SUPER_USER_PASSWORD
 
     def _create_test_case_user(self):
         self._test_case_user = get_user_model().objects.create_user(
@@ -352,10 +352,10 @@ class UserTestCaseMixin:
     def login(self, *args, **kwargs):
         return self.client.login(*args, **kwargs)
 
-    def login_superuser(self):
+    def login_super_user(self):
         return self.login(
-            password=TEST_CASE_SUPERUSER_PASSWORD,
-            username=TEST_CASE_SUPERUSER_USERNAME
+            password=TEST_CASE_SUPER_USER_PASSWORD,
+            username=TEST_CASE_SUPER_USER_USERNAME
         )
 
     def login_user(self):
@@ -370,25 +370,25 @@ class UserTestCaseMixin:
 
 class UserTestMixin:
     auto_create_test_user = False
-    auto_create_test_superuser = False
+    auto_create_test_super_user = False
 
     def setUp(self):
         super().setUp()
         self._test_users = []
 
-        if self.auto_create_test_superuser:
-            self._create_test_superuser()
+        if self.auto_create_test_super_user:
+            self._create_test_super_user()
 
         if self.auto_create_test_user:
             self._create_test_user()
 
-    def _create_test_superuser(self):
-        self._test_superuser = get_user_model().objects.create_superuser(
-            email=TEST_CASE_SUPERUSER_EMAIL,
-            password=TEST_CASE_SUPERUSER_PASSWORD,
-            username=TEST_CASE_SUPERUSER_USERNAME
+    def _create_test_super_user(self):
+        self._test_super_user = get_user_model().objects.create_superuser(
+            email=TEST_CASE_SUPER_USER_EMAIL,
+            password=TEST_CASE_SUPER_USER_PASSWORD,
+            username=TEST_CASE_SUPER_USER_USERNAME
         )
-        self._test_superuser.cleartext_password = TEST_USER_PASSWORD
+        self._test_super_user.cleartext_password = TEST_USER_PASSWORD
 
     def _create_test_user(self):
         total_test_users = len(self._test_users)
@@ -403,16 +403,16 @@ class UserTestMixin:
 
 
 class UserViewTestMixin:
-    def _request_test_superuser_delete_view(self):
+    def _request_test_super_user_delete_view(self):
         return self.post(
             viewname='user_management:user_single_delete',
-            kwargs={'user_id': self._test_superuser.pk}
+            kwargs={'user_id': self._test_super_user.pk}
         )
 
-    def _request_test_superuser_detail_view(self):
+    def _request_test_super_user_detail_view(self):
         return self.get(
             viewname='user_management:user_details',
-            kwargs={'user_id': self._test_superuser.pk}
+            kwargs={'user_id': self._test_super_user.pk}
         )
 
     def _request_test_user_create_view(self):

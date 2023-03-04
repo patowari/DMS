@@ -4,7 +4,7 @@ from ...models import AutoAdminSingleton
 
 
 class Command(BaseCommand):
-    help = 'Used to create a superuser with a secure and automatic password.'
+    help = 'Used to create a super user with a secure and automatic password.'
 
     def handle(self, *args, **options):
         AutoAdminSingleton.objects.create_autoadmin()

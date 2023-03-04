@@ -2,6 +2,7 @@
 ================
 - Increase the size of the document indexing value field from 128 to 255
   characters.
+- Rename all uses of "superuser" to "super user" or "super_user".
 
 4.4.4 (2023-02-14)
 ==================

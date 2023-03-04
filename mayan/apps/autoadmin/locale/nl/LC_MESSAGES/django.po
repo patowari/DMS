@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
 # e6bc1d20d3f0031709c3c11db1061ebc_be0a371 <8b4e580508477646e97982ebad39e3af_312311>, 2023
 # Roberto Rosario, 2023
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -28,10 +28,10 @@ msgstr "Auto administrator"
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
-"Welkom Admin! U hebt superuser privileges gekregen. Gebruik ze voorzichtig!"
+"Welkom Admin! U hebt super user privileges gekregen. Gebruik ze voorzichtig!"
 
 #: models.py:13
 msgid "Account"

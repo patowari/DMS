@@ -444,8 +444,8 @@ class SuperUserGroupAddRemoveViewTestCase(
     def setUp(self):
         super().setUp()
         self._create_test_group()
-        self._create_test_superuser()
-        self._test_user = self._test_superuser
+        self._create_test_super_user()
+        self._test_user = self._test_super_user
 
     def test_group_user_add_remove_get_view_no_permission(self):
         self._test_user.groups.add(self._test_group)

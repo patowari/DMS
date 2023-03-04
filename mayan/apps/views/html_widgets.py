@@ -35,8 +35,9 @@ class ObjectLinkWidget(SourceColumnWidget):
 
             if getattr(self.value, 'is_staff', None) or getattr(self.value, 'is_superuser', None):
                 # Don't display a anchor to for the user details view for
-                # superusers and staff, the details view filters them. Staff
-                # and admin users are not manageable by the normal user views.
+                # super users and staff, the details view filters them.
+                #Staff and admin users are not manageable by the normal
+                # user views.
                 url = '#'
                 label = '{}{}'.format(object_type, label)
 

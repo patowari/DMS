@@ -25,7 +25,7 @@ class AutoAdminSingletonManager(models.Manager):
             )
         except UserModel.DoesNotExist:
             logger.info(
-                'Creating superuser -- login: %s, email: %s, password: %s',
+                'Creating super user -- login: %s, email: %s, password: %s',
                 setting_username.value, setting_email.value, password
             )
             management.call_command(

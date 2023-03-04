@@ -59,7 +59,7 @@ class RoleModelTestCase(RoleTestMixin, BaseTestCase):
 
 
 class StoredPermissionManagerTestCase(BaseTestCase):
-    create_test_case_superuser = False
+    create_test_case_super_user = False
     create_test_case_user = False
 
     def test_purge_obsolete_with_invalid(self):

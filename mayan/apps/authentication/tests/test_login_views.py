@@ -31,7 +31,7 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         ).tostr()
     )
     auto_login_user = False
-    create_test_case_superuser = True
+    create_test_case_super_user = True
 
     def setUp(self):
         super().setUp()
@@ -61,13 +61,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_EMAIL)
@@ -86,13 +86,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_EMAIL)
@@ -115,13 +115,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_USERNAME)
@@ -137,13 +137,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_USERNAME)
@@ -162,13 +162,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_USERNAME)
@@ -191,13 +191,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_USERNAME)
@@ -218,13 +218,13 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
         self.assertEqual(events[1].action_object, None)
-        self.assertEqual(events[1].actor, self._test_case_superuser)
-        self.assertEqual(events[1].target, self._test_case_superuser)
+        self.assertEqual(events[1].actor, self._test_case_super_user)
+        self.assertEqual(events[1].target, self._test_case_super_user)
         self.assertEqual(events[1].verb, event_user_logged_in.id)
 
 

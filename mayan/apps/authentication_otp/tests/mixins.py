@@ -7,6 +7,6 @@ class AuthenticationOTPTestMixin:
         self._test_totp = pyotp.TOTP(self._test_secret)
 
         self._test_token = self._test_totp.now()
-        self._test_case_superuser.otp_data.enable(
+        self._test_case_super_user.otp_data.enable(
             secret=self._test_secret, token=self._test_token
         )

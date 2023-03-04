@@ -27,7 +27,7 @@ class AuthenticationBackendTestCase(LoginViewTestMixin, GenericViewTestCase):
         ).tostr()
     )
     auto_login_user = False
-    create_test_case_superuser = True
+    create_test_case_super_user = True
 
     def setUp(self):
         super().setUp()
@@ -38,17 +38,17 @@ class AuthenticationBackendTestCase(LoginViewTestMixin, GenericViewTestCase):
         AuthenticationBackend.cls_initialize()
 
         user = authenticate(
-            username=self._test_case_superuser.email,
-            password=self._test_case_superuser.cleartext_password
+            username=self._test_case_super_user.email,
+            password=self._test_case_super_user.cleartext_password
         )
-        self.assertEqual(user, self._test_case_superuser)
+        self.assertEqual(user, self._test_case_super_user)
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_USERNAME)
     def test_username_authentication_backend(self):
         AuthenticationBackend.cls_initialize()
 
         user = authenticate(
-            username=self._test_case_superuser.username,
-            password=self._test_case_superuser.cleartext_password
+            username=self._test_case_super_user.username,
+            password=self._test_case_super_user.cleartext_password
         )
-        self.assertEqual(user, self._test_case_superuser)
+        self.assertEqual(user, self._test_case_super_user)

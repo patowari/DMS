@@ -53,7 +53,7 @@ class PasswordResetViewTestCase(
     PasswordResetViewTestMixin, GenericViewTestCase
 ):
     auto_login_user = False
-    create_test_case_superuser = True
+    create_test_case_super_user = True
 
     def test_password_reset_view(self):
         self.logout()
@@ -82,9 +82,9 @@ class PasswordResetViewTestCase(
         )
         self.assertNotIn(INTERNAL_RESET_SESSION_TOKEN, self.client.session)
 
-        self._test_case_superuser.refresh_from_db()
+        self._test_case_super_user.refresh_from_db()
         self.assertTrue(
-            self._test_case_superuser.check_password(
+            self._test_case_super_user.check_password(
                 raw_password=TEST_PASSWORD_NEW
             )
         )
@@ -93,8 +93,8 @@ class PasswordResetViewTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_superuser)
-        self.assertEqual(events[0].target, self._test_case_superuser)
+        self.assertEqual(events[0].actor, self._test_case_super_user)
+        self.assertEqual(events[0].target, self._test_case_super_user)
         self.assertEqual(events[0].verb, event_user_edited.id)
 
     @override_settings(AUTHENTICATION_DISABLE_PASSWORD_RESET=False)

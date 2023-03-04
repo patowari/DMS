@@ -257,59 +257,59 @@ class SuperUserThemeSettingsViewTestCase(
 ):
     def setUp(self):
         super().setUp()
-        self._create_test_superuser()
+        self._create_test_super_user()
         self._create_test_theme()
 
-    def test_superuser_theme_settings_detail_view_no_permission(self):
+    def test_super_user_theme_settings_detail_view_no_permission(self):
         self._clear_events()
 
-        response = self._request_test_superuser_theme_settings_detail_view()
+        response = self._request_test_super_user_theme_settings_detail_view()
         self.assertEqual(response.status_code, 404)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_superuser_theme_settings_detail_view_with_access(self):
+    def test_super_user_theme_settings_detail_view_with_access(self):
         self.grant_access(
-            obj=self._test_superuser, permission=permission_user_view
+            obj=self._test_super_user, permission=permission_user_view
         )
 
         self._clear_events()
 
-        response = self._request_test_superuser_theme_settings_detail_view()
+        response = self._request_test_super_user_theme_settings_detail_view()
         self.assertEqual(response.status_code, 404)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_superuser_theme_settings_edit_view_no_permission(self):
-        theme = self._test_superuser.theme_settings.theme
+    def test_super_user_theme_settings_edit_view_no_permission(self):
+        theme = self._test_super_user.theme_settings.theme
 
         self._clear_events()
 
-        response = self._request_test_superuser_theme_settings_edit_view()
+        response = self._request_test_super_user_theme_settings_edit_view()
         self.assertEqual(response.status_code, 404)
 
-        self._test_superuser.refresh_from_db()
-        self.assertEqual(self._test_superuser.theme_settings.theme, theme)
+        self._test_super_user.refresh_from_db()
+        self.assertEqual(self._test_super_user.theme_settings.theme, theme)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_superuser_theme_settings_edit_view_with_access(self):
-        theme = self._test_superuser.theme_settings.theme
+    def test_super_user_theme_settings_edit_view_with_access(self):
+        theme = self._test_super_user.theme_settings.theme
 
         self.grant_access(
-            obj=self._test_superuser, permission=permission_user_edit
+            obj=self._test_super_user, permission=permission_user_edit
         )
 
         self._clear_events()
 
-        response = self._request_test_superuser_theme_settings_edit_view()
+        response = self._request_test_super_user_theme_settings_edit_view()
         self.assertEqual(response.status_code, 404)
 
-        self._test_superuser.refresh_from_db()
-        self.assertEqual(self._test_superuser.theme_settings.theme, theme)
+        self._test_super_user.refresh_from_db()
+        self.assertEqual(self._test_super_user.theme_settings.theme, theme)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

@@ -46,17 +46,17 @@ class MessageViewTestCase(
         self.assertEqual(events[0].target, self._test_message)
         self.assertEqual(events[0].verb, event_message_created.id)
 
-    def test_message_create_view_for_superuser_with_permissions(self):
+    def test_message_create_view_for_super_user_with_permissions(self):
         self.grant_permission(permission=permission_message_create)
 
         message_count = Message.objects.count()
 
-        self._create_test_superuser()
+        self._create_test_super_user()
 
         self._clear_events()
 
         response = self._request_test_message_create_view(
-            extra_data={'user': self._test_superuser.pk}
+            extra_data={'user': self._test_super_user.pk}
         )
         self.assertEqual(response.status_code, 200)
 
