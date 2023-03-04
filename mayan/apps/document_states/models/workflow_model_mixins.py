@@ -15,7 +15,7 @@ from mayan.apps.file_caching.models import CachePartitionFile
 
 from ..events import event_workflow_template_edited
 from ..literals import (
-    STORAGE_NAME_WORKFLOW_CACHE, SYMBOL_MATH_CONDITIONAL,
+    STORAGE_NAME_WORKFLOW_CACHE, SYMBOL_GRAPHVIZ_CONDITIONAL,
     WORKFLOW_ACTION_ON_ENTRY
 )
 
@@ -179,6 +179,7 @@ class WorkflowBusinessLogicMixin:
         )
 
         action_cache = {}
+        escalation_cache = {}
         state_cache = {}
         transition_cache = []
 
@@ -193,26 +194,46 @@ class WorkflowBusinessLogicMixin:
             }
 
             for action in state.actions.all():
-                if action.has_condition():
-                    action_label = '{} {}'.format(
-                        SYMBOL_MATH_CONDITIONAL, action.label
-                    )
-                else:
-                    action_label = action.label
+                if action.enabled:
+                    if action.has_condition():
+                        action_label = '{} {}'.format(
+                            SYMBOL_GRAPHVIZ_CONDITIONAL, action.label
+                        )
+                    else:
+                        action_label = action.label
 
-                action_cache[
-                    'a{}'.format(action.pk)
-                ] = {
-                    'label': action_label,
-                    'name': 'a{}'.format(action.pk),
-                    'state': 's{}'.format(state.pk),
-                    'when': action.when
-                }
+                    action_cache[
+                        'a{}'.format(action.pk)
+                    ] = {
+                        'label': action_label,
+                        'name': 'a{}'.format(action.pk),
+                        'state': 's{}'.format(state.pk),
+                        'when': action.when
+                    }
+
+            for escalation in state.escalations.all():
+                if escalation.enabled:
+                    label = 'After {}'.format(
+                        escalation.get_time_display()
+                    )
+
+                    if escalation.has_condition():
+                        label = '{} {}'.format(
+                            SYMBOL_GRAPHVIZ_CONDITIONAL, label
+                        )
+
+                    escalation_cache[
+                        'e{}'.format(escalation.pk)
+                    ] = {
+                        'label': label,
+                        'destination': 's{}'.format(escalation.transition.destination_state.pk),
+                        'state': 's{}'.format(state.pk),
+                    }
 
         for transition in self.transitions.all():
             if transition.has_condition():
                 transition_label = '{} {}'.format(
-                    SYMBOL_MATH_CONDITIONAL, transition.label
+                    SYMBOL_GRAPHVIZ_CONDITIONAL, transition.label
                 )
             else:
                 transition_label = transition.label
@@ -270,6 +291,20 @@ class WorkflowBusinessLogicMixin:
                     'tail_name': '{}'.format(
                         value['state']
                     )
+                }
+            )
+
+        for key, value in escalation_cache.items():
+            diagram.edge(
+                **{
+                    'label': value['label'],
+                    'head_name': '{}'.format(
+                        value['destination']
+                    ),
+                    'style': 'dashed',
+                    'tail_name': '{}'.format(
+                        value['state']
+                    ),
                 }
             )
 

@@ -9,6 +9,12 @@
 - Ensure the workflow state action column is not shown for the workflow
   state runtime proxies where is does not make sense to show.
 - Add escalation list column to workflow states list view.
+- Workflow preview updates:
+
+  - Change the symbol to identify transitions, actions, and escalations with
+    conditions from the math arrow to a math symbol for function (fn of).
+  - Add escalations to the workflow preview.
+  - Include escalation hash changes to invalidate workflow previews.
 
 4.4.4 (2023-02-14)
 ==================

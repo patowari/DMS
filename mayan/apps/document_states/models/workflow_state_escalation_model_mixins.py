@@ -1,4 +1,7 @@
+import hashlib
+
 from django.conf import settings
+from django.core import serializers
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -21,3 +24,13 @@ class WorkflowStateEscalationBusinessLogicMixin:
 
     def get_comment(self):
         return self.comment or _('Workflow escalation.')
+
+    def get_hash(self):
+        return hashlib.sha256(
+            string=serializers.serialize(
+                format='json', queryset=(self,)
+            ).encode()
+        ).hexdigest()
+
+    def get_time_display(self):
+        return '{} {}'.format(self.amount, self.unit)

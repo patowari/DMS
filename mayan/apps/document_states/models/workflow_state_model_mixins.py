@@ -75,9 +75,15 @@ class WorkflowStateBusinessLogicMixin:
                 format='json', queryset=(self,)
             ).encode()
         )
+
         for action in self.actions.all():
             result.update(
                 action.get_hash().encode()
+            )
+
+        for escalation in self.escalations.all():
+            result.update(
+                escalation.get_hash().encode()
             )
 
         return result.hexdigest()
