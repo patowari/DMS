@@ -3,6 +3,8 @@
 - Increase the size of the document indexing value field from 128 to 255
   characters.
 - Rename all uses of "superuser" to "super user" or "super_user".
+- Ignore staging folder file image cache error if the image cache is not
+  already generated when deleting the staging folder file.
 
 4.4.4 (2023-02-14)
 ==================

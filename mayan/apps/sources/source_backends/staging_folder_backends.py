@@ -105,7 +105,11 @@ class StagingFolderFile:
         )
 
     def delete(self):
-        self.storage_source_cache.delete(self.cache_filename)
+        try:
+            self.storage_source_cache.delete(name=self.cache_filename)
+        except FileNotFoundError:
+            """No preview was yet generated."""
+
         os.unlink(
             path=self.get_full_path()
         )
