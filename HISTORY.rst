@@ -6,6 +6,8 @@
 - Ignore staging folder file image cache error if the image cache is not
   already generated when deleting the staging folder file.
 - Update the Debian Docker image from version 11.5-slim to 11.6-slim.
+- Ensure the workflow state action column is not shown for the workflow
+  state runtime proxies where is does not make sense to show.
 
 4.4.4 (2023-02-14)
 ==================
