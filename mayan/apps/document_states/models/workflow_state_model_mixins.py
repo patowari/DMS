@@ -29,6 +29,16 @@ class WorkflowStateBusinessLogicMixin:
 
     get_actions_display.short_description = _('Actions')
 
+    def get_escalations_display(self):
+        field_list = [
+            str(field) for field in self.escalations.all()
+        ]
+        field_list.sort()
+
+        return ', '.join(field_list)
+
+    get_escalations_display.short_description = _('Escalations')
+
     def get_documents(self):
         WorkflowInstanceLogEntry = apps.get_model(
             app_label='document_states',

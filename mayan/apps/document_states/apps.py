@@ -401,7 +401,13 @@ class DocumentStatesApp(MayanAppConfig):
         column_workflow_actions.add_exclude(
             source=WorkflowStateRuntimeProxy
         )
-
+        column_workflow_escalations = SourceColumn(
+            attribute='get_escalations_display', include_label=True,
+            source=WorkflowState
+        )
+        column_workflow_escalations.add_exclude(
+            source=WorkflowStateRuntimeProxy
+        )
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
             source=WorkflowStateAction
