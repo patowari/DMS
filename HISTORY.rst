@@ -5,6 +5,7 @@
 - Rename all uses of "superuser" to "super user" or "super_user".
 - Ignore staging folder file image cache error if the image cache is not
   already generated when deleting the staging folder file.
+- Update the Debian Docker image from version 11.5-slim to 11.6-slim.
 
 4.4.4 (2023-02-14)
 ==================
