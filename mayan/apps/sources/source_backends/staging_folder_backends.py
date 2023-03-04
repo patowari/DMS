@@ -105,9 +105,9 @@ class StagingFolderFile:
         )
 
     def delete(self):
-        self.storage.delete(self.cache_filename)
+        self.storage_source_cache.delete(self.cache_filename)
         os.unlink(
-            self.get_full_path()
+            path=self.get_full_path()
         )
 
     def generate_image(self, transformation_instance_list=None):
@@ -116,7 +116,7 @@ class StagingFolderFile:
             'transformations cache filename: %s', self.cache_filename
         )
 
-        if self.storage.exists(self.cache_filename):
+        if self.storage_source_cache.exists(self.cache_filename):
             logger.debug(
                 'staging file cache file "%s" found', self.cache_filename
             )
@@ -130,11 +130,11 @@ class StagingFolderFile:
 
             # Since open "wb+" doesn't create files, check if the file
             # exists, if not then create it.
-            self.storage.save(
+            self.storage_source_cache.save(
                 content=ContentFile(content=b''), name=self.cache_filename
             )
 
-            with self.storage.open(name=self.cache_filename, mode='wb+') as file_object:
+            with self.storage_source_cache.open(name=self.cache_filename, mode='wb+') as file_object:
                 file_object.write(
                     image.getvalue()
                 )
@@ -168,12 +168,14 @@ class StagingFolderFile:
         result = [
             TransformationResize(
                 width=self.staging_folder.kwargs['preview_width'],
-                height=self.staging_folder.kwargs['preview_height'],
+                height=self.staging_folder.kwargs['preview_height']
             )
         ]
 
         # Interactive transformations second.
-        result.extend(transformation_instance_list or [])
+        result.extend(
+            transformation_instance_list or []
+        )
 
         return result
 
@@ -215,7 +217,7 @@ class StagingFolderFile:
             return page_image
 
     @cached_property
-    def storage(self):
+    def storage_source_cache(self):
         return DefinedStorage.get(
             name=STORAGE_NAME_SOURCE_CACHE_FOLDER
         ).get_storage_instance()
@@ -431,12 +433,12 @@ class SourceBackendStagingFolder(
             transformation_instance_list=combined_transformation_list
         )
 
-        storage_staging_folder_file_image_cache = DefinedStorage.get(
+        storage_source_cache = DefinedStorage.get(
             name=STORAGE_NAME_SOURCE_CACHE_FOLDER
         ).get_storage_instance()
 
         def file_generator():
-            with storage_staging_folder_file_image_cache.open(name=cache_filename) as file_object:
+            with storage_source_cache.open(name=cache_filename) as file_object:
                 converter = ConverterBase.get_converter_class()(
                     file_object=file_object
                 )
