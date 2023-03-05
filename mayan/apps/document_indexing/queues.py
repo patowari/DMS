@@ -9,10 +9,6 @@ queue_indexing = CeleryQueue(
 )
 
 queue_indexing.add_task_type(
-    label=_('Delete empty index nodes'),
-    dotted_path='mayan.apps.document_indexing.tasks.task_index_instance_node_delete_empty'
-)
-queue_indexing.add_task_type(
     label=_('Remove document'),
     dotted_path='mayan.apps.document_indexing.tasks.task_index_instance_document_remove'
 )

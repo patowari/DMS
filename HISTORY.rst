@@ -17,6 +17,9 @@
   - Include escalation hash changes to invalidate workflow previews.
 
 - Add super user column to user list view.
+- Simplify and optimize the document indexing feature.
+- Ensure deleted documents are removed from indexes even if the index is
+  disabled.
 
 4.4.4 (2023-02-14)
 ==================

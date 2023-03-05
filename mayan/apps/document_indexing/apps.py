@@ -21,8 +21,8 @@ from mayan.apps.views.html_widgets import TwoStateWidget
 
 from .events import event_index_template_created, event_index_template_edited
 from .handlers import (
-    handler_create_default_document_index, handler_delete_empty,
-    handler_event_trigger, handler_index_document, handler_remove_document
+    handler_create_default_document_index, handler_event_trigger,
+    handler_index_document, handler_remove_document
 )
 from .html_widgets import (
     get_instance_link, index_instance_item_link, node_level
@@ -326,11 +326,6 @@ class DocumentIndexingApp(MayanAppConfig):
             links=(link_index_instances_rebuild, link_index_instances_reset)
         )
 
-        post_delete.connect(
-            dispatch_uid='document_indexing_handler_delete_empty',
-            receiver=handler_delete_empty,
-            sender=Document
-        )
         post_save.connect(
             dispatch_uid='document_handler_index_document',
             receiver=handler_index_document,

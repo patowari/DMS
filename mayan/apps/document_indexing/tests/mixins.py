@@ -164,10 +164,10 @@ class IndexTemplateNodeViewTestMixin:
 
 
 class IndexTemplateTestMixin:
+    _test_index_template_node_expression = None
     auto_add_test_index_template_to_test_document_type = True
     auto_create_test_index_template = True
     auto_create_test_index_template_node = True
-    _test_index_template_node_expression = None
 
     def setUp(self):
         super().setUp()
@@ -183,7 +183,7 @@ class IndexTemplateTestMixin:
             {
                 'label': '{}_1'.format(TEST_INDEX_TEMPLATE_LABEL),
                 'slug': '{}_1'.format(TEST_INDEX_TEMPLATE_SLUG)
-            },
+            }
         ]
 
         if self.auto_create_test_index_template:

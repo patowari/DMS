@@ -81,21 +81,6 @@ def task_index_instance_document_remove(self, document_id):
         except LockError as exception:
             raise self.retry(exc=exception)
 
-
-@app.task(
-    bind=True, ignore_result=True, max_retries=None, retry_backoff=True
-)
-def task_index_instance_node_delete_empty(self):
-    IndexInstance = apps.get_model(
-        app_label='document_indexing', model_name='IndexInstance'
-    )
-
-    try:
-        IndexInstance.objects.delete_empty_nodes()
-    except LockError as exception:
-        raise self.retry(exc=exception)
-
-
 # Index template
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)

@@ -22,35 +22,6 @@ from .literals import (
 from .mixins import IndexTemplateTestMixin
 
 
-class IndexInstanceNodeMaintenanceTestCase(
-    IndexTemplateTestMixin, GenericDocumentTestCase
-):
-    auto_create_test_index_template_node = False
-    auto_upload_test_document = False
-
-    def test_index_instance_node_deletion(self):
-        self._test_index_template.index_template_nodes.create(
-            expression='{% if not document.label %}No label{% endif %}',
-            link_documents=True,
-            parent=self._test_index_template.index_template_root_node
-        )
-        self._create_test_document_stub(label='')
-        self._create_test_document_stub(label='')
-
-        IndexTemplate.objects.rebuild()
-
-        self._test_documents[1].label = 'test_label'
-        self._test_documents[1].save()
-
-        self.assertEqual(IndexInstanceNode.objects.count(), 2)
-        self.assertTrue(
-            self._test_documents[0] in IndexInstanceNode.objects.last().documents.all()
-        )
-        self.assertTrue(
-            self._test_documents[1] not in IndexInstanceNode.objects.last().documents.all()
-        )
-
-
 class IndexInstanceBasicTestCase(
     IndexTemplateTestMixin, GenericDocumentTestCase
 ):
@@ -120,6 +91,71 @@ class IndexInstanceBasicTestCase(
         self.assertEqual(
             IndexInstanceNode.objects.count(),
             document_index_instance_node_count
+        )
+
+
+class IndexInstanceNodeConsistencyTestCase(
+    IndexTemplateTestMixin, GenericDocumentTestCase
+):
+    _test_index_template_node_expression = '{{ document.pk }}'
+
+    def test_index_instance_node_cleanup(self):
+        self._create_test_document_stub()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 2)
+        print(IndexInstanceNode.objects.values())
+
+        self._test_document.delete()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 2)
+
+        self._test_document.delete()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 1)
+
+    def test_index_instance_node_inactive_cleanup(self):
+        self._create_test_document_stub()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 2)
+
+        self._test_index_template.enabled = False
+        self._test_index_template.save()
+
+        self._test_document.delete()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 2)
+
+        self._test_document.delete()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 2)
+
+
+class IndexInstanceNodeMaintenanceTestCase(
+    IndexTemplateTestMixin, GenericDocumentTestCase
+):
+    auto_create_test_index_template_node = False
+    auto_upload_test_document = False
+
+    def test_index_instance_node_deletion(self):
+        self._test_index_template.index_template_nodes.create(
+            expression='{% if not document.label %}No label{% endif %}',
+            link_documents=True,
+            parent=self._test_index_template.index_template_root_node
+        )
+        self._create_test_document_stub(label='')
+        self._create_test_document_stub(label='')
+
+        IndexTemplate.objects.rebuild()
+
+        self._test_documents[1].label = 'test_label'
+        self._test_documents[1].save()
+
+        self.assertEqual(IndexInstanceNode.objects.count(), 2)
+        self.assertTrue(
+            self._test_documents[0] in IndexInstanceNode.objects.last().documents.all()
+        )
+        self.assertTrue(
+            self._test_documents[1] not in IndexInstanceNode.objects.last().documents.all()
         )
 
 

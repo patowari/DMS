@@ -1,7 +1,6 @@
 import logging
 
 from django.apps import apps
-from django.db import transaction
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
@@ -16,24 +15,11 @@ logger = logging.getLogger(name=__name__)
 
 class IndexInstanceBusinessLogicMixin:
     def _delete_empty_nodes(self):
-        IndexInstanceNode = apps.get_model(
-            app_label='document_indexing', model_name='IndexInstanceNode'
-        )
-
-        with transaction.atomic():
-            while True:
-                queryset = IndexInstanceNode.objects.filter(
-                    children=None, documents=None,
-                    index_template_node__link_documents=True
-                )
-                if queryset.exists():
-                    queryset.delete()
-                else:
-                    break
+        self.index_instance_root_node.get_children().filter(
+            children=None, documents=None
+        ).delete()
 
     def _document_add(self, document, index_instance_node_parent):
-        index_instance_node_id_list = []
-
         for index_template_node in index_instance_node_parent.index_template_node.get_children().filter(enabled=True):
             try:
                 template = Template(
@@ -61,56 +47,27 @@ class IndexInstanceBusinessLogicMixin:
                         parent=index_instance_node_parent,
                         value=result
                     )
-                    index_instance_node_id_list.append(index_instance_node.pk)
 
                     if index_template_node.link_documents:
                         index_instance_node.documents.add(document)
 
-                    index_instance_node_id_list.extend(
-                        self._document_add(
-                            document=document,
-                            index_instance_node_parent=index_instance_node
-                        )
+                    self._document_add(
+                        document=document,
+                        index_instance_node_parent=index_instance_node
                     )
 
-        return index_instance_node_id_list
-
-    def _document_remove(self, document, excluded_index_instance_node_id_list=None):
+    def document_nodes_delete(self, document):
         IndexInstanceNode = apps.get_model(
             app_label='document_indexing', model_name='IndexInstanceNode'
         )
 
-        excluded_index_instance_node_id_list = excluded_index_instance_node_id_list or ()
-
-        with transaction.atomic():
-            IndexInstanceNode.documents.through.objects.filter(
-                document=document,
-                indexinstancenode__index_template_node__enabled=True,
-                indexinstancenode__index_template_node__index=self,
-                indexinstancenode__index_template_node__index__enabled=True,
-                indexinstancenode__index_template_node__index__document_types=document.document_type
-            ).exclude(
-                indexinstancenode__in=excluded_index_instance_node_id_list
-            ).delete()
-
-            self.delete_empty_nodes(acquire_lock=False)
-
-    def delete_empty_nodes(self, acquire_lock=True):
-        if acquire_lock:
-            try:
-                if acquire_lock:
-                    lock_index_instance = LockingBackend.get_backend().acquire_lock(
-                        name=self.get_lock_string()
-                    )
-            except LockError:
-                raise
-            else:
-                try:
-                    return self._delete_empty_nodes()
-                finally:
-                    lock_index_instance.release()
-        else:
-            return self._delete_empty_nodes()
+        IndexInstanceNode.documents.through.objects.filter(
+            document=document,
+            indexinstancenode__index_template_node__enabled=True,
+            indexinstancenode__index_template_node__index=self,
+            indexinstancenode__index_template_node__index__enabled=True,
+            indexinstancenode__index_template_node__index__document_types=document.document_type
+        ).delete()
 
     def document_add(self, document):
         """
@@ -122,8 +79,6 @@ class IndexInstanceBusinessLogicMixin:
         the document is added to that node.
         """
         logger.debug('Index; Indexing document: %s', document)
-
-        index_instance_node_id_list = []
 
         if Document.valid.filter(pk=document.pk).exists() and self.enabled and self.document_types.filter(pk=document.document_type.pk).exists():
             try:
@@ -145,60 +100,44 @@ class IndexInstanceBusinessLogicMixin:
                     try:
                         self.initialize_index_instance_root_node_node()
 
-                        index_instance_node_parent = self.index_instance_root_node
+                        self.document_nodes_delete(document=document)
 
-                        index_instance_node_id_list = self._document_add(
+                        self._document_add(
                             document=document,
-                            index_instance_node_parent=index_instance_node_parent
+                            index_instance_node_parent=self.index_instance_root_node
                         )
 
-                        self.document_remove(
-                            acquire_lock=False, document=document,
-                            excluded_index_instance_node_id_list=index_instance_node_id_list
-                        )
+                        self._delete_empty_nodes()
                     finally:
                         lock_document.release()
                 finally:
                     lock_index_instance.release()
 
-    def document_remove(
-        self, document, acquire_lock=True,
-        excluded_index_instance_node_id_list=None
-    ):
-        excluded_index_instance_node_id_list = excluded_index_instance_node_id_list or ()
-
-        if Document.valid.filter(pk=document.pk).exists() and self.enabled and self.document_types.filter(pk=document.document_type.pk).exists():
-            if acquire_lock:
+    def document_remove(self, document):
+        if self.enabled and self.document_types.filter(pk=document.document_type.pk).exists():
+            try:
+                lock_index_instance = LockingBackend.get_backend().acquire_lock(
+                    name=self.get_lock_string()
+                )
+            except LockError:
+                raise
+            else:
                 try:
-                    lock_index_instance = LockingBackend.get_backend().acquire_lock(
-                        name=self.get_lock_string()
+                    lock_document = LockingBackend.get_backend().acquire_lock(
+                        name=self.get_document_lock_string(
+                            document=document
+                        )
                     )
                 except LockError:
                     raise
                 else:
                     try:
-                        lock_document = LockingBackend.get_backend().acquire_lock(
-                            name=self.get_document_lock_string(
-                                document=document
-                            )
-                        )
-                    except LockError:
-                        raise
-                    else:
-                        try:
-                            return self._document_remove(
-                                document=document,
-                                excluded_index_instance_node_id_list=excluded_index_instance_node_id_list
-                            )
-                        finally:
-                            lock_document.release()
+                        self.document_nodes_delete(document=document)
+                        self._delete_empty_nodes()
                     finally:
-                        lock_index_instance.release()
-            else:
-                return self._document_remove(
-                    document=document,
-                    excluded_index_instance_node_id_list=excluded_index_instance_node_id_list
-                )
+                        lock_document.release()
+                finally:
+                    lock_index_instance.release()
 
     def get_children(self):
         return self.index_instance_root_node.get_children()
