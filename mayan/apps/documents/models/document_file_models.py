@@ -95,7 +95,7 @@ class DocumentFile(
             'checksum.'
         ), max_length=64, null=True, verbose_name=_('Checksum')
     )
-    size = models.PositiveIntegerField(
+    size = models.PositiveBigIntegerField(
         blank=True, db_index=True, editable=False, help_text=(
             'The size of the file in bytes.'
         ), null=True, verbose_name=_('Size')

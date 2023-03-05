@@ -23,6 +23,9 @@
 - Split HTML widgets modules into HTMl and column widget modules.
 - Extract the workflow state action model into its own model module.
 - Separate workflow state action model data and business logic code.
+- Update the type of the document file size field to a
+  ``PositiveBigIntegerField`` to allow tracking document files bigger than
+  2GB in quota queries.
 
 4.4.5 (2023-XX-XX)
 ==================
