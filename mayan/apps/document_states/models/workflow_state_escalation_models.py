@@ -79,7 +79,7 @@ class WorkflowStateEscalation(
         action_object='self',
         event_manager_class=EventManagerMethodAfter,
         event=event_workflow_template_edited,
-        target='state.workflow',
+        target='state.workflow'
     )
     def delete(self, *args, **kwargs):
         return super().delete(*args, **kwargs)
@@ -89,12 +89,12 @@ class WorkflowStateEscalation(
         created={
             'action_object': 'self',
             'event': event_workflow_template_edited,
-            'target': 'state.workflow',
+            'target': 'state.workflow'
         },
         edited={
             'action_object': 'self',
             'event': event_workflow_template_edited,
-            'target': 'state.workflow',
+            'target': 'state.workflow'
         }
     )
     def save(self, *args, **kwargs):

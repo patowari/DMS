@@ -69,11 +69,11 @@ class Workflow(
         event_manager_class=EventManagerSave,
         created={
             'event': event_workflow_template_created,
-            'target': 'self',
+            'target': 'self'
         },
         edited={
             'event': event_workflow_template_edited,
-            'target': 'self',
+            'target': 'self'
         }
     )
     def save(self, *args, **kwargs):

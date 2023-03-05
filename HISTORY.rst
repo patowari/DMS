@@ -21,6 +21,8 @@
 - Ensure deleted documents are removed from indexes even if the index is
   disabled.
 - Split HTML widgets modules into HTMl and column widget modules.
+- Extract the workflow state action model into its own model module.
+- Separate workflow state action model data and business logic code.
 
 4.4.4 (2023-02-14)
 ==================
