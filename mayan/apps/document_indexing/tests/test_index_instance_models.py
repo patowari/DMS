@@ -103,7 +103,6 @@ class IndexInstanceNodeConsistencyTestCase(
         self._create_test_document_stub()
 
         self.assertEqual(IndexInstanceNode.objects.count(), 2)
-        print(IndexInstanceNode.objects.values())
 
         self._test_document.delete()
 
