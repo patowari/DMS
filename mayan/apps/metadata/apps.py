@@ -22,11 +22,12 @@ from mayan.apps.documents.signals import signal_post_document_type_change
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import (
     DocumentMetadataHelper, MetadataParser, MetadataValidator
 )
+from .column_widgets import DocumentMetadataWidget
 from .events import (
     event_document_metadata_added, event_document_metadata_edited,
     event_document_metadata_removed, event_metadata_type_edited,
@@ -39,7 +40,6 @@ from .handlers import (
     handler_post_document_type_change_metadata,
     handler_pre_metadata_type_delete
 )
-from .html_widgets import DocumentMetadataWidget
 from .links import (
     link_metadata_add, link_metadata_edit, link_metadata_multiple_add,
     link_metadata_multiple_edit, link_metadata_multiple_remove,

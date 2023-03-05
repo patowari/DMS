@@ -31,7 +31,7 @@ from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.exceptions import InvalidOfficeFormat
 from mayan.apps.converter.transformations import TransformationResize
 from mayan.apps.converter.utils import IndexedDictionary
-from mayan.apps.documents.html_widgets import ThumbnailWidget
+from mayan.apps.documents.column_widgets import ThumbnailWidget
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.navigation.classes import Link, SourceColumn

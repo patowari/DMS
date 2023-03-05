@@ -7,7 +7,7 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import ObjectLinkWidget
+from mayan.apps.views.column_widgets import ObjectLinkWidget
 
 from .classes import ModelPermission
 from .events import event_acl_deleted, event_acl_edited

@@ -81,6 +81,7 @@ def task_index_instance_document_remove(self, document_id):
         except LockError as exception:
             raise self.retry(exc=exception)
 
+
 # Index template
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)

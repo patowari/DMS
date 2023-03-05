@@ -1,4 +1,4 @@
-from mayan.apps.navigation.html_widgets import SourceColumnWidget
+from mayan.apps.navigation.column_widgets import SourceColumnWidget
 
 from .icons import icon_fail as default_icon_fail, icon_ok as default_icon_ok
 
@@ -36,7 +36,7 @@ class ObjectLinkWidget(SourceColumnWidget):
             if getattr(self.value, 'is_staff', None) or getattr(self.value, 'is_superuser', None):
                 # Don't display a anchor to for the user details view for
                 # super users and staff, the details view filters them.
-                #Staff and admin users are not manageable by the normal
+                # Staff and admin users are not manageable by the normal
                 # user views.
                 url = '#'
                 label = '{}{}'.format(object_type, label)

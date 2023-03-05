@@ -12,7 +12,7 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .events import event_message_edited
 from .links import (

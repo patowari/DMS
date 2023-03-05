@@ -29,9 +29,10 @@ from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import AJAXTemplate
 from mayan.apps.user_management.dashboards import dashboard_user
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import DocumentFileAction, DocumentVersionModification
+from .column_widgets import ThumbnailWidget
 from .dashboard_widgets import (
     DashboardWidgetDocumentFilePagesTotal, DashboardWidgetDocumentsInTrash,
     DashboardWidgetDocumentsNewThisMonth,
@@ -74,12 +75,13 @@ from .events import (
     event_document_version_page_deleted, event_document_version_page_edited,
 )
 
+# All
+
 from .handlers import (
     handler_create_default_document_type,
     handler_create_document_file_page_image_cache,
     handler_create_document_version_page_image_cache
 )
-from .html_widgets import ThumbnailWidget
 from .links.document_links import (
     link_document_type_change, link_document_properties_edit,
     link_document_list, link_document_recently_accessed_list,

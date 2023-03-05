@@ -1,4 +1,4 @@
-from mayan.apps.navigation.html_widgets import SourceColumnWidget
+from mayan.apps.navigation.column_widgets import SourceColumnWidget
 
 
 class WidgetSettingValue(SourceColumnWidget):

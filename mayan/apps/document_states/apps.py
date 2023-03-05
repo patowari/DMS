@@ -19,9 +19,10 @@ from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.logging.permissions import permission_error_log_entry_view
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import DocumentStateHelper, WorkflowAction
+from .column_widgets import WorkflowLogExtraDataWidget
 from .events import (
     event_workflow_instance_created, event_workflow_instance_transitioned,
     event_workflow_template_edited
@@ -36,7 +37,7 @@ from .handlers import (
     handler_workflow_template_transition_post_edit,
     handler_workflow_template_transition_pre_delete
 )
-from .html_widgets import WorkflowLogExtraDataWidget, widget_transition_events
+from .html_widgets import widget_transition_events
 from .links import (
     link_document_multiple_workflow_templates_launch,
     link_document_single_workflow_templates_launch,

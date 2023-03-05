@@ -25,7 +25,7 @@ from mayan.apps.views.literals import (
 )
 
 from .class_mixins import TemplateObjectMixin
-from .html_widgets import SourceColumnLinkWidget
+from .column_widgets import SourceColumnLinkWidget
 from .utils import get_current_view_name
 
 logger = logging.getLogger(name=__name__)

@@ -16,7 +16,7 @@ from mayan.apps.documents.links.document_type_links import (
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .events import event_web_link_edited, event_web_link_navigated
 from .links import (

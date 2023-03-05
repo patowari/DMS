@@ -5,10 +5,10 @@ from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_return, menu_setup
 )
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import SettingNamespace, Setting
-from .html_widgets import WidgetSettingValue
+from .column_widgets import WidgetSettingValue
 from .links import (
     link_setting_namespace_detail, link_setting_namespace_list,
     link_namespace_root_list, link_setting_edit

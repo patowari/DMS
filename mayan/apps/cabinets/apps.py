@@ -16,12 +16,12 @@ from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 
+from .column_widgets import DocumentCabinetWidget
 from .events import (
     event_cabinet_deleted, event_cabinet_edited,
     event_cabinet_document_added, event_cabinet_document_removed
 )
 from .handlers import handler_cabinet_pre_delete, handler_index_document
-from .html_widgets import DocumentCabinetWidget
 from .links import (
     link_cabinet_list, link_document_cabinet_list,
     link_document_cabinet_remove, link_document_cabinet_add,

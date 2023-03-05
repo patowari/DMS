@@ -11,7 +11,7 @@ from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import menu_object, menu_secondary, menu_setup
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import QuotaBackend
 from .events import event_quota_created, event_quota_edited

@@ -20,6 +20,7 @@
 - Simplify and optimize the document indexing feature.
 - Ensure deleted documents are removed from indexes even if the index is
   disabled.
+- Split HTML widgets modules into HTMl and column widget modules.
 
 4.4.4 (2023-02-14)
 ==================

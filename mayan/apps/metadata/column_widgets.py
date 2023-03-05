@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.core.exceptions import PermissionDenied
 
-from mayan.apps.navigation.html_widgets import SourceColumnWidget
+from mayan.apps.navigation.column_widgets import SourceColumnWidget
 
 from .permissions import permission_document_metadata_view
 

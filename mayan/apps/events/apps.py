@@ -9,7 +9,7 @@ from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_secondary, menu_tools, menu_topbar
 )
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import ObjectLinkWidget, TwoStateWidget
+from mayan.apps.views.column_widgets import ObjectLinkWidget, TwoStateWidget
 
 from .classes import EventTypeNamespace
 from .html_widgets import widget_event_actor_link, widget_event_type_link

@@ -19,7 +19,7 @@ from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.metadata.classes import MetadataLookup
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .dashboard_widgets import (
     DashboardWidgetGroupTotal, DashboardWidgetUserTotal

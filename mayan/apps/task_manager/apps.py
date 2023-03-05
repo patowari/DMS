@@ -7,9 +7,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_tools
 from mayan.apps.common.signals import signal_perform_upgrade
-
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import TwoStateWidget
+from mayan.apps.views.column_widgets import TwoStateWidget
 from mayan.celery import app as celery_app
 
 from .classes import CeleryQueue, Task

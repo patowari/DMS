@@ -4,7 +4,7 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_object, menu_secondary, menu_tools
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.html_widgets import ObjectLinkWidget
+from mayan.apps.views.column_widgets import ObjectLinkWidget
 
 from .links import (
     link_global_error_log_partition_entry_list,
