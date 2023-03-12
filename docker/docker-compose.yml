@@ -207,6 +207,7 @@ services:
       - run_frontend
     profiles:
       - extra_frontend
+      - multi_container
 
   # Enable to run standalone workers
   mountindex:
@@ -239,6 +240,7 @@ services:
       - "--prefetch-multiplier=1"
     profiles:
       - extra_worker_a
+      - multi_container
 
   # Run a separate class B worker
   worker_b:
@@ -249,6 +251,7 @@ services:
       - "--prefetch-multiplier=1"
     profiles:
       - extra_worker_b
+      - multi_container
 
   # Run a separate class C worker
   worker_c:
@@ -259,6 +262,7 @@ services:
       - "--prefetch-multiplier=1"
     profiles:
       - extra_worker_c
+      - multi_container
 
   # Run a separate class D worker
   worker_d:
@@ -269,6 +273,7 @@ services:
       - "--concurrency=1 --prefetch-multiplier=1"
     profiles:
       - extra_worker_d
+      - multi_container
 
   worker_custom_queue:
     <<: *mayan-container
@@ -278,6 +283,7 @@ services:
       - 'MAYAN_QUEUE_LIST=${MAYAN_WORKER_CUSTOM_QUEUE_LIST} /usr/local/bin/run_worker.sh --prefetch-multiplier=1'
     profiles:
       - extra_worker_custom
+      - multi_container
 
   # Run a separate Celery beat container
   celery_beat:
@@ -287,6 +293,7 @@ services:
       - "beat --pidfile= --loglevel=ERROR"
     profiles:
       - extra_celery_beat
+      - multi_container
 
   setup_or_upgrade:
     <<: *mayan-container
@@ -294,6 +301,7 @@ services:
       - run_initial_setup_or_perform_upgrade
     profiles:
       - extra_setup_or_upgrade
+      - multi_container
     restart: "no"
 
   rabbitmq:

@@ -26,6 +26,9 @@
 - Update the type of the document file size field to a
   ``PositiveBigIntegerField`` to allow tracking document files bigger than
   2GB in quota queries.
+- Add the ``multi_container`` profile. Allows easy switching from a single
+  all-in-one container Docker Compose deployment to a multi container
+  deployment.
 
 4.4.5 (2023-03-11)
 ==================
