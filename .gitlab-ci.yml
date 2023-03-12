@@ -195,7 +195,7 @@ job_documentation_build:
       - .cache/pip
   dependencies:
     - job_python_build
-  image: debian:11.5-slim
+  image: debian:11.6-slim
   needs:
     - job_python_build
   only:
@@ -223,7 +223,7 @@ job_documentation_push:
     - 'which ssh-agent || ( apt-get update --yes && apt-get install --yes openssh-client rsync )'
     - eval $(ssh-agent -s)
     - echo "$DOCUMENTATION_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-  image: debian:11.5-slim
+  image: debian:11.6-slim
   only:
     - releases/all/major
     - releases/documentation
@@ -254,7 +254,7 @@ job_python_build:
     paths:
       - .apt
       - .cache/pip
-  image: debian:11.5-slim
+  image: debian:11.6-slim
   only:
     - builds/documentation
     - builds/python
@@ -290,7 +290,7 @@ job_python_push_pypi:
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==$PYTHON_PIP_VERSION
-  image: debian:11.5-slim
+  image: debian:11.6-slim
   only:
     - releases/all/major
     - releases/all/minor
@@ -328,7 +328,7 @@ job_python_push_pypi:
       - /var/cache/apt/archives/
   dependencies:
     - job_python_build
-  image: debian:11.5-slim
+  image: debian:11.6-slim
   needs:
     - job_python_build
   only:
@@ -395,7 +395,7 @@ job_sqlite_upgrade_test:
     paths:
       - .apt
       - .cache/pip
-  image: debian:11.5-slim
+  image: debian:11.6-slim
   only:
     - releases/all/major
     - releases/all/minor
