@@ -2,6 +2,7 @@ from datetime import datetime
 
 from mayan.apps.testing.tests.base import BaseTestCase
 
+from .literals import TEST_TEMPLATE_TAG_RESULT
 from .mixins import TemplateTagTestMixin
 
 
@@ -35,6 +36,14 @@ class TemplateFilterSplitTestCase(TemplateTagTestMixin, BaseTestCase):
             template_string='{% with x|split:"," as result %}{{ result.0 }}-{{ result.1 }}-{{ result.2 }}{% endwith %}', context={'x': '1,2,3'}
         )
         self.assertEqual(result, '1-2-3')
+
+
+class TemplateTagLoadingTestCase(TemplateTagTestMixin, BaseTestCase):
+    def test_user_template_tag_loading(self):
+        result = self._render_test_template(
+            template_string='{% load templating_test_tags %}{% templating_test_tag %}'
+        )
+        self.assertEqual(result, TEST_TEMPLATE_TAG_RESULT)
 
 
 class TemplateTagRegexTestCase(TemplateTagTestMixin, BaseTestCase):

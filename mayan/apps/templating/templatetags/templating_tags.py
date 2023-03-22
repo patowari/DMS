@@ -4,33 +4,11 @@ import re
 from dateutil.parser import parse
 
 from django.template import Library, Node, TemplateSyntaxError
+from django.utils.html import strip_spaces_between_tags
+
+from ..utils import process_regex_flags
 
 register = Library()
-
-
-def process_regex_flags(**kwargs):
-    result = 0
-
-    REGEX_FLAGS = {
-        'ascii': re.ASCII,
-        'ignorecase': re.IGNORECASE,
-        'locale': re.LOCALE,
-        'multiline': re.MULTILINE,
-        'dotall': re.DOTALL,
-        'verbose': re.VERBOSE
-    }
-
-    for key, value in kwargs.items():
-        if value is True:
-            try:
-                result = result | REGEX_FLAGS[key]
-            except KeyError:
-                raise TemplateSyntaxError(
-                    'Unknown or unsupported regular expression '
-                    'flag: "{}"'.format(key)
-                )
-
-    return result
 
 
 @register.filter
@@ -38,7 +16,7 @@ def date_parse(date_string):
     """
     Takes a string and converts it into a datetime object.
     """
-    return parse(date_string)
+    return parse(timestr=date_string)
 
 
 @register.filter
@@ -69,7 +47,7 @@ def regex_findall(pattern, string, **kwargs):
     strings. {% regex_findall pattern string flags %}
     """
     flags = process_regex_flags(**kwargs)
-    return re.findall(pattern=pattern, string=string, flags=flags)
+    return re.findall(flags=flags, pattern=pattern, string=string)
 
 
 @register.simple_tag
@@ -80,7 +58,7 @@ def regex_match(pattern, string, **kwargs):
     {% regex_match pattern string flags %}
     """
     flags = process_regex_flags(**kwargs)
-    return re.match(pattern=pattern, string=string, flags=flags)
+    return re.match(flags=flags, pattern=pattern, string=string)
 
 
 @register.simple_tag
@@ -91,7 +69,7 @@ def regex_search(pattern, string, **kwargs):
     match object. {% regex_search pattern string flags %}
     """
     flags = process_regex_flags(**kwargs)
-    return re.search(pattern=pattern, string=string, flags=flags)
+    return re.search(flags=flags, pattern=pattern, string=string)
 
 
 @register.simple_tag
@@ -102,7 +80,7 @@ def regex_sub(pattern, repl, string, count=0, **kwargs):
     """
     flags = process_regex_flags(**kwargs)
     return re.sub(
-        pattern=pattern, repl=repl, string=string, count=count, flags=flags
+        count=count, flags=flags, pattern=pattern, repl=repl, string=string
     )
 
 
@@ -128,14 +106,15 @@ class SpacelessPlusNode(Node):
         self.nodelist = nodelist
 
     def render(self, context):
-        from django.utils.html import strip_spaces_between_tags
         content = self.nodelist.render(context).strip()
         result = []
         for line in content.split('\n'):
             if line.strip() != '':
                 result.append(line)
 
-        return strip_spaces_between_tags(value='\n'.join(result))
+        return strip_spaces_between_tags(
+            value='\n'.join(result)
+        )
 
 
 @register.tag
@@ -143,9 +122,11 @@ def spaceless_plus(parser, token):
     """
     Removes empty lines between the tag nodes.
     """
-    nodelist = parser.parse(('endspaceless_plus',))
+    nodelist = parser.parse(
+        ('endspaceless_plus',)
+    )
     parser.delete_first_token()
-    return SpacelessPlusNode(nodelist)
+    return SpacelessPlusNode(nodelist=nodelist)
 
 
 @register.simple_tag(name='timedelta')

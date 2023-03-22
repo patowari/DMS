@@ -29,6 +29,9 @@
 - Add the ``multi_container`` profile. Allows easy switching from a single
   all-in-one container Docker Compose deployment to a multi container
   deployment.
+- Improve template initialization to support custom tag loading. Closes
+  GitLab issue #1135. Thanks to Alexander Schlüter (@alexschlueter) for the
+  request and implementation suggestion.
 
 4.4.5 (2023-03-11)
 ==================

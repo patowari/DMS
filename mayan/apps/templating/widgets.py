@@ -33,7 +33,7 @@ class TemplateWidget(NamedMultiWidget):
         result = []
         template = Template('')
         builtin_libraries = [
-            ('', library) for library in template._template.engine.template_builtins
+            ('', library) for library in template._template.backend.engine.template_builtins
         ]
         for module_name, library in builtin_libraries:
             for name, function in getattr(library, klass).items():
@@ -57,8 +57,8 @@ class TemplateWidget(NamedMultiWidget):
         return result
 
     def get_context(self, name, value, attrs):
-        result = super().get_context(name=name, value=value, attrs=attrs)
-        # Set builtin_tags autocopy sub widget as not required
+        result = super().get_context(attrs=attrs, name=name, value=value)
+        # Set builtin_tags autocopy sub widget as not required.
         result['widget']['subwidgets'][0]['attrs']['required'] = False
         return result
 
@@ -109,8 +109,8 @@ class ModelTemplateWidget(TemplateWidget):
         self.subwidgets_order.insert(0, 'model_attribute')
 
     def get_context(self, name, value, attrs):
-        result = super().get_context(name=name, value=value, attrs=attrs)
-        # Set model_attribute autocopy sub widget as not required
+        result = super().get_context(attrs=attrs, name=name, value=value)
+        # Set model_attribute autocopy sub widget as not required.
         result['widget']['subwidgets'][1]['attrs']['required'] = False
         return result
 
