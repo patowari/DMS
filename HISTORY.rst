@@ -38,6 +38,17 @@
 - Update the stale shared uploaded file and download file deletion loop to
   continue executing even when there are files that cannot be deleted.
   Remaining skipped files will be retried on the next iteration.
+- Setting updates:
+
+  - Add a setting named ``CONFIGURATION_FILE_IGNORE`` which cause the setting
+    system to not load settings from the ``config.yml`` file or save the
+    current configuration to the ``config_backup.yml`` file.
+  - Custom cache implementation removed in favor of Python's
+    ``functools.cache``.
+  - Add a ``set_value`` method to allow overriding a bootstrap setting's
+    value.
+  - Support passing a ``global_symbol_table`` argument when updating the
+    setting namespace global symbol table.
 
 4.4.5 (2023-03-11)
 ==================

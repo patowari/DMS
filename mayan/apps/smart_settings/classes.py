@@ -254,12 +254,15 @@ class Setting:
 
     @classmethod
     def get_config_file_content(cls):
-        # Cache content of config file to speed up initial boot up
-        if not cls._config_file_cache:
-            cls._config_file_cache = read_configuration_file(
-                filepath=settings.CONFIGURATION_FILEPATH
-            ) or {}
-        return cls._config_file_cache
+        if settings.CONFIGURATION_FILE_IGNORE:
+            return {}
+        else:
+            # Cache content of config file to speed up initial boot up
+            if not cls._config_file_cache:
+                cls._config_file_cache = read_configuration_file(
+                    filepath=settings.CONFIGURATION_FILEPATH
+                ) or {}
+            return cls._config_file_cache
 
     @classmethod
     def get_hash(cls):
@@ -298,7 +301,7 @@ class Setting:
     def save_last_known_good(cls):
         # Don't write over the last good configuration if we are trying
         # to restore the last good configuration
-        if COMMAND_NAME_SETTINGS_REVERT not in sys.argv:
+        if COMMAND_NAME_SETTINGS_REVERT not in sys.argv and not settings.CONFIGURATION_FILE_IGNORE:
             cls.save_configuration(
                 path=settings.CONFIGURATION_LAST_GOOD_FILEPATH
             )

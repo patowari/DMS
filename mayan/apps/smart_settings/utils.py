@@ -1,4 +1,5 @@
 import errno
+import functools
 import os
 
 import yaml
@@ -17,6 +18,7 @@ class SettingNamespaceSingleton:
     Allow managing setting in a compatible way before Mayan EDMS starts.
     """
     _setting_kwargs = {}
+    _setting_overrides = {}
     _settings = {}
 
     class SettingNotFound(Exception):
@@ -60,18 +62,16 @@ class SettingNamespaceSingleton:
             setting.namespace = self
             self.settings[name] = setting
 
+    @functools.cache
     def get_config_file_content(self):
-        if hasattr(self, '_cache_file_data'):
-            file_data = self._cache_file_data
-        else:
-            filepath = self.get_setting_value(
-                name='CONFIGURATION_FILEPATH'
-            )
+        filepath = self.get_setting_value(
+            name='CONFIGURATION_FILEPATH'
+        )
 
-            file_data = self.load_config_file(filepath=filepath) or {}
-            self._cache_file_data = file_data
+        return self.load_config_file(filepath=filepath) or {}
 
-        return file_data
+    def get_setting(self, name):
+        return self.settings[name]
 
     def get_setting_value(self, name):
         """
@@ -80,9 +80,11 @@ class SettingNamespaceSingleton:
         namespace.
         """
         try:
-            return self.settings[name].get_value()
+            setting = self.get_setting(name=name)
         except KeyError:
             raise SettingNamespaceSingleton.SettingNotFound
+        else:
+            return setting.get_value()
 
     def get_values(self, only_critical=False):
         """
@@ -110,12 +112,16 @@ class SettingNamespaceSingleton:
 
         return result
 
-    def update_globals(self, only_critical=False):
+    def update_globals(self, global_symbol_table=None, only_critical=False):
         """
         Insert all resolved values into the symbol table of the caller.
         """
         result = self.get_values(only_critical=only_critical)
-        self.global_symbol_table.update(result)
+
+        if global_symbol_table is None:
+            global_symbol_table = self.global_symbol_table
+
+        global_symbol_table.update(result)
 
 
 class BaseSetting:
@@ -196,22 +202,25 @@ class BaseSetting:
 
     def get_value(self):
         try:
-            template_string = self.get_template_string()
+            return self.namespace._setting_overrides[self.name]
         except KeyError:
-            return self._get_value()
-        else:
-            setting_template = Template(template_string=template_string)
-            context = {}
-            context.update(self.namespace.global_symbol_table)
-            context.update(
-                self.namespace.get_config_file_content()
-            )
-            context.update(os.environ)
+            try:
+                template_string = self.get_template_string()
+            except KeyError:
+                return self._get_value()
+            else:
+                setting_template = Template(template_string=template_string)
+                context = {}
+                context.update(self.namespace.global_symbol_table)
+                context.update(
+                    self.namespace.get_config_file_content()
+                )
+                context.update(os.environ)
 
-            value = setting_template.render(context=context)
-            value = BaseSetting.safe_string_value_to_string(value=value)
+                value = setting_template.render(context=context)
+                value = BaseSetting.safe_string_value_to_string(value=value)
 
-            return value
+                return value
 
     def load_value_from_config_file(self):
         try:
@@ -240,6 +249,9 @@ class BaseSetting:
     def load_value_from_global_system_table(self):
         return self.namespace.global_symbol_table[self.name]
 
+    def set_value(self, value):
+        self.namespace._setting_overrides[self.name] = value
+
 
 class FilesystemBootstrapSetting(BaseSetting):
     def __init__(self, name, critical=False, path_parts=None):
@@ -266,12 +278,17 @@ class FilesystemBootstrapSetting(BaseSetting):
         """
         The default value of this setting class is not static but calculated.
         """
-        return os.path.join(
-            # Can't use BASE_DIR from django.conf.settings
-            # Use it from the global_symbol_table which should be the same
-            self.namespace.global_symbol_table.get('BASE_DIR'),
-            *self.path_parts
-        )
+        # Can't use BASE_DIR from django.conf.settings.
+        # Use it from the `global_symbol_table` which should be the
+        # same.
+        try:
+            BASE_DIR = self.namespace._setting_overrides['MEDIA_ROOT']
+        except KeyError:
+            BASE_DIR = self.namespace.global_symbol_table.get(
+                'MEDIA_ROOT', self.namespace.global_symbol_table['BASE_DIR']
+            )
+
+        return os.path.join(BASE_DIR, *self.path_parts)
 
     def get_template_string(self):
         try:
@@ -306,6 +323,11 @@ SettingNamespaceSingleton.register_setting(
     klass=MediaBootstrapSetting, kwargs={
         'critical': True, 'path_parts': (CONFIGURATION_FILENAME,)
     }, name='CONFIGURATION_FILEPATH'
+)
+SettingNamespaceSingleton.register_setting(
+    klass=BaseSetting, kwargs={
+        'critical': True, 'has_default': True, 'default_value': False
+    }, name='CONFIGURATION_FILE_IGNORE'
 )
 
 # MediaBootstrapSetting settings
