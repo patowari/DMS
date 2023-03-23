@@ -3,7 +3,7 @@ from ..models import Document, TrashedDocument
 from .base import GenericDocumentTestCase
 
 
-class TrashedDocumentTestCase(GenericDocumentTestCase):
+class TrashedDocumentModelTestCase(GenericDocumentTestCase):
     auto_upload_test_document = False
 
     def setUp(self):
@@ -39,7 +39,7 @@ class TrashedDocumentTestCase(GenericDocumentTestCase):
         self.assertEqual(Document.valid.count(), 0)
 
 
-class TrashedDocumentPageTestCase(GenericDocumentTestCase):
+class TrashedDocumentPageModelTestCase(GenericDocumentTestCase):
     def test_trashed_document_page_count(self):
         page_count = self._test_document.version_active.pages.count()
         self._test_document.delete()
@@ -51,7 +51,7 @@ class TrashedDocumentPageTestCase(GenericDocumentTestCase):
         )
 
 
-class TrashedDocumentAPITestCase(GenericDocumentTestCase):
+class TrashedDocumentModelAPITestCase(GenericDocumentTestCase):
     def test_trashed_document_api_image_url(self):
         self._test_document.delete()
         test_trashed_document = TrashedDocument.objects.get(
