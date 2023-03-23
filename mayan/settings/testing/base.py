@@ -1,4 +1,15 @@
+from tempfile import mkdtemp
+
 from .. import *  # NOQA
+
+MEDIA_ROOT_TEMPORARY = mkdtemp()
+MEDIA_ROOT = MEDIA_ROOT_TEMPORARY
+setting_namespace.get_setting(name='MEDIA_ROOT').set_value(
+    value=MEDIA_ROOT_TEMPORARY
+)
+setting_namespace.update_globals(
+    global_symbol_table=globals()
+)
 
 AUTHENTICATION_BACKEND = 'mayan.apps.authentication.authentication_backends.AuthenticationBackendModelDjangoDefault'
 

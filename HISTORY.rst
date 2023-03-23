@@ -50,6 +50,9 @@
   - Support passing a ``global_symbol_table`` argument when updating the
     setting namespace global symbol table.
 
+- Create a temporary ``MEDIA_ROOT`` folder when running tests. This change
+  allows futher isolation of testing artifacts.
+
 4.4.5 (2023-03-11)
 ==================
 - Merge version 4.3.6 documents app migration 80 workaround.

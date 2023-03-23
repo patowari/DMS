@@ -1,3 +1,5 @@
+import shutil
+
 from django import apps
 from django.conf import settings
 from django.test.runner import DiscoverRunner
@@ -58,3 +60,7 @@ class MayanTestRunner(DiscoverRunner):
             ]
 
         return super().build_suite(*args, **kwargs)
+
+    def run_tests(self, *args, **kwargs):
+        super().run_tests(*args, **kwargs)
+        shutil.rmtree(path=settings.MEDIA_ROOT_TEMPORARY)
