@@ -56,7 +56,8 @@ class DownloadFile(
         verbose_name_plural = _('Download files')
 
     def __str__(self):
-        return self.filename or self.label
+        # Ensure the returned value is not a promise.
+        return str(self.filename or self.label)
 
     @method_event(
         event_manager_class=EventManagerMethodAfter,
