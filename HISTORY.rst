@@ -52,6 +52,9 @@
 
 - Create a temporary ``MEDIA_ROOT`` folder when running tests. This change
   allows futher isolation of testing artifacts.
+- Add support for document download message templating. This allows
+  customizing the message users receive when their document or document
+  bundle is ready for download.
 
 4.4.5 (2023-03-11)
 ==================

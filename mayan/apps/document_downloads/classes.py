@@ -2,18 +2,20 @@ from furl import furl
 from zipfile import ZipFile
 
 from django.apps import apps
+from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse
+from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.locales.utils import to_language
-
-from .literals import (
-    DOCUMENT_FILE_DOWNLOAD_MESSAGE_BODY,
-    DOCUMENT_FILE_DOWNLOAD_MESSAGE_SUBJECT
-)
+from mayan.apps.templating.classes import Template
 
 
 class DocumentFileCompressor:
+    context_key_list = (
+        'document_list', 'download_file', 'download_list_url', 'download_url'
+    )
+
     def __init__(self, queryset):
         self.queryset = queryset
 
@@ -31,6 +33,11 @@ class DocumentFileCompressor:
     def compress_to_download_file(
         self, organization_installation_url='', filename=None, user=None
     ):
+        # Hidden import
+        from .settings import (
+            setting_message_body_template, setting_message_subject_template
+        )
+
         DownloadFile = apps.get_model(
             app_label='storage', model_name='DownloadFile'
         )
@@ -68,18 +75,44 @@ class DocumentFileCompressor:
                     )
                 ).tostr()
 
+                context_dictionary = {
+                    'document_list': self.queryset,
+                    'download_file': download_file,
+                    'download_list_url': download_list_url,
+                    'download_url': download_url
+                }
+
+                if set(context_dictionary.keys()) != set(DocumentFileCompressor.context_key_list):
+                    raise ImproperlyConfigured(
+                        'The expected and the actual message template '
+                        'context keys do not match. Update the expected key '
+                        'list to match the actual key list being passed '
+                        'to the template.'
+                    )
+
+                message_body_template = Template(
+                    template_string=to_language(
+                        language=user.locale_profile.language,
+                        promise=setting_message_body_template.value
+                    )
+                )
+                messge_body_content = message_body_template.render(
+                    context=context_dictionary
+                )
+
+                message_subject_template = Template(
+                    template_string=to_language(
+                        language=user.locale_profile.language,
+                        promise=setting_message_subject_template.value
+                    )
+                )
+                message_subject_text = strip_tags(
+                    message_subject_template.render(
+                        context=context_dictionary
+                    )
+                )
+
                 Message.objects.create(
-                    sender_object=download_file,
-                    user=user,
-                    subject=to_language(
-                        language=user.locale_profile.language,
-                        promise=DOCUMENT_FILE_DOWNLOAD_MESSAGE_SUBJECT
-                    ),
-                    body=to_language(
-                        language=user.locale_profile.language,
-                        promise=DOCUMENT_FILE_DOWNLOAD_MESSAGE_BODY
-                    ) % {
-                        'download_list_url': download_list_url,
-                        'download_url': download_url
-                    }
+                    body=messge_body_content, sender_object=download_file,
+                    subject=message_subject_text, user=user
                 )
