@@ -32,6 +32,9 @@
 - Improve template initialization to support custom tag loading. Closes
   GitLab issue #1135. Thanks to Alexander Schlüter (@alexschlueter) for the
   request and implementation suggestion.
+- Update the cache and cache partition purge loop to continue executing even
+  when there are files that cannot be purged. Cache partition files will be
+  skipped and retried on the next purge execution.
 
 4.4.5 (2023-03-11)
 ==================

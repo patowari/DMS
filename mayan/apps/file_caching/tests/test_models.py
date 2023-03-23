@@ -296,6 +296,47 @@ class CacheModelTestCase(CacheTestMixin, BaseTestCase):
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
+    def test_purge_on_error(self):
+        self._silence_logger(name='mayan.apps.file_caching.model_mixins')
+
+        test_case_instance = self
+
+        def fake_method_delete(self, *args, **kwargs):
+            if self.pk == test_case_instance._test_cache_partition_files[0].pk:
+                raise Exception
+
+            return super(CachePartitionFile, self).delete(*args, **kwargs)
+
+        self._create_test_cache()
+        self._create_test_cache_partition()
+        self._create_test_cache_partition_file()
+        self._create_test_cache_partition_file()
+
+        self._clear_events()
+
+        test_cache_partition_file_count = self._test_cache_partition.files.count()
+
+        with mock.patch('mayan.apps.file_caching.models.CachePartitionFile.delete', fake_method_delete):
+            self._test_cache.purge(user=self._test_case_user)
+
+        self.assertEqual(
+            self._test_cache_partition.files.count(),
+            test_cache_partition_file_count - 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 2)
+
+        self.assertEqual(events[0].action_object, self._test_cache)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_cache_partition)
+        self.assertEqual(events[0].verb, event_cache_partition_purged.id)
+
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, self._test_cache)
+        self.assertEqual(events[1].verb, event_cache_purged.id)
+
 
 class CachePartitionModelTestCase(CacheTestMixin, BaseTestCase):
     def test_cache_create(self):
@@ -309,3 +350,39 @@ class CachePartitionModelTestCase(CacheTestMixin, BaseTestCase):
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
+
+    def test_purge_on_error(self):
+        self._silence_logger(name='mayan.apps.file_caching.model_mixins')
+
+        test_case_instance = self
+
+        def fake_method_delete(self, *args, **kwargs):
+            if self.pk == test_case_instance._test_cache_partition_files[0].pk:
+                raise Exception
+
+            return super(CachePartitionFile, self).delete(*args, **kwargs)
+
+        self._create_test_cache()
+        self._create_test_cache_partition()
+        self._create_test_cache_partition_file()
+        self._create_test_cache_partition_file()
+
+        self._clear_events()
+
+        test_cache_partition_file_count = self._test_cache_partition.files.count()
+
+        with mock.patch('mayan.apps.file_caching.models.CachePartitionFile.delete', fake_method_delete):
+            self._test_cache_partition.purge(user=self._test_case_user)
+
+        self.assertEqual(
+            self._test_cache_partition.files.count(),
+            test_cache_partition_file_count - 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_cache_partition)
+        self.assertEqual(events[0].verb, event_cache_partition_purged.id)

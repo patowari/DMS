@@ -284,7 +284,13 @@ class CachePartitionBusinessLogicMixin:
     def purge(self, user):
         self._event_actor = user
         for parition_file in self.files.all():
-            parition_file.delete()
+            try:
+                parition_file.delete()
+            except Exception as exception:
+                logger.error(
+                    'Unable to purge cache partition file ID: %d; %s',
+                    parition_file.pk, exception
+                )
 
 
 class CachePartitionFileBusinessLogicMixin:
