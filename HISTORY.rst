@@ -35,6 +35,9 @@
 - Update the cache and cache partition purge loop to continue executing even
   when there are files that cannot be purged. Cache partition files will be
   skipped and retried on the next purge execution.
+- Update the stale shared uploaded file and download file deletion loop to
+  continue executing even when there are files that cannot be deleted.
+  Remaining skipped files will be retried on the next iteration.
 
 4.4.5 (2023-03-11)
 ==================

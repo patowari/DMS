@@ -67,31 +67,46 @@ class ArchiveClassTestCaseMixin:
 
 
 class DownloadFileTestMixin(PermissionTestMixin):
+    def setUp(self):
+        super().setUp()
+        self._test_download_file_list = []
+
     def _create_test_download_file(self, content=None, user=None):
         file_content = None
 
+        test_download_file_count = len(
+            self._test_download_file_list
+        )
+
+        test_download_file_filename = '{}_{}'.format(
+            TEST_DOWNLOAD_FILE_CONTENT_FILE_NAME,
+            test_download_file_count
+        )
+
         if content:
             file_content = ContentFile(
-                content=content, name=TEST_DOWNLOAD_FILE_CONTENT_FILE_NAME
+                content=content, name=test_download_file_filename
             )
 
-        self.test_download_file = DownloadFile.objects.create(
+        self._test_download_file = DownloadFile.objects.create(
             file=file_content, user=user or self._test_case_user
         )
+
+        self._test_download_file_list.append(self._test_download_file)
 
 
 class DownloadFileViewTestMixin:
     def _request_test_download_file_delete_view(self):
         return self.post(
             viewname='storage:download_file_delete', kwargs={
-                'download_file_id': self.test_download_file.pk
+                'download_file_id': self._test_download_file.pk
             }
         )
 
     def _request_test_download_file_download_view(self):
         return self.get(
             viewname='storage:download_file_download', kwargs={
-                'download_file_id': self.test_download_file.pk
+                'download_file_id': self._test_download_file.pk
             }
         )
 
@@ -121,16 +136,31 @@ class StorageProcessorTestMixin:
 
 
 class SharedUploadedFileTestMixin:
+    def setUp(self):
+        super().setUp()
+        self._test_shared_uploaded_file_list = []
+
     def _create_test_shared_uploaded_file(self, content=None):
         file_content = None
 
+        test_shared_uploaded_file_count = len(
+            self._test_shared_uploaded_file_list
+        )
+        test_shared_uploaded_file_filename = '{}_{}'.format(
+            TEST_SHARED_UPLOADED_FILE_FILENAME,
+            test_shared_uploaded_file_count
+        )
+
         if content:
             file_content = ContentFile(
-                content=content, name=TEST_SHARED_UPLOADED_FILE_FILENAME
+                content=content, name=test_shared_uploaded_file_filename
             )
 
-        self.test_download_file = SharedUploadedFile.objects.create(
-            file=file_content, filename=TEST_SHARED_UPLOADED_FILE_FILENAME
+        self._test_shared_uploaded_file = SharedUploadedFile.objects.create(
+            file=file_content, filename=test_shared_uploaded_file_filename
+        )
+        self._test_shared_uploaded_file_list.append(
+            self._test_shared_uploaded_file
         )
 
 

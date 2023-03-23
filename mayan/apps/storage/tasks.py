@@ -15,14 +15,9 @@ def task_download_files_stale_delete():
         app_label='storage', model_name='DownloadFile'
     )
 
-    queryset = DownloadFile.objects.stale()
+    logger.debug('Start')
 
-    logger.debug(
-        'Queryset count: %d', queryset.count()
-    )
-
-    for expired_download in queryset.all():
-        expired_download.delete()
+    DownloadFile.objects.stale_delete()
 
     logger.debug('Finished')
 
@@ -35,13 +30,8 @@ def task_shared_upload_stale_delete():
         app_label='storage', model_name='SharedUploadedFile'
     )
 
-    queryset = SharedUploadedFile.objects.stale()
+    logger.debug('Start')
 
-    logger.debug(
-        'Queryset count: %d', queryset.count()
-    )
-
-    for expired_upload in queryset.all():
-        expired_upload.delete()
+    SharedUploadedFile.objects.stale_delete()
 
     logger.debug('Finished')
