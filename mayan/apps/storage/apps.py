@@ -22,6 +22,7 @@ from .permissions import (
 class StorageApp(MayanAppConfig):
     app_namespace = 'storage'
     app_url = 'storage'
+    has_rest_api = True
     has_tests = True
     name = 'mayan.apps.storage'
     verbose_name = _('Storage')

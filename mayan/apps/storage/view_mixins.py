@@ -1,7 +1,7 @@
 from mayan.apps.acls.models import AccessControlList
 
 
-class OwnerPlusFilteresQuerysetViewMixin:
+class OwnerPlusFilteredQuerysetViewMixin:
     def get_source_queryset(self):
         queryset = super().get_source_queryset()
         queryset_user = queryset.filter(user=self.request.user)

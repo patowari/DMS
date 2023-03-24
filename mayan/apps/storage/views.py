@@ -14,11 +14,11 @@ from .permissions import (
     permission_download_file_delete, permission_download_file_download,
     permission_download_file_view
 )
-from .view_mixins import OwnerPlusFilteresQuerysetViewMixin
+from .view_mixins import OwnerPlusFilteredQuerysetViewMixin
 
 
 class DownloadFileDeleteView(
-    OwnerPlusFilteresQuerysetViewMixin, MultipleObjectDeleteView
+    OwnerPlusFilteredQuerysetViewMixin, MultipleObjectDeleteView
 ):
     model = DownloadFile
     optional_object_permission = permission_download_file_delete
@@ -35,7 +35,7 @@ class DownloadFileDeleteView(
 
 
 class DownloadFileDownloadViewView(
-    OwnerPlusFilteresQuerysetViewMixin, SingleObjectDownloadView
+    OwnerPlusFilteredQuerysetViewMixin, SingleObjectDownloadView
 ):
     model = DownloadFile
     optional_object_permission = permission_download_file_download
@@ -52,7 +52,7 @@ class DownloadFileDownloadViewView(
 
 
 class DownloadFileListView(
-    OwnerPlusFilteresQuerysetViewMixin, SingleObjectListView
+    OwnerPlusFilteredQuerysetViewMixin, SingleObjectListView
 ):
     model = DownloadFile
     optional_object_permission = permission_download_file_view

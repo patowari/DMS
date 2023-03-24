@@ -66,6 +66,29 @@ class ArchiveClassTestCaseMixin:
             )
 
 
+class DownloadFileAPIViewTestMixin:
+    def _request_test_download_file_delete_api_view(self):
+        return self.delete(
+            viewname='rest_api:download_file-detail',
+            kwargs={'download_file_id': self._test_download_file.pk}
+        )
+
+    def _request_test_download_file_detail_api_view(self):
+        return self.get(
+            viewname='rest_api:download_file-detail',
+            kwargs={'download_file_id': self._test_download_file.pk}
+        )
+
+    def _request_test_download_file_download_api_view(self):
+        return self.get(
+            viewname='rest_api:download_file-download',
+            kwargs={'download_file_id': self._test_download_file.pk}
+        )
+
+    def _request_test_download_file_list_api_view(self):
+        return self.get(viewname='rest_api:download_file-list')
+
+
 class DownloadFileTestMixin(PermissionTestMixin):
     def setUp(self):
         super().setUp()

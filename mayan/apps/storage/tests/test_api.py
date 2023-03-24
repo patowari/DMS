@@ -1,5 +1,7 @@
+from rest_framework import status
+
 from mayan.apps.common.tests.literals import TEST_BINARY_CONTENT
-from mayan.apps.testing.tests.base import GenericViewTestCase
+from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
     event_download_file_deleted, event_download_file_downloaded
@@ -10,11 +12,11 @@ from ..permissions import (
     permission_download_file_view
 )
 
-from .mixins import DownloadFileTestMixin, DownloadFileViewTestMixin
+from .mixins import DownloadFileTestMixin, DownloadFileAPIViewTestMixin
 
 
-class DownloadFileViewTestCase(
-    DownloadFileTestMixin, DownloadFileViewTestMixin, GenericViewTestCase
+class DownloadFileViewAPITestCase(
+    DownloadFileTestMixin, DownloadFileAPIViewTestMixin, BaseAPITestCase
 ):
     def setUp(self):
         super().setUp()
@@ -27,9 +29,8 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_delete_view()
-        self.assertEqual(response.status_code, 404)
-
+        response = self._request_test_download_file_delete_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(
             DownloadFile.objects.count(), download_file_count
         )
@@ -49,9 +50,8 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_delete_view()
-        self.assertEqual(response.status_code, 302)
-
+        response = self._request_test_download_file_delete_api_view()
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(
             DownloadFile.objects.count(), download_file_count - 1
         )
@@ -71,9 +71,8 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_delete_view()
-        self.assertEqual(response.status_code, 302)
-
+        response = self._request_test_download_file_delete_api_view()
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(
             DownloadFile.objects.count(), download_file_count - 1
         )
@@ -98,9 +97,8 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_delete_view()
-        self.assertEqual(response.status_code, 302)
-
+        response = self._request_test_download_file_delete_api_view()
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(
             DownloadFile.objects.count(), download_file_count - 1
         )
@@ -120,17 +118,13 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_download_view()
-        self.assertEqual(response.status_code, 404)
+        response = self._request_test_download_file_download_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_download_file_download_view_not_owner_with_access(self):
-        # Set the expected_content_types for
-        # common.tests.mixins.ContentTypeCheckMixin
-        self.expected_content_types = ('text/plain',)
-
         self._create_test_download_file(
             content=TEST_BINARY_CONTENT, user=self._test_user
         )
@@ -142,13 +136,13 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_download_view()
-        self.assertEqual(response.status_code, 200)
+        response = self._request_test_download_file_download_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        with self._test_download_file.open(mode='rb') as file_object:
+        with self._test_download_file.open() as file_object:
             self.assert_download_response(
                 response=response, content=file_object.read(),
-                filename=str(self._test_download_file),
+                filename=self._test_download_file.filename,
                 mime_type='text/plain'
             )
 
@@ -161,21 +155,17 @@ class DownloadFileViewTestCase(
         self.assertEqual(events[0].verb, event_download_file_downloaded.id)
 
     def test_download_file_download_view_owner_no_permission(self):
-        # Set the expected_content_types for
-        # common.tests.mixins.ContentTypeCheckMixin
-        self.expected_content_types = ('text/plain',)
-
         self._create_test_download_file(content=TEST_BINARY_CONTENT)
 
         self._clear_events()
 
-        response = self._request_test_download_file_download_view()
-        self.assertEqual(response.status_code, 200)
+        response = self._request_test_download_file_download_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        with self._test_download_file.open(mode='rb') as file_object:
+        with self._test_download_file.open() as file_object:
             self.assert_download_response(
                 response=response, content=file_object.read(),
-                filename=str(self._test_download_file),
+                filename=self._test_download_file.filename,
                 mime_type='text/plain'
             )
 
@@ -188,10 +178,6 @@ class DownloadFileViewTestCase(
         self.assertEqual(events[0].verb, event_download_file_downloaded.id)
 
     def test_download_file_download_view_owner_with_access(self):
-        # Set the expected_content_types for
-        # common.tests.mixins.ContentTypeCheckMixin
-        self.expected_content_types = ('text/plain',)
-
         self._create_test_download_file(content=TEST_BINARY_CONTENT)
 
         self.grant_access(
@@ -201,13 +187,13 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_download_view()
-        self.assertEqual(response.status_code, 200)
+        response = self._request_test_download_file_download_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        with self._test_download_file.open(mode='rb') as file_object:
+        with self._test_download_file.open() as file_object:
             self.assert_download_response(
                 response=response, content=file_object.read(),
-                filename=str(self._test_download_file),
+                filename=self._test_download_file.filename,
                 mime_type='text/plain'
             )
 
@@ -224,11 +210,9 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_list_view()
-        self.assertNotContains(
-            response=response, text=str(self._test_download_file),
-            status_code=200
-        )
+        response = self._request_test_download_file_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['count'], 0)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -243,11 +227,10 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_list_view()
-
-        self.assertContains(
-            response=response, text=str(self._test_download_file),
-            status_code=200
+        response = self._request_test_download_file_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.data['results'][0]['id'], self._test_download_file.id
         )
 
         events = self._get_test_events()
@@ -258,10 +241,10 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_list_view()
-        self.assertContains(
-            response=response, text=str(self._test_download_file),
-            status_code=200
+        response = self._request_test_download_file_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.data['results'][0]['id'], self._test_download_file.id
         )
 
         events = self._get_test_events()
@@ -277,10 +260,10 @@ class DownloadFileViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_download_file_list_view()
-        self.assertContains(
-            response=response, text=str(self._test_download_file),
-            status_code=200
+        response = self._request_test_download_file_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.data['results'][0]['id'], self._test_download_file.id
         )
 
         events = self._get_test_events()

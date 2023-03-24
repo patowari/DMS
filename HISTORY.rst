@@ -55,6 +55,8 @@
 - Add support for document download message templating. This allows
   customizing the message users receive when their document or document
   bundle is ready for download.
+- Add download file area API views. This API allows listing, deleting, and
+  download actions.
 
 4.4.5 (2023-03-11)
 ==================
