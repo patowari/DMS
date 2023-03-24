@@ -20,7 +20,9 @@ class ConfigEnvCopier:
             except ValueError:
                 clean_value = '\'{}\''.format(value)
 
-            print('{} = {}'.format(key, clean_value))
+            print(
+                '{} = {}'.format(key, clean_value)
+            )
 
 
 if __name__ == '__main__':

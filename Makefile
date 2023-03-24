@@ -181,10 +181,12 @@ translations-all: translations-source-clear translations-source-fuzzy-remove tra
 
 increase-version: ## Increase the version number of the entire project's files.
 	@VERSION=`grep "__version__ =" mayan/__init__.py| cut -d\' -f 2|./contrib/scripts/increase_version.py - $(PART)`; \
-	BUILD=`echo $$VERSION|awk '{split($$VERSION,a,"."); printf("0x%02d%02d%02d\n", a[1],a[2], a[3])}'`; \
+	VERSION_PYTHON=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}+${LOCAL_VERSION}"; fi` \
+	VERSION_DOCKER=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}-${LOCAL_VERSION}"; fi` \
+	BUILD=`echo $$VERSION_PYTHON|awk '{split($$VERSION_PYTHON,a,"."); printf("0x%02d%02d%02d\n", a[1],a[2], a[3])}'`; \
 	sed -i -e "s/__build__ = 0x[0-9]*/__build__ = $${BUILD}/g" mayan/__init__.py; \
-	sed -i -e "s/__version__ = '[0-9\.]*'/__version__ = '$${VERSION}'/g" mayan/__init__.py; \
-	echo $$VERSION > docker/rootfs/version
+	sed -i -e "s/__version__ = '[0-9\.]*'/__version__ = '$$VERSION_PYTHON'/g" mayan/__init__.py; \
+	echo $$VERSION_DOCKER > docker/rootfs/version
 	make generate-setup
 
 python-test-release: ## Package (sdist and wheel) and upload to the PyPI test server.

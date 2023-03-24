@@ -7,4 +7,15 @@ def load_env_file(filename='config.env'):
 
                 result[key] = value
 
+    if filename != 'config-local.env':
+        try:
+            result.update(
+                load_env_file(filename='config-local.env')
+            )
+        except FileNotFoundError:
+            """
+            Non fatal. Just means this deployment does not overrides the
+            default `config.env` file values.
+            """
+
     return result

@@ -7,6 +7,7 @@ import sys
 VERSION_PART_MAJOR = 0
 VERSION_PART_MINOR = 1
 VERSION_PART_MICRO = 2
+VERSION_PART_LOCAL = 3
 
 
 class Version:
@@ -17,6 +18,8 @@ class Version:
     Version: 1.0
     >>> Version('1.3.2')
     Version: 1.3.2
+    >>> Version('1.3.2+local.1')
+    Version: 1.3.2+local.1
     >>> Version('1').increment_part(part=VERSION_PART_MAJOR)
     Version: 2
     >>> Version('1').increment_part(part=VERSION_PART_MINOR)
@@ -53,6 +56,12 @@ class Version:
     Version: 1.3
     >>> Version('1.2.3').increment_micro()
     Version: 1.2.4
+    >>> Version('1.2.3+local.1').increment_major()
+    Version: 2+local.1
+    >>> Version('1.2.3+local.1').increment_minor()
+    Version: 1.3+local.1
+    >>> Version('1.2.3+local.1').increment_micro()
+    Version: 1.2.4+local.1
     >>> Version('1.2.3').as_major()
     '1'
     >>> Version('1.2.3').as_minor()
@@ -60,30 +69,106 @@ class Version:
     >>> Version('1.2.3').as_micro()
     '1.2.3'
     >>> Version('1.2').as_micro()
+    ''
+    >>> Version('1.2.3+local.1').as_major()
+    '1+local.1'
+    >>> Version('1.2.3+local.1').as_minor()
+    '1.2+local.1'
+    >>> Version('1.2.3+local.1').as_micro()
+    '1.2.3+local.1'
+    >>> Version('1+local.1').as_upstream()
+    '1'
+    >>> Version('1.2+local.1').as_upstream()
+    '1.2'
+    >>> Version('1.2.3+local.1').as_upstream()
+    '1.2.3'
+    >>> Version('1.2+local.1').as_micro()
+    ''
     """
     def __init__(self, version_string):
         self._version_string = version_string
-        self._version_parts = version_string.split('.')
+        self._version_parts = []
+        self._version_parts_local = None
+
+        part = []
+        version_part_flag = True
+        for character in self._version_string:
+            if version_part_flag:
+                if character == '+':
+                    version_part_flag = False
+                    self._version_parts.append(
+                        ''.join(part)
+                    )
+                    part = []
+                elif character != '.':
+                    part.append(character)
+                else:
+                    self._version_parts.append(
+                        ''.join(part)
+                    )
+                    part = []
+            else:
+                part.append(character)
+
+        if version_part_flag:
+            self._version_parts.append(
+                ''.join(part)
+            )
+        else:
+            self._version_parts_local = ''.join(part)
 
     def _get_version_part(self, index):
-        try:
-            return self._version_parts[index]
-        except IndexError:
-            return 0
+        if index == VERSION_PART_LOCAL:
+            return self._version_parts_local
+        else:
+            try:
+                return self._version_parts[index]
+            except IndexError:
+                return 0
 
     def __repr__(self):
-        return 'Version: {}'.format(self.get_version_string())
+        return 'Version: {}'.format(
+            self.get_version_string()
+        )
+
+    def as_upstream(self):
+        parts = [self.major]
+
+        if self.minor:
+            parts.append(self.minor)
+        if self.micro:
+            parts.append(self.micro)
+
+        return '.'.join(parts)
 
     def as_major(self):
-        return self.major
+        result = self.major
+
+        if self.local and result:
+            result = '{}+{}'.format(result, self.local)
+
+        return result
 
     def as_minor(self):
+        result = ''
+
         if self.minor:
-            return '{}.{}'.format(self.major, self.minor)
+            result = '{}.{}'.format(self.major, self.minor)
+
+        if self.local and result:
+            result = '{}+{}'.format(result, self.local)
+
+        return result
 
     def as_micro(self):
+        result = ''
         if self.micro:
-            return '{}.{}.{}'.format(self.major, self.minor, self.micro)
+            result = '{}.{}.{}'.format(self.major, self.minor, self.micro)
+
+        if self.local and result:
+            result = '{}+{}'.format(result, self.local)
+
+        return result
 
     def increment_major(self):
         return self.increment_part(part=VERSION_PART_MAJOR)
@@ -96,9 +181,11 @@ class Version:
 
     def increment_part(self, part):
         # Fill version parts if the requested part is lower than what is
-        # available
+        # available.
         self._version_parts.extend(
-            ['0'] * (part - len(self._version_parts) + 1)
+            ['0'] * (
+                part - len(self._version_parts) + 1
+            )
         )
 
         try:
@@ -125,10 +212,19 @@ class Version:
         self._version_parts = self._version_parts[0:part + 1]
         self._version_string = '.'.join(self._version_parts)
 
+        if self.local:
+            self._version_string = '{}+{}'.format(
+                self._version_string, self.local
+            )
+
         return self
 
     def get_version_string(self):
         return self._version_string
+
+    @property
+    def local(self):
+        return self._get_version_part(VERSION_PART_LOCAL)
 
     @property
     def major(self):
@@ -150,7 +246,7 @@ if __name__ == '__main__':
 
     if len(sys.argv) == 1:
         print(
-            'usage: [version] <part to increase [major, minor, micro]> <-test>'
+            'usage: [version] <part to retrieve [major, minor, micro]> <-test>'
         )
         exit(0)
 
@@ -171,6 +267,8 @@ if __name__ == '__main__':
         output = version.as_minor() or ''
     elif part == 'micro':
         output = version.as_micro() or ''
+    elif part == 'upstream':
+        output = version.as_upstream() or ''
     else:
         print('Unknown part')
         exit(1)

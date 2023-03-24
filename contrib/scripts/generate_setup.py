@@ -15,6 +15,7 @@ sys.path.insert(1, os.path.abspath('.'))
 
 import mayan
 from mayan.settings import BASE_DIR as mayan_base_dir
+from mayan.settings import literals
 
 try:
     BUILD = sh.Command('git').bake('describe', '--tags', '--always', 'HEAD')
@@ -32,7 +33,9 @@ MAYAN_TEMPLATE = '__init__.py.tmpl'
 def generate_build_number():
     if BUILD and DATE:
         try:
-            result = '{}_{}'.format(BUILD(), DATE()).replace('\n', '')
+            result = '{}_{}'.format(
+                BUILD(), DATE()
+            ).replace('\n', '')
         except sh.ErrorReturnCode_128:
             result = ''
     else:
@@ -41,7 +44,11 @@ def generate_build_number():
 
 
 def generate_commit_timestamp():
-    datetime = parser.parse(force_str(s=DATE()))
+    datetime = parser.parse(
+        force_str(
+            s=DATE()
+        )
+    )
     return datetime.strftime('%y%m%d%H%M')
 
 
@@ -55,11 +62,15 @@ def get_requirements(base_directory, filename):
                 directory, filename = os.path.split(line)
                 result.extend(
                     get_requirements(
-                        base_directory=os.path.join(base_directory, directory), filename=filename
+                        base_directory=os.path.join(
+                            base_directory, directory
+                        ), filename=filename
                     )
                 )
             elif not line.startswith('\n'):
-                result.append(line.split('\n')[0])
+                result.append(
+                    line.split('\n')[0]
+                )
 
     return result
 
@@ -91,6 +102,13 @@ if __name__ == '__main__':
             mayan.__version__.split('+')[0].split('.')
         )
 
+        local_version = getattr(literals, 'LOCAL_VERSION')
+
+        if local_version:
+            version_final = '{}+{}'.format(upstream_version, local_version)
+        else:
+            version_final = upstream_version
+
         upstream_build = '0x{:06X}'.format(mayan.__build__)
 
         result = Template(template).render(
@@ -99,7 +117,7 @@ if __name__ == '__main__':
                     'build': upstream_build,
                     'build_string': generate_build_number(),
                     'timestamp': generate_commit_timestamp(),
-                    'version': upstream_version
+                    'version': version_final
                 }
             )
         )

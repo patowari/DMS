@@ -57,6 +57,8 @@
   bundle is ready for download.
 - Add download file area API views. This API allows listing, deleting, and
   download actions.
+- Support local versions. Added explicit support for pep-0440 local version
+  labels for custom builds.
 
 4.4.5 (2023-03-11)
 ==================
