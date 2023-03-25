@@ -122,15 +122,27 @@ class DocumentTypeManager(models.Manager):
         logger.info(msg='Finished')
 
     def document_stubs_delete(self):
+        logger.info(msg='Executing')
+
         for document_type in self.all():
+            logger.info(
+                'Checking expired document stubs of document type: %s',
+                document_type
+            )
+
             if document_type.document_stub_pruning_enabled:
                 stale_stub_documents = document_type.documents.filter(
                     is_stub=True, datetime_created__lt=now() - timedelta(
                         seconds=document_type.document_stub_expiration_interval
                     )
                 )
+                logger.debug(
+                    'Deleting %d document stubs', stale_stub_documents.count()
+                )
                 for stale_stub_document in stale_stub_documents:
                     stale_stub_document.delete(to_trash=False)
+
+        logger.info(msg='Finished')
 
     def get_by_natural_key(self, label):
         return self.get(label=label)

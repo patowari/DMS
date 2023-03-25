@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
                 blank=True, db_index=True, editable=False,
                 help_text='The size of the file in bytes.', null=True,
                 verbose_name='Size'
-            ),
+            )
         )
     ]
