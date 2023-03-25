@@ -14,43 +14,10 @@ from .literals import (
 )
 from .mixins.document_type_mixins import (
     DocumentQuickLabelViewTestMixin,
-    DocumentTypeDeletionPoliciesViewTestMixin,
     DocumentTypeFilenameGeneratorViewTestMixin,
     DocumentTypeQuickLabelTestMixin, DocumentTypeQuickLabelViewTestMixin,
-    DocumentTypeViewTestMixin
+    DocumentTypeRetentionPoliciesViewTestMixin, DocumentTypeViewTestMixin
 )
-
-
-class DocumentTypeDeletionPoliciesViewTestCase(
-    DocumentTypeDeletionPoliciesViewTestMixin, GenericDocumentViewTestCase
-):
-    auto_upload_test_document = False
-
-    def test_document_type_deletion_policies_get_view_no_permission(self):
-        response = self._request_test_document_type_policies_get_view()
-        self.assertEqual(response.status_code, 404)
-
-    def test_document_type_deletion_policies_get_view_access(self):
-        self.grant_access(
-            obj=self._test_document_type,
-            permission=permission_document_type_edit
-        )
-
-        response = self._request_test_document_type_policies_get_view()
-        self.assertEqual(response.status_code, 200)
-
-    def test_document_type_deletion_policies_post_view_no_permission(self):
-        response = self._request_test_document_type_policies_post_view()
-        self.assertEqual(response.status_code, 404)
-
-    def test_document_type_deletion_policies_post_view_access(self):
-        self.grant_access(
-            obj=self._test_document_type,
-            permission=permission_document_type_edit
-        )
-
-        response = self._request_test_document_type_policies_post_view()
-        self.assertEqual(response.status_code, 302)
 
 
 class DocumentTypeFilenameGeneratorViewTestCase(
@@ -335,3 +302,35 @@ class DocumentsQuickLabelViewTestCase(
         self.assertEqual(
             self._test_document.label, self._test_document_type_quick_label.filename
         )
+
+
+class DocumentTypeRetentionPoliciesViewTestCase(
+    DocumentTypeRetentionPoliciesViewTestMixin, GenericDocumentViewTestCase
+):
+    auto_upload_test_document = False
+
+    def test_document_type_retention_policies_get_view_no_permission(self):
+        response = self._request_test_document_type_retention_policies_get_view()
+        self.assertEqual(response.status_code, 404)
+
+    def test_document_type_retention_policies_get_view_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_type_edit
+        )
+
+        response = self._request_test_document_type_retention_policies_get_view()
+        self.assertEqual(response.status_code, 200)
+
+    def test_document_type_retention_policies_post_view_no_permission(self):
+        response = self._request_test_document_type_retention_policies_post_view()
+        self.assertEqual(response.status_code, 404)
+
+    def test_document_type_retention_policies_post_view_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_type_edit
+        )
+
+        response = self._request_test_document_type_retention_policies_post_view()
+        self.assertEqual(response.status_code, 302)

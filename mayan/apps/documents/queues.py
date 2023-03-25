@@ -7,7 +7,7 @@ from mayan.apps.task_manager.workers import worker_b, worker_c
 
 from .literals import (
     CHECK_DELETE_PERIOD_INTERVAL, CHECK_TRASH_PERIOD_INTERVAL,
-    DELETE_STALE_STUBS_INTERVAL
+    INTERVAL_TASK_STUBS_DELETION
 )
 
 queue_documents_periodic = CeleryQueue(
@@ -53,10 +53,10 @@ queue_documents_periodic.add_task_type(
     schedule=timedelta(seconds=CHECK_TRASH_PERIOD_INTERVAL),
 )
 queue_documents_periodic.add_task_type(
-    dotted_path='mayan.apps.documents.tasks.task_document_stubs_delete',
+    dotted_path='mayan.apps.documents.tasks.task_document_type_document_stubs_delete',
     label=_('Delete document stubs'),
-    name='task_document_stubs_delete',
-    schedule=timedelta(seconds=DELETE_STALE_STUBS_INTERVAL),
+    name='task_document_type_document_stubs_delete',
+    schedule=timedelta(seconds=INTERVAL_TASK_STUBS_DELETION),
 )
 queue_documents_periodic.add_task_type(
     dotted_path='mayan.apps.documents.tasks.task_document_type_trashed_document_delete_periods_check',

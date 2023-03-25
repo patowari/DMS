@@ -10,22 +10,13 @@ from mayan.apps.databases.classes import ModelQueryFields
 
 from .settings import (
     setting_favorite_count, setting_recently_accessed_document_count,
-    setting_recently_created_document_count, setting_stub_expiration_interval
+    setting_recently_created_document_count
 )
 
 logger = logging.getLogger(name=__name__)
 
 
 class DocumentManager(models.Manager):
-    def delete_stubs(self):
-        stale_stub_documents = self.filter(
-            is_stub=True, datetime_created__lt=now() - timedelta(
-                seconds=setting_stub_expiration_interval.value
-            )
-        )
-        for stale_stub_document in stale_stub_documents:
-            stale_stub_document.delete(to_trash=False)
-
     def get_by_natural_key(self, uuid):
         return self.get(
             uuid=str(uuid)
@@ -129,6 +120,17 @@ class DocumentTypeManager(models.Manager):
                 )
 
         logger.info(msg='Finished')
+
+    def document_stubs_delete(self):
+        for document_type in self.all():
+            if document_type.document_stub_pruning_enabled:
+                stale_stub_documents = document_type.documents.filter(
+                    is_stub=True, datetime_created__lt=now() - timedelta(
+                        seconds=document_type.document_stub_expiration_interval
+                    )
+                )
+                for stale_stub_document in stale_stub_documents:
+                    stale_stub_document.delete(to_trash=False)
 
     def get_by_natural_key(self, label):
         return self.get(label=label)

@@ -1,10 +1,7 @@
-from datetime import timedelta
-
 from ..events import event_document_type_changed
 from ..models.document_models import Document
 from ..models.document_type_models import DocumentType
 from ..permissions import permission_document_change_type
-from ..settings import setting_stub_expiration_interval
 
 from .base import GenericDocumentTestCase
 from .literals import (
@@ -175,26 +172,6 @@ class DocumentTestCase(GenericDocumentTestCase):
     def test_method_get_absolute_url(self):
         self._create_test_document_stub()
 
-        self.assertTrue(self._test_document.get_absolute_url())
-
-
-class DocumentManagerTestCase(GenericDocumentTestCase):
-    auto_upload_test_document = False
-
-    def test_document_stubs_deletion(self):
-        document_stub = Document.objects.create(
-            document_type=self._test_document_type
+        self.assertTrue(
+            self._test_document.get_absolute_url()
         )
-
-        Document.objects.delete_stubs()
-
-        self.assertEqual(Document.objects.count(), 1)
-
-        document_stub.datetime_created = document_stub.datetime_created - timedelta(
-            seconds=setting_stub_expiration_interval.value + 1
-        )
-        document_stub.save()
-
-        Document.objects.delete_stubs()
-
-        self.assertEqual(Document.objects.count(), 0)

@@ -93,7 +93,9 @@ icon_document_type_filename_generator = Icon(
     ]
 )
 
-icon_document_type_policies = Icon(driver_name='fontawesome', symbol='times')
+icon_document_type_retention_policies = Icon(
+    driver_name='fontawesome', symbol='clock'
+)
 icon_document_type_setup = icon_document_type
 
 # Document

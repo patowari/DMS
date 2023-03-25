@@ -116,7 +116,7 @@ from .links.document_type_links import (
     link_document_type_edit, link_document_type_filename_create,
     link_document_type_filename_delete, link_document_type_filename_edit,
     link_document_type_filename_list, link_document_type_filename_generator,
-    link_document_type_list, link_document_type_policies,
+    link_document_type_list, link_document_type_retention_policies,
     link_document_type_setup
 )
 from .links.document_version_links import (
@@ -862,8 +862,8 @@ class DocumentsApp(MayanAppConfig):
         menu_list_facet.bind_links(
             links=(
                 link_document_type_filename_list,
-                link_document_type_policies,
-                link_document_type_filename_generator
+                link_document_type_filename_generator,
+                link_document_type_retention_policies
             ), sources=(DocumentType,)
         )
 

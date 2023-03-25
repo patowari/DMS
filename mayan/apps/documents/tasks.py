@@ -126,17 +126,6 @@ def task_document_file_upload(
 
 # Document
 
-@app.task(ignore_result=True)
-def task_document_stubs_delete():
-    Document = apps.get_model(
-        app_label='documents', model_name='Document'
-    )
-
-    logger.info(msg='Executing')
-    Document.objects.delete_stubs()
-    logger.info(msg='Finished')
-
-
 @app.task(ignore_results=True)
 def task_document_upload(
     document_type_id, shared_uploaded_file_id, callback_dotted_path=None,
@@ -194,6 +183,19 @@ def task_document_upload(
 
 
 # Document type
+
+@app.task(ignore_result=True)
+def task_document_type_document_stubs_delete():
+    DocumentType = apps.get_model(
+        app_label='documents', model_name='DocumentType'
+    )
+
+    logger.info(msg='Starting')
+
+    DocumentType.objects.document_stubs_delete()
+
+    logger.info(msg='Finished')
+
 
 @app.task(ignore_result=True)
 def task_document_type_trashed_document_delete_periods_check():

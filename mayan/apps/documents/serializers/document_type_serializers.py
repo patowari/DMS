@@ -46,7 +46,8 @@ class DocumentTypeSerializer(serializers.HyperlinkedModelSerializer):
         }
         fields = (
             'delete_time_period', 'delete_time_unit',
-            'filename_generator_backend',
+            'document_stub_expiration_interval',
+            'document_stub_pruning_enabled', 'filename_generator_backend',
             'filename_generator_backend_arguments', 'id', 'label',
             'quick_label_list_url', 'trash_time_period', 'trash_time_unit',
             'url'

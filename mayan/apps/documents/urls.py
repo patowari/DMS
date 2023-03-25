@@ -48,13 +48,13 @@ from .views.document_file_page_views import (
     DocumentFilePageView, DocumentFilePageViewResetView,
     DocumentFilePageZoomInView, DocumentFilePageZoomOutView
 )
+from .views.document_type_retention_policy_views import DocumentTypeRetentionPoliciesEditView
 from .views.document_type_views import (
     DocumentTypeCreateView, DocumentTypeDeleteView,
-    DocumentTypeDeletionPoliciesEditView, DocumentTypeDocumentListView,
-    DocumentTypeEditView, DocumentTypeFilenameGeneratorEditView,
-    DocumentTypeFilenameCreateView, DocumentTypeFilenameDeleteView,
-    DocumentTypeFilenameEditView, DocumentTypeFilenameListView,
-    DocumentTypeListView
+    DocumentTypeDocumentListView, DocumentTypeEditView,
+    DocumentTypeFilenameGeneratorEditView, DocumentTypeFilenameCreateView,
+    DocumentTypeFilenameDeleteView, DocumentTypeFilenameEditView,
+    DocumentTypeFilenameListView, DocumentTypeListView
 )
 from .views.document_version_page_views import (
     DocumentVersionPageDeleteView, DocumentVersionPageListView,
@@ -224,9 +224,9 @@ urlpatterns_document_types = [
         name='document_type_delete', view=DocumentTypeDeleteView.as_view()
     ),
     url(
-        regex=r'^document_types/(?P<document_type_id>\d+)/deletion_policies/$',
-        name='document_type_policies',
-        view=DocumentTypeDeletionPoliciesEditView.as_view()
+        regex=r'^document_types/(?P<document_type_id>\d+)/retention_policies/$',
+        name='document_type_retention_policies',
+        view=DocumentTypeRetentionPoliciesEditView.as_view()
     ),
     url(
         regex=r'^document_types/(?P<document_type_id>\d+)/documents/$',

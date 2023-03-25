@@ -1,4 +1,5 @@
 from rest_framework import status
+from rest_framework.reverse import reverse
 
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
@@ -133,8 +134,64 @@ class DocumentTypeAPIViewTestCase(
         response = self._request_test_document_type_detail_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
+            response.data['delete_time_period'],
+            self._test_document_type.delete_time_period
+        )
+        self.assertEqual(
+            response.data['delete_time_unit'],
+            self._test_document_type.delete_time_unit
+        )
+        self.assertEqual(
+            response.data['document_stub_expiration_interval'],
+            self._test_document_type.document_stub_expiration_interval
+        )
+        self.assertEqual(
+            response.data['document_stub_pruning_enabled'],
+            self._test_document_type.document_stub_pruning_enabled
+        )
+        self.assertEqual(
+            response.data['filename_generator_backend'],
+            self._test_document_type.filename_generator_backend
+        )
+        self.assertEqual(
+            response.data['filename_generator_backend_arguments'],
+            self._test_document_type.filename_generator_backend_arguments
+        )
+        self.assertEqual(
+            response.data['id'],
+            self._test_document_type.id
+        )
+        self.assertEqual(
             response.data['label'],
             self._test_document_type.label
+        )
+        # The serializer URL field includes the hostname. Test the ending to
+        # avoid having to do URL processing to remove the host part.
+        self.assertTrue(
+            response.data['quick_label_list_url'].endswith(
+                reverse(
+                    viewname='rest_api:documenttype-quicklabel-list',
+                    kwargs={'document_type_id': self._test_document_type.pk}
+                )
+            )
+        )
+        self.assertEqual(
+            response.data['trash_time_period'],
+            self._test_document_type.trash_time_period
+        )
+        self.assertEqual(
+            response.data['trash_time_unit'],
+            self._test_document_type.trash_time_unit
+        )
+        # The serializer URL field includes the hostname. Test the ending to
+        # avoid having to do URL processing to remove the host part.
+        self.assertTrue(
+            response.data['url'].endswith(
+                reverse(
+                    viewname='rest_api:documenttype-detail',
+                    kwargs={'document_type_id': self._test_document_type.pk}
+                )
+            )
         )
 
         events = self._get_test_events()

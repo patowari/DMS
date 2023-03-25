@@ -8,7 +8,7 @@ from ..icons import (
     icon_document_type_edit, icon_document_type_filename_create,
     icon_document_type_filename_delete, icon_document_type_filename_edit,
     icon_document_type_filename_list, icon_document_type_filename_generator,
-    icon_document_type_policies, icon_document_type_setup,
+    icon_document_type_retention_policies, icon_document_type_setup,
     icon_document_type_list
 )
 from ..permissions import (
@@ -26,12 +26,6 @@ link_document_type_delete = Link(
     args='resolved_object.id', icon=icon_document_type_delete,
     permissions=(permission_document_type_delete,), tags='dangerous',
     text=_('Delete'), view='documents:document_type_delete'
-)
-link_document_type_policies = Link(
-    args='resolved_object.id',
-    icon=icon_document_type_policies,
-    permissions=(permission_document_type_edit,),
-    text=_('Deletion policies'), view='documents:document_type_policies'
 )
 link_document_type_edit = Link(
     args='resolved_object.id', icon=icon_document_type_edit,
@@ -76,6 +70,13 @@ link_document_type_list = Link(
         object_permission=permission_document_type_view,
     ), icon=icon_document_type_list, text=_('Document types'),
     view='documents:document_type_list'
+)
+link_document_type_retention_policies = Link(
+    args='resolved_object.id',
+    icon=icon_document_type_retention_policies,
+    permissions=(permission_document_type_edit,),
+    text=_('Retention policies'),
+    view='documents:document_type_retention_policies'
 )
 link_document_type_setup = Link(
     condition=factory_condition_queryset_access(

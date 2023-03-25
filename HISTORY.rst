@@ -51,7 +51,7 @@
     setting namespace global symbol table.
 
 - Create a temporary ``MEDIA_ROOT`` folder when running tests. This change
-  allows futher isolation of testing artifacts.
+  allows further isolation of testing artifacts.
 - Add support for document download message templating. This allows
   customizing the message users receive when their document or document
   bundle is ready for download.
@@ -59,6 +59,16 @@
   download actions.
 - Support local versions. Added explicit support for pep-0440 local version
   labels for custom builds.
+- Add support for per document type document stub pruning. This change adds
+  the document type fields ``document_stub_pruning_enabled``,
+  ``document_stub_expiration_interval``, and removes the setting
+  ``DOCUMENTS_STUB_EXPIRATION_INTERVAL`` which is now configured per
+  document type. All references of document type deletion policies are
+  renamed to document type retention policies. By default pruning of document
+  stubs is enabled to preserve the existing behavior. Disabling document
+  stub pruning can be used to support document archiving where the
+  document files are deleted but the document database information is kept
+  for reference. Thanks to forum user @legosiv for the request and use case.
 
 4.4.5 (2023-03-11)
 ==================

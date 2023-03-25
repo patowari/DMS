@@ -25,7 +25,7 @@ Follow the solutions outlined in the troubleshooting section:
 Backward incompatible changes
 -----------------------------
 
-.. include:: partials/backward-incompatible-4.4.txt
+.. include:: partials/backward-incompatible-4.5.txt
 
 
 Deprecations

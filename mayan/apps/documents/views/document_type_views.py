@@ -19,8 +19,7 @@ from ..icons import (
     icon_document_type_filename, icon_document_type_filename_create,
     icon_document_type_filename_delete, icon_document_type_filename_edit,
     icon_document_type_filename_generator, icon_document_type_filename_list,
-    icon_document_type_list, icon_document_type_policies,
-    icon_document_type_setup
+    icon_document_type_list, icon_document_type_setup
 )
 from ..links.document_type_links import (
     link_document_type_create, link_document_type_filename_create
@@ -134,44 +133,6 @@ class DocumentTypeEditView(SingleObjectEditView):
         return {
             'object': self.object,
             'title': _('Edit document type: %s') % self.object
-        }
-
-    def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
-
-
-class DocumentTypeDeletionPoliciesEditView(SingleObjectEditView):
-    fields = (
-        'trash_time_unit', 'trash_time_period', 'delete_time_unit',
-        'delete_time_period'
-    )
-    fieldsets = (
-        (
-            _('Trash'), {
-                'fields': ('trash_time_unit', 'trash_time_period'),
-            }
-        ), (
-            _('Delete'), {
-                'fields': ('delete_time_unit', 'delete_time_period')
-            }
-        )
-    )
-    model = DocumentType
-    object_permission = permission_document_type_edit
-    pk_url_kwarg = 'document_type_id'
-    post_action_redirect = reverse_lazy(
-        viewname='documents:document_type_list'
-    )
-    view_icon = icon_document_type_policies
-
-    def get_extra_context(self):
-        return {
-            'object': self.object,
-            'title': _(
-                'Deletion policies for document type: %s'
-            ) % self.object
         }
 
     def get_instance_extra_data(self):

@@ -21,7 +21,7 @@ from .literals import (
     DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS,
     DEFAULT_DOCUMENTS_ZOOM_MAX_LEVEL, DEFAULT_DOCUMENTS_ZOOM_MIN_LEVEL,
     DEFAULT_DOCUMENTS_ZOOM_PERCENT_STEP, DEFAULT_LANGUAGE,
-    DEFAULT_LANGUAGE_CODES, DEFAULT_STUB_EXPIRATION_INTERVAL
+    DEFAULT_LANGUAGE_CODES
 )
 from .setting_callbacks import (
     callback_update_document_file_page_image_cache_size,
@@ -157,13 +157,6 @@ setting_rotation_step = namespace.add_setting(
     default=DEFAULT_DOCUMENTS_ROTATION_STEP,
     global_name='DOCUMENTS_ROTATION_STEP', help_text=_(
         'Amount in degrees to rotate a document page per user interaction.'
-    )
-)
-setting_stub_expiration_interval = namespace.add_setting(
-    default=DEFAULT_STUB_EXPIRATION_INTERVAL,
-    global_name='DOCUMENTS_STUB_EXPIRATION_INTERVAL', help_text=_(
-        'Time after which a document stub will be considered invalid and '
-        'deleted.'
     )
 )
 setting_thumbnail_height = namespace.add_setting(

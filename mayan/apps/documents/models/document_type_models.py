@@ -18,7 +18,10 @@ from ..events import (
     event_document_type_quick_label_deleted,
     event_document_type_quick_label_edited
 )
-from ..literals import DEFAULT_DELETE_PERIOD, DEFAULT_DELETE_TIME_UNIT
+from ..literals import (
+    DEFAULT_DELETE_PERIOD, DEFAULT_DELETE_TIME_UNIT,
+    DEFAULT_DOCUMENT_STUB_EXPIRATION_INTERVAL
+)
 from ..managers import DocumentTypeManager
 
 from .document_type_model_mixins import DocumentTypeBusinessLogicMixin
@@ -37,6 +40,23 @@ class DocumentType(
         help_text=_('A short text identifying the document type.'),
         max_length=196, unique=True, verbose_name=_('Label')
     )
+    filename_generator_backend = models.CharField(
+        default=BaseDocumentFilenameGenerator.get_default(), help_text=_(
+            'The class responsible for producing the actual filename used '
+            'to store the uploaded documents.'
+        ), max_length=224, verbose_name=_('Filename generator backend')
+    )
+    filename_generator_backend_arguments = models.TextField(
+        blank=True, help_text=_(
+            'The arguments for the filename generator backend as a '
+            'YAML dictionary.'
+        ), validators=[YAMLValidator()], verbose_name=_(
+            'Filename generator backend arguments'
+        )
+    )
+
+    # Retention policies
+
     trash_time_period = models.PositiveIntegerField(
         blank=True, help_text=_(
             'Amount of time after which documents of this type will be '
@@ -58,19 +78,19 @@ class DocumentType(
         default=DEFAULT_DELETE_TIME_UNIT, max_length=8, null=True,
         verbose_name=_('Delete time unit')
     )
-    filename_generator_backend = models.CharField(
-        default=BaseDocumentFilenameGenerator.get_default(), help_text=_(
-            'The class responsible for producing the actual filename used '
-            'to store the uploaded documents.'
-        ), max_length=224, verbose_name=_('Filename generator backend')
+    document_stub_pruning_enabled = models.BooleanField(
+        default=True, help_text=_(
+            'Delete documents that do not contain any files after a '
+            'configured expiration interval.'
+        ), verbose_name=_('Document stub pruning')
     )
-    filename_generator_backend_arguments = models.TextField(
-        blank=True, help_text=_(
-            'The arguments for the filename generator backend as a '
-            'YAML dictionary.'
-        ), validators=[YAMLValidator()], verbose_name=_(
-            'Filename generator backend arguments'
-        )
+    document_stub_expiration_interval = models.PositiveBigIntegerField(
+        default=DEFAULT_DOCUMENT_STUB_EXPIRATION_INTERVAL, help_text=_(
+            'Time (in seconds) after which a document stub will be '
+            'considered invalid and deleted, if pruning is enabled. This '
+            'an optimization setting and should only be changed for '
+            'specific circumstances.'
+        ), verbose_name=_('Document stub expiration interval')
     )
 
     objects = DocumentTypeManager()

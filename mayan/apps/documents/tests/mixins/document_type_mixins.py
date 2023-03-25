@@ -78,22 +78,6 @@ class DocumentTypeAPIViewTestMixin:
         return self.get(viewname='rest_api:documenttype-list')
 
 
-class DocumentTypeDeletionPoliciesViewTestMixin:
-    def _request_test_document_type_policies_get_view(self):
-        return self.get(
-            viewname='documents:document_type_policies', kwargs={
-                'document_type_id': self._test_document_type.pk
-            }
-        )
-
-    def _request_test_document_type_policies_post_view(self):
-        return self.post(
-            viewname='documents:document_type_policies', kwargs={
-                'document_type_id': self._test_document_type.pk
-            }
-        )
-
-
 class DocumentTypeFilenameGeneratorViewTestMixin:
     def _request_test_document_type_filename_generator_get_view(self):
         return self.get(
@@ -212,6 +196,58 @@ class DocumentTypeQuickLabelTestMixin:
         self._test_document_type_quick_label = self._test_document_type.filenames.create(
             filename=TEST_DOCUMENT_TYPE_QUICK_LABEL
         )
+
+
+class DocumentTypeRetentionPoliciesViewTestMixin:
+    def _request_test_document_type_retention_policies_get_view(self):
+        return self.get(
+            viewname='documents:document_type_retention_policies', kwargs={
+                'document_type_id': self._test_document_type.pk
+            }
+        )
+
+    def _request_test_document_type_retention_policies_post_view(
+        self, extra_data=None
+    ):
+        data = {
+            'document_stub_expiration_interval': self._test_document_type.document_stub_expiration_interval,
+            'document_stub_pruning_enabled': self._test_document_type.document_stub_pruning_enabled
+        }
+
+        if extra_data is not None:
+            data.update(extra_data)
+
+        return self.post(
+            viewname='documents:document_type_retention_policies',
+            kwargs={'document_type_id': self._test_document_type.pk},
+            data=data
+        )
+
+
+class DocumentTypeTestMixin:
+    auto_create_test_document_type = True
+    auto_delete_test_document_type = True
+
+    def setUp(self):
+        super().setUp()
+        self._test_document_types = []
+
+        if self.auto_create_test_document_type:
+            self._create_test_document_type()
+
+    def _create_test_document_type(self, label=None):
+        label = label or '{}_{}'.format(
+            TEST_DOCUMENT_TYPE_LABEL, len(self._test_document_types)
+        )
+
+        self._test_document_type = DocumentType.objects.create(label=label)
+        self._test_document_types.append(self._test_document_type)
+
+    def tearDown(self):
+        if self.auto_delete_test_document_type:
+            for document_type in DocumentType.objects.all():
+                document_type.delete()
+        super().tearDown()
 
 
 class DocumentTypeViewTestMixin:

@@ -8,7 +8,6 @@ from mayan.apps.common.literals import TIME_DELTA_UNIT_DAYS
 CHECK_DELETE_PERIOD_INTERVAL = 60
 CHECK_TRASH_PERIOD_INTERVAL = 60
 
-DELETE_STALE_STUBS_INTERVAL = 60 * 10  # 10 minutes
 DEFAULT_DELETE_PERIOD = 30
 DEFAULT_DELETE_TIME_UNIT = TIME_DELTA_UNIT_DAYS
 DEFAULT_DOCUMENT_TYPE_LABEL = _('Default')
@@ -72,12 +71,14 @@ DEFAULT_LANGUAGE_CODES = (
     'hne', 'dcc', 'aka', 'kaz', 'syl', 'zul', 'ces', 'kin', 'hat', 'que',
     'swe', 'hmn', 'sna', 'mos', 'xho', 'bel', 'heb'
 )
-DEFAULT_STUB_EXPIRATION_INTERVAL = 60 * 60 * 24  # 24 hours
+DEFAULT_DOCUMENT_STUB_EXPIRATION_INTERVAL = 60 * 60 * 24  # 24 hours
 
 IMAGE_ERROR_NO_ACTIVE_VERSION = 'document_no_active_version'
 IMAGE_ERROR_NO_VERSION_PAGES = 'document_no_version_pages'
 IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR = 'document_file_page_transformation_error'
 IMAGE_ERROR_VERSION_PAGE_TRANSFORMATION_ERROR = 'document_version_page_transformation_error'
+
+INTERVAL_TASK_STUBS_DELETION = 60 * 10  # 10 minutes
 
 MONTH_NAMES = (
     _('January'), _('February'), _('March'), _('April'), _('May'),
