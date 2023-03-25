@@ -69,6 +69,8 @@
   stub pruning can be used to support document archiving where the
   document files are deleted but the document database information is kept
   for reference. Thanks to forum user @legosiv for the request and use case.
+- Update the file cache ``maximum_size`` field from a ``BigIntegerField`` to
+  a ``PositiveBigIntegerField``.
 
 4.4.5 (2023-03-11)
 ==================
