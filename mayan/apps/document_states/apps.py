@@ -449,6 +449,10 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowStateEscalation
         )
         SourceColumn(
+            attribute='transition', include_label=True, is_sortable=True,
+            source=WorkflowStateEscalation
+        )
+        SourceColumn(
             attribute='has_condition', include_label=True,
             source=WorkflowStateEscalation, widget=TwoStateWidget
         )

@@ -4,14 +4,15 @@ from ..permissions import permission_workflow_template_view
 
 from .mixins.workflow_instance_mixins import WorkflowInstanceViewTestMixin
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_mixins import (
+from .mixins.workflow_template_transition_trigger_mixins import (
     WorkflowTemplateTransitionTriggerViewTestMixin
 )
 
 
-class WorkflowTransitionTriggerViewTestCase(
+class WorkflowTemplateTransitionTriggerViewTestCase(
     WorkflowInstanceViewTestMixin, WorkflowTemplateTestMixin,
-    WorkflowTemplateTransitionTriggerViewTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateTransitionTriggerViewTestMixin,
+    GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

@@ -1,11 +1,11 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_mixins import WorkflowTransitionFieldTestMixin
+from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldTestMixin
 
 
 class WorkflowTemplateTransitionFieldModelTestCase(
-    WorkflowTemplateTestMixin, WorkflowTransitionFieldTestMixin,
+    WorkflowTemplateTestMixin, WorkflowTemplateTransitionFieldTestMixin,
     GenericDocumentTestCase
 ):
     auto_upload_test_document = False
@@ -21,7 +21,7 @@ class WorkflowTemplateTransitionFieldModelTestCase(
 
     def test_deleted_field_context_references(self):
         """
-        Transition a workflow with a transition field, and the delete the
+        Transition a workflow with a transition field, and then delete the
         transition field. The retrieving the context should work even with an
         obsolete field reference.
         """

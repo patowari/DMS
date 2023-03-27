@@ -6,7 +6,7 @@ from ..events import (
     event_workflow_instance_created, event_workflow_template_created,
     event_workflow_template_edited
 )
-from ..models import Workflow
+from ..models.workflow_models import Workflow
 from ..permissions import (
     permission_workflow_template_create, permission_workflow_template_delete,
     permission_workflow_template_edit, permission_workflow_template_view,

@@ -88,7 +88,9 @@ class WorkflowTemplateStateEscalationSerializer(serializers.HyperlinkedModelSeri
         )
 
     def get_workflow_template_transition_queryset(self):
-        return self.context['workflow_template'].transitions.all()
+        return self.context['workflow_template'].transitions.filter(
+            origin_state=self.context['workflow_template_state']
+        )
 
     def update(self, instance, validated_data):
         if 'transition_id' in validated_data:

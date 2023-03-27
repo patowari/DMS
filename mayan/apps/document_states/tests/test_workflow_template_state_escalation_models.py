@@ -25,7 +25,11 @@ class WorkflowTemplateStateEscalationModelTestCase(
         test_workflow_instance = self._test_document.workflows.first()
         test_workflow_instance_state = test_workflow_instance.get_current_state()
 
-        self._create_test_workflow_template_state_escalation()
+        self._create_test_workflow_template_state_escalation(
+            extra_kwargs={
+                'unit': 'microseconds'
+            }
+        )
 
         self._clear_events()
 
@@ -54,7 +58,10 @@ class WorkflowTemplateStateEscalationModelTestCase(
         test_workflow_instance_state = test_workflow_instance.get_current_state()
 
         self._create_test_workflow_template_state_escalation(
-            extra_data={'condition': 'TRUE'}
+            extra_kwargs={
+                'condition': 'TRUE',
+                'unit': 'microseconds'
+            }
         )
 
         self._clear_events()
@@ -84,7 +91,10 @@ class WorkflowTemplateStateEscalationModelTestCase(
         test_workflow_instance_state = test_workflow_instance.get_current_state()
 
         self._create_test_workflow_template_state_escalation(
-            extra_data={'condition': '{{ none }}'}
+            extra_kwargs={
+                'condition': '{{ none }}',
+                'unit': 'microseconds'
+            }
         )
 
         self._clear_events()

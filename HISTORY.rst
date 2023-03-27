@@ -71,6 +71,15 @@
   for reference. Thanks to forum user @legosiv for the request and use case.
 - Update the file cache ``maximum_size`` field from a ``BigIntegerField`` to
   a ``PositiveBigIntegerField``.
+- Workflow app updates:
+
+  - Show the transition in the workflow template state escalation list view.
+  - Ensure only correct transitions can be select for the workflow template
+    state escalation in the user interface and the API.
+  - Speed up tests.
+  - Split test modules.
+  - Rename test mixin classes to comply with naming conventions.
+  - Add missing workflow template state escalation view tests.
 
 4.4.5 (2023-03-11)
 ==================

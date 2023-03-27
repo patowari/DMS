@@ -10,7 +10,7 @@ from ..permissions import (
 )
 
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_mixins import (
+from .mixins.workflow_template_transition_trigger_mixins import (
     WorkflowTemplateTransitionTriggerAPIViewTestMixin,
     WorkflowTemplateTransitionTriggerTestMixin
 )

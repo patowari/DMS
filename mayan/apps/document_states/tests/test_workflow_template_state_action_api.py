@@ -8,7 +8,7 @@ from ..permissions import (
 )
 
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_mixins import (
+from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionAPIViewTestMixin,
     WorkflowTemplateStateActionTestMixin
 )
@@ -31,7 +31,9 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self._test_workflow_template.refresh_from_db()
-        self.assertEqual(self._test_workflow_template_state.actions.count(), 0)
+        self.assertEqual(
+            self._test_workflow_template_state.actions.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -54,7 +56,8 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
 
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(
-            events[0].action_object, self._test_workflow_template_state_action
+            events[0].action_object,
+            self._test_workflow_template_state_action
         )
         self.assertEqual(events[0].target, self._test_workflow_template)
         self.assertEqual(events[0].verb, event_workflow_template_edited.id)
@@ -68,7 +71,9 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self._test_workflow_template.refresh_from_db()
-        self.assertEqual(self._test_workflow_template_state.actions.count(), 1)
+        self.assertEqual(
+            self._test_workflow_template_state.actions.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -87,7 +92,9 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
         self._test_workflow_template.refresh_from_db()
-        self.assertEqual(self._test_workflow_template_state.actions.count(), 0)
+        self.assertEqual(
+            self._test_workflow_template_state.actions.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -254,7 +261,8 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
 
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(
-            events[0].action_object, self._test_workflow_template_state_action
+            events[0].action_object,
+            self._test_workflow_template_state_action
         )
         self.assertEqual(events[0].target, self._test_workflow_template)
         self.assertEqual(events[0].verb, event_workflow_template_edited.id)

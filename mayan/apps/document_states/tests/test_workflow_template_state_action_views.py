@@ -5,7 +5,7 @@ from ..permissions import permission_workflow_template_edit
 
 from .literals import TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_mixins import (
+from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
@@ -95,14 +95,16 @@ class WorkflowStateActionViewTestCase(
 
         self._test_workflow_template_state.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_state.actions.count(), action_count + 1
+            self._test_workflow_template_state.actions.count(),
+            action_count + 1
         )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object, self._test_workflow_template_state_action
+            events[0].action_object,
+            self._test_workflow_template_state_action
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_workflow_template)
@@ -138,7 +140,8 @@ class WorkflowStateActionViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_workflow_template_state.actions.count(), action_count - 1
+            self._test_workflow_template_state.actions.count(),
+            action_count - 1
         )
 
         events = self._get_test_events()
@@ -188,7 +191,8 @@ class WorkflowStateActionViewTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object, self._test_workflow_template_state_action
+            events[0].action_object,
+            self._test_workflow_template_state_action
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_workflow_template)

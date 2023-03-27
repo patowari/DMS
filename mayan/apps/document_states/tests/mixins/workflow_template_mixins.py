@@ -1,8 +1,6 @@
 from django.db.models import Q
 
-from ...models import (
-    Workflow, WorkflowRuntimeProxy, WorkflowStateRuntimeProxy
-)
+from ...models.workflow_models import Workflow, WorkflowRuntimeProxy
 from ...tasks import (
     task_launch_all_workflows, task_launch_all_workflow_for,
     task_launch_workflow, task_launch_workflow_for
@@ -11,11 +9,10 @@ from ...tasks import (
 from ..literals import (
     TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
     TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME, TEST_WORKFLOW_TEMPLATE_LABEL,
-    TEST_WORKFLOW_TEMPLATE_LABEL_EDITED,
-    TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
-    TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-    TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL
+    TEST_WORKFLOW_TEMPLATE_LABEL_EDITED
 )
+
+from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
 
 class DocumentTypeAddRemoveWorkflowTemplateViewTestMixin:
@@ -205,13 +202,11 @@ class WorkflowTemplateDocumentTypeAPIViewMixin:
         )
 
 
-class WorkflowTemplateTestMixin:
+class WorkflowTemplateTestMixin(WorkflowTemplateTransitionTestMixin):
     def setUp(self):
         super().setUp()
         self._test_workflow_runtime_proxies = []
         self._test_workflow_template_state_runtime_proxies = []
-        self._test_workflow_template_states = []
-        self._test_workflow_template_transitions = []
         self._test_workflow_templates = []
 
     def _create_test_workflow_template(
@@ -244,49 +239,6 @@ class WorkflowTemplateTestMixin:
             self._test_workflow_template.document_types.add(
                 self._test_document_type
             )
-
-    def _create_test_workflow_template_state(self):
-        total_test_workflow_template_states = len(
-            self._test_workflow_template_states
-        )
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-            total_test_workflow_template_states
-        )
-        initial = self._test_workflow_template.states.count() == 0
-
-        self._test_workflow_template_state = self._test_workflow_template.states.create(
-            completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION, initial=initial,
-            label=label
-        )
-        self._test_workflow_template_states.append(
-            self._test_workflow_template_state
-        )
-        self._test_workflow_template_state_runtime_proxy = WorkflowStateRuntimeProxy.objects.get(
-            pk=self._test_workflow_template_state.pk
-        )
-        self._test_workflow_template_state_runtime_proxies.append(
-            self._test_workflow_template_state_runtime_proxy
-        )
-
-    def _create_test_workflow_template_transition(self):
-        total_test_workflow_template_transitions = len(
-            self._test_workflow_template_transitions
-        )
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
-            total_test_workflow_template_transitions
-        )
-
-        self._test_workflow_template_transition = self._test_workflow_template.transitions.create(
-            label=label,
-            origin_state=self._test_workflow_template_states[0],
-            destination_state=self._test_workflow_template_states[1],
-        )
-
-        self._test_workflow_template_transitions.append(
-            self._test_workflow_template_transition
-        )
 
     def _create_test_workflow_template_instance_log_entry(self):
         self._test_document.workflows.first().log_entries.create(

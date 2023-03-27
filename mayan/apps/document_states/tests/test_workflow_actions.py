@@ -7,7 +7,8 @@ from mayan.apps.testing.tests.mixins import TestServerTestCaseMixin
 from mayan.apps.testing.tests.mocks import request_method_factory
 
 from ..literals import WORKFLOW_ACTION_ON_ENTRY
-from ..models import Workflow, WorkflowInstance
+from ..models.workflow_models import Workflow
+from ..models.workflow_instance_models import WorkflowInstance
 from ..permissions import permission_workflow_template_edit
 from ..workflow_actions import (
     DocumentPropertiesEditAction, DocumentWorkflowLaunchAction, HTTPAction
@@ -26,7 +27,7 @@ from .literals import (
     TEST_SERVER_PASSWORD
 )
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_mixins import (
+from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionLaunchViewTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )

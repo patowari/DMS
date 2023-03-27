@@ -97,12 +97,14 @@ class WorkflowStateActionDynamicForm(DynamicModelForm):
 
 class WorkflowStateEscalationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
-        workflow_template_state = kwargs.pop('workflow_template_state')
+        self.workflow_template_state = kwargs.pop('workflow_template_state')
         super().__init__(*args, **kwargs)
 
         self.fields[
             'transition'
-        ].queryset = workflow_template_state.workflow.transitions.all()
+        ].queryset = self.workflow_template_state.workflow.transitions.filter(
+            origin_state=self.workflow_template_state
+        )
 
         self.fields['condition'] = ModelTemplateField(
             initial_help_text=self.fields['condition'].help_text,

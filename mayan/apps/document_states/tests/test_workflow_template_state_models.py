@@ -10,7 +10,7 @@ from .literals import (
     TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION
 )
 from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_mixins import WorkflowTemplateStateActionTestMixin
+from .mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionTestMixin
 
 
 class WorkflowTemplateStateActionModelTestCase(
