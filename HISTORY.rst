@@ -83,6 +83,13 @@
 
 - On small screens, close main menu when clicking on links. Closes GitLab
   issue #1113. Thanks to BW (@bwakkie) for the report.
+- Improve version checking:
+
+  - Add support for comparing versions.
+  - Display version numbers when reporting version mismatches.
+  - Add a new exception when the local version is more recent than the
+    upstream one. Closes Gitlab issue #1037. Thanks to Bw (@bwakkie) for
+    the request.
 
 4.4.5 (2023-03-11)
 ==================

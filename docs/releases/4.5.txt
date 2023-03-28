@@ -37,6 +37,7 @@ Deprecations
 Issues closed
 -------------
 
+- :gitlab-issue:`1037` Show which version of Mayan EDMS when checking for updates
 - :gitlab-issue:`1113` main menu not collapsing after choice on small screens
 - :gitlab-issue:`1135` Template tags and filters from app in COMMON_EXTRA_APPS no longer available
 

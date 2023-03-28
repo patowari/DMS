@@ -12,6 +12,8 @@ VERSION_PART_LOCAL = 3
 
 class Version:
     """
+    # Return value
+
     >>> Version('1')
     Version: 1
     >>> Version('1.0')
@@ -20,6 +22,9 @@ class Version:
     Version: 1.3.2
     >>> Version('1.3.2+local.1')
     Version: 1.3.2+local.1
+
+    # Increment part
+
     >>> Version('1').increment_part(part=VERSION_PART_MAJOR)
     Version: 2
     >>> Version('1').increment_part(part=VERSION_PART_MINOR)
@@ -56,12 +61,18 @@ class Version:
     Version: 1.3
     >>> Version('1.2.3').increment_micro()
     Version: 1.2.4
+
+    # Increment part, local version
+
     >>> Version('1.2.3+local.1').increment_major()
     Version: 2+local.1
     >>> Version('1.2.3+local.1').increment_minor()
     Version: 1.3+local.1
     >>> Version('1.2.3+local.1').increment_micro()
     Version: 1.2.4+local.1
+
+    # As a part
+
     >>> Version('1.2.3').as_major()
     '1'
     >>> Version('1.2.3').as_minor()
@@ -70,21 +81,222 @@ class Version:
     '1.2.3'
     >>> Version('1.2').as_micro()
     ''
+
+    # As a part, local version
+
     >>> Version('1.2.3+local.1').as_major()
     '1+local.1'
     >>> Version('1.2.3+local.1').as_minor()
     '1.2+local.1'
     >>> Version('1.2.3+local.1').as_micro()
     '1.2.3+local.1'
+    >>> Version('1.2+local.1').as_micro()
+    ''
+    >>> Version('1+local.1').as_minor()
+    ''
+
+    # As a part, local version, as upstream
+
     >>> Version('1+local.1').as_upstream()
     '1'
     >>> Version('1.2+local.1').as_upstream()
     '1.2'
     >>> Version('1.2.3+local.1').as_upstream()
     '1.2.3'
-    >>> Version('1.2+local.1').as_micro()
-    ''
+
+    # Comparison, greater than
+
+    >>> Version('1') > Version('2')
+    False
+    >>> Version('2') > Version('1')
+    True
+    >>> Version('1.1') > Version('1.2')
+    False
+    >>> Version('1.2') > Version('1.1')
+    True
+    >>> Version('1.1.2') > Version('1.1.1')
+    True
+    >>> Version('1.1.1') > Version('1.1.2')
+    False
+    >>> Version('1.1') > Version('2')
+    False
+    >>> Version('1.1') > Version('1')
+    True
+    >>> Version('1') > Version('1.1')
+    False
+
+    # Comparison, greater than, different local, same upstream
+
+    >>> Version('1') > Version('1+local.1')
+    False
+    >>> Version('1+local.1') > Version('1')
+    True
+    >>> Version('1.2') > Version('1.2+local.1')
+    False
+    >>> Version('1.2+local.1') > Version('1.2')
+    True
+    >>> Version('1.1.1') > Version('1.1.1+local.1')
+    False
+    >>> Version('1.1.1+local.1') > Version('1.1.1')
+    True
+
+    # Comparison, greater than, same local, different upstream
+
+    >>> Version('1+local.1') > Version('2+local.1')
+    False
+    >>> Version('2+local.1') > Version('1+local.1')
+    True
+    >>> Version('1.1+local.1') > Version('1.2+local.1')
+    False
+    >>> Version('1.2+local.1') > Version('1.1+local.1')
+    True
+    >>> Version('1.1.1+local.1') > Version('1.1.2+local.1')
+    False
+    >>> Version('1.1.2+local.1') > Version('1.1.1+local.1')
+    True
+
+    # Comparison, greater than, different local, different upstream
+
+    >>> Version('1+local.1') > Version('2')
+    False
+    >>> Version('2') > Version('1+local.1')
+    True
+    >>> Version('1+local.1') > Version('1.2')
+    False
+    >>> Version('1.1') > Version('1+local.1')
+    True
+    >>> Version('1+local.1') > Version('1.1')
+    False
+    >>> Version('1.2') > Version('1+local.1')
+    True
+    >>> Version('1+local.1') > Version('1.2')
+    False
+    >>> Version('1.1+local.1') > Version('1.2')
+    False
+    >>> Version('1.2') > Version('1.1+local.1')
+    True
+    >>> Version('1.1.1+local.1') > Version('1.1.2')
+    False
+    >>> Version('1.1.2') > Version('1.1.1+local.1')
+    True
+    >>> Version('1.1.2+local.1') > Version('1.1.1')
+    True
+    >>> Version('1.1.1') > Version('1.1.2+local.1')
+    False
+
+    # Comparison, less than
+
+    >>> Version('1') < Version('2')
+    True
+    >>> Version('2') < Version('1')
+    False
+    >>> Version('1.1') < Version('1.2')
+    True
+    >>> Version('1.2') < Version('1.1')
+    False
+    >>> Version('1.1.2') < Version('1.1.1')
+    False
+    >>> Version('1.1.1') < Version('1.1.2')
+    True
+    >>> Version('1.1') < Version('2')
+    True
+    >>> Version('1.1') < Version('1')
+    False
+    >>> Version('1') < Version('1.1')
+    True
+
+    # Comparison, greater than, different local, same upstream
+
+    >>> Version('1') < Version('1+local.1')
+    True
+    >>> Version('1+local.1') < Version('1')
+    False
+    >>> Version('1.2') < Version('1.2+local.1')
+    True
+    >>> Version('1.2+local.1') < Version('1.2')
+    False
+    >>> Version('1.1.1') < Version('1.1.1+local.1')
+    True
+    >>> Version('1.1.1+local.1') < Version('1.1.1')
+    False
+
+    # Comparison, greater than, same local, different upstream
+
+    >>> Version('1+local.1') < Version('2+local.1')
+    True
+    >>> Version('2+local.1') < Version('1+local.1')
+    False
+    >>> Version('1.1+local.1') < Version('1.2+local.1')
+    True
+    >>> Version('1.2+local.1') < Version('1.1+local.1')
+    False
+    >>> Version('1.1.1+local.1') < Version('1.1.2+local.1')
+    True
+    >>> Version('1.1.2+local.1') < Version('1.1.1+local.1')
+    False
+
+    # Comparison, greater than, different local, different upstream
+
+    >>> Version('1+local.1') < Version('2')
+    True
+    >>> Version('2') < Version('1+local.1')
+    False
+    >>> Version('1+local.1') < Version('1.2')
+    True
+    >>> Version('1.1') < Version('1+local.1')
+    False
+    >>> Version('1+local.1') < Version('1.1')
+    True
+    >>> Version('1.2') < Version('1+local.1')
+    False
+    >>> Version('1+local.1') < Version('1.2')
+    True
+    >>> Version('1.1+local.1') < Version('1.2')
+    True
+    >>> Version('1.2') < Version('1.1+local.1')
+    False
+    >>> Version('1.1.1+local.1') < Version('1.1.2')
+    True
+    >>> Version('1.1.2') < Version('1.1.1+local.1')
+    False
+    >>> Version('1.1.2+local.1') < Version('1.1.1')
+    False
+    >>> Version('1.1.1') < Version('1.1.2+local.1')
+    True
     """
+    def __eq__(self, other):
+        return self.major == other.major and self.minor == other.minor and self.micro == other.micro
+
+    def __gt__(self, other):
+        if int(self.major or 0) != int(other.major or 0):
+            return int(self.major or 0) > int(other.major or 0)
+
+        if int(self.minor or 0) != int(other.minor or 0):
+            return int(self.minor or 0) > int(other.minor or 0)
+
+        if int(self.micro or 0) != int(other.micro or 0):
+            return int(self.micro or 0) > int(other.micro or 0)
+
+        if self.local and not other.local:
+            return True
+        else:
+            return False
+
+    def __lt__(self, other):
+        if int(self.major or 0) != int(other.major or 0):
+            return int(self.major or 0) < int(other.major or 0)
+
+        if int(self.minor or 0) != int(other.minor or 0):
+            return int(self.minor or 0) < int(other.minor or 0)
+
+        if int(self.micro or 0) != int(other.micro or 0):
+            return int(self.micro or 0) < int(other.micro or 0)
+
+        if not self.local and other.local:
+            return True
+        else:
+            return False
+
     def __init__(self, version_string):
         self._version_string = version_string
         self._version_parts = []
