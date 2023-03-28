@@ -2,7 +2,7 @@ from mayan.apps.document_states.events import event_workflow_template_edited
 from mayan.apps.document_states.permissions import permission_workflow_template_edit
 from mayan.apps.document_states.tests.base import ActionTestCase
 from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from mayan.apps.document_states.tests.mixins.workflow_template_state_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import event_tag_attached, event_tag_removed

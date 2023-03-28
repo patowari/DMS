@@ -1,7 +1,7 @@
 from mayan.apps.document_states.events import event_workflow_template_edited
 from mayan.apps.document_states.permissions import permission_workflow_template_edit
 from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from mayan.apps.document_states.tests.mixins.workflow_template_state_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..events import (
@@ -9,13 +9,13 @@ from ..events import (
     event_document_metadata_removed
 )
 from ..models import MetadataType
-from ..workflow_actions import (
-    DocumentMetadataAddAction, DocumentMetadataEditAction,
-    DocumentMetadataRemoveAction
-)
 from ..permissions import (
     permission_document_metadata_add, permission_document_metadata_edit,
     permission_document_metadata_remove
+)
+from ..workflow_actions import (
+    DocumentMetadataAddAction, DocumentMetadataEditAction,
+    DocumentMetadataRemoveAction
 )
 
 from .literals import (
