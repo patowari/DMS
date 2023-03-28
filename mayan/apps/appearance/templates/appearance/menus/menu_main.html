@@ -59,7 +59,9 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
-                                        {% include 'navigation/generic_link_instance.html' %}
+                                        {% with 'a-main-menu-accordion-link' as link_classes %}
+                                            {% include 'navigation/generic_link_instance.html' %}
+                                        {% endwith %}
                                     </h4>
                                 </div>
                             </div>

@@ -58,7 +58,7 @@ class MayanApp {
         $('body').on('click', '.btn-multi-item-action', function (event) {
             let id_list = [];
             $('.check-all-slave:checked').each(function (index, value) {
-                //Split the name (ie:"pk_200") and extract only the ID
+                // Split the name (ie:"pk_200") and extract only the ID.
                 id_list.push(value.name.split('_')[1]);
             });
             event.preventDefault();
@@ -164,11 +164,11 @@ class MayanApp {
             let options = {};
 
             if (value.tags === 'error') {
-                // Error messages persist
+                // Error messages persist.
                 options['timeOut'] = 0;
             }
             if (value.tags === 'warning') {
-                // Error messages persist
+                // Error messages persist.
                 options['timeOut'] = 10000;
             }
 
@@ -331,6 +331,8 @@ class MayanApp {
     }
 
     async setupNavbarCollapse () {
+        const app = this;
+
         $(document).keyup(function(e) {
             if (e.keyCode === 27) {
                 $('.navbar-collapse').collapse('hide');
@@ -343,16 +345,31 @@ class MayanApp {
             }
         });
 
-        // Small screen main menu toggle to open
+        // Small screen main menu toggle to open.
         $('body').on('click', '#main-menu-button-open', function (event) {
             $('#menu-main').addClass('menu-main-opened');
             $('#ajax-header').addClass('overlay-gray');
         });
 
-        // Small screen main menu toggle to close
-        $('body').on('click', '#menu-main-button-close', function (event) {
+        // Inject new function in the app.
+        app.doSmallScreenMenuClose = function () {
             $('#menu-main').removeClass('menu-main-opened');
             $('#ajax-header').removeClass('overlay-gray');
+        }
+
+        // Small screen main menu toggle to close.
+        $('body').on('click', '#menu-main-button-close', function (event) {
+            app.doSmallScreenMenuClose();
+        });
+
+        // Close the menu if the main menu accordion also closes.
+        $('body').on('hide.bs.collapse', function (event) {
+            app.doSmallScreenMenuClose();
+        });
+
+        // Close the menu if a menu anchor is clicked.
+        $('body').on('click', '.a-main-menu-accordion-link', function (event) {
+            app.doSmallScreenMenuClose();
         });
     }
 
@@ -367,7 +384,7 @@ class MayanApp {
     async setupPanelSelection () {
         const app = this;
 
-        // Setup panel highlighting on check
+        // Setup panel highlighting on check.
         $('body').on('change', '.check-all-slave', function (event) {
             const checked = $(event.target).prop('checked');
             if (checked) {

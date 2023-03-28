@@ -81,6 +81,9 @@
   - Rename test mixin classes to comply with naming conventions.
   - Add missing workflow template state escalation view tests.
 
+- On small screens, close main menu when clicking on links. Closes GitLab
+  issue #1113. Thanks to BW (@bwakkie) for the report.
+
 4.4.5 (2023-03-11)
 ==================
 - Merge version 4.3.6 documents app migration 80 workaround.
