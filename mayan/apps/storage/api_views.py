@@ -1,7 +1,7 @@
 from mayan.apps.rest_api import generics
 from mayan.apps.views.generics import DownloadViewMixin
 
-from .api_view_mixins import OwnerPlusFilteresQuerysetAPIViewMixin
+from .api_view_mixins import OwnerPlusFilteredQuerysetAPIViewMixin
 from .models import DownloadFile
 from .permissions import (
     permission_download_file_delete, permission_download_file_download,
@@ -11,7 +11,7 @@ from .serializers import DownloadFileSerializer
 
 
 class APIDownloadFileDetailView(
-    OwnerPlusFilteresQuerysetAPIViewMixin, generics.RetrieveDestroyAPIView
+    OwnerPlusFilteredQuerysetAPIViewMixin, generics.RetrieveDestroyAPIView
 ):
     """
     delete: Delete the selected download file.
@@ -32,7 +32,7 @@ class APIDownloadFileDetailView(
 
 
 class APIDownloadFileDownloadView(
-    DownloadViewMixin, OwnerPlusFilteresQuerysetAPIViewMixin,
+    DownloadViewMixin, OwnerPlusFilteredQuerysetAPIViewMixin,
     generics.RetrieveAPIView
 ):
     """
@@ -58,15 +58,12 @@ class APIDownloadFileDownloadView(
     def get_serializer_class(self):
         return None
 
-    # ~ def get_source_queryset(self):
-        # ~ return self.get_document().files.all()
-
     def retrieve(self, request, *args, **kwargs):
         return self.render_to_response()
 
 
 class APIDownloadFileListView(
-    OwnerPlusFilteresQuerysetAPIViewMixin, generics.ListAPIView
+    OwnerPlusFilteredQuerysetAPIViewMixin, generics.ListAPIView
 ):
     """
     get: Returns a list of all the download files.

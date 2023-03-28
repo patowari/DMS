@@ -151,13 +151,15 @@ class ReleaseNoteExporter:
 
             markdown_tag_cleanup = (
                 (b'class="docutils literal"', b''),
-                (b'class="reference external"', b''),
+                (b'class="reference external"', b'')
             )
 
             joined_result = b''.join(result)
 
             for markdown_tag_cleanup_item in markdown_tag_cleanup:
-                joined_result = joined_result.replace(*markdown_tag_cleanup_item)
+                joined_result = joined_result.replace(
+                    *markdown_tag_cleanup_item
+                )
 
             return command_pandoc(_in=joined_result, f='html', t='markdown')
         elif self.options.output_format == 'news':
@@ -171,20 +173,24 @@ class ReleaseNoteExporter:
             joined_result = b''.join(result)
 
             for markdown_tag_cleanup_item in markdown_tag_cleanup:
-                joined_result = joined_result.replace(*markdown_tag_cleanup_item)
+                joined_result = joined_result.replace(
+                    *markdown_tag_cleanup_item
+                )
 
-            result_body = command_pandoc(_in=joined_result, f='html', t='markdown')
+            result_body = command_pandoc(
+                _in=joined_result, f='html', t='markdown'
+            )
 
             tree = html.fromstring(html_fragment)
-            # ~ title = tree[0].text
-            # ~ date tree[1].text)
 
             released, month, day, year = tree[1].text.split(' ')
 
             return '\n'.join(
                 (
                     '---',
-                    'date: {}-{:02d}-{:02d}'.format(year, MONTHS_TO_NUMBER[month], int(day[:-1])),
+                    'date: {}-{:02d}-{:02d}'.format(
+                        year, MONTHS_TO_NUMBER[month], int(day[:-1])
+                    ),
                     'title: "{}"'.format(tree[0].text),
                     '---',
                     str(result_body)

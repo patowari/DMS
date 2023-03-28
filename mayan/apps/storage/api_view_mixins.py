@@ -1,4 +1,4 @@
-class OwnerPlusFilteresQuerysetAPIViewMixin:
+class OwnerPlusFilteredQuerysetAPIViewMixin:
     def filter_queryset(self, queryset):
         queryset_user_owned = queryset.filter(user=self.request.user)
 
