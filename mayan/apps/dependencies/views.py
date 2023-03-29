@@ -21,7 +21,18 @@ class CheckVersionView(SimpleView):
 
     def get_extra_context(self):
         return {
-            'content': PyPIClient().check_version_verbose(),
+            'paragraphs': (
+                PyPIClient().check_version_verbose(),
+                _(
+                    'This process only checks the Python component of '
+                    'Mayan EDMS.'
+                ),
+                _(
+                    'It does not verify versions of other '
+                    'components like packaging or deployment technologies, '
+                    'such as container or virtual machine images.'
+                ),
+            ),
             'title': _('Check for updates')
         }
 
@@ -127,7 +138,7 @@ class DependencyLicensesView(SimpleView):
 
     def get_extra_context(self):
         # Use a function so that DependenciesLicensesForm get initialized
-        # at every request
+        # at every request.
         return {
             'form': DependenciesLicensesForm(),
             'read_only': True,
