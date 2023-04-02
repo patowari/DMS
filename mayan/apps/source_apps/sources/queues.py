@@ -10,10 +10,6 @@ queue_sources_periodic = CeleryQueue(
     label=_('Sources periodic'), name='sources_periodic', transient=True,
     worker=worker_c
 )
-queue_sources_fast = CeleryQueue(
-    label=_('Sources fast'), name='sources_fast', transient=True,
-    worker=worker_a
-)
 
 queue_sources_periodic.add_task_type(
     label=_('Check interval source'),

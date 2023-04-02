@@ -102,6 +102,7 @@
 
   - Add worker, queue, and task type list views.
   - Add source column help texts.
+  - Remove unused `sources_fast` queue.
 
 4.4.5 (2023-03-11)
 ==================
