@@ -1,0 +1,1 @@
+TEST_WATCH_FOLDER_SUBFOLDER = 'test_subfolder'

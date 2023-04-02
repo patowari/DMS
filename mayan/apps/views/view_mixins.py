@@ -132,6 +132,18 @@ class DynamicFormViewMixin:
         return data
 
 
+class DynamicFieldSetFormViewMixin(DynamicFormViewMixin):
+    form_class = DynamicForm
+
+    def get_form_class(self):
+        form_class = super().get_form_class()
+        form_class.fieldsets = self.get_form_fieldsets()
+        return form_class
+
+    def get_form_fieldsets(self):
+        return None
+
+
 class ExternalObjectBaseMixin:
     """
     Mixin to allow views to load an object with minimal code but with all

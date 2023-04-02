@@ -5,10 +5,10 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
-from mayan.apps.sources.tests.mixins.base_mixins import (
+from mayan.apps.source_apps.sources.tests.mixins.base_mixins import (
     DocumentFileUploadViewTestMixin, DocumentUploadWizardViewTestMixin
 )
-from mayan.apps.sources.tests.mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..classes import QuotaBackend
@@ -37,7 +37,7 @@ class QuotaHooksTestCase(
             name='mayan.apps.documents.models.document_type_model_mixins'
         )
         self._silence_logger(name='mayan.apps.documents.tasks')
-        self._silence_logger(name='mayan.apps.sources.views')
+        self._silence_logger(name='mayan.apps.source_apps.sources.views')
         self._silence_logger(
             name='mayan.apps.logging.middleware.error_logging'
         )

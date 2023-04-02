@@ -91,6 +91,13 @@
     upstream one. Closes Gitlab issue #1037. Thanks to Bw (@bwakkie) for
     the request.
 
+- Sources refactor:
+
+  - Split sources app into separate apps per source type.
+  - Add staging storage and watch storage sources.
+  - Consolidate specific source backend functionality into reusable mixins.
+  - Add fieldsets to the source backend setup forms.
+
 4.4.5 (2023-03-11)
 ==================
 - Merge version 4.3.6 documents app migration 80 workaround.

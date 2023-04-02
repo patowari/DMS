@@ -184,9 +184,9 @@ class DynamicModelForm(DynamicFormMixin, ModelForm):
     """Dynamic model form."""
 
 
-class DynamicFormMetaclass(ModelFormMetaclass):
+class BackendDynamicFormMetaclass(ModelFormMetaclass):
     def __new__(mcs, name, bases, attrs):
-        new_class = super(DynamicFormMetaclass, mcs).__new__(
+        new_class = super(BackendDynamicFormMetaclass, mcs).__new__(
             mcs=mcs, name=name, bases=bases, attrs=attrs
         )
 
@@ -201,7 +201,7 @@ class DynamicFormMetaclass(ModelFormMetaclass):
         return new_class
 
 
-class BackendDynamicForm(DynamicModelForm, metaclass=DynamicFormMetaclass):
+class BackendDynamicForm(DynamicModelForm, metaclass=BackendDynamicFormMetaclass):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

@@ -26,8 +26,9 @@ from .icons import (
     icon_remove_all, icon_assign_remove_add, icon_assign_remove_remove
 )
 from .view_mixins import (
-    ExtraDataDeleteViewMixin, DownloadViewMixin, DynamicFormViewMixin,
-    ExternalObjectViewMixin, ExtraContextViewMixin, FormExtraKwargsViewMixin,
+    ExtraDataDeleteViewMixin, DownloadViewMixin,
+    DynamicFieldSetFormViewMixin, ExternalObjectViewMixin,
+    ExtraContextViewMixin, FormExtraKwargsViewMixin,
     ListModeViewMixin, ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
     ObjectActionViewMixin, ObjectNameViewMixin, RedirectionViewMixin,
     RestrictedQuerysetViewMixin, SortingViewMixin, ViewIconMixin,
@@ -465,7 +466,9 @@ class FormView(
     template_name = 'appearance/generic_form.html'
 
 
-class DynamicFormView(DynamicFormViewMixin, FormView):
+class DynamicFormView(
+    DynamicFieldSetFormViewMixin, FormView
+):
     """Form view that uses a single dynamic form."""
 
 
@@ -862,7 +865,7 @@ class MultipleObjectDownloadView(
 
 
 class SingleObjectDynamicFormCreateView(
-    DynamicFormViewMixin, SingleObjectCreateView
+    DynamicFieldSetFormViewMixin, SingleObjectCreateView
 ):
     """
     A form that will allow creation of a single instance from the values
@@ -934,7 +937,7 @@ class SingleObjectEditView(
 
 
 class SingleObjectDynamicFormEditView(
-    DynamicFormViewMixin, SingleObjectEditView
+    DynamicFieldSetFormViewMixin, SingleObjectEditView
 ):
     """
     A form that will allow editing a single instance from the values

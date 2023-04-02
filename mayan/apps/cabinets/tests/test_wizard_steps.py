@@ -6,8 +6,8 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.sources.tests.mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
-from mayan.apps.sources.wizards import DocumentCreateWizardStep
+from mayan.apps.source_apps.sources.tests.mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
+from mayan.apps.source_apps.sources.wizards import DocumentCreateWizardStep
 
 from ..events import event_cabinet_document_added
 from ..wizard_steps import DocumentCreateWizardStepCabinets

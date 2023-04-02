@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.sources.classes import DocumentCreateWizardStep
-from mayan.apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
+from mayan.apps.source_apps.sources.classes import DocumentCreateWizardStep
+from mayan.apps.source_apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
 
 from .forms import DocumentMetadataFormSet
 from .utils import (

@@ -6,7 +6,7 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.sources.tests.mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
 
 from ..events import (
     event_document_metadata_added, event_document_metadata_edited
