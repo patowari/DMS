@@ -98,6 +98,11 @@
   - Consolidate specific source backend functionality into reusable mixins.
   - Add fieldsets to the source backend setup forms.
 
+- Improve task manager app.
+
+  - Add worker, queue, and task type list views.
+  - Add source column help texts.
+
 4.4.5 (2023-03-11)
 ==================
 - Merge version 4.3.6 documents app migration 80 workaround.

@@ -5,15 +5,17 @@ from celery.backends.base import DisabledBackend
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
-from mayan.apps.common.menus import menu_tools
+from mayan.apps.common.menus import menu_list_facet, menu_tools, menu_return
 from mayan.apps.common.signals import signal_perform_upgrade
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import TwoStateWidget
 from mayan.celery import app as celery_app
 
-from .classes import CeleryQueue, Task
+from .classes import CeleryQueue, TaskType, Task, Worker
 from .handlers import handler_perform_upgrade
-from .links import link_queue_list
+from .links import (
+    link_queue_task_type_list, link_worker_list, link_worker_queue_list
+)
 from .literals import TEST_CELERY_RESULT_KEY, TEST_CELERY_RESULT_VALUE
 
 logger = logging.getLogger(name=__name__)
@@ -108,10 +110,30 @@ class TaskManagerApp(MayanAppConfig):
             widget=TwoStateWidget
         )
         SourceColumn(
-            attribute='transient', include_label=True,
-            label=_('Is transient?'), source=CeleryQueue,
-            widget=TwoStateWidget
+            attribute='transient', help_text=_(
+                'Transient queues are not persistent. Tasks in a transient '
+                'queue are lost if the broker is restarted. Transient '
+                'queues use less resources and managed non critical tasks.'
+            ), include_label=True, label=_('Is transient?'),
+            source=CeleryQueue, widget=TwoStateWidget
         )
+        SourceColumn(
+            attribute='get_task_type_count', source=CeleryQueue
+        )
+
+        SourceColumn(
+            attribute='label', label=_('Label'), source=TaskType
+        )
+        SourceColumn(
+            attribute='name', label=_('Name'), source=TaskType
+        )
+        SourceColumn(
+            attribute='dotted_path', label=_('Dotted path'), source=TaskType
+        )
+        SourceColumn(
+            attribute='schedule', label=_('Schedule'), source=TaskType
+        )
+
         SourceColumn(
             attribute='task_type', include_label=True, label=_('Type'),
             source=Task
@@ -137,7 +159,58 @@ class TaskManagerApp(MayanAppConfig):
             include_label=True, label=_('Worker process ID'), source=Task
         )
 
-        menu_tools.bind_links(links=(link_queue_list,))
+        SourceColumn(
+            attribute='label', is_identifier=True, label=_('Label'),
+            source=Worker
+        )
+        SourceColumn(
+            attribute='name', label=_('Name'), source=Worker
+        )
+        SourceColumn(
+            attribute='maximum_memory_per_child', help_text=_(
+                'Maximum amount of resident memory a worker can execute '
+                'before it\'s replaced by a new process.'
+            ), label=_('Maximum memory per child'), source=Worker
+        )
+        SourceColumn(
+            attribute='maximum_tasks_per_child', help_text=_(
+                'Maximum number of tasks a worker can execute before it\'s '
+                'replaced by a new process.'
+            ), label=_('Maximum tasks per child'), source=Worker
+        )
+        SourceColumn(
+            attribute='concurrency', help_text=_(
+                'The number of worker processes/threads to launch. '
+                'Defaults to the number of CPUs available on the machine.'
+            ), label=_('Concurrency'), source=Worker
+        )
+        SourceColumn(
+            attribute='nice_level', help_text=_(
+                'The nice value determines the priority of the process. '
+                'A higher value lowers the priority. The default '
+                'value is 0.'
+            ), label=_('Nice level'), source=Worker
+        )
+        SourceColumn(attribute='get_queue_count', source=Worker)
+
+        menu_list_facet.bind_links(
+            links=(link_queue_task_type_list,), sources=(CeleryQueue,)
+        )
+
+        menu_list_facet.bind_links(
+            links=(link_worker_queue_list,), sources=(Worker,)
+        )
+
+        menu_return.bind_links(
+            links=(
+                link_worker_list,
+            ),
+            sources=(Worker,)
+        )
+
+        menu_tools.bind_links(
+            links=(link_worker_list,)
+        )
 
         signal_perform_upgrade.connect(
             dispatch_uid='task_manager_handler_perform_upgrade',

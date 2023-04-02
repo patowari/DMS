@@ -4,6 +4,7 @@ from kombu import Exchange, Queue
 
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.module_loading import import_string
+from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.exceptions import NonUniqueError
@@ -168,7 +169,7 @@ class CeleryQueue(AppsModuleLoaderMixin):
             celery_app.conf.task_default_queue = None
 
         for task_type in self.task_types:
-            celery_app.conf.task_routes.pop(task_type.dotted_path)
+            celery_app.conf.task_routes.pop(task_type.dotted_path, None)
 
             if task_type.schedule:
                 celery_app.conf.beat_schedule.pop(task_type.name)
@@ -179,25 +180,33 @@ class CeleryQueue(AppsModuleLoaderMixin):
 
         del self
 
+    def get_task_type_count(self):
+        return len(self.task_types)
+
+    get_task_type_count.short_description = _('Task type count')
+
 
 class Worker:
     _registry = {}
 
     @classmethod
     def all(cls):
-        return cls._registry.values()
+        return sorted(
+            cls._registry.values(), key=lambda instance: instance.name
+        )
 
     @classmethod
     def get(cls, name):
         return cls._registry[name]
 
     def __init__(
-        self, name, maximum_memory_per_child=None,
+        self, name, description=None, maximum_memory_per_child=None,
         maximum_tasks_per_child=None, concurrency=None, label=None,
         nice_level=0
     ):
         self.concurrency = concurrency or WORKER_DEFAULT_CONCURRENCY
-        self.label = label
+        self.description = description
+        self._label = label
         self.maximum_memory_per_child = maximum_memory_per_child
         self.maximum_tasks_per_child = maximum_tasks_per_child
         self.name = name
@@ -206,5 +215,17 @@ class Worker:
         self.__class__._registry[name] = self
 
     @property
+    def label(self):
+        return self._label or self.name
+
+    @property
     def queues(self):
         return sorted(self._queues, key=lambda queue: queue.name)
+
+    def get_queue_count(self):
+        return len(self.queues)
+
+    get_queue_count.short_description = _('Queue count')
+
+    def __str__(self):
+        return self.label
