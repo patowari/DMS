@@ -55,9 +55,7 @@ networks:
 
 services:
   app:
-    <<: *mayan-container
-    <<: *mayan-traefik-labels
-    <<: *mayan-frontend-ports
+    <<: [*mayan-container, *mayan-traefik-labels, *mayan-frontend-ports]
     profiles:
       - all_in_one
 
@@ -124,8 +122,6 @@ services:
     restart: unless-stopped
 
   keycloak-postgres:
-    image: postgres:13.2
-    restart: unless-stopped
     environment:
       POSTGRES_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
       POSTGRES_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
@@ -200,9 +196,7 @@ services:
 
   # Run a frontend gunicorn container
   frontend:
-    <<: *mayan-container
-    <<: *mayan-traefik-labels
-    <<: *mayan-frontend-ports
+    <<: [*mayan-container, *mayan-traefik-labels, *mayan-frontend-ports]
     command:
       - run_frontend
     profiles:
