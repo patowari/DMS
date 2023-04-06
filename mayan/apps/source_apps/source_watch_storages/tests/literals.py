@@ -1,1 +1,0 @@
-TEST_WATCH_STORAGE_SUBFOLDER = 'test_subfolder'
