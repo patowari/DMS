@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.task_manager.classes import CeleryQueue
-from mayan.apps.task_manager.workers import worker_a, worker_b, worker_c
+from mayan.apps.task_manager.workers import worker_b, worker_c
 
 queue_sources = CeleryQueue(
     label=_('Sources'), name='sources', worker=worker_b

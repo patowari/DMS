@@ -10,7 +10,6 @@ from mayan.apps.documents.tests.literals import (
 )
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_ALWAYS
 
-from .literals import TEST_WATCH_STORAGE_SUBFOLDER
 from .mixins import WatchStorageSourceTestMixin
 
 
