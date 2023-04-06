@@ -16,7 +16,7 @@ from .literals import (
     TEST_EMAIL_NO_CONTENT_TYPE, TEST_EMAIL_NO_CONTENT_TYPE_STRING,
     TEST_EMAIL_ZERO_LENGTH_ATTACHMENT
 )
-from .mixins.email_source_mixins import (
+from .mixins import (
     EmailSourceBackendTestMixin, IMAPEmailSourceTestMixin,
     POP3EmailSourceTestMixin
 )

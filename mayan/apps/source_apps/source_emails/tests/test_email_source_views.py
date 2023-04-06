@@ -7,13 +7,14 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.metadata.models import MetadataType
-
-from ..events import event_source_created
-from ..models import Source
-from ..permissions import permission_sources_create, permission_sources_edit
+from mayan.apps.source_apps.sources.events import event_source_created
+from mayan.apps.source_apps.sources.models import Source
+from mayan.apps.source_apps.sources.permissions import (
+    permission_sources_create, permission_sources_edit
+)
 
 from .literals import TEST_EMAIL_BASE64_FILENAME
-from .mixins.email_source_mixins import (
+from .mixins import (
     EmailSourceBackendTestMixin, EmailSourceBackendViewTestMixin
 )
 

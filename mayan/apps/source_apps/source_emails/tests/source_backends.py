@@ -1,8 +1,9 @@
-from ..classes import SourceBackend
-from ..source_backends.email_backends import SourceBackendEmailMixin
-from ..source_backends.source_backend_mixins import (
+from mayan.apps.source_apps.sources.classes import SourceBackend
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
     SourceBaseMixin, SourceBackendPeriodicMixin
 )
+
+from ..source_backends.mixins import SourceBackendEmailMixin
 
 __all__ = ('SourceBackendTestEmail',)
 

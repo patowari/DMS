@@ -1,18 +1,19 @@
-from ...source_backends.email_backends import (
-    SourceBackendIMAPEmail, SourceBackendPOP3Email
-)
-from ...source_backends.literals import (
-    DEFAULT_EMAIL_IMAP_MAILBOX, DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
-    DEFAULT_EMAIL_IMAP_STORE_COMMANDS, DEFAULT_EMAIL_METADATA_ATTACHMENT_NAME,
-    DEFAULT_EMAIL_POP3_TIMEOUT, DEFAULT_PERIOD_INTERVAL,
-    SOURCE_UNCOMPRESS_CHOICE_NEVER
+from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceTestMixin, SourceViewTestMixin
+from mayan.apps.source_apps.sources.source_backends.literals import (
+    DEFAULT_PERIOD_INTERVAL, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
 
-from ..literals import (
+from ..source_backends.imap_source_backends import SourceBackendIMAPEmail
+from ..source_backends.literals import (
+    DEFAULT_EMAIL_IMAP_MAILBOX, DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
+    DEFAULT_EMAIL_IMAP_STORE_COMMANDS, DEFAULT_EMAIL_POP3_TIMEOUT,
+    DEFAULT_EMAIL_METADATA_ATTACHMENT_NAME
+)
+from ..source_backends.pop3_source_backends import SourceBackendPOP3Email
+
+from .literals import (
     TEST_EMAIL_ATTACHMENT_AND_INLINE, TEST_SOURCE_BACKEND_EMAIL_PATH
 )
-
-from .base_mixins import SourceTestMixin, SourceViewTestMixin
 
 
 class EmailSourceBackendTestMixin(SourceTestMixin):
