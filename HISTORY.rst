@@ -105,6 +105,9 @@
   - Remove unused `sources_fast` queue.
   - Increase default maximum worker tasks by 10x.
 
+- Add check named ``check_app_tests`` to ensure Mayan apps tests flag matches
+  the actual state of the app's tests.
+
 4.4.5 (2023-03-11)
 ==================
 - Merge version 4.3.6 documents app migration 80 workaround.
