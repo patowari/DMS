@@ -1,6 +1,6 @@
 from mayan.apps.testing.tests.base import MayanMigratorTestCase
 
-from .mixins.base_mixins import SourceTestMixin
+from .mixins import SourceTestMixin
 
 
 class SourceBackendPathMigrationTestCase(

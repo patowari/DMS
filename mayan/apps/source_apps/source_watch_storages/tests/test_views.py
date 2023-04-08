@@ -10,26 +10,40 @@ from mayan.apps.source_apps.sources.models import Source
 from mayan.apps.source_apps.sources.permissions import (
     permission_sources_create, permission_sources_edit
 )
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceViewTestMixin
 
-from .mixins import WatchStorageSourceTestMixin
+from .mixins import (
+    WatchStorageSourceBackendTestMixin,
+    WatchStorageSourceBackendViewTestMixin
+)
 
 
-class WatchStorageSourceViewTestCase(
-    SourceViewTestMixin, WatchStorageSourceTestMixin,
+class WatchStorageSourceBackendViewTestCase(
+    WatchStorageSourceBackendTestMixin, WatchStorageSourceBackendViewTestMixin,
     GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
-    def test_watch_storage_source_create_view(self):
+    def test_watch_storage_source_create_view_no_permission(self):
+        source_count = Source.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_watch_storage_source_create_view()
+        self.assertEqual(response.status_code, 403)
+
+        self.assertEqual(Source.objects.count(), source_count)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_watch_storage_source_create_view_with_permission(self):
         self.grant_permission(permission=permission_sources_create)
 
         source_count = Source.objects.count()
 
         self._clear_events()
 
-        response = self._request_test_source_create_view()
-
+        response = self._request_test_watch_storage_source_create_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Source.objects.count(), source_count + 1)

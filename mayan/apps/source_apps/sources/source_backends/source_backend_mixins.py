@@ -12,12 +12,9 @@ from django.utils.module_loading import import_string
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
-from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_type_models import DocumentType
-from mayan.apps.documents.tasks import task_document_file_upload
 
 from ..classes import DocumentCreateWizardStep
-from ..tasks import task_process_document_upload
 
 from .literals import (
     DEFAULT_PERIOD_INTERVAL, DEFAULT_STORAGE_BACKEND,
@@ -30,122 +27,45 @@ from .literals import (
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBaseMixin:
-    @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = (
-            (
-                _('General'), {
-                    'fields': ('label', 'enabled')
-                }
-            ),
-        )
-
-        return fieldsets
-
-    def callback(self, **kwargs):
-        return
-
-    def clean(self):
-        return
-
-    def get_callback_kwargs(self):
-        return {}
-
-    def get_document(self):
-        raise NotImplementedError
-
-    def get_document_description(self):
-        return None
-
-    def get_document_file_action(self):
-        return None
-
-    def get_document_file_comment(self):
-        return None
-
-    def get_document_label(self):
-        return None
-
-    def get_document_language(self):
-        return None
-
-    def get_document_type(self):
-        raise NotImplementedError
-
-    def get_task_extra_kwargs(self):
-        return {}
-
-    def get_user(self):
-        return None
-
-    def process_document_file(self, **kwargs):
-        self.process_kwargs = kwargs
-
-        document = self.get_document()
-        user = self.get_user()
-
-        if user:
-            user_id = user.pk
-        else:
-            user_id = None
-
-        for self.shared_uploaded_file in self.get_shared_uploaded_files() or ():
-            # Call the hooks here too as in the model for early detection and
-            # exception raise when using the views.
-            DocumentFile.execute_pre_create_hooks(
-                kwargs={
-                    'document': document,
-                    'file_object': self.shared_uploaded_file,
-                    'user': user
-                }
-            )
-
-            kwargs = {
-                'action': self.get_document_file_action(),
-                'comment': self.get_document_file_comment(),
-                'document_id': document.pk,
-                'shared_uploaded_file_id': self.shared_uploaded_file.pk,
-                'user_id': user_id
-            }
-
-            kwargs.update(
-                self.get_task_extra_kwargs()
-            )
-
-            task_document_file_upload.apply_async(kwargs=kwargs)
-
-    def process_documents(self, **kwargs):
-        self.process_kwargs = kwargs
-
-        document_type = self.get_document_type()
-        user = self.get_user()
-
-        if user:
-            user_id = user.pk
-        else:
-            user_id = None
-
-        for self.shared_uploaded_file in self.get_shared_uploaded_files() or ():
-            kwargs = {
-                'callback_kwargs': self.get_callback_kwargs(),
-                'description': self.get_document_description(),
-                'document_type_id': document_type.pk,
-                'label': self.get_document_label(),
-                'language': self.get_document_language(),
-                'shared_uploaded_file_id': self.shared_uploaded_file.pk,
-                'source_id': self.model_instance_id,
-                'user_id': user_id
-            }
-            kwargs.update(
-                self.get_task_extra_kwargs()
-            )
-
-            task_process_document_upload.apply_async(kwargs=kwargs)
-
-
 class SourceBackendCompressedMixin:
     uncompress_choices = SOURCE_UNCOMPRESS_INTERACTIVE_CHOICES
+
+    @classmethod
+    def get_setup_form_field_widgets(cls):
+        widgets = super().get_setup_form_field_widgets()
+
+        widgets.update(
+            {
+                'uncompress': {
+                    'class': 'django.forms.widgets.Select', 'kwargs': {
+                        'attrs': {'class': 'select2'}
+                    }
+                }
+            }
+        )
+        return widgets
+
+    @classmethod
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+        fields.update(
+            {
+                'uncompress': {
+                    'label': _('Uncompress'),
+                    'class': 'django.forms.ChoiceField',
+                    'default': SOURCE_UNCOMPRESS_CHOICE_ASK,
+                    'help_text': _(
+                        'Whether to expand or not compressed archives.'
+                    ),
+                    'kwargs': {
+                        'choices': cls.uncompress_choices
+                    },
+                    'required': True
+                }
+            }
+        )
+
+        return fields
 
     @classmethod
     def get_setup_form_fieldsets(cls):
@@ -162,41 +82,10 @@ class SourceBackendCompressedMixin:
         return fieldsets
 
     @classmethod
-    def get_setup_form_schema(cls):
-        result = super().get_setup_form_schema()
-
-        result['fields'].update(
-            {
-                'uncompress': {
-                    'label': _('Uncompress'),
-                    'class': 'django.forms.ChoiceField',
-                    'default': SOURCE_UNCOMPRESS_CHOICE_ASK,
-                    'help_text': _(
-                        'Whether to expand or not compressed archives.'
-                    ),
-                    'kwargs': {
-                        'choices': cls.uncompress_choices
-                    },
-                    'required': True
-                }
-            }
-        )
-        result['field_order'] = ('uncompress',) + result['field_order']
-
-        result['widgets'].update(
-            {
-                'uncompress': {
-                    'class': 'django.forms.widgets.Select', 'kwargs': {
-                        'attrs': {'class': 'select2'}
-                    }
-                }
-            }
-        )
-        return result
-
-    @classmethod
     def get_upload_form_class(cls):
-        class CompressedSourceUploadForm(super().get_upload_form_class()):
+        class CompressedSourceUploadForm(
+            super().get_upload_form_class()
+        ):
             expand = forms.BooleanField(
                 label=_('Expand compressed files'), required=False,
                 help_text=ugettext(
@@ -221,9 +110,15 @@ class SourceBackendCompressedMixin:
                 return False
 
     def get_task_extra_kwargs(self):
-        return {
-            'expand': self.get_expand()
-        }
+        results = super().get_task_extra_kwargs()
+
+        results.update(
+            {
+                'expand': self.get_expand()
+            }
+        )
+
+        return results
 
 
 class SourceBackendInteractiveMixin:
@@ -302,24 +197,9 @@ class SourceBackendInteractiveMixin:
 
 class SourceBackendPeriodicMixin:
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
-
-        fieldsets += (
-            (
-                _('Unattended'), {
-                    'fields': ('document_type_id', 'interval')
-                },
-            ),
-        )
-
-        return fieldsets
-
-    @classmethod
-    def get_setup_form_schema(cls):
-        result = super().get_setup_form_schema()
-
-        result['fields'].update(
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+        fields.update(
             {
                 'document_type_id': {
                     'class': 'django.forms.ChoiceField',
@@ -351,11 +231,28 @@ class SourceBackendPeriodicMixin:
                 }
             }
         )
-        result['field_order'] = (
-            'document_type_id', 'interval',
-        ) + result['field_order']
 
-        result['widgets'].update(
+        return fields
+
+    @classmethod
+    def get_setup_form_fieldsets(cls):
+        fieldsets = super().get_setup_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Unattended'), {
+                    'fields': ('document_type_id', 'interval')
+                },
+            ),
+        )
+
+        return fieldsets
+
+    @classmethod
+    def get_setup_form_widgets(cls):
+        widgets = super().get_setup_form_widgets()
+
+        widgets.update(
             {
                 'document_type_id': {
                     'class': 'django.forms.widgets.Select', 'kwargs': {
@@ -365,7 +262,7 @@ class SourceBackendPeriodicMixin:
             }
         )
 
-        return result
+        return widgets
 
     def create(self):
         IntervalSchedule = apps.get_model(
@@ -375,7 +272,7 @@ class SourceBackendPeriodicMixin:
             app_label='django_celery_beat', model_name='PeriodicTask'
         )
 
-        # Create a new interval or use an existing one
+        # Create a new interval or use an existing one.
         interval_instance, created = IntervalSchedule.objects.get_or_create(
             every=self.kwargs['interval'], period='seconds'
         )
@@ -438,6 +335,37 @@ class SourceBackendCompressedPeriodicMixin(
 
 class SourceBackendRegularExpressionMixin:
     @classmethod
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+
+        fields.update(
+            {
+                'include_regex': {
+                    'class': 'django.forms.CharField',
+                    'default': '',
+                    'help_text': _(
+                        'Regular expression used to select which files '
+                        'to upload.'
+                    ),
+                    'label': _('Include regular expression'),
+                    'required': False
+                },
+                'exclude_regex': {
+                    'class': 'django.forms.CharField',
+                    'default': '',
+                    'help_text': _(
+                        'Regular expression used to exclude which files '
+                        'to upload.'
+                    ),
+                    'label': _('Exclude regular expression'),
+                    'required': False
+                }
+            }
+        )
+
+        return fields
+
+    @classmethod
     def get_setup_form_fieldsets(cls):
         fieldsets = super().get_setup_form_fieldsets()
 
@@ -450,36 +378,6 @@ class SourceBackendRegularExpressionMixin:
         )
 
         return fieldsets
-
-    @classmethod
-    def get_setup_form_schema(cls):
-        result = super().get_setup_form_schema()
-
-        result['fields'].update(
-            {
-                'include_regex': {
-                    'class': 'django.forms.CharField',
-                    'default': '',
-                    'help_text': _(
-                        'Regular expression used to select which files to upload.'
-                    ),
-                    'label': _('Include regular expression'),
-                    'required': False
-                },
-                'exclude_regex': {
-                    'class': 'django.forms.CharField',
-                    'default': '',
-                    'help_text': _(
-                        'Regular expression used to exclude which files to upload.'
-                    ),
-                    'label': _('Exclude regular expression'),
-                    'required': False
-                }
-            }
-        )
-        result['field_order'] += ('include_regex', 'exclude_regex')
-
-        return result
 
     def get_regex_exclude(self):
         return re.compile(
@@ -498,6 +396,43 @@ class SourceBackendRegularExpressionMixin:
 
 class SourceBackendStorageBackendMixin:
     @classmethod
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+
+        fields.update(
+            {
+                'storage_backend': {
+                    'class': 'django.forms.CharField',
+                    'default': DEFAULT_STORAGE_BACKEND,
+                    'help_text': _(
+                        'Python path to the Storage subclass used to '
+                        'access the source files.'
+                    ),
+                    'kwargs': {
+                        'max_length': 255,
+                    },
+                    'label': _('Storage backend'),
+                    'required': True
+                },
+                'storage_backend_arguments': {
+                    'class': 'django.forms.CharField',
+                    'default': DEFAULT_STORAGE_BACKEND_ARGUMENTS,
+                    'help_text': _(
+                        'Arguments to pass to the storage backend. Use '
+                        'YAML format.'
+                    ),
+                    'kwargs': {
+                        'max_length': 255,
+                    },
+                    'label': _('Storage backend arguments'),
+                    'required': True
+                }
+            }
+        )
+
+        return fields
+
+    @classmethod
     def get_setup_form_fieldsets(cls):
         fieldsets = super().get_setup_form_fieldsets()
 
@@ -512,45 +447,6 @@ class SourceBackendStorageBackendMixin:
         )
 
         return fieldsets
-
-    @classmethod
-    def get_setup_form_schema(cls):
-        result = super().get_setup_form_schema()
-
-        result['fields'].update(
-            {
-                'storage_backend': {
-                    'class': 'django.forms.CharField',
-                    'default': DEFAULT_STORAGE_BACKEND,
-                    'help_text': _(
-                        'Python path to the Storage subclass used to access the '
-                        'source files.'
-                    ),
-                    'kwargs': {
-                        'max_length': 255,
-                    },
-                    'label': _('Storage backend'),
-                    'required': True
-                },
-                'storage_backend_arguments': {
-                    'class': 'django.forms.CharField',
-                    'default': DEFAULT_STORAGE_BACKEND_ARGUMENTS,
-                    'help_text': _(
-                        'Arguments to pass to the storage backend. Use YAML format.'
-                    ),
-                    'kwargs': {
-                        'max_length': 255,
-                    },
-                    'label': _('Storage backend arguments'),
-                    'required': True
-                }
-            }
-        )
-        result['field_order'] += (
-            'storage_backend', 'storage_backend_arguments'
-        )
-
-        return result
 
     def get_storage_backend_arguments(self):
         arguments = self.kwargs.get('storage_backend_arguments', '{}')

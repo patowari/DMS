@@ -5,17 +5,17 @@ from django.db.models import Q
 from mayan.apps.documents.document_file_actions import DocumentFileActionUseNewPages
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 
-from ...forms import NewDocumentForm
-from ...models import Source
-from ...source_backends.literals import (
+from ..forms import NewDocumentForm
+from ..models import Source
+from ..source_backends.literals import (
     DEFAULT_PERIOD_INTERVAL, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
 
-from ..literals import (
+from .literals import (
     TEST_SOURCE_BACKEND_PATH, TEST_SOURCE_BACKEND_PERIODIC_PATH,
     TEST_SOURCE_LABEL, TEST_SOURCE_LABEL_EDITED
 )
-from ..mocks import MockRequest
+from .mocks import MockRequest
 
 
 class DocumentFileUploadViewTestMixin:
@@ -208,7 +208,9 @@ class SourceViewTestMixin:
     def _request_test_source_create_view(
         self, backend_path=None, extra_data=None
     ):
-        pk_list = list(Source.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Source.objects.values_list('pk', flat=True)
+        )
 
         data = {
             'enabled': True,
@@ -236,6 +238,15 @@ class SourceViewTestMixin:
         return self.post(
             viewname='sources:source_delete', kwargs={
                 'source_id': self._test_source.pk
+            }
+        )
+
+    def _request_test_source_edit_view_get(self):
+        return self.get(
+            viewname='sources:source_edit', kwargs={
+                'source_id': self._test_source.pk
+            }, data={
+                'label': TEST_SOURCE_LABEL_EDITED
             }
         )
 

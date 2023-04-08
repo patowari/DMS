@@ -2,7 +2,7 @@ from django_celery_beat.models import PeriodicTask
 
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .mixins.base_mixins import PeriodicSourceBackendTestMixin
+from .mixins import PeriodicSourceBackendTestMixin
 
 
 class PeriodicSourceBackendTestCase(
@@ -15,7 +15,9 @@ class PeriodicSourceBackendTestCase(
 
         self._test_source.delete()
 
-        self.assertEqual(PeriodicTask.objects.count(), periodic_task_count - 1)
+        self.assertEqual(
+            PeriodicTask.objects.count(), periodic_task_count - 1
+        )
 
     def test_periodic_source_save(self):
         periodic_task_count = PeriodicTask.objects.count()

@@ -5,7 +5,7 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..links import link_document_create_multiple, link_document_file_upload
 
-from .mixins.base_mixins import SourceTestMixin
+from .mixins import SourceTestMixin
 
 
 class SourcesNewDocumentLinkTestCase(

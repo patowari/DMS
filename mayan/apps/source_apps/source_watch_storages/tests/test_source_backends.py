@@ -10,12 +10,11 @@ from mayan.apps.documents.tests.literals import (
 )
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_ALWAYS
 
-from .literals import TEST_WATCH_FOLDER_SUBFOLDER
-from .mixins.watch_folder_source_mixins import WatchFolderSourceTestMixin
+from .mixins import WatchStorageSourceBackendTestMixin
 
 
-class WatchFolderSourceBackendTestCase(
-    WatchFolderSourceTestMixin, GenericDocumentTestCase
+class WatchStorageSourceBackendTestCase(
+    WatchStorageSourceBackendTestMixin, GenericDocumentTestCase
 ):
     auto_create_test_source = False
     auto_upload_test_document = False
@@ -23,15 +22,16 @@ class WatchFolderSourceBackendTestCase(
     def test_exclude_regular_expression(self):
         path = Path(TEST_FILE_SMALL_PATH)
 
-        self._create_test_watch_folder(
+        self._create_test_watch_storage(
             extra_data={'exclude_regex': path.name}
         )
 
         document_count = Document.objects.count()
 
-        temporary_directory = self._test_source.get_backend_data()['folder_path']
-
-        shutil.copy(src=TEST_FILE_SMALL_PATH, dst=temporary_directory)
+        shutil.copy(
+            src=TEST_FILE_SMALL_PATH,
+            dst=self._test_source._test_temporary_folder
+        )
 
         self._test_source.get_backend_instance().process_documents()
 
@@ -48,15 +48,16 @@ class WatchFolderSourceBackendTestCase(
     def test_include_regular_expression(self):
         path = Path(TEST_FILE_SMALL_PATH)
 
-        self._create_test_watch_folder(
+        self._create_test_watch_storage(
             extra_data={'include_regex': '_____.*'}
         )
 
         document_count = Document.objects.count()
 
-        temporary_directory = self._test_source.get_backend_data()['folder_path']
-
-        shutil.copy(src=TEST_FILE_SMALL_PATH, dst=temporary_directory)
+        shutil.copy(
+            src=TEST_FILE_SMALL_PATH,
+            dst=self._test_source._test_temporary_folder
+        )
 
         self._test_source.get_backend_instance().process_documents()
 
@@ -71,13 +72,14 @@ class WatchFolderSourceBackendTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
     def test_upload_simple_file(self):
-        self._create_test_watch_folder()
+        self._create_test_watch_storage()
 
         document_count = Document.objects.count()
 
-        temporary_directory = self._test_source.get_backend_data()['folder_path']
-
-        shutil.copy(src=TEST_FILE_SMALL_PATH, dst=temporary_directory)
+        shutil.copy(
+            src=TEST_FILE_SMALL_PATH,
+            dst=self._test_source._test_temporary_folder
+        )
 
         self._test_source.get_backend_instance().process_documents()
 
@@ -87,63 +89,18 @@ class WatchFolderSourceBackendTestCase(
             TEST_DOCUMENT_SMALL_CHECKSUM
         )
 
-    def test_subfolder_disabled(self):
-        self._create_test_watch_folder()
-
-        temporary_directory = self._test_source.get_backend_data()['folder_path']
-
-        test_path = Path(temporary_directory)
-        test_subfolder = test_path.joinpath(TEST_WATCH_FOLDER_SUBFOLDER)
-        test_subfolder.mkdir()
-
-        shutil.copy(
-            src=TEST_FILE_SMALL_PATH, dst=test_subfolder
-        )
-
-        document_count = Document.objects.count()
-
-        self._test_source.get_backend_instance().process_documents()
-        self.assertEqual(Document.objects.count(), document_count)
-
-    def test_subfolder_enabled(self):
-        self._create_test_watch_folder(
-            extra_data={'include_subdirectories': True}
-        )
-
-        temporary_directory = self._test_source.get_backend_data()['folder_path']
-
-        test_path = Path(temporary_directory)
-        test_subfolder = test_path.joinpath(TEST_WATCH_FOLDER_SUBFOLDER)
-        test_subfolder.mkdir()
-
-        shutil.copy(src=TEST_FILE_SMALL_PATH, dst=test_subfolder)
-
-        document_count = Document.objects.count()
-
-        self._test_source.get_backend_instance().process_documents()
-
-        self.assertEqual(Document.objects.count(), document_count + 1)
-
-        document = Document.objects.first()
-
-        self.assertEqual(
-            document.file_latest.checksum, TEST_DOCUMENT_SMALL_CHECKSUM
-        )
-
     def test_non_ascii_file_in_non_ascii_compressed_file(self):
         """
         Test Non-ASCII named documents inside Non-ASCII named compressed
         file. GitHub issue #163.
         """
-        self._create_test_watch_folder(
+        self._create_test_watch_storage(
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ALWAYS}
         )
 
-        temporary_directory = self._test_source.get_backend_data()['folder_path']
-
         shutil.copy(
             src=TEST_FILE_NON_ASCII_COMPRESSED_PATH,
-            dst=temporary_directory
+            dst=self._test_source._test_temporary_folder
         )
 
         document_count = Document.objects.count()

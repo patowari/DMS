@@ -7,8 +7,7 @@ from mayan.apps.storage.models import SharedUploadedFile
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
     SourceBackendCompressedPeriodicMixin,
-    SourceBackendRegularExpressionMixin, SourceBackendStorageBackendMixin,
-    SourceBaseMixin
+    SourceBackendRegularExpressionMixin, SourceBackendStorageBackendMixin
 )
 
 __all__ = ('SourceBackendWatchStorage',)
@@ -18,7 +17,7 @@ logger = logging.getLogger(name=__name__)
 class SourceBackendWatchStorage(
     SourceBackendCompressedPeriodicMixin,
     SourceBackendRegularExpressionMixin, SourceBackendStorageBackendMixin,
-    SourceBaseMixin, SourceBackend
+    SourceBackend
 ):
     label = _('Watch storage')
 

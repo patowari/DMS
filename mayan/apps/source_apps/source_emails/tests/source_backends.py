@@ -1,7 +1,5 @@
 from mayan.apps.source_apps.sources.classes import SourceBackend
-from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBaseMixin, SourceBackendPeriodicMixin
-)
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendPeriodicMixin
 
 from ..source_backends.mixins import SourceBackendEmailMixin
 
@@ -9,8 +7,7 @@ __all__ = ('SourceBackendTestEmail',)
 
 
 class SourceBackendTestEmail(
-    SourceBackendEmailMixin, SourceBackendPeriodicMixin, SourceBaseMixin,
-    SourceBackend
+    SourceBackendEmailMixin, SourceBackendPeriodicMixin, SourceBackend
 ):
     label = 'Test email source backend'
 

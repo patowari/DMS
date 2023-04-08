@@ -1,4 +1,4 @@
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceTestMixin, SourceViewTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin, SourceViewTestMixin
 from mayan.apps.source_apps.sources.source_backends.literals import (
     DEFAULT_PERIOD_INTERVAL, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )

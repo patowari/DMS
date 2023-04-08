@@ -71,7 +71,7 @@ class SourceBackendDynamicForm(DynamicModelForm):
         if self.instance.backend_data:
             backend_data = json.loads(s=self.instance.backend_data)
 
-            for key in self.instance.get_backend().get_fields():
+            for key in self.instance.get_backend().get_setup_form_fields():
                 self.fields[key].initial = backend_data.get(key, None)
 
     def clean(self):

@@ -5,11 +5,11 @@ import shutil
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
 
-from ...source_backends.staging_folder_backends import SourceBackendStagingFolder
+from ..source_backends.staging_folder_backends import SourceBackendStagingFolder
 
-from ..literals import (
+from .literals import (
     TEST_STAGING_PREVIEW_HEIGHT, TEST_STAGING_PREVIEW_WIDTH
 )
 

@@ -9,7 +9,7 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import MissingItem
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_secondary, menu_setup
+    menu_list_facet, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.common.signals import (
     signal_post_initial_setup, signal_post_upgrade
@@ -137,13 +137,19 @@ class SourcesApp(MayanAppConfig):
             links=(link_source_test,),
             sources=(Source,)
         )
+        menu_return.bind_links(
+            links=(link_source_list,),
+            sources=(
+                Source, 'sources:source_backend_selection',
+                'sources:source_create', 'sources:source_list'
+            )
+        )
         menu_secondary.bind_links(
             links=(
-                link_source_backend_selection, link_source_list
+                link_source_backend_selection,
             ), sources=(
-                Source,
-                'sources:source_backend_selection', 'sources:source_create',
-                'sources:source_list'
+                Source, 'sources:source_backend_selection',
+                'sources:source_create', 'sources:source_list'
             )
         )
         menu_setup.bind_links(

@@ -14,7 +14,7 @@ from mayan.apps.source_apps.sources.source_backends.literals import (
     SOURCE_UNCOMPRESS_CHOICE_ASK, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
 
-from .mixins.web_form_source_mixins import (
+from .mixins import (
     WebFormSourceBackendAPITestMixin, WebFormSourceBackendTestMixin
 )
 

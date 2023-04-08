@@ -8,7 +8,7 @@ from ..permissions import (
 )
 
 from .literals import TEST_SOURCE_LABEL
-from .mixins.base_mixins import SourceTestMixin, SourceViewTestMixin
+from .mixins import SourceTestMixin, SourceViewTestMixin
 
 
 class SourceViewTestCase(
@@ -133,6 +133,45 @@ class SourceViewTestCase(
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_source)
         self.assertEqual(events[0].verb, event_source_edited.id)
+
+    def test_source_edit_view_get_no_permission(self):
+        self._create_test_source()
+
+        self._test_source.set_backend_data(
+            obj={'test_field': 'test_source_field_value'}
+        )
+        self._test_source.save()
+
+        self._clear_events()
+
+        response = self._request_test_source_edit_view_get()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_source_edit_view_get_with_access(self):
+        self._create_test_source()
+
+        self.grant_access(
+            obj=self._test_source, permission=permission_sources_edit
+        )
+
+        self._test_source.set_backend_data(
+            obj={'test_field': 'test_source_field_value'}
+        )
+        self._test_source.save()
+
+        self._clear_events()
+
+        response = self._request_test_source_edit_view_get()
+        self.assertContains(
+            count=2, response=response, status_code=200,
+            text='test_source_field_value'
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
     def test_source_list_view_no_permission(self):
         self._create_test_source()

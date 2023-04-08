@@ -201,7 +201,9 @@ class BackendDynamicFormMetaclass(ModelFormMetaclass):
         return new_class
 
 
-class BackendDynamicForm(DynamicModelForm, metaclass=BackendDynamicFormMetaclass):
+class BackendDynamicForm(
+    DynamicModelForm, metaclass=BackendDynamicFormMetaclass
+):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

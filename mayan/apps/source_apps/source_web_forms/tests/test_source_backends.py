@@ -7,9 +7,9 @@ from mayan.apps.documents.tests.literals import (
     TEST_FILE_SMALL_PATH
 )
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_ALWAYS
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import InteractiveSourceBackendTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import InteractiveSourceBackendTestMixin
 
-from .mixins.web_form_source_mixins import WebFormSourceBackendTestMixin
+from .mixins import WebFormSourceBackendTestMixin
 
 
 class WebFormSourceBackendTestCase(

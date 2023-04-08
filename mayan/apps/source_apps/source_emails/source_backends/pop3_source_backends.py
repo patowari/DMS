@@ -5,9 +5,7 @@ from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.source_apps.sources.classes import SourceBackend
-from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendCompressedPeriodicMixin, SourceBaseMixin
-)
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendCompressedPeriodicMixin
 
 from .literals import DEFAULT_EMAIL_POP3_TIMEOUT
 from .mixins import SourceBackendEmailMixin
@@ -17,20 +15,28 @@ logger = logging.getLogger(name=__name__)
 
 class SourceBackendPOP3Email(
     SourceBackendCompressedPeriodicMixin, SourceBackendEmailMixin,
-    SourceBaseMixin, SourceBackend
+    SourceBackend
 ):
-    field_order = ('timeout',)
-    fields = {
-        'timeout': {
-            'class': 'django.forms.fields.IntegerField',
-            'default': DEFAULT_EMAIL_POP3_TIMEOUT,
-            'kwargs': {
-                'min_value': 0
-            },
-            'label': _('Timeout')
-        }
-    }
     label = _('POP3 email')
+
+    @classmethod
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+
+        fields.update(
+            {
+                'timeout': {
+                    'class': 'django.forms.fields.IntegerField',
+                    'default': DEFAULT_EMAIL_POP3_TIMEOUT,
+                    'kwargs': {
+                        'min_value': 0
+                    },
+                    'label': _('Timeout')
+                }
+            }
+        )
+
+        return fields
 
     @classmethod
     def get_setup_form_fieldsets(cls):

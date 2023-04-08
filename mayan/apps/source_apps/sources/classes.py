@@ -1,10 +1,15 @@
 import collections
 import logging
 
+from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
+from mayan.apps.databases.class_mixins import DynamicFormBackendMixin
 from mayan.apps.databases.classes import ModelBaseBackend
+from mayan.apps.documents.tasks import task_document_file_upload
+
+from .tasks import task_process_document_upload
 
 logger = logging.getLogger(name=__name__)
 
@@ -127,26 +132,13 @@ class SourceBackendActionDummy(SourceBackendAction):
     """
 
 
-class SourceBackend(ModelBaseBackend):
+class SourceBackend(DynamicFormBackendMixin, ModelBaseBackend):
     """
     Base class for the source backends.
-
-    The fields attribute is a list of dictionaries with the format:
-    {
-        'name': ''  # Field internal name
-        'label': ''  # Label to show to users
-        'initial': ''  # Field initial value
-        'default': ''  # Default value.
-    }
     """
     _backend_app_label = 'sources'
     _backend_model_name = 'Source'
     _loader_module_name = 'source_backends'
-
-    @classmethod
-    def post_load_modules(cls):
-        for source_backend in cls.get_all():
-            source_backend.intialize()
 
     @classmethod
     def get_action(cls, name):
@@ -165,37 +157,20 @@ class SourceBackend(ModelBaseBackend):
         )
 
     @classmethod
-    def get_fields(cls):
-        return getattr(
-            cls, 'fields', {}
+    def get_setup_form_fieldsets(cls):
+        fieldsets = (
+            (
+                _('General'), {
+                    'fields': ('label', 'enabled')
+                }
+            ),
         )
 
-    @classmethod
-    def get_form_fieldsets(cls):
-        return None
+        return fieldsets
 
     @classmethod
     def get_upload_form_class(cls):
         return getattr(cls, 'upload_form_class', None)
-
-    @classmethod
-    def get_setup_form_schema(cls):
-        result = {
-            'fields': cls.get_fields(),
-            'widgets': cls.get_widgets()
-        }
-        if hasattr(cls, 'field_order'):
-            result['field_order'] = cls.field_order
-        else:
-            result['field_order'] = ()
-
-        return result
-
-    @classmethod
-    def get_widgets(cls):
-        return getattr(
-            cls, 'widgets', {}
-        )
 
     @classmethod
     def intialize(cls):
@@ -203,6 +178,14 @@ class SourceBackend(ModelBaseBackend):
         Optional method for subclasses execute their own initialization
         code.
         """
+
+    @classmethod
+    def post_load_modules(cls):
+        for source_backend in cls.get_all():
+            source_backend.intialize()
+
+    def callback(self, **kwargs):
+        return
 
     def clean(self):
         """
@@ -249,11 +232,106 @@ class SourceBackend(ModelBaseBackend):
         except AttributeError:
             """Non fatal. The context method is optional."""
 
+    def get_callback_kwargs(self):
+        return {}
+
+    def get_document(self):
+        raise NotImplementedError
+
+    def get_document_description(self):
+        return None
+
+    def get_document_file_action(self):
+        return None
+
+    def get_document_file_comment(self):
+        return None
+
+    def get_document_label(self):
+        return None
+
+    def get_document_language(self):
+        return None
+
+    def get_document_type(self):
+        raise NotImplementedError
+
     def get_task_extra_kwargs(self):
         return {}
 
+    def get_user(self):
+        return None
+
     def get_view_context(self, context, request):
         return {}
+
+    def process_document_file(self, **kwargs):
+        DocumentFile = apps.get_model(
+            app_label='documents', model_name='DocumentFile'
+        )
+
+        self.process_kwargs = kwargs
+
+        document = self.get_document()
+        user = self.get_user()
+
+        if user:
+            user_id = user.pk
+        else:
+            user_id = None
+
+        for self.shared_uploaded_file in self.get_shared_uploaded_files() or ():
+            # Call the hooks here too as in the model for early detection and
+            # exception raise when using the views.
+            DocumentFile.execute_pre_create_hooks(
+                kwargs={
+                    'document': document,
+                    'file_object': self.shared_uploaded_file,
+                    'user': user
+                }
+            )
+
+            kwargs = {
+                'action': self.get_document_file_action(),
+                'comment': self.get_document_file_comment(),
+                'document_id': document.pk,
+                'shared_uploaded_file_id': self.shared_uploaded_file.pk,
+                'user_id': user_id
+            }
+
+            kwargs.update(
+                self.get_task_extra_kwargs()
+            )
+
+            task_document_file_upload.apply_async(kwargs=kwargs)
+
+    def process_documents(self, **kwargs):
+        self.process_kwargs = kwargs
+
+        document_type = self.get_document_type()
+        user = self.get_user()
+
+        if user:
+            user_id = user.pk
+        else:
+            user_id = None
+
+        for self.shared_uploaded_file in self.get_shared_uploaded_files() or ():
+            kwargs = {
+                'callback_kwargs': self.get_callback_kwargs(),
+                'description': self.get_document_description(),
+                'document_type_id': document_type.pk,
+                'label': self.get_document_label(),
+                'language': self.get_document_language(),
+                'shared_uploaded_file_id': self.shared_uploaded_file.pk,
+                'source_id': self.model_instance_id,
+                'user_id': user_id
+            }
+            kwargs.update(
+                self.get_task_extra_kwargs()
+            )
+
+            task_process_document_upload.apply_async(kwargs=kwargs)
 
     def save(self):
         """

@@ -62,6 +62,9 @@ class BackendModelMixin(models.Model):
             else:
                 raise
 
+    def get_backend_data(self):
+        return json.loads(s=self.backend_data or '{}')
+
     def get_backend_instance(self):
         return self.get_backend()(
             model_instance_id=self.id, **self.get_backend_data()
@@ -77,9 +80,6 @@ class BackendModelMixin(models.Model):
 
     get_backend_label.short_description = _('Backend')
     get_backend_label.help_text = _('The backend class for this entry.')
-
-    def get_backend_data(self):
-        return json.loads(s=self.backend_data or '{}')
 
     def set_backend_data(self, obj):
         self.backend_data = json.dumps(obj=obj)

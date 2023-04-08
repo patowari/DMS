@@ -8,7 +8,7 @@ from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
     SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
-    SourceBackendRegularExpressionMixin, SourceBaseMixin
+    SourceBackendRegularExpressionMixin
 )
 
 from .staging_source_mixins import SourceBackendMixinFileList
@@ -21,35 +21,43 @@ logger = logging.getLogger(name=__name__)
 class SourceBackendStagingFolder(
     SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
     SourceBackendRegularExpressionMixin, SourceBackendMixinFileList,
-    SourceBaseMixin, SourceBackend
+    SourceBackend
 ):
-    field_order = ('folder_path', 'include_subdirectories')
-    fields = {
-        'folder_path': {
-            'class': 'django.forms.CharField',
-            'default': '',
-            'help_text': _(
-                'Server side filesystem path.'
-            ),
-            'kwargs': {
-                'max_length': 255,
-            },
-            'label': _('Folder path'),
-            'required': True
-        }, 'include_subdirectories': {
-            'class': 'django.forms.BooleanField',
-            'default': '',
-            'help_text': _(
-                'If checked, not only will the folder path be scanned for '
-                'files but also its subdirectories.'
-            ),
-            'label': _('Include subdirectories?'),
-            'required': False
-        }
-    }
     icon = Icon(driver_name='fontawesome', symbol='file')
     label = _('Staging folder')
     staging_source_file_class = StagingFolderFile
+
+    @classmethod
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+
+        fields.update(
+            {
+                'folder_path': {
+                    'class': 'django.forms.CharField',
+                    'default': '',
+                    'help_text': _(
+                        'Server side filesystem path.'
+                    ),
+                    'kwargs': {
+                        'max_length': 255,
+                    },
+                    'label': _('Folder path'),
+                    'required': True
+                }, 'include_subdirectories': {
+                    'class': 'django.forms.BooleanField',
+                    'default': '',
+                    'help_text': _(
+                        'If checked, not only will the folder path be scanned for '
+                        'files but also its subdirectories.'
+                    ),
+                    'label': _('Include subdirectories?'),
+                    'required': False
+                }
+            }
+        )
+
+        return fields
 
     @classmethod
     def get_setup_form_fieldsets(cls):

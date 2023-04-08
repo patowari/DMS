@@ -11,9 +11,7 @@ from mayan.apps.storage.models import SharedUploadedFile
 from mayan.apps.storage.utils import NamedTemporaryFile, touch
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.settings import setting_backend_arguments
-from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendInteractiveMixin, SourceBaseMixin
-)
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendInteractiveMixin
 
 from .literals import DEFAULT_BINARY_SCANIMAGE_PATH
 
@@ -21,10 +19,7 @@ __all__ = ('SourceBackendSANEScanner',)
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBackendSANEScanner(
-    SourceBackendInteractiveMixin, SourceBaseMixin, SourceBackend
-):
-    field_order = ('device_name', 'arguments')
+class SourceBackendSANEScanner(SourceBackendInteractiveMixin, SourceBackend):
     fields = {
         'device_name': {
             'class': 'django.forms.CharField',

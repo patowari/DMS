@@ -1,9 +1,7 @@
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
-from .mixins.staging_storage_source_mixins import (
-    StagingStorageTestMixin, StagingStorageViewTestMixin
-)
+from .mixins import StagingStorageTestMixin, StagingStorageViewTestMixin
 
 
 class StagingStorageViewTestCase(

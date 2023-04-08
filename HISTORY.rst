@@ -97,6 +97,13 @@
   - Add staging storage and watch storage sources.
   - Consolidate specific source backend functionality into reusable mixins.
   - Add fieldsets to the source backend setup forms.
+  - Add support for single or multiple document API uploads.
+  - Refactor source dynamic backend form system.
+  - Merge ``SourceBackend`` and ``SourceMixin`` classes.
+  - Split dynamic backend form code into ``DynamicFormBackendMixin``
+    class.
+  - Add ``setup_form`` prefix to the dynamic field methods to specify
+    that these act on the setup and not the upload form.
 
 - Improve task manager app.
 

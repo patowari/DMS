@@ -61,27 +61,10 @@ class SourceBackendMixinFileList:
     upload_form_class = StagingUploadForm
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
 
-        fieldsets += (
-            (
-                _('Staging files'), {
-                    'fields': (
-                        'preview_width', 'preview_height',
-                        'delete_after_upload'
-                    ),
-                },
-            ),
-        )
-
-        return fieldsets
-
-    @classmethod
-    def get_setup_form_schema(cls):
-        result = super().get_setup_form_schema()
-
-        result['fields'].update(
+        fields.update(
             {
                 'preview_width': {
                     'class': 'django.forms.IntegerField',
@@ -117,11 +100,24 @@ class SourceBackendMixinFileList:
             }
         )
 
-        result['field_order'] += (
-            'preview_width', 'preview_height', 'delete_after_upload'
+        return fields
+
+    @classmethod
+    def get_setup_form_fieldsets(cls):
+        fieldsets = super().get_setup_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Staging files'), {
+                    'fields': (
+                        'preview_width', 'preview_height',
+                        'delete_after_upload'
+                    ),
+                },
+            ),
         )
 
-        return result
+        return fieldsets
 
     @classmethod
     def intialize(cls):

@@ -26,7 +26,21 @@ class EmailSourceViewTestCase(
     _test_email_source_content = TEST_EMAIL_BASE64_FILENAME
     auto_upload_test_document = False
 
-    def test_email_source_create_view(self):
+    def test_email_source_create_view_no_permission(self):
+        source_count = Source.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_email_source_create_view()
+
+        self.assertEqual(response.status_code, 403)
+
+        self.assertEqual(Source.objects.count(), source_count)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_email_source_create_view_with_permission(self):
         self.grant_permission(permission=permission_sources_create)
 
         source_count = Source.objects.count()

@@ -5,12 +5,16 @@ from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 from mayan.apps.source_apps.sources.source_backends.literals import (
     DEFAULT_PERIOD_INTERVAL, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import (
+    SourceTestMixin, SourceViewTestMixin
+)
 
 from ..source_backends import SourceBackendWatchStorage
 
+from .literals import TEST_SOURCE_BACKEND_WATCH_STORAGE_PATH
 
-class WatchStorageSourceTestMixin(SourceTestMixin):
+
+class WatchStorageSourceBackendTestMixin(SourceTestMixin):
     _create_source_method = '_create_test_watch_storage'
 
     def setUp(self):
@@ -50,4 +54,23 @@ class WatchStorageSourceTestMixin(SourceTestMixin):
         shutil.copy(
             src=TEST_FILE_SMALL_PATH,
             dst=self._test_source._test_temporary_folder
+        )
+
+
+class WatchStorageSourceBackendViewTestMixin(SourceViewTestMixin):
+    def _request_test_watch_storage_source_create_view(self):
+        temporary_folder = mkdtemp()
+        self._temporary_storages.append(temporary_folder)
+
+        return self._request_test_source_create_view(
+            backend_path=TEST_SOURCE_BACKEND_WATCH_STORAGE_PATH,
+            extra_data={
+                'document_type_id': self._test_document_type.pk,
+                'storage_backend': 'django.core.files.storage.FileSystemStorage',
+                'storage_backend_arguments': '{{\'location\': \'{}\'}}'.format(
+                    temporary_folder
+                ),
+                'interval': DEFAULT_PERIOD_INTERVAL,
+                'uncompress': SOURCE_UNCOMPRESS_CHOICE_NEVER
+            }
         )

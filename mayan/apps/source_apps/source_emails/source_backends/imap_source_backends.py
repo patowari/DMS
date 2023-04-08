@@ -5,9 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.exceptions import SourceException
-from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendCompressedPeriodicMixin, SourceBaseMixin
-)
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendCompressedPeriodicMixin
 
 from .literals import (
     DEFAULT_EMAIL_IMAP_MAILBOX, DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
@@ -20,78 +18,96 @@ logger = logging.getLogger(name=__name__)
 
 class SourceBackendIMAPEmail(
     SourceBackendCompressedPeriodicMixin, SourceBackendEmailMixin,
-    SourceBaseMixin, SourceBackend
+    SourceBackend
 ):
-    field_order = (
-        'mailbox', 'search_criteria', 'store_commands', 'execute_expunge',
-        'mailbox_destination'
-    )
-    fields = {
-        'mailbox': {
-            'class': 'django.forms.fields.CharField',
-            'default': DEFAULT_EMAIL_IMAP_MAILBOX,
-            'help_text': _('IMAP Mailbox from which to check for messages.'),
-            'kwargs': {
-                'max_length': 64,
-            },
-            'label': _('Mailbox')
-        },
-        'search_criteria': {
-            'blank': True,
-            'class': 'django.forms.fields.CharField',
-            'default': DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
-            'help_text': _(
-                'Criteria to use when searching for messages to process. '
-                'Use the format specified in '
-                'https://tools.ietf.org/html/rfc2060.html#section-6.4.4'
-            ),
-            'label': _('Search criteria'),
-            'null': True,
-        },
-        'store_commands': {
-            'blank': True,
-            'class': 'django.forms.fields.CharField',
-            'default': DEFAULT_EMAIL_IMAP_STORE_COMMANDS,
-            'help_text': _(
-                'IMAP STORE command to execute on messages after they are '
-                'processed. One command per line. Use the commands specified in '
-                'https://tools.ietf.org/html/rfc2060.html#section-6.4.6 or '
-                'the custom commands for your IMAP server.'
-            ),
-            'label': _('Store commands'),
-            'null': True, 'required': False
-        },
-        'execute_expunge': {
-            'class': 'django.forms.fields.BooleanField',
-            'default': True,
-            'help_text': _(
-                'Execute the IMAP expunge command after processing each email '
-                'message.'
-            ),
-            'label': _('Execute expunge'),
-            'required': False
-        },
-        'mailbox_destination': {
-            'blank': True,
-            'class': 'django.forms.fields.CharField',
-            'help_text': _(
-                'IMAP Mailbox to which processed messages will be copied.'
-            ),
-            'label': _('Destination mailbox'),
-            'max_length': 96,
-            'null': True,
-            'required': False
-        }
-    }
     label = _('IMAP email')
-    widgets = {
-        'search_criteria': {
-            'class': 'django.forms.widgets.Textarea',
-        },
-        'store_commands': {
-            'class': 'django.forms.widgets.Textarea',
-        }
-    }
+
+    @classmethod
+    def get_setup_form_field_widgets(cls):
+        widgets = super().get_setup_form_field_widgets()
+
+        widgets.update(
+            {
+                'search_criteria': {
+                    'class': 'django.forms.widgets.Textarea'
+                },
+                'store_commands': {
+                    'class': 'django.forms.widgets.Textarea'
+                }
+            }
+        )
+
+        return widgets
+
+    @classmethod
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
+
+        fields.update(
+            {
+                'mailbox': {
+                    'class': 'django.forms.fields.CharField',
+                    'default': DEFAULT_EMAIL_IMAP_MAILBOX,
+                    'help_text': _(
+                        'IMAP Mailbox from which to check for messages.'
+                    ),
+                    'kwargs': {
+                        'max_length': 64,
+                    },
+                    'label': _('Mailbox')
+                },
+                'search_criteria': {
+                    'blank': True,
+                    'class': 'django.forms.fields.CharField',
+                    'default': DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
+                    'help_text': _(
+                        'Criteria to use when searching for messages to '
+                        'process. Use the format specified in '
+                        'https://tools.ietf.org/html/rfc2060.html#section-6.4.4'
+                    ),
+                    'label': _('Search criteria'),
+                    'null': True,
+                },
+                'store_commands': {
+                    'blank': True,
+                    'class': 'django.forms.fields.CharField',
+                    'default': DEFAULT_EMAIL_IMAP_STORE_COMMANDS,
+                    'help_text': _(
+                        'IMAP STORE command to execute on messages after '
+                        'they are processed. One command per line. Use '
+                        'the commands specified in '
+                        'https://tools.ietf.org/html/rfc2060.html#section-6.4.6 or '
+                        'the custom commands for your IMAP server.'
+                    ),
+                    'label': _('Store commands'),
+                    'null': True, 'required': False
+                },
+                'execute_expunge': {
+                    'class': 'django.forms.fields.BooleanField',
+                    'default': True,
+                    'help_text': _(
+                        'Execute the IMAP expunge command after processing '
+                        'each email message.'
+                    ),
+                    'label': _('Execute expunge'),
+                    'required': False
+                },
+                'mailbox_destination': {
+                    'blank': True,
+                    'class': 'django.forms.fields.CharField',
+                    'help_text': _(
+                        'IMAP Mailbox to which processed messages will '
+                        'be copied.'
+                    ),
+                    'label': _('Destination mailbox'),
+                    'max_length': 96,
+                    'null': True,
+                    'required': False
+                }
+            }
+        )
+
+        return fields
 
     @classmethod
     def get_setup_form_fieldsets(cls):
@@ -134,7 +150,8 @@ class SourceBackendIMAPEmail(
 
         with imap_module(**kwargs) as server:
             server.login(
-                user=self.kwargs['username'], password=self.kwargs['password']
+                password=self.kwargs['password'],
+                user=self.kwargs['username']
             )
 
             try:
@@ -150,7 +167,8 @@ class SourceBackendIMAPEmail(
             else:
                 try:
                     status, data = server.uid(
-                        'SEARCH', None, *self.kwargs['search_criteria'].strip().split()
+                        'SEARCH', None,
+                        *self.kwargs['search_criteria'].strip().split()
                     )
                 except Exception as exception:
                     raise SourceException(

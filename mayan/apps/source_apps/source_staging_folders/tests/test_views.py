@@ -1,10 +1,8 @@
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceDocumentUploadViewTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import SourceDocumentUploadViewTestMixin
 
-from .mixins.staging_folder_source_mixins import (
-    StagingFolderTestMixin, StagingFolderViewTestMixin
-)
+from .mixins import StagingFolderTestMixin, StagingFolderViewTestMixin
 
 
 class StagingFolderActionViewTestCase(

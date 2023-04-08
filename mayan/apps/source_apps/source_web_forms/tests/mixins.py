@@ -2,17 +2,20 @@ import json
 
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
 
-from ...source_backends import SourceBackendWebForm
+from ..source_backends import SourceBackendWebForm
 
 
 class WebFormSourceBackendAPITestMixin:
-    def _request_test_web_form_file_upload_action_api_view(self, test_file_path=TEST_FILE_SMALL_PATH):
+    def _request_test_web_form_file_upload_action_api_view(
+        self, test_file_path=TEST_FILE_SMALL_PATH
+    ):
         with open(file=test_file_path, mode='rb') as file_object:
             return self.post(
                 viewname='rest_api:source-action', kwargs={
-                    'action_name': 'upload', 'source_id': self._test_source.pk
+                    'action_name': 'upload',
+                    'source_id': self._test_source.pk
                 }, data={
                     'arguments': json.dumps(
                         obj={
@@ -34,6 +37,6 @@ class WebFormSourceBackendTestMixin(SourceTestMixin):
             backend_data.update(extra_data)
 
         self._create_test_source(
-            backend_path=SourceBackendWebForm.get_class_path(),
-            backend_data=backend_data
+            backend_data=backend_data,
+            backend_path=SourceBackendWebForm.get_class_path()
         )

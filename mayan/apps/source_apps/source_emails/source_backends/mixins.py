@@ -20,35 +20,42 @@ logger = logging.getLogger(name=__name__)
 
 class SourceBackendEmailMixin:
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_setup_form_field_widgets(cls):
+        widgets = super().get_setup_form_field_widgets()
 
-        fieldsets += (
-            (
-                _('Common email options'), {
-                    'fields': (
-                        'host', 'ssl', 'port', 'username', 'password',
-                        'store_body'
-                    )
+        widgets.update(
+            {
+                'password': {
+                    'class': 'django.forms.widgets.PasswordInput',
+                    'kwargs': {
+                        'render_value': True
+                    }
                 },
-            ), (
-                _('Metadata'), {
-                    'fields': (
-                        'metadata_attachment_name', 'from_metadata_type_id',
-                        'subject_metadata_type_id',
-                        'message_id_metadata_type_id',
-                    )
+                'from_metadata_type_id': {
+                    'class': 'django.forms.widgets.Select', 'kwargs': {
+                        'attrs': {'class': 'select2'}
+                    }
+                },
+                'subject_metadata_type_id': {
+                    'class': 'django.forms.widgets.Select', 'kwargs': {
+                        'attrs': {'class': 'select2'}
+                    }
+                },
+                'message_id_metadata_type_id': {
+                    'class': 'django.forms.widgets.Select', 'kwargs': {
+                        'attrs': {'class': 'select2'}
+                    }
                 }
-            ),
+            }
         )
 
-        return fieldsets
+        return widgets
 
     @classmethod
-    def get_setup_form_schema(cls):
-        result = super().get_setup_form_schema()
+    def get_setup_form_fields(cls):
+        fields = super().get_setup_form_fields()
 
-        result['fields'].update(
+        fields.update(
             {
                 'host': {
                     'class': 'django.forms.CharField',
@@ -94,9 +101,10 @@ class SourceBackendEmailMixin:
                     'class': 'django.forms.CharField',
                     'default': DEFAULT_EMAIL_METADATA_ATTACHMENT_NAME,
                     'help_text': _(
-                        'Name of the attachment that will contains the metadata type '
-                        'names and value pairs to be assigned to the rest of the '
-                        'downloaded attachments.'
+                        'Name of the attachment that will contains the '
+                        'metadata type names and value pairs to be '
+                        'assigned to the rest of the downloaded '
+                        'attachments.'
                     ),
                     'kargs': {
                         'max_length': 128,
@@ -179,40 +187,33 @@ class SourceBackendEmailMixin:
                 }
             }
         )
-        result['field_order'] = (
-            'host', 'ssl', 'port', 'username', 'password',
-            'metadata_attachment_name', 'from_metadata_type_id',
-            'subject_metadata_type_id', 'message_id_metadata_type_id',
-            'store_body'
-        ) + result['field_order']
 
-        result['widgets'].update(
-            {
-                'password': {
-                    'class': 'django.forms.widgets.PasswordInput',
-                    'kwargs': {
-                        'render_value': True
-                    }
+        return fields
+
+    @classmethod
+    def get_setup_form_fieldsets(cls):
+        fieldsets = super().get_setup_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Common email options'), {
+                    'fields': (
+                        'host', 'ssl', 'port', 'username', 'password',
+                        'store_body'
+                    )
                 },
-                'from_metadata_type_id': {
-                    'class': 'django.forms.widgets.Select', 'kwargs': {
-                        'attrs': {'class': 'select2'},
-                    }
-                },
-                'subject_metadata_type_id': {
-                    'class': 'django.forms.widgets.Select', 'kwargs': {
-                        'attrs': {'class': 'select2'},
-                    }
-                },
-                'message_id_metadata_type_id': {
-                    'class': 'django.forms.widgets.Select', 'kwargs': {
-                        'attrs': {'class': 'select2'},
-                    }
+            ), (
+                _('Metadata'), {
+                    'fields': (
+                        'metadata_attachment_name', 'from_metadata_type_id',
+                        'subject_metadata_type_id',
+                        'message_id_metadata_type_id'
+                    )
                 }
-            }
+            ),
         )
 
-        return result
+        return fieldsets
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -246,8 +247,8 @@ class SourceBackendEmailMixin:
         counter = 1
         shared_uploaded_files = []
 
-        # Messages are tree based, do nested processing of message parts until
-        # a message with no children is found, then work out way up.
+        # Messages are tree based, do nested processing of message parts
+        # until a message with no children is found, then work out way up.
         if message.parts:
             for part in message.parts:
                 part_shared_uploaded_files = self._process_message(
@@ -330,8 +331,8 @@ class SourceBackendEmailMixin:
                             'not valid for the document '
                             'type: %(document_type)s'
                         ) % {
-                            'metadata_type': form_metadata_type,
-                            'document_type': document_type
+                            'document_type': document_type,
+                            'metadata_type': form_metadata_type
                         }
                     }
                 )
@@ -345,8 +346,8 @@ class SourceBackendEmailMixin:
                             'is not valid for the document '
                             'type: %(document_type)s'
                         ) % {
-                            'metadata_type': subject_metadata_type,
-                            'document_type': document_type
+                            'document_type': document_type,
+                            'metadata_type': subject_metadata_type
                         }
                     }
                 )
@@ -360,8 +361,8 @@ class SourceBackendEmailMixin:
                             'is not valid for the document type: '
                             '%(document_type)s'
                         ) % {
-                            'metadata_type': subject_metadata_type,
-                            'document_type': document_type
+                            'document_type': document_type,
+                            'metadata_type': subject_metadata_type
                         }
                     }
                 )

@@ -6,9 +6,9 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import (
     TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_SMALL_PATH
 )
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import InteractiveSourceBackendTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import InteractiveSourceBackendTestMixin
 
-from .mixins.staging_folder_source_mixins import StagingFolderTestMixin
+from .mixins import StagingFolderTestMixin
 
 
 class StagingFolderSourceBackendTestCase(
