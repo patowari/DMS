@@ -11,9 +11,7 @@ from mayan.apps.common.classes import MissingItem
 from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_return, menu_secondary, menu_setup
 )
-from mayan.apps.common.signals import (
-    signal_post_initial_setup, signal_post_upgrade
-)
+from mayan.apps.common.signals import signal_post_upgrade
 from mayan.apps.converter.links import link_transformation_list
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
@@ -28,7 +26,6 @@ from mayan.apps.views.column_widgets import TwoStateWidget
 from .classes import DocumentCreateWizardStep, SourceBackend
 from .events import event_source_edited
 from .handlers import (
-    handler_create_default_document_source,
     handler_delete_interval_source_periodic_task,
     handler_initialize_periodic_tasks
 )
@@ -167,10 +164,6 @@ class SourcesApp(MayanAppConfig):
             receiver=handler_delete_interval_source_periodic_task,
             sender=DocumentType,
             dispatch_uid='sources_handler_delete_interval_source_periodic_task'
-        )
-        signal_post_initial_setup.connect(
-            receiver=handler_create_default_document_source,
-            dispatch_uid='sources_handler_create_default_document_source'
         )
         signal_post_upgrade.connect(
             receiver=handler_initialize_periodic_tasks,

@@ -1,7 +1,7 @@
 from mayan.apps.documents.permissions import permission_document_file_new
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.source_apps.sources.links import link_document_file_upload
-from mayan.apps.source_apps.sources.tests.mixins.base_mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
 
 
 from ..links import link_check_out_document, link_check_out_info
