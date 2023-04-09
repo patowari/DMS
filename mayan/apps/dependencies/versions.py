@@ -1,17 +1,22 @@
 #!/usr/bin/env python
 
 import doctest
-import re
 import sys
 
-VERSION_PART_MAJOR = 0
-VERSION_PART_MINOR = 1
-VERSION_PART_MICRO = 2
-VERSION_PART_LOCAL = 3
+from packaging.version import Version as PackageVersion
 
 
 class Version:
     """
+    Subset of PEP 440
+    N(.N)*[{a|b|rc}N][.postN][.devN][+<local version label>]
+
+    Release segment: N(.N)*
+    Pre-release segment: {a|b|rc}N
+    Post-release segment: .postN
+    Development release segment: .devN
+    Local version: +local version label
+
     # Return value
 
     >>> Version('1')
@@ -20,47 +25,97 @@ class Version:
     Version: 1.0
     >>> Version('1.3.2')
     Version: 1.3.2
+    >>> Version('1.3.2dev0')
+    Version: 1.3.2.dev0
+    >>> Version('1.3.dev0')
+    Version: 1.3.dev0
     >>> Version('1.3.2+local.1')
     Version: 1.3.2+local.1
 
-    # Increment part
+    >>> Version('1.2.3').major
+    1
+    >>> Version('1.2.3').minor
+    2
+    >>> Version('1.2.3').micro
+    3
+    >>> Version('1.2.3').dev
 
-    >>> Version('1').increment_part(part=VERSION_PART_MAJOR)
-    Version: 2
-    >>> Version('1').increment_part(part=VERSION_PART_MINOR)
-    Version: 1.1
-    >>> Version('1').increment_part(part=VERSION_PART_MICRO)
-    Version: 1.0.1
-    >>> Version('1rc').increment_part(part=VERSION_PART_MAJOR)
-    Version: 2rc
-    >>> Version('1rc2').increment_part(part=VERSION_PART_MAJOR)
-    Version: 1rc3
-    >>> Version('1rc0').increment_part(part=VERSION_PART_MAJOR)
-    Version: 1rc1
-    >>> Version('1.rc0').increment_part(part=VERSION_PART_MINOR)
-    Version: 1.rc1
-    >>> Version('1.0.rc1').increment_part(part=VERSION_PART_MINOR)
-    Version: 1.1
-    >>> Version('1.0.rc1').increment_part(part=VERSION_PART_MICRO)
-    Version: 1.0.rc2
-    >>> Version('1rc').increment_part(part=VERSION_PART_MINOR)
-    Version: 1rc.1
-    >>> Version('1rc').increment_part(part=VERSION_PART_MINOR)
-    Version: 1rc.1
-    >>> Version('1rc').increment_part(part=VERSION_PART_MICRO)
-    Version: 1rc.0.1
-    >>> Version('1.rc1').increment_part(part=VERSION_PART_MINOR)
-    Version: 1.rc2
-    >>> Version('1.rc1').increment_part(part=VERSION_PART_MICRO)
-    Version: 1.rc1.1
-    >>> Version('1.1.rc1').increment_part(part=VERSION_PART_MICRO)
-    Version: 1.1.rc2
+    >>> Version('1.2.3dev0').dev
+    '0'
+    >>> Version('1.2.3.dev').dev
+    '0'
+    >>> Version('1.2.3.dev0').dev
+    '0'
+    >>> Version('1.2.3').pre
+
+    >>> Version('1.2.3.a0').pre
+    'a0'
+    >>> Version('1.2.3a').pre
+    'a0'
+    >>> Version('1.2.3a0').pre
+    'a0'
+    >>> Version('1.2.3.b0').pre
+    'b0'
+    >>> Version('1.2.3b').pre
+    'b0'
+    >>> Version('1.2.3b0').pre
+    'b0'
+    >>> Version('1.2.3.rc0').pre
+    'rc0'
+    >>> Version('1.2.3rc').pre
+    'rc0'
+    >>> Version('1.2.3rc0').pre
+    'rc0'
+    >>> Version('1.2.3').post
+
+    >>> Version('1.2.3.post').post
+    '0'
+    >>> Version('1.2.3.post0').post
+    '0'
+    >>> Version('1.2.3.post1').post
+    '1'
+
+    # Version part increment
+
     >>> Version('1.2.3').increment_major()
     Version: 2
     >>> Version('1.2.3').increment_minor()
     Version: 1.3
     >>> Version('1.2.3').increment_micro()
     Version: 1.2.4
+    >>> Version('1.2.3dev0').increment_micro()
+    Version: 1.2.4
+    >>> Version('1.2.3').increment_dev()
+    Version: 1.2.3.dev0
+    >>> Version('1.2.3dev0').increment_dev()
+    Version: 1.2.3.dev1
+    >>> Version('1.2.3').increment_pre()
+    Version: 1.2.3a0
+    >>> Version('1.2.3a0').increment_pre()
+    Version: 1.2.3a1
+    >>> Version('1.2.3b').increment_pre()
+    Version: 1.2.3b1
+    >>> Version('1.2.3b0').increment_pre()
+    Version: 1.2.3b1
+    >>> Version('1.2.3rc').increment_pre()
+    Version: 1.2.3rc1
+    >>> Version('1.2.3rc0').increment_pre()
+    Version: 1.2.3rc1
+    >>> Version('1.2.3').increment_post()
+    Version: 1.2.3.post0
+    >>> Version('1.2.3.post0').increment_post()
+    Version: 1.2.3.post1
+
+    # Unofficial increments
+
+    >>> Version('1.2.3a1.post0').increment_post()
+    Version: 1.2.3a1.post1
+    >>> Version('1.2.3b1.post0').increment_post()
+    Version: 1.2.3b1.post1
+    >>> Version('1.2.3rc1.post0').increment_post()
+    Version: 1.2.3rc1.post1
+    >>> Version('1.2.3rc1.post0+local.1').increment_post()
+    Version: 1.2.3rc1.post1+local.1
 
     # Increment part, local version
 
@@ -69,6 +124,8 @@ class Version:
     >>> Version('1.2.3+local.1').increment_minor()
     Version: 1.3+local.1
     >>> Version('1.2.3+local.1').increment_micro()
+    Version: 1.2.4+local.1
+    >>> Version('1.2.3dev0+local.1').increment_micro()
     Version: 1.2.4+local.1
 
     # As a part
@@ -80,7 +137,7 @@ class Version:
     >>> Version('1.2.3').as_micro()
     '1.2.3'
     >>> Version('1.2').as_micro()
-    ''
+    '1.2.0'
 
     # As a part, local version
 
@@ -91,9 +148,9 @@ class Version:
     >>> Version('1.2.3+local.1').as_micro()
     '1.2.3+local.1'
     >>> Version('1.2+local.1').as_micro()
-    ''
+    '1.2.0+local.1'
     >>> Version('1+local.1').as_minor()
-    ''
+    '1.0+local.1'
 
     # As a part, local version, as upstream
 
@@ -103,6 +160,8 @@ class Version:
     '1.2'
     >>> Version('1.2.3+local.1').as_upstream()
     '1.2.3'
+    >>> Version('1.2.3dev0+local.1').as_upstream()
+    '1.2.3.dev0'
 
     # Comparison, greater than
 
@@ -118,6 +177,14 @@ class Version:
     True
     >>> Version('1.1.1') > Version('1.1.2')
     False
+    >>> Version('1.1.1dev0') > Version('1.1.2dev0')
+    False
+    >>> Version('1.1.1dev1') > Version('1.1.2dev0')
+    False
+    >>> Version('1.1.2dev0') > Version('1.1.1dev1')
+    True
+    >>> Version('1.1.1dev1') > Version('1.1.1dev0')
+    True
     >>> Version('1.1') > Version('2')
     False
     >>> Version('1.1') > Version('1')
@@ -265,190 +332,213 @@ class Version:
     True
     """
     def __eq__(self, other):
-        return self.major == other.major and self.minor == other.minor and self.micro == other.micro
+        return self._version == other._version
 
     def __gt__(self, other):
-        if int(self.major or 0) != int(other.major or 0):
-            return int(self.major or 0) > int(other.major or 0)
-
-        if int(self.minor or 0) != int(other.minor or 0):
-            return int(self.minor or 0) > int(other.minor or 0)
-
-        if int(self.micro or 0) != int(other.micro or 0):
-            return int(self.micro or 0) > int(other.micro or 0)
-
-        if self.local and not other.local:
-            return True
-        else:
-            return False
+        return self._version > other._version
 
     def __lt__(self, other):
-        if int(self.major or 0) != int(other.major or 0):
-            return int(self.major or 0) < int(other.major or 0)
-
-        if int(self.minor or 0) != int(other.minor or 0):
-            return int(self.minor or 0) < int(other.minor or 0)
-
-        if int(self.micro or 0) != int(other.micro or 0):
-            return int(self.micro or 0) < int(other.micro or 0)
-
-        if not self.local and other.local:
-            return True
-        else:
-            return False
+        return self._version < other._version
 
     def __init__(self, version_string):
         self._version_string = version_string
-        self._version_parts = []
-        self._version_parts_local = None
-
-        part = []
-        version_part_flag = True
-        for character in self._version_string:
-            if version_part_flag:
-                if character == '+':
-                    version_part_flag = False
-                    self._version_parts.append(
-                        ''.join(part)
-                    )
-                    part = []
-                elif character != '.':
-                    part.append(character)
-                else:
-                    self._version_parts.append(
-                        ''.join(part)
-                    )
-                    part = []
-            else:
-                part.append(character)
-
-        if version_part_flag:
-            self._version_parts.append(
-                ''.join(part)
-            )
-        else:
-            self._version_parts_local = ''.join(part)
-
-    def _get_version_part(self, index):
-        if index == VERSION_PART_LOCAL:
-            return self._version_parts_local
-        else:
-            try:
-                return self._version_parts[index]
-            except IndexError:
-                return 0
+        self._version = PackageVersion(version=self._version_string)
 
     def __repr__(self):
-        return 'Version: {}'.format(
-            self.get_version_string()
+        return 'Version: {}'.format(self._version)
+
+    def _as_base(self, parts):
+        result = '.'.join(
+            map(
+                str, parts
+            )
         )
 
-    def as_upstream(self):
-        parts = [self.major]
+        return result
 
-        if self.minor:
-            parts.append(self.minor)
-        if self.micro:
-            parts.append(self.micro)
+    def _as_add_suffixes(self, version_string):
+        result = '{}'.format(version_string)
 
-        return '.'.join(parts)
+        if self._version.local:
+            result = '{}+{}'.format(result, self._version.local)
+
+        return result
 
     def as_major(self):
-        result = self.major
+        base = self._as_base(
+            parts=(self._version.major,)
+        )
 
-        if self.local and result:
-            result = '{}+{}'.format(result, self.local)
-
-        return result
-
-    def as_minor(self):
-        result = ''
-
-        if self.minor:
-            result = '{}.{}'.format(self.major, self.minor)
-
-        if self.local and result:
-            result = '{}+{}'.format(result, self.local)
-
-        return result
+        return self._as_add_suffixes(version_string=base)
 
     def as_micro(self):
-        result = ''
-        if self.micro:
-            result = '{}.{}.{}'.format(self.major, self.minor, self.micro)
-
-        if self.local and result:
-            result = '{}+{}'.format(result, self.local)
-
-        return result
-
-    def increment_major(self):
-        return self.increment_part(part=VERSION_PART_MAJOR)
-
-    def increment_minor(self):
-        return self.increment_part(part=VERSION_PART_MINOR)
-
-    def increment_micro(self):
-        return self.increment_part(part=VERSION_PART_MICRO)
-
-    def increment_part(self, part):
-        # Fill version parts if the requested part is lower than what is
-        # available.
-        self._version_parts.extend(
-            ['0'] * (
-                part - len(self._version_parts) + 1
+        base = self._as_base(
+            parts=(
+                self._version.major, self._version.minor, self._version.micro
             )
         )
 
-        try:
-            version_part = self._version_parts[part]
-        except IndexError:
-            part_numeric_post = ''
-            part_numeric_pre = ''
-            part_text = ''
-        else:
-            part_numeric_pre, part_text, part_numeric_post = re.findall(
-                r'^(\d+)*([A-Za-z]+)*(\d+)*$', version_part
-            )[0]
+        return self._as_add_suffixes(version_string=base)
 
-        if part_numeric_post:
-            part_numeric_post = int(part_numeric_post) + 1
-        else:
-            part_numeric_pre = int(part_numeric_pre) + 1
-
-        self._version_parts[part] = '{}{}{}'.format(
-            part_numeric_pre, part_text, part_numeric_post
+    def as_minor(self):
+        base = self._as_base(
+            parts=(self._version.major, self._version.minor)
         )
 
-        # Discard version parts lower than what is being increased
-        self._version_parts = self._version_parts[0:part + 1]
-        self._version_string = '.'.join(self._version_parts)
+        return self._as_add_suffixes(version_string=base)
 
-        if self.local:
-            self._version_string = '{}+{}'.format(
-                self._version_string, self.local
-            )
-
-        return self
-
-    def get_version_string(self):
-        return self._version_string
+    def as_upstream(self):
+        return self._version.public
 
     @property
-    def local(self):
-        return self._get_version_part(VERSION_PART_LOCAL)
+    def dev(self):
+        if self._version.dev is not None:
+            return str(self._version.dev)
+
+    def get_version_string(self):
+        return str(self._version)
+
+    def increment_dev(self):
+        version_string = '.'.join(
+            map(str, self._version.release)
+        )
+
+        if self._version.dev is None:
+            dev = -1
+        else:
+            dev = self._version.dev or 0
+
+        version_string = '{}.dev{}'.format(version_string, dev + 1)
+
+        if self._version.local:
+            version_string = '{}+{}'.format(
+                version_string, self._version.local
+            )
+
+        self._version = PackageVersion(
+            version=version_string
+        )
+        return self
+
+    def increment_major(self):
+        version_string = '{}'.format(
+            self._version.major + 1
+        )
+
+        if self._version.local:
+            version_string = '{}+{}'.format(
+                version_string, self._version.local
+            )
+
+        self._version = PackageVersion(
+            version=version_string
+        )
+        return self
+
+    def increment_micro(self):
+        version_string = '{}.{}.{}'.format(
+            self._version.major, self._version.minor, self._version.micro + 1
+        )
+
+        if self._version.local:
+            version_string = '{}+{}'.format(
+                version_string, self._version.local
+            )
+
+        self._version = PackageVersion(
+            version=version_string
+        )
+        return self
+
+    def increment_minor(self):
+        version_string = '{}.{}'.format(
+            self._version.major, self._version.minor + 1
+        )
+
+        if self._version.local:
+            version_string = '{}+{}'.format(
+                version_string, self._version.local
+            )
+
+        self._version = PackageVersion(
+            version=version_string
+        )
+        return self
+
+    def increment_pre(self):
+        version_string = '.'.join(
+            map(str, self._version.release)
+        )
+
+        if self._version.pre is None:
+            pre = ('a', -1)
+        else:
+            pre = self._version.pre
+
+        version_string = '{}{}{}'.format(version_string, pre[0], pre[1] + 1)
+
+        if self._version.local:
+            version_string = '{}+{}'.format(
+                version_string, self._version.local
+            )
+
+        self._version = PackageVersion(
+            version=version_string
+        )
+        return self
+
+    def increment_post(self):
+        version_string = '.'.join(
+            map(str, self._version.release)
+        )
+
+        if self._version.pre is not None:
+            version_string = '{}{}{}'.format(
+                version_string, self._version.pre[0], self._version.pre[1]
+            )
+
+        if self._version.post is None:
+            post = -1
+        else:
+            post = self._version.post or 0
+
+        version_string = '{}.post{}'.format(version_string, post + 1)
+
+        if self._version.local:
+            version_string = '{}+{}'.format(
+                version_string, self._version.local
+            )
+
+        self._version = PackageVersion(
+            version=version_string
+        )
+        return self
 
     @property
     def major(self):
-        return self._get_version_part(VERSION_PART_MAJOR)
-
-    @property
-    def minor(self):
-        return self._get_version_part(VERSION_PART_MINOR)
+        return self._version.major
 
     @property
     def micro(self):
-        return self._get_version_part(VERSION_PART_MICRO)
+        return self._version.micro
+
+    @property
+    def minor(self):
+        return self._version.minor
+
+    @property
+    def post(self):
+        if self._version.post is not None:
+            return str(self._version.post)
+
+    @property
+    def pre(self):
+        if self._version.pre:
+            return ''.join(
+                map(
+                    str, self._version.pre
+                )
+            )
 
 
 if __name__ == '__main__':

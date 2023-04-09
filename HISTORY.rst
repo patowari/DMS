@@ -114,6 +114,9 @@
 
 - Add check named ``check_app_tests`` to ensure Mayan apps tests flag matches
   the actual state of the app's tests.
+- Replace local version parsing code with wrapper for the Python ``packaging``
+  library. Add support to extract and manipulate more parts of the version
+  string like the pre-release and post release parts.
 
 4.4.5 (2023-03-11)
 ==================

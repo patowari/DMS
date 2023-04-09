@@ -86,7 +86,7 @@ job_docker_push_major:
   before_script:
 {% platform_gitlab_ci_config_env_before_script indent=4 %}
 {% platform_gitlab_ci_cache_before_script apk=True indent=4 %}
-    - apk add --cache-dir ${APK_CACHE_DIR} python3
+    - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
     - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
   cache:
 {% platform_gitlab_ci_cache_paths apk=True indent=4 %}
@@ -122,7 +122,7 @@ job_docker_push_minor:
   before_script:
 {% platform_gitlab_ci_config_env_before_script indent=4 %}
 {% platform_gitlab_ci_cache_before_script apk=True indent=4 %}
-    - apk add --cache-dir ${APK_CACHE_DIR} python3
+    - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
     - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
   cache:
 {% platform_gitlab_ci_cache_paths apk=True indent=4 %}

@@ -5,10 +5,6 @@ import mayan
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..classes import DependencyGroup
-from ..literals import (
-    MESSAGE_GREATER_THAN_SERVER, MESSAGE_NOT_LATEST, MESSAGE_UNKNOWN_VERSION,
-    MESSAGE_UP_TO_DATE
-)
 from ..permissions import permission_dependencies_view
 
 from .literals import (
@@ -23,7 +19,8 @@ from .mixins import (
 
 class CheckVersionViewTestCase(CheckVersionViewTestMixin, GenericViewTestCase):
     @mock.patch(
-        'mayan.apps.dependencies.utils.PyPIClient.get_server_versions', autospec=True
+        autospec=True,
+        target='mayan.apps.dependencies.utils.PyPIClient.get_server_versions'
     )
     def test_check_version_no_permission(self, mock_package_releases):
         mock_package_releases.return_value = (mayan.__version__,)
@@ -33,7 +30,8 @@ class CheckVersionViewTestCase(CheckVersionViewTestMixin, GenericViewTestCase):
         )
 
     @mock.patch(
-        'mayan.apps.dependencies.utils.PyPIClient.get_server_versions', autospec=True
+        autospec=True,
+        target='mayan.apps.dependencies.utils.PyPIClient.get_server_versions'
     )
     def test_check_version_ahead(self, mock_package_releases):
         self.grant_permission(permission=permission_dependencies_view)
@@ -45,7 +43,8 @@ class CheckVersionViewTestCase(CheckVersionViewTestMixin, GenericViewTestCase):
         )
 
     @mock.patch(
-        'mayan.apps.dependencies.utils.PyPIClient.get_server_versions', autospec=True
+        autospec=True,
+        target='mayan.apps.dependencies.utils.PyPIClient.get_server_versions'
     )
     def test_check_version_not_latest_version(self, mock_package_releases):
         self.grant_permission(permission=permission_dependencies_view)
@@ -57,7 +56,8 @@ class CheckVersionViewTestCase(CheckVersionViewTestMixin, GenericViewTestCase):
         )
 
     @mock.patch(
-        'mayan.apps.dependencies.utils.PyPIClient.get_server_versions', autospec=True
+        autospec=True,
+        target='mayan.apps.dependencies.utils.PyPIClient.get_server_versions'
     )
     def test_check_version_unknown_version(self, mock_package_releases):
         self.grant_permission(permission=permission_dependencies_view)
@@ -70,7 +70,8 @@ class CheckVersionViewTestCase(CheckVersionViewTestMixin, GenericViewTestCase):
         )
 
     @mock.patch(
-        'mayan.apps.dependencies.utils.PyPIClient.get_server_versions', autospec=True
+        autospec=True,
+        target='mayan.apps.dependencies.utils.PyPIClient.get_server_versions'
     )
     def test_check_version_correct_version(self, mock_package_releases):
         self.grant_permission(permission=permission_dependencies_view)

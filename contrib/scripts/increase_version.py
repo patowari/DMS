@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     if len(sys.argv) == 1:
         print(
-            'usage: <part to increase [major, minor, micro]> <-test>'
+            'usage: <part to increase [major, minor, micro, dev, pre, post]>'
         )
         exit(0)
 
@@ -33,6 +33,12 @@ if __name__ == '__main__':
         version.increment_minor()
     elif part == 'micro':
         version.increment_micro()
+    elif part == 'dev':
+        version.increment_dev()
+    elif part == 'pre':
+        version.increment_pre()
+    elif part == 'post':
+        version.increment_post()
     else:
         print('Unknown part')
         exit(1)
