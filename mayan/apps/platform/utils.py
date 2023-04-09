@@ -1,4 +1,4 @@
-def load_env_file(filename='config.env'):
+def load_env_file(filename='config.env', skip_local_config=False):
     result = {}
     with open(file=filename) as file_object:
         for line in file_object:
@@ -7,7 +7,7 @@ def load_env_file(filename='config.env'):
 
                 result[key] = value
 
-    if filename != 'config-local.env':
+    if filename != 'config-local.env' and not skip_local_config:
         try:
             result.update(
                 load_env_file(filename='config-local.env')
