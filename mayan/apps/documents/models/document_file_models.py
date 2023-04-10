@@ -1,6 +1,6 @@
 import logging
 
-from django.db import models
+from django.db import models, transaction
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
@@ -157,14 +157,20 @@ class DocumentFile(
         self.file.storage.delete(name=name)
         self.cache_partition.delete()
 
-        result = super().delete(*args, **kwargs)
+        with transaction.atomic():
+            result = super().delete(*args, **kwargs)
 
-        if self.document.files.count() == 0:
-            self.document.is_stub = False
+            self.document.file_latest = self.document.files.exclude(pk=self.pk).order_by('timestamp').only('id').last()
+
+            if self.document.files.count() == 0:
+                self.document.is_stub = False
+
             self.document._event_ignore = True
-            self.document.save(update_fields=('is_stub',))
+            self.document.save(
+                update_fields=('file_latest', 'is_stub')
+            )
 
-        return result
+            return result
 
     def get_absolute_url(self):
         return reverse(

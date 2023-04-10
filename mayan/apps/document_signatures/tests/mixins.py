@@ -130,7 +130,7 @@ class EmbeddedSignatureAPIViewTestMixin:
 
 
 class EmbeddedSignatureViewTestMixin:
-    def _request_test_document_file_signature_create_view(self):
+    def _request_test_document_file_embedded_signature_create_view(self):
         return self.post(
             viewname='signatures:document_file_signature_embedded_create',
             kwargs={

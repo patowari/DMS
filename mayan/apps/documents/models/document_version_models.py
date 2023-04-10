@@ -57,7 +57,7 @@ class DocumentVersion(
     @method_event(
         event_manager_class=EventManagerMethodAfter,
         event=event_document_version_deleted,
-        target='document',
+        target='document'
     )
     def delete(self, *args, **kwargs):
         for page in self.pages.all():
@@ -88,10 +88,23 @@ class DocumentVersion(
         }
     )
     def save(self, *args, **kwargs):
-        with transaction.atomic():
-            if self.active:
-                self.active_set(save=False)
+        new_document_version = not self.pk
 
+        if new_document_version:
+            with transaction.atomic():
+                if self.active:
+                    self.active_set(save=False)
+
+                result = super().save(*args, **kwargs)
+
+                if self.active:
+                    self.document._event_ignore = True
+                    self.document.save(
+                        update_fields=('version_active',)
+                    )
+
+                return result
+        else:
             return super().save(*args, **kwargs)
 
 

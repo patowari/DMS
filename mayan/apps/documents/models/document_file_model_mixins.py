@@ -97,13 +97,16 @@ class DocumentFileBusinessLogicMixin:
                 self, self.document
             )
 
+            self.document.file_latest = self
             self.document.is_stub = False
+
             if not self.document.label:
                 self.document.label = str(self.file)
 
             self.document._event_ignore = True
-            self.document.save(update_fields=('is_stub', 'label'))
-
+            self.document.save(
+                update_fields=('file_latest', 'is_stub', 'label')
+            )
         except Exception as exception:
             logger.error(
                 'Error creating new document file for document "%s"; %s',

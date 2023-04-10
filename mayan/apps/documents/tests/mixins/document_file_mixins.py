@@ -78,10 +78,14 @@ class DocumentFileTestMixin:
         if not action:
             action = DocumentFileActionUseNewPages.backend_id
 
+        document_file_count = DocumentFile.objects.count()
+
         with open(file=self._test_document_path, mode='rb') as file_object:
             self._test_document_file = self._test_document.file_new(
                 action=action, comment=TEST_DOCUMENT_FILE_COMMENT,
-                file_object=file_object, user=user
+                file_object=file_object,
+                filename='test_document_file_{}'.format(document_file_count),
+                user=user
             )
 
         self._test_document_file_page = self._test_document_file.pages.first()

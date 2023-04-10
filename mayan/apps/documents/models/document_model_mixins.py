@@ -97,10 +97,6 @@ class DocumentBusinessLogicMixin:
             document_type=document_type, force=force, user=user
         )
 
-    @property
-    def file_latest(self):
-        return self.files.order_by('timestamp').last()
-
     def file_new(
         self, file_object, action=None, comment=None, filename=None,
         expand=False, user=None
@@ -192,10 +188,3 @@ class DocumentBusinessLogicMixin:
             )
 
             return DocumentVersionPage.objects.none()
-
-    @property
-    def version_active(self):
-        try:
-            return self.versions.filter(active=True).first()
-        except self.versions.model.DoesNotExist:
-            return self.versions.none()

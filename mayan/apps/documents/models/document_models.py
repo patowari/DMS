@@ -40,10 +40,16 @@ class Document(
     """
     _hooks_pre_create = []
 
+    file_latest = models.OneToOneField(
+        blank=True, null=True, on_delete=models.SET_NULL, to='DocumentFile',
+        related_name='document_latest', verbose_name=_(
+            'Latest document file'
+        )
+    )
     uuid = models.UUIDField(
         default=uuid.uuid4, editable=False, help_text=_(
-            'UUID of a document, universally Unique ID. An unique identifier '
-            'generated for each document.'
+            'UUID of a document, universally Unique ID. An unique '
+            'identifier generated for each document.'
         ), verbose_name=_('UUID')
     )
     document_type = models.ForeignKey(
@@ -87,10 +93,16 @@ class Document(
     )
     is_stub = models.BooleanField(
         db_index=True, default=True, editable=False, help_text=_(
-            'A document stub is a document with an entry on the database but '
-            'no file uploaded. This could be an interrupted upload or a '
-            'deferred upload via the API.'
+            'A document stub is a document with an entry on the database '
+            'but no file uploaded. This could be an interrupted upload or '
+            'a deferred upload via the API.'
         ), verbose_name=_('Is stub?')
+    )
+    version_active = models.OneToOneField(
+        blank=True, null=True, on_delete=models.SET_NULL,
+        to='DocumentVersion', related_name='document_active', verbose_name=_(
+            'Active document version'
+        )
     )
 
     objects = DocumentManager()

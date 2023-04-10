@@ -322,7 +322,8 @@ class DocumentAPIViewTestCase(
 
     def test_document_upload_api_view_with_access(self):
         self.grant_access(
-            obj=self._test_document_type, permission=permission_document_create
+            obj=self._test_document_type,
+            permission=permission_document_create
         )
 
         document_count = Document.objects.count()
@@ -336,9 +337,12 @@ class DocumentAPIViewTestCase(
             Document.objects.count(), document_count + 1
         )
 
-        self.assertEqual(self._test_document.pk, response.data['id'])
         self.assertEqual(
-            self._test_document.label, self._test_document.file_latest.filename
+            self._test_document.pk, response.data['id']
+        )
+        self.assertEqual(
+            self._test_document.label,
+            self._test_document.file_latest.filename
         )
         self.assertEqual(self._test_document.pages.count(), 1)
 
@@ -382,7 +386,9 @@ class DocumentAPIViewTestCase(
 
         self.assertEqual(events[3].action_object, self._test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, self._test_document.version_active)
+        self.assertEqual(
+            events[3].target, self._test_document.version_active
+        )
         self.assertEqual(events[3].verb, event_document_version_created.id)
 
         # Document version page created
@@ -394,7 +400,8 @@ class DocumentAPIViewTestCase(
             events[4].action_object, self._test_document.version_active
         )
         self.assertEqual(
-            events[4].target, self._test_document.version_active.pages.first()
+            events[4].target,
+            self._test_document.version_active.pages.first()
         )
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
@@ -498,7 +505,9 @@ class DocumentChangeTypeAPIViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, self._test_document_types[1])
+        self.assertEqual(
+            events[0].action_object, self._test_document_types[1]
+        )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_document_type_changed.id)

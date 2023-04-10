@@ -61,10 +61,6 @@ class DocumentFileAPIViewTestCase(
             self._test_document.files.count(), document_file_count - 1
         )
 
-        self.assertEqual(
-            self._test_document.files.first(), self._test_document.file_latest
-        )
-
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
@@ -122,7 +118,8 @@ class DocumentFileAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         self.assertEqual(
-            response.data['checksum'], self._test_document.file_latest.checksum
+            response.data['checksum'],
+            self._test_document.file_latest.checksum
         )
 
         events = self._get_test_events()

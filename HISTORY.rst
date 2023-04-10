@@ -117,6 +117,8 @@
 - Replace local version parsing code with wrapper for the Python ``packaging``
   library. Add support to extract and manipulate more parts of the version
   string like the pre-release and post release parts.
+- Update the active version and latest file attributes of documents to be
+  stored fields instead of computed values.
 
 4.4.5 (2023-03-11)
 ==================
