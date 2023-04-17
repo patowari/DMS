@@ -119,6 +119,12 @@
   string like the pre-release and post release parts.
 - Update the active version and latest file attributes of documents to be
   stored fields instead of computed values.
+- Release exporter updates:
+
+  - Use pathlib for internal path computations.
+  - Remove bbcode support.
+  - Simplify code to not require Mayan or Django.
+  - Support configurate release directory location.
 
 4.4.6 (2023-XX-XX)
 ==================
@@ -131,7 +137,7 @@
   - Python from 3.10-slim to 3.10.11-slim
   - Redis from 7.0.5-alpine to 7.0.10-alpine
   - RabbitMQ from 3.11.2-alpine to 3.11.13-alpine
-  
+
 4.4.5 (2023-03-11)
 ==================
 - Merge version 4.3.6 documents app migration 80 workaround.

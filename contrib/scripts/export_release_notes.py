@@ -1,17 +1,11 @@
 #!/usr/bin/env python
 
 import optparse
-import os
 from pathlib import Path
-import sys
 
 from docutils import core
-from html2bbcode.parser import HTML2BBCode
 from lxml import etree, html
 import sh
-
-import django
-from django.conf import settings
 
 MONTHS_TO_NUMBER = {
     'January': 1,
@@ -52,34 +46,13 @@ class ReleaseNoteExporter:
 
         return result
 
-    def __init__(self):
-        sys.path.insert(0, os.path.abspath('..'))
-        sys.path.insert(1, os.path.abspath('.'))
-
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mayan.settings')
-
-        self.parser = optparse.OptionParser(
-            usage='%prog [version number]', version='%prog {}'.format(VERSION)
-        )
-        self.parser.add_option(
-            '-f', '--format', help='specify the output format',
-            dest='output_format',
-            action='store', metavar='output_format'
-        )
-
-        (self.options, args) = self.parser.parse_args()
-
-        if len(args) != 1:
-            self.parser.error('version argument is missing')
-
-        django.setup()
-
-        self.version = args[0]
+    def __init__(self, output_format, version, releases_path):
+        self.releases_path = releases_path or Path('.').resolve() / 'docs' / 'releases'
+        self.output_format = output_format
+        self.version = version
 
     def export(self):
-        path_documentation = Path(
-            settings.BASE_DIR
-        ) / '..' / 'docs' / 'releases' / '{}.txt'.format(self.version)
+        path_documentation = Path(self.releases_path) / '{}.txt'.format(self.version)
 
         with path_documentation.open(mode='r') as file_object:
             content = []
@@ -113,56 +86,7 @@ class ReleaseNoteExporter:
             tree=html.fromstring(html_fragment)
         )
 
-        if self.options.output_format == 'bb':
-            result = result[1:]
-            html_output = str(b''.join(result))
-
-            html_replace_list = (
-                ('<tt', '<code'),
-                ('</tt>', '</code>'),
-            )
-
-            for html_replace_item in html_replace_list:
-                html_output = html_output.replace(*html_replace_item)
-
-            parser = HTML2BBCode()
-
-            result = str(parser.feed(html_output))
-
-            bbcode_replace_list = (
-                ('[h1]', '\n[size=150]'),
-                ('[/h1]', '[/size]\n'),
-                ('[h2]', '\n[size=150]'),
-                ('[/h2]', '[/size]\n'),
-                ('[h3]', '\n[b]'),
-                ('[/h3]', '[/b]\n'),
-                ('[li]', '\n[*]'),
-                ('[/li]', ''),
-                ('[code]', '[b][i]'),
-                ('[/code]', '[/i][/b]'),
-            )
-
-            for bbcode_replace_item in bbcode_replace_list:
-                result = result.replace(*bbcode_replace_item)
-
-            return result
-        elif self.options.output_format == 'md':
-            command_pandoc = sh.Command('pandoc')
-
-            markdown_tag_cleanup = (
-                (b'class="docutils literal"', b''),
-                (b'class="reference external"', b'')
-            )
-
-            joined_result = b''.join(result)
-
-            for markdown_tag_cleanup_item in markdown_tag_cleanup:
-                joined_result = joined_result.replace(
-                    *markdown_tag_cleanup_item
-                )
-
-            return command_pandoc(_in=joined_result, f='html', t='markdown')
-        elif self.options.output_format == 'news':
+        if self.output_format == 'md':
             command_pandoc = sh.Command('pandoc')
 
             markdown_tag_cleanup = (
@@ -173,13 +97,23 @@ class ReleaseNoteExporter:
             joined_result = b''.join(result)
 
             for markdown_tag_cleanup_item in markdown_tag_cleanup:
-                joined_result = joined_result.replace(
-                    *markdown_tag_cleanup_item
-                )
+                joined_result = joined_result.replace(*markdown_tag_cleanup_item)
 
-            result_body = command_pandoc(
-                _in=joined_result, f='html', t='markdown'
+            return command_pandoc(_in=joined_result, f='html', t='markdown')
+        elif self.output_format == 'news':
+            command_pandoc = sh.Command('pandoc')
+
+            markdown_tag_cleanup = (
+                (b'class="docutils literal"', b''),
+                (b'class="reference external"', b''),
             )
+
+            joined_result = b''.join(result)
+
+            for markdown_tag_cleanup_item in markdown_tag_cleanup:
+                joined_result = joined_result.replace(*markdown_tag_cleanup_item)
+
+            result_body = command_pandoc(_in=joined_result, f='html', t='markdown')
 
             tree = html.fromstring(html_fragment)
 
@@ -188,9 +122,7 @@ class ReleaseNoteExporter:
             return '\n'.join(
                 (
                     '---',
-                    'date: {}-{:02d}-{:02d}'.format(
-                        year, MONTHS_TO_NUMBER[month], int(day[:-1])
-                    ),
+                    'date: {}-{:02d}-{:02d}'.format(year, MONTHS_TO_NUMBER[month], int(day[:-1])),
                     'title: "{}"'.format(tree[0].text),
                     '---',
                     str(result_body)
@@ -201,6 +133,30 @@ class ReleaseNoteExporter:
 
 
 if __name__ == '__main__':
-    message_processor = ReleaseNoteExporter()
+    parser = optparse.OptionParser(
+        usage='%prog [version number]', version='%prog {}'.format(VERSION)
+    )
+    parser.add_option(
+        '-f', '--format', help='specify the output format',
+        dest='output_format',
+        action='store', metavar='output_format'
+    )
+    parser.add_option(
+        '-p', '--releases-path', help='path to the releases directory',
+        dest='releases_path',
+        action='store', metavar='releases_path'
+    )
+
+    (options, args) = parser.parse_args()
+
+    if len(args) != 1:
+        parser.error('version argument is missing')
+
+    version = args[0]
+
+    message_processor = ReleaseNoteExporter(
+        output_format=options.output_format,
+        releases_path=options.releases_path, version=args[0]
+    )
     result = message_processor.export()
     print(result)
