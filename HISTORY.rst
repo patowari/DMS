@@ -126,17 +126,49 @@
   - Simplify code to not require Mayan or Django.
   - Support configurate release directory location.
 
-4.4.6 (2023-XX-XX)
+4.4.7 (20XX-XX-XX)
+==================
+- Fix sitemap URL scheme format.
+- CI documentation jobs improvements:
+
+  - Install wheel to use modern Python package versions.
+  - Don't install or build the Mayan EDMS Python package and
+    instead use the development code to build the documentation.
+  - Ensure APT proxy quotes are escaped.
+
+4.4.6 (2023-04-16)
 ==================
 - Update Docker image versions:
 
-  - Docker from 20-dind to 20.10.21-dind
   - Debian from 11.5-slim to 11.6-slim
+  - Docker from 20-dind to 20.10.21-dind
+  - ElasticSearch from 7.17.0 to 7.17.9
   - MySQL from 8.0 to 8.0.32
   - PostgreSQL from 13.8 to 13.10
   - Python from 3.10-slim to 3.10.11-slim
-  - Redis from 7.0.5-alpine to 7.0.10-alpine
   - RabbitMQ from 3.11.2-alpine to 3.11.13-alpine
+  - Redis from 7.0.5-alpine to 7.0.10-alpine
+
+- Merged changes from version 4.3.8:
+
+  - Fix sources app migration 0027 backend mapping path.
+  - Don't include local config values in app settings. Local config values
+    are meant to override CI/CD and test settings, and not meant to be
+    committed as permanent to the repository.
+  - Improve deployment stages:
+
+    - Use long setting versions.
+    - Clean up volumes using the official method.
+    - Pull images to ensure the latest copy is used even if the image
+      has the same tag as the remote.
+
+- Ensure the workflow state action column is not shown for the workflow
+  state runtime proxies where is does not make sense to show.
+- Ignore staging folder file image cache error if the image cache is not
+  already generated when deleting the staging folder file.
+- Update Docker Compose file to work backward incompatible bug introduced
+  in version 2.17.0 YAML processor
+  (https://github.com/docker/compose/issues/10411).
 
 4.4.5 (2023-03-11)
 ==================
@@ -569,8 +601,22 @@
   - Support a local environment config file names ``config-local.env``.
     This file is ignored by Git and meant to override values of ``config.env``.
 
-4.3.8 (2023-XX-XX)
+4.3.8 (2023-04-15)
 ==================
+- Merged changes from version 4.2.15:
+
+  - Fix sources app migration 0027 backend mapping path.
+  - Include bug fixes and updates from version 4.0.24.
+  - Don't include local config values in app settings. Local config values
+    are meant to override CI/CD and test settings, and not meant to be
+    committed as permanent to the repository.
+  - Improve deployment stages:
+
+    - Use long setting versions.
+    - Clean up volumes using the official method.
+    - Pull images to ensure the latest copy is used even if the image
+      has the same tag as the remote.
+
 - Update Docker image versions:
 
   - ElasticSearch from 7.17.0 to 7.17.9
@@ -580,6 +626,11 @@
   - Python from 3.10-slim to 3.10.11-slim
   - Redis from 6.2-alpine to 6.2.11-alpine
   - RabbitMQ from 3.10-alpine to 3.10.20-alpine
+
+- Ensure the workflow state action column is not shown for the workflow
+  state runtime proxies where is does not make sense to show.
+- Ignore staging folder file image cache error if the image cache is not
+  already generated when deleting the staging folder file.
 
 4.3.7 (2023-09-10)
 ==================
@@ -1149,9 +1200,25 @@
 - Display a warning message in the setting edit view when local storage is
   disabled.
 
+4.2.15 (2023-04-14)
+===================
+- Merged changes from version 4.1.12:
+
+  - Fix sources app migration 0027 backend mapping path.
+  - Include bug fixes and updates from version 4.0.24.
+  - Don't include local config values in app settings. Local config values are
+    meant to override CI/CD and test settings, and not meant to be committed
+    as permanent to the repository.
+  - Improve deployment stages:
+
+    - Use long setting versions.
+    - Clean up volumes using the official method.
+    - Pull images to ensure the latest copy is used even if the image
+      has the same tag as the remote.
+
 4.2.14 (2023-03-09)
 ===================
-- Merge changes from version 4.1.11:
+- Merged changes from version 4.1.11:
 
   - Removal of the Transifex Python client.
   - Support a local environment config file names ``config-local.env``.
@@ -1703,9 +1770,19 @@
 - Redirect to current user to user detail view after password change.
 - Support two different ``psycopg2`` versions for upgrade testing.
 
-4.1.12 (XX-XX-XX)
-=================
+4.1.12 (2023-04-14)
+===================
 - Fix sources app migration 0027 backend mapping path.
+- Include bug fixes and updates from version 4.0.24.
+- Don't include local config values in app settings. Local config values are
+  meant to override CI/CD and test settings, and not meant to be committed
+  as permanent to the repository.
+- Improve deployment stages:
+
+  - Use long setting versions.
+  - Clean up volumes using the official method.
+  - Pull images to ensure the latest copy is used even if the image
+    has the same tag as the remote.
 
 4.1.11 (2023-03-08)
 ===================
@@ -2497,9 +2574,19 @@
   Thanks to Ludovic Anterieur (@lanterieur) for the request.
 - Pin jsonschema to version 3.2.0 to avoid errors with
 
+4.0.24 (2023-04-14)
+===================
+- Split dev environment makefile target into OS and Python dependencies.
+- Remove duplicated makefile target keys.
+- Pin containers to specific bug fix versions.
+- Enable organization app testing.
+- Add check named ``check_app_tests`` to ensure Mayan apps tests
+  flag matches the actual state of the app's tests.
+- Backport ``CeleryQueue`` class improvements. Enable task manager app tests.
+
 4.0.23 (2022-11-13)
 ===================
-- Add help text to the `SEARCH_BACKEND_ARGUMENTS` setting.
+- Add help text to the ``SEARCH_BACKEND_ARGUMENTS`` setting.
 - Backport an object storage documentation chapter fix
   from version 4.4dev0.
 - Don't tag Docker images as ``latest`` for minor releases. As per Docker's

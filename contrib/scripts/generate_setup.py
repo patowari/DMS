@@ -10,11 +10,15 @@ import django
 from django.template import Template, Context
 from django.utils.encoding import force_str
 
-sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(1, os.path.abspath('.'))
+sys.path.insert(
+    0, os.path.abspath('..')
+)
+sys.path.insert(
+    1, os.path.abspath('.')
+)
 
-import mayan
-from mayan.settings import BASE_DIR as mayan_base_dir
+import mayan  # NOQA
+from mayan.settings import BASE_DIR as mayan_base_dir  # NOQA
 from mayan.settings import literals
 
 try:
