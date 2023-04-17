@@ -22,7 +22,7 @@ MONTHS_TO_NUMBER = {
     'December': 12
 }
 VERSION = '3.0'
-ignore_ids_list = ('upgrade-process', 'troubleshooting')
+ignore_ids_list = ('troubleshooting', 'upgrade-process', 'upgrading-process')
 
 
 class ReleaseNoteExporter:
