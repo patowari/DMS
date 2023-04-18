@@ -234,7 +234,7 @@ class TransformationListView(
             'layer_name': self.layer.name,
             'navigation_disable_menus_link_group_object_header': True,
             'navigation_object_list': ('content_object',),
-            'no_results_icon': self.layer.get_icon(),
+            'no_results_icon': self.layer.icon,
             'no_results_main_link': link_transformation_select.resolve(
                 context=RequestContext(
                     dict_={

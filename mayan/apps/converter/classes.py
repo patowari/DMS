@@ -16,7 +16,6 @@ from django.utils.functional import cached_property
 from django.utils.module_loading import import_string
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.mime_types.classes import MIMETypeBackend
 from mayan.apps.navigation.classes import Link
 from mayan.apps.storage.compressed_files import MsgArchive
@@ -310,7 +309,7 @@ class Layer:
 
     def __init__(
         self, label, name, order, permissions, default=False,
-        empty_results_text=None, symbol=None
+        empty_results_text=None, icon=None
     ):
         self.default = default
         self.empty_results_text = empty_results_text
@@ -318,7 +317,7 @@ class Layer:
         self.name = name
         self.order = order
         self.permissions = permissions
-        self.symbol = symbol
+        self.icon = icon
 
         # Check order
         layer = self.__class__.get_by_value(key='order', value=self.order)
@@ -405,9 +404,6 @@ class Layer:
                 'document file themselves.'
             )
 
-    def get_icon(self):
-        return Icon(driver_name='fontawesome', symbol=self.symbol)
-
     def get_model_instance(self):
         StoredLayer = apps.get_model(
             app_label='converter', model_name='StoredLayer'
@@ -460,8 +456,8 @@ class LayerLink(Link):
     def get_icon(self, context):
         if self.action == 'view':
             layer = self.get_layer(context=context)
-            if layer and layer.symbol:
-                return layer.get_icon()
+            if layer and layer.icon:
+                return layer.icon
 
         return super().get_icon(context=context)
 

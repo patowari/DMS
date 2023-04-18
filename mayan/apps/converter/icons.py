@@ -15,3 +15,10 @@ icon_transformation_edit = Icon(
 )
 icon_transformation_list = icon_transformations
 icon_transformation_select = Icon(driver_name='fontawesome', symbol='plus')
+
+icon_layer_decorations = Icon(
+    driver_name='fontawesome', symbol='paint-roller'
+)
+icon_layer_transformation = Icon(
+    driver_name='fontawesome', symbol='crop'
+)

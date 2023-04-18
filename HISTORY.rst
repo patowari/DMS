@@ -126,6 +126,8 @@
   - Simplify code to not require Mayan or Django.
   - Support configurate release directory location.
 
+- Add icon class support to layers.
+
 4.4.7 (20XX-XX-XX)
 ==================
 - Fix sitemap URL scheme format.
