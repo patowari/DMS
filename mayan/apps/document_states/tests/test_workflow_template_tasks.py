@@ -1,13 +1,12 @@
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .mixins.workflow_template_mixins import (
-    WorkflowTaskTestCaseMixin, WorkflowTemplateTestMixin
-)
+from .mixins.workflow_template_mixins import WorkflowTemplateTaskTestMixin
+from .mixins.workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 
 
 class WorkflowTemplateTaskTestCase(
-    WorkflowTaskTestCaseMixin, WorkflowTemplateTestMixin,
+    WorkflowTemplateStateTestMixin, WorkflowTemplateTaskTestMixin,
     GenericDocumentTestCase
 ):
     auto_upload_test_document = False
@@ -24,7 +23,8 @@ class WorkflowTemplateTaskTestCase(
         self._execute_task_launch_all_workflows()
 
         self.assertEqual(
-            self._test_document.workflows.count(), workflow_instance_count + 1
+            self._test_document.workflows.count(),
+            workflow_instance_count + 1
         )
 
     def test_trashed_document_task_launch_all_workflows(self):
@@ -44,7 +44,8 @@ class WorkflowTemplateTaskTestCase(
         self._execute_task_launch_workflow()
 
         self.assertEqual(
-            self._test_document.workflows.count(), workflow_instance_count + 1
+            self._test_document.workflows.count(),
+            workflow_instance_count + 1
         )
 
     def test_trashed_document_task_launch_workflow(self):
@@ -64,7 +65,8 @@ class WorkflowTemplateTaskTestCase(
         self._execute_task_launch_workflow_for()
 
         self.assertEqual(
-            self._test_document.workflows.count(), workflow_instance_count + 1
+            self._test_document.workflows.count(),
+            workflow_instance_count + 1
         )
 
     def test_trashed_document_task_launch_workflow_for(self):
@@ -85,7 +87,8 @@ class WorkflowTemplateTaskTestCase(
         self._execute_task_launch_all_workflow_for()
 
         self.assertEqual(
-            self._test_document.workflows.count(), workflow_instance_count + 1
+            self._test_document.workflows.count(),
+            workflow_instance_count + 1
         )
 
     def test_trashed_document_task_launch_all_workflow_for(self):

@@ -3,9 +3,9 @@ from pathlib import Path
 import shutil
 
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
-from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
-from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
+from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 
 from ..source_backends.staging_folder_backends import SourceBackendStagingFolder
 

@@ -2,110 +2,98 @@ import json
 
 from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
 from mayan.apps.document_states.permissions import permission_workflow_template_edit
-from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
 from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.testing.tests.base import GenericViewTestCase
+from mayan.apps.documents.tests.mixins.document_version_mixins import DocumentVersionTestMixin
+from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 
-from ..models import DocumentVersionPageOCRContent
 from ..workflow_actions import UpdateDocumentPageOCRAction
 
 from .literals import (
-    TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT,
     TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED,
     TEST_UPDATE_DOCUMENT_PAGE_OCR_ACTION_DOTTED_PATH
 )
+from .mixins import DocumentVersionOCRTestMixin
 
 
 class UpdateDocumentPageOCRActionTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    DocumentVersionOCRTestMixin, DocumentVersionTestMixin,
+    WorkflowTemplateStateActionTestMixin, BaseTestCase
 ):
-    auto_upload_test_document = False
+    auto_create_test_document_version = True
 
     def test_workflow_action_document_version_page_update_action_no_page_condition_execution(self):
-        self._upload_test_document()
+        self._create_test_document_version_ocr_content()
 
-        document_version_page = self._test_document_version.pages.first()
-        DocumentVersionPageOCRContent.objects.create(
-            document_version_page=document_version_page,
-            content=TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT
-        )
+        test_document_version_page_ocr_content = self._test_document_version_page.ocr_content.content
 
-        action = UpdateDocumentPageOCRAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=UpdateDocumentPageOCRAction, kwargs={
                 'page_condition': '',
                 'page_content': TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
             }
         )
-
-        action.execute(context={'document': self._test_document})
-
-        document_version_page.refresh_from_db()
+        self._test_document_version_page.refresh_from_db()
         self.assertEqual(
-            document_version_page.ocr_content.content,
-            TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT
+            self._test_document_version_page.ocr_content.content,
+            test_document_version_page_ocr_content
         )
 
     def test_workflow_action_document_version_page_update_action_template_page_content_execution(self):
-        self._upload_test_document()
+        self._create_test_document_version_ocr_content()
 
-        document_version_page = self._test_document_version.pages.first()
-        DocumentVersionPageOCRContent.objects.create(
-            document_version_page=document_version_page,
-            content=TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT
-        )
-
-        action = UpdateDocumentPageOCRAction(
-            form_data={
-                'page_condition': '{% if "test" in document_version_page.ocr_content.content %}Has "test"{% endif %}',
+        self._execute_workflow_template_state_action(
+            klass=UpdateDocumentPageOCRAction, kwargs={
+                'page_condition': '{% if "Documentation" in document_version_page.ocr_content.content %}True{% endif %}',
                 'page_content': TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
             }
         )
-        action.execute(context={'document': self._test_document})
-
-        document_version_page.refresh_from_db()
+        self._test_document_version_page.refresh_from_db()
         self.assertEqual(
-            document_version_page.ocr_content.content,
+            self._test_document_version_page.ocr_content.content,
             TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
         )
 
     def test_workflow_action_update_document_version_page_action_template_page_content_execution(self):
-        self._upload_test_document()
+        self._create_test_document_version_ocr_content()
 
-        document_version_page = self._test_document_version.pages.first()
-        DocumentVersionPageOCRContent.objects.create(
-            document_version_page=document_version_page,
-            content=TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT
-        )
+        test_document_version_page_ocr_content = self._test_document_version_page.ocr_content.content
 
-        action = UpdateDocumentPageOCRAction(
-            form_data={
-                'page_condition': '{% if "test" in document_version_page.ocr_content.content %}Has "test"{% endif %}',
+        self._execute_workflow_template_state_action(
+            klass=UpdateDocumentPageOCRAction, kwargs={
+                'page_condition': '{% if "Documentation" in document_version_page.ocr_content.content %}True{% endif %}',
                 'page_content': '{{ document_version_page.ocr_content.content }}+update'
             }
         )
-        action.execute(context={'document': self._test_document})
-
-        document_version_page.refresh_from_db()
+        self._test_document_version_page.refresh_from_db()
         self.assertEqual(
-            document_version_page.ocr_content.content,
-            '{}+update'.format(TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT)
+            self._test_document_version_page.ocr_content.content,
+            '{}+update'.format(test_document_version_page_ocr_content)
         )
 
+
+class TransitionUpdateDocumentPageOCRActionTestCase(
+    WorkflowTemplateStateActionTestMixin, BaseTestCase
+):
+    def setUp(self):
+        super().setUp()
+        self._test_document.delete()
+        self._test_document.delete()
+
+        self._upload_test_document()
+
     def test_workflow_action_update_document_version_page_execution(self):
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
         self._test_workflow_template_states[1].actions.create(
-            action_data=json.dumps(
+            backend_data=json.dumps(
                 obj={
                     'page_condition': True,
-                    'page_content': '{{ document.label }}'
+                    'page_content': '{{ workflow_instance.document.label }}'
                 }
-            ), action_path=TEST_UPDATE_DOCUMENT_PAGE_OCR_ACTION_DOTTED_PATH,
+            ), backend_path=TEST_UPDATE_DOCUMENT_PAGE_OCR_ACTION_DOTTED_PATH,
             label='', when=WORKFLOW_ACTION_ON_ENTRY
         )
         self._test_workflow_template.document_types.add(
@@ -119,24 +107,20 @@ class UpdateDocumentPageOCRActionTestCase(
         )
 
         self.assertEqual(
-            ''.join(self._test_document.ocr_content()), self._test_document.label
+            ''.join(
+                self._test_document.ocr_content()
+            ), self._test_document.label
         )
 
 
 class UpdateDocumentPageOCRActionViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateStateActionViewTestMixin,
-    GenericViewTestCase
+    WorkflowTemplateStateActionViewTestMixin, GenericViewTestCase
 ):
-    def setUp(self):
-        super().setUp()
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
-
     def test_update_document_version_page_ocr_workflow_state_action_create_get_view_no_permission(self):
         action_count = self._test_workflow_template_state.actions.count()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            class_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction',
+            backend_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction',
         )
         self.assertEqual(response.status_code, 404)
 
@@ -153,7 +137,7 @@ class UpdateDocumentPageOCRActionViewTestCase(
         action_count = self._test_workflow_template_state.actions.count()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            class_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction',
+            backend_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction',
         )
         self.assertEqual(response.status_code, 200)
 

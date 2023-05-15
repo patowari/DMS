@@ -101,7 +101,7 @@ class SourcesApp(MayanAppConfig):
             source=Source
         )
         SourceColumn(
-            attribute='get_backend_label', include_label=True,
+            attribute='get_backend_class_label', include_label=True,
             label=_('Type'), source=Source
         )
         SourceColumn(
@@ -161,11 +161,11 @@ class SourcesApp(MayanAppConfig):
         )
 
         pre_delete.connect(
+            dispatch_uid='sources_handler_delete_interval_source_periodic_task',
             receiver=handler_delete_interval_source_periodic_task,
-            sender=DocumentType,
-            dispatch_uid='sources_handler_delete_interval_source_periodic_task'
+            sender=DocumentType
         )
         signal_post_upgrade.connect(
-            receiver=handler_initialize_periodic_tasks,
-            dispatch_uid='sources_handler_initialize_periodic_tasks'
+            dispatch_uid='sources_handler_initialize_periodic_tasks',
+            receiver=handler_initialize_periodic_tasks
         )

@@ -102,7 +102,7 @@ class WorkflowTemplateStateActionSerializer(
 
     class Meta:
         fields = (
-            'action_path', 'action_data', 'condition', 'enabled', 'id',
+            'backend_data', 'backend_path', 'condition', 'enabled', 'id',
             'label', 'url', 'when', 'workflow_template_state_id',
             'workflow_template_state_url'
         )

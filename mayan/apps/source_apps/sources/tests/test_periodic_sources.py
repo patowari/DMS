@@ -2,7 +2,7 @@ from django_celery_beat.models import PeriodicTask
 
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .mixins import PeriodicSourceBackendTestMixin
+from .mixins.periodic_source_mixins import PeriodicSourceBackendTestMixin
 
 
 class PeriodicSourceBackendTestCase(

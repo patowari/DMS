@@ -3,6 +3,7 @@
 {% load widget_tweaks %}
 
 {% load appearance_tags %}
+{% load templating_tags %}
 
 {% for asset in form.media.render_css %}
     {{ asset|safe }}
@@ -50,11 +51,14 @@
         {% endif %}
             {% if form.get_fieldsets|length > 1 and fieldset.0 %}<legend class="appearance-legend">{{ fieldset.0 }}</legend>{% endif %}
 
-            {% for field in form.visible_fields %}
-                {% if field.name in fieldset.1.fields %}
-                    {% include 'appearance/partials/form_field.html' %}
-                {% endif %}
-            {% endfor %}
+            {% with form|appearance_form_get_visile_fields_map as field_map %}
+                {% for field_name in fieldset.1.fields %}
+                    {% with field_map|dict_get:field_name as field %}
+                        {% include 'appearance/partials/form_field.html' %}
+                    {% endwith %}
+                {% endfor %}
+            {% endwith %}
+
         {% if form.get_fieldsets|length > 1 %}
             </fieldset>
         {% endif %}

@@ -1,14 +1,11 @@
-import json
 import logging
 
 from django import forms
-from django.db.models import Model
-from django.db.models.query import QuerySet
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.backends.forms import FormDynamicModelBackend
 from mayan.apps.documents.classes import DocumentFileAction
 from mayan.apps.documents.forms.document_forms import DocumentForm
-from mayan.apps.views.forms import DynamicModelForm
 
 from .classes import SourceBackend
 from .models import Source
@@ -60,43 +57,10 @@ class SourceBackendSelectionForm(forms.Form):
         self.fields['backend'].choices = SourceBackend.get_choices()
 
 
-class SourceBackendDynamicForm(DynamicModelForm):
+class SourceBackendSetupDynamicForm(FormDynamicModelBackend):
     class Meta:
         fields = ('label', 'enabled', 'backend_data')
         model = Source
-        widgets = {'backend_data': forms.widgets.HiddenInput}
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if self.instance.backend_data:
-            backend_data = json.loads(s=self.instance.backend_data)
-
-            for key in self.instance.get_backend().get_setup_form_fields():
-                self.fields[key].initial = backend_data.get(key, None)
-
-    def clean(self):
-        data = super().clean()
-
-        # Consolidate the dynamic fields into a single JSON field called
-        # 'backend_data'.
-        backend_data = {}
-
-        for field_name, field_data in self.schema['fields'].items():
-            backend_data[field_name] = data.pop(
-                field_name, field_data.get('default', None)
-            )
-            if isinstance(backend_data[field_name], QuerySet):
-                # Flatten the queryset to a list of ids.
-                backend_data[field_name] = list(
-                    backend_data[field_name].values_list('id', flat=True)
-                )
-            elif isinstance(backend_data[field_name], Model):
-                # Store only the ID of a model instance.
-                backend_data[field_name] = backend_data[field_name].pk
-
-        data['backend_data'] = json.dumps(obj=backend_data)
-
-        return data
 
 
 class WebFormUploadFormHTML5(UploadBaseForm):

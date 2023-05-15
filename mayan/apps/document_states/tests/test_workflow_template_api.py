@@ -3,7 +3,6 @@ from rest_framework import status
 from mayan.apps.documents.permissions import (
     permission_document_type_edit, permission_document_type_view
 )
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
@@ -18,14 +17,12 @@ from ..permissions import (
 from .literals import TEST_WORKFLOW_TEMPLATE_LABEL
 from .mixins.workflow_template_mixins import (
     WorkflowTemplateAPIViewTestMixin,
-    WorkflowTemplateDocumentTypeAPIViewMixin,
-    WorkflowTemplateTestMixin
+    WorkflowTemplateDocumentTypeAPIViewMixin
 )
 
 
 class WorkflowTemplateAPIViewTestCase(
-    DocumentTestMixin, WorkflowTemplateAPIViewTestMixin,
-    WorkflowTemplateTestMixin, BaseAPITestCase
+    WorkflowTemplateAPIViewTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 
@@ -277,14 +274,10 @@ class WorkflowTemplateAPIViewTestCase(
 
 
 class WorkflowTemplateDocumentTypeAPIViewTestCase(
-    DocumentTestMixin, WorkflowTemplateDocumentTypeAPIViewMixin,
-    WorkflowTemplateTestMixin, BaseAPITestCase
+    WorkflowTemplateDocumentTypeAPIViewMixin, BaseAPITestCase
 ):
+    auto_create_test_workflow_template = True
     auto_upload_test_document = False
-
-    def setUp(self):
-        super().setUp()
-        self._create_test_workflow_template()
 
     def test_workflow_template_document_type_add_api_view_no_permission(self):
         self.grant_access(
@@ -419,7 +412,9 @@ class WorkflowTemplateDocumentTypeAPIViewTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_workflow_template_document_type_list_api_view_with_workflow_template_access(self):
-        self._test_workflow_template.document_types.add(self._test_document_type)
+        self._test_workflow_template.document_types.add(
+            self._test_document_type
+        )
 
         self.grant_access(
             obj=self._test_workflow_template,

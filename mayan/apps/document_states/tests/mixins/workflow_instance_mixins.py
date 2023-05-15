@@ -1,4 +1,43 @@
-class DocumentWorkflowTemplateViewTestMixin:
+from ..literals import TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT
+
+from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+
+
+class WorkflowInstanceTestMixin(WorkflowTemplateTransitionTestMixin):
+    auto_upload_test_document = False
+
+    def _create_test_document_stub(self, *args, **kwargs):
+        super()._create_test_document_stub(*args, **kwargs)
+        self._inject_test_workflow_instance()
+
+    def _create_test_workflow_instance(self):
+        self._test_workflow_instance = self._test_workflow_template.launch_for(
+            document=self._test_document
+        )
+
+    def _create_test_workflow_template_instance_log_entry(self):
+        self._test_document.workflows.first().log_entries.create(
+            comment=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
+            transition=self._test_workflow_template_transition,
+            user=self._test_case_user
+        )
+
+    def _do_test_workflow_instance_transition(self, extra_data=None):
+        self._test_document.workflows.first().do_transition(
+            comment=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
+            extra_data=extra_data,
+            transition=self._test_workflow_template_transition
+        )
+
+    def _inject_test_workflow_instance(self):
+        self._test_workflow_instance = self._test_document.workflows.first()
+
+    def _upload_test_document(self, *args, **kwargs):
+        super()._upload_test_document(*args, **kwargs)
+        self._inject_test_workflow_instance()
+
+
+class DocumentWorkflowTemplateViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_document_single_workflow_template_launch_view(self):
         return self.post(
             viewname='document_states:document_single_workflow_templates_launch',
@@ -10,7 +49,7 @@ class DocumentWorkflowTemplateViewTestMixin:
         )
 
 
-class WorkflowInstanceAPIViewTestMixin:
+class WorkflowInstanceAPIViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_workflow_instance_detail_api_view(self):
         return self.get(
             viewname='rest_api:workflow-instance-detail', kwargs={
@@ -52,7 +91,7 @@ class WorkflowInstanceAPIViewTestMixin:
         )
 
 
-class WorkflowInstanceLaunchAPIViewTestMixin:
+class WorkflowInstanceLaunchAPIViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_workflow_instance_launch_api_view(self):
         return self.post(
             viewname='rest_api:workflow-instance-launch', kwargs={
@@ -63,7 +102,9 @@ class WorkflowInstanceLaunchAPIViewTestMixin:
         )
 
 
-class WorkflowInstanceLogEntryTransitrionListAPIViewTestMixin:
+class WorkflowInstanceLogEntryTransitionListAPIViewTestMixin(
+    WorkflowInstanceTestMixin
+):
     def _request_test_workflow_instance_log_entry_transition_list_api_view(self):
         return self.get(
             viewname='rest_api:workflow-instance-log-entry-transition-list',
@@ -74,7 +115,7 @@ class WorkflowInstanceLogEntryTransitrionListAPIViewTestMixin:
         )
 
 
-class WorkflowInstanceViewTestMixin:
+class WorkflowInstanceViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_document_workflow_instance_list_view(self):
         return self.get(
             viewname='document_states:workflow_instance_list', kwargs={
@@ -117,8 +158,15 @@ class WorkflowInstanceViewTestMixin:
             }
         )
 
+    def _request_test_workflow_template_launch_view(self):
+        return self.post(
+            viewname='document_states:workflow_template_launch', kwargs={
+                'workflow_template_id': self._test_workflow_template.pk
+            }
+        )
 
-class WorkflowToolViewTestMixin:
+
+class WorkflowToolViewTestMixin(WorkflowInstanceTestMixin):
     def _request_workflow_launch_view(self):
         return self.post(
             viewname='document_states:tool_launch_workflows',

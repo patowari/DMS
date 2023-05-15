@@ -54,9 +54,19 @@ def appearance_app_templates(context, template_name):
 
 
 @register.filter
+def appearance_form_get_visile_fields_map(form):
+    field_map = {
+        field.name: field for field in form.visible_fields()
+    }
+    return field_map
+
+
+@register.filter
 def appearance_get_choice_value(field):
     try:
-        return dict(field.field.choices)[field.value()]
+        return dict(field.field.choices)[
+            field.value()
+        ]
     except TypeError:
         return ', '.join(
             [
@@ -69,7 +79,9 @@ def appearance_get_choice_value(field):
 
 @register.filter
 def appearance_get_form_media_js(form):
-    return [form.media.absolute_path(path) for path in form.media._js]
+    return [
+        form.media.absolute_path(path) for path in form.media._js
+    ]
 
 
 @register.simple_tag
@@ -81,7 +93,9 @@ def appearance_get_icon(icon_path, **kwargs):
             subdictionary = clean_kwargs
             parts = key.split('__')
             for part in parts:
-                subdictionary.setdefault(part, {})
+                subdictionary.setdefault(
+                    part, {}
+                )
                 dictionary_pointer = subdictionary
                 subdictionary = subdictionary[part]
 

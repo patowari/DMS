@@ -14,11 +14,32 @@ from mayan.apps.permissions.models import Role
 from .classes import ModelPermission
 from .permissions import permission_acl_edit
 
+__all__ = (
+    'GrantAccessAction', 'GrantDocumentAccessAction', 'RevokeAccessAction',
+    'RevokeDocumentAccessAction'
+)
 logger = logging.getLogger(name=__name__)
 
 
 class GrantAccessAction(WorkflowAction):
-    fields = {
+    form_field_widgets = {
+        'content_type': {
+            'class': 'django.forms.widgets.Select', 'kwargs': {
+                'attrs': {'class': 'select2'}
+            }
+        },
+        'roles': {
+            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
+                'attrs': {'class': 'select2'}
+            }
+        },
+        'permissions': {
+            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
+                'attrs': {'class': 'select2'}
+            }
+        }
+    }
+    form_fields = {
         'content_type': {
             'label': _('Object type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
@@ -53,25 +74,7 @@ class GrantAccessAction(WorkflowAction):
             }
         }
     }
-    field_order = ('content_type', 'object_id', 'roles', 'permissions')
     label = _('Grant object access')
-    widgets = {
-        'content_type': {
-            'class': 'django.forms.widgets.Select', 'kwargs': {
-                'attrs': {'class': 'select2'}
-            }
-        },
-        'roles': {
-            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'}
-            }
-        },
-        'permissions': {
-            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'}
-            }
-        }
-    }
 
     @classmethod
     def clean(cls, request, form_data=None):
@@ -104,12 +107,34 @@ class GrantAccessAction(WorkflowAction):
         else:
             return form_data
 
-    def get_form_schema(self, *args, **kwargs):
-        self.fields['content_type']['kwargs']['queryset'] = ModelPermission.get_classes(
+    @classmethod
+    def get_form_fields(cls, *args, **kwargs):
+        fields = super().get_form_fields(*args, **kwargs)
+
+        fields['content_type']['kwargs']['queryset'] = ModelPermission.get_classes(
             as_content_type=True
         ).order_by('model')
-        self.fields['permissions']['kwargs']['choices'] = Permission.get_choices()
-        return super().get_form_schema(*args, **kwargs)
+
+        fields['permissions']['kwargs']['choices'] = Permission.get_choices()
+
+        return fields
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Object'), {
+                    'fields': ('content_type', 'object_id')
+                }
+            ), (
+                _('Access'), {
+                    'fields': ('roles', 'permissions')
+                },
+            ),
+        )
+        return fieldsets
 
     def get_execute_data(self):
         ContentType = apps.get_model(
@@ -117,18 +142,18 @@ class GrantAccessAction(WorkflowAction):
         )
 
         content_type = ContentType.objects.get(
-            pk=self.form_data['content_type']
+            pk=self.kwargs['content_type']
         )
         self.obj = content_type.get_object_for_this_type(
-            pk=self.form_data['object_id']
+            pk=self.kwargs['object_id']
         )
         self.roles = Role.objects.filter(
-            pk__in=self.form_data['roles']
+            pk__in=self.kwargs['roles']
         )
         self.permissions = [
             Permission.get(
                 pk=permission
-            ) for permission in self.form_data['permissions']
+            ) for permission in self.kwargs['permissions']
         ]
 
     def execute(self, context):
@@ -155,7 +180,19 @@ class RevokeAccessAction(GrantAccessAction):
 
 
 class GrantDocumentAccessAction(WorkflowAction):
-    fields = {
+    form_field_widgets = {
+        'roles': {
+            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
+                'attrs': {'class': 'select2'}
+            }
+        },
+        'permissions': {
+            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
+                'attrs': {'class': 'select2'}
+            }
+        }
+    }
+    form_fields = {
         'roles': {
             'label': _('Roles'),
             'class': 'django.forms.ModelMultipleChoiceField', 'kwargs': {
@@ -173,35 +210,39 @@ class GrantDocumentAccessAction(WorkflowAction):
             }
         }
     }
-    field_order = ('roles', 'permissions')
     label = _('Grant document access')
-    widgets = {
-        'roles': {
-            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'}
-            }
-        },
-        'permissions': {
-            'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'}
-            }
-        }
-    }
 
-    def get_form_schema(self, *args, **kwargs):
-        self.fields['permissions']['kwargs']['choices'] = ModelPermission.get_choices_for_class(
+    @classmethod
+    def get_form_fields(cls, *args, **kwargs):
+        fields = super().get_form_fields(*args, **kwargs)
+
+        fields['permissions']['kwargs']['choices'] = ModelPermission.get_choices_for_class(
             klass=Document
         )
-        return super().get_form_schema(*args, **kwargs)
+
+        return fields
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Access'), {
+                    'fields': ('roles', 'permissions')
+                },
+            ),
+        )
+        return fieldsets
 
     def get_execute_data(self):
         self.roles = Role.objects.filter(
-            pk__in=self.form_data['roles']
+            pk__in=self.kwargs['roles']
         )
         self.permissions = [
             Permission.get(
                 pk=permission
-            ) for permission in self.form_data['permissions']
+            ) for permission in self.kwargs['permissions']
         ]
 
     def execute(self, context):
@@ -210,7 +251,7 @@ class GrantDocumentAccessAction(WorkflowAction):
         for role in self.roles:
             for permission in self.permissions:
                 AccessControlList.objects.grant(
-                    obj=context['document'], permission=permission, role=role
+                    obj=context['workflow_instance'].document, permission=permission, role=role
                 )
 
 
@@ -223,5 +264,5 @@ class RevokeDocumentAccessAction(GrantDocumentAccessAction):
         for role in self.roles:
             for permission in self.permissions:
                 AccessControlList.objects.revoke(
-                    obj=context['document'], permission=permission, role=role
+                    obj=context['workflow_instance'].document, permission=permission, role=role
                 )

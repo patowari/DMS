@@ -14,7 +14,7 @@ logger = logging.getLogger(name=__name__)
 
 
 class WorkflowActionMessageSend(WorkflowAction):
-    fields = {
+    form_fields = {
         'username_list': {
             'label': _('Username list'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -69,8 +69,24 @@ class WorkflowActionMessageSend(WorkflowAction):
             }
         }
     }
-    field_order = ('username_list', 'subject', 'body')
     label = _('Send user message')
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Recipients'), {
+                    'fields': ('username_list',)
+                },
+            ), (
+                _('Content'), {
+                    'fields': ('subject', 'body')
+                }
+            )
+        )
+        return fieldsets
 
     def execute(self, context):
         username_list = self.render_field(

@@ -2,10 +2,10 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
+from mayan.apps.backends.forms import FormDynamicModelBackend
 from mayan.apps.common.settings import (
     setting_project_title, setting_project_url
 )
-from mayan.apps.views.forms import BackendDynamicForm
 
 from .classes import MailerBackend
 from .models import UserMailer
@@ -83,7 +83,7 @@ class UserMailerBackendSelectionForm(forms.Form):
         self.fields['backend'].choices = MailerBackend.get_choices()
 
 
-class UserMailerDynamicForm(BackendDynamicForm):
+class UserMailerSetupDynamicForm(FormDynamicModelBackend):
     class Meta:
         fields = ('label', 'enabled')
         model = UserMailer

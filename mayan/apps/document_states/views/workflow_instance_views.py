@@ -53,7 +53,9 @@ class WorkflowInstanceListView(ExternalObjectViewMixin, SingleObjectListView):
         return self.external_object.workflows.all()
 
 
-class WorkflowInstanceDetailView(ExternalObjectViewMixin, SingleObjectListView):
+class WorkflowInstanceDetailView(
+    ExternalObjectViewMixin, SingleObjectListView
+):
     external_object_permission = permission_workflow_template_view
     external_object_pk_url_kwarg = 'workflow_instance_id'
     object_permission = permission_workflow_template_view
@@ -99,7 +101,9 @@ class WorkflowInstanceDetailView(ExternalObjectViewMixin, SingleObjectListView):
         return self.external_object.log_entries.order_by('-datetime')
 
 
-class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
+class WorkflowInstanceTransitionExecuteView(
+    ExternalObjectViewMixin, FormView
+):
     external_object_pk_url_kwarg = 'workflow_instance_id'
     external_object_queryset = WorkflowInstance.valid.all()
     form_class = DynamicForm
@@ -120,7 +124,9 @@ class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
                 'Document "%s" transitioned successfully'
             ) % self.external_object.document, request=self.request
         )
-        return HttpResponseRedirect(redirect_to=self.get_success_url())
+        return HttpResponseRedirect(
+            redirect_to=self.get_success_url()
+        )
 
     def get_external_object_queryset_filtered(self):
         queryset = super().get_external_object_queryset_filtered()
@@ -139,7 +145,8 @@ class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
             'navigation_object_list': ('object', 'workflow_instance'),
             'object': self.external_object.document,
             'title': _(
-                'Execute transition "%(transition)s" for workflow: %(workflow)s'
+                'Execute transition "%(transition)s" for workflow: '
+                '%(workflow)s'
             ) % {
                 'transition': self.get_workflow_template_transition(),
                 'workflow': self.external_object,
@@ -198,7 +205,9 @@ class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
         )
 
 
-class WorkflowInstanceTransitionSelectView(ExternalObjectViewMixin, FormView):
+class WorkflowInstanceTransitionSelectView(
+    ExternalObjectViewMixin, FormView
+):
     external_object_pk_url_kwarg = 'workflow_instance_id'
     external_object_queryset = WorkflowInstance.valid.all()
     form_class = WorkflowInstanceTransitionSelectForm

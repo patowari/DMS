@@ -6,7 +6,7 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import (
     TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_SMALL_PATH
 )
-from mayan.apps.source_apps.sources.tests.mixins import InteractiveSourceBackendTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.interactive_source_mixins import InteractiveSourceBackendTestMixin
 
 from .mixins import StagingFolderTestMixin
 
@@ -48,7 +48,7 @@ class StagingFolderSourceBackendTestCase(
             TEST_DOCUMENT_SMALL_CHECKSUM
         )
 
-    @patch('mayan.apps.source_apps.sources.source_backends.source_backend_mixins.SourceBackendInteractiveMixin.callback')
+    @patch('mayan.apps.source_apps.sources.source_backends.source_backend_mixins.SourceBackendMixinInteractive.callback')
     def test_super_class_callback(self, mocked_super):
         self._create_test_staging_folder()
 

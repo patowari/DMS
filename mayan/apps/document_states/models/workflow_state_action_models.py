@@ -1,12 +1,15 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+
+from mayan.apps.backends.model_mixins import BackendModelMixin
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.classes import (
     EventManagerMethodAfter, EventManagerSave
 )
 from mayan.apps.events.decorators import method_event
 
+from ..classes import WorkflowActionNull
 from ..events import event_workflow_template_edited
 from ..literals import WORKFLOW_ACTION_WHEN_CHOICES, WORKFLOW_ACTION_ON_ENTRY
 
@@ -17,8 +20,11 @@ __all__ = ('WorkflowStateAction',)
 
 
 class WorkflowStateAction(
-    ExtraDataModelMixin, WorkflowStateActionBusinessLogicMixin, models.Model
+    WorkflowStateActionBusinessLogicMixin, BackendModelMixin,
+    ExtraDataModelMixin, models.Model
 ):
+    _backend_model_null_backend = WorkflowActionNull
+
     state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='actions', to=WorkflowState,
         verbose_name=_('Workflow state')
@@ -27,21 +33,16 @@ class WorkflowStateAction(
         max_length=255, help_text=_('A short text describing the action.'),
         verbose_name=_('Label')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_('Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_('Enabled')
+    )
     when = models.PositiveIntegerField(
         choices=WORKFLOW_ACTION_WHEN_CHOICES,
         default=WORKFLOW_ACTION_ON_ENTRY, help_text=_(
             'At which moment of the state this action will execute.'
         ), verbose_name=_('When')
     )
-    action_path = models.CharField(
-        max_length=128, help_text=_(
-            'The dotted Python path to the workflow action class to execute.'
-        ), verbose_name=_('Entry action path')
-    )
-    action_data = models.TextField(
-        blank=True, verbose_name=_('Entry action data')
-    )
+
     condition = models.TextField(
         blank=True, help_text=_(
             'The condition that will determine if this state action '

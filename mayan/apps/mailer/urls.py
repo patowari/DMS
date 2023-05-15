@@ -80,7 +80,7 @@ urlpatterns_user_mailers = [
         view=UserMailerBackendSelectionView.as_view()
     ),
     url(
-        regex=r'^user_mailers/(?P<class_path>[a-zA-Z0-9_.]+)/create/$',
+        regex=r'^user_mailers/(?P<backend_path>[a-zA-Z0-9_.]+)/create/$',
         name='user_mailer_create', view=UserMailingCreateView.as_view()
     ),
     url(

@@ -12,7 +12,7 @@ from mayan.apps.documents.permissions import (
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_COMPRESSED_PATH
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_ALWAYS
-from mayan.apps.source_apps.sources.tests.mixins import (
+from mayan.apps.source_apps.sources.tests.mixins.base import (
     DocumentFileUploadViewTestMixin, DocumentUploadWizardViewTestMixin
 )
 

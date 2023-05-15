@@ -4,9 +4,9 @@ from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.acls.models import AccessControlList
 from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.document_states.exceptions import WorkflowStateActionError
+from mayan.apps.document_states.models.workflow_instance_models import WorkflowInstance
 
 from .models import DocumentMetadata, MetadataType
 from .permissions import (
@@ -18,30 +18,62 @@ logger = logging.getLogger(name=__name__)
 
 
 class DocumentMetadataAddAction(WorkflowAction):
-    fields = {
-        'metadata_types': {
-            'label': _('Metadata types'),
-            'class': 'django.forms.ModelMultipleChoiceField', 'kwargs': {
-                'help_text': _('Metadata types to add to the document.'),
-                'queryset': MetadataType.objects.none(), 'required': False
-            }
-        },
-    }
-    label = _('Add metadata')
-    widgets = {
+    form_field_widgets = {
         'metadata_types': {
             'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
                 'attrs': {'class': 'select2'}
             }
         }
     }
-
+    label = _('Add metadata')
     permission = permission_document_metadata_add
+
+    @classmethod
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
+
+        document_types_queryset = cls.workflow_state.workflow.document_types
+
+        metadata_type_queryset = MetadataType.objects.get_for_document_types(
+            queryset=document_types_queryset
+        )
+
+        fields.update(
+            {
+                'metadata_types': {
+                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoiceMultiple',
+                    'help_text': _(
+                        'Metadata types to add to the document.'
+                    ),
+                    'kwargs': {
+                        'source_queryset': metadata_type_queryset,
+                        'permission': cls.permission
+                    },
+                    'label': _('Metadata types'),
+                    'required': True
+                }
+            }
+        )
+
+        return fields
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Metadata types'), {
+                    'fields': ('metadata_types',)
+                },
+            ),
+        )
+        return fieldsets
 
     def execute(self, context):
         for metadata_type in self.get_metadata_types():
             try:
-                context['document'].metadata.create(metadata_type=metadata_type)
+                context['workflow_instance'].document.metadata.create(metadata_type=metadata_type)
             except IntegrityError as exception:
                 """This document already has the metadata type added"""
                 raise WorkflowStateActionError(
@@ -50,81 +82,97 @@ class DocumentMetadataAddAction(WorkflowAction):
                         'from document: %(document)s. Exception: '
                         '%(exception)s'
                     ) % {
-                        'document': context['document'],
+                        'document': context['workflow_instance'].document,
                         'exception': exception,
                         'metadata_type': metadata_type
                     }
                 ) from exception
 
-    def get_form_schema(self, **kwargs):
-        result = super().get_form_schema(**kwargs)
-
-        document_types_queryset = kwargs['workflow_state'].workflow.document_types
-
-        metadata_type_queryset = MetadataType.objects.get_for_document_types(
-            queryset=document_types_queryset
-        )
-
-        queryset = AccessControlList.objects.restrict_queryset(
-            permission=self.permission, queryset=metadata_type_queryset,
-            user=kwargs['request'].user
-        )
-
-        result['fields']['metadata_types']['kwargs']['queryset'] = queryset
-
-        return result
-
     def get_metadata_types(self):
         return MetadataType.objects.filter(
-            pk__in=self.form_data.get(
+            pk__in=self.kwargs.get(
                 'metadata_types', ()
             )
         )
 
 
 class DocumentMetadataEditAction(WorkflowAction):
-    fields = {
-        'metadata_type': {
-            'label': _('Metadata type'),
-            'class': 'django.forms.ModelChoiceField', 'kwargs': {
-                'help_text': _('Metadata types to edit.'),
-                'queryset': MetadataType.objects.none(), 'required': True
-            }
-        },
-        'value': {
-            'label': _('Value'),
-            'class': 'django.forms.CharField', 'kwargs': {
-                'help_text': _(
-                    'Value to assign to the metadata. '
-                    'Can be a literal value or template code.'
-                ),
-                'required': True
-            }
-        },
-    }
-    field_order = ('metadata_type', 'value')
-    label = _('Edit metadata')
-    widgets = {
+    form_field_widgets = {
         'metadata_types': {
             'class': 'django.forms.widgets.Select', 'kwargs': {
                 'attrs': {'class': 'select2'}
             }
-        },
+        }
+    }
+    form_fields = {
         'value': {
-            'class': 'django.forms.widgets.Textarea', 'kwargs': {
-                'attrs': {'rows': '10'}
+            'label': _('Value'),
+            'class': 'mayan.apps.templating.fields.ModelTemplateField',
+            'kwargs': {
+                'initial_help_text': _(
+                    'Value to assign to the metadata. '
+                    'Can be a literal value or template code.'
+                ),
+                'model': WorkflowInstance,
+                'model_variable': 'workflow_instance',
+                'required': True
             }
         }
     }
+    label = _('Edit metadata')
+
+    @classmethod
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
+
+        document_types_queryset = cls.workflow_state.workflow.document_types
+
+        metadata_type_queryset = MetadataType.objects.get_for_document_types(
+            queryset=document_types_queryset
+        )
+
+        fields.update(
+            {
+                'metadata_type': {
+                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
+                    'help_text': _(
+                        'Metadata types to edit.'
+                    ),
+                    'kwargs': {
+                        'source_queryset': metadata_type_queryset,
+                        'permission': permission_document_metadata_edit
+                    },
+                    'label': _('Metadata type'),
+                    'required': True
+                }
+            }
+        )
+
+        return fields
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Metadata'), {
+                    'fields': ('metadata_type', 'value')
+                },
+            ),
+        )
+        return fieldsets
 
     def execute(self, context):
         try:
             metadata_type = self.get_metadata_type()
-            document_metadata = context['document'].metadata.get(
+            document_metadata = context['workflow_instance'].document.metadata.get(
                 metadata_type=metadata_type
             )
         except DocumentMetadata.DoesNotExist as exception:
-            """Non fatal, we just ignore the action to edit the metadata value"""
+            """
+            Non fatal, we just ignore the action to edit the metadata value.
+            """
             raise WorkflowStateActionError(
                 _(
                     'Unable to edit metadata type "%(metadata_type)s" '
@@ -132,7 +180,7 @@ class DocumentMetadataEditAction(WorkflowAction):
                     'the metadata type to be edited. Exception: '
                     '%(exception)s'
                 ) % {
-                    'document': context['document'],
+                    'document': context['workflow_instance'].document,
                     'exception': exception,
                     'metadata_type': metadata_type
                 }
@@ -143,50 +191,30 @@ class DocumentMetadataEditAction(WorkflowAction):
             )
             document_metadata.save()
 
-    def get_form_schema(self, **kwargs):
-        result = super().get_form_schema(**kwargs)
-
-        document_types_queryset = kwargs['workflow_state'].workflow.document_types
-
-        metadata_type_queryset = MetadataType.objects.get_for_document_types(
-            queryset=document_types_queryset
-        )
-
-        queryset = AccessControlList.objects.restrict_queryset(
-            permission=permission_document_metadata_edit,
-            queryset=metadata_type_queryset,
-            user=kwargs['request'].user
-        )
-
-        result['fields']['metadata_type']['kwargs']['queryset'] = queryset
-
-        return result
-
     def get_metadata_type(self):
         return MetadataType.objects.get(
-            pk=self.form_data['metadata_type']
+            pk=self.kwargs['metadata_type']
         )
 
 
 class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
-    fields = {
-        'metadata_types': {
-            'label': _('Metadata types'),
-            'class': 'django.forms.ModelMultipleChoiceField', 'kwargs': {
-                'help_text': _(
-                    'Metadata types to remove from the document.'
-                ), 'queryset': MetadataType.objects.none(), 'required': False
-            }
-        }
-    }
     label = _('Remove metadata')
-
     permission = permission_document_metadata_remove
+
+    @classmethod
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
+
+        fields['metadata_types']['help_text'] = _(
+            'Metadata types to remove from the document.'
+        )
+
+        return fields
 
     def execute(self, context):
         for metadata_type in self.get_metadata_types():
             try:
-                context['document'].metadata.get(
+                context['workflow_instance'].document.metadata.get(
                     metadata_type=metadata_type
                 ).delete()
             except DocumentMetadata.DoesNotExist:
@@ -198,7 +226,7 @@ class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
                         'from document: %(document)s. Exception: '
                         '%(exception)s'
                     ) % {
-                        'document': context['document'],
+                        'document': context['workflow_instance'].document,
                         'exception': exception,
                         'metadata_type': metadata_type
                     }

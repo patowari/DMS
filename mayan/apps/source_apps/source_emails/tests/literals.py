@@ -136,4 +136,6 @@ Content-MD5: 1B2M2Y8AsgTpgAmY7PhCfg==
 
 
 -----'''
+TEST_EMAIL_SOURCE_PASSWORD = 'test_password'
+TEST_EMAIL_SOURCE_USERNAME = 'test_username'
 TEST_SOURCE_BACKEND_EMAIL_PATH = 'mayan.apps.source_apps.source_emails.tests.source_backends.SourceBackendTestEmail'

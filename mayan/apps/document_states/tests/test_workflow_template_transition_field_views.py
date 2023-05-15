@@ -5,20 +5,11 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_field_mixins import (
-    WorkflowTemplateTransitionFieldTestMixin,
-    WorkflowTemplateTransitionFieldViewTestMixin
-)
-from .mixins.workflow_template_transition_mixins import (
-    WorkflowTemplateTransitionViewTestMixin
-)
+from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldViewTestMixin
 
 
 class WorkflowTemplateTransitionFieldViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateTransitionFieldTestMixin,
-    WorkflowTemplateTransitionFieldViewTestMixin, WorkflowTemplateTransitionViewTestMixin,
-    GenericViewTestCase
+    WorkflowTemplateTransitionFieldViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()

@@ -21,7 +21,9 @@ class TestQuota(QuotaBackend):
         return self.test_limit
 
     def _allowed_filter_display(self):
-        return 'test limit: {}'.format(self._allowed())
+        return 'test limit: {}'.format(
+            self._allowed()
+        )
 
     def _usage(self, **kwargs):
         return self.test_usage
@@ -61,7 +63,9 @@ class TestQuotaWithMixins(
         return self.test_limit
 
     def _allowed_filter_display(self):
-        return 'test limit: {}'.format(self._allowed())
+        return 'test limit: {}'.format(
+            self._allowed()
+        )
 
     def _usage(self, **kwargs):
         return self.test_usage

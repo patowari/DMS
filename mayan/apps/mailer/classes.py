@@ -2,58 +2,66 @@ import logging
 
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.classes import BaseBackend
+from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
+from mayan.apps.backends.classes import ModelBaseBackend
 
 __all__ = ('MailerBackend',)
 logger = logging.getLogger(name=__name__)
 
 
-class MailerBackend(BaseBackend):
+class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
     """
     Base class for the mailing backends. This class is mainly a wrapper
     for other Django backends that adds a few metadata to specify the
     fields it needs to be instanciated at runtime.
-
-    The fields attribute is a list of dictionaries with the format:
-    {
-        'name': ''  # Field internal name
-        'label': ''  # Label to show to users
-        'class': ''  # Field class to use. Field classes are Python dot
-                       paths to Django's form fields.
-        'initial': ''  # Field initial value
-        'default': ''  # Default value.
-    }
     """
     _loader_module_name = 'mailers'
-    class_path = ''  # Dot path to the actual class that will handle the mail
+    _backend_app_label = 'mailer'
+    _backend_model_name = 'UserMailer'
+    class_path = ''  # Dot path to the actual class that will handle the mail.
 
     @classmethod
-    def get_field_order(cls):
-        return getattr(
-            cls, 'field_order', ()
+    def get_form_fieldsets(cls):
+        fieldsets = (
+            (
+                _('General'), {
+                    'fields': ('label', 'enabled')
+                }
+            ),
         )
 
-    @classmethod
-    def get_fields(cls):
-        return getattr(
-            cls, 'fields', {}
-        )
+        return fieldsets
 
-    @classmethod
-    def get_form_schema(cls):
-        result = {
-            'fields': cls.get_fields(),
-            'field_order': cls.get_field_order(),
-            'widgets': cls.get_widgets()
+
+class MailerBackendBaseEmail(MailerBackend):
+    class_path = None
+    form_fields = {
+        'from': {
+            'label': _('From'),
+            'class': 'django.forms.CharField', 'default': '',
+            'help_text': _(
+                'The sender\'s address. Some system will refuse to send '
+                'messages if this value is not set.'
+            ), 'kwargs': {
+                'max_length': 48
+            }, 'required': False
         }
-
-        return result
+    }
+    label = None
 
     @classmethod
-    def get_widgets(cls):
-        return getattr(
-            cls, 'widgets', {}
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Compatibility'), {
+                    'fields': ('from',)
+                }
+            ),
         )
+
+        return fieldsets
 
 
 class NullBackend(MailerBackend):

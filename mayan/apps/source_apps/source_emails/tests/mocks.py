@@ -1,6 +1,9 @@
 from django.utils.encoding import force_bytes, force_text
 
-from .literals import TEST_EMAIL_BASE64_FILENAME
+from .literals import (
+    TEST_EMAIL_BASE64_FILENAME, TEST_EMAIL_SOURCE_PASSWORD,
+    TEST_EMAIL_SOURCE_USERNAME
+)
 
 
 class MockIMAPMessage:
@@ -142,10 +145,19 @@ class MockIMAPServer:
         return ('OK', self._fetch(messages=messages))
 
     def login(self, user, password):
-        return ('OK', ['{} authenticated (Success)'.format(user)])
+        if password == TEST_EMAIL_SOURCE_PASSWORD and user == TEST_EMAIL_SOURCE_USERNAME:
+            return (
+                'OK', [
+                    '{} authenticated (Success)'.format(user)
+                ]
+            )
+        else:
+            assert('asd')
 
     def logout(self):
-        return ('BYE', ['LOGOUT Requested'])
+        return (
+            'BYE', ['LOGOUT Requested']
+        )
 
     def search(self, charset, *criteria):
         """

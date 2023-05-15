@@ -4,9 +4,9 @@ import logging
 from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
+from mayan.apps.backends.classes import ModelBaseBackend
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
-from mayan.apps.databases.class_mixins import DynamicFormBackendMixin
-from mayan.apps.databases.classes import ModelBaseBackend
 from mayan.apps.documents.tasks import task_document_file_upload
 
 from .tasks import task_process_document_upload
@@ -157,7 +157,7 @@ class SourceBackend(DynamicFormBackendMixin, ModelBaseBackend):
         )
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
+    def get_form_fieldsets(cls):
         fieldsets = (
             (
                 _('General'), {
@@ -210,16 +210,6 @@ class SourceBackend(DynamicFormBackendMixin, ModelBaseBackend):
 
         return getattr(self, action.method)(**clean_kwargs)
 
-    def get_action_kwargs(self, action, **kwargs):
-        clean_kwargs = {}
-        for argument in action.arguments:
-            clean_kwargs[argument] = kwargs.get(argument)
-
-        if action.accept_files:
-            clean_kwargs['file'] = kwargs.get('file')
-
-        return clean_kwargs
-
     def get_action_context(self, name, view, **kwargs):
         action = self.get_action(name=name)
         clean_kwargs = self.get_action_kwargs(action=action, **kwargs)
@@ -231,6 +221,16 @@ class SourceBackend(DynamicFormBackendMixin, ModelBaseBackend):
             )(**clean_kwargs)
         except AttributeError:
             """Non fatal. The context method is optional."""
+
+    def get_action_kwargs(self, action, **kwargs):
+        clean_kwargs = {}
+        for argument in action.arguments:
+            clean_kwargs[argument] = kwargs.get(argument)
+
+        if action.accept_files:
+            clean_kwargs['file'] = kwargs.get('file')
+
+        return clean_kwargs
 
     def get_callback_kwargs(self):
         return {}

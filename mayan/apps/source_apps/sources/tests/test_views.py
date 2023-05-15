@@ -8,7 +8,8 @@ from ..permissions import (
 )
 
 from .literals import TEST_SOURCE_LABEL
-from .mixins import SourceTestMixin, SourceViewTestMixin
+from .mixins.base import SourceTestMixin
+from .mixins.source_view_mixins import SourceViewTestMixin
 
 
 class SourceViewTestCase(

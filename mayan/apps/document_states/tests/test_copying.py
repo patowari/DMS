@@ -1,16 +1,14 @@
 from mayan.apps.common.tests.mixins import ObjectCopyTestMixin
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
 from .mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionTestMixin
 
 
 class WorkflowTemplateCopyTestCase(
-    DocumentTestMixin, ObjectCopyTestMixin,
-    WorkflowTemplateStateActionTestMixin, WorkflowTemplateTestMixin,
-    BaseTestCase
+    ObjectCopyTestMixin, WorkflowTemplateStateActionTestMixin, BaseTestCase
 ):
+    auto_create_test_workflow_template = False
+    auto_create_test_workflow_template_state = False
     auto_upload_test_document = False
 
     def setUp(self):

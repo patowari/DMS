@@ -22,18 +22,20 @@ logger = logging.getLogger(name=__name__)
 
 class UploadBaseView(ViewIconMixin, MultiFormView):
     object_permission = None
-    prefixes = {'source_form': 'source', 'document_form': 'document'}
+    prefixes = {'document_form': 'document', 'source_form': 'source'}
     template_name = 'appearance/generic_form.html'
 
     @staticmethod
     def get_tab_link_for_source(source, document=None):
         if document:
             args = (
-                '"{}"'.format(document.pk), '"{}"'.format(source.pk),
+                '"{}"'.format(document.pk), '"{}"'.format(source.pk)
             )
             view = 'sources:document_file_upload'
         else:
-            args = ('"{}"'.format(source.pk),)
+            args = (
+                '"{}"'.format(source.pk),
+            )
             view = 'sources:document_upload_interactive'
 
         return Link(
@@ -103,10 +105,12 @@ class UploadBaseView(ViewIconMixin, MultiFormView):
 
     def get_form_classes(self):
         result = {
-            'document_form': self.document_form,
+            'document_form': self.document_form
         }
 
-        source_form = self.source.get_backend().get_upload_form_class()
+        backend_class = self.source.get_backend_class()
+
+        source_form = backend_class.get_upload_form_class()
         if source_form:
             result['source_form'] = source_form
 

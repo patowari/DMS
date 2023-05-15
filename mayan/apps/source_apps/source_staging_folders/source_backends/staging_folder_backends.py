@@ -7,8 +7,8 @@ from mayan.apps.appearance.classes import Icon
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
-    SourceBackendRegularExpressionMixin
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive,
+    SourceBackendMixinRegularExpression
 )
 
 from .staging_source_mixins import SourceBackendMixinFileList
@@ -19,8 +19,8 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendStagingFolder(
-    SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
-    SourceBackendRegularExpressionMixin, SourceBackendMixinFileList,
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive,
+    SourceBackendMixinRegularExpression, SourceBackendMixinFileList,
     SourceBackend
 ):
     icon = Icon(driver_name='fontawesome', symbol='file')
@@ -28,8 +28,8 @@ class SourceBackendStagingFolder(
     staging_source_file_class = StagingFolderFile
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -60,8 +60,8 @@ class SourceBackendStagingFolder(
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (

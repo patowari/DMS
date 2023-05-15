@@ -103,8 +103,10 @@ def condition_document_new_files_allowed(context, resolved_object):
 def condition_source_is_not_interactive(context, resolved_object):
     source = context.get('resolved_object', None)
     if source:
+        backend_class = source.get_backend_class()
+
         return not getattr(
-            source.get_backend(), 'is_interactive', False
+            backend_class, 'is_interactive', False
         )
 
 

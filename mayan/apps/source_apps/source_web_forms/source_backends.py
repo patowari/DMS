@@ -15,7 +15,7 @@ from mayan.apps.source_apps.sources.classes import (
 )
 from mayan.apps.source_apps.sources.forms import WebFormUploadFormHTML5
 from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendCompressedMixin, SourceBackendInteractiveMixin
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive
 )
 from mayan.apps.source_apps.sources.tasks import task_process_document_upload
 from mayan.apps.storage.models import SharedUploadedFile
@@ -25,7 +25,7 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendWebForm(
-    SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive,
     SourceBackend
 ):
     actions = (

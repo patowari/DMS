@@ -8,7 +8,7 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_multi_item, menu_object, menu_secondary, menu_setup
+    menu_multi_item, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.logging.classes import ErrorLog
@@ -28,7 +28,7 @@ from .links import (
     link_send_document_version_link_single,
     link_send_document_version_link_multiple,
     link_user_mailer_create, link_user_mailer_delete, link_user_mailer_edit,
-    link_user_mailer_list, link_user_mailer_setup, link_user_mailer_test
+    link_user_mailer_list, link_user_mailer_test
 )
 from .permissions import (
     permission_send_document_link, permission_send_document_file_attachment,
@@ -98,7 +98,7 @@ class MailerApp(MayanAppConfig):
             source=UserMailer, widget=TwoStateWidget
         )
         SourceColumn(
-            attribute='get_backend_label', include_label=True,
+            attribute='get_backend_class_label', include_label=True,
             source=UserMailer
         )
 
@@ -183,13 +183,20 @@ class MailerApp(MayanAppConfig):
             ), sources=(UserMailer,)
         )
 
-        menu_secondary.bind_links(
-            links=(
-                link_user_mailer_list, link_user_mailer_create,
-            ), sources=(
+        menu_return.bind_links(
+            links=(link_user_mailer_list,), sources=(
                 UserMailer, 'mailer:user_mailer_list',
                 'mailer:user_mailer_create'
             )
         )
 
-        menu_setup.bind_links(links=(link_user_mailer_setup,))
+        menu_secondary.bind_links(
+            links=(link_user_mailer_create,), sources=(
+                UserMailer, 'mailer:user_mailer_list',
+                'mailer:user_mailer_create'
+            )
+        )
+
+        menu_setup.bind_links(
+            links=(link_user_mailer_list,)
+        )

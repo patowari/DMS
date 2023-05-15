@@ -1,11 +1,14 @@
-from django.http import Http404, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.backends.views import (
+    ViewSingleObjectDynamicFormModelBackendCreate,
+    ViewSingleObjectDynamicFormModelBackendEdit
+)
 from mayan.apps.views.generics import (
     FormView, SingleObjectCreateView, SingleObjectDeleteView,
-    SingleObjectDynamicFormCreateView, SingleObjectDynamicFormEditView,
     SingleObjectEditView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
@@ -36,34 +39,23 @@ from ..permissions import (
 
 
 class WorkflowTemplateStateActionCreateView(
-    ExternalObjectViewMixin, SingleObjectDynamicFormCreateView
+    ExternalObjectViewMixin, ViewSingleObjectDynamicFormModelBackendCreate
 ):
+    backend_class = WorkflowAction
     external_object_class = WorkflowState
     external_object_permission = permission_workflow_template_edit
     external_object_pk_url_kwarg = 'workflow_template_state_id'
     form_class = WorkflowStateActionDynamicForm
     view_icon = icon_workflow_template_state_action_create
 
-    def get_class(self):
-        try:
-            return WorkflowAction.get(
-                name=self.kwargs['class_path']
-            )
-        except KeyError:
-            raise Http404(
-                '{} class not found'.format(
-                    self.kwargs['class_path']
-                )
-            )
-
     def get_extra_context(self):
         return {
             'navigation_object_list': ('object', 'workflow'),
             'object': self.external_object,
             'title': _(
-                'Create a "%(action_class)s" workflow action for: %(workflow_state)s'
+                'Create a "%(backend_label)s" workflow action for: %(workflow_state)s'
             ) % {
-                'action_class': self.get_class().label,
+                'backend_label': self.get_backend_class().label,
                 'workflow_state': self.external_object
             },
             'workflow': self.external_object.workflow
@@ -71,19 +63,19 @@ class WorkflowTemplateStateActionCreateView(
 
     def get_form_extra_kwargs(self):
         return {
-            'action_path': self.kwargs['class_path'],
-            'request': self.request
+            'request': self.request,
+            'user': self.request.user
         }
 
-    def get_form_schema(self):
-        return self.get_class()().get_form_schema(
-            request=self.request, workflow_state=self.external_object
-        )
+    def get_form_schema_extra_kwargs(self):
+        return {
+            'workflow_state': self.external_object
+        }
 
     def get_instance_extra_data(self):
         return {
             '_event_actor': self.request.user,
-            'action_path': self.kwargs['class_path'],
+            'backend_path': self.kwargs['backend_path'],
             'state': self.external_object
         }
 
@@ -127,7 +119,7 @@ class WorkflowTemplateStateActionDeleteView(SingleObjectDeleteView):
         )
 
 
-class WorkflowTemplateStateActionEditView(SingleObjectDynamicFormEditView):
+class WorkflowTemplateStateActionEditView(ViewSingleObjectDynamicFormModelBackendEdit):
     form_class = WorkflowStateActionDynamicForm
     model = WorkflowStateAction
     object_permission = permission_workflow_template_edit
@@ -147,14 +139,14 @@ class WorkflowTemplateStateActionEditView(SingleObjectDynamicFormEditView):
 
     def get_form_extra_kwargs(self):
         return {
-            'action_path': self.object.action_path,
-            'request': self.request
+            'request': self.request,
+            'user': self.request.user
         }
 
-    def get_form_schema(self):
-        return self.object.get_class_instance().get_form_schema(
-            request=self.request, workflow_state=self.object.state
-        )
+    def get_form_schema_extra_kwargs(self):
+        return {
+            'workflow_state': self.object
+        }
 
     def get_instance_extra_data(self):
         return {
@@ -234,7 +226,7 @@ class WorkflowTemplateStateActionSelectionView(
                 viewname='document_states:workflow_template_state_action_create',
                 kwargs={
                     'workflow_template_state_id': self.external_object.pk,
-                    'class_path': klass
+                    'backend_path': klass
                 }
             )
         )

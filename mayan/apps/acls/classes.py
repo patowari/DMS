@@ -51,13 +51,17 @@ class ModelPermission:
         )
 
         if as_content_type:
+            # This returns a dictionary but a queryset is needed.
             content_type_dictionary = ContentType.objects.get_for_models(
                 *cls._model_permissions.keys()
             )
+
+            # Convert the dictionary into a list of IDs.
             content_type_ids = [
                 content_type.pk for content_type in content_type_dictionary.values()
             ]
 
+            # Return a queryset of content types based on the ID list.
             return ContentType.objects.filter(pk__in=content_type_ids)
         else:
             return cls._model_permissions.keys()

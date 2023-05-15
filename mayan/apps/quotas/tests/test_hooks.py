@@ -5,7 +5,7 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
-from mayan.apps.source_apps.sources.tests.mixins import (
+from mayan.apps.source_apps.sources.tests.mixins.base import (
     DocumentFileUploadViewTestMixin, DocumentUploadWizardViewTestMixin
 )
 from mayan.apps.source_apps.source_web_forms.tests.mixins import WebFormSourceBackendTestMixin

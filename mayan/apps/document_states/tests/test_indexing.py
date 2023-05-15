@@ -9,11 +9,12 @@ from .literals import (
     TEST_WORKFLOW_TEMPLATE_TRANSITION_INDEX_TEMPLATE_EXPRESSION,
     TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED
 )
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
+from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
 
 class WorkflowInstanceIndexingTestCase(
-    IndexTemplateTestMixin, WorkflowTemplateTestMixin,
+    IndexTemplateTestMixin, WorkflowInstanceTestMixin,
     GenericDocumentTestCase
 ):
     _test_index_template_node_expression = TEST_WORKFLOW_INDEX_TEMPLATE_EXPRESSION
@@ -98,7 +99,7 @@ class WorkflowInstanceIndexingTestCase(
 
 
 class WorkflowTemplateIndexingTestCase(
-    IndexTemplateTestMixin, WorkflowTemplateTestMixin,
+    IndexTemplateTestMixin, WorkflowTemplateTransitionTestMixin,
     GenericDocumentTestCase
 ):
     _test_index_template_node_expression = TEST_WORKFLOW_INDEX_TEMPLATE_EXPRESSION
@@ -203,7 +204,7 @@ class WorkflowTemplateIndexingTestCase(
 
 
 class WorkflowTemplateTranstitionIndexingTestCase(
-    IndexTemplateTestMixin, WorkflowTemplateTestMixin,
+    IndexTemplateTestMixin, WorkflowTemplateTransitionTestMixin,
     GenericDocumentTestCase
 ):
     _test_index_template_node_expression = TEST_WORKFLOW_TEMPLATE_TRANSITION_INDEX_TEMPLATE_EXPRESSION

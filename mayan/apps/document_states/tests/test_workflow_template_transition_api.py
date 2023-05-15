@@ -8,15 +8,13 @@ from ..permissions import (
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
 from .mixins.workflow_template_transition_mixins import (
     WorkflowTemplateTransitionAPIViewTestMixin
 )
 
 
 class WorkflowTemplateTransitionAPIViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateTransitionAPIViewTestMixin,
-    BaseAPITestCase
+    WorkflowTemplateTransitionAPIViewTestMixin, BaseAPITestCase
 ):
     def setUp(self):
         super().setUp()

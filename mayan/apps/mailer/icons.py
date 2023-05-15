@@ -52,5 +52,4 @@ icon_user_mailer_create = Icon(
 icon_user_mailer_delete = Icon(driver_name='fontawesome', symbol='times')
 icon_user_mailer_edit = Icon(driver_name='fontawesome', symbol='pencil-alt')
 icon_user_mailer_list = Icon(driver_name='fontawesome', symbol='envelope')
-icon_user_mailer_setup = Icon(driver_name='fontawesome', symbol='envelope')
 icon_user_mailer_test = Icon(driver_name='fontawesome', symbol='play')

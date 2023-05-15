@@ -1,7 +1,9 @@
-from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin, SourceViewTestMixin
+from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
 from mayan.apps.source_apps.sources.source_backends.literals import (
     DEFAULT_PERIOD_INTERVAL, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
+from mayan.apps.source_apps.sources.tests.mixins.source_view_mixins import SourceViewTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
 
 from ..source_backends.imap_source_backends import SourceBackendIMAPEmail
 from ..source_backends.literals import (
@@ -12,26 +14,35 @@ from ..source_backends.literals import (
 from ..source_backends.pop3_source_backends import SourceBackendPOP3Email
 
 from .literals import (
-    TEST_EMAIL_ATTACHMENT_AND_INLINE, TEST_SOURCE_BACKEND_EMAIL_PATH
+    TEST_EMAIL_ATTACHMENT_AND_INLINE, TEST_EMAIL_SOURCE_PASSWORD,
+    TEST_EMAIL_SOURCE_USERNAME, TEST_SOURCE_BACKEND_EMAIL_PATH
 )
 
 
-class EmailSourceBackendTestMixin(SourceTestMixin):
+class CredentialSourceTestMixin(StoredCredentialPasswordUsernameTestMixin):
+    _test_stored_credential_backend_data = {
+        'password': TEST_EMAIL_SOURCE_PASSWORD,
+        'username': TEST_EMAIL_SOURCE_USERNAME
+    }
+
+
+class EmailSourceBackendTestMixin(
+    SourceTestMixin, CredentialSourceTestMixin
+):
     _create_source_method = '_create_test_email_source_backend'
     _test_email_source_content = None
 
     def _create_test_email_source_backend(self, extra_data=None):
         backend_data = {
+            '_test_content': TEST_EMAIL_ATTACHMENT_AND_INLINE,
             'document_type_id': self._test_document_type.pk,
             'host': '',
             'interval': DEFAULT_PERIOD_INTERVAL,
             'metadata_attachment_name': DEFAULT_EMAIL_METADATA_ATTACHMENT_NAME,
-            'password': '',
             'port': '',
             'ssl': True,
             'store_body': False,
-            'username': '',
-            '_test_content': TEST_EMAIL_ATTACHMENT_AND_INLINE
+            'stored_credential_id': self._test_stored_credential.pk
         }
 
         if extra_data:
@@ -43,7 +54,7 @@ class EmailSourceBackendTestMixin(SourceTestMixin):
         )
 
 
-class IMAPEmailSourceTestMixin(SourceTestMixin):
+class IMAPEmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
     _create_source_method = '_create_test_imap_email_source'
 
     def _create_test_imap_email_source(self, extra_data=None):
@@ -55,14 +66,13 @@ class IMAPEmailSourceTestMixin(SourceTestMixin):
             'mailbox': DEFAULT_EMAIL_IMAP_MAILBOX,
             'mailbox_destination': '',
             'metadata_attachment_name': DEFAULT_EMAIL_METADATA_ATTACHMENT_NAME,
-            'password': '',
             'port': '',
             'search_criteria': DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
             'ssl': True,
             'store_body': False,
             'store_commands': DEFAULT_EMAIL_IMAP_STORE_COMMANDS,
+            'stored_credential_id': self._test_stored_credential.pk,
             'uncompress': SOURCE_UNCOMPRESS_CHOICE_NEVER,
-            'username': ''
         }
 
         if extra_data:
@@ -74,7 +84,7 @@ class IMAPEmailSourceTestMixin(SourceTestMixin):
         )
 
 
-class POP3EmailSourceTestMixin(SourceTestMixin):
+class POP3EmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
     _create_source_method = '_create_test_pop3_email_source'
 
     def _create_test_pop3_email_source(self, extra_data=None):
@@ -83,13 +93,12 @@ class POP3EmailSourceTestMixin(SourceTestMixin):
             'host': '',
             'interval': DEFAULT_PERIOD_INTERVAL,
             'metadata_attachment_name': DEFAULT_EMAIL_METADATA_ATTACHMENT_NAME,
-            'password': '',
             'port': '',
             'ssl': True,
             'store_body': False,
+            'stored_credential_id': self._test_stored_credential.pk,
             'timeout': DEFAULT_EMAIL_POP3_TIMEOUT,
-            'uncompress': SOURCE_UNCOMPRESS_CHOICE_NEVER,
-            'username': ''
+            'uncompress': SOURCE_UNCOMPRESS_CHOICE_NEVER
         }
 
         if extra_data:
@@ -101,7 +110,9 @@ class POP3EmailSourceTestMixin(SourceTestMixin):
         )
 
 
-class EmailSourceBackendViewTestMixin(SourceViewTestMixin):
+class EmailSourceBackendViewTestMixin(
+    SourceViewTestMixin, CredentialSourceTestMixin
+):
     def _request_test_email_source_create_view(self, extra_data=None):
         data = {
             'document_type_id': self._test_document_type.pk,
@@ -111,7 +122,7 @@ class EmailSourceBackendViewTestMixin(SourceViewTestMixin):
             'port': '0',
             'ssl': True,
             'store_body': False,
-            'username': 'username'
+            'stored_credential_id': self._test_stored_credential.pk
         }
 
         if extra_data:

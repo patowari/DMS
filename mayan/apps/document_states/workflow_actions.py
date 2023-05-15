@@ -6,6 +6,8 @@ import requests
 from django.utils.text import format_lazy
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.credentials.class_mixins import BackendMixinCredentialsOptional
+
 from .classes import WorkflowAction
 from .exceptions import WorkflowStateActionError
 from .literals import (
@@ -14,20 +16,21 @@ from .literals import (
 )
 from .models.workflow_instance_models import WorkflowInstance
 from .models.workflow_models import Workflow
+from .permissions import permission_workflow_tools
 from .tasks import task_launch_workflow_for
 
 logger = logging.getLogger(name=__name__)
 
 
 class DocumentPropertiesEditAction(WorkflowAction):
-    fields = {
+    form_fields = {
         'document_label': {
             'label': _('Document label'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
+                        '{} {}',
                         _('The new label to be assigned to the document.'),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
@@ -42,7 +45,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
+                        '{} {}',
                         _(
                             'The new description to be assigned to the '
                             'document.'
@@ -55,12 +58,24 @@ class DocumentPropertiesEditAction(WorkflowAction):
             }
         }
     }
-    field_order = ('document_label', 'document_description')
     label = _('Modify document properties')
 
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Document properties'), {
+                    'fields': ('document_label', 'document_description')
+                },
+            ),
+        )
+        return fieldsets
+
     def execute(self, context):
-        self.document_label = self.form_data.get('document_label')
-        self.document_description = self.form_data.get(
+        self.document_label = self.kwargs.get('document_label')
+        self.document_description = self.kwargs.get(
             'document_description'
         )
         new_label = None
@@ -77,7 +92,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
             )
 
         if new_label or new_description:
-            document = context['document']
+            document = context['workflow_instance'].document
             document.label = new_label or document.label
             document.description = new_description or document.description
 
@@ -85,60 +100,82 @@ class DocumentPropertiesEditAction(WorkflowAction):
 
 
 class DocumentWorkflowLaunchAction(WorkflowAction):
-    fields = {
-        'workflows': {
-            'label': _('Workflows'),
-            'class': 'django.forms.ModelMultipleChoiceField', 'kwargs': {
-                'help_text': _(
-                    'Additional workflows to launch for the document.'
-                ), 'queryset': Workflow.objects.none()
-            },
-        },
-    }
-    field_order = ('workflows',)
-    label = _('Launch workflows')
-    widgets = {
+    form_field_widgets = {
         'workflows': {
             'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
                 'attrs': {'class': 'select2'},
             }
         }
     }
+    label = _('Launch workflows')
 
-    def get_form_schema(self, **kwargs):
-        result = super().get_form_schema(**kwargs)
+    @classmethod
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         workflows_union = Workflow.objects.filter(
-            document_types__in=kwargs['workflow_state'].workflow.document_types.all()
-        ).exclude(pk=kwargs['workflow_state'].workflow.pk).distinct()
+            document_types__in=cls.workflow_state.workflow.document_types.all()
+        ).exclude(pk=cls.workflow_state.workflow.pk).distinct()
 
-        result['fields']['workflows']['kwargs']['queryset'] = workflows_union
+        fields.update(
+            {
+                'workflows': {
+                    'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
+                    'help_text': _(
+                        'Additional workflows to launch for the document.'
+                    ),
+                    'kwargs': {
+                        'source_queryset': workflows_union,
+                        'permission': permission_workflow_tools
+                    },
+                    'label': _('Workflows'),
+                    'required': True
+                }
+            }
+        )
 
-        return result
+        return fields
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Workflows'), {
+                    'fields': ('workflows',)
+                },
+            ),
+        )
+        return fieldsets
 
     def execute(self, context):
         workflows = Workflow.objects.filter(
-            pk__in=self.form_data.get('workflows', ())
+            pk__in=self.kwargs.get(
+                'workflows', ()
+            )
         )
+
+        document = context['workflow_instance'].document
 
         for workflow in workflows:
             task_launch_workflow_for.apply_async(
                 kwargs={
-                    'document_id': context['document'].pk,
+                    'document_id': document.pk,
                     'workflow_id': workflow.pk
                 }
             )
 
 
-class HTTPAction(WorkflowAction):
-    fields = {
+class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
+    form_fields = {
         'url': {
             'label': _('URL'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
+                        '{} {}',
                         _('The URL to access.'),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
@@ -147,36 +184,23 @@ class HTTPAction(WorkflowAction):
                 'model_variable': 'workflow_instance',
                 'required': True
             },
-        }, 'timeout': {
-            'label': _('Timeout'),
+        }, 'method': {
+            'label': _('Method'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
-            'default': DEFAULT_HTTP_ACTION_TIMEOUT,
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
-                        _('Time in seconds to wait for a response.'),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                        '{} {}',
+                        _(
+                            'The HTTP method to use for the request. '
+                            'Typical choices are OPTIONS, HEAD, POST, GET, '
+                            'PUT, PATCH, DELETE.'
+                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': True
-            }
-        }, 'payload': {
-            'label': _('Payload'),
-            'class': 'mayan.apps.templating.fields.ModelTemplateField',
-            'kwargs': {
-                'initial_help_text': _(
-                    format_lazy(
-                        '{}. {}',
-                        _('A JSON document to include in the request.'),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
-                ),
-                'model': WorkflowInstance,
-                'model_variable': 'workflow_instance',
-                'required': False
             }
         }, 'username': {
             'label': _('Username'),
@@ -184,11 +208,15 @@ class HTTPAction(WorkflowAction):
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
+                        '{} {} {}',
                         _(
                             'Username to use for making the request with '
                             'HTTP Basic Auth.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
+                        _(
+                            'The credential object is available as '
+                            '{{ credential }}.'
+                        )
                     )
                 ),
                 'max_length': 192,
@@ -202,63 +230,97 @@ class HTTPAction(WorkflowAction):
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
+                        '{} {} {}',
                         _(
                             'Password to use for making the request with '
                             'HTTP Basic Auth.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
+                        _(
+                            'The credential object is available as '
+                            '{{ credential }}.'
+                        )
                     )
                 ),
-                'max_length': 192,
+                'max_length': 255,
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
             },
-        }, 'method': {
-            'label': _('Method'),
-            'class': 'mayan.apps.templating.fields.ModelTemplateField',
-            'kwargs': {
-                'initial_help_text': _(
-                    format_lazy(
-                        '{}. {}',
-                        _(
-                            'The HTTP method to use for the request. '
-                            'Typical choices are OPTIONS, HEAD, POST, GET, '
-                            'PUT, PATCH, DELETE.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
-                ),
-                'model': WorkflowInstance,
-                'model_variable': 'workflow_instance',
-                'required': True
-            }
         }, 'headers': {
             'label': _('Headers'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{}. {}',
+                        '{} {} {}',
                         _(
                             'Headers to send with the HTTP request. Must '
                             'be in JSON format.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
+                        _(
+                            'The credential object is available as '
+                            '{{ credential }}.'
+                        )
                     )
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
             }
+        }, 'payload': {
+            'label': _('Payload'),
+            'class': 'mayan.apps.templating.fields.ModelTemplateField',
+            'kwargs': {
+                'initial_help_text': _(
+                    format_lazy(
+                        '{} {}',
+                        _('A JSON document to include in the request.'),
+                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                    )
+                ),
+                'model': WorkflowInstance,
+                'model_variable': 'workflow_instance',
+                'required': False
+            }
+        }, 'timeout': {
+            'label': _('Timeout'),
+            'class': 'mayan.apps.templating.fields.ModelTemplateField',
+            'default': DEFAULT_HTTP_ACTION_TIMEOUT,
+            'kwargs': {
+                'initial_help_text': _(
+                    format_lazy(
+                        '{} {}',
+                        _('Time in seconds to wait for a response.'),
+                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                    )
+                ),
+                'model': WorkflowInstance,
+                'model_variable': 'workflow_instance',
+                'required': True
+            }
         }
+
     }
-    field_order = (
-        'url', 'username', 'password', 'headers', 'timeout', 'method',
-        'payload'
-    )
     label = _('Perform an HTTP request')
     previous_dotted_paths = (
         'mayan.apps.document_states.workflow_actions.HTTPPostAction',
     )
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('HTTP'), {
+                    'fields': (
+                        'url', 'username', 'password', 'headers', 'timeout',
+                        'method', 'payload'
+                    )
+                },
+            ),
+        )
+        return fieldsets
 
     def render_field_load(self, field_name, context):
         """
@@ -282,17 +344,27 @@ class HTTPAction(WorkflowAction):
         return load_result
 
     def execute(self, context):
+        authentication_context = context.copy()
+
+        credential = self.get_credential()
+        if credential:
+            authentication_context['credential'] = credential
+
         headers = self.render_field_load(
-            field_name='headers', context=context
+            field_name='headers', context=authentication_context
         )
         method = self.render_field(field_name='method', context=context)
-        password = self.render_field(field_name='password', context=context)
+        password = self.render_field(
+            field_name='password', context=authentication_context
+        )
         payload = self.render_field_load(
             field_name='payload', context=context
         )
         timeout = self.render_field(field_name='timeout', context=context)
         url = self.render_field(field_name='url', context=context)
-        username = self.render_field(field_name='username', context=context)
+        username = self.render_field(
+            field_name='username', context=authentication_context
+        )
 
         if '.' in timeout:
             timeout = float(timeout)

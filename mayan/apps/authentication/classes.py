@@ -1,7 +1,7 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.module_loading import import_string
 
-from mayan.apps.databases.classes import BaseBackend
+from mayan.apps.backends.classes import BaseBackend
 
 from .settings import (
     setting_authentication_backend, setting_authentication_backend_arguments

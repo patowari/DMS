@@ -5,15 +5,10 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_escalation_mixins import (
-    WorkflowTemplateStateEscalationTestMixin,
-    WorkflowTemplateStateEscalationViewTestMixin
-)
+from .mixins.workflow_template_state_escalation_mixins import WorkflowTemplateStateEscalationViewTestMixin
 
 
 class WorkflowStateEscalationViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateStateEscalationTestMixin,
     WorkflowTemplateStateEscalationViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):

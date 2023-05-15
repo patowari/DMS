@@ -6,8 +6,8 @@ from mayan.apps.appearance.classes import Icon
 from mayan.apps.source_apps.source_staging_folders.source_backends.staging_source_mixins import SourceBackendMixinFileList
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
-    SourceBackendRegularExpressionMixin, SourceBackendStorageBackendMixin
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive,
+    SourceBackendMixinRegularExpression, SourceBackendMixinStorageBackend
 )
 
 from .staging_storage_files import StagingStorageFile
@@ -17,9 +17,9 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendStagingStorage(
-    SourceBackendCompressedMixin, SourceBackendInteractiveMixin,
-    SourceBackendRegularExpressionMixin, SourceBackendMixinFileList,
-    SourceBackendStorageBackendMixin, SourceBackend
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive,
+    SourceBackendMixinRegularExpression, SourceBackendMixinFileList,
+    SourceBackendMixinStorageBackend, SourceBackend
 ):
     icon = Icon(
         driver_name='fontawesome', symbol='file'

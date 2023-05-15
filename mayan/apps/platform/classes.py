@@ -9,9 +9,9 @@ from django.template.context import Context
 from django.utils.html import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.backends.classes import BaseBackend
 from mayan.apps.common.menus import menu_tools
 from mayan.apps.common.serialization import yaml_dump, yaml_load
-from mayan.apps.databases.classes import BaseBackend
 from mayan.apps.task_manager.classes import Worker
 from mayan.settings.literals import (
     DEFAULT_DATABASE_NAME, DEFAULT_DATABASE_PASSWORD, DEFAULT_DATABASE_USER,

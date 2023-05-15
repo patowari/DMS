@@ -1,15 +1,20 @@
 from ..classes import SourceBackend
-from ..source_backends.source_backend_mixins import SourceBackendPeriodicMixin
+from ..source_backends.source_backend_mixins import (
+    SourceBackendMixinPeriodic, SourceBackendMixinStorageBackend
+)
 
-__all__ = ('SourceBackendSimple', 'SourceBackendTestPeriodic')
+__all__ = (
+    'SourceBackendSimple', 'SourceBackendTestPeriodic',
+    'SourceBackendTestStorage'
+)
 
 
 class SourceBackendSimple(SourceBackend):
     label = 'Test source backend'
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -24,13 +29,13 @@ class SourceBackendSimple(SourceBackend):
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
                 'Testing', {
-                    'fields': ('test_field')
+                    'fields': ('test_field',)
                 },
             ),
         )
@@ -41,5 +46,11 @@ class SourceBackendSimple(SourceBackend):
         """Do nothing. This method is added to allow view testing."""
 
 
-class SourceBackendTestPeriodic(SourceBackendPeriodicMixin, SourceBackend):
+class SourceBackendTestPeriodic(SourceBackendMixinPeriodic, SourceBackend):
     label = 'Test periodic source backend'
+
+
+class SourceBackendTestStorage(
+    SourceBackendMixinStorageBackend, SourceBackend
+):
+    label = 'Test storage source backend'

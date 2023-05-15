@@ -152,7 +152,7 @@ urlpatterns_workflow_state_actions = [
         view=WorkflowTemplateStateActionSelectionView.as_view()
     ),
     url(
-        regex=r'^workflow_templates/states/(?P<workflow_template_state_id>\d+)/actions/(?P<class_path>[a-zA-Z0-9_.]+)/create/$',
+        regex=r'^workflow_templates/states/(?P<workflow_template_state_id>\d+)/actions/(?P<backend_path>[a-zA-Z0-9_.]+)/create/$',
         name='workflow_template_state_action_create',
         view=WorkflowTemplateStateActionCreateView.as_view()
     ),

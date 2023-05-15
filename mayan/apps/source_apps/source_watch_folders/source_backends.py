@@ -8,7 +8,7 @@ from mayan.apps.storage.models import SharedUploadedFile
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.exceptions import SourceException
 from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import (
-    SourceBackendCompressedPeriodicMixin, SourceBackendRegularExpressionMixin
+    SourceBackendMixinCompressedPeriodic, SourceBackendMixinRegularExpression
 )
 
 __all__ = ('SourceBackendWatchFolder',)
@@ -16,14 +16,14 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendWatchFolder(
-    SourceBackendCompressedPeriodicMixin,
-    SourceBackendRegularExpressionMixin, SourceBackend
+    SourceBackendMixinCompressedPeriodic,
+    SourceBackendMixinRegularExpression, SourceBackend
 ):
     label = _('Watch folder')
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -55,8 +55,8 @@ class SourceBackendWatchFolder(
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (

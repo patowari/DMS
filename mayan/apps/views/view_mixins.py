@@ -18,7 +18,7 @@ from mayan.apps.mime_types.classes import MIMETypeBackend
 from mayan.apps.permissions import Permission
 
 from .exceptions import ActionError
-from .forms import DynamicForm, FormFieldsetMixin
+from .forms import DynamicForm, FormMixinFieldsets
 from .literals import (
     PK_LIST_SEPARATOR, TEXT_CHOICE_ITEMS, TEXT_CHOICE_LIST,
     TEXT_LIST_AS_ITEMS_PARAMETER, TEXT_LIST_AS_ITEMS_VARIABLE_NAME,
@@ -293,10 +293,10 @@ class ModelFormFieldsetsViewMixin(ModelFormMixin):
     def get_form_class(self):
         form_class = super().get_form_class()
 
-        if FormFieldsetMixin in form_class.mro():
+        if FormMixinFieldsets in form_class.mro():
             return form_class
         else:
-            class FormFieldsetForm(FormFieldsetMixin, form_class):
+            class FormFieldsetForm(FormMixinFieldsets, form_class):
                 """New class with the form fieldset support."""
 
             FormFieldsetForm.fieldsets = getattr(self, 'fieldsets', None)

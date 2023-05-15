@@ -159,7 +159,7 @@ class MailerViewTestMixin:
 
         response = self.post(
             viewname='mailer:user_mailer_create', kwargs={
-                'class_path': TestBackend.backend_id
+                'backend_path': TestBackend.backend_id
             }, data={
                 'default': True,
                 'enabled': True,

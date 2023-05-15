@@ -17,7 +17,19 @@ logger = logging.getLogger(name=__name__)
 
 
 class TransformationAddAction(WorkflowAction):
-    fields = {
+    form_field_widgets = {
+        'transformation_class': {
+            'class': 'django.forms.widgets.Select', 'kwargs': {
+                'attrs': {'class': 'select2'}
+            }
+        },
+        'transformation_arguments': {
+            'class': 'django.forms.widgets.Textarea', 'kwargs': {
+                'attrs': {'rows': 5}
+            }
+        }
+    }
+    form_fields = {
         'pages': {
             'label': _('Pages'),
             'class': 'django.forms.CharField', 'kwargs': {
@@ -49,18 +61,6 @@ class TransformationAddAction(WorkflowAction):
         }
     }
     label = _('Add transformation')
-    widgets = {
-        'transformation_class': {
-            'class': 'django.forms.widgets.Select', 'kwargs': {
-                'attrs': {'class': 'select2'}
-            }
-        },
-        'transformation_arguments': {
-            'class': 'django.forms.widgets.Textarea', 'kwargs': {
-                'attrs': {'rows': 5}
-            }
-        }
-    }
 
     @classmethod
     def clean(cls, form_data, request):
@@ -77,19 +77,39 @@ class TransformationAddAction(WorkflowAction):
 
         return form_data
 
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Objects'), {
+                    'fields': ('pages',)
+                }
+            ),
+            (
+                _('Transformations'), {
+                    'fields': (
+                        'transformation_class', 'transformation_arguments',
+                    )
+                }
+            ),
+        )
+        return fieldsets
+
     def execute(self, context):
-        if self.form_data['pages']:
+        if self.kwargs['pages']:
             page_range = parse_range(
-                range_string=self.form_data['pages']
+                range_string=self.kwargs['pages']
             )
-            queryset = context['document'].pages.filter(
+            queryset = context['workflow_instance'].document.pages.filter(
                 page_number__in=page_range
             )
         else:
-            queryset = context['document'].pages.all()
+            queryset = context['workflow_instance'].document.pages.all()
 
         transformation_class = BaseTransformation.get(
-            name=self.form_data['transformation_class']
+            name=self.kwargs['transformation_class']
         )
         layer = transformation_class.get_assigned_layer()
 
@@ -98,6 +118,6 @@ class TransformationAddAction(WorkflowAction):
                 layer=layer, obj=document_page
             )
             object_layer.transformations.create(
-                arguments=self.form_data['transformation_arguments'],
+                arguments=self.kwargs['transformation_arguments'],
                 name=transformation_class.name
             )

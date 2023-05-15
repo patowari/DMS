@@ -9,6 +9,7 @@ from django.utils.encoding import force_bytes
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
+from mayan.apps.credentials.class_mixins import BackendMixinCredentials
 from mayan.apps.metadata.models import MetadataType
 from mayan.apps.storage.models import SharedUploadedFile
 
@@ -18,19 +19,13 @@ __all__ = ()
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBackendEmailMixin:
+class SourceBackendEmailMixin(BackendMixinCredentials):
     @classmethod
-    def get_setup_form_field_widgets(cls):
-        widgets = super().get_setup_form_field_widgets()
+    def get_form_field_widgets(cls):
+        widgets = super().get_form_field_widgets()
 
         widgets.update(
             {
-                'password': {
-                    'class': 'django.forms.widgets.PasswordInput',
-                    'kwargs': {
-                        'render_value': True
-                    }
-                },
                 'from_metadata_type_id': {
                     'class': 'django.forms.widgets.Select', 'kwargs': {
                         'attrs': {'class': 'select2'}
@@ -52,8 +47,8 @@ class SourceBackendEmailMixin:
         return widgets
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -81,21 +76,6 @@ class SourceBackendEmailMixin:
                         'min_value': 0
                     },
                     'label': _('Port'),
-                },
-                'username': {
-                    'class': 'django.forms.CharField',
-                    'kargs': {
-                        'max_length': 128,
-                    },
-                    'label': _('Username'),
-                },
-                'password': {
-                    'class': 'django.forms.CharField',
-                    'kargs': {
-                        'max_length': 128,
-                    },
-                    'label': _('Password'),
-                    'required': False,
                 },
                 'metadata_attachment_name': {
                     'class': 'django.forms.CharField',
@@ -191,15 +171,14 @@ class SourceBackendEmailMixin:
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
                 _('Common email options'), {
                     'fields': (
-                        'host', 'ssl', 'port', 'username', 'password',
-                        'store_body'
+                        'host', 'ssl', 'port', 'store_body'
                     )
                 },
             ), (
@@ -210,7 +189,7 @@ class SourceBackendEmailMixin:
                         'message_id_metadata_type_id'
                     )
                 }
-            ),
+            )
         )
 
         return fieldsets

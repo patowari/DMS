@@ -127,6 +127,17 @@
   - Support configurate release directory location.
 
 - Add icon class support to layers.
+- Add credentials app. This app provides a centralized location to store and
+  protect external authentication credentials. By default two credential
+  backends are provided: token, username and password. The credential
+  backend system is extensible and other credential systems can be added.
+
+  Apps that use external authentication, like the mailer and sources, were
+  updated to use credentials in their setup forms. In the case of features
+  that use optional external credentials or where the credentials are the
+  result of a template, like the HTTP workflow action, staging storage
+  source, and watch storage source, the credential is selected and passed
+  as a variable to the template.
 
 4.4.7 (20XX-XX-XX)
 ==================

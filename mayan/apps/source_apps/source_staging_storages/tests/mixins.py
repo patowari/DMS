@@ -6,7 +6,7 @@ from mayan.apps.source_apps.source_staging_folders.tests.literals import (
     TEST_STAGING_PREVIEW_HEIGHT, TEST_STAGING_PREVIEW_WIDTH
 )
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
-from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
 from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 
 from ..source_backends.staging_storage_backends import SourceBackendStagingStorage

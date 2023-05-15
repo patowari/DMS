@@ -1,4 +1,4 @@
-from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
 from mayan.apps.testing.tests.base import MayanMigratorTestCase
 
 

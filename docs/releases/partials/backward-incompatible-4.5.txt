@@ -4,3 +4,17 @@ Documents
 Removal of the setting ``DOCUMENTS_STUB_EXPIRATION_INTERVAL``. Document
 stub expiration interval is now configure on a per document type basis via
 the user interface or API.
+
+
+Workflows
+^^^^^^^^^
+
+The ``WorkflowTemplateStateActionSerializer`` field ``action_path`` is
+now called ``backend_path``, and the field ``action_data`` is now called
+``backend_data``.
+
+The workflow template state action template no longer has direct access to
+the document to which the workflow is attached via the variable
+``{{ document }}``. To access the document, do so indirectly via the
+``{{ workflow_instance }}`` variable with
+``{{ workflow_instance.document }}``.

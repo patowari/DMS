@@ -1,15 +1,29 @@
 from django import forms
 
-from .field_mixins import FilteredModelFieldMixin
+from .field_mixins import (
+    FormFieldMixinFilteredQueryset, ModelFieldMixinFilteredQuerySet
+)
 
 
-class FilteredModelChoiceField(
-    FilteredModelFieldMixin, forms.ModelChoiceField
+class FormFieldFilteredModelChoice(
+    FormFieldMixinFilteredQueryset, forms.ChoiceField
 ):
-    """Single selection filtered model choice field"""
+    """Single selection filtered model choice field."""
 
 
-class FilteredModelMultipleChoiceField(
-    FilteredModelFieldMixin, forms.ModelMultipleChoiceField
+class FormFieldFilteredModelChoiceMultiple(
+    FormFieldMixinFilteredQueryset, forms.MultipleChoiceField
 ):
-    """Multiple selection filtered model choice field"""
+    """Multiole selection filtered model choice field."""
+
+
+class ModelFormFieldFilteredModelChoice(
+    ModelFieldMixinFilteredQuerySet, forms.ModelChoiceField
+):
+    """Single selection filtered model choice field."""
+
+
+class ModelFormFieldFilteredModelMultipleChoice(
+    ModelFieldMixinFilteredQuerySet, forms.ModelMultipleChoiceField
+):
+    """Multiple selection filtered model choice field."""

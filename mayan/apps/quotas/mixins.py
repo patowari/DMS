@@ -24,7 +24,7 @@ class DocumentTypesQuotaMixin:
                 },
                 'document_type_ids': {
                     'label': _('Document types'),
-                    'class': 'mayan.apps.views.fields.FilteredModelMultipleChoiceField',
+                    'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'kwargs': {
                         'permission': permission_quota_edit,
                         'required': False,
@@ -92,7 +92,7 @@ class GroupsUsersQuotaMixin:
             {
                 'group_ids': {
                     'label': _('Groups'),
-                    'class': 'mayan.apps.views.fields.FilteredModelMultipleChoiceField',
+                    'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'kwargs': {
                         'permission': permission_quota_edit,
                         'required': False,
@@ -113,7 +113,7 @@ class GroupsUsersQuotaMixin:
                 },
                 'user_ids': {
                     'label': _('Users'),
-                    'class': 'mayan.apps.views.fields.FilteredModelMultipleChoiceField',
+                    'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'kwargs': {
                         'permission': permission_quota_edit,
                         'required': False,

@@ -10,8 +10,29 @@ from ..literals import (
     TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE
 )
 
+from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
-class WorkflowTemplateTransitionFieldAPIViewTestMixin:
+
+class WorkflowTemplateTransitionFieldTestMixin(
+    WorkflowTemplateTransitionTestMixin
+):
+    def _create_test_workflow_template_transition_field(self, extra_data=None):
+        kwargs = {
+            'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
+            'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME,
+            'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
+            'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT
+        }
+        kwargs.update(extra_data or {})
+
+        self._test_workflow_template_transition_field = self._test_workflow_template_transition.fields.create(
+            **kwargs
+        )
+
+
+class WorkflowTemplateTransitionFieldAPIViewTestMixin(
+    WorkflowTemplateTransitionFieldTestMixin
+):
     def _request_test_workflow_template_transition_field_create_api_view(self):
         pk_list = list(
             WorkflowTransitionField.objects.values_list('pk')
@@ -83,22 +104,9 @@ class WorkflowTemplateTransitionFieldAPIViewTestMixin:
         )
 
 
-class WorkflowTemplateTransitionFieldTestMixin:
-    def _create_test_workflow_template_transition_field(self, extra_data=None):
-        kwargs = {
-            'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
-            'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME,
-            'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
-            'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT
-        }
-        kwargs.update(extra_data or {})
-
-        self._test_workflow_template_transition_field = self._test_workflow_template_transition.fields.create(
-            **kwargs
-        )
-
-
-class WorkflowTemplateTransitionFieldViewTestMixin:
+class WorkflowTemplateTransitionFieldViewTestMixin(
+    WorkflowTemplateTransitionFieldTestMixin
+):
     def _request_workflow_template_transition_field_create_view(self):
         pk_list = list(
             WorkflowTransitionField.objects.values_list('pk', flat=True)

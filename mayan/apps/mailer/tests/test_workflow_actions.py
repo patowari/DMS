@@ -6,15 +6,13 @@ from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
 from mayan.apps.document_states.permissions import (
     permission_workflow_template_edit
 )
-from mayan.apps.document_states.tests.base import ActionTestCase
-from mayan.apps.document_states.tests.mixins.workflow_template_mixins import (
-    WorkflowTemplateTestMixin
+
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionTestMixin,
+    WorkflowTemplateStateActionViewTestMixin
 )
-from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
-from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.metadata.tests.mixins import MetadataTypeTestMixin
-from mayan.apps.testing.tests.base import GenericViewTestCase
+from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 
 from ..permissions import permission_user_mailer_use
 from ..workflow_actions import DocumentEmailAction
@@ -27,33 +25,33 @@ from .mixins import MailerTestMixin
 
 
 class DocumentEmailActionTestCase(
-    MailerTestMixin, WorkflowTemplateTestMixin, GenericDocumentTestCase
+    MailerTestMixin, WorkflowTemplateStateActionTestMixin,
+    BaseTestCase
 ):
-    auto_upload_test_document = False
-
     def test_email_action_literal_text(self):
-        self._create_test_document_stub()
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,
                 'subject': TEST_EMAIL_SUBJECT,
                 'body': TEST_EMAIL_BODY
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
 
     def test_email_action_literal_text_cc_field(self):
-        self._create_test_document_stub()
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,
                 'cc': TEST_EMAIL_ADDRESS,
@@ -61,18 +59,20 @@ class DocumentEmailActionTestCase(
                 'body': TEST_EMAIL_BODY
             }
         )
-        action.execute(context={'document': self._test_document})
         self.assertEqual(len(mail.outbox), 1)
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
-        self.assertEqual(mail.outbox[0].cc, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
+        self.assertEqual(
+            mail.outbox[0].cc, [TEST_EMAIL_ADDRESS]
+        )
 
     def test_email_action_literal_text_bcc_field(self):
-        self._create_test_document_stub()
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,
                 'bcc': TEST_EMAIL_ADDRESS,
@@ -80,19 +80,22 @@ class DocumentEmailActionTestCase(
                 'body': TEST_EMAIL_BODY
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
-        self.assertEqual(mail.outbox[0].bcc, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
+        self.assertEqual(
+            mail.outbox[0].bcc, [TEST_EMAIL_ADDRESS]
+        )
 
     def test_email_action_workflow_execute(self):
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
         self._create_test_user_mailer()
 
         self._test_workflow_template_state.actions.create(
-            action_data=json.dumps(
+            backend_data=json.dumps(
                 obj={
                     'mailing_profile': self._test_user_mailer.pk,
                     'recipient': TEST_EMAIL_ADDRESS,
@@ -100,7 +103,7 @@ class DocumentEmailActionTestCase(
                     'body': TEST_EMAIL_BODY
                 }
             ),
-            action_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction',
+            backend_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction',
             label='test email action', when=WORKFLOW_ACTION_ON_ENTRY
         )
 
@@ -112,14 +115,18 @@ class DocumentEmailActionTestCase(
 
         self._create_test_document_stub()
 
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
 
 
 class DocumentEmailActionTemplateTestCase(
-    MetadataTypeTestMixin, MailerTestMixin, WorkflowTemplateTestMixin,
-    ActionTestCase
+    MetadataTypeTestMixin, MailerTestMixin,
+    WorkflowTemplateStateActionTestMixin, BaseTestCase
 ):
     def test_email_action_recipient_template(self):
         self._create_test_metadata_type()
@@ -132,18 +139,19 @@ class DocumentEmailActionTemplateTestCase(
 
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
-                'recipient': '{{{{ document.metadata_value_of.{} }}}}'.format(
+                'recipient': '{{{{ workflow_instance.document.metadata_value_of.{} }}}}'.format(
                     self._test_metadata_type.name
                 ),
                 'subject': TEST_EMAIL_SUBJECT,
                 'body': ''
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
         self.assertEqual(
             mail.outbox[0].to, [self._test_document.metadata.first().value]
@@ -160,20 +168,23 @@ class DocumentEmailActionTemplateTestCase(
 
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,
-                'subject': '{{{{ document.metadata_value_of.{} }}}}'.format(
+                'subject': '{{{{ workflow_instance.document.metadata_value_of.{} }}}}'.format(
                     self._test_metadata_type.name
                 ),
                 'body': ''
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
         self.assertEqual(
             mail.outbox[0].subject, self._test_document.metadata.first().value
         )
@@ -189,23 +200,29 @@ class DocumentEmailActionTemplateTestCase(
 
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,
                 'subject': TEST_EMAIL_SUBJECT,
-                'body': '{{{{ document.metadata_value_of.{} }}}}'.format(
+                'body': '{{{{ workflow_instance.document.metadata_value_of.{} }}}}'.format(
                     self._test_metadata_type.name
                 ),
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
         self.assertEqual(mail.outbox[0].body, TEST_EMAIL_BODY)
 
     def test_email_action_attachment(self):
+        # This action requires a document with an active version.
+        self._upload_test_document()
+
         self._create_test_metadata_type()
         self._test_document_type.metadata.create(
             metadata_type=self._test_metadata_type
@@ -216,37 +233,40 @@ class DocumentEmailActionTemplateTestCase(
 
         self._create_test_user_mailer()
 
-        action = DocumentEmailAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=DocumentEmailAction, kwargs={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,
-                'subject': '{{{{ document.metadata_value_of.{} }}}}'.format(
+                'subject': '{{{{ workflow_instance.document.metadata_value_of.{} }}}}'.format(
                     self._test_metadata_type.name
                 ),
                 'body': '',
                 'attachment': True
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
         self.assertEqual(
-            mail.outbox[0].subject, self._test_document.metadata.first().value
+            len(mail.outbox), 1
         )
-        self.assertEqual(len(mail.outbox[0].attachments), 1)
+        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
+        self.assertEqual(
+            mail.outbox[0].subject,
+            self._test_document.metadata.first().value
+        )
+        self.assertEqual(
+            len(mail.outbox[0].attachments), 1
+        )
 
 
 class DocumentEmailActionViewTestCase(
-    DocumentTestMixin, MailerTestMixin,
-    WorkflowTemplateStateActionViewTestMixin, WorkflowTemplateTestMixin,
+    MailerTestMixin, WorkflowTemplateStateActionViewTestMixin,
     GenericViewTestCase
 ):
     auto_upload_test_document = False
 
     def test_email_action_create_get_view(self):
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
         self._create_test_user_mailer()
         self.grant_access(
             obj=self._test_workflow_template,
@@ -254,7 +274,7 @@ class DocumentEmailActionViewTestCase(
         )
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            class_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction'
+            backend_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction'
         )
         self.assertEqual(response.status_code, 200)
 
@@ -263,8 +283,6 @@ class DocumentEmailActionViewTestCase(
         )
 
     def test_email_action_create_post_view(self):
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
         self._create_test_user_mailer()
         self.grant_access(
             obj=self._test_user_mailer, permission=permission_user_mailer_use
@@ -275,7 +293,7 @@ class DocumentEmailActionViewTestCase(
         )
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction',
+            backend_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction',
             extra_data={
                 'mailing_profile': self._test_user_mailer.pk,
                 'recipient': TEST_EMAIL_ADDRESS,

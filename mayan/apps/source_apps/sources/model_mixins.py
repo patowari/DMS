@@ -52,14 +52,16 @@ class SourceBusinessLogicMixin:
 
     def fullname(self):
         return '{} {}'.format(
-            self.get_backend_label(), self.label
+            self.get_backend_class_label(), self.label
         )
 
     def get_action(self, name):
-        return self.get_backend().get_action(name=name)
+        backend_class = self.get_backend_class()
+        return backend_class.get_action(name=name)
 
     def get_actions(self):
-        return self.get_backend().get_actions()
+        backend_class = self.get_backend_class()
+        return backend_class.get_actions()
 
     def handle_file_object_upload(
         self, document_type, file_object, callback_kwargs=None,

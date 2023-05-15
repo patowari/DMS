@@ -5,7 +5,7 @@ from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.source_apps.sources.classes import SourceBackend
-from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendCompressedPeriodicMixin
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendMixinCompressedPeriodic
 
 from .literals import DEFAULT_EMAIL_POP3_TIMEOUT
 from .mixins import SourceBackendEmailMixin
@@ -14,14 +14,14 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendPOP3Email(
-    SourceBackendCompressedPeriodicMixin, SourceBackendEmailMixin,
+    SourceBackendMixinCompressedPeriodic, SourceBackendEmailMixin,
     SourceBackend
 ):
     label = _('POP3 email')
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -39,8 +39,8 @@ class SourceBackendPOP3Email(
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
@@ -77,13 +77,13 @@ class SourceBackendPOP3Email(
 
         server = pop3_module(**kwargs)
         try:
+            credential = self.get_credential()
+            password = credential.get('password')
+            username = credential.get('username')
+
             server.getwelcome()
-            server.user(
-                self.kwargs['username']
-            )
-            server.pass_(
-                self.kwargs['password']
-            )
+            server.user(username)
+            server.pass_(password)
 
             messages_info = server.list()
 

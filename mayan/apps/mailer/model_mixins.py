@@ -19,8 +19,10 @@ class UserMailerBusinessLogicMixin:
         backend, initializing it, and the using the backend instance to get
         a connection.
         """
+        backend_class = self.get_backend_class()
+
         return mail.get_connection(
-            backend=self.get_backend().class_path, **self.get_backend_data()
+            backend=backend_class.class_path, **self.get_backend_data()
         )
 
     def send(

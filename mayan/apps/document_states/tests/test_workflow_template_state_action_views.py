@@ -4,30 +4,19 @@ from ..events import event_workflow_template_edited
 from ..permissions import permission_workflow_template_edit
 
 from .literals import TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_action_mixins import (
-    WorkflowTemplateStateActionTestMixin,
-    WorkflowTemplateStateActionViewTestMixin
-)
+from .mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
 
 
 class WorkflowStateActionViewTestCase(
-    WorkflowTemplateStateActionTestMixin,
-    WorkflowTemplateStateActionViewTestMixin, WorkflowTemplateTestMixin,
-    GenericViewTestCase
+    WorkflowTemplateStateActionViewTestMixin, GenericViewTestCase
 ):
-    def setUp(self):
-        super().setUp()
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
-
     def test_workflow_state_action_create_get_view_no_permission(self):
         action_count = self._test_workflow_template_state.actions.count()
 
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            class_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
+            backend_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
         )
         self.assertEqual(response.status_code, 404)
 
@@ -49,7 +38,7 @@ class WorkflowStateActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            class_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
+            backend_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
         )
         self.assertEqual(response.status_code, 200)
 
@@ -67,7 +56,7 @@ class WorkflowStateActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
+            backend_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
         )
         self.assertEqual(response.status_code, 404)
 
@@ -89,7 +78,7 @@ class WorkflowStateActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
+            backend_path=TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
         )
         self.assertEqual(response.status_code, 302)
 
@@ -205,7 +194,8 @@ class WorkflowStateActionViewTestCase(
 
         response = self._request_test_worflow_template_state_action_list_view()
         self.assertNotContains(
-            response=response, text=self.TestWorkflowAction.label,
+            response=response,
+            text=self._test_workflow_template_state_action.label,
             status_code=404
         )
 
@@ -223,7 +213,8 @@ class WorkflowStateActionViewTestCase(
 
         response = self._request_test_worflow_template_state_action_list_view()
         self.assertContains(
-            response=response, text=self.TestWorkflowAction.label,
+            response=response,
+            text=self._test_workflow_template_state_action.label,
             status_code=200
         )
 

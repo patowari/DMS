@@ -1,4 +1,3 @@
-import json
 import os
 
 from django import forms as django_forms
@@ -9,23 +8,21 @@ from django.contrib.admin.utils import (
 )
 from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
 from django.db import models
-from django.db.models import Model
-from django.db.models.query import QuerySet
 from django.forms import Form as DjangoForm, ModelForm as DjangoModelForm
-from django.forms.models import ModelFormMetaclass
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.utils import resolve_attribute
 
-from .form_mixins import DynamicFormMixin, FormFieldsetMixin
+from .form_mixins import FormMixinDynamicFields, FormMixinFieldsets
+from .form_options import DetailFormOption, FilteredSelectionFormOptions
 from .widgets import DisableableSelectWidget, PlainWidget, TextAreaDiv
 
 
-class Form(FormFieldsetMixin, DjangoForm):
+class Form(FormMixinFieldsets, DjangoForm):
     """Mayan's default form class."""
 
 
-class ModelForm(FormFieldsetMixin, DjangoModelForm):
+class ModelForm(FormMixinFieldsets, DjangoModelForm):
     """Mayan's default model form class."""
 
 
@@ -49,7 +46,9 @@ class ChoiceForm(Form):
     )
 
     def __init__(self, *args, **kwargs):
-        choices = kwargs.pop('choices', [])
+        choices = kwargs.pop(
+            'choices', []
+        )
         label = kwargs.pop(
             'label', _('Selection')
         )
@@ -68,43 +67,6 @@ class ChoiceForm(Form):
                 'data-height-difference': '495'
             }
         )
-
-
-class FormOptions:
-    def __init__(self, form, kwargs, options=None):
-        """
-        Option definitions will be iterated. The option value will be
-        determined in the following order: as passed via keyword
-        arguments during form intialization, as form get_... method or
-        finally as static Meta options. This is to allow a form with
-        Meta options or method to be overridden at initialization
-        and increase the usability of a single class.
-        """
-        for name, default_value in self.option_definitions.items():
-            try:
-                # Check for a runtime value via kwargs
-                value = kwargs.pop(name)
-            except KeyError:
-                try:
-                    # Check if there is a get_... method
-                    value = getattr(
-                        self, 'get_{}'.format(name)
-                    )()
-                except AttributeError:
-                    try:
-                        # Check the meta class options
-                        value = getattr(options, name)
-                    except AttributeError:
-                        value = default_value
-
-            setattr(self, name, value)
-
-
-class DetailFormOption(FormOptions):
-    # Dictionary list of option names and default values.
-    option_definitions = {
-        'extra_fields': []
-    }
 
 
 class DetailForm(ModelForm):
@@ -176,68 +138,12 @@ class DetailForm(ModelForm):
             )
 
 
-class DynamicForm(DynamicFormMixin, Form):
+class DynamicForm(FormMixinDynamicFields, Form):
     """Normal dynamic form."""
 
 
-class DynamicModelForm(DynamicFormMixin, ModelForm):
+class DynamicModelForm(FormMixinDynamicFields, ModelForm):
     """Dynamic model form."""
-
-
-class BackendDynamicFormMetaclass(ModelFormMetaclass):
-    def __new__(mcs, name, bases, attrs):
-        new_class = super(BackendDynamicFormMetaclass, mcs).__new__(
-            mcs=mcs, name=name, bases=bases, attrs=attrs
-        )
-
-        if new_class._meta.fields:
-            new_class._meta.fields += ('backend_data',)
-            widgets = getattr(
-                new_class._meta, 'widgets', {}
-            ) or {}
-            widgets['backend_data'] = django_forms.widgets.HiddenInput
-            new_class._meta.widgets = widgets
-
-        return new_class
-
-
-class BackendDynamicForm(
-    DynamicModelForm, metaclass=BackendDynamicFormMetaclass
-):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        backend_data = self.instance.get_backend_data()
-
-        if backend_data:
-            for field_name in self.instance.get_backend().get_fields():
-                self.fields[field_name].initial = backend_data.get(
-                    field_name, None
-                )
-
-    def clean(self):
-        data = super().clean()
-
-        # Consolidate the dynamic fields into a single JSON field called
-        # 'backend_data'.
-        backend_data = {}
-
-        for field_name, field_data in self.schema['fields'].items():
-            backend_data[field_name] = data.pop(
-                field_name, field_data.get('default', None)
-            )
-            if isinstance(backend_data[field_name], QuerySet):
-                # Flatten the queryset to a list of ids.
-                backend_data[field_name] = list(
-                    backend_data[field_name].values_list('id', flat=True)
-                )
-            elif isinstance(backend_data[field_name], Model):
-                # Store only the ID of a model instance.
-                backend_data[field_name] = backend_data[field_name].pk
-
-        data['backend_data'] = json.dumps(obj=backend_data)
-
-        return data
 
 
 class FileDisplayForm(Form):
@@ -262,23 +168,6 @@ class FileDisplayForm(Form):
             )
             with open(file=file_path) as file_object:
                 self.fields['text'].initial = file_object.read()
-
-
-class FilteredSelectionFormOptions(FormOptions):
-    # Dictionary list of option names and default values.
-    option_definitions = {
-        'allow_multiple': False,
-        'field_name': None,
-        'help_text': None,
-        'label': None,
-        'model': None,
-        'permission': None,
-        'queryset': None,
-        'required': True,
-        'user': None,
-        'widget_attributes': {'size': '10'},
-        'widget_class': None
-    }
 
 
 class FilteredSelectionForm(Form):

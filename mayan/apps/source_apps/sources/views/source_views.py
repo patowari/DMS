@@ -1,21 +1,24 @@
 import logging
 
 from django.contrib import messages
-from django.http import Http404, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.backends.views import (
+    ViewSingleObjectDynamicFormModelBackendCreate,
+    ViewSingleObjectDynamicFormModelBackendEdit
+)
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.views.generics import (
     ConfirmView, FormView, MultipleObjectConfirmActionView,
-    SingleObjectDeleteView, SingleObjectDynamicFormCreateView,
-    SingleObjectDynamicFormEditView, SingleObjectListView
+    SingleObjectDeleteView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..classes import SourceBackend
-from ..forms import SourceBackendSelectionForm, SourceBackendDynamicForm
+from ..forms import SourceBackendSelectionForm, SourceBackendSetupDynamicForm
 from ..icons import (
     icon_source_action, icon_source_backend_selection, icon_source_create,
     icon_source_delete, icon_source_edit, icon_source_list, icon_source_test
@@ -79,36 +82,25 @@ class SourceActionView(MultipleObjectConfirmActionView):
         )
 
 
-class SourceCreateView(SingleObjectDynamicFormCreateView):
-    form_class = SourceBackendDynamicForm
+class SourceCreateView(ViewSingleObjectDynamicFormModelBackendCreate):
+    backend_class = SourceBackend
+    form_class = SourceBackendSetupDynamicForm
     post_action_redirect = reverse_lazy(viewname='sources:source_list')
     view_icon = icon_source_create
     view_permission = permission_sources_create
 
-    def get_backend(self):
-        try:
-            return SourceBackend.get(
-                name=self.kwargs['backend_path']
-            )
-        except KeyError:
-            raise Http404(
-                '{} class not found'.format(
-                    self.kwargs['backend_path']
-                )
-            )
-
     def get_extra_context(self):
+        backend_class = self.get_backend_class()
         return {
             'title': _(
                 'Create a "%s" source'
-            ) % self.get_backend().label
+            ) % backend_class.label
         }
 
-    def get_form_fieldsets(self):
-        return self.get_backend().get_setup_form_fieldsets()
-
-    def get_form_schema(self):
-        return self.get_backend().get_setup_form_schema()
+    def get_form_extra_kwargs(self):
+        return {
+            'user': self.request.user
+        }
 
     def get_instance_extra_data(self):
         return {
@@ -133,8 +125,8 @@ class SourceDeleteView(SingleObjectDeleteView):
         }
 
 
-class SourceEditView(SingleObjectDynamicFormEditView):
-    form_class = SourceBackendDynamicForm
+class SourceEditView(ViewSingleObjectDynamicFormModelBackendEdit):
+    form_class = SourceBackendSetupDynamicForm
     model = Source
     object_permission = permission_sources_edit
     pk_url_kwarg = 'source_id'
@@ -148,11 +140,10 @@ class SourceEditView(SingleObjectDynamicFormEditView):
             'title': _('Edit source: %s') % self.object
         }
 
-    def get_form_fieldsets(self):
-        return self.object.get_backend().get_setup_form_fieldsets()
-
-    def get_form_schema(self):
-        return self.object.get_backend().get_setup_form_schema()
+    def get_form_extra_kwargs(self):
+        return {
+            'user': self.request.user
+        }
 
     def get_instance_extra_data(self):
         return {

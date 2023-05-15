@@ -12,7 +12,9 @@ from django.utils.module_loading import import_string
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
+from mayan.apps.credentials.class_mixins import BackendMixinCredentialsOptional
 from mayan.apps.documents.models.document_type_models import DocumentType
+from mayan.apps.templating.classes import Template
 
 from ..classes import DocumentCreateWizardStep
 
@@ -27,12 +29,12 @@ from .literals import (
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBackendCompressedMixin:
+class SourceBackendMixinCompressed:
     uncompress_choices = SOURCE_UNCOMPRESS_INTERACTIVE_CHOICES
 
     @classmethod
-    def get_setup_form_field_widgets(cls):
-        widgets = super().get_setup_form_field_widgets()
+    def get_form_field_widgets(cls):
+        widgets = super().get_form_field_widgets()
 
         widgets.update(
             {
@@ -46,8 +48,9 @@ class SourceBackendCompressedMixin:
         return widgets
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
+
         fields.update(
             {
                 'uncompress': {
@@ -68,13 +71,13 @@ class SourceBackendCompressedMixin:
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
                 _('Decompression'), {
-                    'fields': ('uncompress')
+                    'fields': ('uncompress',)
                 },
             ),
         )
@@ -121,84 +124,10 @@ class SourceBackendCompressedMixin:
         return results
 
 
-class SourceBackendInteractiveMixin:
-    is_interactive = True
-
-    def callback(
-        self, document_file, source_id, user_id, query_string=None,
-        extra_data=None, **kwargs
-    ):
-        super().callback(
-            document_file=document_file, extra_data=extra_data,
-            query_string=query_string, source_id=source_id, user_id=user_id,
-            **kwargs
-        )
-
-        DocumentCreateWizardStep.post_upload_process(
-            document=document_file.document,
-            extra_data=extra_data,
-            query_string=query_string,
-            source_id=source_id,
-            user_id=user_id
-        )
-
-    def get_callback_kwargs(self):
-        callback_kwargs = super().get_callback_kwargs()
-
-        query_string = ''
-
-        query_dict = self.process_kwargs['request'].GET.copy()
-        query_dict.update(self.process_kwargs['request'].POST)
-
-        # Convert into a string. Make sure it is a QueryDict object from a
-        # request and not just a simple dictionary.
-        if hasattr(query_dict, 'urlencode'):
-            query_string = query_dict.urlencode()
-
-        callback_kwargs.update(
-            {
-                'query_string': query_string
-            }
-        )
-
-        return callback_kwargs
-
-    def get_document(self):
-        return self.process_kwargs['document']
-
-    def get_document_description(self):
-        return self.process_kwargs['forms']['document_form'].cleaned_data.get('description')
-
-    def get_document_file_action(self):
-        return int(
-            self.process_kwargs['forms']['document_form'].cleaned_data.get('action')
-        )
-
-    def get_document_file_comment(self):
-        return self.process_kwargs['forms']['document_form'].cleaned_data.get('comment')
-
-    def get_document_label(self):
-        return self.process_kwargs['forms']['document_form'].get_final_label(
-            filename=force_text(self.shared_uploaded_file)
-        )
-
-    def get_document_language(self):
-        return self.process_kwargs['forms']['document_form'].cleaned_data.get('language')
-
-    def get_document_type(self):
-        return self.process_kwargs['document_type']
-
-    def get_user(self):
-        if not self.process_kwargs['request'].user.is_anonymous:
-            return self.process_kwargs['request'].user
-        else:
-            return None
-
-
-class SourceBackendPeriodicMixin:
+class SourceBackendMixinPeriodic:
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
         fields.update(
             {
                 'document_type_id': {
@@ -235,8 +164,8 @@ class SourceBackendPeriodicMixin:
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
@@ -249,8 +178,8 @@ class SourceBackendPeriodicMixin:
         return fieldsets
 
     @classmethod
-    def get_setup_form_widgets(cls):
-        widgets = super().get_setup_form_widgets()
+    def get_form_widgets(cls):
+        widgets = super().get_form_widgets()
 
         widgets.update(
             {
@@ -327,16 +256,90 @@ class SourceBackendPeriodicMixin:
         self.create()
 
 
-class SourceBackendCompressedPeriodicMixin(
-    SourceBackendCompressedMixin, SourceBackendPeriodicMixin
+class SourceBackendMixinCompressedPeriodic(
+    SourceBackendMixinCompressed, SourceBackendMixinPeriodic
 ):
     uncompress_choices = SOURCE_UNCOMPRESS_INTERVAL_CHOICES
 
 
-class SourceBackendRegularExpressionMixin:
+class SourceBackendMixinInteractive:
+    is_interactive = True
+
+    def callback(
+        self, document_file, source_id, user_id, query_string=None,
+        extra_data=None, **kwargs
+    ):
+        super().callback(
+            document_file=document_file, extra_data=extra_data,
+            query_string=query_string, source_id=source_id, user_id=user_id,
+            **kwargs
+        )
+
+        DocumentCreateWizardStep.post_upload_process(
+            document=document_file.document,
+            extra_data=extra_data,
+            query_string=query_string,
+            source_id=source_id,
+            user_id=user_id
+        )
+
+    def get_callback_kwargs(self):
+        callback_kwargs = super().get_callback_kwargs()
+
+        query_string = ''
+
+        query_dict = self.process_kwargs['request'].GET.copy()
+        query_dict.update(self.process_kwargs['request'].POST)
+
+        # Convert into a string. Make sure it is a QueryDict object from a
+        # request and not just a simple dictionary.
+        if hasattr(query_dict, 'urlencode'):
+            query_string = query_dict.urlencode()
+
+        callback_kwargs.update(
+            {
+                'query_string': query_string
+            }
+        )
+
+        return callback_kwargs
+
+    def get_document(self):
+        return self.process_kwargs['document']
+
+    def get_document_description(self):
+        return self.process_kwargs['forms']['document_form'].cleaned_data.get('description')
+
+    def get_document_file_action(self):
+        return int(
+            self.process_kwargs['forms']['document_form'].cleaned_data.get('action')
+        )
+
+    def get_document_file_comment(self):
+        return self.process_kwargs['forms']['document_form'].cleaned_data.get('comment')
+
+    def get_document_label(self):
+        return self.process_kwargs['forms']['document_form'].get_final_label(
+            filename=force_text(self.shared_uploaded_file)
+        )
+
+    def get_document_language(self):
+        return self.process_kwargs['forms']['document_form'].cleaned_data.get('language')
+
+    def get_document_type(self):
+        return self.process_kwargs['document_type']
+
+    def get_user(self):
+        if not self.process_kwargs['request'].user.is_anonymous:
+            return self.process_kwargs['request'].user
+        else:
+            return None
+
+
+class SourceBackendMixinRegularExpression:
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -366,8 +369,8 @@ class SourceBackendRegularExpressionMixin:
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
@@ -394,10 +397,10 @@ class SourceBackendRegularExpressionMixin:
         )
 
 
-class SourceBackendStorageBackendMixin:
+class SourceBackendMixinStorageBackend(BackendMixinCredentialsOptional):
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -415,17 +418,18 @@ class SourceBackendStorageBackendMixin:
                     'required': True
                 },
                 'storage_backend_arguments': {
-                    'class': 'django.forms.CharField',
+                    'class': 'mayan.apps.templating.fields.TemplateField',
                     'default': DEFAULT_STORAGE_BACKEND_ARGUMENTS,
-                    'help_text': _(
-                        'Arguments to pass to the storage backend. Use '
-                        'YAML format.'
-                    ),
                     'kwargs': {
+                        'initial_help_text': _(
+                            'Arguments to pass to the storage backend. Use '
+                            'YAML format. The credential object is '
+                            'available as {{ credential }}.'
+                        ),
                         'max_length': 255,
                     },
                     'label': _('Storage backend arguments'),
-                    'required': True
+                    'required': False
                 }
             }
         )
@@ -433,8 +437,8 @@ class SourceBackendStorageBackendMixin:
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
@@ -449,7 +453,22 @@ class SourceBackendStorageBackendMixin:
         return fieldsets
 
     def get_storage_backend_arguments(self):
-        arguments = self.kwargs.get('storage_backend_arguments', '{}')
+        field_value_arguments = self.kwargs.get(
+            'storage_backend_arguments', '{}'
+        )
+        template_arguments = Template(template_string=field_value_arguments)
+        context = {}
+
+        credential = self.get_credential()
+        if credential:
+            context['credential'] = credential
+
+        arguments = '{}'.format(
+            template_arguments.render(context=context)
+        )
+
+        # Typecast SafeString to str.
+        arguments = arguments.strip()
 
         try:
             return yaml_load(stream=arguments)

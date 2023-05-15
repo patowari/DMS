@@ -1,5 +1,5 @@
 from mayan.apps.source_apps.sources.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
-from mayan.apps.source_apps.sources.tests.mixins import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
 
 from ..source_backends import SourceBackendSANEScanner
 

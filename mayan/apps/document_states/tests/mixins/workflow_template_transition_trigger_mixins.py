@@ -1,11 +1,34 @@
 from django.db.models import Q
 
 from mayan.apps.events.classes import EventType
+from mayan.apps.events.tests.mixins import EventTypeTestMixin
 
 from ...models.workflow_transition_models import WorkflowTransitionTriggerEvent
 
+from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
-class WorkflowTemplateTransitionTriggerAPIViewTestMixin:
+
+class WorkflowTemplateTransitionTriggerTestMixin(
+    EventTypeTestMixin, WorkflowTemplateTransitionTestMixin
+):
+    def setUp(self):
+        super().setUp()
+        self._test_workflow_template_transition_triggers = []
+
+    def _create_test_workflow_template_transition_trigger(self):
+        event_type = EventType.get(id=self._test_event_type.id)
+
+        self._test_workflow_template_transition_trigger = self._test_workflow_template_transition.trigger_events.create(
+            event_type=event_type.get_stored_event_type()
+        )
+        self._test_workflow_template_transition_triggers.append(
+            self._test_workflow_template_transition_trigger
+        )
+
+
+class WorkflowTemplateTransitionTriggerAPIViewTestMixin(
+    WorkflowTemplateTransitionTriggerTestMixin
+):
     def _request_test_workflow_template_transition_trigger_create_api_view(self):
         data = {
             'event_type_id': self._test_event_type.id
@@ -88,23 +111,9 @@ class WorkflowTemplateTransitionTriggerAPIViewTestMixin:
         )
 
 
-class WorkflowTemplateTransitionTriggerTestMixin:
-    def setUp(self):
-        super().setUp()
-        self._test_workflow_template_transition_triggers = []
-
-    def _create_test_workflow_template_transition_trigger(self):
-        event_type = EventType.get(id=self._test_event_type.id)
-
-        self._test_workflow_template_transition_trigger = self._test_workflow_template_transition.trigger_events.create(
-            event_type=event_type.get_stored_event_type()
-        )
-        self._test_workflow_template_transition_triggers.append(
-            self._test_workflow_template_transition_trigger
-        )
-
-
-class WorkflowTemplateTransitionTriggerViewTestMixin:
+class WorkflowTemplateTransitionTriggerViewTestMixin(
+    WorkflowTemplateTransitionTriggerTestMixin
+):
     def _request_test_workflow_template_transition_event_list_view(self):
         return self.get(
             viewname='document_states:workflow_template_transition_triggers',

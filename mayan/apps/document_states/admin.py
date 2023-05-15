@@ -44,5 +44,5 @@ class WorkflowInstanceAdmin(admin.ModelAdmin):
 @admin.register(WorkflowStateAction)
 class WorkflowStateActionAdmin(admin.ModelAdmin):
     list_display = (
-        'state', 'label', 'enabled', 'when', 'action_path', 'action_data'
+        'state', 'label', 'enabled', 'when', 'backend_path', 'backend_data'
     )

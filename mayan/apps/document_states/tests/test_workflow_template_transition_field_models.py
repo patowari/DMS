@@ -1,11 +1,11 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
 from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldTestMixin
 
 
 class WorkflowTemplateTransitionFieldModelTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateTransitionFieldTestMixin,
+    WorkflowInstanceTestMixin, WorkflowTemplateTransitionFieldTestMixin,
     GenericDocumentTestCase
 ):
     auto_upload_test_document = False
@@ -25,7 +25,7 @@ class WorkflowTemplateTransitionFieldModelTestCase(
         transition field. The retrieving the context should work even with an
         obsolete field reference.
         """
-        self._do_transition_test_workflow_instance(
+        self._do_test_workflow_instance_transition(
             extra_data={
                 self._test_workflow_template_transition_field.name: 'test'
             }

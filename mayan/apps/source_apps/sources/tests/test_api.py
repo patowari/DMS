@@ -9,7 +9,8 @@ from ..permissions import (
     permission_sources_edit, permission_sources_view
 )
 
-from .mixins import SourceAPIViewTestMixin, SourceTestMixin
+from .mixins.base import SourceTestMixin
+from .mixins.source_api_view_mixins import SourceAPIViewTestMixin
 
 
 class SourceAPIViewTestCase(

@@ -2,15 +2,10 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..permissions import permission_workflow_template_view
 
-from .mixins.workflow_instance_mixins import WorkflowInstanceViewTestMixin
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_trigger_mixins import (
-    WorkflowTemplateTransitionTriggerViewTestMixin
-)
+from .mixins.workflow_template_transition_trigger_mixins import WorkflowTemplateTransitionTriggerViewTestMixin
 
 
 class WorkflowTemplateTransitionTriggerViewTestCase(
-    WorkflowInstanceViewTestMixin, WorkflowTemplateTestMixin,
     WorkflowTemplateTransitionTriggerViewTestMixin,
     GenericDocumentViewTestCase
 ):

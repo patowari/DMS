@@ -161,8 +161,8 @@ class DocumentStatesApp(MayanAppConfig):
         )
         ModelCopy(model=WorkflowStateAction).add_fields(
             field_names=(
-                'state', 'label', 'enabled', 'when', 'action_path',
-                'action_data', 'condition'
+                'state', 'label', 'enabled', 'when', 'backend_path',
+                'backend_data', 'condition'
             )
         )
         ModelCopy(model=WorkflowTransition).add_fields(
@@ -423,7 +423,7 @@ class DocumentStatesApp(MayanAppConfig):
             label=_('When?'), source=WorkflowStateAction
         )
         SourceColumn(
-            attribute='get_class_label', include_label=True,
+            attribute='get_backend_class_label', include_label=True,
             label=_('Action type'), source=WorkflowStateAction
         )
         SourceColumn(

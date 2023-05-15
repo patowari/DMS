@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.backends import ModelBackend
 
-from mayan.apps.databases.classes import BaseBackend
+from mayan.apps.backends.classes import BaseBackend
 
 
 class DjangoAuthenticationBackendModelEmail(ModelBackend):

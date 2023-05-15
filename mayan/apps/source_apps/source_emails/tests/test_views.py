@@ -1,5 +1,6 @@
 from django.core.exceptions import ValidationError
 
+from mayan.apps.credentials.permissions import permission_credential_use
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created
@@ -32,7 +33,24 @@ class EmailSourceViewTestCase(
         self._clear_events()
 
         response = self._request_test_email_source_create_view()
+        self.assertEqual(response.status_code, 403)
 
+        self.assertEqual(Source.objects.count(), source_count)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_email_source_create_view_with_access(self):
+        self.grant_access(
+            obj=self._test_stored_credential,
+            permission=permission_credential_use
+        )
+
+        source_count = Source.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_email_source_create_view()
         self.assertEqual(response.status_code, 403)
 
         self.assertEqual(Source.objects.count(), source_count)
@@ -42,13 +60,30 @@ class EmailSourceViewTestCase(
 
     def test_email_source_create_view_with_permission(self):
         self.grant_permission(permission=permission_sources_create)
+        source_count = Source.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_email_source_create_view()
+        self.assertEqual(response.status_code, 200)
+
+        self.assertEqual(Source.objects.count(), source_count)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_email_source_create_view_with_access_and_permission(self):
+        self.grant_access(
+            obj=self._test_stored_credential,
+            permission=permission_credential_use
+        )
+        self.grant_permission(permission=permission_sources_create)
 
         source_count = Source.objects.count()
 
         self._clear_events()
 
         response = self._request_test_email_source_create_view()
-
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Source.objects.count(), source_count + 1)

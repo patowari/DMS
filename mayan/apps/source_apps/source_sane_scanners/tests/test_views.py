@@ -8,7 +8,7 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.source_apps.sources.tests.mixins import (
+from mayan.apps.source_apps.sources.tests.mixins.base import (
     DocumentFileUploadViewTestMixin, DocumentUploadWizardViewTestMixin
 )
 

@@ -13,7 +13,7 @@ from .icons import (
     icon_document_version_link_send_multiple,
     icon_document_version_attachment_send_multiple, icon_user_mailer_create,
     icon_user_mailer_delete, icon_user_mailer_edit, icon_user_mailer_list,
-    icon_user_mailer_setup, icon_user_mailer_test
+    icon_user_mailer_test
 )
 from .permissions import (
     permission_send_document_file_attachment,
@@ -110,12 +110,7 @@ link_user_mailer_edit = Link(
 link_user_mailer_list = Link(
     icon=icon_user_mailer_list,
     permissions=(permission_user_mailer_view,),
-    text=_('Mailing profiles list'), view='mailer:user_mailer_list'
-)
-link_user_mailer_setup = Link(
-    icon=icon_user_mailer_setup,
-    permissions=(permission_user_mailer_view,), text=_('Mailing profiles'),
-    view='mailer:user_mailer_list'
+    text=_('Mailing profiles'), view='mailer:user_mailer_list'
 )
 link_user_mailer_test = Link(
     args='object.pk', icon=icon_user_mailer_test,

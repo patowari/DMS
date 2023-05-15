@@ -7,17 +7,11 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_escalation_mixins import (
-    WorkflowTemplateStateEscalationAPIViewTestMixin,
-    WorkflowTemplateStateEscalationTestMixin
-)
+from .mixins.workflow_template_state_escalation_mixins import WorkflowTemplateStateEscalationAPIViewTestMixin
 
 
 class WorkflowTemplateStateEscalationsAPIViewTestCase(
-    WorkflowTemplateStateEscalationAPIViewTestMixin,
-    WorkflowTemplateStateEscalationTestMixin, WorkflowTemplateTestMixin,
-    BaseAPITestCase
+    WorkflowTemplateStateEscalationAPIViewTestMixin, BaseAPITestCase
 ):
     def setUp(self):
         super().setUp()

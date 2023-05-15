@@ -56,7 +56,11 @@ class QuotaBackend(QuotaBackendBase, metaclass=QuotaBackendMetaclass):
 
     @staticmethod
     def _queryset_to_text_list(queryset):
-        return ','.join(list(map(str, queryset))) or _('none')
+        return ','.join(
+            list(
+                map(str, queryset)
+            )
+        ) or _('none')
 
     @staticmethod
     def connect_signals():

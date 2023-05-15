@@ -1,21 +1,16 @@
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.acls.models import AccessControlList
-
 from .models import UserMailer
 from .permissions import permission_user_mailer_use
 
 
 class ObjectEmailActionMixin:
-    fields = {
-        'mailing_profile': {
-            'label': _('Mailing profile'),
-            'class': 'django.forms.ModelChoiceField', 'kwargs': {
-                'help_text': _(
-                    'Mailing profile to use when sending the email.'
-                ), 'queryset': UserMailer.objects.none(), 'required': True
-            }
-        },
+    form_field_widgets = {
+        'body': {
+            'class': 'django.forms.widgets.Textarea', 'kwargs': {}
+        }
+    }
+    form_fields = {
         'recipient': {
             'label': _('Recipient'),
             'class': 'django.forms.CharField', 'kwargs': {
@@ -91,17 +86,52 @@ class ObjectEmailActionMixin:
             'required': False
         }
     }
-    field_order = (
-        'mailing_profile', 'recipient', 'cc', 'bcc', 'reply_to', 'subject',
-        'body'
-    )
     label = _('Send object via email')
-    widgets = {
-        'body': {
-            'class': 'django.forms.widgets.Textarea', 'kwargs': {}
-        }
-    }
     permission = permission_user_mailer_use
+
+    @classmethod
+    def get_form_fields(cls, *args, **kwargs):
+        fields = super().get_form_fields(*args, **kwargs)
+
+        fields.update(
+            {
+                'mailing_profile': {
+                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
+                    'help_text': _(
+                        'Mailing profile to use when sending the email.'
+                    ),
+                    'kwargs': {
+                        'source_queryset': UserMailer.objects.filter(enabled=True),
+                        'permission': cls.permission
+                    },
+                    'label': _('Mailing profile'),
+                    'required': True
+                }
+            }
+        )
+
+        return fields
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('Mailing profile'), {
+                    'fields': ('mailing_profile',)
+                }
+            ), (
+                _('Parties'), {
+                    'fields': ('recipient', 'cc', 'bcc', 'reply_to')
+                },
+            ), (
+                _('Content'), {
+                    'fields': ('subject', 'attachment', 'body')
+                },
+            )
+        )
+        return fieldsets
 
     def execute(self, context):
         user_mailer = self.get_user_mailer()
@@ -137,23 +167,10 @@ class ObjectEmailActionMixin:
 
         return kwargs
 
-    def get_form_schema(self, **kwargs):
-        result = super().get_form_schema(**kwargs)
-
-        queryset = AccessControlList.objects.restrict_queryset(
-            permission=self.permission,
-            queryset=UserMailer.objects.filter(enabled=True),
-            user=kwargs['request'].user
-        )
-
-        result['fields']['mailing_profile']['kwargs']['queryset'] = queryset
-
-        return result
-
     def get_object(self, context):
         return NotImplementedError
 
     def get_user_mailer(self):
         return UserMailer.objects.get(
-            pk=self.form_data['mailing_profile']
+            pk=self.kwargs['mailing_profile']
         )

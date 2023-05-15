@@ -5,9 +5,8 @@ from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 from mayan.apps.source_apps.sources.source_backends.literals import (
     DEFAULT_PERIOD_INTERVAL, SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
-from mayan.apps.source_apps.sources.tests.mixins import (
-    SourceTestMixin, SourceViewTestMixin
-)
+from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
+from mayan.apps.source_apps.sources.tests.mixins.source_view_mixins import SourceViewTestMixin
 
 from ..source_backends import SourceBackendWatchStorage
 

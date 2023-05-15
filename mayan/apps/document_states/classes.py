@@ -4,13 +4,12 @@ from django.apps import apps
 from django.db.utils import OperationalError, ProgrammingError
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.backends.classes import DynamicFormModelBackend
 from mayan.apps.common.classes import PropertyHelper
-from mayan.apps.databases.classes import BaseBackend
 from mayan.apps.templating.classes import Template
 
 from .exceptions import WorkflowStateActionError
 
-__all__ = ('WorkflowAction',)
 logger = logging.getLogger(name=__name__)
 
 
@@ -24,17 +23,18 @@ class DocumentStateHelper(PropertyHelper):
         return self.instance.workflows.get(workflow__internal_name=name)
 
 
-class WorkflowAction(BaseBackend):
+class WorkflowAction(DynamicFormModelBackend):
+    _backend_app_label = 'document_states'
+    _backend_model_name = 'WorkflowStateAction'
     _loader_module_name = 'workflow_actions'
-    fields = {}
-    previous_dotted_paths = ()
 
-    @classmethod
-    def load_modules(cls):
-        super().load_modules()
-
-        for action_class in WorkflowAction.get_all():
-            action_class.migrate()
+    form_fieldsets = (
+        (
+            _('General'), {
+                'fields': ('label', 'enabled', 'when', 'condition')
+            }
+        ),
+    )
 
     @classmethod
     def clean(cls, request, form_data=None):
@@ -52,9 +52,13 @@ class WorkflowAction(BaseBackend):
         for klass in WorkflowAction.get_all():
             for app_name, app in apps_name_map.items():
                 if klass.__module__.startswith(app_name):
-                    apps_workflow_action_map.setdefault(app, [])
+                    apps_workflow_action_map.setdefault(
+                        app, []
+                    )
                     apps_workflow_action_map[app].append(
-                        (klass.id(), klass.label)
+                        (
+                            klass.backend_id, klass.label
+                        )
                     )
 
         result = [
@@ -62,11 +66,11 @@ class WorkflowAction(BaseBackend):
         ]
 
         # Sort by app, then by workflow action.
-        return sorted(result, key=lambda x: (x[0], x[1]))
-
-    @classmethod
-    def id(cls):
-        return cls.backend_id
+        return sorted(
+            result, key=lambda x: (
+                x[0], x[1]
+            )
+        )
 
     @classmethod
     def migrate(cls):
@@ -76,49 +80,27 @@ class WorkflowAction(BaseBackend):
         for previous_dotted_path in cls.previous_dotted_paths:
             try:
                 WorkflowStateAction.objects.filter(
-                    action_path=previous_dotted_path
-                ).update(action_path=cls.id())
+                    backend_path=previous_dotted_path
+                ).update(
+                    backend_path=cls.id()
+                )
             except (OperationalError, ProgrammingError):
                 # Ignore errors during the database migration and
                 # quit further attempts.
                 return
 
-    def __init__(self, form_data=None):
-        self.form_data = form_data
-
     def execute(self, context):
         raise NotImplementedError
 
-    def get_fields(self):
-        return getattr(self, 'fields', {})
-
-    def get_field_order(self):
-        return getattr(self, 'field_order', ())
-
-    def get_media(self):
-        return getattr(self, 'media', {})
-
-    def get_form_schema(self, workflow_state, request=None):
-        result = {
-            'fields': self.get_fields(),
-            'media': self.get_media(),
-            'widgets': self.get_widgets(),
-        }
-
-        field_order = self.get_field_order()
-
-        if field_order:
-            result['field_order'] = field_order
-
-        return result
-
-    def get_widgets(self):
-        return getattr(self, 'widgets', {})
+    @classmethod
+    def get_form_schema(cls, workflow_state, **kwargs):
+        cls.workflow_state = workflow_state
+        return super().get_form_schema(**kwargs)
 
     def render_field(self, field_name, context):
         try:
             result = Template(
-                template_string=self.form_data.get(field_name, '')
+                template_string=self.kwargs.get(field_name, '')
             ).render(
                 context=context
             )
@@ -132,3 +114,7 @@ class WorkflowAction(BaseBackend):
         logger.debug('%s template result: %s', field_name, result)
 
         return result
+
+
+class WorkflowActionNull(WorkflowAction):
+    label = _('Null backend')

@@ -1,7 +1,9 @@
 from mayan.apps.document_states.events import event_workflow_template_edited
 from mayan.apps.document_states.permissions import permission_workflow_template_edit
-from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionTestMixin,
+    WorkflowTemplateStateActionViewTestMixin
+)
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..events import (
@@ -28,7 +30,8 @@ from .mixins import DocumentMetadataMixin, MetadataTypeTestMixin
 
 
 class DocumentMetadataActionTestCase(
-    DocumentMetadataMixin, MetadataTypeTestMixin, GenericDocumentViewTestCase
+    DocumentMetadataMixin, MetadataTypeTestMixin,
+    WorkflowTemplateStateActionTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -41,16 +44,15 @@ class DocumentMetadataActionTestCase(
         )
 
     def test_document_metadata_add_action(self):
-        action = DocumentMetadataAddAction(
-            form_data={'metadata_types': MetadataType.objects.all()}
-        )
-
         metadata_count = self._test_document.metadata.count()
 
         self._clear_events()
 
-        action.execute(context={'document': self._test_document})
-
+        self._execute_workflow_template_state_action(
+            klass=DocumentMetadataAddAction, kwargs={
+                'metadata_types': MetadataType.objects.all()
+            }
+        )
         self.assertEqual(
             self._test_document.metadata.count(), metadata_count + 1
         )
@@ -71,19 +73,16 @@ class DocumentMetadataActionTestCase(
     def test_document_metadata_edit_action(self):
         self._create_test_document_metadata()
 
-        action = DocumentMetadataEditAction(
-            form_data={
-                'metadata_type': self._test_metadata_type.pk,
-                'value': TEST_METADATA_VALUE_EDITED
-            }
-        )
-
         metadata_value = self._test_document.metadata.first().value
 
         self._clear_events()
 
-        action.execute(context={'document': self._test_document})
-
+        self._execute_workflow_template_state_action(
+            klass=DocumentMetadataEditAction, kwargs={
+                'metadata_type': self._test_metadata_type.pk,
+                'value': TEST_METADATA_VALUE_EDITED
+            }
+        )
         self.assertNotEqual(
             metadata_value, self._test_document.metadata.first().value
         )
@@ -99,16 +98,15 @@ class DocumentMetadataActionTestCase(
     def test_document_metadata_remove_action(self):
         self._create_test_document_metadata()
 
-        action = DocumentMetadataRemoveAction(
-            form_data={'metadata_types': MetadataType.objects.all()}
-        )
-
         metadata_count = self._test_document.metadata.count()
 
         self._clear_events()
 
-        action.execute(context={'document': self._test_document})
-
+        self._execute_workflow_template_state_action(
+            klass=DocumentMetadataRemoveAction, kwargs={
+                'metadata_types': MetadataType.objects.all()
+            }
+        )
         self.assertEqual(
             self._test_document.metadata.count(), metadata_count - 1
         )
@@ -129,9 +127,10 @@ class DocumentMetadataActionTestCase(
 
 class DocumentMetadataActionViewTestCase(
     DocumentMetadataMixin, MetadataTypeTestMixin,
-    WorkflowTemplateStateActionViewTestMixin, WorkflowTemplateTestMixin,
-    GenericDocumentViewTestCase
+    WorkflowTemplateStateActionViewTestMixin, GenericDocumentViewTestCase
 ):
+    auto_create_test_workflow_template = False
+    auto_create_test_workflow_template_state = False
     auto_upload_test_document = False
 
     def setUp(self):
@@ -160,7 +159,7 @@ class DocumentMetadataActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path=DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH, extra_data={
+            backend_path=DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH, extra_data={
                 'metadata_types': self._test_metadata_type.pk
             }
         )
@@ -192,9 +191,9 @@ class DocumentMetadataActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path=DOCUMENT_METADATA_EDIT_ACTION_CLASS_PATH, extra_data={
+            backend_path=DOCUMENT_METADATA_EDIT_ACTION_CLASS_PATH, extra_data={
                 'metadata_type': self._test_metadata_type.pk,
-                'value': TEST_METADATA_VALUE
+                'value_template': TEST_METADATA_VALUE
             }
         )
         self.assertEqual(response.status_code, 302)
@@ -225,7 +224,7 @@ class DocumentMetadataActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path=DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH,
+            backend_path=DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH,
             extra_data={
                 'metadata_types': self._test_metadata_type.pk
             }

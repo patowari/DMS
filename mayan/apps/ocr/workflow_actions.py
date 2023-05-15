@@ -10,19 +10,19 @@ __all__ = ('UpdateDocumentPageOCRAction',)
 
 
 class UpdateDocumentPageOCRAction(WorkflowAction):
-    fields = {
+    form_fields = {
         'page_condition': {
             'label': _('Page condition'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    'The condition that will determine if a document page\'s '
-                    'OCR content will be modified or not. The condition is '
-                    'evaluated against the iterated document page. '
-                    'Conditions that do not return any value, that return '
-                    'the Python logical None, or an empty string (\'\') '
-                    'are considered to be logical false, any other value is '
-                    'considered to be the logical true.'
+                    'The condition that will determine if a document '
+                    'page\'s OCR content will be modified or not. The '
+                    'condition is evaluated against the iterated document '
+                    'page. Conditions that do not return any value, '
+                    'that return the Python logical None, or an empty '
+                    'string (\'\') are considered to be logical false, '
+                    'any other value is considered to be the logical true.'
                 ), 'required': False, 'model': DocumentVersionPage,
                 'model_variable': 'document_page'
             }
@@ -39,8 +39,20 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
             }
         }
     }
-    field_order = ('page_condition', 'page_content')
     label = _('Update document page OCR content')
+
+    @classmethod
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
+
+        fieldsets += (
+            (
+                _('OCR'), {
+                    'fields': ('page_condition', 'page_content')
+                },
+            ),
+        )
+        return fieldsets
 
     def evaluate_condition(self, context, condition=None):
         if condition:
@@ -51,13 +63,20 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
             return False
 
     def execute(self, context):
-        for document_version_page in context['document'].pages:
+        document = context['workflow_instance'].document
+
+        for document_version_page in document.pages:
             context['document_version_page'] = document_version_page
-            if self.evaluate_condition(context=context, condition=self.form_data['page_condition']):
+
+            condition_result = self.evaluate_condition(
+                context=context, condition=self.kwargs['page_condition']
+            )
+
+            if condition_result:
                 DocumentVersionPageOCRContent.objects.update_or_create(
                     document_version_page=document_version_page, defaults={
                         'content': Template(
-                            template_string=self.form_data['page_content']
+                            template_string=self.kwargs['page_content']
                         ).render(context=context)
                     }
                 )

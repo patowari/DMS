@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.source_apps.sources.classes import SourceBackend
 from mayan.apps.source_apps.sources.exceptions import SourceException
-from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendCompressedPeriodicMixin
+from mayan.apps.source_apps.sources.source_backends.source_backend_mixins import SourceBackendMixinCompressedPeriodic
 
 from .literals import (
     DEFAULT_EMAIL_IMAP_MAILBOX, DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
@@ -17,14 +17,14 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendIMAPEmail(
-    SourceBackendCompressedPeriodicMixin, SourceBackendEmailMixin,
+    SourceBackendMixinCompressedPeriodic, SourceBackendEmailMixin,
     SourceBackend
 ):
     label = _('IMAP email')
 
     @classmethod
-    def get_setup_form_field_widgets(cls):
-        widgets = super().get_setup_form_field_widgets()
+    def get_form_field_widgets(cls):
+        widgets = super().get_form_field_widgets()
 
         widgets.update(
             {
@@ -40,8 +40,8 @@ class SourceBackendIMAPEmail(
         return widgets
 
     @classmethod
-    def get_setup_form_fields(cls):
-        fields = super().get_setup_form_fields()
+    def get_form_fields(cls):
+        fields = super().get_form_fields()
 
         fields.update(
             {
@@ -110,8 +110,8 @@ class SourceBackendIMAPEmail(
         return fields
 
     @classmethod
-    def get_setup_form_fieldsets(cls):
-        fieldsets = super().get_setup_form_fieldsets()
+    def get_form_fieldsets(cls):
+        fieldsets = super().get_form_fieldsets()
 
         fieldsets += (
             (
@@ -144,15 +144,16 @@ class SourceBackendIMAPEmail(
 
         imap_module = getattr(imaplib, imap_module_name)
 
-        kwargs = {
+        imap_module_kwargs = {
             'host': self.kwargs['host'], 'port': self.kwargs['port']
         }
 
-        with imap_module(**kwargs) as server:
-            server.login(
-                password=self.kwargs['password'],
-                user=self.kwargs['username']
-            )
+        with imap_module(**imap_module_kwargs) as server:
+            credential = self.get_credential()
+            password = credential.get('password')
+            username = credential.get('username')
+
+            server.login(password=password, user=username)
 
             try:
                 server.select(

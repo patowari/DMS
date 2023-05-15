@@ -10,11 +10,11 @@ from ..links import (
 )
 from ..permissions import permission_workflow_template_view
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from .mixins.workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 
 
 class WorkflowRuntimeProxyLinkTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -32,7 +32,9 @@ class WorkflowRuntimeProxyLinkTestCase(
 
         self._create_test_workflow_template(add_test_document_type=True)
 
-        self._resolve_test_link(test_object=self._test_workflow_runtime_proxy)
+        self._resolve_test_link(
+            test_object=self._test_workflow_runtime_proxy
+        )
 
         self.assertEqual(self.resolved_test_link, None)
 
@@ -46,7 +48,9 @@ class WorkflowRuntimeProxyLinkTestCase(
             permission=permission_workflow_template_view
         )
 
-        self._resolve_test_link(test_object=self._test_workflow_runtime_proxy)
+        self._resolve_test_link(
+            test_object=self._test_workflow_runtime_proxy
+        )
 
         self.assertNotEqual(self.resolved_test_link, None)
         self.assertEqual(
@@ -128,7 +132,9 @@ class WorkflowRuntimeProxyLinkTestCase(
 
         self._create_test_workflow_template(add_test_document_type=True)
 
-        self._resolve_test_link(test_object=self._test_workflow_runtime_proxy)
+        self._resolve_test_link(
+            test_object=self._test_workflow_runtime_proxy
+        )
         self.assertEqual(self.resolved_test_link, None)
 
     def test_workflow_runtime_proxy_state_list_link_with_access(self):
@@ -141,7 +147,9 @@ class WorkflowRuntimeProxyLinkTestCase(
             permission=permission_workflow_template_view
         )
 
-        self._resolve_test_link(test_object=self._test_workflow_runtime_proxy)
+        self._resolve_test_link(
+            test_object=self._test_workflow_runtime_proxy
+        )
 
         self.assertNotEqual(self.resolved_test_link, None)
         self.assertEqual(

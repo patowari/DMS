@@ -1,7 +1,7 @@
 from ..classes import WorkflowAction
 
 
-class TestWorkflowAction(WorkflowAction):
+class WorkflowActionTest(WorkflowAction):
     label = 'test workflow state action'
 
     def execute(self, context):

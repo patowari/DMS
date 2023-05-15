@@ -9,8 +9,45 @@ from ..literals import (
     TEST_WORKFLOW_TEMPLATE_STATE_LABEL_EDITED
 )
 
+from .workflow_template_mixins import WorkflowTemplateTestMixin
 
-class WorkflowTemplateStateAPIViewTestMixin:
+
+class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
+    auto_create_test_workflow_template_state = False
+
+    def setUp(self):
+        super().setUp()
+        self._test_workflow_template_states = []
+
+        if self.auto_create_test_workflow_template_state:
+            self._create_test_workflow_template_state()
+
+    def _create_test_workflow_template_state(self):
+        total_test_workflow_template_states = len(
+            self._test_workflow_template_states
+        )
+        label = '{}_{}'.format(
+            TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
+            total_test_workflow_template_states
+        )
+        initial = self._test_workflow_template.states.count() == 0
+
+        self._test_workflow_template_state = self._test_workflow_template.states.create(
+            completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
+            initial=initial, label=label
+        )
+        self._test_workflow_template_states.append(
+            self._test_workflow_template_state
+        )
+        self._test_workflow_template_state_runtime_proxy = WorkflowStateRuntimeProxy.objects.get(
+            pk=self._test_workflow_template_state.pk
+        )
+        self._test_workflow_template_state_runtime_proxies.append(
+            self._test_workflow_template_state_runtime_proxy
+        )
+
+
+class WorkflowTemplateStateAPIViewTestMixin(WorkflowTemplateStateTestMixin):
     def _request_test_workflow_template_state_create_api_view(self):
         pk_list = list(
             WorkflowState.objects.values('pk')
@@ -83,37 +120,7 @@ class WorkflowTemplateStateAPIViewTestMixin:
         )
 
 
-class WorkflowTemplateStateTestMixin:
-    def setUp(self):
-        super().setUp()
-        self._test_workflow_template_states = []
-
-    def _create_test_workflow_template_state(self):
-        total_test_workflow_template_states = len(
-            self._test_workflow_template_states
-        )
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-            total_test_workflow_template_states
-        )
-        initial = self._test_workflow_template.states.count() == 0
-
-        self._test_workflow_template_state = self._test_workflow_template.states.create(
-            completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
-            initial=initial, label=label
-        )
-        self._test_workflow_template_states.append(
-            self._test_workflow_template_state
-        )
-        self._test_workflow_template_state_runtime_proxy = WorkflowStateRuntimeProxy.objects.get(
-            pk=self._test_workflow_template_state.pk
-        )
-        self._test_workflow_template_state_runtime_proxies.append(
-            self._test_workflow_template_state_runtime_proxy
-        )
-
-
-class WorkflowTemplateStateViewTestMixin:
+class WorkflowTemplateStateViewTestMixin(WorkflowTemplateStateTestMixin):
     def _request_test_workflow_template_state_create_view(self, extra_data=None):
         pk_list = list(
             WorkflowState.objects.values_list('pk', flat=True)

@@ -1,8 +1,8 @@
 import json
 from unittest import mock
 
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.testing.tests.base import GenericViewTestCase
+from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
+from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 from mayan.apps.testing.tests.mixins import TestServerTestCaseMixin
 from mayan.apps.testing.tests.mocks import request_method_factory
 
@@ -26,31 +26,30 @@ from .literals import (
     TEST_PAYLOAD_TEMPLATE_DOCUMENT_LABEL, TEST_SERVER_USERNAME,
     TEST_SERVER_PASSWORD
 )
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
 from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionLaunchViewTestMixin,
+    WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
+from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
 
 class HTTPWorkflowActionTestCase(
-    TestServerTestCaseMixin, WorkflowTemplateTestMixin,
-    GenericDocumentViewTestCase
+    TestServerTestCaseMixin, WorkflowTemplateStateActionTestMixin,
+    GenericViewTestCase
 ):
-    auto_upload_test_document = False
     auto_add_test_view = True
 
     @mock.patch('requests.sessions.Session.get_adapter')
     def test_http_post_action_simple(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
                 'method': 'POST',
                 'url': self.testserver_url
             }
         )
-        action.execute(context={})
 
         self.assertFalse(self.test_view_request is None)
 
@@ -58,14 +57,13 @@ class HTTPWorkflowActionTestCase(
     def test_http_post_action_payload_simple(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'payload': TEST_PAYLOAD_JSON,
-                'url': self.testserver_url,
-                'method': 'POST'
+                'url': self.testserver_url
             }
         )
-        action.execute(context={})
 
         self.assertEqual(
             json.loads(s=self.test_view_request.body),
@@ -78,14 +76,13 @@ class HTTPWorkflowActionTestCase(
 
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'payload': TEST_PAYLOAD_TEMPLATE_DOCUMENT_LABEL,
-                'url': self.testserver_url,
-                'method': 'POST'
+                'url': self.testserver_url
             }
         )
-        action.execute(context={'document': self._test_document})
 
         self.assertEqual(
             json.loads(s=self.test_view_request.body),
@@ -96,14 +93,13 @@ class HTTPWorkflowActionTestCase(
     def test_http_post_action_headers_simple(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'headers': TEST_HEADERS_JSON,
-                'url': self.testserver_url,
-                'method': 'POST'
+                'url': self.testserver_url
             }
         )
-        action.execute(context={})
 
         self.assertTrue(
             TEST_HEADERS_KEY in self.test_view_request.META,
@@ -118,15 +114,13 @@ class HTTPWorkflowActionTestCase(
 
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'headers': TEST_HEADERS_JSON_TEMPLATE,
-                'url': self.testserver_url,
-                'method': 'POST'
+                'url': self.testserver_url
             }
         )
-        action.execute(context={'document': self._test_document})
-
         self.assertTrue(
             TEST_HEADERS_JSON_TEMPLATE_KEY in self.test_view_request.META,
         )
@@ -139,16 +133,14 @@ class HTTPWorkflowActionTestCase(
     def test_http_post_action_authentication(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'password': TEST_SERVER_PASSWORD,
                 'url': self.testserver_url,
                 'username': TEST_SERVER_USERNAME,
-                'method': 'POST'
             }
         )
-        action.execute(context={})
-
         self.assertTrue(
             TEST_HEADERS_AUTHENTICATION_KEY in self.test_view_request.META,
         )
@@ -161,61 +153,101 @@ class HTTPWorkflowActionTestCase(
     def test_http_post_action_timeout_value_int(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'timeout': '1',
-                'url': self.testserver_url,
-                'method': 'POST'
+                'url': self.testserver_url
             }
         )
-        action.execute(context={})
-
         self.assertEqual(self.timeout, 1)
 
     @mock.patch('requests.sessions.Session.get_adapter')
     def test_http_post_action_timeout_value_float(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
                 'timeout': '1.5',
-                'url': self.testserver_url,
-                'method': 'POST'
+                'url': self.testserver_url
             }
         )
-        action.execute(context={})
-
         self.assertEqual(self.timeout, 1.5)
 
     @mock.patch('requests.sessions.Session.get_adapter')
     def test_http_post_action_timeout_value_none(self, mock_object):
         mock_object.side_effect = request_method_factory(test_case=self)
 
-        action = HTTPAction(
-            form_data={
-                'url': self.testserver_url,
-                'method': 'POST'
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
+                'url': self.testserver_url
             }
         )
-        action.execute(context={})
-
         self.assertEqual(self.timeout, None)
 
 
-class HTTPWorkflowActionViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateStateActionViewTestMixin,
-    GenericViewTestCase
+class HTTPCredentialTemplateWorkflowActionTestCase(
+    StoredCredentialPasswordUsernameTestMixin, TestServerTestCaseMixin,
+    WorkflowTemplateStateActionTestMixin, GenericViewTestCase
 ):
-    def setUp(self):
-        super().setUp()
-        self._create_test_workflow_template()
-        self._create_test_workflow_template_state()
+    auto_add_test_view = True
 
+    @mock.patch('requests.sessions.Session.get_adapter')
+    def test_http_post_action_headers_template(self, mock_object):
+        self._create_test_document_stub()
+
+        mock_object.side_effect = request_method_factory(test_case=self)
+
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'headers': '{{"{}": "{}"}}'.format(
+                    TEST_HEADERS_JSON_TEMPLATE_KEY, '{{ credential.password }}'
+                ),
+                'method': 'POST',
+                'stored_credential_id': self._test_stored_credential.pk,
+                'url': self.testserver_url
+            }
+        )
+        self.assertTrue(
+            TEST_HEADERS_JSON_TEMPLATE_KEY in self.test_view_request.META,
+        )
+        self.assertEqual(
+            self.test_view_request.META[TEST_HEADERS_JSON_TEMPLATE_KEY],
+            self._test_stored_credential._password
+        )
+
+    @mock.patch('requests.sessions.Session.get_adapter')
+    def test_http_post_action_authentication(self, mock_object):
+        mock_object.side_effect = request_method_factory(test_case=self)
+
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
+                'password': '{{ credential.password }}',
+                'stored_credential_id': self._test_stored_credential.pk,
+                'url': self.testserver_url,
+                'username': '{{ credential.username }}'
+            }
+        )
+        self.assertTrue(
+            TEST_HEADERS_AUTHENTICATION_KEY in self.test_view_request.META,
+        )
+        self.assertEqual(
+            self.test_view_request.META[TEST_HEADERS_AUTHENTICATION_KEY],
+            'Basic dGVzdF9jcmVkZW50aWFsX3VzZXJuYW1lOnRlc3RfY3JlZGVudGlhbF9wYXNzd29yZA=='
+        )
+
+
+class HTTPWorkflowActionViewTestCase(
+    WorkflowTemplateStateActionViewTestMixin, GenericViewTestCase
+):
     def test_http_workflow_state_action_create_post_view_no_permission(self):
         action_count = self._test_workflow_template_state.actions.count()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path='mayan.apps.document_states.workflow_actions.HTTPAction',
+            backend_path='mayan.apps.document_states.workflow_actions.HTTPAction',
             extra_data={
                 'method_template': 'POST', 'timeout_template': '0',
                 'url_template': '127.0.0.1'
@@ -236,7 +268,7 @@ class HTTPWorkflowActionViewTestCase(
         action_count = self._test_workflow_template_state.actions.count()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            class_path='mayan.apps.document_states.workflow_actions.HTTPAction',
+            backend_path='mayan.apps.document_states.workflow_actions.HTTPAction',
             extra_data={
                 'method_template': 'POST', 'timeout_template': '0',
                 'url_template': '127.0.0.1'
@@ -251,22 +283,19 @@ class HTTPWorkflowActionViewTestCase(
 
 
 class DocumentPropertiesEditActionTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateActionTestMixin,
+    WorkflowTemplateTransitionTestMixin, BaseTestCase
 ):
-    auto_upload_test_document = False
-
     def test_document_properties_edit_action_field_literals(self):
-        self._create_test_document_stub()
-
-        action = DocumentPropertiesEditAction(
-            form_data=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DATA
-        )
-
         test_values = self._model_instance_to_dictionary(
             instance=self._test_document
         )
 
-        action.execute(context={'document': self._test_document})
+        self._execute_workflow_template_state_action(
+            klass=DocumentPropertiesEditAction,
+            kwargs=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DATA
+        )
+
         self._test_document.refresh_from_db()
 
         self.assertNotEqual(
@@ -276,14 +305,12 @@ class DocumentPropertiesEditActionTestCase(
         )
 
     def test_document_properties_edit_action_field_templates(self):
-        self._create_test_document_stub()
-
         label = self._test_document.label
 
-        action = DocumentPropertiesEditAction(
-            form_data=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEMPLATE_DATA
+        self._execute_workflow_template_state_action(
+            klass=DocumentPropertiesEditAction,
+            kwargs=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEMPLATE_DATA
         )
-        action.execute(context={'document': self._test_document})
 
         self.assertEqual(
             self._test_document.label,
@@ -294,27 +321,24 @@ class DocumentPropertiesEditActionTestCase(
             label
         )
 
-    def test_document_properties_edit_action_workflow_execute(self):
-        self._create_test_workflow_template(add_test_document_type=True)
+    def test_document_properties_edit_action_workflow_transition(self):
         self._create_test_workflow_template_state()
-        self._create_test_workflow_template_state()
-        self._create_test_workflow_template_transition()
         self._create_test_workflow_template_transition()
 
         self._test_workflow_template_states[1].actions.create(
-            action_data=json.dumps(
+            backend_data=json.dumps(
                 obj=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DATA
             ),
-            action_path=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
+            backend_path=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
             label='', when=WORKFLOW_ACTION_ON_ENTRY,
         )
-
-        self._create_test_document_stub()
 
         test_workflow_instance = self._test_document.workflows.first()
         test_workflow_instance.do_transition(
             transition=self._test_workflow_template_transition
         )
+
+        self._test_document.refresh_from_db()
 
         self.assertEqual(
             self._test_document.label,
@@ -327,37 +351,31 @@ class DocumentPropertiesEditActionTestCase(
 
 
 class DocumentWorkflowLaunchActionTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateActionTestMixin, BaseTestCase
 ):
-    auto_upload_test_document = False
-
     def test_document_workflow_launch_action(self):
         self._create_test_workflow_template(
             add_test_document_type=True, auto_launch=False
         )
         self._create_test_workflow_template_state()
 
-        self._create_test_document_stub()
-
-        action = DocumentWorkflowLaunchAction(
-            form_data={'workflows': Workflow.objects.all()}
-        )
-
         workflow_count = self._test_document.workflows.count()
 
-        action.execute(context={'document': self._test_document})
+        self._execute_workflow_template_state_action(
+            klass=DocumentWorkflowLaunchAction,
+            kwargs={
+                'workflows': Workflow.objects.exclude(pk=self._test_workflow_instance.workflow.pk)
+            }
+        )
 
-        self.assertTrue(
+        self.assertEqual(
             self._test_document.workflows.count(), workflow_count + 1
         )
 
 
 class DocumentWorkflowLaunchActionViewTestCase(
-    WorkflowTemplateStateActionLaunchViewTestMixin,
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateActionLaunchViewTestMixin, GenericViewTestCase
 ):
-    auto_upload_test_document = False
-
     def test_document_workflow_launch_action_view_with_full_access(self):
         self._create_test_workflow_template(
             add_test_document_type=True, auto_launch=False
@@ -375,7 +393,11 @@ class DocumentWorkflowLaunchActionViewTestCase(
 
         action_count = self._test_workflow_template_state.actions.count()
 
-        response = self._request_document_workflow_template_launch_action_create_view()
+        response = self._request_document_workflow_template_launch_action_create_view(
+            extra_data={
+                'workflows': self._test_workflow_templates[0].pk
+            }
+        )
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
@@ -384,6 +406,12 @@ class DocumentWorkflowLaunchActionViewTestCase(
         )
 
     def test_document_workflow_launch_action_view_and_document_create_with_full_access(self):
+        self._test_document.delete()  # Send test document to trash.
+        self._test_document.delete()  # Delete test document.
+
+        self._test_workflow_template.delete()  # Delete templates.
+        self._test_workflow_templates = []  # Delete templates.
+
         self._create_test_workflow_template(
             add_test_document_type=True, auto_launch=False
         )
@@ -392,7 +420,6 @@ class DocumentWorkflowLaunchActionViewTestCase(
             add_test_document_type=True, auto_launch=True
         )
         self._create_test_workflow_template_state()
-
         self.grant_access(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
@@ -401,7 +428,11 @@ class DocumentWorkflowLaunchActionViewTestCase(
         action_count = self._test_workflow_template_state.actions.count()
         workflow_instance_count = WorkflowInstance.objects.count()
 
-        response = self._request_document_workflow_template_launch_action_create_view()
+        response = self._request_document_workflow_template_launch_action_create_view(
+            extra_data={
+                'workflows': self._test_workflow_templates[0].pk
+            }
+        )
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(

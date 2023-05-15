@@ -1,18 +1,26 @@
 from django import forms as django_forms
+from django.core.exceptions import ImproperlyConfigured
 from django.utils.module_loading import import_string
 
 
-class DynamicFormMixin:
-    def __init__(self, *args, **kwargs):
-        self.schema = kwargs.pop('schema')
+class FormMixinDynamicFields:
+    def __init__(self, schema, *args, **kwargs):
+        self.schema = schema
+
         super().__init__(*args, **kwargs)
+
+        self.fieldsets = self.schema.get(
+            'fieldsets', ()
+        )
+        self.fieldset_exclude_list = self.schema.get(
+            'fieldset_exclude_list', ()
+        )
 
         widgets = self.schema.get(
             'widgets', {}
         )
-        field_order = self.schema.get(
-            'field_order', self.schema['fields'].keys()
-        )
+
+        field_order = self.get_field_order()
 
         for field_name in field_order:
             field_data = self.schema['fields'][field_name]
@@ -25,8 +33,9 @@ class DynamicFormMixin:
                 'initial': field_data.get('default', None),
                 'help_text': field_data.get('help_text')
             }
-            if widgets and field_name in widgets:
-                widget = widgets[field_name]
+
+            widget = widgets.get(field_name)
+            if widget:
                 kwargs['widget'] = import_string(
                     dotted_path=widget['class']
                 )(
@@ -42,6 +51,11 @@ class DynamicFormMixin:
             )
             self.fields[field_name] = field_class(**kwargs)
 
+    def get_field_order(self):
+        return self.schema.get(
+            'field_order', self.schema['fields'].keys()
+        )
+
     @property
     def media(self):
         """
@@ -56,11 +70,39 @@ class DynamicFormMixin:
         return media
 
 
-class FormFieldsetMixin:
+class FormMixinFieldsets:
+    fieldset_exclude_list = None
     fieldsets = None
+
+    def get_fieldset_exclude_list(self):
+        return self.fieldset_exclude_list or ()
 
     def get_fieldsets(self):
         if self.fieldsets:
+            fieldsets_field_list = []
+            for fieldset, data in self.fieldsets:
+                fieldsets_field_list.extend(
+                    data['fields']
+                )
+
+            set_fields = set(self.fields)
+            set_fieldsets = set(fieldsets_field_list)
+
+            fieldset_exclude_list = self.get_fieldset_exclude_list()
+
+            if fieldset_exclude_list:
+                set_fields -= set(fieldset_exclude_list)
+                set_fieldsets -= set(fieldset_exclude_list)
+
+            if set_fields != set_fieldsets:
+                raise ImproperlyConfigured(
+                    'Mismatch fieldset fields: {}'.format(
+                        ', '.join(
+                            set_fields.symmetric_difference(set_fieldsets)
+                        )
+                    )
+                )
+
             return self.fieldsets
         else:
             return (

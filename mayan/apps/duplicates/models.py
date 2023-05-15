@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.model_mixins import BackendModelMixin
+from mayan.apps.backends.model_mixins import BackendModelMixin
 from mayan.apps.documents.models.document_models import Document
 
 from .classes import NullBackend
@@ -20,7 +20,9 @@ class StoredDuplicateBackend(BackendModelMixin, models.Model):
         verbose_name_plural = _('Stored duplicate backends')
 
     def __str__(self):
-        return str(self.get_backend_label())
+        return str(
+            self.get_backend_class_label()
+        )
 
 
 class DuplicateBackendEntry(models.Model):

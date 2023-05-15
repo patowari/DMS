@@ -10,7 +10,41 @@ from ..literals import (
 from .workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 
 
-class WorkflowTemplateTransitionAPIViewTestMixin:
+class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
+    def setUp(self):
+        super().setUp()
+        self._test_workflow_template_transitions = []
+
+    def _create_test_workflow_template_transition(self, extra_kwargs=None):
+        total_test_workflow_template_transitions = len(
+            self._test_workflow_template_transitions
+        )
+        label = '{}_{}'.format(
+            TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
+            total_test_workflow_template_transitions
+        )
+
+        kwargs = {
+            'label': label,
+            'origin_state': self._test_workflow_template_states[0],
+            'destination_state': self._test_workflow_template_states[1]
+        }
+
+        if extra_kwargs is not None:
+            kwargs.update(extra_kwargs)
+
+        self._test_workflow_template_transition = self._test_workflow_template.transitions.create(
+            **kwargs
+        )
+
+        self._test_workflow_template_transitions.append(
+            self._test_workflow_template_transition
+        )
+
+
+class WorkflowTemplateTransitionAPIViewTestMixin(
+    WorkflowTemplateTransitionTestMixin
+):
     def _request_test_workflow_template_transition_create_api_view(
         self, extra_data=None
     ):
@@ -95,39 +129,9 @@ class WorkflowTemplateTransitionAPIViewTestMixin:
         )
 
 
-class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
-    def setUp(self):
-        super().setUp()
-        self._test_workflow_template_transitions = []
-
-    def _create_test_workflow_template_transition(self, extra_kwargs=None):
-        total_test_workflow_template_transitions = len(
-            self._test_workflow_template_transitions
-        )
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
-            total_test_workflow_template_transitions
-        )
-
-        kwargs = {
-            'label': label,
-            'origin_state': self._test_workflow_template_states[0],
-            'destination_state': self._test_workflow_template_states[1]
-        }
-
-        if extra_kwargs is not None:
-            kwargs.update(extra_kwargs)
-
-        self._test_workflow_template_transition = self._test_workflow_template.transitions.create(
-            **kwargs
-        )
-
-        self._test_workflow_template_transitions.append(
-            self._test_workflow_template_transition
-        )
-
-
-class WorkflowTemplateTransitionViewTestMixin:
+class WorkflowTemplateTransitionViewTestMixin(
+    WorkflowTemplateTransitionTestMixin
+):
     def _request_test_workflow_template_transition_create_view(self):
         pk_list = list(
             WorkflowTransition.objects.values_list('pk', flat=True)
