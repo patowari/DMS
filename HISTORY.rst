@@ -140,6 +140,7 @@
   as a variable to the template.
 - Mark cache model field ``maximum_size`` as a database index to speed up
   cache calculations.
+- Add file caching dashboard administrator widgets.
 
 4.4.7 (20XX-XX-XX)
 ==================

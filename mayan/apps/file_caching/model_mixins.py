@@ -79,10 +79,12 @@ class CacheBusinessLogicMixin:
         )['file_size__sum'] or 0
 
     def get_total_size_display(self):
+        total_size = self.get_total_size()
+
         return format_lazy(
             '{} ({:0.1f}%)', filesizeformat(
-                bytes_=self.get_total_size()
-            ), self.get_total_size() / self.maximum_size * 100
+                bytes_=total_size
+            ), total_size / self.maximum_size * 100
         )
 
     get_total_size_display.short_description = _('Current size')

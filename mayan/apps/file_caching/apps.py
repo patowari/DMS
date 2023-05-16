@@ -6,9 +6,13 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
     menu_multi_item, menu_object, menu_secondary, menu_tools
 )
+from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 
+from .dashboard_widgets import (
+    DashboardWidgetFileCacheSizeAllocated, DashboardWidgetFileCacheSizeUsed
+)
 from .events import (
     event_cache_edited, event_cache_partition_purged, event_cache_purged
 )
@@ -68,6 +72,13 @@ class FileCachingConfig(MayanAppConfig):
         SourceColumn(
             attribute='get_partition_file_count', include_label=True,
             source=Cache
+        )
+
+        dashboard_administrator.add_widget(
+            widget=DashboardWidgetFileCacheSizeUsed, order=99
+        )
+        dashboard_administrator.add_widget(
+            widget=DashboardWidgetFileCacheSizeAllocated, order=99
         )
 
         menu_object.bind_links(
