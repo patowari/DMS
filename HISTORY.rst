@@ -138,6 +138,8 @@
   result of a template, like the HTTP workflow action, staging storage
   source, and watch storage source, the credential is selected and passed
   as a variable to the template.
+- Mark cache model field ``maximum_size`` as a database index to speed up
+  cache calculations.
 
 4.4.7 (20XX-XX-XX)
 ==================

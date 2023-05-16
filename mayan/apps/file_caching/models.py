@@ -22,7 +22,8 @@ class Cache(CacheBusinessLogicMixin, ValueChangeModelMixin, models.Model):
         ), max_length=96, unique=True, verbose_name=_('Defined storage name')
     )
     maximum_size = models.PositiveBigIntegerField(
-        help_text=_('Maximum size of the cache in bytes.'), validators=[
+        db_index=True, help_text=_('Maximum size of the cache in bytes.'),
+        validators=[
             validators.MinValueValidator(limit_value=1)
         ], verbose_name=_('Maximum size')
     )
