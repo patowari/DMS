@@ -22,11 +22,15 @@ class DocumentAPIViewTestMixin:
         return self.post(
             viewname='rest_api:document-change-type', kwargs={
                 'document_id': self._test_document.pk
-            }, data={'document_type_id': self._test_document_types[1].pk}
+            }, data={
+                'document_type_id': self._test_document_types[1].pk
+            }
         )
 
     def _request_test_document_create_api_view(self):
-        pk_list = list(Document.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Document.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:document-list', data={
@@ -68,7 +72,9 @@ class DocumentAPIViewTestMixin:
         return self.get(viewname='rest_api:document-list')
 
     def _request_test_document_upload_api_view(self):
-        pk_list = list(Document.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Document.objects.values_list('pk', flat=True)
+        )
 
         with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
             response = self.post(
@@ -110,7 +116,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
         self._test_document_versions = []
         self._test_document_version_pages = []
 
-        if getattr(self, '_test_document_type', None):
+        if self.auto_create_test_document_type:
             if self._test_document_count > 1:
                 if self.auto_upload_test_document:
                     self._upload_test_documents()
@@ -121,6 +127,19 @@ class DocumentTestMixin(DocumentTypeTestMixin):
                     self._upload_test_document()
                 elif self.auto_create_test_document_stub:
                     self._create_test_document_stub()
+
+    def _calculate_test_document_file_path(self):
+        if not self._test_document_file_path:
+            self._test_document_file_path = os.path.join(
+                settings.BASE_DIR, 'apps', 'documents', 'tests', 'contrib',
+                'sample_documents', self._test_document_file_filename
+
+    def _calculate_test_document_path(self):
+        if not self._test_document_path:
+            self._test_document_path = os.path.join(
+                settings.BASE_DIR, 'apps', 'documents', 'tests', 'contrib',
+                'sample_documents', self._test_document_filename
+            )
 
     def _create_test_document_stub(self, document_type=None, label=None):
         if label is None:
@@ -143,18 +162,13 @@ class DocumentTestMixin(DocumentTypeTestMixin):
         for index in range(count or self._test_document_count):
             self._create_test_document_stub()
 
-    def _calculate_test_document_path(self):
-        if not self._test_document_path:
-            self._test_document_path = os.path.join(
-                settings.BASE_DIR, 'apps', 'documents', 'tests', 'contrib',
-                'sample_documents', self._test_document_filename
-            )
-
-    def _calculate_test_document_file_path(self):
-        if not self._test_document_file_path:
-            self._test_document_file_path = os.path.join(
-                settings.BASE_DIR, 'apps', 'documents', 'tests', 'contrib',
-                'sample_documents', self._test_document_file_filename
+    def _create_test_documents(self, count=None):
+        for index in range(count or self._test_document_count):
+            self._upload_test_document(
+                label='{}_{}'.format(
+                    TEST_DOCUMENT_LABEL,
+                    len(self._test_documents)
+                )
             )
 
     def _upload_test_document(
@@ -211,15 +225,6 @@ class DocumentTestMixin(DocumentTypeTestMixin):
                 setattr(self._test_document_version, key, value)
 
             self._test_document_version.save()
-
-    def _create_test_documents(self, count=None):
-        for index in range(count or self._test_document_count):
-            self._upload_test_document(
-                label='{}_{}'.format(
-                    TEST_DOCUMENT_LABEL,
-                    len(self._test_documents)
-                )
-            )
 
 
 class DocumentViewTestMixin:

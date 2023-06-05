@@ -19,13 +19,14 @@ class WorkflowTemplateStateActionTestCase(
     def test_document_type_change_action(self):
         document_type = self._test_document.document_type
 
-        self._create_test_document_type(label='document type 2')
+        self._create_test_document_type()
 
         self._execute_workflow_template_state_action(
             klass=DocumentTypeChangeAction, kwargs={
                 'document_type': self._test_document_types[1].pk
             }
         )
+
         self.assertNotEqual(
             self._test_document.document_type, document_type
         )
