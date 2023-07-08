@@ -4,6 +4,8 @@
   label, omiting all path content.
 - Backport MIME type file command backend improvements to make it more
   usable in series 4.2.
+- Only clear the source error log if the source is enabled or was
+  being tested.
 
 4.2.16 (2023-05-31)
 ===================
