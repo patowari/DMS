@@ -2,6 +2,8 @@
 ===================
 - Ensure only the filename of the uploaded file is used as the document
   label, omiting all path content.
+- Backport MIME type file command backend improvements to make it more
+  usable in series 4.2.
 
 4.2.16 (2023-05-31)
 ===================
