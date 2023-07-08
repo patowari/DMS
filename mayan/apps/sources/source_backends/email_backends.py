@@ -548,7 +548,7 @@ class SourceBackendPOP3Email(
     SourceBackendCompressedMixin, SourceBackendEmailMixin,
     SourceBackendPeriodicMixin, SourceBaseMixin, SourceBackend
 ):
-    field_order = ('timeout', 'uncompress',)
+    field_order = ('timeout',)
     fields = {
         'timeout': {
             'class': 'django.forms.fields.IntegerField',
@@ -560,6 +560,7 @@ class SourceBackendPOP3Email(
         }
     }
     label = _('POP3 email')
+    uncompress_choices = SOURCE_INTERVAL_UNCOMPRESS_CHOICES
 
     def get_shared_uploaded_files(self):
         dry_run = self.process_kwargs.get('dry_run', False)

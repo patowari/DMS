@@ -6,6 +6,8 @@
   usable in series 4.2.
 - Only clear the source error log if the source is enabled or was
   being tested.
+- Fix the POP3 source uncompress choices. The choice asking users is
+  not valid for a non interactive source.
 
 4.2.16 (2023-05-31)
 ===================
