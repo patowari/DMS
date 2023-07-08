@@ -230,11 +230,11 @@ services:
     restart: "no"
 
   rabbitmq:
-    image: rabbitmq:${MAYAN_DOCKER_RABBITMQ_TAG:-3.9.29-management-alpine}
     environment:
       RABBITMQ_DEFAULT_USER: ${MAYAN_RABBITMQ_USER:-mayan}
       RABBITMQ_DEFAULT_PASS: ${MAYAN_RABBITMQ_PASSWORD:-mayanrabbitpass}
       RABBITMQ_DEFAULT_VHOST: ${MAYAN_RABBITMQ_VHOST:-mayan}
+    image: rabbitmq:${MAYAN_DOCKER_RABBITMQ_TAG:-3.9.29-management-alpine}
     labels:
       - "traefik.enable=${MAYAN_TRAEFIK_RABBITMQ_ENABLE:-false}"
       - "traefik.http.routers.mayan_frontend_https.tls=true"
