@@ -1,4 +1,4 @@
-4.2.17 (XXXX-XX-XX)
+4.2.17 (2023-07-10)
 ===================
 - Ensure only the filename of the uploaded file is used as the document
   label, omiting all path content.
