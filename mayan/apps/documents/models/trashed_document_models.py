@@ -17,6 +17,10 @@ class TrashedDocument(Document):
     class Meta:
         proxy = True
 
+    @property
+    def document(self):
+        return Document.objects.get(pk=self.pk)
+
     def get_api_image_url(
         self, maximum_layer_order=None, transformation_instance_list=None,
         user=None
@@ -34,10 +38,12 @@ class TrashedDocument(Document):
     @method_event(
         event_manager_class=EventManagerMethodAfter,
         event=event_trashed_document_restored,
-        target='self',
+        target='document'
     )
     def restore(self):
         self.in_trash = False
         # Skip the edit event at .save().
         self._event_ignore = True
-        self.save(update_fields=('in_trash',))
+        self.save(
+            update_fields=('in_trash',)
+        )

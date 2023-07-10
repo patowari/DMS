@@ -10,6 +10,8 @@
   not valid for a non interactive source.
 - Include the `file` command in the Docker image to allow using it for
   MIME type detection.
+- Reference the valid document as the event target when restoring a trashed
+  document to allow the event to be accessible.
 
 4.2.16 (2023-05-31)
 ===================
