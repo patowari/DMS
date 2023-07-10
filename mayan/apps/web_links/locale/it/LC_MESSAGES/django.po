@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:15+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:14+0000\n"
 "Last-Translator: Paul Audhep <audhep@gmail.com>, 2022\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
@@ -28,8 +28,8 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:42
-#: permissions.py:5 views.py:182
+#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
+#: permissions.py:6 views.py:184
 msgid "Web links"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Web link navigated"
 msgstr ""
 
-#: links.py:29 views.py:94
+#: links.py:29 views.py:96
 msgid "Create new web link"
 msgstr "Crea nuovo collegamento web"
 
@@ -53,7 +53,7 @@ msgstr "Crea nuovo collegamento web"
 msgid "Delete"
 msgstr "Cancella"
 
-#: links.py:39 models.py:36
+#: links.py:39 models.py:38
 msgid "Document types"
 msgstr "Tipi documento"
 
@@ -82,37 +82,37 @@ msgstr ""
 msgid "Template"
 msgstr "Modello"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Abilitato"
 
-#: models.py:41
+#: models.py:43
 msgid "Web link"
 msgstr ""
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new web links"
 msgstr ""
 "Crea nuovi collegamenti web\n"
 " "
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete web links"
 msgstr ""
 "Cancella collegamenti web\n"
 " "
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit web links"
 msgstr ""
 "Edita collegamenti web\n"
 " "
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing web links"
 msgstr " Visualizza i collegamenti Web esistenti"
 
-#: permissions.py:20
+#: permissions.py:22
 msgid "View web link instances"
 msgstr ""
 
@@ -132,35 +132,35 @@ msgstr ""
 msgid "Web links enabled"
 msgstr ""
 
-#: views.py:63
+#: views.py:65
 #, python-format
 msgid "Web links to enable for document type: %s"
 msgstr ""
 
-#: views.py:116
+#: views.py:118
 #, python-format
 msgid "Delete web link: %s"
 msgstr ""
 
-#: views.py:128
+#: views.py:130
 msgid "Available document types"
 msgstr "Tipi di documento disponibili"
 
-#: views.py:129
+#: views.py:131
 msgid "Document types enabled"
 msgstr "Tipi documento abilitati"
 
-#: views.py:139
+#: views.py:141
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr ""
 
-#: views.py:156
+#: views.py:158
 #, python-format
 msgid "Edit web link: %s"
 msgstr ""
 
-#: views.py:175 views.py:205
+#: views.py:177 views.py:207
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -168,15 +168,15 @@ msgstr ""
 " I collegamenti Web consentono di generare collegamenti HTTP tra i documenti  e le risorse esterne. Gli URL dei collegamenti possono contenere valori delle proprietà del documento.\n"
 " "
 
-#: views.py:180
+#: views.py:182
 msgid "There are no web links"
 msgstr "Non ci sono collegamenti web"
 
-#: views.py:210
+#: views.py:212
 msgid "There are no web links for this document"
 msgstr ""
 
-#: views.py:213
+#: views.py:215
 #, python-format
 msgid "Web links for document: %s"
 msgstr ""

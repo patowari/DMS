@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:14+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:12+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Keeps the original filename of the uploaded file."
 msgstr ""
 
-#: classes.py:69 forms/document_forms.py:108 models/document_models.py:59
+#: classes.py:69 forms/document_forms.py:111 models/document_models.py:59
 msgid "UUID"
 msgstr "UUID"
 
@@ -300,15 +300,15 @@ msgstr ""
 msgid "Checksum"
 msgstr "Checksum"
 
-#: forms/document_forms.py:45
+#: forms/document_forms.py:47
 msgid "Quick document rename"
 msgstr "Đổi tên nhanh tài liệu"
 
-#: forms/document_forms.py:53
+#: forms/document_forms.py:55
 msgid "Preserve extension"
 msgstr "Giữ phần mở rộng"
 
-#: forms/document_forms.py:55
+#: forms/document_forms.py:57
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
@@ -316,11 +316,11 @@ msgstr ""
 "Lấy phần mở rộng của tệp tin và đưa nó vào cuối tên tệp cho phép một số hệ "
 "điều hành mở tài liệu đúng cách."
 
-#: forms/document_forms.py:104
+#: forms/document_forms.py:106
 msgid "Date created"
 msgstr ""
 
-#: forms/document_forms.py:110 models/document_models.py:87
+#: forms/document_forms.py:114 models/document_models.py:87
 msgid "Language"
 msgstr "Ngôn ngữ"
 
@@ -694,7 +694,7 @@ msgid "Document files"
 msgstr ""
 
 #: models/document_file_models.py:333 models/document_file_page_models.py:272
-#: models/document_models.py:72 models/document_models.py:314
+#: models/document_models.py:72 models/document_models.py:316
 #: models/document_type_models.py:41 models/document_type_models.py:203
 #: models/document_version_models.py:236
 #: models/document_version_page_models.py:354
@@ -779,7 +779,7 @@ msgstr ""
 msgid "Is stub?"
 msgstr "Có phải tài liệu rỗng?"
 
-#: models/document_models.py:312
+#: models/document_models.py:314
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Tài liệu rỗng, id: %d"

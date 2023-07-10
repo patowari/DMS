@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:15+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:14+0000\n"
 "Last-Translator: bo feng <87289884@qq.com>, 2022\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -27,8 +27,8 @@ msgstr ""
 msgid "Links"
 msgstr "链接"
 
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:42
-#: permissions.py:5 views.py:182
+#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
+#: permissions.py:6 views.py:184
 msgid "Web links"
 msgstr "网页链接"
 
@@ -44,7 +44,7 @@ msgstr "网络链接已编辑"
 msgid "Web link navigated"
 msgstr "网页链接已导航"
 
-#: links.py:29 views.py:94
+#: links.py:29 views.py:96
 msgid "Create new web link"
 msgstr "建立新的网页连结"
 
@@ -52,7 +52,7 @@ msgstr "建立新的网页连结"
 msgid "Delete"
 msgstr "删除"
 
-#: links.py:39 models.py:36
+#: links.py:39 models.py:38
 msgid "Document types"
 msgstr "文件类型"
 
@@ -80,31 +80,31 @@ msgstr "用于制作Web链接最终URL的模板。"
 msgid "Template"
 msgstr "模板"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "启用"
 
-#: models.py:41
+#: models.py:43
 msgid "Web link"
 msgstr "网页链接"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new web links"
 msgstr "建立新的网页连结"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete web links"
 msgstr "删除网页链接"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit web links"
 msgstr "编辑网页链接"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing web links"
 msgstr "查看现有的Web链接"
 
-#: permissions.py:20
+#: permissions.py:22
 msgid "View web link instances"
 msgstr "查看网页链接实例"
 
@@ -124,49 +124,49 @@ msgstr "可用的网页链接"
 msgid "Web links enabled"
 msgstr "网页链接已启用"
 
-#: views.py:63
+#: views.py:65
 #, python-format
 msgid "Web links to enable for document type: %s"
 msgstr "将要启用文档类型的Web链接：%s"
 
-#: views.py:116
+#: views.py:118
 #, python-format
 msgid "Delete web link: %s"
 msgstr "删除网页链接：%s"
 
-#: views.py:128
+#: views.py:130
 msgid "Available document types"
 msgstr "可用的文档类型"
 
-#: views.py:129
+#: views.py:131
 msgid "Document types enabled"
 msgstr "文档类型已启用"
 
-#: views.py:139
+#: views.py:141
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "要为其启用Web链接的文档类型：%s"
 
-#: views.py:156
+#: views.py:158
 #, python-format
 msgid "Edit web link: %s"
 msgstr "编辑网页链接：%s"
 
-#: views.py:175 views.py:205
+#: views.py:177 views.py:207
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
 msgstr "网页链接允许生成包括文档及外部资源的HTTP链接。链接URL可以包含文档属性值。"
 
-#: views.py:180
+#: views.py:182
 msgid "There are no web links"
 msgstr "没有网页链接"
 
-#: views.py:210
+#: views.py:212
 msgid "There are no web links for this document"
 msgstr "该文档没有网页链接"
 
-#: views.py:213
+#: views.py:215
 #, python-format
 msgid "Web links for document: %s"
 msgstr "文档的网页链接：%s"

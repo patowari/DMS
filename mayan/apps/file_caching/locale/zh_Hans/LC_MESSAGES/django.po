@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:14+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:13+0000\n"
 "Last-Translator: yan songwei <yansw@vip.163.com>, 2022\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -67,7 +67,7 @@ msgstr "缓存的最大字节尺寸。"
 msgid "Maximum size"
 msgstr "最大尺寸"
 
-#: models.py:51 models.py:206
+#: models.py:51 models.py:213
 msgid "Cache"
 msgstr "缓存"
 
@@ -83,7 +83,7 @@ msgstr "缓存将开始删除旧条目的大小。"
 msgid "Unknown"
 msgstr ""
 
-#: models.py:97 models.py:311
+#: models.py:97 models.py:318
 msgid "Current size"
 msgstr "当前大小"
 
@@ -91,43 +91,43 @@ msgstr "当前大小"
 msgid "Current size of the cache."
 msgstr "当前缓存的大小。"
 
-#: models.py:209
+#: models.py:216
 msgid "Name"
 msgstr "名称"
 
-#: models.py:214 models.py:331
+#: models.py:221 models.py:345
 msgid "Cache partition"
 msgstr "缓存分区"
 
-#: models.py:215
+#: models.py:222
 msgid "Cache partitions"
 msgstr "缓存分区"
 
-#: models.py:313
+#: models.py:320
 msgid "Current size of the cache partition."
 msgstr ""
 
-#: models.py:334
+#: models.py:348
 msgid "Date time"
 msgstr "日期时间"
 
-#: models.py:336
+#: models.py:350
 msgid "Filename"
 msgstr "文件名"
 
-#: models.py:338
+#: models.py:352
 msgid "File size"
 msgstr "文件大小"
 
-#: models.py:342
+#: models.py:356
 msgid "Times this cache partition file has been accessed."
 msgstr ""
 
-#: models.py:349
+#: models.py:363
 msgid "Cache partition file"
 msgstr "缓存分区文件"
 
-#: models.py:350
+#: models.py:364
 msgid "Cache partition files"
 msgstr "缓存分区文件"
 

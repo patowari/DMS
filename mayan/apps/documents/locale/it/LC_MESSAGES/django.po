@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:14+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:12+0000\n"
 "Last-Translator: Roberto Rosario, 2022\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
@@ -124,7 +124,7 @@ msgstr "Originale"
 msgid "Keeps the original filename of the uploaded file."
 msgstr "Mantiene il nome file originale del file caricato."
 
-#: classes.py:69 forms/document_forms.py:108 models/document_models.py:59
+#: classes.py:69 forms/document_forms.py:111 models/document_models.py:59
 msgid "UUID"
 msgstr "UUID"
 
@@ -306,15 +306,15 @@ msgstr "Percorso in storage"
 msgid "Checksum"
 msgstr "Checksum"
 
-#: forms/document_forms.py:45
+#: forms/document_forms.py:47
 msgid "Quick document rename"
 msgstr "Rinomina del documento veloce"
 
-#: forms/document_forms.py:53
+#: forms/document_forms.py:55
 msgid "Preserve extension"
 msgstr "Conserva l'estensione"
 
-#: forms/document_forms.py:55
+#: forms/document_forms.py:57
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
@@ -322,11 +322,11 @@ msgstr ""
 "Mette l'estensione del file alla fine del nome, consentendo ai sistemi "
 "operativi che tengono conto di ciò di aprire il file correttamente."
 
-#: forms/document_forms.py:104
+#: forms/document_forms.py:106
 msgid "Date created"
 msgstr "Data di creazione"
 
-#: forms/document_forms.py:110 models/document_models.py:87
+#: forms/document_forms.py:114 models/document_models.py:87
 msgid "Language"
 msgstr "Lingua"
 
@@ -712,7 +712,7 @@ msgid "Document files"
 msgstr "File di documento"
 
 #: models/document_file_models.py:333 models/document_file_page_models.py:272
-#: models/document_models.py:72 models/document_models.py:314
+#: models/document_models.py:72 models/document_models.py:316
 #: models/document_type_models.py:41 models/document_type_models.py:203
 #: models/document_version_models.py:236
 #: models/document_version_page_models.py:354
@@ -799,7 +799,7 @@ msgstr ""
 msgid "Is stub?"
 msgstr "Documento troncato?"
 
-#: models/document_models.py:312
+#: models/document_models.py:314
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Documento troncato, ID: %d"

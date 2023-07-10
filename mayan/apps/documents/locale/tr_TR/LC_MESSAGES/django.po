@@ -9,14 +9,15 @@
 # abc Def <hdogan1974@gmail.com>, 2022
 # serhatcan77 <serhat_can@yahoo.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:14+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:12+0000\n"
-"Last-Translator: Bedreddin Şahbaz, 2022\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,7 +125,7 @@ msgstr ""
 msgid "Keeps the original filename of the uploaded file."
 msgstr ""
 
-#: classes.py:69 forms/document_forms.py:108 models/document_models.py:59
+#: classes.py:69 forms/document_forms.py:111 models/document_models.py:59
 msgid "UUID"
 msgstr "UUID"
 
@@ -190,7 +191,7 @@ msgstr ""
 
 #: events.py:28
 msgid "Document file downloaded"
-msgstr ""
+msgstr "Belge dosyası indirildi"
 
 #: events.py:31
 msgid "Document file edited"
@@ -234,7 +235,7 @@ msgstr ""
 
 #: events.py:71
 msgid "Document version exported"
-msgstr ""
+msgstr "Dışa aktarılan belge sürümü"
 
 #: events.py:77
 msgid "Document version page created"
@@ -290,7 +291,7 @@ msgstr "Kodlama"
 
 #: forms/document_file_forms.py:59
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: forms/document_file_forms.py:64
 msgid "Exists in storage"
@@ -304,25 +305,25 @@ msgstr ""
 msgid "Checksum"
 msgstr "Sağlama"
 
-#: forms/document_forms.py:45
+#: forms/document_forms.py:47
 msgid "Quick document rename"
 msgstr "Hızlı belge yeniden adlandırma"
 
-#: forms/document_forms.py:53
+#: forms/document_forms.py:55
 msgid "Preserve extension"
 msgstr ""
 
-#: forms/document_forms.py:55
+#: forms/document_forms.py:57
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
 msgstr ""
 
-#: forms/document_forms.py:104
+#: forms/document_forms.py:106
 msgid "Date created"
 msgstr ""
 
-#: forms/document_forms.py:110 models/document_models.py:87
+#: forms/document_forms.py:114 models/document_models.py:87
 msgid "Language"
 msgstr "Dil"
 
@@ -334,7 +335,7 @@ msgstr "Belge Türü"
 
 #: forms/document_version_page_forms.py:29
 msgid "Content type"
-msgstr ""
+msgstr "İçerik türü"
 
 #: forms/document_version_page_forms.py:32
 msgid "Object ID"
@@ -377,7 +378,7 @@ msgstr "Düzenle"
 
 #: links/document_file_links.py:41
 msgid "Quick download"
-msgstr ""
+msgstr "Hızlı indirme"
 
 #: links/document_file_links.py:47 links/document_file_links.py:69
 msgid "Files"
@@ -514,7 +515,7 @@ msgstr ""
 
 #: links/document_version_links.py:55
 msgid "Export"
-msgstr ""
+msgstr "Dışa aktar"
 
 #: links/document_version_links.py:59 links/document_version_links.py:81
 msgid "Versions"
@@ -595,10 +596,13 @@ msgid ""
 " for download using the link: %(download_url)s or from the downloads area "
 "(%(download_list_url)s)."
 msgstr ""
+"Belge sürümü \"%(document_version)s\" dışa aktarıldı ve şu bağlantıyı "
+"kullanarak indirilebilir: %(download_url)s veya indirilenler alanından "
+"(%(download_list_url)s)."
 
 #: literals.py:91
 msgid "Document version exported."
-msgstr ""
+msgstr "Belge sürümü dışa aktarıldı."
 
 #: literals.py:100
 msgid "January"
@@ -694,7 +698,7 @@ msgid "Document files"
 msgstr ""
 
 #: models/document_file_models.py:333 models/document_file_page_models.py:272
-#: models/document_models.py:72 models/document_models.py:314
+#: models/document_models.py:72 models/document_models.py:316
 #: models/document_type_models.py:41 models/document_type_models.py:203
 #: models/document_version_models.py:236
 #: models/document_version_page_models.py:354
@@ -777,7 +781,7 @@ msgstr ""
 msgid "Is stub?"
 msgstr "Koçan mı?"
 
-#: models/document_models.py:312
+#: models/document_models.py:314
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Belge koçanı, kimliği: %d"
@@ -866,7 +870,7 @@ msgstr ""
 
 #: models/document_version_models.py:138
 msgid "Document version export to PDF"
-msgstr ""
+msgstr "Belge sürümünü PDF'ye aktar"
 
 #: models/document_version_page_models.py:50
 msgid "Unique integer number for the page. Pages are ordered by this number."
@@ -953,7 +957,7 @@ msgstr ""
 
 #: permissions.py:34
 msgid "Download document files"
-msgstr ""
+msgstr "Belge dosyalarını indirin"
 
 #: permissions.py:37
 msgid "Create new document files"
@@ -985,7 +989,7 @@ msgstr ""
 
 #: permissions.py:66
 msgid "Export document versions"
-msgstr ""
+msgstr "Belge sürümlerini dışa aktar"
 
 #: permissions.py:70
 msgid "Print document versions"
@@ -1716,38 +1720,40 @@ msgstr ""
 #: views/document_version_views.py:177
 #, python-format
 msgid "Document version \"%(object)s\" export successfully queued."
-msgstr ""
+msgstr "Belge sürümü \"%(object)s\" dışa aktarma işlemi başarıyla sıraya alındı."
 
 #: views/document_version_views.py:180
 #, python-format
 msgid "%(count)d document version export successfully queued."
-msgstr ""
+msgstr "%(count)d belge sürümü verme işlemi başarıyla sıraya alındı."
 
 #: views/document_version_views.py:183
 #, python-format
 msgid "%(count)d document versions exports successfully queued."
-msgstr ""
+msgstr "%(count)d belge sürümü verme işlemi başarıyla sıraya alındı."
 
 #: views/document_version_views.py:185
 #, python-format
 msgid "Export document version \"%(object)s\"."
-msgstr ""
+msgstr "Belge sürümünü dışa aktar \"%(object)s\"."
 
 #: views/document_version_views.py:186
 #, python-format
 msgid "Export %(count)d document version."
-msgstr ""
+msgstr "%(count)d belge sürümünü dışa aktarın."
 
 #: views/document_version_views.py:187
 #, python-format
 msgid "Export %(count)d document versions."
-msgstr ""
+msgstr "%(count)d belge sürümlerini dışa aktarın."
 
 #: views/document_version_views.py:192
 msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."
 msgstr ""
+"İşlem arka planda gerçekleştirilecektir. Dışa aktarılan dosya indirilenler "
+"alanında mevcut olacaktır."
 
 #: views/document_version_views.py:234
 msgid ""

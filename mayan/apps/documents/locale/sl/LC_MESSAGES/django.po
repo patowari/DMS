@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:14+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:12+0000\n"
 "Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2022\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
@@ -121,7 +121,7 @@ msgstr "Original"
 msgid "Keeps the original filename of the uploaded file."
 msgstr "Ohrani izvirno ime naložene datoteke."
 
-#: classes.py:69 forms/document_forms.py:108 models/document_models.py:59
+#: classes.py:69 forms/document_forms.py:111 models/document_models.py:59
 msgid "UUID"
 msgstr "UUID"
 
@@ -303,15 +303,15 @@ msgstr "Pot v skladišču"
 msgid "Checksum"
 msgstr "Nadzorna vsota"
 
-#: forms/document_forms.py:45
+#: forms/document_forms.py:47
 msgid "Quick document rename"
 msgstr "Hitro preimenovanje dokumenta"
 
-#: forms/document_forms.py:53
+#: forms/document_forms.py:55
 msgid "Preserve extension"
 msgstr "Ohranite podaljšek"
 
-#: forms/document_forms.py:55
+#: forms/document_forms.py:57
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
@@ -320,11 +320,11 @@ msgstr ""
 "operacijskim sistemom, ki se zanašajo na datotečne pripone, omogoči pravilno"
 " odpiranje dokumenta."
 
-#: forms/document_forms.py:104
+#: forms/document_forms.py:106
 msgid "Date created"
 msgstr "Datum ustvarjenega"
 
-#: forms/document_forms.py:110 models/document_models.py:87
+#: forms/document_forms.py:114 models/document_models.py:87
 msgid "Language"
 msgstr "Jezik"
 
@@ -708,7 +708,7 @@ msgid "Document files"
 msgstr "Dokumentne datoteke"
 
 #: models/document_file_models.py:333 models/document_file_page_models.py:272
-#: models/document_models.py:72 models/document_models.py:314
+#: models/document_models.py:72 models/document_models.py:316
 #: models/document_type_models.py:41 models/document_type_models.py:203
 #: models/document_version_models.py:236
 #: models/document_version_page_models.py:354
@@ -795,7 +795,7 @@ msgstr ""
 msgid "Is stub?"
 msgstr "Je škrbina?"
 
-#: models/document_models.py:312
+#: models/document_models.py:314
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Kop dokumenta, ID: %d"

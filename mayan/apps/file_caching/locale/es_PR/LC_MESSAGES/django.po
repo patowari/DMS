@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 04:14+0000\n"
+"POT-Creation-Date: 2023-07-10 04:17+0000\n"
 "PO-Revision-Date: 2022-02-03 10:13+0000\n"
 "Last-Translator: Roberto Rosario, 2022\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -64,7 +64,7 @@ msgstr "Tamaño máximo del caché en bytes."
 msgid "Maximum size"
 msgstr "Tamaño máxima"
 
-#: models.py:51 models.py:206
+#: models.py:51 models.py:213
 msgid "Cache"
 msgstr "Caché"
 
@@ -80,7 +80,7 @@ msgstr "Tamaño en el que el caché comenzará a eliminar entradas antiguas."
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: models.py:97 models.py:311
+#: models.py:97 models.py:318
 msgid "Current size"
 msgstr "Tamaño actual"
 
@@ -88,43 +88,43 @@ msgstr "Tamaño actual"
 msgid "Current size of the cache."
 msgstr "Tamaño actual de la caché."
 
-#: models.py:209
+#: models.py:216
 msgid "Name"
 msgstr "Nombre"
 
-#: models.py:214 models.py:331
+#: models.py:221 models.py:345
 msgid "Cache partition"
 msgstr "Partición de caché"
 
-#: models.py:215
+#: models.py:222
 msgid "Cache partitions"
 msgstr "Particiones de caché"
 
-#: models.py:313
+#: models.py:320
 msgid "Current size of the cache partition."
 msgstr "Tamaño actual de la caché."
 
-#: models.py:334
+#: models.py:348
 msgid "Date time"
 msgstr "Fecha y hora"
 
-#: models.py:336
+#: models.py:350
 msgid "Filename"
 msgstr "Nombre del archivo"
 
-#: models.py:338
+#: models.py:352
 msgid "File size"
 msgstr "Tamaño del archivo"
 
-#: models.py:342
+#: models.py:356
 msgid "Times this cache partition file has been accessed."
 msgstr "Veces que se ha accedido a este archivo de partición de caché."
 
-#: models.py:349
+#: models.py:363
 msgid "Cache partition file"
 msgstr "Archivo de partición de caché"
 
-#: models.py:350
+#: models.py:364
 msgid "Cache partition files"
 msgstr "Archivos de partición de caché"
 
