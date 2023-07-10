@@ -27,8 +27,12 @@ class APIResolvedWebLinkListView(
     """
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
-    mayan_external_object_permissions = {'GET': (permission_web_link_instance_view,)}
-    mayan_object_permissions = {'GET': (permission_web_link_instance_view,)}
+    mayan_external_object_permissions = {
+        'GET': (permission_web_link_instance_view,)
+    }
+    mayan_object_permissions = {
+        'GET': (permission_web_link_instance_view,)
+    }
     serializer_class = ResolvedWebLinkSerializer
 
     def get_queryset(self):
@@ -46,8 +50,12 @@ class APIResolvedWebLinkView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     lookup_url_kwarg = 'resolved_web_link_id'
-    mayan_external_object_permissions = {'GET': (permission_web_link_instance_view,)}
-    mayan_object_permissions = {'GET': (permission_web_link_instance_view,)}
+    mayan_external_object_permissions = {
+        'GET': (permission_web_link_instance_view,)
+    }
+    mayan_object_permissions = {
+        'GET': (permission_web_link_instance_view,)
+    }
     serializer_class = ResolvedWebLinkSerializer
 
     def get_queryset(self):
@@ -65,8 +73,12 @@ class APIResolvedWebLinkNavigateView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     lookup_url_kwarg = 'resolved_web_link_id'
-    mayan_external_object_permissions = {'GET': (permission_web_link_instance_view,)}
-    mayan_object_permissions = {'GET': (permission_web_link_instance_view,)}
+    mayan_external_object_permissions = {
+        'GET': (permission_web_link_instance_view,)
+    }
+    mayan_object_permissions = {
+        'GET': (permission_web_link_instance_view,)
+    }
 
     def retrieve(self, request, *args, **kwargs):
         return self.get_object().get_redirect(
@@ -84,8 +96,12 @@ class APIWebLinkListView(generics.ListCreateAPIView):
     get: Returns a list of all the web links.
     post: Create a new web link.
     """
-    mayan_object_permissions = {'GET': (permission_web_link_view,)}
-    mayan_view_permissions = {'POST': (permission_web_link_create,)}
+    mayan_object_permissions = {
+        'GET': (permission_web_link_view,)
+    }
+    mayan_view_permissions = {
+        'POST': (permission_web_link_create,)
+    }
     ordering_fields = ('enabled', 'id', 'label')
     queryset = WebLink.objects.all()
     serializer_class = WebLinkSerializer
@@ -146,8 +162,12 @@ class APIWebLinkDocumentTypeListView(
     """
     external_object_class = WebLink
     external_object_pk_url_kwarg = 'web_link_id'
-    mayan_external_object_permissions = {'GET': (permission_web_link_view,)}
-    mayan_object_permissions = {'GET': (permission_document_type_view,)}
+    mayan_external_object_permissions = {
+        'GET': (permission_web_link_view,)
+    }
+    mayan_object_permissions = {
+        'GET': (permission_document_type_view,)
+    }
     serializer_class = DocumentTypeSerializer
 
     def get_queryset(self):

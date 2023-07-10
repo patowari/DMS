@@ -57,7 +57,9 @@ class BackendModelMixin(models.Model):
                 raise
 
     def get_backend_instance(self):
-        return self.get_backend()(
+        backend_class = self.get_backend()
+
+        return backend_class(
             model_instance_id=self.id, **self.get_backend_data()
         )
 
