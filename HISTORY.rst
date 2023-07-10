@@ -8,6 +8,8 @@
   being tested.
 - Fix the POP3 source uncompress choices. The choice asking users is
   not valid for a non interactive source.
+- Include the `file` command in the Docker image to allow using it for
+  MIME type detection.
 
 4.2.16 (2023-05-31)
 ===================
