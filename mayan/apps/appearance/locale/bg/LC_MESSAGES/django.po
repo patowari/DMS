@@ -6,7 +6,7 @@
 # Translators:
 # Roberto Rosario, 2022
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2022
-# Lyudmil Antonov <lantonov.here@gmail.com>, 2022
+# Lyudmil Antonov <lantonov.here@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -164,7 +164,7 @@ msgstr "Вижте съществуващите теми"
 
 #: settings.py:15
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Персонализиран HTTP код за отговор за AJAX пренасочвания."
 
 #: settings.py:21
 msgid "Maximum number of characters that will be displayed as the view title."

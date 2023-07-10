@@ -25,8 +25,8 @@ msgstr ""
 msgid "Links"
 msgstr "الربط"
 
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:42
-#: permissions.py:5 views.py:182
+#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
+#: permissions.py:6 views.py:184
 msgid "Web links"
 msgstr "روابط النظام"
 
@@ -42,7 +42,7 @@ msgstr "تعديل رابط النظام"
 msgid "Web link navigated"
 msgstr "إستعراض رابط النظام"
 
-#: links.py:29 views.py:94
+#: links.py:29 views.py:96
 msgid "Create new web link"
 msgstr "إنشاء رابط جديد"
 
@@ -50,7 +50,7 @@ msgstr "إنشاء رابط جديد"
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:39 models.py:36
+#: links.py:39 models.py:38
 msgid "Document types"
 msgstr "أنواع الوثائق"
 
@@ -78,31 +78,31 @@ msgstr "القالب المستخدم "
 msgid "Template"
 msgstr "القالب"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "مفعل"
 
-#: models.py:41
+#: models.py:43
 msgid "Web link"
 msgstr "الرابط"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new web links"
 msgstr "أنشاء روابط جديدة"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete web links"
 msgstr "حذف الروابط"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit web links"
 msgstr "تعديل الروابط"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing web links"
 msgstr "إستعراض الروابط الحالية"
 
-#: permissions.py:20
+#: permissions.py:22
 msgid "View web link instances"
 msgstr "حالة الرابط"
 
@@ -122,35 +122,35 @@ msgstr "الروابط المتاحة"
 msgid "Web links enabled"
 msgstr "تفعيل الروابط"
 
-#: views.py:63
+#: views.py:65
 #, python-format
 msgid "Web links to enable for document type: %s"
 msgstr "تفعيل الروابط لأنواع الوثائق: %s"
 
-#: views.py:116
+#: views.py:118
 #, python-format
 msgid "Delete web link: %s"
 msgstr "حذف الرابط : %s"
 
-#: views.py:128
+#: views.py:130
 msgid "Available document types"
 msgstr "أنواع الوثائق المتاحة"
 
-#: views.py:129
+#: views.py:131
 msgid "Document types enabled"
 msgstr "تفعيل الوثائق"
 
-#: views.py:139
+#: views.py:141
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "أنواع الوثائق المفعلة  للرابط : %s"
 
-#: views.py:156
+#: views.py:158
 #, python-format
 msgid "Edit web link: %s"
 msgstr "تعديل الرابط : %s"
 
-#: views.py:175 views.py:205
+#: views.py:177 views.py:207
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -158,15 +158,15 @@ msgstr ""
 "تسمح روابط الويب بإنشاء روابط HTTP من الوثائق إلى الأنظمة الخارجيةويمكن أن "
 "يحتوي عنوان الرابط على قيم خصائص الوثيقة."
 
-#: views.py:180
+#: views.py:182
 msgid "There are no web links"
 msgstr "لا يوجد روابط "
 
-#: views.py:210
+#: views.py:212
 msgid "There are no web links for this document"
 msgstr "لا توجد روابط لهذه الوثيقة"
 
-#: views.py:213
+#: views.py:215
 #, python-format
 msgid "Web links for document: %s"
 msgstr "روابط الوثائق : %s"

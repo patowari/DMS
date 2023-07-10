@@ -600,6 +600,21 @@
 - Display a warning message in the setting edit view when local storage is
   disabled.
 
+4.2.17 (2023-07-10)
+===================
+- Ensure only the filename of the uploaded file is used as the document
+  label, omiting all path content.
+- Backport MIME type file command backend improvements to make it more
+  usable in series 4.2.
+- Only clear the source error log if the source is enabled or was
+  being tested.
+- Fix the POP3 source uncompress choices. The choice asking users is
+  not valid for a non interactive source.
+- Include the `file` command in the Docker image to allow using it for
+  MIME type detection.
+- Reference the valid document as the event target when restoring a trashed
+  document to allow the event to be accessible.
+
 4.2.16 (2023-05-31)
 ===================
 - Fix error in staging target Docker credential variable names. Closes

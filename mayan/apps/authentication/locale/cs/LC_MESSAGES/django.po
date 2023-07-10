@@ -92,10 +92,11 @@ msgstr ""
 #: settings.py:23
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
+"Tečkovaná cesta k backendu používanému ke zpracování autentizace uživatele."
 
 #: settings.py:29
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "Argumenty pro AUTHENTICATION_BACKEND."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format

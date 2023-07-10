@@ -32,7 +32,9 @@ class DocumentForm(forms.ModelForm):
         if self.instance and self.instance.pk:
             document_type = self.instance.document_type
         else:
-            self.initial.update({'language': setting_language.value})
+            self.initial.update(
+                {'language': setting_language.value}
+            )
 
         filenames_queryset = document_type.filenames.filter(enabled=True)
 
@@ -105,13 +107,15 @@ class DocumentPropertiesForm(DetailForm):
                 'field': 'datetime_created',
                 'widget': forms.widgets.DateTimeInput
             },
-            {'label': _('UUID'), 'field': 'uuid'},
+            {
+                'label': _('UUID'), 'field': 'uuid'
+            },
             {
                 'label': _('Language'),
                 'func': lambda x: get_language(
                     language_code=document.language
                 )
-            },
+            }
         ]
 
         kwargs['extra_fields'] = extra_fields

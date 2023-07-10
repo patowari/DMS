@@ -7,6 +7,7 @@
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2022
 # serhatcan77 <serhat_can@yahoo.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -248,10 +249,14 @@ msgid ""
 "unpinned or immutable depedency bugs in third party libraries. End users can"
 " ignore missing dependencies under this environment."
 msgstr ""
+"Ortam, üçüncü taraf kitaplıklarındaki sabitlenmemiş veya değişmez bağımlılık"
+" hatalarına geçici bir çözüm bulmak için doğrudan belge bağımlılıklarını "
+"belirtmek için kullanılır. Son kullanıcılar bu ortamdaki eksik "
+"bağımlılıkları yok sayabilir."
 
 #: environments.py:41
 msgid "Documentation (override)"
-msgstr ""
+msgstr "Dokümantasyon (geçersiz kılma)"
 
 #: environments.py:45
 msgid ""

@@ -43,14 +43,16 @@ class DocumentTypeWebLinksView(AddRemoveView):
         for obj in queryset:
             self.main_object.web_links.add(obj)
             event_web_link_edited.commit(
-                actor=_event_actor, action_object=self.main_object, target=obj
+                action_object=self.main_object, actor=_event_actor,
+                target=obj
             )
 
     def action_remove(self, queryset, _event_actor):
         for obj in queryset:
             self.main_object.web_links.remove(obj)
             event_web_link_edited.commit(
-                actor=_event_actor, action_object=self.main_object, target=obj
+                action_object=self.main_object, actor=_event_actor,
+                target=obj
             )
 
     def get_actions_extra_kwargs(self):

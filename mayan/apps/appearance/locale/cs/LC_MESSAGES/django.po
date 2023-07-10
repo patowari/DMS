@@ -7,6 +7,7 @@
 # Jiri Fait <fait@orkasolutions.cz>, 2022
 # Jiří Podhorecký, 2022
 # Michal Švábík <snadno@lehce.cz>, 2022
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
@@ -84,7 +85,7 @@ msgstr "Motiv upraven"
 
 #: events.py:14
 msgid "User theme edited"
-msgstr ""
+msgstr "Uživatelský motiv upraven"
 
 #: links.py:18
 msgid "Theme settings"
@@ -181,6 +182,7 @@ msgstr ""
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Prodleva v milisekundách, po které budou zkontrolovány aktualizace nabídek."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"

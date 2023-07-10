@@ -8,6 +8,7 @@
 # Caner Başaran <basaran.caner@gmail.com>, 2022
 # serhatcan77 <serhat_can@yahoo.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -29,7 +30,7 @@ msgstr "Görünüm"
 
 #: dependencies.py:8
 msgid "Lato font"
-msgstr ""
+msgstr "Lato yazı tipi"
 
 #: dependencies.py:12
 msgid "Bootstrap"
@@ -41,11 +42,11 @@ msgstr "Bootswatch"
 
 #: dependencies.py:30
 msgid "Fancybox"
-msgstr ""
+msgstr "Fancybox"
 
 #: dependencies.py:34
 msgid "FontAwesome"
-msgstr ""
+msgstr "FontAwesome"
 
 #: dependencies.py:38
 msgid "jQuery"
@@ -57,19 +58,19 @@ msgstr "JQuery Formu"
 
 #: dependencies.py:46
 msgid "jQuery Lazy Load"
-msgstr ""
+msgstr "jQuery Lazy Load"
 
 #: dependencies.py:50
 msgid "JQuery Match Height"
-msgstr ""
+msgstr "JQuery Match Height"
 
 #: dependencies.py:54
 msgid "Select 2"
-msgstr ""
+msgstr "2'yi seçin"
 
 #: dependencies.py:58
 msgid "Toastr"
-msgstr ""
+msgstr "Toastr"
 
 #: dependencies.py:62
 msgid "URI.js"
@@ -85,7 +86,7 @@ msgstr "Tema düzenlendi"
 
 #: events.py:14
 msgid "User theme edited"
-msgstr ""
+msgstr "Kullanıcı teması düzenlendi"
 
 #: links.py:18
 msgid "Theme settings"
@@ -124,6 +125,8 @@ msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
+"Farklı kullanıcı arabirimi öğelerinin görünümünü değiştirmek için CSS stil "
+"sayfası."
 
 #: models.py:26
 msgid "Stylesheet"
@@ -163,7 +166,7 @@ msgstr "Mevcut temaları görüntüle"
 
 #: settings.py:15
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "AJAX yönlendirmeleri için özel HTTP yanıt kodu."
 
 #: settings.py:21
 msgid "Maximum number of characters that will be displayed as the view title."
@@ -214,6 +217,8 @@ msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
 msgstr ""
+"Konum doğru olabilir, ancak hesabınıza erişmek için gerekli izne sahip "
+"değilsiniz."
 
 #: templates/500.html:5 templates/500.html:30
 #: templates/appearance/root.html:47

@@ -6,6 +6,7 @@
 # Translators:
 # Caner Başaran <basaran.caner@gmail.com>, 2022
 # serhatcan77 <serhat_can@yahoo.com>, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -23,27 +24,27 @@ msgstr ""
 
 #: apps.py:23 events.py:6
 msgid "Authentication OTP"
-msgstr ""
+msgstr "Tek seferlik parola ile kimlik doğrulama"
 
 #: events.py:10
 msgid "OTP disabled"
-msgstr ""
+msgstr "Tek seferlik parola devre dışı"
 
 #: events.py:13
 msgid "OTP enabled"
-msgstr ""
+msgstr "Tek seferlik parola etkin"
 
 #: forms.py:20
 msgid "Token is either invalid or expired."
-msgstr ""
+msgstr "Belirteç geçersiz veya süresi dolmuş."
 
 #: forms.py:25
 msgid "TOTP token"
-msgstr ""
+msgstr "TOTP belirteci"
 
 #: forms.py:84
 msgid "OTP enabled?"
-msgstr ""
+msgstr "OTP etkin mi?"
 
 #: forms.py:85
 msgid "Yes"
@@ -58,6 +59,8 @@ msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
 msgstr ""
+"QR kodunu tarayın veya kimlik doğrulama cihazınıza sırrı girin. Bu sırrı "
+"paylaşmayın, şifre gibi davranın."
 
 #: forms.py:104 forms.py:109
 msgid "Secret"
@@ -66,27 +69,27 @@ msgstr "Gizli"
 #: forms.py:115
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
-msgstr ""
+msgstr "Sırrın doğru kaydedildiğini doğrulamak için ilgili belirteci girin."
 
 #: forms.py:118
 msgid "Token"
-msgstr ""
+msgstr "Token"
 
 #: forms.py:152
 msgid "Token is incorrect for the specified secret."
-msgstr ""
+msgstr "Token belirtilen sır için yanlıştır."
 
 #: links.py:29
 msgid "OTP details"
-msgstr ""
+msgstr "OTP detayları"
 
 #: links.py:33
 msgid "Disable OTP"
-msgstr ""
+msgstr "OTP'yi devre dışı bırak"
 
 #: links.py:37
 msgid "Enable OTP"
-msgstr ""
+msgstr "OTP'yi etkinleştir"
 
 #: models.py:17
 msgid "User"
@@ -94,15 +97,15 @@ msgstr "Kullanıcı"
 
 #: models.py:21
 msgid "16 character, base32 encoded random string."
-msgstr ""
+msgstr "16 karakter, base32 kodlanmış rastgele dize."
 
 #: models.py:26
 msgid "User OTP data"
-msgstr ""
+msgstr "Kullanıcı OTP verileri"
 
 #: models.py:27
 msgid "Users OTP data"
-msgstr ""
+msgstr "Kullanıcıların OTP verileri"
 
 #: views.py:28
 #, python-format
@@ -116,15 +119,15 @@ msgstr ""
 
 #: views.py:56
 msgid "OTP disable successfully."
-msgstr ""
+msgstr "OTP başarıyla devre dışı bırakıldı."
 
 #: views.py:78
 msgid "OTP is already enabled."
-msgstr ""
+msgstr "OTP zaten etkin."
 
 #: views.py:94
 msgid "OTP enabled successfully."
-msgstr ""
+msgstr "OTP başarıyla etkinleştirildi."
 
 #: views.py:103
 #, python-format
@@ -133,4 +136,4 @@ msgstr ""
 
 #: views.py:115
 msgid "OTP secret validation error."
-msgstr ""
+msgstr "OTP sır doğrulama hatası."

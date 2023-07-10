@@ -342,15 +342,15 @@ msgstr ""
 msgid "Checksum"
 msgstr "Checksum"
 
-#: forms/document_forms.py:45
+#: forms/document_forms.py:47
 msgid "Quick document rename"
 msgstr "Đổi tên nhanh tài liệu"
 
-#: forms/document_forms.py:53
+#: forms/document_forms.py:55
 msgid "Preserve extension"
 msgstr "Giữ phần mở rộng"
 
-#: forms/document_forms.py:55
+#: forms/document_forms.py:57
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
@@ -358,7 +358,7 @@ msgstr ""
 "Lấy phần mở rộng của tệp tin và đưa nó vào cuối tên tệp cho phép một số hệ "
 "điều hành mở tài liệu đúng cách."
 
-#: forms/document_forms.py:104
+#: forms/document_forms.py:106
 msgid "Date created"
 msgstr ""
 

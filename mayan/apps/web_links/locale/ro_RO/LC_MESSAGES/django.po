@@ -25,8 +25,8 @@ msgstr ""
 msgid "Links"
 msgstr "Link-uri"
 
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:42
-#: permissions.py:5 views.py:182
+#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
+#: permissions.py:6 views.py:184
 msgid "Web links"
 msgstr "Link-uri web"
 
@@ -42,7 +42,7 @@ msgstr "Link web modificat"
 msgid "Web link navigated"
 msgstr "Link-ul web a fost navigat"
 
-#: links.py:29 views.py:94
+#: links.py:29 views.py:96
 msgid "Create new web link"
 msgstr "Creați un nou link web"
 
@@ -50,7 +50,7 @@ msgstr "Creați un nou link web"
 msgid "Delete"
 msgstr "Șterge"
 
-#: links.py:39 models.py:36
+#: links.py:39 models.py:38
 msgid "Document types"
 msgstr "Tipuri de documente"
 
@@ -79,31 +79,31 @@ msgstr ""
 msgid "Template"
 msgstr "Șablon"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Activat"
 
-#: models.py:41
+#: models.py:43
 msgid "Web link"
 msgstr "Link web"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new web links"
 msgstr "Creați noi legături web"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete web links"
 msgstr "Ștergeți link-urile web"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit web links"
 msgstr "Editați link-uri web"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing web links"
 msgstr "Vizualizați linkurile web existente"
 
-#: permissions.py:20
+#: permissions.py:22
 msgid "View web link instances"
 msgstr "Vizualizați instanțele de link web"
 
@@ -123,35 +123,35 @@ msgstr "Link-uri web disponibile"
 msgid "Web links enabled"
 msgstr "Link-uri web activate"
 
-#: views.py:63
+#: views.py:65
 #, python-format
 msgid "Web links to enable for document type: %s"
 msgstr "Link-uri web pentru a activa tipul de document: %s"
 
-#: views.py:116
+#: views.py:118
 #, python-format
 msgid "Delete web link: %s"
 msgstr "Ștergeți linkul web: %s"
 
-#: views.py:128
+#: views.py:130
 msgid "Available document types"
 msgstr "Tipuri de documente disponibile"
 
-#: views.py:129
+#: views.py:131
 msgid "Document types enabled"
 msgstr "Tipuri de documente activate"
 
-#: views.py:139
+#: views.py:141
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "Tipul de document pentru care să activați legătura web: %s"
 
-#: views.py:156
+#: views.py:158
 #, python-format
 msgid "Edit web link: %s"
 msgstr "Editați link-ul web: %s"
 
-#: views.py:175 views.py:205
+#: views.py:177 views.py:207
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -160,15 +160,15 @@ msgstr ""
 "externe. Adresa URL a linkului poate conține valori ale proprietăților "
 "documentului."
 
-#: views.py:180
+#: views.py:182
 msgid "There are no web links"
 msgstr "Nu există legături web"
 
-#: views.py:210
+#: views.py:212
 msgid "There are no web links for this document"
 msgstr "Nu există legături web pentru acest document"
 
-#: views.py:213
+#: views.py:215
 #, python-format
 msgid "Web links for document: %s"
 msgstr "Link-uri web pentru document: %s"

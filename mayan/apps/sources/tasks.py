@@ -50,7 +50,8 @@ def task_source_process_document(source_id, dry_run=False):
                     )
                 )
         else:
-            source.error_log.all().delete()
+            if source.enabled or dry_run:
+                source.error_log.all().delete()
         finally:
             lock.release()
 

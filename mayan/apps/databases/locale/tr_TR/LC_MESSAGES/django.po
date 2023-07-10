@@ -6,6 +6,7 @@
 # Translators:
 # abc Def <hdogan1974@gmail.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -23,7 +24,7 @@ msgstr ""
 
 #: apps.py:16
 msgid "Databases"
-msgstr ""
+msgstr "Veritabanları"
 
 #: classes.py:199
 msgid "Model fields"
@@ -46,6 +47,8 @@ msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
 msgstr ""
+"Veritabanınızın arka ucu SQLite kullanacak şekilde ayarlanmıştır. SQLite, "
+"üretim için değil, yalnızca geliştirme ve test için kullanılmalıdır."
 
 #: model_mixins.py:24
 msgid "The dotted Python path to the backend class."

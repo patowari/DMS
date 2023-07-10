@@ -351,15 +351,15 @@ msgstr "Percorso in storage"
 msgid "Checksum"
 msgstr "Checksum"
 
-#: forms/document_forms.py:45
+#: forms/document_forms.py:47
 msgid "Quick document rename"
 msgstr "Rinomina del documento veloce"
 
-#: forms/document_forms.py:53
+#: forms/document_forms.py:55
 msgid "Preserve extension"
 msgstr "Conserva l'estensione"
 
-#: forms/document_forms.py:55
+#: forms/document_forms.py:57
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
@@ -367,7 +367,7 @@ msgstr ""
 "Mette l'estensione del file alla fine del nome, consentendo ai sistemi "
 "operativi che tengono conto di ciò di aprire il file correttamente."
 
-#: forms/document_forms.py:104
+#: forms/document_forms.py:106
 msgid "Date created"
 msgstr "Data di creazione"
 

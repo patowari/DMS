@@ -57,7 +57,11 @@ class ActionExporter:
         writer = csv.writer(
             file_object, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL
         )
-        file_object.write(','.join(self.field_names + ('\n',)))
+        file_object.write(
+            ','.join(
+                self.field_names + ('\n',)
+            )
+        )
 
         for entry in self.queryset.iterator():
             row = [
@@ -232,6 +236,13 @@ class EventModelRegistry:
         from actstream import registry
         from mayan.apps.acls.classes import ModelPermission
 
+        AccessControlList = apps.get_model(
+            app_label='acls', model_name='AccessControlList'
+        )
+        StoredPermission = apps.get_model(
+            app_label='permissions', model_name='StoredPermission'
+        )
+
         event_type_namespace = EventTypeNamespace.get(
             name=EVENT_TYPE_NAMESPACE_NAME
         )
@@ -265,13 +276,6 @@ class EventModelRegistry:
                     ), sources=(model,)
                 )
 
-            AccessControlList = apps.get_model(
-                app_label='acls', model_name='AccessControlList'
-            )
-            StoredPermission = apps.get_model(
-                app_label='permissions', model_name='StoredPermission'
-            )
-
             if register_permissions and not issubclass(model, (AccessControlList, StoredPermission)):
                 ModelPermission.register(
                     exclude=exclude,
@@ -294,7 +298,9 @@ class EventTypeNamespace(AppsModuleLoaderMixin):
 
     @classmethod
     def all(cls):
-        return sorted(cls._registry.values())
+        return sorted(
+            cls._registry.values()
+        )
 
     @classmethod
     def get(cls, name):
@@ -318,7 +324,9 @@ class EventTypeNamespace(AppsModuleLoaderMixin):
         return event_type
 
     def get_event(self, name):
-        return EventType.get(id='{}.{}'.format(self.name, name))
+        return EventType.get(
+            id='{}.{}'.format(self.name, name)
+        )
 
     def get_event_types(self):
         return EventType.sort(event_type_list=self.event_types)
@@ -336,7 +344,9 @@ class EventType:
     @classmethod
     def all(cls):
         # Return sorted permisions by namespace.name
-        return EventType.sort(event_type_list=cls._registry.values())
+        return EventType.sort(
+            event_type_list=cls._registry.values()
+        )
 
     @classmethod
     def get(cls, id):
@@ -458,7 +468,9 @@ class ModelEventType:
 
     @classmethod
     def get_for_class(cls, klass):
-        result = cls._registry.get(klass, ())
+        result = cls._registry.get(
+            klass, ()
+        )
         return EventType.sort(event_type_list=result)
 
     @classmethod
@@ -469,7 +481,9 @@ class ModelEventType:
 
         events = []
 
-        class_events = cls._registry.get(type(instance))
+        class_events = cls._registry.get(
+            type(instance)
+        )
 
         if class_events:
             events.extend(class_events)

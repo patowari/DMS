@@ -9,6 +9,7 @@
 # Caner Başaran <basaran.caner@gmail.com>, 2022
 # serhatcan77 <serhat_can@yahoo.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -540,7 +541,7 @@ msgstr ""
 #: models/workflow_state_models.py:277
 #: models/workflow_transition_models.py:114
 msgid "Has a condition?"
-msgstr ""
+msgstr "Bir durum mu var?"
 
 #: models/workflow_state_models.py:302
 msgid "Workflow state runtime proxy"
@@ -1305,7 +1306,7 @@ msgstr ""
 
 #: workflow_actions.py:234
 msgid "Headers"
-msgstr ""
+msgstr "Başlıklar"
 
 #: workflow_actions.py:241
 msgid "Headers to send with the HTTP request. Must be in JSON format."

@@ -8,6 +8,7 @@
 # serhatcan77 <serhat_can@yahoo.com>, 2022
 # Caner Başaran <basaran.caner@gmail.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -92,10 +93,12 @@ msgstr "Giriş sayfasında yer alan \"Şifremi mi unuttum?\" linkini kaldır."
 #: settings.py:23
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
+"Kullanıcı kimlik doğrulamasını işlemek için kullanılan arka uca giden "
+"noktalı yol."
 
 #: settings.py:29
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "AUTHENTİCATİON_BACKEND için bağımsız değişkenler."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format

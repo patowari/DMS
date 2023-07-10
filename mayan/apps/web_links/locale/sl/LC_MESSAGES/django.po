@@ -25,8 +25,8 @@ msgstr ""
 msgid "Links"
 msgstr "Povezave"
 
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:42
-#: permissions.py:5 views.py:182
+#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
+#: permissions.py:6 views.py:184
 msgid "Web links"
 msgstr "Spletne povezave"
 
@@ -42,7 +42,7 @@ msgstr "Spletna povezava urejena"
 msgid "Web link navigated"
 msgstr "Spletna povezava navigirana"
 
-#: links.py:29 views.py:94
+#: links.py:29 views.py:96
 msgid "Create new web link"
 msgstr "Ustvari novo spletno povezavo"
 
@@ -50,7 +50,7 @@ msgstr "Ustvari novo spletno povezavo"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: links.py:39 models.py:36
+#: links.py:39 models.py:38
 msgid "Document types"
 msgstr "Vrste dokumentov"
 
@@ -79,31 +79,31 @@ msgstr ""
 msgid "Template"
 msgstr "Predloga"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Omogočeno"
 
-#: models.py:41
+#: models.py:43
 msgid "Web link"
 msgstr "Spletna povezava"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new web links"
 msgstr "Ustvarite nove spletne povezave"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete web links"
 msgstr "Izbrišite spletne povezave"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit web links"
 msgstr "Uredite spletne povezave"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing web links"
 msgstr "Oglejte si obstoječe spletne povezave"
 
-#: permissions.py:20
+#: permissions.py:22
 msgid "View web link instances"
 msgstr "Oglejte si primerke spletnih povezav"
 
@@ -124,35 +124,35 @@ msgstr "Dostopne spletne povezave"
 msgid "Web links enabled"
 msgstr "Spletne povezave omogočene"
 
-#: views.py:63
+#: views.py:65
 #, python-format
 msgid "Web links to enable for document type: %s"
 msgstr "Spletne povezave za omogočanje za vrsto dokumenta: %s"
 
-#: views.py:116
+#: views.py:118
 #, python-format
 msgid "Delete web link: %s"
 msgstr "Izbriši spletno povezavo: %s"
 
-#: views.py:128
+#: views.py:130
 msgid "Available document types"
 msgstr "Razpoložljive vrste dokumentov"
 
-#: views.py:129
+#: views.py:131
 msgid "Document types enabled"
 msgstr "Omogočene vrste dokumentov"
 
-#: views.py:139
+#: views.py:141
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "Vrsta dokumenta, za katerega želite omogočiti spletno povezavo: %s"
 
-#: views.py:156
+#: views.py:158
 #, python-format
 msgid "Edit web link: %s"
 msgstr "Uredi spletno povezavo: %s"
 
-#: views.py:175 views.py:205
+#: views.py:177 views.py:207
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -160,15 +160,15 @@ msgstr ""
 "Spletne povezave omogočajo generiranje HTTP povezav iz dokumentov do "
 "zunanjih virov. URL povezave lahko vsebuje vrednosti lastnosti dokumenta."
 
-#: views.py:180
+#: views.py:182
 msgid "There are no web links"
 msgstr "Ni spletnih povezav"
 
-#: views.py:210
+#: views.py:212
 msgid "There are no web links for this document"
 msgstr "Za ta dokument ni spletnih povezav"
 
-#: views.py:213
+#: views.py:215
 #, python-format
 msgid "Web links for document: %s"
 msgstr "Spletne povezave za dokument: %s"

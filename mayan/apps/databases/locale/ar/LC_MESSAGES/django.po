@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Marwan Rahhal <Marwanr@sssit.net>, 2022
-# Ali, 2023
+# Ali <alimahwer@yahoo.com>, 2023
 # 
 msgid ""
 msgstr ""

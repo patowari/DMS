@@ -1,3 +1,7 @@
+from ..events import (
+    event_document_trashed, event_trashed_document_deleted,
+    event_trashed_document_restored
+)
 from ..models import Document, TrashedDocument
 
 from .base import GenericDocumentTestCase
@@ -10,31 +14,57 @@ class TrashedDocumentTestCase(GenericDocumentTestCase):
         super().setUp()
         self._create_test_document_stub()
 
-    def test_restoring_documents(self):
-        self.assertEqual(Document.valid.count(), 1)
+    def test_document_trashing(self):
+        self._clear_events()
 
-        # Trash the document
-        self._test_document.delete()
+        # Trash the document.
+        self.test_document.delete()
         self.assertEqual(TrashedDocument.objects.count(), 1)
         self.assertEqual(Document.valid.count(), 0)
 
-        # Restore the document
-        TrashedDocument.objects.get(pk=self._test_document.pk).restore()
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self.test_document)
+        self.assertEqual(events[0].target, self.test_document)
+        self.assertEqual(events[0].verb, event_document_trashed.id)
+
+    def test_trashed_document_restore(self):
+        self.test_document.delete()
+
+        self._clear_events()
+
+        # Restore the document.
+        TrashedDocument.objects.get(pk=self.test_document.pk).restore()
         self.assertEqual(TrashedDocument.objects.count(), 0)
         self.assertEqual(Document.valid.count(), 1)
 
-    def test_trashing_documents(self):
-        self.assertEqual(Document.valid.count(), 1)
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
 
-        # Trash the document
-        self._test_document.delete()
-        self.assertEqual(TrashedDocument.objects.count(), 1)
-        self.assertEqual(Document.valid.count(), 0)
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self.test_document)
+        self.assertEqual(events[0].target, self.test_document)
+        self.assertEqual(events[0].verb, event_trashed_document_restored.id)
 
-        # Delete the document
-        self._test_document.delete()
+    def test_trashed_document_delete(self):
+        self.test_document.delete()
+
+        self._clear_events()
+
+        # Delete the document.
+        self.test_document.delete()
         self.assertEqual(TrashedDocument.objects.count(), 0)
         self.assertEqual(Document.valid.count(), 0)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self.test_document_type)
+        self.assertEqual(events[0].target, self.test_document_type)
+        self.assertEqual(events[0].verb, event_trashed_document_deleted.id)
 
 
 class TrashedDocumentPageTestCase(GenericDocumentTestCase):

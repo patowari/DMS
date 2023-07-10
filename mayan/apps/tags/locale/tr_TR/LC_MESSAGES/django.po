@@ -8,6 +8,7 @@
 # abc Def <hdogan1974@gmail.com>, 2022
 # serhatcan77 <serhat_can@yahoo.com>, 2022
 # Bedreddin Şahbaz, 2022
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -337,4 +338,4 @@ msgstr "Etiket ekle"
 
 #: workflow_actions.py:67
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "Belgeden kaldırılacak etiketler."

@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Roberto Rosario, 2022
-# Lyudmil Antonov <lantonov.here@gmail.com>, 2022
+# Lyudmil Antonov <lantonov.here@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -242,18 +242,21 @@ msgstr ""
 #: views.py:121
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
-msgstr ""
+msgstr "%(count)d файл с документ, изпратен в опашката с метаданни на файла."
 
 #: views.py:124
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
+"%(count)d файлове с документи, изпратени до опашката с метаданни на файла."
 
 #: views.py:133
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
+"Изпращане на избрания файл с документ към опашката с метаданни на файла?"
 msgstr[1] ""
+"Изпращане на избраните файлове с документи в опашката с метаданни на файла?"
 
 #: views.py:164
 #, python-format

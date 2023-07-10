@@ -67,7 +67,7 @@ class WebLinksApp(MayanAppConfig):
         ).add_fields(
             field_names=(
                 'label', 'template', 'enabled', 'document_types',
-            ),
+            )
         )
 
         ModelEventType.register(

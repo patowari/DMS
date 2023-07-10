@@ -171,17 +171,24 @@ class Cache(ValueChangeModelMixin, models.Model):
         else:
             for partition in self.partitions.all():
                 partition._event_actor = getattr(self, '_event_actor', None)
-                partition.purge()
+                try:
+                    partition.purge()
+                except Exception as exception:
+                    logger.error(
+                        'Unable to purge partition ID: %d; %s',
+                        partition.pk, exception
+                    )
+                    raise
 
     @method_event(
         event_manager_class=EventManagerSave,
         created={
             'event': event_cache_created,
-            'target': 'self',
+            'target': 'self'
         },
         edited={
             'event': event_cache_edited,
-            'target': 'self',
+            'target': 'self'
         }
     )
     def save(self, *args, **kwargs):
@@ -321,7 +328,14 @@ class CachePartition(models.Model):
     )
     def purge(self):
         for parition_file in self.files.all():
-            parition_file.delete()
+            try:
+                parition_file.delete()
+            except Exception as exception:
+                logger.error(
+                    'Unable to delete partition file ID: %d; %s',
+                    parition_file.pk, exception
+                )
+                raise
 
 
 class CachePartitionFile(models.Model):
