@@ -22,6 +22,16 @@
 
 - Move language and timezone choice generation to ``locales.utils``.
 - Sort language dropdown selection by language name and by language code.
+- Update dependency versions:
+
+  - Django from 3.2.19 to 3.2.20.
+  - django-model-utils from 4.2.0 to 4.3.1
+  - django-mptt from 0.13.4 to 0.14.0
+  - requests from 2.27.1 to 2.29
+  - sh from 1.14.2 to 1.14.3
+  - safety from 1.10.3 to 2.3.5
+  - sentry-sdk from 1.5.8 to 1.5.12
+  - whitenoise from 6.0.0 to 6.2.0
 
 4.3.9 (2023-06-02)
 ==================

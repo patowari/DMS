@@ -41,7 +41,7 @@ PythonDependency(
         ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django', version_string='==3.2.19'
+    ''', module=__name__, name='django', version_string='==3.2.20'
 )
 PythonDependency(
     copyright_text='''
@@ -96,7 +96,7 @@ PythonDependency(
         THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
         OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django-model-utils', version_string='==4.2.0'
+    ''', module=__name__, name='django-model-utils', version_string='==4.3.1'
 )
 PythonDependency(
     copyright_text='''
@@ -121,7 +121,7 @@ PythonDependency(
         COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
         IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    ''', module=__name__, name='django-mptt', version_string='==0.13.4'
+    ''', module=__name__, name='django-mptt', version_string='==0.14.0'
 )
 PythonDependency(
     module=__name__, name='importlib-metadata', version_string='==5.0.0'
@@ -133,7 +133,7 @@ PythonDependency(
     ''', module=__name__, name='pycountry', version_string='==22.3.5'
 )
 PythonDependency(
-    module=__name__, name='requests', version_string='==2.27.1'
+    module=__name__, name='requests', version_string='==2.29'
 )
 PythonDependency(
     copyright_text='''
@@ -156,7 +156,7 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
-    ''', module=__name__, name='sh', version_string='==1.14.2'
+    ''', module=__name__, name='sh', version_string='==1.14.3'
 )
 
 # Development
@@ -203,7 +203,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='safety', version_string='==1.10.3'
+    module=__name__, name='safety', version_string='==2.3.5'
 )
 
 # Build

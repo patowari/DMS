@@ -59,8 +59,9 @@ def find_packages(directory):
 
     return packages
 
+
 install_requires = """
-django==3.2.19
+django==3.2.20
 CairoSVG==2.5.2
 Pillow==9.2.0
 PyPDF2==1.28.4
@@ -74,8 +75,8 @@ django-celery-beat==2.2.1
 django-cors-headers==3.10.0
 django-formtools==2.3
 django-mathfilters==1.0.0
-django-model-utils==4.2.0
-django-mptt==0.13.4
+django-model-utils==4.3.1
+django-mptt==0.14.0
 django-qsstats-magic==1.1.0
 django-solo==2.0.0
 django-stronghold==0.4.0
@@ -105,11 +106,11 @@ python-magic==0.4.26
 python_gnupg==0.4.8
 pytz==2022.1
 qrcode==7.3.1
-requests==2.27.1
-sentry-sdk==1.5.8
-sh==1.14.2
+requests==2.29
+sentry-sdk==1.5.12
+sh==1.14.3
 swagger-spec-validator==2.7.4
-whitenoise==6.0.0
+whitenoise==6.2.0
 """.split()
 
 with open(file='README.rst') as file_object:
