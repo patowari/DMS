@@ -1,3 +1,28 @@
+4.3.10 (2023-07-10)
+==================
+- Fixes from version 4.2.17.
+- Add new translation languages:
+
+  - ar-eg: Arabic (Egypt)
+  - ca: Catalan
+  - de-at: German (Austria)
+  - de-de: German (Germany)
+  - es-mx: Spanish (Mexico)
+  - he-il: Hebrew (Israel)
+  - hr: Croatian
+  - mn-mn: Mongolian (Mongolia)
+  - ro-ro: Romanian (Romania)
+  - sq: Albanian
+  - th: Thai
+  - tr-tr: Turkish (Turkey)
+  - uk: Ukrainian
+  - zh-cn: Chinese (China)
+  - zh-hans: Chinese (Simplified)
+  - zh-tw: Chinese (Taiwan)
+
+- Move language and timezone choice generation to ``locales.utils``.
+- Sort language dropdown selection by language name and by language code.
+
 4.3.9 (2023-06-02)
 ==================
 - Fix document parsing error logging. Use the correct argument name when
