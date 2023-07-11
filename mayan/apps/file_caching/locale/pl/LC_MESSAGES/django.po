@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:35+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2022\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -67,7 +67,7 @@ msgstr "Maksymalny rozmiar pamięci podręcznej w bajtach."
 msgid "Maximum size"
 msgstr "Maksymalny rozmiar"
 
-#: models.py:52 models.py:207
+#: models.py:52 models.py:214
 msgid "Cache"
 msgstr "Pamięć podręczna"
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "Nieznany"
 
-#: models.py:98 models.py:312
+#: models.py:98 models.py:319
 msgid "Current size"
 msgstr "Aktualny rozmiar"
 
@@ -92,43 +92,43 @@ msgstr "Aktualny rozmiar"
 msgid "Current size of the cache."
 msgstr "Aktualny rozmiar pamięci podręcznej."
 
-#: models.py:210
+#: models.py:217
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:215 models.py:332
+#: models.py:222 models.py:346
 msgid "Cache partition"
 msgstr "Partycja pamięci podręcznej"
 
-#: models.py:216
+#: models.py:223
 msgid "Cache partitions"
 msgstr "Partycje pamięci podręcznej"
 
-#: models.py:314
+#: models.py:321
 msgid "Current size of the cache partition."
 msgstr ""
 
-#: models.py:335
+#: models.py:349
 msgid "Date time"
 msgstr "Data i godzina"
 
-#: models.py:337
+#: models.py:351
 msgid "Filename"
 msgstr "Nazwa"
 
-#: models.py:339
+#: models.py:353
 msgid "File size"
 msgstr "Rozmiar pliku"
 
-#: models.py:343
+#: models.py:357
 msgid "Times this cache partition file has been accessed."
 msgstr ""
 
-#: models.py:350
+#: models.py:364
 msgid "Cache partition file"
 msgstr "Plik partycji pamięci podręcznej"
 
-#: models.py:351
+#: models.py:365
 msgid "Cache partition files"
 msgstr "Pliki partycji pamięci podręcznej"
 

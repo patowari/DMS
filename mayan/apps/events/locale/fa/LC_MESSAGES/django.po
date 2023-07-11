@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:35+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
 "Last-Translator: Roberto Rosario, 2022\n"
 "Language-Team: Persian (https://app.transifex.com/rosarior/teams/13584/fa/)\n"
@@ -66,15 +66,15 @@ msgstr "شیئ"
 msgid "Event type"
 msgstr "نوع رویداد"
 
-#: classes.py:87
+#: classes.py:91
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:116
+#: classes.py:120
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:118
+#: classes.py:122
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "

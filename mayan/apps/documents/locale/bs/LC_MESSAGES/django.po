@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:35+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
 "Last-Translator: Roberto Rosario, 2022\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Keeps the original filename of the uploaded file."
 msgstr ""
 
-#: classes.py:78 forms/document_forms.py:108 models/document_models.py:57
+#: classes.py:78 forms/document_forms.py:111 models/document_models.py:57
 msgid "UUID"
 msgstr "UUID"
 
@@ -360,7 +360,7 @@ msgstr ""
 msgid "Date created"
 msgstr ""
 
-#: forms/document_forms.py:110 models/document_models.py:85
+#: forms/document_forms.py:114 models/document_models.py:85
 msgid "Language"
 msgstr "Jezik"
 

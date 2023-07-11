@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:35+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2022\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -66,7 +66,7 @@ msgstr "الحد الأقصى لملف التخزين المؤقت"
 msgid "Maximum size"
 msgstr "أكبر حجم للملف"
 
-#: models.py:52 models.py:207
+#: models.py:52 models.py:214
 msgid "Cache"
 msgstr "ملف مؤقت"
 
@@ -82,7 +82,7 @@ msgstr "الحجم الإفتراضي لملف التخزين المؤقت"
 msgid "Unknown"
 msgstr "غير معرف"
 
-#: models.py:98 models.py:312
+#: models.py:98 models.py:319
 msgid "Current size"
 msgstr "الحجم الحالي"
 
@@ -90,43 +90,43 @@ msgstr "الحجم الحالي"
 msgid "Current size of the cache."
 msgstr "الحجم الحالي للملف المؤقت"
 
-#: models.py:210
+#: models.py:217
 msgid "Name"
 msgstr "اسم"
 
-#: models.py:215 models.py:332
+#: models.py:222 models.py:346
 msgid "Cache partition"
 msgstr "تقسيم الملف المؤقت"
 
-#: models.py:216
+#: models.py:223
 msgid "Cache partitions"
 msgstr "تقسيم الملفات المؤقتة"
 
-#: models.py:314
+#: models.py:321
 msgid "Current size of the cache partition."
 msgstr ""
 
-#: models.py:335
+#: models.py:349
 msgid "Date time"
 msgstr "التاريخ والوقت"
 
-#: models.py:337
+#: models.py:351
 msgid "Filename"
 msgstr "اسم الملف"
 
-#: models.py:339
+#: models.py:353
 msgid "File size"
 msgstr "حجم الملف"
 
-#: models.py:343
+#: models.py:357
 msgid "Times this cache partition file has been accessed."
 msgstr ""
 
-#: models.py:350
+#: models.py:364
 msgid "Cache partition file"
 msgstr "قسم الذاكرة المؤقتة"
 
-#: models.py:351
+#: models.py:365
 msgid "Cache partition files"
 msgstr "قسم الملفات المؤقتة"
 

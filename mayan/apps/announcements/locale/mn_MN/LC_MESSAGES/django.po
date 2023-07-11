@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Bilgutei Erdenebayar <beke0130@gmail.com>, 2022
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Mayan EDMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-11 00:31+0000\n"
+"PO-Revision-Date: 2022-07-27 05:32+0000\n"
+"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2022\n"
+"Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: mn_MN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:36 events.py:5 links.py:40 models.py:43 permissions.py:6
+#: templates/announcements/announcements.html:8 views.py:126
+msgid "Announcements"
+msgstr "Мэдэгдэл"
+
+#: apps.py:78 apps.py:82
+msgid "None"
+msgstr "Хоосон"
+
+#: events.py:8
+msgid "Announcement created"
+msgstr "Мэдэгдэл үүсгэлээ"
+
+#: events.py:11
+msgid "Announcement edited"
+msgstr "Мэдэгдэл засагдлаа"
+
+#: links.py:17 views.py:34
+msgid "Create announcement"
+msgstr "Мэдэгдэл үүсгэх"
+
+#: links.py:20 links.py:26
+msgid "Delete"
+msgstr "Устгах"
+
+#: links.py:31
+msgid "Edit"
+msgstr "Засах"
+
+#: models.py:19
+msgid "Short description of this announcement."
+msgstr "Энэхүү мэдэгдлийн товч тайлбар."
+
+#: models.py:20
+msgid "Label"
+msgstr "Гарчиг"
+
+#: models.py:23
+msgid "The actual text to be displayed."
+msgstr "Хэрэглэгчдэд харагдах текст."
+
+#: models.py:24
+msgid "Text"
+msgstr "Текст"
+
+#: models.py:26
+msgid "Enabled"
+msgstr "Идэвхжүүлсэн"
+
+#: models.py:29
+msgid "Date and time after which this announcement will be displayed."
+msgstr "Энэ зарлалыг тавьж эхлэх огноо."
+
+#: models.py:30
+msgid "Start date time"
+msgstr "Эхлэх огноо"
+
+#: models.py:34
+msgid "Date and time until when this announcement is to be displayed."
+msgstr "Энэ зарлалыг тавих огноо."
+
+#: models.py:35
+msgid "End date time"
+msgstr "Дуусах огноо"
+
+#: models.py:42
+msgid "Announcement"
+msgstr "Мэдэгдэл"
+
+#: permissions.py:10
+msgid "Create announcements"
+msgstr "Мэдэгдэл үүсгэх"
+
+#: permissions.py:13
+msgid "Delete announcements"
+msgstr "Мэдэгдэл устгах"
+
+#: permissions.py:16
+msgid "Edit announcements"
+msgstr "Мэдэгдэл засах"
+
+#: permissions.py:19
+msgid "View announcements"
+msgstr "Мэдэгдэл үзэх"
+
+#: views.py:45
+#, python-format
+msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
+msgstr "\"%(instance)s\";%(exception)sмэдэгдлийн устгахад алдаа гарлаа"
+
+#: views.py:54
+#, python-format
+msgid "Announcement \"%(object)s\" deleted successfully."
+msgstr "\"%(object)s\" мэдэгдлийг амжилттай устгалаа."
+
+#: views.py:57
+#, python-format
+msgid "%(count)d announcement deleted successfully."
+msgstr "%(count)d мэдэгдэл амжилттай устгагдлаа."
+
+#: views.py:60
+#, python-format
+msgid "%(count)d announcements deleted successfully."
+msgstr "%(count)d мэдэгдэл амжилттай устгагдлаа."
+
+#: views.py:62
+#, python-format
+msgid "Delete announcement: %(object)s."
+msgstr "Мэдэгдлийг устга: %(object)s."
+
+#: views.py:63
+#, python-format
+msgid "Delete the %(count)d selected announcement."
+msgstr "Сонгосон %(count)d зарлалыг устгах."
+
+#: views.py:64
+#, python-format
+msgid "Delete the %(count)d selected announcements."
+msgstr "Сонгосон %(count)d зарлалуудыг устгах."
+
+#: views.py:98
+#, python-format
+msgid "Edit announcement: %s"
+msgstr "%s зарлалыг засах"
+
+#: views.py:121
+msgid ""
+"Announcements are displayed in the login view. You can use announcements to "
+"convery information about your organzation, announcements or usage "
+"guidelines for your users."
+msgstr ""
+"Таны үүсгэсэн зарлалууд нь хэрэглэгчийн нэвтрэх дэлгэцэнд харагдана. Та "
+"байгууллагынхаа тухай мэдээлэл, зарлал эсвэл зааварчилгааг дамжуулахын тулд "
+"зарлалыг ашиглаж болно."
+
+#: views.py:125
+msgid "No announcements available"
+msgstr "Ямар ч зарлал байхгүй байна"

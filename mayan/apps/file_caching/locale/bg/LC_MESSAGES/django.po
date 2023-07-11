@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:35+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2022\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -67,7 +67,7 @@ msgstr "Максимален размер на кеша в байтове."
 msgid "Maximum size"
 msgstr "Максимален размер"
 
-#: models.py:52 models.py:207
+#: models.py:52 models.py:214
 msgid "Cache"
 msgstr "Кеш"
 
@@ -83,7 +83,7 @@ msgstr "Размер, при който кешът ще започне да из
 msgid "Unknown"
 msgstr "Неизвестен"
 
-#: models.py:98 models.py:312
+#: models.py:98 models.py:319
 msgid "Current size"
 msgstr "Текущ размер"
 
@@ -91,43 +91,43 @@ msgstr "Текущ размер"
 msgid "Current size of the cache."
 msgstr "Текущ размер на кеша."
 
-#: models.py:210
+#: models.py:217
 msgid "Name"
 msgstr "Име"
 
-#: models.py:215 models.py:332
+#: models.py:222 models.py:346
 msgid "Cache partition"
 msgstr "Раздел на кеша"
 
-#: models.py:216
+#: models.py:223
 msgid "Cache partitions"
 msgstr "Раздели на кеша"
 
-#: models.py:314
+#: models.py:321
 msgid "Current size of the cache partition."
 msgstr "Текущ размер на кешовия дял."
 
-#: models.py:335
+#: models.py:349
 msgid "Date time"
 msgstr "Дата час"
 
-#: models.py:337
+#: models.py:351
 msgid "Filename"
 msgstr "Име на файл"
 
-#: models.py:339
+#: models.py:353
 msgid "File size"
 msgstr "Размер на файла"
 
-#: models.py:343
+#: models.py:357
 msgid "Times this cache partition file has been accessed."
 msgstr "Брой на достъпвания до този файл с дялове на кеша."
 
-#: models.py:350
+#: models.py:364
 msgid "Cache partition file"
 msgstr "Файл за раздели на кеша"
 
-#: models.py:351
+#: models.py:365
 msgid "Cache partition files"
 msgstr "Файлове с раздели на кешове"
 

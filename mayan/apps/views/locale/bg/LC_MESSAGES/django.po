@@ -6,15 +6,15 @@
 # Translators:
 # Roberto Rosario, 2022
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2022
-# Lyudmil Antonov <lantonov.here@gmail.com>, 2022
+# Lyudmil Antonov <lantonov.here@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:36+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2022\n"
+"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,7 +208,7 @@ msgstr "Брой на обектите, които ще бъдат показа�
 
 #: settings.py:21
 msgid "A string specifying the name to use for the paging parameter."
-msgstr ""
+msgstr "Низ, указващ името, което да се използва за параметъра за страниране."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 04:35+0000\n"
+"POT-Creation-Date: 2023-07-11 00:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
 "Last-Translator: Ingo Buchholz <ingo.buchholz@takwa.de>, 2022\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -69,7 +69,7 @@ msgstr "Maximale Größe des Cache in Bytes."
 msgid "Maximum size"
 msgstr "Maximale Größe"
 
-#: models.py:52 models.py:207
+#: models.py:52 models.py:214
 msgid "Cache"
 msgstr "Cache"
 
@@ -85,7 +85,7 @@ msgstr "Größe, bei der der Cache beginnt, alte Einträge zu löschen."
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: models.py:98 models.py:312
+#: models.py:98 models.py:319
 msgid "Current size"
 msgstr "Momentane Größe"
 
@@ -93,43 +93,43 @@ msgstr "Momentane Größe"
 msgid "Current size of the cache."
 msgstr "Aktuelle Größe des Caches."
 
-#: models.py:210
+#: models.py:217
 msgid "Name"
 msgstr "Name"
 
-#: models.py:215 models.py:332
+#: models.py:222 models.py:346
 msgid "Cache partition"
 msgstr "Cache-Partition"
 
-#: models.py:216
+#: models.py:223
 msgid "Cache partitions"
 msgstr "Cache-Partitionen"
 
-#: models.py:314
+#: models.py:321
 msgid "Current size of the cache partition."
 msgstr ""
 
-#: models.py:335
+#: models.py:349
 msgid "Date time"
 msgstr "Datum & Zeit"
 
-#: models.py:337
+#: models.py:351
 msgid "Filename"
 msgstr "Dateiname"
 
-#: models.py:339
+#: models.py:353
 msgid "File size"
 msgstr "Dateigröße"
 
-#: models.py:343
+#: models.py:357
 msgid "Times this cache partition file has been accessed."
 msgstr ""
 
-#: models.py:350
+#: models.py:364
 msgid "Cache partition file"
 msgstr "Cache-Partitionsdatei"
 
-#: models.py:351
+#: models.py:365
 msgid "Cache partition files"
 msgstr "Cache-Partitionsdateien"
 
