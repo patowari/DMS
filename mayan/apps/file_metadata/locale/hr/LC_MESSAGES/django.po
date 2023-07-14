@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-07-14 08:16+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: links.py:27
 msgid "Attributes"
-msgstr ""
+msgstr "Atributi"
 
 #: links.py:34 links.py:39
 msgid "Submit for file metadata"
