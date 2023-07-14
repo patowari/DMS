@@ -36,11 +36,11 @@ msgstr "Landsinstellingen"
 msgid "Edit locale profile"
 msgstr "Wijzig landsinstellingen"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Gebruiker"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Tijdzone"
 

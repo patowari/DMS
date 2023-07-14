@@ -65,15 +65,15 @@ msgstr "Data kódovaná ve formátu JSON pro backendovou třídu."
 msgid "Backend data"
 msgstr "Backend data"
 
-#: model_mixins.py:78
+#: model_mixins.py:80
 msgid "Backend"
 msgstr "Backend"
 
-#: model_mixins.py:79
+#: model_mixins.py:81
 msgid "The backend class for this entry."
 msgstr "Třída backendu pro tuto položku."
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -81,15 +81,15 @@ msgid ""
 "value is considered to be the logical true."
 msgstr ""
 
-#: model_mixins.py:106
+#: model_mixins.py:108
 msgid "Condition"
 msgstr "Stav"
 
-#: model_mixins.py:127
+#: model_mixins.py:129
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 
-#: model_mixins.py:130
+#: model_mixins.py:132
 msgid "Has a condition?"
 msgstr "Má stav?"
 

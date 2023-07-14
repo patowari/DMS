@@ -75,7 +75,7 @@ msgstr ""
 
 #: forms.py:17
 msgid "Asset preview image"
-msgstr ""
+msgstr "Varlık önizleme görüntüsü"
 
 #: forms.py:17
 msgid "Preview"

@@ -23,29 +23,31 @@ msgstr ""
 
 #: apps.py:16
 msgid "Databases"
-msgstr ""
+msgstr "Veritabanları"
 
 #: classes.py:205
 msgid "Model fields"
-msgstr ""
+msgstr "Model alanları"
 
 #: classes.py:253
 msgid "Model related fields"
-msgstr ""
+msgstr "Modelle ilgili alanlar"
 
 #: classes.py:258
 msgid "Model properties"
-msgstr ""
+msgstr "Model özellikleri"
 
 #: classes.py:263
 msgid "Model reverse fields"
-msgstr ""
+msgstr "Model ters özellikleri"
 
 #: literals.py:14
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
 msgstr ""
+"Veritabanınızın arka ucu SQLite kullanacak şekilde ayarlanmıştır. SQLite, "
+"üretim için değil, yalnızca geliştirme ve test için kullanılmalıdır."
 
 #: model_mixins.py:24
 msgid "The dotted Python path to the backend class."
@@ -63,33 +65,37 @@ msgstr "Backend sınıfı için JSON kodlu verisi."
 msgid "Backend data"
 msgstr "Backend verisi"
 
-#: model_mixins.py:78
+#: model_mixins.py:80
 msgid "Backend"
 msgstr "Backend"
 
-#: model_mixins.py:79
+#: model_mixins.py:81
 msgid "The backend class for this entry."
 msgstr "Bu girdi için backend sınıfı."
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
 "None, or an empty string ('') are considered to be logical false, any other "
 "value is considered to be the logical true."
 msgstr ""
+"Bu nesnenin yürütülüp yürütülmediğini belirleyecek koşul. Herhangi bir değer"
+" döndürmeyen, Python mantıksal None veya boş bir dize ('') döndüren koşullar"
+" mantıksal yanlış olarak kabul edilir, diğer tüm değerler mantıksal doğru "
+"olarak kabul edilir."
 
-#: model_mixins.py:106
+#: model_mixins.py:108
 msgid "Condition"
 msgstr "Koşul"
 
-#: model_mixins.py:127
+#: model_mixins.py:129
 msgid "The object will be executed, depending on the condition return value."
-msgstr ""
+msgstr "Koşul dönüş değerine bağlı olarak nesne yürütülür."
 
-#: model_mixins.py:130
+#: model_mixins.py:132
 msgid "Has a condition?"
-msgstr ""
+msgstr "Bir durum mu var?"
 
 #: templates/databases/app/viewport.html:11
 msgid "Warning"

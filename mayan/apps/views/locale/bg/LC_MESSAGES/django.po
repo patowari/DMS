@@ -163,7 +163,7 @@ msgstr "Брой на обектите, които ще бъдат показа�
 
 #: settings.py:23
 msgid "A string specifying the name to use for the paging parameter."
-msgstr ""
+msgstr "Низ, указващ името, което да се използва за параметъра за страниране."
 
 #: settings.py:29
 msgid ""

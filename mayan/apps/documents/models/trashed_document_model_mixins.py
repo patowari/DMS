@@ -7,6 +7,10 @@ from ..literals import IMAGE_ERROR_NO_VERSION_PAGES
 
 
 class TrashedDocumentBusinessLogicMixin:
+    @property
+    def document(self):
+        return Document.objects.get(pk=self.pk)
+
     def get_api_image_url(
         self, maximum_layer_order=None, transformation_instance_list=None,
         user=None
@@ -24,7 +28,7 @@ class TrashedDocumentBusinessLogicMixin:
     @method_event(
         event_manager_class=EventManagerMethodAfter,
         event=event_trashed_document_restored,
-        target='self'
+        target='document'
     )
     def restore(self, user):
         self._event_actor = user

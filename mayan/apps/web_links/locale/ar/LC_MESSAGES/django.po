@@ -74,7 +74,7 @@ msgstr "القالب المستخدم "
 msgid "Template"
 msgstr "القالب"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "مفعل"
 

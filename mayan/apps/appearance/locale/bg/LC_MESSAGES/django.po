@@ -164,7 +164,7 @@ msgstr "Вижте съществуващите теми"
 
 #: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Персонализиран HTTP код за отговор за AJAX пренасочвания."
 
 #: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."

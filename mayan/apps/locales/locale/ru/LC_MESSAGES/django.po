@@ -38,11 +38,11 @@ msgstr "Локаль профиля"
 msgid "Edit locale profile"
 msgstr "Редактировать локаль"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Пользователь"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Часовой пояс"
 

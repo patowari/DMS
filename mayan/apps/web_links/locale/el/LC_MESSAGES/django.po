@@ -76,7 +76,7 @@ msgstr ""
 msgid "Template"
 msgstr "Πρότυπο"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 

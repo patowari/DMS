@@ -40,11 +40,11 @@ msgstr "Paramètres régionaux du profil"
 msgid "Edit locale profile"
 msgstr "Modifier les paramètres régionaux du profil"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Utilisateur"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Fuseau horaire"
 

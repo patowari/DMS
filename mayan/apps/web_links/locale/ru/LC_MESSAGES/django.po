@@ -79,7 +79,7 @@ msgstr ""
 msgid "Template"
 msgstr "Шаблон"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Включено"
 

@@ -56,7 +56,7 @@ msgstr "Tekrar arama"
 
 #: links.py:33 views.py:62
 msgid "Reindex search backend"
-msgstr ""
+msgstr "Yeniden dizin arama backend"
 
 #: literals.py:21
 msgid "Yes"
@@ -74,32 +74,35 @@ msgstr "Arama"
 
 #: permissions.py:10
 msgid "Execute search tools"
-msgstr ""
+msgstr "Arama araçlarını yürütme"
 
 #: queues.py:10
 msgid "Search slow"
-msgstr ""
+msgstr "Yavaş arama"
 
 #: queues.py:15
 msgid "Remove a model instance from the search engine."
-msgstr ""
+msgstr "Bir model örneğini arama motorundan kaldırın."
 
 #: queues.py:20
 msgid "Index a model instance to the search engine."
-msgstr ""
+msgstr "Bir model örneğini arama motoruna dizinleyin."
 
 #: queues.py:25
 msgid "Index all instances of a search model to the search engine."
-msgstr ""
+msgstr "Bir arama modelinin tüm örneklerini arama motoruna dizinleyin."
 
 #: queues.py:31
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
+"Bir arama modelinin ilgili tüm örneklerini çok çok olaydan sonra dizine "
+"ekleyin."
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
+"Arama backend dizinlerini sıfırlayın ve tüm örnekleri yeniden dizinleyin."
 
 #: scoped_queries.py:352
 msgid ""
@@ -194,13 +197,16 @@ msgstr ""
 
 #: settings.py:20
 msgid "Full path to the backend to be used to handle the search."
-msgstr ""
+msgstr "Aramayı işlemek için kullanılacak arka uca giden tam yol."
 
 #: settings.py:27
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
+"Arama arka ucuna iletilecek argümanlar. Örneğin davranışı, ana bilgisayar "
+"adlarını veya kimlik doğrulama bağımsız değişkenlerini değiştirmek için "
+"kullanılan değerler."
 
 #: settings.py:36
 msgid "The search operator to use when none is specified."
@@ -215,11 +221,11 @@ msgstr ""
 
 #: settings.py:51
 msgid "Amount of objects to process when performing bulk indexing."
-msgstr ""
+msgstr "Toplu dizin oluşturma gerçekleştirilirken işlenecek nesne miktarı."
 
 #: settings.py:57
 msgid "Sets the default state of the \"Match all\" checkbox."
-msgstr ""
+msgstr "\"Tümünü eşleştir\" onay kutusunun varsayılan durumunu ayarlar."
 
 #: settings.py:63
 msgid ""
@@ -303,7 +309,7 @@ msgstr ""
 
 #: views.py:88
 msgid "Search backend reindexing queued."
-msgstr ""
+msgstr "Backend arama yeniden dizine alındı."
 
 #: views.py:110
 #, python-format

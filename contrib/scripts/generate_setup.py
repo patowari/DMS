@@ -65,8 +65,9 @@ def get_requirements(base_directory, filename):
                 directory, filename = os.path.split(line)
                 result.extend(
                     get_requirements(
-                        base_directory=os.path.join(base_directory, directory),
-                        filename=filename
+                        base_directory=os.path.join(
+                            base_directory, directory
+                        ), filename=filename
                     )
                 )
             elif not line.startswith('\n'):

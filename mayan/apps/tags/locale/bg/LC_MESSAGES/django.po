@@ -259,12 +259,12 @@ msgstr ""
 #: views.py:130
 #, python-format
 msgid "Delete tag: %(object)s"
-msgstr ""
+msgstr "Изтриване на таг: %(object)s"
 
 #: views.py:131
 #, python-format
 msgid "Delete the %(count)d selected tag"
-msgstr ""
+msgstr "Изтрийте %(count)d избран маркер"
 
 #: views.py:137
 msgid "Will be removed from all documents."
@@ -349,4 +349,4 @@ msgstr "Прикачете маркер"
 
 #: workflow_actions.py:69
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "Маркери за премахване от документа."

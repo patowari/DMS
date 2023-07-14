@@ -249,6 +249,13 @@ class EventModelRegistry:
         from actstream import registry
         from mayan.apps.acls.classes import ModelPermission
 
+        AccessControlList = apps.get_model(
+            app_label='acls', model_name='AccessControlList'
+        )
+        StoredPermission = apps.get_model(
+            app_label='permissions', model_name='StoredPermission'
+        )
+
         event_type_namespace = EventTypeNamespace.get(
             name=EVENT_TYPE_NAMESPACE_NAME
         )
@@ -282,13 +289,6 @@ class EventModelRegistry:
                     ), sources=(model,)
                 )
 
-            AccessControlList = apps.get_model(
-                app_label='acls', model_name='AccessControlList'
-            )
-            StoredPermission = apps.get_model(
-                app_label='permissions', model_name='StoredPermission'
-            )
-
             if register_permissions and not issubclass(model, (AccessControlList, StoredPermission)):
                 ModelPermission.register(
                     exclude=exclude,
@@ -311,7 +311,9 @@ class EventTypeNamespace(AppsModuleLoaderMixin):
 
     @classmethod
     def all(cls):
-        return sorted(cls._registry.values())
+        return sorted(
+            cls._registry.values()
+        )
 
     @classmethod
     def get(cls, name):
@@ -494,7 +496,9 @@ class ModelEventType:
 
         events = []
 
-        class_events = cls._registry.get(type(instance))
+        class_events = cls._registry.get(
+            type(instance)
+        )
 
         if class_events:
             events.extend(class_events)

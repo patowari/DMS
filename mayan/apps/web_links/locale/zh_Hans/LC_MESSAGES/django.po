@@ -76,7 +76,7 @@ msgstr "用于制作Web链接最终URL的模板。"
 msgid "Template"
 msgstr "模板"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "启用"
 

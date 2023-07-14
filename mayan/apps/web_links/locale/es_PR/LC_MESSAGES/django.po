@@ -73,7 +73,7 @@ msgstr "Plantilla que se utilizará para crear la URL final del enlace web."
 msgid "Template"
 msgstr "Plantilla"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Habilitado"
 

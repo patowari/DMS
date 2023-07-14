@@ -84,7 +84,7 @@ msgstr "Motiv upraven"
 
 #: events.py:16
 msgid "User theme edited"
-msgstr ""
+msgstr "Uživatelský motiv upraven"
 
 #: links.py:18
 msgid "Theme settings"
@@ -177,6 +177,7 @@ msgstr ""
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Prodleva v milisekundách, po které budou zkontrolovány aktualizace nabídek."
 
 #: settings.py:47
 msgid ""

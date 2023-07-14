@@ -42,7 +42,7 @@ msgstr "İmza yakalama düzenlendi"
 
 #: forms.py:27
 msgid "Asset preview image"
-msgstr ""
+msgstr "Varlık önizleme görüntüsü"
 
 #: forms.py:27
 msgid "Preview"

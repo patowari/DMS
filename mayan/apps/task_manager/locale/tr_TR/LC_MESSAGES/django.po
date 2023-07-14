@@ -71,7 +71,7 @@ msgstr "Görevleri görüntüle"
 
 #: settings.py:11
 msgid "Celery"
-msgstr ""
+msgstr "Celery"
 
 #: settings.py:17
 msgid "Default: \"AMQPLAIN\". Set custom amqp login method."

@@ -37,11 +37,11 @@ msgstr "Yerel profil ayarı"
 msgid "Edit locale profile"
 msgstr "Yerel Profili Düzenle"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Kullanıcı"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Saat Dilimi"
 

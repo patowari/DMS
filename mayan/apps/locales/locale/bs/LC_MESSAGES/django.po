@@ -36,11 +36,11 @@ msgstr "Lokalni profil"
 msgid "Edit locale profile"
 msgstr "Uredi lokalni profil"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Korisnik"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Vremenska zona"
 

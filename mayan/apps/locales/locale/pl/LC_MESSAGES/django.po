@@ -37,11 +37,11 @@ msgstr "Profil regionalny"
 msgid "Edit locale profile"
 msgstr "Edycja ustawień regionalnych"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Użytkownik"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Strefa czasowa"
 

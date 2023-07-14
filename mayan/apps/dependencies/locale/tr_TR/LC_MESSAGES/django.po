@@ -248,10 +248,14 @@ msgid ""
 "unpinned or immutable depedency bugs in third party libraries. End users can"
 " ignore missing dependencies under this environment."
 msgstr ""
+"Ortam, üçüncü taraf kitaplıklarındaki sabitlenmemiş veya değişmez bağımlılık"
+" hatalarına geçici bir çözüm bulmak için doğrudan belge bağımlılıklarını "
+"belirtmek için kullanılır. Son kullanıcılar bu ortamdaki eksik "
+"bağımlılıkları yok sayabilir."
 
 #: environments.py:40
 msgid "Documentation (override)"
-msgstr ""
+msgstr "Dokümantasyon (geçersiz kılma)"
 
 #: environments.py:44
 msgid ""

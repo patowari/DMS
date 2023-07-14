@@ -56,7 +56,7 @@ msgstr "Saklanan yinelenen backend"
 
 #: models.py:20
 msgid "Stored duplicate backends"
-msgstr ""
+msgstr "Saklanan yinelenen backend"
 
 #: models.py:33
 msgid "Document"
@@ -64,19 +64,19 @@ msgstr "Belge"
 
 #: models.py:45
 msgid "Duplicated backend entry"
-msgstr ""
+msgstr "Yinelenen backend girişi"
 
 #: models.py:46
 msgid "Duplicated backend entries"
-msgstr ""
+msgstr "Yinelenen backend girişi"
 
 #: queues.py:14
 msgid "Clean empty duplicate lists"
-msgstr ""
+msgstr "Boş yinelenen listeleri temizle"
 
 #: queues.py:18
 msgid "Scan document duplicates"
-msgstr ""
+msgstr "Yinelenen belgeleri tara"
 
 #: views.py:36
 msgid "Only exact copies of this document will be shown in the this list."
@@ -108,8 +108,8 @@ msgstr "Yinelenen belge bulunmamaktadır"
 
 #: views.py:87
 msgid "Scan for duplicated documents?"
-msgstr ""
+msgstr "Yinelenen belgeler taransın mı?"
 
 #: views.py:95
 msgid "Duplicated document scan queued successfully."
-msgstr ""
+msgstr "Yinelenen belge taraması başarıyla sıraya alındı."

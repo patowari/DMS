@@ -38,11 +38,11 @@ msgstr "区域配置文件"
 msgid "Edit locale profile"
 msgstr "编辑区域配置文件"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "用户"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "时区"
 

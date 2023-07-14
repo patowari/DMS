@@ -37,11 +37,11 @@ msgstr "Profilo località"
 msgid "Edit locale profile"
 msgstr "Modifica profilo locale"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Utente"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Fuso orario"
 

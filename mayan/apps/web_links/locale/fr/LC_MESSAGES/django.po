@@ -76,7 +76,7 @@ msgstr "Modèle qui sera utilisé pour créer l'URL finale du lien Web."
 msgid "Template"
 msgstr "Modèle"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Activé"
 

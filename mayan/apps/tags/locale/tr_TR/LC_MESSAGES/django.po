@@ -349,4 +349,4 @@ msgstr "Etiket ekle"
 
 #: workflow_actions.py:69
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "Belgeden kaldırılacak etiketler."

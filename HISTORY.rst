@@ -475,6 +475,41 @@
   - Support a local environment config file names ``config-local.env``.
     This file is ignored by Git and meant to override values of ``config.env``.
 
+4.3.10 (2023-07-14)
+===================
+- Fixes from version 4.2.17.
+- Add new translation languages:
+
+  - ar-eg: Arabic (Egypt)
+  - ca: Catalan
+  - de-at: German (Austria)
+  - de-de: German (Germany)
+  - es-mx: Spanish (Mexico)
+  - he-il: Hebrew (Israel)
+  - hr: Croatian
+  - mn-mn: Mongolian (Mongolia)
+  - ro-ro: Romanian (Romania)
+  - sq: Albanian
+  - th: Thai
+  - tr-tr: Turkish (Turkey)
+  - uk: Ukrainian
+  - zh-cn: Chinese (China)
+  - zh-hans: Chinese (Simplified)
+  - zh-tw: Chinese (Taiwan)
+
+- Move language and timezone choice generation to ``locales.utils``.
+- Sort language dropdown selection by language name and by language code.
+- Update dependency versions:
+
+  - Django from 3.2.19 to 3.2.20.
+  - django-model-utils from 4.2.0 to 4.3.1
+  - django-mptt from 0.13.4 to 0.14.0
+  - requests from 2.27.1 to 2.29
+  - sh from 1.14.2 to 1.14.3
+  - safety from 1.10.3 to 2.3.5
+  - sentry-sdk from 1.5.8 to 1.5.12
+  - whitenoise from 6.0.0 to 6.2.0
+
 4.3.9 (2023-06-02)
 ==================
 - Fix document parsing error logging. Use the correct argument name when
@@ -1079,6 +1114,21 @@
 - Disable the settings edit link when local storage is disabled.
 - Display a warning message in the setting edit view when local storage is
   disabled.
+
+4.2.17 (2023-07-10)
+===================
+- Ensure only the filename of the uploaded file is used as the document
+  label, omiting all path content.
+- Backport MIME type file command backend improvements to make it more
+  usable in series 4.2.
+- Only clear the source error log if the source is enabled or was
+  being tested.
+- Fix the POP3 source uncompress choices. The choice asking users is
+  not valid for a non interactive source.
+- Include the `file` command in the Docker image to allow using it for
+  MIME type detection.
+- Reference the valid document as the event target when restoring a trashed
+  document to allow the event to be accessible.
 
 4.2.16 (2023-05-31)
 ===================

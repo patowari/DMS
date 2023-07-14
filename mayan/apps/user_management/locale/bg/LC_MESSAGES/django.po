@@ -155,7 +155,7 @@ msgstr "Акаунт"
 
 #: literals.py:12 literals.py:23
 msgid "Personal"
-msgstr ""
+msgstr "Лична"
 
 #: literals.py:16
 msgid "Attributes"
@@ -366,6 +366,8 @@ msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
 msgstr ""
+"Внимание! На път сте да изтриете собствения си потребителски акаунт. Ще "
+"загубите достъп до системата. Този процес не е обратим."
 
 #: views/user_views.py:93
 #, python-format

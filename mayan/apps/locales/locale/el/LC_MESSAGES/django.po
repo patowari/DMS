@@ -36,11 +36,11 @@ msgstr "Προφίλ τοποθεσίας"
 msgid "Edit locale profile"
 msgstr "Τοποποίηση του προφίλ τοποθεσίας"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Χρήστης"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Ζώνη ώρας"
 

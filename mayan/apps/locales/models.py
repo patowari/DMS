@@ -1,5 +1,3 @@
-from pytz import common_timezones
-
 from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -9,6 +7,7 @@ from mayan.apps.events.decorators import method_event
 
 from .events import event_user_locale_profile_edited
 from .managers import UserLocaleProfileManager
+from .utils import get_language_choices, get_timezone_choices
 
 
 class UserLocaleProfile(models.Model):
@@ -21,11 +20,12 @@ class UserLocaleProfile(models.Model):
         to=settings.AUTH_USER_MODEL, verbose_name=_('User')
     )
     timezone = models.CharField(
-        choices=zip(common_timezones, common_timezones), max_length=48,
+        choices=get_timezone_choices(), max_length=48,
         verbose_name=_('Timezone')
     )
     language = models.CharField(
-        choices=settings.LANGUAGES, max_length=8, verbose_name=_('Language')
+        choices=get_language_choices(), max_length=8,
+        verbose_name=_('Language')
     )
 
     objects = UserLocaleProfileManager()

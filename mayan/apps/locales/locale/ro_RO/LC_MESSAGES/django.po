@@ -37,11 +37,11 @@ msgstr "Profilul localizării"
 msgid "Edit locale profile"
 msgstr "Editați profilul localizării"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Utilizator"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Fus orar"
 

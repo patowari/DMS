@@ -527,6 +527,8 @@ msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
+"Локалното съхранение в момента е деактивирано, промените в стойностите на "
+"настройката няма да бъдат запазени или влязат в сила."
 
 #: views.py:40
 msgid "Setting updated successfully."

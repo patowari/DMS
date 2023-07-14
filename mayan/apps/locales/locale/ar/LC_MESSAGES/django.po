@@ -39,11 +39,11 @@ msgstr "الملف الشخصي المحلي"
 msgid "Edit locale profile"
 msgstr "تعديل الملف الشخصي المحلي"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "مستخدم"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "المنطقة الزمنية "
 

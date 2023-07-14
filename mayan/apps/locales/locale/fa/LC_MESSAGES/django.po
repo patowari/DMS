@@ -37,11 +37,11 @@ msgstr "پروفایل محلی"
 msgid "Edit locale profile"
 msgstr "ویرایش پروفایل محلی"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "کاربر"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "زمان محلی"
 

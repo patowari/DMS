@@ -92,10 +92,12 @@ msgstr "Giriş sayfasında yer alan \"Şifremi mi unuttum?\" linkini kaldır."
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
+"Kullanıcı kimlik doğrulamasını işlemek için kullanılan arka uca giden "
+"noktalı yol."
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "AUTHENTİCATİON_BACKEND için bağımsız değişkenler."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format

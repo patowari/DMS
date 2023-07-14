@@ -153,7 +153,7 @@ msgstr "Изтрийте остарелите файлове за изтегля
 
 #: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
-msgstr ""
+msgstr "Време в секунди, след което файловете за изтегляне ще бъдат изтрити."
 
 #: settings.py:27
 msgid ""
@@ -180,6 +180,7 @@ msgstr ""
 #: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
+"Време в секунди, след което временно качените файлове ще бъдат изтрити."
 
 #: storages.py:15
 msgid ""

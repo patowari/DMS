@@ -75,7 +75,7 @@ msgstr "Web bağlantısının nihai URL'sini oluşturmak için kullanılacak şa
 msgid "Template"
 msgstr "Şablon"
 
-#: models.py:33
+#: models.py:34
 msgid "Enabled"
 msgstr "Etkin"
 

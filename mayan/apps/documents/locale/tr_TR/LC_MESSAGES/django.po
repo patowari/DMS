@@ -322,7 +322,7 @@ msgstr "Kodlama"
 
 #: forms/document_file_forms.py:74 models/document_file_models.py:101
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: forms/document_file_forms.py:80
 msgid "Exists in storage"
@@ -376,7 +376,7 @@ msgstr "Backend"
 #: forms/document_version_page_forms.py:29
 #: serializers/document_version_serializers.py:38
 msgid "Content type"
-msgstr ""
+msgstr "İçerik türü"
 
 #: forms/document_version_page_forms.py:32
 msgid "Object ID"

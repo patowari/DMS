@@ -541,7 +541,7 @@ msgstr ""
 #: models/workflow_state_models.py:221
 #: models/workflow_transition_model_mixins.py:51
 msgid "Has a condition?"
-msgstr ""
+msgstr "Bir durum mu var?"
 
 #: models/workflow_state_models.py:246
 msgid "Workflow state runtime proxy"
@@ -1439,7 +1439,7 @@ msgstr ""
 
 #: workflow_actions.py:236
 msgid "Headers"
-msgstr ""
+msgstr "Başlıklar"
 
 #: workflow_actions.py:243
 msgid "Headers to send with the HTTP request. Must be in JSON format."

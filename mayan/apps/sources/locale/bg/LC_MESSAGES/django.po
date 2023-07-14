@@ -524,22 +524,22 @@ msgstr "Да се включат ли поддиректории?"
 #: source_backends/staging_folder_backends.py:334
 #: source_backends/watch_folder_backends.py:60
 msgid "Regular expression used to select which files to upload."
-msgstr ""
+msgstr "Регулярен израз, използван за избор на файлове за качване."
 
 #: source_backends/staging_folder_backends.py:336
 #: source_backends/watch_folder_backends.py:62
 msgid "Include regular expression"
-msgstr ""
+msgstr "Включете регулярен израз"
 
 #: source_backends/staging_folder_backends.py:343
 #: source_backends/watch_folder_backends.py:69
 msgid "Regular expression used to exclude which files to upload."
-msgstr ""
+msgstr "Регулярен израз, използван за изключване на файловете за качване."
 
 #: source_backends/staging_folder_backends.py:345
 #: source_backends/watch_folder_backends.py:71
 msgid "Exclude regular expression"
-msgstr ""
+msgstr "Изключете регулярния израз"
 
 #: source_backends/staging_folder_backends.py:356
 msgid "Staging folder"
@@ -570,7 +570,7 @@ msgstr "Да се изтрие ли изходния файл &quot;%s&quot;?"
 #: source_backends/staging_folder_backends.py:653
 #, python-format
 msgid "Unable get list of staging files; %s"
-msgstr ""
+msgstr "Не може да се получи списък с етапни файлове; %s"
 
 #: source_backends/staging_folder_backends.py:671
 msgid ""

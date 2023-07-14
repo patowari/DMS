@@ -37,11 +37,11 @@ msgstr ""
 msgid "Edit locale profile"
 msgstr ""
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Bruger"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr ""
 
