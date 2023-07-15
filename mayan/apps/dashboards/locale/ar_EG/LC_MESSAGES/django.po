@@ -3,12 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# WM Shinkada <shinkadawasim@gmail.com>, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:33+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"Last-Translator: WM Shinkada <shinkadawasim@gmail.com>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +24,7 @@ msgstr ""
 
 #: apps.py:18 links.py:9 views.py:12
 msgid "Dashboards"
-msgstr ""
+msgstr "لوحة التحكم"
 
 #: apps.py:25
 msgid "Widgets"
@@ -26,7 +32,7 @@ msgstr ""
 
 #: apps.py:29
 msgid "Label"
-msgstr ""
+msgstr "العنوان"
 
 #: dashboards.py:6
 msgid "Administrator dashboard"
@@ -34,12 +40,12 @@ msgstr ""
 
 #: links.py:14
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 #: templates/dashboards/numeric_widget.html:27
 #: templates/dashboards/widget_list.html:47
 msgid "View details"
-msgstr ""
+msgstr "عرض التفاصيل"
 
 #: views.py:30
 msgid "Dashboard detail"

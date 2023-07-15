@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2022
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:36 events.py:5 links.py:40 models.py:43 permissions.py:6
+#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
 #: templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
 msgstr "הכרזות"
@@ -30,25 +30,25 @@ msgstr "הכרזות"
 msgid "None"
 msgstr "אין"
 
-#: events.py:8
+#: events.py:10
 msgid "Announcement created"
 msgstr "הכרזה נוצרה"
 
-#: events.py:11
+#: events.py:13
 msgid "Announcement edited"
 msgstr "הכרזה נערכה"
 
-#: links.py:17 views.py:34
+#: links.py:18 views.py:34
 msgid "Create announcement"
 msgstr "יצירת הכרזה"
 
-#: links.py:20 links.py:26
+#: links.py:22 links.py:28
 msgid "Delete"
-msgstr "Delete"
+msgstr "מחיקה"
 
-#: links.py:31
+#: links.py:33
 msgid "Edit"
-msgstr "Edit"
+msgstr "עריכה"
 
 #: models.py:19
 msgid "Short description of this announcement."
@@ -68,7 +68,7 @@ msgstr "מלל"
 
 #: models.py:26
 msgid "Enabled"
-msgstr "Enabled"
+msgstr "מאופשר"
 
 #: models.py:29
 msgid "Date and time after which this announcement will be displayed."
@@ -106,6 +106,10 @@ msgstr "עריכת הכרזות"
 msgid "View announcements"
 msgstr "צפייה בהכרזות"
 
+#: serializers.py:12
+msgid "URL"
+msgstr "כתובת אתר (URL)"
+
 #: views.py:45
 #, python-format
 msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
@@ -113,33 +117,33 @@ msgstr "שגיאה בביטול הכרזה \"%(instance)s\"; %(exception)s"
 
 #: views.py:54
 #, python-format
+msgid "%(count)d announcements deleted successfully."
+msgstr "%(count)d הכרזות נמחקו בהצלחה."
+
+#: views.py:57
+#, python-format
 msgid "Announcement \"%(object)s\" deleted successfully."
 msgstr "הכרזה \"%(object)s\" נמחקה בהצלחה."
 
-#: views.py:57
+#: views.py:60
 #, python-format
 msgid "%(count)d announcement deleted successfully."
 msgstr "הכרזה %(count)d נמחקה בהצלחה."
 
-#: views.py:60
-#, python-format
-msgid "%(count)d announcements deleted successfully."
-msgstr "%(count)d הכרזות נמחקו בהצלחה."
-
 #: views.py:62
+#, python-format
+msgid "Delete the %(count)d selected announcements."
+msgstr "מחיקת %(count)d הכרזות שנבחרו."
+
+#: views.py:63
 #, python-format
 msgid "Delete announcement: %(object)s."
 msgstr "מחיקת הכרזה: %(object)s ."
 
-#: views.py:63
+#: views.py:64
 #, python-format
 msgid "Delete the %(count)d selected announcement."
 msgstr "מחיקת ההכרזה ה %(count)d."
-
-#: views.py:64
-#, python-format
-msgid "Delete the %(count)d selected announcements."
-msgstr "מחיקת %(count)d הכרזות שנבחרו."
 
 #: views.py:98
 #, python-format

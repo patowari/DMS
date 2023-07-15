@@ -7,14 +7,15 @@
 # abc Def <hdogan1974@gmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # Bedreddin Şahbaz, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:19+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: Bedreddin Şahbaz, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "Dolap Oluşturuldu"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr ""
+msgstr "Dolap Silindi"
 
 #: events.py:17
 msgid "Cabinet edited"
@@ -98,7 +99,7 @@ msgstr "Tam yol"
 
 #: models.py:30 serializers.py:41
 msgid "Parent"
-msgstr ""
+msgstr "Ana"
 
 #: models.py:33
 msgid "A short text used to identify the cabinet."
@@ -187,7 +188,7 @@ msgstr "Alt dolapların listesi."
 
 #: serializers.py:18
 msgid "Children"
-msgstr ""
+msgstr "Çocuk"
 
 #: serializers.py:23
 msgid ""
@@ -197,7 +198,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr ""
+msgstr "Belge URL'si"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -205,7 +206,7 @@ msgstr "Bu dolap seviyesinin adı, atalarının adlarına eklenmiştir."
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr ""
+msgstr "Ana URL"
 
 #: serializers.py:51
 msgid "URL"
@@ -213,15 +214,15 @@ msgstr "URL"
 
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
-msgstr ""
+msgstr "Kabine eklenecek belgenin birincil anahtarı."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
-msgstr ""
+msgstr "Belge ID"
 
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
-msgstr ""
+msgstr "Kabineden çıkarılacak belgenin birincil anahtarı."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"

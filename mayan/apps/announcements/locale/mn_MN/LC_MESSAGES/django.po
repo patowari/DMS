@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Bilgutei Erdenebayar <beke0130@gmail.com>, 2022
+# Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,38 +20,38 @@ msgstr ""
 "Language: mn_MN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:36 events.py:5 links.py:40 models.py:43 permissions.py:6
+#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
 #: templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
-msgstr "Мэдэгдэл"
+msgstr "Зарлалууд"
 
 #: apps.py:78 apps.py:82
 msgid "None"
 msgstr "Хоосон"
 
-#: events.py:8
+#: events.py:10
 msgid "Announcement created"
-msgstr "Мэдэгдэл үүсгэлээ"
+msgstr "Зарлал үүсгэлээ"
 
-#: events.py:11
+#: events.py:13
 msgid "Announcement edited"
-msgstr "Мэдэгдэл засагдлаа"
+msgstr "Зарлал засагдлаа"
 
-#: links.py:17 views.py:34
+#: links.py:18 views.py:34
 msgid "Create announcement"
-msgstr "Мэдэгдэл үүсгэх"
+msgstr "Зарлал үүсгэх"
 
-#: links.py:20 links.py:26
+#: links.py:22 links.py:28
 msgid "Delete"
 msgstr "Устгах"
 
-#: links.py:31
+#: links.py:33
 msgid "Edit"
 msgstr "Засах"
 
 #: models.py:19
 msgid "Short description of this announcement."
-msgstr "Энэхүү мэдэгдлийн товч тайлбар."
+msgstr "Энэхүү зарлалын товч тайлбар."
 
 #: models.py:20
 msgid "Label"
@@ -79,7 +79,7 @@ msgstr "Эхлэх огноо"
 
 #: models.py:34
 msgid "Date and time until when this announcement is to be displayed."
-msgstr "Энэ зарлалыг тавих огноо."
+msgstr "Энэ зарлалыг тавьж дуусах огноо."
 
 #: models.py:35
 msgid "End date time"
@@ -87,58 +87,62 @@ msgstr "Дуусах огноо"
 
 #: models.py:42
 msgid "Announcement"
-msgstr "Мэдэгдэл"
+msgstr "Зарлал"
 
 #: permissions.py:10
 msgid "Create announcements"
-msgstr "Мэдэгдэл үүсгэх"
+msgstr "Зарлалууд үүсгэх"
 
 #: permissions.py:13
 msgid "Delete announcements"
-msgstr "Мэдэгдэл устгах"
+msgstr "Зарлалууд устгах"
 
 #: permissions.py:16
 msgid "Edit announcements"
-msgstr "Мэдэгдэл засах"
+msgstr "Зарлалууд засах"
 
 #: permissions.py:19
 msgid "View announcements"
-msgstr "Мэдэгдэл үзэх"
+msgstr "Зарлалууд үзэх"
+
+#: serializers.py:12
+msgid "URL"
+msgstr ""
 
 #: views.py:45
 #, python-format
 msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
-msgstr "\"%(instance)s\";%(exception)sмэдэгдлийн устгахад алдаа гарлаа"
+msgstr "\"%(instance)s\";%(exception)sзарлалыг устгахад алдаа гарлаа"
 
 #: views.py:54
 #, python-format
-msgid "Announcement \"%(object)s\" deleted successfully."
-msgstr "\"%(object)s\" мэдэгдлийг амжилттай устгалаа."
+msgid "%(count)d announcements deleted successfully."
+msgstr "%(count)d зарлал амжилттай устгагдлаа."
 
 #: views.py:57
 #, python-format
-msgid "%(count)d announcement deleted successfully."
-msgstr "%(count)d мэдэгдэл амжилттай устгагдлаа."
+msgid "Announcement \"%(object)s\" deleted successfully."
+msgstr "\"%(object)s\" зарлалыг амжилттай устгалаа."
 
 #: views.py:60
 #, python-format
-msgid "%(count)d announcements deleted successfully."
-msgstr "%(count)d мэдэгдэл амжилттай устгагдлаа."
+msgid "%(count)d announcement deleted successfully."
+msgstr "%(count)d зарлал амжилттай устгагдлаа."
 
 #: views.py:62
 #, python-format
-msgid "Delete announcement: %(object)s."
-msgstr "Мэдэгдлийг устга: %(object)s."
+msgid "Delete the %(count)d selected announcements."
+msgstr "Сонгосон %(count)d зарлалуудыг устгах."
 
 #: views.py:63
 #, python-format
-msgid "Delete the %(count)d selected announcement."
-msgstr "Сонгосон %(count)d зарлалыг устгах."
+msgid "Delete announcement: %(object)s."
+msgstr "Зарлалыг устга: %(object)s."
 
 #: views.py:64
 #, python-format
-msgid "Delete the %(count)d selected announcements."
-msgstr "Сонгосон %(count)d зарлалуудыг устгах."
+msgid "Delete the %(count)d selected announcement."
+msgstr "Сонгосон %(count)d зарлалыг устгах."
 
 #: views.py:98
 #, python-format

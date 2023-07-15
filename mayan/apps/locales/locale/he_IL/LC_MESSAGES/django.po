@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:35+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -20,52 +20,52 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:28 events.py:5
+#: apps.py:28 events.py:6
 msgid "Locales"
-msgstr ""
+msgstr "מקומות"
 
-#: events.py:8
+#: events.py:10
 msgid "User locale profile edited"
-msgstr ""
+msgstr "פרופיל מיקום המשתמש נערך"
 
-#: links.py:18
+#: links.py:15
 msgid "Locale profile"
-msgstr ""
+msgstr "פרופיל מקומי"
 
-#: links.py:25
+#: links.py:20
 msgid "Edit locale profile"
-msgstr ""
+msgstr "ערוך פרופיל מקומי"
 
 #: models.py:20
 msgid "User"
-msgstr "משתמש"
+msgstr "מִשׁתַמֵשׁ"
 
 #: models.py:24
 msgid "Timezone"
-msgstr ""
+msgstr "אזור זמן"
 
 #: models.py:28
 msgid "Language"
-msgstr ""
+msgstr "שפה"
 
 #: models.py:34
 msgid "User locale profile"
-msgstr ""
+msgstr "פרופיל מקומי של משתמש"
 
 #: models.py:35
 msgid "User locale profiles"
-msgstr ""
+msgstr "פרופילים מקומיים של משתמשים"
 
 #: models.py:39
 msgid "None"
-msgstr "אין"
+msgstr "אף אחד"
 
 #: views.py:40
 #, python-format
 msgid "Locale profile for user: %s"
-msgstr ""
+msgstr "פרופיל מקומי למשתמש: %s"
 
-#: views.py:87
+#: views.py:88
 #, python-format
 msgid "Edit locale profile for user: %s"
-msgstr ""
+msgstr "ערוך פרופיל מקומי עבור המשתמש: %s"

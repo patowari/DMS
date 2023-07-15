@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Domagoj Crljenko <domagoj@rii.hr>, 2022
+# Domagoj Crljenko <domagoj@rii.hr>, 2023
 # Mario Jakovina <mario.jakovina@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:33+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: apps.py:13 settings.py:7
+#: apps.py:13 settings.py:8
 msgid "Auto administrator"
 msgstr ""
 
@@ -39,25 +39,25 @@ msgstr "Račun"
 msgid "Password"
 msgstr "Zaporka"
 
-#: models.py:19
+#: models.py:20
 msgid "Password hash"
 msgstr ""
 
-#: models.py:25
+#: models.py:26
 msgid "Autoadmin properties"
 msgstr ""
 
-#: settings.py:11
+#: settings.py:13
 msgid "Sets the email of the automatically created super user account."
 msgstr ""
 
-#: settings.py:16
+#: settings.py:18
 msgid ""
 "The password of the automatically created super user account. If it is equal"
 " to None, the password is randomly generated."
 msgstr ""
 
-#: settings.py:22
+#: settings.py:24
 msgid "The username of the automatically created super user account."
 msgstr ""
 

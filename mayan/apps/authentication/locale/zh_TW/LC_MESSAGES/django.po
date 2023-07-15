@@ -4,19 +4,17 @@
 # 
 # Translators:
 # Translators:
-# yan songwei <yansw@vip.163.com>, 2022
-# bo feng <87289884@qq.com>, 2022
-# Ford Guo <agile.guo@gmail.com>, 2022
-# Roberto Rosario, 2022
-# Leon Chu, 2022
+# Roberto Rosario, 2023
+# Ford Guo <agile.guo@gmail.com>, 2023
+# Leon Chu, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: Leon Chu, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,29 +22,29 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:36 events.py:6 permissions.py:6 settings.py:10
+#: apps.py:36 events.py:6 permissions.py:6 settings.py:11
 msgid "Authentication"
-msgstr "认证"
+msgstr "認證"
 
 #: events.py:10
 msgid "User impersonation ended"
-msgstr "用戶模擬開始"
+msgstr "使用者模擬結束"
 
 #: events.py:13
 msgid "User impersonation started"
-msgstr "用戶模擬開始"
+msgstr "使用者模擬開始"
 
 #: events.py:16
 msgid "User logged in"
-msgstr "用户已登录"
+msgstr "使用者已登入"
 
 #: events.py:19
 msgid "User logged out"
-msgstr "用户已退出"
+msgstr "使用者已登出"
 
 #: forms.py:31
 msgid "Remember me"
-msgstr "记住账号"
+msgstr "記憶帳號"
 
 #: forms.py:77
 msgid "Permanent"
@@ -58,7 +56,7 @@ msgstr "如果選擇了, 將禁用中止使用者模擬"
 
 #: forms.py:89
 msgid "User"
-msgstr "用户"
+msgstr "使用者"
 
 #: links.py:35
 msgid "Logout"
@@ -66,11 +64,11 @@ msgstr "登出"
 
 #: links.py:40
 msgid "Change password"
-msgstr "更改密码"
+msgstr "變更密碼"
 
 #: links.py:45 views/impersonation_views.py:52
 msgid "Impersonate user"
-msgstr "模擬用戶"
+msgstr "模擬使用者"
 
 #: links.py:50
 msgid "Impersonate"
@@ -78,23 +76,23 @@ msgstr "模擬"
 
 #: links.py:55 links.py:60
 msgid "Set password"
-msgstr "设置密码"
+msgstr "設定密碼"
 
 #: permissions.py:10
 msgid "Impersonate users"
-msgstr "模擬複數用戶"
+msgstr "模擬複數使用者"
 
-#: settings.py:15
+#: settings.py:17
 msgid ""
 "Remove the \"Forgot your password?\" link on the login form used to trigger "
 "the password reset."
-msgstr "移除在登入畫面上\"Forget your Password-忘記密碼\", 這原本用來啟動重置密碼的連結."
+msgstr "移除在登入畫面上\"忘記密碼了?\", 這原本用來啟動重置密碼的連結."
 
-#: settings.py:23
+#: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
 
-#: settings.py:29
+#: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
 msgstr ""
 
@@ -110,29 +108,37 @@ msgstr ""
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
-msgstr "完成后请点击这里"
+msgstr "完成後請點擊這裡"
 
 #: templates/authentication/login.html:10
 msgid "Login"
-msgstr "登录"
+msgstr "登入"
 
 #: templates/authentication/login.html:21
 msgid "Sign in"
 msgstr "登入"
 
-#: templates/authentication/login.html:57
+#: templates/authentication/login.html:62
+#: templates/authentication/login.html:72
+#: templates/authentication/login.html:86
 msgid "Save"
 msgstr "保存"
 
-#: templates/authentication/login.html:57
+#: templates/authentication/login.html:62
+#: templates/authentication/login.html:72
+#: templates/authentication/login.html:86
 #: templates/authentication/password_reset_confirm.html:29
 #: templates/authentication/password_reset_form.html:29
 msgid "Submit"
 msgstr "提交"
 
-#: templates/authentication/login.html:67
+#: templates/authentication/login.html:76
+msgid "Cancel"
+msgstr "取消"
+
+#: templates/authentication/login.html:98
 msgid "Forgot your password?"
-msgstr "忘记密码了吗？"
+msgstr "忘記密碼了?"
 
 #: templates/authentication/password_reset_complete.html:8
 #: templates/authentication/password_reset_confirm.html:8
@@ -141,70 +147,70 @@ msgstr "忘记密码了吗？"
 #: templates/authentication/password_reset_form.html:8
 #: templates/authentication/password_reset_form.html:20
 msgid "Password reset"
-msgstr "重置密码"
+msgstr "重置密碼"
 
 #: templates/authentication/password_reset_complete.html:15
 msgid "Password reset complete! Click the link below to login."
-msgstr "密码重置完成！点击下面的链接登录。"
+msgstr "密碼重置完成！點擊下面的連結登入。"
 
 #: templates/authentication/password_reset_complete.html:17
 msgid "Login page"
-msgstr "登录页面"
+msgstr "登入頁面"
 
 #: templates/authentication/password_reset_done.html:15
 msgid "Password reset email sent!"
-msgstr "密码重置邮件已发送！"
+msgstr "密碼重置郵件已送出！"
 
-#: views/authentication_views.py:155
+#: views/authentication_views.py:159
 msgid "Next"
 msgstr "后"
 
-#: views/authentication_views.py:161
+#: views/authentication_views.py:165
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "步骤%(step)d ：%(step_label)s，总步骤%(total_steps)d"
 
-#: views/authentication_views.py:223
+#: views/authentication_views.py:235
 msgid "Your password has been successfully changed."
-msgstr "你的密码已成功更改。"
+msgstr "你已成功變更密碼。"
 
-#: views/authentication_views.py:230
+#: views/authentication_views.py:245
 msgid "Current user password change"
-msgstr "当前用户密码修改"
+msgstr "目前使用者變更密碼"
 
-#: views/authentication_views.py:239
+#: views/authentication_views.py:257
 msgid "Changing the password is not allowed for this account."
-msgstr "此帐户不允许更改密码。"
+msgstr "此帳戶不允許變更密碼。"
 
-#: views/authentication_views.py:311
+#: views/authentication_views.py:329
 #, python-format
 msgid "Password change request performed on %(count)d user"
-msgstr "在%(count)d用户上执行的密码更改请求"
+msgstr "在%(count)d使用者上執行的密碼變更申請"
 
-#: views/authentication_views.py:314
+#: views/authentication_views.py:332
 #, python-format
 msgid "Password change request performed on %(count)d users"
-msgstr "在%(count)d用户上执行的密码更改请求"
+msgstr "在%(count)d複數使用者上執行密碼變更申請"
 
-#: views/authentication_views.py:323
+#: views/authentication_views.py:341
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] ""
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:352
 #, python-format
 msgid "Change password for user: %s"
-msgstr "更改用户密码：%s"
+msgstr "變更使用者密碼：%s"
 
-#: views/authentication_views.py:356
+#: views/authentication_views.py:376
 #, python-format
 msgid "Successful password reset for user: %s."
-msgstr "用户成功重置密码：%s。"
+msgstr "成功重置使用者密碼：%s。"
 
-#: views/authentication_views.py:362
+#: views/authentication_views.py:382
 #, python-format
 msgid "Error reseting password for user \"%(user)s\": %(error)s"
-msgstr "重置用户“%(user)s”的密码时出错：%(error)s"
+msgstr "重置使用者“%(user)s”的密碼時出錯：%(error)s"
 
 #: views/impersonation_views.py:81
 #, python-format

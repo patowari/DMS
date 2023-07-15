@@ -4,19 +4,18 @@
 # 
 # Translators:
 # Translators:
-# bo feng <87289884@qq.com>, 2022
-# Ford Guo <agile.guo@gmail.com>, 2022
-# Roberto Rosario, 2022
-# yan songwei <yansw@vip.163.com>, 2022
-# Leon Chu, 2022
+# Ford Guo <agile.guo@gmail.com>, 2023
+# Roberto Rosario, 2023
+# Leon Chu, 2023
+# Chen-Yu Hsieh <jenyuxie@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: Leon Chu, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"Last-Translator: Chen-Yu Hsieh <jenyuxie@gmail.com>, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,9 +23,9 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:26 classes.py:182 links.py:27
+#: apps.py:26 classes.py:200 links.py:27
 msgid "ACLs"
-msgstr "存取控制列表"
+msgstr "存取控制清單"
 
 #: apps.py:62
 msgid ""
@@ -36,15 +35,15 @@ msgstr "已被授予存取權限的物件. 當歸類物件時只有型別被使�
 
 #: apps.py:65
 msgid "Object"
-msgstr "对象"
+msgstr "物件"
 
-#: events.py:6 permissions.py:5
+#: events.py:6 permissions.py:6
 msgid "Access control lists"
-msgstr "访问控制列表"
+msgstr "存取控制清單"
 
 #: events.py:10
 msgid "ACL created"
-msgstr "ACL已创建"
+msgstr "已建立的ACL存取控制"
 
 #: events.py:13
 msgid "ACL deleted"
@@ -52,68 +51,104 @@ msgstr "已刪除的ACL存取控制"
 
 #: events.py:16
 msgid "ACL edited"
-msgstr "ACL已编辑"
+msgstr "已編輯的ACL存取控制"
 
-#: forms.py:13 models.py:51 views.py:71
+#: forms.py:13 models.py:56 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "角色"
 
 #: links.py:16
 msgid "New ACL"
-msgstr "新建访问控制表"
+msgstr "建立存取清單"
 
 #: links.py:21
 msgid "Delete"
-msgstr "删除"
+msgstr "刪除"
 
-#: links.py:32 models.py:45 workflow_actions.py:46 workflow_actions.py:159
+#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
 msgid "Permissions"
-msgstr "权限"
+msgstr "權限"
 
 #: links.py:35
 msgid "Global ACLs"
-msgstr "全域ACLs(存取控制清單)"
+msgstr "全域ACLs-存取控制清單"
 
-#: managers.py:243
+#: managers.py:274
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
-msgstr "对象 \"%s\"不是模型并无法被检查可否访问"
+msgstr "物件 \"%s\"不是一個模型而且無法被驗證其訪問權限"
 
-#: managers.py:263
+#: managers.py:294
 #, python-format
 msgid "Insufficient access for: %s"
-msgstr "访问: %s权限不足"
+msgstr "訪問權限不足: %s"
 
-#: models.py:49
+#: model_mixins.py:23
+msgid "Permission count"
+msgstr ""
+
+#: models.py:40 serializers.py:16
+msgid "Content type"
+msgstr ""
+
+#: models.py:43 workflow_actions.py:32
+msgid "Object ID"
+msgstr "物件ID"
+
+#: models.py:54
 msgid "Role to which the access is granted for the specified object."
 msgstr "對於特定物件被允許存取的角色."
 
-#: models.py:59
-msgid "Access entry"
-msgstr "访问条目"
-
-#: models.py:60
-msgid "Access entries"
-msgstr "访问条目"
-
 #: models.py:64
+msgid "Access entry"
+msgstr "存取項目"
+
+#: models.py:65
+msgid "Access entries"
+msgstr "存取項目-複數項目"
+
+#: models.py:69
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
-msgstr "%(object)s的角色“%(role)s”的权限"
+msgstr "角色%(object)s中“%(role)s”的權限"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Edit ACLs"
-msgstr "编辑访问控制列表"
+msgstr "編輯存取控制清單"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "View ACLs"
-msgstr "查看访问控制列表"
+msgstr "查看存取控制清單"
 
-#: serializers.py:116
+#: serializers.py:19
+msgid "Permissions add URL"
+msgstr ""
+
+#: serializers.py:39
+msgid "Permissions remove URL"
+msgstr ""
+
+#: serializers.py:59
+msgid "Permissions URL"
+msgstr ""
+
+#: serializers.py:82
+msgid "Role ID"
+msgstr ""
+
+#: serializers.py:85
+msgid "URL"
+msgstr "网址"
+
+#: serializers.py:118
 msgid "Primary key of the permission to add to the ACL."
 msgstr "允許新增ACL存取權限的主要金鑰"
 
-#: serializers.py:123
+#: serializers.py:119 serializers.py:126
+msgid "Permission ID"
+msgstr ""
+
+#: serializers.py:125
 msgid "Primary key of the permission to remove from the ACL."
 msgstr "允許刪除ACL存取權限的主要金鑰"
 
@@ -122,105 +157,101 @@ msgstr "允許刪除ACL存取權限的主要金鑰"
 msgid ""
 "An ACL for \"%(object)s\" using role \"%(role)s\" already exists. Edit that "
 "ACL entry instead."
-msgstr "已经存在使用角色“ %(role)s”的“ %(object)s”的ACL。请改为编辑该ACL条目。"
+msgstr "已經存在使用角色“ %(role)s”的“ %(object)s”的ACL。請改為編輯該ACL存取控制列表。"
 
-#: views.py:57
+#: views.py:59
 #, python-format
 msgid "New access control lists for: %s"
-msgstr "为 %s新建访问控制列表"
+msgstr "為 %s新增存取控制列表"
 
-#: views.py:101
+#: views.py:103
 #, python-format
 msgid "Delete ACL: %s"
-msgstr "删除访问控制列表: %s"
+msgstr "删除存取控制列表: %s"
 
-#: views.py:147
+#: views.py:149
 msgid "There are no ACLs for this object"
-msgstr "无此对象的访问控制列表"
+msgstr "對此物件無存取控制列表"
 
-#: views.py:150 views.py:269
+#: views.py:152 views.py:272
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
 "but only for a specific object or set of objects."
-msgstr "ACL代表访问控制列表，是控制用户对系统中对象的访问的精确方法。 ACL允许授予角色权限，但只能授予特定对象或一组对象的权限。"
+msgstr "ACL代表存取控制列表，是控制用户對系统中物件的精確的方法。 ACL允許授予角色權限，但只能授予特定物件或一組物件的權限。"
 
-#: views.py:157
+#: views.py:159
 #, python-format
 msgid "Access control lists for: %s"
-msgstr "%s的访问控制列表"
+msgstr "%s的存取控制列表"
 
-#: views.py:171
+#: views.py:168
 msgid "Granted permissions"
-msgstr "被授权的权限"
+msgstr "已授予的權限"
 
-#: views.py:172
+#: views.py:169
 msgid "Available permissions"
-msgstr "有效的权限"
+msgstr "可用的權限"
 
-#: views.py:217
+#: views.py:219
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
-msgstr "为\"%(object)s\"的角色 \"%(role)s\" 权限"
+msgstr "為\"%(object)s\"的角色 \"%(role)s\" 權限"
 
-#: views.py:226
+#: views.py:228
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
 "to be removed from the parent object's ACL or from them role via the Setup "
 "menu."
-msgstr "禁用的权限是从父对象继承或直接授予角色的，不能从此视图中删除。需要通过“设置”菜单从父对象的ACL或角色中删除继承的权限。"
+msgstr "禁用的權限是從母物件繼承或直接授予角色的，不能從此視圖中删除。需要透過“設置”選單從母物件的ACL或角色中删除所繼承的權限。"
 
-#: views.py:266
+#: views.py:269
 msgid "There are no ACLs"
 msgstr "沒有ACLs存取控制"
 
-#: views.py:275
+#: views.py:278
 msgid "Global access control lists"
 msgstr "全域存取控制列表"
 
 #: workflow_actions.py:23
 msgid "Object type"
-msgstr "对象类型"
+msgstr "物件類型"
 
 #: workflow_actions.py:26
 msgid "Type of the object for which the access will be modified."
-msgstr "要为其修改访问权限的对象的类型。"
-
-#: workflow_actions.py:32
-msgid "Object ID"
-msgstr "对象ID"
+msgstr "要為其修改存取權限的物件類型。"
 
 #: workflow_actions.py:35
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
-msgstr "要为其修改访问权限的对象的数字标识符。"
+msgstr "要為其修改存取權限的物件的數字辨識符號。"
 
-#: workflow_actions.py:40 workflow_actions.py:153
+#: workflow_actions.py:40 workflow_actions.py:160
 msgid "Roles"
 msgstr "角色"
 
-#: workflow_actions.py:42 workflow_actions.py:155
+#: workflow_actions.py:42 workflow_actions.py:162
 msgid "Roles whose access will be modified."
-msgstr "访问权限将被修改的角色。"
+msgstr "存取權限將被修改的角色。"
 
-#: workflow_actions.py:49 workflow_actions.py:162
+#: workflow_actions.py:49 workflow_actions.py:169
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
-msgstr "授予/撤销给上述选定对象角色的权限。"
+msgstr "授予/撤销给上述選定物件角色的權限。"
 
 #: workflow_actions.py:57
 msgid "Grant object access"
-msgstr "授予对象访问权限"
+msgstr "授予物件存取權限"
 
-#: workflow_actions.py:138
+#: workflow_actions.py:145
 msgid "Revoke object access"
-msgstr "收回对象访问权限"
+msgstr "撤銷物件存取權限"
 
-#: workflow_actions.py:170
+#: workflow_actions.py:177
 msgid "Grant document access"
-msgstr "授予文档访问权限"
+msgstr "授予文檔存取權限"
 
-#: workflow_actions.py:209
+#: workflow_actions.py:218
 msgid "Revoke document access"
-msgstr "收回文档访问权限"
+msgstr "撤銷文檔存取權限"

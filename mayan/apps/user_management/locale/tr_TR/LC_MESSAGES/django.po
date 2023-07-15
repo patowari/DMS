@@ -10,14 +10,15 @@
 # emreunal <bywant@gmail.com>, 2023
 # Bedreddin Şahbaz, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -213,15 +214,15 @@ msgstr "Bu grubun liste kullanıcılarını gösteren API uç noktasının URL's
 
 #: serializers.py:18
 msgid "Users URL"
-msgstr ""
+msgstr "Kullanıcı URL'si"
 
 #: serializers.py:22
 msgid "Users add URL"
-msgstr ""
+msgstr "Kullanıcılar URL ekler"
 
 #: serializers.py:26
 msgid "Users remove URL"
-msgstr ""
+msgstr "Kullanıcılar URL'yi kaldırır"
 
 #: serializers.py:33 serializers.py:80
 msgid "URL"
@@ -247,7 +248,7 @@ msgstr ""
 
 #: serializers.py:68
 msgid "Groups URL"
-msgstr ""
+msgstr "Gruplar URL'si"
 
 #: utils.py:26
 msgid "Anonymous"

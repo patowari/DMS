@@ -3,12 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# WM Shinkada <shinkadawasim@gmail.com>, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:33+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,53 +22,53 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:41 events.py:5 links.py:33
+#: apps.py:41 events.py:6 links.py:33
 msgid "Checkouts"
-msgstr ""
+msgstr "المخرجات"
 
-#: dashboard_widgets.py:14 views.py:183
+#: dashboard_widgets.py:14 views.py:185
 msgid "Checked out documents"
-msgstr ""
+msgstr "الوثائق التي تم إستخراجها"
 
-#: events.py:8
+#: events.py:10
 msgid "Document automatically checked in"
-msgstr ""
+msgstr "إدخال الوثيقة تلقائيًا"
 
-#: events.py:12
+#: events.py:14
 msgid "Document checked in"
-msgstr ""
+msgstr "إدخال الوثيقة "
 
-#: events.py:15
+#: events.py:17
 msgid "Document checked out"
-msgstr ""
+msgstr "إستخراج الوثيقة"
 
-#: events.py:18
+#: events.py:20
 msgid "Document forcefully checked in"
-msgstr ""
+msgstr "إدخال الوثيقة بشكل إجباري"
 
 #: exceptions.py:15
 msgid "Document not checked out."
-msgstr ""
+msgstr "لم يتم إستخراج الوثيقة."
 
 #: exceptions.py:23
 msgid "Document already checked out."
-msgstr ""
+msgstr "تم إستخراج الوثيقة"
 
 #: forms.py:26
 msgid "Document status"
-msgstr ""
+msgstr "حالة الوثيقة"
 
-#: forms.py:37 models.py:47 models.py:127
+#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
 msgid "User"
-msgstr ""
+msgstr "مستخدم"
 
 #: forms.py:41
 msgid "Check out time"
-msgstr ""
+msgstr "تحقق من الوقت"
 
 #: forms.py:46
 msgid "Check out expiration"
-msgstr ""
+msgstr "تحقق من انتهاء الصلاحية"
 
 #: forms.py:51
 msgid "New files allowed?"
@@ -70,110 +76,118 @@ msgstr ""
 
 #: forms.py:52
 msgid "Yes"
-msgstr ""
+msgstr "قبول"
 
 #: forms.py:52
 msgid "No"
-msgstr ""
+msgstr "رفض"
 
 #: links.py:40
 msgid "Check out document"
-msgstr ""
+msgstr "إستخراج الوثيقة"
 
 #: links.py:44
 msgid "Check out"
-msgstr ""
+msgstr "إرسال التعديلات"
 
 #: links.py:51
 msgid "Check in document"
-msgstr ""
+msgstr "إدخال الوثيقة"
 
 #: links.py:55
 msgid "Check in"
-msgstr ""
+msgstr "تحقق في"
 
 #: links.py:61
 msgid "Check in/out"
-msgstr ""
+msgstr "التحقق"
 
 #: literals.py:10
 msgid "Checked out"
-msgstr ""
+msgstr "تم الفحص"
 
 #: literals.py:11
 msgid "Checked in/available"
-msgstr ""
+msgstr "التحقق المتاح"
 
-#: models.py:34
+#: model_mixins.py:14
+msgid "Checkout time and date"
+msgstr "وقت وتاريخ الخروج"
+
+#: model_mixins.py:19
+msgid "Checkout expiration"
+msgstr "انتهاء صلاحية الخروج"
+
+#: models.py:34 serializers.py:17
 msgid "Document"
-msgstr ""
+msgstr "الوثيقة"
 
 #: models.py:37
 msgid "Check out date and time"
-msgstr ""
+msgstr "التحقق من الوقت والتاريخ"
 
 #: models.py:41
 msgid "Amount of time to hold the document checked out in minutes."
-msgstr ""
+msgstr "المدة اللازمة للاحتفاظ بالوثيقة التي تم استخراجها بالدقائق."
 
-#: models.py:43
+#: models.py:42
 msgid "Check out expiration date and time"
-msgstr ""
+msgstr "التحقق من تاريخ انتهاء الصلاحية للوقت والتاريخ"
 
-#: models.py:52
+#: models.py:50
 msgid "Do not allow new file of this document to be uploaded."
 msgstr ""
 
-#: models.py:54
+#: models.py:51
 msgid "Block new file upload"
 msgstr ""
 
-#: models.py:62 permissions.py:5
+#: models.py:59 permissions.py:6
 msgid "Document checkout"
-msgstr ""
+msgstr "الوثيقة النهائية"
 
-#: models.py:63
+#: models.py:60
 msgid "Document checkouts"
-msgstr ""
+msgstr "إستخراج الوثيقة"
 
-#: models.py:71
+#: models.py:69
 msgid "Check out expiration date and time must be in the future."
-msgstr ""
+msgstr "التحقق من صلاحية الوقت والتاريخ، يجب ان يكون في المستقبل "
 
-#: models.py:132
-msgid "Checkout time and date"
-msgstr ""
-
-#: models.py:137
-msgid "Checkout expiration"
-msgstr ""
-
-#: permissions.py:8
+#: permissions.py:10
 msgid "Check in documents"
-msgstr ""
+msgstr "إدخال الوثيقة"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Forcefully check in documents"
-msgstr ""
+msgstr "إدخال الوثائق"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Check out documents"
-msgstr ""
+msgstr "الوثائق النهائية"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "Check out details view"
-msgstr ""
+msgstr "تحقق من عرض التفاصيل"
 
 #: queues.py:11
 msgid "Checkouts periodic"
-msgstr ""
+msgstr "الخروج الدوري"
 
 #: queues.py:16
 msgid "Check expired checkouts"
-msgstr ""
+msgstr "تحقق من الخروج منتهية الصلاحية"
 
-#: serializers.py:39
+#: serializers.py:26
+msgid "URL"
+msgstr "URL"
+
+#: serializers.py:44
 msgid "Primary key of the document to be checked out."
+msgstr "المفتاح الأساسي للمستند المراد سحبه."
+
+#: serializers.py:45
+msgid "Document ID"
 msgstr ""
 
 #: views.py:28
@@ -183,32 +197,32 @@ msgstr ""
 
 #: views.py:32
 #, python-format
-msgid "Document \"%(object)s\" checked in successfully."
+msgid "%(count)d documents checked in successfully."
 msgstr ""
 
 #: views.py:35
 #, python-format
-msgid "%(count)d document checked in successfully."
+msgid "Document \"%(object)s\" checked in successfully."
 msgstr ""
 
 #: views.py:38
 #, python-format
-msgid "%(count)d documents checked in successfully."
+msgid "%(count)d document checked in successfully."
 msgstr ""
 
 #: views.py:40
 #, python-format
-msgid "Check in document \"%(object)s\"."
+msgid "Check in %(count)d documents."
 msgstr ""
 
 #: views.py:41
 #, python-format
-msgid "Check in %(count)d document."
+msgid "Check in document \"%(object)s\"."
 msgstr ""
 
 #: views.py:42
 #, python-format
-msgid "Check in %(count)d documents."
+msgid "Check in %(count)d document."
 msgstr ""
 
 #: views.py:95
@@ -218,49 +232,49 @@ msgstr ""
 
 #: views.py:102
 #, python-format
-msgid "Document \"%(object)s\" checked out successfully."
+msgid "%(count)d documents checked out successfully."
 msgstr ""
 
 #: views.py:105
 #, python-format
-msgid "%(count)d document checked out successfully."
+msgid "Document \"%(object)s\" checked out successfully."
 msgstr ""
 
 #: views.py:108
 #, python-format
-msgid "%(count)d documents checked out successfully."
+msgid "%(count)d document checked out successfully."
 msgstr ""
 
 #: views.py:110
 #, python-format
-msgid "Checkout document \"%(object)s\"."
+msgid "Checkout %(count)d documents."
 msgstr ""
 
 #: views.py:111
 #, python-format
-msgid "Checkout %(count)d document."
+msgid "Checkout document \"%(object)s\"."
 msgstr ""
 
 #: views.py:112
 #, python-format
-msgid "Checkout %(count)d documents."
+msgid "Checkout %(count)d document."
 msgstr ""
 
 #: views.py:160
 #, python-format
 msgid "Check out details for document: %s"
-msgstr ""
+msgstr "التأكد من تفاصيل الوثيقة: %s"
 
-#: views.py:179
+#: views.py:181
 msgid ""
 "Checking out a document, blocks certain operations for a predetermined "
 "amount of time."
-msgstr ""
+msgstr "سحب وثيقة، يمنع عمليات معينة لفترة زمنية محددة مسبقًا."
 
-#: views.py:182
+#: views.py:184
 msgid "No documents have been checked out"
-msgstr ""
+msgstr "لم يتم إستخراج أوثائق"
 
-#: widgets.py:23
+#: widgets.py:20
 msgid "Amount"
-msgstr ""
+msgstr "كمية"

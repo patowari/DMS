@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Felix <felix.com@gmx.com>, 2022
-# Marvin Haschker <marvin@haschker.me>, 2022
-# Roberto Rosario, 2022
-# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
+# Roberto Rosario, 2023
+# Felix <felix.com@gmx.com>, 2023
+# Marvin Haschker <marvin@haschker.me>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,65 +24,65 @@ msgstr ""
 "Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:28 links.py:10 permissions.py:5
+#: apps.py:28 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "Task-Manager"
 
-#: apps.py:97
+#: apps.py:99
 msgid "Label"
 msgstr "Bezeichner"
 
-#: apps.py:101
+#: apps.py:103
 msgid "Name"
 msgstr "Name"
 
-#: apps.py:106
+#: apps.py:108
 msgid "Default queue?"
 msgstr "Standardwarteschlange"
 
-#: apps.py:111
+#: apps.py:113
 msgid "Is transient?"
 msgstr "Vorübergehend"
 
-#: apps.py:115
+#: apps.py:117
 msgid "Type"
 msgstr "Typ"
 
-#: apps.py:120
+#: apps.py:122
 msgid "Start time"
 msgstr "Startzeit"
 
-#: apps.py:124
+#: apps.py:126
 msgid "Host"
 msgstr "Host"
 
-#: apps.py:128
+#: apps.py:130
 msgid "Arguments"
 msgstr "Argumente"
 
-#: apps.py:132
+#: apps.py:134
 msgid "Keyword arguments"
 msgstr "Schlüsselwortargumente"
 
-#: apps.py:136
+#: apps.py:138
 msgid "Worker process ID"
 msgstr "Worker Prozess-ID"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "View tasks"
 msgstr "Tasks ansehen"
 
-#: settings.py:10
+#: settings.py:11
 msgid "Celery"
 msgstr "Celery"
 
-#: settings.py:15
+#: settings.py:17
 msgid "Default: \"AMQPLAIN\". Set custom amqp login method."
 msgstr ""
 "Standard: 'AMQPLAIN'. Legen Sie eine benutzerdefinierte amqp-Anmeldemethode "
 "fest."
 
-#: settings.py:21
+#: settings.py:23
 msgid ""
 "Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
 " transport://userid:password@hostname:port/virtual_host Only the scheme part"
@@ -92,7 +92,7 @@ msgstr ""
 "Standard: \"amqp://\". Die Standard Broker-URL. Muss in folgender Form angegeben werden: transport://userid:password@hostname:port/virtual_host\n"
 "Nur das Schema (transport://) muss angegeben werden, der Rest ist optional und verweist auf die Standardwerte."
 
-#: settings.py:30
+#: settings.py:32
 msgid ""
 "Default: \"Disabled\". Toggles SSL usage on broker connection and SSL "
 "settings. The valid values for this option vary by transport."
@@ -101,7 +101,7 @@ msgstr ""
 "Brokerverbindung und die SSL-Einstellungen um. Die gültigen Werte für diese "
 "Option variieren je nach Transport."
 
-#: settings.py:38
+#: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
 "task results (tombstones). Refer to "

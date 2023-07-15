@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -213,15 +213,15 @@ msgstr ""
 
 #: serializers.py:18
 msgid "Users URL"
-msgstr ""
+msgstr "URL на потребителите"
 
 #: serializers.py:22
 msgid "Users add URL"
-msgstr ""
+msgstr "Потребителите добавят URL"
 
 #: serializers.py:26
 msgid "Users remove URL"
-msgstr ""
+msgstr "Потребителите премахват URL"
 
 #: serializers.py:33 serializers.py:80
 msgid "URL"
@@ -247,7 +247,7 @@ msgstr ""
 
 #: serializers.py:68
 msgid "Groups URL"
-msgstr ""
+msgstr "URL адрес на групи"
 
 #: utils.py:26
 msgid "Anonymous"

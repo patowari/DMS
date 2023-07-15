@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# yan songwei <yansw@vip.163.com>, 2022
-# Roberto Rosario, 2022
-# Leon Chu, 2022
+# yan songwei <yansw@vip.163.com>, 2023
+# Leon Chu, 2023
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: Leon Chu, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "正確的文件檔案檢查碼"
 msgid "Exact document label"
 msgstr "正確的檔案標籤"
 
-#: links.py:18 models.py:41 views.py:79
+#: links.py:18 models.py:37 views.py:79
 msgid "Duplicated documents"
 msgstr "重复的文件"
 
@@ -50,23 +50,23 @@ msgstr "重复的文件"
 msgid "Duplicated document scan"
 msgstr "重复的文件扫描"
 
-#: models.py:23 models.py:33
+#: models.py:19 models.py:29
 msgid "Stored duplicate backend"
 msgstr "已存入之重製後台"
 
-#: models.py:24
+#: models.py:20
 msgid "Stored duplicate backends"
 msgstr "已存入的重複後台"
 
-#: models.py:37
+#: models.py:33
 msgid "Document"
 msgstr "文档"
 
-#: models.py:49
+#: models.py:45
 msgid "Duplicated backend entry"
 msgstr "重複的後台條目"
 
-#: models.py:50
+#: models.py:46
 msgid "Duplicated backend entries"
 msgstr "重複的後台條目"
 

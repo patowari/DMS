@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Сергій Гарашко, 2022
+# Сергій Гарашко, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Сергій Гарашко, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Сергій Гарашко, 2023\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:19 permissions.py:5
+#: apps.py:19 permissions.py:6
 msgid "Templating"
 msgstr ""
 
@@ -60,32 +60,48 @@ msgstr "Шаблон"
 msgid "Sandbox"
 msgstr ""
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Use the template sandbox"
 msgstr ""
 
-#: views.py:40
+#: serializers.py:8
+msgid "Hex hash"
+msgstr ""
+
+#: serializers.py:11
+msgid "Name"
+msgstr ""
+
+#: serializers.py:14
+msgid "HTML"
+msgstr ""
+
+#: serializers.py:17
+msgid "URL"
+msgstr ""
+
+#: views.py:44
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr ""
 
-#: views.py:61
+#: views.py:65
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr ""
 
-#: widgets.py:65
+#: widgets.py:69
 msgid "Filters"
 msgstr ""
 
-#: widgets.py:72
+#: widgets.py:76
 msgid "Tags"
 msgstr ""
 
-#: widgets.py:78
+#: widgets.py:83
 msgid "<Filters and tags>"
 msgstr ""
 
-#: widgets.py:119
+#: widgets.py:128
 msgid "<Model attributes>"
 msgstr ""

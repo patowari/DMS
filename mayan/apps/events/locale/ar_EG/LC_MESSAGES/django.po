@@ -4,15 +4,19 @@
 # 
 # Translators:
 # Translators:
-# ali ahmed, 2023
+# Roberto Rosario, 2023
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# WM Shinkada <shinkadawasim@gmail.com>, 2023
+# Yaman Sanobar <yman.snober@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: ali ahmed, 2023\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,60 +24,60 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:31 events.py:11 links.py:52 links.py:93 permissions.py:5
+#: apps.py:31 events.py:11 links.py:52 links.py:93 permissions.py:6
 #: queues.py:7 views/event_views.py:29
 msgid "Events"
-msgstr ""
+msgstr "الأحداث"
 
-#: apps.py:81 apps.py:114
+#: apps.py:81 apps.py:116
 msgid "Date and time"
-msgstr ""
+msgstr "الوقت والتاريخ"
 
-#: apps.py:85 apps.py:117
+#: apps.py:85 apps.py:119 serializers.py:72
 msgid "Actor"
-msgstr ""
+msgstr "الممثل"
 
-#: apps.py:89 apps.py:122
+#: apps.py:89 apps.py:124
 msgid "Event"
-msgstr ""
+msgstr "حدث"
 
-#: apps.py:93 apps.py:127
+#: apps.py:93 apps.py:129 serializers.py:78
 msgid "Target"
-msgstr ""
+msgstr "المستهدف"
 
-#: apps.py:97 apps.py:131
+#: apps.py:97 apps.py:133
 msgid "Action object"
-msgstr ""
+msgstr "كائن العمل"
 
 #: apps.py:104 forms.py:10 forms.py:67
 msgid "Namespace"
-msgstr ""
+msgstr "مساحة الاسم"
 
-#: apps.py:107 forms.py:14 forms.py:71
+#: apps.py:109 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
 msgid "Label"
-msgstr ""
+msgstr "العنوان"
 
-#: apps.py:136
+#: apps.py:138
 msgid "Seen"
-msgstr ""
+msgstr "رأيت"
 
-#: apps.py:143
+#: apps.py:145
 msgid "Object"
-msgstr "كائن"
+msgstr "عنصر"
 
-#: apps.py:148 models.py:64 models.py:127
+#: apps.py:150 models.py:46 models.py:105
 msgid "Event type"
-msgstr ""
+msgstr "نوع الحدث"
 
 #: classes.py:91
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:120
+#: classes.py:119
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:122
+#: classes.py:121
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -90,102 +94,102 @@ msgstr ""
 
 #: forms.py:18 forms.py:75
 msgid "Subscription"
-msgstr ""
+msgstr "متابعه"
 
 #: forms.py:20 forms.py:77
 msgid "No"
-msgstr ""
+msgstr "رفض"
 
 #: forms.py:21 forms.py:78
 msgid "Subscribed"
-msgstr ""
+msgstr "إشتراك"
 
 #: html_widgets.py:23
 msgid "System"
-msgstr ""
+msgstr "النظام"
 
 #: links.py:55 links.py:100 views/clear_views.py:63
 msgid "Clear events"
 msgstr ""
 
-#: links.py:59 links.py:107 views/export_views.py:59
+#: links.py:59 links.py:107 views/export_views.py:60
 msgid "Export events"
 msgstr ""
 
-#: links.py:65 models.py:71 views/subscription_views.py:54
+#: links.py:65 models.py:53 views/subscription_views.py:54
 msgid "Event subscriptions"
-msgstr ""
+msgstr "اشتراكات المستخدم"
 
-#: links.py:71 models.py:135 views/subscription_views.py:169
+#: links.py:71 models.py:113 views/subscription_views.py:169
 msgid "Object event subscriptions"
-msgstr ""
+msgstr "اشتراكات أحداث الكائن"
 
 #: links.py:83
 msgid "Mark as seen"
-msgstr ""
+msgstr "وضع علامة كما شوهد"
 
 #: links.py:87
 msgid "Mark all as seen"
-msgstr ""
+msgstr "ضع علامة على الكل كما رأينا"
 
 #: links.py:114
 msgid "Subscriptions"
-msgstr ""
+msgstr "الاشتراكات"
 
 #: literals.py:12
 #, python-format
 msgid "Unknown or obsolete event type: %s"
-msgstr ""
+msgstr "نوع الحدث غير معروف أو قديم: %s"
 
-#: models.py:24
+#: models.py:23 serializers.py:24 serializers.py:49
 msgid "Name"
-msgstr ""
+msgstr "اسم"
+
+#: models.py:27
+msgid "Stored event type"
+msgstr "نوع الحدث المخزن"
 
 #: models.py:28
-msgid "Stored event type"
-msgstr ""
-
-#: models.py:29
 msgid "Stored event types"
-msgstr ""
+msgstr "أنواع الحدث المخزن"
 
-#: models.py:60 models.py:86 models.py:123
+#: models.py:42 models.py:68 models.py:101 serializers.py:103
 msgid "User"
-msgstr ""
+msgstr "مستخدم"
 
-#: models.py:70
+#: models.py:52
 msgid "Event subscription"
-msgstr ""
+msgstr "الاشتراك في الحدث"
 
-#: models.py:90
+#: models.py:72 serializers.py:100
 msgid "Action"
-msgstr ""
+msgstr "إجراء"
 
-#: models.py:92
+#: models.py:75
 msgid "Read"
-msgstr ""
+msgstr "قراءه"
 
-#: models.py:98
+#: models.py:82
 msgid "Notification"
-msgstr ""
+msgstr "تنبيه"
 
-#: models.py:99 views/notification_views.py:33
+#: models.py:83 views/notification_views.py:33
 msgid "Notifications"
-msgstr ""
+msgstr "التنبيهات"
 
-#: models.py:134
+#: models.py:112
 msgid "Object event subscription"
-msgstr ""
+msgstr "اشتراك حدث الكائن"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Clear the events of an object"
 msgstr ""
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Export the events of an object"
 msgstr ""
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "View the events of an object"
 msgstr ""
 
@@ -195,6 +199,30 @@ msgstr ""
 
 #: queues.py:17
 msgid "Export event querysets"
+msgstr ""
+
+#: serializers.py:27
+msgid "URL"
+msgstr "URL"
+
+#: serializers.py:40
+msgid "Event type namespace URL"
+msgstr ""
+
+#: serializers.py:43
+msgid "ID"
+msgstr "المعرف"
+
+#: serializers.py:75
+msgid "Actor content type"
+msgstr ""
+
+#: serializers.py:81
+msgid "Target content type"
+msgstr ""
+
+#: serializers.py:84
+msgid "Verb"
 msgstr ""
 
 #: views/clear_views.py:27
@@ -227,12 +255,12 @@ msgstr ""
 
 #: views/event_views.py:49
 msgid "There are no events for this object"
-msgstr ""
+msgstr "لا توجد أحداث لهذا الكائن"
 
 #: views/event_views.py:51
 #, python-format
 msgid "Events for: %s"
-msgstr ""
+msgstr "سجل التعديلات: %s"
 
 #: views/event_views.py:67
 msgid "There are no events of this type"
@@ -241,7 +269,7 @@ msgstr ""
 #: views/event_views.py:69
 #, python-format
 msgid "Events of type: %s"
-msgstr ""
+msgstr "أحداث من النوع: %s"
 
 #: views/export_views.py:27
 msgid ""
@@ -249,27 +277,27 @@ msgid ""
 " available in the downloads area."
 msgstr ""
 
-#: views/export_views.py:46
+#: views/export_views.py:47
 msgid "Event list export task queued successfully."
 msgstr ""
 
-#: views/export_views.py:80
+#: views/export_views.py:81
 #, python-format
 msgid "Export events of: %s"
 msgstr ""
 
-#: views/export_views.py:99
+#: views/export_views.py:100
 #, python-format
 msgid "Export events of type: %s"
 msgstr ""
 
 #: views/notification_views.py:29
 msgid "Subscribe to global or object events to receive notifications."
-msgstr ""
+msgstr "إشترك لتلقي التنبيهات"
 
 #: views/notification_views.py:32
 msgid "There are no notifications"
-msgstr ""
+msgstr "لا توجد تنبيهات"
 
 #: views/notification_views.py:45
 msgid "Mark the selected notification as read?"
@@ -290,25 +318,25 @@ msgstr ""
 #: views/subscription_views.py:38
 #, python-format
 msgid "Error updating event subscription; %s"
-msgstr ""
+msgstr "خطأ في تحديث اشتراك الحدث ؛ %s"
 
 #: views/subscription_views.py:43
 msgid "Event subscriptions updated successfully"
-msgstr ""
+msgstr "تم تحديث اشتراكات المستخدم بنجاح"
 
 #: views/subscription_views.py:117
 #, python-format
 msgid "Error updating object event subscription; %s"
-msgstr ""
+msgstr "خطأ في تحديث اشتراك حدث الكائن ؛ %s"
 
 #: views/subscription_views.py:123
 msgid "Object event subscriptions updated successfully"
-msgstr ""
+msgstr "تم تحديث اشتراكات حدث الكائن بنجاح"
 
 #: views/subscription_views.py:134
 #, python-format
 msgid "Event subscriptions for: %s"
-msgstr ""
+msgstr "اشتراكات المستخدم لـ: %s"
 
 #: views/subscription_views.py:164
 msgid ""

@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Erjon Sulaj <erjon1282@gmail.com>, 2022
+# Erjon Sulaj <erjon1282@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2023\n"
 "Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:57 events.py:5 permissions.py:5 settings.py:10
+#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Paraqitja"
 
@@ -72,15 +72,15 @@ msgstr "Toastr"
 msgid "URI.js"
 msgstr "URI.js"
 
-#: events.py:8
+#: events.py:10
 msgid "Theme created"
 msgstr "Tema u krijua"
 
-#: events.py:11
+#: events.py:13
 msgid "Theme edited"
 msgstr "Tema u editua"
 
-#: events.py:14
+#: events.py:16
 msgid "User theme edited"
 msgstr ""
 
@@ -144,41 +144,48 @@ msgstr "Parametri i temës sipas përdoruesit"
 msgid "User theme settings"
 msgstr "Parametrat e temës sipas përdoruesit"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new themes"
 msgstr "Krijo tema të reja"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete themes"
 msgstr "Fshij temat"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit themes"
 msgstr "Modifiko temat"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing themes"
 msgstr "Shiko temat ekzistuese"
 
-#: settings.py:15
+#: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
 msgstr ""
 
-#: settings.py:21
+#: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
 msgstr "Numri maksimal i karaktereve që shfaqen tek titulli i pamjes."
 
-#: settings.py:28
-msgid ""
-"Position where the system message will be displayed. Options are: top-left, "
-"top-center, top-right, bottom-left, bottom-center, bottom-right."
+#: settings.py:34
+msgid "Position where the system messages will be displayed."
 msgstr ""
-"Pozicioni ku shfaqet njoftimi nga sistemi. Opsionet janë: lart-majtas, lart-"
-"qendër, lart-djathtas, poshtë-majtas, poshtë-qendër, poshtë-djathtas."
 
-#: settings.py:36
+#: settings.py:40
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
+msgstr ""
+
+#: settings.py:47
+msgid ""
+"Maximum number of requests that can be made before throttling is enabled."
+msgstr ""
+
+#: settings.py:54
+msgid ""
+"Time in milliseconds after which a throttled request will clear allowing an "
+"additional request to be performed."
 msgstr ""
 
 #: templates/403.html:5 templates/403.html:30
@@ -327,6 +334,12 @@ msgstr ""
 "                Informoni miqtë dhe kolegët se sa fantastik është %(project_title)s!\n"
 "            "
 
+#: templates/appearance/app/foot.html:70
+msgid ""
+"Too many pending requests. Additional requests will be blocked until a "
+"pending one is completed or after the cooling off period ends."
+msgstr ""
+
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr ""
@@ -373,9 +386,15 @@ msgstr "Anullo"
 msgid "Identifier"
 msgstr "Identifikues"
 
-#: templates/appearance/generic_list_subtemplate.html:134
-msgid "Facets"
+#: templates/appearance/generic_list_subtemplate.html:85
+#: templates/appearance/partials/list_object_facet_links_column.html:8
+#: templates/appearance/partials/list_object_facet_links_column.html:39
+msgid "Views"
 msgstr ""
+
+#: templates/appearance/generic_list_subtemplate.html:91
+msgid "Actions"
+msgstr "Veprimet"
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
@@ -417,24 +436,34 @@ msgstr "Përzgjidh/Anullo tek të gjitha"
 msgid "Toggle list display mode"
 msgstr "Ndrysho paraqitjen e listës"
 
-#: templates/appearance/partials/list_toolbar.html:63
+#: templates/appearance/partials/list_toolbar.html:31
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "Zgjidh titujt për aktivizim nëpërmjet veprimeve në grup. Përdor Shift + "
 "kliko për të përzgjedhur shumë."
 
-#: templates/appearance/partials/list_toolbar.html:68
+#: templates/appearance/partials/list_toolbar.html:36
 msgid "Bulk actions"
 msgstr "Veprimet në grup"
 
-#: templates/appearance/partials/list_toolbar.html:70
+#: templates/appearance/partials/list_toolbar.html:38
 msgid "Toggle Dropdown"
 msgstr "Ndrysho paraqitjen e Dropdown"
 
 #: templates/appearance/partials/no_results.html:18
 msgid "No results"
 msgstr "Pa rezultate"
+
+#: templates/appearance/partials/pagination.html:12
+#: templates/appearance/partials/pagination.html:14
+msgid "Previous page"
+msgstr ""
+
+#: templates/appearance/partials/pagination.html:30
+#: templates/appearance/partials/pagination.html:32
+msgid "Next page"
+msgstr ""
 
 #: templates/appearance/root.html:52
 msgid "Close"
@@ -448,7 +477,7 @@ msgstr "Gabim në komunikim me serverin"
 msgid "Check you network connection and try again in a few moments."
 msgstr "Kontrollo lidhjen në rrjet/internet dhe provo sërish pas pak."
 
-#: templatetags/appearance_tags.py:61
+#: templatetags/appearance_tags.py:67
 msgid "None"
 msgstr "Asnjë"
 

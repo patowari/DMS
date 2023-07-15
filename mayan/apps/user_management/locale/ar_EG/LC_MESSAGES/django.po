@@ -4,15 +4,19 @@
 # 
 # Translators:
 # Translators:
+# Bashar Al-Abdulhadi, 2023
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# Roberto Rosario, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,115 +24,115 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:74 events.py:6 permissions.py:6
+#: apps.py:62 events.py:6 permissions.py:6
 msgid "User management"
-msgstr ""
+msgstr "إدارة المستخدم"
 
-#: apps.py:89 search.py:10
+#: apps.py:77 search.py:10
 msgid "Group"
-msgstr ""
+msgstr "المجموعة"
 
-#: apps.py:90 apps.py:117 links.py:56 links.py:70 links.py:99 search.py:34
-#: views/group_views.py:109
+#: apps.py:78 apps.py:107 links.py:56 links.py:70 links.py:99 search.py:34
+#: views/group_views.py:111
 msgid "Groups"
-msgstr ""
+msgstr "المجموعات"
 
-#: apps.py:91 search.py:16
+#: apps.py:79 search.py:16
 msgid "Name"
-msgstr ""
+msgstr "اسم"
 
-#: apps.py:111 models.py:20 search.py:22
+#: apps.py:99 models.py:20 search.py:22
 msgid "User"
-msgstr ""
+msgstr "مستخدم"
 
-#: apps.py:112 apps.py:216 links.py:61 links.py:102 links.py:120
-#: views/user_views.py:168
+#: apps.py:100 apps.py:219 links.py:61 links.py:102 links.py:120
+#: views/user_views.py:170
 msgid "Users"
-msgstr ""
+msgstr "المستخدمين"
 
-#: apps.py:115 search.py:31
+#: apps.py:103 search.py:31
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
-#: apps.py:116 search.py:28
+#: apps.py:106 search.py:28
 msgid "First name"
-msgstr ""
+msgstr "الاسم الاول"
 
-#: apps.py:118
+#: apps.py:110
 msgid "Is active?"
-msgstr ""
+msgstr "مفعل؟"
 
-#: apps.py:119 search.py:37
+#: apps.py:113 search.py:37
 msgid "Last name"
-msgstr ""
+msgstr "الاسم الأخير"
 
-#: apps.py:120
+#: apps.py:116 serializers.py:72
 msgid "Password"
-msgstr ""
+msgstr "كلمة المرور"
 
-#: apps.py:121
+#: apps.py:119 search.py:40
 msgid "Username"
-msgstr ""
+msgstr "اسم الدخول"
 
 #: apps.py:122
 msgid "Last login"
 msgstr ""
 
-#: apps.py:146
+#: apps.py:148
 msgid "Has usable password?"
-msgstr ""
+msgstr "تشفير كلمة المرور؟"
 
-#: apps.py:153
+#: apps.py:155
 msgid "All the groups."
-msgstr ""
+msgstr "جميع المجموعات"
 
-#: apps.py:157
+#: apps.py:159
 msgid "All the users."
-msgstr ""
+msgstr "جميع المستخدمين"
 
 #: dashboard_widgets.py:14
 msgid "Total users"
-msgstr ""
+msgstr "مجموع المستخدمين"
 
 #: dashboard_widgets.py:29
 msgid "Total groups"
-msgstr ""
+msgstr "مجموع المجموعات"
 
-#: dashboards.py:5
+#: dashboards.py:6
 msgid "User dashboard"
 msgstr ""
 
 #: events.py:10
 msgid "Group created"
-msgstr ""
+msgstr "انشاء مجموعة"
 
 #: events.py:13
 msgid "Group edited"
-msgstr ""
+msgstr "تعديل المجموعة"
 
 #: events.py:17
 msgid "User created"
-msgstr ""
+msgstr "انشاء مستخدم جديد"
 
 #: events.py:20
 msgid "User edited"
-msgstr ""
+msgstr "تعديل مستخدم"
 
 #: events.py:25
 msgid "User logged in"
-msgstr ""
+msgstr "الدخول الى النظام"
 
 #: events.py:28
 msgid "User logged out"
-msgstr ""
+msgstr "الخروج من النظام"
 
 #: links.py:28
 msgid "User details"
-msgstr ""
+msgstr "تفاصيل المستخدم"
 
-#: links.py:36 views/group_views.py:24
+#: links.py:36 views/group_views.py:25
 msgid "Create new group"
-msgstr ""
+msgstr "إنشاء مجموعة جديدة"
 
 #: links.py:41 links.py:44 links.py:84 links.py:88
 msgid "Delete"
@@ -136,19 +140,19 @@ msgstr "حذف"
 
 #: links.py:49 links.py:93
 msgid "Edit"
-msgstr ""
+msgstr "تعديل"
 
 #: links.py:78 views/user_views.py:32
 msgid "Create new user"
-msgstr ""
+msgstr "إنشاء مستخدم جديد"
 
 #: links.py:113
 msgid "User options"
-msgstr ""
+msgstr "تفضيلات المستخدم"
 
 #: literals.py:8
 msgid "Account"
-msgstr ""
+msgstr "الحساب"
 
 #: literals.py:12 literals.py:23
 msgid "Personal"
@@ -156,89 +160,99 @@ msgstr ""
 
 #: literals.py:16
 msgid "Attributes"
-msgstr ""
+msgstr "متغيرات"
 
 #: models.py:24
 msgid "Forbid this user from changing their password."
-msgstr ""
-
-#: models.py:30
-msgid "User settings"
-msgstr ""
+msgstr "لا يسمح بتغير كلمة المرور"
 
 #: models.py:31
+msgid "User settings"
+msgstr "إعدادات المستخدم"
+
+#: models.py:32
 msgid "Users settings"
-msgstr ""
+msgstr "اعدادات المستخدمين"
 
 #: permissions.py:10
 msgid "Create new groups"
-msgstr ""
+msgstr "إنشاء مجموعات جديدة"
 
 #: permissions.py:13
 msgid "Delete existing groups"
-msgstr ""
+msgstr "حذف المجموعات المعروضة"
 
 #: permissions.py:16
 msgid "Edit existing groups"
-msgstr ""
+msgstr "تعديل المجموعات المعروضة"
 
 #: permissions.py:19
 msgid "View existing groups"
-msgstr ""
+msgstr "عرض المجموعات الحالية"
 
 #: permissions.py:22
 msgid "Create new users"
-msgstr ""
+msgstr "إنشاء مستخدمين جدد"
 
 #: permissions.py:25
 msgid "Delete existing users"
-msgstr ""
+msgstr "حذف المستخدمين الحاليين"
 
 #: permissions.py:28
 msgid "Edit existing users"
-msgstr ""
+msgstr "تحرير المستخدمين الحاليين"
 
 #: permissions.py:31
 msgid "View existing users"
-msgstr ""
-
-#: search.py:40
-msgid "username"
-msgstr ""
+msgstr "عرض المستخدمين الحاليين"
 
 #: serializers.py:16
 msgid "URL of the API endpoint showing the list users of this group."
 msgstr ""
 
-#: serializers.py:47
+#: serializers.py:18
+msgid "Users URL"
+msgstr ""
+
+#: serializers.py:22
+msgid "Users add URL"
+msgstr ""
+
+#: serializers.py:26
+msgid "Users remove URL"
+msgstr ""
+
+#: serializers.py:33 serializers.py:80
+msgid "URL"
+msgstr "URL"
+
+#: serializers.py:48
 msgid "Primary key of the user to add to the group."
 msgstr ""
 
-#: serializers.py:56
+#: serializers.py:49 serializers.py:58
+msgid "User ID"
+msgstr "معرف المستخدم"
+
+#: serializers.py:57
 msgid "Primary key of the user to remove from the group."
 msgstr ""
 
-#: serializers.py:65
+#: serializers.py:66
 msgid "URL of the API endpoint showing the list groups this user belongs to."
 msgstr ""
 
-#: utils.py:6
-msgid "Anonymous"
+#: serializers.py:68
+msgid "Groups URL"
 msgstr ""
 
-#: views/group_views.py:38
+#: utils.py:26
+msgid "Anonymous"
+msgstr "مجهول"
+
+#: views/group_views.py:40
 #, python-format
 msgid "Error deleting group \"%(instance)s\"; %(exception)s"
-msgstr ""
-
-#: views/group_views.py:45
-#, python-format
-msgid "Group \"%(object)s\" deleted successfully."
-msgstr ""
-
-#: views/group_views.py:46
-#, python-format
-msgid "%(count)d group deleted successfully."
 msgstr ""
 
 #: views/group_views.py:47
@@ -248,12 +262,12 @@ msgstr ""
 
 #: views/group_views.py:48
 #, python-format
-msgid "Delete group: %(object)s."
+msgid "Group \"%(object)s\" deleted successfully."
 msgstr ""
 
 #: views/group_views.py:49
 #, python-format
-msgid "Delete the %(count)d selected group."
+msgid "%(count)d group deleted successfully."
 msgstr ""
 
 #: views/group_views.py:50
@@ -261,53 +275,56 @@ msgstr ""
 msgid "Delete the %(count)d selected groups."
 msgstr ""
 
-#: views/group_views.py:64
+#: views/group_views.py:51
+#, python-format
+msgid "Delete group: %(object)s."
+msgstr ""
+
+#: views/group_views.py:52
+#, python-format
+msgid "Delete the %(count)d selected group."
+msgstr ""
+
+#: views/group_views.py:66
 #, python-format
 msgid "Details of group: %s"
 msgstr ""
 
-#: views/group_views.py:81
+#: views/group_views.py:83
 #, python-format
 msgid "Edit group: %s"
-msgstr ""
+msgstr "تعديل المجموعة: %s"
 
-#: views/group_views.py:102
+#: views/group_views.py:104
 msgid ""
 "User groups are organizational units. They should mirror the organizational "
 "units of your organization. Groups can't be used for access control. Use "
 "roles for permissions and access control, add groups to them."
 msgstr ""
+"مجموعات المستخدمين هي وحدات تنظيمية. يجب أن تنعكس الوحدات التنظيمية للمنشأة "
+"، لا يمكن استخدام المجموعات للتحكم في الوصول. استخدم الأدوار للأذونات "
+"والتحكم في الوصول ، أضف مجموعات إليها"
 
-#: views/group_views.py:108
+#: views/group_views.py:110
 msgid "There are no user groups"
-msgstr ""
+msgstr "لا يوجد مجموعات للمستخدم"
 
-#: views/group_views.py:120
+#: views/group_views.py:116
 msgid "Available users"
-msgstr ""
+msgstr "المستخدم متاح"
 
-#: views/group_views.py:121
+#: views/group_views.py:117
 msgid "Group users"
-msgstr ""
+msgstr "مستخدمي المجموعة"
 
-#: views/group_views.py:130
+#: views/group_views.py:132
 #, python-format
 msgid "Users of group: %s"
-msgstr ""
+msgstr "مستخدمي المجموعة: %s"
 
 #: views/user_views.py:55
 #, python-format
 msgid "Error deleting user \"%(instance)s\"; %(exception)s"
-msgstr ""
-
-#: views/user_views.py:59
-#, python-format
-msgid "User \"%(object)s\" deleted successfully."
-msgstr ""
-
-#: views/user_views.py:60
-#, python-format
-msgid "%(count)d user deleted successfully."
 msgstr ""
 
 #: views/user_views.py:61
@@ -317,12 +334,12 @@ msgstr ""
 
 #: views/user_views.py:62
 #, python-format
-msgid "Delete user: %(object)s."
+msgid "User \"%(object)s\" deleted successfully."
 msgstr ""
 
 #: views/user_views.py:63
 #, python-format
-msgid "Delete the %(count)d selected user."
+msgid "%(count)d user deleted successfully."
 msgstr ""
 
 #: views/user_views.py:64
@@ -330,48 +347,58 @@ msgstr ""
 msgid "Delete the %(count)d selected users."
 msgstr ""
 
-#: views/user_views.py:71
+#: views/user_views.py:65
+#, python-format
+msgid "Delete user: %(object)s."
+msgstr ""
+
+#: views/user_views.py:66
+#, python-format
+msgid "Delete the %(count)d selected user."
+msgstr ""
+
+#: views/user_views.py:73
 msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
 msgstr ""
 
-#: views/user_views.py:91
+#: views/user_views.py:93
 #, python-format
 msgid "Details of user: %s"
-msgstr ""
+msgstr "تفاصيل المستخدم: %s"
 
-#: views/user_views.py:110
+#: views/user_views.py:112
 #, python-format
 msgid "Edit user: %s"
-msgstr ""
+msgstr "تعديل المستخدم: %s"
 
-#: views/user_views.py:127
+#: views/user_views.py:123
 msgid "Available groups"
-msgstr ""
+msgstr "المجموعات المتاحة"
 
 #. Translators: "User groups" here refer to the list of groups of a
 #. specific user. The user's group membership.
-#: views/user_views.py:130
+#: views/user_views.py:126
 msgid "User groups"
-msgstr ""
+msgstr "مجموعات المستخدم"
 
-#: views/user_views.py:139
+#: views/user_views.py:141
 #, python-format
 msgid "Groups of user: %s"
-msgstr ""
+msgstr "مجموعات المستخدم: %s"
 
-#: views/user_views.py:164
+#: views/user_views.py:166
 msgid ""
 "User accounts can be create from this view. After creating a user account "
 "you will prompted to set a password for it. "
-msgstr ""
+msgstr "يجب تعين كلمة المرور بعد أنشاء حساب المستخدم"
 
-#: views/user_views.py:167
+#: views/user_views.py:169
 msgid "There are no user accounts"
-msgstr ""
+msgstr "لا يوجد حساب للمستخدم"
 
-#: views/user_views.py:184
+#: views/user_views.py:189
 #, python-format
 msgid "Edit options for user: %s"
-msgstr ""
+msgstr "تعديل المستخدم: %s"

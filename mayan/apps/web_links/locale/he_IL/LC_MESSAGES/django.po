@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2022
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:39+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,152 +21,172 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:40
-msgid "Links"
-msgstr ""
-
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
-#: permissions.py:6 views.py:184
+#: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
+#: models.py:43 permissions.py:6 views.py:169
 msgid "Web links"
-msgstr "קישורי רשת"
+msgstr "קישורי אינטרנט"
 
 #: events.py:10
 msgid "Web link created"
-msgstr "קישור רשת נוצר"
+msgstr "נוצר קישור אינטרנט"
 
 #: events.py:13
 msgid "Web link edited"
-msgstr "קישור רשת נערך"
+msgstr "קישור אינטרנט נערך"
 
 #: events.py:16
 msgid "Web link navigated"
-msgstr "Web link navigated"
+msgstr "קישור אינטרנט בוצע"
 
-#: links.py:29 views.py:96
+#: links.py:29 views.py:81
 msgid "Create new web link"
-msgstr "Create new web link"
+msgstr "צור קישור אינטרנט חדש"
 
 #: links.py:35
 msgid "Delete"
-msgstr "Delete"
+msgstr "מחיקה"
 
-#: links.py:39 models.py:38
+#: links.py:39 models.py:37
 msgid "Document types"
-msgstr "Document types"
+msgstr "סוגי מסמכים"
 
 #: links.py:44
 msgid "Edit"
-msgstr "Edit"
+msgstr "עריכה"
 
 #: links.py:51
 msgid "Navigate"
-msgstr "Navigate"
+msgstr "נווט"
+
+#: models.py:23
+msgid "A short text describing the web link."
+msgstr "טקסט קצר המתאר את קישור האינטרנט"
 
 #: models.py:24
-msgid "A short text describing the web link."
-msgstr "A short text describing the web link."
-
-#: models.py:25
 msgid "Label"
 msgstr "תווית"
 
-#: models.py:29
+#: models.py:28
 msgid "Template that will be used to craft the final URL of the web link."
-msgstr "Template that will be used to craft the final URL of the web link."
+msgstr "תבנית ליצירת URL סופי של קישור האינטרנט"
 
-#: models.py:31
+#: models.py:30
 msgid "Template"
-msgstr "Template"
+msgstr "תבנית"
 
-#: models.py:34
+#: models.py:33
 msgid "Enabled"
-msgstr "Enabled"
+msgstr "מאופשר"
 
-#: models.py:43
+#: models.py:42
 msgid "Web link"
-msgstr "Web link"
+msgstr "קישור"
 
 #: permissions.py:10
 msgid "Create new web links"
-msgstr "Create new web links"
+msgstr "צור קישורי אינטרנט חדשים"
 
 #: permissions.py:13
 msgid "Delete web links"
-msgstr "Delete web links"
+msgstr "מחק קישורי אינטרנט"
 
 #: permissions.py:16
 msgid "Edit web links"
-msgstr "Edit web links"
+msgstr "ערוך קישורי אינטרנט"
 
 #: permissions.py:19
 msgid "View existing web links"
-msgstr "View existing web links"
+msgstr "הצג קישורי אינטרנט קיימים"
 
 #: permissions.py:22
 msgid "View web link instances"
-msgstr "View web link instances"
+msgstr "הצג מופעים של קישורי אינטרנט"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
-msgstr "Primary key of the document type to add to the web link."
+msgstr "מפתח ראשי של סוג המסמך להוספה לקישור האינטרנט"
+
+#: serializers.py:17 serializers.py:26
+msgid "Document type ID"
+msgstr "מזהה סוג מסמך"
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
-msgstr "Primary key of the document type to remove from the web link."
+msgstr "מפתח ראשי של סוג המסמך להסרה מקישור האינטרנט"
 
-#: views.py:38
-msgid "Available web links"
-msgstr "Available web links"
+#: serializers.py:33
+msgid "Document types add URL"
+msgstr "כתובת (URL) להוספת סוגי מסמכים"
 
-#: views.py:39
+#: serializers.py:37
+msgid "Document types remove URL"
+msgstr "כתובת (URL) להסרת סוגי מסמכים"
+
+#: serializers.py:41
+msgid "Document types URL"
+msgstr "כתובת (URL) לסוגי מסמכים"
+
+#: serializers.py:48 serializers.py:63
+msgid "URL"
+msgstr "כתובת אתר (URL)"
+
+#: serializers.py:66
+msgid "Navigation URL"
+msgstr "כתובת אתר (URL) לניווט"
+
+#: views.py:32
 msgid "Web links enabled"
-msgstr "Web links enabled"
+msgstr "קישורי אינטרנט מאופשרים"
 
-#: views.py:65
+#: views.py:33
+msgid "Available web links"
+msgstr "קישורי אינטרנט זמינים"
+
+#: views.py:50
 #, python-format
 msgid "Web links to enable for document type: %s"
-msgstr "Web links to enable for document type: %s"
+msgstr "קישורי אינטרנט להפעלה עבור סוג מסמך: %s"
 
-#: views.py:118
+#: views.py:103
 #, python-format
 msgid "Delete web link: %s"
-msgstr "Delete web link: %s"
+msgstr "מחיקת קישור אינטרנט: %s"
 
-#: views.py:130
-msgid "Available document types"
-msgstr "Available document types"
-
-#: views.py:131
+#: views.py:108
 msgid "Document types enabled"
-msgstr "Document types enabled"
+msgstr "סוגי מסמכים אפשריים"
 
-#: views.py:141
+#: views.py:109
+msgid "Available document types"
+msgstr "סוגי מסמכים זמינים"
+
+#: views.py:126
 #, python-format
 msgid "Document type for which to enable web link: %s"
-msgstr "Document type for which to enable web link: %s"
+msgstr "סוג מסמך שעבורו יש לאפשר קישור אינטרנט: %s"
 
-#: views.py:158
+#: views.py:143
 #, python-format
 msgid "Edit web link: %s"
-msgstr "Edit web link: %s"
+msgstr "עריכת קישור אינטרנט: %s"
 
-#: views.py:177 views.py:207
+#: views.py:162 views.py:192
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
 msgstr ""
-"Web links allow generating HTTP links from documents to external resources. "
-"The link URL's can contain document properties values."
+"קישורי אינטרנט מאפשרים יצירת קישורי HTTP ממסמכים למשאבים חיצוניים. כתובות "
+"האתר (URLs) יכולים להכיל ערכי מאפיינים של מסמך."
 
-#: views.py:182
+#: views.py:167
 msgid "There are no web links"
-msgstr "There are no web links"
+msgstr "אין קישורי אינטרנט"
 
-#: views.py:212
+#: views.py:197
 msgid "There are no web links for this document"
-msgstr "There are no web links for this document"
+msgstr "אין קישורי אינטרנט למסמך זה"
 
-#: views.py:215
+#: views.py:200
 #, python-format
 msgid "Web links for document: %s"
-msgstr "Web links for document: %s"
+msgstr "קישורי אינטרנט למסמך: %s"

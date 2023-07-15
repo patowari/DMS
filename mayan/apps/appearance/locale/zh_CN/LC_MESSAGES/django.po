@@ -4,18 +4,19 @@
 # 
 # Translators:
 # Translators:
-# yan songwei <yansw@vip.163.com>, 2022
-# Ford Guo <agile.guo@gmail.com>, 2022
-# Roberto Rosario, 2022
-# Leon Chu, 2022
+# bo feng <87289884@qq.com>, 2023
+# Ford Guo <agile.guo@gmail.com>, 2023
+# Roberto Rosario, 2023
+# Leon Chu, 2023
+# yan songwei <yansw@vip.163.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: Leon Chu, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"Last-Translator: yan songwei <yansw@vip.163.com>, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:57 events.py:5 permissions.py:5 settings.py:10
+#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "外观"
 
@@ -75,15 +76,15 @@ msgstr "Toastr 套件"
 msgid "URI.js"
 msgstr "URI.js"
 
-#: events.py:8
+#: events.py:10
 msgid "Theme created"
 msgstr "已製作之佈景"
 
-#: events.py:11
+#: events.py:13
 msgid "Theme edited"
 msgstr "已編輯之佈景"
 
-#: events.py:14
+#: events.py:16
 msgid "User theme edited"
 msgstr ""
 
@@ -145,40 +146,49 @@ msgstr "使用者佈景設定"
 msgid "User theme settings"
 msgstr "使用者佈景設定"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new themes"
 msgstr "建立複數佈景"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete themes"
 msgstr "刪除複數佈景"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit themes"
 msgstr "編輯複數佈景"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing themes"
 msgstr "瀏覽所有已存佈景"
 
-#: settings.py:15
+#: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
 msgstr ""
 
-#: settings.py:21
+#: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
 msgstr "显示视图标题的最大字符数。"
 
-#: settings.py:28
-msgid ""
-"Position where the system message will be displayed. Options are: top-left, "
-"top-center, top-right, bottom-left, bottom-center, bottom-right."
-msgstr "显示系统消息的位置。选项包括：左上，顶部居中，右上，左下，底部居中，右下。"
+#: settings.py:34
+msgid "Position where the system messages will be displayed."
+msgstr ""
 
-#: settings.py:36
+#: settings.py:40
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr "在選單被選擇更新後延遲幾微秒"
+
+#: settings.py:47
+msgid ""
+"Maximum number of requests that can be made before throttling is enabled."
+msgstr ""
+
+#: settings.py:54
+msgid ""
+"Time in milliseconds after which a throttled request will clear allowing an "
+"additional request to be performed."
+msgstr ""
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -320,6 +330,12 @@ msgstr ""
 "                傳遞到世界各地. 說明給您的朋友與同事知道  %(project_title)s 有多麼棒的功能!\n"
 "            "
 
+#: templates/appearance/app/foot.html:70
+msgid ""
+"Too many pending requests. Additional requests will be blocked until a "
+"pending one is completed or after the cooling off period ends."
+msgstr ""
+
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr "对象"
@@ -366,9 +382,15 @@ msgstr "取消"
 msgid "Identifier"
 msgstr "标识"
 
-#: templates/appearance/generic_list_subtemplate.html:134
-msgid "Facets"
-msgstr "多面性"
+#: templates/appearance/generic_list_subtemplate.html:85
+#: templates/appearance/partials/list_object_facet_links_column.html:8
+#: templates/appearance/partials/list_object_facet_links_column.html:39
+msgid "Views"
+msgstr "视图"
+
+#: templates/appearance/generic_list_subtemplate.html:91
+msgid "Actions"
+msgstr "操作"
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
@@ -408,22 +430,32 @@ msgstr "全选/全不选"
 msgid "Toggle list display mode"
 msgstr "切换列表显示模式"
 
-#: templates/appearance/partials/list_toolbar.html:63
+#: templates/appearance/partials/list_toolbar.html:31
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr "选择项目激活批量操作。使用Shift +单击以选择多个。"
 
-#: templates/appearance/partials/list_toolbar.html:68
+#: templates/appearance/partials/list_toolbar.html:36
 msgid "Bulk actions"
 msgstr "批量操作"
 
-#: templates/appearance/partials/list_toolbar.html:70
+#: templates/appearance/partials/list_toolbar.html:38
 msgid "Toggle Dropdown"
 msgstr "切换下拉列表"
 
 #: templates/appearance/partials/no_results.html:18
 msgid "No results"
 msgstr "没有结果"
+
+#: templates/appearance/partials/pagination.html:12
+#: templates/appearance/partials/pagination.html:14
+msgid "Previous page"
+msgstr "上一页"
+
+#: templates/appearance/partials/pagination.html:30
+#: templates/appearance/partials/pagination.html:32
+msgid "Next page"
+msgstr "下一页"
 
 #: templates/appearance/root.html:52
 msgid "Close"
@@ -437,7 +469,7 @@ msgstr "服务器通信错误"
 msgid "Check you network connection and try again in a few moments."
 msgstr "检查网络连接，并稍后再试。"
 
-#: templatetags/appearance_tags.py:61
+#: templatetags/appearance_tags.py:67
 msgid "None"
 msgstr "无"
 

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:33+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -20,27 +20,27 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:41 events.py:5 links.py:33
+#: apps.py:41 events.py:6 links.py:33
 msgid "Checkouts"
-msgstr "משיכות מסמכים"
+msgstr "הוצאות מסמכים מהארכיון"
 
-#: dashboard_widgets.py:14 views.py:183
+#: dashboard_widgets.py:14 views.py:185
 msgid "Checked out documents"
-msgstr "מסמכים שנמשכו"
+msgstr "מסמכים שהוצאו מהארכיון"
 
-#: events.py:8
+#: events.py:10
 msgid "Document automatically checked in"
 msgstr "מסמך הוכנס אוטומטית לארכיון"
 
-#: events.py:12
+#: events.py:14
 msgid "Document checked in"
 msgstr "מסמך הוחזר לארכיון"
 
-#: events.py:15
+#: events.py:17
 msgid "Document checked out"
 msgstr "המסמך הוצא מהארכיון"
 
-#: events.py:18
+#: events.py:20
 msgid "Document forcefully checked in"
 msgstr "מסמך הוכנס לארכיון בהתגברות"
 
@@ -54,11 +54,11 @@ msgstr "המסמך כבר הוצא מהארכיון."
 
 #: forms.py:26
 msgid "Document status"
-msgstr ""
+msgstr "מצב המסמך"
 
-#: forms.py:37 models.py:47 models.py:127
+#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
 msgid "User"
-msgstr "משתמש"
+msgstr "מִשׁתַמֵשׁ"
 
 #: forms.py:41
 msgid "Check out time"
@@ -70,7 +70,7 @@ msgstr "תפוגה של הוצאה מהארכיון"
 
 #: forms.py:51
 msgid "New files allowed?"
-msgstr ""
+msgstr "מותרים קבצים חדשים?"
 
 #: forms.py:52
 msgid "Yes"
@@ -108,9 +108,17 @@ msgstr "הוצא מהארכיון"
 msgid "Checked in/available"
 msgstr "הוחזר לארכיון/זמין"
 
-#: models.py:34
+#: model_mixins.py:14
+msgid "Checkout time and date"
+msgstr "שעה ותאריך הוצאה מהארכיון"
+
+#: model_mixins.py:19
+msgid "Checkout expiration"
+msgstr "תפוגה של הוצאה מהארכיון"
+
+#: models.py:34 serializers.py:17
 msgid "Document"
-msgstr ""
+msgstr "מסמך"
 
 #: models.py:37
 msgid "Check out date and time"
@@ -120,51 +128,43 @@ msgstr "תאריך ושעה של הוצאה מהארכיון"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "משך הזמן להוצאת המסמך מהארכיון, בדקות."
 
-#: models.py:43
+#: models.py:42
 msgid "Check out expiration date and time"
 msgstr "תאריך ושעת תפוגה של הוצאה מהארכיון"
 
-#: models.py:52
+#: models.py:50
 msgid "Do not allow new file of this document to be uploaded."
 msgstr "לא לאפשר להעלות קובץ תוכן חדש של מסמך זה."
 
-#: models.py:54
+#: models.py:51
 msgid "Block new file upload"
 msgstr "חסימת העלאת קובץ חדש"
 
-#: models.py:62 permissions.py:5
+#: models.py:59 permissions.py:6
 msgid "Document checkout"
 msgstr "הוצאת מסמך מהארכיון"
 
-#: models.py:63
+#: models.py:60
 msgid "Document checkouts"
 msgstr "הוצאות מסמך מהארכיון"
 
-#: models.py:71
+#: models.py:69
 msgid "Check out expiration date and time must be in the future."
 msgstr "תאריך ושעת התפוגה חייבים להיות בעתיד."
 
-#: models.py:132
-msgid "Checkout time and date"
-msgstr "שעה ותאריך הוצאה מהארכיון"
-
-#: models.py:137
-msgid "Checkout expiration"
-msgstr "תפוגה של הוצאה מהארכיון"
-
-#: permissions.py:8
+#: permissions.py:10
 msgid "Check in documents"
 msgstr "החזרת מסמכים לארכיון"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Forcefully check in documents"
 msgstr "החזרת מסמכים לארכיון בהתגברות"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Check out documents"
 msgstr "הוצאת מסמכים מהארכיון"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "Check out details view"
 msgstr "תצוגת פרטים של הוצאת מסמך"
 
@@ -176,9 +176,17 @@ msgstr "הוצאות מסמכים תקופתיות"
 msgid "Check expired checkouts"
 msgstr "בדיקת הוצאות מסמכים שפג תוקפן"
 
-#: serializers.py:39
+#: serializers.py:26
+msgid "URL"
+msgstr "כתובת אתר (URL)"
+
+#: serializers.py:44
 msgid "Primary key of the document to be checked out."
 msgstr "מפתח ראשי של המסמך שיש להוציא מהארכיון."
+
+#: serializers.py:45
+msgid "Document ID"
+msgstr "מזהה מסמך"
 
 #: views.py:28
 #, python-format
@@ -187,33 +195,33 @@ msgstr "החזרת מסמך &quot;%(instance)s&quot; לארכיון נכשלה: 
 
 #: views.py:32
 #, python-format
+msgid "%(count)d documents checked in successfully."
+msgstr "%(count)d מסמכים הוחזרו לארכיון בהצלחה."
+
+#: views.py:35
+#, python-format
 msgid "Document \"%(object)s\" checked in successfully."
 msgstr "מסמך &quot;%(object)s&quot; הוחזר לארכיון בהצלחה."
 
-#: views.py:35
+#: views.py:38
 #, python-format
 msgid "%(count)d document checked in successfully."
 msgstr "מסמך %(count)d הוחזר לארכיון בהצלחה."
 
-#: views.py:38
-#, python-format
-msgid "%(count)d documents checked in successfully."
-msgstr "%(count)d מסמכים הוחזרו לארכיון בהצלחה."
-
 #: views.py:40
+#, python-format
+msgid "Check in %(count)d documents."
+msgstr "החזרה לארכיון של %(count)d מסמכים."
+
+#: views.py:41
 #, python-format
 msgid "Check in document \"%(object)s\"."
 msgstr "החזרת מסמך &quot;%(object)s&quot; לארכיון."
 
-#: views.py:41
+#: views.py:42
 #, python-format
 msgid "Check in %(count)d document."
 msgstr "החזרה לארכיון של מסמך %(count)d."
-
-#: views.py:42
-#, python-format
-msgid "Check in %(count)d documents."
-msgstr "החזרה לארכיון של %(count)d מסמכים."
 
 #: views.py:95
 #, python-format
@@ -223,49 +231,49 @@ msgstr ""
 
 #: views.py:102
 #, python-format
+msgid "%(count)d documents checked out successfully."
+msgstr "%(count)d מסמכים הוצאו מהארכיון בהצלחה."
+
+#: views.py:105
+#, python-format
 msgid "Document \"%(object)s\" checked out successfully."
 msgstr "מסמך &quot;%(object)s&quot; הוצא מהארכיון בהצלחה."
 
-#: views.py:105
+#: views.py:108
 #, python-format
 msgid "%(count)d document checked out successfully."
 msgstr "מסמך %(count)d הוצא מהארכיון בהצלחה."
 
-#: views.py:108
-#, python-format
-msgid "%(count)d documents checked out successfully."
-msgstr "%(count)d מסמכים הוצאו מהארכיון בהצלחה."
-
 #: views.py:110
-#, python-format
-msgid "Checkout document \"%(object)s\"."
-msgstr "הוצאת מסמך &quot;%(object)s&quot; המארכיון."
-
-#: views.py:111
-#, python-format
-msgid "Checkout %(count)d document."
-msgstr "הוצאת מסמך %(count)d מהארכיון."
-
-#: views.py:112
 #, python-format
 msgid "Checkout %(count)d documents."
 msgstr "הוצאת %(count)d מסמכים מהארכיון. "
+
+#: views.py:111
+#, python-format
+msgid "Checkout document \"%(object)s\"."
+msgstr "הוצאת מסמך &quot;%(object)s&quot; מהארכיון."
+
+#: views.py:112
+#, python-format
+msgid "Checkout %(count)d document."
+msgstr "הוצאת מסמך %(count)d מהארכיון."
 
 #: views.py:160
 #, python-format
 msgid "Check out details for document: %s"
 msgstr "פרטי הוצאת מסמך עבור: %s"
 
-#: views.py:179
+#: views.py:181
 msgid ""
 "Checking out a document, blocks certain operations for a predetermined "
 "amount of time."
 msgstr "הוצאת מסמך מהארכיון חוסמת פעולות מסוימות לפרק זמן קבוע מראש."
 
-#: views.py:182
+#: views.py:184
 msgid "No documents have been checked out"
 msgstr "אין מסמכים שהוצאו מהארכיון"
 
-#: widgets.py:23
+#: widgets.py:20
 msgid "Amount"
-msgstr ""
+msgstr "כמות"

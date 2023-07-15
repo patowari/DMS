@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2022
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:33+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,33 +21,33 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:36 events.py:5 permissions.py:5 queues.py:7 settings.py:21
+#: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
 msgid "Converter"
-msgstr ""
+msgstr "מֵמִיר"
 
-#: apps.py:82 forms.py:39
+#: apps.py:82 forms.py:41
 msgid "Transformation"
-msgstr ""
+msgstr "טרנספורמציה"
 
-#: backends/python.py:122 backends/python.py:135
+#: backends/python.py:123 backends/python.py:138
 #, python-format
 msgid "Exception determining PDF page count; %s"
-msgstr ""
+msgstr "חריג הקובע ספירת דפי PDF; %s"
 
-#: backends/python.py:149
+#: backends/python.py:152
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
-msgstr ""
+msgstr "חריג הקובע את ספירת הדפים באמצעות כרית; %s"
 
-#: classes.py:158
+#: classes.py:161
 msgid "LibreOffice not installed or not found."
-msgstr ""
+msgstr "LibreOffice לא מותקן או לא נמצא."
 
-#: classes.py:259
+#: classes.py:267
 msgid "Not an office file format."
-msgstr ""
+msgstr "לא פורמט קובץ אופיס."
 
-#: classes.py:393
+#: classes.py:403
 msgid ""
 "Transformations allow changing the visual appearance of documents without "
 "making permanent changes to the document file themselves."
@@ -55,41 +55,39 @@ msgstr ""
 "טרנספורמציות מאפשרות לשנות את המראה החזותי של מסמכים מבלי לבצע שינויים "
 "קבועים בקובצי המסמך עצמם."
 
-#: classes.py:444
-msgid "transformation"
-msgstr ""
-
 #: dependencies.py:14
 msgid "Utility from the poppler-utils package used to inspect PDF files."
-msgstr ""
+msgstr "כלי עזר מחבילת poppler-utils המשמשת לבדיקת קבצי PDF."
 
 #: dependencies.py:19
 msgid ""
 "Utility from the popper-utils package used to extract pages from PDF files "
 "into PPM format images."
 msgstr ""
+"כלי עזר מחבילת popper-utils המשמשת לחילוץ דפים מקובצי PDF לתמונות בפורמט "
+"PPM."
 
-#: events.py:8
+#: events.py:10
 msgid "Asset created"
-msgstr ""
+msgstr "הנכס נוצר"
 
-#: events.py:11
+#: events.py:13
 msgid "Asset edited"
-msgstr ""
+msgstr "הנכס נערך"
 
 #: forms.py:17
 msgid "Asset preview image"
-msgstr ""
+msgstr "תמונת תצוגה מקדימה של נכס"
 
 #: forms.py:17
 msgid "Preview"
-msgstr ""
+msgstr "תצוגה מקדימה"
 
-#: forms.py:38
+#: forms.py:40
 msgid "Available transformations for this layer."
-msgstr ""
+msgstr "טרנספורמציות זמינות עבור שכבה זו."
 
-#: forms.py:84 workflow_actions.py:74
+#: forms.py:88 workflow_actions.py:74
 #, python-format
 msgid "\"%s\" not a valid entry."
 msgstr "&quot;%s&quot; אינו ערך תקין."
@@ -97,15 +95,15 @@ msgstr "&quot;%s&quot; אינו ערך תקין."
 #: layers.py:11
 msgid ""
 "Decorations are visual elements that add contextual information to images."
-msgstr ""
+msgstr "עיטורים הם אלמנטים ויזואליים המוסיפים מידע הקשרי לתמונות."
 
 #: layers.py:13
 msgid "Decorations"
-msgstr "קישוטים (Decorations)"
+msgstr "קישוטים"
 
 #: layers.py:24
 msgid "Saved transformations"
-msgstr ""
+msgstr "טרנספורמציות שמורות"
 
 #: links.py:35 views/asset_views.py:36
 msgid "Create asset"
@@ -113,81 +111,94 @@ msgstr "יצירת נכס"
 
 #: links.py:38 links.py:44 links.py:64
 msgid "Delete"
-msgstr "Delete"
+msgstr "מחיקה"
 
-#: links.py:48 links.py:72
+#: links.py:48 links.py:68
 msgid "Edit"
-msgstr "Edit"
+msgstr "עריכה"
 
-#: links.py:56 models.py:64 storages.py:21 views/asset_views.py:144
+#: links.py:56 models.py:54 storages.py:21 views/asset_views.py:144
 msgid "Assets"
-msgstr ""
+msgstr "נכסים"
 
-#: links.py:77
+#: links.py:73
 msgid "Transformations"
-msgstr ""
+msgstr "טרנספורמציות"
 
-#: links.py:82
+#: links.py:78
 msgid "Select new transformation"
-msgstr ""
+msgstr "בחר טרנספורמציה חדשה"
 
-#: models.py:47
+#: model_mixins.py:124 models.py:167
+msgid "Arguments"
+msgstr "פרמטרים"
+
+#: models.py:37
 msgid "Label"
 msgstr "תווית"
 
-#: models.py:51
+#: models.py:41
 msgid ""
 "This value will be used when referencing this asset. Can only contain "
 "letters, numbers, and underscores."
 msgstr ""
+"ערך זה ישמש בעת הפניה לנכס זה. יכול להכיל רק אותיות, מספרים וקווים תחתונים."
 
-#: models.py:54
+#: models.py:44
 msgid "Internal name"
-msgstr ""
+msgstr "שם פנימי"
 
-#: models.py:58
+#: models.py:48
 msgid "File"
-msgstr ""
+msgstr "קוֹבֶץ"
 
-#: models.py:63 transformation_mixins.py:299
+#: models.py:53 transformation_mixins.py:306
 msgid "Asset"
-msgstr ""
+msgstr "נכס"
 
-#: models.py:173 models.py:244
+#: models.py:90 models.py:161
 msgid "Name"
-msgstr ""
+msgstr "שֵׁם"
 
-#: models.py:176 models.py:242
+#: models.py:93 models.py:158
 msgid "Order"
 msgstr "הזמנה"
 
-#: models.py:181 models.py:200
+#: models.py:98 models.py:124
 msgid "Stored layer"
-msgstr ""
+msgstr "שכבה מאוחסנת"
 
-#: models.py:182
+#: models.py:99
 msgid "Stored layers"
-msgstr ""
+msgstr "שכבות מאוחסנות"
 
-#: models.py:197 models.py:251
+#: models.py:111
+msgid "Content type"
+msgstr "סוג תוכן"
+
+#: models.py:114
+msgid "Object ID"
+msgstr "מזהה רכיב"
+
+#: models.py:120 models.py:170
 msgid "Enabled"
-msgstr "Enabled"
+msgstr "מופעל"
 
-#: models.py:208 models.py:236
+#: models.py:132 models.py:152
 msgid "Object layer"
-msgstr ""
+msgstr "שכבת אובייקט"
 
-#: models.py:209
+#: models.py:133
 msgid "Object layers"
-msgstr ""
+msgstr "שכבות אובייקט"
 
-#: models.py:240
+#: models.py:156
 msgid ""
 "Order in which the transformations will be executed. If left unchanged, an "
 "automatic order value will be assigned."
-msgstr ""
+msgstr "הסדר שבו יבוצעו השינויים. אם נותר ללא שינוי, יוקצה ערך הזמנה אוטומטי."
 
-#: models.py:247 workflow_actions.py:45
+#: models.py:165 workflow_actions.py:45
 msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
@@ -195,51 +206,47 @@ msgstr ""
 "הזן את הפרמטרים עבור הטרנספורמציה כמילון YAML. כלומר: {&quot;מעלות&quot;: "
 "180}"
 
-#: models.py:249 models.py:275
-msgid "Arguments"
-msgstr "פרמטרים"
-
-#: models.py:258
+#: models.py:178
 msgid "Layer transformation"
 msgstr "טרנפורמציה לשכבה"
 
-#: models.py:259
+#: models.py:179
 msgid "Layer transformations"
 msgstr "טרנספורמציות לשכבה"
 
-#: models.py:265
+#: models.py:187
 msgid "Unknown transformation class"
-msgstr ""
+msgstr "כיתת טרנספורמציה לא ידועה"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new assets"
 msgstr "יצירת נכסים חדשים"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete assets"
 msgstr "מחיקת נכסים"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit assets"
 msgstr "עריכת נכסים"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing assets"
 msgstr "הצגת נכסים קיימים"
 
-#: permissions.py:21
+#: permissions.py:23
 msgid "Create new transformations"
 msgstr "יצירת טרנספורמציות חדשות"
 
-#: permissions.py:24
+#: permissions.py:26
 msgid "Delete transformations"
 msgstr "מחיקת טרנספורמציות"
 
-#: permissions.py:27
+#: permissions.py:29
 msgid "Edit transformations"
 msgstr "עריכת טרנספורמציות"
 
-#: permissions.py:30
+#: permissions.py:32
 msgid "View existing transformations"
 msgstr "הצגת טרנספורמציות קיימות"
 
@@ -247,16 +254,26 @@ msgstr "הצגת טרנספורמציות קיימות"
 msgid "Generate a image of an object."
 msgstr "יצירת תמונה של אובייקט."
 
+#: serializers.py:10
+msgid "Image URL"
+msgstr "כתובת אתר (URL) של תמונה"
+
+#: serializers.py:17
+msgid "URL"
+msgstr "URL"
+
 #: settings.py:30
 msgid ""
 "The threshold at which the CONVERTER_ASSET_CACHE_STORAGE_BACKEND will start "
 "deleting the oldest asset cache files. Specify the size in bytes."
 msgstr ""
+"הסף שבו CONVERTER_ASSET_CACHE_STORAGE_BACKEND יתחיל למחוק את קבצי המטמון "
+"הישנים ביותר של הנכסים. ציין את הגודל בבתים."
 
 #: settings.py:38
 msgid ""
 "Path to the Storage subclass to use when storing the cached asset files."
-msgstr ""
+msgstr "נתיב למחלקת המשנה Storage לשימוש בעת אחסון קבצי הנכס השמורים במטמון."
 
 #: settings.py:46
 msgid "Arguments to pass to the CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
@@ -264,7 +281,7 @@ msgstr "פרמטרים להעביר ל-CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
 
 #: settings.py:52
 msgid "Path to the Storage subclass to use when storing assets."
-msgstr ""
+msgstr "נתיב למחלקת המשנה Storage לשימוש בעת אחסון נכסים."
 
 #: settings.py:58
 msgid "Arguments to pass to the CONVERTER_ASSET_STORAGE_BACKEND."
@@ -272,21 +289,23 @@ msgstr "פרמטרים להעביר ל-CONVERTER_ASSET_STORAGE_BACKEND."
 
 #: settings.py:64
 msgid "Graphics conversion backend to use."
-msgstr ""
+msgstr "המרת גרפיקה אחורית לשימוש."
 
 #: settings.py:70
 msgid "Configuration options for the graphics conversion backend."
-msgstr ""
+msgstr "אפשרויות תצורה עבור הקצה האחורי של ההמרה הגרפית."
 
 #: settings.py:77
 msgid "Time in seconds that the browser should cache the supplied image. "
-msgstr ""
+msgstr "הזמן בשניות שהדפדפן אמור לשמור את התמונה שסופקה במטמון."
 
 #: settings.py:84
 msgid ""
 "Maximum number of retries before giving up. A value of None means the task "
 "will retry forever."
 msgstr ""
+"מספר מקסימלי של ניסיונות חוזרים לפני ויתור. ערך של None פירושו שהמשימה תנסה "
+"שוב לנצח."
 
 #: settings.py:92
 msgid ""
@@ -306,15 +325,17 @@ msgid ""
 "Unable to initialize the converter asset cachestorage. Check the settings {}"
 " and {} for formatting errors."
 msgstr ""
+"לא ניתן לאתחל את מטמון נכסי הממיר. בדוק את ההגדרות {} ו-{} עבור שגיאות "
+"עיצוב."
 
 #: storages.py:34
 msgid "Assets cache"
-msgstr ""
+msgstr "מטמון נכסים"
 
-#: transformation_mixins.py:20 transformations.py:583
+#: transformation_mixins.py:20 transformations.py:618
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
-msgstr ""
+msgstr "מספר מעלות לסובב את התמונה נגד כיוון השעון סביב מרכזה."
 
 #: transformation_mixins.py:22
 msgid "Rotation"
@@ -322,293 +343,293 @@ msgstr "סיבוב"
 
 #: transformation_mixins.py:25
 msgid "Opacity level of the image in percent"
-msgstr ""
+msgstr "רמת האטימות של התמונה באחוזים"
 
 #: transformation_mixins.py:26
 msgid "Transparency"
-msgstr ""
+msgstr "שְׁקִיפוּת"
 
-#: transformation_mixins.py:29 transformations.py:688
+#: transformation_mixins.py:29 transformations.py:723
 msgid "Zoom level in percent."
-msgstr ""
+msgstr "רמת זום באחוזים."
 
-#: transformation_mixins.py:29 transformations.py:683
+#: transformation_mixins.py:29 transformations.py:718
 msgid "Zoom"
 msgstr "זום"
 
-#: transformation_mixins.py:111
+#: transformation_mixins.py:113
 msgid "Paste an image"
 msgstr "הדבקת תמונה"
 
-#: transformation_mixins.py:116
+#: transformation_mixins.py:118
 msgid "Horizontal position in pixels from the left."
-msgstr ""
+msgstr "מיקום אופקי בפיקסלים משמאל."
 
-#: transformation_mixins.py:117 transformation_mixins.py:159
-#: transformation_mixins.py:220 transformations.py:197 transformations.py:294
-#: transformations.py:393
+#: transformation_mixins.py:119 transformation_mixins.py:163
+#: transformation_mixins.py:227 transformations.py:226 transformations.py:325
+#: transformations.py:424
 msgid "Left"
-msgstr ""
+msgstr "שמאלה"
 
-#: transformation_mixins.py:120
+#: transformation_mixins.py:122
 msgid "Vertical position in pixels from the top."
-msgstr ""
+msgstr "מיקום אנכי בפיקסלים מלמעלה."
 
-#: transformation_mixins.py:121 transformation_mixins.py:163
-#: transformation_mixins.py:228 transformations.py:201 transformations.py:298
-#: transformations.py:397
+#: transformation_mixins.py:123 transformation_mixins.py:167
+#: transformation_mixins.py:235 transformations.py:230 transformations.py:329
+#: transformations.py:428
 msgid "Top"
-msgstr ""
+msgstr "חלק עליון"
 
-#: transformation_mixins.py:153
+#: transformation_mixins.py:157
 msgid "Paste an image (percents coordinates)"
 msgstr "הדבקת תמונה (אחוזים קואורדינטות)"
 
-#: transformation_mixins.py:158
-msgid "Horizontal position in percent from the left."
-msgstr ""
-
 #: transformation_mixins.py:162
-msgid "Vertical position in percent from the top."
-msgstr ""
+msgid "Horizontal position in percent from the left."
+msgstr "מיקום אופקי באחוזים משמאל."
 
-#: transformation_mixins.py:214 transformations.py:185
+#: transformation_mixins.py:166
+msgid "Vertical position in percent from the top."
+msgstr "מיקום אנכי באחוזים מלמעלה."
+
+#: transformation_mixins.py:220 transformations.py:214
 msgid "Paste an asset as watermark"
 msgstr "הדבקת נכס כסימן מים"
 
-#: transformation_mixins.py:219
+#: transformation_mixins.py:226
 msgid "Horizontal start position in pixels from the left."
-msgstr ""
+msgstr "מיקום התחלה אופקי בפיקסלים משמאל."
 
-#: transformation_mixins.py:223
+#: transformation_mixins.py:230
 msgid "Horizontal end position in pixels from the right."
-msgstr ""
+msgstr "מיקום קצה אופקי בפיקסלים מימין."
 
-#: transformation_mixins.py:224 transformations.py:205 transformations.py:302
-#: transformations.py:401
+#: transformation_mixins.py:231 transformations.py:234 transformations.py:333
+#: transformations.py:432
 msgid "Right"
-msgstr ""
+msgstr "ימין"
 
-#: transformation_mixins.py:227
+#: transformation_mixins.py:234
 msgid "Vertical start position in pixels from the top."
-msgstr ""
+msgstr "מיקום התחלה אנכי בפיקסלים מלמעלה."
 
-#: transformation_mixins.py:231
+#: transformation_mixins.py:238
 msgid "Vertical end position in pixels from the top."
-msgstr ""
+msgstr "מיקום קצה אנכי בפיקסלים מלמעלה."
 
-#: transformation_mixins.py:232 transformations.py:209 transformations.py:307
-#: transformations.py:405
+#: transformation_mixins.py:239 transformations.py:238 transformations.py:338
+#: transformations.py:436
 msgid "Bottom"
-msgstr ""
+msgstr "תַחתִית"
 
-#: transformation_mixins.py:235
+#: transformation_mixins.py:242
 msgid "Horizontal position increments in pixels."
-msgstr ""
+msgstr "מרווחי מיקום אופקיים בפיקסלים."
 
-#: transformation_mixins.py:236
+#: transformation_mixins.py:243
 msgid "Horizontal increment"
-msgstr ""
+msgstr "תוספת אופקית"
 
-#: transformation_mixins.py:239
+#: transformation_mixins.py:246
 msgid "Vertical position increments in pixels."
-msgstr ""
+msgstr "מרווחי מיקום אנכיים בפיקסלים."
 
-#: transformation_mixins.py:240
+#: transformation_mixins.py:247
 msgid "Vertical increment"
-msgstr ""
+msgstr "תוספת אנכית"
 
-#: transformation_mixins.py:299
+#: transformation_mixins.py:306
 msgid "Asset name"
-msgstr ""
+msgstr "שם הנכס"
 
-#: transformation_mixins.py:342
+#: transformation_mixins.py:349
 msgid "Color used to fill the rectangle."
-msgstr ""
+msgstr "צבע המשמש למילוי המלבן."
 
-#: transformation_mixins.py:343 transformations.py:590
+#: transformation_mixins.py:350 transformations.py:625
 msgid "Fill color"
-msgstr ""
+msgstr "צבע מילוי"
 
-#: transformation_mixins.py:346
+#: transformation_mixins.py:353
 msgid "Opacity level of the fill color in percent"
-msgstr ""
-
-#: transformation_mixins.py:347
-msgid "Fill transparency"
-msgstr ""
-
-#: transformation_mixins.py:350
-msgid "Color used for the outline of the rectangle."
-msgstr ""
-
-#: transformation_mixins.py:351
-msgid "Outline color"
-msgstr ""
+msgstr "רמת האטימות של צבע המילוי באחוזים"
 
 #: transformation_mixins.py:354
+msgid "Fill transparency"
+msgstr "מילוי שקיפות"
+
+#: transformation_mixins.py:357
+msgid "Color used for the outline of the rectangle."
+msgstr "צבע המשמש עבור קווי המתאר של המלבן."
+
+#: transformation_mixins.py:358
+msgid "Outline color"
+msgstr "צבע קווי מתאר"
+
+#: transformation_mixins.py:361
 msgid "Width in pixels of the rectangle outline."
-msgstr ""
+msgstr "רוחב בפיקסלים של קווי מתאר המלבן."
 
-#: transformation_mixins.py:355
+#: transformation_mixins.py:362
 msgid "Outline width"
-msgstr ""
+msgstr "רוחב מתאר"
 
-#: transformations.py:169
+#: transformations.py:198
 msgid "Paste an asset (absolute coordinates)"
 msgstr "הדבקת נכס (קואורדינטות מוחלטות)"
 
-#: transformations.py:177
+#: transformations.py:206
 msgid "Paste an asset (percents coordinates)"
 msgstr "הדבקת נכס (אחוזים קואורדינטות)"
 
-#: transformations.py:191
+#: transformations.py:220
 msgid "Crop"
 msgstr "חיתוך"
 
-#: transformations.py:196
+#: transformations.py:225
 msgid "Number of pixels to remove from the left."
-msgstr ""
+msgstr "מספר הפיקסלים להסרה משמאל."
 
-#: transformations.py:200
+#: transformations.py:229
 msgid "Number of pixels to remove from the top."
-msgstr ""
+msgstr "מספר הפיקסלים להסרה מלמעלה."
 
-#: transformations.py:204
+#: transformations.py:233
 msgid "Number of pixels to remove from the right."
-msgstr ""
+msgstr "מספר הפיקסלים להסרה מימין."
 
-#: transformations.py:208
+#: transformations.py:237
 msgid "Number of pixels to remove from the bottom."
-msgstr ""
+msgstr "מספר הפיקסלים להסרה מלמטה."
 
-#: transformations.py:289
+#: transformations.py:320
 msgid "Draw rectangle"
 msgstr "ציור מלבן"
 
-#: transformations.py:294
+#: transformations.py:325
 msgid "Left side location in pixels."
-msgstr ""
+msgstr "מיקום צד שמאל בפיקסלים."
 
-#: transformations.py:298
+#: transformations.py:329
 msgid "Top side location in pixels."
-msgstr ""
+msgstr "מיקום הצד העליון בפיקסלים."
 
-#: transformations.py:302
+#: transformations.py:333
 msgid "Right side location in pixels."
-msgstr ""
+msgstr "מיקום צד ימין בפיקסלים."
 
-#: transformations.py:306
+#: transformations.py:337
 msgid "Bottom side location in pixels."
-msgstr ""
+msgstr "מיקום הצד התחתון בפיקסלים."
 
-#: transformations.py:387
+#: transformations.py:418
 msgid "Draw rectangle (percents coordinates)"
 msgstr "ציור מלבן (אחוזים קואורדינטות)"
 
-#: transformations.py:392
+#: transformations.py:423
 msgid "Left side location in percent."
-msgstr ""
+msgstr "מיקום צד שמאל באחוזים."
 
-#: transformations.py:396
+#: transformations.py:427
 msgid "Top side location in percent."
-msgstr ""
+msgstr "מיקום צד עליון באחוזים."
 
-#: transformations.py:400
+#: transformations.py:431
 msgid "Right side location in percent."
-msgstr ""
+msgstr "מיקום צד ימין באחוזים."
 
-#: transformations.py:404
+#: transformations.py:435
 msgid "Bottom side location in percent."
-msgstr ""
+msgstr "מיקום צד תחתון באחוזים."
 
-#: transformations.py:483
+#: transformations.py:514
 msgid "Flip"
 msgstr "להפוך"
 
-#: transformations.py:494
-msgid "Gaussian blur"
-msgstr ""
-
-#: transformations.py:499 transformations.py:658
-msgid "Radius"
-msgstr ""
-
-#: transformations.py:511
-msgid "Line art"
-msgstr ""
-
 #: transformations.py:525
-msgid "Mirror"
-msgstr ""
+msgid "Gaussian blur"
+msgstr "טישטוש גאוסיאני"
 
-#: transformations.py:536
-msgid "Resize"
-msgstr ""
+#: transformations.py:530 transformations.py:693
+msgid "Radius"
+msgstr "רַדִיוּס"
 
 #: transformations.py:542
+msgid "Line art"
+msgstr "אמנות קו"
+
+#: transformations.py:556
+msgid "Mirror"
+msgstr "מַרְאָה"
+
+#: transformations.py:567
+msgid "Resize"
+msgstr "שנה גודל"
+
+#: transformations.py:573
 msgid "New width in pixels."
-msgstr ""
+msgstr "רוחב חדש בפיקסלים."
 
-#: transformations.py:543
+#: transformations.py:574
 msgid "Width"
-msgstr ""
+msgstr "רוֹחַב"
 
-#: transformations.py:547
+#: transformations.py:578
 msgid "New height in pixels."
-msgstr ""
+msgstr "גובה חדש בפיקסלים."
 
-#: transformations.py:548
+#: transformations.py:579
 msgid "Height"
-msgstr ""
+msgstr "גוֹבַה"
 
-#: transformations.py:577
+#: transformations.py:612
 msgid "Rotate"
 msgstr "סיבוב"
 
-#: transformations.py:585
-msgid "Degrees"
-msgstr ""
-
-#: transformations.py:589
-msgid "Color to be used for area outside of the rotated image."
-msgstr ""
-
 #: transformations.py:620
+msgid "Degrees"
+msgstr "מעלות"
+
+#: transformations.py:624
+msgid "Color to be used for area outside of the rotated image."
+msgstr "צבע שישמש עבור אזור מחוץ לתמונה המסובבת."
+
+#: transformations.py:655
 msgid "Rotate 90 degrees"
 msgstr "סיבוב 90 מעלות"
 
-#: transformations.py:631
+#: transformations.py:666
 msgid "Rotate 180 degrees"
 msgstr "סיבוב 180 מעלות"
 
-#: transformations.py:642
+#: transformations.py:677
 msgid "Rotate 270 degrees"
 msgstr "סיבוב 270 מעלות"
 
-#: transformations.py:652
+#: transformations.py:687
 msgid "Unsharp masking"
-msgstr ""
+msgstr "מיסוך לא חד"
 
-#: transformations.py:657
+#: transformations.py:692
 msgid "The blur radius in pixels."
-msgstr ""
+msgstr "רדיוס הטשטוש בפיקסלים."
 
-#: transformations.py:661
+#: transformations.py:696
 msgid "Unsharp strength in percent."
-msgstr ""
+msgstr "חוזק לא חד באחוזים."
 
-#: transformations.py:662 transformations.py:689
+#: transformations.py:697 transformations.py:724
 msgid "Percent"
-msgstr ""
+msgstr "אָחוּז"
 
-#: transformations.py:666
+#: transformations.py:701
 msgid "Minimum brightness change that will be sharpened."
-msgstr ""
+msgstr "שינוי בהירות מינימלי שיתחדד."
 
-#: transformations.py:667
+#: transformations.py:702
 msgid "Tthreshold"
-msgstr ""
+msgstr "סף"
 
 #: views/asset_views.py:50
 #, python-format
@@ -623,30 +644,30 @@ msgstr "מחיקת בקשה שבוצעה על נכסי %(count)d"
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "למחוק את הנכס שנבחר?"
+msgstr[1] "למחוק את הנכסים שנבחרו?"
+msgstr[2] "למחוק את הנכסים שנבחרו?"
+msgstr[3] "למחוק את הנכסים שנבחרו?"
 
 #: views/asset_views.py:70
 #, python-format
 msgid "Delete asset: %s?"
-msgstr ""
+msgstr "למחוק את הנכס: %s?"
 
 #: views/asset_views.py:81
 #, python-format
 msgid "Asset \"%s\" deleted successfully."
-msgstr ""
+msgstr "הנכס &quot;%s&quot; נמחק בהצלחה."
 
 #: views/asset_views.py:86
 #, python-format
 msgid "Error deleting asset \"%(asset)s\": %(error)s"
-msgstr ""
+msgstr "שגיאה במחיקת הנכס &quot;%(asset)s&quot;: %(error)s"
 
 #: views/asset_views.py:102
 #, python-format
 msgid "Details asset: %s"
-msgstr ""
+msgstr "נכס פרטים: %s"
 
 #: views/asset_views.py:117
 #, python-format
@@ -657,16 +678,16 @@ msgstr "עריכת נכס: %s"
 msgid ""
 "Assets are files that can be used in conjuction with certain "
 "transformations."
-msgstr ""
+msgstr "נכסים הם קבצים שניתן להשתמש בהם בשילוב עם טרנספורמציות מסוימות."
 
 #: views/asset_views.py:143
 msgid "No assets available"
-msgstr ""
+msgstr "אין נכסים זמינים"
 
 #: views/transformation_views.py:52
 #, python-format
 msgid "Error creating transformation: %s."
-msgstr ""
+msgstr "שגיאה ביצירת טרנספורמציה: %s."
 
 #: views/transformation_views.py:69
 #, python-format
@@ -677,42 +698,43 @@ msgstr ""
 "יצירת טרנספורמציה של שכבת &quot;%(layer)s&quot; "
 "&quot;%(transformation)s&quot; עבור: %(object)s"
 
-#: views/transformation_views.py:126
+#: views/transformation_views.py:128
 #, python-format
 msgid "Delete transformation \"%(transformation)s\" for: %(content_object)s?"
 msgstr ""
+"למחוק את השינוי &quot;%(transformation)s&quot; עבור: %(content_object)s?"
 
-#: views/transformation_views.py:177
+#: views/transformation_views.py:184
 #, python-format
 msgid "Edit transformation \"%(transformation)s\" for: %(content_object)s"
 msgstr "עריכת השינוי &quot;%(transformation)s&quot; עבור: %(content_object)s"
 
-#: views/transformation_views.py:236
+#: views/transformation_views.py:248
 #, python-format
 msgid "There are no entries for layer \"%(layer_name)s\""
-msgstr ""
+msgstr "אין ערכים עבור שכבה &quot;%(layer_name)s&quot;"
 
-#: views/transformation_views.py:239
+#: views/transformation_views.py:251
 #, python-format
 msgid "Layer \"%(layer)s\" transformations for: %(object)s"
-msgstr ""
+msgstr "טרנספורמציות של שכבה &quot;%(layer)s&quot; עבור: %(object)s"
 
-#: views/transformation_views.py:285
+#: views/transformation_views.py:297
 msgid "Transformation created successfully."
-msgstr ""
+msgstr "השינוי נוצר בהצלחה."
 
-#: views/transformation_views.py:309
+#: views/transformation_views.py:321
 msgid "Select"
 msgstr "בחירה"
 
-#: views/transformation_views.py:311
+#: views/transformation_views.py:323
 #, python-format
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
 msgstr "בחירת טרנספורמציה בשכבה חדשה &quot;%(layer)s&quot; עבור: %(object)s"
 
 #: workflow_actions.py:22
 msgid "Pages"
-msgstr ""
+msgstr "דפים"
 
 #: workflow_actions.py:25
 msgid ""
@@ -728,7 +750,7 @@ msgstr "פונקצית טרנספורמציה"
 
 #: workflow_actions.py:37
 msgid "Type of transformation to add."
-msgstr ""
+msgstr "סוג השינוי להוספה."
 
 #: workflow_actions.py:42
 msgid "Transformation arguments"

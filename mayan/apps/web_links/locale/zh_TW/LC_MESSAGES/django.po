@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Ford Guo <agile.guo@gmail.com>, 2022
-# Leon Chu, 2022
+# Roberto Rosario, 2023
+# Leon Chu, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: Leon Chu, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +21,8 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:40
-msgid "Links"
-msgstr "連結"
-
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
-#: permissions.py:6 views.py:184
+#: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
+#: models.py:43 permissions.py:6 views.py:169
 msgid "Web links"
 msgstr "網頁連結"
 
@@ -42,15 +38,15 @@ msgstr "網頁連結已編輯"
 msgid "Web link navigated"
 msgstr "網頁連結已瀏覽"
 
-#: links.py:29 views.py:96
+#: links.py:29 views.py:81
 msgid "Create new web link"
 msgstr "建立新的網頁連結"
 
 #: links.py:35
 msgid "Delete"
-msgstr "删除"
+msgstr "刪除"
 
-#: links.py:39 models.py:38
+#: links.py:39 models.py:37
 msgid "Document types"
 msgstr "文件類型"
 
@@ -62,27 +58,27 @@ msgstr "編輯"
 msgid "Navigate"
 msgstr "瀏覽"
 
-#: models.py:24
+#: models.py:23
 msgid "A short text describing the web link."
-msgstr "描述網頁連結的簡短敘述。"
+msgstr "網頁連接的簡單描述。"
 
-#: models.py:25
+#: models.py:24
 msgid "Label"
 msgstr "標籤"
 
-#: models.py:29
+#: models.py:28
 msgid "Template that will be used to craft the final URL of the web link."
-msgstr "用於製作網頁連結最終的URL範例。"
+msgstr "用於製作網頁連結最終的URL範本。"
 
-#: models.py:31
+#: models.py:30
 msgid "Template"
-msgstr "範例"
+msgstr "範本"
 
-#: models.py:34
+#: models.py:33
 msgid "Enabled"
 msgstr "啟用"
 
-#: models.py:43
+#: models.py:42
 msgid "Web link"
 msgstr "網頁連結"
 
@@ -104,67 +100,91 @@ msgstr "查看現有的網頁連結"
 
 #: permissions.py:22
 msgid "View web link instances"
-msgstr "查看網頁連結實例"
+msgstr "查看網頁連結的實例"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
-msgstr "要新增到網頁連結的文件類型主键。"
+msgstr "要新增到網頁連結的文件類型主鍵"
+
+#: serializers.py:17 serializers.py:26
+msgid "Document type ID"
+msgstr ""
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
-msgstr "要刪除的網頁連結的文件類型主键。"
+msgstr "要從網頁連結刪除的文件類型主鍵。"
 
-#: views.py:38
-msgid "Available web links"
-msgstr "可用的網頁連結"
+#: serializers.py:33
+msgid "Document types add URL"
+msgstr ""
 
-#: views.py:39
+#: serializers.py:37
+msgid "Document types remove URL"
+msgstr ""
+
+#: serializers.py:41
+msgid "Document types URL"
+msgstr ""
+
+#: serializers.py:48 serializers.py:63
+msgid "URL"
+msgstr "网址"
+
+#: serializers.py:66
+msgid "Navigation URL"
+msgstr ""
+
+#: views.py:32
 msgid "Web links enabled"
 msgstr "網頁連結已啟用"
 
-#: views.py:65
+#: views.py:33
+msgid "Available web links"
+msgstr "可用的網頁連結"
+
+#: views.py:50
 #, python-format
 msgid "Web links to enable for document type: %s"
-msgstr "將要啟用文件類型的網頁連結：%s"
+msgstr "將要取用文件類型的網頁連結：%s"
 
-#: views.py:118
+#: views.py:103
 #, python-format
 msgid "Delete web link: %s"
 msgstr "刪除網頁連結：%s"
 
-#: views.py:130
-msgid "Available document types"
-msgstr "可用的文件類型"
-
-#: views.py:131
+#: views.py:108
 msgid "Document types enabled"
 msgstr "文件類型已啟用"
 
-#: views.py:141
+#: views.py:109
+msgid "Available document types"
+msgstr "可用的文件類型"
+
+#: views.py:126
 #, python-format
 msgid "Document type for which to enable web link: %s"
-msgstr "將要啟用Web連結的文件類型：%s"
+msgstr "要為其啟用網頁連結的文件類型：%s"
 
-#: views.py:158
+#: views.py:143
 #, python-format
 msgid "Edit web link: %s"
 msgstr "編輯網頁連結：%s"
 
-#: views.py:177 views.py:207
+#: views.py:162 views.py:192
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
-msgstr "允許網頁連結產生包括文件及外部資源的HTTP連結。連結的URL可以包含文件的參數值。"
+msgstr "網頁連結允許產生包含˙文件及外部資源的HTTP連結。連結的URL可以包含文件參數。"
 
-#: views.py:182
+#: views.py:167
 msgid "There are no web links"
 msgstr "沒有網頁連結"
 
-#: views.py:212
+#: views.py:197
 msgid "There are no web links for this document"
-msgstr "剛文件沒有網頁連結"
+msgstr "該文件沒有網頁連結"
 
-#: views.py:215
+#: views.py:200
 #, python-format
 msgid "Web links for document: %s"
-msgstr "文件網頁連結：%s"
+msgstr "文件的網頁連結：%s"

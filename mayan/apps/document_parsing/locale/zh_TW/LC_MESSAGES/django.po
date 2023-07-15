@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# malijie <tonymlj2008@126.com>, 2022
-# Ford Guo <agile.guo@gmail.com>, 2022
-# Roberto Rosario, 2022
-# Leon Chu, 2022
+# malijie <tonymlj2008@126.com>, 2023
+# Leon Chu, 2023
+# Roberto Rosario, 2023
+# Ford Guo <agile.guo@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Leon Chu, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"Last-Translator: Ford Guo <agile.guo@gmail.com>, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,15 +23,15 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:52 events.py:6 permissions.py:6 settings.py:10
+#: apps.py:51 events.py:6 permissions.py:6 settings.py:11
 msgid "Document parsing"
 msgstr "文档解析"
 
-#: apps.py:108
+#: apps.py:107
 msgid "A generator returning the document file's pages parsed content."
 msgstr ""
 
-#: apps.py:109 links.py:26 links.py:49 models.py:23 search.py:11
+#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:11
 msgid "Content"
 msgstr "内容"
 
@@ -53,12 +53,12 @@ msgstr "已提交解析之文件檔案"
 msgid "Document file parsing finished"
 msgstr "文˙件檔案解析完˙成"
 
-#: forms.py:37
+#: forms.py:41
 #, python-format
 msgid "Page %(page_number)d"
 msgstr "第%(page_number)d页"
 
-#: forms.py:45 forms.py:57
+#: forms.py:51 forms.py:63
 msgid "Contents"
 msgstr "内容"
 
@@ -82,44 +82,48 @@ msgstr "设置解析"
 msgid "Parse documents per type"
 msgstr "解析每种类型的文档"
 
-#: models.py:17
+#: models.py:19
 msgid "Document file page"
 msgstr "文件檔案頁面"
 
-#: models.py:21
+#: models.py:23
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr "由文档解析后端提取的实际文本内容。"
 
-#: models.py:29
+#: models.py:31
 msgid "Document file page content"
 msgstr "文件檔案頁面內容"
 
-#: models.py:30
+#: models.py:32
 msgid "Document file page contents"
 msgstr "文件檔案頁面內容"
 
-#: models.py:42
+#: models.py:44
 msgid "Document type"
-msgstr "文档类型"
+msgstr "文件類型"
 
-#: models.py:46
+#: models.py:48
 msgid "Automatically queue newly created documents for parsing."
 msgstr "自动对新创建的文档进行排队以进行解析。"
 
-#: models.py:57
+#: models.py:49
+msgid "Auto parsing"
+msgstr ""
+
+#: models.py:59
 msgid "Document type settings"
 msgstr "文档类型设置"
 
-#: models.py:58
+#: models.py:60
 msgid "Document types settings"
 msgstr "文档类型设置"
 
-#: parsers.py:94
+#: parsers.py:106
 #, python-format
 msgid "Exception parsing page; %s"
 msgstr "解析页面异常; %s"
 
-#: parsers.py:120
+#: parsers.py:132
 #, python-format
 msgid "Cannot find pdftotext executable at: %s"
 msgstr "找不到pdftotext可执行文件：%s"
@@ -148,11 +152,11 @@ msgstr "文件檔案解析中"
 msgid "Document file content"
 msgstr "文件檔案內容"
 
-#: settings.py:15
+#: settings.py:18
 msgid "Set new document types to perform parsing automatically by default."
 msgstr "设置新文档类型以默认自动执行解析。"
 
-#: settings.py:21
+#: settings.py:24
 msgid ""
 "File path to poppler's pdftotext program used to extract text from PDF "
 "files."
@@ -163,77 +167,77 @@ msgstr "程序pdftotext文件路径，用以从PDF文件中提取文本。"
 msgid "Error deleting document version content \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:43
-#, python-format
-msgid "Content of \"%(object)s\" deleted successfully."
-msgstr ""
-
-#: views.py:46
-#, python-format
-msgid "Content of %(count)d document version deleted successfully."
-msgstr ""
-
-#: views.py:49
+#: views.py:44
 #, python-format
 msgid "Content of %(count)d document versions deleted successfully."
 msgstr ""
 
-#: views.py:51
+#: views.py:47
+#, python-format
+msgid "Content of \"%(object)s\" deleted successfully."
+msgstr ""
+
+#: views.py:50
+#, python-format
+msgid "Content of %(count)d document version deleted successfully."
+msgstr ""
+
+#: views.py:52
 #, python-format
 msgid "Delete the content of: %(object)s."
 msgstr ""
 
-#: views.py:53
+#: views.py:54
 #, python-format
 msgid "Delete the content of the %(count)d selected document version."
 msgstr ""
 
-#: views.py:56
+#: views.py:57
 #, python-format
 msgid "Delete the content of the %(count)d selected document versions."
 msgstr ""
 
-#: views.py:97
+#: views.py:98
 #, python-format
 msgid "Content for document file: %s"
 msgstr "文件檔案中的內容 : %s"
 
-#: views.py:119
+#: views.py:120
 #, python-format
 msgid "Content for document file page: %s"
 msgstr "文件檔案頁面內容 : %s"
 
-#: views.py:134
+#: views.py:135
 #, python-format
 msgid "%(count)d document file added to the parsing queue"
 msgstr "%(count)d文件檔案被加入解析隊列"
 
-#: views.py:137
+#: views.py:138
 #, python-format
 msgid "%(count)d documents files added to the parsing queue"
 msgstr "%(count)d文件檔案加入解析隊列"
 
-#: views.py:146
+#: views.py:147
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
 msgstr[0] ""
 
-#: views.py:159
+#: views.py:160
 #, python-format
 msgid "Submit document file \"%s\" to the parsing queue"
 msgstr "提交文件檔案\"%s\"至解析隊列"
 
-#: views.py:187
+#: views.py:190
 #, python-format
 msgid "Edit parsing settings for document type: %s."
 msgstr "編輯文件類型的解析設定%s."
 
-#: views.py:197
+#: views.py:200
 msgid "Submit all documents of a type for parsing"
 msgstr "提交某类型的所有文档进行解析"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "%(count)d documents added to the parsing queue."
 msgstr "%(count)d文件已被加入解析隊列中"

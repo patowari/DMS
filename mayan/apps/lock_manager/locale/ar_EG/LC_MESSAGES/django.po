@@ -3,12 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Roberto Rosario, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# WM Shinkada <shinkadawasim@gmail.com>, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:36+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"Last-Translator: WM Shinkada <shinkadawasim@gmail.com>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,40 +22,41 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:18 settings.py:10
+#: apps.py:18 settings.py:11
 msgid "Lock manager"
-msgstr ""
+msgstr "القفل الخاص بالمدير"
 
-#: models.py:14
+#: models.py:15
 msgid "Creation datetime"
-msgstr ""
+msgstr "تاريخ الإنشاء "
 
-#: models.py:18
+#: models.py:19
 msgid "Timeout"
-msgstr ""
+msgstr "انتهاء الوقت"
 
-#: models.py:21
+#: models.py:22
 msgid "Name"
-msgstr ""
-
-#: models.py:27
-msgid "Lock"
-msgstr ""
+msgstr "اسم"
 
 #: models.py:28
+msgid "Lock"
+msgstr "قفل"
+
+#: models.py:29
 msgid "Locks"
-msgstr ""
+msgstr "أقفال"
 
-#: settings.py:15
+#: settings.py:17
 msgid "Path to the class to use when to request and release resource locks."
-msgstr ""
+msgstr "مسار الى الفئه للاستعمال وقت الطلب و إنهاء إقفال المصدر"
 
-#: settings.py:22
+#: settings.py:24
 msgid "Arguments to pass to the LOCK_MANAGER_BACKEND."
-msgstr ""
+msgstr "حجج لتمريرها إلى LOCK_MANAGER_BACKEND."
 
-#: settings.py:28
+#: settings.py:30
 msgid ""
 "Default amount of time in seconds after which a resource lock will be "
 "automatically released."
 msgstr ""
+"مقدار الوقت الافتراضي بالثواني والذي سيتم بعده تحرير قفل المورد تلقائيًا."

@@ -4,15 +4,18 @@
 # 
 # Translators:
 # Translators:
+# Roberto Rosario, 2023
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,22 +23,18 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:23 settings.py:14
+#: apps.py:27 permissions.py:6 settings.py:15
 msgid "Storage"
-msgstr ""
+msgstr "المساحة التخزينية"
 
-#: apps.py:56
-msgid "Source object"
-msgstr ""
-
-#: classes.py:86 classes.py:107
+#: classes.py:88 classes.py:109
 #, python-format
 msgid ""
 "Unable to initialize storage: %(name)s. Check the storage backend dotted "
 "path and arguments."
-msgstr ""
+msgstr "غير قادر على تهيئة التخزين: %(name)s. يرجى مراجعة مدير النظام."
 
-#: events.py:6 links.py:19 models.py:64 storages.py:22
+#: events.py:6 links.py:20 models.py:56 storages.py:22
 msgid "Download files"
 msgstr ""
 
@@ -57,100 +56,116 @@ msgstr "حذف"
 
 #: links.py:16
 msgid "Download"
-msgstr ""
+msgstr "تحميل"
 
 #: management/commands/storage_process.py:13
 msgid "Name of the app to process."
-msgstr ""
+msgstr "معالجة اسم التطبيق"
 
 #: management/commands/storage_process.py:19
 msgid ""
 "Path of the database (.dbm) file that will be created/read to keep track of "
 "items processed."
-msgstr ""
+msgstr "مسار ملف قاعدة البيانات (.dbm) "
 
 #: management/commands/storage_process.py:26
 msgid "Process a specific model."
-msgstr ""
+msgstr "معالجة نموذج محدد"
 
 #: management/commands/storage_process.py:32
 msgid ""
 "Process the files in reverse to undo the storage pipeline transformations."
-msgstr ""
+msgstr "يجب اعادة التخزين"
 
 #: management/commands/storage_process.py:38
 msgid "Name of the storage to process."
-msgstr ""
+msgstr "معالجة المساحة التخزينية"
 
-#: model_mixins.py:13 models.py:119
+#: model_mixins.py:18 models.py:94
 msgid "Filename"
-msgstr ""
+msgstr "اسم الملف"
 
-#: model_mixins.py:16
+#: model_mixins.py:21
 msgid "Date time"
-msgstr ""
+msgstr "التاريخ والوقت"
 
-#: model_mixins.py:70
+#: model_mixins.py:82
 msgid "Unnamed file"
 msgstr ""
 
-#: models.py:42 models.py:116
+#: model_mixins.py:101
+msgid "Size"
+msgstr ""
+
+#: model_mixins.py:108 models.py:48
+msgid "User"
+msgstr "مستخدم"
+
+#: models.py:40 models.py:91
 msgid "File"
-msgstr ""
+msgstr "ملف"
 
-#: models.py:52
+#: models.py:43
 msgid "Label"
-msgstr ""
+msgstr "العنوان"
 
-#: models.py:56
-msgid "Permission"
-msgstr ""
-
-#: models.py:63
+#: models.py:55
 msgid "Download file"
 msgstr ""
 
-#: models.py:125
+#: models.py:100
 msgid "Shared uploaded file"
+msgstr "ملف مشترك"
+
+#: models.py:101 storages.py:36
+msgid "Shared uploaded files"
+msgstr "ملف محمل مشترك"
+
+#: permissions.py:10
+msgid "Delete user files"
 msgstr ""
 
-#: models.py:126 storages.py:36
-msgid "Shared uploaded files"
+#: permissions.py:13
+msgid "Download user files"
+msgstr ""
+
+#: permissions.py:16
+msgid "View user files"
 msgstr ""
 
 #: queues.py:13
 msgid "Storage periodic"
-msgstr ""
+msgstr "التخزين الدوري"
 
 #: queues.py:19
 msgid "Delete stale uploads"
-msgstr ""
+msgstr "حذف التحميلات "
 
 #: queues.py:26
 msgid "Delete stale download files"
 msgstr ""
 
-#: settings.py:19
+#: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
 msgstr ""
 
-#: settings.py:25
+#: settings.py:27
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
 
-#: settings.py:36
+#: settings.py:38
 msgid "A storage backend that all workers can use to share files."
-msgstr ""
+msgstr "مساحة تخزينية مشتركة"
 
-#: settings.py:46
+#: settings.py:48
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
-msgstr ""
+msgstr "مساحة تخزينية مؤقتة"
 
-#: settings.py:53
+#: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
 
@@ -164,19 +179,19 @@ msgstr ""
 msgid ""
 "Unable to initialize the shared uploaded file storage. Check the settings {}"
 " and {} for formatting errors."
-msgstr ""
+msgstr "تعذر تهيئة التخزين ، للتحقق من إعدادات {} و {} لأخطاء ."
 
-#: views.py:60
+#: views.py:67
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
 
-#: views.py:64
+#: views.py:71
 msgid "There are no files to download."
 msgstr ""
 
-#: views.py:65
+#: views.py:72
 msgid "Downloads"
 msgstr ""

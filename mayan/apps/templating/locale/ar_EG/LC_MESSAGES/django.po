@@ -3,12 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Roberto Rosario, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:38+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,9 +21,9 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:19 permissions.py:5
+#: apps.py:19 permissions.py:6
 msgid "Templating"
-msgstr ""
+msgstr "القوالب"
 
 #: fields.py:19
 #, python-format
@@ -27,6 +32,9 @@ msgid ""
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " "
 msgstr ""
+"استخدام شكل القوالب الإفتراضي "
+"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
+" "
 
 #: fields.py:37
 #, python-format
@@ -35,53 +43,72 @@ msgid ""
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " The {{ %(variable)s }} variable is available to the template."
 msgstr ""
+"استخدام شكل القوالب الإفتراضي "
+"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
+" {{ %(variable)s }} المتغيرات."
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."
-msgstr ""
+msgstr "نتائج تقيم القالب"
 
 #: forms.py:10
 msgid "Result"
-msgstr ""
+msgstr "النتيجة"
 
 #: forms.py:20
 msgid "The template string to be evaluated."
-msgstr ""
+msgstr "القوالب المراد تقيمها"
 
 #: forms.py:21
 msgid "Template"
-msgstr ""
+msgstr "القالب"
 
 #: links.py:11
 msgid "Sandbox"
-msgstr ""
+msgstr "وضع الحماية"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Use the template sandbox"
+msgstr "استخدام قالب الحماية"
+
+#: serializers.py:8
+msgid "Hex hash"
 msgstr ""
 
-#: views.py:40
+#: serializers.py:11
+msgid "Name"
+msgstr "اسم"
+
+#: serializers.py:14
+msgid "HTML"
+msgstr ""
+
+#: serializers.py:17
+msgid "URL"
+msgstr "URL"
+
+#: views.py:44
 #, python-format
 msgid "Template sandbox for: %s"
-msgstr ""
+msgstr "وضع قالب الحماية : %s"
 
-#: views.py:61
+#: views.py:65
 #, python-format
 msgid "Template error; %(exception)s"
-msgstr ""
+msgstr "خطأ في النموذج ; %(exception)s"
 
-#: widgets.py:65
+#: widgets.py:69
 msgid "Filters"
-msgstr ""
+msgstr "التصفية"
 
-#: widgets.py:72
+#: widgets.py:76
 msgid "Tags"
-msgstr ""
+msgstr "الدلالات"
 
-#: widgets.py:78
+#: widgets.py:83
 msgid "<Filters and tags>"
-msgstr ""
+msgstr "<Filters and tags>"
 
-#: widgets.py:119
+#: widgets.py:128
 msgid "<Model attributes>"
-msgstr ""
+msgstr "<Model attributes>"

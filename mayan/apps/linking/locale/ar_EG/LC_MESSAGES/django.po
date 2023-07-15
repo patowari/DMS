@@ -5,14 +5,17 @@
 # Translators:
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,336 +23,380 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:41
+#: apps.py:45
 msgid "Linking"
-msgstr ""
+msgstr "ربط"
 
-#: apps.py:106 models.py:29
+#: apps.py:119 models.py:30 serializers.py:129
 msgid "Label"
-msgstr ""
+msgstr "العنوان"
 
-#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:48
-#: permissions.py:5 views/smart_link_views.py:157
+#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:49
+#: permissions.py:6 views/smart_link_views.py:156
 msgid "Smart links"
-msgstr ""
+msgstr "الروابط الذكية"
 
 #: events.py:10
 msgid "Smart link created"
-msgstr ""
+msgstr "إنشاء الرابط الذكي"
 
 #: events.py:13
 msgid "Smart link edited"
-msgstr ""
+msgstr "تعديل الرابط الذكي"
 
-#: forms.py:45
+#: forms.py:46
 msgid "Foreign document field"
-msgstr ""
+msgstr "مجال المستند الأجنبي"
 
-#: links.py:44 views/smart_link_views.py:261
+#: links.py:44 views/smart_link_views.py:246
 msgid "Create new smart link"
-msgstr ""
+msgstr "إنشاء ارتباط ذكي جديد"
 
 #: links.py:49 links.py:87
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:53 models.py:40
+#: links.py:53 models.py:41
 msgid "Document types"
-msgstr ""
+msgstr "أنواع الوثائق"
 
 #: links.py:58 links.py:91
 msgid "Edit"
-msgstr ""
+msgstr "تعديل"
 
 #: links.py:63
 msgid "Documents"
-msgstr ""
+msgstr "الوثائق"
 
 #: links.py:81
 msgid "Create condition"
-msgstr ""
+msgstr "إنشاء الشرط"
 
 #: links.py:96
 msgid "Conditions"
-msgstr ""
+msgstr "الشروط"
 
 #: literals.py:7
 msgid "and"
-msgstr ""
+msgstr "و"
 
 #: literals.py:8
 msgid "or"
-msgstr ""
+msgstr "أو"
 
 #: literals.py:12
 msgid "is equal to"
-msgstr ""
+msgstr "يساوي"
 
 #: literals.py:13
 msgid "is equal to (case insensitive)"
-msgstr ""
+msgstr "يساوي"
 
 #: literals.py:14
 msgid "contains"
-msgstr ""
+msgstr "يحتوي"
 
 #: literals.py:15
 msgid "contains (case insensitive)"
-msgstr ""
+msgstr "يحتوي"
 
 #: literals.py:16
 msgid "is in"
-msgstr ""
+msgstr "موجود في"
 
 #: literals.py:17
 msgid "is greater than"
-msgstr ""
+msgstr "أكبر من"
 
 #: literals.py:18
 msgid "is greater than or equal to"
-msgstr ""
+msgstr "أكبر من أو يساوي"
 
 #: literals.py:19
 msgid "is less than"
-msgstr ""
+msgstr "أقل من"
 
 #: literals.py:20
 msgid "is less than or equal to"
-msgstr ""
+msgstr "أقل من أو يساوي"
 
 #: literals.py:21
 msgid "starts with"
-msgstr ""
+msgstr "يبدأ ب"
 
 #: literals.py:22
 msgid "starts with (case insensitive)"
-msgstr ""
+msgstr "يبدأ ب"
 
 #: literals.py:23
 msgid "ends with"
-msgstr ""
+msgstr "ينتهي ب"
 
 #: literals.py:24
 msgid "ends with (case insensitive)"
-msgstr ""
+msgstr "ينتهي ب"
 
 #: literals.py:25
 msgid "is in regular expression"
-msgstr ""
+msgstr "في الوصف العادي"
 
 #: literals.py:26
 msgid "is in regular expression (case insensitive)"
-msgstr ""
+msgstr "في الوصف العادي"
 
-#: models.py:28
+#: model_mixins.py:43
+#, python-format
+msgid "Error generating dynamic label; %s"
+msgstr "خطأ في إنشاء تسمية ديناميكية ؛ %s"
+
+#: model_mixins.py:58
+msgid "This smart link is not allowed for the selected document's type."
+msgstr "هذا الارتباط الذكي غير مسموح به لنوع المستند المحدد."
+
+#: model_mixins.py:108
+msgid "not"
+msgstr "رفض"
+
+#: model_mixins.py:112
+msgid "Full label"
+msgstr "التسمية الكاملة"
+
+#: models.py:29
 msgid "A short text describing the smart link."
-msgstr ""
+msgstr "نص قصير يصف الارتباط الذكي."
 
-#: models.py:33
+#: models.py:34
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
 msgstr ""
+"استخدم هذا الحقل لإظهار تسمية فريدة بناءً على المستند الذي يتم من خلاله "
+"الوصول إلى الارتباط الذكي."
 
-#: models.py:35
+#: models.py:36
 msgid "Dynamic label"
-msgstr ""
+msgstr "التسمية الديناميكية"
 
-#: models.py:37 models.py:188
+#: models.py:38 models.py:110
 msgid "Enabled"
-msgstr ""
+msgstr "مفعل"
 
-#: models.py:47 models.py:166
+#: models.py:48 models.py:87
 msgid "Smart link"
-msgstr ""
+msgstr "رابط ذكي"
 
-#: models.py:80
-#, python-format
-msgid "Error generating dynamic label; %s"
-msgstr ""
+#: models.py:91
+msgid "The inclusion is ignored for the first item."
+msgstr "تجاهل العنصر"
 
 #: models.py:95
-msgid "This smart link is not allowed for the selected document's type."
-msgstr ""
-
-#: models.py:170
-msgid "The inclusion is ignored for the first item."
-msgstr ""
-
-#: models.py:174
 msgid "This represents the metadata of all other documents."
-msgstr ""
+msgstr "البيانات الوصفية لجميع الوثائق الأخرى"
 
-#: models.py:175
+#: models.py:96
 msgid "Foreign document attribute"
-msgstr ""
+msgstr "سمة المستند الأجنبي"
 
-#: models.py:180
+#: models.py:101
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
 msgstr ""
+"التعبير الذي يستخدم خصائص المستند المراد تقييمه مقابل حقل المستند الخارجي."
 
-#: models.py:182
+#: models.py:103
 msgid "Expression"
-msgstr ""
+msgstr "التعبير"
 
-#: models.py:185
+#: models.py:106
 msgid "Inverts the logic of the operator."
-msgstr ""
+msgstr "العمل التشغيلي"
 
-#: models.py:186
+#: models.py:107
 msgid "Negated"
-msgstr ""
+msgstr "Negated"
 
-#: models.py:191
+#: models.py:114
 msgid "Link condition"
-msgstr ""
+msgstr "شروط الارتباط"
 
-#: models.py:192
+#: models.py:115
 msgid "Link conditions"
-msgstr ""
+msgstr "شروط الارتباط"
 
-#: models.py:208
-msgid "not"
-msgstr ""
-
-#: models.py:212
-msgid "Full label"
-msgstr ""
-
-#: permissions.py:8
+#: permissions.py:10
 msgid "View resolved smart links"
 msgstr ""
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Create new smart links"
-msgstr ""
+msgstr "إنشاء ارتباطات ذكية جديدة"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Delete smart links"
-msgstr ""
+msgstr "حذف الروابط الذكية"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "Edit smart links"
-msgstr ""
+msgstr "تحرير الروابط الذكية"
 
-#: permissions.py:20
+#: permissions.py:22
 msgid "View existing smart links"
+msgstr "عرض الروابط الذكية"
+
+#: serializers.py:20 serializers.py:132
+msgid "Smart link URL"
 msgstr ""
 
-#: serializers.py:50
+#: serializers.py:24 serializers.py:86 serializers.py:135
+msgid "URL"
+msgstr "URL"
+
+#: serializers.py:49
 msgid "Primary key of the document type to add to the smart link."
 msgstr ""
 
-#: serializers.py:59
+#: serializers.py:50 serializers.py:59
+msgid "Document type ID"
+msgstr ""
+
+#: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
 msgstr ""
 
-#: views/smart_link_condition_views.py:45
+#: serializers.py:66
+msgid "Conditions URL"
+msgstr ""
+
+#: serializers.py:70
+msgid "Document types URL"
+msgstr ""
+
+#: serializers.py:74
+msgid "Document types add URL"
+msgstr ""
+
+#: serializers.py:78
+msgid "Document types remove URL"
+msgstr ""
+
+#: serializers.py:105
+msgid "Resolved smart link URL"
+msgstr ""
+
+#: serializers.py:126
+msgid "Documents URL"
+msgstr ""
+
+#: views/smart_link_condition_views.py:47
 msgid ""
 "Conditions are small logic units that when combined define how the smart "
 "link will behave."
 msgstr ""
+"الشروط عبارة عن وحدات منطقية صغيرة تحدد عند دمجها كيفية عمل الارتباط الذكي."
 
-#: views/smart_link_condition_views.py:49
+#: views/smart_link_condition_views.py:51
 msgid "There are no conditions for this smart link"
-msgstr ""
+msgstr "لا توجد شروط لهذا الارتباط الذكي"
 
-#: views/smart_link_condition_views.py:53
+#: views/smart_link_condition_views.py:55
 #, python-format
 msgid "Conditions for smart link: %s"
-msgstr ""
+msgstr "شروط الارتباط الذكي: %s"
 
-#: views/smart_link_condition_views.py:73
+#: views/smart_link_condition_views.py:75
 #, python-format
 msgid "Add new conditions to smart link: \"%s\""
-msgstr ""
+msgstr "أضف شرط جديد للرابط الذكي: \"%s\""
 
-#: views/smart_link_condition_views.py:107
+#: views/smart_link_condition_views.py:109
 #, python-format
 msgid "Delete smart link condition: \"%s\"?"
-msgstr ""
+msgstr "هل تريد حذف شرط الارتباط الذكي: &quot;%s&quot;؟"
 
-#: views/smart_link_condition_views.py:134
+#: views/smart_link_condition_views.py:136
 msgid "Edit smart link condition"
-msgstr ""
+msgstr "تحرير شرط الرابط الذكي"
 
-#: views/smart_link_views.py:74
+#: views/smart_link_views.py:73
 #, python-format
 msgid "Resolved smart link query error: %s"
 msgstr ""
 
-#: views/smart_link_views.py:101
+#: views/smart_link_views.py:100
 #, python-format
 msgid "Resolved smart link dynamic label error: %s"
 msgstr ""
 
-#: views/smart_link_views.py:106
+#: views/smart_link_views.py:105
 #, python-format
 msgid ""
 "Documents in resolved smart link \"%(resolved_smart_link)s\" for "
 "\"%(document)s\""
 msgstr ""
 
-#: views/smart_link_views.py:148
+#: views/smart_link_views.py:147
 msgid ""
 "Indexes group documents into units, usually with similar properties and of "
 "equal or similar types. Smart links allow defining relationships between "
 "documents even if they are in different indexes and are of different types."
 msgstr ""
+"تقوم الفهارس بتجميع الوثائق ضمن وحدات ، ذات خصائص متماثلة \n"
+"تسمح الروابط الذكية من تعريف العلاقة بين الوثائف بمختلف فهارسها"
 
-#: views/smart_link_views.py:155
+#: views/smart_link_views.py:154
 msgid "There are no smart links"
-msgstr ""
+msgstr "لا توجد روابط ذكية"
 
-#: views/smart_link_views.py:177
+#: views/smart_link_views.py:176
 msgid ""
 "Smart links allow defining relationships between documents even if they are "
 "in different indexes and are of different types."
 msgstr ""
+"تمكن الروابط الذكية من جعل الاتباطات أكثر سهولة بين الوثائق سواءً كانت في "
+"فهارس مختلفة أو أنواع مختلفة"
 
-#: views/smart_link_views.py:182
+#: views/smart_link_views.py:181
 msgid "There are no resolved smart links for this document"
 msgstr ""
 
-#: views/smart_link_views.py:186
+#: views/smart_link_views.py:185
 #, python-format
 msgid "Resolved smart links for document: %s"
 msgstr ""
 
-#: views/smart_link_views.py:202
-msgid "Available smart links"
-msgstr ""
-
 #: views/smart_link_views.py:203
-msgid "Smart links enabled"
-msgstr ""
+msgid "Available smart links"
+msgstr "الروابط الذكية المتاحة"
 
-#: views/smart_link_views.py:230
+#: views/smart_link_views.py:204
+msgid "Smart links enabled"
+msgstr "تم تمكين الروابط الذكية"
+
+#: views/smart_link_views.py:215
 #, python-format
 msgid "Smart links to enable for document type: %s"
-msgstr ""
+msgstr "روابط ذكية لتمكين نوع المستند: %s"
 
-#: views/smart_link_views.py:243
+#: views/smart_link_views.py:228
 msgid "Available document types"
-msgstr ""
+msgstr "أنواع الوثائق المتاحة"
 
-#: views/smart_link_views.py:244
+#: views/smart_link_views.py:229
 msgid "Document types enabled"
-msgstr ""
+msgstr "تفعيل الوثائق"
 
-#: views/smart_link_views.py:255
+#: views/smart_link_views.py:240
 #, python-format
 msgid "Document type for which to enable smart link: %s"
-msgstr ""
+msgstr "نوع الوثيقة المطلوب تمكين الارتباط الذكي له: %s"
 
-#: views/smart_link_views.py:285
+#: views/smart_link_views.py:270
 #, python-format
 msgid "Delete smart link: %s"
-msgstr ""
+msgstr "حذف الارتباط الذكي: %s"
 
-#: views/smart_link_views.py:302
+#: views/smart_link_views.py:287
 #, python-format
 msgid "Edit smart link: %s"
-msgstr ""
+msgstr "تحرير الرابط الذكي: %s"

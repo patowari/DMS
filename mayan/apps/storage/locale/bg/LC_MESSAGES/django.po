@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -129,15 +129,15 @@ msgstr "Споделени качени файлове"
 
 #: permissions.py:10
 msgid "Delete user files"
-msgstr ""
+msgstr "Изтриване на потребителски файлове"
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr ""
+msgstr "Изтегляне на потребителски файлове"
 
 #: permissions.py:16
 msgid "View user files"
-msgstr ""
+msgstr "Преглед на потребителски файлове"
 
 #: queues.py:13
 msgid "Storage periodic"

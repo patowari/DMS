@@ -4,20 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Tobias Paepke <tobias.paepke@paepke.net>, 2022
-# Ingo Buchholz <ingo.buchholz@takwa.de>, 2022
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
-# Berny <berny@bernhard-marx.de>, 2022
-# Roberto Rosario, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Berny <berny@bernhard-marx.de>, 2023
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
+# Tobias Paepke <tobias.paepke@paepke.net>, 2023
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
+# Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Label"
 msgstr "Bezeichner"
 
-#: apps.py:49 events.py:6 links.py:21 permissions.py:5 queues.py:7
+#: apps.py:49 events.py:6 links.py:21 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
 msgstr "Dateimetadaten"
@@ -42,11 +42,11 @@ msgstr "Dateimetadaten Schlüsselwort"
 msgid "File metadata value"
 msgstr "Dateimetadaten Wert"
 
-#: apps.py:132
+#: apps.py:130
 msgid "Return the value of a specific file metadata."
 msgstr "Gebe den Wert spezifischer Dateimetadaten zurück."
 
-#: apps.py:133
+#: apps.py:131
 msgid "File metadata value of"
 msgstr "Dateimetadatenwert von"
 
@@ -60,6 +60,10 @@ msgstr ""
 #: drivers/exiftool.py:19
 msgid "EXIF Tool"
 msgstr "EXIF Tool"
+
+#: drivers/extract_msg.py:15
+msgid "Extract msg"
+msgstr ""
 
 #: events.py:10
 msgid "Document file submitted for file metadata processing"
@@ -97,87 +101,91 @@ msgstr "Gib den Metadatenwert für das angegebene Dokument zurück."
 msgid "Return the specified document file file metadata entry."
 msgstr ""
 
-#: models.py:18
-msgid "Driver path"
-msgstr "Treiberpfad"
-
-#: models.py:22
-msgid "Internal name"
-msgstr "Interner Name"
-
-#: models.py:27 models.py:70
-msgid "Driver"
-msgstr "Treiber"
-
-#: models.py:28
-msgid "Drivers"
-msgstr "Treiber"
-
-#: models.py:48
-msgid "Document type"
-msgstr "Dokumententyp"
-
-#: models.py:52
-msgid "Automatically queue newly created documents for processing."
-msgstr "Neu erstellte Dokumente automatisch in die Warteschlange einreihen."
-
-#: models.py:59
-msgid "Document type settings"
-msgstr "Einstellungen für Dokumententyp"
-
-#: models.py:60
-msgid "Document types settings"
-msgstr "Einstellungen für Dokumententypen"
-
-#: models.py:74
-msgid "Document file"
-msgstr "Dokumentendatei"
-
-#: models.py:80 models.py:95
-msgid "Document file driver entry"
-msgstr ""
-
-#: models.py:81
-msgid "Document file driver entries"
-msgstr ""
-
-#: models.py:88
+#: model_mixins.py:9
 msgid "Attribute count"
 msgstr "Attributanzahl"
 
-#: models.py:99
+#: models.py:17 models.py:96
+msgid "Driver"
+msgstr "Treiber"
+
+#: models.py:21
+msgid "Document file"
+msgstr "Dokumentendatei"
+
+#: models.py:27 models.py:63
+msgid "Document file driver entry"
+msgstr ""
+
+#: models.py:28
+msgid "Document file driver entries"
+msgstr ""
+
+#: models.py:40
+msgid "Document type"
+msgstr "Dokumententyp"
+
+#: models.py:44
+msgid "Automatically queue newly created documents for processing."
+msgstr "Neu erstellte Dokumente automatisch in die Warteschlange einreihen."
+
+#: models.py:45
+msgid "Auto process"
+msgstr ""
+
+#: models.py:51
+msgid "Document type settings"
+msgstr "Einstellungen für Dokumententyp"
+
+#: models.py:52
+msgid "Document types settings"
+msgstr "Einstellungen für Dokumententypen"
+
+#: models.py:66
 msgid "Name of the file metadata entry."
 msgstr "Name des Dateimetadateneintrags."
 
-#: models.py:100
+#: models.py:67
 msgid "Key"
 msgstr "Schlüssel"
 
-#: models.py:103
+#: models.py:70
 msgid "Value of the file metadata entry."
 msgstr "Wert des Dateimetadateneintrags."
 
-#: models.py:104
+#: models.py:71
 msgid "Value"
 msgstr "Wert"
 
-#: models.py:109
+#: models.py:76
 msgid "File metadata entry"
 msgstr "Dateimetadateneintrag"
 
-#: models.py:110
+#: models.py:77
 msgid "File metadata entries"
 msgstr "Dateimetadateneinträge"
 
-#: permissions.py:8
+#: models.py:87
+msgid "Driver path"
+msgstr "Treiberpfad"
+
+#: models.py:91
+msgid "Internal name"
+msgstr "Interner Name"
+
+#: models.py:97
+msgid "Drivers"
+msgstr "Treiber"
+
+#: permissions.py:10
 msgid "Change document type file metadata settings"
 msgstr "Einstellungen für Dateimetadaten des Dokumententyps ändern"
 
-#: permissions.py:13
+#: permissions.py:15
 msgid "Submit document for file metadata processing"
 msgstr "Dokument für die Verarbeitung von Dateimetadaten einstellen"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View file metadata"
 msgstr "Dateimetadaten ansehen"
 
@@ -185,7 +193,7 @@ msgstr "Dateimetadaten ansehen"
 msgid "Process document file"
 msgstr "Dokumentendatei verarbeiten"
 
-#: settings.py:18
+#: settings.py:19
 msgid ""
 "Set new document types to perform file metadata processing automatically by "
 "default."
@@ -193,7 +201,7 @@ msgstr ""
 "Neue Dokumententypen einstellen, für die eine automatische "
 "Dateimetadatenverarbeitung durchgeführt werden soll."
 
-#: settings.py:25
+#: settings.py:26
 msgid "Arguments to pass to the drivers."
 msgstr "Argumente die an den Treiber übergeben werden."
 
@@ -240,12 +248,12 @@ msgstr ""
 
 #: views.py:121
 #, python-format
-msgid "%(count)d document file submitted to the file metadata queue."
+msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
 
 #: views.py:124
 #, python-format
-msgid "%(count)d documents files submitted to the file metadata queue."
+msgid "%(count)d document file submitted to the file metadata queue."
 msgstr ""
 
 #: views.py:133

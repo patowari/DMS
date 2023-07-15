@@ -5,14 +5,15 @@
 # 
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Marwan Rahhal <Marwanr@sssit.net>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,150 +21,172 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:40
-msgid "Links"
-msgstr ""
-
-#: events.py:6 links.py:19 links.py:24 links.py:54 links.py:59 models.py:44
-#: permissions.py:6 views.py:184
+#: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
+#: models.py:43 permissions.py:6 views.py:169
 msgid "Web links"
-msgstr ""
+msgstr "روابط النظام"
 
 #: events.py:10
 msgid "Web link created"
-msgstr ""
+msgstr "رابط النظام المنشأ"
 
 #: events.py:13
 msgid "Web link edited"
-msgstr ""
+msgstr "تعديل رابط النظام"
 
 #: events.py:16
 msgid "Web link navigated"
-msgstr ""
+msgstr "إستعراض رابط النظام"
 
-#: links.py:29 views.py:96
+#: links.py:29 views.py:81
 msgid "Create new web link"
-msgstr ""
+msgstr "إنشاء رابط جديد"
 
 #: links.py:35
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:39 models.py:38
+#: links.py:39 models.py:37
 msgid "Document types"
-msgstr ""
+msgstr "أنواع الوثائق"
 
 #: links.py:44
 msgid "Edit"
-msgstr ""
+msgstr "تعديل"
 
 #: links.py:51
 msgid "Navigate"
-msgstr ""
+msgstr "المتصفح"
+
+#: models.py:23
+msgid "A short text describing the web link."
+msgstr "وصف مختصر لروابط النظام"
 
 #: models.py:24
-msgid "A short text describing the web link."
-msgstr ""
-
-#: models.py:25
 msgid "Label"
-msgstr ""
+msgstr "العنوان"
 
-#: models.py:29
+#: models.py:28
 msgid "Template that will be used to craft the final URL of the web link."
-msgstr ""
+msgstr "القالب المستخدم "
 
-#: models.py:31
+#: models.py:30
 msgid "Template"
-msgstr ""
+msgstr "القالب"
 
-#: models.py:34
+#: models.py:33
 msgid "Enabled"
-msgstr ""
+msgstr "مفعل"
 
-#: models.py:43
+#: models.py:42
 msgid "Web link"
-msgstr ""
+msgstr "الرابط"
 
 #: permissions.py:10
 msgid "Create new web links"
-msgstr ""
+msgstr "أنشاء روابط جديدة"
 
 #: permissions.py:13
 msgid "Delete web links"
-msgstr ""
+msgstr "حذف الروابط"
 
 #: permissions.py:16
 msgid "Edit web links"
-msgstr ""
+msgstr "تعديل الروابط"
 
 #: permissions.py:19
 msgid "View existing web links"
-msgstr ""
+msgstr "إستعراض الروابط الحالية"
 
 #: permissions.py:22
 msgid "View web link instances"
-msgstr ""
+msgstr "حالة الرابط"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
+msgstr ""
+
+#: serializers.py:17 serializers.py:26
+msgid "Document type ID"
 msgstr ""
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
 msgstr ""
 
-#: views.py:38
-msgid "Available web links"
+#: serializers.py:33
+msgid "Document types add URL"
 msgstr ""
 
-#: views.py:39
+#: serializers.py:37
+msgid "Document types remove URL"
+msgstr ""
+
+#: serializers.py:41
+msgid "Document types URL"
+msgstr ""
+
+#: serializers.py:48 serializers.py:63
+msgid "URL"
+msgstr "URL"
+
+#: serializers.py:66
+msgid "Navigation URL"
+msgstr ""
+
+#: views.py:32
 msgid "Web links enabled"
-msgstr ""
+msgstr "تفعيل الروابط"
 
-#: views.py:65
+#: views.py:33
+msgid "Available web links"
+msgstr "الروابط المتاحة"
+
+#: views.py:50
 #, python-format
 msgid "Web links to enable for document type: %s"
-msgstr ""
+msgstr "تفعيل الروابط لأنواع الوثائق: %s"
 
-#: views.py:118
+#: views.py:103
 #, python-format
 msgid "Delete web link: %s"
-msgstr ""
+msgstr "حذف الرابط : %s"
 
-#: views.py:130
-msgid "Available document types"
-msgstr ""
-
-#: views.py:131
+#: views.py:108
 msgid "Document types enabled"
-msgstr ""
+msgstr "تفعيل الوثائق"
 
-#: views.py:141
+#: views.py:109
+msgid "Available document types"
+msgstr "أنواع الوثائق المتاحة"
+
+#: views.py:126
 #, python-format
 msgid "Document type for which to enable web link: %s"
-msgstr ""
+msgstr "أنواع الوثائق المفعلة  للرابط : %s"
 
-#: views.py:158
+#: views.py:143
 #, python-format
 msgid "Edit web link: %s"
-msgstr ""
+msgstr "تعديل الرابط : %s"
 
-#: views.py:177 views.py:207
+#: views.py:162 views.py:192
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
 msgstr ""
+"تسمح روابط الويب بإنشاء روابط HTTP من الوثائق إلى الأنظمة الخارجيةويمكن أن "
+"يحتوي عنوان الرابط على قيم خصائص الوثيقة."
 
-#: views.py:182
+#: views.py:167
 msgid "There are no web links"
-msgstr ""
+msgstr "لا يوجد روابط "
 
-#: views.py:212
+#: views.py:197
 msgid "There are no web links for this document"
-msgstr ""
+msgstr "لا توجد روابط لهذه الوثيقة"
 
-#: views.py:215
+#: views.py:200
 #, python-format
 msgid "Web links for document: %s"
-msgstr ""
+msgstr "روابط الوثائق : %s"

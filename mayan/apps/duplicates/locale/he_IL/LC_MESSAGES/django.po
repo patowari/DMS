@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
-"PO-Revision-Date: 2022-07-27 05:35+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:28 apps.py:54 links.py:14 queues.py:9
 msgid "Duplicates"
-msgstr ""
+msgstr "כפילויות"
 
 #: apps.py:60
 msgid "Duplicate backend"
@@ -30,7 +30,7 @@ msgstr "שכפול backend"
 
 #: classes.py:90
 msgid "Null backend"
-msgstr ""
+msgstr "Backend אפס"
 
 #: duplicate_backends.py:9
 msgid "Exact document file checksum"
@@ -38,33 +38,33 @@ msgstr "סכום בקרה (checksum) מדויק של קובץ המסמך"
 
 #: duplicate_backends.py:32
 msgid "Exact document label"
-msgstr ""
+msgstr "תווית מסמך מדויקת"
 
-#: links.py:18 models.py:41 views.py:79
+#: links.py:18 models.py:37 views.py:79
 msgid "Duplicated documents"
-msgstr ""
+msgstr "מסמכים משוכפלים"
 
 #: links.py:24 queues.py:23
 msgid "Duplicated document scan"
-msgstr ""
+msgstr "סריקת מסמכים משוכפלים"
 
-#: models.py:23 models.py:33
+#: models.py:19 models.py:29
 msgid "Stored duplicate backend"
 msgstr "backends לאחסון כפולים"
 
-#: models.py:24
+#: models.py:20
 msgid "Stored duplicate backends"
 msgstr "backends לאחסון כפולים"
 
-#: models.py:37
+#: models.py:33
 msgid "Document"
-msgstr ""
+msgstr "מסמך"
 
-#: models.py:49
+#: models.py:45
 msgid "Duplicated backend entry"
 msgstr "ערך backend משוכפל"
 
-#: models.py:50
+#: models.py:46
 msgid "Duplicated backend entries"
 msgstr "ערכי backend משוכפלים"
 
@@ -74,20 +74,20 @@ msgstr "נקוי רשימות כפולים ריקות"
 
 #: queues.py:18
 msgid "Scan document duplicates"
-msgstr ""
+msgstr "סרוק כפילויות של מסמכים"
 
 #: views.py:36
 msgid "Only exact copies of this document will be shown in the this list."
-msgstr ""
+msgstr "רק עותקים מדויקים של מסמך זה יוצגו ברשימה זו."
 
 #: views.py:40
 msgid "There are no duplicates for this document"
-msgstr ""
+msgstr "אין כפילויות למסמך זה"
 
 #: views.py:44
 #, python-format
 msgid "Duplicates for document: %s"
-msgstr ""
+msgstr "כפילויות למסמך: %s"
 
 #: views.py:70
 msgid ""
@@ -100,7 +100,7 @@ msgstr ""
 
 #: views.py:77
 msgid "There are no duplicated documents"
-msgstr ""
+msgstr "אין מסמכים משוכפלים"
 
 #: views.py:87
 msgid "Scan for duplicated documents?"

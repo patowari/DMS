@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2022
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
-"PO-Revision-Date: 2022-07-27 05:32+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:57 events.py:5 permissions.py:5 settings.py:10
+#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "ניראות "
 
@@ -31,7 +31,7 @@ msgstr "גופן Lato"
 
 #: dependencies.py:12
 msgid "Bootstrap"
-msgstr "אתחול מערכת"
+msgstr "Bootstrap (סביבת עבודה)"
 
 #: dependencies.py:16
 msgid "Bootswatch"
@@ -73,15 +73,15 @@ msgstr "ספריית Javascript (Toastr)"
 msgid "URI.js"
 msgstr "ספריית Javascript (URI.js)"
 
-#: events.py:8
+#: events.py:10
 msgid "Theme created"
 msgstr "ערכת נושא נוצרה"
 
-#: events.py:11
+#: events.py:13
 msgid "Theme edited"
 msgstr "ערכת נושא נערכה"
 
-#: events.py:14
+#: events.py:16
 msgid "User theme edited"
 msgstr "ערכת משתמש נערכה"
 
@@ -99,11 +99,11 @@ msgstr "יצירת ערכת נושא חדשה"
 
 #: links.py:36
 msgid "Delete"
-msgstr "Delete"
+msgstr "מחיקה"
 
 #: links.py:40
 msgid "Edit"
-msgstr "Edit"
+msgstr "עריכה"
 
 #: links.py:44 links.py:49 models.py:32 views.py:99
 msgid "Themes"
@@ -111,7 +111,7 @@ msgstr "ערכות נושא"
 
 #: models.py:19
 msgid "A short text describing the theme."
-msgstr "מלל קצר לתאור ערכת הנושא"
+msgstr "מלל קצר לתאור ערכת הנושא."
 
 #: models.py:20
 msgid "Label"
@@ -143,40 +143,50 @@ msgstr "הגדרת ערכת משתמש"
 msgid "User theme settings"
 msgstr "הגדרות ערכת משתמש"
 
-#: permissions.py:8
+#: permissions.py:10
 msgid "Create new themes"
 msgstr "יצירת ערכות נושא חדשות"
 
-#: permissions.py:11
+#: permissions.py:13
 msgid "Delete themes"
 msgstr "מחיקת ערכות נושא"
 
-#: permissions.py:14
+#: permissions.py:16
 msgid "Edit themes"
 msgstr "עריכת ערכות נושא"
 
-#: permissions.py:17
+#: permissions.py:19
 msgid "View existing themes"
 msgstr "צפייה בערכות נושא קיימות"
 
-#: settings.py:15
+#: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
 msgstr "Custom HTTP response code for AJAX redirections."
 
-#: settings.py:21
+#: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
 msgstr "מספר תווים מירבי לכותרת תצוגה"
 
-#: settings.py:28
-msgid ""
-"Position where the system message will be displayed. Options are: top-left, "
-"top-center, top-right, bottom-left, bottom-center, bottom-right."
-msgstr ""
+#: settings.py:34
+msgid "Position where the system messages will be displayed."
+msgstr "מיקום התצוגה של הודעות מערכת."
 
-#: settings.py:36
+#: settings.py:40
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
-msgstr "העיכוב (באלפיות השנייה) שאחריו יבדקו עדכון תפריטים."
+msgstr "העיכוב (באלפיות השנייה) שאחריו יבדקו עדכוני תפריטים."
+
+#: settings.py:47
+msgid ""
+"Maximum number of requests that can be made before throttling is enabled."
+msgstr "מספר מירבי של בקשות בטרם אפשר למערכת להאט (throttling)."
+
+#: settings.py:54
+msgid ""
+"Time in milliseconds after which a throttled request will clear allowing an "
+"additional request to be performed."
+msgstr ""
+"זמן (באלפיות השנייה) שאחריו בקשה מעוכבת תשוחרר לטובת ביצוע בקשה נוספת."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -192,7 +202,7 @@ msgstr "דף לא נמצא"
 
 #: templates/404.html:32
 msgid "The requested page could not be found."
-msgstr "הדף המבוקש לא נמצא"
+msgstr "הדף המבוקש לא נמצא."
 
 #: templates/404.html:40
 msgid "Possible reasons"
@@ -227,7 +237,7 @@ msgstr "מה הדבר הבא לעשות?"
 
 #: templates/500.html:44
 msgid "Refresh the page."
-msgstr "רענן את הדף."
+msgstr "לרענן את הדף."
 
 #: templates/500.html:45
 msgid "Wait a bit. The system might be overloaded."
@@ -313,6 +323,14 @@ msgstr ""
 "\n"
 "להפיץ את הרעיון. לשוחח עם ידידים וקולגות עד כמה %(project_title)s הוא פנטסטי!"
 
+#: templates/appearance/app/foot.html:70
+msgid ""
+"Too many pending requests. Additional requests will be blocked until a "
+"pending one is completed or after the cooling off period ends."
+msgstr ""
+"יותר מדי בקשות ממתינות. בקשות נוספות ייחסמו עד אשר בקשה ממתינה תבוצע או אחרי"
+" סיום תקופת צינון."
+
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr "אובייקט"
@@ -359,9 +377,15 @@ msgstr "ביטול"
 msgid "Identifier"
 msgstr "מזהה"
 
-#: templates/appearance/generic_list_subtemplate.html:134
-msgid "Facets"
-msgstr ""
+#: templates/appearance/generic_list_subtemplate.html:85
+#: templates/appearance/partials/list_object_facet_links_column.html:8
+#: templates/appearance/partials/list_object_facet_links_column.html:39
+msgid "Views"
+msgstr "תצוגות"
+
+#: templates/appearance/generic_list_subtemplate.html:91
+msgid "Actions"
+msgstr "פעולות"
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
@@ -402,24 +426,34 @@ msgstr "בחר/בטל בחירת הכל"
 msgid "Toggle list display mode"
 msgstr "החלפת מצב תצוגת רשימה"
 
-#: templates/appearance/partials/list_toolbar.html:63
+#: templates/appearance/partials/list_toolbar.html:31
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "בחירת פריטים בכדי להפעיל פעולות על קבוצת פריטים. להשתמש ב-Shift ו<קליק> "
 "לבחירה מרובה. "
 
-#: templates/appearance/partials/list_toolbar.html:68
+#: templates/appearance/partials/list_toolbar.html:36
 msgid "Bulk actions"
 msgstr "פעולות על מספר פריטים"
 
-#: templates/appearance/partials/list_toolbar.html:70
+#: templates/appearance/partials/list_toolbar.html:38
 msgid "Toggle Dropdown"
-msgstr "החלף תפריט בחירה"
+msgstr "החלף רשימת בחירה"
 
 #: templates/appearance/partials/no_results.html:18
 msgid "No results"
 msgstr "אין תוצאות"
+
+#: templates/appearance/partials/pagination.html:12
+#: templates/appearance/partials/pagination.html:14
+msgid "Previous page"
+msgstr "הדף הקודם"
+
+#: templates/appearance/partials/pagination.html:30
+#: templates/appearance/partials/pagination.html:32
+msgid "Next page"
+msgstr "הדף הבא"
 
 #: templates/appearance/root.html:52
 msgid "Close"
@@ -433,7 +467,7 @@ msgstr "תקלה בתקשורת עם השרת"
 msgid "Check you network connection and try again in a few moments."
 msgstr "לבדוק את חיבור הרשת ולנסות שוב בעוד כמה דקות."
 
-#: templatetags/appearance_tags.py:61
+#: templatetags/appearance_tags.py:67
 msgid "None"
 msgstr "אין"
 

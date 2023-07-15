@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -832,15 +832,15 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:13
 msgid "Document types add URL"
-msgstr ""
+msgstr "URL за добавяне типове документи"
 
 #: serializers/workflow_template_serializers.py:18
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Типовете документи премахват URL"
 
 #: serializers/workflow_template_serializers.py:23
 msgid "Document types URL"
-msgstr ""
+msgstr "URL за типове документи"
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"
@@ -861,7 +861,7 @@ msgstr "Първичен ключ от типа документ, който д�
 #: serializers/workflow_template_serializers.py:66
 #: serializers/workflow_template_serializers.py:75
 msgid "Document type ID"
-msgstr ""
+msgstr "ID на типа документ"
 
 #: serializers/workflow_template_serializers.py:74
 msgid "Primary key of the document type to remove from the workflow."
