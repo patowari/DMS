@@ -1,3 +1,7 @@
+4.4.8 (2023-07-15)
+==================
+- Fixes and improvements from versions 4.3.10 and 4.2.17.
+
 4.4.7 (2023-06-03)
 ==================
 - Fix sitemap URL scheme format.
