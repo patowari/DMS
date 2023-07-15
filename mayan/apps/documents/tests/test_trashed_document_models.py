@@ -36,7 +36,9 @@ class TrashedDocumentTestCase(GenericDocumentTestCase):
         self._clear_events()
 
         # Restore the document.
-        TrashedDocument.objects.get(pk=self._test_document.pk).restore()
+        TrashedDocument.objects.get(pk=self._test_document.pk).restore(
+            user=self._test_case_user
+        )
         self.assertEqual(TrashedDocument.objects.count(), 0)
         self.assertEqual(Document.valid.count(), 1)
 
@@ -44,7 +46,7 @@ class TrashedDocumentTestCase(GenericDocumentTestCase):
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_document)
+        self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_trashed_document_restored.id)
 

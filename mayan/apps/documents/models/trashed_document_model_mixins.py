@@ -1,3 +1,5 @@
+from django.apps import apps
+
 from mayan.apps.converter.exceptions import AppImageError
 from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
@@ -9,6 +11,10 @@ from ..literals import IMAGE_ERROR_NO_VERSION_PAGES
 class TrashedDocumentBusinessLogicMixin:
     @property
     def document(self):
+        Document = apps.get_model(
+            app_label='documents', model_name='Document'
+        )
+
         return Document.objects.get(pk=self.pk)
 
     def get_api_image_url(
