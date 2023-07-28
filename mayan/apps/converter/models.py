@@ -10,8 +10,8 @@ from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import (
     YAMLValidator, validate_internal_name
 )
-from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerSave
 from mayan.apps.storage.classes import DefinedStorageLazy
 
 from .classes import Layer

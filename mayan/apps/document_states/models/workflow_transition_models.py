@@ -1,12 +1,12 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import YAMLValidator
-from mayan.apps.events.classes import (
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
+from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave
 )
-from mayan.apps.events.decorators import method_event
 from mayan.apps.events.models import StoredEventType
 
 from ..events import event_workflow_template_edited

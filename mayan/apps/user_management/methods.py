@@ -2,8 +2,8 @@ from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
 
-from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerSave
 
 from .events import (
     event_group_created, event_group_edited, event_user_created,

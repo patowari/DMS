@@ -4,8 +4,8 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ValueChangeModelMixin
-from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerSave
 from mayan.apps.lock_manager.decorators import locked_class_method
 
 from .events import event_cache_created, event_cache_edited

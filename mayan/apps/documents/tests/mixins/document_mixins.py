@@ -133,6 +133,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
             self._test_document_file_path = os.path.join(
                 settings.BASE_DIR, 'apps', 'documents', 'tests', 'contrib',
                 'sample_documents', self._test_document_file_filename
+            )
 
     def _calculate_test_document_path(self):
         if not self._test_document_path:

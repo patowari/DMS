@@ -11,8 +11,8 @@ from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.exceptions import (
     InvalidOfficeFormat, PageCountError
 )
-from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.mime_types.classes import MIMETypeBackend
 

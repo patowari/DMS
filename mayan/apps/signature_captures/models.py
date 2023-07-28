@@ -6,10 +6,10 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.common.validators import validate_internal_name
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.events.classes import (
+from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave
 )
-from mayan.apps.events.decorators import method_event
 
 from .events import (
     event_signature_capture_created, event_signature_capture_deleted,

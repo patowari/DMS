@@ -10,8 +10,8 @@ from mayan.apps.views.generics import (
     SingleObjectDetailView, SingleObjectDownloadView, SingleObjectListView,
     SimpleView
 )
-from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 
 from .events import event_key_downloaded
 from .forms import KeyDetailForm, KeySearchForm

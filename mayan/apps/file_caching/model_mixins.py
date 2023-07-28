@@ -9,8 +9,8 @@ from django.utils.functional import cached_property
 from django.utils.text import format_lazy
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.decorators import (
     acquire_lock_class_method, release_lock_class_method, locked_class_method

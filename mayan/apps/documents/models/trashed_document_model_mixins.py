@@ -1,6 +1,6 @@
 from mayan.apps.converter.exceptions import AppImageError
-from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 
 from ..events import event_trashed_document_restored
 from ..literals import IMAGE_ERROR_NO_VERSION_PAGES

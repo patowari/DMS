@@ -3,8 +3,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 
 from .events import event_error_log_deleted
 from .managers import ErrorLogPartitionEntryManager

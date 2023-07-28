@@ -143,6 +143,7 @@
 - Add file caching dashboard administrator widgets.
 - Add container dependency to ensure containers are started only after the
   ``setup_or_upgrade`` containers finishes.
+- Move ``EventManager`` classes to their own module.
 
 4.4.7 (2023-06-03)
 ==================

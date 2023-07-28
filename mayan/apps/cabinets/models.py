@@ -8,8 +8,10 @@ from mptt.models import MPTTModel
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.events.classes import EventManagerMethodAfter, EventManagerSave
 from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import (
+    EventManagerMethodAfter, EventManagerSave
+)
 
 from .events import (
     event_cabinet_created, event_cabinet_deleted, event_cabinet_edited,

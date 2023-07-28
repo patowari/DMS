@@ -7,10 +7,10 @@ from mayan.apps.common.literals import (
 from mayan.apps.databases.model_mixins import (
     ExtraDataModelMixin, ModelMixinConditionField
 )
-from mayan.apps.events.classes import (
+from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave
 )
-from mayan.apps.events.decorators import method_event
 
 from ..events import event_workflow_template_edited
 
