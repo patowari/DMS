@@ -141,6 +141,8 @@
 - Mark cache model field ``maximum_size`` as a database index to speed up
   cache calculations.
 - Add file caching dashboard administrator widgets.
+- Add container dependency to ensure containers are started only after the
+  ``setup_or_upgrade`` containers finishes.
 
 4.4.7 (2023-06-03)
 ==================

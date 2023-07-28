@@ -19,6 +19,19 @@ x-mayan-container:
     # - /opt/staging_folder:/staging_folder
     # - /opt/watch_folder:/watch_folder
 
+x-mayan-dependencies:
+  &mayan-dependencies
+  depends_on:
+    setup_or_upgrade:
+      condition: service_completed_successfully
+
+x-mayan-frontend-ports:
+  &mayan-frontend-ports
+  # Disable ports if using Traefik. Set to an empty list `[]`.
+  ports:
+    - "${MAYAN_FRONTEND_HTTP_PORT:-80}:8000"
+    # []
+
 x-mayan-traefik-labels:
   &mayan-traefik-labels
   labels:
@@ -34,13 +47,6 @@ x-mayan-traefik-labels:
     - "traefik.http.routers.mayan_frontend_https.tls=true"
     - "traefik.http.routers.mayan_frontend_https.tls.certresolver=letsencrypt"
     - "traefik.http.services.mayan_frontend_http.loadbalancer.server.port=8000"
-
-x-mayan-frontend-ports:
-  &mayan-frontend-ports
-  # Disable ports if using Traefik. Set to an empty list `[]`.
-  ports:
-    - "${MAYAN_FRONTEND_HTTP_PORT:-80}:8000"
-    # []
 
 networks:
   keycloak:
@@ -196,7 +202,7 @@ services:
 
   # Run a frontend gunicorn container
   frontend:
-    <<: [*mayan-container, *mayan-traefik-labels, *mayan-frontend-ports]
+    <<: [*mayan-container, *mayan-traefik-labels, *mayan-frontend-ports, *mayan-dependencies]
     command:
       - run_frontend
     profiles:
@@ -205,7 +211,7 @@ services:
 
   # Enable to run standalone workers
   mountindex:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     cap_add:
       - SYS_ADMIN
     devices:
@@ -227,7 +233,7 @@ services:
 
   # Run a separate class A worker
   worker_a:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     command:
       - run_worker
       - worker_a
@@ -238,7 +244,7 @@ services:
 
   # Run a separate class B worker
   worker_b:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     command:
       - run_worker
       - worker_b
@@ -249,7 +255,7 @@ services:
 
   # Run a separate class C worker
   worker_c:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     command:
       - run_worker
       - worker_c
@@ -260,7 +266,7 @@ services:
 
   # Run a separate class D worker
   worker_d:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     command:
       - run_worker
       - worker_d
@@ -270,18 +276,17 @@ services:
       - multi_container
 
   worker_custom_queue:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     command:
       - /bin/sh
       - -c
       - 'MAYAN_QUEUE_LIST=${MAYAN_WORKER_CUSTOM_QUEUE_LIST} /usr/local/bin/run_worker.sh --prefetch-multiplier=1'
     profiles:
       - extra_worker_custom
-      - multi_container
 
   # Run a separate Celery beat container
   celery_beat:
-    <<: *mayan-container
+    <<: [*mayan-container, *mayan-dependencies]
     command:
       - run_celery
       - "beat --pidfile= --loglevel=ERROR"
@@ -299,11 +304,11 @@ services:
     restart: "no"
 
   rabbitmq:
-    image: ${MAYAN_DOCKER_RABBITMQ_IMAGE:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_TAG:-3.11.13-management-alpine}
     environment:
       RABBITMQ_DEFAULT_USER: ${MAYAN_RABBITMQ_USER:-mayan}
       RABBITMQ_DEFAULT_PASS: ${MAYAN_RABBITMQ_PASSWORD:-mayanrabbitpass}
       RABBITMQ_DEFAULT_VHOST: ${MAYAN_RABBITMQ_VHOST:-mayan}
+    image: ${MAYAN_DOCKER_RABBITMQ_IMAGE:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_TAG:-3.11.13-management-alpine}
     labels:
       - "traefik.enable=${MAYAN_TRAEFIK_RABBITMQ_ENABLE:-false}"
       - "traefik.http.routers.rabbitmq_admin_http.entrypoints=rabbitmq_admin_http"
