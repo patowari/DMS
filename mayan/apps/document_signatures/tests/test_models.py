@@ -423,13 +423,14 @@ class EmbeddedSignaturesTestCase(
         self._upload_test_document()
 
         with open(file=TEST_SIGNED_DOCUMENT_PATH, mode='rb') as file_object:
-            signed_file = self._test_document.file_new(
-                file_object=file_object, comment=''
+            self._test_document.file_new(
+                comment='', file_object=file_object
             )
 
         self.assertEqual(EmbeddedSignature.objects.count(), 1)
 
+        test_document_file = self.test_document.file_latest
         signature = EmbeddedSignature.objects.first()
 
-        self.assertEqual(signature.document_file, signed_file)
+        self.assertEqual(signature.document_file, test_document_file)
         self.assertEqual(signature.key_id, TEST_KEY_PUBLIC_ID)
