@@ -1,3 +1,4 @@
+from itertools import islice
 import logging
 import os
 
@@ -12,8 +13,9 @@ from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.converter.exceptions import AppImageError
 from mayan.apps.templating.classes import Template
 
+from ..events import event_document_version_page_created
 from ..literals import (
-    IMAGE_ERROR_NO_VERSION_PAGES,
+    DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE, IMAGE_ERROR_NO_VERSION_PAGES,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
 from ..signals import signal_post_document_version_remap
@@ -163,7 +165,9 @@ class DocumentVersionBusinessLogicMixin:
         queryset = ModelQueryFields.get(
             model=DocumentVersionPage
         ).get_queryset()
-        return queryset.filter(pk__in=self.version_pages.all())
+        return queryset.filter(
+            pk__in=self.version_pages.all()
+        )
 
     def pages_append_all(self, user=None):
         """
@@ -207,17 +211,37 @@ class DocumentVersionBusinessLogicMixin:
         if not annotated_content_object_list:
             annotated_content_object_list = ()
 
-        for content_object_entry in annotated_content_object_list:
-            version_page = DocumentVersionPage(
+        document_version_pages = (
+            DocumentVersionPage(
                 document_version=self,
                 content_object=content_object_entry['content_object'],
                 page_number=content_object_entry['page_number']
+            ) for content_object_entry in annotated_content_object_list
+        )
+
+        while True:
+            batch = list(
+                islice(
+                    document_version_pages,
+                    DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE
+                )
             )
-            version_page._event_actor = user
-            version_page.save()
+
+            if not batch:
+                break
+
+            DocumentVersionPage.objects.bulk_create(
+                batch_size=DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE,
+                objs=batch
+            )
+
+        for page in self.pages.all().only('pk'):
+            event_document_version_page_created.commit(
+                action_object=self, actor=user, target=page
+            )
 
         signal_post_document_version_remap.send(
-            sender=DocumentVersion, instance=self
+            instance=self, sender=DocumentVersion
         )
 
     def pages_reset(self, document_file=None, user=None):

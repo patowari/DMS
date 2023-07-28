@@ -1,4 +1,5 @@
 import hashlib
+from itertools import islice
 import logging
 import shutil
 
@@ -17,7 +18,10 @@ from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.mime_types.classes import MIMETypeBackend
 
 from ..events import event_document_file_created, event_document_file_edited
-from ..literals import STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
+from ..literals import (
+    DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE,
+    STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
+)
 from ..settings import setting_hash_block_size
 from ..signals import (
     signal_post_document_created, signal_post_document_file_upload
@@ -365,11 +369,31 @@ class DocumentFileBusinessLogicMixin:
                 app_label='documents', model_name='DocumentFilePage'
             )
 
-            self.pages.all().delete()
+            for page in self.pages.all():
+                page._event_actor = user
+                page._event_ignore = True
+                page.delete()
 
-            for page_number in range(detected_pages):
-                DocumentFilePage.objects.create(
+            document_file_pages = (
+                DocumentFilePage(
                     document_file=self, page_number=page_number + 1
+                ) for page_number in range(detected_pages)
+            )
+
+            while True:
+                batch = list(
+                    islice(
+                        document_file_pages,
+                        DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE
+                    )
+                )
+
+                if not batch:
+                    break
+
+                DocumentFilePage.objects.bulk_create(
+                    batch_size=DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE,
+                    objs=batch
                 )
 
             if save:

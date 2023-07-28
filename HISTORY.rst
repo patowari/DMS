@@ -144,6 +144,9 @@
 - Add container dependency to ensure containers are started only after the
   ``setup_or_upgrade`` containers finishes.
 - Move ``EventManager`` classes to their own module.
+- Update event system to work in asynchronous mode.
+- Split events queue into two queues for fast and slow tasks.
+- Create document file pages and document version pages in bulk.
 
 4.4.7 (2023-06-03)
 ==================
