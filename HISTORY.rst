@@ -154,6 +154,10 @@
   its own queue for slow tasks.
 - Rebalance tasks queues.
 - Remove the unused signal ``signal_post_document_created``.
+- Remove the options ``--without-gossip`` and ``--without-heartbeat`` from
+  the ``run_worker`` script.
+- Add support for changing the worker log level via the new environment
+  variable ``MAYAN_WORKER_LOG_LEVEL`` which defaults to ``ERROR``.
 
 4.4.7 (2023-06-03)
 ==================

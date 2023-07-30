@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export MAYAN_WORKER_LOG_LEVEL=${MAYAN_WORKER_LOG_LEVEL:-ERROR}
 export MAYAN_WORKER_NAME=${MAYAN_WORKER_NAME:-$1}
 export MAYAN_WORKER_NICE_LEVEL=${MAYAN_WORKER_NICE_LEVEL:-0}
 
@@ -17,4 +18,4 @@ fi
 if [ "$#" -gt 0 ]; then
     shift
 fi
-su mayan --command "nice -n ${MAYAN_WORKER_NICE_LEVEL} ${MAYAN_PYTHON_BIN_DIR}celery -A mayan worker --loglevel=ERROR -Ofair --queues=${MAYAN_QUEUE_LIST} --without-gossip --without-heartbeat ${@}"
+su mayan --command "nice -n ${MAYAN_WORKER_NICE_LEVEL} ${MAYAN_PYTHON_BIN_DIR}celery -A mayan worker --loglevel=${MAYAN_WORKER_LOG_LEVEL} -Ofair --queues=${MAYAN_QUEUE_LIST} ${@}"
