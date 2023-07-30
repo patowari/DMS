@@ -292,7 +292,8 @@ a i {
 
 /* Remove scroll bar caused by bootstraps -15px on .row margins */
 .zero-margin {
-    margin-left: 0;
+    margin-left: -5px;
+    margin-right: 0px;
 }
 
 /* Remove scroll bar caused by bootstraps -15px on .row margins */
