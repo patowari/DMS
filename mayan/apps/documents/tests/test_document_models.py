@@ -237,6 +237,8 @@ class DocumentTestCase(GenericDocumentTestCase):
     def test_method_get_absolute_url(self):
         self._create_test_document_stub()
 
+        self._clear_events()
+
         self.assertTrue(
             self._test_document.get_absolute_url()
         )
