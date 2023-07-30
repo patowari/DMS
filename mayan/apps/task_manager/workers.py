@@ -6,14 +6,16 @@ from mayan.settings.literals import (
     MAYAN_WORKER_B_MAX_MEMORY_PER_CHILD, MAYAN_WORKER_B_MAX_TASKS_PER_CHILD,
     MAYAN_WORKER_C_CONCURRENCY, MAYAN_WORKER_C_MAX_MEMORY_PER_CHILD,
     MAYAN_WORKER_C_MAX_TASKS_PER_CHILD, MAYAN_WORKER_D_CONCURRENCY,
-    MAYAN_WORKER_D_MAX_MEMORY_PER_CHILD, MAYAN_WORKER_D_MAX_TASKS_PER_CHILD
+    MAYAN_WORKER_D_MAX_MEMORY_PER_CHILD, MAYAN_WORKER_D_MAX_TASKS_PER_CHILD,
+    MAYAN_WORKER_E_CONCURRENCY, MAYAN_WORKER_E_MAX_MEMORY_PER_CHILD,
+    MAYAN_WORKER_E_MAX_TASKS_PER_CHILD
 )
 
 from .classes import Worker
 
 worker_a = Worker(
     concurrency=MAYAN_WORKER_A_CONCURRENCY,
-    description=_('Low latency tasks'), label=('Worker A'),
+    description=_('Low latency high volume tasks'), label=('Worker A'),
     maximum_memory_per_child=MAYAN_WORKER_A_MAX_MEMORY_PER_CHILD,
     maximum_tasks_per_child=MAYAN_WORKER_A_MAX_TASKS_PER_CHILD,
     name='worker_a', nice_level=0
@@ -38,4 +40,11 @@ worker_d = Worker(
     maximum_memory_per_child=MAYAN_WORKER_D_MAX_MEMORY_PER_CHILD,
     maximum_tasks_per_child=MAYAN_WORKER_D_MAX_TASKS_PER_CHILD,
     name='worker_d', nice_level=15
+)
+worker_e = Worker(
+    concurrency=MAYAN_WORKER_E_CONCURRENCY,
+    description=_('Low latency, long lived tasks'), label=('Worker E'),
+    maximum_memory_per_child=MAYAN_WORKER_E_MAX_MEMORY_PER_CHILD,
+    maximum_tasks_per_child=MAYAN_WORKER_E_MAX_TASKS_PER_CHILD,
+    name='worker_e', nice_level=2
 )

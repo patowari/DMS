@@ -6,6 +6,13 @@ stub expiration interval is now configure on a per document type basis via
 the user interface or API.
 
 
+Task manager
+^^^^^^^^^^^^
+
+Removal of the "Tools" queue. Each app must now define its own queue for
+slow, long lived operations.
+
+
 Workflows
 ^^^^^^^^^
 

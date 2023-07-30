@@ -1,13 +1,13 @@
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.task_manager.classes import CeleryQueue
-from mayan.apps.task_manager.workers import worker_b
+from mayan.apps.task_manager.workers import worker_e
 
 queue_search = CeleryQueue(
-    label=_('Search'), name='search', worker=worker_b
+    label=_('Search'), name='search', worker=worker_e
 )
 queue_search_slow = CeleryQueue(
-    label=_('Search slow'), name='search_slow', worker=worker_b
+    label=_('Search slow'), name='search_slow', worker=worker_e
 )
 
 queue_search.add_task_type(

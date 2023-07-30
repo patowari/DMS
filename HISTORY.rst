@@ -147,6 +147,12 @@
 - Update event system to work in asynchronous mode.
 - Split events queue into two queues for fast and slow tasks.
 - Create document file pages and document version pages in bulk.
+- Increase the default maximum memory per Celery worker child from 300000
+  to 400000.
+- Add new worker E and devote it for search tasks.
+- Eliminate the shared "Tools" queue. Each app is now responsible of defining
+  its own queue for slow tasks.
+- Rebalance tasks queues.
 
 4.4.7 (2023-06-03)
 ==================
