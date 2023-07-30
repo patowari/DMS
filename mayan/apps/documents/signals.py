@@ -1,8 +1,5 @@
 from django.dispatch import Signal
 
-signal_post_document_created = Signal(
-    providing_args=('instance',), use_caching=True
-)
 signal_post_document_type_change = Signal(
     providing_args=('instance',), use_caching=True
 )

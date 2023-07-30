@@ -23,9 +23,7 @@ from ..literals import (
     STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
 )
 from ..settings import setting_hash_block_size
-from ..signals import (
-    signal_post_document_created, signal_post_document_file_upload
-)
+from ..signals import signal_post_document_file_upload
 
 logger = logging.getLogger(name=__name__)
 
@@ -162,11 +160,6 @@ class DocumentFileBusinessLogicMixin:
             signal_post_document_file_upload.send(
                 sender=DocumentFile, instance=self
             )
-
-            if tuple(self.document.files.all()) == (self,):
-                signal_post_document_created.send(
-                    instance=self.document, sender=Document
-                )
 
     @cached_property
     def cache(self):

@@ -153,6 +153,7 @@
 - Eliminate the shared "Tools" queue. Each app is now responsible of defining
   its own queue for slow tasks.
 - Rebalance tasks queues.
+- Remove the unused signal ``signal_post_document_created``.
 
 4.4.7 (2023-06-03)
 ==================

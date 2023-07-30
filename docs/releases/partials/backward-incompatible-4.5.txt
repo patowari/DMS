@@ -5,6 +5,10 @@ Removal of the setting ``DOCUMENTS_STUB_EXPIRATION_INTERVAL``. Document
 stub expiration interval is now configure on a per document type basis via
 the user interface or API.
 
+Removal of the unused signal ``signal_post_document_created``. Use Django's
+default ``post_save`` signal for documents or
+``signal_post_document_file_upload`` to handle new file uploads.
+
 
 Task manager
 ^^^^^^^^^^^^
