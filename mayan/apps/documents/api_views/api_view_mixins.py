@@ -13,7 +13,9 @@ class ParentObjectDocumentAPIViewMixin:
         if not permission:
             permission = getattr(
                 self, 'mayan_external_object_permissions', {}
-            ).get(self.request.method, (None,))[0]
+            ).get(
+                self.request.method, (None,)
+            )[0]
 
         if permission:
             queryset = AccessControlList.objects.restrict_queryset(
@@ -74,7 +76,9 @@ class ParentObjectDocumentTypeAPIViewMixin:
         if not permission:
             permission = getattr(
                 self, 'mayan_external_object_permissions', {}
-            ).get(self.request.method, (None,))[0]
+            ).get(
+                self.request.method, (None,)
+            )[0]
 
         if permission:
             queryset = AccessControlList.objects.restrict_queryset(
