@@ -19,9 +19,11 @@ class TrashedDocumentModelTestCase(GenericDocumentTestCase):
         self.assertEqual(Document.valid.count(), 0)
 
         # Restore the document
-        TrashedDocument.objects.get(
+        test_trashed_document = TrashedDocument.objects.get(
             pk=self._test_document.pk
-        ).restore(user=self._test_case_user)
+        )
+
+        test_trashed_document.restore(user=self._test_case_user)
         self.assertEqual(TrashedDocument.objects.count(), 0)
         self.assertEqual(Document.valid.count(), 1)
 
