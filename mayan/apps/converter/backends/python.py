@@ -4,7 +4,7 @@ import shutil
 import struct
 
 from PIL import Image
-import PyPDF2
+import pypdf
 import sh
 
 from django.utils.translation import ugettext_lazy as _
@@ -92,115 +92,128 @@ class Python(ConverterBase):
             else:
                 file_object = self.file_object
 
-            try:
-                # Try PyPDF to determine the page number
-                pdf_reader = PyPDF2.PdfFileReader(
-                    stream=file_object, strict=False
-                )
-                page_count = pdf_reader.getNumPages()
-            except Exception as exception:
-                if str(exception) == 'File has not been decrypted':
-                    # File is encrypted, try to decrypt using a blank
-                    # password.
-                    file_object.seek(0)
-                    pdf_reader = PyPDF2.PdfFileReader(
-                        stream=file_object, strict=False
-                    )
-                    try:
-                        pdf_reader.decrypt(password=b'')
-                        page_count = pdf_reader.getNumPages()
-                    except Exception as exception:
-                        file_object.seek(0)
-                        if str(exception) == 'only algorithm code 1 and 2 are supported':
-                            # PDF uses an unsupported encryption
-                            # Try poppler-util's pdfinfo
-                            page_count = self.get_pdfinfo_page_count(
-                                file_object=file_object
-                            )
-                            return page_count
-                        else:
-                            error_message = _(
-                                'Exception determining PDF page count; %s'
-                            ) % exception
-                            logger.error(error_message, exc_info=True)
-                            raise PageCountError(error_message)
-                elif str(exception) == 'EOF marker not found':
-                    # PyPDF2 issue: https://github.com/mstamy2/PyPDF2/issues/177
-                    # Try poppler-util's pdfinfo
-                    logger.debug(
-                        msg='PyPDF2 GitHub issue #177 : EOF marker not found'
-                    )
-                    file_object.seek(0)
-                    page_count = self.get_pdfinfo_page_count(file_object)
-                    return page_count
-                else:
-                    error_message = _(
-                        'Exception determining PDF page count; %s'
-                    ) % exception
-                    logger.error(error_message, exc_info=True)
-                    raise PageCountError(error_message)
-            else:
-                logger.debug('Document contains %d pages', page_count)
-                return page_count
-            finally:
-                file_object.seek(0)
+            return self.get_pypdf_page_count(file_object=file_object)
         else:
-            try:
-                image = Image.open(fp=self.file_object)
-            except IOError as exception:
-                error_message = _(
-                    'Exception determining page count using Pillow; %s'
-                ) % exception
-                logger.error(error_message)
-                raise PageCountError(error_message)
-            finally:
-                self.file_object.seek(0)
+            return self.get_pillow_page_count()
 
-            # Get total page count by attempting to seek to an increasing
-            # page count number until an EOFError or struct.error exception
-            # are raised.
-            while True:
+    def get_pillow_page_count(self):
+        page_count = 1
+
+        try:
+            image = Image.open(fp=self.file_object)
+        except IOError as exception:
+            error_message = _(
+                'Exception determining page count using Pillow; %s'
+            ) % exception
+            logger.error(error_message)
+            raise PageCountError(error_message)
+        finally:
+            self.file_object.seek(0)
+
+        # Get total page count by attempting to seek to an increasing
+        # page count number until an EOFError or struct.error exception
+        # are raised.
+        while True:
+            try:
+                image.seek(
+                    image.tell() + 1
+                )
+            except EOFError:
+                """End of sequence"""
+                break
+            except struct.error:
+                """
+                struct.error was raise for a TIFF file converted to JPEG
+                GitLab issue #767 "Upload Error: unpack_from requires a
+                buffer of at least 2 bytes"
+                """
+                logger.debug(
+                    msg='image page count detection raised struct.error'
+                )
+                break
+            else:
                 try:
-                    image.seek(image.tell() + 1)
-                except EOFError:
-                    """End of sequence"""
-                    break
-                except struct.error:
-                    """
-                    struct.error was raise for a TIFF file converted to JPEG
-                    GitLab issue #767 "Upload Error: unpack_from requires a
-                    buffer of at least 2 bytes"
-                    """
-                    logger.debug(
-                        msg='image page count detection raised struct.error'
+                    # Even if the image reports multiple frames,
+                    # test it to make sure it is valid and supported
+                    # before counting it as a valid page.
+                    image.getim()
+                except OSError as exception:
+                    logger.error(
+                        'Multi image element not supported; %s',
+                        exception
                     )
                     break
                 else:
-                    try:
-                        # Even if the image reports multiple frames,
-                        # test it to make sure it is valid and supported
-                        # before counting it as a valid page.
-                        image.getim()
-                    except OSError as exception:
-                        logger.error(
-                            'Multi image element not supported; %s',
-                            exception
-                        )
-                        break
-                    else:
-                        page_count += 1
+                    page_count += 1
 
-            self.file_object.seek(0)
-            return page_count
+        self.file_object.seek(0)
+        return page_count
 
     def get_pdfinfo_page_count(self, file_object):
         process = pdfinfo('-', _in=file_object)
-        page_count = int(
-            list(filter(
-                lambda line: line.startswith('Pages:'),
-                str(process.stdout).split('\n')
-            ))[0].replace('Pages:', '')
-        )
+
+        for line in str(process.stdout).split('\n'):
+            if line.startswith('Pages:'):
+                line = line.replace('Pages:', '')
+                page_count = int(line)
+                break
+
         file_object.seek(0)
         logger.debug('Document contains %d pages', page_count)
         return page_count
+
+    def get_pypdf_page_count(self, file_object):
+        try:
+            # Try PyPDF to determine the page count.
+            pdf_reader = pypdf.PdfReader(
+                stream=file_object, strict=False
+            )
+            page_count = len(pdf_reader.pages)
+        except Exception as exception:
+            if str(exception) == 'File has not been decrypted':
+                # File is encrypted, try to decrypt using a blank
+                # password.
+                file_object.seek(0)
+                pdf_reader = pypdf.PdfReader(
+                    stream=file_object, strict=False
+                )
+                try:
+                    pdf_reader.decrypt(password=b'')
+                    page_count = len(pdf_reader.pages)
+                except Exception as exception:
+                    file_object.seek(0)
+                    if str(exception) == 'only algorithm code 1 and 2 are supported':
+                        # PDF uses an unsupported encryption.
+                        # Try poppler-util's pdfinfo.
+                        page_count = self.get_pdfinfo_page_count(
+                            file_object=file_object
+                        )
+                        return page_count
+                    else:
+                        error_message = _(
+                            'Exception determining PDF page count; %s'
+                        ) % exception
+                        logger.error(error_message, exc_info=True)
+                        raise PageCountError(error_message)
+            elif str(exception) == 'EOF marker not found':
+                # PyPDF2 issue: https://github.com/mstamy2/PyPDF2/issues/177
+                # Try poppler-util's pdfinfo
+                logger.debug(
+                    msg='PyPDF2 GitHub issue #177 : EOF marker not found'
+                )
+                file_object.seek(0)
+                page_count = self.get_pdfinfo_page_count(
+                    file_object=file_object
+                )
+                return page_count
+            else:
+                error_message = _(
+                    'Exception determining PDF page count; %s'
+                ) % exception
+                logger.error(error_message, exc_info=True)
+                raise PageCountError(error_message)
+        else:
+            logger.debug('Document contains %d pages', page_count)
+            return page_count
+        finally:
+            file_object.seek(0)

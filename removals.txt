@@ -17,6 +17,7 @@ librabbitmq
 mock
 pathlib2
 pdfminer
+PyPDF2
 pyocr
 pytesseract
 transifex-client

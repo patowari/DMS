@@ -158,6 +158,7 @@
   the ``run_worker`` script.
 - Add support for changing the worker log level via the new environment
   variable ``MAYAN_WORKER_LOG_LEVEL`` which defaults to ``ERROR``.
+- Replace PyPDF2 with the original pypdf package.
 
 4.4.7 (2023-06-03)
 ==================

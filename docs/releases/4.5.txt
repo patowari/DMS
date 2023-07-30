@@ -12,7 +12,7 @@ Changes
 Removals
 --------
 
-.. include:: partials/removals-4.4.txt
+.. include:: partials/removals-4.5.txt
 
 
 Troubleshooting

@@ -64,7 +64,6 @@ install_requires = """
 django==3.2.19
 CairoSVG==2.5.2
 Pillow==9.4.0
-PyPDF2==1.28.4
 PyYAML==6.0
 Whoosh==2.7.4
 bleach==4.1.0
@@ -105,6 +104,7 @@ node-semver==0.8.1
 pycountry==22.3.5
 pycryptodome==3.10.4
 pyotp==2.6.0
+pypdf==3.14.0
 python-dateutil==2.8.2
 python-magic==0.4.26
 python_gnupg==0.4.8

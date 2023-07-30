@@ -1,0 +1,4 @@
+Dependencies
+^^^^^^^^^^^^
+
+PyPDF2 is replaced with the original pypdf.
