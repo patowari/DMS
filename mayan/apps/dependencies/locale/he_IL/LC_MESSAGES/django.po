@@ -1,0 +1,355 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
+# Ovadia Ovadia, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"Last-Translator: Ovadia Ovadia, 2023\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: apps.py:24 links.py:38 permissions.py:6
+msgid "Dependencies"
+msgstr "תלויות"
+
+#: apps.py:32 apps.py:69 apps.py:78
+msgid "Label"
+msgstr "תווית"
+
+#: apps.py:36
+msgid "Internal name"
+msgstr "שם פנימי"
+
+#: apps.py:41 apps.py:74 apps.py:83
+msgid "Description"
+msgstr "תיאור"
+
+#: apps.py:45 classes.py:218
+msgid "Type"
+msgstr "סוּג"
+
+#: apps.py:49 classes.py:220
+msgid "Other data"
+msgstr "נתונים אחרים"
+
+#: apps.py:53
+msgid "Declared by"
+msgstr "הוכרז על ידי"
+
+#: apps.py:57 classes.py:218
+msgid "Version"
+msgstr "גִרְסָה"
+
+#: apps.py:61
+msgid "Environment"
+msgstr "סביבה"
+
+#: apps.py:64 classes.py:220
+msgid "Check"
+msgstr "בדיקה"
+
+#: classes.py:218
+msgid "Name"
+msgstr "שֵׁם"
+
+#: classes.py:219
+msgid "App"
+msgstr "אפליקציה"
+
+#: classes.py:219 classes.py:911
+msgid "Environments"
+msgstr "סביבות"
+
+#: classes.py:316
+msgid "Need to specify at least one: app_label or module."
+msgstr "צריך לציין לפחות אחד: app_label או module."
+
+#: classes.py:321
+#, python-format
+msgid "Dependency \"%s\" already registered."
+msgstr "התלות &quot;%s&quot; כבר רשומה."
+
+#: classes.py:350
+#, python-format
+msgid "Installing package: %s... "
+msgstr "מתקין חבילה: %s..."
+
+#: classes.py:357
+msgid "Already installed."
+msgstr "כבר מותקן."
+
+#: classes.py:362 classes.py:369 classes.py:375
+msgid "Complete."
+msgstr "מושלם"
+
+#: classes.py:402
+msgid "Installed and correct version"
+msgstr "גרסה מותקנת ונכונה"
+
+#: classes.py:404
+msgid "Missing or incorrect version"
+msgstr "גרסה חסרה או שגויה"
+
+#: classes.py:441
+msgid "None"
+msgstr "אף אחד"
+
+#: classes.py:450
+msgid "Not specified"
+msgstr "לא מוגדר"
+
+#: classes.py:453
+msgid "Patching files... "
+msgstr "מתקן קבצים..."
+
+#: classes.py:481
+msgid "Executables that are called directly by the code."
+msgstr "קבצי הפעלה שנקראים ישירות על ידי הקוד."
+
+#: classes.py:483
+msgid "Binary"
+msgstr "בינארי"
+
+#: classes.py:500
+msgid ""
+"JavaScript libraries downloaded the from NPM registry and used for front-end"
+" functionality."
+msgstr ""
+"ספריות JavaScript הורידו את הרישום של NPM והשתמשו בהם לפונקציונליות ב-front-"
+"end."
+
+#: classes.py:503
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: classes.py:535 classes.py:814
+msgid "Downloading... "
+msgstr "מוריד..."
+
+#: classes.py:540
+msgid "Verifying... "
+msgstr "מאמת..."
+
+#: classes.py:545 classes.py:819
+msgid "Extracting... "
+msgstr "מחלץ..."
+
+#: classes.py:751
+msgid "Python packages downloaded from PyPI."
+msgstr "חבילות Python הורדו מ- PyPI."
+
+#: classes.py:753
+msgid "Python"
+msgstr "Python"
+
+#: classes.py:794
+msgid "Fonts downloaded from fonts.googleapis.com."
+msgstr "גופנים הורדו מfonts.googleapis.com."
+
+#: classes.py:796
+msgid "Google font"
+msgstr "גופן גוגל"
+
+#: classes.py:892
+msgid "Declared in app"
+msgstr "מוצהר באפליקציה"
+
+#: classes.py:893
+msgid "Show dependencies by the app that declared them."
+msgstr "הצג תלויות של האפליקציה שהכריזה עליהן."
+
+#: classes.py:897
+msgid "Class"
+msgstr "Class"
+
+#: classes.py:898
+msgid ""
+"Show the different classes of dependencies. Classes are usually divided by "
+"language or the file types of the dependency."
+msgstr ""
+"הצג את ה-class-ים השונים של התלויות. ה-class-ים מחולקים בדרך כלל לפי שפה או "
+"סוגי הקבצים של התלות."
+
+#: classes.py:903
+msgid "State"
+msgstr "מצב"
+
+#: classes.py:904
+msgid ""
+"Show the different states of the dependencies. True means that the "
+"dependencies is installed and is of a correct version. False means the "
+"dependencies is missing or an incorrect version is present."
+msgstr ""
+"הצג את המצבים השונים של התלויות. \"True\" אומר שהתלות מותקנת והיא בגרסה "
+"נכונה. \"False\" פירושו שההתלויות חסרות או שקיימת גרסה שגויה."
+
+#: classes.py:912
+msgid ""
+"Dependencies required for an environment might not be required for another. "
+"Example environments: Production, Development."
+msgstr ""
+"ייתכן שתלות הנדרשת עבור סביבה לא תידרש עבור אחרת. סביבות לדוגמה: ייצור, "
+"פיתוח."
+
+#: environments.py:17
+msgid ""
+"Environment used for building distributable packages of the software. End "
+"users can ignore missing dependencies under this environment."
+msgstr ""
+"סביבה המשמשת לבניית חבילות (packages) הניתנות להפצה של התוכנה. משתמשי קצה "
+"יכולים להתעלם מתלויות חסרות בסביבה זו."
+
+#: environments.py:20
+msgid "Build"
+msgstr "תת גרסה"
+
+#: environments.py:24
+msgid ""
+"Environment used for developers to make code changes. End users can ignore "
+"missing dependencies under this environment."
+msgstr ""
+"סביבה המשמשת למפתחים לביצוע שינויים בקוד. משתמשי קצה יכולים להתעלם מתלויות "
+"חסרות בסביבה זו."
+
+#: environments.py:26
+msgid "Development"
+msgstr "פיתוח"
+
+#: environments.py:30
+msgid ""
+"Environment used for building the documentation. End users can ignore "
+"missing dependencies under this environment."
+msgstr ""
+"סביבה המשמשת לבניית התיעוד. משתמשי קצה יכולים להתעלם מתלויות חסרות בסביבה "
+"זו."
+
+#: environments.py:32
+msgid "Documentation"
+msgstr "תיעוד"
+
+#: environments.py:36
+msgid ""
+"Environment used to specify direct documentation depedencies to workaround "
+"unpinned or immutable depedency bugs in third party libraries. End users can"
+" ignore missing dependencies under this environment."
+msgstr ""
+"סביבה המשמשת לציון תלות תיעוד ישירה כדי לעקוף באגים בלתי מוצמדים או בלתי "
+"ניתנים לשינוי בספריות צד שלישי. משתמשי קצה יכולים להתעלם מתלויות חסרות "
+"בסביבה זו."
+
+#: environments.py:40
+msgid "Documentation (override)"
+msgstr "תיעוד (התגברות)"
+
+#: environments.py:44
+msgid ""
+"Normal environment for end users. A missing dependency under this "
+"environment will result in issues and errors during normal use."
+msgstr ""
+"סביבה רגילה למשתמשי קצה. תלות חסרה בסביבה זו תגרום לבעיות ושגיאות במהלך "
+"שימוש רגיל."
+
+#: environments.py:46
+msgid "Production"
+msgstr "יצור"
+
+#: environments.py:50
+msgid ""
+"Environment used running the test suit to verify the functionality of the "
+"code. Dependencies in this environment are not needed for normal production "
+"usage."
+msgstr ""
+"הסביבה השתמשה בהפעלת סדרת בדיקות כדי לאמת את הפונקציונליות של הקוד. אין צורך"
+" בתלויות בסביבה זו עבור שימוש בייצור רגיל."
+
+#: environments.py:53
+msgid "Testing"
+msgstr "בדיקות"
+
+#: links.py:14 views.py:25
+msgid "Check for updates"
+msgstr "בדיקת קיום עדכונים"
+
+#: links.py:18
+msgid "Groups"
+msgstr "קבוצות"
+
+#: links.py:23
+msgid "Entries"
+msgstr "ערכים"
+
+#: links.py:29
+msgid "Details"
+msgstr "פרטים"
+
+#: links.py:33
+msgid "Dependencies licenses"
+msgstr "רישיונות תלויות"
+
+#: management/commands/dependencies_check.py:13
+msgid "Outputs the dependencies as a comma delimited values list."
+msgstr "מפיק את התלויות כרשימת ערכים מופרדים בפסיקים (CSV)."
+
+#: management/commands/dependencies_generate_requirements.py:14
+msgid ""
+"Comma separated names of dependencies to exclude from the list generated."
+msgstr "שמות מופרדים בפסיקים של תלות להחרגה מהרשימה שנוצרה."
+
+#: management/commands/dependencies_generate_requirements.py:20
+msgid ""
+"Comma separated names of dependencies to show in the list while excluding "
+"every other one."
+msgstr "שמות מופרדים בפסיקים להצגה ברשימה תוך אי הכללה של כל שמות אחרים."
+
+#: management/commands/dependencies_install.py:13
+msgid "Process a specific app."
+msgstr "ביצוע אפליקציה ספציפית."
+
+#: management/commands/dependencies_install.py:17
+msgid "Force installation even if already installed."
+msgstr "כפיית התקנה גם אם כבר מותקנת."
+
+#: permissions.py:10
+msgid "View dependencies"
+msgstr "הצג תלויות"
+
+#: views.py:40
+#, python-format
+msgid "Entries for dependency group: %s"
+msgstr "ערכים לקבוצת תלות: %s"
+
+#: views.py:54 views.py:103
+#, python-format
+msgid "Group %s not found."
+msgstr "הקבוצה %s לא נמצאה."
+
+#: views.py:68
+msgid "Dependency groups"
+msgstr "קבוצות תלות"
+
+#: views.py:90
+#, python-format
+msgid "Dependency group and entry: %(group)s, %(entry)s"
+msgstr "קבוצת תלות וערך: %(group)s, %(entry)s"
+
+#: views.py:115
+#, python-format
+msgid "Entry %s not found."
+msgstr "הערך %s לא נמצא."
+
+#: views.py:134
+msgid "Other packages licenses"
+msgstr "רישיונות חבילות אחרות"

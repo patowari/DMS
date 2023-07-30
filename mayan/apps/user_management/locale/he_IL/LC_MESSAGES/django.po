@@ -1,0 +1,406 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Ovadia Ovadia, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Mayan EDMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Ovadia Ovadia, 2023\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: apps.py:62 events.py:6 permissions.py:6
+msgid "User management"
+msgstr "ניהול משתמשים"
+
+#: apps.py:77 search.py:10
+msgid "Group"
+msgstr "קְבוּצָה"
+
+#: apps.py:78 apps.py:107 links.py:56 links.py:70 links.py:99 search.py:34
+#: views/group_views.py:111
+msgid "Groups"
+msgstr "קבוצות"
+
+#: apps.py:79 search.py:16
+msgid "Name"
+msgstr "שֵׁם"
+
+#: apps.py:99 models.py:20 search.py:22
+msgid "User"
+msgstr "מִשׁתַמֵשׁ"
+
+#: apps.py:100 apps.py:219 links.py:61 links.py:102 links.py:120
+#: views/user_views.py:170
+msgid "Users"
+msgstr "משתמשים"
+
+#: apps.py:103 search.py:31
+msgid "Email"
+msgstr "אימייל"
+
+#: apps.py:106 search.py:28
+msgid "First name"
+msgstr "שם פרטי"
+
+#: apps.py:110
+msgid "Is active?"
+msgstr "האם פעיל?"
+
+#: apps.py:113 search.py:37
+msgid "Last name"
+msgstr "שם משפחה"
+
+#: apps.py:116 serializers.py:72
+msgid "Password"
+msgstr "סיסמה"
+
+#: apps.py:119 search.py:40
+msgid "Username"
+msgstr "שם משתמש"
+
+#: apps.py:122
+msgid "Last login"
+msgstr "כניסה אחרונה"
+
+#: apps.py:148
+msgid "Has usable password?"
+msgstr "יש סיסמה שמישה?"
+
+#: apps.py:155
+msgid "All the groups."
+msgstr "כל הקבוצות."
+
+#: apps.py:159
+msgid "All the users."
+msgstr "כל המשתמשים."
+
+#: dashboard_widgets.py:14
+msgid "Total users"
+msgstr "סך כל המשתמשים"
+
+#: dashboard_widgets.py:29
+msgid "Total groups"
+msgstr "סך הכל קבוצות"
+
+#: dashboards.py:6
+msgid "User dashboard"
+msgstr "לוח מחוונים למשתמש"
+
+#: events.py:10
+msgid "Group created"
+msgstr "הקבוצה נוצרה"
+
+#: events.py:13
+msgid "Group edited"
+msgstr "הקבוצה נערכה"
+
+#: events.py:17
+msgid "User created"
+msgstr "המשתמש נוצר"
+
+#: events.py:20
+msgid "User edited"
+msgstr "המשתמש נערך"
+
+#: events.py:25
+msgid "User logged in"
+msgstr "משתמש מחובר"
+
+#: events.py:28
+msgid "User logged out"
+msgstr "המשתמש התנתק"
+
+#: links.py:28
+msgid "User details"
+msgstr "פרטי המשתמש"
+
+#: links.py:36 views/group_views.py:25
+msgid "Create new group"
+msgstr "צור קבוצה חדשה"
+
+#: links.py:41 links.py:44 links.py:84 links.py:88
+msgid "Delete"
+msgstr "לִמְחוֹק"
+
+#: links.py:49 links.py:93
+msgid "Edit"
+msgstr "לַעֲרוֹך"
+
+#: links.py:78 views/user_views.py:32
+msgid "Create new user"
+msgstr "צור משתמש חדש"
+
+#: links.py:113
+msgid "User options"
+msgstr "אפשרויות משתמש"
+
+#: literals.py:8
+msgid "Account"
+msgstr "חֶשְׁבּוֹן"
+
+#: literals.py:12 literals.py:23
+msgid "Personal"
+msgstr "אישי"
+
+#: literals.py:16
+msgid "Attributes"
+msgstr "תכונות"
+
+#: models.py:24
+msgid "Forbid this user from changing their password."
+msgstr "אסור למשתמש זה לשנות את הסיסמה שלו."
+
+#: models.py:31
+msgid "User settings"
+msgstr "הגדרות משתמש"
+
+#: models.py:32
+msgid "Users settings"
+msgstr "הגדרות משתמשים"
+
+#: permissions.py:10
+msgid "Create new groups"
+msgstr "צור קבוצות חדשות"
+
+#: permissions.py:13
+msgid "Delete existing groups"
+msgstr "מחק קבוצות קיימות"
+
+#: permissions.py:16
+msgid "Edit existing groups"
+msgstr "ערוך קבוצות קיימות"
+
+#: permissions.py:19
+msgid "View existing groups"
+msgstr "הצג קבוצות קיימות"
+
+#: permissions.py:22
+msgid "Create new users"
+msgstr "צור משתמשים חדשים"
+
+#: permissions.py:25
+msgid "Delete existing users"
+msgstr "מחק משתמשים קיימים"
+
+#: permissions.py:28
+msgid "Edit existing users"
+msgstr "ערוך משתמשים קיימים"
+
+#: permissions.py:31
+msgid "View existing users"
+msgstr "הצג משתמשים קיימים"
+
+#: serializers.py:16
+msgid "URL of the API endpoint showing the list users of this group."
+msgstr "כתובת האתר של נקודת הקצה של ה-API המציגה את רשימת המשתמשים בקבוצה זו."
+
+#: serializers.py:18
+msgid "Users URL"
+msgstr "כתובת האתר של המשתמשים"
+
+#: serializers.py:22
+msgid "Users add URL"
+msgstr "משתמשים מוסיפים כתובת URL"
+
+#: serializers.py:26
+msgid "Users remove URL"
+msgstr "משתמשים מסירים כתובת URL"
+
+#: serializers.py:33 serializers.py:80
+msgid "URL"
+msgstr "כתובת אתר"
+
+#: serializers.py:48
+msgid "Primary key of the user to add to the group."
+msgstr "מפתח ראשי של המשתמש להוספה לקבוצה."
+
+#: serializers.py:49 serializers.py:58
+msgid "User ID"
+msgstr "זהות המשתמש"
+
+#: serializers.py:57
+msgid "Primary key of the user to remove from the group."
+msgstr "מפתח ראשי של המשתמש להסרה מהקבוצה."
+
+#: serializers.py:66
+msgid "URL of the API endpoint showing the list groups this user belongs to."
+msgstr ""
+"כתובת האתר של נקודת הקצה של ה-API המציגה את קבוצות הרשימה שהמשתמש הזה שייך "
+"אליהן."
+
+#: serializers.py:68
+msgid "Groups URL"
+msgstr "כתובת האתר של קבוצות"
+
+#: utils.py:26
+msgid "Anonymous"
+msgstr "בעילום שם"
+
+#: views/group_views.py:40
+#, python-format
+msgid "Error deleting group \"%(instance)s\"; %(exception)s"
+msgstr "שגיאה במחיקת הקבוצה &quot;%(instance)s&quot;; %(exception)s"
+
+#: views/group_views.py:47
+#, python-format
+msgid "%(count)d groups deleted successfully."
+msgstr "קבוצות %(count)d נמחקו בהצלחה."
+
+#: views/group_views.py:48
+#, python-format
+msgid "Group \"%(object)s\" deleted successfully."
+msgstr "הקבוצה &quot;%(object)s&quot; נמחקה בהצלחה."
+
+#: views/group_views.py:49
+#, python-format
+msgid "%(count)d group deleted successfully."
+msgstr "קבוצת %(count)d נמחקה בהצלחה."
+
+#: views/group_views.py:50
+#, python-format
+msgid "Delete the %(count)d selected groups."
+msgstr "מחק את הקבוצות שנבחרו %(count)d."
+
+#: views/group_views.py:51
+#, python-format
+msgid "Delete group: %(object)s."
+msgstr "מחק קבוצה: %(object)s."
+
+#: views/group_views.py:52
+#, python-format
+msgid "Delete the %(count)d selected group."
+msgstr "מחק את הקבוצה שנבחרה %(count)d."
+
+#: views/group_views.py:66
+#, python-format
+msgid "Details of group: %s"
+msgstr "פרטי הקבוצה: %s"
+
+#: views/group_views.py:83
+#, python-format
+msgid "Edit group: %s"
+msgstr "עריכת קבוצת: %s"
+
+#: views/group_views.py:104
+msgid ""
+"User groups are organizational units. They should mirror the organizational "
+"units of your organization. Groups can't be used for access control. Use "
+"roles for permissions and access control, add groups to them."
+msgstr ""
+"קבוצות משתמשים הן יחידות ארגוניות. הם צריכים לשקף את היחידות הארגוניות של "
+"הארגון שלך. לא ניתן להשתמש בקבוצות עבור בקרת גישה. השתמש בתפקידים עבור "
+"הרשאות ובקרת גישה, הוסף להם קבוצות."
+
+#: views/group_views.py:110
+msgid "There are no user groups"
+msgstr "אין קבוצות משתמשים"
+
+#: views/group_views.py:116
+msgid "Available users"
+msgstr "משתמשים זמינים"
+
+#: views/group_views.py:117
+msgid "Group users"
+msgstr "משתמשים בקבוצה"
+
+#: views/group_views.py:132
+#, python-format
+msgid "Users of group: %s"
+msgstr "משתמשי הקבוצה: %s"
+
+#: views/user_views.py:55
+#, python-format
+msgid "Error deleting user \"%(instance)s\"; %(exception)s"
+msgstr "שגיאה במחיקת המשתמש &quot;%(instance)s&quot;; %(exception)s"
+
+#: views/user_views.py:61
+#, python-format
+msgid "%(count)d users deleted successfully."
+msgstr "משתמשים %(count)d נמחקו בהצלחה."
+
+#: views/user_views.py:62
+#, python-format
+msgid "User \"%(object)s\" deleted successfully."
+msgstr "המשתמש &quot;%(object)s&quot; נמחק בהצלחה."
+
+#: views/user_views.py:63
+#, python-format
+msgid "%(count)d user deleted successfully."
+msgstr "משתמש %(count)d נמחק בהצלחה."
+
+#: views/user_views.py:64
+#, python-format
+msgid "Delete the %(count)d selected users."
+msgstr "מחק את המשתמשים שנבחרו %(count)d."
+
+#: views/user_views.py:65
+#, python-format
+msgid "Delete user: %(object)s."
+msgstr "מחק משתמש: %(object)s."
+
+#: views/user_views.py:66
+#, python-format
+msgid "Delete the %(count)d selected user."
+msgstr "מחק את המשתמש %(count)d שנבחר."
+
+#: views/user_views.py:73
+msgid ""
+"Warning! You are about to delete your own user account. You will lose access"
+" to the system. This process is not reversible."
+msgstr ""
+"אַזהָרָה! אתה עומד למחוק את חשבון המשתמש שלך. תאבד את הגישה למערכת. תהליך זה"
+" אינו הפיך."
+
+#: views/user_views.py:93
+#, python-format
+msgid "Details of user: %s"
+msgstr "פרטי משתמש: %s"
+
+#: views/user_views.py:112
+#, python-format
+msgid "Edit user: %s"
+msgstr "ערוך משתמש: %s"
+
+#: views/user_views.py:123
+msgid "Available groups"
+msgstr "קבוצות זמינות"
+
+#. Translators: "User groups" here refer to the list of groups of a
+#. specific user. The user's group membership.
+#: views/user_views.py:126
+msgid "User groups"
+msgstr "קבוצות משתמש"
+
+#: views/user_views.py:141
+#, python-format
+msgid "Groups of user: %s"
+msgstr "קבוצות משתמשים: %s"
+
+#: views/user_views.py:166
+msgid ""
+"User accounts can be create from this view. After creating a user account "
+"you will prompted to set a password for it. "
+msgstr ""
+"ניתן ליצור חשבונות משתמש מתצוגה זו. לאחר יצירת חשבון משתמש תתבקש להגדיר "
+"עבורו סיסמה."
+
+#: views/user_views.py:169
+msgid "There are no user accounts"
+msgstr "אין חשבונות משתמש"
+
+#: views/user_views.py:189
+#, python-format
+msgid "Edit options for user: %s"
+msgstr "אפשרויות עריכה למשתמש: %s"

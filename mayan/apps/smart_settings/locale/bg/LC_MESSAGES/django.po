@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -40,15 +40,15 @@ msgstr "Стойност"
 
 #: classes.py:116
 msgid "Settings namespace"
-msgstr ""
+msgstr "Пространство на имената на настройките"
 
 #: classes.py:394
 msgid "Choices"
-msgstr ""
+msgstr "Избори"
 
 #: classes.py:396
 msgid "Possible values allowed for this setting."
-msgstr ""
+msgstr "Допустими възможни стойности за тази настройка."
 
 #: classes.py:402
 msgid "Default"
@@ -527,6 +527,8 @@ msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
+"Локалното съхранение в момента е деактивирано, промените в стойностите на "
+"настройката няма да бъдат запазени или влязат в сила."
 
 #: views.py:40
 msgid "Setting updated successfully."

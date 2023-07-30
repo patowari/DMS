@@ -8,14 +8,15 @@
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2023
 # Bedreddin Şahbaz, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
-"Last-Translator: Bedreddin Şahbaz, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,12 +79,12 @@ msgstr "Yetki sayısı"
 #: model_mixins.py:88
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr ""
+msgstr "Bilinmeyen veya kullanılmayan izin: %s"
 
 #: model_mixins.py:100
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr ""
+msgstr "Bilinmeyen veya kullanılmayan izin ad alanı: %s"
 
 #: models.py:26
 msgid "A short text describing the role."
@@ -131,7 +132,7 @@ msgstr "Grup ismi"
 
 #: serializers.py:17
 msgid "Primary key"
-msgstr ""
+msgstr "Birincil anahtar"
 
 #: serializers.py:36
 msgid "Primary key of the group to add to the role."
@@ -139,7 +140,7 @@ msgstr "Role eklenecek grubun birincil anahtarı."
 
 #: serializers.py:37 serializers.py:45
 msgid "Group ID"
-msgstr ""
+msgstr "Grup ID"
 
 #: serializers.py:44
 msgid "Primary key of the group to remove from the role."
@@ -151,7 +152,7 @@ msgstr "Role eklenecek yetkinin birincil anahtarı."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
-msgstr ""
+msgstr "İzin Kimliği"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
@@ -159,27 +160,27 @@ msgstr "Rolden kaldırılacak yetkinin birincil anahtarı."
 
 #: serializers.py:67
 msgid "Groups URL"
-msgstr ""
+msgstr "Gruplar URL'si"
 
 #: serializers.py:71
 msgid "Groups add URL"
-msgstr ""
+msgstr "Gruplar URL ekler"
 
 #: serializers.py:75
 msgid "Groups remove URL"
-msgstr ""
+msgstr "Gruplar URL kaldırır"
 
 #: serializers.py:79
 msgid "Permissions URL"
-msgstr ""
+msgstr "İzinler URL'si"
 
 #: serializers.py:83
 msgid "Permissions add URL"
-msgstr ""
+msgstr "İzinler URL ekle"
 
 #: serializers.py:87
 msgid "Permissions remove URL"
-msgstr ""
+msgstr "İzinler URL'yi kaldır"
 
 #: serializers.py:94
 msgid "URL"

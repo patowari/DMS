@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Márcia Ferreira, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -38,11 +38,11 @@ msgstr "Perfil do local"
 msgid "Edit locale profile"
 msgstr "Editar perfil do local"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Utilizador"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Fuso-horário "
 

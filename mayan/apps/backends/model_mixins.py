@@ -60,28 +60,28 @@ class BackendModelMixin(models.Model):
             else:
                 raise
 
-    def get_backend_data(self):
-        return json.loads(s=self.backend_data or '{}')
-
-    def get_backend_instance(self):
-        klass = self.get_backend_class()
-
-        kwargs = self.get_backend_data()
-
-        return klass(
-            model_instance_id=self.id, **kwargs
-        )
-
     def get_backend_class_label(self):
         """
         Return the label that the backend itself provides. The backend is
         loaded but not initialized. As such the label returned is a class
         property.
         """
-        return self.get_backend_class().label
+        backend_class = self.get_backend_class()
+
+        return backend_class.label
 
     get_backend_class_label.short_description = _('Backend')
     get_backend_class_label.help_text = _('The backend class for this entry.')
 
+    def get_backend_data(self):
+        return json.loads(s=self.backend_data or '{}')
+
     def set_backend_data(self, obj):
         self.backend_data = json.dumps(obj=obj)
+
+    def get_backend_instance(self):
+        backend_class = self.get_backend_class()
+
+        kwargs = self.get_backend_data()
+
+        return backend_class(model_instance_id=self.id, **kwargs)

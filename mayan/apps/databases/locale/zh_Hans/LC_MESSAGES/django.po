@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -63,15 +63,15 @@ msgstr ""
 msgid "Backend data"
 msgstr "后端数据"
 
-#: model_mixins.py:78
+#: model_mixins.py:80
 msgid "Backend"
 msgstr "后端"
 
-#: model_mixins.py:79
+#: model_mixins.py:81
 msgid "The backend class for this entry."
 msgstr ""
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -79,15 +79,15 @@ msgid ""
 "value is considered to be the logical true."
 msgstr ""
 
-#: model_mixins.py:106
+#: model_mixins.py:108
 msgid "Condition"
 msgstr ""
 
-#: model_mixins.py:127
+#: model_mixins.py:129
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 
-#: model_mixins.py:130
+#: model_mixins.py:132
 msgid "Has a condition?"
 msgstr ""
 

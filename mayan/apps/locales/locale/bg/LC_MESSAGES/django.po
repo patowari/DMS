@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -38,11 +38,11 @@ msgstr "Локален профил"
 msgid "Edit locale profile"
 msgstr "Редактиране на локален профил"
 
-#: models.py:21
+#: models.py:20
 msgid "User"
 msgstr "Потребител"
 
-#: models.py:25
+#: models.py:24
 msgid "Timezone"
 msgstr "Часова зона"
 

@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
+# Ovadia Ovadia, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Mayan EDMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"Last-Translator: Ovadia Ovadia, 2023\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+msgid "Permissions"
+msgstr "הרשאות"
+
+#: apps.py:106 model_mixins.py:35
+msgid "Group count"
+msgstr "ספירת קבוצות"
+
+#: classes.py:66
+msgid "Insufficient permissions."
+msgstr "הרשאות לא מספיקות."
+
+#: dashboard_widgets.py:13
+msgid "Total roles"
+msgstr "סך הכל תפקידים"
+
+#: events.py:10
+msgid "Role created"
+msgstr "התפקיד נוצר"
+
+#: events.py:13
+msgid "Role edited"
+msgstr "התפקיד נערך"
+
+#: links.py:20 links.py:46 models.py:42 views.py:111
+msgid "Roles"
+msgstr "תפקידים"
+
+#: links.py:28 views.py:57
+msgid "Create new role"
+msgstr "צור תפקיד חדש"
+
+#: links.py:33 links.py:36
+msgid "Delete"
+msgstr "לִמְחוֹק"
+
+#: links.py:41
+msgid "Edit"
+msgstr "לַעֲרוֹך"
+
+#: links.py:50 models.py:34
+msgid "Groups"
+msgstr "קבוצות"
+
+#: links.py:56
+msgid "Role permissions"
+msgstr "הרשאות תפקיד"
+
+#: model_mixins.py:43
+msgid "Permission count"
+msgstr "ספירת ההרשאות"
+
+#: model_mixins.py:88
+#, python-format
+msgid "Unknown or obsolete permission: %s"
+msgstr "הרשאה לא ידועה או מיושנת: %s"
+
+#: model_mixins.py:100
+#, python-format
+msgid "Unknown or obsolete permission namespace: %s"
+msgstr "מרחב הרשאות לא ידוע או מיושן: %s"
+
+#: models.py:26
+msgid "A short text describing the role."
+msgstr "טקסט קצר המתאר את התפקיד."
+
+#: models.py:27 search.py:14 serializers.py:20
+msgid "Label"
+msgstr "תווית"
+
+#: models.py:41
+msgid "Role"
+msgstr "תַפְקִיד"
+
+#: models.py:75 serializers.py:14
+msgid "Namespace"
+msgstr "מרחב שמות"
+
+#: models.py:76
+msgid "Name"
+msgstr "שֵׁם"
+
+#: models.py:83
+msgid "Permission"
+msgstr "רְשׁוּת"
+
+#: permissions.py:10
+msgid "Create roles"
+msgstr "צור תפקידים"
+
+#: permissions.py:13
+msgid "Delete roles"
+msgstr "מחק תפקידים"
+
+#: permissions.py:16
+msgid "Edit roles"
+msgstr "ערוך תפקידים"
+
+#: permissions.py:19
+msgid "View roles"
+msgstr "הצג תפקידים"
+
+#: search.py:18
+msgid "Group name"
+msgstr "שם קבוצה"
+
+#: serializers.py:17
+msgid "Primary key"
+msgstr "מפתח ראשי"
+
+#: serializers.py:36
+msgid "Primary key of the group to add to the role."
+msgstr "מפתח ראשי של הקבוצה להוסיף לתפקיד."
+
+#: serializers.py:37 serializers.py:45
+msgid "Group ID"
+msgstr "מזהה קבוצה"
+
+#: serializers.py:44
+msgid "Primary key of the group to remove from the role."
+msgstr "מפתח ראשי של הקבוצה להסרה מהתפקיד."
+
+#: serializers.py:52
+msgid "Primary key of the permission to add to the role."
+msgstr "מפתח ראשי של ההרשאה להוסיף לתפקיד."
+
+#: serializers.py:53 serializers.py:61
+msgid "Permission ID"
+msgstr "מזהה הרשאה"
+
+#: serializers.py:60
+msgid "Primary key of the permission to remove from the role."
+msgstr "מפתח ראשי של ההרשאה להסיר מהתפקיד."
+
+#: serializers.py:67
+msgid "Groups URL"
+msgstr "כתובת אתר של קבוצות"
+
+#: serializers.py:71
+msgid "Groups add URL"
+msgstr "קבוצות מוסיפות כתובת URL"
+
+#: serializers.py:75
+msgid "Groups remove URL"
+msgstr "קבוצות מסירות כתובת URL"
+
+#: serializers.py:79
+msgid "Permissions URL"
+msgstr "כתובת אתר של הרשאות"
+
+#: serializers.py:83
+msgid "Permissions add URL"
+msgstr "הרשאות מוסיפים כתובת URL"
+
+#: serializers.py:87
+msgid "Permissions remove URL"
+msgstr "הרשאות הסרת כתובת אתר"
+
+#: serializers.py:94
+msgid "URL"
+msgstr "כתובת אתר"
+
+#: views.py:27
+msgid "Group roles"
+msgstr "תפקידים קבוצתיים"
+
+#: views.py:28
+msgid "Available roles"
+msgstr "תפקידים זמינים"
+
+#: views.py:45
+#, python-format
+msgid "Roles of group: %s"
+msgstr "תפקידי הקבוצה: %s"
+
+#: views.py:64
+#, python-format
+msgid "Error deleting role \"%(instance)s\"; %(exception)s"
+msgstr "שגיאה במחיקת התפקיד &quot;%(instance)s&quot;; %(exception)s"
+
+#: views.py:69
+#, python-format
+msgid "%(count)d roles deleted successfully."
+msgstr "תפקידי %(count)d נמחקו בהצלחה."
+
+#: views.py:70
+#, python-format
+msgid "Role \"%(object)s\" deleted successfully."
+msgstr "התפקיד &quot;%(object)s&quot; נמחק בהצלחה."
+
+#: views.py:71
+#, python-format
+msgid "%(count)d role deleted successfully."
+msgstr "תפקיד %(count)d נמחק בהצלחה."
+
+#: views.py:72
+#, python-format
+msgid "Delete role: %(object)s."
+msgstr "מחק תפקיד: %(object)s."
+
+#: views.py:73
+#, python-format
+msgid "Delete the %(count)d selected role."
+msgstr "מחק את התפקיד %(count)d שנבחר."
+
+#: views.py:74
+#, python-format
+msgid "Delete the %(count)d selected roles."
+msgstr "מחק את התפקידים שנבחרו %(count)d."
+
+#: views.py:103
+msgid ""
+"Roles are authorization units. They contain user groups which inherit the "
+"role permissions for the entire system. Roles can also part of access "
+"controls lists. Access controls list are permissions granted to a role for "
+"specific objects which its group members inherit."
+msgstr ""
+"תפקידים הם יחידות הרשאה. הם מכילים קבוצות משתמשים שיורשות את הרשאות התפקיד "
+"עבור המערכת כולה. תפקידים יכולים גם להיות חלק מרשימות בקרות הגישה. רשימת "
+"בקרות הגישה הן הרשאות המוענקות לתפקיד עבור אובייקטים ספציפיים שחברי הקבוצה "
+"שלו יורשים."
+
+#: views.py:110
+msgid "There are no roles"
+msgstr "אין תפקידים"
+
+#: views.py:116
+msgid "Role groups"
+msgstr "קבוצות תפקידים"
+
+#: views.py:117
+msgid "Available groups"
+msgstr "קבוצות זמינות"
+
+#: views.py:135
+msgid ""
+"Add groups to be part of a role. They will inherit the role's permissions "
+"and access controls."
+msgstr ""
+"הוסף קבוצות כדי להיות חלק מתפקיד. הם יירשו את ההרשאות ובקרות הגישה של "
+"התפקיד."
+
+#: views.py:138
+#, python-format
+msgid "Groups of role: %s"
+msgstr "קבוצות תפקיד: %s"
+
+#: views.py:143
+msgid "Granted permissions"
+msgstr "ניתנו הרשאות"
+
+#: views.py:144
+msgid "Available permissions"
+msgstr "הרשאות זמינות"
+
+#: views.py:185
+msgid ""
+"Permissions granted here will apply to the entire system and all objects."
+msgstr "ההרשאות שניתנו כאן יחולו על המערכת כולה ועל כל האובייקטים."
+
+#: views.py:188
+#, python-format
+msgid "Permissions for role: %s"
+msgstr "הרשאות לתפקיד: %s"
+
+#: views.py:208
+#, python-format
+msgid "Details of permission: %s"
+msgstr "פרטי הרשאה: %s"

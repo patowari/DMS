@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Erjon Sulaj <erjon1282@gmail.com>, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2023\n"
+"Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
+#: models.py:43 permissions.py:6 views.py:169
+msgid "Web links"
+msgstr ""
+
+#: events.py:10
+msgid "Web link created"
+msgstr ""
+
+#: events.py:13
+msgid "Web link edited"
+msgstr ""
+
+#: events.py:16
+msgid "Web link navigated"
+msgstr ""
+
+#: links.py:29 views.py:81
+msgid "Create new web link"
+msgstr ""
+
+#: links.py:35
+msgid "Delete"
+msgstr "Fshij"
+
+#: links.py:39 models.py:37
+msgid "Document types"
+msgstr ""
+
+#: links.py:44
+msgid "Edit"
+msgstr "Modifiko"
+
+#: links.py:51
+msgid "Navigate"
+msgstr ""
+
+#: models.py:23
+msgid "A short text describing the web link."
+msgstr ""
+
+#: models.py:24
+msgid "Label"
+msgstr "Etiketa"
+
+#: models.py:28
+msgid "Template that will be used to craft the final URL of the web link."
+msgstr ""
+
+#: models.py:30
+msgid "Template"
+msgstr ""
+
+#: models.py:33
+msgid "Enabled"
+msgstr ""
+
+#: models.py:42
+msgid "Web link"
+msgstr ""
+
+#: permissions.py:10
+msgid "Create new web links"
+msgstr ""
+
+#: permissions.py:13
+msgid "Delete web links"
+msgstr ""
+
+#: permissions.py:16
+msgid "Edit web links"
+msgstr ""
+
+#: permissions.py:19
+msgid "View existing web links"
+msgstr ""
+
+#: permissions.py:22
+msgid "View web link instances"
+msgstr ""
+
+#: serializers.py:16
+msgid "Primary key of the document type to add to the web link."
+msgstr ""
+
+#: serializers.py:17 serializers.py:26
+msgid "Document type ID"
+msgstr ""
+
+#: serializers.py:25
+msgid "Primary key of the document type to remove from the web link."
+msgstr ""
+
+#: serializers.py:33
+msgid "Document types add URL"
+msgstr ""
+
+#: serializers.py:37
+msgid "Document types remove URL"
+msgstr ""
+
+#: serializers.py:41
+msgid "Document types URL"
+msgstr ""
+
+#: serializers.py:48 serializers.py:63
+msgid "URL"
+msgstr ""
+
+#: serializers.py:66
+msgid "Navigation URL"
+msgstr ""
+
+#: views.py:32
+msgid "Web links enabled"
+msgstr ""
+
+#: views.py:33
+msgid "Available web links"
+msgstr ""
+
+#: views.py:50
+#, python-format
+msgid "Web links to enable for document type: %s"
+msgstr ""
+
+#: views.py:103
+#, python-format
+msgid "Delete web link: %s"
+msgstr ""
+
+#: views.py:108
+msgid "Document types enabled"
+msgstr ""
+
+#: views.py:109
+msgid "Available document types"
+msgstr ""
+
+#: views.py:126
+#, python-format
+msgid "Document type for which to enable web link: %s"
+msgstr ""
+
+#: views.py:143
+#, python-format
+msgid "Edit web link: %s"
+msgstr ""
+
+#: views.py:162 views.py:192
+msgid ""
+"Web links allow generating HTTP links from documents to external resources. "
+"The link URL's can contain document properties values."
+msgstr ""
+
+#: views.py:167
+msgid "There are no web links"
+msgstr ""
+
+#: views.py:197
+msgid "There are no web links for this document"
+msgstr ""
+
+#: views.py:200
+#, python-format
+msgid "Web links for document: %s"
+msgstr ""

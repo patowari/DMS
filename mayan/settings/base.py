@@ -229,32 +229,45 @@ STATIC_URL = '/static/'
 # ------------ Custom settings section ----------
 
 LANGUAGES = (
+    ('ar-eg', _('Arabic (Egypt)')),
     ('ar', _('Arabic')),
     ('bg', _('Bulgarian')),
     ('bs', _('Bosnian')),
+    ('ca', _('Catalan')),
     ('cs', _('Czech')),
     ('da', _('Danish')),
-    ('de', _('German')),
+    ('de-at', _('German (Austria)')),
+    ('de-de', _('German (Germany)')),
     ('el', _('Greek')),
     ('en', _('English')),
     ('es', _('Spanish')),
+    ('es-mx', _('Spanish (Mexico)')),
     ('es-pr', _('Spanish (Puerto Rico)')),
     ('fa', _('Persian')),
     ('fr', _('French')),
+    ('he-il', _('Hebrew (Israel)')),
     ('hu', _('Hungarian')),
+    ('hr', _('Croatian')),
     ('id', _('Indonesian')),
     ('it', _('Italian')),
     ('lv', _('Latvian')),
+    ('mn-mn', _('Mongolian (Mongolia)')),
     ('nl', _('Dutch')),
     ('pl', _('Polish')),
     ('pt', _('Portuguese')),
     ('pt-br', _('Portuguese (Brazil)')),
-    ('ro', _('Romanian')),
+    ('ro-ro', _('Romanian (Romania)')),
     ('ru', _('Russian')),
     ('sl', _('Slovenian')),
+    ('sq', _('Albanian')),
+    ('th', _('Thai')),
     ('tr', _('Turkish')),
+    ('tr-tr', _('Turkish (Turkey)')),
+    ('uk', _('Ukrainian')),
     ('vi', _('Vietnamese')),
-    ('zh-hans', _('Chinese (Simplified)'))
+    ('zh-cn', _('Chinese (China)')),
+    ('zh-hans', _('Chinese (Simplified)')),
+    ('zh-tw', _('Chinese (Taiwan)'))
 )
 
 MEDIA_URL = 'media/'

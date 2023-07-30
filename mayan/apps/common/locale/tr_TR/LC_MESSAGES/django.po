@@ -6,14 +6,15 @@
 # Translators:
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,31 +28,32 @@ msgstr "Ortak"
 
 #: dependencies.py:165
 msgid "Transifex Client"
-msgstr ""
+msgstr "Transifex İstemcisi"
 
 #: dependencies.py:182
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
+"Kod metin dizelerinin çevrimdışı çevirisine izin vermek için kullanılır."
 
 #: dependencies.py:191
 msgid "Provides style checking."
-msgstr ""
+msgstr "Stil kontrolü sağlar."
 
 #: dependencies.py:196
 msgid "Command line environment with autocompletion."
-msgstr ""
+msgstr "Otomatik tamamlama ile komut satırı ortamı."
 
 #: dependencies.py:201
 msgid "Checks proper formatting of the README file."
-msgstr ""
+msgstr "README dosyasının doğru biçimlendirmesini denetler."
 
 #: links.py:30
 msgid "About this"
-msgstr ""
+msgstr "Bu konuda"
 
 #: links.py:33
 msgid "Get the book"
-msgstr ""
+msgstr "Kitabı al"
 
 #: links.py:38
 msgid "Documentation"
@@ -67,7 +69,7 @@ msgstr "Lisans"
 
 #: links.py:50
 msgid "Copy"
-msgstr ""
+msgstr "Kopya"
 
 #: links.py:54
 msgid "Setup"
@@ -75,15 +77,15 @@ msgstr "Ayarlar"
 
 #: links.py:57
 msgid "Source code"
-msgstr ""
+msgstr "Kaynak kod"
 
 #: links.py:61
 msgid "Online store"
-msgstr ""
+msgstr "Çevrimiçi mağaza"
 
 #: links.py:65
 msgid "Get support"
-msgstr ""
+msgstr "Destek alın"
 
 #: links.py:69 queues.py:7 views.py:134
 msgid "Tools"
@@ -93,6 +95,8 @@ msgstr "Araçlar"
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
+"Bu özellik kullanımdan kaldırılmıştır ve gelecekteki bir sürümde "
+"kaldırılacaktır."
 
 #: literals.py:39
 msgid "Days"
@@ -112,7 +116,7 @@ msgstr "Sistem"
 
 #: menus.py:10 menus.py:11
 msgid "Facet"
-msgstr ""
+msgstr "Yön"
 
 #: menus.py:14
 msgid "Actions"
@@ -120,15 +124,15 @@ msgstr "Eylemler"
 
 #: menus.py:15
 msgid "Related"
-msgstr ""
+msgstr "İlişkili"
 
 #: menus.py:16
 msgid "Secondary"
-msgstr ""
+msgstr "İkincil"
 
 #: menus.py:18
 msgid "Return"
-msgstr ""
+msgstr "Geri dönüş"
 
 #: menus.py:22
 msgid "User"
@@ -136,19 +140,23 @@ msgstr "Kullanıcı"
 
 #: permissions.py:10
 msgid "Copy object"
-msgstr ""
+msgstr "Nesneyi Kopyala"
 
 #: settings.py:24
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
+"Liste modunda, \"liste yönü\" menü seçeneklerini tek tek düğmeler yerine "
+"açılır menü olarak gösterin."
 
 #: settings.py:33
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
+"Liste modunda, \"nesne\" menü seçeneklerini tek tek düğmeler yerine açılır "
+"menü olarak gösterin."
 
 #: settings.py:41
 msgid ""
@@ -156,6 +164,9 @@ msgid ""
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
+"Yerel `medya` klasörünün kullanımını devre dışı bırakır. Bu ayarı "
+"kullanırken, alternatif kalıcılığı kullanmak için tüm uygulamaların kendi "
+"depolama arka uç ayarları aracılığıyla da yapılandırılması gerekir."
 
 #: settings.py:49
 msgid ""
@@ -164,6 +175,10 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Maya edm'leri tarafından normal olarak yüklenen listeden kaldırılması "
+"gereken tüm uygulamaları belirten dizelerin listesi. Her dize noktalı bir "
+"Python yolu olmalıdır: bir uygulama yapılandırma sınıfı (tercih edilir) veya"
+" bir uygulama içeren bir paket. Örnek: ['uygulama_1', 'uygulama_2']"
 
 #: settings.py:59
 msgid ""
@@ -172,6 +187,10 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Normalde Maya edm'leri tarafından yüklenenlerin ötesinde yüklenen tüm "
+"uygulamaları belirten dizelerin listesi. Her dize noktalı bir Python yolu "
+"olmalıdır: bir uygulama yapılandırma sınıfı (tercih edilir) veya bir "
+"uygulama içeren bir paket. Örnek: ['uygulama_1', 'uygulama_2']"
 
 #: settings.py:70
 msgid ""
@@ -181,36 +200,43 @@ msgid ""
 " containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"Normalde Itech edms'leri tarafından yüklenenlerin ötesinde yüklenen tüm "
+"uygulamaları belirten dizelerin listesi. Her dize noktalı bir Python yolu "
+"olmalıdır: bir uygulama yapılandırma sınıfı (tercih edilir) veya bir "
+"uygulama içeren bir paket. Bu uygulamalar varsayılan uygulamalardan önce "
+"yüklenecektir. Örnek: ['uygulama_1', 'uygulama_2']"
 
 #: settings.py:81
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
 msgstr ""
+"Ana menüdeki marka bağlantısına eklenen görünümün adı. Bu aynı zamanda "
+"oturum açtıktan sonra kullanıcıların yönlendirileceği görünümdür."
 
 #: settings.py:90
 msgid "Name of the dashboard to display in the home view."
-msgstr ""
+msgstr "Giriş görünümünde görüntülenecek gösterge tablosunun adı."
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr ""
+msgstr "Projenin adını ayarlar."
 
 #: settings.py:99
 msgid "URL of the project's homepage."
-msgstr ""
+msgstr "Projenin ana sayfasının URL'si."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."
-msgstr ""
+msgstr "Click here to fix this."
 
 #: validators.py:41
 msgid "Enter a valid JSON value."
-msgstr ""
+msgstr "Geçerli bir JSON değeri girin."
 
 #: validators.py:65
 msgid "Enter a valid YAML value."
-msgstr ""
+msgstr "Geçerli bir YAML değeri girin."
 
 #: validators.py:80
 msgid ""
@@ -225,35 +251,37 @@ msgstr "Hakkında"
 
 #: views.py:43
 msgid "Home"
-msgstr ""
+msgstr "Ana"
 
 #: views.py:69
 #, python-format
 msgid "Fields to be copied: %s"
-msgstr ""
+msgstr "Kopyalanacak alanlar:%s"
 
 #: views.py:79
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
-msgstr ""
+msgstr "%(object_name)s%(object)s nin bir kopyasını oluşturun?"
 
 #: views.py:90
 msgid "Object copied successfully."
-msgstr ""
+msgstr "Nesne başarıyla kopyalandı."
 
 #: views.py:108
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr ""
+"Burada sonuç olmaması, yönetim görevini gerçekleştirmek için gerekli "
+"izinlere sahip olmadığı anlamına gelir."
 
 #: views.py:111
 msgid "No setup options available."
-msgstr ""
+msgstr "Kurulum seçeneği yok."
 
 #: views.py:116
 msgid "Here you can configure all aspects of the system."
-msgstr ""
+msgstr "Burada sistemin tüm yönlerini yapılandırabilirsiniz."
 
 #: views.py:118
 msgid "Setup items"
@@ -261,4 +289,4 @@ msgstr "Kurulum öğeleri"
 
 #: views.py:132
 msgid "These modules are used to do system maintenance."
-msgstr ""
+msgstr "Bu modüller sistem bakımı yapmak için kullanılır."

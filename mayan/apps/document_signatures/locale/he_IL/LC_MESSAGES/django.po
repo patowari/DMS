@@ -1,0 +1,399 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Translators:
+# Ovadia Ovadia, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Mayan EDMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"Last-Translator: Ovadia Ovadia, 2023\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+msgid "Document signatures"
+msgstr "חתימות מסמכים"
+
+#: apps.py:112
+msgid "Date and time"
+msgstr "תאריך ושעה"
+
+#: apps.py:116 models.py:52 serializers.py:61
+msgid "Key ID"
+msgstr "מזהה מפתח"
+
+#: apps.py:120 forms.py:78
+msgid "None"
+msgstr "אף אחד"
+
+#: apps.py:121 forms.py:65 models.py:57
+msgid "Signature ID"
+msgstr "מזהה חתימה"
+
+#: apps.py:126
+msgid "Type"
+msgstr "סוּג"
+
+#: events.py:10
+msgid "Detached signature created"
+msgstr "נוצרה חתימה מנותקת"
+
+#: events.py:13
+msgid "Detached signature deleted"
+msgstr "חתימה מנותקת נמחקה"
+
+#: events.py:16
+msgid "Detached signature uploaded"
+msgstr "הועלתה חתימה מנותקת"
+
+#: events.py:20
+msgid "Embedded signature created"
+msgstr "נוצרה חתימה משובצת"
+
+#: forms.py:17 forms.py:31 workflow_actions.py:19
+msgid "Key"
+msgstr "מַפְתֵחַ"
+
+#: forms.py:22 serializers.py:66 workflow_actions.py:30
+msgid ""
+"The passphrase to unlock the key and allow it to be used to sign the "
+"document file."
+msgstr ""
+"ביטוי (מחרוזת) הסיסמה לפתיחת המפתח ולאפשר להשתמש בו לחתימה על קובץ המסמך."
+
+#: forms.py:24 serializers.py:68 workflow_actions.py:27
+msgid "Passphrase"
+msgstr "ביטוי סיסמה (מחרוזת)"
+
+#: forms.py:33
+msgid "Private key that will be used to sign this document file."
+msgstr "מפתח פרטי שישמש לחתימה על קובץ מסמך זה."
+
+#: forms.py:45
+msgid "Signature is embedded?"
+msgstr "החתימה משובצת?"
+
+#: forms.py:48
+msgid "Signature date"
+msgstr "תאריך חתימה"
+
+#: forms.py:52
+msgid "Signature key ID"
+msgstr "מזהה מפתח חתימה"
+
+#: forms.py:55
+msgid "Signature key present?"
+msgstr "מפתח חתימה קיים?"
+
+#: forms.py:68
+msgid "Key fingerprint"
+msgstr "טביעת אצבע של מפתח"
+
+#: forms.py:72
+msgid "Key creation date"
+msgstr "תאריך יצירת המפתח"
+
+#: forms.py:77
+msgid "Key expiration date"
+msgstr "תאריך תפוגה של מפתח"
+
+#: forms.py:82
+msgid "Key length"
+msgstr "אורך מפתח"
+
+#: forms.py:86
+msgid "Key algorithm"
+msgstr "אלגוריתם המפתח"
+
+#: forms.py:90
+msgid "Key user ID"
+msgstr "מזהה משתמש מפתח"
+
+#: forms.py:94
+msgid "Key type"
+msgstr "סוג מפתח"
+
+#: links.py:44
+msgid "Sign detached"
+msgstr "שלט (סימן) מנותק"
+
+#: links.py:51
+msgid "Delete"
+msgstr "מחיקה"
+
+#: links.py:59
+msgid "Download"
+msgstr "הורדה"
+
+#: links.py:66
+msgid "Upload signature"
+msgstr "העלה חתימה"
+
+#: links.py:76
+msgid "Sign embedded"
+msgstr "שלט (סימן) משובץ"
+
+#: links.py:86
+msgid "Details"
+msgstr "פרטים"
+
+#: links.py:92 queues.py:8
+msgid "Signatures"
+msgstr "חתימות"
+
+#: links.py:100
+msgid "Refresh all signatures"
+msgstr "רענון את כל החתימות"
+
+#: links.py:106
+msgid "Verify all documents"
+msgstr "אימות את כל המסמכים"
+
+#: managers.py:94
+msgid "signed"
+msgstr "חתום"
+
+#: model_mixins.py:15
+msgid "Detached"
+msgstr "נותק/ה"
+
+#: model_mixins.py:17
+msgid "Embedded"
+msgstr "שובץ/צה"
+
+#: models.py:42
+msgid "Document file"
+msgstr "קובץ מסמך"
+
+#: models.py:47
+msgid "Date and time signed"
+msgstr "תאריך ושעת חתימה"
+
+#: models.py:51
+msgid "ID of the key that will be used to sign the document."
+msgstr "מזהה המפתח שישמש לחתימה על המסמך."
+
+#: models.py:61
+msgid "Public key fingerprint"
+msgstr "טביעת אצבע של מפתח ציבורי"
+
+#: models.py:68
+msgid "Document file signature"
+msgstr "חתימת קובץ מסמך"
+
+#: models.py:69
+msgid "Document file signatures"
+msgstr "חתימות קובץ מסמכים"
+
+#: models.py:86
+msgid "Signature file previously generated."
+msgstr "קובץ חתימה שנוצר בעבר."
+
+#: models.py:89
+msgid "Signature file"
+msgstr "קובץ חתימה"
+
+#: models.py:95
+msgid "Document file detached signature"
+msgstr "חתימה מנותקת של קובץ המסמך"
+
+#: models.py:96
+msgid "Document file detached signatures"
+msgstr "חתימות מנותקות של קובץ המסמך"
+
+#: models.py:100
+msgid "signature"
+msgstr "חֲתִימָה"
+
+#: models.py:151
+msgid "Document file embedded signature"
+msgstr "חתימה משובצת בקובץ מסמך"
+
+#: models.py:152
+msgid "Document file embedded signatures"
+msgstr "חתימות משובצות בקובץ המסמך"
+
+#: permissions.py:10
+msgid "Sign documents with detached signatures"
+msgstr "חתימה על מסמכים בחתימות מנותקות"
+
+#: permissions.py:14
+msgid "Sign documents with embedded signatures"
+msgstr "חתימה על מסמכים עם חתימות משובצות"
+
+#: permissions.py:18
+msgid "Delete detached signatures"
+msgstr "מחיקת חתימות מנותקות"
+
+#: permissions.py:22
+msgid "Download detached document signatures"
+msgstr "הורדת חתימות מסמכים מנותקות"
+
+#: permissions.py:26
+msgid "Upload detached document signatures"
+msgstr "העלה חתימות מסמכים מנותקות"
+
+#: permissions.py:30
+msgid "Verify document signatures"
+msgstr "אימות חתימות מסמכים"
+
+#: permissions.py:34
+msgid "View document signatures"
+msgstr "הצגת חתימות מסמכים"
+
+#: queues.py:13
+msgid "Verify key signatures"
+msgstr "אימות חתימות מפתח"
+
+#: queues.py:17
+msgid "Unverify key signatures"
+msgstr "ביטול אימות חתימות מפתח"
+
+#: queues.py:21
+msgid "Verify document file"
+msgstr "אימות קובץ המסמך"
+
+#: queues.py:26
+msgid "Verify missing embedded signature"
+msgstr "וידוא חתימה משובצת חסרה"
+
+#: queues.py:30
+msgid "Refresh existing signature information"
+msgstr "רענון מידע אודות חתימה קיימת"
+
+#: serializers.py:17
+msgid "Document file URL"
+msgstr "כתובת האתר (URL) של קובץ המסמך"
+
+#: serializers.py:59
+msgid "Primary key of the secret key used to sign the document file."
+msgstr "מפתח ראשי של הקוד הסודי המשמש לחתימה על קובץ המסמך."
+
+#: serializers.py:110
+msgid "URL"
+msgstr "כתובת אתר (URL)"
+
+#: settings.py:20
+msgid "Path to the Storage subclass to use when storing detached signatures."
+msgstr "נתיב לתת-סוג Storage לשימוש בעת אחסון חתימות מנותקות."
+
+#: settings.py:27
+msgid "Arguments to pass to the SIGNATURE_STORAGE_BACKEND."
+msgstr "פרמטרים להעביר ל-SIGNATURE_STORAGE_BACKEND."
+
+#: storages.py:13
+msgid ""
+"Unable to initialize the detached signatures storage. Check the settings {} "
+"and {} for formatting errors."
+msgstr ""
+"לא ניתן לאתחל את אחסון החתימות המנותקות. יש לבדוק את ההגדרות {} ו-{} עבור "
+"שגיאות פורמט."
+
+#: storages.py:20
+msgid "Detached signatures"
+msgstr "חתימות מנותקות"
+
+#: views.py:75 views.py:145
+msgid "Passphrase is needed to unlock this key."
+msgstr "יש צורך בביטוי (מחרוזת) סיסמה כדי לפתוח מפתח זה."
+
+#: views.py:88 views.py:158
+msgid "Passphrase is incorrect."
+msgstr "ביטוי (מחרוזת) הסיסמה שגוי."
+
+#: views.py:101 views.py:171
+msgid "Document file signed successfully."
+msgstr "קובץ המסמך נחתם בהצלחה."
+
+#: views.py:111
+#, python-format
+msgid "Sign document file \"%s\" with a detached signature"
+msgstr "חתימת קובץ המסמך &quot;%s&quot; בחתימה מנותקת"
+
+#: views.py:188
+#, python-format
+msgid "Sign document file \"%s\" with a embedded signature"
+msgstr "חתימת קובץ המסמך &quot;%s&quot; בחתימה משובצת"
+
+#: views.py:205
+#, python-format
+msgid "Delete detached signature: %s"
+msgstr "מחיקת חתימה מנותקת: %s"
+
+#: views.py:257
+#, python-format
+msgid "Upload detached signature for document file: %s"
+msgstr "העלאת חתימה מנותקת עבור קובץ המסמך: %s"
+
+#: views.py:287
+#, python-format
+msgid "Details for signature: %s"
+msgstr "פרטים לחתימה: %s"
+
+#: views.py:312
+msgid ""
+"Signatures help provide authorship evidence and tamper detection. They are "
+"very secure and hard to forge. A signature can be embedded as part of the "
+"document itself or uploaded as a separate file."
+msgstr ""
+"חתימות עוזרות לספק ראיות מחבר וזיהוי זיופים. הן בטוחות מאוד וקשה לזייף אותן."
+" ניתן לשבץ חתימה כחלק מהמסמך עצמו או להעלות חתימה מנותקת כקובץ נפרד."
+
+#: views.py:341
+msgid "There are no signatures for this document file."
+msgstr "אין חתימות עבור קובץ המסמך הזה."
+
+#: views.py:345
+#, python-format
+msgid "Signatures for document file: %s"
+msgstr "חתימות לקובץ מסמך: %s"
+
+#: views.py:356 views.py:377
+msgid "On large databases this operation may take some time to execute."
+msgstr "בבסיסי נתונים גדולים פעולה זו עשויה לקחת זמן מה לביצוע."
+
+#: views.py:358
+msgid "Refresh all signatures information?"
+msgstr "לרענן את כל מידע החתימות?"
+
+#: views.py:369
+msgid "Signature information refresh queued successfully."
+msgstr "רענון פרטי החתימה נוסף לתור המשימות בהצלחה."
+
+#: views.py:379
+msgid "Verify all document for signatures?"
+msgstr "לאמת את כל המסמכים לחתימות?"
+
+#: views.py:390
+msgid "Signature verification queued successfully."
+msgstr "אימות החתימה נוסף לתור המשימות בהצלחה."
+
+#: workflow_actions.py:22
+msgid "Private key that will be used to sign the document file."
+msgstr "מפתח פרטי שישמש לחתימה על קובץ המסמך."
+
+#: workflow_actions.py:37
+msgid "Sign document (detached)"
+msgstr "חתימה על מסמך (מנותקת)"
+
+#: workflow_actions.py:49
+msgid ""
+"Document has no file to sign. You might be trying to use this action in an "
+"initial state before the created document is yet to be processed."
+msgstr ""
+"למסמך אין קובץ תוכן שאפשר לחתום. ייתכן שזה נסיון להשתמש בפעולת חתימה בשלב "
+"התחלתי לפני שעיבוד המסמך הסתיים."
+
+#: workflow_actions.py:82
+msgid "Sign document (embedded)"
+msgstr "חתימה על מסמך (משובצת)"

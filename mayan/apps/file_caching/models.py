@@ -47,11 +47,11 @@ class Cache(CacheBusinessLogicMixin, ValueChangeModelMixin, models.Model):
         event_manager_class=EventManagerSave,
         created={
             'event': event_cache_created,
-            'target': 'self',
+            'target': 'self'
         },
         edited={
             'event': event_cache_edited,
-            'target': 'self',
+            'target': 'self'
         }
     )
     def save(self, *args, **kwargs):

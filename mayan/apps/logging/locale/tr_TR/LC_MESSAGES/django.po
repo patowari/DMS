@@ -7,14 +7,15 @@
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # abc Def <hdogan1974@gmail.com>, 2023
 # Bedreddin Şahbaz, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Bedreddin Şahbaz, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,7 +101,7 @@ msgstr "Hata loglarını görüntüle"
 
 #: serializers.py:12
 msgid "Content type"
-msgstr ""
+msgstr "İçerik türü"
 
 #: serializers.py:16
 msgid "Object ID"
@@ -112,7 +113,7 @@ msgstr "URL"
 
 #: settings.py:18
 msgid "Disable logging message ANSI color codes."
-msgstr ""
+msgstr "Günlük mesajı ANSI renk kodlarını devre dışı bırakın."
 
 #: settings.py:24
 msgid "Automatically enable logging to all apps."
@@ -120,7 +121,7 @@ msgstr "Tüm uygulamalarda loglamayı otomatik olarak etkinleştir."
 
 #: settings.py:30
 msgid "List of handlers to which logging messages will be sent."
-msgstr ""
+msgstr "Günlük iletilerinin gönderileceği işleyicilerin listesi."
 
 #: settings.py:35
 msgid "Level for the logging system."

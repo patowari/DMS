@@ -6,14 +6,15 @@
 # Translators:
 # Bedreddin Şahbaz, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,27 +24,27 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6
 msgid "Document downloads"
-msgstr ""
+msgstr "İndirilen belgeler"
 
 #: classes.py:42
 msgid "Document_file_bundle.zip"
-msgstr ""
+msgstr "Document_file_bundle.zip"
 
 #: classes.py:45
 msgid "Compressed document files"
-msgstr ""
+msgstr "Sıkıştırılmış belge dosyaları"
 
 #: events.py:6
 msgid "Documents downloads"
-msgstr ""
+msgstr "İndirilen belgeler"
 
 #: events.py:10
 msgid "Document file downloaded"
-msgstr ""
+msgstr "Belge dosyası indirildi"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "Belge dosyası ID"
 
 #: forms.py:11
 msgid "Document"
@@ -55,7 +56,7 @@ msgstr "Belge dosyası"
 
 #: forms.py:27
 msgid "Include"
-msgstr ""
+msgstr "İçermek"
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -63,7 +64,7 @@ msgstr "Dosyaları indir"
 
 #: links.py:24
 msgid "Quick download"
-msgstr ""
+msgstr "Hızlı indirme"
 
 #: literals.py:4
 #, python-format
@@ -71,57 +72,63 @@ msgid ""
 "The document files have compressed and are available for download using the "
 "link: %(download_url)s or from the downloads area (%(download_list_url)s)."
 msgstr ""
+"Belge dosyaları sıkıştırılmıştır ve şu bağlantıyı kullanarak indirilebilir: "
+"%(download_url)s veya indirilenler alanından (%(download_list_url)s)."
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Belge dosyaları indirilmeye hazır."
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr ""
+msgstr "Belge dosyalarını indirin"
 
 #: queues.py:7
 msgid "Generate a compressed document file bundle"
-msgstr ""
+msgstr "Sıkıştırılmış belge dosyası paketi oluşturma"
 
 #: views.py:24
 #, python-format
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
 msgstr ""
+"Dosya yüklemesi için \"%(exception)s\" belgesi sıraya alınamadı; "
+"%(instance)s."
 
 #: views.py:33
 #, python-format
 msgid "%(count)d document files queued for download."
-msgstr ""
+msgstr "%(count)dbelge dosyaları indirilmek üzere sıraya alındı."
 
 #: views.py:36
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
-msgstr ""
+msgstr "%(object)s belge dosyası indirilmek üzere sıraya alındı."
 
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
-msgstr ""
+msgstr "%(count)d belge dosyası indirilmek üzere sıraya alındı."
 
 #: views.py:41
 #, python-format
 msgid "Download files of %(count)d documents"
-msgstr ""
+msgstr "%(count)d belgelerinin dosyalarını indirin"
 
 #: views.py:42
 #, python-format
 msgid "Download files of document: %(object)s"
-msgstr ""
+msgstr "Belge dosyalarını indirin: %(object)s"
 
 #: views.py:43
 #, python-format
 msgid "Download files of %(count)d document"
-msgstr ""
+msgstr "%(count)d belgesinin dosyalarını indirin"
 
 #: views.py:50
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"İşlem arka planda gerçekleştirilecektir. Belge dosyaları indirilenler "
+"alanında mevcut olacaktır."

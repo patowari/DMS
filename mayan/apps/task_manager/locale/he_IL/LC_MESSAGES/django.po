@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
+# Ovadia Ovadia, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"Last-Translator: Ovadia Ovadia, 2023\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: apps.py:28 links.py:10 permissions.py:6
+msgid "Task manager"
+msgstr "מנהל משימות"
+
+#: apps.py:99
+msgid "Label"
+msgstr "תווית"
+
+#: apps.py:103
+msgid "Name"
+msgstr "שֵׁם"
+
+#: apps.py:108
+msgid "Default queue?"
+msgstr "תור ברירת מחדל?"
+
+#: apps.py:113
+msgid "Is transient?"
+msgstr "האם חולף?"
+
+#: apps.py:117
+msgid "Type"
+msgstr "סוּג"
+
+#: apps.py:122
+msgid "Start time"
+msgstr "שעת התחלה"
+
+#: apps.py:126
+msgid "Host"
+msgstr "מנחה"
+
+#: apps.py:130
+msgid "Arguments"
+msgstr "טיעונים"
+
+#: apps.py:134
+msgid "Keyword arguments"
+msgstr "ארגומנטים של מילות מפתח"
+
+#: apps.py:138
+msgid "Worker process ID"
+msgstr "מזהה תהליך עובד"
+
+#: permissions.py:10
+msgid "View tasks"
+msgstr "הצג משימות"
+
+#: settings.py:11
+msgid "Celery"
+msgstr "סלרי"
+
+#: settings.py:17
+msgid "Default: \"AMQPLAIN\". Set custom amqp login method."
+msgstr ""
+"ברירת מחדל: &quot;AMQPLAIN&quot;. הגדר שיטת התחברות מותאמת אישית של amqp."
+
+#: settings.py:23
+msgid ""
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
+"specific transports default values."
+msgstr ""
+"ברירת מחדל: &quot;amqp://&quot;. כתובת אתר ברירת מחדל של מתווך. זו חייבת "
+"להיות כתובת URL בצורה של: "
+"transport://userid:password@hostname:port/virtual_host רק חלק הסכמה "
+"(transport://) נדרש, השאר הוא אופציונלי, וברירת המחדל היא ערכי ברירת המחדל "
+"של התעבורה הספציפיים."
+
+#: settings.py:32
+msgid ""
+"Default: \"Disabled\". Toggles SSL usage on broker connection and SSL "
+"settings. The valid values for this option vary by transport."
+msgstr ""
+"ברירת מחדל: &quot;מושבת&quot;. מחליף את השימוש ב-SSL בחיבור המתווך ובהגדרות "
+"SSL. הערכים החוקיים עבור אפשרות זו משתנים בהתאם לתחבורה."
+
+#: settings.py:40
+msgid ""
+"Default: No result backend enabled by default. The backend used to store "
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
+msgstr ""
+"ברירת מחדל: אין קצה אחורי של תוצאה מופעל כברירת מחדל. הקצה האחורי המשמש "
+"לאחסון תוצאות משימות (מצבות). עיין בכתובת "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
+
+#: tests/literals.py:11
+msgid "Test queue"
+msgstr "תור בדיקה"
+
+#: views.py:13
+msgid "Background task queues"
+msgstr "תורי משימות ברקע"

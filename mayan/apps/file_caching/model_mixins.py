@@ -169,7 +169,14 @@ class CacheBusinessLogicMixin:
         else:
             for partition in self.partitions.all():
                 partition._event_action_object = self
-                partition.purge(user=user)
+                try:
+                    partition.purge(user=user)
+                except Exception as exception:
+                    logger.error(
+                        'Unable to purge partition ID: %d; %s',
+                        partition.pk, exception
+                    )
+                    raise
 
     @cached_property
     def storage(self):
@@ -290,9 +297,10 @@ class CachePartitionBusinessLogicMixin:
                 parition_file.delete()
             except Exception as exception:
                 logger.error(
-                    'Unable to purge cache partition file ID: %d; %s',
+                    'Unable to delete partition file ID: %d; %s',
                     parition_file.pk, exception
                 )
+                raise
 
 
 class CachePartitionFileBusinessLogicMixin:

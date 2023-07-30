@@ -7,14 +7,15 @@
 # abc Def <hdogan1974@gmail.com>, 2023
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -254,7 +255,7 @@ msgstr ""
 
 #: serializers.py:50 serializers.py:59
 msgid "Document type ID"
-msgstr ""
+msgstr "Belge türü kimliği"
 
 #: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
@@ -266,15 +267,15 @@ msgstr ""
 
 #: serializers.py:70
 msgid "Document types URL"
-msgstr ""
+msgstr "Belge türleri URL'si"
 
 #: serializers.py:74
 msgid "Document types add URL"
-msgstr ""
+msgstr "Belge türleri URL ekle"
 
 #: serializers.py:78
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Belge türleri URL'yi kaldır"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"
@@ -282,7 +283,7 @@ msgstr ""
 
 #: serializers.py:126
 msgid "Documents URL"
-msgstr ""
+msgstr "Belge URL'si"
 
 #: views/smart_link_condition_views.py:47
 msgid ""

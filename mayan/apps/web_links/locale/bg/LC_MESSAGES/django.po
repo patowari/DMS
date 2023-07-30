@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -110,7 +110,7 @@ msgstr "Основен ключ от типа документ, който да 
 
 #: serializers.py:17 serializers.py:26
 msgid "Document type ID"
-msgstr ""
+msgstr "ID на типа документ"
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
@@ -118,15 +118,15 @@ msgstr "Основен ключ от типа документ, който да 
 
 #: serializers.py:33
 msgid "Document types add URL"
-msgstr ""
+msgstr "Типовете документи добавят URL"
 
 #: serializers.py:37
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Типовете документи премахват URL"
 
 #: serializers.py:41
 msgid "Document types URL"
-msgstr ""
+msgstr "URL за типове документи"
 
 #: serializers.py:48 serializers.py:63
 msgid "URL"
@@ -134,7 +134,7 @@ msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "URL адрес за навигация"
 
 #: views.py:32
 msgid "Web links enabled"

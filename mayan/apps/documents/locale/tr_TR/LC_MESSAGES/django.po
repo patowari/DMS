@@ -9,14 +9,15 @@
 # abc Def <hdogan1974@gmail.com>, 2023
 # emreunal <bywant@gmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -322,7 +323,7 @@ msgstr "Kodlama"
 
 #: forms/document_file_forms.py:74 models/document_file_models.py:101
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: forms/document_file_forms.py:80
 msgid "Exists in storage"
@@ -376,7 +377,7 @@ msgstr "Backend"
 #: forms/document_version_page_forms.py:29
 #: serializers/document_version_serializers.py:38
 msgid "Content type"
-msgstr ""
+msgstr "İçerik türü"
 
 #: forms/document_version_page_forms.py:32
 msgid "Object ID"
@@ -1126,7 +1127,7 @@ msgstr ""
 #: serializers/document_version_serializers.py:57
 #: serializers/trashed_document_serializers.py:12
 msgid "Image URL"
-msgstr ""
+msgstr "Görüntü URL'si"
 
 #: serializers/document_file_serializers.py:41
 #: serializers/document_file_serializers.py:109
@@ -1147,7 +1148,7 @@ msgstr "Eylem"
 #: serializers/document_file_serializers.py:74
 #: serializers/document_version_serializers.py:104
 msgid "Document URL"
-msgstr ""
+msgstr "Belge URL'si"
 
 #: serializers/document_file_serializers.py:78
 msgid "Download URL"
@@ -1183,7 +1184,7 @@ msgstr ""
 #: serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
 msgid "Document type ID"
-msgstr ""
+msgstr "Belge türü kimliği"
 
 #: serializers/document_serializers.py:35
 msgid "Document change type URL"
@@ -1244,7 +1245,7 @@ msgstr ""
 
 #: serializers/favorite_document_serializers.py:17
 msgid "Document ID"
-msgstr ""
+msgstr "Belge ID"
 
 #: serializers/trashed_document_serializers.py:16
 msgid "Restore URL"

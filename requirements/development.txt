@@ -6,4 +6,4 @@ django-silk==4.3.0
 flake8==4.0.1
 ipython==7.32.0
 readme==0.7.1
-safety==1.10.3
+safety==2.3.5

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -1206,7 +1206,7 @@ msgstr "Идентификатор на типа на документа за н
 #: serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
 msgid "Document type ID"
-msgstr ""
+msgstr "ID на типа документ"
 
 #: serializers/document_serializers.py:35
 msgid "Document change type URL"

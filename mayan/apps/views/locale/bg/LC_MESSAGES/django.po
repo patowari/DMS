@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -163,13 +163,15 @@ msgstr "Брой на обектите, които ще бъдат показа�
 
 #: settings.py:23
 msgid "A string specifying the name to use for the paging parameter."
-msgstr ""
+msgstr "Низ, указващ името, което да се използва за параметъра за страниране."
 
 #: settings.py:29
 msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr ""
+"Покажете бутон за изпращане и изчакайте бутона за изпращане да бъде "
+"натиснат, преди да обработите качването."
 
 #: templates/views/app/foot.html:46
 msgid "Cancel upload"

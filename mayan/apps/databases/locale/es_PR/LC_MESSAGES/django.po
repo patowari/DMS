@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -64,15 +64,15 @@ msgstr "Datos codificados en JSON para la clase de backend."
 msgid "Backend data"
 msgstr "Datos del controlador"
 
-#: model_mixins.py:78
+#: model_mixins.py:80
 msgid "Backend"
 msgstr "Controlador"
 
-#: model_mixins.py:79
+#: model_mixins.py:81
 msgid "The backend class for this entry."
 msgstr "La clase de backend para esta entrada."
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -84,16 +84,16 @@ msgstr ""
 "una cadena vacía ('') se consideran falsas lógicas, cualquier otro valor se "
 "considera verdadero lógico."
 
-#: model_mixins.py:106
+#: model_mixins.py:108
 msgid "Condition"
 msgstr "Condición"
 
-#: model_mixins.py:127
+#: model_mixins.py:129
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 "El objeto se ejecutará, dependiendo del valor de retorno de la condición."
 
-#: model_mixins.py:130
+#: model_mixins.py:132
 msgid "Has a condition?"
 msgstr "¿Tiene una condición?"
 

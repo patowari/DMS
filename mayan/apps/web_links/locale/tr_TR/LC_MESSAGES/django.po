@@ -7,14 +7,15 @@
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # abc Def <hdogan1974@gmail.com>, 2023
 # Bedreddin Şahbaz, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:28+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: Bedreddin Şahbaz, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,7 +110,7 @@ msgstr "Web bağlantısına eklenecek belge türünün birincil anahtarı."
 
 #: serializers.py:17 serializers.py:26
 msgid "Document type ID"
-msgstr ""
+msgstr "Belge türü kimliği"
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
@@ -117,15 +118,15 @@ msgstr "Web bağlantısından kaldırılacak belge türünün birincil anahtarı
 
 #: serializers.py:33
 msgid "Document types add URL"
-msgstr ""
+msgstr "Belge türleri URL ekle"
 
 #: serializers.py:37
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Belge türleri URL'yi kaldır"
 
 #: serializers.py:41
 msgid "Document types URL"
-msgstr ""
+msgstr "Belge türleri URL'si"
 
 #: serializers.py:48 serializers.py:63
 msgid "URL"
@@ -133,7 +134,7 @@ msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "Gezinme URL'si"
 
 #: views.py:32
 msgid "Web links enabled"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -382,7 +382,7 @@ msgstr ""
 
 #: serializers.py:49
 msgid "Documents URL"
-msgstr ""
+msgstr "URL адрес на документи"
 
 #: serializers.py:52 serializers.py:118 serializers.py:176
 msgid "Index URL"
@@ -410,7 +410,7 @@ msgstr ""
 
 #: serializers.py:239
 msgid "Document types URL"
-msgstr ""
+msgstr "URL за типове документи"
 
 #: serializers.py:245
 msgid "URL of the API endpoint to add document types to this index template."
@@ -420,7 +420,7 @@ msgstr ""
 
 #: serializers.py:247
 msgid "Document types add URL"
-msgstr ""
+msgstr "URL за добавяне типове документи"
 
 #: serializers.py:253
 msgid ""
@@ -431,7 +431,7 @@ msgstr ""
 
 #: serializers.py:255
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Типовете документи премахват URL"
 
 #: serializers.py:260
 msgid "Index template root node ID"
@@ -452,7 +452,7 @@ msgstr ""
 
 #: serializers.py:318 serializers.py:327
 msgid "Document type ID"
-msgstr ""
+msgstr "ID на типа документ"
 
 #: serializers.py:326
 msgid "Primary key of the document type to remove from the index template."

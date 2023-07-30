@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:20+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -251,17 +251,20 @@ msgstr ""
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
+"%(count)d файлове с документи, изпратени до опашката с метаданни на файла."
 
 #: views.py:124
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
-msgstr ""
+msgstr "%(count)d файл с документ, изпратен в опашката с метаданни на файла."
 
 #: views.py:133
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
+"Изпращане на избрания файл с документ към опашката с метаданни на файла?"
 msgstr[1] ""
+"Изпращане на избраните файлове с документи в опашката с метаданни на файла?"
 
 #: views.py:164
 #, python-format

@@ -8,14 +8,15 @@
 # Caner Başaran <basaran.caner@gmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # Bedreddin Şahbaz, 2023
+# Emine Öztürk <oemine075@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-03 05:19+0000\n"
+"POT-Creation-Date: 2023-07-15 01:27+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Bedreddin Şahbaz, 2023\n"
+"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr "Görünüm"
 
 #: dependencies.py:8
 msgid "Lato font"
-msgstr ""
+msgstr "Lato yazı tipi"
 
 #: dependencies.py:12
 msgid "Bootstrap"
@@ -41,11 +42,11 @@ msgstr "Bootswatch"
 
 #: dependencies.py:30
 msgid "Fancybox"
-msgstr ""
+msgstr "Fancybox"
 
 #: dependencies.py:34
 msgid "FontAwesome"
-msgstr ""
+msgstr "FontAwesome"
 
 #: dependencies.py:38
 msgid "jQuery"
@@ -57,19 +58,19 @@ msgstr "JQuery Formu"
 
 #: dependencies.py:46
 msgid "jQuery Lazy Load"
-msgstr ""
+msgstr "jQuery Lazy Load"
 
 #: dependencies.py:50
 msgid "JQuery Match Height"
-msgstr ""
+msgstr "JQuery Match Height"
 
 #: dependencies.py:54
 msgid "Select 2"
-msgstr ""
+msgstr "2'yi seçin"
 
 #: dependencies.py:58
 msgid "Toastr"
-msgstr ""
+msgstr "Toastr"
 
 #: dependencies.py:62
 msgid "URI.js"
@@ -85,7 +86,7 @@ msgstr "Tema düzenlendi"
 
 #: events.py:16
 msgid "User theme edited"
-msgstr ""
+msgstr "Kullanıcı teması düzenlendi"
 
 #: links.py:18
 msgid "Theme settings"
@@ -124,6 +125,8 @@ msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
+"Farklı kullanıcı arabirimi öğelerinin görünümünü değiştirmek için CSS stil "
+"sayfası."
 
 #: models.py:26
 msgid "Stylesheet"
@@ -163,7 +166,7 @@ msgstr "Mevcut temaları görüntüle"
 
 #: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "AJAX yönlendirmeleri için özel HTTP yanıt kodu."
 
 #: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
@@ -171,7 +174,7 @@ msgstr "Görünüm başlığı olarak görüntülenecek maksimum karakter sayıs
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Sistem mesajlarının görüntüleneceği konumu belirleyin."
 
 #: settings.py:40
 msgid ""
@@ -182,13 +185,15 @@ msgstr ""
 #: settings.py:47
 msgid ""
 "Maximum number of requests that can be made before throttling is enabled."
-msgstr ""
+msgstr "Daraltma etkinleştirilmeden önce yapılabilecek en fazla istek sayısı."
 
 #: settings.py:54
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Daraltılmış bir isteğin temizleneceği milisaniye cinsinden süre, ek bir "
+"isteğin gerçekleştirilmesine izin verir."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -223,6 +228,8 @@ msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
 msgstr ""
+"Konum doğru olabilir, ancak hesabınıza erişmek için gerekli izne sahip "
+"değilsiniz."
 
 #: templates/500.html:5 templates/500.html:30
 #: templates/appearance/root.html:47
@@ -322,6 +329,8 @@ msgid ""
 "Too many pending requests. Additional requests will be blocked until a "
 "pending one is completed or after the cooling off period ends."
 msgstr ""
+"Çok fazla bekleyen istek var. Bekleyen bir istek tamamlanana kadar veya "
+"soğuma süresi sona erdikten sonra ek istekler engellenir."
 
 #: templates/appearance/base.html:73
 msgid "Object"
