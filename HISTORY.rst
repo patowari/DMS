@@ -161,6 +161,10 @@
 - Replace PyPDF2 with the original pypdf package.
 - Remove search many document level fields from document files, document file
   pages, document version, and document version pages.
+- Support Django's ``CONN_MAX_AGE`` in Docker via the new environment
+  variable ``MAYAN_DATABASE_CONN_MAX_AGE``.
+- Support setting the RabbitMQ Docker hostname via the environment variable
+  ``MAYAN_DOCKER_RABBITMQ_HOSTNAME``. Defaults to ``rabbitmq``.
 
 4.4.8 (2023-07-15)
 ==================
