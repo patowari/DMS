@@ -278,7 +278,9 @@ class CachePartitionBusinessLogicMixin:
         )['file_size__sum'] or 0
 
     def get_total_size_display(self):
-        return filesizeformat(bytes_=self.get_total_size())
+        return filesizeformat(
+            bytes_=self.get_total_size()
+        )
 
     get_total_size_display.short_description = _('Current size')
     get_total_size_display.help_text = _(
@@ -333,7 +335,9 @@ class CachePartitionFileBusinessLogicMixin:
         self.file_size = self.partition.cache.storage.size(
             name=self.full_filename
         )
-        self.save(update_fields=('file_size',))
+        self.save(
+            update_fields=('file_size',)
+        )
         if self.file_size > self.partition.cache.maximum_size:
             raise FileCachingException(
                 'Cache partition file %s is bigger than the maximum cache '
