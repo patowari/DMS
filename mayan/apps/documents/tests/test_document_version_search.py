@@ -348,55 +348,6 @@ class DocumentVersionPageSearchTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_search_model_document_version_page_by_document_description_no_permission(self):
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_version__document__description': self._test_document.description
-            }
-        )
-        self.assertTrue(self._test_document_version_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_search_model_document_version_page_by_document_description_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_version_view
-        )
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_version__document__description': self._test_document.description
-            }
-        )
-        self.assertTrue(self._test_document_version_page in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_search_model_document_version_page_by_document_description_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_version_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_version__document__description': self._test_document.description
-            }
-        )
-        self.assertTrue(self._test_document_version_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
     def test_search_model_document_version_page_by_document_uuid_no_permission(self):
         self._clear_events()
 
@@ -488,55 +439,6 @@ class DocumentVersionPageSearchTestCase(
         queryset = self._do_test_search(
             query={
                 'document_version__document__document_type__label': self._test_document_type.label
-            }
-        )
-        self.assertTrue(self._test_document_version_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_search_model_document_version_page_by_document_version_comment_no_permission(self):
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_version__comment': self._test_document_version.comment
-            }
-        )
-        self.assertTrue(self._test_document_version_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_search_model_document_version_page_by_document_version_comment_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_version_view
-        )
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_version__comment': self._test_document_version.comment
-            }
-        )
-        self.assertTrue(self._test_document_version_page in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_search_model_document_version_page_by_document_version_comment_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_version_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_version__comment': self._test_document_version.comment
             }
         )
         self.assertTrue(self._test_document_version_page not in queryset)

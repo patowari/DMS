@@ -9,6 +9,56 @@ Removal of the unused signal ``signal_post_document_created``. Use Django's
 default ``post_save`` signal for documents or
 ``signal_post_document_file_upload`` to handle new file uploads.
 
+Search fields removed:
+
+- Cabinet membership of document removed from:
+
+  - Document file
+  - Document file page
+  - Document version
+  - Document version page
+
+- Document comments removed from:
+
+  - Document file
+  - Document file page
+  - Document version
+  - Document version page
+
+- Worfklow transition comments removed from:
+
+  - Document file
+  - Document file page
+  - Document version
+  - Document version page
+
+- Document description removed from:
+
+  - Document file page
+  - Document version page
+
+- Document file MIME type removed from:
+
+  - Document file page
+
+- Document version comment removed from:
+
+  - Document version page
+
+- Metadata removed from:
+
+  - Document file
+  - Document file page
+  - Document version
+  - Document version page
+
+- Tags removed from:
+
+  - Document file
+  - Document file page
+  - Document version
+  - Document version page
+
 
 Task manager
 ^^^^^^^^^^^^

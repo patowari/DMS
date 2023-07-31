@@ -95,17 +95,10 @@ search_model_document_file_page.add_model_field(
     field='document_file__document__label', label=_('Document label')
 )
 search_model_document_file_page.add_model_field(
-    field='document_file__document__description',
-    label=_('Document description')
-)
-search_model_document_file_page.add_model_field(
     field='document_file__checksum', label=_('Document file checksum')
 )
 search_model_document_file_page.add_model_field(
     field='document_file__document__uuid', label=_('Document UUID')
-)
-search_model_document_file_page.add_model_field(
-    field='document_file__mimetype', label=_('Document file MIME type')
 )
 
 # Document type
@@ -163,14 +156,7 @@ search_model_document_version_page.add_model_field(
     label=_('Document type label')
 )
 search_model_document_version_page.add_model_field(
-    field='document_version__comment', label=_('Document version comment')
-)
-search_model_document_version_page.add_model_field(
     field='document_version__document__label', label=_('Document label')
-)
-search_model_document_version_page.add_model_field(
-    field='document_version__document__description',
-    label=_('Document description')
 )
 search_model_document_version_page.add_model_field(
     field='document_version__document__uuid', label=_('Document UUID')

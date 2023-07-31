@@ -84,7 +84,9 @@ class TagAPIViewTestMixin:
         )
 
     def _request_test_tag_create_api_view(self):
-        pk_list = list(Tag.objects.values('pk'))
+        pk_list = list(
+            Tag.objects.values('pk')
+        )
 
         response = self.post(
             viewname='rest_api:tag-list', data={

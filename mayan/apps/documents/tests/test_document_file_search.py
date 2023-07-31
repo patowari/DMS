@@ -13,7 +13,11 @@ class DocumentFileSearchTestCase(
     auto_upload_test_document = False
 
     def _do_test_search(self, query):
-        terms = str(tuple(query.values())[0]).strip()
+        terms = str(
+            tuple(
+                query.values()
+            )[0]
+        ).strip()
         self.assertTrue(terms is not None)
         self.assertTrue(terms != '')
 
@@ -427,7 +431,11 @@ class DocumentFilePageSearchTestCase(
     auto_upload_test_document = False
 
     def _do_test_search(self, query):
-        terms = str(tuple(query.values())[0]).strip()
+        terms = str(
+            tuple(
+                query.values()
+            )[0]
+        ).strip()
         self.assertTrue(terms is not None)
         self.assertTrue(terms != '')
 
@@ -489,55 +497,6 @@ class DocumentFilePageSearchTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_search_model_document_file_page_by_document_description_no_permission(self):
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_file__document__description': self._test_document.description
-            }
-        )
-        self.assertTrue(self._test_document_file_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_search_model_document_file_page_by_document_description_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
-        )
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_file__document__description': self._test_document.description
-            }
-        )
-        self.assertTrue(self._test_document_file_page in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_search_model_document_file_page_by_document_description_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_file__document__description': self._test_document.description
-            }
-        )
-        self.assertTrue(self._test_document_file_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
     def test_search_model_document_file_page_by_document_file_checksum_no_permission(self):
         self._clear_events()
 
@@ -580,55 +539,6 @@ class DocumentFilePageSearchTestCase(
         queryset = self._do_test_search(
             query={
                 'document_file__checksum': self._test_document_file.checksum
-            }
-        )
-        self.assertTrue(self._test_document_file_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_search_model_document_file_page_by_document_file_mime_type_no_permission(self):
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_file__mimetype': self._test_document_file.mimetype
-            }
-        )
-        self.assertTrue(self._test_document_file_page not in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_search_model_document_file_page_by_document_file_mime_type_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
-        )
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_file__mimetype': self._test_document_file.mimetype
-            }
-        )
-        self.assertTrue(self._test_document_file_page in queryset)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_search_model_document_file_page_by_document_file_mime_type_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        queryset = self._do_test_search(
-            query={
-                'document_file__mimetype': self._test_document_file.mimetype
             }
         )
         self.assertTrue(self._test_document_file_page not in queryset)

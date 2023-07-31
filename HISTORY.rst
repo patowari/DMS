@@ -159,6 +159,8 @@
 - Add support for changing the worker log level via the new environment
   variable ``MAYAN_WORKER_LOG_LEVEL`` which defaults to ``ERROR``.
 - Replace PyPDF2 with the original pypdf package.
+- Remove search many document level fields from document files, document file
+  pages, document version, and document version pages.
 
 4.4.8 (2023-07-15)
 ==================

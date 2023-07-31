@@ -18,30 +18,6 @@ search_model_document.add_model_field(
     field='tags__color', label=_('Tag color')
 )
 
-# Document file
-
-search_model_document_file.add_model_field(
-    field='document__tags__label', label=_('Document tags')
-)
-
-# Document file page
-
-search_model_document_file_page.add_model_field(
-    field='document_file__document__tags__label', label=_('Document tags')
-)
-
-# Document version
-
-search_model_document_version.add_model_field(
-    field='document__tags__label', label=_('Document tags')
-)
-
-# Document version page
-
-search_model_document_version_page.add_model_field(
-    field='document_version__document__tags__label', label=_('Document tags')
-)
-
 # Tag
 
 search_model_tag = SearchModel(

@@ -17,50 +17,6 @@ search_model_document.add_model_field(
     field='metadata__value', label=_('Metadata value')
 )
 
-# Document file
-
-search_model_document_file.add_model_field(
-    field='document__metadata__metadata_type__name',
-    label=_('Document metadata type')
-)
-search_model_document_file.add_model_field(
-    field='document__metadata__value',
-    label=_('Document metadata value')
-)
-
-# Document file page
-
-search_model_document_file_page.add_model_field(
-    field='document_file__document__metadata__metadata_type__name',
-    label=_('Document metadata type')
-)
-search_model_document_file_page.add_model_field(
-    field='document_file__document__metadata__value',
-    label=_('Document metadata value')
-)
-
-# Document version
-
-search_model_document_version.add_model_field(
-    field='document__metadata__metadata_type__name',
-    label=_('Document metadata type')
-)
-search_model_document_version.add_model_field(
-    field='document__metadata__value',
-    label=_('Document metadata value')
-)
-
-# Document version page
-
-search_model_document_version_page.add_model_field(
-    field='document_version__document__metadata__metadata_type__name',
-    label=_('Document metadata type')
-)
-search_model_document_version_page.add_model_field(
-    field='document_version__document__metadata__value',
-    label=_('Document metadata value')
-)
-
 # Metadata type
 
 search_model_metadata_type = SearchModel(
