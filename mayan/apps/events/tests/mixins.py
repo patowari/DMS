@@ -1,3 +1,5 @@
+from django.db.models import Q
+
 from actstream.models import Action, any_stream
 
 from mayan.apps.acls.classes import ModelPermission
@@ -80,10 +82,19 @@ class EventTestMixin:
         self._test_events = []
 
     def _create_test_event(self, action_object=None, actor=None, target=None):
-        self._test_event = self._test_event_type.commit(
+        pk_list = list(
+            Action.objects.values_list('pk', flat=True)
+        )
+
+        self._test_event_type.commit(
             action_object=action_object, actor=actor or self._test_case_user,
             target=target
         )
+
+        self._test_event = Action.objects.get(
+            ~Q(pk__in=pk_list)
+        )
+
         self._test_events.append(self._test_event)
 
 

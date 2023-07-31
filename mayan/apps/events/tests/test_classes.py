@@ -1,9 +1,8 @@
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from ..classes import (
-    EventManagerMethodAfter, EventModelRegistry, EventType, ModelEventType
-)
+from ..classes import EventModelRegistry, EventType, ModelEventType
 from ..decorators import method_event
+from ..event_managers import EventManagerMethodAfter
 
 from .mixins import EventTypeTestMixin
 

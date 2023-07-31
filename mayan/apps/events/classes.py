@@ -345,8 +345,6 @@ class EventType:
                 # same user-event-object.
                 continue
 
-        return result
-
     def commit(self, action_object=None, actor=None, target=None):
         # Hidden import.
         from .tasks import task_event_commit
