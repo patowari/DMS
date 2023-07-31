@@ -125,10 +125,6 @@ class DocumentFileBusinessLogicMixin:
         target='self'
     )
     def _introspect(self):
-        Document = apps.get_model(
-            app_label='documents', model_name='Document'
-        )
-
         DocumentFile = apps.get_model(
             app_label='documents', model_name='DocumentFile'
         )
@@ -152,8 +148,8 @@ class DocumentFileBusinessLogicMixin:
             self.page_count_update(save=False)
         except Exception as exception:
             logger.error(
-                'Error introspecting new document file for document "%s"; %s',
-                self.document, exception, exc_info=True
+                'Error introspecting new document file for document '
+                '"%s"; %s', self.document, exception, exc_info=True
             )
             raise
         else:
@@ -186,9 +182,9 @@ class DocumentFileBusinessLogicMixin:
 
         block_size = setting_hash_block_size.value
         if block_size == 0:
-            # If the setting value is 0 that means disable read limit. To disable
-            # the read limit passing None won't work, we pass -1 instead as per
-            # the Python documentation.
+            # If the setting value is 0 that means disable read limit.
+            # To disable the read limit passing None won't work, we pass
+            # -1 instead as per the Python documentation.
             # https://docs.python.org/2/tutorial/inputoutput.html#methods-of-file-objects
             block_size = -1
 
@@ -202,11 +198,19 @@ class DocumentFileBusinessLogicMixin:
 
                     hash_object.update(data)
 
-            self.checksum = str(hash_object.hexdigest())
+            self.checksum = str(
+                hash_object.hexdigest()
+            )
+
             if save:
-                self.save(update_fields=('checksum',))
+                self.save(
+                    update_fields=('checksum',)
+                )
 
             return self.checksum
+
+    def get_document_file_latest(self):
+        return self.document.files.exclude(pk=self.pk).order_by('timestamp').only('id').last()
 
     def execute_pre_save_hooks(self):
         """
@@ -257,7 +261,9 @@ class DocumentFileBusinessLogicMixin:
         cache_filename = 'intermediate_file'
 
         try:
-            cache_file = self.cache_partition.get_file(filename=cache_filename)
+            cache_file = self.cache_partition.get_file(
+                filename=cache_filename
+            )
         except CachePartitionFile.DoesNotExist:
             logger.debug(msg='Intermediate file not found.')
 

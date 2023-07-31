@@ -17,6 +17,32 @@ logger = logging.getLogger(name=__name__)
 
 # Document file
 
+@app.task(bind=True, ignore_result=True, retry_backoff=True)
+def task_document_file_delete(self, document_file_id, user_id=None):
+    DocumentFile = apps.get_model(
+        app_label='documents', model_name='DocumentFile'
+    )
+    User = get_user_model()
+
+    try:
+        if user_id:
+            user = User.objects.get(pk=user_id)
+        else:
+            user = None
+
+        document_file = DocumentFile.objects.get(
+            pk=document_file_id
+        )
+    except OperationalError as exception:
+        raise self.retry(exc=exception)
+
+    try:
+        document_file._event_actor = user
+        document_file.delete()
+    except OperationalError as exception:
+        raise self.retry(exc=exception)
+
+
 @app.task(
     bind=True, default_retry_delay=UPDATE_PAGE_COUNT_RETRY_DELAY,
     ignore_result=True

@@ -25,8 +25,8 @@ class TrashedDocumentBusinessLogicMixin:
         if first_page:
             return first_page.get_api_image_url(
                 maximum_layer_order=None, transformation_instance_list=None,
-                user=user, viewname='rest_api:trasheddocument-image',
-                view_kwargs={'document_id': self.pk}
+                view_kwargs={'document_id': self.pk},
+                viewname='rest_api:trasheddocument-image', user=user
             )
         else:
             raise AppImageError(error_name=IMAGE_ERROR_NO_VERSION_PAGES)

@@ -55,7 +55,7 @@ class DocumentFileAPIViewTestCase(
         self._clear_events()
 
         response = self._request_test_document_file_delete_api_view()
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
         self.assertEqual(
             self._test_document.files.count(), document_file_count - 1

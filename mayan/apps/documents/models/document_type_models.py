@@ -150,7 +150,9 @@ class DocumentTypeFilename(ExtraDataModelMixin, models.Model):
     filename = models.CharField(
         db_index=True, max_length=128, verbose_name=_('Label')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_('Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_('Enabled')
+    )
 
     class Meta:
         ordering = ('filename',)

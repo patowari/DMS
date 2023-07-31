@@ -160,9 +160,9 @@ class DocumentFile(
         with transaction.atomic():
             result = super().delete(*args, **kwargs)
 
-            self.document.file_latest = self.document.files.exclude(pk=self.pk).order_by('timestamp').only('id').last()
+            self.document.file_latest = self.get_document_file_latest()
 
-            if self.document.files.count() == 0:
+            if self.document.files.exclude(pk=self.pk).count() == 0:
                 self.document.is_stub = False
 
             self.document._event_ignore = True

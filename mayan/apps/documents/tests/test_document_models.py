@@ -1,10 +1,7 @@
-from datetime import timedelta
-
 from ..events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_type_changed,
-    event_document_version_created, event_document_version_page_created,
-    event_trashed_document_deleted
+    event_document_version_created, event_document_version_page_created
 )
 from ..models.document_models import Document
 from ..models.document_type_models import DocumentType

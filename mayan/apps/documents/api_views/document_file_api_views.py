@@ -12,7 +12,7 @@ from ..permissions import (
 from ..serializers.document_file_serializers import (
     DocumentFileSerializer, DocumentFilePageSerializer
 )
-from ..tasks import task_document_file_upload
+from ..tasks import task_document_file_delete, task_document_file_upload
 
 from .api_view_mixins import (
     ParentObjectDocumentAPIViewMixin, ParentObjectDocumentFileAPIViewMixin
@@ -74,6 +74,16 @@ class APIDocumentFileDetailView(
         'PUT': (permission_document_file_edit,),
     }
     serializer_class = DocumentFileSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        task_document_file_delete.apply_async(
+            kwargs={
+                'document_file_id': instance.pk,
+                'user_id': request.user.pk
+            }
+        )
+        return Response(status=status.HTTP_202_ACCEPTED)
 
     def get_instance_extra_data(self):
         return {

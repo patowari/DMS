@@ -165,6 +165,7 @@
   variable ``MAYAN_DATABASE_CONN_MAX_AGE``.
 - Support setting the RabbitMQ Docker hostname via the environment variable
   ``MAYAN_DOCKER_RABBITMQ_HOSTNAME``. Defaults to ``rabbitmq``.
+- Update the document file deletion operation to be a background task.
 
 4.4.8 (2023-07-15)
 ==================

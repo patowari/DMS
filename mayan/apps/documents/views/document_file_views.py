@@ -37,6 +37,7 @@ from ..permissions import (
     permission_document_file_print, permission_document_file_view
 )
 from ..settings import setting_preview_height, setting_preview_width
+from ..tasks import task_document_file_delete
 
 from .misc_views import PrintFormView, DocumentPrintBaseView
 
@@ -51,13 +52,13 @@ class DocumentFileDeleteView(MultipleObjectDeleteView):
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()
     success_message_single = _(
-        'Document file "%(object)s" deleted successfully.'
+        'Document file "%(object)s" deletion queued successfully.'
     )
     success_message_singular = _(
-        '%(count)d document file deleted successfully.'
+        '%(count)d document file deletion queued successfully.'
     )
     success_message_plural = _(
-        '%(count)d document files deleted successfully.'
+        '%(count)d document files deletions queued successfully.'
     )
     title_single = _('Delete document file: %(object)s.')
     title_singular = _('Delete the %(count)d selected document file.')
@@ -68,7 +69,8 @@ class DocumentFileDeleteView(MultipleObjectDeleteView):
         context = {
             'message': _(
                 'All document files pages from this document file and the '
-                'document version pages linked to them will be deleted too.'
+                'document version pages linked to them will be deleted too. '
+                'The process will be performed in the background.'
             )
         }
 
@@ -81,15 +83,18 @@ class DocumentFileDeleteView(MultipleObjectDeleteView):
 
         return context
 
-    def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
-
     def get_post_action_redirect(self):
         return reverse(
             viewname='documents:document_file_list', kwargs={
                 'document_id': self.object_list.first().document.pk
+            }
+        )
+
+    def object_action(self, instance, form=None):
+        task_document_file_delete.apply_async(
+            kwargs={
+                'document_file_id': instance.pk,
+                'user_id': self.request.user.pk
             }
         )
 

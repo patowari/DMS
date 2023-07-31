@@ -10,6 +10,9 @@ from .literals import (
     INTERVAL_TASK_STUBS_DELETION
 )
 
+queue_documents = CeleryQueue(
+    name='documents', label=_('Documents'), worker=worker_b
+)
 queue_documents_periodic = CeleryQueue(
     name='documents_periodic', label=_('Documents periodic'), transient=True,
     worker=worker_c
@@ -17,17 +20,10 @@ queue_documents_periodic = CeleryQueue(
 queue_uploads = CeleryQueue(
     name='uploads', label=_('Uploads'), worker=worker_c
 )
-queue_documents = CeleryQueue(
-    name='documents', label=_('Documents'), worker=worker_b
-)
 
 queue_documents.add_task_type(
-    dotted_path='mayan.apps.documents.tasks.task_trash_can_empty',
-    label=_('Empty the trash can')
-)
-queue_documents.add_task_type(
-    dotted_path='mayan.apps.documents.tasks.task_trashed_document_delete',
-    label=_('Delete a document')
+    dotted_path='mayan.apps.documents.tasks.task_document_file_delete',
+    label=_('Delete a document file')
 )
 queue_documents.add_task_type(
     dotted_path='mayan.apps.documents.tasks.task_document_version_page_list_append',
@@ -44,6 +40,14 @@ queue_documents.add_task_type(
 queue_documents.add_task_type(
     dotted_path='mayan.apps.documents.tasks.task_document_version_export',
     label=_('Export a document version')
+)
+queue_documents.add_task_type(
+    dotted_path='mayan.apps.documents.tasks.task_trash_can_empty',
+    label=_('Empty the trash can')
+)
+queue_documents.add_task_type(
+    dotted_path='mayan.apps.documents.tasks.task_trashed_document_delete',
+    label=_('Delete a document')
 )
 
 queue_documents_periodic.add_task_type(

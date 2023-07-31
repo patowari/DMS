@@ -59,6 +59,11 @@ Search fields removed:
   - Document version
   - Document version page
 
+Deleting a document file is now a background task and not an immediate
+operation. The document file view and API view are updated to reflect this.
+The result code of the document file deletion API view has changed from
+204 (No content) to 202 (Accepted).
+
 
 Task manager
 ^^^^^^^^^^^^

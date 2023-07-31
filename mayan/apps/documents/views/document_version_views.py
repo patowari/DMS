@@ -120,7 +120,7 @@ class DocumentVersionDeleteView(MultipleObjectDeleteView):
     def get_extra_context(self, **kwargs):
         context = {
             'message': _(
-                'The process will be performed in the background. '
+                'The process will be performed in the background.'
             )
         }
 
