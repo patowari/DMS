@@ -599,9 +599,8 @@ class TransformationResize(BaseTransformation):
                 ), resample=Image.NEAREST
             )
 
-        # Resize the image with best quality algorithm ANTIALIAS.
         self.image.thumbnail(
-            size=(width, height), resample=Image.ANTIALIAS
+            size=(width, height), resample=Image.Resampling.BICUBIC
         )
 
         return self.image
@@ -743,7 +742,7 @@ class TransformationZoom(BaseTransformation):
             height = 1
 
         return self.image.resize(
-            size=(width, height), resample=Image.ANTIALIAS
+            size=(width, height), resample=Image.Resampling.BICUBIC
         )
 
 

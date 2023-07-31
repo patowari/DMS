@@ -43,7 +43,7 @@ class Tesseract(OCRBackendBase):
             keyword_arguments['_env'] = environment
 
             try:
-                result = self.command_tesseract(
+                output = self.command_tesseract(
                     *arguments, **keyword_arguments
                 )
             except Exception as exception:
@@ -67,7 +67,7 @@ class Tesseract(OCRBackendBase):
                 logger.error(error_message, exc_info=True)
                 raise OCRError(error_message)
             else:
-                return result.stdout
+                return output
         else:
             return ''
 
@@ -85,11 +85,11 @@ class Tesseract(OCRBackendBase):
             )
         else:
             # Get version.
-            result = self.command_tesseract(v=True)
-            logger.debug('Tesseract version: %s', result.stdout)
+            output = self.command_tesseract(v=True)
+            logger.debug('Tesseract version: %s', output)
 
             # Get languages.
-            result = self.command_tesseract(list_langs=True)
+            output = self.command_tesseract(list_langs=True)
             # Sample output format.
             # List of available languages (3):
             # deu
@@ -99,7 +99,7 @@ class Tesseract(OCRBackendBase):
 
             # Extaction: strip last line, split by newline, discard the first
             # line.
-            self.languages = str(result.stdout).strip().split('\n')[1:]
+            self.languages = output.strip().split('\n')[1:]
 
             logger.debug(
                 'Available languages: %s', ', '.join(self.languages)

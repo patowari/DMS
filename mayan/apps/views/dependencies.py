@@ -7,7 +7,7 @@ JavaScriptDependency(
 )
 
 PythonDependency(
-    module=__name__, name='django-formtools', version_string='==2.3'
+    module=__name__, name='django-formtools', version_string='==2.4.1'
 )
 PythonDependency(
     module=__name__, name='django-stronghold', version_string='==0.4.0'

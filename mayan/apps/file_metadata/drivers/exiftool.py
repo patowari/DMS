@@ -44,14 +44,14 @@ class EXIFToolDriver(FileMetadataDriver):
                         document_file.save_to_file(file_object=temporary_fileobject)
                         temporary_fileobject.seek(0)
                         try:
-                            result = self.command_exiftool(temporary_fileobject.name)
+                            output = self.command_exiftool(temporary_fileobject.name)
                         except sh.ErrorReturnCode_1 as exception:
                             result = json.loads(s=exception.stdout)[0]
                             if result.get('Error', '') == 'Unknown file type':
                                 # Not a fatal error.
                                 return result
                         else:
-                            return json.loads(s=result.stdout)[0]
+                            return json.loads(s=output)[0]
                 except Exception as exception:
                     logger.error(
                         'Error processing document file: %s; %s',

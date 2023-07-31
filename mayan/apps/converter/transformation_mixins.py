@@ -94,7 +94,7 @@ class ImagePasteTransformationMixin:
                 size=(
                     int(instance_image.size[0] * zoom_decimal_value),
                     int(instance_image.size[1] * zoom_decimal_value)
-                ), resample=Image.ANTIALIAS
+                ), resample=Image.Resampling.BICUBIC
             )
 
         paste_mask = instance_image.getchannel(channel='A').point(

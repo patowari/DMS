@@ -64,7 +64,7 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE.
-    ''', module=__name__, name='PyYAML', version_string='==6.0'
+    ''', module=__name__, name='PyYAML', version_string='==6.0.1'
 )
 PythonDependency(
     copyright_text='''
@@ -124,7 +124,7 @@ PythonDependency(
     ''', module=__name__, name='django-mptt', version_string='==0.14.0'
 )
 PythonDependency(
-    module=__name__, name='importlib-metadata', version_string='==5.0.0'
+    module=__name__, name='importlib-metadata', version_string='==6.8.0'
 )
 PythonDependency(
     copyright_text='''
@@ -133,7 +133,7 @@ PythonDependency(
     ''', module=__name__, name='pycountry', version_string='==22.3.5'
 )
 PythonDependency(
-    module=__name__, name='requests', version_string='==2.29'
+    module=__name__, name='requests', version_string='==2.31.0'
 )
 PythonDependency(
     copyright_text='''
@@ -156,7 +156,7 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
-    ''', module=__name__, name='sh', version_string='==1.14.3'
+    ''', module=__name__, name='sh', version_string='==2.0.4'
 )
 
 # Development
@@ -175,26 +175,26 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-extensions', version_string='==3.1.5'
+    name='django-extensions', version_string='==3.2.3'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
         'Used to allow offline translation of the code text strings.'
-    ), module=__name__, name='django-rosetta', version_string='==0.9.8'
+    ), module=__name__, name='django-rosetta', version_string='==0.9.9'
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-silk', version_string='==4.3.0'
+    name='django-silk', version_string='==5.0.3'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
         'Provides style checking.'
-    ), module=__name__, name='flake8', version_string='==4.0.1'
+    ), module=__name__, name='flake8', version_string='==6.1.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==7.32.0'
+    ), module=__name__, name='ipython', version_string='==8.14.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
@@ -210,7 +210,7 @@ PythonDependency(
 
 PythonDependency(
     environment=environment_build, module=__name__, name='twine',
-    version_string='==3.8.0'
+    version_string='==4.0.2'
 )
 PythonDependency(
     environments=(environment_build, environment_documentation),
@@ -223,7 +223,7 @@ PythonDependency(
 
 PythonDependency(
     environment=environment_documentation, module=__name__, name='Sphinx',
-    version_string='==4.5.0'
+    version_string='==6.2.1'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
@@ -231,19 +231,19 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx-sitemap', version_string='==2.2.0'
+    name='sphinx-sitemap', version_string='==2.5.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx_rtd_theme', version_string='==0.5.2'
+    name='sphinx_rtd_theme', version_string='==1.2.2'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-blockdiag', version_string='==2.0.0'
+    name='sphinxcontrib-blockdiag', version_string='==3.0.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-spelling', version_string='==7.1.0'
+    name='sphinxcontrib-spelling', version_string='==8.0.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__, name='tornado',
