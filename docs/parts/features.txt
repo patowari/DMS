@@ -8,12 +8,12 @@ Features
   - Use as-is or add your own customizations.
   - Sell your own services or custom code.
 
-- :doc:`Document versioning <../chapters/versioning>`.
+- :ref:`Document versioning<apps-documents>`.
 
   - Store many versions of the same document, download or revert to a
     previous version.
 
-- :doc:`Digital signatures <../chapters/signatures>`.
+- :ref:`Digital signatures<apps-document_signatures>`.
 
   - Check the authenticity of documents by verifying their embedded
     cryptographic signatures or upload detached signatures for document
@@ -24,7 +24,7 @@ Features
   - Signature captures are digital recording of handwritten signatures.
   - Commonly used for business transactions and remote contract signing.
 
-- :doc:`User-defined document metadata <../chapters/metadata>`.
+- :ref:`User-defined document metadata<apps-metadata>`.
 
   - Several metadata fields can be matched to a document type as per technical,
     legal or structural requirements such as the `Dublin core`_ or `ISO 23081`_
@@ -32,7 +32,7 @@ Features
   - Metadata fields can have an initial value, which can be static or determined
     by a template code snippet provided by the user.
 
-- :doc:`Documents can be uploaded from different sources <../chapters/sources>`.
+- :ref:`Documents can be uploaded from different sources<apps-sources>`.
 
   - Local file or server side file uploads, multifunctional copier, or even via
     email.
@@ -44,7 +44,7 @@ Features
   - Complex design changes are documented via a formal processes called
     :ref:`mercs`.
 
-- :doc:`Advanced access control system <../chapters/permissions>`.
+- :ref:`Advanced access control system<apps-permissions>`.
 
   - Role based access control. It is possible to create an unlimited amount
     of different roles not being restricted to the traditional admin,
@@ -67,12 +67,12 @@ Features
     other file attribute such as name, extension, etc. Multiple search
     engines are supported.
 
-- :doc:`Configurable document grouping <../parts/categorization>`.
+- Configurable document grouping.
 
   - Automatic linking of documents based on metadata values or document
     properties.
 
-- :doc:`Automatic OCR processing <../chapters/ocr_backend>`.
+- :ref:`Automatic OCR processing<apps-ocr>`.
 
   - The task of transcribing text from documents via OCR can be distributed
     among several physical or virtual computers to decrease load and increase
@@ -86,14 +86,14 @@ Features
     to practically any language spoken in the world. For a list of translated
     languages have a look at the Transifex_ project location.
 
-- :doc:`Plugable storage backends <../parts/storage>`.
+- :ref:`Plugable storage backends<apps-storage>`.
 
   - Built in support for file system storage.
   - It is very easy to use 3rd party plugins such as the ones available for
     Amazon EC2.
   - Use cloud object storage like S3 or on premise using Minio.
 
-- :doc:`Workflows <../chapters/workflows>`.
+- :ref:`Workflows<apps-document_states>`.
 
   - Keep track of the state of documents, along with the log of the previous
     state changes.
@@ -124,7 +124,7 @@ Features
   - Users and other apps can subscribe to events to perform actions or
     provide notifications.
 
-- :doc:`Non destructive image transformations <../chapters/transformations>`.
+- :ref:`Non destructive image transformations<apps-converter>`.
 
   - Multi layer image support. Each layer can support different permission
     layout to restrict image manipulation to different roles.
@@ -167,7 +167,7 @@ Features
   - Default installation scales to hundred of thousand of documents.
   - Tuned installations scale to millions of documents.
 
-- :doc:`Color coded tags <../chapters/tags>`.
+- :ref:`Color coded tags<apps-tags>`.
 
   - Labeled and color coded tags can be assigned for intuitive recognition.
 
@@ -177,7 +177,7 @@ Features
   - Clone a document's metadata for speedier uploads and eliminate repetitive
     data entry.
 
-- :doc:`Collaboration tools <../parts/collaboration>`.
+- Collaboration tools.
 
   - Discuss documents, or comment on new versions of a document.
 

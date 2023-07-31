@@ -36,14 +36,6 @@ I found a bug
 For bugs, open an issue at |SOURCE_CODE_ISSUES|.
 
 
-I found a security issue
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Open an issue at |SOURCE_CODE_ISSUES| and mark it as
-Confidential. Allow us at least 48 hours to find and release a fix
-for the issue before submitting it to the CVE database.
-
-
 I want to join the development team
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -229,3 +221,33 @@ Does Mayan EDMS work with Python 3?
 
 Yes, version 3.3 ships with Python 3.7 support. Support for Python 2 will
 be removed in version 4.0.
+
+
+Security
+========
+
+
+I found a security issue
+------------------------
+
+Open an issue at |SOURCE_CODE_ISSUES| and mark it as
+Confidential. Allow us at least 48 hours to find and release a fix
+for the issue before submitting it to the CVE database.
+
+
+I want to contact the team directly to report a security issue
+--------------------------------------------------------------
+
+The contact method is via email info@mayan-edms.com. Send the complete
+procedure to recreate the security issue.
+
+
+Are security bounties available?
+--------------------------------
+
+As a free and open source project, bounties or prices for security
+issues are not available.
+
+Blackmail, extortion, or paid registrations as requirement for security
+issue disclosure will be reported to the pertinent managing or legal
+authorities.

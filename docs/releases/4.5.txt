@@ -15,13 +15,6 @@ Removals
 .. include:: partials/removals-4.5.txt
 
 
-Troubleshooting
----------------
-
-Follow the solutions outlined in the troubleshooting section:
-:ref:`troubleshooting-version-4.1`
-
-
 Backward incompatible changes
 -----------------------------
 

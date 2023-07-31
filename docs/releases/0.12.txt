@@ -45,7 +45,7 @@ ACL support
   tags and smart links.  What this means is that administrators can now
   grant permissions to users, groups or roles on for specific objects.
   A more in-depth explanation of how this new ACL system can be found in
-  the :doc:`3 tier access control <../chapters/permissions>` section of the
+  the :ref:`3 tier access control<apps-permissions>` section of the
   permissions chapter.
 
 * Default class ACL support.  Administrators can setup the access control
@@ -120,7 +120,7 @@ in the Initial data loading chapter.
 Refactored document indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:doc:`The document indexing  <../chapters/indexes/index>` functionality has been
+:ref:`The document indexing<apps-document_indexing>` functionality has been
 improved and moved from experimental
 stage to beta stage.  Index configuration menus are now available on the
 ``Setup`` menu and allows administrators to create skeleton trees that will

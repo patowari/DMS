@@ -57,13 +57,6 @@ Upgrade process
 .. include:: partials/upgrade-3.5-4.0.txt
 
 
-Troubleshooting
----------------
-
-Follow the solutions outlined in the troubleshooting section:
-:ref:`troubleshooting-version-4.1`
-
-
 Backward incompatible changes
 -----------------------------
 

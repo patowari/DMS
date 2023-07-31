@@ -9,20 +9,29 @@ backed up:
 
 #. Document files
 
-   To backup the existing data, stop the image and copy the content of the volume.
-   For the example, if you launched the container in this way:
+   To backup the existing data, stop the image and copy the content of the
+   volume.
 
-   .. code-block:: console
-
-       docker run -d --name mayan-edms --restart=always -p 80:8000 \
-       -v /docker-volumes/mayan:/var/lib/mayan \
-       -v /opt/scanned_files:/scanned_files mayanedms/mayanedms:|DOCKER_MAYAN_IMAGE_VERSION|
-
-   that would be the ``/docker-volumes/mayan`` folder:
+   The list of volumes can be obtained with the command:
 
     .. code-block:: console
 
-       sudo tar -zcvf backup.tar.gz /docker-volumes/mayan
+       docker volume ls
+
+   The pertinent volume to backup is ``mayan_app``.
+
+   Obtain the physical location (``Mountpoint``) of the volume with the
+   following command:
+
+    .. code-block:: console
+
+       docker volume inspect mayan_app | grep 'Mountpoint'
+
+   Create a backup copy of the location:
+
+    .. code-block:: console
+
+       sudo tar -zcvf mayan-files.tar.gz /var/lib/docker/volumes/mayan_app/_data
 
 #. Database
 
@@ -43,7 +52,7 @@ Restoring from a backup
 
    .. code-block:: console
 
-       sudo tar -xvzf backup.tar.gz -C /
+       sudo tar -xvzf mayan.tar.gz --directory /var/lib/docker/volumes/mayan_app/_data
 
 
 #. Database

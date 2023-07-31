@@ -6,12 +6,12 @@ To stop the container use:
 
 .. code-block:: console
 
-    docker stop mayan-edms
+    docker compose down
 
 
 To start the container again:
 
 .. code-block:: console
 
-    docker start mayan-edms
+    docker compose up --detached
 

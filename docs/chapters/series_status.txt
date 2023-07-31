@@ -87,3 +87,8 @@ Current series status
      - No
      - No
      - Not available and not updated
+   * - 4.0
+     - End of life
+     - No
+     - No
+     - Not available and not updated

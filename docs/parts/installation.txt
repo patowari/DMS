@@ -93,42 +93,4 @@ For users with an existing installation of Portainer.
     ../chapters/portainer/installation
 
 
-Direct installation
--------------------
-
-For users with advanced knowledge of Python, Django, Debian/Ubuntu, and
-database managers.
-
-.. warning::
-
-   This installation method is deprecated in favor of the Docker Compose
-   method and left here for documentation purposes only.
-
-- :doc:`../chapters/deploying`
-
-
-.. toctree::
-    :hidden:
-
-    ../chapters/deploying
-
-
-Manual Docker installation
---------------------------
-
-.. warning::
-
-   This installation method is deprecated in favor of the Docker Compose
-   method and left here for documentation purposes only.
-
-
-- :ref:`docker_install`
-
-.. toctree::
-    :hidden:
-
-    ../chapters/docker/install_simple
-
-
-
 .. _Docker: https://www.docker.com/
