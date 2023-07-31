@@ -166,6 +166,21 @@
 - Support setting the RabbitMQ Docker hostname via the environment variable
   ``MAYAN_DOCKER_RABBITMQ_HOSTNAME``. Defaults to ``rabbitmq``.
 - Update the document file deletion operation to be a background task.
+- Move Debian base image to 12.1 "Bookworm",
+- Update Docker image versions:
+
+  - mysql from 8.0.32 to 8.0.34
+  - debian from 11.7-slim to 12.1-slim
+  - postgresql from 13.10-alpine to 13.11-alpine
+  - python 3.10.11-slim to 3.11.4-slim
+  - rabbitmq from 3.11.13-alpine to 3.12.2-alpine
+  - redis from 7.0.10-alpine 7.0.12-alpine
+
+- Update Python dependencies versions:
+
+  - PIP from 22.2 to 23.2.1
+  - Redis from 4.2.0 to 4.6.0
+  - Wheel from 0.37.0 to 0.41.0
 
 4.4.8 (2023-07-15)
 ==================
