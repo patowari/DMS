@@ -27,6 +27,7 @@ job_docker_build:
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
     - pip install wheel==${PYTHON_WHEEL_VERSION}
+    - pip install --requirement requirements/common.txt
     - cat requirements/base.txt | grep -v 'django-auth-ldap'| pip install -r /dev/stdin
   cache:
 {% platform_gitlab_ci_cache_paths apk=True indent=4 pip=True %}
