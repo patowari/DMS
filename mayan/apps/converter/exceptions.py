@@ -15,7 +15,7 @@ class AppImageError(ConvertError):
         super().__init__()
 
     def __str__(self):
-        return(
+        return (
             'Error name: {}'.format(
                 repr(self.error_name)
             )

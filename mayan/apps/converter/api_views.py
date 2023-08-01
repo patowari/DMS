@@ -1,7 +1,8 @@
 import logging
 
-from django.http import HttpResponse
+from django.core.files.base import File
 
+from mayan.apps.mime_types.classes import MIMETypeBackend
 from mayan.apps.rest_api import generics
 from mayan.apps.rest_api.api_view_mixins import ExternalContentTypeObjectAPIViewMixin
 
@@ -12,7 +13,7 @@ from .permissions import (
     permission_asset_create, permission_asset_delete, permission_asset_edit,
     permission_asset_view
 )
-from .serializers import AssetSerializer
+from .serializers import AppImageErrorSerializer, AssetSerializer
 
 logger = logging.getLogger(name=__name__)
 
@@ -72,29 +73,64 @@ class APIAssetImageView(APIImageViewMixin, generics.RetrieveAPIView):
     source_queryset = Asset.objects.all()
 
 
-class APIAppImageErrorImageView(generics.RetrieveAPIView):
+class APIAppImageErrorDetailView(generics.RetrieveAPIView):
     """
-    get: Returns an image representation of the selected app image error.
+    get: Returns the details of the selected app image error.
     """
     lookup_url_kwarg = 'app_image_error_name'
+    serializer_class = AppImageErrorSerializer
 
     def get_object(self):
         return AppImageErrorImage.get(
             name=self.kwargs[self.lookup_url_kwarg]
         )
 
-    def get_serializer(self, *args, **kwargs):
-        return None
 
-    def get_serializer_class(self):
-        return None
+class APIAppImageErrorImageView(APIImageViewMixin, generics.RetrieveAPIView):
+    """
+    get: Returns an image representation of the selected app image error.
+    """
+    lookup_url_kwarg = 'app_image_error_name'
 
-    def retrieve(self, request, *args, **kwargs):
+    def get_file_generator(self):
+        def file_generator():
+            with self.get_object().open() as file_object:
+                while True:
+                    chunk = file_object.read(File.DEFAULT_CHUNK_SIZE)
+                    if not chunk:
+                        break
+                    else:
+                        yield chunk
+
+        return file_generator
+
+    def get_object(self):
+        return AppImageErrorImage.get(
+            name=self.kwargs[self.lookup_url_kwarg]
+        )
+
+    def get_stream_mime_type(self):
+        mime_type_backend = MIMETypeBackend.get_backend_instance()
         with self.get_object().open() as file_object:
-            response = HttpResponse(
-                content=file_object.read(), content_type='image'
+            mime_type, mime_encoding = mime_type_backend.get_mime_type(
+                file_object=file_object, mime_type_only=True
             )
-            return response
+            return mime_type
+
+    def set_cache_file(self, request):
+        return
+
+
+class APIAppImageErrorListView(generics.ListAPIView):
+    """
+    get: Returns an list of the available app image errors.
+    """
+    serializer_class = AppImageErrorSerializer
+
+    def get_source_queryset(self):
+        return list(
+            AppImageErrorImage.all()
+        )
 
 
 class APIContentObjectImageView(

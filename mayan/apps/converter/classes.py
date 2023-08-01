@@ -30,7 +30,8 @@ from .exceptions import (
 )
 from .literals import (
     CONVERTER_OFFICE_FILE_MIMETYPES, DEFAULT_LIBREOFFICE_PATH,
-    DEFAULT_PAGE_NUMBER, DEFAULT_PILLOW_FORMAT
+    DEFAULT_PAGE_NUMBER, DEFAULT_PILLOW_FORMAT,
+    MAP_PILLOW_FORMAT_TO_MIME_TYPE
 )
 from .settings import (
     setting_graphics_backend, setting_graphics_backend_arguments
@@ -48,6 +49,10 @@ logger = logging.getLogger(name=__name__)
 
 class AppImageErrorImage:
     _registry = {}
+
+    @classmethod
+    def all(cls):
+        return cls._registry.values()
 
     @classmethod
     def get(cls, name):
@@ -73,6 +78,14 @@ class ConverterBase:
     @staticmethod
     def get_converter_class():
         return import_string(dotted_path=setting_graphics_backend.value)
+
+    @staticmethod
+    def get_output_content_type():
+        output_format = setting_graphics_backend_arguments.value.get(
+            'pillow_format', DEFAULT_PILLOW_FORMAT
+        )
+
+        return MAP_PILLOW_FORMAT_TO_MIME_TYPE.get(output_format)
 
     def __init__(self, file_object, mime_type=None):
         self.file_object = file_object

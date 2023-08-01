@@ -28,7 +28,7 @@ def converter_get_object_image_data(
         return {
             'app_image_error_image': app_image_error_image,
             'url': reverse(
-                viewname='rest_api:app-image-error-image', kwargs={
+                viewname='rest_api:app_image_error-image', kwargs={
                     'app_image_error_name': exception.error_name
                 }
             )

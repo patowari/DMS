@@ -92,6 +92,10 @@ DEFAULT_CONVERTER_GRAPHICS_BACKEND_ARGUMENTS = {
     'pillow_maximum_image_pixels': DEFAULT_PILLOW_MAXIMUM_IMAGE_PIXELS
 }
 
+MAP_PILLOW_FORMAT_TO_MIME_TYPE = {
+    'JPEG': 'image/jpeg'
+}
+
 STORAGE_NAME_ASSETS = 'converter__assets'
 STORAGE_NAME_ASSETS_CACHE = 'converter__assets_cache'
 

@@ -173,11 +173,11 @@ class SourceBackendMixinFileList:
             name=STORAGE_NAME_SOURCE_CACHE_FOLDER
         ).get_storage_instance()
 
+        converter_class = ConverterBase.get_converter_class()
+
         def file_generator():
             with storage_source_cache.open(name=cache_filename) as file_object:
-                converter = ConverterBase.get_converter_class()(
-                    file_object=file_object
-                )
+                converter = converter_class(file_object=file_object)
                 for transformation in combined_transformation_list or ():
                     converter.transform(transformation=transformation)
 
@@ -191,7 +191,8 @@ class SourceBackendMixinFileList:
                         yield chunk
 
         response = StreamingHttpResponse(
-            content_type='image', streaming_content=file_generator()
+            content_type=converter_class.get_output_content_type,
+            streaming_content=file_generator()
         )
         return None, response
 

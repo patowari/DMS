@@ -6,6 +6,7 @@ from django.views.decorators.cache import patch_cache_control
 
 from mayan.apps.mime_types.classes import MIMETypeBackend
 
+from .classes import ConverterBase
 from .settings import (
     setting_image_cache_time, setting_image_generation_timeout
 )
@@ -19,6 +20,18 @@ class APIImageViewMixin:
     """
     def get_content_type(self):
         return ContentType.objects.get_for_model(model=self.obj)
+
+    def get_file_generator(self):
+        def file_generator():
+            with self.cache_file.open() as file_object:
+                while True:
+                    chunk = file_object.read(File.DEFAULT_CHUNK_SIZE)
+                    if not chunk:
+                        break
+                    else:
+                        yield chunk
+
+        return file_generator
 
     def get_serializer(self, *args, **kwargs):
         return None
@@ -36,6 +49,27 @@ class APIImageViewMixin:
 
     def retrieve(self, request, **kwargs):
         self.set_object()
+        self.set_cache_file(request=request)
+
+        file_generator = self.get_file_generator()
+
+        content_type = ConverterBase.get_output_content_type()
+
+        if not content_type:
+            content_type = self.get_stream_mime_type()
+
+        response = StreamingHttpResponse(
+            content_type=content_type, streaming_content=file_generator()
+        )
+
+        if '_hash' in request.GET:
+            patch_cache_control(
+                max_age=setting_image_cache_time.value,
+                response=response
+            )
+        return response
+
+    def set_cache_file(self, request):
         query_dict = request.GET
 
         transformation_dictionary_list = IndexedDictionary(
@@ -70,27 +104,6 @@ class APIImageViewMixin:
         self.cache_file = self.obj.cache_partition.get_file(
             filename=cache_filename
         )
-
-        def file_generator():
-            with self.cache_file.open() as file_object:
-                while True:
-                    chunk = file_object.read(File.DEFAULT_CHUNK_SIZE)
-                    if not chunk:
-                        break
-                    else:
-                        yield chunk
-
-        response = StreamingHttpResponse(
-            content_type=self.get_stream_mime_type(),
-            streaming_content=file_generator()
-        )
-
-        if '_hash' in request.GET:
-            patch_cache_control(
-                max_age=setting_image_cache_time.value,
-                response=response
-            )
-        return response
 
     def set_object(self):
         self.obj = self.get_object()

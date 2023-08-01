@@ -26,9 +26,9 @@ pdftoppm_path = setting_graphics_backend_arguments.value.get(
 )
 
 try:
-    pdftoppm = sh.Command(path=pdftoppm_path)
+    command_pdftoppm = sh.Command(path=pdftoppm_path)
 except sh.CommandNotFound:
-    pdftoppm = None
+    command_pdftoppm = None
 else:
     pdftoppm_format = '-{}'.format(
         setting_graphics_backend_arguments.value.get(
@@ -42,16 +42,18 @@ else:
         )
     )
 
-    pdftoppm = pdftoppm.bake(pdftoppm_format, '-r', pdftoppm_dpi)
+    command_pdftoppm = command_pdftoppm.bake(
+        pdftoppm_format, '-r', pdftoppm_dpi
+    )
 
 pdfinfo_path = setting_graphics_backend_arguments.value.get(
     'pdfinfo_path', DEFAULT_PDFINFO_PATH
 )
 
 try:
-    pdfinfo = sh.Command(path=pdfinfo_path)
+    command_pdfinfo = sh.Command(path=pdfinfo_path)
 except sh.CommandNotFound:
-    pdfinfo = None
+    command_pdfinfo = None
 
 
 pillow_maximum_image_pixels = setting_graphics_backend_arguments.value.get(
@@ -64,7 +66,7 @@ class Python(ConverterBase):
     def convert(self, *args, **kwargs):
         super().convert(*args, **kwargs)
 
-        if self.mime_type == 'application/pdf' and pdftoppm:
+        if self.mime_type == 'application/pdf' and command_pdftoppm:
             with NamedTemporaryFile() as new_file_object:
                 self.file_object.seek(0)
                 shutil.copyfileobj(
@@ -74,7 +76,7 @@ class Python(ConverterBase):
                 new_file_object.seek(0)
 
                 image_buffer = io.BytesIO()
-                pdftoppm(
+                command_pdftoppm(
                     new_file_object.name, f=self.page_number + 1,
                     l=self.page_number + 1, _out=image_buffer
                 )
@@ -83,8 +85,6 @@ class Python(ConverterBase):
 
     def get_page_count(self):
         super().get_page_count()
-
-        page_count = 1
 
         if self.mime_type == 'application/pdf' or self.soffice_file:
             if self.soffice_file:
@@ -150,7 +150,7 @@ class Python(ConverterBase):
         return page_count
 
     def get_pdfinfo_page_count(self, file_object):
-        process = pdfinfo('-', _in=file_object)
+        process = command_pdfinfo('-', _in=file_object)
 
         for line in str(process.stdout).split('\n'):
             if line.startswith('Pages:'):
