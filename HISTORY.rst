@@ -181,6 +181,36 @@
   - PIP from 22.2 to 23.2.1
   - Redis from 4.2.0 to 4.6.0
   - Wheel from 0.37.0 to 0.41.0
+  - Bleach from 4.1.0 to 6.0.0
+  - django-auth-ldap from 4.0.0 to 4.4.0
+  - PyYAML from 6.0 to 6.0.1
+  - importlib-metadata from 5.0.0 to 6.8.0
+  - requests from 1.14.3 to 2.0.4
+  - django-extensions from 3.1.5 to 3.2.3
+  - django-rosetta from 0.9.8 to 0.9.9
+  - django-silk from 4.3.0 to 5.0.3
+  - flake8 from 4.0.1 to 6.1.0
+  - ipython from 7.32.0 to .8.14.0
+  - twine from 3.8.0 to 4.0.2
+  - Pillow from 9.4.0 to 10.0.0
+  - dateparser from 1.1.1 to 1.1.8
+  - elasticsearch from 7.17.1 to 7.17.9
+  - elasticsearch-dsl from 7.4.0 to 7.4.1
+  - python-magic from 0.4.26 to 0.4.27
+  - gunicorn from 20.1.0 to 21.2.0
+  - sentry-sdk from 1.12.1 to 1.29.0
+  - whitenoise from 6.2.0 to 6.5.0
+  - django-cors-headers from 3.10.0 to 4.2.0
+  - drf-yasg from 1.21.4 to 1.21.7
+  - jsonschema from 4.4.0 to 4.18.0
+  - swagger-spec-validator from 2.7.4 to 3.0.3
+  - boto3 from 1.24.70 to 1.28.16
+  - django-storages from 1.13.1 to 1.13.2
+  - extract-msg from 0.36.4 to 0.37.1
+  - pycryptodome from 3.10.4 to 3.18.0
+  - celery from 5.2.7 to 5.3.1
+  - django-celery-beat from 2.2.1 to 2.3.0
+  - django-formtools from 2.3 to 2.4.1
 
 4.4.8 (2023-07-15)
 ==================
