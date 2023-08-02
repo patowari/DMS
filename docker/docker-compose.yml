@@ -153,9 +153,9 @@ services:
       - "-c"
       - "max_connections=150"
       - "-c"
-      - "shared_buffers=256MB"
+      - "shared_buffers=512MB"
       - "-c"
-      - "work_mem=8MB"
+      - "work_mem=16MB"
     environment:
       POSTGRES_DB: ${MAYAN_DATABASE_NAME:-mayan}
       POSTGRES_PASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
