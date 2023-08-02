@@ -211,6 +211,7 @@
   - celery from 5.2.7 to 5.3.1
   - django-celery-beat from 2.2.1 to 2.3.0
   - django-formtools from 2.3 to 2.4.1
+  - psycopg2 from 2.9.3 to 2.9.6
 
 4.4.8 (2023-07-15)
 ==================
