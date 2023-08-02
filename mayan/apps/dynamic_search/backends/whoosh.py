@@ -273,6 +273,11 @@ class WhooshSearchBackend(SearchBackend):
     def _get_storage(self):
         return FileStorage(path=self.index_path)
 
+    def _get_writer(self, search_model):
+        index = self._get_or_create_index(search_model=search_model)
+
+        return index.writer(**self.writer_kwargs)
+
     def _initialize(self):
         if not settings.COMMON_DISABLE_LOCAL_STORAGE:
             self.index_path.mkdir(exist_ok=True)
@@ -394,15 +399,13 @@ class WhooshSearchBackend(SearchBackend):
             try:
                 search_model = SearchModel.get_for_model(instance=instance)
                 if not settings.COMMON_DISABLE_LOCAL_STORAGE:
-                    index = self._get_or_create_index(search_model=search_model)
-
-                    with index.writer(**self.writer_kwargs) as writer:
+                    with self._get_writer(search_model=search_model) as writer:
                         try:
                             writer.delete_by_term(
                                 'id', str(instance.pk)
                             )
                         except Exception as exception:
-                            # The parenthesis is used to defined a multi
+                            # The parenthesis is used to define a multi
                             # line error message not a translatable string.
                             error_text = (
                                 'Unexpected exception while '
@@ -434,7 +437,7 @@ class WhooshSearchBackend(SearchBackend):
                             try:
                                 writer.add_document(**kwargs)
                             except Exception as exception:
-                                # The parenthesis is used to defined a multi
+                                # The parenthesis is used to define a multi
                                 # line error message not a translatable string.
                                 error_text = (
                                     'Unexpected exception while '

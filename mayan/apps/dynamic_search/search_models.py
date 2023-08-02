@@ -28,7 +28,9 @@ class SearchModel(AppsModuleLoaderMixin):
 
     @classmethod
     def all(cls):
-        result = set(cls._registry.values())
+        result = set(
+            cls._registry.values()
+        )
         result = list(result)
         result.sort(key=lambda entry: entry.label)
         return result
@@ -67,7 +69,7 @@ class SearchModel(AppsModuleLoaderMixin):
         through_models = {}
 
         for search_model in cls.all():
-            for related_model, related_path in search_model.get_related_models():
+            for related_model, reverse_field_path in search_model.get_related_models():
                 # Check is each related model is connected to a many to many.
                 for field in related_model._meta.get_fields():
                     if field.many_to_many:
@@ -76,11 +78,15 @@ class SearchModel(AppsModuleLoaderMixin):
                         except AttributeError:
                             through_model = field.remote_field.through
 
-                        through_models.setdefault(through_model, {})
+                        through_models.setdefault(
+                            through_model, {}
+                        )
                         through_models[through_model].setdefault(
                             related_model, set()
                         )
-                        through_models[through_model][related_model].add(related_path)
+                        through_models[through_model][related_model].add(
+                            reverse_field_path
+                        )
 
         return through_models
 
@@ -160,6 +166,10 @@ class SearchModel(AppsModuleLoaderMixin):
         return '{}.{}'.format(self.app_label, self.model_name)
 
     def get_id_groups(self, range_string=None):
+        """
+        Generate ID groups when doing bulk indexing. ID groups avoid having
+        to create a single task call for each object to be indexed.
+        """
         queryset = self.model._meta.managers_map[self.manager_name].all()
 
         # Part 1 - Split the user requested range into blind groups.
@@ -263,12 +273,7 @@ class SearchModel(AppsModuleLoaderMixin):
 
         # Process the search fields by order of priority. This makes sure
         # that virtual fields are processed last.
-        search_fields = sorted(
-            search_model.search_fields,
-            key=lambda search_field: search_field.priority
-        )
-
-        for search_field in search_fields:
+        for search_field in self.search_fields_sorted:
             field_value = search_field.get_instance_value(
                 exclude_kwargs=exclude_kwargs, exclude_model=exclude_model,
                 instance=instance, instance_field_data=instance_field_data,
@@ -304,3 +309,10 @@ class SearchModel(AppsModuleLoaderMixin):
     @cached_property
     def search_fields(self):
         return self.search_fields_dict.values()
+
+    @cached_property
+    def search_fields_sorted(self):
+        return sorted(
+            self.search_fields,
+            key=lambda search_field: search_field.priority
+        )

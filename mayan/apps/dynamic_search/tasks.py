@@ -65,8 +65,8 @@ def task_index_instance(
 
     try:
         SearchBackend.get_instance().index_instance(
-            instance=instance, exclude_model=ExcludeModel,
-            exclude_kwargs=exclude_kwargs
+            exclude_kwargs=exclude_kwargs, exclude_model=ExcludeModel,
+            instance=instance
         )
     except (DynamicSearchRetry, LockError) as exception:
         raise self.retry(exc=exception)

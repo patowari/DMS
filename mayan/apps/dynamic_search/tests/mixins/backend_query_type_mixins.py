@@ -20,7 +20,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_any_search_empty_quoted(self):
         id_list = self._do_backend_search(
@@ -30,7 +32,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_any_search_exact(self):
         id_list = self._do_backend_search(
@@ -39,7 +43,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=self._test_object.char
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_any_search_exact_case_insensitive(self):
@@ -52,7 +58,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=self._test_object.char.lower()
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         self._test_object.char = self._test_object.char.lower()
@@ -64,7 +72,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=self._test_object.char.upper()
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_any_search_partial(self):
@@ -76,7 +86,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=parts[0][:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -85,7 +97,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=parts[0][1:]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -94,7 +108,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=parts[0].upper()[:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -103,7 +119,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=parts[0].upper()[1:]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -113,7 +131,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=' '.join((parts[0], parts[1]))
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -123,7 +143,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=' '.join((parts[1], parts[0]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
@@ -132,7 +154,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=' '.join((parts[0], parts[2]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
@@ -140,7 +164,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=self._test_object.email[1:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -149,7 +175,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=str(self._test_object.uuid).split('-')[0]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_any_search_exact_invalid(self):
@@ -159,7 +187,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value=1.1
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_any_search_partial_invalid(self):
         id_list = self._do_backend_search(
@@ -168,7 +198,9 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             value='1970-01'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
@@ -179,7 +211,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_autofield_search_exact(self):
         id_list = self._do_backend_search(
@@ -188,7 +222,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -197,7 +233,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=str(self._test_object.id)
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_greater_than(self):
@@ -207,7 +245,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id - 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_greater_than_or_equal(self):
@@ -217,7 +257,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id - 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -226,7 +268,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_less_than(self):
@@ -236,7 +280,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id + 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_less_than_or_equal(self):
@@ -246,7 +292,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id + 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -255,7 +303,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=self._test_object.id
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_range(self):
@@ -267,7 +317,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -278,7 +330,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -289,7 +343,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -300,7 +356,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_range_exclusive(self):
@@ -312,7 +370,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -323,7 +383,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='id',
@@ -333,7 +395,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='id',
@@ -343,7 +407,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_autofield_search_range_exclusive_invalid(self):
         id_list = self._do_backend_search(
@@ -352,7 +418,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value='INVALID'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='id',
@@ -360,7 +428,9 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
@@ -371,7 +441,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.boolean = False
         self._test_object.save()
@@ -382,7 +454,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_boolean_search_exact(self):
         id_list = self._do_backend_search(
@@ -391,7 +465,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -400,7 +476,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value='true'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -409,7 +487,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value='TRUE'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -418,7 +498,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value=False
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='boolean',
@@ -426,7 +508,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value='false'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='boolean',
@@ -434,7 +518,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value='FALSE'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.boolean = False
         self._test_object.save()
@@ -445,7 +531,9 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
             value='FALSE'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
 
@@ -457,7 +545,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.char = ''
         self._test_object.save()
@@ -468,7 +558,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_char_search_empty_quoted(self):
         id_list = self._do_backend_search(
@@ -478,7 +570,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.char = ''
         self._test_object.save()
@@ -490,7 +584,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_char_search_exact_accent(self):
@@ -503,7 +599,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value='cafe'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_char_search_exact(self):
@@ -515,7 +613,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=parts[0]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -524,7 +624,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=''.join((parts[0], parts[1]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='char',
@@ -532,7 +634,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=parts[0][1:]
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='char',
@@ -541,7 +645,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=self._test_object.char
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -551,7 +657,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=' '.join((parts[2], parts[1], parts[0]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_char_search_fuzzy(self):
         id_list = self._do_backend_search(
@@ -560,7 +668,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value='chra'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -570,7 +680,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value='test chra'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_char_search_partial(self):
         parts = self._test_object.char.split(' ')
@@ -581,7 +693,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=parts[0][:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -590,7 +704,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=parts[0][1:]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -599,7 +715,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=parts[0].upper()[:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -608,7 +726,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=parts[0].upper()[1:]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -618,7 +738,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=' '.join((parts[0], parts[1]))
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -628,7 +750,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=' '.join((parts[1], parts[0]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='char',
@@ -637,7 +761,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=' '.join((parts[0], parts[2]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_char_search_regular_expression(self):
         id_list = self._do_backend_search(
@@ -646,7 +772,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value='c.*r'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -655,7 +783,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value='(test|INVALID)'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_char_search_invalid(self):
@@ -665,7 +795,9 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             value=99
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
@@ -676,7 +808,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.datetime = None
         self._test_object.save()
@@ -687,7 +821,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_datetime_search_empty_quoted(self):
         id_list = self._do_backend_search(
@@ -697,7 +833,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.datetime = None
         self._test_object.save()
@@ -709,7 +847,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_datetime_search_exact(self):
         id_list = self._do_backend_search(
@@ -725,7 +865,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than(self):
@@ -737,7 +879,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than_humanized_quoted(self):
@@ -748,7 +892,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value='last month'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than_humanized_non_quoted(self):
@@ -758,7 +904,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value='last month'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than_or_equal(self):
@@ -771,7 +919,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_less_than(self):
@@ -783,7 +933,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_less_than_humanized(self):
@@ -792,7 +944,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             query_type=QueryTypeLessThan, value='tomorrow'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_less_than_or_equal(self):
@@ -805,7 +959,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range(self):
@@ -820,7 +976,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_humanized(self):
@@ -831,7 +989,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value='last year..tomorrow'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -841,7 +1001,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value='yesterday..in two months'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_humanized_non_quoted(self):
@@ -851,7 +1013,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value='last year..tomorrow'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_exclusive(self):
@@ -866,7 +1030,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_invalid(self):
@@ -876,7 +1042,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value=11111
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='datetime',
@@ -884,7 +1052,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value='invalid'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='datetime',
@@ -892,7 +1062,9 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeEmailTestCaseMixin:
@@ -903,7 +1075,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.email = ''
         self._test_object.save()
@@ -914,7 +1088,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_email_search_exact_empty_quoted(self):
         id_list = self._do_backend_search(
@@ -924,7 +1100,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.email = ''
         self._test_object.save()
@@ -936,7 +1114,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_email_search_exact(self):
@@ -946,7 +1126,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=self._test_object.email
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_email_search_partial(self):
@@ -956,7 +1138,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value='user'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -965,7 +1149,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value='user@'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -974,7 +1160,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value='example.org'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -983,7 +1171,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=self._test_object.email[1:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_email_search_exact_invalid(self):
@@ -993,7 +1183,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=99
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='email',
@@ -1001,7 +1193,9 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
@@ -1014,7 +1208,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.integer = TEST_OBJECT_INTEGER_VALUE
         self._test_object.save()
@@ -1025,7 +1221,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_integer_null_search_exact_empty_quoted(self):
         self._test_object_integer_set = False
@@ -1037,7 +1235,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.integer = TEST_OBJECT_INTEGER_VALUE
         self._test_object.save()
@@ -1049,7 +1249,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_integer_search_exact(self):
         id_list = self._do_backend_search(
@@ -1058,7 +1260,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1067,7 +1271,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=str(self._test_object.integer)
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         # Test valid value ranges.
@@ -1080,7 +1286,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=str(self._test_object.integer)
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         self._test_object.integer = 2 ** 31 - 1
@@ -1092,7 +1300,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=str(self._test_object.integer)
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_greater_than(self):
@@ -1102,7 +1312,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer - 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_greater_than_or_equal(self):
@@ -1112,7 +1324,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer - 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1121,7 +1335,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_less_than(self):
@@ -1131,7 +1347,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer + 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_less_than_or_equal(self):
@@ -1141,7 +1359,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer + 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1150,7 +1370,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=self._test_object.integer
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_range(self):
@@ -1162,7 +1384,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1173,7 +1397,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1184,7 +1410,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1195,7 +1423,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_range_exclusive(self):
@@ -1207,7 +1437,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1218,7 +1450,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='integer',
@@ -1228,7 +1462,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='integer',
@@ -1238,7 +1474,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_integer_search_range_exclusive_invalid(self):
         id_list = self._do_backend_search(
@@ -1247,7 +1485,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value='INVALID'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='integer',
@@ -1255,7 +1495,9 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
@@ -1266,7 +1508,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_positiveinteger_search_exact(self):
         id_list = self._do_backend_search(
@@ -1275,7 +1519,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1284,7 +1530,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=str(self._test_object.positiveinteger)
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         # Test valid value range.
@@ -1297,7 +1545,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_greater_than(self):
@@ -1307,7 +1557,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger - 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_greater_than_or_equal(self):
@@ -1317,7 +1569,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger - 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1326,7 +1580,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_less_than(self):
@@ -1336,7 +1592,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger + 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_less_than_or_equal(self):
@@ -1346,7 +1604,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger + 1
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1355,7 +1615,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=self._test_object.positiveinteger
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_range(self):
@@ -1367,7 +1629,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1378,7 +1642,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1389,7 +1655,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1400,7 +1668,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_range_exclusive(self):
@@ -1412,7 +1682,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1423,7 +1695,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='positiveinteger',
@@ -1433,7 +1707,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='positiveinteger',
@@ -1443,7 +1719,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_positiveinteger_search_range_exclusive_invalid(self):
         id_list = self._do_backend_search(
@@ -1452,7 +1730,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value='INVALID'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='positiveinteger',
@@ -1460,7 +1740,9 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeTextTestCaseMixin:
@@ -1471,7 +1753,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_text_search_exact_empty_quoted(self):
         id_list = self._do_backend_search(
@@ -1481,7 +1765,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         self._test_object.text = ''
         self._test_object.save()
@@ -1493,7 +1779,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_text_search_exact(self):
@@ -1503,7 +1791,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=self._test_object.text
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_text_search_fuzzy(self):
@@ -1513,7 +1803,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value='tetx'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1523,7 +1815,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value='test tetx'
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_text_search_partial(self):
         parts = self._test_object.text.split(' ')
@@ -1534,7 +1828,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=parts[0][:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1543,7 +1839,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=parts[0][1:]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1552,7 +1850,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=parts[0].upper()[:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1561,7 +1861,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=parts[0].upper()[1:]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1571,7 +1873,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=' '.join((parts[0], parts[1]))
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1581,7 +1885,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=' '.join((parts[1], parts[0]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
         id_list = self._do_backend_search(
             field_name='text',
@@ -1590,7 +1896,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=' '.join((parts[0], parts[2]))
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_text_search_regular_expression(self):
         id_list = self._do_backend_search(
@@ -1599,7 +1907,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value='t.*t'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1608,7 +1918,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value='(text|INVALID)'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_text_search_regular_expression_invalid(self):
@@ -1618,7 +1930,9 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             value=99
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
@@ -1629,7 +1943,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value=''
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_uuid_search_exact(self):
         id_list = self._do_backend_search(
@@ -1638,7 +1954,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value=self._test_object.uuid
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_uuid_search_partial(self):
@@ -1648,7 +1966,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value=str(self._test_object.uuid)[1:-1]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1657,7 +1977,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value=str(self._test_object.uuid).split('-')[0]
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_uuid_search_regular_expression(self):
@@ -1669,7 +1991,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value='{}.*{}.*'.format(parts[0][:5], parts[0][-1])
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
         id_list = self._do_backend_search(
@@ -1680,7 +2004,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_uuid_search_exact_invalid(self):
@@ -1690,7 +2016,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
     def test_search_field_type_uuid_search_regular_expression_invalid(self):
         id_list = self._do_backend_search(
@@ -1699,7 +2027,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             value=True
         )
 
-        self.assertEqual(len(id_list), 0)
+        self.assertEqual(
+            len(id_list), 0
+        )
 
 
 class BackendFieldTypeQueryTypeTestCaseMixin(

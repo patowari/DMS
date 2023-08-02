@@ -238,9 +238,11 @@ class SearchFieldRelated(SearchFieldConcrete):
         ).values_list(last_field, flat=True)
 
         sub_queryset = sub_queryset.filter(
-            **{'{field_name}{lookup_separator}isnull'.format(
-                field_name=last_field, lookup_separator=LOOKUP_SEP
-            ): False}
+            **{
+                '{field_name}{lookup_separator}isnull'.format(
+                    field_name=last_field, lookup_separator=LOOKUP_SEP
+                ): False
+            }
         )
 
         if exclude_model and self.related_model == exclude_model:
@@ -248,7 +250,9 @@ class SearchFieldRelated(SearchFieldConcrete):
 
         result = []
 
-        for item in set(sub_queryset):
+        sub_queryset = sub_queryset.distinct()
+
+        for item in sub_queryset:
             item_value = self.do_value_index_transform(
                 search_backend=search_backend, value=item
             )
