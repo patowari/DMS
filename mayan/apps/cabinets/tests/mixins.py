@@ -1,4 +1,5 @@
-from mayan.apps.documents.tests.literals import TEST_FILE_TEXT_PATH
+from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
 
 from ..models import Cabinet
 
@@ -95,21 +96,18 @@ class CabinetDocumentAPIViewTestMixin:
         )
 
 
-class CabinetDocumentUploadWizardStepTestMixin:
-    def _request_upload_interactive_document_create_view(self):
-        with open(file=TEST_FILE_TEXT_PATH, mode='rb') as file_object:
-            return self.post(
-                viewname='sources:document_upload_interactive', kwargs={
-                    'source_id': self._test_source.pk
-                }, data={
-                    'document_type_id': self._test_document_type.pk,
-                    'source-file': file_object,
-                    'cabinets': Cabinet.objects.values_list('pk', flat=True)
-                }
-            )
+class CabinetDocumentUploadWizardStepTestMixin(
+    WebFormSourceTestMixin, SourceActionViewTestMixin
+):
+    def _request_document_upload_wizard_view(self):
+        return self.get(viewname='sources:document_upload_wizard')
 
-    def _request_wizard_view(self):
-        return self.get(viewname='sources:document_create_multiple')
+    def _request_test_source_document_upload_view_with_cabinets(self):
+        return self._request_test_source_document_upload_view(
+            extra_data={
+                'cabinets': Cabinet.objects.values_list('pk', flat=True)
+            }
+        )
 
 
 class CabinetTestMixin:

@@ -11,7 +11,7 @@ from mayan.apps.converter.permissions import (
     permission_transformation_delete, permission_transformation_edit
 )
 from mayan.apps.converter.transformations import TransformationResize
-from mayan.apps.source_apps.sources.links import link_document_file_upload
+from mayan.apps.sources.links import link_document_file_upload
 from mayan.apps.views.generics import (
     FormView, MultipleObjectConfirmActionView, MultipleObjectDeleteView,
     SingleObjectDetailView, SingleObjectEditView, SingleObjectListView

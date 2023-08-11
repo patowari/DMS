@@ -269,7 +269,6 @@ class SearchModel(AppsModuleLoaderMixin):
         exclude_model=None
     ):
         instance_field_data = {}
-        search_model = SearchModel.get_for_model(instance=instance)
 
         # Process the search fields by order of priority. This makes sure
         # that virtual fields are processed last.

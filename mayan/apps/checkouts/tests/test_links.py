@@ -1,7 +1,7 @@
 from mayan.apps.documents.permissions import permission_document_file_new
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.source_apps.sources.links import link_document_file_upload
-from mayan.apps.source_apps.sources.tests.mixins.base import SourceTestMixin
+from mayan.apps.sources.links import link_document_file_upload
+from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 
 
 from ..links import link_check_out_document, link_check_out_info
@@ -84,7 +84,7 @@ class DocumentFileListViewTestCase(
         self.assertNotEqual(resolved_link, None)
 
     def test_document_file_new_blocked_different_user(self):
-        self._silence_logger(name='mayan.apps.source_apps.sources.links')
+        self._silence_logger(name='mayan.apps.sources.links')
 
         self._create_test_user()
         self._check_out_test_document(user=self._test_user)

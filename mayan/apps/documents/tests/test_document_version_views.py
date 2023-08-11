@@ -489,7 +489,7 @@ class DocumentVersionModificationViewTestCase(
 ):
     def test_document_version_action_page_append_view_no_permission(self):
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self._clear_events()
@@ -509,7 +509,7 @@ class DocumentVersionModificationViewTestCase(
 
     def test_document_version_action_page_append_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self.grant_access(
@@ -558,7 +558,7 @@ class DocumentVersionModificationViewTestCase(
 
     def test_trashed_document_version_action_page_append_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self.grant_access(
@@ -585,7 +585,7 @@ class DocumentVersionModificationViewTestCase(
 
     def test_document_version_action_page_reset_view_no_permission(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self._clear_events()
@@ -610,7 +610,7 @@ class DocumentVersionModificationViewTestCase(
 
     def test_document_version_action_page_reset_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self.grant_access(
@@ -663,7 +663,7 @@ class DocumentVersionModificationViewTestCase(
 
     def test_trashed_document_version_action_page_reset_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self.grant_access(

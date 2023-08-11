@@ -12,6 +12,10 @@ def convert_to_id_list(items):
     )
 
 
+def request_is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
+
 def resolve(path, urlconf=None):
     path = '/{}'.format(
         path.replace(

@@ -7,19 +7,27 @@ from mayan.apps.common.serialization import yaml_load
 
 from ..classes import BaseDocumentFilenameGenerator
 from ..permissions import permission_document_view
-from ..settings import setting_language
 
 logger = logging.getLogger(name=__name__)
 
 
 class DocumentTypeBusinessLogicMixin:
-    @property
-    def trashed_documents(self):
-        TrashedDocument = apps.get_model(
-            app_label='documents', model_name='TrashedDocument'
+    def documents_create(self, user=None, **kwargs):
+        Document = apps.get_model(
+            app_label='documents', model_name='Document'
         )
 
-        return TrashedDocument.objects.filter(document_type=self)
+        document = Document(document_type=self, **kwargs)
+        document._event_actor = user
+        document.save()
+
+        return document
+
+    def documents_upload(self, file_object, user=None, **kwargs):
+        document = self.documents_create(user=user, **kwargs)
+        document.files_upload(file_object=file_object, user=user)
+
+        return document
 
     def get_document_count(self, user):
         queryset = AccessControlList.objects.restrict_queryset(
@@ -42,42 +50,10 @@ class DocumentTypeBusinessLogicMixin:
             instance=instance, filename=filename
         )
 
-    def new_document(
-        self, file_object, label=None, description=None, language=None,
-        user=None
-    ):
-        Document = apps.get_model(
-            app_label='documents', model_name='Document'
+    @property
+    def trashed_documents(self):
+        TrashedDocument = apps.get_model(
+            app_label='documents', model_name='TrashedDocument'
         )
 
-        try:
-            document = Document(
-                description=description or '', document_type=self,
-                label=label or file_object.name,
-                language=language or setting_language.value
-            )
-            document._event_keep_attributes = ('_event_actor',)
-            document._event_actor = user
-            document.save()
-        except Exception as exception:
-            logger.critical(
-                'Unexpected exception while trying to create new document '
-                '"%s" from document type "%s"; %s',
-                label or file_object.name, self, exception
-            )
-            raise
-        else:
-            try:
-                document_file = document.file_new(
-                    file_object=file_object, filename=label, user=user
-                )
-            except Exception as exception:
-                logger.critical(
-                    'Unexpected exception while trying to create initial '
-                    'file for document %s; %s',
-                    label or file_object.name, exception
-                )
-                document.delete(to_trash=False)
-                raise
-            else:
-                return (document, document_file)
+        return TrashedDocument.objects.filter(document_type=self)

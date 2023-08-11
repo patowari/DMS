@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_states', '0022_workflow_auto_launch'),
+        ('document_states', '0022_workflow_auto_launch')
     ]
 
     operations = [

@@ -1,8 +1,7 @@
 from django.db.models import Q
-from django.urls import reverse
 
-from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
-from mayan.apps.views.http import URL
+from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
 
 from ..models import DocumentMetadata, DocumentTypeMetadataType, MetadataType
 
@@ -287,29 +286,31 @@ class DocumentTypeMetadataTypeTestMixin:
         )
 
 
-class MetadataDocumentUploadWizardStepTestMixin:
-    def _request_upload_interactive_document_create_view(
-        self, metadata_value
-    ):
-        url = URL(
-            path=reverse(viewname='sources:document_upload_interactive')
-        )
-        url.args['metadata0_metadata_type_id'] = self._test_metadata_type.pk
-        url.args['metadata0_value'] = metadata_value
+class CabinetDocumentUploadWizardStepTestMixin(
+    WebFormSourceTestMixin, SourceActionViewTestMixin
+):
+    def _request_document_upload_wizard_view(self):
+        return self.get(viewname='sources:document_upload_wizard')
 
-        with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
-            return self.post(
-                path=url.to_string(), data={
-                    'document-language': 'eng', 'source-file': file_object,
-                    'document_type_id': self._test_document_type.pk,
-                }
-            )
 
-    def _request_document_create_view(self):
+class MetadataDocumentUploadWizardStepTestMixin(
+    WebFormSourceTestMixin, SourceActionViewTestMixin
+):
+    def _request_document_upload_wizard_view(self):
         return self.post(
-            viewname='sources:document_create_multiple', data={
+            viewname='sources:document_upload_wizard', data={
                 'document_type_selection-document_type': self._test_document_type.pk,
                 'document_create_wizard-current_step': 0
+            }
+        )
+
+    def _request_test_source_document_upload_view_with_metadata(
+        self, metadata_value
+    ):
+        return self._request_test_source_document_upload_view(
+            extra_data={
+                'metadata0_metadata_type_id': self._test_metadata_type.pk,
+                'metadata0_value': metadata_value
             }
         )
 

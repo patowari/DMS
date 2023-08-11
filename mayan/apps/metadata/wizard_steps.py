@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.source_apps.sources.classes import DocumentCreateWizardStep
-from mayan.apps.source_apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
+from mayan.apps.sources.classes import DocumentCreateWizardStep
+from mayan.apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
 
 from .forms import DocumentMetadataFormSet
 from .utils import (
@@ -67,7 +67,7 @@ class DocumentCreateWizardStepMetadata(DocumentCreateWizardStep):
 
     @classmethod
     def step_post_upload_process(
-        cls, document, source_id, user_id, extra_data=None, query_string=None
+        cls, document, query_string, source_id, user_id
     ):
         User = get_user_model()
 

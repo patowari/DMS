@@ -6,8 +6,7 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.source_apps.source_web_forms.tests.mixins import WebFormSourceBackendTestMixin
-from mayan.apps.source_apps.sources.wizards import DocumentCreateWizardStep
+from mayan.apps.sources.wizards import DocumentCreateWizardStep
 
 from ..events import event_cabinet_document_added
 from ..wizard_steps import DocumentCreateWizardStepCabinets
@@ -19,7 +18,7 @@ from .mixins import (
 
 class CabinetDocumentUploadTestCase(
     CabinetTestMixin, CabinetDocumentUploadWizardStepTestMixin,
-    WebFormSourceBackendTestMixin, GenericDocumentViewTestCase
+    GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -41,7 +40,7 @@ class CabinetDocumentUploadTestCase(
 
         self._clear_events()
 
-        response = self._request_upload_interactive_document_create_view()
+        response = self._request_test_source_document_upload_view_with_cabinets()
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
@@ -64,37 +63,37 @@ class CabinetDocumentUploadTestCase(
         self.assertEqual(events[0].target, test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].action_object, self._test_cabinets[0])
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_cabinet_document_added.id)
 
-        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].action_object, self._test_cabinets[1])
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_cabinet_document_added.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[5].action_object, self._test_cabinets[0])
+        self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document)
-        self.assertEqual(events[5].verb, event_cabinet_document_added.id)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_cabinets[1])
+        self.assertEqual(events[6].action_object, test_document_version)
         self.assertEqual(events[6].actor, self._test_case_user)
-        self.assertEqual(events[6].target, test_document)
-        self.assertEqual(events[6].verb, event_cabinet_document_added.id)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
 
     def test_upload_interactive_cabinet_selection_view_with_access(self):
         DocumentCreateWizardStep.deregister_all()
@@ -110,7 +109,7 @@ class CabinetDocumentUploadTestCase(
 
         self._clear_events()
 
-        response = self._request_wizard_view()
+        response = self._request_document_upload_wizard_view()
         self.assertEqual(response.status_code, 200)
 
         events = self._get_test_events()

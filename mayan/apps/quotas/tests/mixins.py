@@ -1,11 +1,25 @@
 import json
 
+
+from mayan.apps.documents.tests.base import DocumentTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
+from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
+
 from ..models import Quota
 
 from .literals import (
     TEST_QUOTA_DATA, TEST_QUOTA_DOTTED_PATH, TEST_QUOTA_WITH_MIXINS_DOTTED_PATH,
     TEST_QUOTA_TEST_LIMIT_EDITED
 )
+
+
+class DocumentViewQuotaHookTestMixin(
+    DocumentTestMixin, SourceActionViewTestMixin,
+    WebFormSourceTestMixin
+):
+    """
+    Combined class for source document upload view quota testing.
+    """
 
 
 class QuotaTestMixin:

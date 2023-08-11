@@ -1,6 +1,7 @@
 import logging
 
 from django.apps import apps
+from django.db import OperationalError
 
 from mayan.celery import app
 

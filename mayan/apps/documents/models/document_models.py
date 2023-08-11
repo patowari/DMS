@@ -19,6 +19,7 @@ from ..managers import (
     DocumentManager, TrashCanManager, ValidDocumentManager,
     ValidRecentlyCreatedDocumentManager
 )
+from ..settings import setting_language
 
 from .document_model_mixins import DocumentBusinessLogicMixin
 from .document_type_models import DocumentType
@@ -168,6 +169,10 @@ class Document(
     def save(self, *args, **kwargs):
         user = self.__dict__.pop('_event_actor', None)
         new_document = not self.pk
+
+        self.description = self.description or ''
+        self.label = self.label or ''
+        self.language = self.language or setting_language.value
 
         signal_mayan_pre_save.send(
             instance=self, sender=Document, user=user

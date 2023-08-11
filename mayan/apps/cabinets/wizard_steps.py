@@ -2,7 +2,7 @@ from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.source_apps.sources.classes import DocumentCreateWizardStep
+from mayan.apps.sources.classes import DocumentCreateWizardStep
 from mayan.apps.views.http import URL
 
 from .forms import CabinetListForm
@@ -45,7 +45,7 @@ class DocumentCreateWizardStepCabinets(DocumentCreateWizardStep):
 
     @classmethod
     def step_post_upload_process(
-        cls, document, source_id, user_id, extra_data=None, query_string=None
+        cls, document, query_string, source_id, user_id
     ):
         Cabinet = apps.get_model(app_label='cabinets', model_name='Cabinet')
         User = get_user_model()
@@ -53,6 +53,7 @@ class DocumentCreateWizardStepCabinets(DocumentCreateWizardStep):
         cabinet_id_list = URL(
             query_string=query_string
         ).args.getlist('cabinets')
+
         try:
             user = User.objects.get(pk=user_id)
         except User.DoesNotExist:

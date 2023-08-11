@@ -214,6 +214,27 @@
   - psycopg2 from 2.9.3 to 2.9.6
 
 - Update duplicate bulk creation to work in batches of 100 entries.
+- Sources actions refactor:
+
+  - Unify the sources action with new action, action
+    iterfaces and action interfaces argument classes.
+  - The source action refactor converts source actions
+    into reusable mixins.
+  - Each action is resposible to support multiple
+    interface type and the arguments for each
+    interface.
+  - Add watch storage source.
+  - New API endpoints to inspect and execute the
+    source actions.
+  - Removal of the email metadata attachment support.
+  - Removal of the email message attribute to metada
+    support.
+  - Update document and document file creation to
+    happen in smaller units.
+  - Update the SANE scanner source to perform the
+    scan as a background task.
+  - Update staging folder initial file copy to
+    be a background task.
 
 4.4.8 (2023-07-15)
 ==================

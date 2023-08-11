@@ -16,7 +16,7 @@ class DocumentVersionTestCase(
         self.assertEqual(self._test_document.versions.count(), 1)
 
         self._upload_test_document_file(
-            action=DocumentFileActionUseNewPages.backend_id
+            action_name=DocumentFileActionUseNewPages.backend_id
         )
 
         self.assertEqual(self._test_document.versions.count(), 2)
@@ -36,7 +36,7 @@ class DocumentVersionTestCase(
         self.assertEqual(self._test_document.versions.count(), 1)
 
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self.assertEqual(self._test_document.versions.count(), 1)
@@ -57,7 +57,7 @@ class DocumentVersionTestCase(
         self.assertEqual(self._test_document.files.count(), 1)
 
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self.assertEqual(self._test_document.files.count(), 2)

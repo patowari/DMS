@@ -26,7 +26,7 @@ class DocumentVersionPageTestCase(
 
     def test_version_pages_reset(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         test_document_version_page_content_objects = self._test_document.versions.last().page_content_objects

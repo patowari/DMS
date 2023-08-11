@@ -2,8 +2,7 @@ from django.db.models import Q
 
 from mayan.apps.converter.layers import layer_saved_transformations
 
-from ...document_file_actions import DocumentFileActionUseNewPages
-from ...literals import PAGE_RANGE_ALL
+from ...literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME, PAGE_RANGE_ALL
 from ...models.document_file_models import DocumentFile
 
 from ..literals import (
@@ -45,8 +44,8 @@ class DocumentFileAPIViewTestMixin:
                 viewname='rest_api:documentfile-list', kwargs={
                     'document_id': self._test_document.pk,
                 }, data={
-                    'action': DocumentFileActionUseNewPages.backend_id,
-                    'comment': '', 'file_new': file_descriptor,
+                    'action_name': DEFAULT_DOCUMENT_FILE_ACTION_NAME,
+                    'comment': '', 'file_new': file_descriptor
                 }
             )
 
@@ -72,25 +71,34 @@ class DocumentFileLinkTestMixin:
 
 
 class DocumentFileTestMixin:
-    def _upload_test_document_file(self, action=None, user=None):
+    def _upload_test_document_file(self, action_name=None, user=None):
         self._calculate_test_document_file_path()
 
-        if not action:
-            action = DocumentFileActionUseNewPages.backend_id
+        if not action_name:
+            action_name = DEFAULT_DOCUMENT_FILE_ACTION_NAME
 
         document_file_count = DocumentFile.objects.count()
 
+        pk_list = list(
+            DocumentFile.objects.values_list('pk', flat=True)
+        )
+
         with open(file=self._test_document_path, mode='rb') as file_object:
-            self._test_document_file = self._test_document.file_new(
-                action=action, comment=TEST_DOCUMENT_FILE_COMMENT,
+            self._test_document.files_upload(
+                action_name=action_name, comment=TEST_DOCUMENT_FILE_COMMENT,
                 file_object=file_object,
                 filename='test_document_file_{}'.format(document_file_count),
                 user=user
             )
 
+        self._test_document_file = DocumentFile.objects.get(
+            ~Q(pk__in=pk_list)
+        )
         self._test_document_file_page = self._test_document_file.pages.first()
         self._test_document_file_pages.extend(
-            list(self._test_document_file.pages.all())
+            list(
+                self._test_document_file.pages.all()
+            )
         )
         self._test_document_files.append(self._test_document_file)
         self._test_document_version = self._test_document.version_active

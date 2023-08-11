@@ -1,4 +1,5 @@
-from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
+from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
 
 from django.db.models import Q
 
@@ -217,15 +218,12 @@ class TagViewTestMixin:
         return self.get(viewname='tags:tag_list')
 
 
-class TaggedDocumentUploadWizardStepViewTestMixin:
-    def _request_upload_interactive_document_create_view(self):
-        with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
-            return self.post(
-                viewname='sources:document_upload_interactive', kwargs={
-                    'source_id': self._test_source.pk
-                }, data={
-                    'document_type_id': self._test_document_type.pk,
-                    'source-file': file_object,
-                    'tags': Tag.objects.values_list('pk', flat=True)
-                }
-            )
+class TaggedDocumentUploadWizardStepViewTestMixin(
+    WebFormSourceTestMixin, SourceActionViewTestMixin
+):
+    def _request_test_source_document_upload_view_with_tags(self):
+        return self._request_test_source_document_upload_view(
+            extra_data={
+                'tags': Tag.objects.values_list('pk', flat=True)
+            }
+        )

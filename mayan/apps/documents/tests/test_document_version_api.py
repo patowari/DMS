@@ -30,7 +30,7 @@ class DocumentVersionModificationAPIViewTestCase(
 ):
     def test_document_version_action_page_append_api_view_no_permission(self):
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self._clear_events()
@@ -50,7 +50,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
     def test_document_version_action_page_append_api_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self.grant_access(
@@ -99,7 +99,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
     def test_trashed_document_version_action_page_append_api_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionNothing.backend_id
+            action_name=DocumentFileActionNothing.backend_id
         )
 
         self.grant_access(
@@ -126,7 +126,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
     def test_document_version_action_page_reset_api_view_no_permission(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self._clear_events()
@@ -151,7 +151,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
     def test_document_version_action_page_reset_api_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self.grant_access(
@@ -204,7 +204,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
     def test_trashed_document_version_action_page_reset_api_view_with_access(self):
         self._upload_test_document_file(
-            action=DocumentFileActionAppendNewPages.backend_id
+            action_name=DocumentFileActionAppendNewPages.backend_id
         )
 
         self.grant_access(
@@ -273,6 +273,7 @@ class DocumentVersionAPIViewTestCase(
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
+
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document_version)
@@ -334,6 +335,7 @@ class DocumentVersionAPIViewTestCase(
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
+
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
@@ -510,6 +512,7 @@ class DocumentVersionAPIViewTestCase(
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
+
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document_version)

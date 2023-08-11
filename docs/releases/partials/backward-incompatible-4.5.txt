@@ -65,6 +65,27 @@ The result code of the document file deletion API view has changed from
 204 (No content) to 202 (Accepted).
 
 
+Document file actions now use a short name instead of a non descriptive
+number. The new action names are as follow:
+
+1 is now 'replace'
+2 is now 'append'
+3 is now 'keep'
+
+Likewise the API field has changed from 'action' to 'action_name'.
+
+
+Sources
+^^^^^^^
+
+Removal of YAML metadata attachments in email sources.
+
+Removal of sender, subject, and message ID metadata collection.
+
+Staging folder and watch folder now only work with real files and ignore
+symlinks.
+
+
 Task manager
 ^^^^^^^^^^^^
 

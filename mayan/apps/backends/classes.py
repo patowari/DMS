@@ -75,7 +75,9 @@ class BaseBackend(AppsModuleLoaderMixin, metaclass=BackendMetaclass):
 
     @classmethod
     def get(cls, name):
-        return cls._registry.get(cls, {})[name]
+        return cls._registry.get(
+            cls, {}
+        )[name]
 
     @classmethod
     def get_all(cls):

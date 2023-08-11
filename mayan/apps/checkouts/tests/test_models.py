@@ -132,7 +132,7 @@ class DocumentCheckoutTestCase(
 
         with self.assertRaises(expected_exception=NewDocumentFileNotAllowed):
             with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
-                self._test_document.file_new(file_object=file_object)
+                self._test_document.files_upload(file_object=file_object)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -151,7 +151,7 @@ class DocumentCheckoutTestCase(
 
         with self.assertRaises(expected_exception=NewDocumentFileNotAllowed):
             with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
-                self._test_document.file_new(file_object=file_object)
+                self._test_document.files_upload(file_object=file_object)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

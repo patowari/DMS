@@ -6,7 +6,6 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.source_apps.source_web_forms.tests.mixins import WebFormSourceBackendTestMixin
 
 from ..events import (
     event_document_metadata_added, event_document_metadata_edited
@@ -22,7 +21,7 @@ from .mixins import (
 
 class DocumentUploadMetadataTestCase(
     MetadataDocumentUploadWizardStepTestMixin, MetadataTypeTestMixin,
-    WebFormSourceBackendTestMixin, GenericDocumentViewTestCase
+    GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -44,7 +43,7 @@ class DocumentUploadMetadataTestCase(
 
         self._clear_events()
 
-        response = self._request_upload_interactive_document_create_view(
+        response = self._request_test_source_document_upload_view_with_metadata(
             metadata_value=TEST_METADATA_VALUE_UNICODE
         )
         self.assertEqual(response.status_code, 302)
@@ -68,37 +67,37 @@ class DocumentUploadMetadataTestCase(
         self.assertEqual(events[0].target, test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_document_metadata_added.id)
 
-        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].action_object, self._test_metadata_type)
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_metadata_edited.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[5].action_object, self._test_metadata_type)
+        self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document)
-        self.assertEqual(events[5].verb, event_document_metadata_added.id)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_metadata_type)
+        self.assertEqual(events[6].action_object, test_document_version)
         self.assertEqual(events[6].actor, self._test_case_user)
-        self.assertEqual(events[6].target, test_document)
-        self.assertEqual(events[6].verb, event_document_metadata_edited.id)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
 
     def test_upload_interactive_with_ampersand_metadata(self):
         self.grant_access(
@@ -111,7 +110,7 @@ class DocumentUploadMetadataTestCase(
 
         self._clear_events()
 
-        response = self._request_upload_interactive_document_create_view(
+        response = self._request_test_source_document_upload_view_with_metadata(
             metadata_value=TEST_METADATA_VALUE_WITH_AMPERSAND
         )
 
@@ -136,37 +135,37 @@ class DocumentUploadMetadataTestCase(
         self.assertEqual(events[0].target, test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_document_metadata_added.id)
 
-        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].action_object, self._test_metadata_type)
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_metadata_edited.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[5].action_object, self._test_metadata_type)
+        self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document)
-        self.assertEqual(events[5].verb, event_document_metadata_added.id)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_metadata_type)
+        self.assertEqual(events[6].action_object, test_document_version)
         self.assertEqual(events[6].actor, self._test_case_user)
-        self.assertEqual(events[6].target, test_document)
-        self.assertEqual(events[6].verb, event_document_metadata_edited.id)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
 
     def test_initial_step_conditions(self):
         self.grant_access(
@@ -179,7 +178,7 @@ class DocumentUploadMetadataTestCase(
 
         self._clear_events()
 
-        response = self._request_document_create_view()
+        response = self._request_document_upload_wizard_view()
         self.assertContains(
             response=response, status_code=200, text='Step 2'
         )

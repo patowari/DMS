@@ -5,7 +5,7 @@ from .classes import DocumentFileAction
 
 
 class DocumentFileActionAppendNewPages(DocumentFileAction):
-    action_id = 2
+    action_id = 'append'
     label = _('Append. Create a new version and append the new file pages.')
 
     @staticmethod
@@ -41,7 +41,7 @@ class DocumentFileActionAppendNewPages(DocumentFileAction):
 
 
 class DocumentFileActionNothing(DocumentFileAction):
-    action_id = 3
+    action_id = 'keep'
     label = _(
         'Keep. Do not create a new version and keep the current '
         'version pages.'
@@ -53,7 +53,7 @@ class DocumentFileActionNothing(DocumentFileAction):
 
 
 class DocumentFileActionUseNewPages(DocumentFileAction):
-    action_id = 1
+    action_id = 'replace'
     label = _('Replace. Create a new version and use the new file pages.')
 
     @staticmethod

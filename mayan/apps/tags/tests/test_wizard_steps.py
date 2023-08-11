@@ -6,7 +6,6 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.source_apps.source_web_forms.tests.mixins import WebFormSourceBackendTestMixin
 
 from ..events import event_tag_attached
 
@@ -14,12 +13,12 @@ from .mixins import TagTestMixin, TaggedDocumentUploadWizardStepViewTestMixin
 
 
 class TaggedDocumentUploadViewTestCase(
-    TaggedDocumentUploadWizardStepViewTestMixin, TagTestMixin,
-    WebFormSourceBackendTestMixin, GenericDocumentViewTestCase
+    TaggedDocumentUploadWizardStepViewTestMixin,
+    TagTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
-    def test_upload_interactive_view_with_full_access(self):
+    def test_source_document_upload_tag_single_view_with_full_access(self):
         self._create_test_tag()
 
         self.grant_access(
@@ -31,10 +30,12 @@ class TaggedDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_upload_interactive_document_create_view()
+        response = self._request_test_source_document_upload_view_with_tags()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_tag in Document.objects.first().tags.all())
+        self.assertTrue(
+            self._test_tag in Document.objects.first().tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)
@@ -49,34 +50,34 @@ class TaggedDocumentUploadViewTestCase(
         self.assertEqual(events[0].target, test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].action_object, self._test_tag)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_tag_attached.id)
 
         self.assertEqual(events[2].action_object, test_document)
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].verb, event_document_file_created.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document_version)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version_page)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[5].verb, event_document_version_page_created.id
         )
 
-        self.assertEqual(events[5].action_object, self._test_tag)
-        self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document)
-        self.assertEqual(events[5].verb, event_tag_attached.id)
-
-    def test_upload_interactive_multiple_tags_view_full_access(self):
+    def test_source_document_upload_tag_multiple_view_full_access(self):
         self._create_test_tag()
         self._create_test_tag()
 
@@ -89,7 +90,7 @@ class TaggedDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_upload_interactive_document_create_view()
+        response = self._request_test_source_document_upload_view_with_tags()
         self.assertEqual(response.status_code, 302)
 
         self.assertTrue(
@@ -112,34 +113,34 @@ class TaggedDocumentUploadViewTestCase(
         self.assertEqual(events[0].target, test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].action_object, self._test_tags[0])
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_tag_attached.id)
 
-        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].action_object, self._test_tags[1])
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_tag_attached.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[5].action_object, self._test_tags[0])
+        self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document)
-        self.assertEqual(events[5].verb, event_tag_attached.id)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_tags[1])
+        self.assertEqual(events[6].action_object, test_document_version)
         self.assertEqual(events[6].actor, self._test_case_user)
-        self.assertEqual(events[6].target, test_document)
-        self.assertEqual(events[6].verb, event_tag_attached.id)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )

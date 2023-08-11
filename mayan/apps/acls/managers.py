@@ -373,7 +373,7 @@ class AccessControlListManager(models.Manager):
                 except self.model.DoesNotExist:
                     pass
 
-                if type(parent_object) == type(obj):
+                if type(parent_object) is type(obj):
                     # Object and parent are of the same type. Break
                     # recursion.
                     return queryset

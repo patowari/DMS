@@ -17,6 +17,7 @@ from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.mime_types.classes import MIMETypeBackend
 
+from ..classes import DocumentFileAction
 from ..events import event_document_file_created, event_document_file_edited
 from ..literals import (
     DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE,
@@ -103,7 +104,7 @@ class DocumentFileBusinessLogicMixin:
             self.document.is_stub = False
 
             if not self.document.label:
-                self.document.label = str(self.file)
+                self.document.label = str(self)
 
             self.document._event_ignore = True
             self.document.save(
@@ -125,10 +126,6 @@ class DocumentFileBusinessLogicMixin:
         target='self'
     )
     def _introspect(self):
-        DocumentFile = apps.get_model(
-            app_label='documents', model_name='DocumentFile'
-        )
-
         try:
             self.checksum_update(save=False)
             super().save(
@@ -153,9 +150,7 @@ class DocumentFileBusinessLogicMixin:
             )
             raise
         else:
-            signal_post_document_file_upload.send(
-                sender=DocumentFile, instance=self
-            )
+            self.upload_complete()
 
     @cached_property
     def cache(self):
@@ -438,7 +433,26 @@ class DocumentFileBusinessLogicMixin:
                     update_fields=('size',)
                 )
 
+    def upload_complete(self):
+        DocumentFile = apps.get_model(
+            app_label='documents', model_name='DocumentFile'
+        )
+
+        signal_post_document_file_upload.send(
+            sender=DocumentFile, instance=self
+        )
+
     @property
     def uuid(self):
         # Make cache UUID a mix of document UUID, file ID.
         return '{}-{}'.format(self.document.uuid, self.pk)
+
+    def versions_new(self, action_name, comment=None, user=None):
+        DocumentFileAction.get(name=action_name).execute(
+            comment=comment, document=self.document, document_file=self,
+            user=user
+        )
+
+    versions_new.help_text = _(
+        'Controls what happens when a new document file is uploaded.'
+    )

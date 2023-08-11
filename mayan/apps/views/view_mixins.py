@@ -345,7 +345,7 @@ class MultipleObjectViewMixin(SingleObjectMixin):
     def dispatch(self, request, *args, **kwargs):
         self.object_list = self.get_object_list()
         if self.view_mode_single:
-            self.object = self.object_list.first()
+            self.object = self.get_object_first()
 
         return super().dispatch(request=request, *args, **kwargs)
 
@@ -366,6 +366,9 @@ class MultipleObjectViewMixin(SingleObjectMixin):
         Remove this method from the subclass
         """
         raise AttributeError
+
+    def get_object_first(self):
+        return self.object_list.first()
 
     def get_object_list(self, queryset=None):
         """

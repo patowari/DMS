@@ -88,7 +88,7 @@ class EmbeddedSignatureManager(models.Manager):
                 # Reset the file pointer and use it to create the new
                 # signed document file.
                 temporary_file_object.seek(0)
-                document_file.document.file_new(
+                document_file.document.files_upload(
                     file_object=temporary_file_object,
                     filename='{}_{}'.format(
                         str(document_file), _('signed')

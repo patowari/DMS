@@ -509,8 +509,6 @@ class WorkflowInstanceAPIViewTestCase(
 class WorkflowInstanceLaunchAPIViewTestCase(
     WorkflowInstanceLaunchAPIViewTestMixin, BaseAPITestCase
 ):
-    # ~ auto_upload_test_document = False
-
     def setUp(self):
         super().setUp()
         self._create_test_workflow_template(
@@ -644,8 +642,6 @@ class WorkflowInstanceLogEntryTransitrionListAPIViewTestCase(
     WorkflowInstanceAPIViewTestMixin,
     WorkflowInstanceLogEntryTransitionListAPIViewTestMixin, BaseAPITestCase
 ):
-    # ~ auto_upload_test_document = False
-
     def setUp(self):
         super().setUp()
         self._create_test_workflow_template(add_test_document_type=True)
@@ -653,7 +649,6 @@ class WorkflowInstanceLogEntryTransitrionListAPIViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
         self._create_test_document_stub()
-        # ~ self._test_workflow_instance = self._test_document.workflows.first()
 
     def test_workflow_instance_log_entry_transition_list_api_view_no_permission(self):
         self._clear_events()

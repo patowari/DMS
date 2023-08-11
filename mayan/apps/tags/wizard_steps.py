@@ -2,7 +2,7 @@ from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.source_apps.sources.classes import DocumentCreateWizardStep
+from mayan.apps.sources.classes import DocumentCreateWizardStep
 from mayan.apps.views.http import URL
 
 from .forms import TagMultipleSelectionForm
@@ -44,7 +44,7 @@ class DocumentCreateWizardStepTags(DocumentCreateWizardStep):
 
     @classmethod
     def step_post_upload_process(
-        cls, document, source_id, user_id, extra_data=None, query_string=None
+        cls, document, query_string, source_id, user_id
     ):
         Tag = apps.get_model(app_label='tags', model_name='Tag')
         User = get_user_model()

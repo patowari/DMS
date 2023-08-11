@@ -27,7 +27,6 @@ class WorkflowInstanceTransitionViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
         self._create_test_document_stub()
-        # ~ self._test_workflow_instance = self._test_document.workflows.first()
 
     def test_document_workflow_instance_list_view_no_permission(self):
         self._clear_events()
@@ -653,8 +652,6 @@ class WorkflowInstanceTransitionFieldViewTestCase(
             }
         )
         self._create_test_document_stub()
-
-        # ~ self._test_workflow_instance = self._test_document.workflows.first()
 
     def test_workflow_instance_transition_text_area_widget_execute_view_with_document_and_transition_access(self):
         self.grant_access(

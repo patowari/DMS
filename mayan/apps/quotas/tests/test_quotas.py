@@ -3,8 +3,10 @@ import logging
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created, event_trashed_document_deleted
+    event_document_version_page_created
 )
+from mayan.apps.documents.models.document_file_models import DocumentFile
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.user_management.events import (
     event_group_created, event_user_created
@@ -466,7 +468,7 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
     def setUp(self):
         super().setUp()
         self.test_case_silenced_logger_new_level = logging.FATAL + 10
-        self._silence_logger(name='mayan.apps.documents.model_mixins')
+        self._silence_logger(name='mayan.apps.documents.models')
 
     def test_user_all_document_type_all(self):
         self._test_quota = DocumentSizeQuota.create(
@@ -478,18 +480,27 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
             user_ids=()
         )
 
+        test_document_count = Document.objects.count()
+        test_document_file_count = DocumentFile.objects.count()
+
         self._clear_events()
 
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document()
 
+        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            DocumentFile.objects.count(), test_document_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_document_type)
-        self.assertEqual(events[0].target, self._test_document_type)
-        self.assertEqual(events[0].verb, event_trashed_document_deleted.id)
+        _test_document = Document.objects.first()
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, _test_document)
+        self.assertEqual(events[0].target, _test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
 
     def test_user_all_document_type_test(self):
         self._test_quota = DocumentSizeQuota.create(
@@ -501,18 +512,27 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
             user_ids=()
         )
 
+        test_document_count = Document.objects.count()
+        test_document_file_count = DocumentFile.objects.count()
+
         self._clear_events()
 
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document()
 
+        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            DocumentFile.objects.count(), test_document_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_document_type)
-        self.assertEqual(events[0].target, self._test_document_type)
-        self.assertEqual(events[0].verb, event_trashed_document_deleted.id)
+        _test_document = Document.objects.first()
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, _test_document)
+        self.assertEqual(events[0].target, _test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
 
     def test_user_test_document_type_test(self):
         self._test_quota = DocumentSizeQuota.create(
@@ -524,18 +544,27 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
             user_ids=(self._test_case_user.pk,)
         )
 
+        test_document_count = Document.objects.count()
+        test_document_file_count = DocumentFile.objects.count()
+
         self._clear_events()
 
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document(user=self._test_case_user)
 
+        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            DocumentFile.objects.count(), test_document_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_document_type)
-        self.assertEqual(events[0].target, self._test_document_type)
-        self.assertEqual(events[0].verb, event_trashed_document_deleted.id)
+        _test_document = Document.objects.first()
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, _test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
 
     def test_group_test_document_type_test(self):
         self._create_test_group()
@@ -550,18 +579,27 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
             user_ids=()
         )
 
+        test_document_count = Document.objects.count()
+        test_document_file_count = DocumentFile.objects.count()
+
         self._clear_events()
 
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document(user=self._test_case_user)
 
+        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            DocumentFile.objects.count(), test_document_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_document_type)
-        self.assertEqual(events[0].target, self._test_document_type)
-        self.assertEqual(events[0].verb, event_trashed_document_deleted.id)
+        _test_document = Document.objects.first()
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, _test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
 
     def test_allow(self):
         self._test_quota = DocumentSizeQuota.create(

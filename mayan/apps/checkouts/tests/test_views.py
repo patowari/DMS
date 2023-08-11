@@ -690,7 +690,7 @@ class DocumentCheckoutOptionsViewTestCase(
         self._create_test_document_stub()
 
     def test_document_check_out_block_new_file_view(self):
-        self._silence_logger(name='mayan.apps.source_apps.sources.links')
+        self._silence_logger(name='mayan.apps.sources.links')
 
         self._create_test_user()
         self._check_out_test_document(user=self._test_user)

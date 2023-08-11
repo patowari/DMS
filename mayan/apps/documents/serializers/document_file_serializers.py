@@ -3,7 +3,6 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.rest_api import serializers
 from mayan.apps.rest_api.relations import MultiKwargHyperlinkedIdentityField
 
-from ..classes import DocumentFileAction
 from ..models.document_file_models import DocumentFile
 from ..models.document_file_page_models import DocumentFilePage
 
@@ -66,9 +65,8 @@ class DocumentFilePageSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class DocumentFileSerializer(serializers.HyperlinkedModelSerializer):
-    action = serializers.ChoiceField(
-        choices=DocumentFileAction.get_choices(), label=_('Action'),
-        write_only=True
+    action_name = serializers.CharField(
+        label=_('Action name'), write_only=True
     )
     document_url = serializers.HyperlinkedIdentityField(
         label=_('Document URL'), lookup_field='document_id',
@@ -120,12 +118,12 @@ class DocumentFileSerializer(serializers.HyperlinkedModelSerializer):
     )
 
     class Meta:
-        create_only_fields = ('action', 'file_new',)
+        create_only_fields = ('action_name', 'file_new',)
         extra_kwargs = {
             'file': {'use_url': False},
         }
         fields = (
-            'action', 'checksum', 'comment', 'document_id', 'document_url',
+            'action_name', 'checksum', 'comment', 'document_id', 'document_url',
             'download_url', 'encoding', 'file', 'file_new', 'filename', 'id',
             'mimetype', 'page_list_url', 'pages_first', 'size', 'timestamp',
             'url'

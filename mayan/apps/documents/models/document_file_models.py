@@ -185,7 +185,7 @@ class DocumentFile(
         )
     natural_key.dependencies = ['documents.Document']
 
-    def save(self, *args, **kwargs):
+    def save(self, skip_introspection=False, *args, **kwargs):
         """
         Overloaded save method that updates the document file's checksum,
         mimetype, and page count when created.
@@ -195,7 +195,8 @@ class DocumentFile(
 
         if new_document_file:
             result = self._create(*args, **kwargs)
-            self._introspect()
+            if not skip_introspection:
+                self._introspect()
             return result
         else:
             return self._save(*args, **kwargs)
