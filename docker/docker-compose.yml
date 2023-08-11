@@ -275,6 +275,17 @@ services:
       - extra_worker_d
       - multi_container
 
+  # Run a separate class E worker
+  worker_e:
+    <<: [*mayan-container, *mayan-dependencies]
+    command:
+      - run_worker
+      - worker_e
+      - "--prefetch-multiplier=1"
+    profiles:
+      - extra_worker_e
+      - multi_container
+        
   worker_custom_queue:
     <<: [*mayan-container, *mayan-dependencies]
     command:
