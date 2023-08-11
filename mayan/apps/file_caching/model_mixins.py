@@ -176,7 +176,8 @@ class CacheBusinessLogicMixin:
                         'Unable to purge partition ID: %d; %s',
                         partition.pk, exception
                     )
-                    raise
+                    # Don't raise exceptions to allow the loop to continue and
+                    # avoid a single exception from stoping the purge.
 
     @cached_property
     def storage(self):
@@ -302,7 +303,8 @@ class CachePartitionBusinessLogicMixin:
                     'Unable to delete partition file ID: %d; %s',
                     parition_file.pk, exception
                 )
-                raise
+                # Don't raise exceptions to allow the loop to continue and
+                # avoid a single exception from stoping the purge.
 
 
 class CachePartitionFileBusinessLogicMixin:
