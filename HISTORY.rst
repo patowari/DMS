@@ -1,3 +1,9 @@
+4.2.18 (XXXX-XX-XX)
+===================
+- Update the cache and cache partition purge loop to continue executing even
+  when there are files that cannot be purged. Cache partition files will be
+  skipped and retried on the next purge execution.
+
 4.2.17 (2023-07-10)
 ===================
 - Ensure only the filename of the uploaded file is used as the document

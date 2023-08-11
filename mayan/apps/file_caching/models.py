@@ -177,7 +177,8 @@ class Cache(ValueChangeModelMixin, models.Model):
                         'Unable to purge partition ID: %d; %s',
                         partition.pk, exception
                     )
-                    raise
+                    # Don't raise exceptions to allow the loop to continue and
+                    # avoid a single exception from stoping the purge.
 
     @method_event(
         event_manager_class=EventManagerSave,
@@ -334,7 +335,8 @@ class CachePartition(models.Model):
                     'Unable to delete partition file ID: %d; %s',
                     parition_file.pk, exception
                 )
-                raise
+                # Don't raise exceptions to allow the loop to continue and
+                # avoid a single exception from stoping the purge.
 
 
 class CachePartitionFile(models.Model):
