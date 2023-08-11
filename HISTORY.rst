@@ -213,6 +213,8 @@
   - django-formtools from 2.3 to 2.4.1
   - psycopg2 from 2.9.3 to 2.9.6
 
+- Update duplicate bulk creation to work in batches of 100 entries.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.

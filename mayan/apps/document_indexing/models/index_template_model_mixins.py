@@ -23,7 +23,7 @@ class IndexTemplateBusinessLogicMixin:
                 )
             )
 
-        IndexTemplateEventTrigger.objects.bulk_create(entries)
+        IndexTemplateEventTrigger.objects.bulk_create(objs=entries)
 
     def document_types_add(self, queryset, user):
         for document_type in queryset:
