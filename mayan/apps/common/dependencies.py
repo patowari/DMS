@@ -161,9 +161,18 @@ PythonDependency(
 
 # Development
 
+from mayan.apps.dependencies.environments import (
+    environment_build, environment_development, environment_documentation,
+    environment_documentation_override
+)
+PythonDependency(
+    module=__name__, environment=environment_development, name='devpi-server',
+    version_string='==6.5.0'
+)
 BinaryDependency(
-    help_text=_('Transifex Client'), label='Transifex Client',
-    module=__name__, name='tx', path=DEFAULT_TX_PATH
+    environment=environment_development, help_text=_('Transifex Client'),
+    label='Transifex Client', module=__name__, name='tx',
+    path=DEFAULT_TX_PATH
 )
 PythonDependency(
     module=__name__, environment=environment_development, name='devpi-server',
