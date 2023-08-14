@@ -238,6 +238,10 @@
 
 - Tweak the PostgreSQL container command arguments.
 - Add a maximum Docker logging size for all Mayan EDMS containers.
+- Split documents queue into more smaller queues.
+- Move the duplicates queue to the C worker.
+- Move document downloads and document exports to their own queues.
+- Move the storage queue to the B worker.
 
 4.4.8 (2023-07-15)
 ==================

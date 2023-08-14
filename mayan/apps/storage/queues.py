@@ -3,14 +3,14 @@ from datetime import timedelta
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.task_manager.classes import CeleryQueue
-from mayan.apps.task_manager.workers import worker_c, worker_d
+from mayan.apps.task_manager.workers import worker_b, worker_d
 
 from .literals import (
     TASK_DOWNLOAD_FILE_STALE_INTERVAL, TASK_SHARED_UPLOADS_STALE_INTERVAL
 )
 
 queue_storage = CeleryQueue(
-    label=_('Storage'), name='storage', worker=worker_c
+    label=_('Storage'), name='storage', worker=worker_b
 )
 queue_storage_periodic = CeleryQueue(
     label=_('Storage periodic'), name='storage_periodic', transient=True,

@@ -60,7 +60,6 @@ class StoredDuplicateBackendManager(models.Manager):
                                     )
                                 )
 
-
                                 if not batch:
                                     break
 

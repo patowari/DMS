@@ -312,6 +312,7 @@ services:
       - run_initial_setup_or_perform_upgrade
     profiles:
       - extra_setup_or_upgrade
+      - extra_worker_custom
       - multi_container
     restart: "no"
 

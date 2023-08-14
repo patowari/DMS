@@ -74,6 +74,12 @@ number. The new action names are as follow:
 
 Likewise the API field has changed from 'action' to 'action_name'.
 
+The queue named `uploads` has been split into multiple new queues. Ensure
+that the `uploads` queue is empty (there are no pending uploads or uploads
+in progress) before performing the upgrade. Failure to do so will
+cause pending uploads to be ignored and then deleted at the next
+garbage collection cycle.
+
 
 Sources
 ^^^^^^^
