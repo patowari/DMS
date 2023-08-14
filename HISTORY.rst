@@ -236,6 +236,9 @@
   - Update staging folder initial file copy to
     be a background task.
 
+- Tweak the PostgreSQL container command arguments.
+- Add a maximum Docker logging size for all Mayan EDMS containers.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.

@@ -10,6 +10,10 @@ x-mayan-container:
     MAYAN_LOCK_MANAGER_BACKEND: mayan.apps.lock_manager.backends.redis_lock.RedisLock
     MAYAN_LOCK_MANAGER_BACKEND_ARGUMENTS: "{'redis_url':'redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@redis:6379/2'}"
   image: ${MAYAN_DOCKER_IMAGE_NAME:-mayanedms/mayanedms}:${MAYAN_DOCKER_IMAGE_TAG:-s4.4}
+  logging:
+    options:
+      max-size: "100m"
+      max-file: "3"
   networks:
     - mayan
   restart: unless-stopped
@@ -145,17 +149,13 @@ services:
     command:
       - "postgres"
       - "-c"
-      - "checkpoint_completion_target=0.6"
-      - "-c"
       - "default_statistics_target=200"
       - "-c"
       - "maintenance_work_mem=128MB"
       - "-c"
-      - "max_connections=150"
-      - "-c"
       - "shared_buffers=512MB"
       - "-c"
-      - "work_mem=16MB"
+      - "work_mem=32MB"
     environment:
       POSTGRES_DB: ${MAYAN_DATABASE_NAME:-mayan}
       POSTGRES_PASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
@@ -169,6 +169,7 @@ services:
     profiles:
       - postgresql
     restart: unless-stopped
+    shm_size: 128m
     volumes:
       - ${MAYAN_POSTGRES_VOLUME:-postgres}:/var/lib/postgresql/data
 
@@ -285,7 +286,7 @@ services:
     profiles:
       - extra_worker_e
       - multi_container
-        
+
   worker_custom_queue:
     <<: [*mayan-container, *mayan-dependencies]
     command:
