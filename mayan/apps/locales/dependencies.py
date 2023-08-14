@@ -7,8 +7,13 @@ from mayan.apps.dependencies.environments import environment_development
 
 from .literals import DEFAULT_TX_PATH
 
+BinaryDependency(
+    environment=environment_development, help_text=_('Transifex Client'),
+    label='Transifex Client', module=__name__, name='tx',
+    path=DEFAULT_TX_PATH
+)
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2003-2005 Stuart Bishop <stuart@stuartbishop.net>
 
         Permission is hereby granted, free of charge, to any person obtaining a
@@ -29,9 +34,4 @@ PythonDependency(
         FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
         DEALINGS IN THE SOFTWARE.
     ''', module=__name__, name='pytz', version_string='==2022.1'
-)
-BinaryDependency(
-    environment=environment_development, help_text=_('Transifex Client'),
-    label='Transifex Client', module=__name__, name='tx',
-    path=DEFAULT_TX_PATH
 )

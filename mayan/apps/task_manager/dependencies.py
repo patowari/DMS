@@ -1,7 +1,7 @@
 from mayan.apps.dependencies.classes import PythonDependency
 
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2015 Ask Solem & contributors.  All rights reserved.
         Copyright (c) 2012-2014 GoPivotal, Inc.  All rights reserved.
         Copyright (c) 2009, 2010, 2011, 2012 Ask Solem, and individual contributors.  All rights reserved.
@@ -59,7 +59,7 @@ PythonDependency(
     ''', module=__name__, name='celery', version_string='==5.3.1'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2012-2013 GoPivotal, Inc.  All Rights Reserved.
         Copyright (c) 2009-2012 Ask Solem.  All Rights Reserved.
         All rights reserved.

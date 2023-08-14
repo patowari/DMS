@@ -1,7 +1,7 @@
 from mayan.apps.dependencies.classes import PythonDependency
 
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2010-2015, Justin Quick
         All rights reserved.
 

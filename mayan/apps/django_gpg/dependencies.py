@@ -11,7 +11,7 @@ BinaryDependency(
     ), module=__name__, name='gnupg1', path=gpg_path
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2008-2014 by Vinay Sajip.
         All rights reserved.
 

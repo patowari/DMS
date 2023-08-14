@@ -1,7 +1,7 @@
 from mayan.apps.dependencies.classes import PythonDependency
 
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright 2013 Otto Yiu and other contributors
         http://ottoyiu.com
 
@@ -27,7 +27,7 @@ PythonDependency(
     version_string='==4.2.0'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2011-2015, Tom Christie All rights reserved.
 
         Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -39,7 +39,7 @@ PythonDependency(
     version_string='==3.14.0'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2015, Warren Jin <jinwarren@gmail.com>
 
         Permission to use, copy, modify, and/or distribute this software for any

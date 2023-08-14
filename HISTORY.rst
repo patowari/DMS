@@ -242,6 +242,7 @@
 - Move the duplicates queue to the C worker.
 - Move document downloads and document exports to their own queues.
 - Move the storage queue to the B worker.
+- Improve how dependencies copyright and license information is extracted.
 
 4.4.8 (2023-07-15)
 ==================

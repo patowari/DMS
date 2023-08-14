@@ -18,33 +18,33 @@ class DependenciesLicensesForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        copyright_texts = []
+        text_legal_list = []
 
         for dependency in Dependency.get_all():
-            copyright_text = dependency.get_copyright()
-            if copyright_text:
-                copyright_texts.append(
+            text_legal = dependency.get_legal_text()
+            if text_legal:
+                text_legal_list.append(
                     '-' * len(
                         dependency.get_label()
                     )
                 )
-                copyright_texts.append(
+                text_legal_list.append(
                     dependency.get_label().strip()
                 )
-                copyright_texts.append(
+                text_legal_list.append(
                     '-' * len(
                         dependency.get_label()
                     )
                 )
 
                 # Implement word wrapping at 79 columns.
-                for line in copyright_text.split('\n'):
+                for line in text_legal.split('\n'):
                     line_length = 0
                     new_line = []
 
                     for word in line.strip().split():
                         if line_length + len(word) > 79:
-                            copyright_texts.append(
+                            text_legal_list.append(
                                 ' '.join(new_line)
                             )
                             new_line = [word]
@@ -53,10 +53,10 @@ class DependenciesLicensesForm(forms.Form):
                             new_line.append(word)
                             line_length += len(word)
 
-                    copyright_texts.append(
+                    text_legal_list.append(
                         ' '.join(new_line)
                     )
 
-                copyright_texts.append('\n')
+                text_legal_list.append('\n')
 
-        self.fields['text'].initial = '\n'.join(copyright_texts)
+        self.fields['text'].initial = '\n'.join(text_legal_list)

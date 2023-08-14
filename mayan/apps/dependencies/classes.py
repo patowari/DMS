@@ -238,7 +238,9 @@ class Dependency(AppsModuleLoaderMixin):
             for result in cls._check_all():
                 dependency = result['dependency']
                 print('-' * 40)
-                print('* {}'.format(dependency.name))
+                print(
+                    '* {}'.format(dependency.name)
+                )
                 print(
                     'Class: {class_name} | Version: {version} '
                     '| App: {app_label} | Environments: {environments} '
@@ -295,14 +297,14 @@ class Dependency(AppsModuleLoaderMixin):
 
     def __init__(
         self, name, environment=environment_production, app_label=None,
-        copyright_text=None, environments=None, help_text=None, label=None,
+        environments=None, help_text=None, label=None, legal_text=None,
         module=None, replace_list=None, version_string=None
     ):
         self._app_label = app_label
-        self.copyright_text = copyright_text
         self.environments = environments or (environment,)
         self.help_text = help_text
         self.label = label
+        self.legal_text = legal_text
         self.module = module
         self.name = name
         self.package_metadata = None
@@ -342,8 +344,30 @@ class Dependency(AppsModuleLoaderMixin):
         """
         raise NotImplementedError
 
-    def get_copyright(self):
-        return self.copyright_text or ''
+    def get_copyright_text(self):
+        return ''
+
+    def get_legal_text(self):
+        if self.legal_text:
+            return self.legal_text
+        else:
+            text_legal_list = []
+
+            text_copyright = self.get_copyright_text()
+
+            if text_copyright:
+                text_legal_list.append(text_copyright)
+                text_legal_list.append('')
+
+            text_license = self.get_license_text()
+
+            if text_license:
+                text_legal_list.append(text_license)
+
+            return '\n'.join(text_legal_list)
+
+    def get_license_text(self):
+        return ''
 
     def install(self, force=False):
         print(
@@ -626,36 +650,40 @@ class JavaScriptDependency(Dependency):
             versions=versions, range_=version_string, loose=True
         )
 
-    def get_copyright(self):
+    def get_copyright_text(self):
+        package_info = self._read_package_file()
+
+        author = package_info.get(
+            'author', {}
+        )
+
+        try:
+            author = author.get('name')
+        except AttributeError:
+            """It is a single top level entry."""
+
+        author = author or ''
+
+        if author:
+            author = 'Copyright: {}'.format(author)
+
+        return author
+
+    def get_license_text(self):
         path_install_path = self.get_install_path()
 
         for entry in path_install_path.glob(pattern='LICENSE*'):
-            with entry.open(mode='rb') as file_object:
-                return str(
-                    file_object.read()
-                )
-
-        copyright_text = []
+            with entry.open(mode='r') as file_object:
+                return file_object.read()
 
         try:
             package_info = self._read_package_file()
         except FileNotFoundError:
-            return super().get_copyright()
+            return ''
         else:
-            copyright_text.append(
-                package_info.get('license') or package_info.get(
-                    'licenses'
-                )[0]['type']
-            )
-            author = package_info.get('author', {})
-
-            try:
-                author = author.get('name')
-            except AttributeError:
-                pass
-
-            copyright_text.append(author or '')
-            return '\n'.join(copyright_text)
+            return package_info.get('license') or package_info.get(
+                'licenses'
+            )[0]['type']
 
     def get_help_text(self):
         description = None
@@ -754,7 +782,12 @@ class PythonDependency(Dependency):
     provider_class = PyPIRespository
 
     def __init__(self, *args, **kwargs):
-        self.copyright_attribute = kwargs.pop('copyright_attribute', None)
+        self.attribute_copyright = kwargs.pop(
+            'attribute_copyright', '__copyright__'
+        )
+        self.attribute_license = kwargs.pop(
+            'attribute_license', '__license__'
+        )
         super().__init__(*args, **kwargs)
 
     def _check(self):
@@ -767,11 +800,11 @@ class PythonDependency(Dependency):
         except pkg_resources.VersionConflict:
             return False
 
-    def get_copyright(self):
-        if self.copyright_attribute:
-            return import_string(dotted_path=self.copyright_attribute)
-        else:
-            return super().get_copyright()
+    def get_copyright_text(self):
+        try:
+            return import_string(dotted_path=self.attribute_copyright)
+        except ImportError:
+            return ''
 
     def get_latest_version(self):
         url = 'https://pypi.python.org/pypi/{}/json'.format(self.name)
@@ -781,6 +814,12 @@ class PythonDependency(Dependency):
         )
         versions.sort(key=PythonVersion)
         return versions[-1]
+
+    def get_license_text(self):
+        try:
+            return import_string(dotted_path=self.attribute_license)
+        except ImportError:
+            return ''
 
     def is_latest_version(self):
         return self.version_string == '=={}'.format(

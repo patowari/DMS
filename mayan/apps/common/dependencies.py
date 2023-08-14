@@ -8,7 +8,7 @@ from mayan.apps.dependencies.environments import (
 from mayan.settings.literals import PYTHON_WHEEL_VERSION
 
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) Django Software Foundation and individual contributors.
         All rights reserved.
 
@@ -39,7 +39,7 @@ PythonDependency(
     ''', module=__name__, name='django', version_string='==3.2.20'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2006 Kirill Simonov
 
         Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -62,7 +62,7 @@ PythonDependency(
     ''', module=__name__, name='PyYAML', version_string='==6.0.1'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2009-2015, Carl Meyer and contributors
         All rights reserved.
 
@@ -94,7 +94,7 @@ PythonDependency(
     ''', module=__name__, name='django-model-utils', version_string='==4.3.1'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Django MPTT
         -----------
 
@@ -122,7 +122,7 @@ PythonDependency(
     module=__name__, name='importlib-metadata', version_string='==6.8.0'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Author: Christian Theune
         License: LGPL 2.1
     ''', module=__name__, name='pycountry', version_string='==22.3.5'
@@ -131,7 +131,7 @@ PythonDependency(
     module=__name__, name='requests', version_string='==2.31.0'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (C) 2011-2012 by Andrew Moffat
 
         Permission is hereby granted, free of charge, to any person obtaining a copy

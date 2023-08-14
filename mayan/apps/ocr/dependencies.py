@@ -8,7 +8,7 @@ tesseract = Tesseract(auto_initialize=False)
 tesseract.read_settings()
 
 BinaryDependency(
-    copyright_text='''
+    legal_text='''
         The code in this repository is licensed under the Apache License,
         Version 2.0 (the "License");
         you may not use this file except in compliance with the License.

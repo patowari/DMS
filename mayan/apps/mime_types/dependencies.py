@@ -18,7 +18,7 @@ BinaryDependency(
     module=__name__, name='file', path=DEFAULT_FILE_PATH
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         The MIT License (MIT)
 
         Copyright (c) 2001-2014 Adam Hupp

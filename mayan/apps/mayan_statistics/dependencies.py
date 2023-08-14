@@ -8,7 +8,7 @@ JavaScriptDependency(
 )
 
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2010, Matt Croydon, Mikhail Korobov
         All rights reserved.
 

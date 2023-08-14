@@ -13,7 +13,7 @@ PythonDependency(
     module=__name__, name='django-stronghold', version_string='==0.4.0'
 )
 PythonDependency(
-    copyright_text='''
+    legal_text='''
         Copyright (c) 2011-2015 Mikhail Korobov
 
         Permission is hereby granted, free of charge, to any person obtaining a copy

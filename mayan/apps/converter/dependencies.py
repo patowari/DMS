@@ -21,7 +21,7 @@ BinaryDependency(
     ), module=__name__, name='pdftoppm', path=pdftoppm_path
 )
 PythonDependency(
-    copyright_attribute='PIL.__doc__', module=__name__, name='Pillow',
+    attribute_copyright='PIL.__doc__', module=__name__, name='Pillow',
     version_string='==10.0.0'
 )
 PythonDependency(
