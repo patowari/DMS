@@ -154,6 +154,19 @@ PythonDependency(
     ''', module=__name__, name='sh', version_string='==2.0.4'
 )
 
+# Build
+
+PythonDependency(
+    environment=environment_build, module=__name__, name='twine',
+    version_string='==4.0.2'
+)
+PythonDependency(
+    environments=(environment_build, environment_documentation),
+    module=__name__, name='wheel', version_string='=={}'.format(
+        PYTHON_WHEEL_VERSION
+    )
+)
+
 # Development
 
 PythonDependency(
@@ -188,6 +201,10 @@ PythonDependency(
     ), module=__name__, name='ipython', version_string='==8.14.0'
 )
 PythonDependency(
+    module=__name__, environment=environment_development,
+    name='pdbpp', version_string='==0.10.3'
+)
+PythonDependency(
     environment=environment_development, help_text=_(
         'Checks proper formatting of the README file.'
     ), module=__name__, name='readme', version_string='==0.7.1'
@@ -195,19 +212,6 @@ PythonDependency(
 PythonDependency(
     environment=environment_development,
     module=__name__, name='safety', version_string='==2.3.5'
-)
-
-# Build
-
-PythonDependency(
-    environment=environment_build, module=__name__, name='twine',
-    version_string='==4.0.2'
-)
-PythonDependency(
-    environments=(environment_build, environment_documentation),
-    module=__name__, name='wheel', version_string='=={}'.format(
-        PYTHON_WHEEL_VERSION
-    )
 )
 
 # Documentation
