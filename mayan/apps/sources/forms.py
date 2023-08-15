@@ -8,6 +8,7 @@ from mayan.apps.documents.classes import DocumentFileAction
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 
 from mayan.apps.documents.forms.document_forms import DocumentForm
+from mayan.apps.views.widgets import DropzoneWidget
 
 from .classes import SourceBackend
 from .models import Source
@@ -68,7 +69,9 @@ class SourceBackendSetupDynamicForm(FormDynamicModelBackend):
 
 class WebFormUploadFormHTML5(UploadBaseForm):
     file = forms.FileField(
-        label=_('File'), widget=forms.widgets.FileInput(
-            attrs={'class': 'hidden', 'hidden': True}
-        )
+        label=_('File'), widget=forms.widgets.FileInput()
+    )
+
+    dropzone = forms.CharField(
+        label='', required=False, widget=DropzoneWidget
     )

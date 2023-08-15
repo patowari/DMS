@@ -31,6 +31,10 @@ class DisableableSelectWidget(forms.widgets.SelectMultiple):
         return result
 
 
+class DropzoneWidget(forms.widgets.Widget):
+    template_name = 'appearance/forms/widgets/dropzone.html'
+
+
 class NamedMultiWidget(forms.widgets.Widget):
     subwidgets = None
     subwidgets_order = None

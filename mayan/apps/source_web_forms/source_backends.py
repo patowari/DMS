@@ -48,7 +48,6 @@ class SourceBackendWebForm(
                                 kwargs=request.resolver_match.kwargs
                             ), request.META['QUERY_STRING']
                         ),
-                        'form_css_classes': 'dropzone',
                         'form_disable_submit': form_disable_submit,
                         'form_id': 'html5upload',
                         'is_multipart': True
