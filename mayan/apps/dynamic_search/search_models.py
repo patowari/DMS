@@ -69,7 +69,7 @@ class SearchModel(AppsModuleLoaderMixin):
         through_models = {}
 
         for search_model in cls.all():
-            for related_model, reverse_field_path in search_model.get_related_models():
+            for related_model, reverse_field_path_text in search_model.get_related_models():
                 # Check is each related model is connected to a many to many.
                 for field in related_model._meta.get_fields():
                     if field.many_to_many:
@@ -85,7 +85,7 @@ class SearchModel(AppsModuleLoaderMixin):
                             related_model, set()
                         )
                         through_models[through_model][related_model].add(
-                            reverse_field_path
+                            reverse_field_path_text
                         )
 
         return through_models
@@ -272,7 +272,7 @@ class SearchModel(AppsModuleLoaderMixin):
 
         # Process the search fields by order of priority. This makes sure
         # that virtual fields are processed last.
-        for search_field in self.search_fields_sorted:
+        for search_field in self.search_fields_priority_sorted:
             field_value = search_field.get_instance_value(
                 exclude_kwargs=exclude_kwargs, exclude_model=exclude_model,
                 instance=instance, instance_field_data=instance_field_data,
@@ -310,7 +310,14 @@ class SearchModel(AppsModuleLoaderMixin):
         return self.search_fields_dict.values()
 
     @cached_property
-    def search_fields_sorted(self):
+    def search_fields_label_sorted(self):
+        return sorted(
+            self.search_fields,
+            key=lambda search_field: search_field.get_label()
+        )
+
+    @cached_property
+    def search_fields_priority_sorted(self):
         return sorted(
             self.search_fields,
             key=lambda search_field: search_field.priority
