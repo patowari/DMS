@@ -9,20 +9,18 @@ from .mixins import TagTestMixin
 class DocumentTagSearchTestCase(
     TagTestMixin, SearchTestMixin, GenericDocumentViewTestCase
 ):
+    _test_search_model = search_model_document
     _test_tag_add_test_document = True
     auto_create_test_tag = True
-
-    def _do_test_search(self):
-        return self._test_search_backend.search(
-            search_model=search_model_document, query={
-                'tags__label': self._test_tag.label
-            }, user=self._test_case_user
-        )
 
     def test_search_model_document_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search()
+        queryset = self._do_test_search(
+            query={
+                'tags__label': self._test_tag.label
+            }
+        )
         self.assertTrue(self._test_document not in queryset)
 
         events = self._get_test_events()
@@ -35,7 +33,11 @@ class DocumentTagSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search()
+        queryset = self._do_test_search(
+            query={
+                'tags__label': self._test_tag.label
+            }
+        )
         self.assertTrue(self._test_document in queryset)
 
         events = self._get_test_events()
@@ -50,7 +52,11 @@ class DocumentTagSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search()
+        queryset = self._do_test_search(
+            query={
+                'tags__label': self._test_tag.label
+            }
+        )
         self.assertTrue(self._test_document not in queryset)
 
         events = self._get_test_events()

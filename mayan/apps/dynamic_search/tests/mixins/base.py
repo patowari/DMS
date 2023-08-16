@@ -204,6 +204,21 @@ class SearchTestMixin:
     def _deindex_instance(self, instance):
         self._test_search_backend.deindex_instance(instance=instance)
 
+    def _do_test_search(self, query):
+        terms = str(
+            tuple(
+                query.values()
+            )[0]
+        ).strip()
+
+        self.assertTrue(terms is not None)
+        self.assertTrue(terms != '')
+
+        return self._test_search_backend.search(
+            search_model=self._test_search_model, query=query,
+            user=self._test_case_user
+        )
+
     def _index_instance(self, instance):
         self._test_search_backend.index_instance(instance=instance)
 

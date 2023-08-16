@@ -10,15 +10,7 @@ from .mixins import MessageTestMixin
 class MessageSearchTestCase(
     MessageTestMixin, SearchTestMixin, BaseTestCase
 ):
-    def setUp(self):
-        super().setUp()
-        self._create_test_message()
-
-    def _do_test_search(self, query):
-        return self._test_search_backend.search(
-            search_model=search_model_message, query=query,
-            user=self._test_case_user
-        )
+    _test_search_model = search_model_message
 
     def test_search_model_message_body_no_permission(self):
         self._clear_events()

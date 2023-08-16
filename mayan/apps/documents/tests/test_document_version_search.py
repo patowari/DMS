@@ -10,17 +10,8 @@ from .literals import TEST_DOCUMENT_VERSION_COMMENT
 class DocumentVersionSearchTestCase(
     SearchTestMixin, GenericDocumentViewTestCase
 ):
+    _test_search_model = search_model_document_version
     auto_upload_test_document = False
-
-    def _do_test_search(self, query):
-        terms = str(tuple(query.values())[0]).strip()
-        self.assertTrue(terms is not None)
-        self.assertTrue(terms != '')
-
-        return self._test_search_backend.search(
-            search_model=search_model_document_version, query=query,
-            user=self._test_case_user
-        )
 
     def setUp(self):
         super().setUp()
@@ -279,17 +270,8 @@ class DocumentVersionSearchTestCase(
 class DocumentVersionPageSearchTestCase(
     SearchTestMixin, GenericDocumentViewTestCase
 ):
+    _test_search_model = search_model_document_version_page
     auto_upload_test_document = False
-
-    def _do_test_search(self, query):
-        terms = str(tuple(query.values())[0]).strip()
-        self.assertTrue(terms is not None)
-        self.assertTrue(terms != '')
-
-        return self._test_search_backend.search(
-            search_model=search_model_document_version_page, query=query,
-            user=self._test_case_user
-        )
 
     def setUp(self):
         super().setUp()

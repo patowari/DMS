@@ -10,21 +10,8 @@ from .literals import TEST_DOCUMENT_FILE_COMMENT
 class DocumentFileSearchTestCase(
     SearchTestMixin, GenericDocumentViewTestCase
 ):
+    _test_search_model = search_model_document_file
     auto_upload_test_document = False
-
-    def _do_test_search(self, query):
-        terms = str(
-            tuple(
-                query.values()
-            )[0]
-        ).strip()
-        self.assertTrue(terms is not None)
-        self.assertTrue(terms != '')
-
-        return self._test_search_backend.search(
-            search_model=search_model_document_file, query=query,
-            user=self._test_case_user
-        )
 
     def setUp(self):
         super().setUp()
@@ -428,21 +415,8 @@ class DocumentFileSearchTestCase(
 class DocumentFilePageSearchTestCase(
     SearchTestMixin, GenericDocumentViewTestCase
 ):
+    _test_search_model = search_model_document_file_page
     auto_upload_test_document = False
-
-    def _do_test_search(self, query):
-        terms = str(
-            tuple(
-                query.values()
-            )[0]
-        ).strip()
-        self.assertTrue(terms is not None)
-        self.assertTrue(terms != '')
-
-        return self._test_search_backend.search(
-            search_model=search_model_document_file_page, query=query,
-            user=self._test_case_user
-        )
 
     def setUp(self):
         super().setUp()
