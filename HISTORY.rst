@@ -245,6 +245,11 @@
 - Move the storage queue to the B worker.
 - Improve how dependencies copyright and license information is extracted.
 - Convert Dropzone.js to a Django widget for cleaner integration.
+- Search form updates:
+
+  - Add fieldsets to the search form to group search fields by model.
+  - Hide the ``ID`` search fields.
+  - Sort search fields by their translatable label.
 
 4.4.8 (2023-07-15)
 ==================

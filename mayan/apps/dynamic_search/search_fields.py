@@ -92,6 +92,26 @@ class SearchField:
     def field_name(self):
         return self._field_name
 
+    @cached_property
+    def field_name_model_list(self):
+        result = []
+
+        model_list = get_fields_from_path(
+            model=self.model, path=self.field_name
+        )
+
+        for model in model_list:
+            remote_field = model.remote_field
+
+            if remote_field:
+                base_model = remote_field.model
+            else:
+                base_model = self.search_model.base_model
+
+            result.append(base_model)
+
+        return result
+
     def do_value_index_transform(self, search_backend, value):
         return self.do_value_transform(
             key='index', search_backend=search_backend, value=value
