@@ -13,7 +13,7 @@ document_file_search.add_model_field(
 # Document file page
 
 document_file_page_search.add_model_field(
-    field='content__content', label=_('Document file content')
+    field='content__content', label=_('Document file page content')
 )
 
 # Document
