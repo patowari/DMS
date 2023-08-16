@@ -19,7 +19,7 @@
         </span>
     {% else %}
         <span
-            class="spinner-container text-primary"
+            class="lazyload-spinner-container text-primary"
             style="height: {% if display_full_height %}100%{% else %}{{ display_height|default:150 }}px{% endif %}; display: block;"
         >
             {% appearance_get_icon 'mayan.apps.documents.icons.icon_document_image_loading' %}

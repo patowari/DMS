@@ -47,7 +47,7 @@ class MayanImage {
         $('.lazy-load').on('load', function() {
             const $this = $(this);
 
-            $this.siblings('.spinner-container').remove();
+            $this.siblings('.lazyload-spinner-container').remove();
             $this.removeClass('lazy-load pull-left');
             clearTimeout(MayanImage.timer);
             MayanImage.timer = setTimeout(MayanImage.timerFunction, 250);
@@ -56,7 +56,7 @@ class MayanImage {
         $('.lazy-load-carousel').on('load', function() {
             const $this = $(this);
 
-            $this.siblings('.spinner-container').remove();
+            $this.siblings('.lazyload-spinner-container').remove();
             $this.removeClass('lazy-load-carousel pull-left');
         });
     }

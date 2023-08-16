@@ -200,13 +200,13 @@ a i {
     }
 }
 
-.spinner-container {
+.lazyload-spinner-container {
     border: 1px solid lightgray;
     margin: auto;
     width: 100%;
 }
 
-.spinner-container > .spinner-icon {
+.lazyload-spinner-container > .spinner-icon {
     margin-left: 4px;
     margin-top: 3px;
 }

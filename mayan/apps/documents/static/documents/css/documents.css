@@ -3,7 +3,7 @@
     margin: auto;
 }
 
-.document-thumbnail-list a.fancybox span.instance-image-widget span.spinner-container {
+.document-thumbnail-list a.fancybox span.instance-image-widget span.lazyload-spinner-container {
     height: 100% !important;
 }
 
