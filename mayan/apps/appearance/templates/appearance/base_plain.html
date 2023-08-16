@@ -2,6 +2,7 @@
 {% load static %}
 
 {% load appearance_tags %}
+{% load common_tags %}
 {% load navigation_tags %}
 {% load smart_settings_tags %}
 
@@ -12,7 +13,7 @@
         {% include 'appearance/partials/meta_tags.html' %}
         <title>
             {% block base_title %}
-                {% block title %}{% endblock %} :: {% block project_name %}    {% smart_setting 'COMMON_PROJECT_TITLE' as setting_project_title %}{% endblock %}
+                {% block title %}{% endblock %} :: {% block project_name %}{% common_get_project_title %}{% endblock %}
             {% endblock base_title %}
         </title>
 

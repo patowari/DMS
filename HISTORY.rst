@@ -253,6 +253,9 @@
 
 - Show AJAX loading spinner in mobile devices. Closes GitLab issue #1140.
   Thanks to Arya Senna (@aryasenna) for the request.
+- Update how the project title setting works. The code was updated to
+  reflect the actual purpose of the setting which is to identify an
+  installation and not to do rebranding.
 
 4.4.8 (2023-07-15)
 ==================

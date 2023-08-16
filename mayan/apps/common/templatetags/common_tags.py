@@ -6,6 +6,7 @@ from django.utils.encoding import force_text
 import mayan
 
 from ..classes import MissingItem
+from ..settings import setting_project_title
 from ..utils import return_attrib
 
 logger = logging.getLogger(name=__name__)
@@ -29,6 +30,14 @@ def common_get_object_verbose_name(obj):
                 return ''
             else:
                 return type(obj)
+
+
+@register.simple_tag
+def common_get_project_title():
+    if setting_project_title.value:
+        return '{} ({})'.format(mayan.__title__, setting_project_title.value)
+    else:
+        return mayan.__title__
 
 
 @register.filter

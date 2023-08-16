@@ -5,7 +5,6 @@
 
 {% load appearance_tags %}
 {% load common_tags %}
-{% load smart_settings_tags %}
 
 {% block title %}{% trans 'About' %}{% endblock %}
 
@@ -57,7 +56,6 @@
 
 {% block content %}
     {% common_project_information '__build_string__' as build_number %}
-    {% smart_setting 'COMMON_PROJECT_TITLE' as setting_project_title %}
     {% common_project_information '__title__' as project_title %}
 
     {% appearance_get_icon 'mayan.apps.common.icons.icon_documentation' as icon_documentation %}
@@ -65,15 +63,7 @@
     {% appearance_get_icon 'mayan.apps.common.icons.icon_source_code' as icon_source_code %}
 
     <div class="well">
-        <h3 class="text-center">{{ setting_project_title }}</h3>
-        {% if project_title != setting_project_title %}
-            <br>
-            <p class="text-center">
-                {% blocktrans with setting_project_title as setting_project_title and project_title as project_title %}
-                    {{ setting_project_title }} is based on {{ project_title }}
-                {% endblocktrans %}
-            </p>
-        {% endif %}
+        <h3 class="text-center">{{ project_title }}</h3>
         <p class="text-center">{% trans 'Version' %} {% common_project_information '__version__' %}</p>
         {% if build_number %}
             <p class='text-center'>{% blocktrans with build_number as build_number %}Build number: {{ build_number }}{% endblocktrans %}</p>
@@ -109,11 +99,6 @@
         <p class="text-center">
             {% blocktrans with icon_forum as icon_forum and icon_source_code as icon_source_code %}
                 If you found a bug or have a feature idea, visit the <a class="new_window" href="https://forum.mayan-edms.com">Forum {{ icon_forum }}</a> or open a ticket in the <a class="new_window" href="https://gitlab.com/mayan-edms/mayan-edms">Source code repository {{ icon_source_code }}</a>.
-            {% endblocktrans %}
-        </p>
-        <p class="text-center">
-            {% blocktrans with project_title as project_title and icon_twitter as icon_twitter and icon_facebook as icon_facebook and icon_instagram as icon_instagram %}
-                Spread the word. Talk to your friends and colleagues about how awesome {{ project_title }} is!
             {% endblocktrans %}
         </p>
     </div>
