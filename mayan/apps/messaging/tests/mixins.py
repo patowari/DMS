@@ -64,6 +64,14 @@ class MessageAPIViewTestMixin:
 
 
 class MessageTestMixin:
+    auto_create_test_message = True
+
+    def setUp(self):
+        super().setUp()
+
+        if self.auto_create_test_message:
+            self._create_test_message()
+
     def _create_test_message(self):
         self._test_message = Message.objects.create(
             body=TEST_MESSAGE_BODY, subject=TEST_MESSAGE_SUBJECT,

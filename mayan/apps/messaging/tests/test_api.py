@@ -15,6 +15,8 @@ from .mixins import MessageAPIViewTestMixin, MessageTestMixin
 class MessageAPIViewTestCase(
     MessageAPIViewTestMixin, MessageTestMixin, BaseAPITestCase
 ):
+    auto_create_test_message = False
+
     def test_message_create_api_view_no_permission(self):
         message_count = Message.objects.count()
 

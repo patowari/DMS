@@ -13,6 +13,8 @@ from ..permissions import (
 class MessageViewTestCase(
     MessageTestMixin, MessageViewTestMixin, GenericViewTestCase
 ):
+    auto_create_test_message = False
+
     def test_message_create_view_no_permission(self):
         message_count = Message.objects.count()
 

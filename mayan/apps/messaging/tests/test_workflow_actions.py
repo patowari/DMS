@@ -21,6 +21,8 @@ from .literals import TEST_MESSAGE_BODY, TEST_MESSAGE_SUBJECT
 class WorkflowActionMessageSendTestCase(
     WorkflowTemplateStateActionTestMixin, GenericDocumentTestCase
 ):
+    auto_create_test_message = False
+
     def test_message_send_workflow_action(self):
         test_message_count = Message.objects.count()
 
@@ -52,6 +54,7 @@ class WorkflowActionMessageSendViewTestCase(
     WorkflowTemplateStateActionViewTestMixin,
     WorkflowTemplateTransitionTestMixin, GenericDocumentViewTestCase
 ):
+    auto_create_test_message = False
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False
     auto_upload_test_document = False
