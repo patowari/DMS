@@ -468,6 +468,11 @@ a i {
     z-index: 50;
 }
 
+/* Navbar-brand mobile */
+.navbar-brand {
+    margin-left: 26px;
+}
+
 @media (min-width: 768px) {
     #menu-main {
         display: block;
@@ -492,8 +497,9 @@ a i {
     }
 
     .navbar-brand {
+        margin-left: 110px;
         text-align: center;
-        width: 210px;
+        width: 193px;
     }
 }
 
@@ -504,13 +510,6 @@ a i {
 
 #appearance-main-viewport .page-header {
   margin-top: 0;
-}
-
-.navbar-brand {
-}
-
-.navbar-brand {
-    outline: none;
 }
 
 .container-fluid {

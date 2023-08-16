@@ -251,6 +251,9 @@
   - Hide the ``ID`` search fields.
   - Sort search fields by their translatable label.
 
+- Show AJAX loading spinner in mobile devices. Closes GitLab issue #1140.
+  Thanks to Arya Senna (@aryasenna) for the request.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.
