@@ -396,9 +396,7 @@ class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
         context = super().get_template_key_context()
 
         context.update(
-            {
-                'field_name': self.field_name
-            }
+            {'field_name': self.field_name}
         )
 
         return context

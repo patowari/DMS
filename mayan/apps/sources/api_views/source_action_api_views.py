@@ -7,7 +7,6 @@ from mayan.apps.rest_api import generics
 
 from ..api_view_mixins import ParentObjectSourceAPIViewMixin
 from ..exceptions import SourceActionException
-from ..models import Source
 from ..permissions import permission_sources_view
 from ..serializers import SourceBackendActionSerializer
 

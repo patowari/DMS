@@ -5,13 +5,8 @@ from pathlib import Path
 import shutil
 import sys
 
-from dateutil import parser
-import sh
-
 import django
 from django.apps import apps
-from django.template import Template, Context
-from django.utils.encoding import force_str
 
 sys.path.insert(
     0, os.path.abspath('..')
@@ -20,10 +15,7 @@ sys.path.insert(
     1, os.path.abspath('.')
 )
 
-import mayan
 from mayan.settings import BASE_DIR
-from mayan.settings import literals
-
 
 
 if __name__ == '__main__':
