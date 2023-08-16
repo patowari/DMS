@@ -171,7 +171,7 @@
 
   - mysql from 8.0.32 to 8.0.34
   - debian from 11.7-slim to 12.1-slim
-  - docker from version 20.10.21-dind to 23.10.21-dind
+  - docker from version 20.10.21-dind to 23.10.6-dind
   - postgresql from 13.10-alpine to 13.11-alpine
   - python 3.10.11-slim to 3.11.4-slim
   - rabbitmq from 3.11.13-alpine to 3.12.2-alpine
