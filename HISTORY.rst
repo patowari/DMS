@@ -257,6 +257,14 @@
   reflect the actual purpose of the setting which is to identify an
   installation and not to do rebranding.
 - Ensure Tools and Setup view buttons are rendered with consistent heights.
+- Docker Compose file updates:
+
+  - Use the variable ``MAYAN_DOCKER_RABBITMQ_HOSTNAME`` as the default host
+    for the Celery broker URL.
+  - Make the Redis Celery result database configurable via
+    ``MAYAN_REDIS_RESULT_DATABASE`` which default to ``1``.
+  - Make the Mayan EDMS Redis lock database configurable via
+    ``MAYAN_REDIS_LOCK_MANAGER_DATABASE`` which defaults to ``2``.
 
 4.4.8 (2023-07-15)
 ==================
