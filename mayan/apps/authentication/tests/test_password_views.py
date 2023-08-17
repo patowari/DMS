@@ -7,12 +7,12 @@ from mayan.apps.common.settings import setting_home_view
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.events import event_user_edited
 from mayan.apps.user_management.permissions import permission_user_edit
-from mayan.apps.user_management.tests.literals import (
-    TEST_USER_PASSWORD_EDITED
-)
+from mayan.apps.user_management.tests.literals import TEST_USER_PASSWORD_EDITED
 
 from .literals import TEST_PASSWORD_NEW
-from .mixins import PasswordResetViewTestMixin, UserPasswordViewTestMixin
+from .mixins import (
+    PasswordResetViewTestMixin, UserPasswordViewTestMixin
+)
 
 
 class CurrentUserViewTestCase(GenericViewTestCase):
@@ -80,7 +80,9 @@ class PasswordResetViewTestCase(
         response = self._request_password_reset_confirm_view(
             new_password=TEST_PASSWORD_NEW, uidb64=uidb64
         )
-        self.assertNotIn(INTERNAL_RESET_SESSION_TOKEN, self.client.session)
+        self.assertNotIn(
+            INTERNAL_RESET_SESSION_TOKEN, self.client.session
+        )
 
         self._test_case_super_user.refresh_from_db()
         self.assertTrue(
@@ -168,6 +170,52 @@ class PasswordResetViewTestCase(
 class UserPasswordViewTestCase(
     UserPasswordViewTestMixin, GenericViewTestCase
 ):
+    def test_super_user_set_password_view_no_permission(self):
+        self._create_test_super_user()
+
+        self._test_user = self._test_super_user
+
+        password_hash = self._test_super_user.password
+
+        self._clear_events()
+
+        response = self._request_test_user_password_set_view(
+            password=TEST_USER_PASSWORD_EDITED
+        )
+        self.assertEqual(response.status_code, 404)
+
+        self._test_user.refresh_from_db()
+        self.assertEqual(self._test_super_user.password, password_hash)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_super_user_set_password_view_with_access(self):
+        self._create_test_super_user()
+
+        self.grant_access(
+            obj=self._test_super_user, permission=permission_user_edit
+        )
+
+        self._test_user = self._test_super_user
+
+        password_hash = self._test_super_user.password
+
+        self._clear_events()
+
+        response = self._request_test_user_password_set_view(
+            password=TEST_USER_PASSWORD_EDITED
+        )
+        self.assertEqual(response.status_code, 404)
+
+        self._test_user.refresh_from_db()
+        self.assertEqual(
+            self._test_super_user.password, password_hash
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_user_set_password_view_no_permission(self):
         self._create_test_user()
 
@@ -188,7 +236,9 @@ class UserPasswordViewTestCase(
 
     def test_user_set_password_view_with_access(self):
         self._create_test_user()
-        self.grant_access(obj=self._test_user, permission=permission_user_edit)
+        self.grant_access(
+            obj=self._test_user, permission=permission_user_edit
+        )
 
         password_hash = self._test_user.password
 
@@ -229,7 +279,9 @@ class UserPasswordViewTestCase(
 
     def test_user_multiple_set_password_view_with_access(self):
         self._create_test_user()
-        self.grant_access(obj=self._test_user, permission=permission_user_edit)
+        self.grant_access(
+            obj=self._test_user, permission=permission_user_edit
+        )
 
         password_hash = self._test_user.password
 

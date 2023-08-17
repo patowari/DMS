@@ -268,6 +268,8 @@
   - Add note regarding opening up RabbitMQ data port.
 
 - Add ``ContentType`` API detail view.
+- Add message warning that it is not possible to change password of
+  staff or super user accounts.
 
 4.4.8 (2023-07-15)
 ==================

@@ -475,12 +475,12 @@ class DynamicFormView(
 class MultipleObjectFormActionView(
     ExtraContextViewMixin, ObjectActionViewMixin,
     ViewPermissionCheckViewMixin, RestrictedQuerysetViewMixin,
-    MultipleObjectViewMixin, FormExtraKwargsViewMixin, RedirectionViewMixin,
-    ViewIconMixin, DjangoFormView
+    MultipleObjectViewMixin, FormExtraKwargsViewMixin,
+    RedirectionViewMixin, ViewIconMixin, DjangoFormView
 ):
     """
-    This view will present a form and upon receiving a POST request will
-    perform an action on an object or queryset.
+    This view will present a form and upon receiving a POST request
+    will perform an action on an object or queryset.
     """
     template_name = 'appearance/generic_form.html'
 
@@ -508,12 +508,12 @@ class MultipleObjectFormActionView(
         self.view_action(form=form)
         return super().form_valid(form=form)
 
-    def get_queryset(self):
+    def get_queryset(self, **kwargs):
         try:
-            return super().get_queryset()
+            return super().get_queryset(**kwargs)
         except ImproperlyConfigured:
             self.queryset = self.get_source_queryset()
-            return super().get_queryset()
+            return super().get_queryset(**kwargs)
 
 
 class MultipleObjectConfirmActionView(

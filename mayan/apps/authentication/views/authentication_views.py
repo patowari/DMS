@@ -30,7 +30,9 @@ from mayan.apps.common.settings import (
     setting_home_view, setting_project_title, setting_project_url
 )
 from mayan.apps.user_management.permissions import permission_user_edit
-from mayan.apps.user_management.querysets import get_user_queryset
+from mayan.apps.user_management.querysets import (
+    get_all_users_queryset, get_user_queryset
+)
 from mayan.apps.views.generics import MultipleObjectFormActionView
 from mayan.apps.views.view_mixins import ViewIconMixin
 from mayan.apps.views.http import URL
@@ -332,6 +334,28 @@ class UserSetPasswordView(MultipleObjectFormActionView):
         'Password change request performed on %(count)d users'
     )
     view_icon = icon_password_change
+
+    def dispatch(self, request, *args, **kwargs):
+        result = super().dispatch(request=request, *args, **kwargs)
+
+        queryset = self.get_queryset(
+            source_queryset=get_all_users_queryset()
+        )
+
+        queryset_staff_users = queryset.filter(is_staff=True)
+        queryset_super_users = queryset.filter(is_superuser=True)
+
+        if queryset_staff_users.exists() or queryset_super_users.exists():
+            messages.warning(
+                message=_(
+                    'Changing the password of staff or super user '
+                    'accounts via the user interface is not allowed. '
+                    'Use administration tools to perform this '
+                    'operation.'
+                ), request=self.request
+            )
+
+        return result
 
     def get_extra_context(self):
         queryset = self.object_list

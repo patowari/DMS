@@ -615,8 +615,8 @@ class RestrictedQuerysetViewMixin:
     def get_object_permission(self):
         return self.object_permission
 
-    def get_queryset(self):
-        queryset = self.get_source_queryset()
+    def get_queryset(self, source_queryset=None):
+        queryset = source_queryset or self.get_source_queryset()
         object_permission = self.get_object_permission()
 
         if object_permission:

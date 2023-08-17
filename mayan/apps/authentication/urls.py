@@ -25,7 +25,8 @@ urlpatterns_authenticattion = [
         view=MultiFactorAuthenticationView.as_view()
     ),
     url(
-        regex=r'^logout/$', view=MayanLogoutView.as_view(), name='logout_view'
+        regex=r'^logout/$', view=MayanLogoutView.as_view(),
+        name='logout_view'
     )
 ]
 
@@ -63,7 +64,8 @@ urlpatterns_password = [
     ),
     url(
         regex=r'^users/multiple/set_password/$',
-        name='user_multiple_set_password', view=UserSetPasswordView.as_view()
+        name='user_multiple_set_password',
+        view=UserSetPasswordView.as_view()
     )
 ]
 
@@ -78,7 +80,8 @@ urlpatterns_user_impersonation = [
     ),
     url(
         regex=r'^impersonate/(?P<user_id>\d+)/start/$',
-        name='user_impersonate_start', view=UserImpersonateStartView.as_view()
+        name='user_impersonate_start',
+        view=UserImpersonateStartView.as_view()
     )
 ]
 

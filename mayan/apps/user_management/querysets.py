@@ -10,3 +10,9 @@ def get_user_queryset(user=None):
         )
 
     return queryset.order_by('username')
+
+
+def get_all_users_queryset(user=None):
+    queryset = get_user_model().objects.all()
+
+    return queryset.order_by('username')
