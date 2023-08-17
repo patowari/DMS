@@ -3,8 +3,8 @@
 
 {% navigation_link_get_icon link=link as link_icon %}
 
-<div class="{% if div_class %}{{ div_class }}{% else %}col-xs-12 col-sm-6 col-md-4 col-lg-3{% endif %}">
-    <a class="btn btn-primary btn-lg btn-block {% if 'new_window' in link.tags %}new_window{% endif %}" href="{{ link.url }}" style="">
+<div class="{{ div_class }}">
+    <a class="btn btn-primary btn-lg appearance-btn-lg {% if 'new_window' in link.tags %}new_window{% endif %}" href="{{ link.url }}">
         {% if link_icon %}<span style="font-size: 200%;">{% appearance_icon_render link_icon enable_shadow=True %}</span>{% endif %}
         <br>
         {{ link.text }}

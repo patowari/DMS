@@ -5,6 +5,7 @@
 - Update ``mayan.apps.dependencies.versions.py`` to support local and
   upstream version calculations.
 - Add makefile target to refresh the Docker and Python module versions.
+- Ensure Tools and Setup view buttons are rendered with consistent heights.
 
 4.4.14 (2024-03-27)
 ===================
