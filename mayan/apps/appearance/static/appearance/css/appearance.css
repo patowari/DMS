@@ -38,6 +38,18 @@
     }
 }
 
+/* Flex grid container for responsible list of items */
+.appearance-flex-grid-container {
+    display: grid;
+}
+
+/* Companion flex grid setup for list of large buttons */
+.appearance-btn-large-container {
+    grid-template-columns: repeat(auto-fill,minmax(350px, 1fr));
+    column-gap: 30px;
+    row-gap: 15px;
+}
+
 /* Nullify the 5px padding to the right */
 .appearance-list-column-sort-icon {
     margin-right: -5px;
@@ -92,18 +104,21 @@ hr {
     margin-bottom: 11px;
 }
 
-.btn-block {
+/* Customized Bootstrap btn-lg to work with flex grid */
+.appearance-btn-lg {
     border-top: 2px solid rgba(255, 255, 255, 0.7);
     border-left: 2px solid rgba(255, 255, 255, 0.7);
     border-right: 2px solid rgba(0, 0, 0, 0.7);
     border-bottom: 2px solid rgba(0, 0, 0, 0.7);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 15px;
+    height: 100%;
+    margin-bottom: 0px;
     min-height: 120px;
     padding-bottom: 1px;
     padding-top: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
     white-space: normal;
+    width: 100%;
 }
 
 .radio ul li {

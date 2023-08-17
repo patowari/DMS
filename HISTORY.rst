@@ -256,6 +256,7 @@
 - Update how the project title setting works. The code was updated to
   reflect the actual purpose of the setting which is to identify an
   installation and not to do rebranding.
+- Ensure Tools and Setup view buttons are rendered with consistent heights.
 
 4.4.8 (2023-07-15)
 ==================
