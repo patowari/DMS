@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from django.views.i18n import JavaScriptCatalog
 
-from .api_views import APIContentTypeList
+from .api_views import APIContentTypeDetailView, APIContentTypeListView
 from .views import (
     AboutView, FaviconRedirectView, HomeView, LicenseView, ObjectCopyView,
     RootView, SetupListView, ToolsListView
@@ -52,7 +52,11 @@ passthru_urlpatterns = [
 
 api_urls = [
     url(
-        regex=r'^content_types/$', view=APIContentTypeList.as_view(),
-        name='content-type-list'
+        regex=r'^content_types/$', view=APIContentTypeListView.as_view(),
+        name='content_type-list'
+    ),
+    url(
+        regex=r'^content_types/(?P<content_type_id>[0-9]+)/$',
+        name='content_type-detail', view=APIContentTypeDetailView.as_view()
     )
 ]

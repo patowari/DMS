@@ -1,5 +1,6 @@
 from io import StringIO
 
+from django.contrib.contenttypes.models import ContentType
 from django.core import management
 
 from mayan.apps.testing.tests.utils import mute_stdout
@@ -9,8 +10,19 @@ from ..links import link_object_copy
 
 
 class CommonAPITestMixin:
+    def setUp(self):
+        self._test_content_type = ContentType.objects.order_by('?').first()
+
+        super().setUp()
+
+    def _request_content_type_detail_api_view(self):
+        return self.get(
+            kwargs={'content_type_id': self._test_content_type.pk},
+            viewname='rest_api:content_type-detail'
+        )
+
     def _request_content_type_list_api_view(self):
-        return self.get(viewname='rest_api:content-type-list')
+        return self.get(viewname='rest_api:content_type-list')
 
 
 class CommonViewTestMixin:

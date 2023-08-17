@@ -266,6 +266,8 @@
   - Make the Mayan EDMS Redis lock database configurable via
     ``MAYAN_REDIS_LOCK_MANAGER_DATABASE`` which defaults to ``2``.
 
+- Add ``ContentType`` API detail view.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.
