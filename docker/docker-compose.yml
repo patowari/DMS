@@ -333,9 +333,11 @@ services:
       - "traefik.http.services.rabbitmq_admin_http.loadbalancer.server.port=15672"
     networks:
       - mayan
-    # Enable to allow access to the administration interface.
+    # Enable the first port to allow access to the administration interface.
+    # Enable the second port to allow external access to the data.
     # ports:
     #   - "${MAYAN_RABBITMQ_ADMIN_PORT:-15672}:15672"
+    #   - "5672:5672"
     profiles:
       - rabbitmq
     restart: unless-stopped

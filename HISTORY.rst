@@ -265,6 +265,7 @@
     ``MAYAN_REDIS_RESULT_DATABASE`` which default to ``1``.
   - Make the Mayan EDMS Redis lock database configurable via
     ``MAYAN_REDIS_LOCK_MANAGER_DATABASE`` which defaults to ``2``.
+  - Add note regarding opening up RabbitMQ data port.
 
 - Add ``ContentType`` API detail view.
 
