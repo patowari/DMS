@@ -49,6 +49,9 @@ link_asset_edit = Link(
     view='converter:asset_edit'
 )
 link_asset_list = Link(
+    icon=icon_asset_list, text=_('Assets'), view='converter:asset_list'
+)
+link_asset_setup = Link(
     condition=factory_condition_queryset_access(
         app_label='converter', model_name='Asset',
         object_permission=permission_asset_view,

@@ -6,7 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_secondary, menu_tools, menu_topbar
+    menu_list_facet, menu_object, menu_return, menu_secondary, menu_tools,
+    menu_topbar
 )
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import ObjectLinkWidget, TwoStateWidget
@@ -155,15 +156,14 @@ class EventsApp(MayanAppConfig):
         menu_secondary.bind_links(
             links=(link_event_list_clear,),
             sources=(
-                'events:event_list',
-                'events:event_list_clear'
+                'events:event_list', 'events:event_list_clear'
             )
         )
         menu_secondary.bind_links(
             links=(link_object_event_list_clear,),
             sources=(
-                'events:object_event_list',
-                'events:object_event_list_clear'
+                'events:object_event_list', 'events:object_event_list_clear',
+                'events:object_event_list_export'
             )
         )
 
@@ -172,14 +172,13 @@ class EventsApp(MayanAppConfig):
         menu_secondary.bind_links(
             links=(link_event_list_export,),
             sources=(
-                'events:event_list',
-                'events:event_list_export'
+                'events:event_list', 'events:event_list_export'
             )
         )
         menu_secondary.bind_links(
             links=(link_object_event_list_export,),
             sources=(
-                'events:object_event_list',
+                'events:object_event_list', 'events:object_event_list_clear',
                 'events:object_event_list_export'
             )
         )
@@ -189,7 +188,6 @@ class EventsApp(MayanAppConfig):
         menu_object.bind_links(
             links=(link_notification_mark_read,), sources=(Notification,)
         )
-
         menu_secondary.bind_links(
             links=(link_notification_mark_read_all,),
             sources=(
@@ -210,6 +208,12 @@ class EventsApp(MayanAppConfig):
 
         # Other
 
+        menu_return.bind_links(
+            links=(link_event_list,), sources=(
+                'events:event_list', 'events:event_list_clear',
+                'events:event_list_export'
+            )
+        )
         menu_topbar.bind_links(
             links=(link_notification_list,), position=30
         )

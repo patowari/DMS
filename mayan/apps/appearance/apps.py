@@ -10,7 +10,7 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_secondary, menu_setup
+    menu_list_facet, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
@@ -101,14 +101,21 @@ class AppearanceApp(MayanAppConfig):
             sender=settings.AUTH_USER_MODEL
         )
 
+        # Theme
+
         menu_object.bind_links(
             links=(
                 link_theme_delete, link_theme_edit
             ), sources=(Theme,)
         )
-
+        menu_return.bind_links(
+            links=(link_theme_list,),
+            sources=(
+                Theme, 'appearance:theme_list', 'appearance:theme_create'
+            )
+        )
         menu_secondary.bind_links(
-            links=(link_theme_list, link_theme_create),
+            links=(link_theme_create,),
             sources=(
                 Theme, 'appearance:theme_list', 'appearance:theme_create'
             )
@@ -117,14 +124,11 @@ class AppearanceApp(MayanAppConfig):
             links=(link_theme_setup,)
         )
 
-        menu_list_facet.bind_links(
-            links=(
-                link_user_theme_settings_detail,
-            ), sources=(User,)
-        )
+        # User
 
+        menu_list_facet.bind_links(
+            links=(link_user_theme_settings_detail,), sources=(User,)
+        )
         menu_object.bind_links(
-            links=(
-                link_user_theme_settings_edit,
-            ), sources=(User,)
+            links=(link_user_theme_settings_edit,), sources=(User,)
         )

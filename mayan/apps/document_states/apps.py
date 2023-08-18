@@ -7,7 +7,7 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
     menu_list_facet, menu_main, menu_multi_item, menu_object, menu_related,
-    menu_secondary, menu_setup, menu_tools
+    menu_return, menu_secondary, menu_setup, menu_tools
 )
 from mayan.apps.databases.classes import (
     ModelField, ModelProperty, ModelReverseField
@@ -41,16 +41,17 @@ from .html_widgets import widget_transition_events
 from .links import (
     link_document_multiple_workflow_templates_launch,
     link_document_single_workflow_templates_launch,
+    link_document_type_workflow_template_list,
     link_tool_launch_workflows, link_workflow_instance_list,
     link_workflow_instance_detail, link_workflow_instance_transition,
     link_workflow_runtime_proxy_document_list,
     link_workflow_runtime_proxy_list, link_workflow_template_preview,
     link_workflow_runtime_proxy_state_document_list,
     link_workflow_runtime_proxy_state_list,
-    link_document_type_workflow_templates, link_workflow_template_create,
-    link_workflow_template_document_types, link_workflow_template_edit,
-    link_workflow_template_multiple_delete, link_workflow_template_launch,
-    link_workflow_template_list, link_workflow_template_single_delete,
+    link_workflow_template_create, link_workflow_template_document_type_list,
+    link_workflow_template_edit, link_workflow_template_delete_multiple,
+    link_workflow_template_launch, link_workflow_template_list,
+    link_workflow_template_delete_single, link_workflow_template_setup,
     link_workflow_template_state_list,
     link_workflow_template_state_action_delete,
     link_workflow_template_state_action_edit,
@@ -529,71 +530,10 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowStateRuntimeProxy
         )
 
+        # Workflow instance
+
         menu_list_facet.bind_links(
             links=(link_workflow_instance_list,), sources=(Document,)
-        )
-        menu_secondary.bind_links(
-            links=(link_document_single_workflow_templates_launch,),
-            sources=(
-                'document_states:document_multiple_workflow_templates_launch',
-                'document_states:document_single_workflow_templates_launch',
-                'document_states:workflow_instance_list', WorkflowInstance
-            )
-        )
-
-        menu_list_facet.bind_links(
-            exclude=(WorkflowRuntimeProxy,),
-            links=(
-                link_workflow_template_document_types,
-                link_workflow_template_state_list,
-                link_workflow_template_transition_list,
-                link_workflow_template_preview
-            ), sources=(Workflow,)
-        )
-
-        menu_list_facet.bind_links(
-            links=(
-                link_document_type_workflow_templates,
-            ), sources=(DocumentType,)
-        )
-
-        menu_main.bind_links(
-            links=(link_workflow_runtime_proxy_list,), position=20
-        )
-        menu_multi_item.bind_links(
-            links=(link_document_multiple_workflow_templates_launch,),
-            sources=(Document,)
-        )
-        menu_multi_item.bind_links(
-            links=(link_workflow_template_multiple_delete,),
-            sources=(Workflow,)
-        )
-        menu_object.bind_links(
-            exclude=(WorkflowRuntimeProxy,),
-            links=(
-                link_workflow_template_single_delete,
-                link_workflow_template_edit,
-                link_workflow_template_launch
-            ), sources=(Workflow,)
-        )
-        menu_object.bind_links(
-            exclude=(WorkflowStateRuntimeProxy,),
-            links=(
-                link_workflow_template_state_edit,
-                link_workflow_template_state_delete
-            ), sources=(WorkflowState,)
-        )
-        menu_object.bind_links(
-            links=(
-                link_workflow_template_transition_edit,
-                link_workflow_template_transition_delete
-            ), sources=(WorkflowTransition,)
-        )
-        menu_object.bind_links(
-            links=(
-                link_workflow_template_transition_field_delete,
-                link_workflow_template_transition_field_edit
-            ), sources=(WorkflowTransitionField,)
         )
         menu_object.bind_links(
             links=(
@@ -601,18 +541,17 @@ class DocumentStatesApp(MayanAppConfig):
                 link_workflow_instance_transition
             ), sources=(WorkflowInstance,)
         )
-        menu_object.bind_links(
-            links=(
-                link_workflow_template_state_action_edit,
-                link_workflow_template_state_action_delete,
-            ), sources=(WorkflowStateAction,)
+        menu_secondary.bind_links(
+            links=(link_document_single_workflow_templates_launch,),
+            sources=(
+                WorkflowInstance,
+                'document_states:document_multiple_workflow_templates_launch',
+                'document_states:document_single_workflow_templates_launch',
+                'document_states:workflow_instance_list'
+            )
         )
-        menu_object.bind_links(
-            links=(
-                link_workflow_template_state_escalation_edit,
-                link_workflow_template_state_escalation_delete,
-            ), sources=(WorkflowStateEscalation,)
-        )
+
+        # Workflow runtime proxy
 
         menu_list_facet.bind_links(
             links=(
@@ -621,16 +560,15 @@ class DocumentStatesApp(MayanAppConfig):
             ), sources=(WorkflowRuntimeProxy,)
         )
         menu_list_facet.bind_links(
-            exclude=(WorkflowStateRuntimeProxy,),
-            links=(
-                link_workflow_template_state_action_list,
-                link_workflow_template_state_escalation_list
-            ), sources=(WorkflowState,)
-        )
-        menu_list_facet.bind_links(
             links=(
                 link_workflow_runtime_proxy_state_document_list,
             ), sources=(WorkflowStateRuntimeProxy,)
+        )
+
+        # Workflow template
+
+        menu_main.bind_links(
+            links=(link_workflow_runtime_proxy_list,), position=20
         )
         menu_list_facet.bind_links(
             links=(
@@ -638,10 +576,37 @@ class DocumentStatesApp(MayanAppConfig):
                 link_workflow_template_transition_field_list,
             ), sources=(WorkflowTransition,)
         )
-
+        menu_list_facet.bind_links(
+            links=(
+                link_document_type_workflow_template_list,
+            ), sources=(DocumentType,)
+        )
+        menu_list_facet.bind_links(
+            exclude=(WorkflowRuntimeProxy,),
+            links=(
+                link_workflow_template_document_type_list,
+                link_workflow_template_state_list,
+                link_workflow_template_transition_list,
+                link_workflow_template_preview
+            ), sources=(Workflow,)
+        )
+        menu_multi_item.bind_links(
+            links=(link_document_multiple_workflow_templates_launch,),
+            sources=(Document,)
+        )
+        menu_multi_item.bind_links(
+            links=(link_workflow_template_delete_multiple,),
+            sources=(Workflow,)
+        )
+        menu_object.bind_links(
+            exclude=(WorkflowRuntimeProxy,), links=(
+                link_workflow_template_delete_single,
+                link_workflow_template_edit,
+                link_workflow_template_launch
+            ), sources=(Workflow,)
+        )
         menu_related.bind_links(
-            links=(link_workflow_template_list,),
-            sources=(
+            links=(link_workflow_template_list,), sources=(
                 DocumentType, 'documents:document_type_list',
                 'documents:document_type_create'
             )
@@ -654,53 +619,104 @@ class DocumentStatesApp(MayanAppConfig):
                 'document_states:workflow_template_list'
             )
         )
-        menu_secondary.bind_links(
-            exclude=(WorkflowRuntimeProxy,),
-            links=(link_workflow_template_list, link_workflow_template_create),
-            sources=(
+        menu_return.bind_links(
+            exclude=(WorkflowRuntimeProxy,), links=(
+                link_workflow_template_list,
+            ), sources=(
                 Workflow, 'document_states:workflow_template_create',
                 'document_states:workflow_template_list'
             )
         )
         menu_secondary.bind_links(
-            links=(link_workflow_template_transition_field_create,),
-            sources=(
-                WorkflowTransition,
+            exclude=(WorkflowRuntimeProxy,), links=(
+                link_workflow_template_create,
+            ), sources=(
+                Workflow, 'document_states:workflow_template_create',
+                'document_states:workflow_template_list'
             )
+        )
+        menu_setup.bind_links(
+            links=(link_workflow_template_setup,)
+        )
+        menu_tools.bind_links(
+            links=(link_tool_launch_workflows,)
+        )
+
+        # Workflow template escalation
+
+        menu_object.bind_links(
+            links=(
+                link_workflow_template_state_escalation_edit,
+                link_workflow_template_state_escalation_delete,
+            ), sources=(WorkflowStateEscalation,)
+        )
+
+        # Workflow template state
+
+        menu_list_facet.bind_links(
+            exclude=(WorkflowStateRuntimeProxy,),
+            links=(
+                link_workflow_template_state_action_list,
+                link_workflow_template_state_escalation_list
+            ), sources=(WorkflowState,)
+        )
+        menu_object.bind_links(
+            exclude=(WorkflowStateRuntimeProxy,),
+            links=(
+                link_workflow_template_state_edit,
+                link_workflow_template_state_delete
+            ), sources=(WorkflowState,)
         )
         menu_secondary.bind_links(
             links=(
                 link_workflow_template_state_action_selection,
                 link_workflow_template_state_escalation_create
-            ), sources=(
-                WorkflowState,
-            )
+            ), sources=(WorkflowState,)
         )
         menu_secondary.bind_links(
-            links=(
-                link_workflow_template_transition_create,
-            ), sources=(
-                WorkflowTransition,
-                'document_states:workflow_template_transition_create',
-                'document_states:workflow_template_transition_list'
-            )
-        )
-        menu_secondary.bind_links(
-            links=(
-                link_workflow_template_state_create,
-            ), sources=(
+            links=(link_workflow_template_state_create,), sources=(
                 WorkflowState,
                 'document_states:workflow_template_state_create',
                 'document_states:workflow_template_state_list'
             )
         )
 
-        menu_setup.bind_links(
-            links=(link_workflow_template_list,)
+        # Workflow template state action
+
+        menu_object.bind_links(
+            links=(
+                link_workflow_template_state_action_edit,
+                link_workflow_template_state_action_delete,
+            ), sources=(WorkflowStateAction,)
         )
 
-        menu_tools.bind_links(
-            links=(link_tool_launch_workflows,)
+        # Workflow template transition
+
+        menu_object.bind_links(
+            links=(
+                link_workflow_template_transition_edit,
+                link_workflow_template_transition_delete
+            ), sources=(WorkflowTransition,)
+        )
+        menu_secondary.bind_links(
+            links=(link_workflow_template_transition_field_create,),
+            sources=(WorkflowTransition,)
+        )
+
+        # Workflow template transition field
+
+        menu_object.bind_links(
+            links=(
+                link_workflow_template_transition_field_delete,
+                link_workflow_template_transition_field_edit
+            ), sources=(WorkflowTransitionField,)
+        )
+        menu_secondary.bind_links(
+            links=(link_workflow_template_transition_create,), sources=(
+                WorkflowTransition,
+                'document_states:workflow_template_transition_create',
+                'document_states:workflow_template_transition_list'
+            )
         )
 
         post_migrate.connect(

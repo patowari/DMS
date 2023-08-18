@@ -34,6 +34,10 @@ link_announcement_edit = Link(
     view='announcements:announcement_edit'
 )
 link_announcement_list = Link(
+    icon=icon_announcement_list, text=_('Announcements'),
+    view='announcements:announcement_list'
+)
+link_announcement_setup = Link(
     condition=factory_condition_queryset_access(
         app_label='announcements', model_name='Announcement',
         object_permission=permission_announcement_view,

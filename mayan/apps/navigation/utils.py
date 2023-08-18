@@ -19,7 +19,8 @@ def factory_condition_queryset_access(
     permission. If not, then filters the objects with the object permission
     and return True if there is at least one item in the filtered queryset.
     This is used to avoid showing a link that ends up in a view with an
-    empty results set.
+    empty results set because the user doesn't have access to any of the
+    objects in the queryset.
     """
     def function_condition(context, resolved_object):
         AccessControlList = apps.get_model(

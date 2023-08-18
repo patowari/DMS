@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
-from mayan.apps.common.menus import menu_secondary, menu_tools, menu_object
+from mayan.apps.common.menus import menu_object, menu_return, menu_tools
 from mayan.apps.navigation.classes import SourceColumn
 
 from .classes import Dashboard
@@ -33,10 +33,11 @@ class DashboardsApp(MayanAppConfig):
         menu_object.bind_links(
             links=(link_dashboard_detail,), sources=(Dashboard,)
         )
-
-        menu_secondary.bind_links(
+        menu_return.bind_links(
             links=(link_dashboard_list,), sources=(
                 Dashboard, 'dashboards:dashboard_list',
             )
         )
-        menu_tools.bind_links(links=(link_dashboard_list,))
+        menu_tools.bind_links(
+            links=(link_dashboard_list,)
+        )

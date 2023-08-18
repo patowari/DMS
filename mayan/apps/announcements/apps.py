@@ -7,7 +7,7 @@ from mayan.apps.acls.permissions import permission_acl_edit, permission_acl_view
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_multi_item, menu_object, menu_secondary, menu_setup
+    menu_multi_item, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
@@ -17,7 +17,8 @@ from mayan.apps.views.column_widgets import TwoStateWidget
 from .events import event_announcement_edited
 from .links import (
     link_announcement_create, link_announcement_multiple_delete,
-    link_announcement_single_delete, link_announcement_edit, link_announcement_list
+    link_announcement_single_delete, link_announcement_edit,
+    link_announcement_list, link_announcement_setup
 )
 from .permissions import (
     permission_announcement_delete, permission_announcement_edit,
@@ -92,6 +93,13 @@ class AnnouncementsApp(MayanAppConfig):
                 link_announcement_single_delete, link_announcement_edit
             ), sources=(Announcement,)
         )
+        menu_return.bind_links(
+            links=(link_announcement_list,),
+            sources=(
+                Announcement, 'announcements:announcement_list',
+                'announcements:announcement_create'
+            )
+        )
         menu_secondary.bind_links(
             links=(link_announcement_create,),
             sources=(
@@ -100,5 +108,5 @@ class AnnouncementsApp(MayanAppConfig):
             )
         )
         menu_setup.bind_links(
-            links=(link_announcement_list,)
+            links=(link_announcement_setup,)
         )

@@ -8,7 +8,8 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_related, menu_secondary, menu_setup
+    menu_list_facet, menu_object, menu_related, menu_return, menu_secondary,
+    menu_setup
 )
 from mayan.apps.documents.links.document_type_links import link_document_type_list
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
@@ -160,7 +161,6 @@ class LinkingApp(MayanAppConfig):
         menu_list_facet.bind_links(
             links=(link_document_type_smart_links,), sources=(DocumentType,)
         )
-
         menu_related.bind_links(
             links=(link_smart_link_list,),
             sources=(
@@ -185,14 +185,12 @@ class LinkingApp(MayanAppConfig):
                 link_smart_link_condition_list
             ), sources=(SmartLink,)
         )
-
         menu_object.bind_links(
             exclude=(ResolvedSmartLink,),
             links=(
                 link_smart_link_delete, link_smart_link_edit
             ), sources=(SmartLink,)
         )
-
         menu_related.bind_links(
             links=(link_document_type_list,),
             sources=(
@@ -200,9 +198,15 @@ class LinkingApp(MayanAppConfig):
                 'linking:smart_link_create'
             )
         )
-
+        menu_return.bind_links(
+            links=(link_smart_link_list,),
+            sources=(
+                SmartLink, 'linking:smart_link_list',
+                'linking:smart_link_create'
+            )
+        )
         menu_secondary.bind_links(
-            links=(link_smart_link_list, link_smart_link_create),
+            links=(link_smart_link_create,),
             sources=(
                 SmartLink, 'linking:smart_link_list',
                 'linking:smart_link_create'
@@ -217,7 +221,6 @@ class LinkingApp(MayanAppConfig):
                 link_smart_link_condition_delete
             ), sources=(SmartLinkCondition,)
         )
-
         menu_secondary.bind_links(
             links=(link_smart_link_condition_create,),
             sources=(

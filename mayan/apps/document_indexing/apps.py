@@ -9,8 +9,8 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_main, menu_object, menu_related, menu_secondary,
-    menu_setup, menu_tools
+    menu_list_facet, menu_main, menu_object, menu_related, menu_return,
+    menu_secondary, menu_setup, menu_tools
 )
 from mayan.apps.documents.links.document_type_links import link_document_type_list
 from mayan.apps.documents.signals import signal_post_initial_document_type
@@ -312,8 +312,15 @@ class DocumentIndexingApp(MayanAppConfig):
                 'indexing:index_template_create'
             )
         )
+        menu_return.bind_links(
+            links=(link_index_template_list,),
+            sources=(
+                IndexTemplate, 'indexing:index_template_list',
+                'indexing:index_template_create'
+            )
+        )
         menu_secondary.bind_links(
-            links=(link_index_template_list, link_index_template_create),
+            links=(link_index_template_create,),
             sources=(
                 IndexTemplate, 'indexing:index_template_list',
                 'indexing:index_template_create'

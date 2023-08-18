@@ -28,7 +28,7 @@ from .links import (
     link_send_document_version_link_single,
     link_send_document_version_link_multiple,
     link_user_mailer_create, link_user_mailer_delete, link_user_mailer_edit,
-    link_user_mailer_list, link_user_mailer_test
+    link_user_mailer_list, link_user_mailer_setup, link_user_mailer_test
 )
 from .permissions import (
     permission_send_document_link, permission_send_document_file_attachment,
@@ -198,5 +198,5 @@ class MailerApp(MayanAppConfig):
         )
 
         menu_setup.bind_links(
-            links=(link_user_mailer_list,)
+            links=(link_user_mailer_setup,)
         )

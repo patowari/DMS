@@ -748,9 +748,13 @@ class DocumentsApp(MayanAppConfig):
             )
         )
 
-        menu_main.bind_links(links=(menu_documents,), position=10)
+        menu_main.bind_links(
+            links=(menu_documents,), position=10
+        )
 
-        menu_setup.bind_links(links=(link_document_type_setup,))
+        menu_setup.bind_links(
+            links=(link_document_type_setup,)
+        )
 
         # Document
 
@@ -880,8 +884,15 @@ class DocumentsApp(MayanAppConfig):
                 link_document_type_filename_delete
             ), sources=(DocumentTypeFilename,)
         )
+        menu_return.bind_links(
+            links=(link_document_type_list,),
+            sources=(
+                DocumentType, 'documents:document_type_create',
+                'documents:document_type_list'
+            )
+        )
         menu_secondary.bind_links(
-            links=(link_document_type_list, link_document_type_create),
+            links=(link_document_type_create,),
             sources=(
                 DocumentType, 'documents:document_type_create',
                 'documents:document_type_list'

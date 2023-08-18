@@ -7,6 +7,7 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
     icon_document_upload_wizard, icon_document_file_upload,
@@ -140,8 +141,15 @@ link_source_edit = Link(
     view='sources:source_edit'
 )
 link_source_list = Link(
-    icon=icon_source_list, permissions=(permission_sources_view,),
-    text=_('Sources'), view='sources:source_list'
+    icon=icon_source_list, text=_('Sources'), view='sources:source_list'
+)
+link_source_setup = Link(
+    condition=factory_condition_queryset_access(
+        app_label='sources', model_name='Source',
+        object_permission=permission_sources_view,
+        view_permission=permission_sources_create,
+    ), icon=icon_source_list, text=_('Sources'),
+    view='sources:source_list'
 )
 link_source_test = Link(
     args=('resolved_object.pk',), condition=condition_source_supports_dry_run,

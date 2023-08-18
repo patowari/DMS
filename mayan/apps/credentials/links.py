@@ -33,9 +33,8 @@ link_credential_edit = Link(
     text=_('Edit'), view='credentials:stored_credential_edit'
 )
 link_credential_list = Link(
-    icon=icon_credential_list,
-    permissions=(permission_credential_view,),
-    text=_('Credential list'), view='credentials:stored_credential_list'
+    icon=icon_credential_list, text=_('Credential list'),
+    view='credentials:stored_credential_list'
 )
 link_credential_setup = Link(
     condition=factory_condition_queryset_access(

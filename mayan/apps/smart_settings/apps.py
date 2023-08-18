@@ -55,7 +55,8 @@ class SmartSettingsApp(MayanAppConfig):
         )
         menu_return.bind_links(
             links=(link_namespace_root_list,), sources=(
-                SettingNamespace, Setting
+                SettingNamespace, Setting,
+                'settings:setting_namespace_list'
             )
         )
         menu_setup.bind_links(

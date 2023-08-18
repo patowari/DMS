@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
     icon_document_file_attachment_send_single,
@@ -106,6 +107,18 @@ link_user_mailer_edit = Link(
     args='object.pk', icon=icon_user_mailer_edit,
     permissions=(permission_user_mailer_edit,), text=_('Edit'),
     view='mailer:user_mailer_edit'
+)
+link_user_mailer_list = Link(
+    icon=icon_user_mailer_list, text=_('Mailing profiles'),
+    view='mailer:user_mailer_list'
+)
+link_user_mailer_setup = Link(
+    condition=factory_condition_queryset_access(
+        app_label='mailer', model_name='UserMailer',
+        object_permission=permission_user_mailer_view,
+        view_permission=permission_user_mailer_create,
+    ), icon=icon_user_mailer_list, text=_('Mailing profiles'),
+    view='mailer:user_mailer_list'
 )
 link_user_mailer_list = Link(
     icon=icon_user_mailer_list,

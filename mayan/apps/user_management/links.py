@@ -50,10 +50,7 @@ link_group_edit = Link(
     view='user_management:group_edit'
 )
 link_group_list = Link(
-    condition=factory_condition_queryset_access(
-        app_label='auth', model_name='Group',
-        object_permission=permission_group_view,
-    ), icon=icon_group_list, text=_('Groups'),
+    icon=icon_group_list, text=_('Groups'),
     view='user_management:group_list'
 )
 link_group_user_list = Link(
@@ -99,13 +96,7 @@ link_user_group_list = Link(
     text=_('Groups'), view='user_management:user_groups'
 )
 link_user_list = Link(
-    icon=icon_user_list, text=_('Users'),
-    condition=factory_condition_queryset_access(
-        app_label='auth', model_name='User',
-        callback=condition_user_is_authenticated,
-        object_permission=permission_user_view,
-        view_permission=permission_user_create
-    ), view='user_management:user_list'
+    icon=icon_user_list, text=_('Users'), view='user_management:user_list'
 )
 link_user_set_options = Link(
     args='object.id', condition=condition_user_is_authenticated,

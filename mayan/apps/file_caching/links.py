@@ -1,7 +1,9 @@
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
-from mayan.apps.navigation.utils import get_content_type_kwargs_factory
+from mayan.apps.navigation.utils import (
+    factory_condition_queryset_access, get_content_type_kwargs_factory
+)
 from mayan.apps.storage.classes import DefinedStorage
 
 from .icons import (
@@ -22,8 +24,8 @@ def condition_valid_storage(context, resolved_object):
 
 
 link_cache_list = Link(
-    icon=icon_file_caching, permissions=(permission_cache_view,),
-    text=_('File caches'), view='file_caching:cache_list'
+    icon=icon_file_caching, text=_('File caches'),
+    view='file_caching:cache_list'
 )
 link_cache_partition_purge = Link(
     icon=icon_cache_partition_purge, kwargs=get_content_type_kwargs_factory(
@@ -31,13 +33,20 @@ link_cache_partition_purge = Link(
     ), permissions=(permission_cache_purge,), text=_('Purge cache'),
     view='file_caching:cache_partitions_purge'
 )
-link_cache_purge = Link(
+link_cache_purge_single = Link(
     condition=condition_valid_storage, icon=icon_cache_purge,
     kwargs={'cache_id': 'resolved_object.id'},
     permissions=(permission_cache_purge,), text=_('Purge cache'),
     view='file_caching:cache_purge'
 )
-link_cache_multiple_purge = Link(
+link_cache_purge_single_multiple = Link(
     icon=icon_cache_purge, text=_('Purge cache'),
     view='file_caching:cache_multiple_purge'
+)
+link_cache_tool = Link(
+    condition=factory_condition_queryset_access(
+        app_label='file_caching', model_name='Cache',
+        object_permission=permission_cache_view
+    ), icon=icon_file_caching, text=_('File caches'),
+    view='file_caching:cache_list'
 )

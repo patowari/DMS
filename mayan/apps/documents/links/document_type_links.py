@@ -65,10 +65,7 @@ link_document_type_filename_generator = Link(
     view='documents:document_type_filename_generator'
 )
 link_document_type_list = Link(
-    condition=factory_condition_queryset_access(
-        app_label='documents', model_name='DocumentType',
-        object_permission=permission_document_type_view,
-    ), icon=icon_document_type_list, text=_('Document types'),
+    icon=icon_document_type_list, text=_('Document types'),
     view='documents:document_type_list'
 )
 link_document_type_retention_policies = Link(

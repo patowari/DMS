@@ -46,7 +46,7 @@ from .permissions import (
 
 # Workflow template
 
-link_document_type_workflow_templates = Link(
+link_document_type_workflow_template_list = Link(
     args='resolved_object.pk',
     icon=icon_document_type_workflow_template_list,
     permissions=(permission_document_type_edit,), text=_('Workflows'),
@@ -57,23 +57,23 @@ link_workflow_template_create = Link(
     permissions=(permission_workflow_template_create,),
     text=_('Create workflow'), view='document_states:workflow_template_create'
 )
-link_workflow_template_multiple_delete = Link(
+link_workflow_template_document_type_list = Link(
+    args='resolved_object.pk',
+    icon=icon_workflow_template_document_type_list,
+    permissions=(permission_workflow_template_edit,), text=_('Document types'),
+    view='document_states:workflow_template_document_types'
+)
+link_workflow_template_delete_multiple = Link(
     icon=icon_workflow_template_delete,
     tags='dangerous', text=_('Delete'),
     view='document_states:workflow_template_multiple_delete'
 )
-link_workflow_template_single_delete = Link(
+link_workflow_template_delete_single = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_delete,
     permissions=(permission_workflow_template_delete,),
     tags='dangerous', text=_('Delete'),
     view='document_states:workflow_template_single_delete'
-)
-link_workflow_template_document_types = Link(
-    args='resolved_object.pk',
-    icon=icon_workflow_template_document_type_list,
-    permissions=(permission_workflow_template_edit,), text=_('Document types'),
-    view='document_states:workflow_template_document_types'
 )
 link_workflow_template_edit = Link(
     args='resolved_object.pk',
@@ -89,10 +89,18 @@ link_workflow_template_launch = Link(
     view='document_states:workflow_template_launch'
 )
 link_workflow_template_list = Link(
-    icon=icon_workflow_template_list,
-    permissions=(permission_workflow_template_view,), text=_('Workflows'),
+    icon=icon_workflow_template_list, text=_('Workflows'),
     view='document_states:workflow_template_list'
 )
+link_workflow_template_setup = Link(
+    condition=factory_condition_queryset_access(
+        app_label='document_states', model_name='Workflow',
+        object_permission=permission_workflow_template_view,
+        view_permission=permission_workflow_template_create,
+    ), icon=icon_workflow_template_list, text=_('Workflows'),
+    view='document_states:workflow_template_list'
+)
+
 link_workflow_template_preview = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_preview,

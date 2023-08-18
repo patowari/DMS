@@ -196,18 +196,13 @@ class TaskManagerApp(MayanAppConfig):
         menu_list_facet.bind_links(
             links=(link_queue_task_type_list,), sources=(CeleryQueue,)
         )
-
         menu_list_facet.bind_links(
             links=(link_worker_queue_list,), sources=(Worker,)
         )
-
         menu_return.bind_links(
-            links=(
-                link_worker_list,
-            ),
-            sources=(Worker,)
+            links=(link_worker_list,),
+            sources=(Worker, 'task_manager:worker_list')
         )
-
         menu_tools.bind_links(
             links=(link_worker_list,)
         )

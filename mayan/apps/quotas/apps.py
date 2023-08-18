@@ -8,7 +8,9 @@ from mayan.apps.acls.permissions import (
 )
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
-from mayan.apps.common.menus import menu_object, menu_secondary, menu_setup
+from mayan.apps.common.menus import (
+    menu_object, menu_return, menu_secondary, menu_setup
+)
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import TwoStateWidget
@@ -98,14 +100,18 @@ class QuotasApp(MayanAppConfig):
                 link_quota_edit, link_quota_delete,
             ), sources=(Quota,)
         )
-
-        menu_secondary.bind_links(
-            links=(
-                link_quota_list, link_quota_create,
-            ), sources=(
+        menu_return.bind_links(
+            links=(link_quota_list,), sources=(
                 Quota, 'quotas:quota_backend_selection',
                 'quotas:quota_create', 'quotas:quota_list'
             )
         )
-
-        menu_setup.bind_links(links=(link_quota_setup,))
+        menu_secondary.bind_links(
+            links=(link_quota_create,), sources=(
+                Quota, 'quotas:quota_backend_selection',
+                'quotas:quota_create', 'quotas:quota_list'
+            )
+        )
+        menu_setup.bind_links(
+            links=(link_quota_setup,)
+        )

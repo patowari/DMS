@@ -8,7 +8,8 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_related, menu_secondary, menu_setup
+    menu_list_facet, menu_object, menu_related, menu_return, menu_secondary,
+    menu_setup
 )
 from mayan.apps.documents.links.document_type_links import (
     link_document_type_list
@@ -163,11 +164,20 @@ class WebLinksApp(MayanAppConfig):
                 'web_links:web_link_create'
             )
         )
-        menu_secondary.bind_links(
-            links=(link_web_link_list, link_web_link_create),
+        menu_return.bind_links(
+            links=(link_web_link_list,),
             sources=(
                 WebLink, 'web_links:web_link_list',
                 'web_links:web_link_create'
             )
         )
-        menu_setup.bind_links(links=(link_web_link_setup,))
+        menu_secondary.bind_links(
+            links=(link_web_link_create,),
+            sources=(
+                WebLink, 'web_links:web_link_list',
+                'web_links:web_link_create'
+            )
+        )
+        menu_setup.bind_links(
+            links=(link_web_link_setup,)
+        )

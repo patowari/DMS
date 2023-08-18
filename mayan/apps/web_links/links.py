@@ -2,6 +2,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.documents.permissions import permission_document_type_edit
 from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
     icon_document_type_web_links, icon_document_web_link_list,
@@ -12,6 +13,7 @@ from .icons import (
 from .permissions import (
     permission_web_link_create, permission_web_link_delete,
     permission_web_link_edit, permission_web_link_instance_view,
+    permission_web_link_view
 )
 
 link_document_type_web_links = Link(
@@ -55,7 +57,10 @@ link_web_link_list = Link(
     view='web_links:web_link_list'
 )
 link_web_link_setup = Link(
-    icon=icon_web_link_setup,
-    permissions=(permission_web_link_create,), text=_('Web links'),
+    condition=factory_condition_queryset_access(
+        app_label='web_links', model_name='WebLink',
+        object_permission=permission_web_link_view,
+        view_permission=permission_web_link_create,
+    ), icon=icon_web_link_setup, text=_('Web links'),
     view='web_links:web_link_list'
 )

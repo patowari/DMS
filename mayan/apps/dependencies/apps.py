@@ -2,7 +2,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
-    menu_about, menu_list_facet, menu_secondary, menu_tools
+    menu_about, menu_list_facet, menu_return, menu_tools
 )
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import TwoStateWidget
@@ -87,7 +87,6 @@ class DependenciesApp(MayanAppConfig):
         menu_about.bind_links(
             links=(link_packages_licenses,), position=7
         )
-
         menu_list_facet.bind_links(
             links=(link_dependency_group_entry_list,),
             sources=(DependencyGroup,)
@@ -96,15 +95,12 @@ class DependenciesApp(MayanAppConfig):
             links=(link_dependency_group_entry_detail,),
             sources=(DependencyGroupEntry,)
         )
-
-        menu_secondary.bind_links(
+        menu_return.bind_links(
             links=(link_dependency_group_list,),
             sources=(
-                DependencyGroup,
-                'dependencies:dependency_group_list'
+                DependencyGroup, 'dependencies:dependency_group_list'
             )
         )
-
         menu_tools.bind_links(
             links=(link_dependency_tool, link_check_version)
         )

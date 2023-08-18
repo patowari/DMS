@@ -4,6 +4,7 @@ from mayan.apps.documents.permissions import (
     permission_document_type_edit, permission_document_view
 )
 from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
     icon_document_smart_link_instance_list, icon_document_type_smart_links,
@@ -64,13 +65,15 @@ link_smart_link_instance_view = Link(
     view='linking:smart_link_instance_view'
 )
 link_smart_link_list = Link(
-    icon=icon_smart_link_list,
-    permissions=(permission_smart_link_create,), text=_('Smart links'),
+    icon=icon_smart_link_list, text=_('Smart links'),
     view='linking:smart_link_list'
 )
 link_smart_link_setup = Link(
-    icon=icon_smart_link_setup,
-    permissions=(permission_smart_link_create,), text=_('Smart links'),
+    condition=factory_condition_queryset_access(
+        app_label='linking', model_name='SmartLink',
+        object_permission=permission_smart_link_view,
+        view_permission=permission_smart_link_create,
+    ), icon=icon_smart_link_setup, text=_('Smart links'),
     view='linking:smart_link_list'
 )
 

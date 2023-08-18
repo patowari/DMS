@@ -30,9 +30,9 @@ from .handlers import (
     handler_initialize_periodic_tasks
 )
 from .links import (
-    link_document_upload_wizard, link_source_test,
+    link_document_file_upload, link_document_upload_wizard,
     link_source_backend_selection, link_source_delete, link_source_edit,
-    link_source_list, link_document_file_upload
+    link_source_list, link_source_setup, link_source_test
 )
 from .permissions import (
     permission_sources_delete, permission_sources_edit,
@@ -136,9 +136,6 @@ class SourcesApp(MayanAppConfig):
                 'sources:source_create', 'sources:source_list'
             )
         )
-        menu_setup.bind_links(
-            links=(link_source_list,)
-        )
         menu_secondary.bind_links(
             links=(link_document_file_upload,),
             sources=(
@@ -146,7 +143,9 @@ class SourcesApp(MayanAppConfig):
                 'sources:document_file_upload'
             )
         )
-
+        menu_setup.bind_links(
+            links=(link_source_setup,)
+        )
         pre_delete.connect(
             dispatch_uid='sources_handler_delete_interval_source_periodic_task',
             receiver=handler_delete_interval_source_periodic_task,

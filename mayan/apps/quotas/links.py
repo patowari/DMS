@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
     icon_quota_create, icon_quota_delete, icon_quota_edit, icon_quota_list,
@@ -26,10 +27,13 @@ link_quota_edit = Link(
     view='quotas:quota_edit'
 )
 link_quota_list = Link(
-    icon=icon_quota_list, permissions=(permission_quota_view,),
-    text=_('Quotas list'), view='quotas:quota_list'
+    icon=icon_quota_list, text=_('Quotas list'), view='quotas:quota_list'
 )
 link_quota_setup = Link(
-    icon=icon_quota_setup, permissions=(permission_quota_view,),
-    text=_('Quotas'), view='quotas:quota_list',
+    condition=factory_condition_queryset_access(
+        app_label='quotas', model_name='Quota',
+        object_permission=permission_quota_view,
+        view_permission=permission_quota_create,
+    ), icon=icon_quota_setup, text=_('Quotas'),
+    view='quotas:quota_list'
 )

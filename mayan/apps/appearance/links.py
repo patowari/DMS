@@ -2,6 +2,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.authentication.link_conditions import condition_user_is_authenticated
 from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
     icon_user_theme_settings_detail,
@@ -9,7 +10,8 @@ from .icons import (
     icon_theme_delete, icon_theme_edit, icon_theme_list, icon_theme_setup
 )
 from .permissions import (
-    permission_theme_create, permission_theme_delete, permission_theme_edit
+    permission_theme_create, permission_theme_delete, permission_theme_edit,
+    permission_theme_view
 )
 
 link_user_theme_settings_detail = Link(
@@ -45,6 +47,10 @@ link_theme_list = Link(
     view='appearance:theme_list'
 )
 link_theme_setup = Link(
-    icon=icon_theme_setup, permissions=(permission_theme_create,),
-    text=_('Themes'), view='appearance:theme_list'
+    condition=factory_condition_queryset_access(
+        app_label='appearance', model_name='Theme',
+        object_permission=permission_theme_view,
+        view_permission=permission_theme_create,
+    ), icon=icon_theme_setup, text=_('Themes'),
+    view='appearance:theme_list'
 )

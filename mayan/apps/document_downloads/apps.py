@@ -51,21 +51,13 @@ class DocumentDownloadsApp(MayanAppConfig):
         )
 
         menu_object.bind_links(
-            links=(
-                link_document_download_single,
-            ),
+            links=(link_document_download_single,),
             sources=(Document,)
         )
-
         menu_object.bind_links(
-            links=(
-                link_document_file_download_quick,
-            ),
+            links=(link_document_file_download_quick,),
             sources=(DocumentFile,)
         )
-
         menu_multi_item.bind_links(
-            links=(
-                link_document_download_multiple,
-            ), sources=(Document,)
+            links=(link_document_download_multiple,), sources=(Document,)
         )

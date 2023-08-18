@@ -61,7 +61,9 @@ class StatisticsApp(MayanAppConfig):
         )
         menu_return.bind_links(
             links=(link_statistic_namespace_list,),
-            sources=(StatisticNamespace,)
+            sources=(
+                StatisticNamespace, 'statistics:statistic_namespace_list'
+            )
         )
         menu_tools.bind_links(
             links=(link_statistics,)
