@@ -11,7 +11,8 @@ from actstream.models import Action
 
 from mayan.apps.common.signals import signal_mayan_pre_save
 from mayan.apps.documents.events import event_document_created
-from mayan.apps.documents.models import Document, DocumentFile
+from mayan.apps.documents.models.document_file_models import DocumentFile
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.user_management.querysets import get_user_queryset
 
 from .classes import QuotaBackend

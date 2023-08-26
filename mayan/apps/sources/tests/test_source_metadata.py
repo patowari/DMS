@@ -3,7 +3,7 @@ from mayan.apps.documents.events import (
     event_document_file_edited, event_document_version_created,
     event_document_version_page_created
 )
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import (
     TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_SMALL_PATH

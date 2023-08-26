@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
-from mayan.apps.documents.models import DocumentType
+from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave

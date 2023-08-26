@@ -9,7 +9,7 @@ from model_utils.managers import InheritanceManager
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.django_gpg.exceptions import VerificationError
 from mayan.apps.django_gpg.models import Key
-from mayan.apps.documents.models import DocumentFile
+from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave

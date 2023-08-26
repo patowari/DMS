@@ -12,7 +12,7 @@ from mayan.apps.documents.document_file_actions import (
     DocumentFileActionAppendNewPages, DocumentFileActionNothing,
     DocumentFileActionUseNewPages
 )
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import (
     TEST_FILE_COMPRESSED_PATH, TEST_DOCUMENT_SMALL_CHECKSUM

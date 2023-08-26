@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 
 from ..managers import (
     DocumentIndexInstanceNodeManager, IndexInstanceManager

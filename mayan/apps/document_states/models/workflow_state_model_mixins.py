@@ -5,7 +5,7 @@ from django.core import serializers
 from django.db.models import F, Max, Q
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 
 from ..literals import WORKFLOW_ACTION_ON_ENTRY, WORKFLOW_ACTION_ON_EXIT
 

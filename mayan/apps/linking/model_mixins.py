@@ -2,7 +2,7 @@ from django.apps import apps
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.templating.classes import Template
 
 from .events import event_smart_link_edited

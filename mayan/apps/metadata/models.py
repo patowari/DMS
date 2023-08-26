@@ -7,7 +7,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.common.validators import YAMLValidator
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
-from mayan.apps.documents.models import Document, DocumentType
+from mayan.apps.documents.models.document_models import Document
+from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave

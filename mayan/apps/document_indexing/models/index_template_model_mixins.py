@@ -1,6 +1,6 @@
 from django.apps import apps
 
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.events.classes import ModelEventType
 
 from ..events import event_index_template_edited

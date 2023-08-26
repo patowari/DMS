@@ -8,7 +8,7 @@ from mayan.apps.documents.document_file_actions import (
     DocumentFileActionUseNewPages
 )
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
-from mayan.apps.documents.models import Document
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
