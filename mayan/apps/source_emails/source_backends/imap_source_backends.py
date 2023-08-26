@@ -5,9 +5,8 @@ import logging
 from django.utils.encoding import force_bytes, force_str
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.sources.classes import SourceBackend
 from mayan.apps.sources.exceptions import SourceException
-from mayan.apps.source_periodic.source_backends.periodic_mixins import SourceBackendMixinPeriodicCompressed
+from mayan.apps.sources.source_backends.base import SourceBackend
 
 from .literals import (
     DEFAULT_EMAIL_IMAP_MAILBOX, DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
@@ -18,10 +17,7 @@ from .mixins import SourceBackendMixinEmail
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBackendIMAPEmail(
-    SourceBackendMixinPeriodicCompressed, SourceBackendMixinEmail,
-    SourceBackend
-):
+class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
     label = _('IMAP email')
 
     @classmethod

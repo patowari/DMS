@@ -7,14 +7,14 @@ from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
-from mayan.apps.storage.utils import NamedTemporaryFile, touch
-from mayan.apps.sources.classes import SourceBackend
-from mayan.apps.sources.settings import setting_backend_arguments
 from mayan.apps.source_generated_files.source_backend_actions.generated_file_actions import (
     SourceBackendActionGenerateFileDocumentFileUpload,
     SourceBackendActionGenerateFileDocumentUpload
 )
-from mayan.apps.source_interactive.source_backends.interactive_mixins import SourceBackendMixinInteractive
+from mayan.apps.source_interactive.source_backends.mixins import SourceBackendMixinInteractive
+from mayan.apps.sources.settings import setting_backend_arguments
+from mayan.apps.sources.source_backends.base import SourceBackend
+from mayan.apps.storage.utils import NamedTemporaryFile, touch
 
 from .literals import DEFAULT_BINARY_SCANIMAGE_PATH
 
@@ -100,7 +100,9 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                 filename = 'scan {}'.format(
                     now()
                 )
-                yield File(file=file_object, name=filename)
+                yield {
+                    'file': File(file=file_object, name=filename)
+                }
 
     def call_command_scanimage(self, **kwargs):
         command_path = setting_backend_arguments.value.get(

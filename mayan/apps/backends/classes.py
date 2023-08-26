@@ -62,8 +62,13 @@ class BackendMetaclass(type):
 
 
 class BaseBackend(AppsModuleLoaderMixin, metaclass=BackendMetaclass):
+    """
+    is_visible: Controls whether the backend will show up as a selection
+                to the user.
+    """
     _backend_identifier = 'backend_class_path'
     _registry = {}
+    is_visible = True
 
     @classproperty
     def backend_class_path(cls):
@@ -92,7 +97,7 @@ class BaseBackend(AppsModuleLoaderMixin, metaclass=BackendMetaclass):
         choices = [
             (
                 backend.backend_id, backend.label
-            ) for backend in cls.get_all()
+            ) for backend in cls.get_all() if backend.is_visible
         ]
 
         choices.sort(

@@ -144,16 +144,20 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
 
         self._clear_events()
 
+        callback_dict = {
+            'post_document_create': {
+                'dotted_path': 'mayan.apps.documents.tests.test_document_tasks.DocumentTaskTestCase',
+                'function_name': '_test_post_document_create_callback',
+                'kwargs': {'test_argument': 'test_value'}
+            }
+        }
+
         task_document_upload.apply_async(
             kwargs={
+                'callback_dict': callback_dict,
                 'document_type_id': self._test_document_type.pk,
                 'shared_uploaded_file_id': test_shared_uploaded_file.pk,
-                'user_id': self._test_case_user.pk,
-                'callback_post_document_create_dotted_path': 'mayan.apps.documents.tests.test_document_tasks.DocumentTaskTestCase',
-                'callback_post_document_create_function_name': '_test_post_document_create_callback',
-                'callback_post_document_create_kwargs': {
-                    'test_argument': 'test_value'
-                }
+                'user_id': self._test_case_user.pk
             }
         )
 

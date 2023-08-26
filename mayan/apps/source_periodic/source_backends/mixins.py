@@ -5,8 +5,8 @@ from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.documents.models.document_type_models import DocumentType
-from mayan.apps.source_compressed.source_backends.compressed_mixins import SourceBackendMixinCompressed
 from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
+from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
 
 from .literals import DEFAULT_PERIOD_INTERVAL
 
@@ -83,6 +83,8 @@ class SourceBackendMixinPeriodic:
         return widgets
 
     def create(self):
+        super().create()
+
         IntervalSchedule = apps.get_model(
             app_label='django_celery_beat', model_name='IntervalSchedule'
         )
@@ -105,18 +107,14 @@ class SourceBackendMixinPeriodic:
         )
 
     def delete(self):
-        self.delete_periodic_task(pk=self.model_instance_id)
+        super().delete()
 
-    def get_document_type(self):
-        return DocumentType.objects.get(
-            pk=self.kwargs['document_type_id']
-        )
+        self.delete_periodic_task(pk=self.model_instance_id)
 
     def delete_periodic_task(self, pk=None):
         PeriodicTask = apps.get_model(
             app_label='django_celery_beat', model_name='PeriodicTask'
         )
-
         try:
             periodic_task = PeriodicTask.objects.get(
                 name=self.get_periodic_task_name(pk=pk)
@@ -135,12 +133,18 @@ class SourceBackendMixinPeriodic:
                 self.get_periodic_task_name(pk=pk)
             )
 
+    def get_document_type(self):
+        return DocumentType.objects.get(
+            pk=self.kwargs['document_type_id']
+        )
+
     def get_periodic_task_name(self, pk=None):
         return 'check_interval_source-{}'.format(
             pk or self.model_instance_id
         )
 
-    def save(self):
+    def update(self):
+        super().update()
         self.delete_periodic_task()
         self.create()
 

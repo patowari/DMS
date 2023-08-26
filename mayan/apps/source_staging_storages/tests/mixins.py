@@ -9,11 +9,11 @@ from mayan.apps.sources.tests.literals import (
     TEST_CASE_INTERFACE_NAME_REST_API, TEST_CASE_INTERFACE_NAME_VIEW
 )
 
-from ..source_backends import SourceBackendStagingStorage
+from .literals import TEST_SOURCE_BACKEND_PATH_STAGING_STORAGE
 
 
 class StagingStorageSourceTestMixin(SourceTestMixinStoredFile):
-    _test_source_backend = SourceBackendStagingStorage
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_STAGING_STORAGE
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

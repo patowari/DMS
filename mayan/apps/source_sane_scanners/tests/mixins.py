@@ -4,11 +4,11 @@ from mayan.apps.sources.tests.literals import (
 )
 from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 
-from ..source_backends import SourceBackendSANEScanner
+from .literals import TEST_SOURCE_BACKEND_PATH_SANE_SCANNER
 
 
 class SANEScannerSourceTestMixin(SourceTestMixin):
-    _test_source_backend = SourceBackendSANEScanner
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_SANE_SCANNER
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

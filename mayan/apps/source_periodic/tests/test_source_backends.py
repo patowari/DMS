@@ -8,7 +8,9 @@ from mayan.apps.documents.events import (
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.sources.events import event_source_edited
+from mayan.apps.sources.events import (
+    event_source_created, event_source_edited
+)
 
 from .mixins import PeriodicSourceBackendTestMixin
 
@@ -16,9 +18,31 @@ from .mixins import PeriodicSourceBackendTestMixin
 class PeriodicSourceBackendTestCase(
     PeriodicSourceBackendTestMixin, GenericDocumentTestCase
 ):
+    _test_source_create_auto = False
     auto_upload_test_document = False
 
+    def test_periodic_source_create(self):
+        periodic_task_count = PeriodicTask.objects.count()
+
+        self._clear_events()
+
+        self._test_source_create()
+
+        self.assertEqual(
+            PeriodicTask.objects.count(), periodic_task_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self._test_source)
+        self.assertEqual(events[0].target, self._test_source)
+        self.assertEqual(events[0].verb, event_source_created.id)
+
     def test_periodic_source_delete(self):
+        self._test_source_create()
+
         periodic_task_count = PeriodicTask.objects.count()
 
         self._clear_events()
@@ -32,7 +56,9 @@ class PeriodicSourceBackendTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_periodic_source_save(self):
+    def test_periodic_source_update(self):
+        self._test_source_create()
+
         periodic_task_count = PeriodicTask.objects.count()
 
         self._clear_events()

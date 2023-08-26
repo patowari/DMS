@@ -1,11 +1,12 @@
-from mayan.apps.sources.classes import SourceBackend
-from mayan.apps.source_compressed.source_backends.compressed_mixins import SourceBackendMixinCompressed
+from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
 
 from ..source_backend_actions.interactive_actions import (
     SourceBackendActionInteractiveDocumentUpload,
     SourceBackendActionInteractiveDocumentFileUpload
 )
-from ..source_backends.interactive_mixins import SourceBackendMixinInteractive
+from mayan.apps.sources.source_backends.base import SourceBackend
+
+from ..source_backends.mixins import SourceBackendMixinInteractive
 
 
 class SourceBackendTestInteractive(
@@ -22,4 +23,4 @@ class SourceBackendTestInteractiveAction(
         SourceBackendActionInteractiveDocumentFileUpload,
         SourceBackendActionInteractiveDocumentUpload
     )
-    label = 'Test interactive source backend'
+    label = 'Test interactive source backend with actions'

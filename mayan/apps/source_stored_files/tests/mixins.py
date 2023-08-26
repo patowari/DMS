@@ -5,11 +5,11 @@ from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 from mayan.apps.storage.utils import fs_cleanup, mkdtemp
 
-from .source_backends import SourceBackendTestStorage
+from .literals import TEST_SOURCE_BACKEND_PATH_STORAGE
 
 
 class SourceTestMixinStoredFile(SourceTestMixin):
-    _test_source_backend = SourceBackendTestStorage
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_STORAGE
     _test_source_test_file_path = TEST_FILE_SMALL_PATH
 
     def setUp(self):

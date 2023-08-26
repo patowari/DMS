@@ -5,11 +5,11 @@ from mayan.apps.sources.tests.literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_MODEL
 )
 
-from ..source_backends import SourceBackendWatchFolder
+from .literals import TEST_SOURCE_BACKEND_PATH_WATCH_FOLDER
 
 
 class WatchFolderSourceTestMixin(SourceTestMixinStoredFile):
-    _test_source_backend = SourceBackendWatchFolder
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_WATCH_FOLDER
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

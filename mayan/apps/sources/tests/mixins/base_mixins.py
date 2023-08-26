@@ -1,23 +1,33 @@
 from contextlib import contextmanager
 import json
 
+from django.test import tag
+
 from ...models import Source
 
 from ..literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_MODEL,
-    TEST_SOURCE_LABEL
+    TEST_SOURCE_BACKEND_PATH_BASE, TEST_SOURCE_LABEL
 )
-from ..source_backends import SourceBackendTest
 
 
+@tag('apps_sources')
 class SourceTestMixin:
-    _test_source_backend = SourceBackendTest
+    """
+    _test_source_model: Allow tests to specify the Source object.
+                        Used by migration tests to supply old model
+                        schemas.
+    """
+    _test_source_backend_path = None
     _test_source_create_auto = True
     _test_source_file_path = None
+    _test_source_model = Source
 
     def setUp(self):
-        super().setUp()
+        # Initialize the list first. Needed for migration tests.
         self._test_source_list = []
+
+        super().setUp()
 
         if self._test_source_create_auto:
             self._test_source_create()
@@ -45,7 +55,7 @@ class SourceTestMixin:
 
         return result
 
-    def _test_source_create(self, extra_data=None):
+    def _test_source_create(self, backend_path=None, extra_data=None):
         self._test_source_pre_create()
 
         backend_data = self.get_test_source_backend_data(
@@ -55,10 +65,11 @@ class SourceTestMixin:
         )
         json_backend_data = json.dumps(obj=backend_data)
 
-        backend_path = self.get_test_source_backend_path()
+        backend_path = backend_path or self.get_test_source_backend_path()
 
-        self._test_source = Source.objects.create(
-            backend_data=json_backend_data, backend_path=backend_path
+        self._test_source = self._test_source_model.objects.create(
+            backend_data=json_backend_data, backend_path=backend_path,
+            label=backend_data['label']
         )
 
         self._test_source_list.append(self._test_source)
@@ -83,7 +94,10 @@ class SourceTestMixin:
         return '{}_{}'.format(TEST_SOURCE_LABEL, total_test_source_count)
 
     def get_test_source_backend_path(self):
-        return self._test_source_backend.get_class_path()
+        if self._test_source_backend_path:
+            return self._test_source_backend_path
+        else:
+            return TEST_SOURCE_BACKEND_PATH_BASE
 
     @contextmanager
     def get_test_source_file_object(self):

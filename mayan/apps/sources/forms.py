@@ -10,8 +10,8 @@ from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.documents.forms.document_forms import DocumentForm
 from mayan.apps.views.widgets import DropzoneWidget
 
-from .classes import SourceBackend
 from .models import Source
+from .source_backends.base import SourceBackend
 
 logger = logging.getLogger(name=__name__)
 

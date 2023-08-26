@@ -21,12 +21,12 @@ class SourceBackendPathMigrationTestCase(
             app_label='sources', model_name='Source'
         )
 
-        self._test_source_backend_model = Source
+        self._test_source_model = Source
 
-        self._create_test_source(
+        self._test_source_create(
             backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendIMAPEmail'
         )
-        self._create_test_source(
+        self._test_source_create(
             backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendPOP3Email'
         )
 
@@ -59,9 +59,10 @@ class SourceBackendCredentialMigrationTestCase(
         Source = self.old_state.apps.get_model(
             app_label='sources', model_name='Source'
         )
-        self._test_source_backend_model = Source
 
-        self._create_test_source(
+        self._test_source_model = Source
+
+        self._test_source_create(
             backend_data={
                 'username': TEST_EMAIL_SOURCE_PASSWORD,
                 'password': TEST_EMAIL_SOURCE_USERNAME

@@ -15,11 +15,9 @@ from ..source_backends.literals import (
 
 from .literals import (
     TEST_EMAIL_ATTACHMENT_AND_INLINE, TEST_EMAIL_SOURCE_PASSWORD,
-    TEST_EMAIL_SOURCE_USERNAME
-)
-from .source_backends import (
-    SourceBackendTestEmail, SourceBackendTestIMAPEmail,
-    SourceBackendTestPOP3Email
+    TEST_EMAIL_SOURCE_USERNAME, TEST_SOURCE_BACKEND_PATH_TEST_EMAIL,
+    TEST_SOURCE_BACKEND_PATH_TEST_EMAIL_IMAP,
+    TEST_SOURCE_BACKEND_PATH_TEST_EMAIL_POP3
 )
 
 
@@ -32,7 +30,7 @@ class CredentialSourceTestMixin(StoredCredentialPasswordUsernameTestMixin):
 
 class EmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
     _test_email_source_content = None
-    _test_source_backend = SourceBackendTestEmail
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_TEST_EMAIL
     _test_source_content = TEST_EMAIL_ATTACHMENT_AND_INLINE
 
     def _get_test_source_backend_data(self, action_name, interface_name):
@@ -70,7 +68,7 @@ class EmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
 
 
 class IMAPEmailSourceTestMixin(EmailSourceTestMixin):
-    _test_source_backend = SourceBackendTestIMAPEmail
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_TEST_EMAIL_IMAP
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(
@@ -93,7 +91,7 @@ class IMAPEmailSourceTestMixin(EmailSourceTestMixin):
 
 
 class POP3EmailSourceTestMixin(EmailSourceTestMixin):
-    _test_source_backend = SourceBackendTestPOP3Email
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_TEST_EMAIL_POP3
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

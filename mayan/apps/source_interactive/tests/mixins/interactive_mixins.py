@@ -5,11 +5,11 @@ from mayan.apps.sources.tests.literals import (
 )
 from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 
-from ..source_backends import SourceBackendTestInteractive
+from ..literals import TEST_SOURCE_BACKEND_PATH_INTERACTIVE
 
 
 class InteractiveSourceBackendTestMixin(SourceTestMixin):
-    _test_source_backend = SourceBackendTestInteractive
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_INTERACTIVE
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

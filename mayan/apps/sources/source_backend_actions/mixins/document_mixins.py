@@ -1,16 +1,11 @@
 from django.shortcuts import get_object_or_404
 
-from rest_framework import status
 from rest_framework.generics import get_object_or_404 as rest_get_object_or_404
-from rest_framework.response import Response
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_file_new
-from mayan.apps.documents.serializers.document_serializers import DocumentSerializer
-from mayan.apps.documents.tasks import (
-    task_document_file_create, task_document_upload
-)
+from mayan.apps.documents.tasks import task_document_upload
 
 from ..interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
@@ -24,7 +19,6 @@ from .arguments import (
 from .document_description_mixins import SourceBackendActionMixinDocumentDescriptionInteractive
 from .document_label_mixins import SourceBackendActionMixinLabelInteractive
 from .document_language_mixins import SourceBackendActionMixinLanguageInteractive
-from .literals import DEFAULT_IMMEDIATE_MODE
 from .user_mixins import SourceBackendActionMixinUserInteractive
 
 
@@ -122,6 +116,18 @@ class SourceBackendActionMixinDocumentOptionalTaskOnly:
 
         return result
 
+    def get_document_file_task_kwargs(
+        self, server_upload_entry, document=None, **kwargs
+    ):
+        result = super().get_document_file_task_kwargs(
+            server_upload_entry=server_upload_entry, **kwargs
+        )
+
+        if document:
+            result['document_id'] = document.pk
+
+        return result
+
     def get_task_kwargs(self, document=None, **kwargs):
         result = super().get_task_kwargs(**kwargs)
 
@@ -131,81 +137,41 @@ class SourceBackendActionMixinDocumentOptionalTaskOnly:
         return result
 
 
-class SourceBackendActionMixinDocumentUploadBase(SourceBackendActionMixinDocumentOptionalTaskOnly):
-    class Interface:
-        class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
-            def process_action_data(self):
-                super().process_action_data()
-
-                immediate_mode = self.action_kwargs.get(
-                    'immediate_mode', DEFAULT_IMMEDIATE_MODE
-                )
-
-                if immediate_mode:
-                    request = self.context['view'].request
-
-                    serializer = DocumentSerializer(
-                        context={'request': request},
-                        instance=self.action_data
-                    )
-
-                    self.interface_result = Response(
-                        data=serializer.data, status=status.HTTP_201_CREATED
-                    )
-
+class SourceBackendActionMixinDocumentUploadBase:
     def _background_task(self, **kwargs):
         result = super()._background_task(**kwargs)
 
-        immediate_mode = result.get('immediate_mode', DEFAULT_IMMEDIATE_MODE)
-
-        if immediate_mode:
-            document = result['document']
-
-            document_task_kwargs = self.get_document_file_task_kwargs(**kwargs)
-            document_task_kwargs.update(
-                {
-                    'document_id': document.pk,
-                    'is_document_upload_sequence': True
-                }
+        if result:
+            # Make this optional in case another mixin interrupted the MRO,
+            # And called a background task.
+            server_upload_entry_list = result.get(
+                'server_upload_entry_list', ()
             )
 
-            document_task_kwargs['shared_uploaded_file_id'] = result['shared_uploaded_file_id_list'][0]
+            for server_upload_entry in server_upload_entry_list:
+                document_task_kwargs = self.get_document_task_kwargs(
+                    server_upload_entry=server_upload_entry, **kwargs
+                )
 
-            task_document_file_create.apply_async(
-                kwargs=document_task_kwargs
-            )
-        else:
-            document_type = result['document_type']
-
-            base_document_task_kwargs = self.get_document_task_kwargs(**kwargs)
-            base_document_task_kwargs.update(
-                {
-                    'document_type_id': document_type.pk
-                }
-            )
-
-            for shared_uploaded_file_id in result['shared_uploaded_file_id_list']:
-                document_task_kwargs = base_document_task_kwargs.copy()
-
-                document_task_kwargs['shared_uploaded_file_id'] = shared_uploaded_file_id
+                document_task_kwargs['shared_uploaded_file_id'] = server_upload_entry[
+                    'shared_uploaded_file_id'
+                ]
 
                 task_document_upload.apply_async(
                     kwargs=document_task_kwargs
                 )
 
-    def _execute(self, immediate_mode=DEFAULT_IMMEDIATE_MODE, **kwargs):
-        if immediate_mode:
-            document = kwargs['document_type'].documents_create(
-                description=kwargs['description'], label=kwargs['label'],
-                language=kwargs['language'], user=kwargs['user']
-            )
+    def get_document_task_kwargs(
+        self, server_upload_entry, document_type, **kwargs
+    ):
+        result = super().get_document_task_kwargs(
+            server_upload_entry=server_upload_entry,
+            **kwargs
+        )
 
-            kwargs['document'] = document
+        result['document_type_id'] = document_type.pk
 
-            super()._execute(immediate_mode=immediate_mode, **kwargs)
-            return document
-        else:
-            return super()._execute(**kwargs)
+        return result
 
 
 class SourceBackendActionMixinDocumentUploadInteractive(

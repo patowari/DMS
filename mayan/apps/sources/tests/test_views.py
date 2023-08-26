@@ -4,16 +4,92 @@ from ..events import event_source_created, event_source_edited
 from ..models import Source
 from ..permissions import (
     permission_sources_create, permission_sources_delete,
-    permission_sources_edit, permission_sources_view
+    permission_sources_edit, permission_sources_metadata_view,
+    permission_sources_view
 )
 
 from .literals import (
     TEST_SOURCE_ACTION_CONFIRM_FALSE_NAME,
-    TEST_SOURCE_ACTION_CONFIRM_TRUE_NAME, TEST_SOURCE_LABEL
+    TEST_SOURCE_ACTION_CONFIRM_TRUE_NAME, TEST_SOURCE_LABEL,
+    TEST_SOURCE_METADATA_KEY, TEST_SOURCE_METADATA_VALUE
 )
 from .mixins.source_view_mixins import (
-    SourceActionViewTestMixin, SourceViewTestMixin
+    DocumentFileSourceMetadataViewTestMixin, SourceActionViewTestMixin,
+    SourceViewTestMixin
 )
+
+
+class DocumentSourceMetadataViewTestCase(
+    DocumentFileSourceMetadataViewTestMixin, GenericViewTestCase
+):
+    def test_document_file_source_metadata_list_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_source_metadata_list_view_with_document_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_sources_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_list_view()
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=TEST_SOURCE_METADATA_KEY
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=TEST_SOURCE_METADATA_VALUE
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_source_metadata_list_view_with_source_access(self):
+        self.grant_access(
+            obj=self._test_source,
+            permission=permission_sources_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_source_metadata_list_view_with_full_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_sources_metadata_view
+        )
+        self.grant_access(
+            obj=self._test_source,
+            permission=permission_sources_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_list_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=TEST_SOURCE_METADATA_KEY
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=TEST_SOURCE_METADATA_VALUE
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class SourceActionViewTestCase(

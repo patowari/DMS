@@ -2,9 +2,16 @@ from mayan.apps.appearance.classes import Icon
 
 # Document
 
+icon_document_file_source_metadata_list = Icon(
+    driver_name='fontawesome-dual', primary_symbol='upload',
+    secondary_symbol='database'
+)
 icon_document_upload_wizard = Icon(
     driver_name='fontawesome', symbol='upload'
 )
+
+# Document file
+
 icon_document_file_upload = Icon(
     driver_name='fontawesome', symbol='upload'
 )

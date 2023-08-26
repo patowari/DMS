@@ -81,14 +81,13 @@ def task_source_backend_action_execute(
                 'Error processing source id: %s; %s', source_id, exception,
                 exc_info=True
             )
+            source.error_log.create(
+                text='{}; {}'.format(
+                    exception.__class__.__name__, exception
+                )
+            )
             if settings.DEBUG:
                 raise
-            else:
-                source.error_log.create(
-                    text='{}; {}'.format(
-                        exception.__class__.__name__, exception
-                    )
-                )
         else:
             source.error_log.all().delete()
         finally:

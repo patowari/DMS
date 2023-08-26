@@ -93,10 +93,6 @@ class SourceBackendMixinCompressed:
     def get_task_extra_kwargs(self):
         results = super().get_task_extra_kwargs()
 
-        results.update(
-            {
-                'expand': self.get_expand()
-            }
-        )
+        results['expand'] = self.get_expand()
 
         return results

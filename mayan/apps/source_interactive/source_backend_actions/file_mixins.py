@@ -70,7 +70,9 @@ class SourceBackendActionMixinFileUser:
     def _background_task(self, shared_uploaded_file_id, **kwargs):
         result = super()._background_task(**kwargs)
 
-        result['shared_uploaded_file_id_list'] = (shared_uploaded_file_id,)
+        result['server_upload_entry_list'] = (
+            {'shared_uploaded_file_id': shared_uploaded_file_id},
+        )
 
         return result
 
@@ -84,10 +86,6 @@ class SourceBackendActionMixinFileUser:
     def get_task_kwargs(self, **kwargs):
         result = super().get_task_kwargs(**kwargs)
 
-        result['action_interface_kwargs'].update(
-            {
-                'shared_uploaded_file_id': self.shared_uploaded_file.pk
-            }
-        )
+        result['action_interface_kwargs']['shared_uploaded_file_id'] = self.shared_uploaded_file.pk
 
         return result

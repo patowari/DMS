@@ -13,9 +13,9 @@ class SourceBackendPathMigrationTestCase(
         Source = self.old_state.apps.get_model(
             app_label='sources', model_name='Source'
         )
-        self._test_source_backend_model = Source
+        self._test_source_model = Source
 
-        self._create_test_source(
+        self._test_source_create(
             backend_path='mayan.apps.sources.source_backends.source_watch_folders.SourceBackendWatchFolder'
         )
 

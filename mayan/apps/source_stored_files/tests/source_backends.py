@@ -1,4 +1,4 @@
-from mayan.apps.sources.classes import SourceBackend
+from mayan.apps.sources.source_backends.base import SourceBackend
 
 from ..source_backends.storage_backend_source_mixins import SourceBackendMixinStoredFileLocationStorageBackend
 from ..source_backends.stored_file_source_mixins import SourceBackendMixinStoredFileSourceBase
@@ -6,7 +6,6 @@ from ..source_backends.stored_file_source_mixins import SourceBackendMixinStored
 
 class SourceBackendTestStorage(
     SourceBackendMixinStoredFileLocationStorageBackend,
-    SourceBackendMixinStoredFileSourceBase,
-    SourceBackend
+    SourceBackendMixinStoredFileSourceBase, SourceBackend
 ):
     label = 'Test storage source backend'

@@ -13,6 +13,7 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.common.signals import signal_post_upgrade
 from mayan.apps.converter.links import link_transformation_list
+from mayan.apps.databases.classes import ModelProperty
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
@@ -23,21 +24,26 @@ from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.views.column_widgets import TwoStateWidget
 
-from .classes import DocumentCreateWizardStep, SourceBackend
+from .classes import DocumentCreateWizardStep
 from .events import event_source_edited
 from .handlers import (
     handler_delete_interval_source_periodic_task,
     handler_initialize_periodic_tasks
 )
 from .links import (
-    link_document_file_upload, link_document_upload_wizard,
-    link_source_backend_selection, link_source_delete, link_source_edit,
-    link_source_list, link_source_setup, link_source_test
+    link_document_file_source_metadata_list, link_document_file_upload,
+    link_document_upload_wizard, link_source_backend_selection,
+    link_source_delete, link_source_edit, link_source_list,
+    link_source_setup, link_source_test
 )
 from .permissions import (
     permission_sources_delete, permission_sources_edit,
-    permission_sources_view
+    permission_sources_metadata_view, permission_sources_view
 )
+from .property_helpers import (
+    DocumentSourceMetadataHelper, DocumentFileSourceMetadataHelper
+)
+from .source_backends.base import SourceBackend
 
 
 class SourcesApp(MayanAppConfig):
@@ -54,10 +60,18 @@ class SourcesApp(MayanAppConfig):
 
         DocumentCreateWizardStep.load_modules()
 
+        Document = apps.get_model(
+            app_label='documents', model_name='Document'
+        )
+        DocumentFile = apps.get_model(
+            app_label='documents', model_name='DocumentFile'
+        )
         DocumentType = apps.get_model(
             app_label='documents', model_name='DocumentType'
         )
-
+        DocumentFileSourceMetadata = self.get_model(
+            model_name='DocumentFileSourceMetadata'
+        )
         Source = self.get_model(model_name='Source')
 
         SourceBackend.load_modules()
@@ -65,6 +79,16 @@ class SourcesApp(MayanAppConfig):
         DynamicSerializerField.add_serializer(
             klass=Source,
             serializer_class='mayan.apps.sources.serializers.SourceSerializer'
+        )
+
+        Document.add_to_class(
+            name='source_metadata_value_of',
+            value=DocumentSourceMetadataHelper.constructor
+        )
+
+        DocumentFile.add_to_class(
+            name='source_metadata_value_of',
+            value=DocumentFileSourceMetadataHelper.constructor
         )
 
         error_log = ErrorLog(app_config=self)
@@ -88,14 +112,42 @@ class SourcesApp(MayanAppConfig):
         )
 
         ModelPermission.register(
+            model=DocumentFile, permissions=(
+                permission_sources_metadata_view,
+            )
+        )
+        ModelPermission.register(
             model=Source, permissions=(
                 permission_acl_edit, permission_acl_view,
                 permission_document_create, permission_document_file_new,
                 permission_sources_delete, permission_sources_edit,
-                permission_sources_view
+                permission_sources_metadata_view, permission_sources_view
             )
         )
 
+        ModelProperty(
+            description=_(
+                'Return the value of a specific source metadata for '
+                'the document\'s latest file.'
+            ), label=_('Source metadata value of'), model=Document,
+            name='source_metadata_value_of.< key >'
+        )
+
+        ModelProperty(
+            description=_(
+                'Return the value of a specific source metadata.'
+            ), label=_('Source metadata value of'), model=DocumentFile,
+            name='source_metadata_value_of.< key >'
+        )
+
+        SourceColumn(
+            attribute='key', is_identifier=True,
+            source=DocumentFileSourceMetadata
+        )
+        SourceColumn(
+            attribute='value', include_label=True,
+            source=DocumentFileSourceMetadata
+        )
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
             source=Source
@@ -113,6 +165,10 @@ class SourcesApp(MayanAppConfig):
             links=(link_document_upload_wizard,)
         )
 
+        menu_list_facet.bind_links(
+            links=(link_document_file_source_metadata_list,),
+            sources=(DocumentFile,)
+        )
         menu_list_facet.bind_links(
             links=(link_transformation_list,), sources=(Source,)
         )

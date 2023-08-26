@@ -5,9 +5,8 @@ import poplib
 from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.sources.classes import SourceBackend
 from mayan.apps.sources.exceptions import SourceException
-from mayan.apps.source_periodic.source_backends.periodic_mixins import SourceBackendMixinPeriodicCompressed
+from mayan.apps.sources.source_backends.base import SourceBackend
 
 from .literals import DEFAULT_EMAIL_POP3_TIMEOUT
 from .mixins import SourceBackendMixinEmail
@@ -15,10 +14,7 @@ from .mixins import SourceBackendMixinEmail
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBackendPOP3Email(
-    SourceBackendMixinPeriodicCompressed, SourceBackendMixinEmail,
-    SourceBackend
-):
+class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
     label = _('POP3 email')
 
     @classmethod

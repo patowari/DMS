@@ -25,4 +25,4 @@ def handler_initialize_periodic_tasks(sender, **kwargs):
 
     for source in Source.objects.filter(enabled=True):
         backend_instance = source.get_backend_instance()
-        backend_instance.save()
+        backend_instance.update()

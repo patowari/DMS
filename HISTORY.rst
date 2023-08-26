@@ -272,6 +272,25 @@
   staff or super user accounts.
 - Add return links to the "Tools" and "Setup" areas to speed up navigation.
 - Add improved test case tag inheritance.
+- Sources metadata refactor:
+
+  - Add source metadata support. The information about the
+    creation of the document is now stored per source.
+    To access this information a view and a property were
+    added, ``{{ document.source_metadata_value_of.source_id }}``.
+    By default all upload store the ID of the source used.
+    Other backends like store more information like the sender,
+    receiver, subject, message ID.
+  - Refactor the document tasks callback interface. The tasks
+    now accept a dictionary of all the callback and their
+    information.
+  - Move immediate mode into its own mixin.
+  - Import all test sources by path.
+  - Support running for a test label/tag from the make file
+    with ``make test TAG=``.
+  - Reduce the size of the secondary icon on
+    ``FontAwesomeDualClassesDriver`` to make the source metadata
+    icon more readable.
 
 4.4.8 (2023-07-15)
 ==================

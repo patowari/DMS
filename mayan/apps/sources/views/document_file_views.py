@@ -6,19 +6,66 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.permissions import permission_document_file_new
+from mayan.apps.views.generics import SingleObjectListView
 from mayan.apps.views.utils import request_is_ajax
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms import NewDocumentFileForm
-from ..icons import icon_document_file_upload
+from ..icons import (
+    icon_document_file_source_metadata_list, icon_document_file_upload
+)
+from ..models import Source
+from ..permissions import permission_sources_metadata_view
 
 from .base import UploadBaseView
 
 logger = logging.getLogger(name=__name__)
+
+
+class DocumentFileSourceMetadataList(
+    ExternalObjectViewMixin, SingleObjectListView
+):
+    external_object_permission = permission_sources_metadata_view
+    external_object_pk_url_kwarg = 'document_file_id'
+    external_object_queryset = DocumentFile.valid.all()
+    view_icon = icon_document_file_source_metadata_list
+
+    def get_extra_context(self):
+        return {
+            'hide_object': True,
+            'no_results_icon': icon_document_file_source_metadata_list,
+            'no_results_text': _(
+                'This means that the sources system did not record any '
+                'information about the creation of the document file.'
+            ),
+            'no_results_title': _(
+                'No source metadata available for this document file.'
+            ),
+            'object': self.external_object,
+            'title': _(
+                'Source metadata for: %(document_file)s'
+            ) % {
+                'document_file': self.external_object
+            }
+        }
+
+    def get_source_queryset(self):
+        queryset_document_source_metadata = self.external_object.source_metadata.all()
+
+        queryset_sources = AccessControlList.objects.restrict_queryset(
+            permission=permission_sources_metadata_view,
+            queryset=Source.objects.all(),
+            user=self.request.user
+        )
+
+        return queryset_document_source_metadata.filter(
+            source__in=queryset_sources
+        )
 
 
 class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):

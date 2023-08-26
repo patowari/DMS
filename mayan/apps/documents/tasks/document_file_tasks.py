@@ -5,22 +5,24 @@ from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.core.files import File
 from django.db import OperationalError
-from django.utils.module_loading import import_string
 
 from mayan.celery import app
 from mayan.apps.storage.tasks import task_shared_upload_delete
 
 from ..literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 
+from .utils import execute_callback
+
 logger = logging.getLogger(name=__name__)
 
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)
 def task_document_file_checksum_update(
-    self, document_file_id, action_name=None, callback_dotted_path=None,
-    callback_function_name=None, callback_kwargs=None,
+    self, document_file_id, action_name=None, callback_dict=None,
     is_document_upload_sequence=False, user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     DocumentFile = apps.get_model(
         app_label='documents', model_name='DocumentFile'
     )
@@ -31,8 +33,8 @@ def task_document_file_checksum_update(
         raise self.retry(exc=exception)
 
     try:
-        # TODO: save=True and don't ignore event if
-        # is_document_upload_sequence=False
+        #TODO: save=True and don't ignore event if
+        #is_document_upload_sequence=False
         document_file.checksum_update(save=False)
         document_file._event_ignore = True
         document_file.save(
@@ -56,9 +58,7 @@ def task_document_file_checksum_update(
             task_document_file_mimetype_update.apply_async(
                 kwargs={
                     'action_name': action_name,
-                    'callback_dotted_path': callback_dotted_path,
-                    'callback_function_name': callback_function_name,
-                    'callback_kwargs': callback_kwargs,
+                    'callback_dict': callback_dict,
                     'document_file_id': document_file.pk,
                     'is_document_upload_sequence': is_document_upload_sequence,
                     'user_id': user_id
@@ -69,10 +69,11 @@ def task_document_file_checksum_update(
 @app.task(bind=True, ignore_result=True, retry_backoff=True)
 def task_document_file_create(
     self, document_id, shared_uploaded_file_id, action_name=None,
-    callback_dotted_path=None, callback_function_name=None,
-    callback_kwargs=None, comment=None, filename=None,
+    callback_dict=None, comment=None, filename=None,
     is_document_upload_sequence=False, user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     Document = apps.get_model(
         app_label='documents', model_name='Document'
     )
@@ -131,12 +132,15 @@ def task_document_file_create(
                 }
             )
 
+            execute_callback(
+                callback_dict=callback_dict, document_file=document_file,
+                name='post_document_file_create'
+            )
+
             task_document_file_size_update.apply_async(
                 kwargs={
                     'action_name': action_name,
-                    'callback_dotted_path': callback_dotted_path,
-                    'callback_function_name': callback_function_name,
-                    'callback_kwargs': callback_kwargs,
+                    'callback_dict': callback_dict,
                     'document_file_id': document_file.pk,
                     'is_document_upload_sequence': is_document_upload_sequence,
                     'user_id': user_id
@@ -172,10 +176,11 @@ def task_document_file_delete(self, document_file_id, user_id=None):
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)
 def task_document_file_mimetype_update(
-    self, document_file_id, action_name=None, callback_dotted_path=None,
-    callback_function_name=None, callback_kwargs=None,
+    self, document_file_id, action_name=None, callback_dict=None,
     is_document_upload_sequence=False, user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     DocumentFile = apps.get_model(
         app_label='documents', model_name='DocumentFile'
     )
@@ -186,8 +191,8 @@ def task_document_file_mimetype_update(
         raise self.retry(exc=exception)
 
     try:
-        # TODO: save=True and don't ignore event if
-        # is_document_upload_sequence=False
+        #TODO: save=True and don't ignore event if
+        #is_document_upload_sequence=False
         document_file.mimetype_update(save=False)
         document_file._event_ignore = True
         document_file.save(
@@ -210,9 +215,7 @@ def task_document_file_mimetype_update(
             task_document_file_page_count_update.apply_async(
                 kwargs={
                     'action_name': action_name,
-                    'callback_dotted_path': callback_dotted_path,
-                    'callback_function_name': callback_function_name,
-                    'callback_kwargs': callback_kwargs,
+                    'callback_dict': callback_dict,
                     'document_file_id': document_file.pk,
                     'is_document_upload_sequence': is_document_upload_sequence,
                     'user_id': user_id
@@ -222,10 +225,11 @@ def task_document_file_mimetype_update(
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)
 def task_document_file_page_count_update(
-    self, document_file_id, action_name=None, callback_dotted_path=None,
-    callback_function_name=None, callback_kwargs=None,
+    self, document_file_id, action_name=None, callback_dict=None,
     is_document_upload_sequence=False, user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     DocumentFile = apps.get_model(
         app_label='documents', model_name='DocumentFile'
     )
@@ -268,21 +272,19 @@ def task_document_file_page_count_update(
                 }
             )
 
-            if callback_dotted_path:
-                callback = import_string(dotted_path=callback_dotted_path)
-                callback_kwargs = callback_kwargs or {}
-                function = getattr(callback, callback_function_name)
-                function(
-                    document_file=document_file, **callback_kwargs
-                )
+            execute_callback(
+                callback_dict=callback_dict, document_file=document_file,
+                name='post_document_file_upload'
+            )
 
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)
 def task_document_file_size_update(
-    self, document_file_id, action_name=None, callback_dotted_path=None,
-    callback_function_name=None, callback_kwargs=None,
+    self, document_file_id, action_name=None, callback_dict=None,
     is_document_upload_sequence=False, user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     DocumentFile = apps.get_model(
         app_label='documents', model_name='DocumentFile'
     )
@@ -316,9 +318,7 @@ def task_document_file_size_update(
             task_document_file_checksum_update.apply_async(
                 kwargs={
                     'action_name': action_name,
-                    'callback_dotted_path': callback_dotted_path,
-                    'callback_function_name': callback_function_name,
-                    'callback_kwargs': callback_kwargs,
+                    'callback_dict': callback_dict,
                     'document_file_id': document_file.pk,
                     'is_document_upload_sequence': is_document_upload_sequence,
                     'user_id': user_id
@@ -329,16 +329,15 @@ def task_document_file_size_update(
 @app.task(ignore_result=True)
 def task_document_file_upload(
     document_id, shared_uploaded_file_id, action_name=None,
-    callback_dotted_path=None, callback_function_name=None,
-    callback_kwargs=None, comment=None, expand=False, filename=None,
+    callback_dict=None, comment=None, expand=False, filename=None,
     user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     task_document_file_create.apply_async(
         kwargs={
             'action_name': action_name,
-            'callback_dotted_path': callback_dotted_path,
-            'callback_function_name': callback_function_name,
-            'callback_kwargs': callback_kwargs,
+            'callback_dict': callback_dict,
             'comment': comment,
             'document_id': document_id,
             'filename': filename,

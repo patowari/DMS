@@ -3,10 +3,10 @@ from datetime import datetime
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from .literals import TEST_TEMPLATE_TAG_RESULT
-from .mixins import TemplateTagTestMixin
+from .mixins import TemplateTestMixin
 
 
-class TemplateTagDateParseTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateTagDateParseTestCase(TemplateTestMixin, BaseTestCase):
     def test_basic_functionality(self):
         now = datetime.now()
 
@@ -16,7 +16,7 @@ class TemplateTagDateParseTestCase(TemplateTagTestMixin, BaseTestCase):
         self.assertEqual(result, str(now.year))
 
 
-class TemplateFilterDictGetTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateFilterDictGetTestCase(TemplateTestMixin, BaseTestCase):
     def test_filter_dict_get_valid(self):
         result = self._render_test_template(
             template_string='{{ dict|dict_get:1 }}', context={'dict': {1: 'a'}}
@@ -30,7 +30,7 @@ class TemplateFilterDictGetTestCase(TemplateTagTestMixin, BaseTestCase):
         self.assertEqual(result, '')
 
 
-class TemplateFilterSplitTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateFilterSplitTestCase(TemplateTestMixin, BaseTestCase):
     def test_filter_split_valid(self):
         result = self._render_test_template(
             template_string='{% with x|split:"," as result %}{{ result.0 }}-{{ result.1 }}-{{ result.2 }}{% endwith %}', context={'x': '1,2,3'}
@@ -38,7 +38,7 @@ class TemplateFilterSplitTestCase(TemplateTagTestMixin, BaseTestCase):
         self.assertEqual(result, '1-2-3')
 
 
-class TemplateTagLoadingTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateTagLoadingTestCase(TemplateTestMixin, BaseTestCase):
     def test_user_template_tag_loading(self):
         result = self._render_test_template(
             template_string='{% load templating_test_tags %}{% templating_test_tag %}'
@@ -46,7 +46,7 @@ class TemplateTagLoadingTestCase(TemplateTagTestMixin, BaseTestCase):
         self.assertEqual(result, TEST_TEMPLATE_TAG_RESULT)
 
 
-class TemplateTagRegexTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateTagRegexTestCase(TemplateTestMixin, BaseTestCase):
     def test_tag_regex_findall_false(self):
         result = self._render_test_template(
             template_string='{% regex_findall "\\d" "abcxyz" as result %}{% if result %}{{ result }}{% endif %}'
@@ -96,7 +96,7 @@ class TemplateTagRegexTestCase(TemplateTagTestMixin, BaseTestCase):
         self.assertEqual(result, 'abcXXXXXX')
 
 
-class TemplateTagSetTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateTagSetTestCase(TemplateTestMixin, BaseTestCase):
     def test_tag_set_string(self):
         result = self._render_test_template(
             template_string='{% set "string" as result %}{{ result }}'
@@ -122,7 +122,7 @@ class TemplateTagSetTestCase(TemplateTagTestMixin, BaseTestCase):
         self.assertEqual(result, '')
 
 
-class TemplateTagTimeDeltaTestCase(TemplateTagTestMixin, BaseTestCase):
+class TemplateTagTimeDeltaTestCase(TemplateTestMixin, BaseTestCase):
     def test_basic_functionality(self):
         now = datetime.now()
 

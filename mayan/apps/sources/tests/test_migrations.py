@@ -14,7 +14,7 @@ class SourceBackendPathMigrationTestCase(
         Source = self.old_state.apps.get_model(
             app_label='sources', model_name='Source'
         )
-        self._test_source_backend_model = Source
+        self._test_source_model = Source
 
         self._test_source_create(
             backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendIMAPEmail'
@@ -39,6 +39,8 @@ class SourceBackendPathMigrationTestCase(
         Source = self.old_state.apps.get_model(
             app_label='sources', model_name='Source'
         )
+
+        self._test_source_model = Source
 
         self.assertTrue(
             Source.objects.get(label='test source_0').backend_path,

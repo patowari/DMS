@@ -4,42 +4,46 @@ from mayan.apps.sources.source_backend_actions.interfaces import (
     SourceBackendActionInterfaceTask
 )
 from mayan.apps.sources.source_backend_actions.mixins.callback_mixins import (
-    SourceBackendActionMixinCallbackPostDocumentFileUpload,
-    SourceBackendActionMixinCallbackPostDocumentUpload
+    SourceBackendActionMixinCallbackDocumentFileUpload,
+    SourceBackendActionMixinCallbackDocumentUpload
 )
 
 from .arguments import argument_query_string
 
 
-class SourceBackendActionMixinCallbackPostDocumentFileUploadUser:
+class SourceBackendActionMixinCallbackPostDocumentCreateUserInteractive:
+    """
+    Inject the user into the post document create callback kwargs.
+    """
+    def get_callback_kwargs_post_document_create(self, task_kwargs):
+        result = super().get_callback_kwargs_post_document_create(
+            task_kwargs=task_kwargs
+        )
+
+        if 'user' in task_kwargs:
+            result['user_id'] = task_kwargs['user'].pk
+
+        return result
+
+
+class SourceBackendActionMixinCallbackPostDocumentFileUploadUserInteractive:
     """
     Inject the user into the post document file upload callback kwargs.
     """
-    def get_post_document_file_upload_kwargs_callback_kwargs(self, kwargs):
-        result = super().get_post_document_file_upload_kwargs_callback_kwargs(kwargs=kwargs)
+    def get_callback_kwargs_post_document_file_upload(self, task_kwargs):
+        result = super().get_callback_kwargs_post_document_file_upload(
+            task_kwargs=task_kwargs
+        )
 
-        if 'user' in kwargs:
-            result['user_id'] = kwargs['user'].pk
-
-        return result
-
-
-class SourceBackendActionMixinCallbackPostDocumentUploadUser:
-    """
-    Inject the user into the post document upload callback kwargs.
-    """
-    def get_post_document_upload_kwargs_callback_kwargs(self, kwargs):
-        result = super().get_post_document_upload_kwargs_callback_kwargs(kwargs=kwargs)
-
-        if 'user' in kwargs:
-            result['user_id'] = kwargs['user'].pk
+        if 'user' in task_kwargs:
+            result['user_id'] = task_kwargs['user'].pk
 
         return result
 
 
-class SourceBackendActionMixinCallbackPostDocumentUploadQueryString:
+class SourceBackendActionMixinCallbackPostDocumentUploadQueryStringInteractive:
     """
-    Inject the query string into the post document upload callback kwargs.
+    Inject the query string into the post document create callback kwargs.
     """
     class Interface:
         class Model(SourceBackendActionInterface):
@@ -76,10 +80,12 @@ class SourceBackendActionMixinCallbackPostDocumentUploadQueryString:
                     request=self.context['request']
                 )
 
-    def get_post_document_upload_kwargs_callback_kwargs(self, kwargs):
-        result = super().get_post_document_upload_kwargs_callback_kwargs(kwargs=kwargs)
+    def get_callback_kwargs_post_document_create(self, task_kwargs):
+        result = super().get_callback_kwargs_post_document_create(
+            task_kwargs=task_kwargs
+        )
 
-        result['query_string'] = kwargs['query_string']
+        result['query_string'] = task_kwargs['query_string']
 
         return result
 
@@ -104,20 +110,20 @@ class SourceBackendActionMixinCallbackPostDocumentUploadQueryString:
         return result
 
 
-class SourceBackendActionMixinCallbackPostDocumentUploadInteractive(
-    SourceBackendActionMixinCallbackPostDocumentFileUploadUser,
-    SourceBackendActionMixinCallbackPostDocumentUploadQueryString,
-    SourceBackendActionMixinCallbackPostDocumentUploadUser,
-    SourceBackendActionMixinCallbackPostDocumentUpload
+class SourceBackendActionMixinCallbackDocumentUploadInteractive(
+    SourceBackendActionMixinCallbackPostDocumentFileUploadUserInteractive,
+    SourceBackendActionMixinCallbackPostDocumentUploadQueryStringInteractive,
+    SourceBackendActionMixinCallbackPostDocumentCreateUserInteractive,
+    SourceBackendActionMixinCallbackDocumentUpload
 ):
     """
     Interactive callback mixin for document uploads.
     """
 
 
-class SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive(
-    SourceBackendActionMixinCallbackPostDocumentFileUploadUser,
-    SourceBackendActionMixinCallbackPostDocumentFileUpload
+class SourceBackendActionMixinCallbackDocumentFileUploadInteractive(
+    SourceBackendActionMixinCallbackPostDocumentFileUploadUserInteractive,
+    SourceBackendActionMixinCallbackDocumentFileUpload
 ):
     """
     Interactive callback mixin for document file uploads.

@@ -2,8 +2,8 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.source_interactive.source_backend_actions.callback_mixins import (
-    SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive,
-    SourceBackendActionMixinCallbackPostDocumentUploadInteractive
+    SourceBackendActionMixinCallbackDocumentFileUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentUploadInteractive
 )
 from mayan.apps.sources.source_backend_actions.base import SourceBackendAction
 from mayan.apps.sources.source_backend_actions.mixins.document_file_mixins import SourceBackendActionMixinDocumentFileUploadInteractive
@@ -13,7 +13,7 @@ from mayan.apps.sources.source_backend_actions.mixins.document_mixins import (
 )
 from mayan.apps.sources.source_backend_actions.mixins.document_type_mixins import SourceBackendActionMixinDocumentTypeInteractive
 
-from .file_mixins import SourceBackendActionMixinFileGenerated
+from .mixins import SourceBackendActionMixinFileGenerated
 
 
 class SourceBackendActionGenerateFileBase(
@@ -26,7 +26,7 @@ class SourceBackendActionGenerateFileBase(
 
 class SourceBackendActionGenerateFileDocumentFileUpload(
     SourceBackendActionMixinDocumentFileUploadInteractive,
-    SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentFileUploadInteractive,
     SourceBackendActionMixinDocumentInteractive,
     SourceBackendActionGenerateFileBase
 ):
@@ -36,7 +36,7 @@ class SourceBackendActionGenerateFileDocumentFileUpload(
 
 class SourceBackendActionGenerateFileDocumentUpload(
     SourceBackendActionMixinDocumentUploadInteractive,
-    SourceBackendActionMixinCallbackPostDocumentUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentUploadInteractive,
     SourceBackendActionMixinDocumentTypeInteractive,
     SourceBackendActionGenerateFileBase
 ):

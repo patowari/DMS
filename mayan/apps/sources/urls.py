@@ -5,15 +5,18 @@ from .api_views.source_action_api_views import (
     APISourceActionListView
 )
 from .api_views.source_api_views import APISourceListView, APISourceView
-from .views.document_file_views import DocumentFileUploadView
+from .views.document_file_views import (
+    DocumentFileSourceMetadataList, DocumentFileUploadView
+)
 from .views.document_views import DocumentUploadView
 from .views.source_views import (
-    SourceActionView, SourceBackendSelectionView, SourceCreateView,
-    SourceDeleteView, SourceEditView, SourceListView, SourceTestView
+    SourceActionView, SourceBackendSelectionView,
+    SourceCreateView, SourceDeleteView, SourceEditView, SourceListView,
+    SourceTestView
 )
 from .wizards import DocumentCreateWizard
 
-urlpatterns_document_create = [
+urlpatterns_documents = [
     url(
         regex=r'^sources/documents/wizard/$',
         name='document_upload_wizard', view=DocumentCreateWizard.as_view()
@@ -25,6 +28,14 @@ urlpatterns_document_create = [
     url(
         regex=r'^sources/any/documents/upload/$',
         name='document_upload', view=DocumentUploadView.as_view()
+    )
+]
+
+urlpatterns_document_files = [
+    url(
+        regex=r'^document_files/(?P<document_file_id>\d+)/source_metadata/$',
+        name='document_file_source_metadata_list',
+        view=DocumentFileSourceMetadataList.as_view()
     ),
     url(
         regex=r'^sources/(?P<source_id>\d+)/documents/(?P<document_id>\d+)/files/upload/$',
@@ -36,8 +47,8 @@ urlpatterns_document_create = [
     )
 ]
 
-
 urlpatterns_sources = [
+
     url(
         regex=r'^sources/$', name='source_list',
         view=SourceListView.as_view()
@@ -70,7 +81,8 @@ urlpatterns_sources = [
 ]
 
 urlpatterns = []
-urlpatterns.extend(urlpatterns_document_create)
+urlpatterns.extend(urlpatterns_documents)
+urlpatterns.extend(urlpatterns_document_files)
 urlpatterns.extend(urlpatterns_sources)
 
 api_urls = [

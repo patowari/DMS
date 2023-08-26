@@ -4,11 +4,11 @@ from pathlib import Path
 from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.db import OperationalError
-from django.utils.module_loading import import_string
 
 from mayan.celery import app
 
 from .document_file_tasks import task_document_file_create
+from .utils import execute_callback
 
 logger = logging.getLogger(name=__name__)
 
@@ -16,14 +16,11 @@ logger = logging.getLogger(name=__name__)
 @app.task(bind=True, ignore_results=True, retry_backoff=True)
 def task_document_upload(
     self, document_type_id, shared_uploaded_file_id,
-    callback_post_document_file_upload_dotted_path=None,
-    callback_post_document_file_upload_function_name=None,
-    callback_post_document_file_upload_kwargs=None,
-    callback_post_document_create_dotted_path=None,
-    callback_post_document_create_function_name=None,
-    callback_post_document_create_kwargs=None,
-    description=None, label=None, language=None, user_id=None
+    callback_dict=None, description=None, label=None, language=None,
+    user_id=None
 ):
+    callback_dict = callback_dict or {}
+
     DocumentType = apps.get_model(
         app_label='documents', model_name='DocumentType'
     )
@@ -68,17 +65,14 @@ def task_document_upload(
         )
         raise
     else:
-        if callback_post_document_create_dotted_path:
-            callback = import_string(dotted_path=callback_post_document_create_dotted_path)
-            callback_kwargs = callback_post_document_create_kwargs or {}
-            function = getattr(callback, callback_post_document_create_function_name)
-            function(document=document, **callback_kwargs)
+        execute_callback(
+            callback_dict=callback_dict, document=document,
+            name='post_document_create'
+        )
 
         task_document_file_create.apply_async(
             kwargs={
-                'callback_dotted_path': callback_post_document_file_upload_dotted_path,
-                'callback_function_name': callback_post_document_file_upload_function_name,
-                'callback_kwargs': callback_post_document_file_upload_kwargs,
+                'callback_dict': callback_dict,
                 'document_id': document.pk,
                 'filename': label,
                 'is_document_upload_sequence': True,

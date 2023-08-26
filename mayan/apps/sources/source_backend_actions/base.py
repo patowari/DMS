@@ -6,6 +6,7 @@ from ..exceptions import (
 from ..tasks import task_source_backend_action_background_task
 
 from .interfaces import SourceBackendActionInterface
+from .mixins.source_metadata_mixins import SourceBackendActionMixinSourceMetadata
 
 
 class SourceBackendActionMetaclass(type):
@@ -48,7 +49,7 @@ class SourceBackendActionMetaclass(type):
         return new_class
 
 
-class SourceBackendAction(metaclass=SourceBackendActionMetaclass):
+class SourceBackendActionBase(metaclass=SourceBackendActionMetaclass):
     accept_files = False
     confirmation = True  # Require a submit or a POST to execute.
     name = None
@@ -201,6 +202,16 @@ class SourceBackendAction(metaclass=SourceBackendActionMetaclass):
             'action_interface_kwargs': {},
             'source_id': self.source.pk
         }
+
+
+class SourceBackendAction(
+    SourceBackendActionMixinSourceMetadata, SourceBackendActionBase
+):
+    """
+    Class to define actions per source backends. Each action also defines
+    interfaces. The action backend will process the input data and transform
+    the source backend output for each interace class.
+    """
 
 
 class SourceBackendActionDummy(SourceBackendAction):

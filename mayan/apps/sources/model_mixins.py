@@ -23,6 +23,20 @@ class SourceBusinessLogicMixin:
         )
 
     @staticmethod
+    def callback_post_document_file_create(document_file, **kwargs):
+        Source = apps.get_model(app_label='sources', model_name='Source')
+
+        source = Source.objects.get(
+            pk=kwargs['source_id']
+        )
+
+        source_backend_instance = source.get_backend_instance()
+
+        source_backend_instance.callback_post_document_file_create(
+            document_file=document_file, **kwargs
+        )
+
+    @staticmethod
     def callback_post_document_file_upload(document_file, **kwargs):
         Source = apps.get_model(app_label='sources', model_name='Source')
 
@@ -61,10 +75,6 @@ class SourceBusinessLogicMixin:
         return '{} {}'.format(
             self.get_backend_class_label(), self.label
         )
-
-    def delete(self, *args, **kwargs):
-        self.get_backend_instance().delete()
-        super().delete(*args, **kwargs)
 
     def get_action(self, name):
         backend_instance = self.get_backend_instance()

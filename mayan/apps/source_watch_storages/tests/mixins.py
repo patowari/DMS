@@ -5,11 +5,11 @@ from mayan.apps.sources.tests.literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_MODEL
 )
 
-from ..source_backends import SourceBackendWatchStorage
+from .literals import TEST_SOURCE_BACKEND_WATCH_STORAGE_PATH
 
 
 class WatchStorageSourceTestMixin(SourceTestMixinStoredFile):
-    _test_source_backend = SourceBackendWatchStorage
+    _test_source_backend_path = TEST_SOURCE_BACKEND_WATCH_STORAGE_PATH
 
     def setUp(self):
         super().setUp()

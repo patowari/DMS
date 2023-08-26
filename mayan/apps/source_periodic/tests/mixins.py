@@ -3,11 +3,11 @@ from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 
 from ..source_backends.literals import DEFAULT_PERIOD_INTERVAL
 
-from .source_backends import SourceBackendTestPeriodic
+from .literals import TEST_SOURCE_BACKEND_PATH_PERIODIC
 
 
 class PeriodicSourceBackendTestMixin(SourceTestMixin):
-    _test_source_backend = SourceBackendTestPeriodic
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_PERIODIC
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

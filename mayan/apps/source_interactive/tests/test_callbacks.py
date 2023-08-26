@@ -10,14 +10,14 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 
+from .literals import TEST_SOURCE_BACKEND_PATH_INTERACTIVE_ACTION
 from .mixins.interactive_mixins import InteractiveSourceBackendTestMixin
-from .source_backends import SourceBackendTestInteractiveAction
 
 
 class SourceBackendCallbackTestCase(
     InteractiveSourceBackendTestMixin, GenericDocumentTestCase
 ):
-    _test_source_backend = SourceBackendTestInteractiveAction
+    _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_INTERACTIVE_ACTION
     auto_upload_test_document = False
 
     @mock.patch(

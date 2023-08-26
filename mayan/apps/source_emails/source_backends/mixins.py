@@ -8,13 +8,16 @@ from django.utils.encoding import force_bytes
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.credentials.class_mixins import BackendMixinCredentials
+from mayan.apps.source_periodic.source_backends.mixins import SourceBackendMixinPeriodicCompressed
 
 from ..source_backend_actions import SourceBackendActionEmailDocumentUpload
 
 logger = logging.getLogger(name=__name__)
 
 
-class SourceBackendMixinEmail(BackendMixinCredentials):
+class SourceBackendMixinEmail(
+    BackendMixinCredentials, SourceBackendMixinPeriodicCompressed
+):
     action_class_list = (SourceBackendActionEmailDocumentUpload,)
 
     @classmethod
@@ -97,15 +100,28 @@ class SourceBackendMixinEmail(BackendMixinCredentials):
         else:
             # Treat inlines as attachments, both are extracted and saved as
             # documents.
+
+            source_metadata = {
+                'email_date': message.headers.get('Date'),
+                'email_delivered_to': message.headers.get('Delivered-To'),
+                'email_from': message.headers.get('From'),
+                'email_message_id': message.headers.get('Message-ID'),
+                'email_received': message.headers.get('Received'),
+                'email_subject': message.headers.get('Subject'),
+                'email_to': message.headers.get('To')
+            }
+
             if message.is_attachment() or message.is_inline():
                 # Reject zero length attachments.
                 if len(message.body) != 0:
                     label = message.detected_file_name or 'attachment-{}'.format(counter)
                     counter += 1
 
-                    yield ContentFile(
-                        content=message.body, name=label
-                    )
+                    yield {
+                        'file': ContentFile(
+                            content=message.body, name=label,
+                        ), 'source_metadata': source_metadata
+                    }
             else:
                 # If it is not an attachment then it should be a body message
                 # part. Another option is to use message.is_body().
@@ -115,9 +131,11 @@ class SourceBackendMixinEmail(BackendMixinCredentials):
                     label = 'email_body.txt'
 
                 if self.kwargs['store_body']:
-                    yield ContentFile(
-                        content=force_bytes(message.body), name=label
-                    )
+                    yield {
+                        'file': ContentFile(
+                            content=force_bytes(s=message.body), name=label
+                        ), 'source_metadata': source_metadata
+                    }
 
     def get_file_identifier(self):
         file_list_generator = self.get_stored_file_list()

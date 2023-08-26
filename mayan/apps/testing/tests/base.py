@@ -79,7 +79,7 @@ class GenericTransactionViewTestCase(
     """
 
 
-@tag(EXCLUDE_TEST_TAG,)
+@tag(EXCLUDE_TEST_TAG)
 class MayanMigratorTestCase(MigratorTestCase):
     def tearDown(self):
         ContentType = apps.get_model(

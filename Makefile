@@ -6,7 +6,11 @@ ifneq ($(wildcard config-local.env),)
 endif
 
 ifndef MODULE
-override MODULE = --mayan-apps
+override MAYAN_APPS = --mayan-apps
+endif
+
+ifdef TAG
+override ARGUMENT_TAG = --tag=$(TAG)
 endif
 
 ifndef SKIPMIGRATIONS
@@ -23,7 +27,7 @@ SENTRY_COMMAND = \
 	export MAYAN_PLATFORM_CLIENT_BACKEND_ARGUMENTS='{"mayan.apps.platform.client_backends.ClientBackendSentry":{"dsn":"$(SENTRY_DSN)","environment":"development"}}'; \
 	fi
 
-TEST_COMMAND = ./manage.py test $(MODULE) --settings=$(SETTINGS) $(SKIPMIGRATIONS) $(DEBUG) $(ARGUMENTS)
+TEST_COMMAND = ./manage.py test $(MAYAN_APPS) $(MODULE) --settings=$(SETTINGS) $(SKIPMIGRATIONS) $(DEBUG) $(ARGUMENTS) $(ARGUMENT_TAG)
 
 TEST_ELASTIC_CONTAINER_NAME = mayan-test-elastic
 TEST_MYSQL_CONTAINER_NAME = mayan-test-mysql

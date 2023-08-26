@@ -1,10 +1,10 @@
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
-from mayan.apps.source_compressed.source_backend_actions.compressed_mixins import SourceBackendActionMixinCompressedInteractive
+from mayan.apps.source_compressed.source_backend_actions.mixins import SourceBackendActionMixinCompressedInteractive
 from mayan.apps.source_interactive.source_backend_actions.callback_mixins import (
-    SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive,
-    SourceBackendActionMixinCallbackPostDocumentUploadInteractive
+    SourceBackendActionMixinCallbackDocumentFileUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentUploadInteractive
 )
 from mayan.apps.sources.source_backend_actions.base import SourceBackendAction
 from mayan.apps.sources.source_backend_actions.interfaces import SourceBackendActionInterfaceRequestRESTAPI
@@ -16,8 +16,9 @@ from mayan.apps.sources.source_backend_actions.mixins.document_mixins import (
 from mayan.apps.sources.source_backend_actions.mixins.document_type_mixins import SourceBackendActionMixinDocumentTypeInteractive
 from mayan.apps.sources.source_backend_actions.mixins.immediate_mode_mixins import SourceBackendActionMixinImmediateMode
 
-from .file_mixins import (
-    argument_encoded_filename, SourceBackendActionMixinFileStoredDelete,
+from .arguments import argument_encoded_filename
+from .mixins import (
+    SourceBackendActionMixinFileStoredDelete,
     SourceBackendActionMixinFileStoredImage,
     SourceBackendActionMixinFileStoredInteractive,
     SourceBackendActionMixinFileStoredList
@@ -52,7 +53,7 @@ class SourceBackendActionFileStoredDocumentFileUpload(
     SourceBackendActionMixinDocumentFileUploadInteractive,
     SourceBackendActionMixinDocumentInteractive,
     SourceBackendActionMixinFileStoredInteractive,
-    SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentFileUploadInteractive,
     SourceBackendAction
 ):
     confirmation = True
@@ -69,11 +70,11 @@ class SourceBackendActionFileStoredDocumentFileUpload(
 
 class SourceBackendActionFileStoredDocumentUpload(
     SourceBackendActionMixinDocumentUploadInteractive,
-    SourceBackendActionMixinDocumentTypeInteractive,
     SourceBackendActionMixinCompressedInteractive,
-    SourceBackendActionMixinFileStoredInteractive,
-    SourceBackendActionMixinCallbackPostDocumentUploadInteractive,
     SourceBackendActionMixinImmediateMode,
+    SourceBackendActionMixinCallbackDocumentUploadInteractive,
+    SourceBackendActionMixinDocumentTypeInteractive,
+    SourceBackendActionMixinFileStoredInteractive,
     SourceBackendAction
 ):
     confirmation = True

@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 
-from mayan.apps.source_stored_files.source_backend_actions.file_mixins import SourceBackendActionMixinFileStoredBase
+from mayan.apps.source_stored_files.source_backend_actions.mixins import SourceBackendActionMixinFileStoredBase
 from mayan.apps.source_stored_files.source_backend_actions.arguments import (
     argument_file_cleanup, argument_file_identifier
 )

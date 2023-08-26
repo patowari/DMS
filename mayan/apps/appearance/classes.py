@@ -55,7 +55,7 @@ class FontAwesomeDualClassesDriver(IconDriver):
                 {'class': 'far fa-circle', 'transform': 'down-3 right-10'},
                 {
                     'class': '{}'.format(self.secondary_class),
-                    'transform': 'shrink-4 down-3 right-10'
+                    'transform': 'shrink-6 down-3 right-10'
                 }
             )
         }
@@ -80,7 +80,7 @@ class FontAwesomeDualDriver(IconDriver):
                 {'class': 'far fa-circle', 'transform': 'down-3 right-10'},
                 {
                     'class': 'fas fa-{}'.format(self.secondary_symbol),
-                    'transform': 'shrink-4 down-3 right-10'
+                    'transform': 'shrink-6 down-3 right-10'
                 }
             )
         }

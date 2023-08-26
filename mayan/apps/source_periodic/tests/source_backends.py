@@ -1,11 +1,9 @@
 from django.core.files.base import ContentFile
 
-from mayan.apps.sources.classes import SourceBackend
+from mayan.apps.sources.source_backends.base import SourceBackend
 
 from ..source_backend_actions.periodic_actions import SourceBackendActionPeriodicDocumentUpload
-from ..source_backends.periodic_mixins import (
-    SourceBackendMixinPeriodic
-)
+from ..source_backends.mixins import SourceBackendMixinPeriodic
 
 
 class SourceBackendTestPeriodic(SourceBackendMixinPeriodic, SourceBackend):
@@ -16,7 +14,9 @@ class SourceBackendTestPeriodic(SourceBackendMixinPeriodic, SourceBackend):
         return
 
     def action_file_get(self, encoded_filename):
-        yield ContentFile('')
+        yield {
+            'file': ContentFile('')
+        }
 
     def get_file_identifier(self):
         return ''

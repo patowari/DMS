@@ -10,9 +10,9 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_document_upload_wizard, icon_document_file_upload,
-    icon_source_backend_selection, icon_source_delete, icon_source_edit,
-    icon_source_list, icon_source_test
+    icon_document_file_source_metadata_list, icon_document_upload_wizard,
+    icon_document_file_upload, icon_source_backend_selection,
+    icon_source_delete, icon_source_edit, icon_source_list, icon_source_test
 )
 from .permissions import (
     permission_sources_create, permission_sources_delete,
@@ -121,6 +121,14 @@ link_document_file_upload = Link(
     kwargs={'document_id': 'resolved_object.pk'},
     icon=icon_document_file_upload, text=_('Upload new file'),
     view='sources:document_file_upload'
+)
+
+# Document file
+
+link_document_file_source_metadata_list = Link(
+    kwargs={'document_file_id': 'resolved_object.pk'},
+    icon=icon_document_file_source_metadata_list, text=_('Source metadata'),
+    view='sources:document_file_source_metadata_list'
 )
 
 # Source

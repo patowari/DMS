@@ -1,7 +1,7 @@
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
-from mayan.apps.source_compressed.source_backend_actions.compressed_mixins import SourceBackendActionMixinCompressedInteractive
+from mayan.apps.source_compressed.source_backend_actions.mixins import SourceBackendActionMixinCompressedInteractive
 from mayan.apps.sources.source_backend_actions.base import SourceBackendAction
 from mayan.apps.sources.source_backend_actions.mixins.document_file_mixins import SourceBackendActionMixinDocumentFileUploadInteractive
 from mayan.apps.sources.source_backend_actions.mixins.document_mixins import (
@@ -12,8 +12,8 @@ from mayan.apps.sources.source_backend_actions.mixins.document_type_mixins impor
 from mayan.apps.sources.source_backend_actions.mixins.immediate_mode_mixins import SourceBackendActionMixinImmediateMode
 
 from .callback_mixins import (
-    SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive,
-    SourceBackendActionMixinCallbackPostDocumentUploadInteractive
+    SourceBackendActionMixinCallbackDocumentFileUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentUploadInteractive
 )
 from .file_mixins import SourceBackendActionMixinFileUser
 
@@ -29,7 +29,7 @@ class SourceBackendActionInteractiveBase(
 class SourceBackendActionInteractiveDocumentFileUpload(
     SourceBackendActionMixinDocumentFileUploadInteractive,
     SourceBackendActionMixinDocumentInteractive,
-    SourceBackendActionMixinCallbackPostDocumentFileUploadInteractive,
+    SourceBackendActionMixinCallbackDocumentFileUploadInteractive,
     SourceBackendActionInteractiveBase
 ):
     name = 'document_file_upload'
@@ -38,10 +38,10 @@ class SourceBackendActionInteractiveDocumentFileUpload(
 
 class SourceBackendActionInteractiveDocumentUpload(
     SourceBackendActionMixinDocumentUploadInteractive,
-    SourceBackendActionMixinDocumentTypeInteractive,
-    SourceBackendActionMixinCallbackPostDocumentUploadInteractive,
     SourceBackendActionMixinCompressedInteractive,
     SourceBackendActionMixinImmediateMode,
+    SourceBackendActionMixinCallbackDocumentUploadInteractive,
+    SourceBackendActionMixinDocumentTypeInteractive,
     SourceBackendActionInteractiveBase
 ):
     name = 'document_upload'

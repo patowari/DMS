@@ -68,17 +68,33 @@ SGFsbG8gQW1wZWxtw6RubmNoZW4hCg==
 --RS1tYWlsIENsaWVudA==--'''.format(TEST_EMAIL_BASE64_MESSAGE_ID))
 TEST_EMAIL_BASE64_FILENAME_FROM = 'noreply@example.com'
 TEST_EMAIL_BASE64_FILENAME_SUBJECT = 'Scan to E-mail Server Job'
-TEST_EMAIL_NO_CONTENT_TYPE = '''MIME-Version: 1.0
-Received: by 10.0.0.1 with HTTP; Mon, 9 Apr 2018 00:00:00 -0400 (AST)
-X-Originating-IP: [10.0.0.1]
-Date: Mon, 9 Apr 2018 0:00:0 -0400
-Delivered-To: test-sender@example.com
-Message-ID: <CAEAsyCbSF1Bk7CBuu6zp3Qs8=j2iUkNi3dPkGe6z40q4dmaogQ@mail.gmail.com>
-Subject: Test message with no content type
-From: Test Sender <test-sender@example.com>
-To: test-receiver@example.com
 
-Test email without a content type'''
+TEST_EMAIL_NO_CONTENT_TYPE_DATE = 'Mon, 9 Apr 2018 0:00:0 -0400'
+TEST_EMAIL_NO_CONTENT_TYPE_DEVELIVERED_TO = 'test-sender@example.com'
+TEST_EMAIL_NO_CONTENT_TYPE_FROM = 'Test Sender <test-sender@example.com>'
+TEST_EMAIL_NO_CONTENT_TYPE_MESSAGE_ID = '<CAEAsyCbSF1Bk7CBuu6zp3Qs8=j2iUkNi3dPkGe6z40q4dmaogQ@mail.gmail.com>'
+TEST_EMAIL_NO_CONTENT_TYPE_RECEIVED = 'by 10.0.0.1 with HTTP; Mon, 9 Apr 2018 00:00:00 -0400 (AST)'
+TEST_EMAIL_NO_CONTENT_TYPE_SUBJECT = 'Test message with no content type'
+TEST_EMAIL_NO_CONTENT_TYPE_TO = 'test-receiver@example.com'
+TEST_EMAIL_NO_CONTENT_TYPE = '''MIME-Version: 1.0
+Received: {email_received}
+X-Originating-IP: [10.0.0.1]
+Date: {email_date}
+Delivered-To: {email_delivered_to}
+Message-ID: {email_message_id}
+Subject: {email_subject}
+From: {email_from}
+To: {email_to}
+
+Test email without a content type'''.format(
+    email_date=TEST_EMAIL_NO_CONTENT_TYPE_DATE,
+    email_delivered_to=TEST_EMAIL_NO_CONTENT_TYPE_DEVELIVERED_TO,
+    email_from=TEST_EMAIL_NO_CONTENT_TYPE_FROM,
+    email_message_id=TEST_EMAIL_NO_CONTENT_TYPE_MESSAGE_ID,
+    email_received=TEST_EMAIL_NO_CONTENT_TYPE_RECEIVED,
+    email_subject=TEST_EMAIL_NO_CONTENT_TYPE_SUBJECT,
+    email_to=TEST_EMAIL_NO_CONTENT_TYPE_TO
+)
 TEST_EMAIL_NO_CONTENT_TYPE_STRING = b'Test email without a content type'
 TEST_EMAIL_INLINE_IMAGE = '''Subject: Test 01: inline only
 To: Renat Gilmanov
@@ -139,3 +155,7 @@ Content-MD5: 1B2M2Y8AsgTpgAmY7PhCfg==
 
 TEST_EMAIL_SOURCE_PASSWORD = 'test_password'
 TEST_EMAIL_SOURCE_USERNAME = 'test_username'
+
+TEST_SOURCE_BACKEND_PATH_TEST_EMAIL = 'mayan.apps.source_emails.tests.source_backends.SourceBackendTestEmail'
+TEST_SOURCE_BACKEND_PATH_TEST_EMAIL_IMAP = 'mayan.apps.source_emails.tests.source_backends.SourceBackendTestIMAPEmail'
+TEST_SOURCE_BACKEND_PATH_TEST_EMAIL_POP3 = 'mayan.apps.source_emails.tests.source_backends.SourceBackendTestPOP3Email'

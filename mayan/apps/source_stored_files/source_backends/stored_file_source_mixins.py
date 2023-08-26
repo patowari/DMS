@@ -24,7 +24,9 @@ class SourceBackendMixinStoredFileSourceBase:
 
     def action_file_get(self, **kwargs):
         source_stored_file = self.get_stored_file(**kwargs)
-        yield from (source_stored_file,)
+        yield from (
+            {'file': source_stored_file},
+        )
 
     def get_stored_file(self, encoded_filename=None, filename=None):
         identifier = None

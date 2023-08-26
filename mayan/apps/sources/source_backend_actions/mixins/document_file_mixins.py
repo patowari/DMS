@@ -11,20 +11,18 @@ class SourceBackendActionMixinDocumentFileUploadInteractiveBase:
         result = super()._background_task(**kwargs)
         document = result['document']
 
-        base_document_task_kwargs = self.get_document_file_task_kwargs(**kwargs)
-        base_document_task_kwargs.update(
-            {
-                'document_id': document.pk
-            }
-        )
+        for server_upload_entry in result['server_upload_entry_list']:
+            document_file_task_kwargs = self.get_document_file_task_kwargs(
+                server_upload_entry=server_upload_entry, **kwargs
+            )
 
-        for shared_uploaded_file_id in result['shared_uploaded_file_id_list']:
-            document_task_kwargs = base_document_task_kwargs.copy()
-
-            document_task_kwargs['shared_uploaded_file_id'] = shared_uploaded_file_id
+            document_file_task_kwargs['shared_uploaded_file_id'] = server_upload_entry[
+                'shared_uploaded_file_id'
+            ]
+            document_file_task_kwargs['document_id'] = document.pk
 
             task_document_file_create.apply_async(
-                kwargs=document_task_kwargs
+                kwargs=document_file_task_kwargs
             )
 
     def get_document_file_task_kwargs(self, **kwargs):

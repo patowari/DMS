@@ -194,11 +194,10 @@ class SourceBackendActionMixinFileStoredBase:
     # Default `file_cleanup` needed by email sources.
     def _background_task(self, file_identifier, file_cleanup=None, **kwargs):
         result = super()._background_task(**kwargs)
-
         # Source returned a None `file_identifier` which means that the
         # source file list is empty. Shortcircuit a quick exit.
         if file_identifier is None:
-            result['shared_uploaded_file_id_list'] = ()
+            result['server_upload_entry_list'] = ()
             return result
 
         source_backend_instance = self.source.get_backend_instance()
@@ -211,11 +210,11 @@ class SourceBackendActionMixinFileStoredBase:
             source_backend_instance, self.stored_method_name_file_get
         )
 
-        result['shared_uploaded_file_id_list'] = []
+        result['server_upload_entry_list'] = []
 
-        file_generator = source_stored_file_get_method(**kwargs)
+        server_upload_entry_generator = source_stored_file_get_method(**kwargs)
 
-        if file_generator is None:
+        if server_upload_entry_generator is None:
             raise ImproperlyConfigured(
                 'Source backend method `{}` must return an iterator of at '
                 'least one element.'.format(
@@ -225,18 +224,13 @@ class SourceBackendActionMixinFileStoredBase:
 
         while True:
             try:
-                file_generator_entry = next(file_generator)
+                server_upload_entry = next(server_upload_entry_generator)
 
-                with file_generator_entry.open(mode='rb') as file_object:
-
-                    shared_uploaded_file = SharedUploadedFile.objects.create(
-                        file=File(
-                            file=file_object
-                        )
+                result['server_upload_entry_list'].append(
+                    self.process_server_upload_entry(
+                        server_upload_entry=server_upload_entry
                     )
-                    result['shared_uploaded_file_id_list'].append(
-                        shared_uploaded_file.pk
-                    )
+                )
             except StopIteration:
                 """
                 No more files to process.
@@ -269,6 +263,19 @@ class SourceBackendActionMixinFileStoredBase:
         )
 
         return result
+
+    def process_server_upload_entry(self, server_upload_entry):
+        file_object = server_upload_entry.pop('file')
+
+        with file_object.open(mode='rb') as file_object:
+            shared_uploaded_file = SharedUploadedFile.objects.create(
+                file=File(
+                    file=file_object
+                )
+            )
+
+            server_upload_entry['shared_uploaded_file_id'] = shared_uploaded_file.pk
+            return server_upload_entry
 
 
 class SourceBackendActionMixinFileStoredInteractive(
@@ -403,6 +410,8 @@ class SourceBackendActionMixinFileStoredNonInteractive(
     def get_task_kwargs(self, dry_run, **kwargs):
         result = super().get_task_kwargs(**kwargs)
 
-        result['action_interface_kwargs']['file_cleanup'] = self.convert_dry_run_to_file_cleanup(dry_run=dry_run)
+        result['action_interface_kwargs']['file_cleanup'] = self.convert_dry_run_to_file_cleanup(
+            dry_run=dry_run
+        )
 
         return result

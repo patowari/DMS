@@ -40,8 +40,8 @@ def code_update_to_credentials(apps, schema_editor):
 
         stored_credential.set_backend_data(
             obj={
-                'password': obj_backend_data['password'],
-                'username': obj_backend_data['username']
+                'password': obj_backend_data.get('password'),
+                'username': obj_backend_data.get('username')
             }
         )
         stored_credential.save()
@@ -49,8 +49,8 @@ def code_update_to_credentials(apps, schema_editor):
         obj_backend_data.update(
             {'stored_credential_id': stored_credential.pk}
         )
-        obj_backend_data.pop('password')
-        obj_backend_data.pop('username')
+        obj_backend_data.pop('password', None)
+        obj_backend_data.pop('username', None)
 
         obj.set_backend_data(obj=obj_backend_data)
         obj.save()
