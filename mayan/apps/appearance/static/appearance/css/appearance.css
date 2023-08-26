@@ -45,9 +45,16 @@
 
 /* Companion flex grid setup for list of large buttons */
 .appearance-btn-large-container {
-    grid-template-columns: repeat(auto-fill,minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
     column-gap: 30px;
     row-gap: 15px;
+}
+@media (min-width: 421px) {
+    .appearance-btn-large-container {
+        grid-template-columns: repeat(auto-fill,minmax(350px, 1fr));
+        column-gap: 30px;
+        row-gap: 15px;
+    }
 }
 
 /* Nullify the 5px padding to the right */
