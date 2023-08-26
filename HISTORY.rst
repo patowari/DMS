@@ -271,6 +271,7 @@
 - Add message warning that it is not possible to change password of
   staff or super user accounts.
 - Add return links to the "Tools" and "Setup" areas to speed up navigation.
+- Add improved test case tag inheritance.
 
 4.4.8 (2023-07-15)
 ==================
