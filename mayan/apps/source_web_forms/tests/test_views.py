@@ -534,7 +534,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
@@ -554,7 +554,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count)
@@ -573,7 +573,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
@@ -596,7 +596,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
@@ -659,7 +659,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             test_file_path=TEST_FILE_COMPRESSED_PATH
         )
         self.assertEqual(response.status_code, 302)
@@ -774,7 +774,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             extra_data={'source-expand': False},
             test_file_path=TEST_FILE_COMPRESSED_PATH
         )
@@ -819,7 +819,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             extra_data={'source-expand': True},
             test_file_path=TEST_FILE_COMPRESSED_PATH
         )
@@ -935,7 +935,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             test_file_path=TEST_FILE_COMPRESSED_PATH
         )
         self.assertEqual(response.status_code, 302)
@@ -977,7 +977,7 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             extra_data={'document-language': 'deu'}
         )
         self.assertEqual(response.status_code, 302)

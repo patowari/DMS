@@ -294,6 +294,8 @@
 
 - Update source backend's ``get_upload_form_class`` to be an instance method
   and allow backends to dynamically change the form fields.
+- Fix the compressed label still showing up when the uncompress choice
+  is never or always.
 
 4.4.8 (2023-07-15)
 ==================

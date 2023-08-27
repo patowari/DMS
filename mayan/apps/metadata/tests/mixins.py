@@ -304,10 +304,10 @@ class MetadataDocumentUploadWizardStepTestMixin(
             }
         )
 
-    def _request_test_source_document_upload_view_with_metadata(
+    def _request_test_source_document_upload_post_view_with_metadata(
         self, metadata_value
     ):
-        return self._request_test_source_document_upload_view(
+        return self._request_test_source_document_upload_post_view(
             extra_data={
                 'metadata0_metadata_type_id': self._test_metadata_type.pk,
                 'metadata0_value': metadata_value

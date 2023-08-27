@@ -62,25 +62,6 @@ class SourceBackendMixinCompressed:
 
         return fieldsets
 
-    @classmethod
-    def get_upload_form_class(cls):
-        class CompressedSourceUploadForm(
-            super().get_upload_form_class()
-        ):
-            expand = forms.BooleanField(
-                label=_('Expand compressed files'), required=False,
-                help_text=ugettext(
-                    'Upload a compressed file\'s contained files as '
-                    'individual documents.'
-                )
-            )
-
-            def __init__(self, *args, **kwargs):
-                self.field_order = ['expand']
-                super().__init__(*args, **kwargs)
-
-        return CompressedSourceUploadForm
-
     def get_expand(self):
         if self.kwargs['uncompress'] == SOURCE_UNCOMPRESS_CHOICE_ASK:
             return self.process_kwargs['forms']['source_form'].cleaned_data.get('expand')
@@ -96,3 +77,26 @@ class SourceBackendMixinCompressed:
         results['expand'] = self.get_expand()
 
         return results
+
+    def get_upload_form_class(self):
+        backend_instance = self
+
+        super_upload_form_class = super().get_upload_form_class()
+
+        class CompressedSourceUploadForm(super_upload_form_class):
+            expand = forms.BooleanField(
+                label=_('Expand compressed files'), required=False,
+                help_text=ugettext(
+                    'Upload a compressed file\'s contained files as '
+                    'individual documents.'
+                )
+            )
+
+            def __init__(self, *args, **kwargs):
+                self.field_order = ['expand']
+                super().__init__(*args, **kwargs)
+
+                if backend_instance.kwargs['uncompress'] != SOURCE_UNCOMPRESS_CHOICE_ASK:
+                    self.fields.pop('expand')
+
+        return CompressedSourceUploadForm

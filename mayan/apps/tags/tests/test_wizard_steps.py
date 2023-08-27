@@ -30,7 +30,7 @@ class TaggedDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view_with_tags()
+        response = self._request_test_source_document_upload_post_view_with_tags()
         self.assertEqual(response.status_code, 302)
 
         self.assertTrue(
@@ -90,7 +90,7 @@ class TaggedDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view_with_tags()
+        response = self._request_test_source_document_upload_post_view_with_tags()
         self.assertEqual(response.status_code, 302)
 
         self.assertTrue(

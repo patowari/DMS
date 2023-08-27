@@ -72,7 +72,7 @@ class DocumentUploadViewQuotaHooksTestCase(
         document_file_count = DocumentFile.objects.count()
 
         with self.assertRaises(expected_exception=QuotaExceeded):
-            self._request_test_source_document_upload_view()
+            self._request_test_source_document_upload_post_view()
 
         self.assertEqual(DocumentFile.objects.count(), document_file_count)
         self.assertEqual(Document.objects.count(), document_count)
@@ -107,7 +107,7 @@ class DocumentUploadViewQuotaHooksTestCase(
         document_file_count = DocumentFile.objects.count()
 
         with self.assertRaises(expected_exception=QuotaExceeded):
-            self._request_test_source_document_upload_view()
+            self._request_test_source_document_upload_post_view()
 
         self.assertEqual(DocumentFile.objects.count(), document_file_count)
         self.assertEqual(Document.objects.count(), document_count + 1)

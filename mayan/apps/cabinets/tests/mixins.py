@@ -102,8 +102,8 @@ class CabinetDocumentUploadWizardStepTestMixin(
     def _request_document_upload_wizard_view(self):
         return self.get(viewname='sources:document_upload_wizard')
 
-    def _request_test_source_document_upload_view_with_cabinets(self):
-        return self._request_test_source_document_upload_view(
+    def _request_test_source_document_upload_post_view_with_cabinets(self):
+        return self._request_test_source_document_upload_post_view(
             extra_data={
                 'cabinets': Cabinet.objects.values_list('pk', flat=True)
             }

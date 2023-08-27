@@ -221,8 +221,8 @@ class TagViewTestMixin:
 class TaggedDocumentUploadWizardStepViewTestMixin(
     WebFormSourceTestMixin, SourceActionViewTestMixin
 ):
-    def _request_test_source_document_upload_view_with_tags(self):
-        return self._request_test_source_document_upload_view(
+    def _request_test_source_document_upload_post_view_with_tags(self):
+        return self._request_test_source_document_upload_post_view(
             extra_data={
                 'tags': Tag.objects.values_list('pk', flat=True)
             }

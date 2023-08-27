@@ -552,7 +552,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
@@ -574,7 +574,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count)
@@ -595,7 +595,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
@@ -620,7 +620,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
@@ -683,7 +683,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 2)
@@ -798,7 +798,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             extra_data={'source-expand': False}
         )
         self.assertEqual(response.status_code, 302)
@@ -846,7 +846,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             extra_data={'source-expand': True}
         )
         self.assertEqual(response.status_code, 302)
@@ -963,7 +963,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view()
+        response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
@@ -1007,7 +1007,7 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_view(
+        response = self._request_test_source_document_upload_post_view(
             extra_data={'document-language': 'deu'}
         )
         self.assertEqual(response.status_code, 302)

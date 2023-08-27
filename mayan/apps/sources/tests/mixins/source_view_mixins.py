@@ -15,7 +15,9 @@ from ..literals import (
 from .base_mixins import SourceTestMixin
 
 
-class DocumentFileSourceMetadataTestmixin(DocumentTestMixin, SourceTestMixin):
+class DocumentFileSourceMetadataTestmixin(
+    DocumentTestMixin, SourceTestMixin
+):
     _test_source_metadata_create_auto = True
 
     def setUp(self):
@@ -48,9 +50,8 @@ class SourceActionViewTestMixin(SourceTestMixin):
         action_name = action_name or TEST_SOURCE_ACTION_CONFIRM_FALSE_NAME
 
         backend_data = self.get_test_source_backend_data(
-            action_name=action_name,
-            interface_name=TEST_CASE_INTERFACE_NAME_VIEW,
-            extra_data=extra_data
+            action_name=action_name, extra_data=extra_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
         )
 
         return self.get(
@@ -66,9 +67,8 @@ class SourceActionViewTestMixin(SourceTestMixin):
         action_name = action_name or TEST_SOURCE_ACTION_CONFIRM_TRUE_NAME
 
         backend_data = self.get_test_source_backend_data(
-            action_name=action_name,
-            interface_name=TEST_CASE_INTERFACE_NAME_VIEW,
-            extra_data=extra_data
+            action_name=action_name, extra_data=extra_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
         )
 
         return self.post(
@@ -91,9 +91,8 @@ class SourceActionViewTestMixin(SourceTestMixin):
             query.update(**extra_query)
 
         backend_data = self.get_test_source_backend_data(
-            action_name=action_name,
-            interface_name=TEST_CASE_INTERFACE_NAME_VIEW,
-            extra_data=extra_data
+            action_name=action_name, extra_data=extra_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
         )
 
         data.update(**backend_data)
@@ -112,7 +111,33 @@ class SourceActionViewTestMixin(SourceTestMixin):
                 }, data=data, query=query
             )
 
-    def _request_test_source_document_upload_view(
+    def _request_test_source_document_upload_get_view(
+        self, extra_data=None, extra_query=None
+    ):
+        action_name = 'document_upload'
+        data = {
+            'document_type_id': self._test_document_type.pk
+        }
+        query = {}
+
+        backend_data = self.get_test_source_backend_data(
+            action_name=action_name, extra_data=extra_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
+        )
+
+        query.update(**data)
+        query.update(**backend_data)
+
+        if extra_query:
+            query.update(**extra_query)
+
+        return self.get(
+            viewname='sources:document_upload', kwargs={
+                'source_id': self._test_source.pk
+            }, query=query
+        )
+
+    def _request_test_source_document_upload_post_view(
         self, extra_data=None, test_file_path=None, extra_query=None
     ):
         action_name = 'document_upload'
@@ -125,9 +150,8 @@ class SourceActionViewTestMixin(SourceTestMixin):
             query.update(**extra_query)
 
         backend_data = self.get_test_source_backend_data(
-            action_name=action_name,
-            interface_name=TEST_CASE_INTERFACE_NAME_VIEW,
-            extra_data=extra_data
+            action_name=action_name, extra_data=extra_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
         )
 
         data.update(**backend_data)
@@ -152,8 +176,8 @@ class SourceViewTestMixin(SourceTestMixin):
 
         backend_data = self.get_test_source_backend_data(
             action_name=TEST_CASE_ACTION_NAME_SOURCE_CREATE,
-            interface_name=TEST_CASE_INTERFACE_NAME_VIEW,
-            extra_data=extra_data
+            extra_data=extra_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
         )
         backend_path = self.get_test_source_backend_path()
 
@@ -172,8 +196,8 @@ class SourceViewTestMixin(SourceTestMixin):
 
         backend_data = self.get_test_source_backend_data(
             action_name=TEST_CASE_ACTION_NAME_SOURCE_CREATE,
-            interface_name=TEST_CASE_INTERFACE_NAME_VIEW,
-            extra_data=extra_backend_data
+            extra_data=extra_backend_data,
+            interface_name=TEST_CASE_INTERFACE_NAME_VIEW
         )
 
         backend_path = self.get_test_source_backend_path()
