@@ -292,6 +292,9 @@
     ``FontAwesomeDualClassesDriver`` to make the source metadata
     icon more readable.
 
+- Update source backend's ``get_upload_form_class`` to be an instance method
+  and allow backends to dynamically change the form fields.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.

@@ -107,10 +107,6 @@ class SourceBackend(
         return fieldsets
 
     @classmethod
-    def get_upload_form_class(cls):
-        return getattr(cls, 'upload_form_class', None)
-
-    @classmethod
     def intialize(cls):
         """
         Optional method for subclasses execute their own initialization
@@ -121,6 +117,9 @@ class SourceBackend(
     def post_load_modules(cls):
         for source_backend in cls.get_all():
             source_backend.intialize()
+
+    def get_upload_form_class(self):
+        return getattr(self, 'upload_form_class', None)
 
 
 class SourceBackendNull(SourceBackend):
