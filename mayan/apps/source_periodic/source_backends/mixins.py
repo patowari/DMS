@@ -4,7 +4,6 @@ import logging
 from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
 from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
 
@@ -16,6 +15,10 @@ logger = logging.getLogger(name=__name__)
 class SourceBackendMixinPeriodic:
     @classmethod
     def get_form_fields(cls):
+        DocumentType = apps.get_model(
+            app_label='documents', model_name='DocumentType'
+        )
+
         fields = super().get_form_fields()
         fields.update(
             {
@@ -134,6 +137,10 @@ class SourceBackendMixinPeriodic:
             )
 
     def get_document_type(self):
+        DocumentType = apps.get_model(
+            app_label='documents', model_name='DocumentType'
+        )
+
         return DocumentType.objects.get(
             pk=self.kwargs['document_type_id']
         )

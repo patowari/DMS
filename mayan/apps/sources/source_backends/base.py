@@ -119,7 +119,18 @@ class SourceBackend(
             source_backend.intialize()
 
     def get_upload_form_class(self):
-        return getattr(self, 'upload_form_class', None)
+        # Hidden import to avoid model that are not ready yet. This happens
+        # as `DocumentForm` is imported in `forms.py`.
+        from ..forms import UploadBaseForm
+
+        return getattr(self, 'upload_form_class', UploadBaseForm)
+
+    def has_interface(self, interface_name):
+        for action in self.get_action_list():
+            if action.has_interface(interface_name=interface_name):
+                return True
+
+        return False
 
 
 class SourceBackendNull(SourceBackend):

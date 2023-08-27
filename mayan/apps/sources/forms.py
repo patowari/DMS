@@ -5,9 +5,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.backends.forms import FormDynamicModelBackend
 from mayan.apps.documents.classes import DocumentFileAction
-from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
-
 from mayan.apps.documents.forms.document_forms import DocumentForm
+from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.views.widgets import DropzoneWidget
 
 from .models import Source

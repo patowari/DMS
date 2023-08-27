@@ -9,7 +9,7 @@ from ..interfaces import (
 from .arguments import argument_user, argument_user_id
 
 
-class SourceBackendActionMixinUserInteractive:
+class SourceBackendActionMixinUserBase:
     class Interface:
         class Model(SourceBackendActionInterface):
             class Argument:
@@ -19,12 +19,6 @@ class SourceBackendActionMixinUserInteractive:
                 super().process_interface_context()
 
                 self.action_kwargs['user'] = self.context['user']
-
-        class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                self.action_kwargs['user'] = self.context['request'].user
 
         class Task(SourceBackendActionInterfaceTask):
             class Argument:
@@ -39,12 +33,6 @@ class SourceBackendActionMixinUserInteractive:
 
                 if user_id:
                     self.action_kwargs['user'] = User.objects.get(pk=user_id)
-
-        class View(SourceBackendActionInterfaceRequestView):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                self.action_kwargs['user'] = self.context['request'].user
 
     def _extract_user_arguments(self, kwargs):
         user_arguments = {}
@@ -85,3 +73,20 @@ class SourceBackendActionMixinUserInteractive:
             result['action_interface_kwargs']['user_id'] = user.pk
 
         return result
+
+
+class SourceBackendActionMixinUserInteractive(
+    SourceBackendActionMixinUserBase
+):
+    class Interface:
+        class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
+            def process_interface_context(self):
+                super().process_interface_context()
+
+                self.action_kwargs['user'] = self.context['request'].user
+
+        class View(SourceBackendActionInterfaceRequestView):
+            def process_interface_context(self):
+                super().process_interface_context()
+
+                self.action_kwargs['user'] = self.context['request'].user

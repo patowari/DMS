@@ -2,8 +2,6 @@ from mayan.apps.sources.classes import DocumentCreateWizardStep
 
 
 class SourceBackendMixinInteractive:
-    is_interactive = True
-
     def callback_post_document_create(self, **kwargs):
         super().callback_post_document_create(**kwargs)
 

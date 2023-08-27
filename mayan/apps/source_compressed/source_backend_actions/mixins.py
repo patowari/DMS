@@ -8,7 +8,6 @@ from mayan.apps.storage.exceptions import NoMIMETypeMatch
 from mayan.apps.storage.tasks import task_shared_upload_delete
 from mayan.apps.sources.source_backend_actions.interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
-    SourceBackendActionInterfaceRequestView,
     SourceBackendActionInterfaceRequestViewForm,
     SourceBackendActionInterfaceTask
 )
@@ -127,14 +126,6 @@ class SourceBackendActionMixinCompressedNonInteractive(
                 self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS
 
         class Task(SourceBackendActionInterfaceTask):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                source_backend = self.action.source.get_backend_instance()
-
-                self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS
-
-        class View(SourceBackendActionInterfaceRequestView):
             def process_interface_context(self):
                 super().process_interface_context()
 

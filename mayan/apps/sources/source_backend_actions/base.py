@@ -203,6 +203,9 @@ class SourceBackendActionBase(metaclass=SourceBackendActionMetaclass):
             'source_id': self.source.pk
         }
 
+    def has_interface(self, interface_name):
+        return hasattr(self.Interface, interface_name)
+
 
 class SourceBackendAction(
     SourceBackendActionMixinSourceMetadata, SourceBackendActionBase

@@ -391,14 +391,6 @@ class SourceBackendActionMixinFileStoredNonInteractive(
                 self.action_kwargs['file_cleanup'] = self.context['file_cleanup']
                 self.action_kwargs['file_identifier'] = self.context['file_identifier']
 
-        class View(SourceBackendActionInterfaceRequestView):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                source_backend_instance = self.action.source.get_backend_instance()
-
-                self.action_kwargs['file_identifier'] = source_backend_instance.get_file_identifier()
-
     def convert_dry_run_to_file_cleanup(self, dry_run):
         if dry_run is True:
             return False

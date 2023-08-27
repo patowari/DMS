@@ -6,7 +6,7 @@ from mayan.apps.sources.source_backend_actions.base import SourceBackendAction
 from mayan.apps.sources.source_backend_actions.mixins.callback_mixins import SourceBackendActionMixinCallbackDocumentUpload
 from mayan.apps.sources.source_backend_actions.mixins.document_mixins import SourceBackendActionMixinDocumentUploadBase
 from mayan.apps.sources.source_backend_actions.mixins.document_type_mixins import SourceBackendActionMixinDocumentTypeNonInteractive
-from mayan.apps.sources.source_backend_actions.mixins.user_mixins import SourceBackendActionMixinUserInteractive
+from mayan.apps.sources.source_backend_actions.mixins.user_mixins import SourceBackendActionMixinUserBase
 
 from .mixins import SourceBackendActionMixinPeriodic
 
@@ -16,8 +16,7 @@ class SourceBackendActionPeriodicDocumentUpload(
     SourceBackendActionMixinDocumentTypeNonInteractive,
     SourceBackendActionMixinCompressedNonInteractive,
     SourceBackendActionMixinFileStoredNonInteractive,
-    SourceBackendActionMixinUserInteractive,
-    SourceBackendActionMixinPeriodic,
+    SourceBackendActionMixinUserBase, SourceBackendActionMixinPeriodic,
     SourceBackendActionMixinCallbackDocumentUpload, SourceBackendAction
 ):
     name = 'document_upload'

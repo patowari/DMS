@@ -29,7 +29,8 @@ class SourceActionViewMixin:
 
             for source in queryset:
                 try:
-                    if source.get_action(name=view_source_action):
+                    action = source.get_action(name=view_source_action)
+                    if action.has_interface(interface_name='View'):
                         yield source.pk
                 except SourceActionExceptionUnknown:
                     """
@@ -37,7 +38,7 @@ class SourceActionViewMixin:
                     id list of sources.
                     """
 
-        queryset = Source.objects.interactive().filter(
+        queryset = Source.objects.filter(
             pk__in=generator()
         )
 
