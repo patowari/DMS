@@ -62,3 +62,10 @@ class SourceTestMixinStoredFile(SourceTestMixin):
 
     def get_test_source_storage_path(self):
         return self._test_source_temporary_folder
+
+    def get_test_source_stored_file_list(self):
+        backend_instance = self._test_source.get_backend_instance()
+
+        return list(
+            backend_instance.get_stored_file_list()
+        )

@@ -18,34 +18,27 @@ from mayan.apps.sources.source_backend_actions.mixins.immediate_mode_mixins impo
 
 from .arguments import argument_encoded_filename
 from .mixins import (
-    SourceBackendActionMixinFileStoredDelete,
+    SourceBackendActionMixinFileStoredDeleteBase,
+    SourceBackendActionMixinFileStoredDeleteInteractive,
     SourceBackendActionMixinFileStoredImage,
     SourceBackendActionMixinFileStoredInteractive,
     SourceBackendActionMixinFileStoredList
 )
 
 
-class SourceBackendActionFileStoredDelete(
-    SourceBackendActionMixinFileStoredDelete, SourceBackendAction
+class SourceBackendActionFileStoredDeleteInteractive(
+    SourceBackendActionMixinFileStoredDeleteInteractive, SourceBackendAction
 ):
     confirmation = True
     name = 'file_delete'
     permission = permission_document_create
 
 
-class SourceBackendActionFileStoredImage(
-    SourceBackendActionMixinFileStoredImage, SourceBackendAction
+class SourceBackendActionFileStoredDeleteInteractiveNot(
+    SourceBackendActionMixinFileStoredDeleteBase, SourceBackendAction
 ):
-    confirmation = False
-    name = 'file_image'
-    permission = permission_document_create
-
-
-class SourceBackendActionFileStoredList(
-    SourceBackendActionMixinFileStoredList, SourceBackendAction
-):
-    confirmation = False
-    name = 'file_list'
+    confirmation = True
+    name = 'file_delete'
     permission = permission_document_create
 
 
@@ -87,3 +80,19 @@ class SourceBackendActionFileStoredDocumentUpload(
         class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
             class Argument:
                 encoded_filename = argument_encoded_filename
+
+
+class SourceBackendActionFileStoredImage(
+    SourceBackendActionMixinFileStoredImage, SourceBackendAction
+):
+    confirmation = False
+    name = 'file_image'
+    permission = permission_document_create
+
+
+class SourceBackendActionFileStoredList(
+    SourceBackendActionMixinFileStoredList, SourceBackendAction
+):
+    confirmation = False
+    name = 'file_list'
+    permission = permission_document_create

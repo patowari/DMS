@@ -24,6 +24,7 @@ class WatchStorageSourceTestMixin(SourceTestMixinStoredFile):
         if action_name == TEST_CASE_ACTION_NAME_SOURCE_CREATE:
             result.update(
                 {
+                    'delete_after_upload': True,
                     'document_type_id': self._test_document_type.pk,
                     'interval': DEFAULT_PERIOD_INTERVAL,
                     'storage_backend': 'django.core.files.storage.FileSystemStorage',
@@ -38,20 +39,3 @@ class WatchStorageSourceTestMixin(SourceTestMixinStoredFile):
                 result['encoded_filename'] = self._test_source_stored_file.encoded_filename
 
         return result
-
-    def copy_test_source_file(self, **kwargs):
-        super().copy_test_source_file(**kwargs)
-
-        backend_instance = self._test_source.get_backend_instance()
-
-        stored_file_list = list(
-            backend_instance.get_stored_file_list()
-        )
-
-        if len(stored_file_list):
-            self._test_source_stored_file = stored_file_list[0]
-            self._test_source_stored_files.append(
-                self._test_source_stored_file
-            )
-        else:
-            self._test_source_stored_file = None

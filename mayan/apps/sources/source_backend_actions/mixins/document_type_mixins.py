@@ -90,7 +90,7 @@ class SourceBackendActionMixinDocumentTypeInteractive(
         return result
 
 
-class SourceBackendActionMixinDocumentTypeNonInteractive(
+class SourceBackendActionMixinDocumentTypeInteractiveNot(
     SourceBackendActionMixinDocumentTypeBase
 ):
     class Interface:

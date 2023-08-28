@@ -22,9 +22,9 @@ class SourceBackendCallbackTestCase(
     def test_callback_post_document_create_on_document_upload(
         self, mocked_source_method
     ):
-        document_count = Document.objects.count()
-
         self.copy_test_source_file()
+
+        document_count = Document.objects.count()
 
         self._clear_events()
 
@@ -75,9 +75,9 @@ class SourceBackendCallbackTestCase(
     def test_callback_post_document_file_upload_on_document_upload(
         self, mocked_source_method
     ):
-        document_count = Document.objects.count()
-
         self.copy_test_source_file()
+
+        document_count = Document.objects.count()
 
         self._clear_events()
 

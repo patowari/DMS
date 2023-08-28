@@ -1,5 +1,4 @@
 from io import BytesIO
-from pathlib import Path
 
 from PIL import Image
 
@@ -42,6 +41,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_file_upload')
@@ -60,6 +63,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -104,6 +113,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
 
         self._test_document.delete()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         with self.assertRaises(expected_exception=Document.DoesNotExist):
@@ -124,6 +137,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
@@ -136,6 +155,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -159,6 +182,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(),
             self._test_document.files.all()[0].pages.count() + self._test_document.files.all()[1].pages.count()
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -209,6 +238,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -227,6 +260,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         self.assertEqual(
             self._test_document.versions.all()[0].pages.count(),
             test_document_version_page_count
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -255,6 +294,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -276,6 +319,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -318,6 +367,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -339,6 +392,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -385,6 +444,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
@@ -393,6 +456,12 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -439,11 +508,21 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), document_count + 2)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 11)
@@ -538,6 +617,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -545,6 +628,12 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
         )
 
         self.assertEqual(Document.objects.count(), document_count + 2)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 11)
@@ -641,6 +730,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -648,6 +741,12 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
         )
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -682,11 +781,21 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -719,6 +828,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
@@ -729,14 +842,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
             TEST_DOCUMENT_SMALL_CHECKSUM
         )
 
-        path = Path(
-            self._test_source.get_backend_data()['folder_path']
-        )
-
         self.assertEqual(
-            sum(
-                1 for x in path.glob('*') if x.is_file()
-            ), 1
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -783,6 +892,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
@@ -793,14 +906,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
             TEST_DOCUMENT_SMALL_CHECKSUM
         )
 
-        path = Path(
-            self._test_source.get_backend_data()['folder_path']
-        )
-
         self.assertEqual(
-            sum(
-                1 for x in path.glob('*') if x.is_file()
-            ), 0
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -845,15 +954,25 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
             }
         )
 
+        self.copy_test_source_file()
+
         document_count = Document.objects.count()
 
-        self.copy_test_source_file()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -863,15 +982,25 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
             extra_data={'exclude_regex': ''}
         )
 
+        self.copy_test_source_file()
+
         document_count = Document.objects.count()
 
-        self.copy_test_source_file()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)
@@ -913,15 +1042,25 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
             extra_data={'include_regex': '_____.*'}
         )
 
+        self.copy_test_source_file()
+
         document_count = Document.objects.count()
 
-        self.copy_test_source_file()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -933,15 +1072,25 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
             }
         )
 
+        self.copy_test_source_file()
+
         document_count = Document.objects.count()
 
-        self.copy_test_source_file()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)
@@ -985,6 +1134,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -998,6 +1151,12 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1042,6 +1201,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -1055,6 +1218,12 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1099,6 +1268,10 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         self._execute_test_source_action(
@@ -1111,6 +1284,12 @@ class StagingFolderSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1160,12 +1339,8 @@ class StagingFolderSourceBackendActionFileDeleteTestCase(
 
         self.copy_test_source_file()
 
-        test_source_backend_instance = self._test_source.get_backend_instance()
-
-        test_staging_file_count = len(
-            list(
-                test_source_backend_instance.get_stored_file_list()
-            )
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1174,10 +1349,8 @@ class StagingFolderSourceBackendActionFileDeleteTestCase(
 
         self.assertEqual(
             len(
-                list(
-                    test_source_backend_instance.get_stored_file_list()
-                )
-            ), test_staging_file_count - 1
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1190,12 +1363,8 @@ class StagingFolderSourceBackendActionFileDeleteTestCase(
 
         self._test_source_stored_test_file.unlink()
 
-        test_source_backend_instance = self._test_source.get_backend_instance()
-
-        test_staging_file_count = len(
-            list(
-                test_source_backend_instance.get_stored_file_list()
-            )
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1205,10 +1374,8 @@ class StagingFolderSourceBackendActionFileDeleteTestCase(
 
         self.assertEqual(
             len(
-                list(
-                    test_source_backend_instance.get_stored_file_list()
-                )
-            ), test_staging_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1226,6 +1393,10 @@ class StagingFolderSourceBackendActionFileImageTestCase(
 
         self.copy_test_source_file()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         result = self._execute_test_source_action(action_name='file_image')
@@ -1236,6 +1407,12 @@ class StagingFolderSourceBackendActionFileImageTestCase(
         image = Image.open(fp=buf)
 
         self.assertEqual(image.format, 'JPEG')
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -1252,6 +1429,10 @@ class StagingFolderSourceBackendActionFileListTestCase(
 
         self.copy_test_source_file()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         result = self._execute_test_source_action(action_name='file_list')
@@ -1266,11 +1447,21 @@ class StagingFolderSourceBackendActionFileListTestCase(
             ]
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_empty_list(self):
         self._test_source_create()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1278,6 +1469,12 @@ class StagingFolderSourceBackendActionFileListTestCase(
 
         self.assertEqual(
             list(result), []
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()

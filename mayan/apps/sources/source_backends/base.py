@@ -125,13 +125,6 @@ class SourceBackend(
 
         return getattr(self, 'upload_form_class', UploadBaseForm)
 
-    def has_interface(self, interface_name):
-        for action in self.get_action_list():
-            if action.has_interface(interface_name=interface_name):
-                return True
-
-        return False
-
 
 class SourceBackendNull(SourceBackend):
     is_visible = False

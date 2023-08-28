@@ -105,35 +105,6 @@ class SourceBackendActionMixinCompressedBase:
         return result
 
 
-class SourceBackendActionMixinCompressedNonInteractive(
-    SourceBackendActionMixinCompressedBase
-):
-    class Interface:
-        class Model(SourceBackendActionInterface):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                source_backend = self.action.source.get_backend_instance()
-
-                self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS
-
-        class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                source_backend = self.action.source.get_backend_instance()
-
-                self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS
-
-        class Task(SourceBackendActionInterfaceTask):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                source_backend = self.action.source.get_backend_instance()
-
-                self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS
-
-
 class SourceBackendActionMixinCompressedInteractive(
     SourceBackendActionMixinCompressedBase
 ):
@@ -203,3 +174,24 @@ class SourceBackendActionMixinCompressedInteractive(
                         expand = False
 
                 self.action_kwargs['expand'] = expand
+
+
+class SourceBackendActionMixinCompressedInteractiveNot(
+    SourceBackendActionMixinCompressedBase
+):
+    class Interface:
+        class Model(SourceBackendActionInterface):
+            def process_interface_context(self):
+                super().process_interface_context()
+
+                source_backend = self.action.source.get_backend_instance()
+
+                self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS
+
+        class Task(SourceBackendActionInterfaceTask):
+            def process_interface_context(self):
+                super().process_interface_context()
+
+                source_backend = self.action.source.get_backend_instance()
+
+                self.action_kwargs['expand'] = source_backend.kwargs.get('uncompress') == SOURCE_UNCOMPRESS_CHOICE_ALWAYS

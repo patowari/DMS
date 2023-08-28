@@ -11,10 +11,11 @@ from mayan.apps.storage.classes import DefinedStorage
 from ..classes import SourceStoredFile
 from ..forms import StoredFileUploadForm
 from ..source_backend_actions.stored_file_actions import (
-    SourceBackendActionFileStoredDelete,
-    SourceBackendActionFileStoredImage, SourceBackendActionFileStoredList,
+    SourceBackendActionFileStoredDeleteInteractive,
+    SourceBackendActionFileStoredDeleteInteractiveNot,
     SourceBackendActionFileStoredDocumentFileUpload,
-    SourceBackendActionFileStoredDocumentUpload
+    SourceBackendActionFileStoredDocumentUpload,
+    SourceBackendActionFileStoredImage, SourceBackendActionFileStoredList
 )
 from ..views import SourceBackendStoredFileSourceFileListView
 
@@ -140,7 +141,7 @@ class SourceBackendMixinStoredFileDocumentUpload(
         return action_class_list
 
 
-class SourceBackendMixinStoredFileDelete:
+class SourceBackendMixinStoredFileDeleteInteractive:
     def action_file_delete(self, encoded_filename):
         source_stored_file = self.get_stored_file(
             encoded_filename=encoded_filename
@@ -151,7 +152,25 @@ class SourceBackendMixinStoredFileDelete:
     def get_action_class_list(self):
         action_class_list = super().get_action_class_list()
 
-        action_class_list += (SourceBackendActionFileStoredDelete,)
+        action_class_list += (SourceBackendActionFileStoredDeleteInteractive,)
+
+        return action_class_list
+
+
+class SourceBackendMixinStoredFileDeleteInteractiveNot:
+    def action_file_delete(self, encoded_filename):
+        source_stored_file = self.get_stored_file(
+            encoded_filename=encoded_filename
+        )
+
+        source_stored_file.delete()
+
+    def get_action_class_list(self):
+        action_class_list = super().get_action_class_list()
+
+        action_class_list += (
+            SourceBackendActionFileStoredDeleteInteractiveNot,
+        )
 
         return action_class_list
 

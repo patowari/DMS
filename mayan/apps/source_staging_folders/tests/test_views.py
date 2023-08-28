@@ -46,6 +46,10 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_file_upload_view()
@@ -64,23 +68,33 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_document_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document,
             permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -100,22 +114,32 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_source_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_file_new
         )
-
-        self.copy_test_source_file()
 
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -135,11 +159,19 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_full_access(self):
         self._test_source_create()
+
+        self.copy_test_source_file()
 
         self.grant_access(
             obj=self._test_document,
@@ -149,12 +181,14 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -175,6 +209,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -210,6 +250,8 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
     def test_basic_with_full_access_trashed_document(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document,
             permission=permission_document_file_new
@@ -218,14 +260,16 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
         self._test_document.delete()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -245,11 +289,19 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_comment(self):
         self._test_source_create()
+
+        self.copy_test_source_file()
 
         self.grant_access(
             obj=self._test_document,
@@ -259,12 +311,14 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -292,6 +346,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -327,6 +387,8 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
     def test_document_file_action_append(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document,
             permission=permission_document_file_new
@@ -335,12 +397,14 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -366,6 +430,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(),
             self._test_document.files.all()[0].pages.count() + self._test_document.files.all()[1].pages.count()
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -409,6 +479,8 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
     def test_document_file_action_keep(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document,
             permission=permission_document_file_new
@@ -417,12 +489,14 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -446,6 +520,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
@@ -465,6 +545,8 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
     def test_document_file_action_new(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document,
             permission=permission_document_file_new
@@ -473,12 +555,14 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -503,6 +587,12 @@ class StagingFolderSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -550,12 +640,22 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -572,12 +672,22 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -593,12 +703,26 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -618,6 +742,10 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view()
@@ -627,6 +755,12 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -681,6 +815,10 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view()
@@ -697,6 +835,12 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
             'second document.pdf' in Document.objects.values_list(
                 'label', flat=True
             )
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -796,6 +940,10 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view(
@@ -804,6 +952,12 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -844,6 +998,10 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view(
@@ -862,6 +1020,12 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
             'second document.pdf' in Document.objects.values_list(
                 'label', flat=True
             )
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -961,12 +1125,22 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -993,6 +1167,8 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
     def test_language(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1001,9 +1177,11 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1014,6 +1192,12 @@ class StagingFolderSourceBackendActionDocumentUploadViewTestCase(
 
         self.assertEqual(Document.objects.count(), document_count + 1)
         self.assertEqual(Document.objects.first().language, 'deu')
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)
@@ -1070,8 +1254,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.copy_test_source_file()
 
-        staging_folder_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1083,8 +1267,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), staging_folder_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1093,14 +1277,14 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
     def test_get_with_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        staging_folder_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1110,7 +1294,6 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
         )
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(staging_folder_file_count, 1)
         self.assertEqual(
             self._get_test_source_stored_file_list()[0]['encoded_filename'],
             self._test_source_stored_file.encoded_filename
@@ -1118,8 +1301,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), staging_folder_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1130,8 +1313,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.copy_test_source_file()
 
-        staging_folder_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1143,8 +1326,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), staging_folder_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1153,14 +1336,14 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
     def test_post_with_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        staging_folder_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1172,8 +1355,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), staging_folder_file_count - 1
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1182,16 +1365,16 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
     def test_nonexistent_get_with_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         self._test_source_stored_test_file.unlink()
 
-        staging_folder_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1206,8 +1389,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), staging_folder_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1218,16 +1401,16 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         self._test_source_stored_test_file.unlink()
 
-        staging_folder_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -1242,8 +1425,8 @@ class StagingFolderSourceBackendActionFileDeleteViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), staging_folder_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()

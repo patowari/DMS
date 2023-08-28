@@ -184,3 +184,12 @@ class SourceBackendActionMixinDocumentUploadInteractive(
     """
     Mixin for a complete action that uploads documents.
     """
+
+
+class SourceBackendActionMixinDocumentUploadInteractiveNot(
+    SourceBackendActionMixinDocumentUploadBase
+):
+    """
+    Same as `SourceBackendActionMixinDocumentUploadBase` but subclassed for
+    clarity.
+    """

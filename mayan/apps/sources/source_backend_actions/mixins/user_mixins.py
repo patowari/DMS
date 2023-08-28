@@ -90,3 +90,11 @@ class SourceBackendActionMixinUserInteractive(
                 super().process_interface_context()
 
                 self.action_kwargs['user'] = self.context['request'].user
+
+
+class SourceBackendActionMixinUserInteractiveNot(
+    SourceBackendActionMixinUserBase
+):
+    """
+    Same as `SourceBackendActionMixinUserBase` but subclassed for clarity.
+    """

@@ -24,7 +24,7 @@ from .arguments import (
 )
 
 
-class SourceBackendActionMixinFileStoredDelete:
+class SourceBackendActionMixinFileStoredDeleteBase:
     class Interface:
         class Model(SourceBackendActionInterface):
             class Argument:
@@ -36,6 +36,18 @@ class SourceBackendActionMixinFileStoredDelete:
                     'encoded_filename'
                 ]
 
+    def _execute(self, encoded_filename, **kwargs):
+        source_backend_instance = self.source.get_backend_instance()
+
+        source_backend_instance.action_file_delete(
+            encoded_filename=encoded_filename
+        )
+
+
+class SourceBackendActionMixinFileStoredDeleteInteractive(
+    SourceBackendActionMixinFileStoredDeleteBase
+):
+    class Interface:
         class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
             class Argument:
                 encoded_filename = argument_encoded_filename
@@ -353,26 +365,11 @@ class SourceBackendActionMixinFileStoredInteractive(
                 )
 
 
-class SourceBackendActionMixinFileStoredNonInteractive(
+class SourceBackendActionMixinFileStoredInteractiveNot(
     SourceBackendActionMixinFileStoredBase
 ):
     class Interface:
         class Model(SourceBackendActionInterface):
-            def process_interface_context(self):
-                super().process_interface_context()
-
-                source_backend_instance = self.action.source.get_backend_instance()
-
-                self.action_kwargs['file_identifier'] = source_backend_instance.get_file_identifier()
-
-        class RESTAPI(SourceBackendActionInterfaceRequestRESTAPI):
-            def process_action_data(self):
-                super().process_action_data()
-
-                self.interface_result = Response(
-                    status=status.HTTP_202_ACCEPTED
-                )
-
             def process_interface_context(self):
                 super().process_interface_context()
 
@@ -402,8 +399,15 @@ class SourceBackendActionMixinFileStoredNonInteractive(
     def get_task_kwargs(self, dry_run, **kwargs):
         result = super().get_task_kwargs(**kwargs)
 
-        result['action_interface_kwargs']['file_cleanup'] = self.convert_dry_run_to_file_cleanup(
-            dry_run=dry_run
+        source_backend_instance = self.source.get_backend_instance()
+
+        result['action_interface_kwargs']['file_cleanup'] = source_backend_instance.kwargs.get(
+            'delete_after_upload', False
         )
+
+        if dry_run:
+            result['action_interface_kwargs']['file_cleanup'] = self.convert_dry_run_to_file_cleanup(
+                dry_run=dry_run
+            )
 
         return result

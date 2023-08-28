@@ -1,10 +1,5 @@
 from rest_framework import status
 
-from mayan.apps.documents.events import (
-    event_document_created, event_document_file_created,
-    event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
-)
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
@@ -103,31 +98,12 @@ class EmailSourceBackendActionDocumentUploadAPIViewTestCase(
         response = self._request_test_source_action_execute_post_api_view(
             action_name='document_upload'
         )
-        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(Document.objects.count(), test_document_count)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
-
-        test_document = Document.objects.first()
-        test_document_file = test_document.file_latest
-        test_document_version = test_document.version_active
-
-        self.assertEqual(events[0].action_object, self._test_document_type)
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, test_document)
-        self.assertEqual(events[0].verb, event_document_created.id)
-
-        self.assertEqual(events[1].action_object, test_document)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
-
-        self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events.count(), 0)
 
 
 class IMAPEmailSourceBackendAPIViewTestCase(
@@ -211,44 +187,12 @@ class IMAPEmailSourceBackendActionDocumentUploadAPIViewTestCase(
         response = self._request_test_source_action_execute_post_api_view(
             action_name='document_upload'
         )
-        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(Document.objects.count(), test_document_count)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
-
-        test_document = Document.objects.first()
-        test_document_file = test_document.file_latest
-        test_document_version = test_document.version_active
-        test_document_version_page = test_document_version.pages.first()
-
-        self.assertEqual(events[0].action_object, self._test_document_type)
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, test_document)
-        self.assertEqual(events[0].verb, event_document_created.id)
-
-        self.assertEqual(events[1].action_object, test_document)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
-
-        self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
-
-        self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, test_document_version)
-        self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        self.assertEqual(events.count(), 0)
 
 
 class POP3EmailSourceBackendAPIViewTestCase(
@@ -332,41 +276,9 @@ class POP3EmailSourceBackendActionDocumentUploadAPIViewTestCase(
         response = self._request_test_source_action_execute_post_api_view(
             action_name='document_upload'
         )
-        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(Document.objects.count(), test_document_count)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
-
-        test_document = Document.objects.first()
-        test_document_file = test_document.file_latest
-        test_document_version = test_document.version_active
-        test_document_version_page = test_document_version.pages.first()
-
-        self.assertEqual(events[0].action_object, self._test_document_type)
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, test_document)
-        self.assertEqual(events[0].verb, event_document_created.id)
-
-        self.assertEqual(events[1].action_object, test_document)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
-
-        self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
-
-        self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, test_document_version)
-        self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        self.assertEqual(events.count(), 0)

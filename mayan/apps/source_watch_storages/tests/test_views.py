@@ -172,6 +172,10 @@ class WatchStorageSourceTestViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_test_get_view()
@@ -179,19 +183,29 @@ class WatchStorageSourceTestViewTestCase(
 
         self.assertEqual(Document.objects.count(), document_count)
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_source_test_get_view_with_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_sources_edit
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -199,6 +213,12 @@ class WatchStorageSourceTestViewTestCase(
         self.assertEqual(response.status_code, 200)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -210,12 +230,22 @@ class WatchStorageSourceTestViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -225,13 +255,17 @@ class WatchStorageSourceTestViewTestCase(
 
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_sources_edit
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -239,6 +273,12 @@ class WatchStorageSourceTestViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)
@@ -288,6 +328,10 @@ class WatchStorageSourceTestViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_test_post_view()
@@ -304,6 +348,12 @@ class WatchStorageSourceTestViewTestCase(
             'second document.pdf' in Document.objects.values_list(
                 'label', flat=True
             )
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -399,12 +449,22 @@ class WatchStorageSourceTestViewTestCase(
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)

@@ -96,7 +96,7 @@ class PeriodicSourceBackendActionTestCase(
             extra_data={'dry_run': False}
         )
 
-        self.assertEqual(mocked_action_file_delete.call_count, 1)
+        self.assertEqual(mocked_action_file_delete.call_count, 0)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
 
@@ -171,7 +171,7 @@ class PeriodicSourceBackendActionTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(mocked_action_file_delete.call_count, 1)
+        self.assertEqual(mocked_action_file_delete.call_count, 0)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
 

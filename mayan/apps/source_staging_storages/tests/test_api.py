@@ -94,6 +94,10 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_action_execute_post_api_view(
@@ -112,6 +116,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         self.assertEqual(
             self._test_document.versions.all()[0].pages.count(),
             test_document_version_page_count
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -120,16 +130,20 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_basic_with_document_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
         )
-
-        self.copy_test_source_file()
 
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -149,6 +163,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         self.assertEqual(
             self._test_document.versions.all()[0].pages.count(),
             test_document_version_page_count
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -157,16 +177,20 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_basic_with_source_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_file_new
         )
-
-        self.copy_test_source_file()
 
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -188,11 +212,19 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_full_access(self):
         self._test_source_create()
+
+        self.copy_test_source_file()
 
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
@@ -201,12 +233,14 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -229,6 +263,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -264,6 +304,8 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_basic_with_full_access_trashed_document(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
         )
@@ -271,14 +313,16 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
 
         self._test_document.delete()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -300,11 +344,19 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_comment(self):
         self._test_source_create()
+
+        self.copy_test_source_file()
 
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
@@ -313,12 +365,14 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -348,6 +402,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -383,6 +443,8 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_document_file_action_name_append(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
         )
@@ -390,12 +452,14 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -421,6 +485,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(),
             self._test_document.files.all()[0].pages.count() + self._test_document.files.all()[1].pages.count()
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -464,6 +534,8 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_document_file_action_name_keep(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
         )
@@ -471,12 +543,14 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -500,6 +574,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             test_document_version_page_count
         )
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
@@ -519,6 +599,8 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_document_file_action_name_new(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
         )
@@ -526,12 +608,14 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -556,6 +640,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -591,6 +681,8 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
     def test_filename(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document, permission=permission_document_file_new
         )
@@ -598,12 +690,14 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_file_new
         )
 
-        self.copy_test_source_file()
-
         test_document_count = Document.objects.count()
         test_document_file_count = self._test_document.files.count()
         test_document_version_count = self._test_document.versions.count()
         test_document_version_page_count = self._test_document.versions.all()[0].pages.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -633,6 +727,12 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(
             self._test_document.versions.all()[1].pages.count(), 1
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -695,14 +795,18 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
     def test_basic_with_document_type_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -712,6 +816,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -719,13 +829,17 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
     def test_basic_with_source_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -736,11 +850,19 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
 
         self.assertEqual(Document.objects.count(), document_count)
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_full_access(self):
         self._test_source_create()
+
+        self.copy_test_source_file()
 
         self.grant_access(
             obj=self._test_document_type,
@@ -750,9 +872,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -765,6 +889,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -807,6 +937,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ALWAYS}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -815,9 +947,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -827,6 +961,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
         self.assertEqual(Document.objects.count(), document_count + 2)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 11)
@@ -913,6 +1053,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ASK}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -921,9 +1063,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -933,6 +1077,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -959,6 +1109,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ALWAYS}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -967,9 +1119,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -979,6 +1133,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
         self.assertEqual(Document.objects.count(), document_count + 2)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 11)
@@ -1065,6 +1225,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_NEVER}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1073,9 +1235,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1085,6 +1249,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -1111,6 +1281,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             extra_data={'delete_after_upload': False}
         )
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1119,17 +1291,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        test_source_backend_instance = self._test_source.get_backend_instance()
-
-        test_staging_file_count = len(
-            list(
-                test_source_backend_instance.get_stored_file_list()
-            )
-        )
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1146,10 +1312,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
 
         self.assertEqual(
             len(
-                list(
-                    test_source_backend_instance.get_stored_file_list()
-                )
-            ), test_staging_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1192,6 +1356,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             extra_data={'delete_after_upload': True}
         )
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1200,17 +1366,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        test_source_backend_instance = self._test_source.get_backend_instance()
-
-        test_staging_file_count = len(
-            list(
-                test_source_backend_instance.get_stored_file_list()
-            )
-        )
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1227,10 +1387,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
 
         self.assertEqual(
             len(
-                list(
-                    test_source_backend_instance.get_stored_file_list()
-                )
-            ), test_staging_file_count - 1
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1271,6 +1429,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
     def test_label(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1279,9 +1439,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1299,6 +1461,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1339,6 +1507,8 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
     def test_language(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1347,9 +1517,11 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1367,6 +1539,12 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1419,6 +1597,10 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         document_count = Document.objects.count()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_action_execute_post_api_view(
@@ -1429,6 +1611,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -1436,14 +1624,18 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
     def test_basic_with_document_type_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1455,6 +1647,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(Document.objects.count(), document_count)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -1462,13 +1660,17 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
     def test_basic_with_source_access(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1481,11 +1683,19 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(Document.objects.count(), document_count)
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_full_access(self):
         self._test_source_create()
+
+        self.copy_test_source_file()
 
         self.grant_access(
             obj=self._test_document_type,
@@ -1495,9 +1705,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1513,6 +1725,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1557,6 +1775,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ALWAYS}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1565,9 +1785,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1580,6 +1802,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -1608,6 +1836,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ASK}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1616,9 +1846,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1631,6 +1863,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -1659,6 +1897,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ALWAYS}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1667,9 +1907,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1682,6 +1924,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -1710,6 +1958,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_NEVER}
         )
 
+        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1718,9 +1968,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file(source_path=TEST_FILE_COMPRESSED_PATH)
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1733,6 +1985,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
         self.assertEqual(Document.objects.count(), document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -1759,6 +2017,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             extra_data={'delete_after_upload': False}
         )
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1767,17 +2027,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        test_source_backend_instance = self._test_source.get_backend_instance()
-
-        test_staging_file_count = len(
-            list(
-                test_source_backend_instance.get_stored_file_list()
-            )
-        )
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1797,10 +2051,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(
             len(
-                list(
-                    test_source_backend_instance.get_stored_file_list()
-                )
-            ), test_staging_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -1843,6 +2095,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             extra_data={'delete_after_upload': True}
         )
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1851,17 +2105,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        test_source_backend_instance = self._test_source.get_backend_instance()
-
-        test_staging_file_count = len(
-            list(
-                test_source_backend_instance.get_stored_file_list()
-            )
-        )
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1881,10 +2129,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
 
         self.assertEqual(
             len(
-                list(
-                    test_source_backend_instance.get_stored_file_list()
-                )
-            ), test_staging_file_count - 1
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1925,6 +2171,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
     def test_label(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -1933,9 +2181,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -1954,6 +2204,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -1994,6 +2250,8 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
     def test_language(self):
         self._test_source_create()
 
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
@@ -2002,9 +2260,11 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -2023,6 +2283,12 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -2068,18 +2334,11 @@ class StagingStorageSourceBackendActionFileDeleteAPIViewTestCase(
     auto_create_test_document_type = False
     auto_upload_test_document = False
 
-    def _get_test_source_stored_file_list(self):
-        return list(
-            self._test_source.action_execute(
-                name='file_list', interface_name='Model'
-            )
-        )
-
     def test_basic_no_permission(self):
         self.copy_test_source_file()
 
-        test_staging_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -2091,22 +2350,22 @@ class StagingStorageSourceBackendActionFileDeleteAPIViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), test_staging_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_access(self):
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
-        test_staging_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -2118,24 +2377,24 @@ class StagingStorageSourceBackendActionFileDeleteAPIViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), test_staging_file_count - 1
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_nonexistent_with_access(self):
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         self._test_source_stored_test_file.unlink()
 
-        test_staging_file_count = len(
-            self._get_test_source_stored_file_list()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
         )
 
         self._clear_events()
@@ -2147,8 +2406,8 @@ class StagingStorageSourceBackendActionFileDeleteAPIViewTestCase(
 
         self.assertEqual(
             len(
-                self._get_test_source_stored_file_list()
-            ), test_staging_file_count
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()
@@ -2165,6 +2424,10 @@ class StagingStorageSourceBackendActionFileImageAPIViewTestCase(
     def test_basic_no_permission(self):
         self.copy_test_source_file()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_action_execute_get_api_view(
@@ -2172,15 +2435,25 @@ class StagingStorageSourceBackendActionFileImageAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_access(self):
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -2196,17 +2469,27 @@ class StagingStorageSourceBackendActionFileImageAPIViewTestCase(
 
         self.assertEqual(image.format, 'JPEG')
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_nonexistent_with_access(self):
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
-
         self._test_source_stored_test_file.unlink()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -2214,6 +2497,12 @@ class StagingStorageSourceBackendActionFileImageAPIViewTestCase(
             action_name='file_image'
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -2229,6 +2518,10 @@ class StagingStorageSourceBackendActionFileListAPIViewTestCase(
     def test_basic_no_permission(self):
         self.copy_test_source_file()
 
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
         self._clear_events()
 
         response = self._request_test_source_action_execute_get_api_view(
@@ -2236,15 +2529,25 @@ class StagingStorageSourceBackendActionFileListAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
+        )
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
     def test_basic_with_access(self):
+        self.copy_test_source_file()
+
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
         )
 
-        self.copy_test_source_file()
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
 
         self._clear_events()
 
@@ -2256,6 +2559,12 @@ class StagingStorageSourceBackendActionFileListAPIViewTestCase(
         self.assertEqual(
             response.data[0]['encoded_filename'],
             self._test_source_stored_file.encoded_filename
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()

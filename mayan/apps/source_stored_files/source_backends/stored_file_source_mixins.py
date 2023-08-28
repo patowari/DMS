@@ -8,7 +8,8 @@ from mayan.apps.sources.exceptions import SourceActionException
 from ..classes import SourceStoredFile
 
 from .stored_file_mixins import (
-    SourceBackendMixinStoredFileDelete,
+    SourceBackendMixinStoredFileDeleteInteractive,
+    SourceBackendMixinStoredFileDeleteInteractiveNot,
     SourceBackendMixinStoredFileDocumentFileUpload,
     SourceBackendMixinStoredFileDocumentUpload,
     SourceBackendMixinStoredFileImage, SourceBackendMixinStoredFileList
@@ -51,7 +52,7 @@ class SourceBackendMixinStoredFileSourceBase:
 
 
 class SourceBackendMixinStoredFileInteractive(
-    SourceBackendMixinStoredFileDelete,
+    SourceBackendMixinStoredFileDeleteInteractive,
     SourceBackendMixinStoredFileDocumentFileUpload,
     SourceBackendMixinStoredFileDocumentUpload,
     SourceBackendMixinStoredFileImage,
@@ -64,9 +65,8 @@ class SourceBackendMixinStoredFileInteractive(
     """
 
 
-class SourceBackendMixinStoredFileNonInteractive(
-    SourceBackendMixinStoredFileDelete,
-    SourceBackendMixinStoredFileList,
+class SourceBackendMixinStoredFileInteractiveNot(
+    SourceBackendMixinStoredFileDeleteInteractiveNot,
     SourceBackendMixinStoredFileSourceBase
 ):
     def get_file_identifier(self):
