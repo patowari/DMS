@@ -64,7 +64,7 @@ class DocumentType(
         ), null=True, verbose_name=_('Trash time period')
     )
     trash_time_unit = models.CharField(
-        blank=True, choices=TIME_DELTA_UNIT_CHOICES, null=True, max_length=8,
+        blank=True, choices=TIME_DELTA_UNIT_CHOICES, null=True, max_length=12,
         verbose_name=_('Trash time unit')
     )
     delete_time_period = models.PositiveIntegerField(
@@ -75,7 +75,7 @@ class DocumentType(
     )
     delete_time_unit = models.CharField(
         blank=True, choices=TIME_DELTA_UNIT_CHOICES,
-        default=DEFAULT_DELETE_TIME_UNIT, max_length=8, null=True,
+        default=DEFAULT_DELETE_TIME_UNIT, max_length=12, null=True,
         verbose_name=_('Delete time unit')
     )
     document_stub_pruning_enabled = models.BooleanField(
