@@ -12,7 +12,6 @@ from mayan.apps.documents.signals import signal_post_document_file_upload
 from mayan.apps.events.classes import ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 
-from .classes import FileMetadataHelper
 from .drivers import *  # NOQA
 from .events import (
     event_file_metadata_document_file_finished,
@@ -33,11 +32,14 @@ from .links import (
 from .methods import (
     method_document_file_metadata_submit,
     method_document_file_metadata_submit_single,
-    method_get_document_file_metadata, method_get_document_file_file_metadata
+    method_get_document_file_file_metadata
 )
 from .permissions import (
     permission_document_type_file_metadata_setup,
     permission_file_metadata_submit, permission_file_metadata_view
+)
+from .property_helpers import (
+    DocumentFileMetadataHelper, DocumentFileFileMetadataHelper
 )
 
 
@@ -70,15 +72,16 @@ class FileMetadataApp(MayanAppConfig):
 
         Document.add_to_class(
             name='file_metadata_value_of',
-            value=FileMetadataHelper.constructor
-        )
-        Document.add_to_class(
-            name='get_file_metadata',
-            value=method_get_document_file_metadata
+            value=DocumentFileMetadataHelper.constructor
         )
         Document.add_to_class(
             name='submit_for_file_metadata_processing',
             value=method_document_file_metadata_submit
+        )
+
+        DocumentFile.add_to_class(
+            name='file_metadata_value_of',
+            value=DocumentFileFileMetadataHelper.constructor
         )
         DocumentFile.add_to_class(
             name='get_file_metadata',
@@ -129,6 +132,12 @@ class FileMetadataApp(MayanAppConfig):
             description=_(
                 'Return the value of a specific file metadata.'
             ), label=_('File metadata value of'), model=Document,
+            name='file_metadata_value_of.< underscore separated driver name and property name >'
+        )
+        ModelProperty(
+            description=_(
+                'Return the value of a specific file metadata.'
+            ), label=_('File metadata value of'), model=DocumentFile,
             name='file_metadata_value_of.< underscore separated driver name and property name >'
         )
 

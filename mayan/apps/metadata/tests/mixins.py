@@ -1,5 +1,8 @@
 from django.db.models import Q
 
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin, DocumentTypeTestMixin
+)
 from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
 from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
 
@@ -78,13 +81,6 @@ class DocumentMetadataAPIViewTestMixin:
             viewname='rest_api:documentmetadata-list', kwargs={
                 'document_id': self._test_document.pk
             }
-        )
-
-
-class DocumentMetadataMixin:
-    def _create_test_document_metadata(self):
-        self._test_document_metadata = self._test_document.metadata.create(
-            metadata_type=self._test_metadata_type, value=TEST_METADATA_VALUE
         )
 
 
@@ -368,7 +364,7 @@ class MetadataTypeAPIViewTestMixin:
         return self.get(viewname='rest_api:metadatatype-list')
 
 
-class MetadataTypeTestMixin:
+class MetadataTypeTestMixin(DocumentTypeTestMixin):
     auto_add_test_metadata_type_to_test_document_type = True
     auto_create_test_metadata_type = False
 
@@ -514,4 +510,14 @@ class MetadataTypeViewTestMixin:
                 'form-INITIAL_FORMS': '0',
                 'form-0-relationship_type': 'required'
             }
+        )
+
+
+class DocumentMetadataMixin(DocumentTestMixin, MetadataTypeTestMixin):
+    _test_document_metadata_value = TEST_METADATA_VALUE
+
+    def _create_test_document_metadata(self):
+        self._test_document_metadata = self._test_document.metadata.create(
+            metadata_type=self._test_metadata_type,
+            value=self._test_document_metadata_value
         )

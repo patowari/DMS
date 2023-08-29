@@ -2,23 +2,10 @@ import logging
 
 from django.apps import apps
 
-from mayan.apps.common.classes import PropertyHelper
-
 from .events import event_file_metadata_document_file_finished
 from .exceptions import FileMetadataDriverError
 
 logger = logging.getLogger(name=__name__)
-
-
-class FileMetadataHelper(PropertyHelper):
-    @staticmethod
-    @property
-    def constructor(*args, **kwargs):
-        return FileMetadataHelper(*args, **kwargs)
-
-    def get_result(self, name):
-        result = self.instance.get_file_metadata(dotted_name=name)
-        return result
 
 
 class FileMetadataDriver:

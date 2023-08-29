@@ -24,9 +24,7 @@ from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.views.column_widgets import TwoStateWidget
 
-from .classes import (
-    DocumentMetadataHelper, MetadataParser, MetadataValidator
-)
+from .classes import MetadataParser, MetadataValidator
 from .column_widgets import DocumentMetadataWidget
 from .events import (
     event_document_metadata_added, event_document_metadata_edited,
@@ -56,6 +54,7 @@ from .permissions import (
     permission_metadata_type_delete, permission_metadata_type_edit,
     permission_metadata_type_view
 )
+from .property_helpers import DocumentMetadataHelper
 
 logger = logging.getLogger(name=__name__)
 

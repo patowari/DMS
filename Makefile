@@ -9,6 +9,10 @@ ifndef MODULE
 override MODULE = --mayan-apps
 endif
 
+ifdef TAG
+override ARGUMENT_TAG = --tag=$(TAG)
+endif
+
 ifndef SKIPMIGRATIONS
 override SKIPMIGRATIONS = --skip-migrations
 endif
@@ -23,7 +27,7 @@ COMMAND_SENTRY = \
 	export MAYAN_PLATFORM_CLIENT_BACKEND_ARGUMENTS='{"mayan.apps.platform.client_backends.ClientBackendSentry":{"dsn":"$(SENTRY_DSN)","environment":"development"}}'; \
 	fi
 
-COMMAND_TEST = ./manage.py test $(MODULE) --settings=$(SETTINGS) $(SKIPMIGRATIONS) $(DEBUG) $(ARGUMENTS)
+COMMAND_TEST = ./manage.py test $(MODULE) --settings=$(SETTINGS) $(SKIPMIGRATIONS) $(DEBUG) $(ARGUMENTS) $(ARGUMENT_TAG)
 COMMAND_TEST_MIGRATIONS = ./manage.py test $(MODULE) --settings=$(SETTINGS) --no-exclude --tag=migration_test $(DEBUG) $(ARGUMENTS)
 
 CONTAINER_NAME_TEST_ELASTIC = mayan-test-elastic

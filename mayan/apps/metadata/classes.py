@@ -2,18 +2,7 @@ from django.core.exceptions import ValidationError
 from django.utils.text import format_lazy
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
-from mayan.apps.common.classes import PropertyHelper
 from mayan.apps.common.literals import EMPTY_LABEL
-
-
-class DocumentMetadataHelper(PropertyHelper):
-    @staticmethod
-    @property
-    def constructor(*args, **kwargs):
-        return DocumentMetadataHelper(*args, **kwargs)
-
-    def get_result(self, name):
-        return self.instance.metadata.get(metadata_type__name=name).value
 
 
 class MetadataLookup:

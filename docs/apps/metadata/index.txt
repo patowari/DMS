@@ -29,3 +29,20 @@ interpret and modify the value provided by the user to a conform to a specific
 format. An example of a provided parser is the date parser which will interpret
 and correct dates provided by users regardless of the format in which they are
 entered.
+
+
+Template helpers
+================
+
+To aid in accessing the metadata of a document, a property helper is
+included. This helper takes the form ``{{ document.metadata_value_of.< metadata type name > }}``.
+This will return the current value of the document metadata by that name.
+
+The metadata property helper has the following behavior:
+
+- Document metadata does not exist, this will return ``None``.
+  Test with ``{% if document.metadata_value_of.sample is none %}It is None{% endif %}``
+- Document metadata exists and has no value assigned, this will return an empty string ``""``.
+  Test with ``{% if document.metadata_value_of.sample == "" %}It is empty{% endif %}``
+- Document metadata exists and has a ``None`` value, this will return ``None``.
+  Test with ``{% if document.metadata_value_of.sample is none %}It is None{% endif %}``

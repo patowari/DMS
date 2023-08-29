@@ -1,3 +1,5 @@
+from django.apps import apps
+
 from mayan.apps.common.classes import PropertyHelper
 
 
@@ -8,7 +10,12 @@ class DocumentSourceMetadataHelper(PropertyHelper):
         return DocumentSourceMetadataHelper(*args, **kwargs)
 
     def get_result(self, name):
-        return self.instance.file_latest.source_metadata.get(key=name).value
+        file_latest = self.instance.file_latest
+
+        if file_latest:
+            return getattr(file_latest.source_metadata_value_of, name)
+        else:
+            return None
 
 
 class DocumentFileSourceMetadataHelper(PropertyHelper):
@@ -18,4 +25,13 @@ class DocumentFileSourceMetadataHelper(PropertyHelper):
         return DocumentFileSourceMetadataHelper(*args, **kwargs)
 
     def get_result(self, name):
-        return self.instance.source_metadata.get(key=name).value
+        DocumentFileSourceMetadata = apps.get_model(
+            app_label='sources', model_name='DocumentFileSourceMetadata'
+        )
+
+        try:
+            source_metadata = self.instance.source_metadata.get(key=name)
+        except DocumentFileSourceMetadata.DoesNotExist:
+            return None
+        else:
+            return source_metadata.value

@@ -3,11 +3,14 @@ import json
 
 from django.test import tag
 
+from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+
 from ...models import Source
 
 from ..literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_MODEL,
-    TEST_SOURCE_BACKEND_PATH_BASE, TEST_SOURCE_LABEL
+    TEST_SOURCE_BACKEND_PATH_BASE, TEST_SOURCE_LABEL,
+    TEST_SOURCE_METADATA_KEY, TEST_SOURCE_METADATA_VALUE
 )
 
 
@@ -100,3 +103,19 @@ class SourceTestMixin:
                 yield file_object
         else:
             yield None
+
+
+class SourceMetadataTestmixin(DocumentTestMixin, SourceTestMixin):
+    _test_source_metadata_create_auto = True
+
+    def setUp(self):
+        super().setUp()
+
+        if self._test_source_metadata_create_auto:
+            self._test_source_metadata_create()
+
+    def _test_source_metadata_create(self):
+        self._test_source_metadata = self._test_document_file.source_metadata.create(
+            key=TEST_SOURCE_METADATA_KEY, source=self._test_source,
+            value=TEST_SOURCE_METADATA_VALUE
+        )

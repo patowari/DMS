@@ -28,23 +28,6 @@ def method_document_file_metadata_submit_single(self, user=None):
     )
 
 
-def method_get_document_file_metadata(self, dotted_name):
-    latest_file = self.file_latest
-    # Don't error out if document has no file.
-    if latest_file:
-        return latest_file.get_file_metadata(
-            dotted_name=dotted_name
-        )
-
-
-method_get_document_file_metadata.short_description = _(
-    'get_file_metadata(< file metadata dotted path >)'
-)
-method_get_document_file_metadata.help_text = _(
-    'Return the specified document file metadata entry.'
-)
-
-
 def method_get_document_file_file_metadata(self, dotted_name):
     parts = dotted_name.split('__', 1)
 

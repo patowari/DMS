@@ -297,6 +297,14 @@
 - Fix the compressed label still showing up when the uncompress choice
   is never or always.
 
+- ``PropertyHelper`` updates:
+
+  - Move all ``PropertyHelper`` usage to their own modules.
+  - Add property helper ``file_metadata_value_of`` to document files.
+  - Formalize ``PropertyHelper`` behaviors and testing. Closes GitLab
+    issue #664. Thanks to Light Templar (@LightTemplar) for the report.
+  - Tag all ``PropertyHelper`` with ``classes_property_helper``.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.

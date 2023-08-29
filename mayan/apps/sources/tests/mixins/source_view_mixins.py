@@ -1,41 +1,19 @@
 from django.db.models import Q
 
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 
 from ...models import Source
 
 from ..literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_VIEW,
     TEST_SOURCE_ACTION_CONFIRM_FALSE_NAME,
-    TEST_SOURCE_ACTION_CONFIRM_TRUE_NAME, TEST_SOURCE_LABEL_EDITED,
-    TEST_SOURCE_METADATA_KEY, TEST_SOURCE_METADATA_VALUE
+    TEST_SOURCE_ACTION_CONFIRM_TRUE_NAME, TEST_SOURCE_LABEL_EDITED
 )
 
-from .base_mixins import SourceTestMixin
+from .base_mixins import SourceMetadataTestmixin, SourceTestMixin
 
 
-class DocumentFileSourceMetadataTestmixin(
-    DocumentTestMixin, SourceTestMixin
-):
-    _test_source_metadata_create_auto = True
-
-    def setUp(self):
-        super().setUp()
-
-        if self._test_source_metadata_create_auto:
-            self._test_source_metadata_create()
-
-    def _test_source_metadata_create(self):
-        self._test_document_file.source_metadata.create(
-            key=TEST_SOURCE_METADATA_KEY, source=self._test_source,
-            value=TEST_SOURCE_METADATA_VALUE
-        )
-
-
-class DocumentFileSourceMetadataViewTestMixin(
-    DocumentFileSourceMetadataTestmixin, DocumentTestMixin, SourceTestMixin
-):
+class DocumentFileSourceMetadataViewTestMixin(SourceMetadataTestmixin):
     def _request_test_document_file_source_metadata_list_view(self):
         return self.get(
             viewname='sources:document_file_source_metadata_list',
