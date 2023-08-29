@@ -1,14 +1,11 @@
 import json
 
-from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 from mayan.apps.testing.tests.base import MayanMigratorTestCase
 
 from .literals import TEST_EMAIL_SOURCE_PASSWORD, TEST_EMAIL_SOURCE_USERNAME
 
 
-class SourceBackendPathMigrationTestCase(
-    SourceTestMixin, MayanMigratorTestCase
-):
+class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
     auto_create_test_source = False
     migrate_from = ('sources', '0029_update_source_backend_paths')
     migrate_to = ('source_emails', '0001_update_source_backend_paths')
@@ -21,13 +18,13 @@ class SourceBackendPathMigrationTestCase(
             app_label='sources', model_name='Source'
         )
 
-        self._test_source_model = Source
-
-        self._test_source_create(
-            backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendIMAPEmail'
+        Source.objects.create(
+            backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendIMAPEmail',
+            label='test source IMAP'
         )
-        self._test_source_create(
-            backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendPOP3Email'
+        Source.objects.create(
+            backend_path='mayan.apps.sources.source_backends.email_backends.SourceBackendPOP3Email',
+            label='test source POP3'
         )
 
     def test_source_backend_path_updates(self):
@@ -36,19 +33,16 @@ class SourceBackendPathMigrationTestCase(
         )
 
         self.assertTrue(
-            Source.objects.get(label='test source_0').backend_path,
+            Source.objects.get(label='test source IMAP').backend_path,
             'mayan.apps.source_emails.source_backends.email_backends.SourceBackendIMAPEmail'
         )
         self.assertTrue(
-            Source.objects.get(label='test source_1').backend_path,
-            'mayan.apps.source_emails.source_backends.email_backends.SourceBackendIMAPEmail'
+            Source.objects.get(label='test source POP3').backend_path,
+            'mayan.apps.source_emails.source_backends.email_backends.SourceBackendPOP3Email'
         )
 
 
-class SourceBackendCredentialMigrationTestCase(
-    SourceTestMixin, MayanMigratorTestCase
-):
-    auto_create_test_source = False
+class SourceBackendCredentialMigrationTestCase(MayanMigratorTestCase):
     migrate_from = ('source_emails', '0001_update_source_backend_paths')
     migrate_to = ('source_emails', '0002_migrate_to_credentials')
 
@@ -60,26 +54,31 @@ class SourceBackendCredentialMigrationTestCase(
             app_label='sources', model_name='Source'
         )
 
-        self._test_source_model = Source
-
-        self._test_source_create(
-            backend_data={
-                'username': TEST_EMAIL_SOURCE_PASSWORD,
-                'password': TEST_EMAIL_SOURCE_USERNAME
-            },
-            backend_path='mayan.apps.source_emails.tests.email_backends.SourceBackendTestEmail'
+        Source.objects.create(
+            backend_data=json.dumps(
+                obj={
+                    'username': TEST_EMAIL_SOURCE_PASSWORD,
+                    'password': TEST_EMAIL_SOURCE_USERNAME
+                }
+            ),
+            backend_path='mayan.apps.source_emails.tests.email_backends.SourceBackendTestEmail',
+            label='test source email'
         )
 
     def test_source_backend_credential_migration(self):
         StoredCredential = self.old_state.apps.get_model(
             app_label='credentials', model_name='StoredCredential'
         )
+        Source = self.old_state.apps.get_model(
+            app_label='sources', model_name='Source'
+        )
 
         self.assertEqual(
             StoredCredential.objects.count(), 1
         )
 
-        self._test_source.refresh_from_db()
+        self._test_source = Source.objects.first()
+
         source_backend_data = json.loads(s=self._test_source.backend_data)
 
         test_stored_credential = StoredCredential.objects.first()

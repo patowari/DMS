@@ -13,15 +13,9 @@ from ..literals import (
 
 @tag('apps_sources')
 class SourceTestMixin:
-    """
-    _test_source_model: Allow tests to specify the Source object.
-                        Used by migration tests to supply old model
-                        schemas.
-    """
     _test_source_backend_path = None
     _test_source_create_auto = True
     _test_source_file_path = None
-    _test_source_model = Source
 
     def setUp(self):
         # Initialize the list first. Needed for migration tests.
@@ -67,7 +61,7 @@ class SourceTestMixin:
 
         backend_path = backend_path or self.get_test_source_backend_path()
 
-        self._test_source = self._test_source_model.objects.create(
+        self._test_source = Source.objects.create(
             backend_data=json_backend_data, backend_path=backend_path,
             label=backend_data['label']
         )

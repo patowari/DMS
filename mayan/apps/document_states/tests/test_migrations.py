@@ -1,10 +1,8 @@
 from mayan.apps.testing.tests.base import MayanMigratorTestCase
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-
 
 class WorkflowTemplateTransitionTriggerMigrationTestCase(
-    WorkflowTemplateTestMixin, MayanMigratorTestCase
+    MayanMigratorTestCase
 ):
     migrate_from = ('document_states', '0023_auto_20200930_0726')
     migrate_to = (
