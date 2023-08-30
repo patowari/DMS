@@ -152,7 +152,7 @@
 - Add new worker E and devote it for search tasks.
 - Eliminate the shared "Tools" queue. Each app is now responsible of defining
   its own queue for slow tasks.
-- Rebalance tasks queues.
+- Re-balance tasks queues.
 - Remove the unused signal ``signal_post_document_created``.
 - Remove the options ``--without-gossip`` and ``--without-heartbeat`` from
   the ``run_worker`` script.
@@ -218,11 +218,11 @@
 - Sources actions refactor:
 
   - Unify the sources action with new action, action
-    iterfaces and action interfaces argument classes.
+    interfaces and action interfaces argument classes.
   - The source action refactor converts source actions
     into reusable mixins.
-  - Each action is resposible to support multiple
-    interface type and the arguments for each
+  - Each action is responsible of supporting multiple
+    interface types and the arguments for each
     interface.
   - Add watch storage source.
   - New API endpoints to inspect and execute the
