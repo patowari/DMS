@@ -160,7 +160,7 @@ class DocumentDownloadViewTestCase(
 
     def test_document_download_post_view_with_single_file_access(self):
         self.grant_access(
-            obj=self._test_document_files[0],
+            obj=self._test_document_file_list[0],
             permission=permission_document_file_download
         )
 
@@ -346,7 +346,7 @@ class DocumentMultipleDownloadViewTestCase(
 
     def test_document_multiple_download_post_view_with_single_file_access(self):
         self.grant_access(
-            obj=self._test_document_files[0],
+            obj=self._test_document_file_list[0],
             permission=permission_document_file_download
         )
 

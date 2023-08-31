@@ -17,6 +17,7 @@ class DocumentVersionOCRIndexingTestCase(
     _test_index_template_node_expression = TEST_DOCUMENT_VERSION_OCR_INDEX_NODE_TEMPLATE
     auto_create_test_document_stub = True
     auto_create_test_document_version = True
+    auto_create_test_document_version_page = True
     auto_upload_test_document = False
 
     def test_indexing_not_document_version_ocr(self):
@@ -48,8 +49,8 @@ class DocumentVersionOCRIndexingTestCase(
         )
 
         self._test_document_version_page.ocr_content.content = TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
-
         self._test_document_version_page.ocr_content.save()
+
         value_edited = ' '.join(
             self._test_document.version_active.ocr_content()
         )

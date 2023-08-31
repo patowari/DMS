@@ -316,25 +316,25 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(events[1].action_object, self._test_documents[0])
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_document_files[0])
+        self.assertEqual(events[1].target, self._test_document_file_list[0])
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, self._test_documents[0])
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, self._test_document_files[0])
+        self.assertEqual(events[2].target, self._test_document_file_list[0])
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, self._test_documents[0])
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, self._test_document_versions[0])
+        self.assertEqual(events[3].target, self._test_document_version_list[0])
         self.assertEqual(events[3].verb, event_document_version_created.id)
 
         self.assertEqual(
-            events[4].action_object, self._test_document_versions[0]
+            events[4].action_object, self._test_document_version_list[0]
         )
         self.assertEqual(events[4].actor, self._test_case_user)
         self.assertEqual(
-            events[4].target, self._test_document_versions[0].pages.first()
+            events[4].target, self._test_document_version_list[0].pages.first()
         )
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
@@ -398,25 +398,25 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(events[1].action_object, self._test_documents[0])
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_document_files[0])
+        self.assertEqual(events[1].target, self._test_document_file_list[0])
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, self._test_documents[0])
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, self._test_document_files[0])
+        self.assertEqual(events[2].target, self._test_document_file_list[0])
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, self._test_documents[0])
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, self._test_document_versions[0])
+        self.assertEqual(events[3].target, self._test_document_version_list[0])
         self.assertEqual(events[3].verb, event_document_version_created.id)
 
         self.assertEqual(
-            events[4].action_object, self._test_document_versions[0]
+            events[4].action_object, self._test_document_version_list[0]
         )
         self.assertEqual(events[4].actor, self._test_case_user)
         self.assertEqual(
-            events[4].target, self._test_document_versions[0].pages.first()
+            events[4].target, self._test_document_version_list[0].pages.first()
         )
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id

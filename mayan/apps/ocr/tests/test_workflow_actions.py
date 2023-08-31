@@ -23,6 +23,7 @@ class UpdateDocumentPageOCRActionTestCase(
     WorkflowTemplateStateActionTestMixin, BaseTestCase
 ):
     auto_create_test_document_version = True
+    auto_create_test_document_version_page = True
 
     def test_workflow_action_document_version_page_update_action_no_page_condition_execution(self):
         self._create_test_document_version_ocr_content()

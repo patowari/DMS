@@ -33,8 +33,6 @@ def task_document_file_checksum_update(
         raise self.retry(exc=exception)
 
     try:
-        #TODO: save=True and don't ignore event if
-        #is_document_upload_sequence=False
         document_file.checksum_update(save=False)
         document_file._event_ignore = True
         document_file.save(
@@ -169,6 +167,7 @@ def task_document_file_delete(self, document_file_id, user_id=None):
 
     try:
         document_file._event_actor = user
+        document_file._event_keep_attributes = ('_event_actor',)
         document_file.delete()
     except OperationalError as exception:
         raise self.retry(exc=exception)
@@ -191,8 +190,6 @@ def task_document_file_mimetype_update(
         raise self.retry(exc=exception)
 
     try:
-        #TODO: save=True and don't ignore event if
-        #is_document_upload_sequence=False
         document_file.mimetype_update(save=False)
         document_file._event_ignore = True
         document_file.save(

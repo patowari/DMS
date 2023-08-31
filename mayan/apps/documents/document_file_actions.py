@@ -29,7 +29,7 @@ class DocumentFileActionAppendNewPages(DocumentFileAction):
         )
 
         document_version = DocumentVersion(
-            document=document, comment=comment
+            active=True, document=document, comment=comment
         )
         document_version._event_actor = user
         document_version.save()
@@ -63,7 +63,7 @@ class DocumentFileActionUseNewPages(DocumentFileAction):
         )
 
         document_version = DocumentVersion(
-            document=document, comment=comment
+            active=True, document=document, comment=comment
         )
         document_version._event_actor = user
         document_version.save()

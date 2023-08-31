@@ -152,7 +152,7 @@
 - Add new worker E and devote it for search tasks.
 - Eliminate the shared "Tools" queue. Each app is now responsible of defining
   its own queue for slow tasks.
-- Rebalance tasks queues.
+- Re-balance tasks queues.
 - Remove the unused signal ``signal_post_document_created``.
 - Remove the options ``--without-gossip`` and ``--without-heartbeat`` from
   the ``run_worker`` script.
@@ -218,11 +218,11 @@
 - Sources actions refactor:
 
   - Unify the sources action with new action, action
-    iterfaces and action interfaces argument classes.
+    interfaces and action interfaces argument classes.
   - The source action refactor converts source actions
     into reusable mixins.
-  - Each action is resposible to support multiple
-    interface type and the arguments for each
+  - Each action is responsible of supporting multiple
+    interface types and the arguments for each
     interface.
   - Add watch storage source.
   - New API endpoints to inspect and execute the
@@ -304,6 +304,17 @@
   - Formalize ``PropertyHelper`` behaviors and testing. Closes GitLab
     issue #664. Thanks to Light Templar (@LightTemplar) for the report.
   - Tag all ``PropertyHelper`` with ``classes_property_helper``.
+
+- Add document file introspection link and view. This view re-scans the
+  document file and populates the size, checksum, and mimetype files. It also
+  updates the document file page count and creates a new document version
+  linking all discovered file pages. This view replaces the document file
+  page count update view.
+- Deleting a document file page will now also delete any document version
+  page linked to it.
+- New document versions create manually will not become active by default.
+  Only new document versions created as a result of a document file upload
+  will become active by default.
 
 4.4.8 (2023-07-15)
 ==================

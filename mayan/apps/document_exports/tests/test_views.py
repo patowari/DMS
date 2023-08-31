@@ -1,7 +1,4 @@
 from mayan.apps.documents.tests.base import GenericTransactionDocumentViewTestCase
-from mayan.apps.documents.tests.mixins.document_version_mixins import (
-    DocumentVersionTestMixin, DocumentVersionViewTestMixin
-)
 from mayan.apps.messaging.events import event_message_created
 from mayan.apps.messaging.models import Message
 from mayan.apps.storage.events import event_download_file_created
@@ -14,8 +11,8 @@ from .mixins import DocumentVersionExportViewTestMixin
 
 
 class DocumentVersionExportViewTestCase(
-    DocumentVersionExportViewTestMixin, DocumentVersionTestMixin,
-    DocumentVersionViewTestMixin, GenericTransactionDocumentViewTestCase
+    DocumentVersionExportViewTestMixin,
+    GenericTransactionDocumentViewTestCase
 ):
     """
     Use a transaction test case to test the transaction.on_commit code

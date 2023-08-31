@@ -1,9 +1,5 @@
 from rest_framework import status
 
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
-from mayan.apps.documents.tests.mixins.document_version_mixins import (
-    DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin
-)
 from mayan.apps.messaging.events import event_message_created
 from mayan.apps.messaging.models import Message
 from mayan.apps.rest_api.tests.base import BaseAPITransactionTestCase
@@ -17,9 +13,7 @@ from .mixins import DocumentVersionExportAPIViewTestMixin
 
 
 class DocumentVersionExportAPIViewTestCase(
-    DocumentVersionAPIViewTestMixin, DocumentTestMixin,
-    DocumentVersionExportAPIViewTestMixin, DocumentVersionTestMixin,
-    BaseAPITransactionTestCase
+    DocumentVersionExportAPIViewTestMixin, BaseAPITransactionTestCase
 ):
     def test_document_version_export_api_view_via_get_no_permission(self):
         download_file_count = DownloadFile.objects.count()

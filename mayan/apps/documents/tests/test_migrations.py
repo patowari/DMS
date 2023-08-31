@@ -235,19 +235,19 @@ class DocumentVersionActiveMigrationTestCase(
             document_type=self._test_document_type, label='test document'
         )
 
-        self._test_document_versions = []
-        self._test_document_versions.append(
+        self._test_document_version_list = []
+        self._test_document_version_list.append(
             DocumentVersion.objects.create(document_id=self._test_document.pk)
         )
-        self._test_document_versions.append(
+        self._test_document_version_list.append(
             DocumentVersion.objects.create(document_id=self._test_document.pk)
         )
 
         DocumentPage.objects.create(
-            document_version_id=self._test_document_versions[0].pk
+            document_version_id=self._test_document_version_list[0].pk
         )
         DocumentPage.objects.create(
-            document_version_id=self._test_document_versions[1].pk
+            document_version_id=self._test_document_version_list[1].pk
         )
 
     def test_single_active_version(self):

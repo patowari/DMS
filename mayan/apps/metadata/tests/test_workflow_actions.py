@@ -26,12 +26,12 @@ from .literals import (
     DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH, TEST_METADATA_VALUE,
     TEST_METADATA_VALUE_EDITED
 )
-from .mixins import DocumentMetadataMixin, MetadataTypeTestMixin
+from .mixins import DocumentMetadataMixin
 
 
 class DocumentMetadataActionTestCase(
-    DocumentMetadataMixin, MetadataTypeTestMixin,
-    WorkflowTemplateStateActionTestMixin, GenericDocumentViewTestCase
+    DocumentMetadataMixin, WorkflowTemplateStateActionTestMixin,
+    GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -126,8 +126,8 @@ class DocumentMetadataActionTestCase(
 
 
 class DocumentMetadataActionViewTestCase(
-    DocumentMetadataMixin, MetadataTypeTestMixin,
-    WorkflowTemplateStateActionViewTestMixin, GenericDocumentViewTestCase
+    DocumentMetadataMixin, WorkflowTemplateStateActionViewTestMixin,
+    GenericDocumentViewTestCase
 ):
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False

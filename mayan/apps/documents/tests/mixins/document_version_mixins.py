@@ -16,6 +16,8 @@ from ..literals import (
     TEST_TRANSFORMATION_CLASS
 )
 
+from .document_mixins import DocumentTestMixin
+
 
 class DocumentVersionAPIViewTestMixin:
     def _request_test_document_version_create_api_view(self):
@@ -217,20 +219,36 @@ class DocumentVersionPageAPIViewTestMixin:
         )
 
 
-class DocumentVersionTestMixin:
+class DocumentVersionTestMixin(DocumentTestMixin):
     auto_create_test_document_version = False
+    auto_create_test_document_version_page = False
 
     def setUp(self):
         super().setUp()
-        self._test_document_versions = []
+
         if self.auto_create_test_document_version:
             self._create_test_document_version()
 
-    def _create_test_document_version(self):
-        self._test_document_version = self._test_document.versions.create()
-        self._test_document_versions.append(self._test_document_version)
+        if self.auto_create_test_document_version_page:
+            self._create_test_document_version_page()
 
+    def _create_test_document_version(self, user=None):
+        if self._test_document.versions.count() == 0:
+            active = True
+        else:
+            active = False
+
+        self._test_document_version = DocumentVersion(
+            active=active, document=self._test_document
+        )
+        self._test_document_version._event_actor = user
+        self._test_document_version.save()
+
+        self._test_document_version_list.append(self._test_document_version)
+
+    def _create_test_document_version_page(self):
         self._document_version_page_source_object = self._test_document
+
         content_type = ContentType.objects.get_for_model(
             model=self._document_version_page_source_object
         )
