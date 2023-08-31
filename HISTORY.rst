@@ -318,6 +318,12 @@
 - Pass the source backend action to ``get_upload_form_class`` to allow more
   dynamic field changes based on the action too.
 - Disable compressed document file uploads which are not longer supported.
+- Ensure the Keycloak database name is the same as the Keycloak PostreSQL
+  one.
+- Rename all environment variables containing ``POSTGRES`` to use the full
+  name ``POSTGRESQL``. These are: ``MAYAN_DOCKER_KEYCLOAK_POSTGRES_TAG``,
+  ``MAYAN_KEYCLOAK_POSTGRES_VOLUME``, ``MAYAN_DOCKER_POSTGRES_IMAGE``,
+  ``MAYAN_POSTGRES_VOLUME``.
 
 4.4.8 (2023-07-15)
 ==================
