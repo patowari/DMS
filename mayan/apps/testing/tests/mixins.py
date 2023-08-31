@@ -309,11 +309,11 @@ class RandomPrimaryKeyModelMonkeyPatchMixin:
 
     def setUp(self):
         if self.random_primary_key_enable:
-            self.method_save_original = models.Model.save
+            self.method_original_save = models.Model.save
 
-            def method_save_new(instance, *args, **kwargs):
+            def method_new_save(instance, *args, **kwargs):
                 if instance.pk:
-                    return self.method_save_original(
+                    return self.method_original_save(
                         instance, *args, **kwargs
                     )
                 else:
@@ -349,12 +349,13 @@ class RandomPrimaryKeyModelMonkeyPatchMixin:
 
                     return result
 
-            setattr(models.Model, 'save', method_save_new)
+            setattr(models.Model, 'save', method_new_save)
+
         super().setUp()
 
     def tearDown(self):
         if self.random_primary_key_enable:
-            models.Model.save = self.method_save_original
+            models.Model.save = self.method_original_save
         super().tearDown()
 
 
