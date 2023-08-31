@@ -75,7 +75,11 @@ class UploadBaseView(
 
         backend_instance = self.source.get_backend_instance()
 
-        source_form = backend_instance.get_upload_form_class()
+        view_source_action = self.get_view_source_action()
+
+        action = self.source.get_action(name=view_source_action)
+
+        source_form = backend_instance.get_upload_form_class(action=action)
 
         if source_form:
             result['source_form'] = source_form

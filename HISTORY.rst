@@ -315,6 +315,8 @@
 - New document versions create manually will not become active by default.
   Only new document versions created as a result of a document file upload
   will become active by default.
+- Pass the source backend action to ``get_upload_form_class`` to allow more
+  dynamic field changes based on the action too.
 
 4.4.8 (2023-07-15)
 ==================
