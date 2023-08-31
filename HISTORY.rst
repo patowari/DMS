@@ -317,6 +317,7 @@
   will become active by default.
 - Pass the source backend action to ``get_upload_form_class`` to allow more
   dynamic field changes based on the action too.
+- Disable compressed document file uploads which are not longer supported.
 
 4.4.8 (2023-07-15)
 ==================

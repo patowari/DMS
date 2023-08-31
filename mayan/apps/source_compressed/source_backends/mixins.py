@@ -78,10 +78,12 @@ class SourceBackendMixinCompressed:
 
         return results
 
-    def get_upload_form_class(self):
+    def get_upload_form_class(self, action):
         backend_instance = self
 
-        super_upload_form_class = super().get_upload_form_class()
+        super_upload_form_class = super().get_upload_form_class(
+            action=action
+        )
 
         class CompressedSourceUploadForm(super_upload_form_class):
             expand = forms.BooleanField(
@@ -96,7 +98,7 @@ class SourceBackendMixinCompressed:
                 self.field_order = ['expand']
                 super().__init__(*args, **kwargs)
 
-                if backend_instance.kwargs['uncompress'] != SOURCE_UNCOMPRESS_CHOICE_ASK:
+                if backend_instance.kwargs['uncompress'] != SOURCE_UNCOMPRESS_CHOICE_ASK or action.name == 'document_file_upload':
                     self.fields.pop('expand')
 
         return CompressedSourceUploadForm
