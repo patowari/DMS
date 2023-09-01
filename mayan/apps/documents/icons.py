@@ -100,9 +100,6 @@ icon_document_type_setup = icon_document_type
 
 # Document
 
-icon_document_file_page_count_update = Icon(
-    driver_name='fontawesome', symbol='copy'
-)
 icon_document_list = Icon(driver_name='fontawesome', symbol='book')
 icon_document_preview = Icon(driver_name='fontawesome', symbol='eye')
 icon_document_properties_detail = Icon(
@@ -123,6 +120,9 @@ icon_document_file_delete = Icon(
 )
 icon_document_file_edit = Icon(
     driver_name='fontawesome', symbol='pencil-alt'
+)
+icon_document_file_introspect = Icon(
+    driver_name='fontawesome', symbol='copy'
 )
 icon_document_file_list = Icon(
     driver_name='fontawesome', symbol='hdd'

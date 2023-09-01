@@ -305,6 +305,26 @@
     issue #664. Thanks to Light Templar (@LightTemplar) for the report.
   - Tag all ``PropertyHelper`` with ``classes_property_helper``.
 
+- Add document file introspection link and view. This view re-scans the
+  document file and populates the size, checksum, and mimetype files. It also
+  updates the document file page count and creates a new document version
+  linking all discovered file pages. This view replaces the document file
+  page count update view.
+- Deleting a document file page will now also delete any document version
+  page linked to it.
+- New document versions create manually will not become active by default.
+  Only new document versions created as a result of a document file upload
+  will become active by default.
+- Pass the source backend action to ``get_upload_form_class`` to allow more
+  dynamic field changes based on the action too.
+- Disable compressed document file uploads which are not longer supported.
+- Ensure the Keycloak database name is the same as the Keycloak PostreSQL
+  one.
+- Rename all environment variables containing ``POSTGRES`` to use the full
+  name ``POSTGRESQL``. These are: ``MAYAN_DOCKER_KEYCLOAK_POSTGRES_TAG``,
+  ``MAYAN_KEYCLOAK_POSTGRES_VOLUME``, ``MAYAN_DOCKER_POSTGRES_IMAGE``,
+  ``MAYAN_POSTGRES_VOLUME``.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.

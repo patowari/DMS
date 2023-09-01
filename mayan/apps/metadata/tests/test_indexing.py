@@ -6,12 +6,11 @@ from .literals import (
     TEST_METADATA_INDEX_NODE_TEMPLATE, TEST_METADATA_VALUE,
     TEST_METADATA_TYPE_LABEL_EDITED, TEST_METADATA_VALUE_EDITED
 )
-from .mixins import DocumentMetadataMixin, MetadataTypeTestMixin
+from .mixins import DocumentMetadataMixin
 
 
 class MetadataIndexingTestCase(
-    IndexTemplateTestMixin, DocumentMetadataMixin, MetadataTypeTestMixin,
-    GenericDocumentTestCase
+    IndexTemplateTestMixin, DocumentMetadataMixin, GenericDocumentTestCase
 ):
     _test_index_template_node_expression = TEST_METADATA_INDEX_NODE_TEMPLATE
     auto_create_test_document_stub = True

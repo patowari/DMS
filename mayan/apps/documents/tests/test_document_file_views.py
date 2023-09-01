@@ -10,11 +10,14 @@ from mayan.apps.file_caching.permissions import permission_cache_partition_purge
 from mayan.apps.file_caching.tests.mixins import CachePartitionViewTestMixin
 
 from ..events import (
-    event_document_file_deleted, event_document_file_edited
+    event_document_file_deleted, event_document_file_edited,
+    event_document_version_created, event_document_version_page_created,
+    event_document_version_page_deleted
 )
 from ..permissions import (
     permission_document_file_delete, permission_document_file_edit,
-    permission_document_file_print, permission_document_file_view
+    permission_document_file_print, permission_document_file_tools,
+    permission_document_file_view
 )
 
 from .base import GenericDocumentViewTestCase
@@ -22,6 +25,240 @@ from .mixins.document_file_mixins import (
     DocumentFileTestMixin, DocumentFileTransformationTestMixin,
     DocumentFileTransformationViewTestMixin, DocumentFileViewTestMixin
 )
+
+
+class DocumentFileIntrospectViewTestCase(
+    DocumentFileViewTestMixin, GenericDocumentViewTestCase
+):
+    def setUp(self):
+        super().setUp()
+        for document_file_page in self._test_document_file.pages.all():
+            document_file_page.delete()
+
+        self._test_document_file_page_count = self._test_document_file.pages.count()
+        self._test_document_file_checksum = self._test_document_file.checksum
+        self._test_document_file_size = self._test_document_file.size
+        self._test_document_version_page_count = self._test_document_version.pages.count()
+
+        self._test_document_file.checksum = None
+        self._test_document_file.size = 0
+        self._test_document_file.save()
+
+    def test_document_file_introspect_single_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_test_document_file_introspect_single_view()
+        self.assertEqual(response.status_code, 404)
+
+        self._test_document_file.refresh_from_db()
+        self._test_document.refresh_from_db()
+        self._test_document_version = self._test_document.version_active
+        self._test_document_version_page = self._test_document_version.pages.first()
+
+        self.assertEqual(
+            self._test_document_file.pages.count(),
+            self._test_document_file_page_count
+        )
+        self.assertEqual(self._test_document_file.size, 0)
+        self.assertEqual(self._test_document_file.checksum, None)
+        self.assertEqual(
+            self._test_document_version.pages.count(),
+            self._test_document_version_page_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_introspect_single_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document, permission=permission_document_file_tools
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_introspect_single_view()
+        self.assertEqual(response.status_code, 302)
+
+        self._test_document_file.refresh_from_db()
+        self._test_document.refresh_from_db()
+        self._test_document_version = self._test_document.version_active
+        self._test_document_version_page = self._test_document_version.pages.first()
+
+        self.assertEqual(
+            self._test_document_file.pages.count(),
+            self._test_document_file_page_count + 1
+        )
+        self.assertEqual(
+            self._test_document_file.size, self._test_document_file_size
+        )
+        self.assertEqual(
+            self._test_document_file.checksum,
+            self._test_document_file_checksum
+        )
+        self.assertEqual(
+            self._test_document_version.pages.count(),
+            self._test_document_version_page_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 3)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_document_file)
+        self.assertEqual(events[0].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, self._test_document_version)
+        self.assertEqual(events[1].verb, event_document_version_created.id)
+
+        self.assertEqual(events[2].action_object, self._test_document_version)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, self._test_document_version_page)
+        self.assertEqual(
+            events[2].verb, event_document_version_page_created.id
+        )
+
+    def test_trashed_document_file_introspect_single_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document, permission=permission_document_file_tools
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_test_document_file_introspect_single_view()
+        self.assertEqual(response.status_code, 404)
+
+        self._test_document_file.refresh_from_db()
+        self._test_document.refresh_from_db()
+        self._test_document_version = self._test_document.version_active
+        self._test_document_version_page = self._test_document_version.pages.first()
+
+        self.assertEqual(
+            self._test_document_file.pages.count(),
+            self._test_document_file_page_count
+        )
+        self.assertEqual(self._test_document_file.size, 0)
+        self.assertEqual(self._test_document_file.checksum, None)
+        self.assertEqual(
+            self._test_document_version.pages.count(),
+            self._test_document_version_page_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_introspect_multiple_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_test_document_file_introspect_multiple_view()
+        self.assertEqual(response.status_code, 404)
+
+        self._test_document_file.refresh_from_db()
+        self._test_document.refresh_from_db()
+        self._test_document_version = self._test_document.version_active
+        self._test_document_version_page = self._test_document_version.pages.first()
+
+        self.assertEqual(
+            self._test_document_file.pages.count(),
+            self._test_document_file_page_count
+        )
+        self.assertEqual(self._test_document_file.size, 0)
+        self.assertEqual(self._test_document_file.checksum, None)
+        self.assertEqual(
+            self._test_document_version.pages.count(),
+            self._test_document_version_page_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_introspect_multiple_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document_file,
+            permission=permission_document_file_tools
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_introspect_multiple_view()
+        self.assertEqual(response.status_code, 302)
+
+        self._test_document_file.refresh_from_db()
+        self._test_document.refresh_from_db()
+        self._test_document_version = self._test_document.version_active
+        self._test_document_version_page = self._test_document_version.pages.first()
+
+        self.assertEqual(
+            self._test_document_file.pages.count(),
+            self._test_document_file_page_count + 1
+        )
+        self.assertEqual(
+            self._test_document_file.size, self._test_document_file_size
+        )
+        self.assertEqual(
+            self._test_document_file.checksum,
+            self._test_document_file_checksum
+        )
+        self.assertEqual(
+            self._test_document_version.pages.count(),
+            self._test_document_version_page_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 3)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_document_file)
+        self.assertEqual(events[0].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, self._test_document_version)
+        self.assertEqual(events[1].verb, event_document_version_created.id)
+
+        self.assertEqual(events[2].action_object, self._test_document_version)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, self._test_document_version_page)
+        self.assertEqual(
+            events[2].verb, event_document_version_page_created.id
+        )
+
+    def test_trashed_document_file_introspect_multiple_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document_file,
+            permission=permission_document_file_tools
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_test_document_file_introspect_multiple_view()
+        self.assertEqual(response.status_code, 404)
+
+        self._test_document_file.refresh_from_db()
+        self._test_document.refresh_from_db()
+        self._test_document_version = self._test_document.version_active
+        self._test_document_version_page = self._test_document_version.pages.first()
+
+        self.assertEqual(
+            self._test_document_file.pages.count(),
+            self._test_document_file_page_count
+        )
+        self.assertEqual(self._test_document_file.size, 0)
+        self.assertEqual(self._test_document_file.checksum, None)
+        self.assertEqual(
+            self._test_document_version.pages.count(),
+            self._test_document_version_page_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class DocumentFileViewTestCase(
@@ -71,12 +308,21 @@ class DocumentFileViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 1)
+        self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_document)
-        self.assertEqual(events[0].verb, event_document_file_deleted.id)
+        self.assertEqual(
+            events[0].target, self._test_document_version_list[0]
+        )
+        self.assertEqual(
+            events[0].verb, event_document_version_page_deleted.id
+        )
+
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, self._test_document)
+        self.assertEqual(events[1].verb, event_document_file_deleted.id)
 
     def test_trashed_document_file_delete_with_access(self):
         first_file = self._test_document.file_latest
@@ -144,12 +390,19 @@ class DocumentFileViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 1)
+        self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_document)
-        self.assertEqual(events[0].verb, event_document_file_deleted.id)
+        self.assertEqual(events[0].target, self._test_document_version)
+        self.assertEqual(
+            events[0].verb, event_document_version_page_deleted.id
+        )
+
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, self._test_document)
+        self.assertEqual(events[1].verb, event_document_file_deleted.id)
 
     def test_document_file_edit_view_no_permission(self):
         document_file_comment = self._test_document_file.comment

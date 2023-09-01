@@ -15,7 +15,6 @@ from ..permissions import (
     permission_document_version_edit, permission_document_version_view
 )
 
-from .mixins.document_mixins import DocumentTestMixin
 from .mixins.document_file_mixins import DocumentFileTestMixin
 from .mixins.document_version_mixins import (
     DocumentVersionModificationAPIViewTestMixin, DocumentVersionAPIViewTestMixin,
@@ -24,9 +23,8 @@ from .mixins.document_version_mixins import (
 
 
 class DocumentVersionModificationAPIViewTestCase(
-    DocumentFileTestMixin, DocumentTestMixin,
-    DocumentVersionModificationAPIViewTestMixin, DocumentVersionTestMixin,
-    BaseAPITestCase
+    DocumentFileTestMixin, DocumentVersionModificationAPIViewTestMixin,
+    DocumentVersionTestMixin, BaseAPITestCase
 ):
     def test_document_version_action_page_append_api_view_no_permission(self):
         self._upload_test_document_file(
@@ -42,7 +40,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.count(),
-            self._test_document_files[0].pages.count()
+            self._test_document_file_list[0].pages.count()
         )
 
         events = self._get_test_events()
@@ -67,7 +65,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.count(),
-            self._test_document_files[0].pages.count() + self._test_document_files[1].pages.count()
+            self._test_document_file_list[0].pages.count() + self._test_document_file_list[1].pages.count()
         )
 
         events = self._get_test_events()
@@ -118,7 +116,7 @@ class DocumentVersionModificationAPIViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.count(),
-            self._test_document_files[0].pages.count()
+            self._test_document_file_list[0].pages.count()
         )
 
         events = self._get_test_events()
@@ -138,12 +136,12 @@ class DocumentVersionModificationAPIViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.count(),
-            self._test_document_files[0].pages.count() + self._test_document_files[1].pages.count()
+            self._test_document_file_list[0].pages.count() + self._test_document_file_list[1].pages.count()
         )
 
         self.assertEqual(
             self._test_document_version.pages.all()[0].content_object,
-            self._test_document_file_pages[0]
+            self._test_document_file_page_list[0]
         )
 
         events = self._get_test_events()
@@ -168,12 +166,12 @@ class DocumentVersionModificationAPIViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.count(),
-            self._test_document_files[0].pages.count()
+            self._test_document_file_list[0].pages.count()
         )
 
         self.assertEqual(
             self._test_document_version.pages.all()[0].content_object,
-            self._test_document_file_pages[1]
+            self._test_document_file_page_list[1]
         )
 
         events = self._get_test_events()
@@ -223,12 +221,12 @@ class DocumentVersionModificationAPIViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.count(),
-            self._test_document_files[0].pages.count() + self._test_document_files[1].pages.count()
+            self._test_document_file_list[0].pages.count() + self._test_document_file_list[1].pages.count()
         )
 
         self.assertEqual(
             self._test_document_version.pages.all()[0].content_object,
-            self._test_document_file_pages[0]
+            self._test_document_file_page_list[0]
         )
 
         events = self._get_test_events()
@@ -236,8 +234,8 @@ class DocumentVersionModificationAPIViewTestCase(
 
 
 class DocumentVersionAPIViewTestCase(
-    DocumentVersionAPIViewTestMixin, DocumentTestMixin,
-    DocumentVersionTestMixin, BaseAPITestCase
+    DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin,
+    BaseAPITestCase
 ):
     def test_document_version_create_api_view_no_permission(self):
         document_version_count = self._test_document.versions.count()

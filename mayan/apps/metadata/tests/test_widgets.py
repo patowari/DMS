@@ -13,12 +13,11 @@ from mayan.apps.dynamic_search.tests.mixins.view_mixins import SearchViewTestMix
 
 from ..permissions import permission_document_metadata_view
 
-from .mixins import DocumentMetadataMixin, MetadataTypeTestMixin
+from .mixins import DocumentMetadataMixin
 
 
 class DocumentSearchResultWidgetViewTestCase(
-    DocumentMetadataMixin, MetadataTypeTestMixin, SearchViewTestMixin,
-    GenericDocumentViewTestCase
+    DocumentMetadataMixin, SearchViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

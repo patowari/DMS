@@ -146,10 +146,14 @@ class DocumentFile(
     @method_event(
         event_manager_class=EventManagerMethodAfter,
         event=event_document_file_deleted,
-        target='document',
+        target='document'
     )
-    def delete(self, *args, **kwargs):
+    def delete(self, user=None, *args, **kwargs):
+        if user:
+            self._event_actor = user
+
         for page in self.pages.all():
+            page._event_actor = getattr(self, '_event_actor', None)
             page.delete()
 
         name = self.file.name

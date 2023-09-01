@@ -45,18 +45,19 @@ class DocumentVersionBusinessLogicMixin:
     def active_set(self, save=True):
         with transaction.atomic():
             self.document.versions.exclude(pk=self.pk).update(active=False)
+
             self.active = True
-            self.document.version_active = self
 
             if save:
                 self.save(
                     update_fields=('active',)
                 )
 
-                self.document._event_ignore = True
-                self.document.save(
-                    update_fields=('version_active',)
-                )
+            self.document.version_active = self
+            self.document._event_ignore = True
+            self.document.save(
+                update_fields=('version_active',)
+            )
 
     @cached_property
     def cache(self):

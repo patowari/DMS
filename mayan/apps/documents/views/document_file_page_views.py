@@ -4,7 +4,7 @@ from furl import furl
 
 from django.contrib import messages
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView
 
 from mayan.apps.common.settings import setting_home_view
@@ -13,75 +13,25 @@ from mayan.apps.converter.transformations import (
     TransformationResize, TransformationRotate, TransformationZoom
 )
 from mayan.apps.databases.classes import ModelQueryFields
-from mayan.apps.views.generics import (
-    MultipleObjectConfirmActionView, SimpleView, SingleObjectListView
-)
+from mayan.apps.views.generics import SimpleView, SingleObjectListView
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import resolve
 
 from ..forms.document_file_page_forms import DocumentFilePageForm
 from ..icons import (
-    icon_document_file_page_count_update, icon_document_file_page_list,
-    icon_document_file_page_detail
+    icon_document_file_page_list, icon_document_file_page_detail
 )
-from ..links.document_file_page_links import link_document_file_page_count_update
+from ..links.document_file_links import link_document_file_introspect_single
 from ..models.document_file_models import DocumentFile
 from ..models.document_file_page_models import DocumentFilePage
-from ..permissions import (
-    permission_document_file_tools, permission_document_file_view
-)
+from ..permissions import permission_document_file_view
 from ..settings import (
     setting_display_height, setting_display_width, setting_rotation_step,
     setting_zoom_percent_step, setting_zoom_max_level,
     setting_zoom_min_level
 )
-from ..tasks import task_document_file_page_count_update
 
 logger = logging.getLogger(name=__name__)
-
-
-class DocumentFilePageCountUpdateView(MultipleObjectConfirmActionView):
-    object_permission = permission_document_file_tools
-    pk_url_kwarg = 'document_file_id'
-    source_queryset = DocumentFile.valid.all()
-    success_message = _(
-        '%(count)d document file queued for page count recalculation.'
-    )
-    success_message_plural = _(
-        '%(count)d document files queued for page count recalculation.'
-    )
-    view_icon = icon_document_file_page_count_update
-
-    def get_extra_context(self):
-        queryset = self.object_list
-
-        result = {
-            'title': ungettext(
-                singular='Recalculate the page count of the selected document file?',
-                plural='Recalculate the page count of the selected document files?',
-                number=queryset.count()
-            )
-        }
-
-        if queryset.count() == 1:
-            result.update(
-                {
-                    'object': queryset.first(),
-                    'title': _(
-                        'Recalculate the page count of the document file: %s?'
-                    ) % queryset.first()
-                }
-            )
-
-        return result
-
-    def object_action(self, form, instance):
-        task_document_file_page_count_update.apply_async(
-            kwargs={
-                'document_file_id': instance.pk,
-                'user_id': self.request.user.pk
-            }
-        )
 
 
 class DocumentFilePageListView(
@@ -97,14 +47,14 @@ class DocumentFilePageListView(
             'hide_object': True,
             'list_as_items': True,
             'no_results_icon': icon_document_file_page_list,
-            'no_results_main_link': link_document_file_page_count_update.resolve(
+            'no_results_main_link': link_document_file_introspect_single.resolve(
                 request=self.request, resolved_object=self.external_object
             ),
             'no_results_text': _(
                 'This could mean that the document file is of a format that '
-                'is not supported, that it is corrupted or that the upload '
-                'process was interrupted. Use the document file page '
-                'recalculation action to attempt to introspect the page '
+                'is not supported, that it is corrupted, or that the upload '
+                'process was interrupted. Use the document file '
+                'introspection link to attempt detection the page '
                 'count again.'
             ),
             'no_results_title': _('No document file pages available'),

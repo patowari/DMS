@@ -1,3 +1,13 @@
+Docker
+^^^^^^
+
+Renamed all environment variables containing ``POSTGRES`` to use the full
+name ``POSTGRESQL``. These are: ``MAYAN_DOCKER_KEYCLOAK_POSTGRES_TAG``,
+``MAYAN_KEYCLOAK_POSTGRES_VOLUME``, ``MAYAN_DOCKER_POSTGRES_IMAGE``,
+``MAYAN_POSTGRES_VOLUME``.
+
+Rename any usage of these variables in your ``.env`` file.
+
 Documents
 ^^^^^^^^^
 

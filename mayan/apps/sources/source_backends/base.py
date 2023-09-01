@@ -118,7 +118,7 @@ class SourceBackend(
         for source_backend in cls.get_all():
             source_backend.intialize()
 
-    def get_upload_form_class(self):
+    def get_upload_form_class(self, action):
         # Hidden import to avoid model that are not ready yet. This happens
         # as `DocumentForm` is imported in `forms.py`.
         from ..forms import UploadBaseForm

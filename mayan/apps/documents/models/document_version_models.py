@@ -38,7 +38,7 @@ class DocumentVersion(
         ), verbose_name=_('Comment')
     )
     active = models.BooleanField(
-        default=True, help_text=_(
+        default=False, help_text=_(
             'Determines the active version of the document.'
         ), verbose_name=_('Active')
     )
@@ -92,16 +92,13 @@ class DocumentVersion(
 
         if new_document_version:
             with transaction.atomic():
-                if self.active:
-                    self.active_set(save=False)
-
                 result = super().save(*args, **kwargs)
 
                 if self.active:
-                    self.document._event_ignore = True
-                    self.document.save(
-                        update_fields=('version_active',)
-                    )
+                    # Don't save the same version again. The active value
+                    # was already save in the previous super call to
+                    # .save().
+                    self.active_set(save=False)
 
                 return result
         else:

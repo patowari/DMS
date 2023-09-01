@@ -92,7 +92,8 @@ from .links.document_links import (
 )
 from .links.document_file_links import (
     link_document_file_delete, link_document_file_multiple_delete,
-    link_document_file_edit, link_document_file_list,
+    link_document_file_edit, link_document_file_introspect_multiple,
+    link_document_file_introspect_single, link_document_file_list,
     link_document_file_preview, link_document_file_print_form,
     link_document_file_properties, link_document_file_return_to_document,
     link_document_file_return_list, link_document_file_transformations_clear,
@@ -100,9 +101,7 @@ from .links.document_file_links import (
     link_document_file_transformations_clone
 )
 from .links.document_file_page_links import (
-    link_document_file_multiple_page_count_update,
-    link_document_file_page_count_update, link_document_file_page_list,
-    link_document_file_page_navigation_first,
+    link_document_file_page_list, link_document_file_page_navigation_first,
     link_document_file_page_navigation_last,
     link_document_file_page_navigation_next,
     link_document_file_page_navigation_previous,
@@ -806,7 +805,7 @@ class DocumentsApp(MayanAppConfig):
         menu_multi_item.bind_links(
             links=(
                 link_document_file_multiple_delete,
-                link_document_file_multiple_page_count_update,
+                link_document_file_introspect_multiple,
                 link_document_file_multiple_transformations_clear,
             ), sources=(DocumentFile,)
         )
@@ -815,7 +814,7 @@ class DocumentsApp(MayanAppConfig):
                 link_cache_partition_purge,
                 link_document_file_delete,
                 link_document_file_edit,
-                link_document_file_page_count_update,
+                link_document_file_introspect_single,
                 link_document_file_print_form,
                 link_document_file_transformations_clear,
                 link_document_file_transformations_clone

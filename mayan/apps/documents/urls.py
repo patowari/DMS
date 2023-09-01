@@ -35,18 +35,18 @@ from .api_views.trashed_document_api_views import (
 )
 from .views.document_file_views import (
     DocumentFileDeleteView, DocumentFileEditView, DocumentFileListView,
-    DocumentFilePrintFormView, DocumentFilePrintView,
-    DocumentFilePropertiesView, DocumentFilePreviewView,
-    DocumentFileTransformationsClearView,
+    DocumentFileIntrospectView, DocumentFilePrintFormView,
+    DocumentFilePrintView, DocumentFilePropertiesView,
+    DocumentFilePreviewView, DocumentFileTransformationsClearView,
     DocumentFileTransformationsCloneView
 )
 from .views.document_file_page_views import (
-    DocumentFilePageCountUpdateView, DocumentFilePageListView,
-    DocumentFilePageNavigationFirst, DocumentFilePageNavigationLast,
-    DocumentFilePageNavigationNext, DocumentFilePageNavigationPrevious,
-    DocumentFilePageRotateLeftView, DocumentFilePageRotateRightView,
-    DocumentFilePageView, DocumentFilePageViewResetView,
-    DocumentFilePageZoomInView, DocumentFilePageZoomOutView
+    DocumentFilePageListView, DocumentFilePageNavigationFirst,
+    DocumentFilePageNavigationLast, DocumentFilePageNavigationNext,
+    DocumentFilePageNavigationPrevious, DocumentFilePageRotateLeftView,
+    DocumentFilePageRotateRightView, DocumentFilePageView,
+    DocumentFilePageViewResetView, DocumentFilePageZoomInView,
+    DocumentFilePageZoomOutView
 )
 from .views.document_type_retention_policy_views import DocumentTypeRetentionPoliciesEditView
 from .views.document_type_views import (
@@ -116,6 +116,16 @@ urlpatterns_document_files = [
         view=DocumentFileEditView.as_view()
     ),
     url(
+        regex=r'^documents/files/(?P<document_file_id>\d+)/introspect/$',
+        name='document_file_introspect_single',
+        view=DocumentFileIntrospectView.as_view()
+    ),
+    url(
+        regex=r'^documents/files/multiple/introspect/$',
+        name='document_file_introspect_multiple',
+        view=DocumentFileIntrospectView.as_view()
+    ),
+    url(
         regex=r'^documents/files/(?P<document_file_id>\d+)/print/form/$',
         name='document_file_print_form',
         view=DocumentFilePrintFormView.as_view()
@@ -150,16 +160,6 @@ urlpatterns_document_file_pages = [
     url(
         regex=r'^documents/files/(?P<document_file_id>\d+)/pages/$',
         name='document_file_page_list', view=DocumentFilePageListView.as_view()
-    ),
-    url(
-        regex=r'^documents/files/(?P<document_file_id>\d+)/pages/update/$',
-        name='document_file_page_count_update',
-        view=DocumentFilePageCountUpdateView.as_view()
-    ),
-    url(
-        regex=r'^documents/files/multiple/page/update/$',
-        name='document_file_multiple_page_count_update',
-        view=DocumentFilePageCountUpdateView.as_view()
     ),
     url(
         regex=r'^documents/files/pages/(?P<document_file_page_id>\d+)/$',

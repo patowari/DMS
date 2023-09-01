@@ -8,7 +8,7 @@ class DocumentDownloadViewTestMixin:
 
     def _request_test_document_download_post_view(self):
         data = {}
-        for test_document_file, test_document_file_index in enumerate(iterable=self._test_document_files):
+        for test_document_file, test_document_file_index in enumerate(iterable=self._test_document_file_list):
             data.update(
                 {
                     'form-{}-document_file_id'.format(
@@ -24,7 +24,7 @@ class DocumentDownloadViewTestMixin:
             }, data={
                 'form-0-document_file_id': self._test_document_file.pk,
                 'form-0-include': True,
-                'form-TOTAL_FORMS': len(self._test_document_files),
+                'form-TOTAL_FORMS': len(self._test_document_file_list),
                 'form-INITIAL_FORMS': '0',
                 'form-MAX_NUM_FORMS': ''
             }
@@ -39,7 +39,7 @@ class DocumentDownloadViewTestMixin:
 
     def _request_test_document_multiple_download_post_view(self):
         data = {}
-        for test_document_file, test_document_file_index in enumerate(iterable=self._test_document_files):
+        for test_document_file, test_document_file_index in enumerate(iterable=self._test_document_file_list):
             data.update(
                 {
                     'form-{}-document_file_id'.format(
@@ -55,7 +55,7 @@ class DocumentDownloadViewTestMixin:
             }, data={
                 'form-0-document_file_id': self._test_document_file.pk,
                 'form-0-include': True,
-                'form-TOTAL_FORMS': len(self._test_document_files),
+                'form-TOTAL_FORMS': len(self._test_document_file_list),
                 'form-INITIAL_FORMS': '0',
                 'form-MAX_NUM_FORMS': ''
             }

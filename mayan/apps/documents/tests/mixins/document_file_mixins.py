@@ -55,8 +55,8 @@ class DocumentFileAPIViewTestMixin:
             )
             self._test_document.refresh_from_db()
             self._test_document_version = self._test_document.versions.last()
-            self._test_document_version_pages = self._test_document_version.pages.all()
-            self._test_document_version_page = self._test_document_version_pages.first()
+            self._test_document_version_page_list = self._test_document_version.pages.all()
+            self._test_document_version_page = self._test_document_version_page_list.first()
         except DocumentFile.DoesNotExist:
             self._test_document_file = None
 
@@ -95,14 +95,25 @@ class DocumentFileTestMixin:
             ~Q(pk__in=pk_list)
         )
         self._test_document_file_page = self._test_document_file.pages.first()
-        self._test_document_file_pages.extend(
+        self._test_document_file_page_list.extend(
             list(
                 self._test_document_file.pages.all()
             )
         )
-        self._test_document_files.append(self._test_document_file)
-        self._test_document_version = self._test_document.version_active
-        self._test_document_versions.append(self._test_document_version)
+        self._test_document_file_list.append(self._test_document_file)
+
+        for _test_document_version_list in self._test_document_version_list:
+            _test_document_version_list.refresh_from_db()
+
+        self._test_document_version = self._test_document.versions.last()
+        self._test_document_version_list.append(self._test_document_version)
+
+        self._test_document_version_page = self._test_document_version.pages.first()
+        self._test_document_version_page_list.extend(
+            list(
+                self._test_document_version.pages.all()
+            )
+        )
 
 
 class DocumentFileViewTestMixin:
@@ -128,6 +139,18 @@ class DocumentFileViewTestMixin:
                 'comment': TEST_DOCUMENT_FILE_COMMENT_EDITED,
                 'filename': TEST_DOCUMENT_FILE_FILENAME_EDITED
             }
+        )
+
+    def _request_test_document_file_introspect_multiple_view(self):
+        return self.post(
+            viewname='documents:document_file_introspect_multiple',
+            data={'id_list': self._test_document_file.pk}
+        )
+
+    def _request_test_document_file_introspect_single_view(self):
+        return self.post(
+            viewname='documents:document_file_introspect_single',
+            kwargs={'document_file_id': self._test_document_file.pk}
         )
 
     def _request_test_document_file_list_view(self):
@@ -201,18 +224,6 @@ class DocumentFilePageAPIViewTestMixin:
 
 
 class DocumentFilePageViewTestMixin:
-    def _request_test_document_file_page_count_update_view(self):
-        return self.post(
-            viewname='documents:document_file_page_count_update',
-            kwargs={'document_file_id': self._test_document_file.pk}
-        )
-
-    def _request_test_document_file_multiple_page_count_update_view(self):
-        return self.post(
-            viewname='documents:document_file_multiple_page_count_update',
-            data={'id_list': self._test_document_file.pk}
-        )
-
     def _request_test_document_file_page_list_view(self):
         return self.get(
             viewname='documents:document_file_page_list', kwargs={

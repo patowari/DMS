@@ -11,6 +11,7 @@ class DocumentOCRContentMethodTestCase(
 ):
     auto_create_test_document_stub = True
     auto_create_test_document_version = True
+    auto_create_test_document_version_page = True
     auto_upload_test_document = False
 
     def test_document_ocr_content(self):

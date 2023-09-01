@@ -16,7 +16,7 @@ class EXIFToolDriverTestCase(GenericDocumentTestCase):
     def test_driver_entries(self):
         self._test_document.submit_for_file_metadata_processing()
 
-        value = self._test_document.get_file_metadata(
+        value = self._test_document.file_latest.get_file_metadata(
             dotted_name=TEST_PDF_FILE_METADATA_DOTTED_NAME
         )
         self.assertEqual(value, TEST_PDF_FILE_METADATA_VALUE)
@@ -28,12 +28,12 @@ class ExtractMSGDriverTestCase(GenericDocumentTestCase):
     def test_driver_entries(self):
         self._test_document.submit_for_file_metadata_processing()
 
-        value_subject = self._test_document.get_file_metadata(
+        value_subject = self._test_document.file_latest.get_file_metadata(
             dotted_name=TEST_MSG_FILE_METADATA_DOTTED_NAME_SUBJECT
         )
         self.assertEqual(value_subject, TEST_MSG_FILE_METADATA_VALUE_SUBJECT)
 
-        value_to = self._test_document.get_file_metadata(
+        value_to = self._test_document.file_latest.get_file_metadata(
             dotted_name=TEST_MSG_FILE_METADATA_DOTTED_NAME_TO
         )
         self.assertEqual(value_to, TEST_MSG_FILE_METADATA_VALUE_TO)

@@ -25,19 +25,21 @@ from ..forms.document_file_forms import (
 from ..forms.misc_forms import PageNumberForm
 from ..icons import (
     icon_document_file_delete, icon_document_file_edit,
-    icon_document_file_list, icon_document_file_preview,
-    icon_document_file_properties_detail, icon_document_file_print,
-    icon_document_file_transformation_list_clear,
+    icon_document_file_introspect, icon_document_file_list,
+    icon_document_file_preview, icon_document_file_properties_detail,
+    icon_document_file_print, icon_document_file_transformation_list_clear,
     icon_document_file_transformation_list_clone
 )
+from ..literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from ..models.document_models import Document
 from ..models.document_file_models import DocumentFile
 from ..permissions import (
     permission_document_file_delete, permission_document_file_edit,
-    permission_document_file_print, permission_document_file_view
+    permission_document_file_print, permission_document_file_tools,
+    permission_document_file_view
 )
 from ..settings import setting_preview_height, setting_preview_width
-from ..tasks import task_document_file_delete
+from ..tasks import task_document_file_delete, task_document_file_size_update
 
 from .misc_views import PrintFormView, DocumentPrintBaseView
 
@@ -120,6 +122,58 @@ class DocumentFileEditView(SingleObjectEditView):
         return reverse(
             viewname='documents:document_file_preview', kwargs={
                 'document_file_id': self.object.pk
+            }
+        )
+
+
+class DocumentFileIntrospectView(MultipleObjectConfirmActionView):
+    object_permission = permission_document_file_tools
+    pk_url_kwarg = 'document_file_id'
+    source_queryset = DocumentFile.valid.all()
+    success_message = _(
+        '%(count)d document file queued for introspection.'
+    )
+    success_message_plural = _(
+        '%(count)d document files queued for introspection.'
+    )
+    view_icon = icon_document_file_introspect
+
+    def get_extra_context(self):
+        queryset = self.object_list
+
+        result = {
+            'title': ungettext(
+                singular='Introspect the selected document file?',
+                plural='Introspect the selected document files?',
+                number=queryset.count()
+            )
+        }
+
+        if queryset.count() == 1:
+            result.update(
+                {
+                    'object': queryset.first(),
+                    'title': _(
+                        'Introspect the document file: %s?'
+                    ) % queryset.first()
+                }
+            )
+
+        result['message'] = _(
+            'The document file will be re-examined for file size, page '
+            'count, checksum, and its related document version pages '
+            're-created. All transformations will be lost.'
+        )
+
+        return result
+
+    def object_action(self, form, instance):
+        task_document_file_size_update.apply_async(
+            kwargs={
+                'action_name': DEFAULT_DOCUMENT_FILE_ACTION_NAME,
+                'document_file_id': instance.pk,
+                'is_document_upload_sequence': True,
+                'user_id': self.request.user.pk
             }
         )
 

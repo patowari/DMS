@@ -13,15 +13,12 @@ from ..permissions import (
 )
 
 from .literals import TEST_METADATA_TYPE_DEFAULT_VALUE
-from .mixins import (
-    DocumentMetadataAPIViewTestMixin, DocumentMetadataMixin,
-    MetadataTypeTestMixin
-)
+from .mixins import DocumentMetadataAPIViewTestMixin, DocumentMetadataMixin
 
 
 class DocumentMetadataAPIViewTestCase(
     DocumentMetadataAPIViewTestMixin, DocumentMetadataMixin,
-    DocumentTestMixin, MetadataTypeTestMixin, BaseAPITestCase
+    DocumentTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

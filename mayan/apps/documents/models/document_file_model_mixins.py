@@ -420,7 +420,7 @@ class DocumentFileBusinessLogicMixin:
 
     def size_update(self, save=True):
         """
-        Get a document version's file size from the storage layer and store
+        Get a document file's disk file size from the storage layer and store
         it into the model.
         """
         if self.exists():
