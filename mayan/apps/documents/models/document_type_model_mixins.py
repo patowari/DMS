@@ -19,6 +19,7 @@ class DocumentTypeBusinessLogicMixin:
 
         document = Document(document_type=self, **kwargs)
         document._event_actor = user
+        document._event_keep_attributes = ('_event_actor',)
         document.save()
 
         return document
