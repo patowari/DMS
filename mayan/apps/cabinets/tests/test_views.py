@@ -12,16 +12,11 @@ from ..permissions import (
     permission_cabinet_delete, permission_cabinet_edit,
     permission_cabinet_remove_document, permission_cabinet_view
 )
-from .literals import TEST_CABINET_LABEL, TEST_CABINET_LABEL_EDITED
-from .mixins import (
-    CabinetTestMixin, CabinetViewTestMixin,
-    DocumentCabinetViewTestMixin
-)
+
+from .mixins import CabinetViewTestMixin, DocumentCabinetViewTestMixin
 
 
-class CabinetViewTestCase(
-    CabinetTestMixin, CabinetViewTestMixin, GenericViewTestCase
-):
+class CabinetViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
     def test_cabinet_create_view_no_permission(self):
         self._clear_events()
 
@@ -42,7 +37,6 @@ class CabinetViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(Cabinet.objects.count(), 1)
-        self.assertEqual(Cabinet.objects.first().label, TEST_CABINET_LABEL)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -61,7 +55,9 @@ class CabinetViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_cabinet_create_view()
+        response = self._request_test_cabinet_create_view(
+            label=self._test_cabinet_list[0].label
+        )
         # HTTP 200 with error message.
         self.assertEqual(response.status_code, 200)
 
@@ -103,13 +99,15 @@ class CabinetViewTestCase(
     def test_cabinet_edit_view_no_permission(self):
         self._create_test_cabinet()
 
+        test_cabinet_label = self._test_cabinet.label
+
         self._clear_events()
 
         response = self._request_test_cabinet_edit_view()
         self.assertEqual(response.status_code, 404)
 
         self._test_cabinet.refresh_from_db()
-        self.assertEqual(self._test_cabinet.label, TEST_CABINET_LABEL)
+        self.assertEqual(self._test_cabinet.label, test_cabinet_label)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -121,13 +119,15 @@ class CabinetViewTestCase(
             obj=self._test_cabinet, permission=permission_cabinet_edit
         )
 
+        test_cabinet_label = self._test_cabinet.label
+
         self._clear_events()
 
         response = self._request_test_cabinet_edit_view()
         self.assertEqual(response.status_code, 302)
 
         self._test_cabinet.refresh_from_db()
-        self.assertEqual(self._test_cabinet.label, TEST_CABINET_LABEL_EDITED)
+        self.assertNotEqual(self._test_cabinet.label, test_cabinet_label)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -167,9 +167,7 @@ class CabinetViewTestCase(
         self.assertEqual(events.count(), 0)
 
 
-class CabinetChildViewTestCase(
-    CabinetTestMixin, CabinetViewTestMixin, GenericViewTestCase
-):
+class CabinetChildViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
     auto_create_test_cabinet = True
 
     def test_cabinet_child_create_view_no_permission(self):
@@ -196,10 +194,10 @@ class CabinetChildViewTestCase(
         response = self._request_test_cabinet_child_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self._test_cabinets[0].refresh_from_db()
+        self._test_cabinet_list[0].refresh_from_db()
         self.assertEqual(Cabinet.objects.count(), cabinet_count + 1)
         self.assertTrue(
-            self._test_cabinet_child in self._test_cabinets[0].get_descendants()
+            self._test_cabinet_child in self._test_cabinet_list[0].get_descendants()
         )
 
         events = self._get_test_events()
@@ -250,7 +248,7 @@ class CabinetChildViewTestCase(
 
 
 class CabinetDocumentViewTestCase(
-    CabinetTestMixin, CabinetViewTestMixin, GenericDocumentViewTestCase
+    CabinetViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_create_test_cabinet = True
     auto_upload_test_document = False
@@ -615,8 +613,7 @@ class CabinetDocumentViewTestCase(
 
 
 class DocumentCabinetViewTestCase(
-    CabinetTestMixin, DocumentCabinetViewTestMixin,
-    GenericDocumentViewTestCase
+    DocumentCabinetViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_create_test_cabinet = True
     auto_upload_test_document = False

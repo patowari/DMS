@@ -19,7 +19,6 @@ from .base import UploadBaseView
 logger = logging.getLogger(name=__name__)
 
 
-#TODO: Add Document pre hook
 class DocumentUploadView(ExternalObjectViewMixin, UploadBaseView):
     document_form = NewDocumentForm
     external_object_class = DocumentType

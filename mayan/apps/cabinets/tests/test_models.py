@@ -53,13 +53,17 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
         self._clear_events()
 
         with self.assertRaises(expected_exception=ValidationError):
-            cabinet_2 = Cabinet(label=TEST_CABINET_LABEL)
+            cabinet_2 = Cabinet(
+                label=self._test_cabinet_list[0].label
+            )
             cabinet_2.validate_unique()
             cabinet_2.save()
 
         self.assertEqual(Cabinet.objects.all().count(), 1)
         self.assertQuerysetEqual(
-            Cabinet.objects.all(), (repr(self._test_cabinet),)
+            Cabinet.objects.all(), (
+                repr(self._test_cabinet),
+            )
         )
 
         events = self._get_test_events()
@@ -99,7 +103,9 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
         self.assertEqual(Cabinet.objects.count(), test_cabinet_count + 1)
         self.assertQuerysetEqual(
             Cabinet.objects.all(),
-            map(repr, (self._test_cabinet, inner_cabinet))
+            map(
+                repr, (self._test_cabinet, inner_cabinet)
+            )
         )
 
         events = self._get_test_events()
@@ -135,7 +141,9 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
 
         self._clear_events()
 
-        self.assertTrue(self._test_cabinet.get_absolute_url())
+        self.assertTrue(
+            self._test_cabinet.get_absolute_url()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -165,7 +173,9 @@ class CabinetDocumentTestCase(
             test_cabinet_document_count + 1
         )
         self.assertQuerysetEqual(
-            self._test_cabinet.documents.all(), (repr(self._test_document),)
+            self._test_cabinet.documents.all(), (
+                repr(self._test_document),
+            )
         )
 
         events = self._get_test_events()
@@ -193,7 +203,9 @@ class CabinetDocumentTestCase(
             self._test_cabinet.documents.count(),
             test_cabinet_document_count - 1
         )
-        self.assertQuerysetEqual(self._test_cabinet.documents.all(), ())
+        self.assertQuerysetEqual(
+            self._test_cabinet.documents.all(), ()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

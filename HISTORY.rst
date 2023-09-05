@@ -324,6 +324,16 @@
   name ``POSTGRESQL``. These are: ``MAYAN_DOCKER_KEYCLOAK_POSTGRES_TAG``,
   ``MAYAN_KEYCLOAK_POSTGRES_VOLUME``, ``MAYAN_DOCKER_POSTGRES_IMAGE``,
   ``MAYAN_POSTGRES_VOLUME``.
+- Upload wizard updates:
+
+  - Support filtering of cabinet, metadata and tags during upload
+    based on the access of the logged user.
+  - Add support to disable the wizard next button when a required
+    metadata type is not available to the user.
+  - Split metadata test mixins.
+  - Test improvements.
+  - Preserve document creation user to allow quota tests to
+    access the user uploading the document.
 
 4.4.8 (2023-07-15)
 ==================

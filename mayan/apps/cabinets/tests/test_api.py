@@ -19,13 +19,11 @@ from ..permissions import (
 
 from .mixins import (
     CabinetAPIViewTestMixin, CabinetDocumentAPIViewTestMixin,
-    CabinetTestMixin, DocumentCabinetAPIViewTestMixin
+    DocumentCabinetAPIViewTestMixin
 )
 
 
-class CabinetAPITestCase(
-    CabinetAPIViewTestMixin, CabinetTestMixin, BaseAPITestCase
-):
+class CabinetAPITestCase(CabinetAPIViewTestMixin, BaseAPITestCase):
     def test_cabinet_create_api_view_no_permission(self):
         test_cabinet_count = Cabinet.objects.count()
 
@@ -209,9 +207,7 @@ class CabinetAPITestCase(
         self.assertEqual(events.count(), 0)
 
 
-class CabinetChildAPITestCase(
-    CabinetAPIViewTestMixin, CabinetTestMixin, BaseAPITestCase
-):
+class CabinetChildAPITestCase(CabinetAPIViewTestMixin, BaseAPITestCase):
     auto_create_test_cabinet = True
 
     def test_cabinet_child_create_api_view_no_permission(self):
@@ -239,10 +235,10 @@ class CabinetChildAPITestCase(
         response = self._request_test_cabinet_child_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self._test_cabinets[0].refresh_from_db()
+        self._test_cabinet_list[0].refresh_from_db()
         self.assertEqual(Cabinet.objects.count(), cabinet_count + 1)
         self.assertTrue(
-            self._test_cabinet_child in self._test_cabinets[0].get_descendants()
+            self._test_cabinet_child in self._test_cabinet_list[0].get_descendants()
         )
 
         events = self._get_test_events()
@@ -294,8 +290,7 @@ class CabinetChildAPITestCase(
 
 
 class CabinetDocumentAPITestCase(
-    CabinetDocumentAPIViewTestMixin, CabinetTestMixin, DocumentTestMixin,
-    BaseAPITestCase
+    CabinetDocumentAPIViewTestMixin, DocumentTestMixin, BaseAPITestCase
 ):
     auto_create_test_cabinet = True
     auto_upload_test_document = False
@@ -650,8 +645,8 @@ class CabinetDocumentAPITestCase(
 
 
 class DocumentCabinetAPITestCase(
-    CabinetAPIViewTestMixin, CabinetTestMixin,
-    DocumentCabinetAPIViewTestMixin, DocumentTestMixin, BaseAPITestCase
+    CabinetAPIViewTestMixin, DocumentCabinetAPIViewTestMixin,
+    DocumentTestMixin, BaseAPITestCase
 ):
     auto_create_test_cabinet = True
     auto_upload_test_document = False

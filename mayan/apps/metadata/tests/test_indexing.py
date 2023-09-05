@@ -6,7 +6,7 @@ from .literals import (
     TEST_METADATA_INDEX_NODE_TEMPLATE, TEST_METADATA_VALUE,
     TEST_METADATA_TYPE_LABEL_EDITED, TEST_METADATA_VALUE_EDITED
 )
-from .mixins import DocumentMetadataMixin
+from .mixins.document_metadata_mixins import DocumentMetadataMixin
 
 
 class MetadataIndexingTestCase(

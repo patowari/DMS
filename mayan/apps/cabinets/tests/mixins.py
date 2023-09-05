@@ -8,14 +8,54 @@ from .literals import (
 )
 
 
-class CabinetAPIViewTestMixin:
+class CabinetTestMixin:
+    _test_cabinet_add_test_document = False
+    auto_create_test_cabinet = False
+
+    def setUp(self):
+        super().setUp()
+
+        self._test_cabinet_list = []
+
+        if self.auto_create_test_cabinet:
+            self._create_test_cabinet(
+                add_test_document=self._test_cabinet_add_test_document
+            )
+
+    def _create_test_cabinet(self, label=None, add_test_document=False):
+        label = self._get_test_cabinet_label(label=label)
+
+        self._test_cabinet = Cabinet.objects.create(label=label)
+
+        if add_test_document:
+            self._test_cabinet._document_add(document=self._test_document)
+
+        self._test_cabinet_list.append(self._test_cabinet)
+
+    def _create_test_cabinet_child(self, label=None):
+        self._test_cabinet_child = Cabinet.objects.create(
+            label=label or TEST_CABINET_CHILD_LABEL,
+            parent=self._test_cabinet
+        )
+
+    def _get_test_cabinet_label(self, label=None):
+        if label is None:
+            test_cabinet_count = len(self._test_cabinet_list)
+            label = '{}_{}'.format(TEST_CABINET_LABEL, test_cabinet_count)
+
+        return label
+
+
+class CabinetAPIViewTestMixin(CabinetTestMixin):
     def _request_test_cabinet_child_create_api_view(self):
         data = {
             'label': TEST_CABINET_CHILD_LABEL,
             'parent': self._test_cabinet.pk
         }
 
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
         response = self.post(viewname='rest_api:cabinet-list', data=data)
 
         self._test_cabinet_child = Cabinet.objects.exclude(pk__in=values).first()
@@ -29,14 +69,19 @@ class CabinetAPIViewTestMixin:
             }
         )
 
-    def _request_test_cabinet_create_api_view(self, extra_data=None):
-        data = {'label': TEST_CABINET_LABEL, 'parent': ''}
+    def _request_test_cabinet_create_api_view(
+        self, extra_data=None, label=None
+    ):
+        label = self._get_test_cabinet_label(label=label)
+
+        data = {'label': label, 'parent': ''}
 
         if extra_data:
             data.update(extra_data)
 
-        # Typecast to list to force queryset evaluation
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(viewname='rest_api:cabinet-list', data=data)
 
@@ -69,7 +114,7 @@ class CabinetAPIViewTestMixin:
         return self.get(viewname='rest_api:cabinet-list')
 
 
-class CabinetDocumentAPIViewTestMixin:
+class CabinetDocumentAPIViewTestMixin(CabinetTestMixin):
     def _request_test_cabinet_document_add_api_view(self):
         return self.post(
             viewname='rest_api:cabinet-document-add', kwargs={
@@ -97,11 +142,8 @@ class CabinetDocumentAPIViewTestMixin:
 
 
 class CabinetDocumentUploadWizardStepTestMixin(
-    WebFormSourceTestMixin, SourceActionViewTestMixin
+    CabinetTestMixin, WebFormSourceTestMixin, SourceActionViewTestMixin
 ):
-    def _request_document_upload_wizard_view(self):
-        return self.get(viewname='sources:document_upload_wizard')
-
     def _request_test_source_document_upload_post_view_with_cabinets(self):
         return self._request_test_source_document_upload_post_view(
             extra_data={
@@ -110,55 +152,25 @@ class CabinetDocumentUploadWizardStepTestMixin(
         )
 
 
-class CabinetTestMixin:
-    _test_cabinet_add_test_document = False
-    auto_create_test_cabinet = False
-
+class CabinetViewTestMixin(CabinetTestMixin):
     def setUp(self):
         super().setUp()
-        if not hasattr(self, 'test_cabinets'):
-            self._test_cabinets = []
 
-        if self.auto_create_test_cabinet:
-            self._create_test_cabinet(
-                add_test_document=self._test_cabinet_add_test_document
-            )
+        self._test_cabinet_list = []
 
-    def _create_test_cabinet(self, label=None, add_test_document=False):
-        self._test_cabinet = Cabinet.objects.create(
-            label=label or TEST_CABINET_LABEL
+    def _request_test_cabinet_create_view(self, label=None):
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
         )
 
-        if add_test_document:
-            self._test_cabinet._document_add(document=self._test_document)
-
-        self._test_cabinets.append(self._test_cabinet)
-
-    def _create_test_cabinet_child(self, label=None):
-        self._test_cabinet_child = Cabinet.objects.create(
-            label=label or TEST_CABINET_CHILD_LABEL,
-            parent=self._test_cabinet
-        )
-
-
-class CabinetViewTestMixin:
-    def setUp(self):
-        super().setUp()
-        if not hasattr(self, 'test_cabinets'):
-            self._test_cabinets = []
-
-    def _request_test_cabinet_create_view(self):
-        # Typecast to list to force queryset evaluation
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        label = self._get_test_cabinet_label(label=label)
 
         response = self.post(
-            'cabinets:cabinet_create', data={
-                'label': TEST_CABINET_LABEL
-            }
+            'cabinets:cabinet_create', data={'label': label}
         )
 
         self._test_cabinet = Cabinet.objects.exclude(pk__in=values).first()
-        self._test_cabinets.append(self._test_cabinet)
+        self._test_cabinet_list.append(self._test_cabinet)
 
         return response
 
@@ -179,8 +191,9 @@ class CabinetViewTestMixin:
         )
 
     def _request_test_cabinet_child_create_view(self):
-        # Typecast to list to force queryset evaluation
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='cabinets:cabinet_child_add', kwargs={
@@ -189,7 +202,7 @@ class CabinetViewTestMixin:
         )
 
         self._test_cabinet_child = Cabinet.objects.exclude(pk__in=values).first()
-        self._test_cabinets.append(self._test_cabinet)
+        self._test_cabinet_list.append(self._test_cabinet)
 
         return response
 
@@ -237,7 +250,7 @@ class CabinetViewTestMixin:
         )
 
 
-class DocumentCabinetAPIViewTestMixin:
+class DocumentCabinetAPIViewTestMixin(CabinetTestMixin):
     def _request_test_document_cabinet_list_api_view(self):
         return self.get(
             viewname='rest_api:document-cabinet-list', kwargs={
@@ -246,7 +259,7 @@ class DocumentCabinetAPIViewTestMixin:
         )
 
 
-class DocumentCabinetViewTestMixin:
+class DocumentCabinetViewTestMixin(CabinetTestMixin):
     def _request_test_document_cabinet_list_view(self):
         return self.get(
             viewname='cabinets:document_cabinet_list', kwargs={

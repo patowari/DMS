@@ -2,7 +2,7 @@ from mayan.apps.common.tests.mixins import ObjectCopyTestMixin
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from .mixins import MetadataTypeTestMixin
+from .mixins.metadata_type_mixins import MetadataTypeTestMixin
 
 
 class MetadataTypeCopyTestCase(

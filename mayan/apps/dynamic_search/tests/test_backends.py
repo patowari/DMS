@@ -174,7 +174,7 @@ class SearchUpdatePropagationTestCase(
         )
         self.assertEqual(
             mocked_index_instance.call_args_list[1].kwargs['instance'],
-            self._test_tags[0]
+            self._test_tag_list[0]
         )
 
         mocked_index_instance.reset_mock()
@@ -189,7 +189,7 @@ class SearchUpdatePropagationTestCase(
         )
         self.assertEqual(
             mocked_index_instance.call_args_list[1].kwargs['instance'],
-            self._test_tags[0]
+            self._test_tag_list[0]
         )
 
         mocked_index_instance.reset_mock()
@@ -204,7 +204,7 @@ class SearchUpdatePropagationTestCase(
         )
         self.assertEqual(
             mocked_index_instance.call_args_list[1].kwargs['instance'],
-            self._test_tags[0]
+            self._test_tag_list[0]
         )
 
         mocked_index_instance.reset_mock()
@@ -226,7 +226,7 @@ class SearchUpdatePropagationTestCase(
         )
         self.assertEqual(
             mocked_index_instance.call_args_list[3].kwargs['instance'],
-            self._test_tags[0]
+            self._test_tag_list[0]
         )
 
         mocked_index_instance.reset_mock()
@@ -241,5 +241,5 @@ class SearchUpdatePropagationTestCase(
         )
         self.assertEqual(
             mocked_index_instance.call_args_list[1].kwargs['instance'],
-            self._test_tags[0]
+            self._test_tag_list[0]
         )

@@ -13,7 +13,7 @@ from .literals import (
     TEST_DEFAULT_VALUE, TEST_LOOKUP_TEMPLATE, TEST_LOOKUP_VALUE_INCORRECT,
     TEST_LOOKUP_VALUE_CORRECT
 )
-from .mixins import MetadataTypeTestMixin
+from .mixins.metadata_type_mixins import MetadataTypeTestMixin
 
 
 class MetadataTypeTestCase(
@@ -47,7 +47,9 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document.metadata.count(), 1
+        )
         self.assertEqual(
             self._test_document.metadata.first().value, TEST_DEFAULT_VALUE
         )
@@ -149,7 +151,9 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document.metadata.count(), 1
+        )
         self.assertEqual(
             self._test_document.metadata.first().value, TEST_DEFAULT_VALUE
         )
@@ -250,7 +254,9 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document.metadata.count(), 1
+        )
         self.assertEqual(
             self._test_document.metadata.first().value, TEST_DEFAULT_VALUE
         )
@@ -293,4 +299,6 @@ class MetadataTypeTestCase(
     def test_method_get_absolute_url(self):
         self._create_test_metadata_type()
 
-        self.assertTrue(self._test_metadata_type.get_absolute_url())
+        self.assertTrue(
+            self._test_metadata_type.get_absolute_url()
+        )

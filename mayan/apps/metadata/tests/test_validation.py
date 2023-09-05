@@ -12,7 +12,7 @@ from .literals import (
     TEST_VALIDATOR_REGULAR_EXPRESSION_PATTERN, TEST_VALIDATOR_VALUE_INVALID,
     TEST_VALIDATOR_VALUE_VALID
 )
-from .mixins import MetadataTypeTestMixin
+from .mixins.metadata_type_mixins import MetadataTypeTestMixin
 
 
 class MetadataTypeValidationTestCase(
@@ -36,7 +36,8 @@ class MetadataTypeValidationTestCase(
         self._test_metadata_type.save()
 
         document_metadata = DocumentMetadata(
-            document=self._test_document, metadata_type=self._test_metadata_type,
+            document=self._test_document,
+            metadata_type=self._test_metadata_type,
             value=TEST_PARSER_DATE_VALID
         )
 
@@ -54,16 +55,17 @@ class MetadataTypeValidationTestCase(
         )
 
         document_metadata = DocumentMetadata(
-            document=self._test_document, metadata_type=self._test_metadata_type,
+            document=self._test_document,
+            metadata_type=self._test_metadata_type,
             value=TEST_DATE_INVALID
         )
 
         with self.assertRaises(expected_exception=ValidationError):
-            # Should return error
+            # Should return error.
             document_metadata.full_clean()
             document_metadata.save()
 
-        # Should not return error
+        # Should not return error.
         document_metadata.value = TEST_VALID_DATE
         document_metadata.full_clean()
         document_metadata.save()

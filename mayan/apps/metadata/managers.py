@@ -13,9 +13,16 @@ class MetadataTypeManager(models.Manager):
             )
         )
 
-    def get_for_document_type(self, document_type):
+    def get_for_document_type(self, document_type, required=None):
+        queryset_document_type_metadata_types = document_type.metadata.all()
+
+        if required is not None:
+            queryset_document_type_metadata_types = queryset_document_type_metadata_types.filter(
+                required=required
+            )
+
         return self.filter(
-            pk__in=document_type.metadata.values_list(
+            pk__in=queryset_document_type_metadata_types.values_list(
                 'metadata_type'
             )
         )
@@ -50,15 +57,4 @@ class DocumentTypeMetadataTypeManager(models.Manager):
 
         return self.get(
             document__pk=document.pk, metadata_type__pk=metadata_type.pk
-        )
-
-    def get_metadata_types_for(self, document_type):
-        DocumentType = apps.get_model(
-            app_label='metadata', model_name='MetadataType'
-        )
-
-        return DocumentType.objects.filter(
-            pk__in=self.filter(
-                document_type=document_type
-            ).values_list('metadata_type__pk')
         )

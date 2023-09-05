@@ -50,6 +50,10 @@ class DocumentCreateWizardStep(AppsModuleLoaderMixin):
         return {}
 
     @classmethod
+    def get_next_is_enabled(cls, wizard):
+        return True
+
+    @classmethod
     def post_upload_process(
         cls, document, query_string, source_id, user_id
     ):

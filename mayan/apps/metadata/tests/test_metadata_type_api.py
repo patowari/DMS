@@ -16,10 +16,12 @@ from ..permissions import (
     permission_metadata_type_edit, permission_metadata_type_view
 )
 
-from .mixins import (
+from .mixins.document_type_metadata_type_mixins import (
     DocumentTypeMetadataTypeAPIViewTestMixin,
-    DocumentTypeMetadataTypeTestMixin, MetadataTypeAPIViewTestMixin,
-    MetadataTypeTestMixin
+    DocumentTypeMetadataTypeTestMixin
+)
+from .mixins.metadata_type_mixins import (
+    MetadataTypeAPIViewTestMixin, MetadataTypeTestMixin
 )
 
 

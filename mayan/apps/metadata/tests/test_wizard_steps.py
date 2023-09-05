@@ -6,36 +6,43 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
+from mayan.apps.sources.tests.mixins.wizard_mixins import SourceDocumentUploadWizardTestMixin
 
 from ..events import (
     event_document_metadata_added, event_document_metadata_edited
 )
+from ..permissions import permission_document_metadata_add
 
 from .literals import (
     TEST_METADATA_VALUE_UNICODE, TEST_METADATA_VALUE_WITH_AMPERSAND
 )
-from .mixins import (
-    MetadataDocumentUploadWizardStepTestMixin, MetadataTypeTestMixin
-)
+from .mixins.metadata_type_mixins import MetadataTypeTestMixin
+from .mixins.wizard_mixins import MetadataDocumentUploadWizardStepTestMixin
 
 
-class DocumentUploadMetadataTestCase(
-    MetadataDocumentUploadWizardStepTestMixin, MetadataTypeTestMixin,
-    GenericDocumentViewTestCase
+class DocumentUploadMetadataSpecialCharacterTestCase(
+    MetadataDocumentUploadWizardStepTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
     def setUp(self):
         super().setUp()
-        self._create_test_metadata_type()
-        self._test_document_type.metadata.create(
-            metadata_type=self._test_metadata_type, required=True
+        self._create_test_metadata_type(
+            add_test_document_type=True, required=True
         )
 
-    def test_upload_interactive_with_unicode_metadata(self):
+    def test_unicode_value(self):
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
         )
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
@@ -43,7 +50,7 @@ class DocumentUploadMetadataTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_post_view_with_metadata(
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types(
             metadata_value=TEST_METADATA_VALUE_UNICODE
         )
         self.assertEqual(response.status_code, 302)
@@ -57,52 +64,60 @@ class DocumentUploadMetadataTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 7)
 
-        test_document = Document.objects.first()
-        test_document_file = test_document.file_latest
-        test_document_version = test_document.version_active
-        test_document_version_page = test_document_version.pages.first()
+        test_metadata = Document.objects.first()
+        test_metadata_file = test_metadata.file_latest
+        test_metadata_version = test_metadata.version_active
+        test_metadata_version_page = test_metadata_version.pages.first()
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].target, test_metadata)
         self.assertEqual(events[0].verb, event_document_created.id)
 
         self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].target, test_metadata)
         self.assertEqual(events[1].verb, event_document_metadata_added.id)
 
         self.assertEqual(events[2].action_object, self._test_metadata_type)
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].target, test_metadata)
         self.assertEqual(events[2].verb, event_document_metadata_edited.id)
 
-        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].action_object, test_metadata)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].target, test_metadata_file)
         self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].action_object, test_metadata)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].target, test_metadata_file)
         self.assertEqual(events[4].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].action_object, test_metadata)
         self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].target, test_metadata_version)
         self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].action_object, test_metadata_version)
         self.assertEqual(events[6].actor, self._test_case_user)
-        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(events[6].target, test_metadata_version_page)
         self.assertEqual(
             events[6].verb, event_document_version_page_created.id
         )
 
-    def test_upload_interactive_with_ampersand_metadata(self):
+    def test_ampersand_value(self):
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
         )
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
@@ -110,7 +125,7 @@ class DocumentUploadMetadataTestCase(
 
         self._clear_events()
 
-        response = self._request_test_source_document_upload_post_view_with_metadata(
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types(
             metadata_value=TEST_METADATA_VALUE_WITH_AMPERSAND
         )
 
@@ -125,6 +140,91 @@ class DocumentUploadMetadataTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 7)
 
+        test_metadata = Document.objects.first()
+        test_metadata_file = test_metadata.file_latest
+        test_metadata_version = test_metadata.version_active
+        test_metadata_version_page = test_metadata_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_metadata)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, self._test_metadata_type)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_metadata)
+        self.assertEqual(events[1].verb, event_document_metadata_added.id)
+
+        self.assertEqual(events[2].action_object, self._test_metadata_type)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_metadata)
+        self.assertEqual(events[2].verb, event_document_metadata_edited.id)
+
+        self.assertEqual(events[3].action_object, test_metadata)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_metadata_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
+
+        self.assertEqual(events[4].action_object, test_metadata)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_metadata_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[5].action_object, test_metadata)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_metadata_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_metadata_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_metadata_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+
+class DocumentUploadMetadataViewTestCase(
+    MetadataDocumentUploadWizardStepTestMixin, GenericDocumentViewTestCase
+):
+    auto_upload_test_document = False
+
+    def setUp(self):
+        super().setUp()
+        self._create_test_metadata_type(add_test_document_type=True)
+        self._create_test_metadata_type(add_test_document_type=True)
+
+    def test_post_view_with_document_type_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 5)
+
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
         test_document_version = test_document.version_active
@@ -135,12 +235,148 @@ class DocumentUploadMetadataTestCase(
         self.assertEqual(events[0].target, test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, self._test_metadata_type)
+        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document_file)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
+    def test_post_view_with_metadata_type_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 5)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document_file)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
+    def test_post_view_with_document_type_access_metadata_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertTrue(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 7)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(
+            events[1].action_object, self._test_metadata_type_list[0]
+        )
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, test_document)
         self.assertEqual(events[1].verb, event_document_metadata_added.id)
 
-        self.assertEqual(events[2].action_object, self._test_metadata_type)
+        self.assertEqual(
+            events[2].action_object, self._test_metadata_type_list[0]
+        )
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, test_document)
         self.assertEqual(events[2].verb, event_document_metadata_edited.id)
@@ -167,10 +403,22 @@ class DocumentUploadMetadataTestCase(
             events[6].verb, event_document_version_page_created.id
         )
 
-    def test_initial_step_conditions(self):
+    def test_post_view_with_document_type_access_metadata_multiple_access_source_access(self):
         self.grant_access(
             obj=self._test_document_type,
             permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[1],
+            permission=permission_document_metadata_add
         )
         self.grant_access(
             obj=self._test_source, permission=permission_document_create
@@ -178,9 +426,691 @@ class DocumentUploadMetadataTestCase(
 
         self._clear_events()
 
-        response = self._request_document_upload_wizard_view()
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertTrue(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertTrue(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 9)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(
+            events[1].action_object, self._test_metadata_type_list[0]
+        )
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_document_metadata_added.id)
+
+        self.assertEqual(
+            events[2].action_object, self._test_metadata_type_list[0]
+        )
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_metadata_edited.id)
+
+        self.assertEqual(
+            events[3].action_object, self._test_metadata_type_list[1]
+        )
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document)
+        self.assertEqual(events[3].verb, event_document_metadata_added.id)
+
+        self.assertEqual(
+            events[4].action_object, self._test_metadata_type_list[1]
+        )
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document)
+        self.assertEqual(events[4].verb, event_document_metadata_edited.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_file)
+        self.assertEqual(events[5].verb, event_document_file_created.id)
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_file)
+        self.assertEqual(events[6].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_created.id)
+
+        self.assertEqual(events[8].action_object, test_document_version)
+        self.assertEqual(events[8].actor, self._test_case_user)
+        self.assertEqual(events[8].target, test_document_version_page)
+        self.assertEqual(
+            events[8].verb, event_document_version_page_created.id
+        )
+
+
+class DocumentUploadMetadataRequiredViewTestCase(
+    MetadataDocumentUploadWizardStepTestMixin, GenericDocumentViewTestCase
+):
+    auto_upload_test_document = False
+
+    def setUp(self):
+        super().setUp()
+        self._create_test_metadata_type(add_test_document_type=True)
+        self._create_test_metadata_type(
+            add_test_document_type=True, required=True
+        )
+
+    def test_post_view_with_document_type_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 5)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document_file)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
+    def test_post_view_with_metadata_type_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 5)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document_file)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
+    def test_post_view_with_document_type_access_metadata_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertTrue(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertFalse(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 7)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(
+            events[1].action_object, self._test_metadata_type_list[0]
+        )
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_document_metadata_added.id)
+
+        self.assertEqual(
+            events[2].action_object, self._test_metadata_type_list[0]
+        )
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_metadata_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+    def test_post_view_with_document_type_access_metadata_multiple_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[1],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_test_source_metadata_upload_post_view_with_metadata_types()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertTrue(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[0]
+            ).exists()
+        )
+        self.assertTrue(
+            Document.objects.first().metadata.all().filter(
+                metadata_type=self._test_metadata_type_list[1]
+            ).exists()
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 9)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(
+            events[1].action_object, self._test_metadata_type_list[0]
+        )
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].target, test_document)
+        self.assertEqual(events[1].verb, event_document_metadata_added.id)
+
+        self.assertEqual(
+            events[2].action_object, self._test_metadata_type_list[0]
+        )
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_metadata_edited.id)
+
+        self.assertEqual(
+            events[3].action_object, self._test_metadata_type_list[1]
+        )
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document)
+        self.assertEqual(events[3].verb, event_document_metadata_added.id)
+
+        self.assertEqual(
+            events[4].action_object, self._test_metadata_type_list[1]
+        )
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document)
+        self.assertEqual(events[4].verb, event_document_metadata_edited.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_file)
+        self.assertEqual(events[5].verb, event_document_file_created.id)
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_file)
+        self.assertEqual(events[6].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_created.id)
+
+        self.assertEqual(events[8].action_object, test_document_version)
+        self.assertEqual(events[8].actor, self._test_case_user)
+        self.assertEqual(events[8].target, test_document_version_page)
+        self.assertEqual(
+            events[8].verb, event_document_version_page_created.id
+        )
+
+
+class DocumentUploadWizardMetadataStepTestCase(
+    MetadataTypeTestMixin, SourceDocumentUploadWizardTestMixin,
+    GenericDocumentViewTestCase
+):
+    auto_upload_test_document = False
+
+    def setUp(self):
+        super().setUp()
+        self._create_test_metadata_type(add_test_document_type=True)
+        self._create_test_metadata_type(add_test_document_type=True)
+
+    def test_post_view_with_document_type_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_post_view_with_metadata_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_post_view_with_document_type_access_metadata_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
         self.assertContains(
-            response=response, status_code=200, text='Step 2'
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_post_view_with_document_type_access_metadata_multiple_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[1],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+
+class DocumentUploadWizardMetadataRequiredStepTestCase(
+    MetadataTypeTestMixin, SourceDocumentUploadWizardTestMixin,
+    GenericDocumentViewTestCase
+):
+    auto_upload_test_document = False
+
+    def setUp(self):
+        super().setUp()
+        self._create_test_metadata_type(add_test_document_type=True)
+        self._create_test_metadata_type(
+            add_test_document_type=True, required=True
+        )
+
+    def test_post_view_with_document_type_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text='disabled="disabled"'
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_post_view_with_metadata_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text='disabled="disabled"'
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_post_view_with_document_type_access_metadata_single_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text='disabled="disabled"'
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_post_view_with_document_type_access_metadata_multiple_access_source_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_create
+        )
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[0],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_metadata_type_list[1],
+            permission=permission_document_metadata_add
+        )
+        self.grant_access(
+            obj=self._test_source, permission=permission_document_create
+        )
+
+        self._clear_events()
+
+        response = self._request_document_upload_wizard_post_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[0].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_metadata_type_list[1].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text='disabled="disabled"'
         )
 
         events = self._get_test_events()
