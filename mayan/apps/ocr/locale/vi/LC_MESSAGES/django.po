@@ -4,14 +4,16 @@
 # 
 # Translators:
 # Translators:
+# Trung Phan Minh <navmobile@gmail.com>, 2023
+# Roberto Rosario, 2023
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +23,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
-#: search.py:18 settings.py:11
+#: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
-msgstr ""
+msgstr "OCR"
 
 #: apps.py:116
 msgid "The OCR content."
@@ -63,7 +65,7 @@ msgstr ""
 
 #: forms.py:13 forms.py:44 forms.py:64
 msgid "Contents"
-msgstr ""
+msgstr "Nội dung"
 
 #: forms.py:99
 #, python-format
@@ -100,7 +102,7 @@ msgstr "Kiểu tài liệu"
 
 #: models.py:26
 msgid "Automatically queue newly created documents for OCR."
-msgstr ""
+msgstr "Automatically queue newly created documents for OCR."
 
 #: models.py:27
 msgid "Auto OCR"
@@ -124,7 +126,7 @@ msgstr ""
 
 #: models.py:52
 msgid "Content"
-msgstr ""
+msgstr "Nội dung"
 
 #: models.py:58
 msgid "Document version page OCR content"
@@ -270,6 +272,6 @@ msgstr ""
 msgid "A template that will generate the OCR content to be saved."
 msgstr ""
 
-#: workflow_actions.py:43
+#: workflow_actions.py:42
 msgid "Update document page OCR content"
 msgstr ""

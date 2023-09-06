@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -307,6 +307,14 @@ msgstr "Gönderilecek mesajın konusu."
 msgid "The actual text to send."
 msgstr "Gönderilecek metin."
 
-#: workflow_actions.py:73
+#: workflow_actions.py:72
 msgid "Send user message"
 msgstr "Kullanıcı mesajı gönder"
+
+#: workflow_actions.py:80
+msgid "Recipients"
+msgstr ""
+
+#: workflow_actions.py:84
+msgid "Content"
+msgstr "İçerik"

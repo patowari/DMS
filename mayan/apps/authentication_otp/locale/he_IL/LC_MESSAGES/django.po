@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,27 +22,27 @@ msgstr ""
 
 #: apps.py:23 events.py:6
 msgid "Authentication OTP"
-msgstr "אימות OTP"
+msgstr ""
 
 #: events.py:10
 msgid "OTP disabled"
-msgstr "OTP מושבת"
+msgstr ""
 
 #: events.py:13
 msgid "OTP enabled"
-msgstr "OTP מופעל"
+msgstr ""
 
 #: forms.py:20
 msgid "Token is either invalid or expired."
-msgstr "האסימון אינו חוקי או שפג תוקפו."
+msgstr ""
 
 #: forms.py:25
 msgid "TOTP token"
-msgstr "אסימון TOTP"
+msgstr ""
 
 #: forms.py:86
 msgid "OTP enabled?"
-msgstr "OTP מופעל?"
+msgstr ""
 
 #: forms.py:87
 msgid "Yes"
@@ -71,7 +71,7 @@ msgstr "הזן את האסימון המתאים כדי לוודא שהקוד ה�
 
 #: forms.py:120
 msgid "Token"
-msgstr "אֲסִימוֹן"
+msgstr ""
 
 #: forms.py:155
 msgid "Token is incorrect for the specified secret."
@@ -79,7 +79,7 @@ msgstr "האסימון שגוי עבור הקוד הסודי שצויין."
 
 #: links.py:29
 msgid "OTP details"
-msgstr "פרטי OTP"
+msgstr ""
 
 #: links.py:33
 msgid "Disable OTP"
@@ -91,29 +91,29 @@ msgstr "איפשור OTP"
 
 #: models.py:17
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
 #: models.py:21
 msgid "16 character, base32 encoded random string."
-msgstr "16 תווים, מחרוזת אקראית מקודדת base32."
+msgstr ""
 
 #: models.py:26
 msgid "User OTP data"
-msgstr "נתוני OTP של משתמש"
+msgstr ""
 
 #: models.py:27
 msgid "Users OTP data"
-msgstr "נתוני OTP של משתמשים"
+msgstr ""
 
 #: views.py:28
 #, python-format
 msgid "One time pad details for user: %s"
-msgstr "פרטי משטח חד פעמי למשתמש: %s"
+msgstr ""
 
 #: views.py:45
 #, python-format
 msgid "Disable one time pad for user: %s"
-msgstr "השבת משטח חד פעמי עבור המשתמש: %s"
+msgstr ""
 
 #: views.py:56
 msgid "OTP disable successfully."

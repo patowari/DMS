@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,15 +22,15 @@ msgstr ""
 
 #: apps.py:18 settings.py:8
 msgid "Authentication OIDC"
-msgstr "אימות OIDC"
+msgstr ""
 
 #: authentication_backends.py:97
 msgid "Login via OIDC"
-msgstr "כניסה דרך OIDC"
+msgstr ""
 
 #: links.py:22
 msgid "OIDC user details"
-msgstr "פרטי משתמש OIDC"
+msgstr ""
 
 #: settings.py:14
 msgid "URL for the OIDC user profile page."

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,9 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
-msgstr "רשימות בקרת גישה"
+msgstr "רשימות בקרת גישה (ACL)"
 
 #: apps.py:62
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 "רכיב שעבורו מותרת הגישה. למיון רכיבים משתמשים ב\"סוג הרכיב\" ולא בתווית של "
 "הרכיב."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
 msgstr "רכיב"
 
@@ -44,15 +44,15 @@ msgstr "רשימות בקרת גישה"
 
 #: events.py:10
 msgid "ACL created"
-msgstr "רשימת בקרת גישה נוצרה"
+msgstr "רשימת בקרת גישה (ACL) נוצרה"
 
 #: events.py:13
 msgid "ACL deleted"
-msgstr "רשימת בקרת גישה נמחקה"
+msgstr "רשימת בקרת גישה (ACL) נמחקה"
 
 #: events.py:16
 msgid "ACL edited"
-msgstr "רשימת בקרת גישה נערכה"
+msgstr "רשימת בקרת גישה (ACL) נערכה"
 
 #: forms.py:13 models.py:56 serializers.py:79 views.py:73
 msgid "Role"
@@ -60,19 +60,19 @@ msgstr "תפקיד"
 
 #: links.py:16
 msgid "New ACL"
-msgstr "רשימת בקרת גישה חדשה"
+msgstr "רשימת בקרת גישה (ACL) חדשה"
 
 #: links.py:21
 msgid "Delete"
 msgstr "מחיקה"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "הרשאות"
 
 #: links.py:35
 msgid "Global ACLs"
-msgstr "רשימות בקרת גישה כלליות"
+msgstr "רשימות בקרת גישה (ACL) כלליות"
 
 #: managers.py:274
 #, python-format
@@ -92,7 +92,7 @@ msgstr "ספירת הרשאה"
 msgid "Content type"
 msgstr "סוג תוכן"
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "מזהה רכיב"
 
@@ -115,11 +115,11 @@ msgstr "הרשאות תפקיד %(role)s ל- %(object)s"
 
 #: permissions.py:10
 msgid "Edit ACLs"
-msgstr "עריכת רשימות בקרת גישה"
+msgstr "עריכת רשימות בקרת גישה (ACL) "
 
 #: permissions.py:13
 msgid "View ACLs"
-msgstr "צפייה ברשימות בקרת גישה"
+msgstr "צפייה ברשימות בקרת גישה (ACL) "
 
 #: serializers.py:19
 msgid "Permissions add URL"
@@ -170,7 +170,7 @@ msgstr "רשימות בקרת גישה (ACL) חדשות עבור %s"
 #: views.py:103
 #, python-format
 msgid "Delete ACL: %s"
-msgstr "מחק ACL: %s"
+msgstr "מחיקת רשימת בקרת גישה (ACL) %s"
 
 #: views.py:149
 msgid "There are no ACLs for this object"
@@ -223,44 +223,48 @@ msgstr "אין רשימות בקרת גישה (ACL)"
 msgid "Global access control lists"
 msgstr "רשימות בקרת גישה (ACL) כלליות"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "סוג רכיב"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "סוג הרכיב שעבורו הגישה תתעדכן."
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr "מזהה מספרי של הרכיב שעבורו הגישה תתעדכן."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "תפקידים"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "תפקידים שעבורם הגישה תעודכן."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "הרשאות שניתן לתת ל-/להסיר מ- התפקיד עבור הרכיב שנבחר לעיל. "
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr "נתינת גישה לרכיב"
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr "הסרת גישה לרכיב"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr "נתינת גישה למסמך"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr "הסרת גישה למסמך"

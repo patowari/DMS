@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
 "PO-Revision-Date: 2020-01-28 07:59+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
-#: search.py:18 settings.py:11
+#: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
 msgstr ""
 
@@ -269,6 +269,6 @@ msgstr ""
 msgid "A template that will generate the OCR content to be saved."
 msgstr ""
 
-#: workflow_actions.py:43
+#: workflow_actions.py:42
 msgid "Update document page OCR content"
 msgstr ""

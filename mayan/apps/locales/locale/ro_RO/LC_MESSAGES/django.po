@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,10 @@ msgstr ""
 #: apps.py:28 events.py:6
 msgid "Locales"
 msgstr "Profiluri de localizare"
+
+#: dependencies.py:11
+msgid "Transifex Client"
+msgstr ""
 
 #: events.py:10
 msgid "User locale profile edited"

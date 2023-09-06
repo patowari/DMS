@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:28 apps.py:54 links.py:14 queues.py:9
+#: apps.py:28 apps.py:54 links.py:14 queues.py:7
 msgid "Duplicates"
 msgstr "Duplicados"
 
@@ -40,15 +40,15 @@ msgstr "Suma de comprobación exacta del archivo del documento"
 msgid "Exact document label"
 msgstr "Etiqueta de documento exacta"
 
-#: links.py:18 models.py:37 views.py:79
+#: links.py:18 models.py:39 views.py:79
 msgid "Duplicated documents"
 msgstr "Documentos duplicados"
 
-#: links.py:24 queues.py:23
+#: links.py:24 queues.py:24
 msgid "Duplicated document scan"
 msgstr "Escanéar documentos duplicados"
 
-#: models.py:19 models.py:29
+#: models.py:19 models.py:31
 msgid "Stored duplicate backend"
 msgstr "Controlador de duplicados almacenado"
 
@@ -56,23 +56,27 @@ msgstr "Controlador de duplicados almacenado"
 msgid "Stored duplicate backends"
 msgstr "Controladores de duplicados almacenados"
 
-#: models.py:33
+#: models.py:35
 msgid "Document"
 msgstr "Documento"
 
-#: models.py:45
+#: models.py:47
 msgid "Duplicated backend entry"
 msgstr "Entrada de controlador de duplicado"
 
-#: models.py:46
+#: models.py:48
 msgid "Duplicated backend entries"
 msgstr "Entradas de controladores de duplicados"
 
-#: queues.py:14
+#: queues.py:10
+msgid "Duplicates slow"
+msgstr ""
+
+#: queues.py:15
 msgid "Clean empty duplicate lists"
 msgstr "Limpiar listas duplicadas vacías"
 
-#: queues.py:18
+#: queues.py:19
 msgid "Scan document duplicates"
 msgstr "Escanear documentos duplicados"
 

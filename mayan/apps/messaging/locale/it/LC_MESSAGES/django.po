@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2023
-# Roberto Rosario, 2023
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2023
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Marco Camplese <marco.camplese.mc@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -300,6 +300,14 @@ msgstr ""
 msgid "The actual text to send."
 msgstr ""
 
-#: workflow_actions.py:73
+#: workflow_actions.py:72
 msgid "Send user message"
 msgstr ""
+
+#: workflow_actions.py:80
+msgid "Recipients"
+msgstr ""
+
+#: workflow_actions.py:84
+msgid "Content"
+msgstr "Contenuto "

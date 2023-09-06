@@ -4,15 +4,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,31 +20,31 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:12 views.py:12
 msgid "Dashboards"
-msgstr "לוחות מחוונים"
+msgstr ""
 
 #: apps.py:25
 msgid "Widgets"
-msgstr "ווידג&#39;טים"
+msgstr ""
 
 #: apps.py:29
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
 #: dashboards.py:6
 msgid "Administrator dashboard"
-msgstr "לוח המחוונים של מנהל מערכת"
+msgstr ""
 
-#: links.py:14
+#: links.py:9
 msgid "Details"
-msgstr "פרטים"
+msgstr "Details"
 
 #: templates/dashboards/numeric_widget.html:27
 #: templates/dashboards/widget_list.html:47
 msgid "View details"
-msgstr "הצג פרטים"
+msgstr ""
 
 #: views.py:30
 msgid "Dashboard detail"
-msgstr "פירוט לוח המחוונים"
+msgstr ""

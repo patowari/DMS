@@ -4,14 +4,16 @@
 # 
 # Translators:
 # Translators:
+# Roberto Rosario, 2023
+# Trung Phan Minh <navmobile@gmail.com>, 2023
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -95,7 +97,7 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: handlers.py:19
+#: handlers.py:18
 msgid "Creation date"
 msgstr ""
 
@@ -104,7 +106,7 @@ msgstr ""
 msgid "Indexes"
 msgstr ""
 
-#: links.py:53 queues.py:24
+#: links.py:53 queues.py:23
 msgid "Rebuild index"
 msgstr ""
 
@@ -152,36 +154,36 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: models/index_instance_model_mixins.py:48
+#: models/index_instance_model_mixins.py:34
 #, python-format
 msgid ""
 "Error indexing document: %(document)s; expression: %(expression)s; "
 "%(exception)s"
 msgstr ""
 
-#: models/index_instance_model_mixins.py:216
+#: models/index_instance_model_mixins.py:155
 msgid "Total number of nodes with unique values this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:225
+#: models/index_instance_model_mixins.py:164
 msgid "Total number of unique documents this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:235
+#: models/index_instance_model_mixins.py:174
 msgid "Total number of node levels this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:304
+#: models/index_instance_model_mixins.py:243
 msgid "The path to the index including all ancestors."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:306
+#: models/index_instance_model_mixins.py:245
 msgid "Full path"
 msgstr ""
 
 #: models/index_instance_models.py:30
 msgid "Index instance"
-msgstr ""
+msgstr "index instance"
 
 #: models/index_instance_models.py:31
 msgid "Index instances"
@@ -193,7 +195,7 @@ msgstr ""
 
 #: models/index_instance_models.py:62 search.py:17
 msgid "Value"
-msgstr ""
+msgstr "Giá trị"
 
 #: models/index_instance_models.py:72 models/index_instance_models.py:103
 msgid "Index instance node"
@@ -238,7 +240,7 @@ msgstr ""
 
 #: models/index_template_models.py:102
 msgid "Event type"
-msgstr ""
+msgstr "Loại sự kiện"
 
 #: models/index_template_models.py:107
 msgid "Index template event trigger"
@@ -286,7 +288,7 @@ msgstr ""
 msgid "Root"
 msgstr ""
 
-#: permissions.py:6 queues.py:8
+#: permissions.py:6 queues.py:7
 msgid "Indexing"
 msgstr ""
 
@@ -314,15 +316,15 @@ msgstr ""
 msgid "Rebuild index templates"
 msgstr ""
 
-#: queues.py:12
-msgid "Delete empty index nodes"
+#: queues.py:10
+msgid "Indexing slow"
 msgstr ""
 
-#: queues.py:16
+#: queues.py:14
 msgid "Remove document"
 msgstr ""
 
-#: queues.py:20
+#: queues.py:18
 msgid "Index document"
 msgstr ""
 

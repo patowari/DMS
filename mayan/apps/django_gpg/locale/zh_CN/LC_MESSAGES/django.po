@@ -5,6 +5,7 @@
 # Translators:
 # Translators:
 # Genlin Jiao <jiaogl@pkusz.edu.cn>, 2023
+# dave cheng, 2023
 # Leon Chu, 2023
 # Ford Guo <agile.guo@gmail.com>, 2023
 # xisafe <root@xisafe.com>, 2023
@@ -14,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +39,7 @@ msgstr "类型"
 
 #: apps.py:67 forms.py:23 models.py:29
 msgid "Creation date"
-msgstr "创立日期"
+msgstr "建立日期"
 
 #: apps.py:72
 msgid "No expiration"
@@ -46,7 +47,7 @@ msgstr "没有过期"
 
 #: apps.py:73 forms.py:28 models.py:33
 msgid "Expiration date"
-msgstr "过期日期"
+msgstr "過期日期"
 
 #: apps.py:77 forms.py:35 models.py:40
 msgid "Length"
@@ -90,7 +91,7 @@ msgstr "术语"
 
 #: forms.py:57
 msgid "Name, e-mail, key ID or key fingerprint to look for."
-msgstr "要查找的名称，邮件，密钥ID或者密钥指纹"
+msgstr "要查找的姓名，电子邮件，密钥ID或密钥指纹。"
 
 #: links.py:17
 msgid "Delete"
@@ -154,11 +155,11 @@ msgstr "文档未签名或者无效签名"
 
 #: literals.py:76
 msgid "Signature error."
-msgstr "签名出错。"
+msgstr "签名错误。"
 
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
-msgstr "文档已经签名，但是没法验证公钥。"
+msgstr "文档已签名，但没有公钥可用于验证。"
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."

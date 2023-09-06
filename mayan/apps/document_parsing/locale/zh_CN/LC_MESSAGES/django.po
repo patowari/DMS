@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
+# Ford Guo <agile.guo@gmail.com>, 2023
 # malijie <tonymlj2008@126.com>, 2023
 # Leon Chu, 2023
 # Roberto Rosario, 2023
-# Ford Guo <agile.guo@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Ford Guo <agile.guo@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr "文档解析"
 msgid "A generator returning the document file's pages parsed content."
 msgstr ""
 
-#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:11
+#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:18
 msgid "Content"
 msgstr "内容"
 
@@ -90,7 +90,7 @@ msgstr "文件檔案頁面"
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr "由文档解析后端提取的实际文本内容。"
 
-#: models.py:31
+#: models.py:31 search.py:24
 msgid "Document file page content"
 msgstr "文件檔案頁面內容"
 
@@ -148,7 +148,7 @@ msgstr "解析"
 msgid "Document file parsing"
 msgstr "文件檔案解析中"
 
-#: search.py:17 search.py:24
+#: search.py:12
 msgid "Document file content"
 msgstr "文件檔案內容"
 
@@ -221,7 +221,7 @@ msgstr "%(count)d文件檔案加入解析隊列"
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
-msgstr[0] ""
+msgstr[0] "提交%(count)d文件檔案進入解析隊列?"
 
 #: views.py:160
 #, python-format

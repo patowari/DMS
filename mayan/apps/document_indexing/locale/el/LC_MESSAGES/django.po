@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "Πρότυπα ευρετηρίου"
 msgid "Template"
 msgstr "Πρότυπο"
 
-#: handlers.py:19
+#: handlers.py:18
 msgid "Creation date"
 msgstr "Ημερομηνία δημιουργίας"
 
@@ -106,7 +106,7 @@ msgstr "Ημερομηνία δημιουργίας"
 msgid "Indexes"
 msgstr "Ευρετήρια"
 
-#: links.py:53 queues.py:24
+#: links.py:53 queues.py:23
 msgid "Rebuild index"
 msgstr "Αναδόμηση ευρετηρίου"
 
@@ -154,7 +154,7 @@ msgstr "Όχι"
 msgid "Yes"
 msgstr "Ναι"
 
-#: models/index_instance_model_mixins.py:48
+#: models/index_instance_model_mixins.py:34
 #, python-format
 msgid ""
 "Error indexing document: %(document)s; expression: %(expression)s; "
@@ -163,23 +163,23 @@ msgstr ""
 "Σφάλμα κατά την επεξεργασία εγγράφου: %(document)s; expression: "
 "%(expression)s; %(exception)s"
 
-#: models/index_instance_model_mixins.py:216
+#: models/index_instance_model_mixins.py:155
 msgid "Total number of nodes with unique values this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:225
+#: models/index_instance_model_mixins.py:164
 msgid "Total number of unique documents this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:235
+#: models/index_instance_model_mixins.py:174
 msgid "Total number of node levels this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:304
+#: models/index_instance_model_mixins.py:243
 msgid "The path to the index including all ancestors."
 msgstr "Η διαδρομή στο ευρετήριο συμπεριλαμβανομένων όλων των προγόνων."
 
-#: models/index_instance_model_mixins.py:306
+#: models/index_instance_model_mixins.py:245
 msgid "Full path"
 msgstr "Πλήρης διαδρομή"
 
@@ -298,7 +298,7 @@ msgstr ""
 msgid "Root"
 msgstr "Ρίζα:"
 
-#: permissions.py:6 queues.py:8
+#: permissions.py:6 queues.py:7
 msgid "Indexing"
 msgstr "Ευρετηριασμός"
 
@@ -326,15 +326,15 @@ msgstr ""
 msgid "Rebuild index templates"
 msgstr ""
 
-#: queues.py:12
-msgid "Delete empty index nodes"
-msgstr "Διαγραφή κενών κόμβων ευρετηρίου"
+#: queues.py:10
+msgid "Indexing slow"
+msgstr ""
 
-#: queues.py:16
+#: queues.py:14
 msgid "Remove document"
 msgstr "Αφαίρεση εγγράφου"
 
-#: queues.py:20
+#: queues.py:18
 msgid "Index document"
 msgstr "Ευρετηριασμός εγγράφου"
 

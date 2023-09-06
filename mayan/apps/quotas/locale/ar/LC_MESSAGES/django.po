@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -21,20 +21,20 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:33 events.py:6 links.py:34 models.py:31 permissions.py:6
+#: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
 #: views.py:150
 msgid "Quotas"
 msgstr "المحددات"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "لاشيء"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "لم يتم التطبيق"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "خلفية فارغة"
 
@@ -54,15 +54,15 @@ msgstr "في الخفاء"
 msgid "The quota driver for this entry."
 msgstr "نسبة الإدخال المحددة "
 
-#: links.py:16
+#: links.py:17
 msgid "Create quota"
 msgstr "إنشاء المحدد"
 
-#: links.py:21
+#: links.py:22
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:25
+#: links.py:26
 msgid "Edit"
 msgstr "تعديل"
 
@@ -188,41 +188,41 @@ msgstr "تعديل المحدد"
 msgid "View a quota"
 msgstr "عرض المحدد"
 
-#: quota_backends.py:71 quota_backends.py:171
+#: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
 msgstr "تجاوزت عدد المحددات المستخدمة"
 
-#: quota_backends.py:75
+#: quota_backends.py:76
 msgid "Documents limit"
 msgstr "تحديد الوثائق"
 
-#: quota_backends.py:78
+#: quota_backends.py:79
 msgid "Maximum number of documents."
 msgstr "العدد المسموح من الوثائق"
 
-#: quota_backends.py:82
+#: quota_backends.py:83
 msgid "Document count limit"
 msgstr "تحديد عدد الوثائق"
 
-#: quota_backends.py:107
+#: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
 msgstr "عدد الوثائق : %(document_count)s"
 
-#: quota_backends.py:182
+#: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
 msgstr "الحجم المسموح للوثائق بال  (MB)."
 
-#: quota_backends.py:183 quota_backends.py:186
+#: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
 msgstr "تحديد حجم الوثائق"
 
-#: quota_backends.py:211
+#: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
 msgstr "حجم الوثائق : %(formatted_file_size)s"
 
-#: quota_backends.py:233
+#: quota_backends.py:234
 msgid "Document size quota exceeded."
 msgstr "تجاوزت الحجم المسموح للوثائق"
 

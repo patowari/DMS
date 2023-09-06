@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Sergey Glita <gsv70@mail.ru>, 2023
 # lilo.panic, 2023
+# Sergey Glita <gsv70@mail.ru>, 2023
 # Ilya Pavlov <spirkaa@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"

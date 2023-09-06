@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
 # 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2023
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2023
+# Roberto Rosario, 2023
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -23,20 +23,20 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:33 events.py:6 links.py:34 models.py:31 permissions.py:6
+#: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
 #: views.py:150
 msgid "Quotas"
 msgstr "Квоти"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "няма"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "Не се прилага"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "Нулев бекенд"
 
@@ -56,15 +56,15 @@ msgstr "Бекенд"
 msgid "The quota driver for this entry."
 msgstr "Драйвер за квотите за този запис."
 
-#: links.py:16
+#: links.py:17
 msgid "Create quota"
 msgstr "Създайте квота"
 
-#: links.py:21
+#: links.py:22
 msgid "Delete"
 msgstr "Изтрийте"
 
-#: links.py:25
+#: links.py:26
 msgid "Edit"
 msgstr "Редактиране"
 
@@ -192,41 +192,41 @@ msgstr "Редактиране на квота"
 msgid "View a quota"
 msgstr "Вижте квота"
 
-#: quota_backends.py:71 quota_backends.py:171
+#: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
 msgstr "Превишена квота за брой документи."
 
-#: quota_backends.py:75
+#: quota_backends.py:76
 msgid "Documents limit"
 msgstr "Ограничение на документи"
 
-#: quota_backends.py:78
+#: quota_backends.py:79
 msgid "Maximum number of documents."
 msgstr "Максимален брой документи."
 
-#: quota_backends.py:82
+#: quota_backends.py:83
 msgid "Document count limit"
 msgstr "Ограничение на броя на документите"
 
-#: quota_backends.py:107
+#: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
 msgstr "брой на документите: %(document_count)s"
 
-#: quota_backends.py:182
+#: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
 msgstr "Максимален размер на документа в мегабайти (MB)."
 
-#: quota_backends.py:183 quota_backends.py:186
+#: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
 msgstr "Ограничение на размера на документа"
 
-#: quota_backends.py:211
+#: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
 msgstr "размер на документа: %(formatted_file_size)s"
 
-#: quota_backends.py:233
+#: quota_backends.py:234
 msgid "Document size quota exceeded."
 msgstr "Квотата за размер на документа е надвишена."
 

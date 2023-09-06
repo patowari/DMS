@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Tamás Benkovszky, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Tamás Benkovszky, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "Hozzáférési listák"
 
@@ -29,10 +30,12 @@ msgid ""
 "Object for which the access is granted. When sorting objects, only the type "
 "is used and not the actual label of the object."
 msgstr ""
+"Objektum, amelyhez hozzáférést biztosítottak. Az objektumok rendezésekor "
+"csak a típus kerül felhasználásra, az objektum tényleges címkéje nem."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
-msgstr ""
+msgstr "Objektum"
 
 #: events.py:6 permissions.py:6
 msgid "Access control lists"
@@ -40,15 +43,15 @@ msgstr "Hozzáférési lista"
 
 #: events.py:10
 msgid "ACL created"
-msgstr ""
+msgstr "Hozzáférési lista létrehozva"
 
 #: events.py:13
 msgid "ACL deleted"
-msgstr ""
+msgstr "Hozzáférési lista törölve"
 
 #: events.py:16
 msgid "ACL edited"
-msgstr ""
+msgstr "Hozzáférési lista szerkesztve"
 
 #: forms.py:13 models.py:56 serializers.py:79 views.py:73
 msgid "Role"
@@ -56,19 +59,19 @@ msgstr "Szerepkör"
 
 #: links.py:16
 msgid "New ACL"
-msgstr ""
+msgstr "Új hozzáférési lista"
 
 #: links.py:21
 msgid "Delete"
 msgstr "Törlés"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "Engedélyek"
 
 #: links.py:35
 msgid "Global ACLs"
-msgstr ""
+msgstr "Globális hozzáférési lista"
 
 #: managers.py:274
 #, python-format
@@ -78,7 +81,7 @@ msgstr ""
 #: managers.py:294
 #, python-format
 msgid "Insufficient access for: %s"
-msgstr ""
+msgstr "Elégtelen jogosultság az:%s"
 
 #: model_mixins.py:23
 msgid "Permission count"
@@ -88,7 +91,7 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr ""
 
@@ -184,7 +187,7 @@ msgstr "Hozzáférési lista a: %s -hoz"
 
 #: views.py:168
 msgid "Granted permissions"
-msgstr "Élvezett jogosúltságok"
+msgstr "Megadott jogosúltságok"
 
 #: views.py:169
 msgid "Available permissions"
@@ -211,44 +214,48 @@ msgstr ""
 msgid "Global access control lists"
 msgstr ""
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr ""
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr ""
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "Szerepkörök"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr ""
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr ""
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr ""
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr ""

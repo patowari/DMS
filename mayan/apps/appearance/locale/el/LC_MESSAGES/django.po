@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Hmayag Antonian <hmayag@freemail.gr>, 2023
 # pyrotech <anastasios@tutamail.com>, 2023
+# Hmayag Antonian <hmayag@freemail.gr>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,27 +85,27 @@ msgstr "Το θέμα τροποποιήθηκε"
 msgid "User theme edited"
 msgstr ""
 
-#: links.py:18
+#: links.py:20
 msgid "Theme settings"
 msgstr "Ρυθμίσεις θέματος"
 
-#: links.py:25
+#: links.py:27
 msgid "Edit theme settings"
 msgstr "Τροποποίηση ρυθμίσεων θέματος"
 
-#: links.py:31 views.py:31
+#: links.py:33 views.py:31
 msgid "Create new theme"
 msgstr "Δημιουργία νέου θέματος"
 
-#: links.py:36
+#: links.py:38
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: links.py:40
+#: links.py:42
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: links.py:44 links.py:49 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:99
 msgid "Themes"
 msgstr "Θέματα"
 
@@ -226,7 +226,7 @@ msgstr ""
 "δικαίωμα πρόσβασης."
 
 #: templates/500.html:5 templates/500.html:30
-#: templates/appearance/root.html:47
+#: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Σφάλμα διακομηστή"
 
@@ -263,35 +263,24 @@ msgstr ""
 "Δημιουργήστε νέο ticket χρησιμοποιόντας το <a href=\"%(issue_url)s\">issue "
 "tracker</a>."
 
-#: templates/appearance/about.html:10
+#: templates/appearance/about.html:9
 msgid "About"
 msgstr "Σχετικά"
 
-#: templates/appearance/about.html:72
-#, python-format
-msgid ""
-"\n"
-"                    %(setting_project_title)s is based on %(project_title)s\n"
-"                "
-msgstr ""
-"\n"
-"                    το %(setting_project_title)s βασίζεται στο %(project_title)s\n"
-"                "
-
-#: templates/appearance/about.html:77
+#: templates/appearance/about.html:67
 msgid "Version"
 msgstr "Έκδοση"
 
-#: templates/appearance/about.html:79
+#: templates/appearance/about.html:69
 #, python-format
 msgid "Build number: %(build_number)s"
 msgstr "Αριθμός build: %(build_number)s"
 
-#: templates/appearance/about.html:92
+#: templates/appearance/about.html:82
 msgid "Released under the license:"
 msgstr "Διανέμεται υπό την άδεια:"
 
-#: templates/appearance/about.html:98
+#: templates/appearance/about.html:88
 #, python-format
 msgid ""
 "\n"
@@ -302,7 +291,7 @@ msgstr ""
 "                Η πλήρης λίστα αλλαγών είναι διαθέσιμη στις <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Σημειώσεις έκδοσης %(icon_documentation)s</a> ενώ η σύντομη έκδοση των αλλαγών στις <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Αλλαγές έκδοσης %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:104
+#: templates/appearance/about.html:94
 #, python-format
 msgid ""
 "\n"
@@ -313,7 +302,7 @@ msgstr ""
 "                Για ερωτήματα ελέγξτε την <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Τεκμηρίωση %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:110
+#: templates/appearance/about.html:100
 #, python-format
 msgid ""
 "\n"
@@ -322,17 +311,6 @@ msgid ""
 msgstr ""
 "\n"
 "                Εάν έχετε εντοπίσει κάποιο σφάλμα (bug) ή έχετε προτάσεις για νέα χαρακτηριστικά, επισκεφθείτε το <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Φόρουμ %(icon_forum)s</a> ή δημιουργήστε ένα νέο ticket στο <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Αποθετήριο κώδικα %(icon_source_code)s</a>.\n"
-"            "
-
-#: templates/appearance/about.html:115
-#, python-format
-msgid ""
-"\n"
-"                Spread the word. Talk to your friends and colleagues about how awesome %(project_title)s is!\n"
-"            "
-msgstr ""
-"\n"
-"                Διαδώστε. Μιλήστε στους φίλους και συναδέλφους για το %(project_title)s! \n"
 "            "
 
 #: templates/appearance/app/foot.html:70
@@ -364,21 +342,21 @@ msgstr "Όχι"
 msgid "required"
 msgstr "απαιτείται"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: templates/appearance/generic_form_subtemplate.html:98
+#: templates/appearance/generic_form_subtemplate.html:99
 #: templates/appearance/generic_multiform_subtemplate.html:66
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -464,19 +442,19 @@ msgstr "Προηγούμενη σελίδα"
 msgid "Next page"
 msgstr "Επόμενη σελίδα"
 
-#: templates/appearance/root.html:52
+#: templates/appearance/root.html:51
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: templates/appearance/root.html:60
+#: templates/appearance/root.html:59
 msgid "Server communication error"
 msgstr "Σφάλμα επικοινωνίας διακομιστή"
 
-#: templates/appearance/root.html:62
+#: templates/appearance/root.html:61
 msgid "Check you network connection and try again in a few moments."
 msgstr "Ελέγξτε την σύνδεση δικτύου σας και δοκιμάστε ξανά σε λίγα λεπτά."
 
-#: templatetags/appearance_tags.py:67
+#: templatetags/appearance_tags.py:77
 msgid "None"
 msgstr "Κανένα"
 

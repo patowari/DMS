@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Translators:
+# Roberto Rosario, 2023
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +23,7 @@ msgstr ""
 
 #: apps.py:29 links.py:35 permissions.py:6 queues.py:7
 msgid "Statistics"
-msgstr ""
+msgstr "Thống kê"
 
 #: apps.py:38
 msgid "Type"
@@ -44,7 +45,7 @@ msgstr ""
 
 #: classes.py:162
 msgid "Never"
-msgstr ""
+msgstr "Không bao giờ"
 
 #: classes.py:207
 msgid "Doughnut chart"

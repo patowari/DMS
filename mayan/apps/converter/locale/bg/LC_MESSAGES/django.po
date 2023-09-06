@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -30,26 +30,26 @@ msgstr "Конвертор"
 msgid "Transformation"
 msgstr "Трансформация"
 
-#: backends/python.py:123 backends/python.py:138
-#, python-format
-msgid "Exception determining PDF page count; %s"
-msgstr "Изключение, определящо броя на PDF страниците; %s"
-
-#: backends/python.py:152
+#: backends/python.py:106
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr ""
 "Изключение, определящо броя на страниците с използване на Възглавница; %s"
 
-#: classes.py:161
+#: backends/python.py:194 backends/python.py:211
+#, python-format
+msgid "Exception determining PDF page count; %s"
+msgstr "Изключение, определящо броя на PDF страниците; %s"
+
+#: classes.py:173
 msgid "LibreOffice not installed or not found."
 msgstr "LibreOffice не е инсталиран или не е намерен."
 
-#: classes.py:267
+#: classes.py:279
 msgid "Not an office file format."
 msgstr "Не е във формат на офис файл"
 
-#: classes.py:403
+#: classes.py:415
 msgid ""
 "Transformations allow changing the visual appearance of documents without "
 "making permanent changes to the document file themselves."
@@ -96,18 +96,18 @@ msgstr "Налични трансформации за този слой."
 msgid "\"%s\" not a valid entry."
 msgstr "&quot;%s&quot; не е валиден запис."
 
-#: layers.py:11
+#: layers.py:12
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
 "Декорациите са визуални елементи, които добавят контекстна информация към "
 "изображенията."
 
-#: layers.py:13
+#: layers.py:14
 msgid "Decorations"
 msgstr "Декорации"
 
-#: layers.py:24
+#: layers.py:26
 msgid "Saved transformations"
 msgstr "Запазени трансформации"
 
@@ -115,23 +115,24 @@ msgstr "Запазени трансформации"
 msgid "Create asset"
 msgstr "Създайте актив"
 
-#: links.py:38 links.py:44 links.py:64
+#: links.py:38 links.py:44 links.py:67
 msgid "Delete"
 msgstr "Изтрийте"
 
-#: links.py:48 links.py:68
+#: links.py:48 links.py:71
 msgid "Edit"
 msgstr "Редактиране"
 
-#: links.py:56 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:59 models.py:54 storages.py:21
+#: views/asset_views.py:144
 msgid "Assets"
 msgstr "Активи"
 
-#: links.py:73
+#: links.py:76 workflow_actions.py:91
 msgid "Transformations"
 msgstr "Трансформации"
 
-#: links.py:78
+#: links.py:81
 msgid "Select new transformation"
 msgstr "Изберете нова трансформация"
 
@@ -163,7 +164,7 @@ msgstr "Файл"
 msgid "Asset"
 msgstr "Актив"
 
-#: models.py:90 models.py:161
+#: models.py:90 models.py:161 serializers.py:10
 msgid "Name"
 msgstr "Име"
 
@@ -207,7 +208,7 @@ msgstr ""
 "Ред, в който ще бъдат извършени трансформациите. Ако остане непроменено, ще "
 "бъде назначена автоматична стойност на поръчката."
 
-#: models.py:165 workflow_actions.py:45
+#: models.py:165 workflow_actions.py:57
 msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
@@ -263,11 +264,19 @@ msgstr "Преглед на съществуващите трансформац�
 msgid "Generate a image of an object."
 msgstr "Генерирайте изображение на обект."
 
-#: serializers.py:10
+#: serializers.py:13
+msgid "Image path"
+msgstr ""
+
+#: serializers.py:16 serializers.py:32
 msgid "Image URL"
 msgstr ""
 
-#: serializers.py:17
+#: serializers.py:21
+msgid "Template name"
+msgstr ""
+
+#: serializers.py:24 serializers.py:39
 msgid "URL"
 msgstr "URL"
 
@@ -349,7 +358,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "Кеш на активи"
 
-#: transformation_mixins.py:20 transformations.py:618
+#: transformation_mixins.py:20 transformations.py:617
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -366,11 +375,11 @@ msgstr ""
 msgid "Transparency"
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:723
+#: transformation_mixins.py:29 transformations.py:722
 msgid "Zoom level in percent."
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:718
+#: transformation_mixins.py:29 transformations.py:717
 msgid "Zoom"
 msgstr "Увеличаване"
 
@@ -464,7 +473,7 @@ msgstr ""
 msgid "Color used to fill the rectangle."
 msgstr ""
 
-#: transformation_mixins.py:350 transformations.py:625
+#: transformation_mixins.py:350 transformations.py:624
 msgid "Fill color"
 msgstr ""
 
@@ -568,7 +577,7 @@ msgstr "Преобръщане"
 msgid "Gaussian blur"
 msgstr "Гаусово замъгляване"
 
-#: transformations.py:530 transformations.py:693
+#: transformations.py:530 transformations.py:692
 msgid "Radius"
 msgstr ""
 
@@ -600,51 +609,51 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: transformations.py:612
+#: transformations.py:611
 msgid "Rotate"
 msgstr "Завъртане"
 
-#: transformations.py:620
+#: transformations.py:619
 msgid "Degrees"
 msgstr ""
 
-#: transformations.py:624
+#: transformations.py:623
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 
-#: transformations.py:655
+#: transformations.py:654
 msgid "Rotate 90 degrees"
 msgstr "Завъртане на 90 градуса"
 
-#: transformations.py:666
+#: transformations.py:665
 msgid "Rotate 180 degrees"
 msgstr "Въртене на 180 градуса"
 
-#: transformations.py:677
+#: transformations.py:676
 msgid "Rotate 270 degrees"
 msgstr "Въртене на 270 градуса"
 
-#: transformations.py:687
+#: transformations.py:686
 msgid "Unsharp masking"
 msgstr "Размазващо маскиране"
 
-#: transformations.py:692
+#: transformations.py:691
 msgid "The blur radius in pixels."
 msgstr ""
 
-#: transformations.py:696
+#: transformations.py:695
 msgid "Unsharp strength in percent."
 msgstr ""
 
-#: transformations.py:697 transformations.py:724
+#: transformations.py:696 transformations.py:723
 msgid "Percent"
 msgstr ""
 
-#: transformations.py:701
+#: transformations.py:700
 msgid "Minimum brightness change that will be sharpened."
 msgstr ""
 
-#: transformations.py:702
+#: transformations.py:701
 msgid "Tthreshold"
 msgstr ""
 
@@ -661,8 +670,8 @@ msgstr "Изтриване на заявка, извършена за %(count)d�
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Да се изтрие ли избраният актив?"
+msgstr[1] "Да се изтрият ли избраните активи?"
 
 #: views/asset_views.py:70
 #, python-format
@@ -751,11 +760,11 @@ msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
 msgstr ""
 "Изберете нова трансформация на слой &quot;%(layer)s&quot; за: %(object)s"
 
-#: workflow_actions.py:22
+#: workflow_actions.py:34
 msgid "Pages"
 msgstr "Страници"
 
-#: workflow_actions.py:25
+#: workflow_actions.py:37
 msgid ""
 "Pages to which the new transformations will be added. Separate by commas "
 "and/or use a dashes for a ranges. Leave blank to select all pages."
@@ -764,18 +773,22 @@ msgstr ""
 "запетаи и / или използвайте тирета за диапазони. Оставете празно, за да "
 "изберете всички страници."
 
-#: workflow_actions.py:32
+#: workflow_actions.py:44
 msgid "Transformation class"
 msgstr "Клас на трансформация"
 
-#: workflow_actions.py:37
+#: workflow_actions.py:49
 msgid "Type of transformation to add."
 msgstr "Тип трансформация за добавяне."
 
-#: workflow_actions.py:42
+#: workflow_actions.py:54
 msgid "Transformation arguments"
 msgstr "Аргументи за трансформация"
 
-#: workflow_actions.py:51
+#: workflow_actions.py:63
 msgid "Add transformation"
 msgstr "Добавете трансформация"
+
+#: workflow_actions.py:86
+msgid "Objects"
+msgstr ""

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -21,20 +21,20 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:33 events.py:6 links.py:34 models.py:31 permissions.py:6
+#: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
 #: views.py:150
 msgid "Quotas"
 msgstr "Kvóty"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "žádný"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "Nepoužito"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "Null backend"
 
@@ -54,15 +54,15 @@ msgstr "Backend"
 msgid "The quota driver for this entry."
 msgstr "Ovladač kvóty pro tuto položku."
 
-#: links.py:16
+#: links.py:17
 msgid "Create quota"
 msgstr "Vytvořit kvótu"
 
-#: links.py:21
+#: links.py:22
 msgid "Delete"
 msgstr "Odstranit"
 
-#: links.py:25
+#: links.py:26
 msgid "Edit"
 msgstr "Upravit"
 
@@ -190,41 +190,41 @@ msgstr "Upravte kvótu"
 msgid "View a quota"
 msgstr "Zobrazit kvótu"
 
-#: quota_backends.py:71 quota_backends.py:171
+#: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
 msgstr "Kvóta počtu dokumentů překročena."
 
-#: quota_backends.py:75
+#: quota_backends.py:76
 msgid "Documents limit"
 msgstr "Limit dokumentů"
 
-#: quota_backends.py:78
+#: quota_backends.py:79
 msgid "Maximum number of documents."
 msgstr "Maximální počet dokumentů."
 
-#: quota_backends.py:82
+#: quota_backends.py:83
 msgid "Document count limit"
 msgstr "Limit počtu dokumentů"
 
-#: quota_backends.py:107
+#: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
 msgstr "počet dokumentů: %(document_count)s"
 
-#: quota_backends.py:182
+#: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
 msgstr "Maximální velikost dokumentu v megabajtech (MB)."
 
-#: quota_backends.py:183 quota_backends.py:186
+#: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
 msgstr "Limit velikosti dokumentu"
 
-#: quota_backends.py:211
+#: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
 msgstr "velikost dokumentu: %(formatted_file_size)s"
 
-#: quota_backends.py:233
+#: quota_backends.py:234
 msgid "Document size quota exceeded."
 msgstr "Kvóta velikosti dokumentu byla překročena."
 

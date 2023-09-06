@@ -4,15 +4,17 @@
 # 
 # Translators:
 # Translators:
+# Trung Phan Minh <navmobile@gmail.com>, 2023
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +28,7 @@ msgstr ""
 
 #: apps.py:53 apps.py:59 forms.py:16
 msgid "Key ID"
-msgstr ""
+msgstr "Key ID"
 
 #: apps.py:63 forms.py:42 models.py:50
 msgid "Type"
@@ -58,7 +60,7 @@ msgstr ""
 
 #: events.py:6 links.py:42 permissions.py:6
 msgid "Key management"
-msgstr ""
+msgstr "Quản lý khóa"
 
 #: events.py:10
 msgid "Key created"
@@ -82,11 +84,11 @@ msgstr ""
 
 #: forms.py:56
 msgid "Term"
-msgstr ""
+msgstr "Term"
 
 #: forms.py:57
 msgid "Name, e-mail, key ID or key fingerprint to look for."
-msgstr ""
+msgstr "Name, e-mail, key ID or key fingerprint to look for."
 
 #: links.py:17
 msgid "Delete"
@@ -102,7 +104,7 @@ msgstr "Tải xuống"
 
 #: links.py:32 permissions.py:28
 msgid "Query keyservers"
-msgstr ""
+msgstr "Truy vấn keyservers"
 
 #: links.py:37
 msgid "Import"
@@ -122,47 +124,47 @@ msgstr ""
 
 #: literals.py:23 literals.py:31
 msgid "Public"
-msgstr ""
+msgstr "Công cộng"
 
 #: literals.py:24 literals.py:32
 msgid "Secret"
-msgstr ""
+msgstr "Bí mật"
 
 #: literals.py:41 literals.py:50
 msgid "RSA"
-msgstr ""
+msgstr "RSA"
 
 #: literals.py:44
 msgid "DSA"
-msgstr ""
+msgstr "DSA"
 
 #: literals.py:53
 msgid "Elgamal"
-msgstr ""
+msgstr "Elgamal"
 
 #: literals.py:70
 msgid "Bad signature."
-msgstr ""
+msgstr "Bad signature."
 
 #: literals.py:73
 msgid "Document not signed or invalid signature."
-msgstr ""
+msgstr "Tài liệu không được kí hoặc chữ kí không hợp lệ."
 
 #: literals.py:76
 msgid "Signature error."
-msgstr ""
+msgstr "Signature error."
 
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
-msgstr ""
+msgstr "Document is signed but no public key is available for verification."
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."
-msgstr ""
+msgstr "Document is signed, and signature is good."
 
 #: literals.py:88
 msgid "Document is signed with a valid signature."
-msgstr ""
+msgstr "Document is signed, and signature is good."
 
 #: models.py:25
 msgid "ASCII armored version of the key."
@@ -190,7 +192,7 @@ msgstr ""
 
 #: permissions.py:10
 msgid "Delete keys"
-msgstr ""
+msgstr "Xóa khóa"
 
 #: permissions.py:13
 msgid "Download keys"
@@ -198,7 +200,7 @@ msgstr ""
 
 #: permissions.py:16
 msgid "Import keys from keyservers"
-msgstr ""
+msgstr "Import keys from keyservers"
 
 #: permissions.py:19
 msgid "Use keys to sign content"
@@ -210,7 +212,7 @@ msgstr ""
 
 #: permissions.py:25
 msgid "View keys"
-msgstr ""
+msgstr "Xem các khóa"
 
 #: serializers.py:12
 msgid "URL"
@@ -245,7 +247,7 @@ msgstr ""
 
 #: views.py:98
 msgid "Import key"
-msgstr ""
+msgstr "Import key"
 
 #: views.py:109
 #, python-format
@@ -273,7 +275,7 @@ msgstr ""
 
 #: views.py:162
 msgid "Query key server"
-msgstr ""
+msgstr "Query key server"
 
 #: views.py:186
 msgid "Upload new key"

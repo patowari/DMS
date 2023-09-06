@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,50 +22,54 @@ msgstr ""
 
 #: apps.py:28 events.py:6
 msgid "Locales"
-msgstr "מקומות"
+msgstr ""
+
+#: dependencies.py:11
+msgid "Transifex Client"
+msgstr "לקוח Transifex"
 
 #: events.py:10
 msgid "User locale profile edited"
-msgstr "פרופיל מיקום המשתמש נערך"
+msgstr ""
 
 #: links.py:15
 msgid "Locale profile"
-msgstr "פרופיל מקומי"
+msgstr ""
 
 #: links.py:20
 msgid "Edit locale profile"
-msgstr "ערוך פרופיל מקומי"
+msgstr ""
 
 #: models.py:20
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
 #: models.py:24
 msgid "Timezone"
-msgstr "אזור זמן"
+msgstr ""
 
 #: models.py:28
 msgid "Language"
-msgstr "שפה"
+msgstr ""
 
 #: models.py:34
 msgid "User locale profile"
-msgstr "פרופיל מקומי של משתמש"
+msgstr ""
 
 #: models.py:35
 msgid "User locale profiles"
-msgstr "פרופילים מקומיים של משתמשים"
+msgstr ""
 
 #: models.py:39
 msgid "None"
-msgstr "אף אחד"
+msgstr "אף אחד/כלום"
 
 #: views.py:40
 #, python-format
 msgid "Locale profile for user: %s"
-msgstr "פרופיל מקומי למשתמש: %s"
+msgstr ""
 
 #: views.py:88
 #, python-format
 msgid "Edit locale profile for user: %s"
-msgstr "ערוך פרופיל מקומי עבור המשתמש: %s"
+msgstr ""

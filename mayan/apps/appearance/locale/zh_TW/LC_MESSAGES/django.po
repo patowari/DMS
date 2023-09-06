@@ -5,18 +5,18 @@
 # Translators:
 # Translators:
 # bo feng <87289884@qq.com>, 2023
-# Ford Guo <agile.guo@gmail.com>, 2023
-# Roberto Rosario, 2023
-# Leon Chu, 2023
 # yan songwei <yansw@vip.163.com>, 2023
+# Ford Guo <agile.guo@gmail.com>, 2023
+# Leon Chu, 2023
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: yan songwei <yansw@vip.163.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,27 +88,27 @@ msgstr "已編輯之佈景"
 msgid "User theme edited"
 msgstr ""
 
-#: links.py:18
+#: links.py:20
 msgid "Theme settings"
 msgstr "佈景設定"
 
-#: links.py:25
+#: links.py:27
 msgid "Edit theme settings"
 msgstr "編輯佈景設定"
 
-#: links.py:31 views.py:31
+#: links.py:33 views.py:31
 msgid "Create new theme"
 msgstr "建立新的佈景"
 
-#: links.py:36
+#: links.py:38
 msgid "Delete"
 msgstr "刪除"
 
-#: links.py:40
+#: links.py:42
 msgid "Edit"
 msgstr "編輯"
 
-#: links.py:44 links.py:49 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:99
 msgid "Themes"
 msgstr "佈景"
 
@@ -225,7 +225,7 @@ msgid ""
 msgstr "位置正確，但是你的帳戶没有存取權限。"
 
 #: templates/500.html:5 templates/500.html:30
-#: templates/appearance/root.html:47
+#: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "伺服器錯誤"
 
@@ -258,35 +258,24 @@ msgstr "檢查日誌中是否帶有“ ERROR”錯誤，“ CRITICAL”中型錯
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr "開啟一個<a href=\"%(issue_url)s\">問題追蹤</a>的項目"
 
-#: templates/appearance/about.html:10
+#: templates/appearance/about.html:9
 msgid "About"
 msgstr "關於"
 
-#: templates/appearance/about.html:72
-#, python-format
-msgid ""
-"\n"
-"                    %(setting_project_title)s is based on %(project_title)s\n"
-"                "
-msgstr ""
-"\n"
-"                    %(setting_project_title)s基于%(project_title)s\n"
-"                "
-
-#: templates/appearance/about.html:77
+#: templates/appearance/about.html:67
 msgid "Version"
 msgstr "版本"
 
-#: templates/appearance/about.html:79
+#: templates/appearance/about.html:69
 #, python-format
 msgid "Build number: %(build_number)s"
 msgstr "版本號：%(build_number)s"
 
-#: templates/appearance/about.html:92
+#: templates/appearance/about.html:82
 msgid "Released under the license:"
 msgstr "依據此授權發布："
 
-#: templates/appearance/about.html:98
+#: templates/appearance/about.html:88
 #, python-format
 msgid ""
 "\n"
@@ -297,7 +286,7 @@ msgstr ""
 "                完整的更改列表可見於<a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">發布說明%(icon_documentation)s </a>或簡短版本<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">更改日誌%(icon_documentation)s </a>。\n"
 "            "
 
-#: templates/appearance/about.html:104
+#: templates/appearance/about.html:94
 #, python-format
 msgid ""
 "\n"
@@ -308,7 +297,7 @@ msgstr ""
 "                可以查找問題解說於此 <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:110
+#: templates/appearance/about.html:100
 #, python-format
 msgid ""
 "\n"
@@ -318,17 +307,6 @@ msgstr ""
 "\n"
 "                如果您發現了bug或有功能上的建議，請瀏覽<a class=\"new_window\" href=\"https://forum.mayan-edms.com\">論壇˙%(icon_forum)s </a>或在<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">源代碼倉庫%(icon_source_code)s </a>提交問題。\n"
 "            "
-
-#: templates/appearance/about.html:115
-#, python-format
-msgid ""
-"\n"
-"                Spread the word. Talk to your friends and colleagues about how awesome %(project_title)s is!\n"
-"            "
-msgstr ""
-"\n"
-"                傳遞到世界各地. 說明給您的朋友與同事知道  %(project_title)s 有多麼棒的功能!\n"
-"            "
 
 #: templates/appearance/app/foot.html:70
 msgid ""
@@ -359,21 +337,21 @@ msgstr "否"
 msgid "required"
 msgstr "需要的"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
 msgstr "保存"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Submit"
 msgstr "提交"
 
-#: templates/appearance/generic_form_subtemplate.html:98
+#: templates/appearance/generic_form_subtemplate.html:99
 #: templates/appearance/generic_multiform_subtemplate.html:66
 msgid "Cancel"
 msgstr "取消"
@@ -457,19 +435,19 @@ msgstr "上一页"
 msgid "Next page"
 msgstr "下一页"
 
-#: templates/appearance/root.html:52
+#: templates/appearance/root.html:51
 msgid "Close"
 msgstr "關閉"
 
-#: templates/appearance/root.html:60
+#: templates/appearance/root.html:59
 msgid "Server communication error"
 msgstr "伺服器通訊錯誤"
 
-#: templates/appearance/root.html:62
+#: templates/appearance/root.html:61
 msgid "Check you network connection and try again in a few moments."
 msgstr "請檢查網路連線，並稍後再試。"
 
-#: templatetags/appearance_tags.py:67
+#: templatetags/appearance_tags.py:77
 msgid "None"
 msgstr "没有"
 

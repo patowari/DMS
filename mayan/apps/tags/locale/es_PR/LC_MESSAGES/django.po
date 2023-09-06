@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:46 apps.py:133 apps.py:137 apps.py:141 apps.py:146 apps.py:150
 #: events.py:6 forms.py:27 links.py:28 menus.py:14 models.py:35
-#: permissions.py:6 views.py:180 workflow_actions.py:18 workflow_actions.py:67
+#: permissions.py:6 views.py:180 workflow_actions.py:40 workflow_actions.py:54
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -50,7 +50,7 @@ msgstr "Etiqueta retirada del documento"
 msgid "Attach tags"
 msgstr "Adjuntar etiqueta"
 
-#: links.py:23 workflow_actions.py:74
+#: links.py:23 workflow_actions.py:76
 msgid "Remove tag"
 msgstr "Retirar etiqueta"
 
@@ -110,63 +110,63 @@ msgstr "Etiqueta"
 msgid "Document tag"
 msgstr "Etiqueta de documento"
 
-#: models.py:64 search.py:24 search.py:30 search.py:36 search.py:42
+#: models.py:64
 msgid "Document tags"
 msgstr "Etiquetas de documentos"
 
 #: permissions.py:10
+msgid "Attach tags to documents"
+msgstr "Adjuntar etiquetas a documentos"
+
+#: permissions.py:13
 msgid "Create new tags"
 msgstr "Crear nuevas etiquetas"
 
-#: permissions.py:13
+#: permissions.py:16
 msgid "Delete tags"
 msgstr "Borrar etiquetas"
 
-#: permissions.py:16
+#: permissions.py:19
 msgid "View tags"
 msgstr "Ver etiquetas"
 
-#: permissions.py:19
+#: permissions.py:22
 msgid "Edit tags"
 msgstr "Editar etiquetas"
-
-#: permissions.py:22
-msgid "Attach tags to documents"
-msgstr "Adjuntar etiquetas a documentos"
 
 #: permissions.py:25
 msgid "Remove tags from documents"
 msgstr "Retirar etiquetas de los documentos"
 
-#: search.py:15
+#: search.py:11
 msgid "Tag label"
 msgstr "Etiqueta creada"
 
-#: search.py:18
+#: search.py:14
 msgid "Tag color"
 msgstr "Etiqueta creada"
 
-#: search.py:56
+#: search.py:28
 msgid "Document type"
 msgstr "Tipo de documento"
 
-#: search.py:59
+#: search.py:31
 msgid "Document label"
 msgstr "Etiqueta de documento"
 
-#: search.py:62
+#: search.py:34
 msgid "Document description"
 msgstr "Descripción del documento"
 
-#: search.py:65
+#: search.py:37
 msgid "Document UUID"
-msgstr "Documento"
+msgstr "UUID de Documento"
 
-#: search.py:69
+#: search.py:41
 msgid "Document file checksum"
 msgstr "Suma de comprobación del archivo de documento"
 
-#: search.py:72
+#: search.py:44
 msgid "Document file MIME type"
 msgstr "Codificación MIME del archivo de documento "
 
@@ -220,7 +220,7 @@ msgstr "Adjuntar etiquetas al documento: %(object)s"
 msgid "Attach tags to %(count)d document."
 msgstr "Adjuntar etiquetas a %(count)d documento."
 
-#: views.py:70 wizard_steps.py:28
+#: views.py:70 wizard_steps.py:80
 msgid "Tags to be attached."
 msgstr "Etiquetas a ser adjuntadas."
 
@@ -332,18 +332,18 @@ msgstr "Remover las etiquetas de %(count)d documento."
 msgid "Tags to be removed."
 msgstr "Etiquetas a ser retiradas."
 
-#: wizard_steps.py:15
+#: wizard_steps.py:19
 msgid "Select tags"
 msgstr "Seleccione etiquetas"
 
-#: workflow_actions.py:20
-msgid "Tags to attach to the document"
-msgstr "Etiquetas para adjuntar al documento"
-
-#: workflow_actions.py:25
+#: workflow_actions.py:19
 msgid "Attach tag"
 msgstr "Adjuntar etiqueta"
 
-#: workflow_actions.py:69
+#: workflow_actions.py:34
+msgid "Tags to attach to the document."
+msgstr "Etiquetas para anejar al documento."
+
+#: workflow_actions.py:83
 msgid "Tags to remove from the document."
 msgstr "Etiquetas a retirar del documento."

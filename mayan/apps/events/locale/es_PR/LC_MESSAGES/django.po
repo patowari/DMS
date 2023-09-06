@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -20,60 +20,60 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:31 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: queues.py:7 views/event_views.py:29
+#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: views/event_views.py:29
 msgid "Events"
 msgstr "Eventos"
 
-#: apps.py:81 apps.py:116
+#: apps.py:82 apps.py:117
 msgid "Date and time"
 msgstr "Fecha y hora"
 
-#: apps.py:85 apps.py:119 serializers.py:72
+#: apps.py:86 apps.py:120 serializers.py:72
 msgid "Actor"
 msgstr "Actor"
 
-#: apps.py:89 apps.py:124
+#: apps.py:90 apps.py:125
 msgid "Event"
 msgstr "Evento"
 
-#: apps.py:93 apps.py:129 serializers.py:78
+#: apps.py:94 apps.py:130 serializers.py:78
 msgid "Target"
 msgstr "Objetivo"
 
-#: apps.py:97 apps.py:133
+#: apps.py:98 apps.py:134
 msgid "Action object"
 msgstr "Objeto de acción"
 
-#: apps.py:104 forms.py:10 forms.py:67
+#: apps.py:105 forms.py:10 forms.py:67
 msgid "Namespace"
 msgstr "Categoría"
 
-#: apps.py:109 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
+#: apps.py:110 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
 msgid "Label"
 msgstr "Etiqueta"
 
-#: apps.py:138
+#: apps.py:139
 msgid "Seen"
 msgstr "Visto"
 
-#: apps.py:145
+#: apps.py:146
 msgid "Object"
 msgstr "Objeto"
 
-#: apps.py:150 models.py:46 models.py:105
+#: apps.py:151 models.py:46 models.py:105
 msgid "Event type"
 msgstr "Tipo de evento"
 
-#: classes.py:91
+#: classes.py:89
 msgid "Event list export to CSV"
 msgstr "Exportación de la lista de eventos a CSV"
 
-#: classes.py:119
+#: classes.py:117
 msgid "Events exported."
 msgstr "Eventos exportados."
 
-#: classes.py:121
+#: classes.py:119
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -192,11 +192,23 @@ msgstr "Exportar los eventos de un objeto"
 msgid "View the events of an object"
 msgstr "Acceder a los eventos de un objeto"
 
-#: queues.py:13
+#: queues.py:7
+msgid "Events fast"
+msgstr ""
+
+#: queues.py:10
+msgid "Events slow"
+msgstr ""
+
+#: queues.py:16
+msgid "Commit an event"
+msgstr ""
+
+#: queues.py:21
 msgid "Clear event querysets"
 msgstr "Borrar conjuntos de consultas de eventos"
 
-#: queues.py:17
+#: queues.py:25
 msgid "Export event querysets"
 msgstr "Exportar conjuntos de consultas de eventos"
 

@@ -4,14 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
+# Zoljargal Munkhjargal <zoljargal.m@gmail.com>, 2023
+# Zoljargal Munkhjargal, 2023
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +48,7 @@ msgstr ""
 
 #: model_mixins.py:10
 msgid "Object"
-msgstr "Обьект"
+msgstr "Объект"
 
 #: model_mixins.py:18
 msgid "App label"
@@ -102,7 +104,7 @@ msgstr ""
 
 #: serializers.py:16
 msgid "Object ID"
-msgstr ""
+msgstr "Объект ID"
 
 #: serializers.py:19
 msgid "URL"

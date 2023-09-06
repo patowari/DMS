@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2023\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
 "MIME-Version: 1.0\n"
@@ -20,16 +20,16 @@ msgstr ""
 "Language: lv\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: apps.py:45
+#: apps.py:46
 msgid "Linking"
 msgstr ""
 
-#: apps.py:119 models.py:30 serializers.py:129
+#: apps.py:120 models.py:30 serializers.py:129
 msgid "Label"
 msgstr "Etiķete"
 
-#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:49
-#: permissions.py:6 views/smart_link_views.py:156
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr ""
 
@@ -45,31 +45,31 @@ msgstr ""
 msgid "Foreign document field"
 msgstr ""
 
-#: links.py:44 views/smart_link_views.py:246
+#: links.py:45 views/smart_link_views.py:247
 msgid "Create new smart link"
 msgstr ""
 
-#: links.py:49 links.py:87
+#: links.py:50 links.py:90
 msgid "Delete"
 msgstr "Dzēst"
 
-#: links.py:53 models.py:41
+#: links.py:54 models.py:41
 msgid "Document types"
 msgstr "Dokumentu veidi"
 
-#: links.py:58 links.py:91
+#: links.py:59 links.py:94
 msgid "Edit"
 msgstr "Rediģēt"
 
-#: links.py:63
+#: links.py:64
 msgid "Documents"
 msgstr "Dokumenti"
 
-#: links.py:81
+#: links.py:84
 msgid "Create condition"
 msgstr ""
 
-#: links.py:96
+#: links.py:99
 msgid "Conditions"
 msgstr ""
 
@@ -311,81 +311,81 @@ msgstr "Dzēst smart saite nosacījums: \"%s\"?"
 msgid "Edit smart link condition"
 msgstr ""
 
-#: views/smart_link_views.py:73
+#: views/smart_link_views.py:74
 #, python-format
 msgid "Resolved smart link query error: %s"
 msgstr ""
 
-#: views/smart_link_views.py:100
+#: views/smart_link_views.py:101
 #, python-format
 msgid "Resolved smart link dynamic label error: %s"
 msgstr ""
 
-#: views/smart_link_views.py:105
+#: views/smart_link_views.py:106
 #, python-format
 msgid ""
 "Documents in resolved smart link \"%(resolved_smart_link)s\" for "
 "\"%(document)s\""
 msgstr ""
 
-#: views/smart_link_views.py:147
+#: views/smart_link_views.py:148
 msgid ""
 "Indexes group documents into units, usually with similar properties and of "
 "equal or similar types. Smart links allow defining relationships between "
 "documents even if they are in different indexes and are of different types."
 msgstr ""
 
-#: views/smart_link_views.py:154
+#: views/smart_link_views.py:155
 msgid "There are no smart links"
 msgstr ""
 
-#: views/smart_link_views.py:176
+#: views/smart_link_views.py:177
 msgid ""
 "Smart links allow defining relationships between documents even if they are "
 "in different indexes and are of different types."
 msgstr ""
 
-#: views/smart_link_views.py:181
+#: views/smart_link_views.py:182
 msgid "There are no resolved smart links for this document"
 msgstr ""
 
-#: views/smart_link_views.py:185
+#: views/smart_link_views.py:186
 #, python-format
 msgid "Resolved smart links for document: %s"
 msgstr ""
 
-#: views/smart_link_views.py:203
+#: views/smart_link_views.py:204
 msgid "Available smart links"
 msgstr ""
 
-#: views/smart_link_views.py:204
+#: views/smart_link_views.py:205
 msgid "Smart links enabled"
 msgstr ""
 
-#: views/smart_link_views.py:215
+#: views/smart_link_views.py:216
 #, python-format
 msgid "Smart links to enable for document type: %s"
 msgstr ""
 
-#: views/smart_link_views.py:228
+#: views/smart_link_views.py:229
 msgid "Available document types"
 msgstr "Pieejamie dokumentu veidi"
 
-#: views/smart_link_views.py:229
+#: views/smart_link_views.py:230
 msgid "Document types enabled"
 msgstr ""
 
-#: views/smart_link_views.py:240
+#: views/smart_link_views.py:241
 #, python-format
 msgid "Document type for which to enable smart link: %s"
 msgstr ""
 
-#: views/smart_link_views.py:270
+#: views/smart_link_views.py:271
 #, python-format
 msgid "Delete smart link: %s"
 msgstr ""
 
-#: views/smart_link_views.py:287
+#: views/smart_link_views.py:288
 #, python-format
 msgid "Edit smart link: %s"
 msgstr ""

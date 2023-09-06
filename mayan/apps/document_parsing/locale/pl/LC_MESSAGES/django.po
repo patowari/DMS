@@ -5,16 +5,16 @@
 # 
 # Translators:
 # kicior kicior <kiciorek+github@gmail.com>, 2023
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # mic <winterfall24@gmail.com>, 2023
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: mic <winterfall24@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr "Analiza dokumentu"
 msgid "A generator returning the document file's pages parsed content."
 msgstr ""
 
-#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:11
+#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:18
 msgid "Content"
 msgstr "Zawartość"
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr "Treść wyodrębniona z dokumentu w trakcie parsowania."
 
-#: models.py:31
+#: models.py:31 search.py:24
 msgid "Document file page content"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr "Analiza"
 msgid "Document file parsing"
 msgstr ""
 
-#: search.py:17 search.py:24
+#: search.py:12
 msgid "Document file content"
 msgstr ""
 

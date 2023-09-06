@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Adek Lanin, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
 "MIME-Version: 1.0\n"
@@ -24,15 +24,19 @@ msgstr ""
 msgid "Dynamic search"
 msgstr ""
 
-#: forms.py:15
+#: forms.py:19
 msgid "Match all"
 msgstr ""
 
-#: forms.py:16
+#: forms.py:20
 msgid "Return only results that match all fields."
 msgstr ""
 
-#: forms.py:33 templates/dynamic_search/search_box.html:43
+#: forms.py:52
+msgid "Search logic"
+msgstr ""
+
+#: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr ""
@@ -111,16 +115,16 @@ msgid ""
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
 
-#: search_fields.py:289
+#: search_fields.py:311
 msgid "Any"
 msgstr ""
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr ""
 
-#: search_models.py:108
+#: search_models.py:114
 msgid "All content"
 msgstr ""
 

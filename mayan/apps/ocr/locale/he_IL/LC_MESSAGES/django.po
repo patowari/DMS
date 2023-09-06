@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,240 +21,240 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
-#: search.py:18 settings.py:11
+#: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
-msgstr "OCR"
+msgstr ""
 
 #: apps.py:116
 msgid "The OCR content."
-msgstr "תוכן ה-OCR."
+msgstr ""
 
 #: apps.py:121
 msgid "A generator returning the document's version pages OCR content."
-msgstr "מחולל המחזיר את תוכן ה-OCR של דפי גרסת המסמך."
+msgstr ""
 
 #: apps.py:123
 msgid "OCR content"
-msgstr "תוכן OCR"
+msgstr ""
 
 #: backends/tesseract.py:84
 msgid "Tesseract OCR not found."
-msgstr "Tesseract OCR לא נמצא."
+msgstr ""
 
 #: dependencies.py:24
 msgid "Free Open Source OCR Engine"
-msgstr "מנוע OCR חינם בקוד פתוח"
+msgstr ""
 
 #: events.py:10
 msgid "Document version OCR content deleted"
-msgstr "תוכן OCR בגרסת המסמך נמחק"
+msgstr ""
 
 #: events.py:14
 msgid "Document version page OCR content edited"
-msgstr "תוכן דף OCR בגרסת המסמך נערך"
+msgstr ""
 
 #: events.py:18
 msgid "Document version submitted for OCR"
-msgstr "גרסת המסמך הוגשה עבור OCR"
+msgstr ""
 
 #: events.py:22
 msgid "Document version OCR finished"
-msgstr "גירסת מסמך OCR הסתיימה"
+msgstr ""
 
 #: forms.py:13 forms.py:44 forms.py:64
 msgid "Contents"
-msgstr "תוכן"
+msgstr "תכנים"
 
 #: forms.py:99
 #, python-format
 msgid "Page %(page_number)d"
-msgstr "עמוד %(page_number)d"
+msgstr ""
 
 #: links.py:27
 msgid "Setup OCR"
-msgstr "הגדר OCR"
+msgstr ""
 
 #: links.py:33
 msgid "OCR documents per type"
-msgstr "מסמכי OCR לכל סוג"
+msgstr ""
 
 #: links.py:40 links.py:47
 msgid "Delete OCR content"
-msgstr "מחק תוכן OCR"
+msgstr ""
 
 #: links.py:60
 msgid "Download OCR text"
-msgstr "הורד טקסט OCR"
+msgstr ""
 
 #: links.py:65 links.py:70
 msgid "Submit for OCR"
-msgstr "שלח ל-OCR"
+msgstr ""
 
 #: links.py:86
 msgid "Edit OCR"
-msgstr "ערוך OCR"
+msgstr ""
 
 #: models.py:22
 msgid "Document type"
-msgstr "סוג מסמך"
+msgstr "Document type"
 
 #: models.py:26
 msgid "Automatically queue newly created documents for OCR."
-msgstr "תור אוטומטית בתור מסמכים חדשים שנוצרו עבור OCR."
+msgstr ""
 
 #: models.py:27
 msgid "Auto OCR"
-msgstr "OCR אוטומטי"
+msgstr ""
 
 #: models.py:33
 msgid "Document type settings"
-msgstr "הגדרות סוג מסמך"
+msgstr ""
 
 #: models.py:34
 msgid "Document types settings"
-msgstr "הגדרות סוגי מסמכים"
+msgstr ""
 
 #: models.py:47
 msgid "Document version page"
-msgstr "דף גרסת המסמך"
+msgstr ""
 
 #: models.py:51
 msgid "The actual text content extracted by the OCR backend."
-msgstr "תוכן הטקסט בפועל שחולץ על ידי ה-OCR העורפי."
+msgstr ""
 
 #: models.py:52
 msgid "Content"
-msgstr "תוֹכֶן"
+msgstr ""
 
 #: models.py:58
 msgid "Document version page OCR content"
-msgstr "תוכן OCR של דף גרסת המסמך"
+msgstr ""
 
 #: models.py:59
 msgid "Document version pages OCR contents"
-msgstr "דפי גרסת מסמך תוכן OCR"
+msgstr ""
 
 #: permissions.py:10
 msgid "Submit documents for OCR"
-msgstr "שלח מסמכים עבור OCR"
+msgstr ""
 
 #: permissions.py:13
 msgid "Edit the transcribed text from document"
-msgstr "ערוך את הטקסט המתועתק מהמסמך"
+msgstr ""
 
 #: permissions.py:17
 msgid "View the transcribed text from document"
-msgstr "הצג את הטקסט המתומלל מהמסמך"
+msgstr ""
 
 #: permissions.py:21
 msgid "Change document type OCR settings"
-msgstr "שנה הגדרות OCR של סוג מסמך"
+msgstr ""
 
 #: queues.py:10
 msgid "Finish document version OCR"
-msgstr "סיים את גרסת המסמך OCR"
+msgstr ""
 
 #: queues.py:14
 msgid "Document version page OCR"
-msgstr "דף גרסת מסמך OCR"
+msgstr ""
 
 #: queues.py:18 search.py:12 search.py:24
 msgid "Document version OCR"
-msgstr "גרסת מסמך OCR"
+msgstr ""
 
 #: settings.py:18
 msgid "Set new document types to perform OCR automatically by default."
-msgstr "הגדר סוגי מסמכים חדשים לביצוע OCR אוטומטית כברירת מחדל."
+msgstr ""
 
 #: settings.py:23
 msgid "Full path to the backend to be used to do OCR."
-msgstr "נתיב מלא ל-backend שישמש לביצוע OCR."
+msgstr ""
 
 #: views.py:57
 #, python-format
 msgid "Edit OCR settings for document type: %s."
-msgstr "ערוך הגדרות OCR עבור סוג מסמך: %s."
+msgstr ""
 
 #: views.py:67
 msgid "Submit all documents of a type for OCR"
-msgstr "שלח את כל המסמכים מסוג זה עבור OCR"
+msgstr ""
 
 #: views.py:85
 #, python-format
 msgid "%(count)d documents added to the OCR queue."
-msgstr "מסמכי %(count)d נוספו לתור OCR."
+msgstr ""
 
 #: views.py:106
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
-msgstr "שגיאה במחיקת מסמך גרסת OCR &quot;%(instance)s&quot;; %(exception)s"
+msgstr ""
 
 #: views.py:112
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
-msgstr "תוכן OCR של גרסאות מסמך %(count)d נמחק בהצלחה."
+msgstr ""
 
 #: views.py:115
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
-msgstr "תוכן OCR של &quot;%(object)s&quot; נמחק בהצלחה."
+msgstr ""
 
 #: views.py:118
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
-msgstr "תוכן OCR של גרסת המסמך %(count)d נמחק בהצלחה."
+msgstr ""
 
 #: views.py:121
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document versions."
-msgstr "מחק את תוכן ה-OCR של גרסאות המסמך שנבחרו %(count)d."
+msgstr ""
 
 #: views.py:123
 #, python-format
 msgid "Delete the OCR content of: %(object)s."
-msgstr "מחק את תוכן ה-OCR של: %(object)s."
+msgstr ""
 
 #: views.py:125
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document version."
-msgstr "מחק את תוכן ה-OCR של גרסת המסמך שנבחרה %(count)d."
+msgstr ""
 
 #: views.py:156
 #, python-format
 msgid "OCR result for document: %s"
-msgstr "תוצאת OCR עבור מסמך: %s"
+msgstr ""
 
 #: views.py:178
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
-msgstr "גרסת המסמך %(count)d שנשלחה לתור ה-OCR."
+msgstr ""
 
 #: views.py:181
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
-msgstr "גרסאות מסמכים %(count)d שנשלחו לתור OCR."
+msgstr ""
 
 #: views.py:190
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
-msgstr[0] "האם לשלוח את גרסת המסמך שנבחרה לתור OCR?"
-msgstr[1] "לשלוח את גרסאות המסמכים שנבחרו לתור OCR?"
-msgstr[2] "לשלוח את גרסאות המסמכים שנבחרו לתור OCR?"
-msgstr[3] "לשלוח את גרסאות המסמכים שנבחרו לתור OCR?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: views.py:226
 #, python-format
 msgid "OCR result for document version page: %s"
-msgstr "תוצאת OCR עבור דף גרסת המסמך: %s"
+msgstr ""
 
 #: views.py:254
 #, python-format
 msgid "Edit OCR for document version page: %s"
-msgstr "ערוך OCR עבור דף גרסת המסמך: %s"
+msgstr ""
 
 #: workflow_actions.py:15
 msgid "Page condition"
-msgstr "מצב העמוד"
+msgstr ""
 
 #: workflow_actions.py:19
 msgid ""
@@ -264,19 +264,15 @@ msgid ""
 "logical None, or an empty string ('') are considered to be logical false, "
 "any other value is considered to be the logical true."
 msgstr ""
-"התנאי שיקבע אם תוכן ה-OCR של דף מסמך ישונה או לא. התנאי מוערך מול דף המסמך "
-"החוזר. תנאים שלא מחזירים שום ערך, שמחזירים את ה-Python logical None, או "
-"מחרוזת ריקה (&#39;&#39;) נחשבים לוגיים כ-false, כל ערך אחר נחשב ל-logical "
-"true."
 
 #: workflow_actions.py:31
 msgid "Page content"
-msgstr "תוכן הדף"
+msgstr ""
 
 #: workflow_actions.py:35
 msgid "A template that will generate the OCR content to be saved."
-msgstr "תבנית שתיצור את תוכן ה-OCR שיישמר."
+msgstr ""
 
-#: workflow_actions.py:43
+#: workflow_actions.py:42
 msgid "Update document page OCR content"
-msgstr "עדכון תוכן OCR של דף המסמך"
+msgstr ""

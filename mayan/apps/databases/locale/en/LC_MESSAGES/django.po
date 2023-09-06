@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,53 +21,29 @@ msgstr ""
 msgid "Databases"
 msgstr ""
 
-#: classes.py:205
+#: classes.py:80
 msgid "Model fields"
 msgstr ""
 
-#: classes.py:253
+#: classes.py:128
 msgid "Model related fields"
 msgstr ""
 
-#: classes.py:258
+#: classes.py:133
 msgid "Model properties"
 msgstr ""
 
-#: classes.py:263
+#: classes.py:138
 msgid "Model reverse fields"
 msgstr ""
 
-#: literals.py:14
+#: literals.py:10
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
 msgstr ""
 
-#: model_mixins.py:24
-msgid "The dotted Python path to the backend class."
-msgstr ""
-
-#: model_mixins.py:25
-msgid "Backend path"
-msgstr ""
-
-#: model_mixins.py:29
-msgid "JSON encoded data for the backend class."
-msgstr ""
-
-#: model_mixins.py:30
-msgid "Backend data"
-msgstr ""
-
-#: model_mixins.py:80
-msgid "Backend"
-msgstr ""
-
-#: model_mixins.py:81
-msgid "The backend class for this entry."
-msgstr ""
-
-#: model_mixins.py:103
+#: model_mixins.py:26
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -75,15 +51,15 @@ msgid ""
 "value is considered to be the logical true."
 msgstr ""
 
-#: model_mixins.py:108
+#: model_mixins.py:31
 msgid "Condition"
 msgstr ""
 
-#: model_mixins.py:129
+#: model_mixins.py:52
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 
-#: model_mixins.py:132
+#: model_mixins.py:55
 msgid "Has a condition?"
 msgstr ""
 

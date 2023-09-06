@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -40,23 +40,23 @@ msgstr "Valor"
 msgid "Settings namespace"
 msgstr "Espacio de nombres de configuración"
 
-#: classes.py:394
+#: classes.py:397
 msgid "Choices"
 msgstr "Opciones"
 
-#: classes.py:396
+#: classes.py:399
 msgid "Possible values allowed for this setting."
 msgstr "Posibles valores permitidos para esta configuración."
 
-#: classes.py:402
+#: classes.py:405
 msgid "Default"
 msgstr "Por defecto"
 
-#: classes.py:410
+#: classes.py:413
 msgid "Overridden"
 msgstr "Anulado"
 
-#: classes.py:412
+#: classes.py:415
 msgid "Is this settings being overridden by an environment variable?"
 msgstr "¿Esta configuración está siendo anulada por una variable de entorno?"
 
@@ -522,7 +522,7 @@ msgstr ""
 "Configuración actualizada, reinicie su instalación y actualice su navegador "
 "para que los cambios surtan efecto."
 
-#: tests/test_classes.py:173
+#: tests/test_classes.py:175
 msgid "English"
 msgstr "inglés"
 

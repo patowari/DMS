@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,76 +22,76 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6
 msgid "Smart settings"
-msgstr "הגדרות חכמות"
+msgstr ""
 
 #: apps.py:33
 msgid "Setting count"
-msgstr "הגדרת ספירה"
+msgstr ""
 
 #: apps.py:38
 msgid "Name"
-msgstr "שֵׁם"
+msgstr ""
 
 #: apps.py:42 forms.py:26
 msgid "Value"
-msgstr "ערך"
+msgstr ""
 
 #: classes.py:116
 msgid "Settings namespace"
-msgstr "מרחב השמות של הגדרות"
+msgstr ""
 
-#: classes.py:394
+#: classes.py:397
 msgid "Choices"
-msgstr "בחירות"
+msgstr ""
 
-#: classes.py:396
+#: classes.py:399
 msgid "Possible values allowed for this setting."
-msgstr "ערכים אפשריים מותרים עבור הגדרה זו."
+msgstr ""
 
-#: classes.py:402
+#: classes.py:405
 msgid "Default"
-msgstr "בְּרִירַת מֶחדָל"
+msgstr ""
 
-#: classes.py:410
+#: classes.py:413
 msgid "Overridden"
-msgstr "נדחק"
+msgstr ""
 
-#: classes.py:412
+#: classes.py:415
 msgid "Is this settings being overridden by an environment variable?"
-msgstr "האם הגדרות אלו עוברות על ידי משתנה סביבה?"
+msgstr ""
 
 #: forms.py:28
 msgid "Enter the new setting value."
-msgstr "הזן את ערך ההגדרה החדש."
+msgstr ""
 
 #: forms.py:40
 #, python-format
 msgid "\"%s\" not a valid entry."
-msgstr "&quot;%s&quot; אינו ערך חוקי."
+msgstr "&quot;%s&quot; אינו ערך תקין."
 
 #: links.py:20 links.py:24
 msgid "Settings"
-msgstr "הגדרות"
+msgstr ""
 
 #: links.py:31
 msgid "Namespaces"
-msgstr "מרחבי שמות"
+msgstr ""
 
 #: links.py:36
 msgid "Edit"
-msgstr "לַעֲרוֹך"
+msgstr "עריכה"
 
 #: permissions.py:10
 msgid "Edit settings"
-msgstr "ערוך הגדרות"
+msgstr ""
 
 #: permissions.py:13
 msgid "View settings"
-msgstr "הצג הגדרות"
+msgstr ""
 
 #: settings.py:27
 msgid "Django"
-msgstr "ג&#39;נגו"
+msgstr ""
 
 #: settings.py:32
 msgid ""
@@ -107,15 +107,6 @@ msgid ""
 "validation of the Host header (perhaps in a middleware; if so this "
 "middleware must be listed first in MIDDLEWARE)."
 msgstr ""
-"רשימה של מחרוזות המייצגות את שמות המארח/דומיין שהאתר הזה יכול לשרת. זהו "
-"אמצעי אבטחה למניעת התקפות כותרות HTTP Host, האפשריות אפילו תחת תצורות רבות "
-"של שרת אינטרנט בטוחות לכאורה. הערכים ברשימה זו יכולים להיות שמות מלאים (למשל"
-" &#39;www.example.com&#39;), ובמקרה זה הם יותאמו בדיוק לכותרת המארח של הבקשה"
-" (לא תלוי רישיות, לא כולל יציאה). ערך שמתחיל בנקודה יכול לשמש כתו כללי של "
-"תת-דומיין: &#39;.example.com&#39; יתאים ל-example.com, www.example.com ולכל "
-"תת-דומיין אחר של example.com. ערך &#39;*&#39; יתאים לכל דבר; במקרה זה אתה "
-"אחראי לספק אימות משלך לכותרת המארח (אולי בתוכנת תווך; אם כן תוכנת התווך הזו "
-"חייבת להיות רשומה תחילה ב-MIDDLEWARE)."
 
 #: settings.py:49
 msgid ""
@@ -126,24 +117,18 @@ msgid ""
 "used if CommonMiddleware is installed (see Middleware). See also "
 "PREPEND_WWW."
 msgstr ""
-"כאשר מוגדר כ-True, אם כתובת ה-URL של הבקשה אינה תואמת לאף אחת מהדפוסים "
-"ב-URLconf והיא אינה מסתיימת בקו נטוי, הפניית HTTP מונפקת לאותה כתובת URL עם "
-"קו נטוי מצורף. שים לב שההפניה מחדש עלולה לגרום לאיבוד כל הנתונים שנשלחו "
-"בבקשת POST. ההגדרה APPEND_SLASH משמשת רק אם מותקנת CommonMiddleware (ראה "
-"Middleware). ראה גם PREPEND_WWW."
 
 #: settings.py:61
 msgid ""
 "The list of validators that are used to check the strength of user's "
 "passwords."
-msgstr "רשימת המאמתים המשמשים לבדיקת עוצמת הסיסמאות של המשתמש."
+msgstr ""
 
 #: settings.py:68
 msgid ""
 "A list of authentication backend classes (as strings) to use when attempting"
 " to authenticate a user."
 msgstr ""
-"רשימה של מחלקות אחורי של אימות (כמחרוזות) לשימוש בעת ניסיון לאמת משתמש."
 
 #: settings.py:74
 msgid ""
@@ -153,10 +138,6 @@ msgid ""
 "setting must configure a default database; any number of additional "
 "databases may also be specified."
 msgstr ""
-"מילון המכיל את ההגדרות עבור כל מסדי הנתונים לשימוש עם Django. זהו מילון "
-"מקונן שתוכנו ממפה כינוי של מסד נתונים למילון המכיל את האפשרויות למסד נתונים "
-"בודד. ההגדרה DATABASES חייבת להגדיר מסד נתונים ברירת מחדל; ניתן גם לציין כל "
-"מספר של מסדי נתונים נוספים."
 
 #: settings.py:85
 msgid ""
@@ -172,15 +153,6 @@ msgid ""
 "typically perform deep request inspection, it's not possible to perform a "
 "similar check at that level. See also FILE_UPLOAD_MAX_MEMORY_SIZE."
 msgstr ""
-"ברירת מחדל: 2621440 (כלומר 2.5 מגה-בייט). הגודל המקסימלי בבתים שגוף בקשה "
-"עשוי להיות לפני העלאת מבצע חשוד (RequestDataTooBig). הבדיקה מתבצעת בעת גישה "
-"ל-request.body או request.POST ומחושבת מול גודל הבקשה הכולל, ללא כל נתוני "
-"העלאת קבצים. אתה יכול להגדיר זאת ל-None כדי להשבית את הסימון. יישומים "
-"שצפויים לקבל פוסטים גדולים במיוחד צריכים לכוון את ההגדרה הזו. כמות נתוני "
-"הבקשה נמצאת בקורלציה לכמות הזיכרון הדרושה לעיבוד הבקשה ולאכלוס מילוני GET "
-"ו-POST. בקשות גדולות יכולות לשמש כווקטור התקפה של מניעת שירות אם לא מסומן. "
-"מכיוון ששרתי אינטרנט בדרך כלל לא מבצעים בדיקת בקשות עמוקה, לא ניתן לבצע "
-"בדיקה דומה ברמה זו. ראה גם FILE_UPLOAD_MAX_MEMORY_SIZE."
 
 #: settings.py:104
 msgid ""
@@ -188,9 +160,6 @@ msgid ""
 "automated correspondence from the site manager(s). This doesn't include "
 "error messages sent to ADMINS and MANAGERS; for that, see SERVER_EMAIL."
 msgstr ""
-"ברירת מחדל: &#39;webmaster@localhost&#39; כתובת דוא&quot;ל ברירת מחדל לשימוש"
-" עבור התכתבויות אוטומטיות שונות ממנהלי האתר. זה לא כולל הודעות שגיאה שנשלחו "
-"ל-ADMINS ול-MANAGERS; לשם כך, ראה SERVER_EMAIL."
 
 #: settings.py:113
 msgid ""
@@ -199,22 +168,16 @@ msgid ""
 "systemwide. Use this for bad robots/crawlers. This is only used if "
 "CommonMiddleware is installed (see Middleware)."
 msgstr ""
-"ברירת מחדל: [] (רשימה ריקה). רשימה של אובייקטי ביטוי רגולרי מקופלים המייצגים"
-" מחרוזות User-Agent שאינן מורשות לבקר באף עמוד, בכל מערכת. השתמש בזה עבור "
-"רובוטים/סורקים גרועים. זה משמש רק אם CommonMiddleware מותקנת (ראה "
-"Middleware)."
 
 #: settings.py:122
 msgid ""
 "Default: 'django.core.mail.backends.smtp.EmailBackend'. The backend to use "
 "for sending emails."
 msgstr ""
-"ברירת מחדל: &#39;django.core.mail.backends.smtp.EmailBackend&#39;. הקצה "
-"האחורי לשימוש לשליחת אימיילים."
 
 #: settings.py:128
 msgid "Default: 'localhost'. The host to use for sending email."
-msgstr "ברירת מחדל: &#39;localhost&#39;. המארח לשימוש לשליחת דואר אלקטרוני."
+msgstr ""
 
 #: settings.py:134
 msgid ""
@@ -223,28 +186,22 @@ msgid ""
 "authenticating to the SMTP server. If either of these settings is empty, "
 "Django won't attempt authentication."
 msgstr ""
-"ברירת מחדל: &#39;&#39; (מחרוזת ריקה). סיסמה לשימוש עבור שרת ה-SMTP שהוגדר "
-"ב-EMAIL_HOST. הגדרה זו משמשת בשילוב עם EMAIL_HOST_USER בעת אימות לשרת SMTP. "
-"אם אחת מההגדרות הללו ריקה, Django לא ינסה אימות."
 
 #: settings.py:144
 msgid ""
 "Default: '' (Empty string). Username to use for the SMTP server defined in "
 "EMAIL_HOST. If empty, Django won't attempt authentication."
 msgstr ""
-"ברירת מחדל: &#39;&#39; (מחרוזת ריקה). שם משתמש לשימוש עבור שרת ה-SMTP שהוגדר"
-" ב-EMAIL_HOST. אם ריק, Django לא ינסה אימות."
 
 #: settings.py:151
 msgid "Default: 25. Port to use for the SMTP server defined in EMAIL_HOST."
-msgstr "ברירת מחדל: 25. יציאה לשימוש עבור שרת ה-SMTP שהוגדר ב-EMAIL_HOST."
+msgstr ""
 
 #: settings.py:156
 msgid ""
 "Default: None. Specifies a timeout in seconds for blocking operations like "
 "the connection attempt."
 msgstr ""
-"ברירת מחדל: אין. מציין פסק זמן בשניות לחסימת פעולות כמו ניסיון החיבור."
 
 #: settings.py:162
 msgid ""
@@ -255,11 +212,6 @@ msgid ""
 "that EMAIL_USE_TLS/EMAIL_USE_SSL are mutually exclusive, so only set one of "
 "those settings to True."
 msgstr ""
-"ברירת מחדל: שקר. האם להשתמש בחיבור TLS מרומז (מאובטח) בעת שיחה עם שרת "
-"ה-SMTP. ברוב תיעוד הדואר האלקטרוני סוג זה של חיבור TLS מכונה SSL. הוא משמש "
-"בדרך כלל ביציאה 465. אם אתה נתקל בבעיות, עיין בהגדרת TLS המפורשת "
-"EMAIL_USE_TLS. שים לב ש-EMAIL_USE_TLS/EMAIL_USE_SSL סותרים זה את זה, אז הגדר"
-" רק אחת מההגדרות האלה ל-True."
 
 #: settings.py:172
 msgid ""
@@ -268,9 +220,6 @@ msgid ""
 "587. If you are experiencing hanging connections, see the implicit TLS "
 "setting EMAIL_USE_SSL."
 msgstr ""
-"ברירת מחדל: שקר. האם להשתמש בחיבור TLS (מאבטח) בעת דיבור עם שרת ה-SMTP. זה "
-"משמש לחיבורי TLS מפורשים, בדרך כלל ביציאה 587. אם אתה חווה חיבורים תלויים, "
-"ראה את הגדרת ה-TLS המרומזת EMAIL_USE_SSL."
 
 #: settings.py:181
 msgid ""
@@ -278,9 +227,6 @@ msgid ""
 "will be before it gets streamed to the file system. See Managing files for "
 "details. See also DATA_UPLOAD_MAX_MEMORY_SIZE."
 msgstr ""
-"ברירת מחדל: 2621440 (כלומר 2.5 מגה-בייט). הגודל המקסימלי (בבתים) שהעלאה תהיה"
-" לפני שהיא תועבר למערכת הקבצים. ראה ניהול קבצים לפרטים. ראה גם "
-"DATA_UPLOAD_MAX_MEMORY_SIZE."
 
 #: settings.py:189
 msgid ""
@@ -290,10 +236,6 @@ msgid ""
 "duplication since you don't have to define the URL in two places (settings "
 "and URLconf)."
 msgstr ""
-"ברירת מחדל: &#39;/accounts/login/&#39; כתובת ה-URL שבה הבקשות מנותבות "
-"לכניסה, במיוחד בעת שימוש ב-login_required() decorator. הגדרה זו מקבלת גם "
-"דפוסי כתובת URL בעלי שם שניתן להשתמש בהם כדי להפחית את כפילות התצורה מכיוון "
-"שאינך צריך להגדיר את כתובת האתר בשני מקומות (הגדרות ו-URLconf)."
 
 #: settings.py:200
 msgid ""
@@ -303,11 +245,6 @@ msgid ""
 "named URL patterns which can be used to reduce configuration duplication "
 "since you don't have to define the URL in two places (settings and URLconf)."
 msgstr ""
-"ברירת מחדל: &#39;/accounts/profile/&#39; כתובת ה-URL שבה הבקשות מופנות מחדש "
-"לאחר הכניסה כאשר תצוגת contrib.auth.login לא מקבלת פרמטר הבא. זה משמש את "
-"מעצב login_required() למשל. הגדרה זו מקבלת גם דפוסי כתובת URL עם שם שניתן "
-"להשתמש בהם כדי להפחית את כפילות התצורה מכיוון שאינך צריך להגדיר את כתובת "
-"האתר בשני מקומות (הגדרות ו-URLconf)."
 
 #: settings.py:211
 msgid ""
@@ -318,11 +255,6 @@ msgid ""
 "configuration duplication since you don't have to define the URL in two "
 "places (settings and URLconf)."
 msgstr ""
-"ברירת מחדל: אין. כתובת ה-URL שבה הבקשות מופנות מחדש לאחר שמשתמש מתנתק "
-"באמצעות LogoutView (אם התצוגה אינה מקבלת ארגומנט next_page). אם אין, לא "
-"תתבצע הפניה מחדש ותצוגת היציאה תעובד. הגדרה זו מקבלת גם דפוסי כתובת URL עם "
-"שם שניתן להשתמש בהם כדי להפחית את כפילות התצורה מכיוון שאינך צריך להגדיר את "
-"כתובת האתר בשני מקומות (הגדרות ו-URLconf)."
 
 #: settings.py:222
 msgid ""
@@ -331,10 +263,6 @@ msgid ""
 "admindocs bookmarklets even if not logged in as a staff user. Are marked as "
 "\"internal\" (as opposed to \"EXTERNAL\") in AdminEmailHandler emails."
 msgstr ""
-"רשימה של כתובות IP, כמחרוזות, ש: אפשרו למעבד ההקשר של debug() להוסיף כמה "
-"משתנים להקשר התבנית. יכול להשתמש בסימניות של admindocs גם אם לא מחובר כמשתמש"
-" צוות. מסומנים כ&quot;פנימיים&quot; (בניגוד ל&quot;חיצוניים&quot;) באימיילים"
-" של AdminEmailHandler."
 
 #: settings.py:231
 msgid ""
@@ -344,10 +272,6 @@ msgid ""
 "the default value should suffice. Only set this setting if you want to "
 "restrict language selection to a subset of the Django-provided languages. "
 msgstr ""
-"רשימה של כל השפות הזמינות. הרשימה היא רשימה של שני-tuples בפורמט (קוד שפה, "
-"שם שפה) למשל, (&#39;ja&#39;, &#39;יפנית&#39;). זה מציין אילו שפות זמינות "
-"לבחירת שפה. בדרך כלל, ערך ברירת המחדל אמור להספיק. הגדר הגדרה זו רק אם "
-"ברצונך להגביל את בחירת השפה לקבוצת משנה של השפות המסופקות על ידי Django."
 
 #: settings.py:242
 msgid ""
@@ -360,12 +284,6 @@ msgid ""
 "provides the fallback translation when a translation for a given literal "
 "doesn't exist for the user's preferred language."
 msgstr ""
-"מחרוזת המייצגת את קוד השפה עבור התקנה זו. זה צריך להיות בפורמט מזהה שפה "
-"סטנדרטי. לדוגמה, אנגלית אמריקאית היא &quot;en-us&quot;. זה משרת שתי מטרות: "
-"אם תוכנת התווך המקומית אינה בשימוש, היא מחליטה איזה תרגום יוגש לכל המשתמשים."
-" אם תוכנת התווך המקומית פעילה, היא מספקת שפת סתירה למקרה שלא ניתן לקבוע את "
-"השפה המועדפת על המשתמש או שאינה נתמכת על ידי האתר. זה גם מספק את תרגום החזרה"
-" כאשר תרגום עבור מילולי נתון אינו קיים עבור השפה המועדפת על המשתמש."
 
 #: settings.py:256
 msgid ""
@@ -373,17 +291,12 @@ msgid ""
 " whatever you want (as long as it's different from the other cookie names in"
 " your application)."
 msgstr ""
-"ברירת מחדל: &#39;sessionid&#39;. שם קובץ ה-cookie לשימוש עבור הפעלות. זה "
-"יכול להיות מה שתרצה (כל עוד הוא שונה משמות קובצי ה-cookie האחרים ביישום "
-"שלך)."
 
 #: settings.py:264
 msgid ""
 "Default: 'django.contrib.sessions.backends.db'. Controls where Django stores"
 " session data."
 msgstr ""
-"ברירת מחדל: &#39;django.contrib.sessions.backends.db&#39;. שולט היכן Django "
-"מאחסן נתוני הפעלה."
 
 #: settings.py:271
 msgid ""
@@ -392,9 +305,6 @@ msgid ""
 "is_secure() method. Warning: Modifying this setting can compromise your "
 "site’s security. Ensure you fully understand your setup before changing it."
 msgstr ""
-"טופלה המייצגת שילוב כותרת/ערך HTTP המסמל בקשה מאובטחת. זה שולט בהתנהגות של "
-"שיטת is_secure() של אובייקט הבקשה. אזהרה: שינוי הגדרה זו עלול לסכן את אבטחת "
-"האתר שלך. ודא שאתה מבין היטב את ההגדרה שלך לפני שתשנה אותה."
 
 #: settings.py:280
 msgid ""
@@ -403,10 +313,6 @@ msgid ""
 "used as the base path for asset definitions (the Media class) and the "
 "staticfiles app. It must end in a slash if set to a non-empty value."
 msgstr ""
-"כתובת URL לשימוש בהתייחסות לקבצים סטטיים הנמצאים ב-STATIC_ROOT. דוגמה: "
-"&quot;/static/&quot; או &quot;http://static.example.com/&quot; אם לא אין, זה"
-" ישמש כנתיב הבסיס להגדרות נכסים (מחלקה Media) ואפליקציית staticfiles. זה "
-"חייב להסתיים בקו נטוי אם מוגדר לערך לא ריק."
 
 #: settings.py:290
 msgid ""
@@ -415,9 +321,6 @@ msgid ""
 "backend defined in this setting can be found at "
 "django.contrib.staticfiles.storage.staticfiles_storage."
 msgstr ""
-"מנוע אחסון הקבצים לשימוש בעת איסוף קבצים סטטיים עם פקודת הניהול "
-"collectstatic. ניתן למצוא מופע מוכן לשימוש של קצה האחסון המוגדר בהגדרה זו "
-"בכתובת django.contrib.staticfiles.storage.staticfiles_storage."
 
 #: settings.py:298
 msgid ""
@@ -425,9 +328,6 @@ msgid ""
 "isn't necessarily the time zone of the server. For example, one server may "
 "serve multiple Django-powered sites, each with a separate time zone setting."
 msgstr ""
-"מחרוזת המייצגת את אזור הזמן עבור התקנה זו. שימו לב שזה לא בהכרח אזור הזמן של"
-" השרת. לדוגמה, שרת אחד עשוי לשרת מספר אתרים המופעלים על ידי Django, כל אחד "
-"עם הגדרת אזור זמן נפרדת."
 
 #: settings.py:307
 msgid ""
@@ -435,8 +335,6 @@ msgid ""
 "preference to the Host header. This should only be enabled if a proxy which "
 "sets this header is in use."
 msgstr ""
-"ערך בוליאני שמציין אם להשתמש בכותרת X-Forwarded-Host על פני הכותרת Host. זה "
-"אמור להיות מופעל רק אם פרוקסי שמגדיר את הכותרת הזו נמצא בשימוש."
 
 #: settings.py:315
 msgid ""
@@ -445,9 +343,6 @@ msgid ""
 "a proxy which sets this header is in use. USE_X_FORWARDED_HOST takes "
 "priority over this setting."
 msgstr ""
-"ערך בוליאני שמציין אם להשתמש בכותרת X-Forwarded-Port על פני המשתנה "
-"SERVER_PORT META. זה אמור להיות מופעל רק אם פרוקסי שמגדיר את הכותרת הזו נמצא"
-" בשימוש. USE_X_FORWARDED_HOST מקבל עדיפות על פני הגדרה זו."
 
 #: settings.py:324
 msgid ""
@@ -456,59 +351,52 @@ msgid ""
 "command will create a simple wsgi.py file with an application callable in "
 "it, and point this setting to that application."
 msgstr ""
-"הנתיב המלא של Python של אובייקט היישום WSGI שבו ישתמשו השרתים המובנים של "
-"Django (למשל runserver). הפקודה django-admin startproject management תיצור "
-"קובץ wsgi.py פשוט עם יישום שניתן לקרוא בו, ותכוון את ההגדרה הזו לאותו יישום."
 
 #: templates/smart_settings/app/viewport.html:11
 msgid "Warning"
-msgstr "אַזהָרָה"
+msgstr ""
 
 #: templates/smart_settings/app/viewport.html:11
 msgid ""
 "Settings updated, restart your installation and refresh your browser for "
 "changes to take effect."
 msgstr ""
-"ההגדרות עודכנו, הפעל מחדש את ההתקנה ורענן את הדפדפן כדי שהשינויים ייכנסו "
-"לתוקף."
 
-#: tests/test_classes.py:173
+#: tests/test_classes.py:175
 msgid "English"
-msgstr "אנגלית"
+msgstr ""
 
 #: views.py:27
 msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
-"האחסון המקומי מושבת כעת, שינויים בערכי ההגדרות לא יישמרו או ייכנסו לתוקף."
 
 #: views.py:40
 msgid "Setting updated successfully."
-msgstr "ההגדרה עודכנה בהצלחה."
+msgstr ""
 
 #: views.py:51
 #, python-format
 msgid "Edit setting: %s"
-msgstr "עריכת הגדרה: %s"
+msgstr ""
 
 #: views.py:79
 msgid ""
 "Settings inherited from an environment variable take precedence and cannot "
 "be changed in this view. "
 msgstr ""
-"הגדרות שהועברו בירושה ממשתנה סביבה מקבלים עדיפות ולא ניתן לשנותן בתצוגה זו."
 
 #: views.py:82
 #, python-format
 msgid "Settings in namespace: %s"
-msgstr "הגדרות במרחב השמות: %s"
+msgstr ""
 
 #: views.py:92
 #, python-format
 msgid "Namespace: %s, not found"
-msgstr "מרחב שמות: %s, לא נמצא"
+msgstr ""
 
 #: views.py:102
 msgid "Setting namespaces"
-msgstr "הגדרת מרחבי שמות"
+msgstr ""

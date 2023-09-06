@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -23,37 +22,41 @@ msgstr ""
 
 #: apps.py:27
 msgid "Dynamic search"
-msgstr "חיפוש דינמי"
+msgstr "חיפוש דינאמי"
 
-#: forms.py:15
+#: forms.py:19
 msgid "Match all"
-msgstr "התאם הכל"
+msgstr ""
 
-#: forms.py:16
+#: forms.py:20
 msgid "Return only results that match all fields."
-msgstr "החזר רק תוצאות שתואמות את כל השדות."
+msgstr ""
 
-#: forms.py:33 templates/dynamic_search/search_box.html:43
+#: forms.py:52
+msgid "Search logic"
+msgstr ""
+
+#: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
-msgstr "תנאי חיפוש"
+msgstr ""
 
 #: links.py:20
 msgid "Basic search"
-msgstr "חיפוש בסיסי"
+msgstr ""
 
 #: links.py:24 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced search"
-msgstr "חיפוש מתקדם"
+msgstr ""
 
 #: links.py:28
 msgid "Search again"
-msgstr "חפש שוב"
+msgstr ""
 
 #: links.py:33 views.py:62
 msgid "Reindex search backend"
-msgstr "אינדקס מחדש של חיפוש אחורי"
+msgstr ""
 
 #: literals.py:21
 msgid "Yes"
@@ -67,37 +70,36 @@ msgstr "לא"
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
-msgstr "לחפש"
+msgstr ""
 
 #: permissions.py:10
 msgid "Execute search tools"
-msgstr "הפעל כלי חיפוש"
+msgstr ""
 
 #: queues.py:10
 msgid "Search slow"
-msgstr "חיפוש איטי"
+msgstr ""
 
 #: queues.py:15
 msgid "Remove a model instance from the search engine."
-msgstr "הסר מופע דגם ממנוע החיפוש."
+msgstr ""
 
 #: queues.py:20
 msgid "Index a model instance to the search engine."
-msgstr "אינדקס מופע מודל למנוע החיפוש."
+msgstr ""
 
 #: queues.py:25
 msgid "Index all instances of a search model to the search engine."
-msgstr "אינדקס את כל המופעים של מודל חיפוש למנוע החיפוש."
+msgstr ""
 
 #: queues.py:31
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
-"אינדקס את כל המופעים הקשורים של מודל חיפוש לאחר אירוע של רבים עד רבים."
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
-msgstr "אפס את מדדי החיפוש העורפי והוסף שוב את כל המופעים."
+msgstr ""
 
 #: scoped_queries.py:352
 msgid ""
@@ -105,9 +107,6 @@ msgid ""
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
-"תוצאות החיפוש חורגות מהגדרת המגבלה. ייתכן שהתוצאות לא יהיו אמינות אם נעשה "
-"שימוש במספר היקפים. צמצם את קריטריוני החיפוש או הגדל את הערך של הגדרת מגבלת "
-"התוצאות."
 
 #: scoped_queries.py:368
 #, python-format
@@ -115,223 +114,217 @@ msgid ""
 "Search backend error. Verify that the search service is available and that "
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
-"שגיאת חיפוש אחורי. ודא ששירות החיפוש זמין ושתחביר החיפוש תקף עבור הקצה "
-"העורפי של החיפוש הפעיל; %s"
 
-#: search_fields.py:289
+#: search_fields.py:311
 msgid "Any"
-msgstr "כל"
+msgstr ""
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
-msgstr "דגם חיפוש לא ידוע `%s`."
+msgstr ""
 
-#: search_models.py:108
+#: search_models.py:114
 msgid "All content"
-msgstr "כל התוכן"
+msgstr ""
 
 #: search_query_types.py:167
 msgid "Exact"
-msgstr "מְדוּיָק"
+msgstr ""
 
 #: search_query_types.py:173
 msgid "Fuzzy"
-msgstr "מְעוּרפָּל"
+msgstr ""
 
 #: search_query_types.py:179
 msgid "Greater than"
-msgstr "גדול מ"
+msgstr ""
 
 #: search_query_types.py:185
 msgid "Greater than or equal"
-msgstr "גדול או שווה"
+msgstr ""
 
 #: search_query_types.py:191
 msgid "Less than"
-msgstr "פחות מ"
+msgstr ""
 
 #: search_query_types.py:197
 msgid "Less than or equal"
-msgstr "פחות מ או שווה"
+msgstr ""
 
 #: search_query_types.py:203
 msgid "Partial"
-msgstr "חלקי"
+msgstr ""
 
 #: search_query_types.py:209
 msgid "Range"
-msgstr "טווח"
+msgstr ""
 
 #: search_query_types.py:244
 msgid "Range exclusive"
-msgstr "טווח בלעדי"
+msgstr ""
 
 #: search_query_types.py:250
 msgid "Regular expression"
-msgstr "הבעה רגילה"
+msgstr ""
 
 #: serializers.py:14
 msgid "Field name"
-msgstr "שם שדה"
+msgstr ""
 
 #: serializers.py:17
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
 #: serializers.py:23
 msgid "App label"
-msgstr "תווית אפליקציה"
+msgstr ""
 
 #: serializers.py:26
 msgid "Model name"
-msgstr "שם המודל"
+msgstr ""
 
 #: serializers.py:29
 msgid "Primary key"
-msgstr "מפתח ראשי"
+msgstr ""
 
 #: serializers.py:32
 msgid "Search fields"
-msgstr "שדות חיפוש"
+msgstr ""
 
 #: settings.py:20
 msgid "Full path to the backend to be used to handle the search."
-msgstr "נתיב מלא לקצה האחורי שישמש לטיפול בחיפוש."
+msgstr ""
 
 #: settings.py:27
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
-"טיעונים להעביר לקצה העורפי של החיפוש. לדוגמה ערכים לשינוי ההתנהגות, שמות "
-"מארחים או ארגומנטים של אימות."
 
 #: settings.py:36
 msgid "The search operator to use when none is specified."
-msgstr "אופרטור החיפוש לשימוש כאשר אף אחד לא צוין."
+msgstr ""
 
 #: settings.py:43
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
-msgstr "משבית את החיפוש בסרגל מונחים בודדים ומשאיר רק את לחצן החיפוש המתקדם."
+msgstr ""
 
 #: settings.py:51
 msgid "Amount of objects to process when performing bulk indexing."
-msgstr "כמות האובייקטים לעיבוד בעת ביצוע אינדקס בכמות גדולה."
+msgstr ""
 
 #: settings.py:57
 msgid "Sets the default state of the \"Match all\" checkbox."
-msgstr "מגדיר את מצב ברירת המחדל של תיבת הסימון &quot;התאמה לכל&quot;."
+msgstr ""
 
 #: settings.py:63
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
-msgstr "מספר מקסימלי של תוצאות חיפוש לאחזור והצגה לכל יחידת שאילתת חיפוש."
+msgstr ""
 
 #: settings.py:69
 msgid "Maximum number of search results to fetch and display."
-msgstr "מספר מקסימלי של תוצאות חיפוש לאחזור והצגה."
+msgstr ""
 
 #: templates/dynamic_search/app/list_toolbar.html:18
 msgid "Filter terms"
-msgstr "סינון מונחים"
+msgstr ""
 
 #: templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced"
-msgstr "מִתקַדֵם"
+msgstr ""
 
 #: value_transformations.py:37
 msgid "Replace accents"
-msgstr "החלף מבטאים"
+msgstr ""
 
 #: value_transformations.py:49
 msgid "@ sign replace"
-msgstr "סימן @ להחליף"
+msgstr ""
 
 #: value_transformations.py:59
 msgid "Case fold"
-msgstr "קיפול המארז"
+msgstr ""
 
 #: value_transformations.py:69 value_transformations.py:79
 msgid "Hyphen replace"
-msgstr "החלפת מקף"
+msgstr ""
 
 #: value_transformations.py:89
 msgid "To boolean"
-msgstr "לבוליאנית"
+msgstr ""
 
 #: value_transformations.py:102
 msgid "To date time"
-msgstr "לתאריך שעה"
+msgstr ""
 
 #: value_transformations.py:124
 msgid "Date time ISO format"
-msgstr "תאריך שעה פורמט ISO"
+msgstr ""
 
 #: value_transformations.py:134
 msgid "Date time simple format"
-msgstr "תאריך שעה פורמט פשוט"
+msgstr ""
 
 #: value_transformations.py:144
 msgid "Date time timestamp format"
-msgstr "פורמט חותמת זמן של תאריך"
+msgstr ""
 
 #: value_transformations.py:158
 msgid "To integer"
-msgstr "למספר שלם"
+msgstr ""
 
 #: value_transformations.py:168
 msgid "To string"
-msgstr "למחרוזת"
+msgstr ""
 
 #: views.py:59
 msgid "This tool erases and populates the search backend's internal index."
-msgstr "כלי זה מוחק ומאכלס את האינדקס הפנימי של הקצה העורפי של החיפוש."
+msgstr ""
 
 #: views.py:69
 msgid ""
 "This tool is required only for some search backends. Search results will be "
 "affected while the backend is being reindexed."
 msgstr ""
-"כלי זה נדרש רק עבור חלק מהחלקים האחוריים של החיפוש. תוצאות החיפוש יושפעו "
-"בזמן הוספת הקצה העורפי מחדש לאינדקס."
 
 #: views.py:75
 msgid ""
 "The currently selected search backend does not support or requires "
 "reindexing."
-msgstr "הקצה העורפי של החיפוש שנבחר כעת אינו תומך או דורש יצירת אינדקס מחדש."
+msgstr ""
 
 #: views.py:88
 msgid "Search backend reindexing queued."
-msgstr "חיפוש מחדש לאינדקס הקצה האחורי נמצא בתור."
+msgstr ""
 
 #: views.py:110
 #, python-format
 msgid "Search for: %s"
-msgstr "חפש את: %s"
+msgstr ""
 
 #: views.py:139
 #, python-format
 msgid "Advanced search for: %s"
-msgstr "חיפוש מתקדם עבור: %s"
+msgstr ""
 
 #: views.py:174
 msgid "Try again using different terms. "
-msgstr "נסה שוב להשתמש במונחים שונים."
+msgstr ""
 
 #: views.py:176
 msgid "No search results"
-msgstr "אין תוצאות חיפוש"
+msgstr ""
 
 #: views.py:179
 #, python-format
 msgid "Search query: %s"
-msgstr "שאילתת חיפוש: %s"
+msgstr ""
 
 #: views.py:181
 #, python-format
 msgid "Search results for: %s"
-msgstr "תוצאות חיפוש עבור: %s"
+msgstr ""

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: apps.py:24 permissions.py:6
+#: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
 msgstr ""
 
-#: classes.py:42
+#: classes.py:49
 msgid "Document_file_bundle.zip"
 msgstr ""
 
-#: classes.py:45
+#: classes.py:52
 msgid "Compressed document files"
 msgstr ""
 
-#: events.py:6
+#: events.py:6 queues.py:7
 msgid "Documents downloads"
 msgstr ""
 
@@ -65,10 +65,10 @@ msgid "Quick download"
 msgstr ""
 
 #: literals.py:4
-#, python-format
 msgid ""
-"The document files have compressed and are available for download using the "
-"link: %(download_url)s or from the downloads area (%(download_list_url)s)."
+"The document files have been compressed and are available for download using"
+" the link: {{ download_url }} or from the downloads area ({{ "
+"download_list_url }})."
 msgstr ""
 
 #: literals.py:10
@@ -79,8 +79,20 @@ msgstr ""
 msgid "Download document files"
 msgstr ""
 
-#: queues.py:7
+#: queues.py:13
 msgid "Generate a compressed document file bundle"
+msgstr ""
+
+#: settings.py:18
+msgid ""
+"Template for the document download message body text. Can include HTML. "
+"Available variables: {}"
+msgstr ""
+
+#: settings.py:27
+msgid ""
+"Template for the document download message subject line. Can't include HTML."
+" Available variables: {}"
 msgstr ""
 
 #: views.py:24

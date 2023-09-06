@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Jorge <emailcurro@gmail.com>, 2023\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
-#: templates/announcements/announcements.html:8 views.py:126
+#: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
 msgstr ""
 
-#: apps.py:78 apps.py:82
+#: apps.py:79 apps.py:83
 msgid "None"
 msgstr ""
 

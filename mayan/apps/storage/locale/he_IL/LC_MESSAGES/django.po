@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +20,9 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:27 permissions.py:6 settings.py:15
+#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
-msgstr "אִחסוּן"
+msgstr ""
 
 #: classes.py:88 classes.py:109
 #, python-format
@@ -31,163 +30,165 @@ msgid ""
 "Unable to initialize storage: %(name)s. Check the storage backend dotted "
 "path and arguments."
 msgstr ""
-"לא ניתן לאתחל את האחסון: %(name)s. בדוק את הנתיב המקווקו והארגומנטים "
-"האחוריים של האחסון."
 
 #: events.py:6 links.py:20 models.py:56 storages.py:22
 msgid "Download files"
-msgstr "להוריד קבצים"
+msgstr "הורדת קבצים"
 
 #: events.py:10
 msgid "Download file created"
-msgstr "קובץ הורדה נוצר"
+msgstr ""
 
 #: events.py:13
 msgid "Download file deleted"
-msgstr "קובץ ההורדה נמחק"
+msgstr ""
 
 #: events.py:16
 msgid "Download file downloaded"
-msgstr "הורדת קובץ"
+msgstr ""
 
 #: links.py:12
 msgid "Delete"
-msgstr "לִמְחוֹק"
+msgstr "מחיקה"
 
 #: links.py:16
 msgid "Download"
-msgstr "הורד"
+msgstr "הורדה"
 
 #: management/commands/storage_process.py:13
 msgid "Name of the app to process."
-msgstr "שם האפליקציה לעיבוד."
+msgstr ""
 
 #: management/commands/storage_process.py:19
 msgid ""
 "Path of the database (.dbm) file that will be created/read to keep track of "
 "items processed."
 msgstr ""
-"נתיב של קובץ מסד הנתונים (.dbm) שייווצר/יקרא כדי לעקוב אחר הפריטים שעובדו."
 
 #: management/commands/storage_process.py:26
 msgid "Process a specific model."
-msgstr "לעבד מודל מסוים."
+msgstr ""
 
 #: management/commands/storage_process.py:32
 msgid ""
 "Process the files in reverse to undo the storage pipeline transformations."
-msgstr "עבד את הקבצים הפוך כדי לבטל את השינויים בצינור האחסון."
+msgstr ""
 
 #: management/commands/storage_process.py:38
 msgid "Name of the storage to process."
-msgstr "שם האחסון לעיבוד."
+msgstr ""
 
-#: model_mixins.py:18 models.py:94
+#: model_mixins.py:18 models.py:95
 msgid "Filename"
-msgstr "שם קובץ"
+msgstr ""
 
 #: model_mixins.py:21
 msgid "Date time"
-msgstr "תאריך שעה"
+msgstr ""
 
 #: model_mixins.py:82
 msgid "Unnamed file"
-msgstr "קובץ ללא שם"
+msgstr ""
 
 #: model_mixins.py:101
 msgid "Size"
-msgstr "גודל"
+msgstr ""
 
-#: model_mixins.py:108 models.py:48
+#: model_mixins.py:108 models.py:48 serializers.py:15
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
-#: models.py:40 models.py:91
+#: models.py:40 models.py:92
 msgid "File"
-msgstr "קוֹבֶץ"
+msgstr ""
 
 #: models.py:43
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
 #: models.py:55
 msgid "Download file"
-msgstr "הורד קובץ"
+msgstr ""
 
-#: models.py:100
+#: models.py:101
 msgid "Shared uploaded file"
-msgstr "קובץ שהועלה משותף"
+msgstr ""
 
-#: models.py:101 storages.py:36
+#: models.py:102 storages.py:36
 msgid "Shared uploaded files"
-msgstr "קבצים שהועלו משותפים"
+msgstr ""
 
 #: permissions.py:10
 msgid "Delete user files"
-msgstr "מחק קבצי משתמש"
+msgstr ""
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr "הורד קבצי משתמש"
+msgstr ""
 
 #: permissions.py:16
 msgid "View user files"
-msgstr "הצג קבצי משתמש"
+msgstr ""
 
-#: queues.py:13
+#: queues.py:16
 msgid "Storage periodic"
-msgstr "אחסון תקופתי"
+msgstr ""
 
-#: queues.py:19
+#: queues.py:22
+msgid "Delete a shared upload"
+msgstr ""
+
+#: queues.py:27
 msgid "Delete stale uploads"
-msgstr "מחק העלאות מיושנות"
+msgstr ""
 
-#: queues.py:26
+#: queues.py:34
 msgid "Delete stale download files"
-msgstr "מחק קבצי הורדה מיושנים"
+msgstr ""
+
+#: serializers.py:11
+msgid "Download URL"
+msgstr "הורד כתובת אתר (URL)"
+
+#: serializers.py:21
+msgid "URL"
+msgstr "כתובת אתר (URL)"
 
 #: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
-msgstr "זמן בשניות, ולאחר מכן קבצי הורדה יימחקו."
+msgstr ""
 
 #: settings.py:27
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
-"אחורי אחסון שכל העובדים יכולים להשתמש בו כדי ליצור ולהחזיק קבצים להורדה."
 
 #: settings.py:38
 msgid "A storage backend that all workers can use to share files."
-msgstr "קצה אחורי של אחסון שכל העובדים יכולים להשתמש בו כדי לשתף קבצים."
+msgstr ""
 
 #: settings.py:48
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
 msgstr ""
-"הספרייה הזמנית השתמשה באתר רחב לאחסון תמונות ממוזערות, תצוגות מקדימות וקבצים"
-" זמניים."
 
 #: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
-msgstr "זמן בשניות, ולאחר מכן קבצים שהועלו זמניים יימחקו."
+msgstr ""
 
 #: storages.py:15
 msgid ""
 "Unable to initialize the download file storage. Check the settings {} and {}"
 " for formatting errors."
 msgstr ""
-"לא ניתן לאתחל את אחסון קבצי ההורדה. בדוק את ההגדרות {} ו-{} עבור שגיאות "
-"עיצוב."
 
 #: storages.py:29
 msgid ""
 "Unable to initialize the shared uploaded file storage. Check the settings {}"
 " and {} for formatting errors."
 msgstr ""
-"לא ניתן לאתחל את אחסון הקבצים המשותף שהועלה. בדוק את ההגדרות {} ו-{} עבור "
-"שגיאות עיצוב."
 
 #: views.py:67
 msgid ""
@@ -195,13 +196,11 @@ msgid ""
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
-"קבצי הורדה נוצרים כתוצאה מתהליך חיצוני כמו ייצוא. קבצי הורדה נשמרים לאורך "
-"זמן ואז מוסרים אוטומטית."
 
 #: views.py:71
 msgid "There are no files to download."
-msgstr "אין קבצים להורדה."
+msgstr ""
 
 #: views.py:72
 msgid "Downloads"
-msgstr "הורדות"
+msgstr ""

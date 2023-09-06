@@ -5,17 +5,17 @@
 # Translators:
 # Translators:
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Yves Dubois <ydubois@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:28 apps.py:54 links.py:14 queues.py:9
+#: apps.py:28 apps.py:54 links.py:14 queues.py:7
 msgid "Duplicates"
 msgstr "Doublons"
 
@@ -43,15 +43,15 @@ msgstr "Somme de contrôle du document"
 msgid "Exact document label"
 msgstr "Nom exact du document"
 
-#: links.py:18 models.py:37 views.py:79
+#: links.py:18 models.py:39 views.py:79
 msgid "Duplicated documents"
 msgstr "Documents doublons"
 
-#: links.py:24 queues.py:23
+#: links.py:24 queues.py:24
 msgid "Duplicated document scan"
 msgstr "Numérisations de documents doublons"
 
-#: models.py:19 models.py:29
+#: models.py:19 models.py:31
 msgid "Stored duplicate backend"
 msgstr ""
 
@@ -59,23 +59,27 @@ msgstr ""
 msgid "Stored duplicate backends"
 msgstr ""
 
-#: models.py:33
+#: models.py:35
 msgid "Document"
 msgstr "Document"
 
-#: models.py:45
+#: models.py:47
 msgid "Duplicated backend entry"
 msgstr ""
 
-#: models.py:46
+#: models.py:48
 msgid "Duplicated backend entries"
 msgstr ""
 
-#: queues.py:14
+#: queues.py:10
+msgid "Duplicates slow"
+msgstr ""
+
+#: queues.py:15
 msgid "Clean empty duplicate lists"
 msgstr "Nettoyer les listes des doublons vides "
 
-#: queues.py:18
+#: queues.py:19
 msgid "Scan document duplicates"
 msgstr "Numériser des doublons de documents"
 

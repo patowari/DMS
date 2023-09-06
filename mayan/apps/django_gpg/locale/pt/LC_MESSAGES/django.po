@@ -5,18 +5,20 @@
 # Translators:
 # Translators:
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
+# Aline Freitas <aline@alinefreitas.com.br>, 2023
 # Vítor Figueiró <vfigueiro@gmail.com>, 2023
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
 # Roberto Rosario, 2023
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
 # Márcia Ferreira, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Márcia Ferreira, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -209,7 +211,7 @@ msgstr "Importar chaves de servidores de chaves"
 
 #: permissions.py:19
 msgid "Use keys to sign content"
-msgstr "Usar chave para assinar conteúdo"
+msgstr "Usar chaves para assinar conteúdo"
 
 #: permissions.py:22
 msgid "Upload keys"
@@ -230,7 +232,7 @@ msgstr "Assinaturas"
 #: settings.py:18
 msgid "Full path to the backend to be used to handle keys and signatures."
 msgstr ""
-"Caminho completo para o backend a ser utilizado para gerir chaves e "
+"Caminho completo para o backend a ser usado para manipular chaves e "
 "assinaturas."
 
 #: settings.py:27
@@ -276,7 +278,7 @@ msgstr ""
 
 #: views.py:139
 msgid "No results returned"
-msgstr "Sem resultados devolvidos."
+msgstr "Nenhum resultado retornado"
 
 #: views.py:141
 msgid "Key query results"
@@ -295,9 +297,9 @@ msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
 msgstr ""
-"Chaves privadas são utilizadas para assinar documentos. As chaves privadas "
-"podem ser carregadas apenas pelo utilizador. A visão geral para carregar "
-"chaves privadas e públicas é a mesma."
+"Chaves privadas são usadas para assinaturas de documentos. Chaves privadas "
+"somente podem ser carregadas pelo usuário. A tela para carregar chaves "
+"públicas e privadas é a mesma."
 
 #: views.py:213
 msgid "There no private keys"
@@ -315,4 +317,4 @@ msgstr ""
 
 #: views.py:238
 msgid "There no public keys"
-msgstr "Não existem chaves públicas."
+msgstr "Não há chaves públicas"

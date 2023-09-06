@@ -5,16 +5,16 @@
 # Translators:
 # Translators:
 # Stefaniu Criste <gupi@hangar.ro>, 2023
-# Badea Gabriel <gcbadea@gmail.com>, 2023
 # Roberto Rosario, 2023
+# Badea Gabriel <gcbadea@gmail.com>, 2023
 # Harald Ersch, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "ACL-uri"
 
@@ -35,7 +35,7 @@ msgstr ""
 "Obiect pentru care este acordat accesul. La sortarea obiectelor, se "
 "folosește doar tipul și nu eticheta reală a obiectului."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
 msgstr "Obiect"
 
@@ -67,7 +67,7 @@ msgstr "ACL nou"
 msgid "Delete"
 msgstr "Șterge"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "Permisiuni"
 
@@ -93,7 +93,7 @@ msgstr "Număr de permisiuni"
 msgid "Content type"
 msgstr "Tipul de conținut"
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "ID obiect"
 
@@ -226,47 +226,51 @@ msgstr "Nu există ACL-uri"
 msgid "Global access control lists"
 msgstr "Liste globale de control al accesului"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "Tipul obiectului"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "Tipul obiectului pentru care va fi modificat accesul ."
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
 "Identificatorul numeric al obiectului pentru care va fi modificat accesul."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "Roluri"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "Roluri a căror acces va fi modificat."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
 "Permisiuni de acordare / revocare în / a rolului pentru obiectului selectat "
 "mai sus."
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr "Acordă acces la obiect"
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr "Revocați accesul la obiect"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr "Acordați acces la documente"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr "Revocați accesul la documente"

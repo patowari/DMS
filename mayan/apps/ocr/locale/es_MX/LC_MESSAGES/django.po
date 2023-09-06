@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
-#: search.py:18 settings.py:11
+#: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
 msgstr "OCR"
 
 #: apps.py:116
 msgid "The OCR content."
-msgstr "El contenido de OCR."
+msgstr "El contenido OCR."
 
 #: apps.py:121
 msgid "A generator returning the document's version pages OCR content."
@@ -45,7 +45,7 @@ msgstr "Tesseract OCR no encontrado."
 
 #: dependencies.py:24
 msgid "Free Open Source OCR Engine"
-msgstr "Motor gratuito de código abierto OCR"
+msgstr "Motor de OCR gratuito y de código abierto"
 
 #: events.py:10
 msgid "Document version OCR content deleted"
@@ -143,7 +143,7 @@ msgstr "Enviar documentos para OCR"
 
 #: permissions.py:13
 msgid "Edit the transcribed text from document"
-msgstr "Ver el texto transcrito de los documentos"
+msgstr "Editar el texto transcrito del documento"
 
 #: permissions.py:17
 msgid "View the transcribed text from document"
@@ -248,9 +248,9 @@ msgstr "%(count)d versiones de documentos enviadas a la cola de OCR."
 #: views.py:190
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "¿Enviar la versión del documento seleccionado a la cola de OCR?"
+msgstr[1] "¿Enviar las versiones del documento seleccionado a la cola de OCR?"
+msgstr[2] "¿Enviar las versiones del documento seleccionado a la cola de OCR?"
 
 #: views.py:226
 #, python-format
@@ -289,6 +289,6 @@ msgstr "Contenido de página"
 msgid "A template that will generate the OCR content to be saved."
 msgstr "Una plantilla que generará el contenido de OCR que se guardará."
 
-#: workflow_actions.py:43
+#: workflow_actions.py:42
 msgid "Update document page OCR content"
 msgstr "Actualizar el contenido de OCR de la página del documento"

@@ -4,17 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Vítor Figueiró <vfigueiro@gmail.com>, 2023
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
+# Aline Freitas <aline@alinefreitas.com.br>, 2023
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
+# Vítor Figueiró <vfigueiro@gmail.com>, 2023
 # Márcia Ferreira, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Márcia Ferreira, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +47,7 @@ msgstr "Documento requisitado"
 
 #: events.py:20
 msgid "Document forcefully checked in"
-msgstr "Documento devolvido à força"
+msgstr "Documento devolvido forçosamente"
 
 #: exceptions.py:15
 msgid "Document not checked out."
@@ -53,7 +55,7 @@ msgstr "Documento não requisitado."
 
 #: exceptions.py:23
 msgid "Document already checked out."
-msgstr "Documento já foi requisitado."
+msgstr "Documento já foi retirado"
 
 #: forms.py:26
 msgid "Document status"
@@ -149,7 +151,7 @@ msgstr "Requisição de documento"
 
 #: models.py:60
 msgid "Document checkouts"
-msgstr "Requisição de documentos"
+msgstr "Retiradas de documentos"
 
 #: models.py:69
 msgid "Check out expiration date and time must be in the future."
@@ -165,7 +167,7 @@ msgstr "Devolver documentos à força"
 
 #: permissions.py:16
 msgid "Check out documents"
-msgstr "Requisitar documentos"
+msgstr "Retirar documentos"
 
 #: permissions.py:19
 msgid "Check out details view"

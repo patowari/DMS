@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -20,41 +20,41 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:24 permissions.py:6
+#: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
-msgstr "הורדות מסמכים"
+msgstr ""
 
-#: classes.py:42
+#: classes.py:49
 msgid "Document_file_bundle.zip"
-msgstr "Document_file_bundle.zip"
+msgstr ""
 
-#: classes.py:45
+#: classes.py:52
 msgid "Compressed document files"
-msgstr "קבצי מסמכים דחוסים"
+msgstr ""
 
-#: events.py:6
+#: events.py:6 queues.py:7
 msgid "Documents downloads"
-msgstr "הורדות מסמכים"
+msgstr ""
 
 #: events.py:10
 msgid "Document file downloaded"
-msgstr "קובץ המסמך הורד"
+msgstr ""
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr "מזהה קובץ מסמך"
+msgstr ""
 
 #: forms.py:11
 msgid "Document"
-msgstr "מסמך"
+msgstr ""
 
 #: forms.py:19
 msgid "Document file"
-msgstr "קובץ מסמך"
+msgstr ""
 
 #: forms.py:27
 msgid "Include"
-msgstr "לִכלוֹל"
+msgstr ""
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -62,28 +62,38 @@ msgstr "הורדת קבצים"
 
 #: links.py:24
 msgid "Quick download"
-msgstr "הורדה מהירה"
+msgstr ""
 
 #: literals.py:4
-#, python-format
 msgid ""
-"The document files have compressed and are available for download using the "
-"link: %(download_url)s or from the downloads area (%(download_list_url)s)."
+"The document files have been compressed and are available for download using"
+" the link: {{ download_url }} or from the downloads area ({{ "
+"download_list_url }})."
 msgstr ""
-"קבצי המסמכים נדחסו וזמינים להורדה באמצעות הקישור: %(download_url)s או מאזור "
-"ההורדות (%(download_list_url)s)."
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr "קבצי מסמכים מוכנים להורדה."
+msgstr ""
 
 #: permissions.py:10
 msgid "Download document files"
 msgstr "הורדת קבצי מסמכים"
 
-#: queues.py:7
+#: queues.py:13
 msgid "Generate a compressed document file bundle"
 msgstr "יצירת חבילת קבצי מסמכים דחוסים"
+
+#: settings.py:18
+msgid ""
+"Template for the document download message body text. Can include HTML. "
+"Available variables: {}"
+msgstr ""
+
+#: settings.py:27
+msgid ""
+"Template for the document download message subject line. Can't include HTML."
+" Available variables: {}"
+msgstr ""
 
 #: views.py:24
 #, python-format
@@ -96,17 +106,17 @@ msgstr ""
 #: views.py:33
 #, python-format
 msgid "%(count)d document files queued for download."
-msgstr "%(count)d קבצי מסמכים בתור להורדה."
+msgstr ""
 
 #: views.py:36
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
-msgstr "קובץ המסמך &quot;%(object)s&quot; בתור להורדה."
+msgstr ""
 
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
-msgstr "%(count)d קובץ מסמך בתור להורדה."
+msgstr ""
 
 #: views.py:41
 #, python-format
@@ -127,4 +137,4 @@ msgstr "הורדת קבצים של מסמך %(count)d"
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
-msgstr "התהליך יתבצע ברקע. קבצי המסמכים יהיו זמינים באזור ההורדות."
+msgstr ""

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -25,23 +25,23 @@ msgstr ""
 msgid "Databases"
 msgstr "Baze de date"
 
-#: classes.py:205
+#: classes.py:80
 msgid "Model fields"
 msgstr "Câmpurile modelului"
 
-#: classes.py:253
+#: classes.py:128
 msgid "Model related fields"
 msgstr "Câmpuri legate de model"
 
-#: classes.py:258
+#: classes.py:133
 msgid "Model properties"
 msgstr "Proprietățile modelului"
 
-#: classes.py:263
+#: classes.py:138
 msgid "Model reverse fields"
 msgstr "Model câmpuri invers"
 
-#: literals.py:14
+#: literals.py:10
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
@@ -49,31 +49,7 @@ msgstr ""
 "Backendul bazei de date este setat să utilizeze SQLite. SQLite ar trebui "
 "folosit numai pentru dezvoltare și testare, nu pentru producție."
 
-#: model_mixins.py:24
-msgid "The dotted Python path to the backend class."
-msgstr "Calea Python punctată la clasa backend."
-
-#: model_mixins.py:25
-msgid "Backend path"
-msgstr "Calea de backend"
-
-#: model_mixins.py:29
-msgid "JSON encoded data for the backend class."
-msgstr "Date codificate JSON pentru clasa backend."
-
-#: model_mixins.py:30
-msgid "Backend data"
-msgstr "Date backend"
-
-#: model_mixins.py:80
-msgid "Backend"
-msgstr "Backend"
-
-#: model_mixins.py:81
-msgid "The backend class for this entry."
-msgstr "Clasa backend pentru această intrare."
-
-#: model_mixins.py:103
+#: model_mixins.py:26
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -85,16 +61,16 @@ msgstr ""
 "None sau un șir gol ('') sunt considerate a fi logic fals, orice altă "
 "valoare este considerată a fi logic adevărat."
 
-#: model_mixins.py:108
+#: model_mixins.py:31
 msgid "Condition"
 msgstr "Condiție"
 
-#: model_mixins.py:129
+#: model_mixins.py:52
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 "Obiectul va fi executat, în funcție de valoarea returnată a condiției."
 
-#: model_mixins.py:132
+#: model_mixins.py:55
 msgid "Has a condition?"
 msgstr "Are o condiție?"
 

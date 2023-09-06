@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -28,15 +28,15 @@ msgstr "פירוק מסמך לחלקים (Parsing)"
 msgid "A generator returning the document file's pages parsed content."
 msgstr "מחולל המחזיר את התוכן המפורק של דפי קובץ המסמך."
 
-#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:11
+#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:18
 msgid "Content"
-msgstr "תוֹכֶן"
+msgstr ""
 
 #: dependencies.py:9
 msgid ""
 "Utility from the poppler-utils package used to extract content from PDF "
 "files."
-msgstr "כלי עזר מחבילת poppler-utils המשמשת לחילוץ תוכן מקובצי PDF."
+msgstr ""
 
 #: events.py:10
 msgid "Document file parsed content deleted"
@@ -53,7 +53,7 @@ msgstr "פירוק קובץ המסמך הסתיים"
 #: forms.py:41
 #, python-format
 msgid "Page %(page_number)d"
-msgstr "עמוד %(page_number)d"
+msgstr ""
 
 #: forms.py:51 forms.py:63
 msgid "Contents"
@@ -87,9 +87,9 @@ msgstr "דף מקובץ המסמך"
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr "תוכן הטקסט בפועל כפי שחולץ על ידי מנוע פירוק המסמכים."
 
-#: models.py:31
+#: models.py:31 search.py:24
 msgid "Document file page content"
-msgstr "תוכן עמוד קובץ מסמך"
+msgstr ""
 
 #: models.py:32
 msgid "Document file page contents"
@@ -97,7 +97,7 @@ msgstr "תכני עמוד קובץ מסמך"
 
 #: models.py:44
 msgid "Document type"
-msgstr "סוג מסמך"
+msgstr "Document type"
 
 #: models.py:48
 msgid "Automatically queue newly created documents for parsing."
@@ -109,11 +109,11 @@ msgstr "פירוק אוטומטי"
 
 #: models.py:59
 msgid "Document type settings"
-msgstr "הגדרות סוג מסמך"
+msgstr ""
 
 #: models.py:60
 msgid "Document types settings"
-msgstr "הגדרות סוגי מסמכים"
+msgstr ""
 
 #: parsers.py:106
 #, python-format
@@ -145,7 +145,7 @@ msgstr "פירוק"
 msgid "Document file parsing"
 msgstr "פירוק קובץ מסמך"
 
-#: search.py:17 search.py:24
+#: search.py:12
 msgid "Document file content"
 msgstr "תוכן קובץ מסמך"
 
@@ -158,12 +158,11 @@ msgid ""
 "File path to poppler's pdftotext program used to extract text from PDF "
 "files."
 msgstr ""
-"נתיב הקובץ לתוכנית pdftotext של poppler המשמשת לחילוץ טקסט מקובצי PDF."
 
 #: views.py:37
 #, python-format
 msgid "Error deleting document version content \"%(instance)s\"; %(exception)s"
-msgstr "שגיאה במחיקת תוכן גרסת המסמך &quot;%(instance)s&quot;; %(exception)s"
+msgstr ""
 
 #: views.py:44
 #, python-format
@@ -173,7 +172,7 @@ msgstr "תוכן של %(count)d גרסאות מסמך נמחק בהצלחה."
 #: views.py:47
 #, python-format
 msgid "Content of \"%(object)s\" deleted successfully."
-msgstr "התוכן של &quot;%(object)s&quot; נמחק בהצלחה."
+msgstr ""
 
 #: views.py:50
 #, python-format
@@ -198,7 +197,7 @@ msgstr "מחיקת התוכן של  %(count)d גרסאות מסמך שנבחרו
 #: views.py:98
 #, python-format
 msgid "Content for document file: %s"
-msgstr "תוכן לקובץ מסמך: %s"
+msgstr ""
 
 #: views.py:120
 #, python-format

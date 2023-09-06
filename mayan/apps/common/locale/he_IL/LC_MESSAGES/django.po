@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,92 +22,88 @@ msgstr ""
 
 #: apps.py:132 permissions.py:6 settings.py:16
 msgid "Common"
-msgstr "מְשׁוּתָף"
+msgstr ""
 
-#: dependencies.py:165
-msgid "Transifex Client"
-msgstr "לקוח Transifex"
-
-#: dependencies.py:182
+#: dependencies.py:186
 msgid "Used to allow offline translation of the code text strings."
-msgstr "משמש כדי לאפשר תרגום לא מקוון של מחרוזות טקסט הקוד."
+msgstr ""
 
-#: dependencies.py:191
+#: dependencies.py:195
 msgid "Provides style checking."
-msgstr "מספק בדיקת סגנון."
+msgstr ""
 
-#: dependencies.py:196
+#: dependencies.py:200
 msgid "Command line environment with autocompletion."
-msgstr "סביבת שורת פקודה עם השלמה אוטומטית."
+msgstr ""
 
-#: dependencies.py:201
+#: dependencies.py:209
 msgid "Checks proper formatting of the README file."
-msgstr "בודק עיצוב תקין של קובץ README."
+msgstr ""
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "אדות"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "להשיג את הספר"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
-msgstr "תיעוד"
+msgstr ""
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
-msgstr "פוֹרוּם"
+msgstr ""
 
-#: links.py:45 views.py:53
+#: links.py:49 views.py:53
 msgid "License"
-msgstr "רישיון"
-
-#: links.py:50
-msgid "Copy"
-msgstr "עותק"
+msgstr ""
 
 #: links.py:54
+msgid "Copy"
+msgstr ""
+
+#: links.py:58
 msgid "Setup"
 msgstr "להגדיר"
 
-#: links.py:57
-msgid "Source code"
-msgstr "קוד מקור"
-
 #: links.py:61
-msgid "Online store"
-msgstr "חנות מקוונת"
+msgid "Source code"
+msgstr ""
 
 #: links.py:65
+msgid "Online store"
+msgstr ""
+
+#: links.py:69
 msgid "Get support"
-msgstr "קבל תמיכה"
+msgstr ""
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:73 views.py:134
 msgid "Tools"
-msgstr "כלים"
+msgstr ""
 
-#: literals.py:30
+#: literals.py:27
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
-msgstr "תכונה זו הוצאה משימוש והיא תוסר בגרסה עתידית."
+msgstr ""
 
-#: literals.py:39
+#: literals.py:36
 msgid "Days"
-msgstr "ימים"
+msgstr ""
 
-#: literals.py:40
+#: literals.py:37
 msgid "Hours"
 msgstr "שעות"
 
-#: literals.py:41
+#: literals.py:38
 msgid "Minutes"
-msgstr "דקות"
+msgstr ""
 
 #: menus.py:8
 msgid "System"
-msgstr "מערכת"
+msgstr ""
 
 #: menus.py:10 menus.py:11
 msgid "Facet"
@@ -123,7 +119,7 @@ msgstr "מיוחס"
 
 #: menus.py:16
 msgid "Secondary"
-msgstr "מִשׁנִי"
+msgstr ""
 
 #: menus.py:18
 msgid "Return"
@@ -131,27 +127,27 @@ msgstr "חזרה"
 
 #: menus.py:22
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
 #: permissions.py:10
 msgid "Copy object"
 msgstr "העתקת אובייקט"
+
+#: serializers.py:11
+msgid "URL"
+msgstr "כתובת אתר (URL)"
 
 #: settings.py:24
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
-"במצב רשימה, הצג את אפשרויות התפריט &quot;היבט רשימה&quot; כתפריט נפתח במקום "
-"כפתורים בודדים."
 
 #: settings.py:33
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
-"במצב רשימה, הצג את אפשרויות התפריט &quot;אובייקט&quot; כתפריט נפתח במקום "
-"כפתורים בודדים."
 
 #: settings.py:41
 msgid ""
@@ -159,9 +155,6 @@ msgid ""
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
-"משבית את השימוש בתיקיית `מדיה` המקומית. בעת שימוש בהגדרה זו, יש להגדיר את כל"
-" האפליקציות גם באמצעות הגדרות הקצה האחורי של האחסון שלהן כדי להשתמש בהתמדה "
-"חלופית."
 
 #: settings.py:49
 msgid ""
@@ -170,10 +163,6 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
-"רשימה של מחרוזות המציינות את כל היישומים שיש להסיר מהרשימה המותקנת בדרך כלל "
-"על ידי Mayan EDMS. כל מחרוזת צריכה להיות נתיב Python מנוקד אל: מחלקת תצורה "
-"של יישום (מועדף), או חבילה המכילה יישום. דוגמה: [&#39;app_1&#39;, "
-"&#39;app_2&#39;]"
 
 #: settings.py:59
 msgid ""
@@ -182,10 +171,6 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
-"רשימה של מחרוזות המציינות את כל היישומים המותקנים מעבר לאלו המותקנות בדרך "
-"כלל על ידי Mayan EDMS. כל מחרוזת צריכה להיות נתיב Python מנוקד אל: מחלקת "
-"תצורה של יישום (מועדף), או חבילה המכילה יישום. דוגמה: [&#39;app_1&#39;, "
-"&#39;app_2&#39;]"
 
 #: settings.py:70
 msgid ""
@@ -195,10 +180,6 @@ msgid ""
 " containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"רשימה של מחרוזות המציינות את כל היישומים המותקנים מעבר לאלו המותקנות בדרך "
-"כלל על ידי Mayan EDMS. כל מחרוזת צריכה להיות נתיב Python מנוקד אל: מחלקת "
-"תצורה של יישום (מועדף), או חבילה המכילה יישום. אפליקציות אלו יותקנו לפני "
-"אפליקציות ברירת המחדל. דוגמה: [&#39;app_1&#39;, &#39;app_2&#39;]"
 
 #: settings.py:81
 msgid ""
@@ -210,15 +191,15 @@ msgstr ""
 
 #: settings.py:90
 msgid "Name of the dashboard to display in the home view."
-msgstr "שם לוח המחוונים שיוצג בתצוגת הבית."
+msgstr ""
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr "מגדיר את שם הפרויקט."
+msgstr ""
 
 #: settings.py:99
 msgid "URL of the project's homepage."
-msgstr "כתובת האתר של דף הבית של הפרויקט."
+msgstr ""
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."
@@ -244,40 +225,40 @@ msgstr "אודות"
 
 #: views.py:43
 msgid "Home"
-msgstr "בית"
+msgstr ""
 
 #: views.py:69
 #, python-format
 msgid "Fields to be copied: %s"
-msgstr "שדות להעתקה: %s"
+msgstr ""
 
 #: views.py:79
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
-msgstr "האם ליצור עותק של %(object_name)s &quot;%(object)s&quot;?"
+msgstr ""
 
 #: views.py:90
 msgid "Object copied successfully."
-msgstr "האובייקט הועתק בהצלחה."
+msgstr ""
 
 #: views.py:108
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
-msgstr "אין תוצאות כאן פירושו שאין להם את ההרשאות הנדרשות לביצוע מטלות ניהול."
+msgstr ""
 
 #: views.py:111
 msgid "No setup options available."
-msgstr "אין אפשרויות הגדרה זמינות."
+msgstr ""
 
 #: views.py:116
 msgid "Here you can configure all aspects of the system."
-msgstr "כאן תוכל להגדיר את כל ההיבטים של המערכת."
+msgstr ""
 
 #: views.py:118
 msgid "Setup items"
-msgstr "פריטי הגדרה"
+msgstr ""
 
 #: views.py:132
 msgid "These modules are used to do system maintenance."
-msgstr "מודולים אלה משמשים לתחזוקת מערכת."
+msgstr ""

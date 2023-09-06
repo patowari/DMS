@@ -2,16 +2,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Jože Detečnik <joze.detecnik@3tav.si>, 2023
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2023\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -60,11 +60,11 @@ msgstr ""
 msgid "The username of the automatically created super user account."
 msgstr ""
 
-#: templates/autoadmin/credentials.html:11
+#: templates/autoadmin/credentials.html:13
 msgid "Automatic credentials"
 msgstr ""
 
-#: templates/autoadmin/credentials.html:16
+#: templates/autoadmin/credentials.html:17
 #, python-format
 msgid ""
 "You have just finished installing <strong>%(project_title)s</strong>, "
@@ -73,26 +73,26 @@ msgstr ""
 "Pravkar ste končali z namestitvijo <strong>%(project_title)s</strong>, "
 "čestitamo!"
 
-#: templates/autoadmin/credentials.html:17
+#: templates/autoadmin/credentials.html:18
 msgid "Login using the following credentials:"
 msgstr "Prijavite se z naslednjimi poverilnicami:"
 
-#: templates/autoadmin/credentials.html:19
+#: templates/autoadmin/credentials.html:20
 #, python-format
 msgid "Username: <strong>%(account)s</strong>"
 msgstr "Uporabniško ime: <strong>%(account)s</strong>"
 
-#: templates/autoadmin/credentials.html:20
+#: templates/autoadmin/credentials.html:21
 #, python-format
 msgid "Email: <strong>%(email)s</strong>"
 msgstr "Elektronska pošta: <strong>%(email)s</strong>"
 
-#: templates/autoadmin/credentials.html:21
+#: templates/autoadmin/credentials.html:22
 #, python-format
 msgid "Password: <strong>%(password)s</strong>"
 msgstr "Geslo: <strong>%(password)s</strong>"
 
-#: templates/autoadmin/credentials.html:23
+#: templates/autoadmin/credentials.html:24
 msgid ""
 "Be sure to change the password to increase security and to disable this "
 "message."

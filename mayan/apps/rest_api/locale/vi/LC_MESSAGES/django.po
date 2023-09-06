@@ -4,14 +4,16 @@
 # 
 # Translators:
 # Translators:
+# Roberto Rosario, 2023
+# Trung Phan Minh <navmobile@gmail.com>, 2023
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +60,7 @@ msgstr ""
 
 #: serializers.py:37
 msgid "Content"
-msgstr ""
+msgstr "Nội dung"
 
 #: serializers.py:40
 msgid "Data"
@@ -70,7 +72,7 @@ msgstr ""
 
 #: serializers.py:46
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #: serializers.py:49
 msgid "Status code"
@@ -118,7 +120,7 @@ msgstr ""
 
 #: serializers.py:127
 msgid "License"
-msgstr ""
+msgstr "Bản quyền"
 
 #: serializers.py:130
 msgid "Title"
@@ -126,7 +128,7 @@ msgstr ""
 
 #: serializers.py:133
 msgid "Version"
-msgstr ""
+msgstr "Phiên bản"
 
 #: serializers.py:136
 msgid "Website"

@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
 # Roberto Rosario, 2023
 # bwakkie <bwakkie@gmail.com>, 2023
+# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: bwakkie <bwakkie@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,86 +26,82 @@ msgstr ""
 msgid "Common"
 msgstr "Gemeenschappelijk"
 
-#: dependencies.py:165
-msgid "Transifex Client"
-msgstr "Transifex Client"
-
-#: dependencies.py:182
+#: dependencies.py:186
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Gebruikt om offline vertaling van de codetekststrings toe te staan."
 
-#: dependencies.py:191
+#: dependencies.py:195
 msgid "Provides style checking."
 msgstr "Biedt stijlcontrole."
 
-#: dependencies.py:196
+#: dependencies.py:200
 msgid "Command line environment with autocompletion."
 msgstr "Opdrachtregelomgeving met automatisch aanvullen."
 
-#: dependencies.py:201
+#: dependencies.py:209
 msgid "Checks proper formatting of the README file."
 msgstr "Controleert de juiste opmaak van het README-bestand."
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "Over Mayan EDMS"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "Koop het boek"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
 msgstr "Documentatie"
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:45 views.py:53
+#: links.py:49 views.py:53
 msgid "License"
 msgstr "Licentie"
 
-#: links.py:50
+#: links.py:54
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: links.py:54
+#: links.py:58
 msgid "Setup"
 msgstr "Setup"
 
-#: links.py:57
+#: links.py:61
 msgid "Source code"
 msgstr "Broncode"
 
-#: links.py:61
+#: links.py:65
 msgid "Online store"
 msgstr "Online opslag"
 
-#: links.py:65
+#: links.py:69
 msgid "Get support"
 msgstr "Ondersteuning"
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:73 views.py:134
 msgid "Tools"
 msgstr "Gereedschappen"
 
-#: literals.py:30
+#: literals.py:27
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Deze functie is achterhaald en zal worden verwijderd in een toekomstige "
 "versie."
 
-#: literals.py:39
+#: literals.py:36
 msgid "Days"
 msgstr "Dagen"
 
-#: literals.py:40
+#: literals.py:37
 msgid "Hours"
 msgstr "Uren"
 
-#: literals.py:41
+#: literals.py:38
 msgid "Minutes"
 msgstr "Minuten"
 
@@ -140,6 +136,10 @@ msgstr "Gebruiker"
 #: permissions.py:10
 msgid "Copy object"
 msgstr "Kopieer object"
+
+#: serializers.py:11
+msgid "URL"
+msgstr "URL"
 
 #: settings.py:24
 msgid ""

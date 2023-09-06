@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
@@ -20,24 +20,25 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: apps.py:70 apps.py:208 apps.py:214 apps.py:218 apps.py:223 apps.py:227
-#: events.py:6 links.py:52 permissions.py:6 queues.py:7
+#: apps.py:69 apps.py:207 apps.py:213 apps.py:217 apps.py:222 apps.py:226
+#: events.py:6 links.py:53 permissions.py:6 queues.py:7
+#: workflow_actions.py:159
 msgid "Metadata"
 msgstr "Metadata"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Return the value of a specific document metadata."
 msgstr ""
 
-#: apps.py:141
+#: apps.py:140
 msgid "Metadata value of"
 msgstr ""
 
-#: apps.py:146
+#: apps.py:145
 msgid "Metadata type name"
 msgstr "Naziv metapodataka"
 
-#: apps.py:150 search.py:17
+#: apps.py:149 search.py:14
 msgid "Metadata value"
 msgstr "Metadata vrijednost"
 
@@ -69,11 +70,11 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: forms.py:19 models.py:41
+#: forms.py:19 models.py:42
 msgid "Name"
 msgstr "Ime"
 
-#: forms.py:27 models.py:185 workflow_actions.py:95
+#: forms.py:27 models.py:186 workflow_actions.py:109
 msgid "Value"
 msgstr "Vrijednost"
 
@@ -81,7 +82,7 @@ msgstr "Vrijednost"
 msgid "Update"
 msgstr "Update"
 
-#: forms.py:52 forms.py:236 models.py:282
+#: forms.py:52 forms.py:236 models.py:283
 msgid "Required"
 msgstr "Obavezno"
 
@@ -95,7 +96,7 @@ msgstr "Greška pri traženju vrijednosti: %s"
 msgid "Default value error: %s"
 msgstr "Default vrijednost greške: %s"
 
-#: forms.py:118 models.py:127
+#: forms.py:118 models.py:128
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr "Za ovaj tip dokumenta potreban je \"%s\"."
@@ -104,8 +105,8 @@ msgstr "Za ovaj tip dokumenta potreban je \"%s\"."
 msgid "Metadata types to be added to the selected documents."
 msgstr "Tipovi metapodataka koji se dodaju odabranim dokumentima."
 
-#: forms.py:138 models.py:89 models.py:279 search.py:14 serializers.py:48
-#: serializers.py:108 workflow_actions.py:88
+#: forms.py:138 models.py:90 models.py:280 search.py:11 serializers.py:48
+#: serializers.py:108 workflow_actions.py:145
 msgid "Metadata type"
 msgstr "Metadata tip"
 
@@ -141,37 +142,37 @@ msgstr "Nijedno"
 msgid "Optional"
 msgstr "Neobavezno"
 
-#: links.py:25 links.py:34 workflow_actions.py:30
+#: links.py:26 links.py:35 workflow_actions.py:28
 msgid "Add metadata"
 msgstr "Dodajte metapodatke"
 
-#: links.py:31 links.py:38 workflow_actions.py:106
+#: links.py:32 links.py:39 workflow_actions.py:122
 msgid "Edit metadata"
 msgstr "Uredite metapodatke"
 
-#: links.py:42 links.py:48 workflow_actions.py:182
+#: links.py:43 links.py:49 workflow_actions.py:201
 msgid "Remove metadata"
 msgstr "Ukloni metapodatke"
 
-#: links.py:62 links.py:96 models.py:90 permissions.py:24
-#: views/metadata_type_views.py:115 workflow_actions.py:23
-#: workflow_actions.py:174
+#: links.py:63 links.py:95 links.py:103 models.py:91 permissions.py:24
+#: views/metadata_type_views.py:115 workflow_actions.py:52
+#: workflow_actions.py:66
 msgid "Metadata types"
 msgstr "Metadata tip"
 
-#: links.py:71
+#: links.py:72
 msgid "Document types"
 msgstr "Tipovi dokumenta"
 
-#: links.py:75
+#: links.py:76
 msgid "Create new"
 msgstr "Napravi novi"
 
-#: links.py:81 links.py:86
+#: links.py:82 links.py:87
 msgid "Delete"
 msgstr "Obriši"
 
-#: links.py:91
+#: links.py:92
 msgid "Edit"
 msgstr "Urediti"
 
@@ -219,37 +220,37 @@ msgstr ""
 msgid "Selected documents must be of the same type."
 msgstr "Izabrani dokumenti moraju biti istog tipa."
 
-#: models.py:38
+#: models.py:39
 msgid ""
 "Name used by other apps to reference this metadata type. Do not use python "
 "reserved words, or spaces."
 msgstr ""
 
-#: models.py:44
+#: models.py:45
 msgid "Short description of this metadata type."
 msgstr ""
 
-#: models.py:45
+#: models.py:46
 msgid "Label"
 msgstr "Labela"
 
-#: models.py:49
+#: models.py:50
 msgid "Enter a template to render."
 msgstr ""
 
-#: models.py:50
+#: models.py:51
 msgid "Default"
 msgstr "default"
 
-#: models.py:54
+#: models.py:55
 msgid "Enter a template to render. Must result in a comma delimited string."
 msgstr ""
 
-#: models.py:56
+#: models.py:57
 msgid "Lookup"
 msgstr "Pogledaj gore"
 
-#: models.py:60
+#: models.py:61
 msgid ""
 "The validator will reject data entry if the value entered does not conform "
 "to the expected format."
@@ -257,19 +258,19 @@ msgstr ""
 "Validator će odbiti unos podataka ako uneta vrednost ne odgovara očekivanom "
 "formatu."
 
-#: models.py:62
+#: models.py:63
 msgid "Validator"
 msgstr "Validator"
 
-#: models.py:66
+#: models.py:67
 msgid "Enter the arguments for the validator in YAML format."
 msgstr ""
 
-#: models.py:68
+#: models.py:69
 msgid "Validator arguments"
 msgstr ""
 
-#: models.py:73
+#: models.py:74
 msgid ""
 "The parser will reformat the value entered to conform to the expected "
 "format."
@@ -277,60 +278,60 @@ msgstr ""
 "Analizator će reformatirati vrijednost koja se unese u skladu sa očekivanim "
 "formatom."
 
-#: models.py:75
+#: models.py:76
 msgid "Parser"
 msgstr "Parser"
 
-#: models.py:79
+#: models.py:80
 msgid "Enter the arguments for the parser in YAML format."
 msgstr ""
 
-#: models.py:81
+#: models.py:82
 msgid "Parser arguments"
 msgstr ""
 
-#: models.py:136
+#: models.py:137
 msgid "Value is not one of the provided options."
 msgstr "Vrednost nije jedna od predloženih opcija."
 
-#: models.py:150
+#: models.py:151
 #, python-format
 msgid "Metadata type validation error; %(exception)s"
 msgstr ""
 
-#: models.py:176 serializers.py:105
+#: models.py:177 serializers.py:105
 msgid "Document"
 msgstr "Dokument"
 
-#: models.py:179
+#: models.py:180
 msgid "Type"
 msgstr "Tip"
 
-#: models.py:183
+#: models.py:184
 msgid "The actual value stored in the metadata type field for the document."
 msgstr ""
 
-#: models.py:191 models.py:192
+#: models.py:192 models.py:193
 msgid "Document metadata"
 msgstr "Metapodaci dokumenta"
 
-#: models.py:228
+#: models.py:229
 msgid "Metadata type is required for this document type."
 msgstr "Tip metapodataka je potreban za ovaj tip dokumenta."
 
-#: models.py:261
+#: models.py:262
 msgid "Metadata type is not valid for this document type."
 msgstr "Tip metapodataka nije važeći za ovaj tip dokumenta."
 
-#: models.py:275 serializers.py:45
+#: models.py:276 serializers.py:45
 msgid "Document type"
 msgstr "Tip dokumenta"
 
-#: models.py:290
+#: models.py:291
 msgid "Document type metadata type options"
 msgstr "Opcije tipa metapodataka tipa dokumenta"
 
-#: models.py:291
+#: models.py:292
 msgid "Document type metadata types options"
 msgstr "Opcije tipova metapodataka tipa dokumenta"
 
@@ -373,14 +374,6 @@ msgstr "Uklonite tip metapodataka"
 #: queues.py:15
 msgid "Add required metadata type"
 msgstr "Dodajte traženi tip metapodataka"
-
-#: search.py:24 search.py:35 search.py:46 search.py:57
-msgid "Document metadata type"
-msgstr ""
-
-#: search.py:28 search.py:39 search.py:50 search.py:61
-msgid "Document metadata value"
-msgstr ""
 
 #: serializers.py:28 serializers.py:57 serializers.py:111
 msgid "URL"
@@ -619,31 +612,37 @@ msgstr ""
 msgid "Document type relationships for metadata type: %s"
 msgstr ""
 
-#: wizard_steps.py:15
+#: wizard_steps.py:21
 msgid "Enter document metadata"
 msgstr "Unesite metapodatke dokumenata"
 
-#: workflow_actions.py:25
+#: wizard_steps.py:203
+msgid ""
+"One of more metadata types that are required for this document type are not "
+"available."
+msgstr ""
+
+#: workflow_actions.py:46
 msgid "Metadata types to add to the document."
 msgstr ""
 
-#: workflow_actions.py:49
+#: workflow_actions.py:81
 #, python-format
 msgid ""
 "Unable to add metadata type \"%(metadata_type)s\" from document: "
 "%(document)s. Exception: %(exception)s"
 msgstr ""
 
-#: workflow_actions.py:90
-msgid "Metadata types to edit."
-msgstr ""
-
-#: workflow_actions.py:98
+#: workflow_actions.py:113
 msgid ""
 "Value to assign to the metadata. Can be a literal value or template code."
 msgstr ""
 
-#: workflow_actions.py:130
+#: workflow_actions.py:139
+msgid "Metadata types to edit."
+msgstr ""
+
+#: workflow_actions.py:178
 #, python-format
 msgid ""
 "Unable to edit metadata type \"%(metadata_type)s\" from document: "
@@ -651,11 +650,11 @@ msgid ""
 "Exception: %(exception)s"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:209
 msgid "Metadata types to remove from the document."
 msgstr ""
 
-#: workflow_actions.py:197
+#: workflow_actions.py:225
 #, python-format
 msgid ""
 "Unable to remove metadata type \"%(metadata_type)s\" from document: "

@@ -5,21 +5,21 @@
 # Translators:
 # Translators:
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
 # Paulo Loureiro, 2023
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
 # Roberto Rosario, 2023
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
-# Aline Freitas <aline@alinefreitas.com.br>, 2023
 # Márcia Ferreira, 2023
+# Aline Freitas <aline@alinefreitas.com.br>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Márcia Ferreira, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Aline Freitas <aline@alinefreitas.com.br>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,11 +67,11 @@ msgstr "Assinatura independente carregarda."
 msgid "Embedded signature created"
 msgstr "Assinatura integrada criada."
 
-#: forms.py:17 forms.py:31 workflow_actions.py:19
+#: forms.py:17 forms.py:31 workflow_actions.py:69
 msgid "Key"
 msgstr "Chave"
 
-#: forms.py:22 serializers.py:66 workflow_actions.py:30
+#: forms.py:22 serializers.py:66 workflow_actions.py:31
 msgid ""
 "The passphrase to unlock the key and allow it to be used to sign the "
 "document file."
@@ -79,7 +79,7 @@ msgstr ""
 "A frase-chave para desbloquear a chave e permitir que a use para assinar o "
 "ficheiro de documento."
 
-#: forms.py:24 serializers.py:68 workflow_actions.py:27
+#: forms.py:24 serializers.py:68 workflow_actions.py:28
 msgid "Passphrase"
 msgstr "Senha"
 
@@ -156,7 +156,7 @@ msgstr "Assinatura integrada"
 msgid "Details"
 msgstr "Detalhes"
 
-#: links.py:92 queues.py:8
+#: links.py:92 queues.py:7
 msgid "Signatures"
 msgstr "Assinaturas"
 
@@ -260,23 +260,27 @@ msgstr "Verificar as assinaturas de documentos"
 msgid "View document signatures"
 msgstr "Visualizar assinaturas do documento"
 
-#: queues.py:13
+#: queues.py:10
+msgid "Signatures slow"
+msgstr ""
+
+#: queues.py:15
 msgid "Verify key signatures"
 msgstr "Verificar assinaturas com chave"
 
-#: queues.py:17
+#: queues.py:19
 msgid "Unverify key signatures"
 msgstr "Anular verificações de assinaturas com chave"
 
-#: queues.py:21
+#: queues.py:23
 msgid "Verify document file"
 msgstr "Confirmar ficheiro de documento"
 
-#: queues.py:26
+#: queues.py:28
 msgid "Verify missing embedded signature"
 msgstr "Verificar assinatura integrada faltante"
 
-#: queues.py:30
+#: queues.py:32
 msgid "Refresh existing signature information"
 msgstr "Atualizar informação de assinaturas existentes"
 
@@ -394,16 +398,20 @@ msgstr "Verificar todos os documentos para assinaturas?"
 msgid "Signature verification queued successfully."
 msgstr "Verificação de assinaturas colocada em fila."
 
-#: workflow_actions.py:22
-msgid "Private key that will be used to sign the document file."
-msgstr ""
-"Chave privada que será utilizada para assinar o ficheiro do documento."
-
 #: workflow_actions.py:37
 msgid "Sign document (detached)"
 msgstr "Assinar o documento (destacado)"
 
-#: workflow_actions.py:49
+#: workflow_actions.py:48
+msgid "Private key that will be used to sign the document file."
+msgstr ""
+"Chave privada que será utilizada para assinar o ficheiro do documento."
+
+#: workflow_actions.py:55
+msgid "Private key"
+msgstr ""
+
+#: workflow_actions.py:81
 msgid ""
 "Document has no file to sign. You might be trying to use this action in an "
 "initial state before the created document is yet to be processed."
@@ -411,6 +419,6 @@ msgstr ""
 "O documento não tem nenhum ficheiro para assinar. Poderá estar a utilizar "
 "esta ação num estado inicial antes do documento criado ser processado."
 
-#: workflow_actions.py:82
+#: workflow_actions.py:102
 msgid "Sign document (embedded)"
 msgstr "Assinar o documento (embutido)"

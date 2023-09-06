@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
-#: templates/announcements/announcements.html:8 views.py:126
+#: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
 msgstr "Objave"
 
-#: apps.py:78 apps.py:82
+#: apps.py:79 apps.py:83
 msgid "None"
 msgstr "Nijedan"
 

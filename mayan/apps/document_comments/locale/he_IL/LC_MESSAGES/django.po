@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -20,17 +20,17 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:32 events.py:6 search.py:19 search.py:26 search.py:33 search.py:40
+#: apps.py:32 events.py:6
 msgid "Document comments"
-msgstr "הערות למסמך"
+msgstr ""
 
 #: events.py:10
 msgid "Document comment created"
-msgstr "נוצרה הערת מסמך"
+msgstr ""
 
 #: events.py:13
 msgid "Document comment deleted"
-msgstr "הערת המסמך נמחקה"
+msgstr ""
 
 #: events.py:16
 msgid "Document comment edited"
@@ -48,21 +48,21 @@ msgstr "מחיקה"
 msgid "Edit"
 msgstr "עריכה"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:12
+#: links.py:31 models.py:47 permissions.py:6 search.py:8
 msgid "Comments"
-msgstr "הערות"
+msgstr ""
 
 #: model_mixins.py:10 models.py:33
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
 #: models.py:29
 msgid "Document"
-msgstr "מסמך"
+msgstr ""
 
 #: models.py:36
 msgid "Text"
-msgstr "טֶקסט"
+msgstr "מלל"
 
 #: models.py:40
 msgid "Date time submitted"
@@ -105,7 +105,7 @@ msgstr "למחוק הערה: %s?"
 #: views.py:99
 #, python-format
 msgid "Details for comment: %s?"
-msgstr "פרטים להערה: %s?"
+msgstr ""
 
 #: views.py:119
 #, python-format
@@ -122,9 +122,9 @@ msgstr ""
 
 #: views.py:161
 msgid "There are no comments"
-msgstr "אין הערות"
+msgstr ""
 
 #: views.py:163
 #, python-format
 msgid "Comments for document: %s"
-msgstr "הערות למסמך: %s"
+msgstr ""

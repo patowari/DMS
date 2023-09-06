@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,14 +20,14 @@ msgstr ""
 msgid "Templating"
 msgstr ""
 
-#: fields.py:19
+#: fields.py:21
 #, python-format
 msgid ""
 "Use Django's default templating language (https://docs.djangoproject.com/en/"
 "%(django_version)s/ref/templates/builtins/). "
 msgstr ""
 
-#: fields.py:37
+#: fields.py:41
 #, python-format
 msgid ""
 "Use Django's default templating language (https://docs.djangoproject.com/en/"

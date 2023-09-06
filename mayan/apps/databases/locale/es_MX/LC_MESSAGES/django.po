@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -24,23 +24,23 @@ msgstr ""
 msgid "Databases"
 msgstr "Bases de datos"
 
-#: classes.py:205
+#: classes.py:80
 msgid "Model fields"
 msgstr "Campos del modelo"
 
-#: classes.py:253
+#: classes.py:128
 msgid "Model related fields"
 msgstr "Campos relacionados del modelo"
 
-#: classes.py:258
+#: classes.py:133
 msgid "Model properties"
 msgstr "Propiedades del modelo"
 
-#: classes.py:263
+#: classes.py:138
 msgid "Model reverse fields"
 msgstr "Campos inversos de modelo"
 
-#: literals.py:14
+#: literals.py:10
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
@@ -48,31 +48,7 @@ msgstr ""
 "El backend de su base de datos está configurado para usar SQLite. SQLite "
 "solo debe usarse para desarrollo y pruebas, no para producción."
 
-#: model_mixins.py:24
-msgid "The dotted Python path to the backend class."
-msgstr "La ruta de Python separada por puntos a la clase del controlador."
-
-#: model_mixins.py:25
-msgid "Backend path"
-msgstr "Ruta del controlador"
-
-#: model_mixins.py:29
-msgid "JSON encoded data for the backend class."
-msgstr "Datos codificados en JSON para la clase de backend."
-
-#: model_mixins.py:30
-msgid "Backend data"
-msgstr "Datos del controlador"
-
-#: model_mixins.py:80
-msgid "Backend"
-msgstr "Controlador"
-
-#: model_mixins.py:81
-msgid "The backend class for this entry."
-msgstr "La clase del controlador para esta entrada."
-
-#: model_mixins.py:103
+#: model_mixins.py:26
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -84,16 +60,16 @@ msgstr ""
 "una cadena vacía ('') se consideran falsas lógicas, cualquier otro valor se "
 "considera verdadero lógico."
 
-#: model_mixins.py:108
+#: model_mixins.py:31
 msgid "Condition"
 msgstr "Condición"
 
-#: model_mixins.py:129
+#: model_mixins.py:52
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 "El objeto se ejecutará, dependiendo del valor de retorno de la condición."
 
-#: model_mixins.py:132
+#: model_mixins.py:55
 msgid "Has a condition?"
 msgstr "¿Tiene una condición?"
 

@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# yan songwei <yansw@vip.163.com>, 2023
 # dave cheng, 2023
-# Ford Guo <agile.guo@gmail.com>, 2023
+# yan songwei <yansw@vip.163.com>, 2023
 # xisafe <root@xisafe.com>, 2023
-# Leon Chu, 2023
+# Ford Guo <agile.guo@gmail.com>, 2023
 # Roberto Rosario, 2023
+# Leon Chu, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,7 +100,7 @@ msgstr "索引模板"
 msgid "Template"
 msgstr "範本"
 
-#: handlers.py:19
+#: handlers.py:18
 msgid "Creation date"
 msgstr "建立日期"
 
@@ -109,7 +109,7 @@ msgstr "建立日期"
 msgid "Indexes"
 msgstr "索引"
 
-#: links.py:53 queues.py:24
+#: links.py:53 queues.py:23
 msgid "Rebuild index"
 msgstr "重建索引"
 
@@ -157,30 +157,30 @@ msgstr "否"
 msgid "Yes"
 msgstr "是"
 
-#: models/index_instance_model_mixins.py:48
+#: models/index_instance_model_mixins.py:34
 #, python-format
 msgid ""
 "Error indexing document: %(document)s; expression: %(expression)s; "
 "%(exception)s"
 msgstr "错误索引文档：%(document)s;表达式：%(expression)s; %(exception)s"
 
-#: models/index_instance_model_mixins.py:216
+#: models/index_instance_model_mixins.py:155
 msgid "Total number of nodes with unique values this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:225
+#: models/index_instance_model_mixins.py:164
 msgid "Total number of unique documents this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:235
+#: models/index_instance_model_mixins.py:174
 msgid "Total number of node levels this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:304
+#: models/index_instance_model_mixins.py:243
 msgid "The path to the index including all ancestors."
 msgstr "包含所有歷史紀錄的索引路徑"
 
-#: models/index_instance_model_mixins.py:306
+#: models/index_instance_model_mixins.py:245
 msgid "Full path"
 msgstr "完整路徑"
 
@@ -291,7 +291,7 @@ msgstr ""
 msgid "Root"
 msgstr "根"
 
-#: permissions.py:6 queues.py:8
+#: permissions.py:6 queues.py:7
 msgid "Indexing"
 msgstr "索引"
 
@@ -319,15 +319,15 @@ msgstr "瀏覽索引範例"
 msgid "Rebuild index templates"
 msgstr "重建索引範例"
 
-#: queues.py:12
-msgid "Delete empty index nodes"
-msgstr "删除空索引节点"
+#: queues.py:10
+msgid "Indexing slow"
+msgstr ""
 
-#: queues.py:16
+#: queues.py:14
 msgid "Remove document"
 msgstr "删除文档"
 
-#: queues.py:20
+#: queues.py:18
 msgid "Index document"
 msgstr "索引文件"
 
@@ -594,7 +594,7 @@ msgstr[0] ""
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
-msgstr[0] ""
+msgstr[0] "%(count)d索引重置"
 
 #: views/index_template_views.py:478
 msgid "Index templates for which their instances will be deleted."

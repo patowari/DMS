@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -20,94 +20,93 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:33 events.py:6 links.py:34 models.py:31 permissions.py:6
+#: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
 #: views.py:150
 msgid "Quotas"
-msgstr "מכסות"
+msgstr ""
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
-msgstr "אף אחד"
+msgstr ""
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
-msgstr "אינו חל"
+msgstr ""
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
-msgstr "Backend אפס"
+msgstr ""
 
 #: events.py:10
 msgid "Quota created"
-msgstr "מכסה נוצרה"
+msgstr ""
 
 #: events.py:13
 msgid "Quota edited"
-msgstr "המכסה נערך"
+msgstr ""
 
 #: forms.py:15 model_mixins.py:16
 msgid "Backend"
-msgstr "אחורי"
+msgstr "מנוע אחורי (backend)"
 
 #: forms.py:16
 msgid "The quota driver for this entry."
-msgstr "מנהל המכסה עבור ערך זה."
+msgstr ""
 
-#: links.py:16
+#: links.py:17
 msgid "Create quota"
-msgstr "צור מכסה"
+msgstr ""
 
-#: links.py:21
+#: links.py:22
 msgid "Delete"
-msgstr "לִמְחוֹק"
+msgstr "מחיקה"
 
-#: links.py:25
+#: links.py:26
 msgid "Edit"
-msgstr "לַעֲרוֹך"
+msgstr "עריכה"
 
 #: links.py:30
 msgid "Quotas list"
-msgstr "רשימת מכסות"
+msgstr ""
 
 #: mixins.py:17
 msgid "All document types"
-msgstr "כל סוגי המסמכים"
+msgstr ""
 
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
 "indiviual document type selection."
 msgstr ""
-"החל על כל סוגי המסמכים. אם תאפשר זאת, המכסה תתעלם מבחירת סוג המסמך הפרטני."
 
 #: mixins.py:26
 msgid "Document types"
-msgstr "סוגי מסמכים"
+msgstr "Document types"
 
 #: mixins.py:33
 msgid "Document types to which the quota will be applied."
-msgstr "סוגי מסמכים עליהם תחול המכסה."
+msgstr ""
 
 #: mixins.py:67
 msgid "all document types"
-msgstr "כל סוגי המסמכים"
+msgstr ""
 
 #: mixins.py:70
 #, python-format
 msgid "document types: %(document_types)s"
-msgstr "סוגי מסמכים: %(document_types)s"
+msgstr ""
 
 #: mixins.py:94
 msgid "Groups"
-msgstr "קבוצות"
+msgstr ""
 
 #: mixins.py:101
 msgid "Groups to which the quota will be applied."
-msgstr "קבוצות שעליהן תחול המכסה."
+msgstr ""
 
 #: mixins.py:105
 msgid "All users"
-msgstr "כל המשתמשים"
+msgstr ""
 
 #: mixins.py:108
 msgid ""
@@ -115,139 +114,137 @@ msgid ""
 "Enabling this option, the quota will ignore the indiviual user and group "
 "selection."
 msgstr ""
-"החל את המכסה על כל המשתמשים במערכת, לא כולל מנהלים וצוות. הפעלת אפשרות זו, "
-"המכסה תתעלם מהבחירה האישית של המשתמש והקבוצה."
 
 #: mixins.py:115
 msgid "Users"
-msgstr "משתמשים"
+msgstr ""
 
 #: mixins.py:122
 msgid "Users to which the quota will be applied."
-msgstr "משתמשים עליהם תחול המכסה."
+msgstr ""
 
 #: mixins.py:160
 msgid "all users"
-msgstr "כל המשתמשים"
+msgstr ""
 
 #: mixins.py:162
 #, python-format
 msgid "groups: %(groups)s, users: %(users)s"
-msgstr "קבוצות: %(groups)s, משתמשים: %(users)s"
+msgstr ""
 
 #: model_mixins.py:15
 msgid "Driver used for this quota entry."
-msgstr "נהג המשמש להזנת מכסה זו."
+msgstr ""
 
 #: model_mixins.py:20
 msgid "Arguments"
-msgstr "טיעונים"
+msgstr "פרמטרים"
 
 #: model_mixins.py:24
 msgid "Usage"
-msgstr "נוֹהָג"
+msgstr ""
 
 #: models.py:16
 msgid "The dotted Python path to the backend class."
-msgstr "הנתיב המקווקו של Python למחלקה האחורית."
+msgstr "הנתיב המקווקו של Python לפונקציה (Class) ב-backend."
 
 #: models.py:17
 msgid "Backend path"
-msgstr "נתיב אחורי"
+msgstr "נתיב ל-backend"
 
 #: models.py:20
 msgid "Backend data"
-msgstr "נתוני אחורי"
+msgstr "נתוני backend"
 
 #: models.py:24
 msgid "Allow quick disable or enable of the quota."
-msgstr "אפשר השבתה או הפעלה מהירה של המכסה."
+msgstr ""
 
 #: models.py:25
 msgid "Enabled"
-msgstr "מופעל"
+msgstr "מופעל/מאופשר"
 
 #: models.py:30
 msgid "Quota"
-msgstr "מִכסָה"
+msgstr ""
 
 #: permissions.py:10
 msgid "Create a quota"
-msgstr "צור מכסה"
+msgstr ""
 
 #: permissions.py:13
 msgid "Delete a quota"
-msgstr "מחק מכסה"
+msgstr ""
 
 #: permissions.py:16
 msgid "Edit a quota"
-msgstr "ערוך מכסה"
+msgstr ""
 
 #: permissions.py:19
 msgid "View a quota"
-msgstr "הצג מכסה"
+msgstr ""
 
-#: quota_backends.py:71 quota_backends.py:171
+#: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
-msgstr "חרגת ממכסת ספירת המסמכים."
+msgstr ""
 
-#: quota_backends.py:75
+#: quota_backends.py:76
 msgid "Documents limit"
-msgstr "הגבלת מסמכים"
+msgstr ""
 
-#: quota_backends.py:78
+#: quota_backends.py:79
 msgid "Maximum number of documents."
-msgstr "מספר מקסימלי של מסמכים."
+msgstr ""
 
-#: quota_backends.py:82
+#: quota_backends.py:83
 msgid "Document count limit"
-msgstr "מגבלת ספירת מסמכים"
+msgstr ""
 
-#: quota_backends.py:107
+#: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
-msgstr "ספירת מסמכים: %(document_count)s"
+msgstr ""
 
-#: quota_backends.py:182
+#: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
-msgstr "גודל מסמך מקסימלי במגה-בייט (MB)."
+msgstr ""
 
-#: quota_backends.py:183 quota_backends.py:186
+#: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
-msgstr "מגבלת גודל מסמך"
+msgstr ""
 
-#: quota_backends.py:211
+#: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
-msgstr "גודל מסמך: %(formatted_file_size)s"
+msgstr ""
 
-#: quota_backends.py:233
+#: quota_backends.py:234
 msgid "Document size quota exceeded."
-msgstr "חרגת ממכסת גודל המסמכים."
+msgstr ""
 
 #: views.py:27
 msgid "New quota backend selection"
-msgstr "בחירת מכסה עורפית חדשה"
+msgstr ""
 
 #: views.py:65
 #, python-format
 msgid "Create a \"%s\" quota"
-msgstr "צור מכסת &quot;%s&quot;."
+msgstr ""
 
 #: views.py:98
 #, python-format
 msgid "Delete quota: %s"
-msgstr "מחק מכסה: %s"
+msgstr ""
 
 #: views.py:114
 #, python-format
 msgid "Edit quota: %s"
-msgstr "עריכת מכסה: %s"
+msgstr ""
 
 #: views.py:147
 msgid "Quotas restrict usage of system resources. "
-msgstr "מכסות מגבילות את השימוש במשאבי המערכת."
+msgstr ""
 
 #: views.py:149
 msgid "No quotas available"
-msgstr "אין מכסות זמינות"
+msgstr ""

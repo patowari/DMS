@@ -4,15 +4,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -23,180 +22,171 @@ msgstr ""
 
 #: admin.py:13
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
-#: apps.py:49 events.py:6 links.py:21 permissions.py:6 queues.py:7
+#: apps.py:51 events.py:6 links.py:21 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
-msgstr "מטא נתונים של קובץ"
+msgstr ""
 
-#: apps.py:100 search.py:12 search.py:23 search.py:34
+#: apps.py:103 search.py:11 search.py:22
 msgid "File metadata key"
-msgstr "מפתח מטא נתונים של קובץ"
+msgstr ""
 
-#: apps.py:104 search.py:16 search.py:27 search.py:38
+#: apps.py:107 search.py:15 search.py:26
 msgid "File metadata value"
-msgstr "ערך מטא נתונים של קובץ"
+msgstr ""
 
-#: apps.py:130
+#: apps.py:133 apps.py:139
 msgid "Return the value of a specific file metadata."
-msgstr "החזר את הערך של מטא נתונים של קובץ מסוים."
+msgstr ""
 
-#: apps.py:131
+#: apps.py:134 apps.py:140
 msgid "File metadata value of"
-msgstr "ערך מטא נתונים של קובץ של"
+msgstr ""
 
 #: dependencies.py:12
 msgid ""
 "Library and program to read and write meta information in multimedia files."
-msgstr "ספרייה ותוכנה לקריאה ולכתיבה של מטא מידע בקבצי מולטימדיה."
+msgstr ""
 
 #: drivers/exiftool.py:19
 msgid "EXIF Tool"
-msgstr "כלי EXIF"
+msgstr ""
 
 #: drivers/extract_msg.py:15
 msgid "Extract msg"
-msgstr "חלץ הודעה"
+msgstr ""
 
 #: events.py:10
 msgid "Document file submitted for file metadata processing"
-msgstr "קובץ מסמך שנשלח לעיבוד מטא נתונים של קבצים"
+msgstr ""
 
 #: events.py:14
 msgid "Document file file metadata processing finished"
-msgstr "עיבוד המטא-נתונים של קובץ המסמך הסתיים"
+msgstr ""
 
 #: links.py:27
 msgid "Attributes"
-msgstr "תכונות"
+msgstr ""
 
 #: links.py:34 links.py:39
 msgid "Submit for file metadata"
-msgstr "שלח לקובץ מטא נתונים"
+msgstr ""
 
 #: links.py:49
 msgid "Setup file metadata"
-msgstr "הגדרת מטא נתונים של קובץ"
+msgstr ""
 
 #: links.py:55
 msgid "File metadata processing per type"
-msgstr "עיבוד מטא נתונים של קבצים לפי סוג"
+msgstr ""
 
-#: methods.py:41
-msgid "get_file_metadata(< file metadata dotted path >)"
-msgstr "get_file_metadata(&lt; נתיב מנוקד עם מטא נתונים של קובץ &gt;)"
-
-#: methods.py:44
-msgid "Return the specified document file metadata entry."
-msgstr "החזר את רשומת המטא נתונים של קובץ המסמך שצוין."
-
-#: methods.py:71
+#: methods.py:54
 msgid "Return the specified document file file metadata entry."
-msgstr "החזר את רשומת המטא נתונים של קובץ המסמך שצוין."
+msgstr ""
 
 #: model_mixins.py:9
 msgid "Attribute count"
-msgstr "ספירת תכונות"
+msgstr ""
 
-#: models.py:17 models.py:96
+#: models.py:18 models.py:97
 msgid "Driver"
-msgstr "נהג"
+msgstr ""
 
-#: models.py:21
+#: models.py:22
 msgid "Document file"
-msgstr "קובץ מסמך"
+msgstr ""
 
-#: models.py:27 models.py:63
+#: models.py:28 models.py:64
 msgid "Document file driver entry"
-msgstr "הזנת מנהל ההתקן של קובץ המסמך"
+msgstr ""
 
-#: models.py:28
+#: models.py:29
 msgid "Document file driver entries"
-msgstr "ערכי מנהל ההתקן של קובץ המסמכים"
+msgstr ""
 
-#: models.py:40
+#: models.py:41
 msgid "Document type"
-msgstr "סוג מסמך"
-
-#: models.py:44
-msgid "Automatically queue newly created documents for processing."
-msgstr "תור אוטומטית בתור מסמכים חדשים שנוצרו לעיבוד."
+msgstr "Document type"
 
 #: models.py:45
-msgid "Auto process"
-msgstr "תהליך אוטומטי"
+msgid "Automatically queue newly created documents for processing."
+msgstr ""
 
-#: models.py:51
-msgid "Document type settings"
-msgstr "הגדרות סוג מסמך"
+#: models.py:46
+msgid "Auto process"
+msgstr ""
 
 #: models.py:52
-msgid "Document types settings"
-msgstr "הגדרות סוגי מסמכים"
+msgid "Document type settings"
+msgstr ""
 
-#: models.py:66
-msgid "Name of the file metadata entry."
-msgstr "שם ערך המטא נתונים של הקובץ."
+#: models.py:53
+msgid "Document types settings"
+msgstr ""
 
 #: models.py:67
-msgid "Key"
-msgstr "מַפְתֵחַ"
+msgid "Name of the file metadata entry."
+msgstr ""
 
-#: models.py:70
-msgid "Value of the file metadata entry."
-msgstr "ערך הזנת המטא נתונים של הקובץ."
+#: models.py:68
+msgid "Key"
+msgstr ""
 
 #: models.py:71
-msgid "Value"
-msgstr "ערך"
+msgid "Value of the file metadata entry."
+msgstr ""
 
-#: models.py:76
-msgid "File metadata entry"
-msgstr "הזנת מטא נתונים של קובץ"
+#: models.py:72
+msgid "Value"
+msgstr ""
 
 #: models.py:77
+msgid "File metadata entry"
+msgstr ""
+
+#: models.py:78
 msgid "File metadata entries"
-msgstr "ערכי מטא נתונים של קובץ"
+msgstr ""
 
-#: models.py:87
+#: models.py:88
 msgid "Driver path"
-msgstr "נתיב נהג"
+msgstr ""
 
-#: models.py:91
+#: models.py:92
 msgid "Internal name"
-msgstr "שם פנימי"
+msgstr ""
 
-#: models.py:97
+#: models.py:98
 msgid "Drivers"
-msgstr "נהגים"
+msgstr ""
 
 #: permissions.py:10
 msgid "Change document type file metadata settings"
-msgstr "שנה הגדרות מטא-נתונים של קובץ מסוג מסמך"
+msgstr ""
 
 #: permissions.py:15
 msgid "Submit document for file metadata processing"
-msgstr "שלח מסמך לעיבוד מטא נתונים של קבצים"
+msgstr ""
 
 #: permissions.py:19
 msgid "View file metadata"
-msgstr "הצג מטא נתונים של קבצים"
+msgstr ""
 
 #: queues.py:11
 msgid "Process document file"
-msgstr "עיבוד קובץ מסמך"
+msgstr ""
 
 #: settings.py:19
 msgid ""
 "Set new document types to perform file metadata processing automatically by "
 "default."
 msgstr ""
-"הגדר סוגי מסמכים חדשים לעיבוד מטא נתונים של קבצים באופן אוטומטי כברירת מחדל."
 
 #: settings.py:26
 msgid "Arguments to pass to the drivers."
-msgstr "טיעונים לעבור לנהגים."
+msgstr ""
 
 #: views.py:52
 msgid ""
@@ -206,19 +196,15 @@ msgid ""
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
 msgstr ""
-"מטא נתונים של קובץ הם התכונות של קובץ המסמך. הם יכולים לנוע ממידע על המצלמה "
-"המשמש לצילום תמונה למחבר שיצר קובץ. מטא נתונים של קובץ מוגדרים כאשר הקובץ של"
-" המסמך נוצר לראשונה. תכונות מטא-נתונים של קובץ נמצאות בקובץ עצמו. הם אינם "
-"זהים למטא-נתונים של המסמך, המוגדרים על ידי המשתמש ושוכנים במסד הנתונים."
 
 #: views.py:60
 msgid "No file metadata available."
-msgstr "אין מטא נתונים זמינים לקובץ."
+msgstr ""
 
 #: views.py:63
 #, python-format
 msgid "File metadata drivers for: %s"
-msgstr "מנהלי התקנים של מטא נתונים של קובץ עבור: %s"
+msgstr ""
 
 #: views.py:90
 msgid ""
@@ -226,48 +212,45 @@ msgid ""
 "the driver does not support any metadata field for the file type of this "
 "document."
 msgstr ""
-"פירוש הדבר יכול להיות שזיהוי המטא נתונים של הקבצים לא הושלם או שמנהל ההתקן "
-"אינו תומך בשדה מטא נתונים כלשהו עבור סוג הקובץ של מסמך זה."
 
 #: views.py:95
 msgid "No file metadata available for this driver."
-msgstr "אין מטא נתונים זמינים עבור מנהל ההתקן הזה."
+msgstr ""
 
 #: views.py:99
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
-"תכונות מטא נתונים של קובץ עבור: %(document_file)s עם מנהל ההתקן: %(driver)s"
 
 #: views.py:121
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
-msgstr "%(count)d קבצי מסמכים שנשלחו לתור המטא נתונים של הקבצים."
+msgstr ""
 
 #: views.py:124
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
-msgstr "קובץ מסמך %(count)d שנשלח לתור המטא נתונים של הקבצים."
+msgstr ""
 
 #: views.py:133
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
-msgstr[0] "האם לשלוח את קובץ המסמך שנבחר לתור המטא נתונים של הקבצים?"
-msgstr[1] "האם לשלוח את קבצי המסמכים שנבחרו לתור המטא נתונים של הקבצים?"
-msgstr[2] "האם לשלוח את קבצי המסמכים שנבחרו לתור המטא נתונים של הקבצים?"
-msgstr[3] "האם לשלוח את קבצי המסמכים שנבחרו לתור המטא נתונים של הקבצים?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: views.py:164
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
-msgstr "ערוך הגדרות מטא נתונים של קובץ עבור סוג המסמך: %s"
+msgstr ""
 
 #: views.py:175
 msgid "Submit all documents of a type for file metadata processing."
-msgstr "שלח את כל המסמכים מסוג זה לעיבוד מטא נתונים של קבצים."
+msgstr ""
 
 #: views.py:202
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
-msgstr "מסמכי %(count)d שנוספו לתור עיבוד המטא נתונים של הקבצים."
+msgstr ""

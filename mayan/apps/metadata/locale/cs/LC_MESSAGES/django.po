@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# Jiri Fait <fait@orkasolutions.cz>, 2023
 # Sebastian Fait <seba.fait@gmail.com>, 2023
-# Michal Švábík <snadno@lehce.cz>, 2023
 # Jiří Podhorecký, 2023
+# Jiri Fait <fait@orkasolutions.cz>, 2023
+# Michal Švábík <snadno@lehce.cz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,24 +23,25 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:70 apps.py:208 apps.py:214 apps.py:218 apps.py:223 apps.py:227
-#: events.py:6 links.py:52 permissions.py:6 queues.py:7
+#: apps.py:69 apps.py:207 apps.py:213 apps.py:217 apps.py:222 apps.py:226
+#: events.py:6 links.py:53 permissions.py:6 queues.py:7
+#: workflow_actions.py:159
 msgid "Metadata"
 msgstr "Metadata"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Return the value of a specific document metadata."
 msgstr "Vraťte hodnotu konkrétních metadat dokumentu."
 
-#: apps.py:141
+#: apps.py:140
 msgid "Metadata value of"
 msgstr "Hodnota metadat"
 
-#: apps.py:146
+#: apps.py:145
 msgid "Metadata type name"
 msgstr "Název typu metadat"
 
-#: apps.py:150 search.py:17
+#: apps.py:149 search.py:14
 msgid "Metadata value"
 msgstr "Hodnota metadat"
 
@@ -72,11 +73,11 @@ msgstr "Vztah typu metadata byl aktualizován"
 msgid "ID"
 msgstr "ID"
 
-#: forms.py:19 models.py:41
+#: forms.py:19 models.py:42
 msgid "Name"
 msgstr "název"
 
-#: forms.py:27 models.py:185 workflow_actions.py:95
+#: forms.py:27 models.py:186 workflow_actions.py:109
 msgid "Value"
 msgstr "Hodnota"
 
@@ -84,7 +85,7 @@ msgstr "Hodnota"
 msgid "Update"
 msgstr "Aktualizace"
 
-#: forms.py:52 forms.py:236 models.py:282
+#: forms.py:52 forms.py:236 models.py:283
 msgid "Required"
 msgstr "Požadované"
 
@@ -98,7 +99,7 @@ msgstr "Chyba hodnoty vyhledávání: %s"
 msgid "Default value error: %s"
 msgstr "Chyba výchozí hodnoty: %s"
 
-#: forms.py:118 models.py:127
+#: forms.py:118 models.py:128
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr "&quot;%s&quot; je vyžadován pro tento typ dokumentu."
@@ -107,8 +108,8 @@ msgstr "&quot;%s&quot; je vyžadován pro tento typ dokumentu."
 msgid "Metadata types to be added to the selected documents."
 msgstr "Typy metadat, které se mohou přidat do vybraných dokumentů."
 
-#: forms.py:138 models.py:89 models.py:279 search.py:14 serializers.py:48
-#: serializers.py:108 workflow_actions.py:88
+#: forms.py:138 models.py:90 models.py:280 search.py:11 serializers.py:48
+#: serializers.py:108 workflow_actions.py:145
 msgid "Metadata type"
 msgstr "Typ metadat"
 
@@ -144,37 +145,37 @@ msgstr "Žádný"
 msgid "Optional"
 msgstr "Volitelný"
 
-#: links.py:25 links.py:34 workflow_actions.py:30
+#: links.py:26 links.py:35 workflow_actions.py:28
 msgid "Add metadata"
 msgstr "Přidat metadata"
 
-#: links.py:31 links.py:38 workflow_actions.py:106
+#: links.py:32 links.py:39 workflow_actions.py:122
 msgid "Edit metadata"
 msgstr "Upravit metadata"
 
-#: links.py:42 links.py:48 workflow_actions.py:182
+#: links.py:43 links.py:49 workflow_actions.py:201
 msgid "Remove metadata"
 msgstr "Odebrat metadata"
 
-#: links.py:62 links.py:96 models.py:90 permissions.py:24
-#: views/metadata_type_views.py:115 workflow_actions.py:23
-#: workflow_actions.py:174
+#: links.py:63 links.py:95 links.py:103 models.py:91 permissions.py:24
+#: views/metadata_type_views.py:115 workflow_actions.py:52
+#: workflow_actions.py:66
 msgid "Metadata types"
 msgstr "Typy metadat"
 
-#: links.py:71
+#: links.py:72
 msgid "Document types"
 msgstr "Typy dokumentů"
 
-#: links.py:75
+#: links.py:76
 msgid "Create new"
 msgstr "Vytvořit nový"
 
-#: links.py:81 links.py:86
+#: links.py:82 links.py:87
 msgid "Delete"
 msgstr "Odstranit"
 
-#: links.py:91
+#: links.py:92
 msgid "Edit"
 msgstr "Upravit"
 
@@ -222,7 +223,7 @@ msgstr "Vrátí metadata dokumentu."
 msgid "Selected documents must be of the same type."
 msgstr "Vybrané dokumenty musí být stejného typu."
 
-#: models.py:38
+#: models.py:39
 msgid ""
 "Name used by other apps to reference this metadata type. Do not use python "
 "reserved words, or spaces."
@@ -230,32 +231,32 @@ msgstr ""
 "Název používaný jinými aplikacemi k odkazu na tento typ metadat. "
 "Nepoužívejte vyhrazená slova ani mezery."
 
-#: models.py:44
+#: models.py:45
 msgid "Short description of this metadata type."
 msgstr "Stručný popis tohoto typu metadat."
 
-#: models.py:45
+#: models.py:46
 msgid "Label"
 msgstr "Jmenovka"
 
-#: models.py:49
+#: models.py:50
 msgid "Enter a template to render."
 msgstr "Zadejte šablonu k vykreslení."
 
-#: models.py:50
+#: models.py:51
 msgid "Default"
 msgstr "Výchozí"
 
-#: models.py:54
+#: models.py:55
 msgid "Enter a template to render. Must result in a comma delimited string."
 msgstr ""
 "Zadejte šablonu k vykreslení. Výsledkem musí být řetězec oddělený čárkami."
 
-#: models.py:56
+#: models.py:57
 msgid "Lookup"
 msgstr "Vyhledávání"
 
-#: models.py:60
+#: models.py:61
 msgid ""
 "The validator will reject data entry if the value entered does not conform "
 "to the expected format."
@@ -263,19 +264,19 @@ msgstr ""
 "Validator odmítne zadání dat, pokud zadaná hodnota neodpovídá očekávanému "
 "formátu."
 
-#: models.py:62
+#: models.py:63
 msgid "Validator"
 msgstr "Validator"
 
-#: models.py:66
+#: models.py:67
 msgid "Enter the arguments for the validator in YAML format."
 msgstr "Zadejte argumenty validátoru ve formátu YAML."
 
-#: models.py:68
+#: models.py:69
 msgid "Validator arguments"
 msgstr "Argumenty validátoru"
 
-#: models.py:73
+#: models.py:74
 msgid ""
 "The parser will reformat the value entered to conform to the expected "
 "format."
@@ -283,60 +284,60 @@ msgstr ""
 "Analyzátor přeformátuje zadanou hodnotu tak, aby odpovídala očekávanému "
 "formátu."
 
-#: models.py:75
+#: models.py:76
 msgid "Parser"
 msgstr "Analyzátor"
 
-#: models.py:79
+#: models.py:80
 msgid "Enter the arguments for the parser in YAML format."
 msgstr "Zadejte argumenty pro parser ve formátu YAML."
 
-#: models.py:81
+#: models.py:82
 msgid "Parser arguments"
 msgstr "Argumenty parseru"
 
-#: models.py:136
+#: models.py:137
 msgid "Value is not one of the provided options."
 msgstr "Hodnota není jednou z nabízených možností."
 
-#: models.py:150
+#: models.py:151
 #, python-format
 msgid "Metadata type validation error; %(exception)s"
 msgstr ""
 
-#: models.py:176 serializers.py:105
+#: models.py:177 serializers.py:105
 msgid "Document"
 msgstr "Dokument"
 
-#: models.py:179
+#: models.py:180
 msgid "Type"
 msgstr "Typ"
 
-#: models.py:183
+#: models.py:184
 msgid "The actual value stored in the metadata type field for the document."
 msgstr "Skutečná hodnota uložená v poli typu metadat dokumentu."
 
-#: models.py:191 models.py:192
+#: models.py:192 models.py:193
 msgid "Document metadata"
 msgstr "Metadata dokumentu"
 
-#: models.py:228
+#: models.py:229
 msgid "Metadata type is required for this document type."
 msgstr "Pro tento typ dokumentu lsou vyžadována metadata."
 
-#: models.py:261
+#: models.py:262
 msgid "Metadata type is not valid for this document type."
 msgstr "Tento typ metadat není pro tento typ dokumentu platný."
 
-#: models.py:275 serializers.py:45
+#: models.py:276 serializers.py:45
 msgid "Document type"
 msgstr "Typ dokumentu"
 
-#: models.py:290
+#: models.py:291
 msgid "Document type metadata type options"
 msgstr "Možnosti typu dokumentu typu metadat"
 
-#: models.py:291
+#: models.py:292
 msgid "Document type metadata types options"
 msgstr "Možnosti typu metadat typu dokumentu"
 
@@ -379,14 +380,6 @@ msgstr "Odebrat typ metadat"
 #: queues.py:15
 msgid "Add required metadata type"
 msgstr "Přidejte požadovaný typ metadat"
-
-#: search.py:24 search.py:35 search.py:46 search.py:57
-msgid "Document metadata type"
-msgstr "Typ metadat dokumentu"
-
-#: search.py:28 search.py:39 search.py:50 search.py:61
-msgid "Document metadata value"
-msgstr "Hodnota metadat dokumentu"
 
 #: serializers.py:28 serializers.py:57 serializers.py:111
 msgid "URL"
@@ -632,15 +625,21 @@ msgstr ""
 msgid "Document type relationships for metadata type: %s"
 msgstr ""
 
-#: wizard_steps.py:15
+#: wizard_steps.py:21
 msgid "Enter document metadata"
 msgstr "Zadejte metadata dokumentu"
 
-#: workflow_actions.py:25
+#: wizard_steps.py:203
+msgid ""
+"One of more metadata types that are required for this document type are not "
+"available."
+msgstr ""
+
+#: workflow_actions.py:46
 msgid "Metadata types to add to the document."
 msgstr "Typy metadat, která se mají přidat do dokumentu."
 
-#: workflow_actions.py:49
+#: workflow_actions.py:81
 #, python-format
 msgid ""
 "Unable to add metadata type \"%(metadata_type)s\" from document: "
@@ -649,18 +648,18 @@ msgstr ""
 "Nelze přidat typ metadat „%(metadata_type)s“ z dokumentu: %(document)s. "
 "Výjimka: %(exception)s"
 
-#: workflow_actions.py:90
-msgid "Metadata types to edit."
-msgstr "Typy metadat, které chcete upravit."
-
-#: workflow_actions.py:98
+#: workflow_actions.py:113
 msgid ""
 "Value to assign to the metadata. Can be a literal value or template code."
 msgstr ""
 "Hodnota, která se má přiřadit k metadatům. Může to být doslovná hodnota nebo"
 " kód šablony."
 
-#: workflow_actions.py:130
+#: workflow_actions.py:139
+msgid "Metadata types to edit."
+msgstr "Typy metadat, které chcete upravit."
+
+#: workflow_actions.py:178
 #, python-format
 msgid ""
 "Unable to edit metadata type \"%(metadata_type)s\" from document: "
@@ -668,11 +667,11 @@ msgid ""
 "Exception: %(exception)s"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:209
 msgid "Metadata types to remove from the document."
 msgstr "Typy metadat, která se mají z dokumentu odebrat."
 
-#: workflow_actions.py:197
+#: workflow_actions.py:225
 #, python-format
 msgid ""
 "Unable to remove metadata type \"%(metadata_type)s\" from document: "

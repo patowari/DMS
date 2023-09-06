@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -27,24 +27,24 @@ msgstr ""
 msgid "Label"
 msgstr "Заголовок"
 
-#: apps.py:49 events.py:6 links.py:21 permissions.py:6 queues.py:7
+#: apps.py:51 events.py:6 links.py:21 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
 msgstr "Метаданные файла"
 
-#: apps.py:100 search.py:12 search.py:23 search.py:34
+#: apps.py:103 search.py:11 search.py:22
 msgid "File metadata key"
 msgstr "Ключ метаданных файла"
 
-#: apps.py:104 search.py:16 search.py:27 search.py:38
+#: apps.py:107 search.py:15 search.py:26
 msgid "File metadata value"
 msgstr "Значение метаданных файла"
 
-#: apps.py:130
+#: apps.py:133 apps.py:139
 msgid "Return the value of a specific file metadata."
 msgstr "Возвращает значение метаданных конкретного файла."
 
-#: apps.py:131
+#: apps.py:134 apps.py:140
 msgid "File metadata value of"
 msgstr "Значение метаданных файла"
 
@@ -86,15 +86,7 @@ msgstr "Настройки метаданных файла"
 msgid "File metadata processing per type"
 msgstr "Обработать метаданные файла указанного типа"
 
-#: methods.py:41
-msgid "get_file_metadata(< file metadata dotted path >)"
-msgstr "get_file_metadata(< file metadata dotted path >)"
-
-#: methods.py:44
-msgid "Return the specified document file metadata entry."
-msgstr "Возвращает указанную запись метаданных файла документа."
-
-#: methods.py:71
+#: methods.py:54
 msgid "Return the specified document file file metadata entry."
 msgstr "Возвращает указанную запись метаданных файла файла документа."
 
@@ -102,77 +94,77 @@ msgstr "Возвращает указанную запись метаданны�
 msgid "Attribute count"
 msgstr "Количество атрибутов"
 
-#: models.py:17 models.py:96
+#: models.py:18 models.py:97
 msgid "Driver"
 msgstr "Драйвер"
 
-#: models.py:21
+#: models.py:22
 msgid "Document file"
 msgstr "Файл документа"
 
-#: models.py:27 models.py:63
+#: models.py:28 models.py:64
 msgid "Document file driver entry"
 msgstr "Запись драйвера файла документа"
 
-#: models.py:28
+#: models.py:29
 msgid "Document file driver entries"
 msgstr "Записи драйвера файла документа"
 
-#: models.py:40
+#: models.py:41
 msgid "Document type"
 msgstr "Тип документа"
 
-#: models.py:44
+#: models.py:45
 msgid "Automatically queue newly created documents for processing."
 msgstr ""
 "Автоматически ставить вновь созданные документы в очередь для обработки "
 "метаданных файла."
 
-#: models.py:45
+#: models.py:46
 msgid "Auto process"
 msgstr ""
 
-#: models.py:51
+#: models.py:52
 msgid "Document type settings"
 msgstr "Настройки типа документа"
 
-#: models.py:52
+#: models.py:53
 msgid "Document types settings"
 msgstr "Настройки типов документа"
 
-#: models.py:66
+#: models.py:67
 msgid "Name of the file metadata entry."
 msgstr "Имя записи метаданных файла."
 
-#: models.py:67
+#: models.py:68
 msgid "Key"
 msgstr "Ключ"
 
-#: models.py:70
+#: models.py:71
 msgid "Value of the file metadata entry."
 msgstr "Значение записи метаданных файла."
 
-#: models.py:71
+#: models.py:72
 msgid "Value"
 msgstr "Значение"
 
-#: models.py:76
+#: models.py:77
 msgid "File metadata entry"
 msgstr "Запись метаданных файла"
 
-#: models.py:77
+#: models.py:78
 msgid "File metadata entries"
 msgstr "Записи метаданных файла"
 
-#: models.py:87
+#: models.py:88
 msgid "Driver path"
 msgstr "Путь к драйверу"
 
-#: models.py:91
+#: models.py:92
 msgid "Internal name"
 msgstr "Внутреннее имя"
 
-#: models.py:97
+#: models.py:98
 msgid "Drivers"
 msgstr "Драйверы"
 
@@ -261,10 +253,10 @@ msgstr ""
 #: views.py:133
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Отправить выбранный файл документа на обработку метаданных файла?"
+msgstr[1] "Отправить выбранные файлы документа на обработку метаданных файла?"
+msgstr[2] "Отправить выбранные файлы документа на обработку метаданных файла?"
+msgstr[3] "Отправить выбранные файлы документа на обработку метаданных файла?"
 
 #: views.py:164
 #, python-format

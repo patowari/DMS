@@ -5,9 +5,9 @@
 # Translators:
 # Translators:
 # Roberto Rosario, 2023
+# Yves Dubois <ydubois@gmail.com>, 2023
 # Benoît GROUSSET <benoit@grousset.xyz>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# Yves Dubois <ydubois@gmail.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
 # 
@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -45,23 +45,23 @@ msgstr "Valeur"
 msgid "Settings namespace"
 msgstr ""
 
-#: classes.py:394
+#: classes.py:397
 msgid "Choices"
-msgstr ""
+msgstr "Choix"
 
-#: classes.py:396
+#: classes.py:399
 msgid "Possible values allowed for this setting."
 msgstr ""
 
-#: classes.py:402
+#: classes.py:405
 msgid "Default"
 msgstr "Défaut"
 
-#: classes.py:410
+#: classes.py:413
 msgid "Overridden"
 msgstr "Remplacé"
 
-#: classes.py:412
+#: classes.py:415
 msgid "Is this settings being overridden by an environment variable?"
 msgstr ""
 "Est-ce que ces paramètres sont remplacés par une variable d'environnement?"
@@ -455,7 +455,7 @@ msgstr ""
 "Paramètres mis à jour, redémarrez votre installation et actualisez votre "
 "navigateur pour que les modifications prennent effet."
 
-#: tests/test_classes.py:173
+#: tests/test_classes.py:175
 msgid "English"
 msgstr "Anglais"
 

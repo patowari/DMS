@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -23,124 +22,124 @@ msgstr ""
 
 #: apps.py:23 links.py:17 settings.py:11
 msgid "REST API"
-msgstr "REST API"
+msgstr ""
 
 #: fields.py:30
 #, python-format
 msgid "Unable to find serializer class for: %s"
-msgstr "לא ניתן למצוא את מחלקת הסדרות עבור: %s"
+msgstr ""
 
 #: links.py:21
 msgid "API Documentation (Swagger)"
-msgstr "תיעוד API (Swagger)"
+msgstr ""
 
 #: links.py:26
 msgid "API Documentation (ReDoc)"
-msgstr "תיעוד API (ReDoc)"
+msgstr ""
 
 #: relations.py:33
 #, python-brace-format
 msgid "Invalid pk \"{pk_value}\" - object does not exist."
-msgstr "pk לא חוקי &quot;{pk_value}&quot; - האובייקט אינו קיים."
+msgstr ""
 
 #: relations.py:36
 #, python-brace-format
 msgid "Incorrect type. Expected pk value, received {data_type}."
-msgstr "סוג לא נכון. ערך pk צפוי, התקבל {data_type}."
+msgstr ""
 
 #: relations.py:38
 msgid "This field is required."
-msgstr "זהו שדה חובה."
+msgstr ""
 
 #: schemas.py:11
 #, python-format
 msgid "%s API"
-msgstr "API של %s"
+msgstr ""
 
 #: serializers.py:37
 msgid "Content"
-msgstr "תוֹכֶן"
+msgstr ""
 
 #: serializers.py:40
 msgid "Data"
-msgstr "נתונים"
+msgstr ""
 
 #: serializers.py:43
 msgid "Headers"
-msgstr "כותרות"
+msgstr "כותרות (קידומות)"
 
 #: serializers.py:46
 msgid "Name"
-msgstr "שֵׁם"
+msgstr ""
 
 #: serializers.py:49
 msgid "Status code"
-msgstr "קוד סטטוס"
+msgstr ""
 
 #: serializers.py:52
 msgid "Requests"
-msgstr "בקשות"
+msgstr ""
 
 #: serializers.py:75
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
 #: serializers.py:78
 msgid "URL"
-msgstr "כתובת אתר"
+msgstr "כתובת אתר (URL)"
 
 #: serializers.py:106
 msgid "Author"
-msgstr "מְחַבֵּר"
+msgstr ""
 
 #: serializers.py:109
 msgid "Author email"
-msgstr "דוא&quot;ל של המחבר"
+msgstr ""
 
 #: serializers.py:112
 msgid "Build"
-msgstr "לִבנוֹת"
+msgstr "תת גרסה"
 
 #: serializers.py:115
 msgid "Build string"
-msgstr "בניית מחרוזת"
+msgstr ""
 
 #: serializers.py:118
 msgid "Copyright"
-msgstr "זכויות יוצרים"
+msgstr ""
 
 #: serializers.py:121
 msgid "Description"
-msgstr "תיאור"
+msgstr ""
 
 #: serializers.py:124
 msgid "Django version"
-msgstr "גרסת ג&#39;נגו"
+msgstr ""
 
 #: serializers.py:127
 msgid "License"
-msgstr "רישיון"
+msgstr ""
 
 #: serializers.py:130
 msgid "Title"
-msgstr "כותרת"
+msgstr ""
 
 #: serializers.py:133
 msgid "Version"
-msgstr "גִרְסָה"
+msgstr "גרסה"
 
 #: serializers.py:136
 msgid "Website"
-msgstr "אתר אינטרנט"
+msgstr ""
 
 #: settings.py:17
 msgid "Disable the REST API links in the tools menu."
-msgstr "השבת את קישורי REST API בתפריט הכלים."
+msgstr ""
 
 #: settings.py:23
 msgid "The maximum page size that can be requested."
-msgstr "גודל העמוד המקסימלי שניתן לבקש."
+msgstr ""
 
 #: settings.py:29
 msgid "The default page size if none is specified."
-msgstr "ברירת המחדל של גודל העמוד אם לא צוין."
+msgstr ""

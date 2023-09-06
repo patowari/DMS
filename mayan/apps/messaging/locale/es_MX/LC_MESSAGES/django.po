@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -86,11 +86,11 @@ msgstr "Descripción corta sobre este mensaje."
 
 #: models.py:33 workflow_actions.py:38
 msgid "Subject"
-msgstr "Tema"
+msgstr "Sujeto"
 
 #: models.py:36
 msgid "The actual content of the message."
-msgstr "El contenido real del mensaje."
+msgstr "El contenido del mensaje."
 
 #: models.py:41
 msgid "This field determines if the message has been read or not."
@@ -159,27 +159,27 @@ msgstr "URL"
 #: views.py:49
 #, python-format
 msgid "Error deleting message \"%(instance)s\"; %(exception)s"
-msgstr "Error al eliminar el mensaje \"%(instance)s\"; %(exception)s"
+msgstr "Error al eliminando el mensaje \"%(instance)s\"; %(exception)s"
 
 #: views.py:53
 #, python-format
 msgid "%(count)d messages deleted successfully."
-msgstr "%(count)d mensajes eliminados correctamente."
+msgstr "%(count)d mensajes eliminados con éxito."
 
 #: views.py:54
 #, python-format
 msgid "Message \"%(object)s\" deleted successfully."
-msgstr "El mensaje \"%(object)s\" se eliminó correctamente."
+msgstr "El mensaje \"%(object)s\" se eliminó con éxito."
 
 #: views.py:55
 #, python-format
 msgid "%(count)d message deleted successfully."
-msgstr "%(count)d mensaje eliminado correctamente."
+msgstr "%(count)d mensaje eliminado con éxito."
 
 #: views.py:56
 #, python-format
 msgid "Delete the %(count)d selected messages."
-msgstr "Elimina los %(count)d mensajes seleccionados."
+msgstr "Eliminas los %(count)d mensajes seleccionados."
 
 #: views.py:57
 #, python-format
@@ -207,22 +207,22 @@ msgstr "No hay mensajes"
 #: views.py:137
 #, python-format
 msgid "Error marking message \"%(instance)s\" as read; %(exception)s"
-msgstr "Error al marcar el mensaje \"%(instance)s\" como leído; %(exception)s"
+msgstr "Error al marcando el mensaje \"%(instance)s\" como leído; %(exception)s"
 
 #: views.py:143
 #, python-format
 msgid "%(count)d messages marked as read successfully."
-msgstr "%(count)d mensajes marcados como leídos correctamente."
+msgstr "%(count)d mensajes marcados como leídos con éxito."
 
 #: views.py:146
 #, python-format
 msgid "Message \"%(object)s\" marked as read successfully."
-msgstr "Mensaje \"%(object)s\" marcado como leído correctamente."
+msgstr "Mensaje \"%(object)s\" marcado como leído con éxito."
 
 #: views.py:149
 #, python-format
 msgid "%(count)d message marked as read successfully."
-msgstr "%(count)d mensaje marcado como leído correctamente."
+msgstr "%(count)d mensaje marcado como leído con éxito."
 
 #: views.py:151
 #, python-format
@@ -250,22 +250,23 @@ msgstr "Todos los mensajes marcados como leídos."
 #: views.py:204
 #, python-format
 msgid "Error marking message \"%(instance)s\" as unread; %(exception)s"
-msgstr "Error al marcar el mensaje \"%(instance)s\" como no leído; %(exception)s"
+msgstr ""
+"Error al marcando el mensaje \"%(instance)s\" como no leído; %(exception)s"
 
 #: views.py:210
 #, python-format
 msgid "%(count)d messages marked as unread successfully."
-msgstr "%(count)d mensajes marcados como no leídos correctamente."
+msgstr "%(count)d mensajes marcados como no leídos con éxito."
 
 #: views.py:213
 #, python-format
 msgid "Message \"%(object)s\" marked as unread successfully."
-msgstr "Mensaje \"%(object)s\" marcado como no leído correctamente."
+msgstr "Mensaje \"%(object)s\" marcado como no leído con éxito."
 
 #: views.py:216
 #, python-format
 msgid "%(count)d message marked as unread successfully."
-msgstr "%(count)d mensaje marcado como no leído correctamente."
+msgstr "%(count)d mensaje marcado como no leído con éxito."
 
 #: views.py:218
 #, python-format
@@ -299,6 +300,14 @@ msgstr "Sujeto del mensaje a enviar."
 msgid "The actual text to send."
 msgstr "El texto para enviar."
 
-#: workflow_actions.py:73
+#: workflow_actions.py:72
 msgid "Send user message"
 msgstr "Enviar mensaje a usuario"
+
+#: workflow_actions.py:80
+msgid "Recipients"
+msgstr ""
+
+#: workflow_actions.py:84
+msgid "Content"
+msgstr "Contenido"

@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "Tout marquer comme lu"
 
 #: model_mixins.py:16
 msgid "Label"
-msgstr "Étiquette"
+msgstr "Libellé"
 
 #: models.py:19
 msgid "Sender content type"
@@ -300,12 +300,20 @@ msgstr ""
 
 #: workflow_actions.py:45
 msgid "Subject of the message to be sent."
-msgstr ""
+msgstr "Objet du message à envoyer."
 
 #: workflow_actions.py:62
 msgid "The actual text to send."
 msgstr "Le texte à envoyer."
 
-#: workflow_actions.py:73
+#: workflow_actions.py:72
 msgid "Send user message"
 msgstr "Envoyer un message utilisateur"
+
+#: workflow_actions.py:80
+msgid "Recipients"
+msgstr ""
+
+#: workflow_actions.py:84
+msgid "Content"
+msgstr "Contenu"

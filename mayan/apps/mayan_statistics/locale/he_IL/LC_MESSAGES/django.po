@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,136 +22,136 @@ msgstr ""
 
 #: apps.py:29 links.py:35 permissions.py:6 queues.py:7
 msgid "Statistics"
-msgstr "סטָטִיסטִיקָה"
+msgstr ""
 
 #: apps.py:38
 msgid "Type"
-msgstr "סוּג"
+msgstr ""
 
 #. Translators: Schedule here is a noun, the 'schedule' at
 #. which the statistic will be updated
 #: apps.py:45
 msgid "Schedule"
-msgstr "לוח זמנים"
+msgstr ""
 
 #: apps.py:51
 msgid "Last update"
-msgstr "העדכון אחרון"
+msgstr ""
 
 #: classes.py:45
 msgid "Statistics namespace"
-msgstr "מרחב השמות של סטטיסטיקה"
+msgstr ""
 
 #: classes.py:162
 msgid "Never"
-msgstr "לעולם לא"
+msgstr ""
 
 #: classes.py:207
 msgid "Doughnut chart"
-msgstr "תרשים סופגניות"
+msgstr ""
 
 #: classes.py:212
 msgid "Line chart"
-msgstr "תרשים קווים"
+msgstr ""
 
 #: classes.py:217
 msgid "Pie chart"
-msgstr "תרשים עוגה"
+msgstr ""
 
 #: links.py:15
 msgid "Namespace details"
-msgstr "פרטי מרחב שמות"
+msgstr ""
 
 #: links.py:20
 msgid "Namespace list"
-msgstr "רשימת מרחב השמות"
+msgstr ""
 
 #: links.py:25
 msgid "Queue"
-msgstr "תוֹר"
+msgstr ""
 
 #: links.py:30
 msgid "View"
-msgstr "נוף"
+msgstr ""
 
 #: models.py:11
 msgid "Slug"
-msgstr "שבלול"
+msgstr "חילזון"
 
 #: models.py:14
 msgid "Date time"
-msgstr "תאריך שעה"
+msgstr ""
 
 #: models.py:17
 msgid "Data"
-msgstr "נתונים"
+msgstr ""
 
 #: models.py:21
 msgid "Statistics result"
-msgstr "תוצאת סטטיסטיקה"
+msgstr ""
 
 #: models.py:22
 msgid "Statistics results"
-msgstr "תוצאות סטטיסטיקה"
+msgstr ""
 
 #: permissions.py:10
 msgid "View statistics"
-msgstr "הצג נתונים סטטיסטיים"
+msgstr ""
 
 #: queues.py:12
 msgid "Execute statistic"
-msgstr "בצע סטטיסטיקה"
+msgstr ""
 
 #: templates/statistics/renderers/chartjs/base.html:12
 msgid "No data available."
-msgstr "אין נתונים זמינים."
+msgstr ""
 
 #: templates/statistics/renderers/chartjs/base.html:14
 #, python-format
 msgid "Last update: %(datetime)s"
-msgstr "עדכון אחרון: %(datetime)s"
+msgstr ""
 
 #: view_mixins.py:19
 #, python-format
 msgid "Statistic \"%s\" not found."
-msgstr "הנתון &quot;%s&quot; לא נמצא."
+msgstr ""
 
 #: views.py:24
 msgid "Statistics namespaces group statistics into logical units. "
-msgstr "מרחבי השמות של סטטיסטיקה מקבצים נתונים סטטיסטיים ליחידות לוגיות."
+msgstr ""
 
 #: views.py:26
 msgid "No statistic namespaces available"
-msgstr "אין מרחבי שמות סטטיסטיים זמינים"
+msgstr ""
 
 #: views.py:27
 msgid "Statistics namespaces"
-msgstr "מרחבי שמות של סטטיסטיקה"
+msgstr ""
 
 #: views.py:50
 msgid "Statistics are metrics and chart representations of existing data."
-msgstr "סטטיסטיקה היא מדדים וייצוג תרשים של נתונים קיימים."
+msgstr ""
 
 #: views.py:53
 msgid "No statistic available"
-msgstr "אין סטטיסטיקה זמינה"
+msgstr ""
 
 #: views.py:55
 #, python-format
 msgid "Namespace details for: %s"
-msgstr "פרטי מרחב שמות עבור: %s"
+msgstr ""
 
 #: views.py:78
 #, python-format
 msgid "Results for: %s"
-msgstr "תוצאות עבור: %s"
+msgstr ""
 
 #: views.py:98
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
-msgstr "תור את נתוני &quot;%s&quot; לעדכון?"
+msgstr ""
 
 #: views.py:106
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
-msgstr "סטטיסטיקה &quot;%s&quot; עמדה בתור בהצלחה לעדכון."
+msgstr ""

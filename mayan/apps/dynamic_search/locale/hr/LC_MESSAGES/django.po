@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Domagoj Crljenko <domagoj@rii.hr>, 2023
 # Mario Jakovina <mario.jakovina@gmail.com>, 2023
+# Domagoj Crljenko <domagoj@rii.hr>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Domagoj Crljenko <domagoj@rii.hr>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,18 +25,22 @@ msgstr ""
 msgid "Dynamic search"
 msgstr "Dinamička pretraga"
 
-#: forms.py:15
+#: forms.py:19
 msgid "Match all"
 msgstr ""
 
-#: forms.py:16
+#: forms.py:20
 msgid "Return only results that match all fields."
 msgstr ""
 
-#: forms.py:33 templates/dynamic_search/search_box.html:43
+#: forms.py:52
+msgid "Search logic"
+msgstr ""
+
+#: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
-msgstr ""
+msgstr "Traži pojmove"
 
 #: links.py:20
 msgid "Basic search"
@@ -112,16 +116,16 @@ msgid ""
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
 
-#: search_fields.py:289
+#: search_fields.py:311
 msgid "Any"
 msgstr ""
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr ""
 
-#: search_models.py:108
+#: search_models.py:114
 msgid "All content"
 msgstr ""
 
@@ -232,7 +236,7 @@ msgstr ""
 #: templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced"
-msgstr ""
+msgstr "Napredno"
 
 #: value_transformations.py:37
 msgid "Replace accents"

@@ -5,8 +5,8 @@
 # Translators:
 # Translators:
 # Roberto Rosario, 2023
-# Sergey Glita <gsv70@mail.ru>, 2023
 # mizhgan <i@mizhgan.ru>, 2023
+# Sergey Glita <gsv70@mail.ru>, 2023
 # lilo.panic, 2023
 # Ilya Pavlov <spirkaa@gmail.com>, 2023
 # 
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
-#: search.py:18 settings.py:11
+#: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
 msgstr "Распознавание текста"
 
@@ -248,10 +248,10 @@ msgstr ""
 #: views.py:190
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Отправить выбранную версию документа в очередь распознавания?"
+msgstr[1] "Отправить выбранные версии документа в очередь распознавания?"
+msgstr[2] "Отправить выбранные версии документа в очередь распознавания?"
+msgstr[3] "Отправить выбранные версии документа в очередь распознавания?"
 
 #: views.py:226
 #, python-format
@@ -289,6 +289,6 @@ msgstr "Содержимое страницы"
 msgid "A template that will generate the OCR content to be saved."
 msgstr "Шаблон, генерирующий распознанное содержимое для сохранения."
 
-#: workflow_actions.py:43
+#: workflow_actions.py:42
 msgid "Update document page OCR content"
 msgstr "Обновить распознанное содержимое страницы документа"

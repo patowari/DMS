@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Jože Detečnik <joze.detecnik@3tav.si>, 2023
 # Roberto Rosario, 2023
+# Jože Detečnik <joze.detecnik@3tav.si>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2023\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "Pravice"
 
@@ -31,7 +31,7 @@ msgid ""
 "is used and not the actual label of the object."
 msgstr ""
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
 msgstr "Predmet"
 
@@ -63,7 +63,7 @@ msgstr "Novi ACL"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "Pravice"
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "ID objekta"
 
@@ -216,44 +216,48 @@ msgstr ""
 msgid "Global access control lists"
 msgstr ""
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "Vrsta objekta"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "Vrsta predmeta, za katerega bo dostop spremenjen."
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr "Številčni identifikator predmeta, za katerega bo dostop spremenjen."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "Vloge"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "Vloge, katerih dostop bo spremenjen."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "Dovoljenja za odobritev/preklic v/iz vlog za zgoraj izbrani objekt."
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr ""
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr ""
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr ""

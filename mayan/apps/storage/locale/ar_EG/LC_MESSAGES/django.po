@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:27 permissions.py:6 settings.py:15
+#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr "المساحة التخزينية"
 
@@ -81,7 +81,7 @@ msgstr "يجب اعادة التخزين"
 msgid "Name of the storage to process."
 msgstr "معالجة المساحة التخزينية"
 
-#: model_mixins.py:18 models.py:94
+#: model_mixins.py:18 models.py:95
 msgid "Filename"
 msgstr "اسم الملف"
 
@@ -97,11 +97,11 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: model_mixins.py:108 models.py:48
+#: model_mixins.py:108 models.py:48 serializers.py:15
 msgid "User"
 msgstr "مستخدم"
 
-#: models.py:40 models.py:91
+#: models.py:40 models.py:92
 msgid "File"
 msgstr "ملف"
 
@@ -113,11 +113,11 @@ msgstr "العنوان"
 msgid "Download file"
 msgstr ""
 
-#: models.py:100
+#: models.py:101
 msgid "Shared uploaded file"
 msgstr "ملف مشترك"
 
-#: models.py:101 storages.py:36
+#: models.py:102 storages.py:36
 msgid "Shared uploaded files"
 msgstr "ملف محمل مشترك"
 
@@ -133,17 +133,29 @@ msgstr ""
 msgid "View user files"
 msgstr ""
 
-#: queues.py:13
+#: queues.py:16
 msgid "Storage periodic"
 msgstr "التخزين الدوري"
 
-#: queues.py:19
+#: queues.py:22
+msgid "Delete a shared upload"
+msgstr ""
+
+#: queues.py:27
 msgid "Delete stale uploads"
 msgstr "حذف التحميلات "
 
-#: queues.py:26
+#: queues.py:34
 msgid "Delete stale download files"
 msgstr ""
+
+#: serializers.py:11
+msgid "Download URL"
+msgstr ""
+
+#: serializers.py:21
+msgid "URL"
+msgstr "URL"
 
 #: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."

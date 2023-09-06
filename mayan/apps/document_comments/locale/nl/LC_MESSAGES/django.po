@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
-# bwakkie <bwakkie@gmail.com>, 2023
 # Roberto Rosario, 2023
+# bwakkie <bwakkie@gmail.com>, 2023
+# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 events.py:6 search.py:19 search.py:26 search.py:33 search.py:40
+#: apps.py:32 events.py:6
 msgid "Document comments"
 msgstr "Documentopmerkingen"
 
@@ -50,7 +50,7 @@ msgstr "Verwijderen"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:12
+#: links.py:31 models.py:47 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr "Opmerkingen"
 

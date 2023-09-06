@@ -5,15 +5,17 @@
 # Translators:
 # Translators:
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023
+# Roberto Rosario, 2023
 # Thuong Lu, 2023
+# Trung Phan Minh <navmobile@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Thuong Lu, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Trung Phan Minh <navmobile@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,60 +23,60 @@ msgstr ""
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:31 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: queues.py:7 views/event_views.py:29
+#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: views/event_views.py:29
 msgid "Events"
 msgstr ""
 
-#: apps.py:81 apps.py:116
+#: apps.py:82 apps.py:117
 msgid "Date and time"
 msgstr ""
 
-#: apps.py:85 apps.py:119 serializers.py:72
+#: apps.py:86 apps.py:120 serializers.py:72
 msgid "Actor"
 msgstr ""
 
-#: apps.py:89 apps.py:124
+#: apps.py:90 apps.py:125
 msgid "Event"
 msgstr ""
 
-#: apps.py:93 apps.py:129 serializers.py:78
+#: apps.py:94 apps.py:130 serializers.py:78
 msgid "Target"
 msgstr ""
 
-#: apps.py:97 apps.py:133
+#: apps.py:98 apps.py:134
 msgid "Action object"
 msgstr ""
 
-#: apps.py:104 forms.py:10 forms.py:67
+#: apps.py:105 forms.py:10 forms.py:67
 msgid "Namespace"
 msgstr ""
 
-#: apps.py:109 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
+#: apps.py:110 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
 msgid "Label"
 msgstr "Nhãn"
 
-#: apps.py:138
+#: apps.py:139
 msgid "Seen"
 msgstr ""
 
-#: apps.py:145
+#: apps.py:146
 msgid "Object"
 msgstr "Chủ đề"
 
-#: apps.py:150 models.py:46 models.py:105
+#: apps.py:151 models.py:46 models.py:105
 msgid "Event type"
-msgstr ""
+msgstr "Loại sự kiện"
 
-#: classes.py:91
+#: classes.py:89
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:119
+#: classes.py:117
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:121
+#: classes.py:119
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -140,7 +142,7 @@ msgstr ""
 
 #: models.py:23 serializers.py:24 serializers.py:49
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 #: models.py:27
 msgid "Stored event type"
@@ -190,11 +192,23 @@ msgstr ""
 msgid "View the events of an object"
 msgstr ""
 
-#: queues.py:13
+#: queues.py:7
+msgid "Events fast"
+msgstr ""
+
+#: queues.py:10
+msgid "Events slow"
+msgstr ""
+
+#: queues.py:16
+msgid "Commit an event"
+msgstr ""
+
+#: queues.py:21
 msgid "Clear event querysets"
 msgstr ""
 
-#: queues.py:17
+#: queues.py:25
 msgid "Export event querysets"
 msgstr ""
 
@@ -208,7 +222,7 @@ msgstr ""
 
 #: serializers.py:43
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: serializers.py:75
 msgid "Actor content type"

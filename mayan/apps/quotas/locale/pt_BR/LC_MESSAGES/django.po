@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
 # Roberto Rosario, 2023
-# Márcia Ferreira, 2023
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
+# Márcia Ferreira, 2023
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -24,20 +24,20 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:33 events.py:6 links.py:34 models.py:31 permissions.py:6
+#: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
 #: views.py:150
 msgid "Quotas"
 msgstr "Quotas"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "none"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "Não se aplica"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "Backend nulo"
 
@@ -57,15 +57,15 @@ msgstr "Backend"
 msgid "The quota driver for this entry."
 msgstr "O driver de quota para esta entidade"
 
-#: links.py:16
+#: links.py:17
 msgid "Create quota"
 msgstr "Criar quota"
 
-#: links.py:21
+#: links.py:22
 msgid "Delete"
 msgstr "Excluir"
 
-#: links.py:25
+#: links.py:26
 msgid "Edit"
 msgstr "Editar"
 
@@ -193,41 +193,41 @@ msgstr "Editar uma quota"
 msgid "View a quota"
 msgstr "Ver uma quota"
 
-#: quota_backends.py:71 quota_backends.py:171
+#: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
 msgstr "Quota de contagem de documento excedida."
 
-#: quota_backends.py:75
+#: quota_backends.py:76
 msgid "Documents limit"
 msgstr "Limite de documentos"
 
-#: quota_backends.py:78
+#: quota_backends.py:79
 msgid "Maximum number of documents."
 msgstr "Número máximo de documentos."
 
-#: quota_backends.py:82
+#: quota_backends.py:83
 msgid "Document count limit"
 msgstr "Limite de contagem de documento"
 
-#: quota_backends.py:107
+#: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
 msgstr "contagem de documentos: %(document_count)s"
 
-#: quota_backends.py:182
+#: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
 msgstr "Tamanho máximo do documento em megabytes (MB)."
 
-#: quota_backends.py:183 quota_backends.py:186
+#: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
 msgstr "Limite de tamanho de documento"
 
-#: quota_backends.py:211
+#: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
 msgstr "tamanho do documento: %(formatted_file_size)s"
 
-#: quota_backends.py:233
+#: quota_backends.py:234
 msgid "Document size quota exceeded."
 msgstr "Quota de tamanho de documento excedida."
 

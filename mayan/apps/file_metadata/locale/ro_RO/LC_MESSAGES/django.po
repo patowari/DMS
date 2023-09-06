@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -25,24 +25,24 @@ msgstr ""
 msgid "Label"
 msgstr "Conținut etichetă"
 
-#: apps.py:49 events.py:6 links.py:21 permissions.py:6 queues.py:7
+#: apps.py:51 events.py:6 links.py:21 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
 msgstr "Metadatele fișierului"
 
-#: apps.py:100 search.py:12 search.py:23 search.py:34
+#: apps.py:103 search.py:11 search.py:22
 msgid "File metadata key"
 msgstr "Cheia metadatelor fișierului"
 
-#: apps.py:104 search.py:16 search.py:27 search.py:38
+#: apps.py:107 search.py:15 search.py:26
 msgid "File metadata value"
 msgstr "Valoarea metadatelor fișierului"
 
-#: apps.py:130
+#: apps.py:133 apps.py:139
 msgid "Return the value of a specific file metadata."
 msgstr "Returnați valoarea unei metadate de fișier specifice."
 
-#: apps.py:131
+#: apps.py:134 apps.py:140
 msgid "File metadata value of"
 msgstr "Valoarea metadatelor fișierului pentru"
 
@@ -85,15 +85,7 @@ msgstr "Setarea metadatelor fișierelor "
 msgid "File metadata processing per type"
 msgstr "Procesarea metadatelor de fișiere pe tip"
 
-#: methods.py:41
-msgid "get_file_metadata(< file metadata dotted path >)"
-msgstr "get_file_metadata (<fișier metadate punctat path>)"
-
-#: methods.py:44
-msgid "Return the specified document file metadata entry."
-msgstr "Returnați intrarea specificată a metadatelor fișierului ."
-
-#: methods.py:71
+#: methods.py:54
 msgid "Return the specified document file file metadata entry."
 msgstr "Returnează intrarea de metadate a fișierului document specificat."
 
@@ -101,75 +93,75 @@ msgstr "Returnează intrarea de metadate a fișierului document specificat."
 msgid "Attribute count"
 msgstr "Număr de atribute"
 
-#: models.py:17 models.py:96
+#: models.py:18 models.py:97
 msgid "Driver"
 msgstr "Program driver"
 
-#: models.py:21
+#: models.py:22
 msgid "Document file"
 msgstr "Fișier document"
 
-#: models.py:27 models.py:63
+#: models.py:28 models.py:64
 msgid "Document file driver entry"
 msgstr "Intrare pentru driverului fișierului de document"
 
-#: models.py:28
+#: models.py:29
 msgid "Document file driver entries"
 msgstr "Intrări ale driverului fișierului de document"
 
-#: models.py:40
+#: models.py:41
 msgid "Document type"
 msgstr "Tipul documentului"
 
-#: models.py:44
+#: models.py:45
 msgid "Automatically queue newly created documents for processing."
 msgstr "Trimitere automată a documentelor nou create la procesare."
 
-#: models.py:45
+#: models.py:46
 msgid "Auto process"
 msgstr ""
 
-#: models.py:51
+#: models.py:52
 msgid "Document type settings"
 msgstr "Setările tipului de document"
 
-#: models.py:52
+#: models.py:53
 msgid "Document types settings"
 msgstr "Setările pentru tipurile de documente"
 
-#: models.py:66
+#: models.py:67
 msgid "Name of the file metadata entry."
 msgstr "Numele înregistrării metadatelor fișierului."
 
-#: models.py:67
+#: models.py:68
 msgid "Key"
 msgstr "Cheie"
 
-#: models.py:70
+#: models.py:71
 msgid "Value of the file metadata entry."
 msgstr "Valoarea intrării de metadate a fișierului."
 
-#: models.py:71
+#: models.py:72
 msgid "Value"
 msgstr "Valoare"
 
-#: models.py:76
+#: models.py:77
 msgid "File metadata entry"
 msgstr "Înregistrare metadate fișier"
 
-#: models.py:77
+#: models.py:78
 msgid "File metadata entries"
 msgstr "Înregistrări de metadate în fișier"
 
-#: models.py:87
+#: models.py:88
 msgid "Driver path"
 msgstr "Calea driver-ului"
 
-#: models.py:91
+#: models.py:92
 msgid "Internal name"
 msgstr "Nume intern"
 
-#: models.py:97
+#: models.py:98
 msgid "Drivers"
 msgstr "Programe driver"
 
@@ -263,8 +255,13 @@ msgstr "%(count)d fișier document trimis în coada de metadate ale fișierului.
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
+"Trimiteți fișierul document selectat în coada de metadate ale fișierului?"
 msgstr[1] ""
+"Trimiteți fișierele documentelor selectate în coada de metadate ale "
+"fișierelor?"
 msgstr[2] ""
+"Trimiteți fișierele documentelor selectate în coada de metadate ale "
+"fișierelor?"
 
 #: views.py:164
 #, python-format

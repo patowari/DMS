@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Templating"
 msgstr "Templating"
 
-#: fields.py:19
+#: fields.py:21
 #, python-format
 msgid ""
 "Use Django's default templating language "
@@ -35,7 +35,7 @@ msgstr ""
 "Použijte výchozí jazyk šablon Django "
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 
-#: fields.py:37
+#: fields.py:41
 #, python-format
 msgid ""
 "Use Django's default templating language "

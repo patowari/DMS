@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
 "MIME-Version: 1.0\n"
@@ -24,15 +24,19 @@ msgstr ""
 msgid "Dynamic search"
 msgstr "Búsqueda dinámica "
 
-#: forms.py:15
+#: forms.py:19
 msgid "Match all"
 msgstr "Parear todos"
 
-#: forms.py:16
+#: forms.py:20
 msgid "Return only results that match all fields."
 msgstr "Devuelver solo los resultados que coincidan con todos los campos."
 
-#: forms.py:33 templates/dynamic_search/search_box.html:43
+#: forms.py:52
+msgid "Search logic"
+msgstr ""
+
+#: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr "Términos de búsqueda"
@@ -124,16 +128,16 @@ msgstr ""
 "disponible y que la sintaxis de búsqueda sea válida para el motor de "
 "búsqueda activo; %s"
 
-#: search_fields.py:289
+#: search_fields.py:311
 msgid "Any"
 msgstr "Cualquiera"
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr "Modelo de búsqueda desconocido `%s`."
 
-#: search_models.py:108
+#: search_models.py:114
 msgid "All content"
 msgstr "Todo el contenido"
 

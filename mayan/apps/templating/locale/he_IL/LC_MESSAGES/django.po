@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,91 +22,86 @@ msgstr ""
 
 #: apps.py:19 permissions.py:6
 msgid "Templating"
-msgstr "תבנית"
+msgstr ""
 
-#: fields.py:19
+#: fields.py:21
 #, python-format
 msgid ""
 "Use Django's default templating language "
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " "
 msgstr ""
-"השתמש בשפת ברירת המחדל של Django "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 
-#: fields.py:37
+#: fields.py:41
 #, python-format
 msgid ""
 "Use Django's default templating language "
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " The {{ %(variable)s }} variable is available to the template."
 msgstr ""
-"השתמש בשפת ברירת המחדל של Django "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" המשתנה {{ %(variable)s }} זמין לתבנית."
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."
-msgstr "טקסט המתקבל מהתבנית המוערכת."
+msgstr ""
 
 #: forms.py:10
 msgid "Result"
-msgstr "תוֹצָאָה"
+msgstr ""
 
 #: forms.py:20
 msgid "The template string to be evaluated."
-msgstr "מחרוזת התבנית שיש להעריך."
+msgstr ""
 
 #: forms.py:21
 msgid "Template"
-msgstr "תבנית"
+msgstr "Template"
 
 #: links.py:11
 msgid "Sandbox"
-msgstr "ארגז חול"
+msgstr ""
 
 #: permissions.py:10
 msgid "Use the template sandbox"
-msgstr "השתמש בארגז החול של התבנית"
+msgstr ""
 
 #: serializers.py:8
 msgid "Hex hash"
-msgstr "חשיש משושה"
+msgstr ""
 
 #: serializers.py:11
 msgid "Name"
-msgstr "שֵׁם"
+msgstr ""
 
 #: serializers.py:14
 msgid "HTML"
-msgstr "HTML"
+msgstr ""
 
 #: serializers.py:17
 msgid "URL"
-msgstr "כתובת אתר"
+msgstr "כתובת אתר (URL)"
 
 #: views.py:44
 #, python-format
 msgid "Template sandbox for: %s"
-msgstr "ארגז חול תבנית עבור: %s"
+msgstr ""
 
 #: views.py:65
 #, python-format
 msgid "Template error; %(exception)s"
-msgstr "שגיאת תבנית; %(exception)s"
+msgstr ""
 
 #: widgets.py:69
 msgid "Filters"
-msgstr "מסננים"
+msgstr ""
 
 #: widgets.py:76
 msgid "Tags"
-msgstr "תגים"
+msgstr ""
 
 #: widgets.py:83
 msgid "<Filters and tags>"
-msgstr "<Filters and tags>"
+msgstr ""
 
 #: widgets.py:128
 msgid "<Model attributes>"
-msgstr "<Model attributes>"
+msgstr ""

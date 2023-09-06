@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2023
+# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023
 # Daniele Bortoluzzi <daniele@elkos.it>, 2023
-# Marco Camplese <marco.camplese.mc@gmail.com>, 2023
 # Roberto Rosario, 2023
+# Marco Camplese <marco.camplese.mc@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Marco Camplese <marco.camplese.mc@gmail.com>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,7 +99,7 @@ msgstr "Modelli di indice"
 msgid "Template"
 msgstr "Modello"
 
-#: handlers.py:19
+#: handlers.py:18
 msgid "Creation date"
 msgstr "Data di creazione"
 
@@ -108,7 +108,7 @@ msgstr "Data di creazione"
 msgid "Indexes"
 msgstr "Indici"
 
-#: links.py:53 queues.py:24
+#: links.py:53 queues.py:23
 msgid "Rebuild index"
 msgstr "Ricostruisci l'indice"
 
@@ -156,7 +156,7 @@ msgstr "No"
 msgid "Yes"
 msgstr "Sì"
 
-#: models/index_instance_model_mixins.py:48
+#: models/index_instance_model_mixins.py:34
 #, python-format
 msgid ""
 "Error indexing document: %(document)s; expression: %(expression)s; "
@@ -165,23 +165,23 @@ msgstr ""
 "Errore nell'ndicizzazione del documento: %(document)s; espressione: "
 "%(expression)s; %(exception)s"
 
-#: models/index_instance_model_mixins.py:216
+#: models/index_instance_model_mixins.py:155
 msgid "Total number of nodes with unique values this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:225
+#: models/index_instance_model_mixins.py:164
 msgid "Total number of unique documents this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:235
+#: models/index_instance_model_mixins.py:174
 msgid "Total number of node levels this item contains."
 msgstr ""
 
-#: models/index_instance_model_mixins.py:304
+#: models/index_instance_model_mixins.py:243
 msgid "The path to the index including all ancestors."
 msgstr "Il percorso all'indice che include tutti gli antenati."
 
-#: models/index_instance_model_mixins.py:306
+#: models/index_instance_model_mixins.py:245
 msgid "Full path"
 msgstr "Percorso completo"
 
@@ -299,7 +299,7 @@ msgstr ""
 msgid "Root"
 msgstr "Principale"
 
-#: permissions.py:6 queues.py:8
+#: permissions.py:6 queues.py:7
 msgid "Indexing"
 msgstr "Indicizzazione"
 
@@ -327,15 +327,15 @@ msgstr ""
 msgid "Rebuild index templates"
 msgstr ""
 
-#: queues.py:12
-msgid "Delete empty index nodes"
-msgstr "Cancella i nodi indice vuoti"
+#: queues.py:10
+msgid "Indexing slow"
+msgstr ""
 
-#: queues.py:16
+#: queues.py:14
 msgid "Remove document"
 msgstr "Cancella dcumento"
 
-#: queues.py:20
+#: queues.py:18
 msgid "Index document"
 msgstr "Indice documento"
 

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:54+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: apps.py:9
 msgid "Navigation"
-msgstr "ניווט"
+msgstr ""
 
 #: classes.py:951
 msgid "Unnamed function"
-msgstr "פונקציה ללא שם"
+msgstr ""
 
 #: templates/navigation/actions_dropdown.html:5
 msgid "Actions"
@@ -34,4 +34,4 @@ msgstr "פעולות"
 
 #: templates/navigation/actions_dropdown.html:18
 msgid "Toggle Dropdown"
-msgstr "החלף את התפריט הנפתח"
+msgstr "החלף רשימת בחירה"

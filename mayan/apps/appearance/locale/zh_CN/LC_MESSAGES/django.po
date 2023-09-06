@@ -5,18 +5,18 @@
 # Translators:
 # Translators:
 # bo feng <87289884@qq.com>, 2023
+# yan songwei <yansw@vip.163.com>, 2023
+# Leon Chu, 2023
 # Ford Guo <agile.guo@gmail.com>, 2023
 # Roberto Rosario, 2023
-# Leon Chu, 2023
-# yan songwei <yansw@vip.163.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: yan songwei <yansw@vip.163.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
-msgstr "外观"
+msgstr "外觀"
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -34,7 +34,7 @@ msgstr "Lato字体"
 
 #: dependencies.py:12
 msgid "Bootstrap"
-msgstr "引导程序"
+msgstr "引導程式"
 
 #: dependencies.py:16
 msgid "Bootswatch"
@@ -54,7 +54,7 @@ msgstr "jQuery"
 
 #: dependencies.py:42
 msgid "JQuery Form"
-msgstr "jQuery表单"
+msgstr "jQuery表單"
 
 #: dependencies.py:46
 msgid "jQuery Lazy Load"
@@ -88,27 +88,27 @@ msgstr "已編輯之佈景"
 msgid "User theme edited"
 msgstr ""
 
-#: links.py:18
+#: links.py:20
 msgid "Theme settings"
 msgstr "佈景設定"
 
-#: links.py:25
+#: links.py:27
 msgid "Edit theme settings"
 msgstr "編輯佈景設定"
 
-#: links.py:31 views.py:31
+#: links.py:33 views.py:31
 msgid "Create new theme"
 msgstr "建立新的佈景"
 
-#: links.py:36
+#: links.py:38
 msgid "Delete"
 msgstr "删除"
 
-#: links.py:40
+#: links.py:42
 msgid "Edit"
 msgstr "编辑"
 
-#: links.py:44 links.py:49 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:99
 msgid "Themes"
 msgstr "佈景"
 
@@ -168,7 +168,7 @@ msgstr ""
 
 #: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
-msgstr "显示视图标题的最大字符数。"
+msgstr "顯示標題的最大字數"
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
@@ -192,7 +192,7 @@ msgstr ""
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
-msgstr "权限不足"
+msgstr "權限不足"
 
 #: templates/403.html:32
 msgid "You don't have enough permissions for this operation."
@@ -212,30 +212,30 @@ msgstr "可能的原因"
 
 #: templates/404.html:44
 msgid "The location of the item is incorrect."
-msgstr "项目的位置不正确。"
+msgstr "項目的位置不正確。"
 
 #: templates/404.html:45
 msgid "The location is correct, but the item no longer exists."
-msgstr "位置正确，但是该项目不存在。"
+msgstr "位置正確，但是該項目不存在。"
 
 #: templates/404.html:46
 msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
-msgstr "位置正确，但是您的帐户没有访问权限。"
+msgstr "位置正確，但是你的帳戶没有存取權限。"
 
 #: templates/500.html:5 templates/500.html:30
-#: templates/appearance/root.html:47
+#: templates/appearance/root.html:46
 msgid "Server error"
-msgstr "服务器错误"
+msgstr "伺服器錯誤"
 
 #: templates/500.html:32
 msgid "There's been an unexpected error."
-msgstr "发生意外错误。"
+msgstr "發生意外錯誤。"
 
 #: templates/500.html:40
 msgid "What to do next?"
-msgstr "接下来做什么？"
+msgstr "接下來要做甚麼？"
 
 #: templates/500.html:44
 msgid "Refresh the page."
@@ -243,7 +243,7 @@ msgstr "刷新页面。"
 
 #: templates/500.html:45
 msgid "Wait a bit. The system might be overloaded."
-msgstr "稍等一会儿，系统可能过载。"
+msgstr "請稍等一會兒，系统可能超載。"
 
 #: templates/500.html:46
 msgid "Contact your system administrator."
@@ -251,42 +251,31 @@ msgstr "请与系统管理员联系。"
 
 #: templates/500.html:47
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
-msgstr "检查日志中是否带有标签“ ERROR”-错误，“ CRITICAL”-关键或“ FATAL”-致命的消息。"
+msgstr "檢查日誌中是否帶有“ ERROR”錯誤，“ CRITICAL”中型錯誤或“ FATAL”嚴重錯誤的訊息。"
 
 #: templates/500.html:48
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr "開啟一個<a href=\"%(issue_url)s\">問題追蹤</a>的項目"
 
-#: templates/appearance/about.html:10
+#: templates/appearance/about.html:9
 msgid "About"
-msgstr "关于"
+msgstr "關於"
 
-#: templates/appearance/about.html:72
-#, python-format
-msgid ""
-"\n"
-"                    %(setting_project_title)s is based on %(project_title)s\n"
-"                "
-msgstr ""
-"\n"
-"                    %(setting_project_title)s基于%(project_title)s\n"
-"                "
-
-#: templates/appearance/about.html:77
+#: templates/appearance/about.html:67
 msgid "Version"
 msgstr "版本"
 
-#: templates/appearance/about.html:79
+#: templates/appearance/about.html:69
 #, python-format
 msgid "Build number: %(build_number)s"
-msgstr "版本号：%(build_number)s"
+msgstr "版本號：%(build_number)s"
 
-#: templates/appearance/about.html:92
+#: templates/appearance/about.html:82
 msgid "Released under the license:"
 msgstr "根据许可证发布："
 
-#: templates/appearance/about.html:98
+#: templates/appearance/about.html:88
 #, python-format
 msgid ""
 "\n"
@@ -294,10 +283,10 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                完整的更改列表可见于<a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">发行说明%(icon_documentation)s </a>或简短版本<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">更改日志%(icon_documentation)s </a>。\n"
+"                完整的更改列表可見於<a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">發布說明%(icon_documentation)s </a>或簡短版本<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">更改日誌%(icon_documentation)s </a>。\n"
 "            "
 
-#: templates/appearance/about.html:104
+#: templates/appearance/about.html:94
 #, python-format
 msgid ""
 "\n"
@@ -308,7 +297,7 @@ msgstr ""
 "                可以查找問題解說於此 <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:110
+#: templates/appearance/about.html:100
 #, python-format
 msgid ""
 "\n"
@@ -316,19 +305,8 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                如果您发现了bug或有功能创意，请访问<a class=\"new_window\" href=\"https://forum.mayan-edms.com\">论坛%(icon_forum)s </a>或在<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">源代码仓库%(icon_source_code)s </a>提交问题。\n"
+"                如果您發現了bug或有功能上的建議，請瀏覽<a class=\"new_window\" href=\"https://forum.mayan-edms.com\">論壇˙%(icon_forum)s </a>或在<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">源代碼倉庫%(icon_source_code)s </a>提交問題。\n"
 "            "
-
-#: templates/appearance/about.html:115
-#, python-format
-msgid ""
-"\n"
-"                Spread the word. Talk to your friends and colleagues about how awesome %(project_title)s is!\n"
-"            "
-msgstr ""
-"\n"
-"                傳遞到世界各地. 說明給您的朋友與同事知道  %(project_title)s 有多麼棒的功能!\n"
-"            "
 
 #: templates/appearance/app/foot.html:70
 msgid ""
@@ -342,7 +320,7 @@ msgstr "对象"
 
 #: templates/appearance/generic_confirm.html:13
 msgid "Are you sure?"
-msgstr "你确定吗？"
+msgstr "你確定嗎？"
 
 #: templates/appearance/generic_confirm.html:37
 msgid "Yes"
@@ -359,21 +337,21 @@ msgstr "否"
 msgid "required"
 msgstr "必填"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
 msgstr "保存"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Submit"
 msgstr "提交"
 
-#: templates/appearance/generic_form_subtemplate.html:98
+#: templates/appearance/generic_form_subtemplate.html:99
 #: templates/appearance/generic_multiform_subtemplate.html:66
 msgid "Cancel"
 msgstr "取消"
@@ -402,7 +380,7 @@ msgstr "在您充分使用Mayan EDMS之前，您需要以下内容："
 
 #: templates/appearance/menus/menu_topbar.html:11
 msgid "Toggle navigation"
-msgstr "切换导航"
+msgstr "切換瀏覽"
 
 #: templates/appearance/partials/form_title.html:10
 msgid "Open main menu"
@@ -424,7 +402,7 @@ msgstr "总计：%(total)s"
 
 #: templates/appearance/partials/list_toolbar.html:14
 msgid "Select/Deselect all"
-msgstr "全选/全不选"
+msgstr "全選/取消全選"
 
 #: templates/appearance/partials/list_toolbar.html:18
 msgid "Toggle list display mode"
@@ -433,7 +411,7 @@ msgstr "切换列表显示模式"
 #: templates/appearance/partials/list_toolbar.html:31
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
-msgstr "选择项目激活批量操作。使用Shift +单击以选择多个。"
+msgstr "選擇多個項目來啟用批次作業。使用Shift +單點滑鼠以選擇多個項目。"
 
 #: templates/appearance/partials/list_toolbar.html:36
 msgid "Bulk actions"
@@ -457,19 +435,19 @@ msgstr "上一页"
 msgid "Next page"
 msgstr "下一页"
 
-#: templates/appearance/root.html:52
+#: templates/appearance/root.html:51
 msgid "Close"
-msgstr "关闭"
+msgstr "關閉"
 
-#: templates/appearance/root.html:60
+#: templates/appearance/root.html:59
 msgid "Server communication error"
 msgstr "服务器通信错误"
 
-#: templates/appearance/root.html:62
+#: templates/appearance/root.html:61
 msgid "Check you network connection and try again in a few moments."
-msgstr "检查网络连接，并稍后再试。"
+msgstr "請檢查網路連線，並稍後再試。"
 
-#: templatetags/appearance_tags.py:67
+#: templatetags/appearance_tags.py:77
 msgid "None"
 msgstr "无"
 

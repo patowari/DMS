@@ -3,16 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Translators:
-# Ovadia Ovadia, 2023
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Ovadia Ovadia, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,38 +18,38 @@ msgstr ""
 
 #: apps.py:18 settings.py:11
 msgid "Lock manager"
-msgstr "מנהל מנעולים"
+msgstr ""
 
 #: models.py:15
 msgid "Creation datetime"
-msgstr "תאריך יצירה"
+msgstr ""
 
 #: models.py:19
 msgid "Timeout"
-msgstr "פסק זמן"
+msgstr ""
 
 #: models.py:22
 msgid "Name"
-msgstr "שֵׁם"
+msgstr ""
 
 #: models.py:28
 msgid "Lock"
-msgstr "לנעול"
+msgstr ""
 
 #: models.py:29
 msgid "Locks"
-msgstr "מנעולים"
+msgstr ""
 
 #: settings.py:17
 msgid "Path to the class to use when to request and release resource locks."
-msgstr "נתיב לכיתה לשימוש מתי לבקש ולשחרר נעילות משאבים."
+msgstr ""
 
 #: settings.py:24
 msgid "Arguments to pass to the LOCK_MANAGER_BACKEND."
-msgstr "טיעונים להעביר ל-LOCK_MANAGER_BACKEND."
+msgstr ""
 
 #: settings.py:30
 msgid ""
 "Default amount of time in seconds after which a resource lock will be "
 "automatically released."
-msgstr "משך ברירת המחדל בשניות שלאחריו נעילת משאבים תשתחרר אוטומטית."
+msgstr ""

@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# yan songwei <yansw@vip.163.com>, 2023
+# Roberto Rosario, 2023
 # Ford Guo <agile.guo@gmail.com>, 2023
 # Leon Chu, 2023
-# Roberto Rosario, 2023
+# yan songwei <yansw@vip.163.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: yan songwei <yansw@vip.163.com>, 2023\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,25 +31,25 @@ msgstr "转换器"
 msgid "Transformation"
 msgstr "转换"
 
-#: backends/python.py:123 backends/python.py:138
-#, python-format
-msgid "Exception determining PDF page count; %s"
-msgstr "确定PDF页数时异常; %s"
-
-#: backends/python.py:152
+#: backends/python.py:106
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr "使用Pillow确定页数时异常; %s"
 
-#: classes.py:161
+#: backends/python.py:194 backends/python.py:211
+#, python-format
+msgid "Exception determining PDF page count; %s"
+msgstr "确定PDF页数时异常; %s"
+
+#: classes.py:173
 msgid "LibreOffice not installed or not found."
 msgstr "未安装或未找到LibreOffice。"
 
-#: classes.py:267
+#: classes.py:279
 msgid "Not an office file format."
 msgstr "不是办公文件格式。"
 
-#: classes.py:403
+#: classes.py:415
 msgid ""
 "Transformations allow changing the visual appearance of documents without "
 "making permanent changes to the document file themselves."
@@ -90,16 +90,16 @@ msgstr "此層級可使用之轉變格式"
 msgid "\"%s\" not a valid entry."
 msgstr "“%s”不是有效的许可。"
 
-#: layers.py:11
+#: layers.py:12
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr "裝飾 為可視之內容訊息元素至圖案"
 
-#: layers.py:13
+#: layers.py:14
 msgid "Decorations"
 msgstr "裝飾"
 
-#: layers.py:24
+#: layers.py:26
 msgid "Saved transformations"
 msgstr "转换已保存"
 
@@ -107,23 +107,24 @@ msgstr "转换已保存"
 msgid "Create asset"
 msgstr "建立資源項目"
 
-#: links.py:38 links.py:44 links.py:64
+#: links.py:38 links.py:44 links.py:67
 msgid "Delete"
 msgstr "删除"
 
-#: links.py:48 links.py:68
+#: links.py:48 links.py:71
 msgid "Edit"
 msgstr "编辑"
 
-#: links.py:56 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:59 models.py:54 storages.py:21
+#: views/asset_views.py:144
 msgid "Assets"
 msgstr "資源項目"
 
-#: links.py:73
+#: links.py:76 workflow_actions.py:91
 msgid "Transformations"
 msgstr "转换"
 
-#: links.py:78
+#: links.py:81
 msgid "Select new transformation"
 msgstr "选择新的转换"
 
@@ -153,7 +154,7 @@ msgstr "文件"
 msgid "Asset"
 msgstr "資源項目"
 
-#: models.py:90 models.py:161
+#: models.py:90 models.py:161 serializers.py:10
 msgid "Name"
 msgstr "名称"
 
@@ -195,7 +196,7 @@ msgid ""
 "automatic order value will be assigned."
 msgstr "将执行转换的顺序。如果保持不变，将分配自动顺序值。"
 
-#: models.py:165 workflow_actions.py:45
+#: models.py:165 workflow_actions.py:57
 msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
@@ -249,11 +250,19 @@ msgstr "查看现有转换"
 msgid "Generate a image of an object."
 msgstr ""
 
-#: serializers.py:10
+#: serializers.py:13
+msgid "Image path"
+msgstr ""
+
+#: serializers.py:16 serializers.py:32
 msgid "Image URL"
 msgstr ""
 
-#: serializers.py:17
+#: serializers.py:21
+msgid "Template name"
+msgstr ""
+
+#: serializers.py:24 serializers.py:39
 msgid "URL"
 msgstr "网址"
 
@@ -320,7 +329,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "項目快取"
 
-#: transformation_mixins.py:20 transformations.py:618
+#: transformation_mixins.py:20 transformations.py:617
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -337,11 +346,11 @@ msgstr ""
 msgid "Transparency"
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:723
+#: transformation_mixins.py:29 transformations.py:722
 msgid "Zoom level in percent."
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:718
+#: transformation_mixins.py:29 transformations.py:717
 msgid "Zoom"
 msgstr "放大"
 
@@ -435,7 +444,7 @@ msgstr ""
 msgid "Color used to fill the rectangle."
 msgstr ""
 
-#: transformation_mixins.py:350 transformations.py:625
+#: transformation_mixins.py:350 transformations.py:624
 msgid "Fill color"
 msgstr ""
 
@@ -539,7 +548,7 @@ msgstr "翻动"
 msgid "Gaussian blur"
 msgstr "高斯模糊"
 
-#: transformations.py:530 transformations.py:693
+#: transformations.py:530 transformations.py:692
 msgid "Radius"
 msgstr ""
 
@@ -571,51 +580,51 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: transformations.py:612
+#: transformations.py:611
 msgid "Rotate"
 msgstr "旋转"
 
-#: transformations.py:620
+#: transformations.py:619
 msgid "Degrees"
 msgstr ""
 
-#: transformations.py:624
+#: transformations.py:623
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 
-#: transformations.py:655
+#: transformations.py:654
 msgid "Rotate 90 degrees"
 msgstr "旋转90度"
 
-#: transformations.py:666
+#: transformations.py:665
 msgid "Rotate 180 degrees"
 msgstr "旋转180度"
 
-#: transformations.py:677
+#: transformations.py:676
 msgid "Rotate 270 degrees"
 msgstr "旋转270度"
 
-#: transformations.py:687
+#: transformations.py:686
 msgid "Unsharp masking"
 msgstr "钝化掩模"
 
-#: transformations.py:692
+#: transformations.py:691
 msgid "The blur radius in pixels."
 msgstr ""
 
-#: transformations.py:696
+#: transformations.py:695
 msgid "Unsharp strength in percent."
 msgstr ""
 
-#: transformations.py:697 transformations.py:724
+#: transformations.py:696 transformations.py:723
 msgid "Percent"
 msgstr ""
 
-#: transformations.py:701
+#: transformations.py:700
 msgid "Minimum brightness change that will be sharpened."
 msgstr ""
 
-#: transformations.py:702
+#: transformations.py:701
 msgid "Tthreshold"
 msgstr ""
 
@@ -632,7 +641,7 @@ msgstr "刪除執行中要求的%(count)d資源項目"
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
+msgstr[0] "刪除所選之所有資源項目?"
 
 #: views/asset_views.py:70
 #, python-format
@@ -714,28 +723,32 @@ msgstr "选择"
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
 msgstr ""
 
-#: workflow_actions.py:22
+#: workflow_actions.py:34
 msgid "Pages"
 msgstr "页面"
 
-#: workflow_actions.py:25
+#: workflow_actions.py:37
 msgid ""
 "Pages to which the new transformations will be added. Separate by commas "
 "and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 
-#: workflow_actions.py:32
+#: workflow_actions.py:44
 msgid "Transformation class"
 msgstr "轉變格式型別"
 
-#: workflow_actions.py:37
+#: workflow_actions.py:49
 msgid "Type of transformation to add."
 msgstr "新增轉變格式的種類"
 
-#: workflow_actions.py:42
+#: workflow_actions.py:54
 msgid "Transformation arguments"
 msgstr "轉變參數"
 
-#: workflow_actions.py:51
+#: workflow_actions.py:63
 msgid "Add transformation"
 msgstr "新增轉變格式"
+
+#: workflow_actions.py:86
+msgid "Objects"
+msgstr ""

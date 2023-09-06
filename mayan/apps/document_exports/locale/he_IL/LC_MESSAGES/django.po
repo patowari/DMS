@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -22,19 +22,19 @@ msgstr ""
 
 #: apps.py:20 events.py:6 permissions.py:6
 msgid "Document exports"
-msgstr "ייצוא מסמכים"
+msgstr ""
 
 #: classes.py:59
 msgid "Document version export to PDF"
-msgstr "ייצוא גרסת מסמך ל-PDF"
+msgstr ""
 
 #: events.py:10
 msgid "Document version exported"
-msgstr "גרסת המסמך יצאה"
+msgstr ""
 
 #: links.py:11
 msgid "Export"
-msgstr "יְצוּא"
+msgstr ""
 
 #: literals.py:4
 #, python-format
@@ -43,20 +43,22 @@ msgid ""
 " for download using the link: %(download_url)s or from the downloads area "
 "(%(download_list_url)s)."
 msgstr ""
-"גרסת המסמך &quot;%(document_version)s&quot; יצאה וזמינה להורדה באמצעות "
-"הקישור: %(download_url)s או מאזור ההורדות (%(download_list_url)s)."
 
 #: literals.py:9
 msgid "Document version exported."
-msgstr "גרסת המסמך יצאה."
+msgstr ""
 
 #: permissions.py:10
 msgid "Export document versions"
 msgstr "ייצוא גרסאות מסמך"
 
 #: queues.py:7
+msgid "Documents exports"
+msgstr ""
+
+#: queues.py:13
 msgid "Export a document version to a PDF"
-msgstr "ייצא גרסת מסמך לקובץ PDF"
+msgstr ""
 
 #: views.py:17
 #, python-format
@@ -92,4 +94,4 @@ msgstr "ייצוא גרסת מסמך %(count)d."
 msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."
-msgstr "התהליך יתבצע ברקע. הקובץ המיוצא יהיה זמין באזור ההורדות."
+msgstr ""

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
@@ -25,87 +25,83 @@ msgstr ""
 msgid "Common"
 msgstr "Common"
 
-#: dependencies.py:165
-msgid "Transifex Client"
-msgstr ""
-
-#: dependencies.py:182
+#: dependencies.py:186
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Χρησιμοποιείται για την εκτός σύνδεσης μετάφραση συμβολοσειρών κειμένου του "
 "κώδικα."
 
-#: dependencies.py:191
+#: dependencies.py:195
 msgid "Provides style checking."
 msgstr "Παρέχει έλεγχο του στυλ."
 
-#: dependencies.py:196
+#: dependencies.py:200
 msgid "Command line environment with autocompletion."
 msgstr "Γραμμή εντολών με αυτόματη συμπλήρωση."
 
-#: dependencies.py:201
+#: dependencies.py:209
 msgid "Checks proper formatting of the README file."
 msgstr "Ελέγχει την ορθή μορφοποίηση του αρχείου README."
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "Σχετικά με"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "Απόκτησε το βιβλίο"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
 msgstr "Φόρουμ"
 
-#: links.py:45 views.py:53
+#: links.py:49 views.py:53
 msgid "License"
 msgstr "Άδεια χρήσης"
 
-#: links.py:50
+#: links.py:54
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: links.py:54
+#: links.py:58
 msgid "Setup"
 msgstr "Ρυθμίσεις"
 
-#: links.py:57
+#: links.py:61
 msgid "Source code"
 msgstr "Πηγαίος κώδικας"
 
-#: links.py:61
+#: links.py:65
 msgid "Online store"
 msgstr "Ηλεκτρονικό κατάστημα"
 
-#: links.py:65
+#: links.py:69
 msgid "Get support"
 msgstr "Βοήθεια"
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:73 views.py:134
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: literals.py:30
+#: literals.py:27
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Αυτό το χαρακτηριστικό είναι ξεπερασμένο και θα αφαιρεθεί σε επόμενη έκδοση."
 
-#: literals.py:39
+#: literals.py:36
 msgid "Days"
 msgstr "Ημέρες"
 
-#: literals.py:40
+#: literals.py:37
 msgid "Hours"
 msgstr "Ώρες"
 
-#: literals.py:41
+#: literals.py:38
 msgid "Minutes"
 msgstr "Λεπτά"
 
@@ -140,6 +136,10 @@ msgstr "Χρήστης"
 #: permissions.py:10
 msgid "Copy object"
 msgstr "Αντιγραφή αντικειμένου"
+
+#: serializers.py:11
+msgid "URL"
+msgstr "Διεύθυνση URL"
 
 #: settings.py:24
 msgid ""

@@ -4,21 +4,21 @@
 # 
 # Translators:
 # Translators:
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
+# Olivier W, 2023
 # Roberto Rosario, 2023
+# Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
-# Guillaume Trottier <gui.trottier@gmail.com>, 2023
-# Olivier W, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Olivier W, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,22 +30,26 @@ msgstr ""
 msgid "Dynamic search"
 msgstr "Recherche dynamique"
 
-#: forms.py:15
+#: forms.py:19
 msgid "Match all"
 msgstr "Correspond à tous"
 
-#: forms.py:16
+#: forms.py:20
 msgid "Return only results that match all fields."
 msgstr ""
 
-#: forms.py:33 templates/dynamic_search/search_box.html:43
+#: forms.py:52
+msgid "Search logic"
+msgstr ""
+
+#: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr "Termes de recherche"
 
 #: links.py:20
 msgid "Basic search"
-msgstr ""
+msgstr "Recherche rapide"
 
 #: links.py:24 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
@@ -119,22 +123,22 @@ msgid ""
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
 
-#: search_fields.py:289
+#: search_fields.py:311
 msgid "Any"
-msgstr ""
+msgstr "N'importe quel"
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr "Modèle de recherche inconnu `%s`."
 
-#: search_models.py:108
+#: search_models.py:114
 msgid "All content"
-msgstr ""
+msgstr "Tout le contenu"
 
 #: search_query_types.py:167
 msgid "Exact"
-msgstr ""
+msgstr "Exact"
 
 #: search_query_types.py:173
 msgid "Fuzzy"
@@ -142,19 +146,19 @@ msgstr ""
 
 #: search_query_types.py:179
 msgid "Greater than"
-msgstr ""
+msgstr "Plus grand que"
 
 #: search_query_types.py:185
 msgid "Greater than or equal"
-msgstr ""
+msgstr "Meilleur que ou égal"
 
 #: search_query_types.py:191
 msgid "Less than"
-msgstr ""
+msgstr "Moins que"
 
 #: search_query_types.py:197
 msgid "Less than or equal"
-msgstr ""
+msgstr "Inférieur ou égal"
 
 #: search_query_types.py:203
 msgid "Partial"
@@ -174,11 +178,11 @@ msgstr ""
 
 #: serializers.py:14
 msgid "Field name"
-msgstr ""
+msgstr "Nom de champ"
 
 #: serializers.py:17
 msgid "Label"
-msgstr "Étiquette"
+msgstr "Libellé"
 
 #: serializers.py:23
 msgid "App label"
@@ -190,7 +194,7 @@ msgstr ""
 
 #: serializers.py:29
 msgid "Primary key"
-msgstr ""
+msgstr "Clé primaire"
 
 #: serializers.py:32
 msgid "Search fields"
@@ -232,11 +236,11 @@ msgstr ""
 
 #: settings.py:69
 msgid "Maximum number of search results to fetch and display."
-msgstr ""
+msgstr "Nombre maximal de résultats de recherche à afficher."
 
 #: templates/dynamic_search/app/list_toolbar.html:18
 msgid "Filter terms"
-msgstr ""
+msgstr "Termes pour filtrer"
 
 #: templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
@@ -249,7 +253,7 @@ msgstr ""
 
 #: value_transformations.py:49
 msgid "@ sign replace"
-msgstr ""
+msgstr "Remplacer le signe @"
 
 #: value_transformations.py:59
 msgid "Case fold"
@@ -261,7 +265,7 @@ msgstr ""
 
 #: value_transformations.py:89
 msgid "To boolean"
-msgstr ""
+msgstr "À booléen"
 
 #: value_transformations.py:102
 msgid "To date time"
@@ -269,7 +273,7 @@ msgstr ""
 
 #: value_transformations.py:124
 msgid "Date time ISO format"
-msgstr ""
+msgstr "Date et de l'heure (format ISO)"
 
 #: value_transformations.py:134
 msgid "Date time simple format"
@@ -317,7 +321,7 @@ msgstr "Recherche pour : %s"
 #: views.py:139
 #, python-format
 msgid "Advanced search for: %s"
-msgstr ""
+msgstr "Recherche avancée pour : %s"
 
 #: views.py:174
 msgid "Try again using different terms. "

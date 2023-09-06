@@ -5,18 +5,18 @@
 # Translators:
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
-# Ali <alimahwer@yahoo.com>, 2023
 # Roberto Rosario, 2023
-# Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2023
+# Ali <alimahwer@yahoo.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "قوائم الصلاحيات"
 
@@ -36,7 +36,7 @@ msgstr ""
 "المادة التي تم منح حق الوصول إليها. عند ترتيب المواد، يستخدم النوع فقط و ليس"
 " الاسم الفعلي للمادة."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
 msgstr "عنصر"
 
@@ -68,7 +68,7 @@ msgstr "إنشاء صلاحيات جديدة"
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "الصلاحيات"
 
@@ -94,7 +94,7 @@ msgstr "عدد الأذونات"
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "معرف الكائن"
 
@@ -223,44 +223,48 @@ msgstr "لا توجد قوائم بحق الوصول ACL"
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "نوع الكائن"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "نوع الكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr "المعرف الرقمي للكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "أدوار"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "الأدوار التي سيتم تعديل الوصول إليها."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "صلاحيات منح / إبطال إلى / من دور الكائن المحدد أعلاه."
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr "إتاحة الوصول إلى الكائن"
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr "إبطال الوصول إلى الكائن"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr "منح حق الوصول إلى الوثيقة"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr "إبطال صلاحية الوصول إلى الوثيقة"

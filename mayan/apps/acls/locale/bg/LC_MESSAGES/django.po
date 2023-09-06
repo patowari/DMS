@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2023
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2023
 # Roberto Rosario, 2023
+# 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2023
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "ACL"
 
@@ -35,7 +35,7 @@ msgstr ""
 "Обект, за който е предоставен достъп. При сортиране на обекти се използва "
 "само типът, а не действителният етикет на обекта."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
 msgstr "Обект"
 
@@ -67,7 +67,7 @@ msgstr "Нов ACL"
 msgid "Delete"
 msgstr "Изтрийте"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "Разрешения"
 
@@ -93,7 +93,7 @@ msgstr "Брой разрешения"
 msgid "Content type"
 msgstr "Тип съдържание"
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "Идентификатор на обекта"
 
@@ -225,44 +225,48 @@ msgstr "Няма ACL"
 msgid "Global access control lists"
 msgstr "Глобални списъци за контрол на достъпа"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "Тип обект"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "Тип на обекта, за който достъпа ще бъде променен"
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr "Числов показател на обекта, достъпа на който ще бъде променен."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "Роли"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "Роли, за които достъпа ще бъде променен."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "Разрешение за даване/отнемане на/от ролята за обекта избран по-горе."
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr "Дайте достъп до обекта"
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr "Отменете достъпа до обекта"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr "Даване достъп към документа"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr "Отнемане достъп към документа"

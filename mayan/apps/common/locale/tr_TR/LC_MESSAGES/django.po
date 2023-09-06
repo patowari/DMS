@@ -5,6 +5,7 @@
 # Translators:
 # Translators:
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2023
+# abc Def <hdogan1974@gmail.com>, 2023
 # serhatcan77 <serhat_can@yahoo.com>, 2023
 # Emine Öztürk <oemine075@gmail.com>, 2023
 # 
@@ -12,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -26,87 +27,83 @@ msgstr ""
 msgid "Common"
 msgstr "Ortak"
 
-#: dependencies.py:165
-msgid "Transifex Client"
-msgstr "Transifex İstemcisi"
-
-#: dependencies.py:182
+#: dependencies.py:186
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Kod metin dizelerinin çevrimdışı çevirisine izin vermek için kullanılır."
 
-#: dependencies.py:191
+#: dependencies.py:195
 msgid "Provides style checking."
 msgstr "Stil kontrolü sağlar."
 
-#: dependencies.py:196
+#: dependencies.py:200
 msgid "Command line environment with autocompletion."
 msgstr "Otomatik tamamlama ile komut satırı ortamı."
 
-#: dependencies.py:201
+#: dependencies.py:209
 msgid "Checks proper formatting of the README file."
 msgstr "README dosyasının doğru biçimlendirmesini denetler."
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "Bu konuda"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "Kitabı al"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
 msgstr "Belgeleme"
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:45 views.py:53
+#: links.py:49 views.py:53
 msgid "License"
 msgstr "Lisans"
 
-#: links.py:50
+#: links.py:54
 msgid "Copy"
 msgstr "Kopya"
 
-#: links.py:54
+#: links.py:58
 msgid "Setup"
 msgstr "Ayarlar"
 
-#: links.py:57
+#: links.py:61
 msgid "Source code"
 msgstr "Kaynak kod"
 
-#: links.py:61
+#: links.py:65
 msgid "Online store"
 msgstr "Çevrimiçi mağaza"
 
-#: links.py:65
+#: links.py:69
 msgid "Get support"
 msgstr "Destek alın"
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:73 views.py:134
 msgid "Tools"
 msgstr "Araçlar"
 
-#: literals.py:30
+#: literals.py:27
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Bu özellik kullanımdan kaldırılmıştır ve gelecekteki bir sürümde "
 "kaldırılacaktır."
 
-#: literals.py:39
+#: literals.py:36
 msgid "Days"
 msgstr "Günler"
 
-#: literals.py:40
+#: literals.py:37
 msgid "Hours"
 msgstr "Saatler"
 
-#: literals.py:41
+#: literals.py:38
 msgid "Minutes"
 msgstr "Dakikalar"
 
@@ -141,6 +138,10 @@ msgstr "Kullanıcı"
 #: permissions.py:10
 msgid "Copy object"
 msgstr "Nesneyi Kopyala"
+
+#: serializers.py:11
+msgid "URL"
+msgstr "URL"
 
 #: settings.py:24
 msgid ""

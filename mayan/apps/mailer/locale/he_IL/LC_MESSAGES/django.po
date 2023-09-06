@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -23,111 +22,125 @@ msgstr ""
 
 #: apps.py:48
 msgid "Mailer"
-msgstr "מיילר"
+msgstr ""
 
-#: classes.py:60
+#: classes.py:27
+msgid "General"
+msgstr ""
+
+#: classes.py:40
+msgid "From"
+msgstr ""
+
+#: classes.py:43
+msgid ""
+"The sender's address. Some system will refuse to send messages if this value"
+" is not set."
+msgstr ""
+
+#: classes.py:58
+msgid "Compatibility"
+msgstr ""
+
+#: classes.py:68
 msgid "Null backend"
-msgstr "Backend אפס"
+msgstr ""
 
 #: events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "Mailing"
-msgstr "דיוור"
+msgstr ""
 
 #: events.py:10
 msgid "Email sent"
-msgstr "הדוא&quot;ל נשלח"
+msgstr ""
 
 #: events.py:13
 msgid "Mailing profile created"
-msgstr "נוצר פרופיל דיוור"
+msgstr ""
 
 #: events.py:16
 msgid "Mailing profile edited"
-msgstr "פרופיל הדיוור נערך"
+msgstr ""
 
 #: forms.py:58 forms.py:95
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
 msgstr ""
-"כתובת המייל של הנמען. יכולות להיות מספר כתובות מופרדות בפסיק או נקודה-פסיק."
 
 #: forms.py:60 forms.py:97
 msgid "Email address"
-msgstr "כתובת דוא&quot;ל"
+msgstr ""
 
-#: forms.py:63 workflow_action_mixins.py:67
+#: forms.py:63 workflow_action_mixins.py:62
 msgid "Subject"
-msgstr "נושא"
+msgstr ""
 
-#: forms.py:66 workflow_action_mixins.py:76
+#: forms.py:66 workflow_action_mixins.py:71
 msgid "Body"
-msgstr "גוּף"
+msgstr ""
 
 #: forms.py:70
 msgid "The email profile that will be used to send this email."
-msgstr "פרופיל האימייל שישמש לשליחת האימייל הזה."
+msgstr ""
 
-#: forms.py:71 models.py:50 views/mailing_profile_views.py:139
-#: workflow_action_mixins.py:12
+#: forms.py:71 models.py:44 workflow_action_mixins.py:107
+#: workflow_action_mixins.py:121
 msgid "Mailing profile"
-msgstr "פרופיל דיוור"
+msgstr ""
 
 #: forms.py:77
 msgid "The driver to use when sending emails."
-msgstr "הנהג לשימוש בעת שליחת מיילים."
+msgstr ""
 
 #: forms.py:78
 msgid "Backend"
-msgstr "אחורי"
+msgstr "מנוע אחורי (backend)"
 
-#: links.py:33 links.py:36
+#: links.py:34 links.py:37
 msgid "Email document link"
-msgstr "קישור למסמך באימייל"
+msgstr ""
 
-#: links.py:46 links.py:51
+#: links.py:47 links.py:52
 msgid "Email document file"
-msgstr "קובץ מסמך באימייל"
+msgstr ""
 
-#: links.py:57 links.py:62
+#: links.py:58 links.py:63
 msgid "Email document file link"
-msgstr "קישור לקובץ מסמך באימייל"
+msgstr ""
 
-#: links.py:72 links.py:77
+#: links.py:73 links.py:78
 msgid "Email document version"
-msgstr "גרסת מסמך באימייל"
+msgstr ""
 
-#: links.py:83
+#: links.py:84
 msgid "Email document version link"
-msgstr "קישור גרסת מסמך באימייל"
+msgstr ""
 
-#: links.py:88
+#: links.py:89
 msgid "Email link version"
-msgstr "גרסת קישור למייל"
+msgstr ""
 
-#: links.py:97
+#: links.py:98
 msgid "Create mailing profile"
-msgstr "צור פרופיל דיוור"
+msgstr ""
 
-#: links.py:103
+#: links.py:104
 msgid "Delete"
-msgstr "לִמְחוֹק"
+msgstr "מחיקה"
 
-#: links.py:107
+#: links.py:108
 msgid "Edit"
-msgstr "לַעֲרוֹך"
+msgstr "עריכה"
 
-#: links.py:113
-msgid "Mailing profiles list"
-msgstr "רשימת פרופילי דיוור"
-
-#: links.py:117 models.py:51
+#: links.py:112 links.py:120 links.py:126 models.py:45
+#: views/mailing_profile_views.py:134
 msgid "Mailing profiles"
-msgstr "פרופילי דיוור"
+msgstr ""
 
-#: links.py:122 views/mailing_profile_views.py:168
+#: links.py:130 views/mailing_profile_views.py:164
 msgid "Test"
-msgstr "מִבְחָן"
+msgstr ""
 
 #: literals.py:7
 #, python-format
@@ -137,12 +150,10 @@ msgid ""
 " --------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
-"לאימייל זה מצורף ה-{{ object_name }}: {{ object }} -------- דוא&quot;ל זה "
-"נשלח מ-%(project_title)s (%(project_website)s)"
 
 #: literals.py:11
 msgid "{{ object_name }}: {{ object }}"
-msgstr "{{ object_name }}: {{ object }}"
+msgstr ""
 
 #: literals.py:13
 #, python-format
@@ -152,56 +163,46 @@ msgid ""
 "--------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
-"כדי לגשת ל-{{ object_name }} זה, לחץ על הקישור הבא: {{ קישור }} -------- "
-"דוא&quot;ל זה נשלח מ-%(project_title)s (%(project_website)s)"
 
 #: literals.py:17
 msgid "Link for {{ object_name }}: {{ object }}"
-msgstr "קישור עבור {{ object_name }}: {{ object }}"
+msgstr ""
 
-#: mailers.py:19 mailers.py:108
-msgid "From"
-msgstr "מ"
+#: mailers.py:14
+msgid "Django SMTP backend"
+msgstr ""
 
-#: mailers.py:22 mailers.py:111
-msgid ""
-"The sender's address. Some system will refuse to send messages if this value"
-" is not set."
-msgstr "כתובת השולח. מערכת מסוימת תסרב לשלוח הודעות אם ערך זה לא מוגדר."
-
-#: mailers.py:28
+#: mailers.py:23
 msgid "Host"
-msgstr "מנחה"
+msgstr ""
 
-#: mailers.py:30
+#: mailers.py:26
 msgid "The host to use for sending email."
-msgstr "המארח לשימוש לשליחת דואר אלקטרוני."
+msgstr ""
 
-#: mailers.py:35
+#: mailers.py:31
 msgid "Port"
-msgstr "נמל"
+msgstr ""
 
-#: mailers.py:37
+#: mailers.py:33
 msgid "Port to use for the SMTP server."
-msgstr "יציאה לשימוש עבור שרת ה-SMTP."
+msgstr ""
 
-#: mailers.py:40
+#: mailers.py:36
 msgid "Use TLS"
-msgstr "השתמש ב-TLS"
+msgstr ""
 
-#: mailers.py:43
+#: mailers.py:39
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
 msgstr ""
-"האם להשתמש בחיבור TLS (מאבטח) בעת דיבור עם שרת ה-SMTP. זה משמש לחיבורי TLS "
-"מפורשים, בדרך כלל ביציאה 587."
 
-#: mailers.py:48
+#: mailers.py:44
 msgid "Use SSL"
-msgstr "השתמש ב-SSL"
+msgstr ""
 
-#: mailers.py:51
+#: mailers.py:47
 msgid ""
 "Whether to use an implicit TLS (secure) connection when talking to the SMTP "
 "server. In most email documentation this type of TLS connection is referred "
@@ -210,309 +211,291 @@ msgid ""
 "and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
 " True."
 msgstr ""
-"האם להשתמש בחיבור TLS מרומז (מאובטח) בעת שיחה עם שרת ה-SMTP. ברוב תיעוד "
-"הדואר האלקטרוני סוג זה של חיבור TLS מכונה SSL. הוא משמש בדרך כלל ביציאה 465."
-" אם אתה נתקל בבעיות, עיין בהגדרת TLS המפורשת &quot;השתמש ב-TLS&quot;. שים לב"
-" ש&quot;השתמש ב-TLS&quot; ו-&quot;השתמש ב-SSL&quot; סותרים זה את זה, אז הגדר"
-" רק אחת מההגדרות האלה ל-True."
 
-#: mailers.py:60
-msgid "Username"
-msgstr "שם משתמש"
-
-#: mailers.py:63
-msgid ""
-"Username to use for the SMTP server. If empty, authentication won't "
-"attempted."
-msgstr "שם משתמש לשימוש עבור שרת ה-SMTP. אם ריק, האימות לא יתנסה."
-
-#: mailers.py:69
-msgid "Password"
-msgstr "סיסמה"
-
-#: mailers.py:72
-msgid ""
-"Password to use for the SMTP server. This setting is used in conjunction "
-"with the username when authenticating to the SMTP server. If either of these"
-" settings is empty, authentication won't be attempted."
+#: mailers.py:59
+msgid "The credential entry to use to authenticate against the email server."
 msgstr ""
-"סיסמה לשימוש עבור שרת ה-SMTP. הגדרה זו משמשת בשילוב עם שם המשתמש בעת אימות "
-"לשרת SMTP. אם אחת מההגדרות הללו ריקה, לא יתבצע ניסיון אימות."
 
-#: mailers.py:81
-msgid "Django SMTP backend"
-msgstr "Django SMTP backend"
+#: mailers.py:66
+msgid "Credential"
+msgstr ""
 
-#: mailers.py:103
-msgid "File path"
-msgstr "נתיב הקובץ"
+#: mailers.py:80
+msgid "Server"
+msgstr ""
 
-#: mailers.py:118
+#: mailers.py:84
+msgid "Authentication"
+msgstr "אימות משתמש"
+
+#: mailers.py:98
 msgid "Django file based backend"
-msgstr "Backend מבוסס קובץ Django"
+msgstr ""
 
-#: model_mixins.py:169
+#: mailers.py:106
+msgid "File path"
+msgstr ""
+
+#: mailers.py:122
+msgid "Storage"
+msgstr ""
+
+#: model_mixins.py:171
 msgid "Test email from Mayan EDMS"
-msgstr "דוא&quot;ל בדיקה מ- Mayan EDMS"
+msgstr ""
 
 #: models.py:27
 msgid "A short text describing the mailing profile."
-msgstr "טקסט קצר המתאר את פרופיל הדיוור."
+msgstr ""
 
 #: models.py:28
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
 #: models.py:32
 msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
-msgstr "אם כברירת מחדל, פרופיל דיוור זה ייבחר מראש בטופס שליחת המסמך."
+msgstr ""
 
 #: models.py:34
 msgid "Default"
-msgstr "בְּרִירַת מֶחדָל"
+msgstr ""
 
-#: models.py:36
+#: models.py:37
 msgid "Enabled"
-msgstr "מופעל"
-
-#: models.py:39
-msgid "The dotted Python path to the backend class."
-msgstr "הנתיב המקווקו של Python למחלקה האחורית."
-
-#: models.py:40
-msgid "Backend path"
-msgstr "נתיב אחורי"
-
-#: models.py:43
-msgid "Backend data"
-msgstr "נתוני אחורי"
+msgstr "מופעל/מאופשר"
 
 #: permissions.py:12
 msgid "Create a mailing profile"
-msgstr "צור פרופיל דיוור"
+msgstr ""
 
 #: permissions.py:15
 msgid "Delete a mailing profile"
-msgstr "מחק פרופיל דיוור"
+msgstr ""
 
 #: permissions.py:18
 msgid "Edit a mailing profile"
-msgstr "ערוך פרופיל דיוור"
+msgstr ""
 
 #: permissions.py:21
 msgid "View a mailing profile"
-msgstr "הצג פרופיל דיוור"
+msgstr ""
 
 #: permissions.py:24
 msgid "Use a mailing profile"
-msgstr "השתמש בפרופיל דיוור"
+msgstr ""
 
 #: permissions.py:30
 msgid "Send document link via email"
-msgstr "שלח קישור למסמך באימייל"
+msgstr ""
 
 #: permissions.py:36
 msgid "Send document file via email"
-msgstr "שלח קובץ מסמך בדוא&quot;ל"
+msgstr ""
 
 #: permissions.py:40
 msgid "Send document file link via email"
-msgstr "שלח קישור לקובץ מסמך בדוא&quot;ל"
+msgstr ""
 
 #: permissions.py:47
 msgid "Send document version via email"
-msgstr "שלח גרסת מסמך בדוא&quot;ל"
+msgstr ""
 
 #: permissions.py:51
 msgid "Send document version link via email"
-msgstr "שלח קישור לגרסת המסמך בדוא&quot;ל"
+msgstr ""
 
 #: queues.py:12
 msgid "Send object"
-msgstr "שלח אובייקט"
+msgstr ""
 
 #: settings.py:17
 msgid "Template for the document email form subject line."
-msgstr "תבנית עבור שורת הנושא של טופס הדוא&quot;ל של המסמך."
+msgstr ""
 
 #: settings.py:23
 msgid "Template for the document email form body text. Can include HTML."
-msgstr "תבנית עבור טקסט גוף הדוא&quot;ל של המסמך. יכול לכלול HTML."
+msgstr ""
 
 #: settings.py:29
 msgid "Template for the document link email form subject line."
-msgstr "תבנית עבור שורת הנושא של טופס הדוא&quot;ל של קישור המסמך."
+msgstr ""
 
 #: settings.py:35
 msgid "Template for the document link email form body text. Can include HTML."
-msgstr "תבנית עבור טקסט גוף הדוא&quot;ל של קישור המסמך. יכול לכלול HTML."
+msgstr ""
 
 #: validators.py:14
 #, python-format
 msgid "%(email)s is not a valid email address."
-msgstr "%(email)s אינה כתובת דוא&quot;ל חוקית."
+msgstr ""
 
 #: views/base.py:65
 msgid "Document file"
-msgstr "קובץ מסמך"
+msgstr ""
 
 #: views/document_file_views.py:21
 #, python-format
 msgid "%(count)d document file queued for email delivery"
-msgstr "%(count)d קובץ מסמכים בתור למשלוח דוא&quot;ל"
+msgstr ""
 
 #: views/document_file_views.py:23
 #, python-format
 msgid "%(count)d document files queued for email delivery"
-msgstr "%(count)d קבצי מסמכים בתור למשלוח דואר אלקטרוני"
+msgstr ""
 
 #: views/document_file_views.py:36
 #, python-format
 msgid "%(count)d document file link queued for email delivery"
-msgstr "%(count)d קישור קובץ מסמך בתור למשלוח דוא&quot;ל"
+msgstr ""
 
 #: views/document_file_views.py:39
 #, python-format
 msgid "%(count)d document file links queued for email delivery"
-msgstr "%(count)d קישורי קבצי מסמכים בתור למשלוח דואר אלקטרוני"
+msgstr ""
 
 #: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document version queued for email delivery"
-msgstr "גרסת מסמך %(count)d בתור למשלוח דואר אלקטרוני"
+msgstr ""
 
 #: views/document_version_views.py:25
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
-msgstr "%(count)d גרסאות מסמכים בתור למשלוח דואר אלקטרוני"
+msgstr ""
 
 #: views/document_version_views.py:38
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
-msgstr "%(count)d קישור לגרסת מסמך בתור למשלוח דוא&quot;ל"
+msgstr ""
 
 #: views/document_version_views.py:41
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
-msgstr "%(count)d קישורי גרסת מסמכים בתור למשלוח דואר אלקטרוני"
+msgstr ""
 
 #: views/document_views.py:15
 #, python-format
 msgid "%(count)d document link queued for email delivery"
-msgstr "%(count)d קישור למסמך בתור למשלוח דוא&quot;ל"
+msgstr ""
 
 #: views/document_views.py:17
 #, python-format
 msgid "%(count)d document links queued for email delivery"
-msgstr "%(count)d קישורי מסמכים בתור למשלוח דואר אלקטרוני"
+msgstr ""
 
-#: views/mailing_profile_views.py:33
+#: views/mailing_profile_views.py:37
 msgid "New mailing profile backend selection"
-msgstr "בחירת קצה אחורי של פרופיל דיוור חדש"
+msgstr ""
 
-#: views/mailing_profile_views.py:71
+#: views/mailing_profile_views.py:66
 #, python-format
 msgid "Create a \"%s\" mailing profile"
-msgstr "צור פרופיל דיוור &quot;%s&quot;."
+msgstr ""
 
-#: views/mailing_profile_views.py:96
+#: views/mailing_profile_views.py:91
 #, python-format
 msgid "Delete mailing profile: %s"
-msgstr "מחק פרופיל דיוור: %s"
+msgstr ""
 
-#: views/mailing_profile_views.py:109
+#: views/mailing_profile_views.py:104
 #, python-format
 msgid "Edit mailing profile: %s"
-msgstr "ערוך פרופיל דיוור: %s"
+msgstr ""
 
-#: views/mailing_profile_views.py:134
+#: views/mailing_profile_views.py:129
 msgid ""
 "Mailing profiles are email configurations. Mailing profiles allow sending "
 "documents as attachments or as links via email."
 msgstr ""
-"פרופילי דיוור הם תצורות דוא&quot;ל. פרופילי דיוור מאפשרים שליחת מסמכים "
-"כקבצים מצורפים או כקישורים באמצעות דואר אלקטרוני."
 
-#: views/mailing_profile_views.py:138
+#: views/mailing_profile_views.py:133
 msgid "No mailing profiles available"
 msgstr ""
 
-#: views/mailing_profile_views.py:160
+#: views/mailing_profile_views.py:156
 msgid "Test email sent."
 msgstr ""
 
-#: views/mailing_profile_views.py:169
+#: views/mailing_profile_views.py:165
 #, python-format
 msgid "Test mailing profile: %s"
 msgstr ""
 
 #: workflow_action_mixins.py:15
-msgid "Mailing profile to use when sending the email."
-msgstr ""
-
-#: workflow_action_mixins.py:20
 msgid "Recipient"
 msgstr ""
 
-#: workflow_action_mixins.py:23
+#: workflow_action_mixins.py:18
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon. A template can be used to reference properties of the "
 "document."
 msgstr ""
 
-#: workflow_action_mixins.py:31
+#: workflow_action_mixins.py:26
 msgid "CC"
 msgstr ""
 
-#: workflow_action_mixins.py:34 workflow_action_mixins.py:46
+#: workflow_action_mixins.py:29 workflow_action_mixins.py:41
 msgid ""
 "Address used in the \"Bcc\" header when sending the email. Can be multiple "
 "addresses separated by comma or semicolon. A template can be used to "
 "reference properties of the document."
 msgstr ""
 
-#: workflow_action_mixins.py:43
+#: workflow_action_mixins.py:38
 msgid "BCC"
 msgstr ""
 
-#: workflow_action_mixins.py:55
+#: workflow_action_mixins.py:50
 msgid "Reply to"
 msgstr ""
 
-#: workflow_action_mixins.py:58
+#: workflow_action_mixins.py:53
 msgid ""
 "Address used in the \"Reply-To\" header when sending the email. Can be "
 "multiple addresses separated by comma or semicolon. A template can be used "
 "to reference properties of the document."
 msgstr ""
 
-#: workflow_action_mixins.py:70
+#: workflow_action_mixins.py:65
 msgid "Subject of the email. Can be a string or a template."
 msgstr ""
 
-#: workflow_action_mixins.py:79
+#: workflow_action_mixins.py:74
 msgid "Body of the email to send. Can be a string or a template."
 msgstr ""
 
-#: workflow_action_mixins.py:86 workflow_actions.py:14
+#: workflow_action_mixins.py:81 workflow_actions.py:22
 msgid "Attachment"
 msgstr ""
 
-#: workflow_action_mixins.py:89
+#: workflow_action_mixins.py:84
 msgid "Attach an object to the email."
 msgstr ""
 
-#: workflow_action_mixins.py:98
+#: workflow_action_mixins.py:89
 msgid "Send object via email"
 msgstr ""
 
-#: workflow_actions.py:17
-msgid "Attach the exported document version to the email."
+#: workflow_action_mixins.py:101
+msgid "Mailing profile to use when sending the email."
 msgstr ""
 
-#: workflow_actions.py:26
+#: workflow_action_mixins.py:125
+msgid "Parties"
+msgstr ""
+
+#: workflow_action_mixins.py:129
+msgid "Content"
+msgstr ""
+
+#: workflow_actions.py:10
 msgid "Send document via email"
+msgstr ""
+
+#: workflow_actions.py:25
+msgid "Attach the exported document version to the email."
 msgstr ""

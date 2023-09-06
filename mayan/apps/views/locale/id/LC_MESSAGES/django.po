@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Dzikri Hakim <dzikers@gmail.com>, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
 "MIME-Version: 1.0\n"
@@ -25,127 +25,127 @@ msgstr ""
 msgid "Views"
 msgstr ""
 
-#: forms.py:38
+#: forms.py:35
 msgid "Search"
 msgstr ""
 
-#: forms.py:54
+#: forms.py:53
 msgid "Selection"
 msgstr ""
 
-#: forms.py:342
+#: forms.py:233
 msgid "Label"
 msgstr "Label"
 
-#: forms.py:348
+#: forms.py:239
 msgid "Relationship"
 msgstr ""
 
-#: generics.py:163
+#: generics.py:164
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
 
-#: generics.py:168
+#: generics.py:169
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
 
-#: generics.py:322
+#: generics.py:323
 msgid "Add all"
 msgstr ""
 
-#: generics.py:329
+#: generics.py:330
 msgid "Add"
 msgstr "tambah"
 
-#: generics.py:340
+#: generics.py:341
 msgid "Remove all"
 msgstr ""
 
-#: generics.py:347
+#: generics.py:348
 msgid "Remove"
 msgstr "hapus"
 
-#: generics.py:576
+#: generics.py:579
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr ""
 
-#: generics.py:583
+#: generics.py:586
 msgid "Relationships updated successfully"
 msgstr ""
 
-#: generics.py:646
+#: generics.py:649
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr ""
 
-#: generics.py:665
+#: generics.py:668
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr ""
 
-#: generics.py:676
+#: generics.py:679
 #, python-format
 msgid "%(object)s created successfully."
 msgstr ""
 
-#: generics.py:721
+#: generics.py:724
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr ""
 
-#: generics.py:731
+#: generics.py:734
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr ""
 
-#: generics.py:794
+#: generics.py:797
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:906
+#: generics.py:909
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr ""
 
-#: generics.py:916
+#: generics.py:919
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr ""
 
-#: generics.py:983
+#: generics.py:986
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:984
+#: generics.py:987
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:985
+#: generics.py:988
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:986
+#: generics.py:989
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:990
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:991
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -164,31 +164,31 @@ msgid ""
 "processing up the upload."
 msgstr ""
 
-#: templates/views/app/foot.html:46
+#: templates/views/app/foot.html:45
 msgid "Cancel upload"
 msgstr ""
 
-#: templates/views/app/foot.html:47
+#: templates/views/app/foot.html:46
 msgid "Are you sure you want to cancel this upload?"
 msgstr ""
 
-#: templates/views/app/foot.html:48
+#: templates/views/app/foot.html:47
 msgid "Drop files or click here to upload files"
 msgstr ""
 
-#: templates/views/app/foot.html:49
+#: templates/views/app/foot.html:48
 msgid "Your browser does not support drag and drop file uploads."
 msgstr ""
 
-#: templates/views/app/foot.html:50
+#: templates/views/app/foot.html:49
 msgid "Please use the fallback form below to upload your files."
 msgstr ""
 
-#: templates/views/app/foot.html:51
+#: templates/views/app/foot.html:50
 msgid "Clear"
 msgstr ""
 
-#: templates/views/app/foot.html:52
+#: templates/views/app/foot.html:51
 msgid "Server responded with {{statusCode}} code."
 msgstr ""
 
@@ -219,46 +219,46 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: view_mixins.py:413
+#: view_mixins.py:426
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr ""
 
-#: view_mixins.py:439
+#: view_mixins.py:452
 #, python-format
 msgid "Unable to perform operation on object %(instance)s; %(exception)s."
 msgstr ""
 
-#: view_mixins.py:442
+#: view_mixins.py:455
 #, python-format
 msgid "Operation performed on %(count)d objects."
 msgstr ""
 
-#: view_mixins.py:443
+#: view_mixins.py:456
 #, python-format
 msgid "Operation performed on %(object)s."
 msgstr ""
 
-#: view_mixins.py:444
+#: view_mixins.py:457
 #, python-format
 msgid "Operation performed on %(count)d object."
 msgstr ""
 
-#: view_mixins.py:445
+#: view_mixins.py:458
 #, python-format
 msgid "Perform operation on %(count)d objects."
 msgstr ""
 
-#: view_mixins.py:446
+#: view_mixins.py:459
 #, python-format
 msgid "Perform operation on %(object)s."
 msgstr ""
 
-#: view_mixins.py:447
+#: view_mixins.py:460
 #, python-format
 msgid "Perform operation on %(count)d object."
 msgstr ""
 
-#: view_mixins.py:531
+#: view_mixins.py:544
 msgid "Object"
 msgstr ""

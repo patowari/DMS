@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -95,7 +95,7 @@ msgstr "Plantillas de índice"
 msgid "Template"
 msgstr "Plantilla"
 
-#: handlers.py:19
+#: handlers.py:18
 msgid "Creation date"
 msgstr "Fecha de creación"
 
@@ -104,7 +104,7 @@ msgstr "Fecha de creación"
 msgid "Indexes"
 msgstr "Índices"
 
-#: links.py:53 queues.py:24
+#: links.py:53 queues.py:23
 msgid "Rebuild index"
 msgstr "Reconstruir índice"
 
@@ -118,7 +118,7 @@ msgstr "Reconstruir índices"
 
 #: links.py:70 views/index_template_views.py:452
 msgid "Reset indexes"
-msgstr "Restablecer índices"
+msgstr "Reiniciar índices"
 
 #: links.py:79 views/index_template_views.py:100
 msgid "Create index"
@@ -152,7 +152,7 @@ msgstr "No"
 msgid "Yes"
 msgstr "Si"
 
-#: models/index_instance_model_mixins.py:48
+#: models/index_instance_model_mixins.py:34
 #, python-format
 msgid ""
 "Error indexing document: %(document)s; expression: %(expression)s; "
@@ -161,23 +161,23 @@ msgstr ""
 "Error indexando documento: %(document)s; expresión: %(expression)s; "
 "%(exception)s"
 
-#: models/index_instance_model_mixins.py:216
+#: models/index_instance_model_mixins.py:155
 msgid "Total number of nodes with unique values this item contains."
 msgstr "Número total de nodos con valores únicos que contiene este elemento."
 
-#: models/index_instance_model_mixins.py:225
+#: models/index_instance_model_mixins.py:164
 msgid "Total number of unique documents this item contains."
 msgstr "Número total de documentos únicos que contiene este elemento."
 
-#: models/index_instance_model_mixins.py:235
+#: models/index_instance_model_mixins.py:174
 msgid "Total number of node levels this item contains."
 msgstr "Número total de niveles de nodo que contiene este elemento."
 
-#: models/index_instance_model_mixins.py:304
+#: models/index_instance_model_mixins.py:243
 msgid "The path to the index including all ancestors."
 msgstr "La ruta al nodo del índice, incluidos todos los que lo contienen."
 
-#: models/index_instance_model_mixins.py:306
+#: models/index_instance_model_mixins.py:245
 msgid "Full path"
 msgstr "Ruta completa"
 
@@ -266,8 +266,7 @@ msgstr "Índice"
 msgid "Enter a template to render. Use Django's default templating language."
 msgstr ""
 "Ingrese una plantilla para renderizar. Utilice el lenguaje de plantillas "
-"predeterminado de Django "
-"(https://docs.djangoproject.com/en/1.11/ref/templates/builtins/)"
+"predeterminado de Django."
 
 #: models/index_template_models.py:156
 msgid "Indexing expression"
@@ -299,7 +298,7 @@ msgstr "Nodo de plantilla de indice"
 msgid "Root"
 msgstr "Nodo principal"
 
-#: permissions.py:6 queues.py:8
+#: permissions.py:6 queues.py:7
 msgid "Indexing"
 msgstr "Indexación"
 
@@ -327,15 +326,15 @@ msgstr "Ver plantillas de índice"
 msgid "Rebuild index templates"
 msgstr "Reconstruir plantillas de índice"
 
-#: queues.py:12
-msgid "Delete empty index nodes"
-msgstr "Eliminar nodos de índice vacíos"
+#: queues.py:10
+msgid "Indexing slow"
+msgstr ""
 
-#: queues.py:16
+#: queues.py:14
 msgid "Remove document"
-msgstr "Remover documento"
+msgstr "Eliminar documento"
 
-#: queues.py:20
+#: queues.py:18
 msgid "Index document"
 msgstr "Indexar documento"
 
@@ -357,7 +356,7 @@ msgstr "Descripción del documento"
 
 #: search.py:33
 msgid "Document UUID"
-msgstr "Documento"
+msgstr "UUID del Documento"
 
 #: search.py:36
 msgid "Document checksum"
@@ -622,17 +621,17 @@ msgstr "Plantilla de índice en cola para reconstrucción."
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)d plantilla de índice en cola para reconstruir."
+msgstr[1] "%(count)d plantillas de índice en cola para reconstruir."
+msgstr[2] "%(count)d plantillas de índice en cola para reconstruir."
 
 #: views/index_template_views.py:465
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)d índice reiniciado."
+msgstr[1] "%(count)d índices reiniciados."
+msgstr[2] "%(count)d índices reiniciados."
 
 #: views/index_template_views.py:478
 msgid "Index templates for which their instances will be deleted."

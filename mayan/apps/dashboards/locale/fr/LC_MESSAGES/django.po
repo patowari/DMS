@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
-# Roberto Rosario, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
+# Roberto Rosario, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:12 views.py:12
 msgid "Dashboards"
 msgstr "Tableaux de bord"
 
@@ -32,13 +32,13 @@ msgstr "Composant"
 
 #: apps.py:29
 msgid "Label"
-msgstr "Étiquette"
+msgstr "Libellé"
 
 #: dashboards.py:6
 msgid "Administrator dashboard"
 msgstr "Tableau de bord de l'administrateur"
 
-#: links.py:14
+#: links.py:9
 msgid "Details"
 msgstr "Détails"
 

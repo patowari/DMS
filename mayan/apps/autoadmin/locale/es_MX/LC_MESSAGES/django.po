@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -26,11 +26,9 @@ msgstr "Administrador automático"
 
 #: auth/allauth.py:51
 msgid ""
-"Welcome Admin! You have been given superuser privileges. Use them with "
+"Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
-"¡Bienvenido Admin! Se le han otorgado privilegios de superusuario. Úsalo con"
-" precaución."
 
 #: models.py:13
 msgid "Account"
@@ -67,37 +65,37 @@ msgid "The username of the automatically created super user account."
 msgstr ""
 "El nombre de usuario de la cuenta de superusuario creada automáticamente."
 
-#: templates/autoadmin/credentials.html:11
+#: templates/autoadmin/credentials.html:13
 msgid "Automatic credentials"
 msgstr "Credenciales automáticas"
 
-#: templates/autoadmin/credentials.html:16
+#: templates/autoadmin/credentials.html:17
 #, python-format
 msgid ""
 "You have just finished installing <strong>%(project_title)s</strong>, "
 "congratulations!"
 msgstr "Acaba de instalar <strong>%(project_title)s</strong>, ¡felicidades!"
 
-#: templates/autoadmin/credentials.html:17
+#: templates/autoadmin/credentials.html:18
 msgid "Login using the following credentials:"
 msgstr "Inicie sesión con las siguientes credenciales:"
 
-#: templates/autoadmin/credentials.html:19
+#: templates/autoadmin/credentials.html:20
 #, python-format
 msgid "Username: <strong>%(account)s</strong>"
 msgstr "Usuario: <strong>%(account)s</strong>"
 
-#: templates/autoadmin/credentials.html:20
+#: templates/autoadmin/credentials.html:21
 #, python-format
 msgid "Email: <strong>%(email)s</strong>"
 msgstr "Correo electrónico: <strong>%(email)s</strong>"
 
-#: templates/autoadmin/credentials.html:21
+#: templates/autoadmin/credentials.html:22
 #, python-format
 msgid "Password: <strong>%(password)s</strong>"
 msgstr "Contraseña: <strong>%(password)s</strong>"
 
-#: templates/autoadmin/credentials.html:23
+#: templates/autoadmin/credentials.html:24
 msgid ""
 "Be sure to change the password to increase security and to disable this "
 "message."

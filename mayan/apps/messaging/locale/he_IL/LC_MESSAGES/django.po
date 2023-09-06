@@ -4,15 +4,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -23,282 +22,290 @@ msgstr ""
 
 #: apps.py:39 events.py:6 permissions.py:6
 msgid "Messaging"
-msgstr "העברת הודעות"
+msgstr ""
 
 #: apps.py:61
 msgid "None"
-msgstr "אף אחד"
+msgstr "אף אחד/כלום"
 
 #: apps.py:67
 msgid "Sender"
-msgstr "שׁוֹלֵחַ"
+msgstr ""
 
 #: events.py:10
 msgid "Message created"
-msgstr "ההודעה נוצרה"
+msgstr ""
 
 #: events.py:13
 msgid "Message edited"
-msgstr "ההודעה נערכה"
+msgstr ""
 
 #: forms.py:26 models.py:37 workflow_actions.py:55
 msgid "Body"
-msgstr "גוּף"
+msgstr ""
 
 #: links.py:49 views.py:38
 msgid "Create message"
-msgstr "צור הודעה"
+msgstr ""
 
 #: links.py:52 links.py:58
 msgid "Delete"
-msgstr "לִמְחוֹק"
+msgstr "מחיקה"
 
 #: links.py:68 links.py:79
 msgid "Mark as read"
-msgstr "סמן כנקרא"
+msgstr ""
 
 #: links.py:74 links.py:83
 msgid "Mark as unread"
-msgstr "סמן כלא נקרא"
+msgstr ""
 
 #: links.py:87
 msgid "Mark all as read"
-msgstr "סמן הכל כנקרא"
+msgstr ""
 
 #: model_mixins.py:16
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
 #: models.py:19
 msgid "Sender content type"
-msgstr "סוג תוכן השולח"
+msgstr ""
 
 #: models.py:22
 msgid "Sender object ID"
-msgstr "מזהה אובייקט השולח"
+msgstr ""
 
 #: models.py:29
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
 #: models.py:32
 msgid "Short description of this message."
-msgstr "תיאור קצר של הודעה זו."
+msgstr ""
 
 #: models.py:33 workflow_actions.py:38
 msgid "Subject"
-msgstr "נושא"
+msgstr ""
 
 #: models.py:36
 msgid "The actual content of the message."
-msgstr "התוכן האמיתי של ההודעה."
+msgstr ""
 
 #: models.py:41
 msgid "This field determines if the message has been read or not."
-msgstr "שדה זה קובע אם ההודעה נקראה או לא."
+msgstr ""
 
 #: models.py:42
 msgid "Read"
-msgstr "לקרוא"
+msgstr ""
 
 #: models.py:46
 msgid "Date and time of the message creation."
-msgstr "תאריך ושעה של יצירת ההודעה."
+msgstr ""
 
 #: models.py:47
 msgid "Creation date and time"
-msgstr "תאריך ושעת יצירה"
+msgstr ""
 
 #: models.py:52
 msgid "Message"
-msgstr "הוֹדָעָה"
+msgstr ""
 
 #: models.py:53 views.py:128
 msgid "Messages"
-msgstr "הודעות"
+msgstr ""
 
 #: permissions.py:10
 msgid "Create messages"
-msgstr "צור הודעות"
+msgstr ""
 
 #: permissions.py:13
 msgid "Delete messages"
-msgstr "מחק הודעות"
+msgstr ""
 
 #: permissions.py:16
 msgid "Edit messages"
-msgstr "ערוך הודעות"
+msgstr ""
 
 #: permissions.py:19
 msgid "View messages"
-msgstr "הצג הודעות"
+msgstr ""
 
 #: serializers.py:15
 msgid "Sender app label"
-msgstr "תווית אפליקציית השולח"
+msgstr ""
 
 #: serializers.py:18
 msgid "Sender model name"
-msgstr "שם דגם השולח"
+msgstr ""
 
 #: serializers.py:21
 msgid "Sender URL"
-msgstr "כתובת האתר של השולח"
+msgstr ""
 
 #: serializers.py:25
 msgid "Primary key of the recipient user of this message."
-msgstr "מפתח ראשי של המשתמש הנמען של הודעה זו."
+msgstr ""
 
 #: serializers.py:26
 msgid "User ID"
-msgstr "זהות המשתמש"
+msgstr "קוד משתמש"
 
 #: serializers.py:33
 msgid "URL"
-msgstr "כתובת אתר"
+msgstr "כתובת אתר (URL)"
 
 #: views.py:49
 #, python-format
 msgid "Error deleting message \"%(instance)s\"; %(exception)s"
-msgstr "שגיאה במחיקת ההודעה &quot;%(instance)s&quot;; %(exception)s"
+msgstr ""
 
 #: views.py:53
 #, python-format
 msgid "%(count)d messages deleted successfully."
-msgstr "הודעות %(count)d נמחקו בהצלחה."
+msgstr ""
 
 #: views.py:54
 #, python-format
 msgid "Message \"%(object)s\" deleted successfully."
-msgstr "ההודעה &quot;%(object)s&quot; נמחקה בהצלחה."
+msgstr ""
 
 #: views.py:55
 #, python-format
 msgid "%(count)d message deleted successfully."
-msgstr "הודעה %(count)d נמחקה בהצלחה."
+msgstr ""
 
 #: views.py:56
 #, python-format
 msgid "Delete the %(count)d selected messages."
-msgstr "מחק את ההודעות %(count)d שנבחרו."
+msgstr ""
 
 #: views.py:57
 #, python-format
 msgid "Delete message: %(object)s."
-msgstr "מחק הודעה: %(object)s."
+msgstr ""
 
 #: views.py:58
 #, python-format
 msgid "Delete the %(count)d selected message."
-msgstr "מחק את ההודעה %(count)d שנבחרה."
+msgstr ""
 
 #: views.py:100
 #, python-format
 msgid "Details of message: %s"
-msgstr "פרטי ההודעה: %s"
+msgstr ""
 
 #: views.py:124
 msgid "Here you will find text messages from other users or from the system."
-msgstr "כאן תמצאו הודעות טקסט ממשתמשים אחרים או מהמערכת."
+msgstr ""
 
 #: views.py:127
 msgid "There are no messages"
-msgstr "אין הודעות"
+msgstr ""
 
 #: views.py:137
 #, python-format
 msgid "Error marking message \"%(instance)s\" as read; %(exception)s"
-msgstr "שגיאה בסימון ההודעה &quot;%(instance)s&quot; כקריאה; %(exception)s"
+msgstr ""
 
 #: views.py:143
 #, python-format
 msgid "%(count)d messages marked as read successfully."
-msgstr "הודעות %(count)d סומנו כנקראו בהצלחה."
+msgstr ""
 
 #: views.py:146
 #, python-format
 msgid "Message \"%(object)s\" marked as read successfully."
-msgstr "ההודעה &quot;%(object)s&quot; סומנה כנקראה בהצלחה."
+msgstr ""
 
 #: views.py:149
 #, python-format
 msgid "%(count)d message marked as read successfully."
-msgstr "הודעה %(count)d סומנה כנקראה בהצלחה."
+msgstr ""
 
 #: views.py:151
 #, python-format
 msgid "Mark the %(count)d selected messages as read."
-msgstr "סמן את ההודעות שנבחרו %(count)d כנקראות."
+msgstr ""
 
 #: views.py:152
 #, python-format
 msgid "Mark the message \"%(object)s\" as read."
-msgstr "סמן את ההודעה &quot;%(object)s&quot; כקריאה."
+msgstr ""
 
 #: views.py:153
 #, python-format
 msgid "Mark the %(count)d selected message as read."
-msgstr "סמן את ההודעה %(count)d שנבחרה כקריאה."
+msgstr ""
 
 #: views.py:181
 msgid "Mark all message as read?"
-msgstr "לסמן את כל ההודעה כנקראה?"
+msgstr ""
 
 #: views.py:197
 msgid "All messages marked as read."
-msgstr "כל ההודעות מסומנות כנקראו."
+msgstr ""
 
 #: views.py:204
 #, python-format
 msgid "Error marking message \"%(instance)s\" as unread; %(exception)s"
-msgstr "שגיאה בסימון ההודעה &quot;%(instance)s&quot; כלא נקראה; %(exception)s"
+msgstr ""
 
 #: views.py:210
 #, python-format
 msgid "%(count)d messages marked as unread successfully."
-msgstr "הודעות %(count)d סומנו כלא נקראו בהצלחה."
+msgstr ""
 
 #: views.py:213
 #, python-format
 msgid "Message \"%(object)s\" marked as unread successfully."
-msgstr "ההודעה &quot;%(object)s&quot; סומנה כלא נקראה בהצלחה."
+msgstr ""
 
 #: views.py:216
 #, python-format
 msgid "%(count)d message marked as unread successfully."
-msgstr "הודעה %(count)d סומנה כלא נקראה בהצלחה."
+msgstr ""
 
 #: views.py:218
 #, python-format
 msgid "Mark the %(count)d selected messages as unread."
-msgstr "סמן את ההודעות %(count)d שנבחרו כלא נקראו."
+msgstr ""
 
 #: views.py:219
 #, python-format
 msgid "Mark the message \"%(object)s\" as unread."
-msgstr "סמן את ההודעה &quot;%(object)s&quot; כלא נקראה."
+msgstr ""
 
 #: views.py:220
 #, python-format
 msgid "Mark the %(count)d selected message as unread."
-msgstr "סמן את ההודעה %(count)d שנבחרה כלא נקראה."
+msgstr ""
 
 #: workflow_actions.py:19
 msgid "Username list"
-msgstr "רשימת שמות משתמש"
+msgstr ""
 
 #: workflow_actions.py:26
 msgid "Comma separated list of usernames that will receive the message."
-msgstr "רשימה מופרדת בפסיק של שמות משתמש שיקבלו את ההודעה."
+msgstr ""
 
 #: workflow_actions.py:45
 msgid "Subject of the message to be sent."
-msgstr "נושא ההודעה שתישלח."
+msgstr ""
 
 #: workflow_actions.py:62
 msgid "The actual text to send."
-msgstr "הטקסט האמיתי לשליחה."
+msgstr ""
 
-#: workflow_actions.py:73
+#: workflow_actions.py:72
 msgid "Send user message"
-msgstr "שלח הודעת משתמש"
+msgstr ""
+
+#: workflow_actions.py:80
+msgid "Recipients"
+msgstr ""
+
+#: workflow_actions.py:84
+msgid "Content"
+msgstr ""

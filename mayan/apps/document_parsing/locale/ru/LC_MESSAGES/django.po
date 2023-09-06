@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Генератор, возвращающий проанализированное содержимое страниц файла "
 "документа."
 
-#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:11
+#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:18
 msgid "Content"
 msgstr "Содержимое"
 
@@ -95,7 +95,7 @@ msgid "The actual text content as extracted by the document parsing backend."
 msgstr ""
 "Фактическое текстовое содержимое, извлеченное бэкэндом анализа документов."
 
-#: models.py:31
+#: models.py:31 search.py:24
 msgid "Document file page content"
 msgstr "Содержимое страницы файла документа"
 
@@ -154,7 +154,7 @@ msgstr "Анализ"
 msgid "Document file parsing"
 msgstr "Анализ файла документа"
 
-#: search.py:17 search.py:24
+#: search.py:12
 msgid "Document file content"
 msgstr "Содержимое файла документа"
 
@@ -231,10 +231,10 @@ msgstr "%(count)d файлов документов добавлено в оче
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Отправить %(count)d файл документа в очередь для анализа?"
+msgstr[1] "Отправить %(count)d файлов документов в очередь для анализа?"
+msgstr[2] "Отправить %(count)d файлов документов в очередь для анализа?"
+msgstr[3] "Отправить %(count)d файлов документов в очередь для анализа?"
 
 #: views.py:160
 #, python-format

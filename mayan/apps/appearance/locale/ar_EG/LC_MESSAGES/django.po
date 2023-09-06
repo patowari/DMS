@@ -5,16 +5,17 @@
 # Translators:
 # Translators:
 # Roberto Rosario, 2023
-# Mohammed ALDOUB <voulnet@gmail.com>, 2023
+# ali ahmed, 2023
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Mohammed ALDOUB <voulnet@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
@@ -87,27 +88,27 @@ msgstr "تعديل القالب"
 msgid "User theme edited"
 msgstr ""
 
-#: links.py:18
+#: links.py:20
 msgid "Theme settings"
 msgstr "إعدادات القوالب"
 
-#: links.py:25
+#: links.py:27
 msgid "Edit theme settings"
 msgstr "تعديل اعدادات القالب"
 
-#: links.py:31 views.py:31
+#: links.py:33 views.py:31
 msgid "Create new theme"
 msgstr "انشاء قالب جديد"
 
-#: links.py:36
+#: links.py:38
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:40
+#: links.py:42
 msgid "Edit"
 msgstr "تعديل"
 
-#: links.py:44 links.py:49 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:99
 msgid "Themes"
 msgstr "القوالب"
 
@@ -224,7 +225,7 @@ msgid ""
 msgstr "لا تملك الصلاحيات اللازمة للوصول ، مراجعة مدير النظام"
 
 #: templates/500.html:5 templates/500.html:30
-#: templates/appearance/root.html:47
+#: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "مشكلة في الخوادم"
 
@@ -257,35 +258,24 @@ msgstr "ظهور خطأ في النظام "
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr "فتح تذكرة <a href=\"%(issue_url)s\">يرجى مراجعة مدير النظام </a>."
 
-#: templates/appearance/about.html:10
+#: templates/appearance/about.html:9
 msgid "About"
 msgstr " حول النظام"
 
-#: templates/appearance/about.html:72
-#, python-format
-msgid ""
-"\n"
-"                    %(setting_project_title)s is based on %(project_title)s\n"
-"                "
-msgstr ""
-"\n"
-"                    %(setting_project_title)s is based on %(project_title)s\n"
-"                "
-
-#: templates/appearance/about.html:77
+#: templates/appearance/about.html:67
 msgid "Version"
 msgstr "الاصدار"
 
-#: templates/appearance/about.html:79
+#: templates/appearance/about.html:69
 #, python-format
 msgid "Build number: %(build_number)s"
 msgstr "الإصدار رقم : %(build_number)s"
 
-#: templates/appearance/about.html:92
+#: templates/appearance/about.html:82
 msgid "Released under the license:"
 msgstr "الإصدار : رخص الاستخدام معتمدة"
 
-#: templates/appearance/about.html:98
+#: templates/appearance/about.html:88
 #, python-format
 msgid ""
 "\n"
@@ -296,7 +286,7 @@ msgstr ""
 "                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:104
+#: templates/appearance/about.html:94
 #, python-format
 msgid ""
 "\n"
@@ -307,7 +297,7 @@ msgstr ""
 "                الإستعلامات للوثائق%(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:110
+#: templates/appearance/about.html:100
 #, python-format
 msgid ""
 "\n"
@@ -318,17 +308,6 @@ msgstr ""
 "                إذا توجد مشكلة يرجى مراجعة الى %(icon_forum)s</a>  من  %(icon_source_code)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:115
-#, python-format
-msgid ""
-"\n"
-"                Spread the word. Talk to your friends and colleagues about how awesome %(project_title)s is!\n"
-"            "
-msgstr ""
-"\n"
-"                Spread the word. Talk to your friends and colleagues about how awesome %(project_title)s is!\n"
-"            "
-
 #: templates/appearance/app/foot.html:70
 msgid ""
 "Too many pending requests. Additional requests will be blocked until a "
@@ -337,7 +316,7 @@ msgstr ""
 
 #: templates/appearance/base.html:73
 msgid "Object"
-msgstr "عنصر"
+msgstr "كائن"
 
 #: templates/appearance/generic_confirm.html:13
 msgid "Are you sure?"
@@ -358,21 +337,21 @@ msgstr "رفض"
 msgid "required"
 msgstr "متطلب"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
 msgstr "حفظ"
 
-#: templates/appearance/generic_form_subtemplate.html:84
-#: templates/appearance/generic_form_subtemplate.html:94
-#: templates/appearance/generic_form_subtemplate.html:108
+#: templates/appearance/generic_form_subtemplate.html:85
+#: templates/appearance/generic_form_subtemplate.html:95
+#: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Submit"
 msgstr "اعتماد"
 
-#: templates/appearance/generic_form_subtemplate.html:98
+#: templates/appearance/generic_form_subtemplate.html:99
 #: templates/appearance/generic_multiform_subtemplate.html:66
 msgid "Cancel"
 msgstr "إلغاء"
@@ -457,19 +436,19 @@ msgstr "الصفحة السابقة"
 msgid "Next page"
 msgstr "الصفحة التالية"
 
-#: templates/appearance/root.html:52
+#: templates/appearance/root.html:51
 msgid "Close"
 msgstr "إغلاق"
 
-#: templates/appearance/root.html:60
+#: templates/appearance/root.html:59
 msgid "Server communication error"
 msgstr "خطأ في الاتصال بالخوادم"
 
-#: templates/appearance/root.html:62
+#: templates/appearance/root.html:61
 msgid "Check you network connection and try again in a few moments."
 msgstr "مشكلة إتصال ! يرجى مراجعة مدير النظام "
 
-#: templatetags/appearance_tags.py:67
+#: templatetags/appearance_tags.py:77
 msgid "None"
 msgstr "لا شيء"
 

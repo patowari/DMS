@@ -4,21 +4,21 @@
 # 
 # Translators:
 # Translators:
-# Olivier W, 2023
 # Roberto Rosario, 2023
 # Benoît GROUSSET <benoit@grousset.xyz>, 2023
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
+# Olivier W, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Olivier W, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,15 +80,15 @@ msgstr "Nom"
 
 #: serializers.py:49
 msgid "Status code"
-msgstr ""
+msgstr "Code d'état"
 
 #: serializers.py:52
 msgid "Requests"
-msgstr ""
+msgstr "Requêtes"
 
 #: serializers.py:75
 msgid "Label"
-msgstr "Étiquette"
+msgstr "Libellé"
 
 #: serializers.py:78
 msgid "URL"
@@ -96,11 +96,11 @@ msgstr "URL"
 
 #: serializers.py:106
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #: serializers.py:109
 msgid "Author email"
-msgstr ""
+msgstr "Courriel de l'auteur"
 
 #: serializers.py:112
 msgid "Build"
@@ -112,7 +112,7 @@ msgstr ""
 
 #: serializers.py:118
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: serializers.py:121
 msgid "Description"
@@ -120,7 +120,7 @@ msgstr "Description"
 
 #: serializers.py:124
 msgid "Django version"
-msgstr ""
+msgstr "Version Django"
 
 #: serializers.py:127
 msgid "License"
@@ -136,7 +136,7 @@ msgstr "Version"
 
 #: serializers.py:136
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #: settings.py:17
 msgid "Disable the REST API links in the tools menu."

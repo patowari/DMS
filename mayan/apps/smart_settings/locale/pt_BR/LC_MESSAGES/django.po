@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
-# Renata Oliveira <renatabels@gmail.com>, 2023
 # Márcia Ferreira, 2023
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
+# Renata Oliveira <renatabels@gmail.com>, 2023
 # Aline Freitas <aline@alinefreitas.com.br>, 2023
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -45,23 +45,23 @@ msgstr "Valor"
 msgid "Settings namespace"
 msgstr ""
 
-#: classes.py:394
+#: classes.py:397
 msgid "Choices"
 msgstr ""
 
-#: classes.py:396
+#: classes.py:399
 msgid "Possible values allowed for this setting."
 msgstr ""
 
-#: classes.py:402
+#: classes.py:405
 msgid "Default"
 msgstr "Padrão"
 
-#: classes.py:410
+#: classes.py:413
 msgid "Overridden"
 msgstr "Sobrescrito"
 
-#: classes.py:412
+#: classes.py:415
 msgid "Is this settings being overridden by an environment variable?"
 msgstr ""
 "Estes parâmetros estão sendo sobrescritos por uma variável de ambiente?"
@@ -519,7 +519,7 @@ msgstr ""
 "Settings foram atualizados. Reinicie sua instalação e recarregue seu "
 "navegador para que as mudanças sejam aplicadas"
 
-#: tests/test_classes.py:173
+#: tests/test_classes.py:175
 msgid "English"
 msgstr "Inglês"
 

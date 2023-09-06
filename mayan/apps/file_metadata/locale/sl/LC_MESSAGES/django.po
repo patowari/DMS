@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2023\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -25,24 +25,24 @@ msgstr ""
 msgid "Label"
 msgstr "Oznaka"
 
-#: apps.py:49 events.py:6 links.py:21 permissions.py:6 queues.py:7
+#: apps.py:51 events.py:6 links.py:21 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
 msgstr ""
 
-#: apps.py:100 search.py:12 search.py:23 search.py:34
+#: apps.py:103 search.py:11 search.py:22
 msgid "File metadata key"
 msgstr ""
 
-#: apps.py:104 search.py:16 search.py:27 search.py:38
+#: apps.py:107 search.py:15 search.py:26
 msgid "File metadata value"
 msgstr ""
 
-#: apps.py:130
+#: apps.py:133 apps.py:139
 msgid "Return the value of a specific file metadata."
 msgstr ""
 
-#: apps.py:131
+#: apps.py:134 apps.py:140
 msgid "File metadata value of"
 msgstr ""
 
@@ -83,15 +83,7 @@ msgstr ""
 msgid "File metadata processing per type"
 msgstr ""
 
-#: methods.py:41
-msgid "get_file_metadata(< file metadata dotted path >)"
-msgstr ""
-
-#: methods.py:44
-msgid "Return the specified document file metadata entry."
-msgstr ""
-
-#: methods.py:71
+#: methods.py:54
 msgid "Return the specified document file file metadata entry."
 msgstr ""
 
@@ -99,75 +91,75 @@ msgstr ""
 msgid "Attribute count"
 msgstr ""
 
-#: models.py:17 models.py:96
+#: models.py:18 models.py:97
 msgid "Driver"
 msgstr "Gonilnik"
 
-#: models.py:21
+#: models.py:22
 msgid "Document file"
 msgstr ""
 
-#: models.py:27 models.py:63
+#: models.py:28 models.py:64
 msgid "Document file driver entry"
 msgstr ""
 
-#: models.py:28
+#: models.py:29
 msgid "Document file driver entries"
 msgstr ""
 
-#: models.py:40
+#: models.py:41
 msgid "Document type"
 msgstr "Vrsta dokumenta"
 
-#: models.py:44
+#: models.py:45
 msgid "Automatically queue newly created documents for processing."
 msgstr ""
 
-#: models.py:45
+#: models.py:46
 msgid "Auto process"
 msgstr ""
 
-#: models.py:51
+#: models.py:52
 msgid "Document type settings"
 msgstr ""
 
-#: models.py:52
+#: models.py:53
 msgid "Document types settings"
 msgstr ""
 
-#: models.py:66
+#: models.py:67
 msgid "Name of the file metadata entry."
 msgstr ""
 
-#: models.py:67
+#: models.py:68
 msgid "Key"
 msgstr ""
 
-#: models.py:70
+#: models.py:71
 msgid "Value of the file metadata entry."
 msgstr ""
 
-#: models.py:71
+#: models.py:72
 msgid "Value"
 msgstr ""
 
-#: models.py:76
+#: models.py:77
 msgid "File metadata entry"
 msgstr ""
 
-#: models.py:77
+#: models.py:78
 msgid "File metadata entries"
 msgstr ""
 
-#: models.py:87
+#: models.py:88
 msgid "Driver path"
 msgstr "Pot do gonilnika"
 
-#: models.py:91
+#: models.py:92
 msgid "Internal name"
 msgstr ""
 
-#: models.py:97
+#: models.py:98
 msgid "Drivers"
 msgstr "Gonilniki"
 

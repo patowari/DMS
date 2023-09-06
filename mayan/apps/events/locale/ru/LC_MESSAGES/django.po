@@ -6,17 +6,17 @@
 # Translators:
 # Roberto Rosario, 2023
 # Alex Chigrin <chalex84@mail.ru>, 2023
-# Sergey Glita <gsv70@mail.ru>, 2023
 # lilo.panic, 2023
 # Ilya Pavlov <spirkaa@gmail.com>, 2023
+# Sergey Glita <gsv70@mail.ru>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Sergey Glita <gsv70@mail.ru>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,60 +24,60 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:31 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: queues.py:7 views/event_views.py:29
+#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: views/event_views.py:29
 msgid "Events"
 msgstr "События"
 
-#: apps.py:81 apps.py:116
+#: apps.py:82 apps.py:117
 msgid "Date and time"
 msgstr "Дата и время"
 
-#: apps.py:85 apps.py:119 serializers.py:72
+#: apps.py:86 apps.py:120 serializers.py:72
 msgid "Actor"
 msgstr "Субъект"
 
-#: apps.py:89 apps.py:124
+#: apps.py:90 apps.py:125
 msgid "Event"
 msgstr "Событие"
 
-#: apps.py:93 apps.py:129 serializers.py:78
+#: apps.py:94 apps.py:130 serializers.py:78
 msgid "Target"
 msgstr "Объект"
 
-#: apps.py:97 apps.py:133
+#: apps.py:98 apps.py:134
 msgid "Action object"
 msgstr "Объект действия"
 
-#: apps.py:104 forms.py:10 forms.py:67
+#: apps.py:105 forms.py:10 forms.py:67
 msgid "Namespace"
 msgstr "Пространство имен"
 
-#: apps.py:109 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
+#: apps.py:110 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
 msgid "Label"
 msgstr "Заголовок"
 
-#: apps.py:138
+#: apps.py:139
 msgid "Seen"
 msgstr "Просмотрено"
 
-#: apps.py:145
+#: apps.py:146
 msgid "Object"
 msgstr "Объект"
 
-#: apps.py:150 models.py:46 models.py:105
+#: apps.py:151 models.py:46 models.py:105
 msgid "Event type"
 msgstr "Тип события"
 
-#: classes.py:91
+#: classes.py:89
 msgid "Event list export to CSV"
 msgstr "Экспорт списка событий в CSV"
 
-#: classes.py:119
+#: classes.py:117
 msgid "Events exported."
 msgstr "События экспортированы."
 
-#: classes.py:121
+#: classes.py:119
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -195,11 +195,23 @@ msgstr "Экспортировать события объекта"
 msgid "View the events of an object"
 msgstr ""
 
-#: queues.py:13
+#: queues.py:7
+msgid "Events fast"
+msgstr ""
+
+#: queues.py:10
+msgid "Events slow"
+msgstr ""
+
+#: queues.py:16
+msgid "Commit an event"
+msgstr ""
+
+#: queues.py:21
 msgid "Clear event querysets"
 msgstr ""
 
-#: queues.py:17
+#: queues.py:25
 msgid "Export event querysets"
 msgstr "Запросы для экспорта событий"
 

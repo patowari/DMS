@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:32 events.py:6 search.py:19 search.py:26 search.py:33 search.py:40
+#: apps.py:32 events.py:6
 msgid "Document comments"
 msgstr "Komentáře k dokumentu"
 
@@ -49,7 +49,7 @@ msgstr "Odstranit"
 msgid "Edit"
 msgstr "Upravit"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:12
+#: links.py:31 models.py:47 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr "Komentáře"
 

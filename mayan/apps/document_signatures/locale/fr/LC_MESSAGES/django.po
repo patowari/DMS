@@ -4,25 +4,25 @@
 # 
 # Translators:
 # Translators:
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# Bruno CAPELETO <bruno.capeleto@abcreseau.com>, 2023
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Olivier W, 2023
 # Benoît GROUSSET <benoit@grousset.xyz>, 2023
-# Guillaume Trottier <gui.trottier@gmail.com>, 2023
+# Bruno CAPELETO <bruno.capeleto@abcreseau.com>, 2023
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
 # Roberto Rosario, 2023
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
-# Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2023
+# Guillaume Trottier <gui.trottier@gmail.com>, 2023
+# Olivier W, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
+# Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,11 +70,11 @@ msgstr "Signature détachée téléversée"
 msgid "Embedded signature created"
 msgstr "Signature intégrée créée"
 
-#: forms.py:17 forms.py:31 workflow_actions.py:19
+#: forms.py:17 forms.py:31 workflow_actions.py:69
 msgid "Key"
 msgstr "Clé"
 
-#: forms.py:22 serializers.py:66 workflow_actions.py:30
+#: forms.py:22 serializers.py:66 workflow_actions.py:31
 msgid ""
 "The passphrase to unlock the key and allow it to be used to sign the "
 "document file."
@@ -82,7 +82,7 @@ msgstr ""
 "La phrase secrète pour déverrouiller la clé et permettre de l'utiliser pour "
 "signer le document."
 
-#: forms.py:24 serializers.py:68 workflow_actions.py:27
+#: forms.py:24 serializers.py:68 workflow_actions.py:28
 msgid "Passphrase"
 msgstr "Phrase secrète"
 
@@ -158,7 +158,7 @@ msgstr "Signature intégrée"
 msgid "Details"
 msgstr "Détails"
 
-#: links.py:92 queues.py:8
+#: links.py:92 queues.py:7
 msgid "Signatures"
 msgstr "Signatures"
 
@@ -262,23 +262,27 @@ msgstr "Vérifier les signatures du document"
 msgid "View document signatures"
 msgstr "Afficher les signatures du document"
 
-#: queues.py:13
+#: queues.py:10
+msgid "Signatures slow"
+msgstr ""
+
+#: queues.py:15
 msgid "Verify key signatures"
 msgstr "Vérifier les signatures des clés"
 
-#: queues.py:17
+#: queues.py:19
 msgid "Unverify key signatures"
 msgstr "Signature de clé non vérifiée"
 
-#: queues.py:21
+#: queues.py:23
 msgid "Verify document file"
 msgstr "Vérifier le fichier"
 
-#: queues.py:26
+#: queues.py:28
 msgid "Verify missing embedded signature"
 msgstr "Vérifier la signature intégrée manquante"
 
-#: queues.py:30
+#: queues.py:32
 msgid "Refresh existing signature information"
 msgstr "Actualiser les informations de signature existantes"
 
@@ -396,15 +400,19 @@ msgstr "Vérifier les signatures de tous les documents ?"
 msgid "Signature verification queued successfully."
 msgstr "Vérification de la signature ajoutée à la file d'attente avec succès."
 
-#: workflow_actions.py:22
-msgid "Private key that will be used to sign the document file."
-msgstr "Clé privée qui sera utilisée pour signer le document."
-
 #: workflow_actions.py:37
 msgid "Sign document (detached)"
 msgstr "Signer le document (détachée)"
 
-#: workflow_actions.py:49
+#: workflow_actions.py:48
+msgid "Private key that will be used to sign the document file."
+msgstr "Clé privée qui sera utilisée pour signer le document."
+
+#: workflow_actions.py:55
+msgid "Private key"
+msgstr ""
+
+#: workflow_actions.py:81
 msgid ""
 "Document has no file to sign. You might be trying to use this action in an "
 "initial state before the created document is yet to be processed."
@@ -413,6 +421,6 @@ msgstr ""
 "cette action dans un état initial alors que le document n'a pas encore été "
 "traité."
 
-#: workflow_actions.py:82
+#: workflow_actions.py:102
 msgid "Sign document (embedded)"
 msgstr "Signer le document (intégrée)"

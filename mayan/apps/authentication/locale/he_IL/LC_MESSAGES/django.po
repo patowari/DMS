@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "אימות משתמש"
 
 #: events.py:10
 msgid "User impersonation ended"
-msgstr "התחזות למשתמש הסתיימה"
+msgstr ""
 
 #: events.py:13
 msgid "User impersonation started"
@@ -34,7 +34,7 @@ msgstr "התחזות למשתמש התחילה"
 
 #: events.py:16
 msgid "User logged in"
-msgstr "משתמש מחובר"
+msgstr ""
 
 #: events.py:19
 msgid "User logged out"
@@ -42,23 +42,23 @@ msgstr "משתמש התנתק"
 
 #: forms.py:31
 msgid "Remember me"
-msgstr "זכור אותי"
+msgstr ""
 
 #: forms.py:77
 msgid "Permanent"
-msgstr "קבוע"
+msgstr ""
 
 #: forms.py:78
 msgid "If selected, disables ending impersonation."
-msgstr "אם נבחר, משבית את סיום ההתחזות."
+msgstr ""
 
 #: forms.py:89
 msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+msgstr "משתמש"
 
 #: links.py:35
 msgid "Logout"
-msgstr "להתנתק"
+msgstr ""
 
 #: links.py:40
 msgid "Change password"
@@ -70,7 +70,7 @@ msgstr "התחזות למשתמש אחר"
 
 #: links.py:50
 msgid "Impersonate"
-msgstr "לְהִתְחַזוֹת"
+msgstr ""
 
 #: links.py:55 links.py:60
 msgid "Set password"
@@ -78,7 +78,7 @@ msgstr "הגדרת סיסמה"
 
 #: permissions.py:10
 msgid "Impersonate users"
-msgstr "התחזות למשתמשים"
+msgstr ""
 
 #: settings.py:17
 msgid ""
@@ -89,7 +89,7 @@ msgstr ""
 
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
-msgstr "נתיב מנוקד לקצה העורפי המשמש לעיבוד אימות משתמש."
+msgstr ""
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
@@ -111,11 +111,11 @@ msgstr "לחץ כאן בסיום"
 
 #: templates/authentication/login.html:10
 msgid "Login"
-msgstr "התחברות"
+msgstr ""
 
 #: templates/authentication/login.html:21
 msgid "Sign in"
-msgstr "להתחבר"
+msgstr ""
 
 #: templates/authentication/login.html:62
 #: templates/authentication/login.html:72
@@ -150,7 +150,7 @@ msgstr "איפוס סיסמה"
 
 #: templates/authentication/password_reset_complete.html:15
 msgid "Password reset complete! Click the link below to login."
-msgstr "איפוס הסיסמה הושלם! לחץ על הקישור למטה כדי להתחבר."
+msgstr ""
 
 #: templates/authentication/password_reset_complete.html:17
 msgid "Login page"
@@ -160,59 +160,65 @@ msgstr "דף התחברות"
 msgid "Password reset email sent!"
 msgstr "דוא&quot;ל לאיפוס סיסמה נשלח!"
 
-#: views/authentication_views.py:159
+#: views/authentication_views.py:161
 msgid "Next"
-msgstr "הַבָּא"
+msgstr ""
 
-#: views/authentication_views.py:165
+#: views/authentication_views.py:167
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
-msgstr "שלב %(step)d של %(total_steps)d: %(step_label)s"
+msgstr ""
 
-#: views/authentication_views.py:235
+#: views/authentication_views.py:237
 msgid "Your password has been successfully changed."
-msgstr "הסיסמה שלך שונתה בהצלחה."
+msgstr ""
 
-#: views/authentication_views.py:245
+#: views/authentication_views.py:247
 msgid "Current user password change"
 msgstr "שינוי סיסמת משתמש נוכחי"
 
-#: views/authentication_views.py:257
+#: views/authentication_views.py:259
 msgid "Changing the password is not allowed for this account."
-msgstr "שינוי הסיסמה אינו מותר עבור חשבון זה."
+msgstr ""
 
-#: views/authentication_views.py:329
+#: views/authentication_views.py:331
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "בקשת שינוי סיסמה בוצעה על משתמש %(count)d "
 
-#: views/authentication_views.py:332
+#: views/authentication_views.py:334
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "בקשת שינוי סיסמה בוצעה על %(count)d משתמשים"
 
-#: views/authentication_views.py:341
+#: views/authentication_views.py:351
+msgid ""
+"Changing the password of staff or super user accounts via the user interface"
+" is not allowed. Use administration tools to perform this operation."
+msgstr ""
+
+#: views/authentication_views.py:365
 msgid "Change user password"
 msgid_plural "Change users passwords"
-msgstr[0] "שנה סיסמת משתמש"
-msgstr[1] "שנה סיסמאות של משתמשים"
-msgstr[2] "שנה סיסמאות של משתמשים"
-msgstr[3] "שנה סיסמאות של משתמשים"
-
-#: views/authentication_views.py:352
-#, python-format
-msgid "Change password for user: %s"
-msgstr "שנה סיסמה למשתמש: %s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: views/authentication_views.py:376
 #, python-format
-msgid "Successful password reset for user: %s."
-msgstr "איפוס סיסמה מוצלח למשתמש: %s."
+msgid "Change password for user: %s"
+msgstr ""
 
-#: views/authentication_views.py:382
+#: views/authentication_views.py:400
+#, python-format
+msgid "Successful password reset for user: %s."
+msgstr ""
+
+#: views/authentication_views.py:406
 #, python-format
 msgid "Error reseting password for user \"%(user)s\": %(error)s"
-msgstr "שגיאה באיפוס הסיסמה למשתמש &quot;%(user)s&quot;: %(error)s"
+msgstr ""
 
 #: views/impersonation_views.py:81
 #, python-format

@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# Yves Dubois <ydubois@gmail.com>, 2023
 # Olivier W, 2023
+# Yves Dubois <ydubois@gmail.com>, 2023
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "Gestionnaire de verrou"
 
 #: models.py:15
 msgid "Creation datetime"
-msgstr "Date et heure de création"
+msgstr "Création"
 
 #: models.py:19
 msgid "Timeout"

@@ -5,14 +5,16 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
+# Zoljargal Munkhjargal, 2023
+# Zoljargal Munkhjargal <zoljargal.m@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Zoljargal Munkhjargal <zoljargal.m@gmail.com>, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +22,7 @@ msgstr ""
 "Language: mn_MN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "ХУЖ"
 
@@ -29,10 +31,11 @@ msgid ""
 "Object for which the access is granted. When sorting objects, only the type "
 "is used and not the actual label of the object."
 msgstr ""
+"Объектод хандах эрхтэй байна. Объектуудыг зөвхөн төрлөөр нь эрэмбэлнэ."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
-msgstr "Обьект"
+msgstr "Объект"
 
 #: events.py:6 permissions.py:6
 msgid "Access control lists"
@@ -52,7 +55,7 @@ msgstr "ХУЖ засагдлаа"
 
 #: forms.py:13 models.py:56 serializers.py:79 views.py:73
 msgid "Role"
-msgstr ""
+msgstr "Үүрэг"
 
 #: links.py:16
 msgid "New ACL"
@@ -62,23 +65,23 @@ msgstr "Шинэ ХУЖ"
 msgid "Delete"
 msgstr "Устгах"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
-msgstr ""
+msgstr "Эрх"
 
 #: links.py:35
 msgid "Global ACLs"
-msgstr ""
+msgstr "Глобал хандалтын удирдлагууд"
 
 #: managers.py:274
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
-msgstr ""
+msgstr "Объект \"%s\" хандалт зөвшөөрч чадахгүй."
 
 #: managers.py:294
 #, python-format
 msgid "Insufficient access for: %s"
-msgstr ""
+msgstr "Зөвшөөрөгдөөгүй хандалт: %s"
 
 #: model_mixins.py:23
 msgid "Permission count"
@@ -88,21 +91,21 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
-msgstr ""
+msgstr "Объект ID"
 
 #: models.py:54
 msgid "Role to which the access is granted for the specified object."
-msgstr ""
+msgstr "Тодорхойлсон объектод хандах боломжтой эрх."
 
 #: models.py:64
 msgid "Access entry"
-msgstr ""
+msgstr "Хандах нэгж"
 
 #: models.py:65
 msgid "Access entries"
-msgstr ""
+msgstr "Хандах нэгжүүд"
 
 #: models.py:69
 #, python-format
@@ -111,11 +114,11 @@ msgstr ""
 
 #: permissions.py:10
 msgid "Edit ACLs"
-msgstr ""
+msgstr "Хандах эрх засах"
 
 #: permissions.py:13
 msgid "View ACLs"
-msgstr ""
+msgstr "Хандах эрх харах"
 
 #: serializers.py:19
 msgid "Permissions add URL"
@@ -139,7 +142,7 @@ msgstr ""
 
 #: serializers.py:118
 msgid "Primary key of the permission to add to the ACL."
-msgstr ""
+msgstr "ХУЖ-д нэмэх эрхийн анхны түлхүүр."
 
 #: serializers.py:119 serializers.py:126
 msgid "Permission ID"
@@ -147,7 +150,7 @@ msgstr ""
 
 #: serializers.py:125
 msgid "Primary key of the permission to remove from the ACL."
-msgstr ""
+msgstr "ХУЖ-аас хасах эрхийн анхдагч түлхүүр."
 
 #: views.py:44
 #, python-format
@@ -159,16 +162,16 @@ msgstr ""
 #: views.py:59
 #, python-format
 msgid "New access control lists for: %s"
-msgstr ""
+msgstr "Шинэ хандалтын удирдлагын жагсаалт үүсгэх: %s"
 
 #: views.py:103
 #, python-format
 msgid "Delete ACL: %s"
-msgstr ""
+msgstr "ХУЖ устгах: %s"
 
 #: views.py:149
 msgid "There are no ACLs for this object"
-msgstr ""
+msgstr "Энэ объектод ХУЖ байхгүй байна."
 
 #: views.py:152 views.py:272
 msgid ""
@@ -176,19 +179,22 @@ msgid ""
 "access to objects in the system. ACLs allow granting a permission to a role "
 "but only for a specific object or set of objects."
 msgstr ""
+"ХУЖ нь хэрэглэгч системд дэх объектуудад хандалтыг зохицуулах арга юм. Мөн "
+"хэрэглэгчийн үүрэгт нэг объект эсвэл хэд хэдэн объектод хандах эрхийг "
+"тохируулж өгнө. "
 
 #: views.py:159
 #, python-format
 msgid "Access control lists for: %s"
-msgstr ""
+msgstr "%s-д зориулсан хандах удирдлагын жагсаалт"
 
 #: views.py:168
 msgid "Granted permissions"
-msgstr ""
+msgstr "Олгосон эрхүүд"
 
 #: views.py:169
 msgid "Available permissions"
-msgstr ""
+msgstr "Боломжит эрхүүд"
 
 #: views.py:219
 #, python-format
@@ -205,50 +211,56 @@ msgstr ""
 
 #: views.py:269
 msgid "There are no ACLs"
-msgstr ""
+msgstr "ХУЖ байхгүй байна"
 
 #: views.py:278
 msgid "Global access control lists"
-msgstr ""
+msgstr "Глобал хандалтын удирдлагын жагсаалт"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
-msgstr ""
+msgstr "Объектын төрөл"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
-msgstr ""
+msgstr "Хандалт өөрчлөх объектын төрөл."
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
-msgstr ""
+msgstr "Хандалт өөрчлөх объектын тоон дугаар."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
-msgstr ""
+msgstr "Үүргүүд"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
-msgstr ""
+msgstr "Хандалт өөрчлөх үүргүүд."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
+"Дээрх сонгосон объектуудад зориулсан Үүргээс /Role/ хасах/нэмэх эрхүүд "
+"/permission/."
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
+msgstr "Объектод хандах эрх олгох"
+
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:145
+#: workflow_actions.py:170
 msgid "Revoke object access"
-msgstr ""
+msgstr "Объектод хандах эрх хүчингүй болгох"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
-msgstr ""
+msgstr "Баримтад хандах эрх олгох"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
-msgstr ""
+msgstr "Баримтад хандах эрх хүчингүй болгох"

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
@@ -60,17 +60,17 @@ msgstr ""
 msgid "Embedded signature created"
 msgstr ""
 
-#: forms.py:17 forms.py:31 workflow_actions.py:19
+#: forms.py:17 forms.py:31 workflow_actions.py:69
 msgid "Key"
 msgstr "Ključ"
 
-#: forms.py:22 serializers.py:66 workflow_actions.py:30
+#: forms.py:22 serializers.py:66 workflow_actions.py:31
 msgid ""
 "The passphrase to unlock the key and allow it to be used to sign the "
 "document file."
 msgstr ""
 
-#: forms.py:24 serializers.py:68 workflow_actions.py:27
+#: forms.py:24 serializers.py:68 workflow_actions.py:28
 msgid "Passphrase"
 msgstr "Passphrase"
 
@@ -146,7 +146,7 @@ msgstr "Znak ugradjen"
 msgid "Details"
 msgstr "Detalji"
 
-#: links.py:92 queues.py:8
+#: links.py:92 queues.py:7
 msgid "Signatures"
 msgstr "Potpisi"
 
@@ -250,23 +250,27 @@ msgstr "Provjeriti potpise dokumenta"
 msgid "View document signatures"
 msgstr ""
 
-#: queues.py:13
+#: queues.py:10
+msgid "Signatures slow"
+msgstr ""
+
+#: queues.py:15
 msgid "Verify key signatures"
 msgstr "Potvrdite ključne potpise"
 
-#: queues.py:17
+#: queues.py:19
 msgid "Unverify key signatures"
 msgstr "Ne verifikujte ključne potpise"
 
-#: queues.py:21
+#: queues.py:23
 msgid "Verify document file"
 msgstr ""
 
-#: queues.py:26
+#: queues.py:28
 msgid "Verify missing embedded signature"
 msgstr "Proverite nedostajući ugrađeni potpis"
 
-#: queues.py:30
+#: queues.py:32
 msgid "Refresh existing signature information"
 msgstr ""
 
@@ -373,20 +377,24 @@ msgstr "Proverite sve dokumente za potpis?"
 msgid "Signature verification queued successfully."
 msgstr "Provera potpisa je u redu."
 
-#: workflow_actions.py:22
-msgid "Private key that will be used to sign the document file."
-msgstr ""
-
 #: workflow_actions.py:37
 msgid "Sign document (detached)"
 msgstr ""
 
-#: workflow_actions.py:49
+#: workflow_actions.py:48
+msgid "Private key that will be used to sign the document file."
+msgstr ""
+
+#: workflow_actions.py:55
+msgid "Private key"
+msgstr ""
+
+#: workflow_actions.py:81
 msgid ""
 "Document has no file to sign. You might be trying to use this action in an "
 "initial state before the created document is yet to be processed."
 msgstr ""
 
-#: workflow_actions.py:82
+#: workflow_actions.py:102
 msgid "Sign document (embedded)"
 msgstr ""

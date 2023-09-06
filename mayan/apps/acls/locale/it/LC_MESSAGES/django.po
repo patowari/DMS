@@ -5,18 +5,18 @@
 # Translators:
 # Translators:
 # Paul Audhep <audhep@gmail.com>, 2023
-# Giovanni Tricarico <gtricarico92@gmail.com>, 2023
-# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023
-# Roberto Rosario, 2023
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2023
+# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023
+# Giovanni Tricarico <gtricarico92@gmail.com>, 2023
+# Roberto Rosario, 2023
 # Daniele Bortoluzzi <daniele@elkos.it>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Daniele Bortoluzzi <daniele@elkos.it>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
 msgstr "ACLs"
 
@@ -37,7 +37,7 @@ msgstr ""
 "Oggetto per il quale si concede l'accesso. Quando si ordinano gli oggetti, "
 "viene usata solo la tipologia e non l'etichetta dell'oggetto."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
 msgstr "Oggetto"
 
@@ -69,7 +69,7 @@ msgstr "Nuova ACL"
 msgid "Delete"
 msgstr "Cancella"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
 msgstr "Permessi"
 
@@ -97,7 +97,7 @@ msgstr "Conteggio delle autorizzazioni"
 msgid "Content type"
 msgstr "Tipo di contenuto"
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "ID dell'oggetto"
 
@@ -230,45 +230,49 @@ msgstr "Non ci sono ACL."
 msgid "Global access control lists"
 msgstr "Liste di controllo accessi"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "Tipo dell'oggetto"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "Tipo dell'oggetto per il quale l'accesso sarà modificato"
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
 "Identificativo numerico dell'oggetto per il quale l'accesso sarà modificato"
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "Ruoli "
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "Ruoli il cui accesso sarà modificato"
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "Permessi da concedere/revocare al ruolo per l'oggetto selezionato"
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr "Concedi l'accesso agli oggetti"
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr "Revoca l'accesso agli oggetti"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr "Concedi accesso al documento"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr "Revoca accesso al documento"

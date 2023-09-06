@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:53+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -21,380 +20,372 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:45
+#: apps.py:46
 msgid "Linking"
-msgstr "מְקַשֵׁר"
+msgstr ""
 
-#: apps.py:119 models.py:30 serializers.py:129
+#: apps.py:120 models.py:30 serializers.py:129
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
-#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:49
-#: permissions.py:6 views/smart_link_views.py:156
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
-msgstr "קישורים חכמים"
+msgstr ""
 
 #: events.py:10
 msgid "Smart link created"
-msgstr "נוצר קישור חכם"
+msgstr ""
 
 #: events.py:13
 msgid "Smart link edited"
-msgstr "קישור חכם נערך"
+msgstr ""
 
 #: forms.py:46
 msgid "Foreign document field"
-msgstr "שדה מסמכים זרים"
+msgstr ""
 
-#: links.py:44 views/smart_link_views.py:246
+#: links.py:45 views/smart_link_views.py:247
 msgid "Create new smart link"
-msgstr "צור קישור חכם חדש"
+msgstr ""
 
-#: links.py:49 links.py:87
+#: links.py:50 links.py:90
 msgid "Delete"
-msgstr "לִמְחוֹק"
+msgstr "מחיקה"
 
-#: links.py:53 models.py:41
+#: links.py:54 models.py:41
 msgid "Document types"
-msgstr "סוגי מסמכים"
+msgstr "Document types"
 
-#: links.py:58 links.py:91
+#: links.py:59 links.py:94
 msgid "Edit"
-msgstr "לַעֲרוֹך"
+msgstr "עריכה"
 
-#: links.py:63
+#: links.py:64
 msgid "Documents"
-msgstr "מסמכים"
+msgstr "Documents"
 
-#: links.py:81
+#: links.py:84
 msgid "Create condition"
-msgstr "צור תנאי"
+msgstr ""
 
-#: links.py:96
+#: links.py:99
 msgid "Conditions"
-msgstr "תנאים"
+msgstr ""
 
 #: literals.py:7
 msgid "and"
-msgstr "ו"
+msgstr ""
 
 #: literals.py:8
 msgid "or"
-msgstr "אוֹ"
+msgstr ""
 
 #: literals.py:12
 msgid "is equal to"
-msgstr "שווה ל"
+msgstr ""
 
 #: literals.py:13
 msgid "is equal to (case insensitive)"
-msgstr "שווה ל (לא רגיש לאותיות גדולות)"
+msgstr ""
 
 #: literals.py:14
 msgid "contains"
-msgstr "מכיל"
+msgstr ""
 
 #: literals.py:15
 msgid "contains (case insensitive)"
-msgstr "מכיל (לא רגיש לאותיות גדולות)"
+msgstr ""
 
 #: literals.py:16
 msgid "is in"
-msgstr "נמצא ב"
+msgstr ""
 
 #: literals.py:17
 msgid "is greater than"
-msgstr "גדול מ"
+msgstr ""
 
 #: literals.py:18
 msgid "is greater than or equal to"
-msgstr "גדול או שווה ל"
+msgstr ""
 
 #: literals.py:19
 msgid "is less than"
-msgstr "זה פחות מ"
+msgstr ""
 
 #: literals.py:20
 msgid "is less than or equal to"
-msgstr "קטן או שווה ל"
+msgstr ""
 
 #: literals.py:21
 msgid "starts with"
-msgstr "מתחיל עם"
+msgstr ""
 
 #: literals.py:22
 msgid "starts with (case insensitive)"
-msgstr "מתחיל עם (לא רגיש לאותיות גדולות)"
+msgstr ""
 
 #: literals.py:23
 msgid "ends with"
-msgstr "מסתיים עם"
+msgstr ""
 
 #: literals.py:24
 msgid "ends with (case insensitive)"
-msgstr "מסתיים ב (לא רגיש לאותיות גדולות)"
+msgstr ""
 
 #: literals.py:25
 msgid "is in regular expression"
-msgstr "נמצא בביטוי רגולרי"
+msgstr ""
 
 #: literals.py:26
 msgid "is in regular expression (case insensitive)"
-msgstr "הוא בביטוי רגולרי (לא רגיש לאותיות גדולות)"
+msgstr ""
 
 #: model_mixins.py:43
 #, python-format
 msgid "Error generating dynamic label; %s"
-msgstr "שגיאה ביצירת תווית דינמית; %s"
+msgstr ""
 
 #: model_mixins.py:58
 msgid "This smart link is not allowed for the selected document's type."
-msgstr "קישור חכם זה אינו מורשה עבור סוג המסמך שנבחר."
+msgstr ""
 
 #: model_mixins.py:108
 msgid "not"
-msgstr "לֹא"
+msgstr ""
 
 #: model_mixins.py:112
 msgid "Full label"
-msgstr "תווית מלאה"
+msgstr ""
 
 #: models.py:29
 msgid "A short text describing the smart link."
-msgstr "טקסט קצר המתאר את הקישור החכם."
+msgstr ""
 
 #: models.py:34
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
 msgstr ""
-"השתמש בשדה זה כדי להציג תווית ייחודית בהתאם למסמך שממנו ניגשים לקישור החכם."
 
 #: models.py:36
 msgid "Dynamic label"
-msgstr "תווית דינמית"
+msgstr ""
 
 #: models.py:38 models.py:110
 msgid "Enabled"
-msgstr "מופעל"
+msgstr "מופעל/מאופשר"
 
 #: models.py:48 models.py:87
 msgid "Smart link"
-msgstr "קישור חכם"
+msgstr ""
 
 #: models.py:91
 msgid "The inclusion is ignored for the first item."
-msgstr "התעלמות מההכללה עבור הפריט הראשון."
+msgstr ""
 
 #: models.py:95
 msgid "This represents the metadata of all other documents."
-msgstr "זה מייצג את המטא נתונים של כל המסמכים האחרים."
+msgstr ""
 
 #: models.py:96
 msgid "Foreign document attribute"
-msgstr "תכונת מסמך זר"
+msgstr ""
 
 #: models.py:101
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
-msgstr "הביטוי המשתמש במאפייני מסמך שיש להעריך מול שדה המסמך הזר."
+msgstr ""
 
 #: models.py:103
 msgid "Expression"
-msgstr "ביטוי"
+msgstr ""
 
 #: models.py:106
 msgid "Inverts the logic of the operator."
-msgstr "הופך את ההיגיון של האופרטור."
+msgstr ""
 
 #: models.py:107
 msgid "Negated"
-msgstr "שלילה"
+msgstr ""
 
 #: models.py:114
 msgid "Link condition"
-msgstr "מצב קישור"
+msgstr ""
 
 #: models.py:115
 msgid "Link conditions"
-msgstr "תנאי קישור"
+msgstr ""
 
 #: permissions.py:10
 msgid "View resolved smart links"
-msgstr "הצג קישורים חכמים שנפתרו"
+msgstr ""
 
 #: permissions.py:13
 msgid "Create new smart links"
-msgstr "צור קישורים חכמים חדשים"
+msgstr ""
 
 #: permissions.py:16
 msgid "Delete smart links"
-msgstr "מחק קישורים חכמים"
+msgstr ""
 
 #: permissions.py:19
 msgid "Edit smart links"
-msgstr "ערוך קישורים חכמים"
+msgstr ""
 
 #: permissions.py:22
 msgid "View existing smart links"
-msgstr "הצג קישורים חכמים קיימים"
+msgstr ""
 
 #: serializers.py:20 serializers.py:132
 msgid "Smart link URL"
-msgstr "כתובת אתר של קישור חכם"
+msgstr ""
 
 #: serializers.py:24 serializers.py:86 serializers.py:135
 msgid "URL"
-msgstr "כתובת אתר"
+msgstr "כתובת אתר (URL)"
 
 #: serializers.py:49
 msgid "Primary key of the document type to add to the smart link."
-msgstr "מפתח ראשי מסוג המסמך להוספה לקישור החכם."
+msgstr ""
 
 #: serializers.py:50 serializers.py:59
 msgid "Document type ID"
-msgstr "מזהה סוג מסמך"
+msgstr "Document type ID"
 
 #: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
-msgstr "מפתח ראשי מסוג המסמך להסרה מהקישור החכם."
+msgstr ""
 
 #: serializers.py:66
 msgid "Conditions URL"
-msgstr "כתובת אתר של תנאים"
+msgstr ""
 
 #: serializers.py:70
 msgid "Document types URL"
-msgstr "כתובת URL של סוגי מסמכים"
+msgstr "כתובת (URL) לסוגי מסמכים"
 
 #: serializers.py:74
 msgid "Document types add URL"
-msgstr "סוגי מסמכים מוסיפים כתובת URL"
+msgstr "כתובת URL להוספת סוגי מסמכים"
 
 #: serializers.py:78
 msgid "Document types remove URL"
-msgstr "סוגי מסמכים מסירים כתובת URL"
+msgstr "כתובת URL להסרת סוגי מסמכים"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"
-msgstr "כתובת URL של קישור חכם נפתרה"
+msgstr ""
 
 #: serializers.py:126
 msgid "Documents URL"
-msgstr "כתובת האתר של המסמכים"
+msgstr "כתובת האתר (URL) של מסמכים"
 
 #: views/smart_link_condition_views.py:47
 msgid ""
 "Conditions are small logic units that when combined define how the smart "
 "link will behave."
-msgstr "תנאים הם יחידות לוגיות קטנות שבשילובן מגדירות כיצד הקישור החכם יתנהג."
+msgstr ""
 
 #: views/smart_link_condition_views.py:51
 msgid "There are no conditions for this smart link"
-msgstr "אין תנאים לקישור החכם הזה"
+msgstr ""
 
 #: views/smart_link_condition_views.py:55
 #, python-format
 msgid "Conditions for smart link: %s"
-msgstr "תנאים לקישור חכם: %s"
+msgstr ""
 
 #: views/smart_link_condition_views.py:75
 #, python-format
 msgid "Add new conditions to smart link: \"%s\""
-msgstr "הוסף תנאים חדשים לקישור החכם: &quot;%s&quot;"
+msgstr ""
 
 #: views/smart_link_condition_views.py:109
 #, python-format
 msgid "Delete smart link condition: \"%s\"?"
-msgstr "למחוק את מצב הקישור החכם: &quot;%s&quot;?"
+msgstr ""
 
 #: views/smart_link_condition_views.py:136
 msgid "Edit smart link condition"
-msgstr "ערוך את מצב הקישור החכם"
+msgstr ""
 
-#: views/smart_link_views.py:73
+#: views/smart_link_views.py:74
 #, python-format
 msgid "Resolved smart link query error: %s"
-msgstr "נפתרה שגיאת שאילתת קישור חכם: %s"
+msgstr ""
 
-#: views/smart_link_views.py:100
+#: views/smart_link_views.py:101
 #, python-format
 msgid "Resolved smart link dynamic label error: %s"
-msgstr "נפתרה שגיאת תווית דינמית של קישור חכם: %s"
+msgstr ""
 
-#: views/smart_link_views.py:105
+#: views/smart_link_views.py:106
 #, python-format
 msgid ""
 "Documents in resolved smart link \"%(resolved_smart_link)s\" for "
 "\"%(document)s\""
 msgstr ""
-"מסמכים בקישור החכם &quot;%(resolved_smart_link)s&quot; עבור "
-"&quot;%(document)s&quot;"
 
-#: views/smart_link_views.py:147
+#: views/smart_link_views.py:148
 msgid ""
 "Indexes group documents into units, usually with similar properties and of "
 "equal or similar types. Smart links allow defining relationships between "
 "documents even if they are in different indexes and are of different types."
 msgstr ""
-"אינדקסים מקבצים מסמכים ליחידות, בדרך כלל בעלות מאפיינים דומים ומסוגים שווים "
-"או דומים. קישורים חכמים מאפשרים להגדיר קשרים בין מסמכים גם אם הם באינדקסים "
-"שונים והם מסוגים שונים."
 
-#: views/smart_link_views.py:154
+#: views/smart_link_views.py:155
 msgid "There are no smart links"
-msgstr "אין קישורים חכמים"
+msgstr ""
 
-#: views/smart_link_views.py:176
+#: views/smart_link_views.py:177
 msgid ""
 "Smart links allow defining relationships between documents even if they are "
 "in different indexes and are of different types."
 msgstr ""
-"קישורים חכמים מאפשרים להגדיר קשרים בין מסמכים גם אם הם באינדקסים שונים והם "
-"מסוגים שונים."
 
-#: views/smart_link_views.py:181
+#: views/smart_link_views.py:182
 msgid "There are no resolved smart links for this document"
-msgstr "אין קישורים חכמים פתורים עבור מסמך זה"
+msgstr ""
 
-#: views/smart_link_views.py:185
+#: views/smart_link_views.py:186
 #, python-format
 msgid "Resolved smart links for document: %s"
-msgstr "קישורים חכמים שנפתרו למסמך: %s"
-
-#: views/smart_link_views.py:203
-msgid "Available smart links"
-msgstr "קישורים חכמים זמינים"
+msgstr ""
 
 #: views/smart_link_views.py:204
-msgid "Smart links enabled"
-msgstr "קישורים חכמים מופעלים"
+msgid "Available smart links"
+msgstr ""
 
-#: views/smart_link_views.py:215
+#: views/smart_link_views.py:205
+msgid "Smart links enabled"
+msgstr ""
+
+#: views/smart_link_views.py:216
 #, python-format
 msgid "Smart links to enable for document type: %s"
-msgstr "קישורים חכמים להפעלת סוג המסמך: %s"
-
-#: views/smart_link_views.py:228
-msgid "Available document types"
-msgstr "סוגי מסמכים זמינים"
+msgstr ""
 
 #: views/smart_link_views.py:229
-msgid "Document types enabled"
-msgstr "סוגי מסמכים מופעלים"
+msgid "Available document types"
+msgstr "Available document types"
 
-#: views/smart_link_views.py:240
+#: views/smart_link_views.py:230
+msgid "Document types enabled"
+msgstr "סוגי מסמכים אפשריים"
+
+#: views/smart_link_views.py:241
 #, python-format
 msgid "Document type for which to enable smart link: %s"
-msgstr "סוג מסמך שעבורו יש לאפשר קישור חכם: %s"
+msgstr ""
 
-#: views/smart_link_views.py:270
+#: views/smart_link_views.py:271
 #, python-format
 msgid "Delete smart link: %s"
-msgstr "מחק קישור חכם: %s"
+msgstr ""
 
-#: views/smart_link_views.py:287
+#: views/smart_link_views.py:288
 #, python-format
 msgid "Edit smart link: %s"
-msgstr "ערוך קישור חכם: %s"
+msgstr ""

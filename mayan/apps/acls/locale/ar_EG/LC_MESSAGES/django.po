@@ -6,17 +6,17 @@
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
 # Ali <alimahwer@yahoo.com>, 2023
-# Roberto Rosario, 2023
-# Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2023
+# ali ahmed, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: ali ahmed, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,67 +24,67 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
-msgstr "قوائم الصلاحيات"
+msgstr "قوائم التحكم فى الدخول"
 
 #: apps.py:62
 msgid ""
 "Object for which the access is granted. When sorting objects, only the type "
 "is used and not the actual label of the object."
 msgstr ""
-"المادة التي تم منح حق الوصول إليها. عند ترتيب المواد، يستخدم النوع فقط و ليس"
-" الاسم الفعلي للمادة."
+"الكائن الذي تم منح الوصول إليه. عند فرز الكائنات ، يتم استخدام النوع فقط "
+"وليس التسمية الفعلية للكائن."
 
-#: apps.py:65
+#: apps.py:65 workflow_actions.py:128
 msgid "Object"
-msgstr "عنصر"
+msgstr "كائن"
 
 #: events.py:6 permissions.py:6
 msgid "Access control lists"
-msgstr "المستخدمين والصلاحيات"
+msgstr "قوائم التحكم فى الدخول"
 
 #: events.py:10
 msgid "ACL created"
-msgstr "إنشاء الصلاحيات"
+msgstr "تم إنشاء قائمة التحكم فى الدخول"
 
 #: events.py:13
 msgid "ACL deleted"
-msgstr "قائمة حق الوصول ACL تم إلغاؤها"
+msgstr "تم حذف قائمة التحكم فى الدخول"
 
 #: events.py:16
 msgid "ACL edited"
-msgstr "تعديل الصلاحيات"
+msgstr "تم تحرير قائمة التحكم فى الدخول"
 
 #: forms.py:13 models.py:56 serializers.py:79 views.py:73
 msgid "Role"
-msgstr "الدور"
+msgstr "دور"
 
 #: links.py:16
 msgid "New ACL"
-msgstr "إنشاء صلاحيات جديدة"
+msgstr "قائمة تحكم في الدخول جديدة "
 
 #: links.py:21
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
 msgid "Permissions"
-msgstr "الصلاحيات"
+msgstr "أذونات"
 
 #: links.py:35
 msgid "Global ACLs"
-msgstr "قوائم حق الوصول ACL شاملة"
+msgstr "قوائم التحكم في الدخول العالمية"
 
 #: managers.py:274
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
-msgstr "الكائن \"%s\" ليس نموذجًا ولا يمكن التحقق منه للولوج. "
+msgstr "الكائن \"%s\" ليس نموذجًا ولا يمكن التحقق منه للوصول."
 
 #: managers.py:294
 #, python-format
 msgid "Insufficient access for: %s"
-msgstr "صلاحيات الوصول غير كافية لـ:%s"
+msgstr "وصول غير كافٍ لـ: %s"
 
 #: model_mixins.py:23
 msgid "Permission count"
@@ -94,13 +94,13 @@ msgstr "عدد الأذونات"
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:32
+#: models.py:43 workflow_actions.py:53
 msgid "Object ID"
 msgstr "معرف الكائن"
 
 #: models.py:54
 msgid "Role to which the access is granted for the specified object."
-msgstr "الدور الذي مُنح حق الوصول للمادة"
+msgstr "الدور الذي يتم منح الوصول إليه للكائن المحدد."
 
 #: models.py:64
 msgid "Access entry"
@@ -117,11 +117,11 @@ msgstr "إذن الدور \"%(role)s\" لـ \"%(object)s\""
 
 #: permissions.py:10
 msgid "Edit ACLs"
-msgstr "تعديل قوائم الصلاحيات"
+msgstr "تحرير قوائم التحكم في الدخول"
 
 #: permissions.py:13
 msgid "View ACLs"
-msgstr "إستعراض قوائم الصلاحيات"
+msgstr "مشاهدة ملف قوائم التحكم في الدخول"
 
 #: serializers.py:19
 msgid "Permissions add URL"
@@ -145,7 +145,7 @@ msgstr "URL"
 
 #: serializers.py:118
 msgid "Primary key of the permission to add to the ACL."
-msgstr "المفتاح الأساسي للإذن بالإضافة إلى قائمة حق الوصول ACL"
+msgstr "المفتاح الأساسي لإذن الإضافة إلى قائمة التحكم بالوصول ."
 
 #: serializers.py:119 serializers.py:126
 msgid "Permission ID"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: serializers.py:125
 msgid "Primary key of the permission to remove from the ACL."
-msgstr "المفتاح الأساسي للإذن بالإلغاء من قائمة حق الوصول ACL"
+msgstr "المفتاح الأساسي للإذن بالإزالة من قائمة التحكم بالوصول ."
 
 #: views.py:44
 #, python-format
@@ -161,22 +161,22 @@ msgid ""
 "An ACL for \"%(object)s\" using role \"%(role)s\" already exists. Edit that "
 "ACL entry instead."
 msgstr ""
-"توجد بالفعل قائمة صلاحيات ل \"%(object)s\" باستخدام الدور \"%(role)s\". قم "
-"بتحرير هذا العنصر من قائمة صلاحيات بدلاً من ذلك."
+"قائمة التحكم في الدخول لـ \"%(object)s\" باستخدام الدور \"%(role)s\"موجودة "
+"بالفعل. قم بتحرير إدخال قائمة التحكم في دخول  هذا بدلاً من ذلك."
 
 #: views.py:59
 #, python-format
 msgid "New access control lists for: %s"
-msgstr "إضافات للمستخدمين والصلاحيات: %s"
+msgstr "قوائم جديدة للتحكم في الوصول لـ: %s"
 
 #: views.py:103
 #, python-format
 msgid "Delete ACL: %s"
-msgstr "حذف قائمة التحكم في الوصول: %s"
+msgstr "حذف قائمة التحكم في الدخول : %s"
 
 #: views.py:149
 msgid "There are no ACLs for this object"
-msgstr "لا توجد قوائم تحكم في الوصول لهذا الكائن"
+msgstr "لا توجد قوائم تحكم بالدخول لهذا الكائن"
 
 #: views.py:152 views.py:272
 msgid ""
@@ -184,7 +184,9 @@ msgid ""
 "access to objects in the system. ACLs allow granting a permission to a role "
 "but only for a specific object or set of objects."
 msgstr ""
-"قوائم الصلاحيات تسمح للمستخدم من الدخول الى الأذونات وحسب الادوار المخصصة"
+"يرمز ACL إلى قائمة التحكم في الوصول وهي طريقة دقيقة للتحكم في وصول المستخدم "
+"إلى الكائنات في النظام. تسمح قوائم التحكم في الدخول بمنح إذن لدور ما ولكن "
+"فقط لكائن معين أو مجموعة كائنات."
 
 #: views.py:159
 #, python-format
@@ -193,16 +195,16 @@ msgstr " المستخدمين والصلاحيات: %s"
 
 #: views.py:168
 msgid "Granted permissions"
-msgstr "الصلاحيات الممنوحة"
+msgstr "الأذونات الممنوحة"
 
 #: views.py:169
 msgid "Available permissions"
-msgstr "الصلاحيات المتاحة"
+msgstr "الأذونات المتاحة"
 
 #: views.py:219
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
-msgstr "صلاحية الدور \"%(role)s\" لـ \"%(object)s\"."
+msgstr "إذن الدور \"%(role)s\" ل\"%(object)s\""
 
 #: views.py:228
 msgid ""
@@ -223,44 +225,48 @@ msgstr "لا توجد قوائم بحق الوصول ACL"
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 
-#: workflow_actions.py:23
+#: workflow_actions.py:44
 msgid "Object type"
 msgstr "نوع الكائن"
 
-#: workflow_actions.py:26
+#: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
 msgstr "نوع الكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:35
+#: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr "المعرف الرقمي للكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:40 workflow_actions.py:160
+#: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
 msgstr "أدوار"
 
-#: workflow_actions.py:42 workflow_actions.py:162
+#: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
 msgstr "الأدوار التي سيتم تعديل الوصول إليها."
 
-#: workflow_actions.py:49 workflow_actions.py:169
+#: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "صلاحيات منح / إبطال إلى / من دور الكائن المحدد أعلاه."
 
-#: workflow_actions.py:57
+#: workflow_actions.py:77
 msgid "Grant object access"
 msgstr "إتاحة الوصول إلى الكائن"
 
-#: workflow_actions.py:145
+#: workflow_actions.py:132 workflow_actions.py:231
+msgid "Access"
+msgstr ""
+
+#: workflow_actions.py:170
 msgid "Revoke object access"
 msgstr "إبطال الوصول إلى الكائن"
 
-#: workflow_actions.py:177
+#: workflow_actions.py:213
 msgid "Grant document access"
 msgstr "منح حق الوصول إلى الوثيقة"
 
-#: workflow_actions.py:218
+#: workflow_actions.py:259
 msgid "Revoke document access"
 msgstr "إبطال صلاحية الوصول إلى الوثيقة"

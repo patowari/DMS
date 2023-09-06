@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2023
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:28 apps.py:54 links.py:14 queues.py:9
+#: apps.py:28 apps.py:54 links.py:14 queues.py:7
 msgid "Duplicates"
 msgstr "Duplicaten"
 
@@ -41,15 +41,15 @@ msgstr ""
 msgid "Exact document label"
 msgstr ""
 
-#: links.py:18 models.py:37 views.py:79
+#: links.py:18 models.py:39 views.py:79
 msgid "Duplicated documents"
 msgstr "Gedupliceerde documenten"
 
-#: links.py:24 queues.py:23
+#: links.py:24 queues.py:24
 msgid "Duplicated document scan"
 msgstr "Gedupliceerde documentscan"
 
-#: models.py:19 models.py:29
+#: models.py:19 models.py:31
 msgid "Stored duplicate backend"
 msgstr ""
 
@@ -57,23 +57,27 @@ msgstr ""
 msgid "Stored duplicate backends"
 msgstr ""
 
-#: models.py:33
+#: models.py:35
 msgid "Document"
 msgstr "Document"
 
-#: models.py:45
+#: models.py:47
 msgid "Duplicated backend entry"
 msgstr ""
 
-#: models.py:46
+#: models.py:48
 msgid "Duplicated backend entries"
 msgstr ""
 
-#: queues.py:14
+#: queues.py:10
+msgid "Duplicates slow"
+msgstr ""
+
+#: queues.py:15
 msgid "Clean empty duplicate lists"
 msgstr "Duplicatenlijsten opschonen"
 
-#: queues.py:18
+#: queues.py:19
 msgid "Scan document duplicates"
 msgstr "Document duplicaten scannen"
 

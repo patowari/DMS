@@ -4,21 +4,23 @@
 # 
 # Translators:
 # Translators:
-# Rogerio Falcone <rogerio@falconeit.com.br>, 2023
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
-# Emerson Soares <on.emersonsoares@gmail.com>, 2023
 # Vítor Figueiró <vfigueiro@gmail.com>, 2023
-# Roberto Rosario, 2023
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
+# Emerson Soares <on.emersonsoares@gmail.com>, 2023
+# Aline Freitas <aline@alinefreitas.com.br>, 2023
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
+# Roberto Rosario, 2023
+# Rogerio Falcone <rogerio@falconeit.com.br>, 2023
 # Márcia Ferreira, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Márcia Ferreira, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -35,25 +37,25 @@ msgstr "Conversor"
 msgid "Transformation"
 msgstr "Transformação"
 
-#: backends/python.py:123 backends/python.py:138
-#, python-format
-msgid "Exception determining PDF page count; %s"
-msgstr "Exceção a determinar o número de páginas PDF; %s"
-
-#: backends/python.py:152
+#: backends/python.py:106
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr "Exceção a determinar o número de páginas usando Pillow; %s"
 
-#: classes.py:161
+#: backends/python.py:194 backends/python.py:211
+#, python-format
+msgid "Exception determining PDF page count; %s"
+msgstr "Exceção a determinar o número de páginas PDF; %s"
+
+#: classes.py:173
 msgid "LibreOffice not installed or not found."
 msgstr "LibreOffice não instalado ou não encontrado."
 
-#: classes.py:267
+#: classes.py:279
 msgid "Not an office file format."
 msgstr "Não é um ficheiro de formato office."
 
-#: classes.py:403
+#: classes.py:415
 msgid ""
 "Transformations allow changing the visual appearance of documents without "
 "making permanent changes to the document file themselves."
@@ -99,18 +101,18 @@ msgstr "Transformações disponíveis para esta camada."
 msgid "\"%s\" not a valid entry."
 msgstr "\" %s \" não é uma entrada válida."
 
-#: layers.py:11
+#: layers.py:12
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
 "Decorações são elementos visuais que acrescentam informação contextual às "
 "imagens."
 
-#: layers.py:13
+#: layers.py:14
 msgid "Decorations"
 msgstr "Decorações"
 
-#: layers.py:24
+#: layers.py:26
 msgid "Saved transformations"
 msgstr "Transformações salvas"
 
@@ -118,23 +120,24 @@ msgstr "Transformações salvas"
 msgid "Create asset"
 msgstr "Criar recurso"
 
-#: links.py:38 links.py:44 links.py:64
+#: links.py:38 links.py:44 links.py:67
 msgid "Delete"
 msgstr "Remover"
 
-#: links.py:48 links.py:68
+#: links.py:48 links.py:71
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:56 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:59 models.py:54 storages.py:21
+#: views/asset_views.py:144
 msgid "Assets"
 msgstr "Recursos"
 
-#: links.py:73
+#: links.py:76 workflow_actions.py:91
 msgid "Transformations"
 msgstr "Transformações"
 
-#: links.py:78
+#: links.py:81
 msgid "Select new transformation"
 msgstr "Selecionar nova transformação"
 
@@ -166,7 +169,7 @@ msgstr "Ficheiro"
 msgid "Asset"
 msgstr "Recurso"
 
-#: models.py:90 models.py:161
+#: models.py:90 models.py:161 serializers.py:10
 msgid "Name"
 msgstr "Nome"
 
@@ -210,7 +213,7 @@ msgstr ""
 "Ordem de execução das transformações. Se deixado em branco, um valor será "
 "atribuído automáticamente."
 
-#: models.py:165 workflow_actions.py:45
+#: models.py:165 workflow_actions.py:57
 msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
@@ -220,7 +223,7 @@ msgstr ""
 
 #: models.py:178
 msgid "Layer transformation"
-msgstr "Transformação de camada"
+msgstr "Camada de transformação"
 
 #: models.py:179
 msgid "Layer transformations"
@@ -266,11 +269,19 @@ msgstr "Ver transformações existentes"
 msgid "Generate a image of an object."
 msgstr "Gerar imagem de um objeto "
 
-#: serializers.py:10
+#: serializers.py:13
+msgid "Image path"
+msgstr ""
+
+#: serializers.py:16 serializers.py:32
 msgid "Image URL"
 msgstr ""
 
-#: serializers.py:17
+#: serializers.py:21
+msgid "Template name"
+msgstr ""
+
+#: serializers.py:24 serializers.py:39
 msgid "URL"
 msgstr "URL"
 
@@ -351,7 +362,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "Cache de recursos"
 
-#: transformation_mixins.py:20 transformations.py:618
+#: transformation_mixins.py:20 transformations.py:617
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -368,11 +379,11 @@ msgstr ""
 msgid "Transparency"
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:723
+#: transformation_mixins.py:29 transformations.py:722
 msgid "Zoom level in percent."
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:718
+#: transformation_mixins.py:29 transformations.py:717
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -466,7 +477,7 @@ msgstr ""
 msgid "Color used to fill the rectangle."
 msgstr ""
 
-#: transformation_mixins.py:350 transformations.py:625
+#: transformation_mixins.py:350 transformations.py:624
 msgid "Fill color"
 msgstr ""
 
@@ -570,7 +581,7 @@ msgstr "Girar"
 msgid "Gaussian blur"
 msgstr "Mancha Gaussiana"
 
-#: transformations.py:530 transformations.py:693
+#: transformations.py:530 transformations.py:692
 msgid "Radius"
 msgstr ""
 
@@ -602,51 +613,51 @@ msgstr ""
 msgid "Height"
 msgstr "altura"
 
-#: transformations.py:612
+#: transformations.py:611
 msgid "Rotate"
 msgstr "Rodar"
 
-#: transformations.py:620
+#: transformations.py:619
 msgid "Degrees"
 msgstr "graus"
 
-#: transformations.py:624
+#: transformations.py:623
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 
-#: transformations.py:655
+#: transformations.py:654
 msgid "Rotate 90 degrees"
 msgstr "Girar 90 graus"
 
-#: transformations.py:666
+#: transformations.py:665
 msgid "Rotate 180 degrees"
 msgstr "Girar 180 graus"
 
-#: transformations.py:677
+#: transformations.py:676
 msgid "Rotate 270 degrees"
 msgstr "Girar 270 graus"
 
-#: transformations.py:687
+#: transformations.py:686
 msgid "Unsharp masking"
 msgstr "Unsharp masking"
 
-#: transformations.py:692
+#: transformations.py:691
 msgid "The blur radius in pixels."
 msgstr ""
 
-#: transformations.py:696
+#: transformations.py:695
 msgid "Unsharp strength in percent."
 msgstr ""
 
-#: transformations.py:697 transformations.py:724
+#: transformations.py:696 transformations.py:723
 msgid "Percent"
 msgstr "Percentual"
 
-#: transformations.py:701
+#: transformations.py:700
 msgid "Minimum brightness change that will be sharpened."
 msgstr ""
 
-#: transformations.py:702
+#: transformations.py:701
 msgid "Tthreshold"
 msgstr ""
 
@@ -663,9 +674,9 @@ msgstr "Remover pedido realizado em %(count)d recursos"
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Remover recurso selecionado?"
+msgstr[1] "Remover os recursos selecionados?"
+msgstr[2] "Remover os recursos selecionados?"
 
 #: views/asset_views.py:70
 #, python-format
@@ -707,7 +718,7 @@ msgstr "Nenhum recurso disponível"
 #: views/transformation_views.py:52
 #, python-format
 msgid "Error creating transformation: %s."
-msgstr "Erro ao criar transformação: %s"
+msgstr "Erro ao criar a transformação: %s"
 
 #: views/transformation_views.py:69
 #, python-format
@@ -726,7 +737,7 @@ msgstr "Remover transformação \"%(transformation)s\" para: %(content_object)s 
 #: views/transformation_views.py:184
 #, python-format
 msgid "Edit transformation \"%(transformation)s\" for: %(content_object)s"
-msgstr "Editar transformação \"%(transformation)s\" para: %(content_object)s "
+msgstr "Editar transformação \"%(transformation)s\" para: %(content_object)s"
 
 #: views/transformation_views.py:248
 #, python-format
@@ -751,11 +762,11 @@ msgstr "Selecionar"
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
 msgstr "Selecione uma nova camada \"%(layer)s\" transformação para: %(object)s"
 
-#: workflow_actions.py:22
+#: workflow_actions.py:34
 msgid "Pages"
 msgstr "Páginas"
 
-#: workflow_actions.py:25
+#: workflow_actions.py:37
 msgid ""
 "Pages to which the new transformations will be added. Separate by commas "
 "and/or use a dashes for a ranges. Leave blank to select all pages."
@@ -764,18 +775,22 @@ msgstr ""
 "intervalos utilize vírgulas e/ou travessões. Deixe em branco para selecionar"
 " todas as páginas."
 
-#: workflow_actions.py:32
+#: workflow_actions.py:44
 msgid "Transformation class"
 msgstr "Classe de transformação"
 
-#: workflow_actions.py:37
+#: workflow_actions.py:49
 msgid "Type of transformation to add."
 msgstr "Tipo de transformação a adicionar."
 
-#: workflow_actions.py:42
+#: workflow_actions.py:54
 msgid "Transformation arguments"
 msgstr "Argumento de transformação"
 
-#: workflow_actions.py:51
+#: workflow_actions.py:63
 msgid "Add transformation"
 msgstr "Adicionar transformação"
+
+#: workflow_actions.py:86
+msgid "Objects"
+msgstr ""

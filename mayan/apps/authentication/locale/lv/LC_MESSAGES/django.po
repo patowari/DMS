@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2023\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
 "MIME-Version: 1.0\n"
@@ -161,55 +161,61 @@ msgstr "Pierakstīšanās lapa"
 msgid "Password reset email sent!"
 msgstr "Paroles atiestatīšanas e-pasts nosūtīts!"
 
-#: views/authentication_views.py:159
+#: views/authentication_views.py:161
 msgid "Next"
 msgstr ""
 
-#: views/authentication_views.py:165
+#: views/authentication_views.py:167
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "%(step)d solis no %(total_steps)d: %(step_label)s"
 
-#: views/authentication_views.py:235
+#: views/authentication_views.py:237
 msgid "Your password has been successfully changed."
 msgstr "Jūsu parole ir veiksmīgi mainīta."
 
-#: views/authentication_views.py:245
+#: views/authentication_views.py:247
 msgid "Current user password change"
 msgstr "Pašreizējā lietotāja paroles maiņa"
 
-#: views/authentication_views.py:257
+#: views/authentication_views.py:259
 msgid "Changing the password is not allowed for this account."
 msgstr "Paroles maiņa šim kontam nav atļauta."
 
-#: views/authentication_views.py:329
+#: views/authentication_views.py:331
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "%(count)d lietotājam veikts paroles maiņas pieprasījums"
 
-#: views/authentication_views.py:332
+#: views/authentication_views.py:334
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "%(count)d lietotājiem veikts paroles maiņas pieprasījums"
 
-#: views/authentication_views.py:341
+#: views/authentication_views.py:351
+msgid ""
+"Changing the password of staff or super user accounts via the user interface"
+" is not allowed. Use administration tools to perform this operation."
+msgstr ""
+
+#: views/authentication_views.py:365
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: views/authentication_views.py:352
+#: views/authentication_views.py:376
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Mainīt paroli lietotājam: %s"
 
-#: views/authentication_views.py:376
+#: views/authentication_views.py:400
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Veiksmīga paroles atiestatīšana lietotājam: %s."
 
-#: views/authentication_views.py:382
+#: views/authentication_views.py:406
 #, python-format
 msgid "Error reseting password for user \"%(user)s\": %(error)s"
 msgstr "Atiestatot paroli lietotājam \"%(user)s\", radās kļūda: %(error)s"

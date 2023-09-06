@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2023\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "A generator returning the document file's pages parsed content."
 msgstr ""
 
-#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:11
+#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:18
 msgid "Content"
 msgstr "Saturs"
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr ""
 
-#: models.py:31
+#: models.py:31 search.py:24
 msgid "Document file page content"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Document file parsing"
 msgstr ""
 
-#: search.py:17 search.py:24
+#: search.py:12
 msgid "Document file content"
 msgstr ""
 

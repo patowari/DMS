@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -26,11 +26,11 @@ msgstr "Django GPG"
 
 #: apps.py:53 apps.py:59 forms.py:16
 msgid "Key ID"
-msgstr "מזהה מפתח"
+msgstr ""
 
 #: apps.py:63 forms.py:42 models.py:50
 msgid "Type"
-msgstr "סוּג"
+msgstr ""
 
 #: apps.py:67 forms.py:23 models.py:29
 msgid "Creation date"
@@ -38,15 +38,15 @@ msgstr "תאריך יצירה"
 
 #: apps.py:72
 msgid "No expiration"
-msgstr "ללא תפוגה"
+msgstr ""
 
 #: apps.py:73 forms.py:28 models.py:33
 msgid "Expiration date"
-msgstr "תאריך תפוגה"
+msgstr ""
 
 #: apps.py:77 forms.py:35 models.py:40
 msgid "Length"
-msgstr "אורך"
+msgstr ""
 
 #: apps.py:82 forms.py:20 models.py:46
 msgid "User ID"
@@ -54,7 +54,7 @@ msgstr "קוד משתמש"
 
 #: dependencies.py:10
 msgid "GNU privacy guard - a PGP implementation."
-msgstr "GNU privacy guard - יישום PGP."
+msgstr ""
 
 #: events.py:6 links.py:42 permissions.py:6
 msgid "Key management"
@@ -62,23 +62,23 @@ msgstr "ניהול מפתחות"
 
 #: events.py:10
 msgid "Key created"
-msgstr "מפתח נוצר"
+msgstr ""
 
 #: events.py:14
 msgid "Key downloaded"
-msgstr "מפתח הורד"
+msgstr ""
 
 #: forms.py:27
 msgid "None"
-msgstr "אף אחד"
+msgstr "אף אחד/כלום"
 
 #: forms.py:32 models.py:37
 msgid "Fingerprint"
-msgstr "טביעת אצבע"
+msgstr ""
 
 #: forms.py:38 models.py:43
 msgid "Algorithm"
-msgstr "אַלגוֹרִיתְם"
+msgstr ""
 
 #: forms.py:56
 msgid "Term"
@@ -94,7 +94,7 @@ msgstr "מחיקה"
 
 #: links.py:22
 msgid "Details"
-msgstr "פרטים"
+msgstr "Details"
 
 #: links.py:27
 msgid "Download"
@@ -106,7 +106,7 @@ msgstr "חיפוש בשרתי מפתחות"
 
 #: links.py:37
 msgid "Import"
-msgstr "יְבוּא"
+msgstr ""
 
 #: links.py:46
 msgid "Upload key"
@@ -114,11 +114,11 @@ msgstr "העלאת מפתח"
 
 #: links.py:50 views.py:215
 msgid "Private keys"
-msgstr "מפתחות פרטיים"
+msgstr ""
 
 #: links.py:54 views.py:240
 msgid "Public keys"
-msgstr "מפתחות ציבוריים"
+msgstr ""
 
 #: literals.py:23 literals.py:31
 msgid "Public"
@@ -146,15 +146,15 @@ msgstr "חתימה לא תקינה."
 
 #: literals.py:73
 msgid "Document not signed or invalid signature."
-msgstr "מסמך לא חתום או חתימה לא חוקית."
+msgstr ""
 
 #: literals.py:76
 msgid "Signature error."
-msgstr "שגיאת חתימה."
+msgstr ""
 
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
-msgstr "המסמך חתום אך אין מפתח ציבורי זמין לאימות."
+msgstr ""
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."
@@ -166,19 +166,19 @@ msgstr "המסמך חתום בחתימה תקינה."
 
 #: models.py:25
 msgid "ASCII armored version of the key."
-msgstr "גרסת ASCII משוריינת של המפתח."
+msgstr ""
 
 #: models.py:26
 msgid "Key data"
-msgstr "נתוני מפתח"
+msgstr ""
 
 #: models.py:56
 msgid "Key"
-msgstr "מַפְתֵחַ"
+msgstr ""
 
 #: models.py:57
 msgid "Keys"
-msgstr "מפתחות"
+msgstr ""
 
 #: models.py:72
 msgid "Invalid key data"
@@ -186,7 +186,7 @@ msgstr "נתוני מפתח לא תקינים"
 
 #: models.py:77
 msgid "Key already exists."
-msgstr "המפתח כבר קיים."
+msgstr ""
 
 #: permissions.py:10
 msgid "Delete keys"
@@ -198,15 +198,15 @@ msgstr "הורדת מפתחות"
 
 #: permissions.py:16
 msgid "Import keys from keyservers"
-msgstr "ייבוא מפתחות משרתי מפתחות"
+msgstr ""
 
 #: permissions.py:19
 msgid "Use keys to sign content"
-msgstr "השתמש במקשים כדי לחתום על תוכן"
+msgstr ""
 
 #: permissions.py:22
 msgid "Upload keys"
-msgstr "העלאת מפתחות"
+msgstr ""
 
 #: permissions.py:25
 msgid "View keys"
@@ -218,7 +218,7 @@ msgstr "כתובת אתר (URL)"
 
 #: settings.py:11
 msgid "Signatures"
-msgstr "חתימות"
+msgstr ""
 
 #: settings.py:18
 msgid "Full path to the backend to be used to handle keys and signatures."
@@ -226,7 +226,7 @@ msgstr "נתיב מלא ל-backend שישמש לטיפול במפתחות וחת
 
 #: settings.py:27
 msgid "Keyserver used to query for keys."
-msgstr "שרת מפתחות משמש לשאילתות מפתחות."
+msgstr ""
 
 #: views.py:42
 #, python-format
@@ -236,12 +236,12 @@ msgstr "מחיקת מפתח: %s"
 #: views.py:61
 #, python-format
 msgid "Details for key: %s"
-msgstr "פרטים למפתח: %s"
+msgstr ""
 
 #: views.py:97
 #, python-format
 msgid "Import key ID: %s?"
-msgstr "ייבוא מזהה מפתח: %s?"
+msgstr ""
 
 #: views.py:98
 msgid "Import key"
@@ -250,12 +250,12 @@ msgstr "ייבוא מפתח"
 #: views.py:109
 #, python-format
 msgid "Unable to import key: %(key_id)s; %(error)s"
-msgstr "לא ניתן לייבא מפתח: %(key_id)s; %(error)s"
+msgstr ""
 
 #: views.py:117
 #, python-format
 msgid "Successfully received key: %(key_id)s"
-msgstr "מפתח התקבל בהצלחה: %(key_id)s"
+msgstr ""
 
 #: views.py:135
 msgid ""
@@ -267,15 +267,15 @@ msgstr ""
 
 #: views.py:139
 msgid "No results returned"
-msgstr "לא הוחזרו תוצאות"
+msgstr ""
 
 #: views.py:141
 msgid "Key query results"
-msgstr "תוצאות שאילתות מפתח"
+msgstr ""
 
 #: views.py:162
 msgid "Query key server"
-msgstr "שרת מפתח שאילתות"
+msgstr ""
 
 #: views.py:186
 msgid "Upload new key"
@@ -286,12 +286,10 @@ msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
 msgstr ""
-"מפתחות פרטיים משמשים למסמכים חתומים. ניתן להעלות מפתחות פרטיים רק על ידי "
-"המשתמש. התצוגה להעלאת מפתחות פרטיים וציבוריים זהה."
 
 #: views.py:213
 msgid "There no private keys"
-msgstr "אין מפתחות פרטיים"
+msgstr ""
 
 #: views.py:232
 msgid ""
@@ -299,10 +297,7 @@ msgid ""
 " by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
-"מפתחות ציבוריים משמשים לאימות מסמכים חתומים. ניתן להעלות מפתחות ציבוריים על "
-"ידי המשתמש או להוריד אותם משרתי מפתחות. התצוגה להעלאת מפתחות פרטיים "
-"וציבוריים זהה."
 
 #: views.py:238
 msgid "There no public keys"
-msgstr "אין מפתחות ציבוריים"
+msgstr ""

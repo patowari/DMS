@@ -4,15 +4,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
 # Ovadia Ovadia, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:56+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -23,246 +22,242 @@ msgstr ""
 
 #: apps.py:20 settings.py:11
 msgid "Views"
-msgstr "צפיות"
+msgstr "תצוגות"
 
-#: forms.py:38
+#: forms.py:35
 msgid "Search"
-msgstr "לחפש"
+msgstr ""
 
-#: forms.py:54
+#: forms.py:53
 msgid "Selection"
-msgstr "בְּחִירָה"
+msgstr ""
 
-#: forms.py:342
+#: forms.py:233
 msgid "Label"
-msgstr "תווית"
+msgstr "Label"
 
-#: forms.py:348
+#: forms.py:239
 msgid "Relationship"
-msgstr "מערכת יחסים"
+msgstr ""
 
-#: generics.py:163
+#: generics.py:164
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
-"בחר ערכים להסרה. החזק את Control כדי לבחור ערכים מרובים. לאחר השלמת הבחירה, "
-"לחץ על הלחצן למטה או לחץ פעמיים על הרשימה כדי להפעיל את הפעולה."
 
-#: generics.py:168
+#: generics.py:169
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
-"בחר ערכים להוספת. החזק את Control כדי לבחור ערכים מרובים. לאחר השלמת הבחירה,"
-" לחץ על הלחצן למטה או לחץ פעמיים על הרשימה כדי להפעיל את הפעולה."
 
-#: generics.py:322
+#: generics.py:323
 msgid "Add all"
-msgstr "הוסף הכל"
+msgstr ""
 
-#: generics.py:329
+#: generics.py:330
 msgid "Add"
-msgstr "לְהוֹסִיף"
+msgstr ""
 
-#: generics.py:340
+#: generics.py:341
 msgid "Remove all"
-msgstr "להסיר את כל"
+msgstr ""
 
-#: generics.py:347
+#: generics.py:348
 msgid "Remove"
-msgstr "לְהַסִיר"
+msgstr ""
 
-#: generics.py:576
+#: generics.py:579
 #, python-format
 msgid "Error updating relationship; %s"
-msgstr "שגיאה בעדכון הקשר; %s"
+msgstr ""
 
-#: generics.py:583
+#: generics.py:586
 msgid "Relationships updated successfully"
-msgstr "מערכות היחסים עודכנו בהצלחה"
+msgstr ""
 
-#: generics.py:646
+#: generics.py:649
 #, python-format
 msgid "Duplicate data error: %(error)s"
-msgstr "שגיאת נתונים כפולים: %(error)s"
+msgstr ""
 
-#: generics.py:665
+#: generics.py:668
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
-msgstr "%(object)s לא נוצר, שגיאה: %(error)s"
+msgstr ""
 
-#: generics.py:676
+#: generics.py:679
 #, python-format
 msgid "%(object)s created successfully."
-msgstr "%(object)s נוצר בהצלחה."
+msgstr ""
 
-#: generics.py:721
+#: generics.py:724
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
-msgstr "%(object)s לא נמחק, שגיאה: %(error)s."
+msgstr ""
 
-#: generics.py:731
+#: generics.py:734
 #, python-format
 msgid "%(object)s deleted successfully."
-msgstr "%(object)s נמחק בהצלחה."
+msgstr ""
 
-#: generics.py:794
+#: generics.py:797
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
-msgstr "שגיאה באחזור %(object)s; %(error)s"
+msgstr ""
 
-#: generics.py:906
+#: generics.py:909
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
-msgstr "%(object)s לא עודכן, שגיאה: %(error)s."
+msgstr ""
 
-#: generics.py:916
+#: generics.py:919
 #, python-format
 msgid "%(object)s updated successfully."
-msgstr "%(object)s עודכן בהצלחה."
-
-#: generics.py:983
-#, python-format
-msgid "%(count)d objects deleted successfully."
-msgstr "אובייקטים %(count)d נמחקו בהצלחה."
-
-#: generics.py:984
-#, python-format
-msgid "\"%(object)s\" deleted successfully."
-msgstr "&quot;%(object)s&quot; נמחק בהצלחה."
-
-#: generics.py:985
-#, python-format
-msgid "%(count)d object deleted successfully."
-msgstr "אובייקט %(count)d נמחק בהצלחה."
+msgstr ""
 
 #: generics.py:986
 #, python-format
-msgid "Delete %(count)d objects."
-msgstr "מחק אובייקטים %(count)d."
+msgid "%(count)d objects deleted successfully."
+msgstr ""
 
 #: generics.py:987
 #, python-format
-msgid "Delete \"%(object)s\"."
-msgstr "מחק את &quot;%(object)s&quot;."
+msgid "\"%(object)s\" deleted successfully."
+msgstr ""
 
 #: generics.py:988
 #, python-format
+msgid "%(count)d object deleted successfully."
+msgstr ""
+
+#: generics.py:989
+#, python-format
+msgid "Delete %(count)d objects."
+msgstr ""
+
+#: generics.py:990
+#, python-format
+msgid "Delete \"%(object)s\"."
+msgstr ""
+
+#: generics.py:991
+#, python-format
 msgid "Delete %(count)d object."
-msgstr "מחק אובייקט %(count)d."
+msgstr ""
 
 #: settings.py:17
 msgid "The number objects that will be displayed per page."
-msgstr "מספר האובייקטים שיוצגו בכל עמוד."
+msgstr ""
 
 #: settings.py:23
 msgid "A string specifying the name to use for the paging parameter."
-msgstr "מחרוזת המציינת את השם לשימוש עבור פרמטר ההחלפה."
+msgstr ""
 
 #: settings.py:29
 msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
-msgstr "הצג כפתור שליחה והמתן עד ללחוץ על כפתור השליחה לפני עיבוד העלאה."
+msgstr ""
+
+#: templates/views/app/foot.html:45
+msgid "Cancel upload"
+msgstr ""
 
 #: templates/views/app/foot.html:46
-msgid "Cancel upload"
-msgstr "בטל העלאה"
+msgid "Are you sure you want to cancel this upload?"
+msgstr ""
 
 #: templates/views/app/foot.html:47
-msgid "Are you sure you want to cancel this upload?"
-msgstr "האם אתה בטוח שברצונך לבטל העלאה זו?"
+msgid "Drop files or click here to upload files"
+msgstr ""
 
 #: templates/views/app/foot.html:48
-msgid "Drop files or click here to upload files"
-msgstr "שחרר קבצים או לחץ כאן כדי להעלות קבצים"
+msgid "Your browser does not support drag and drop file uploads."
+msgstr ""
 
 #: templates/views/app/foot.html:49
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "הדפדפן שלך אינו תומך בהעלאות קבצים בגרירה ושחרור."
+msgid "Please use the fallback form below to upload your files."
+msgstr ""
 
 #: templates/views/app/foot.html:50
-msgid "Please use the fallback form below to upload your files."
-msgstr "אנא השתמש בטופס ההחזר שלהלן כדי להעלות את הקבצים שלך."
+msgid "Clear"
+msgstr ""
 
 #: templates/views/app/foot.html:51
-msgid "Clear"
-msgstr "ברור"
-
-#: templates/views/app/foot.html:52
 msgid "Server responded with {{statusCode}} code."
-msgstr "השרת הגיב בקוד {{statusCode}}."
+msgstr ""
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"
-msgstr "אשר את המחיקה"
+msgstr ""
 
 #: templatetags/views_tags.py:35
 #, python-format
 msgid "Edit %s"
-msgstr "ערוך את %s"
+msgstr ""
 
 #: templatetags/views_tags.py:38
 msgid "Confirm"
-msgstr "לְאַשֵׁר"
+msgstr ""
 
 #: templatetags/views_tags.py:42
 #, python-format
 msgid "Details for: %s"
-msgstr "פרטים עבור: %s"
+msgstr ""
 
 #: templatetags/views_tags.py:46
 #, python-format
 msgid "Edit: %s"
-msgstr "עריכה: %s"
+msgstr ""
 
 #: templatetags/views_tags.py:50
 msgid "Create"
-msgstr "לִיצוֹר"
+msgstr ""
 
-#: view_mixins.py:413
+#: view_mixins.py:426
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
-msgstr "לא נמצא %(verbose_name)s התואם לשאילתה"
+msgstr ""
 
-#: view_mixins.py:439
+#: view_mixins.py:452
 #, python-format
 msgid "Unable to perform operation on object %(instance)s; %(exception)s."
-msgstr "לא ניתן לבצע פעולה על אובייקט %(instance)s; %(exception)s."
+msgstr ""
 
-#: view_mixins.py:442
+#: view_mixins.py:455
 #, python-format
 msgid "Operation performed on %(count)d objects."
-msgstr "פעולה שבוצעה על אובייקטים %(count)d."
+msgstr ""
 
-#: view_mixins.py:443
+#: view_mixins.py:456
 #, python-format
 msgid "Operation performed on %(object)s."
-msgstr "הפעולה בוצעה ב-%(object)s."
+msgstr ""
 
-#: view_mixins.py:444
+#: view_mixins.py:457
 #, python-format
 msgid "Operation performed on %(count)d object."
-msgstr "פעולה שבוצעה על אובייקט %(count)d."
+msgstr ""
 
-#: view_mixins.py:445
+#: view_mixins.py:458
 #, python-format
 msgid "Perform operation on %(count)d objects."
-msgstr "בצע פעולה על אובייקטים %(count)d."
+msgstr ""
 
-#: view_mixins.py:446
+#: view_mixins.py:459
 #, python-format
 msgid "Perform operation on %(object)s."
-msgstr "בצע פעולה ב-%(object)s."
+msgstr ""
 
-#: view_mixins.py:447
+#: view_mixins.py:460
 #, python-format
 msgid "Perform operation on %(count)d object."
-msgstr "בצע פעולה על אובייקט %(count)d."
+msgstr ""
 
-#: view_mixins.py:531
+#: view_mixins.py:544
 msgid "Object"
-msgstr "לְהִתְנַגֵד"
+msgstr "רכיב"

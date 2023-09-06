@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hmayag Antonian <hmayag@freemail.gr>, 2023
 # pyrotech <anastasios@tutamail.com>, 2023
+# Hmayag Antonian <hmayag@freemail.gr>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,8 +22,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:49 models.py:156
-#: permissions.py:6 search.py:52 views.py:169 workflow_actions.py:20
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
+#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Ερμάρια"
 
@@ -47,11 +48,11 @@ msgstr "Έγγραφο προστέθηκε σε ερμάριο"
 msgid "Document removed from cabinet"
 msgstr "Έγγραφο αφαιρέθηκε από ερμάριο"
 
-#: links.py:36 links.py:48 workflow_actions.py:76
+#: links.py:36 links.py:48 workflow_actions.py:75
 msgid "Remove from cabinets"
 msgstr "Αφαίρεση από ερμάρια"
 
-#: links.py:41 links.py:44 workflow_actions.py:29
+#: links.py:41 links.py:44 workflow_actions.py:21
 msgid "Add to cabinets"
 msgstr "Προσθήκη στα ερμάρια"
 
@@ -95,40 +96,40 @@ msgstr "Διαδρομή στο ερμάριο συμπεριλαμβανομέ�
 msgid "Full path"
 msgstr "Πλήρης διαδρομή"
 
-#: models.py:30 serializers.py:41
+#: models.py:32 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:33
+#: models.py:35
 msgid "A short text used to identify the cabinet."
 msgstr "Σύντομο κείμενο που προσδιορίζει το ερμάριο."
 
-#: models.py:34
+#: models.py:36
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: models.py:38
+#: models.py:40
 msgid "Documents"
 msgstr "Έγγραφα"
 
-#: models.py:48 models.py:130 models.py:155 workflow_actions.py:68
+#: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"
 msgstr "Ερμάριο"
 
-#: models.py:131
+#: models.py:133
 msgid "Parent and Label"
 msgstr "Γονέας και Ετικέτα"
 
-#: models.py:138
+#: models.py:140
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s με την ετικέτα %(field_labels)s υπάρχει ήδη."
 
-#: models.py:167
+#: models.py:169
 msgid "Document cabinet"
 msgstr "Ερμάριο εγγράφων"
 
-#: models.py:168 search.py:59 search.py:66 search.py:73 search.py:80
+#: models.py:170
 msgid "Document cabinets"
 msgstr "Ερμάρια εγγράφων"
 
@@ -156,27 +157,27 @@ msgstr "Αφαίρεση εγγράφων από ερμάρια"
 msgid "View cabinets"
 msgstr "Εμφάνιση ερμαρίων"
 
-#: search.py:28
+#: search.py:24
 msgid "Document type"
 msgstr "Τύπος εγγράφου"
 
-#: search.py:31
+#: search.py:27
 msgid "Document label"
 msgstr "Ετικέτα εγγράφου"
 
-#: search.py:34
+#: search.py:30
 msgid "Document description"
 msgstr "Περιγραφή εγγράφου"
 
-#: search.py:37
+#: search.py:33
 msgid "Document UUID"
 msgstr "UUID εγγράφου"
 
-#: search.py:43
+#: search.py:39
 msgid "Document file checksum"
 msgstr ""
 
-#: search.py:46
+#: search.py:42
 msgid "Document file MIME type"
 msgstr ""
 
@@ -355,14 +356,14 @@ msgstr ""
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Ερμάρια από τα οποία τα επιλεγμένα έγγραφα θα αφαιρεθούν."
 
-#: wizard_steps.py:15
+#: wizard_steps.py:18
 msgid "Select cabinets"
 msgstr "Επιλογή ερμαρίων"
 
-#: wizard_steps.py:29 workflow_actions.py:23
+#: wizard_steps.py:77 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Ερμάρια στα οποία το έγγραφο θα προστεθεί."
 
-#: workflow_actions.py:71
-msgid "Cabinets from which the document will be removed."
-msgstr "Ερμάρια από τα οποία το έγγραφο θα αφαιρεθεί."
+#: workflow_actions.py:83
+msgid "Cabinets from which the document will be removed"
+msgstr ""

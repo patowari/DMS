@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -51,11 +51,11 @@ msgstr ""
 
 #: links.py:23
 msgid "Delete"
-msgstr "Delete"
+msgstr "מחיקה"
 
 #: links.py:28
 msgid "Edit"
-msgstr "Edit"
+msgstr "עריכה"
 
 #: model_mixins.py:89
 msgid "Creation date and time"
@@ -170,7 +170,7 @@ msgstr ""
 
 #: serializers.py:11
 msgid "Document URL"
-msgstr "כתובת האתר (URL) של המסמך"
+msgstr "כתובת אתר (URL) של המסמך"
 
 #: serializers.py:15
 msgid "Image URL"
@@ -178,7 +178,7 @@ msgstr "כתובת אתר (URL) של תמונה"
 
 #: serializers.py:27
 msgid "URL"
-msgstr "URL"
+msgstr "כתובת אתר (URL)"
 
 #: settings.py:21
 msgid ""

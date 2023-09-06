@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Translators:
+# Zoljargal Munkhjargal, 2023
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Language: mn_MN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 events.py:6 search.py:19 search.py:26 search.py:33 search.py:40
+#: apps.py:32 events.py:6
 msgid "Document comments"
 msgstr ""
 
@@ -48,13 +49,13 @@ msgstr "Устгах"
 msgid "Edit"
 msgstr "Засах"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:12
+#: links.py:31 models.py:47 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr ""
 
 #: model_mixins.py:10 models.py:33
 msgid "User"
-msgstr ""
+msgstr "Хэрэглэгч"
 
 #: models.py:29
 msgid "Document"

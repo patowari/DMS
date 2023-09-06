@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
-"PO-Revision-Date: 2023-01-05 02:49+0000\n"
+"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
 "MIME-Version: 1.0\n"
@@ -167,55 +167,61 @@ msgstr "Página de inicio de sesión"
 msgid "Password reset email sent!"
 msgstr "Correo electrónico de restablecimiento de contraseña enviado!"
 
-#: views/authentication_views.py:159
+#: views/authentication_views.py:161
 msgid "Next"
 msgstr "Próximo"
 
-#: views/authentication_views.py:165
+#: views/authentication_views.py:167
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "Paso %(step)d de %(total_steps)d: %(step_label)s"
 
-#: views/authentication_views.py:235
+#: views/authentication_views.py:237
 msgid "Your password has been successfully changed."
 msgstr "Su contraseña ha sido actualizada con éxito."
 
-#: views/authentication_views.py:245
+#: views/authentication_views.py:247
 msgid "Current user password change"
 msgstr "Cambio de contraseña de usuario actual"
 
-#: views/authentication_views.py:257
+#: views/authentication_views.py:259
 msgid "Changing the password is not allowed for this account."
 msgstr "No se permite cambiar la contraseña para esta cuenta."
 
-#: views/authentication_views.py:329
+#: views/authentication_views.py:331
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Solicitud de cambio de contraseña realizada para %(count)d usuario"
 
-#: views/authentication_views.py:332
+#: views/authentication_views.py:334
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Solicitud de cambio de contraseña realizada para %(count)d usuarios"
 
-#: views/authentication_views.py:341
+#: views/authentication_views.py:351
+msgid ""
+"Changing the password of staff or super user accounts via the user interface"
+" is not allowed. Use administration tools to perform this operation."
+msgstr ""
+
+#: views/authentication_views.py:365
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "Cambiar contraseña de usuario"
 msgstr[1] "Cambiar las contraseñas de los usuarios"
 msgstr[2] "Cambiar las contraseñas de los usuarios"
 
-#: views/authentication_views.py:352
+#: views/authentication_views.py:376
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Cambiar contraseñas para el usuario: %s"
 
-#: views/authentication_views.py:376
+#: views/authentication_views.py:400
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Restablecimiento de contraseña exitoso para el usuario: %s."
 
-#: views/authentication_views.py:382
+#: views/authentication_views.py:406
 #, python-format
 msgid "Error reseting password for user \"%(user)s\": %(error)s"
 msgstr "Error restaurando la contraseña para el usuario \"%(user)s\": %(error)s "

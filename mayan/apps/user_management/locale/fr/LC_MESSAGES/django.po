@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Yves Dubois <ydubois@gmail.com>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2023
+# Yves Dubois <ydubois@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Roberto Rosario, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgstr "Gestion des utilisateurs"
 msgid "Group"
 msgstr "Groupe"
 
-#: apps.py:78 apps.py:107 links.py:56 links.py:70 links.py:99 search.py:34
+#: apps.py:78 apps.py:107 links.py:53 links.py:67 links.py:96 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr "Groupes"
@@ -46,7 +46,7 @@ msgstr "Nom"
 msgid "User"
 msgstr "Utilisateur"
 
-#: apps.py:100 apps.py:219 links.py:61 links.py:102 links.py:120
+#: apps.py:100 apps.py:222 links.py:58 links.py:99 links.py:111
 #: views/user_views.py:170
 msgid "Users"
 msgstr "Utilisateurs"
@@ -63,31 +63,35 @@ msgstr "Prénom"
 msgid "Is active?"
 msgstr "Est actif?"
 
-#: apps.py:113 search.py:37
+#: apps.py:113
+msgid "Is super user?"
+msgstr ""
+
+#: apps.py:116 search.py:37
 msgid "Last name"
 msgstr "Nom"
 
-#: apps.py:116 serializers.py:72
+#: apps.py:119 serializers.py:72
 msgid "Password"
 msgstr "Mot de passe"
 
-#: apps.py:119 search.py:40
+#: apps.py:122 search.py:40
 msgid "Username"
 msgstr "Identifiant"
 
-#: apps.py:122
+#: apps.py:125
 msgid "Last login"
 msgstr "Dernière connexion"
 
-#: apps.py:148
+#: apps.py:151
 msgid "Has usable password?"
 msgstr "Possède un mot de passe utilisable ?"
 
-#: apps.py:155
+#: apps.py:158
 msgid "All the groups."
 msgstr "Tous les groupes."
 
-#: apps.py:159
+#: apps.py:162
 msgid "All the users."
 msgstr "Tous les utilisateurs."
 
@@ -135,19 +139,19 @@ msgstr "Détails de l'utilisateur"
 msgid "Create new group"
 msgstr "Créer un nouveau groupe"
 
-#: links.py:41 links.py:44 links.py:84 links.py:88
+#: links.py:41 links.py:44 links.py:81 links.py:85
 msgid "Delete"
 msgstr "Supprimer"
 
-#: links.py:49 links.py:93
+#: links.py:49 links.py:90
 msgid "Edit"
 msgstr "Modifier"
 
-#: links.py:78 views/user_views.py:32
+#: links.py:75 views/user_views.py:32
 msgid "Create new user"
 msgstr "Créer un nouvel utilisateur"
 
-#: links.py:113
+#: links.py:104
 msgid "User options"
 msgstr "Options pour l'utilisateur"
 

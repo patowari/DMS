@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
-"PO-Revision-Date: 2023-01-05 02:55+0000\n"
+"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:33 layers.py:15 links.py:10 permissions.py:6
+#: apps.py:33 layers.py:16 links.py:10 permissions.py:6
 msgid "Redactions"
 msgstr "Redaksiyonlar"
 
@@ -28,7 +28,7 @@ msgstr "Redaksiyonlar"
 msgid "JavaScript image cropper"
 msgstr "JavaScript resim kırpıcı"
 
-#: layers.py:13
+#: layers.py:14
 msgid ""
 "Redactions allow removing access to confidential and sensitive information "
 "without having to modify the document."
