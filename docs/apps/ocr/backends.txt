@@ -16,7 +16,7 @@ The default value of ``OCR_BACKEND`` is ``"ocr.backends.tesseract.Tesseract"``
 
 .. note::
 
-   Refer to the :ref:`<apps-smart_settings>` topic for information on how to
+   Refer to the :ref:`apps-smart_settings` topic for information on how to
    create your own Python settings files.
 
 To add support to OCR more languages when using Tesseract, install the

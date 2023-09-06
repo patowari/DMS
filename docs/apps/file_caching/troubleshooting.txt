@@ -1,3 +1,5 @@
+.. _apps-file_caching-troubleshooting:
+
 ===============
 Troubleshooting
 ===============

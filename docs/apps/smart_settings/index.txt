@@ -106,7 +106,7 @@ For this example let's assume the file was saved with the name ``mysettings.py``
 The way used to tell Mayan EDMS to import this file will vary based on the
 installation method.
 
-For the :doc:`../chapters/docker/index` installation method, the full import
+For the :ref:`chapters-docker` installation method, the full import
 path will be ``|DEFAULT_USER_SETTINGS_MODULE|.mysettings`` and can only be passed
 via the ``MAYAN_SETTINGS_MODULE`` environment variable like this:
 

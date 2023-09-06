@@ -152,7 +152,12 @@ coverage-html:
 
 # Documentation
 
+docs-generate-app-documentation: ## Collect app documentation into the docs folder
+docs-generate-app-documentation:
+	./contrib/scripts/generate_app_documentation.py
+
 docs-html: ## Run the html documentation target. Use optional FILENAMES to specific which files to build.
+docs-html: docs-generate-app-documentation
 	cd docs;make html
 
 docs-serve: ## Run the livehtml documentation generator.
