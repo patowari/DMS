@@ -120,6 +120,10 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
             context['form_button_overrides'][1]['css_classes'] = 'disabled'
             context['form_button_overrides'][1]['disabled'] = True
 
+        if not wizard_step.get_next_is_enabled(wizard=self):
+            context['form_button_overrides'][2]['css_classes'] = 'disabled'
+            context['form_button_overrides'][2]['disabled'] = True
+
         return context
 
     def get_form_initial(self, step):

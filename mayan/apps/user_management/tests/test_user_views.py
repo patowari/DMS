@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.metadata.permissions import permission_document_metadata_edit
-from mayan.apps.metadata.tests.mixins import MetadataTypeTestMixin
+from mayan.apps.metadata.tests.mixins.metadata_type_mixins import MetadataTypeTestMixin
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import event_user_created, event_user_edited

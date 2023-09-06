@@ -36,7 +36,7 @@ class CabinetMirroringTestCase(
 
     def _get_test_filesystem(self):
         def func_document_container_node():
-            return self._test_cabinets[0]
+            return self._test_cabinet_list[0]
 
         return MirrorFilesystem(
             func_document_container_node=func_document_container_node,

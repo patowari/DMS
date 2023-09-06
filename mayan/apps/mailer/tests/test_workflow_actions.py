@@ -11,7 +11,7 @@ from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixi
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
-from mayan.apps.metadata.tests.mixins import MetadataTypeTestMixin
+from mayan.apps.metadata.tests.mixins.metadata_type_mixins import MetadataTypeTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 
 from ..permissions import permission_user_mailer_use

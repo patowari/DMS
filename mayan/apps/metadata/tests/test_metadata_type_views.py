@@ -12,7 +12,9 @@ from ..permissions import (
     permission_metadata_type_edit, permission_metadata_type_view
 )
 
-from .mixins import MetadataTypeTestMixin, MetadataTypeViewTestMixin
+from .mixins.metadata_type_mixins import (
+    MetadataTypeTestMixin, MetadataTypeViewTestMixin
+)
 
 
 class DocumentTypeMetadataTypeRelationshipViewTestCase(
@@ -328,7 +330,9 @@ class MetadataTypeViewTestCase(
         response = self._request_test_metadata_type_multiple_delete_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(MetadataType.objects.count(), metadata_type_count)
+        self.assertEqual(
+            MetadataType.objects.count(), metadata_type_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -414,7 +418,7 @@ class MetadataTypeViewTestCase(
 
         response = self._request_metadata_type_list_view()
         self.assertNotContains(
-            response=response, text=self._test_metadata_type, status_code=200
+            response=response, status_code=200, text=self._test_metadata_type
         )
 
         events = self._get_test_events()
@@ -432,7 +436,7 @@ class MetadataTypeViewTestCase(
 
         response = self._request_metadata_type_list_view()
         self.assertContains(
-            response=response, text=self._test_metadata_type, status_code=200
+            response=response, status_code=200, text=self._test_metadata_type
         )
 
         events = self._get_test_events()
@@ -602,7 +606,8 @@ class MetadataTypeDocumentTypeRelationshipViewTestCase(
         test_metadata_type_document_type_relationship_count = self._test_metadata_type.document_types.count()
 
         self.grant_access(
-            obj=self._test_metadata_type, permission=permission_metadata_type_edit
+            obj=self._test_metadata_type,
+            permission=permission_metadata_type_edit
         )
 
         self._clear_events()
@@ -623,7 +628,8 @@ class MetadataTypeDocumentTypeRelationshipViewTestCase(
         test_metadata_type_document_type_relationship_count = self._test_metadata_type.document_types.count()
 
         self.grant_access(
-            obj=self._test_metadata_type, permission=permission_metadata_type_edit
+            obj=self._test_metadata_type,
+            permission=permission_metadata_type_edit
         )
         self.grant_access(
             obj=self._test_document_type,

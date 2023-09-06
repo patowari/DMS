@@ -2,9 +2,7 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.document_indexing.models.index_instance_models import IndexInstanceNode
 from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
 
-from .literals import (
-    TEST_CABINET_LABEL, TEST_CABINET_LABEL_EDITED, TEST_INDEX_NODE_TEMPLATE
-)
+from .literals import TEST_CABINET_LABEL_EDITED, TEST_INDEX_NODE_TEMPLATE
 from .mixins import CabinetTestMixin
 
 
@@ -24,7 +22,7 @@ class CabinetIndexingTestCase(
         self.assertTrue(
             IndexInstanceNode.objects.filter(
                 documents=self._test_document,
-                value=TEST_CABINET_LABEL
+                value=self._test_cabinet.label
             ).exists()
         )
 
@@ -37,11 +35,13 @@ class CabinetIndexingTestCase(
         self.assertFalse(
             IndexInstanceNode.objects.filter(
                 documents=self._test_document,
-                value=TEST_CABINET_LABEL
+                value=self._test_cabinet.label
             ).exists()
         )
 
     def test_indexing_cabinet_edit(self):
+        test_cabinet_label = self._test_cabinet.label
+
         self._test_cabinet.document_add(
             document=self._test_document, user=self._test_case_user
         )
@@ -51,7 +51,7 @@ class CabinetIndexingTestCase(
         self.assertFalse(
             IndexInstanceNode.objects.filter(
                 documents=self._test_document,
-                value=TEST_CABINET_LABEL
+                value=test_cabinet_label
             ).exists()
         )
         self.assertTrue(
@@ -62,6 +62,8 @@ class CabinetIndexingTestCase(
         )
 
     def test_indexing_cabinet_remove(self):
+        test_cabinet_label = self._test_cabinet.label
+
         self._test_cabinet.document_add(
             document=self._test_document, user=self._test_case_user
         )
@@ -72,6 +74,6 @@ class CabinetIndexingTestCase(
         self.assertFalse(
             IndexInstanceNode.objects.filter(
                 documents=self._test_document,
-                value=TEST_CABINET_LABEL
+                value=test_cabinet_label
             ).exists()
         )

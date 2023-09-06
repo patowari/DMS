@@ -26,7 +26,7 @@ from .literals import (
     DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH, TEST_METADATA_VALUE,
     TEST_METADATA_VALUE_EDITED
 )
-from .mixins import DocumentMetadataMixin
+from .mixins.document_metadata_mixins import DocumentMetadataMixin
 
 
 class DocumentMetadataActionTestCase(
@@ -159,7 +159,8 @@ class DocumentMetadataActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            backend_path=DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH, extra_data={
+            backend_path=DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH,
+            extra_data={
                 'metadata_types': self._test_metadata_type.pk
             }
         )
@@ -191,7 +192,8 @@ class DocumentMetadataActionViewTestCase(
         self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
-            backend_path=DOCUMENT_METADATA_EDIT_ACTION_CLASS_PATH, extra_data={
+            backend_path=DOCUMENT_METADATA_EDIT_ACTION_CLASS_PATH,
+            extra_data={
                 'metadata_type': self._test_metadata_type.pk,
                 'value_template': TEST_METADATA_VALUE
             }

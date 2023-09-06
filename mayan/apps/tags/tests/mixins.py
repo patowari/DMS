@@ -148,21 +148,22 @@ class TagTestMixin:
 
     def setUp(self):
         super().setUp()
-        self._test_tags = []
+        self._test_tag_list = []
+
         if self.auto_create_test_tag:
             self._create_test_tag(
                 add_test_document=self._test_tag_add_test_document
             )
 
     def _create_test_tag(self, add_test_document=False):
-        total_test_labels = len(self._test_tags)
+        total_test_labels = len(self._test_tag_list)
         label = '{}_{}'.format(TEST_TAG_LABEL, total_test_labels)
 
         self._test_tag = Tag.objects.create(
             color=TEST_TAG_COLOR, label=label
         )
 
-        self._test_tags.append(self._test_tag)
+        self._test_tag_list.append(self._test_tag)
 
         if add_test_document:
             self._test_tag.attach_to(
@@ -219,7 +220,7 @@ class TagViewTestMixin:
 
 
 class TaggedDocumentUploadWizardStepViewTestMixin(
-    WebFormSourceTestMixin, SourceActionViewTestMixin
+    TagTestMixin, WebFormSourceTestMixin, SourceActionViewTestMixin
 ):
     def _request_test_source_document_upload_post_view_with_tags(self):
         return self._request_test_source_document_upload_post_view(
