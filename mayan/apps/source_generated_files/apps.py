@@ -7,4 +7,4 @@ class SourceGeneratedFileApp(MayanAppConfig):
     app_namespace = 'source_generated_files'
     app_url = 'source_generated_files'
     name = 'mayan.apps.source_generated_files'
-    verbose_name = _('Source generated_files')
+    verbose_name = _('Source generated files')

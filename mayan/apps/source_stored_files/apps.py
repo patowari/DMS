@@ -8,4 +8,4 @@ class SourceStoredFileApp(MayanAppConfig):
     app_url = 'source_stored_files'
     has_tests = True
     name = 'mayan.apps.source_stored_files'
-    verbose_name = _('Source stored_files')
+    verbose_name = _('Source stored files')
