@@ -11,9 +11,11 @@ x-mayan-container:
     MAYAN_LOCK_MANAGER_BACKEND_ARGUMENTS: "{'redis_url':'redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@redis:6379/${MAYAN_REDIS_LOCK_MANAGER_DATABASE:-2}'}"
   image: ${MAYAN_DOCKER_IMAGE_NAME:-mayanedms/mayanedms}:${MAYAN_DOCKER_IMAGE_TAG:-s4.4}
   logging:
+    driver: "json-file"
     options:
       max-size: "100m"
       max-file: "3"
+      mode: "non-blocking"
   networks:
     - mayan
   restart: unless-stopped
