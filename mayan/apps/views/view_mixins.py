@@ -111,8 +111,8 @@ class DownloadViewMixin:
             )
             # Encoding isn't set to prevent browsers from automatically
             # uncompressing files.
-            mime_type = encoding_map.get(encoding, mime_type)
-            response.headers['Content-Type'] = mime_type or 'application/octet-stream'
+            content_type = encoding_map.get(encoding, mime_type)
+            response.headers['Content-Type'] = content_type or 'application/octet-stream'
         else:
             response.headers['Content-Type'] = 'application/octet-stream'
 
