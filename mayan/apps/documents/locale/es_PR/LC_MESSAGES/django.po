@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -434,7 +434,7 @@ msgstr "Editar"
 
 #: links/document_file_links.py:40 links/document_file_links.py:47
 msgid "Introspect"
-msgstr ""
+msgstr "Introspección"
 
 #: links/document_file_links.py:54 links/document_file_links.py:76
 msgid "Files"
@@ -555,7 +555,7 @@ msgstr "Generación de nombre de archivo"
 
 #: links/document_type_links.py:75
 msgid "Retention policies"
-msgstr ""
+msgstr "Políticas de retención"
 
 #: links/document_version_links.py:28
 msgid "Make active"
@@ -690,7 +690,7 @@ msgstr "Etiqueta"
 
 #: models/document_file_model_mixins.py:457
 msgid "Controls what happens when a new document file is uploaded."
-msgstr ""
+msgstr "Controla lo que sucede cuando se carga un nuevo archivo de documento."
 
 #: models/document_file_models.py:61
 msgid "The server date and time when the document file was processed."
@@ -757,7 +757,7 @@ msgstr "Recibo de documento, id: %d"
 
 #: models/document_models.py:47
 msgid "Latest document file"
-msgstr ""
+msgstr "Archivo de documento más reciente"
 
 #: models/document_models.py:52
 msgid ""
@@ -833,7 +833,7 @@ msgstr "¿Es un recibo?"
 
 #: models/document_models.py:105
 msgid "Active document version"
-msgstr ""
+msgstr "Versión del documento activo"
 
 #: models/document_type_models.py:40
 msgid "A short text identifying the document type."
@@ -898,10 +898,12 @@ msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
 msgstr ""
+"Eliminar documentos que no contengan ningún archivo después de un intervalo "
+"de caducidad configurado."
 
 #: models/document_type_models.py:85
 msgid "Document stub pruning"
-msgstr ""
+msgstr "Remoción de recibos de documentos"
 
 #: models/document_type_models.py:89
 msgid ""
@@ -909,10 +911,14 @@ msgid ""
 " deleted, if pruning is enabled. This an optimization setting and should "
 "only be changed for specific circumstances."
 msgstr ""
+"Tiempo (en segundos) después del cual un recibo de documento se considerará "
+"no válido y se eliminará, si la remoción de estos está habilitada. Esta es "
+"una configuración de optimización y solo debe cambiarse en circunstancias "
+"específicas."
 
 #: models/document_type_models.py:93
 msgid "Document stub expiration interval"
-msgstr ""
+msgstr "Intervalo de vencimiento del recibo de documento"
 
 #: models/document_type_models.py:101
 msgid "Documents types"
@@ -1103,15 +1109,15 @@ msgstr "Enivar documentos a la papelera"
 
 #: queues.py:14
 msgid "Documents fast"
-msgstr ""
+msgstr "Documentos rápido"
 
 #: queues.py:17
 msgid "Documents file"
-msgstr ""
+msgstr "Archivos de documentos"
 
 #: queues.py:20
 msgid "Documents file slow"
-msgstr ""
+msgstr "Documentos lento"
 
 #: queues.py:24
 msgid "Documents periodic"
@@ -1119,15 +1125,15 @@ msgstr "Documentos periódicos"
 
 #: queues.py:28
 msgid "Documents trash"
-msgstr ""
+msgstr "Documentos papelera"
 
 #: queues.py:31
 msgid "Documents version"
-msgstr ""
+msgstr "Versiones de documentos"
 
 #: queues.py:36
 msgid "Create new document file"
-msgstr ""
+msgstr "Crear nuevo archivo de documento"
 
 #: queues.py:40
 msgid "Upload new document file"
@@ -1140,26 +1146,27 @@ msgstr "Subir archivo de documento nuevo"
 #: queues.py:49
 msgid "Calculate and update document file checksum"
 msgstr ""
+"Calcular y actualizar la suma de comprobación del archivo de documento"
 
 #: queues.py:53
 msgid "Calculate and update document file MIME type"
-msgstr ""
+msgstr "Calcular y actualizar el tipo MIME del archivo de documento"
 
 #: queues.py:57
 msgid "Update document file page count"
-msgstr ""
+msgstr "Actualizar el recuento de páginas del archivo del documento"
 
 #: queues.py:61
 msgid "Update document file size"
-msgstr ""
+msgstr "Actualizar el tamaño del archivo del documento"
 
 #: queues.py:65
 msgid "Create a new version after the file is processed"
-msgstr ""
+msgstr "Crear una nueva versión después de procesar el archivo."
 
 #: queues.py:70
 msgid "Delete a document file"
-msgstr ""
+msgstr "Eliminar un archivo de documento"
 
 #: queues.py:75
 msgid "Check document type trash periods"
@@ -1241,7 +1248,7 @@ msgstr "URL"
 
 #: serializers/document_file_serializers.py:69
 msgid "Action name"
-msgstr ""
+msgstr "Nombre de la acción"
 
 #: serializers/document_file_serializers.py:72
 #: serializers/document_version_serializers.py:104
@@ -1591,6 +1598,10 @@ msgid ""
 " that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
+"Esto podría significar que el archivo del documento tiene un formato no "
+"compatible, que está dañado o que el proceso de carga se interrumpió. "
+"Utilice el enlace de introspección del archivo del documento para intentar "
+"detectar el recuento de páginas nuevamente."
 
 #: views/document_file_page_views.py:60
 msgid "No document file pages available"
@@ -1626,16 +1637,22 @@ msgstr "Error al eliminar el archivo de documento \"%(instance)s\"; %(exception)
 #, python-format
 msgid "Document file \"%(object)s\" deletion queued successfully."
 msgstr ""
+"La eliminación del archivo de documento \" %(object)s \" se puso en cola de "
+"procesamiento correctamente."
 
 #: views/document_file_views.py:60
 #, python-format
 msgid "%(count)d document file deletion queued successfully."
 msgstr ""
+"La eliminación de %(count)d archivo de documento se puso en cola de "
+"procesamiento correctamente."
 
 #: views/document_file_views.py:63
 #, python-format
 msgid "%(count)d document files deletions queued successfully."
 msgstr ""
+"Las eliminaciones de %(count)d archivos de documentos se pusieron en la cola"
+" de procesamiento correctamente."
 
 #: views/document_file_views.py:65
 #, python-format
@@ -1658,6 +1675,9 @@ msgid ""
 "pages linked to them will be deleted too. The process will be performed in "
 "the background."
 msgstr ""
+"También se eliminarán todas las páginas de archivos de documentos de este "
+"archivo de documento y las páginas de versiones de documentos vinculadas a "
+"ellas. El proceso se realizará como tarea de fondo."
 
 #: views/document_file_views.py:113
 #, python-format
@@ -1667,24 +1687,25 @@ msgstr "Editar archivo de documento: %s"
 #: views/document_file_views.py:134
 #, python-format
 msgid "%(count)d document file queued for introspection."
-msgstr ""
+msgstr "%(count)d archivo de documento en cola de tareas para introspección."
 
 #: views/document_file_views.py:137
 #, python-format
 msgid "%(count)d document files queued for introspection."
 msgstr ""
+"%(count)d archivos de documentos en cola de tareas para introspección."
 
 #: views/document_file_views.py:146
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "¿Introspeccionar el archivo del documento seleccionado?"
+msgstr[1] "¿Introspeccionar los archivos de documentos seleccionados?"
+msgstr[2] "¿Introspeccionar los archivos de documentos seleccionados?"
 
 #: views/document_file_views.py:157
 #, python-format
 msgid "Introspect the document file: %s?"
-msgstr ""
+msgstr "Introspeccione el archivo del documento: %s ?"
 
 #: views/document_file_views.py:163
 msgid ""
@@ -1692,6 +1713,10 @@ msgid ""
 "and its related document version pages re-created. All transformations will "
 "be lost."
 msgstr ""
+"El archivo del documento se volverá a examinar para determinar el tamaño del"
+" archivo, la cantidad de páginas, la suma de verificación y se volverán a "
+"crear las páginas de la versión del documento relacionado. Todas las "
+"transformaciones se perderán."
 
 #: views/document_file_views.py:192
 msgid ""
@@ -1785,20 +1810,20 @@ msgstr "Clonar transformaciones de página del archivo de documento: %s"
 
 #: views/document_type_retention_policy_views.py:23
 msgid "Trashing"
-msgstr ""
+msgstr "Deshabilitación"
 
 #: views/document_type_retention_policy_views.py:27
 msgid "Deletion"
-msgstr ""
+msgstr "Eliminación"
 
 #: views/document_type_retention_policy_views.py:31
 msgid "Stub pruning"
-msgstr ""
+msgstr "Remoción de recibos de documentos"
 
 #: views/document_type_retention_policy_views.py:51
 #, python-format
 msgid "Retention policies for document type: %s"
-msgstr ""
+msgstr "Políticas de retención para el tipo de documento: %s"
 
 #: views/document_type_views.py:54
 #, python-format
@@ -1978,7 +2003,7 @@ msgstr "Eliminar %(count)d versiones de documento."
 
 #: views/document_version_views.py:123
 msgid "The process will be performed in the background."
-msgstr ""
+msgstr "El proceso se realizará en como una tarea de fondo."
 
 #: views/document_version_views.py:162
 #, python-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -26,11 +26,11 @@ msgstr "Caché de archivos"
 
 #: dashboard_widgets.py:16
 msgid "Total cache allocated"
-msgstr ""
+msgstr "Caché total asignado"
 
 #: dashboard_widgets.py:45
 msgid "Total cache used"
-msgstr ""
+msgstr "Caché total utilizado"
 
 #: events.py:10
 msgid "Cache created"
@@ -166,7 +166,7 @@ msgstr "Ver un caché de archivos"
 
 #: queues.py:10
 msgid "File caching slow"
-msgstr ""
+msgstr "Caché de archivos lento"
 
 #: queues.py:15
 msgid "Purge a file cache partition"

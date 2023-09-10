@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -70,6 +70,9 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
+"Los archivos del documento han sido comprimidos y están disponibles para "
+"descargar usando el enlace: {{ download_url }} o desde el área de descargas "
+"({{ download_list_url }})."
 
 #: literals.py:10
 msgid "Document files ready for download."
@@ -88,12 +91,16 @@ msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
 msgstr ""
+"Plantilla para el texto del cuerpo del mensaje de descarga del documento. "
+"Puede incluir HTML. Variables disponibles: {}"
 
 #: settings.py:27
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
 msgstr ""
+"Plantilla para la línea de asunto del mensaje de descarga del documento. No "
+"se puede incluir HTML. Variables disponibles: {}"
 
 #: views.py:24
 #, python-format

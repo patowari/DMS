@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -310,6 +310,8 @@ msgid ""
 "Your version (%(version_local)s), is more recent than the published version "
 "(%(version_server)s)."
 msgstr ""
+"Versiunea dvs. ( %(version_local)s ) este mai recentă decât versiunea "
+"publicată ( %(version_server)s )."
 
 #: literals.py:14
 #, python-format
@@ -317,6 +319,8 @@ msgid ""
 "The version you are using (%(version_local)s) is outdated. The latest "
 "version is %(version_server)s."
 msgstr ""
+"Versiunea pe care o utilizați ( %(version_local)s ) este învechită. Cea mai "
+"recentă versiune este %(version_server)s ."
 
 #: literals.py:18
 msgid "It is not possible to determine the latest version available."
@@ -328,6 +332,9 @@ msgid ""
 "Unexpected error trying to determine the latest version available. Make sure"
 " your installation has a connection to the internet; %(exception)s"
 msgstr ""
+"Eroare neașteptată la încercarea de a determina cea mai recentă versiune "
+"disponibilă. Asigurați-vă că instalația dvs. are o conexiune la internet; "
+"%(exception)s"
 
 #: management/commands/dependencies_check.py:13
 msgid "Outputs the dependencies as a comma delimited values list."
@@ -362,13 +369,16 @@ msgstr "Vizualizați dependențele"
 
 #: views.py:27
 msgid "This process only checks the Python component of Mayan EDMS."
-msgstr ""
+msgstr "Acest proces verifică doar componenta Python a Mayan EDMS."
 
 #: views.py:31
 msgid ""
 "It does not verify versions of other components like packaging or deployment"
 " technologies, such as container or virtual machine images."
 msgstr ""
+"Nu verifică versiunile altor componente, cum ar fi tehnologiile de ambalare "
+"sau de implementare, cum ar fi imaginile containerului sau ale mașinilor "
+"virtuale."
 
 #: views.py:51
 #, python-format

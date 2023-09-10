@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -77,11 +77,11 @@ msgstr "Nume"
 
 #: serializers.py:49
 msgid "Status code"
-msgstr ""
+msgstr "Cod de stare"
 
 #: serializers.py:52
 msgid "Requests"
-msgstr ""
+msgstr "Cereri"
 
 #: serializers.py:75
 msgid "Label"
@@ -93,11 +93,11 @@ msgstr "URL"
 
 #: serializers.py:106
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: serializers.py:109
 msgid "Author email"
-msgstr ""
+msgstr "E-mailul autorului"
 
 #: serializers.py:112
 msgid "Build"
@@ -105,11 +105,11 @@ msgstr "Build"
 
 #: serializers.py:115
 msgid "Build string"
-msgstr ""
+msgstr "Șir versiune compilare"
 
 #: serializers.py:118
 msgid "Copyright"
-msgstr ""
+msgstr "Drepturi de autor"
 
 #: serializers.py:121
 msgid "Description"
@@ -117,7 +117,7 @@ msgstr "Descriere"
 
 #: serializers.py:124
 msgid "Django version"
-msgstr ""
+msgstr "Versiune Django"
 
 #: serializers.py:127
 msgid "License"
@@ -125,7 +125,7 @@ msgstr "Licenţă"
 
 #: serializers.py:130
 msgid "Title"
-msgstr ""
+msgstr "Titlu"
 
 #: serializers.py:133
 msgid "Version"
@@ -133,7 +133,7 @@ msgstr "Versiune"
 
 #: serializers.py:136
 msgid "Website"
-msgstr ""
+msgstr "Site-ul web"
 
 #: settings.py:17
 msgid "Disable the REST API links in the tools menu."

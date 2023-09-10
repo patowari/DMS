@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -309,6 +309,8 @@ msgid ""
 "Your version (%(version_local)s), is more recent than the published version "
 "(%(version_server)s)."
 msgstr ""
+"Su versión ( %(version_local)s ) es más reciente que la versión publicada ( "
+"%(version_server)s )."
 
 #: literals.py:14
 #, python-format
@@ -316,6 +318,8 @@ msgid ""
 "The version you are using (%(version_local)s) is outdated. The latest "
 "version is %(version_server)s."
 msgstr ""
+"La versión que está utilizando ( %(version_local)s ) está desactualizada. La"
+" última versión es %(version_server)s ."
 
 #: literals.py:18
 msgid "It is not possible to determine the latest version available."
@@ -327,6 +331,8 @@ msgid ""
 "Unexpected error trying to determine the latest version available. Make sure"
 " your installation has a connection to the internet; %(exception)s"
 msgstr ""
+"Error inesperado al intentar determinar la última versión disponible. "
+"Asegúrese de que su instalación tenga conexión a Internet; %(exception)s"
 
 #: management/commands/dependencies_check.py:13
 msgid "Outputs the dependencies as a comma delimited values list."
@@ -362,13 +368,15 @@ msgstr "Ver dependencias"
 
 #: views.py:27
 msgid "This process only checks the Python component of Mayan EDMS."
-msgstr ""
+msgstr "Este proceso solo verifica el componente Python de Mayan EDMS."
 
 #: views.py:31
 msgid ""
 "It does not verify versions of other components like packaging or deployment"
 " technologies, such as container or virtual machine images."
 msgstr ""
+"No verifica versiones de otros componentes como tecnologías de distribución "
+"o desempeño como imágenes de contenedores o máquinas virtuales."
 
 #: views.py:51
 #, python-format

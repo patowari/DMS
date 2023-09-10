@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -22,13 +22,16 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source periodic"
-msgstr ""
+msgstr "Fuente de documentos periódica"
 
 #: source_backend_actions/arguments.py:7
 msgid ""
 "Executes the primary action of the source in test mode. Permanent "
 "modifications like deletion of files are disabled."
 msgstr ""
+"Ejecuta la acción principal de la fuente en modo de prueba. Las "
+"modificaciones permanentes como la eliminación de archivos están "
+"deshabilitadas."
 
 #: source_backends/mixins.py:29
 msgid "Assign a document type to documents uploaded from this source."
@@ -49,4 +52,4 @@ msgstr "Intérvalo"
 
 #: source_backends/mixins.py:64
 msgid "Unattended"
-msgstr ""
+msgstr "Desatendida"

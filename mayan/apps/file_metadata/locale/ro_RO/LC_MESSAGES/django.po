@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -59,7 +59,7 @@ msgstr "Instrument EXIF"
 
 #: drivers/extract_msg.py:15
 msgid "Extract msg"
-msgstr ""
+msgstr "Extrage mesajul"
 
 #: events.py:10
 msgid "Document file submitted for file metadata processing"
@@ -119,7 +119,7 @@ msgstr "Trimitere automată a documentelor nou create la procesare."
 
 #: models.py:46
 msgid "Auto process"
-msgstr ""
+msgstr "Procesare automată"
 
 #: models.py:52
 msgid "Document type settings"

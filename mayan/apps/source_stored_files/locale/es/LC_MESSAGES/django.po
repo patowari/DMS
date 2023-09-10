@@ -6,12 +6,11 @@
 # Translators:
 # Roberto Rosario, 2023
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -22,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:11
-msgid "Source stored_files"
+msgid "Source stored files"
 msgstr ""
 
 #: classes.py:44
@@ -48,25 +47,30 @@ msgstr "Seleccionar"
 #: source_backend_actions/arguments.py:6
 msgid "URL safe filename of the stored file to process."
 msgstr ""
+"Nombre de archivo seguro de URL del archivo almacenado que se va a procesar."
 
 #: source_backend_actions/arguments.py:10
 msgid ""
 "Execute source backend specific, built-in post processing clean up code."
 msgstr ""
+"Ejecute código de limpieza de posprocesamiento integrado, específico del "
+"motor."
 
 #: source_backend_actions/arguments.py:16
 msgid ""
 "Unique identifier to select which source backend stored file to process."
 msgstr ""
+"Identificador único para seleccionar qué archivo almacenado en el motor de "
+"fuente de origen a procesar."
 
 #: source_backend_actions/mixins.py:75
 msgid "Stored file"
-msgstr ""
+msgstr "Archivo almacenado"
 
 #: source_backend_actions/mixins.py:76
 #, python-format
 msgid "Delete stored file \"%s\"?"
-msgstr ""
+msgstr "¿Eliminar el archivo almacenado \" %s \"?"
 
 #: source_backends/filesystem_source_mixins.py:25
 msgid "Server side filesystem path."
@@ -97,33 +101,41 @@ msgstr "Almacenamiento"
 #: source_backends/storage_backend_source_mixins.py:127
 #, python-format
 msgid "Unable to initialize storage; %s"
-msgstr ""
+msgstr "No se puede inicializar el almacenamiento; %s"
 
 #: source_backends/storage_backend_source_mixins.py:35
 msgid "Python path to the Storage subclass used to access the source files."
 msgstr ""
+"Ruta de Python a la subclase de almacenamiento utilizada para acceder a los "
+"archivos fuente."
 
 #: source_backends/storage_backend_source_mixins.py:41
 msgid "Storage backend"
-msgstr ""
+msgstr "Motor de almacenamiento"
 
 #: source_backends/storage_backend_source_mixins.py:49
 msgid ""
 "Arguments to pass to the storage backend. Use YAML format. The credential "
 "object is available as {{ credential }}."
 msgstr ""
+"Argumentos para pasar al motor de almacenamiento. Utilice el formato YAML. "
+"El objeto de credencial está disponible como {{ credencial }}."
 
 #: source_backends/storage_backend_source_mixins.py:55
 msgid "Storage backend arguments"
-msgstr ""
+msgstr "Argumentos del motor de almacenamiento"
 
 #: source_backends/storage_backend_source_mixins.py:102
 msgid "Unable to initialize storage. Check the storage backend arguments."
 msgstr ""
+"No se puede inicializar el almacenamiento. Verifique los argumentos del "
+"motor de almacenamiento."
 
 #: source_backends/storage_backend_source_mixins.py:114
 msgid "Unable to initialize storage. Check the storage backend dotted path."
 msgstr ""
+"No se puede inicializar el almacenamiento. Verifique la ruta separata por "
+"puntos del motor de almacenamiento."
 
 #: source_backends/stored_file_mixins.py:37
 msgid "Delete the file after is has been successfully uploaded."
@@ -135,12 +147,12 @@ msgstr "Borrar después de subir"
 
 #: source_backends/stored_file_mixins.py:54
 msgid "File content"
-msgstr ""
+msgstr "Contenido del archivo"
 
 #: source_backends/stored_file_mixins.py:72
 #, python-format
 msgid "Unable get list of files; %s"
-msgstr ""
+msgstr "No se puede obtener la lista de archivos; %s"
 
 #: source_backends/stored_file_mixins.py:90
 msgid ""
@@ -148,10 +160,14 @@ msgid ""
 "the operating system user account being used for Mayan EDMS doesn't have the"
 " necessary file system permissions to access the source files."
 msgstr ""
+"Esto podría significar que la lista de archivos de la fuente de origen está "
+"vacía. También podría significar que la cuenta de usuario del sistema "
+"operativo que se utiliza para Mayan EDMS no tiene los permisos necesarios "
+"del sistema de archivos para acceder a los archivos fuente."
 
 #: source_backends/stored_file_mixins.py:95
 msgid "No source files available"
-msgstr ""
+msgstr "No hay archivos de fuente de origien disponibles"
 
 #: source_backends/stored_file_mixins.py:188
 msgid "Width value to be passed to the converter backend."
@@ -174,15 +190,17 @@ msgid ""
 "Maximum size in bytes for which previews will be generated. Example: 20000 ="
 " 20KB."
 msgstr ""
+"Tamaño máximo en bytes para el que se generarán previsualizaciones. Ejemplo:"
+" 20000 = 20 KB."
 
 #: source_backends/stored_file_mixins.py:214
 msgid "Max size preview"
-msgstr ""
+msgstr "Tamaño máximo a previsualizar"
 
 #: source_backends/stored_file_mixins.py:228
 msgid "File images"
-msgstr ""
+msgstr "Imágenes de archivo"
 
 #: templates/source_stored_files/errors/staging_file_too_large.html:5
 msgid "File too large for preview"
-msgstr ""
+msgstr "Archivo demasiado grande para previsualizar"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:11
 msgid "SANE scanners"
-msgstr ""
+msgstr "Digitalizadores SANE"
 
 #: dependencies.py:10
 msgid ""
@@ -60,7 +60,7 @@ msgstr "Argumentos"
 
 #: source_backends.py:76
 msgid "SANE client"
-msgstr ""
+msgstr "Cliente SANE"
 
 #: source_backends.py:134
 msgid "Document properties"

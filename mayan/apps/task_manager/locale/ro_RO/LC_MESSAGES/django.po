@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -44,6 +44,9 @@ msgid ""
 "the broker is restarted. Transient queues use less resources and managed non"
 " critical tasks."
 msgstr ""
+"Cozile tranzitorii nu sunt persistente. Sarcinile dintr-o coadă tranzitorie "
+"se pierd dacă brokerul este repornit. Cozile tranzitorii folosesc mai puține"
+" resurse și gestionează sarcini non-critice."
 
 #: apps.py:117
 msgid "Is transient?"
@@ -51,7 +54,7 @@ msgstr "Este tranzitorie?"
 
 #: apps.py:131
 msgid "Dotted path"
-msgstr ""
+msgstr "Calea punctată"
 
 #: apps.py:134
 msgid "Schedule"
@@ -86,60 +89,68 @@ msgid ""
 "Maximum amount of resident memory a worker can execute before it's replaced "
 "by a new process."
 msgstr ""
+"Cantitatea maximă de memorie rezidentă pe care o poate executa un lucrător "
+"înainte de a fi înlocuită cu un nou proces."
 
 #: apps.py:173
 msgid "Maximum memory per child"
-msgstr ""
+msgstr "Memoria maximă per copil"
 
 #: apps.py:177
 msgid ""
 "Maximum number of tasks a worker can execute before it's replaced by a new "
 "process."
 msgstr ""
+"Numărul maxim de sarcini pe care un lucrător le poate executa înainte de a "
+"fi înlocuit cu un nou proces."
 
 #: apps.py:179
 msgid "Maximum tasks per child"
-msgstr ""
+msgstr "Sarcini maxime per copil"
 
 #: apps.py:183
 msgid ""
 "The number of worker processes/threads to launch. Defaults to the number of "
 "CPUs available on the machine."
 msgstr ""
+"Numărul de procese/fire de execuție care sunt lansate. Implicit, numărul de "
+"procesoare disponibile pe mașină."
 
 #: apps.py:185
 msgid "Concurrency"
-msgstr ""
+msgstr "Concurență"
 
 #: apps.py:189
 msgid ""
 "The nice value determines the priority of the process. A higher value lowers"
 " the priority. The default value is 0."
 msgstr ""
+"Valoarea -nice- determină prioritatea procesului. O valoare mai mare scade "
+"prioritatea. Valoarea implicită este 0."
 
 #: apps.py:192
 msgid "Nice level"
-msgstr ""
+msgstr "Nivel nice"
 
 #: classes.py:186
 msgid "Task type count"
-msgstr ""
+msgstr "Număr de tipuri de sarcini"
 
 #: classes.py:228
 msgid "Queue count"
-msgstr ""
+msgstr "Număr de cozi"
 
 #: links.py:14
 msgid "Task type list"
-msgstr ""
+msgstr "Lista de tipuri de sarcini"
 
 #: links.py:19
 msgid "Worker list"
-msgstr ""
+msgstr "Lista lucrătorilor"
 
 #: links.py:24
 msgid "Queue list"
-msgstr ""
+msgstr "Lista cozilor"
 
 #: permissions.py:10
 msgid "View tasks"
@@ -194,35 +205,35 @@ msgstr "Coadă de așteptare de test"
 #: views.py:25
 #, python-format
 msgid "Task types for queue: %s"
-msgstr ""
+msgstr "Tipuri de activități pentru coada: %s"
 
 #: views.py:35
 #, python-format
 msgid "Queue: %s, not found"
-msgstr ""
+msgstr "Coada: %s , nu a fost găsită"
 
 #: views.py:45
 msgid "Background task workers"
-msgstr ""
+msgstr "Lucrători cu sarcini de fundal"
 
 #: views.py:62
 #, python-format
 msgid "Queues for worker: %s"
-msgstr ""
+msgstr "Cozi pentru lucrătorul: %s"
 
 #: views.py:72
 #, python-format
 msgid "Worker: %s, not found"
-msgstr ""
+msgstr "Lucrătorul: %s , nu a fost găsit"
 
 #: workers.py:18
 msgid "Low latency high volume tasks"
-msgstr ""
+msgstr "Sarcini de volum mare cu latență scăzută"
 
 #: workers.py:25 workers.py:32
 msgid "Medium latency tasks"
-msgstr ""
+msgstr "Sarcini cu latență medie"
 
 #: workers.py:39 workers.py:46
 msgid "Low latency, long lived tasks"
-msgstr ""
+msgstr "Latență scăzută, sarcini de lungă durată"

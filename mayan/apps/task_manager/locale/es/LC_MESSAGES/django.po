@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -42,6 +42,9 @@ msgid ""
 "the broker is restarted. Transient queues use less resources and managed non"
 " critical tasks."
 msgstr ""
+"Las colas transitorias no son persistentes. Las tareas en una cola "
+"transitoria se pierden si se reinicia el intermediario. Las colas "
+"transitorias utilizan menos recursos y gestionan tareas no críticas."
 
 #: apps.py:117
 msgid "Is transient?"
@@ -49,7 +52,7 @@ msgstr "¿Es transitoria?"
 
 #: apps.py:131
 msgid "Dotted path"
-msgstr ""
+msgstr "Ruta separada por puntos"
 
 #: apps.py:134
 msgid "Schedule"
@@ -84,60 +87,68 @@ msgid ""
 "Maximum amount of resident memory a worker can execute before it's replaced "
 "by a new process."
 msgstr ""
+"Cantidad máxima de memoria residente que un trabajador puede ejecutar antes "
+"de ser reemplazada por un nuevo proceso."
 
 #: apps.py:173
 msgid "Maximum memory per child"
-msgstr ""
+msgstr "Memoria máxima por subprocesso"
 
 #: apps.py:177
 msgid ""
 "Maximum number of tasks a worker can execute before it's replaced by a new "
 "process."
 msgstr ""
+"Número máximo de tareas que un trabajador puede ejecutar antes de ser "
+"reemplazado por un nuevo proceso."
 
 #: apps.py:179
 msgid "Maximum tasks per child"
-msgstr ""
+msgstr "Tareas máximas por subproceso"
 
 #: apps.py:183
 msgid ""
 "The number of worker processes/threads to launch. Defaults to the number of "
 "CPUs available on the machine."
 msgstr ""
+"El número de procesos/hilos de trabajo que se lanzarán. El valor "
+"predeterminado es la cantidad de CPUs disponibles en la máquina."
 
 #: apps.py:185
 msgid "Concurrency"
-msgstr ""
+msgstr "Concurrencia"
 
 #: apps.py:189
 msgid ""
 "The nice value determines the priority of the process. A higher value lowers"
 " the priority. The default value is 0."
 msgstr ""
+"El valor de amistad determina la prioridad del proceso. Un valor más alto "
+"reduce la prioridad. El valor predeterminado es 0."
 
 #: apps.py:192
 msgid "Nice level"
-msgstr ""
+msgstr "Nivel de amistad"
 
 #: classes.py:186
 msgid "Task type count"
-msgstr ""
+msgstr "Cantidad de tipos de tareas"
 
 #: classes.py:228
 msgid "Queue count"
-msgstr ""
+msgstr "Cantidad de colas de tareas"
 
 #: links.py:14
 msgid "Task type list"
-msgstr ""
+msgstr "Lista de tipos de tareas"
 
 #: links.py:19
 msgid "Worker list"
-msgstr ""
+msgstr "Lista de trabajadores"
 
 #: links.py:24
 msgid "Queue list"
-msgstr ""
+msgstr "Lista de colas de tareas"
 
 #: permissions.py:10
 msgid "View tasks"
@@ -194,35 +205,35 @@ msgstr "Lista de prueba"
 #: views.py:25
 #, python-format
 msgid "Task types for queue: %s"
-msgstr ""
+msgstr "Tipos de tareas para cola de tareas: %s"
 
 #: views.py:35
 #, python-format
 msgid "Queue: %s, not found"
-msgstr ""
+msgstr "Cola de tareas: %s , no encontrada"
 
 #: views.py:45
 msgid "Background task workers"
-msgstr ""
+msgstr "Trabajadores de tareas de fondo"
 
 #: views.py:62
 #, python-format
 msgid "Queues for worker: %s"
-msgstr ""
+msgstr "Colas de tareas para trabajador: %s"
 
 #: views.py:72
 #, python-format
 msgid "Worker: %s, not found"
-msgstr ""
+msgstr "Trabajador: %s , no encontrado"
 
 #: workers.py:18
 msgid "Low latency high volume tasks"
-msgstr ""
+msgstr "Tareas de alto volumen y baja latencia"
 
 #: workers.py:25 workers.py:32
 msgid "Medium latency tasks"
-msgstr ""
+msgstr "Tareas de latencia media"
 
 #: workers.py:39 workers.py:46
 msgid "Low latency, long lived tasks"
-msgstr ""
+msgstr "Tareas de baja latencia y larga duración"

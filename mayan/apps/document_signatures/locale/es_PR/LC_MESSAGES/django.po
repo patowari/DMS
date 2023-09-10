@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -254,7 +254,7 @@ msgstr "Ver firmas de documentos"
 
 #: queues.py:10
 msgid "Signatures slow"
-msgstr ""
+msgstr "Firmas lentas"
 
 #: queues.py:15
 msgid "Verify key signatures"
@@ -401,7 +401,7 @@ msgstr "Llave privada que se utilizará para firmar el archivo del documento."
 
 #: workflow_actions.py:55
 msgid "Private key"
-msgstr ""
+msgstr "Llave privada"
 
 #: workflow_actions.py:81
 msgid ""

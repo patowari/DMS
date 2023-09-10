@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -129,15 +129,15 @@ msgstr "Fișiere încărcate în comun"
 
 #: permissions.py:10
 msgid "Delete user files"
-msgstr ""
+msgstr "Ștergeți fișierele utilizator"
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr ""
+msgstr "Descărcați fișierele utilizator"
 
 #: permissions.py:16
 msgid "View user files"
-msgstr ""
+msgstr "Vizualizați fișierele utilizator"
 
 #: queues.py:16
 msgid "Storage periodic"
@@ -145,7 +145,7 @@ msgstr "Depozitare periodică"
 
 #: queues.py:22
 msgid "Delete a shared upload"
-msgstr ""
+msgstr "Ștergeți o încărcare partajată"
 
 #: queues.py:27
 msgid "Delete stale uploads"
@@ -157,7 +157,7 @@ msgstr "Ștergeți fișierele de descărcare învechite"
 
 #: serializers.py:11
 msgid "Download URL"
-msgstr ""
+msgstr "Adresa URL de descărcare"
 
 #: serializers.py:21
 msgid "URL"

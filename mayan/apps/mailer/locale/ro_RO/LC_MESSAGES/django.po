@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -28,7 +28,7 @@ msgstr "Poștă electronică"
 
 #: classes.py:27
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: classes.py:40
 msgid "From"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: classes.py:58
 msgid "Compatibility"
-msgstr ""
+msgstr "Compatibilitate"
 
 #: classes.py:68
 msgid "Null backend"
@@ -238,14 +238,16 @@ msgstr ""
 #: mailers.py:59
 msgid "The credential entry to use to authenticate against the email server."
 msgstr ""
+"Intrarea de autentificare de utilizat pentru a se autentifica pe serverul de"
+" e-mail."
 
 #: mailers.py:66
 msgid "Credential"
-msgstr ""
+msgstr "Acreditare"
 
 #: mailers.py:80
 msgid "Server"
-msgstr ""
+msgstr "Server"
 
 #: mailers.py:84
 msgid "Authentication"
@@ -539,7 +541,7 @@ msgstr "Profil de corespondență pe care îl folosiți la trimiterea e-mailului
 
 #: workflow_action_mixins.py:125
 msgid "Parties"
-msgstr ""
+msgstr "Părți implicate"
 
 #: workflow_action_mixins.py:129
 msgid "Content"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #: apps.py:13
 msgid "Emails"
-msgstr ""
+msgstr "Courriels"
 
 #: source_backends/imap_source_backends.py:21
 msgid "IMAP email"
@@ -88,7 +88,7 @@ msgstr "Boite aux lettres de destination"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "Protocole IMAP"
 
 #: source_backends/mixins.py:31
 msgid "Host"
@@ -132,12 +132,12 @@ msgstr "Délai d'attente dépassé"
 
 #: source_backends/pop3_source_backends.py:45
 msgid "POP3 protocol"
-msgstr ""
+msgstr "Protocole POP3"
 
 #: tests/source_backends.py:32
 msgid "Test IMAP email"
-msgstr ""
+msgstr "Tester IMAP"
 
 #: tests/source_backends.py:45
 msgid "Test POP3 email"
-msgstr ""
+msgstr "Tester POP3"

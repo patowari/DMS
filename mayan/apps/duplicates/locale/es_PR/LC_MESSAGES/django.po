@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -70,7 +70,7 @@ msgstr "Entradas de controladores de duplicados"
 
 #: queues.py:10
 msgid "Duplicates slow"
-msgstr ""
+msgstr "Duplicados lentos"
 
 #: queues.py:15
 msgid "Clean empty duplicate lists"

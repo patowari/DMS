@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -22,13 +22,15 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source compressed"
-msgstr ""
+msgstr "Fuente de documento comprimida"
 
 #: source_backend_actions/arguments.py:7
 msgid ""
 "Controls whether or not the uploaded file will be uncompressed and processed"
 " and individual files."
 msgstr ""
+"Controla si el archivo cargado se descomprimirá y procesará como archivos "
+"individuales."
 
 #: source_backends/literals.py:8 source_backends/literals.py:13
 msgid "Always"
@@ -52,7 +54,7 @@ msgstr "Expandir o no archivos comprimidos."
 
 #: source_backends/mixins.py:57
 msgid "Decompression"
-msgstr ""
+msgstr "Descompresión"
 
 #: source_backends/mixins.py:90
 msgid "Expand compressed files"

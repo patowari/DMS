@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -35,7 +35,7 @@ msgstr "Fișetul a fost creat"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr ""
+msgstr "Fișetul a fost șters"
 
 #: events.py:17
 msgid "Cabinet edited"
@@ -99,7 +99,7 @@ msgstr "Calea completă"
 
 #: models.py:32 serializers.py:41
 msgid "Parent"
-msgstr ""
+msgstr "Părinte"
 
 #: models.py:35
 msgid "A short text used to identify the cabinet."
@@ -188,7 +188,7 @@ msgstr "Listă fișetelor subordonate"
 
 #: serializers.py:18
 msgid "Children"
-msgstr ""
+msgstr "Copii"
 
 #: serializers.py:23
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr ""
+msgstr "Adresa URL a documentelor"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -208,7 +208,7 @@ msgstr ""
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr ""
+msgstr "Adresa URL a părinților"
 
 #: serializers.py:51
 msgid "URL"
@@ -216,15 +216,15 @@ msgstr "URL"
 
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
-msgstr ""
+msgstr "Cheia primară a documentului de adăugat în fișet."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
-msgstr ""
+msgstr "ID document"
 
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
-msgstr ""
+msgstr "Cheia primară a documentului de scos din fișet."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
@@ -366,4 +366,4 @@ msgstr "Fișetele la care se va adăuga documentul."
 
 #: workflow_actions.py:83
 msgid "Cabinets from which the document will be removed"
-msgstr ""
+msgstr "Fișete din care va fi scos documentul"

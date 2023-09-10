@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -194,15 +194,15 @@ msgstr "Acceder a los eventos de un objeto"
 
 #: queues.py:7
 msgid "Events fast"
-msgstr ""
+msgstr "Eventos rápidos"
 
 #: queues.py:10
 msgid "Events slow"
-msgstr ""
+msgstr "Eventos lentos"
 
 #: queues.py:16
 msgid "Commit an event"
-msgstr ""
+msgstr "Someter un evento"
 
 #: queues.py:21
 msgid "Clear event querysets"

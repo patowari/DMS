@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -142,7 +142,7 @@ msgstr "Almacenamiento periódico"
 
 #: queues.py:22
 msgid "Delete a shared upload"
-msgstr ""
+msgstr "Eliminar una carga compartida"
 
 #: queues.py:27
 msgid "Delete stale uploads"

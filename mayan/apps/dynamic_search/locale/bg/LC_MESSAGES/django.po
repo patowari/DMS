@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -80,7 +80,7 @@ msgstr "Изпълнете инструменти за търсене"
 
 #: queues.py:10
 msgid "Search slow"
-msgstr ""
+msgstr "Бавно търсене"
 
 #: queues.py:15
 msgid "Remove a model instance from the search engine."
@@ -98,10 +98,14 @@ msgstr "Индексирайте всички екземпляри на моде
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
+"Индексиране всички свързани екземпляри на модел на търсене след събитие "
+"много към много."
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
+"Нулиране индексите на бекенда за търсене и индексиране отново на всички "
+"екземпляри."
 
 #: scoped_queries.py:352
 msgid ""
@@ -203,6 +207,8 @@ msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
+"Аргументи за предаване към бекенда за търсене. Например стойности за промяна"
+" на поведението, имена на хостове или аргументи за удостоверяване."
 
 #: settings.py:36
 msgid "The search operator to use when none is specified."
@@ -217,7 +223,7 @@ msgstr ""
 
 #: settings.py:51
 msgid "Amount of objects to process when performing bulk indexing."
-msgstr ""
+msgstr "Количество обекти за обработка при извършване на групово индексиране."
 
 #: settings.py:57
 msgid "Sets the default state of the \"Match all\" checkbox."

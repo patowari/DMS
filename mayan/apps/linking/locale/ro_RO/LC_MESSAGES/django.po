@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -249,7 +249,7 @@ msgstr "Vedeți legăturile inteligente existente"
 
 #: serializers.py:20 serializers.py:132
 msgid "Smart link URL"
-msgstr ""
+msgstr "Adresa URL a linkului inteligent"
 
 #: serializers.py:24 serializers.py:86 serializers.py:135
 msgid "URL"
@@ -262,7 +262,7 @@ msgstr ""
 
 #: serializers.py:50 serializers.py:59
 msgid "Document type ID"
-msgstr ""
+msgstr "ID tip document"
 
 #: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
@@ -271,27 +271,27 @@ msgstr ""
 
 #: serializers.py:66
 msgid "Conditions URL"
-msgstr ""
+msgstr "Adresa URL a condițiilor"
 
 #: serializers.py:70
 msgid "Document types URL"
-msgstr ""
+msgstr "Adresă URL tipuri de documente"
 
 #: serializers.py:74
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adresă URL adăugare tipuri de documente"
 
 #: serializers.py:78
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adresă URL ștergere tipuri de documente"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"
-msgstr ""
+msgstr "Adresa URL a linkului inteligent rezolvat"
 
 #: serializers.py:126
 msgid "Documents URL"
-msgstr ""
+msgstr "Adresa URL a documentelor"
 
 #: views/smart_link_condition_views.py:47
 msgid ""

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -138,7 +138,7 @@ msgstr "Documentos"
 
 #: classes.py:33
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: classes.py:109
 #, python-format
@@ -722,7 +722,7 @@ msgstr "Ejecutar herramientas de flujos de trabajo"
 
 #: queues.py:14
 msgid "Workflows slow"
-msgstr ""
+msgstr "Flujos de trabajo lentos"
 
 #: queues.py:18
 msgid "Launch a workflow for a document"
@@ -1145,6 +1145,8 @@ msgstr "Escalamientos. para el estado de la plantilla de flujo de trabajo: %s"
 #, python-format
 msgid "Create a \"%(backend_label)s\" workflow action for: %(workflow_state)s"
 msgstr ""
+"Cree una acción de flujo de tareas \" %(backend_label)s \" para: "
+"%(workflow_state)s"
 
 #: views/workflow_template_state_views.py:103
 #, python-format
@@ -1529,7 +1531,7 @@ msgstr ""
 
 #: workflow_actions.py:217 workflow_actions.py:239 workflow_actions.py:261
 msgid "The credential object is available as {{ credential }}."
-msgstr ""
+msgstr "El objeto de credencial está disponible como {{ credential }}."
 
 #: workflow_actions.py:228
 msgid "Password"
@@ -1571,7 +1573,7 @@ msgstr "Realizar una solicitud HTTP"
 
 #: workflow_actions.py:315
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: workflow_actions.py:337
 #, python-format

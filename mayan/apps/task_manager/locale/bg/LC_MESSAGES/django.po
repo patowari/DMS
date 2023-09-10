@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -43,6 +43,9 @@ msgid ""
 "the broker is restarted. Transient queues use less resources and managed non"
 " critical tasks."
 msgstr ""
+"Временните опашки не са постоянни. Задачите във временна опашка се губят, "
+"ако брокерът се рестартира. Временните опашки използват по-малко ресурси и "
+"управлявани некритични задачи."
 
 #: apps.py:117
 msgid "Is transient?"
@@ -50,7 +53,7 @@ msgstr "Преходен ли е?"
 
 #: apps.py:131
 msgid "Dotted path"
-msgstr ""
+msgstr "Пунктирана пътека"
 
 #: apps.py:134
 msgid "Schedule"
@@ -85,60 +88,68 @@ msgid ""
 "Maximum amount of resident memory a worker can execute before it's replaced "
 "by a new process."
 msgstr ""
+"Максимален обем резидентна памет, който работник може да изпълни, преди да "
+"бъде заменен от нов процес."
 
 #: apps.py:173
 msgid "Maximum memory per child"
-msgstr ""
+msgstr "Максимална памет на вторичен процес"
 
 #: apps.py:177
 msgid ""
 "Maximum number of tasks a worker can execute before it's replaced by a new "
 "process."
 msgstr ""
+"Максимален брой задачи, които даден работник може да изпълни, преди да бъде "
+"заменен от нов процес."
 
 #: apps.py:179
 msgid "Maximum tasks per child"
-msgstr ""
+msgstr "Максимален брой задачи на вторичен процес"
 
 #: apps.py:183
 msgid ""
 "The number of worker processes/threads to launch. Defaults to the number of "
 "CPUs available on the machine."
 msgstr ""
+"Брой работни процеси/нишки за стартиране. По подразбиране е броят процесори,"
+" налични в компютъра."
 
 #: apps.py:185
 msgid "Concurrency"
-msgstr ""
+msgstr "Паралелност"
 
 #: apps.py:189
 msgid ""
 "The nice value determines the priority of the process. A higher value lowers"
 " the priority. The default value is 0."
 msgstr ""
+"Стойността nice определя приоритета на процеса. По-високата стойност "
+"намалява приоритета. Стойността по подразбиране е 0."
 
 #: apps.py:192
 msgid "Nice level"
-msgstr ""
+msgstr "Ниво на \"хубост\""
 
 #: classes.py:186
 msgid "Task type count"
-msgstr ""
+msgstr "Брой типове задачи"
 
 #: classes.py:228
 msgid "Queue count"
-msgstr ""
+msgstr "Брой на опашката"
 
 #: links.py:14
 msgid "Task type list"
-msgstr ""
+msgstr "Списък с типове задачи"
 
 #: links.py:19
 msgid "Worker list"
-msgstr ""
+msgstr "Списък на работниците"
 
 #: links.py:24
 msgid "Queue list"
-msgstr ""
+msgstr "Списък на опашка"
 
 #: permissions.py:10
 msgid "View tasks"
@@ -195,35 +206,35 @@ msgstr "Опашка за тестове"
 #: views.py:25
 #, python-format
 msgid "Task types for queue: %s"
-msgstr ""
+msgstr "Типове задачи за опашка: %s"
 
 #: views.py:35
 #, python-format
 msgid "Queue: %s, not found"
-msgstr ""
+msgstr "Опашка: %s , не е намерена"
 
 #: views.py:45
 msgid "Background task workers"
-msgstr ""
+msgstr "Работници на фонови задачи"
 
 #: views.py:62
 #, python-format
 msgid "Queues for worker: %s"
-msgstr ""
+msgstr "Опашки за работник: %s"
 
 #: views.py:72
 #, python-format
 msgid "Worker: %s, not found"
-msgstr ""
+msgstr "Работник: %s , не е намерен"
 
 #: workers.py:18
 msgid "Low latency high volume tasks"
-msgstr ""
+msgstr "Задачи с голям обем с ниска латентност"
 
 #: workers.py:25 workers.py:32
 msgid "Medium latency tasks"
-msgstr ""
+msgstr "Задачи със средна латентност"
 
 #: workers.py:39 workers.py:46
 msgid "Low latency, long lived tasks"
-msgstr ""
+msgstr "Дълготрайни задачи с ниска латентност"

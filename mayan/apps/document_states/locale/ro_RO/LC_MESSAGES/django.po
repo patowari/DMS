@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -141,7 +141,7 @@ msgstr "Documente"
 
 #: classes.py:33
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: classes.py:109
 #, python-format
@@ -722,7 +722,7 @@ msgstr "Executați unelte de flux de lucru"
 
 #: queues.py:14
 msgid "Workflows slow"
-msgstr ""
+msgstr "Fluxuri de lucru lente"
 
 #: queues.py:18
 msgid "Launch a workflow for a document"
@@ -761,12 +761,12 @@ msgstr "Cheia principală a șablonului de flux de lucru de lansat."
 #: serializers/workflow_template_state_serializers.py:47
 #: serializers/workflow_template_transition_serializers.py:111
 msgid "Workflow template ID"
-msgstr ""
+msgstr "ID-ul șablonului fluxului de lucru"
 
 #: serializers/workflow_instance_serializers.py:37
 #: serializers/workflow_instance_serializers.py:132
 msgid "Document URL"
-msgstr ""
+msgstr "Adresa URL a documentului"
 
 #: serializers/workflow_instance_serializers.py:49
 msgid "Primary key of the transition to be added."
@@ -774,7 +774,7 @@ msgstr "Cheia primară a tranziției care urmează să fie adăugată."
 
 #: serializers/workflow_instance_serializers.py:50
 msgid "Transition ID"
-msgstr ""
+msgstr "ID de tranziție"
 
 #: serializers/workflow_instance_serializers.py:55
 #: serializers/workflow_instance_serializers.py:151
@@ -791,7 +791,7 @@ msgstr "URL"
 
 #: serializers/workflow_instance_serializers.py:74
 msgid "Workflow instance URL"
-msgstr ""
+msgstr "Adresa URL a instanței fluxului de lucru"
 
 #: serializers/workflow_instance_serializers.py:86
 #: serializers/workflow_instance_serializers.py:148
@@ -800,19 +800,19 @@ msgstr ""
 #: serializers/workflow_template_transition_serializers.py:114
 #: serializers/workflow_template_transition_serializers.py:218
 msgid "Workflow template URL"
-msgstr ""
+msgstr "Adresa URL a șablonului de flux de lucru"
 
 #: serializers/workflow_instance_serializers.py:123
 msgid "Workflow template"
-msgstr ""
+msgstr "Șablon de flux de lucru"
 
 #: serializers/workflow_instance_serializers.py:135
 msgid "Last log entry"
-msgstr ""
+msgstr "Ultima intrare în jurnal"
 
 #: serializers/workflow_instance_serializers.py:139
 msgid "Log entries URL"
-msgstr ""
+msgstr "Adresa URL a intrărilor de jurnal"
 
 #: serializers/workflow_instance_serializers.py:140
 msgid "A link to the entire history of this workflow."
@@ -820,7 +820,7 @@ msgstr "O legătură către întreaga istorie a acestui flux de lucru."
 
 #: serializers/workflow_instance_serializers.py:144
 msgid "Log entry transitions URL"
-msgstr ""
+msgstr "Adresa URL a tranzițiilor la intrarea în jurnal"
 
 #: serializers/workflow_instance_serializers.py:152
 msgid ""
@@ -833,27 +833,27 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:13
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adresă URL adăugare tipuri de documente"
 
 #: serializers/workflow_template_serializers.py:18
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adresă URL ștergere tipuri de documente"
 
 #: serializers/workflow_template_serializers.py:23
 msgid "Document types URL"
-msgstr ""
+msgstr "Adresă URL tipuri de documente"
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"
-msgstr ""
+msgstr "URL-ul imaginii"
 
 #: serializers/workflow_template_serializers.py:32
 msgid "States URL"
-msgstr ""
+msgstr "Adresa URL a stărilor"
 
 #: serializers/workflow_template_serializers.py:36
 msgid "Transitions URL"
-msgstr ""
+msgstr "Adresa URL a tranzițiilor"
 
 #: serializers/workflow_template_serializers.py:65
 msgid "Primary key of the document type to add to the workflow."
@@ -862,7 +862,7 @@ msgstr "Cheia primară a tipului de document de adăugat la fluxul de lucru."
 #: serializers/workflow_template_serializers.py:66
 #: serializers/workflow_template_serializers.py:75
 msgid "Document type ID"
-msgstr ""
+msgstr "ID tip document"
 
 #: serializers/workflow_template_serializers.py:74
 msgid "Primary key of the document type to remove from the workflow."
@@ -871,12 +871,12 @@ msgstr "Cheia primară a tipului de document de eliminat din fluxul de lucru."
 #: serializers/workflow_template_state_escalation_serializers.py:32
 #: serializers/workflow_template_state_serializers.py:87
 msgid "Workflow template state ID"
-msgstr ""
+msgstr "ID de stare a șablonului de flux de lucru"
 
 #: serializers/workflow_template_state_escalation_serializers.py:36
 #: serializers/workflow_template_state_serializers.py:91
 msgid "Workflow template state URL"
-msgstr ""
+msgstr "Adresa URL a stării șablonului de flux de lucru"
 
 #: serializers/workflow_template_state_escalation_serializers.py:49
 msgid "Primary key of the workflow template transition to be added."
@@ -890,25 +890,25 @@ msgstr "ID de tranziție al șablonului de flux de lucru"
 
 #: serializers/workflow_template_state_escalation_serializers.py:55
 msgid "Workflow template transition URL"
-msgstr ""
+msgstr "Adresa URL de tranziție a șablonului de flux de lucru"
 
 #: serializers/workflow_template_state_serializers.py:11
 msgid "Actions URL"
-msgstr ""
+msgstr "Adresa URL a acțiunilor"
 
 #: serializers/workflow_template_state_serializers.py:23
 msgid "Escalations URL"
-msgstr ""
+msgstr "Adresa URL de escaladare"
 
 #: serializers/workflow_template_transition_serializers.py:49
 #: serializers/workflow_template_transition_serializers.py:226
 msgid "Workflow transition ID"
-msgstr ""
+msgstr "ID de tranziție a fluxului de lucru"
 
 #: serializers/workflow_template_transition_serializers.py:53
 #: serializers/workflow_template_transition_serializers.py:230
 msgid "Workflow transition URL"
-msgstr ""
+msgstr "Adresa URL de tranziție a fluxului de lucru"
 
 #: serializers/workflow_template_transition_serializers.py:86
 msgid "Primary key of the destination state to be added."
@@ -916,11 +916,11 @@ msgstr "Cheia primară a stării destinației care urmează să fie adăugată."
 
 #: serializers/workflow_template_transition_serializers.py:87
 msgid "Destination state ID"
-msgstr ""
+msgstr "ID-ul stării de destinație"
 
 #: serializers/workflow_template_transition_serializers.py:92
 msgid "Field list URL"
-msgstr ""
+msgstr "Adresa URL a listei de câmpuri"
 
 #: serializers/workflow_template_transition_serializers.py:99
 msgid "Primary key of the origin state to be added."
@@ -928,11 +928,11 @@ msgstr "Cheia primară a stării de origine care urmează să fie adăugată."
 
 #: serializers/workflow_template_transition_serializers.py:100
 msgid "Origin state ID"
-msgstr ""
+msgstr "ID-ul stării de origine"
 
 #: serializers/workflow_template_transition_serializers.py:105
 msgid "Trigger list URL"
-msgstr ""
+msgstr "Adresa URL a listei de declanșatori"
 
 #: serializers/workflow_template_transition_serializers.py:198
 msgid "Event Type ID"
@@ -1141,6 +1141,8 @@ msgstr "Escaladări pentru starea șablonului de flux de lucru: %s"
 #, python-format
 msgid "Create a \"%(backend_label)s\" workflow action for: %(workflow_state)s"
 msgstr ""
+"Creați o acțiune de flux de lucru „ %(backend_label)s ” pentru: "
+"%(workflow_state)s"
 
 #: views/workflow_template_state_views.py:103
 #, python-format
@@ -1523,7 +1525,7 @@ msgstr ""
 
 #: workflow_actions.py:217 workflow_actions.py:239 workflow_actions.py:261
 msgid "The credential object is available as {{ credential }}."
-msgstr ""
+msgstr "Obiectul acreditării este disponibil ca {{ credential }}."
 
 #: workflow_actions.py:228
 msgid "Password"
@@ -1563,7 +1565,7 @@ msgstr "Efectuați o solicitare HTTP"
 
 #: workflow_actions.py:315
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: workflow_actions.py:337
 #, python-format

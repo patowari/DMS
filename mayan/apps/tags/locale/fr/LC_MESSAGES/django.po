@@ -7,18 +7,18 @@
 # Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
 # Roberto Rosario, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Guillaume Trottier <gui.trottier@gmail.com>, 2023\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,7 +178,7 @@ msgstr "Type MIME du fichier de document"
 
 #: serializers.py:12
 msgid "Documents URL"
-msgstr ""
+msgstr "URL des documents"
 
 #: serializers.py:19
 msgid "URL"
@@ -190,7 +190,7 @@ msgstr "Clé primaire de l'étiquette à attacher au document."
 
 #: serializers.py:34 serializers.py:43
 msgid "Tag ID"
-msgstr ""
+msgstr "ID de l'étiquette"
 
 #: serializers.py:42
 msgid "Primary key of the tag to remove from the document."

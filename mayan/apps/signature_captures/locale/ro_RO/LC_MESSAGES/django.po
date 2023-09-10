@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -175,11 +175,11 @@ msgstr "Nume utilizator al utilizatorului"
 
 #: serializers.py:11
 msgid "Document URL"
-msgstr ""
+msgstr "Adresa URL a documentului"
 
 #: serializers.py:15
 msgid "Image URL"
-msgstr ""
+msgstr "URL-ul imaginii"
 
 #: serializers.py:27
 msgid "URL"

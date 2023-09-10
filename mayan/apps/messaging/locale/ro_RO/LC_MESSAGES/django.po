@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -73,11 +73,11 @@ msgstr "Conținut etichetă"
 
 #: models.py:19
 msgid "Sender content type"
-msgstr ""
+msgstr "Tipul de conținut al expeditorului"
 
 #: models.py:22
 msgid "Sender object ID"
-msgstr ""
+msgstr "ID-ul obiectului expeditorului"
 
 #: models.py:29
 msgid "User"
@@ -137,15 +137,15 @@ msgstr "Vizualizați mesaje"
 
 #: serializers.py:15
 msgid "Sender app label"
-msgstr ""
+msgstr "Eticheta aplicației expeditorului"
 
 #: serializers.py:18
 msgid "Sender model name"
-msgstr ""
+msgstr "Numele modelului expeditorului"
 
 #: serializers.py:21
 msgid "Sender URL"
-msgstr ""
+msgstr "Adresa URL a expeditorului"
 
 #: serializers.py:25
 msgid "Primary key of the recipient user of this message."
@@ -292,10 +292,11 @@ msgstr "Lista de nume de utilizator"
 #: workflow_actions.py:26
 msgid "Comma separated list of usernames that will receive the message."
 msgstr ""
+"Listă separată prin virgulă, cu nume de utilizator care vor primi mesajul."
 
 #: workflow_actions.py:45
 msgid "Subject of the message to be sent."
-msgstr ""
+msgstr "Subiectul mesajului care urmează să fie trimis."
 
 #: workflow_actions.py:62
 msgid "The actual text to send."
@@ -307,7 +308,7 @@ msgstr "Trimiteți mesaj utilizatorului"
 
 #: workflow_actions.py:80
 msgid "Recipients"
-msgstr ""
+msgstr "Destinatari"
 
 #: workflow_actions.py:84
 msgid "Content"

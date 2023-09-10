@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -63,7 +63,7 @@ msgstr "Este activ?"
 
 #: apps.py:113
 msgid "Is super user?"
-msgstr ""
+msgstr "Este super utilizator?"
 
 #: apps.py:116 search.py:37
 msgid "Last name"
@@ -217,15 +217,15 @@ msgstr ""
 
 #: serializers.py:18
 msgid "Users URL"
-msgstr ""
+msgstr "Adresa URL a utilizatorilor"
 
 #: serializers.py:22
 msgid "Users add URL"
-msgstr ""
+msgstr "Adresa URL pentru adăugare utilizatori"
 
 #: serializers.py:26
 msgid "Users remove URL"
-msgstr ""
+msgstr "Adresa URL pentru eliminare utilizatori"
 
 #: serializers.py:33 serializers.py:80
 msgid "URL"
@@ -251,7 +251,7 @@ msgstr ""
 
 #: serializers.py:68
 msgid "Groups URL"
-msgstr ""
+msgstr "Adresa URL a grupurilor"
 
 #: utils.py:26
 msgid "Anonymous"

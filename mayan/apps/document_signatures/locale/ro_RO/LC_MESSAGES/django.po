@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -258,7 +258,7 @@ msgstr "Vizualizați semnăturile documentelor"
 
 #: queues.py:10
 msgid "Signatures slow"
-msgstr ""
+msgstr "Semnături lente"
 
 #: queues.py:15
 msgid "Verify key signatures"
@@ -282,7 +282,7 @@ msgstr "Actualizează informațiile despre semnătură existente"
 
 #: serializers.py:17
 msgid "Document file URL"
-msgstr ""
+msgstr "Adresa URL a fișierului documentului"
 
 #: serializers.py:59
 msgid "Primary key of the secret key used to sign the document file."
@@ -405,7 +405,7 @@ msgstr ""
 
 #: workflow_actions.py:55
 msgid "Private key"
-msgstr ""
+msgstr "Cheie privată"
 
 #: workflow_actions.py:81
 msgid ""

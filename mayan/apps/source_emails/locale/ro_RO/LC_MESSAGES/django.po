@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:13
 msgid "Emails"
-msgstr ""
+msgstr "E-mailuri"
 
 #: source_backends/imap_source_backends.py:21
 msgid "IMAP email"
@@ -85,7 +85,7 @@ msgstr "Căsuța poștală de destinație"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "Protocolul IMAP"
 
 #: source_backends/mixins.py:31
 msgid "Host"
@@ -117,7 +117,7 @@ msgstr "Stocați corpul de e-mail"
 
 #: source_backends/mixins.py:74
 msgid "Common email options"
-msgstr ""
+msgstr "Opțiuni comune de e-mail"
 
 #: source_backends/pop3_source_backends.py:18
 msgid "POP3 email"
@@ -129,12 +129,12 @@ msgstr "Pauză"
 
 #: source_backends/pop3_source_backends.py:45
 msgid "POP3 protocol"
-msgstr ""
+msgstr "Protocolul POP3"
 
 #: tests/source_backends.py:32
 msgid "Test IMAP email"
-msgstr ""
+msgstr "Testați e-mailul IMAP"
 
 #: tests/source_backends.py:45
 msgid "Test POP3 email"
-msgstr ""
+msgstr "Testați e-mailul POP3"

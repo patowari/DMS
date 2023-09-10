@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -29,11 +29,11 @@ msgstr "Memorizare în cache a fișierelor"
 
 #: dashboard_widgets.py:16
 msgid "Total cache allocated"
-msgstr ""
+msgstr "Cache total alocat"
 
 #: dashboard_widgets.py:45
 msgid "Total cache used"
-msgstr ""
+msgstr "Cache total folosit"
 
 #: events.py:10
 msgid "Cache created"
@@ -73,19 +73,19 @@ msgstr "Necunoscut"
 
 #: model_mixins.py:64
 msgid "Partition count"
-msgstr ""
+msgstr "Număr de partiții"
 
 #: model_mixins.py:65
 msgid "Total cached objects."
-msgstr ""
+msgstr "Numărul total de obiecte în cache."
 
 #: model_mixins.py:70
 msgid "Partition file count"
-msgstr ""
+msgstr "Număr de fișiere de partiție"
 
 #: model_mixins.py:71
 msgid "Total cached files."
-msgstr ""
+msgstr "Numărul total de fișiere stocate în cache."
 
 #: model_mixins.py:90 model_mixins.py:286
 msgid "Current size"
@@ -169,7 +169,7 @@ msgstr "Vizualizați un cache de fișiere"
 
 #: queues.py:10
 msgid "File caching slow"
-msgstr ""
+msgstr "Memorarea fișierelor în cache este lentă"
 
 #: queues.py:15
 msgid "Purge a file cache partition"
@@ -204,7 +204,7 @@ msgstr "Lista de cache de fișiere"
 #: views.py:83
 #, python-format
 msgid "Details of cache partition: %s"
-msgstr ""
+msgstr "Detalii despre partiția cache: %s"
 
 #: views.py:101
 #, python-format

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -32,11 +32,11 @@ msgstr "Se potrivește cu toate"
 
 #: forms.py:20
 msgid "Return only results that match all fields."
-msgstr ""
+msgstr "Returnați numai rezultatele care se potrivesc cu toate câmpurile."
 
 #: forms.py:52
 msgid "Search logic"
-msgstr ""
+msgstr "Logica de căutare"
 
 #: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
@@ -45,7 +45,7 @@ msgstr "Caută termeni"
 
 #: links.py:20
 msgid "Basic search"
-msgstr ""
+msgstr "Căutare simplă"
 
 #: links.py:24 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
@@ -113,6 +113,9 @@ msgid ""
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
+"Rezultatele căutării depășesc setarea limită. Rezultatele pot să nu fie de "
+"încredere dacă sunt utilizate mai multe domenii. Restrângeți criteriile de "
+"căutare sau măriți valoarea setării limitei rezultatelor."
 
 #: scoped_queries.py:368
 #, python-format
@@ -126,7 +129,7 @@ msgstr ""
 
 #: search_fields.py:311
 msgid "Any"
-msgstr ""
+msgstr "Orice"
 
 #: search_models.py:44
 #, python-format
@@ -135,51 +138,51 @@ msgstr "Model de căutare necunoscut `%s`."
 
 #: search_models.py:114
 msgid "All content"
-msgstr ""
+msgstr "Tot conținutul"
 
 #: search_query_types.py:167
 msgid "Exact"
-msgstr ""
+msgstr "Exact"
 
 #: search_query_types.py:173
 msgid "Fuzzy"
-msgstr ""
+msgstr "Aproximativ"
 
 #: search_query_types.py:179
 msgid "Greater than"
-msgstr ""
+msgstr "Mai mare ca"
 
 #: search_query_types.py:185
 msgid "Greater than or equal"
-msgstr ""
+msgstr "Mai mare sau egal"
 
 #: search_query_types.py:191
 msgid "Less than"
-msgstr ""
+msgstr "Mai puțin decât"
 
 #: search_query_types.py:197
 msgid "Less than or equal"
-msgstr ""
+msgstr "Mai mic sau egal"
 
 #: search_query_types.py:203
 msgid "Partial"
-msgstr ""
+msgstr "Parțial"
 
 #: search_query_types.py:209
 msgid "Range"
-msgstr ""
+msgstr "Interval"
 
 #: search_query_types.py:244
 msgid "Range exclusive"
-msgstr ""
+msgstr "Interval exclusiv"
 
 #: search_query_types.py:250
 msgid "Regular expression"
-msgstr ""
+msgstr "Expresie regulată"
 
 #: serializers.py:14
 msgid "Field name"
-msgstr ""
+msgstr "Numele câmpului"
 
 #: serializers.py:17
 msgid "Label"
@@ -191,15 +194,15 @@ msgstr "Eticheta aplicației"
 
 #: serializers.py:26
 msgid "Model name"
-msgstr ""
+msgstr "Numele modelului"
 
 #: serializers.py:29
 msgid "Primary key"
-msgstr ""
+msgstr "Cheia principală"
 
 #: serializers.py:32
 msgid "Search fields"
-msgstr ""
+msgstr "Câmpuri de căutare"
 
 #: settings.py:20
 msgid "Full path to the backend to be used to handle the search."
@@ -212,10 +215,13 @@ msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
+"Argumente de transmis backend-ului de căutare. De exemplu, valori pentru a "
+"schimba comportamentul, numele gazdei sau argumentele de autentificare."
 
 #: settings.py:36
 msgid "The search operator to use when none is specified."
 msgstr ""
+"Operatorul de căutare de utilizat atunci când nu este specificat niciunul."
 
 #: settings.py:43
 msgid ""
@@ -238,14 +244,16 @@ msgstr "Setează starea implicită a casetei de selectare „Potriviți toate”
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
+"Numărul maxim de rezultate de căutare de preluat și afișat per unitate de "
+"interogare de căutare."
 
 #: settings.py:69
 msgid "Maximum number of search results to fetch and display."
-msgstr ""
+msgstr "Numărul maxim de rezultate ale căutării de preluat și afișat."
 
 #: templates/dynamic_search/app/list_toolbar.html:18
 msgid "Filter terms"
-msgstr ""
+msgstr "Termenii de filtrare"
 
 #: templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
@@ -254,47 +262,47 @@ msgstr "Avansate"
 
 #: value_transformations.py:37
 msgid "Replace accents"
-msgstr ""
+msgstr "Înlocuiește accente"
 
 #: value_transformations.py:49
 msgid "@ sign replace"
-msgstr ""
+msgstr "Înlocuiți semnul @"
 
 #: value_transformations.py:59
 msgid "Case fold"
-msgstr ""
+msgstr "Unificare litere mari/mici"
 
 #: value_transformations.py:69 value_transformations.py:79
 msgid "Hyphen replace"
-msgstr ""
+msgstr "Înlocuiește cratima"
 
 #: value_transformations.py:89
 msgid "To boolean"
-msgstr ""
+msgstr "Transformă în boolean"
 
 #: value_transformations.py:102
 msgid "To date time"
-msgstr ""
+msgstr "Transformă în dată/oră"
 
 #: value_transformations.py:124
 msgid "Date time ISO format"
-msgstr ""
+msgstr "Dată/oră format ISO"
 
 #: value_transformations.py:134
 msgid "Date time simple format"
-msgstr ""
+msgstr "Data oră format simplu"
 
 #: value_transformations.py:144
 msgid "Date time timestamp format"
-msgstr ""
+msgstr "Format  marcaj de timp dată/oră "
 
 #: value_transformations.py:158
 msgid "To integer"
-msgstr ""
+msgstr "Transformă în întreg"
 
 #: value_transformations.py:168
 msgid "To string"
-msgstr ""
+msgstr "Transformă în șir de caractere"
 
 #: views.py:59
 msgid "This tool erases and populates the search backend's internal index."
@@ -315,6 +323,8 @@ msgid ""
 "The currently selected search backend does not support or requires "
 "reindexing."
 msgstr ""
+"Backend-ul de căutare selectat în prezent nu acceptă sau necesită "
+"reindexare."
 
 #: views.py:88
 msgid "Search backend reindexing queued."
@@ -328,7 +338,7 @@ msgstr "Caută după: %s"
 #: views.py:139
 #, python-format
 msgid "Advanced search for: %s"
-msgstr ""
+msgstr "Căutare avansată pentru: %s"
 
 #: views.py:174
 msgid "Try again using different terms. "
@@ -341,7 +351,7 @@ msgstr "Nu există rezultate"
 #: views.py:179
 #, python-format
 msgid "Search query: %s"
-msgstr ""
+msgstr "Interogare de căutare: %s"
 
 #: views.py:181
 #, python-format

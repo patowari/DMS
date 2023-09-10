@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -26,7 +26,7 @@ msgstr "Sistema de correo"
 
 #: classes.py:27
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: classes.py:40
 msgid "From"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: classes.py:58
 msgid "Compatibility"
-msgstr ""
+msgstr "Compatibilidad"
 
 #: classes.py:68
 msgid "Null backend"
@@ -239,14 +239,16 @@ msgstr ""
 #: mailers.py:59
 msgid "The credential entry to use to authenticate against the email server."
 msgstr ""
+"La entrada de credencial que se utilizará para autenticarse en el servidor "
+"de correo electrónico."
 
 #: mailers.py:66
 msgid "Credential"
-msgstr ""
+msgstr "Credencial"
 
 #: mailers.py:80
 msgid "Server"
-msgstr ""
+msgstr "Servidor"
 
 #: mailers.py:84
 msgid "Authentication"
@@ -543,7 +545,7 @@ msgstr "Perfil de correo para usar al enviar el correo electrónico."
 
 #: workflow_action_mixins.py:125
 msgid "Parties"
-msgstr ""
+msgstr "Partes"
 
 #: workflow_action_mixins.py:129
 msgid "Content"

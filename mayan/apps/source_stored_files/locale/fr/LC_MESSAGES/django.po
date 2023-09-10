@@ -6,20 +6,19 @@
 # Translators:
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
 # Roberto Rosario, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +27,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:11
-msgid "Source stored_files"
+msgid "Source stored files"
 msgstr ""
 
 #: classes.py:44
@@ -141,12 +140,12 @@ msgstr "Supprimer après transfert"
 
 #: source_backends/stored_file_mixins.py:54
 msgid "File content"
-msgstr ""
+msgstr "Contenu du fichier"
 
 #: source_backends/stored_file_mixins.py:72
 #, python-format
 msgid "Unable get list of files; %s"
-msgstr ""
+msgstr "Impossible d'obtenir la liste des fichiers; %s"
 
 #: source_backends/stored_file_mixins.py:90
 msgid ""
@@ -183,7 +182,7 @@ msgstr ""
 
 #: source_backends/stored_file_mixins.py:214
 msgid "Max size preview"
-msgstr ""
+msgstr "Taille maximale de l'aperçu"
 
 #: source_backends/stored_file_mixins.py:228
 msgid "File images"

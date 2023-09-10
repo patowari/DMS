@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-10 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:13
 msgid "Emails"
-msgstr ""
+msgstr "Correos electrónicos"
 
 #: source_backends/imap_source_backends.py:21
 msgid "IMAP email"
@@ -84,7 +84,7 @@ msgstr "Buzón de destino"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "Protocolo IMAP"
 
 #: source_backends/mixins.py:31
 msgid "Host"
@@ -117,7 +117,7 @@ msgstr "Almacenar cuerpo del correo electrónico"
 
 #: source_backends/mixins.py:74
 msgid "Common email options"
-msgstr ""
+msgstr "Opciones comunes de correo electrónico"
 
 #: source_backends/pop3_source_backends.py:18
 msgid "POP3 email"
@@ -129,12 +129,12 @@ msgstr "Tiempo de expiración"
 
 #: source_backends/pop3_source_backends.py:45
 msgid "POP3 protocol"
-msgstr ""
+msgstr "Protocolo POP3"
 
 #: tests/source_backends.py:32
 msgid "Test IMAP email"
-msgstr ""
+msgstr "Probar el correo electrónico IMAP"
 
 #: tests/source_backends.py:45
 msgid "Test POP3 email"
-msgstr ""
+msgstr "Pruebe el correo electrónico POP3"
