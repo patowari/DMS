@@ -11,5 +11,5 @@ from .events import event_document_file_downloaded
 )
 def method_document_get_download_file_object(self):
     # Thin wrapper to make sure the normal views and API views trigger
-    # then download event in the same way.
+    # the download event in the same way.
     return self.open(raw=True)
