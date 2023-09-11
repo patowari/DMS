@@ -169,7 +169,7 @@ class FakeStorageSubclass:
 class PassthroughStorage(Storage):
     def __init__(self, *args, **kwargs):
         logger.debug(
-            'initializing passthrought storage with: %s, %s', args, kwargs
+            'initializing passthrough storage with: %s, %s', args, kwargs
         )
         next_storage_backend = kwargs.pop(
             'next_storage_backend', DEFAULT_STORAGE_BACKEND
