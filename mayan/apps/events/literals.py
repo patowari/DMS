@@ -2,6 +2,8 @@ from django.utils.translation import ugettext_lazy as _
 
 DEFAULT_EVENT_LIST_EXPORT_FILENAME = 'events_list.csv'
 
+DEFAULT_EVENTS_DISABLE_ASYNCHRONOUS_MODE = False
+
 EVENT_MANAGER_ORDER_AFTER = 1
 EVENT_MANAGER_ORDER_BEFORE = 2
 

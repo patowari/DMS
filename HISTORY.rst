@@ -145,6 +145,8 @@
   ``setup_or_upgrade`` containers finishes.
 - Move ``EventManager`` classes to their own module.
 - Update event system to work in asynchronous mode.
+- Add the ``EVENTS_DISABLE_ASYNCHRONOUS_MODE`` settings to revert the events
+  system back to synchronous mode.
 - Split events queue into two queues for fast and slow tasks.
 - Create document file pages and document version pages in bulk.
 - Increase the default maximum memory per Celery worker child from 300000

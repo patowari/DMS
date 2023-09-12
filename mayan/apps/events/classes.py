@@ -24,6 +24,7 @@ from .links import (
 from .permissions import (
     permission_events_clear, permission_events_export, permission_events_view
 )
+from .settings import setting_disable_asynchronous_mode
 
 logger = logging.getLogger(name=__name__)
 
@@ -275,7 +276,7 @@ class EventType:
     def __str__(self):
         return '{}: {}'.format(self.namespace.label, self.label)
 
-    def _commit(self, actor=None, action_object=None, target=None):
+    def _commit(self, action_object=None, actor=None, target=None):
         EventSubscription = apps.get_model(
             app_label='events', model_name='EventSubscription'
         )
@@ -352,34 +353,39 @@ class EventType:
 
         task_kwargs = {'event_id': self.id}
 
-        if action_object:
-            task_kwargs.update(
-                {
-                    'action_object_app_label': action_object._meta.app_label,
-                    'action_object_model_name': action_object._meta.model_name,
-                    'action_object_id': action_object.pk
-                }
+        if setting_disable_asynchronous_mode.value:
+            self._commit(
+                action_object=action_object, actor=actor, target=target
             )
+        else:
+            if action_object:
+                task_kwargs.update(
+                    {
+                        'action_object_app_label': action_object._meta.app_label,
+                        'action_object_model_name': action_object._meta.model_name,
+                        'action_object_id': action_object.pk
+                    }
+                )
 
-        if actor:
-            task_kwargs.update(
-                {
-                    'actor_app_label': actor._meta.app_label,
-                    'actor_model_name': actor._meta.model_name,
-                    'actor_id': actor.pk
-                }
-            )
+            if actor:
+                task_kwargs.update(
+                    {
+                        'actor_app_label': actor._meta.app_label,
+                        'actor_model_name': actor._meta.model_name,
+                        'actor_id': actor.pk
+                    }
+                )
 
-        if target:
-            task_kwargs.update(
-                {
-                    'target_app_label': target._meta.app_label,
-                    'target_model_name': target._meta.model_name,
-                    'target_id': target.pk
-                }
-            )
+            if target:
+                task_kwargs.update(
+                    {
+                        'target_app_label': target._meta.app_label,
+                        'target_model_name': target._meta.model_name,
+                        'target_id': target.pk
+                    }
+                )
 
-        task_event_commit.apply_async(kwargs=task_kwargs)
+            task_event_commit.apply_async(kwargs=task_kwargs)
 
     def get_stored_event_type(self):
         if not self.stored_event_type:

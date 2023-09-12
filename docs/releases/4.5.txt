@@ -273,6 +273,9 @@ disadvantage that events might not be processed in the same order they
 occurred. Update any automation or workflow to account for this change.
 Future improvement are planned to provide order-of-execution support.
 
+To allow disabling asynchronous mode and reverting to the previous behavior
+the setting ``EVENTS_DISABLE_ASYNCHRONOUS_MODE`` was added.
+
 The events app queues were split into two to process fast and slow operations
 separately.
 
