@@ -212,7 +212,7 @@ Upgrade between major versions
 
    .. code-block:: console
 
-     cat mayan.sql | docker-compose --file docker-compose.yml --project-name mayan exec -T postgresql /bin/bash -c 'psql --username="$POSTGRES_USER"'
+     cat mayan.sql | docker-compose --file docker-compose.yml --project-name mayan exec -T postgresql /bin/bash -c 'psql --dbname="$POSTGRES_DB --username="$POSTGRES_USER"'
 
 
 #. Launch the rest of container stack:
