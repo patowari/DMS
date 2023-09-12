@@ -418,7 +418,7 @@ job_postgres_test:
     - pip install psycopg2==${PYTHON_PSYCOPG2_VERSION}
     - export MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'{{ DEFAULT_DATABASE_NAME }}','PASSWORD':'{{ DEFAULT_DATABASE_PASSWORD }}','USER':'{{ DEFAULT_DATABASE_USER }}','HOST':'postgres'}}"
     - make test-all SETTINGS=mayan.settings.testing.gitlab-ci
-    - make test-all-migrations SETTINGS=mayan.settings.testing.gitlab-ci
+    - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
     - {{ DOCKER_POSTGRES_IMAGE_VERSION }}
   tags:
@@ -433,7 +433,7 @@ job_sqlite_test:
   script:
     - . venv/bin/activate
     - make test-all SETTINGS=mayan.settings.testing.gitlab-ci
-    - make test-all-migrations SETTINGS=mayan.settings.testing.gitlab-ci
+    - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
 
 # Deploy
 
