@@ -1,7 +1,7 @@
 Version 4.5
 ===========
 
-Released: XX, 2023
+Released: September 12, 2023
 
 Status: Stable
 
@@ -586,6 +586,7 @@ Issues closed
 - :gitlab-issue:`1113` main menu not collapsing after choice on small screens
 - :gitlab-issue:`1135` Template tags and filters from app in COMMON_EXTRA_APPS no longer available
 - :gitlab-issue:`1140` Loading spinner is not shown in mobile layout
+- :gitlab-issue:`1148` Upgrade Documentation: need to include db name when restoring from SQL dump
 - :gitlab-issue:`1152` Old PyPDF2 dependency: cannot read PDF with modern encryption
 
 

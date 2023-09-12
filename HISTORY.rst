@@ -1,4 +1,4 @@
-4.5 (2023-XX-XX)
+4.5 (2023-09-12)
 ================
 - Increase the size of the document indexing value field from 128 to 255
   characters.
