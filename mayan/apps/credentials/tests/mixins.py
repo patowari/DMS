@@ -1,6 +1,6 @@
 import json
 
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import StoredCredential
 
@@ -14,62 +14,9 @@ from .literals import (
 )
 
 
-class StoredCredentialAPIViewTestMixin:
-    def _request_test_stored_credential_create_api_view(self):
-        pk_list = list(
-            StoredCredential.objects.values_list('pk', flat=True)
-        )
-
-        backend_data = json.dumps(
-            obj=TEST_STORED_CREDENTIAL_BACKEND_DATA_FIELDS
-        )
-
-        response = self.post(
-            viewname='rest_api:credential-list', data={
-                'internal_name': TEST_STORED_CREDENTIAL_INTERNAL_NAME,
-                'label': TEST_STORED_CREDENTIAL_LABEL,
-                'backend_path': TEST_STORED_CREDENTIAL_BACKEND_PATH,
-                'backend_data': backend_data
-            }
-        )
-
-        try:
-            self._test_stored_credential = StoredCredential.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except StoredCredential.DoesNotExist:
-            self._test_stored_credential = None
-
-        return response
-
-    def _request_test_stored_credential_delete_api_view(self):
-        return self.delete(
-            viewname='rest_api:credential-detail', kwargs={
-                'credential_id': self._test_stored_credential.pk
-            }
-        )
-
-    def _request_test_stored_credential_detail_api_view(self):
-        return self.get(
-            viewname='rest_api:credential-detail', kwargs={
-                'credential_id': self._test_stored_credential.pk
-            }
-        )
-
-    def _request_test_stored_credential_edit_via_patch_api_view(self):
-        return self.patch(
-            viewname='rest_api:credential-detail', kwargs={
-                'credential_id': self._test_stored_credential.pk
-            }, data={
-                'label': TEST_STORED_CREDENTIAL_LABEL_EDITED
-            }
-        )
-
-    def _request_test_stored_credential_list_api_view(self):
-        return self.get(viewname='rest_api:credential-list')
-
-
-class StoredCredentialTestMixin:
+class StoredCredentialTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = StoredCredential
+    _test_object_name = '_test_stored_credential'
     _test_stored_credential_backend_data = TEST_STORED_CREDENTIAL_BACKEND_DATA_FIELDS
     _test_stored_credential_backend_path = TEST_STORED_CREDENTIAL_BACKEND_PATH
     auto_create_test_credential = True
@@ -106,6 +53,54 @@ class StoredCredentialTestMixin:
         )
 
 
+class StoredCredentialAPIViewTestMixin(StoredCredentialTestMixin):
+    def _request_test_stored_credential_create_api_view(self):
+        self._test_object_track()
+
+        backend_data = json.dumps(
+            obj=TEST_STORED_CREDENTIAL_BACKEND_DATA_FIELDS
+        )
+
+        response = self.post(
+            viewname='rest_api:credential-list', data={
+                'internal_name': TEST_STORED_CREDENTIAL_INTERNAL_NAME,
+                'label': TEST_STORED_CREDENTIAL_LABEL,
+                'backend_path': TEST_STORED_CREDENTIAL_BACKEND_PATH,
+                'backend_data': backend_data
+            }
+        )
+
+        self._test_object_set()
+
+        return response
+
+    def _request_test_stored_credential_delete_api_view(self):
+        return self.delete(
+            viewname='rest_api:credential-detail', kwargs={
+                'credential_id': self._test_stored_credential.pk
+            }
+        )
+
+    def _request_test_stored_credential_detail_api_view(self):
+        return self.get(
+            viewname='rest_api:credential-detail', kwargs={
+                'credential_id': self._test_stored_credential.pk
+            }
+        )
+
+    def _request_test_stored_credential_edit_via_patch_api_view(self):
+        return self.patch(
+            viewname='rest_api:credential-detail', kwargs={
+                'credential_id': self._test_stored_credential.pk
+            }, data={
+                'label': TEST_STORED_CREDENTIAL_LABEL_EDITED
+            }
+        )
+
+    def _request_test_stored_credential_list_api_view(self):
+        return self.get(viewname='rest_api:credential-list')
+
+
 class StoredCredentialPasswordUsernameTestMixin(StoredCredentialTestMixin):
     _test_stored_credential_backend_data = {
         'password': TEST_STORED_CREDENTIAL_BACKEND_DATA_PASSWORD,
@@ -120,7 +115,7 @@ class StoredCredentialPasswordUsernameTestMixin(StoredCredentialTestMixin):
         self._test_stored_credential._username = self._test_stored_credential_backend_data['username']
 
 
-class StoredCredentialViewTestMixin:
+class StoredCredentialViewTestMixin(StoredCredentialTestMixin):
     def _request_test_stored_credential_backend_selection_view(self):
         return self.post(
             viewname='credentials:stored_credential_backend_selection',
@@ -130,9 +125,7 @@ class StoredCredentialViewTestMixin:
         )
 
     def _request_test_stored_credential_create_view(self):
-        pk_list = list(
-            StoredCredential.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         backend_data = json.dumps(
             obj=TEST_STORED_CREDENTIAL_BACKEND_DATA_FIELDS
@@ -150,12 +143,7 @@ class StoredCredentialViewTestMixin:
             }, data=data
         )
 
-        try:
-            self._test_stored_credential = StoredCredential.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except StoredCredential.DoesNotExist:
-            self._test_stored_credential = None
+        self._test_object_set()
 
         return response
 

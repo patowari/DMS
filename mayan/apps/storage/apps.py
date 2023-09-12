@@ -77,4 +77,6 @@ class StorageApp(MayanAppConfig):
                 link_download_file_delete, link_download_file_download,
             ), sources=(DownloadFile,)
         )
-        menu_tools.bind_links(links=(link_download_file_list,))
+        menu_tools.bind_links(
+            links=(link_download_file_list,)
+        )

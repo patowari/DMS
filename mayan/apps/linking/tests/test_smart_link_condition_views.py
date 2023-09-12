@@ -3,15 +3,12 @@ from mayan.apps.testing.tests.base import GenericViewTestCase
 from ..events import event_smart_link_edited
 from ..permissions import permission_smart_link_edit
 
-from .mixins import (
-    SmartLinkConditionViewTestMixin, SmartLinkTestMixin,
-    SmartLinkViewTestMixin
-)
+from .mixins import SmartLinkConditionViewTestMixin, SmartLinkViewTestMixin
 
 
 class SmartLinkConditionViewTestCase(
-    SmartLinkConditionViewTestMixin, SmartLinkTestMixin,
-    SmartLinkViewTestMixin, GenericViewTestCase
+    SmartLinkConditionViewTestMixin, SmartLinkViewTestMixin,
+    GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()

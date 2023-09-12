@@ -14,15 +14,10 @@ from ..permissions import (
 )
 
 from .literals import TEST_WEB_LINK_LABEL_EDITED, TEST_WEB_LINK_LABEL
-from .mixins import (
-    WebLinkDocumentTypeAPIViewMixin, WebLinkAPIViewTestMixin,
-    WebLinkTestMixin
-)
+from .mixins import WebLinkDocumentTypeAPIViewMixin, WebLinkAPIViewTestMixin
 
 
-class WebLinkAPIViewTestCase(
-    WebLinkTestMixin, WebLinkAPIViewTestMixin, BaseAPITestCase
-):
+class WebLinkAPIViewTestCase(WebLinkAPIViewTestMixin, BaseAPITestCase):
     def test_web_link_create_api_view_no_permission(self):
         self._clear_events()
 
@@ -195,8 +190,7 @@ class WebLinkAPIViewTestCase(
 
 
 class WebLinkDocumentTypeAPIViewTestCase(
-    DocumentTestMixin, WebLinkDocumentTypeAPIViewMixin, WebLinkTestMixin,
-    BaseAPITestCase
+    DocumentTestMixin, WebLinkDocumentTypeAPIViewMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

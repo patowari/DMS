@@ -11,13 +11,11 @@ from ..permissions import (
 
 from .mixins import (
     GroupRoleAddRemoveViewTestMixin, RoleGroupAddRemoveViewTestMixin,
-    RolePermissionAddRemoveViewTestMixin, RoleTestMixin, RoleViewTestMixin
+    RolePermissionAddRemoveViewTestMixin, RoleViewTestMixin
 )
 
 
-class RoleViewTestCase(
-    RoleTestMixin, RoleViewTestMixin, GenericViewTestCase
-):
+class RoleViewTestCase(RoleViewTestMixin, GenericViewTestCase):
     def test_role_creation_view_no_permission(self):
         role_count = Role.objects.count()
 
@@ -186,8 +184,7 @@ class RoleViewTestCase(
 
 
 class RoleGroupAddRemoveViewTestCase(
-    GroupTestMixin, RoleGroupAddRemoveViewTestMixin, RoleTestMixin,
-    GenericViewTestCase
+    GroupTestMixin, RoleGroupAddRemoveViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -447,7 +444,7 @@ class RoleGroupAddRemoveViewTestCase(
 
 
 class RolePermissionAddRemoveViewTestCase(
-    RolePermissionAddRemoveViewTestMixin, RoleTestMixin, GenericViewTestCase
+    RolePermissionAddRemoveViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -585,8 +582,7 @@ class RolePermissionAddRemoveViewTestCase(
 
 
 class GroupRoleAddRemoveViewTestCase(
-    GroupTestMixin, GroupRoleAddRemoveViewTestMixin, RoleTestMixin,
-    GenericViewTestCase
+    GroupTestMixin, GroupRoleAddRemoveViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()

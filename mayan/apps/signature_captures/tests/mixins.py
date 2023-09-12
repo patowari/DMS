@@ -1,4 +1,4 @@
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import SignatureCapture
 
@@ -9,9 +9,36 @@ from .literals import (
 )
 
 
-class SignatureCaptureAPIViewTestMixin:
+class SignatureCaptureTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = SignatureCapture
+    _test_object_name = '_test_signature_capture'
+    auto_create_test_signature_capture = False
+
+    def setUp(self):
+        super().setUp()
+        self._test_signature_captures = []
+        if self.auto_create_test_signature_capture:
+            self._create_test_signature_capture()
+
+    def _create_test_signature_capture(self):
+        total_test_signature_captures = len(self._test_signature_captures)
+        text = '{}_{}'.format(
+            TEST_SIGNATURE_CAPTURE_TEXT, total_test_signature_captures
+        )
+
+        self._test_signature_capture = SignatureCapture.objects.create(
+            document=self._test_document, data=TEST_SIGNATURE_CAPTURE_DATA,
+            internal_name=TEST_SIGNATURE_CAPTURE_INTERNAL_NAME,
+            text=text, svg=TEST_SIGNATURE_CAPTURE_SVG,
+            user=self._test_case_user
+        )
+
+        self._test_signature_captures.append(self._test_signature_capture)
+
+
+class SignatureCaptureAPIViewTestMixin(SignatureCaptureTestMixin):
     def _request_test_signature_capture_create_api_view(self):
-        pk_list = list(SignatureCapture.objects.values('pk'))
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:signature_capture-list', kwargs={
@@ -24,12 +51,7 @@ class SignatureCaptureAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_signature_capture = SignatureCapture.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except SignatureCapture.DoesNotExist:
-            self._test_signature_capture = None
+        self._test_object_set()
 
         return response
 
@@ -78,34 +100,9 @@ class SignatureCaptureAPIViewTestMixin:
         )
 
 
-class SignatureCaptureTestMixin:
-    auto_create_test_signature_capture = False
-
-    def setUp(self):
-        super().setUp()
-        self._test_signature_captures = []
-        if self.auto_create_test_signature_capture:
-            self._create_test_signature_capture()
-
-    def _create_test_signature_capture(self):
-        total_test_signature_captures = len(self._test_signature_captures)
-        text = '{}_{}'.format(
-            TEST_SIGNATURE_CAPTURE_TEXT, total_test_signature_captures
-        )
-
-        self._test_signature_capture = SignatureCapture.objects.create(
-            document=self._test_document, data=TEST_SIGNATURE_CAPTURE_DATA,
-            internal_name=TEST_SIGNATURE_CAPTURE_INTERNAL_NAME,
-            text=text, svg=TEST_SIGNATURE_CAPTURE_SVG,
-            user=self._test_case_user
-        )
-
-        self._test_signature_captures.append(self._test_signature_capture)
-
-
-class SignatureCaptureViewTestMixin:
+class SignatureCaptureViewTestMixin(SignatureCaptureTestMixin):
     def _request_test_signature_capture_create_view(self):
-        pk_list = list(SignatureCapture.objects.values('pk'))
+        self._test_object_track()
 
         response = self.post(
             viewname='signature_captures:signature_capture_create', kwargs={
@@ -118,12 +115,7 @@ class SignatureCaptureViewTestMixin:
             }
         )
 
-        try:
-            self._test_signature_capture = SignatureCapture.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except SignatureCapture.DoesNotExist:
-            self._test_signature_capture = None
+        self._test_object_set()
 
         return response
 

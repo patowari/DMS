@@ -12,12 +12,11 @@ from ..permissions import (
     permission_document_comment_edit, permission_document_comment_view
 )
 
-from .mixins import CommentAPIViewTestMixin, DocumentCommentTestMixin
+from .mixins import DocumentCommentAPIViewTestMixin
 
 
 class CommentAPIViewTestCase(
-    CommentAPIViewTestMixin, DocumentCommentTestMixin, DocumentTestMixin,
-    BaseAPITestCase
+    DocumentCommentAPIViewTestMixin, DocumentTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

@@ -9,12 +9,10 @@ from ..permissions import (
     permission_asset_edit, permission_asset_view
 )
 
-from .mixins import AssetAPIViewTestMixin, AssetTestMixin
+from .mixins import AssetAPIViewTestMixin
 
 
-class AssetAPIViewTestCase(
-    AssetAPIViewTestMixin, AssetTestMixin, BaseAPITestCase
-):
+class AssetAPIViewTestCase(AssetAPIViewTestMixin, BaseAPITestCase):
     def test_asset_create_api_view_no_permission(self):
         asset_count = Asset.objects.count()
 

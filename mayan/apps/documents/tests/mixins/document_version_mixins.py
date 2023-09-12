@@ -21,7 +21,9 @@ from .document_mixins import DocumentTestMixin
 
 class DocumentVersionAPIViewTestMixin:
     def _request_test_document_version_create_api_view(self):
-        pk_list = list(DocumentVersion.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentVersion.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:documentversion-list', kwargs={
@@ -132,7 +134,9 @@ class DocumentVersionModificationViewTestMixin:
 
 class DocumentVersionPageAPIViewTestMixin:
     def _request_test_document_version_page_create_api_view(self):
-        pk_list = list(DocumentVersionPage.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentVersionPage.objects.values_list('pk', flat=True)
+        )
 
         content_type = ContentType.objects.get_for_model(
             model=self._test_document_file_page

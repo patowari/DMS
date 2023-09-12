@@ -1,6 +1,6 @@
 import json
 
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import UserMailer
 
@@ -10,7 +10,25 @@ from .literals import (
 from .mailers import TestBackend
 
 
-class DocumentMailerViewTestMixin:
+class MailerTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = UserMailer
+    _test_object_name = '_test_user_mailer'
+
+    def _create_test_user_mailer(self):
+        self._test_user_mailer = UserMailer.objects.create(
+            default=True,
+            enabled=True,
+            label=TEST_USER_MAILER_LABEL,
+            backend_path=TestBackend.backend_id,
+            backend_data=json.dumps(
+                obj={
+                    'from': TEST_EMAIL_FROM_ADDRESS
+                }
+            )
+        )
+
+
+class DocumentMailerViewTestMixin(MailerTestMixin):
     def _request_test_document_link_send_single_view(self):
         return self.post(
             viewname='mailer:send_document_link_single', kwargs={
@@ -36,7 +54,7 @@ class DocumentMailerViewTestMixin:
         )
 
 
-class DocumentFileMailerViewTestMixin:
+class DocumentFileMailerViewTestMixin(MailerTestMixin):
     def _request_test_document_file_link_send_single_view(self):
         return self.post(
             viewname='mailer:send_document_file_link_single', kwargs={
@@ -86,7 +104,7 @@ class DocumentFileMailerViewTestMixin:
         )
 
 
-class DocumentVersionMailerViewTestMixin:
+class DocumentVersionMailerViewTestMixin(MailerTestMixin):
     def _request_test_document_version_link_send_single_view(self):
         return self.post(
             viewname='mailer:send_document_version_link_single', kwargs={
@@ -138,24 +156,9 @@ class DocumentVersionMailerViewTestMixin:
         )
 
 
-class MailerTestMixin:
-    def _create_test_user_mailer(self):
-        self._test_user_mailer = UserMailer.objects.create(
-            default=True,
-            enabled=True,
-            label=TEST_USER_MAILER_LABEL,
-            backend_path=TestBackend.backend_id,
-            backend_data=json.dumps(
-                obj={
-                    'from': TEST_EMAIL_FROM_ADDRESS
-                }
-            )
-        )
-
-
-class MailerViewTestMixin:
+class MailerViewTestMixin(MailerTestMixin):
     def _request_test_user_mailer_create_view(self):
-        pk_list = list(UserMailer.objects.values('pk'))
+        self._test_object_track()
 
         response = self.post(
             viewname='mailer:user_mailer_create', kwargs={
@@ -167,12 +170,7 @@ class MailerViewTestMixin:
             }
         )
 
-        try:
-            self._test_user_mailer = UserMailer.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except UserMailer.DoesNotExist:
-            self._test_user_mailer = None
+        self._test_object_set()
 
         return response
 

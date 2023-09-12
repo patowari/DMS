@@ -1,4 +1,4 @@
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import WebLink
 
@@ -7,7 +7,19 @@ from .literals import (
 )
 
 
-class DocumentTypeAddRemoveWebLinkViewTestMixin:
+class WebLinkTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = WebLink
+    _test_object_name = '_test_web_link'
+
+    def _create_test_web_link(self, add_test_document_type=False):
+        self._test_web_link = WebLink.objects.create(
+            label=TEST_WEB_LINK_LABEL, template=TEST_WEB_LINK_TEMPLATE,
+        )
+        if add_test_document_type:
+            self._test_web_link.document_types.add(self._test_document_type)
+
+
+class DocumentTypeAddRemoveWebLinkViewTestMixin(WebLinkTestMixin):
     def _request_test_document_type_web_link_add_remove_get_view(self):
         return self.get(
             viewname='web_links:document_type_web_links', kwargs={
@@ -36,7 +48,7 @@ class DocumentTypeAddRemoveWebLinkViewTestMixin:
         )
 
 
-class ResolvedWebLinkAPIViewTestMixin:
+class ResolvedWebLinkAPIViewTestMixin(WebLinkTestMixin):
     def _request_resolved_web_link_detail_api_view(self):
         return self.get(
             viewname='rest_api:resolved_web_link-detail',
@@ -64,9 +76,9 @@ class ResolvedWebLinkAPIViewTestMixin:
         )
 
 
-class WebLinkAPIViewTestMixin:
+class WebLinkAPIViewTestMixin(WebLinkTestMixin):
     def _request_test_web_link_create_api_view(self):
-        pk_list = list(WebLink.objects.values('pk'))
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:web_link-list', data={
@@ -75,12 +87,7 @@ class WebLinkAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_web_link = WebLink.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WebLink.DoesNotExist:
-            self._test_web_link = None
+        self._test_object_set()
 
         return response
 
@@ -116,7 +123,7 @@ class WebLinkAPIViewTestMixin:
         )
 
 
-class WebLinkDocumentTypeAPIViewMixin:
+class WebLinkDocumentTypeAPIViewMixin(WebLinkTestMixin):
     def _request_test_web_link_document_type_add_api_view(self):
         return self.post(
             viewname='rest_api:web_link-document_type-add',
@@ -141,16 +148,7 @@ class WebLinkDocumentTypeAPIViewMixin:
         )
 
 
-class WebLinkTestMixin:
-    def _create_test_web_link(self, add_test_document_type=False):
-        self._test_web_link = WebLink.objects.create(
-            label=TEST_WEB_LINK_LABEL, template=TEST_WEB_LINK_TEMPLATE,
-        )
-        if add_test_document_type:
-            self._test_web_link.document_types.add(self._test_document_type)
-
-
-class WebLinkDocumentTypeViewTestMixin:
+class WebLinkDocumentTypeViewTestMixin(WebLinkTestMixin):
     def _request_test_web_link_document_type_add_remove_get_view(self):
         return self.get(
             viewname='web_links:web_link_document_types', kwargs={
@@ -179,7 +177,7 @@ class WebLinkDocumentTypeViewTestMixin:
         )
 
 
-class WebLinkViewTestMixin:
+class WebLinkViewTestMixin(WebLinkTestMixin):
     def _request_test_document_web_link_instance_view(self):
         return self.post(
             viewname='web_links:web_link_instance_view', kwargs={
@@ -196,7 +194,7 @@ class WebLinkViewTestMixin:
         )
 
     def _request_test_web_link_create_view(self):
-        pk_list = list(WebLink.objects.values('pk'))
+        self._test_object_track()
 
         response = self.post(
             viewname='web_links:web_link_create', data={
@@ -205,12 +203,7 @@ class WebLinkViewTestMixin:
             }
         )
 
-        try:
-            self._test_web_link = WebLink.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WebLink.DoesNotExist:
-            self._test_web_link = None
+        self._test_object_set()
 
         return response
 

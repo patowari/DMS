@@ -1,6 +1,6 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from .mixins import AssetTestMixin, AssetViewTestMixin
+from .mixins import AssetViewTestMixin
 
 from ..events import event_asset_created, event_asset_edited
 from ..models import Asset
@@ -10,9 +10,7 @@ from ..permissions import (
 )
 
 
-class AssetViewTestCase(
-    AssetTestMixin, AssetViewTestMixin, GenericViewTestCase
-):
+class AssetViewTestCase(AssetViewTestMixin, GenericViewTestCase):
     def test_asset_create_view_no_permission(self):
         asset_count = Asset.objects.count()
 

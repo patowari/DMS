@@ -167,7 +167,7 @@ class WorkflowTemplateAPIViewTestMixin(WorkflowTemplateTestMixin):
             data.update(extra_data)
 
         pk_list = list(
-            Workflow.objects.values('pk')
+            Workflow.objects.values_list('pk', flat=True)
         )
 
         response = self.post(
@@ -270,7 +270,7 @@ class WorkflowTemplateViewTestMixin(WorkflowTemplateTestMixin):
         }
 
         pk_list = list(
-            Workflow.objects.values('pk')
+            Workflow.objects.values_list('pk', flat=True)
         )
 
         response = self.post(

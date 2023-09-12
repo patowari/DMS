@@ -8,14 +8,11 @@ from ..permissions import (
     permission_credential_create, permission_credential_delete,
     permission_credential_edit, permission_credential_view
 )
-from .mixins import (
-    StoredCredentialAPIViewTestMixin, StoredCredentialTestMixin
-)
+from .mixins import StoredCredentialAPIViewTestMixin
 
 
 class StoredCredentialAPIViewTestCase(
-    StoredCredentialAPIViewTestMixin, StoredCredentialTestMixin,
-    BaseAPITestCase
+    StoredCredentialAPIViewTestMixin, BaseAPITestCase
 ):
     auto_create_test_credential = False
 

@@ -1,13 +1,31 @@
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import Message
 
 from .literals import TEST_MESSAGE_BODY, TEST_MESSAGE_SUBJECT
 
 
-class MessageAPIViewTestMixin:
+class MessageTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = Message
+    _test_object_name = '_test_message'
+    auto_create_test_message = True
+
+    def setUp(self):
+        super().setUp()
+
+        if self.auto_create_test_message:
+            self._create_test_message()
+
+    def _create_test_message(self):
+        self._test_message = Message.objects.create(
+            body=TEST_MESSAGE_BODY, subject=TEST_MESSAGE_SUBJECT,
+            user=self._test_case_user
+        )
+
+
+class MessageAPIViewTestMixin(MessageTestMixin):
     def _request_test_message_create_api_view(self, extra_data=None):
-        pk_list = list(Message.objects.values('pk'))
+        self._test_object_track()
 
         data = {
             'body': TEST_MESSAGE_BODY,
@@ -22,12 +40,7 @@ class MessageAPIViewTestMixin:
             viewname='rest_api:message-list', data=data
         )
 
-        try:
-            self._test_message = Message.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Message.DoesNotExist:
-            self._test_message = None
+        self._test_object_set()
 
         return response
 
@@ -63,25 +76,9 @@ class MessageAPIViewTestMixin:
         return self.get(viewname='rest_api:message-list')
 
 
-class MessageTestMixin:
-    auto_create_test_message = True
-
-    def setUp(self):
-        super().setUp()
-
-        if self.auto_create_test_message:
-            self._create_test_message()
-
-    def _create_test_message(self):
-        self._test_message = Message.objects.create(
-            body=TEST_MESSAGE_BODY, subject=TEST_MESSAGE_SUBJECT,
-            user=self._test_case_user
-        )
-
-
-class MessageViewTestMixin:
+class MessageViewTestMixin(MessageTestMixin):
     def _request_test_message_create_view(self, extra_data=None):
-        pk_list = list(Message.objects.values('pk'))
+        self._test_object_track()
 
         data = {
             'body': TEST_MESSAGE_BODY,
@@ -96,10 +93,7 @@ class MessageViewTestMixin:
             viewname='messaging:message_create', data=data
         )
 
-        try:
-            self._test_message = Message.objects.get(~Q(pk__in=pk_list))
-        except Message.DoesNotExist:
-            self._test_message = None
+        self._test_object_set()
 
         return response
 

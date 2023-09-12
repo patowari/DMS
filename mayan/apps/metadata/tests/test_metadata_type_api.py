@@ -20,14 +20,10 @@ from .mixins.document_type_metadata_type_mixins import (
     DocumentTypeMetadataTypeAPIViewTestMixin,
     DocumentTypeMetadataTypeTestMixin
 )
-from .mixins.metadata_type_mixins import (
-    MetadataTypeAPIViewTestMixin, MetadataTypeTestMixin
-)
+from .mixins.metadata_type_mixins import MetadataTypeAPIViewTestMixin
 
 
-class MetadataTypeAPITestCase(
-    MetadataTypeAPIViewTestMixin, MetadataTypeTestMixin, BaseAPITestCase
-):
+class MetadataTypeAPITestCase(MetadataTypeAPIViewTestMixin, BaseAPITestCase):
     def test_metadata_type_create_api_view_no_permission(self):
         self._clear_events()
 
@@ -254,7 +250,7 @@ class MetadataTypeAPITestCase(
 
 class DocumentTypeMetadataTypeAPITestCase(
     DocumentTestMixin, DocumentTypeMetadataTypeAPIViewTestMixin,
-    DocumentTypeMetadataTypeTestMixin, MetadataTypeTestMixin, BaseAPITestCase
+    DocumentTypeMetadataTypeTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

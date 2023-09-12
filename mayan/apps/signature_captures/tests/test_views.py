@@ -9,14 +9,11 @@ from ..permissions import (
     permission_signature_capture_edit, permission_signature_capture_view
 )
 
-from .mixins import (
-    SignatureCaptureTestMixin, SignatureCaptureViewTestMixin
-)
+from .mixins import SignatureCaptureViewTestMixin
 
 
 class SignatureCaptureViewTestCase(
-    SignatureCaptureTestMixin, SignatureCaptureViewTestMixin,
-    GenericDocumentViewTestCase
+    SignatureCaptureViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

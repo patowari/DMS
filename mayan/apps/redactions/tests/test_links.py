@@ -4,9 +4,7 @@ from mayan.apps.converter.links import (
     link_transformation_delete, link_transformation_edit,
     link_transformation_select
 )
-from mayan.apps.converter.tests.mixins import (
-    TransformationTestMixin, TransformationViewTestMixin
-)
+from mayan.apps.converter.tests.mixins import TransformationViewTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..layers import layer_redactions
@@ -21,8 +19,7 @@ from .literals import TEST_REDACTION_ARGUMENT
 
 
 class RedactionViewTestCase(
-    TransformationTestMixin, TransformationViewTestMixin,
-    GenericDocumentViewTestCase
+    TransformationViewTestMixin, GenericDocumentViewTestCase
 ):
     _test_layer = layer_redactions
     _test_transformation_argument = TEST_REDACTION_ARGUMENT
@@ -190,8 +187,7 @@ class RedactionViewTestCase(
 
 
 class RedactionLinkDisplayTestCase(
-    TransformationTestMixin, TransformationViewTestMixin,
-    GenericDocumentViewTestCase
+    TransformationViewTestMixin, GenericDocumentViewTestCase
 ):
     _test_layer = layer_redactions
     _test_transformation_argument = TEST_REDACTION_ARGUMENT

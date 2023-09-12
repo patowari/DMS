@@ -6,11 +6,11 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..permissions import permission_tag_view
 
-from .mixins import TagAPIViewTestMixin, TagTestMixin
+from .mixins import TagAPIViewTestMixin
 
 
 class TagDocumentAPIViewTestCase(
-    DocumentTestMixin, TagAPIViewTestMixin, TagTestMixin, BaseAPITestCase
+    DocumentTestMixin, TagAPIViewTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

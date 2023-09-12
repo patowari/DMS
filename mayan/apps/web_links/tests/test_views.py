@@ -14,13 +14,12 @@ from ..permissions import (
 from .literals import TEST_WEB_LINK_TEMPLATE
 from .mixins import (
     DocumentTypeAddRemoveWebLinkViewTestMixin,
-    WebLinkDocumentTypeViewTestMixin, WebLinkTestMixin, WebLinkViewTestMixin
+    WebLinkDocumentTypeViewTestMixin, WebLinkViewTestMixin
 )
 
 
 class DocumentTypeAddRemoveWebLinkViewTestCase(
-    DocumentTypeAddRemoveWebLinkViewTestMixin, WebLinkTestMixin,
-    GenericDocumentViewTestCase
+    DocumentTypeAddRemoveWebLinkViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -280,9 +279,7 @@ class DocumentTypeAddRemoveWebLinkViewTestCase(
         self.assertEqual(events[0].verb, event_web_link_edited.id)
 
 
-class WebLinkViewTestCase(
-    WebLinkTestMixin, WebLinkViewTestMixin, GenericViewTestCase
-):
+class WebLinkViewTestCase(WebLinkViewTestMixin, GenericViewTestCase):
     def test_web_link_create_view_no_permission(self):
         web_link_count = WebLink.objects.count()
 
@@ -421,8 +418,7 @@ class WebLinkViewTestCase(
 
 
 class WebLinkDocumentTypeViewTestCase(
-    WebLinkDocumentTypeViewTestMixin, WebLinkTestMixin,
-    GenericDocumentViewTestCase
+    WebLinkDocumentTypeViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -737,7 +733,7 @@ class WebLinkDocumentTypeViewTestCase(
 
 
 class DocumentWebLinkViewTestCase(
-    WebLinkTestMixin, WebLinkViewTestMixin, GenericDocumentViewTestCase
+    WebLinkViewTestMixin, GenericDocumentViewTestCase
 ):
     def setUp(self):
         super().setUp()

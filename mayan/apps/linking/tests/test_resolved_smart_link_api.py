@@ -6,12 +6,11 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..permissions import permission_resolved_smart_link_view
 
-from .mixins import ResolvedSmartLinkAPIViewTestMixin, SmartLinkTestMixin
+from .mixins import ResolvedSmartLinkAPIViewTestMixin
 
 
 class ResolvedSmartLinkAPIViewTestCase(
-    DocumentTestMixin, SmartLinkTestMixin,
-    ResolvedSmartLinkAPIViewTestMixin, BaseAPITestCase
+    DocumentTestMixin, ResolvedSmartLinkAPIViewTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

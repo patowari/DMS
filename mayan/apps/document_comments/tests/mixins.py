@@ -1,13 +1,26 @@
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import Comment
 
 from .literals import TEST_COMMENT_TEXT, TEST_COMMENT_TEXT_EDITED
 
 
-class CommentAPIViewTestMixin:
+class DocumentCommentTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = Comment
+    _test_object_name = '_test_document_comment'
+
+    def _create_test_comment(self, text=None, user=None):
+        text = text or TEST_COMMENT_TEXT
+        user = user or self._test_user
+
+        self._test_document_comment = self._test_document.comments.create(
+            text=text, user=user
+        )
+
+
+class DocumentCommentAPIViewTestMixin(DocumentCommentTestMixin):
     def _request_test_comment_create_api_view(self):
-        pk_list = list(Comment.objects.values_list('pk', flat=True))
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:comment-list', kwargs={
@@ -17,12 +30,7 @@ class CommentAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_document_comment = Comment.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Comment.DoesNotExist:
-            self._test_document_comment = None
+        self._test_object_set()
 
         return response
 
@@ -66,19 +74,9 @@ class CommentAPIViewTestMixin:
         )
 
 
-class DocumentCommentTestMixin:
-    def _create_test_comment(self, text=None, user=None):
-        text = text or TEST_COMMENT_TEXT
-        user = user or self._test_user
-
-        self._test_document_comment = self._test_document.comments.create(
-            text=text, user=user
-        )
-
-
-class DocumentCommentViewTestMixin:
+class DocumentCommentViewTestMixin(DocumentCommentTestMixin):
     def _request_test_comment_create_view(self):
-        pk_list = list(Comment.objects.values_list('pk', flat=True))
+        self._test_object_track()
 
         response = self.post(
             viewname='comments:comment_add', kwargs={
@@ -86,12 +84,7 @@ class DocumentCommentViewTestMixin:
             }, data={'text': TEST_COMMENT_TEXT}
         )
 
-        try:
-            self._test_document_comment = Comment.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Comment.DoesNotExist:
-            self._test_document_comment = None
+        self._test_object_set()
 
         return response
 

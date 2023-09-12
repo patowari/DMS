@@ -4,14 +4,11 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..permissions import permission_events_view
 
-from .mixins import (
-    EventTestMixin, EventTypeTestMixin, EventViewTestMixin
-)
+from .mixins import EventTypeTestMixin, EventViewTestMixin
 
 
 class EventsViewTestCase(
-    EventTestMixin, EventTypeTestMixin, EventViewTestMixin,
-    GenericDocumentViewTestCase
+    EventTypeTestMixin, EventViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -109,8 +106,7 @@ class EventsViewTestCase(
 
 
 class CurrentUserEventsViewTestCase(
-    EventTestMixin, EventTypeTestMixin, EventViewTestMixin,
-    GenericDocumentViewTestCase
+    EventTypeTestMixin, EventViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

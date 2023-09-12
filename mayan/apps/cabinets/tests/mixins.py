@@ -1,5 +1,6 @@
 from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
 from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import Cabinet
 
@@ -8,8 +9,10 @@ from .literals import (
 )
 
 
-class CabinetTestMixin:
+class CabinetTestMixin(TestMixinObjectCreationTrack):
     _test_cabinet_add_test_document = False
+    _test_object_model = Cabinet
+    _test_object_name = '_test_cabinet'
     auto_create_test_cabinet = False
 
     def setUp(self):
@@ -53,12 +56,11 @@ class CabinetAPIViewTestMixin(CabinetTestMixin):
             'parent': self._test_cabinet.pk
         }
 
-        values = list(
-            Cabinet.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
+
         response = self.post(viewname='rest_api:cabinet-list', data=data)
 
-        self._test_cabinet_child = Cabinet.objects.exclude(pk__in=values).first()
+        self._test_object_set(test_object_name='_test_cabinet_child')
 
         return response
 
@@ -79,13 +81,11 @@ class CabinetAPIViewTestMixin(CabinetTestMixin):
         if extra_data:
             data.update(extra_data)
 
-        values = list(
-            Cabinet.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(viewname='rest_api:cabinet-list', data=data)
 
-        self._test_cabinet = Cabinet.objects.exclude(pk__in=values).first()
+        self._test_object_set()
 
         return response
 
@@ -145,23 +145,18 @@ class CabinetDocumentUploadWizardStepTestMixin(
     CabinetTestMixin, WebFormSourceTestMixin, SourceActionViewTestMixin
 ):
     def _request_test_source_document_upload_post_view_with_cabinets(self):
+        cabinet_id_list = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
+
         return self._request_test_source_document_upload_post_view(
-            extra_data={
-                'cabinets': Cabinet.objects.values_list('pk', flat=True)
-            }
+            extra_data={'cabinets': cabinet_id_list}
         )
 
 
 class CabinetViewTestMixin(CabinetTestMixin):
-    def setUp(self):
-        super().setUp()
-
-        self._test_cabinet_list = []
-
     def _request_test_cabinet_create_view(self, label=None):
-        values = list(
-            Cabinet.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         label = self._get_test_cabinet_label(label=label)
 
@@ -169,7 +164,8 @@ class CabinetViewTestMixin(CabinetTestMixin):
             'cabinets:cabinet_create', data={'label': label}
         )
 
-        self._test_cabinet = Cabinet.objects.exclude(pk__in=values).first()
+        self._test_object_set()
+
         self._test_cabinet_list.append(self._test_cabinet)
 
         return response
@@ -191,9 +187,7 @@ class CabinetViewTestMixin(CabinetTestMixin):
         )
 
     def _request_test_cabinet_child_create_view(self):
-        values = list(
-            Cabinet.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='cabinets:cabinet_child_add', kwargs={
@@ -201,8 +195,7 @@ class CabinetViewTestMixin(CabinetTestMixin):
             }, data={'label': TEST_CABINET_CHILD_LABEL}
         )
 
-        self._test_cabinet_child = Cabinet.objects.exclude(pk__in=values).first()
-        self._test_cabinet_list.append(self._test_cabinet)
+        self._test_object_set(test_object_name='_test_cabinet_child')
 
         return response
 
@@ -241,7 +234,9 @@ class CabinetViewTestMixin(CabinetTestMixin):
             }
         )
 
-    def _request_test_document_multiple_cabinet_multiple_add_view_cabinet(self):
+    def _request_test_document_multiple_cabinet_multiple_add_view_cabinet(
+        self
+    ):
         return self.post(
             viewname='cabinets:document_multiple_cabinet_add', data={
                 'id_list': (self._test_document.pk,),

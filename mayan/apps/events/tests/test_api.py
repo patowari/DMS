@@ -9,13 +9,12 @@ from ..permissions import permission_events_view
 
 from .mixins import (
     EventListAPIViewTestMixin, EventTypeNamespaceAPITestMixin,
-    EventTypeTestMixin, ObjectEventAPITestMixin
+    ObjectEventAPITestMixin
 )
 
 
 class EventListAPIViewTestCase(
-    DocumentTestMixin, EventTypeTestMixin, EventListAPIViewTestMixin,
-    BaseAPITestCase
+    DocumentTestMixin, EventListAPIViewTestMixin, BaseAPITestCase
 ):
     def test_event_list_api_view_no_permission(self):
         response = self._request_test_event_list_api_view()
@@ -31,7 +30,7 @@ class EventListAPIViewTestCase(
 
 
 class EventTypeNamespaceAPITestCase(
-    EventTypeTestMixin, EventTypeNamespaceAPITestMixin, BaseAPITestCase
+    EventTypeNamespaceAPITestMixin, BaseAPITestCase
 ):
     def setUp(self):
         super().setUp()

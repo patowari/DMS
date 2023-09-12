@@ -53,9 +53,7 @@ class BasePlainViewTestCase(
         )
 
 
-class ThemeViewTestCase(
-    ThemeTestMixin, ThemeViewTestMixin, GenericViewTestCase
-):
+class ThemeViewTestCase(ThemeViewTestMixin, GenericViewTestCase):
     def test_theme_create_view_no_permission(self):
         theme_count = Theme.objects.count()
 
@@ -217,7 +215,7 @@ class ThemeEffectViewTestCase(ThemeTestMixin, GenericViewTestCase):
 
 
 class CurrentUserViewTestCase(
-    ThemeTestMixin, UserThemeSettingsViewTestMixin, GenericViewTestCase
+    UserThemeSettingsViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -253,7 +251,7 @@ class CurrentUserViewTestCase(
 
 
 class SuperUserThemeSettingsViewTestCase(
-    ThemeTestMixin, UserThemeSettingsViewTestMixin, GenericViewTestCase
+    UserThemeSettingsViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -316,7 +314,7 @@ class SuperUserThemeSettingsViewTestCase(
 
 
 class UserThemeSettingsViewTestCase(
-    ThemeTestMixin, UserThemeSettingsViewTestMixin, GenericViewTestCase
+    UserThemeSettingsViewTestMixin, GenericViewTestCase
 ):
     auto_create_test_user = True
 

@@ -13,11 +13,11 @@ from ..permissions import (
     permission_tag_edit, permission_tag_remove, permission_tag_view
 )
 
-from .mixins import DocumentTagViewTestMixin, TagTestMixin, TagViewTestMixin
+from .mixins import DocumentTagViewTestMixin, TagViewTestMixin
 
 
 class DocumentTagViewTestCase(
-    DocumentTagViewTestMixin, TagTestMixin, GenericDocumentViewTestCase
+    DocumentTagViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -640,7 +640,7 @@ class DocumentTagViewTestCase(
         self.assertEqual(events.count(), 0)
 
 
-class TagViewTestCase(TagTestMixin, TagViewTestMixin, GenericViewTestCase):
+class TagViewTestCase(TagViewTestMixin, GenericViewTestCase):
     def test_tag_create_view_no_permission(self):
         tag_count = Tag.objects.count()
 

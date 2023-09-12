@@ -12,14 +12,11 @@ from ..permissions import (
     permission_metadata_type_edit, permission_metadata_type_view
 )
 
-from .mixins.metadata_type_mixins import (
-    MetadataTypeTestMixin, MetadataTypeViewTestMixin
-)
+from .mixins.metadata_type_mixins import MetadataTypeViewTestMixin
 
 
 class DocumentTypeMetadataTypeRelationshipViewTestCase(
-    MetadataTypeViewTestMixin, MetadataTypeTestMixin,
-    GenericDocumentViewTestCase
+    MetadataTypeViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -245,7 +242,7 @@ class DocumentTypeMetadataTypeRelationshipViewTestCase(
 
 
 class MetadataTypeViewTestCase(
-    MetadataTypeViewTestMixin, MetadataTypeTestMixin, GenericViewTestCase
+    MetadataTypeViewTestMixin, GenericViewTestCase
 ):
     def test_metadata_type_create_view_no_permission(self):
         metadata_type_count = MetadataType.objects.count()
@@ -444,8 +441,7 @@ class MetadataTypeViewTestCase(
 
 
 class MetadataTypeDocumentTypeRelationshipViewTestCase(
-    MetadataTypeViewTestMixin, MetadataTypeTestMixin,
-    GenericDocumentViewTestCase
+    MetadataTypeViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

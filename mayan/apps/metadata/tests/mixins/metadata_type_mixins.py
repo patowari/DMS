@@ -1,6 +1,5 @@
-from django.db.models import Q
-
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTypeTestMixin
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ...models import MetadataType
 
@@ -10,7 +9,11 @@ from ..literals import (
 )
 
 
-class MetadataTypeTestMixin(DocumentTypeTestMixin):
+class MetadataTypeTestMixin(
+    DocumentTypeTestMixin, TestMixinObjectCreationTrack
+):
+    _test_object_model = MetadataType
+    _test_object_name = '_test_metadata_type'
     auto_add_test_metadata_type_to_test_document_type = True
     auto_create_test_metadata_type = False
     auto_create_test_metadata_type_is_required = False
@@ -60,9 +63,9 @@ class MetadataTypeTestMixin(DocumentTypeTestMixin):
             )
 
 
-class MetadataTypeAPIViewTestMixin:
+class MetadataTypeAPIViewTestMixin(MetadataTypeTestMixin):
     def _request_test_metadata_type_create_api_view(self):
-        pk_list = list(MetadataType.objects.values('pk'))
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:metadatatype-list', data={
@@ -70,12 +73,7 @@ class MetadataTypeAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_metadata_type = MetadataType.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except MetadataType.DoesNotExist:
-            self._test_metadata_type = None
+        self._test_object_set()
 
         return response
 
@@ -113,7 +111,7 @@ class MetadataTypeAPIViewTestMixin:
         return self.get(viewname='rest_api:metadatatype-list')
 
 
-class MetadataTypeViewTestMixin:
+class MetadataTypeViewTestMixin(MetadataTypeTestMixin):
     def _request_test_document_type_relationship_delete_view(self):
         # This request assumes there is only one document type and
         # blindly sets the first form of the formset.
@@ -141,9 +139,7 @@ class MetadataTypeViewTestMixin:
         )
 
     def _request_test_metadata_type_create_view(self):
-        pk_list = list(
-            MetadataType.objects.values('pk')
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='metadata:metadata_type_create', data={
@@ -151,12 +147,7 @@ class MetadataTypeViewTestMixin:
             }
         )
 
-        try:
-            self._test_metadata_type = MetadataType.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except MetadataType.DoesNotExist:
-            self._test_metadata_type = None
+        self._test_object_set()
 
         return response
 

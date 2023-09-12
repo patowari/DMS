@@ -9,12 +9,10 @@ from ..permissions import (
     permission_message_edit, permission_message_view
 )
 
-from .mixins import MessageAPIViewTestMixin, MessageTestMixin
+from .mixins import MessageAPIViewTestMixin
 
 
-class MessageAPIViewTestCase(
-    MessageAPIViewTestMixin, MessageTestMixin, BaseAPITestCase
-):
+class MessageAPIViewTestCase(MessageAPIViewTestMixin, BaseAPITestCase):
     auto_create_test_message = False
 
     def test_message_create_api_view_no_permission(self):

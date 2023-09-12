@@ -7,12 +7,10 @@ from ..permissions import (
     permission_quota_view
 )
 
-from .mixins import QuotaTestMixin, QuotaViewTestMixin
+from .mixins import QuotaViewTestMixin
 
 
-class QuotaViewTestCase(
-    QuotaTestMixin, QuotaViewTestMixin, GenericViewTestCase
-):
+class QuotaViewTestCase(QuotaViewTestMixin, GenericViewTestCase):
     def test_quota_backend_selection_get_view_no_permission(self):
         self._clear_events()
 

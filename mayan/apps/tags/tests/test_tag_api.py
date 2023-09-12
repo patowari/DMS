@@ -9,10 +9,10 @@ from ..permissions import (
     permission_tag_view
 )
 
-from .mixins import TagAPIViewTestMixin, TagTestMixin
+from .mixins import TagAPIViewTestMixin
 
 
-class TagAPIViewTestCase(TagAPIViewTestMixin, TagTestMixin, BaseAPITestCase):
+class TagAPIViewTestCase(TagAPIViewTestMixin, BaseAPITestCase):
     def test_tag_create_api_view_no_permission(self):
         tag_count = Tag.objects.count()
 

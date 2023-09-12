@@ -128,9 +128,7 @@ class SourceAPIViewTestMixin(SourceTestMixin):
         )
 
     def _request_test_source_edit_api_view_via_patch(self):
-        data = {
-            'label': TEST_SOURCE_LABEL_EDITED
-        }
+        data = {'label': TEST_SOURCE_LABEL_EDITED}
 
         return self.patch(
             viewname='rest_api:source-detail', kwargs={

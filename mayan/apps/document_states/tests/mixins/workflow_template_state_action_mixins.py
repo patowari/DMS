@@ -86,7 +86,7 @@ class WorkflowTemplateStateActionAPIViewTestMixin(
 ):
     def _request_test_workflow_template_state_action_create_api_view(self):
         pk_list = list(
-            WorkflowStateAction.objects.values('pk')
+            WorkflowStateAction.objects.values_list('pk', flat=True)
         )
 
         total_test_workflow_template_state_actions = len(

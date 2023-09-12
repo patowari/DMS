@@ -1,9 +1,9 @@
 from mayan.apps.documents.tests.base import BaseTestCase
 
-from .mixins import AssetTaskTestMixin, AssetTestMixin
+from .mixins import AssetTaskTestMixin
 
 
-class AssetTasksTestCase(AssetTaskTestMixin, AssetTestMixin, BaseTestCase):
+class AssetTasksTestCase(AssetTaskTestMixin, BaseTestCase):
     def setUp(self):
         super().setUp()
         self._create_test_asset()

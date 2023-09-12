@@ -7,12 +7,11 @@ from ..permissions import (
     permission_credential_edit, permission_credential_view
 )
 
-from .mixins import StoredCredentialTestMixin, StoredCredentialViewTestMixin
+from .mixins import StoredCredentialViewTestMixin
 
 
 class CredentialViewTestCase(
-    StoredCredentialTestMixin, StoredCredentialViewTestMixin,
-    GenericViewTestCase
+    StoredCredentialViewTestMixin, GenericViewTestCase
 ):
     auto_create_test_credential = False
 

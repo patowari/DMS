@@ -9,12 +9,11 @@ from ..permissions import (
 )
 
 from .literals import TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS
-from .mixins import DocumentFileMailerViewTestMixin, MailerTestMixin
+from .mixins import DocumentFileMailerViewTestMixin
 
 
 class MailDocumentFileViewTestCase(
-    DocumentFileMailerViewTestMixin, MailerTestMixin,
-    GenericDocumentViewTestCase
+    DocumentFileMailerViewTestMixin, GenericDocumentViewTestCase
 ):
     def test_document_file_link_send_single_view_no_permission(self):
         self._create_test_user_mailer()

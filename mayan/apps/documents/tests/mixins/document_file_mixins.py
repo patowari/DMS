@@ -37,7 +37,9 @@ class DocumentFileAPIViewTestMixin:
         )
 
     def _request_test_document_file_upload_api_view(self):
-        pk_list = list(DocumentFile.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentFile.objects.values_list('pk', flat=True)
+        )
 
         with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_descriptor:
             response = self.post(

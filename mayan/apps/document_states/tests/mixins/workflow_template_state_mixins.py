@@ -50,7 +50,7 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
 class WorkflowTemplateStateAPIViewTestMixin(WorkflowTemplateStateTestMixin):
     def _request_test_workflow_template_state_create_api_view(self):
         pk_list = list(
-            WorkflowState.objects.values('pk')
+            WorkflowState.objects.values_list('pk', flat=True)
         )
 
         response = self.post(

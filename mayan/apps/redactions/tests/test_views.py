@@ -1,8 +1,6 @@
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.converter.models import LayerTransformation
-from mayan.apps.converter.tests.mixins import (
-    TransformationTestMixin, TransformationViewTestMixin
-)
+from mayan.apps.converter.tests.mixins import TransformationViewTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..layers import layer_redactions
@@ -18,8 +16,7 @@ from .literals import (
 
 
 class RedactionViewTestCase(
-    TransformationTestMixin, TransformationViewTestMixin,
-    GenericDocumentViewTestCase
+    TransformationViewTestMixin, GenericDocumentViewTestCase
 ):
     _test_layer = layer_redactions
     _test_transformation_argument = TEST_REDACTION_ARGUMENT

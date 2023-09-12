@@ -1,9 +1,14 @@
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
+
 from ..models import Theme
 
 from .literals import TEST_THEME_LABEL, TEST_THEME_LABEL_EDITED
 
 
-class ThemeTestMixin:
+class ThemeTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = Theme
+    _test_object_name = '_test_theme'
+
     def _create_test_theme(self):
         self._test_theme = Theme.objects.create(
             label=TEST_THEME_LABEL
@@ -14,9 +19,9 @@ class ThemeTestMixin:
         self._test_theme.save()
 
 
-class ThemeViewTestMixin:
+class ThemeViewTestMixin(ThemeTestMixin):
     def _request_test_theme_create_view(self):
-        pk_list = list(Theme.objects.values_list('pk', flat=True))
+        self._test_object_track()
 
         response = self.post(
             viewname='appearance:theme_create', data={
@@ -24,7 +29,7 @@ class ThemeViewTestMixin:
             }
         )
 
-        self._test_theme = Theme.objects.exclude(pk__in=pk_list).first()
+        self._test_object_set()
 
         return response
 
@@ -48,7 +53,7 @@ class ThemeViewTestMixin:
         return self.get(viewname='appearance:theme_list')
 
 
-class UserThemeSettingsViewTestMixin:
+class UserThemeSettingsViewTestMixin(ThemeTestMixin):
     def _request_test_current_user_theme_settings_detail_view(self):
         return self._request_test_user_theme_settings_detail_view(
             user=self._test_case_user

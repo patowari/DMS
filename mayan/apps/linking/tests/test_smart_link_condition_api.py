@@ -14,12 +14,11 @@ from .literals import (
     TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED,
     TEST_SMART_LINK_CONDITION_OPERATOR
 )
-from .mixins import SmartLinkConditionAPIViewTestMixin, SmartLinkTestMixin
+from .mixins import SmartLinkConditionAPIViewTestMixin
 
 
 class SmartLinkConditionAPIViewTestCase(
-    DocumentTestMixin, SmartLinkTestMixin,
-    SmartLinkConditionAPIViewTestMixin, BaseAPITestCase
+    DocumentTestMixin, SmartLinkConditionAPIViewTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 

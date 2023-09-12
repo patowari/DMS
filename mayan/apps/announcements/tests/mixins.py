@@ -10,7 +10,9 @@ from .literals import (
 
 class AnnouncementAPIViewTestMixin:
     def _request_announcement_create_view(self):
-        pk_list = list(Announcement.objects.values('pk'))
+        pk_list = list(
+            Announcement.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:announcement-list', data={
@@ -73,7 +75,9 @@ class AnnouncementTestMixin:
 
 class AnnouncementViewTestMixin:
     def _request_test_announcement_create_view(self):
-        pk_list = list(Announcement.objects.values('pk'))
+        pk_list = list(
+            Announcement.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='announcements:announcement_create', data={

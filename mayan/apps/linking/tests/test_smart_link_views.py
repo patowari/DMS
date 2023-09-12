@@ -12,14 +12,12 @@ from ..permissions import (
 from .literals import TEST_SMART_LINK_LABEL, TEST_SMART_LINK_LABEL_EDITED
 from .mixins import (
     DocumentTypeAddRemoveSmartLinkViewTestMixin,
-    SmartLinkDocumentTypeViewTestMixin, SmartLinkTestMixin,
-    SmartLinkViewTestMixin
+    SmartLinkDocumentTypeViewTestMixin, SmartLinkViewTestMixin
 )
 
 
 class DocumentTypeAddRemoveSmartLinkViewTestCase(
-    DocumentTypeAddRemoveSmartLinkViewTestMixin, SmartLinkTestMixin,
-    GenericDocumentViewTestCase
+    DocumentTypeAddRemoveSmartLinkViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -279,9 +277,7 @@ class DocumentTypeAddRemoveSmartLinkViewTestCase(
         self.assertEqual(events[0].verb, event_smart_link_edited.id)
 
 
-class SmartLinkViewTestCase(
-    SmartLinkTestMixin, SmartLinkViewTestMixin, GenericViewTestCase
-):
+class SmartLinkViewTestCase(SmartLinkViewTestMixin, GenericViewTestCase):
     def test_smart_link_create_view_no_permission(self):
         self._clear_events()
 
@@ -414,8 +410,7 @@ class SmartLinkViewTestCase(
 
 
 class SmartLinkDocumentTypeViewTestCase(
-    SmartLinkDocumentTypeViewTestMixin, SmartLinkTestMixin,
-    GenericDocumentViewTestCase
+    SmartLinkDocumentTypeViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

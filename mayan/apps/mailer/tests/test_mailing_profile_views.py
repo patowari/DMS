@@ -19,12 +19,10 @@ from .literals import (
     TEST_RECIPIENTS_MULTIPLE_SEMICOLON,
     TEST_RECIPIENTS_MULTIPLE_SEMICOLON_RESULT
 )
-from .mixins import MailerTestMixin, MailerViewTestMixin
+from .mixins import MailerViewTestMixin
 
 
-class MailerViewTestCase(
-    MailerTestMixin, MailerViewTestMixin, GenericViewTestCase
-):
+class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
     def test_user_mailer_create_view_no_permission(self):
         self.grant_permission(permission=permission_user_mailer_view)
 
@@ -176,7 +174,7 @@ class MailerViewTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_user_mailer_list_bad_data_view_with_access(self):
-        self._silence_logger(name='mayan.apps.databases.model_mixins')
+        self._silence_logger(name='mayan.apps.backends.model_mixins')
 
         self._create_test_user_mailer()
         self._test_user_mailer.backend_path = 'bad.backend.path'

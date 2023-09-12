@@ -4,14 +4,13 @@ from ..models import Notification
 from ..permissions import permission_events_view
 
 from .mixins import (
-    EventObjectTestMixin, EventTestMixin, EventTypeTestMixin,
-    NotificationTestMixin, NotificationViewTestMixin
+    EventObjectTestMixin, EventTypeTestMixin, NotificationViewTestMixin
 )
 
 
 class NotificationViewTestCase(
-    EventObjectTestMixin, EventTestMixin, EventTypeTestMixin,
-    NotificationTestMixin, NotificationViewTestMixin, GenericViewTestCase
+    EventObjectTestMixin, EventTypeTestMixin, NotificationViewTestMixin,
+    GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()

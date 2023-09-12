@@ -19,11 +19,13 @@ class WorkflowTemplateTransitionFieldTestMixin(
     def _create_test_workflow_template_transition_field(self, extra_data=None):
         kwargs = {
             'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
-            'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME,
+            'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,
             'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
-            'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT
+            'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME
         }
-        kwargs.update(extra_data or {})
+        kwargs.update(
+            extra_data or {}
+        )
 
         self._test_workflow_template_transition_field = self._test_workflow_template_transition.fields.create(
             **kwargs
@@ -35,7 +37,7 @@ class WorkflowTemplateTransitionFieldAPIViewTestMixin(
 ):
     def _request_test_workflow_template_transition_field_create_api_view(self):
         pk_list = list(
-            WorkflowTransitionField.objects.values_list('pk')
+            WorkflowTransitionField.objects.values_list('pk', flat=True)
         )
 
         response = self.post(
@@ -45,9 +47,9 @@ class WorkflowTemplateTransitionFieldAPIViewTestMixin(
                 'workflow_template_transition_id': self._test_workflow_template_transition.pk,
             }, data={
                 'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
-                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME,
+                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
-                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT
+                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME
             }
         )
 
@@ -118,9 +120,9 @@ class WorkflowTemplateTransitionFieldViewTestMixin(
                 'workflow_template_transition_id': self._test_workflow_template_transition.pk
             }, data={
                 'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
-                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME,
+                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
-                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT
+                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME
             }
         )
 
@@ -148,9 +150,9 @@ class WorkflowTemplateTransitionFieldViewTestMixin(
                 'workflow_template_transition_field_id': self._test_workflow_template_transition_field.pk
             }, data={
                 'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
-                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME,
+                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL_EDITED,
-                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT
+                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME
             }
         )
 

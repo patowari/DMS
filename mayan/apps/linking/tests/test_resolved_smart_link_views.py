@@ -3,14 +3,11 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..permissions import permission_resolved_smart_link_view
 
-from .mixins import (
-    ResolvedSmartLinkDocumentViewTestMixin, SmartLinkTestMixin
-)
+from .mixins import ResolvedSmartLinkDocumentViewTestMixin
 
 
 class ResolvedSmartLinkDocumentViewTestCase(
-    SmartLinkTestMixin, ResolvedSmartLinkDocumentViewTestMixin,
-    GenericDocumentViewTestCase
+    ResolvedSmartLinkDocumentViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

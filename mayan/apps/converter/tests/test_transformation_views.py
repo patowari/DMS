@@ -2,12 +2,11 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..models import LayerTransformation
 
-from .mixins import TransformationTestMixin, TransformationViewTestMixin
+from .mixins import TransformationViewTestMixin
 
 
 class TransformationViewTestCase(
-    TransformationTestMixin, TransformationViewTestMixin,
-    GenericDocumentViewTestCase
+    TransformationViewTestMixin, GenericDocumentViewTestCase
 ):
     def test_transformation_create_post_view_no_permission(self):
         transformation_count = LayerTransformation.objects.count()

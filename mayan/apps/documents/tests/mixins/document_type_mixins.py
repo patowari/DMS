@@ -56,7 +56,9 @@ class DocumentQuickLabelViewTestMixin:
 
 class DocumentTypeAPIViewTestMixin:
     def _request_test_document_type_create_api_view(self):
-        pk_list = list(DocumentType.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentType.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:documenttype-list', data={
@@ -125,7 +127,9 @@ class DocumentTypeFilenameGeneratorViewTestMixin:
 
 class DocumentTypeQuickLabelAPIViewTestMixin:
     def _request_test_document_type_quick_label_create_api_view(self):
-        pk_list = list(DocumentTypeFilename.objects.values('pk'))
+        pk_list = list(
+            DocumentTypeFilename.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:documenttype-quicklabel-list', kwargs={

@@ -15,14 +15,11 @@ from ..permissions import (
 
 from .literals import TEST_SMART_LINK_LABEL_EDITED, TEST_SMART_LINK_LABEL
 from .mixins import (
-    SmartLinkAPIViewTestMixin, SmartLinkDocumentTypeAPIViewTestMixin,
-    SmartLinkTestMixin
+    SmartLinkAPIViewTestMixin, SmartLinkDocumentTypeAPIViewTestMixin
 )
 
 
-class SmartLinkAPIViewTestCase(
-    SmartLinkTestMixin, SmartLinkAPIViewTestMixin, BaseAPITestCase
-):
+class SmartLinkAPIViewTestCase(SmartLinkAPIViewTestMixin, BaseAPITestCase):
     def test_smart_link_create_api_view_no_permission(self):
         self._clear_events()
 
@@ -225,7 +222,7 @@ class SmartLinkAPIViewTestCase(
 
 
 class SmartLinkDocumentTypeAPIViewTestCase(
-    DocumentTestMixin, SmartLinkTestMixin, SmartLinkDocumentTypeAPIViewTestMixin,
+    DocumentTestMixin, SmartLinkDocumentTypeAPIViewTestMixin,
     BaseAPITestCase
 ):
     auto_upload_test_document = False

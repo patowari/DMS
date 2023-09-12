@@ -1,6 +1,6 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from .mixins import MessageTestMixin, MessageViewTestMixin
+from .mixins import MessageViewTestMixin
 
 from ..events import event_message_created, event_message_edited
 from ..models import Message
@@ -10,9 +10,7 @@ from ..permissions import (
 )
 
 
-class MessageViewTestCase(
-    MessageTestMixin, MessageViewTestMixin, GenericViewTestCase
-):
+class MessageViewTestCase(MessageViewTestMixin, GenericViewTestCase):
     auto_create_test_message = False
 
     def test_message_create_view_no_permission(self):
