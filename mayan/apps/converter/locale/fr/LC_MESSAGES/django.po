@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-12 09:34+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -647,7 +647,7 @@ msgstr "Changement de luminosité minimum qui sera accentué."
 
 #: transformations.py:701
 msgid "Tthreshold"
-msgstr ""
+msgstr "Limite"
 
 #: views/asset_views.py:50
 #, python-format

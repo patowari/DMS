@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-12 09:34+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: views/event_views.py:29
+#: settings.py:7 views/event_views.py:29
 msgid "Events"
 msgstr "Events"
 
@@ -71,15 +71,15 @@ msgstr "Objeto"
 msgid "Event type"
 msgstr "Tipo de evento"
 
-#: classes.py:89
+#: classes.py:90
 msgid "Event list export to CSV"
 msgstr "Exportar lista de evento para CSV"
 
-#: classes.py:117
+#: classes.py:118
 msgid "Events exported."
 msgstr "Eventos exportados."
 
-#: classes.py:119
+#: classes.py:120
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -140,7 +140,7 @@ msgstr "Marcar todos/as como vistos/as"
 msgid "Subscriptions"
 msgstr "Subscrições"
 
-#: literals.py:12
+#: literals.py:14
 #, python-format
 msgid "Unknown or obsolete event type: %s"
 msgstr "Tipo de evento desconhecido ou obsoleto: %s"
@@ -240,6 +240,12 @@ msgstr ""
 #: serializers.py:84
 msgid "Verb"
 msgstr "Verbo"
+
+#: settings.py:13
+msgid ""
+"Disables asynchronous events mode. All events will be committed in the same "
+"process that triggers them. This was the behavior prior to version 4.5."
+msgstr ""
 
 #: views/clear_views.py:27
 msgid ""

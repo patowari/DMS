@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-12 09:34+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: views/event_views.py:29
+#: settings.py:7 views/event_views.py:29
 msgid "Events"
 msgstr "الأحداث"
 
@@ -70,15 +70,15 @@ msgstr "كائن"
 msgid "Event type"
 msgstr "نوع الحدث"
 
-#: classes.py:89
+#: classes.py:90
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:117
+#: classes.py:118
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:119
+#: classes.py:120
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -137,7 +137,7 @@ msgstr "ضع علامة على الكل كما رأينا"
 msgid "Subscriptions"
 msgstr "الاشتراكات"
 
-#: literals.py:12
+#: literals.py:14
 #, python-format
 msgid "Unknown or obsolete event type: %s"
 msgstr "نوع الحدث غير معروف أو قديم: %s"
@@ -236,6 +236,12 @@ msgstr ""
 
 #: serializers.py:84
 msgid "Verb"
+msgstr ""
+
+#: settings.py:13
+msgid ""
+"Disables asynchronous events mode. All events will be committed in the same "
+"process that triggers them. This was the behavior prior to version 4.5."
 msgstr ""
 
 #: views/clear_views.py:27

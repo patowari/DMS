@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-12 09:34+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: views/event_views.py:29
+#: settings.py:7 views/event_views.py:29
 msgid "Events"
 msgstr "Događaji"
 
@@ -65,15 +65,15 @@ msgstr "Objekat"
 msgid "Event type"
 msgstr "Tip događaja"
 
-#: classes.py:89
+#: classes.py:90
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:117
+#: classes.py:118
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:119
+#: classes.py:120
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -132,7 +132,7 @@ msgstr "Označi sve kao vidjeno"
 msgid "Subscriptions"
 msgstr "Pretplate"
 
-#: literals.py:12
+#: literals.py:14
 #, python-format
 msgid "Unknown or obsolete event type: %s"
 msgstr "Nepoznati ili zastarjeli tip događaja:%s"
@@ -231,6 +231,12 @@ msgstr ""
 
 #: serializers.py:84
 msgid "Verb"
+msgstr ""
+
+#: settings.py:13
+msgid ""
+"Disables asynchronous events mode. All events will be committed in the same "
+"process that triggers them. This was the behavior prior to version 4.5."
 msgstr ""
 
 #: views/clear_views.py:27

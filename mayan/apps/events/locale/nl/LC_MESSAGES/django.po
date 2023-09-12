@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-12 09:34+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: views/event_views.py:29
+#: settings.py:7 views/event_views.py:29
 msgid "Events"
 msgstr "Evenementen"
 
@@ -66,15 +66,15 @@ msgstr "Object"
 msgid "Event type"
 msgstr "Evenementsoort"
 
-#: classes.py:89
+#: classes.py:90
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:117
+#: classes.py:118
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:119
+#: classes.py:120
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -133,7 +133,7 @@ msgstr "Alle markeren als gezien"
 msgid "Subscriptions"
 msgstr "Abonnementen"
 
-#: literals.py:12
+#: literals.py:14
 #, python-format
 msgid "Unknown or obsolete event type: %s"
 msgstr "Onbekend of overbodig gebeurtenistype: %s"
@@ -232,6 +232,12 @@ msgstr ""
 
 #: serializers.py:84
 msgid "Verb"
+msgstr ""
+
+#: settings.py:13
+msgid ""
+"Disables asynchronous events mode. All events will be committed in the same "
+"process that triggers them. This was the behavior prior to version 4.5."
 msgstr ""
 
 #: views/clear_views.py:27
