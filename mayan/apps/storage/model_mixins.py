@@ -40,7 +40,7 @@ class DatabaseFileModelMixin(models.Model):
         # https://docs.python.org/3/library/functions.html#open
         mode = getattr(self.file.file, 'mode', 'rb')
 
-        default_kwargs = {
+        open_kwargs = {
             'mode': mode,
             'name': self.file.name
         }
@@ -64,8 +64,6 @@ class DatabaseFileModelMixin(models.Model):
         self.file.close()
         self.file.file.close()
 
-        default_kwargs.update(**kwargs)
-
         # Ensure the caller cannot specify an alternate filename.
         name = kwargs.pop('name', None)
 
@@ -74,7 +72,9 @@ class DatabaseFileModelMixin(models.Model):
                 'Caller tried to specify an alternate filename: %s', name
             )
 
-        return self.file.storage.open(**default_kwargs)
+        open_kwargs.update(**kwargs)
+
+        return self.file.storage.open(**open_kwargs)
 
     def save(self, *args, **kwargs):
         if not self.file:
