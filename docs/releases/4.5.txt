@@ -11,11 +11,11 @@ Changes
 Converter
 ^^^^^^^^^
 
-The ``PyPDF2`` was replaced with the original ``pypdf`` package and updated
+The ``PyPDF2`` package was replaced with the original ``pypdf`` package and updated
 to the latest version. Several PDF parsing and page introspection issues
 were solved due to this change.
 
-Transformation layers now icon classes and don't expect a FontAwesome
+Transformation layers now support icon classes and don't expect a FontAwesome
 identifier anymore.
 
 
@@ -53,7 +53,7 @@ Update Python dependencies version:
 - django-rosetta from 0.9.8 to 0.9.9
 - django-silk from 4.3.0 to 5.0.3
 - flake8 from 4.0.1 to 6.1.0
-- ipython from 7.32.0 to .8.14.0
+- ipython from 7.32.0 to 8.14.0
 - twine from 3.8.0 to 4.0.2
 - Pillow from 9.4.0 to 10.0.0
 - dateparser from 1.1.1 to 1.1.8
@@ -76,10 +76,10 @@ Update Python dependencies version:
 - django-formtools from 2.3 to 2.4.1
 - psycopg2 from 2.9.3 to 2.9.6
 
-The Mayan EDSM version checking was improved.
+The Mayan EDMS version checking was improved.
 
-Support was added for comparing versions. This is relevant for custom version
-of Mayan EDMS when deciding when to merge back from upstream.
+Support was added for comparing versions. This is relevant for custom
+versions of Mayan EDMS when deciding when to merge back from upstream.
 
 When reporting version mismatches the different versions numbers are shown.
 
@@ -91,12 +91,12 @@ Development
 
 Support was added for PEP-0440 local versions.
 
-The release exporter was updated to use pathlib for internal path
+The release exporter was updated to use ``pathlib`` for internal path
 computations. Support for ``bbcode`` was removed.
 
-The release exported no longer required Mayan EDMS or Django to work.
+The release exporter no longer requires Mayan EDMS or Django to work.
 
-Support configurable release directory location was added.
+Support for configurable release directory location was added.
 
 Custom version parsing code was replaced with a wrapper for the Python
 ``packaging`` library.
@@ -153,7 +153,7 @@ are 3 log files of a maximum 100MB each.
 
 Added the ``multi_container`` profile. This allows easy switching from a
 single all-in-one container Docker Compose deployment to a multi container
-deployment. The multi container profile uses more substantial resources and
+deployment. The multi container profile uses substantially more resources and
 is not meant for basic installations, or for installations running on NAS
 or other small appliances.
 
@@ -179,7 +179,7 @@ which is collected at build time.
 Documents
 ^^^^^^^^^
 
-The document file deletion operation has updated to now be a background task.
+The document file deletion operation was updated to now be a background task.
 Requesting a document file deletion will no longer return a 204 status but
 instead code 202 (Accepted).
 
@@ -200,31 +200,31 @@ All references to document type deletion policies were renamed to document
 type retention policies.
 
 The active version and latest file attributes of documents were updated to
-to be stored fields instead of computed values. This increases performance
+be stored fields instead of computed values. This increases performance
 is large installations by a significant margin. Migrations for large
 installation will take longer in order to populate these fields, account for
 theses extended times during the upgrade.
 
 Added a new document file introspection link and view. This view re-scans the
-document file and populates the size, checksum, and mimetype files. It also
+document file and populates the size, checksum, and mimetype of files. It also
 updates the document file page count and creates a new document version
 linking all discovered file pages. This view replaces the previous document
 file page count update link and view.
 
 Deleting a document file page will now also delete any document version
-page that link to it. This avoid left over invalid page references.
+pages that link to it. This avoid left over invalid page references.
 
 New document versions create manually will no longer become active by default.
 Only new document versions created as a result of a document file upload
 will become active by default.
 
-The new document document file pages and document version pages code was
+The new document file pages and document version pages code was
 updated to create the objects as a single bulk operation. The documents
 queues where also split into more smaller queues that can be spread over
 more workers increasing scalability.
 
 Removed the unused signal ``signal_post_document_created``. Use the
-``signal_post_document_file_upload`` instead of Django's default
+``signal_post_document_file_upload`` instead or Django's default
 ``post_save`` signal for the ``Document`` sender.
 
 The document tasks callback interface was updated to accept a single
@@ -303,7 +303,7 @@ Indexing
 The logic of the indexes was updated to remove documents even if the index is
 disabled.
 
-Another wave of indexing algorithm optimization updates was merge for
+Another wave of indexing algorithm optimization updates was merged for
 increased update performance for centi million document installations and
 for installations under heavy load.
 
@@ -375,7 +375,7 @@ This allows the staging storage and watch storage to monitor files in remote
 location without having to first mount NFS or SMB directories as the OS
 level.
 
-Specific source backend functionality was consilidated into reusable mixins.
+Specific source backend functionality was consolidated into reusable mixins.
 These work in a modular fashion and can be used to add capabilities to
 any built in or custom defined source very easily.
 
