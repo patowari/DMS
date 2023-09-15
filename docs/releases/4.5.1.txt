@@ -1,7 +1,7 @@
 Version 4.5.1
 =============
 
-Released: September XX, 2023
+Released: September 15, 2023
 
 Status: Stable
 
@@ -20,6 +20,18 @@ Sources
 
 The migration of existing document sources was fixed.
 
+
+Workflows
+^^^^^^^^^
+
+A font issue that prevented the workflow template preview from working was
+fixed.
+
+
+Other
+^^^^^
+
+- Fix the ``add_file`` method for the ``TarArchive`` class.
 
 Removals
 --------
