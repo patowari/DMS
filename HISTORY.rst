@@ -1,3 +1,7 @@
+4.5.1 (XXXX-XX-XX)
+==================
+- Fix the default Docker Compose Mayan EDMS image tag for version 4.5.
+
 4.5 (2023-09-12)
 ================
 - Increase the size of the document indexing value field from 128 to 255
