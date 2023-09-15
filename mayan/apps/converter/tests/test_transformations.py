@@ -63,8 +63,11 @@ class TransformationBaseTestCase(BaseTestCase):
         transformation_2 = TransformationResize(width=800, height=800)
 
         self.assertNotEqual(
-            BaseTransformation.combine((transformation_1, transformation_2)),
-            BaseTransformation.combine((transformation_2, transformation_1)),
+            BaseTransformation.combine(
+                (transformation_1, transformation_2)
+            ), BaseTransformation.combine(
+                (transformation_2, transformation_1)
+            )
         )
 
     def test_resize_cache_hashing(self):
@@ -152,7 +155,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={'top': '10'}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_crop_transformation_invalid_arguments(self):
         BaseTransformation.register(
@@ -167,7 +172,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             obj=document_page, transformation_class=TransformationCrop,
             arguments={'top': 'x', 'left': '-'}
         )
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_crop_transformation_non_valid_range_arguments(self):
         BaseTransformation.register(
@@ -183,7 +190,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={'top': '-1000', 'bottom': '100000000'}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_crop_transformation_overlapping_ranges_arguments(self):
         BaseTransformation.register(
@@ -204,7 +213,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={'left': '1000', 'right': '10000'}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_draw_rectangle_transformation(self):
         BaseTransformation.register(
@@ -220,7 +231,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_lineart_transformations(self):
         BaseTransformation.register(
@@ -234,7 +247,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_rotate_transformations(self):
         BaseTransformation.register(
@@ -248,21 +263,27 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
         self.test_layer.add_transformation_to(
             obj=document_page, transformation_class=TransformationRotate180,
             arguments={}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
         self.test_layer.add_transformation_to(
             obj=document_page, transformation_class=TransformationRotate270,
             arguments={}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_zoom_transformation(self):
         BaseTransformation.register(
@@ -278,7 +299,9 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={'percent': 200}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )
 
     def test_zoom_transformation_with_negative_value(self):
         BaseTransformation.register(
@@ -294,4 +317,6 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
             arguments={'percent': -50}
         )
 
-        self.assertTrue(document_page.generate_image())
+        self.assertTrue(
+            document_page.generate_image()
+        )

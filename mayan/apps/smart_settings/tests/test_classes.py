@@ -123,7 +123,9 @@ class SettingTestCase(
             value=ENVIRONMENT_TEST_VALUE
         )
 
-        self.assertTrue(setting_paginate_by.value, ENVIRONMENT_TEST_VALUE)
+        self.assertEqual(
+            setting_paginate_by.value, int(ENVIRONMENT_TEST_VALUE)
+        )
 
     def test_config_backup_creation(self):
         path_config_backup = Path(settings.CONFIGURATION_LAST_GOOD_FILEPATH)

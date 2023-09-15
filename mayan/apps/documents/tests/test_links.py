@@ -99,9 +99,13 @@ class DocumentsLinksTestCase(GenericDocumentViewTestCase):
     def test_document_file_delete_link_no_permission(self):
         self._upload_test_document_file()
 
-        self.assertTrue(self.test_document.files.count(), 2)
+        self.assertEqual(
+            self.test_document.files.count(), 2
+        )
 
-        self.add_test_view(test_object=self.test_document.files.first())
+        self.add_test_view(
+            test_object=self.test_document.files.first()
+        )
         context = self.get_test_view()
         resolved_link = link_document_file_delete.resolve(context=context)
 
@@ -110,14 +114,18 @@ class DocumentsLinksTestCase(GenericDocumentViewTestCase):
     def test_document_file_delete_link_with_permission(self):
         self._upload_test_document_file()
 
-        self.assertTrue(self.test_document.files.count(), 2)
+        self.assertEqual(
+            self.test_document.files.count(), 2
+        )
 
         self.grant_access(
             obj=self.test_document,
             permission=permission_document_file_delete
         )
 
-        self.add_test_view(test_object=self.test_document.files.first())
+        self.add_test_view(
+            test_object=self.test_document.files.first()
+        )
         context = self.get_test_view()
         resolved_link = link_document_file_delete.resolve(context=context)
 
