@@ -276,7 +276,9 @@ class RoleGroupAPIViewTestCase(
         response = self._request_test_role_group_add_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertTrue(self._test_group in self._test_role.groups.all())
+        self.assertTrue(
+            self._test_group in self._test_role.groups.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
