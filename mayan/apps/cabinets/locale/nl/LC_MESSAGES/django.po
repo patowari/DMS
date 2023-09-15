@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-09-15 10:20+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: bwakkie <bwakkie@gmail.com>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -36,7 +36,7 @@ msgstr "Rek aangemaakt"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr ""
+msgstr "Kabinet verwijderd"
 
 #: events.py:17
 msgid "Cabinet edited"
@@ -100,7 +100,7 @@ msgstr "Volledig pad"
 
 #: models.py:32 serializers.py:41
 msgid "Parent"
-msgstr ""
+msgstr "Ouder"
 
 #: models.py:35
 msgid "A short text used to identify the cabinet."
@@ -189,7 +189,7 @@ msgstr "Lijst van onderliggende rekken"
 
 #: serializers.py:18
 msgid "Children"
-msgstr ""
+msgstr "Kinderen"
 
 #: serializers.py:23
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr ""
+msgstr "Documenten-URL"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -209,7 +209,7 @@ msgstr ""
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr ""
+msgstr "URL van ouders"
 
 #: serializers.py:51
 msgid "URL"
@@ -218,14 +218,16 @@ msgstr "URL"
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
 msgstr ""
+"Primaire sleutel van het document dat aan de kast moet worden toegevoegd."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
-msgstr ""
+msgstr "Document-ID"
 
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
+"Primaire sleutel van het document dat uit de kast moet worden verwijderd."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
@@ -367,4 +369,4 @@ msgstr "Rekken waaraan het document wordt toegevoegd."
 
 #: workflow_actions.py:83
 msgid "Cabinets from which the document will be removed"
-msgstr ""
+msgstr "Kasten waaruit het document wordt verwijderd"

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# bwakkie <bwakkie@gmail.com>, 2023
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
 # Roberto Rosario, 2023
+# bwakkie <bwakkie@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-15 10:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: bwakkie <bwakkie@gmail.com>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,7 +115,7 @@ msgstr "%(object)s met succes verwijderd."
 #: generics.py:797
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
-msgstr ""
+msgstr "Fout bij ophalen %(object)s ; %(error)s"
 
 #: generics.py:909
 #, python-format
@@ -164,12 +164,16 @@ msgstr "Het aantal objecten dat per pagina wordt weergegeven."
 #: settings.py:23
 msgid "A string specifying the name to use for the paging parameter."
 msgstr ""
+"Een tekenreeks die als naam voor de pagineringsparameter moet worden "
+"gebruikt."
 
 #: settings.py:29
 msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr ""
+"Geef een verzendknop weer en wacht tot de verzendknop wordt ingedrukt "
+"voordat u de upload verwerkt."
 
 #: templates/views/app/foot.html:45
 msgid "Cancel upload"

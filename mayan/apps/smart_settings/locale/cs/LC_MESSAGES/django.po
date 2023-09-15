@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-15 10:20+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -506,7 +506,7 @@ msgstr ""
 "Nastavení byla aktualizována, restartujte instalaci a aktualizujte "
 "prohlížeč, aby se změny projevily."
 
-#: tests/test_classes.py:175
+#: tests/test_classes.py:177
 msgid "English"
 msgstr "Angličtina"
 

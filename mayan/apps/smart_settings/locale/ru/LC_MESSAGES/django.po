@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-15 10:20+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -367,7 +367,7 @@ msgstr ""
 "Настройки обновлены, перезапустите сервер и/или обновите страницу, чтобы "
 "изменения вступили в силу."
 
-#: tests/test_classes.py:175
+#: tests/test_classes.py:177
 msgid "English"
 msgstr ""
 
