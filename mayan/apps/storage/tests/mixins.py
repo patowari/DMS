@@ -36,17 +36,23 @@ class ArchiveClassTestCaseMixin:
         archive.create()
         with open(file=self.file_path, mode='rb') as file_object:
             archive.add_file(file_object=file_object, filename=self.filename)
-            self.assertTrue(archive.members(), [self.filename])
+            self.assertEqual(
+                archive.members(), [self.filename]
+            )
 
     def test_open(self):
         with open(file=self.archive_path, mode='rb') as file_object:
             archive = Archive.open(file_object=file_object)
-            self.assertTrue(isinstance(archive, self.cls))
+            self.assertTrue(
+                isinstance(archive, self.cls)
+            )
 
     def test_members(self):
         with open(file=self.archive_path, mode='rb') as file_object:
             archive = Archive.open(file_object=file_object)
-            self.assertEqual(archive.members(), self.members_list)
+            self.assertEqual(
+                archive.members(), self.members_list
+            )
 
     def test_member_contents(self):
         with open(file=self.archive_path, mode='rb') as file_object:
