@@ -103,9 +103,13 @@ class DocumentsLinksTestCase(
     def test_document_file_delete_link_no_permission(self):
         self._upload_test_document_file()
 
-        self.assertTrue(self._test_document.files.count(), 2)
+        self.assertEqual(
+            self._test_document.files.count(), 2
+        )
 
-        self.add_test_view(test_object=self._test_document.files.first())
+        self.add_test_view(
+            test_object=self._test_document.files.first()
+        )
         context = self.get_test_view()
         resolved_link = link_document_file_delete.resolve(context=context)
 
@@ -114,14 +118,18 @@ class DocumentsLinksTestCase(
     def test_document_file_delete_link_with_permission(self):
         self._upload_test_document_file()
 
-        self.assertTrue(self._test_document.files.count(), 2)
+        self.assertEqual(
+            self._test_document.files.count(), 2
+        )
 
         self.grant_access(
             obj=self._test_document,
             permission=permission_document_file_delete
         )
 
-        self.add_test_view(test_object=self._test_document.files.first())
+        self.add_test_view(
+            test_object=self._test_document.files.first()
+        )
         context = self.get_test_view()
         resolved_link = link_document_file_delete.resolve(context=context)
 
@@ -130,7 +138,9 @@ class DocumentsLinksTestCase(
             resolved_link.url,
             reverse(
                 viewname=link_document_file_delete.view,
-                args=(self._test_document.files.first().pk,)
+                args=(
+                    self._test_document.files.first().pk,
+                )
             )
         )
 

@@ -9,7 +9,9 @@ class QuotaModelTestCase(QuotaTestMixin, BaseTestCase):
 
         self._clear_events()
 
-        self.assertTrue(self._test_quota.get_absolute_url())
+        self.assertTrue(
+            self._test_quota.get_absolute_url()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
