@@ -364,7 +364,7 @@
 
   - Debian from 11.5-slim to 11.6-slim
   - Docker from 20-dind to 20.10.21-dind
-  - ElasticSearch from 7.17.0 to 7.17.9
+  - Elasticsearch from 7.17.0 to 7.17.9
   - MySQL from 8.0 to 8.0.32
   - PostgreSQL from 13.8 to 13.10
   - Python from 3.10-slim to 3.10.11-slim
@@ -508,7 +508,7 @@
 - Update Docker image tags:
 
   - Docker from 20-dind to 20.10.21-dind
-  - ElasticSearch from 7.17.0 to 7.17.7
+  - Elasticsearch from 7.17.0 to 7.17.7
   - PostgreSQL from 12.11-alpine to 13.11.2-alpine
   - Redis from 6.2-alpine to 7.0.5-alpine
 
@@ -882,7 +882,7 @@
 
 - Update Docker image versions:
 
-  - ElasticSearch from 7.17.0 to 7.17.9
+  - Elasticsearch from 7.17.0 to 7.17.9
   - Debian from 11.4-slim to 11.6-slim
   - MySQL from 8.0 to 8.0.32
   - PostgreSQL from 12.11-alpine to 12.14-alpine
@@ -1108,7 +1108,7 @@
     ``VIEWS_PAGING_ARGUMENT``. Defaults to ``page`` for compatibility.
 
 - Update the default pagination size from 40 items to 30.
-- Support hyphenated text when using the ElasticSearch backend.
+- Support hyphenated text when using the Elasticsearch backend.
 - Add support for supplying files to source backend via the API. Add the
   ``accept_files`` property to ``SourceBackendAction`` which dynamically add
   a ``file`` serializer field for the corresponding action.
@@ -1124,7 +1124,7 @@
 - Drop support for Python 3.6.
 - Dependencies update:
 
-  - ElasticSearch from 7.16.0 to 7.17.0.
+  - Elasticsearch from 7.16.0 to 7.17.0.
   - Debian from 11.2-slim to 11.3-slim.
   - PostgreSQL from 12.9-alpine to 12.10-alpine.
   - RabbitMQ from 3.9-alpine to 3.10-alpine.
@@ -1236,7 +1236,7 @@
     instead for both purposes. The canonical method to obtain the search
     field of a search model is now using the method ``.get_search_fields()``.
 
-- Update the ElasticSearch backend default settings to match those of the
+- Update the Elasticsearch backend default settings to match those of the
   official Python client.
 - Don't introspect document file MIME type at download. Instead pass the
   stored values.
@@ -1412,9 +1412,9 @@
 - Normalize how the search "Match all" parameter is evaluated.
 - Fix evaluation of "Match all" when using a single level scoped search.
 - Discard non supported images contained in MPO images files.
-- Use the ElasticSearch count API (https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-count.html)
+- Use the Elasticsearch count API (https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-count.html)
   to obtain accurate search model status information.
-- Delete existing indexes when calling the ElasticSearch backend initialize
+- Delete existing indexes when calling the Elasticsearch backend initialize
   method.
 - Wrap search backend errors into a general exception with a short
   explanation.
@@ -1443,12 +1443,12 @@
   the data before sending the stream. This ensures the image will load
   correctly in all browsers that require a MIME type value in the header of
   the stream.
-- Change the ``UUID`` field to ElasticSearch field mapping, from ``Keyword``
+- Change the ``UUID`` field to Elasticsearch field mapping, from ``Keyword``
   to ``Text`` to avoid search indexing error when processing document
-  containers with more than 910 documents. ElasticSearch's ``Keyword`` field
+  containers with more than 910 documents. Elasticsearch's ``Keyword`` field
   is limited to 32766 bytes and attempting to index a container with more
   than 910 documents would exceed this limit.
-- Update the ElasticSearch backend search query configuration to be more
+- Update the Elasticsearch backend search query configuration to be more
   strict and lower the number of hits matched. Change the ``match`` query to
   ``match_phrase`` and remove the ``fuzzy`` query.
 - Ensure document version pages point to an existing content object when
