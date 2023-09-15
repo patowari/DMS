@@ -7,7 +7,7 @@ from .literals import TEST_EMAIL_SOURCE_PASSWORD, TEST_EMAIL_SOURCE_USERNAME
 
 class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
     auto_create_test_source = False
-    migrate_from = ('sources', '0029_update_source_backend_paths')
+    migrate_from = ('sources', '0028_auto_20210905_0558')
     migrate_to = ('source_emails', '0001_update_source_backend_paths')
 
     def prepare(self):
@@ -32,11 +32,11 @@ class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
             app_label='sources', model_name='Source'
         )
 
-        self.assertTrue(
+        self.assertEqual(
             Source.objects.get(label='test source IMAP').backend_path,
             'mayan.apps.source_emails.source_backends.email_backends.SourceBackendIMAPEmail'
         )
-        self.assertTrue(
+        self.assertEqual(
             Source.objects.get(label='test source POP3').backend_path,
             'mayan.apps.source_emails.source_backends.email_backends.SourceBackendPOP3Email'
         )
@@ -57,8 +57,8 @@ class SourceBackendCredentialMigrationTestCase(MayanMigratorTestCase):
         Source.objects.create(
             backend_data=json.dumps(
                 obj={
-                    'username': TEST_EMAIL_SOURCE_PASSWORD,
-                    'password': TEST_EMAIL_SOURCE_USERNAME
+                    'password': TEST_EMAIL_SOURCE_PASSWORD,
+                    'username': TEST_EMAIL_SOURCE_USERNAME
                 }
             ),
             backend_path='mayan.apps.source_emails.tests.email_backends.SourceBackendTestEmail',
@@ -86,16 +86,16 @@ class SourceBackendCredentialMigrationTestCase(MayanMigratorTestCase):
             s=test_stored_credential.backend_data
         )
 
-        self.assertTrue(
+        self.assertEqual(
             source_backend_data['stored_credential_id'],
             test_stored_credential.pk
         )
 
-        self.assertTrue(
+        self.assertEqual(
             test_stored_credential_backend_data['password'],
             TEST_EMAIL_SOURCE_PASSWORD
         )
-        self.assertTrue(
+        self.assertEqual(
             test_stored_credential_backend_data['username'],
             TEST_EMAIL_SOURCE_USERNAME
         )

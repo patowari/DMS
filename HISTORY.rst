@@ -1,6 +1,7 @@
 4.5.1 (XXXX-XX-XX)
 ==================
 - Fix the default Docker Compose Mayan EDMS image tag for version 4.5.
+- Fix migration of existing document sources.
 
 4.5 (2023-09-12)
 ================

@@ -157,7 +157,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertTrue(Document.objects.count(), 2)
+        self.assertEqual(Document.objects.count(), 2)
         self.assertQuerysetEqual(
             ordered=False, qs=Document.objects.all(), values=(
                 '<Document: test-01.png>', '<Document: email_body.html>'
@@ -231,7 +231,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertTrue(Document.objects.count(), 2)
+        self.assertEqual(Document.objects.count(), 2)
         self.assertQuerysetEqual(
             ordered=False, qs=Document.objects.all(), values=(
                 '<Document: test-01.png>', '<Document: email_body.html>',
