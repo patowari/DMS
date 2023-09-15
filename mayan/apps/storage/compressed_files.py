@@ -132,7 +132,9 @@ class TarArchive(Archive):
 
     def add_file(self, file_object, filename):
         self._archive.addfile(
-            tarfile.TarInfo(), fileobj=file_object
+            tarinfo=self._archive.gettarinfo(
+                fileobj=file_object, arcname=filename
+            ), fileobj=file_object
         )
 
     def create(self):

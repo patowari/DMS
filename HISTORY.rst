@@ -2,6 +2,7 @@
 ==================
 - Fix the default Docker Compose Mayan EDMS image tag for version 4.5.
 - Fix migration of existing document sources.
+- Fix the ``add_file`` method for the ``TarArchive`` class.
 
 4.5 (2023-09-12)
 ================
