@@ -151,6 +151,9 @@ if [ "${MAYAN_DOCKER_SCRIPT_POST_SETUP}" ]; then
     eval "${MAYAN_DOCKER_SCRIPT_POST_SETUP}"
 fi
 
+# Clear the fontconfig cache.
+/usr/bin/fc-cache -v \
+
 case "$1" in
 
 run_all)
