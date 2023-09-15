@@ -1,3 +1,7 @@
+4.4.9 (XXXX-XX-XX)
+==================
+- Fix the ``add_file`` method for the ``TarArchive`` class.
+
 4.4.8 (2023-07-15)
 ==================
 - Fixes and improvements from versions 4.3.10 and 4.2.17.
