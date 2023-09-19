@@ -200,6 +200,69 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
             events[10].verb, event_document_version_page_created.id
         )
 
+    def test_compressed_always_non_compressed(self):
+        self._test_source_create(
+            extra_data={'uncompress': SOURCE_UNCOMPRESS_CHOICE_ALWAYS}
+        )
+
+        self.copy_test_source_file()
+
+        test_document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
+        self._clear_events()
+
+        self._execute_test_source_action(action_name='document_upload')
+
+        self.assertEqual(Document.objects.count(), test_document_count + 1)
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count - 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 5)
+
+        test_documents = Document.objects.all()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, test_documents[0])
+        self.assertEqual(events[0].target, test_documents[0])
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, test_documents[0])
+        self.assertEqual(events[1].actor, test_documents[0].file_latest)
+        self.assertEqual(events[1].target, test_documents[0].file_latest)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_documents[0])
+        self.assertEqual(events[2].actor, test_documents[0].file_latest)
+        self.assertEqual(events[2].target, test_documents[0].file_latest)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_documents[0])
+        self.assertEqual(events[3].actor, test_documents[0].version_active)
+        self.assertEqual(events[3].target, test_documents[0].version_active)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(
+            events[4].action_object, test_documents[0].version_active
+        )
+        self.assertEqual(
+            events[4].actor, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[4].target, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
     def test_compressed_never(self):
         self._silence_logger(name='mayan.apps.converter.backends')
 
