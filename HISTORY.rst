@@ -1,4 +1,4 @@
-4.5.2 (XXXX-XX-XX)
+4.5.2 (2023-09-20)
 ==================
 - Fix sources attempting to uncompress non compressed files.
 - Add migrations to fix incorrect source backend paths.
