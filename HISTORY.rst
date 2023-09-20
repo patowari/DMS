@@ -1,3 +1,8 @@
+4.5.2 (XXXX-XX-XX)
+==================
+- Fix sources attempting to uncompress non compressed files.
+- Add migrations to fix incorrect source backend paths.
+
 4.5.1 (2023-09-15)
 ==================
 - Fix the default Docker Compose Mayan EDMS image tag for version 3.5.
