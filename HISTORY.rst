@@ -1,3 +1,9 @@
+4.6 (XXXX-XX-XX)
+================
+- Improve the index mirroring profile. Add ``MAYAN_MIRROR_INDEX_NAME`` to
+  allow mounting different indexes without modifying the Docker Compose
+  file.
+
 4.5.2 (2023-09-20)
 ==================
 - Fix sources attempting to uncompress non compressed files.

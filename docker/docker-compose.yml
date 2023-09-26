@@ -212,8 +212,8 @@ services:
       - extra_frontend
       - multi_container
 
-  # Enable to run standalone workers
-  mountindex:
+  # Enable to run mirror an index.
+  index_mirror:
     <<: [*mayan-container, *mayan-dependencies]
     cap_add:
       - SYS_ADMIN
@@ -222,15 +222,19 @@ services:
     entrypoint:
       - /bin/sh
       - -c
-      - 'mkdir --parents /mnt/index && chown mayan:mayan /mnt/index && /usr/local/bin/entrypoint.sh run_command "mirroring_mount_index --allow-other creation_date /mnt/index"'  # Replace "creation_date" with the index of your choice.
+      - 'mkdir --parents /mnt/index && chown mayan:mayan /mnt/index && /usr/local/bin/entrypoint.sh run_command "mirroring_mount_index --allow-other ${MAYAN_MIRROR_INDEX_NAME} /mnt/index-${MAYAN_MIRROR_INDEX_NAME}"'
     profiles:
-      - mountindex
+      - index_mirror
     security_opt:
       - apparmor:unconfined
     volumes:
       - type: bind
-        source: /mnt/mayan_indexes/creation_date  # Host location where the index will show up.
-        target: /mnt/index  # Location inside the container where the index will be mounted. Must the same is in the "entrypoint" section.
+        # Location in the host where the index will show up.
+        # Must be created before enabling this profile.
+        # The Docker user must have access to this folder.
+        source: /mnt/mayan_indexes/${MAYAN_MIRROR_INDEX_NAME}
+        # Location inside the container where the index will be mounted.
+        target: /mnt/index-${MAYAN_MIRROR_INDEX_NAME}
         bind:
           propagation: shared
 
