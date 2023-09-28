@@ -2,29 +2,25 @@
 Troubleshooting
 ===============
 
-OCR is not working for my specific language
-===========================================
+.. include::  ../../partials/kb_migration.txt
 
-Not all Tesseract OCR language files are included to avoid increasing
-the size of the Docker image.
+.. note::
 
-To see which languages are supported, use the command:
+    Knowledge Base content
 
-.. code-block:: console
+    Articles:
 
-    apt-cache search tesseract-ocr
+    - What is OCR?
+    - Per document type OCR setup
+    - OCR backends
+    - OCR backend arguments
 
-and install the language file with (German in this example):
+    Tutorials:
 
-.. code-block:: console
+    - Detecting and tagging documents that contain social security numbers in the OCR
 
-    apt-get install tesseract-ocr-deu
+    Troubleshooting:
 
-If using the Docker image, pass the environment variable ``MAYAN_APT_INSTALLS``
-with the corresponding Tesseract language option. Example:
-
-.. code-block:: console
-
-    -e MAYAN_APT_INSTALLS='tesseract-ocr-deu'
+    - Error message “IOError: [Errno 37] No locks available” when using a NFS volume
 
 
