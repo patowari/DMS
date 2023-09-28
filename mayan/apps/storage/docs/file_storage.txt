@@ -2,41 +2,42 @@
 File Storage
 ============
 
-When a document is imported into Mayan EDMS the files are placed under Mayan EDMS
-"control" and stored in a dedicated location. This prevents filename clashes and
-allows Mayan EDMS to store multible Versions of the same Document without the
-user having to manually resolve filename conflicts.
 
-As part of the upload process, each file gets renamed to its ``UUID`` (Universally
-Unique ID), saved without an extension, and stored in a simple flat arrangement
-in a directory.
+.. important::
 
-This process doesn't prevent manual access to the files and preserves the integrity
-of stored documents.
+    Our commitment to providing a top-notch document management system and
+    resources remain stronger than ever.
 
-   .. warning::
+    As part of this journey, this chapter has been expanded and
+    migrated to the Knowledge base.
 
-       Avoid renaming, moving or updating documents directly on the
-       filesystem. Manual changes can cause the database to become
-       out of sync with the actual state of the files and break the system.
+    This means that you now have access to an even richer and more
+    comprehensive range of resources to supercharge your document management
+    journey.
+
+    `Upgrade now to access this improved chapter as well as tutorials,
+    troubleshooting guides, and in-dept articles covering all aspects of
+    Mayan EDMS. <https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q>`_
 
 
-Mayan EDMS components are decoupled from each other as much as possible, as such
-storage within Mayan EDMS is also decoupled, and storage behavior is controlled
-not by the project, but by the ``Storage`` module class. All other
-modules make no assumptions about how the actual document files are
-stored. This way, files can be saved locally, over the network or even across
-the Internet and everything will be transparant to Mayan EDMS itself as well
-as users working on the system.
+    ----
 
-The default file storage backend ``storage.backends.filebasedstorage.FileBasedStorage``
-is a simple storage backend that only supports paths on the local filesystem, rather than
-remote or shared storage (such as SMB/NFS).
-If you are interested in using remote storage to store documents (NFS, SMB), first
-mount these volumes so that they appear as standard filesystem directories to Mayan EDMS.
+    Articles:
 
-For direct support of remote volumes, a different storage backend would be needed,
-such as those provided by the Django Storages project
-(https://django-storages.readthedocs.org/en/latest/).
+    - Overview:
 
-A supported example of this is S3 :doc:`object_storage`
+      - How storage works
+      - Filename normalization
+      - Filename generator (normalization) backend s
+      - Storage backends (drivers)
+      - Indirect access network storage
+      - Direct access network storage
+
+    Tutorials:
+
+    - Seting up and migrating to object storage
+
+    Troubleshooting:
+
+    - Error message “IOError: [Errno 37] No locks available” when using a NFS volume
+
