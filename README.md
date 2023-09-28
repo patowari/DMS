@@ -47,6 +47,18 @@
 
 </div>
 
+<h2 align="center">Knowledge Base</h2>
+
+Get exclusive access to the Knowledge Base!
+
+<p align="center">
+    <a href="https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q">
+        <img width="400" src="https://docs.mayan-edms.com/_static/knowledge-base.jpg">
+    </a>
+</p>
+
+Click the image or visit: https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q
+
 <h2 align="center">Book</h2>
 
 The final version of the book "Exploring Mayan EDMS" available now!
