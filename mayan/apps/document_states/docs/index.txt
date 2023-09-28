@@ -20,3 +20,29 @@ Document states (Workflows)
     `Upgrade now to access this improved chapter as well as tutorials,
     troubleshooting guides, and in-dept articles covering all aspects of
     Mayan EDMS. <https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q>`_
+
+
+    ----
+
+    Articles:
+
+    - Overview:
+
+      - Workflow implementation
+      - Automation
+      - States
+      - Transitions
+      - State actions
+      - Escalations
+      - Sub workflows
+      - External systems interactions
+
+    Tutorials:
+
+    - Detect social security numbers in OCR and tag documents
+
+    Troubleshooting:
+
+    - Creating conditions with metadata numeric comparisons
+
+
