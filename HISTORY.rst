@@ -1,7 +1,12 @@
-4.5.3 (XXXX-XX-XX)
+4.5.3 (2023-09-30)
 ==================
 - Fix periodic task creation used for periodic sources. Add migration to fix
   previously created sources.
+- Migrate documentations chapters:
+
+  - OCR
+  - Workflows
+  - Storage
 
 4.5.2 (2023-09-20)
 ==================
