@@ -24,7 +24,7 @@ OCR
 
     Troubleshooting:
 
-    - Error message “IOError: [Errno 37] No locks available” when using a NFS volume
+    - The OCR does not support my language
 
 
 - :doc:`backends`
