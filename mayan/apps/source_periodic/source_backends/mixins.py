@@ -6,8 +6,9 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
 from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
+from mayan.apps.sources.literals import SOURCE_ACTION_EXECUTE_TASK_PATH
 
-from .literals import DEFAULT_PERIOD_INTERVAL
+from .literals import DEFAULT_PERIOD_INTERVAL, SOURCE_PERIODIC_ACTION_NAME
 
 logger = logging.getLogger(name=__name__)
 
@@ -103,10 +104,13 @@ class SourceBackendMixinPeriodic:
         PeriodicTask.objects.create(
             interval=interval_instance,
             kwargs=json.dumps(
-                obj={'source_id': self.model_instance_id}
+                obj={
+                    'action_name': SOURCE_PERIODIC_ACTION_NAME,
+                    'source_id': self.model_instance_id
+                }
             ),
             name=self.get_periodic_task_name(),
-            task='mayan.apps.sources.tasks.task_source_process_document'
+            task=SOURCE_ACTION_EXECUTE_TASK_PATH
         )
 
     def delete(self):

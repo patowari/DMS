@@ -1,3 +1,8 @@
+4.5.3 (XXXX-XX-XX)
+==================
+- Fix periodic task creation used for periodic sources. Add migration to fix
+  previously created sources.
+
 4.5.2 (2023-09-20)
 ==================
 - Fix sources attempting to uncompress non compressed files.
