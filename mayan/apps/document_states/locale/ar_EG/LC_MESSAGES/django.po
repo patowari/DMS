@@ -11,14 +11,15 @@
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
 # Ali <alimahwer@yahoo.com>, 2023
+# Mahmood Ali, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 03:22+0000\n"
+"POT-Creation-Date: 2023-09-30 23:57+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
+"Last-Translator: Mahmood Ali, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -831,7 +832,7 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:65
 msgid "Primary key of the document type to add to the workflow."
-msgstr ""
+msgstr "المفتاح الأساسي لنوع المستند المراد إضافته إلى رابط المسار."
 
 #: serializers/workflow_template_serializers.py:66
 #: serializers/workflow_template_serializers.py:75
@@ -840,7 +841,7 @@ msgstr "مُعرِّف نوع المستند"
 
 #: serializers/workflow_template_serializers.py:74
 msgid "Primary key of the document type to remove from the workflow."
-msgstr ""
+msgstr "المفتاح الأساسي لنوع المستند المراد حذفه من رابط المسار."
 
 #: serializers/workflow_template_state_escalation_serializers.py:32
 #: serializers/workflow_template_state_serializers.py:87
@@ -908,12 +909,12 @@ msgstr ""
 
 #: serializers/workflow_template_transition_serializers.py:198
 msgid "Event Type ID"
-msgstr ""
+msgstr "معرف نوع الحدث"
 
 #: serializers/workflow_template_transition_serializers.py:291
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
-msgstr ""
+msgstr "معرف الحدث غير معروف او غير صالح `%s`"
 
 #: settings.py:20
 msgid ""

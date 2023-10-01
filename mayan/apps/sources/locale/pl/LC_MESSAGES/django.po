@@ -8,14 +8,15 @@
 # Roberto Rosario, 2023
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-30 23:58+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:7 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:13 views/source_views.py:285
 msgid "Sources"
 msgstr "Źródła"
 
@@ -103,7 +104,7 @@ msgstr "Nowy dokument"
 
 #: links.py:122
 msgid "Upload new file"
-msgstr ""
+msgstr "Prześlij nowy plik"
 
 #: links.py:130
 msgid "Source metadata"
@@ -131,7 +132,7 @@ msgstr "Źródło"
 
 #: models.py:23
 msgid "Document file"
-msgstr ""
+msgstr "Plik dokumentu"
 
 #: models.py:26
 msgid "Name of the source metadata entry."
@@ -189,15 +190,15 @@ msgstr "Edytuj źródła dokumentów"
 msgid "View existing document sources"
 msgstr "Wyświetl istniejące źródła dokumentów"
 
-#: queues.py:10
+#: queues.py:12
 msgid "Sources periodic"
 msgstr "Źródła okresowe"
 
-#: queues.py:15
+#: queues.py:17
 msgid "Handle source backend action background task"
 msgstr ""
 
-#: queues.py:19
+#: queues.py:21
 msgid "Check interval source"
 msgstr "Źródło interwału sprawdzania"
 
@@ -382,6 +383,8 @@ msgstr ""
 #, python-format
 msgid "Unable to upload new files for document \"%(document)s\". %(exception)s"
 msgstr ""
+"Nie można przesłać nowych plików dla dokumentu \"%(document)s\". "
+"%(exception)s"
 
 #: views/document_file_views.py:141
 #, python-format
@@ -391,11 +394,13 @@ msgstr ""
 #: views/document_file_views.py:162
 msgid "New document file queued for upload and will be available shortly."
 msgstr ""
+"Nowy plik dokumentu oczekuje w kolejce do przesłania i będzie wkrótce "
+"dostępny."
 
 #: views/document_file_views.py:187
 #, python-format
 msgid "Upload a new file for document \"%(document)s\" from source: %(source)s"
-msgstr ""
+msgstr "Prześlij nowy plik dla dokumentu \"%(document)s\" ze źródła: %(source)s"
 
 #: views/document_file_views.py:193
 msgid "Submit"

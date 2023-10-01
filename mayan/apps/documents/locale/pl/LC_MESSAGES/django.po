@@ -12,14 +12,15 @@
 # kicior kicior <kiciorek+github@gmail.com>, 2023
 # Marcin Lozynski <mlozynski@wp.pl>, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-30 23:57+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,25 +48,25 @@ msgstr ""
 
 #: apps.py:397
 msgid "File comments"
-msgstr ""
+msgstr "Komentarze do plików"
 
 #: apps.py:401
 msgid "File encodings"
-msgstr ""
+msgstr "Kodowanie plików"
 
 #: apps.py:405
 msgid "File MIME types"
-msgstr ""
+msgstr "Typy MIME plików"
 
 #: apps.py:409
 msgid "File timestamps"
-msgstr ""
+msgstr "Znaczniki czasu plików"
 
 #: apps.py:414 links/document_file_page_links.py:77
 #: models/document_file_models.py:106 models/document_file_page_models.py:26
 #: search.py:49
 msgid "Document file"
-msgstr ""
+msgstr "Plik dokumentu"
 
 #: apps.py:418 models/document_file_page_models.py:30
 #: models/document_version_page_models.py:40
@@ -111,11 +112,11 @@ msgstr "Strony"
 
 #: apps.py:575 models/favorite_document_models.py:33
 msgid "Date and time added"
-msgstr ""
+msgstr "Data i godzina dodania"
 
 #: apps.py:586
 msgid "Access date and time"
-msgstr ""
+msgstr "Data i godzina dostępu"
 
 #: classes.py:65 forms/document_file_forms.py:40
 msgid "Original"
@@ -132,6 +133,7 @@ msgstr "UUID"
 #: classes.py:79
 msgid "Generates an immutable, random UUID (RFC 4122) for each file."
 msgstr ""
+"Generuje niezmienny, losowy identyfikator UUID (RFC 4122) dla każdego pliku."
 
 #: classes.py:90
 msgid "UUID plus original"
@@ -142,6 +144,8 @@ msgid ""
 "Generates an immutable, random UUID (RFC 4122) for each file and appends the"
 " original filename of the uploaded file."
 msgstr ""
+"Generuje niezmienny, losowy identyfikator UUID (RFC 4122) dla każdego pliku "
+"i dołącza oryginalną nazwę przesłanego pliku."
 
 #: dashboard_widgets.py:32
 msgid "Total pages"
@@ -383,7 +387,7 @@ msgstr "Backend"
 #: forms/document_version_page_forms.py:29
 #: serializers/document_version_serializers.py:38
 msgid "Content type"
-msgstr ""
+msgstr "Typ zawartości"
 
 #: forms/document_version_page_forms.py:32
 msgid "Object ID"
@@ -529,7 +533,7 @@ msgstr "Ostatnio przeglądane"
 
 #: links/document_links.py:29 views/recently_created_document_views.py:27
 msgid "Recently created"
-msgstr ""
+msgstr "Niedawno utworzone"
 
 #: links/document_links.py:50
 msgid "Edit properties"
@@ -778,7 +782,7 @@ msgstr "Opis"
 
 #: models/document_models.py:76
 msgid "The date and time of the document creation."
-msgstr ""
+msgstr "Data i godzina utworzenia dokumentu."
 
 #: models/document_models.py:77
 msgid "Created"
@@ -802,7 +806,7 @@ msgstr "Data i czas kiedy dokument został przeniesiony do kosza."
 
 #: models/document_models.py:93
 msgid "Date and time trashed"
-msgstr "Data i czas umieszczenia w koszu"
+msgstr "Data i godzina skasowania"
 
 #: models/document_models.py:97
 msgid ""
@@ -1110,11 +1114,11 @@ msgstr ""
 
 #: queues.py:40
 msgid "Upload new document file"
-msgstr ""
+msgstr "Prześlij nowy plik dokumentu"
 
 #: queues.py:44
 msgid "Upload new document"
-msgstr ""
+msgstr "Prześlij nowy dokument"
 
 #: queues.py:49
 msgid "Calculate and update document file checksum"
@@ -1194,7 +1198,7 @@ msgstr "UUID dokumentu"
 
 #: search.py:98
 msgid "Document file checksum"
-msgstr ""
+msgstr "Suma kontrolna pliku dokumentu"
 
 #: serializers/document_file_serializers.py:12
 msgid "Document file URL"
@@ -2069,10 +2073,10 @@ msgstr "%(count)d dokumentów dodano do ulubionych."
 #: views/favorite_document_views.py:59
 msgid "Add the selected document to favorites?"
 msgid_plural "Add the selected documents to favorites?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Dodać wybrany dokument do ulubionych?"
+msgstr[1] "Dodać wybrane dokumenty do ulubionych?"
+msgstr[2] "Dodać wybrane dokumenty do ulubionych?"
+msgstr[3] "Dodać wybrane dokumenty do ulubionych?"
 
 #: views/favorite_document_views.py:77
 #, python-format

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-30 23:58+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:11
+#: apps.py:14
 msgid "Source periodic"
 msgstr ""
 
@@ -32,22 +32,22 @@ msgid ""
 "modifications like deletion of files are disabled."
 msgstr ""
 
-#: source_backends/mixins.py:29
+#: source_backends/mixins.py:30
 msgid "Assign a document type to documents uploaded from this source."
 msgstr "Ordnen Sie einen Dokumententyp für Dokumente aus dieser Quelle zu."
 
-#: source_backends/mixins.py:37
+#: source_backends/mixins.py:38
 msgid "Document type"
 msgstr "Dokumententyp"
 
-#: source_backends/mixins.py:44
+#: source_backends/mixins.py:45
 msgid "Interval in seconds between checks for new documents."
 msgstr "Intervall in Sekunden zwischen den Überprüfungen auf neue Dokumente."
 
-#: source_backends/mixins.py:50
+#: source_backends/mixins.py:51
 msgid "Interval"
 msgstr "Intervall"
 
-#: source_backends/mixins.py:64
+#: source_backends/mixins.py:65
 msgid "Unattended"
 msgstr ""

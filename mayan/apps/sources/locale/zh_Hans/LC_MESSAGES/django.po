@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-09-30 23:58+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:7 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:13 views/source_views.py:285
 msgid "Sources"
 msgstr "来源"
 
@@ -186,15 +186,15 @@ msgstr "编辑文档源"
 msgid "View existing document sources"
 msgstr "查看现有文档源"
 
-#: queues.py:10
+#: queues.py:12
 msgid "Sources periodic"
 msgstr ""
 
-#: queues.py:15
+#: queues.py:17
 msgid "Handle source backend action background task"
 msgstr ""
 
-#: queues.py:19
+#: queues.py:21
 msgid "Check interval source"
 msgstr "检查间隔源"
 
