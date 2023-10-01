@@ -48,8 +48,7 @@ class TaskManagerTestMixin:
 
     def _create_test_task_type(self):
         self._test_task_type = self._test_queue.add_task_type(
-            dotted_path='mayan.apps.task_manager.tests.tasks.test_task',
-            label='test task type'
+            dotted_path=TEST_PERIODIC_TASK_TASK, label='test task type'
         )
 
     def _create_test_worker(self):
