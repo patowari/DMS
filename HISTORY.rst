@@ -1,6 +1,8 @@
 4.4.9 (XXXX-XX-XX)
 ==================
 - Fix the ``add_file`` method for the ``TarArchive`` class.
+- Docker builder updates. Improve how caches and proxies are calculated.
+  Add support for Docker image mirroring.
 
 4.4.8 (2023-07-15)
 ==================
