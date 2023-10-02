@@ -1,3 +1,8 @@
+4.5.4 (XXXX-XX-XX)
+==================
+- Docker builder updates. Improve how caches and proxies are calculated.
+  Add support for Docker image mirroring.
+
 4.5.3 (2023-09-30)
 ==================
 - Fix periodic task creation used for periodic sources. Add migration to fix
