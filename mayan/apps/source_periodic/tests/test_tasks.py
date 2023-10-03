@@ -16,6 +16,8 @@ class SourceTaskTestCase(
     def test_task_execute(self):
         self._silence_logger(name='mayan.apps.converter.backends')
 
+        test_document_count = Document.objects.count()
+
         self._clear_events()
 
         task_source_backend_action_execute.apply_async(
@@ -24,6 +26,8 @@ class SourceTaskTestCase(
                 'source_id': self._test_source.pk
             }
         )
+
+        self.assertEqual(Document.objects.count(), test_document_count + 1)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -46,3 +50,25 @@ class SourceTaskTestCase(
         self.assertEqual(events[2].actor, test_document_version)
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
+
+    def test_task_execute_disabled(self):
+        self._silence_logger(name='mayan.apps.converter.backends')
+
+        self._test_source.enabled = False
+        self._test_source.save()
+
+        test_document_count = Document.objects.count()
+
+        self._clear_events()
+
+        task_source_backend_action_execute.apply_async(
+            kwargs={
+                'action_name': 'document_upload',
+                'source_id': self._test_source.pk
+            }
+        )
+
+        self.assertEqual(Document.objects.count(), test_document_count)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)

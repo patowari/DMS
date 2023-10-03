@@ -140,6 +140,9 @@ class SourceBackendMixinPeriodic:
                 self.get_periodic_task_name(pk=pk)
             )
 
+    def get_allow_action_execute(self, action, action_execute_kwargs=None):
+        return self.get_model_instance().enabled or action_execute_kwargs.get('dry_run', False)
+
     def get_document_type(self):
         DocumentType = apps.get_model(
             app_label='documents', model_name='DocumentType'
