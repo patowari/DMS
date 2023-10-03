@@ -207,7 +207,7 @@ class SourceBackendActionMixinFileStoredBase:
     def _background_task(self, file_identifier, file_cleanup=None, **kwargs):
         result = super()._background_task(**kwargs)
         # Source returned a None `file_identifier` which means that the
-        # source file list is empty. Shortcircuit a quick exit.
+        # source file list is empty to short circuit a quick exit.
         if file_identifier is None:
             result['server_upload_entry_list'] = ()
             return result

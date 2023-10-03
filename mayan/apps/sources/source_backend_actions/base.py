@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.utils.functional import classproperty
 
 from ..exceptions import (
@@ -126,38 +127,50 @@ class SourceBackendActionBase(metaclass=SourceBackendActionMetaclass):
         self, interface_name, interface_load_kwargs=None,
         interface_retrieve_kwargs=None
     ):
-        interface_load_kwargs = interface_load_kwargs or {}
-        interface_retrieve_kwargs = interface_retrieve_kwargs or {}
-        interface_instance = self.get_interface_instance(
-            interface_name=interface_name
-        )
-
         try:
-            # Only intercept action exception to add additional content.
-            # All other should be ignored. They might exception with
-            # interface context like Http404 for views or REST API.
-            execute_kwargs = interface_instance.load(**interface_load_kwargs)
-        except SourceActionException as exception:
-            raise SourceActionException(
-                'Unable to execute action `{}`; {}'.format(
-                    self.name, exception
+            interface_load_kwargs = interface_load_kwargs or {}
+            interface_retrieve_kwargs = interface_retrieve_kwargs or {}
+            interface_instance = self.get_interface_instance(
+                interface_name=interface_name
+            )
+
+            try:
+                # Only intercept action exception to add additional content.
+                # All other should be ignored. They might exception with
+                # interface context like Http404 for views or REST API.
+                execute_kwargs = interface_instance.load(**interface_load_kwargs)
+            except SourceActionException as exception:
+                raise SourceActionException(
+                    'Unable to execute action `{}`; {}'.format(
+                        self.name, exception
+                    )
+                ) from exception
+
+            backend_instance = self.source.get_backend_instance()
+
+            allow_action_execution = backend_instance.get_allow_action_execute(
+                action=self, action_execute_kwargs=execute_kwargs
+            )
+
+            if allow_action_execution:
+                action_data = self._execute(**execute_kwargs)
+            else:
+                action_data = None
+
+            return_value = interface_instance.retrieve(
+                context=interface_retrieve_kwargs, data=action_data
+            )
+        except Exception as exception:
+            self.source.error_log.create(
+                text='{}; {}'.format(
+                    exception.__class__.__name__, exception
                 )
-            ) from exception
-
-        backend_instance = self.source.get_backend_instance()
-
-        allow_action_execution = backend_instance.get_allow_action_execute(
-            action=self, action_execute_kwargs=execute_kwargs
-        )
-
-        if allow_action_execution:
-            result = self._execute(**execute_kwargs)
+            )
+            if settings.DEBUG:
+                raise
         else:
-            result = None
-
-        return interface_instance.retrieve(
-            context=interface_retrieve_kwargs, data=result
-        )
+            self.source.error_log.all().delete()
+            return return_value
 
     def get_confirmation_context(
         self, interface_name, interface_load_kwargs=None

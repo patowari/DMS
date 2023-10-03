@@ -2,6 +2,8 @@
 ==================
 - Docker builder updates. Improve how caches and proxies are calculated.
   Add support for Docker image mirroring.
+- Move source error log creation to action execution scope. This ensures it
+  captures all errors related to the action execution at the lowest level.
 
 4.5.3 (2023-09-30)
 ==================
