@@ -9,6 +9,9 @@ icon_forum = Icon(
 icon_home = Icon(
     driver_name='fontawesome', symbol='home'
 )
+icon_knowledge_base = Icon(
+    driver_name='fontawesome', symbol='lightbulb'
+)
 icon_license = Icon(
     driver_name='fontawesome', symbol='certificate'
 )

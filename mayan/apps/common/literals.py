@@ -41,6 +41,7 @@ TIME_DELTA_UNIT_CHOICES = (
 URL_BOOK = 'https://www.mayan-edms.com/book/'
 URL_DOCUMENTATION = 'https://docs.mayan-edms.com'
 URL_FORUM = 'https://forum.mayan-edms.com'
+URL_KNOWLEDGE_BASE = 'https://forum.mayan-edms.com/t/availability-of-the-new-knowledge-base/883'
 URL_SOURCE_CODE = 'https://gitlab.com/mayan-edms/mayan-edms'
 URL_STORE = 'https://teespring.com/stores/mayan-edms'
 URL_SUPPORT = 'https://www.mayan-edms.com/support/'
