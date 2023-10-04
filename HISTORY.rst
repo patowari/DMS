@@ -1,3 +1,8 @@
+4.5.5 (XXXX-XX-XX)
+==================
+- Move periodic task import checking to the task manager app and condition
+  it to the debug or testing environments.
+
 4.5.4 (2023-10-04)
 ==================
 - Docker builder updates. Improve how caches and proxies are calculated.

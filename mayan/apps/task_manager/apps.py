@@ -2,6 +2,8 @@ import logging
 
 from celery.backends.base import DisabledBackend
 
+from django.apps import apps
+from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
@@ -17,6 +19,7 @@ from .links import (
     link_queue_task_type_list, link_worker_list, link_worker_queue_list
 )
 from .literals import TEST_CELERY_RESULT_KEY, TEST_CELERY_RESULT_VALUE
+from .methods import factory_method_periodic_task_save
 
 logger = logging.getLogger(name=__name__)
 
@@ -78,6 +81,10 @@ class TaskManagerApp(MayanAppConfig):
     def ready(self):
         super().ready()
 
+        PeriodicTask = apps.get_model(
+            app_label='django_celery_beat', model_name='PeriodicTask'
+        )
+
         try:
             self.check_broker_connectivity()
         except Exception as exception:
@@ -95,6 +102,13 @@ class TaskManagerApp(MayanAppConfig):
             exit(1)
 
         CeleryQueue.load_modules()
+
+        if settings.DEBUG or settings.TESTING:
+            PeriodicTask.add_to_class(
+                name='save', value=factory_method_periodic_task_save(
+                    super_save=PeriodicTask.save
+                )
+            )
 
         SourceColumn(
             attribute='label', is_identifier=True, label=_('Label'),

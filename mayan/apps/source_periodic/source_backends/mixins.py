@@ -102,14 +102,12 @@ class SourceBackendMixinPeriodic:
         )
 
         PeriodicTask.objects.create(
-            interval=interval_instance,
-            kwargs=json.dumps(
+            interval=interval_instance, kwargs=json.dumps(
                 obj={
                     'action_name': SOURCE_PERIODIC_ACTION_NAME,
                     'source_id': self.model_instance_id
                 }
-            ),
-            name=self.get_periodic_task_name(),
+            ), name=self.get_periodic_task_name(),
             task=SOURCE_ACTION_EXECUTE_TASK_PATH
         )
 
