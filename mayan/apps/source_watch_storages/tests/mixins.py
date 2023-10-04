@@ -24,7 +24,6 @@ class WatchStorageSourceTestMixin(SourceTestMixinStoredFile):
         if action_name == TEST_CASE_ACTION_NAME_SOURCE_CREATE:
             result.update(
                 {
-                    'delete_after_upload': True,
                     'document_type_id': self._test_document_type.pk,
                     'interval': DEFAULT_PERIOD_INTERVAL,
                     'storage_backend': 'django.core.files.storage.FileSystemStorage',

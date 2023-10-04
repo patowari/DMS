@@ -314,10 +314,8 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
 
-    def test_delete_after_upload_false(self):
-        self._test_source_create(
-            extra_data={'delete_after_upload': False}
-        )
+    def test_dry_run_false(self):
+        self._test_source_create()
 
         self.copy_test_source_file()
 
@@ -329,7 +327,9 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
 
         self._clear_events()
 
-        self._execute_test_source_action(action_name='document_upload')
+        self._execute_test_source_action(
+            action_name='document_upload', extra_data={'dry_run': False}
+        )
 
         self.assertEqual(Document.objects.count(), document_count + 1)
         self.assertEqual(
@@ -340,7 +340,7 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             len(
                 self.get_test_source_stored_file_list()
-            ), test_source_stored_file_count
+            ), test_source_stored_file_count - 1
         )
 
         events = self._get_test_events()
@@ -378,10 +378,8 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
             events[4].verb, event_document_version_page_created.id
         )
 
-    def test_delete_after_upload_true(self):
-        self._test_source_create(
-            extra_data={'delete_after_upload': True}
-        )
+    def test_dry_run_none(self):
+        self._test_source_create()
 
         self.copy_test_source_file()
 
@@ -393,7 +391,9 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
 
         self._clear_events()
 
-        self._execute_test_source_action(action_name='document_upload')
+        self._execute_test_source_action(
+            action_name='document_upload', extra_data={'dry_run': None}
+        )
 
         self.assertEqual(Document.objects.count(), document_count + 1)
         self.assertEqual(
@@ -405,6 +405,70 @@ class WatchFolderSourceBackendActionDocumentUploadTestCase(
             len(
                 self.get_test_source_stored_file_list()
             ), test_source_stored_file_count - 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 5)
+
+        test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, test_document)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].actor, test_document_file)
+        self.assertEqual(events[1].target, test_document_file)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_version)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].actor, test_document_version_page)
+        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
+    def test_dry_run_true(self):
+        self._test_source_create()
+
+        self.copy_test_source_file()
+
+        document_count = Document.objects.count()
+
+        test_source_stored_file_count = len(
+            self.get_test_source_stored_file_list()
+        )
+
+        self._clear_events()
+
+        self._execute_test_source_action(
+            action_name='document_upload', extra_data={'dry_run': True}
+        )
+
+        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.first().file_latest.checksum,
+            TEST_DOCUMENT_SMALL_CHECKSUM
+        )
+
+        self.assertEqual(
+            len(
+                self.get_test_source_stored_file_list()
+            ), test_source_stored_file_count
         )
 
         events = self._get_test_events()

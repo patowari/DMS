@@ -99,12 +99,11 @@ class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
 
     def action_file_get(self, message_id):
         with self._get_server() as server:
-            message_lines = server.retr(which=message_id)[1]
-            message_complete = force_text(
-                s=b'\n'.join(message_lines)
-            )
+            response, message_lines, octets = server.retr(which=message_id)
+            message_combined_bytes = b'\n'.join(message_lines)
+            message = force_text(s=message_combined_bytes)
 
-            yield from self.process_message(message=message_complete)
+            yield from self.process_message(message=message)
 
     def get_stored_file_list(self):
         with self._get_server() as server:

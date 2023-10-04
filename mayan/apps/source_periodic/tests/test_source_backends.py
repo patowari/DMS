@@ -92,11 +92,10 @@ class PeriodicSourceBackendActionTestCase(
         self._clear_events()
 
         self._execute_test_source_action(
-            action_name='document_upload',
-            extra_data={'dry_run': False}
+            action_name='document_upload', extra_data={'dry_run': False}
         )
 
-        self.assertEqual(mocked_action_file_delete.call_count, 0)
+        self.assertEqual(mocked_action_file_delete.call_count, 1)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
 
@@ -131,8 +130,7 @@ class PeriodicSourceBackendActionTestCase(
         self._clear_events()
 
         self._execute_test_source_action(
-            action_name='document_upload',
-            extra_data={'dry_run': True}
+            action_name='document_upload', extra_data={'dry_run': True}
         )
 
         self.assertEqual(mocked_action_file_delete.call_count, 0)
@@ -171,7 +169,7 @@ class PeriodicSourceBackendActionTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(mocked_action_file_delete.call_count, 0)
+        self.assertEqual(mocked_action_file_delete.call_count, 1)
 
         self.assertEqual(Document.objects.count(), document_count + 1)
 

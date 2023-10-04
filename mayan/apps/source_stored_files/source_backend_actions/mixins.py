@@ -394,20 +394,13 @@ class SourceBackendActionMixinFileStoredInteractiveNot(
         elif dry_run is False:
             return True
         elif dry_run is None:
-            return None
+            return True
 
     def get_task_kwargs(self, dry_run, **kwargs):
         result = super().get_task_kwargs(**kwargs)
 
-        source_backend_instance = self.source.get_backend_instance()
-
-        result['action_interface_kwargs']['file_cleanup'] = source_backend_instance.kwargs.get(
-            'delete_after_upload', False
+        result['action_interface_kwargs']['file_cleanup'] = self.convert_dry_run_to_file_cleanup(
+            dry_run=dry_run
         )
-
-        if dry_run:
-            result['action_interface_kwargs']['file_cleanup'] = self.convert_dry_run_to_file_cleanup(
-                dry_run=dry_run
-            )
 
         return result
