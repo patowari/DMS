@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-04 04:16+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
@@ -95,7 +95,7 @@ msgstr "تضمين الدلائل الفرعية؟"
 msgid "Storage"
 msgstr "المساحة التخزينية"
 
-#: source_backends/filesystem_source_mixins.py:124
+#: source_backends/filesystem_source_mixins.py:80
 #: source_backends/storage_backend_source_mixins.py:127
 #, python-format
 msgid "Unable to initialize storage; %s"
@@ -155,33 +155,33 @@ msgstr ""
 msgid "No source files available"
 msgstr ""
 
-#: source_backends/stored_file_mixins.py:188
+#: source_backends/stored_file_mixins.py:190
 msgid "Width value to be passed to the converter backend."
 msgstr "قيمة العرض لتمريرها إلى نظام المعالجة"
 
-#: source_backends/stored_file_mixins.py:193
+#: source_backends/stored_file_mixins.py:195
 msgid "Preview width"
 msgstr "عرض المعاينة"
 
-#: source_backends/stored_file_mixins.py:199
+#: source_backends/stored_file_mixins.py:201
 msgid "Height value to be passed to the converter backend."
 msgstr "قيمة الارتفاع لتمريرها إلى نظام المعالجة"
 
-#: source_backends/stored_file_mixins.py:204
+#: source_backends/stored_file_mixins.py:206
 msgid "Preview height"
 msgstr "معاينة الارتفاع"
 
-#: source_backends/stored_file_mixins.py:211
+#: source_backends/stored_file_mixins.py:213
 msgid ""
 "Maximum size in bytes for which previews will be generated. Example: 20000 ="
 " 20KB."
 msgstr ""
 
-#: source_backends/stored_file_mixins.py:214
+#: source_backends/stored_file_mixins.py:216
 msgid "Max size preview"
 msgstr ""
 
-#: source_backends/stored_file_mixins.py:228
+#: source_backends/stored_file_mixins.py:230
 msgid "File images"
 msgstr ""
 

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-04 04:17+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -315,7 +315,7 @@ msgstr ""
 msgid "General"
 msgstr "عامُّ"
 
-#: source_backends/base.py:131
+#: source_backends/base.py:134
 msgid "Null backend"
 msgstr "خلفية فارغة"
 

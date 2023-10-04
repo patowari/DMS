@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-04 04:17+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -324,7 +324,7 @@ msgstr "ID-ul utilizatorului care va apărea ca actor în evenimente."
 msgid "General"
 msgstr "General"
 
-#: source_backends/base.py:131
+#: source_backends/base.py:134
 msgid "Null backend"
 msgstr "Backend vid"
 

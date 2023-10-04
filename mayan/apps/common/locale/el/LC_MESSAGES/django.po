@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -59,31 +59,35 @@ msgstr "Τεκμηρίωση"
 msgid "Forum"
 msgstr "Φόρουμ"
 
-#: links.py:49 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr ""
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "Άδεια χρήσης"
 
-#: links.py:54
+#: links.py:58
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: links.py:58
+#: links.py:62
 msgid "Setup"
 msgstr "Ρυθμίσεις"
 
-#: links.py:61
+#: links.py:65
 msgid "Source code"
 msgstr "Πηγαίος κώδικας"
 
-#: links.py:65
+#: links.py:69
 msgid "Online store"
 msgstr "Ηλεκτρονικό κατάστημα"
 
-#: links.py:69
+#: links.py:73
 msgid "Get support"
 msgstr "Βοήθεια"
 
-#: links.py:73 views.py:134
+#: links.py:77 views.py:134
 msgid "Tools"
 msgstr "Εργαλεία"
 

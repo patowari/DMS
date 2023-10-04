@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
@@ -58,31 +58,35 @@ msgstr "الوثائق"
 msgid "Forum"
 msgstr "المنتدى"
 
-#: links.py:49 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr ""
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "الرخص"
 
-#: links.py:54
+#: links.py:58
 msgid "Copy"
 msgstr "نسخ"
 
-#: links.py:58
+#: links.py:62
 msgid "Setup"
 msgstr "التثبيت "
 
-#: links.py:61
+#: links.py:65
 msgid "Source code"
 msgstr "مصدر الرمز"
 
-#: links.py:65
+#: links.py:69
 msgid "Online store"
 msgstr "متجر عالمي"
 
-#: links.py:69
+#: links.py:73
 msgid "Get support"
 msgstr "الدعم الفني"
 
-#: links.py:73 views.py:134
+#: links.py:77 views.py:134
 msgid "Tools"
 msgstr "الأدوات"
 

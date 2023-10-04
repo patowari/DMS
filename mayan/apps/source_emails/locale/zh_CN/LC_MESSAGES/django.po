@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-04 04:16+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
@@ -120,10 +120,10 @@ msgstr "超时"
 msgid "POP3 protocol"
 msgstr ""
 
-#: tests/source_backends.py:32
+#: tests/source_backends.py:58
 msgid "Test IMAP email"
 msgstr ""
 
-#: tests/source_backends.py:45
+#: tests/source_backends.py:73
 msgid "Test POP3 email"
 msgstr ""

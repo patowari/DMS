@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-04 04:16+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -26,15 +26,15 @@ msgstr ""
 
 #: classes.py:59
 msgid "Document version export to PDF"
-msgstr ""
+msgstr "Eksport wersji dokumentu do formatu PDF"
 
 #: events.py:10
 msgid "Document version exported"
-msgstr ""
+msgstr "Wyeksportowano wersję dokumentu"
 
 #: links.py:11
 msgid "Export"
-msgstr ""
+msgstr "Eksport"
 
 #: literals.py:4
 #, python-format
@@ -43,14 +43,17 @@ msgid ""
 " for download using the link: %(download_url)s or from the downloads area "
 "(%(download_list_url)s)."
 msgstr ""
+"Wersja dokumentu \"%(document_version)s\" została wyeksportowana i jest "
+"dostępna do pobrania pod linkiem: %(download_url)s lub w obszarze pobierania"
+" ( %(download_list_url)s )."
 
 #: literals.py:9
 msgid "Document version exported."
-msgstr ""
+msgstr "Wyeksportowano wersję dokumentu."
 
 #: permissions.py:10
 msgid "Export document versions"
-msgstr ""
+msgstr "Eksportuj wersje dokumentów"
 
 #: queues.py:7
 msgid "Documents exports"
@@ -63,32 +66,33 @@ msgstr ""
 #: views.py:17
 #, python-format
 msgid "Document version \"%(object)s\" export successfully queued."
-msgstr ""
+msgstr "Eksport wersji dokumentu \"%(object)s\" pomyślnie umieszczony w kolejce."
 
 #: views.py:20
 #, python-format
 msgid "%(count)d document version export successfully queued."
-msgstr ""
+msgstr " Eksport %(count)d wersji dokumentu pomyślnie umieszczony w kolejce."
 
 #: views.py:23
 #, python-format
 msgid "%(count)d document versions exports successfully queued."
 msgstr ""
+" Eksporty %(count)d wersji dokumentów pomyślnie umieszczono w kolejce."
 
 #: views.py:25
 #, python-format
 msgid "Export %(count)d document versions."
-msgstr ""
+msgstr "Eksportuj %(count)d wersje dokumentu."
 
 #: views.py:26
 #, python-format
 msgid "Export document version \"%(object)s\"."
-msgstr ""
+msgstr "Eksportuj wersję dokumentu \"%(object)s\"."
 
 #: views.py:27
 #, python-format
 msgid "Export %(count)d document version."
-msgstr ""
+msgstr "Eksportuj %(count)d wersję dokumentu  ."
 
 #: views.py:33
 msgid ""

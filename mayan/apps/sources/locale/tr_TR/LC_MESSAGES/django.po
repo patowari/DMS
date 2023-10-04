@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-04 04:17+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -317,7 +317,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: source_backends/base.py:131
+#: source_backends/base.py:134
 msgid "Null backend"
 msgstr "Boş backend"
 
