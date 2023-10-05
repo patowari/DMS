@@ -2,6 +2,7 @@
 ==================
 - Move periodic task import checking to the task manager app and condition
   it to the debug or testing environments.
+- Update Django from version 3.2.20 to 3.2.22.
 
 4.5.4 (2023-10-04)
 ==================
