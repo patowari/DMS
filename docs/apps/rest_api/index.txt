@@ -5,52 +5,21 @@ REST API
 Introduction
 ============
 
-Mayan EDMS provides an HTTP REST Application Program Interface (or API). This
-API allows integration with 3rd party software using simple HTTP requests.
+.. include::  ../../partials/kb_migration.txt
 
-Several API authentication methods are provided: **Session**, **Token**,
-and **HTTP Basic**.
+.. note::
 
-The URL for the API can be found via the :menuselection:`Tools --> REST API`
-menu. The API is also self-documenting. The live API documentation can be
-found in the :menuselection:`Tools --> API Documentation (Swagger)` menu for
-the Swagger version and in the
-:menuselection:`Tools --> API Documentation (ReDoc)` menu for the ReDoc version.
+    Knowledge Base content
 
-There are a few ways to structure REST APIs. In the case of Mayan EDMS, API
-endpoints are structured by resource type. Examples:
+    Articles:
 
-* ``/cabinets`` - To view or create new cabinets
-* ``/cabinets/{id}`` - To view the details, edit, or delete an existing cabinet.
-* ``/cabinets/{id}/documents`` - To view, add, or remove documents from an existing
-  cabinet.
-* ``/cabinets/{id}/documents/{id}`` - To view, add, or remove one document from an
-  existing cabinet.
+    - Using the REST API
+    - Optimizing API responsed using the dynamic API fields feature
 
-The API is versioned with a top level entry. Since Mayan uses semantic
-versioning and API changes only occur on major versions, the API version will
-match the major version of the release. For every release of the series 4.x
-the API version will be "v4".
+    Troubleshooting:
 
-The API supports the HTTP verbs: **GET**, **POST**, **PUT**, **PATCH**,
-and **DELETE**.
-
-The API supports result sorting. Like the user interface, only indexed
-database fields support. The **OPTION** verb can be used to determine
-which fields are sortable.
-
-
-Dynamic fields
-==============
-
-The schema of the responses can be modified to reduce the serialization
-performance penalty of complex API. This is supported via the URL query
-keys ``_fields_only`` and ``_fields_exclude``. ``_fields_only`` will cause
-the schema to include only the fields listed while ``_fields_exclude``
-works in reverse removing the fields listed.
-
-Related fields from other serializers are supported using the double
-underscore (``__``) separator.
+    - The API for the file downloads section is missing
+    - How to retrieve the list of available search models
 
 
 Batch API requests
