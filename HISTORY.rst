@@ -6,6 +6,9 @@
 - Migrate REST API sections to Knowledge base.
 - Migrate the sources chapter to the Knowledge base.
 - Migrate metadata chapter to Knowledge base.
+- Ensure that no two document versions are set as active at the same time,
+  even when bypassing the ``set_active`` method. Close GitLab issue #1158
+  thanks to Mathias Behrle (@mbehrle) for the report.
 
 4.5.4 (2023-10-04)
 ==================

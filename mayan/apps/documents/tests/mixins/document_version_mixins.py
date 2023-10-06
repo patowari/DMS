@@ -64,12 +64,20 @@ class DocumentVersionAPIViewTestMixin:
             }, data={'comment': TEST_DOCUMENT_VERSION_COMMENT_EDITED}
         )
 
-    def _request_test_document_version_edit_via_put_api_view(self):
+    def _request_test_document_version_edit_via_put_api_view(
+        self, extra_view_kwargs=None
+    ):
+        view_kwargs = {
+            'document_id': self._test_document.pk,
+            'document_version_id': self._test_document.version_active.pk
+        }
+
+        if extra_view_kwargs:
+            view_kwargs.update(**extra_view_kwargs)
+
         return self.put(
-            viewname='rest_api:documentversion-detail', kwargs={
-                'document_id': self._test_document.pk,
-                'document_version_id': self._test_document.version_active.pk
-            }, data={
+            viewname='rest_api:documentversion-detail', kwargs=view_kwargs,
+            data={
                 'active': True,
                 'comment': TEST_DOCUMENT_VERSION_COMMENT_EDITED
             }

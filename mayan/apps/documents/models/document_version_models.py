@@ -102,6 +102,15 @@ class DocumentVersion(
 
                 return result
         else:
+            # Handle existing document versions that change the value of
+            # active directly without using the method `active_set`. Such
+            # as via the API or direct model manipulation.
+            if self.active:
+                # Don't save the version. The active value will be made
+                # permanent in the `super.save` call following this
+                # statement.
+                self.active_set(save=False)
+
             return super().save(*args, **kwargs)
 
 
