@@ -582,3 +582,40 @@ class DocumentVersionAPIViewTestCase(
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
+
+
+class DocumentVersionBusinessLogicAPIViewTestCase(
+    DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin,
+    BaseAPITestCase
+):
+    def test_document_version_multiple_active_via_put_api_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_version_edit
+        )
+
+        self._create_test_document_version()
+
+        self._clear_events()
+
+        response = self._request_test_document_version_edit_via_put_api_view(
+            extra_view_kwargs={
+                'document_version_id': self._test_document_version_list[1].pk
+            }
+        )
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self._test_document_version_list[0].refresh_from_db()
+        self._test_document_version_list[1].refresh_from_db()
+
+        self.assertEqual(self._test_document_version_list[0].active, False)
+        self.assertEqual(self._test_document_version_list[1].active, True)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_document_version)
+        self.assertEqual(events[0].verb, event_document_version_edited.id)

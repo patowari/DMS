@@ -19,7 +19,9 @@ from ..literals import (
 
 class DocumentVersionAPIViewTestMixin:
     def _request_test_document_version_create_api_view(self):
-        pk_list = list(DocumentVersion.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentVersion.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:documentversion-list', kwargs={
@@ -60,12 +62,20 @@ class DocumentVersionAPIViewTestMixin:
             }, data={'comment': TEST_DOCUMENT_VERSION_COMMENT_EDITED}
         )
 
-    def _request_test_document_version_edit_via_put_api_view(self):
+    def _request_test_document_version_edit_via_put_api_view(
+        self, extra_view_kwargs=None
+    ):
+        view_kwargs = {
+            'document_id': self._test_document.pk,
+            'document_version_id': self._test_document.version_active.pk
+        }
+
+        if extra_view_kwargs:
+            view_kwargs.update(**extra_view_kwargs)
+
         return self.put(
-            viewname='rest_api:documentversion-detail', kwargs={
-                'document_id': self._test_document.pk,
-                'document_version_id': self._test_document.version_active.pk
-            }, data={
+            viewname='rest_api:documentversion-detail', kwargs=view_kwargs,
+            data={
                 'active': True,
                 'comment': TEST_DOCUMENT_VERSION_COMMENT_EDITED
             }
@@ -222,7 +232,7 @@ class DocumentVersionTestMixin:
 
     def setUp(self):
         super().setUp()
-        self._test_document_versions = []
+
         if self.auto_create_test_document_version:
             self._create_test_document_version()
 

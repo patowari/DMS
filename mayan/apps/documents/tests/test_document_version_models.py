@@ -2,9 +2,15 @@ from ..document_file_actions import (
     DocumentFileActionAppendNewPages, DocumentFileActionNothing,
     DocumentFileActionUseNewPages
 )
+from ..events import (
+    event_document_file_created, event_document_file_edited,
+    event_document_version_created, event_document_version_edited,
+    event_document_version_page_created
+)
 
 from .base import GenericDocumentTestCase
 from .mixins.document_file_mixins import DocumentFileTestMixin
+from .mixins.document_version_mixins import DocumentVersionTestMixin
 
 
 class DocumentVersionTestCase(
@@ -82,6 +88,46 @@ class DocumentVersionTestCase(
         )
 
     def test_method_get_absolute_url(self):
+        self._clear_events()
+
         self.assertTrue(
             self._test_document.version_active.get_absolute_url()
         )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+
+class DocumentVersionBusinessLogicTestCase(
+    DocumentVersionTestMixin, GenericDocumentTestCase
+):
+    def test_multiple_active(self):
+        self._create_test_document_version()
+
+        self._test_document_versions[0].refresh_from_db()
+        self._test_document_versions[1].refresh_from_db()
+
+        self.assertEqual(self._test_document_versions[0].active, False)
+        self.assertEqual(self._test_document_versions[1].active, True)
+
+        self._clear_events()
+
+        self._test_document_versions[0].active = True
+        self._test_document_versions[0]._event_actor = self._test_case_user
+        self._test_document_versions[0].save()
+
+        self._test_document_versions[0].refresh_from_db()
+        self._test_document_versions[1].refresh_from_db()
+
+        self.assertEqual(self._test_document_versions[0].active, True)
+        self.assertEqual(self._test_document_versions[1].active, False)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(
+            events[0].target, self._test_document_versions[0]
+        )
+        self.assertEqual(events[0].verb, event_document_version_edited.id)
