@@ -479,82 +479,18 @@ of the last request for verification.
 Dynamic fields
 --------------
 
-For an fictional document API endpoint that returns:
+.. include::  ../../partials/kb_migration.txt
 
-.. code-block:: json
+.. note::
 
-    {
-      "datetime_created": "2021-10-30T11:08:14.893527Z",
-      "description": "",
-      "document_change_type_url": "http://127.0.0.1:8000/api/v4/documents/1/type/change/",
-      "document_type": {
-        "delete_time_period": 30,
-        "delete_time_unit": "days",
-        "filename_generator_backend": "uuid",
-        "filename_generator_backend_arguments": "",
-        "id": 1,
-        "label": "Default",
-        "quick_label_list_url": "http://127.0.0.1:8000/api/v4/document_types/1/quick_labels/",
-        "trash_time_period": null,
-        "trash_time_unit": null,
-        "url": "http://127.0.0.1:8000/api/v4/document_types/1/"
-      },
-      "file_latest": {
-        "checksum": "0cbfebd6414236de73c851bd8ac16b040e096b3c13c86d7b1024dcedf3291620",
-        "comment": "",
-        "document_url": "http://127.0.0.1:8000/api/v4/documents/1/",
-        "download_url": "http://127.0.0.1:8000/api/v4/documents/1/files/1/download/",
-        "encoding": "binary",
-        "file": "e3139bfa-f734-42d5-b0b3-9afdf408580e",
-        "filename": "lorem impsum",
-        "id": 1,
-        "mimetype": "application/pdf",
-        "page_list_url": "http://127.0.0.1:8000/api/v4/documents/1/files/1/pages/",
-        "size": 45726,
-        "timestamp": "2021-10-30T11:08:14.972253Z",
-        "url": "http://127.0.0.1:8000/api/v4/documents/1/files/1/"
-      },
-      "file_list_url": "http://127.0.0.1:8000/api/v4/documents/1/files/",
-      "id": 1,
-      "label": "lorem impsum",
-      "language": "eng",
-      "url": "http://127.0.0.1:8000/api/v4/documents/1/",
-      "uuid": "49395648-96fa-492e-8f44-b568a456859a",
-      "version_active": {
-        "active": true,
-        "comment": "",
-        "document_url": "http://127.0.0.1:8000/api/v4/documents/1/",
-        "export_url": "http://127.0.0.1:8000/api/v4/documents/1/versions/1/export/",
-        "id": 1,
-        "page_list_url": "http://127.0.0.1:8000/api/v4/documents/1/versions/1/pages/",
-        "timestamp": "2021-10-30T11:08:15.778539Z",
-        "url": "http://127.0.0.1:8000/api/v4/documents/1/versions/1/"
-      },
-      "version_list_url": "http://127.0.0.1:8000/api/v4/documents/1/versions/"
-    }
+    Knowledge Base content
 
-Using ``_fields_only=id,label`` will return:
+    Articles:
 
-.. code-block:: json
+    - Using the REST API
+    - Optimizing API responsed using the dynamic API fields feature
 
-    {
-      "id": 1,
-      "label": "lorem impsum",
-    }
+    Troubleshooting:
 
-Related fields are supported. Using ``_fields_only=id,label,document_type__label,file_latest__id`` will return:
-
-.. code-block:: json
-
-    {
-      "document_type": {
-        "label": "Default",
-      },
-      "file_latest": {
-        "id": 1,
-      },
-      "id": 1,
-      "label": "lorem impsum",
-    }
-
-
+    - The API for the file downloads section is missing
+    - How to retrieve the list of available search models
