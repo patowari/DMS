@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-06 14:20+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -41,7 +41,7 @@ msgstr "Aktenschrank angelegt"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr ""
+msgstr "Aktenschrank gelöscht"
 
 #: events.py:17
 msgid "Cabinet edited"
@@ -106,7 +106,7 @@ msgstr "Vollständiger Pfad"
 
 #: models.py:32 serializers.py:41
 msgid "Parent"
-msgstr ""
+msgstr "Übergeordneter Aktenschrank"
 
 #: models.py:35
 msgid "A short text used to identify the cabinet."
@@ -195,7 +195,7 @@ msgstr "Liste der Unter-Aktenschränke."
 
 #: serializers.py:18
 msgid "Children"
-msgstr ""
+msgstr "Untergeordnete Aktenschränke"
 
 #: serializers.py:23
 msgid ""
@@ -206,7 +206,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr ""
+msgstr "Dokument-URL"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -216,7 +216,7 @@ msgstr ""
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr ""
+msgstr "Übergeordnete URL"
 
 #: serializers.py:51
 msgid "URL"
@@ -225,6 +225,7 @@ msgstr "URL"
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
 msgstr ""
+"Primärschlüssel des Dokuments, das zum Aktenschrank hinzugefügt werden soll."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
@@ -233,6 +234,7 @@ msgstr "Dokument-ID"
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
+"Primärschlüssel des Dokuments, das aus Aktenschrank entfernt werden soll."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
@@ -375,4 +377,4 @@ msgstr "Aktenschränke zu denen die ausgewählten Dokumente hinzugefügt werden.
 
 #: workflow_actions.py:83
 msgid "Cabinets from which the document will be removed"
-msgstr ""
+msgstr "Aktenschränke aus denen das Dokument entfernt werden soll"

@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +22,16 @@ msgstr ""
 
 #: apps.py:18 settings.py:8
 msgid "Authentication OIDC"
-msgstr ""
+msgstr "Authentifizierung OIDC (OpenID Connect)"
 
 #: authentication_backends.py:97
 msgid "Login via OIDC"
-msgstr ""
+msgstr "Login via OIDC"
 
 #: links.py:22
 msgid "OIDC user details"
-msgstr ""
+msgstr "OIDC Benutzerdetails"
 
 #: settings.py:14
 msgid "URL for the OIDC user profile page."
-msgstr ""
+msgstr "URL für die OIDC Benutzerprofilseite."

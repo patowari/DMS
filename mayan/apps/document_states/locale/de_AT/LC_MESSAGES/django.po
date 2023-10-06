@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-06 14:20+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -150,7 +150,7 @@ msgstr "Dokumente"
 
 #: classes.py:33
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #: classes.py:109
 #, python-format
@@ -830,15 +830,15 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:13
 msgid "Document types add URL"
-msgstr ""
+msgstr "Dokumententypen hinzufügen URL"
 
 #: serializers/workflow_template_serializers.py:18
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Dokumententypen entfernen URL"
 
 #: serializers/workflow_template_serializers.py:23
 msgid "Document types URL"
-msgstr ""
+msgstr "Dokumententypen URL"
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"

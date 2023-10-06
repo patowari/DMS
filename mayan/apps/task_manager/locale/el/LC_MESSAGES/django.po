@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-06 15:30+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -21,102 +21,102 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:29 permissions.py:6
+#: apps.py:32 permissions.py:6
 msgid "Task manager"
 msgstr "Διαχειριστής εργασιών"
 
-#: apps.py:100 apps.py:125 apps.py:163
+#: apps.py:114 apps.py:139 apps.py:177
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: apps.py:104 apps.py:128 apps.py:167
+#: apps.py:118 apps.py:142 apps.py:181
 msgid "Name"
 msgstr "Όνομα"
 
-#: apps.py:109
+#: apps.py:123
 msgid "Default queue?"
 msgstr "Προεπιλεγμένη ουρά;"
 
-#: apps.py:114
+#: apps.py:128
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
 "the broker is restarted. Transient queues use less resources and managed non"
 " critical tasks."
 msgstr ""
 
-#: apps.py:117
+#: apps.py:131
 msgid "Is transient?"
 msgstr "Είναι παροδική;"
 
-#: apps.py:131
+#: apps.py:145
 msgid "Dotted path"
 msgstr ""
 
-#: apps.py:134
+#: apps.py:148
 msgid "Schedule"
 msgstr "Προγραμματισμός"
 
-#: apps.py:138
+#: apps.py:152
 msgid "Type"
 msgstr "Τύπος"
 
-#: apps.py:143
+#: apps.py:157
 msgid "Start time"
 msgstr "Ώρα έναρξης"
 
-#: apps.py:147
+#: apps.py:161
 msgid "Host"
 msgstr "Διακομιστής"
 
-#: apps.py:151
+#: apps.py:165
 msgid "Arguments"
 msgstr "Ορίσματα"
 
-#: apps.py:155
+#: apps.py:169
 msgid "Keyword arguments"
 msgstr "Ορίσματα λέξεων κλειδιών"
 
-#: apps.py:159
+#: apps.py:173
 msgid "Worker process ID"
 msgstr "Αναγνωριστικό διαδικασίας worker"
 
-#: apps.py:171
+#: apps.py:185
 msgid ""
 "Maximum amount of resident memory a worker can execute before it's replaced "
 "by a new process."
 msgstr ""
 
-#: apps.py:173
+#: apps.py:187
 msgid "Maximum memory per child"
 msgstr ""
 
-#: apps.py:177
+#: apps.py:191
 msgid ""
 "Maximum number of tasks a worker can execute before it's replaced by a new "
 "process."
 msgstr ""
 
-#: apps.py:179
+#: apps.py:193
 msgid "Maximum tasks per child"
 msgstr ""
 
-#: apps.py:183
+#: apps.py:197
 msgid ""
 "The number of worker processes/threads to launch. Defaults to the number of "
 "CPUs available on the machine."
 msgstr ""
 
-#: apps.py:185
+#: apps.py:199
 msgid "Concurrency"
 msgstr ""
 
-#: apps.py:189
+#: apps.py:203
 msgid ""
 "The nice value determines the priority of the process. A higher value lowers"
 " the priority. The default value is 0."
 msgstr ""
 
-#: apps.py:192
+#: apps.py:206
 msgid "Nice level"
 msgstr ""
 

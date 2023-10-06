@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -53,7 +53,7 @@ msgstr "LibreOffice ist nicht installiert oder wurde nicht gefunden."
 
 #: classes.py:279
 msgid "Not an office file format."
-msgstr "Kein Office-Dateiformat"
+msgstr "Kein Office-Dateiformat."
 
 #: classes.py:415
 msgid ""
@@ -78,7 +78,7 @@ msgstr ""
 
 #: events.py:10
 msgid "Asset created"
-msgstr ""
+msgstr "Asset erzeugt"
 
 #: events.py:13
 msgid "Asset edited"
@@ -86,7 +86,7 @@ msgstr "Bestand bearbeiten"
 
 #: forms.py:17
 msgid "Asset preview image"
-msgstr ""
+msgstr "Asset Vorschau"
 
 #: forms.py:17
 msgid "Preview"
@@ -105,6 +105,8 @@ msgstr "\"%s\" ist kein gültiger Eintrag."
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
+"Dekorationen sind visuelle Elemente, die kontextuelle Information zu Bildern"
+" hinzufügen."
 
 #: layers.py:14
 msgid "Decorations"
@@ -116,7 +118,7 @@ msgstr "Gespeicherte Transformationen"
 
 #: links.py:35 views/asset_views.py:36
 msgid "Create asset"
-msgstr ""
+msgstr "Asset erzeugen"
 
 #: links.py:38 links.py:44 links.py:67
 msgid "Delete"
@@ -129,7 +131,7 @@ msgstr "Bearbeiten"
 #: links.py:52 links.py:59 models.py:54 storages.py:21
 #: views/asset_views.py:144
 msgid "Assets"
-msgstr ""
+msgstr "Assets"
 
 #: links.py:76 workflow_actions.py:91
 msgid "Transformations"
@@ -152,6 +154,8 @@ msgid ""
 "This value will be used when referencing this asset. Can only contain "
 "letters, numbers, and underscores."
 msgstr ""
+"Dieser Wert wird benutzt, um auf dieses Asset zu verweisen. Kann nur "
+"Buchstaben, Nummern und Unterstriche enthalten."
 
 #: models.py:44
 msgid "Internal name"
@@ -163,7 +167,7 @@ msgstr "Datei"
 
 #: models.py:53 transformation_mixins.py:306
 msgid "Asset"
-msgstr ""
+msgstr "Asset"
 
 #: models.py:90 models.py:161 serializers.py:10
 msgid "Name"
@@ -231,19 +235,19 @@ msgstr "Unbekannte Klasse von Transformation"
 
 #: permissions.py:10
 msgid "Create new assets"
-msgstr ""
+msgstr "Neue Assets erzeugen"
 
 #: permissions.py:13
 msgid "Delete assets"
-msgstr ""
+msgstr "Assets löschen"
 
 #: permissions.py:16
 msgid "Edit assets"
-msgstr ""
+msgstr "Assets bearbeiten"
 
 #: permissions.py:19
 msgid "View existing assets"
-msgstr ""
+msgstr "Existierende Assets betrachten"
 
 #: permissions.py:23
 msgid "Create new transformations"
@@ -263,11 +267,11 @@ msgstr "Transformationen anzeigen"
 
 #: queues.py:12
 msgid "Generate a image of an object."
-msgstr ""
+msgstr "Bild eines Objekts erzeugen."
 
 #: serializers.py:13
 msgid "Image path"
-msgstr ""
+msgstr "Bildpfad"
 
 #: serializers.py:16 serializers.py:32
 msgid "Image URL"
@@ -275,7 +279,7 @@ msgstr "Bild URL"
 
 #: serializers.py:21
 msgid "Template name"
-msgstr ""
+msgstr "Vorlagename"
 
 #: serializers.py:24 serializers.py:39
 msgid "URL"
@@ -286,27 +290,30 @@ msgid ""
 "The threshold at which the CONVERTER_ASSET_CACHE_STORAGE_BACKEND will start "
 "deleting the oldest asset cache files. Specify the size in bytes."
 msgstr ""
+"Der Grenzwert (in bytes) ab dem das CONVERTER_ASSET_CACHE_STORAGE_BACKEND "
+"die ältesten Asset Cache-Dateien entfernt."
 
 #: settings.py:38
 msgid ""
 "Path to the Storage subclass to use when storing the cached asset files."
 msgstr ""
+"Pfad zu der Storage subclass für die Speicherung der Asset Cache-Dateien."
 
 #: settings.py:46
 msgid "Arguments to pass to the CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
-msgstr ""
+msgstr "Argumente für CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
 
 #: settings.py:52
 msgid "Path to the Storage subclass to use when storing assets."
-msgstr ""
+msgstr "Pfad zu der Storage subclass für die Speicherung der Asset Dateien."
 
 #: settings.py:58
 msgid "Arguments to pass to the CONVERTER_ASSET_STORAGE_BACKEND."
-msgstr ""
+msgstr "Argumente für CONVERTER_ASSET_STORAGE_BACKEND."
 
 #: settings.py:64
 msgid "Graphics conversion backend to use."
-msgstr "Zu benutzendes Bildverarbeitungs-Backend"
+msgstr "Zu benutzendes Bildverarbeitungs-Backend."
 
 #: settings.py:70
 msgid "Configuration options for the graphics conversion backend."
@@ -314,48 +321,58 @@ msgstr "Einstellungsmöglichkeiten für das Konvertierungsbackend."
 
 #: settings.py:77
 msgid "Time in seconds that the browser should cache the supplied image. "
-msgstr ""
+msgstr "Zeit (in Sekunden) die der Browser das Bild im Cache behalten sollte."
 
 #: settings.py:84
 msgid ""
 "Maximum number of retries before giving up. A value of None means the task "
 "will retry forever."
 msgstr ""
+"Maximale Anzahl von Versuchen. Ein Wert von None bedeutet, dass der Task "
+"unendlich wieder versucht wird."
 
 #: settings.py:92
 msgid ""
 "Time in seconds after which the image generation task will stop running and "
 "raise an error."
 msgstr ""
+"Zeit (in Sekunden) nach der der Task der Bildgenerierung mit Fehlermeldung "
+"stoppt."
 
 #: storages.py:15
 msgid ""
 "Unable to initialize the converter asset storage. Check the settings {} and "
 "{} for formatting errors."
 msgstr ""
+"Fehler bei Initialisierung des Konverter Asset Storage. Die Einstellungen {}"
+" und {} auf Formatierungsfehler überprüfen."
 
 #: storages.py:28
 msgid ""
 "Unable to initialize the converter asset cachestorage. Check the settings {}"
 " and {} for formatting errors."
 msgstr ""
+"Fehler bei Initialisierung des Konverter Asset Cache Storage. Die "
+"Einstellungen {} und {} auf Formatierungsfehler überprüfen."
 
 #: storages.py:34
 msgid "Assets cache"
-msgstr ""
+msgstr "Asset Cache"
 
 #: transformation_mixins.py:20 transformations.py:617
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
+"Gradzahl für die Rotation des Bilds um seinen Mittelpunkt im "
+"Gegenuhrzeigersinn."
 
 #: transformation_mixins.py:22
 msgid "Rotation"
-msgstr ""
+msgstr "Rotation"
 
 #: transformation_mixins.py:25
 msgid "Opacity level of the image in percent"
-msgstr ""
+msgstr "Opazität des Bildes in Prozent"
 
 #: transformation_mixins.py:26
 msgid "Transparency"
@@ -363,7 +380,7 @@ msgstr "Transparenz"
 
 #: transformation_mixins.py:29 transformations.py:722
 msgid "Zoom level in percent."
-msgstr ""
+msgstr "Zoom in Prozent."
 
 #: transformation_mixins.py:29 transformations.py:717
 msgid "Zoom"
@@ -375,7 +392,7 @@ msgstr "Bild einfügen"
 
 #: transformation_mixins.py:118
 msgid "Horizontal position in pixels from the left."
-msgstr ""
+msgstr "Horizontale Position von links in Pixeln."
 
 #: transformation_mixins.py:119 transformation_mixins.py:163
 #: transformation_mixins.py:227 transformations.py:226 transformations.py:325
@@ -385,7 +402,7 @@ msgstr "Links"
 
 #: transformation_mixins.py:122
 msgid "Vertical position in pixels from the top."
-msgstr ""
+msgstr "Vertikale Position von oben in Pixeln."
 
 #: transformation_mixins.py:123 transformation_mixins.py:167
 #: transformation_mixins.py:235 transformations.py:230 transformations.py:329
@@ -395,27 +412,27 @@ msgstr "Oben"
 
 #: transformation_mixins.py:157
 msgid "Paste an image (percents coordinates)"
-msgstr ""
+msgstr "Ein Bild einfügen (Koordinaten in Prozent)"
 
 #: transformation_mixins.py:162
 msgid "Horizontal position in percent from the left."
-msgstr ""
+msgstr "Horizontale Position von links in Prozent."
 
 #: transformation_mixins.py:166
 msgid "Vertical position in percent from the top."
-msgstr ""
+msgstr "Vertikale Position von oben in Prozent."
 
 #: transformation_mixins.py:220 transformations.py:214
 msgid "Paste an asset as watermark"
-msgstr ""
+msgstr "Ein Asset als Wasserzeichen einfügen"
 
 #: transformation_mixins.py:226
 msgid "Horizontal start position in pixels from the left."
-msgstr ""
+msgstr "Horizontale Startposition von links in Pixeln."
 
 #: transformation_mixins.py:230
 msgid "Horizontal end position in pixels from the right."
-msgstr ""
+msgstr "Horizontale Endposition von rechts in Pixeln."
 
 #: transformation_mixins.py:231 transformations.py:234 transformations.py:333
 #: transformations.py:432
@@ -424,11 +441,11 @@ msgstr "Rechts"
 
 #: transformation_mixins.py:234
 msgid "Vertical start position in pixels from the top."
-msgstr ""
+msgstr "Vertikale Startposition von oben in Pixeln."
 
 #: transformation_mixins.py:238
 msgid "Vertical end position in pixels from the top."
-msgstr ""
+msgstr "Vertikale Endposition von oben in Pixeln."
 
 #: transformation_mixins.py:239 transformations.py:238 transformations.py:338
 #: transformations.py:436
@@ -437,7 +454,7 @@ msgstr "Unten"
 
 #: transformation_mixins.py:242
 msgid "Horizontal position increments in pixels."
-msgstr ""
+msgstr "Horizontale Position Zunahme in Pixeln."
 
 #: transformation_mixins.py:243
 msgid "Horizontal increment"
@@ -445,7 +462,7 @@ msgstr "Horizontale Zunahme"
 
 #: transformation_mixins.py:246
 msgid "Vertical position increments in pixels."
-msgstr ""
+msgstr "Vertikale Position Zunahme in Pixeln."
 
 #: transformation_mixins.py:247
 msgid "Vertical increment"
@@ -453,11 +470,11 @@ msgstr "Vertikale Zunahme"
 
 #: transformation_mixins.py:306
 msgid "Asset name"
-msgstr ""
+msgstr "Name des Asset"
 
 #: transformation_mixins.py:349
 msgid "Color used to fill the rectangle."
-msgstr ""
+msgstr "Verwendete Füllfarbe für das Rechteck."
 
 #: transformation_mixins.py:350 transformations.py:624
 msgid "Fill color"
@@ -465,35 +482,35 @@ msgstr "Füllfarbe"
 
 #: transformation_mixins.py:353
 msgid "Opacity level of the fill color in percent"
-msgstr ""
+msgstr "Opazitätsgrad der Füllfarbe in Prozent."
 
 #: transformation_mixins.py:354
 msgid "Fill transparency"
-msgstr ""
+msgstr "Füllungstransparenz"
 
 #: transformation_mixins.py:357
 msgid "Color used for the outline of the rectangle."
-msgstr ""
+msgstr "Verwendete Umrahmungsfarbe für das Rechteck."
 
 #: transformation_mixins.py:358
 msgid "Outline color"
-msgstr ""
+msgstr "Umrahmungsfarbe."
 
 #: transformation_mixins.py:361
 msgid "Width in pixels of the rectangle outline."
-msgstr ""
+msgstr "Breite der Umrahmung in Pixeln."
 
 #: transformation_mixins.py:362
 msgid "Outline width"
-msgstr ""
+msgstr "Umrahmungsbreite"
 
 #: transformations.py:198
 msgid "Paste an asset (absolute coordinates)"
-msgstr ""
+msgstr "Ein Asset einfügen (absolute Koordinaten)"
 
 #: transformations.py:206
 msgid "Paste an asset (percents coordinates)"
-msgstr ""
+msgstr "Ein Asset einfügen (Koordinaten in Prozent)"
 
 #: transformations.py:220
 msgid "Crop"
@@ -501,19 +518,19 @@ msgstr "Zuschneiden"
 
 #: transformations.py:225
 msgid "Number of pixels to remove from the left."
-msgstr "Beschnitt von links in Pixel"
+msgstr "Beschnitt von links in Pixeln."
 
 #: transformations.py:229
 msgid "Number of pixels to remove from the top."
-msgstr "Beschnitt von oben in Pixel"
+msgstr "Beschnitt von oben in Pixeln."
 
 #: transformations.py:233
 msgid "Number of pixels to remove from the right."
-msgstr "Beschnitt von rechts in Pixel"
+msgstr "Beschnitt von rechts in Pixeln."
 
 #: transformations.py:237
 msgid "Number of pixels to remove from the bottom."
-msgstr "Beschnitt von unten in Pixel"
+msgstr "Beschnitt von unten in Pixeln."
 
 #: transformations.py:320
 msgid "Draw rectangle"
@@ -521,19 +538,19 @@ msgstr "Zeichne Rechteck"
 
 #: transformations.py:325
 msgid "Left side location in pixels."
-msgstr ""
+msgstr "Anordnung links in Pixeln."
 
 #: transformations.py:329
 msgid "Top side location in pixels."
-msgstr ""
+msgstr "Anordnung oben in Pixeln."
 
 #: transformations.py:333
 msgid "Right side location in pixels."
-msgstr ""
+msgstr "Anordnung rechts in Pixeln."
 
 #: transformations.py:337
 msgid "Bottom side location in pixels."
-msgstr ""
+msgstr "Anordnung unten in Pixeln."
 
 #: transformations.py:418
 msgid "Draw rectangle (percents coordinates)"
@@ -541,19 +558,19 @@ msgstr "Zeichne Rechteck (Prozent-Koordinaten)"
 
 #: transformations.py:423
 msgid "Left side location in percent."
-msgstr ""
+msgstr "Anordnung links in Prozent."
 
 #: transformations.py:427
 msgid "Top side location in percent."
-msgstr ""
+msgstr "Anordnung oben in Prozent."
 
 #: transformations.py:431
 msgid "Right side location in percent."
-msgstr ""
+msgstr "Anordnung rechts in Prozent."
 
 #: transformations.py:435
 msgid "Bottom side location in percent."
-msgstr ""
+msgstr "Anordnung unten in Prozent."
 
 #: transformations.py:514
 msgid "Flip"
@@ -581,7 +598,7 @@ msgstr "Größe ändern"
 
 #: transformations.py:573
 msgid "New width in pixels."
-msgstr "Neue Breite in Pixel"
+msgstr "Neue Breite in Pixeln."
 
 #: transformations.py:574
 msgid "Width"
@@ -589,7 +606,7 @@ msgstr "Breite"
 
 #: transformations.py:578
 msgid "New height in pixels."
-msgstr "Neue Höhe in Pixel"
+msgstr "Neue Höhe in Pixeln."
 
 #: transformations.py:579
 msgid "Height"
@@ -605,7 +622,7 @@ msgstr "Grade"
 
 #: transformations.py:623
 msgid "Color to be used for area outside of the rotated image."
-msgstr ""
+msgstr "Zu verwendende Farbe für den Bereich außerhalb des rotierten Bildes."
 
 #: transformations.py:654
 msgid "Rotate 90 degrees"
@@ -625,11 +642,11 @@ msgstr "Unscharf maskieren"
 
 #: transformations.py:691
 msgid "The blur radius in pixels."
-msgstr ""
+msgstr "Unschärferadius in Pixeln."
 
 #: transformations.py:695
 msgid "Unsharp strength in percent."
-msgstr ""
+msgstr "Unschärferadius in Prozent"
 
 #: transformations.py:696 transformations.py:723
 msgid "Percent"
@@ -637,62 +654,64 @@ msgstr "Prozent"
 
 #: transformations.py:700
 msgid "Minimum brightness change that will be sharpened."
-msgstr ""
+msgstr "Minimale Helligkeitsänderung, die schärfer gezeichnet wird."
 
 #: transformations.py:701
 msgid "Tthreshold"
-msgstr ""
+msgstr "Grenzwert"
 
 #: views/asset_views.py:50
 #, python-format
 msgid "Delete request performed on %(count)d asset"
-msgstr ""
+msgstr "Anfrage für %(count)d Asset löschen"
 
 #: views/asset_views.py:52
 #, python-format
 msgid "Delete request performed on %(count)d assets"
-msgstr ""
+msgstr "Anfrage für %(count)d Assets löschen"
 
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ausgewähltes Asset löschen?"
+msgstr[1] "Ausgewählte Assets löschen?"
 
 #: views/asset_views.py:70
 #, python-format
 msgid "Delete asset: %s?"
-msgstr ""
+msgstr "Asset %s löschen?"
 
 #: views/asset_views.py:81
 #, python-format
 msgid "Asset \"%s\" deleted successfully."
-msgstr ""
+msgstr "Asset \"%s\" erfolgreich gelöscht."
 
 #: views/asset_views.py:86
 #, python-format
 msgid "Error deleting asset \"%(asset)s\": %(error)s"
-msgstr ""
+msgstr "Fehler bei Löschung von Asset \"%(asset)s\": %(error)s"
 
 #: views/asset_views.py:102
 #, python-format
 msgid "Details asset: %s"
-msgstr ""
+msgstr "Asset Details: %s"
 
 #: views/asset_views.py:117
 #, python-format
 msgid "Edit asset: %s"
-msgstr ""
+msgstr "Asset %s bearbeiten"
 
 #: views/asset_views.py:140
 msgid ""
 "Assets are files that can be used in conjuction with certain "
 "transformations."
 msgstr ""
+"Assets sind Dateien, die in Verbindung mit bestimmten Transformationen "
+"verwendet werden können."
 
 #: views/asset_views.py:143
 msgid "No assets available"
-msgstr ""
+msgstr "Keine Assets verfügbar"
 
 #: views/transformation_views.py:52
 #, python-format
@@ -752,6 +771,8 @@ msgid ""
 "Pages to which the new transformations will be added. Separate by commas "
 "and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
+"Seiten zu denen neue Transformationen hinzugefügt werden. Trennung durch "
+"Kommata und/oder Bindestriche für Bereiche. Leer lassen für alle Seiten."
 
 #: workflow_actions.py:44
 msgid "Transformation class"
@@ -771,4 +792,4 @@ msgstr "Transformation hinzufügen"
 
 #: workflow_actions.py:86
 msgid "Objects"
-msgstr ""
+msgstr "Objekte"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-06 15:30+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Sehat <sehat75@yahoo.com>, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:14
+#: apps.py:11
 msgid "Source periodic"
 msgstr ""
 
