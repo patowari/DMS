@@ -1,4 +1,4 @@
-4.5.5 (XXXX-XX-XX)
+4.5.5 (2023-10-06)
 ==================
 - Move periodic task import checking to the task manager app and condition
   it to the debug or testing environments.
