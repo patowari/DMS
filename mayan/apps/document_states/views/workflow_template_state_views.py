@@ -11,9 +11,9 @@ from mayan.apps.views.generics import (
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..classes import WorkflowAction
-from ..forms import (
-    WorkflowActionSelectionForm, WorkflowStateActionDynamicForm,
-    WorkflowStateForm
+from ..forms.workflow_template_state_forms import (
+    WorkflowTemplateStateActionSelectionForm,
+    WorkflowTemplateStateActionDynamicForm, WorkflowTemplateStateForm
 )
 from ..icons import (
     icon_workflow_template_state, icon_workflow_template_state_action,
@@ -41,7 +41,7 @@ class WorkflowTemplateStateActionCreateView(
     external_object_class = WorkflowState
     external_object_permission = permission_workflow_template_edit
     external_object_pk_url_kwarg = 'workflow_template_state_id'
-    form_class = WorkflowStateActionDynamicForm
+    form_class = WorkflowTemplateStateActionDynamicForm
     view_icon = icon_workflow_template_state_action_create
 
     def get_class(self):
@@ -128,7 +128,7 @@ class WorkflowTemplateStateActionDeleteView(SingleObjectDeleteView):
 
 
 class WorkflowTemplateStateActionEditView(SingleObjectDynamicFormEditView):
-    form_class = WorkflowStateActionDynamicForm
+    form_class = WorkflowTemplateStateActionDynamicForm
     model = WorkflowStateAction
     object_permission = permission_workflow_template_edit
     pk_url_kwarg = 'workflow_template_state_action_id'
@@ -214,7 +214,7 @@ class WorkflowTemplateStateActionSelectionView(
     external_object_class = WorkflowState
     external_object_permission = permission_workflow_template_edit
     external_object_pk_url_kwarg = 'workflow_template_state_id'
-    form_class = WorkflowActionSelectionForm
+    form_class = WorkflowTemplateStateActionSelectionForm
     view_icon = icon_workflow_template_state_action_selection
 
     def get_extra_context(self):
@@ -246,7 +246,7 @@ class WorkflowTemplateStateCreateView(
     external_object_class = Workflow
     external_object_permission = permission_workflow_template_edit
     external_object_pk_url_kwarg = 'workflow_template_id'
-    form_class = WorkflowStateForm
+    form_class = WorkflowTemplateStateForm
     view_icon = icon_workflow_template_state_create
 
     def get_extra_context(self):
@@ -307,7 +307,7 @@ class WorkflowTemplateStateDeleteView(SingleObjectDeleteView):
 
 
 class WorkflowTemplateStateEditView(SingleObjectEditView):
-    form_class = WorkflowStateForm
+    form_class = WorkflowTemplateStateForm
     model = WorkflowState
     object_permission = permission_workflow_template_edit
     pk_url_kwarg = 'workflow_template_state_id'

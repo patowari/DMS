@@ -14,8 +14,9 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms import (
-    WorkflowForm, WorkflowMultipleSelectionForm, WorkflowPreviewForm
+from ..forms.workflow_template_forms import (
+    WorkflowTemplateForm, WorkflowTemplateSelectionForm,
+    WorkflowTemplatePreviewForm
 )
 from ..icons import (
     icon_document_type_workflow_template_list,
@@ -71,7 +72,7 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
         'Error launching workflows for document "%(instance)s"; '
         '%(exception)s'
     )
-    form_class = WorkflowMultipleSelectionForm
+    form_class = WorkflowTemplateSelectionForm
     object_permission = permission_workflow_tools
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
@@ -134,7 +135,7 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
 
 class WorkflowTemplateCreateView(SingleObjectCreateView):
     extra_context = {'title': _('Create workflow')}
-    form_class = WorkflowForm
+    form_class = WorkflowTemplateForm
     model = Workflow
     post_action_redirect = reverse_lazy(
         viewname='document_states:workflow_template_list'
@@ -176,7 +177,7 @@ class WorkflowTemplateDeleteView(MultipleObjectDeleteView):
 
 
 class WorkflowTemplateEditView(SingleObjectEditView):
-    form_class = WorkflowForm
+    form_class = WorkflowTemplateForm
     model = Workflow
     object_permission = permission_workflow_template_edit
     pk_url_kwarg = 'workflow_template_id'
@@ -281,7 +282,7 @@ class WorkflowTemplateListView(SingleObjectListView):
 
 
 class WorkflowTemplatePreviewView(SingleObjectDetailView):
-    form_class = WorkflowPreviewForm
+    form_class = WorkflowTemplatePreviewForm
     model = Workflow
     object_permission = permission_workflow_template_view
     pk_url_kwarg = 'workflow_template_id'

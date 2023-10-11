@@ -8,7 +8,7 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms import WorkflowStateEscalationForm
+from ..forms.workflow_template_state_forms import WorkflowTemplateStateEscalationForm
 from ..icons import (
     icon_workflow_template_state_escalation_create,
     icon_workflow_template_state_escalation_delete,
@@ -29,7 +29,7 @@ class WorkflowTemplateStateEscalationCreateView(
     external_object_class = WorkflowState
     external_object_permission = permission_workflow_template_edit
     external_object_pk_url_kwarg = 'workflow_template_state_id'
-    form_class = WorkflowStateEscalationForm
+    form_class = WorkflowTemplateStateEscalationForm
     view_icon = icon_workflow_template_state_escalation_create
 
     def get_extra_context(self):
@@ -101,7 +101,7 @@ class WorkflowTemplateStateEscalationDeleteView(SingleObjectDeleteView):
 
 
 class WorkflowTemplateStateEscalationEditView(SingleObjectEditView):
-    form_class = WorkflowStateEscalationForm
+    form_class = WorkflowTemplateStateEscalationForm
     model = WorkflowStateEscalation
     object_permission = permission_workflow_template_edit
     pk_url_kwarg = 'workflow_template_state_escalation_id'
