@@ -11,7 +11,7 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms import (
+from ..forms.workflow_template_transition_forms import (
     WorkflowTransitionForm, WorkflowTransitionTriggerEventRelationshipFormSet
 )
 from ..icons import (
