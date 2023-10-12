@@ -32,7 +32,7 @@ class DocumentMetadataAddAction(WorkflowAction):
     def get_form_fields(cls):
         fields = super().get_form_fields()
 
-        document_types_queryset = cls.workflow_state.workflow.document_types
+        document_types_queryset = cls.workflow_template_state.workflow.document_types
 
         metadata_type_queryset = MetadataType.objects.get_for_document_types(
             queryset=document_types_queryset
@@ -125,7 +125,7 @@ class DocumentMetadataEditAction(WorkflowAction):
     def get_form_fields(cls):
         fields = super().get_form_fields()
 
-        document_types_queryset = cls.workflow_state.workflow.document_types
+        document_types_queryset = cls.workflow_template_state.workflow.document_types
 
         metadata_type_queryset = MetadataType.objects.get_for_document_types(
             queryset=document_types_queryset

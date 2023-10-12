@@ -1,13 +1,15 @@
+import json
+
 from django.db.models import Q
 
 from ...models.workflow_state_action_models import WorkflowStateAction
 
 from ..literals import (
     DOCUMENT_WORKFLOW_LAUNCH_ACTION_CLASS_PATH,
+    TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
     TEST_WORKFLOW_TEMPLATE_STATE_ACTION_GENERIC_DOTTED_PATH,
     TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL,
     TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL_EDITED,
-    TEST_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
     TEST_WORKFLOW_TEMPLATE_STATE_ACTION_WHEN
 )
 
@@ -31,7 +33,8 @@ class WorkflowTemplateStateActionTestMixin(
         self._create_test_document_stub()
 
     def _create_test_workflow_template_state_action(
-        self, extra_data=None, workflow_state_index=0
+        self, extra_backend_data=None, extra_data=None,
+        workflow_state_index=0
     ):
         total_test_workflow_template_state_actions = len(
             self._test_workflow_template_state_actions
@@ -41,9 +44,15 @@ class WorkflowTemplateStateActionTestMixin(
             total_test_workflow_template_state_actions
         )
 
+        backend_data = {}
+
+        if extra_backend_data:
+            backend_data.update(**extra_backend_data)
+
         data = {
-            'label': label,
-            'backend_path': self._test_workflow_template_state_action_path
+            'backend_data': json.dumps(obj=backend_data),
+            'backend_path': self._test_workflow_template_state_action_path,
+            'label': label
         }
 
         if extra_data:
@@ -51,9 +60,7 @@ class WorkflowTemplateStateActionTestMixin(
 
         self._test_workflow_template_state_action = self._test_workflow_template_states[
             workflow_state_index
-        ].actions.create(
-            **data
-        )
+        ].actions.create(**data)
 
         self._test_workflow_template_state_actions.append(
             self._test_workflow_template_state_action
@@ -242,7 +249,7 @@ class WorkflowTemplateStateActionViewTestMixin(
 
         return response
 
-    def _request_test_worflow_template_state_action_delete_view(self):
+    def _request_test_workflow_template_state_action_delete_view(self):
         return self.post(
             viewname='document_states:workflow_template_state_action_delete',
             kwargs={
@@ -250,18 +257,33 @@ class WorkflowTemplateStateActionViewTestMixin(
             }
         )
 
-    def _request_test_worflow_template_state_action_edit_view(self):
+    def _request_test_workflow_template_state_action_edit_get_view(self):
+        return self.get(
+            viewname='document_states:workflow_template_state_action_edit',
+            kwargs={
+                'workflow_template_state_action_id': self._test_workflow_template_state_action.pk
+            }
+        )
+
+    def _request_test_workflow_template_state_action_edit_post_view(
+        self, extra_data=None
+    ):
+        data = {
+            'label': TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL_EDITED,
+            'when': self._test_workflow_template_state_action.when
+        }
+
+        if extra_data:
+            data.update(**extra_data)
+
         return self.post(
             viewname='document_states:workflow_template_state_action_edit',
             kwargs={
                 'workflow_template_state_action_id': self._test_workflow_template_state_action.pk
-            }, data={
-                'label': TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL_EDITED,
-                'when': self._test_workflow_template_state_action.when
-            }
+            }, data=data
         )
 
-    def _request_test_worflow_template_state_action_list_view(self):
+    def _request_test_workflow_template_state_action_list_view(self):
         return self.get(
             viewname='document_states:workflow_template_state_action_list',
             kwargs={

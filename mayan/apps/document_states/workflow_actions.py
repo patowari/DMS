@@ -113,9 +113,11 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
     def get_form_fields(cls):
         fields = super().get_form_fields()
 
+        workflow_template = cls.workflow_template_state.workflow
+
         workflows_union = Workflow.objects.filter(
-            document_types__in=cls.workflow_state.workflow.document_types.all()
-        ).exclude(pk=cls.workflow_state.workflow.pk).distinct()
+            document_types__in=workflow_template.document_types.all()
+        ).exclude(pk=workflow_template.pk).distinct()
 
         fields.update(
             {

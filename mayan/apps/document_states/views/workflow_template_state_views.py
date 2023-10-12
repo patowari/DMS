@@ -69,7 +69,7 @@ class WorkflowTemplateStateActionCreateView(
 
     def get_form_schema_extra_kwargs(self):
         return {
-            'workflow_state': self.external_object
+            'workflow_template_state': self.external_object
         }
 
     def get_instance_extra_data(self):
@@ -119,7 +119,9 @@ class WorkflowTemplateStateActionDeleteView(SingleObjectDeleteView):
         )
 
 
-class WorkflowTemplateStateActionEditView(ViewSingleObjectDynamicFormModelBackendEdit):
+class WorkflowTemplateStateActionEditView(
+    ViewSingleObjectDynamicFormModelBackendEdit
+):
     form_class = WorkflowTemplateStateActionDynamicForm
     model = WorkflowStateAction
     object_permission = permission_workflow_template_edit
@@ -145,7 +147,7 @@ class WorkflowTemplateStateActionEditView(ViewSingleObjectDynamicFormModelBacken
 
     def get_form_schema_extra_kwargs(self):
         return {
-            'workflow_state': self.object
+            'workflow_template_state': self.object.state
         }
 
     def get_instance_extra_data(self):

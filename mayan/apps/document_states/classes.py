@@ -93,17 +93,15 @@ class WorkflowAction(DynamicFormModelBackend):
         raise NotImplementedError
 
     @classmethod
-    def get_form_schema(cls, workflow_state, **kwargs):
-        cls.workflow_state = workflow_state
+    def get_form_schema(cls, workflow_template_state, **kwargs):
+        cls.workflow_template_state = workflow_template_state
         return super().get_form_schema(**kwargs)
 
     def render_field(self, field_name, context):
         try:
-            result = Template(
-                template_string=self.kwargs.get(field_name, '')
-            ).render(
-                context=context
-            )
+            template_string = self.kwargs.get(field_name, '')
+            template = Template(template_string=template_string)
+            result = template.render(context=context)
         except Exception as exception:
             raise WorkflowStateActionError(
                 _('%(field_name)s template error: %(exception)s') % {

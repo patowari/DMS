@@ -125,7 +125,7 @@ class DocumentMetadataActionTestCase(
         self.assertEqual(events[0].verb, event_document_metadata_removed.id)
 
 
-class DocumentMetadataActionViewTestCase(
+class DocumentMetadataAddActionViewTestCase(
     DocumentMetadataMixin, WorkflowTemplateStateActionViewTestMixin,
     GenericDocumentViewTestCase
 ):
@@ -160,9 +160,7 @@ class DocumentMetadataActionViewTestCase(
 
         response = self._request_test_workflow_template_state_action_create_post_view(
             backend_path=DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH,
-            extra_data={
-                'metadata_types': self._test_metadata_type.pk
-            }
+            extra_data={'metadata_types': self._test_metadata_type.pk}
         )
         self.assertEqual(response.status_code, 302)
 
@@ -176,6 +174,110 @@ class DocumentMetadataActionViewTestCase(
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_workflow_template)
         self.assertEqual(events[0].verb, event_workflow_template_edited.id)
+
+    def test_document_metadata_add_action_edit_get_view(self):
+        self._test_workflow_template_state_action_path = DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH
+
+        self._create_test_workflow_template_state_action(
+            extra_backend_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_template_edit
+        )
+        self.grant_access(
+            obj=self._test_metadata_type,
+            permission=permission_document_metadata_add
+        )
+
+        test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
+
+        self._clear_events()
+
+        response = self._request_test_workflow_template_state_action_edit_get_view()
+        self.assertEqual(response.status_code, 200)
+
+        self._test_workflow_template_state_action.refresh_from_db()
+
+        self.assertEqual(
+            self._test_workflow_template_state_action.label,
+            test_workflow_template_state_action_label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_metadata_add_action_edit_post_view(self):
+        self._test_workflow_template_state_action_path = DOCUMENT_METADATA_ADD_ACTION_CLASS_PATH
+
+        self._create_test_workflow_template_state_action(
+            extra_backend_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_template_edit
+        )
+        self.grant_access(
+            obj=self._test_metadata_type,
+            permission=permission_document_metadata_add
+        )
+
+        test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
+
+        self._clear_events()
+
+        response = self._request_test_workflow_template_state_action_edit_post_view(
+            extra_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+        self.assertEqual(response.status_code, 302)
+
+        self._test_workflow_template_state_action.refresh_from_db()
+
+        self.assertNotEqual(
+            self._test_workflow_template_state_action.label,
+            test_workflow_template_state_action_label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(
+            events[0].action_object,
+            self._test_workflow_template_state_action
+        )
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_workflow_template)
+        self.assertEqual(events[0].verb, event_workflow_template_edited.id)
+
+
+class DocumentMetadataEditActionViewTestCase(
+    DocumentMetadataMixin, WorkflowTemplateStateActionViewTestMixin,
+    GenericDocumentViewTestCase
+):
+    auto_create_test_workflow_template = False
+    auto_create_test_workflow_template_state = False
+    auto_upload_test_document = False
+
+    def setUp(self):
+        super().setUp()
+        self._create_test_document_stub()
+        self._create_test_workflow_template()
+        self._create_test_workflow_template_state()
+        self._create_test_metadata_type()
+        self._test_document_type.metadata.create(
+            metadata_type=self._test_metadata_type
+        )
+        self._test_workflow_template.document_types.add(
+            self._test_document_type
+        )
 
     def test_document_metadata_edit_action_create_view(self):
         self._create_test_document_metadata()
@@ -211,6 +313,111 @@ class DocumentMetadataActionViewTestCase(
         self.assertEqual(events[0].target, self._test_workflow_template)
         self.assertEqual(events[0].verb, event_workflow_template_edited.id)
 
+    def test_document_metadata_edit_action_edit_get_view(self):
+        self._test_workflow_template_state_action_path = DOCUMENT_METADATA_EDIT_ACTION_CLASS_PATH
+
+        self._create_test_workflow_template_state_action(
+            extra_backend_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_template_edit
+        )
+        self.grant_access(
+            obj=self._test_metadata_type,
+            permission=permission_document_metadata_add
+        )
+
+        test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
+
+        self._clear_events()
+
+        response = self._request_test_workflow_template_state_action_edit_get_view()
+        self.assertEqual(response.status_code, 200)
+
+        self._test_workflow_template_state_action.refresh_from_db()
+
+        self.assertEqual(
+            self._test_workflow_template_state_action.label,
+            test_workflow_template_state_action_label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_metadata_edit_action_edit_post_view(self):
+        self._test_workflow_template_state_action_path = DOCUMENT_METADATA_EDIT_ACTION_CLASS_PATH
+
+        self._create_test_workflow_template_state_action(
+            extra_backend_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_template_edit
+        )
+        self.grant_access(
+            obj=self._test_metadata_type,
+            permission=permission_document_metadata_add
+        )
+
+        test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
+
+        self._clear_events()
+
+        response = self._request_test_workflow_template_state_action_edit_post_view(
+            extra_data={
+                'metadata_type': self._test_metadata_type.pk,
+                'value_template': TEST_METADATA_VALUE
+            }
+        )
+        self.assertEqual(response.status_code, 302)
+
+        self._test_workflow_template_state_action.refresh_from_db()
+
+        self.assertNotEqual(
+            self._test_workflow_template_state_action.label,
+            test_workflow_template_state_action_label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(
+            events[0].action_object,
+            self._test_workflow_template_state_action
+        )
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_workflow_template)
+        self.assertEqual(events[0].verb, event_workflow_template_edited.id)
+
+
+class DocumentMetadataRemoveActionViewTestCase(
+    DocumentMetadataMixin, WorkflowTemplateStateActionViewTestMixin,
+    GenericDocumentViewTestCase
+):
+    auto_create_test_workflow_template = False
+    auto_create_test_workflow_template_state = False
+    auto_upload_test_document = False
+
+    def setUp(self):
+        super().setUp()
+        self._create_test_document_stub()
+        self._create_test_workflow_template()
+        self._create_test_workflow_template_state()
+        self._create_test_metadata_type()
+        self._test_document_type.metadata.create(
+            metadata_type=self._test_metadata_type
+        )
+        self._test_workflow_template.document_types.add(
+            self._test_document_type
+        )
+
     def test_document_metadata_remove_action_create_view(self):
         self._create_test_document_metadata()
 
@@ -227,11 +434,91 @@ class DocumentMetadataActionViewTestCase(
 
         response = self._request_test_workflow_template_state_action_create_post_view(
             backend_path=DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH,
+            extra_data={'metadata_types': self._test_metadata_type.pk}
+        )
+        self.assertEqual(response.status_code, 302)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(
+            events[0].action_object,
+            self._test_workflow_template_state_action
+        )
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_workflow_template)
+        self.assertEqual(events[0].verb, event_workflow_template_edited.id)
+
+    def test_document_metadata_remove_action_edit_get_view(self):
+        self._test_workflow_template_state_action_path = DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH
+
+        self._create_test_workflow_template_state_action(
+            extra_backend_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_template_edit
+        )
+        self.grant_access(
+            obj=self._test_metadata_type,
+            permission=permission_document_metadata_add
+        )
+
+        test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
+
+        self._clear_events()
+
+        response = self._request_test_workflow_template_state_action_edit_get_view()
+        self.assertEqual(response.status_code, 200)
+
+        self._test_workflow_template_state_action.refresh_from_db()
+
+        self.assertEqual(
+            self._test_workflow_template_state_action.label,
+            test_workflow_template_state_action_label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_metadata_remove_action_edit_post_view(self):
+        self._test_workflow_template_state_action_path = DOCUMENT_METADATA_REMOVE_ACTION_CLASS_PATH
+
+        self._create_test_workflow_template_state_action(
+            extra_backend_data={
+                'metadata_types': self._test_metadata_type.pk
+            }
+        )
+
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_template_edit
+        )
+        self.grant_access(
+            obj=self._test_metadata_type,
+            permission=permission_document_metadata_add
+        )
+
+        test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
+
+        self._clear_events()
+
+        response = self._request_test_workflow_template_state_action_edit_post_view(
             extra_data={
                 'metadata_types': self._test_metadata_type.pk
             }
         )
         self.assertEqual(response.status_code, 302)
+
+        self._test_workflow_template_state_action.refresh_from_db()
+
+        self.assertNotEqual(
+            self._test_workflow_template_state_action.label,
+            test_workflow_template_state_action_label
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

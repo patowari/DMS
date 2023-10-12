@@ -1,3 +1,7 @@
+4.5.6 (XXXX-XX-XX)
+==================
+- Fix editing existing metadata workflow actions.
+
 4.5.5 (2023-10-06)
 ==================
 - Move periodic task import checking to the task manager app and condition
