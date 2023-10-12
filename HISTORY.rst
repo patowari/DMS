@@ -1,6 +1,9 @@
 4.5.6 (XXXX-XX-XX)
 ==================
 - Fix editing existing metadata workflow actions.
+- Update the Docker image ``entrypoint.sh`` to skip changing the ownership
+  of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
+  value (True, true, T, t, Yes, yes, Y, y, 1).
 
 4.5.5 (2023-10-06)
 ==================
