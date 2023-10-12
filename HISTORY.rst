@@ -17,6 +17,9 @@
 - Update the GitLab CI deployment stage to not install the Docker runtime.
 - Backport periodic task import checking.
 - Backport source periodic task changes.
+- Update the Docker image ``entrypoint.sh`` to skip changing the ownership
+  of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
+  value (True, true, T, t, Yes, yes, Y, y, 1).
 
 4.2.17 (2023-07-10)
 ===================
