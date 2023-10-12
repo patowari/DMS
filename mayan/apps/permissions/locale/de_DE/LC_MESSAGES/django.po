@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-12 18:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -134,7 +134,7 @@ msgstr "Gruppenname"
 
 #: serializers.py:17
 msgid "Primary key"
-msgstr ""
+msgstr "Primärschlüssel"
 
 #: serializers.py:36
 msgid "Primary key of the group to add to the role."

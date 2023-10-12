@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:17+0000\n"
+"POT-Creation-Date: 2023-10-12 18:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -48,14 +48,16 @@ msgid ""
 "Return the value of a specific source metadata for the document's latest "
 "file."
 msgstr ""
+"Zwróć określone wartość źródłowych metadanych dla najnowszego pliku "
+"dokumentu."
 
 #: apps.py:132 apps.py:139
 msgid "Source metadata value of"
-msgstr ""
+msgstr "Wartość źródłowych metadanych"
 
 #: apps.py:138
 msgid "Return the value of a specific source metadata."
-msgstr ""
+msgstr "Zwróć wartość konkretnych źródłowych metadanych."
 
 #: apps.py:157
 msgid "Type"
@@ -85,6 +87,7 @@ msgstr "Akcja"
 msgid ""
 "The action to take in regards to the pages of the new file being uploaded."
 msgstr ""
+"Akcja, którą należy podjąć w odniesieniu do stron przesyłanego nowego pliku."
 
 #: forms.py:54
 msgid "The backend used to create the new source."
@@ -108,7 +111,7 @@ msgstr "Prześlij nowy plik"
 
 #: links.py:130
 msgid "Source metadata"
-msgstr ""
+msgstr "Źródłowe metadane"
 
 #: links.py:139
 msgid "Create source"
@@ -136,7 +139,7 @@ msgstr "Plik dokumentu"
 
 #: models.py:26
 msgid "Name of the source metadata entry."
-msgstr ""
+msgstr "Nazwa wpisu źródłowych metadanych."
 
 #: models.py:27
 msgid "Key"
@@ -144,7 +147,7 @@ msgstr "Klucz"
 
 #: models.py:31
 msgid "The actual value stored in the source metadata for the document."
-msgstr ""
+msgstr "Rzeczywista wartość zapisana w źródłowych metadanych dokumentu."
 
 #: models.py:33
 msgid "Value"
@@ -152,7 +155,7 @@ msgstr "Wartość"
 
 #: models.py:39 models.py:40
 msgid "Document file source metadata"
-msgstr ""
+msgstr "Źródłowe metadane pliku dokumentu"
 
 #: models.py:50
 msgid "A short text to describe this source."
@@ -172,7 +175,7 @@ msgstr "Konfiguracja źródeł"
 
 #: permissions.py:12
 msgid "View document source metadata"
-msgstr ""
+msgstr "Wyświetl źródłowe metadane dokumentu"
 
 #: permissions.py:18
 msgid "Create new document sources"
@@ -372,12 +375,12 @@ msgstr ""
 
 #: views/document_file_views.py:47
 msgid "No source metadata available for this document file."
-msgstr ""
+msgstr "Dla tego pliku dokumentu nie są dostępne żadne źródłowe metadane."
 
 #: views/document_file_views.py:51
 #, python-format
 msgid "Source metadata for: %(document_file)s"
-msgstr ""
+msgstr "Źródłowe metadane dla: %(document_file)s"
 
 #: views/document_file_views.py:96
 #, python-format

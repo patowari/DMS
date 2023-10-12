@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-12 18:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -196,11 +196,11 @@ msgstr ""
 
 #: metadata_validators.py:12
 msgid "Date and time validator"
-msgstr "Data i godzina walidacji"
+msgstr "Walidacja daty i godziny"
 
 #: metadata_validators.py:19
 msgid "Date validator"
-msgstr ""
+msgstr "Walidacja daty"
 
 #: metadata_validators.py:27
 msgid "Regular expression validator"

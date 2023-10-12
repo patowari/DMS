@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:16+0000\n"
+"POT-Creation-Date: 2023-10-12 18:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -438,7 +438,7 @@ msgstr "Edytuj"
 
 #: links/document_file_links.py:40 links/document_file_links.py:47
 msgid "Introspect"
-msgstr ""
+msgstr "Analiza wewnętrzna"
 
 #: links/document_file_links.py:54 links/document_file_links.py:76
 msgid "Files"
@@ -1572,6 +1572,9 @@ msgid ""
 " that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
+"Może to oznaczać, że plik dokumentu ma nieobsługiwany format, jest "
+"uszkodzony lub proces przesyłania został przerwany. Użyj łącza do analizy "
+"wewnętrznej pliku dokumentu, aby ponownie spróbować wykryć liczbę stron."
 
 #: views/document_file_page_views.py:60
 msgid "No document file pages available"
@@ -1649,24 +1652,26 @@ msgstr "Edytuj plik dokumentu: %s"
 #, python-format
 msgid "%(count)d document file queued for introspection."
 msgstr ""
+"%(count)d plik(i) dokumentu umieszczono w kolejce do analizy wewnętrznej."
 
 #: views/document_file_views.py:137
 #, python-format
 msgid "%(count)d document files queued for introspection."
 msgstr ""
+"%(count)d plik(i) dokumentu umieszczono w kolejce do analizywewnętrznej."
 
 #: views/document_file_views.py:146
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "analiza wewnętrzna wybrany plik dokumentu?"
+msgstr[1] "analiza wewnętrzna wybrane pliki dokumentów?"
+msgstr[2] "analiza wewnętrzna wybrane pliki dokumentów?"
+msgstr[3] "Dokonać analizy wewnętrznej wybranych plików dokumentów?"
 
 #: views/document_file_views.py:157
 #, python-format
 msgid "Introspect the document file: %s?"
-msgstr ""
+msgstr "Dokonać analizy wewnętrznej pliku dokumentu: %s ?"
 
 #: views/document_file_views.py:163
 msgid ""

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:16+0000\n"
+"POT-Creation-Date: 2023-10-12 18:27+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -130,11 +130,11 @@ msgstr "Nie można znaleźć pliku wykonywalnego pdftotext w lokalizacji: %s"
 
 #: permissions.py:10
 msgid "View the content of a document file"
-msgstr ""
+msgstr "Wyświetl zawartość pliku dokumentu"
 
 #: permissions.py:13
 msgid "Parse the content of a document file"
-msgstr ""
+msgstr "Przeanalizuj zawartość pliku dokumentu"
 
 #: permissions.py:16
 msgid "Change document type parsing settings"
