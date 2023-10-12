@@ -5,6 +5,9 @@
   Add support for Docker image mirroring.
 - Update Django from version 3.2.20 to 3.2.22.
 - Fix editing existing metadata workflow actions.
+- Update the Docker image ``entrypoint.sh`` to skip changing the ownership
+  of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
+  value (True, true, T, t, Yes, yes, Y, y, 1).
 
 4.4.8 (2023-07-15)
 ==================
