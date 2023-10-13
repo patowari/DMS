@@ -31,7 +31,7 @@ link_about = Link(
 )
 link_book = Link(
     icon=icon_book, tags='new_window', text=_('Get the book'),
-    url='https://mayan-edms.com/book/'
+    url='https://www.mayan-edms.com/book/'
 )
 link_documentation = Link(
     icon=icon_documentation, tags='new_window',
