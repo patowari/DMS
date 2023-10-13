@@ -1,4 +1,4 @@
-4.5.6 (XXXX-XX-XX)
+4.5.6 (2023-10-12)
 ==================
 - Fix editing existing metadata workflow actions.
 - Update the Docker image ``entrypoint.sh`` to skip changing the ownership
