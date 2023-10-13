@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-13 03:35+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -63,7 +63,7 @@ msgstr "EXIF Tool"
 
 #: drivers/extract_msg.py:15
 msgid "Extract msg"
-msgstr ""
+msgstr "Nachricht extrahieren"
 
 #: events.py:10
 msgid "Document file submitted for file metadata processing"
@@ -71,7 +71,7 @@ msgstr "Dokumentendatei für die Verarbeitung der Dateimetadaten eingestellt"
 
 #: events.py:14
 msgid "Document file file metadata processing finished"
-msgstr ""
+msgstr "Metadatenverarbeitung beendet"
 
 #: links.py:27
 msgid "Attributes"
@@ -91,7 +91,7 @@ msgstr "Dateimetadatenverarbeitung nach Typ"
 
 #: methods.py:54
 msgid "Return the specified document file file metadata entry."
-msgstr ""
+msgstr "Den spezifizierten Dokumentendateieintrag zurückgeben."
 
 #: model_mixins.py:9
 msgid "Attribute count"
@@ -107,11 +107,11 @@ msgstr "Dokumentendatei"
 
 #: models.py:28 models.py:64
 msgid "Document file driver entry"
-msgstr ""
+msgstr "Dokumentendateitreibereintrag"
 
 #: models.py:29
 msgid "Document file driver entries"
-msgstr ""
+msgstr "Dokumentendateitreibereinträge"
 
 #: models.py:41
 msgid "Document type"
@@ -123,7 +123,7 @@ msgstr "Neu erstellte Dokumente automatisch in die Warteschlange einreihen."
 
 #: models.py:46
 msgid "Auto process"
-msgstr ""
+msgstr "Automatisch verarbeiten"
 
 #: models.py:52
 msgid "Document type settings"
@@ -227,32 +227,38 @@ msgid ""
 "the driver does not support any metadata field for the file type of this "
 "document."
 msgstr ""
+"Das könnte bedeuten, dass die Metadatenerkennung noch nicht beendet ist oder"
+" dass der Treiber keines der Metadatenfelder für den Dateityp dieses "
+"Dokuments unterstützt."
 
 #: views.py:95
 msgid "No file metadata available for this driver."
-msgstr ""
+msgstr "Keine Dateimetadaten verfügbar für diesen Treiber."
 
 #: views.py:99
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
-msgstr ""
+msgstr "Dateimetadatenattribute für %(document_file)s mit Treiber %(driver)s"
 
 #: views.py:121
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
+"%(count)d Dokumentendateien in die Metadatenwarteschlange eingestellt."
 
 #: views.py:124
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
-msgstr ""
+msgstr "%(count)d Dokumentendatei in die Metadatenwarteschlange eingestellt."
 
 #: views.py:133
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
+"Die ausgewählte Dokumentendatei in die Metadatenwarteschlange einstellen?"
 msgstr[1] ""
+"Die ausgewählte Dokumentendateien in die Metadatenwarteschlange einstellen?"
 
 #: views.py:164
 #, python-format
