@@ -142,8 +142,6 @@ class ReleaseNoteExporter:
             result_body = command_pandoc(_in=joined_result, f='html', t='markdown')
 
             tree = html.fromstring(html_fragment)
-            # ~ title = tree[0].text
-            # ~ date tree[1].text)
 
             released, month, day, year = tree[1].text.split(' ')
 
