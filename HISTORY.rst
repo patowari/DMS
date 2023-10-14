@@ -1,5 +1,5 @@
 4.2.18 (XXXX-XX-XX)
-===================
+==================
 - Update the cache and cache partition purge loop to continue executing even
   when there are files that cannot be purged. Cache partition files will be
   skipped and retried on the next purge execution.
@@ -15,6 +15,8 @@
 - Support Django series in setup generation script.
 - Use Mayan CLI full path in DockerFile.
 - Update the GitLab CI deployment stage to not install the Docker runtime.
+- Backport periodic task import checking.
+- Backport source periodic task changes.
 
 4.2.17 (2023-07-10)
 ===================
