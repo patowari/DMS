@@ -1,4 +1,13 @@
-class DocumentWorkflowTemplateViewTestMixin:
+from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+
+
+class WorkflowInstanceTestMixin(WorkflowTemplateTransitionTestMixin):
+    """
+    Base class for forward compatibility.
+    """
+
+
+class DocumentWorkflowTemplateViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_document_single_workflow_template_launch_view(self):
         return self.post(
             viewname='document_states:document_single_workflow_templates_launch',
@@ -10,7 +19,7 @@ class DocumentWorkflowTemplateViewTestMixin:
         )
 
 
-class WorkflowInstanceAPIViewTestMixin:
+class WorkflowInstanceAPIViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_workflow_instance_detail_api_view(self):
         return self.get(
             viewname='rest_api:workflow-instance-detail', kwargs={
@@ -52,7 +61,7 @@ class WorkflowInstanceAPIViewTestMixin:
         )
 
 
-class WorkflowInstanceLaunchAPIViewTestMixin:
+class WorkflowInstanceLaunchAPIViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_workflow_instance_launch_api_view(self):
         return self.post(
             viewname='rest_api:workflow-instance-launch', kwargs={
@@ -63,7 +72,9 @@ class WorkflowInstanceLaunchAPIViewTestMixin:
         )
 
 
-class WorkflowInstanceLogEntryTransitrionListAPIViewTestMixin:
+class WorkflowInstanceLogEntryTransitrionListAPIViewTestMixin(
+    WorkflowInstanceTestMixin
+):
     def _request_test_workflow_instance_log_entry_transition_list_api_view(self):
         return self.get(
             viewname='rest_api:workflow-instance-log-entry-transition-list',
@@ -74,7 +85,7 @@ class WorkflowInstanceLogEntryTransitrionListAPIViewTestMixin:
         )
 
 
-class WorkflowInstanceViewTestMixin:
+class WorkflowInstanceViewTestMixin(WorkflowInstanceTestMixin):
     def _request_test_document_workflow_instance_list_view(self):
         return self.get(
             viewname='document_states:workflow_instance_list', kwargs={
@@ -115,11 +126,4 @@ class WorkflowInstanceViewTestMixin:
             }, data={
                 'transition': self._test_workflow_template_transition.pk,
             }
-        )
-
-
-class WorkflowToolViewTestMixin:
-    def _request_workflow_launch_view(self):
-        return self.post(
-            viewname='document_states:tool_launch_workflows',
         )

@@ -7,7 +7,8 @@ from mayan.apps.testing.tests.mixins import TestServerTestCaseMixin
 from mayan.apps.testing.tests.mocks import request_method_factory
 
 from ..literals import WORKFLOW_ACTION_ON_ENTRY
-from ..models import Workflow, WorkflowInstance
+from ..models.workflow_instance_models import WorkflowInstance
+from ..models.workflow_models import Workflow
 from ..permissions import permission_workflow_template_edit
 from ..workflow_actions import (
     DocumentPropertiesEditAction, DocumentWorkflowLaunchAction, HTTPAction
@@ -25,15 +26,17 @@ from .literals import (
     TEST_PAYLOAD_TEMPLATE_DOCUMENT_LABEL, TEST_SERVER_USERNAME,
     TEST_SERVER_PASSWORD
 )
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_state_mixins import (
+from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionLaunchViewTestMixin,
+    WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
+from .mixins.workflow_template_state_mixins import WorkflowTemplateStateTestMixin
+from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
 
 class HTTPWorkflowActionTestCase(
-    TestServerTestCaseMixin, WorkflowTemplateTestMixin,
+    TestServerTestCaseMixin, WorkflowTemplateStateActionTestMixin,
     GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
@@ -49,7 +52,9 @@ class HTTPWorkflowActionTestCase(
                 'url': self.testserver_url
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertFalse(self.test_view_request is None)
 
@@ -64,7 +69,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertEqual(
             json.loads(s=self.test_view_request.body),
@@ -84,7 +91,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertEqual(
             json.loads(s=self.test_view_request.body),
@@ -102,7 +111,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertTrue(
             TEST_HEADERS_KEY in self.test_view_request.META,
@@ -124,7 +135,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertTrue(
             TEST_HEADERS_JSON_TEMPLATE_KEY in self.test_view_request.META,
@@ -146,7 +159,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertTrue(
             TEST_HEADERS_AUTHENTICATION_KEY in self.test_view_request.META,
@@ -167,7 +182,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertEqual(self.timeout, 1)
 
@@ -182,7 +199,9 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertEqual(self.timeout, 1.5)
 
@@ -196,14 +215,15 @@ class HTTPWorkflowActionTestCase(
                 'method': 'POST'
             }
         )
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertEqual(self.timeout, None)
 
 
 class HTTPWorkflowActionViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateStateActionViewTestMixin,
-    GenericViewTestCase
+    WorkflowTemplateStateActionViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -250,7 +270,8 @@ class HTTPWorkflowActionViewTestCase(
 
 
 class DocumentPropertiesEditActionTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateActionTestMixin,
+    WorkflowTemplateTransitionTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -326,7 +347,7 @@ class DocumentPropertiesEditActionTestCase(
 
 
 class DocumentWorkflowLaunchActionTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -339,12 +360,16 @@ class DocumentWorkflowLaunchActionTestCase(
         self._create_test_document_stub()
 
         action = DocumentWorkflowLaunchAction(
-            form_data={'workflows': Workflow.objects.all()}
+            form_data={
+                'workflows': Workflow.objects.all()
+            }
         )
 
         workflow_count = self._test_document.workflows.count()
 
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertEqual(
             self._test_document.workflows.count(), workflow_count + 1
@@ -353,7 +378,7 @@ class DocumentWorkflowLaunchActionTestCase(
 
 class DocumentWorkflowLaunchActionViewTestCase(
     WorkflowTemplateStateActionLaunchViewTestMixin,
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

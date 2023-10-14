@@ -10,11 +10,11 @@ from ..links import (
 )
 from ..permissions import permission_workflow_template_view
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from .mixins.workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 
 
 class WorkflowRuntimeProxyLinkTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateStateTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

@@ -59,7 +59,7 @@ class DocumentMetadataAddAction(WorkflowAction):
     def get_form_schema(self, **kwargs):
         result = super().get_form_schema(**kwargs)
 
-        document_types_queryset = kwargs['workflow_state'].workflow.document_types
+        document_types_queryset = kwargs['workflow_template_state'].workflow.document_types
 
         metadata_type_queryset = MetadataType.objects.get_for_document_types(
             queryset=document_types_queryset
@@ -105,7 +105,7 @@ class DocumentMetadataEditAction(WorkflowAction):
     field_order = ('metadata_type', 'value')
     label = _('Edit metadata')
     widgets = {
-        'metadata_types': {
+        'metadata_type': {
             'class': 'django.forms.widgets.Select', 'kwargs': {
                 'attrs': {'class': 'select2'}
             }
@@ -146,7 +146,7 @@ class DocumentMetadataEditAction(WorkflowAction):
     def get_form_schema(self, **kwargs):
         result = super().get_form_schema(**kwargs)
 
-        document_types_queryset = kwargs['workflow_state'].workflow.document_types
+        document_types_queryset = kwargs['workflow_template_state'].workflow.document_types
 
         metadata_type_queryset = MetadataType.objects.get_for_document_types(
             queryset=document_types_queryset

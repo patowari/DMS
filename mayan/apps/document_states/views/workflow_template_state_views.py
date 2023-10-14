@@ -77,7 +77,8 @@ class WorkflowTemplateStateActionCreateView(
 
     def get_form_schema(self):
         return self.get_class()().get_form_schema(
-            request=self.request, workflow_state=self.external_object
+            request=self.request,
+            workflow_template_state=self.external_object
         )
 
     def get_instance_extra_data(self):
@@ -153,7 +154,7 @@ class WorkflowTemplateStateActionEditView(SingleObjectDynamicFormEditView):
 
     def get_form_schema(self):
         return self.object.get_class_instance().get_form_schema(
-            request=self.request, workflow_state=self.object.state
+            request=self.request, workflow_template_state=self.object.state
         )
 
     def get_instance_extra_data(self):

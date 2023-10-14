@@ -1,12 +1,10 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_mixins import WorkflowTransitionFieldTestMixin
+from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldTestMixin
 
 
 class WorkflowTemplateTransitionFieldModelTestCase(
-    WorkflowTemplateTestMixin, WorkflowTransitionFieldTestMixin,
-    GenericDocumentTestCase
+    WorkflowTemplateTransitionFieldTestMixin, GenericDocumentTestCase
 ):
     auto_upload_test_document = False
 

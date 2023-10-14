@@ -10,13 +10,11 @@ from .literals import (
     TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
     TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION
 )
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
 from .mixins.workflow_template_state_mixins import WorkflowStateViewTestMixin
 
 
 class WorkflowStateViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowStateViewTestMixin,
-    GenericViewTestCase
+    WorkflowStateViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):
         super().setUp()

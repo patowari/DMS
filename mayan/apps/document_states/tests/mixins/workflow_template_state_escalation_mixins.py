@@ -13,8 +13,31 @@ from ..literals import (
     TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_UNIT
 )
 
+from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 
-class WorkflowTemplateStateEscalationAPIViewTestMixin:
+
+class WorkflowTemplateStateEscalationTestMixin(
+    WorkflowTemplateTransitionTestMixin
+):
+    def _create_test_workflow_template_state_escalation(self, extra_data=None):
+        kwargs = {
+            'amount': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_AMOUNT,
+            'comment': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_COMMENT,
+            'transition': self._test_workflow_template_transition,
+            'unit': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_UNIT
+        }
+
+        if extra_data:
+            kwargs.update(extra_data)
+
+        self._test_workflow_template_state_escalation = self._test_workflow_template_states[0].escalations.create(
+            **kwargs
+        )
+
+
+class WorkflowTemplateStateEscalationAPIViewTestMixin(
+    WorkflowTemplateStateEscalationTestMixin
+):
     def _request_test_workflow_template_state_escalation_create_api_view(self):
         data = {
             'amount': 1,
@@ -94,32 +117,15 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin:
         )
 
 
-class WorkflowTemplateStateEscalationTaskTestMixin:
+class WorkflowTemplateStateEscalationTaskTestMixin(
+    WorkflowTemplateStateEscalationTestMixin
+):
     def _execute_task_workflow_instance_check_escalation(
         self, test_workflow_instance_id
     ):
         task_workflow_instance_check_escalation.apply_async(
-            kwargs={
-                'workflow_instance_id': test_workflow_instance_id
-            }
+            kwargs={'workflow_instance_id': test_workflow_instance_id}
         ).get()
 
     def _execute_task_workflow_instance_check_escalation_all(self):
         task_workflow_instance_check_escalation_all.apply_async().get()
-
-
-class WorkflowTemplateStateEscalationTestMixin:
-    def _create_test_workflow_template_state_escalation(self, extra_data=None):
-        kwargs = {
-            'amount': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_AMOUNT,
-            'comment': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_COMMENT,
-            'transition': self._test_workflow_template_transition,
-            'unit': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_UNIT
-        }
-
-        if extra_data:
-            kwargs.update(extra_data)
-
-        self._test_workflow_template_state_escalation = self._test_workflow_template_states[0].escalations.create(
-            **kwargs
-        )

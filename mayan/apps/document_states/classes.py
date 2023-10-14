@@ -90,15 +90,21 @@ class WorkflowAction(BaseBackend):
         raise NotImplementedError
 
     def get_fields(self):
-        return getattr(self, 'fields', {})
+        return getattr(
+            self, 'fields', {}
+        )
 
     def get_field_order(self):
-        return getattr(self, 'field_order', ())
+        return getattr(
+            self, 'field_order', ()
+        )
 
     def get_media(self):
-        return getattr(self, 'media', {})
+        return getattr(
+            self, 'media', {}
+        )
 
-    def get_form_schema(self, workflow_state, request=None):
+    def get_form_schema(self, workflow_template_state, request=None):
         result = {
             'fields': self.get_fields(),
             'media': self.get_media(),
@@ -113,15 +119,15 @@ class WorkflowAction(BaseBackend):
         return result
 
     def get_widgets(self):
-        return getattr(self, 'widgets', {})
+        return getattr(
+            self, 'widgets', {}
+        )
 
     def render_field(self, field_name, context):
         try:
-            result = Template(
-                template_string=self.form_data.get(field_name, '')
-            ).render(
-                context=context
-            )
+            template_string = self.form_data.get(field_name, '')
+            template = Template(template_string=template_string)
+            result = template.render(context=context)
         except Exception as exception:
             raise WorkflowStateActionError(
                 _('%(field_name)s template error: %(exception)s') % {

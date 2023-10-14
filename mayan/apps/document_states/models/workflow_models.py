@@ -9,6 +9,7 @@ from mayan.apps.documents.models import Document, DocumentType
 from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
+
 from ..events import (
     event_workflow_template_created, event_workflow_template_edited
 )

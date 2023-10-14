@@ -8,15 +8,14 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from .mixins.workflow_template_transition_mixins import (
-    WorkflowTransitionFieldAPIViewTestMixin, WorkflowTransitionFieldTestMixin
+from .mixins.workflow_template_transition_field_mixins import (
+    WorkflowTemplateTransitionFieldAPIViewTestMixin
 )
 
 
 class WorkflowTemplateTransitionFieldAPIViewTestCase(
-    WorkflowTransitionFieldAPIViewTestMixin, DocumentTestMixin,
-    WorkflowTemplateTestMixin, WorkflowTransitionFieldTestMixin, BaseAPITestCase
+    WorkflowTemplateTransitionFieldAPIViewTestMixin, DocumentTestMixin,
+    BaseAPITestCase
 ):
     auto_upload_test_document = False
 

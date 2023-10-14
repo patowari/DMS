@@ -2,13 +2,11 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from ..events import event_workflow_instance_transitioned
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
 from .mixins.workflow_template_state_escalation_mixins import WorkflowTemplateStateEscalationTestMixin
 
 
 class WorkflowTemplateStateEscalationModelTestCase(
-    WorkflowTemplateStateEscalationTestMixin, WorkflowTemplateTestMixin,
-    GenericDocumentTestCase
+    WorkflowTemplateStateEscalationTestMixin, GenericDocumentTestCase
 ):
     auto_upload_test_document = False
 

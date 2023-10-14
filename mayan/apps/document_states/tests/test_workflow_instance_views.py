@@ -7,14 +7,10 @@ from ..permissions import (
 )
 
 from .mixins.workflow_instance_mixins import WorkflowInstanceViewTestMixin
-from .mixins.workflow_template_mixins import (
-    WorkflowTemplateTestMixin, WorkflowTemplateViewTestMixin
-)
-from .mixins.workflow_template_transition_mixins import WorkflowTransitionFieldTestMixin
+from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldTestMixin
 
 
 class WorkflowInstanceTransitionViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateViewTestMixin,
     WorkflowInstanceViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
@@ -635,8 +631,8 @@ class WorkflowInstanceTransitionViewTestCase(
 
 
 class WorkflowInstanceTransitionFieldViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTransitionFieldTestMixin,
-    WorkflowInstanceViewTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateTransitionFieldTestMixin, WorkflowInstanceViewTestMixin,
+    GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

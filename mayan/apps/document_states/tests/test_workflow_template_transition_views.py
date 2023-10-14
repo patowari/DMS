@@ -7,16 +7,12 @@ from ..permissions import (
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL
-from .mixins.workflow_template_mixins import (
-    WorkflowTemplateTestMixin, WorkflowTemplateViewTestMixin
-)
 from .mixins.workflow_template_transition_mixins import (
     WorkflowTemplateTransitionViewTestMixin
 )
 
 
 class WorkflowTransitionViewTestCase(
-    WorkflowTemplateTestMixin, WorkflowTemplateViewTestMixin,
     WorkflowTemplateTransitionViewTestMixin, GenericViewTestCase
 ):
     def setUp(self):

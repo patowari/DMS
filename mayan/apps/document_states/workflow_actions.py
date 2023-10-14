@@ -108,9 +108,11 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
     def get_form_schema(self, **kwargs):
         result = super().get_form_schema(**kwargs)
 
+        workflow_template = kwargs['workflow_template_state'].workflow
+
         workflows_union = Workflow.objects.filter(
-            document_types__in=kwargs['workflow_state'].workflow.document_types.all()
-        ).exclude(pk=kwargs['workflow_state'].workflow.pk).distinct()
+            document_types__in=workflow_template.document_types.all()
+        ).exclude(pk=workflow_template.pk).distinct()
 
         result['fields']['workflows']['kwargs']['queryset'] = workflows_union
 

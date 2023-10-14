@@ -1,8 +1,8 @@
 from django.db.models import Q
 
-from ...models import (
-    Workflow, WorkflowRuntimeProxy, WorkflowStateRuntimeProxy
-)
+from mayan.apps.documents.tests.mixins.document_type_mixins import DocumentTypeTestMixin
+
+from ...models.workflow_models import Workflow, WorkflowRuntimeProxy
 from ...tasks import (
     task_launch_all_workflows, task_launch_all_workflow_for,
     task_launch_workflow, task_launch_workflow_for
@@ -11,14 +11,65 @@ from ...tasks import (
 from ..literals import (
     TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
     TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME, TEST_WORKFLOW_TEMPLATE_LABEL,
-    TEST_WORKFLOW_TEMPLATE_LABEL_EDITED,
-    TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
-    TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-    TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL
+    TEST_WORKFLOW_TEMPLATE_LABEL_EDITED
 )
 
 
-class DocumentTypeAddRemoveWorkflowTemplateViewTestMixin:
+class WorkflowTemplateTestMixin(DocumentTypeTestMixin):
+    def setUp(self):
+        super().setUp()
+        self._test_workflow_runtime_proxies = []
+        self._test_workflow_templates = []
+
+    def _create_test_workflow_template(
+        self, add_test_document_type=False, auto_launch=True
+    ):
+        total_test_workflow_templates = len(self._test_workflow_templates)
+        label = '{}_{}'.format(
+            TEST_WORKFLOW_TEMPLATE_LABEL, total_test_workflow_templates
+        )
+        internal_name = '{}_{}'.format(
+            TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME,
+            total_test_workflow_templates
+        )
+
+        self._test_workflow_template = Workflow.objects.create(
+            auto_launch=auto_launch, label=label,
+            internal_name=internal_name
+        )
+        self._test_workflow_templates.append(
+            self._test_workflow_template
+        )
+        self._test_workflow_runtime_proxy = WorkflowRuntimeProxy.objects.get(
+            pk=self._test_workflow_template.pk
+        )
+        self._test_workflow_runtime_proxies.append(
+            self._test_workflow_runtime_proxy
+        )
+
+        if add_test_document_type:
+            self._test_workflow_template.document_types.add(
+                self._test_document_type
+            )
+
+    def _create_test_workflow_template_instance_log_entry(self):
+        self._test_document.workflows.first().log_entries.create(
+            comment=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
+            transition=self._test_workflow_template_transition,
+            user=self._test_case_user
+        )
+
+    def _do_transition_test_workflow_instance(self, extra_data=None):
+        self._test_document.workflows.first().do_transition(
+            comment=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
+            extra_data=extra_data,
+            transition=self._test_workflow_template_transition
+        )
+
+
+class DocumentTypeAddRemoveWorkflowTemplateViewTestMixin(
+    WorkflowTemplateTestMixin
+):
     def _request_test_document_type_workflow_template_add_remove_get_view(self):
         return self.get(
             viewname='document_states:document_type_workflow_templates',
@@ -50,7 +101,7 @@ class DocumentTypeAddRemoveWorkflowTemplateViewTestMixin:
         )
 
 
-class WorkflowTaskTestCaseMixin:
+class WorkflowTemplateTaskTestMixin(WorkflowTemplateTestMixin):
     def _execute_task_launch_all_workflows(self):
         task_launch_all_workflows.apply_async().get()
 
@@ -77,7 +128,7 @@ class WorkflowTaskTestCaseMixin:
         ).get()
 
 
-class WorkflowTemplateDocumentTypeViewTestMixin:
+class WorkflowTemplateDocumentTypeViewTestMixin(WorkflowTemplateTestMixin):
     def _request_test_workflow_template_document_type_add_remove_get_view(self):
         return self.get(
             viewname='document_states:workflow_template_document_types',
@@ -109,7 +160,7 @@ class WorkflowTemplateDocumentTypeViewTestMixin:
         )
 
 
-class WorkflowTemplateAPIViewTestMixin:
+class WorkflowTemplateAPIViewTestMixin(WorkflowTemplateTestMixin):
     def _request_test_workflow_template_create_api_view(self, extra_data=None):
         data = {
             'internal_name': TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME,
@@ -119,7 +170,9 @@ class WorkflowTemplateAPIViewTestMixin:
         if extra_data:
             data.update(extra_data)
 
-        pk_list = list(Workflow.objects.values('pk'))
+        pk_list = list(
+            Workflow.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:workflow-template-list', data=data
@@ -176,7 +229,7 @@ class WorkflowTemplateAPIViewTestMixin:
         return self.get(viewname='rest_api:workflow-template-list')
 
 
-class WorkflowTemplateDocumentTypeAPIViewMixin:
+class WorkflowTemplateDocumentTypeAPIViewMixin(WorkflowTemplateTestMixin):
     def _request_test_workflow_template_document_type_add_api_view(self):
         return self.post(
             viewname='rest_api:workflow-template-document-type-add',
@@ -205,119 +258,16 @@ class WorkflowTemplateDocumentTypeAPIViewMixin:
         )
 
 
-class WorkflowTemplateTestMixin:
-    def setUp(self):
-        super().setUp()
-        self._test_workflow_runtime_proxies = []
-        self._test_workflow_template_state_runtime_proxies = []
-        self._test_workflow_template_states = []
-        self._test_workflow_template_transitions = []
-        self._test_workflow_templates = []
-
-    def _create_test_workflow_template(
-        self, add_test_document_type=False, auto_launch=True
-    ):
-        total_test_workflow_templates = len(self._test_workflow_templates)
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_LABEL, total_test_workflow_templates
-        )
-        internal_name = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME,
-            total_test_workflow_templates
-        )
-
-        self._test_workflow_template = Workflow.objects.create(
-            auto_launch=auto_launch, label=label,
-            internal_name=internal_name
-        )
-        self._test_workflow_templates.append(
-            self._test_workflow_template
-        )
-        self._test_workflow_runtime_proxy = WorkflowRuntimeProxy.objects.get(
-            pk=self._test_workflow_template.pk
-        )
-        self._test_workflow_runtime_proxies.append(
-            self._test_workflow_runtime_proxy
-        )
-
-        if add_test_document_type:
-            self._test_workflow_template.document_types.add(
-                self._test_document_type
-            )
-
-    def _create_test_workflow_template_state(self):
-        total_test_workflow_template_states = len(
-            self._test_workflow_template_states
-        )
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-            total_test_workflow_template_states
-        )
-        initial = self._test_workflow_template.states.count() == 0
-
-        self._test_workflow_template_state = self._test_workflow_template.states.create(
-            completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION, initial=initial,
-            label=label
-        )
-        self._test_workflow_template_states.append(
-            self._test_workflow_template_state
-        )
-        self._test_workflow_template_state_runtime_proxy = WorkflowStateRuntimeProxy.objects.get(
-            pk=self._test_workflow_template_state.pk
-        )
-        self._test_workflow_template_state_runtime_proxies.append(
-            self._test_workflow_template_state_runtime_proxy
-        )
-
-    def _create_test_workflow_template_transition(self):
-        total_test_workflow_template_transitions = len(
-            self._test_workflow_template_transitions
-        )
-        label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
-            total_test_workflow_template_transitions
-        )
-
-        self._test_workflow_template_transition = self._test_workflow_template.transitions.create(
-            label=label,
-            origin_state=self._test_workflow_template_states[0],
-            destination_state=self._test_workflow_template_states[1],
-        )
-
-        self._test_workflow_template_transitions.append(
-            self._test_workflow_template_transition
-        )
-
-    def _create_test_workflow_template_instance_log_entry(self):
-        self._test_document.workflows.first().log_entries.create(
-            comment=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
-            transition=self._test_workflow_template_transition,
-            user=self._test_case_user
-        )
-
-    def _do_transition_test_workflow_instance(self, extra_data=None):
-        self._test_document.workflows.first().do_transition(
-            comment=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT,
-            extra_data=extra_data,
-            transition=self._test_workflow_template_transition
-        )
-
-
-class WorkflowToolViewTestMixin:
-    def _request_workflow_launch_view(self):
-        return self.post(
-            viewname='document_states:tool_launch_workflows',
-        )
-
-
-class WorkflowTemplateViewTestMixin:
+class WorkflowTemplateViewTestMixin(WorkflowTemplateTestMixin):
     def _request_test_workflow_template_create_view(self):
         data = {
             'internal_name': TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME,
             'label': TEST_WORKFLOW_TEMPLATE_LABEL,
         }
 
-        pk_list = list(Workflow.objects.values('pk'))
+        pk_list = list(
+            Workflow.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='document_states:workflow_template_create', data=data

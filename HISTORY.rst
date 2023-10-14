@@ -4,6 +4,7 @@
 - Docker builder updates. Improve how caches and proxies are calculated.
   Add support for Docker image mirroring.
 - Update Django from version 3.2.20 to 3.2.22.
+- Fix editing existing metadata workflow actions.
 
 4.4.8 (2023-07-15)
 ==================

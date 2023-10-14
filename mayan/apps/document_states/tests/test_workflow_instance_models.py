@@ -6,11 +6,11 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from ..events import event_workflow_instance_created
 
-from .mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
 
 
 class WorkflowInstanceModelTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentTestCase
+    WorkflowInstanceTestMixin, GenericDocumentTestCase
 ):
     auto_upload_test_document = False
 
