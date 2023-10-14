@@ -8,14 +8,15 @@
 # Mohammed ALDOUB <voulnet@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
 # Roberto Rosario, 2023
+# Ali <alimahwer@yahoo.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -258,7 +259,7 @@ msgstr ""
 
 #: serializers.py:50 serializers.py:59
 msgid "Document type ID"
-msgstr ""
+msgstr "مُعرِّف نوع المستند"
 
 #: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
@@ -270,15 +271,15 @@ msgstr ""
 
 #: serializers.py:70
 msgid "Document types URL"
-msgstr ""
+msgstr "عنوان URL لأنواع المستندات"
 
 #: serializers.py:74
 msgid "Document types add URL"
-msgstr ""
+msgstr "عنوان URL لإضافة أنواع المستندات"
 
 #: serializers.py:78
 msgid "Document types remove URL"
-msgstr ""
+msgstr "عنوان URL لحذف أنواع المستندات"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"

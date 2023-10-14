@@ -10,16 +10,16 @@
 # Jesaja Everling <jeverling@gmail.com>, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
 # Berny <berny@bernhard-marx.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Felix <felix.com@gmx.com>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Felix <felix.com@gmx.com>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -255,10 +255,14 @@ msgid ""
 "unpinned or immutable depedency bugs in third party libraries. End users can"
 " ignore missing dependencies under this environment."
 msgstr ""
+"Umgebung, die für die Spezifizierung direkter Dokumentationsabhängigkeiten "
+"verwendet wird, um ungepinnte oder unveränderliche Fehler in "
+"Abhängigkeitsbibliotheken zu umgehen. Endbenutzer können fehlende "
+"Abhängigkeiten in dieser Umgebung ignorieren."
 
 #: environments.py:40
 msgid "Documentation (override)"
-msgstr ""
+msgstr "Dokumentation (überschrieben)"
 
 #: environments.py:44
 msgid ""

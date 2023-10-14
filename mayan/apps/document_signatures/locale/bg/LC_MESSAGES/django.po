@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -166,7 +166,7 @@ msgstr "Проверете всички документи"
 
 #: managers.py:94
 msgid "signed"
-msgstr ""
+msgstr "подписан"
 
 #: model_mixins.py:15
 msgid "Detached"
@@ -256,7 +256,7 @@ msgstr "Проверете подписите на документа"
 
 #: permissions.py:34
 msgid "View document signatures"
-msgstr ""
+msgstr "Преглед на подписи на документи"
 
 #: queues.py:13
 msgid "Verify key signatures"
@@ -285,6 +285,8 @@ msgstr ""
 #: serializers.py:59
 msgid "Primary key of the secret key used to sign the document file."
 msgstr ""
+"Първичен ключ на секретния ключ, използван за подписване на файла с "
+"документа."
 
 #: serializers.py:110
 msgid "URL"

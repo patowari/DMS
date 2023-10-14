@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -78,12 +78,12 @@ msgstr "Număr de permisiuni"
 #: model_mixins.py:88
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr ""
+msgstr "Permisiune necunoscută sau învechită: %s"
 
 #: model_mixins.py:100
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr ""
+msgstr "Spațiu de nume de permisiuni necunoscut sau învechit: %s"
 
 #: models.py:26
 msgid "A short text describing the role."
@@ -131,7 +131,7 @@ msgstr "Numele grupului"
 
 #: serializers.py:17
 msgid "Primary key"
-msgstr ""
+msgstr "Cheia principală"
 
 #: serializers.py:36
 msgid "Primary key of the group to add to the role."
@@ -139,7 +139,7 @@ msgstr "Cheia primară a grupului de adăugat la rol."
 
 #: serializers.py:37 serializers.py:45
 msgid "Group ID"
-msgstr ""
+msgstr "ID grup"
 
 #: serializers.py:44
 msgid "Primary key of the group to remove from the role."
@@ -151,7 +151,7 @@ msgstr "Cheia primară a permisiunii de adăugat la rol."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
-msgstr ""
+msgstr "ID permisiune"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
@@ -159,27 +159,27 @@ msgstr "Cheia primară a permisiunii de eliminat din rol."
 
 #: serializers.py:67
 msgid "Groups URL"
-msgstr ""
+msgstr "Adresa URL a grupurilor"
 
 #: serializers.py:71
 msgid "Groups add URL"
-msgstr ""
+msgstr "Adresă URL adăugare grupuri"
 
 #: serializers.py:75
 msgid "Groups remove URL"
-msgstr ""
+msgstr "Adresa URL eliminare grupuri"
 
 #: serializers.py:79
 msgid "Permissions URL"
-msgstr ""
+msgstr "Adresa URL a permisiunilor"
 
 #: serializers.py:83
 msgid "Permissions add URL"
-msgstr ""
+msgstr "Adresa URL adăugare permisiuni"
 
 #: serializers.py:87
 msgid "Permissions remove URL"
-msgstr ""
+msgstr "Adresa URL eliminare permisiuni"
 
 #: serializers.py:94
 msgid "URL"

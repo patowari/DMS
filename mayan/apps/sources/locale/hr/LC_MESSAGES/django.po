@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: apps.py:53 events.py:6 links.py:144 menus.py:6 models.py:35 queues.py:7
 #: settings.py:13 views/source_views.py:177
 msgid "Sources"
-msgstr ""
+msgstr "Izvori"
 
 #: apps.py:83
 msgid "Create a document source"
@@ -134,23 +134,23 @@ msgstr ""
 
 #: permissions.py:6
 msgid "Sources setup"
-msgstr ""
+msgstr "Postavljanje izvora dokumenata"
 
 #: permissions.py:10
 msgid "Create new document sources"
-msgstr ""
+msgstr "Izradi nove izvore dokumenata"
 
 #: permissions.py:13
 msgid "Delete document sources"
-msgstr ""
+msgstr "Briši izvore dokumenata"
 
 #: permissions.py:16
 msgid "Edit document sources"
-msgstr ""
+msgstr "Uredi izvore dokumenata"
 
 #: permissions.py:19
 msgid "View existing document sources"
-msgstr ""
+msgstr "Pregledaj postojeće izvore dokumenata"
 
 #: queues.py:10
 msgid "Sources periodic"
@@ -365,35 +365,35 @@ msgstr "Nikad"
 msgid "Ask user"
 msgstr ""
 
-#: source_backends/mixins.py:132
+#: source_backends/mixins.py:133
 msgid "Uncompress"
 msgstr ""
 
-#: source_backends/mixins.py:136
+#: source_backends/mixins.py:137
 msgid "Whether to expand or not compressed archives."
 msgstr ""
 
-#: source_backends/mixins.py:160
+#: source_backends/mixins.py:161
 msgid "Expand compressed files"
 msgstr ""
 
-#: source_backends/mixins.py:162
+#: source_backends/mixins.py:163
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""
 
-#: source_backends/mixins.py:261
+#: source_backends/mixins.py:262
 msgid "Assign a document type to documents uploaded from this source."
 msgstr ""
 
-#: source_backends/mixins.py:269
+#: source_backends/mixins.py:270
 msgid "Document type"
 msgstr "Tip dokumenta"
 
-#: source_backends/mixins.py:276
+#: source_backends/mixins.py:277
 msgid "Interval in seconds between checks for new documents."
 msgstr ""
 
-#: source_backends/mixins.py:282
+#: source_backends/mixins.py:283
 msgid "Interval"
 msgstr ""
 
@@ -626,7 +626,7 @@ msgstr ""
 
 #: views/source_views.py:176
 msgid "No sources available"
-msgstr ""
+msgstr "Nema dostupnih izvora"
 
 #: views/source_views.py:195
 msgid ""

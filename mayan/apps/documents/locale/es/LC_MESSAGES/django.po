@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -1543,8 +1543,14 @@ msgstr ""
 msgid "Recalculate the page count of the selected document file?"
 msgid_plural "Recalculate the page count of the selected document files?"
 msgstr[0] ""
+"¿Volver a calcular la cantidad de páginas del archivo del documento "
+"seleccionado?"
 msgstr[1] ""
+"¿Volver a calcular la cantidad de páginas de los archivos de documentos "
+"seleccionados?"
 msgstr[2] ""
+"¿Volver a calcular la cantidad de páginas de los archivos de documentos "
+"seleccionados?"
 
 #: views/document_file_page_views.py:71
 #, python-format
@@ -1684,8 +1690,14 @@ msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] ""
+"¿Borrar todas las transformaciones de página para el archivo de documento "
+"seleccionado?"
 msgstr[1] ""
+"¿Borrar todas las transformaciones de página para los archivos de documentos"
+" seleccionados?"
 msgstr[2] ""
+"¿Borrar todas las transformaciones de página para los archivos de documentos"
+" seleccionados?"
 
 #: views/document_file_views.py:288
 #, python-format
@@ -1971,8 +1983,14 @@ msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
 msgstr[0] ""
+"¿Borrar todas las transformaciones de página para la versión del documento "
+"seleccionado?"
 msgstr[1] ""
+"¿Borrar todas las transformaciones de página para la versión del documento "
+"seleccionado?"
 msgstr[2] ""
+"¿Borrar todas las transformaciones de página para la versión del documento "
+"seleccionado?"
 
 #: views/document_version_views.py:348
 #, python-format
@@ -2038,9 +2056,9 @@ msgstr ""
 #: views/document_views.py:95
 msgid "Change the type of the selected document"
 msgid_plural "Change the type of the selected documents"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Cambiar el tipo del documento seleccionado"
+msgstr[1] "Cambiar el tipo de los documentos seleccionados"
+msgstr[2] "Cambiar el tipo de los documentos seleccionados"
 
 #: views/document_views.py:106
 #, python-format
@@ -2093,9 +2111,9 @@ msgstr "%(count)d documentos agregados a favoritos."
 #: views/favorite_document_views.py:59
 msgid "Add the selected document to favorites?"
 msgid_plural "Add the selected documents to favorites?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "¿Agregar el documento seleccionado a favoritos?"
+msgstr[1] "¿Agregar los documentos seleccionados a favoritos?"
+msgstr[2] "¿Agregar los documentos seleccionados a favoritos?"
 
 #: views/favorite_document_views.py:77
 #, python-format
@@ -2115,9 +2133,9 @@ msgstr "%(count)d documentos eliminados de los favoritos."
 #: views/favorite_document_views.py:92
 msgid "Remove the selected document from favorites?"
 msgid_plural "Remove the selected documents from favorites?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "¿Eliminar el documento seleccionado de favoritos?"
+msgstr[1] "¿Eliminar los documentos seleccionados de favoritos?"
+msgstr[2] "¿Eliminar los documentos seleccionados de favoritos?"
 
 #: views/misc_views.py:44
 #, python-format

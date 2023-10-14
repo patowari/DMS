@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -407,7 +407,7 @@ msgstr "Numărul paginii țintă nu poate fi repetat."
 
 #: forms/misc_forms.py:10
 msgid "Page group"
-msgstr ""
+msgstr "Grup de pagini"
 
 #: forms/misc_forms.py:13 literals.py:91
 msgid "Page range"
@@ -972,7 +972,7 @@ msgstr "Documente accesate recent"
 
 #: permissions.py:12
 msgid "Change type of documents"
-msgstr ""
+msgstr "Schimbați tipul documentelor"
 
 #: permissions.py:15
 msgid "Create documents"
@@ -1153,13 +1153,13 @@ msgstr "Comentariu la versiunea documentului"
 
 #: serializers/document_file_serializers.py:13
 msgid "Document file URL"
-msgstr ""
+msgstr "Adresa URL a fișierului documentului"
 
 #: serializers/document_file_serializers.py:25
 #: serializers/document_version_serializers.py:57
 #: serializers/trashed_document_serializers.py:12
 msgid "Image URL"
-msgstr ""
+msgstr "URL-ul imaginii"
 
 #: serializers/document_file_serializers.py:41
 #: serializers/document_file_serializers.py:109
@@ -1180,11 +1180,11 @@ msgstr "Acțiune"
 #: serializers/document_file_serializers.py:74
 #: serializers/document_version_serializers.py:104
 msgid "Document URL"
-msgstr ""
+msgstr "Adresa URL a documentului"
 
 #: serializers/document_file_serializers.py:78
 msgid "Download URL"
-msgstr ""
+msgstr "Adresa URL de descărcare"
 
 #: serializers/document_file_serializers.py:90
 msgid "Binary content for the new file."
@@ -1192,17 +1192,17 @@ msgstr "Conținut binar pentru noul fișier."
 
 #: serializers/document_file_serializers.py:91
 msgid "File new"
-msgstr ""
+msgstr "Fișier nou"
 
 #: serializers/document_file_serializers.py:94
 #: serializers/document_version_serializers.py:120
 msgid "Page list URL"
-msgstr ""
+msgstr "Adresa URL a listei de pagini"
 
 #: serializers/document_file_serializers.py:106
 #: serializers/document_version_serializers.py:132
 msgid "Pages first"
-msgstr ""
+msgstr "Paginile mai întâi"
 
 #: serializers/document_serializers.py:19
 #: serializers/document_version_serializers.py:14
@@ -1216,40 +1216,41 @@ msgstr "ID tip document pentru noul document."
 #: serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
 msgid "Document type ID"
-msgstr ""
+msgstr "ID tip document"
 
 #: serializers/document_serializers.py:35
 msgid "Document change type URL"
-msgstr ""
+msgstr "Adresa URL a  modificării tipului de document"
 
 #: serializers/document_serializers.py:39
 msgid "File latest"
-msgstr ""
+msgstr "Fișier cel mai recent"
 
 #: serializers/document_serializers.py:42
 msgid "File list URL"
-msgstr ""
+msgstr "Adresa URL a listei de fișiere"
 
 #: serializers/document_serializers.py:46
 msgid "Version active"
-msgstr ""
+msgstr "Versiunea activă"
 
 #: serializers/document_serializers.py:49
 msgid "Version list URL"
-msgstr ""
+msgstr "Adresa URL a listei de versiuni"
 
 #: serializers/document_serializers.py:79
 msgid ""
 "Primary key of the document type into which the document will be changed."
 msgstr ""
+"Cheia primară a tipului de document în care va fi schimbat documentul."
 
 #: serializers/document_type_serializers.py:11
 msgid "Document type URL"
-msgstr ""
+msgstr "Adresa URL a tipului de document"
 
 #: serializers/document_type_serializers.py:35
 msgid "Quick label list URL"
-msgstr ""
+msgstr "Adresa URL a listei rapidă de etichete"
 
 #: serializers/document_version_serializers.py:26
 msgid "Backend ID"
@@ -1265,11 +1266,11 @@ msgstr "ID-ul tipului de conținut al obiectului sursă pentru pagină."
 
 #: serializers/document_version_serializers.py:45
 msgid "Document version URL"
-msgstr ""
+msgstr "Adresa URL a versiunii documentului"
 
 #: serializers/document_version_serializers.py:108
 msgid "Export URL"
-msgstr ""
+msgstr "Adresa URL pentru export"
 
 #: serializers/favorite_document_serializers.py:16
 msgid "Document ID for the new favorite document."
@@ -1277,11 +1278,11 @@ msgstr "ID document pentru noul document preferat."
 
 #: serializers/favorite_document_serializers.py:17
 msgid "Document ID"
-msgstr ""
+msgstr "ID document"
 
 #: serializers/trashed_document_serializers.py:16
 msgid "Restore URL"
-msgstr ""
+msgstr "Adresa URL de restaurare"
 
 #: settings.py:49
 msgid ""
@@ -1441,15 +1442,15 @@ msgstr "Numărul total de pagini de documente din fiecare lună"
 
 #: statistics.py:332
 msgid "Total documents per document type"
-msgstr ""
+msgstr "Total documente pe tip de document"
 
 #: statistics.py:339
 msgid "Total document files per document type"
-msgstr ""
+msgstr "Total fișiere de document pe tip de document"
 
 #: statistics.py:346
 msgid "Total document file pages per document type"
-msgstr ""
+msgstr "Numărul total de pagini ale fișierului document pe tip de document"
 
 #: storages.py:21
 msgid ""
@@ -1540,9 +1541,9 @@ msgstr ""
 #: views/document_file_page_views.py:60
 msgid "Recalculate the page count of the selected document file?"
 msgid_plural "Recalculate the page count of the selected document files?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Recalculați numărul de pagini ale fișierului document selectat?"
+msgstr[1] "Recalculați numărul de pagini al fișierelor de document selectate?"
+msgstr[2] "Recalculați numărul de pagini al fișierelor de document selectate?"
 
 #: views/document_file_page_views.py:71
 #, python-format
@@ -1681,8 +1682,13 @@ msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] ""
+"Ștergeți toate transformările de pagină pentru fișierul document selectat?"
 msgstr[1] ""
+"Ștergeți toate transformările de pagină pentru fișierele de document "
+"selectate?"
 msgstr[2] ""
+"Ștergeți toate transformările de pagină pentru fișierele de document "
+"selectate?"
 
 #: views/document_file_views.py:288
 #, python-format
@@ -1972,8 +1978,14 @@ msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
 msgstr[0] ""
+"Ștergeți toate transformările de pagină pentru versiunea de document "
+"selectată?"
 msgstr[1] ""
+"Ștergeți toate transformările de pagină pentru versiunea de document "
+"selectată?"
 msgstr[2] ""
+"Ștergeți toate transformările de pagină pentru versiunea de document "
+"selectată?"
 
 #: views/document_version_views.py:348
 #, python-format
@@ -2040,9 +2052,9 @@ msgstr ""
 #: views/document_views.py:95
 msgid "Change the type of the selected document"
 msgid_plural "Change the type of the selected documents"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Schimbați tipul documentului selectat"
+msgstr[1] "Schimbați tipul documentelor selectate"
+msgstr[2] "Schimbați tipul documentelor selectate"
 
 #: views/document_views.py:106
 #, python-format
@@ -2095,9 +2107,9 @@ msgstr "%(count)d documente s-au adăugat la favorite."
 #: views/favorite_document_views.py:59
 msgid "Add the selected document to favorites?"
 msgid_plural "Add the selected documents to favorites?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Adăugați documentul selectat la favorite?"
+msgstr[1] "Adăugați documentele selectate la favorite?"
+msgstr[2] "Adăugați documentele selectate la favorite?"
 
 #: views/favorite_document_views.py:77
 #, python-format
@@ -2117,9 +2129,9 @@ msgstr "Documentele %(count)d au fost eliminate de la preferate."
 #: views/favorite_document_views.py:92
 msgid "Remove the selected document from favorites?"
 msgid_plural "Remove the selected documents from favorites?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Eliminați documentul selectat din favorite?"
+msgstr[1] "Eliminați documentele selectate din favorite?"
+msgstr[2] "Eliminați documentele selectate din favorite?"
 
 #: views/misc_views.py:44
 #, python-format

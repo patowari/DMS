@@ -8,17 +8,17 @@
 # Roberto Rosario, 2023
 # Tobias Paepke <tobias.paepke@paepke.net>, 2023
 # Felix <felix.com@gmx.com>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,11 +32,11 @@ msgstr "Protokollierung"
 
 #: events.py:10
 msgid "Error log deleted"
-msgstr ""
+msgstr "Fehlerlog gelöscht"
 
 #: links.py:15 views.py:36
 msgid "Global error log"
-msgstr ""
+msgstr "Globaler Fehlerlog"
 
 #: links.py:26
 msgid "Delete"
@@ -72,11 +72,11 @@ msgstr "Fehlerprotokolle"
 
 #: models.py:51 models.py:63
 msgid "Error log partition"
-msgstr ""
+msgstr "Fehlerlogpartition"
 
 #: models.py:52
 msgid "Error log partitions"
-msgstr ""
+msgstr "Fehlerlogpartitionen"
 
 #: models.py:66
 msgid "Date and time"
@@ -88,15 +88,15 @@ msgstr "Text"
 
 #: models.py:75
 msgid "Error log partition entry"
-msgstr ""
+msgstr "Fehlerlogpartitionseintrag"
 
 #: models.py:76
 msgid "Error log partition entries"
-msgstr ""
+msgstr "Fehlerlogpartitionseinträge"
 
 #: permissions.py:10
 msgid "Delete error log"
-msgstr ""
+msgstr "Fehlerlog löschen"
 
 #: permissions.py:13
 msgid "View error log"
@@ -116,7 +116,7 @@ msgstr "URL"
 
 #: settings.py:18
 msgid "Disable logging message ANSI color codes."
-msgstr ""
+msgstr "ANSI Farbcodes für Logeinträge deaktivieren"
 
 #: settings.py:24
 msgid "Automatically enable logging to all apps."
@@ -124,11 +124,11 @@ msgstr "Protokollierung für alle Apps automatisch einschalten."
 
 #: settings.py:30
 msgid "List of handlers to which logging messages will be sent."
-msgstr ""
+msgstr "Liste der Handler zu denen Loggingnachrichten gesendet werden"
 
 #: settings.py:35
 msgid "Level for the logging system."
-msgstr ""
+msgstr "Level des Loggingsystems."
 
 #: settings.py:41
 msgid "Path to the logfile that will track errors during production."
@@ -141,6 +141,8 @@ msgid ""
 "This view displays the error log of different objects. An empty list is a "
 "good thing."
 msgstr ""
+"Diese Ansicht stellt die Fehlerlogs von verschiedenen Objekten dar. Eine "
+"leere Liste ist von Vorteil..."
 
 #: views.py:34 views.py:101
 msgid "There are no error log entries"
@@ -158,13 +160,15 @@ msgstr "Objektfehlerlog erfolgreich gelöscht"
 #: views.py:74
 #, python-format
 msgid "Delete error log entry: %s"
-msgstr ""
+msgstr "Fehlerlogeintrag %s löschen"
 
 #: views.py:97
 msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
+"Diese Ansicht stellt den Fehlerlog eines Objektes dar. Eine leere Liste ist "
+"von Vorteil..."
 
 #: views.py:104
 #, python-format

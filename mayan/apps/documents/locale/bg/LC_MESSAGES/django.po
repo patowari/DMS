@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -1478,11 +1478,11 @@ msgstr "Визуализация на изображението на стран
 
 #: templates/documents/errors/document_file_page_transformation_error.html:5
 msgid "Document file page transformation error"
-msgstr ""
+msgstr "Грешка при преобразуване на страницата на файла на документа"
 
 #: templates/documents/errors/document_version_page_transformation_error.html:5
 msgid "Document version page transformation error"
-msgstr ""
+msgstr "Грешка при преобразуване на страницата на версията на документа"
 
 #: templates/documents/errors/no_valid_version.html:5
 msgid "No valid or active version"
@@ -1528,8 +1528,8 @@ msgstr ""
 #: views/document_file_page_views.py:60
 msgid "Recalculate the page count of the selected document file?"
 msgid_plural "Recalculate the page count of the selected document files?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Преизчисляване на броя страници на избрания документен файл?"
+msgstr[1] "Преизчисляване на броя страници на избраните файлове с документи?"
 
 #: views/document_file_page_views.py:71
 #, python-format
@@ -1664,7 +1664,10 @@ msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] ""
+"Изчистване на всички трансформации на страници за избрания файл с документ?"
 msgstr[1] ""
+"Изчистване на всички трансформации на страници за избраните файлове с "
+"документи?"
 
 #: views/document_file_views.py:288
 #, python-format
@@ -1942,7 +1945,11 @@ msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
 msgstr[0] ""
+"Изчистване на всички трансформации на страници за избраната версия на "
+"документ?"
 msgstr[1] ""
+"Изчистване на всички трансформации на страници за избраната версия на "
+"документ?"
 
 #: views/document_version_views.py:348
 #, python-format
@@ -2006,8 +2013,8 @@ msgstr "Заявка за промяна на типа документ, изв�
 #: views/document_views.py:95
 msgid "Change the type of the selected document"
 msgid_plural "Change the type of the selected documents"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Променете типа на избрания документ"
+msgstr[1] "Променете типа на избраните документи"
 
 #: views/document_views.py:106
 #, python-format
@@ -2060,8 +2067,8 @@ msgstr "%(count)d документи добавени към предпочит�
 #: views/favorite_document_views.py:59
 msgid "Add the selected document to favorites?"
 msgid_plural "Add the selected documents to favorites?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Добавяне на избрания документ към любими?"
+msgstr[1] "Добавяне на избраните документи към любими?"
 
 #: views/favorite_document_views.py:77
 #, python-format
@@ -2081,8 +2088,8 @@ msgstr "%(count)d документи премахнати от предпочи�
 #: views/favorite_document_views.py:92
 msgid "Remove the selected document from favorites?"
 msgid_plural "Remove the selected documents from favorites?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Премахване на избрания документ от любимите?"
+msgstr[1] "Премахване на избраните документи от любимите?"
 
 #: views/misc_views.py:44
 #, python-format
@@ -2113,7 +2120,7 @@ msgstr "Няма наскоро създадени документи"
 #: views/trashed_document_views.py:37
 #, python-format
 msgid "Document \"%(object)s\" moved to trash."
-msgstr ""
+msgstr "Документът &quot; %(object)s &quot; е преместен в кошчето."
 
 #: views/trashed_document_views.py:40
 #, python-format
@@ -2128,7 +2135,7 @@ msgstr "%(count)d документи бяха преместени в кошче
 #: views/trashed_document_views.py:45
 #, python-format
 msgid "Move the document \"%(object)s\" to trash?"
-msgstr ""
+msgstr "Преместване на документа &quot; %(object)s &quot; в кошчето?"
 
 #: views/trashed_document_views.py:46
 msgid "Move the selected document to the trash?"
@@ -2137,7 +2144,7 @@ msgstr "Преместване на избрания документ в кош�
 #: views/trashed_document_views.py:47
 #, python-format
 msgid "Move the %(count)d selected documents to trash?"
-msgstr ""
+msgstr "Преместване на %(count)d избрани документи в кошчето?"
 
 #: views/trashed_document_views.py:78
 msgid "Empty trash?"
@@ -2156,6 +2163,7 @@ msgstr "%(count)d бракувани документи предназначен
 #, python-format
 msgid "Trash document \"%(object)s\" submitted for deletion."
 msgstr ""
+"Документът в кошчето &quot; %(object)s &quot; е изпратен за изтриване."
 
 #: views/trashed_document_views.py:107
 #, python-format
@@ -2165,12 +2173,12 @@ msgstr "%(count)d бракуван документ, предназначен з
 #: views/trashed_document_views.py:109
 #, python-format
 msgid "Delete the %(count)d selected trashed documents?"
-msgstr ""
+msgstr "Изтриване на %(count)d избрани документи в кошчето?"
 
 #: views/trashed_document_views.py:110
 #, python-format
 msgid "Delete the trashed document \"%(object)s\"?"
-msgstr ""
+msgstr "Изтриване на изхвърления в кошчето документ &quot; %(object)s &quot;?"
 
 #: views/trashed_document_views.py:111
 msgid "Delete the selected trashed document?"
@@ -2199,6 +2207,7 @@ msgstr "%(count)d изхвърлени документи са възстано�
 #, python-format
 msgid "Trashed document \"%(object)s\" restored."
 msgstr ""
+"Изхвърленият в кошчето документ &quot; %(object)s &quot; е възстановен."
 
 #: views/trashed_document_views.py:173
 #, python-format
@@ -2208,12 +2217,12 @@ msgstr "%(count)d изхвърлен документ е възстановен.
 #: views/trashed_document_views.py:175
 #, python-format
 msgid "Restore the %(count)d selected trashed documents?"
-msgstr ""
+msgstr "Възстановяване на %(count)d избрани документи в кошчето?"
 
 #: views/trashed_document_views.py:176
 #, python-format
 msgid "Restore the trashed document: %(object)s"
-msgstr ""
+msgstr "Възстановете изхвърления в кошчето документ: %(object)s"
 
 #: views/trashed_document_views.py:177
 msgid "Restore the selected trashed document?"

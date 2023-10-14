@@ -7,14 +7,15 @@
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # Roberto Rosario, 2023
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -108,7 +109,7 @@ msgstr "Sterownik"
 
 #: models.py:21
 msgid "Document file"
-msgstr ""
+msgstr "Plik dokumentu"
 
 #: models.py:27 models.py:63
 msgid "Document file driver entry"

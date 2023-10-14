@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -36,6 +36,7 @@ msgstr "Der OCR-Inhalt."
 #: apps.py:121
 msgid "A generator returning the document's version pages OCR content."
 msgstr ""
+"Ein Generator, der den OCR-Inhalt von Dokumentenversionsseiten zurückgibt."
 
 #: apps.py:123
 msgid "OCR content"
@@ -109,7 +110,7 @@ msgstr "Neue Dokumente automatisch in die OCR-Warteschlange einstellen."
 
 #: models.py:27
 msgid "Auto OCR"
-msgstr ""
+msgstr "Automatisches OCR"
 
 #: models.py:33
 msgid "Document type settings"
@@ -137,7 +138,7 @@ msgstr "OCR-Inhalt der Seite der Dokumentenversion"
 
 #: models.py:59
 msgid "Document version pages OCR contents"
-msgstr ""
+msgstr "OCR-Inhalt von Dokumentenversionsseiten"
 
 #: permissions.py:10
 msgid "Submit documents for OCR"
@@ -145,7 +146,7 @@ msgstr "Dokumente in die OCR-Warteschlange einstellen"
 
 #: permissions.py:13
 msgid "Edit the transcribed text from document"
-msgstr ""
+msgstr "Den transkribierten Text des Dokuments bearbeiten"
 
 #: permissions.py:17
 msgid "View the transcribed text from document"
@@ -157,11 +158,11 @@ msgstr "OCR-Einstellungen für Dokumententyp beabeiten"
 
 #: queues.py:10
 msgid "Finish document version OCR"
-msgstr ""
+msgstr "Dokumentenversions-OCR beenden"
 
 #: queues.py:14
 msgid "Document version page OCR"
-msgstr ""
+msgstr "Dokumentenversionsseiten-OCR"
 
 #: queues.py:18 search.py:12 search.py:24
 msgid "Document version OCR"
@@ -197,21 +198,23 @@ msgstr "%(count)d Dokumente zur OCR-Warteschlange hinzugefügt."
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
 msgstr ""
+"Fehler bei Löschung von Dokumentenversions-OCR \"%(instance)s\"; "
+"%(exception)s"
 
 #: views.py:112
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
-msgstr ""
+msgstr "OCR-Inhalt von %(count)d Dokumentenversionen erfolgreich gelöscht."
 
 #: views.py:115
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "OCR-Inhalt von \"%(object)s\" erfolgreich gelöscht."
 
 #: views.py:118
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
-msgstr ""
+msgstr "OCR-Inhalt von %(count)d Dokumentenversion erfolgreich gelöscht."
 
 #: views.py:121
 #, python-format
@@ -221,7 +224,7 @@ msgstr "OCR-Inhalt der %(count)d ausgewählten Dokumentenversionen löschen."
 #: views.py:123
 #, python-format
 msgid "Delete the OCR content of: %(object)s."
-msgstr ""
+msgstr "OCR-Inhalt von \"%(object)s\" löschen."
 
 #: views.py:125
 #, python-format
@@ -236,28 +239,30 @@ msgstr "Ergebnis der OCR-Texterkennung für Dokument %s"
 #: views.py:178
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
-msgstr ""
+msgstr "%(count)d Dokumentenversion in die OCR-Warteschlange eingereiht."
 
 #: views.py:181
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
-msgstr ""
+msgstr "%(count)d Dokumentenversionen in die OCR-Warteschlange eingereiht."
 
 #: views.py:190
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
 msgstr[0] ""
+"Die ausgewählte Dokumentenversion in die OCR-Warteschlange einreihen?"
 msgstr[1] ""
+"Die ausgewählten Dokumentenversionen in die OCR-Warteschlange einreihen?"
 
 #: views.py:226
 #, python-format
 msgid "OCR result for document version page: %s"
-msgstr ""
+msgstr "OCR-Ergebnis für Dokumentenversionsseite %s"
 
 #: views.py:254
 #, python-format
 msgid "Edit OCR for document version page: %s"
-msgstr ""
+msgstr "OCR-Ergebnis für Dokumentenversionsseite %s bearbeiten"
 
 #: workflow_actions.py:15
 msgid "Page condition"

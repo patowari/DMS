@@ -11,16 +11,16 @@
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023
 # Franck Boucher <boucher.fk@gmail.com>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2023\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgstr "Commun"
 
 #: dependencies.py:165
 msgid "Transifex Client"
-msgstr ""
+msgstr "Client Transifex"
 
 #: dependencies.py:182
 msgid "Used to allow offline translation of the code text strings."
@@ -54,47 +54,51 @@ msgstr "Environnement de ligne de commande avec autocomplétion."
 msgid "Checks proper formatting of the README file."
 msgstr "Vérifie le formatage du fichier README."
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "À propos de"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "Obtenez le livre"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
 msgstr "Documentation"
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:45 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr ""
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "Licence"
 
-#: links.py:50
+#: links.py:58
 msgid "Copy"
 msgstr "Copier"
 
-#: links.py:54
+#: links.py:62
 msgid "Setup"
 msgstr "Configuration"
 
-#: links.py:57
+#: links.py:65
 msgid "Source code"
 msgstr "Code source"
 
-#: links.py:61
+#: links.py:69
 msgid "Online store"
 msgstr "Boutique en ligne"
 
-#: links.py:65
+#: links.py:73
 msgid "Get support"
 msgstr "Obtenez de l'aide"
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:134
 msgid "Tools"
 msgstr "Outils"
 

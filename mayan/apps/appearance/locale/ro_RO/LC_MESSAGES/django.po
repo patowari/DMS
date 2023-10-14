@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Poziția în care vor fi afișate mesajele de sistem."
 
 #: settings.py:40
 msgid ""
@@ -187,12 +187,16 @@ msgstr ""
 msgid ""
 "Maximum number of requests that can be made before throttling is enabled."
 msgstr ""
+"Numărul maxim de solicitări care pot fi făcute înainte ca limitarea să fie "
+"activată."
 
 #: settings.py:54
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Timp în milisecunde după care o limitarea solicitării se va șterge, "
+"permițând efectuarea unei cereri suplimentare."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -340,6 +344,9 @@ msgid ""
 "Too many pending requests. Additional requests will be blocked until a "
 "pending one is completed or after the cooling off period ends."
 msgstr ""
+"Prea multe cereri în așteptare. Solicitările suplimentare vor fi blocate "
+"până la finalizarea uneia în așteptare sau după încheierea perioadei de "
+"congestie."
 
 #: templates/appearance/base.html:73
 msgid "Object"

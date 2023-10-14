@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -49,47 +49,51 @@ msgstr "Środowisko wiersza poleceń z funkcją autouzupełniania."
 msgid "Checks proper formatting of the README file."
 msgstr "Sprawdza poprawność formatowania pliku README."
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "O programie"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "Pobierz książkę"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
 msgstr "Dokumentacja"
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:45 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr ""
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "Licencja"
 
-#: links.py:50
+#: links.py:58
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: links.py:54
+#: links.py:62
 msgid "Setup"
 msgstr "Ustawienia"
 
-#: links.py:57
+#: links.py:65
 msgid "Source code"
 msgstr "Kod źródłowy"
 
-#: links.py:61
+#: links.py:69
 msgid "Online store"
 msgstr "Sklep internetowy"
 
-#: links.py:65
+#: links.py:73
 msgid "Get support"
 msgstr "Uzyskaj wsparcie"
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:134
 msgid "Tools"
 msgstr "Narzędzia"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -22,47 +22,47 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:28 links.py:10 permissions.py:6
+#: apps.py:31 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "Gestionar de sarcini"
 
-#: apps.py:99
+#: apps.py:113
 msgid "Label"
 msgstr "Conținut etichetă"
 
-#: apps.py:103
+#: apps.py:117
 msgid "Name"
 msgstr "Nume"
 
-#: apps.py:108
+#: apps.py:122
 msgid "Default queue?"
 msgstr "Coadă implicită?"
 
-#: apps.py:113
+#: apps.py:127
 msgid "Is transient?"
 msgstr "Este tranzitorie?"
 
-#: apps.py:117
+#: apps.py:131
 msgid "Type"
 msgstr "Tip"
 
-#: apps.py:122
+#: apps.py:136
 msgid "Start time"
 msgstr "Timpul de începere"
 
-#: apps.py:126
+#: apps.py:140
 msgid "Host"
 msgstr "Gazdă"
 
-#: apps.py:130
+#: apps.py:144
 msgid "Arguments"
 msgstr "Argumente"
 
-#: apps.py:134
+#: apps.py:148
 msgid "Keyword arguments"
 msgstr "Argumentele cuvinte cheie"
 
-#: apps.py:138
+#: apps.py:152
 msgid "Worker process ID"
 msgstr "ID-ul procesului de lucru"
 

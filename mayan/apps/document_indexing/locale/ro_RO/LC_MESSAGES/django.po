@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -375,31 +375,31 @@ msgstr "URL"
 
 #: serializers.py:21 serializers.py:264
 msgid "Nodes URL"
-msgstr ""
+msgstr "Adresa URL a nodurilor"
 
 #: serializers.py:46
 msgid "Children URL"
-msgstr ""
+msgstr "Adresa URL pentru copii"
 
 #: serializers.py:49
 msgid "Documents URL"
-msgstr ""
+msgstr "Adresa URL a documentelor"
 
 #: serializers.py:52 serializers.py:118 serializers.py:176
 msgid "Index URL"
-msgstr ""
+msgstr "Adresa URL a indexului"
 
 #: serializers.py:55 serializers.py:121 serializers.py:182
 msgid "Parent URL"
-msgstr ""
+msgstr "Adresa URL părinte"
 
 #: serializers.py:115 serializers.py:173
 msgid "Children"
-msgstr ""
+msgstr "Copii"
 
 #: serializers.py:179
 msgid "Parent"
-msgstr ""
+msgstr "Părinte"
 
 #: serializers.py:237
 msgid ""
@@ -411,7 +411,7 @@ msgstr ""
 
 #: serializers.py:239
 msgid "Document types URL"
-msgstr ""
+msgstr "Adresă URL tipuri de documente"
 
 #: serializers.py:245
 msgid "URL of the API endpoint to add document types to this index template."
@@ -421,7 +421,7 @@ msgstr ""
 
 #: serializers.py:247
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adresă URL adăugare tipuri de documente"
 
 #: serializers.py:253
 msgid ""
@@ -432,19 +432,19 @@ msgstr ""
 
 #: serializers.py:255
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adresă URL ștergere tipuri de documente"
 
 #: serializers.py:260
 msgid "Index template root node ID"
-msgstr ""
+msgstr "ID-ul nodului rădăcină al șablonului de index"
 
 #: serializers.py:267
 msgid "Rebuild URL"
-msgstr ""
+msgstr "Reconstruiți adresa URL"
 
 #: serializers.py:271
 msgid "Reset URL"
-msgstr ""
+msgstr "Resetați adresa URL"
 
 #: serializers.py:317
 msgid "Primary key of the document type to add to the index template."
@@ -452,7 +452,7 @@ msgstr "Cheia primară a tipului de document de adăugat la șablonul de index."
 
 #: serializers.py:318 serializers.py:327
 msgid "Document type ID"
-msgstr ""
+msgstr "ID tip document"
 
 #: serializers.py:326
 msgid "Primary key of the document type to remove from the index template."
@@ -627,17 +627,17 @@ msgstr "Șablonul de index a fost pus în coadă pentru reconstrucție."
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Șablon de index %(count)d pus în coadă pentru reconstrucție."
+msgstr[1] "%(count)d șabloane de index puse în coadă pentru reconstrucție."
+msgstr[2] "%(count)d șabloane de index puse în coadă pentru reconstrucție."
 
 #: views/index_template_views.py:465
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(count)d resetare index."
+msgstr[1] "%(count)d indexurile resetate."
+msgstr[2] "%(count)d indexuri reinițializate."
 
 #: views/index_template_views.py:478
 msgid "Index templates for which their instances will be deleted."

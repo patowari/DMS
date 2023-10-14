@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 #: models/document_models.py:103 permissions.py:6 queues.py:21 settings.py:33
 #: statistics.py:286
 msgid "Documents"
-msgstr ""
+msgstr "Баримт"
 
 #: apps.py:293
 msgid "Create a document type"
@@ -356,7 +357,7 @@ msgstr ""
 #: models/document_type_models.py:80 models/document_type_models.py:128
 #: serializers/document_serializers.py:28 workflow_actions.py:11
 msgid "Document type"
-msgstr ""
+msgstr "Баримтын төрөл"
 
 #: forms/document_version_forms.py:18
 msgid ""
@@ -374,7 +375,7 @@ msgstr ""
 
 #: forms/document_version_page_forms.py:32
 msgid "Object ID"
-msgstr ""
+msgstr "Объект ID"
 
 #: forms/document_version_page_forms.py:35
 msgid "Source"
@@ -899,7 +900,7 @@ msgstr ""
 #: serializers/favorite_document_serializers.py:20
 #: serializers/recently_accessed_document_serializers.py:16
 msgid "User"
-msgstr ""
+msgstr "Хэрэглэгч"
 
 #: models/favorite_document_models.py:41
 msgid "Favorite document"
@@ -1087,23 +1088,23 @@ msgstr ""
 
 #: search.py:64 search.py:95 search.py:139 search.py:169
 msgid "Document label"
-msgstr ""
+msgstr "Баримтын шошго"
 
 #: search.py:67 search.py:99 search.py:142 search.py:173
 msgid "Document description"
-msgstr ""
+msgstr "Баримтын тайлбар"
 
 #: search.py:70 search.py:105 search.py:145 search.py:176
 msgid "Document UUID"
-msgstr ""
+msgstr "Баримтын UUID"
 
 #: search.py:102
 msgid "Document file checksum"
-msgstr ""
+msgstr "Баримтын checksum"
 
 #: search.py:108
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Баримтын MIME төрөл"
 
 #: search.py:166
 msgid "Document version comment"

@@ -12,16 +12,16 @@
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,7 +153,7 @@ msgstr "Nombre de pages"
 
 #: dashboard_widgets.py:55
 msgid "Total documents"
-msgstr "Nombre total de documents"
+msgstr "Nombre de documents"
 
 #: dashboard_widgets.py:73 views/trashed_document_views.py:156
 msgid "Documents in trash"
@@ -825,7 +825,7 @@ msgstr "Parcellaire ?"
 
 #: models/document_type_models.py:37
 msgid "A short text identifying the document type."
-msgstr ""
+msgstr "Un court texte identifiant le type de document."
 
 #: models/document_type_models.py:42
 msgid ""
@@ -1182,7 +1182,7 @@ msgstr ""
 
 #: serializers/document_file_serializers.py:78
 msgid "Download URL"
-msgstr ""
+msgstr "URL du téléchargement"
 
 #: serializers/document_file_serializers.py:90
 msgid "Binary content for the new file."
@@ -1275,7 +1275,7 @@ msgstr "ID de document pour le nouveau document favori."
 
 #: serializers/favorite_document_serializers.py:17
 msgid "Document ID"
-msgstr ""
+msgstr "ID du document"
 
 #: serializers/trashed_document_serializers.py:16
 msgid "Restore URL"
@@ -1413,15 +1413,15 @@ msgstr "Nouvelles pages de documents par mois"
 
 #: statistics.py:311
 msgid "Total documents at each month"
-msgstr "Nombre total de documents chaque mois"
+msgstr "Nombre de documents à chaque mois"
 
 #: statistics.py:318
 msgid "Total document files at each month"
-msgstr "Nombre total de documents chaque mois"
+msgstr "Nombre de documents chaque mois"
 
 #: statistics.py:325
 msgid "Total document pages at each month"
-msgstr "Nombre total de pages de documents chaque mois"
+msgstr "Nombre de pages de documents chaque mois"
 
 #: statistics.py:332
 msgid "Total documents per document type"

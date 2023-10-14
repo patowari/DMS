@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -28,7 +28,7 @@ msgstr "Duplikate"
 
 #: apps.py:60
 msgid "Duplicate backend"
-msgstr ""
+msgstr "Duplizierungsbackend"
 
 #: classes.py:90
 msgid "Null backend"
@@ -36,11 +36,11 @@ msgstr "Null Backend"
 
 #: duplicate_backends.py:9
 msgid "Exact document file checksum"
-msgstr ""
+msgstr "Exakte Dokumentenprüfsumme"
 
 #: duplicate_backends.py:32
 msgid "Exact document label"
-msgstr ""
+msgstr "Exakte Dokumentenbezeichnung"
 
 #: links.py:18 models.py:37 views.py:79
 msgid "Duplicated documents"
@@ -52,11 +52,11 @@ msgstr "Duplikatsuche"
 
 #: models.py:19 models.py:29
 msgid "Stored duplicate backend"
-msgstr ""
+msgstr "Gespeichertes Duplizierungsbackend"
 
 #: models.py:20
 msgid "Stored duplicate backends"
-msgstr ""
+msgstr "Gespeicherte Duplizierungsbackends"
 
 #: models.py:33
 msgid "Document"
@@ -64,11 +64,11 @@ msgstr "Dokument"
 
 #: models.py:45
 msgid "Duplicated backend entry"
-msgstr ""
+msgstr "Duplizierungsbackendeintrag"
 
 #: models.py:46
 msgid "Duplicated backend entries"
-msgstr ""
+msgstr "Duplizierungsbackendeinträge"
 
 #: queues.py:14
 msgid "Clean empty duplicate lists"

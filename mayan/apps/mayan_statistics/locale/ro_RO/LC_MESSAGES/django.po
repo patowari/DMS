@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -42,7 +42,7 @@ msgstr "Ultima actualizare"
 
 #: classes.py:45
 msgid "Statistics namespace"
-msgstr ""
+msgstr "Spațiu de nume statistici"
 
 #: classes.py:162
 msgid "Never"
@@ -50,15 +50,15 @@ msgstr "niciodată"
 
 #: classes.py:207
 msgid "Doughnut chart"
-msgstr ""
+msgstr "Diagramă gen gogoașă"
 
 #: classes.py:212
 msgid "Line chart"
-msgstr ""
+msgstr "Diagramă cu linii"
 
 #: classes.py:217
 msgid "Pie chart"
-msgstr ""
+msgstr "Diagramă gen plăcintă"
 
 #: links.py:15
 msgid "Namespace details"
@@ -121,10 +121,11 @@ msgstr "Statistica \"%s\" nu a fost găsită."
 #: views.py:24
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
+"Spațiile de nume pentru statistici grupează statisticile în unități logice."
 
 #: views.py:26
 msgid "No statistic namespaces available"
-msgstr ""
+msgstr "Nu sunt disponibile spații de nume statistice"
 
 #: views.py:27
 msgid "Statistics namespaces"
@@ -133,10 +134,11 @@ msgstr "Numele de spațiu pentru statistici"
 #: views.py:50
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
+"Statisticile sunt valori și reprezentări grafice ale datelor existente."
 
 #: views.py:53
 msgid "No statistic available"
-msgstr ""
+msgstr "Nu există statistici disponibile"
 
 #: views.py:55
 #, python-format

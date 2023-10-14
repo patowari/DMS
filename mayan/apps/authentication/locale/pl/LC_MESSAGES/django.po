@@ -10,14 +10,15 @@
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # Marcin Lozynski <mlozynski@wp.pl>, 2023
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +76,7 @@ msgstr "Podszyj się pod użytkownika"
 
 #: links.py:50
 msgid "Impersonate"
-msgstr ""
+msgstr "Podszywanie się"
 
 #: links.py:55 links.py:60
 msgid "Set password"
@@ -96,10 +97,12 @@ msgstr ""
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
+"Wykropkowana ścieżka do backendu używanego do przetwarzania uwierzytelniania"
+" użytkowników."
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "Argumenty dla AUTHENTICATION_BACKEND."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format
@@ -108,6 +111,8 @@ msgid ""
 "                Impersonating user \"%(user)s\".\n"
 "            "
 msgstr ""
+"\n"
+"Podszywanie się pod użytkownika \"%(user)s”."
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
@@ -199,10 +204,10 @@ msgstr "Zmieniono hasła dla %(count)d użytkowników"
 #: views/authentication_views.py:341
 msgid "Change user password"
 msgid_plural "Change users passwords"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Zmień hasło użytkownika"
+msgstr[1] "Zmień hasła użytkowników"
+msgstr[2] "Zmień hasła użytkowników"
+msgstr[3] "Zmień hasła użytkowników"
 
 #: views/authentication_views.py:352
 #, python-format
@@ -222,4 +227,4 @@ msgstr "Błąd podczas resetowania hasło użytkownika \" %(user)s \": %(error)s
 #: views/impersonation_views.py:81
 #, python-format
 msgid "Impersonate user: %s"
-msgstr ""
+msgstr "Podszyj się pod użytkownika: %s"

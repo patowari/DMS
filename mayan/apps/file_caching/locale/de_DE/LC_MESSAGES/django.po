@@ -6,18 +6,18 @@
 # Translators:
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
 # Berny <berny@bernhard-marx.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
 # Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,19 +67,19 @@ msgstr "Unbekannt"
 
 #: model_mixins.py:64
 msgid "Partition count"
-msgstr ""
+msgstr "Anzahl Partitionen"
 
 #: model_mixins.py:65
 msgid "Total cached objects."
-msgstr ""
+msgstr "Gesamtzahl gecachter Objekte."
 
 #: model_mixins.py:70
 msgid "Partition file count"
-msgstr ""
+msgstr "Anzahl Dateien auf Partition"
 
 #: model_mixins.py:71
 msgid "Total cached files."
-msgstr ""
+msgstr "Gesamtzahl gecachte Dateien."
 
 #: model_mixins.py:88 model_mixins.py:281
 msgid "Current size"
@@ -91,7 +91,7 @@ msgstr "Aktuelle Größe des Caches."
 
 #: model_mixins.py:283
 msgid "Current size of the cache partition."
-msgstr ""
+msgstr "Gegenwärtige Größe der Cachepartition."
 
 #: models.py:21
 msgid "Internal name of the defined storage for this cache."
@@ -139,7 +139,7 @@ msgstr "Dateigröße"
 
 #: models.py:116
 msgid "Times this cache partition file has been accessed."
-msgstr ""
+msgstr "Anzahl der Zugriffe auf diese Partitionsdatei."
 
 #: models.py:123
 msgid "Cache partition file"
@@ -163,24 +163,28 @@ msgstr "Datei-Cache anzeigen"
 
 #: queues.py:13
 msgid "Purge a file cache partition"
-msgstr ""
+msgstr "Eine Dateicachepartition bereinigen"
 
 #: settings.py:17
 msgid ""
 "Number of times a cache will retry failed attempts to prune files to free up"
 " space for new a file being requested, before giving up."
 msgstr ""
+"Anzahl der Versuche, die ein Cache versucht alte Dateien zu löschen, um "
+"Platz für neue Cachedateien zu machen."
 
 #: settings.py:25
 msgid ""
 "Number of times a cache will attempt to prune files to free up space for new"
 " a file being requested, before giving up."
 msgstr ""
+"Anzahl der Versuche, die ein Cache versucht alte Dateien zu löschen, um "
+"Platz für neue Cachedateien zu machen."
 
 #: views.py:50
 #, python-format
 msgid "Details of cache: %s"
-msgstr ""
+msgstr "Cachedetails für %s"
 
 #: views.py:62
 msgid "File caches list"
@@ -189,29 +193,29 @@ msgstr "Liste Datei-Caches"
 #: views.py:83
 #, python-format
 msgid "Details of cache partition: %s"
-msgstr ""
+msgstr "Details für Cachepartition %s"
 
 #: views.py:101
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
-msgstr ""
+msgstr "Cachepartition \"%s\" brereinigen?"
 
 #: views.py:118
 msgid "Object cache partitions submitted for purging."
-msgstr ""
+msgstr "Cachepartionen, die zur Bereinigung eingereicht werden."
 
 #: views.py:127
 #, python-format
 msgid "%(count)d caches submitted for purging."
-msgstr ""
+msgstr "%(count)d Caches zur Bereinigung eingereicht."
 
 #: views.py:128
 #, python-format
 msgid "%(count)d cache submitted for purging."
-msgstr ""
+msgstr "%(count)d Cache zur Bereinigung eingereicht."
 
 #: views.py:136
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ausgewählte Cachepartion zur Bereinigung einreichen?"
+msgstr[1] "Ausgewählte Cachepartionen zur Bereinigung einreichen?"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:20 events.py:6 permissions.py:6
 msgid "Document exports"
-msgstr ""
+msgstr "Exporturi de documente"
 
 #: classes.py:59
 msgid "Document version export to PDF"
@@ -57,7 +57,7 @@ msgstr "Exportați versiunile documentelor"
 
 #: queues.py:7
 msgid "Export a document version to a PDF"
-msgstr ""
+msgstr "Exportați o versiune de document într-un PDF"
 
 #: views.py:17
 #, python-format

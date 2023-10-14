@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -46,47 +46,51 @@ msgstr "بيئة سطر الأوامر مع الإكمال التلقائي."
 msgid "Checks proper formatting of the README file."
 msgstr "يتحقق من التنسيق الصحيح لملف إقرأني"
 
-#: links.py:30
+#: links.py:34
 msgid "About this"
 msgstr "حول البرنامج"
 
-#: links.py:33
+#: links.py:37
 msgid "Get the book"
 msgstr "دليل المستخدم"
 
-#: links.py:38
+#: links.py:42
 msgid "Documentation"
 msgstr "الوثائق"
 
-#: links.py:41
+#: links.py:45
 msgid "Forum"
 msgstr "المنتدى"
 
-#: links.py:45 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr ""
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "الرخص"
 
-#: links.py:50
+#: links.py:58
 msgid "Copy"
 msgstr "نسخ"
 
-#: links.py:54
+#: links.py:62
 msgid "Setup"
 msgstr "التثبيت "
 
-#: links.py:57
+#: links.py:65
 msgid "Source code"
 msgstr "مصدر الرمز"
 
-#: links.py:61
+#: links.py:69
 msgid "Online store"
 msgstr "متجر عالمي"
 
-#: links.py:65
+#: links.py:73
 msgid "Get support"
 msgstr "الدعم الفني"
 
-#: links.py:69 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:134
 msgid "Tools"
 msgstr "الأدوات"
 

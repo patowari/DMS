@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr "Gebietsschema"
 
 #: events.py:10
 msgid "User locale profile edited"
-msgstr ""
+msgstr "Lokalisierungsprofil des Benutzers bearbeitet"
 
 #: links.py:15
 msgid "Locale profile"
@@ -65,9 +65,9 @@ msgstr "Keine"
 #: views.py:40
 #, python-format
 msgid "Locale profile for user: %s"
-msgstr ""
+msgstr "Lokalisierungsprofil für Benutzer %s"
 
 #: views.py:88
 #, python-format
 msgid "Edit locale profile for user: %s"
-msgstr ""
+msgstr "Lokalisierungsprofil für Benutzer %s bearbeiten"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -265,7 +265,7 @@ msgstr "Generați o imagine a unui obiect."
 
 #: serializers.py:10
 msgid "Image URL"
-msgstr ""
+msgstr "URL-ul imaginii"
 
 #: serializers.py:17
 msgid "URL"
@@ -663,9 +663,9 @@ msgstr "Solicitare de ștergere efectuată asupra %(count)d elemente"
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ștergeți materialul selectat?"
+msgstr[1] "Ștergeți elementele selectate?"
+msgstr[2] "Ștergeți elementele selectate?"
 
 #: views/asset_views.py:70
 #, python-format

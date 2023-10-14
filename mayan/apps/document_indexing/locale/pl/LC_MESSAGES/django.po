@@ -8,14 +8,15 @@
 # Roberto Rosario, 2023
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr "Poziom"
 
 #: apps.py:161 apps.py:192
 msgid "Depth"
-msgstr ""
+msgstr "Głębokość"
 
 #: apps.py:165
 msgid "Total nodes"
@@ -54,11 +55,11 @@ msgstr "Razem dokumenty"
 
 #: apps.py:174 apps.py:213
 msgid "Number of unique documents this item contains."
-msgstr ""
+msgstr "Liczba unikalnych dokumentów, które zawiera ten element."
 
 #: apps.py:200
 msgid "Nodes"
-msgstr ""
+msgstr "Węzły"
 
 #: apps.py:211 models/index_instance_models.py:66
 msgid "Documents"
@@ -66,11 +67,11 @@ msgstr "Dokumenty"
 
 #: events.py:10
 msgid "Index template created"
-msgstr ""
+msgstr "Utworzono szablon indeksu"
 
 #: events.py:13
 msgid "Index template edited"
-msgstr ""
+msgstr "Edytowano szablon indeksu"
 
 #: forms.py:19 forms.py:24
 msgid "Namespace"
@@ -167,14 +168,15 @@ msgstr ""
 #: models/index_instance_model_mixins.py:216
 msgid "Total number of nodes with unique values this item contains."
 msgstr ""
+"Całkowita liczba węzłów z unikalnymi wartościami, które zawiera ten element."
 
 #: models/index_instance_model_mixins.py:225
 msgid "Total number of unique documents this item contains."
-msgstr ""
+msgstr "Łączna liczba unikalnych dokumentów, które zawiera ten element."
 
 #: models/index_instance_model_mixins.py:235
 msgid "Total number of node levels this item contains."
-msgstr ""
+msgstr "Całkowita liczba poziomów węzłów, które zawiera ten element."
 
 #: models/index_instance_model_mixins.py:304
 msgid "The path to the index including all ancestors."
@@ -243,7 +245,7 @@ msgstr ""
 
 #: models/index_template_models.py:57 models/index_template_models.py:98
 msgid "Index template"
-msgstr ""
+msgstr "Szablon indeksu"
 
 #: models/index_template_models.py:102
 msgid "Event type"
@@ -251,11 +253,11 @@ msgstr "Typ zdarzenia"
 
 #: models/index_template_models.py:107
 msgid "Index template event trigger"
-msgstr ""
+msgstr "Aktywator zdarzenia szablonu indeksu"
 
 #: models/index_template_models.py:108
 msgid "Index template event triggers"
-msgstr ""
+msgstr "Wyzwalacze zdarzeń szablonu indeksu"
 
 #: models/index_template_models.py:143
 msgid "Parent index template node of this node."
@@ -276,7 +278,8 @@ msgstr "Wyrażenie indeksujące"
 #: models/index_template_models.py:161
 msgid "Causes this node to be visible and updated when document data changes."
 msgstr ""
-"Causes this node to be visible and updated when document data changes."
+"Powoduje, że ten węzeł będzie widoczny i aktualizowany w przypadku zmiany "
+"danych dokumentu."
 
 #: models/index_template_models.py:169
 msgid ""

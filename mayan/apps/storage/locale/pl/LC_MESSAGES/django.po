@@ -8,14 +8,15 @@
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,11 +39,11 @@ msgstr ""
 
 #: events.py:6 links.py:20 models.py:56 storages.py:22
 msgid "Download files"
-msgstr ""
+msgstr "Pobierz pliki"
 
 #: events.py:10
 msgid "Download file created"
-msgstr ""
+msgstr "Utworzono plik do pobrania"
 
 #: events.py:13
 msgid "Download file deleted"
@@ -101,7 +102,7 @@ msgstr ""
 
 #: model_mixins.py:101
 msgid "Size"
-msgstr ""
+msgstr "Rozmiar"
 
 #: model_mixins.py:108 models.py:48
 msgid "User"
@@ -117,7 +118,7 @@ msgstr "Etykieta"
 
 #: models.py:55
 msgid "Download file"
-msgstr ""
+msgstr "Pobieranie pliku"
 
 #: models.py:100
 msgid "Shared uploaded file"
@@ -199,6 +200,9 @@ msgid ""
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
+"Pliki do pobrania powstają w wyniku procesu zewnętrznego, takiego jak "
+"eksport. Pobrane pliki są przechowywane przez pewien czas, a następnie "
+"automatycznie usuwane."
 
 #: views.py:71
 msgid "There are no files to download."

@@ -8,17 +8,17 @@
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Yves Dubois <ydubois@gmail.com>, 2023
 # Roberto Rosario, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,15 +45,15 @@ msgstr "Niveau"
 
 #: apps.py:161 apps.py:192
 msgid "Depth"
-msgstr "Profondeur"
+msgstr "Nombre de niveaux"
 
 #: apps.py:165
 msgid "Total nodes"
-msgstr "Nombre total de noeuds"
+msgstr "Nombre de noeuds"
 
 #: apps.py:172
 msgid "Total documents"
-msgstr "Nombre total de documents"
+msgstr "Nombre de documents"
 
 #: apps.py:174 apps.py:213
 msgid "Number of unique documents this item contains."
@@ -169,16 +169,15 @@ msgstr ""
 
 #: models/index_instance_model_mixins.py:216
 msgid "Total number of nodes with unique values this item contains."
-msgstr ""
-"Nombre total de nœuds avec des valeurs uniques que cet élément contient."
+msgstr "Nombre de nœuds avec des valeurs uniques que cet élément contient."
 
 #: models/index_instance_model_mixins.py:225
 msgid "Total number of unique documents this item contains."
-msgstr "Nombre total de documents uniques que cet élément contient."
+msgstr "Nombre de documents uniques que cet élément contient."
 
 #: models/index_instance_model_mixins.py:235
 msgid "Total number of node levels this item contains."
-msgstr "Nombre total de niveaux de nœuds que cet élément contient."
+msgstr "Nombre de niveaux de nœuds que cet élément contient."
 
 #: models/index_instance_model_mixins.py:304
 msgid "The path to the index including all ancestors."
@@ -384,7 +383,7 @@ msgstr ""
 
 #: serializers.py:49
 msgid "Documents URL"
-msgstr ""
+msgstr "URL des documents"
 
 #: serializers.py:52 serializers.py:118 serializers.py:176
 msgid "Index URL"

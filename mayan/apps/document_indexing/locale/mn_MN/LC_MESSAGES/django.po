@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,7 +60,7 @@ msgstr ""
 
 #: apps.py:211 models/index_instance_models.py:66
 msgid "Documents"
-msgstr ""
+msgstr "Баримт"
 
 #: events.py:10
 msgid "Index template created"
@@ -146,11 +147,11 @@ msgstr ""
 
 #: literals.py:6
 msgid "No"
-msgstr ""
+msgstr "Үгүй"
 
 #: literals.py:7
 msgid "Yes"
-msgstr ""
+msgstr "Тийм"
 
 #: models/index_instance_model_mixins.py:48
 #, python-format
@@ -177,7 +178,7 @@ msgstr ""
 
 #: models/index_instance_model_mixins.py:306
 msgid "Full path"
-msgstr ""
+msgstr "Бүрэн зам"
 
 #: models/index_instance_models.py:30
 msgid "Index instance"
@@ -328,7 +329,7 @@ msgstr ""
 
 #: search.py:21
 msgid "Document type"
-msgstr ""
+msgstr "Баримтын төрөл"
 
 #: search.py:24
 msgid "Document MIME type"
@@ -336,15 +337,15 @@ msgstr ""
 
 #: search.py:27
 msgid "Document label"
-msgstr ""
+msgstr "Баримтын шошго"
 
 #: search.py:30
 msgid "Document description"
-msgstr ""
+msgstr "Баримтын тайлбар"
 
 #: search.py:33
 msgid "Document UUID"
-msgstr ""
+msgstr "Баримтын UUID"
 
 #: search.py:36
 msgid "Document checksum"

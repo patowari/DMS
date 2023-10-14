@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -87,11 +87,11 @@ msgstr ""
 
 #: links.py:18
 msgid "Theme settings"
-msgstr ""
+msgstr "Postavke teme"
 
 #: links.py:25
 msgid "Edit theme settings"
-msgstr ""
+msgstr "Uredi postavke teme"
 
 #: links.py:31 views.py:31
 msgid "Create new theme"
@@ -107,7 +107,7 @@ msgstr "Izmijeni"
 
 #: links.py:44 links.py:49 models.py:32 views.py:99
 msgid "Themes"
-msgstr ""
+msgstr "Teme"
 
 #: models.py:19
 msgid "A short text describing the theme."
@@ -141,7 +141,7 @@ msgstr ""
 
 #: models.py:74
 msgid "User theme settings"
-msgstr ""
+msgstr "Korisnikove postavke teme"
 
 #: permissions.py:10
 msgid "Create new themes"
@@ -476,9 +476,9 @@ msgstr ""
 #: views.py:122
 #, python-format
 msgid "Theme settings for user: %s"
-msgstr ""
+msgstr "Postavke teme za korisnika: %s"
 
 #: views.py:144
 #, python-format
 msgid "Edit theme settings for user: %s"
-msgstr ""
+msgstr "Uredi postavke teme za korisnika: %s"

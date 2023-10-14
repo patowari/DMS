@@ -6,14 +6,15 @@
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Ali <alimahwer@yahoo.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
+"Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -104,27 +105,27 @@ msgstr "حالة الرابط"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
-msgstr ""
+msgstr "المفتاح الأساسي لنوع المستند المراد إضافته إلى رابط الويب."
 
 #: serializers.py:17 serializers.py:26
 msgid "Document type ID"
-msgstr ""
+msgstr "مُعرِّف نوع المستند"
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
-msgstr ""
+msgstr "المفتاح الأساسي لنوع المستند المراد حذفه من رابط الويب."
 
 #: serializers.py:33
 msgid "Document types add URL"
-msgstr ""
+msgstr "عنوان URL لإضافة أنواع المستندات"
 
 #: serializers.py:37
 msgid "Document types remove URL"
-msgstr ""
+msgstr "عنوان URL لحذف أنواع المستندات"
 
 #: serializers.py:41
 msgid "Document types URL"
-msgstr ""
+msgstr "عنوان URL لأنواع المستندات"
 
 #: serializers.py:48 serializers.py:63
 msgid "URL"
@@ -132,7 +133,7 @@ msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "عنوان URL للتصفُّح"
 
 #: views.py:32
 msgid "Web links enabled"

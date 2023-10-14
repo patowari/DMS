@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -23,19 +23,19 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6
 msgid "Document downloads"
-msgstr ""
+msgstr "Dokumentendownload"
 
 #: classes.py:42
 msgid "Document_file_bundle.zip"
-msgstr ""
+msgstr "Dokumenten_bundle.zip"
 
 #: classes.py:45
 msgid "Compressed document files"
-msgstr ""
+msgstr "Komprimierte Dokumentendateien"
 
 #: events.py:6
 msgid "Documents downloads"
-msgstr ""
+msgstr "Dokumentendownload"
 
 #: events.py:10
 msgid "Document file downloaded"
@@ -43,7 +43,7 @@ msgstr "Dokumentendatei heruntergeladen"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "Dokumenten Datei-ID"
 
 #: forms.py:11
 msgid "Document"
@@ -55,7 +55,7 @@ msgstr "Dokumentendatei"
 
 #: forms.py:27
 msgid "Include"
-msgstr ""
+msgstr "Einschließen"
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -74,54 +74,62 @@ msgstr ""
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Dokumentdateien fertig zum Herunterladen."
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr ""
+msgstr "Dokumentendateien herunterladen"
 
 #: queues.py:7
 msgid "Generate a compressed document file bundle"
-msgstr ""
+msgstr "Ein komprimiertes Bündel von Dokumentendateien erzeugen"
 
 #: views.py:24
 #, python-format
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
 msgstr ""
+"Fehler beim Erstellen des Dokumentdownloads \"%(instance)s\"; %(exception)s."
 
 #: views.py:33
 #, python-format
 msgid "%(count)d document files queued for download."
 msgstr ""
+"%(count)d Dokumentendateien für den Download in die Warteschlange "
+"eingestellt."
 
 #: views.py:36
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
 msgstr ""
+"Dokumentendatei \"%(object)s\" für den Download in die Warteschlange "
+"eingestellt."
 
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
 msgstr ""
+"%(count)d Dokumentendatei für den Download in die Warteschlange eingestellt."
 
 #: views.py:41
 #, python-format
 msgid "Download files of %(count)d documents"
-msgstr ""
+msgstr "Dateien für %(count)d Dokumente herunterladen"
 
 #: views.py:42
 #, python-format
 msgid "Download files of document: %(object)s"
-msgstr ""
+msgstr "Dateien für Dokument %(object)s herunterladen"
 
 #: views.py:43
 #, python-format
 msgid "Download files of %(count)d document"
-msgstr ""
+msgstr "Dateien für %(count)d Dokument herunterladen"
 
 #: views.py:50
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"Der Prozess wird im Hintergrund ausgeführt. Die Dokumentendateien werden im "
+"Downloadbereich verfügbar sein."

@@ -7,14 +7,15 @@
 # Roberto Rosario, 2023
 # Mohammed ALDOUB <voulnet@gmail.com>, 2023
 # Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Ali <alimahwer@yahoo.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
+"Last-Translator: Ali <alimahwer@yahoo.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +73,7 @@ msgstr "تفويض المستخدم"
 
 #: links.py:50
 msgid "Impersonate"
-msgstr ""
+msgstr "انتحال شخصية شخص آخر"
 
 #: links.py:55 links.py:60
 msgid "Set password"
@@ -90,11 +91,11 @@ msgstr "ازالة الرابط / اعادة تعين كلمة المرور"
 
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
-msgstr ""
+msgstr "المسار المنقط إلى الواجهة الخلفية المستخدم لمعالجة مصادقة المستخدم."
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "بارامترات AUTHENTICATION_BACKEND."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format
@@ -103,6 +104,9 @@ msgid ""
 "                Impersonating user \"%(user)s\".\n"
 "            "
 msgstr ""
+"\n"
+"                انتحال شخصية المستخدم \"%(user)s\".\n"
+"            "
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
@@ -193,12 +197,12 @@ msgstr "تم تغير كلمة المرور بانجاز %(count)d "
 #: views/authentication_views.py:341
 msgid "Change user password"
 msgid_plural "Change users passwords"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "تغيير كلمة مرور المستخدم"
+msgstr[1] "تغيير كلمة مرور المستخدم"
+msgstr[2] "تغيير كلمتيْ مرور المستخدِمَيْن"
+msgstr[3] "تغيير كلمات مرور المستخدمين"
+msgstr[4] "تغيير كلمات مرور المستخدمين"
+msgstr[5] "تغيير كلمات مرور المستخدمين"
 
 #: views/authentication_views.py:352
 #, python-format
@@ -218,4 +222,4 @@ msgstr "خطأ أثناء إعادة تعيين كلمة المرور للمست
 #: views/impersonation_views.py:81
 #, python-format
 msgid "Impersonate user: %s"
-msgstr ""
+msgstr "انتحال شخصية المستخدم: %s"

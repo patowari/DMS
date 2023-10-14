@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -43,11 +43,11 @@ msgstr "E-Mail verschickt"
 
 #: events.py:13
 msgid "Mailing profile created"
-msgstr ""
+msgstr "Mailprofil erstellt"
 
 #: events.py:16
 msgid "Mailing profile edited"
-msgstr ""
+msgstr "Mailprofil bearbeitet"
 
 #: forms.py:58 forms.py:95
 msgid ""
@@ -88,27 +88,27 @@ msgstr "Backend"
 
 #: links.py:33 links.py:36
 msgid "Email document link"
-msgstr ""
+msgstr "Dokumentenlink mailen"
 
 #: links.py:46 links.py:51
 msgid "Email document file"
-msgstr ""
+msgstr "Dokumentendatei mailen"
 
 #: links.py:57 links.py:62
 msgid "Email document file link"
-msgstr ""
+msgstr "Dokumentendateilink mailen"
 
 #: links.py:72 links.py:77
 msgid "Email document version"
-msgstr ""
+msgstr "Dokumentenversion mailen"
 
 #: links.py:83
 msgid "Email document version link"
-msgstr ""
+msgstr "Dokumentenversionslink mailen"
 
 #: links.py:88
 msgid "Email link version"
-msgstr ""
+msgstr "Versionslink mailen"
 
 #: links.py:97
 msgid "Create mailing profile"
@@ -142,10 +142,14 @@ msgid ""
 " --------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"Angehängt an diese E-Mail ist {{ object_name }}: {{ object }}\n"
+"\n"
+" --------\n"
+" Diese E-Mail wurde gesendet von %(project_title)s (%(project_website)s)"
 
 #: literals.py:11
 msgid "{{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "{{ object_name }}: {{ object }}"
 
 #: literals.py:13
 #, python-format
@@ -155,10 +159,14 @@ msgid ""
 "--------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"Für den Zugang zu {{ object_name }} klicken Sie bitte auf den folgenden Link: {{ link }}\n"
+"\n"
+"--------\n"
+" Diese E-Mail wurde gesendet von %(project_title)s (%(project_website)s)"
 
 #: literals.py:17
 msgid "Link for {{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "Link für {{ object_name }}: {{ object }}"
 
 #: mailers.py:19 mailers.py:108
 msgid "From"
@@ -324,23 +332,23 @@ msgstr "Link zum Dokument per E-Mail senden"
 
 #: permissions.py:36
 msgid "Send document file via email"
-msgstr ""
+msgstr "Dokumentendatei per E-Mail senden"
 
 #: permissions.py:40
 msgid "Send document file link via email"
-msgstr ""
+msgstr "Dokumentendateilink per E-Mail senden"
 
 #: permissions.py:47
 msgid "Send document version via email"
-msgstr ""
+msgstr "Dokumentenversion per E-Mail senden"
 
 #: permissions.py:51
 msgid "Send document version link via email"
-msgstr ""
+msgstr "Dokumentenversionslink per E-Mail senden"
 
 #: queues.py:12
 msgid "Send object"
-msgstr ""
+msgstr "Objekt senden"
 
 #: settings.py:17
 msgid "Template for the document email form subject line."
@@ -374,42 +382,44 @@ msgstr "Dokumentendatei"
 #: views/document_file_views.py:21
 #, python-format
 msgid "%(count)d document file queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendatei in die E-Mailwarteschlange eingereicht"
 
 #: views/document_file_views.py:23
 #, python-format
 msgid "%(count)d document files queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendateien in die E-Mailwarteschlange eingereicht"
 
 #: views/document_file_views.py:36
 #, python-format
 msgid "%(count)d document file link queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendateilink in die E-Mailwarteschlange eingereicht"
 
 #: views/document_file_views.py:39
 #, python-format
 msgid "%(count)d document file links queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendateilinks in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document version queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentenversion in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:25
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentenversionen in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:38
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
+"%(count)d Dokumentenversionslink in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:41
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
 msgstr ""
+"%(count)d Dokumentenversionslinks in die E-Mailwarteschlange eingereicht"
 
 #: views/document_views.py:15
 #, python-format
@@ -481,7 +491,7 @@ msgstr ""
 
 #: workflow_action_mixins.py:31
 msgid "CC"
-msgstr ""
+msgstr "CC"
 
 #: workflow_action_mixins.py:34 workflow_action_mixins.py:46
 msgid ""
@@ -489,14 +499,17 @@ msgid ""
 "addresses separated by comma or semicolon. A template can be used to "
 "reference properties of the document."
 msgstr ""
+"Addresse für die \"Bcc\"-Kopfzeile. Können mehrere durch Komma oder "
+"Semikolon getrennte Adressen sein. Eine Vorlage kann verwendet werden, um "
+"auf Dokumenteneigenschaften zu verweisen."
 
 #: workflow_action_mixins.py:43
 msgid "BCC"
-msgstr ""
+msgstr "BCC"
 
 #: workflow_action_mixins.py:55
 msgid "Reply to"
-msgstr ""
+msgstr "Reply to"
 
 #: workflow_action_mixins.py:58
 msgid ""
@@ -504,6 +517,9 @@ msgid ""
 "multiple addresses separated by comma or semicolon. A template can be used "
 "to reference properties of the document."
 msgstr ""
+"Addresse für die \"Reply-to\"-Kopfzeile. Können mehrere durch Komma oder "
+"Semikolon getrennte Adressen sein. Eine Vorlage kann verwendet werden, um "
+"auf Dokumenteneigenschaften zu verweisen."
 
 #: workflow_action_mixins.py:70
 msgid "Subject of the email. Can be a string or a template."
@@ -517,19 +533,19 @@ msgstr ""
 
 #: workflow_action_mixins.py:86 workflow_actions.py:14
 msgid "Attachment"
-msgstr ""
+msgstr "Anhang"
 
 #: workflow_action_mixins.py:89
 msgid "Attach an object to the email."
-msgstr ""
+msgstr "Ein Objekt an die E-Mail anhängen."
 
 #: workflow_action_mixins.py:98
 msgid "Send object via email"
-msgstr ""
+msgstr "Ein Objekt per E-Mail senden"
 
 #: workflow_actions.py:17
 msgid "Attach the exported document version to the email."
-msgstr ""
+msgstr "Die exportierte Dokumentenversion an die E-Mail anhängen."
 
 #: workflow_actions.py:26
 msgid "Send document via email"

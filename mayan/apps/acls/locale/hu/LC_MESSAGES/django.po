@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Tamás Benkovszky, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:07+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2023\n"
+"Last-Translator: Tamás Benkovszky, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,10 +30,12 @@ msgid ""
 "Object for which the access is granted. When sorting objects, only the type "
 "is used and not the actual label of the object."
 msgstr ""
+"Objektum, amelyhez hozzáférést biztosítottak. Az objektumok rendezésekor "
+"csak a típus kerül felhasználásra, az objektum tényleges címkéje nem."
 
 #: apps.py:65
 msgid "Object"
-msgstr ""
+msgstr "Tárgy"
 
 #: events.py:6 permissions.py:6
 msgid "Access control lists"
@@ -40,15 +43,15 @@ msgstr "Hozzáférési lista"
 
 #: events.py:10
 msgid "ACL created"
-msgstr ""
+msgstr "Hozzáférési lista létrehozva"
 
 #: events.py:13
 msgid "ACL deleted"
-msgstr ""
+msgstr "Hozzáférési lista törölve"
 
 #: events.py:16
 msgid "ACL edited"
-msgstr ""
+msgstr "Hozzáférési lista szerkesztve"
 
 #: forms.py:13 models.py:56 serializers.py:79 views.py:73
 msgid "Role"
@@ -56,7 +59,7 @@ msgstr "Szerepkör"
 
 #: links.py:16
 msgid "New ACL"
-msgstr ""
+msgstr "Új hozzáférési lista"
 
 #: links.py:21
 msgid "Delete"
@@ -68,7 +71,7 @@ msgstr "Engedélyek"
 
 #: links.py:35
 msgid "Global ACLs"
-msgstr ""
+msgstr "Globális hozzáférési lista"
 
 #: managers.py:274
 #, python-format
@@ -78,7 +81,7 @@ msgstr ""
 #: managers.py:294
 #, python-format
 msgid "Insufficient access for: %s"
-msgstr ""
+msgstr "Elégtelen jogosultság az:%s"
 
 #: model_mixins.py:23
 msgid "Permission count"

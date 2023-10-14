@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +40,7 @@ msgstr ""
 
 #: apps.py:99 models.py:20 search.py:22
 msgid "User"
-msgstr ""
+msgstr "Хэрэглэгч"
 
 #: apps.py:100 apps.py:219 links.py:61 links.py:102 links.py:120
 #: views/user_views.py:170
@@ -64,7 +65,7 @@ msgstr ""
 
 #: apps.py:116 serializers.py:72
 msgid "Password"
-msgstr ""
+msgstr "Нууц үг"
 
 #: apps.py:119 search.py:40
 msgid "Username"
@@ -116,11 +117,11 @@ msgstr ""
 
 #: events.py:25
 msgid "User logged in"
-msgstr ""
+msgstr "Хэрэглэгч нэвтэрлээ"
 
 #: events.py:28
 msgid "User logged out"
-msgstr ""
+msgstr "Хэрэглэгч гарлаа"
 
 #: links.py:28
 msgid "User details"
@@ -148,7 +149,7 @@ msgstr ""
 
 #: literals.py:8
 msgid "Account"
-msgstr ""
+msgstr "Эрх"
 
 #: literals.py:12 literals.py:23
 msgid "Personal"

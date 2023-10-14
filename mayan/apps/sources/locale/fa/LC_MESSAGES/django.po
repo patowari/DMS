@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:28+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Mehdi Amani <MehdiAmani@toorintan.com>, 2023\n"
 "Language-Team: Persian (https://app.transifex.com/rosarior/teams/13584/fa/)\n"
@@ -373,35 +373,35 @@ msgstr "هرگز"
 msgid "Ask user"
 msgstr "از کاربر بپرس"
 
-#: source_backends/mixins.py:132
+#: source_backends/mixins.py:133
 msgid "Uncompress"
 msgstr "فشرده نشده"
 
-#: source_backends/mixins.py:136
+#: source_backends/mixins.py:137
 msgid "Whether to expand or not compressed archives."
 msgstr "گسترش و یا آرشیوهای غیر فشرده"
 
-#: source_backends/mixins.py:160
+#: source_backends/mixins.py:161
 msgid "Expand compressed files"
 msgstr "فایلهای فشرده را گسترش دهید"
 
-#: source_backends/mixins.py:162
+#: source_backends/mixins.py:163
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""
 
-#: source_backends/mixins.py:261
+#: source_backends/mixins.py:262
 msgid "Assign a document type to documents uploaded from this source."
 msgstr "این نوع را به اسناد آپلود شده از این آدرس تخصیص دهید."
 
-#: source_backends/mixins.py:269
+#: source_backends/mixins.py:270
 msgid "Document type"
 msgstr "نوع سند"
 
-#: source_backends/mixins.py:276
+#: source_backends/mixins.py:277
 msgid "Interval in seconds between checks for new documents."
 msgstr "مدت زمان بین بررسی جهت سند جدید."
 
-#: source_backends/mixins.py:282
+#: source_backends/mixins.py:283
 msgid "Interval"
 msgstr "فاصله"
 

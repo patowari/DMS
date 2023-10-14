@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 01:27+0000\n"
+"POT-Creation-Date: 2023-10-14 06:08+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #: apps.py:16
 msgid "Databases"
-msgstr ""
+msgstr "Datenbanken"
 
 #: classes.py:205
 msgid "Model fields"
@@ -42,7 +42,7 @@ msgstr "Modelleigenschaften"
 
 #: classes.py:263
 msgid "Model reverse fields"
-msgstr ""
+msgstr "Modellfelder für Rückverweis"
 
 #: literals.py:14
 msgid ""
@@ -84,6 +84,10 @@ msgid ""
 "None, or an empty string ('') are considered to be logical false, any other "
 "value is considered to be the logical true."
 msgstr ""
+"Die Bedingung, die entscheidet, ob dieses Objekt ausgeführt wird. "
+"Bedingungen, die keinen Wert oder den logischen Pythonwert None oder eine "
+"leere Zeichenkette ('') zurückliefern, werden als logisch Falsch (false) "
+"behandelt, jeder andere Wert wird als logisch Wahr (true) angesehen."
 
 #: model_mixins.py:108
 msgid "Condition"
@@ -91,7 +95,7 @@ msgstr "Bedingung"
 
 #: model_mixins.py:129
 msgid "The object will be executed, depending on the condition return value."
-msgstr ""
+msgstr "Das Objekt wird ausgeführt, abhängig vom Rückgabewert der Bedingung."
 
 #: model_mixins.py:132
 msgid "Has a condition?"
