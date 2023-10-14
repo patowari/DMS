@@ -12,7 +12,8 @@ from mayan.apps.document_states.tests.base import ActionTestCase
 from mayan.apps.document_states.tests.mixins.workflow_template_mixins import (
     WorkflowTemplateTestMixin
 )
-from mayan.apps.document_states.tests.mixins.workflow_template_state_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 from mayan.apps.metadata.tests.mixins import MetadataTypeTestMixin
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
@@ -27,7 +28,7 @@ from .mixins import MailerTestMixin
 
 
 class DocumentEmailActionTestCase(
-    MailerTestMixin, WorkflowTemplateTestMixin, GenericDocumentTestCase
+    MailerTestMixin, WorkflowTemplateStateTestMixin, GenericDocumentTestCase
 ):
     auto_upload_test_document = False
 

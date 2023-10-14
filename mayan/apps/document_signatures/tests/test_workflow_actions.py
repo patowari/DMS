@@ -4,8 +4,8 @@ from mayan.apps.django_gpg.tests.literals import TEST_KEY_PRIVATE_PASSPHRASE
 from mayan.apps.django_gpg.tests.mixins import KeyTestMixin
 from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
 from mayan.apps.document_states.permissions import permission_workflow_template_edit
-from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
-from mayan.apps.document_states.tests.mixins.workflow_template_state_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionViewTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..models import DetachedSignature, EmbeddedSignature
@@ -20,8 +20,8 @@ from .literals import (
 
 
 class DocumentSignatureWorkflowActionTestCase(
-    KeyTestMixin, WorkflowTemplateTestMixin,
-    WorkflowTemplateStateActionViewTestMixin, GenericDocumentViewTestCase
+    KeyTestMixin, WorkflowTemplateStateActionViewTestMixin,
+    WorkflowTemplateTransitionTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -62,8 +62,12 @@ class DocumentSignatureWorkflowActionTestCase(
                 'passphrase': TEST_KEY_PRIVATE_PASSPHRASE
             }
         )
-        action.execute(context={'document': self._test_document})
-        self.assertNotEqual(signature_count, DetachedSignature.objects.count())
+        action.execute(
+            context={'document': self._test_document}
+        )
+        self.assertNotEqual(
+            signature_count, DetachedSignature.objects.count()
+        )
 
     def test_document_signature_embedded_action(self):
         self._upload_test_document()
@@ -76,7 +80,9 @@ class DocumentSignatureWorkflowActionTestCase(
                 'passphrase': TEST_KEY_PRIVATE_PASSPHRASE
             }
         )
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
         self.assertNotEqual(
             signature_count, EmbeddedSignature.objects.count()
         )
@@ -97,7 +103,7 @@ class DocumentSignatureWorkflowActionTestCase(
                     'key': self._test_key_private.pk,
                     'passphrase': TEST_KEY_PRIVATE_PASSPHRASE
                 }
-            ),
+            )
         )
 
         self._upload_test_document()
@@ -128,7 +134,7 @@ class DocumentSignatureWorkflowActionTestCase(
                     'key': self._test_key_private.pk,
                     'passphrase': TEST_KEY_PRIVATE_PASSPHRASE
                 }
-            ),
+            )
         )
 
         self._upload_test_document()

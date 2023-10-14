@@ -15,7 +15,6 @@ from ..permissions import (
     permission_document_version_edit, permission_document_version_view
 )
 
-from .mixins.document_mixins import DocumentTestMixin
 from .mixins.document_file_mixins import DocumentFileTestMixin
 from .mixins.document_version_mixins import (
     DocumentVersionModificationAPIViewTestMixin, DocumentVersionAPIViewTestMixin,
@@ -24,9 +23,8 @@ from .mixins.document_version_mixins import (
 
 
 class DocumentVersionModificationAPIViewTestCase(
-    DocumentFileTestMixin, DocumentTestMixin,
-    DocumentVersionModificationAPIViewTestMixin, DocumentVersionTestMixin,
-    BaseAPITestCase
+    DocumentFileTestMixin, DocumentVersionModificationAPIViewTestMixin,
+    DocumentVersionTestMixin, BaseAPITestCase
 ):
     def test_document_version_action_page_append_api_view_no_permission(self):
         self._upload_test_document_file(
@@ -236,8 +234,8 @@ class DocumentVersionModificationAPIViewTestCase(
 
 
 class DocumentVersionAPIViewTestCase(
-    DocumentVersionAPIViewTestMixin, DocumentTestMixin,
-    DocumentVersionTestMixin, BaseAPITestCase
+    DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin,
+    BaseAPITestCase
 ):
     def test_document_version_create_api_view_no_permission(self):
         document_version_count = self._test_document.versions.count()
@@ -600,17 +598,17 @@ class DocumentVersionBusinessLogicAPIViewTestCase(
 
         response = self._request_test_document_version_edit_via_put_api_view(
             extra_view_kwargs={
-                'document_version_id': self._test_document_version_list[1].pk
+                'document_version_id': self._test_document_versions[1].pk
             }
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self._test_document_version_list[0].refresh_from_db()
-        self._test_document_version_list[1].refresh_from_db()
+        self._test_document_versions[0].refresh_from_db()
+        self._test_document_versions[1].refresh_from_db()
 
-        self.assertEqual(self._test_document_version_list[0].active, False)
-        self.assertEqual(self._test_document_version_list[1].active, True)
+        self.assertEqual(self._test_document_versions[0].active, False)
+        self.assertEqual(self._test_document_versions[1].active, True)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

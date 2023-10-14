@@ -3,6 +3,7 @@ import json
 from mayan.apps.document_states.events import event_workflow_instance_transitioned
 from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
 from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 from mayan.apps.documents.tests.base import (
     GenericDocumentTestCase, GenericDocumentViewTestCase
 )
@@ -48,7 +49,7 @@ class WorkflowActionMessageSendTestCase(
 
 
 class WorkflowActionMessageSendViewTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateTransitionTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

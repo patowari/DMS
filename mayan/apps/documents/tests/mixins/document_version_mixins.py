@@ -16,6 +16,8 @@ from ..literals import (
     TEST_TRANSFORMATION_CLASS
 )
 
+from .document_mixins import DocumentTestMixin
+
 
 class DocumentVersionAPIViewTestMixin:
     def _request_test_document_version_create_api_view(self):
@@ -227,7 +229,7 @@ class DocumentVersionPageAPIViewTestMixin:
         )
 
 
-class DocumentVersionTestMixin:
+class DocumentVersionTestMixin(DocumentTestMixin):
     auto_create_test_document_version = False
 
     def setUp(self):

@@ -71,7 +71,7 @@ link_store = Link(
 )
 link_support = Link(
     icon=icon_support, tags='new_window', text=_('Get support'),
-    url= URL_SUPPORT
+    url=URL_SUPPORT
 )
 link_tools = Link(
     icon=icon_tools, text=_('Tools'), view='common:tools_list'

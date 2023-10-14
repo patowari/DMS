@@ -1,7 +1,7 @@
 import json
 
 from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
-from mayan.apps.document_states.tests.mixins.workflow_template_mixins import WorkflowTemplateTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..models.trashed_document_models import TrashedDocument
@@ -14,7 +14,7 @@ from .literals import (
 
 
 class WorkflowActionActionTestCase(
-    WorkflowTemplateTestMixin, GenericDocumentViewTestCase
+    WorkflowTemplateTransitionTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

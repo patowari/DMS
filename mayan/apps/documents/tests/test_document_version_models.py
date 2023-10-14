@@ -2,11 +2,7 @@ from ..document_file_actions import (
     DocumentFileActionAppendNewPages, DocumentFileActionNothing,
     DocumentFileActionUseNewPages
 )
-from ..events import (
-    event_document_file_created, event_document_file_edited,
-    event_document_version_created, event_document_version_edited,
-    event_document_version_page_created
-)
+from ..events import event_document_version_edited
 
 from .base import GenericDocumentTestCase
 from .mixins.document_file_mixins import DocumentFileTestMixin

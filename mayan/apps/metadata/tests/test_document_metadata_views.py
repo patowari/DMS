@@ -19,15 +19,11 @@ from ..permissions import (
 )
 
 from .literals import TEST_METADATA_VALUE, TEST_METADATA_VALUE_EDITED
-from .mixins import (
-    DocumentMetadataMixin, DocumentMetadataViewTestMixin,
-    MetadataTypeTestMixin
-)
+from .mixins import DocumentMetadataViewTestMixin, MetadataTypeTestMixin
 
 
 class DocumentMetadataViewTestCase(
-    DocumentMetadataMixin, DocumentMetadataViewTestMixin,
-    MetadataTypeTestMixin, GenericDocumentViewTestCase
+    DocumentMetadataViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
