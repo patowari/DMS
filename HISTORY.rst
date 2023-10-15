@@ -1,4 +1,4 @@
-4.4.9 (XXXX-XX-XX)
+4.4.9 (2023-10-15)
 ==================
 - Fix the ``add_file`` method for the ``TarArchive`` class.
 - Docker builder updates. Improve how caches and proxies are calculated.
