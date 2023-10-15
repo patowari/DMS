@@ -9,16 +9,16 @@
 # Berny <berny@bernhard-marx.de>, 2023
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-10-15 06:29+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Marvin Haschker <marvin@haschker.me>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,15 +44,15 @@ msgstr "Wert"
 
 #: classes.py:116
 msgid "Settings namespace"
-msgstr ""
+msgstr "Einstellungen Namensraum"
 
 #: classes.py:394
 msgid "Choices"
-msgstr ""
+msgstr "Auswahlwerte"
 
 #: classes.py:396
 msgid "Possible values allowed for this setting."
-msgstr ""
+msgstr "Mögliche Werte, die für diese Einstellung erlaubt sind."
 
 #: classes.py:402
 msgid "Default"
@@ -529,6 +529,8 @@ msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
+"Lokaler Speicher momentan nicht verfügbar, Änderungen an Einstellungen "
+"werden nicht gespeichert oder wirksam."
 
 #: views.py:40
 msgid "Setting updated successfully."

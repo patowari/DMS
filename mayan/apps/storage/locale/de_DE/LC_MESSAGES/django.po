@@ -7,18 +7,18 @@
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
 # Roberto Rosario, 2023
 # Berny <berny@bernhard-marx.de>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-10-15 06:29+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Berny <berny@bernhard-marx.de>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,15 +45,15 @@ msgstr "Dateien herunterladen"
 
 #: events.py:10
 msgid "Download file created"
-msgstr ""
+msgstr "Downloaddatei erstellt"
 
 #: events.py:13
 msgid "Download file deleted"
-msgstr ""
+msgstr "Downloaddatei gelöscht"
 
 #: events.py:16
 msgid "Download file downloaded"
-msgstr ""
+msgstr "Downloaddatei heruntergeladen"
 
 #: links.py:12
 msgid "Delete"
@@ -132,19 +132,19 @@ msgstr "Geteilte hochgeladene Dateien"
 
 #: permissions.py:10
 msgid "Delete user files"
-msgstr ""
+msgstr "Benutzerdateien löschen"
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr ""
+msgstr "Benutzerdateien herunterladen"
 
 #: permissions.py:16
 msgid "View user files"
-msgstr ""
+msgstr "Benutzerdateien anzeigen"
 
 #: queues.py:13
 msgid "Storage periodic"
-msgstr ""
+msgstr "Speicherung periodisch"
 
 #: queues.py:19
 msgid "Delete stale uploads"
@@ -156,13 +156,15 @@ msgstr "Veraltete Downloaddateien löschen"
 
 #: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
-msgstr ""
+msgstr "Zeit in Sekunden, nach der hochgeladene Dateien gelöscht werden."
 
 #: settings.py:27
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
+"Ein Speicherbackend, dass alle Worker für die Generierung und Speicherung "
+"von Downloaddateien verwenden können."
 
 #: settings.py:38
 msgid "A storage backend that all workers can use to share files."
@@ -179,6 +181,7 @@ msgstr ""
 #: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
+"Zeit in Sekunden, nach der temporär hochgeladene Dateien gelöscht werden."
 
 #: storages.py:15
 msgid ""
@@ -203,6 +206,9 @@ msgid ""
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
+"Downloaddateien werden als Ergebnis eines ausgelagerten Vorgangs wie z.B. "
+"eines Exports erstellt. Downloaddateien werden für eine gewisse Zeitspanne "
+"vorgehalten und dann automatisch gelöscht."
 
 #: views.py:71
 msgid "There are no files to download."
