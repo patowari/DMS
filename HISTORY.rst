@@ -15,6 +15,7 @@
 - Update the base Debian image from version debian:11.7-slim to
   debian:11.8-slim.
 - Update PIP from version 22.2 to 23.2.1.
+- Update the GitLab CI deployment stage to not install the Docker runtime.
 
 4.4.8 (2023-07-15)
 ==================
