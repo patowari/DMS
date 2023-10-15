@@ -11,6 +11,10 @@
 - Backport periodic task import checking.
 - Backport source periodic task changes.
 - Update PyYAML from version 6.0 to 6.0.1.
+- Update the Docker builder image from version 20.10.21-dind to 23.0.6-dind.
+- Update the base Debian image from version debian:11.7-slim to
+  debian:11.8-slim.
+- Update PIP from version 22.2 to 23.2.1.
 
 4.4.8 (2023-07-15)
 ==================

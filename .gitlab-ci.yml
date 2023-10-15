@@ -36,7 +36,7 @@ job_docker_build:
     - key: pip-cache-4.4
       paths:
         - ${PIP_CACHE_DIR}
-  image: docker:20.10.21-dind
+  image: docker:23.0.6-dind
   only:
     - builds/docker
     - releases/all/major
@@ -52,7 +52,7 @@ job_docker_build:
     - make docker-build DOCKER_IMAGE_MAYAN_NAME=${CI_REGISTRY_IMAGE} IMAGE_VERSION=${DOCKER_VERSION} DOCKER_IMAGE_LABELS_EXTRA='--label com.gitlab.ci.job.id=${CI_JOB_ID} --label com.gitlab.ci.pipeline.id=${CI_PIPELINE_ID} --label org.opencontainers.image.revision=${CI_COMMIT_SHA}'
     - docker push "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}"
   services:
-    - docker:20.10.21-dind
+    - docker:23.0.6-dind
   stage: stage_build_container
   variables:
     DOCKER_DRIVER: overlay2
@@ -63,7 +63,7 @@ job_docker_test:
   before_script:
     - set -a && . ./config.env && set +a
     - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
-  image: docker:20.10.21-dind
+  image: docker:23.0.6-dind
   needs:
     - job_docker_build
   only:
@@ -78,7 +78,7 @@ job_docker_test:
     - SERVICE_POSTGRES_IP=$(cat /etc/hosts | awk '{if ($2 == "postgres") print $1;}')
     - docker run --rm --add-host="postgres:${SERVICE_POSTGRES_IP}" -e MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql_psycopg2','NAME':'mayan','USER':'mayan','PASSWORD':'mayanuserpass','HOST':'postgres'}}" "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" run_tests
   services:
-    - docker:20.10.21-dind
+    - docker:23.0.6-dind
     - postgres:13.10-alpine
   stage: stage_test_container
   tags:
@@ -100,7 +100,7 @@ job_docker_push_major:
     - key: apk-cache-4.4
       paths:
         - ${APK_CACHE_DIR}
-  image: docker:20.10.21-dind
+  image: docker:23.0.6-dind
   needs:
     - job_docker_test
   only:
@@ -121,7 +121,7 @@ job_docker_push_major:
     - docker push registry-1.docker.io/mayanedms/mayanedms:s"${MAJOR_VERSION}"
     - docker push registry-1.docker.io/mayanedms/mayanedms:s"${MINOR_VERSION}"
   services:
-    - docker:20.10.21-dind
+    - docker:23.0.6-dind
   stage: stage_push
   variables:
     DOCKER_DRIVER: overlay2
@@ -139,7 +139,7 @@ job_docker_push_minor:
     - key: apk-cache-4.4
       paths:
         - ${APK_CACHE_DIR}
-  image: docker:20.10.21-dind
+  image: docker:23.0.6-dind
   needs:
     - job_docker_test
   only:
@@ -155,7 +155,7 @@ job_docker_push_minor:
     - docker push registry-1.docker.io/mayanedms/mayanedms:v"${DOCKER_VERSION}"
     - docker push registry-1.docker.io/mayanedms/mayanedms:s"${MINOR_VERSION}"
   services:
-    - docker:20.10.21-dind
+    - docker:23.0.6-dind
   stage: stage_push
   variables:
     DOCKER_DRIVER: overlay2
@@ -166,7 +166,7 @@ job_docker_nightly:
   before_script:
     - set -a && . ./config.env && set +a
     - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
-  image: docker:20.10.21-dind
+  image: docker:23.0.6-dind
   needs:
     - job_docker_build
   only:
@@ -178,7 +178,7 @@ job_docker_nightly:
     - docker tag "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" "registry-1.docker.io/mayanedms/mayanedms:${CI_COMMIT_REF_SLUG}"
     - docker push "registry-1.docker.io/mayanedms/mayanedms:${CI_COMMIT_REF_SLUG}"
   services:
-    - docker:20.10.21-dind
+    - docker:23.0.6-dind
   stage: stage_push
   variables:
     DOCKER_DRIVER: overlay2
@@ -187,7 +187,7 @@ job_docker_testing:
   before_script:
     - set -a && . ./config.env && set +a
     - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
-  image: docker:20.10.21-dind
+  image: docker:23.0.6-dind
   needs:
     - job_docker_test
   only:
@@ -199,7 +199,7 @@ job_docker_testing:
     - docker tag "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" "registry-1.docker.io/mayanedms/mayanedms:t${DOCKER_VERSION}"
     - docker push "registry-1.docker.io/mayanedms/mayanedms:t${DOCKER_VERSION}"
   services:
-    - docker:20.10.21-dind
+    - docker:23.0.6-dind
   stage: stage_push
   variables:
     DOCKER_DRIVER: overlay2
@@ -230,7 +230,7 @@ job_documentation_build:
     - key: pip-cache-4.4
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - builds/documentation
     - releases/all/major
@@ -270,7 +270,7 @@ job_documentation_push:
     - key: pip-cache-4.4
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - releases/all/major
     - releases/documentation
@@ -308,7 +308,7 @@ job_python_build:
     - key: pip-cache-4.4
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - builds/python
     - releases/all/major
@@ -351,7 +351,7 @@ job_python_push_pypi:
     - key: pip-cache-4.4
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - releases/all/major
     - releases/all/minor
@@ -394,7 +394,7 @@ job_python_push_pypi:
         - ${PIP_CACHE_DIR}
   dependencies:
     - job_python_build
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   needs:
     - job_python_build
   only:
@@ -466,7 +466,7 @@ job_sqlite_upgrade_test:
     - key: pip-cache-4.4
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - releases/all/major
     - releases/all/minor
@@ -531,7 +531,7 @@ job_demo_deploy:
         - ${APT_CACHE_DIR}
   environment:
     name: demo
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - builds/docker
     - deployments/demo
@@ -575,7 +575,7 @@ job_staging_deploy:
         - ${APT_CACHE_DIR}
   environment:
     name: staging
-  image: debian:11.7-slim
+  image: debian:11.8-slim
   only:
     - builds/docker
     - deployments/staging
