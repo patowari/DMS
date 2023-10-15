@@ -10,6 +10,7 @@
   value (True, true, T, t, Yes, yes, Y, y, 1).
 - Backport periodic task import checking.
 - Backport source periodic task changes.
+- Update PyYAML from version 6.0 to 6.0.1.
 
 4.4.8 (2023-07-15)
 ==================
