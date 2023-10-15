@@ -14,6 +14,7 @@
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Support Django series in setup generation script.
 - Use Mayan CLI full path in DockerFile.
+- Update the GitLab CI deployment stage to not install the Docker runtime.
 
 4.2.17 (2023-07-10)
 ===================
