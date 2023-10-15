@@ -151,10 +151,6 @@ class DocumentMetadataAddActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
-        )
 
         self._clear_events()
 
@@ -188,10 +184,6 @@ class DocumentMetadataAddActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
-        )
 
         test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
 
@@ -222,10 +214,6 @@ class DocumentMetadataAddActionViewTestCase(
         self.grant_access(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
-        )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
         )
 
         test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
@@ -286,10 +274,6 @@ class DocumentMetadataEditActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_edit
-        )
 
         self._clear_events()
 
@@ -326,10 +310,6 @@ class DocumentMetadataEditActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
-        )
 
         test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
 
@@ -360,10 +340,6 @@ class DocumentMetadataEditActionViewTestCase(
         self.grant_access(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
-        )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
         )
 
         test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
@@ -425,10 +401,6 @@ class DocumentMetadataRemoveActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_remove
-        )
 
         self._clear_events()
 
@@ -462,10 +434,6 @@ class DocumentMetadataRemoveActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
-        )
 
         test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
 
@@ -496,10 +464,6 @@ class DocumentMetadataRemoveActionViewTestCase(
         self.grant_access(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
-        )
-        self.grant_access(
-            obj=self._test_metadata_type,
-            permission=permission_document_metadata_add
         )
 
         test_workflow_template_state_action_label = self._test_workflow_template_state_action.label
