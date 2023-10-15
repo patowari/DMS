@@ -98,7 +98,7 @@ class DocumentMetadataAddAction(WorkflowAction):
 
 class DocumentMetadataEditAction(WorkflowAction):
     form_field_widgets = {
-        'metadata_types': {
+        'metadata_type': {
             'class': 'django.forms.widgets.Select', 'kwargs': {
                 'attrs': {'class': 'select2'}
             }

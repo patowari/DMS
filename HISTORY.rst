@@ -1,3 +1,7 @@
+4.5.7 (XXXX-XX-XX)
+==================
+- Fix select2 widget in the metadata edit workflow action form.
+
 4.5.6 (2023-10-12)
 ==================
 - Fix editing existing metadata workflow actions.
