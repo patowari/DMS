@@ -1,6 +1,7 @@
 4.5.7 (XXXX-XX-XX)
 ==================
 - Fix select2 widget in the metadata edit workflow action form.
+- Remove obsole example settings from the default ``.env`` file.
 
 4.5.6 (2023-10-12)
 ==================
