@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-10-21 07:36+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -75,7 +75,7 @@ msgstr "Verwenden Sie die Vorlagen-Sandbox"
 
 #: serializers.py:8
 msgid "Hex hash"
-msgstr ""
+msgstr "Hex hash"
 
 #: serializers.py:11
 msgid "Name"
@@ -83,7 +83,7 @@ msgstr "Name"
 
 #: serializers.py:14
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: serializers.py:17
 msgid "URL"

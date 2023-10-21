@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-10-21 07:36+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -189,7 +189,7 @@ msgstr "Primärschlüssel des Tags, welcher zum Dokument hinzugefügt wird."
 
 #: serializers.py:34 serializers.py:43
 msgid "Tag ID"
-msgstr ""
+msgstr "Tag ID"
 
 #: serializers.py:42
 msgid "Primary key of the tag to remove from the document."
@@ -256,17 +256,17 @@ msgstr "%(count)d Tag erfolgreich gelöscht."
 #: views.py:129
 #, python-format
 msgid "Delete the %(count)d selected tags"
-msgstr ""
+msgstr "Die %(count)d  ausgewählten Tags löschen."
 
 #: views.py:130
 #, python-format
 msgid "Delete tag: %(object)s"
-msgstr ""
+msgstr "Tag%(object)s löschen"
 
 #: views.py:131
 #, python-format
 msgid "Delete the %(count)d selected tag"
-msgstr ""
+msgstr "Den %(count)d  ausgewählten Tag löschen."
 
 #: views.py:137
 msgid "Will be removed from all documents."
@@ -349,4 +349,4 @@ msgstr "Tag zuweisen"
 
 #: workflow_actions.py:69
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "Tag, der vom Dokument entfernt werden soll."

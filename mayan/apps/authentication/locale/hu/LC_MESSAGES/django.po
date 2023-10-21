@@ -6,14 +6,15 @@
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
 # Dezső József <dejo60@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:07+0000\n"
+"POT-Creation-Date: 2023-10-21 07:35+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Dezső József <dejo60@gmail.com>, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +44,7 @@ msgstr ""
 
 #: forms.py:31
 msgid "Remember me"
-msgstr ""
+msgstr "Emlékezzen rám"
 
 #: forms.py:77
 msgid "Permanent"
@@ -71,11 +72,11 @@ msgstr ""
 
 #: links.py:50
 msgid "Impersonate"
-msgstr ""
+msgstr "Megszemélyesítés"
 
 #: links.py:55 links.py:60
 msgid "Set password"
-msgstr ""
+msgstr "Jelszó beállítása"
 
 #: permissions.py:10
 msgid "Impersonate users"
@@ -86,6 +87,8 @@ msgid ""
 "Remove the \"Forgot your password?\" link on the login form used to trigger "
 "the password reset."
 msgstr ""
+"Az \"Elfelejtette a jelszavát?\" link eltávolítása a bejelentkezési űrlapon,"
+" amely a jelszó visszaállításához használható."
 
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
@@ -102,6 +105,9 @@ msgid ""
 "                Impersonating user \"%(user)s\".\n"
 "            "
 msgstr ""
+"\n"
+"                \"%(user)s\" felhasználó megszemélyesítése.\n"
+"            "
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
@@ -119,7 +125,7 @@ msgstr ""
 #: templates/authentication/login.html:72
 #: templates/authentication/login.html:86
 msgid "Save"
-msgstr ""
+msgstr "Mentés"
 
 #: templates/authentication/login.html:62
 #: templates/authentication/login.html:72
@@ -209,6 +215,7 @@ msgstr ""
 #, python-format
 msgid "Error reseting password for user \"%(user)s\": %(error)s"
 msgstr ""
+"Hiba a \"%(user)s\"felhasználó jelszavának visszaállítása során: %(error)s"
 
 #: views/impersonation_views.py:81
 #, python-format

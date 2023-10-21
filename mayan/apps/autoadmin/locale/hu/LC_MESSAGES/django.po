@@ -5,14 +5,15 @@
 # 
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:07+0000\n"
+"POT-Creation-Date: 2023-10-21 07:35+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgstr ""
 
 #: models.py:13
 msgid "Account"
-msgstr ""
+msgstr "Fiók"
 
 #: models.py:16
 msgid "Password"
@@ -70,6 +71,8 @@ msgid ""
 "You have just finished installing <strong>%(project_title)s</strong>, "
 "congratulations!"
 msgstr ""
+"Most fejezte be a <strong>%(project_title)s</strong> telepítését, "
+"gratulálunk!"
 
 #: templates/autoadmin/credentials.html:17
 msgid "Login using the following credentials:"
@@ -95,3 +98,5 @@ msgid ""
 "Be sure to change the password to increase security and to disable this "
 "message."
 msgstr ""
+"Ne felejtse el megváltoztatni a jelszót a biztonság növelése és ezen üzenet "
+"letiltása érdekében."

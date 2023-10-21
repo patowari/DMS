@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:07+0000\n"
+"POT-Creation-Date: 2023-10-21 07:35+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -64,7 +64,7 @@ msgstr "Foro"
 
 #: links.py:50
 msgid "Knowledge base"
-msgstr ""
+msgstr "Base de conocimientos"
 
 #: links.py:53 views.py:53
 msgid "License"
