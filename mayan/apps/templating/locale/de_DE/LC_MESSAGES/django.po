@@ -75,7 +75,7 @@ msgstr "Verwenden Sie die Vorlagen-Sandbox"
 
 #: serializers.py:8
 msgid "Hex hash"
-msgstr ""
+msgstr "Hex hash"
 
 #: serializers.py:11
 msgid "Name"
@@ -83,7 +83,7 @@ msgstr "Name"
 
 #: serializers.py:14
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: serializers.py:17
 msgid "URL"

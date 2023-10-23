@@ -29,19 +29,19 @@ msgstr ""
 #: apps.py:41 events.py:6 links.py:34 models.py:71 permissions.py:6
 #: settings.py:13
 msgid "Signature captures"
-msgstr ""
+msgstr "Unterschriftserfassungen"
 
 #: events.py:11
 msgid "Signature capture created"
-msgstr ""
+msgstr "Unterschriftserfassung erstellt"
 
 #: events.py:15
 msgid "Signature capture deleted"
-msgstr ""
+msgstr "Unterschriftserfassung gelöscht"
 
 #: events.py:19
 msgid "Signature capture edited"
-msgstr ""
+msgstr "Unterschriftserfassung bearbeitet"
 
 #: forms.py:27
 msgid "Asset preview image"
@@ -53,7 +53,7 @@ msgstr "Vorschau"
 
 #: links.py:17
 msgid "Create new signature capture"
-msgstr ""
+msgstr "Neue Unterschriftserfassung erstellen"
 
 #: links.py:23
 msgid "Delete"
@@ -73,23 +73,23 @@ msgstr "Dokument"
 
 #: models.py:31
 msgid "Data representing the handwritten signature."
-msgstr ""
+msgstr "Daten, die die handgeschrieben Unterschrift repräsentieren."
 
 #: models.py:32
 msgid "Signature capture data"
-msgstr ""
+msgstr "Unterschriftserfassungsdaten"
 
 #: models.py:36
 msgid "Vector representation of the handwritten signature."
-msgstr ""
+msgstr "Vektordarstellung der hanggeschriebenen Unterschrift."
 
 #: models.py:37
 msgid "SVG signature capture data"
-msgstr ""
+msgstr "SVG Unterschriftserfassungsdaten"
 
 #: models.py:40
 msgid "Print version of the captured signature."
-msgstr ""
+msgstr "Version der Unterschriftserfassung drucken."
 
 #: models.py:41
 msgid "Text"
@@ -101,11 +101,11 @@ msgstr "Benutzer"
 
 #: models.py:49
 msgid "Date and time created"
-msgstr ""
+msgstr "Erstellungszeitpunkt"
 
 #: models.py:53
 msgid "Date and time edited"
-msgstr ""
+msgstr "Bearbeitungszeitpunkt"
 
 #: models.py:57
 msgid ""
@@ -113,6 +113,9 @@ msgid ""
 "relationship to the document. Can only contain letters, numbers, and "
 "underscores."
 msgstr ""
+"Dieser Wert wird verwendet, um auf diese Unterschriftserfassung zu verweisen"
+" in Beziehung auf das Dokument. Darf nur Buchstaben, Zahlen und Unterstriche"
+" enthalten."
 
 #: models.py:61 transformations.py:40
 msgid "Internal name"
@@ -120,39 +123,39 @@ msgstr "Interner Name"
 
 #: models.py:70
 msgid "Signature capture"
-msgstr ""
+msgstr "Unterschriftserfassung"
 
 #: permissions.py:10
 msgid "Create signature captures"
-msgstr ""
+msgstr "Unterschriftserfassungen erstellen"
 
 #: permissions.py:14
 msgid "Delete signature captures"
-msgstr ""
+msgstr "Unterschriftserfassungen löschen"
 
 #: permissions.py:18
 msgid "Edit signature captures"
-msgstr ""
+msgstr "Unterschriftserfassungen bearbeiten"
 
 #: permissions.py:22
 msgid "View signature captures"
-msgstr ""
+msgstr "Unterschriftserfassungen anzeigen"
 
 #: search.py:12
 msgid "Signature capture text"
-msgstr ""
+msgstr "Unterschriftserfassungstext"
 
 #: search.py:16
 msgid "Signature capture user first name"
-msgstr ""
+msgstr "Unterschriftserfassung Vorname"
 
 #: search.py:20
 msgid "Signature capture user last name"
-msgstr ""
+msgstr "Unterschriftserfassung Nachname"
 
 #: search.py:24
 msgid "Signature capture user username"
-msgstr ""
+msgstr "Unterschriftserfassung Benutzername"
 
 #: search.py:35
 msgid "Document type label"
@@ -164,15 +167,15 @@ msgstr "Dokumentenbezeichner"
 
 #: search.py:42
 msgid "User first name"
-msgstr ""
+msgstr "Vorname Benutzer"
 
 #: search.py:45
 msgid "User last name"
-msgstr ""
+msgstr "Nachname Benutzer"
 
 #: search.py:48
 msgid "User username"
-msgstr ""
+msgstr "Benutzername"
 
 #: serializers.py:11
 msgid "Document URL"
@@ -193,72 +196,84 @@ msgid ""
 "deleting the oldest signature capture cache files. Specify the size in "
 "bytes."
 msgstr ""
+"Der Grenzwert (in Bytes) ab dem das "
+"SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND mit der Löschung "
+"der ältesten Unterschriftserfassungscachedateien beginnt."
 
 #: settings.py:30
 msgid ""
 "Path to the Storage subclass to use when storing the cached signature "
 "capture files."
 msgstr ""
+"Pfad zur Storage Subclass für die Speicherung der Cachedateien für "
+"Unterschriftserfassungsdateien."
 
 #: settings.py:38
 msgid ""
 "Arguments to pass to the "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 msgstr ""
+"Argumente, die an das "
+"SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND übergeben werden."
 
 #: storages.py:15
 msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the"
 " settings {} and {} for formatting errors."
 msgstr ""
+"Kann den Konverter Unterschriftserfassungs-Cachestorage nicht "
+"initialisieren. Überprüfen Sie die Einstellungen {} und {} auf "
+"Formatierungsfehler."
 
 #: storages.py:21
 msgid "Signature captures cache"
-msgstr ""
+msgstr "Unterschriftserfassungscache"
 
 #: templates/signature_captures/widget_signature_capture.html:64
 msgid "Sign above"
-msgstr ""
+msgstr "Oben unterschreiben"
 
 #: transformations.py:18
 msgid "Paste a signature capture (percent coordinates)"
-msgstr ""
+msgstr "Eine Unterschriftserfassung einfügen (Koordinaten in Prozent)"
 
 #: transformations.py:39
 msgid "Signature capture internal name"
-msgstr ""
+msgstr "Interner Name der Unterschriftserfassung"
 
 #: views.py:44
 #, python-format
 msgid "Create signature capture for document: %s"
-msgstr ""
+msgstr "Unterschriftserfassung für Dokument %s erstellen"
 
 #: views.py:78
 #, python-format
 msgid "Delete signature capture: %s"
-msgstr ""
+msgstr "Unterschriftserfassung %s löschen"
 
 #: views.py:100
 #, python-format
 msgid "Details of: %s"
-msgstr ""
+msgstr "Details für %s"
 
 #: views.py:116
 #, python-format
 msgid "Edit document signature capture: %s"
-msgstr ""
+msgstr "Unterschriftserfassung %s bearbeiten"
 
 #: views.py:145
 msgid ""
 "Signature captures are electronic versions of a persons's handwritten "
 "signature."
 msgstr ""
+"Unterschriftserfassungen sind digitale Versionen einer handschriftlichen "
+"persönlichen Unterschrift."
 
 #: views.py:148
 msgid "Document has no signature captures"
-msgstr ""
+msgstr "Das Dokument verfügt über keine Unterschriftserfassungen"
 
 #: views.py:151
 #, python-format
 msgid "Signature captures for document: %s"
-msgstr ""
+msgstr "Unterschriftserfassungen für Dokument %s"

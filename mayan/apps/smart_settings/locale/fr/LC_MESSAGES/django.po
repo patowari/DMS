@@ -10,6 +10,7 @@
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""

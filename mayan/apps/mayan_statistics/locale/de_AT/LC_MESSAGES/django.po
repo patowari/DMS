@@ -43,7 +43,7 @@ msgstr "Letzte Aktualisierung"
 
 #: classes.py:45
 msgid "Statistics namespace"
-msgstr ""
+msgstr "Statistiken Namensraum"
 
 #: classes.py:162
 msgid "Never"
@@ -51,15 +51,15 @@ msgstr "Niemals"
 
 #: classes.py:207
 msgid "Doughnut chart"
-msgstr ""
+msgstr "Ringdiagramm"
 
 #: classes.py:212
 msgid "Line chart"
-msgstr ""
+msgstr "Liniendiagramm"
 
 #: classes.py:217
 msgid "Pie chart"
-msgstr ""
+msgstr "Kreisdiagramm"
 
 #: links.py:15
 msgid "Namespace details"
@@ -121,11 +121,11 @@ msgstr "Statistik \"%s\" nicht gefunden."
 
 #: views.py:24
 msgid "Statistics namespaces group statistics into logical units. "
-msgstr ""
+msgstr "Statistik-Namensräume gruppieren Statistiken in logische Einheiten."
 
 #: views.py:26
 msgid "No statistic namespaces available"
-msgstr ""
+msgstr "Keine Statistik-Namensräume verfügbar"
 
 #: views.py:27
 msgid "Statistics namespaces"
@@ -134,10 +134,12 @@ msgstr "Statistiken Namensräume"
 #: views.py:50
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
+"Statistiken sind metrische und Diagrammdarstellungen von existierenden "
+"Daten."
 
 #: views.py:53
 msgid "No statistic available"
-msgstr ""
+msgstr "Keine Statistiken verfügbar"
 
 #: views.py:55
 #, python-format

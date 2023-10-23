@@ -1172,7 +1172,7 @@ msgstr ""
 
 #: search.py:70 search.py:101 search.py:138 search.py:162
 msgid "Document UUID"
-msgstr ""
+msgstr "Dokumentum UUID-je"
 
 #: search.py:98
 msgid "Document file checksum"

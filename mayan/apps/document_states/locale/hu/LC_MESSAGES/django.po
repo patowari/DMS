@@ -6,6 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -498,7 +499,7 @@ msgstr ""
 
 #: models/workflow_state_escalation_models.py:58
 msgid "Amount"
-msgstr ""
+msgstr "Mennyiség"
 
 #: models/workflow_state_escalation_models.py:62
 msgid ""

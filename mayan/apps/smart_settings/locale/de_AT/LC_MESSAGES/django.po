@@ -44,15 +44,15 @@ msgstr "Wert"
 
 #: classes.py:116
 msgid "Settings namespace"
-msgstr ""
+msgstr "Einstellungen Namensraum"
 
 #: classes.py:397
 msgid "Choices"
-msgstr ""
+msgstr "Auswahlwerte"
 
 #: classes.py:399
 msgid "Possible values allowed for this setting."
-msgstr ""
+msgstr "Mögliche Werte, die für diese Einstellung erlaubt sind."
 
 #: classes.py:405
 msgid "Default"
@@ -529,6 +529,8 @@ msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
+"Lokaler Speicher momentan nicht verfügbar, Änderungen an Einstellungen "
+"werden nicht gespeichert oder wirksam."
 
 #: views.py:40
 msgid "Setting updated successfully."

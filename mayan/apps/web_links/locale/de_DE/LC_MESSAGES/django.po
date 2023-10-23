@@ -147,7 +147,7 @@ msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "Navigations-URL"
 
 #: views.py:33
 msgid "Web links enabled"

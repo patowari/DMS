@@ -189,7 +189,7 @@ msgstr "Primärschlüssel des Tags, welcher zum Dokument hinzugefügt wird."
 
 #: serializers.py:34 serializers.py:43
 msgid "Tag ID"
-msgstr ""
+msgstr "Tag ID"
 
 #: serializers.py:42
 msgid "Primary key of the tag to remove from the document."
@@ -256,17 +256,17 @@ msgstr "%(count)d Tag erfolgreich gelöscht."
 #: views.py:129
 #, python-format
 msgid "Delete the %(count)d selected tags"
-msgstr ""
+msgstr "Die %(count)d  ausgewählten Tags löschen."
 
 #: views.py:130
 #, python-format
 msgid "Delete tag: %(object)s"
-msgstr ""
+msgstr "Tag%(object)s löschen"
 
 #: views.py:131
 #, python-format
 msgid "Delete the %(count)d selected tag"
-msgstr ""
+msgstr "Den %(count)d  ausgewählten Tag löschen."
 
 #: views.py:137
 msgid "Will be removed from all documents."
@@ -349,4 +349,4 @@ msgstr "Dem Dokument hinzuzufügende Tags."
 
 #: workflow_actions.py:83
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "Tag, der vom Dokument entfernt werden soll."

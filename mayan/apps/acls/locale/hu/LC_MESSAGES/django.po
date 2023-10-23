@@ -76,7 +76,7 @@ msgstr "Globális hozzáférési lista"
 #: managers.py:274
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
-msgstr ""
+msgstr "A \"%s \" objektum nem modell, ezért nem lehet ellenőrizni a hozzáférést."
 
 #: managers.py:294
 #, python-format
@@ -97,7 +97,7 @@ msgstr ""
 
 #: models.py:54
 msgid "Role to which the access is granted for the specified object."
-msgstr ""
+msgstr "Szerepkör, amely a megadott objektumhoz hozzáférést biztosít."
 
 #: models.py:64
 msgid "Access entry"
@@ -110,7 +110,7 @@ msgstr "Hozzáférési bejegyzések"
 #: models.py:69
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
-msgstr ""
+msgstr "A \"%(role)s\" szerepkör engedélye a következőhöz: \"%(object)s\""
 
 #: permissions.py:10
 msgid "Edit ACLs"
@@ -158,6 +158,8 @@ msgid ""
 "An ACL for \"%(object)s\" using role \"%(role)s\" already exists. Edit that "
 "ACL entry instead."
 msgstr ""
+"A \"%(object)s\" ACL a \"%(role)s” szerepkörrel már létezik. Szerkessze "
+"inkább az ACL-bejegyzést."
 
 #: views.py:59
 #, python-format
@@ -196,7 +198,7 @@ msgstr "Elérhető jogosúltságok"
 #: views.py:219
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
-msgstr ""
+msgstr "A  \"%(role)s\" szerepkör engedélye a \"%(object)s\" számára."
 
 #: views.py:228
 msgid ""

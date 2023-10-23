@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,38 +21,40 @@ msgstr ""
 
 #: apps.py:33 layers.py:16 links.py:10 permissions.py:6
 msgid "Redactions"
-msgstr ""
+msgstr "Redaktionen"
 
 #: dependencies.py:6
 msgid "JavaScript image cropper"
-msgstr ""
+msgstr "JavaScript Bildzuschneidetool"
 
 #: layers.py:14
 msgid ""
 "Redactions allow removing access to confidential and sensitive information "
 "without having to modify the document."
 msgstr ""
+"Redaktionen erlauben es, vertrauliche und sensible Informationen zu "
+"verbergen ohne das Dokument zu verändern."
 
 #: permissions.py:10
 msgid "Create new redactions"
-msgstr ""
+msgstr "Neue Redaktionen erstellen"
 
 #: permissions.py:13
 msgid "Delete redactions"
-msgstr ""
+msgstr "Redaktionen löschen"
 
 #: permissions.py:16
 msgid "Edit redactions"
-msgstr ""
+msgstr "Redaktionen bearbeiten"
 
 #: permissions.py:19
 msgid "Exclude redactions"
-msgstr ""
+msgstr "Redaktionen ausschließen"
 
 #: permissions.py:22
 msgid "View existing redactions"
-msgstr ""
+msgstr "Bestehende Redaktionen anzeigen"
 
 #: transformations.py:12
 msgid "Redaction"
-msgstr ""
+msgstr "Redaktion"

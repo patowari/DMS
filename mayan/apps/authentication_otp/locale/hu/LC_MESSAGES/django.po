@@ -6,6 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -23,7 +24,7 @@ msgstr ""
 
 #: apps.py:23 events.py:6
 msgid "Authentication OTP"
-msgstr ""
+msgstr "OTP hitelesítés"
 
 #: events.py:10
 msgid "OTP disabled"
@@ -70,7 +71,7 @@ msgstr ""
 
 #: forms.py:120
 msgid "Token"
-msgstr ""
+msgstr "Token"
 
 #: forms.py:155
 msgid "Token is incorrect for the specified secret."
@@ -94,7 +95,7 @@ msgstr "Felhasználó"
 
 #: models.py:21
 msgid "16 character, base32 encoded random string."
-msgstr ""
+msgstr "16 karakter hosszú, base32 kódolású véletlenszerű karakterlánc."
 
 #: models.py:26
 msgid "User OTP data"
@@ -107,12 +108,12 @@ msgstr ""
 #: views.py:28
 #, python-format
 msgid "One time pad details for user: %s"
-msgstr ""
+msgstr "Egyszeri idősáv a felhasználó számára: %s"
 
 #: views.py:45
 #, python-format
 msgid "Disable one time pad for user: %s"
-msgstr ""
+msgstr "Az egyszeri idősáv letiltása a felhasználó számára: %s"
 
 #: views.py:56
 msgid "OTP disable successfully."
@@ -129,8 +130,8 @@ msgstr ""
 #: views.py:103
 #, python-format
 msgid "Enable one time pad for user: %s"
-msgstr ""
+msgstr "Engedélyezze az egyszeri idősávot a felhasználó számára: %s"
 
 #: views.py:115
 msgid "OTP secret validation error."
-msgstr ""
+msgstr "OTP titok ellenőrzési hiba."

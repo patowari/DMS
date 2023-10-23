@@ -1,7 +1,7 @@
 4.5.7 (XXXX-XX-XX)
 ==================
 - Fix select2 widget in the metadata edit workflow action form.
-- Remove obsole example settings from the default ``.env`` file.
+- Remove obsolete example settings from the default ``.env`` file.
 
 4.5.6 (2023-10-12)
 ==================
@@ -395,6 +395,26 @@
   - Test improvements.
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
+
+4.4.9 (2023-10-15)
+==================
+- Fix the ``add_file`` method for the ``TarArchive`` class.
+- Docker builder updates. Improve how caches and proxies are calculated.
+  Add support for Docker image mirroring.
+- Update Django from version 3.2.20 to 3.2.22.
+- Fix editing existing metadata workflow actions.
+- Update the Docker image ``entrypoint.sh`` to skip changing the ownership
+  of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
+  value (True, true, T, t, Yes, yes, Y, y, 1).
+- Backport periodic task import checking.
+- Backport source periodic task changes.
+- Update PyYAML from version 6.0 to 6.0.1.
+- Update the Docker builder image from version 20.10.21-dind to 23.0.6-dind.
+- Update the base Debian image from version debian:11.7-slim to
+  debian:11.8-slim.
+- Update PIP from version 22.2 to 23.2.1.
+- Update the GitLab CI deployment stage to not install the Docker runtime.
+- Remove obsolete example settings from the default ``.env`` file.
 
 4.4.8 (2023-07-15)
 ==================

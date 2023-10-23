@@ -224,7 +224,7 @@ msgstr ""
 
 #: views.py:25
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: views.py:43
 msgid "Home"

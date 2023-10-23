@@ -5,6 +5,7 @@
 # 
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -32,7 +33,7 @@ msgstr ""
 
 #: models.py:13
 msgid "Account"
-msgstr ""
+msgstr "Fiók"
 
 #: models.py:16
 msgid "Password"
@@ -70,6 +71,8 @@ msgid ""
 "You have just finished installing <strong>%(project_title)s</strong>, "
 "congratulations!"
 msgstr ""
+"Most fejezte be a <strong>%(project_title)s</strong> telepítését, "
+"gratulálunk!"
 
 #: templates/autoadmin/credentials.html:18
 msgid "Login using the following credentials:"
@@ -95,3 +98,5 @@ msgid ""
 "Be sure to change the password to increase security and to disable this "
 "message."
 msgstr ""
+"Ne felejtse el megváltoztatni a jelszót a biztonság növelése és ezen üzenet "
+"letiltása érdekében."

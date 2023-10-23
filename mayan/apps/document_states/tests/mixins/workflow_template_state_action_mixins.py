@@ -215,6 +215,7 @@ class WorkflowTemplateStateActionViewTestMixin(
             kwargs={
                 'workflow_template_state_id': self._test_workflow_template_state.pk,
                 'backend_path': backend_path
+
             }
         )
 

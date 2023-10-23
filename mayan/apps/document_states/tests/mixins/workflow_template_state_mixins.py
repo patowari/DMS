@@ -3,6 +3,7 @@ from django.db.models import Q
 from ...models.workflow_state_models import (
     WorkflowState, WorkflowStateRuntimeProxy
 )
+
 from ..literals import (
     TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
     TEST_WORKFLOW_TEMPLATE_STATE_LABEL,

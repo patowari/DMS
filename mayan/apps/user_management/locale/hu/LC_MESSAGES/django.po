@@ -6,6 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -153,7 +154,7 @@ msgstr ""
 
 #: literals.py:8
 msgid "Account"
-msgstr ""
+msgstr "Fiók"
 
 #: literals.py:12 literals.py:23
 msgid "Personal"

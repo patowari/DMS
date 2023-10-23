@@ -250,6 +250,9 @@ class DocumentVersionBusinessLogicTestCase(
     def test_multiple_active(self):
         self._create_test_document_version(user=self._test_case_user)
 
+        self._test_document_version_list[0].refresh_from_db()
+        self._test_document_version_list[1].refresh_from_db()
+
         self.assertEqual(self._test_document_version_list[0].active, True)
         self.assertEqual(self._test_document_version_list[1].active, False)
 

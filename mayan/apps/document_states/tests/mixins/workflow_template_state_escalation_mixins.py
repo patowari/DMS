@@ -134,9 +134,7 @@ class WorkflowTemplateStateEscalationTaskTestMixin(
         self, test_workflow_instance_id
     ):
         task_workflow_instance_check_escalation.apply_async(
-            kwargs={
-                'workflow_instance_id': test_workflow_instance_id
-            }
+            kwargs={'workflow_instance_id': test_workflow_instance_id}
         ).get()
 
     def _execute_task_workflow_instance_check_escalation_all(self):

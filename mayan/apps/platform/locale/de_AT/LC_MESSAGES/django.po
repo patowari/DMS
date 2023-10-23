@@ -34,7 +34,7 @@ msgstr ""
 
 #: classes.py:242
 msgid "Template that generates a Dockerfile file."
-msgstr ""
+msgstr "Vorlage zur Generierung einer Dockerfile-Datei."
 
 #: classes.py:257
 msgid "Template for Supervisord inside a Docker image."
@@ -42,7 +42,7 @@ msgstr "Konfigurationsvorlage innerhalb des Dockerimages für Supervisord."
 
 #: classes.py:275
 msgid "Template that generates a GitLab CI config file."
-msgstr ""
+msgstr "Vorlage zur Generierung einer GitLab CI Konfigurations-Datei."
 
 #: classes.py:419
 msgid "Template for Supervisord."
@@ -55,20 +55,25 @@ msgstr ""
 
 #: client_backends.py:34
 msgid "Sentry test error"
-msgstr ""
+msgstr "Sentry Testfehler"
 
 #: permissions.py:10
 msgid "Trigger tests"
-msgstr ""
+msgstr "Triggertests"
 
 #: settings.py:18
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
+"Liste der Client Backends, die nach dem Start gestartet werden sollen. "
+"Verwenden Sie den vollen punktierten Pfad zur Klasse des Client Backends."
 
 #: settings.py:25
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."
 msgstr ""
+"Argumente für die Client Backends, die nach dem Start gestartet werden "
+"sollen. Verwenden Sie den vollen punktierten Pfad zur Klasse des Client "
+"Backends."

@@ -7,6 +7,8 @@
 # Tamás Benkovszky, 2023
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Tamás Benkovszky, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -28,51 +30,51 @@ msgstr "Kinézet"
 
 #: dependencies.py:8
 msgid "Lato font"
-msgstr ""
+msgstr "Lato font"
 
 #: dependencies.py:12
 msgid "Bootstrap"
-msgstr ""
+msgstr "Bootstrap"
 
 #: dependencies.py:16
 msgid "Bootswatch"
-msgstr ""
+msgstr "Bootswatch"
 
 #: dependencies.py:30
 msgid "Fancybox"
-msgstr ""
+msgstr "Fancybox"
 
 #: dependencies.py:34
 msgid "FontAwesome"
-msgstr ""
+msgstr "FontAwesome"
 
 #: dependencies.py:38
 msgid "jQuery"
-msgstr ""
+msgstr "jQuery"
 
 #: dependencies.py:42
 msgid "JQuery Form"
-msgstr ""
+msgstr "JQuery űrlap"
 
 #: dependencies.py:46
 msgid "jQuery Lazy Load"
-msgstr ""
+msgstr "jQuery Lazy Load"
 
 #: dependencies.py:50
 msgid "JQuery Match Height"
-msgstr ""
+msgstr "JQuery Match Height"
 
 #: dependencies.py:54
 msgid "Select 2"
-msgstr ""
+msgstr "Select 2"
 
 #: dependencies.py:58
 msgid "Toastr"
-msgstr ""
+msgstr "Toastr"
 
 #: dependencies.py:62
 msgid "URI.js"
-msgstr ""
+msgstr "URI.js"
 
 #: events.py:10
 msgid "Theme created"
@@ -221,6 +223,8 @@ msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
 msgstr ""
+"A hely megfelel, de fiókja nem rendelkezik a hozzáféréshez szükséges "
+"engedéllyel."
 
 #: templates/500.html:5 templates/500.html:30
 #: templates/appearance/root.html:46
@@ -237,7 +241,7 @@ msgstr ""
 
 #: templates/500.html:44
 msgid "Refresh the page."
-msgstr ""
+msgstr "Frissítse az oldalt."
 
 #: templates/500.html:45
 msgid "Wait a bit. The system might be overloaded."
@@ -258,7 +262,7 @@ msgstr ""
 
 #: templates/appearance/about.html:9
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: templates/appearance/about.html:67
 msgid "Version"
@@ -267,11 +271,11 @@ msgstr "Verzió"
 #: templates/appearance/about.html:69
 #, python-format
 msgid "Build number: %(build_number)s"
-msgstr ""
+msgstr "Build szám: %(build_number)s"
 
 #: templates/appearance/about.html:82
 msgid "Released under the license:"
-msgstr ""
+msgstr "A licenc ami alapján megjelent:"
 
 #: templates/appearance/about.html:88
 #, python-format
@@ -280,6 +284,9 @@ msgid ""
 "                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
 "            "
 msgstr ""
+"\n"
+"                A változások teljes listája elérhető a <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Kiadási jegyzetben %(icon_documentation)s</a> vagy a rövid verzió <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">a változásnaplóban %(icon_documentation)s</a>.\n"
+"            "
 
 #: templates/appearance/about.html:94
 #, python-format
@@ -288,6 +295,9 @@ msgid ""
 "                For questions check the <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
 "            "
 msgstr ""
+"\n"
+"                Ha kérdései vannak, nézze meg a <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Dokumentációt %(icon_documentation)s</a>.\n"
+"            "
 
 #: templates/appearance/about.html:100
 #, python-format
@@ -296,6 +306,9 @@ msgid ""
 "                If you found a bug or have a feature idea, visit the <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> or open a ticket in the <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Source code repository %(icon_source_code)s</a>.\n"
 "            "
 msgstr ""
+"\n"
+"                Ha hibát talált, vagy új funkciót szeretne, látogassa meg a <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Fórumot %(icon_forum)s</a> vagy nyisson hibajegyet a <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Forráskód repository-ban %(icon_source_code)s</a>.\n"
+"            "
 
 #: templates/appearance/app/foot.html:70
 msgid ""
@@ -331,7 +344,7 @@ msgstr ""
 #: templates/appearance/generic_form_subtemplate.html:109
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
-msgstr ""
+msgstr "Mentés"
 
 #: templates/appearance/generic_form_subtemplate.html:85
 #: templates/appearance/generic_form_subtemplate.html:95
@@ -381,12 +394,14 @@ msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
 "%(total_pages)s)"
 msgstr ""
+"Összesen (%(start)s - %(end)s a %(total)s-ból) (%(page_number)s oldal a "
+"%(total_pages)s-ból)"
 
 #: templates/appearance/partials/list_header.html:13
 #: templates/appearance/partials/list_header.html:16
 #, python-format
 msgid "Total: %(total)s"
-msgstr ""
+msgstr "Összesen: %(total)s"
 
 #: templates/appearance/partials/list_toolbar.html:14
 msgid "Select/Deselect all"

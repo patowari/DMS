@@ -1,3 +1,5 @@
+from mayan.apps.documents.tests.mixins.document_version_mixins import DocumentVersionTestMixin
+
 from ..events import event_ocr_document_version_finished
 from ..models import DocumentVersionPageOCRContent
 from ..tasks import task_document_version_ocr_process
@@ -54,16 +56,6 @@ class DocumentOCRAPIViewTestMixin:
         )
 
 
-class DocumentVersionOCRAPIViewTestMixin:
-    def _request_test_document_version_ocr_submit_api_view(self):
-        return self.post(
-            viewname='rest_api:document-version-ocr-submit-view', kwargs={
-                'document_id': self._test_document.pk,
-                'document_version_id': self._test_document_version.pk
-            }
-        )
-
-
 class DocumentVersionOCRTaskTestMixin:
     def _execute_task_document_version_ocr_process(self):
         task_document_version_ocr_process.apply_async(
@@ -74,7 +66,7 @@ class DocumentVersionOCRTaskTestMixin:
         ).get()
 
 
-class DocumentVersionOCRTestMixin:
+class DocumentVersionOCRTestMixin(DocumentVersionTestMixin):
     auto_create_test_document_version_ocr_content = False
 
     def setUp(self):
@@ -99,7 +91,17 @@ class DocumentVersionOCRTestMixin:
         )
 
 
-class DocumentVersionOCRViewTestMixin:
+class DocumentVersionOCRAPIViewTestMixin(DocumentVersionOCRTestMixin):
+    def _request_test_document_version_ocr_submit_api_view(self):
+        return self.post(
+            viewname='rest_api:document-version-ocr-submit-view', kwargs={
+                'document_id': self._test_document.pk,
+                'document_version_id': self._test_document_version.pk
+            }
+        )
+
+
+class DocumentVersionOCRViewTestMixin(DocumentVersionOCRTestMixin):
     def _request_test_document_version_ocr_content_detail_view(self):
         return self.get(
             viewname='ocr:document_version_ocr_content_view', kwargs={

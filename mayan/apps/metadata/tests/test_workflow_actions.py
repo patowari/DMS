@@ -11,10 +11,6 @@ from ..events import (
     event_document_metadata_removed
 )
 from ..models import MetadataType
-from ..permissions import (
-    permission_document_metadata_add, permission_document_metadata_edit,
-    permission_document_metadata_remove
-)
 from ..workflow_actions import (
     DocumentMetadataAddAction, DocumentMetadataEditAction,
     DocumentMetadataRemoveAction
@@ -302,7 +298,8 @@ class DocumentMetadataEditActionViewTestCase(
 
         self._create_test_workflow_template_state_action(
             extra_backend_data={
-                'metadata_types': self._test_metadata_type.pk
+                # ~ 'metadata_types': self._test_metadata_type.pk
+                'metadata_type': self._test_metadata_type.pk
             }
         )
 
@@ -333,7 +330,8 @@ class DocumentMetadataEditActionViewTestCase(
 
         self._create_test_workflow_template_state_action(
             extra_backend_data={
-                'metadata_types': self._test_metadata_type.pk
+                # ~ 'metadata_types': self._test_metadata_type.pk
+                'metadata_type': self._test_metadata_type.pk
             }
         )
 

@@ -44,12 +44,12 @@ msgstr "API Dokumentation (ReDoc)"
 #: relations.py:33
 #, python-brace-format
 msgid "Invalid pk \"{pk_value}\" - object does not exist."
-msgstr ""
+msgstr "Ungültiger Primärschlüssel \"{pk_value}\" - Objekt existiert nicht."
 
 #: relations.py:36
 #, python-brace-format
 msgid "Incorrect type. Expected pk value, received {data_type}."
-msgstr ""
+msgstr "Ungültiger Typ. Primärschlüssel erwartet, {data_type} erhalten."
 
 #: relations.py:38
 msgid "This field is required."
@@ -78,11 +78,11 @@ msgstr "Name"
 
 #: serializers.py:49
 msgid "Status code"
-msgstr ""
+msgstr "Statuscode"
 
 #: serializers.py:52
 msgid "Requests"
-msgstr ""
+msgstr "Anfragen"
 
 #: serializers.py:75
 msgid "Label"
@@ -94,11 +94,11 @@ msgstr "URL"
 
 #: serializers.py:106
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: serializers.py:109
 msgid "Author email"
-msgstr ""
+msgstr "Autoren-E-Mail"
 
 #: serializers.py:112
 msgid "Build"
@@ -106,11 +106,11 @@ msgstr "Build"
 
 #: serializers.py:115
 msgid "Build string"
-msgstr ""
+msgstr "Build Zeichenkette"
 
 #: serializers.py:118
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: serializers.py:121
 msgid "Description"
@@ -118,7 +118,7 @@ msgstr "Beschreibung"
 
 #: serializers.py:124
 msgid "Django version"
-msgstr ""
+msgstr "Django Version"
 
 #: serializers.py:127
 msgid "License"
@@ -134,7 +134,7 @@ msgstr "Version"
 
 #: serializers.py:136
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: settings.py:17
 msgid "Disable the REST API links in the tools menu."
@@ -142,8 +142,8 @@ msgstr "Die REST API Links im Menü verbergen."
 
 #: settings.py:23
 msgid "The maximum page size that can be requested."
-msgstr ""
+msgstr "Die maximale Seitengröße, die angefragt werden kann."
 
 #: settings.py:29
 msgid "The default page size if none is specified."
-msgstr ""
+msgstr "Die Standardseitengröße, wenn keine definiert ist."

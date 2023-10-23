@@ -6,6 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -113,17 +114,17 @@ msgstr ""
 #: views.py:45
 #, python-format
 msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Hiba a \"%(instance)s\" ; közlemény törlésekor; %(exception)s"
 
 #: views.py:54
 #, python-format
 msgid "%(count)d announcements deleted successfully."
-msgstr ""
+msgstr "%(count)d közlemény sikeresen törölve."
 
 #: views.py:57
 #, python-format
 msgid "Announcement \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "A \"%(object)s\" közlemény sikeresen törölve."
 
 #: views.py:60
 #, python-format
@@ -156,6 +157,9 @@ msgid ""
 "convery information about your organzation, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"A közlemények a bejelentkezési nézetben jelennek meg. A közlemények "
+"segítségével információkat közölhet szervezetéről, bejelentéseket vagy "
+"használati irányelveket a felhasználók számára."
 
 #: views.py:125
 msgid "No announcements available"

@@ -29,6 +29,7 @@ msgid ""
 "Welcome Admin! You have been given super user privileges. Use them with "
 "caution."
 msgstr ""
+"Тавтай морил! Танд сүпер хэрэглэгчийн эрх олголоо. Болгоомжтой хэрэглээрэй."
 
 #: models.py:13
 msgid "Account"

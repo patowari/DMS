@@ -6,6 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
@@ -161,7 +162,7 @@ msgstr ""
 
 #: search.py:37
 msgid "Document UUID"
-msgstr ""
+msgstr "Dokumentum UUID-je"
 
 #: search.py:41
 msgid "Document file checksum"

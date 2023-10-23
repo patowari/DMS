@@ -6,6 +6,7 @@
 # Translators:
 # Zoljargal Munkhjargal, 2023
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2023
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
