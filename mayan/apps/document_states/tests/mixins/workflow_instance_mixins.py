@@ -72,7 +72,7 @@ class WorkflowInstanceLaunchAPIViewTestMixin(WorkflowInstanceTestMixin):
         )
 
 
-class WorkflowInstanceLogEntryTransitrionListAPIViewTestMixin(
+class WorkflowInstanceLogEntryTransitionListAPIViewTestMixin(
     WorkflowInstanceTestMixin
 ):
     def _request_test_workflow_instance_log_entry_transition_list_api_view(self):
