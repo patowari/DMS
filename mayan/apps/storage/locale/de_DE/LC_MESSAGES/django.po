@@ -7,18 +7,18 @@
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
 # Siegfried Albrecht, 2023
 # Berny <berny@bernhard-marx.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Roberto Rosario, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-13 03:52+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -148,7 +148,7 @@ msgstr "Speicherung periodisch"
 
 #: queues.py:22
 msgid "Delete a shared upload"
-msgstr ""
+msgstr "Einen geteilten Upload löschen"
 
 #: queues.py:27
 msgid "Delete stale uploads"
@@ -188,7 +188,7 @@ msgid ""
 "temporary files."
 msgstr ""
 "Temporäres Verzeichnis zum systemweiten Speichern von Miniaturbildern, "
-"Vorschauen und temporären Dateien. "
+"Vorschauen und temporären Dateien."
 
 #: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."

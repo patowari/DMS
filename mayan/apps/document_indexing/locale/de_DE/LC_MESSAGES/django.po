@@ -13,14 +13,13 @@
 # Robin Schubert <robin.schubert@gmx.de>, 2023
 # Berny <berny@bernhard-marx.de>, 2023
 # Roberto Rosario, 2023
-# Siegfried Albrecht, 2023
 # Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:16+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -315,7 +314,7 @@ msgstr "Indizierung"
 
 #: permissions.py:10
 msgid "View index instances"
-msgstr "Index Instanzen betrachten"
+msgstr "Index Instanzen anzeigen"
 
 #: permissions.py:13
 msgid "Create new index templates"
@@ -331,7 +330,7 @@ msgstr "Indexvorlagen löschen"
 
 #: permissions.py:22
 msgid "View index templates"
-msgstr "Indexvorlagen betrachten"
+msgstr "Indexvorlagen anzeigen"
 
 #: permissions.py:25 views/index_template_views.py:414
 msgid "Rebuild index templates"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:16+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source stored files"
-msgstr ""
+msgstr "Quelle gespeicherte Dateien"
 
 #: classes.py:44
 msgid "Size"
@@ -49,26 +49,30 @@ msgstr "Auswählen"
 
 #: source_backend_actions/arguments.py:6
 msgid "URL safe filename of the stored file to process."
-msgstr ""
+msgstr "Sicherer URL-Dateiname der gespeicherten zu verarbeitenden Datei."
 
 #: source_backend_actions/arguments.py:10
 msgid ""
 "Execute source backend specific, built-in post processing clean up code."
 msgstr ""
+"Quellenbackend spezifischen, eingebauten Post Processing Clean Up Code "
+"ausführen."
 
 #: source_backend_actions/arguments.py:16
 msgid ""
 "Unique identifier to select which source backend stored file to process."
 msgstr ""
+"Eindeutiger Identifikator für die Auswahl, welches Quellenbackend die Datei "
+"zur Verarbeitung gespeichert hat."
 
 #: source_backend_actions/mixins.py:75
 msgid "Stored file"
-msgstr ""
+msgstr "Gespeicherte Datei"
 
 #: source_backend_actions/mixins.py:76
 #, python-format
 msgid "Delete stored file \"%s\"?"
-msgstr ""
+msgstr "Gespeicherte Datei \"%s\" löschen?"
 
 #: source_backends/filesystem_source_mixins.py:25
 msgid "Server side filesystem path."
@@ -98,33 +102,41 @@ msgstr "Dateispeicher"
 #: source_backends/storage_backend_source_mixins.py:127
 #, python-format
 msgid "Unable to initialize storage; %s"
-msgstr ""
+msgstr "Kann Speicherort nicht initialsieren; %s"
 
 #: source_backends/storage_backend_source_mixins.py:35
 msgid "Python path to the Storage subclass used to access the source files."
 msgstr ""
+"Pythonpfad zur der Storage subclass, die für den Zugriff auf die "
+"Quelldateien verwendet wird."
 
 #: source_backends/storage_backend_source_mixins.py:41
 msgid "Storage backend"
-msgstr ""
+msgstr "Speicherbackend"
 
 #: source_backends/storage_backend_source_mixins.py:49
 msgid ""
 "Arguments to pass to the storage backend. Use YAML format. The credential "
 "object is available as {{ credential }}."
 msgstr ""
+"Argumente (in YAML Format), die an das Speicherbackend übergeben werden. Das"
+" Zugangsdatenobjekt ist verfügbar als {{ credential }}."
 
 #: source_backends/storage_backend_source_mixins.py:55
 msgid "Storage backend arguments"
-msgstr ""
+msgstr "Speicherbackend Argumente"
 
 #: source_backends/storage_backend_source_mixins.py:102
 msgid "Unable to initialize storage. Check the storage backend arguments."
 msgstr ""
+"Fehler bei der Initialisierung der Speicherung. Überprüfen Sie die "
+"Speicherbackend-Argumente."
 
 #: source_backends/storage_backend_source_mixins.py:114
 msgid "Unable to initialize storage. Check the storage backend dotted path."
 msgstr ""
+"Fehler bei der Initialisierung der Speicherung. Überprüfen Sie den "
+"punktierten Pfad zum Speicherbackend."
 
 #: source_backends/stored_file_mixins.py:37
 msgid "Delete the file after is has been successfully uploaded."
@@ -136,12 +148,12 @@ msgstr "Nach Hochladen löschen"
 
 #: source_backends/stored_file_mixins.py:54
 msgid "File content"
-msgstr ""
+msgstr "Dateiinhalt"
 
 #: source_backends/stored_file_mixins.py:72
 #, python-format
 msgid "Unable get list of files; %s"
-msgstr ""
+msgstr "Kann Liste der Dateien nicht ermitteln; %s"
 
 #: source_backends/stored_file_mixins.py:90
 msgid ""
@@ -149,10 +161,14 @@ msgid ""
 "the operating system user account being used for Mayan EDMS doesn't have the"
 " necessary file system permissions to access the source files."
 msgstr ""
+"Das könnte bedeuten, dass die Quelldateiliste leer ist. Es könnte auch "
+"bedeuten, dass das für Mayan EDMS verwendete Systembenutzerkonto nicht über "
+"die erforderlichen Berechtigungen für den Zugriff auf die Quelldateien "
+"verfügt."
 
 #: source_backends/stored_file_mixins.py:95
 msgid "No source files available"
-msgstr ""
+msgstr "Keine Quelldateien verfügbar"
 
 #: source_backends/stored_file_mixins.py:190
 msgid "Width value to be passed to the converter backend."
@@ -175,15 +191,17 @@ msgid ""
 "Maximum size in bytes for which previews will be generated. Example: 20000 ="
 " 20KB."
 msgstr ""
+"Maximale Größe in Bytes, für die Vorschauen generiert werden. Beispiel: "
+"20000 = 20KB."
 
 #: source_backends/stored_file_mixins.py:216
 msgid "Max size preview"
-msgstr ""
+msgstr "Max Größe Vorschau"
 
 #: source_backends/stored_file_mixins.py:230
 msgid "File images"
-msgstr ""
+msgstr "Dateibilder"
 
 #: templates/source_stored_files/errors/staging_file_too_large.html:5
 msgid "File too large for preview"
-msgstr ""
+msgstr "Datei zu groß für Vorschau"

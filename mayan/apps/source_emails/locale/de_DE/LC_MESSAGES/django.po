@@ -6,16 +6,16 @@
 # Translators:
 # Berny <berny@bernhard-marx.de>, 2023
 # Roberto Rosario, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:16+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Ingo Buchholz <ingo.buchholz@takwa.de>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: apps.py:13
 msgid "Emails"
-msgstr ""
+msgstr "E-Mails"
 
 #: source_backends/imap_source_backends.py:21
 msgid "IMAP email"
@@ -80,15 +80,15 @@ msgstr "IMAP Expunge ausführen"
 
 #: source_backends/imap_source_backends.py:97
 msgid "IMAP Mailbox to which processed messages will be copied."
-msgstr "IMAP-Postfach, in das verarbeitete Nachrichten kopiert werden. "
+msgstr "IMAP-Postfach, in das verarbeitete Nachrichten kopiert werden."
 
 #: source_backends/imap_source_backends.py:100
 msgid "Destination mailbox"
-msgstr "Ziel-Postfach "
+msgstr "Ziel-Postfach"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "IMAP Protokoll"
 
 #: source_backends/mixins.py:31
 msgid "Host"
@@ -120,7 +120,7 @@ msgstr "Textkörper der E-Mail speichern"
 
 #: source_backends/mixins.py:74
 msgid "Common email options"
-msgstr ""
+msgstr "Allgemeine E-Mailoptionen"
 
 #: source_backends/pop3_source_backends.py:18
 msgid "POP3 email"
@@ -132,12 +132,12 @@ msgstr "Timeout"
 
 #: source_backends/pop3_source_backends.py:45
 msgid "POP3 protocol"
-msgstr ""
+msgstr "POP3 Protokoll"
 
 #: tests/source_backends.py:58
 msgid "Test IMAP email"
-msgstr ""
+msgstr "IMAP Protokoll testen"
 
 #: tests/source_backends.py:73
 msgid "Test POP3 email"
-msgstr ""
+msgstr "POP3 Protokoll testen"

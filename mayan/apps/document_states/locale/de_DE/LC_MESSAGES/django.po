@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 18:27+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -722,11 +722,11 @@ msgstr "Workflowvorlagen bearbeiten"
 
 #: permissions.py:19
 msgid "View workflow templates"
-msgstr "Workflowvorlagen betrachten"
+msgstr "Workflowvorlagen anzeigen"
 
 #: permissions.py:25
 msgid "Transition workflow instances"
-msgstr "Übergangsinstanzen"
+msgstr "Übergang von Instanzen durchführen"
 
 #: permissions.py:28
 msgid "Execute workflow tools"
@@ -1369,22 +1369,22 @@ msgstr "Fehler beim Löschen des Workflows \"%(instance)s\": %(exception)s"
 msgid "%(count)d workflows deleted successfully."
 msgstr "%(count)d  Workflows erfolgreich gelöscht."
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:163
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr "Workflow \"%(object)s\" erfolgreich gelöscht."
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr "%(count)d Workflow erfolgreich gelöscht."
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr "%(count)d  ausgewählte Workflows löschen."
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr "Workflow %(object)s löschen."

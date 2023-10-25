@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 18:27+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: apps.py:54 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
-msgstr "Document signatures"
+msgstr "Podpisy dokumentów"
 
 #: apps.py:112
 msgid "Date and time"
@@ -227,31 +227,31 @@ msgstr ""
 
 #: permissions.py:10
 msgid "Sign documents with detached signatures"
-msgstr "Podpisuj dokumenty odłączonymi podpisami"
+msgstr "Podpisywanie dokumentów podpisami odłączonymi"
 
 #: permissions.py:14
 msgid "Sign documents with embedded signatures"
-msgstr "Podpisuj dokumenty za pomocą osadzonych podpisów"
+msgstr "Podpisywanie dokumentów za pomocą osadzonych podpisów"
 
 #: permissions.py:18
 msgid "Delete detached signatures"
-msgstr "Usuń odłączone podpisy"
+msgstr "Usuwanie odłączonych podpisów"
 
 #: permissions.py:22
 msgid "Download detached document signatures"
-msgstr "Pobierz odłączone podpisy dokumentów"
+msgstr "Pobieranie odłączonych podpisów dokumentów"
 
 #: permissions.py:26
 msgid "Upload detached document signatures"
-msgstr "Prześlij odłączone podpisy dokumentów"
+msgstr "Przesyłanie odłączonych podpisów dokumentów"
 
 #: permissions.py:30
 msgid "Verify document signatures"
-msgstr "Verify document signatures"
+msgstr "Weryfikacja podpisów dokumentów"
 
 #: permissions.py:34
 msgid "View document signatures"
-msgstr ""
+msgstr "Podgląd podpisów dokumentów"
 
 #: queues.py:10
 msgid "Signatures slow"

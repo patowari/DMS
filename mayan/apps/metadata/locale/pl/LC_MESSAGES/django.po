@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 18:28+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -208,7 +208,7 @@ msgstr ""
 
 #: metadata_validators.py:35
 msgid "The input string does not match the pattern."
-msgstr ""
+msgstr "Wprowadzona wartość nie pasuje do wzorca."
 
 #: metadata_validators.py:40
 msgid "Time validator"
@@ -300,7 +300,7 @@ msgstr "Wartość nie jest jedną z dostępnych opcji."
 #: models.py:151
 #, python-format
 msgid "Metadata type validation error; %(exception)s"
-msgstr ""
+msgstr "Błąd walidacji typu metadanych; %(exception)s"
 
 #: models.py:177 serializers.py:105
 msgid "Document"

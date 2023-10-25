@@ -10,16 +10,16 @@
 # Jesaja Everling <jeverling@gmail.com>, 2023
 # Berny <berny@bernhard-marx.de>, 2023
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -647,6 +647,8 @@ msgid ""
 "One of more metadata types that are required for this document type are not "
 "available."
 msgstr ""
+"Einer oder mehrere für diesen Dokumententyp erforderliche Metadatentypen "
+"sind nicht verfügbar."
 
 #: workflow_actions.py:46
 msgid "Metadata types to add to the document."
@@ -670,7 +672,7 @@ msgstr ""
 
 #: workflow_actions.py:139
 msgid "Metadata types to edit."
-msgstr ""
+msgstr "Zu bearbeitende Metadatentypen."
 
 #: workflow_actions.py:178
 #, python-format

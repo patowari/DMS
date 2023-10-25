@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -192,7 +192,7 @@ msgstr "index instance"
 
 #: models/index_instance_models.py:31
 msgid "Index instances"
-msgstr "Instancje indeksów"
+msgstr "Wystąpienia indeksów"
 
 #: models/index_instance_models.py:59 models/index_template_models.py:176
 msgid "Index template node"
@@ -208,7 +208,7 @@ msgstr "Węzeł instancji indeksu"
 
 #: models/index_instance_models.py:73
 msgid "Indexes instances node"
-msgstr "Węzły instancji indeksu"
+msgstr "Węzły wystapień indeksu"
 
 #: models/index_instance_models.py:96
 msgid "Document index node instance"
@@ -216,7 +216,7 @@ msgstr "Instancja węzła indeksu dokumentu"
 
 #: models/index_instance_models.py:97
 msgid "Document indexes node instances"
-msgstr "Instancje węzła indeksów dokumentu"
+msgstr "Wystąpienia węzła indeksów dokumentu"
 
 #: models/index_instance_models.py:104
 msgid "Index instance nodes"
@@ -307,27 +307,27 @@ msgstr "Indeksowanie"
 
 #: permissions.py:10
 msgid "View index instances"
-msgstr ""
+msgstr "Wyświetlanie wystąpień indeksów"
 
 #: permissions.py:13
 msgid "Create new index templates"
-msgstr ""
+msgstr "Tworzenie nowych szablonów indeksów"
 
 #: permissions.py:16
 msgid "Edit index templates"
-msgstr ""
+msgstr "Edycja szablonów indeksów"
 
 #: permissions.py:19
 msgid "Delete index templates"
-msgstr ""
+msgstr "Usuwanie szablonów indeksów"
 
 #: permissions.py:22
 msgid "View index templates"
-msgstr ""
+msgstr "Wyświetlanie szablonów indeksów"
 
 #: permissions.py:25 views/index_template_views.py:414
 msgid "Rebuild index templates"
-msgstr ""
+msgstr "Przebudowa szablonów indeksów"
 
 #: queues.py:10
 msgid "Indexing slow"
@@ -454,10 +454,12 @@ msgid ""
 "This could mean that no index templates have been created or that there are "
 "index templates but they are no properly defined."
 msgstr ""
+"Może to oznaczać, że nie utworzono żadnych szablonów indeksów lub że "
+"szablony indeksów istnieją, ale nie są odpowiednio zdefiniowane."
 
 #: views/index_instance_views.py:41
 msgid "There are no index instances available."
-msgstr "Brak dostępnych instancji indeksu."
+msgstr "Brak dostępnych wystąpień indeksu."
 
 #: views/index_instance_views.py:80
 #, python-format
@@ -474,7 +476,7 @@ msgid ""
 "Assign the document type of this document to an index to have it appear in "
 "instances of those indexes organization units. "
 msgstr ""
-"Przypisz typ dokumentu do indeksu, aby pojawiał się w instancjach tych "
+"Przypisz typ dokumentu do indeksu, aby pojawiał się w wystąpieniach tych "
 "jednostek organizacyjnych indeksów."
 
 #: views/index_instance_views.py:148
@@ -518,7 +520,7 @@ msgstr ""
 
 #: views/index_template_views.py:94
 msgid "There are no index templates."
-msgstr ""
+msgstr "Brak szablonów indeksów."
 
 #: views/index_template_views.py:125
 #, python-format
@@ -567,6 +569,8 @@ msgid ""
 "Triggers are document events that cause instances of this index template to "
 "be updated."
 msgstr ""
+"Wyzwalacze to zdarzenia dokumentu, które powodują aktualizację wystąpień "
+"tego szablonu indeksu."
 
 #: views/index_template_views.py:240
 #, python-format
@@ -606,10 +610,10 @@ msgstr ""
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "szablon indeksu %(count)d umieszczony w kolejce do odbudowania."
+msgstr[1] "%(count)d szablony indeksów w kolejce do odbudowania."
+msgstr[2] "%(count)d szablony indeksów w kolejce do odbudowania."
+msgstr[3] "%(count)d szablony indeksów w kolejce do przebudowy."
 
 #: views/index_template_views.py:465
 #, python-format
@@ -622,4 +626,4 @@ msgstr[3] ""
 
 #: views/index_template_views.py:478
 msgid "Index templates for which their instances will be deleted."
-msgstr "Szablony indeksów, dla których ich instancje zostaną usunięte."
+msgstr "Szablony indeksów, dla których ich wystąpienia zostaną usunięte."

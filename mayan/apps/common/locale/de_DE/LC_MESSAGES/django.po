@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:15+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -34,7 +34,7 @@ msgstr "Allgemein"
 
 #: dependencies.py:186
 msgid "Used to allow offline translation of the code text strings."
-msgstr "Ermöglicht die Offline Übersetzung von Zeichenketten im Code."
+msgstr "Ermöglicht die Offline-Übersetzung von Zeichenketten im Code."
 
 #: dependencies.py:195
 msgid "Provides style checking."
@@ -66,7 +66,7 @@ msgstr "Forum"
 
 #: links.py:50
 msgid "Knowledge base"
-msgstr ""
+msgstr "Wissensbasis"
 
 #: links.py:53 views.py:53
 msgid "License"

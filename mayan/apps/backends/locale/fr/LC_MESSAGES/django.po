@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:56+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Albert ARIBAUD <albert.aribaud@f-g.fr>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -47,6 +47,6 @@ msgstr "Données du backend"
 msgid "Backend"
 msgstr "Backend"
 
-#: model_mixins.py:74
+#: model_mixins.py:75
 msgid "The backend class for this entry."
 msgstr "La classe de l'application dorsale (backend) pour cette entrée."

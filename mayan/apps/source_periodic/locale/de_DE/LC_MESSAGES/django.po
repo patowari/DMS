@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 15:30+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -24,13 +24,15 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source periodic"
-msgstr ""
+msgstr "Quelle periodisch"
 
 #: source_backend_actions/arguments.py:7
 msgid ""
 "Executes the primary action of the source in test mode. Permanent "
 "modifications like deletion of files are disabled."
 msgstr ""
+"Führt die primäre Aktion der Quelle im Testmodus aus. Permanente Änderungen "
+"wie die Löschung von Dateien sind deaktiviert."
 
 #: source_backends/mixins.py:30
 msgid "Assign a document type to documents uploaded from this source."
@@ -50,4 +52,4 @@ msgstr "Intervall"
 
 #: source_backends/mixins.py:65
 msgid "Unattended"
-msgstr ""
+msgstr "Unbeaufsichtigt"

@@ -8,14 +8,15 @@
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # Roberto Rosario, 2023
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +58,7 @@ msgstr "Pamięci podręczne plików"
 
 #: links.py:33 links.py:39 links.py:43
 msgid "Purge cache"
-msgstr "Wyczyść pamięć podręczną"
+msgstr "Czyszczenie pamięci podręcznej"
 
 #: model_mixins.py:45
 msgid "Size at which the cache will start deleting old entries."
@@ -158,15 +159,15 @@ msgstr "Pliki partycji pamięci podręcznej"
 
 #: permissions.py:10
 msgid "Purge an object cache"
-msgstr ""
+msgstr "Czyszczenie pamięci podręcznej obiektów"
 
 #: permissions.py:14 queues.py:20
 msgid "Purge a file cache"
-msgstr "Wyczyść pamięć podręczną plików"
+msgstr "Czyszczenie pamięci podręcznej plików"
 
 #: permissions.py:17
 msgid "View a file cache"
-msgstr "Wyświetl pamięć podręczną plików"
+msgstr "Wyświetlanie pamięci podręcznej plików"
 
 #: queues.py:10
 msgid "File caching slow"

@@ -130,15 +130,15 @@ msgstr "Zugriffsberechtigungen anzeigen"
 
 #: serializers.py:19
 msgid "Permissions add URL"
-msgstr "Berechtigungen hinzufügen URL"
+msgstr "Berechtigung hinzufügen URL"
 
 #: serializers.py:39
 msgid "Permissions remove URL"
-msgstr "Berechtigungen entziehen URL"
+msgstr "Berechtigung entziehen URL"
 
 #: serializers.py:59
 msgid "Permissions URL"
-msgstr "Berechtigungen URL"
+msgstr "Berechtigungs-URL"
 
 #: serializers.py:82
 msgid "Role ID"

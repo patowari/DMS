@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:57+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Mailer"
 msgstr "Σύστημα ηλεκτρονικής ταχυδρόμησης"
 
-#: classes.py:27
+#: classes.py:28
 msgid "General"
 msgstr ""
 
-#: classes.py:40
+#: classes.py:46
 msgid "From"
 msgstr "Από"
 
-#: classes.py:43
+#: classes.py:49
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
@@ -41,11 +41,11 @@ msgstr ""
 "Η διεύθυνση του αποστολέα. Εάν αυτή η τιμή δεν έχει οριστεί κάποιο σύστημα "
 "μπορεί να αρνηθεί την αποστολή μηνυμάτων."
 
-#: classes.py:58
+#: classes.py:64
 msgid "Compatibility"
 msgstr ""
 
-#: classes.py:68
+#: classes.py:83 classes.py:103
 msgid "Null backend"
 msgstr "Υποκείμενο σύστημα κενής τιμής"
 
@@ -175,31 +175,31 @@ msgstr ""
 msgid "Link for {{ object_name }}: {{ object }}"
 msgstr ""
 
-#: mailers.py:14
+#: mailers.py:11
 msgid "Django SMTP backend"
 msgstr "Υποκείμενο σύστημα Django SMTP"
 
-#: mailers.py:23
+#: mailers.py:20
 msgid "Host"
 msgstr "Διακομιστής"
 
-#: mailers.py:26
+#: mailers.py:23
 msgid "The host to use for sending email."
 msgstr "Ο διακομιστής ηλεκτρονικού ταχυδρομείου που θα χρησιμοποιηθεί."
 
-#: mailers.py:31
+#: mailers.py:28
 msgid "Port"
 msgstr "Θύρα"
 
-#: mailers.py:33
+#: mailers.py:30
 msgid "Port to use for the SMTP server."
 msgstr "Η θύρα του διακομιστή αλληλογραφίας SMTP."
 
-#: mailers.py:36
+#: mailers.py:33
 msgid "Use TLS"
 msgstr "Χρήση TLS"
 
-#: mailers.py:39
+#: mailers.py:36
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
@@ -208,11 +208,11 @@ msgstr ""
 "διακομιστή SMTP. Αυτό χρησιμοποιείται για ρητές συνδέσεις TLS, γενικά στη "
 "θύρα 587."
 
-#: mailers.py:44
+#: mailers.py:41
 msgid "Use SSL"
 msgstr "Χρήση SSL"
 
-#: mailers.py:47
+#: mailers.py:44
 msgid ""
 "Whether to use an implicit TLS (secure) connection when talking to the SMTP "
 "server. In most email documentation this type of TLS connection is referred "
@@ -229,35 +229,23 @@ msgstr ""
 "\"Χρήση SSL\" δεν μπορούν να χρησιμοποιηθούν ταυτόχρονα, οπότε ενεργοποιήστε"
 " μόνο μια."
 
-#: mailers.py:59
-msgid "The credential entry to use to authenticate against the email server."
-msgstr ""
-
-#: mailers.py:66
-msgid "Credential"
-msgstr ""
-
-#: mailers.py:80
+#: mailers.py:65
 msgid "Server"
 msgstr ""
 
-#: mailers.py:84
-msgid "Authentication"
-msgstr "Πιστοποίηση"
-
-#: mailers.py:98
+#: mailers.py:93
 msgid "Django file based backend"
 msgstr "Υποκείμενο σύστημα με βάση το αρχείο Django"
 
-#: mailers.py:106
+#: mailers.py:101
 msgid "File path"
 msgstr "Διαδρομή αρχείου"
 
-#: mailers.py:122
+#: mailers.py:117
 msgid "Storage"
 msgstr "Αποθηκευτικός χώρος"
 
-#: model_mixins.py:171
+#: model_mixins.py:172
 msgid "Test email from Mayan EDMS"
 msgstr ""
 "Δοκιμαστικό μήνυμα από το Σύστημα Διαχείρισης Ηλεκτρονικών  Εγγράφων Mayan"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 03:35+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: views.py:34 views.py:101
 msgid "There are no error log entries"
-msgstr "Keine Fehlerprotkolleinträge vorhanden"
+msgstr "Keine Fehlerprotokolleinträge vorhanden"
 
 #: views.py:50
 #, python-format

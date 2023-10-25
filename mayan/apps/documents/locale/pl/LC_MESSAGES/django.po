@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 18:28+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -619,7 +619,7 @@ msgstr "Kosz"
 
 #: links/trashed_document_links.py:32 links/trashed_document_links.py:44
 msgid "Restore"
-msgstr "Odtwórz"
+msgstr "Przywróć"
 
 #: links/trashed_document_links.py:49 permissions.py:105
 msgid "Empty trash"
@@ -1001,7 +1001,7 @@ msgstr "Ostatnio używane dokumenty"
 
 #: permissions.py:12
 msgid "Change type of documents"
-msgstr "Zmień rodzaj dokumentów"
+msgstr "Zmiana typów dla dokumentów"
 
 #: permissions.py:15
 msgid "Create documents"
@@ -1013,35 +1013,35 @@ msgstr "Edycja dokumentów"
 
 #: permissions.py:21
 msgid "Edit document properties"
-msgstr "Edytuj właściwości dokumentu"
+msgstr "Edycja właściwości dokumentu"
 
 #: permissions.py:24
 msgid "Execute document modifying tools"
-msgstr "Uruchom narzędzia modyfikacji dokumentu"
+msgstr "Uruchamianie narzędzi modyfikacji dokumentu"
 
 #: permissions.py:27
 msgid "View documents"
-msgstr "Zobacz dokumenty"
+msgstr "Wyświetlanie dokumentów"
 
 #: permissions.py:33
 msgid "Delete document files"
-msgstr "Usuń pliki dokumentów"
+msgstr "Usuwanie plików dokumentów"
 
 #: permissions.py:36
 msgid "Edit document files"
-msgstr "Edytuj pliki dokumentów"
+msgstr "Edycja plików dokumentów"
 
 #: permissions.py:39
 msgid "Create new document files"
-msgstr "Utwórz nowe pliki dokumentów"
+msgstr "Tworzenie nowych plików dokumentu"
 
 #: permissions.py:42
 msgid "Print document files"
-msgstr "Drukuj pliki dokumentów"
+msgstr "Drukowanie plików dokumentów"
 
 #: permissions.py:45
 msgid "Execute document file modifying tools"
-msgstr "Uruchom narzędzia do modyfikowania plików dokumentów"
+msgstr "Uruchamianie narzędzi do modyfikowania plików dokumentów"
 
 #: permissions.py:49
 msgid "View document files"
@@ -1049,19 +1049,19 @@ msgstr "Wyświetl pliki dokumentów"
 
 #: permissions.py:56
 msgid "Create document versions"
-msgstr "Twórz wersje dokumentów"
+msgstr "Tworzenie wersji dokumentów"
 
 #: permissions.py:60
 msgid "Delete document versions"
-msgstr "Usuń wersje dokumentu"
+msgstr "Usuwanie wersji dokumentu"
 
 #: permissions.py:64
 msgid "Edit document versions"
-msgstr "Edytuj wersje dokumentu"
+msgstr "Edycja wersji dokumentu"
 
 #: permissions.py:68
 msgid "Print document versions"
-msgstr "Drukuj wersje dokumentów"
+msgstr "Drukowanie wersji dokumentów"
 
 #: permissions.py:71
 msgid "View document versions"
@@ -1085,11 +1085,11 @@ msgstr "Zobacz typy dokumentów"
 
 #: permissions.py:96
 msgid "Restore trashed document"
-msgstr "Odtwórz dokumenty z kosza"
+msgstr "Przywracanie dokumentów z kosza"
 
 #: permissions.py:99
 msgid "Delete trashed documents"
-msgstr "Usuń przeniesione dokumenty"
+msgstr "Usuwanie skasowanych dokumentów"
 
 #: permissions.py:102
 msgid "Trash documents"
@@ -1341,7 +1341,7 @@ msgstr ""
 
 #: serializers/trashed_document_serializers.py:16
 msgid "Restore URL"
-msgstr ""
+msgstr "Przywróć adres URL"
 
 #: settings.py:49
 msgid ""
@@ -2282,7 +2282,7 @@ msgstr "Przywrócono dokumenty z kosza w ilości: %(count)d"
 #: views/trashed_document_views.py:170
 #, python-format
 msgid "Trashed document \"%(object)s\" restored."
-msgstr ""
+msgstr "Przywrócono usunięty dokument \"%(object)s\"."
 
 #: views/trashed_document_views.py:173
 #, python-format
@@ -2292,16 +2292,16 @@ msgstr "Przywrócono dokumenty z kosza w ilości: %(count)d"
 #: views/trashed_document_views.py:175
 #, python-format
 msgid "Restore the %(count)d selected trashed documents?"
-msgstr ""
+msgstr "Przywrócić wybrane dokumenty: %(count)d znajdujące się w koszu?"
 
 #: views/trashed_document_views.py:176
 #, python-format
 msgid "Restore the trashed document: %(object)s"
-msgstr ""
+msgstr "Przywróć usunięty dokument: %(object)s"
 
 #: views/trashed_document_views.py:177
 msgid "Restore the selected trashed document?"
-msgstr ""
+msgstr "Przywrócić wybrany dokument znajdujący się w koszu?"
 
 #: workflow_actions.py:21
 msgid "New document type for the workflow document."

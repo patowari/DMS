@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 14:20+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -258,7 +258,7 @@ msgstr "Dokumentenunterschriften überprüfen"
 
 #: permissions.py:34
 msgid "View document signatures"
-msgstr "Dokumentendateiunterschriften betrachten"
+msgstr "Dokumentendateiunterschriften anzeigen"
 
 #: queues.py:10
 msgid "Signatures slow"

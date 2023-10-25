@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 03:35+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "Mailer"
 msgstr "Mailer"
 
-#: classes.py:27
+#: classes.py:28
 msgid "General"
 msgstr "Allgemein"
 
-#: classes.py:40
+#: classes.py:46
 msgid "From"
 msgstr "Von"
 
-#: classes.py:43
+#: classes.py:49
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
@@ -45,11 +45,11 @@ msgstr ""
 "Die Adresse des Absenders. Einige Systeme verweigern die Verarbeitung von "
 "Nachrichten, wenn dieser Wert nicht gesetzt ist."
 
-#: classes.py:58
+#: classes.py:64
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
-#: classes.py:68
+#: classes.py:83 classes.py:103
 msgid "Null backend"
 msgstr "Null Backend"
 
@@ -185,31 +185,31 @@ msgstr ""
 msgid "Link for {{ object_name }}: {{ object }}"
 msgstr "Link für {{ object_name }}: {{ object }}"
 
-#: mailers.py:14
+#: mailers.py:11
 msgid "Django SMTP backend"
 msgstr "Django SMTP Backend"
 
-#: mailers.py:23
+#: mailers.py:20
 msgid "Host"
 msgstr "Host"
 
-#: mailers.py:26
+#: mailers.py:23
 msgid "The host to use for sending email."
 msgstr "Der Host für ausgehende Mails."
 
-#: mailers.py:31
+#: mailers.py:28
 msgid "Port"
 msgstr "Port"
 
-#: mailers.py:33
+#: mailers.py:30
 msgid "Port to use for the SMTP server."
 msgstr "Der Port des SMTP-Servers."
 
-#: mailers.py:36
+#: mailers.py:33
 msgid "Use TLS"
 msgstr "TLS benutzen"
 
-#: mailers.py:39
+#: mailers.py:36
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
@@ -217,11 +217,11 @@ msgstr ""
 "Ob eine TLS-gesicherte Verbindung zum SMTP-Server benutzt werden soll. Es "
 "werden explizite TLS-Verbindungen aufgebaut, üblicherweise an Port 587."
 
-#: mailers.py:44
+#: mailers.py:41
 msgid "Use SSL"
 msgstr "SSL benutzen"
 
-#: mailers.py:47
+#: mailers.py:44
 msgid ""
 "Whether to use an implicit TLS (secure) connection when talking to the SMTP "
 "server. In most email documentation this type of TLS connection is referred "
@@ -237,35 +237,23 @@ msgstr ""
 "benutzen\". TLS und SSL schließen sich gegenseitig aus, also setzen Sie nur "
 "eine der beiden Einstellungen."
 
-#: mailers.py:59
-msgid "The credential entry to use to authenticate against the email server."
-msgstr "Zugangsdaten für die Authentifizierung gegen den E-Mailserver."
-
-#: mailers.py:66
-msgid "Credential"
-msgstr "Zugangsdaten"
-
-#: mailers.py:80
+#: mailers.py:65
 msgid "Server"
 msgstr "Server"
 
-#: mailers.py:84
-msgid "Authentication"
-msgstr "Authentifizierung"
-
-#: mailers.py:98
+#: mailers.py:93
 msgid "Django file based backend"
 msgstr "Django dateibasiertes Backend"
 
-#: mailers.py:106
+#: mailers.py:101
 msgid "File path"
 msgstr "Dateipfad"
 
-#: mailers.py:122
+#: mailers.py:117
 msgid "Storage"
 msgstr "Dateispeicher"
 
-#: model_mixins.py:171
+#: model_mixins.py:172
 msgid "Test email from Mayan EDMS"
 msgstr "Testmail aus Mayan EDMS"
 

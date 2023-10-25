@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 23:58+0000\n"
+"POT-Creation-Date: 2023-10-13 03:52+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -63,11 +63,11 @@ msgstr "Vorname"
 
 #: apps.py:110
 msgid "Is active?"
-msgstr "Aktiv"
+msgstr "Aktiv?"
 
 #: apps.py:113
 msgid "Is super user?"
-msgstr ""
+msgstr "Superuser?"
 
 #: apps.py:116 search.py:37
 msgid "Last name"
@@ -87,7 +87,7 @@ msgstr "Letzte Anmeldung"
 
 #: apps.py:151
 msgid "Has usable password?"
-msgstr "Verwendbares Passwort"
+msgstr "Verwendbares Passwort?"
 
 #: apps.py:158
 msgid "All the groups."
