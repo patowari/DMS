@@ -14,7 +14,7 @@ Introduction
     Articles:
 
     - Using the REST API
-    - Optimizing API responsed using the dynamic API fields feature
+    - Optimizing API responses using the dynamic API fields feature
     - Using API sorting and ordering
     - The batch request API system
 
@@ -22,30 +22,6 @@ Introduction
 
     - The API for the file downloads section is missing
     - How to retrieve the list of available search models
-
-
-Batch API requests
-==================
-
-
-.. include::  ../../partials/kb_migration.txt
-
-.. note::
-
-    Knowledge Base content
-
-    Articles:
-
-    - Using the REST API
-    - Optimizing API responsed using the dynamic API fields feature
-    - Using API sorting and ordering
-    - The batch request API system
-
-    Troubleshooting:
-
-    - The API for the file downloads section is missing
-    - How to retrieve the list of available search models
-
 
 Examples
 ========

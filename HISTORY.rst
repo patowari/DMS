@@ -2,6 +2,18 @@
 ==================
 - Fix select2 widget in the metadata edit workflow action form.
 - Remove obsolete example settings from the default ``.env`` file.
+- Migrate chapters to Knowledge base:
+
+  - Appearance troubleshooting
+  - Authentication troubleshooting
+  - Autoadmin troubleshooting
+  - Documents troubleshooting
+  - Docker troubleshooting
+  - Dynamic search syntax
+  - File caching troubleshooting
+  - Mirroring troubleshooting
+  - Platform troubleshooting
+  - Tags
 
 4.5.6 (2023-10-12)
 ==================

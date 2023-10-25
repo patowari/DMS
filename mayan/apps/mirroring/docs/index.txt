@@ -6,9 +6,19 @@ Mirroring
 =========
 
 
-The Mirroring app allows presenting document collections as an external,
-read-only, virtual drive. This virtual drive can be mounted and shared like
-any other storage media.
+.. include::  ../../partials/kb_migration.txt
+
+.. note::
+
+    Knowledge Base content
+
+    Articles:
+
+    - What is document index mirroring?
+
+    Troubleshooting:
+
+    - File system links not showing when serving content with Samba
 
 
 - :doc:`troubleshooting`

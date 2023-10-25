@@ -13,6 +13,11 @@ Source types
     Articles:
 
     - What are document sources?
+    - Sources API “Immediate Mode”
+
+    Tutorial:
+
+    - Using Google Cloud Storage as a staging source for large amount of documents or large document uploads
 
     Troubleshooting:
 
