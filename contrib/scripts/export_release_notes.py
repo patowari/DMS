@@ -98,6 +98,17 @@ class ReleaseNoteExporter:
                     )
 
                     content.append(result)
+                elif ':github-issue:' in line:
+                    line_parts = line.split('`')
+
+                    result = (
+                        '- `GitHub issue #{} '
+                        '<https://github.com/mayan-edms/mayan-edms/issues/{}>`_ {}'.format(
+                            line_parts[1], line_parts[1], line_parts[2]
+                        )
+                    )
+
+                    content.append(result)
                 else:
                     content.append(line)
 
