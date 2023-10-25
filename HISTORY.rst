@@ -15,6 +15,9 @@
   - Platform troubleshooting
   - Tags
 
+- Add note explaining the direct deployment installation method is no longer
+  supported.
+
 4.5.6 (2023-10-12)
 ==================
 - Fix editing existing metadata workflow actions.

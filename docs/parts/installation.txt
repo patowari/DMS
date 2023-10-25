@@ -100,4 +100,10 @@ For users with an existing installation of Portainer.
     ../chapters/portainer/installation
 
 
+Direct deployment
+-----------------
+
+The direct deployment method is no longer supported.
+
+
 .. _Docker: https://www.docker.com/
