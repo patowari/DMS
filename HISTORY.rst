@@ -17,6 +17,7 @@
 
 - Add note explaining the direct deployment installation method is no longer
   supported.
+- Merge version 4.4.9 changes.
 
 4.5.6 (2023-10-12)
 ==================
