@@ -285,7 +285,6 @@ Bugs fixed or issues closed
 * :github-issue:`257` Use the DEFAULT_FILE_FORMAT from literals.py in python.py
 * :github-issue:`261` fix_orientation method causes document add to crash
 * :github-issue:`263` Typo in mayan/apps/ocr/migrations/0004_documenttypesettings.py
-
 * :gitlab-issue:`172` Metadata default value ignored when changing document type
 * :gitlab-issue:`329` Move code to Python 3
 * :gitlab-issue:`415` Wrong filename when downloading document version
