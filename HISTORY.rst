@@ -1,4 +1,4 @@
-4.5.7 (XXXX-XX-XX)
+4.5.7 (2023-10-25)
 ==================
 - Fix select2 widget in the metadata edit workflow action form.
 - Remove obsolete example settings from the default ``.env`` file.
