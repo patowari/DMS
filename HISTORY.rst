@@ -5,6 +5,7 @@
   skipped and retried on the next purge execution.
 - Fix document file page search content field label.
 - Upgrade Django from version 3.2.19 to 3.2.23.
+- Generate markup for GitHub issues.
 
 4.2.17 (2023-07-10)
 ===================
