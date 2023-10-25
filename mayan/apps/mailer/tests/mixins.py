@@ -1,30 +1,44 @@
 import json
 
+from django.utils.module_loading import import_string
+
+from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import UserMailer
 
 from .literals import (
-    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS, TEST_USER_MAILER_LABEL
+    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS, MAILER_BACKEND_TEST_PATH,
+    TEST_USER_MAILER_LABEL
 )
-from .mailers import TestBackend
 
 
-class MailerTestMixin(TestMixinObjectCreationTrack):
+class MailerTestMixin(
+    StoredCredentialPasswordUsernameTestMixin, TestMixinObjectCreationTrack
+):
+    _test_mailer_backend_path = MAILER_BACKEND_TEST_PATH
     _test_object_model = UserMailer
     _test_object_name = '_test_user_mailer'
 
-    def _create_test_user_mailer(self):
+    def setUp(self):
+        super().setUp()
+        self._test_mailer_backend_class = self._get_test_mailer_backend_class()
+
+    def _get_test_mailer_backend_class(self):
+        return import_string(dotted_path=self._test_mailer_backend_path)
+
+    def _create_test_user_mailer(self, extra_backend_data=None):
+        backend_data = {'from': TEST_EMAIL_FROM_ADDRESS}
+
+        if extra_backend_data:
+            backend_data.update(**extra_backend_data)
+
         self._test_user_mailer = UserMailer.objects.create(
             default=True,
             enabled=True,
             label=TEST_USER_MAILER_LABEL,
-            backend_path=TestBackend.backend_id,
-            backend_data=json.dumps(
-                obj={
-                    'from': TEST_EMAIL_FROM_ADDRESS
-                }
-            )
+            backend_path=self._test_mailer_backend_class.backend_id,
+            backend_data=json.dumps(obj=backend_data)
         )
 
 
@@ -162,7 +176,7 @@ class MailerViewTestMixin(MailerTestMixin):
 
         response = self.post(
             viewname='mailer:user_mailer_create', kwargs={
-                'backend_path': TestBackend.backend_id
+                'backend_path': self._test_mailer_backend_class.backend_id
             }, data={
                 'default': True,
                 'enabled': True,

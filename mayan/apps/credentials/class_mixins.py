@@ -1,12 +1,16 @@
+from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
-from .models import StoredCredential
 from .permissions import permission_credential_use
 
 
 class BackendMixinCredentials:
     @classmethod
     def get_form_fields(cls):
+        StoredCredential = apps.get_model(
+            app_label='credentials', model_name='StoredCredential'
+        )
+
         fields = super().get_form_fields()
 
         fields.update(
@@ -45,6 +49,10 @@ class BackendMixinCredentials:
         return fieldsets
 
     def get_credential(self):
+        StoredCredential = apps.get_model(
+            app_label='credentials', model_name='StoredCredential'
+        )
+
         stored_credential_id = self.kwargs.get('stored_credential_id')
 
         if stored_credential_id:

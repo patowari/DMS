@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
 from mayan.apps.backends.classes import ModelBaseBackend
+from mayan.apps.credentials.class_mixins import BackendMixinCredentials
 
 __all__ = ('MailerBackend',)
 logger = logging.getLogger(name=__name__)
@@ -31,6 +32,11 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
         )
 
         return fieldsets
+
+    def get_connection_kwargs(self):
+        result = {}
+
+        return result
 
 
 class MailerBackendBaseEmail(MailerBackend):
@@ -62,6 +68,35 @@ class MailerBackendBaseEmail(MailerBackend):
         )
 
         return fieldsets
+
+    def get_connection_kwargs(self):
+        result = super().get_connection_kwargs()
+
+        result['from'] = self.kwargs.get('from')
+
+        return result
+
+
+class MailerBackendCredentials(
+    BackendMixinCredentials, MailerBackendBaseEmail
+):
+    label = _('Null backend')
+
+    def get_connection_kwargs(self):
+        result = super().get_connection_kwargs()
+
+        credential = self.get_credential()
+
+        password = credential.get('password')
+        username = credential['username']
+
+        result.update(
+            {
+                'password': password, 'username': username
+            }
+        )
+
+        return result
 
 
 class NullBackend(MailerBackend):
