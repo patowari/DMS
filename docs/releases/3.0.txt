@@ -663,7 +663,6 @@ Bugs fixed or issues closed
 * :gitlab-issue:`480` Wrong Environment Variables names in documentation
 * :gitlab-issue:`481` IMAP sources with metadata not working in 3.0rc1
 * :gitlab-issue:`484` Document upload wizard only works as admin
-
 * :github-issue:`264` migrate fails on document_states 0004_workflow_internal_name
 * :github-issue:`269` Lack of authentication for document previews
 
