@@ -19,6 +19,12 @@
   supported.
 - Merge version 4.4.9 changes.
 - Load test mailers classes by path and not my import.
+- Fix authenticated mailers. Add the mailer class method
+  ``get_connection_kwargs`` to ensure each mailer prepares the corresponding
+  connection arguments. In the case of the Django mailer, it decodes the
+  stored credential ID back into a ``StoredCredential`` model instance and
+  extract the username and password from the credential before merging the
+  values into the super connection arguments.
 
 4.5.6 (2023-10-12)
 ==================
