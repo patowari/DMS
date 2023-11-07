@@ -3,9 +3,21 @@ Troubleshooting
 ===============
 
 
-Existing indexes are missing after upgrade to version 4.1
-=========================================================
+.. include::  ../../../partials/kb_migration.txt
 
-Due to the changes in the index tree generation algorithm and database
-integrity configuration, existing index trees will deleted during upgrade
-and need to be rebuild after upgrade.
+.. note::
+
+    Knowledge Base content
+
+    Articles:
+
+    - What are document indexes?
+    - What is document index mirroring?
+
+    Tutorial:
+
+    - Using Mayan EDMS as a simple research article repository
+
+    Troubleshooting:
+
+    - Existing indexes are missing after upgrade to version 4.1
