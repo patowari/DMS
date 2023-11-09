@@ -6,6 +6,7 @@
 - Fix document file page search content field label.
 - Upgrade Django from version 3.2.19 to 3.2.23.
 - Generate markup for GitHub issues.
+- Fix a setting help text typo.
 
 4.2.17 (2023-07-10)
 ===================
