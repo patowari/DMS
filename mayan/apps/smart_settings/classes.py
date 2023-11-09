@@ -409,7 +409,7 @@ class Setting:
 
     is_overridden.short_description = _('Overridden')
     is_overridden.help_text = _(
-        'Is this settings being overridden by an environment variable?'
+        'Is this setting being overridden by an environment variable?'
     )
 
     def migrate(self):
