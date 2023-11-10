@@ -36,7 +36,7 @@ class DocumentPropertyHelperTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_no_source_metadata(self):
-        self._test_document_file.delete()
+        self._test_document_file_metadata.delete()
 
         self._clear_events()
 
@@ -83,7 +83,7 @@ class DocumentFilePropertyHelperTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_no_source_metadata(self):
-        self._test_document_file.delete()
+        self._test_document_file_metadata.delete()
 
         self._clear_events()
 
