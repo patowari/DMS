@@ -146,7 +146,7 @@ Issues closed
 
 - :gitlab-issue:`1083` python 3.10 AttributeError: module 'collections' has no attribute 'Iterable'
 - :gitlab-issue:`1098` Wrong or missleading API documentation
-- :gitlab-issue:`1099` wrong config sting for AUTHENTICATION_BACKEND TOTP authentication in Version 4.2 Changes documentation
+- :gitlab-issue:`1099` wrong config string for AUTHENTICATION_BACKEND TOTP authentication in Version 4.2 Changes documentation
 
 
 .. _PyPI: https://pypi.python.org/pypi/mayan-edms/
