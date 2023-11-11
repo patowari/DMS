@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -9,7 +9,7 @@ from .literals import (
 
 
 namespace = SettingNamespace(
-    label=_('Platform'), name='platform'
+    label=_(message='Platform'), name='platform'
 )
 
 setting_client_backend_enabled = namespace.add_setting(

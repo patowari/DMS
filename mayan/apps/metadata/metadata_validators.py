@@ -3,20 +3,20 @@ import re
 from dateutil.parser import parse
 
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import MetadataValidator
 
 
 class DateAndTimeValidator(MetadataValidator):
-    label = _('Date and time validator')
+    label = _(message='Date and time validator')
 
     def execute(self, input_data):
         parse(input_data).isoformat()
 
 
 class DateValidator(MetadataValidator):
-    label = _('Date validator')
+    label = _(message='Date validator')
 
     def execute(self, input_data):
         parse(input_data).date().isoformat()
@@ -24,7 +24,7 @@ class DateValidator(MetadataValidator):
 
 class RegularExpressionValidator(MetadataValidator):
     arguments = ('pattern',)
-    label = _('Regular expression validator')
+    label = _(message='Regular expression validator')
 
     def execute(self, input_data):
         result = re.fullmatch(
@@ -32,12 +32,12 @@ class RegularExpressionValidator(MetadataValidator):
         )
         if not result:
             raise ValidationError(
-                message=_('The input string does not match the pattern.')
+                message=_(message='The input string does not match the pattern.')
             )
 
 
 class TimeValidator(MetadataValidator):
-    label = _('Time validator')
+    label = _(message='Time validator')
 
     def execute(self, input_data):
         parse(input_data).time().isoformat()

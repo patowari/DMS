@@ -5,7 +5,7 @@ from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -154,7 +154,7 @@ class SmartLinkListView(SingleObjectListView):
             'no_results_title': _(
                 'There are no smart links'
             ),
-            'title': _('Smart links')
+            'title': _(message='Smart links')
         }
 
 
@@ -201,8 +201,8 @@ class DocumentTypeSmartLinkAddRemoveView(AddRemoveView):
     main_object_pk_url_kwarg = 'document_type_id'
     secondary_object_model = SmartLink
     secondary_object_permission = permission_smart_link_edit
-    list_available_title = _('Available smart links')
-    list_added_title = _('Smart links enabled')
+    list_available_title = _(message='Available smart links')
+    list_added_title = _(message='Smart links enabled')
     related_field = 'smart_links'
     view_icon = icon_document_type_smart_links
 
@@ -226,8 +226,8 @@ class SmartLinkDocumentTypeAddRemoveView(AddRemoveView):
     main_object_pk_url_kwarg = 'smart_link_id'
     secondary_object_model = DocumentType
     secondary_object_permission = permission_document_type_edit
-    list_available_title = _('Available document types')
-    list_added_title = _('Document types enabled')
+    list_available_title = _(message='Available document types')
+    list_added_title = _(message='Document types enabled')
     related_field = 'document_types'
     view_icon = icon_smart_link_document_type_list
 
@@ -244,7 +244,7 @@ class SmartLinkDocumentTypeAddRemoveView(AddRemoveView):
 
 
 class SmartLinkCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create new smart link')}
+    extra_context = {'title': _(message='Create new smart link')}
     form_class = SmartLinkForm
     post_action_redirect = reverse_lazy(
         viewname='linking:smart_link_list'
@@ -268,7 +268,7 @@ class SmartLinkDeleteView(SingleObjectDeleteView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Delete smart link: %s') % self.object
+            'title': _(message='Delete smart link: %s') % self.object
         }
 
 
@@ -285,7 +285,7 @@ class SmartLinkEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit smart link: %s') % self.object
+            'title': _(message='Edit smart link: %s') % self.object
         }
 
     def get_instance_extra_data(self):

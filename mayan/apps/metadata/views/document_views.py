@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -53,7 +53,7 @@ class DocumentMetadataAddView(
         queryset = self.object_list
 
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Add metadata types to document',
                 plural='Add metadata types to documents',
                 number=queryset.count()
@@ -224,8 +224,8 @@ class DocumentMetadataEditView(
                 'Add metadata types available for this document\'s type '
                 'and assign them corresponding values.'
             ),
-            'no_results_title': _('There is no metadata to edit'),
-            'title': ungettext(
+            'no_results_title': _(message='There is no metadata to edit'),
+            'title': ngettext(
                 'Edit document metadata',
                 'Edit documents metadata',
                 queryset.count()
@@ -373,7 +373,7 @@ class DocumentMetadataListView(ExternalObjectViewMixin, SingleObjectListView):
             'no_results_title': _(
                 'This document doesn\'t have any metadata'
             ),
-            'title': _('Metadata for document: %s') % self.external_object
+            'title': _(message='Metadata for document: %s') % self.external_object
         }
 
     def get_source_queryset(self):
@@ -400,7 +400,7 @@ class DocumentMetadataRemoveView(
 
         result = {
             'form_display_mode_table': True,
-            'title': ungettext(
+            'title': ngettext(
                 singular='Remove metadata types from the document',
                 plural='Remove metadata types from the documents',
                 number=queryset.count()

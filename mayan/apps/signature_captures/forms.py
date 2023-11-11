@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.converter.fields import ImageField
 from mayan.apps.views.forms import DetailForm
@@ -24,7 +24,7 @@ class SignatureCaptureForm(forms.ModelForm):
 
 class SignatureCaptureDetailForm(DetailForm):
     preview = ImageField(
-        image_alt_text=_('Asset preview image'), label=_('Preview')
+        image_alt_text=_(message='Asset preview image'), label=_(message='Preview')
     )
 
     def __init__(self, *args, **kwargs):

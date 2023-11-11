@@ -6,7 +6,7 @@ from django.template.exceptions import TemplateDoesNotExist
 from django.template.loader import get_template
 from django.utils.module_loading import import_string
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..literals import COMMENT_APP_TEMPLATE_CACHE_DISABLE
 
@@ -74,7 +74,7 @@ def appearance_get_choice_value(field):
             ]
         )
     except KeyError:
-        return _('None')
+        return _(message='None')
 
 
 @register.filter

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .events import event_file_metadata_document_file_submitted
 from .tasks import task_process_document_file

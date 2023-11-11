@@ -1,6 +1,6 @@
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     SingleObjectCreateView, SingleObjectDeleteView, SingleObjectEditView,
@@ -81,7 +81,7 @@ class WorkflowTemplateStateEscalationDeleteView(SingleObjectDeleteView):
                 'object', 'workflow_template_state', 'workflow_template'
             ),
             'object': self.object,
-            'title': _('Delete workflow state escalation: %s') % self.object,
+            'title': _(message='Delete workflow state escalation: %s') % self.object,
             'workflow_template': self.object.state.workflow,
             'workflow_template_state': self.object.state
         }
@@ -113,7 +113,7 @@ class WorkflowTemplateStateEscalationEditView(SingleObjectEditView):
                 'object', 'workflow_template_state', 'workflow_template',
             ),
             'object': self.object,
-            'title': _('Edit workflow state escalation: %s') % self.object,
+            'title': _(message='Edit workflow state escalation: %s') % self.object,
             'workflow_template': self.object.state.workflow,
             'workflow_template_state': self.object.state
         }

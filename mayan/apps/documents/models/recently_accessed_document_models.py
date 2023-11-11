@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..managers import (
     RecentlyAccessedDocumentManager, ValidRecentlyAccessedDocumentManager
@@ -18,14 +18,14 @@ class RecentlyAccessedDocument(models.Model):
     """
     user = models.ForeignKey(
         db_index=True, editable=False, on_delete=models.CASCADE,
-        to=settings.AUTH_USER_MODEL, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     document = models.ForeignKey(
         editable=False, on_delete=models.CASCADE, related_name='recent',
-        to=Document, verbose_name=_('Document')
+        to=Document, verbose_name=_(message='Document')
     )
     datetime_accessed = models.DateTimeField(
-        auto_now=True, db_index=True, verbose_name=_('Accessed')
+        auto_now=True, db_index=True, verbose_name=_(message='Accessed')
     )
 
     objects = RecentlyAccessedDocumentManager()
@@ -33,8 +33,8 @@ class RecentlyAccessedDocument(models.Model):
 
     class Meta:
         ordering = ('-datetime_accessed',)
-        verbose_name = _('Recent document')
-        verbose_name_plural = _('Recent documents')
+        verbose_name = _(message='Recent document')
+        verbose_name_plural = _(message='Recent documents')
 
     def __str__(self):
         return str(self.document)
@@ -52,5 +52,5 @@ class RecentlyAccessedDocument(models.Model):
 class RecentlyAccessedDocumentProxy(Document):
     class Meta:
         proxy = True
-        verbose_name = _('Recently accessed document')
-        verbose_name_plural = _('Recently accessed documents')
+        verbose_name = _(message='Recently accessed document')
+        verbose_name_plural = _(message='Recently accessed documents')

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.source_backend_actions.interface_arguments import SourceBackendActionInterfaceArgument
 

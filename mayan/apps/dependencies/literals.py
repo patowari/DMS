@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 COMMAND_NAME_DEPENDENCIES_CHECK_VERSION = 'dependencies_check_version'
 COMMAND_NAME_DEPENDENCIES_INSTALL = 'dependencies_install'

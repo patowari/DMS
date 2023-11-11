@@ -21,8 +21,8 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
         self._create_test_cabinet()
 
         self.assertEqual(Cabinet.objects.all().count(), 1)
-        self.assertQuerysetEqual(
-            Cabinet.objects.all(), (repr(self._test_cabinet),)
+        self.assertQuerySetEqual(
+            qs=Cabinet.objects.all(), values=(self._test_cabinet,)
         )
 
         events = self._get_test_events()
@@ -59,11 +59,11 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
             cabinet_2.validate_unique()
             cabinet_2.save()
 
-        self.assertEqual(Cabinet.objects.all().count(), 1)
-        self.assertQuerysetEqual(
-            Cabinet.objects.all(), (
-                repr(self._test_cabinet),
-            )
+        self.assertEqual(
+            Cabinet.objects.all().count(), 1
+        )
+        self.assertQuerySetEqual(
+            qs=Cabinet.objects.all(), values=(self._test_cabinet,)
         )
 
         events = self._get_test_events()
@@ -100,11 +100,12 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
             parent=self._test_cabinet, label=TEST_CABINET_LABEL
         )
 
-        self.assertEqual(Cabinet.objects.count(), test_cabinet_count + 1)
-        self.assertQuerysetEqual(
-            Cabinet.objects.all(),
-            map(
-                repr, (self._test_cabinet, inner_cabinet)
+        self.assertEqual(
+            Cabinet.objects.count(), test_cabinet_count + 1
+        )
+        self.assertQuerySetEqual(
+            qs=Cabinet.objects.all(), values=(
+                self._test_cabinet, inner_cabinet
             )
         )
 
@@ -126,7 +127,9 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
 
         self._test_cabinet_child.delete()
 
-        self.assertEqual(Cabinet.objects.count(), test_cabinet_count - 1)
+        self.assertEqual(
+            Cabinet.objects.count(), test_cabinet_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -172,9 +175,9 @@ class CabinetDocumentTestCase(
             self._test_cabinet.documents.count(),
             test_cabinet_document_count + 1
         )
-        self.assertQuerysetEqual(
-            self._test_cabinet.documents.all(), (
-                repr(self._test_document),
+        self.assertQuerySetEqual(
+            qs=self._test_cabinet.documents.all(), values=(
+                self._test_document,
             )
         )
 
@@ -203,8 +206,8 @@ class CabinetDocumentTestCase(
             self._test_cabinet.documents.count(),
             test_cabinet_document_count - 1
         )
-        self.assertQuerysetEqual(
-            self._test_cabinet.documents.all(), ()
+        self.assertQuerySetEqual(
+            qs=self._test_cabinet.documents.all(), values=()
         )
 
         events = self._get_test_events()

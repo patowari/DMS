@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -11,7 +11,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Search'), name='search'
+    label=_(message='Search'), name='search'
 )
 
 setting_backend = namespace.add_setting(
@@ -54,7 +54,7 @@ setting_indexing_chunk_size = namespace.add_setting(
 setting_match_all_default_value = namespace.add_setting(
     global_name='SEARCH_MATCH_ALL_DEFAULT_VALUE',
     default=DEFAULT_SEARCH_MATCH_ALL_DEFAULT_VALUE,
-    help_text=_('Sets the default state of the "Match all" checkbox.')
+    help_text=_(message='Sets the default state of the "Match all" checkbox.')
 )
 setting_query_results_limit = namespace.add_setting(
     default=DEFAULT_SEARCH_QUERY_RESULTS_LIMIT,
@@ -66,5 +66,5 @@ setting_query_results_limit = namespace.add_setting(
 )
 setting_results_limit = namespace.add_setting(
     default=DEFAULT_SEARCH_RESULTS_LIMIT, global_name='SEARCH_RESULTS_LIMIT',
-    help_text=_('Maximum number of search results to fetch and display.')
+    help_text=_(message='Maximum number of search results to fetch and display.')
 )

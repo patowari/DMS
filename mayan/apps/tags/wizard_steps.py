@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.contrib.auth import get_user_model
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -16,7 +16,7 @@ from .permissions import permission_tag_attach
 
 class DocumentCreateWizardStepTags(DocumentCreateWizardStep):
     form_class = TagMultipleSelectionForm
-    label = _('Select tags')
+    label = _(message='Select tags')
     name = 'tag_selection'
     number = 2
 
@@ -77,7 +77,7 @@ class DocumentCreateWizardStepTags(DocumentCreateWizardStep):
         user = wizard.request.user
 
         kwargs = {
-            'help_text': _('Tags to be attached.'),
+            'help_text': _(message='Tags to be attached.'),
             'permission': permission_tag_attach,
             'queryset': Tag.objects.none(),
             'user': user

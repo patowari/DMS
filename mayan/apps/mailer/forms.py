@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.backends.forms import FormDynamicModelBackend
@@ -57,25 +57,25 @@ class ObjectMailForm(forms.Form):
         help_text=_(
             'Email address of the recipient. Can be multiple addresses '
             'separated by comma or semicolon.'
-        ), label=_('Email address'), validators=[validate_email_multiple]
+        ), label=_(message='Email address'), validators=[validate_email_multiple]
     )
     subject = forms.CharField(
-        label=_('Subject'), required=False
+        label=_(message='Subject'), required=False
     )
     body = forms.CharField(
-        label=_('Body'), widget=forms.widgets.Textarea(), required=False
+        label=_(message='Body'), widget=forms.widgets.Textarea(), required=False
     )
     user_mailer = forms.ModelChoiceField(
         help_text=_(
             'The email profile that will be used to send this email.'
-        ), label=_('Mailing profile'), queryset=UserMailer.objects.none()
+        ), label=_(message='Mailing profile'), queryset=UserMailer.objects.none()
     )
 
 
 class UserMailerBackendSelectionForm(forms.Form):
     backend = forms.ChoiceField(
-        choices=(), help_text=_('The driver to use when sending emails.'),
-        label=_('Backend')
+        choices=(), help_text=_(message='The driver to use when sending emails.'),
+        label=_(message='Backend')
     )
 
     def __init__(self, *args, **kwargs):
@@ -94,5 +94,5 @@ class UserMailerTestForm(forms.Form):
         help_text=_(
             'Email address of the recipient. Can be multiple addresses '
             'separated by comma or semicolon.'
-        ), label=_('Email address'), validators=[validate_email_multiple]
+        ), label=_(message='Email address'), validators=[validate_email_multiple]
     )

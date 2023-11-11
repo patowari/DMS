@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -8,7 +8,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('File caching'), name='file_caching'
+    label=_(message='File caching'), name='file_caching'
 )
 
 setting_maximum_failed_prune_attempts = namespace.add_setting(

@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.forms.formsets import formset_factory
 from django.utils.text import format_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.fields import TemplateField
 from mayan.apps.views.forms import ModelForm, RelationshipForm
@@ -13,10 +13,10 @@ from .models import MetadataType
 
 class DocumentMetadataForm(forms.Form):
     metadata_type_id = forms.CharField(
-        label=_('ID'), widget=forms.HiddenInput
+        label=_(message='ID'), widget=forms.HiddenInput
     )
     metadata_type_name = forms.CharField(
-        label=_('Name'), required=False,
+        label=_(message='Name'), required=False,
         widget=forms.TextInput(
             attrs={
                 'readonly': 'readonly'
@@ -24,12 +24,12 @@ class DocumentMetadataForm(forms.Form):
         )
     )
     value = forms.CharField(
-        label=_('Value'), required=False, widget=forms.TextInput(
+        label=_(message='Value'), required=False, widget=forms.TextInput(
             attrs={'class': 'metadata-value'}
         )
     )
     update = forms.BooleanField(
-        initial=True, label=_('Update'), required=False
+        initial=True, label=_(message='Update'), required=False
     )
 
     class Media:
@@ -49,7 +49,7 @@ class DocumentMetadataForm(forms.Form):
             )
 
             if required:
-                required_string = ' (%s)' % _('Required')
+                required_string = ' (%s)' % _(message='Required')
             else:
                 self.fields['update'].initial = False
 
@@ -134,8 +134,8 @@ DocumentMetadataFormSet = formset_factory(form=DocumentMetadataForm, extra=0)
 
 class DocumentMetadataAddForm(forms.Form):
     metadata_type = forms.ModelMultipleChoiceField(
-        help_text=_('Metadata types to be added to the selected documents.'),
-        label=_('Metadata type'), queryset=MetadataType.objects.all(),
+        help_text=_(message='Metadata types to be added to the selected documents.'),
+        label=_(message='Metadata type'), queryset=MetadataType.objects.all(),
         widget=forms.SelectMultiple(
             attrs={'class': 'select2'}
         )
@@ -160,7 +160,7 @@ class DocumentMetadataAddForm(forms.Form):
 
 class DocumentMetadataRemoveForm(DocumentMetadataForm):
     update = forms.BooleanField(
-        initial=False, label=_('Remove'), required=False
+        initial=False, label=_(message='Remove'), required=False
     )
 
     def __init__(self, *args, **kwargs):
@@ -179,19 +179,19 @@ DocumentMetadataRemoveFormSet = formset_factory(
 class MetadataTypeForm(ModelForm):
     fieldsets = (
         (
-            _('Basic'), {
+            _(message='Basic'), {
                 'fields': ('name', 'label')
             }
         ), (
-            _('Values'), {
+            _(message='Values'), {
                 'fields': ('default', 'lookup')
             }
         ), (
-            _('Validation'), {
+            _(message='Validation'), {
                 'fields': ('validation', 'validation_arguments')
             }
         ), (
-            _('Parsing'), {
+            _(message='Parsing'), {
                 'fields': ('parser', 'parser_arguments')
             }
         )
@@ -207,7 +207,7 @@ class MetadataTypeForm(ModelForm):
             initial_help_text=format_lazy(
                 '{}{}{}',
                 self.fields['lookup'].help_text,
-                _(' Available template context variables: '),
+                _(message=' Available template context variables: '),
                 MetadataLookup.get_as_help_text()
             ), required=False
         )
@@ -231,9 +231,9 @@ class DocumentTypeMetadataTypeRelationshipForm(RelationshipForm):
     RELATIONSHIP_TYPE_OPTIONAL = 'optional'
     RELATIONSHIP_TYPE_REQUIRED = 'required'
     RELATIONSHIP_CHOICES = (
-        (RELATIONSHIP_TYPE_NONE, _('None')),
-        (RELATIONSHIP_TYPE_OPTIONAL, _('Optional')),
-        (RELATIONSHIP_TYPE_REQUIRED, _('Required')),
+        (RELATIONSHIP_TYPE_NONE, _(message='None')),
+        (RELATIONSHIP_TYPE_OPTIONAL, _(message='Optional')),
+        (RELATIONSHIP_TYPE_REQUIRED, _(message='Required')),
     )
 
     def get_relationship_type(self):

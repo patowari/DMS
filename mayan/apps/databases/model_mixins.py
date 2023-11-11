@@ -1,7 +1,7 @@
 import logging
 
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.classes import Template
 
@@ -28,7 +28,7 @@ class ModelMixinConditionField(models.Model):
             'that return the Python logical None, or an empty string (\'\') '
             'are considered to be logical false, any other value is '
             'considered to be the logical true.'
-        ), verbose_name=_('Condition')
+        ), verbose_name=_(message='Condition')
     )
 
     class Meta:
@@ -52,7 +52,7 @@ class ModelMixinConditionField(models.Model):
         'The object will be executed, depending on the condition '
         'return value.'
     )
-    has_condition.short_description = _('Has a condition?')
+    has_condition.short_description = _(message='Has a condition?')
 
 
 class ValueChangeModelMixin:

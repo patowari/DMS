@@ -55,7 +55,9 @@ PASSWORD_HASHERS = (
 
 SEARCH_BACKEND = 'mayan.apps.dynamic_search.tests.backends.TestSearchBackendProxy'
 
-STATICFILES_STORAGE = None
+STORAGES['staticfiles'] = {
+    'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage'
+}
 
 # Cache templates in memory
 TEMPLATES[0]['OPTIONS']['loaders'] = (  # NOQA: F405

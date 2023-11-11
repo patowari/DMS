@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
 from mayan.apps.backends.classes import ModelBaseBackend
@@ -24,7 +24,7 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
     def get_form_fieldsets(cls):
         fieldsets = (
             (
-                _('General'), {
+                _(message='General'), {
                     'fields': ('label', 'enabled')
                 }
             ),
@@ -37,7 +37,7 @@ class MailerBackendBaseEmail(MailerBackend):
     class_path = None
     form_fields = {
         'from': {
-            'label': _('From'),
+            'label': _(message='From'),
             'class': 'django.forms.CharField', 'default': '',
             'help_text': _(
                 'The sender\'s address. Some system will refuse to send '
@@ -55,7 +55,7 @@ class MailerBackendBaseEmail(MailerBackend):
 
         fieldsets += (
             (
-                _('Compatibility'), {
+                _(message='Compatibility'), {
                     'fields': ('from',)
                 }
             ),
@@ -65,4 +65,4 @@ class MailerBackendBaseEmail(MailerBackend):
 
 
 class NullBackend(MailerBackend):
-    label = _('Null backend')
+    label = _(message='Null backend')

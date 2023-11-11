@@ -2,7 +2,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.common.validators import YAMLValidator
@@ -39,28 +39,28 @@ class MetadataType(
             'Name used by other apps to reference this metadata type. '
             'Do not use python reserved words, or spaces.'
         ),
-        unique=True, verbose_name=_('Name')
+        unique=True, verbose_name=_(message='Name')
     )
     label = models.CharField(
-        help_text=_('Short description of this metadata type.'),
-        max_length=48, verbose_name=_('Label')
+        help_text=_(message='Short description of this metadata type.'),
+        max_length=48, verbose_name=_(message='Label')
     )
     default = models.CharField(
         blank=True, max_length=128, null=True, help_text=_(
             'Enter a template to render.'
-        ), verbose_name=_('Default')
+        ), verbose_name=_(message='Default')
     )
     lookup = models.TextField(
         blank=True, null=True, help_text=_(
             'Enter a template to render. Must result in a comma delimited '
             'string.'
-        ), verbose_name=_('Lookup')
+        ), verbose_name=_(message='Lookup')
     )
     validation = models.CharField(
         blank=True, help_text=_(
             'The validator will reject data entry if the value entered does '
             'not conform to the expected format.'
-        ), max_length=224, verbose_name=_('Validator')
+        ), max_length=224, verbose_name=_(message='Validator')
     )
     validation_arguments = models.TextField(
         blank=True, help_text=_(
@@ -73,7 +73,7 @@ class MetadataType(
         blank=True, help_text=_(
             'The parser will reformat the value entered to conform to the '
             'expected format.'
-        ), max_length=224, verbose_name=_('Parser')
+        ), max_length=224, verbose_name=_(message='Parser')
     )
     parser_arguments = models.TextField(
         blank=True, help_text=_(
@@ -87,8 +87,8 @@ class MetadataType(
 
     class Meta:
         ordering = ('label',)
-        verbose_name = _('Metadata type')
-        verbose_name_plural = _('Metadata types')
+        verbose_name = _(message='Metadata type')
+        verbose_name_plural = _(message='Metadata types')
 
     def __str__(self):
         return self.label
@@ -134,7 +134,7 @@ class MetadataType(
 
             if value and value not in lookup_options:
                 raise ValidationError(
-                    message=_('Value is not one of the provided options.')
+                    message=_(message='Value is not one of the provided options.')
                 )
 
         if self.validation:
@@ -174,23 +174,23 @@ class DocumentMetadata(
     """
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='metadata', to=Document,
-        verbose_name=_('Document')
+        verbose_name=_(message='Document')
     )
     metadata_type = models.ForeignKey(
-        on_delete=models.CASCADE, to=MetadataType, verbose_name=_('Type')
+        on_delete=models.CASCADE, to=MetadataType, verbose_name=_(message='Type')
     )
     value = models.TextField(
         blank=True, help_text=_(
             'The actual value stored in the metadata type field for '
             'the document.'
-        ), null=True, verbose_name=_('Value')
+        ), null=True, verbose_name=_(message='Value')
     )
 
     class Meta:
         ordering = ('metadata_type',)
         unique_together = ('document', 'metadata_type')
-        verbose_name = _('Document metadata')
-        verbose_name_plural = _('Document metadata')
+        verbose_name = _(message='Document metadata')
+        verbose_name_plural = _(message='Document metadata')
 
     def __str__(self):
         return str(self.metadata_type)
@@ -273,14 +273,14 @@ class DocumentTypeMetadataType(ExtraDataModelMixin, models.Model):
     """
     document_type = models.ForeignKey(
         on_delete=models.CASCADE, related_name='metadata', to=DocumentType,
-        verbose_name=_('Document type')
+        verbose_name=_(message='Document type')
     )
     metadata_type = models.ForeignKey(
         on_delete=models.CASCADE, related_name='document_types',
-        to=MetadataType, verbose_name=_('Metadata type')
+        to=MetadataType, verbose_name=_(message='Metadata type')
     )
     required = models.BooleanField(
-        default=False, verbose_name=_('Required')
+        default=False, verbose_name=_(message='Required')
     )
 
     objects = DocumentTypeMetadataTypeManager()
@@ -288,8 +288,8 @@ class DocumentTypeMetadataType(ExtraDataModelMixin, models.Model):
     class Meta:
         ordering = ('metadata_type',)
         unique_together = ('document_type', 'metadata_type')
-        verbose_name = _('Document type metadata type options')
-        verbose_name_plural = _('Document type metadata types options')
+        verbose_name = _(message='Document type metadata type options')
+        verbose_name_plural = _(message='Document type metadata types options')
 
     def __str__(self):
         return str(self.metadata_type)

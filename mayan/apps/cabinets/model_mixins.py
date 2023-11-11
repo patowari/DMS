@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -49,4 +49,4 @@ class CabinetBusinessLogicMixin:
     get_full_path.help_text = _(
         'The path to the cabinet including all ancestors.'
     )
-    get_full_path.short_description = _('Full path')
+    get_full_path.short_description = _(message='Full path')

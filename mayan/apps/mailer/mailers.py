@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.credentials.models import StoredCredential
 from mayan.apps.credentials.permissions import permission_credential_use
@@ -11,7 +11,7 @@ class DjangoSMTP(MailerBackendBaseEmail):
     Backend that wraps Django's SMTP backend
     """
     class_path = 'django.core.mail.backends.smtp.EmailBackend'
-    label = _('Django SMTP backend')
+    label = _(message='Django SMTP backend')
 
     @classmethod
     def get_form_fields(cls):
@@ -20,20 +20,20 @@ class DjangoSMTP(MailerBackendBaseEmail):
         fields.update(
             {
                 'host': {
-                    'label': _('Host'),
+                    'label': _(message='Host'),
                     'class': 'django.forms.CharField',
                     'default': 'localhost',
-                    'help_text': _('The host to use for sending email.'),
+                    'help_text': _(message='The host to use for sending email.'),
                     'kwargs': {
                         'max_length': 48
                     }, 'required': True
                 }, 'port': {
-                    'label': _('Port'),
+                    'label': _(message='Port'),
                     'class': 'django.forms.IntegerField', 'default': 25,
-                    'help_text': _('Port to use for the SMTP server.'),
+                    'help_text': _(message='Port to use for the SMTP server.'),
                     'required': True
                 }, 'use_tls': {
-                    'label': _('Use TLS'),
+                    'label': _(message='Use TLS'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
                         'Whether to use a TLS (secure) connection when '
@@ -41,7 +41,7 @@ class DjangoSMTP(MailerBackendBaseEmail):
                         'explicit TLS connections, generally on port 587.'
                     ), 'required': False
                 }, 'use_ssl': {
-                    'label': _('Use SSL'),
+                    'label': _(message='Use SSL'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
                         'Whether to use an implicit TLS (secure) connection '
@@ -63,7 +63,7 @@ class DjangoSMTP(MailerBackendBaseEmail):
                         'source_model': StoredCredential,
                         'permission': permission_credential_use
                     },
-                    'label': _('Credential'),
+                    'label': _(message='Credential'),
                     'required': True
                 }
             }
@@ -77,11 +77,11 @@ class DjangoSMTP(MailerBackendBaseEmail):
 
         fieldsets += (
             (
-                _('Server'), {
+                _(message='Server'), {
                     'fields': ('host', 'port', 'use_tls', 'use_ssl')
                 }
             ), (
-                _('Authentication'), {
+                _(message='Authentication'), {
                     'fields': ('stored_credential_id',)
                 }
             )
@@ -95,7 +95,7 @@ class DjangoFileBased(MailerBackendBaseEmail):
     Mailing backend that wraps Django's file based email backend
     """
     class_path = 'django.core.mail.backends.filebased.EmailBackend'
-    label = _('Django file based backend')
+    label = _(message='Django file based backend')
 
     @classmethod
     def get_form_fields(cls):
@@ -103,7 +103,7 @@ class DjangoFileBased(MailerBackendBaseEmail):
         fields.update(
             {
                 'file_path': {
-                    'label': _('File path'),
+                    'label': _(message='File path'),
                     'class': 'django.forms.CharField', 'kwargs': {
                         'max_length': 48
                     }
@@ -119,7 +119,7 @@ class DjangoFileBased(MailerBackendBaseEmail):
 
         fieldsets += (
             (
-                _('Storage'), {
+                _(message='Storage'), {
                     'fields': ('file_path',)
                 }
             ),

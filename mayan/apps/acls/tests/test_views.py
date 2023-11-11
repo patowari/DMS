@@ -1,4 +1,4 @@
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.testing.tests.base import GenericViewTestCase
@@ -87,7 +87,7 @@ class AccessControlListViewTestCase(
 
         response = self._request_test_acl_delete_view()
         self.assertNotContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=404
         )
 
@@ -128,7 +128,7 @@ class AccessControlListViewTestCase(
 
         response = self._request_test_acl_list_view()
         self.assertNotContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=404
         )
 
@@ -146,7 +146,7 @@ class AccessControlListViewTestCase(
 
         response = self._request_test_acl_list_view()
         self.assertContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=200
         )
 
@@ -169,7 +169,7 @@ class AccessControlListPermissionViewTestCase(
 
         response = self._request_test_acl_permission_list_get_view()
         self.assertNotContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=404
         )
 
@@ -191,7 +191,7 @@ class AccessControlListPermissionViewTestCase(
 
         response = self._request_test_acl_permission_list_get_view()
         self.assertContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=200
         )
 
@@ -270,7 +270,7 @@ class GlobalAccessControlListViewTestCase(
 
         response = self._request_test_global_acl_list_view()
         self.assertNotContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=200
         )
 
@@ -286,7 +286,7 @@ class GlobalAccessControlListViewTestCase(
 
         response = self._request_test_global_acl_list_view()
         self.assertContains(
-            response=response, text=force_text(s=self._test_object),
+            response=response, text=force_str(s=self._test_object),
             status_code=200
         )
 

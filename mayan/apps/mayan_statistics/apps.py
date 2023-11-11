@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
@@ -26,7 +26,7 @@ class StatisticsApp(MayanAppConfig):
         'statistics/node_modules/chart.js/src/*',
         'statistics/node_modules/chart.js/*docs*',
     )
-    verbose_name = _('Statistics')
+    verbose_name = _(message='Statistics')
 
     def ready(self):
         super().ready()
@@ -35,20 +35,20 @@ class StatisticsApp(MayanAppConfig):
 
         SourceColumn(
             attribute='type_label', include_label=True,
-            label=_('Type'), source=StatisticType
+            label=_(message='Type'), source=StatisticType
         )
 
         SourceColumn(
             attribute='schedule',
             # Translators: Schedule here is a noun, the 'schedule' at
             # which the statistic will be updated
-            include_label=True, label=_('Schedule'),
+            include_label=True, label=_(message='Schedule'),
             source=StatisticType
         )
 
         SourceColumn(
             attribute='get_last_update', include_label=True,
-            label=_('Last update'), source=StatisticType
+            label=_(message='Last update'), source=StatisticType
         )
 
         menu_list_facet.bind_links(

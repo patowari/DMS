@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic.base import View
 
 from mayan.apps.common.settings import setting_home_view
@@ -49,7 +49,7 @@ class UserImpersonateFormStartView(FormView):
 
     def get_extra_context(self):
         return {
-            'title': _('Impersonate user')
+            'title': _(message='Impersonate user')
         }
 
     def get_form_extra_kwargs(self):
@@ -78,5 +78,5 @@ class UserImpersonateStartView(ExternalObjectViewMixin, FormView):
     def get_extra_context(self):
         return {
             'object': self.external_object,
-            'title': _('Impersonate user: %s') % self.external_object
+            'title': _(message='Impersonate user: %s') % self.external_object
         }

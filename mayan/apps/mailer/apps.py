@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -45,7 +45,7 @@ class MailerApp(MayanAppConfig):
     app_url = 'mailer'
     has_tests = True
     name = 'mayan.apps.mailer'
-    verbose_name = _('Mailer')
+    verbose_name = _(message='Mailer')
 
     def ready(self):
         super().ready()

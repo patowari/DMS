@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models.document_type_models import DocumentType
@@ -19,19 +19,19 @@ class DocumentTypeOCRSettings(ExtraDataModelMixin, models.Model):
     """
     document_type = models.OneToOneField(
         on_delete=models.CASCADE, related_name='ocr_settings',
-        to=DocumentType, unique=True, verbose_name=_('Document type')
+        to=DocumentType, unique=True, verbose_name=_(message='Document type')
     )
     auto_ocr = models.BooleanField(
         default=True, help_text=_(
             'Automatically queue newly created documents for OCR.'
-        ), verbose_name=_('Auto OCR')
+        ), verbose_name=_(message='Auto OCR')
     )
 
     objects = DocumentTypeSettingsManager()
 
     class Meta:
-        verbose_name = _('Document type settings')
-        verbose_name_plural = _('Document types settings')
+        verbose_name = _(message='Document type settings')
+        verbose_name_plural = _(message='Document types settings')
 
     def natural_key(self):
         return self.document_type.natural_key()
@@ -44,19 +44,19 @@ class DocumentVersionPageOCRContent(models.Model):
     """
     document_version_page = models.OneToOneField(
         on_delete=models.CASCADE, related_name='ocr_content',
-        to=DocumentVersionPage, verbose_name=_('Document version page')
+        to=DocumentVersionPage, verbose_name=_(message='Document version page')
     )
     content = models.TextField(
         blank=True, help_text=_(
             'The actual text content extracted by the OCR backend.'
-        ), verbose_name=_('Content')
+        ), verbose_name=_(message='Content')
     )
 
     objects = DocumentVersionPageOCRContentManager()
 
     class Meta:
-        verbose_name = _('Document version page OCR content')
-        verbose_name_plural = _('Document version pages OCR contents')
+        verbose_name = _(message='Document version page OCR content')
+        verbose_name_plural = _(message='Document version pages OCR contents')
 
     def __str__(self):
         return str(self.document_version_page)

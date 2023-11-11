@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic.base import RedirectView
 
 from mayan.apps.views.generics import (
@@ -59,7 +59,7 @@ class SearchBackendReindexView(ConfirmView):
                 'This tool erases and populates the search backend\'s '
                 'internal index.'
             ),
-            'title': _('Reindex search backend')
+            'title': _(message='Reindex search backend')
         }
 
         search_backend_class = SearchBackend.get_class()
@@ -85,7 +85,7 @@ class SearchBackendReindexView(ConfirmView):
         task_reindex_backend.apply_async()
 
         messages.success(
-            message=_('Search backend reindexing queued.'),
+            message=_(message='Search backend reindexing queued.'),
             request=self.request
         )
 
@@ -105,9 +105,9 @@ class SearchSimpleView(SearchModelViewMixin, SearchQueryViewMixin, FormView):
             ),
             'search_model': self.search_model,
             'submit_icon': icon_search_submit,
-            'submit_label': _('Search'),
+            'submit_label': _(message='Search'),
             'submit_method': 'GET',
-            'title': _('Search for: %s') % self.search_model.label
+            'title': _(message='Search for: %s') % self.search_model.label
         }
 
     def get_form(self):
@@ -173,12 +173,12 @@ class SearchResultsView(
             'no_results_text': _(
                 'Try again using different terms. '
             ),
-            'no_results_title': _('No search results'),
+            'no_results_title': _(message='No search results'),
             'search_model': self.search_model,
             'subtitle': _(
                 'Search query: %s'
             ) % self.search_interpreter.to_explain(),
-            'title': _('Search results for: %s') % self.search_model.label
+            'title': _(message='Search results for: %s') % self.search_model.label
         }
 
         if self.search_model.list_mode == LIST_MODE_CHOICE_ITEM:

@@ -21,13 +21,13 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
         )
 
         self._test_object_parent = self.TestModelParent.objects.create()
-        self.TestModelChild.objects.create(parent_id=self._test_object_parent.pk)
+        self.TestModelChild.objects.create(
+            parent_id=self._test_object_parent.pk
+        )
 
-    def _assertQuerysetEqual(self):
-        rebuilt_items = list(map(repr, self.queryset_rebuilt))
-
-        self.assertQuerysetEqual(
-            qs=self.queryset_original, values=rebuilt_items
+    def _assertQuerySetEqual(self):
+        self.assertQuerySetEqual(
+            qs=self.queryset_original, values=self.queryset_rebuilt
         )
 
     def test_without_kwargs(self):
@@ -41,7 +41,7 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
             decomposed_queryset=decomposed_queryset
         )
 
-        self._assertQuerysetEqual()
+        self._assertQuerySetEqual()
 
     def test_foreign_key_model(self):
         self.queryset_original = self.TestModelChild.objects.all()
@@ -55,7 +55,7 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
             decomposed_queryset=decomposed_queryset
         )
 
-        self._assertQuerysetEqual()
+        self._assertQuerySetEqual()
 
     def test_foreign_key_model_id_query(self):
         self.queryset_original = self.TestModelChild.objects.all()
@@ -69,4 +69,4 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
             decomposed_queryset=decomposed_queryset
         )
 
-        self._assertQuerysetEqual()
+        self._assertQuerySetEqual()

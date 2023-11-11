@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.classes import DynamicFormModelBackend
 
@@ -10,7 +10,7 @@ class CredentialBackend(DynamicFormModelBackend):
 
     form_fieldsets = (
         (
-            _('General'), {
+            _(message='General'), {
                 'fields': ('label', 'internal_name')
             }
         ),
@@ -19,4 +19,4 @@ class CredentialBackend(DynamicFormModelBackend):
 
 # Null backend must be defined here to avoid automatic import.
 class CredentialBackendNull(CredentialBackend):
-    label = _('Null backend')
+    label = _(message='Null backend')

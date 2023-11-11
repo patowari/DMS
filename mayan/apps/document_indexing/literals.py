@@ -1,8 +1,8 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 RELATIONSHIP_NO = 'no'
 RELATIONSHIP_YES = 'yes'
 RELATIONSHIP_CHOICES = (
-    (RELATIONSHIP_NO, _('No')),
-    (RELATIONSHIP_YES, _('Yes')),
+    (RELATIONSHIP_NO, _(message='No')),
+    (RELATIONSHIP_YES, _(message='Yes')),
 )

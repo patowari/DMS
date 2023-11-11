@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
@@ -21,7 +21,7 @@ class DependenciesApp(MayanAppConfig):
     has_rest_api = False
     has_tests = True
     name = 'mayan.apps.dependencies'
-    verbose_name = _('Dependencies')
+    verbose_name = _(message='Dependencies')
 
     def ready(self):
         super().ready()
@@ -29,58 +29,58 @@ class DependenciesApp(MayanAppConfig):
         Dependency.load_modules()
 
         SourceColumn(
-            attribute='get_label', is_identifier=True, label=_('Label'),
+            attribute='get_label', is_identifier=True, label=_(message='Label'),
             order=-1, source=Dependency
         )
         SourceColumn(
-            attribute='name', include_label=True, label=_('Internal name'),
+            attribute='name', include_label=True, label=_(message='Internal name'),
             order=0, source=Dependency
         )
         SourceColumn(
             attribute='get_help_text', include_label=True,
-            label=_('Description'), order=1, source=Dependency
+            label=_(message='Description'), order=1, source=Dependency
         )
         SourceColumn(
             attribute='class_name_verbose_name', include_label=True,
-            label=_('Type'), order=2, source=Dependency
+            label=_(message='Type'), order=2, source=Dependency
         )
         SourceColumn(
             attribute='get_other_data', include_label=True,
-            label=_('Other data'), order=3, source=Dependency
+            label=_(message='Other data'), order=3, source=Dependency
         )
         SourceColumn(
             attribute='app_label_verbose_name', include_label=True,
-            label=_('Declared by'), order=4, source=Dependency
+            label=_(message='Declared by'), order=4, source=Dependency
         )
         SourceColumn(
             attribute='get_version_string', include_label=True,
-            label=_('Version'), order=5, source=Dependency
+            label=_(message='Version'), order=5, source=Dependency
         )
         SourceColumn(
             attribute='get_environments_verbose_name', include_label=True,
-            label=_('Environment'), order=6, source=Dependency
+            label=_(message='Environment'), order=6, source=Dependency
         )
         SourceColumn(
-            attribute='check', include_label=True, label=_('Check'), order=7,
+            attribute='check', include_label=True, label=_(message='Check'), order=7,
             source=Dependency, widget=TwoStateWidget
         )
 
         SourceColumn(
-            attribute='label', is_identifier=True, label=_('Label'),
+            attribute='label', is_identifier=True, label=_(message='Label'),
             order=0, source=DependencyGroup
         )
         SourceColumn(
             attribute='help_text', include_label=True,
-            label=_('Description'), order=1, source=DependencyGroup
+            label=_(message='Description'), order=1, source=DependencyGroup
         )
 
         SourceColumn(
-            attribute='label', is_identifier=True, label=_('Label'), order=0,
+            attribute='label', is_identifier=True, label=_(message='Label'), order=0,
             source=DependencyGroupEntry
         )
         SourceColumn(
             attribute='help_text', include_label=True,
-            label=_('Description'), order=1, source=DependencyGroupEntry
+            label=_(message='Description'), order=1, source=DependencyGroupEntry
         )
 
         # Position #7 which is after "License" link.

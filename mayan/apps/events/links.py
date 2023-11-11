@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.authentication.link_conditions import (
     condition_is_current_user, condition_not_is_current_user,
@@ -49,26 +49,26 @@ def get_unread_notification_count(context):
 
 
 link_event_list = Link(
-    icon=icon_event_list, text=_('Events'), view='events:event_list'
+    icon=icon_event_list, text=_(message='Events'), view='events:event_list'
 )
 link_event_list_clear = Link(
-    icon=icon_event_list_clear, text=_('Clear events'),
+    icon=icon_event_list_clear, text=_(message='Clear events'),
     view='events:event_list_clear'
 )
 link_event_list_export = Link(
-    icon=icon_event_list_export, text=_('Export events'),
+    icon=icon_event_list_export, text=_(message='Export events'),
     view='events:event_list_export'
 )
 link_event_type_subscription_list = Link(
     condition=condition_is_current_user,
     icon=icon_event_types_subscriptions_list,
-    text=_('Event subscriptions'),
+    text=_(message='Event subscriptions'),
     view='events:event_type_user_subscription_list'
 )
 link_user_object_subscription_list = Link(
     condition=condition_is_current_user,
     icon=icon_user_object_subscriptions_list,
-    text=_('Object event subscriptions'),
+    text=_(message='Object event subscriptions'),
     view='events:user_object_subscription_list'
 )
 
@@ -80,37 +80,37 @@ link_notification_list = Link(
 )
 link_notification_mark_read = Link(
     args='object.pk', icon=icon_notification_mark_read,
-    permissions=(permission_events_view,), text=_('Mark as seen'),
+    permissions=(permission_events_view,), text=_(message='Mark as seen'),
     view='events:notification_mark_read'
 )
 link_notification_mark_read_all = Link(
-    icon=icon_notification_mark_read_all, text=_('Mark all as seen'),
+    icon=icon_notification_mark_read_all, text=_(message='Mark all as seen'),
     view='events:notification_mark_read_all'
 )
 link_object_event_list = Link(
     icon=icon_object_event_list,
     kwargs=get_content_type_kwargs_factory(variable_name='resolved_object'),
-    permissions=(permission_events_view,), text=_('Events'),
+    permissions=(permission_events_view,), text=_(message='Events'),
     view='events:object_event_list'
 )
 link_object_event_list_clear = Link(
     condition=condition_can_be_cleared,
     icon=icon_object_event_list_clear,
     kwargs=get_content_type_kwargs_factory(variable_name='resolved_object'),
-    permissions=(permission_events_view,), text=_('Clear events'),
+    permissions=(permission_events_view,), text=_(message='Clear events'),
     view='events:object_event_list_clear'
 )
 link_object_event_list_export = Link(
     condition=condition_can_be_exported,
     icon=icon_object_event_list_export,
     kwargs=get_content_type_kwargs_factory(variable_name='resolved_object'),
-    permissions=(permission_events_view,), text=_('Export events'),
+    permissions=(permission_events_view,), text=_(message='Export events'),
     view='events:object_event_list_export'
 )
 link_object_event_type_user_subscription_list = Link(
     condition=condition_not_is_current_user,
     icon=icon_object_event_type_user_subscription_list,
     kwargs=get_content_type_kwargs_factory(variable_name='resolved_object'),
-    permissions=(permission_events_view,), text=_('Subscriptions'),
+    permissions=(permission_events_view,), text=_(message='Subscriptions'),
     view='events:object_event_type_user_subscription_list'
 )

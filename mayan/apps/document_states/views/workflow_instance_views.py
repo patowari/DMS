@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -80,7 +80,7 @@ class WorkflowInstanceDetailView(
                 'There are no details for this workflow instance'
             ),
             'object': self.external_object.document,
-            'title': _('Detail of workflow: %(workflow)s') % {
+            'title': _(message='Detail of workflow: %(workflow)s') % {
                 'workflow': self.external_object
             },
             'workflow_instance': self.external_object
@@ -158,7 +158,7 @@ class WorkflowInstanceTransitionExecuteView(
         schema = {
             'fields': {
                 'comment': {
-                    'label': _('Comment'),
+                    'label': _(message='Comment'),
                     'class': 'django.forms.CharField', 'kwargs': {
                         'help_text': _(
                             'Optional comment to attach to the transition.'
@@ -229,7 +229,7 @@ class WorkflowInstanceTransitionSelectView(
         return {
             'navigation_object_list': ('object', 'workflow_instance'),
             'object': self.external_object.document,
-            'submit_label': _('Select'),
+            'submit_label': _(message='Select'),
             'title': _(
                 'Select transition for workflow "%(workflow)s" of document "%(document)s"'
             ) % {

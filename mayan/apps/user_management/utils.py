@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.contrib.auth import get_user_model
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 def get_groups():
@@ -23,6 +23,6 @@ def get_users():
 
 def get_user_label_text(context):
     if not context['request'].user.is_authenticated:
-        return _('Anonymous')
+        return _(message='Anonymous')
     else:
         return context['request'].user.get_full_name() or context['request'].user

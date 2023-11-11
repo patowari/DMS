@@ -1,21 +1,21 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
-namespace = PermissionNamespace(label=_('Credentials'), name='credentials')
+namespace = PermissionNamespace(label=_(message='Credentials'), name='credentials')
 
 permission_credential_create = namespace.add_permission(
-    label=_('Create credentials'), name='credential_create'
+    label=_(message='Create credentials'), name='credential_create'
 )
 permission_credential_delete = namespace.add_permission(
-    label=_('Delete credentials'), name='credential_delete'
+    label=_(message='Delete credentials'), name='credential_delete'
 )
 permission_credential_edit = namespace.add_permission(
-    label=_('Edit credentials'), name='credential_edit'
+    label=_(message='Edit credentials'), name='credential_edit'
 )
 permission_credential_use = namespace.add_permission(
-    label=_('Use credential'), name='credential_use'
+    label=_(message='Use credential'), name='credential_use'
 )
 permission_credential_view = namespace.add_permission(
-    label=_('View credentials'), name='credential_view'
+    label=_(message='View credentials'), name='credential_view'
 )

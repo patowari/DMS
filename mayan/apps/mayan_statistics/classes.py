@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from celery.schedules import crontab
 
@@ -42,7 +42,7 @@ class StatisticNamespace(AppsModuleLoaderMixin):
         return self._statistics
 
 
-StatisticNamespace.verbose_name = _('Statistics namespace')
+StatisticNamespace.verbose_name = _(message='Statistics namespace')
 
 
 class StatisticType:
@@ -159,7 +159,7 @@ class StatisticType:
         if results:
             return results.datetime
         else:
-            return _('Never')
+            return _(message='Never')
 
     def get_results(self, only=None):
         StatisticResult = apps.get_model(
@@ -204,14 +204,14 @@ class StatisticType:
 
 class StatisticTypeDoughnutChart(StatisticType):
     renderer = RendererChartJSDoughnut
-    type_label = _('Doughnut chart')
+    type_label = _(message='Doughnut chart')
 
 
 class StatisticTypeLineChart(StatisticType):
     renderer = RendererChartJSLine
-    type_label = _('Line chart')
+    type_label = _(message='Line chart')
 
 
 class StatisticTypePieChart(StatisticType):
     renderer = RendererChartJSPie
-    type_label = _('Pie chart')
+    type_label = _(message='Pie chart')

@@ -12,7 +12,6 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 
 from django.apps import apps
 from django.conf import settings
-from django.conf.urls import url
 from django.contrib.contenttypes.models import ContentType
 from django.db import connection, connections, models
 from django.db.models import Q
@@ -21,7 +20,7 @@ from django.http import HttpResponse
 from django.http.response import FileResponse
 from django.template import Context, Template
 from django.test.utils import ContextList
-from django.urls import clear_url_caches, reverse
+from django.urls import clear_url_caches, re_path, reverse
 from django.utils.encoding import force_bytes
 
 from stronghold.decorators import public
@@ -796,8 +795,8 @@ class TestViewTestCaseMixin:
             )
 
         self._get_test_view_urlpatterns().insert(
-            0, url(
-                regex=test_view_url or self.test_view_url, view=view,
+            0, re_path(
+                route=test_view_url or self.test_view_url, view=view,
                 name=self._test_view_name
             )
         )

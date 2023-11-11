@@ -11,7 +11,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.utils.deconstruct import deconstructible
 from django.utils.functional import SimpleLazyObject
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 def _lazy_re_compile(regex, flags=0):
@@ -38,7 +38,7 @@ class JSONValidator:
         except ValueError:
             raise ValidationError(
                 code='invalid',
-                message=_('Enter a valid JSON value.')
+                message=_(message='Enter a valid JSON value.')
             )
 
     def __eq__(self, other):
@@ -62,7 +62,7 @@ class YAMLValidator:
         except yaml.error.YAMLError:
             raise ValidationError(
                 code='invalid',
-                message=_('Enter a valid YAML value.')
+                message=_(message='Enter a valid YAML value.')
             )
 
     def __eq__(self, other):

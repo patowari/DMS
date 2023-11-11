@@ -1,5 +1,5 @@
 from django.utils.text import format_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.templating.fields import ModelTemplateField
@@ -11,12 +11,12 @@ from .models import WebLink
 class WebLinkForm(ModelForm):
     fieldsets = (
         (
-            _('General'), {
+            _(message='General'), {
                 'fields': ('label', 'enabled')
             },
         ),
         (
-            _('Templating'), {
+            _(message='Templating'), {
                 'fields': ('template',)
             },
         ),

@@ -3,7 +3,7 @@ from PIL import Image
 
 from django.apps import apps
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.locales.utils import to_language
 
@@ -56,7 +56,7 @@ class DocumentVersionExporter:
 
         download_file = DownloadFile(
             filename='{}.pdf'.format(self.document_version),
-            label=_('Document version export to PDF'),
+            label=_(message='Document version export to PDF'),
             user=user
         )
         download_file._event_actor = user

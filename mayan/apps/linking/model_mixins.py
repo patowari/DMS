@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models import Q
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.templating.classes import Template
@@ -105,8 +105,8 @@ class SmartLinkConditionBusinessLogicMixin:
     def get_full_label(self):
         return '{} foreign {} {} {} {}'.format(
             self.get_inclusion_display(),
-            self.foreign_document_data, _('not') if self.negated else '',
+            self.foreign_document_data, _(message='not') if self.negated else '',
             self.get_operator_display(), self.expression
         )
 
-    get_full_label.short_description = _('Full label')
+    get_full_label.short_description = _(message='Full label')

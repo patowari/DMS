@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -36,7 +36,7 @@ class MessagingApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.messaging'
-    verbose_name = _('Messaging')
+    verbose_name = _(message='Messaging')
 
     def ready(self):
         super().ready()
@@ -58,13 +58,13 @@ class MessagingApp(MayanAppConfig):
         )
 
         SourceColumn(
-            attribute='date_time', empty_value=_('None'),
+            attribute='date_time', empty_value=_(message='None'),
             include_label=True, is_identifier=True,
             is_object_absolute_url=True, is_sortable=True, source=Message
         )
         SourceColumn(
             attribute='sender_object', include_label=True,
-            is_object_absolute_url=True, label=_('Sender'), source=Message
+            is_object_absolute_url=True, label=_(message='Sender'), source=Message
         )
         SourceColumn(
             attribute='subject', is_object_absolute_url=True,

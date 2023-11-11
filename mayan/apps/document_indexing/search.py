@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dynamic_search.search_models import SearchModel
 
@@ -14,24 +14,24 @@ search_model_index_instance_node.add_proxy_model(
 )
 
 search_model_index_instance_node.add_model_field(
-    field='value', label=_('Value')
+    field='value', label=_(message='Value')
 )
 
 search_model_index_instance_node.add_model_field(
-    field='documents__document_type__label', label=_('Document type')
+    field='documents__document_type__label', label=_(message='Document type')
 )
 search_model_index_instance_node.add_model_field(
-    field='documents__files__mimetype', label=_('Document MIME type')
+    field='documents__files__mimetype', label=_(message='Document MIME type')
 )
 search_model_index_instance_node.add_model_field(
-    field='documents__label', label=_('Document label')
+    field='documents__label', label=_(message='Document label')
 )
 search_model_index_instance_node.add_model_field(
-    field='documents__description', label=_('Document description')
+    field='documents__description', label=_(message='Document description')
 )
 search_model_index_instance_node.add_model_field(
-    field='documents__uuid', label=_('Document UUID')
+    field='documents__uuid', label=_(message='Document UUID')
 )
 search_model_index_instance_node.add_model_field(
-    field='documents__files__checksum', label=_('Document checksum')
+    field='documents__files__checksum', label=_(message='Document checksum')
 )

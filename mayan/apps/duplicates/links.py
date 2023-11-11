@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.permissions import (
     permission_document_tools, permission_document_view
@@ -11,16 +11,16 @@ from .icons import (
 
 link_document_duplicates_list = Link(
     args='resolved_object.id', icon=icon_duplicated_document_list,
-    permissions=(permission_document_view,), text=_('Duplicates'),
+    permissions=(permission_document_view,), text=_(message='Duplicates'),
     view='duplicates:document_duplicates_list',
 )
 link_duplicated_document_list = Link(
-    icon=icon_duplicated_document_list, text=_('Duplicated documents'),
+    icon=icon_duplicated_document_list, text=_(message='Duplicated documents'),
     view='duplicates:duplicated_document_list'
 )
 link_duplicated_document_scan = Link(
     icon=icon_duplicated_document_scan,
     permissions=(permission_document_tools,),
-    text=_('Duplicated document scan'),
+    text=_(message='Duplicated document scan'),
     view='duplicates:duplicated_document_scan'
 )

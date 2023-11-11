@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import ConfirmView, SingleObjectListView
 
@@ -29,8 +29,8 @@ class NotificationListView(NotificationViewMixin, SingleObjectListView):
                 'Subscribe to global or object events to receive '
                 'notifications.'
             ),
-            'no_results_title': _('There are no notifications'),
-            'title': _('Notifications')
+            'no_results_title': _(message='There are no notifications'),
+            'title': _(message='Notifications')
         }
 
 
@@ -42,7 +42,7 @@ class NotificationMarkRead(NotificationViewMixin, ConfirmView):
 
     def get_extra_context(self):
         return {
-            'title': _('Mark the selected notification as read?')
+            'title': _(message='Mark the selected notification as read?')
         }
 
     def get_object(self):
@@ -57,7 +57,7 @@ class NotificationMarkRead(NotificationViewMixin, ConfirmView):
         obj.save()
 
         messages.success(
-            message=_('Notification marked as read.'), request=self.request
+            message=_(message='Notification marked as read.'), request=self.request
         )
 
 
@@ -69,13 +69,13 @@ class NotificationMarkReadAll(NotificationViewMixin, ConfirmView):
 
     def get_extra_context(self):
         return {
-            'title': _('Mark all notification as read?')
+            'title': _(message='Mark all notification as read?')
         }
 
     def view_action(self, form=None):
         self.get_source_queryset().update(read=True)
 
         messages.success(
-            message=_('All notifications marked as read.'),
+            message=_(message='All notifications marked as read.'),
             request=self.request
         )

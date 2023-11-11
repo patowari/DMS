@@ -1,5 +1,5 @@
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import parse_range
 from mayan.apps.converter.transformations import TransformationResize
@@ -41,7 +41,7 @@ class PrintFormView(ExternalObjectViewMixin, FormView):
             'object': self.external_object,
             'submit_method': 'GET',
             'submit_target': '_blank',
-            'title': _('Print: %s') % self.external_object
+            'title': _(message='Print: %s') % self.external_object
         }
 
 

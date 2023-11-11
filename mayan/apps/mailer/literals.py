@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_version_models import DocumentVersion
@@ -8,13 +8,13 @@ DEFAULT_DOCUMENT_BODY_TEMPLATE = _(
     '--------\n '
     'This email has been sent from %(project_title)s (%(project_website)s)'
 )
-DEFAULT_DOCUMENT_SUBJECT_TEMPLATE = _('{{ object_name }}: {{ object }}')
+DEFAULT_DOCUMENT_SUBJECT_TEMPLATE = _(message='{{ object_name }}: {{ object }}')
 DEFAULT_LINK_BODY_TEMPLATE = _(
     'To access this {{ object_name }} click on the following link: '
     '{{ link }}\n\n--------\n '
     'This email has been sent from %(project_title)s (%(project_website)s)'
 )
-DEFAULT_LINK_SUBJECT_TEMPLATE = _('Link for {{ object_name }}: {{ object }}')
+DEFAULT_LINK_SUBJECT_TEMPLATE = _(message='Link for {{ object_name }}: {{ object }}')
 EMAIL_SEPARATORS = (',', ';')
 
 DOCUMENT_FILE_CONTENT_FUNCTION_DOTTED_PATH = 'mayan.apps.mailer.utils.get_document_file_content'

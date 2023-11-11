@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.search import search_model_document
 from mayan.apps.dynamic_search.search_models import SearchModel
@@ -8,10 +8,10 @@ from .permissions import permission_metadata_type_view
 # Document
 
 search_model_document.add_model_field(
-    field='metadata__metadata_type__name', label=_('Metadata type')
+    field='metadata__metadata_type__name', label=_(message='Metadata type')
 )
 search_model_document.add_model_field(
-    field='metadata__value', label=_('Metadata value')
+    field='metadata__value', label=_(message='Metadata value')
 )
 
 # Metadata type

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -8,4 +8,4 @@ class SourcePeriodicApp(MayanAppConfig):
     app_url = 'source_periodic'
     has_tests = True
     name = 'mayan.apps.source_periodic'
-    verbose_name = _('Source periodic')
+    verbose_name = _(message='Source periodic')

@@ -3,7 +3,7 @@ import logging
 from django.contrib import messages
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.views.generics import (
     MultipleObjectConfirmActionView, SingleObjectCreateView,
@@ -33,7 +33,7 @@ class AssetCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _('Create asset'),
+            'title': _(message='Create asset'),
         }
 
     def get_instance_extra_data(self):
@@ -47,7 +47,7 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
     object_permission = permission_asset_delete
     pk_url_kwarg = 'asset_id'
     post_action_redirect = reverse_lazy(viewname='converter:asset_list')
-    success_asset = _('Delete request performed on %(count)d asset')
+    success_asset = _(message='Delete request performed on %(count)d asset')
     success_asset_plural = _(
         'Delete request performed on %(count)d assets'
     )
@@ -56,7 +56,7 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
     def get_extra_context(self):
         result = {
             'delete_view': True,
-            'title': ungettext(
+            'title': ngettext(
                 singular='Delete the selected asset?',
                 plural='Delete the selected assets?',
                 number=self.object_list.count()
@@ -67,7 +67,7 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
             result.update(
                 {
                     'object': self.object_list.first(),
-                    'title': _('Delete asset: %s?') % self.object_list.first()
+                    'title': _(message='Delete asset: %s?') % self.object_list.first()
                 }
             )
 
@@ -83,7 +83,7 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
             )
         except Exception as exception:
             messages.error(
-                message=_('Error deleting asset "%(asset)s": %(error)s') % {
+                message=_(message='Error deleting asset "%(asset)s": %(error)s') % {
                     'asset': instance, 'error': exception
                 }, request=self.request
             )
@@ -99,7 +99,7 @@ class AssetDetailView(SingleObjectDetailView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Details asset: %s') % self.object,
+            'title': _(message='Details asset: %s') % self.object,
         }
 
 
@@ -114,7 +114,7 @@ class AssetEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit asset: %s') % self.object,
+            'title': _(message='Edit asset: %s') % self.object,
         }
 
     def get_instance_extra_data(self):
@@ -140,6 +140,6 @@ class AssetListView(SingleObjectListView):
                 'Assets are files that can be used in conjuction with '
                 'certain transformations.'
             ),
-            'no_results_title': _('No assets available'),
-            'title': _('Assets'),
+            'no_results_title': _(message='No assets available'),
+            'title': _(message='Assets'),
         }

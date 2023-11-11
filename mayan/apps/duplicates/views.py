@@ -1,7 +1,7 @@
 import logging
 
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import (
@@ -76,7 +76,7 @@ class DuplicatedDocumentListView(DocumentListView):
                 'no_results_title': _(
                     'There are no duplicated documents'
                 ),
-                'title': _('Duplicated documents')
+                'title': _(message='Duplicated documents')
             }
         )
         return context
@@ -84,7 +84,7 @@ class DuplicatedDocumentListView(DocumentListView):
 
 class ScanDuplicatedDocuments(ConfirmView):
     extra_context = {
-        'title': _('Scan for duplicated documents?')
+        'title': _(message='Scan for duplicated documents?')
     }
     view_permission = permission_document_tools
     view_icon = icon_duplicated_document_scan
@@ -92,6 +92,6 @@ class ScanDuplicatedDocuments(ConfirmView):
     def view_action(self):
         task_duplicates_scan_all.apply_async()
         messages.success(
-            message=_('Duplicated document scan queued successfully.'),
+            message=_(message='Duplicated document scan queued successfully.'),
             request=self.request
         )

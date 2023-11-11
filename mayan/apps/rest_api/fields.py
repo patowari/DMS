@@ -1,5 +1,5 @@
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from . import serializers
 
@@ -27,4 +27,4 @@ class DynamicSerializerField(serializers.ReadOnlyField):
                     }
                 ).to_representation(instance=value)
 
-        return _('Unable to find serializer class for: %s') % value
+        return _(message='Unable to find serializer class for: %s') % value

@@ -92,7 +92,7 @@ Before:
 
 .. code-block:: python
 
-    from django.conf.urls import url
+    from django.urls import re_path
 
     from .views import AboutView, HomeView, RootView
 
@@ -107,7 +107,7 @@ After:
 
 .. code-block:: python
 
-    from django.conf.urls import url
+    from django.urls import re_path
 
     from .views import AboutView, HomeView, RootView
 

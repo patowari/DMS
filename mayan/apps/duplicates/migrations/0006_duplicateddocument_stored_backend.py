@@ -12,11 +12,15 @@ class AddFieldDynamicDefault(migrations.AddField):
             app_label='duplicates', model_name='StoredDuplicateBackend'
         )
 
-        stored_backend_id = StoredDuplicateBackend.objects.using(
+        stored_backend = StoredDuplicateBackend.objects.using(
             alias=schema_editor.connection.alias
-        ).first().pk
+        ).first()
 
-        self.field.default = stored_backend_id
+        if stored_backend:
+            stored_backend_id = stored_backend.pk
+
+            self.field.default = stored_backend_id
+
         super().database_forwards(
             app_label=app_label, schema_editor=schema_editor,
             from_state=from_state, to_state=to_state

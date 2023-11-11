@@ -2,7 +2,7 @@ import datetime
 
 from django import forms
 from django.utils.timezone import now
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.literals import TIME_DELTA_UNIT_CHOICES
 from mayan.apps.views.widgets import NamedMultiWidget
@@ -17,7 +17,7 @@ class SplitTimeDeltaWidget(NamedMultiWidget):
         'amount': forms.widgets.NumberInput(
             attrs={
                 'maxlength': 4, 'style': 'width: 8em;',
-                'placeholder': _('Amount')
+                'placeholder': _(message='Amount')
             }
         ),
         'unit': forms.widgets.Select(

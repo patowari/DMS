@@ -9,7 +9,7 @@ from django.contrib.admin.utils import (
 from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
 from django.db import models
 from django.forms import Form as DjangoForm, ModelForm as DjangoModelForm
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import resolve_attribute
 
@@ -32,7 +32,7 @@ class ChoiceForm(Form):
     items from a many to many field.
     """
     search = django_forms.CharField(
-        label=_('Search'), required=False,
+        label=_(message='Search'), required=False,
         widget=django_forms.widgets.TextInput(
             attrs={
                 'autocomplete': 'off',
@@ -50,7 +50,7 @@ class ChoiceForm(Form):
             'choices', []
         )
         label = kwargs.pop(
-            'label', _('Selection')
+            'label', _(message='Selection')
         )
         help_text = kwargs.pop('help_text', None)
         disabled_choices = kwargs.pop(
@@ -230,13 +230,13 @@ class RelationshipForm(Form):
         super().__init__(*args, **kwargs)
 
         self.fields['label'] = django_forms.CharField(
-            label=_('Label'), required=False,
+            label=_(message='Label'), required=False,
             widget=django_forms.TextInput(
                 attrs={'readonly': 'readonly'}
             )
         )
         self.fields['relationship_type'] = django_forms.ChoiceField(
-            choices=self.RELATIONSHIP_CHOICES, label=_('Relationship'),
+            choices=self.RELATIONSHIP_CHOICES, label=_(message='Relationship'),
             widget=django_forms.RadioSelect()
         )
 

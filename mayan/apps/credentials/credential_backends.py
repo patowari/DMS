@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import CredentialBackend
 
@@ -14,7 +14,7 @@ class CredentialBackendAccessToken(CredentialBackend):
     }
     form_fields = {
         'token': {
-            'label': _('Token'),
+            'label': _(message='Token'),
             'class': 'django.forms.CharField', 'default': '',
             'help_text': _(
                 'Generated token value used to make API calls.'
@@ -23,7 +23,7 @@ class CredentialBackendAccessToken(CredentialBackend):
             }, 'required': True
         },
     }
-    label = _('Access token')
+    label = _(message='Access token')
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -31,7 +31,7 @@ class CredentialBackendAccessToken(CredentialBackend):
 
         fieldsets += (
             (
-                _('Identity'), {
+                _(message='Identity'), {
                     'fields': ('token',)
                 }
             ),
@@ -51,7 +51,7 @@ class CredentialBackendUsernamePassword(CredentialBackend):
     }
     form_fields = {
         'username': {
-            'label': _('Username'),
+            'label': _(message='Username'),
             'class': 'django.forms.CharField', 'default': '',
             'help_text': _(
                 'Pseudonym used to identify a user.'
@@ -59,7 +59,7 @@ class CredentialBackendUsernamePassword(CredentialBackend):
                 'max_length': 254
             }, 'required': True
         }, 'password': {
-            'label': _('Password'),
+            'label': _(message='Password'),
             'class': 'django.forms.CharField', 'default': '',
             'help_text': _(
                 'Character string used to authenticate the user.'
@@ -68,7 +68,7 @@ class CredentialBackendUsernamePassword(CredentialBackend):
             }, 'required': False
         },
     }
-    label = _('Username and password')
+    label = _(message='Username and password')
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -76,7 +76,7 @@ class CredentialBackendUsernamePassword(CredentialBackend):
 
         fieldsets += (
             (
-                _('Identity'), {
+                _(message='Identity'), {
                     'fields': ('username', 'password')
                 }
             ),

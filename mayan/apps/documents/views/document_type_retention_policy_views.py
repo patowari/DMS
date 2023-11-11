@@ -1,7 +1,7 @@
 import logging
 
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import SingleObjectEditView
 
@@ -20,15 +20,15 @@ class DocumentTypeRetentionPoliciesEditView(SingleObjectEditView):
     )
     fieldsets = (
         (
-            _('Trashing'), {
+            _(message='Trashing'), {
                 'fields': ('trash_time_unit', 'trash_time_period'),
             }
         ), (
-            _('Deletion'), {
+            _(message='Deletion'), {
                 'fields': ('delete_time_unit', 'delete_time_period')
             }
         ), (
-            _('Stub pruning'), {
+            _(message='Stub pruning'), {
                 'fields': (
                     'document_stub_pruning_enabled',
                     'document_stub_expiration_interval'

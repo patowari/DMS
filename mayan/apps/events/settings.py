@@ -1,10 +1,10 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
 from .literals import DEFAULT_EVENTS_DISABLE_ASYNCHRONOUS_MODE
 
-namespace = SettingNamespace(label=_('Events'), name='events')
+namespace = SettingNamespace(label=_(message='Events'), name='events')
 
 setting_disable_asynchronous_mode = namespace.add_setting(
     default=DEFAULT_EVENTS_DISABLE_ASYNCHRONOUS_MODE,

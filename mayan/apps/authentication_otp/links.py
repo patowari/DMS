@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 
@@ -26,13 +26,13 @@ def condition_otp_is_enabled(context, resolved_object):
 
 link_otp_detail = Link(
     condition=condition_is_otp_backend_enabled, icon=icon_otp_detail,
-    text=_('OTP details'), view='authentication_otp:otp_detail'
+    text=_(message='OTP details'), view='authentication_otp:otp_detail'
 )
 link_otp_disable = Link(
     condition=condition_otp_is_enabled, icon=icon_otp_disable,
-    text=_('Disable OTP'), view='authentication_otp:otp_disable'
+    text=_(message='Disable OTP'), view='authentication_otp:otp_disable'
 )
 link_otp_enable = Link(
     condition=condition_is_current_user, icon=icon_otp_enable,
-    text=_('Enable OTP'), view='authentication_otp:otp_enable'
+    text=_(message='Enable OTP'), view='authentication_otp:otp_enable'
 )

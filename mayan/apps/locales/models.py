@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
@@ -17,26 +17,26 @@ class UserLocaleProfile(models.Model):
     """
     user = models.OneToOneField(
         on_delete=models.CASCADE, related_name='locale_profile',
-        to=settings.AUTH_USER_MODEL, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     timezone = models.CharField(
         choices=get_timezone_choices(), max_length=48,
-        verbose_name=_('Timezone')
+        verbose_name=_(message='Timezone')
     )
     language = models.CharField(
         choices=get_language_choices(), max_length=8,
-        verbose_name=_('Language')
+        verbose_name=_(message='Language')
     )
 
     objects = UserLocaleProfileManager()
 
     class Meta:
-        verbose_name = _('User locale profile')
-        verbose_name_plural = _('User locale profiles')
+        verbose_name = _(message='User locale profile')
+        verbose_name_plural = _(message='User locale profiles')
 
     def __str__(self):
         return '{} ({}, {})'.format(
-            self.user, self.language or _('None'), self.timezone or _('None')
+            self.user, self.language or _(message='None'), self.timezone or _(message='None')
         )
 
     def natural_key(self):

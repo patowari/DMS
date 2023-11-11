@@ -1,6 +1,6 @@
 from django.db import models, transaction
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
@@ -25,22 +25,22 @@ class DocumentVersion(
 ):
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='versions', to=Document,
-        verbose_name=_('Document')
+        verbose_name=_(message='Document')
     )
     timestamp = models.DateTimeField(
         auto_now_add=True, db_index=True, help_text=_(
             'The server date and time when the document version was created.'
-        ), verbose_name=_('Timestamp')
+        ), verbose_name=_(message='Timestamp')
     )
     comment = models.TextField(
         blank=True, default='', help_text=_(
             'An optional short text describing the document version.'
-        ), verbose_name=_('Comment')
+        ), verbose_name=_(message='Comment')
     )
     active = models.BooleanField(
         default=False, help_text=_(
             'Determines the active version of the document.'
-        ), verbose_name=_('Active')
+        ), verbose_name=_(message='Active')
     )
 
     objects = models.Manager()
@@ -48,8 +48,8 @@ class DocumentVersion(
 
     class Meta:
         ordering = ('timestamp',)
-        verbose_name = _('Document version')
-        verbose_name_plural = _('Document versions')
+        verbose_name = _(message='Document version')
+        verbose_name_plural = _(message='Document versions')
 
     def __str__(self):
         return self.get_label()

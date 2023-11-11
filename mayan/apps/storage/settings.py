@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -12,7 +12,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Storage'), name='storage'
+    label=_(message='Storage'), name='storage'
 )
 
 setting_download_file_expiration_interval = namespace.add_setting(

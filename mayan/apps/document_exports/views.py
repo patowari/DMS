@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_version_models import DocumentVersion
 from mayan.apps.organizations.utils import get_organization_installation_url
@@ -22,9 +22,9 @@ class DocumentVersionExportView(MultipleObjectConfirmActionView):
     success_message_plural = _(
         '%(count)d document versions exports successfully queued.'
     )
-    title_plural = _('Export %(count)d document versions.')
-    title_single = _('Export document version "%(object)s".')
-    title_singular = _('Export %(count)d document version.')
+    title_plural = _(message='Export %(count)d document versions.')
+    title_single = _(message='Export document version "%(object)s".')
+    title_singular = _(message='Export %(count)d document version.')
     view_icon = icon_document_version_export
 
     def get_extra_context(self):

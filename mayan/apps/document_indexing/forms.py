@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.formsets import formset_factory
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.templating.fields import ModelTemplateField
@@ -16,22 +16,22 @@ class IndexTemplateEventTriggerRelationshipForm(Form):
         widget=forms.widgets.HiddenInput()
     )
     namespace = forms.CharField(
-        label=_('Namespace'), required=False, widget=forms.TextInput(
+        label=_(message='Namespace'), required=False, widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     namespace = forms.CharField(
-        label=_('Namespace'), required=False, widget=forms.TextInput(
+        label=_(message='Namespace'), required=False, widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     label = forms.CharField(
-        label=_('Label'), required=False, widget=forms.TextInput(
+        label=_(message='Label'), required=False, widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     relationship = forms.ChoiceField(
-        choices=RELATIONSHIP_CHOICES, label=_('Enabled'),
+        choices=RELATIONSHIP_CHOICES, label=_(message='Enabled'),
         widget=forms.RadioSelect()
     )
 
@@ -45,8 +45,8 @@ class IndexTemplateFilteredForm(FilteredSelectionForm):
     class Meta:
         allow_multiple = True
         field_name = 'index_templates'
-        help_text = _('Index templates to be queued for rebuilding.')
-        label = _('Index templates')
+        help_text = _(message='Index templates to be queued for rebuilding.')
+        label = _(message='Index templates')
         queryset = IndexTemplate.objects.filter(enabled=True)
         permission = permission_index_template_rebuild
         widget_attributes = {'class': 'select2'}
@@ -61,7 +61,7 @@ class IndexTemplateNodeForm(forms.ModelForm):
         self.fields['index'].widget = forms.widgets.HiddenInput()
         self.fields['parent'].widget = forms.widgets.HiddenInput()
         self.fields['expression'] = ModelTemplateField(
-            label=_('Template'), model=Document,
+            label=_(message='Template'), model=Document,
             model_variable='document', required=False
         )
 

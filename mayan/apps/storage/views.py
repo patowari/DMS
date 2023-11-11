@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     MultipleObjectDeleteView, SingleObjectDownloadView, SingleObjectListView
@@ -68,6 +68,6 @@ class DownloadFileListView(
                 'process like an export. Download files are retained over '
                 'a span of time and then removed automatically.'
             ),
-            'no_results_title': _('There are no files to download.'),
-            'title': _('Downloads')
+            'no_results_title': _(message='There are no files to download.'),
+            'title': _(message='Downloads')
         }

@@ -1,6 +1,6 @@
 from django.conf import settings
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 import mayan
 
@@ -33,9 +33,9 @@ TIME_DELTA_UNIT_HOURS = 'hours'
 TIME_DELTA_UNIT_MINUTES = 'minutes'
 
 TIME_DELTA_UNIT_CHOICES = (
-    (TIME_DELTA_UNIT_DAYS, _('Days')),
-    (TIME_DELTA_UNIT_HOURS, _('Hours')),
-    (TIME_DELTA_UNIT_MINUTES, _('Minutes'))
+    (TIME_DELTA_UNIT_DAYS, _(message='Days')),
+    (TIME_DELTA_UNIT_HOURS, _(message='Hours')),
+    (TIME_DELTA_UNIT_MINUTES, _(message='Minutes'))
 )
 
 URL_BOOK = 'https://www.mayan-edms.com/book/'

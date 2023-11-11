@@ -4,8 +4,8 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.django_gpg.exceptions import NeedPassphrase, PassphraseError
 from mayan.apps.documents.models.document_file_models import DocumentFile
@@ -72,7 +72,7 @@ class DocumentFileDetachedSignatureCreateView(
             )
         except NeedPassphrase:
             messages.error(
-                message=_('Passphrase is needed to unlock this key.'),
+                message=_(message='Passphrase is needed to unlock this key.'),
                 request=self.request
             )
             return HttpResponseRedirect(
@@ -85,7 +85,7 @@ class DocumentFileDetachedSignatureCreateView(
             )
         except PassphraseError:
             messages.error(
-                message=_('Passphrase is incorrect.'),
+                message=_(message='Passphrase is incorrect.'),
                 request=self.request
             )
             return HttpResponseRedirect(
@@ -98,7 +98,7 @@ class DocumentFileDetachedSignatureCreateView(
             )
         else:
             messages.success(
-                message=_('Document file signed successfully.'),
+                message=_(message='Document file signed successfully.'),
                 request=self.request
             )
 
@@ -142,7 +142,7 @@ class DocumentFileEmbeddedSignatureCreateView(
             )
         except NeedPassphrase:
             messages.error(
-                message=_('Passphrase is needed to unlock this key.'),
+                message=_(message='Passphrase is needed to unlock this key.'),
                 request=self.request
             )
             return HttpResponseRedirect(
@@ -155,7 +155,7 @@ class DocumentFileEmbeddedSignatureCreateView(
             )
         except PassphraseError:
             messages.error(
-                message=_('Passphrase is incorrect.'),
+                message=_(message='Passphrase is incorrect.'),
                 request=self.request
             )
             return HttpResponseRedirect(
@@ -168,7 +168,7 @@ class DocumentFileEmbeddedSignatureCreateView(
             )
         else:
             messages.success(
-                message=_('Document file signed successfully.'),
+                message=_(message='Document file signed successfully.'),
                 request=self.request
             )
 
@@ -202,7 +202,7 @@ class DocumentFileDetachedSignatureDeleteView(SingleObjectDeleteView):
         return {
             'object': self.object.document_file,
             'signature': self.object,
-            'title': _('Delete detached signature: %s') % self.object
+            'title': _(message='Delete detached signature: %s') % self.object
         }
 
     def get_post_action_redirect(self):
@@ -230,7 +230,7 @@ class DocumentFileDetachedSignatureDownloadView(SingleObjectDownloadView):
         return self.object.signature_file
 
     def get_download_filename(self):
-        return force_text(s=self.object)
+        return force_str(s=self.object)
 
     def get_source_queryset(self):
         document_file_queryset = DocumentFile.valid.all()
@@ -355,7 +355,7 @@ class AllDocumentSignatureRefreshView(ConfirmView):
         'message': _(
             'On large databases this operation may take some time '
             'to execute.'
-        ), 'title': _('Refresh all signatures information?'),
+        ), 'title': _(message='Refresh all signatures information?'),
     }
     view_icon = icon_document_file_all_signature_refresh
     view_permission = permission_document_file_signature_verify
@@ -366,7 +366,7 @@ class AllDocumentSignatureRefreshView(ConfirmView):
     def view_action(self):
         task_refresh_signature_information.apply_async()
         messages.success(
-            message=_('Signature information refresh queued successfully.'),
+            message=_(message='Signature information refresh queued successfully.'),
             request=self.request
         )
 
@@ -376,7 +376,7 @@ class AllDocumentSignatureVerifyView(ConfirmView):
         'message': _(
             'On large databases this operation may take some time to '
             'execute.'
-        ), 'title': _('Verify all document for signatures?'),
+        ), 'title': _(message='Verify all document for signatures?'),
     }
     view_icon = icon_document_file_all_signature_verify
     view_permission = permission_document_file_signature_verify
@@ -387,6 +387,6 @@ class AllDocumentSignatureVerifyView(ConfirmView):
     def view_action(self):
         task_verify_missing_embedded_signature.apply_async()
         messages.success(
-            message=_('Signature verification queued successfully.'),
+            message=_(message='Signature verification queued successfully.'),
             request=self.request
         )

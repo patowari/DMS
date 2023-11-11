@@ -1,6 +1,8 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.dependencies.classes import BinaryDependency, PythonDependency
+from mayan.apps.dependencies.classes import (
+    BinaryDependency, PythonDependency
+)
 
 from .backends.python import pdfinfo_path, pdftoppm_path
 from .classes import libreoffice_path

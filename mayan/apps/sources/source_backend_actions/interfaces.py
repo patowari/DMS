@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.functional import classproperty
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..exceptions import SourceActionExceptionInterfaceArgumentMissing
 

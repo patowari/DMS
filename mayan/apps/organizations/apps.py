@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -14,7 +14,7 @@ class OrganizationsApp(MayanAppConfig):
     app_url = 'organizations'
     has_tests = True
     name = 'mayan.apps.organizations'
-    verbose_name = _('Organizations')
+    verbose_name = _(message='Organizations')
 
     def ready(self):
         super().ready()

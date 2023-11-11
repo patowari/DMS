@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class DependencyEnvironment:
@@ -17,19 +17,19 @@ environment_build = DependencyEnvironment(
         'Environment used for building distributable packages of the '
         'software. End users can ignore missing dependencies under this '
         'environment.'
-    ), label=_('Build'), name='build'
+    ), label=_(message='Build'), name='build'
 )
 environment_development = DependencyEnvironment(
     help_text=_(
         'Environment used for developers to make code changes. End users '
         'can ignore missing dependencies under this environment.'
-    ), label=_('Development'), name='development'
+    ), label=_(message='Development'), name='development'
 )
 environment_documentation = DependencyEnvironment(
     help_text=_(
         'Environment used for building the documentation. End users '
         'can ignore missing dependencies under this environment.'
-    ), label=_('Documentation'), name='documentation'
+    ), label=_(message='Documentation'), name='documentation'
 )
 environment_documentation_override = DependencyEnvironment(
     help_text=_(
@@ -37,18 +37,18 @@ environment_documentation_override = DependencyEnvironment(
         'workaround unpinned or immutable depedency bugs in third party '
         'libraries. End users can ignore missing dependencies under this '
         'environment.'
-    ), label=_('Documentation (override)'), name='documentation_override'
+    ), label=_(message='Documentation (override)'), name='documentation_override'
 )
 environment_production = DependencyEnvironment(
     help_text=_(
         'Normal environment for end users. A missing dependency under this '
         'environment will result in issues and errors during normal use.'
-    ), label=_('Production'), mark_missing=True, name='production'
+    ), label=_(message='Production'), mark_missing=True, name='production'
 )
 environment_testing = DependencyEnvironment(
     help_text=_(
         'Environment used running the test suit to verify the functionality '
         'of the code. Dependencies in this environment are not needed for '
         'normal production usage.'
-    ), label=_('Testing'), name='testing'
+    ), label=_(message='Testing'), name='testing'
 )

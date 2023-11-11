@@ -5,7 +5,7 @@ from flanker import mime
 
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_bytes
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.credentials.class_mixins import BackendMixinCredentials
 from mayan.apps.source_periodic.source_backends.mixins import SourceBackendMixinPeriodicCompressed
@@ -28,7 +28,7 @@ class SourceBackendMixinEmail(
             {
                 'host': {
                     'class': 'django.forms.CharField',
-                    'label': _('Host'),
+                    'label': _(message='Host'),
                     'kwargs': {
                         'max_length': 128
                     },
@@ -37,7 +37,7 @@ class SourceBackendMixinEmail(
                 'ssl': {
                     'class': 'django.forms.BooleanField',
                     'default': True,
-                    'label': _('SSL'),
+                    'label': _(message='SSL'),
                     'required': False
                 },
                 'port': {
@@ -49,7 +49,7 @@ class SourceBackendMixinEmail(
                     'kwargs': {
                         'min_value': 0
                     },
-                    'label': _('Port'),
+                    'label': _(message='Port'),
                 },
                 'store_body': {
                     'class': 'django.forms.BooleanField',
@@ -57,7 +57,7 @@ class SourceBackendMixinEmail(
                     'help_text': _(
                         'Store the body of the email as a text document.'
                     ),
-                    'label': _('Store email body'),
+                    'label': _(message='Store email body'),
                     'required': False
                 }
             }
@@ -71,7 +71,7 @@ class SourceBackendMixinEmail(
 
         fieldsets += (
             (
-                _('Common email options'), {
+                _(message='Common email options'), {
                     'fields': (
                         'host', 'ssl', 'port', 'store_body'
                     )

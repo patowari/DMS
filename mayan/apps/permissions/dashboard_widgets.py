@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dashboards.classes import DashboardWidgetNumeric
 
@@ -10,7 +10,7 @@ from .permissions import permission_role_view
 
 class DashboardWidgetRoleTotal(DashboardWidgetNumeric):
     icon = icon_role_list
-    label = _('Total roles')
+    label = _(message='Total roles')
     link = reverse_lazy(viewname='permissions:role_list')
 
     def get_count(self):

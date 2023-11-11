@@ -2,7 +2,7 @@ import logging
 
 from django.apps import apps
 from django.db.models.signals import post_delete, post_save, pre_delete
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -66,7 +66,7 @@ class MetadataApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.metadata'
-    verbose_name = _('Metadata')
+    verbose_name = _(message='Metadata')
 
     def ready(self):
         super().ready()
@@ -137,16 +137,16 @@ class MetadataApp(MayanAppConfig):
             model=Document, name='metadata_value_of.< metadata type name >',
             description=_(
                 'Return the value of a specific document metadata.'
-            ), label=_('Metadata value of')
+            ), label=_(message='Metadata value of')
         )
 
         ModelFieldRelated(
             model=Document, name='metadata__metadata_type__name',
-            label=_('Metadata type name')
+            label=_(message='Metadata type name')
         )
         ModelFieldRelated(
             model=Document, name='metadata__value',
-            label=_('Metadata value')
+            label=_(message='Metadata value')
         )
 
         ModelEventType.register(
@@ -204,26 +204,26 @@ class MetadataApp(MayanAppConfig):
         # Columns
 
         SourceColumn(
-            source=Document, label=_('Metadata'),
+            source=Document, label=_(message='Metadata'),
             widget=DocumentMetadataWidget
         )
 
         SourceColumn(
             attribute='document', source=DocumentFileSearchResult,
-            label=_('Metadata'), widget=DocumentMetadataWidget
+            label=_(message='Metadata'), widget=DocumentMetadataWidget
         )
         SourceColumn(
             attribute='document_file__document',
-            source=DocumentFilePageSearchResult, label=_('Metadata'),
+            source=DocumentFilePageSearchResult, label=_(message='Metadata'),
             widget=DocumentMetadataWidget
         )
         SourceColumn(
             attribute='document', source=DocumentVersionSearchResult,
-            label=_('Metadata'), widget=DocumentMetadataWidget
+            label=_(message='Metadata'), widget=DocumentMetadataWidget
         )
         SourceColumn(
             attribute='document_version__document',
-            source=DocumentVersionPageSearchResult, label=_('Metadata'),
+            source=DocumentVersionPageSearchResult, label=_(message='Metadata'),
             widget=DocumentMetadataWidget
         )
 

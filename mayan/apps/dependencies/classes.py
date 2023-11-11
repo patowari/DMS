@@ -14,7 +14,7 @@ from django.apps import apps
 from django.utils.functional import cached_property
 from django.utils.module_loading import import_string
 from django.utils.termcolors import colorize
-from django.utils.translation import ugettext_lazy as _, ugettext
+from django.utils.translation import gettext, gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.exceptions import ResolverPipelineError
@@ -215,9 +215,10 @@ class Dependency(AppsModuleLoaderMixin):
 
             print(
                 template.format(
-                    ugettext('Name'), ugettext('Type'), ugettext('Version'),
-                    ugettext('App'), ugettext('Environments'),
-                    ugettext('Other data'), ugettext('Check')
+                    gettext(message='Name'), gettext(message='Type'),
+                    gettext(message='Version'), gettext(message='App'),
+                    gettext(message='Environments'),
+                    gettext(message='Other data'), gettext(message='Check')
                 )
             )
             for result in cls._check_all():
@@ -227,11 +228,21 @@ class Dependency(AppsModuleLoaderMixin):
                     template.format(
                         dependency.name,
                         str(dependency.class_name_verbose_name),
-                        str(dependency.get_version_string()),
-                        str(dependency.app_label_verbose_name()),
-                        str(dependency.get_environments_verbose_name()),
-                        str(dependency.get_other_data()),
-                        str(result['check'])
+                        str(
+                            dependency.get_version_string()
+                        ),
+                        str(
+                            dependency.app_label_verbose_name()
+                        ),
+                        str(
+                            dependency.get_environments_verbose_name()
+                        ),
+                        str(
+                            dependency.get_other_data()
+                        ),
+                        str(
+                            result['check']
+                        )
                     )
                 )
         else:
@@ -315,12 +326,12 @@ class Dependency(AppsModuleLoaderMixin):
         if not app_label:
             if not module:
                 raise DependenciesException(
-                    _('Need to specify at least one: app_label or module.')
+                    _(message='Need to specify at least one: app_label or module.')
                 )
 
         if self.get_pk() in self.__class__._registry:
             raise DependenciesException(
-                _('Dependency "%s" already registered.') % self.name
+                _(message='Dependency "%s" already registered.') % self.name
             )
 
         self.__class__._registry[
@@ -371,32 +382,32 @@ class Dependency(AppsModuleLoaderMixin):
 
     def install(self, force=False):
         print(
-            _('Installing package: %s... ') % self.get_label_full(), end=''
+            _(message='Installing package: %s... ') % self.get_label_full(), end=''
         )
         sys.stdout.flush()
 
         if not force:
             if self.check():
                 print(
-                    _('Already installed.')
+                    _(message='Already installed.')
                 )
             else:
                 self._install()
                 print(
-                    _('Complete.')
+                    _(message='Complete.')
                 )
                 sys.stdout.flush()
         else:
             if self.replace_list:
                 self.patch_files()
                 print(
-                    _('Complete.')
+                    _(message='Complete.')
                 )
                 sys.stdout.flush()
 
             self.patch_files()
             print(
-                _('Complete.')
+                _(message='Complete.')
             )
             sys.stdout.flush()
 
@@ -423,9 +434,9 @@ class Dependency(AppsModuleLoaderMixin):
 
     def check_string_verbose_name(self):
         if self._check():
-            return _('Installed and correct version')
+            return _(message='Installed and correct version')
         else:
-            return _('Missing or incorrect version')
+            return _(message='Missing or incorrect version')
 
     def _check(self):
         raise NotImplementedError
@@ -462,7 +473,7 @@ class Dependency(AppsModuleLoaderMixin):
         )
 
     def get_other_data(self):
-        return _('None')
+        return _(message='None')
 
     def get_pk(self):
         return self.name
@@ -471,10 +482,10 @@ class Dependency(AppsModuleLoaderMixin):
         raise NotImplementedError
 
     def get_version_string(self):
-        return self.version_string or _('Not specified')
+        return self.version_string or _(message='Not specified')
 
     def patch_files(self, path=None, replace_list=None):
-        print(_('Patching files... '), end='')
+        print(_(message='Patching files... '), end='')
 
         try:
             sys.stdout.flush()
@@ -504,7 +515,7 @@ class BinaryDependency(Dependency):
     class_name_help_text = _(
         'Executables that are called directly by the code.'
     )
-    class_name_verbose_name = _('Binary')
+    class_name_verbose_name = _(message='Binary')
     provider_class = OperatingSystemProvider
 
     def __init__(self, *args, **kwargs):
@@ -524,7 +535,7 @@ class JavaScriptDependency(Dependency):
         'JavaScript libraries downloaded the from NPM registry and used for '
         'front-end functionality.'
     )
-    class_name_verbose_name = _('JavaScript')
+    class_name_verbose_name = _(message='JavaScript')
     provider_class = NPMRegistryRespository
 
     def __init__(self, *args, **kwargs):
@@ -556,17 +567,17 @@ class JavaScriptDependency(Dependency):
     def _install(self, include_dependencies=False):
         self.get_metadata()
         print(
-            _('Downloading... '), end=''
+            _(message='Downloading... '), end=''
         )
         sys.stdout.flush()
         self.download()
         print(
-            _('Verifying... '), end=''
+            _(message='Verifying... '), end=''
         )
         sys.stdout.flush()
         self.verify()
         print(
-            _('Extracting... '), end=''
+            _(message='Extracting... '), end=''
         )
         sys.stdout.flush()
         self.extract()
@@ -778,7 +789,7 @@ class PythonDependency(Dependency):
     class_name_help_text = _(
         'Python packages downloaded from PyPI.'
     )
-    class_name_verbose_name = _('Python')
+    class_name_verbose_name = _(message='Python')
     provider_class = PyPIRespository
 
     def __init__(self, *args, **kwargs):
@@ -832,7 +843,7 @@ class GoogleFontDependency(Dependency):
     class_name_help_text = _(
         'Fonts downloaded from fonts.googleapis.com.'
     )
-    class_name_verbose_name = _('Google font')
+    class_name_verbose_name = _(message='Google font')
     provider_class = GoogleFontsProvider
     user_agents = {
         'woff2': 'Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0',
@@ -850,12 +861,12 @@ class GoogleFontDependency(Dependency):
 
     def _install(self):
         print(
-            _('Downloading... '), end=''
+            _(message='Downloading... '), end=''
         )
         sys.stdout.flush()
         self.download()
         print(
-            _('Extracting... '), end=''
+            _(message='Extracting... '), end=''
         )
         sys.stdout.flush()
         self.extract()
@@ -928,18 +939,18 @@ class GoogleFontDependency(Dependency):
 
 
 DependencyGroup(
-    attribute_name='app_label', label=_('Declared in app'), help_text=_(
+    attribute_name='app_label', label=_(message='Declared in app'), help_text=_(
         'Show dependencies by the app that declared them.'
     ), name='app'
 )
 DependencyGroup(
-    attribute_name='class_name', label=_('Class'), help_text=_(
+    attribute_name='class_name', label=_(message='Class'), help_text=_(
         'Show the different classes of dependencies. Classes are usually '
         'divided by language or the file types of the dependency.'
     ), name='class'
 )
 DependencyGroup(
-    attribute_name='check_string', label=_('State'), help_text=_(
+    attribute_name='check_string', label=_(message='State'), help_text=_(
         'Show the different states of the dependencies. True means that the '
         'dependencies is installed and is of a correct version. False means '
         'the dependencies is missing or an incorrect version is present.'
@@ -947,7 +958,7 @@ DependencyGroup(
 )
 DependencyGroup(
     allow_multiple=True, attribute_name='get_environments',
-    label=_('Environments'), help_text=_(
+    label=_(message='Environments'), help_text=_(
         'Dependencies required for an environment might not be required for '
         'another. Example environments: Production, Development.'
     ), name='environment'

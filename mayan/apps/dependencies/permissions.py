@@ -1,11 +1,11 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Dependencies'), name='dependencies'
+    label=_(message='Dependencies'), name='dependencies'
 )
 
 permission_dependencies_view = namespace.add_permission(
-    label=_('View dependencies'), name='dependencies_view'
+    label=_(message='View dependencies'), name='dependencies_view'
 )

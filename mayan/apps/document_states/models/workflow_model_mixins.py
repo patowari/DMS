@@ -9,7 +9,7 @@ from django.core import serializers
 from django.db import IntegrityError
 from django.urls import reverse
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.file_caching.models import CachePartitionFile
 
@@ -124,7 +124,7 @@ class WorkflowBusinessLogicMixin:
             return self.states.get(initial=True)
         except self.states.model.DoesNotExist:
             return None
-    get_initial_state.short_description = _('Initial state')
+    get_initial_state.short_description = _(message='Initial state')
 
     def launch_for(self, document, user=None):
         if document.document_type in self.document_types.all():

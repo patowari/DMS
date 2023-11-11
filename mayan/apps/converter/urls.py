@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from .api_views import (
     APIAppImageErrorDetailView, APIAppImageErrorImageView,
@@ -15,51 +15,51 @@ from .views.transformation_views import (
 )
 
 urlpatterns_assets = [
-    url(
-        regex=r'^assets/$', name='asset_list',
+    re_path(
+        route=r'^assets/$', name='asset_list',
         view=AssetListView.as_view()
     ),
-    url(
-        regex=r'^assets/create/$', name='asset_create',
+    re_path(
+        route=r'^assets/create/$', name='asset_create',
         view=AssetCreateView.as_view()
     ),
-    url(
-        regex=r'^assets/(?P<asset_id>\d+)/delete/$',
+    re_path(
+        route=r'^assets/(?P<asset_id>\d+)/delete/$',
         name='asset_single_delete', view=AssetDeleteView.as_view()
     ),
-    url(
-        regex=r'^assets/(?P<asset_id>\d+)/detail/$',
+    re_path(
+        route=r'^assets/(?P<asset_id>\d+)/detail/$',
         name='asset_detail', view=AssetDetailView.as_view()
     ),
-    url(
-        regex=r'^assets/multiple/delete/$',
+    re_path(
+        route=r'^assets/multiple/delete/$',
         name='asset_multiple_delete', view=AssetDeleteView.as_view()
     ),
-    url(
-        regex=r'^assets/(?P<asset_id>\d+)/edit/$', name='asset_edit',
+    re_path(
+        route=r'^assets/(?P<asset_id>\d+)/edit/$', name='asset_edit',
         view=AssetEditView.as_view()
     )
 ]
 
 urlpatterns_transformations = [
-    url(
-        regex=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/$',
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/$',
         name='transformation_list', view=TransformationListView.as_view()
     ),
-    url(
-        regex=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/select/$',
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/select/$',
         name='transformation_select', view=TransformationSelectView.as_view()
     ),
-    url(
-        regex=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/(?P<transformation_name>[-_\w]+)/create/$',
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/(?P<transformation_name>[-_\w]+)/create/$',
         name='transformation_create', view=TransformationCreateView.as_view()
     ),
-    url(
-        regex=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/(?P<transformation_id>\d+)/delete/$',
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/(?P<transformation_id>\d+)/delete/$',
         name='transformation_delete', view=TransformationDeleteView.as_view()
     ),
-    url(
-        regex=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/(?P<transformation_id>\d+)/edit/$',
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/layers/(?P<layer_name>[-_\w]+)/transformations/(?P<transformation_id>\d+)/edit/$',
         name='transformation_edit', view=TransformationEditView.as_view()
     )
 ]
@@ -69,34 +69,34 @@ urlpatterns.extend(urlpatterns_assets)
 urlpatterns.extend(urlpatterns_transformations)
 
 api_urls_assets = [
-    url(
-        regex=r'^app_image_errors/$', name='app_image_error_image-list',
+    re_path(
+        route=r'^app_image_errors/$', name='app_image_error_image-list',
         view=APIAppImageErrorListView.as_view()
     ),
-    url(
-        regex=r'^app_image_errors/(?P<app_image_error_name>[-\w]+)/$',
+    re_path(
+        route=r'^app_image_errors/(?P<app_image_error_name>[-\w]+)/$',
         name='app_image_error-detail',
         view=APIAppImageErrorDetailView.as_view()
     ),
-    url(
-        regex=r'^app_image_errors/(?P<app_image_error_name>[-\w]+)/image/$',
+    re_path(
+        route=r'^app_image_errors/(?P<app_image_error_name>[-\w]+)/image/$',
         name='app_image_error-image',
         view=APIAppImageErrorImageView.as_view()
     ),
-    url(
-        regex=r'^assets/$', name='asset-list',
+    re_path(
+        route=r'^assets/$', name='asset-list',
         view=APIAssetListView.as_view()
     ),
-    url(
-        regex=r'^assets/(?P<asset_id>[0-9]+)/$',
+    re_path(
+        route=r'^assets/(?P<asset_id>[0-9]+)/$',
         name='asset-detail', view=APIAssetDetailView.as_view()
     ),
-    url(
-        regex=r'^assets/(?P<asset_id>\d+)/image/$',
+    re_path(
+        route=r'^assets/(?P<asset_id>\d+)/image/$',
         name='asset-image', view=APIAssetImageView.as_view()
     ),
-    url(
-        regex=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/image/$',
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/image/$',
         name='object-image', view=APIContentObjectImageView.as_view()
     )
 ]

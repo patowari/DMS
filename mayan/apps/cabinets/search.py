@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.search import search_model_document
 from mayan.apps.dynamic_search.search_models import SearchModel
@@ -21,29 +21,29 @@ search_model_cabinet.add_model_field(field='label')
 # Cabinet documents
 
 search_model_cabinet.add_model_field(
-    field='documents__document_type__label', label=_('Document type')
+    field='documents__document_type__label', label=_(message='Document type')
 )
 search_model_cabinet.add_model_field(
-    field='documents__label', label=_('Document label')
+    field='documents__label', label=_(message='Document label')
 )
 search_model_cabinet.add_model_field(
-    field='documents__description', label=_('Document description')
+    field='documents__description', label=_(message='Document description')
 )
 search_model_cabinet.add_model_field(
-    field='documents__uuid', label=_('Document UUID')
+    field='documents__uuid', label=_(message='Document UUID')
 )
 
 # Cabinet documents files
 
 search_model_cabinet.add_model_field(
-    field='documents__files__checksum', label=_('Document file checksum')
+    field='documents__files__checksum', label=_(message='Document file checksum')
 )
 search_model_cabinet.add_model_field(
-    field='documents__files__mimetype', label=_('Document file MIME type')
+    field='documents__files__mimetype', label=_(message='Document file MIME type')
 )
 
 # Document
 
 search_model_document.add_model_field(
-    field='cabinets__label', label=_('Cabinets')
+    field='cabinets__label', label=_(message='Cabinets')
 )

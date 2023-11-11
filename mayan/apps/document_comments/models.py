@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models.document_models import Document
@@ -26,25 +26,25 @@ class Comment(CommentBusinessLogicMixin, ExtraDataModelMixin, models.Model):
 
     document = models.ForeignKey(
         db_index=True, on_delete=models.CASCADE, related_name='comments',
-        to=Document, verbose_name=_('Document')
+        to=Document, verbose_name=_(message='Document')
     )
     user = models.ForeignKey(
         editable=False, on_delete=models.CASCADE, related_name='comments',
-        to=settings.AUTH_USER_MODEL, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     text = models.TextField(
-        verbose_name=_('Text')
+        verbose_name=_(message='Text')
     )
     submit_date = models.DateTimeField(
         auto_now_add=True, db_index=True,
-        verbose_name=_('Date time submitted')
+        verbose_name=_(message='Date time submitted')
     )
 
     class Meta:
         get_latest_by = 'submit_date'
         ordering = ('-submit_date',)
-        verbose_name = _('Comment')
-        verbose_name_plural = _('Comments')
+        verbose_name = _(message='Comment')
+        verbose_name_plural = _(message='Comments')
 
     def __str__(self):
         return self.text

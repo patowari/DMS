@@ -1,6 +1,6 @@
 from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
-from django.utils.translation import ungettext, ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.organizations.utils import get_organization_installation_url
@@ -21,7 +21,7 @@ class ObjectLinkMailView(MultipleObjectFormActionView):
         queryset = self.object_list
 
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular=self.title,
                 plural=self.title_plural,
                 number=queryset.count()
@@ -62,7 +62,7 @@ class ObjectLinkMailView(MultipleObjectFormActionView):
             'body': form.cleaned_data['body'],
             'content_type_id': content_type.pk,
             'object_id': instance.pk,
-            'object_name': _('Document file'),
+            'object_name': _(message='Document file'),
             'organization_installation_url': get_organization_installation_url(
                 request=self.request
             ),

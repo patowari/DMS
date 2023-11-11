@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.events.classes import ModelEventType
@@ -21,7 +21,7 @@ class DocumentDownloadsApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.document_downloads'
-    verbose_name = _('Document downloads')
+    verbose_name = _(message='Document downloads')
 
     def ready(self):
         super().ready()

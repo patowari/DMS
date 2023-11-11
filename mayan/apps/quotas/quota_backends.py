@@ -5,7 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db.models import IntegerField
 from django.db.models.functions import Cast
 from django.template.defaultfilters import filesizeformat
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from actstream.models import Action
 
@@ -69,18 +69,18 @@ def hook_factory_document_file_check_quota(klass):
 class DocumentCountQuota(
     GroupsUsersQuotaMixin, DocumentTypesQuotaMixin, QuotaBackend
 ):
-    error_message = _('Document count quota exceeded.')
+    error_message = _(message='Document count quota exceeded.')
     field_order = ('documents_limit',)
     fields = {
         'documents_limit': {
-            'label': _('Documents limit'),
+            'label': _(message='Documents limit'),
             'class': 'django.forms.IntegerField',
             'help_text': _(
                 'Maximum number of documents.'
             )
         }
     }
-    label = _('Document count limit')
+    label = _(message='Document count limit')
     sender = Document
     signal = signal_mayan_pre_save
 
@@ -105,7 +105,7 @@ class DocumentCountQuota(
         return self.documents_limit
 
     def _allowed_filter_display(self):
-        return _('document count: %(document_count)s') % {
+        return _(message='document count: %(document_count)s') % {
             'document_count': self._allowed()
         }
 
@@ -169,7 +169,7 @@ class DocumentCountQuota(
         if not kwargs['instance'].pk:
             if self._get_user_document_count(user=kwargs.get('user')) >= self._allowed():
                 raise QuotaExceeded(
-                    _('Document count quota exceeded.')
+                    _(message='Document count quota exceeded.')
                 )
 
 
@@ -180,11 +180,11 @@ class DocumentSizeQuota(
     fields = {
         'document_size_limit': {
             'class': 'django.forms.FloatField',
-            'help_text': _('Maximum document size in megabytes (MB).'),
-            'label': _('Document size limit')
+            'help_text': _(message='Maximum document size in megabytes (MB).'),
+            'label': _(message='Document size limit')
         }
     }
-    label = _('Document size limit')
+    label = _(message='Document size limit')
     sender = DocumentFile
     signal = signal_mayan_pre_save
 
@@ -209,7 +209,7 @@ class DocumentSizeQuota(
         return self.document_size_limit * 1024 * 1024
 
     def _allowed_filter_display(self):
-        return _('document size: %(formatted_file_size)s') % {
+        return _(message='document size: %(formatted_file_size)s') % {
             'formatted_file_size': filesizeformat(
                 bytes_=self._allowed()
             )
@@ -231,5 +231,5 @@ class DocumentSizeQuota(
 
                     if self.user_all or kwargs['user'] and users.filter(pk=kwargs['user'].pk).exists():
                         raise QuotaExceeded(
-                            _('Document size quota exceeded.')
+                            _(message='Document size quota exceeded.')
                         )

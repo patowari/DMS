@@ -7,7 +7,7 @@ from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 from django.db.models.constants import LOOKUP_SEP
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .exceptions import DynamicSearchException, DynamicSearchModelException
 from .literals import QUERY_PARAMETER_ANY_FIELD
@@ -308,7 +308,7 @@ class SearchFieldVirtual(SearchField):
 
 
 class SearchFieldVirtualAllFields(SearchFieldVirtual):
-    label = _('Any')
+    label = _(message='Any')
 
     @classmethod
     def check(cls, *args, **kwargs):

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.reverse import reverse
 
@@ -14,7 +14,7 @@ from .models import DetachedSignature, EmbeddedSignature
 
 class BaseSignatureSerializer(serializers.HyperlinkedModelSerializer):
     document_file_url = MultiKwargHyperlinkedIdentityField(
-        label=_('Document file URL'), view_kwargs=(
+        label=_(message='Document file URL'), view_kwargs=(
             {
                 'lookup_field': 'document_file_id',
                 'lookup_url_kwarg': 'document_file_id'
@@ -58,14 +58,14 @@ class BaseSignSerializer(serializers.HyperlinkedModelSerializer):
         help_text=_(
             'Primary key of the secret key used to sign the document '
             'file.'
-        ), label=_('Key ID'), source_queryset=Key.objects.private_keys(),
+        ), label=_(message='Key ID'), source_queryset=Key.objects.private_keys(),
         source_permission=permission_key_sign
     )
     passphrase = serializers.CharField(
         help_text=_(
             'The passphrase to unlock the key and allow it to be used to '
             'sign the document file.'
-        ), label=_('Passphrase'), required=False, write_only=True
+        ), label=_(message='Passphrase'), required=False, write_only=True
     )
 
     class Meta:
@@ -107,7 +107,7 @@ class EmbeddedSignatureSerializer(
     BaseSignatureSerializer, serializers.HyperlinkedModelSerializer
 ):
     url = MultiKwargHyperlinkedIdentityField(
-        label=_('URL'), view_kwargs=(
+        label=_(message='URL'), view_kwargs=(
             {
                 'lookup_field': 'document_file.document.pk',
                 'lookup_url_kwarg': 'document_id'

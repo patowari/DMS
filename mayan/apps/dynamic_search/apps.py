@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_facet, menu_secondary, menu_tools
@@ -24,7 +24,7 @@ class DynamicSearchApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.dynamic_search'
-    verbose_name = _('Dynamic search')
+    verbose_name = _(message='Dynamic search')
 
     def ready(self):
         super().ready()

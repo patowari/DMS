@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -29,7 +29,7 @@ class EventsApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.events'
-    verbose_name = _('Events')
+    verbose_name = _(message='Events')
 
     def ready(self):
         super().ready()
@@ -79,76 +79,76 @@ class EventsApp(MayanAppConfig):
         # upstream package.
         SourceColumn(
             attribute='timestamp', is_identifier=True,
-            is_sortable=True, label=_('Date and time'), name='timestamp',
+            is_sortable=True, label=_(message='Date and time'), name='timestamp',
             source=Action
         )
         SourceColumn(
-            func=widget_event_actor_link, label=_('Actor'),
+            func=widget_event_actor_link, label=_(message='Actor'),
             include_label=True, source=Action
         )
         SourceColumn(
-            func=widget_event_type_link, label=_('Event'),
+            func=widget_event_type_link, label=_(message='Event'),
             include_label=True, name='event_type', source=Action
         )
         SourceColumn(
-            attribute='target', label=_('Target'), include_label=True,
+            attribute='target', label=_(message='Target'), include_label=True,
             name='target', source=Action, widget=ObjectLinkWidget
         )
         SourceColumn(
-            attribute='action_object', label=_('Action object'),
+            attribute='action_object', label=_(message='Action object'),
             include_label=True, source=Action, widget=ObjectLinkWidget
         )
 
         # Stored event type
 
         SourceColumn(
-            attribute='namespace', label=_('Namespace'),
+            attribute='namespace', label=_(message='Namespace'),
             source=StoredEventType
 
         )
         SourceColumn(
-            attribute='label', label=_('Label'), source=StoredEventType
+            attribute='label', label=_(message='Label'), source=StoredEventType
         )
 
         # Notification
 
         SourceColumn(
             attribute='action__timestamp', is_identifier=True,
-            is_sortable=True, label=_('Date and time'), source=Notification
+            is_sortable=True, label=_(message='Date and time'), source=Notification
         )
         SourceColumn(
-            func=widget_event_actor_link, label=_('Actor'),
+            func=widget_event_actor_link, label=_(message='Actor'),
             include_label=True, kwargs={'attribute': 'action'},
             source=Notification
         )
         SourceColumn(
-            func=widget_event_type_link, label=_('Event'),
+            func=widget_event_type_link, label=_(message='Event'),
             include_label=True, kwargs={'attribute': 'action'},
             source=Notification
         )
         SourceColumn(
-            attribute='action.target', label=_('Target'), include_label=True,
+            attribute='action.target', label=_(message='Target'), include_label=True,
             source=Notification, widget=ObjectLinkWidget
         )
         SourceColumn(
-            attribute='action.action_object', label=_('Action object'),
+            attribute='action.action_object', label=_(message='Action object'),
             include_label=True, source=Notification, widget=ObjectLinkWidget
         )
         SourceColumn(
             attribute='read', include_label=True, is_sortable=True,
-            label=_('Seen'), source=Notification, widget=TwoStateWidget
+            label=_(message='Seen'), source=Notification, widget=TwoStateWidget
         )
 
         # Object event subscription
 
         SourceColumn(
             attribute='content_object', include_label=True,
-            label=_('Object'), source=ObjectEventSubscription,
+            label=_(message='Object'), source=ObjectEventSubscription,
             widget=ObjectLinkWidget
         )
         SourceColumn(
             attribute='stored_event_type', include_label=True,
-            label=_('Event type'), source=ObjectEventSubscription
+            label=_(message='Event type'), source=ObjectEventSubscription
         )
 
         # Clear

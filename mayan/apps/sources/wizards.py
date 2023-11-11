@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils.decorators import classonlymethod
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from formtools.wizard.views import SessionWizardView
 
@@ -88,7 +88,7 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
                     'step_label': wizard_step.label,
                     'total_steps': len(self.form_list)
                 },
-                'title': _('Document upload wizard'),
+                'title': _(message='Document upload wizard'),
                 'wizard_step': wizard_step,
                 'wizard_steps': DocumentCreateWizardStep.get_all()
             }
@@ -97,20 +97,20 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
         context['form_button_overrides'] = (
             {
                 'icon': icon_wizard_step_first,
-                'label': _('First'),
+                'label': _(message='First'),
                 'name_override': 'wizard_goto_step',
                 'value': self.steps.first
             },
             {
                 'icon': icon_wizard_step_previous,
-                'label': _('Previous'),
+                'label': _(message='Previous'),
                 'name_override': 'wizard_goto_step',
                 'value': self.steps.prev
             },
             {
                 'icon': icon_wizard_step_next,
                 'is_primary': True,
-                'label': _('Next')
+                'label': _(message='Next')
             }
         )
 

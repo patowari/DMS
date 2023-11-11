@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -8,4 +8,4 @@ class SourceInteractiveApp(MayanAppConfig):
     app_url = 'source_interactive'
     has_tests = True
     name = 'mayan.apps.source_interactive'
-    verbose_name = _('Source interactive')
+    verbose_name = _(message='Source interactive')

@@ -442,7 +442,10 @@ SettingNamespaceSingleton.register_setting(
     klass=BaseSetting, name='STATIC_URL'
 )
 SettingNamespaceSingleton.register_setting(
-    klass=BaseSetting, name='STATICFILES_STORAGE'
+    klass=BaseSetting, name='STORAGES',
+    kwargs={
+        'has_default': True, 'default_value': {}
+    }
 )
 SettingNamespaceSingleton.register_setting(
     klass=BaseSetting, name='TIME_ZONE'

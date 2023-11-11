@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.appearance.classes import Icon
 from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
@@ -16,4 +16,4 @@ class SourceBackendStagingFolder(
     SourceBackendMixinStoredFileInteractive, SourceBackend
 ):
     icon = Icon(driver_name='fontawesome', symbol='file')
-    label = _('Staging folder')
+    label = _(message='Staging folder')

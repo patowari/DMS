@@ -14,7 +14,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.db import transaction
 from django.utils.functional import cached_property
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.mime_types.classes import MIMETypeBackend
 from mayan.apps.navigation.classes import Link
@@ -170,7 +170,7 @@ class ConverterBase:
         """
         if not self.command_libreoffice:
             raise OfficeConversionError(
-                _('LibreOffice not installed or not found.')
+                _(message='LibreOffice not installed or not found.')
             )
 
         with NamedTemporaryFile() as temporary_file_object:
@@ -276,7 +276,7 @@ class ConverterBase:
             return self.soffice()
         else:
             raise InvalidOfficeFormat(
-                _('Not an office file format.')
+                _(message='Not an office file format.')
             )
 
     def transform(self, transformation):

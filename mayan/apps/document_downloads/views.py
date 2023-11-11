@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_file_models import DocumentFile
@@ -38,9 +38,9 @@ class DocumentDownloadView(
     success_message_singular = _(
         '%(count)d document file queued for download.'
     )
-    title_plural = _('Download files of %(count)d documents')
-    title_single = _('Download files of document: %(object)s')
-    title_singular = _('Download files of %(count)d document')
+    title_plural = _(message='Download files of %(count)d documents')
+    title_single = _(message='Download files of document: %(object)s')
+    title_singular = _(message='Download files of %(count)d document')
     view_icon = icon_document_download_multiple
 
     def get_extra_context(self):

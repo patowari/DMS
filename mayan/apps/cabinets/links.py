@@ -1,6 +1,6 @@
 import copy
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.links import link_acl_list
 from mayan.apps.navigation.classes import Link
@@ -27,25 +27,25 @@ def condition_cabinet_is_root(context, resolved_object):
 
 link_document_cabinet_list = Link(
     args='resolved_object.pk', icon=icon_cabinet_list,
-    permissions=(permission_cabinet_view,), text=_('Cabinets'),
+    permissions=(permission_cabinet_view,), text=_(message='Cabinets'),
     view='cabinets:document_cabinet_list'
 )
 link_document_cabinet_remove = Link(
     args='resolved_object.pk', icon=icon_document_cabinet_remove,
     permissions=(permission_cabinet_remove_document,),
-    text=_('Remove from cabinets'), view='cabinets:document_cabinet_remove'
+    text=_(message='Remove from cabinets'), view='cabinets:document_cabinet_remove'
 )
 link_document_cabinet_add = Link(
     args='object.pk', icon=icon_document_cabinet_add,
     permissions=(permission_cabinet_add_document,),
-    text=_('Add to cabinets'), view='cabinets:document_cabinet_add'
+    text=_(message='Add to cabinets'), view='cabinets:document_cabinet_add'
 )
 link_document_multiple_cabinet_add = Link(
-    icon=icon_document_multiple_cabinet_add, text=_('Add to cabinets'),
+    icon=icon_document_multiple_cabinet_add, text=_(message='Add to cabinets'),
     view='cabinets:document_multiple_cabinet_add'
 )
 link_multiple_document_cabinet_remove = Link(
-    icon=icon_document_cabinet_remove, text=_('Remove from cabinets'),
+    icon=icon_document_cabinet_remove, text=_(message='Remove from cabinets'),
     view='cabinets:multiple_document_cabinet_remove'
 )
 
@@ -56,21 +56,21 @@ link_custom_acl_list.condition = condition_cabinet_is_root
 
 link_cabinet_child_add = Link(
     args='object.pk', icon=icon_cabinet_child_add,
-    permissions=(permission_cabinet_create,), text=_('Add new level'),
+    permissions=(permission_cabinet_create,), text=_(message='Add new level'),
     view='cabinets:cabinet_child_add'
 )
 link_cabinet_create = Link(
     icon=icon_cabinet_create, permissions=(permission_cabinet_create,),
-    text=_('Create cabinet'), view='cabinets:cabinet_create'
+    text=_(message='Create cabinet'), view='cabinets:cabinet_create'
 )
 link_cabinet_delete = Link(
     args='object.pk', icon=icon_cabinet_delete,
     permissions=(permission_cabinet_delete,), tags='dangerous',
-    text=_('Delete'), view='cabinets:cabinet_delete'
+    text=_(message='Delete'), view='cabinets:cabinet_delete'
 )
 link_cabinet_edit = Link(
     args='object.pk', icon=icon_cabinet_edit,
-    permissions=(permission_cabinet_edit,), text=_('Edit'),
+    permissions=(permission_cabinet_edit,), text=_(message='Edit'),
     view='cabinets:cabinet_edit'
 )
 link_cabinet_list = Link(
@@ -78,10 +78,10 @@ link_cabinet_list = Link(
         app_label='cabinets', model_name='Cabinet',
         object_permission=permission_cabinet_view,
     ), icon=icon_cabinet_list,
-    text=_('All'), view='cabinets:cabinet_list'
+    text=_(message='All'), view='cabinets:cabinet_list'
 )
 link_cabinet_view = Link(
     args='object.pk', icon=icon_cabinet_view,
-    permissions=(permission_cabinet_view,), text=_('Details'),
+    permissions=(permission_cabinet_view,), text=_(message='Details'),
     view='cabinets:cabinet_view'
 )

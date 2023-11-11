@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link, Separator
 
@@ -19,7 +19,7 @@ def condition_no_usable_password(context, resolved_object):
 
 link_current_user_oidc_details = Link(
     condition=condition_no_usable_password, tags='new_window',
-    icon=icon_current_user_oidc_details, text=_('OIDC user details'),
+    icon=icon_current_user_oidc_details, text=_(message='OIDC user details'),
     url=setting_oidc_user_profile_url.value
 )
 

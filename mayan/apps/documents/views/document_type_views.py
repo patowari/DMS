@@ -2,7 +2,7 @@ import logging
 
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     SingleObjectCreateView, SingleObjectDeleteView, SingleObjectEditView,
@@ -51,7 +51,7 @@ class DocumentTypeDocumentListView(
         context.update(
             {
                 'object': self.external_object,
-                'title': _('Documents of type: %s') % self.external_object
+                'title': _(message='Documents of type: %s') % self.external_object
             }
         )
         return context
@@ -77,8 +77,8 @@ class DocumentTypeListView(SingleObjectListView):
                 'document you intend to upload. Example document types: '
                 'invoice, receipt, manual, prescription, balance sheet.'
             ),
-            'no_results_title': _('No document types available'),
-            'title': _('Document types')
+            'no_results_title': _(message='No document types available'),
+            'title': _(message='Document types')
         }
 
 
@@ -93,7 +93,7 @@ class DocumentTypeCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _('Create document type')
+            'title': _(message='Create document type')
         }
 
     def get_instance_extra_data(self):
@@ -113,9 +113,9 @@ class DocumentTypeDeleteView(SingleObjectDeleteView):
 
     def get_extra_context(self):
         return {
-            'message': _('All documents of this type will be deleted too.'),
+            'message': _(message='All documents of this type will be deleted too.'),
             'object': self.object,
-            'title': _('Delete the document type: %s?') % self.object
+            'title': _(message='Delete the document type: %s?') % self.object
         }
 
 
@@ -132,7 +132,7 @@ class DocumentTypeEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit document type: %s') % self.object
+            'title': _(message='Edit document type: %s') % self.object
         }
 
     def get_instance_extra_data(self):

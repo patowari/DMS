@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 
@@ -17,22 +17,22 @@ def condition_local_storage_enabled(context, resolved_object):
 link_setting_namespace_list = Link(
     icon=icon_setting_namespace_list,
     permissions=(permission_settings_view,),
-    text=_('Settings'), view='settings:setting_namespace_list'
+    text=_(message='Settings'), view='settings:setting_namespace_list'
 )
 link_setting_namespace_detail = Link(
     args='resolved_object.name', icon=icon_setting_namespace_detail,
-    permissions=(permission_settings_view,), text=_('Settings'),
+    permissions=(permission_settings_view,), text=_(message='Settings'),
     view='settings:setting_namespace_detail'
 )
 # Duplicate the link to use a different name
 link_namespace_root_list = Link(
     icon=icon_setting_namespace_list,
     permissions=(permission_settings_view,),
-    text=_('Namespaces'), view='settings:setting_namespace_list'
+    text=_(message='Namespaces'), view='settings:setting_namespace_list'
 )
 link_setting_edit = Link(
     args='resolved_object.global_name',
     condition=condition_local_storage_enabled, icon=icon_setting_edit,
-    permissions=(permission_settings_edit,), text=_('Edit'),
+    permissions=(permission_settings_edit,), text=_(message='Edit'),
     view='settings:setting_edit_view'
 )

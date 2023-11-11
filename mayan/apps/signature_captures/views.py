@@ -3,7 +3,7 @@ import logging
 from django.shortcuts import reverse
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.views.generics import (
@@ -75,7 +75,7 @@ class SignatureCaptureDeleteView(SingleObjectDeleteView):
             'document': self.object.document,
             'navigation_object_list': ('object', 'document'),
             'object': self.object,
-            'title': _('Delete signature capture: %s') % self.object
+            'title': _(message='Delete signature capture: %s') % self.object
         }
 
     def get_post_action_redirect(self):
@@ -97,7 +97,7 @@ class SignatureCaptureDetailView(SingleObjectDetailView):
         return {
             'navigation_object_list': ('object', 'object.document'),
             'object': self.object,
-            'title': _('Details of: %s') % self.object
+            'title': _(message='Details of: %s') % self.object
         }
 
 
@@ -113,7 +113,7 @@ class SignatureCaptureEditView(SingleObjectEditView):
             'document': self.object.document,
             'navigation_object_list': ('object', 'document'),
             'object': self.object,
-            'title': _('Edit document signature capture: %s') % self.object
+            'title': _(message='Edit document signature capture: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -145,7 +145,7 @@ class SignatureCaptureListView(
                 'Signature captures are electronic versions of a '
                 'persons\'s handwritten signature.'
             ),
-            'no_results_title': _('Document has no signature captures'),
+            'no_results_title': _(message='Document has no signature captures'),
             'object': self.external_object,
             'title': _(
                 'Signature captures for document: %s'

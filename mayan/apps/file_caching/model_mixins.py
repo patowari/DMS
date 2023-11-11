@@ -7,7 +7,7 @@ from django.db.models import F, Sum
 from django.template.defaultfilters import filesizeformat
 from django.utils.functional import cached_property
 from django.utils.text import format_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
@@ -44,14 +44,14 @@ class CacheBusinessLogicMixin:
     get_maximum_size_display.help_text = _(
         'Size at which the cache will start deleting old entries.'
     )
-    get_maximum_size_display.short_description = _('Maximum size')
+    get_maximum_size_display.short_description = _(message='Maximum size')
 
     def get_defined_storage(self):
         try:
             return DefinedStorage.get(name=self.defined_storage_name)
         except KeyError:
             return DefinedStorage(
-                dotted_path='', label=_('Unknown'), name='unknown'
+                dotted_path='', label=_(message='Unknown'), name='unknown'
             )
 
     def get_partition_count(self):
@@ -61,14 +61,14 @@ class CacheBusinessLogicMixin:
 
         return CachePartition.objects.filter(cache=self).count()
 
-    get_partition_count.short_description = _('Partition count')
-    get_partition_count.help_text = _('Total cached objects.')
+    get_partition_count.short_description = _(message='Partition count')
+    get_partition_count.help_text = _(message='Total cached objects.')
 
     def get_partition_file_count(self):
         return self.get_files().count()
 
-    get_partition_file_count.short_description = _('Partition file count')
-    get_partition_file_count.help_text = _('Total cached files.')
+    get_partition_file_count.short_description = _(message='Partition file count')
+    get_partition_file_count.help_text = _(message='Total cached files.')
 
     def get_total_size(self):
         """
@@ -87,8 +87,8 @@ class CacheBusinessLogicMixin:
             ), total_size / self.maximum_size * 100
         )
 
-    get_total_size_display.short_description = _('Current size')
-    get_total_size_display.help_text = _('Current size of the cache.')
+    get_total_size_display.short_description = _(message='Current size')
+    get_total_size_display.help_text = _(message='Current size of the cache.')
 
     @cached_property
     def label(self):
@@ -283,7 +283,7 @@ class CachePartitionBusinessLogicMixin:
             bytes_=self.get_total_size()
         )
 
-    get_total_size_display.short_description = _('Current size')
+    get_total_size_display.short_description = _(message='Current size')
     get_total_size_display.help_text = _(
         'Current size of the cache partition.'
     )

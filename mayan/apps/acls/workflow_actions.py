@@ -3,7 +3,7 @@ import logging
 from django.apps import apps
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -41,7 +41,7 @@ class GrantAccessAction(WorkflowAction):
     }
     form_fields = {
         'content_type': {
-            'label': _('Object type'),
+            'label': _(message='Object type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
                 'help_text': _(
                     'Type of the object for which the access will be modified.'
@@ -50,7 +50,7 @@ class GrantAccessAction(WorkflowAction):
                 'required': True
             }
         }, 'object_id': {
-            'label': _('Object ID'),
+            'label': _(message='Object ID'),
             'class': 'django.forms.IntegerField', 'kwargs': {
                 'help_text': _(
                     'Numeric identifier of the object for which the access '
@@ -58,13 +58,13 @@ class GrantAccessAction(WorkflowAction):
                 ), 'required': True
             }
         }, 'roles': {
-            'label': _('Roles'),
+            'label': _(message='Roles'),
             'class': 'django.forms.ModelMultipleChoiceField', 'kwargs': {
-                'help_text': _('Roles whose access will be modified.'),
+                'help_text': _(message='Roles whose access will be modified.'),
                 'queryset': Role.objects.all(), 'required': True
             }
         }, 'permissions': {
-            'label': _('Permissions'),
+            'label': _(message='Permissions'),
             'class': 'django.forms.MultipleChoiceField', 'kwargs': {
                 'help_text': _(
                     'Permissions to grant/revoke to/from the role for the '
@@ -74,7 +74,7 @@ class GrantAccessAction(WorkflowAction):
             }
         }
     }
-    label = _('Grant object access')
+    label = _(message='Grant object access')
 
     @classmethod
     def clean(cls, request, form_data=None):
@@ -125,11 +125,11 @@ class GrantAccessAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Object'), {
+                _(message='Object'), {
                     'fields': ('content_type', 'object_id')
                 }
             ), (
-                _('Access'), {
+                _(message='Access'), {
                     'fields': ('roles', 'permissions')
                 },
             ),
@@ -167,7 +167,7 @@ class GrantAccessAction(WorkflowAction):
 
 
 class RevokeAccessAction(GrantAccessAction):
-    label = _('Revoke object access')
+    label = _(message='Revoke object access')
 
     def execute(self, context):
         self.get_execute_data()
@@ -194,13 +194,13 @@ class GrantDocumentAccessAction(WorkflowAction):
     }
     form_fields = {
         'roles': {
-            'label': _('Roles'),
+            'label': _(message='Roles'),
             'class': 'django.forms.ModelMultipleChoiceField', 'kwargs': {
-                'help_text': _('Roles whose access will be modified.'),
+                'help_text': _(message='Roles whose access will be modified.'),
                 'queryset': Role.objects.all(), 'required': True
             }
         }, 'permissions': {
-            'label': _('Permissions'),
+            'label': _(message='Permissions'),
             'class': 'django.forms.MultipleChoiceField', 'kwargs': {
                 'help_text': _(
                     'Permissions to grant/revoke to/from the role for the '
@@ -210,7 +210,7 @@ class GrantDocumentAccessAction(WorkflowAction):
             }
         }
     }
-    label = _('Grant document access')
+    label = _(message='Grant document access')
 
     @classmethod
     def get_form_fields(cls, *args, **kwargs):
@@ -228,7 +228,7 @@ class GrantDocumentAccessAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Access'), {
+                _(message='Access'), {
                     'fields': ('roles', 'permissions')
                 },
             ),
@@ -256,7 +256,7 @@ class GrantDocumentAccessAction(WorkflowAction):
 
 
 class RevokeDocumentAccessAction(GrantDocumentAccessAction):
-    label = _('Revoke document access')
+    label = _(message='Revoke document access')
 
     def execute(self, context):
         self.get_execute_data()

@@ -4,7 +4,7 @@ import unicodedata
 import dateparser
 import dateutil
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .exceptions import DynamicSearchValueTransformationError
 
@@ -34,7 +34,7 @@ class ValueTransformation:
 
 
 class ValueTransformationAccentReplace(ValueTransformation):
-    label = _('Replace accents')
+    label = _(message='Replace accents')
 
     def _execute(self):
         if self.value is not None:
@@ -46,7 +46,7 @@ class ValueTransformationAccentReplace(ValueTransformation):
 
 
 class ValueTransformationAtReplace(ValueTransformation):
-    label = _('@ sign replace')
+    label = _(message='@ sign replace')
 
     def _execute(self):
         if self.value is not None:
@@ -56,7 +56,7 @@ class ValueTransformationAtReplace(ValueTransformation):
 
 
 class ValueTransformationCasefold(ValueTransformation):
-    label = _('Case fold')
+    label = _(message='Case fold')
 
     def _execute(self):
         if self.value is not None:
@@ -66,7 +66,7 @@ class ValueTransformationCasefold(ValueTransformation):
 
 
 class ValueTransformationHyphenReplace(ValueTransformation):
-    label = _('Hyphen replace')
+    label = _(message='Hyphen replace')
 
     def _execute(self):
         if self.value is not None:
@@ -76,7 +76,7 @@ class ValueTransformationHyphenReplace(ValueTransformation):
 
 
 class ValueTransformationHyphenStrip(ValueTransformation):
-    label = _('Hyphen replace')
+    label = _(message='Hyphen replace')
 
     def _execute(self):
         if self.value is not None:
@@ -86,7 +86,7 @@ class ValueTransformationHyphenStrip(ValueTransformation):
 
 
 class ValueTransformationToBoolean(ValueTransformation):
-    label = _('To boolean')
+    label = _(message='To boolean')
 
     def _execute(self):
         if self.value is not None:
@@ -99,7 +99,7 @@ class ValueTransformationToBoolean(ValueTransformation):
 
 
 class ValueTransformationToDateTime(ValueTransformation):
-    label = _('To date time')
+    label = _(message='To date time')
 
     def _execute(self):
         if self.value is not None:
@@ -121,7 +121,7 @@ class ValueTransformationToDateTime(ValueTransformation):
 
 
 class ValueTransformationToDateTimeISOFormat(ValueTransformation):
-    label = _('Date time ISO format')
+    label = _(message='Date time ISO format')
 
     def _execute(self):
         if self.value is not None:
@@ -131,7 +131,7 @@ class ValueTransformationToDateTimeISOFormat(ValueTransformation):
 
 
 class ValueTransformationToDateTimeSimpleFormat(ValueTransformation):
-    label = _('Date time simple format')
+    label = _(message='Date time simple format')
 
     def _execute(self):
         if self.value is not None:
@@ -141,7 +141,7 @@ class ValueTransformationToDateTimeSimpleFormat(ValueTransformation):
 
 
 class ValueTransformationToDateTimeTimestamp(ValueTransformation):
-    label = _('Date time timestamp format')
+    label = _(message='Date time timestamp format')
 
     def _execute(self):
         if self.value is not None:
@@ -155,7 +155,7 @@ class ValueTransformationToDateTimeTimestamp(ValueTransformation):
 
 
 class ValueTransformationToInteger(ValueTransformation):
-    label = _('To integer')
+    label = _(message='To integer')
 
     def _execute(self):
         if self.value is not None:
@@ -165,7 +165,7 @@ class ValueTransformationToInteger(ValueTransformation):
 
 
 class ValueTransformationToString(ValueTransformation):
-    label = _('To string')
+    label = _(message='To string')
 
     def _execute(self):
         if self.value is not None:

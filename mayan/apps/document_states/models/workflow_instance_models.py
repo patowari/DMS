@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models.document_models import Document
@@ -28,19 +28,19 @@ class WorkflowInstance(
 ):
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='instances', to=Workflow,
-        verbose_name=_('Workflow')
+        verbose_name=_(message='Workflow')
     )
     datetime = models.DateTimeField(
         auto_now_add=True, db_index=True, help_text=_(
             'Workflow instance creation date time.'
-        ), verbose_name=_('Datetime')
+        ), verbose_name=_(message='Datetime')
     )
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='workflows', to=Document,
-        verbose_name=_('Document')
+        verbose_name=_(message='Document')
     )
     context = models.TextField(
-        blank=True, verbose_name=_('Context')
+        blank=True, verbose_name=_(message='Context')
     )
 
     objects = models.Manager()
@@ -49,8 +49,8 @@ class WorkflowInstance(
     class Meta:
         ordering = ('workflow',)
         unique_together = ('document', 'workflow')
-        verbose_name = _('Workflow instance')
-        verbose_name_plural = _('Workflow instances')
+        verbose_name = _(message='Workflow instance')
+        verbose_name_plural = _(message='Workflow instances')
 
     def __str__(self):
         return str(self.workflow)
@@ -86,30 +86,30 @@ class WorkflowInstanceLogEntry(
     """
     workflow_instance = models.ForeignKey(
         on_delete=models.CASCADE, related_name='log_entries',
-        to=WorkflowInstance, verbose_name=_('Workflow instance')
+        to=WorkflowInstance, verbose_name=_(message='Workflow instance')
     )
     datetime = models.DateTimeField(
-        auto_now_add=True, db_index=True, verbose_name=_('Datetime')
+        auto_now_add=True, db_index=True, verbose_name=_(message='Datetime')
     )
     transition = models.ForeignKey(
         on_delete=models.CASCADE, to='WorkflowTransition',
-        verbose_name=_('Transition')
+        verbose_name=_(message='Transition')
     )
     user = models.ForeignKey(
         blank=True, null=True, on_delete=models.CASCADE,
-        to=settings.AUTH_USER_MODEL, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     comment = models.TextField(
-        blank=True, verbose_name=_('Comment')
+        blank=True, verbose_name=_(message='Comment')
     )
     extra_data = models.TextField(
-        blank=True, verbose_name=_('Extra data')
+        blank=True, verbose_name=_(message='Extra data')
     )
 
     class Meta:
         ordering = ('datetime',)
-        verbose_name = _('Workflow instance log entry')
-        verbose_name_plural = _('Workflow instance log entries')
+        verbose_name = _(message='Workflow instance log entry')
+        verbose_name_plural = _(message='Workflow instance log entries')
 
     def __str__(self):
         return str(self.transition)
@@ -117,7 +117,7 @@ class WorkflowInstanceLogEntry(
     def clean(self):
         if self.transition not in self.workflow_instance.get_transition_choices(user=self.user):
             raise ValidationError(
-                message=_('Not a valid transition choice.')
+                message=_(message='Not a valid transition choice.')
             )
 
     @method_event(

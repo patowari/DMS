@@ -5,8 +5,8 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import MultiFormView
 from mayan.apps.views.utils import request_is_ajax
@@ -48,7 +48,7 @@ class UploadBaseView(
             elif request_is_ajax(request=request):
                 return JsonResponse(
                     data={
-                        'error': force_text(s=exception)
+                        'error': force_str(s=exception)
                     }, status=500
                 )
             else:

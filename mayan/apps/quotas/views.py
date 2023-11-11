@@ -1,7 +1,7 @@
 from django.http import Http404, HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     FormView, SingleObjectDeleteView, SingleObjectDynamicFormCreateView,
@@ -24,7 +24,7 @@ from .permissions import (
 
 class QuotaBackendSelectionView(FormView):
     extra_context = {
-        'title': _('New quota backend selection'),
+        'title': _(message='New quota backend selection'),
     }
     form_class = QuotaBackendSelectionForm
     view_icon = icon_quota_backend_selection
@@ -95,7 +95,7 @@ class QuotaDeleteView(SingleObjectDeleteView):
 
     def get_extra_context(self):
         return {
-            'title': _('Delete quota: %s') % self.object
+            'title': _(message='Delete quota: %s') % self.object
         }
 
 
@@ -111,7 +111,7 @@ class QuotaEditView(SingleObjectDynamicFormEditView):
 
     def get_extra_context(self):
         return {
-            'title': _('Edit quota: %s') % self.object
+            'title': _(message='Edit quota: %s') % self.object
         }
 
     def get_form_extra_kwargs(self):
@@ -146,6 +146,6 @@ class QuotaListView(SingleObjectListView):
             'no_results_text': _(
                 'Quotas restrict usage of system resources. '
             ),
-            'no_results_title': _('No quotas available'),
-            'title': _('Quotas')
+            'no_results_title': _(message='No quotas available'),
+            'title': _(message='Quotas')
         }

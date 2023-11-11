@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.formsets import formset_factory
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.forms import FormDynamicModelBackend
 from mayan.apps.converter.fields import ImageField
@@ -16,8 +16,8 @@ from .models import (
 
 class WorkflowActionSelectionForm(forms.Form):
     klass = forms.ChoiceField(
-        choices=(), help_text=_('The action type for this action entry.'),
-        label=_('Action'), widget=forms.Select(
+        choices=(), help_text=_(message='The action type for this action entry.'),
+        label=_(message='Action'), widget=forms.Select(
             attrs={'class': 'select2'}
         )
     )
@@ -38,7 +38,7 @@ class WorkflowMultipleSelectionForm(FilteredSelectionForm):
     class Meta:
         allow_multiple = True
         field_name = 'workflows'
-        label = _('Workflows')
+        label = _(message='Workflows')
         required = False
         widget_attributes = {'class': 'select2'}
 
@@ -123,22 +123,22 @@ class WorkflowTransitionForm(forms.ModelForm):
 
 class WorkflowTransitionTriggerEventRelationshipForm(forms.Form):
     namespace = forms.CharField(
-        label=_('Namespace'), required=False,
+        label=_(message='Namespace'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     label = forms.CharField(
-        label=_('Label'), required=False,
+        label=_(message='Label'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     relationship = forms.ChoiceField(
         choices=(
-            ('no', _('No')),
-            ('yes', _('Yes')),
-        ), label=_('Enabled'), widget=forms.RadioSelect()
+            ('no', _(message='No')),
+            ('yes', _(message='Yes')),
+        ), label=_(message='Enabled'), widget=forms.RadioSelect()
     )
 
     def __init__(self, *args, **kwargs):
@@ -184,14 +184,14 @@ class WorkflowInstanceTransitionSelectForm(forms.Form):
         ].queryset = workflow_instance.get_transition_choices(user=user)
 
     transition = forms.ModelChoiceField(
-        help_text=_('Select a transition to execute in the next step.'),
-        label=_('Transition'), queryset=WorkflowTransition.objects.none()
+        help_text=_(message='Select a transition to execute in the next step.'),
+        label=_(message='Transition'), queryset=WorkflowTransition.objects.none()
     )
 
 
 class WorkflowPreviewForm(forms.Form):
     workflow = ImageField(
-        image_alt_text=_('Workflow template preview image')
+        image_alt_text=_(message='Workflow template preview image')
     )
 
     def __init__(self, instance=None, *args, **kwargs):

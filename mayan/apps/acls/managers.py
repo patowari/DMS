@@ -8,12 +8,12 @@ from django.core.exceptions import PermissionDenied
 from django.db import models
 from django.db.models import CharField, Q, Value
 from django.db.models.functions import Cast, Concat
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from mayan.apps.common.utils import (
     get_related_field, resolve_attribute, return_related
 )
-from mayan.apps.permissions import Permission
+from mayan.apps.permissions.classes import Permission
 from mayan.apps.permissions.models import StoredPermission
 
 from .exceptions import PermissionNotValidForClass
@@ -270,9 +270,9 @@ class AccessControlListManager(models.Manager):
 
         if not meta:
             logger.debug(
-                ugettext(
-                    'Object "%s" is not a model and cannot be checked for '
-                    'access.'
+                gettext(
+                    message='Object "%s" is not a model and cannot be '
+                    'checked for access.'
                 ) % str(obj)
             )
             return True
@@ -291,7 +291,7 @@ class AccessControlListManager(models.Manager):
             return True
         else:
             raise PermissionDenied(
-                ugettext(message='Insufficient access for: %s') % str(obj)
+                gettext(message='Insufficient access for: %s') % str(obj)
             )
 
     def restrict_queryset(self, permission, queryset, user):

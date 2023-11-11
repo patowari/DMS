@@ -1,7 +1,7 @@
 import logging
 
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
@@ -113,13 +113,13 @@ def condition_source_supports_dry_run(context, resolved_object):
 
 link_document_upload_wizard = Link(
     condition=condition_document_creation_access,
-    icon=icon_document_upload_wizard, text=_('New document'),
+    icon=icon_document_upload_wizard, text=_(message='New document'),
     view='sources:document_upload_wizard'
 )
 link_document_file_upload = Link(
     condition=condition_document_new_files_allowed,
     kwargs={'document_id': 'resolved_object.pk'},
-    icon=icon_document_file_upload, text=_('Upload new file'),
+    icon=icon_document_file_upload, text=_(message='Upload new file'),
     view='sources:document_file_upload'
 )
 
@@ -127,7 +127,7 @@ link_document_file_upload = Link(
 
 link_document_file_source_metadata_list = Link(
     kwargs={'document_file_id': 'resolved_object.pk'},
-    icon=icon_document_file_source_metadata_list, text=_('Source metadata'),
+    icon=icon_document_file_source_metadata_list, text=_(message='Source metadata'),
     view='sources:document_file_source_metadata_list'
 )
 
@@ -136,31 +136,31 @@ link_document_file_source_metadata_list = Link(
 link_source_backend_selection = Link(
     icon=icon_source_backend_selection,
     permissions=(permission_sources_create,),
-    text=_('Create source'), view='sources:source_backend_selection'
+    text=_(message='Create source'), view='sources:source_backend_selection'
 )
 link_source_delete = Link(
     args=('resolved_object.pk',), icon=icon_source_delete,
     permissions=(permission_sources_delete,), tags='dangerous',
-    text=_('Delete'), view='sources:source_delete'
+    text=_(message='Delete'), view='sources:source_delete'
 )
 link_source_edit = Link(
     args=('resolved_object.pk',), icon=icon_source_edit,
-    permissions=(permission_sources_edit,), text=_('Edit'),
+    permissions=(permission_sources_edit,), text=_(message='Edit'),
     view='sources:source_edit'
 )
 link_source_list = Link(
-    icon=icon_source_list, text=_('Sources'), view='sources:source_list'
+    icon=icon_source_list, text=_(message='Sources'), view='sources:source_list'
 )
 link_source_setup = Link(
     condition=factory_condition_queryset_access(
         app_label='sources', model_name='Source',
         object_permission=permission_sources_view,
         view_permission=permission_sources_create,
-    ), icon=icon_source_list, text=_('Sources'),
+    ), icon=icon_source_list, text=_(message='Sources'),
     view='sources:source_list'
 )
 link_source_test = Link(
     args=('resolved_object.pk',), condition=condition_source_supports_dry_run,
     icon=icon_source_test, permissions=(permission_sources_view,),
-    text=_('Test'), view='sources:source_test'
+    text=_(message='Test'), view='sources:source_test'
 )

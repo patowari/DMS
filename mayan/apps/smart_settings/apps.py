@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
@@ -21,7 +21,7 @@ class SmartSettingsApp(MayanAppConfig):
     app_url = 'settings'
     has_tests = True
     name = 'mayan.apps.smart_settings'
-    verbose_name = _('Smart settings')
+    verbose_name = _(message='Smart settings')
 
     def ready(self):
         super().ready()
@@ -30,16 +30,16 @@ class SmartSettingsApp(MayanAppConfig):
 
         SourceColumn(
             func=lambda context: len(context['object'].settings),
-            label=_('Setting count'), include_label=True,
+            label=_(message='Setting count'), include_label=True,
             source=SettingNamespace
         )
         SourceColumn(
             func=lambda context: setting_widget(context['object']),
-            label=_('Name'), is_identifier=True, source=Setting
+            label=_(message='Name'), is_identifier=True, source=Setting
         )
         SourceColumn(
             attribute='serialized_value', include_label=True,
-            label=_('Value'), widget=WidgetSettingValue, source=Setting
+            label=_(message='Value'), widget=WidgetSettingValue, source=Setting
         )
         SourceColumn(
             attribute='is_overridden', include_label=True, source=Setting,

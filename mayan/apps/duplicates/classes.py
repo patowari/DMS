@@ -1,7 +1,7 @@
 import logging
 
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 
@@ -87,4 +87,4 @@ class DuplicateBackend(
 
 
 class NullBackend(DuplicateBackend):
-    label = _('Null backend')
+    label = _(message='Null backend')

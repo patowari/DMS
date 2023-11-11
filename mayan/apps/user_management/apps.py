@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -59,7 +59,7 @@ class UserManagementApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.user_management'
-    verbose_name = _('User management')
+    verbose_name = _(message='User management')
 
     def ready(self):
         super().ready()
@@ -74,9 +74,9 @@ class UserManagementApp(MayanAppConfig):
         )
 
         Group._meta.ordering = ('name',)
-        Group._meta.verbose_name = _('Group')
-        Group._meta.verbose_name_plural = _('Groups')
-        Group._meta.get_field(field_name='name').verbose_name = _('Name')
+        Group._meta.verbose_name = _(message='Group')
+        Group._meta.verbose_name_plural = _(message='Groups')
+        Group._meta.get_field(field_name='name').verbose_name = _(message='Name')
 
         Group.add_to_class(
             name='__init__', value=get_method_group_init()
@@ -96,33 +96,33 @@ class UserManagementApp(MayanAppConfig):
         Group.add_to_class(name='save', value=get_method_group_save())
 
         User._meta.ordering = ('pk',)
-        User._meta.verbose_name = _('User')
-        User._meta.verbose_name_plural = _('Users')
+        User._meta.verbose_name = _(message='User')
+        User._meta.verbose_name_plural = _(message='Users')
         User._meta.ordering = ('last_name', 'first_name')
 
-        User._meta.get_field(field_name='email').verbose_name = _('Email')
+        User._meta.get_field(field_name='email').verbose_name = _(message='Email')
         User._meta.get_field(
             field_name='first_name'
-        ).verbose_name = _('First name')
-        User._meta.get_field(field_name='groups').verbose_name = _('Groups')
+        ).verbose_name = _(message='First name')
+        User._meta.get_field(field_name='groups').verbose_name = _(message='Groups')
         User._meta.get_field(
             field_name='is_active'
-        ).verbose_name = _('Is active?')
+        ).verbose_name = _(message='Is active?')
         User._meta.get_field(
             field_name='is_superuser'
-        ).verbose_name = _('Is super user?')
+        ).verbose_name = _(message='Is super user?')
         User._meta.get_field(
             field_name='last_name'
-        ).verbose_name = _('Last name')
+        ).verbose_name = _(message='Last name')
         User._meta.get_field(
             field_name='password'
-        ).verbose_name = _('Password')
+        ).verbose_name = _(message='Password')
         User._meta.get_field(
             field_name='username'
-        ).verbose_name = _('Username')
+        ).verbose_name = _(message='Username')
         User._meta.get_field(
             field_name='last_login'
-        ).verbose_name = _('Last login')
+        ).verbose_name = _(message='Last login')
 
         User.add_to_class(
             name='__init__', value=get_method_user_init()
@@ -155,11 +155,11 @@ class UserManagementApp(MayanAppConfig):
         EventModelRegistry.register(model=User)
 
         MetadataLookup(
-            description=_('All the groups.'), name='groups',
+            description=_(message='All the groups.'), name='groups',
             value=get_groups
         )
         MetadataLookup(
-            description=_('All the users.'), name='users',
+            description=_(message='All the users.'), name='users',
             value=get_users
         )
 
@@ -219,7 +219,7 @@ class UserManagementApp(MayanAppConfig):
             source=Group
         )
         SourceColumn(
-            attribute='user_set.count', include_label=True, label=_('Users'),
+            attribute='user_set.count', include_label=True, label=_(message='Users'),
             source=Group
         )
 

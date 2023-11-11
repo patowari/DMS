@@ -1,7 +1,7 @@
 from contextlib import contextmanager
 from unittest import mock
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.source_backends.base import SourceBackend
 
@@ -29,7 +29,7 @@ class SourceBackendTestEmail(SourceBackendMixinEmail, SourceBackend):
 
 
 class SourceBackendTestIMAPEmail(SourceBackendIMAPEmail):
-    label = _('Test IMAP email')
+    label = _(message='Test IMAP email')
 
     @contextmanager
     def _get_server(self):
@@ -42,7 +42,7 @@ class SourceBackendTestIMAPEmail(SourceBackendIMAPEmail):
 
 
 class SourceBackendTestPOP3Email(SourceBackendPOP3Email):
-    label = _('Test POP3 email')
+    label = _(message='Test POP3 email')
 
     @contextmanager
     def _get_server(self):

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 COMMAND_NAME_SEARCH_INDEX_OBJECTS = 'search_index_objects'
 COMMAND_NAME_SEARCH_REINDEX = 'search_reindex'
@@ -18,8 +18,8 @@ ERROR_TEXT_NO_RESULT_SCOPE = 'No result scope has been specified.'
 FILTER_PREFIX = 'filter_'
 
 MATCH_ALL_FIELD_CHOICES = (
-    (True, _('Yes')),
-    (False, _('No'))
+    (True, _(message='Yes')),
+    (False, _(message='No'))
 )
 MATCH_ALL_FIELD_NAME = '_match_all'
 MATCH_ALL_VALUES = ('on', 'true', 'yes')

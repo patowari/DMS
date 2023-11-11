@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -15,7 +15,7 @@ logger = logging.getLogger(name=__name__)
 class LockManagerApp(MayanAppConfig):
     has_tests = True
     name = 'mayan.apps.lock_manager'
-    verbose_name = _('Lock manager')
+    verbose_name = _(message='Lock manager')
 
     def ready(self):
         super().ready()

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.storage.classes import DefinedStorage
 
@@ -18,7 +18,7 @@ storage_source_cache = DefinedStorage(
             setting_source_cache_storage_backend_arguments.global_name
         )
     ),
-    label=_('Staging folder files'),
+    label=_(message='Staging folder files'),
     name=STORAGE_NAME_SOURCE_CACHE_FOLDER,
     kwargs=setting_source_cache_storage_backend_arguments.value
 )

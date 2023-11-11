@@ -1,12 +1,12 @@
 from django.apps import apps
 from django.db.models import F, Max
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import DuplicateBackend
 
 
 class DuplicateBackendFileChecksum(DuplicateBackend):
-    label = _('Exact document file checksum')
+    label = _(message='Exact document file checksum')
 
     @classmethod
     def verify(cls, document):
@@ -29,7 +29,7 @@ class DuplicateBackendFileChecksum(DuplicateBackend):
 
 
 class DuplicateBackendLabel(DuplicateBackend):
-    label = _('Exact document label')
+    label = _(message='Exact document label')
 
     def process(self, document):
         Document = apps.get_model(

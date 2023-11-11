@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -10,7 +10,7 @@ from .literals import (
 from .setting_callbacks import callback_update_signature_capture_cache_size
 
 namespace = SettingNamespace(
-    label=_('Signature captures'), name='signature_captures',
+    label=_(message='Signature captures'), name='signature_captures',
 )
 
 

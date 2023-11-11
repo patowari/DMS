@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.navigation.classes import Link
@@ -14,11 +14,11 @@ link_storage_file_delete = Link(
         'document_type_id': 'document_type.pk',
         'source_id': 'source.pk',
         'encoded_filename': 'object.encoded_filename'
-    }, tags='dangerous', text=_('Delete'),
+    }, tags='dangerous', text=_(message='Delete'),
     view='sources:source_action'
 )
 link_source_file_select = Link(
     html_data={'encoded_filename': 'object.encoded_filename'},
     html_extra_classes='source_stored_files-stored_file-select',
-    icon=icon_storage_file_select, text=_('Select'), url=''
+    icon=icon_storage_file_select, text=_(message='Select'), url=''
 )

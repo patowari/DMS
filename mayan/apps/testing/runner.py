@@ -98,7 +98,7 @@ def filter_tests_by_tags(suite, tags, exclude_tags):
             matched_tags = all_tags.intersection(tags)
 
             if (matched_tags or not tags) and not all_tags.intersection(exclude_tags):
-                filtered_suite.addTest(test)
+                filtered_suite.append(test)
 
     return filtered_suite
 

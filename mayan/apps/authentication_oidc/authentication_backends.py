@@ -2,7 +2,7 @@ import requests
 
 from django.conf import settings
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.authentication.classes import AuthenticationBackend
 from mayan.apps.authentication.exceptions import AuthenticationError
@@ -94,6 +94,6 @@ class AuthenticationBackendOIDC(AuthenticationBackend):
         return {
             'form_action': reverse(viewname='oidc_authentication_init'),
             'submit_button_css_extra_classes': 'center-block',
-            'submit_label': _('Login via OIDC'),
+            'submit_label': _(message='Login via OIDC'),
             'submit_method': 'get'
         }

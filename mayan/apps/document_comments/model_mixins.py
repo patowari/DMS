@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class CommentBusinessLogicMixin:
@@ -7,4 +7,4 @@ class CommentBusinessLogicMixin:
             return self.user.get_full_name()
         else:
             return self.user.username
-    get_user_label.short_description = _('User')
+    get_user_label.short_description = _(message='User')

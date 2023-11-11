@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -60,7 +60,7 @@ class TagBusinessLogicMixin:
 
     def get_preview_widget(self):
         return widget_single_tag(tag=self)
-    get_preview_widget.short_description = _('Preview')
+    get_preview_widget.short_description = _(message='Preview')
 
     def remove_from(self, document, user):
         return self._remove_from(document=document, user=user)

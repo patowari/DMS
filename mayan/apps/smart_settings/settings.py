@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -15,16 +15,15 @@ from .literals import (
     DEFAULT_INTERNAL_IPS, DEFAULT_LANGUAGES, DEFAULT_LANGUAGE_CODE,
     DEFAULT_SESSION_COOKIE_NAME, DEFAULT_SESSION_ENGINE,
     DEFAULT_SECURE_PROXY_SSL_HEADER, DEFAULT_STATIC_URL,
-    DEFAULT_STATICFILES_STORAGE, DEFAULT_TIME_ZONE,
-    DEFAULT_USE_X_FORWARDED_HOST, DEFAULT_USE_X_FORWARDED_PORT,
-    DEFAULT_WSGI_APPLICATION
+    DEFAULT_STORAGES, DEFAULT_TIME_ZONE, DEFAULT_USE_X_FORWARDED_HOST,
+    DEFAULT_USE_X_FORWARDED_PORT, DEFAULT_WSGI_APPLICATION
 )
 
 # Don't import anything on star imports, we just want to make it easy
 # for apps.py to activate the settings in this module.
 __all__ = ()
 namespace = SettingNamespace(
-    label=_('Django'), name='django'
+    label=_(message='Django'), name='django'
 )
 
 setting_django_allowed_hosts = namespace.add_setting(
@@ -284,13 +283,13 @@ setting_django_static_url = namespace.add_setting(
         'It must end in a slash if set to a non-empty value.'
     )
 )
-setting_django_staticfiles_storage = namespace.add_setting(
-    default=DEFAULT_STATICFILES_STORAGE, global_name='STATICFILES_STORAGE',
+setting_django_storages = namespace.add_setting(
+    default=DEFAULT_STORAGES, global_name='STORAGES',
     help_text=_(
-        'The file storage engine to use when collecting static files with '
-        'the collectstatic management command. A ready-to-use instance of '
-        'the storage backend defined in this setting can be found at '
-        'django.contrib.staticfiles.storage.staticfiles_storage.'
+        'A dictionary containing the settings for all storages to be used '
+        'with Django. It is a nested dictionary whose contents map a '
+        'storage alias to a dictionary containing the options for an '
+        'individual storage.'
     )
 )
 setting_django_time_zone = namespace.add_setting(

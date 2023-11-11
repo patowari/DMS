@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.forms import FormDynamicModelBackend
 
@@ -9,8 +9,8 @@ from .models import StoredCredential
 
 class StoredCredentialBackendSelectionForm(forms.Form):
     backend = forms.ChoiceField(
-        choices=(), help_text=_('The backend to use for the credential.'),
-        label=_('Backend')
+        choices=(), help_text=_(message='The backend to use for the credential.'),
+        label=_(message='Backend')
     )
 
     def __init__(self, *args, **kwargs):

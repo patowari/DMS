@@ -2,7 +2,7 @@ import yaml
 
 from django import forms
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 
@@ -23,7 +23,7 @@ class SettingForm(forms.Form):
                 required=False, widget=forms.widgets.Textarea()
             )
 
-        self.fields['value'].label = _('Value')
+        self.fields['value'].label = _(message='Value')
         self.fields['value'].help_text = self.setting.help_text or _(
             'Enter the new setting value.'
         )

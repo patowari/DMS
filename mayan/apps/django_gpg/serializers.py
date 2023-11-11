@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.rest_api import serializers
 
@@ -9,7 +9,7 @@ class KeySerializer(serializers.ModelSerializer):
     class Meta:
         extra_kwargs = {
             'url': {
-                'label': _('URL'),
+                'label': _(message='URL'),
                 'lookup_url_kwarg': 'key_id',
                 'view_name': 'rest_api:key-detail'
             }

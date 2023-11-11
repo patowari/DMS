@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models.document_type_models import DocumentType
@@ -20,27 +20,27 @@ class WebLink(ExtraDataModelMixin, WebLinkBusinessLogicMixin, models.Model):
     generating links from documents to external resources.
     """
     label = models.CharField(
-        db_index=True, help_text=_('A short text describing the web link.'),
-        max_length=96, unique=True, verbose_name=_('Label')
+        db_index=True, help_text=_(message='A short text describing the web link.'),
+        max_length=96, unique=True, verbose_name=_(message='Label')
     )
     template = models.TextField(
         help_text=_(
             'Template that will be used to craft the final URL of the '
             'web link.'
-        ), verbose_name=_('Template')
+        ), verbose_name=_(message='Template')
     )
     enabled = models.BooleanField(
-        default=True, verbose_name=_('Enabled')
+        default=True, verbose_name=_(message='Enabled')
     )
     document_types = models.ManyToManyField(
         related_name='web_links', to=DocumentType,
-        verbose_name=_('Document types')
+        verbose_name=_(message='Document types')
     )
 
     class Meta:
         ordering = ('label',)
-        verbose_name = _('Web link')
-        verbose_name_plural = _('Web links')
+        verbose_name = _(message='Web link')
+        verbose_name_plural = _(message='Web links')
 
     def __str__(self):
         return self.label

@@ -1,11 +1,11 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Search'), name='search'
+    label=_(message='Search'), name='search'
 )
 
 permission_search_tools = namespace.add_permission(
-    label=_('Execute search tools'), name='search_tools'
+    label=_(message='Execute search tools'), name='search_tools'
 )

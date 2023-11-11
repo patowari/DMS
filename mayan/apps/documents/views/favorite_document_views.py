@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.views.exceptions import ActionError
 from mayan.apps.views.generics import MultipleObjectConfirmActionView
@@ -34,8 +34,8 @@ class FavoriteDocumentListView(DocumentListView):
                     'Favorited documents will be listed in this view. '
                     'Up to %(count)d documents can be favorited per user. '
                 ) % {'count': setting_favorite_count.value},
-                'no_results_title': _('There are no favorited documents.'),
-                'title': _('Favorites')
+                'no_results_title': _(message='There are no favorited documents.'),
+                'title': _(message='Favorites')
             }
         )
         return context
@@ -55,7 +55,7 @@ class FavoriteAddView(MultipleObjectConfirmActionView):
 
     def get_extra_context(self):
         context = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Add the selected document to favorites?',
                 plural='Add the selected documents to favorites?',
                 number=self.object_list.count()
@@ -74,7 +74,7 @@ class FavoriteAddView(MultipleObjectConfirmActionView):
 
 
 class FavoriteRemoveView(MultipleObjectConfirmActionView):
-    error_message = _('Document "%(instance)s" is not in favorites.')
+    error_message = _(message='Document "%(instance)s" is not in favorites.')
     object_permission = permission_document_view
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
@@ -88,7 +88,7 @@ class FavoriteRemoveView(MultipleObjectConfirmActionView):
 
     def get_extra_context(self):
         context = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Remove the selected document from favorites?',
                 plural='Remove the selected documents from favorites?',
                 number=self.object_list.count()

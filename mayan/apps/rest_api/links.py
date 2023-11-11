@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 
@@ -14,15 +14,15 @@ def condition_api_links_enabled(context, resolved_object):
 
 link_api = Link(
     condition=condition_api_links_enabled, icon=icon_api, tags='new_window',
-    text=_('REST API'), view='rest_api:api_root'
+    text=_(message='REST API'), view='rest_api:api_root'
 )
 link_api_documentation = Link(
     condition=condition_api_links_enabled, icon=icon_api_documentation,
-    tags='new_window', text=_('API Documentation (Swagger)'),
+    tags='new_window', text=_(message='API Documentation (Swagger)'),
     view='rest_api:schema-swagger-ui'
 )
 link_api_documentation_redoc = Link(
     condition=condition_api_links_enabled, icon=icon_api_documentation_redoc,
-    tags='new_window', text=_('API Documentation (ReDoc)'),
+    tags='new_window', text=_(message='API Documentation (ReDoc)'),
     view='rest_api:schema-redoc'
 )

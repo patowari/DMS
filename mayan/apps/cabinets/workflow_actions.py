@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 
@@ -18,7 +18,7 @@ class CabinetAddAction(WorkflowAction):
             }
         }
     }
-    label = _('Add to cabinets')
+    label = _(message='Add to cabinets')
     permission = permission_cabinet_add_document
 
     @classmethod
@@ -36,7 +36,7 @@ class CabinetAddAction(WorkflowAction):
                         'source_model': Cabinet,
                         'permission': cls.permission
                     },
-                    'label': _('Cabinets'),
+                    'label': _(message='Cabinets'),
                     'required': True
                 }
             }
@@ -50,7 +50,7 @@ class CabinetAddAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Cabinets'), {
+                _(message='Cabinets'), {
                     'fields': ('cabinets',)
                 }
             ),
@@ -72,7 +72,7 @@ class CabinetAddAction(WorkflowAction):
 
 
 class CabinetRemoveAction(CabinetAddAction):
-    label = _('Remove from cabinets')
+    label = _(message='Remove from cabinets')
     permission = permission_cabinet_remove_document
 
     @classmethod

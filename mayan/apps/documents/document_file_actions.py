@@ -1,12 +1,12 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import DocumentFileAction
 
 
 class DocumentFileActionAppendNewPages(DocumentFileAction):
     action_id = 'append'
-    label = _('Append. Create a new version and append the new file pages.')
+    label = _(message='Append. Create a new version and append the new file pages.')
 
     @staticmethod
     def execute(document, document_file, comment, user):
@@ -54,7 +54,7 @@ class DocumentFileActionNothing(DocumentFileAction):
 
 class DocumentFileActionUseNewPages(DocumentFileAction):
     action_id = 'replace'
-    label = _('Replace. Create a new version and use the new file pages.')
+    label = _(message='Replace. Create a new version and use the new file pages.')
 
     @staticmethod
     def execute(document, document_file, comment, user):

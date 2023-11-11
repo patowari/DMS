@@ -1,6 +1,6 @@
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.permissions import (
@@ -28,7 +28,7 @@ from ..permissions import (
 
 
 class MetadataTypeCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create metadata type')}
+    extra_context = {'title': _(message='Create metadata type')}
     form_class = MetadataTypeForm
     model = MetadataType
     post_action_redirect = reverse_lazy(
@@ -62,9 +62,9 @@ class MetadataTypeDeleteView(MultipleObjectDeleteView):
     success_message_singular = _(
         '%(count)d metadata type deleted successfully.'
     )
-    title_plural = _('Delete the %(count)d selected metadata types.')
-    title_single = _('Delete metadata type: %(object)s.')
-    title_singular = _('Delete the %(count)d selected metadata type.')
+    title_plural = _(message='Delete the %(count)d selected metadata types.')
+    title_single = _(message='Delete metadata type: %(object)s.')
+    title_singular = _(message='Delete the %(count)d selected metadata type.')
     view_icon = icon_metadata_type_single_delete
 
 
@@ -81,7 +81,7 @@ class MetadataTypeEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit metadata type: %s') % self.object
+            'title': _(message='Edit metadata type: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -111,8 +111,8 @@ class MetadataTypeListView(SingleObjectListView):
                 'will block the upload of documents of that type until a '
                 'metadata value is provided.'
             ),
-            'no_results_title': _('There are no metadata types'),
-            'title': _('Metadata types')
+            'no_results_title': _(message='There are no metadata types'),
+            'title': _(message='Metadata types')
         }
 
 

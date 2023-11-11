@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.documents.models.document_version_page_models import DocumentVersionPage
@@ -12,7 +12,7 @@ __all__ = ('UpdateDocumentPageOCRAction',)
 class UpdateDocumentPageOCRAction(WorkflowAction):
     form_fields = {
         'page_condition': {
-            'label': _('Page condition'),
+            'label': _(message='Page condition'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -28,7 +28,7 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
             }
         },
         'page_content': {
-            'label': _('Page content'),
+            'label': _(message='Page content'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -39,7 +39,7 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
             }
         }
     }
-    label = _('Update document page OCR content')
+    label = _(message='Update document page OCR content')
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -47,7 +47,7 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('OCR'), {
+                _(message='OCR'), {
                     'fields': ('page_condition', 'page_content')
                 },
             ),

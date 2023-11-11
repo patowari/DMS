@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.urls import reverse
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.classes import Template
 
@@ -20,7 +20,7 @@ def widget_event_actor_link(context, attribute=None):
         entry = getattr(entry, attribute)
 
     if entry.actor == entry.target:
-        label = _('System')
+        label = _(message='System')
         url = None
     else:
         label = entry.actor

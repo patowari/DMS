@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.model_mixins import BackendModelMixin
 from mayan.apps.common.validators import validate_internal_name
@@ -19,21 +19,21 @@ class StoredCredential(
     _backend_model_null_backend = CredentialBackendNull
 
     label = models.CharField(
-        help_text=_('Short description of this credential.'), max_length=128,
-        unique=True, verbose_name=_('Label')
+        help_text=_(message='Short description of this credential.'), max_length=128,
+        unique=True, verbose_name=_(message='Label')
     )
     internal_name = models.CharField(
         db_index=True, help_text=_(
             'This value will be used by other apps to reference this '
             'credential. Can only contain letters, numbers, and underscores.'
         ), max_length=255, unique=True, validators=[validate_internal_name],
-        verbose_name=_('Internal name')
+        verbose_name=_(message='Internal name')
     )
 
     class Meta:
         ordering = ('label',)
-        verbose_name = _('Credential')
-        verbose_name_plural = _('Credentials')
+        verbose_name = _(message='Credential')
+        verbose_name_plural = _(message='Credentials')
 
     def __str__(self):
         return self.label

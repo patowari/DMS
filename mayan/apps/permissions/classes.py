@@ -5,7 +5,7 @@ from django.apps import apps
 from django.core.exceptions import PermissionDenied
 from django.db.utils import OperationalError, ProgrammingError
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.collections import ClassCollection
@@ -63,7 +63,7 @@ class Permission(AppsModuleLoaderMixin):
             'User "%s" does not have permissions "%s"', user, permissions
         )
         raise PermissionDenied(
-            _('Insufficient permissions.')
+            _(message='Insufficient permissions.')
         )
 
     @classmethod

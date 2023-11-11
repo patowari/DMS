@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import post_save, pre_delete
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -51,7 +51,7 @@ class CabinetsApp(MayanAppConfig):
         'cabinets/node_modules/jstree/jstree.jquery.json',
         'cabinets/node_modules/jstree/src/*',
     )
-    verbose_name = _('Cabinets')
+    verbose_name = _(message='Cabinets')
 
     def ready(self):
         super().ready()
@@ -161,23 +161,23 @@ class CabinetsApp(MayanAppConfig):
         )
 
         SourceColumn(
-            label=_('Cabinets'), order=1, source=Document,
+            label=_(message='Cabinets'), order=1, source=Document,
             widget=DocumentCabinetWidget
         )
         SourceColumn(
-            attribute='document', label=_('Cabinets'), order=1,
+            attribute='document', label=_(message='Cabinets'), order=1,
             source=DocumentFileSearchResult, widget=DocumentCabinetWidget
         )
         SourceColumn(
-            attribute='document_file__document', label=_('Cabinets'), order=1,
+            attribute='document_file__document', label=_(message='Cabinets'), order=1,
             source=DocumentFilePageSearchResult, widget=DocumentCabinetWidget
         )
         SourceColumn(
-            attribute='document', label=_('Cabinets'), order=1,
+            attribute='document', label=_(message='Cabinets'), order=1,
             source=DocumentVersionSearchResult, widget=DocumentCabinetWidget
         )
         SourceColumn(
-            attribute='document_version__document', label=_('Cabinets'),
+            attribute='document_version__document', label=_(message='Cabinets'),
             order=1, source=DocumentVersionPageSearchResult,
             widget=DocumentCabinetWidget
         )

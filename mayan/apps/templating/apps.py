@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -16,7 +16,7 @@ class TemplatingApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.templating'
-    verbose_name = _('Templating')
+    verbose_name = _(message='Templating')
 
     def ready(self):
         super().ready()

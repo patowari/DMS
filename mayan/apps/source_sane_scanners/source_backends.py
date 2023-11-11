@@ -4,7 +4,7 @@ import sh
 
 from django.core.files import File
 from django.utils.timezone import now
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.source_generated_files.source_backend_actions.generated_file_actions import (
@@ -26,7 +26,7 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
         SourceBackendActionGenerateFileDocumentFileUpload,
         SourceBackendActionGenerateFileDocumentUpload
     )
-    label = _('SANE Scanner')
+    label = _(message='SANE Scanner')
     widgets = {
         'arguments': {
             'class': 'django.forms.widgets.Textarea', 'kwargs': {
@@ -48,7 +48,7 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                         'Device name as returned by the SANE backend.'
                     ),
                     'kwargs': {'max_length': 255},
-                    'label': _('Device name'),
+                    'label': _(message='Device name'),
                     'required': True
                 },
                 'arguments': {
@@ -59,7 +59,7 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                         'device. Execute `scanimage --help --device-name=DEVICE` '
                         'for the list of supported arguments.'
                     ),
-                    'label': _('Arguments'),
+                    'label': _(message='Arguments'),
                     'required': False
                 }
             }
@@ -73,7 +73,7 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
 
         fieldsets += (
             (
-                _('SANE client'), {
+                _(message='SANE client'), {
                     'fields': ('device_name', 'arguments')
                 },
             ),
@@ -131,8 +131,8 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                     'context': {
                         'forms': context['forms'],
                         'is_multipart': True,
-                        'title': _('Document properties'),
-                        'submit_label': _('Scan')
+                        'title': _(message='Document properties'),
+                        'submit_label': _(message='Scan')
                     },
                     'name': 'appearance/generic_multiform_subtemplate.html'
                 }

@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import permission_acl_edit, permission_acl_view
@@ -34,7 +34,7 @@ class AnnouncementsApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.announcements'
-    verbose_name = _('Announcements')
+    verbose_name = _(message='Announcements')
 
     def ready(self):
         super().ready()
@@ -76,11 +76,11 @@ class AnnouncementsApp(MayanAppConfig):
             source=Announcement, widget=TwoStateWidget
         )
         SourceColumn(
-            attribute='start_datetime', empty_value=_('None'),
+            attribute='start_datetime', empty_value=_(message='None'),
             include_label=True, is_sortable=True, source=Announcement
         )
         SourceColumn(
-            attribute='end_datetime', empty_value=_('None'),
+            attribute='end_datetime', empty_value=_(message='None'),
             include_label=True, is_sortable=True, source=Announcement
         )
 

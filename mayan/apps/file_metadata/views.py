@@ -2,8 +2,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.documents.forms.document_type_forms import DocumentTypeFilteredSelectForm
 from mayan.apps.documents.models.document_models import Document
@@ -57,7 +56,7 @@ class DocumentFileDriverListView(
                 'same as the document metadata, which are user defined and '
                 'reside in the database.'
             ),
-            'no_results_title': _('No file metadata available.'),
+            'no_results_title': _(message='No file metadata available.'),
             'object': self.external_object,
             'title': _(
                 'File metadata drivers for: %s'
@@ -129,7 +128,7 @@ class DocumentFileSubmitView(MultipleObjectConfirmActionView):
         queryset = self.object_list
 
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Submit the selected document file to the file metadata queue?',
                 plural='Submit the selected documents files to the file metadata queue?',
                 number=queryset.count()

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.authentication.link_conditions import condition_user_is_authenticated
 from mayan.apps.authentication.utils import get_context_user
@@ -25,26 +25,26 @@ def condition_not_is_in_favorites(context, resolved_object):
 
 link_document_favorites_list = Link(
     condition=condition_user_is_authenticated,
-    icon=icon_favorite_document_list, text=_('Favorites'),
+    icon=icon_favorite_document_list, text=_(message='Favorites'),
     view='documents:document_favorite_list'
 )
 link_document_favorites_add = Link(
     condition=condition_not_is_in_favorites,
     args='resolved_object.id', icon=icon_favorite_document_add,
-    permissions=(permission_document_view,), text=_('Add to favorites'),
+    permissions=(permission_document_view,), text=_(message='Add to favorites'),
     view='documents:document_favorite_add'
 )
 link_document_favorites_remove = Link(
     condition=condition_is_in_favorites,
     args='resolved_object.id', icon=icon_favorite_document_remove,
-    permissions=(permission_document_view,), text=_('Remove from favorites'),
+    permissions=(permission_document_view,), text=_(message='Remove from favorites'),
     view='documents:document_favorite_remove'
 )
 link_document_favorites_add_multiple = Link(
-    text=_('Add to favorites'), icon=icon_favorite_document_add,
+    text=_(message='Add to favorites'), icon=icon_favorite_document_add,
     view='documents:document_favorite_add_multiple'
 )
 link_document_favorites_remove_multiple = Link(
-    text=_('Remove from favorites'), icon=icon_favorite_document_remove,
+    text=_(message='Remove from favorites'), icon=icon_favorite_document_remove,
     view='documents:document_favorite_remove_multiple'
 )

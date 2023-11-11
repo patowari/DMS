@@ -4,7 +4,7 @@ import yaml
 
 from django.core.exceptions import ValidationError
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.credentials.class_mixins import BackendMixinCredentialsOptional
@@ -38,7 +38,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
                     'kwargs': {
                         'max_length': 255,
                     },
-                    'label': _('Storage backend'),
+                    'label': _(message='Storage backend'),
                     'required': True
                 },
                 'storage_backend_arguments': {
@@ -52,7 +52,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
                         ),
                         'max_length': 255,
                     },
-                    'label': _('Storage backend arguments'),
+                    'label': _(message='Storage backend arguments'),
                     'required': False
                 }
             }
@@ -66,7 +66,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
 
         fieldsets += (
             (
-                _('Storage'), {
+                _(message='Storage'), {
                     'fields': (
                         'storage_backend', 'storage_backend_arguments'
                     )

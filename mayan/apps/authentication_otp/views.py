@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.signing import BadSignature, dumps, loads
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import RedirectView
 
 from mayan.apps.views.generics import (
@@ -53,7 +53,7 @@ class UserOTPDataDisableView(OTPBackendEnabledViewMixin, ConfirmView):
         self.request.user.otp_data.disable()
 
         messages.success(
-            message=_('OTP disable successfully.'), request=self.request
+            message=_(message='OTP disable successfully.'), request=self.request
         )
 
 
@@ -75,7 +75,7 @@ class UserOTPDataVerifyTokenView(OTPBackendEnabledViewMixin, FormView):
 
         if request.user.otp_data.is_enabled():
             messages.info(
-                message=_('OTP is already enabled.'), request=self.request
+                message=_(message='OTP is already enabled.'), request=self.request
             )
             return HttpResponseRedirect(
                 redirect_to=reverse(
@@ -91,7 +91,7 @@ class UserOTPDataVerifyTokenView(OTPBackendEnabledViewMixin, FormView):
         self.request.user.otp_data.enable(secret=secret, token=token)
 
         messages.success(
-            message=_('OTP enabled successfully.'), request=self.request
+            message=_(message='OTP enabled successfully.'), request=self.request
         )
 
         return super().form_valid(form=form)

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -9,7 +9,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Logging'), name='logging'
+    label=_(message='Logging'), name='logging'
 )
 
 setting_logging_disable_color_formatter = namespace.add_setting(

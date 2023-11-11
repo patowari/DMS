@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 
 class DocumentCheckoutError(Exception):
@@ -12,7 +12,7 @@ class DocumentNotCheckedOut(DocumentCheckoutError):
     Raised when trying to checkin a document that is not checked out.
     """
     def __str__(self):
-        return ugettext('Document not checked out.')
+        return gettext('Document not checked out.')
 
 
 class DocumentAlreadyCheckedOut(DocumentCheckoutError):
@@ -20,7 +20,7 @@ class DocumentAlreadyCheckedOut(DocumentCheckoutError):
     Raised when trying to checkout an already checkedout document.
     """
     def __str__(self):
-        return ugettext('Document already checked out.')
+        return gettext(message='Document already checked out.')
 
 
 class NewDocumentFileNotAllowed(DocumentCheckoutError):

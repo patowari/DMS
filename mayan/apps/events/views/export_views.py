@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from actstream.models import Action
 
@@ -57,7 +57,7 @@ class EventListExportView(EventExportBaseView):
         context = super().get_extra_context()
         context.update(
             {
-                'title': _('Export events')
+                'title': _(message='Export events')
             }
         )
         return context
@@ -78,7 +78,7 @@ class ObjectEventExportView(
         context.update(
             {
                 'object': self.external_object,
-                'title': _('Export events of: %s') % self.external_object
+                'title': _(message='Export events of: %s') % self.external_object
             }
         )
         return context

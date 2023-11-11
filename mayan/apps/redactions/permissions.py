@@ -1,23 +1,23 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Redactions'), name='redactions'
+    label=_(message='Redactions'), name='redactions'
 )
 
 permission_redaction_create = namespace.add_permission(
-    label=_('Create new redactions'), name='redaction_create'
+    label=_(message='Create new redactions'), name='redaction_create'
 )
 permission_redaction_delete = namespace.add_permission(
-    label=_('Delete redactions'), name='redaction_delete'
+    label=_(message='Delete redactions'), name='redaction_delete'
 )
 permission_redaction_edit = namespace.add_permission(
-    label=_('Edit redactions'), name='redaction_edit'
+    label=_(message='Edit redactions'), name='redaction_edit'
 )
 permission_redaction_exclude = namespace.add_permission(
-    label=_('Exclude redactions'), name='redaction_exclude'
+    label=_(message='Exclude redactions'), name='redaction_exclude'
 )
 permission_redaction_view = namespace.add_permission(
-    label=_('View existing redactions'), name='redaction_view'
+    label=_(message='View existing redactions'), name='redaction_view'
 )

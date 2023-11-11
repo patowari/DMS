@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.documents.forms.document_type_forms import (
     DocumentTypeFilteredSelectForm
@@ -49,7 +49,7 @@ class DocumentFileContentDeleteView(MultipleObjectDeleteView):
     success_message_singular = _(
         'Content of %(count)d document version deleted successfully.'
     )
-    title_single = _('Delete the content of: %(object)s.')
+    title_single = _(message='Delete the content of: %(object)s.')
     title_singular = _(
         'Delete the content of the %(count)d selected document version.'
     )
@@ -95,7 +95,7 @@ class DocumentFileContentView(SingleObjectDetailView):
         return {
             'hide_labels': True,
             'object': self.object,
-            'title': _('Content for document file: %s') % self.object
+            'title': _(message='Content for document file: %s') % self.object
         }
 
 
@@ -117,7 +117,7 @@ class DocumentFilePageContentView(SingleObjectDetailView):
         return {
             'hide_labels': True,
             'object': self.object,
-            'title': _('Content for document file page: %s') % self.object
+            'title': _(message='Content for document file page: %s') % self.object
         }
 
     def get_source_queryset(self):
@@ -143,7 +143,7 @@ class DocumentFileSubmitView(MultipleObjectConfirmActionView):
         queryset = self.object_list
 
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Submit %(count)d document file to the parsing queue?',
                 plural='Submit %(count)d documents files to the parsing queue?',
                 number=queryset.count()
@@ -197,7 +197,7 @@ class DocumentTypeSettingsEditView(
 
 class DocumentTypeSubmitView(FormView):
     extra_context = {
-        'title': _('Submit all documents of a type for parsing')
+        'title': _(message='Submit all documents of a type for parsing')
     }
     form_class = DocumentTypeFilteredSelectForm
     post_action_redirect = reverse_lazy(viewname='common:tools_list')

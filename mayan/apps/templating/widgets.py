@@ -66,21 +66,21 @@ class TemplateWidget(NamedMultiWidget):
         choices_builtin = []
         choices_builtin.append(
             (
-                _('Filters'), self.get_builtin_choices(
+                _(message='Filters'), self.get_builtin_choices(
                     klass='filters', name_template='{{{{ | {} }}}}'
                 )
             )
         )
         choices_builtin.append(
             (
-                _('Tags'), self.get_builtin_choices(
+                _(message='Tags'), self.get_builtin_choices(
                     klass='tags', name_template='{{% {} %}}'
                 )
             )
         )
         choices_builtin.insert(
             0, (
-                '', _('<Filters and tags>')
+                '', _(message='<Filters and tags>')
             )
         )
 
@@ -125,7 +125,7 @@ class ModelTemplateWidget(TemplateWidget):
         attribute_choices = ModelAttribute.get_all_choices_for(model=model)
         attribute_choices.insert(
             0, (
-                '', _('<Model attributes>')
+                '', _(message='<Model attributes>')
             )
         )
 

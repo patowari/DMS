@@ -218,16 +218,15 @@ class DocumentTypeMetadataTypeRelationshipViewTestCase(
             test_document_type_metadata_type_relationship_count + 1
         )
 
-        self.assertQuerysetEqual(
+        self.assertQuerySetEqual(
             qs=self._test_document_type.metadata.values(
                 'metadata_type', 'required'
-            ),
-            values=[
+            ), transform=dict, values=(
                 {
                     'metadata_type': self._test_metadata_type.pk,
-                    'required': True,
-                }
-            ], transform=dict
+                    'required': True
+                },
+            )
         )
 
         events = self._get_test_events()
@@ -643,16 +642,15 @@ class MetadataTypeDocumentTypeRelationshipViewTestCase(
             test_metadata_type_document_type_relationship_count + 1
         )
 
-        self.assertQuerysetEqual(
+        self.assertQuerySetEqual(
             qs=self._test_document_type.metadata.values(
                 'metadata_type', 'required'
-            ),
-            values=[
+            ), transform=dict, values=(
                 {
                     'metadata_type': self._test_metadata_type.pk,
-                    'required': True,
-                }
-            ], transform=dict
+                    'required': True
+                },
+            )
         )
 
         events = self._get_test_events()

@@ -2,7 +2,7 @@ import logging
 
 from django.apps import apps
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -52,7 +52,7 @@ class OCRApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.ocr'
-    verbose_name = _('OCR')
+    verbose_name = _(message='OCR')
 
     def ready(self):
         super().ready()
@@ -113,14 +113,14 @@ class OCRApp(MayanAppConfig):
             name='versions__version_pages__ocr_content__content'
         )
         ModelProperty(
-            description=_('The OCR content.'), label='OCR content',
+            description=_(message='The OCR content.'), label='OCR content',
             model=DocumentVersionPage, name='ocr_content.content'
         )
         ModelProperty(
             description=_(
                 'A generator returning the document\'s version pages OCR '
                 'content.'
-            ), label=_('OCR content'), model=Document,
+            ), label=_(message='OCR content'), model=Document,
             name='ocr_content'
         )
 

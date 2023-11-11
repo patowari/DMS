@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dependencies.classes import PythonDependency
 from mayan.apps.dependencies.environments import (
@@ -36,7 +36,7 @@ PythonDependency(
         ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django', version_string='==3.2.20'
+    ''', module=__name__, name='django', version_string='==4.2.5'
 )
 PythonDependency(
     legal_text='''

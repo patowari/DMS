@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.django_gpg.models import Key
 from mayan.apps.django_gpg.permissions import permission_key_sign
@@ -25,7 +25,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
     }
     form_fields = {
         'passphrase': {
-            'label': _('Passphrase'),
+            'label': _(message='Passphrase'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'The passphrase to unlock the key and allow it to be '
@@ -34,7 +34,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
             },
         },
     }
-    label = _('Sign document (detached)')
+    label = _(message='Sign document (detached)')
 
     @classmethod
     def get_form_fields(cls):
@@ -52,7 +52,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
                         'source_model': Key,
                         'permission': permission_key_sign
                     },
-                    'label': _('Private key'),
+                    'label': _(message='Private key'),
                     'required': True
                 }
             }
@@ -66,7 +66,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Key'), {
+                _(message='Key'), {
                     'fields': ('key', 'passphrase',)
                 }
             ),
@@ -99,7 +99,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
 
 
 class DocumentSignatureEmbeddedAction(DocumentSignatureDetachedAction):
-    label = _('Sign document (embedded)')
+    label = _(message='Sign document (embedded)')
 
     def execute(self, context):
         EmbeddedSignature.objects.sign_document_file(

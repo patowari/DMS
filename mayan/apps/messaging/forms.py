@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.user_management.querysets import get_user_queryset
 from mayan.apps.views.widgets import TextAreaDiv
@@ -23,7 +23,7 @@ class MessageCreateForm(forms.ModelForm):
 
 class MessageDetailForm(forms.Form):
     body = forms.CharField(
-        label=_('Body'),
+        label=_(message='Body'),
         widget=TextAreaDiv(
             attrs={
                 'class': 'views-text-wrap full-height',

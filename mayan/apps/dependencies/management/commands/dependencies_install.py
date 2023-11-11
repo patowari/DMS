@@ -1,5 +1,5 @@
 from django.core import management
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ...classes import GoogleFontDependency, JavaScriptDependency
 
@@ -10,11 +10,11 @@ class Command(management.BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument(
             '--app', action='store', dest='app',
-            help=_('Process a specific app.'),
+            help=_(message='Process a specific app.'),
         )
         parser.add_argument(
             '--force', action='store_true', dest='force',
-            help=_('Force installation even if already installed.'),
+            help=_(message='Force installation even if already installed.'),
         )
 
     def handle(self, *args, **options):

@@ -1,7 +1,7 @@
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..managers import DocumentFilePageManager, ValidDocumentFilePageManager
 
@@ -23,11 +23,11 @@ class DocumentFilePage(
 
     document_file = models.ForeignKey(
         on_delete=models.CASCADE, related_name='file_pages', to=DocumentFile,
-        verbose_name=_('Document file')
+        verbose_name=_(message='Document file')
     )
     page_number = models.PositiveIntegerField(
         db_index=True, default=1, editable=False,
-        verbose_name=_('Page number')
+        verbose_name=_(message='Page number')
     )
 
     objects = DocumentFilePageManager()
@@ -35,8 +35,8 @@ class DocumentFilePage(
 
     class Meta:
         ordering = ('page_number',)
-        verbose_name = _('Document file page')
-        verbose_name_plural = _('Document file pages')
+        verbose_name = _(message='Document file page')
+        verbose_name_plural = _(message='Document file pages')
 
     def __str__(self):
         return self.get_label()
@@ -81,5 +81,5 @@ class DocumentFilePageSearchResult(DocumentFilePage):
     class Meta:
         ordering = ('document_file__document', 'page_number')
         proxy = True
-        verbose_name = _('Document file page')
-        verbose_name_plural = _('Document file pages')
+        verbose_name = _(message='Document file page')
+        verbose_name_plural = _(message='Document file pages')

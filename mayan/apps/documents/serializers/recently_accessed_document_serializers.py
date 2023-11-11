@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.rest_api import serializers
 from mayan.apps.user_management.serializers import UserSerializer
@@ -10,10 +10,10 @@ from .document_serializers import DocumentSerializer
 
 class RecentlyAccessedDocumentSerializer(serializers.ModelSerializer):
     document = DocumentSerializer(
-        label=_('Document'), read_only=True
+        label=_(message='Document'), read_only=True
     )
     user = UserSerializer(
-        label=_('User'), read_only=True
+        label=_(message='User'), read_only=True
     )
 
     class Meta:

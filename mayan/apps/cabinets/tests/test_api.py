@@ -1,4 +1,4 @@
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from rest_framework import status
 
@@ -483,7 +483,7 @@ class CabinetDocumentAPITestCase(
 
         self.assertEqual(
             response.data['results'][0]['uuid'],
-            force_text(s=self._test_document.uuid)
+            force_str(s=self._test_document.uuid)
         )
 
         events = self._get_test_events()

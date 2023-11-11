@@ -2,12 +2,12 @@ import os
 from pathlib import Path
 
 from django.conf import settings
-from django.conf.urls import include, url
 from django.template import loader
 from django.template.base import Template
 from django.template.context import Context
+from django.urls import include, re_path
 from django.utils.html import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.classes import BaseBackend
 from mayan.apps.common.menus import menu_tools
@@ -88,7 +88,7 @@ class ClientBackend(BaseBackend):
             )
 
             urlpatterns += (
-                url(
+                re_path(
                     regex=r'^{}'.format(top_url), view=include(
                         backend_instance.get_url_patterns()
                     )
@@ -224,7 +224,7 @@ class PlatformTemplate:
 
 
 class PlatformTemplateDockerEntrypoint(PlatformTemplate):
-    label = _('Template for entrypoint.sh file inside a Docker image.')
+    label = _(message='Template for entrypoint.sh file inside a Docker image.')
     name = 'docker_entrypoint'
     template_name = 'platform/docker/entrypoint.tmpl'
 
@@ -239,7 +239,7 @@ class PlatformTemplateDockerEntrypoint(PlatformTemplate):
 
 
 class PlatformTemplateDockerfile(PlatformTemplate):
-    label = _('Template that generates a Dockerfile file.')
+    label = _(message='Template that generates a Dockerfile file.')
     name = 'docker_dockerfile'
     template_name = 'platform/docker/dockerfile.tmpl'
 
@@ -254,7 +254,7 @@ class PlatformTemplateDockerfile(PlatformTemplate):
 
 
 class PlatformTemplateDockerSupervisord(PlatformTemplate):
-    label = _('Template for Supervisord inside a Docker image.')
+    label = _(message='Template for Supervisord inside a Docker image.')
     name = 'docker_supervisord'
     template_name = 'platform/docker/supervisord.tmpl'
 
@@ -272,7 +272,7 @@ class PlatformTemplateDockerSupervisord(PlatformTemplate):
 
 
 class PlatformTemplateGitLabCI(PlatformTemplate):
-    label = _('Template that generates a GitLab CI config file.')
+    label = _(message='Template that generates a GitLab CI config file.')
     name = 'gitlab-ci'
 
     def __init__(self):
@@ -416,7 +416,7 @@ class PlatformTemplateGitLabCI(PlatformTemplate):
 
 
 class PlatformTemplateSupervisord(PlatformTemplate):
-    label = _('Template for Supervisord.')
+    label = _(message='Template for Supervisord.')
     name = 'supervisord'
 
     def __init__(self):
@@ -490,7 +490,7 @@ class PlatformTemplateSupervisord(PlatformTemplate):
 
 
 class PlatformTemplateWorkerQueues(PlatformTemplate):
-    label = _('Template showing the queues of a worker.')
+    label = _(message='Template showing the queues of a worker.')
     name = 'worker_queues'
 
     variables = (

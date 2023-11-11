@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from actstream.models import Action
 from rest_framework.reverse import reverse
@@ -18,13 +18,13 @@ class EventTypeNamespaceSerializer(serializers.Serializer):
         view_name='rest_api:event-type-namespace-event-type-list'
     )
     label = serializers.CharField(
-        label=_('Label')
+        label=_(message='Label')
     )
     name = serializers.CharField(
-        label=_('Name')
+        label=_(message='Name')
     )
     url = serializers.SerializerMethodField(
-        label=_('URL')
+        label=_(message='URL')
     )
 
     def get_url(self, instance):
@@ -37,16 +37,16 @@ class EventTypeNamespaceSerializer(serializers.Serializer):
 
 class EventTypeSerializer(serializers.Serializer):
     event_type_namespace_url = serializers.SerializerMethodField(
-        label=_('Event type namespace URL')
+        label=_(message='Event type namespace URL')
     )
     id = serializers.CharField(
-        label=_('ID')
+        label=_(message='ID')
     )
     label = serializers.CharField(
-        label=_('Label')
+        label=_(message='Label')
     )
     name = serializers.CharField(
-        label=_('Name')
+        label=_(message='Name')
     )
 
     def get_event_type_namespace_url(self, instance):
@@ -69,19 +69,19 @@ class EventTypeSerializer(serializers.Serializer):
 
 class EventSerializer(serializers.ModelSerializer):
     actor = DynamicSerializerField(
-        label=_('Actor'), read_only=True
+        label=_(message='Actor'), read_only=True
     )
     actor_content_type = ContentTypeSerializer(
-        label=_('Actor content type'), read_only=True
+        label=_(message='Actor content type'), read_only=True
     )
     target = DynamicSerializerField(
-        label=_('Target'), read_only=True
+        label=_(message='Target'), read_only=True
     )
     target_content_type = ContentTypeSerializer(
-        label=_('Target content type'), read_only=True
+        label=_(message='Target content type'), read_only=True
     )
     verb = EventTypeSerializer(
-        label=_('Verb'), read_only=True
+        label=_(message='Verb'), read_only=True
     )
 
     class Meta:
@@ -97,10 +97,10 @@ class EventSerializer(serializers.ModelSerializer):
 
 class NotificationSerializer(serializers.ModelSerializer):
     action = EventSerializer(
-        label=_('Action'), read_only=True
+        label=_(message='Action'), read_only=True
     )
     user = UserSerializer(
-        label=_('User'), read_only=True
+        label=_(message='User'), read_only=True
     )
 
     class Meta:

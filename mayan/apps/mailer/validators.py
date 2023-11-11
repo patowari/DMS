@@ -1,5 +1,5 @@
 from django.core import validators
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .utils import split_recipient_list
 
@@ -11,7 +11,7 @@ def validate_email_multiple(value):
 
     for recipient in recipient_list:
         validate_email = validators.EmailValidator(
-            message=_('%(email)s is not a valid email address.') % {
+            message=_(message='%(email)s is not a valid email address.') % {
                 'email': recipient
             }
         )

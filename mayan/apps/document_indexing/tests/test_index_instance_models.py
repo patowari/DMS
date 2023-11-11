@@ -225,10 +225,11 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
             set(
                 IndexInstanceNode.objects.values_list('value', flat=True)
             ), {
-                '', str(self._test_documents[1].uuid),
-                self._test_documents[1].label,
-                str(self._test_documents[0].uuid),
-                self._test_documents[0].label
+                '', str(
+                    self._test_documents[1].uuid
+                ), self._test_documents[1].label, str(
+                    self._test_documents[0].uuid
+                ), self._test_documents[0].label
             }
         )
 
@@ -284,7 +285,9 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
         )
 
         self._create_test_document_type()
-        self._test_index_template.document_types.add(self._test_document_type)
+        self._test_index_template.document_types.add(
+            self._test_document_type
+        )
 
         self._test_document._document_type_change(
             document_type=self._test_document_type
@@ -344,18 +347,20 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
         )
 
         # There should be only a root index instances nodes.
-        self.assertEqual(IndexInstanceNode.objects.count(), 1)
-        self.assertEqual(IndexInstanceNode.objects.first().parent, None)
+        self.assertEqual(
+            IndexInstanceNode.objects.count(), 1
+        )
+        self.assertEqual(
+            IndexInstanceNode.objects.first().parent, None
+        )
 
         # Rebuild all indexes.
         IndexTemplate.objects.rebuild()
 
         # Check that document is in instance node.
         instance_node = IndexInstanceNode.objects.get(value='0001')
-        self.assertQuerysetEqual(
-            instance_node.documents.all(), [
-                repr(self._test_document)
-            ]
+        self.assertQuerySetEqual(
+            qs=instance_node.documents.all(), values=(self._test_document,)
         )
 
 

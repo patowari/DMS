@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.reverse import reverse
 
@@ -12,25 +12,25 @@ from .models import Message
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
     sender_app_label = serializers.SerializerMethodField(
-        label=_('Sender app label')
+        label=_(message='Sender app label')
     )
     sender_model_name = serializers.SerializerMethodField(
-        label=_('Sender model name')
+        label=_(message='Sender model name')
     )
     sender_url = serializers.SerializerMethodField(
-        label=_('Sender URL')
+        label=_(message='Sender URL')
     )
     user = FilteredPrimaryKeyRelatedField(
         help_text=_(
             'Primary key of the recipient user of this message.'
-        ), label=_('User ID'), source_queryset=get_user_queryset()
+        ), label=_(message='User ID'), source_queryset=get_user_queryset()
     )
 
     class Meta:
         create_only_fields = ('user',)
         extra_kwargs = {
             'url': {
-                'label': _('URL'),
+                'label': _(message='URL'),
                 'lookup_url_kwarg': 'message_id',
                 'view_name': 'rest_api:message-detail'
             }

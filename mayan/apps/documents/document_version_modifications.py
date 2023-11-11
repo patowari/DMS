@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import DocumentVersionModification
 from .tasks import (
@@ -8,7 +8,7 @@ from .tasks import (
 
 
 class DocumentVersionModificationPagesAppend(DocumentVersionModification):
-    label = _('Append all file pages')
+    label = _(message='Append all file pages')
     description = _(
         'The current pages will be deleted and then all the '
         'document file pages will be appended as pages of this '
@@ -26,8 +26,8 @@ class DocumentVersionModificationPagesAppend(DocumentVersionModification):
 
 
 class DocumentVersionModificationPagesReset(DocumentVersionModification):
-    label = _('Reset pages to latest file')
-    description = _('Match all pages to that of the latest document file.')
+    label = _(message='Reset pages to latest file')
+    description = _(message='Match all pages to that of the latest document file.')
 
     @staticmethod
     def execute(document_version, user):

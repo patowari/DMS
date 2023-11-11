@@ -1,7 +1,7 @@
 from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
 from django.db import connection, models, transaction
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
@@ -29,15 +29,15 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
     """
     parent = TreeForeignKey(
         blank=True, db_index=True, null=True, on_delete=models.CASCADE,
-        related_name='children', to='self', verbose_name=_('Parent')
+        related_name='children', to='self', verbose_name=_(message='Parent')
     )
     label = models.CharField(
-        help_text=_('A short text used to identify the cabinet.'),
-        max_length=128, verbose_name=_('Label')
+        help_text=_(message='A short text used to identify the cabinet.'),
+        max_length=128, verbose_name=_(message='Label')
     )
     documents = models.ManyToManyField(
         blank=True, related_name='cabinets', to=Document,
-        verbose_name=_('Documents')
+        verbose_name=_(message='Documents')
     )
 
     class MPTTMeta:
@@ -47,8 +47,8 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
         # unique_together doesn't work if there is a FK
         # https://code.djangoproject.com/ticket/1751
         unique_together = ('parent', 'label')
-        verbose_name = _('Cabinet')
-        verbose_name_plural = _('Cabinets')
+        verbose_name = _(message='Cabinet')
+        verbose_name_plural = _(message='Cabinets')
 
     def __str__(self):
         return self.get_full_path()
@@ -129,8 +129,8 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
 
             if queryset.exists():
                 params = {
-                    'model_name': _('Cabinet'),
-                    'field_labels': _('Parent and Label')
+                    'model_name': _(message='Cabinet'),
+                    'field_labels': _(message='Parent and Label')
                 }
                 raise ValidationError(
                     message={
@@ -154,8 +154,8 @@ class CabinetSearchResult(Cabinet):
     """
     class Meta:
         proxy = True
-        verbose_name = _('Cabinet')
-        verbose_name_plural = _('Cabinets')
+        verbose_name = _(message='Cabinet')
+        verbose_name_plural = _(message='Cabinets')
 
 
 class DocumentCabinet(Cabinet):
@@ -166,5 +166,5 @@ class DocumentCabinet(Cabinet):
     """
     class Meta:
         proxy = True
-        verbose_name = _('Document cabinet')
-        verbose_name_plural = _('Document cabinets')
+        verbose_name = _(message='Document cabinet')
+        verbose_name_plural = _(message='Document cabinets')

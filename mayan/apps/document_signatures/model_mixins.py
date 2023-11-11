@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.django_gpg.models import Key
 
@@ -12,9 +12,9 @@ class SignatureBaseModelBusinessLogicMixin:
 
     def get_signature_type_display(self):
         if self.is_detached:
-            return _('Detached')
+            return _(message='Detached')
         else:
-            return _('Embedded')
+            return _(message='Embedded')
 
     @property
     def is_detached(self):

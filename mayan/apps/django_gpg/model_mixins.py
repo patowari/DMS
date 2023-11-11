@@ -2,7 +2,7 @@ from datetime import datetime
 from io import BytesIO
 import logging
 
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes, force_str
 from django.utils.timezone import make_aware
 
 from .classes import GPGBackend
@@ -26,7 +26,7 @@ class KeyBusinessLogicMixin:
 
     def introspect_key_data(self):
         # Fix the encoding of the key data stream.
-        self.key_data = force_text(s=self.key_data)
+        self.key_data = force_str(s=self.key_data)
         import_results, key_info = GPGBackend.get_instance().import_and_list_keys(
             key_data=self.key_data
         )

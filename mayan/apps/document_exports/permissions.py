@@ -1,12 +1,12 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Document exports'), name='document_exports'
+    label=_(message='Document exports'), name='document_exports'
 )
 
 permission_document_version_export = namespace.add_permission(
-    label=_('Export document versions'),
+    label=_(message='Export document versions'),
     name='document_version_export'
 )

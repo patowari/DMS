@@ -5,7 +5,7 @@ from Crypto.Util.Padding import pad, unpad
 
 from django.conf import settings
 from django.core.files.base import ContentFile
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from ..classes import BufferedFile, PassthroughStorage
 
@@ -40,7 +40,7 @@ class BufferedEncryptedFile(BufferedFile):
             if self.binary_mode:
                 return data
             else:
-                return force_text(s=data)
+                return force_str(s=data)
 
     def seek(self, pos, whence=0):
         if whence == 0:

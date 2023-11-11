@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .models import StoredDriver
 
@@ -10,4 +10,4 @@ class StoredDriverAdmin(admin.ModelAdmin):
 
     def get_label(self, instance):
         return instance.driver_label
-    get_label.short_description = _('Label')
+    get_label.short_description = _(message='Label')

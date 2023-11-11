@@ -5,7 +5,7 @@ from django.apps import apps
 from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse
 from django.utils.html import strip_tags
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.locales.utils import to_language
 from mayan.apps.templating.classes import Template
@@ -46,10 +46,10 @@ class DocumentFileCompressor:
         )
 
         if self.queryset.count():
-            filename = filename or _('Document_file_bundle.zip')
+            filename = filename or _(message='Document_file_bundle.zip')
 
             download_file = DownloadFile(
-                filename=filename, label=_('Compressed document files'),
+                filename=filename, label=_(message='Compressed document files'),
                 user=user
             )
             download_file._event_actor = user

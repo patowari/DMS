@@ -1,17 +1,17 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Events'), name='events'
+    label=_(message='Events'), name='events'
 )
 
 permission_events_clear = namespace.add_permission(
-    label=_('Clear the events of an object'), name='events_clear'
+    label=_(message='Clear the events of an object'), name='events_clear'
 )
 permission_events_export = namespace.add_permission(
-    label=_('Export the events of an object'), name='events_export'
+    label=_(message='Export the events of an object'), name='events_export'
 )
 permission_events_view = namespace.add_permission(
-    label=_('View the events of an object'), name='events_view'
+    label=_(message='View the events of an object'), name='events_view'
 )

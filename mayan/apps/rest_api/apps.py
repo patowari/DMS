@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.conf import settings
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_tools
@@ -20,7 +20,7 @@ class RESTAPIApp(MayanAppConfig):
     static_media_ignore_patterns = (
         'rest_framework/docs/*', 'rest_framework/img/glyphicons*',
     )
-    verbose_name = _('REST API')
+    verbose_name = _(message='REST API')
 
     def ready(self):
         super().ready()

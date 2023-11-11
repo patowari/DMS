@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -48,7 +48,7 @@ class FileMetadataApp(MayanAppConfig):
     app_url = 'file_metadata'
     has_tests = True
     name = 'mayan.apps.file_metadata'
-    verbose_name = _('File metadata')
+    verbose_name = _(message='File metadata')
 
     def ready(self):
         super().ready()
@@ -100,11 +100,11 @@ class FileMetadataApp(MayanAppConfig):
         )
 
         ModelFieldRelated(
-            label=_('File metadata key'), model=Document,
+            label=_(message='File metadata key'), model=Document,
             name='files__file_metadata_drivers__entries__key'
         )
         ModelFieldRelated(
-            label=_('File metadata value'), model=Document,
+            label=_(message='File metadata value'), model=Document,
             name='files__file_metadata_drivers__entries__value'
         )
 
@@ -131,13 +131,13 @@ class FileMetadataApp(MayanAppConfig):
         ModelProperty(
             description=_(
                 'Return the value of a specific file metadata.'
-            ), label=_('File metadata value of'), model=Document,
+            ), label=_(message='File metadata value of'), model=Document,
             name='file_metadata_value_of.< underscore separated driver name and property name >'
         )
         ModelProperty(
             description=_(
                 'Return the value of a specific file metadata.'
-            ), label=_('File metadata value of'), model=DocumentFile,
+            ), label=_(message='File metadata value of'), model=DocumentFile,
             name='file_metadata_value_of.< underscore separated driver name and property name >'
         )
 

@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.contrib.auth import get_user_model
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -32,7 +32,7 @@ class QuotasApp(MayanAppConfig):
     has_rest_api = False
     has_tests = True
     name = 'mayan.apps.quotas'
-    verbose_name = _('Quotas')
+    verbose_name = _(message='Quotas')
 
     def ready(self, *args, **kwargs):
         super().ready(*args, **kwargs)

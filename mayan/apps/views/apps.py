@@ -1,6 +1,6 @@
 import logging
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -17,7 +17,7 @@ class ViewsApp(MayanAppConfig):
         'views/node_modules/dropzone/index.js',
         'views/node_modules/dropzone/component.json'
     )
-    verbose_name = _('Views')
+    verbose_name = _(message='Views')
 
     def ready(self):
         super().ready()

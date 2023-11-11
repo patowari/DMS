@@ -4,8 +4,8 @@ from shutil import copyfileobj
 import subprocess
 
 from django.apps import apps
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.literals import CONVERTER_OFFICE_FILE_MIMETYPES
@@ -103,7 +103,7 @@ class Parser:
                 )
 
             except Exception as exception:
-                error_message = _('Exception parsing page; %s') % exception
+                error_message = _(message='Exception parsing page; %s') % exception
                 logger.error(error_message, exc_info=True)
                 raise ParserError(error_message)
             finally:
@@ -175,11 +175,11 @@ class PopplerParser(Parser):
                 return ''
 
             if output[-3:] == b'\x0a\x0a\x0c':
-                return force_text(
+                return force_str(
                     s=output[:-3]
                 )
 
-            return force_text(s=output)
+            return force_str(s=output)
 
 
 class OfficePopplerParser(PopplerParser):

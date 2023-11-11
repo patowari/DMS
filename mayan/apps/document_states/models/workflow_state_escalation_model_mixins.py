@@ -2,7 +2,7 @@ import hashlib
 
 from django.conf import settings
 from django.core import serializers
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class WorkflowStateEscalationBusinessLogicMixin:
@@ -23,7 +23,7 @@ class WorkflowStateEscalationBusinessLogicMixin:
                 self.error_log.all().delete()
 
     def get_comment(self):
-        return self.comment or _('Workflow escalation.')
+        return self.comment or _(message='Workflow escalation.')
 
     def get_hash(self):
         return hashlib.sha256(

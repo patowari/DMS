@@ -4,7 +4,7 @@ from furl import furl
 
 from django.contrib import messages
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import RedirectView
 
 from mayan.apps.common.settings import setting_home_view
@@ -57,9 +57,9 @@ class DocumentFilePageListView(
                 'introspection link to attempt detection the page '
                 'count again.'
             ),
-            'no_results_title': _('No document file pages available'),
+            'no_results_title': _(message='No document file pages available'),
             'object': self.external_object,
-            'title': _('Pages of document file: %s') % self.external_object
+            'title': _(message='Pages of document file: %s') % self.external_object
         }
 
     def get_source_queryset(self):
@@ -191,7 +191,7 @@ class DocumentFilePageView(ExternalObjectViewMixin, SimpleView):
             transformation_instance_list=transformation_instance_list
         )
 
-        base_title = _('Image of: %s') % self.external_object
+        base_title = _(message='Image of: %s') % self.external_object
 
         if zoom != DEFAULT_ZOOM_LEVEL:
             zoom_text = '({}%)'.format(zoom)
