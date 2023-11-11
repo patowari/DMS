@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.reverse import reverse
 
@@ -10,19 +10,19 @@ from .models import Source
 
 class SourceBackendActionInterfaceArgumentSerializer(serializers.Serializer):
     default = serializers.SerializerMethodField(
-        label=_('Default')
+        label=_(message='Default')
     )
     has_default = serializers.BooleanField(
-        label=_('Has default?')
+        label=_(message='Has default?')
     )
     help_text = serializers.CharField(
-        label=_('Help text')
+        label=_(message='Help text')
     )
     name = serializers.CharField(
-        label=_('Name')
+        label=_(message='Name')
     )
     required = serializers.BooleanField(
-        label=_('Required')
+        label=_(message='Required')
     )
 
     def get_default(self, instance):
@@ -34,44 +34,44 @@ class SourceBackendActionInterfaceArgumentSerializer(serializers.Serializer):
 
 class SourceBackendActionInterfaceSerializer(serializers.Serializer):
     arguments = SourceBackendActionInterfaceArgumentSerializer(
-        label=_('Arguments'), many=True, read_only=True,
+        label=_(message='Arguments'), many=True, read_only=True,
         source='arguments_visible'
     )
     name = serializers.CharField(
-        label=_('Name')
+        label=_(message='Name')
     )
 
 
 class SourceBackendActionSerializer(serializers.Serializer):
     accept_files = serializers.BooleanField(
-        label=_('Accept files'), read_only=True
+        label=_(message='Accept files'), read_only=True
     )
     arguments = serializers.JSONField(
         help_text=_(
             'Optional arguments for the action. Must be JSON formatted.'
-        ), initial={}, label=_('Arguments'), required=False,
+        ), initial={}, label=_(message='Arguments'), required=False,
         write_only=True
     )
     confirmation = serializers.BooleanField(
-        label=_('Confirmation'), read_only=True
+        label=_(message='Confirmation'), read_only=True
     )
     execute_url = serializers.SerializerMethodField(
-        label=_('Execute URL'), read_only=True
+        label=_(message='Execute URL'), read_only=True
     )
     interfaces = SourceBackendActionInterfaceSerializer(
-        label=_('Interfaces'), many=True, read_only=True,
+        label=_(message='Interfaces'), many=True, read_only=True,
         source='interface_visible_list'
     )
     name = serializers.CharField(
-        label=_('name'), read_only=True
+        label=_(message='name'), read_only=True
     )
     permission = PermissionSerializer(
-        label=_('Permission'), read_only=True
+        label=_(message='Permission'), read_only=True
     )
     source_id = serializers.SerializerMethodField()
     source_url = serializers.SerializerMethodField()
     url = serializers.SerializerMethodField(
-        label=_('URL'), read_only=True
+        label=_(message='URL'), read_only=True
     )
 
     def __init__(self, *args, **kwargs):
@@ -82,7 +82,7 @@ class SourceBackendActionSerializer(serializers.Serializer):
         if action:
             if action.accept_files:
                 self.fields['file'] = serializers.FileField(
-                    help_text=_('Binary content for the new file.'),
+                    help_text=_(message='Binary content for the new file.'),
                     use_url=False, write_only=True
                 )
 
@@ -118,7 +118,7 @@ class SourceBackendActionSerializer(serializers.Serializer):
 
 class SourceSerializer(serializers.HyperlinkedModelSerializer):
     actions_url = serializers.SerializerMethodField(
-        label=_('Actions URL')
+        label=_(message='Actions URL')
     )
 
     class Meta:

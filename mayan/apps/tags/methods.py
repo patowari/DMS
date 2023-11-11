@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 def method_document_get_tags(self, permission, user):
@@ -18,4 +18,4 @@ def method_document_get_tags(self, permission, user):
 method_document_get_tags.help_text = _(
     'Return the tags attached to the document.'
 )
-method_document_get_tags.short_description = _('get_tags()')
+method_document_get_tags.short_description = _(message='get_tags()')

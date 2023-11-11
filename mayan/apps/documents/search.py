@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dynamic_search.search_models import SearchModel
 from mayan.apps.views.literals import LIST_MODE_CHOICE_ITEM
@@ -11,7 +11,7 @@ from .permissions import (
 # Document
 
 search_model_document = SearchModel(
-    app_label='documents', default=True, label=_('Document'),
+    app_label='documents', default=True, label=_(message='Document'),
     list_mode=LIST_MODE_CHOICE_ITEM, manager_name='valid',
     model_name='DocumentSearchResult', permission=permission_document_view,
     serializer_path='mayan.apps.documents.serializers.document_serializers.DocumentSerializer'
@@ -27,7 +27,7 @@ search_model_document.add_proxy_model(
 )
 
 search_model_document.add_model_field(
-    field='document_type__label', label=_('Document type label')
+    field='document_type__label', label=_(message='Document type label')
 )
 search_model_document.add_model_field(field='datetime_created')
 search_model_document.add_model_field(field='label')
@@ -46,7 +46,7 @@ search_model_document.add_model_field(
 # Document file
 
 search_model_document_file = SearchModel(
-    app_label='documents', label=_('Document file'),
+    app_label='documents', label=_(message='Document file'),
     list_mode=LIST_MODE_CHOICE_ITEM, manager_name='valid',
     model_name='DocumentFileSearchResult',
     permission=permission_document_file_view,
@@ -58,16 +58,16 @@ search_model_document_file.add_proxy_model(
 
 search_model_document_file.add_model_field(
     field='document__document_type__label',
-    label=_('Document type label')
+    label=_(message='Document type label')
 )
 search_model_document_file.add_model_field(
-    field='document__label', label=_('Document label')
+    field='document__label', label=_(message='Document label')
 )
 search_model_document_file.add_model_field(
-    field='document__description', label=_('Document description')
+    field='document__description', label=_(message='Document description')
 )
 search_model_document_file.add_model_field(
-    field='document__uuid', label=_('Document UUID')
+    field='document__uuid', label=_(message='Document UUID')
 )
 search_model_document_file.add_model_field(field='checksum')
 search_model_document_file.add_model_field(field='comment')
@@ -77,7 +77,7 @@ search_model_document_file.add_model_field(field='mimetype')
 # Document file page
 
 search_model_document_file_page = SearchModel(
-    app_label='documents', label=_('Document file page'),
+    app_label='documents', label=_(message='Document file page'),
     list_mode=LIST_MODE_CHOICE_ITEM, manager_name='valid',
     model_name='DocumentFilePageSearchResult',
     permission=permission_document_file_view,
@@ -89,16 +89,16 @@ search_model_document_file_page.add_proxy_model(
 
 search_model_document_file_page.add_model_field(
     field='document_file__document__document_type__label',
-    label=_('Document type label')
+    label=_(message='Document type label')
 )
 search_model_document_file_page.add_model_field(
-    field='document_file__document__label', label=_('Document label')
+    field='document_file__document__label', label=_(message='Document label')
 )
 search_model_document_file_page.add_model_field(
-    field='document_file__checksum', label=_('Document file checksum')
+    field='document_file__checksum', label=_(message='Document file checksum')
 )
 search_model_document_file_page.add_model_field(
-    field='document_file__document__uuid', label=_('Document UUID')
+    field='document_file__document__uuid', label=_(message='Document UUID')
 )
 
 # Document type
@@ -113,7 +113,7 @@ search_model_document_type.add_model_field(field='label')
 # Document version
 
 search_model_document_version = SearchModel(
-    app_label='documents', label=_('Document version'),
+    app_label='documents', label=_(message='Document version'),
     list_mode=LIST_MODE_CHOICE_ITEM, manager_name='valid',
     model_name='DocumentVersionSearchResult',
     permission=permission_document_version_view,
@@ -126,22 +126,22 @@ search_model_document_version.add_proxy_model(
 search_model_document_version.add_model_field(field='comment')
 search_model_document_version.add_model_field(
     field='document__document_type__label',
-    label=_('Document type label')
+    label=_(message='Document type label')
 )
 search_model_document_version.add_model_field(
-    field='document__label', label=_('Document label')
+    field='document__label', label=_(message='Document label')
 )
 search_model_document_version.add_model_field(
-    field='document__description', label=_('Document description')
+    field='document__description', label=_(message='Document description')
 )
 search_model_document_version.add_model_field(
-    field='document__uuid', label=_('Document UUID')
+    field='document__uuid', label=_(message='Document UUID')
 )
 
 # Document version page
 
 search_model_document_version_page = SearchModel(
-    app_label='documents', label=_('Document version page'),
+    app_label='documents', label=_(message='Document version page'),
     list_mode=LIST_MODE_CHOICE_ITEM, manager_name='valid',
     model_name='DocumentVersionPageSearchResult',
     permission=permission_document_version_view,
@@ -153,11 +153,11 @@ search_model_document_version_page.add_proxy_model(
 
 search_model_document_version_page.add_model_field(
     field='document_version__document__document_type__label',
-    label=_('Document type label')
+    label=_(message='Document type label')
 )
 search_model_document_version_page.add_model_field(
-    field='document_version__document__label', label=_('Document label')
+    field='document_version__document__label', label=_(message='Document label')
 )
 search_model_document_version_page.add_model_field(
-    field='document_version__document__uuid', label=_('Document UUID')
+    field='document_version__document__uuid', label=_(message='Document UUID')
 )

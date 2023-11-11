@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -43,7 +43,7 @@ class LinkingApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.linking'
-    verbose_name = _('Linking')
+    verbose_name = _(message='Linking')
 
     def ready(self):
         super().ready()
@@ -117,7 +117,7 @@ class LinkingApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: context['object'].get_label_for(
                 document=context['document']
-            ), is_identifier=True, label=_('Label'),
+            ), is_identifier=True, label=_(message='Label'),
             source=ResolvedSmartLink
         )
 

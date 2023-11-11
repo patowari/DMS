@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dependencies.classes import BinaryDependency
 from mayan.apps.sources.settings import setting_backend_arguments

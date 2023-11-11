@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -10,7 +10,7 @@ from .literals import (
 from .setting_migrations import SourcesSettingMigration
 
 namespace = SettingNamespace(
-    label=_('Sources'), migration_class=SourcesSettingMigration,
+    label=_(message='Sources'), migration_class=SourcesSettingMigration,
     name='sources', version='0003'
 )
 

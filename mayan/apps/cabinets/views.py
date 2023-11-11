@@ -2,7 +2,7 @@ import logging
 
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -44,7 +44,7 @@ class CabinetCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _('Create cabinet')
+            'title': _(message='Create cabinet')
         }
 
     def get_instance_extra_data(self):
@@ -86,7 +86,7 @@ class CabinetDeleteView(SingleObjectDeleteView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Delete the cabinet: %s?') % self.object
+            'title': _(message='Delete the cabinet: %s?') % self.object
         }
 
 
@@ -129,7 +129,7 @@ class CabinetDetailView(ExternalObjectViewMixin, DocumentListView):
                     'cabinet sub levels. To add documents to a cabinet, '
                     'select the cabinet view of a document view.'
                 ),
-                'no_results_title': _('This cabinet level is empty'),
+                'no_results_title': _(message='This cabinet level is empty'),
                 'object': self.external_object,
                 'title': _(
                     'Details of cabinet: %s'
@@ -151,7 +151,7 @@ class CabinetEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit cabinet: %s') % self.object
+            'title': _(message='Edit cabinet: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -166,7 +166,7 @@ class CabinetListView(SingleObjectListView):
         return {
             'hide_link': True,
             'hide_object': True,
-            'title': _('Cabinets'),
+            'title': _(message='Cabinets'),
             'no_results_icon': icon_cabinet,
             'no_results_main_link': link_cabinet_create.resolve(
                 context=RequestContext(request=self.request)
@@ -176,7 +176,7 @@ class CabinetListView(SingleObjectListView):
                 'documents. Each cabinet can contain documents as '
                 'well as other sub level cabinets.'
             ),
-            'no_results_title': _('No cabinets available')
+            'no_results_title': _(message='No cabinets available')
         }
 
     def get_source_queryset(self):
@@ -197,9 +197,9 @@ class DocumentCabinetAddView(MultipleObjectFormActionView):
     success_message_plural = _(
         '%(count)d documents added to cabinets successfully.'
     )
-    title_plural = _('Add %(count)d documents to cabinets.')
-    title_single = _('Add document "%(object)s" to cabinets.')
-    title_singular = _('Add %(count)d document to cabinets.')
+    title_plural = _(message='Add %(count)d documents to cabinets.')
+    title_single = _(message='Add document "%(object)s" to cabinets.')
+    title_singular = _(message='Add %(count)d document to cabinets.')
     view_icon = icon_document_cabinet_add
 
     def get_extra_context(self):
@@ -294,9 +294,9 @@ class DocumentCabinetRemoveView(MultipleObjectFormActionView):
     success_message_plural = _(
         '%(count)d documents removed from cabinets successfully.'
     )
-    title_plural = _('Remove %(count)d documents from cabinets.')
-    title_single = _('Remove document "%(object)s" from cabinets.')
-    title_singular = _('Remove %(count)d document from cabinets.')
+    title_plural = _(message='Remove %(count)d documents from cabinets.')
+    title_single = _(message='Remove document "%(object)s" from cabinets.')
+    title_singular = _(message='Remove %(count)d document from cabinets.')
     view_icon = icon_document_cabinet_remove
 
     def get_extra_context(self):

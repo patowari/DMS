@@ -2,7 +2,7 @@ import logging
 
 from django.apps import apps
 from django.db.utils import OperationalError, ProgrammingError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.classes import DynamicFormModelBackend
 from mayan.apps.common.classes import PropertyHelper
@@ -30,7 +30,7 @@ class WorkflowAction(DynamicFormModelBackend):
 
     form_fieldsets = (
         (
-            _('General'), {
+            _(message='General'), {
                 'fields': ('label', 'enabled', 'when', 'condition')
             }
         ),
@@ -104,7 +104,7 @@ class WorkflowAction(DynamicFormModelBackend):
             result = template.render(context=context)
         except Exception as exception:
             raise WorkflowStateActionError(
-                _('%(field_name)s template error: %(exception)s') % {
+                _(message='%(field_name)s template error: %(exception)s') % {
                     'field_name': field_name, 'exception': exception
                 }
             )
@@ -115,4 +115,4 @@ class WorkflowAction(DynamicFormModelBackend):
 
 
 class WorkflowActionNull(WorkflowAction):
-    label = _('Null backend')
+    label = _(message='Null backend')

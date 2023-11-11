@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dashboards.classes import DashboardWidgetNumeric
 from mayan.apps.documents.permissions import permission_document_view
@@ -11,7 +11,7 @@ from .permissions import permission_document_check_out_detail_view
 
 class DashboardWidgetTotalCheckouts(DashboardWidgetNumeric):
     icon = icon_dashboard_check_outs
-    label = _('Checked out documents')
+    label = _(message='Checked out documents')
     link = reverse_lazy(viewname='checkouts:check_out_list')
 
     def get_count(self):

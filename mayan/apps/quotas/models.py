@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
@@ -14,21 +14,21 @@ class Quota(ExtraDataModelMixin, QuotaBusinessModelMixin, models.Model):
     backend_path = models.CharField(
         max_length=255, help_text=_(
             'The dotted Python path to the backend class.'
-        ), verbose_name=_('Backend path')
+        ), verbose_name=_(message='Backend path')
     )
     backend_data = models.TextField(
-        blank=True, verbose_name=_('Backend data')
+        blank=True, verbose_name=_(message='Backend data')
     )
     enabled = models.BooleanField(
         default=True, help_text=_(
             'Allow quick disable or enable of the quota.'
-        ), verbose_name=_('Enabled')
+        ), verbose_name=_(message='Enabled')
     )
 
     class Meta:
         ordering = ('id',)
-        verbose_name = _('Quota')
-        verbose_name_plural = _('Quotas')
+        verbose_name = _(message='Quota')
+        verbose_name_plural = _(message='Quotas')
 
     def __str__(self):
         return str(

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -9,7 +9,7 @@ from .literals import (
 from .setting_validators import validation_fuction_check_path_format
 
 namespace = SettingNamespace(
-    label=_('Organizations'), name='organizations'
+    label=_(message='Organizations'), name='organizations'
 )
 
 setting_organization_installation_url = namespace.add_setting(

@@ -5,7 +5,7 @@ import shutil
 
 from django.apps import apps
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.converter.classes import ConverterBase
@@ -296,7 +296,7 @@ class DocumentFileBusinessLogicMixin:
 
     def get_label(self):
         return self.filename
-    get_label.short_description = _('Label')
+    get_label.short_description = _(message='Label')
 
     @property
     def is_in_trash(self):

@@ -2,8 +2,8 @@ import logging
 
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.permissions.models import Role
 from mayan.apps.views.generics import (
@@ -70,7 +70,7 @@ class ACLCreateView(
 
         return {
             'field_name': 'role',
-            'label': _('Role'),
+            'label': _(message='Role'),
             'queryset': Role.objects.exclude(pk__in=roles),
             'widget_attributes': {'class': 'select2'},
             'user': self.request.user
@@ -100,7 +100,7 @@ class ACLDeleteView(SingleObjectDeleteView):
             'acl': self.object,
             'navigation_object_list': ('object', 'acl'),
             'object': self.object.content_object,
-            'title': _('Delete ACL: %s') % self.object
+            'title': _(message='Delete ACL: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -165,8 +165,8 @@ class ACLListView(
 
 
 class ACLPermissionAddRemoveView(AddRemoveView):
-    list_added_title = _('Granted permissions')
-    list_available_title = _('Available permissions')
+    list_added_title = _(message='Granted permissions')
+    list_available_title = _(message='Available permissions')
     main_object_method_add_name = 'permissions_add'
     main_object_method_remove_name = 'permissions_remove'
     main_object_model = AccessControlList
@@ -193,7 +193,7 @@ class ACLPermissionAddRemoveView(AddRemoveView):
             namespaces_dictionary[
                 permission.volatile_permission.namespace.label
             ].append(
-                (permission.pk, force_text(s=permission))
+                (permission.pk, force_str(s=permission))
             )
 
         # Sort permissions by their translatable namespace label
@@ -216,7 +216,7 @@ class ACLPermissionAddRemoveView(AddRemoveView):
             'acl': self.main_object,
             'object': self.main_object.content_object,
             'navigation_object_list': ('object', 'acl'),
-            'title': _('Role "%(role)s" permission\'s for "%(object)s".') % {
+            'title': _(message='Role "%(role)s" permission\'s for "%(object)s".') % {
                 'object': self.main_object.content_object,
                 'role': self.main_object.role
             }

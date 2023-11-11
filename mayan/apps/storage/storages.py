@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import DefinedStorage
 from .literals import (
@@ -19,7 +19,7 @@ storage_download_files = DefinedStorage(
             setting_download_file_storage_arguments.global_name
         )
     ),
-    label=_('Download files'),
+    label=_(message='Download files'),
     name=STORAGE_NAME_DOWNLOAD_FILE,
     kwargs=setting_download_file_storage_arguments.value
 )
@@ -33,7 +33,7 @@ storage_shared_uploaded_files = DefinedStorage(
             setting_shared_storage_arguments.global_name
         )
     ),
-    label=_('Shared uploaded files'),
+    label=_(message='Shared uploaded files'),
     name=STORAGE_NAME_SHARED_UPLOADED_FILE,
     kwargs=setting_shared_storage_arguments.value
 )

@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.db.models import Count
 from django.utils import timezone
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 import qsstats
 
@@ -283,67 +283,67 @@ def statistic_document_file_page_count_per_document_type():
     }
 
 
-namespace = StatisticNamespace(slug='documents', label=_('Documents'))
+namespace = StatisticNamespace(slug='documents', label=_(message='Documents'))
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='new-documents-per-month',
-    label=_('New documents per month'),
+    label=_(message='New documents per month'),
     func=new_documents_per_month,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='new-document-files-per-month',
-    label=_('New document files per month'),
+    label=_(message='New document files per month'),
     func=new_document_files_per_month,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='new-document-pages-per-month',
-    label=_('New document pages per month'),
+    label=_(message='New document pages per month'),
     func=new_document_pages_per_month,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='total-documents-at-each-month',
-    label=_('Total documents at each month'),
+    label=_(message='Total documents at each month'),
     func=total_document_per_month,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='total-document-files-at-each-month',
-    label=_('Total document files at each month'),
+    label=_(message='Total document files at each month'),
     func=total_document_file_per_month,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='total-document-pages-at-each-month',
-    label=_('Total document pages at each month'),
+    label=_(message='Total document pages at each month'),
     func=total_document_page_per_month,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeDoughnutChart,
     slug='document-count-per-document-type',
-    label=_('Total documents per document type'),
+    label=_(message='Total documents per document type'),
     func=statistic_document_count_per_document_type,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeDoughnutChart,
     slug='document-file-count-per-document-type',
-    label=_('Total document files per document type'),
+    label=_(message='Total document files per document type'),
     func=statistic_document_file_count_per_document_type,
     minute='0'
 )
 namespace.add_statistic(
     klass=StatisticTypeDoughnutChart,
     slug='document-file-page-count-per-document-type',
-    label=_('Total document file pages per document type'),
+    label=_(message='Total document file pages per document type'),
     func=statistic_document_file_page_count_per_document_type,
     minute='0'
 )

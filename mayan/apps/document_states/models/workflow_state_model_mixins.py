@@ -3,7 +3,7 @@ import hashlib
 from django.apps import apps
 from django.core import serializers
 from django.db.models import F, Max, Q
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
 
@@ -27,7 +27,7 @@ class WorkflowStateBusinessLogicMixin:
 
         return ', '.join(field_list)
 
-    get_actions_display.short_description = _('Actions')
+    get_actions_display.short_description = _(message='Actions')
 
     def get_escalations_display(self):
         field_list = [
@@ -37,7 +37,7 @@ class WorkflowStateBusinessLogicMixin:
 
         return ', '.join(field_list)
 
-    get_escalations_display.short_description = _('Escalations')
+    get_escalations_display.short_description = _(message='Escalations')
 
     def get_documents(self):
         WorkflowInstanceLogEntry = apps.get_model(

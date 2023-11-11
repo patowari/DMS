@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import post_migrate
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -41,7 +41,7 @@ class PermissionsApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.permissions'
-    verbose_name = _('Permissions')
+    verbose_name = _(message='Permissions')
 
     def ready(self):
         super().ready()
@@ -103,7 +103,7 @@ class PermissionsApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: context['object'].get_group_count(
                 user=context['request'].user
-            ), include_label=True, label=_('Group count'), source=Role
+            ), include_label=True, label=_(message='Group count'), source=Role
         )
 
         dashboard_administrator.add_widget(

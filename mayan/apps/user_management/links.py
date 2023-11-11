@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.authentication.link_conditions import condition_user_is_authenticated
 from mayan.apps.navigation.classes import Link, Separator, Text
@@ -25,7 +25,7 @@ from .utils import get_user_label_text
 link_current_user_details = Link(
     args='request.user.id',
     condition=condition_user_is_authenticated,
-    icon=icon_current_user_detail, text=_('User details'),
+    icon=icon_current_user_detail, text=_(message='User details'),
     view='user_management:user_details'
 )
 
@@ -33,29 +33,29 @@ link_current_user_details = Link(
 
 link_group_create = Link(
     icon=icon_group_create, permissions=(permission_group_create,),
-    text=_('Create new group'), view='user_management:group_create'
+    text=_(message='Create new group'), view='user_management:group_create'
 )
 link_group_single_delete = Link(
     args='object.id', icon=icon_group_single_delete,
     permissions=(permission_group_delete,), tags='dangerous',
-    text=_('Delete'), view='user_management:group_single_delete'
+    text=_(message='Delete'), view='user_management:group_single_delete'
 )
 link_group_multiple_delete = Link(
-    icon=icon_group_multiple_delete, tags='dangerous', text=_('Delete'),
+    icon=icon_group_multiple_delete, tags='dangerous', text=_(message='Delete'),
     view='user_management:group_multiple_delete'
 )
 link_group_edit = Link(
     args='object.id', icon=icon_group_edit,
-    permissions=(permission_group_edit,), text=_('Edit'),
+    permissions=(permission_group_edit,), text=_(message='Edit'),
     view='user_management:group_edit'
 )
 link_group_list = Link(
-    icon=icon_group_list, text=_('Groups'),
+    icon=icon_group_list, text=_(message='Groups'),
     view='user_management:group_list'
 )
 link_group_user_list = Link(
     args='object.id', icon=icon_group_user_list,
-    permissions=(permission_group_edit,), text=_('Users'),
+    permissions=(permission_group_edit,), text=_(message='Users'),
     view='user_management:group_members'
 )
 link_group_setup = Link(
@@ -64,7 +64,7 @@ link_group_setup = Link(
         callback=condition_user_is_not_super_user,
         object_permission=permission_group_view,
         view_permission=permission_group_create
-    ), icon=icon_group_setup, text=_('Groups'),
+    ), icon=icon_group_setup, text=_(message='Groups'),
     view='user_management:group_list'
 )
 
@@ -72,43 +72,43 @@ link_group_setup = Link(
 
 link_user_create = Link(
     condition=condition_user_is_authenticated, icon=icon_user_create,
-    permissions=(permission_user_create,), text=_('Create new user'),
+    permissions=(permission_user_create,), text=_(message='Create new user'),
     view='user_management:user_create'
 )
 link_user_single_delete = Link(
     args='object.id', condition=condition_user_is_authenticated,
     icon=icon_user_single_delete, permissions=(permission_user_delete,),
-    tags='dangerous', text=_('Delete'),
+    tags='dangerous', text=_(message='Delete'),
     view='user_management:user_single_delete'
 )
 link_user_multiple_delete = Link(
-    icon=icon_user_multiple_delete, tags='dangerous', text=_('Delete'),
+    icon=icon_user_multiple_delete, tags='dangerous', text=_(message='Delete'),
     view='user_management:user_multiple_delete'
 )
 link_user_edit = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_edit, permissions=(permission_user_edit,), text=_('Edit'),
+    icon=icon_user_edit, permissions=(permission_user_edit,), text=_(message='Edit'),
     view='user_management:user_edit'
 )
 link_user_group_list = Link(
     args='object.id', condition=condition_user_is_authenticated,
     icon=icon_user_group_list, permissions=(permission_user_edit,),
-    text=_('Groups'), view='user_management:user_groups'
+    text=_(message='Groups'), view='user_management:user_groups'
 )
 link_user_list = Link(
-    icon=icon_user_list, text=_('Users'), view='user_management:user_list'
+    icon=icon_user_list, text=_(message='Users'), view='user_management:user_list'
 )
 link_user_set_options = Link(
     args='object.id', condition=condition_user_is_authenticated,
     icon=icon_user_set_options, permissions=(permission_user_edit,),
-    text=_('User options'), view='user_management:user_options'
+    text=_(message='User options'), view='user_management:user_options'
 )
 link_user_setup = Link(
     condition=factory_condition_queryset_access(
         app_label='auth', model_name='User',
         object_permission=permission_user_view,
         view_permission=permission_user_create,
-    ), icon=icon_user_setup, text=_('Users'),
+    ), icon=icon_user_setup, text=_(message='Users'),
     view='user_management:user_list'
 )
 

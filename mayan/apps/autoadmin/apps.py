@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -10,7 +10,7 @@ from .handlers import handler_auto_admin_account_password_change
 class AutoAdminAppConfig(MayanAppConfig):
     has_tests = True
     name = 'mayan.apps.autoadmin'
-    verbose_name = _('Auto administrator')
+    verbose_name = _(message='Auto administrator')
 
     def ready(self):
         super().ready()

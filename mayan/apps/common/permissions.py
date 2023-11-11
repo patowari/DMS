@@ -1,11 +1,11 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Common'), name='common'
+    label=_(message='Common'), name='common'
 )
 
 permission_object_copy = namespace.add_permission(
-    label=_('Copy object'), name='object_copy'
+    label=_(message='Copy object'), name='object_copy'
 )

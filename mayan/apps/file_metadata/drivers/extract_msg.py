@@ -2,7 +2,7 @@ import logging
 
 import extract_msg
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.storage.literals import MSG_MIME_TYPES
 
@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class ExtractMSGToolDriver(FileMetadataDriver):
-    label = _('Extract msg')
+    label = _(message='Extract msg')
     internal_name = 'extract_msg'
 
     def _process(self, document_file):

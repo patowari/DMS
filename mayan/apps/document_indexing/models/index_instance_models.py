@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
@@ -27,8 +27,8 @@ class IndexInstance(IndexInstanceBusinessLogicMixin, IndexTemplate):
 
     class Meta:
         proxy = True
-        verbose_name = _('Index instance')
-        verbose_name_plural = _('Index instances')
+        verbose_name = _(message='Index instance')
+        verbose_name_plural = _(message='Index instances')
 
     def get_absolute_url(self):
         try:
@@ -56,21 +56,21 @@ class IndexInstanceNode(IndexInstanceNodeBusinessLogicMixin, MPTTModel):
     )
     index_template_node = models.ForeignKey(
         on_delete=models.CASCADE, related_name='index_instance_nodes',
-        to=IndexTemplateNode, verbose_name=_('Index template node')
+        to=IndexTemplateNode, verbose_name=_(message='Index template node')
     )
     value = models.CharField(
-        blank=True, db_index=True, max_length=255, verbose_name=_('Value')
+        blank=True, db_index=True, max_length=255, verbose_name=_(message='Value')
     )
     documents = models.ManyToManyField(
         related_name='index_instance_nodes', to=Document,
-        verbose_name=_('Documents')
+        verbose_name=_(message='Documents')
     )
 
     class Meta:
         ordering = ('value',)
         unique_together = ('index_template_node', 'parent', 'value')
-        verbose_name = _('Index instance node')
-        verbose_name_plural = _('Indexes instances node')
+        verbose_name = _(message='Index instance node')
+        verbose_name_plural = _(message='Indexes instances node')
 
     def __str__(self):
         return self.value
@@ -93,12 +93,12 @@ class DocumentIndexInstanceNode(IndexInstanceNode):
 
     class Meta:
         proxy = True
-        verbose_name = _('Document index node instance')
-        verbose_name_plural = _('Document indexes node instances')
+        verbose_name = _(message='Document index node instance')
+        verbose_name_plural = _(message='Document indexes node instances')
 
 
 class IndexInstanceNodeSearchResult(IndexInstanceNode):
     class Meta:
         proxy = True
-        verbose_name = _('Index instance node')
-        verbose_name_plural = _('Index instance nodes')
+        verbose_name = _(message='Index instance node')
+        verbose_name_plural = _(message='Index instance nodes')

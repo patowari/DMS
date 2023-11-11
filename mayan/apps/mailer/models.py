@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.model_mixins import BackendModelMixin
 from mayan.apps.events.decorators import method_event
@@ -24,25 +24,25 @@ class UserMailer(
     _backend_model_null_backend = NullBackend
 
     label = models.CharField(
-        help_text=_('A short text describing the mailing profile.'),
-        max_length=128, unique=True, verbose_name=_('Label')
+        help_text=_(message='A short text describing the mailing profile.'),
+        max_length=128, unique=True, verbose_name=_(message='Label')
     )
     default = models.BooleanField(
         default=True, help_text=_(
             'If default, this mailing profile will be pre-selected on the '
             'document mailing form.'
-        ), verbose_name=_('Default')
+        ), verbose_name=_(message='Default')
     )
     enabled = models.BooleanField(
-        default=True, verbose_name=_('Enabled')
+        default=True, verbose_name=_(message='Enabled')
     )
 
     objects = UserMailerManager()
 
     class Meta:
         ordering = ('label',)
-        verbose_name = _('Mailing profile')
-        verbose_name_plural = _('Mailing profiles')
+        verbose_name = _(message='Mailing profile')
+        verbose_name_plural = _(message='Mailing profiles')
 
     def __str__(self):
         return self.label

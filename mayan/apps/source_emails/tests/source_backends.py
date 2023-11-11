@@ -2,7 +2,7 @@ from contextlib import contextmanager
 from unittest import mock
 
 from django.utils.encoding import force_bytes
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.source_backends.base import SourceBackend
 
@@ -55,7 +55,7 @@ class SourceBackendTestEmail(
 class SourceBackendTestIMAPEmail(
     SourceBackendTestEmailMixin, SourceBackendIMAPEmail
 ):
-    label = _('Test IMAP email')
+    label = _(message='Test IMAP email')
     mock_server_class = MockIMAPServer
 
     @contextmanager
@@ -70,7 +70,7 @@ class SourceBackendTestIMAPEmail(
 class SourceBackendTestPOP3Email(
     SourceBackendTestEmailMixin, SourceBackendPOP3Email
 ):
-    label = _('Test POP3 email')
+    label = _(message='Test POP3 email')
     mock_server_class = MockPOP3Mailbox
 
     @contextmanager

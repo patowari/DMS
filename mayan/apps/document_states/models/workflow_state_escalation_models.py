@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.literals import (
     TIME_DELTA_UNIT_CHOICES, TIME_DELTA_UNIT_DAYS
@@ -27,24 +27,24 @@ class WorkflowStateEscalation(
 ):
     state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='escalations',
-        to=WorkflowState, verbose_name=_('Workflow state')
+        to=WorkflowState, verbose_name=_(message='Workflow state')
     )
     transition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='escalations',
-        to=WorkflowTransition, verbose_name=_('Transition')
+        to=WorkflowTransition, verbose_name=_(message='Transition')
     )
     priority = models.IntegerField(
         blank=True, db_index=True, default=0, help_text=_(
             'Determine the order in which the escalations will be '
             'evaluated. Escalations with a lower priority number are '
             'executed before escalations with a higher priority number.'
-        ), verbose_name=_('Priority')
+        ), verbose_name=_(message='Priority')
     )
     enabled = models.BooleanField(
         default=True, help_text=_(
             'Enable automatic transition the workflow after a specified '
             'amount of time has elapsed in the state without change.'
-        ), verbose_name=_('Enabled')
+        ), verbose_name=_(message='Enabled')
     )
     unit = models.CharField(
         blank=True, choices=TIME_DELTA_UNIT_CHOICES,
@@ -55,20 +55,20 @@ class WorkflowStateEscalation(
     amount = models.PositiveIntegerField(
         blank=True, default=1, help_text=_(
             'Amount of the selected escalation units of time.'
-        ), verbose_name=_('Amount')
+        ), verbose_name=_(message='Amount')
     )
     comment = models.TextField(
         blank=True, help_text=_(
             'Comment to save to the workflow instance when the escalation '
             'is executed.'
-        ), verbose_name=_('Comment')
+        ), verbose_name=_(message='Comment')
     )
 
     class Meta:
         ordering = ('priority',)
         unique_together = ('state', 'transition')
-        verbose_name = _('Workflow state escalation')
-        verbose_name_plural = _('Workflow state escalations')
+        verbose_name = _(message='Workflow state escalation')
+        verbose_name_plural = _(message='Workflow state escalations')
 
     def __str__(self):
         return '{} -> {} ({})'.format(

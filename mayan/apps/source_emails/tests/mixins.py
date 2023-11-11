@@ -1,4 +1,4 @@
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
 from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
@@ -44,7 +44,7 @@ class EmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
             action_name=action_name, interface_name=interface_name
         )
 
-        result['_test_content'] = force_text(s=self._test_source_content)
+        result['_test_content'] = force_str(s=self._test_source_content)
 
         if action_name == TEST_CASE_ACTION_NAME_SOURCE_CREATE:
             result.update(

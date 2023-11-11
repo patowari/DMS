@@ -1,11 +1,11 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Platform'), name='platform'
+    label=_(message='Platform'), name='platform'
 )
 
 permission_test_trigger = namespace.add_permission(
-    label=_('Trigger tests'), name='trigger_tests'
+    label=_(message='Trigger tests'), name='trigger_tests'
 )

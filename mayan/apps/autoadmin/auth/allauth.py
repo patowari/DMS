@@ -8,7 +8,7 @@ except ImportError:
     raise
 
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .literals import ADMIN_EMAIL_ADDRESSES
 

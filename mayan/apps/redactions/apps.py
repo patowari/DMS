@@ -1,7 +1,7 @@
 import logging
 
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -30,7 +30,7 @@ class RedactionsApp(MayanAppConfig):
         'redactions/node_modules/cropperjs/types/index.d.ts',
         'redactions/node_modules/jquery-cropper/src/*'
     )
-    verbose_name = _('Redactions')
+    verbose_name = _(message='Redactions')
 
     def ready(self):
         super().ready()

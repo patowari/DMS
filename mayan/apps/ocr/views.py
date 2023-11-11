@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.documents.forms.document_type_forms import DocumentTypeFilteredSelectForm
 from mayan.apps.documents.models.document_models import Document
@@ -64,7 +64,7 @@ class DocumentTypeOCRSettingsEditView(
 
 class DocumentTypeOCRSubmitView(FormView):
     extra_context = {
-        'title': _('Submit all documents of a type for OCR')
+        'title': _(message='Submit all documents of a type for OCR')
     }
     form_class = DocumentTypeFilteredSelectForm
     post_action_redirect = reverse_lazy(viewname='common:tools_list')
@@ -120,7 +120,7 @@ class DocumentVersionOCRContentDeleteView(MultipleObjectDeleteView):
     title_plural = _(
         'Delete the OCR content of the %(count)d selected document versions.'
     )
-    title_single = _('Delete the OCR content of: %(object)s.')
+    title_single = _(message='Delete the OCR content of: %(object)s.')
     title_singular = _(
         'Delete the OCR content of the %(count)d selected document version.'
     )
@@ -153,7 +153,7 @@ class DocumentVersionOCRContentView(SingleObjectDetailView):
             'document': self.object,
             'hide_labels': True,
             'object': self.object,
-            'title': _('OCR result for document: %s') % self.object
+            'title': _(message='OCR result for document: %s') % self.object
         }
 
 
@@ -186,7 +186,7 @@ class DocumentVersionOCRSubmitView(MultipleObjectConfirmActionView):
         queryset = self.object_list
 
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Submit the selected document version to the OCR queue?',
                 plural='Submit the selected document versions to the OCR queue?',
                 number=queryset.count()

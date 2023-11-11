@@ -1,7 +1,7 @@
 import os
 
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.literals import TIME_DELTA_UNIT_DAYS
 
@@ -11,7 +11,7 @@ CHECK_TRASH_PERIOD_INTERVAL = 60
 DEFAULT_DELETE_PERIOD = 30
 DEFAULT_DELETE_TIME_UNIT = TIME_DELTA_UNIT_DAYS
 DEFAULT_DOCUMENT_FILE_ACTION_NAME = 'replace'
-DEFAULT_DOCUMENT_TYPE_LABEL = _('Default')
+DEFAULT_DOCUMENT_TYPE_LABEL = _(message='Default')
 
 # Old defaults (<4.0), used for the setting migrations.
 DEFAULT_DOCUMENTS_STORAGE_BACKEND = 'django.core.files.storage.FileSystemStorage'
@@ -85,15 +85,15 @@ IMAGE_ERROR_VERSION_PAGE_TRANSFORMATION_ERROR = 'document_version_page_transform
 INTERVAL_TASK_STUBS_DELETION = 60 * 10  # 10 minutes
 
 MONTH_NAMES = (
-    _('January'), _('February'), _('March'), _('April'), _('May'),
-    _('June'), _('July'), _('August'), _('September'), _('October'),
-    _('November'), _('December')
+    _(message='January'), _(message='February'), _(message='March'), _(message='April'), _(message='May'),
+    _(message='June'), _(message='July'), _(message='August'), _(message='September'), _(message='October'),
+    _(message='November'), _(message='December')
 )
 
 PAGE_RANGE_ALL = 'all'
 PAGE_RANGE_RANGE = 'range'
 PAGE_RANGE_CHOICES = (
-    (PAGE_RANGE_ALL, _('All pages')), (PAGE_RANGE_RANGE, _('Page range'))
+    (PAGE_RANGE_ALL, _(message='All pages')), (PAGE_RANGE_RANGE, _(message='Page range'))
 )
 
 STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE = 'documents__documentfilepageimagecache'

@@ -1,7 +1,7 @@
 import hashlib
 
 from django.core import serializers
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.templating.classes import Template
@@ -24,7 +24,7 @@ class WorkflowTransitionBusinessLogicMixin:
 
         return ', '.join(field_list)
 
-    get_field_display.short_description = _('Fields')
+    get_field_display.short_description = _(message='Fields')
 
     def get_hash(self):
         result = hashlib.sha256(
@@ -48,7 +48,7 @@ class WorkflowTransitionBusinessLogicMixin:
         'The transition will be available, depending on the condition '
         'return value.'
     )
-    has_condition.short_description = _('Has a condition?')
+    has_condition.short_description = _(message='Has a condition?')
 
 
 class WorkflowTransitionFieldBusinessLogicMixin:

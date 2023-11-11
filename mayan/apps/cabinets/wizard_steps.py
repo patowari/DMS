@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -15,7 +15,7 @@ from .permissions import permission_cabinet_add_document
 
 class DocumentCreateWizardStepCabinets(DocumentCreateWizardStep):
     form_class = CabinetListForm
-    label = _('Select cabinets')
+    label = _(message='Select cabinets')
     name = 'cabinet_selection'
     number = 3
 
@@ -74,7 +74,7 @@ class DocumentCreateWizardStepCabinets(DocumentCreateWizardStep):
         user = wizard.request.user
 
         kwargs = {
-            'help_text': _('Cabinets to which the document will be added.'),
+            'help_text': _(message='Cabinets to which the document will be added.'),
             'permission': permission_cabinet_add_document,
             'queryset': Cabinet.objects.none(),
             'user': user

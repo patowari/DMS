@@ -3,10 +3,10 @@ import sys
 import traceback
 
 from django import apps
-from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import include, re_path
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.organizations.settings import setting_organization_url_base_path
 from mayan.apps.templating.classes import AJAXTemplate
@@ -81,8 +81,8 @@ class MayanAppConfig(apps.AppConfig):
                 app_namespace = self.name
 
             mayan_urlpatterns += (
-                url(
-                    regex=r'^{}'.format(top_url), view=include(
+                re_path(
+                    route=r'^{}'.format(top_url), view=include(
                         (app_urlpatterns, app_namespace)
                     )
                 ),
@@ -108,8 +108,8 @@ class MayanAppConfig(apps.AppConfig):
                 raise exception
         else:
             mayan_urlpatterns += (
-                url(
-                    regex=r'^{}'.format(top_url), view=include(
+                re_path(
+                    route=r'^{}'.format(top_url), view=include(
                         passthru_urlpatterns
                     )
                 ),
@@ -129,7 +129,7 @@ class CommonApp(MayanAppConfig):
     static_media_ignore_patterns = (
         'mptt/*',
     )
-    verbose_name = _('Common')
+    verbose_name = _(message='Common')
 
     def ready(self):
         super().ready()

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.permissions import permission_document_type_edit
 from mayan.apps.navigation.classes import Link
@@ -23,34 +23,34 @@ from .permissions import (
 
 link_metadata_add = Link(
     args='object.pk', icon=icon_document_metadata_add,
-    permissions=(permission_document_metadata_add,), text=_('Add metadata'),
+    permissions=(permission_document_metadata_add,), text=_(message='Add metadata'),
     view='metadata:metadata_add',
 )
 link_metadata_edit = Link(
     args='object.pk', icon=icon_document_metadata_edit,
     permissions=(permission_document_metadata_edit,),
-    text=_('Edit metadata'), view='metadata:metadata_edit'
+    text=_(message='Edit metadata'), view='metadata:metadata_edit'
 )
 link_metadata_multiple_add = Link(
-    icon=icon_document_metadata_add, text=_('Add metadata'),
+    icon=icon_document_metadata_add, text=_(message='Add metadata'),
     view='metadata:metadata_multiple_add'
 )
 link_metadata_multiple_edit = Link(
-    icon=icon_document_metadata_edit, text=_('Edit metadata'),
+    icon=icon_document_metadata_edit, text=_(message='Edit metadata'),
     view='metadata:metadata_multiple_edit'
 )
 link_metadata_multiple_remove = Link(
-    icon=icon_document_metadata_remove, text=_('Remove metadata'),
+    icon=icon_document_metadata_remove, text=_(message='Remove metadata'),
     view='metadata:metadata_multiple_remove'
 )
 link_metadata_remove = Link(
     args='object.pk', icon=icon_document_metadata_remove,
     permissions=(permission_document_metadata_remove,),
-    text=_('Remove metadata'), view='metadata:metadata_remove',
+    text=_(message='Remove metadata'), view='metadata:metadata_remove',
 )
 link_metadata_list = Link(
     args='resolved_object.pk', icon=icon_document_metadata_list,
-    permissions=(permission_document_metadata_view,), text=_('Metadata'),
+    permissions=(permission_document_metadata_view,), text=_(message='Metadata'),
     view='metadata:metadata_list',
 )
 
@@ -60,7 +60,7 @@ link_document_type_metadata_type_relationship = Link(
     args='resolved_object.pk',
     icon=icon_document_type_metadata_type_list,
     permissions=(permission_document_type_edit,),
-    text=_('Metadata types'), view='metadata:document_type_metadata_type_relationship',
+    text=_(message='Metadata types'), view='metadata:document_type_metadata_type_relationship',
 )
 
 # Metadata type
@@ -69,30 +69,30 @@ link_metadata_type_document_type_relationship = Link(
     args='resolved_object.pk',
     icon=icon_metadata_type_document_type_list,
     permissions=(permission_document_type_edit,),
-    text=_('Document types'), view='metadata:metadata_type_document_type_relationship',
+    text=_(message='Document types'), view='metadata:metadata_type_document_type_relationship',
 )
 link_metadata_type_create = Link(
     icon=icon_metadata_type_create,
-    permissions=(permission_metadata_type_create,), text=_('Create new'),
+    permissions=(permission_metadata_type_create,), text=_(message='Create new'),
     view='metadata:metadata_type_create'
 )
 link_metadata_type_single_delete = Link(
     args='object.pk', icon=icon_metadata_type_single_delete,
     permissions=(permission_metadata_type_delete,),
-    tags='dangerous', text=_('Delete'),
+    tags='dangerous', text=_(message='Delete'),
     view='metadata:metadata_type_single_delete',
 )
 link_metadata_type_multiple_delete = Link(
     icon=icon_metadata_type_multiple_delete,
-    text=_('Delete'), view='metadata:metadata_type_multiple_delete'
+    text=_(message='Delete'), view='metadata:metadata_type_multiple_delete'
 )
 link_metadata_type_edit = Link(
     args='object.pk', icon=icon_metadata_type_edit,
     permissions=(permission_metadata_type_edit,),
-    text=_('Edit'), view='metadata:metadata_type_edit'
+    text=_(message='Edit'), view='metadata:metadata_type_edit'
 )
 link_metadata_type_list = Link(
-    icon=icon_metadata_type_list, text=_('Metadata types'),
+    icon=icon_metadata_type_list, text=_(message='Metadata types'),
     view='metadata:metadata_type_list'
 )
 link_metadata_type_setup = Link(
@@ -100,6 +100,6 @@ link_metadata_type_setup = Link(
         app_label='metadata', model_name='MetadataType',
         object_permission=permission_metadata_type_view,
         view_permission=permission_metadata_type_create,
-    ), icon=icon_metadata_type_list, text=_('Metadata types'),
+    ), icon=icon_metadata_type_list, text=_(message='Metadata types'),
     view='metadata:metadata_type_list'
 )

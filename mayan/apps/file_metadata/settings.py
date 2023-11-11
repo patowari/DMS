@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -9,7 +9,7 @@ from .literals import (
 from .setting_migrations import FileMetadataSettingMigration
 
 namespace = SettingNamespace(
-    label=_('File metadata'), migration_class=FileMetadataSettingMigration,
+    label=_(message='File metadata'), migration_class=FileMetadataSettingMigration,
     name='file_metadata', version='0002'
 )
 setting_auto_process = namespace.add_setting(

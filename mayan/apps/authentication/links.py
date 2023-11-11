@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 from mayan.apps.user_management.link_conditions import condition_user_is_not_super_user
@@ -32,30 +32,30 @@ def condition_user_has_usable_password_and_can_change_password_and_is_not_admin(
 
 
 link_logout = Link(
-    html_extra_classes='non-ajax', icon=icon_logout, text=_('Logout'),
+    html_extra_classes='non-ajax', icon=icon_logout, text=_(message='Logout'),
     view='authentication:logout_view'
 )
 link_password_change = Link(
     condition=condition_user_has_usable_password_and_can_change_password,
-    icon=icon_password_change, text=_('Change password'),
+    icon=icon_password_change, text=_(message='Change password'),
     view='authentication:password_change_view'
 )
 link_user_impersonate_form_start = Link(
     icon=icon_impersonate_start,
-    permissions=(permission_users_impersonate,), text=_('Impersonate user'),
+    permissions=(permission_users_impersonate,), text=_(message='Impersonate user'),
     view='authentication:user_impersonate_form_start'
 )
 link_user_impersonate_start = Link(
     args='object.id', condition=condition_user_is_not_super_user, icon=icon_impersonate_start,
-    permissions=(permission_users_impersonate,), text=_('Impersonate'),
+    permissions=(permission_users_impersonate,), text=_(message='Impersonate'),
     view='authentication:user_impersonate_start'
 )
 link_user_multiple_set_password = Link(
     icon=icon_password_change, permissions=(permission_user_edit,),
-    text=_('Set password'), view='authentication:user_multiple_set_password'
+    text=_(message='Set password'), view='authentication:user_multiple_set_password'
 )
 link_user_set_password = Link(
     args='object.id', condition=condition_user_has_usable_password_and_can_change_password_and_is_not_admin,
     icon=icon_password_change, permissions=(permission_user_edit,),
-    text=_('Set password'), view='authentication:user_set_password'
+    text=_(message='Set password'), view='authentication:user_set_password'
 )

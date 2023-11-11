@@ -158,10 +158,10 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), 2)
-        self.assertQuerysetEqual(
-            ordered=False, qs=Document.objects.all(), values=(
+        self.assertQuerySetEqual(
+            ordered=False, qs=Document.objects.all(), transform=repr, values=(
                 '<Document: test-01.png>', '<Document: email_body.html>'
-            ),
+            )
         )
 
         events = self._get_test_events()
@@ -233,10 +233,10 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self._execute_test_source_action(action_name='document_upload')
 
         self.assertEqual(Document.objects.count(), 2)
-        self.assertQuerysetEqual(
-            ordered=False, qs=Document.objects.all(), values=(
+        self.assertQuerySetEqual(
+            ordered=False, qs=Document.objects.all(), transform=repr, values=(
                 '<Document: test-01.png>', '<Document: email_body.html>',
-            ),
+            )
         )
 
         events = self._get_test_events()

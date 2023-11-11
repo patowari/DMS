@@ -2,7 +2,7 @@ import logging
 
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_secondary, menu_user
@@ -20,7 +20,7 @@ class AuthenticationOTPApp(MayanAppConfig):
     app_url = 'authentication_otp'
     has_tests = True
     name = 'mayan.apps.authentication_otp'
-    verbose_name = _('Authentication OTP')
+    verbose_name = _(message='Authentication OTP')
 
     def ready(self):
         super().ready()

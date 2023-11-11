@@ -1,7 +1,7 @@
 import base64
 import hashlib
 
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 
 class HashAlgorithm:
@@ -31,7 +31,7 @@ class HashAlgorithm:
             self.hash_object.update(data)
 
     def get_digest(self):
-        return force_text(
+        return force_str(
             s=self._get_digest()
         )
 

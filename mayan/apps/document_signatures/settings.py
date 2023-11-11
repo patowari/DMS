@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -9,7 +9,7 @@ from .literals import (
 from .setting_migrations import DocumentSignaturesSettingMigration
 
 namespace = SettingNamespace(
-    label=_('Document signatures'),
+    label=_(message='Document signatures'),
     migration_class=DocumentSignaturesSettingMigration, name='signatures',
     version='0002'
 )

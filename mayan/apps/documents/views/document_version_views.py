@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.converter.layers import layer_saved_transformations
 from mayan.apps.converter.permissions import (
@@ -112,9 +112,9 @@ class DocumentVersionDeleteView(MultipleObjectDeleteView):
     success_message_plural = _(
         '%(count)d document version deletions queued successfully.'
     )
-    title_single = _('Delete document version "%(object)s".')
-    title_singular = _('Delete %(count)d document version.')
-    title_plural = _('Delete %(count)d document versions.')
+    title_single = _(message='Delete document version "%(object)s".')
+    title_singular = _(message='Delete %(count)d document version.')
+    title_plural = _(message='Delete %(count)d document versions.')
     view_icon = icon_document_version_delete
 
     def get_extra_context(self, **kwargs):
@@ -159,7 +159,7 @@ class DocumentVersionEditView(SingleObjectEditView):
 
     def get_extra_context(self):
         return {
-            'title': _('Edit document version: %s') % self.object
+            'title': _(message='Edit document version: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -199,10 +199,10 @@ class DocumentVersionListView(
                 'Versions are views that can display document file pages as '
                 'they are, remap or merge them into different layouts.'
             ),
-            'no_results_title': _('No versions available'),
+            'no_results_title': _(message='No versions available'),
             'object': self.external_object,
             'table_cell_container_classes': 'td-container-thumbnail',
-            'title': _('Versions of document: %s') % self.external_object
+            'title': _(message='Versions of document: %s') % self.external_object
         }
 
     def get_source_queryset(self):
@@ -275,7 +275,7 @@ class DocumentVersionPreviewView(SingleObjectDetailView):
         return {
             'hide_labels': True,
             'object': self.object,
-            'title': _('Preview of document version: %s') % self.object
+            'title': _(message='Preview of document version: %s') % self.object
         }
 
     def get_form_extra_kwargs(self):
@@ -333,7 +333,7 @@ class DocumentVersionTransformationsClearView(MultipleObjectConfirmActionView):
 
     def get_extra_context(self):
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Clear all the page transformations for the selected document version?',
                 plural='Clear all the page transformations for the selected document version?',
                 number=self.object_list.count()
@@ -408,7 +408,7 @@ class DocumentVersionTransformationsCloneView(ExternalObjectViewMixin, FormView)
                 )
         else:
             messages.success(
-                message=_('Transformations cloned successfully.'),
+                message=_(message='Transformations cloned successfully.'),
                 request=self.request
             )
 

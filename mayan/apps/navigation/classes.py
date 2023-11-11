@@ -14,11 +14,11 @@ from django.template import RequestContext, Variable, VariableDoesNotExist
 from django.template.defaulttags import URLNode
 from django.urls import resolve, reverse
 from django.utils.encoding import force_str
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.settings import setting_home_view
 from mayan.apps.common.utils import get_related_field, resolve_attribute
-from mayan.apps.permissions import Permission
+from mayan.apps.permissions.classes import Permission
 from mayan.apps.views.icons import icon_sort_down, icon_sort_up
 from mayan.apps.views.literals import (
     TEXT_SORT_FIELD_PARAMETER, TEXT_SORT_FIELD_VARIABLE_NAME
@@ -948,7 +948,9 @@ class SourceColumn(TemplateObjectMixin):
                         self._label = self.attribute
             else:
                 self._label = getattr(
-                    self.func, 'short_description', _('Unnamed function')
+                    self.func, 'short_description', _(
+                        message='Unnamed function'
+                    )
                 )
 
         self.label = self._label

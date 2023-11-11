@@ -3,7 +3,7 @@ from pathlib import Path
 
 from django.apps import apps
 from django.core.files import File
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext, gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.converter.exceptions import AppImageError
@@ -169,9 +169,11 @@ class DocumentBusinessLogicMixin:
             raise AppImageError(error_name=IMAGE_ERROR_NO_ACTIVE_VERSION)
 
     def get_label(self):
-        return self.label or ugettext('Document stub, id: %d') % self.pk
+        return self.label or gettext(
+            message='Document stub, id: %d'
+        ) % self.pk
 
-    get_label.short_description = _('Label')
+    get_label.short_description = _(message='Label')
 
     @property
     def is_in_trash(self):

@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import StatisticType
 
@@ -16,5 +16,5 @@ class StatisticTypeViewMixin:
             )
         except KeyError:
             raise Http404(
-                _('Statistic "%s" not found.') % self.kwargs['slug']
+                _(message='Statistic "%s" not found.') % self.kwargs['slug']
             )

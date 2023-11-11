@@ -1,7 +1,7 @@
 import logging
 
 from django.utils.text import format_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.document_states.literals import BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
@@ -16,7 +16,7 @@ logger = logging.getLogger(name=__name__)
 class WorkflowActionMessageSend(WorkflowAction):
     form_fields = {
         'username_list': {
-            'label': _('Username list'),
+            'label': _(message='Username list'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -35,7 +35,7 @@ class WorkflowActionMessageSend(WorkflowAction):
             }
         },
         'subject': {
-            'label': _('Subject'),
+            'label': _(message='Subject'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -52,7 +52,7 @@ class WorkflowActionMessageSend(WorkflowAction):
             }
         },
         'body': {
-            'label': _('Body'),
+            'label': _(message='Body'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -69,7 +69,7 @@ class WorkflowActionMessageSend(WorkflowAction):
             }
         }
     }
-    label = _('Send user message')
+    label = _(message='Send user message')
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -77,11 +77,11 @@ class WorkflowActionMessageSend(WorkflowAction):
 
         fieldsets += (
             (
-                _('Recipients'), {
+                _(message='Recipients'), {
                     'fields': ('username_list',)
                 },
             ), (
-                _('Content'), {
+                _(message='Content'), {
                     'fields': ('subject', 'body')
                 }
             )

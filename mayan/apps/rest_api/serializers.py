@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework import serializers as rest_framework_serializers
 from rest_framework.fields import (  # NOQA
@@ -34,22 +34,22 @@ class Serializer(
 
 class BatchAPIRequestResponseSerializer(Serializer):
     content = CharField(
-        label=_('Content'), read_only=True
+        label=_(message='Content'), read_only=True
     )
     data = JSONField(
-        label=_('Data'), read_only=True
+        label=_(message='Data'), read_only=True
     )
     headers = DictField(
-        label=_('Headers'), read_only=True
+        label=_(message='Headers'), read_only=True
     )
     name = CharField(
-        label=_('Name'), read_only=True
+        label=_(message='Name'), read_only=True
     )
     status_code = IntegerField(
-        label=_('Status code'), read_only=True
+        label=_(message='Status code'), read_only=True
     )
     requests = JSONField(
-        label=_('Requests'), style={'base_template': 'textarea.html'},
+        label=_(message='Requests'), style={'base_template': 'textarea.html'},
         write_only=True
     )
 
@@ -72,10 +72,10 @@ class BlankSerializer(Serializer):
 
 class EndpointSerializer(Serializer):
     label = CharField(
-        label=_('Label'), read_only=True
+        label=_(message='Label'), read_only=True
     )
     url = SerializerMethodField(
-        label=_('URL')
+        label=_(message='URL')
     )
 
     def get_url(self, instance):
@@ -103,35 +103,35 @@ class ModelSerializer(
 
 class ProjectInformationSerializer(Serializer):
     __author__ = CharField(
-        label=_('Author'), read_only=True
+        label=_(message='Author'), read_only=True
     )
     __author_email__ = CharField(
-        label=_('Author email'), read_only=True
+        label=_(message='Author email'), read_only=True
     )
     __build__ = CharField(
-        label=_('Build'), read_only=True
+        label=_(message='Build'), read_only=True
     )
     __build_string__ = CharField(
-        label=_('Build string'), read_only=True
+        label=_(message='Build string'), read_only=True
     )
     __copyright__ = CharField(
-        label=_('Copyright'), read_only=True
+        label=_(message='Copyright'), read_only=True
     )
     __description__ = CharField(
-        label=_('Description'), read_only=True
+        label=_(message='Description'), read_only=True
     )
     __django_version__ = CharField(
-        label=_('Django version'), read_only=True
+        label=_(message='Django version'), read_only=True
     )
     __license__ = CharField(
-        label=_('License'), read_only=True
+        label=_(message='License'), read_only=True
     )
     __title__ = CharField(
-        label=_('Title'), read_only=True
+        label=_(message='Title'), read_only=True
     )
     __version__ = CharField(
-        label=_('Version'), read_only=True
+        label=_(message='Version'), read_only=True
     )
     __website__ = CharField(
-        label=_('Website'), read_only=True
+        label=_(message='Website'), read_only=True
     )

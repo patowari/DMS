@@ -2,7 +2,7 @@ import logging
 
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from model_utils.managers import InheritanceManager
 
@@ -39,7 +39,7 @@ class SignatureBaseModel(SignatureBaseModelBusinessLogicMixin, models.Model):
     """
     document_file = models.ForeignKey(
         editable=False, on_delete=models.CASCADE, related_name='signatures',
-        to=DocumentFile, verbose_name=_('Document file')
+        to=DocumentFile, verbose_name=_(message='Document file')
     )
     # Basic fields
     date_time = models.DateTimeField(
@@ -48,25 +48,25 @@ class SignatureBaseModel(SignatureBaseModelBusinessLogicMixin, models.Model):
         )
     )
     key_id = models.CharField(
-        help_text=_('ID of the key that will be used to sign the document.'),
-        max_length=40, verbose_name=_('Key ID')
+        help_text=_(message='ID of the key that will be used to sign the document.'),
+        max_length=40, verbose_name=_(message='Key ID')
     )
     # With proper key
     signature_id = models.CharField(
         blank=True, editable=False, null=True, max_length=64,
-        verbose_name=_('Signature ID')
+        verbose_name=_(message='Signature ID')
     )
     public_key_fingerprint = models.CharField(
         blank=True, editable=False, null=True, max_length=40,
-        verbose_name=_('Public key fingerprint')
+        verbose_name=_(message='Public key fingerprint')
     )
 
     objects = InheritanceManager()
 
     class Meta:
         ordering = ('pk',)
-        verbose_name = _('Document file signature')
-        verbose_name_plural = _('Document file signatures')
+        verbose_name = _(message='Document file signature')
+        verbose_name_plural = _(message='Document file signatures')
 
     def __str__(self):
         return self.signature_id or '{} - {}'.format(
@@ -86,18 +86,18 @@ class DetachedSignature(ExtraDataModelMixin, SignatureBaseModel):
             'Signature file previously generated.'
         ), null=True, storage=DefinedStorageLazy(
             name=STORAGE_NAME_DOCUMENT_SIGNATURES_DETACHED_SIGNATURE
-        ), upload_to=upload_to, verbose_name=_('Signature file')
+        ), upload_to=upload_to, verbose_name=_(message='Signature file')
     )
 
     objects = DetachedSignatureManager()
 
     class Meta:
-        verbose_name = _('Document file detached signature')
-        verbose_name_plural = _('Document file detached signatures')
+        verbose_name = _(message='Document file detached signature')
+        verbose_name_plural = _(message='Document file detached signatures')
 
     def __str__(self):
         return '{}-{}'.format(
-            self.document_file, _('signature')
+            self.document_file, _(message='signature')
         )
 
     @method_event(
@@ -148,8 +148,8 @@ class EmbeddedSignature(SignatureBaseModel):
     objects = EmbeddedSignatureManager()
 
     class Meta:
-        verbose_name = _('Document file embedded signature')
-        verbose_name_plural = _('Document file embedded signatures')
+        verbose_name = _(message='Document file embedded signature')
+        verbose_name_plural = _(message='Document file embedded signatures')
 
     def save(self, *args, **kwargs):
         logger.debug(msg='checking for embedded signature')

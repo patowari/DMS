@@ -1,6 +1,5 @@
-from django.conf import settings
 from django.utils import timezone, translation
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.user_management.permissions import (
     permission_user_edit, permission_user_view
@@ -37,7 +36,7 @@ class UserLocaleProfileDetailView(
             ),
             'object': self.external_object,
             'read_only': True,
-            'title': _('Locale profile for user: %s') % self.external_object
+            'title': _(message='Locale profile for user: %s') % self.external_object
         }
 
     def get_object(self):
@@ -60,21 +59,6 @@ class UserLocaleProfileEditView(
 
             timezone.activate(timezone=timezone_value)
             translation.activate(language=language_value)
-
-            if hasattr(self.request, 'session'):
-                self.request.session[
-                    translation.LANGUAGE_SESSION_KEY
-                ] = language_value
-                self.request.session[
-                    settings.TIMEZONE_SESSION_KEY
-                ] = timezone_value
-            else:
-                self.request.set_cookie(
-                    settings.LANGUAGE_COOKIE_NAME, language_value
-                )
-                self.request.set_cookie(
-                    settings.TIMEZONE_COOKIE_NAME, timezone_value
-                )
 
         return super().form_valid(form=form)
 

@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.templatetags.static import static
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import RedirectView
 
 from stronghold.views import StrongholdPublicMixin
@@ -22,7 +22,7 @@ from .settings import setting_home_view
 
 
 class AboutView(SimpleView):
-    extra_context = {'title': _('About')}
+    extra_context = {'title': _(message='About')}
     template_name = 'appearance/about.html'
     view_icon = icon_about
 
@@ -40,7 +40,7 @@ class FaviconRedirectView(RedirectView):
 
 class HomeView(SimpleView):
     extra_context = {
-        'title': _('Home'),
+        'title': _(message='Home'),
     }
     template_name = 'appearance/home.html'
     view_icon = icon_home
@@ -50,7 +50,7 @@ class LicenseView(SimpleView):
     extra_context = {
         'form': LicenseForm(),
         'read_only': True,
-        'title': _('License'),
+        'title': _(message='License'),
     }
     template_name = 'appearance/generic_form.html'
     view_icon = icon_license
@@ -66,7 +66,7 @@ class ObjectCopyView(
         model_copy = ModelCopy.get(model=self.external_object._meta.model)
         context = {
             'object': self.external_object,
-            'subtitle': _('Fields to be copied: %s') % ', '.join(
+            'subtitle': _(message='Fields to be copied: %s') % ', '.join(
                 sorted(
                     map(
                         str, model_copy.get_fields_verbose_names()
@@ -87,7 +87,7 @@ class ObjectCopyView(
     def view_action(self):
         self.external_object.copy_instance()
         messages.success(
-            message=_('Object copied successfully.'),
+            message=_(message='Object copied successfully.'),
             request=self.request
         )
 
@@ -108,14 +108,14 @@ class SetupListView(SimpleView):
                 'No results here means that don\'t have the required '
                 'permissions to perform administrative task.'
             ),
-            'no_results_title': _('No setup options available.'),
+            'no_results_title': _(message='No setup options available.'),
             'resolved_links': menu_setup.resolve(
                 request=self.request, sort_results=True
             ),
             'subtitle': _(
                 'Here you can configure all aspects of the system.'
             ),
-            'title': _('Setup items')
+            'title': _(message='Setup items')
         }
 
 
@@ -131,5 +131,5 @@ class ToolsListView(SimpleView):
             'subtitle': _(
                 'These modules are used to do system maintenance.'
             ),
-            'title': _('Tools')
+            'title': _(message='Tools')
         }

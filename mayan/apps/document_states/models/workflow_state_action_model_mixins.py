@@ -2,7 +2,7 @@ import hashlib
 
 from django.conf import settings
 from django.core import serializers
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.classes import Template
 
@@ -54,4 +54,4 @@ class WorkflowStateActionBusinessLogicMixin:
         'The state action will be executed, depending on the condition '
         'return value.'
     )
-    has_condition.short_description = _('Has a condition?')
+    has_condition.short_description = _(message='Has a condition?')

@@ -1,10 +1,11 @@
+from urllib.parse import unquote_plus
+
 from furl import furl
 
 from django.conf import settings
 from django.contrib.auth import authenticate
 from django.test import override_settings
 from django.urls import reverse
-from django.utils.http import urlunquote_plus
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 from mayan.apps.testing.tests.base import GenericViewTestCase
@@ -19,8 +20,8 @@ from .mixins import LoginViewTestMixin
 
 class AuthenticationBackendTestCase(LoginViewTestMixin, GenericViewTestCase):
     authenticated_url = reverse(viewname='common:home')
-    authentication_url = urlunquote_plus(
-        furl(
+    authentication_url = unquote_plus(
+        string=furl(
             path=reverse(settings.LOGIN_URL), args={
                 'next': authenticated_url
             }

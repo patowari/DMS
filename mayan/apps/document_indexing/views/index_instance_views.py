@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.utils.html import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -38,8 +38,8 @@ class IndexInstanceListView(SingleObjectListView):
                 'created or that there are index templates '
                 'but they are no properly defined.'
             ),
-            'no_results_title': _('There are no index instances available.'),
-            'title': _('Indexes')
+            'no_results_title': _(message='There are no index instances available.'),
+            'title': _(message='Indexes')
         }
 
     def get_source_queryset(self):
@@ -77,7 +77,7 @@ class IndexInstanceNodeView(DocumentListView):
             {
                 'column_class': 'col-xs-12 col-sm-6 col-md-4 col-lg-3',
                 'navigation': mark_safe(
-                    s=_('Navigation: %s') % node_tree(
+                    s=_(message='Navigation: %s') % node_tree(
                         node=self.index_instance_node, user=self.request.user
                     )
                 ),

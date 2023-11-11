@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from .api_views import APIAnnouncementListView, APIAnnouncementView
 from .views import (
@@ -6,35 +6,35 @@ from .views import (
 )
 
 urlpatterns = [
-    url(
-        regex=r'^announcements/$', name='announcement_list',
+    re_path(
+        route=r'^announcements/$', name='announcement_list',
         view=AnnouncementListView.as_view()
     ),
-    url(
-        regex=r'^announcements/create/$', name='announcement_create',
+    re_path(
+        route=r'^announcements/create/$', name='announcement_create',
         view=AnnouncementCreateView.as_view()
     ),
-    url(
-        regex=r'^announcements/(?P<announcement_id>\d+)/delete/$',
+    re_path(
+        route=r'^announcements/(?P<announcement_id>\d+)/delete/$',
         name='announcement_single_delete', view=AnnouncementDeleteView.as_view()
     ),
-    url(
-        regex=r'^announcements/multiple/delete/$',
+    re_path(
+        route=r'^announcements/multiple/delete/$',
         name='announcement_multiple_delete', view=AnnouncementDeleteView.as_view()
     ),
-    url(
-        regex=r'^announcements/(?P<announcement_id>\d+)/edit/$', name='announcement_edit',
+    re_path(
+        route=r'^announcements/(?P<announcement_id>\d+)/edit/$', name='announcement_edit',
         view=AnnouncementEditView.as_view()
     )
 ]
 
 api_urls = [
-    url(
-        regex=r'^announcements/$', name='announcement-list',
+    re_path(
+        route=r'^announcements/$', name='announcement-list',
         view=APIAnnouncementListView.as_view()
     ),
-    url(
-        regex=r'^announcements/(?P<announcement_id>[0-9]+)/$', name='announcement-detail',
+    re_path(
+        route=r'^announcements/(?P<announcement_id>[0-9]+)/$', name='announcement-detail',
         view=APIAnnouncementView.as_view()
     )
 ]

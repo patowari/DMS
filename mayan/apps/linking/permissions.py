@@ -1,23 +1,23 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Smart links'), name='linking'
+    label=_(message='Smart links'), name='linking'
 )
 
 permission_resolved_smart_link_view = namespace.add_permission(
-    label=_('View resolved smart links'), name='resolved_smart_link_view'
+    label=_(message='View resolved smart links'), name='resolved_smart_link_view'
 )
 permission_smart_link_create = namespace.add_permission(
-    label=_('Create new smart links'), name='smart_link_create'
+    label=_(message='Create new smart links'), name='smart_link_create'
 )
 permission_smart_link_delete = namespace.add_permission(
-    label=_('Delete smart links'), name='smart_link_delete'
+    label=_(message='Delete smart links'), name='smart_link_delete'
 )
 permission_smart_link_edit = namespace.add_permission(
-    label=_('Edit smart links'), name='smart_link_edit'
+    label=_(message='Edit smart links'), name='smart_link_edit'
 )
 permission_smart_link_view = namespace.add_permission(
-    label=_('View existing smart links'), name='smart_link_view'
+    label=_(message='View existing smart links'), name='smart_link_view'
 )

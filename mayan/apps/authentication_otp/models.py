@@ -3,7 +3,7 @@ import pyotp
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .events import event_otp_disabled, event_otp_enabled
 
@@ -14,7 +14,7 @@ class UserOTPData(models.Model):
     """
     user = models.OneToOneField(
         on_delete=models.CASCADE, related_name='otp_data',
-        to=settings.AUTH_USER_MODEL, unique=True, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, unique=True, verbose_name=_(message='User')
     )
     secret = models.CharField(
         blank=True, max_length=96, verbose_name=_(
@@ -23,8 +23,8 @@ class UserOTPData(models.Model):
     )
 
     class Meta:
-        verbose_name = _('User OTP data')
-        verbose_name_plural = _('Users OTP data')
+        verbose_name = _(message='User OTP data')
+        verbose_name_plural = _(message='Users OTP data')
 
     def disable(self):
         self.secret = ''

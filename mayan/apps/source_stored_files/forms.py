@@ -1,7 +1,7 @@
 import logging
 
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.forms import UploadBaseForm
 
@@ -28,7 +28,7 @@ class StoredFileUploadForm(UploadBaseForm):
             logger.error('exception: %s', exception)
 
     stored_source_file_id = forms.ChoiceField(
-        label=_('File'), widget=forms.widgets.Select(
+        label=_(message='File'), widget=forms.widgets.Select(
             attrs={'class': 'select2'}
         )
     )

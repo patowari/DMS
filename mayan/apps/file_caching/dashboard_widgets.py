@@ -3,7 +3,7 @@ from django.db.models import Sum
 from django.template.defaultfilters import filesizeformat
 from django.urls import reverse_lazy
 from django.utils.text import format_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dashboards.classes import DashboardWidgetNumeric
 
@@ -13,7 +13,7 @@ from .permissions import permission_cache_view
 
 class DashboardWidgetFileCacheSizeAllocated(DashboardWidgetNumeric):
     icon = icon_file_caching
-    label = _('Total cache allocated')
+    label = _(message='Total cache allocated')
     link = reverse_lazy(viewname='file_caching:cache_list')
 
     def get_count(self):
@@ -42,7 +42,7 @@ class DashboardWidgetFileCacheSizeAllocated(DashboardWidgetNumeric):
 
 class DashboardWidgetFileCacheSizeUsed(DashboardWidgetNumeric):
     icon = icon_file_caching
-    label = _('Total cache used')
+    label = _(message='Total cache used')
     link = reverse_lazy(viewname='file_caching:cache_list')
 
     def get_count(self):

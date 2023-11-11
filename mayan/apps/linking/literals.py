@@ -1,27 +1,27 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 INCLUSION_AND = '&'
 INCLUSION_OR = '|'
 
 INCLUSION_CHOICES = (
-    (INCLUSION_AND, _('and')),
-    (INCLUSION_OR, _('or'))
+    (INCLUSION_AND, _(message='and')),
+    (INCLUSION_OR, _(message='or'))
 )
 
 OPERATOR_CHOICES = (
-    ('exact', _('is equal to')),
-    ('iexact', _('is equal to (case insensitive)')),
-    ('contains', _('contains')),
-    ('icontains', _('contains (case insensitive)')),
-    ('in', _('is in')),
-    ('gt', _('is greater than')),
-    ('gte', _('is greater than or equal to')),
-    ('lt', _('is less than')),
-    ('lte', _('is less than or equal to')),
-    ('startswith', _('starts with')),
-    ('istartswith', _('starts with (case insensitive)')),
-    ('endswith', _('ends with')),
-    ('iendswith', _('ends with (case insensitive)')),
-    ('regex', _('is in regular expression')),
-    ('iregex', _('is in regular expression (case insensitive)'))
+    ('exact', _(message='is equal to')),
+    ('iexact', _(message='is equal to (case insensitive)')),
+    ('contains', _(message='contains')),
+    ('icontains', _(message='contains (case insensitive)')),
+    ('in', _(message='is in')),
+    ('gt', _(message='is greater than')),
+    ('gte', _(message='is greater than or equal to')),
+    ('lt', _(message='is less than')),
+    ('lte', _(message='is less than or equal to')),
+    ('startswith', _(message='starts with')),
+    ('istartswith', _(message='starts with (case insensitive)')),
+    ('endswith', _(message='ends with')),
+    ('iendswith', _(message='ends with (case insensitive)')),
+    ('regex', _(message='is in regular expression')),
+    ('iregex', _(message='is in regular expression (case insensitive)'))
 )

@@ -5,7 +5,7 @@ from PIL import Image, ImageColor, ImageDraw
 from django import forms
 from django.apps import apps
 from django.utils.encoding import force_bytes
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.forms import Form
 from mayan.apps.views.widgets import ColorWidget
@@ -19,15 +19,15 @@ class ImagePasteTransformationMixin:
             help_text=_(
                 'Number of degrees to rotate the image counter clockwise '
                 'around its center.'
-            ), label=_('Rotation'), required=False
+            ), label=_(message='Rotation'), required=False
         )
         transparency = forms.FloatField(
-            help_text=_('Opacity level of the image in percent'),
-            label=_('Transparency'), required=False
+            help_text=_(message='Opacity level of the image in percent'),
+            label=_(message='Transparency'), required=False
         )
         zoom = forms.FloatField(
-            help_text=_('Zoom level in percent.'), label=_('Zoom'),
-            required=False
+            help_text=_(message='Zoom level in percent.'),
+            label=_(message='Zoom'), required=False
         )
 
     @classmethod
@@ -110,17 +110,18 @@ class ImagePasteCoordinatesAbsoluteTransformationMixin(
     ImagePasteTransformationMixin
 ):
     arguments = ('left', 'top')
-    label = _('Paste an image')
+    label = _(message='Paste an image')
     name = 'paste_image'
 
     class Form(ImagePasteTransformationMixin.Form):
         left = forms.IntegerField(
-            help_text=_('Horizontal position in pixels from the left.'),
-            label=_('Left'), required=False
+            help_text=_(
+                message='Horizontal position in pixels from the left.'
+            ), label=_(message='Left'), required=False
         )
         top = forms.IntegerField(
-            help_text=_('Vertical position in pixels from the top.'),
-            label=_('Top'), required=False
+            help_text=_(message='Vertical position in pixels from the top.'),
+            label=_(message='Top'), required=False
         )
 
     def _execute_on(self, *args, **kwargs):
@@ -154,17 +155,19 @@ class ImagePasteCoordinatesPercentTransformationMixin(
     ImagePasteTransformationMixin
 ):
     arguments = ('left', 'top')
-    label = _('Paste an image (percents coordinates)')
+    label = _(message='Paste an image (percents coordinates)')
     name = 'paste_image_percent'
 
     class Form(ImagePasteTransformationMixin.Form):
         left = forms.FloatField(
-            help_text=_('Horizontal position in percent from the left.'),
-            label=_('Left'), required=False
+            help_text=_(
+                message='Horizontal position in percent from the left.'
+            ), label=_(message='Left'), required=False
         )
         top = forms.FloatField(
-            help_text=_('Vertical position in percent from the top.'),
-            label=_('Top'), required=False
+            help_text=_(
+                message='Vertical position in percent from the top.'
+            ), label=_(message='Top'), required=False
         )
 
     def _execute_on(self, *args, **kwargs):
@@ -217,34 +220,37 @@ class ImageWatermarkPercentTransformationMixin(
         'left', 'top', 'right', 'bottom', 'horizontal_increment',
         'vertical_increment'
     )
-    label = _('Paste an asset as watermark')
+    label = _(message='Paste an asset as watermark')
     name = 'paste_asset_watermark'
 
     class Form(ImagePasteTransformationMixin.Form):
         left = forms.IntegerField(
             help_text=_(
                 'Horizontal start position in pixels from the left.'
-            ), label=_('Left'), required=False
+            ), label=_(message='Left'), required=False
         )
         right = forms.IntegerField(
-            help_text=_('Horizontal end position in pixels from the right.'),
-            label=_('Right'), required=False
+            help_text=_(
+                message='Horizontal end position in pixels from the right.'
+            ), label=_(message='Right'), required=False
         )
         top = forms.IntegerField(
-            help_text=_('Vertical start position in pixels from the top.'),
-            label=_('Top'), required=False
+            help_text=_(
+                message='Vertical start position in pixels from the top.'
+            ), label=_(message='Top'), required=False
         )
         bottom = forms.IntegerField(
-            help_text=_('Vertical end position in pixels from the top.'),
-            label=_('Bottom'), required=False
+            help_text=_(
+                message='Vertical end position in pixels from the top.'
+            ), label=_(message='Bottom'), required=False
         )
         horizontal_increment = forms.IntegerField(
-            help_text=_('Horizontal position increments in pixels.'),
-            label=_('Horizontal increment'), required=False
+            help_text=_(message='Horizontal position increments in pixels.'),
+            label=_(message='Horizontal increment'), required=False
         )
         vertical_increment = forms.IntegerField(
-            help_text=_('Vertical position increments in pixels.'),
-            label=_('Vertical increment'), required=False
+            help_text=_(message='Vertical position increments in pixels.'),
+            label=_(message='Vertical increment'), required=False
         )
 
     def _execute_on(self, *args, **kwargs):
@@ -303,7 +309,7 @@ class AssetTransformationMixin:
 
         class FormWithSuperArguments(SuperForm):
             asset_name = forms.ChoiceField(
-                help_text=_('Asset name'), label=_('Asset'),
+                help_text=_(message='Asset name'), label=_(message='Asset'),
                 required=True
             )
 
@@ -346,20 +352,24 @@ class AssetTransformationMixin:
 class TransformationDrawRectangleMixin:
     class Form(Form):
         fillcolor = forms.CharField(
-            help_text=_('Color used to fill the rectangle.'),
-            label=_('Fill color'), required=False, widget=ColorWidget()
+            help_text=_(message='Color used to fill the rectangle.'),
+            label=_(message='Fill color'), required=False,
+            widget=ColorWidget()
         )
         fill_transparency = forms.IntegerField(
-            help_text=_('Opacity level of the fill color in percent'),
-            label=_('Fill transparency'), required=False
+            help_text=_(
+                message='Opacity level of the fill color in percent'
+            ), label=_(message='Fill transparency'), required=False
         )
         outlinecolor = forms.CharField(
-            help_text=_('Color used for the outline of the rectangle.'),
-            label=_('Outline color'), required=False, widget=ColorWidget()
+            help_text=_(
+                message='Color used for the outline of the rectangle.'
+            ), label=_(message='Outline color'), required=False,
+            widget=ColorWidget()
         )
         outlinewidth = forms.CharField(
-            help_text=_('Width in pixels of the rectangle outline.'),
-            label=_('Outline width'), required=False
+            help_text=_(message='Width in pixels of the rectangle outline.'),
+            label=_(message='Outline width'), required=False
         )
 
     def _execute_on(self, *args, **kwargs):

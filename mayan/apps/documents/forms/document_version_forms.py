@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..classes import DocumentVersionModification
 from ..fields import DocumentVersionField
@@ -17,7 +17,7 @@ class DocumentVersionModificationBackendForm(forms.Form):
         choices=(), help_text=_(
             'The backend that will be executed against the selected '
             'document version.'
-        ), label=_('Backend')
+        ), label=_(message='Backend')
     )
 
     def __init__(self, *args, **kwargs):

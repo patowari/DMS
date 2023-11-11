@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_indexing.tasks import task_index_instance_document_add
 from mayan.apps.events.classes import EventType
@@ -78,7 +78,7 @@ def handler_trigger_transition(sender, **kwargs):
                 event_type_label = TEXT_UNKNOWN_EVENT_ID % action.verb
 
             workflow_instance.do_transition(
-                comment=_('Event trigger: %s') % event_type_label,
+                comment=_(message='Event trigger: %s') % event_type_label,
                 transition=valid_transitions[0]
             )
 

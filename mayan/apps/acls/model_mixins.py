@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .events import event_acl_edited
 
@@ -20,7 +20,7 @@ class AccessControlListBusinessLogicMixin:
         has granted. The count is filtered by access.
         """
         return self.permissions.count()
-    get_permission_count.short_description = _('Permission count')
+    get_permission_count.short_description = _(message='Permission count')
 
     def permissions_add(self, queryset, user):
         for obj in queryset:

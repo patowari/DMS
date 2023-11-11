@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import post_save, pre_delete
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -43,7 +43,7 @@ class TagsApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.tags'
-    verbose_name = _('Tags')
+    verbose_name = _(message='Tags')
 
     def ready(self):
         super().ready()
@@ -130,24 +130,24 @@ class TagsApp(MayanAppConfig):
         # Document
 
         SourceColumn(
-            label=_('Tags'), source=Document, widget=DocumentTagWidget
+            label=_(message='Tags'), source=Document, widget=DocumentTagWidget
         )
 
         SourceColumn(
-            attribute='document', label=_('Tags'),
+            attribute='document', label=_(message='Tags'),
             source=DocumentFileSearchResult, widget=DocumentTagWidget
         )
         SourceColumn(
-            attribute='document_file__document', label=_('Tags'),
+            attribute='document_file__document', label=_(message='Tags'),
             source=DocumentFilePageSearchResult, widget=DocumentTagWidget
         )
 
         SourceColumn(
-            attribute='document', label=_('Tags'),
+            attribute='document', label=_(message='Tags'),
             source=DocumentVersionSearchResult, widget=DocumentTagWidget
         )
         SourceColumn(
-            attribute='document_version__document', label=_('Tags'),
+            attribute='document_version__document', label=_(message='Tags'),
             source=DocumentVersionPageSearchResult, widget=DocumentTagWidget
         )
 
@@ -168,7 +168,7 @@ class TagsApp(MayanAppConfig):
         source_column_tag_document_count = SourceColumn(
             func=lambda context: context['object'].get_document_count(
                 user=context['request'].user
-            ), include_label=True, label=_('Documents'), source=Tag
+            ), include_label=True, label=_(message='Documents'), source=Tag
         )
         source_column_tag_document_count.add_exclude(source=DocumentTag)
 

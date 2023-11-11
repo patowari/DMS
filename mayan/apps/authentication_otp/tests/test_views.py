@@ -1,9 +1,10 @@
+from urllib.parse import unquote_plus
+
 from furl import furl
 
 from django.conf import settings
 from django.test import override_settings
 from django.urls import reverse
-from django.utils.http import urlunquote_plus
 
 from mayan.apps.authentication.classes import AuthenticationBackend
 from mayan.apps.authentication.events import event_user_logged_in
@@ -24,8 +25,8 @@ class LoginOTPTestCase(
     AuthenticationOTPTestMixin, LoginViewTestMixin, GenericViewTestCase
 ):
     authenticated_url = reverse(viewname='common:home')
-    authentication_url = urlunquote_plus(
-        furl(
+    authentication_url = unquote_plus(
+        string=furl(
             path=reverse(settings.LOGIN_URL), args={
                 'next': authenticated_url
             }

@@ -1,6 +1,6 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.http import StreamingHttpResponse
 
 from rest_framework import status
@@ -72,8 +72,8 @@ class SourceBackendActionMixinFileStoredDeleteInteractive(
                 context = {
                     'delete_view': True,
                     'object': stored_file,
-                    'object_name': _('Stored file'),
-                    'title': _('Delete stored file "%s"?') % stored_file,
+                    'object_name': _(message='Stored file'),
+                    'title': _(message='Delete stored file "%s"?') % stored_file,
                 }
 
                 return context

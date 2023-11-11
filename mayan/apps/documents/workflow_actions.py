@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 
@@ -15,7 +15,7 @@ class DocumentTypeChangeAction(WorkflowAction):
     }
     form_fields = {
         'document_type': {
-            'label': _('Document type'),
+            'label': _(message='Document type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
                 'help_text': _(
                     'New document type for the workflow document.'
@@ -23,7 +23,7 @@ class DocumentTypeChangeAction(WorkflowAction):
             }
         }
     }
-    label = _('Change document type')
+    label = _(message='Change document type')
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -31,7 +31,7 @@ class DocumentTypeChangeAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Document type'), {
+                _(message='Document type'), {
                     'fields': ('document_type',)
                 }
             ),
@@ -50,7 +50,7 @@ class DocumentTypeChangeAction(WorkflowAction):
 
 
 class TrashDocumentAction(WorkflowAction):
-    label = _('Send document to trash')
+    label = _(message='Send document to trash')
 
     def execute(self, context):
         context['workflow_instance'].document.delete()

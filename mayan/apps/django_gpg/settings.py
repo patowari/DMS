@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -8,7 +8,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Signatures'), name='django_gpg'
+    label=_(message='Signatures'), name='django_gpg'
 )
 
 setting_gpg_backend = namespace.add_setting(
@@ -24,5 +24,5 @@ setting_gpg_backend_arguments = namespace.add_setting(
 )
 setting_keyserver = namespace.add_setting(
     default=DEFAULT_SIGNATURES_KEYSERVER, global_name='SIGNATURES_KEYSERVER',
-    help_text=_('Keyserver used to query for keys.')
+    help_text=_(message='Keyserver used to query for keys.')
 )

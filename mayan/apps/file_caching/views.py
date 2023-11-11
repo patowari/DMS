@@ -1,6 +1,5 @@
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.views.generics import (
     ConfirmView, MultipleObjectConfirmActionView, SingleObjectDetailView,
@@ -47,7 +46,7 @@ class CacheDetailView(SingleObjectDetailView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Details of cache: %s') % self.object
+            'title': _(message='Details of cache: %s') % self.object
         }
 
 
@@ -59,7 +58,7 @@ class CacheListView(SingleObjectListView):
     def get_extra_context(self):
         return {
             'hide_object': True,
-            'title': _('File caches list')
+            'title': _(message='File caches list')
         }
 
 
@@ -80,7 +79,7 @@ class CachePartitionDetailView(SingleObjectDetailView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Details of cache partition: %s') % self.object
+            'title': _(message='Details of cache partition: %s') % self.object
         }
 
 
@@ -124,15 +123,19 @@ class CachePurgeView(MultipleObjectConfirmActionView):
     model = Cache
     object_permission = permission_cache_purge
     pk_url_kwarg = 'cache_id'
-    success_message_plural = _('%(count)d caches submitted for purging.')
-    success_message_singular = _('%(count)d cache submitted for purging.')
+    success_message_plural = _(
+        message='%(count)d caches submitted for purging.'
+    )
+    success_message_singular = _(
+        message='%(count)d cache submitted for purging.'
+    )
     view_icon = icon_cache_purge
 
     def get_extra_context(self):
         queryset = self.object_list
 
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Submit the selected cache for purging?',
                 plural='Submit the selected caches for purging?',
                 number=queryset.count()

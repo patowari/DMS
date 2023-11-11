@@ -2,7 +2,7 @@ import logging
 
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     MultipleObjectConfirmActionView, SingleObjectCreateView,
@@ -31,7 +31,7 @@ class AnnouncementCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _('Create announcement'),
+            'title': _(message='Create announcement'),
         }
 
     def get_instance_extra_data(self):
@@ -59,9 +59,9 @@ class AnnouncementDeleteView(MultipleObjectConfirmActionView):
     success_message_singular = _(
         '%(count)d announcement deleted successfully.'
     )
-    title_plural = _('Delete the %(count)d selected announcements.')
-    title_single = _('Delete announcement: %(object)s.')
-    title_singular = _('Delete the %(count)d selected announcement.')
+    title_plural = _(message='Delete the %(count)d selected announcements.')
+    title_single = _(message='Delete announcement: %(object)s.')
+    title_singular = _(message='Delete the %(count)d selected announcement.')
     view_icon = icon_announcement_delete
 
     def get_extra_context(self):
@@ -95,7 +95,7 @@ class AnnouncementEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit announcement: %s') % self.object
+            'title': _(message='Edit announcement: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -122,6 +122,6 @@ class AnnouncementListView(SingleObjectListView):
                 'announcements to convery information about your organzation, '
                 'announcements or usage guidelines for your users.'
             ),
-            'no_results_title': _('No announcements available'),
-            'title': _('Announcements')
+            'no_results_title': _(message='No announcements available'),
+            'title': _(message='Announcements')
         }

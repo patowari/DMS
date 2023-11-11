@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext, gettext_lazy as _
 
 from .literals import (
     SOURCE_UNCOMPRESS_CHOICE_ALWAYS, SOURCE_UNCOMPRESS_CHOICE_ASK,
@@ -32,11 +32,12 @@ class SourceBackendMixinCompressed:
         fields.update(
             {
                 'uncompress': {
-                    'label': _('Uncompress'),
+                    'label': _(message='Uncompress'),
                     'class': 'django.forms.ChoiceField',
                     'default': SOURCE_UNCOMPRESS_CHOICE_ASK,
                     'help_text': _(
-                        'Whether to expand or not compressed archives.'
+                        message='Whether to expand or not compressed '
+                        'archives.'
                     ),
                     'kwargs': {
                         'choices': cls.uncompress_choices
@@ -54,7 +55,7 @@ class SourceBackendMixinCompressed:
 
         fieldsets += (
             (
-                _('Decompression'), {
+                _(message='Decompression'), {
                     'fields': ('uncompress',)
                 },
             ),
@@ -87,8 +88,8 @@ class SourceBackendMixinCompressed:
 
         class CompressedSourceUploadForm(super_upload_form_class):
             expand = forms.BooleanField(
-                label=_('Expand compressed files'), required=False,
-                help_text=ugettext(
+                label=_(message='Expand compressed files'), required=False,
+                help_text=gettext(
                     'Upload a compressed file\'s contained files as '
                     'individual documents.'
                 )

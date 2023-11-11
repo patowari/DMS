@@ -2,7 +2,7 @@ import logging
 
 import pycountry
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .settings import setting_language_codes
 
@@ -17,7 +17,7 @@ def get_language(language_code):
     if language:
         return _(language)
     else:
-        return _('Unknown language "%s"') % language_code
+        return _(message='Unknown language "%s"') % language_code
 
 
 def get_language_choices():

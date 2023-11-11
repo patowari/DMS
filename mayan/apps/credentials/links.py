@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
@@ -16,24 +16,24 @@ from .permissions import (
 link_credential_backend_selection = Link(
     icon=icon_credential_backend_selection,
     permissions=(permission_credential_create,),
-    text=_('Create credential'),
+    text=_(message='Create credential'),
     view='credentials:stored_credential_backend_selection'
 )
 link_credential_delete = Link(
     args='resolved_object.pk',
     icon=icon_credential_delete,
     permissions=(permission_credential_delete,),
-    tags='dangerous', text=_('Delete'),
+    tags='dangerous', text=_(message='Delete'),
     view='credentials:stored_credential_delete',
 )
 link_credential_edit = Link(
     args='object.pk',
     icon=icon_credential_edit,
     permissions=(permission_credential_edit,),
-    text=_('Edit'), view='credentials:stored_credential_edit'
+    text=_(message='Edit'), view='credentials:stored_credential_edit'
 )
 link_credential_list = Link(
-    icon=icon_credential_list, text=_('Credential list'),
+    icon=icon_credential_list, text=_(message='Credential list'),
     view='credentials:stored_credential_list'
 )
 link_credential_setup = Link(
@@ -42,5 +42,5 @@ link_credential_setup = Link(
         object_permission=permission_credential_view,
         view_permission=permission_credential_create,
     ), icon=icon_credential_setup,
-    text=_('Credentials'), view='credentials:stored_credential_list'
+    text=_(message='Credentials'), view='credentials:stored_credential_list'
 )

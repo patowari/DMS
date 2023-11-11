@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -41,7 +41,7 @@ class WebLinksApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.web_links'
-    verbose_name = _('Web links')
+    verbose_name = _(message='Web links')
 
     def ready(self):
         super().ready()

@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from django.contrib import messages
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _, ungettext
+from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.views.generics import (
@@ -67,8 +67,8 @@ class DocumentListView(SingleObjectListView):
                 'that your user account has not been granted the view '
                 'permission for any document or document type.'
             ),
-            'no_results_title': _('No documents available'),
-            'title': _('All documents')
+            'no_results_title': _(message='No documents available'),
+            'title': _(message='All documents')
         }
 
     def get_source_queryset(self):
@@ -91,7 +91,7 @@ class DocumentTypeChangeView(MultipleObjectFormActionView):
 
     def get_extra_context(self):
         result = {
-            'title': ungettext(
+            'title': ngettext(
                 singular='Change the type of the selected document',
                 plural='Change the type of the selected documents',
                 number=self.object_list.count()
@@ -157,7 +157,7 @@ class DocumentPreviewView(DocumentVersionPreviewView):
         return {
             'hide_labels': True,
             'object': self.object,
-            'title': _('Preview of document: %s') % self.object
+            'title': _(message='Preview of document: %s') % self.object
         }
 
 
@@ -176,7 +176,7 @@ class DocumentPropertiesEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit properties of document: %s') % self.object
+            'title': _(message='Edit properties of document: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -208,5 +208,5 @@ class DocumentPropertiesView(SingleObjectDetailView):
         return {
             'document': self.object,
             'object': self.object,
-            'title': _('Properties of document: %s') % self.object
+            'title': _(message='Properties of document: %s') % self.object
         }

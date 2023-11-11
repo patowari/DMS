@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
@@ -32,31 +32,32 @@ def condition_valid_transformation_and_arguments(context, resolved_object):
 
 link_asset_create = Link(
     icon=icon_asset_create, permissions=(permission_asset_create,),
-    text=_('Create asset'), view='converter:asset_create'
+    text=_(message='Create asset'), view='converter:asset_create'
 )
 link_asset_multiple_delete = Link(
-    icon=icon_asset_delete, tags='dangerous', text=_('Delete'),
+    icon=icon_asset_delete, tags='dangerous', text=_(message='Delete'),
     view='converter:asset_multiple_delete'
 )
 link_asset_single_delete = Link(
     args='object.pk', icon=icon_asset_delete,
     permissions=(permission_asset_delete,), tags='dangerous',
-    text=_('Delete'), view='converter:asset_single_delete'
+    text=_(message='Delete'), view='converter:asset_single_delete'
 )
 link_asset_edit = Link(
     args='object.pk', icon=icon_asset_edit,
-    permissions=(permission_asset_edit,), text=_('Edit'),
+    permissions=(permission_asset_edit,), text=_(message='Edit'),
     view='converter:asset_edit'
 )
 link_asset_list = Link(
-    icon=icon_asset_list, text=_('Assets'), view='converter:asset_list'
+    icon=icon_asset_list, text=_(message='Assets'),
+    view='converter:asset_list'
 )
 link_asset_setup = Link(
     condition=factory_condition_queryset_access(
         app_label='converter', model_name='Asset',
         object_permission=permission_asset_view,
         view_permission=permission_asset_create,
-    ), icon=icon_asset_list, text=_('Assets'),
+    ), icon=icon_asset_list, text=_(message='Assets'),
     view='converter:asset_list'
 )
 
@@ -64,20 +65,20 @@ link_asset_setup = Link(
 
 link_transformation_delete = LayerLink(
     action='delete', icon=icon_transformation_delete, tags='dangerous',
-    text=_('Delete'), view='converter:transformation_delete'
+    text=_(message='Delete'), view='converter:transformation_delete'
 )
 link_transformation_edit = LayerLink(
     action='edit', condition=condition_valid_transformation_and_arguments,
-    icon=icon_transformation_edit, text=_('Edit'),
+    icon=icon_transformation_edit, text=_(message='Edit'),
     view='converter:transformation_edit'
 )
 link_transformation_list = LayerLink(
     action='view', conditional_active=conditional_active,
-    layer=layer_saved_transformations, text=_('Transformations'),
+    layer=layer_saved_transformations, text=_(message='Transformations'),
     view='converter:transformation_list'
 )
 link_transformation_select = LayerLink(
     action='select', icon=icon_transformation_select,
-    text=_('Select new transformation'),
+    text=_(message='Select new transformation'),
     view='converter:transformation_select'
 )

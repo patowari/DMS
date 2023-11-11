@@ -1,5 +1,5 @@
 from django.db.models.signals import post_migrate
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -212,7 +212,7 @@ class DocumentsApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.documents'
-    verbose_name = _('Documents')
+    verbose_name = _(message='Documents')
 
     def ready(self):
         super().ready()
@@ -293,7 +293,7 @@ class DocumentsApp(MayanAppConfig):
         EventModelRegistry.register(model=TrashedDocument)
 
         MissingItem(
-            label=_('Create a document type'),
+            label=_(message='Create a document type'),
             description=_(
                 'Every uploaded document must be assigned a document type, '
                 'it is the basic way Mayan EDMS categorizes documents.'
@@ -394,38 +394,38 @@ class DocumentsApp(MayanAppConfig):
             name='files__checksum'
         )
         ModelFieldRelated(
-            model=Document, label=_('File comments'),
+            model=Document, label=_(message='File comments'),
             name='files__comment'
         )
         ModelFieldRelated(
-            model=Document, label=_('File encodings'),
+            model=Document, label=_(message='File encodings'),
             name='files__encoding'
         )
         ModelFieldRelated(
-            model=Document, label=_('File MIME types'),
+            model=Document, label=_(message='File MIME types'),
             name='files__mimetype'
         )
         ModelFieldRelated(
-            model=Document, label=_('File timestamps'),
+            model=Document, label=_(message='File timestamps'),
             name='files__timestamp'
         )
 
         ModelField(
-            model=DocumentFilePage, label=_('Document file'),
+            model=DocumentFilePage, label=_(message='Document file'),
             name='document_file'
         )
         ModelField(
-            model=DocumentFilePage, label=_('Page number'),
+            model=DocumentFilePage, label=_(message='Page number'),
             name='page_number'
         )
 
         ModelProperty(
-            description=_('Return the latest file of the document.'),
-            model=Document, label=_('Latest file'), name='latest_file'
+            description=_(message='Return the latest file of the document.'),
+            model=Document, label=_(message='Latest file'), name='latest_file'
         )
         ModelProperty(
-            description=_('Return the document instance.'),
-            model=DocumentFilePage, label=_('Document'), name='document'
+            description=_(message='Return the document instance.'),
+            model=DocumentFilePage, label=_(message='Document'), name='document'
         )
 
         ModelPermission.register(
@@ -553,17 +553,17 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
-            label=_('Thumbnail'), order=-99, source=Document,
+            label=_(message='Thumbnail'), order=-99, source=Document,
             widget=ThumbnailWidget
         )
 
         SourceColumn(
             attribute='document_type', include_label=True, is_sortable=True,
-            label=_('Type'), name='document_type', order=-9, source=Document
+            label=_(message='Type'), name='document_type', order=-9, source=Document
         )
         SourceColumn(
             func=lambda context: context['object'].pages.count(),
-            label=_('Pages'), include_label=True, order=-8, source=Document
+            label=_(message='Pages'), include_label=True, order=-8, source=Document
         )
 
         # FavoriteDocumentProxy
@@ -572,7 +572,7 @@ class DocumentsApp(MayanAppConfig):
             func=lambda context: context['object'].favorites.get(
                 user=context['request'].user
             ).datetime_added, include_label=True, is_sortable=True,
-            label=_('Date and time added'), name='datetime_added',
+            label=_(message='Date and time added'), name='datetime_added',
             sort_field='favorites__datetime_added',
             source=FavoriteDocumentProxy
         )
@@ -583,7 +583,7 @@ class DocumentsApp(MayanAppConfig):
             func=lambda context: context['object'].recent.first().datetime_accessed,
             include_label=True,
             is_sortable=True,
-            label=_('Access date and time'),
+            label=_(message='Access date and time'),
             name='datetime_accessed',
             sort_field='recent__datetime_accessed',
             source=RecentlyAccessedDocumentProxy
@@ -605,12 +605,12 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
-            label=_('Thumbnail'), order=-99, source=DocumentFile,
+            label=_(message='Thumbnail'), order=-99, source=DocumentFile,
             widget=ThumbnailWidget
         )
         SourceColumn(
             func=lambda context: context['object'].pages.count(),
-            include_label=True, label=_('Pages'), order=-6,
+            include_label=True, label=_(message='Pages'), order=-6,
             source=DocumentFile
         )
         SourceColumn(
@@ -634,7 +634,7 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
-            label=_('Thumbnail'), order=-99, source=DocumentFilePage,
+            label=_(message='Thumbnail'), order=-99, source=DocumentFilePage,
             widget=ThumbnailWidget
         )
 
@@ -648,7 +648,7 @@ class DocumentsApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: context['object'].get_document_count(
                 user=context['request'].user
-            ), include_label=True, label=_('Documents'), source=DocumentType
+            ), include_label=True, label=_(message='Documents'), source=DocumentType
         )
 
         SourceColumn(
@@ -668,12 +668,12 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
-            label=_('Thumbnail'), order=-99, source=DocumentVersion,
+            label=_(message='Thumbnail'), order=-99, source=DocumentVersion,
             widget=ThumbnailWidget
         )
         SourceColumn(
             func=lambda context: context['object'].pages.count(),
-            include_label=True, label=_('Pages'), order=-8,
+            include_label=True, label=_(message='Pages'), order=-8,
             source=DocumentVersion
         )
         SourceColumn(
@@ -693,7 +693,7 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
-            label=_('Thumbnail'), order=-99, source=DocumentVersionPage,
+            label=_(message='Thumbnail'), order=-99, source=DocumentVersionPage,
             widget=ThumbnailWidget
         )
 

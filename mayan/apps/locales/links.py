@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.authentication.link_conditions import (
     condition_user_is_authenticated
@@ -12,11 +12,11 @@ from .icons import (
 
 link_user_locale_profile_detail = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_locale_profile_detail, text=_('Locale profile'),
+    icon=icon_user_locale_profile_detail, text=_(message='Locale profile'),
     view='locales:user_locale_profile_detail'
 )
 link_user_locale_profile_edit = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_locale_profile_edit, text=_('Edit locale profile'),
+    icon=icon_user_locale_profile_edit, text=_(message='Edit locale profile'),
     view='locales:user_locale_profile_edit'
 )

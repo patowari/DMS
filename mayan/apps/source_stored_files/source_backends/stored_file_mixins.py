@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from django.contrib import messages
 from django.core.files import File
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.literals import STORAGE_NAME_SOURCE_CACHE_FOLDER
 from mayan.apps.storage.classes import DefinedStorage
@@ -37,7 +37,7 @@ class SourceBackendMixinStoredFileUploadBase:
                         'Delete the file after is has been successfully '
                         'uploaded.'
                     ),
-                    'label': _('Delete after upload'),
+                    'label': _(message='Delete after upload'),
                     'required': False
                 }
             }
@@ -51,7 +51,7 @@ class SourceBackendMixinStoredFileUploadBase:
 
         fieldsets += (
             (
-                _('File content'), {
+                _(message='File content'), {
                     'fields': (
                         'delete_after_upload',
                     ),
@@ -92,7 +92,7 @@ class SourceBackendMixinStoredFileUploadBase:
                 'being used for Mayan EDMS doesn\'t have the necessary '
                 'file system permissions to access the source files.'
             ),
-            'no_results_title': _('No source files available')
+            'no_results_title': _(message='No source files available')
         }
 
         template_source_stored_file_list_context.update(
@@ -192,7 +192,7 @@ class SourceBackendMixinStoredFileImage:
                     'kwargs': {
                         'min_value': 0
                     },
-                    'label': _('Preview width'),
+                    'label': _(message='Preview width'),
                     'required': True
                 },
                 'preview_height': {
@@ -203,7 +203,7 @@ class SourceBackendMixinStoredFileImage:
                     'kwargs': {
                         'min_value': 0
                     },
-                    'label': _('Preview height'),
+                    'label': _(message='Preview height'),
                     'required': False
                 },
                 'preview_max_size': {
@@ -213,7 +213,7 @@ class SourceBackendMixinStoredFileImage:
                         'Maximum size in bytes for which previews will be '
                         'generated. Example: 20000 = 20KB.'
                     ),
-                    'label': _('Max size preview'),
+                    'label': _(message='Max size preview'),
                     'required': True
                 }
             }
@@ -227,7 +227,7 @@ class SourceBackendMixinStoredFileImage:
 
         fieldsets += (
             (
-                _('File images'), {
+                _(message='File images'), {
                     'fields': (
                         'preview_width', 'preview_height',
                         'preview_max_size'

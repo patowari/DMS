@@ -2,7 +2,7 @@ import logging
 
 import yaml
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
 from mayan.apps.common.serialization import yaml_load
@@ -31,7 +31,7 @@ class TransformationAddAction(WorkflowAction):
     }
     form_fields = {
         'pages': {
-            'label': _('Pages'),
+            'label': _(message='Pages'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Pages to which the new transformations will be added. '
@@ -41,7 +41,7 @@ class TransformationAddAction(WorkflowAction):
             }
         },
         'transformation_class': {
-            'label': _('Transformation class'),
+            'label': _(message='Transformation class'),
             'class': 'django.forms.ChoiceField', 'kwargs': {
                 'choices': BaseTransformation.get_transformation_choices(
                     group_by_layer=True
@@ -51,7 +51,7 @@ class TransformationAddAction(WorkflowAction):
             }
         },
         'transformation_arguments': {
-            'label': _('Transformation arguments'),
+            'label': _(message='Transformation arguments'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Enter the arguments for the transformation as a YAML '
@@ -60,7 +60,7 @@ class TransformationAddAction(WorkflowAction):
             }
         }
     }
-    label = _('Add transformation')
+    label = _(message='Add transformation')
 
     @classmethod
     def clean(cls, form_data, request):
@@ -83,12 +83,12 @@ class TransformationAddAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Objects'), {
+                _(message='Objects'), {
                     'fields': ('pages',)
                 }
             ),
             (
-                _('Transformations'), {
+                _(message='Transformations'), {
                     'fields': (
                         'transformation_class', 'transformation_arguments',
                     )

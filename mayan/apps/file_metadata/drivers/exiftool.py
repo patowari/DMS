@@ -4,7 +4,7 @@ from pathlib import Path
 
 import sh
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.storage.utils import TemporaryDirectory
 
@@ -16,7 +16,7 @@ logger = logging.getLogger(name=__name__)
 
 
 class EXIFToolDriver(FileMetadataDriver):
-    label = _('EXIF Tool')
+    label = _(message='EXIF Tool')
     internal_name = 'exiftool'
 
     def __init__(self, **kwargs):

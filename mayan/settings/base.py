@@ -1,18 +1,16 @@
-from pathlib import Path
 import os
+from pathlib import Path
 import sys
 
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.literals import COMMAND_NAME_SETTINGS_REVERT
 from mayan.apps.smart_settings.utils import SettingNamespaceSingleton
 
 from .literals import DEFAULT_SECRET_KEY, SECRET_KEY_FILENAME, SYSTEM_DIR
 
-BASE_DIR = Path(__file__).parent.parent
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 setting_namespace = SettingNamespaceSingleton(
     global_symbol_table=globals()
@@ -45,9 +43,9 @@ except KeyError:
 
 INSTALLED_APPS = (
     # Placed at the top so it can preload all events defined by apps.
-    'mayan.apps.events',
+    'mayan.apps.events.apps.EventsApp',
     # Placed at the top so it can override any template.
-    'mayan.apps.appearance',
+    'mayan.apps.appearance.apps.AppearanceApp',
     # Django
     'django.contrib.admin',
     'django.contrib.auth',
@@ -73,82 +71,82 @@ INSTALLED_APPS = (
     # Base apps
     # Moved to the top to ensure Mayan app logging is initialized and
     # available as soon as possible.
-    'mayan.apps.logging',
+    'mayan.apps.logging.apps.LoggingApp',
     # Task manager goes to the top to ensure all queues are created before any
     # other app tries to use them.
-    'mayan.apps.task_manager',
-    'mayan.apps.acls',
+    'mayan.apps.task_manager.apps.TaskManagerApp',
+    'mayan.apps.acls.apps.ACLsApp',
     # User management app must go before authentication to ensure the Group
     # and User models are properly setup using runtime methods.
-    'mayan.apps.user_management',
-    'mayan.apps.authentication',
-    'mayan.apps.authentication_oidc',
-    'mayan.apps.authentication_otp',
-    'mayan.apps.autoadmin',
-    'mayan.apps.backends',
-    'mayan.apps.common',
-    'mayan.apps.converter',
-    'mayan.apps.credentials',
-    'mayan.apps.dashboards',
-    'mayan.apps.databases',
-    'mayan.apps.dependencies',
-    'mayan.apps.django_gpg',
-    'mayan.apps.dynamic_search',
-    'mayan.apps.file_caching',
-    'mayan.apps.locales',
-    'mayan.apps.lock_manager',
-    'mayan.apps.messaging',
-    'mayan.apps.mime_types',
-    'mayan.apps.navigation',
-    'mayan.apps.organizations',
-    'mayan.apps.permissions',
-    'mayan.apps.platform',
-    'mayan.apps.quotas',
-    'mayan.apps.rest_api',
-    'mayan.apps.smart_settings',
-    'mayan.apps.storage',
-    'mayan.apps.templating',
-    'mayan.apps.testing',
-    'mayan.apps.views',
-    'mayan.apps.announcements',
+    'mayan.apps.user_management.apps.UserManagementApp',
+    'mayan.apps.authentication.apps.AuthenticationApp',
+    'mayan.apps.authentication_oidc.apps.AuthenticationOIDCApp',
+    'mayan.apps.authentication_otp.apps.AuthenticationOTPApp',
+    'mayan.apps.autoadmin.apps.AutoAdminAppConfig',
+    'mayan.apps.backends.apps.BackendsApp',
+    'mayan.apps.common.apps.CommonApp',
+    'mayan.apps.converter.apps.ConverterApp',
+    'mayan.apps.credentials.apps.CredentialsApp',
+    'mayan.apps.dashboards.apps.DashboardsApp',
+    'mayan.apps.databases.apps.DatabasesApp',
+    'mayan.apps.dependencies.apps.DependenciesApp',
+    'mayan.apps.django_gpg.apps.DjangoGPGApp',
+    'mayan.apps.dynamic_search.apps.DynamicSearchApp',
+    'mayan.apps.file_caching.apps.FileCachingConfig',
+    'mayan.apps.locales.apps.LocalesApp',
+    'mayan.apps.lock_manager.apps.LockManagerApp',
+    'mayan.apps.messaging.apps.MessagingApp',
+    'mayan.apps.mime_types.apps.MIMETypesApp',
+    'mayan.apps.navigation.apps.NavigationApp',
+    'mayan.apps.organizations.apps.OrganizationsApp',
+    'mayan.apps.permissions.apps.PermissionsApp',
+    'mayan.apps.platform.apps.PlatformApp',
+    'mayan.apps.quotas.apps.QuotasApp',
+    'mayan.apps.rest_api.apps.RESTAPIApp',
+    'mayan.apps.smart_settings.apps.SmartSettingsApp',
+    'mayan.apps.storage.apps.StorageApp',
+    'mayan.apps.templating.apps.TemplatingApp',
+    'mayan.apps.testing.apps.TestingApp',
+    'mayan.apps.views.apps.ViewsApp',
     # Obsolete apps. Need to remain to allow migrations to execute.
-    'mayan.apps.motd',
+    'mayan.apps.announcements.apps.AnnouncementsApp',
+    'mayan.apps.motd.apps.MOTDApp',
     # Document apps.
-    'mayan.apps.cabinets',
-    'mayan.apps.checkouts',
-    'mayan.apps.document_comments',
-    'mayan.apps.document_downloads',
-    'mayan.apps.document_exports',
-    'mayan.apps.document_indexing',
-    'mayan.apps.document_parsing',
-    'mayan.apps.document_signatures',
-    'mayan.apps.document_states',
-    'mayan.apps.documents',
-    'mayan.apps.duplicates',
-    'mayan.apps.file_metadata',
-    'mayan.apps.linking',
-    'mayan.apps.mailer',
-    'mayan.apps.mayan_statistics',
-    'mayan.apps.metadata',
-    'mayan.apps.mirroring',
-    'mayan.apps.ocr',
-    'mayan.apps.redactions',
-    'mayan.apps.signature_captures',
-    'mayan.apps.source_compressed',
-    'mayan.apps.source_interactive',
-    'mayan.apps.source_periodic',
-    'mayan.apps.source_emails',
-    'mayan.apps.source_sane_scanners',
-    'mayan.apps.source_staging_folders',
-    'mayan.apps.source_staging_storages',
-    'mayan.apps.source_generated_files',
-    'mayan.apps.source_stored_files',
-    'mayan.apps.source_watch_folders',
-    'mayan.apps.source_watch_storages',
-    'mayan.apps.source_web_forms',
-    'mayan.apps.sources',
-    'mayan.apps.tags',
-    'mayan.apps.web_links',
+    'mayan.apps.cabinets.apps.CabinetsApp',
+    'mayan.apps.checkouts.apps.CheckoutsApp',
+    'mayan.apps.document_comments.apps.DocumentCommentsApp',
+    'mayan.apps.document_downloads.apps.DocumentDownloadsApp',
+    'mayan.apps.document_exports.apps.DocumentExportsApp',
+    'mayan.apps.document_indexing.apps.DocumentIndexingApp',
+    'mayan.apps.document_parsing.apps.DocumentParsingApp',
+    'mayan.apps.document_signatures.apps.DocumentSignaturesApp',
+    'mayan.apps.document_states.apps.DocumentStatesApp',
+    'mayan.apps.documents.apps.DocumentsApp',
+    'mayan.apps.duplicates.apps.DuplicatesApp',
+    'mayan.apps.file_metadata.apps.FileMetadataApp',
+    'mayan.apps.linking.apps.LinkingApp',
+    'mayan.apps.mailer.apps.MailerApp',
+    'mayan.apps.mayan_statistics.apps.StatisticsApp',
+    'mayan.apps.metadata.apps.MetadataApp',
+    'mayan.apps.mirroring.apps.MirroringApp',
+    'mayan.apps.ocr.apps.OCRApp',
+    'mayan.apps.redactions.apps.RedactionsApp',
+    'mayan.apps.signature_captures.apps.SignatureCapturesApp',
+    'mayan.apps.source_compressed.apps.SourceCompressedApp',
+    'mayan.apps.source_interactive.apps.SourceInteractiveApp',
+    'mayan.apps.source_periodic.apps.SourcePeriodicApp',
+    'mayan.apps.source_emails.apps.SourceEmailsApp',
+    'mayan.apps.source_sane_scanners.apps.SourceSaneScannersApp',
+    'mayan.apps.source_staging_folders.apps.SourceStagingFoldersApp',
+    'mayan.apps.source_staging_storages.apps.SourceStagingStorageApp',
+    'mayan.apps.source_generated_files.apps.SourceGeneratedFileApp',
+    'mayan.apps.source_stored_files.apps.SourceStoredFileApp',
+    'mayan.apps.source_watch_folders.apps.SourceWatchFoldersApp',
+    'mayan.apps.source_watch_storages.apps.SourceWatchStorageApp',
+    'mayan.apps.source_web_forms.apps.SourceWebFormsApp',
+    'mayan.apps.sources.apps.SourcesApp',
+    'mayan.apps.tags.apps.TagsApp',
+    'mayan.apps.web_links.apps.WebLinksApp',
     # Placed after rest_api to allow template overriding.
     'drf_yasg',
 )
@@ -196,7 +194,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mayan.wsgi.application'
 
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -214,7 +211,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -227,52 +223,51 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
 # ------------ Custom settings section ----------
 
 LANGUAGES = (
-    ('ar-eg', _('Arabic (Egypt)')),
-    ('ar', _('Arabic')),
-    ('bg', _('Bulgarian')),
-    ('bs', _('Bosnian')),
-    ('ca', _('Catalan')),
-    ('cs', _('Czech')),
-    ('da', _('Danish')),
-    ('de-at', _('German (Austria)')),
-    ('de-de', _('German (Germany)')),
-    ('el', _('Greek')),
-    ('en', _('English')),
-    ('es', _('Spanish')),
-    ('es-mx', _('Spanish (Mexico)')),
-    ('es-pr', _('Spanish (Puerto Rico)')),
-    ('fa', _('Persian')),
-    ('fr', _('French')),
-    ('he-il', _('Hebrew (Israel)')),
-    ('hu', _('Hungarian')),
-    ('hr', _('Croatian')),
-    ('id', _('Indonesian')),
-    ('it', _('Italian')),
-    ('lv', _('Latvian')),
-    ('mn-mn', _('Mongolian (Mongolia)')),
-    ('nl', _('Dutch')),
-    ('pl', _('Polish')),
-    ('pt', _('Portuguese')),
-    ('pt-br', _('Portuguese (Brazil)')),
-    ('ro-ro', _('Romanian (Romania)')),
-    ('ru', _('Russian')),
-    ('sl', _('Slovenian')),
-    ('sq', _('Albanian')),
-    ('th', _('Thai')),
-    ('tr', _('Turkish')),
-    ('tr-tr', _('Turkish (Turkey)')),
-    ('uk', _('Ukrainian')),
-    ('vi', _('Vietnamese')),
-    ('zh-cn', _('Chinese (China)')),
-    ('zh-hans', _('Chinese (Simplified)')),
-    ('zh-tw', _('Chinese (Taiwan)'))
+    ('ar-eg', _(message='Arabic (Egypt)')),
+    ('ar', _(message='Arabic')),
+    ('bg', _(message='Bulgarian')),
+    ('bs', _(message='Bosnian')),
+    ('ca', _(message='Catalan')),
+    ('cs', _(message='Czech')),
+    ('da', _(message='Danish')),
+    ('de-at', _(message='German (Austria)')),
+    ('de-de', _(message='German (Germany)')),
+    ('el', _(message='Greek')),
+    ('en', _(message='English')),
+    ('es', _(message='Spanish')),
+    ('es-mx', _(message='Spanish (Mexico)')),
+    ('es-pr', _(message='Spanish (Puerto Rico)')),
+    ('fa', _(message='Persian')),
+    ('fr', _(message='French')),
+    ('he-il', _(message='Hebrew (Israel)')),
+    ('hu', _(message='Hungarian')),
+    ('hr', _(message='Croatian')),
+    ('id', _(message='Indonesian')),
+    ('it', _(message='Italian')),
+    ('lv', _(message='Latvian')),
+    ('mn-mn', _(message='Mongolian (Mongolia)')),
+    ('nl', _(message='Dutch')),
+    ('pl', _(message='Polish')),
+    ('pt', _(message='Portuguese')),
+    ('pt-br', _(message='Portuguese (Brazil)')),
+    ('ro-ro', _(message='Romanian (Romania)')),
+    ('ru', _(message='Russian')),
+    ('sl', _(message='Slovenian')),
+    ('sq', _(message='Albanian')),
+    ('th', _(message='Thai')),
+    ('tr', _(message='Turkish')),
+    ('tr-tr', _(message='Turkish (Turkey)')),
+    ('uk', _(message='Ukrainian')),
+    ('vi', _(message='Vietnamese')),
+    ('zh-cn', _(message='Chinese (China)')),
+    ('zh-hans', _(message='Chinese (Simplified)')),
+    ('zh-tw', _(message='Chinese (Taiwan)'))
 )
 
 MEDIA_URL = 'media/'
@@ -294,7 +289,10 @@ STATICFILES_FINDERS = (
     'mayan.apps.views.finders.MayanAppDirectoriesFinder'
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STORAGES = {}
+STORAGES['staticfiles'] = {
+    'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+}
 
 TEST_RUNNER = 'mayan.apps.testing.runner.MayanTestRunner'
 

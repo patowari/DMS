@@ -4,7 +4,7 @@ import json
 import requests
 
 from django.utils.text import format_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.credentials.class_mixins import BackendMixinCredentialsOptional
 
@@ -25,13 +25,13 @@ logger = logging.getLogger(name=__name__)
 class DocumentPropertiesEditAction(WorkflowAction):
     form_fields = {
         'document_label': {
-            'label': _('Document label'),
+            'label': _(message='Document label'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
                         '{} {}',
-                        _('The new label to be assigned to the document.'),
+                        _(message='The new label to be assigned to the document.'),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
@@ -40,7 +40,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
                 'required': False
             },
         }, 'document_description': {
-            'label': _('Document description'),
+            'label': _(message='Document description'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -58,7 +58,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
             }
         }
     }
-    label = _('Modify document properties')
+    label = _(message='Modify document properties')
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -66,7 +66,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Document properties'), {
+                _(message='Document properties'), {
                     'fields': ('document_label', 'document_description')
                 },
             ),
@@ -107,7 +107,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
             }
         }
     }
-    label = _('Launch workflows')
+    label = _(message='Launch workflows')
 
     @classmethod
     def get_form_fields(cls):
@@ -130,7 +130,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
                         'source_queryset': workflows_union,
                         'permission': permission_workflow_tools
                     },
-                    'label': _('Workflows'),
+                    'label': _(message='Workflows'),
                     'required': True
                 }
             }
@@ -144,7 +144,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Workflows'), {
+                _(message='Workflows'), {
                     'fields': ('workflows',)
                 },
             ),
@@ -172,13 +172,13 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
 class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
     form_fields = {
         'url': {
-            'label': _('URL'),
+            'label': _(message='URL'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
                         '{} {}',
-                        _('The URL to access.'),
+                        _(message='The URL to access.'),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
@@ -187,7 +187,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'required': True
             },
         }, 'method': {
-            'label': _('Method'),
+            'label': _(message='Method'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -205,7 +205,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'required': True
             }
         }, 'username': {
-            'label': _('Username'),
+            'label': _(message='Username'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -227,7 +227,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'required': False
             },
         }, 'password': {
-            'label': _('Password'),
+            'label': _(message='Password'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -249,7 +249,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'required': False
             },
         }, 'headers': {
-            'label': _('Headers'),
+            'label': _(message='Headers'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -270,13 +270,13 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'required': False
             }
         }, 'payload': {
-            'label': _('Payload'),
+            'label': _(message='Payload'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
                         '{} {}',
-                        _('A JSON document to include in the request.'),
+                        _(message='A JSON document to include in the request.'),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
@@ -285,14 +285,14 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'required': False
             }
         }, 'timeout': {
-            'label': _('Timeout'),
+            'label': _(message='Timeout'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'default': DEFAULT_HTTP_ACTION_TIMEOUT,
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
                         '{} {}',
-                        _('Time in seconds to wait for a response.'),
+                        _(message='Time in seconds to wait for a response.'),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
@@ -303,7 +303,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
         }
 
     }
-    label = _('Perform an HTTP request')
+    label = _(message='Perform an HTTP request')
     previous_dotted_paths = (
         'mayan.apps.document_states.workflow_actions.HTTPPostAction',
     )
@@ -314,7 +314,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
 
         fieldsets += (
             (
-                _('HTTP'), {
+                _(message='HTTP'), {
                     'fields': (
                         'url', 'username', 'password', 'headers', 'timeout',
                         'method', 'payload'
@@ -336,7 +336,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             load_result = json.loads(s=render_result, strict=False)
         except Exception as exception:
             raise WorkflowStateActionError(
-                _('%(field_name)s JSON error: %(exception)s') % {
+                _(message='%(field_name)s JSON error: %(exception)s') % {
                     'field_name': field_name, 'exception': exception
                 }
             )

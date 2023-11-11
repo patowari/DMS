@@ -67,10 +67,8 @@ class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
         response = self._request_test_user_mailer_delete_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertQuerysetEqual(
-            UserMailer.objects.all(), (
-                repr(self._test_user_mailer),
-            )
+        self.assertQuerySetEqual(
+            qs=UserMailer.objects.all(), values=(self._test_user_mailer,)
         )
 
         events = self._get_test_events()

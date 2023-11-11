@@ -1,6 +1,6 @@
 from django.core import checks
 import django.test.runner
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -10,7 +10,7 @@ from .runner import filter_tests_by_tags
 
 class TestingApp(MayanAppConfig):
     name = 'mayan.apps.testing'
-    verbose_name = _('Testing')
+    verbose_name = _(message='Testing')
 
     def ready(self, *args, **kwargs):
         super().ready(*args, **kwargs)

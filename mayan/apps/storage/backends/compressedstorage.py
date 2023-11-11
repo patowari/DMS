@@ -7,7 +7,7 @@ except ImportError:
     COMPRESSION = zipfile.ZIP_STORED
 
 from django.core.files.base import ContentFile
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from ..classes import BufferedFile, PassthroughStorage
 
@@ -39,7 +39,7 @@ class BufferedZipFile(BufferedFile):
             if self.binary_mode:
                 return chunk
             else:
-                return force_text(s=chunk)
+                return force_str(s=chunk)
 
     def close(self):
         self.zip_file_object.close()

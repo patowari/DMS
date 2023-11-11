@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import post_migrate
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -38,7 +38,7 @@ class SignatureCapturesApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.signature_captures'
-    verbose_name = _('Signature captures')
+    verbose_name = _(message='Signature captures')
 
     def ready(self):
         super().ready()

@@ -6,7 +6,7 @@ from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
     FormView as DjangoFormView, DetailView, TemplateView
 )
@@ -320,14 +320,14 @@ class AddRemoveView(
                             'extra_buttons': [
                                 {
                                     'icon': icon_add_all,
-                                    'label': _('Add all'),
+                                    'label': _(message='Add all'),
                                     'name': 'add_all'
                                 }
                             ],
                             'form': self.forms['form_available'],
                             'hide_labels': True,
                             'submit_icon': icon_assign_remove_add,
-                            'submit_label': _('Add'),
+                            'submit_label': _(message='Add'),
                             'title': self.list_available_title or ' '
                         }
                     },
@@ -338,14 +338,14 @@ class AddRemoveView(
                             'extra_buttons': [
                                 {
                                     'icon': icon_remove_all,
-                                    'label': _('Remove all'),
+                                    'label': _(message='Remove all'),
                                     'name': 'remove_all'
                                 }
                             ],
                             'form': self.forms['form_added'],
                             'hide_labels': True,
                             'submit_icon': icon_assign_remove_remove,
-                            'submit_label': _('Remove'),
+                            'submit_label': _(message='Remove'),
                             'title': self.list_added_title or ' '
                         }
                     }
@@ -583,7 +583,7 @@ class RelationshipView(FormView):
                 raise
         else:
             messages.success(
-                message=_('Relationships updated successfully'),
+                message=_(message='Relationships updated successfully'),
                 request=self.request
             )
 
@@ -665,7 +665,7 @@ class SingleObjectCreateView(
                 context = self.get_context_data()
 
                 messages.error(
-                    message=_('%(object)s not created, error: %(error)s') % {
+                    message=_(message='%(object)s not created, error: %(error)s') % {
                         'error': exception,
                         'object': self.get_object_name(context=context)
                     }, request=self.request
@@ -711,13 +711,12 @@ class SingleObjectDeleteView(
 
         return result
 
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
+    def form_valid(self, form):
         context = self.get_context_data()
         object_name = self.get_object_name(context=context)
 
         try:
-            result = super().delete(request, *args, **kwargs)
+            result = super().form_valid(form=form)
         except Exception as exception:
             messages.error(
                 message=_(
@@ -983,12 +982,12 @@ class SingleObjectListView(
 
 
 class MultipleObjectDeleteView(MultipleObjectConfirmActionView):
-    success_message_plural = _('%(count)d objects deleted successfully.')
-    success_message_single = _('"%(object)s" deleted successfully.')
-    success_message_singular = _('%(count)d object deleted successfully.')
-    title_plural = _('Delete %(count)d objects.')
-    title_single = _('Delete "%(object)s".')
-    title_singular = _('Delete %(count)d object.')
+    success_message_plural = _(message='%(count)d objects deleted successfully.')
+    success_message_single = _(message='"%(object)s" deleted successfully.')
+    success_message_singular = _(message='%(count)d object deleted successfully.')
+    title_plural = _(message='Delete %(count)d objects.')
+    title_single = _(message='Delete "%(object)s".')
+    title_singular = _(message='Delete %(count)d object.')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -1012,7 +1011,4 @@ class MultipleObjectDeleteView(MultipleObjectConfirmActionView):
             for key, value in self.get_instance_extra_data().items():
                 setattr(instance, key, value)
 
-        if hasattr(self, 'get_delete_extra_data'):
-            instance.delete(**self.get_delete_extra_data())
-        else:
-            instance.delete()
+        instance.delete()

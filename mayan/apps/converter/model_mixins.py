@@ -9,7 +9,7 @@ from django.apps import apps
 from django.db.models import Max
 from django.urls import reverse
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.file_caching.models import CachePartitionFile
@@ -121,7 +121,7 @@ class LayerTransformationBusinessLogicMixin:
 
         return ', '.join(result)
 
-    get_arguments_column.short_description = _('Arguments')
+    get_arguments_column.short_description = _(message='Arguments')
 
     def get_transformation_class(self):
         return BaseTransformation.get(name=self.name)

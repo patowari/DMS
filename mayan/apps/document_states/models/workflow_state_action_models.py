@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 from mayan.apps.backends.model_mixins import BackendModelMixin
@@ -27,20 +27,20 @@ class WorkflowStateAction(
 
     state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='actions', to=WorkflowState,
-        verbose_name=_('Workflow state')
+        verbose_name=_(message='Workflow state')
     )
     label = models.CharField(
-        max_length=255, help_text=_('A short text describing the action.'),
-        verbose_name=_('Label')
+        max_length=255, help_text=_(message='A short text describing the action.'),
+        verbose_name=_(message='Label')
     )
     enabled = models.BooleanField(
-        default=True, verbose_name=_('Enabled')
+        default=True, verbose_name=_(message='Enabled')
     )
     when = models.PositiveIntegerField(
         choices=WORKFLOW_ACTION_WHEN_CHOICES,
         default=WORKFLOW_ACTION_ON_ENTRY, help_text=_(
             'At which moment of the state this action will execute.'
-        ), verbose_name=_('When')
+        ), verbose_name=_(message='When')
     )
     condition = models.TextField(
         blank=True, help_text=_(
@@ -50,14 +50,14 @@ class WorkflowStateAction(
             'that return the Python logical None, or an empty string (\'\') '
             'are considered to be logical false, any other value is '
             'considered to be the logical true.'
-        ), verbose_name=_('Condition')
+        ), verbose_name=_(message='Condition')
     )
 
     class Meta:
         ordering = ('label',)
         unique_together = ('state', 'label')
-        verbose_name = _('Workflow state action')
-        verbose_name_plural = _('Workflow state actions')
+        verbose_name = _(message='Workflow state action')
+        verbose_name_plural = _(message='Workflow state actions')
 
     def __str__(self):
         return self.label

@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import SingleObjectListView
 
@@ -22,7 +22,7 @@ class QueueTaskTypeListView(SingleObjectListView):
             'object': queue,
             'worker': queue.worker,
             'navigation_object_list': ('worker', 'object'),
-            'title': _('Task types for queue: %s') % queue
+            'title': _(message='Task types for queue: %s') % queue
         }
 
     def get_queue(self):
@@ -32,7 +32,7 @@ class QueueTaskTypeListView(SingleObjectListView):
             )
         except KeyError:
             raise Http404(
-                _('Queue: %s, not found') % self.kwargs['queue_name']
+                _(message='Queue: %s, not found') % self.kwargs['queue_name']
             )
 
     def get_source_queryset(self):
@@ -42,7 +42,7 @@ class QueueTaskTypeListView(SingleObjectListView):
 class WorkerListView(SingleObjectListView):
     extra_context = {
         'hide_object': True,
-        'title': _('Background task workers')
+        'title': _(message='Background task workers')
     }
     view_icon = icon_worker_list
     view_permission = permission_task_view
@@ -59,7 +59,7 @@ class WorkerQueueListView(SingleObjectListView):
         return {
             'hide_object': True,
             'object': self.get_worker(),
-            'title': _('Queues for worker: %s') % self.get_worker()
+            'title': _(message='Queues for worker: %s') % self.get_worker()
         }
 
     def get_worker(self):
@@ -69,7 +69,7 @@ class WorkerQueueListView(SingleObjectListView):
             )
         except KeyError:
             raise Http404(
-                _('Worker: %s, not found') % self.kwargs['worker_name']
+                _(message='Worker: %s, not found') % self.kwargs['worker_name']
             )
 
     def get_source_queryset(self):

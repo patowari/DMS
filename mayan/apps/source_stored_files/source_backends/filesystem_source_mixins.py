@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 
 from django.core.files.storage import FileSystemStorage
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.exceptions import SourceException
 
@@ -27,7 +27,7 @@ class SourceBackendMixinStoredFileLocationFilesystem:
                     'kwargs': {
                         'max_length': 255,
                     },
-                    'label': _('Folder path'),
+                    'label': _(message='Folder path'),
                     'required': True
                 },
                 'include_subdirectories': {
@@ -37,7 +37,7 @@ class SourceBackendMixinStoredFileLocationFilesystem:
                         'If checked, not only will the folder path be '
                         'scanned for files but also its subdirectories.'
                     ),
-                    'label': _('Include subdirectories?'),
+                    'label': _(message='Include subdirectories?'),
                     'required': False
                 }
             }
@@ -51,7 +51,7 @@ class SourceBackendMixinStoredFileLocationFilesystem:
 
         fieldsets += (
             (
-                _('Storage'), {
+                _(message='Storage'), {
                     'fields': ('folder_path', 'include_subdirectories')
                 }
             ),

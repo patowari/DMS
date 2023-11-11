@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.views import (
     ViewSingleObjectDynamicFormModelBackendCreate,
@@ -34,7 +34,7 @@ from ..permissions import (
 
 class UserMailerBackendSelectionView(FormView):
     extra_context = {
-        'title': _('New mailing profile backend selection'),
+        'title': _(message='New mailing profile backend selection'),
     }
     form_class = UserMailerBackendSelectionForm
     view_icon = icon_user_mailer_backend_select
@@ -88,7 +88,7 @@ class UserMailingDeleteView(SingleObjectDeleteView):
 
     def get_extra_context(self):
         return {
-            'title': _('Delete mailing profile: %s') % self.object
+            'title': _(message='Delete mailing profile: %s') % self.object
         }
 
 
@@ -101,7 +101,7 @@ class UserMailingEditView(ViewSingleObjectDynamicFormModelBackendEdit):
 
     def get_extra_context(self):
         return {
-            'title': _('Edit mailing profile: %s') % self.object
+            'title': _(message='Edit mailing profile: %s') % self.object
         }
 
     def get_form_extra_kwargs(self):
@@ -130,8 +130,8 @@ class UserMailerListView(SingleObjectListView):
                 'Mailing profiles allow sending documents as '
                 'attachments or as links via email.'
             ),
-            'no_results_title': _('No mailing profiles available'),
-            'title': _('Mailing profiles')
+            'no_results_title': _(message='No mailing profiles available'),
+            'title': _(message='Mailing profiles')
         }
 
     def get_form_schema(self):
@@ -153,7 +153,7 @@ class UserMailerTestView(ExternalObjectViewMixin, FormView):
             to=form.cleaned_data['email'], user=self.request.user
         )
         messages.success(
-            message=_('Test email sent.'), request=self.request
+            message=_(message='Test email sent.'), request=self.request
         )
         return super().form_valid(form=form)
 
@@ -161,6 +161,6 @@ class UserMailerTestView(ExternalObjectViewMixin, FormView):
         return {
             'hide_object': True,
             'object': self.external_object,
-            'submit_label': _('Test'),
-            'title': _('Test mailing profile: %s') % self.external_object
+            'submit_label': _(message='Test'),
+            'title': _(message='Test mailing profile: %s') % self.external_object
         }

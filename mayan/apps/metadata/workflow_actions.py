@@ -2,7 +2,7 @@ import logging
 
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.document_states.exceptions import WorkflowStateActionError
@@ -25,7 +25,7 @@ class DocumentMetadataAddAction(WorkflowAction):
             }
         }
     }
-    label = _('Add metadata')
+    label = _(message='Add metadata')
     permission = permission_document_metadata_add
 
     @classmethod
@@ -49,7 +49,7 @@ class DocumentMetadataAddAction(WorkflowAction):
                         'source_queryset': metadata_type_queryset,
                         'permission': cls.permission
                     },
-                    'label': _('Metadata types'),
+                    'label': _(message='Metadata types'),
                     'required': True
                 }
             }
@@ -63,7 +63,7 @@ class DocumentMetadataAddAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Metadata types'), {
+                _(message='Metadata types'), {
                     'fields': ('metadata_types',)
                 },
             ),
@@ -106,7 +106,7 @@ class DocumentMetadataEditAction(WorkflowAction):
     }
     form_fields = {
         'value': {
-            'label': _('Value'),
+            'label': _(message='Value'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
@@ -119,7 +119,7 @@ class DocumentMetadataEditAction(WorkflowAction):
             }
         }
     }
-    label = _('Edit metadata')
+    label = _(message='Edit metadata')
 
     @classmethod
     def get_form_fields(cls):
@@ -142,7 +142,7 @@ class DocumentMetadataEditAction(WorkflowAction):
                         'source_queryset': metadata_type_queryset,
                         'permission': permission_document_metadata_edit
                     },
-                    'label': _('Metadata type'),
+                    'label': _(message='Metadata type'),
                     'required': True
                 }
             }
@@ -156,7 +156,7 @@ class DocumentMetadataEditAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Metadata'), {
+                _(message='Metadata'), {
                     'fields': ('metadata_type', 'value')
                 },
             ),
@@ -198,7 +198,7 @@ class DocumentMetadataEditAction(WorkflowAction):
 
 
 class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
-    label = _('Remove metadata')
+    label = _(message='Remove metadata')
     permission = permission_document_metadata_remove
 
     @classmethod

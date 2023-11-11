@@ -1,20 +1,20 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Comments'), name='comments'
+    label=_(message='Comments'), name='comments'
 )
 
 permission_document_comment_create = namespace.add_permission(
-    label=_('Create new comments'), name='comment_create'
+    label=_(message='Create new comments'), name='comment_create'
 )
 permission_document_comment_delete = namespace.add_permission(
-    label=_('Delete comments'), name='comment_delete'
+    label=_(message='Delete comments'), name='comment_delete'
 )
 permission_document_comment_edit = namespace.add_permission(
-    label=_('Edit comments'), name='comment_edit'
+    label=_(message='Edit comments'), name='comment_edit'
 )
 permission_document_comment_view = namespace.add_permission(
-    label=_('View comments'), name='comment_view'
+    label=_(message='View comments'), name='comment_view'
 )

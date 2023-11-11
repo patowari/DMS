@@ -3,7 +3,7 @@ import pyotp
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 import mayan
 from mayan.apps.authentication.forms import AuthenticationFormBase
@@ -22,7 +22,7 @@ class AuthenticationFormTOTP(AuthenticationFormBase):
     }
 
     token = forms.CharField(
-        label=_('TOTP token'), widget=forms.TextInput(
+        label=_(message='TOTP token'), widget=forms.TextInput(
             attrs={
                 'autocomplete': 'one-time-code', 'autofocus': True,
                 'inputmode': 'numeric'
@@ -83,8 +83,8 @@ class FormUserOTPDataDetail(DetailForm):
 
         extra_fields = (
             {
-                'label': _('OTP enabled?'),
-                'func': lambda instance: _('Yes') if otp_enabled else _('No')
+                'label': _(message='OTP enabled?'),
+                'func': lambda instance: _(message='Yes') if otp_enabled else _(message='No')
             },
         )
 
@@ -103,12 +103,12 @@ class FormUserOTPDataEdit(forms.Form):
         help_text=_(
             'Scan the QR code or enter the secret in your authentication '
             'device. Do not share this secret, treat it like a password.'
-        ), label=_('Secret'), required=False, widget=forms.TextInput(
+        ), label=_(message='Secret'), required=False, widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     signed_secret = forms.CharField(
-        label=_('Secret'), required=False, widget=forms.HiddenInput(
+        label=_(message='Secret'), required=False, widget=forms.HiddenInput(
             attrs={'readonly': 'readonly'}
         )
     )
@@ -117,7 +117,7 @@ class FormUserOTPDataEdit(forms.Form):
             'Enter the corresponding token to validate that the secret '
             'was saved correct.'
         ),
-        label=_('Token'), widget=forms.TextInput(
+        label=_(message='Token'), widget=forms.TextInput(
             attrs={
                 'autocomplete': 'one-time-code', 'autofocus': True,
                 'inputmode': 'numeric'
@@ -152,7 +152,7 @@ class FormUserOTPDataEdit(forms.Form):
         if token.strip() != totp.now():
             raise ValidationError(
                 code='token_invalid',
-                message=_('Token is incorrect for the specified secret.')
+                message=_(message='Token is incorrect for the specified secret.')
             )
 
         return token

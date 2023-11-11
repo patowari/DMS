@@ -1,5 +1,5 @@
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -37,9 +37,9 @@ class DocumentCheckInView(MultipleObjectConfirmActionView):
     success_message_singular = _(
         '%(count)d document checked in successfully.'
     )
-    title_plural = _('Check in %(count)d documents.')
-    title_single = _('Check in document "%(object)s".')
-    title_singular = _('Check in %(count)d document.')
+    title_plural = _(message='Check in %(count)d documents.')
+    title_single = _(message='Check in document "%(object)s".')
+    title_singular = _(message='Check in %(count)d document.')
     view_icon = icon_check_in_document
 
     def get_extra_context(self):
@@ -107,9 +107,9 @@ class DocumentCheckOutView(MultipleObjectFormActionView):
     success_message_singular = _(
         '%(count)d document checked out successfully.'
     )
-    title_plural = _('Checkout %(count)d documents.')
-    title_single = _('Checkout document "%(object)s".')
-    title_singular = _('Checkout %(count)d document.')
+    title_plural = _(message='Checkout %(count)d documents.')
+    title_single = _(message='Checkout document "%(object)s".')
+    title_singular = _(message='Checkout %(count)d document.')
     view_icon = icon_check_out_document
 
     def get_extra_context(self):
@@ -181,8 +181,8 @@ class DocumentCheckOutListView(DocumentListView):
                     'Checking out a document, blocks certain operations '
                     'for a predetermined amount of time.'
                 ),
-                'no_results_title': _('No documents have been checked out'),
-                'title': _('Checked out documents')
+                'no_results_title': _(message='No documents have been checked out'),
+                'title': _(message='Checked out documents')
             }
         )
         return context

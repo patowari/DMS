@@ -2,7 +2,7 @@ import json
 import logging
 
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .classes import NullBackend
 
@@ -12,16 +12,16 @@ logger = logging.getLogger(__name__)
 class QuotaBusinessModelMixin:
     def backend_label(self):
         return self.get_backend_instance().label
-    backend_label.help_text = _('Driver used for this quota entry.')
-    backend_label.short_description = _('Backend')
+    backend_label.help_text = _(message='Driver used for this quota entry.')
+    backend_label.short_description = _(message='Backend')
 
     def backend_filters(self):
         return self.get_backend_instance().filters()
-    backend_filters.short_description = _('Arguments')
+    backend_filters.short_description = _(message='Arguments')
 
     def backend_usage(self):
         return self.get_backend_instance().usage()
-    backend_usage.short_description = _('Usage')
+    backend_usage.short_description = _(message='Usage')
 
     def dumps(self, data):
         self.backend_data = json.dumps(obj=data)

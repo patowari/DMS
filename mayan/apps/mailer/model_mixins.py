@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core import mail
 from django.utils.html import strip_tags
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.classes import Template
 
@@ -169,7 +169,7 @@ class UserMailerBusinessLogicMixin:
         """
         try:
             self.send(
-                subject=_('Test email from Mayan EDMS'), to=to, user=user
+                subject=_(message='Test email from Mayan EDMS'), to=to, user=user
             )
         except Exception as exception:
             self.error_log.create(

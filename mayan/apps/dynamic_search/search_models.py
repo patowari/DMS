@@ -5,7 +5,7 @@ from django.contrib.admin.utils import reverse_field_path
 from django.db.models.aggregates import Max, Min
 from django.utils.functional import cached_property
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.utils import group_iterator, parse_range
@@ -41,7 +41,7 @@ class SearchModel(AppsModuleLoaderMixin):
             result = cls._registry[name]
         except KeyError:
             raise KeyError(
-                _('Unknown search model `%s`.') % name
+                _(message='Unknown search model `%s`.') % name
             )
         else:
             if getattr(result, 'serializer_path', None):
@@ -111,7 +111,7 @@ class SearchModel(AppsModuleLoaderMixin):
             field=auto_field.name, label=auto_field.verbose_name
         )
         self.add_model_field(
-            field=QUERY_PARAMETER_ANY_FIELD, label=_('All content')
+            field=QUERY_PARAMETER_ANY_FIELD, label=_(message='All content')
         )
 
         self.manager_name = manager_name or self.model._meta.default_manager.name

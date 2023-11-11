@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
@@ -23,7 +23,7 @@ class ACLsApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.acls'
-    verbose_name = _('ACLs')
+    verbose_name = _(message='ACLs')
 
     def ready(self):
         super().ready()
@@ -62,7 +62,7 @@ class ACLsApp(MayanAppConfig):
                 'Object for which the access is granted. When sorting '
                 'objects, only the type is used and not the actual label of '
                 'the object.'
-            ), include_label=True, is_sortable=True, label=_('Object'),
+            ), include_label=True, is_sortable=True, label=_(message='Object'),
             sort_field='content_type', source=GlobalAccessControlListProxy,
             widget=ObjectLinkWidget
         )

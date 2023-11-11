@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.validators import YAMLValidator
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
@@ -31,19 +31,19 @@ class WorkflowTransition(
 ):
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='transitions', to=Workflow,
-        verbose_name=_('Workflow')
+        verbose_name=_(message='Workflow')
     )
     label = models.CharField(
-        help_text=_('A short text to describe the transition.'),
-        max_length=255, verbose_name=_('Label')
+        help_text=_(message='A short text to describe the transition.'),
+        max_length=255, verbose_name=_(message='Label')
     )
     origin_state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='origin_transitions',
-        to=WorkflowState, verbose_name=_('Origin state')
+        to=WorkflowState, verbose_name=_(message='Origin state')
     )
     destination_state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='destination_transitions',
-        to=WorkflowState, verbose_name=_('Destination state')
+        to=WorkflowState, verbose_name=_(message='Destination state')
     )
     condition = models.TextField(
         blank=True, help_text=_(
@@ -53,7 +53,7 @@ class WorkflowTransition(
             'that return the Python logical None, or an empty string (\'\') '
             'are considered to be logical false, any other value is '
             'considered to be the logical true.'
-        ), verbose_name=_('Condition')
+        ), verbose_name=_(message='Condition')
     )
 
     class Meta:
@@ -61,8 +61,8 @@ class WorkflowTransition(
         unique_together = (
             'workflow', 'label', 'origin_state', 'destination_state'
         )
-        verbose_name = _('Workflow transition')
-        verbose_name_plural = _('Workflow transitions')
+        verbose_name = _(message='Workflow transition')
+        verbose_name_plural = _(message='Workflow transitions')
 
     def __str__(self):
         return self.label
@@ -99,49 +99,49 @@ class WorkflowTransitionField(
 ):
     transition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='fields',
-        to=WorkflowTransition, verbose_name=_('Transition')
+        to=WorkflowTransition, verbose_name=_(message='Transition')
     )
     field_type = models.PositiveIntegerField(
-        choices=FIELD_TYPE_CHOICES, verbose_name=_('Type')
+        choices=FIELD_TYPE_CHOICES, verbose_name=_(message='Type')
     )
     name = models.CharField(
         help_text=_(
             'The name that will be used to identify this field in other parts '
             'of the workflow system.'
-        ), max_length=128, verbose_name=_('Internal name')
+        ), max_length=128, verbose_name=_(message='Internal name')
     )
     label = models.CharField(
         help_text=_(
             'The field name that will be shown on the user interface.'
-        ), max_length=128, verbose_name=_('Label'))
+        ), max_length=128, verbose_name=_(message='Label'))
     help_text = models.TextField(
         blank=True, help_text=_(
             'An optional message that will help users better understand the '
             'purpose of the field and data to provide.'
-        ), verbose_name=_('Help text')
+        ), verbose_name=_(message='Help text')
     )
     required = models.BooleanField(
         default=False, help_text=_(
             'Whether this fields needs to be filled out or not to proceed.'
-        ), verbose_name=_('Required')
+        ), verbose_name=_(message='Required')
     )
     widget = models.PositiveIntegerField(
         blank=True, choices=WIDGET_CLASS_CHOICES, help_text=_(
             'An optional class to change the default presentation of the field.'
-        ), null=True, verbose_name=_('Widget class')
+        ), null=True, verbose_name=_(message='Widget class')
     )
     widget_kwargs = models.TextField(
         blank=True, help_text=_(
             'A group of keyword arguments to customize the widget. '
             'Use YAML format.'
         ), validators=[YAMLValidator()],
-        verbose_name=_('Widget keyword arguments')
+        verbose_name=_(message='Widget keyword arguments')
     )
 
     class Meta:
         unique_together = ('transition', 'name')
-        verbose_name = _('Workflow transition field')
-        verbose_name_plural = _('Workflow transition fields')
+        verbose_name = _(message='Workflow transition field')
+        verbose_name_plural = _(message='Workflow transition fields')
 
     def __str__(self):
         return self.label
@@ -178,18 +178,18 @@ class WorkflowTransitionTriggerEvent(
 ):
     transition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='trigger_events',
-        to=WorkflowTransition, verbose_name=_('Transition')
+        to=WorkflowTransition, verbose_name=_(message='Transition')
     )
     event_type = models.ForeignKey(
         on_delete=models.CASCADE, to=StoredEventType,
-        verbose_name=_('Event type')
+        verbose_name=_(message='Event type')
     )
 
     class Meta:
         ordering = ('event_type__name',)
         unique_together = ('transition', 'event_type')
-        verbose_name = _('Workflow transition trigger event')
-        verbose_name_plural = _('Workflow transitions trigger events')
+        verbose_name = _(message='Workflow transition trigger event')
+        verbose_name_plural = _(message='Workflow transitions trigger events')
 
     def __str__(self):
         return str(self.transition)

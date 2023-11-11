@@ -2,7 +2,7 @@ import logging
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.signals import user_logged_in, user_logged_out
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -33,7 +33,7 @@ class AuthenticationApp(MayanAppConfig):
     app_url = 'authentication'
     has_tests = True
     name = 'mayan.apps.authentication'
-    verbose_name = _('Authentication')
+    verbose_name = _(message='Authentication')
 
     def ready(self):
         super().ready()

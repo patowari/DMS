@@ -1,7 +1,7 @@
 import logging
 
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.django_gpg.models import Key
 from mayan.apps.django_gpg.permissions import permission_key_sign
@@ -14,21 +14,21 @@ logger = logging.getLogger(name=__name__)
 
 class DocumentFileSignatureCreateForm(FilteredSelectionForm):
     key = forms.ModelChoiceField(
-        label=_('Key'), queryset=Key.objects.none()
+        label=_(message='Key'), queryset=Key.objects.none()
     )
 
     passphrase = forms.CharField(
         help_text=_(
             'The passphrase to unlock the key and allow it to be used to '
             'sign the document file.'
-        ), label=_('Passphrase'), required=False,
+        ), label=_(message='Passphrase'), required=False,
         widget=forms.widgets.PasswordInput
     )
 
     class Meta:
         allow_multiple = False
         field_name = 'key'
-        label = _('Key')
+        label = _(message='Key')
         help_text = _(
             'Private key that will be used to sign this document file.'
         )
@@ -42,17 +42,17 @@ class DocumentFileSignatureDetailForm(DetailForm):
     def __init__(self, *args, **kwargs):
         extra_fields = (
             {
-                'label': _('Signature is embedded?'), 'field': 'is_embedded'
+                'label': _(message='Signature is embedded?'), 'field': 'is_embedded'
             },
             {
-                'label': _('Signature date'), 'field': 'date_time',
+                'label': _(message='Signature date'), 'field': 'date_time',
                 'widget': forms.widgets.DateTimeInput
             },
             {
-                'label': _('Signature key ID'), 'field': 'key_id'
+                'label': _(message='Signature key ID'), 'field': 'key_id'
             },
             {
-                'label': _('Signature key present?'),
+                'label': _(message='Signature key present?'),
                 'func': lambda x: x.public_key_fingerprint is not None
             }
         )
@@ -62,36 +62,36 @@ class DocumentFileSignatureDetailForm(DetailForm):
         if key:
             extra_fields += (
                 {
-                    'label': _('Signature ID'), 'field': 'signature_id'
+                    'label': _(message='Signature ID'), 'field': 'signature_id'
                 },
                 {
-                    'label': _('Key fingerprint'),
+                    'label': _(message='Key fingerprint'),
                     'func': lambda x: key.fingerprint
                 },
                 {
-                    'label': _('Key creation date'),
+                    'label': _(message='Key creation date'),
                     'field': 'key_creation_date',
                     'widget': forms.widgets.DateTimeInput
                 },
                 {
-                    'label': _('Key expiration date'),
-                    'func': lambda x: key.expiration_date or _('None'),
+                    'label': _(message='Key expiration date'),
+                    'func': lambda x: key.expiration_date or _(message='None'),
                     'widget': forms.widgets.DateTimeInput
                 },
                 {
-                    'label': _('Key length'),
+                    'label': _(message='Key length'),
                     'field': 'key_length'
                 },
                 {
-                    'label': _('Key algorithm'),
+                    'label': _(message='Key algorithm'),
                     'field': 'key_algorithm'
                 },
                 {
-                    'label': _('Key user ID'),
+                    'label': _(message='Key user ID'),
                     'field': 'key_user_id'
                 },
                 {
-                    'label': _('Key type'),
+                    'label': _(message='Key type'),
                     'func': lambda x: key.get_key_type_display()
                 }
             )

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_object, menu_return, menu_tools
@@ -15,18 +15,18 @@ class DashboardsApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.dashboards'
-    verbose_name = _('Dashboards')
+    verbose_name = _(message='Dashboards')
 
     def ready(self):
         super().ready()
 
         SourceColumn(
             func=lambda context: len(context['object'].widgets),
-            label=_('Widgets'), include_label=True,
+            label=_(message='Widgets'), include_label=True,
             source=Dashboard
         )
         SourceColumn(
-            attribute='label', label=_('Label'), is_identifier=True,
+            attribute='label', label=_(message='Label'), is_identifier=True,
             source=Dashboard
         )
 

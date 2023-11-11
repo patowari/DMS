@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.storage.classes import DefinedStorage
 
@@ -24,7 +24,7 @@ storage_document_files = DefinedStorage(
             setting_document_file_storage_backend_arguments.global_name
         )
     ),
-    label=_('Document files'),
+    label=_(message='Document files'),
     name=STORAGE_NAME_DOCUMENT_FILES,
     kwargs=setting_document_file_storage_backend_arguments.value
 )
@@ -38,7 +38,7 @@ storage_document_file_image_cache = DefinedStorage(
             setting_document_file_page_image_cache_storage_backend_arguments.global_name
         )
     ),
-    label=_('Document file page images'),
+    label=_(message='Document file page images'),
     name=STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE,
     kwargs=setting_document_file_page_image_cache_storage_backend_arguments.value
 )
@@ -52,7 +52,7 @@ storage_document_version_image_cache = DefinedStorage(
             setting_document_version_page_image_cache_storage_backend_arguments.global_name
         )
     ),
-    label=_('Document version page images'),
+    label=_(message='Document version page images'),
     name=STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE,
     kwargs=setting_document_version_page_image_cache_storage_backend_arguments.value
 )

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -8,7 +8,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Authentication'), name='authentication'
+    label=_(message='Authentication'), name='authentication'
 )
 
 setting_disable_password_reset = namespace.add_setting(
@@ -28,5 +28,5 @@ setting_authentication_backend = namespace.add_setting(
 setting_authentication_backend_arguments = namespace.add_setting(
     default=DEFAULT_AUTHENTICATION_BACKEND_ARGUMENTS,
     global_name='AUTHENTICATION_BACKEND_ARGUMENTS',
-    help_text=_('Arguments for the AUTHENTICATION_BACKEND.')
+    help_text=_(message='Arguments for the AUTHENTICATION_BACKEND.')
 )

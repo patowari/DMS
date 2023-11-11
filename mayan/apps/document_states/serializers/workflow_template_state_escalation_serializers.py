@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError as DjangoValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.exceptions import ValidationError
 
@@ -13,7 +13,7 @@ from ..models.workflow_state_escalation_models import WorkflowStateEscalation
 
 class WorkflowTemplateStateEscalationSerializer(serializers.HyperlinkedModelSerializer):
     url = MultiKwargHyperlinkedIdentityField(
-        label=_('URL'), view_kwargs=(
+        label=_(message='URL'), view_kwargs=(
             {
                 'lookup_field': 'state__workflow_id',
                 'lookup_url_kwarg': 'workflow_template_id'
@@ -29,11 +29,11 @@ class WorkflowTemplateStateEscalationSerializer(serializers.HyperlinkedModelSeri
         ), view_name='rest_api:workflow-template-state-escalation-detail'
     )
     workflow_template_state_id = serializers.IntegerField(
-        label=_('Workflow template state ID'), read_only=True,
+        label=_(message='Workflow template state ID'), read_only=True,
         source='state_id'
     )
     workflow_template_state_url = MultiKwargHyperlinkedIdentityField(
-        label=_('Workflow template state URL'), view_kwargs=(
+        label=_(message='Workflow template state URL'), view_kwargs=(
             {
                 'lookup_field': 'state__workflow_id',
                 'lookup_url_kwarg': 'workflow_template_id'
@@ -47,12 +47,12 @@ class WorkflowTemplateStateEscalationSerializer(serializers.HyperlinkedModelSeri
     workflow_template_transition_id = FilteredPrimaryKeyRelatedField(
         help_text=_(
             'Primary key of the workflow template transition to be added.'
-        ), label=_('Workflow template transition ID'),
+        ), label=_(message='Workflow template transition ID'),
         source='transition_id',
         source_queryset_method='get_workflow_template_transition_queryset'
     )
     workflow_template_transition_url = MultiKwargHyperlinkedIdentityField(
-        label=_('Workflow template transition URL'), view_kwargs=(
+        label=_(message='Workflow template transition URL'), view_kwargs=(
             {
                 'lookup_field': 'transition__workflow_id',
                 'lookup_url_kwarg': 'workflow_template_id'

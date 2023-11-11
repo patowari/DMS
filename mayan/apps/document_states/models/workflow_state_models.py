@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
@@ -32,31 +32,31 @@ class WorkflowState(
     """
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='states', to=Workflow,
-        verbose_name=_('Workflow')
+        verbose_name=_(message='Workflow')
     )
     label = models.CharField(
-        help_text=_('A short text to describe the workflow state.'),
-        max_length=255, verbose_name=_('Label')
+        help_text=_(message='A short text to describe the workflow state.'),
+        max_length=255, verbose_name=_(message='Label')
     )
     initial = models.BooleanField(
         default=False,
         help_text=_(
             'The state at which the workflow will start in. Only one state '
             'can be the initial state.'
-        ), verbose_name=_('Initial')
+        ), verbose_name=_(message='Initial')
     )
     completion = models.IntegerField(
         blank=True, default=0, help_text=_(
             'The percent of completion that this state represents in '
             'relation to the workflow. Use numbers without the percent sign.'
-        ), verbose_name=_('Completion')
+        ), verbose_name=_(message='Completion')
     )
 
     class Meta:
         ordering = ('label',)
         unique_together = ('workflow', 'label')
-        verbose_name = _('Workflow state')
-        verbose_name_plural = _('Workflow states')
+        verbose_name = _(message='Workflow state')
+        verbose_name_plural = _(message='Workflow states')
 
     def __str__(self):
         return self.label
@@ -102,8 +102,8 @@ class WorkflowState(
 class WorkflowStateRuntimeProxy(WorkflowState):
     class Meta:
         proxy = True
-        verbose_name = _('Workflow state runtime proxy')
-        verbose_name_plural = _('Workflow state runtime proxies')
+        verbose_name = _(message='Workflow state runtime proxy')
+        verbose_name_plural = _(message='Workflow state runtime proxies')
 
     def get_documents(self, permission=None, user=None):
         """

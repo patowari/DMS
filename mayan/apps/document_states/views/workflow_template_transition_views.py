@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.events.classes import EventType
 from mayan.apps.events.models import StoredEventType
@@ -231,7 +231,7 @@ class WorkflowTemplateTransitionFieldDeleteView(SingleObjectDeleteView):
                 'object', 'workflow_template_transition', 'workflow'
             ),
             'object': self.object,
-            'title': _('Delete workflow transition field: %s') % self.object,
+            'title': _(message='Delete workflow transition field: %s') % self.object,
             'workflow': self.object.transition.workflow,
             'workflow_template_transition': self.object.transition
         }
@@ -266,7 +266,7 @@ class WorkflowTemplateTransitionFieldEditView(SingleObjectEditView):
                 'object', 'workflow_template_transition', 'workflow'
             ),
             'object': self.object,
-            'title': _('Edit workflow transition field: %s') % self.object,
+            'title': _(message='Edit workflow transition field: %s') % self.object,
             'workflow': self.object.transition.workflow,
             'workflow_template_transition': self.object.transition
         }

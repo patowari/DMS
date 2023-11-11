@@ -4,7 +4,7 @@ from furl import furl
 
 from django.urls import reverse
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.exceptions import AppImageError
@@ -227,7 +227,7 @@ class DocumentFilePageBusinessLogicMixin:
             'page_num': self.page_number,
             'total_pages': self.get_pages_last_number() or 1
         }
-    get_label.short_description = _('Label')
+    get_label.short_description = _(message='Label')
 
     def get_lock_name(
         self, _combined_cache_filename=None, maximum_layer_order=None,

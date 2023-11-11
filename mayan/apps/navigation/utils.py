@@ -5,7 +5,7 @@ from django.core.exceptions import PermissionDenied
 from django.template import Variable, VariableDoesNotExist
 from django.urls import Resolver404, resolve
 
-from mayan.apps.permissions import Permission
+from mayan.apps.permissions.classes import Permission
 
 logger = logging.getLogger(name=__name__)
 

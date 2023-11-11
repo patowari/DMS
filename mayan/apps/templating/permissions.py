@@ -1,11 +1,11 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Templating'), name='templating'
+    label=_(message='Templating'), name='templating'
 )
 
 permission_template_sandbox = namespace.add_permission(
-    label=_('Use the template sandbox'), name='template_sandbox'
+    label=_(message='Use the template sandbox'), name='template_sandbox'
 )

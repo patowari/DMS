@@ -1,5 +1,5 @@
 from django.db.models.signals import post_migrate
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -32,7 +32,7 @@ class ConverterApp(MayanAppConfig):
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.converter'
-    verbose_name = _('Converter')
+    verbose_name = _(message='Converter')
 
     def ready(self):
         super().ready()
@@ -79,7 +79,7 @@ class ConverterApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: str(
                 context['object']
-            ), include_label=True, label=_('Transformation'),
+            ), include_label=True, label=_(message='Transformation'),
             source=LayerTransformation
         )
         SourceColumn(

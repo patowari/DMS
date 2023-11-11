@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -8,7 +8,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Mailing'), name='mailer'
+    label=_(message='Mailing'), name='mailer'
 )
 
 setting_attachment_subject_template = namespace.add_setting(

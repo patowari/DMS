@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..icons import icon_document_recently_created_list
 from ..models.document_models import RecentlyCreatedDocument
@@ -24,7 +24,7 @@ class RecentCreatedDocumentListView(DocumentListView):
                 'no_results_title': _(
                     'There are no recently created documents'
                 ),
-                'title': _('Recently created')
+                'title': _(message='Recently created')
             }
         )
         return context

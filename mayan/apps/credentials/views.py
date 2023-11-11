@@ -3,7 +3,7 @@ import logging
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.views import (
     ViewSingleObjectDynamicFormModelBackendCreate,
@@ -34,7 +34,7 @@ logger = logging.getLogger(name=__name__)
 
 class StoredCredentialBackendSelectionView(FormView):
     extra_context = {
-        'title': _('New credential backend selection')
+        'title': _(message='New credential backend selection')
     }
     form_class = StoredCredentialBackendSelectionForm
     view_icon = icon_credential_backend_selection
@@ -87,7 +87,7 @@ class StoredCredentialDeleteView(SingleObjectDeleteView):
 
     def get_extra_context(self):
         return {
-            'title': _('Delete credential: %s') % self.object
+            'title': _(message='Delete credential: %s') % self.object
         }
 
 
@@ -100,7 +100,7 @@ class StoredCredentialEditView(ViewSingleObjectDynamicFormModelBackendEdit):
 
     def get_extra_context(self):
         return {
-            'title': _('Edit credential: %s') % self.object
+            'title': _(message='Edit credential: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -126,6 +126,6 @@ class StoredCredentialListView(SingleObjectListView):
                 'These are used to when accessing external systems or '
                 'services.'
             ),
-            'no_results_title': _('No credentials available'),
-            'title': _('Credentials')
+            'no_results_title': _(message='No credentials available'),
+            'title': _(message='Credentials')
         }

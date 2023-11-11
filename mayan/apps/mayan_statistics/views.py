@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     ConfirmView, SimpleView, SingleObjectListView
@@ -23,8 +23,8 @@ class StatisticNamespaceListView(SingleObjectListView):
         'no_results_text': _(
             'Statistics namespaces group statistics into logical units. '
         ),
-        'no_results_title': _('No statistic namespaces available'),
-        'title': _('Statistics namespaces')
+        'no_results_title': _(message='No statistic namespaces available'),
+        'title': _(message='Statistics namespaces')
     }
     template_name = 'appearance/generic_list.html'
     view_icon = icon_statistic_namespace_list
@@ -50,9 +50,9 @@ class StatisticNamespaceDetailView(SingleObjectListView):
                 'Statistics are metrics and chart representations of '
                 'existing data.'
             ),
-            'no_results_title': _('No statistic available'),
+            'no_results_title': _(message='No statistic available'),
             'object': self.object,
-            'title': _('Namespace details for: %s') % self.object
+            'title': _(message='Namespace details for: %s') % self.object
         }
 
     def get_object(self):
@@ -75,7 +75,7 @@ class StatisticTypeDetailView(StatisticTypeViewMixin, SimpleView):
             'navigation_object_list': ('namespace', 'object'),
             'no_data': not self.object.get_results_data()['series'],
             'object': self.object,
-            'title': _('Results for: %s') % self.object
+            'title': _(message='Results for: %s') % self.object
         }
 
     def get_template_names(self):

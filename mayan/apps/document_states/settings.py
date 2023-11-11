@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -11,7 +11,7 @@ from .literals import (
 from .setting_callbacks import callback_update_workflow_image_cache_size
 
 namespace = SettingNamespace(
-    label=_('Workflows'), name='document_states'
+    label=_(message='Workflows'), name='document_states'
 )
 
 setting_graphviz_dot_path = namespace.add_setting(

@@ -3,8 +3,8 @@ import logging
 from django.apps import apps
 from django.core.exceptions import ImproperlyConfigured
 from django.db import models
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
 logger = logging.getLogger(name=__name__)
 
@@ -73,11 +73,11 @@ class ModelAttribute:
                 self.name if show_name else self.label, self.description
             )
         else:
-            return force_text(s=self.name if show_name else self.label)
+            return force_str(s=self.name if show_name else self.label)
 
 
 class ModelField(ModelAttribute):
-    class_label = _('Model fields')
+    class_label = _(message='Model fields')
     class_name = 'field'
 
     def __init__(self, *args, **kwargs):
@@ -125,17 +125,17 @@ class ModelField(ModelAttribute):
 
 
 class ModelFieldRelated(ModelField):
-    class_label = _('Model related fields')
+    class_label = _(message='Model related fields')
     class_name = 'related_field'
 
 
 class ModelProperty(ModelAttribute):
-    class_label = _('Model properties')
+    class_label = _(message='Model properties')
     class_name = 'property'
 
 
 class ModelReverseField(ModelField):
-    class_label = _('Model reverse fields')
+    class_label = _(message='Model reverse fields')
     class_name = 'reverse_field'
 
     def __init__(self, *args, **kwargs):

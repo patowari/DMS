@@ -4,7 +4,7 @@ from celery.backends.base import DisabledBackend
 
 from django.apps import apps
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet, menu_tools, menu_return
@@ -29,7 +29,7 @@ class TaskManagerApp(MayanAppConfig):
     app_url = 'task_manager'
     has_tests = True
     name = 'mayan.apps.task_manager'
-    verbose_name = _('Task manager')
+    verbose_name = _(message='Task manager')
 
     def check_broker_connectivity(self):
         connection = celery_app.connection()
@@ -111,16 +111,16 @@ class TaskManagerApp(MayanAppConfig):
             )
 
         SourceColumn(
-            attribute='label', is_identifier=True, label=_('Label'),
+            attribute='label', is_identifier=True, label=_(message='Label'),
             source=CeleryQueue
         )
         SourceColumn(
-            attribute='name', include_label=True, label=_('Name'),
+            attribute='name', include_label=True, label=_(message='Name'),
             source=CeleryQueue
         )
         SourceColumn(
             attribute='default_queue', include_label=True,
-            label=_('Default queue?'), source=CeleryQueue,
+            label=_(message='Default queue?'), source=CeleryQueue,
             widget=TwoStateWidget
         )
         SourceColumn(
@@ -128,7 +128,7 @@ class TaskManagerApp(MayanAppConfig):
                 'Transient queues are not persistent. Tasks in a transient '
                 'queue are lost if the broker is restarted. Transient '
                 'queues use less resources and managed non critical tasks.'
-            ), include_label=True, label=_('Is transient?'),
+            ), include_label=True, label=_(message='Is transient?'),
             source=CeleryQueue, widget=TwoStateWidget
         )
         SourceColumn(
@@ -136,74 +136,79 @@ class TaskManagerApp(MayanAppConfig):
         )
 
         SourceColumn(
-            attribute='label', label=_('Label'), source=TaskType
+            attribute='label', label=_(message='Label'), source=TaskType
         )
         SourceColumn(
-            attribute='name', label=_('Name'), source=TaskType
+            attribute='name', label=_(message='Name'), source=TaskType
         )
         SourceColumn(
-            attribute='dotted_path', label=_('Dotted path'), source=TaskType
+            attribute='dotted_path', label=_(message='Dotted path'),
+            source=TaskType
         )
         SourceColumn(
-            attribute='schedule', label=_('Schedule'), source=TaskType
+            attribute='schedule', label=_(message='Schedule'),
+            source=TaskType
         )
 
         SourceColumn(
-            attribute='task_type', include_label=True, label=_('Type'),
-            source=Task
+            attribute='task_type', include_label=True, label=_(
+                message='Type'
+            ), source=Task
         )
         SourceColumn(
             attribute='get_time_started', include_label=True,
-            label=_('Start time'), source=Task
+            label=_(message='Start time'), source=Task
         )
         SourceColumn(
             func=lambda context: context['object'].kwargs['hostname'],
-            include_label=True, label=_('Host'), source=Task
+            include_label=True, label=_(message='Host'), source=Task
         )
         SourceColumn(
             func=lambda context: context['object'].kwargs['args'],
-            include_label=True, label=_('Arguments'), source=Task
+            include_label=True, label=_(message='Arguments'), source=Task
         )
         SourceColumn(
             func=lambda context: context['object'].kwargs['kwargs'],
-            include_label=True, label=_('Keyword arguments'), source=Task
+            include_label=True, label=_(message='Keyword arguments'),
+            source=Task
         )
         SourceColumn(
             func=lambda context: context['object'].kwargs['worker_pid'],
-            include_label=True, label=_('Worker process ID'), source=Task
+            include_label=True, label=_(message='Worker process ID'),
+            source=Task
         )
 
         SourceColumn(
-            attribute='label', is_identifier=True, label=_('Label'),
+            attribute='label', is_identifier=True, label=_(message='Label'),
             source=Worker
         )
         SourceColumn(
-            attribute='name', label=_('Name'), source=Worker
+            attribute='name', label=_(message='Name'), source=Worker
         )
         SourceColumn(
             attribute='maximum_memory_per_child', help_text=_(
                 'Maximum amount of resident memory a worker can execute '
                 'before it\'s replaced by a new process.'
-            ), label=_('Maximum memory per child'), source=Worker
+            ), label=_(message='Maximum memory per child'), source=Worker
         )
         SourceColumn(
             attribute='maximum_tasks_per_child', help_text=_(
                 'Maximum number of tasks a worker can execute before it\'s '
                 'replaced by a new process.'
-            ), label=_('Maximum tasks per child'), source=Worker
+            ), label=_(message='Maximum tasks per child'), source=Worker
         )
         SourceColumn(
             attribute='concurrency', help_text=_(
                 'The number of worker processes/threads to launch. '
                 'Defaults to the number of CPUs available on the machine.'
-            ), label=_('Concurrency'), source=Worker
+            ), label=_(message='Concurrency'), source=Worker
         )
         SourceColumn(
             attribute='nice_level', help_text=_(
                 'The nice value determines the priority of the process. '
                 'A higher value lowers the priority. The default '
                 'value is 0.'
-            ), label=_('Nice level'), source=Worker
+            ), label=_(message='Nice level'), source=Worker
         )
         SourceColumn(attribute='get_queue_count', source=Worker)
 

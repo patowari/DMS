@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
@@ -22,39 +22,39 @@ class Key(ExtraDataModelMixin, KeyBusinessLogicMixin, models.Model):
     a public key infrastructure, the kind used in Mayan.
     """
     key_data = models.TextField(
-        help_text=_('ASCII armored version of the key.'),
-        verbose_name=_('Key data')
+        help_text=_(message='ASCII armored version of the key.'),
+        verbose_name=_(message='Key data')
     )
     creation_date = models.DateTimeField(
-        editable=False, verbose_name=_('Creation date')
+        editable=False, verbose_name=_(message='Creation date')
     )
     expiration_date = models.DateTimeField(
         blank=True, editable=False, null=True,
-        verbose_name=_('Expiration date')
+        verbose_name=_(message='Expiration date')
     )
     fingerprint = models.CharField(
         editable=False, max_length=40, unique=True,
-        verbose_name=_('Fingerprint')
+        verbose_name=_(message='Fingerprint')
     )
     length = models.PositiveIntegerField(
-        editable=False, verbose_name=_('Length')
+        editable=False, verbose_name=_(message='Length')
     )
     algorithm = models.PositiveIntegerField(
-        editable=False, verbose_name=_('Algorithm')
+        editable=False, verbose_name=_(message='Algorithm')
     )
     user_id = models.TextField(
-        editable=False, verbose_name=_('User ID')
+        editable=False, verbose_name=_(message='User ID')
     )
     key_type = models.CharField(
         choices=KEY_TYPE_CHOICES, editable=False, max_length=3,
-        verbose_name=_('Type')
+        verbose_name=_(message='Type')
     )
 
     objects = KeyManager()
 
     class Meta:
-        verbose_name = _('Key')
-        verbose_name_plural = _('Keys')
+        verbose_name = _(message='Key')
+        verbose_name_plural = _(message='Keys')
 
     def __str__(self):
         return '{} - {}'.format(self.key_id, self.user_id)
@@ -69,12 +69,12 @@ class Key(ExtraDataModelMixin, KeyBusinessLogicMixin, models.Model):
 
         if not import_results.count:
             raise ValidationError(
-                message=_('Invalid key data')
+                message=_(message='Invalid key data')
             )
 
         if Key.objects.filter(fingerprint=import_results.fingerprints[0]).exists():
             raise ValidationError(
-                message=_('Key already exists.')
+                message=_(message='Key already exists.')
             )
 
     def get_absolute_url(self):

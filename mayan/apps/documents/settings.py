@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -30,7 +30,7 @@ from .setting_callbacks import (
 from .setting_migrations import DocumentsSettingMigration
 
 namespace = SettingNamespace(
-    label=_('Documents'), migration_class=DocumentsSettingMigration,
+    label=_(message='Documents'), migration_class=DocumentsSettingMigration,
     name='documents', version='0004'
 )
 
@@ -94,11 +94,11 @@ setting_hash_block_size = namespace.add_setting(
 )
 setting_language = namespace.add_setting(
     default=DEFAULT_LANGUAGE, global_name='DOCUMENTS_LANGUAGE',
-    help_text=_('Default documents language (in ISO639-3 format).')
+    help_text=_(message='Default documents language (in ISO639-3 format).')
 )
 setting_language_codes = namespace.add_setting(
     default=DEFAULT_LANGUAGE_CODES, global_name='DOCUMENTS_LANGUAGE_CODES',
-    help_text=_('List of supported document languages. In ISO639-3 format.')
+    help_text=_(message='List of supported document languages. In ISO639-3 format.')
 )
 setting_document_version_page_image_cache_maximum_size = namespace.add_setting(
     default=DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_MAXIMUM_SIZE,

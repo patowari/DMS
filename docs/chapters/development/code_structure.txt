@@ -44,8 +44,7 @@ Example:
     # Django core modules
     from django.db.models import Q
     from django.template.defaultfilters import slugify
-    from django.utils.translation import ugettext
-    from django.utils.translation import ugettext_lazy as _
+    from django.utils.translation import gettext, gettext_lazy as _
 
     # 3rd party installed Django libraries
     from rest_framework import APIView

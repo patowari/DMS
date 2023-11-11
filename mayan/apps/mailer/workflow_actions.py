@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 
@@ -7,7 +7,7 @@ from .workflow_action_mixins import ObjectEmailActionMixin
 
 
 class DocumentEmailAction(ObjectEmailActionMixin, WorkflowAction):
-    label = _('Send document via email')
+    label = _(message='Send document via email')
     previous_dotted_paths = (
         'mayan.apps.mailer.workflow_actions.EmailAction',
     )
@@ -19,7 +19,7 @@ class DocumentEmailAction(ObjectEmailActionMixin, WorkflowAction):
         fields.update(
             {
                 'attachment': {
-                    'label': _('Attachment'),
+                    'label': _(message='Attachment'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
                         'Attach the exported document version to the email.'

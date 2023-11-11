@@ -3,7 +3,7 @@ import logging
 from django.core.files.base import ContentFile
 from django.db import models
 from django.template.defaultfilters import filesizeformat
-from django.utils.translation import ugettext_lazy as _, ugettext
+from django.utils.translation import gettext_lazy as _, gettext
 
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
@@ -15,10 +15,10 @@ logger = logging.getLogger(name=__name__)
 
 class DatabaseFileModelMixin(models.Model):
     filename = models.CharField(
-        db_index=True, max_length=255, verbose_name=_('Filename')
+        db_index=True, max_length=255, verbose_name=_(message='Filename')
     )
     datetime = models.DateTimeField(
-        auto_now_add=True, verbose_name=_('Date time')
+        auto_now_add=True, verbose_name=_(message='Date time')
     )
 
     class Meta:
@@ -79,7 +79,9 @@ class DatabaseFileModelMixin(models.Model):
     def save(self, *args, **kwargs):
         if not self.file:
             self.file = ContentFile(
-                content=b'', name=self.filename or ugettext('Unnamed file')
+                content=b'', name=self.filename or gettext(
+                    message='Unnamed file'
+                )
             )
 
         self.filename = self.filename or str(self.file)
@@ -98,11 +100,11 @@ class DownloadFileBusinessLogicMixin:
     def get_size_display(self):
         return filesizeformat(bytes_=self.file.size)
 
-    get_size_display.short_description = _('Size')
+    get_size_display.short_description = _(message='Size')
 
     def get_user_display(self):
         if self.user.get_full_name():
             return self.user.get_full_name()
         else:
             return self.user.username
-    get_user_display.short_description = _('User')
+    get_user_display.short_description = _(message='User')

@@ -2,7 +2,7 @@ import json
 
 from django import forms
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.forms import DynamicModelForm
 
@@ -12,7 +12,7 @@ from .models import Quota
 
 class QuotaBackendSelectionForm(forms.Form):
     backend = forms.ChoiceField(
-        choices=(), label=_('Backend'), help_text=_(
+        choices=(), label=_(message='Backend'), help_text=_(
             'The quota driver for this entry.'
         )
     )

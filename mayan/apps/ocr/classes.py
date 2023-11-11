@@ -1,6 +1,6 @@
 import shutil
 
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.module_loading import import_string
 
 from mayan.apps.converter.classes import ConverterBase
@@ -39,6 +39,6 @@ class OCRBackendBase:
             shutil.copyfileobj(fsrc=image, fdst=temporary_image_file)
             temporary_image_file.seek(0)
 
-            return force_text(
+            return force_str(
                 s=self._execute(image_file_object=temporary_image_file)
             )

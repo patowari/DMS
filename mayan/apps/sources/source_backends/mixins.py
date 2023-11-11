@@ -3,7 +3,7 @@ import logging
 import re
 
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .literals import (
     DOCUMENT_FILE_SOURCE_METADATA_BATCH_SIZE,
@@ -27,7 +27,7 @@ class SourceBackendMixinRegularExpression:
                         'Regular expression used to select which files '
                         'to upload.'
                     ),
-                    'label': _('Include regular expression'),
+                    'label': _(message='Include regular expression'),
                     'required': False
                 },
                 'exclude_regex': {
@@ -37,7 +37,7 @@ class SourceBackendMixinRegularExpression:
                         'Regular expression used to exclude which files '
                         'to upload.'
                     ),
-                    'label': _('Exclude regular expression'),
+                    'label': _(message='Exclude regular expression'),
                     'required': False
                 }
             }
@@ -51,7 +51,7 @@ class SourceBackendMixinRegularExpression:
 
         fieldsets += (
             (
-                _('Content selection'), {
+                _(message='Content selection'), {
                     'fields': ('include_regex', 'exclude_regex')
                 },
             ),

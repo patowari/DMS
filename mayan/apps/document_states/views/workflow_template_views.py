@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -39,8 +39,8 @@ from ..tasks import (
 
 
 class DocumentTypeWorkflowTemplateAddRemoveView(AddRemoveView):
-    list_added_title = _('Workflows assigned this document type')
-    list_available_title = _('Available workflows')
+    list_added_title = _(message='Workflows assigned this document type')
+    list_available_title = _(message='Available workflows')
     main_object_method_add_name = 'workflow_templates_add'
     main_object_method_remove_name = 'workflow_templates_remove'
     main_object_model = DocumentType
@@ -88,7 +88,7 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
     title_plural = _(
         'Launch workflows for the selected %(count)d documents.'
     )
-    title_single = _('Launch workflow: %(object)s.')
+    title_single = _(message='Launch workflow: %(object)s.')
     title_singular = _(
         'Launch workflows for the selected %(count)d document.'
     )
@@ -109,7 +109,7 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
         ).distinct()
 
         result = {
-            'help_text': _('Workflows to be launched.'),
+            'help_text': _(message='Workflows to be launched.'),
             'permission': permission_workflow_tools,
             'queryset': workflows_union,
             'user': self.request.user
@@ -134,7 +134,9 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
 
 
 class WorkflowTemplateCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create workflow')}
+    extra_context = {
+        'title': _(message='Create workflow')
+    }
     form_class = WorkflowTemplateForm
     model = Workflow
     post_action_redirect = reverse_lazy(
@@ -159,17 +161,17 @@ class WorkflowTemplateDeleteView(MultipleObjectDeleteView):
     post_action_redirect = reverse_lazy(
         viewname='document_states:workflow_template_list'
     )
-    success_message_plural = _('%(count)d workflows deleted successfully.')
-    success_message_single = _('Workflow "%(object)s" deleted successfully.')
-    success_message_singular = _('%(count)d workflow deleted successfully.')
-    title_plural = _('Delete the %(count)d selected workflows.')
-    title_single = _('Delete workflow: %(object)s.')
-    title_singular = _('Delete the %(count)d selected workflow.')
+    success_message_plural = _(message='%(count)d workflows deleted successfully.')
+    success_message_single = _(message='Workflow "%(object)s" deleted successfully.')
+    success_message_singular = _(message='%(count)d workflow deleted successfully.')
+    title_plural = _(message='Delete the %(count)d selected workflows.')
+    title_single = _(message='Delete workflow: %(object)s.')
+    title_singular = _(message='Delete the %(count)d selected workflow.')
     view_icon = icon_workflow_template_delete
 
     def get_extra_context(self):
         return {
-            'message': _('All workflow instances will also be deleted.')
+            'message': _(message='All workflow instances will also be deleted.')
         }
 
     def object_action(self, instance, form=None):
@@ -200,8 +202,8 @@ class WorkflowTemplateEditView(SingleObjectEditView):
 
 
 class WorkflowTemplateDocumentTypeAddRemoveView(AddRemoveView):
-    list_added_title = _('Document types assigned this workflow')
-    list_available_title = _('Available document types')
+    list_added_title = _(message='Document types assigned this workflow')
+    list_available_title = _(message='Available document types')
     main_object_method_add_name = 'document_types_add'
     main_object_method_remove_name = 'document_types_remove'
     main_object_model = Workflow
@@ -241,7 +243,7 @@ class WorkflowTemplateLaunchView(ExternalObjectViewMixin, ConfirmView):
                 'This will launch the workflow for documents that have '
                 'already been uploaded.'
             ),
-            'title': _('Launch workflow?')
+            'title': _(message='Launch workflow?')
         }
 
     def view_action(self):
@@ -252,7 +254,7 @@ class WorkflowTemplateLaunchView(ExternalObjectViewMixin, ConfirmView):
             }
         )
         messages.success(
-            message=_('Workflow launch queued successfully.'),
+            message=_(message='Workflow launch queued successfully.'),
             request=self.request
         )
 
@@ -277,7 +279,7 @@ class WorkflowTemplateListView(SingleObjectListView):
             'no_results_title': _(
                 'No workflows have been defined'
             ),
-            'title': _('Workflows')
+            'title': _(message='Workflows')
         }
 
 
@@ -292,7 +294,7 @@ class WorkflowTemplatePreviewView(SingleObjectDetailView):
         return {
             'hide_labels': True,
             'object': self.object,
-            'title': _('Preview of: %s') % self.object
+            'title': _(message='Preview of: %s') % self.object
         }
 
 
@@ -302,7 +304,7 @@ class ToolLaunchWorkflows(ConfirmView):
             'This will launch all workflows created after documents have '
             'already been uploaded.'
         ),
-        'title': _('Launch all workflows?')
+        'title': _(message='Launch all workflows?')
     }
     view_icon = icon_tool_launch_workflows
     view_permission = permission_workflow_tools
@@ -312,6 +314,6 @@ class ToolLaunchWorkflows(ConfirmView):
             kwargs={'user_id': self.request.user.pk}
         )
         messages.success(
-            message=_('Workflow launch queued successfully.'),
+            message=_(message='Workflow launch queued successfully.'),
             request=self.request
         )

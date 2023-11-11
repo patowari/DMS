@@ -1,7 +1,7 @@
 from django.contrib.auth.models import Group
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
@@ -23,23 +23,23 @@ class Role(ExtraDataModelMixin, RoleBusinessLogicMixin, models.Model):
     to a group using a role, are granted for the entire system.
     """
     label = models.CharField(
-        help_text=_('A short text describing the role.'), max_length=128,
-        unique=True, verbose_name=_('Label')
+        help_text=_(message='A short text describing the role.'), max_length=128,
+        unique=True, verbose_name=_(message='Label')
     )
     permissions = models.ManyToManyField(
         related_name='roles', to='StoredPermission',
-        verbose_name=_('Permissions')
+        verbose_name=_(message='Permissions')
     )
     groups = models.ManyToManyField(
-        related_name='roles', to=Group, verbose_name=_('Groups')
+        related_name='roles', to=Group, verbose_name=_(message='Groups')
     )
 
     objects = RoleManager()
 
     class Meta:
         ordering = ('label',)
-        verbose_name = _('Role')
-        verbose_name_plural = _('Roles')
+        verbose_name = _(message='Role')
+        verbose_name_plural = _(message='Roles')
 
     def __str__(self):
         return self.label
@@ -72,16 +72,16 @@ class StoredPermission(StoredPermissionBusinessLogicMixin, models.Model):
     class. Allows storing a database counterpart of a permission class.
     It is used to store the permissions help by a role or in an ACL.
     """
-    namespace = models.CharField(max_length=64, verbose_name=_('Namespace'))
-    name = models.CharField(max_length=64, verbose_name=_('Name'))
+    namespace = models.CharField(max_length=64, verbose_name=_(message='Namespace'))
+    name = models.CharField(max_length=64, verbose_name=_(message='Name'))
 
     objects = StoredPermissionManager()
 
     class Meta:
         ordering = ('namespace',)
         unique_together = ('namespace', 'name')
-        verbose_name = _('Permission')
-        verbose_name_plural = _('Permissions')
+        verbose_name = _(message='Permission')
+        verbose_name_plural = _(message='Permissions')
 
     def __str__(self):
         return str(self.label)

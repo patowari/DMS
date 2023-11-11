@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -10,4 +10,4 @@ class SourceEmailsApp(MayanAppConfig):
     has_static_media = False
     has_tests = True
     name = 'mayan.apps.source_emails'
-    verbose_name = _('Emails')
+    verbose_name = _(message='Emails')

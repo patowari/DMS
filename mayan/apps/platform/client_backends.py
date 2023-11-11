@@ -5,8 +5,8 @@ from sentry_sdk.integrations.celery import CeleryIntegration
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
 
-from django.conf.urls import url
-from django.utils.translation import ugettext_lazy as _
+from django.urls import re_path
+from django.utils.translation import gettext_lazy as _
 
 import mayan
 from mayan.apps.appearance.classes import Icon
@@ -31,7 +31,7 @@ class ClientBackendSentry(ClientBackend):
             Link(
                 icon=icon_sentry_debug,
                 permissions=(permission_test_trigger,),
-                text=_('Sentry test error'),
+                text=_(message='Sentry test error'),
                 view='platform:sentry_debug',
             ),
         )
@@ -41,8 +41,8 @@ class ClientBackendSentry(ClientBackend):
             1 / 0
 
         return [
-            url(
-                regex=r'^debug/$', name='sentry_debug',
+            re_path(
+                route=r'^debug/$', name='sentry_debug',
                 view=view_trigger_error
             )
         ]

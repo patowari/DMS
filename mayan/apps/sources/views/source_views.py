@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.backends.views import (
@@ -176,7 +176,7 @@ class SourceActionView(
 
 class SourceBackendSelectionView(FormView):
     extra_context = {
-        'title': _('New source backend selection'),
+        'title': _(message='New source backend selection'),
     }
     form_class = SourceBackendSelectionForm
     view_icon = icon_source_backend_selection
@@ -232,7 +232,7 @@ class SourceDeleteView(SingleObjectDeleteView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Delete the source: %s?') % self.object
+            'title': _(message='Delete the source: %s?') % self.object
         }
 
 
@@ -248,7 +248,7 @@ class SourceEditView(ViewSingleObjectDynamicFormModelBackendEdit):
 
     def get_extra_context(self):
         return {
-            'title': _('Edit source: %s') % self.object
+            'title': _(message='Edit source: %s') % self.object
         }
 
     def get_form_extra_kwargs(self):
@@ -281,8 +281,8 @@ class SourceListView(SingleObjectListView):
                 'operate. Others are automatic and run in the background '
                 'without user intervention.'
             ),
-            'no_results_title': _('No sources available'),
-            'title': _('Sources')
+            'no_results_title': _(message='No sources available'),
+            'title': _(message='Sources')
         }
 
 

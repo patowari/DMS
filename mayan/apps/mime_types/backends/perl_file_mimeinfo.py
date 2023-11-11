@@ -2,7 +2,7 @@ from shutil import copyfileobj
 
 import sh
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dependencies.exceptions import DependenciesException
 from mayan.apps.storage.utils import NamedTemporaryFile
@@ -23,7 +23,7 @@ class MIMETypeBackendPerlFileMIMEInfo(MIMETypeBackend):
             )
         except sh.CommandNotFound:
             raise DependenciesException(
-                _('mimetype not installed or not found.')
+                _(message='mimetype not installed or not found.')
             )
 
     def _get_mime_type(self, file_object, mime_type_only):

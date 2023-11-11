@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 DOCUMENT_VERSION_EXPORT_MESSAGE_BODY = _(
     'Document version "%(document_version)s" has been '
@@ -6,5 +6,5 @@ DOCUMENT_VERSION_EXPORT_MESSAGE_BODY = _(
     'link: %(download_url)s or from '
     'the downloads area (%(download_list_url)s).'
 )
-DOCUMENT_VERSION_EXPORT_MESSAGE_SUBJECT = _('Document version exported.')
+DOCUMENT_VERSION_EXPORT_MESSAGE_SUBJECT = _(message='Document version exported.')
 DOCUMENT_VERSION_EXPORT_MIMETYPE = 'application/pdf'

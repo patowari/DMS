@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 
@@ -16,7 +16,7 @@ class AttachTagAction(WorkflowAction):
             }
         }
     }
-    label = _('Attach tag')
+    label = _(message='Attach tag')
     form_media = {
         'js': ('tags/js/tags_form.js',)
     }
@@ -37,7 +37,7 @@ class AttachTagAction(WorkflowAction):
                         'source_model': Tag,
                         'permission': cls.permission
                     },
-                    'label': _('Tags'),
+                    'label': _(message='Tags'),
                     'required': True
                 }
             }
@@ -51,7 +51,7 @@ class AttachTagAction(WorkflowAction):
 
         fieldsets += (
             (
-                _('Tags'), {
+                _(message='Tags'), {
                     'fields': ('tags',)
                 },
             ),
@@ -73,14 +73,14 @@ class AttachTagAction(WorkflowAction):
 
 
 class RemoveTagAction(AttachTagAction):
-    label = _('Remove tag')
+    label = _(message='Remove tag')
     permission = permission_tag_remove
 
     @classmethod
     def get_form_fields(cls):
         fields = super().get_form_fields()
 
-        fields['tags']['help_text'] = _('Tags to remove from the document.')
+        fields['tags']['help_text'] = _(message='Tags to remove from the document.')
 
         return fields
 

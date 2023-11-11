@@ -1,26 +1,26 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 FIELDS_ALL = ('username', 'first_name', 'last_name', 'email', 'is_active')
 FIELDS_USER = ('first_name', 'last_name')
 
 FIELDSETS_ALL = (
     (
-        _('Account'), {
+        _(message='Account'), {
             'fields': ('username', 'email'),
         }
     ), (
-        _('Personal'), {
+        _(message='Personal'), {
             'fields': ('first_name', 'last_name')
         },
     ), (
-        _('Attributes'), {
+        _(message='Attributes'), {
             'fields': ('is_active',)
         },
     )
 )
 FIELDSETS_USER = (
     (
-        _('Personal'), {
+        _(message='Personal'), {
             'fields': ('first_name', 'last_name')
         },
     ),

@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     FormView, SingleObjectCreateView, SingleObjectDeleteView,
@@ -22,14 +22,18 @@ from ..links import link_transformation_select
 from ..models import ObjectLayer
 from ..transformations import BaseTransformation
 
-from .view_mixins import DynamicTransformationFormClassMixin, LayerViewMixin
+from .view_mixins import (
+    ViewMixinDynamicTransformationFormClass, ViewMixinLayer,
+    ViewMixinTransformationTemplateName
+)
 
 logger = logging.getLogger(name=__name__)
 
 
 class TransformationCreateView(
-    DynamicTransformationFormClassMixin, LayerViewMixin,
-    ExternalContentTypeObjectViewMixin, SingleObjectCreateView
+    ViewMixinDynamicTransformationFormClass, ViewMixinLayer,
+    ExternalContentTypeObjectViewMixin, ViewMixinTransformationTemplateName,
+    SingleObjectCreateView
 ):
     view_icon = icon_transformation_create
 
@@ -49,19 +53,25 @@ class TransformationCreateView(
         except Exception as exception:
             logger.debug('Invalid form, exception: %s', exception)
             messages.error(
-                message=_('Error creating transformation: %s.') % exception,
-                request=self.request
+                message=_(
+                    message='Error creating transformation: %s.'
+                ) % exception, request=self.request
             )
             return super().form_invalid(form=form)
         else:
             return super().form_valid(form=form)
 
     def get_extra_context(self):
+        transformation_template_name = self.get_transformation_template_name()
+
+        if transformation_template_name:
+            form_field_css_classes = 'hidden'
+        else:
+            form_field_css_classes = ''
+
         return {
             'content_object': self.external_object,
-            'form_field_css_classes': 'hidden' if hasattr(
-                self.get_transformation_class(), 'template_name'
-            ) else '',
+            'form_field_css_classes': form_field_css_classes,
             'layer': self.layer,
             'layer_name': self.layer.name,
             'navigation_object_list': ('content_object',),
@@ -94,14 +104,6 @@ class TransformationCreateView(
             }
         )
 
-    def get_template_names(self):
-        return [
-            getattr(
-                self.get_transformation_class(), 'template_name',
-                self.template_name
-            )
-        ]
-
     def get_transformation_class(self):
         return BaseTransformation.get(
             name=self.kwargs['transformation_name']
@@ -109,7 +111,8 @@ class TransformationCreateView(
 
 
 class TransformationDeleteView(
-    LayerViewMixin, ExternalContentTypeObjectViewMixin, SingleObjectDeleteView
+    ViewMixinLayer, ExternalContentTypeObjectViewMixin,
+    SingleObjectDeleteView
 ):
     pk_url_kwarg = 'transformation_id'
     view_icon = icon_transformation_delete
@@ -151,8 +154,9 @@ class TransformationDeleteView(
 
 
 class TransformationEditView(
-    LayerViewMixin, DynamicTransformationFormClassMixin,
-    ExternalContentTypeObjectViewMixin, SingleObjectEditView
+    ViewMixinLayer, ViewMixinDynamicTransformationFormClass,
+    ExternalContentTypeObjectViewMixin, ViewMixinTransformationTemplateName,
+    SingleObjectEditView
 ):
     pk_url_kwarg = 'transformation_id'
     view_icon = icon_transformation_edit
@@ -172,11 +176,16 @@ class TransformationEditView(
         return self.layer.get_permission(action='edit')
 
     def get_extra_context(self):
+        transformation_template_name = self.get_transformation_template_name()
+
+        if transformation_template_name:
+            form_field_css_classes = 'hidden'
+        else:
+            form_field_css_classes = ''
+
         return {
             'content_object': self.external_object,
-            'form_field_css_classes': 'hidden' if hasattr(
-                self.object.get_transformation_class(), 'template_name'
-            ) else '',
+            'form_field_css_classes': form_field_css_classes,
             'layer': self.layer,
             'layer_name': self.layer.name,
             'navigation_object_list': ('content_object', 'transformation'),
@@ -205,20 +214,12 @@ class TransformationEditView(
             obj=self.external_object
         )
 
-    def get_template_names(self):
-        return [
-            getattr(
-                self.object.get_transformation_class(), 'template_name',
-                self.template_name
-            )
-        ]
-
     def get_transformation_class(self):
         return self.object.get_transformation_class()
 
 
 class TransformationListView(
-    LayerViewMixin, ExternalContentTypeObjectViewMixin, SingleObjectListView
+    ViewMixinLayer, ExternalContentTypeObjectViewMixin, SingleObjectListView
 ):
     view_icon = icon_transformation_list
 
@@ -260,7 +261,7 @@ class TransformationListView(
 
 
 class TransformationSelectView(
-    LayerViewMixin, ExternalContentTypeObjectViewMixin, FormView
+    ViewMixinLayer, ExternalContentTypeObjectViewMixin, FormView
 ):
     form_class = LayerTransformationSelectForm
     template_name = 'appearance/generic_form.html'
@@ -294,7 +295,7 @@ class TransformationSelectView(
             )
 
             messages.success(
-                message=_('Transformation created successfully.'),
+                message=_(message='Transformation created successfully.'),
                 request=self.request
             )
 
@@ -318,7 +319,7 @@ class TransformationSelectView(
             'layer': self.layer,
             'layer_name': self.kwargs['layer_name'],
             'navigation_object_list': ('content_object',),
-            'submit_label': _('Select'),
+            'submit_label': _(message='Select'),
             'title': _(
                 'Select new layer "%(layer)s" transformation '
                 'for: %(object)s'

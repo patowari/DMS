@@ -1,26 +1,26 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.permissions import PermissionNamespace
+from mayan.apps.permissions.classes import PermissionNamespace
 
 namespace = PermissionNamespace(
-    label=_('Tags'), name='tags'
+    label=_(message='Tags'), name='tags'
 )
 
 permission_tag_attach = namespace.add_permission(
-    label=_('Attach tags to documents'), name='tag_attach'
+    label=_(message='Attach tags to documents'), name='tag_attach'
 )
 permission_tag_create = namespace.add_permission(
-    label=_('Create new tags'), name='tag_create'
+    label=_(message='Create new tags'), name='tag_create'
 )
 permission_tag_delete = namespace.add_permission(
-    label=_('Delete tags'), name='tag_delete'
+    label=_(message='Delete tags'), name='tag_delete'
 )
 permission_tag_view = namespace.add_permission(
-    label=_('View tags'), name='tag_view'
+    label=_(message='View tags'), name='tag_view'
 )
 permission_tag_edit = namespace.add_permission(
-    label=_('Edit tags'), name='tag_edit'
+    label=_(message='Edit tags'), name='tag_edit'
 )
 permission_tag_remove = namespace.add_permission(
-    label=_('Remove tags from documents'), name='tag_remove'
+    label=_(message='Remove tags from documents'), name='tag_remove'
 )

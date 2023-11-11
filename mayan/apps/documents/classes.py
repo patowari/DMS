@@ -1,6 +1,6 @@
 import uuid
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.utils.text import format_lazy
 
 from mayan.apps.backends.classes import BaseBackend
@@ -62,7 +62,7 @@ class DocumentVersionModification(BaseBackend):
 
 class OriginalDocumentFilenameGenerator(BaseDocumentFilenameGenerator):
     name = 'original'
-    label = _('Original')
+    label = _(message='Original')
     description = _(
         'Keeps the original filename of the uploaded file.'
     )
@@ -74,7 +74,7 @@ class OriginalDocumentFilenameGenerator(BaseDocumentFilenameGenerator):
 class UUIDDocumentFilenameGenerator(BaseDocumentFilenameGenerator):
     default = True
     name = 'uuid'
-    label = _('UUID')
+    label = _(message='UUID')
     description = _(
         'Generates an immutable, random UUID (RFC 4122) for each file.'
     )
@@ -87,7 +87,7 @@ class UUIDDocumentFilenameGenerator(BaseDocumentFilenameGenerator):
 
 class UUIDPlusOriginalFilename(BaseDocumentFilenameGenerator):
     name = 'uuid_plus_original'
-    label = _('UUID plus original')
+    label = _(message='UUID plus original')
     description = _(
         'Generates an immutable, random UUID (RFC 4122) for each file and '
         'appends the original filename of the uploaded file.'

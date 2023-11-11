@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.user_management.serializers import UserSerializer
 from mayan.apps.rest_api import serializers
@@ -9,7 +9,7 @@ from .models import Comment
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     url = MultiKwargHyperlinkedIdentityField(
-        label=_('URL'), view_kwargs=(
+        label=_(message='URL'), view_kwargs=(
             {
                 'lookup_field': 'document_id',
                 'lookup_url_kwarg': 'document_id'

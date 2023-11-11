@@ -33,8 +33,8 @@ class WorkflowTemplateStateActionDynamicForm(FormDynamicModelBackend):
 
 class WorkflowTemplateStateActionSelectionForm(forms.Form):
     klass = forms.ChoiceField(
-        choices=(), help_text=_('The action type for this action entry.'),
-        label=_('Action'), widget=forms.Select(
+        choices=(), help_text=_(message='The action type for this action entry.'),
+        label=_(message='Action'), widget=forms.Select(
             attrs={'class': 'select2'}
         )
     )

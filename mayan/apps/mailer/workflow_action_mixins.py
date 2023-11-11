@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .models import UserMailer
 from .permissions import permission_user_mailer_use
@@ -12,7 +12,7 @@ class ObjectEmailActionMixin:
     }
     form_fields = {
         'recipient': {
-            'label': _('Recipient'),
+            'label': _(message='Recipient'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Email address of the recipient. Can be multiple '
@@ -23,7 +23,7 @@ class ObjectEmailActionMixin:
             }
         },
         'cc': {
-            'label': _('CC'),
+            'label': _(message='CC'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Address used in the "Bcc" header when sending the '
@@ -35,7 +35,7 @@ class ObjectEmailActionMixin:
             }
         },
         'bcc': {
-            'label': _('BCC'),
+            'label': _(message='BCC'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Address used in the "Bcc" header when sending the '
@@ -47,7 +47,7 @@ class ObjectEmailActionMixin:
             }
         },
         'reply_to': {
-            'label': _('Reply to'),
+            'label': _(message='Reply to'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Address used in the "Reply-To" header when sending '
@@ -59,7 +59,7 @@ class ObjectEmailActionMixin:
             }
         },
         'subject': {
-            'label': _('Subject'),
+            'label': _(message='Subject'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Subject of the email. Can be a string or a template.'
@@ -68,7 +68,7 @@ class ObjectEmailActionMixin:
             }
         },
         'body': {
-            'label': _('Body'),
+            'label': _(message='Body'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
                     'Body of the email to send. Can be a string or '
@@ -78,7 +78,7 @@ class ObjectEmailActionMixin:
             }
         },
         'attachment': {
-            'label': _('Attachment'),
+            'label': _(message='Attachment'),
             'class': 'django.forms.BooleanField', 'default': False,
             'help_text': _(
                 'Attach an object to the email.'
@@ -86,7 +86,7 @@ class ObjectEmailActionMixin:
             'required': False
         }
     }
-    label = _('Send object via email')
+    label = _(message='Send object via email')
     permission = permission_user_mailer_use
 
     @classmethod
@@ -104,7 +104,7 @@ class ObjectEmailActionMixin:
                         'source_queryset': UserMailer.objects.filter(enabled=True),
                         'permission': cls.permission
                     },
-                    'label': _('Mailing profile'),
+                    'label': _(message='Mailing profile'),
                     'required': True
                 }
             }
@@ -118,15 +118,15 @@ class ObjectEmailActionMixin:
 
         fieldsets += (
             (
-                _('Mailing profile'), {
+                _(message='Mailing profile'), {
                     'fields': ('mailing_profile',)
                 }
             ), (
-                _('Parties'), {
+                _(message='Parties'), {
                     'fields': ('recipient', 'cc', 'bcc', 'reply_to')
                 },
             ), (
-                _('Content'), {
+                _(message='Content'), {
                     'fields': ('subject', 'attachment', 'body')
                 },
             )

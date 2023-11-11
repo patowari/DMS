@@ -3,7 +3,7 @@ import logging
 
 from django.db import models
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .literals import IMPORT_ERROR_EXCLUSION_TEXTS
 
@@ -20,12 +20,12 @@ class BackendModelMixin(models.Model):
     backend_path = models.CharField(
         max_length=128, help_text=_(
             'The dotted Python path to the backend class.'
-        ), verbose_name=_('Backend path')
+        ), verbose_name=_(message='Backend path')
     )
     backend_data = models.TextField(
         blank=True, help_text=_(
             'JSON encoded data for the backend class.'
-        ), verbose_name=_('Backend data')
+        ), verbose_name=_(message='Backend data')
     )
 
     class Meta:
@@ -70,9 +70,9 @@ class BackendModelMixin(models.Model):
 
         return backend_class.label
 
-    get_backend_class_label.short_description = _('Backend')
+    get_backend_class_label.short_description = _(message='Backend')
     get_backend_class_label.help_text = _(
-        'The backend class for this entry.'
+        message='The backend class for this entry.'
     )
 
     def get_backend_data(self):

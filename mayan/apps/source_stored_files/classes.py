@@ -6,9 +6,9 @@ from furl import furl
 
 from django.core.files.base import ContentFile
 from django.template.defaultfilters import filesizeformat
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.reverse import reverse as rest_framework_reverse
 
@@ -41,11 +41,11 @@ class SourceStoredFile:
 
             SourceColumn(
                 attribute='get_size_display',
-                label=_('Size'), source=SourceStoredFile,
+                label=_(message='Size'), source=SourceStoredFile,
             )
 
             SourceColumn(
-                label=_('Thumbnail'), source=SourceStoredFile,
+                label=_(message='Thumbnail'), source=SourceStoredFile,
                 widget=StoredFileThumbnailWidget,
                 html_extra_classes='text-center'
             )
@@ -84,7 +84,7 @@ class SourceStoredFile:
             )
 
     def __str__(self):
-        return force_text(s=self.filename)
+        return force_str(s=self.filename)
 
     @property
     def cache_filename(self):

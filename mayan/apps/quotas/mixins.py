@@ -1,5 +1,5 @@
 from django.contrib.auth.models import Group
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.user_management.querysets import get_user_queryset
@@ -14,7 +14,7 @@ class DocumentTypesQuotaMixin:
         cls.fields.update(
             {
                 'document_type_all': {
-                    'label': _('All document types'),
+                    'label': _(message='All document types'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
                         'Apply to all document types. Enabling this, '
@@ -23,7 +23,7 @@ class DocumentTypesQuotaMixin:
                     ), 'required': False,
                 },
                 'document_type_ids': {
-                    'label': _('Document types'),
+                    'label': _(message='Document types'),
                     'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'kwargs': {
                         'permission': permission_quota_edit,
@@ -64,7 +64,7 @@ class DocumentTypesQuotaMixin:
         result = super().get_filter_text()
 
         if self.document_type_all:
-            document_type_filter_text = _('all document types')
+            document_type_filter_text = _(message='all document types')
         else:
             document_type_filter_text = _(
                 'document types: %(document_types)s'
@@ -91,7 +91,7 @@ class GroupsUsersQuotaMixin:
         cls.fields.update(
             {
                 'group_ids': {
-                    'label': _('Groups'),
+                    'label': _(message='Groups'),
                     'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'kwargs': {
                         'permission': permission_quota_edit,
@@ -102,7 +102,7 @@ class GroupsUsersQuotaMixin:
                     )
                 },
                 'user_all': {
-                    'label': _('All users'),
+                    'label': _(message='All users'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
                         'Apply the quota to all users in the system, '
@@ -112,7 +112,7 @@ class GroupsUsersQuotaMixin:
                     ), 'required': False
                 },
                 'user_ids': {
-                    'label': _('Users'),
+                    'label': _(message='Users'),
                     'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'kwargs': {
                         'permission': permission_quota_edit,
@@ -157,9 +157,9 @@ class GroupsUsersQuotaMixin:
         result = super().get_filter_text()
 
         if self.user_all:
-            user_filter_text = _('all users')
+            user_filter_text = _(message='all users')
         else:
-            user_filter_text = _('groups: %(groups)s, users: %(users)s') % {
+            user_filter_text = _(message='groups: %(groups)s, users: %(users)s') % {
                 'groups': QuotaBackend._queryset_to_text_list(
                     queryset=self._get_groups()
                 ),

@@ -4,7 +4,7 @@ from kombu import Exchange, Queue
 
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.exceptions import NonUniqueError
@@ -183,7 +183,7 @@ class CeleryQueue(AppsModuleLoaderMixin):
     def get_task_type_count(self):
         return len(self.task_types)
 
-    get_task_type_count.short_description = _('Task type count')
+    get_task_type_count.short_description = _(message='Task type count')
 
 
 class Worker:
@@ -225,7 +225,7 @@ class Worker:
     def get_queue_count(self):
         return len(self.queues)
 
-    get_queue_count.short_description = _('Queue count')
+    get_queue_count.short_description = _(message='Queue count')
 
     def __str__(self):
         return self.label

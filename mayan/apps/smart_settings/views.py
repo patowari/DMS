@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import Http404
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import FormView, SingleObjectListView
 
@@ -37,7 +37,7 @@ class SettingEditView(FormView):
         self.object.value = form.cleaned_data['value']
         Setting.save_configuration()
         messages.success(
-            message=_('Setting updated successfully.'),
+            message=_(message='Setting updated successfully.'),
             request=self.request
         )
         return super().form_valid(form=form)
@@ -48,7 +48,7 @@ class SettingEditView(FormView):
             'navigation_object_list': ('object', 'setting_namespace'),
             'object': self.object,
             'setting_namespace': self.object.namespace,
-            'title': _('Edit setting: %s') % self.object
+            'title': _(message='Edit setting: %s') % self.object
         }
 
     def get_initial(self):
@@ -79,7 +79,7 @@ class SettingNamespaceDetailView(SingleObjectListView):
                 'Settings inherited from an environment variable take '
                 'precedence and cannot be changed in this view. '
             ),
-            'title': _('Settings in namespace: %s') % self.get_namespace()
+            'title': _(message='Settings in namespace: %s') % self.get_namespace()
         }
 
     def get_namespace(self):
@@ -89,7 +89,7 @@ class SettingNamespaceDetailView(SingleObjectListView):
             )
         except KeyError:
             raise Http404(
-                _('Namespace: %s, not found') % self.kwargs['namespace_name']
+                _(message='Namespace: %s, not found') % self.kwargs['namespace_name']
             )
 
     def get_source_queryset(self):
@@ -99,7 +99,7 @@ class SettingNamespaceDetailView(SingleObjectListView):
 class SettingNamespaceListView(SingleObjectListView):
     extra_context = {
         'hide_link': True,
-        'title': _('Setting namespaces')
+        'title': _(message='Setting namespaces')
     }
     view_icon = icon_setting_namespace_list
     view_permission = permission_settings_view

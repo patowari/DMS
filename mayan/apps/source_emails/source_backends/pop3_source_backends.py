@@ -2,8 +2,8 @@ from contextlib import contextmanager
 import logging
 import poplib
 
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.exceptions import SourceException
 from mayan.apps.sources.source_backends.base import SourceBackend
@@ -15,7 +15,7 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
-    label = _('POP3 email')
+    label = _(message='POP3 email')
 
     @classmethod
     def get_form_fields(cls):
@@ -29,7 +29,7 @@ class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
                     'kwargs': {
                         'min_value': 0
                     },
-                    'label': _('Timeout')
+                    'label': _(message='Timeout')
                 }
             }
         )
@@ -42,7 +42,7 @@ class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
 
         fieldsets += (
             (
-                _('POP3 protocol'), {
+                _(message='POP3 protocol'), {
                     'fields': ('timeout',)
                 }
             ),
@@ -101,7 +101,7 @@ class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
         with self._get_server() as server:
             response, message_lines, octets = server.retr(which=message_id)
             message_combined_bytes = b'\n'.join(message_lines)
-            message = force_text(s=message_combined_bytes)
+            message = force_str(s=message_combined_bytes)
 
             yield from self.process_message(message=message)
 

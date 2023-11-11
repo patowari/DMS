@@ -2,7 +2,7 @@ import logging
 
 from django.apps import apps
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -48,7 +48,7 @@ class DocumentParsingApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.document_parsing'
-    verbose_name = _('Document parsing')
+    verbose_name = _(message='Document parsing')
 
     def ready(self):
         super().ready()
@@ -105,7 +105,7 @@ class DocumentParsingApp(MayanAppConfig):
         ModelProperty(
             description=_(
                 'A generator returning the document file\'s pages parsed content.'
-            ), label=_('Content'), model=Document,
+            ), label=_(message='Content'), model=Document,
             name='content'
         )
 

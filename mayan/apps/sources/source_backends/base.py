@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
 from mayan.apps.backends.classes import ModelBaseBackend
@@ -98,7 +98,7 @@ class SourceBackend(
     def get_form_fieldsets(cls):
         fieldsets = (
             (
-                _('General'), {
+                _(message='General'), {
                     'fields': ('label', 'enabled')
                 }
             ),
@@ -131,4 +131,4 @@ class SourceBackend(
 
 class SourceBackendNull(SourceBackend):
     is_visible = False
-    label = _('Null backend')
+    label = _(message='Null backend')

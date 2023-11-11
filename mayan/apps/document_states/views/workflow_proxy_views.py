@@ -1,5 +1,5 @@
 from django.template import RequestContext
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.views.document_views import DocumentListView
 from mayan.apps.views.generics import SingleObjectListView
@@ -66,8 +66,8 @@ class WorkflowRuntimeProxyListView(SingleObjectListView):
                 'type. Active workflows will be shown here and the documents '
                 'for which they are executing.'
             ),
-            'no_results_title': _('There are no workflows'),
-            'title': _('Workflows')
+            'no_results_title': _(message='There are no workflows'),
+            'title': _(message='Workflows')
         }
 
 
@@ -129,7 +129,7 @@ class WorkflowRuntimeProxyStateListView(
                 'This workflow doesn\'t have any state'
             ),
             'object': self.external_object,
-            'title': _('States of workflow: %s') % self.external_object
+            'title': _(message='States of workflow: %s') % self.external_object
         }
 
     def get_source_queryset(self):

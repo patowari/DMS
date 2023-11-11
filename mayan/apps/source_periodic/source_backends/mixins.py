@@ -2,7 +2,7 @@ import json
 import logging
 
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
 from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
@@ -35,7 +35,7 @@ class SourceBackendMixinPeriodic:
                             (document_type.id, document_type) for document_type in DocumentType.objects.all()
                         ],
                     },
-                    'label': _('Document type'),
+                    'label': _(message='Document type'),
                     'required': True
                 },
                 'interval': {
@@ -48,7 +48,7 @@ class SourceBackendMixinPeriodic:
                     'kwargs': {
                         'min_value': 0
                     },
-                    'label': _('Interval'),
+                    'label': _(message='Interval'),
                     'required': True
                 }
             }
@@ -62,7 +62,7 @@ class SourceBackendMixinPeriodic:
 
         fieldsets += (
             (
-                _('Unattended'), {
+                _(message='Unattended'), {
                     'fields': ('document_type_id', 'interval')
                 },
             ),

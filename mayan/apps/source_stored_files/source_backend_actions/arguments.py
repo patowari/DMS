@@ -1,9 +1,9 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.source_backend_actions.interface_arguments import SourceBackendActionInterfaceArgument
 
 argument_encoded_filename = SourceBackendActionInterfaceArgument(
-    help_text=_('URL safe filename of the stored file to process.')
+    help_text=_(message='URL safe filename of the stored file to process.')
 )
 argument_file_cleanup = SourceBackendActionInterfaceArgument(
     default=None, help_text=_(

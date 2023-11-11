@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -15,7 +15,7 @@ class AuthenticationOIDCApp(MayanAppConfig):
     has_static_media = True
     has_tests = False
     name = 'mayan.apps.authentication_oidc'
-    verbose_name = _('Authentication OIDC')
+    verbose_name = _(message='Authentication OIDC')
 
     def ready(self):
         super().ready()

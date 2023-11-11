@@ -36,22 +36,22 @@ class WorkflowTransitionForm(forms.ModelForm):
 
 class WorkflowTransitionTriggerEventRelationshipForm(forms.Form):
     namespace = forms.CharField(
-        label=_('Namespace'), required=False,
+        label=_(message='Namespace'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     label = forms.CharField(
-        label=_('Label'), required=False,
+        label=_(message='Label'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     relationship = forms.ChoiceField(
         choices=(
-            ('no', _('No')),
-            ('yes', _('Yes')),
-        ), label=_('Enabled'), widget=forms.RadioSelect()
+            ('no', _(message='No')),
+            ('yes', _(message='Yes')),
+        ), label=_(message='Enabled'), widget=forms.RadioSelect()
     )
 
     def __init__(self, *args, **kwargs):

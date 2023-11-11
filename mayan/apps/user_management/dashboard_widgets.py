@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dashboards.classes import DashboardWidgetNumeric
 
@@ -11,7 +11,7 @@ from .permissions import permission_group_view, permission_user_view
 
 class DashboardWidgetUserTotal(DashboardWidgetNumeric):
     icon = icon_user_list
-    label = _('Total users')
+    label = _(message='Total users')
     link = reverse_lazy(viewname='user_management:user_list')
 
     def get_count(self):
@@ -26,7 +26,7 @@ class DashboardWidgetUserTotal(DashboardWidgetNumeric):
 
 class DashboardWidgetGroupTotal(DashboardWidgetNumeric):
     icon = icon_group_list
-    label = _('Total groups')
+    label = _(message='Total groups')
     link = reverse_lazy(viewname='user_management:group_list')
 
     def get_count(self):

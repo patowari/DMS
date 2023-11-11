@@ -1,7 +1,7 @@
 from django.core import validators
 from django.db import models
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ValueChangeModelMixin
 from mayan.apps.events.decorators import method_event
@@ -19,19 +19,19 @@ class Cache(CacheBusinessLogicMixin, ValueChangeModelMixin, models.Model):
     defined_storage_name = models.CharField(
         db_index=True, help_text=_(
             'Internal name of the defined storage for this cache.'
-        ), max_length=96, unique=True, verbose_name=_('Defined storage name')
+        ), max_length=96, unique=True, verbose_name=_(message='Defined storage name')
     )
     maximum_size = models.PositiveBigIntegerField(
-        db_index=True, help_text=_('Maximum size of the cache in bytes.'),
+        db_index=True, help_text=_(message='Maximum size of the cache in bytes.'),
         validators=[
             validators.MinValueValidator(limit_value=1)
-        ], verbose_name=_('Maximum size')
+        ], verbose_name=_(message='Maximum size')
     )
 
     class Meta:
         ordering = ('id',)
-        verbose_name = _('Cache')
-        verbose_name_plural = _('Caches')
+        verbose_name = _(message='Cache')
+        verbose_name_plural = _(message='Caches')
 
     def __str__(self):
         return str(self.label)
@@ -70,16 +70,16 @@ class Cache(CacheBusinessLogicMixin, ValueChangeModelMixin, models.Model):
 class CachePartition(CachePartitionBusinessLogicMixin, models.Model):
     cache = models.ForeignKey(
         on_delete=models.CASCADE, related_name='partitions',
-        to=Cache, verbose_name=_('Cache')
+        to=Cache, verbose_name=_(message='Cache')
     )
     name = models.CharField(
-        max_length=128, verbose_name=_('Name')
+        max_length=128, verbose_name=_(message='Name')
     )
 
     class Meta:
         unique_together = ('cache', 'name')
-        verbose_name = _('Cache partition')
-        verbose_name_plural = _('Cache partitions')
+        verbose_name = _(message='Cache partition')
+        verbose_name_plural = _(message='Cache partitions')
 
     def __str__(self):
         return '{} ({})'.format(self.cache, self.name)
@@ -101,16 +101,16 @@ class CachePartitionFile(CachePartitionFileBusinessLogicMixin, models.Model):
 
     partition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='files',
-        to=CachePartition, verbose_name=_('Cache partition')
+        to=CachePartition, verbose_name=_(message='Cache partition')
     )
     datetime = models.DateTimeField(
-        auto_now_add=True, db_index=True, verbose_name=_('Date time')
+        auto_now_add=True, db_index=True, verbose_name=_(message='Date time')
     )
     filename = models.CharField(
-        max_length=255, verbose_name=_('Filename')
+        max_length=255, verbose_name=_(message='Filename')
     )
     file_size = models.PositiveIntegerField(
-        default=0, verbose_name=_('File size')
+        default=0, verbose_name=_(message='File size')
     )
     hits = models.PositiveIntegerField(
         db_index=True, default=0, help_text=_(
@@ -121,8 +121,8 @@ class CachePartitionFile(CachePartitionFileBusinessLogicMixin, models.Model):
     class Meta:
         get_latest_by = 'datetime'
         unique_together = ('partition', 'filename')
-        verbose_name = _('Cache partition file')
-        verbose_name_plural = _('Cache partition files')
+        verbose_name = _(message='Cache partition file')
+        verbose_name_plural = _(message='Cache partition files')
 
     @locked_class_method
     def delete(self, *args, **kwargs):

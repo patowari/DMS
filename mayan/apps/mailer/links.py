@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
@@ -31,10 +31,10 @@ from .permissions import (
 link_send_document_link_single = Link(
     args='resolved_object.pk', icon=icon_document_link_send_single,
     permissions=(permission_send_document_link,),
-    text=_('Email document link'), view='mailer:send_document_link_single'
+    text=_(message='Email document link'), view='mailer:send_document_link_single'
 )
 link_send_document_link_multiple = Link(
-    icon=icon_document_link_send_multiple, text=_('Email document link'),
+    icon=icon_document_link_send_multiple, text=_(message='Email document link'),
     view='mailer:send_document_link_multiple'
 )
 
@@ -44,23 +44,23 @@ link_send_document_file_attachment_single = Link(
     args='resolved_object.pk',
     icon=icon_document_file_attachment_send_single,
     permissions=(permission_send_document_file_attachment,),
-    text=_('Email document file'),
+    text=_(message='Email document file'),
     view='mailer:send_document_file_attachment_single'
 )
 link_send_document_file_attachment_multiple = Link(
     icon=icon_document_file_attachment_send_multiple,
-    text=_('Email document file'),
+    text=_(message='Email document file'),
     view='mailer:send_document_file_attachment_multiple'
 )
 link_send_document_file_link_single = Link(
     args='resolved_object.pk', icon=icon_document_file_link_send_single,
     permissions=(permission_send_document_file_link,),
-    text=_('Email document file link'),
+    text=_(message='Email document file link'),
     view='mailer:send_document_file_link_single'
 )
 link_send_document_file_link_multiple = Link(
     icon=icon_document_file_link_send_multiple,
-    text=_('Email document file link'),
+    text=_(message='Email document file link'),
     view='mailer:send_document_file_link_multiple'
 )
 
@@ -70,23 +70,23 @@ link_send_document_version_attachment_single = Link(
     args='resolved_object.pk',
     icon=icon_document_version_attachment_send_single,
     permissions=(permission_send_document_version_attachment,),
-    text=_('Email document version'),
+    text=_(message='Email document version'),
     view='mailer:send_document_version_attachment_single'
 )
 link_send_document_version_attachment_multiple = Link(
     icon=icon_document_version_attachment_send_multiple,
-    text=_('Email document version'),
+    text=_(message='Email document version'),
     view='mailer:send_document_version_attachment_multiple'
 )
 link_send_document_version_link_single = Link(
     args='resolved_object.pk', icon=icon_document_version_link_send_single,
     permissions=(permission_send_document_version_link,),
-    text=_('Email document version link'),
+    text=_(message='Email document version link'),
     view='mailer:send_document_version_link_single'
 )
 link_send_document_version_link_multiple = Link(
     icon=icon_document_version_link_send_multiple,
-    text=_('Email link version'),
+    text=_(message='Email link version'),
     view='mailer:send_document_version_link_multiple'
 )
 
@@ -95,21 +95,21 @@ link_send_document_version_link_multiple = Link(
 link_user_mailer_create = Link(
     icon=icon_user_mailer_create,
     permissions=(permission_user_mailer_create,),
-    text=_('Create mailing profile'),
+    text=_(message='Create mailing profile'),
     view='mailer:user_mailer_backend_selection'
 )
 link_user_mailer_delete = Link(
     args='resolved_object.pk', icon=icon_user_mailer_delete,
     permissions=(permission_user_mailer_delete,), tags='dangerous',
-    text=_('Delete'), view='mailer:user_mailer_delete'
+    text=_(message='Delete'), view='mailer:user_mailer_delete'
 )
 link_user_mailer_edit = Link(
     args='object.pk', icon=icon_user_mailer_edit,
-    permissions=(permission_user_mailer_edit,), text=_('Edit'),
+    permissions=(permission_user_mailer_edit,), text=_(message='Edit'),
     view='mailer:user_mailer_edit'
 )
 link_user_mailer_list = Link(
-    icon=icon_user_mailer_list, text=_('Mailing profiles'),
+    icon=icon_user_mailer_list, text=_(message='Mailing profiles'),
     view='mailer:user_mailer_list'
 )
 link_user_mailer_setup = Link(
@@ -117,16 +117,16 @@ link_user_mailer_setup = Link(
         app_label='mailer', model_name='UserMailer',
         object_permission=permission_user_mailer_view,
         view_permission=permission_user_mailer_create,
-    ), icon=icon_user_mailer_list, text=_('Mailing profiles'),
+    ), icon=icon_user_mailer_list, text=_(message='Mailing profiles'),
     view='mailer:user_mailer_list'
 )
 link_user_mailer_list = Link(
     icon=icon_user_mailer_list,
     permissions=(permission_user_mailer_view,),
-    text=_('Mailing profiles'), view='mailer:user_mailer_list'
+    text=_(message='Mailing profiles'), view='mailer:user_mailer_list'
 )
 link_user_mailer_test = Link(
     args='object.pk', icon=icon_user_mailer_test,
-    permissions=(permission_user_mailer_use,), text=_('Test'),
+    permissions=(permission_user_mailer_use,), text=_(message='Test'),
     view='mailer:user_mailer_test'
 )

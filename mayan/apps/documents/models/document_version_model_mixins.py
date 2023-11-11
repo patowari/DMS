@@ -7,7 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import transaction
 from django.urls import reverse
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.converter.exceptions import AppImageError
@@ -121,7 +121,7 @@ class DocumentVersionBusinessLogicMixin:
             ).render(
                 context={'instance': self}
             )
-    get_label.short_description = _('Label')
+    get_label.short_description = _(message='Label')
 
     def get_source_content_object_dictionary_list(self):
         DocumentFilePage = apps.get_model(

@@ -1,7 +1,7 @@
 import os
 
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT = _(
     'Can be a static value or a template. '
@@ -26,8 +26,8 @@ DEFAULT_WORKFLOWS_WORKFLOW_STATE_ESCALATION_CHECK_INTERVAL = 60 * 5  # 5 minutes
 FIELD_TYPE_CHOICE_CHAR = 1
 FIELD_TYPE_CHOICE_INTEGER = 2
 FIELD_TYPE_CHOICES = (
-    (FIELD_TYPE_CHOICE_CHAR, _('Character')),
-    (FIELD_TYPE_CHOICE_INTEGER, _('Number (Integer)')),
+    (FIELD_TYPE_CHOICE_CHAR, _(message='Character')),
+    (FIELD_TYPE_CHOICE_INTEGER, _(message='Number (Integer)')),
 )
 FIELD_TYPE_MAPPING = {
     FIELD_TYPE_CHOICE_CHAR: 'django.forms.CharField',
@@ -40,7 +40,7 @@ SYMBOL_GRAPHVIZ_CONDITIONAL = '(&fnof;)'
 
 WIDGET_CLASS_TEXTAREA = 1
 WIDGET_CLASS_CHOICES = (
-    (WIDGET_CLASS_TEXTAREA, _('Text area')),
+    (WIDGET_CLASS_TEXTAREA, _(message='Text area')),
 )
 WIDGET_CLASS_MAPPING = {
     WIDGET_CLASS_TEXTAREA: 'django.forms.widgets.Textarea',
@@ -49,6 +49,6 @@ WIDGET_CLASS_MAPPING = {
 WORKFLOW_ACTION_ON_ENTRY = 1
 WORKFLOW_ACTION_ON_EXIT = 2
 WORKFLOW_ACTION_WHEN_CHOICES = (
-    (WORKFLOW_ACTION_ON_ENTRY, _('On entry')),
-    (WORKFLOW_ACTION_ON_EXIT, _('On exit')),
+    (WORKFLOW_ACTION_ON_ENTRY, _(message='On entry')),
+    (WORKFLOW_ACTION_ON_EXIT, _(message='On exit')),
 )

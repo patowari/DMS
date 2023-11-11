@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 
@@ -8,4 +8,4 @@ class SourceWatchFoldersApp(MayanAppConfig):
     app_url = 'source_watch_folders'
     has_tests = True
     name = 'mayan.apps.source_watch_folders'
-    verbose_name = _('Watch folders')
+    verbose_name = _(message='Watch folders')

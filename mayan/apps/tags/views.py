@@ -3,7 +3,7 @@ import logging
 from django.shortcuts import reverse
 from django.template import RequestContext
 from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.classes import ModelQueryFields
@@ -48,9 +48,9 @@ class TagAttachActionView(MultipleObjectFormActionView):
     success_message_singular = _(
         'Tags attached to %(count)d document successfully.'
     )
-    title_plural = _('Attach tags to %(count)d documents.')
-    title_single = _('Attach tags to document: %(object)s')
-    title_singular = _('Attach tags to %(count)d document.')
+    title_plural = _(message='Attach tags to %(count)d documents.')
+    title_single = _(message='Attach tags to document: %(object)s')
+    title_singular = _(message='Attach tags to %(count)d document.')
     view_icon = icon_document_tag_multiple_attach
 
     def get_extra_context(self):
@@ -67,7 +67,7 @@ class TagAttachActionView(MultipleObjectFormActionView):
 
     def get_form_extra_kwargs(self):
         kwargs = {
-            'help_text': _('Tags to be attached.'),
+            'help_text': _(message='Tags to be attached.'),
             'permission': permission_tag_attach,
             'queryset': Tag.objects.all(),
             'user': self.request.user
@@ -105,7 +105,7 @@ class TagAttachActionView(MultipleObjectFormActionView):
 
 
 class TagCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create tag')}
+    extra_context = {'title': _(message='Create tag')}
     form_class = TagForm
     post_action_redirect = reverse_lazy(viewname='tags:tag_list')
     view_icon = icon_tag_create
@@ -118,23 +118,23 @@ class TagCreateView(SingleObjectCreateView):
 
 
 class TagDeleteView(MultipleObjectDeleteView):
-    error_message = _('Error deleting tag "%(instance)s"; %(exception)s')
+    error_message = _(message='Error deleting tag "%(instance)s"; %(exception)s')
     model = Tag
     object_permission = permission_tag_delete
     pk_url_kwarg = 'tag_id'
     post_action_redirect = reverse_lazy(viewname='tags:tag_list')
-    success_message_plural = _('%(count)d tags deleted successfully.')
-    success_message_single = _('Tag "%(object)s" deleted successfully.')
-    success_message_singular = _('%(count)d tag deleted successfully.')
-    title_plural = _('Delete the %(count)d selected tags')
-    title_single = _('Delete tag: %(object)s')
-    title_singular = _('Delete the %(count)d selected tag')
+    success_message_plural = _(message='%(count)d tags deleted successfully.')
+    success_message_single = _(message='Tag "%(object)s" deleted successfully.')
+    success_message_singular = _(message='%(count)d tag deleted successfully.')
+    title_plural = _(message='Delete the %(count)d selected tags')
+    title_single = _(message='Delete tag: %(object)s')
+    title_singular = _(message='Delete the %(count)d selected tag')
     view_icon = icon_tag_single_delete
 
     def get_extra_context(self):
         context = super().get_extra_context()
         context = {
-            'message': _('Will be removed from all documents.')
+            'message': _(message='Will be removed from all documents.')
         }
 
         return context
@@ -150,7 +150,7 @@ class TagEditView(SingleObjectEditView):
     def get_extra_context(self):
         return {
             'object': self.object,
-            'title': _('Edit tag: %s') % self.object
+            'title': _(message='Edit tag: %s') % self.object
         }
 
     def get_instance_extra_data(self):
@@ -176,8 +176,8 @@ class TagListView(SingleObjectListView):
                 'Tags are color coded properties that can be attached or '
                 'removed from documents.'
             ),
-            'no_results_title': _('No tags available'),
-            'title': _('Tags')
+            'no_results_title': _(message='No tags available'),
+            'title': _(message='Tags')
         }
 
     def get_source_queryset(self):
@@ -207,7 +207,7 @@ class TagDocumentListView(ExternalObjectViewMixin, DocumentListView):
         context.update(
             {
                 'object': self.get_tag(),
-                'title': _('Documents with the tag: %s') % self.get_tag()
+                'title': _(message='Documents with the tag: %s') % self.get_tag()
             }
         )
         return context
@@ -234,7 +234,7 @@ class DocumentTagListView(ExternalObjectViewMixin, TagListView):
                         request=self.request
                     )
                 ),
-                'no_results_title': _('Document has no tags attached'),
+                'no_results_title': _(message='Document has no tags attached'),
                 'object': self.external_object,
                 'title': _(
                     'Tags for document: %s'
@@ -263,9 +263,9 @@ class TagRemoveActionView(MultipleObjectFormActionView):
     success_message_singular = _(
         'Tags removed from %(count)d document successfully.'
     )
-    title_plural = _('Remove tags from %(count)d documents.')
-    title_single = _('Remove tags from document: %(object)s')
-    title_singular = _('Remove tags from %(count)d document.')
+    title_plural = _(message='Remove tags from %(count)d documents.')
+    title_single = _(message='Remove tags from document: %(object)s')
+    title_singular = _(message='Remove tags from %(count)d document.')
     view_icon = icon_document_tag_multiple_remove
 
     def get_extra_context(self):
@@ -282,7 +282,7 @@ class TagRemoveActionView(MultipleObjectFormActionView):
 
     def get_form_extra_kwargs(self):
         kwargs = {
-            'help_text': _('Tags to be removed.'),
+            'help_text': _(message='Tags to be removed.'),
             'permission': permission_tag_remove,
             'queryset': Tag.objects.all(),
             'user': self.request.user

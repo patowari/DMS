@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import pre_delete
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -53,7 +53,7 @@ class SourcesApp(MayanAppConfig):
     has_static_media = False
     has_tests = True
     name = 'mayan.apps.sources'
-    verbose_name = _('Sources')
+    verbose_name = _(message='Sources')
 
     def ready(self):
         super().ready()
@@ -101,7 +101,7 @@ class SourcesApp(MayanAppConfig):
         )
 
         MissingItem(
-            label=_('Create a document source'),
+            label=_(message='Create a document source'),
             description=_(
                 'Document sources are the way in which new documents are '
                 'feed to Mayan EDMS, create at least a web form source to '
@@ -129,14 +129,14 @@ class SourcesApp(MayanAppConfig):
             description=_(
                 'Return the value of a specific source metadata for '
                 'the document\'s latest file.'
-            ), label=_('Source metadata value of'), model=Document,
+            ), label=_(message='Source metadata value of'), model=Document,
             name='source_metadata_value_of.< key >'
         )
 
         ModelProperty(
             description=_(
                 'Return the value of a specific source metadata.'
-            ), label=_('Source metadata value of'), model=DocumentFile,
+            ), label=_(message='Source metadata value of'), model=DocumentFile,
             name='source_metadata_value_of.< key >'
         )
 
@@ -154,7 +154,7 @@ class SourcesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='get_backend_class_label', include_label=True,
-            label=_('Type'), source=Source
+            label=_(message='Type'), source=Source
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,

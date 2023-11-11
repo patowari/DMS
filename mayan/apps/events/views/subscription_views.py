@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import FormView, SingleObjectListView
 from mayan.apps.views.view_mixins import ExternalContentTypeObjectViewMixin
@@ -40,7 +40,7 @@ class EventTypeSubscriptionListView(FormView):
             )
         else:
             messages.success(
-                message=_('Event subscriptions updated successfully'),
+                message=_(message='Event subscriptions updated successfully'),
                 request=self.request
             )
 
@@ -164,9 +164,9 @@ class UserObjectSubscriptionList(SingleObjectListView):
                 'Subscribe to the events of an object to received '
                 'notifications when those events occur.'
             ),
-            'no_results_title': _('There are no object event subscriptions'),
+            'no_results_title': _(message='There are no object event subscriptions'),
             'object': self.request.user,
-            'title': _('Object event subscriptions')
+            'title': _(message='Object event subscriptions')
         }
 
     def get_source_queryset(self):

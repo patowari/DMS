@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
@@ -17,7 +17,7 @@ class UserOptions(models.Model):
     """
     user = models.OneToOneField(
         on_delete=models.CASCADE, related_name='user_options',
-        to=settings.AUTH_USER_MODEL, unique=True, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, unique=True, verbose_name=_(message='User')
     )
     block_password_change = models.BooleanField(
         default=False, verbose_name=_(
@@ -28,8 +28,8 @@ class UserOptions(models.Model):
     objects = UserOptionsManager()
 
     class Meta:
-        verbose_name = _('User settings')
-        verbose_name_plural = _('Users settings')
+        verbose_name = _(message='User settings')
+        verbose_name_plural = _(message='Users settings')
 
     def natural_key(self):
         return self.user.natural_key()

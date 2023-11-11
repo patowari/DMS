@@ -1,5 +1,5 @@
 from django.core import management
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ...utils import PassthroughStorageProcessor
 
@@ -10,7 +10,7 @@ class Command(management.BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument(
             '--app', action='store', dest='app_label',
-            help=_('Name of the app to process.'),
+            help=_(message='Name of the app to process.'),
             required=True,
         )
         parser.add_argument(
@@ -23,7 +23,7 @@ class Command(management.BaseCommand):
         )
         parser.add_argument(
             '--model', action='store', dest='model_name',
-            help=_('Process a specific model.'),
+            help=_(message='Process a specific model.'),
             required=True,
         )
         parser.add_argument(
@@ -35,7 +35,7 @@ class Command(management.BaseCommand):
         )
         parser.add_argument(
             '--storage_name', action='store', dest='defined_storage_name',
-            help=_('Name of the storage to process.'),
+            help=_(message='Name of the storage to process.'),
             required=True,
         )
 

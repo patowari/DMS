@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.forms import DetailForm
 
@@ -23,7 +23,7 @@ class DocumentCheckOutDetailForm(DetailForm):
 
         extra_fields = (
             {
-                'label': _('Document status'),
+                'label': _(message='Document status'),
                 'func': lambda instance: STATE_LABELS[
                     instance.get_check_out_state()
                 ]
@@ -34,22 +34,22 @@ class DocumentCheckOutDetailForm(DetailForm):
             checkout_info = instance.get_check_out_info()
             extra_fields += (
                 {
-                    'label': _('User'),
+                    'label': _(message='User'),
                     'func': lambda instance: checkout_info.user.get_full_name() or checkout_info.user
                 },
                 {
-                    'label': _('Check out time'),
+                    'label': _(message='Check out time'),
                     'func': lambda instance: checkout_info.checkout_datetime,
                     'widget': forms.widgets.DateTimeInput
                 },
                 {
-                    'label': _('Check out expiration'),
+                    'label': _(message='Check out expiration'),
                     'func': lambda instance: checkout_info.expiration_datetime,
                     'widget': forms.widgets.DateTimeInput
                 },
                 {
-                    'label': _('New files allowed?'),
-                    'func': lambda instance: _('Yes') if not checkout_info.block_new_file else _('No')
+                    'label': _(message='New files allowed?'),
+                    'func': lambda instance: _(message='Yes') if not checkout_info.block_new_file else _(message='No')
                 },
             )
 

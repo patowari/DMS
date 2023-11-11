@@ -1,5 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.relations import HyperlinkedIdentityField
 
@@ -35,7 +35,7 @@ class FilteredSimplePrimaryKeyRelatedField(
         'incorrect_type': _(
             'Incorrect type. Expected pk value, received {data_type}.'
         ),
-        'required': _('This field is required.')
+        'required': _(message='This field is required.')
     }
 
     def __init__(self, **kwargs):

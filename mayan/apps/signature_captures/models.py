@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.shortcuts import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.validators import validate_internal_name
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
@@ -24,33 +24,33 @@ class SignatureCapture(
 ):
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='signature_captures',
-        to=Document, verbose_name=_('Document')
+        to=Document, verbose_name=_(message='Document')
     )
     data = models.TextField(
         blank=True, help_text=_(
             'Data representing the handwritten signature.'
-        ), verbose_name=_('Signature capture data')
+        ), verbose_name=_(message='Signature capture data')
     )
     svg = models.TextField(
         blank=True, help_text=_(
             'Vector representation of the handwritten signature.'
-        ), verbose_name=_('SVG signature capture data')
+        ), verbose_name=_(message='SVG signature capture data')
     )
     text = models.CharField(
-        help_text=_('Print version of the captured signature.'),
-        max_length=224, verbose_name=_('Text')
+        help_text=_(message='Print version of the captured signature.'),
+        max_length=224, verbose_name=_(message='Text')
     )
     user = models.ForeignKey(
         on_delete=models.CASCADE, related_name='signature_captures',
-        to=settings.AUTH_USER_MODEL, verbose_name=_('User')
+        to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     date_time_created = models.DateTimeField(
         auto_now_add=True, db_index=True,
-        verbose_name=_('Date and time created')
+        verbose_name=_(message='Date and time created')
     )
     date_time_edited = models.DateTimeField(
         auto_now=True, db_index=True,
-        verbose_name=_('Date and time edited')
+        verbose_name=_(message='Date and time edited')
     )
     internal_name = models.CharField(
         db_index=True, help_text=_(
@@ -58,7 +58,7 @@ class SignatureCapture(
             'capture in relationship to the document. Can only contain '
             'letters, numbers, and underscores.'
         ), max_length=255, validators=[validate_internal_name],
-        verbose_name=_('Internal name')
+        verbose_name=_(message='Internal name')
     )
 
     objects = models.Manager()
@@ -67,8 +67,8 @@ class SignatureCapture(
     class Meta:
         ordering = ('-date_time_created',)
         unique_together = ('document', 'internal_name')
-        verbose_name = _('Signature capture')
-        verbose_name_plural = _('Signature captures')
+        verbose_name = _(message='Signature capture')
+        verbose_name_plural = _(message='Signature captures')
 
     def __str__(self):
         return '{} - {}'.format(

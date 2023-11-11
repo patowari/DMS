@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.storage.classes import DefinedStorage
 
@@ -17,7 +17,7 @@ storage_document_signatures_detached = DefinedStorage(
             setting_storage_backend_arguments.global_name
         )
     ),
-    label=_('Detached signatures'),
+    label=_(message='Detached signatures'),
     name=STORAGE_NAME_DOCUMENT_SIGNATURES_DETACHED_SIGNATURE,
     kwargs=setting_storage_backend_arguments.value
 )

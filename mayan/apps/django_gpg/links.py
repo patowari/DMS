@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 
@@ -14,42 +14,42 @@ from .permissions import (
 
 link_key_delete = Link(
     args=('resolved_object.pk',), icon=icon_key_delete,
-    permissions=(permission_key_delete,), tags='dangerous', text=_('Delete'),
+    permissions=(permission_key_delete,), tags='dangerous', text=_(message='Delete'),
     view='django_gpg:key_delete'
 )
 link_key_detail = Link(
     args=('resolved_object.pk',), icon=icon_key_detail,
-    permissions=(permission_key_view,), text=_('Details'),
+    permissions=(permission_key_view,), text=_(message='Details'),
     view='django_gpg:key_detail'
 )
 link_key_download = Link(
     args=('resolved_object.pk',), icon=icon_key_download,
-    permissions=(permission_key_download,), text=_('Download'),
+    permissions=(permission_key_download,), text=_(message='Download'),
     view='django_gpg:key_download'
 )
 link_key_query = Link(
     icon=icon_keyserver_search,
-    permissions=(permission_keyserver_query,), text=_('Query keyservers'),
+    permissions=(permission_keyserver_query,), text=_(message='Query keyservers'),
     view='django_gpg:key_query'
 )
 link_key_receive = Link(
     args='object.key_id', keep_query=True,
-    permissions=(permission_key_receive,), text=_('Import'),
+    permissions=(permission_key_receive,), text=_(message='Import'),
     view='django_gpg:key_receive'
 )
 link_key_setup = Link(
     icon=icon_key_setup, permissions=(permission_key_view,),
-    text=_('Key management'), view='django_gpg:key_public_list'
+    text=_(message='Key management'), view='django_gpg:key_public_list'
 )
 link_key_upload = Link(
     icon=icon_key_upload, permissions=(permission_key_upload,),
-    text=_('Upload key'), view='django_gpg:key_upload'
+    text=_(message='Upload key'), view='django_gpg:key_upload'
 )
 link_private_key_list = Link(
     icon=icon_private_key_list, permissions=(permission_key_view,),
-    text=_('Private keys'), view='django_gpg:key_private_list'
+    text=_(message='Private keys'), view='django_gpg:key_private_list'
 )
 link_public_key_list = Link(
     icon=icon_public_key_list, permissions=(permission_key_view,),
-    text=_('Public keys'), view='django_gpg:key_public_list'
+    text=_(message='Public keys'), view='django_gpg:key_public_list'
 )

@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -18,7 +18,7 @@ from .utils import (
 
 class DocumentCreateWizardStepMetadata(DocumentCreateWizardStep):
     form_class = DocumentMetadataFormSet
-    label = _('Enter document metadata')
+    label = _(message='Enter document metadata')
     name = 'metadata_entry'
     number = 1
 

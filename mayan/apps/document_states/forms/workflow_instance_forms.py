@@ -13,6 +13,6 @@ class WorkflowInstanceTransitionSelectForm(forms.Form):
         ].queryset = workflow_instance.get_transition_choices(user=user)
 
     transition = forms.ModelChoiceField(
-        help_text=_('Select a transition to execute in the next step.'),
-        label=_('Transition'), queryset=WorkflowTransition.objects.none()
+        help_text=_(message='Select a transition to execute in the next step.'),
+        label=_(message='Transition'), queryset=WorkflowTransition.objects.none()
     )

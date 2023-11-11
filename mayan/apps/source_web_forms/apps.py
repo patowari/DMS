@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.signals import signal_post_initial_setup
@@ -9,7 +9,7 @@ class SourceWebFormsApp(MayanAppConfig):
     app_url = 'source_web_forms'
     has_tests = True
     name = 'mayan.apps.source_web_forms'
-    verbose_name = _('Web form sources')
+    verbose_name = _(message='Web form sources')
 
     def ready(self):
         super().ready()

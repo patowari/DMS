@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import permission_acl_edit, permission_acl_view
@@ -25,7 +25,7 @@ class StorageApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.storage'
-    verbose_name = _('Storage')
+    verbose_name = _(message='Storage')
 
     def ready(self):
         super().ready()

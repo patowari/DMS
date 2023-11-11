@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 def method_document_get_cabinets(self, permission, user):
@@ -20,4 +20,4 @@ def method_document_get_cabinets(self, permission, user):
 method_document_get_cabinets.help_text = _(
     'Return a list of cabinets containing the document.'
 )
-method_document_get_cabinets.short_description = _('get_cabinets()')
+method_document_get_cabinets.short_description = _(message='get_cabinets()')

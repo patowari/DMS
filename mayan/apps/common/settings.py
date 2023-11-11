@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -13,7 +13,7 @@ from .literals import (
 )
 
 namespace = SettingNamespace(
-    label=_('Common'), name='common', version='0002'
+    label=_(message='Common'), name='common', version='0002'
 )
 
 setting_collapse_list_menu_list_facet = namespace.add_setting(
@@ -92,9 +92,9 @@ setting_home_view_dashboard = namespace.add_setting(
 )
 setting_project_title = namespace.add_setting(
     default=DEFAULT_COMMON_PROJECT_TITLE, global_name='COMMON_PROJECT_TITLE',
-    help_text=_('Sets the project\'s name.')
+    help_text=_(message='Sets the project\'s name.')
 )
 setting_project_url = namespace.add_setting(
     default=DEFAULT_COMMON_PROJECT_URL, global_name='COMMON_PROJECT_URL',
-    help_text=_('URL of the project\'s homepage.')
+    help_text=_(message='URL of the project\'s homepage.')
 )

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
 
@@ -11,30 +11,30 @@ from .permissions import permission_dependencies_view
 
 link_check_version = Link(
     icon=icon_check_version, permissions=(permission_dependencies_view,),
-    text=_('Check for updates'), view='dependencies:check_version_view'
+    text=_(message='Check for updates'), view='dependencies:check_version_view'
 )
 link_dependency_group_list = Link(
     icon=icon_dependency_group_list,
-    permissions=(permission_dependencies_view,), text=_('Groups'),
+    permissions=(permission_dependencies_view,), text=_(message='Groups'),
     view='dependencies:dependency_group_list'
 )
 link_dependency_group_entry_list = Link(
     args='resolved_object.name', icon=icon_dependency_group_entry_list,
-    permissions=(permission_dependencies_view,), text=_('Entries'),
+    permissions=(permission_dependencies_view,), text=_(message='Entries'),
     view='dependencies:dependency_group_entry_list'
 )
 link_dependency_group_entry_detail = Link(
     args=('resolved_object.dependency_group.name', 'resolved_object.name'),
     icon=icon_dependency_group_entry_detail,
-    permissions=(permission_dependencies_view,), text=_('Details'),
+    permissions=(permission_dependencies_view,), text=_(message='Details'),
     view='dependencies:dependency_group_entry_detail'
 )
 link_packages_licenses = Link(
-    icon=icon_dependency_licenses, text=_('Dependencies licenses'),
+    icon=icon_dependency_licenses, text=_(message='Dependencies licenses'),
     view='dependencies:dependency_licenses_view'
 )
 link_dependency_tool = Link(
     icon=icon_dependency_group_list,
-    permissions=(permission_dependencies_view,), text=_('Dependencies'),
+    permissions=(permission_dependencies_view,), text=_(message='Dependencies'),
     view='dependencies:dependency_group_list'
 )

@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.forms import Form
 
@@ -16,7 +16,7 @@ class AdvancedSearchForm(Form):
 
         self.fields[MATCH_ALL_FIELD_NAME] = forms.ChoiceField(
             choices=MATCH_ALL_FIELD_CHOICES, widget=forms.RadioSelect,
-            label=_('Match all'), help_text=_(
+            label=_(message='Match all'), help_text=_(
                 'Return only results that match all fields.'
             ), required=False
         )
@@ -49,7 +49,7 @@ class AdvancedSearchForm(Form):
         fieldsets = ()
 
         fieldsets += (
-            _('Search logic'), {
+            _(message='Search logic'), {
                 'fields': (MATCH_ALL_FIELD_NAME,)
             }
         ),
@@ -69,7 +69,7 @@ class AdvancedSearchForm(Form):
 
 class SearchForm(Form):
     q = forms.CharField(
-        max_length=128, label=_('Search terms'), required=False,
+        max_length=128, label=_(message='Search terms'), required=False,
         widget=forms.widgets.TextInput(
             attrs={'type': 'search'}
         )

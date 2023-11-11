@@ -1,7 +1,7 @@
 import logging
 
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.forms import FormDynamicModelBackend
 from mayan.apps.documents.classes import DocumentFileAction
@@ -22,14 +22,14 @@ class NewDocumentForm(DocumentForm):
 
 class NewDocumentFileForm(forms.Form):
     comment = forms.CharField(
-        help_text=_('An optional comment to explain the upload.'),
-        label=_('Comment'), required=False,
+        help_text=_(message='An optional comment to explain the upload.'),
+        label=_(message='Comment'), required=False,
         widget=forms.widgets.Textarea(
             attrs={'rows': 4}
         )
     )
     action_name = forms.ChoiceField(
-        label=_('Action'), help_text=_(
+        label=_(message='Action'), help_text=_(
             'The action to take in regards to the pages of the new file '
             'being uploaded.'
         )
@@ -52,7 +52,7 @@ class SourceBackendSelectionForm(forms.Form):
     backend = forms.ChoiceField(
         choices=(), help_text=_(
             'The backend used to create the new source.'
-        ), label=_('Backend')
+        ), label=_(message='Backend')
     )
 
     def __init__(self, *args, **kwargs):
@@ -68,7 +68,7 @@ class SourceBackendSetupDynamicForm(FormDynamicModelBackend):
 
 class WebFormUploadFormHTML5(UploadBaseForm):
     file = forms.FileField(
-        label=_('File'), widget=forms.widgets.FileInput()
+        label=_(message='File'), widget=forms.widgets.FileInput()
     )
 
     dropzone = forms.CharField(

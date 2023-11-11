@@ -2,7 +2,7 @@ import logging
 
 from django.db import models, transaction
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.signals import signal_mayan_pre_save
@@ -54,25 +54,25 @@ class DocumentFile(
 
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='files', to=Document,
-        verbose_name=_('Document')
+        verbose_name=_(message='Document')
     )
     timestamp = models.DateTimeField(
         auto_now_add=True, db_index=True, help_text=_(
             'The server date and time when the document file was processed.'
-        ), verbose_name=_('Timestamp')
+        ), verbose_name=_(message='Timestamp')
     )
     comment = models.TextField(
         blank=True, default='', help_text=_(
             'An optional short text describing the document file.'
-        ), verbose_name=_('Comment')
+        ), verbose_name=_(message='Comment')
     )
     # File related fields.
     file = models.FileField(
         storage=DefinedStorageLazy(name=STORAGE_NAME_DOCUMENT_FILES),
-        upload_to=upload_to, verbose_name=_('File')
+        upload_to=upload_to, verbose_name=_(message='File')
     )
     filename = models.CharField(
-        blank=True, max_length=255, verbose_name=_('Filename')
+        blank=True, max_length=255, verbose_name=_(message='Filename')
     )
     mimetype = models.CharField(
         blank=True, editable=False, help_text=_(
@@ -80,31 +80,31 @@ class DocumentFile(
             'standard way to describe the format of a file, in this case '
             'the file format of the document. Some examples: "text/plain" '
             'or "image/jpeg". '
-        ), max_length=255, null=True, verbose_name=_('MIME type')
+        ), max_length=255, null=True, verbose_name=_(message='MIME type')
     )
     encoding = models.CharField(
         blank=True, editable=False, help_text=_(
             'The document file file encoding. binary 7-bit, binary 8-bit, '
             'text, base64, etc.'
-        ), max_length=64, null=True, verbose_name=_('Encoding')
+        ), max_length=64, null=True, verbose_name=_(message='Encoding')
     )
     checksum = models.CharField(
         blank=True, db_index=True, editable=False, help_text=(
             'A hash/checkdigit/fingerprint generated from the document\'s '
             'binary data. Only identical documents will have the same '
             'checksum.'
-        ), max_length=64, null=True, verbose_name=_('Checksum')
+        ), max_length=64, null=True, verbose_name=_(message='Checksum')
     )
     size = models.PositiveBigIntegerField(
         blank=True, db_index=True, editable=False, help_text=(
             'The size of the file in bytes.'
-        ), null=True, verbose_name=_('Size')
+        ), null=True, verbose_name=_(message='Size')
     )
 
     class Meta:
         ordering = ('timestamp',)
-        verbose_name = _('Document file')
-        verbose_name_plural = _('Document files')
+        verbose_name = _(message='Document file')
+        verbose_name_plural = _(message='Document files')
 
     objects = DocumentFileManager()
     valid = ValidDocumentFileManager()

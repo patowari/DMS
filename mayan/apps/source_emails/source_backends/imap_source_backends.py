@@ -3,7 +3,7 @@ import imaplib
 import logging
 
 from django.utils.encoding import force_bytes, force_str
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.sources.exceptions import SourceException
 from mayan.apps.sources.source_backends.base import SourceBackend
@@ -18,7 +18,7 @@ logger = logging.getLogger(name=__name__)
 
 
 class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
-    label = _('IMAP email')
+    label = _(message='IMAP email')
 
     @classmethod
     def get_form_field_widgets(cls):
@@ -52,7 +52,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                     'kwargs': {
                         'max_length': 64,
                     },
-                    'label': _('Mailbox')
+                    'label': _(message='Mailbox')
                 },
                 'search_criteria': {
                     'blank': True,
@@ -63,7 +63,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                         'process. Use the format specified in '
                         'https://tools.ietf.org/html/rfc2060.html#section-6.4.4'
                     ),
-                    'label': _('Search criteria'),
+                    'label': _(message='Search criteria'),
                     'null': True,
                 },
                 'store_commands': {
@@ -77,7 +77,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                         'https://tools.ietf.org/html/rfc2060.html#section-6.4.6 '
                         'or the custom commands for your IMAP server.'
                     ),
-                    'label': _('Store commands'),
+                    'label': _(message='Store commands'),
                     'null': True, 'required': False
                 },
                 'execute_expunge': {
@@ -87,7 +87,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                         'Execute the IMAP expunge command after processing '
                         'each email message.'
                     ),
-                    'label': _('Execute expunge'),
+                    'label': _(message='Execute expunge'),
                     'required': False
                 },
                 'mailbox_destination': {
@@ -97,7 +97,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                         'IMAP Mailbox to which processed messages will '
                         'be copied.'
                     ),
-                    'label': _('Destination mailbox'),
+                    'label': _(message='Destination mailbox'),
                     'max_length': 96,
                     'null': True,
                     'required': False
@@ -113,7 +113,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
 
         fieldsets += (
             (
-                _('IMAP protocol'), {
+                _(message='IMAP protocol'), {
                     'fields': (
                         'mailbox', 'search_criteria', 'store_commands',
                         'execute_expunge', 'mailbox_destination'

@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.documents.models.document_file_models import DocumentFile
@@ -59,7 +59,7 @@ argument_document_file_filename = SourceBackendActionInterfaceArgument(
 )
 
 argument_document_type_id = SourceBackendActionInterfaceArgument(
-    help_text=_('ID of the document type.')
+    help_text=_(message='ID of the document type.')
 )
 
 argument_immediate_mode_optional = SourceBackendActionInterfaceArgument(

@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.db.models.signals import post_save, pre_delete
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
@@ -55,7 +55,7 @@ class DocumentIndexingApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.document_indexing'
-    verbose_name = _('Document indexing')
+    verbose_name = _(message='Document indexing')
 
     def ready(self):
         super().ready()
@@ -150,7 +150,7 @@ class DocumentIndexingApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: get_instance_link(
                 index_instance_node=context['object'],
-            ), include_label=True, is_sortable=True, label=_('Level'),
+            ), include_label=True, is_sortable=True, label=_(message='Level'),
             sort_field='value', source=DocumentIndexInstanceNode
         )
 
@@ -158,18 +158,18 @@ class DocumentIndexingApp(MayanAppConfig):
 
         SourceColumn(
             attribute='get_level_count', include_label=True,
-            label=_('Depth'), source=IndexInstance
+            label=_(message='Depth'), source=IndexInstance
         )
         SourceColumn(
             attribute='get_descendants_count', include_label=True,
-            label=_('Total nodes'), source=IndexInstance
+            label=_(message='Total nodes'), source=IndexInstance
         )
         SourceColumn(
             func=lambda context: context[
                 'object'
             ].get_descendants_document_count(
                 user=context['request'].user
-            ), include_label=True, label=_('Total documents'),
+            ), include_label=True, label=_(message='Total documents'),
             help_text=_(
                 'Number of unique documents this item contains.'
             ), source=IndexInstance
@@ -180,7 +180,7 @@ class DocumentIndexingApp(MayanAppConfig):
         column_index_instance_node_level = SourceColumn(
             func=lambda context: index_instance_item_link(
                 index_instance_item=context['object']
-            ), is_identifier=True, is_sortable=True, label=_('Level'),
+            ), is_identifier=True, is_sortable=True, label=_(message='Level'),
             sort_field='value', source=IndexInstanceNode
         )
         column_index_instance_node_level.add_exclude(
@@ -189,7 +189,7 @@ class DocumentIndexingApp(MayanAppConfig):
 
         column_index_instance_node_level_count = SourceColumn(
             attribute='get_level_count', include_label=True,
-            label=_('Depth'), source=IndexInstanceNode
+            label=_(message='Depth'), source=IndexInstanceNode
         )
         column_index_instance_node_level_count.add_exclude(
             source=DocumentIndexInstanceNode
@@ -197,7 +197,7 @@ class DocumentIndexingApp(MayanAppConfig):
 
         column_index_instance_node_count = SourceColumn(
             attribute='get_descendants_count',
-            include_label=True, label=_('Nodes'), source=IndexInstanceNode
+            include_label=True, label=_(message='Nodes'), source=IndexInstanceNode
         )
         column_index_instance_node_count.add_exclude(
             source=DocumentIndexInstanceNode
@@ -208,7 +208,7 @@ class DocumentIndexingApp(MayanAppConfig):
                 'object'
             ].get_descendants_document_count(
                 user=context['request'].user
-            ), include_label=True, label=_('Documents'),
+            ), include_label=True, label=_(message='Documents'),
             help_text=_(
                 'Number of unique documents this item contains.'
             ), source=IndexInstanceNode
@@ -220,7 +220,7 @@ class DocumentIndexingApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: index_instance_item_link(
                 index_instance_item=context['object']
-            ), is_identifier=True, is_sortable=True, label=_('Level'),
+            ), is_identifier=True, is_sortable=True, label=_(message='Level'),
             sort_field='value', source=IndexInstanceNodeSearchResult
         )
         SourceColumn(
@@ -254,7 +254,7 @@ class DocumentIndexingApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: node_level(
                 node=context['object']
-            ), include_label=True, is_identifier=True, label=_('Level'),
+            ), include_label=True, is_identifier=True, label=_(message='Level'),
             source=IndexTemplateNode
         )
         SourceColumn(

@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.views import (
     ViewSingleObjectDynamicFormModelBackendCreate,
@@ -100,7 +100,7 @@ class WorkflowTemplateStateActionDeleteView(SingleObjectDeleteView):
                 'object', 'workflow_state', 'workflow'
             ),
             'object': self.object,
-            'title': _('Delete workflow state action: %s') % self.object,
+            'title': _(message='Delete workflow state action: %s') % self.object,
             'workflow': self.object.state.workflow,
             'workflow_state': self.object.state,
         }
@@ -134,7 +134,7 @@ class WorkflowTemplateStateActionEditView(
                 'object', 'workflow_state', 'workflow'
             ),
             'object': self.object,
-            'title': _('Edit workflow state action: %s') % self.object,
+            'title': _(message='Edit workflow state action: %s') % self.object,
             'workflow': self.object.state.workflow,
             'workflow_state': self.object.state,
         }
@@ -217,7 +217,7 @@ class WorkflowTemplateStateActionSelectionView(
                 'object', 'workflow'
             ),
             'object': self.external_object,
-            'title': _('New workflow state action selection for: %s') % self.external_object,
+            'title': _(message='New workflow state action selection for: %s') % self.external_object,
             'workflow': self.external_object.workflow
         }
 
@@ -354,7 +354,7 @@ class WorkflowTemplateStateListView(
                 'This workflow doesn\'t have any states'
             ),
             'object': self.external_object,
-            'title': _('States of workflow: %s') % self.external_object,
+            'title': _(message='States of workflow: %s') % self.external_object,
             'workflow': self.external_object
         }
 

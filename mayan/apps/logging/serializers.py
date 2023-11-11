@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serializers import ContentTypeSerializer
 from mayan.apps.rest_api import serializers
@@ -9,14 +9,14 @@ from .models import ErrorLogPartitionEntry
 
 class ErrorLogPartitionEntrySerializer(serializers.ModelSerializer):
     content_type = ContentTypeSerializer(
-        label=_('Content type'), read_only=True,
+        label=_(message='Content type'), read_only=True,
         source='error_log_partition.content_type'
     )
     object_id = serializers.IntegerField(
-        label=_('Object ID'), source='error_log_partition.object_id'
+        label=_(message='Object ID'), source='error_log_partition.object_id'
     )
     url = MultiKwargHyperlinkedIdentityField(
-        label=_('URL'), view_kwargs=(
+        label=_(message='URL'), view_kwargs=(
             {
                 'lookup_field': 'error_log_partition.content_type.app_label',
                 'lookup_url_kwarg': 'app_label'

@@ -1,7 +1,7 @@
 import logging
 
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
 from mayan.apps.source_interactive.source_backend_actions.interactive_actions import (
@@ -24,7 +24,7 @@ class SourceBackendWebForm(
         SourceBackendActionInteractiveDocumentUpload,
         SourceBackendActionInteractiveDocumentFileUpload
     )
-    label = _('Web form')
+    label = _(message='Web form')
     upload_form_class = WebFormUploadFormHTML5
 
     def get_view_context(self, context, request):

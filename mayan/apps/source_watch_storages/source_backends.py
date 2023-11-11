@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.source_periodic.source_backend_actions.periodic_actions import SourceBackendActionPeriodicDocumentUpload
 from mayan.apps.source_periodic.source_backends.mixins import SourceBackendMixinPeriodicCompressed
@@ -15,4 +15,4 @@ class SourceBackendWatchStorage(
     SourceBackendMixinStoredFileInteractiveNot, SourceBackend
 ):
     action_class_list = (SourceBackendActionPeriodicDocumentUpload,)
-    label = _('Watch storage')
+    label = _(message='Watch storage')

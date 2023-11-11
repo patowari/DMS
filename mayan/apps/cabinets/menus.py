@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Menu
 from mayan.apps.navigation.utils import factory_condition_queryset_access
@@ -11,5 +11,5 @@ menu_cabinets = Menu(
         app_label='cabinets', model_name='Cabinet',
         object_permission=permission_cabinet_view,
         view_permission=permission_cabinet_create,
-    ), icon=icon_cabinet_list, label=_('Cabinets'), name='cabinets'
+    ), icon=icon_cabinet_list, label=_(message='Cabinets'), name='cabinets'
 )

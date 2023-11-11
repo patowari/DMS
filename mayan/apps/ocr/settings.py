@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.smart_settings.classes import SettingNamespace
 
@@ -8,7 +8,7 @@ from .literals import (
 from .setting_migrations import OCRSettingMigration
 
 namespace = SettingNamespace(
-    label=_('OCR'), migration_class=OCRSettingMigration, name='ocr',
+    label=_(message='OCR'), migration_class=OCRSettingMigration, name='ocr',
     version='0003'
 )
 

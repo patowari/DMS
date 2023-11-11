@@ -3,7 +3,7 @@ import os
 
 import sh
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ..classes import OCRBackendBase
 from ..exceptions import OCRError
@@ -81,7 +81,7 @@ class Tesseract(OCRBackendBase):
         except sh.CommandNotFound:
             self.command_tesseract = None
             raise OCRError(
-                _('Tesseract OCR not found.')
+                _(message='Tesseract OCR not found.')
             )
         else:
             # Get version.

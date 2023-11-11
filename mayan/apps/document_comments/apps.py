@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
@@ -29,7 +29,7 @@ class DocumentCommentsApp(MayanAppConfig):
     has_rest_api = True
     has_tests = True
     name = 'mayan.apps.document_comments'
-    verbose_name = _('Document comments')
+    verbose_name = _(message='Document comments')
 
     def ready(self):
         super().ready()
