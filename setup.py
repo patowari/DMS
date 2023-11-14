@@ -61,18 +61,18 @@ def find_packages(directory):
 
 
 install_requires = """
-django==3.2.20
+django==4.2.7
 CairoSVG==2.5.2
 Pillow==10.0.0
 PyYAML==6.0.1
 Whoosh==2.7.4
 bleach==6.0.0
 boto3==1.28.16
-celery==5.3.1
+celery==5.3.5
 dateparser==1.1.8
-django-activity-stream==1.4.0
+django-activity-stream==2.0.0
 django-auth-ldap==4.4.0
-django-celery-beat==2.3.0
+django-celery-beat==2.5.0
 django-cors-headers==4.2.0
 django-formtools==2.3
 django-mathfilters==1.0.0
