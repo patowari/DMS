@@ -9,14 +9,14 @@ from mayan.apps.storage.utils import fs_cleanup
 from mayan.apps.testing.tests.base import BaseTestCase
 from mayan.apps.views.settings import setting_paginate_by
 
-from ..classes import Setting, SettingNamespace
+from ..exceptions import SettingsException
+from ..settings import setting_cluster
 
 from .literals import (
     ENVIRONMENT_TEST_NAME, ENVIRONMENT_TEST_VALUE, TEST_SETTING_GLOBAL_NAME,
     TEST_SETTING_INITIAL_VALUE, TEST_SETTING_VALIDATION_BAD_VALUE,
     TEST_SETTING_VALIDATION_GOOD_VALUE, TEST_SETTING_VALUE
 )
-from .mixins import SmartSettingTestMixin, SmartSettingNamespaceTestMixin
 from .mocks import (
     TestNamespaceMigrationOne, TestNamespaceMigrationTwo,
     TestNamespaceMigrationInvalid, TestNamespaceMigrationInvalidDual,
@@ -24,97 +24,112 @@ from .mocks import (
 )
 
 
-class SettingNamespaceMigrationTestCase(
-    SmartSettingNamespaceTestMixin, SmartSettingTestMixin, BaseTestCase
-):
+class SettingNamespaceTestCase(BaseTestCase):
+    def test_namespace_add_duplicated(self):
+        self._test_setting_namespace_create()
+
+        with self.assertRaises(expected_exception=SettingsException):
+            self._test_setting_namespace_create(
+                name=self._test_setting_namespace.name
+            )
+
+    def test_namespace_remove(self):
+        self._test_setting_namespace_create()
+
+        setting_cluster.do_namespace_remove(
+            name=self._test_setting_namespace.name
+        )
+
+        self._test_setting_namespace_create(
+            name=self._test_setting_namespace.name
+        )
+
+
+class SettingNamespaceMigrationTestCase(BaseTestCase):
     def test_environment_migration(self):
         self._set_environment_variable(
             name='MAYAN_{}'.format(TEST_SETTING_GLOBAL_NAME),
             value=TEST_SETTING_INITIAL_VALUE
         )
-        self._create_test_settings_namespace(
+        self._test_setting_namespace_create(
             migration_class=TestNamespaceMigrationOne, version='0002'
         )
         self._create_test_setting()
 
         self.assertEqual(
-            self.test_setting.value, TEST_SETTING_INITIAL_VALUE
+            self._test_setting.value, TEST_SETTING_INITIAL_VALUE
         )
 
     def test_migration_0001_to_0002(self):
-        self._create_test_settings_namespace(
+        self._test_setting_namespace_create(
             migration_class=TestNamespaceMigrationTwo, version='0002'
         )
         self._create_test_setting()
 
-        self.test_config_value = TEST_SETTING_VALUE
-        self._create_test_config_file()
+        self._test_configuration_value = TEST_SETTING_VALUE
+        self._create_test_configuration_file()
 
         self.assertEqual(
-            self.test_setting.value, '{}_0001'.format(TEST_SETTING_VALUE)
+            self._test_setting.value, '{}_0001'.format(TEST_SETTING_VALUE)
         )
 
     def test_migration_0001_to_0003(self):
-        self._create_test_settings_namespace(
+        self._test_setting_namespace_create(
             migration_class=TestNamespaceMigrationTwo, version='0003'
         )
         self._create_test_setting()
 
-        self.test_config_value = TEST_SETTING_VALUE
-        self._create_test_config_file()
+        self._test_configuration_value = TEST_SETTING_VALUE
+        self._create_test_configuration_file()
 
         self.assertEqual(
-            self.test_setting.value, '{}_0001_0002'.format(TEST_SETTING_VALUE)
+            self._test_setting.value, '{}_0001_0002'.format(TEST_SETTING_VALUE)
         )
 
     def test_migration_invalid(self):
-        self._create_test_settings_namespace(
+        self._test_setting_namespace_create(
             migration_class=TestNamespaceMigrationInvalid, version='0002'
         )
         self._create_test_setting()
 
-        self.test_config_value = TEST_SETTING_VALUE
-        self._create_test_config_file()
+        self._test_configuration_value = TEST_SETTING_VALUE
+        self._create_test_configuration_file()
 
         self.assertEqual(
-            self.test_setting.value, TEST_SETTING_VALUE
+            self._test_setting.value, TEST_SETTING_VALUE
         )
 
     def test_migration_invalid_dual(self):
-        self._create_test_settings_namespace(
+        self._test_setting_namespace_create(
             migration_class=TestNamespaceMigrationInvalidDual, version='0002'
         )
         self._create_test_setting()
 
-        self.test_config_value = TEST_SETTING_VALUE
-        self._create_test_config_file()
+        self._test_configuration_value = TEST_SETTING_VALUE
+        self._create_test_configuration_file()
 
         self.assertEqual(
-            self.test_setting.value, TEST_SETTING_VALUE
+            self._test_setting.value, TEST_SETTING_VALUE
         )
 
 
-class SettingTestCase(
-    SmartSettingTestMixin, SmartSettingNamespaceTestMixin, BaseTestCase
-):
+class SettingTestCase(BaseTestCase):
     def test_environment_override(self):
         test_environment_value = 'test environment value'
         test_file_value = 'test file value'
 
-        self._create_test_settings_namespace()
+        self._test_setting_namespace_create()
         self._create_test_setting()
 
         self._set_environment_variable(
-            name='MAYAN_{}'.format(self.test_setting.global_name),
+            name='MAYAN_{}'.format(self._test_setting.global_name),
             value=test_environment_value
         )
 
-        self.test_config_value = test_file_value
-        self._create_test_config_file()
+        self._test_configuration_value = test_file_value
+        self._create_test_configuration_file()
 
-        self.assertEqual(
-            self.test_setting.value, test_environment_value
-        )
+        self.assertEqual(self._test_setting.value, test_environment_value)
 
     def test_environment_variable(self):
         self._set_environment_variable(
@@ -132,7 +147,7 @@ class SettingTestCase(
             filename=str(path_config_backup)
         )
 
-        Setting.save_last_known_good()
+        setting_cluster.do_last_known_good_save()
         self.assertTrue(
             path_config_backup.exists()
         )
@@ -143,7 +158,7 @@ class SettingTestCase(
             filename=str(path_config_backup)
         )
 
-        Setting.save_last_known_good()
+        setting_cluster.do_last_known_good_save()
         self.assertTrue(
             path_config_backup.exists()
         )
@@ -154,66 +169,62 @@ class SettingTestCase(
             )
 
     def test_setting_check_changed(self):
-        self._create_test_settings_namespace()
-        test_setting = self.test_settings_namespace.add_setting(
-            global_name='SMART_SETTINGS_TEST_SETTING',
+        self._test_setting_namespace_create()
+        test_setting = self._test_setting_namespace.do_setting_add(
+            global_name=TEST_SETTING_GLOBAL_NAME,
             default='test value'
         )
-        # Initialize hash cache.
-        Setting._cache_hash = None
-        Setting.check_changed()
-        self.assertFalse(
-            Setting.check_changed()
-        )
-        test_setting.value = 'test value edited'
+        test_setting.do_value_set(value='test value edited')
         self.assertTrue(
-            Setting.check_changed()
+            setting_cluster.get_is_changed()
         )
 
     def test_setting_check_changed_for_translations(self):
-        self._create_test_settings_namespace()
-        self.test_settings_namespace.add_setting(
-            global_name='SMART_SETTINGS_TEST_SETTING',
+        """
+        Settings with translatable values should not trigger the
+        `.check_changed()` method when the language is changed.
+        """
+        self._test_setting_namespace_create()
+        self._test_setting_namespace.do_setting_add(
+            global_name=TEST_SETTING_GLOBAL_NAME,
             default=_(message='English')
         )
-        # Initialize hash cache.
-        Setting._cache_hash = None
-        Setting.check_changed()
+        translation.activate(language='es')
+
         self.assertFalse(
-            Setting.check_changed()
+            setting_cluster.get_is_changed()
         )
 
-        translation.activate(language='es')
-        self.assertFalse(
-            Setting.check_changed()
-        )
         translation.activate(language='en')
+        self.assertFalse(
+            setting_cluster.get_is_changed()
+        )
 
     def test_setting_validation_call(self):
-        self._create_test_settings_namespace()
+        self._test_setting_namespace_create()
         self._create_test_setting(
             validation_function=test_validation_function
         )
 
-        self.test_setting.validate(
+        self._test_setting.do_value_raw_validate(
             raw_value=TEST_SETTING_VALIDATION_GOOD_VALUE
         )
 
         with self.assertRaises(expected_exception=ValidationError):
-            self.test_setting.validate(
+            self._test_setting.do_value_raw_validate(
                 raw_value=TEST_SETTING_VALIDATION_BAD_VALUE
             )
 
     def test_setting_validation_at_loading(self):
-        self._create_test_settings_namespace()
+        self._test_setting_namespace_create()
         self._create_test_setting(
             validation_function=test_validation_function
         )
 
-        SettingNamespace.invalidate_cache_all()
+        setting_cluster.do_cache_invalidate()
 
-        self.test_config_value = TEST_SETTING_VALIDATION_BAD_VALUE
-        self._create_test_config_file()
+        self._test_configuration_value = TEST_SETTING_VALIDATION_BAD_VALUE
+        self._create_test_configuration_file()
 
         with self.assertRaises(expected_exception=ValidationError):
-            self.test_setting.value
+            self._test_setting.value

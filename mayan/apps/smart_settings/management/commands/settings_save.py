@@ -1,6 +1,6 @@
 from django.core import management
 
-from ...classes import Setting
+from ...settings import setting_cluster
 
 
 class Command(management.BaseCommand):
@@ -13,4 +13,5 @@ class Command(management.BaseCommand):
         )
 
     def handle(self, *args, **options):
-        Setting.save_configuration(path=options.get('filepath'))
+        filepath = options.get('filepath')
+        setting_cluster.do_configuration_file_save(path=filepath)

@@ -3,6 +3,11 @@
 - Improve the index mirroring profile. Add ``MAYAN_MIRROR_INDEX_NAME`` to
   allow mounting different indexes without modifying the Docker Compose
   file.
+- Refactor the smart settings app. Setting value changes no longer take
+  effect immediately or trigger saving the configuration file. Added a new
+  view to save the current settings into a new configuration file. Setting
+  post edit functions are now execute during startup and not after editing
+  the setting. Added a new view and link to revert unsaved settings.
 
 4.5.2 (2023-09-20)
 ==================

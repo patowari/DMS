@@ -29,6 +29,14 @@ logger = logging.getLogger(name=__name__)
 
 
 class CacheBusinessLogicMixin:
+    def get_defined_storage(self):
+        try:
+            return DefinedStorage.get(name=self.defined_storage_name)
+        except KeyError:
+            return DefinedStorage(
+                dotted_path='', label=_(message='Unknown'), name='unknown'
+            )
+
     def get_files(self):
         CachePartitionFile = apps.get_model(
             app_label='file_caching', model_name='CachePartitionFile'
@@ -46,14 +54,6 @@ class CacheBusinessLogicMixin:
     )
     get_maximum_size_display.short_description = _(message='Maximum size')
 
-    def get_defined_storage(self):
-        try:
-            return DefinedStorage.get(name=self.defined_storage_name)
-        except KeyError:
-            return DefinedStorage(
-                dotted_path='', label=_(message='Unknown'), name='unknown'
-            )
-
     def get_partition_count(self):
         CachePartition = apps.get_model(
             app_label='file_caching', model_name='CachePartition'
@@ -67,7 +67,9 @@ class CacheBusinessLogicMixin:
     def get_partition_file_count(self):
         return self.get_files().count()
 
-    get_partition_file_count.short_description = _(message='Partition file count')
+    get_partition_file_count.short_description = _(
+        message='Partition file count'
+    )
     get_partition_file_count.help_text = _(message='Total cached files.')
 
     def get_total_size(self):
@@ -88,7 +90,9 @@ class CacheBusinessLogicMixin:
         )
 
     get_total_size_display.short_description = _(message='Current size')
-    get_total_size_display.help_text = _(message='Current size of the cache.')
+    get_total_size_display.help_text = _(
+        message='Current size of the cache.'
+    )
 
     @cached_property
     def label(self):
@@ -176,8 +180,8 @@ class CacheBusinessLogicMixin:
                         'Unable to purge partition ID: %d; %s',
                         partition.pk, exception
                     )
-                    # Don't raise exceptions to allow the loop to continue and
-                    # avoid a single exception from stoping the purge.
+                    # Don't raise exceptions to allow the loop to continue
+                    # and avoid a single exception from stopping the purge.
 
     @cached_property
     def storage(self):
@@ -228,7 +232,9 @@ class CachePartitionBusinessLogicMixin:
 
                 try:
                     partition_file = self.files.create(filename=filename)
-                    yield partition_file._open_for_writing(_acquire_lock=False)
+                    yield partition_file._open_for_writing(
+                        _acquire_lock=False
+                    )
                 except Exception as exception:
                     logger.error(
                         'Unexpected exception while trying to save new '

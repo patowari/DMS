@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.classes import SettingCluster
 
 from .literals import (
     DEFAULT_ALLOWED_HOSTS, DEFAULT_APPEND_SLASH,
@@ -22,11 +22,12 @@ from .literals import (
 # Don't import anything on star imports, we just want to make it easy
 # for apps.py to activate the settings in this module.
 __all__ = ()
-namespace = SettingNamespace(
+setting_cluster = SettingCluster(name='primary')
+setting_namespace = setting_cluster.do_namespace_add(
     label=_(message='Django'), name='django'
 )
 
-setting_django_allowed_hosts = namespace.add_setting(
+setting_django_allowed_hosts = setting_namespace.do_setting_add(
     default=DEFAULT_ALLOWED_HOSTS, global_name='ALLOWED_HOSTS', help_text=_(
         'A list of strings representing the host/domain names that this site '
         'can serve. This is a security measure to prevent HTTP Host header '
@@ -43,7 +44,7 @@ setting_django_allowed_hosts = namespace.add_setting(
         'first in MIDDLEWARE).'
     )
 )
-setting_django_append_slash = namespace.add_setting(
+setting_django_append_slash = setting_namespace.do_setting_add(
     default=DEFAULT_APPEND_SLASH, global_name='APPEND_SLASH', help_text=_(
         'When set to True, if the request URL does not match any of the '
         'patterns in the URLconf and it doesn\'t end in a slash, an HTTP '
@@ -54,21 +55,21 @@ setting_django_append_slash = namespace.add_setting(
         'PREPEND_WWW.'
     )
 )
-setting_django_auth_password_validators = namespace.add_setting(
+setting_django_auth_password_validators = setting_namespace.do_setting_add(
     default=DEFAULT_AUTH_PASSWORD_VALIDATORS,
     global_name='AUTH_PASSWORD_VALIDATORS', help_text=_(
         'The list of validators that are used to check the strength of '
         'user\'s passwords.'
     )
 )
-setting_django_authentication_backends = namespace.add_setting(
+setting_django_authentication_backends = setting_namespace.do_setting_add(
     default=DEFAULT_AUTHENTICATION_BACKENDS,
     global_name='AUTHENTICATION_BACKENDS', help_text=_(
         'A list of authentication backend classes (as strings) to use when '
         'attempting to authenticate a user.'
     )
 )
-setting_django_databases = namespace.add_setting(
+setting_django_databases = setting_namespace.do_setting_add(
     default=DEFAULT_DATABASES, global_name='DATABASES', help_text=_(
         'A dictionary containing the settings for all databases to be used '
         'with Django. It is a nested dictionary whose contents map a '
@@ -78,7 +79,7 @@ setting_django_databases = namespace.add_setting(
         'be specified.'
     )
 )
-setting_django_data_upload_max_memory_size = namespace.add_setting(
+setting_django_data_upload_max_memory_size = setting_namespace.do_setting_add(
     default=DEFAULT_DATA_UPLOAD_MAX_MEMORY_SIZE,
     global_name='DATA_UPLOAD_MAX_MEMORY_SIZE', help_text=_(
         'Default: 2621440 (i.e. 2.5 MB). The maximum size in bytes that a '
@@ -97,7 +98,7 @@ setting_django_data_upload_max_memory_size = namespace.add_setting(
         'FILE_UPLOAD_MAX_MEMORY_SIZE.'
     )
 )
-setting_django_default_from_email = namespace.add_setting(
+setting_django_default_from_email = setting_namespace.do_setting_add(
     default=DEFAULT_DEFAULT_FROM_EMAIL, global_name='DEFAULT_FROM_EMAIL',
     help_text=_(
         'Default: \'webmaster@localhost\' '
@@ -106,7 +107,7 @@ setting_django_default_from_email = namespace.add_setting(
         'to ADMINS and MANAGERS; for that, see SERVER_EMAIL.'
     )
 )
-setting_django_disallowed_user_agents = namespace.add_setting(
+setting_django_disallowed_user_agents = setting_namespace.do_setting_add(
     default=DEFAULT_DISALLOWED_USER_AGENTS,
     global_name='DISALLOWED_USER_AGENTS', help_text=_(
         'Default: [] (Empty list). List of compiled regular expression '
@@ -116,18 +117,18 @@ setting_django_disallowed_user_agents = namespace.add_setting(
         '(see Middleware).'
     )
 )
-setting_django_email_backend = namespace.add_setting(
+setting_django_email_backend = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_BACKEND, global_name='EMAIL_BACKEND', help_text=_(
         'Default: \'django.core.mail.backends.smtp.EmailBackend\'. The '
         'backend to use for sending emails.'
     )
 )
-setting_django_email_host = namespace.add_setting(
+setting_django_email_host = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_HOST, global_name='EMAIL_HOST', help_text=_(
         'Default: \'localhost\'. The host to use for sending email.'
     )
 )
-setting_django_email_host_password = namespace.add_setting(
+setting_django_email_host_password = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_HOST_PASSWORD, global_name='EMAIL_HOST_PASSWORD',
     help_text=_(
         'Default: \'\' (Empty string). Password to use for the SMTP '
@@ -137,7 +138,7 @@ setting_django_email_host_password = namespace.add_setting(
         'Django won\'t attempt authentication.'
     )
 )
-setting_django_email_host_user = namespace.add_setting(
+setting_django_email_host_user = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_HOST_USER, global_name='EMAIL_HOST_USER',
     help_text=_(
         'Default: \'\' (Empty string). Username to use for the SMTP '
@@ -145,18 +146,18 @@ setting_django_email_host_user = namespace.add_setting(
         'authentication.'
     )
 )
-setting_django_email_port = namespace.add_setting(
+setting_django_email_port = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_PORT, global_name='EMAIL_PORT', help_text=_(
         'Default: 25. Port to use for the SMTP server defined in EMAIL_HOST.'
     )
 )
-setting_django_email_timeout = namespace.add_setting(
+setting_django_email_timeout = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_TIMEOUT, global_name='EMAIL_TIMEOUT', help_text=_(
         'Default: None. Specifies a timeout in seconds for blocking '
         'operations like the connection attempt.'
     )
 )
-setting_django_email_user_ssl = namespace.add_setting(
+setting_django_email_user_ssl = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_USE_SSL, global_name='EMAIL_USE_SSL', help_text=_(
         'Default: False. Whether to use an implicit TLS (secure) connection '
         'when talking to the SMTP server. In most email documentation this '
@@ -166,7 +167,7 @@ setting_django_email_user_ssl = namespace.add_setting(
         'are mutually exclusive, so only set one of those settings to True.'
     )
 )
-setting_django_email_user_tls = namespace.add_setting(
+setting_django_email_user_tls = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL_USE_TLS, global_name='EMAIL_USE_TLS', help_text=_(
         'Default: False. Whether to use a TLS (secure) connection when '
         'talking to the SMTP server. This is used for explicit TLS '
@@ -174,7 +175,7 @@ setting_django_email_user_tls = namespace.add_setting(
         'hanging connections, see the implicit TLS setting EMAIL_USE_SSL.'
     )
 )
-setting_django_file_upload_max_memory_size = namespace.add_setting(
+setting_django_file_upload_max_memory_size = setting_namespace.do_setting_add(
     default=DEFAULT_FILE_UPLOAD_MAX_MEMORY_SIZE,
     global_name='FILE_UPLOAD_MAX_MEMORY_SIZE', help_text=_(
         'Default: 2621440 (i.e. 2.5 MB). The maximum size (in bytes) '
@@ -183,7 +184,7 @@ setting_django_file_upload_max_memory_size = namespace.add_setting(
         'DATA_UPLOAD_MAX_MEMORY_SIZE.'
     )
 )
-setting_django_login_url = namespace.add_setting(
+setting_django_login_url = setting_namespace.do_setting_add(
     default=DEFAULT_LOGIN_URL, global_name='LOGIN_URL', help_text=_(
         'Default: \'/accounts/login/\' The URL where requests are '
         'redirected for login, especially when using the login_required() '
@@ -193,7 +194,7 @@ setting_django_login_url = namespace.add_setting(
         'and URLconf).'
     )
 )
-setting_django_login_redirect_url = namespace.add_setting(
+setting_django_login_redirect_url = setting_namespace.do_setting_add(
     default=DEFAULT_LOGIN_REDIRECT_URL, global_name='LOGIN_REDIRECT_URL',
     help_text=_(
         'Default: \'/accounts/profile/\' The URL where requests are '
@@ -204,7 +205,7 @@ setting_django_login_redirect_url = namespace.add_setting(
         'have to define the URL in two places (settings and URLconf).'
     )
 )
-setting_django_logout_redirect_url = namespace.add_setting(
+setting_django_logout_redirect_url = setting_namespace.do_setting_add(
     default=DEFAULT_LOGOUT_REDIRECT_URL, global_name='LOGOUT_REDIRECT_URL',
     help_text=_(
         'Default: None. The URL where requests are redirected after a user '
@@ -216,7 +217,7 @@ setting_django_logout_redirect_url = namespace.add_setting(
         'and URLconf).'
     )
 )
-setting_django_internal_ips = namespace.add_setting(
+setting_django_internal_ips = setting_namespace.do_setting_add(
     default=DEFAULT_INTERNAL_IPS, global_name='INTERNAL_IPS', help_text=_(
         'A list of IP addresses, as strings, that: Allow the debug() '
         'context processor to add some variables to the template context. '
@@ -225,7 +226,7 @@ setting_django_internal_ips = namespace.add_setting(
         'in AdminEmailHandler emails.'
     )
 )
-setting_django_languages = namespace.add_setting(
+setting_django_languages = setting_namespace.do_setting_add(
     default=DEFAULT_LANGUAGES, global_name='LANGUAGES', help_text=_(
         'A list of all available languages. The list is a list of '
         'two-tuples in the format (language code, language name) '
@@ -236,7 +237,7 @@ setting_django_languages = namespace.add_setting(
         'subset of the Django-provided languages. '
     )
 )
-setting_django_language_code = namespace.add_setting(
+setting_django_language_code = setting_namespace.do_setting_add(
     default=DEFAULT_LANGUAGE_CODE, global_name='LANGUAGE_CODE', help_text=_(
         'A string representing the language code for this installation. '
         'This should be in standard language ID format. For example, U.S. '
@@ -249,7 +250,7 @@ setting_django_language_code = namespace.add_setting(
         'doesn\'t exist for the user\'s preferred language.'
     )
 )
-setting_django_cookie_name = namespace.add_setting(
+setting_django_cookie_name = setting_namespace.do_setting_add(
     default=DEFAULT_SESSION_COOKIE_NAME, global_name='SESSION_COOKIE_NAME',
     help_text=_(
         'Default: \'sessionid\'. The name of the cookie to use for sessions.'
@@ -257,14 +258,14 @@ setting_django_cookie_name = namespace.add_setting(
         'other cookie names in your application).'
     )
 )
-setting_django_session_engine = namespace.add_setting(
+setting_django_session_engine = setting_namespace.do_setting_add(
     default=DEFAULT_SESSION_ENGINE, global_name='SESSION_ENGINE',
     help_text=_(
         'Default: \'django.contrib.sessions.backends.db\'. Controls where '
         'Django stores session data.'
     )
 )
-setting_django_secure_proxy_ssl_header = namespace.add_setting(
+setting_django_secure_proxy_ssl_header = setting_namespace.do_setting_add(
     default=DEFAULT_SECURE_PROXY_SSL_HEADER,
     global_name='SECURE_PROXY_SSL_HEADER', help_text=_(
         'A tuple representing a HTTP header/value combination that '
@@ -274,7 +275,7 @@ setting_django_secure_proxy_ssl_header = namespace.add_setting(
         'understand your setup before changing it.'
     )
 )
-setting_django_static_url = namespace.add_setting(
+setting_django_static_url = setting_namespace.do_setting_add(
     default=DEFAULT_STATIC_URL, global_name='STATIC_URL', help_text=_(
         'URL to use when referring to static files located in STATIC_ROOT. '
         'Example: "/static/" or "http://static.example.com/" '
@@ -283,7 +284,7 @@ setting_django_static_url = namespace.add_setting(
         'It must end in a slash if set to a non-empty value.'
     )
 )
-setting_django_storages = namespace.add_setting(
+setting_django_storages = setting_namespace.do_setting_add(
     default=DEFAULT_STORAGES, global_name='STORAGES',
     help_text=_(
         'A dictionary containing the settings for all storages to be used '
@@ -292,7 +293,7 @@ setting_django_storages = namespace.add_setting(
         'individual storage.'
     )
 )
-setting_django_time_zone = namespace.add_setting(
+setting_django_time_zone = setting_namespace.do_setting_add(
     default=DEFAULT_TIME_ZONE, global_name='TIME_ZONE', help_text=_(
         'A string representing the time zone for this installation. '
         'Note that this isn\'t necessarily the time zone of the server. '
@@ -300,7 +301,7 @@ setting_django_time_zone = namespace.add_setting(
         'each with a separate time zone setting.'
     )
 )
-setting_django_wsgi_application = namespace.add_setting(
+setting_django_wsgi_application = setting_namespace.do_setting_add(
     default=DEFAULT_USE_X_FORWARDED_HOST, global_name='USE_X_FORWARDED_HOST',
     help_text=_(
         'A boolean that specifies whether to use the X-Forwarded-Host '
@@ -308,7 +309,7 @@ setting_django_wsgi_application = namespace.add_setting(
         'enabled if a proxy which sets this header is in use.'
     )
 )
-setting_django_wsgi_application = namespace.add_setting(
+setting_django_wsgi_application = setting_namespace.do_setting_add(
     default=DEFAULT_USE_X_FORWARDED_PORT, global_name='USE_X_FORWARDED_PORT',
     help_text=_(
         'A boolean that specifies whether to use the X-Forwarded-Port '
@@ -317,7 +318,7 @@ setting_django_wsgi_application = namespace.add_setting(
         'use. USE_X_FORWARDED_HOST takes priority over this setting.'
     )
 )
-setting_django_wsgi_application = namespace.add_setting(
+setting_django_wsgi_application = setting_namespace.do_setting_add(
     default=DEFAULT_WSGI_APPLICATION, global_name='WSGI_APPLICATION',
     help_text=_(
         'The full Python path of the WSGI application object that Django\'s '

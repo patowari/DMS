@@ -1,10 +1,11 @@
 from django.conf import global_settings
+from django.utils.translation import gettext_lazy as _
 
 COMMAND_NAME_SETTINGS_REVERT = 'settings_revert'
 COMMAND_NAME_SETTINGS_SAVE = 'settings_save'
 
 CONFIGURATION_FILENAME = 'config.yml'
-CONFIGURATION_LAST_GOOD_FILENAME = 'config_backup.yml'
+CONFIGURATION_FILENAME_LAST_GOOD = 'config_backup.yml'
 
 DEFAULT_ALLOWED_HOSTS = global_settings.ALLOWED_HOSTS
 DEFAULT_APPEND_SLASH = global_settings.APPEND_SLASH
@@ -39,5 +40,11 @@ DEFAULT_USE_X_FORWARDED_HOST = global_settings.USE_X_FORWARDED_HOST
 DEFAULT_USE_X_FORWARDED_PORT = global_settings.USE_X_FORWARDED_PORT
 DEFAULT_WSGI_APPLICATION = global_settings.WSGI_APPLICATION
 
+MESSAGE_LOCAL_STORAGE_DISABLED = _(
+    'Local storage is currently disabled, changes to settings will not be '
+    'saved. Instead, use environment variables to modify settings.'
+)
+
 NAMESPACE_VERSION_INITIAL = '0001'
+
 SMART_SETTINGS_NAMESPACES_NAME = 'SMART_SETTINGS_NAMESPACES'

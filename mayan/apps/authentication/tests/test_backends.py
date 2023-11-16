@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate
 from django.test import override_settings
 from django.urls import reverse
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..classes import AuthenticationBackend
@@ -32,7 +32,7 @@ class AuthenticationBackendTestCase(LoginViewTestMixin, GenericViewTestCase):
 
     def setUp(self):
         super().setUp()
-        SettingNamespace.invalidate_cache_all()
+        setting_cluster.do_cache_invalidate()
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_EMAIL)
     def test_email_authentication_backend(self):

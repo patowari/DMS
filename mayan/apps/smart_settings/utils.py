@@ -8,7 +8,7 @@ from mayan.apps.common.serialization import yaml_load
 from mayan.apps.templating.classes import Template
 
 from .literals import (
-    CONFIGURATION_FILENAME, CONFIGURATION_LAST_GOOD_FILENAME
+    CONFIGURATION_FILENAME, CONFIGURATION_FILENAME_LAST_GOOD
 )
 
 
@@ -334,7 +334,7 @@ SettingNamespaceSingleton.register_setting(
 
 SettingNamespaceSingleton.register_setting(
     klass=MediaBootstrapSetting, kwargs={
-        'critical': True, 'path_parts': (CONFIGURATION_LAST_GOOD_FILENAME,)
+        'critical': True, 'path_parts': (CONFIGURATION_FILENAME_LAST_GOOD,)
     }, name='CONFIGURATION_LAST_GOOD_FILEPATH'
 )
 SettingNamespaceSingleton.register_setting(

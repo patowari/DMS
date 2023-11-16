@@ -1,25 +1,25 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 
 from .literals import DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_USERNAME
 
-namespace = SettingNamespace(
+setting_namespace = setting_cluster.do_namespace_add(
     label=_(message='Auto administrator'), name='autoadmin'
 )
 
-setting_email = namespace.add_setting(
+setting_email = setting_namespace.do_setting_add(
     default=DEFAULT_EMAIL, global_name='AUTOADMIN_EMAIL', help_text=_(
         'Sets the email of the automatically created super user account.'
     )
 )
-setting_password = namespace.add_setting(
+setting_password = setting_namespace.do_setting_add(
     default=DEFAULT_PASSWORD, global_name='AUTOADMIN_PASSWORD', help_text=_(
         'The password of the automatically created super user account. '
         'If it is equal to None, the password is randomly generated.'
     )
 )
-setting_username = namespace.add_setting(
+setting_username = setting_namespace.do_setting_add(
     default=DEFAULT_USERNAME, global_name='AUTOADMIN_USERNAME', help_text=_(
         'The username of the automatically created super user account.'
     )

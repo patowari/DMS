@@ -1,6 +1,5 @@
 from django.test import override_settings
 
-from mayan.apps.smart_settings.tests.mixins import SmartSettingTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..literals import (
@@ -27,13 +26,13 @@ from .literals import (
 )
 
 
-class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
+class DocumentSettingMigrationTestCase(BaseTestCase):
     @override_settings(DOCUMENTS_CACHE_STORAGE_BACKEND=TEST_DOCUMENTS_CACHE_STORAGE_BACKEND)
     def test_setting_document_file_page_image_cache_storage_backend_0003(self):
         test_value = None
-        self.test_setting = setting_document_file_page_image_cache_storage_backend
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_file_page_image_cache_storage_backend
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_file_page_image_cache_storage_backend.value,
@@ -43,9 +42,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS=TEST_DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS)
     def test_setting_document_file_page_image_cache_storage_backend_arguments_0003(self):
         test_value = None
-        self.test_setting = setting_document_file_page_image_cache_storage_backend_arguments
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_file_page_image_cache_storage_backend_arguments
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_file_page_image_cache_storage_backend_arguments.value,
@@ -55,9 +54,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_STORAGE_BACKEND=TEST_DOCUMENTS_STORAGE_BACKEND)
     def test_setting_document_file_storage_backend_0003(self):
         test_value = None
-        self.test_setting = setting_document_file_storage_backend
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_file_storage_backend
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_file_storage_backend.value,
@@ -66,9 +65,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
 
     def test_setting_document_file_storage_backend_0003_no_value(self):
         test_value = None
-        self.test_setting = setting_document_file_storage_backend
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_file_storage_backend
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_file_storage_backend.value,
@@ -78,9 +77,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_STORAGE_BACKEND_ARGUMENTS=TEST_DOCUMENTS_STORAGE_BACKEND_ARGUMENTS)
     def test_setting_document_file_storage_backend_arguments_0003(self):
         test_value = None
-        self.test_setting = setting_document_file_storage_backend_arguments
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_file_storage_backend_arguments
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_file_storage_backend_arguments.value,
@@ -89,9 +88,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
 
     def test_setting_document_file_storage_backend_arguments_0003_no_value(self):
         test_value = None
-        self.test_setting = setting_document_file_storage_backend_arguments
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_file_storage_backend_arguments
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_file_storage_backend_arguments.value,
@@ -101,9 +100,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_CACHE_STORAGE_BACKEND=TEST_DOCUMENTS_CACHE_STORAGE_BACKEND)
     def test_setting_document_version_page_image_cache_storage_backend_0003(self):
         test_value = None
-        self.test_setting = setting_document_version_page_image_cache_storage_backend
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_version_page_image_cache_storage_backend
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_version_page_image_cache_storage_backend.value,
@@ -113,9 +112,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS=TEST_DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS)
     def test_setting_document_version_page_image_cache_storage_backend_arguments_0003(self):
         test_value = None
-        self.test_setting = setting_document_version_page_image_cache_storage_backend_arguments
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_document_version_page_image_cache_storage_backend_arguments
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_document_version_page_image_cache_storage_backend_arguments.value,
@@ -125,9 +124,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_RECENT_ACCESS_COUNT=TEST_DOCUMENTS_RECENTLY_ACCESSED_COUNT)
     def test_setting_recently_accessed_document_count_0002(self):
         test_value = None
-        self.test_setting = setting_recently_accessed_document_count
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_recently_accessed_document_count
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_recently_accessed_document_count.value,
@@ -137,9 +136,9 @@ class DocumentSettingMigrationTestCase(SmartSettingTestMixin, BaseTestCase):
     @override_settings(DOCUMENTS_RECENT_ADDED_COUNT=TEST_DOCUMENTS_RECENTLY_CREATED_COUNT)
     def test_setting_recently_created_document_count_0002(self):
         test_value = None
-        self.test_setting = setting_recently_created_document_count
-        self.test_config_value = test_value
-        self._create_test_config_file()
+        self._test_setting = setting_recently_created_document_count
+        self._test_configuration_value = test_value
+        self._create_test_configuration_file()
 
         self.assertEqual(
             setting_recently_created_document_count.value,

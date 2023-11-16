@@ -48,7 +48,9 @@ class ModelAttribute:
             if model.__class__ == models.base.ModelBase:
                 return []
 
-            return cls.get_for(model=type(model))
+            return cls.get_for(
+                model=type(model)
+            )
 
     @classmethod
     def register(cls, klass):
@@ -180,7 +182,8 @@ class ModelQueryFields:
     def add_select_related_field(self, field_name):
         if field_name in self.select_related_fields:
             raise ImproperlyConfigured(
-                '"{}" model already has a "{}" query select related field.'.format(
+                '"{}" model already has a "{}" query select '
+                'related field.'.format(
                     self.model, field_name
                 )
             )
@@ -189,7 +192,8 @@ class ModelQueryFields:
     def add_prefetch_related_field(self, field_name):
         if field_name in self.prefetch_related_fields:
             raise ImproperlyConfigured(
-                '"{}" model already has a "{}" query prefetch related field.'.format(
+                '"{}" model already has a "{}" query prefetch '
+                'related field.'.format(
                     self.model, field_name
                 )
             )
@@ -269,7 +273,11 @@ class QuerysetParametersSerializer:
 
         kwargs = {}
 
-        for parameter in decomposed_queryset.get('kwargs', ()):
+        parameter_list = decomposed_queryset.get(
+            'kwargs', ()
+        )
+
+        for parameter in parameter_list:
             if 'content_type_id' in parameter:
                 content_type = ContentType.objects.get(
                     pk=parameter['content_type_id']
@@ -284,9 +292,10 @@ class QuerysetParametersSerializer:
                 parameter['name']
             ] = value
 
-        return getattr(
+        queryset_method = getattr(
             queryset, decomposed_queryset['method_name']
-        )(**kwargs)
+        )
+        return queryset_method(**kwargs)
 
 
 ModelAttribute.register(klass=ModelProperty)

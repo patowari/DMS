@@ -1,5 +1,4 @@
 import errno
-import hashlib
 import logging
 import os
 import re
@@ -8,15 +7,16 @@ import sys
 
 import yaml
 
+from django.apps import apps
 from django.conf import settings
-from django.utils.encoding import force_bytes, force_str
+from django.utils.encoding import force_str
 from django.utils.functional import Promise
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.serialization import yaml_dump, yaml_load
 
-from .exceptions import BaseSettingsException
+from .exceptions import SettingsException
 from .literals import (
     COMMAND_NAME_SETTINGS_REVERT, NAMESPACE_VERSION_INITIAL,
     SMART_SETTINGS_NAMESPACES_NAME
@@ -41,76 +41,248 @@ def read_configuration_file(filepath):
                     )
     except IOError as exception:
         if exception.errno == errno.ENOENT:
-            # No config file, return empty dictionary
+            # No config file, return empty dictionary.
             return {}
         else:
             raise
 
 
-class SettingNamespace(AppsModuleLoaderMixin):
+class SettingCluster(AppsModuleLoaderMixin):
     _loader_module_name = 'settings'
-    _registry = {}
 
-    @classmethod
-    def get(cls, name):
-        return cls._registry[name]
+    def __init__(self, name):
+        self.configuration_file_cache = None
+        self.name = name
+        self.namespace_dict = {}
+        self.setting_dict = {}
 
-    @classmethod
-    def get_all(cls):
-        return sorted(cls._registry.values(), key=lambda x: x.label)
+    def do_cache_invalidate(self):
+        for namespace in self.namespace_dict.values():
+            namespace.do_cache_invalidate()
 
-    @classmethod
-    def get_namespace_config(cls, name):
-        return cls.get_namespaces_config().get(name, {})
+        self.configuration_file_cache = None
 
-    @classmethod
-    def get_namespaces_config(cls):
-        return Setting.get_config_file_content().get(
+    def do_configuration_file_revert(self):
+        if not settings.COMMON_DISABLE_LOCAL_STORAGE:
+            try:
+                copyfile(
+                    src=settings.CONFIGURATION_LAST_GOOD_FILEPATH,
+                    dst=settings.CONFIGURATION_FILEPATH
+                )
+            except IOError as exception:
+                if exception.errno == errno.ENOENT:
+                    raise SettingsException(
+                        'There is no last valid version to restore.'
+                    ) from exception
+                else:
+                    raise
+        else:
+            logger.info(
+                'Local storage is disabled, cannot revert not existing '
+                'configuration.'
+            )
+
+    def do_configuration_file_save(self, path=None):
+        if not settings.COMMON_DISABLE_LOCAL_STORAGE:
+            if not path:
+                path = settings.CONFIGURATION_FILEPATH
+
+            try:
+                with open(file=path, mode='w') as file_object:
+                    file_object.write(
+                        self.get_data_dump()
+                    )
+            except IOError as exception:
+                if exception.errno == errno.ENOENT:
+                    logger.warning(
+                        'The path to the configuration file `%s` doesn\'t '
+                        'exist. It is not possible to save the backup file.',
+                        path
+                    )
+        else:
+            logger.info(
+                'Local storage is disabled, skip saving configuration.'
+            )
+
+    def do_last_known_good_save(self):
+        # Don't write over the last good configuration if we are trying
+        # to restore the last good configuration.
+        if COMMAND_NAME_SETTINGS_REVERT not in sys.argv and not settings.CONFIGURATION_FILE_IGNORE:
+            self.do_configuration_file_save(
+                path=settings.CONFIGURATION_LAST_GOOD_FILEPATH
+            )
+
+    def do_namespace_add(self, **kwargs):
+        setting_namespace = SettingNamespace(cluster=self, **kwargs)
+
+        if setting_namespace.name in self.namespace_dict:
+            raise SettingsException(
+                'Setting namespace "%s" already exists in '
+                'cluster.' % setting_namespace.name
+            )
+
+        self.namespace_dict[setting_namespace.name] = setting_namespace
+        return setting_namespace
+
+    def do_namespace_remove(self, name):
+        setting_namespace = self.get_namespace(name=name)
+
+        self.namespace_dict.pop(setting_namespace.name)
+
+    def do_post_edit_function_call(self):
+        ContentType = apps.get_model(
+            app_label='contenttypes', model_name='ContentType'
+        )
+
+        for namespace in self.namespace_dict.values():
+            namespace.do_post_edit_function_call()
+
+        # Clear the content type cache to avoid the event system from trying
+        # to use the same ID that were cached when the setting post edit
+        # functions executed. This is because the settings execute before
+        # the apps objects are created.
+        ContentType.objects.clear_cache()
+
+    def get_configuration_file_content(self):
+        if settings.CONFIGURATION_FILE_IGNORE:
+            return {}
+        else:
+            # Cache content the of the configuration file to speed up
+            # initial boot up.
+            if not self.configuration_file_cache:
+                self.configuration_file_cache = read_configuration_file(
+                    filepath=settings.CONFIGURATION_FILEPATH
+                ) or {}
+            return self.configuration_file_cache
+
+    def get_data_dump(self, filter_term=None, namespace_name=None):
+        dictionary = {}
+
+        if not namespace_name:
+            namespace_dictionary = {}
+            for namespace in self.get_namespace_list():
+                namespace_dictionary[namespace.name] = {
+                    'version': namespace.version
+                }
+
+            dictionary[SMART_SETTINGS_NAMESPACES_NAME] = namespace_dictionary
+
+        if namespace_name:
+            namespace_list = (
+                self.get_namespace(name=namespace_name),
+            )
+        else:
+            namespace_list = self.get_namespace_list()
+
+        for namespace in namespace_list:
+            for setting in namespace.get_setting_list():
+                # If a namespace is specified, filter the list by that
+                # namespace otherwise return always True to include all
+                # (or not None == True).
+                if (filter_term and filter_term.lower() in setting.global_name.lower()) or not filter_term:
+                    dictionary[setting.global_name] = Setting.express_promises(
+                        value=setting.value
+                    )
+
+        return yaml_dump(data=dictionary, default_flow_style=False)
+
+    def get_is_changed(self):
+        return any(
+            [
+                setting.get_has_value_new() for setting in self.setting_dict.values()
+            ]
+        )
+
+    def get_namespace(self, name):
+        return self.namespace_dict[name]
+
+    def get_namespace_configuration(self, name):
+        namespace_configuration_map = self.get_namespace_configuration_map()
+
+        return namespace_configuration_map.get(
+            name, {}
+        )
+
+    def get_namespace_configuration_map(self):
+        configuration_file_content = self.get_configuration_file_content()
+
+        return configuration_file_content.get(
             SMART_SETTINGS_NAMESPACES_NAME, {}
         )
 
-    @classmethod
-    def invalidate_cache_all(cls):
-        for namespace in cls.get_all():
-            namespace.invalidate_cache()
+    def get_namespace_list(self):
+        return sorted(
+            self.namespace_dict.values(), key=lambda x: x.label
+        )
 
+    def get_setting(self, global_name):
+        return self.setting_dict[global_name]
+
+    def get_setting_list(self):
+        return self.setting_dict.values()
+
+
+class SettingNamespace:
     def __init__(
-        self, name, label, migration_class=None,
+        self, cluster, name, label, migration_class=None,
         version=NAMESPACE_VERSION_INITIAL
     ):
-        if name in self.__class__._registry:
-            raise Exception(
-                'Namespace names must be unique; "%s" already exists.' % name
-            )
+        self.cluster = cluster
         self.migration_class = migration_class
         self.name = name
         self.label = label
+        self.setting_dict = {}
         self.version = version
-        self.__class__._registry[name] = self
-        self._settings = []
 
     def __str__(self):
         return force_str(s=self.label)
 
-    def add_setting(self, **kwargs):
-        return Setting(namespace=self, **kwargs)
+    def do_cache_invalidate(self):
+        for setting in self.setting_dict.values():
+            setting.do_cache_invalidate()
 
-    def get_config_version(self):
-        return SettingNamespace.get_namespace_config(name=self.name).get(
+    def do_post_edit_function_call(self):
+        for setting in self.setting_dict.values():
+            setting.do_post_edit_function_call()
+
+    def do_migrate(self, setting):
+        if self.migration_class:
+            self.migration_class(namespace=self).do_migrate(setting=setting)
+
+    def do_setting_add(self, **kwargs):
+        setting = Setting(namespace=self, **kwargs)
+
+        if setting.global_name in self.setting_dict:
+            raise SettingsException(
+                'Setting "%s" already exists in '
+                'namespace.' % setting.global_name
+            )
+
+        self.setting_dict[setting.global_name] = setting
+        self.cluster.setting_dict[setting.global_name] = setting
+
+        return setting
+
+    def do_setting_remove(self, global_name):
+        setting = self.setting_dict.get(global_name)
+
+        self.setting_dict.pop(setting.global_name)
+        self.cluster.setting_dict.pop(setting.global_name)
+
+        return setting
+
+    def get_configuration_file_version(self):
+        return self.cluster.get_namespace_configuration(name=self.name).get(
             'version', NAMESPACE_VERSION_INITIAL
         )
 
-    def invalidate_cache(self):
-        for setting in self._settings:
-            setting.invalidate_cache()
+    def get_setting(self, global_name):
+        return self.setting_dict[global_name]
 
-    def migrate(self, setting):
-        if self.migration_class:
-            self.migration_class(namespace=self).migrate(setting=setting)
-
-    @property
-    def settings(self):
-        return sorted(self._settings, key=lambda x: x.global_name)
+    def get_setting_list(self):
+        return sorted(
+            self.setting_dict.values(), key=lambda x: x.global_name
+        )
 
 
 SettingNamespace.verbose_name = _(message='Settings namespace')
@@ -124,19 +296,13 @@ class SettingNamespaceMigration:
     def __init__(self, namespace):
         self.namespace = namespace
 
-    def get_method_name_full(self, setting, version):
-        return '{}_{}'.format(
-            self.get_method_name(setting=setting),
-            version
-        )
-
-    def migrate(self, setting):
-        if self.namespace.get_config_version() != self.namespace.version:
+    def do_migrate(self, setting):
+        if self.namespace.get_configuration_file_version() != self.namespace.version:
             setting_method_name = SettingNamespaceMigration.get_method_name(
                 setting=setting
             )
 
-            # Get methods for this setting
+            # Get methods for this setting.
             pattern = r'{}_\d{{4}}'.format(setting_method_name)
             setting_methods = re.findall(
                 pattern=pattern, string='\n'.join(
@@ -144,26 +310,26 @@ class SettingNamespaceMigration:
                 )
             )
 
-            # Get order of execution of setting methods
-            versions = [
+            # Get order of execution of setting methods.
+            version_list = [
                 method.replace(
                     '{}_'.format(setting_method_name), ''
                 ) for method in setting_methods
             ]
             try:
-                start = versions.index(
-                    self.namespace.get_config_version()
+                start = version_list.index(
+                    self.namespace.get_configuration_file_version()
                 )
             except ValueError:
                 start = 0
 
             try:
-                end = versions.index(self.namespace.version)
+                end = version_list.index(self.namespace.version)
             except ValueError:
                 end = None
 
-            value = setting.raw_value
-            for version in versions[start:end]:
+            value = setting.value_raw
+            for version in version_list[start:end]:
                 method = getattr(
                     self, self.get_method_name_full(
                         setting=setting, version=version
@@ -172,14 +338,15 @@ class SettingNamespaceMigration:
                 if method:
                     value = method(value=value)
 
-            setting.raw_value = value
+            setting.value_raw = value
+
+    def get_method_name_full(self, setting, version):
+        return '{}_{}'.format(
+            self.get_method_name(setting=setting), version
+        )
 
 
 class Setting:
-    _registry = {}
-    _cache_hash = None
-    _config_file_cache = None
-
     @staticmethod
     def deserialize_value(value):
         return yaml_load(stream=value)
@@ -187,7 +354,7 @@ class Setting:
     @staticmethod
     def express_promises(value):
         """
-        Walk all the elements of a value and force promises to text
+        Walk all the elements of a value and force promises to text.
         """
         if isinstance(value, (list, tuple)):
             return [
@@ -204,149 +371,51 @@ class Setting:
             allow_unicode=True, data=Setting.express_promises(value=value),
             default_flow_style=False
         )
-        # safe_dump returns bytestrings
-        # Disregard the last 3 dots that mark the end of the YAML document
+        # safe_dump returns bytestrings.
+        # Disregard the last 3 dots that mark the end of the YAML document.
         if force_str(s=result).endswith('...\n'):
             result = result[:-4]
 
         return result
 
-    @classmethod
-    def check_changed(cls):
-        if not cls._cache_hash:
-            cls._cache_hash = cls.get_hash()
-
-        return cls._cache_hash != cls.get_hash()
-
-    @classmethod
-    def dump_data(cls, filter_term=None, namespace=None):
-        dictionary = {}
-
-        if not namespace:
-            namespace_dictionary = {}
-            for _namespace in SettingNamespace.get_all():
-                namespace_dictionary[_namespace.name] = {
-                    'version': _namespace.version
-                }
-
-            dictionary[SMART_SETTINGS_NAMESPACES_NAME] = namespace_dictionary
-
-        for setting in cls.get_all():
-            # If a namespace is specified, filter the list by that namespace
-            # otherwise return always True to include all (or not None == True)
-            if (namespace and setting.namespace.name == namespace) or not namespace:
-                if (filter_term and filter_term.lower() in setting.global_name.lower()) or not filter_term:
-                    dictionary[setting.global_name] = Setting.express_promises(value=setting.value)
-
-        return yaml_dump(
-            data=dictionary, default_flow_style=False
-        )
-
-    @classmethod
-    def get(cls, global_name):
-        return cls._registry[global_name]
-
-    @classmethod
-    def get_all(cls):
-        return sorted(
-            cls._registry.values(), key=lambda x: x.global_name
-        )
-
-    @classmethod
-    def get_config_file_content(cls):
-        if settings.CONFIGURATION_FILE_IGNORE:
-            return {}
-        else:
-            # Cache content of config file to speed up initial boot up
-            if not cls._config_file_cache:
-                cls._config_file_cache = read_configuration_file(
-                    filepath=settings.CONFIGURATION_FILEPATH
-                ) or {}
-            return cls._config_file_cache
-
-    @classmethod
-    def get_hash(cls):
-        return force_str(
-            s=hashlib.sha256(
-                string=force_bytes(
-                    s=cls.dump_data()
-                )
-            ).hexdigest()
-        )
-
-    @classmethod
-    def save_configuration(cls, path=None):
-        if not settings.COMMON_DISABLE_LOCAL_STORAGE:
-            if not path:
-                path = settings.CONFIGURATION_FILEPATH
-
-            try:
-                with open(file=path, mode='w') as file_object:
-                    file_object.write(
-                        cls.dump_data()
-                    )
-            except IOError as exception:
-                if exception.errno == errno.ENOENT:
-                    logger.warning(
-                        'The path to the configuration file `%s` doesn\'t '
-                        'exist. It is not possible to save the backup file.',
-                        path
-                    )
-        else:
-            logger.info(
-                'Local storage is disabled, skip saving configuration.'
-            )
-
-    @classmethod
-    def save_last_known_good(cls):
-        # Don't write over the last good configuration if we are trying
-        # to restore the last good configuration
-        if COMMAND_NAME_SETTINGS_REVERT not in sys.argv and not settings.CONFIGURATION_FILE_IGNORE:
-            cls.save_configuration(
-                path=settings.CONFIGURATION_LAST_GOOD_FILEPATH
-            )
-
-    @classmethod
-    def revert_configuration(cls):
-        if not settings.COMMON_DISABLE_LOCAL_STORAGE:
-            try:
-                copyfile(
-                    src=settings.CONFIGURATION_LAST_GOOD_FILEPATH,
-                    dst=settings.CONFIGURATION_FILEPATH
-                )
-            except IOError as exception:
-                if exception.errno == errno.ENOENT:
-                    raise BaseSettingsException(
-                        'There is no last valid version to restore.'
-                    ) from exception
-                else:
-                    raise
-        else:
-            logger.info(
-                'Local storage is disabled, cannot revert not existing '
-                'configuration.'
-            )
-
     def __init__(
         self, namespace, global_name, default, choices=None, help_text=None,
         is_path=False, post_edit_function=None, validation_function=None
     ):
+        self._has_value_new = False
         self.choices = choices
-        self.global_name = global_name
         self.default = default
         self.help_text = help_text
+        self.environment_variable = False
+        self.global_name = global_name
         self.loaded = False
         self.namespace = namespace
-        self.environment_variable = False
         self.post_edit_function = post_edit_function
         self.validation_function = validation_function
-        namespace._settings.append(self)
-        self.__class__._registry[global_name] = self
+        self.value_raw_new = None
 
     def __str__(self):
-        return force_str(s=self.global_name)
+        return str(self.global_name)
 
-    def cache_value(self, global_name=None, default_override=None):
+    def do_cache_invalidate(self):
+        self.loaded = False
+
+    def do_migrate(self):
+        self.namespace.do_migrate(setting=self)
+
+    def do_post_edit_function_call(self):
+        if self.post_edit_function:
+            try:
+                self.post_edit_function(setting=self)
+            except Exception as exception:
+                raise SettingsException(
+                    'Unable to execute setting post update function '
+                    'for setting "{}". Verify the value of the setting or '
+                    'rollback to the previous known working configuration '
+                    'file.'.format(self.global_name)
+                ) from exception
+
+    def do_value_cache(self, global_name=None, default_override=None):
         global_name = global_name or self.global_name
 
         environment_value = os.environ.get(
@@ -355,7 +424,7 @@ class Setting:
         if environment_value:
             self.environment_variable = True
             try:
-                self.raw_value = yaml_load(stream=environment_value)
+                self.value_raw = yaml_load(stream=environment_value)
             except yaml.YAMLError as exception:
                 raise type(exception)(
                     'Error interpreting environment variable: {} with '
@@ -365,58 +434,100 @@ class Setting:
                 )
         else:
             try:
-                # Try the config file
-                self.raw_value = self.get_config_file_content()[global_name]
+                # Try the config file.
+                configuration_file_content = self.namespace.cluster.get_configuration_file_content()
+                self.value_raw = configuration_file_content[global_name]
             except KeyError:
                 try:
-                    # Try the Django settings variable
-                    self.raw_value = getattr(
+                    # Try the Django settings variable.
+                    self.value_raw = getattr(
                         settings, global_name
                     )
                 except AttributeError:
-                    # Finally set to the default value
+                    # Finally set to the default value.
                     if default_override:
-                        self.raw_value = default_override
+                        self.value_raw = default_override
                     else:
-                        self.raw_value = self.default
+                        self.value_raw = self.default
             else:
-                # Found in the config file, try to migrate the value
-                self.migrate()
+                # Found in the config file, try to migrate the value.
+                self.do_migrate()
 
         if self.validation_function:
-            self.raw_value = self.validation_function(
-                raw_value=self.raw_value, setting=self
+            self.value_raw = self.validation_function(
+                raw_value=self.value_raw, setting=self
             )
 
-        self.yaml = Setting.serialize_value(value=self.raw_value)
+        self.value_yaml = Setting.serialize_value(value=self.value_raw)
         self.loaded = True
 
-    def get_choices(self):
+    def get_value_choices(self):
         return self.choices
 
-    get_choices.short_description = _(message='Choices')
-    get_choices.help_text = _(
+    get_value_choices.short_description = _(message='Choices')
+    get_value_choices.help_text = _(
         'Possible values allowed for this setting.'
     )
+
+    def do_value_raw_set(self, raw_value):
+        self.value = Setting.serialize_value(value=raw_value)
+        self.loaded = True
+
+    def do_value_raw_validate(self, raw_value):
+        if self.validation_function:
+            return self.validation_function(
+                raw_value=raw_value, setting=self
+            )
+
+    def do_value_revert(self):
+        self.do_value_set(value=self.value)
+
+    def do_value_set(self, value):
+        raw_value = Setting.deserialize_value(value=value)
+
+        self.value_raw_new = raw_value
+
+        if self.value_raw_new != self.value:
+            self._has_value_new = True
+        else:
+            self._has_value_new = False
 
     def get_default(self):
         return Setting.serialize_value(value=self.default)
 
     get_default.short_description = _(message='Default')
 
-    def invalidate_cache(self):
-        self.loaded = False
+    def get_has_value_new(self):
+        return self._has_value_new
 
-    def is_overridden(self):
-        return self.environment_variable
-
-    is_overridden.short_description = _(message='Overridden')
-    is_overridden.help_text = _(
-        'Is this settings being overridden by an environment variable?'
+    get_has_value_new.short_description = _(message='Modified')
+    get_has_value_new.help_text = _(
+        'The value of this setting being modified since the last restart.'
     )
 
-    def migrate(self):
-        self.namespace.migrate(setting=self)
+    def get_is_overridden(self):
+        return self.environment_variable
+
+    get_is_overridden.short_description = _(message='Overridden')
+    get_is_overridden.help_text = _(
+        'The value of the setting is being overridden by an environment '
+        'variable.'
+    )
+
+    def get_value_current(self):
+        has_value_new = self.get_has_value_new()
+
+        if has_value_new:
+            return Setting.serialize_value(value=self.value_raw_new)
+        else:
+            return self.serialized_value
+
+    @property
+    def pk(self):
+        """
+        Compatilibty property for views that expect model instances.
+        """
+        return self.global_name
 
     @property
     def serialized_value(self):
@@ -425,31 +536,19 @@ class Setting:
         Used for UI display.
         """
         if not self.loaded:
-            self.cache_value()
+            self.do_value_cache()
 
-        return self.yaml
-
-    def set(self, value):
-        self.value = Setting.serialize_value(value=value)
-        self.loaded = True
-
-    def validate(self, raw_value):
-        if self.validation_function:
-            return self.validation_function(
-                raw_value=raw_value, setting=self
-            )
+        return self.value_yaml
 
     @property
     def value(self):
         if not self.loaded:
-            self.cache_value()
+            self.do_value_cache()
 
-        return self.raw_value
+        return self.value_raw
 
     @value.setter
     def value(self, value):
-        # value is in YAML format
-        self.yaml = value
-        self.raw_value = Setting.deserialize_value(value)
-        if self.post_edit_function:
-            self.post_edit_function(setting=self)
+        # value is in YAML format.
+        self.value_yaml = value
+        self.value_raw = Setting.deserialize_value(value=self.value_yaml)

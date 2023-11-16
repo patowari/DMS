@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 
 from .literals import (
     DEFAULT_DOCUMENTS_DISPLAY_HEIGHT, DEFAULT_DOCUMENTS_DISPLAY_WIDTH,
@@ -29,20 +29,20 @@ from .setting_callbacks import (
 )
 from .setting_migrations import DocumentsSettingMigration
 
-namespace = SettingNamespace(
+setting_namespace = setting_cluster.do_namespace_add(
     label=_(message='Documents'), migration_class=DocumentsSettingMigration,
     name='documents', version='0004'
 )
 
-setting_display_height = namespace.add_setting(
+setting_display_height = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_DISPLAY_HEIGHT,
     global_name='DOCUMENTS_DISPLAY_HEIGHT'
 )
-setting_display_width = namespace.add_setting(
+setting_display_width = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_DISPLAY_WIDTH,
     global_name='DOCUMENTS_DISPLAY_WIDTH'
 )
-setting_document_file_page_image_cache_maximum_size = namespace.add_setting(
+setting_document_file_page_image_cache_maximum_size = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_FILE_PAGE_IMAGE_CACHE_MAXIMUM_SIZE,
     global_name='DOCUMENTS_FILE_PAGE_IMAGE_CACHE_MAXIMUM_SIZE',
     help_text=_(
@@ -51,40 +51,40 @@ setting_document_file_page_image_cache_maximum_size = namespace.add_setting(
         'the size in bytes.'
     ), post_edit_function=callback_update_document_file_page_image_cache_size
 )
-setting_document_file_storage_backend = namespace.add_setting(
+setting_document_file_storage_backend = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_FILE_STORAGE_BACKEND,
     global_name='DOCUMENTS_FILE_STORAGE_BACKEND', help_text=_(
         'Path to the Storage subclass to use when storing document '
         'files.'
     )
 )
-setting_document_file_storage_backend_arguments = namespace.add_setting(
+setting_document_file_storage_backend_arguments = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_FILE_STORAGE_BACKEND_ARGUMENTS,
     global_name='DOCUMENTS_FILE_STORAGE_BACKEND_ARGUMENTS', help_text=_(
         'Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND.'
     )
 )
-setting_document_file_page_image_cache_storage_backend = namespace.add_setting(
+setting_document_file_page_image_cache_storage_backend = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND,
     global_name='DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND', help_text=_(
         'Path to the Storage subclass to use when storing the cached '
         'document file page image files.'
     )
 )
-setting_document_file_page_image_cache_storage_backend_arguments = namespace.add_setting(
+setting_document_file_page_image_cache_storage_backend_arguments = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS,
     global_name='DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS',
     help_text=_(
         'Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND.'
     ),
 )
-setting_favorite_count = namespace.add_setting(
+setting_favorite_count = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_FAVORITE_COUNT,
     global_name='DOCUMENTS_FAVORITE_COUNT', help_text=_(
         'Maximum number of favorite documents to remember per user.'
     )
 )
-setting_hash_block_size = namespace.add_setting(
+setting_hash_block_size = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_HASH_BLOCK_SIZE,
     global_name='DOCUMENTS_HASH_BLOCK_SIZE', help_text=_(
         'Size of blocks to use when calculating the document file\'s '
@@ -92,15 +92,15 @@ setting_hash_block_size = namespace.add_setting(
         'file will be loaded into memory.'
     )
 )
-setting_language = namespace.add_setting(
+setting_language = setting_namespace.do_setting_add(
     default=DEFAULT_LANGUAGE, global_name='DOCUMENTS_LANGUAGE',
     help_text=_(message='Default documents language (in ISO639-3 format).')
 )
-setting_language_codes = namespace.add_setting(
+setting_language_codes = setting_namespace.do_setting_add(
     default=DEFAULT_LANGUAGE_CODES, global_name='DOCUMENTS_LANGUAGE_CODES',
     help_text=_(message='List of supported document languages. In ISO639-3 format.')
 )
-setting_document_version_page_image_cache_maximum_size = namespace.add_setting(
+setting_document_version_page_image_cache_maximum_size = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_MAXIMUM_SIZE,
     global_name='DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_MAXIMUM_SIZE',
     help_text=_(
@@ -109,7 +109,7 @@ setting_document_version_page_image_cache_maximum_size = namespace.add_setting(
         'the size in bytes.'
     ), post_edit_function=callback_update_document_version_page_image_cache_size
 )
-setting_document_version_page_image_cache_storage_backend = namespace.add_setting(
+setting_document_version_page_image_cache_storage_backend = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND,
     global_name='DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND',
     help_text=_(
@@ -117,82 +117,82 @@ setting_document_version_page_image_cache_storage_backend = namespace.add_settin
         'document version page image versions.'
     )
 )
-setting_document_version_page_image_cache_storage_backend_arguments = namespace.add_setting(
+setting_document_version_page_image_cache_storage_backend_arguments = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS,
     global_name='DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS',
     help_text=_(
         'Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND.'
     ),
 )
-setting_preview_height = namespace.add_setting(
+setting_preview_height = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_PREVIEW_HEIGHT,
     global_name='DOCUMENTS_PREVIEW_HEIGHT'
 )
-setting_preview_width = namespace.add_setting(
+setting_preview_width = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_PREVIEW_WIDTH,
     global_name='DOCUMENTS_PREVIEW_WIDTH'
 )
-setting_print_height = namespace.add_setting(
+setting_print_height = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_PRINT_HEIGHT,
     global_name='DOCUMENTS_PRINT_HEIGHT'
 )
-setting_print_width = namespace.add_setting(
+setting_print_width = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_PRINT_WIDTH,
     global_name='DOCUMENTS_PRINT_WIDTH'
 )
-setting_recently_accessed_document_count = namespace.add_setting(
+setting_recently_accessed_document_count = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_RECENTLY_ACCESSED_COUNT,
     global_name='DOCUMENTS_RECENTLY_ACCESSED_COUNT', help_text=_(
         'Maximum number of recently accessed documents (created, edited, '
         'viewed) to remember per user.'
     )
 )
-setting_recently_created_document_count = namespace.add_setting(
+setting_recently_created_document_count = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_RECENTLY_CREATED_COUNT,
     global_name='DOCUMENTS_RECENTLY_CREATED_COUNT', help_text=_(
         'Maximum number of recently created documents to show.'
     )
 )
-setting_rotation_step = namespace.add_setting(
+setting_rotation_step = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_ROTATION_STEP,
     global_name='DOCUMENTS_ROTATION_STEP', help_text=_(
         'Amount in degrees to rotate a document page per user interaction.'
     )
 )
-setting_thumbnail_height = namespace.add_setting(
+setting_thumbnail_height = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_THUMBNAIL_HEIGHT,
     global_name='DOCUMENTS_THUMBNAIL_HEIGHT', help_text=_(
         'Height in pixels of the document thumbnail image.'
     )
 )
-setting_thumbnail_width = namespace.add_setting(
+setting_thumbnail_width = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_THUMBNAIL_WIDTH,
     global_name='DOCUMENTS_THUMBNAIL_WIDTH', help_text=(
         'Width in pixels of the document thumbnail image.'
     )
 )
-setting_thumbnail_list_width = namespace.add_setting(
+setting_thumbnail_list_width = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_LIST_THUMBNAIL_WIDTH,
     global_name='DOCUMENTS_LIST_THUMBNAIL_WIDTH', help_text=(
         'Width in pixels of the document thumbnail image when shown in list '
         'view mode.'
     )
 )
-setting_zoom_max_level = namespace.add_setting(
+setting_zoom_max_level = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_ZOOM_MAX_LEVEL,
     global_name='DOCUMENTS_ZOOM_MAX_LEVEL', help_text=_(
         'Maximum amount in percent (%) to allow user to zoom in a document '
         'page interactively.'
     )
 )
-setting_zoom_min_level = namespace.add_setting(
+setting_zoom_min_level = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_ZOOM_MIN_LEVEL,
     global_name='DOCUMENTS_ZOOM_MIN_LEVEL', help_text=_(
         'Minimum amount in percent (%) to allow user to zoom out a document '
         'page interactively.'
     )
 )
-setting_zoom_percent_step = namespace.add_setting(
+setting_zoom_percent_step = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_ZOOM_PERCENT_STEP,
     global_name='DOCUMENTS_ZOOM_PERCENT_STEP', help_text=_(
         'Amount in percent zoom in or out a document page per user '

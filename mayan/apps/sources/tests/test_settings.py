@@ -1,7 +1,6 @@
 import importlib
 import logging
 
-from mayan.apps.smart_settings.tests.mixins import SmartSettingTestMixin
 from mayan.apps.sources import storages
 from mayan.apps.storage.classes import DefinedStorage
 from mayan.apps.testing.tests.base import BaseTestCase
@@ -10,7 +9,7 @@ from ..literals import STORAGE_NAME_SOURCE_CACHE_FOLDER
 from ..settings import setting_source_cache_storage_backend_arguments
 
 
-class SourcesStorageSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
+class SourcesStorageSettingsTestCase(BaseTestCase):
     def tearDown(self):
         super().tearDown()
         importlib.reload(storages)

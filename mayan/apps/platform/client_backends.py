@@ -66,7 +66,7 @@ class ClientBackendSentry(ClientBackend):
         # https://docs.sentry.io/platforms/python/configuration/options/
         options = {}
 
-        # Common Options
+        # Common Options.
         options['dsn'] = self.kwargs['dsn']
 
         options['debug'] = any_to_bool(
@@ -99,7 +99,7 @@ class ClientBackendSentry(ClientBackend):
             value=self.kwargs.get('with_locals', True)
         )
 
-        # Transport Options
+        # Transport Options.
         options['transport'] = self.kwargs.get('transport')
 
         options['http_proxy'] = self.kwargs.get('http_proxy')
@@ -110,7 +110,7 @@ class ClientBackendSentry(ClientBackend):
             self.kwargs.get('shutdown_timeout', 2)
         )
 
-        # Tracing Options
+        # Tracing Options.
         options['traces_sample_rate'] = float(
             self.kwargs.get('traces_sample_rate', 0.005)
         )

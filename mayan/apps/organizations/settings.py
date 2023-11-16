@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 
 from .literals import (
     DEFAULT_ORGANIZATIONS_INSTALLATION_URL,
@@ -8,11 +8,11 @@ from .literals import (
 )
 from .setting_validators import validation_fuction_check_path_format
 
-namespace = SettingNamespace(
+setting_namespace = setting_cluster.do_namespace_add(
     label=_(message='Organizations'), name='organizations'
 )
 
-setting_organization_installation_url = namespace.add_setting(
+setting_organization_installation_url = setting_namespace.do_setting_add(
     default=DEFAULT_ORGANIZATIONS_INSTALLATION_URL,
     global_name='ORGANIZATIONS_INSTALLATION_URL',
     help_text=_(
@@ -22,7 +22,7 @@ setting_organization_installation_url = namespace.add_setting(
         'Example: https://www.example.com:8080'
     )
 )
-setting_organization_url_base_path = namespace.add_setting(
+setting_organization_url_base_path = setting_namespace.do_setting_add(
     default=DEFAULT_ORGANIZATIONS_URL_BASE_PATH,
     global_name='ORGANIZATIONS_URL_BASE_PATH',
     help_text=_(

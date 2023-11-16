@@ -1,7 +1,6 @@
 import importlib
 import logging
 
-from mayan.apps.smart_settings.tests.mixins import SmartSettingTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from mayan.apps.storage import storages
@@ -10,7 +9,7 @@ from ..literals import STORAGE_NAME_SHARED_UPLOADED_FILE
 from ..settings import setting_shared_storage_arguments
 
 
-class CommonStorageSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
+class CommonStorageSettingsTestCase(BaseTestCase):
     def tearDown(self):
         super().tearDown()
         importlib.reload(storages)
@@ -26,8 +25,14 @@ class CommonStorageSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
 
         with self.assertRaises(expected_exception=TypeError) as assertion:
             importlib.reload(storages)
-            DefinedStorage.get(
+            defined_storage = DefinedStorage.get(
                 name=STORAGE_NAME_SHARED_UPLOADED_FILE
-            ).get_storage_instance()
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
-        self.assertTrue('shared uploaded' in str(assertion.exception))
+            )
+            defined_storage.get_storage_instance()
+
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
+        self.assertTrue(
+            'shared uploaded' in str(assertion.exception)
+        )

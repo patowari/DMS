@@ -87,14 +87,9 @@ def task_event_queryset_clear(
     else:
         target = user
 
-    AccessControlList = apps.get_model(
-        app_label='acls', model_name='AccessControlList'
-    )
-
     if user:
         queryset = AccessControlList.objects.restrict_queryset(
-            queryset=queryset,
-            permission=permission_events_clear,
+            queryset=queryset, permission=permission_events_clear,
             user=user
         )
 
