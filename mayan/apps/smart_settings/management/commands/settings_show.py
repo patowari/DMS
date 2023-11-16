@@ -1,6 +1,6 @@
 from django.core import management
 
-from ...classes import Setting
+from ...settings import setting_cluster
 
 
 class Command(management.BaseCommand):
@@ -21,7 +21,7 @@ class Command(management.BaseCommand):
 
     def handle(self, *args, **options):
         self.stdout.write(
-            msg=Setting.dump_data(
+            msg=setting_cluster.get_data_dump(
                 namespace=options.get('namespace'),
                 filter_term=options.get('filter_term')
             )

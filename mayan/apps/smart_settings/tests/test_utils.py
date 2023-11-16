@@ -6,16 +6,10 @@ from .literals import (
     TEST_ENVIRONMENT_VALUE, TEST_GLOBAL_NAME, TEST_GLOBAL_VALUE,
     TEST_SETTING_VALUE, TEST_SETTING_VALUE_OVERRIDE
 )
-from .mixins import (
-    BoostrapSettingTestMixin, SmartSettingTestMixin,
-    SmartSettingNamespaceTestMixin
-)
+from .mixins import BoostrapSettingTestMixin
 
 
-class BoostrapSettingTestCase(
-    BoostrapSettingTestMixin, SmartSettingTestMixin,
-    SmartSettingNamespaceTestMixin, BaseTestCase
-):
+class BoostrapSettingTestCase(BoostrapSettingTestMixin, BaseTestCase):
     def setUp(self):
         super().setUp()
         self._register_test_boostrap_setting()
@@ -27,10 +21,10 @@ class BoostrapSettingTestCase(
             value=TEST_SETTING_VALUE_OVERRIDE
         )
 
-        self.test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME
-        self.test_config_value = TEST_SETTING_VALUE
-        self._create_test_config_file(
-            callback=self.test_setting_namespace_singleton.update_globals
+        self._test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME
+        self._test_configuration_value = TEST_SETTING_VALUE
+        self._create_test_configuration_file(
+            callback=self._test_setting_namespace_singleton.update_globals
         )
 
         self.assertEqual(
@@ -41,10 +35,10 @@ class BoostrapSettingTestCase(
     def test_bootstrap_config_overrides_settings(self):
         self.test_globals[TEST_BOOTSTAP_SETTING_NAME] = TEST_SETTING_VALUE
 
-        self.test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME
-        self.test_config_value = TEST_SETTING_VALUE_OVERRIDE
-        self._create_test_config_file(
-            callback=self.test_setting_namespace_singleton.update_globals
+        self._test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME
+        self._test_configuration_value = TEST_SETTING_VALUE_OVERRIDE
+        self._create_test_configuration_file(
+            callback=self._test_setting_namespace_singleton.update_globals
         )
 
         self.assertEqual(
@@ -57,7 +51,7 @@ class BoostrapSettingTestCase(
             TEST_BOOTSTAP_SETTING_NAME
         ] = TEST_SETTING_VALUE_OVERRIDE
 
-        self.test_setting_namespace_singleton.update_globals()
+        self._test_setting_namespace_singleton.update_globals()
 
         self.assertEqual(
             self.test_globals[TEST_BOOTSTAP_SETTING_NAME],
@@ -65,7 +59,7 @@ class BoostrapSettingTestCase(
         )
 
     def test_bootstrap_default(self):
-        self.test_setting_namespace_singleton.update_globals()
+        self._test_setting_namespace_singleton.update_globals()
 
         self.assertEqual(
             self.test_globals[TEST_BOOTSTAP_SETTING_NAME], 'value default'
@@ -73,8 +67,7 @@ class BoostrapSettingTestCase(
 
 
 class BoostrapSettingTemplateTestCase(
-    BoostrapSettingTestMixin, SmartSettingTestMixin,
-    SmartSettingNamespaceTestMixin, BaseTestCase
+    BoostrapSettingTestMixin, BaseTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -95,10 +88,10 @@ class BoostrapSettingTemplateTestCase(
             )
         )
 
-        self.test_setting_global_name = TEST_CONFIG_FILE_NAME
-        self.test_config_value = TEST_CONFIG_FILE_VALUE
-        self._create_test_config_file(
-            callback=self.test_setting_namespace_singleton.update_globals
+        self._test_setting_global_name = TEST_CONFIG_FILE_NAME
+        self._test_configuration_value = TEST_CONFIG_FILE_VALUE
+        self._create_test_configuration_file(
+            callback=self._test_setting_namespace_singleton.update_globals
         )
 
         self.assertEqual(
@@ -124,10 +117,10 @@ class BoostrapSettingTemplateTestCase(
             value=TEST_ENVIRONMENT_VALUE
         )
 
-        self.test_setting_global_name = TEST_CONFIG_FILE_NAME
-        self.test_config_value = TEST_CONFIG_FILE_VALUE
-        self._create_test_config_file(
-            callback=self.test_setting_namespace_singleton.update_globals
+        self._test_setting_global_name = TEST_CONFIG_FILE_NAME
+        self._test_configuration_value = TEST_CONFIG_FILE_VALUE
+        self._create_test_configuration_file(
+            callback=self._test_setting_namespace_singleton.update_globals
         )
 
         self.assertEqual(
@@ -151,10 +144,10 @@ class BoostrapSettingTemplateTestCase(
             value=TEST_SETTING_VALUE_OVERRIDE
         )
 
-        self.test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME
-        self.test_config_value = TEST_SETTING_VALUE
-        self._create_test_config_file(
-            callback=self.test_setting_namespace_singleton.update_globals
+        self._test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME
+        self._test_configuration_value = TEST_SETTING_VALUE
+        self._create_test_configuration_file(
+            callback=self._test_setting_namespace_singleton.update_globals
         )
 
         self.assertEqual(

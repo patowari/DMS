@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 
 from .literals import (
     DEFAULT_SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_MAXIMUM_SIZE,
@@ -9,12 +9,12 @@ from .literals import (
 )
 from .setting_callbacks import callback_update_signature_capture_cache_size
 
-namespace = SettingNamespace(
+setting_namespace = setting_cluster.do_namespace_add(
     label=_(message='Signature captures'), name='signature_captures',
 )
 
 
-setting_signature_capture_cache_maximum_size = namespace.add_setting(
+setting_signature_capture_cache_maximum_size = setting_namespace.do_setting_add(
     default=DEFAULT_SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_MAXIMUM_SIZE,
     global_name='SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_MAXIMUM_SIZE',
     help_text=_(
@@ -23,7 +23,7 @@ setting_signature_capture_cache_maximum_size = namespace.add_setting(
         'Specify the size in bytes.'
     ), post_edit_function=callback_update_signature_capture_cache_size
 )
-setting_signature_capture_cache_storage_backend = namespace.add_setting(
+setting_signature_capture_cache_storage_backend = setting_namespace.do_setting_add(
     default=DEFAULT_SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND,
     global_name='SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND',
     help_text=_(
@@ -31,7 +31,7 @@ setting_signature_capture_cache_storage_backend = namespace.add_setting(
         'signature capture files.'
     )
 )
-setting_signature_capture_cache_storage_backend_arguments = namespace.add_setting(
+setting_signature_capture_cache_storage_backend_arguments = setting_namespace.do_setting_add(
     default=DEFAULT_SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND_ARGUMENTS,
     global_name='SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND_ARGUMENTS',
     help_text=_(

@@ -1029,10 +1029,17 @@ class SourceColumn(TemplateObjectMixin):
 
     def resolve(self, context):
         if self.attribute:
-            result = resolve_attribute(
-                attribute=self.attribute, kwargs=self.kwargs,
-                obj=context['object']
-            )
+            try:
+                result = resolve_attribute(
+                    attribute=self.attribute, kwargs=self.kwargs,
+                    obj=context['object']
+                )
+            except Exception as exception:
+                raise AttributeError(
+                    'Unable to resolve SourceColumn attribute `{}` for object `{}`.'.format(
+                        self.attribute, context['object']
+                    )
+                ) from exception
         elif self.func:
             result = self.func(context=context, **self.kwargs)
         else:

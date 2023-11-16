@@ -9,7 +9,7 @@ from django.urls import reverse
 from mayan.apps.authentication.classes import AuthenticationBackend
 from mayan.apps.authentication.events import event_user_logged_in
 from mayan.apps.authentication.tests.mixins import LoginViewTestMixin
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.events import event_user_edited
 from mayan.apps.views.http import URL
@@ -37,7 +37,7 @@ class LoginOTPTestCase(
 
     def setUp(self):
         super().setUp()
-        SettingNamespace.invalidate_cache_all()
+        setting_cluster.do_cache_invalidate()
 
     @override_settings(AUTHENTICATION_BACKEND=PATH_AUTHENTICATION_BACKEND_EMAIL_OTP)
     def test_login_view_with_email_no_otp(self):

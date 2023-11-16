@@ -1,5 +1,4 @@
 from mayan.apps.documents import storages
-from mayan.apps.smart_settings.tests.mixins import SmartSettingTestMixin
 from mayan.apps.storage.tests.mixins import StorageSettingTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
@@ -17,7 +16,7 @@ from ..settings import (
 )
 
 
-class DocumentSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
+class DocumentSettingsTestCase(BaseTestCase):
     def test_documents_language_codes_setting_double_quotes(self):
         self._set_environment_variable(
             name='MAYAN_{}'.format(setting_language_codes.global_name),
@@ -42,7 +41,7 @@ class DocumentSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
 
 
 class DocumentFileStorageSettingsTestCase(
-    SmartSettingTestMixin, StorageSettingTestMixin, BaseTestCase
+    StorageSettingTestMixin, BaseTestCase
 ):
     def test_setting_document_file_storage_backend_arguments_invalid_value(self):
         assertion = self._test_storage_setting_with_invalid_value(
@@ -78,7 +77,7 @@ class DocumentFileStorageSettingsTestCase(
 
 
 class DocumentVersionStorageSettingsTestCase(
-    SmartSettingTestMixin, StorageSettingTestMixin, BaseTestCase
+    StorageSettingTestMixin, BaseTestCase
 ):
     def test_setting_document_version_page_image_cache_storage_backend_arguments_invalid_value(self):
         assertion = self._test_storage_setting_with_invalid_value(

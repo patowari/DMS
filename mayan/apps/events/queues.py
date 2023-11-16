@@ -18,9 +18,11 @@ queue_events_fast.add_task_type(
 
 queue_events_slow.add_task_type(
     dotted_path='mayan.apps.events.tasks.task_event_queryset_clear',
-    label=_(message='Clear event querysets'), name='task_event_queryset_clear'
+    label=_(message='Clear event querysets'),
+    name='task_event_queryset_clear'
 )
 queue_events_slow.add_task_type(
     dotted_path='mayan.apps.events.tasks.task_event_queryset_export',
-    label=_(message='Export event querysets'), name='task_event_queryset_export'
+    label=_(message='Export event querysets'),
+    name='task_event_queryset_export'
 )

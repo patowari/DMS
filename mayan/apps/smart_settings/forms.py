@@ -12,11 +12,15 @@ class SettingForm(forms.Form):
         super().__init__(*args, **kwargs)
         self.setting = self.initial['setting']
 
-        if self.setting.choices:
+        choices = self.setting.get_value_choices()
+
+        if choices:
             self.fields['value'] = forms.ChoiceField(
                 choices=list(
-                    zip(self.setting.choices, self.setting.choices)
-                ), required=True
+                    zip(choices, choices)
+                ), required=True, widget=forms.widgets.Select(
+                    attrs={'class': 'select2'}
+                )
             )
         else:
             self.fields['value'] = forms.CharField(
@@ -27,7 +31,7 @@ class SettingForm(forms.Form):
         self.fields['value'].help_text = self.setting.help_text or _(
             'Enter the new setting value.'
         )
-        self.fields['value'].initial = self.setting.serialized_value
+        self.fields['value'].initial = self.setting.get_value_current()
 
     def clean(self):
         try:
@@ -41,6 +45,6 @@ class SettingForm(forms.Form):
                 ) % self.cleaned_data['value']
             )
         else:
-            self.setting.validate(
+            self.setting.do_value_raw_validate(
                 raw_value=self.cleaned_data['value']
             )

@@ -249,7 +249,7 @@ class EventType:
 
     @classmethod
     def all(cls):
-        # Return sorted permisions by namespace.name.
+        # Return sorted permissions by namespace.name.
         return EventType.sort(
             event_type_list=cls._registry.values()
         )

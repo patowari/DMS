@@ -19,11 +19,14 @@ class Cache(CacheBusinessLogicMixin, ValueChangeModelMixin, models.Model):
     defined_storage_name = models.CharField(
         db_index=True, help_text=_(
             'Internal name of the defined storage for this cache.'
-        ), max_length=96, unique=True, verbose_name=_(message='Defined storage name')
+        ), max_length=96, unique=True, verbose_name=_(
+            message='Defined storage name'
+        )
     )
     maximum_size = models.PositiveBigIntegerField(
-        db_index=True, help_text=_(message='Maximum size of the cache in bytes.'),
-        validators=[
+        db_index=True, help_text=_(
+            message='Maximum size of the cache in bytes.'
+        ), validators=[
             validators.MinValueValidator(limit_value=1)
         ], verbose_name=_(message='Maximum size')
     )

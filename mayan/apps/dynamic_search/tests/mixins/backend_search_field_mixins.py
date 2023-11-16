@@ -197,7 +197,7 @@ class BackendLimitTestCase:
         self.assertTrue(self._test_object_grandchildren[0].id in id_list)
         self.assertTrue(self._test_object_grandchildren[1].id in id_list)
 
-        setting_results_limit.set(value=1)
+        setting_results_limit.do_value_raw_set(raw_value=1)
 
         id_list = self._do_backend_search(
             field_name='label', query_type=QueryTypePartial,

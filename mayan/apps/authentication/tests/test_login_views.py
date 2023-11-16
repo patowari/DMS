@@ -6,7 +6,7 @@ from django.conf import settings
 from django.test import override_settings
 from django.urls import reverse
 
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.events import event_user_edited
 
@@ -36,7 +36,7 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
 
     def setUp(self):
         super().setUp()
-        SettingNamespace.invalidate_cache_all()
+        setting_cluster.do_cache_invalidate()
 
     def test_non_authenticated_request(self):
         self._clear_events()

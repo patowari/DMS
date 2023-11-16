@@ -3,7 +3,7 @@ import os
 from django.utils.module_loading import import_string
 
 from mayan.apps.common.tests.mixins import ManagementCommandTestMixin
-from mayan.apps.smart_settings.classes import SettingNamespace
+from mayan.apps.smart_settings.settings import setting_cluster
 
 from ..exceptions import LockError
 from ..literals import COMMAND_NAME_LOCK_MANAGER_PURGE_LOCKS
@@ -23,7 +23,7 @@ class LockBackendManagementCommandTestCaseMixin(ManagementCommandTestMixin):
             self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
         os.environ['MAYAN_LOCK_MANAGER_BACKEND'] = self._test_locking_backend_string
-        SettingNamespace.invalidate_cache_all()
+        setting_cluster.do_cache_invalidate()
         self._call_test_management_command()
 
         # lock_1 not release but has expired, should not raise LockError
@@ -78,7 +78,9 @@ class LockBackendTestCaseMixin:
         lock_1.release()
 
     def test_release_expired(self):
-        lock_1 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=1)
+        lock_1 = self._test_locking_backend.acquire_lock(
+            name=TEST_LOCK_1, timeout=1
+        )
 
         self._test_delay(seconds=1.01)
 
@@ -95,7 +97,9 @@ class LockBackendTestCaseMixin:
 
         # TEST_LOCK_1 is expired so trying to acquire it should not return an
         # error.
-        lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=1)
+        lock_2 = self._test_locking_backend.acquire_lock(
+            name=TEST_LOCK_1, timeout=1
+        )
 
         # Cleanup
         lock_2.release()
@@ -122,11 +126,13 @@ class DefaultTimeoutTestMixin:
         self._test_locking_backend = import_string(
             dotted_path=self._test_locking_backend_string
         )
-        setting_default_lock_timeout.set(value=1)
+        setting_default_lock_timeout.do_value_raw_set(raw_value=1)
         self.assertEqual(setting_default_lock_timeout.value, 1)
 
     def test_default_timeout_expired(self):
-        self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=None)
+        self._test_locking_backend.acquire_lock(
+            name=TEST_LOCK_1, timeout=None
+        )
 
         # lock_1 not release and not expired, should raise LockError
         with self.assertRaises(expected_exception=LockError):

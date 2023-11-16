@@ -2,7 +2,6 @@ import importlib
 import logging
 
 from mayan.apps.document_signatures import storages
-from mayan.apps.smart_settings.tests.mixins import SmartSettingTestMixin
 from mayan.apps.storage.classes import DefinedStorage
 from mayan.apps.testing.tests.base import BaseTestCase
 
@@ -10,7 +9,7 @@ from ..literals import STORAGE_NAME_DOCUMENT_SIGNATURES_DETACHED_SIGNATURE
 from ..settings import setting_storage_backend_arguments
 
 
-class SignatureStorageSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
+class SignatureStorageSettingsTestCase(BaseTestCase):
     def tearDown(self):
         super().tearDown()
         importlib.reload(storages)

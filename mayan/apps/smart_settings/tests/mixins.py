@@ -1,14 +1,13 @@
-import copy
-from contextlib import contextmanager
 import os
 
 from django.conf import settings
 from django.utils.encoding import force_bytes
 
-from mayan.apps.testing.tests.mixins import EnvironmentTestCaseMixin
 from mayan.apps.storage.utils import fs_cleanup, NamedTemporaryFile
+from mayan.apps.testing.tests.mixins import EnvironmentTestCaseMixin
 
-from ..classes import SettingNamespace, Setting
+from ..classes import Setting
+from ..settings import setting_cluster
 from ..utils import BaseSetting, SettingNamespaceSingleton
 
 from .literals import (
@@ -21,7 +20,7 @@ class BoostrapSettingTestMixin:
     def _create_test_bootstrap_singleton(self):
         self.test_globals = {}
         self.test_globals['BASE_DIR'] = ''
-        self.test_setting_namespace_singleton = SettingNamespaceSingleton(
+        self._test_setting_namespace_singleton = SettingNamespaceSingleton(
             global_symbol_table=self.test_globals
         )
 
@@ -33,114 +32,145 @@ class BoostrapSettingTestMixin:
         )
 
 
-class SmartSettingsTestCaseMixin:
+class SettingClusterTestMixin(EnvironmentTestCaseMixin):
     def setUp(self):
         super().setUp()
-        SettingNamespace.invalidate_cache_all()
+        setting_cluster.do_cache_invalidate()
 
-        with NamedTemporaryFile(delete=False) as self.test_setting_config_file_object:
-            settings.CONFIGURATION_FILEPATH = self.test_setting_config_file_object.name
-            os.environ['MAYAN_CONFIGURATION_FILEPATH'] = self.test_setting_config_file_object.name
-            Setting._config_file_cache = None
+        with NamedTemporaryFile(delete=False) as self._test_setting_config_file_object:
+            settings.CONFIGURATION_FILEPATH = self._test_setting_config_file_object.name
+            os.environ['MAYAN_CONFIGURATION_FILEPATH'] = self._test_setting_config_file_object.name
+
+        setting_cluster.do_cache_invalidate()
 
     def tearDown(self):
-        fs_cleanup(filename=self.test_setting_config_file_object.name)
-        SettingNamespace.invalidate_cache_all()
+        fs_cleanup(filename=self._test_setting_config_file_object.name)
+        setting_cluster.do_cache_invalidate()
         super().tearDown()
 
-    @contextmanager
-    def override_setting(self, global_name, method=None, value=None):
-        setting = Setting.get(global_name=global_name)
-        old_value = copy.copy(setting.value)
-        if method is None:
-            setting.set(value=value)
-        else:
-            current_value = setting.value
-            getattr(current_value, method)(value)
-            setting.set(value=current_value)
-        try:
-            yield
-        finally:
-            setting.set(value=old_value)
 
-
-class SmartSettingNamespaceTestMixin(EnvironmentTestCaseMixin):
-    def _create_test_settings_namespace(self, **kwargs):
-        try:
-            self.test_settings_namespace = SettingNamespace.get(
-                name=TEST_NAMESPACE_NAME
-            )
-            self.test_settings_namespace.migration_class = None
-            self.test_settings_namespace.version = None
-            self.test_settings_namespace.__dict__.update(kwargs)
-        except KeyError:
-            self.test_settings_namespace = SettingNamespace(
-                label=TEST_NAMESPACE_LABEL, name=TEST_NAMESPACE_NAME,
-                **kwargs
-            )
-
-
-class SmartSettingNamespaceViewTestMixin:
-    def _request_namespace_list_view(self):
-        return self.get(viewname='settings:setting_namespace_list')
-
-    def _request_namespace_detail_view(self):
-        return self.get(
-            viewname='settings:setting_namespace_detail', kwargs={
-                'namespace_name': self.test_settings_namespace.name
-            }
+class SettingClusterViewTestMixin(SettingClusterTestMixin):
+    def _request_cluster_configuration_save_view(self):
+        return self.post(
+            viewname='settings:setting_cluster_configuration_save'
         )
 
 
-class SmartSettingTestMixin(EnvironmentTestCaseMixin):
-    test_setting_global_name = None
-    test_config_file_object = None
+class SettingNamespaceTestMixin(SettingClusterTestMixin):
+    _test_setting_namespace_create_auto = False
+
+    def setUp(self):
+        super().setUp()
+        self._test_setting_namespace_list = []
+
+        if self._test_setting_namespace_create_auto:
+            self._test_setting_namespace_create()
 
     def tearDown(self):
-        if self.test_config_file_object:
-            fs_cleanup(filename=self.test_config_file_object.name)
+        for test_setting_namespace in self._test_setting_namespace_list:
+            try:
+                setting_cluster.do_namespace_remove(
+                    name=test_setting_namespace.name
+                )
+            except KeyError:
+                """
+                Test setting namespace was removed by the test itself.
+                """
+
         super().tearDown()
 
-    def _create_test_config_file(self, callback=None):
-        if not self.test_setting_global_name:
-            self.test_setting_global_name = self.test_setting.global_name
+    def _test_setting_namespace_create(self, name=None, label=None, **kwargs):
+        test_setting_namespace_list_count = len(
+            self._test_setting_namespace_list
+        )
+
+        if name is None:
+            name = '{}_{}'.format(
+                TEST_NAMESPACE_NAME, test_setting_namespace_list_count
+            )
+
+        if label is None:
+            label = '{}_{}'.format(
+                TEST_NAMESPACE_LABEL, test_setting_namespace_list_count
+            )
+
+        self._test_setting_namespace = setting_cluster.do_namespace_add(
+            label=label, name=name, **kwargs
+        )
+        self._test_setting_namespace_list.append(
+            self._test_setting_namespace
+        )
+
+
+class SettingNamespaceViewTestMixin(SettingNamespaceTestMixin):
+    def _request_namespace_detail_view(self):
+        return self.get(
+            viewname='settings:setting_namespace_detail', kwargs={
+                'namespace_name': self._test_setting_namespace.name
+            }
+        )
+
+    def _request_namespace_list_view(self):
+        return self.get(viewname='settings:setting_cluster_namespace_list')
+
+
+class SettingTestMixin(SettingNamespaceTestMixin):
+    _test_configuration_file_object = None
+    _test_configuration_value = None
+    _test_setting_global_name = None
+
+    def tearDown(self):
+        if self._test_configuration_file_object:
+            fs_cleanup(filename=self._test_configuration_file_object.name)
+        super().tearDown()
+
+    def _create_test_configuration_file(self, callback=None):
+        if not self._test_setting_global_name:
+            self._test_setting_global_name = self._test_setting.global_name
 
         test_config_entry = {
-            self.test_setting_global_name: self.test_config_value
+            self._test_setting_global_name: self._test_configuration_value
         }
 
-        with NamedTemporaryFile(delete=False) as test_config_file_object:
+        with NamedTemporaryFile(delete=False) as _test_configuration_file_object:
             # Needed to load the config file from the Setting class
             # after bootstrap.
-            settings.CONFIGURATION_FILEPATH = test_config_file_object.name
+            settings.CONFIGURATION_FILEPATH = _test_configuration_file_object.name
             # Needed to update the globals before Mayan has loaded.
             self._set_environment_variable(
                 name='MAYAN_CONFIGURATION_FILEPATH',
-                value=test_config_file_object.name
+                value=_test_configuration_file_object.name
             )
-            test_config_file_object.write(
+            _test_configuration_file_object.write(
                 force_bytes(
                     s=Setting.serialize_value(value=test_config_entry)
                 )
             )
-            test_config_file_object.seek(0)
-            Setting._config_file_cache = None
+            _test_configuration_file_object.seek(0)
+            setting_cluster.configuration_file_cache = None
 
             if callback:
                 callback()
 
     def _create_test_setting(self, validation_function=None):
-        self.test_setting = self.test_settings_namespace.add_setting(
-            global_name=TEST_SETTING_GLOBAL_NAME,
+        self._test_setting = self._test_setting_namespace.do_setting_add(
             default=TEST_SETTING_DEFAULT_VALUE,
+            global_name=TEST_SETTING_GLOBAL_NAME,
             validation_function=validation_function
         )
 
 
-class SmartSettingViewTestMixin:
+class SettingViewTestMixin(SettingTestMixin):
     def _request_setting_edit_view(self, value):
         return self.post(
             viewname='settings:setting_edit_view', kwargs={
-                'setting_global_name': self.test_setting.global_name
+                'setting_global_name': self._test_setting.global_name
             }, data={'value': value}
+        )
+
+    def _request_setting_revert_view(self):
+        return self.post(
+            viewname='settings:setting_revert_view', kwargs={
+                'setting_global_name': self._test_setting.global_name
+            }
         )

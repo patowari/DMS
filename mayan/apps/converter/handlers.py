@@ -10,5 +10,5 @@ def handler_create_asset_cache(sender, **kwargs):
     Cache.objects.update_or_create(
         defaults={
             'maximum_size': setting_asset_cache_maximum_size.value,
-        }, defined_storage_name=STORAGE_NAME_ASSETS_CACHE,
+        }, defined_storage_name=STORAGE_NAME_ASSETS_CACHE
     )
