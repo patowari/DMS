@@ -10,11 +10,15 @@
   the setting. Added a new view and link to revert unsaved settings.
 - Override the test runner's logging setup to avoid having its output
   being concatenated when calling management commands and makefile targets.
-- Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.x.
-- Update AMQP from Version 5.1.0 to 5.2.0.
-- Update PIP from version 23.2.1 to 23.3.1.
-- Add the Django series version to the setup generation script.
-- Update ``django-test-migrations`` from version 1.1.0 to 1.3.0.
+- Update dependencies:
+
+  - Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.x.
+  - Update AMQP from Version 5.1.0 to 5.2.0.
+  - Update PIP from version 23.2.1 to 23.3.1.
+  - Add the Django series version to the setup generation script.
+  - Update ``django-test-migrations`` from version 1.1.0 to 1.3.0.
+  - Update Debian from version 12.1-slim to 12.2-slim.
+
 - Refactor file metadata app:
 
   - Allow multiple drivers to execute for the same MIME types.
