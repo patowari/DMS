@@ -1,29 +1,59 @@
+from django.utils.module_loading import import_string
+
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 
-from ..models import StoredDriver
+from ..classes import FileMetadataDriver
 
 from .literals import (
-    TEST_DOCUMENT_FILE_METADATA_KEY, TEST_DOCUMENT_FILE_METADATA_VALUE,
-    TEST_STORED_DRIVER_INTERNAL_NAME, TEST_STORED_DRIVER_PATH
+    TEST_DRIVER_CLASS_PATH, TEST_FILE_METADATA_KEY, TEST_FILE_METADATA_VALUE
 )
 
+class FileMetadataTestMixin:
+    _test_document_file_metadata_driver_path = TEST_DRIVER_CLASS_PATH
 
-class DocumentTypeViewTestMixin:
-    def _request_document_type_file_metadata_settings_view(self):
-        return self.get(
-            viewname='file_metadata:document_type_file_metadata_settings',
-            kwargs={'document_type_id': self._test_document.document_type.pk}
+    def setUp(self):
+        super().setUp()
+        FileMetadataDriver.load_modules()
+
+        FileMetadataDriver.collection.do_driver_disable_all()
+
+        if self._test_document_file_metadata_driver_path:
+            test_document_file_metadata_driver = import_string(
+                dotted_path=self._test_document_file_metadata_driver_path
+            )
+            FileMetadataDriver.collection.do_driver_enable(
+                driver=test_document_file_metadata_driver
+            )
+
+
+class DocumentFileMetadataTestMixin(
+    DocumentTestMixin, FileMetadataTestMixin
+):
+    _test_document_file_metadata_create_auto = False
+
+    def setUp(self):
+        super().setUp()
+
+        if self._test_document_file_metadata_create_auto:
+            self._test_document_file_metadata_create()
+
+    def _test_document_file_metadata_create(self):
+        self._test_document_file_driver_entry, created = self._test_document_file.file_metadata_drivers.get_or_create(
+            driver=self._test_document_file_metadata_driver.model_instance
         )
 
-    def _request_document_type_file_metadata_submit_view(self):
-        return self.post(
-            viewname='file_metadata:document_type_file_metadata_submit', data={
-                'document_type': self._test_document_type.pk,
-            }
+        self._test_document_file_metadata = self._test_document_file_driver_entry.entries.create(
+            key=TEST_FILE_METADATA_KEY,
+            value=TEST_FILE_METADATA_VALUE
+        )
+
+        self._test_document_file_metadata_path = '{}__{}'.format(
+            self._test_document_file_driver_entry.driver.internal_name,
+            self._test_document_file_metadata.key
         )
 
 
-class FileMetadataViewTestMixin:
+class DocumentFileMetadataViewTestMixin(DocumentFileMetadataTestMixin):
     def _request_document_file_metadata_driver_list_view(self):
         return self.get(
             viewname='file_metadata:document_file_metadata_driver_list',
@@ -34,7 +64,7 @@ class FileMetadataViewTestMixin:
         return self.get(
             viewname='file_metadata:document_file_metadata_driver_attribute_list',
             kwargs={
-                'document_file_driver_id': self.test_driver.pk
+                'document_file_driver_id': self._test_document_file_driver_entry.pk
             }
         )
 
@@ -53,42 +83,21 @@ class FileMetadataViewTestMixin:
         )
 
 
-class StoredDriverTestMixin:
-    _test_stored_driver_create_auto = True
+class DocumentTypeViewTestMixin(FileMetadataTestMixin):
+    def _request_document_type_file_metadata_settings_view(self):
+        return self.get(
+            viewname='file_metadata:document_type_file_metadata_settings',
+            kwargs={'document_type_id': self._test_document.document_type.pk}
+        )
 
-    def setUp(self):
-        super().setUp()
-
-        if self._test_stored_driver_create_auto:
-            self._test_stored_driver_create()
-
-    def _test_stored_driver_create(self):
-        self._test_stored_driver = StoredDriver.objects.create(
-            driver_path=TEST_STORED_DRIVER_PATH,
-            internal_name=TEST_STORED_DRIVER_INTERNAL_NAME
+    def _request_document_type_file_metadata_submit_view(self):
+        return self.post(
+            viewname='file_metadata:document_type_file_metadata_submit', data={
+                'document_type': self._test_document_type.pk,
+            }
         )
 
 
-class FileMetadataTestMixin(DocumentTestMixin, StoredDriverTestMixin):
-    _test_document_file_metadata_create_auto = True
-
-    def setUp(self):
-        super().setUp()
-
-        if self._test_document_file_metadata_create_auto:
-            self._test_document_file_metadata_create()
-
-    def _test_document_file_metadata_create(self):
-        self._test_document_file_driver_entry, created = self._test_document_file.file_metadata_drivers.get_or_create(
-            driver=self._test_stored_driver
-        )
-
-        self._test_document_file_metadata = self._test_document_file_driver_entry.entries.create(
-            key=TEST_DOCUMENT_FILE_METADATA_KEY,
-            value=TEST_DOCUMENT_FILE_METADATA_VALUE
-        )
-
-        self._test_document_file_metadata_path = '{}__{}'.format(
-            self._test_document_file_driver_entry.driver.internal_name,
-            self._test_document_file_metadata.key
-        )
+class FileMetadataDriverTestMixin(FileMetadataTestMixin):
+    def _request_file_metadata_driver_list_view(self):
+        return self.get(viewname='file_metadata:file_metadata_driver_list')

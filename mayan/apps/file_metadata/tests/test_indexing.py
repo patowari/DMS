@@ -5,9 +5,12 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from .literals import (
     TEST_FILE_METADATA_INDEX_NODE_TEMPLATE, TEST_FILE_METADATA_VALUE
 )
+from .mixins import FileMetadataTestMixin
 
 
-class IndexingTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
+class IndexingTestCase(
+    FileMetadataTestMixin, IndexTemplateTestMixin, GenericDocumentTestCase
+):
     _test_index_template_node_expression = TEST_FILE_METADATA_INDEX_NODE_TEMPLATE
     auto_upload_test_document = False
 

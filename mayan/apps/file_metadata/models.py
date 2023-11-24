@@ -1,12 +1,14 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.common.utils import convert_to_internal_name
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_type_models import DocumentType
 
 from .managers import DocumentTypeSettingsManager
 from .model_mixins import (
-    DocumentFileDriverEntryBusinessLogicMixin, StoredDriverBusinessLogicMixin
+    DocumentFileDriverEntryBusinessLogicMixin,
+    StoredDriverBusinessLogicMixin
 )
 
 
@@ -63,9 +65,16 @@ class FileMetadataEntry(models.Model):
         to=DocumentFileDriverEntry,
         verbose_name=_(message='Document file driver entry')
     )
+    internal_name = models.CharField(
+        db_index=True, help_text=_(
+            message='Normalized name of the file metadata entry.'
+        ), max_length=255, verbose_name=_(message='Internal name')
+    )
     key = models.CharField(
-        db_index=True, help_text=_(message='Name of the file metadata entry.'),
-        max_length=255, verbose_name=_(message='Key')
+        help_text=_(
+            message='Name of the file metadata entry as provided by the '
+            'driver.'
+        ), max_length=255, verbose_name=_(message='Key')
     )
     value = models.TextField(
         blank=True, help_text=_(message='Value of the file metadata entry.'),
@@ -73,7 +82,8 @@ class FileMetadataEntry(models.Model):
     )
 
     class Meta:
-        ordering = ('key', 'value')
+        ordering = ('internal_name', 'value')
+        unique_together = ('document_file_driver_entry', 'internal_name')
         verbose_name = _(message='File metadata entry')
         verbose_name_plural = _(message='File metadata entries')
 
@@ -81,6 +91,26 @@ class FileMetadataEntry(models.Model):
         return '{}: {}: {}'.format(
             self.document_file_driver_entry, self.key, self.value
         )
+
+    def save(self, *args, **kwargs):
+        internal_name = convert_to_internal_name(value=self.key)
+
+        queryset_siblings = self.document_file_driver_entry.entries.exclude(
+            pk=self.pk
+        )
+
+        queryset_duplicated = queryset_siblings.filter(
+            internal_name=internal_name
+        )
+
+        if queryset_duplicated.exists():
+            internal_name = '{}_{}'.format(
+                internal_name, queryset_duplicated.count()
+            )
+
+        self.internal_name = internal_name
+
+        super().save(*args, **kwargs)
 
 
 class StoredDriver(StoredDriverBusinessLogicMixin, models.Model):

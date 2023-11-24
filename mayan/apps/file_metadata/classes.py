@@ -1,80 +1,161 @@
 import logging
 
 from django.apps import apps
+from django.db.utils import OperationalError, ProgrammingError
+from django.utils.functional import classproperty
 
-from .events import event_file_metadata_document_file_finished
-from .exceptions import FileMetadataDriverError
+from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
+from mayan.apps.common.utils import get_class_full_name
+
+from .exceptions import FileMetadataError
 
 logger = logging.getLogger(name=__name__)
 
 
-class FileMetadataDriver:
-    _registry = {}
+class FileMetadataDriverCollection:
+    _driver_enabled_list = []
+    _driver_to_mime_type_dict = {}
+    _mime_type_to_driver_dict = {}
 
     @classmethod
-    def process_document_file(cls, document_file, user=None):
-        # Get list of drivers for the document's MIME type
-        driver_classes = cls._registry.get(document_file.mimetype, ())
-        # Add wilcard drivers, drivers meant to be executed for all MIME
+    def do_driver_disable(cls, driver):
+        if driver in cls._driver_to_mime_type_dict:
+            cls._driver_enabled_list.remove(driver)
+
+    @classmethod
+    def do_driver_disable_all(cls):
+        cls._driver_enabled_list = []
+
+    @classmethod
+    def do_driver_enable(cls, driver):
+        if driver in cls._driver_to_mime_type_dict:
+            if driver not in cls._driver_enabled_list:
+                cls._driver_enabled_list.append(driver)
+
+    @classmethod
+    def do_driver_register(cls, klass):
+        if klass in cls._driver_to_mime_type_dict:
+            raise FileMetadataError(
+                'Driver "{}" is already registered.'.format(klass)
+            )
+
+        cls._driver_to_mime_type_dict[klass] = klass.mime_type_list
+
+        for mime_type in klass.mime_type_list:
+            cls._mime_type_to_driver_dict.setdefault(
+                mime_type, []
+            ).append(klass)
+
+        klass.dotted_path = get_class_full_name(klass=klass)
+
+        cls.do_driver_enable(driver=klass)
+
+    @classmethod
+    def get_all(cls, sorted=False):
+        result = set()
+        for mime_type, drivers in cls._mime_type_to_driver_dict.items():
+            result.update(
+                list(drivers)
+            )
+
+        result = list(result)
+
+        if sorted:
+            result.sort(key=lambda driver: driver.label)
+
+        return result
+
+    @classmethod
+    def get_driver_for_mime_type(cls, mime_type):
+        driver_class_list = cls._mime_type_to_driver_dict.get(
+            mime_type, ()
+        )
+        # Add wildcard drivers, drivers meant to be executed for all MIME
         # types.
-        driver_classes += tuple(cls._registry.get('*', ()))
-
-        for driver_class in driver_classes:
-            try:
-                driver = driver_class()
-
-                driver.initialize()
-
-                driver.process(document_file=document_file)
-
-                event_file_metadata_document_file_finished.commit(
-                    action_object=document_file.document, actor=user,
-                    target=document_file
-                )
-
-            except FileMetadataDriverError:
-                """If driver raises error, try next in the list."""
-            else:
-                # If driver was successful there is no need to try
-                # others in the list for this mimetype.
-                return
-
-    @classmethod
-    def register(cls, mimetypes):
-        for mimetype in mimetypes:
-            cls._registry.setdefault(mimetype, []).append(cls)
-
-    def __init__(self, auto_initialize=True, **kwargs):
-        self.auto_initialize = auto_initialize
-
-    def get_driver_path(self):
-        return '.'.join(
-            [self.__module__, self.__class__.__name__]
+        driver_class_list += tuple(
+            cls._mime_type_to_driver_dict.get(
+                '*', ()
+            )
         )
 
-    def initialize(self):
+        result = [
+            driver_class for driver_class in driver_class_list if driver_class in cls._driver_enabled_list
+        ]
+
+        return result
+
+
+class FileMetadataDriverMetaclass(type):
+    def __new__(mcs, name, bases, attrs):
+        new_class = super().__new__(
+            mcs, name, bases, attrs
+        )
+
+        if not new_class.__module__ == __name__:
+            FileMetadataDriverCollection.do_driver_register(klass=new_class)
+
+        return new_class
+
+
+class FileMetadataDriver(
+    AppsModuleLoaderMixin, metaclass=FileMetadataDriverMetaclass
+):
+    _loader_module_name = 'drivers'
+    description = ''
+    label = None
+    internal_name = None
+    mime_type_list = ()
+
+    @classproperty
+    def collection(cls):
+        if cls != FileMetadataDriver:
+            raise AttributeError(
+                'This method is only available to the parent class.'
+            )
+        return FileMetadataDriverCollection
+
+    @classmethod
+    def get_mime_type_list_display(cls):
+        return ', '.join(cls.mime_type_list)
+
+    @classmethod
+    def post_load_modules(cls):
         StoredDriver = apps.get_model(
             app_label='file_metadata', model_name='StoredDriver'
         )
 
-        driver_path = self.get_driver_path()
+        for driver in cls.collection.get_all():
+            try:
+                model_instance, created = StoredDriver.objects.get_or_create(
+                    driver_path=driver.dotted_path, defaults={
+                        'internal_name': driver.internal_name
+                    }
+                )
+            except (OperationalError, ProgrammingError):
+                """
+                Non fatal. Installation is not ready.
+                """
+            else:
+                driver.model_instance = model_instance
 
-        self.driver_model, created = StoredDriver.objects.get_or_create(
-            driver_path=driver_path, defaults={
-                'internal_name': self.internal_name
-            }
-        )
+    def __init__(self, auto_initialize=True, **kwargs):
+        self.auto_initialize = auto_initialize
+
+    def initialize(self):
+        """
+        Driver specific initialization code.
+        """
 
     def process(self, document_file):
         logger.info(
             'Starting processing document file: %s', document_file
         )
 
-        self.driver_model.driver_entries.filter(
+        self.model_instance.driver_entries.filter(
             document_file=document_file
         ).delete()
 
-        document_file_driver_entry = self.driver_model.driver_entries.create(
+        document_file_driver_entry = self.model_instance.driver_entries.create(
             document_file=document_file
         )
 

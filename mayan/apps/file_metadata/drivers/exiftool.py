@@ -8,16 +8,19 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.storage.utils import TemporaryDirectory
 
-from ..literals import DEFAULT_EXIF_PATH
 from ..classes import FileMetadataDriver
 from ..settings import setting_drivers_arguments
+
+from .literals import DEFAULT_EXIF_PATH
 
 logger = logging.getLogger(name=__name__)
 
 
 class EXIFToolDriver(FileMetadataDriver):
+    description = _('Read meta information stored in files.')
     label = _(message='EXIF Tool')
     internal_name = 'exiftool'
+    mime_type_list = ('*',)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -39,25 +42,22 @@ class EXIFToolDriver(FileMetadataDriver):
                     temporary_folder, Path(document_file.filename).name
                 )
 
-                try:
-                    with path_temporary_file.open(mode='xb') as temporary_fileobject:
-                        document_file.save_to_file(file_object=temporary_fileobject)
-                        temporary_fileobject.seek(0)
-                        try:
-                            output = self.command_exiftool(temporary_fileobject.name)
-                        except sh.ErrorReturnCode_1 as exception:
-                            result = json.loads(s=exception.stdout)[0]
-                            if result.get('Error', '') == 'Unknown file type':
-                                # Not a fatal error.
-                                return result
-                        else:
-                            return json.loads(s=output)[0]
-                except Exception as exception:
-                    logger.error(
-                        'Error processing document file: %s; %s',
-                        document_file, exception, exc_info=True
+                with path_temporary_file.open(mode='xb') as temporary_fileobject:
+                    document_file.save_to_file(
+                        file_object=temporary_fileobject
                     )
-                    raise
+                    temporary_fileobject.seek(0)
+                    try:
+                        output = self.command_exiftool(
+                            temporary_fileobject.name
+                        )
+                    except sh.ErrorReturnCode_1 as exception:
+                        result = json.loads(s=exception.stdout)[0]
+                        if result.get('Error', '') == 'Unknown file type':
+                            # Not a fatal error.
+                            return result
+                    else:
+                        return json.loads(s=output)[0]
         else:
             logger.warning(
                 'EXIFTool binary not found, not processing document '
@@ -68,6 +68,3 @@ class EXIFToolDriver(FileMetadataDriver):
         self.exiftool_path = setting_drivers_arguments.value.get(
             'exif_driver', {}
         ).get('exiftool_path', DEFAULT_EXIF_PATH)
-
-
-EXIFToolDriver.register(mimetypes=('*',))
