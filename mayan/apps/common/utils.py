@@ -6,6 +6,7 @@ import types
 
 from django.core.exceptions import FieldDoesNotExist
 from django.db.models.constants import LOOKUP_SEP
+from django.utils.text import slugify
 
 from .compatibility import Iterable
 from .exceptions import ResolverError, ResolverPipelineError
@@ -219,6 +220,12 @@ def any_to_bool(value):
             util.strtobool(val=value)
         )
     return value
+
+
+def convert_to_internal_name(value):
+    slug = slugify(value=value)
+    slug = slug.replace('-', '_')
+    return slug
 
 
 def flatten_list(value):
