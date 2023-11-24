@@ -31,6 +31,7 @@
 - Add antivirus scanning for documents. Implemented as a file metadata
   driver and a new app named ``file_metadata_clamav``. ClamAV and the latest
   database are included in the Docker image.
+- Support source column resolution for non model subclasses.
 
 4.5.2 (2023-09-20)
 ==================

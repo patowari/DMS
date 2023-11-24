@@ -782,19 +782,34 @@ class SourceColumn(TemplateObjectMixin):
                 except AttributeError:
                     # Not a model instance.
 
-                    # Try as subclass instance, check the class hierarchy.
-                    for super_class in source.__class__.__mro__[:-1]:
-                        columns.extend(
-                            cls._registry.get(
-                                super_class, ()
+                    try:
+                        super_class_list = source.__mro__[:-1]
+                    except AttributeError:
+                        # Is not a class.
+
+                        # Try as subclass instance, check the class hierarchy.
+                        for super_class in source.__class__.__mro__[:-1]:
+                            columns.extend(
+                                cls._registry.get(
+                                    super_class, ()
+                                )
                             )
-                        )
+                    else:
+                        # Try as a subclass.
+                        for super_class in super_class_list:
+                            columns.extend(
+                                cls._registry.get(
+                                    super_class, ()
+                                )
+                            )
 
                     return columns
                 else:
                     # Get model columns.
                     columns.extend(
-                        cls._registry.get(model, ())
+                        cls._registry.get(
+                            model, ()
+                        )
                     )
 
                     # Get proxy columns.
@@ -810,10 +825,10 @@ class SourceColumn(TemplateObjectMixin):
 
                     return columns
             else:
-                # It was is a list.
+                # It is a list.
                 return cls.get_column_matches(source=item)
         else:
-            # It was is a queryset.
+            # It is a queryset.
             return cls.get_column_matches(source=model)
 
     @classmethod
