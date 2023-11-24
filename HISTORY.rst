@@ -37,6 +37,7 @@
   database are included in the Docker image.
 - Support source column resolution for non model subclasses.
 - Remove KeyCloak from the Docker Compose file.
+- Convert the Docker Compose file into a platform template.
 
 4.5.7 (2023-10-25)
 ==================

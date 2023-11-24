@@ -43,6 +43,10 @@ docker-dockerfile-update: ## Update the Dockerfile file from the platform templa
 docker-dockerfile-update: copy-config-env
 	./manage.py platform_template docker_dockerfile > docker/Dockerfile
 
+docker-docker-compose-update: ## Update the Docker Compose file from the platform template.
+docker-docker-compose-update: copy-config-env
+	./manage.py platform_template docker_docker_compose > docker/docker-compose.yml
+
 docker-registry-push: ## Push a built image to the test Docker registry.
 	docker tag $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) $(DOCKER_HOST_REGISTRY_NAME):$(DOCKER_HOST_REGISTRY_PORT)/$(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION)
 	docker push $(DOCKER_HOST_REGISTRY_NAME):$(DOCKER_HOST_REGISTRY_PORT)/$(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION)
@@ -104,7 +108,7 @@ docker-staging-container-postgresql-start:
 	--env POSTGRES_DB=$(DEFAULT_DATABASE_NAME) \
 	--env POSTGRES_PASSWORD=$(DEFAULT_DATABASE_PASSWORD) \
 	--volume mayan-staging-postgres:/var/lib/postgresql/data \
-	$(DOCKER_POSTGRES_IMAGE_VERSION)
+	$(DOCKER_POSTGRES_IMAGE_NAME):$(DOCKER_POSTGRES_IMAGE_TAG)
 
 docker-staging-container-redis-start:
 	docker run \
@@ -196,7 +200,7 @@ docker-development-container-postgresql-start:
 	--publish 5432:5432 \
 	--env POSTGRES_PASSWORD=postgres \
 	--volume mayan-development-postgres:/var/lib/postgresql/data \
-	$(DOCKER_POSTGRES_IMAGE_VERSION)
+	$(DOCKER_POSTGRES_IMAGE_NAME):$(DOCKER_POSTGRES_IMAGE_TAG)
 
 docker-development-cleanup: ## Delete the test container and the test volume.
 	@docker rm --file mayan-development-postgres || true

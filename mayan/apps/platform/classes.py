@@ -15,12 +15,20 @@ from mayan.apps.common.serialization import yaml_dump, yaml_load
 from mayan.apps.task_manager.classes import Worker
 from mayan.settings.literals import (
     DEFAULT_DATABASE_NAME, DEFAULT_DATABASE_PASSWORD, DEFAULT_DATABASE_USER,
-    DEFAULT_DIRECTORY_INSTALLATION, DEFAULT_OS_USERNAME,
+    DEFAULT_DIRECTORY_INSTALLATION, DEFAULT_ELASTICSEARCH_PASSWORD,
+    DEFAULT_OS_USERNAME, DEFAULT_RABBITMQ_PASSWORD, DEFAULT_RABBITMQ_USER,
+    DEFAULT_RABBITMQ_VHOST, DEFAULT_REDIS_PASSWORD,
     DEFAULT_USER_SETTINGS_FOLDER, DOCKER_DIND_IMAGE_VERSION,
+    DOCKER_ELASTIC_IMAGE_NAME, DOCKER_ELASTIC_IMAGE_TAG,
+    DOCKER_IMAGE_MAYAN_NAME, DOCKER_IMAGE_MAYAN_TAG,
     DOCKER_LINUX_IMAGE_VERSION, DOCKER_MYSQL_IMAGE_VERSION,
-    DOCKER_POSTGRES_IMAGE_VERSION, GITLAB_CI_BRANCH_BUILDS_DOCKER,
-    GITLAB_CI_BRANCH_BUILDS_DOCUMENTATION, GITLAB_CI_BRANCH_BUILDS_PYTHON,
-    GITLAB_CI_BRANCH_DEPLOYMENTS_DEMO, GITLAB_CI_BRANCH_DEPLOYMENTS_STAGING,
+    DOCKER_POSTGRES_IMAGE_NAME, DOCKER_POSTGRES_IMAGE_TAG,
+    DOCKER_RABBITMQ_IMAGE_NAME, DOCKER_RABBITMQ_IMAGE_TAG,
+    DOCKER_REDIS_IMAGE_NAME, DOCKER_REDIS_IMAGE_TAG,
+    DOCKER_TRAEFIK_IMAGE_NAME, DOCKER_TRAEFIK_IMAGE_TAG,
+    GITLAB_CI_BRANCH_BUILDS_DOCKER, GITLAB_CI_BRANCH_BUILDS_DOCUMENTATION,
+    GITLAB_CI_BRANCH_BUILDS_PYTHON, GITLAB_CI_BRANCH_DEPLOYMENTS_DEMO,
+    GITLAB_CI_BRANCH_DEPLOYMENTS_STAGING,
     GITLAB_CI_BRANCH_RELEASES_ALL_MAJOR, GITLAB_CI_BRANCH_RELEASES_ALL_MINOR,
     GITLAB_CI_BRANCH_RELEASES_DOCKER_MAJOR,
     GITLAB_CI_BRANCH_RELEASES_DOCKER_MINOR,
@@ -238,17 +246,112 @@ class PlatformTemplateDockerEntrypoint(PlatformTemplate):
         return context
 
 
-class PlatformTemplateDockerfile(PlatformTemplate):
-    label = _(message='Template that generates a Dockerfile file.')
-    name = 'docker_dockerfile'
-    template_name = 'platform/docker/dockerfile.tmpl'
+class PlatformTemplateDockerComposefile(PlatformTemplate):
+    label = _(message='Template that generates the Docker Compose file.')
+    name = 'docker_docker_compose'
+    template_name = 'platform/docker/docker-compose.yml.tmpl'
 
     def __init__(self):
         self.variables = (
             Variable(
-                name='DOCKER_LINUX_IMAGE_VERSION',
-                default=DOCKER_LINUX_IMAGE_VERSION,
-                environment_name='MAYAN_DOCKER_LINUX_IMAGE_VERSION'
+                name='DEFAULT_DATABASE_NAME',
+                default=DEFAULT_DATABASE_NAME,
+                environment_name='MAYAN_DEFAULT_DATABASE_NAME'
+            ),
+            Variable(
+                name='DEFAULT_DATABASE_PASSWORD',
+                default=DEFAULT_DATABASE_PASSWORD,
+                environment_name='MAYAN_DEFAULT_DATABASE_PASSWORD'
+            ),
+            Variable(
+                name='DEFAULT_DATABASE_USER',
+                default=DEFAULT_DATABASE_USER,
+                environment_name='MAYAN_DEFAULT_DATABASE_USER'
+            ),
+            Variable(
+                name='DEFAULT_ELASTICSEARCH_PASSWORD',
+                default=DEFAULT_ELASTICSEARCH_PASSWORD,
+                environment_name='MAYAN_DEFAULT_ELASTICSEARCH_PASSWORD'
+            ),
+            Variable(
+                name='DEFAULT_RABBITMQ_PASSWORD',
+                default=DEFAULT_RABBITMQ_PASSWORD,
+                environment_name='MAYAN_DEFAULT_RABBITMQ_PASSWORD'
+            ),
+            Variable(
+                name='DEFAULT_RABBITMQ_USER',
+                default=DEFAULT_RABBITMQ_USER,
+                environment_name='MAYAN_DEFAULT_RABBITMQ_USER'
+            ),
+            Variable(
+                name='DEFAULT_RABBITMQ_VHOST',
+                default=DEFAULT_RABBITMQ_VHOST,
+                environment_name='MAYAN_DEFAULT_RABBITMQ_VHOST'
+            ),
+            Variable(
+                name='DEFAULT_REDIS_PASSWORD',
+                default=DEFAULT_REDIS_PASSWORD,
+                environment_name='MAYAN_DEFAULT_REDIS_PASSWORD'
+            ),
+            Variable(
+                name='DOCKER_ELASTIC_IMAGE_NAME',
+                default=DOCKER_ELASTIC_IMAGE_NAME,
+                environment_name='MAYAN_DOCKER_ELASTIC_IMAGE_NAME'
+            ),
+            Variable(
+                name='DOCKER_ELASTIC_IMAGE_TAG',
+                default=DOCKER_ELASTIC_IMAGE_TAG,
+                environment_name='MAYAN_DOCKER_ELASTIC_IMAGE_TAG'
+            ),
+            Variable(
+                name='DOCKER_IMAGE_MAYAN_NAME',
+                default=DOCKER_IMAGE_MAYAN_NAME,
+                environment_name='MAYAN_DOCKER_IMAGE_MAYAN_NAME'
+            ),
+            Variable(
+                name='DOCKER_IMAGE_MAYAN_TAG',
+                default=DOCKER_IMAGE_MAYAN_TAG,
+                environment_name='MAYAN_DOCKER_IMAGE_MAYAN_TAG'
+            ),
+            Variable(
+                name='DOCKER_POSTGRES_IMAGE_NAME',
+                default=DOCKER_POSTGRES_IMAGE_NAME,
+                environment_name='MAYAN_DOCKER_POSTGRES_IMAGE_NAME'
+            ),
+            Variable(
+                name='DOCKER_POSTGRES_IMAGE_TAG',
+                default=DOCKER_POSTGRES_IMAGE_TAG,
+                environment_name='MAYAN_DOCKER_POSTGRES_IMAGE_TAG'
+            ),
+            Variable(
+                name='DOCKER_RABBITMQ_IMAGE_NAME',
+                default=DOCKER_RABBITMQ_IMAGE_NAME,
+                environment_name='MAYAN_DOCKER_RABBITMQ_IMAGE_NAME'
+            ),
+            Variable(
+                name='DOCKER_RABBITMQ_IMAGE_TAG',
+                default=DOCKER_RABBITMQ_IMAGE_TAG,
+                environment_name='MAYAN_DOCKER_RABBITMQ_IMAGE_TAG'
+            ),
+            Variable(
+                name='DOCKER_REDIS_IMAGE_NAME',
+                default=DOCKER_REDIS_IMAGE_NAME,
+                environment_name='MAYAN_DOCKER_REDIS_IMAGE_NAME'
+            ),
+            Variable(
+                name='DOCKER_REDIS_IMAGE_TAG',
+                default=DOCKER_REDIS_IMAGE_TAG,
+                environment_name='MAYAN_DOCKER_REDIS_IMAGE_TAG'
+            ),
+            Variable(
+                name='DOCKER_TRAEFIK_IMAGE_NAME',
+                default=DOCKER_TRAEFIK_IMAGE_NAME,
+                environment_name='MAYAN_DOCKER_TRAEFIK_IMAGE_NAME'
+            ),
+            Variable(
+                name='DOCKER_TRAEFIK_IMAGE_TAG',
+                default=DOCKER_TRAEFIK_IMAGE_TAG,
+                environment_name='MAYAN_DOCKER_TRAEFIK_IMAGE_TAG'
             ),
         )
 
@@ -269,6 +372,21 @@ class PlatformTemplateDockerSupervisord(PlatformTemplate):
             'stdout_logfile_maxbytes': '0',
             'workers': Worker.all()
         }
+
+
+class PlatformTemplateDockerfile(PlatformTemplate):
+    label = _(message='Template that generates a Dockerfile file.')
+    name = 'docker_dockerfile'
+    template_name = 'platform/docker/dockerfile.tmpl'
+
+    def __init__(self):
+        self.variables = (
+            Variable(
+                name='DOCKER_LINUX_IMAGE_VERSION',
+                default=DOCKER_LINUX_IMAGE_VERSION,
+                environment_name='MAYAN_DOCKER_LINUX_IMAGE_VERSION'
+            ),
+        )
 
 
 class PlatformTemplateGitLabCI(PlatformTemplate):
@@ -308,9 +426,14 @@ class PlatformTemplateGitLabCI(PlatformTemplate):
                 environment_name='MAYAN_DOCKER_MYSQL_IMAGE_VERSION'
             ),
             Variable(
-                name='DOCKER_POSTGRES_IMAGE_VERSION',
-                default=DOCKER_POSTGRES_IMAGE_VERSION,
-                environment_name='MAYAN_DOCKER_POSTGRES_IMAGE_VERSION'
+                name='DOCKER_POSTGRES_IMAGE_NAME',
+                default=DOCKER_POSTGRES_IMAGE_NAME,
+                environment_name='MAYAN_DOCKER_POSTGRES_IMAGE_NAME'
+            ),
+            Variable(
+                name='DOCKER_POSTGRES_IMAGE_TAG',
+                default=DOCKER_POSTGRES_IMAGE_TAG,
+                environment_name='MAYAN_DOCKER_POSTGRES_IMAGE_TAG'
             ),
             Variable(
                 name='GITLAB_CI_BRANCH_BUILDS_DOCKER',
@@ -517,8 +640,9 @@ class PlatformTemplateWorkerQueues(PlatformTemplate):
 
 
 PlatformTemplate.register(klass=PlatformTemplateDockerEntrypoint)
-PlatformTemplate.register(klass=PlatformTemplateDockerfile)
+PlatformTemplate.register(klass=PlatformTemplateDockerComposefile)
 PlatformTemplate.register(klass=PlatformTemplateDockerSupervisord)
+PlatformTemplate.register(klass=PlatformTemplateDockerfile)
 PlatformTemplate.register(klass=PlatformTemplateGitLabCI)
 PlatformTemplate.register(klass=PlatformTemplateSupervisord)
 PlatformTemplate.register(klass=PlatformTemplateWorkerQueues)
