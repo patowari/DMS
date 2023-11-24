@@ -15,6 +15,7 @@ DEFAULT_REDIS_PASSWORD = 'mayanredispassword'
 DEFAULT_SECRET_KEY = 'secret-key-missing!'
 DEFAULT_USER_SETTINGS_FOLDER = 'user_settings/'
 DEFAULT_USER_SETTINGS_MODULE = 'user_settings'
+DJANGO_SERIES = '4.2'
 DOCKER_HOST_REGISTRY_NAME = 'docker-registry.local'
 DOCKER_HOST_REGISTRY_PORT = 5000
 DOCKER_IMAGE_MAYAN_NAME = 'mayanedms/mayanedms'
