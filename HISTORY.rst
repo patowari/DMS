@@ -13,6 +13,7 @@
 - Fix code style warning E713.
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Support Django series in setup generation script.
+- Use Mayan CLI full path in DockerFile.
 
 4.2.17 (2023-07-10)
 ===================
