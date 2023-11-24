@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.common.apps import MayanAppConfig
 
 from .checks import check_app_tests
-from .runner import filter_tests_by_tags
+from .runner import filter_tests_by_tags, log
 
 
 class TestingApp(MayanAppConfig):
@@ -20,4 +20,8 @@ class TestingApp(MayanAppConfig):
         # Replace Django's implementation with the enhanced version.
         setattr(
             django.test.runner, 'filter_tests_by_tags', filter_tests_by_tags
+        )
+
+        setattr(
+            django.test.runner.DiscoverRunner, 'log', log
         )
