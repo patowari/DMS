@@ -42,6 +42,7 @@ set -x \
 apt-get update \
 && apt-get install --no-install-recommends --yes \
     ca-certificates \
+    clamav \
     file \
     fonts-arphic-uming \
     fonts-arphic-ukai \
@@ -91,7 +92,9 @@ apt-get update \
     ln --symbolic /usr/lib/arm-linux-gnueabihf/libz.so /usr/lib/ \
     && ln --symbolic /usr/lib/arm-linux-gnueabihf/libjpeg.so /usr/lib/ \
 ; fi \
-&& sed --in-place 's/#user_allow_other/user_allow_other/g' /etc/fuse.conf
+&& sed --in-place 's/#user_allow_other/user_allow_other/g' /etc/fuse.conf \
+# Update ClamAV database.
+&& /usr/bin/freshclam
 
 ####
 # builder_image - This image builds the Python package and is discarded afterwards
