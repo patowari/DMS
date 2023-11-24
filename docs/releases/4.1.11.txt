@@ -83,7 +83,7 @@ Testing
 ^^^^^^^
 
 Support multi ``psycopg2`` versions for testing. Upgrade testing now uses
-``PYTHON_PSYCOPG2_VERSION_PREVIOUS`` to install the previous version of the
+``PYTHON_PSYCOPG_VERSION_PREVIOUS`` to install the previous version of the
 library.
 
 

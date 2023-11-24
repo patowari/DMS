@@ -105,7 +105,7 @@ Upgrading from Mayan EDMS 3.2.x
 
    .. code-block:: bash
 
-       sudo -u mayan |MAYAN_PIP_BIN| install --no-use-pep517 psycopg2==|PYTHON_PSYCOPG2_VERSION| redis==|PYTHON_REDIS_VERSION|
+       sudo -u mayan |MAYAN_PIP_BIN| install --no-use-pep517 psycopg2==|PYTHON_PSYCOPG_VERSION| redis==|PYTHON_REDIS_VERSION|
 
    .. note::
 

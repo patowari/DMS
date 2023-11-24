@@ -70,7 +70,7 @@ job_docker_test:
   script:
     - DOCKER_VERSION=`cat docker/rootfs/version`
     - SERVICE_POSTGRES_IP=$(cat /etc/hosts | awk '{if ($2 == "postgres") print $1;}')
-    - docker run --rm --add-host="postgres:${SERVICE_POSTGRES_IP}" -e MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql_psycopg2','NAME':'{{ DEFAULT_DATABASE_NAME }}','USER':'{{ DEFAULT_DATABASE_USER }}','PASSWORD':'{{ DEFAULT_DATABASE_PASSWORD }}','HOST':'postgres'}}" "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" run_tests
+    - docker run --rm --add-host="postgres:${SERVICE_POSTGRES_IP}" -e MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'{{ DEFAULT_DATABASE_NAME }}','USER':'{{ DEFAULT_DATABASE_USER }}','PASSWORD':'{{ DEFAULT_DATABASE_PASSWORD }}','HOST':'postgres'}}" "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" run_tests
   services:
     - {{ DOCKER_DIND_IMAGE_VERSION }}
     - {{ DOCKER_POSTGRES_IMAGE_VERSION }}
@@ -355,12 +355,12 @@ job_postgres_upgrade_test:
   << : *job_base_upgrade_test
   script:
     - apt-get install --yes --no-install-recommends libpq-dev
-    - pip install psycopg2==${PYTHON_PSYCOPG2_VERSION_PREVIOUS}
+    - pip install psycopg2==${PYTHON_PSYCOPG_VERSION_PREVIOUS}
     - export MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'{{ DEFAULT_DATABASE_NAME }}','PASSWORD':'{{ DEFAULT_DATABASE_PASSWORD }}','USER':'{{ DEFAULT_DATABASE_USER }}','HOST':'postgres'}}"
     - mayan-edms.py common_initial_setup --no-dependencies
     - echo "from mayan.apps.documents.models.document_type_models import DocumentType;from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH;DocumentType.objects.first().documents_upload(file_object=open(file=TEST_FILE_SMALL_PATH, mode='rb'))" | mayan-edms.py shell
     - pip install --requirement requirements/build.txt --requirement requirements/testing-base.txt
-    - pip install psycopg2==${PYTHON_PSYCOPG2_VERSION}
+    - pip install psycopg==${PYTHON_PSYCOPG_VERSION}
     - pip install dist/mayan_edms-*.whl
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
@@ -416,7 +416,7 @@ job_postgres_test:
   script:
     - apt-get install --yes --no-install-recommends libpq-dev
     - . venv/bin/activate
-    - pip install psycopg2==${PYTHON_PSYCOPG2_VERSION}
+    - pip install psycopg==${PYTHON_PSYCOPG_VERSION}
     - export MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'{{ DEFAULT_DATABASE_NAME }}','PASSWORD':'{{ DEFAULT_DATABASE_PASSWORD }}','USER':'{{ DEFAULT_DATABASE_USER }}','HOST':'postgres'}}"
     - make test-all SETTINGS=mayan.settings.testing.gitlab-ci
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci

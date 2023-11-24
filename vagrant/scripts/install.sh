@@ -49,7 +49,7 @@ echo -e "7. Install Mayan EDMS from PyPI \n"
 sudo -E -u mayan ${BINARY_PIP} install ${MAYAN_VERSION}
 
 echo -e "8. Install the Python client for PostgreSQL and Redis \n"
-sudo -E -u mayan ${BINARY_PIP} install psycopg2==${PYTHON_PSYCOPG2_VERSION} redis==${PYTHON_REDIS_VERSION}
+sudo -E -u mayan ${BINARY_PIP} install psycopg==${PYTHON_PSYCOPG_VERSION} redis==${PYTHON_REDIS_VERSION}
 
 echo -e "9. Create the database for the installation \n"
 sudo -u postgres psql -c "CREATE USER ${DEFAULT_DATABASE_USER} WITH password '${DEFAULT_DATABASE_PASSWORD}';"
