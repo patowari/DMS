@@ -28,6 +28,10 @@
   - Add view to display all detected file metadata drivers.
   - Process all file metadata drivers as parallel background tasks.
 
+- Add antivirus scanning for documents. Implemented as a file metadata
+  driver and a new app named ``file_metadata_clamav``. ClamAV and the latest
+  database are included in the Docker image.
+
 4.5.7 (2023-10-25)
 ==================
 - Fix select2 widget in the metadata edit workflow action form.
