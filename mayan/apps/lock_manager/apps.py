@@ -1,5 +1,6 @@
 import logging
 import sys
+import uuid
 
 from django.utils.translation import gettext_lazy as _
 
@@ -25,15 +26,19 @@ class LockManagerApp(MayanAppConfig):
             # Don't test for locks during the `task_manager_purge_locks`
             # command as there may be some stuck locks which will block
             # the command.
+            lock_name = '{}-{}'.format(
+                TEST_LOCK_NAME, uuid.uuid4()
+            )
             lock_instance = LockingBackend.get_backend()
             try:
                 lock = lock_instance.acquire_lock(
-                    name=TEST_LOCK_NAME, timeout=1
+                    name=lock_name, timeout=1
                 )
-                lock.release()
             except Exception as exception:
                 raise RuntimeError(
                     'Error initializing the locking backend: {}; {}'.format(
                         setting_backend.value, exception
                     )
                 ) from exception
+            else:
+                lock.release()

@@ -38,6 +38,9 @@
 - Support source column resolution for non model subclasses.
 - Remove KeyCloak from the Docker Compose file.
 - Convert the Docker Compose file into a platform template.
+- Generate unique test lock names to avoid unintended lock errors when
+  validating the lock manager backend. Closes GitLab issue #1157, thanks
+  to Mathias Behrle (@mbehrle) for the report.
 
 4.5.7 (2023-10-25)
 ==================
