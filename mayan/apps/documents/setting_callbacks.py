@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.db import OperationalError
+from django.db.utils import OperationalError, ProgrammingError
 
 from .literals import (
     STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE,
@@ -14,7 +14,7 @@ def callback_update_document_file_page_image_cache_size(setting):
         cache = Cache.objects.get(
             defined_storage_name=STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
         )
-    except OperationalError:
+    except (OperationalError, ProgrammingError):
         """
         Non fatal. Non initialized installation. Ignore exception.
         """
@@ -30,7 +30,7 @@ def callback_update_document_version_page_image_cache_size(setting):
         cache = Cache.objects.get(
             defined_storage_name=STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
         )
-    except OperationalError:
+    except (OperationalError, ProgrammingError):
         """
         Non fatal. Non initialized installation. Ignore exception.
         """
