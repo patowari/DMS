@@ -1,6 +1,5 @@
-from django.test import override_settings
-
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
+from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (
     event_file_metadata_document_file_submitted,
@@ -12,7 +11,261 @@ from ..permissions import (
 )
 
 from .literals import TEST_FILE_METADATA_KEY
-from .mixins import DocumentTypeViewTestMixin, FileMetadataViewTestMixin
+from .mixins import (
+    DocumentFileMetadataViewTestMixin, DocumentTypeViewTestMixin,
+    FileMetadataDriverTestMixin
+)
+
+
+class DocumentFileMetadataViewTestCase(
+    DocumentFileMetadataViewTestMixin, GenericDocumentViewTestCase
+):
+    _test_document_file_metadata_create_auto = True
+
+    def test_document_file_driver_list_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_document_file_metadata_driver_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_driver_list_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_driver_list_view()
+        self.assertContains(
+            response=response, text=self._test_document.label,
+            status_code=200
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_document_file_driver_list_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_view
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_driver_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_file_metadata_list_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_document_file_metadata_list_view()
+        self.assertNotContains(
+            response=response, text=TEST_FILE_METADATA_KEY, status_code=404
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_file_metadata_list_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_list_view()
+        self.assertContains(
+            response=response, text=TEST_FILE_METADATA_KEY, status_code=200
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_document_file_metadata_list_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_view
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_submit_view_no_permission(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
+        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_single_submit_view()
+        self.assertEqual(response.status_code, 404)
+
+        self.assertEqual(
+            self._test_document.file_latest.file_metadata_drivers.count(),
+            file_metadata_driver_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_submit_single_view_with_access(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_submit
+        )
+
+        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_single_submit_view()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertEqual(
+            self._test_document.file_latest.file_metadata_drivers.count(),
+            file_metadata_driver_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 2)
+
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].target, self._test_document_file)
+        self.assertEqual(
+            events[0].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(events[1].target, self._test_document_file)
+        self.assertEqual(
+            events[1].verb, event_file_metadata_document_file_finished.id
+        )
+
+    def test_trashed_document_file_submit_view_with_access(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_submit
+        )
+
+        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_document_file_metadata_single_submit_view()
+        self.assertEqual(response.status_code, 404)
+
+        self.assertEqual(
+            self._test_document.file_latest.file_metadata_drivers.count(),
+            file_metadata_driver_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_submit_multiple_view_no_permission(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
+        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
+
+        self._clear_events()
+
+        response = self._request_document_file_multiple_submit_view()
+        self.assertEqual(response.status_code, 404)
+
+        self.assertEqual(
+            self._test_document.file_latest.file_metadata_drivers.count(),
+            file_metadata_driver_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_submit_multiple_view_with_access(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_submit
+        )
+
+        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
+
+        self._clear_events()
+
+        response = self._request_document_file_multiple_submit_view()
+        self.assertEqual(response.status_code, 302)
+
+        self.assertEqual(
+            self._test_document.file_latest.file_metadata_drivers.count(),
+            file_metadata_driver_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 2)
+
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].target, self._test_document_file)
+        self.assertEqual(
+            events[0].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[1].actor, self._test_case_user)
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(events[1].target, self._test_document_file)
+        self.assertEqual(
+            events[1].verb, event_file_metadata_document_file_finished.id
+        )
+
+    def test_trashed_document_file_submit_multiple_view_with_access(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_file_metadata_submit
+        )
+
+        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_document_file_multiple_submit_view()
+        self.assertEqual(response.status_code, 404)
+
+        self.assertEqual(
+            self._test_document.file_latest.file_metadata_drivers.count(),
+            file_metadata_driver_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class DocumentTypeViewTestCase(
@@ -59,7 +312,8 @@ class DocumentTypeViewTestCase(
 
     def test_document_type_submit_view_with_access(self):
         self.grant_access(
-            obj=self._test_document_type, permission=permission_file_metadata_submit
+            obj=self._test_document_type,
+            permission=permission_file_metadata_submit
         )
 
         file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
@@ -115,244 +369,27 @@ class DocumentTypeViewTestCase(
         self.assertEqual(events.count(), 0)
 
 
-@override_settings(FILE_METADATA_AUTO_PROCESS=True)
-class FileMetadataViewTestCase(
-    FileMetadataViewTestMixin, GenericDocumentViewTestCase
+class FileMetadataDriverViewTestCase(
+    FileMetadataDriverTestMixin, GenericViewTestCase
 ):
-    def setUp(self):
-        super().setUp()
-        self.test_driver = self._test_document.file_latest.file_metadata_drivers.first()
-
-    def test_document_file_driver_list_view_no_permission(self):
+    def test_file_metadata_driver_list_view_no_permission(self):
         self._clear_events()
 
-        response = self._request_document_file_metadata_driver_list_view()
-        self.assertEqual(response.status_code, 404)
+        response = self._request_file_metadata_driver_list_view()
+        self.assertEqual(response.status_code, 403)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_document_file_driver_list_view_with_access(self):
-        self.grant_access(
-            permission=permission_file_metadata_view, obj=self._test_document
+    def test_file_metadata_driver_list_view_with_permission(self):
+        self.grant_permission(
+            permission=permission_file_metadata_view
         )
 
         self._clear_events()
 
-        response = self._request_document_file_metadata_driver_list_view()
-        self.assertContains(
-            response=response, text=self._test_document.label, status_code=200
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_document_file_driver_list_view_with_access(self):
-        self.grant_access(
-            permission=permission_file_metadata_view, obj=self._test_document
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        response = self._request_document_file_metadata_driver_list_view()
-        self.assertEqual(response.status_code, 404)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_file_metadata_list_view_no_permission(self):
-        self._clear_events()
-
-        response = self._request_document_file_metadata_list_view()
-        self.assertNotContains(
-            response=response, text=TEST_FILE_METADATA_KEY, status_code=404
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_file_metadata_list_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_file_metadata_view
-        )
-
-        self._clear_events()
-
-        response = self._request_document_file_metadata_list_view()
-        self.assertContains(
-            response=response, text=TEST_FILE_METADATA_KEY, status_code=200
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_document_file_metadata_list_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_file_metadata_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        response = self._request_document_file_metadata_list_view()
-        self.assertEqual(response.status_code, 404)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_submit_view_no_permission(self):
-        self._test_document.file_latest.file_metadata_drivers.all().delete()
-
-        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
-
-        self._clear_events()
-
-        response = self._request_document_file_metadata_single_submit_view()
-        self.assertEqual(response.status_code, 404)
-
-        self.assertEqual(
-            self._test_document.file_latest.file_metadata_drivers.count(),
-            file_metadata_driver_count
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_submit_single_view_with_access(self):
-        self._test_document.file_latest.file_metadata_drivers.all().delete()
-        self.grant_access(
-            permission=permission_file_metadata_submit, obj=self._test_document
-        )
-
-        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
-
-        self._clear_events()
-
-        response = self._request_document_file_metadata_single_submit_view()
-        self.assertEqual(response.status_code, 302)
-
-        self.assertEqual(
-            self._test_document.file_latest.file_metadata_drivers.count(),
-            file_metadata_driver_count + 1
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 2)
-
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].action_object, self._test_document)
-        self.assertEqual(events[0].target, self._test_document_file)
-        self.assertEqual(
-            events[0].verb, event_file_metadata_document_file_submitted.id
-        )
-
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].action_object, self._test_document)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(
-            events[1].verb, event_file_metadata_document_file_finished.id
-        )
-
-    def test_trashed_document_file_submit_view_with_access(self):
-        self._test_document.file_latest.file_metadata_drivers.all().delete()
-
-        self.grant_access(
-            permission=permission_file_metadata_submit, obj=self._test_document
-        )
-
-        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        response = self._request_document_file_metadata_single_submit_view()
-        self.assertEqual(response.status_code, 404)
-
-        self.assertEqual(
-            self._test_document.file_latest.file_metadata_drivers.count(),
-            file_metadata_driver_count
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_submit_multiple_view_no_permission(self):
-        self._test_document.file_latest.file_metadata_drivers.all().delete()
-
-        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
-
-        self._clear_events()
-
-        response = self._request_document_file_multiple_submit_view()
-        self.assertEqual(response.status_code, 404)
-
-        self.assertEqual(
-            self._test_document.file_latest.file_metadata_drivers.count(),
-            file_metadata_driver_count
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_submit_multiple_view_with_access(self):
-        self._test_document.file_latest.file_metadata_drivers.all().delete()
-        self.grant_access(
-            permission=permission_file_metadata_submit, obj=self._test_document
-        )
-
-        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
-
-        self._clear_events()
-
-        response = self._request_document_file_multiple_submit_view()
-        self.assertEqual(response.status_code, 302)
-
-        self.assertEqual(
-            self._test_document.file_latest.file_metadata_drivers.count(),
-            file_metadata_driver_count + 1
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 2)
-
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].action_object, self._test_document)
-        self.assertEqual(events[0].target, self._test_document_file)
-        self.assertEqual(
-            events[0].verb, event_file_metadata_document_file_submitted.id
-        )
-
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].action_object, self._test_document)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(
-            events[1].verb, event_file_metadata_document_file_finished.id
-        )
-
-    def test_trashed_document_file_submit_multiple_view_with_access(self):
-        self._test_document.file_latest.file_metadata_drivers.all().delete()
-
-        self.grant_access(
-            permission=permission_file_metadata_submit, obj=self._test_document
-        )
-
-        file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        response = self._request_document_file_multiple_submit_view()
-        self.assertEqual(response.status_code, 404)
-
-        self.assertEqual(
-            self._test_document.file_latest.file_metadata_drivers.count(),
-            file_metadata_driver_count
-        )
+        response = self._request_file_metadata_driver_list_view()
+        self.assertEqual(response.status_code, 200)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

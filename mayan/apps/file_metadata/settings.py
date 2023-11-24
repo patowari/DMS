@@ -9,12 +9,12 @@ from .literals import (
 from .setting_migrations import FileMetadataSettingMigration
 
 setting_namespace = setting_cluster.do_namespace_add(
-    label=_(message='File metadata'), migration_class=FileMetadataSettingMigration,
-    name='file_metadata', version='0002'
+    label=_(message='File metadata'),
+    migration_class=FileMetadataSettingMigration, name='file_metadata',
+    version='0002'
 )
 setting_auto_process = setting_namespace.do_setting_add(
-    choices=('false', 'true'),
-    default=DEFAULT_FILE_METADATA_AUTO_PROCESS,
+    choices=('false', 'true'), default=DEFAULT_FILE_METADATA_AUTO_PROCESS,
     global_name='FILE_METADATA_AUTO_PROCESS', help_text=_(
         'Set new document types to perform file metadata processing '
         'automatically by default.'

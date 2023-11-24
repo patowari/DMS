@@ -15,6 +15,18 @@
 - Update PIP from version 23.2.1 to 23.3.1.
 - Add the Django series version to the setup generation script.
 - Update ``django-test-migrations`` from version 1.1.0 to 1.3.0.
+- Refactor file metadata app:
+
+  - Allow multiple drivers to execute for the same MIME types.
+  - Automatically find and import file metadata drivers.
+  - Add a normalized internal name field for file metadata drive attributes.
+    This solves the issue where attributes with spaces were not usable
+    in templates. Spaces are converted into underscores. Uppercase letters
+    in attributes are converted to lowercase.
+  - Existing file metadata template references need to be updated for
+    attribute letter casing.
+  - Add view to display all detected file metadata drivers.
+  - Process all file metadata drivers as parallel background tasks.
 
 4.5.2 (2023-09-20)
 ==================

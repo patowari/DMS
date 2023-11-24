@@ -14,11 +14,14 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
+from .classes import FileMetadataDriver
 from .icons import (
     icon_document_file_metadata_single_submit,
     icon_document_type_file_metadata_settings,
     icon_document_type_file_metadata_submit, icon_file_metadata,
-    icon_file_metadata_driver_list, icon_file_metadata_driver_attribute_list
+    icon_document_file_metadata_driver_list,
+    icon_file_metadata_driver_attribute_list,
+    icon_file_metadata_driver_list
 )
 from .links import link_document_file_metadata_single_submit
 from .models import DocumentFileDriverEntry
@@ -28,13 +31,13 @@ from .permissions import (
 )
 
 
-class DocumentFileDriverListView(
+class DocumentFileMetadataDriverListView(
     ExternalObjectViewMixin, SingleObjectListView
 ):
     external_object_permission = permission_file_metadata_view
     external_object_pk_url_kwarg = 'document_file_id'
     external_object_queryset = DocumentFile.valid.all()
-    view_icon = icon_file_metadata_driver_list
+    view_icon = icon_document_file_metadata_driver_list
 
     def get_extra_context(self):
         return {
@@ -67,7 +70,7 @@ class DocumentFileDriverListView(
         return self.external_object.file_metadata_drivers.all()
 
 
-class DocumentFileDriverAttributeListView(
+class DocumentFileMetadataDriverAttributeListView(
     ExternalObjectViewMixin, SingleObjectListView
 ):
     external_object_permission = permission_file_metadata_view
@@ -112,7 +115,7 @@ class DocumentFileDriverAttributeListView(
         return self.external_object.entries.all()
 
 
-class DocumentFileSubmitView(MultipleObjectConfirmActionView):
+class DocumentFileMetadataSubmitView(MultipleObjectConfirmActionView):
     object_permission = permission_file_metadata_submit
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()
@@ -208,3 +211,28 @@ class DocumentTypeFileMetadataSubmitView(FormView):
         return HttpResponseRedirect(
             redirect_to=self.get_success_url()
         )
+
+
+class FileMetadataDriverListView(SingleObjectListView):
+    view_icon = icon_file_metadata_driver_list
+    view_permission = permission_file_metadata_view
+
+    def get_extra_context(self):
+        return {
+            'hide_object': True,
+            'no_results_icon': icon_file_metadata,
+            'no_results_text': _(
+                'File metadata drivers extract embedded information '
+                'from document files. File metadata drivers are configure '
+                'in code only.'
+            ),
+            'no_results_title': _(
+                'No file metadata drivers available.'
+            ),
+            'title': _(
+                'File metadata drivers'
+            )
+        }
+
+    def get_source_queryset(self):
+        return FileMetadataDriver.collection.get_all(sorted=True)

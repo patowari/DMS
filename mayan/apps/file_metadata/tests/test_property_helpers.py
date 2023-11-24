@@ -1,12 +1,14 @@
 from mayan.apps.common.tests.mixins import PropertyHelperTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from .mixins import FileMetadataTestMixin
+from .mixins import DocumentFileMetadataTestMixin
 
 
 class DocumentPropertyHelperTestCase(
-    FileMetadataTestMixin, PropertyHelperTestMixin, BaseTestCase
+    DocumentFileMetadataTestMixin, PropertyHelperTestMixin, BaseTestCase
 ):
+    _test_document_file_metadata_create_auto = True
+
     def test_basic(self):
         self._clear_events()
 
@@ -67,8 +69,10 @@ class DocumentPropertyHelperTestCase(
 
 
 class DocumentFilePropertyHelperTestCase(
-    FileMetadataTestMixin, PropertyHelperTestMixin, BaseTestCase
+    DocumentFileMetadataTestMixin, PropertyHelperTestMixin, BaseTestCase
 ):
+    _test_document_file_metadata_create_auto = True
+
     def test_basic(self):
         self._clear_events()
 

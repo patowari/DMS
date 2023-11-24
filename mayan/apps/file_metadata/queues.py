@@ -8,6 +8,14 @@ queue_file_metadata = CeleryQueue(
 )
 
 queue_file_metadata.add_task_type(
-    label=_(message='Process document file'),
-    dotted_path='mayan.apps.file_metadata.tasks.task_process_document_file'
+    dotted_path='mayan.apps.file_metadata.tasks.task_document_file_metadata_process',
+    label=_(message='Process document file')
+)
+queue_file_metadata.add_task_type(
+    dotted_path='mayan.apps.file_metadata.tasks.task_document_file_metadata_finished',
+    label=_(message='Finish document file metadata processing')
+)
+queue_file_metadata.add_task_type(
+    dotted_path='mayan.apps.file_metadata.tasks.task_metadata_driver_process',
+    label=_(message='Process file metadata driver')
 )
