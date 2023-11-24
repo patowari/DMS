@@ -7,6 +7,7 @@
 - ``redis`` from version 4.2.0 to 4.2.2.
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Support Django series in setup generation script.
+- Use Mayan CLI full path in DockerFile.
 
 4.3.10 (2023-07-14)
 ===================
