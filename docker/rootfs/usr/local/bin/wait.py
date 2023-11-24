@@ -10,7 +10,7 @@ try:
     from yaml import CSafeLoader as SafeLoader
 except ImportError:
     from yaml import SafeLoader
-import psycopg2
+import psycopg
 
 PORT_RETRY_DELAY = 1
 
@@ -79,7 +79,10 @@ class ServiceCheck:
         attempt = 1
 
         while True:
-            print('Connection attempt #{} to: {}; '.format(attempt, self), end='')
+            print(
+                'Connection attempt #{} to: {}; '.format(attempt, self),
+                end=''
+            )
 
             try:
                 self._check()
@@ -135,16 +138,16 @@ class PostgreSQLServiceCheck(ServiceCheck):
                         'host': database_parameters.get('HOST'),
                         'password': database_parameters.get('PASSWORD'),
                         'post': database_parameters.get('PORT'),
-                        'user': database_parameters.get('USER'),
+                        'user': database_parameters.get('USER')
                     }
 
                     try:
-                        with psycopg2.connect(**kwargs) as connection:
+                        with psycopg.connect(**kwargs) as connection:
                             cursor = connection.cursor()
                             cursor.execute('SELECT version()')
                             cursor.fetchone()
                             cursor.close()
-                    except psycopg2.OperationalError as exception:
+                    except psycopg.OperationalError as exception:
                         raise ServiceCheck.ServiceConnectionError(exception)
 
     def _match(text):

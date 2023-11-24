@@ -10,6 +10,7 @@
   the setting. Added a new view and link to revert unsaved settings.
 - Override the test runner's logging setup to avoid having its output
   being concatenated when calling management commands and makefile targets.
+- Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.x.
 
 4.5.7 (2023-10-25)
 ==================

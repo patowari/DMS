@@ -154,7 +154,7 @@ RUN set -a \
     pip==${PYTHON_PIP_VERSION} \
     amqp==${PYTHON_AMQP_VERSION} \
     mysqlclient==${PYTHON_MYSQL_VERSION} \
-    psycopg2==${PYTHON_PSYCOPG2_VERSION} \
+    psycopg==${PYTHON_PSYCOPG_VERSION} \
     redis==${PYTHON_REDIS_VERSION} \
 # psutil is needed by ARM builds otherwise gevent and gunicorn fail to start.
 && UNAME=`uname --machine` && if [ "${UNAME#*arm}" != ${UNAME} ]; then \

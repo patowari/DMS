@@ -520,7 +520,7 @@ Upgrading from Mayan EDMS 3.2.x or earlier
 
    .. code-block:: bash
 
-       sudo -u |DEFAULT_OS_USERNAME| |MAYAN_PIP_BIN| install psycopg2==|PYTHON_PSYCOPG2_VERSION| redis==|PYTHON_REDIS_VERSION|
+       sudo -u |DEFAULT_OS_USERNAME| |MAYAN_PIP_BIN| install psycopg2==|PYTHON_PSYCOPG_VERSION| redis==|PYTHON_REDIS_VERSION|
 
    .. note::
 

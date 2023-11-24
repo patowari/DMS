@@ -490,7 +490,7 @@ setup-python-oracle:
 	@pip install cx_Oracle==$(PYTHON_ORACLE_VERSION)
 
 setup-python-postgresql:
-	@pip install psycopg2==$(PYTHON_PSYCOPG2_VERSION)
+	@pip install psycopg==$(PYTHON_PSYCOPG_VERSION)
 
 setup-python-redis:
 	@pip install redis==$(PYTHON_REDIS_VERSION)
