@@ -36,6 +36,7 @@
   driver and a new app named ``file_metadata_clamav``. ClamAV and the latest
   database are included in the Docker image.
 - Support source column resolution for non model subclasses.
+- Remove KeyCloak from the Docker Compose file.
 
 4.5.7 (2023-10-25)
 ==================
