@@ -12,6 +12,7 @@
   being concatenated when calling management commands and makefile targets.
 - Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.x.
 - Update AMQP from Version 5.1.0 to 5.2.0.
+- Update PIP from version 23.2.1 to 23.3.1.
 
 4.5.7 (2023-10-25)
 ==================
