@@ -14,6 +14,7 @@
 - Update AMQP from Version 5.1.0 to 5.2.0.
 - Update PIP from version 23.2.1 to 23.3.1.
 - Add the Django series version to the setup generation script.
+- Update ``django-test-migrations`` from version 1.1.0 to 1.3.0.
 
 4.5.7 (2023-10-25)
 ==================
