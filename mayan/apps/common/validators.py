@@ -74,7 +74,7 @@ class YAMLValidator:
         return not (self == other)
 
 
-internal_name_re = _lazy_re_compile(r'^[a-zA-Z0-9_]+\Z')
+internal_name_re = _lazy_re_compile(regex=r'^[a-zA-Z0-9_]+\Z')
 validate_internal_name = RegexValidator(
     internal_name_re, _(
         "Enter a valid 'internal name' consisting of letters, numbers, and "
