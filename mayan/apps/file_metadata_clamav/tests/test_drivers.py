@@ -12,7 +12,6 @@ from .literals import (
 class ClamScanDriverTestCase(
     DocumentFileMetadataTestMixin, GenericDocumentTestCase
 ):
-    # ~ _test_document_file_metadata_driver_path = 'mayan.apps.file_metadata_clamav.drivers.ClamScanDriver'
     _test_document_file_metadata_driver_path = ClamScanDriver.dotted_path
 
     def test_driver_entries(self):
