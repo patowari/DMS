@@ -115,28 +115,32 @@ class FileMetadataDriver(
         return FileMetadataDriverCollection
 
     @classmethod
+    def do_model_instance_populate(cls):
+        StoredDriver = apps.get_model(
+            app_label='file_metadata', model_name='StoredDriver'
+        )
+
+        try:
+            model_instance, created = StoredDriver.objects.get_or_create(
+                driver_path=cls.dotted_path, defaults={
+                    'internal_name': cls.internal_name
+                }
+            )
+        except (OperationalError, ProgrammingError):
+            """
+            Non fatal. Installation is not ready.
+            """
+        else:
+            cls.model_instance = model_instance
+
+    @classmethod
     def get_mime_type_list_display(cls):
         return ', '.join(cls.mime_type_list)
 
     @classmethod
     def post_load_modules(cls):
-        StoredDriver = apps.get_model(
-            app_label='file_metadata', model_name='StoredDriver'
-        )
-
         for driver in cls.collection.get_all():
-            try:
-                model_instance, created = StoredDriver.objects.get_or_create(
-                    driver_path=driver.dotted_path, defaults={
-                        'internal_name': driver.internal_name
-                    }
-                )
-            except (OperationalError, ProgrammingError):
-                """
-                Non fatal. Installation is not ready.
-                """
-            else:
-                driver.model_instance = model_instance
+            driver.do_model_instance_populate()
 
     def __init__(self, auto_initialize=True, **kwargs):
         self.auto_initialize = auto_initialize

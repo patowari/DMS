@@ -19,11 +19,12 @@ class FileMetadataTestMixin:
         FileMetadataDriver.collection.do_driver_disable_all()
 
         if self._test_document_file_metadata_driver_path:
-            test_document_file_metadata_driver = import_string(
+            self._test_document_file_metadata_driver = import_string(
                 dotted_path=self._test_document_file_metadata_driver_path
             )
+            self._test_document_file_metadata_driver.do_model_instance_populate()
             FileMetadataDriver.collection.do_driver_enable(
-                driver=test_document_file_metadata_driver
+                driver=self._test_document_file_metadata_driver
             )
 
 

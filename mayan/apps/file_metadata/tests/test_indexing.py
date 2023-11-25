@@ -11,6 +11,7 @@ from .mixins import FileMetadataTestMixin
 class IndexingTestCase(
     FileMetadataTestMixin, IndexTemplateTestMixin, GenericDocumentTestCase
 ):
+    _test_document_file_metadata_create_auto = True
     _test_index_template_node_expression = TEST_FILE_METADATA_INDEX_NODE_TEMPLATE
     auto_upload_test_document = False
 
