@@ -8,6 +8,7 @@ from .literals import (
     TEST_DRIVER_CLASS_PATH, TEST_FILE_METADATA_KEY, TEST_FILE_METADATA_VALUE
 )
 
+
 class FileMetadataTestMixin:
     _test_document_file_metadata_driver_path = TEST_DRIVER_CLASS_PATH
 
