@@ -176,23 +176,30 @@ class DocumentFilePageBusinessLogicMixin:
 
             try:
                 with self.document_file.get_intermediate_file() as file_object:
-                    converter = ConverterBase.get_converter_class()(
+                    converter_class = ConverterBase.get_converter_class()
+                    converter_instance = converter_class(
                         file_object=file_object
                     )
-                    converter.seek_page(page_number=self.page_number - 1)
+                    converter_instance.seek_page(
+                        page_number=self.page_number - 1
+                    )
 
-                    page_image = converter.get_page()
+                    page_image = converter_instance.get_page()
 
                     # Since open "wb+" doesn't create files, create it
                     # explicitly.
                     with self.cache_partition.create_file(filename=cache_filename) as file_object:
-                        file_object.write(page_image.getvalue())
+                        file_object.write(
+                            page_image.getvalue()
+                        )
 
                     # Apply runtime transformations.
                     for transformation in transformation_instance_list or ():
-                        converter.transform(transformation=transformation)
+                        converter_instance.transform(
+                            transformation=transformation
+                        )
 
-                    return converter.get_page()
+                    return converter_instance.get_page()
             except Exception as exception:
                 logger.error(
                     'Error creating document file page cache file from '
@@ -205,19 +212,22 @@ class DocumentFilePageBusinessLogicMixin:
             logger.debug('Page cache file "%s" found', cache_filename)
 
             with cache_file.open() as file_object:
-                converter = ConverterBase.get_converter_class()(
+                converter_class = ConverterBase.get_converter_class()
+                converter_instance = converter_class(
                     file_object=file_object
                 )
 
-                converter.seek_page(page_number=0)
+                converter_instance.seek_page(page_number=0)
 
                 # This code is also repeated below to allow using a context
                 # manager with cache_file.open and close it automatically.
                 # Apply runtime transformations.
                 for transformation in transformation_instance_list or ():
-                    converter.transform(transformation=transformation)
+                    converter_instance.transform(
+                        transformation=transformation
+                    )
 
-                return converter.get_page()
+                return converter_instance.get_page()
 
     def get_label(self):
         return _(
