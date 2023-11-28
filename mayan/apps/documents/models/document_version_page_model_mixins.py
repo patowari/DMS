@@ -44,7 +44,9 @@ class DocumentVersionPageBusinessLogicMixin:
             'transformations cache filename: %s', combined_cache_filename
         )
 
-        content_object_lock_name = self.content_object.get_lock_name(user=user)
+        content_object_lock_name = self.content_object.get_lock_name(
+            user=user
+        )
         try:
             content_object_lock = LockingBackend.get_backend().acquire_lock(
                 name=content_object_lock_name,
@@ -226,23 +228,28 @@ class DocumentVersionPageBusinessLogicMixin:
                 )
 
                 with content_object_cache_file.open() as file_object:
-                    converter = ConverterBase.get_converter_class()(
+                    converter_class = ConverterBase.get_converter_class()
+                    converter_instance = converter_class(
                         file_object=file_object
                     )
-                    converter.seek_page(page_number=0)
+                    converter_instance.seek_page(page_number=0)
 
-                    page_image = converter.get_page()
+                    page_image = converter_instance.get_page()
 
                     # Since open "wb+" doesn't create versions, create it
                     # explicitly.
                     with self.cache_partition.create_file(filename=cache_filename) as file_object:
-                        file_object.write(page_image.getvalue())
+                        file_object.write(
+                            page_image.getvalue()
+                        )
 
                     # Apply runtime transformations.
                     for transformation in transformation_instance_list or ():
-                        converter.transform(transformation=transformation)
+                        converter_instance.transform(
+                            transformation=transformation
+                        )
 
-                    return converter.get_page()
+                    return converter_instance.get_page()
             except Exception as exception:
                 # Cleanup in case of error.
                 logger.error(
@@ -255,19 +262,22 @@ class DocumentVersionPageBusinessLogicMixin:
             logger.debug('Page cache version "%s" found', cache_filename)
 
             with cache_file.open() as file_object:
-                converter = ConverterBase.get_converter_class()(
+                converter_class = ConverterBase.get_converter_class()
+                converter_instance = converter_class(
                     file_object=file_object
                 )
 
-                converter.seek_page(page_number=0)
+                converter_instance.seek_page(page_number=0)
 
                 # This code is also repeated below to allow using a context
                 # manager with cache_version.open and close it automatically.
                 # Apply runtime transformations.
                 for transformation in transformation_instance_list or ():
-                    converter.transform(transformation=transformation)
+                    converter_instance.transform(
+                        transformation=transformation
+                    )
 
-                return converter.get_page()
+                return converter_instance.get_page()
 
     def get_label(self):
         return _(
