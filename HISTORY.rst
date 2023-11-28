@@ -41,6 +41,8 @@
 - Generate unique test lock names to avoid unintended lock errors when
   validating the lock manager backend. Closes GitLab issue #1157, thanks
   to Mathias Behrle (@mbehrle) for the report.
+- Commit the event "document version edited" when a document version pages
+  are remapped.
 
 4.5.2 (2023-09-20)
 ==================

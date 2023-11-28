@@ -11,9 +11,13 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.converter.exceptions import AppImageError
+from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.templating.classes import Template
 
-from ..events import event_document_version_page_created
+from ..events import (
+    event_document_version_page_created, event_document_version_edited
+)
 from ..literals import (
     DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE, IMAGE_ERROR_NO_VERSION_PAGES,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
@@ -197,6 +201,12 @@ class DocumentVersionBusinessLogicMixin:
     def pages_first(self):
         return self.pages.first()
 
+    @method_event(
+        action_object='document',
+        event_manager_class=EventManagerMethodAfter,
+        event=event_document_version_edited,
+        target='self'
+    )
     def pages_remap(self, annotated_content_object_list=None, user=None):
         DocumentVersion = apps.get_model(
             app_label='documents', model_name='DocumentVersion'
@@ -204,6 +214,8 @@ class DocumentVersionBusinessLogicMixin:
         DocumentVersionPage = apps.get_model(
             app_label='documents', model_name='DocumentVersionPage'
         )
+
+        self._event_actor = user
 
         for page in self.pages.all():
             page._event_actor = user
