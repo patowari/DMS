@@ -1,6 +1,7 @@
 4.3.11 (XXXX-XX-XX)
 ===================
 - Use correct field when sorting document file pages.
+- Fix typos in comments and transformations labels.
 
 4.3.10 (2023-07-14)
 ===================

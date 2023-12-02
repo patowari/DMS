@@ -1,6 +1,6 @@
 class ConvertError(Exception):
     """
-    Base exception for all coverter app exceptions
+    Base exception for all converter app exceptions.
     """
 
 
@@ -20,14 +20,14 @@ class AppImageError(ConvertError):
 
 class UnknownFileFormat(ConvertError):
     """
-    Raised when the converter backend can't understand a file
+    Raised when the converter backend can't understand a file.
     """
 
 
 class UnkownConvertError(ConvertError):
     """
     Raised when an error is found but there is no disernible way to
-    identify the kind of error
+    identify the kind of error.
     """
 
 

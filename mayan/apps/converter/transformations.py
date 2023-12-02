@@ -174,7 +174,7 @@ class TransformationAssetPastePercent(
     ImagePasteCoordinatesPercentTransformationMixin,
     AssetTransformationMixin, BaseTransformation
 ):
-    label = _('Paste an asset (percents coordinates)')
+    label = _('Paste an asset (percent coordinates)')
     name = 'paste_asset_percent'
 
 
@@ -384,7 +384,7 @@ class TransformationDrawRectanglePercent(
         'left', 'top', 'right', 'bottom', 'fillcolor', 'fill_transparency',
         'outlinecolor', 'outlinewidth'
     )
-    label = _('Draw rectangle (percents coordinates)')
+    label = _('Draw rectangle (percent coordinates)')
     name = 'draw_rectangle_percent'
 
     class Form(TransformationDrawRectangleMixin.Form):
