@@ -8,6 +8,7 @@
   - ``redis`` from version 4.2.0 to 4.2.2.
 
 - Code style fixes.
+- Fix typos in comments and transformations labels.
 
 4.4.9 (2023-10-15)
 ==================
