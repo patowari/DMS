@@ -2,7 +2,6 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 
-from .literals import MODEL_SEND_FUNCTION_DOTTED_PATH
 from .workflow_action_mixins import ObjectEmailActionMixin
 
 
@@ -22,7 +21,8 @@ class DocumentEmailAction(ObjectEmailActionMixin, WorkflowAction):
                     'label': _(message='Attachment'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
-                        'Attach the exported document version to the email.'
+                        message='Attach the exported document version '
+                        'to the email.'
                     ),
                     'required': False
                 }
@@ -45,11 +45,6 @@ class DocumentEmailAction(ObjectEmailActionMixin, WorkflowAction):
                         'as_attachment': True,
                         'obj': obj
                     }
-                )
-                result.update(
-                    MODEL_SEND_FUNCTION_DOTTED_PATH.get(
-                        obj._meta.model, {}
-                    )
                 )
 
         return result

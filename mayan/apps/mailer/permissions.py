@@ -8,20 +8,22 @@ namespace = PermissionNamespace(
 
 # Mailing profile
 
-permission_user_mailer_create = namespace.add_permission(
-    label=_(message='Create a mailing profile'), name='user_mailer_create'
+permission_mailing_profile_create = namespace.add_permission(
+    label=_(message='Create a mailing profile'),
+    name='mailing_profile_create'
 )
-permission_user_mailer_delete = namespace.add_permission(
-    label=_(message='Delete a mailing profile'), name='user_mailer_delete'
+permission_mailing_profile_delete = namespace.add_permission(
+    label=_(message='Delete a mailing profile'),
+    name='mailing_profile_delete'
 )
-permission_user_mailer_edit = namespace.add_permission(
-    label=_(message='Edit a mailing profile'), name='user_mailer_edit'
+permission_mailing_profile_edit = namespace.add_permission(
+    label=_(message='Edit a mailing profile'), name='mailing_profile_edit'
 )
-permission_user_mailer_view = namespace.add_permission(
-    label=_(message='View a mailing profile'), name='user_mailer_view'
+permission_mailing_profile_use = namespace.add_permission(
+    label=_(message='Use a mailing profile'), name='mailing_profile_use'
 )
-permission_user_mailer_use = namespace.add_permission(
-    label=_(message='Use a mailing profile'), name='user_mailer_use'
+permission_mailing_profile_view = namespace.add_permission(
+    label=_(message='View a mailing profile'), name='mailing_profile_view'
 )
 
 # Document

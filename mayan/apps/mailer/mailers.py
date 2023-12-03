@@ -23,41 +23,47 @@ class DjangoSMTP(MailerBackendBaseEmail):
                     'label': _(message='Host'),
                     'class': 'django.forms.CharField',
                     'default': 'localhost',
-                    'help_text': _(message='The host to use for sending email.'),
+                    'help_text': _(
+                        message='The host to use for sending email.'
+                    ),
                     'kwargs': {
                         'max_length': 48
                     }, 'required': True
                 }, 'port': {
                     'label': _(message='Port'),
                     'class': 'django.forms.IntegerField', 'default': 25,
-                    'help_text': _(message='Port to use for the SMTP server.'),
+                    'help_text': _(
+                        message='Port to use for the SMTP server.'
+                    ),
                     'required': True
                 }, 'use_tls': {
                     'label': _(message='Use TLS'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
-                        'Whether to use a TLS (secure) connection when '
-                        'talking to the SMTP server. This is used for '
-                        'explicit TLS connections, generally on port 587.'
+                        message='Whether to use a TLS (secure) '
+                        'connection when talking to the SMTP server. This '
+                        'is used for explicit TLS connections, generally '
+                        'on port 587.'
                     ), 'required': False
                 }, 'use_ssl': {
                     'label': _(message='Use SSL'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
-                        'Whether to use an implicit TLS (secure) connection '
-                        'when talking to the SMTP server. In most email '
-                        'documentation this type of TLS connection is '
-                        'referred to as SSL. It is generally used on port '
-                        '465. If you are experiencing problems, see the '
-                        'explicit TLS setting "Use TLS". Note that '
-                        '"Use TLS" and "Use SSL" are mutually exclusive, '
-                        'so only set one of those settings to True.'
+                        message='Whether to use an implicit TLS (secure) '
+                        'connection when talking to the SMTP server. In '
+                        'most email documentation this type of TLS '
+                        'connection is referred to as SSL. It is generally '
+                        'used on port 465. If you are experiencing '
+                        'problems, see the explicit TLS setting '
+                        '"Use TLS". Note that "Use TLS" and "Use SSL" '
+                        'are mutually exclusive, so only set one of those '
+                        'settings to True.'
                     ), 'required': False
                 }, 'stored_credential_id': {
                     'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
                     'help_text': _(
-                        'The credential entry to use to authenticate '
-                        'against the email server.'
+                        message='The credential entry to use to '
+                        'authenticate against the email server.'
                     ),
                     'kwargs': {
                         'source_model': StoredCredential,

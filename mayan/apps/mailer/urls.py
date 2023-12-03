@@ -1,6 +1,9 @@
 from django.urls import re_path
 
-from .api_views import APIUserMailerDetailView, APIUserMailerListView
+from .api_views import (
+    APIMailObjectAttachmentView, APIMailObjectLinkView,
+    APIMailingProfileDetailView, APIMailingProfileListView
+)
 from .views.document_views import MailDocumentLinkView
 from .views.document_file_views import (
     MailDocumentFileLinkView, MailDocumentFileAttachmentView
@@ -9,9 +12,9 @@ from .views.document_version_views import (
     MailDocumentVersionLinkView, MailDocumentVersionAttachmentView
 )
 from .views.mailing_profile_views import (
-    UserMailerBackendSelectionView, UserMailingCreateView,
-    UserMailingDeleteView, UserMailingEditView, UserMailerTestView,
-    UserMailerListView
+    MailingProfileBackendSelectionView, MailingProfileCreateView,
+    MailingProfileDeleteView, MailingProfileEditView, MailingProfileTestView,
+    MailingProfileListView
 )
 
 
@@ -74,31 +77,31 @@ urlpatterns_document_version = [
     )
 ]
 
-urlpatterns_user_mailers = [
+urlpatterns_mailing_profiles = [
     re_path(
-        route=r'^user_mailers/backend/selection/$',
-        name='user_mailer_backend_selection',
-        view=UserMailerBackendSelectionView.as_view()
+        route=r'^mailing_profiles/backend/selection/$',
+        name='mailing_profile_backend_selection',
+        view=MailingProfileBackendSelectionView.as_view()
     ),
     re_path(
-        route=r'^user_mailers/(?P<backend_path>[a-zA-Z0-9_.]+)/create/$',
-        name='user_mailer_create', view=UserMailingCreateView.as_view()
+        route=r'^mailing_profiles/(?P<backend_path>[a-zA-Z0-9_.]+)/create/$',
+        name='mailing_profile_create', view=MailingProfileCreateView.as_view()
     ),
     re_path(
-        route=r'^user_mailers/(?P<mailer_id>\d+)/delete/$',
-        name='user_mailer_delete', view=UserMailingDeleteView.as_view()
+        route=r'^mailing_profiles/(?P<mailing_profile_id>\d+)/delete/$',
+        name='mailing_profile_delete', view=MailingProfileDeleteView.as_view()
     ),
     re_path(
-        route=r'^user_mailers/(?P<mailer_id>\d+)/edit/$',
-        name='user_mailer_edit', view=UserMailingEditView.as_view()
+        route=r'^mailing_profiles/(?P<mailing_profile_id>\d+)/edit/$',
+        name='mailing_profile_edit', view=MailingProfileEditView.as_view()
     ),
     re_path(
-        route=r'^user_mailers/(?P<mailer_id>\d+)/test/$',
-        name='user_mailer_test', view=UserMailerTestView.as_view()
+        route=r'^mailing_profiles/(?P<mailing_profile_id>\d+)/test/$',
+        name='mailing_profile_test', view=MailingProfileTestView.as_view()
     ),
     re_path(
-        route=r'^user_mailers/$', name='user_mailer_list',
-        view=UserMailerListView.as_view()
+        route=r'^mailing_profiles/$', name='mailing_profile_list',
+        view=MailingProfileListView.as_view()
     )
 ]
 
@@ -106,15 +109,32 @@ urlpatterns = []
 urlpatterns.extend(urlpatterns_document)
 urlpatterns.extend(urlpatterns_document_file)
 urlpatterns.extend(urlpatterns_document_version)
-urlpatterns.extend(urlpatterns_user_mailers)
+urlpatterns.extend(urlpatterns_mailing_profiles)
 
-api_urls = [
+api_urls_mailing_profiles = [
     re_path(
-        route=r'^mailers/$', name='mailer-list',
-        view=APIUserMailerListView.as_view()
+        route=r'^mailing_profiles/$', name='mailing_profile-list',
+        view=APIMailingProfileListView.as_view()
     ),
     re_path(
-        route=r'^mailers/(?P<mailer_id>[0-9]+)/$', name='mailer-detail',
-        view=APIUserMailerDetailView.as_view()
+        route=r'^mailing_profiles/(?P<mailing_profile_id>[0-9]+)/$',
+        name='mailing_profile-detail',
+        view=APIMailingProfileDetailView.as_view()
     )
 ]
+
+api_urls_mailing_profile_actions = [
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/mailing/attachment/$',
+        name='object-mailing-action-attachment',
+        view=APIMailObjectAttachmentView.as_view()
+    ),
+    re_path(
+        route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/mailing/link/$',
+        name='object-mailing-action-link', view=APIMailObjectLinkView.as_view()
+    )
+]
+
+api_urls = []
+api_urls.extend(api_urls_mailing_profiles)
+api_urls.extend(api_urls_mailing_profile_actions)
