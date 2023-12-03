@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.model_mixins import BackendModelMixin
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
 
@@ -13,13 +14,14 @@ from .model_mixins import UserMailerBusinessLogicMixin
 
 
 class UserMailer(
-    BackendModelMixin, UserMailerBusinessLogicMixin, models.Model
+    BackendModelMixin, ExtraDataModelMixin, UserMailerBusinessLogicMixin,
+    models.Model
 ):
     """
-    This model is used to create mailing profiles that can be used from inside
-    the system. These profiles differ from the system mailing profile in that
-    they can be created at runtime and can be assigned ACLs to restrict
-    their use.
+    This model is used to create mailing profiles that can be used from
+    inside the system. These profiles differ from the system mailing
+    profile in that they can be created at runtime and can be assigned
+    ACLs to restrict their use.
     """
     _backend_model_null_backend = NullBackend
 
@@ -29,8 +31,8 @@ class UserMailer(
     )
     default = models.BooleanField(
         default=True, help_text=_(
-            'If default, this mailing profile will be pre-selected on the '
-            'document mailing form.'
+            message='If default, this mailing profile will be '
+            'pre-selected on the document mailing form.'
         ), verbose_name=_(message='Default')
     )
     enabled = models.BooleanField(

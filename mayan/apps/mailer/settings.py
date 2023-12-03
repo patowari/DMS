@@ -14,25 +14,26 @@ setting_namespace = setting_cluster.do_namespace_add(
 setting_attachment_subject_template = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENT_SUBJECT_TEMPLATE,
     global_name='MAILER_DOCUMENT_SUBJECT_TEMPLATE', help_text=_(
-        'Template for the document email form subject line.'
+        message='Template for the document email form subject line.'
     )
 )
 setting_attachment_body_template = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENT_BODY_TEMPLATE,
     global_name='MAILER_DOCUMENT_BODY_TEMPLATE', help_text=_(
-        'Template for the document email form body text. Can include HTML.'
+        message='Template for the document email form body text. '
+        'Can include HTML.'
     )
 )
 setting_document_link_subject_template = setting_namespace.do_setting_add(
     default=DEFAULT_LINK_SUBJECT_TEMPLATE,
     global_name='MAILER_LINK_SUBJECT_TEMPLATE', help_text=_(
-        'Template for the document link email form subject line.'
+        message='Template for the document link email form subject line.'
     )
 )
 setting_document_link_body_template = setting_namespace.do_setting_add(
     default=DEFAULT_LINK_BODY_TEMPLATE,
     global_name='MAILER_LINK_BODY_TEMPLATE', help_text=_(
-        'Template for the document link email form body text. Can '
-        'include HTML.'
+        message='Template for the document link email form body text. '
+        'Can include HTML.'
     )
 )

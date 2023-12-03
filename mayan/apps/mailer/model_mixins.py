@@ -6,6 +6,7 @@ from django.utils.html import strip_tags
 from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
 
+import mayan
 from mayan.apps.templating.classes import Template
 
 from .events import event_email_sent
@@ -168,7 +169,8 @@ class UserMailerBusinessLogicMixin:
         """
         try:
             self.send(
-                subject=_(message='Test email from Mayan EDMS'), to=to, user=user
+                subject=_(message='Test email from %s') % mayan.__title__,
+                to=to, user=user
             )
         except Exception as exception:
             self.error_log.create(

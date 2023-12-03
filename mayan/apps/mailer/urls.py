@@ -1,5 +1,6 @@
 from django.urls import re_path
 
+from .api_views import APIUserMailerDetailView, APIUserMailerListView
 from .views.document_views import MailDocumentLinkView
 from .views.document_file_views import (
     MailDocumentFileLinkView, MailDocumentFileAttachmentView
@@ -106,3 +107,14 @@ urlpatterns.extend(urlpatterns_document)
 urlpatterns.extend(urlpatterns_document_file)
 urlpatterns.extend(urlpatterns_document_version)
 urlpatterns.extend(urlpatterns_user_mailers)
+
+api_urls = [
+    re_path(
+        route=r'^mailers/$', name='mailer-list',
+        view=APIUserMailerListView.as_view()
+    ),
+    re_path(
+        route=r'^mailers/(?P<mailer_id>[0-9]+)/$', name='mailer-detail',
+        view=APIUserMailerDetailView.as_view()
+    )
+]
