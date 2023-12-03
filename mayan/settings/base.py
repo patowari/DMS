@@ -110,8 +110,8 @@ INSTALLED_APPS = (
     'mayan.apps.templating',
     'mayan.apps.testing',
     'mayan.apps.views',
-    # Obsolete apps. Need to remain to allow migrations to execute.
     'mayan.apps.announcements',
+    # Obsolete apps. Need to remain to allow migrations to execute.
     'mayan.apps.motd',
     # Document apps.
     'mayan.apps.cabinets',
