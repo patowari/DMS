@@ -30,7 +30,7 @@ class ClientBackendSentry(ClientBackend):
         return (
             Link(
                 icon=icon_sentry_debug,
-                permissions=(permission_test_trigger,),
+                permission=permission_test_trigger,
                 text=_(message='Sentry test error'),
                 view='platform:sentry_debug',
             ),

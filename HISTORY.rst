@@ -43,6 +43,8 @@
   to Mathias Behrle (@mbehrle) for the report.
 - Commit the event "document version edited" when a document version pages
   are remapped.
+- Normalize the permission system to work with single permissions per filter
+  or check.
 
 4.5.2 (2023-09-20)
 ==================

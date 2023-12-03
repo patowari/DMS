@@ -19,19 +19,19 @@ from .permissions import (
 link_document_file_metadata_driver_list = Link(
     icon=icon_file_metadata,
     kwargs={'document_file_id': 'resolved_object.id'},
-    permissions=(permission_file_metadata_view,), text=_(message='File metadata'),
+    permission=permission_file_metadata_view, text=_(message='File metadata'),
     view='file_metadata:document_file_metadata_driver_list'
 )
 link_document_file_metadata_driver_attribute_list = Link(
     icon=icon_file_metadata,
     kwargs={'document_file_driver_id': 'resolved_object.id'},
-    permissions=(permission_file_metadata_view,), text=_(message='Attributes'),
+    permission=permission_file_metadata_view, text=_(message='Attributes'),
     view='file_metadata:document_file_metadata_driver_attribute_list'
 )
 link_document_file_metadata_single_submit = Link(
     icon=icon_document_file_metadata_single_submit,
     kwargs={'document_file_id': 'resolved_object.id'},
-    permissions=(permission_file_metadata_submit,),
+    permission=permission_file_metadata_submit,
     text=_(message='Submit for file metadata'),
     view='file_metadata:document_file_metadata_single_submit'
 )
@@ -46,13 +46,13 @@ link_document_file_metadata_submit_multiple = Link(
 link_document_type_file_metadata_settings = Link(
     icon=icon_document_type_file_metadata_settings,
     kwargs={'document_type_id': 'resolved_object.id'},
-    permissions=(permission_document_type_file_metadata_setup,),
+    permission=permission_document_type_file_metadata_setup,
     text=_(message='Setup file metadata'),
     view='file_metadata:document_type_file_metadata_settings'
 )
 link_document_type_file_metadata_submit = Link(
     icon=icon_document_type_file_metadata_submit,
-    permissions=(permission_file_metadata_submit,),
+    permission=permission_file_metadata_submit,
     text=_(message='File metadata processing per type'),
     view='file_metadata:document_type_file_metadata_submit'
 )
@@ -61,7 +61,7 @@ link_document_type_file_metadata_submit = Link(
 
 link_file_metadata_driver_list = Link(
     icon=icon_file_metadata_driver_list,
-    permissions=(permission_file_metadata_view,),
+    permission=permission_file_metadata_view,
     text=_(message='File metadata drivers'),
     view='file_metadata:file_metadata_driver_list'
 )

@@ -14,7 +14,7 @@ from ..permissions import (
 
 link_document_type_change = Link(
     args='resolved_object.id', icon=icon_document_type_change,
-    permissions=(permission_document_properties_edit,), text=_(message='Change type'),
+    permission=permission_document_properties_edit, text=_(message='Change type'),
     view='documents:document_type_change'
 )
 link_document_list = Link(
@@ -35,17 +35,17 @@ link_document_multiple_type_change = Link(
 )
 link_document_preview = Link(
     args='resolved_object.id', icon=icon_document_preview,
-    permissions=(permission_document_view,), text=_(message='Preview'),
+    permission=permission_document_view, text=_(message='Preview'),
     view='documents:document_preview'
 )
 link_document_properties = Link(
     args='resolved_object.id', icon=icon_document_properties_detail,
-    permissions=(permission_document_view,), text=_(message='Properties'),
+    permission=permission_document_view, text=_(message='Properties'),
     view='documents:document_properties'
 )
 link_document_properties_edit = Link(
     args='resolved_object.id',
     icon=icon_document_properties_edit,
-    permissions=(permission_document_properties_edit,),
+    permission=permission_document_properties_edit,
     text=_(message='Edit properties'), view='documents:document_properties_edit'
 )

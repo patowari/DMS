@@ -27,10 +27,10 @@ class APIDocumentTypeOCRSettingsView(generics.RetrieveUpdateAPIView):
     """
     lookup_field = 'document_type__pk'
     lookup_url_kwarg = 'document_type_id'
-    mayan_object_permissions = {
-        'GET': (permission_document_type_ocr_setup,),
-        'PATCH': (permission_document_type_ocr_setup,),
-        'PUT': (permission_document_type_ocr_setup,)
+    mayan_object_permission_map = {
+       'GET': permission_document_type_ocr_setup,
+       'PATCH': permission_document_type_ocr_setup,
+       'PUT': permission_document_type_ocr_setup
     }
     serializer_class = DocumentTypeOCRSettingsSerializer
     source_queryset = DocumentTypeOCRSettings.objects.all()
@@ -41,8 +41,8 @@ class APIDocumentOCRSubmitView(generics.GenericAPIView):
     post: Submit a document for OCR.
     """
     lookup_url_kwarg = 'document_id'
-    mayan_object_permissions = {
-        'POST': (permission_document_version_ocr,)
+    mayan_object_permission_map = {
+       'POST': permission_document_version_ocr
     }
     source_queryset = Document.valid.all()
 
@@ -66,10 +66,10 @@ class APIDocumentVersionPageOCRContentDetailView(
     patch: Edit the OCR content of the selected document page.
     put: Edit the OCR content of the selected document page.
     """
-    mayan_object_permissions = {
-        'GET': (permission_document_version_ocr_content_view,),
-        'PATCH': (permission_document_version_ocr_content_edit,),
-        'PUT': (permission_document_version_ocr_content_edit,)
+    mayan_object_permission_map = {
+       'GET': permission_document_version_ocr_content_view,
+       'PATCH': permission_document_version_ocr_content_edit,
+       'PUT': permission_document_version_ocr_content_edit
     }
     serializer_class = DocumentVersionPageOCRContentSerializer
 
@@ -80,9 +80,9 @@ class APIDocumentVersionPageOCRContentDetailView(
 
     def get_object(self):
         document_version_page = self.get_document_version_page(
-            permission=self.mayan_object_permissions.get(
-                self.request.method, (None,)
-            )[0]
+            permission=self.mayan_object_permission_map.get(
+                self.request.method, None
+            )
         )
 
         try:
@@ -98,8 +98,8 @@ class APIDocumentVersionOCRSubmitView(generics.GenericAPIView):
     post: Submit a document version for OCR.
     """
     lookup_url_kwarg = 'document_version_id'
-    mayan_object_permissions = {
-        'POST': (permission_document_version_ocr,)
+    mayan_object_permission_map = {
+       'POST': permission_document_version_ocr
     }
     source_queryset = DocumentVersion.objects.all()
 

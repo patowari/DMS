@@ -27,12 +27,8 @@ class APIDocumentCabinetListView(
     """
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
-    mayan_external_object_permissions = {
-        'GET': (permission_cabinet_view,)
-    }
-    mayan_object_permissions = {
-        'GET': (permission_cabinet_view,)
-    }
+    mayan_external_object_permission_map = {'GET': permission_cabinet_view}
+    mayan_object_permission_map = {'GET': permission_cabinet_view}
     serializer_class = CabinetSerializer
 
     def get_source_queryset(self):
@@ -44,12 +40,8 @@ class APICabinetListView(generics.ListCreateAPIView):
     get: Returns a list of all the cabinets.
     post: Create a new cabinet.
     """
-    mayan_object_permissions = {
-        'GET': (permission_cabinet_view,)
-    }
-    mayan_view_permissions = {
-        'POST': (permission_cabinet_create,)
-    }
+    mayan_object_permission_map = {'GET': permission_cabinet_view}
+    mayan_view_permission_map = {'POST': permission_cabinet_create}
     ordering_fields = ('id', 'label')
     serializer_class = CabinetSerializer
     source_queryset = Cabinet.objects.all()
@@ -59,7 +51,7 @@ class APICabinetListView(generics.ListCreateAPIView):
             '_event_actor': self.request.user
         }
 
-    def get_mayan_view_permissions(self, request, view):
+    def get_mayan_view_permission_map(self, request, view):
         if request.method == 'POST':
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
@@ -67,9 +59,11 @@ class APICabinetListView(generics.ListCreateAPIView):
             if serializer.validated_data['parent']:
                 return ()
             else:
-                return self.mayan_view_permissions.get(request.method, None)
+                return self.mayan_view_permission_map.get(
+                    request.method, None
+                )
         else:
-            return self.mayan_view_permissions.get(request.method, None)
+            return self.mayan_view_permission_map.get(request.method, None)
 
     def perform_create(self, serializer):
         parent = serializer.validated_data['parent']
@@ -92,11 +86,11 @@ class APICabinetView(generics.RetrieveUpdateDestroyAPIView):
     put: Edit the selected cabinet.
     """
     lookup_url_kwarg = 'cabinet_id'
-    mayan_object_permissions = {
-        'GET': (permission_cabinet_view,),
-        'PUT': (permission_cabinet_edit,),
-        'PATCH': (permission_cabinet_edit,),
-        'DELETE': (permission_cabinet_delete,)
+    mayan_object_permission_map = {
+       'GET': permission_cabinet_view,
+       'PUT': permission_cabinet_edit,
+       'PATCH': permission_cabinet_edit,
+       'DELETE': permission_cabinet_delete
     }
     serializer_class = CabinetSerializer
     source_queryset = Cabinet.objects.all()
@@ -112,9 +106,7 @@ class APICabinetDocumentAddView(generics.ObjectActionAPIView):
     post: Add a document to a cabinet.
     """
     lookup_url_kwarg = 'cabinet_id'
-    mayan_object_permissions = {
-        'POST': (permission_cabinet_add_document,)
-    }
+    mayan_object_permission_map = {'POST': permission_cabinet_add_document}
     serializer_class = CabinetDocumentAddSerializer
     source_queryset = Cabinet.objects.all()
 
@@ -128,8 +120,8 @@ class APICabinetDocumentRemoveView(generics.ObjectActionAPIView):
     post: Remove a document from a cabinet.
     """
     lookup_url_kwarg = 'cabinet_id'
-    mayan_object_permissions = {
-        'POST': (permission_cabinet_remove_document,)
+    mayan_object_permission_map = {
+        'POST': permission_cabinet_remove_document
     }
     serializer_class = CabinetDocumentRemoveSerializer
     source_queryset = Cabinet.objects.all()
@@ -147,12 +139,8 @@ class APICabinetDocumentListView(
     """
     external_object_class = Cabinet
     external_object_pk_url_kwarg = 'cabinet_id'
-    mayan_external_object_permissions = {
-        'GET': (permission_cabinet_view,)
-    }
-    mayan_object_permissions = {
-        'GET': (permission_document_view,),
-    }
+    mayan_external_object_permission_map = {'GET': permission_cabinet_view}
+    mayan_object_permission_map = {'GET': permission_document_view}
     serializer_class = DocumentSerializer
 
     def get_source_queryset(self):

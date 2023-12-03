@@ -30,13 +30,13 @@ link_cache_list = Link(
 link_cache_partition_purge = Link(
     icon=icon_cache_partition_purge, kwargs=get_content_type_kwargs_factory(
         variable_name='resolved_object'
-    ), permissions=(permission_cache_purge,), text=_(message='Purge cache'),
+    ), permission=permission_cache_purge, text=_(message='Purge cache'),
     view='file_caching:cache_partitions_purge'
 )
 link_cache_purge_single = Link(
     condition=condition_valid_storage, icon=icon_cache_purge,
     kwargs={'cache_id': 'resolved_object.id'},
-    permissions=(permission_cache_purge,), text=_(message='Purge cache'),
+    permission=permission_cache_purge, text=_(message='Purge cache'),
     view='file_caching:cache_purge'
 )
 link_cache_purge_single_multiple = Link(

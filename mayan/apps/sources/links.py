@@ -135,17 +135,17 @@ link_document_file_source_metadata_list = Link(
 
 link_source_backend_selection = Link(
     icon=icon_source_backend_selection,
-    permissions=(permission_sources_create,),
+    permission=permission_sources_create,
     text=_(message='Create source'), view='sources:source_backend_selection'
 )
 link_source_delete = Link(
     args=('resolved_object.pk',), icon=icon_source_delete,
-    permissions=(permission_sources_delete,), tags='dangerous',
+    permission=permission_sources_delete, tags='dangerous',
     text=_(message='Delete'), view='sources:source_delete'
 )
 link_source_edit = Link(
     args=('resolved_object.pk',), icon=icon_source_edit,
-    permissions=(permission_sources_edit,), text=_(message='Edit'),
+    permission=permission_sources_edit, text=_(message='Edit'),
     view='sources:source_edit'
 )
 link_source_list = Link(
@@ -161,6 +161,6 @@ link_source_setup = Link(
 )
 link_source_test = Link(
     args=('resolved_object.pk',), condition=condition_source_supports_dry_run,
-    icon=icon_source_test, permissions=(permission_sources_view,),
+    icon=icon_source_test, permission=permission_sources_view,
     text=_(message='Test'), view='sources:source_test'
 )

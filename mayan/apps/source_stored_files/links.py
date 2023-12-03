@@ -9,7 +9,7 @@ link_storage_file_delete = Link(
     icon=icon_storage_file_delete, kwargs={
         'source_id': 'source.pk',
         'action_name': '"file_delete"'
-    }, permissions=(permission_document_create,), query={
+    }, permission=permission_document_create, query={
         'document_id': 'document.pk',
         'document_type_id': 'document_type.pk',
         'source_id': 'source.pk',

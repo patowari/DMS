@@ -238,7 +238,7 @@ class DocumentCabinetAddView(MultipleObjectFormActionView):
     def object_action(self, form, instance):
         for cabinet in form.cleaned_data['cabinets']:
             AccessControlList.objects.check_access(
-                obj=cabinet, permissions=(permission_cabinet_add_document,),
+                obj=cabinet, permission=permission_cabinet_add_document,
                 user=self.request.user
             )
 
@@ -333,9 +333,8 @@ class DocumentCabinetRemoveView(MultipleObjectFormActionView):
     def object_action(self, form, instance):
         for cabinet in form.cleaned_data['cabinets']:
             AccessControlList.objects.check_access(
-                obj=cabinet, permissions=(
-                    permission_cabinet_remove_document,
-                ), user=self.request.user
+                obj=cabinet, permission=permission_cabinet_remove_document,
+                user=self.request.user
             )
 
             cabinet.document_remove(

@@ -7,46 +7,52 @@ from mayan.apps.permissions.classes import Permission
 
 
 class MayanPermission(BasePermission):
-    def get_mayan_object_permissions(self, request, view):
+    def get_mayan_object_permission(self, request, view):
         try:
-            method_get_mayan_object_permissions = getattr(
-                view, 'get_mayan_object_permissions'
+            method_get_mayan_object_permission = getattr(
+                view, 'get_mayan_object_permission'
             )
         except AttributeError:
-            return getattr(
-                view, 'mayan_object_permissions', {}
-            ).get(request.method, None)
-        else:
-            return method_get_mayan_object_permissions(
-                request=request, view=view
+            mayan_object_permission_map = getattr(
+                view, 'mayan_object_permission_map', {}
             )
 
-    def get_mayan_view_permissions(self, request, view):
+            permission = mayan_object_permission_map.get(
+                request.method, None
+            )
+            return permission
+        else:
+            return method_get_mayan_object_permission()
+
+    def get_mayan_view_permission(self, request, view):
         try:
-            method_get_mayan_view_permissions = getattr(
-                view, 'get_mayan_view_permissions'
+            method_get_mayan_view_permission = getattr(
+                view, 'get_mayan_view_permission'
             )
         except AttributeError:
-            return getattr(
-                view, 'mayan_view_permissions', {}
-            ).get(request.method, None)
-        else:
-            return method_get_mayan_view_permissions(
-                request=request, view=view
+            mayan_view_permission_map = getattr(
+                view, 'mayan_view_permission_map', {}
             )
+
+            permission = mayan_view_permission_map.get(
+                request.method, None
+            )
+
+            return permission
+        else:
+            return method_get_mayan_view_permission()
 
     def has_object_permission(self, request, view, obj):
-        permissions = self.get_mayan_object_permissions(
+        permission = self.get_mayan_object_permission(
             request=request, view=view
         )
         user = request.user
 
-        if permissions:
+        if permission:
             if user.is_authenticated:
                 try:
                     AccessControlList.objects.check_access(
-                        obj=obj, permissions=permissions,
-                        user=user
+                        obj=obj, permission=permission, user=user
                     )
                 except PermissionDenied:
                     return False
@@ -58,16 +64,16 @@ class MayanPermission(BasePermission):
             return True
 
     def has_permission(self, request, view):
-        permissions = self.get_mayan_view_permissions(
+        permission = self.get_mayan_view_permission(
             request=request, view=view
         )
         user = request.user
 
-        if permissions:
+        if permission:
             if user.is_authenticated:
                 try:
-                    Permission.check_user_permissions(
-                        permissions=permissions, user=user
+                    Permission.check_user_permission(
+                        permission=permission, user=user
                     )
                 except PermissionDenied:
                     return False

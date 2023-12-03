@@ -19,48 +19,48 @@ from ..permissions import (
 
 link_document_type_create = Link(
     icon=icon_document_type_create,
-    permissions=(permission_document_type_create,),
+    permission=permission_document_type_create,
     text=_(message='Create document type'), view='documents:document_type_create'
 )
 link_document_type_delete = Link(
     args='resolved_object.id', icon=icon_document_type_delete,
-    permissions=(permission_document_type_delete,), tags='dangerous',
+    permission=permission_document_type_delete, tags='dangerous',
     text=_(message='Delete'), view='documents:document_type_delete'
 )
 link_document_type_edit = Link(
     args='resolved_object.id', icon=icon_document_type_edit,
-    permissions=(permission_document_type_edit,), text=_(message='Edit'),
+    permission=permission_document_type_edit, text=_(message='Edit'),
     view='documents:document_type_edit'
 )
 link_document_type_filename_create = Link(
     args='document_type.id',
     icon=icon_document_type_filename_create,
-    permissions=(permission_document_type_edit,),
+    permission=permission_document_type_edit,
     text=_(message='Add quick label to document type'),
     view='documents:document_type_filename_create'
 )
 link_document_type_filename_delete = Link(
     args='resolved_object.id',
     icon=icon_document_type_filename_delete,
-    permissions=(permission_document_type_edit,),
+    permission=permission_document_type_edit,
     tags='dangerous', text=_(message='Delete'),
     view='documents:document_type_filename_delete'
 )
 link_document_type_filename_edit = Link(
     args='resolved_object.id',
     icon=icon_document_type_filename_edit,
-    permissions=(permission_document_type_edit,),
+    permission=permission_document_type_edit,
     text=_(message='Edit'), view='documents:document_type_filename_edit'
 )
 link_document_type_filename_list = Link(
     args='resolved_object.id',
     icon=icon_document_type_filename_list,
-    permissions=(permission_document_type_view,),
+    permission=permission_document_type_view,
     text=_(message='Quick labels'), view='documents:document_type_filename_list'
 )
 link_document_type_filename_generator = Link(
     args='resolved_object.id', icon=icon_document_type_filename_generator,
-    permissions=(permission_document_type_edit,),
+    permission=permission_document_type_edit,
     text=_(message='Filename generation'),
     view='documents:document_type_filename_generator'
 )
@@ -71,7 +71,7 @@ link_document_type_list = Link(
 link_document_type_retention_policies = Link(
     args='resolved_object.id',
     icon=icon_document_type_retention_policies,
-    permissions=(permission_document_type_edit,),
+    permission=permission_document_type_edit,
     text=_(message='Retention policies'),
     view='documents:document_type_retention_policies'
 )

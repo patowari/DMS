@@ -20,8 +20,8 @@ class APIObjectEventListView(
     """
     get: Return a list of events for the specified object.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_events_view,),
+    mayan_external_object_permission_map = {
+       'GET': permission_events_view,
     }
     ordering_fields = ('id', 'timestamp')
     serializer_class = EventSerializer
@@ -99,8 +99,8 @@ class APIEventListView(generics.ListAPIView):
     """
     get: Returns a list of all the available events.
     """
-    mayan_view_permissions = {
-        'GET': (permission_events_view,)
+    mayan_view_permission_map = {
+       'GET': permission_events_view
     }
     ordering_fields = ('id', 'timestamp')
     serializer_class = EventSerializer

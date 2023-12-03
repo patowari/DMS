@@ -17,8 +17,8 @@ class APIDocumentVersionExportView(
     """
     action_response_status = status.HTTP_202_ACCEPTED
     lookup_url_kwarg = 'document_version_id'
-    mayan_object_permissions = {
-        'POST': (permission_document_version_export,),
+    mayan_object_permission_map = {
+       'POST': permission_document_version_export,
     }
 
     def get_source_queryset(self):

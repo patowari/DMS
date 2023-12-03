@@ -29,6 +29,6 @@ link_search_again = Link(
 )
 link_search_backend_reindex = Link(
     condition=condition_search_backend_supports_reindexing,
-    icon=icon_search_backend_reindex, permissions=(permission_search_tools,),
+    icon=icon_search_backend_reindex, permission=permission_search_tools,
     text=_(message='Reindex search backend'), view='search:search_backend_reindex'
 )

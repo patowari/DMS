@@ -29,17 +29,17 @@ link_user_theme_settings_edit = Link(
 )
 
 link_theme_create = Link(
-    icon=icon_theme_create, permissions=(permission_theme_create,),
+    icon=icon_theme_create, permission=permission_theme_create,
     text=_(message='Create new theme'), view='appearance:theme_create'
 )
 link_theme_delete = Link(
     args='object.pk', icon=icon_theme_delete,
-    permissions=(permission_theme_delete,), tags='dangerous',
+    permission=permission_theme_delete, tags='dangerous',
     text=_(message='Delete'), view='appearance:theme_delete'
 )
 link_theme_edit = Link(
     args='object.pk', icon=icon_theme_edit,
-    permissions=(permission_theme_edit,), text=_(message='Edit'),
+    permission=permission_theme_edit, text=_(message='Edit'),
     view='appearance:theme_edit'
 )
 link_theme_list = Link(

@@ -20,9 +20,9 @@ class APIACLListView(
     get: Returns a list of all the object's access control lists
     post: Create a new access control list for the selected object.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_acl_view,),
-        'POST': (permission_acl_edit,)
+    mayan_external_object_permission_map = {
+       'GET': permission_acl_view,
+       'POST': permission_acl_edit
     }
     ordering_fields = ('id', 'role')
     serializer_class = ACLSerializer
@@ -45,9 +45,9 @@ class APIACLDetailView(
     get: Returns the details of the selected access control list.
     """
     lookup_url_kwarg = 'acl_id'
-    mayan_external_object_permissions = {
-        'DELETE': (permission_acl_edit,),
-        'GET': (permission_acl_view,)
+    mayan_external_object_permission_map = {
+       'DELETE': permission_acl_edit,
+       'GET': permission_acl_view
     }
     serializer_class = ACLSerializer
 
@@ -67,8 +67,8 @@ class APIACLPermissionAddView(
     post: Add a permission to an ACL.
     """
     lookup_url_kwarg = 'acl_id'
-    mayan_external_object_permissions = {
-        'POST': (permission_acl_edit,)
+    mayan_external_object_permission_map = {
+       'POST': permission_acl_edit
     }
     serializer_class = ACLPermissionAddSerializer
 
@@ -90,9 +90,9 @@ class APIACLPermissionListView(
     get: Returns the access control list permission list.
     post: Add a new permission to the selected access control list.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_acl_view,),
-        'POST': (permission_acl_edit,)
+    mayan_external_object_permission_map = {
+       'GET': permission_acl_view,
+       'POST': permission_acl_edit
     }
     serializer_class = PermissionSerializer
 
@@ -112,8 +112,8 @@ class APIACLPermissionRemoveView(
     post: Remove a permission from an ACL.
     """
     lookup_url_kwarg = 'acl_id'
-    mayan_external_object_permissions = {
-        'POST': (permission_acl_edit,)
+    mayan_external_object_permission_map = {
+       'POST': permission_acl_edit
     }
     serializer_class = ACLPermissionRemoveSerializer
 

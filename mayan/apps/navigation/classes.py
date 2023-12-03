@@ -3,9 +3,7 @@ import logging
 from furl import furl
 
 from django.apps import apps
-from django.contrib.admin.utils import (
-    help_text_for_field, label_for_field
-)
+from django.contrib.admin.utils import help_text_for_field, label_for_field
 from django.core.exceptions import (
     FieldDoesNotExist, ImproperlyConfigured, PermissionDenied
 )
@@ -51,7 +49,7 @@ class Link(TemplateObjectMixin):
         condition=None, conditional_active=None, conditional_disable=None,
         description=None, html_data=None, html_extra_attributes=None,
         html_extra_classes=None, icon=None, keep_query=False, kwargs=None,
-        name=None, permissions=None, query=None, remove_from_query=None,
+        name=None, permission=None, query=None, remove_from_query=None,
         tags=None, url=None
     ):
         self.args = args or []
@@ -68,7 +66,7 @@ class Link(TemplateObjectMixin):
         self.keep_query = keep_query
         self._kwargs = kwargs or {}
         self.name = name
-        self._permissions = permissions or []
+        self._permission = permission
         self.query = query or {}
         self.remove_from_query = remove_from_query or []
         self.tags = tags
@@ -92,8 +90,8 @@ class Link(TemplateObjectMixin):
     def get_permission_object(self, context):
         return None
 
-    def get_permissions(self, context):
-        return self._permissions
+    def get_permission(self, context):
+        return self._permission
 
     def get_resolved_object(self, context):
         try:
@@ -137,21 +135,21 @@ class Link(TemplateObjectMixin):
 
         # If this link has a required permission check that the user has it
         # too.
-        permissions = self.get_permissions(context=context)
+        permission = self.get_permission(context=context)
 
-        if permissions:
+        if permission:
             if permission_object:
                 try:
                     AccessControlList.objects.check_access(
-                        obj=permission_object, permissions=permissions,
+                        obj=permission_object, permission=permission,
                         user=request.user
                     )
                 except PermissionDenied:
                     return None
             else:
                 try:
-                    Permission.check_user_permissions(
-                        permissions=permissions, user=request.user
+                    Permission.check_user_permission(
+                        permission=permission, user=request.user
                     )
                 except PermissionDenied:
                     return None

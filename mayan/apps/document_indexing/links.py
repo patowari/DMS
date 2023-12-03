@@ -28,13 +28,13 @@ def condition_is_not_root_node(context, resolved_object):
 
 link_document_index_instance_list = Link(
     args='resolved_object.pk', icon=icon_document_index_instance_list,
-    permissions=(permission_index_instance_view,),
+    permission=permission_index_instance_view,
     text=_(message='Indexes'), view='indexing:document_index_list'
 )
 
 link_document_type_index_templates = Link(
     args='resolved_object.pk', icon=icon_document_type_index_templates,
-    permissions=(permission_index_template_create,),
+    permission=permission_index_template_create,
     text=_(message='Index templates'), view='indexing:document_type_index_templates'
 )
 
@@ -49,7 +49,7 @@ link_index_instance_menu = Link(
 )
 link_index_instance_rebuild = Link(
     args='resolved_object.pk', icon=icon_index_instances_rebuild,
-    permissions=(permission_index_template_rebuild,),
+    permission=permission_index_template_rebuild,
     text=_(message='Rebuild index'), view='indexing:index_template_rebuild'
 )
 link_index_instances_rebuild = Link(
@@ -75,27 +75,27 @@ link_index_instances_reset = Link(
 
 link_index_template_create = Link(
     icon=icon_index_template_create,
-    permissions=(permission_index_template_create,),
+    permission=permission_index_template_create,
     text=_(message='Create index'), view='indexing:index_template_create'
 )
 link_index_template_delete = Link(
     args='resolved_object.pk', icon=icon_index_template_delete,
-    permissions=(permission_index_template_delete,), tags='dangerous',
+    permission=permission_index_template_delete, tags='dangerous',
     text=_(message='Delete'), view='indexing:index_template_delete',
 )
 link_index_template_document_types = Link(
     args='resolved_object.pk', icon=icon_index_template_document_types,
-    permissions=(permission_index_template_edit,),
+    permission=permission_index_template_edit,
     text=_(message='Document types'), view='indexing:index_template_document_types'
 )
 link_index_template_edit = Link(
     args='resolved_object.pk', icon=icon_index_template_edit,
-    permissions=(permission_index_template_edit,), text=_(message='Edit'),
+    permission=permission_index_template_edit, text=_(message='Edit'),
     view='indexing:index_template_edit'
 )
 link_index_template_event_triggers = Link(
     args='resolved_object.pk', icon=icon_index_template_event_triggers,
-    permissions=(permission_index_template_edit,), text=_(message='Triggers'),
+    permission=permission_index_template_edit, text=_(message='Triggers'),
     view='indexing:index_template_event_triggers'
 )
 link_index_template_list = Link(
@@ -115,7 +115,7 @@ link_index_template_setup = Link(
 
 link_index_template_node_tree_view = Link(
     args='resolved_object.pk', icon=icon_index_template_node_tree_view,
-    permissions=(permission_index_template_edit,), text=_(message='Tree template'),
+    permission=permission_index_template_edit, text=_(message='Tree template'),
     view='indexing:index_template_view'
 )
 link_index_template_node_create = Link(

@@ -15,12 +15,12 @@ from ..permissions import (
 
 link_document_delete = Link(
     args='resolved_object.id', icon=icon_trashed_document_delete,
-    permissions=(permission_trashed_document_delete,),
+    permission=permission_trashed_document_delete,
     tags='dangerous', text=_(message='Delete'), view='documents:document_delete'
 )
 link_document_trash = Link(
     args='resolved_object.id', icon=icon_document_trash_send,
-    permissions=(permission_document_trash,), tags='dangerous',
+    permission=permission_document_trash, tags='dangerous',
     text=_(message='Move to trash'), view='documents:document_trash'
 )
 link_document_list_deleted = Link(
@@ -29,7 +29,7 @@ link_document_list_deleted = Link(
 )
 link_document_restore = Link(
     args='object.pk', icon=icon_trashed_document_restore,
-    permissions=(permission_trashed_document_restore,), text=_(message='Restore'),
+    permission=permission_trashed_document_restore, text=_(message='Restore'),
     view='documents:document_restore'
 )
 link_document_multiple_trash = Link(
@@ -45,6 +45,6 @@ link_document_multiple_restore = Link(
     view='documents:document_multiple_restore'
 )
 link_trash_can_empty = Link(
-    icon=icon_trash_can_empty, permissions=(permission_trash_empty,),
+    icon=icon_trash_can_empty, permission=permission_trash_empty,
     text=_(message='Empty trash'), view='documents:trash_can_empty'
 )

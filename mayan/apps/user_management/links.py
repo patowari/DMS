@@ -32,12 +32,12 @@ link_current_user_details = Link(
 # Group
 
 link_group_create = Link(
-    icon=icon_group_create, permissions=(permission_group_create,),
+    icon=icon_group_create, permission=permission_group_create,
     text=_(message='Create new group'), view='user_management:group_create'
 )
 link_group_single_delete = Link(
     args='object.id', icon=icon_group_single_delete,
-    permissions=(permission_group_delete,), tags='dangerous',
+    permission=permission_group_delete, tags='dangerous',
     text=_(message='Delete'), view='user_management:group_single_delete'
 )
 link_group_multiple_delete = Link(
@@ -46,7 +46,7 @@ link_group_multiple_delete = Link(
 )
 link_group_edit = Link(
     args='object.id', icon=icon_group_edit,
-    permissions=(permission_group_edit,), text=_(message='Edit'),
+    permission=permission_group_edit, text=_(message='Edit'),
     view='user_management:group_edit'
 )
 link_group_list = Link(
@@ -55,7 +55,7 @@ link_group_list = Link(
 )
 link_group_user_list = Link(
     args='object.id', icon=icon_group_user_list,
-    permissions=(permission_group_edit,), text=_(message='Users'),
+    permission=permission_group_edit, text=_(message='Users'),
     view='user_management:group_members'
 )
 link_group_setup = Link(
@@ -72,12 +72,12 @@ link_group_setup = Link(
 
 link_user_create = Link(
     condition=condition_user_is_authenticated, icon=icon_user_create,
-    permissions=(permission_user_create,), text=_(message='Create new user'),
+    permission=permission_user_create, text=_(message='Create new user'),
     view='user_management:user_create'
 )
 link_user_single_delete = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_single_delete, permissions=(permission_user_delete,),
+    icon=icon_user_single_delete, permission=permission_user_delete,
     tags='dangerous', text=_(message='Delete'),
     view='user_management:user_single_delete'
 )
@@ -87,12 +87,12 @@ link_user_multiple_delete = Link(
 )
 link_user_edit = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_edit, permissions=(permission_user_edit,), text=_(message='Edit'),
+    icon=icon_user_edit, permission=permission_user_edit, text=_(message='Edit'),
     view='user_management:user_edit'
 )
 link_user_group_list = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_group_list, permissions=(permission_user_edit,),
+    icon=icon_user_group_list, permission=permission_user_edit,
     text=_(message='Groups'), view='user_management:user_groups'
 )
 link_user_list = Link(
@@ -100,7 +100,7 @@ link_user_list = Link(
 )
 link_user_set_options = Link(
     args='object.id', condition=condition_user_is_authenticated,
-    icon=icon_user_set_options, permissions=(permission_user_edit,),
+    icon=icon_user_set_options, permission=permission_user_edit,
     text=_(message='User options'), view='user_management:user_options'
 )
 link_user_setup = Link(

@@ -31,13 +31,13 @@ link_document_favorites_list = Link(
 link_document_favorites_add = Link(
     condition=condition_not_is_in_favorites,
     args='resolved_object.id', icon=icon_favorite_document_add,
-    permissions=(permission_document_view,), text=_(message='Add to favorites'),
+    permission=permission_document_view, text=_(message='Add to favorites'),
     view='documents:document_favorite_add'
 )
 link_document_favorites_remove = Link(
     condition=condition_is_in_favorites,
     args='resolved_object.id', icon=icon_favorite_document_remove,
-    permissions=(permission_document_view,), text=_(message='Remove from favorites'),
+    permission=permission_document_view, text=_(message='Remove from favorites'),
     view='documents:document_favorite_remove'
 )
 link_document_favorites_add_multiple = Link(

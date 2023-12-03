@@ -82,11 +82,11 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
 
         def _test_view_factory():
             class TestView(generics.ListCreateAPIView):
-                mayan_object_permissions = {
-                    'GET': (self._test_permission,)
+                mayan_object_permission_map = {
+                    'GET': self._test_permission
                 }
-                mayan_view_permissions = {
-                    'POST': (self._test_permission,)
+                mayan_view_permission_map = {
+                    'POST': self._test_permission
                 }
                 serializer_class = TestModelSerializer
                 source_queryset = self.TestModel.objects.all()
@@ -105,11 +105,11 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
 
             class TestView(generics.RetrieveUpdateDestroyAPIView):
                 lookup_url_kwarg = 'test_object_id'
-                mayan_object_permissions = {
-                    'DELETE': (self._test_permission,),
-                    'GET': (self._test_permission,),
-                    'PATCH': (self._test_permission,),
-                    'PUT': (self._test_permission,)
+                mayan_object_permission_map = {
+                    'DELETE': self._test_permission,
+                    'GET': self._test_permission,
+                    'PATCH': self._test_permission,
+                    'PUT': self._test_permission
                 }
                 serializer_class = TestModelSerializer
                 source_queryset = TestModel.objects.all()

@@ -30,11 +30,11 @@ class APIDocumentDetailView(generics.RetrieveUpdateDestroyAPIView):
     put: Edit the properties of the selected document.
     """
     lookup_url_kwarg = 'document_id'
-    mayan_object_permissions = {
-        'GET': (permission_document_view,),
-        'PUT': (permission_document_properties_edit,),
-        'PATCH': (permission_document_properties_edit,),
-        'DELETE': (permission_document_trash,)
+    mayan_object_permission_map = {
+       'GET': permission_document_view,
+       'PUT': permission_document_properties_edit,
+       'PATCH': permission_document_properties_edit,
+       'DELETE': permission_document_trash
     }
     serializer_class = DocumentSerializer
     source_queryset = Document.valid.all()
@@ -67,8 +67,8 @@ class APIDocumentListView(generics.ListCreateAPIView):
     get: Returns a list of all the documents.
     post: Create a new document.
     """
-    mayan_object_permissions = {
-        'GET': (permission_document_view,),
+    mayan_object_permission_map = {
+       'GET': permission_document_view,
     }
     ordering_fields = ('datetime_created', 'document_type', 'id', 'label')
     serializer_class = DocumentSerializer
@@ -99,8 +99,8 @@ class APIDocumentChangeTypeView(generics.ObjectActionAPIView):
     post: Change the type of the selected document.
     """
     lookup_url_kwarg = 'document_id'
-    mayan_object_permissions = {
-        'POST': (permission_document_change_type,)
+    mayan_object_permission_map = {
+       'POST': permission_document_change_type
     }
     serializer_class = DocumentChangeTypeSerializer
     source_queryset = Document.valid.all()

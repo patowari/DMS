@@ -31,7 +31,7 @@ def condition_valid_transformation_and_arguments(context, resolved_object):
 
 
 link_asset_create = Link(
-    icon=icon_asset_create, permissions=(permission_asset_create,),
+    icon=icon_asset_create, permission=permission_asset_create,
     text=_(message='Create asset'), view='converter:asset_create'
 )
 link_asset_multiple_delete = Link(
@@ -40,12 +40,12 @@ link_asset_multiple_delete = Link(
 )
 link_asset_single_delete = Link(
     args='object.pk', icon=icon_asset_delete,
-    permissions=(permission_asset_delete,), tags='dangerous',
+    permission=permission_asset_delete, tags='dangerous',
     text=_(message='Delete'), view='converter:asset_single_delete'
 )
 link_asset_edit = Link(
     args='object.pk', icon=icon_asset_edit,
-    permissions=(permission_asset_edit,), text=_(message='Edit'),
+    permission=permission_asset_edit, text=_(message='Edit'),
     view='converter:asset_edit'
 )
 link_asset_list = Link(

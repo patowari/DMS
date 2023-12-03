@@ -25,8 +25,8 @@ class PermissionTestCase(GroupTestMixin, RoleTestMixin, BaseTestCase):
 
     def test_no_permission(self):
         with self.assertRaises(expected_exception=PermissionDenied):
-            Permission.check_user_permissions(
-                permissions=(self._test_permission,), user=self._test_user
+            Permission.check_user_permission(
+                permission=self._test_permission, user=self._test_user
             )
 
     def test_with_permissions(self):
@@ -35,8 +35,8 @@ class PermissionTestCase(GroupTestMixin, RoleTestMixin, BaseTestCase):
         self._test_role.groups.add(self._test_group)
 
         try:
-            Permission.check_user_permissions(
-                permissions=(self._test_permission,), user=self._test_user
+            Permission.check_user_permission(
+                permission=self._test_permission, user=self._test_user
             )
         except PermissionDenied:
             self.fail('PermissionDenied exception was not expected.')
@@ -46,8 +46,8 @@ class PermissionTestCase(GroupTestMixin, RoleTestMixin, BaseTestCase):
         test_anonymous_user = AnonymousUser()
 
         with self.assertRaises(expected_exception=PermissionDenied):
-            Permission.check_user_permissions(
-                permissions=(self._test_permission,), user=test_anonymous_user
+            Permission.check_user_permission(
+                permission=self._test_permission, user=test_anonymous_user
             )
 
 

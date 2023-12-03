@@ -20,9 +20,9 @@ class APIWorkflowTemplateStateListView(
     get: Returns a list of all the workflow template states.
     post: Create a new workflow template state.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_workflow_template_view,),
-        'POST': (permission_workflow_template_edit,)
+    mayan_external_object_permission_map = {
+       'GET': permission_workflow_template_view,
+       'POST': permission_workflow_template_edit
     }
     ordering_fields = ('completion', 'id', 'initial', 'label')
     serializer_class = WorkflowTemplateStateSerializer
@@ -47,11 +47,11 @@ class APIWorkflowTemplateStateView(
     patch: Edit the selected workflow template state.
     put: Edit the selected workflow template state.
     """
-    mayan_object_permissions = {
-        'DELETE': (permission_workflow_template_edit,),
-        'GET': (permission_workflow_template_view,),
-        'PATCH': (permission_workflow_template_edit,),
-        'PUT': (permission_workflow_template_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_workflow_template_edit,
+       'GET': permission_workflow_template_view,
+       'PATCH': permission_workflow_template_edit,
+       'PUT': permission_workflow_template_edit
     }
     lookup_url_kwarg = 'workflow_template_state_id'
     serializer_class = WorkflowTemplateStateSerializer
@@ -72,9 +72,9 @@ class APIWorkflowTemplateStateActionListView(
     get: Returns a list of all the workflow template state actions.
     post: Create a new workflow template state action.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_workflow_template_view,),
-        'POST': (permission_workflow_template_edit,)
+    mayan_external_object_permission_map = {
+       'GET': permission_workflow_template_view,
+       'POST': permission_workflow_template_edit
     }
     ordering_fields = ('label', 'enabled', 'id')
     serializer_class = WorkflowTemplateStateActionSerializer
@@ -99,11 +99,11 @@ class APIWorkflowTemplateStateActionDetailView(
     patch: Edit the selected workflow template state action.
     put: Edit the selected workflow template state action.
     """
-    mayan_object_permissions = {
-        'DELETE': (permission_workflow_template_edit,),
-        'GET': (permission_workflow_template_view,),
-        'PATCH': (permission_workflow_template_edit,),
-        'PUT': (permission_workflow_template_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_workflow_template_edit,
+       'GET': permission_workflow_template_view,
+       'PATCH': permission_workflow_template_edit,
+       'PUT': permission_workflow_template_edit
     }
     lookup_url_kwarg = 'workflow_template_state_action_id'
     serializer_class = WorkflowTemplateStateActionSerializer

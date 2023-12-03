@@ -18,8 +18,8 @@ class APISourceActionDetailView(
     get: Source action detail view.
     """
     lookup_url_kwarg = 'action_name'
-    mayan_external_object_permissions = {
-        'GET': (permission_sources_view,)
+    mayan_external_object_permission_map = {
+       'GET': permission_sources_view
     }
     serializer_class = SourceBackendActionSerializer
 
@@ -144,8 +144,8 @@ class APISourceActionListView(
     """
     get: Source action list view.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_sources_view,)
+    mayan_external_object_permission_map = {
+       'GET': permission_sources_view
     }
     serializer_class = SourceBackendActionSerializer
 

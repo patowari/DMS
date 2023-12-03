@@ -29,12 +29,12 @@ class APIDocumentMetadataListView(
     """
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
-    mayan_external_object_permissions = {
-        'GET': (permission_document_metadata_view,),
-        'POST': (permission_document_metadata_add,)
+    mayan_external_object_permission_map = {
+       'GET': permission_document_metadata_view,
+       'POST': permission_document_metadata_add
     }
-    mayan_object_permissions = {
-        'GET': (permission_document_metadata_view,)
+    mayan_object_permission_map = {
+       'GET': permission_document_metadata_view
     }
     ordering_fields = ('id', 'metadata_type', 'value')
     serializer_class = DocumentMetadataSerializer
@@ -67,17 +67,17 @@ class APIDocumentMetadataView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     lookup_url_kwarg = 'metadata_id'
-    mayan_external_object_permissions = {
-        'DELETE': (permission_document_metadata_remove,),
-        'GET': (permission_document_metadata_view,),
-        'PATCH': (permission_document_metadata_edit,),
-        'PUT': (permission_document_metadata_edit,)
+    mayan_external_object_permission_map = {
+       'DELETE': permission_document_metadata_remove,
+       'GET': permission_document_metadata_view,
+       'PATCH': permission_document_metadata_edit,
+       'PUT': permission_document_metadata_edit
     }
-    mayan_object_permissions = {
-        'DELETE': (permission_document_metadata_remove,),
-        'GET': (permission_document_metadata_view,),
-        'PATCH': (permission_document_metadata_edit,),
-        'PUT': (permission_document_metadata_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_document_metadata_remove,
+       'GET': permission_document_metadata_view,
+       'PATCH': permission_document_metadata_edit,
+       'PUT': permission_document_metadata_edit
     }
     serializer_class = DocumentMetadataSerializer
 
@@ -95,11 +95,11 @@ class APIMetadataTypeListView(generics.ListCreateAPIView):
     get: Returns a list of all the metadata types.
     post: Create a new metadata type.
     """
-    mayan_object_permissions = {
-        'GET': (permission_metadata_type_view,)
+    mayan_object_permission_map = {
+       'GET': permission_metadata_type_view
     }
-    mayan_view_permissions = {
-        'POST': (permission_metadata_type_create,)
+    mayan_view_permission_map = {
+       'POST': permission_metadata_type_create
     }
     ordering_fields = ('id', 'label', 'name')
     serializer_class = MetadataTypeSerializer
@@ -119,11 +119,11 @@ class APIMetadataTypeView(generics.RetrieveUpdateDestroyAPIView):
     put: Edit the selected metadata type.
     """
     lookup_url_kwarg = 'metadata_type_id'
-    mayan_object_permissions = {
-        'GET': (permission_metadata_type_view,),
-        'PUT': (permission_metadata_type_edit,),
-        'PATCH': (permission_metadata_type_edit,),
-        'DELETE': (permission_metadata_type_delete,)
+    mayan_object_permission_map = {
+       'GET': permission_metadata_type_view,
+       'PUT': permission_metadata_type_edit,
+       'PATCH': permission_metadata_type_edit,
+       'DELETE': permission_metadata_type_delete
     }
     serializer_class = MetadataTypeSerializer
     source_queryset = MetadataType.objects.all()
@@ -135,17 +135,17 @@ class APIMetadataTypeView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class MetadataTypeFilterAPIMixin:
-    metadata_type_permissions = {
-        'DELETE': (permission_metadata_type_edit,),
-        'GET': (permission_metadata_type_view,),
-        'PATCH': (permission_metadata_type_edit,),
-        'PUT': (permission_metadata_type_edit,)
+    metadata_type_permission_map = {
+       'DELETE': permission_metadata_type_edit,
+       'GET': permission_metadata_type_view,
+       'PATCH': permission_metadata_type_edit,
+       'PUT': permission_metadata_type_edit
     }
 
     def get_metadata_type_queryset(self):
-        permission = self.metadata_type_permissions.get(
-            self.request.method, (None,)
-        )[0]
+        permission = self.metadata_type_permission_map.get(
+            self.request.method, None
+        )
 
         queryset = MetadataType.objects.all()
         if permission:
@@ -172,9 +172,9 @@ class APIDocumentTypeMetadataTypeListView(
     """
     external_object_class = DocumentType
     external_object_pk_url_kwarg = 'document_type_id'
-    mayan_external_object_permissions = {
-        'GET': (permission_document_type_view,),
-        'POST': (permission_document_type_edit,)
+    mayan_external_object_permission_map = {
+       'GET': permission_document_type_view,
+       'POST': permission_document_type_edit
     }
     serializer_class = DocumentTypeMetadataTypeSerializer
 
@@ -197,11 +197,11 @@ class APIDocumentTypeMetadataTypeView(
     external_object_class = DocumentType
     external_object_pk_url_kwarg = 'document_type_id'
     lookup_url_kwarg = 'metadata_type_id'
-    mayan_external_object_permissions = {
-        'DELETE': (permission_document_type_edit,),
-        'GET': (permission_document_type_view,),
-        'PATCH': (permission_document_type_edit,),
-        'PUT': (permission_document_type_edit,)
+    mayan_external_object_permission_map = {
+       'DELETE': permission_document_type_edit,
+       'GET': permission_document_type_view,
+       'PATCH': permission_document_type_edit,
+       'PUT': permission_document_type_edit
     }
     serializer_class = DocumentTypeMetadataTypeSerializer
 

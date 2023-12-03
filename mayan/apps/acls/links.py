@@ -13,22 +13,22 @@ from .permissions import permission_acl_view, permission_acl_edit
 link_acl_create = Link(
     icon=icon_acl_create, kwargs=get_content_type_kwargs_factory(
         variable_name='resolved_object'
-    ), permissions=(permission_acl_edit,), text=_(message='New ACL'),
+    ), permission=permission_acl_edit, text=_(message='New ACL'),
     view='acls:acl_create'
 )
 link_acl_delete = Link(
     args='resolved_object.pk', icon=icon_acl_delete,
-    permissions=(permission_acl_edit,), tags='dangerous', text=_(message='Delete'),
+    permission=permission_acl_edit, tags='dangerous', text=_(message='Delete'),
     view='acls:acl_delete'
 )
 link_acl_list = Link(
     icon=icon_acl_list, kwargs=get_content_type_kwargs_factory(
         variable_name='resolved_object'
-    ), permissions=(permission_acl_view,), text=_(message='ACLs'), view='acls:acl_list'
+    ), permission=permission_acl_view, text=_(message='ACLs'), view='acls:acl_list'
 )
 link_acl_permissions = Link(
     args='resolved_object.pk', icon=icon_acl_permissions,
-    permissions=(permission_acl_edit,),
+    permission=permission_acl_edit,
     text=_(message='Permissions'), view='acls:acl_permissions'
 )
 link_global_acl_list = Link(

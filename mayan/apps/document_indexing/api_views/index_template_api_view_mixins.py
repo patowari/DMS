@@ -13,7 +13,7 @@ from ..serializers import (
 
 
 class APIIndexTemplateNodeViewMixin(AsymmetricSerializerAPIViewMixin):
-    object_permissions = {
+    object_permission_map = {
         'GET': permission_index_template_view,
         'PATCH': permission_index_template_edit,
         'PUT': permission_index_template_edit,
@@ -31,7 +31,7 @@ class APIIndexTemplateNodeViewMixin(AsymmetricSerializerAPIViewMixin):
 
     def get_index_template(self):
         if 'index_template_id' in self.kwargs:
-            permission = self.object_permissions[self.request.method]
+            permission = self.object_permission_map[self.request.method]
 
             queryset = AccessControlList.objects.restrict_queryset(
                 permission=permission, queryset=IndexTemplate.objects.all(),

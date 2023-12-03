@@ -40,14 +40,14 @@ def condition_is_detached_signature(context, resolved_object):
 link_document_file_signature_detached_create = Link(
     args='resolved_object.pk',
     icon=icon_document_file_signature_detached_create,
-    permissions=(permission_document_file_sign_detached,),
+    permission=permission_document_file_sign_detached,
     text=_(message='Sign detached'),
     view='signatures:document_file_signature_detached_create'
 )
 link_document_file_signature_detached_delete = Link(
     args='resolved_object.pk', condition=condition_is_detached_signature,
     icon=icon_document_file_signature_detached_delete,
-    permissions=(permission_document_file_signature_delete,),
+    permission=permission_document_file_signature_delete,
     tags='dangerous', text=_(message='Delete'),
     view='signatures:document_file_signature_detached_delete'
 )
@@ -55,14 +55,14 @@ link_document_file_signature_detached_download = Link(
     args='resolved_object.pk',
     icon=icon_document_file_signature_detached_download,
     condition=condition_is_detached_signature,
-    permissions=(permission_document_file_signature_download,),
+    permission=permission_document_file_signature_download,
     text=_(message='Download'),
     view='signatures:document_file_signature_detached_download'
 )
 link_document_file_signature_detached_upload = Link(
     args='resolved_object.pk',
     icon=icon_document_file_signature_detached_upload,
-    permissions=(permission_document_file_signature_upload,),
+    permission=permission_document_file_signature_upload,
     text=_(message='Upload signature'),
     view='signatures:document_file_signature_detached_upload'
 )
@@ -72,7 +72,7 @@ link_document_file_signature_detached_upload = Link(
 link_document_file_signature_embedded_create = Link(
     args='resolved_object.pk',
     icon=icon_document_file_signature_embedded_create,
-    permissions=(permission_document_file_sign_embedded,),
+    permission=permission_document_file_sign_embedded,
     text=_(message='Sign embedded'),
     view='signatures:document_file_signature_embedded_create'
 )
@@ -82,13 +82,13 @@ link_document_file_signature_embedded_create = Link(
 link_document_file_signature_detail = Link(
     args='resolved_object.pk',
     icon=icon_document_file_signature_detail,
-    permissions=(permission_document_file_signature_view,),
+    permission=permission_document_file_signature_view,
     text=_(message='Details'), view='signatures:document_file_signature_detail'
 )
 
 link_document_file_signature_list = Link(
     args='resolved_object.pk', icon=icon_document_file_signature_list,
-    permissions=(permission_document_file_signature_view,),
+    permission=permission_document_file_signature_view,
     text=_(message='Signatures'), view='signatures:document_file_signature_list'
 )
 
@@ -96,13 +96,13 @@ link_document_file_signature_list = Link(
 
 link_document_file_all_signature_refresh = Link(
     icon=icon_document_file_all_signature_refresh,
-    permissions=(permission_document_file_signature_verify,),
+    permission=permission_document_file_signature_verify,
     text=_(message='Refresh all signatures'),
     view='signatures:all_document_file_signature_refresh'
 )
 link_document_file_all_signature_verify = Link(
     icon=icon_document_file_all_signature_verify,
-    permissions=(permission_document_file_signature_verify,),
+    permission=permission_document_file_signature_verify,
     text=_(message='Verify all documents'),
     view='signatures:all_document_file_signature_verify'
 )

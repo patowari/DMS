@@ -54,7 +54,7 @@ class LinkClassTestCase(GenericViewTestCase):
 
     def test_link_permission_resolve_no_permission(self):
         link = Link(
-            permissions=(self._test_permission,), text=TEST_LINK_TEXT,
+            permission=self._test_permission, text=TEST_LINK_TEXT,
             view=self._test_view_name
         )
 
@@ -68,7 +68,7 @@ class LinkClassTestCase(GenericViewTestCase):
 
     def test_link_permission_resolve_with_permission(self):
         link = Link(
-            permissions=(self._test_permission,), text=TEST_LINK_TEXT,
+            permission=self._test_permission, text=TEST_LINK_TEXT,
             view=self._test_view_name
         )
 
@@ -85,7 +85,7 @@ class LinkClassTestCase(GenericViewTestCase):
     def test_link_permission_resolve_with_acl(self):
         # ACL is tested agains the resolved_object or just {{ object }} if not
         link = Link(
-            permissions=(self._test_permission,), text=TEST_LINK_TEXT,
+            permission=self._test_permission, text=TEST_LINK_TEXT,
             view=self._test_view_name
         )
 

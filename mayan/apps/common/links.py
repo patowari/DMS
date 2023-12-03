@@ -51,7 +51,7 @@ link_license = Link(
 link_object_copy = Link(
     condition=object_copy_conditional_disable,
     icon=icon_object_copy, kwargs=get_content_type_kwargs_factory(),
-    text=_(message='Copy'), permissions=(permission_object_copy,),
+    text=_(message='Copy'), permission=permission_object_copy,
     view='common:object_copy'
 )
 link_setup = Link(

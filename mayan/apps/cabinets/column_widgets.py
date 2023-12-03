@@ -20,7 +20,7 @@ class DocumentCabinetWidget(SourceColumnWidget):
         try:
             AccessControlList.objects.check_access(
                 obj=self.value,
-                permissions=(permission_cabinet_view,),
+                permission=permission_cabinet_view,
                 user=self.request.user
             )
         except PermissionDenied:

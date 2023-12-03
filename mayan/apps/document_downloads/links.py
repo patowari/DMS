@@ -14,13 +14,13 @@ link_document_download_multiple = Link(
 )
 link_document_download_single = Link(
     args='resolved_object.pk', icon=icon_document_download_single,
-    permissions=(permission_document_file_download,),
+    permission=permission_document_file_download,
     text=_(message='Download files'),
     view='document_downloads:document_download_single'
 )
 link_document_file_download_quick = Link(
     args='resolved_object.id', icon=icon_document_file_download_quick,
-    permissions=(permission_document_file_download,), tags='new_window',
+    permission=permission_document_file_download, tags='new_window',
     text=_(message='Quick download'),
     view='document_downloads:document_file_download'
 )

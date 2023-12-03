@@ -17,14 +17,14 @@ class APIDocumentFilePageContentView(
     """
     get: Returns the content of the selected document page.
     """
-    mayan_object_permissions = {
-        'GET': (permission_document_file_content_view,),
+    mayan_object_permission_map = {
+       'GET': permission_document_file_content_view
     }
     serializer_class = DocumentFilePageContentSerializer
 
     def get_object(self):
         document_file_page = self.get_document_file_page(
-            permission=self.mayan_object_permissions[self.request.method][0]
+            permission=self.mayan_object_permission_map[self.request.method]
         )
 
         try:
@@ -45,10 +45,10 @@ class APIDocumentTypeParsingSettingsView(generics.RetrieveUpdateAPIView):
     """
     lookup_field = 'document_type__pk'
     lookup_url_kwarg = 'document_type_id'
-    mayan_object_permissions = {
-        'GET': (permission_document_type_parsing_setup,),
-        'PATCH': (permission_document_type_parsing_setup,),
-        'PUT': (permission_document_type_parsing_setup,)
+    mayan_object_permission_map = {
+       'GET': permission_document_type_parsing_setup,
+       'PATCH': permission_document_type_parsing_setup,
+       'PUT': permission_document_type_parsing_setup
     }
     serializer_class = DocumentTypeParsingSettingsSerializer
     source_queryset = DocumentTypeSettings.objects.all()

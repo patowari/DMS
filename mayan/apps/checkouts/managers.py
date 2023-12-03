@@ -9,9 +9,7 @@ from mayan.apps.documents.models.document_models import Document
 
 from .exceptions import DocumentNotCheckedOut
 from .literals import STATE_CHECKED_OUT, STATE_CHECKED_IN
-from .permissions import (
-    permission_document_check_in, permission_document_check_in_override
-)
+from .permissions import permission_document_check_in
 
 logger = logging.getLogger(name=__name__)
 
@@ -33,14 +31,7 @@ class DocumentCheckoutBusinessLogicManager(models.Manager):
                 user=user
             )
 
-            others_document_checkouts = AccessControlList.objects.restrict_queryset(
-                permission=permission_document_check_in_override,
-                queryset=self.exclude(user_id=user.pk, document__in=queryset),
-                user=user
-            )
-
-        if user:
-            for checkout in user_document_checkouts | others_document_checkouts:
+            for checkout in user_document_checkouts:
                 checkout._event_actor = user
                 checkout._event_keep_attributes = ('_event_actor',)
                 checkout.delete()

@@ -33,11 +33,11 @@ class APIDocumentVersionDetailView(
     put: Edit the properties of the selected document version.
     """
     lookup_url_kwarg = 'document_version_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_document_version_delete,),
-        'GET': (permission_document_version_view,),
-        'PATCH': (permission_document_version_edit,),
-        'PUT': (permission_document_version_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_document_version_delete,
+       'GET': permission_document_version_view,
+       'PATCH': permission_document_version_edit,
+       'PUT': permission_document_version_edit
     }
     serializer_class = DocumentVersionSerializer
 
@@ -86,8 +86,8 @@ class APIDocumentVersionModificationView(
     """
     action_response_status = status.HTTP_202_ACCEPTED
     lookup_url_kwarg = 'document_version_id'
-    mayan_object_permissions = {
-        'POST': (permission_document_version_edit,),
+    mayan_object_permission_map = {
+       'POST': permission_document_version_edit,
     }
     serializer_class = DocumentVersionModificationExecuteSerializer
 
@@ -130,11 +130,11 @@ class APIDocumentVersionPageDetailView(
     put: Edit the properties of the selected document version page.
     """
     lookup_url_kwarg = 'document_version_page_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_document_version_edit,),
-        'GET': (permission_document_version_view,),
-        'PATCH': (permission_document_version_edit,),
-        'PUT': (permission_document_version_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_document_version_edit,
+       'GET': permission_document_version_view,
+       'PATCH': permission_document_version_edit,
+       'PUT': permission_document_version_edit
     }
     serializer_class = DocumentVersionPageSerializer
 
@@ -155,8 +155,8 @@ class APIDocumentVersionPageImageView(
     get: Returns an image representation of the selected document version page.
     """
     lookup_url_kwarg = 'document_version_page_id'
-    mayan_object_permissions = {
-        'GET': (permission_document_version_view,)
+    mayan_object_permission_map = {
+       'GET': permission_document_version_view
     }
 
     def get_source_queryset(self):

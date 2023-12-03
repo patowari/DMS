@@ -10,23 +10,23 @@ from .icons import (
 from .permissions import permission_dependencies_view
 
 link_check_version = Link(
-    icon=icon_check_version, permissions=(permission_dependencies_view,),
+    icon=icon_check_version, permission=permission_dependencies_view,
     text=_(message='Check for updates'), view='dependencies:check_version_view'
 )
 link_dependency_group_list = Link(
     icon=icon_dependency_group_list,
-    permissions=(permission_dependencies_view,), text=_(message='Groups'),
+    permission=permission_dependencies_view, text=_(message='Groups'),
     view='dependencies:dependency_group_list'
 )
 link_dependency_group_entry_list = Link(
     args='resolved_object.name', icon=icon_dependency_group_entry_list,
-    permissions=(permission_dependencies_view,), text=_(message='Entries'),
+    permission=permission_dependencies_view, text=_(message='Entries'),
     view='dependencies:dependency_group_entry_list'
 )
 link_dependency_group_entry_detail = Link(
     args=('resolved_object.dependency_group.name', 'resolved_object.name'),
     icon=icon_dependency_group_entry_detail,
-    permissions=(permission_dependencies_view,), text=_(message='Details'),
+    permission=permission_dependencies_view, text=_(message='Details'),
     view='dependencies:dependency_group_entry_detail'
 )
 link_packages_licenses = Link(
@@ -35,6 +35,6 @@ link_packages_licenses = Link(
 )
 link_dependency_tool = Link(
     icon=icon_dependency_group_list,
-    permissions=(permission_dependencies_view,), text=_(message='Dependencies'),
+    permission=permission_dependencies_view, text=_(message='Dependencies'),
     view='dependencies:dependency_group_list'
 )
