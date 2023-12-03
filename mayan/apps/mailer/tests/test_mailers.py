@@ -1,14 +1,14 @@
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from .literals import MAILER_BACKEND_DJANGO_PATH
-from .mixins import MailerTestMixin
+from .mixins import MailingProfileTestMixin
 
 
-class DjangoMailerBackendTestCase(MailerTestMixin, BaseTestCase):
-    _test_mailer_backend_path = MAILER_BACKEND_DJANGO_PATH
+class DjangoMailerBackendTestCase(MailingProfileTestMixin, BaseTestCase):
+    _test_mailing_profile_backend_path = MAILER_BACKEND_DJANGO_PATH
 
     def test_mailer_connection_kwargs(self):
-        self._create_test_user_mailer(
+        self._create_test_mailing_profile(
             extra_backend_data={
                 'host': '127.0.0.1',
                 'port': '999',
@@ -16,7 +16,7 @@ class DjangoMailerBackendTestCase(MailerTestMixin, BaseTestCase):
             }
         )
 
-        backend_instance = self._test_user_mailer.get_backend_instance()
+        backend_instance = self._test_mailing_profile.get_backend_instance()
         connection_kwargs = backend_instance.get_connection_kwargs()
 
         self.assertEqual(

@@ -14,7 +14,7 @@ class APIErrorLogPartitionEntryListView(
     get: Returns a list of all the object's error log entries
     """
     mayan_external_object_permission_map = {
-       'GET': permission_error_log_entry_view
+        'GET': permission_error_log_entry_view
     }
     ordering_fields = ('id', 'datetime')
     serializer_class = ErrorLogPartitionEntrySerializer
@@ -32,8 +32,8 @@ class APIErrorLogPartitionEntryDetailView(
     """
     lookup_url_kwarg = 'error_log_partition_entry_id'
     mayan_external_object_permission_map = {
-       'DELETE': permission_error_log_entry_delete,
-       'GET': permission_error_log_entry_view
+        'DELETE': permission_error_log_entry_delete,
+        'GET': permission_error_log_entry_view
     }
     serializer_class = ErrorLogPartitionEntrySerializer
 

@@ -57,7 +57,9 @@ class CabinetsApp(MayanAppConfig):
         super().ready()
 
         Cabinet = self.get_model(model_name='Cabinet')
-        CabinetSearchResult = self.get_model(model_name='CabinetSearchResult')
+        CabinetSearchResult = self.get_model(
+            model_name='CabinetSearchResult'
+        )
         Document = apps.get_model(
             app_label='documents', model_name='Document'
         )
@@ -72,7 +74,8 @@ class CabinetsApp(MayanAppConfig):
             app_label='documents', model_name='DocumentVersionSearchResult'
         )
         DocumentVersionPageSearchResult = apps.get_model(
-            app_label='documents', model_name='DocumentVersionPageSearchResult'
+            app_label='documents',
+            model_name='DocumentVersionPageSearchResult'
         )
 
         # Add explicit order_by as DocumentCabinet ordering Meta option has no
@@ -119,13 +122,6 @@ class CabinetsApp(MayanAppConfig):
         )
 
         ModelPermission.register(
-            model=Document, permissions=(
-                permission_cabinet_add_document,
-                permission_cabinet_remove_document, permission_cabinet_view
-            )
-        )
-
-        ModelPermission.register(
             model=Cabinet, permissions=(
                 permission_acl_edit, permission_acl_view,
                 permission_cabinet_create, permission_cabinet_delete,
@@ -133,6 +129,13 @@ class CabinetsApp(MayanAppConfig):
                 permission_cabinet_add_document,
                 permission_cabinet_remove_document
             ), bind_link=False
+        )
+
+        ModelPermission.register(
+            model=Document, permissions=(
+                permission_cabinet_add_document,
+                permission_cabinet_remove_document, permission_cabinet_view
+            )
         )
 
         model_query_fields_document = ModelQueryFields(model=Document)
@@ -169,16 +172,19 @@ class CabinetsApp(MayanAppConfig):
             source=DocumentFileSearchResult, widget=DocumentCabinetWidget
         )
         SourceColumn(
-            attribute='document_file__document', label=_(message='Cabinets'), order=1,
-            source=DocumentFilePageSearchResult, widget=DocumentCabinetWidget
+            attribute='document_file__document', label=_(
+                message='Cabinets'
+            ), order=1, source=DocumentFilePageSearchResult,
+            widget=DocumentCabinetWidget
         )
         SourceColumn(
             attribute='document', label=_(message='Cabinets'), order=1,
             source=DocumentVersionSearchResult, widget=DocumentCabinetWidget
         )
         SourceColumn(
-            attribute='document_version__document', label=_(message='Cabinets'),
-            order=1, source=DocumentVersionPageSearchResult,
+            attribute='document_version__document', label=_(
+                message='Cabinets'
+            ), order=1, source=DocumentVersionPageSearchResult,
             widget=DocumentCabinetWidget
         )
 
@@ -209,12 +215,14 @@ class CabinetsApp(MayanAppConfig):
         menu_object.bind_links(
             exclude=(DocumentCabinet,),
             links=(
-                link_cabinet_delete, link_cabinet_edit, link_cabinet_child_add
+                link_cabinet_delete, link_cabinet_edit,
+                link_cabinet_child_add
             ), sources=(Cabinet,)
         )
         menu_object.unbind_links(
             links=(
-                link_cabinet_delete, link_cabinet_edit, link_cabinet_child_add
+                link_cabinet_delete, link_cabinet_edit,
+                link_cabinet_child_add
             ), sources=(DocumentCabinet,)
         )
         menu_secondary.bind_links(

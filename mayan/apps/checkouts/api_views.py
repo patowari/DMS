@@ -102,7 +102,7 @@ class APIDocumentCheckoutView(
             '_event_keep_attributes': ('_event_actor',)
         }
 
-    def get_mayan_object_permission(self):
+    def get_mayan_object_permission_map(self):
         if self.request.method == 'DELETE':
             try:
                 checkout = self.get_external_object().checkout

@@ -51,19 +51,23 @@ class APICabinetListView(generics.ListCreateAPIView):
             '_event_actor': self.request.user
         }
 
-    def get_mayan_view_permission_map(self, request, view):
-        if request.method == 'POST':
-            serializer = self.get_serializer(data=request.data)
+    def get_mayan_view_permission_map(self):
+        if self.request.method == 'POST':
+            serializer = self.get_serializer(data=self.request.data)
             serializer.is_valid(raise_exception=True)
 
             if serializer.validated_data['parent']:
                 return ()
             else:
-                return self.mayan_view_permission_map.get(
-                    request.method, None
+                permission = self.mayan_view_permission_map.get(
+                    self.request.method, None
                 )
+                return permission
         else:
-            return self.mayan_view_permission_map.get(request.method, None)
+            permission = self.mayan_view_permission_map.get(
+                self.request.method, None
+            )
+            return permission
 
     def perform_create(self, serializer):
         parent = serializer.validated_data['parent']
@@ -87,10 +91,10 @@ class APICabinetView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'cabinet_id'
     mayan_object_permission_map = {
-       'GET': permission_cabinet_view,
-       'PUT': permission_cabinet_edit,
-       'PATCH': permission_cabinet_edit,
-       'DELETE': permission_cabinet_delete
+        'DELETE': permission_cabinet_delete,
+        'GET': permission_cabinet_view,
+        'PATCH': permission_cabinet_edit,
+        'PUT': permission_cabinet_edit
     }
     serializer_class = CabinetSerializer
     source_queryset = Cabinet.objects.all()

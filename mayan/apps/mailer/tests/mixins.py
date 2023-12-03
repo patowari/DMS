@@ -39,7 +39,7 @@ class MailingProfileTestMixin(
 
         self._test_mailing_profile = UserMailer.objects.create(
             default=True, enabled=True, label=TEST_MAILING_PROFILE_LABEL,
-            backend_path=TEST_MAILING_PROFILE_BACKEND_PATH,
+            backend_path=self._test_mailing_profile_backend_path,
             backend_data=json.dumps(obj=backend_data)
         )
 

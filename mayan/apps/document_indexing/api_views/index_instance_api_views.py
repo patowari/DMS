@@ -25,11 +25,9 @@ class APIDocumentIndexInstanceNodeListView(
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
     mayan_external_object_permission_map = {
-       'GET': permission_index_instance_view
+        'GET': permission_index_instance_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_index_instance_view
-    }
+    mayan_object_permission_map = {'GET': permission_index_instance_view}
     serializer_class = IndexInstanceNodeSerializer
 
     def get_source_queryset(self):

@@ -33,10 +33,10 @@ class APIDocumentResolvedSmartLinkDetailView(
     external_object_queryset = Document.valid.all()
     lookup_url_kwarg = 'resolved_smart_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_resolved_smart_link_view
+        'GET': permission_resolved_smart_link_view
     }
     mayan_object_permission_map = {
-       'GET': permission_resolved_smart_link_view
+        'GET': permission_resolved_smart_link_view
     }
     serializer_class = ResolvedSmartLinkSerializer
 
@@ -69,11 +69,9 @@ class APIDocumentResolvedSmartLinkDocumentListView(
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
     mayan_external_object_permission_map = {
-       'GET': permission_resolved_smart_link_view
+        'GET': permission_resolved_smart_link_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_document_view
-    }
+    mayan_object_permission_map = {'GET': permission_document_view}
     serializer_class = ResolvedSmartLinkDocumentSerializer
 
     def get_resolved_smart_link(self):
@@ -112,10 +110,10 @@ class APIDocumentResolvedSmartLinkListView(
     external_object_queryset = Document.valid.all()
     lookup_url_kwarg = 'resolved_smart_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_resolved_smart_link_view
+        'GET': permission_resolved_smart_link_view
     }
     mayan_object_permission_map = {
-       'GET': permission_resolved_smart_link_view
+        'GET': permission_resolved_smart_link_view
     }
     serializer_class = ResolvedSmartLinkSerializer
 
@@ -143,8 +141,8 @@ class APISmartLinkConditionListView(
     external_object_class = SmartLink
     external_object_pk_url_kwarg = 'smart_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_smart_link_view,
-       'POST': permission_smart_link_edit
+        'GET': permission_smart_link_view,
+        'POST': permission_smart_link_edit
     }
     ordering_fields = ('enabled', 'id')
     serializer_class = SmartLinkConditionSerializer
@@ -172,10 +170,10 @@ class APISmartLinkConditionView(
     external_object_pk_url_kwarg = 'smart_link_id'
     lookup_url_kwarg = 'smart_link_condition_id'
     mayan_external_object_permission_map = {
-       'DELETE': permission_smart_link_edit,
-       'GET': permission_smart_link_view,
-       'PATCH': permission_smart_link_edit,
-       'PUT': permission_smart_link_edit
+        'DELETE': permission_smart_link_edit,
+        'GET': permission_smart_link_view,
+        'PATCH': permission_smart_link_edit,
+        'PUT': permission_smart_link_edit
     }
     serializer_class = SmartLinkConditionSerializer
 
@@ -194,12 +192,8 @@ class APISmartLinkListView(generics.ListCreateAPIView):
     get: Returns a list of all the smart links.
     post: Create a new smart link.
     """
-    mayan_object_permission_map = {
-       'GET': permission_smart_link_view
-    }
-    mayan_view_permission_map = {
-       'POST': permission_smart_link_create
-    }
+    mayan_object_permission_map = {'GET': permission_smart_link_view}
+    mayan_view_permission_map = {'POST': permission_smart_link_create}
     serializer_class = SmartLinkSerializer
     source_queryset = SmartLink.objects.all()
 
@@ -218,10 +212,10 @@ class APISmartLinkDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'smart_link_id'
     mayan_object_permission_map = {
-       'DELETE': permission_smart_link_delete,
-       'GET': permission_smart_link_view,
-       'PATCH': permission_smart_link_edit,
-       'PUT': permission_smart_link_edit
+        'DELETE': permission_smart_link_delete,
+        'GET': permission_smart_link_view,
+        'PATCH': permission_smart_link_edit,
+        'PUT': permission_smart_link_edit
     }
     ordering_fields = ('dynamic_label', 'enabled', 'id', 'label')
     serializer_class = SmartLinkSerializer
@@ -238,9 +232,7 @@ class APISmartLinkDocumentTypeAddView(generics.ObjectActionAPIView):
     post: Add a document type to a smart link.
     """
     lookup_url_kwarg = 'smart_link_id'
-    mayan_object_permission_map = {
-       'POST': permission_smart_link_edit
-    }
+    mayan_object_permission_map = {'POST': permission_smart_link_edit}
     serializer_class = SmartLinkDocumentTypeAddSerializer
     source_queryset = SmartLink.objects.all()
 
@@ -261,11 +253,9 @@ class APISmartLinkDocumentTypeListView(
     external_object_class = SmartLink
     external_object_pk_url_kwarg = 'smart_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_smart_link_view
+        'GET': permission_smart_link_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_document_type_view
-    }
+    mayan_object_permission_map = {'GET': permission_document_type_view}
     serializer_class = DocumentTypeSerializer
 
     def get_source_queryset(self):
@@ -277,9 +267,7 @@ class APISmartLinkDocumentTypeRemoveView(generics.ObjectActionAPIView):
     post: Remove a document type from a smart link.
     """
     lookup_url_kwarg = 'smart_link_id'
-    mayan_object_permission_map = {
-       'POST': permission_smart_link_edit
-    }
+    mayan_object_permission_map = {'POST': permission_smart_link_edit}
     serializer_class = SmartLinkDocumentTypeRemoveSerializer
     source_queryset = SmartLink.objects.all()
 

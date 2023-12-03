@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.forms import FormDynamicModelBackend
 from mayan.apps.templating.fields import ModelTemplateField
@@ -33,8 +33,9 @@ class WorkflowTemplateStateActionDynamicForm(FormDynamicModelBackend):
 
 class WorkflowTemplateStateActionSelectionForm(forms.Form):
     klass = forms.ChoiceField(
-        choices=(), help_text=_(message='The action type for this action entry.'),
-        label=_(message='Action'), widget=forms.Select(
+        choices=(), help_text=_(
+            message='The action type for this action entry.'
+        ), label=_(message='Action'), widget=forms.Select(
             attrs={'class': 'select2'}
         )
     )

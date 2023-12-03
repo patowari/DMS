@@ -297,7 +297,7 @@ class AccessControlListManager(models.Manager):
         if not user.is_authenticated:
             return queryset.none()
 
-        # Check directly granted permission via a role
+        # Check directly granted permission via a role.
         try:
             Permission.check_user_permission(
                 permission=permission, user=user

@@ -13,12 +13,8 @@ class APIStoredCredentialListView(generics.ListCreateAPIView):
     get: Returns a list of all the import setups.
     post: Create a new import setup.
     """
-    mayan_object_permission_map = {
-       'GET': permission_credential_view
-    }
-    mayan_view_permission_map = {
-       'POST': permission_credential_create
-    }
+    mayan_object_permission_map = {'GET': permission_credential_view}
+    mayan_view_permission_map = {'POST': permission_credential_create}
     serializer_class = StoredCredentialSerializer
     source_queryset = StoredCredential.objects.all()
 
@@ -37,10 +33,10 @@ class APIStoredCredentialDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'credential_id'
     mayan_object_permission_map = {
-       'DELETE': permission_credential_delete,
-       'GET': permission_credential_view,
-       'PATCH': permission_credential_edit,
-       'PUT': permission_credential_edit
+        'DELETE': permission_credential_delete,
+        'GET': permission_credential_view,
+        'PATCH': permission_credential_edit,
+        'PUT': permission_credential_edit
     }
     serializer_class = StoredCredentialSerializer
     source_queryset = StoredCredential.objects.all()

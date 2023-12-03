@@ -31,12 +31,8 @@ class APIRoleListView(generics.ListCreateAPIView):
     get: Returns a list of all the roles.
     post: Create a new role.
     """
-    mayan_object_permission_map = {
-       'GET': permission_role_view
-    }
-    mayan_view_permission_map = {
-       'POST': permission_role_create
-    }
+    mayan_object_permission_map = {'GET': permission_role_view}
+    mayan_view_permission_map = {'POST': permission_role_create}
     ordering_fields = ('id', 'label')
     serializer_class = RoleSerializer
     source_queryset = Role.objects.all()
@@ -54,10 +50,10 @@ class APIRoleDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'role_id'
     mayan_object_permission_map = {
-       'GET': permission_role_view,
-       'PUT': permission_role_edit,
-       'PATCH': permission_role_edit,
-       'DELETE': permission_role_delete
+        'GET': permission_role_view,
+        'PUT': permission_role_edit,
+        'PATCH': permission_role_edit,
+        'DELETE': permission_role_delete
     }
     serializer_class = RoleSerializer
     source_queryset = Role.objects.all()
@@ -74,12 +70,8 @@ class APIRoleGroupListView(
     """
     external_object_class = Role
     external_object_pk_url_kwarg = 'role_id'
-    mayan_external_object_permission_map = {
-       'GET': permission_role_view
-    }
-    mayan_object_permission_map = {
-       'GET': permission_group_view
-    }
+    mayan_external_object_permission_map = {'GET': permission_role_view}
+    mayan_object_permission_map = {'GET': permission_group_view}
     serializer_class = GroupSerializer
 
     def get_source_queryset(self):
@@ -91,9 +83,7 @@ class APIRoleGroupAddView(generics.ObjectActionAPIView):
     post: Add a group to a role.
     """
     lookup_url_kwarg = 'role_id'
-    mayan_object_permission_map = {
-       'POST': permission_role_edit
-    }
+    mayan_object_permission_map = {'POST': permission_role_edit}
     serializer_class = RoleGroupAddSerializer
     source_queryset = Role.objects.all()
 
@@ -110,9 +100,7 @@ class APIRoleGroupRemoveView(generics.ObjectActionAPIView):
     post: Remove a group from a role.
     """
     lookup_url_kwarg = 'role_id'
-    mayan_object_permission_map = {
-       'POST': permission_role_edit
-    }
+    mayan_object_permission_map = {'POST': permission_role_edit}
     serializer_class = RoleGroupRemoveSerializer
     source_queryset = Role.objects.all()
 
@@ -132,9 +120,7 @@ class APIRolePermissionListView(
     """
     external_object_class = Role
     external_object_pk_url_kwarg = 'role_id'
-    mayan_external_object_permission_map = {
-       'GET': permission_role_view
-    }
+    mayan_external_object_permission_map = {'GET': permission_role_view}
     serializer_class = PermissionSerializer
 
     def get_source_queryset(self):
@@ -146,9 +132,7 @@ class APIRolePermissionAddView(generics.ObjectActionAPIView):
     post: Add a permission to a role.
     """
     lookup_url_kwarg = 'role_id'
-    mayan_object_permission_map = {
-       'POST': permission_role_edit
-    }
+    mayan_object_permission_map = {'POST': permission_role_edit}
     serializer_class = RolePermissionAddSerializer
     source_queryset = Role.objects.all()
 
@@ -165,9 +149,7 @@ class APIRolePermissionRemoveView(generics.ObjectActionAPIView):
     post: Remove a permission from a role.
     """
     lookup_url_kwarg = 'role_id'
-    mayan_object_permission_map = {
-       'POST': permission_role_edit
-    }
+    mayan_object_permission_map = {'POST': permission_role_edit}
     serializer_class = RolePermissionRemoveSerializer
     source_queryset = Role.objects.all()
 

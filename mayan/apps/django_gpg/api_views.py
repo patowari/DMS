@@ -12,12 +12,8 @@ class APIKeyListView(generics.ListCreateAPIView):
     get: Returns a list of all the keys.
     post: Upload a new key.
     """
-    mayan_object_permission_map = {
-       'GET': permission_key_view
-    }
-    mayan_view_permission_map = {
-       'POST': permission_key_upload
-    }
+    mayan_object_permission_map = {'GET': permission_key_view}
+    mayan_view_permission_map = {'POST': permission_key_upload}
     serializer_class = KeySerializer
     source_queryset = Key.objects.all()
 
@@ -34,8 +30,8 @@ class APIKeyView(generics.RetrieveDestroyAPIView):
     """
     lookup_url_kwarg = 'key_id'
     mayan_object_permission_map = {
-       'DELETE': permission_key_delete,
-       'GET': permission_key_view
+        'DELETE': permission_key_delete,
+        'GET': permission_key_view
     }
     serializer_class = KeySerializer
     source_queryset = Key.objects.all()

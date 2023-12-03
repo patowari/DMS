@@ -68,10 +68,10 @@ class APIDocumentFileDetailView(
     """
     lookup_url_kwarg = 'document_file_id'
     mayan_object_permission_map = {
-       'DELETE': permission_document_file_delete,
-       'GET': permission_document_file_view,
-       'PATCH': permission_document_file_edit,
-       'PUT': permission_document_file_edit,
+        'DELETE': permission_document_file_delete,
+        'GET': permission_document_file_view,
+        'PATCH': permission_document_file_edit,
+        'PUT': permission_document_file_edit
     }
     serializer_class = DocumentFileSerializer
 
@@ -105,9 +105,7 @@ class APIDocumentFilePageDetailView(
     """
     lookup_url_kwarg = 'document_file_page_id'
     serializer_class = DocumentFilePageSerializer
-    mayan_object_permission_map = {
-       'GET': permission_document_file_view,
-    }
+    mayan_object_permission_map = {'GET': permission_document_file_view}
 
     def get_source_queryset(self):
         return self.get_document_file().pages.all()
@@ -121,9 +119,7 @@ class APIDocumentFilePageImageView(
     get: Returns an image representation of the selected document.
     """
     lookup_url_kwarg = 'document_file_page_id'
-    mayan_object_permission_map = {
-       'GET': permission_document_file_view,
-    }
+    mayan_object_permission_map = {'GET': permission_document_file_view}
 
     def get_source_queryset(self):
         return self.get_document_file().pages.all()

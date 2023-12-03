@@ -25,11 +25,9 @@ class APIWorkflowTemplateDocumentTypeListView(
     external_object_class = Workflow
     external_object_pk_url_kwarg = 'workflow_template_id'
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view
+        'GET': permission_workflow_template_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_document_type_view
-    }
+    mayan_object_permission_map = {'GET': permission_document_type_view}
     serializer_class = DocumentTypeSerializer
 
     def get_source_queryset(self):
@@ -45,7 +43,7 @@ class APIWorkflowTemplateDocumentTypeAddView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'workflow_template_id'
     mayan_object_permission_map = {
-       'POST': permission_workflow_template_edit
+        'POST': permission_workflow_template_edit
     }
     serializer_class = WorkflowTemplateDocumentTypeAddSerializer
     source_queryset = Workflow.objects.all()
@@ -64,7 +62,7 @@ class APIWorkflowTemplateDocumentTypeRemoveView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'workflow_template_id'
     mayan_object_permission_map = {
-       'POST': permission_workflow_template_edit
+        'POST': permission_workflow_template_edit
     }
     serializer_class = WorkflowTemplateDocumentTypeRemoveSerializer
     source_queryset = Workflow.objects.all()
@@ -84,9 +82,7 @@ class APIWorkflowTemplateImageView(
     get: Returns an image representation of the selected workflow template.
     """
     lookup_url_kwarg = 'workflow_template_id'
-    mayan_object_permission_map = {
-       'GET': permission_workflow_template_view
-    }
+    mayan_object_permission_map = {'GET': permission_workflow_template_view}
     source_queryset = Workflow.objects.all()
 
 
@@ -95,11 +91,9 @@ class APIWorkflowTemplateListView(generics.ListCreateAPIView):
     get: Returns a list of all the workflow templates.
     post: Create a new workflow template.
     """
-    mayan_object_permission_map = {
-       'GET': permission_workflow_template_view
-    }
+    mayan_object_permission_map = {'GET': permission_workflow_template_view}
     mayan_view_permission_map = {
-       'POST': permission_workflow_template_create
+        'POST': permission_workflow_template_create
     }
     ordering_fields = ('id', 'internal_name', 'label')
     serializer_class = WorkflowTemplateSerializer
@@ -120,10 +114,10 @@ class APIWorkflowTemplateDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'workflow_template_id'
     mayan_object_permission_map = {
-       'DELETE': permission_workflow_template_delete,
-       'GET': permission_workflow_template_view,
-       'PATCH': permission_workflow_template_edit,
-       'PUT': permission_workflow_template_edit
+        'DELETE': permission_workflow_template_delete,
+        'GET': permission_workflow_template_view,
+        'PATCH': permission_workflow_template_edit,
+        'PUT': permission_workflow_template_edit
     }
     serializer_class = WorkflowTemplateSerializer
     source_queryset = Workflow.objects.all()

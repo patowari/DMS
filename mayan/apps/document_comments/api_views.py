@@ -19,8 +19,8 @@ class APICommentListView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     mayan_external_object_permission_map = {
-       'GET': permission_document_comment_view,
-       'POST': permission_document_comment_create
+        'GET': permission_document_comment_view,
+        'POST': permission_document_comment_create
     }
     ordering_fields = ('id', 'submit_date')
     serializer_class = CommentSerializer
@@ -46,10 +46,10 @@ class APICommentView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     mayan_external_object_permission_map = {
-       'DELETE': permission_document_comment_delete,
-       'GET': permission_document_comment_view,
-       'PATCH': permission_document_comment_edit,
-       'PUT': permission_document_comment_edit,
+        'DELETE': permission_document_comment_delete,
+        'GET': permission_document_comment_view,
+        'PATCH': permission_document_comment_edit,
+        'PUT': permission_document_comment_edit
     }
     lookup_url_kwarg = 'comment_id'
     serializer_class = CommentSerializer

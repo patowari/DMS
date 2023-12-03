@@ -42,10 +42,10 @@ class APIDocumentTypeDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'document_type_id'
     mayan_object_permission_map = {
-       'DELETE': permission_document_type_delete,
-       'GET': permission_document_type_view,
-       'PATCH': permission_document_type_edit,
-       'PUT': permission_document_type_edit
+        'DELETE': permission_document_type_delete,
+        'GET': permission_document_type_view,
+        'PATCH': permission_document_type_edit,
+        'PUT': permission_document_type_edit
     }
     serializer_class = DocumentTypeSerializer
     source_queryset = DocumentType.objects.all()
@@ -68,10 +68,10 @@ class APIDocumentTypeQuickLabelDetailView(
     """
     lookup_url_kwarg = 'document_type_quick_label_id'
     mayan_object_permission_map = {
-       'DELETE': permission_document_type_edit,
-       'GET': permission_document_type_view,
-       'PATCH': permission_document_type_edit,
-       'PUT': permission_document_type_edit
+        'DELETE': permission_document_type_edit,
+        'GET': permission_document_type_view,
+        'PATCH': permission_document_type_edit,
+        'PUT': permission_document_type_edit
     }
     ordering_fields = ('filename', 'enabled', 'id')
     serializer_class = DocumentTypeQuickLabelSerializer

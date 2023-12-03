@@ -44,10 +44,10 @@ class APIAssetDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'asset_id'
     mayan_object_permission_map = {
-       'DELETE': permission_asset_delete,
-       'GET': permission_asset_view,
-       'PATCH': permission_asset_edit,
-       'PUT': permission_asset_edit
+        'DELETE': permission_asset_delete,
+        'GET': permission_asset_view,
+        'PATCH': permission_asset_edit,
+        'PUT': permission_asset_edit
     }
     serializer_class = AssetSerializer
     source_queryset = Asset.objects.all()

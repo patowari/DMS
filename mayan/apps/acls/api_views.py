@@ -21,8 +21,8 @@ class APIACLListView(
     post: Create a new access control list for the selected object.
     """
     mayan_external_object_permission_map = {
-       'GET': permission_acl_view,
-       'POST': permission_acl_edit
+        'GET': permission_acl_view,
+        'POST': permission_acl_edit
     }
     ordering_fields = ('id', 'role')
     serializer_class = ACLSerializer
@@ -46,8 +46,8 @@ class APIACLDetailView(
     """
     lookup_url_kwarg = 'acl_id'
     mayan_external_object_permission_map = {
-       'DELETE': permission_acl_edit,
-       'GET': permission_acl_view
+        'DELETE': permission_acl_edit,
+        'GET': permission_acl_view
     }
     serializer_class = ACLSerializer
 
@@ -67,9 +67,7 @@ class APIACLPermissionAddView(
     post: Add a permission to an ACL.
     """
     lookup_url_kwarg = 'acl_id'
-    mayan_external_object_permission_map = {
-       'POST': permission_acl_edit
-    }
+    mayan_external_object_permission_map = {'POST': permission_acl_edit}
     serializer_class = ACLPermissionAddSerializer
 
     def get_source_queryset(self):
@@ -91,8 +89,8 @@ class APIACLPermissionListView(
     post: Add a new permission to the selected access control list.
     """
     mayan_external_object_permission_map = {
-       'GET': permission_acl_view,
-       'POST': permission_acl_edit
+        'GET': permission_acl_view,
+        'POST': permission_acl_edit
     }
     serializer_class = PermissionSerializer
 
@@ -112,9 +110,7 @@ class APIACLPermissionRemoveView(
     post: Remove a permission from an ACL.
     """
     lookup_url_kwarg = 'acl_id'
-    mayan_external_object_permission_map = {
-       'POST': permission_acl_edit
-    }
+    mayan_external_object_permission_map = {'POST': permission_acl_edit}
     serializer_class = ACLPermissionRemoveSerializer
 
     def get_source_queryset(self):
