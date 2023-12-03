@@ -110,11 +110,15 @@ class ExternalObjectAPIViewMixin(ExternalObjectBaseMixin):
         )
 
     def get_external_object_permission(self):
-        return getattr(
-            self, 'mayan_external_object_permissions', {}
-        ).get(
-            self.request.method, (None,)
-        )[0]
+        mayan_external_object_permission_map = getattr(
+            self, 'mayan_external_object_permission_map', {}
+        )
+
+        permission = mayan_external_object_permission_map.get(
+            self.request.method, None
+        )
+
+        return permission
 
     def get_serializer_extra_context(self):
         """

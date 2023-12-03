@@ -299,9 +299,8 @@ class IndexTemplateNodeCreateView(SingleObjectCreateView):
 
     def dispatch(self, request, *args, **kwargs):
         AccessControlList.objects.check_access(
-            obj=self.get_parent_node().index, permissions=(
-                permission_index_template_edit,
-            ), user=request.user
+            obj=self.get_parent_node().index,
+            permission=permission_index_template_edit, user=request.user
         )
 
         return super().dispatch(request, *args, **kwargs)

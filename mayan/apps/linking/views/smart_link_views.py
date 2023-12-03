@@ -63,7 +63,7 @@ class DocumentResolvedSmartLinkDocumentListView(
             try:
                 AccessControlList.objects.check_access(
                     obj=self.resolved_smart_link,
-                    permissions=(permission_smart_link_edit,),
+                    permission=permission_smart_link_edit,
                     user=self.request.user
                 )
             except PermissionDenied:
@@ -90,7 +90,7 @@ class DocumentResolvedSmartLinkDocumentListView(
             try:
                 AccessControlList.objects.check_access(
                     obj=self.resolved_smart_link,
-                    permissions=(permission_smart_link_edit,),
+                    permission=permission_smart_link_edit,
                     user=self.request.user
                 )
             except PermissionDenied:

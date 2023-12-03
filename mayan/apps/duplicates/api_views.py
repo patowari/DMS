@@ -13,8 +13,8 @@ class APIDuplicatedDocumentListView(generics.ListAPIView):
     """
     get: Return a list of duplicated documents.
     """
-    mayan_object_permissions = {
-        'GET': (permission_document_view,)
+    mayan_object_permission_map = {
+       'GET': permission_document_view
     }
     serializer_class = DocumentSerializer
     source_queryset = DuplicateBackendEntry.objects.get_duplicated_documents()
@@ -26,8 +26,8 @@ class APIDocumentDuplicateListView(
     """
     get: Return a list of the selected document's duplicates.
     """
-    mayan_object_permissions = {
-        'GET': (permission_document_view,)
+    mayan_object_permission_map = {
+       'GET': permission_document_view
     }
     serializer_class = DuplicateTargetDocumentSerializer
 

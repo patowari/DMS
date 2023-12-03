@@ -54,13 +54,13 @@ class LayerTransformationManager(models.Manager):
                 This was a class defined but later erased. Ignore it.
                 """
             else:
-                access_permission = layer_class.permissions.get(
+                access_permission = layer_class.permission_map.get(
                     'access', None
                 )
                 if access_permission:
                     try:
                         AccessControlList.objects.check_access(
-                            obj=obj, permissions=(access_permission,),
+                            obj=obj, permission=access_permission,
                             user=user
                         )
                     except PermissionDenied:
@@ -69,13 +69,14 @@ class LayerTransformationManager(models.Manager):
                         )
 
         for stored_layer in exclude_layers:
-            exclude_permission = stored_layer.get_layer().permissions.get(
+            layer = stored_layer.get_layer()
+            exclude_permission = layer.permission_map.get(
                 'exclude', None
             )
             if exclude_permission:
                 try:
                     AccessControlList.objects.check_access(
-                        obj=obj, permissions=(exclude_permission,), user=user
+                        obj=obj, permission=exclude_permission, user=user
                     )
                 except PermissionDenied:
                     exclude_layers = exclude_layers.exclude(

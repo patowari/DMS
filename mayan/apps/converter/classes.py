@@ -321,7 +321,7 @@ class Layer:
             layer.stored_layer
 
     def __init__(
-        self, label, name, order, permissions, default=False,
+        self, label, name, order, permission_map, default=False,
         empty_results_text=None, icon=None
     ):
         self.default = default
@@ -329,7 +329,7 @@ class Layer:
         self.label = label
         self.name = name
         self.order = order
-        self.permissions = permissions
+        self.permission_map = permission_map
         self.icon = icon
 
         # Check order
@@ -428,7 +428,7 @@ class Layer:
         return stored_layer
 
     def get_permission(self, action):
-        return self.permissions.get(action, None)
+        return self.permission_map.get(action, None)
 
     def get_transformations_for(self, obj, as_classes=False):
         """
@@ -526,11 +526,11 @@ class LayerLink(Link):
             except KeyError:
                 return None
 
-    def get_permissions(self, context):
+    def get_permission(self, context):
         layer = self.get_layer(context=context)
         permission = layer.get_permission(action=self.action)
 
         if permission:
-            return (permission,)
+            return permission
         else:
-            return ()
+            return None

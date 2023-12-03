@@ -54,16 +54,15 @@ class Permission(AppsModuleLoaderMixin):
         )
 
     @classmethod
-    def check_user_permissions(cls, permissions, user):
-        for permission in permissions:
-            if permission.stored_permission.user_has_this(user=user):
-                return True
+    def check_user_permission(cls, permission, user):
+        if permission.stored_permission.user_has_this(user=user):
+            return True
 
         logger.debug(
-            'User "%s" does not have permissions "%s"', user, permissions
+            'User "%s" does not have permission "%s"', user, permission
         )
         raise PermissionDenied(
-            _(message='Insufficient permissions.')
+            _(message='Insufficient permission.')
         )
 
     @classmethod

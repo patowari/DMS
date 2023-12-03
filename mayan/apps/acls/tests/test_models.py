@@ -15,23 +15,24 @@ from .mixins import ACLTestMixin
 class PermissionTestCase(ACLTestMixin, BaseTestCase):
     auto_create_acl_test_object = False
 
-    def test_check_access_without_permissions(self):
+    def test_check_access_without_permission(self):
         self._create_acl_test_object()
 
         with self.assertRaises(expected_exception=PermissionDenied):
             AccessControlList.objects.check_access(
                 obj=self._test_object,
-                permissions=(self._test_permission,),
+                permission=self._test_permission,
                 user=self._test_case_user,
             )
 
-    def test_filtering_without_permissions(self):
+    def test_filtering_without_permission(self):
         self._create_acl_test_object()
+
+        queryset = self._test_object._meta.model._default_manager.all()
 
         self.assertEqual(
             AccessControlList.objects.restrict_queryset(
-                permission=self._test_permission,
-                queryset=self._test_object._meta.model._default_manager.all(),
+                permission=self._test_permission, queryset=queryset,
                 user=self._test_case_user
             ).count(), 0
         )
@@ -45,23 +46,24 @@ class PermissionTestCase(ACLTestMixin, BaseTestCase):
 
         try:
             AccessControlList.objects.check_access(
-                obj=self._test_object, permissions=(self._test_permission,),
+                obj=self._test_object, permission=self._test_permission,
                 user=self._test_case_user,
             )
         except PermissionDenied:
             self.fail('PermissionDenied exception was not expected.')
 
-    def test_filtering_with_permissions(self):
+    def test_filtering_with_permission(self):
         self._create_acl_test_object()
 
         self.grant_access(
             obj=self._test_object, permission=self._test_permission
         )
 
+        queryset = self._test_object._meta.model._default_manager.all()
+
         self.assertTrue(
             self._test_object in AccessControlList.objects.restrict_queryset(
-                permission=self._test_permission,
-                queryset=self._test_object._meta.model._default_manager.all(),
+                permission=self._test_permission, queryset=queryset,
                 user=self._test_case_user
             )
         )
@@ -109,8 +111,7 @@ class PermissionTestCase(ACLTestMixin, BaseTestCase):
         try:
             AccessControlList.objects.check_access(
                 obj=self._test_object_child,
-                permissions=(self._test_permission,),
-                user=self._test_case_user
+                permission=self._test_permission, user=self._test_case_user
             )
         except PermissionDenied:
             self.fail('PermissionDenied exception was not expected.')
@@ -128,8 +129,7 @@ class PermissionTestCase(ACLTestMixin, BaseTestCase):
         try:
             AccessControlList.objects.check_access(
                 obj=self._test_object_child,
-                permissions=(self._test_permission,),
-                user=self._test_case_user
+                permission=self._test_permission, user=self._test_case_user
             )
         except PermissionDenied:
             self.fail('PermissionDenied exception was not expected.')

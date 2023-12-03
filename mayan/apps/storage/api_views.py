@@ -18,9 +18,9 @@ class APIDownloadFileDetailView(
     get: Return the details of the selected download file.
     """
     lookup_url_kwarg = 'download_file_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_download_file_delete,),
-        'GET': (permission_download_file_view,),
+    mayan_object_permission_map = {
+       'DELETE': permission_download_file_delete,
+       'GET': permission_download_file_view,
     }
     serializer_class = DownloadFileSerializer
     source_queryset = DownloadFile.objects.all()
@@ -39,8 +39,8 @@ class APIDownloadFileDownloadView(
     get: Download a download file.
     """
     lookup_url_kwarg = 'download_file_id'
-    mayan_object_permissions = {
-        'GET': (permission_download_file_download,),
+    mayan_object_permission_map = {
+       'GET': permission_download_file_download,
     }
     model = DownloadFile
 
@@ -68,8 +68,8 @@ class APIDownloadFileListView(
     """
     get: Returns a list of all the download files.
     """
-    mayan_object_permissions = {
-        'GET': (permission_download_file_view,)
+    mayan_object_permission_map = {
+       'GET': permission_download_file_view
     }
     ordering_fields = ('filename', 'datetime', 'id', 'label')
     serializer_class = DownloadFileSerializer

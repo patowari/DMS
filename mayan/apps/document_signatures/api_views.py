@@ -22,8 +22,8 @@ class APIDocumentFileSignDetachedView(
     """
     post: Sign a document file with a detached signature.
     """
-    mayan_external_object_permissions = {
-        'POST': (permission_document_file_sign_detached,)
+    mayan_external_object_permission_map = {
+       'POST': permission_document_file_sign_detached
     }
     lookup_url_kwarg = 'document_file_id'
     serializer_class = SignDetachedSerializer
@@ -49,8 +49,8 @@ class APIDocumentFileSignEmbeddedView(
     """
     post: Sign a document file with an embedded signature.
     """
-    mayan_external_object_permissions = {
-        'POST': (permission_document_file_sign_embedded,)
+    mayan_external_object_permission_map = {
+       'POST': permission_document_file_sign_embedded
     }
     lookup_url_kwarg = 'document_file_id'
     serializer_class = SignEmbeddedSerializer
@@ -77,8 +77,8 @@ class APIDocumentFileDetachedSignatureListView(
     get: Returns a list of all the detached signatures of a document file.
     post: Create a detached signature for a document file.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_document_file_signature_view,)
+    mayan_external_object_permission_map = {
+       'GET': permission_document_file_signature_view
     }
     serializer_class = DetachedSignatureSerializer
 
@@ -95,9 +95,9 @@ class APIDocumentFileDetachedSignatureDetailView(
     delete: Delete an detached signature of the selected document.
     get: Returns the details of the selected detached signature.
     """
-    mayan_external_object_permissions = {
-        'DELETE': (permission_document_file_signature_delete,),
-        'GET': (permission_document_file_signature_view,),
+    mayan_external_object_permission_map = {
+       'DELETE': permission_document_file_signature_delete,
+       'GET': permission_document_file_signature_view,
         'POST': (permission_document_file_signature_view)
     }
     lookup_url_kwarg = 'detached_signature_id'
@@ -115,8 +115,8 @@ class APIDocumentFileDetachedSignatureUploadView(
     """
     post: Upload a detached signature file for a document file.
     """
-    mayan_external_object_permissions = {
-        'POST': (permission_document_file_signature_upload,)
+    mayan_external_object_permission_map = {
+       'POST': permission_document_file_signature_upload
     }
     lookup_url_kwarg = 'document_file_id'
     serializer_class = DetachedSignatureUploadSerializer
@@ -138,8 +138,8 @@ class APIDocumentFileEmbeddedSignatureListView(
     get: Returns a list of all the embedded signatures of a document file.
     """
     serializer_class = EmbeddedSignatureSerializer
-    mayan_external_object_permissions = {
-        'GET': (permission_document_file_signature_view,)
+    mayan_external_object_permission_map = {
+       'GET': permission_document_file_signature_view
     }
 
     def get_source_queryset(self):
@@ -154,8 +154,8 @@ class APIDocumentFileEmbeddedSignatureDetailView(
     """
     get: Returns the details of the selected embedded signature.
     """
-    mayan_external_object_permissions = {
-        'GET': (permission_document_file_signature_view,)
+    mayan_external_object_permission_map = {
+       'GET': permission_document_file_signature_view
     }
     lookup_url_kwarg = 'embedded_signature_id'
     serializer_class = EmbeddedSignatureSerializer

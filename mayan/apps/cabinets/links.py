@@ -27,17 +27,17 @@ def condition_cabinet_is_root(context, resolved_object):
 
 link_document_cabinet_list = Link(
     args='resolved_object.pk', icon=icon_cabinet_list,
-    permissions=(permission_cabinet_view,), text=_(message='Cabinets'),
+    permission=permission_cabinet_view, text=_(message='Cabinets'),
     view='cabinets:document_cabinet_list'
 )
 link_document_cabinet_remove = Link(
     args='resolved_object.pk', icon=icon_document_cabinet_remove,
-    permissions=(permission_cabinet_remove_document,),
+    permission=permission_cabinet_remove_document,
     text=_(message='Remove from cabinets'), view='cabinets:document_cabinet_remove'
 )
 link_document_cabinet_add = Link(
     args='object.pk', icon=icon_document_cabinet_add,
-    permissions=(permission_cabinet_add_document,),
+    permission=permission_cabinet_add_document,
     text=_(message='Add to cabinets'), view='cabinets:document_cabinet_add'
 )
 link_document_multiple_cabinet_add = Link(
@@ -56,21 +56,21 @@ link_custom_acl_list.condition = condition_cabinet_is_root
 
 link_cabinet_child_add = Link(
     args='object.pk', icon=icon_cabinet_child_add,
-    permissions=(permission_cabinet_create,), text=_(message='Add new level'),
+    permission=permission_cabinet_create, text=_(message='Add new level'),
     view='cabinets:cabinet_child_add'
 )
 link_cabinet_create = Link(
-    icon=icon_cabinet_create, permissions=(permission_cabinet_create,),
+    icon=icon_cabinet_create, permission=permission_cabinet_create,
     text=_(message='Create cabinet'), view='cabinets:cabinet_create'
 )
 link_cabinet_delete = Link(
     args='object.pk', icon=icon_cabinet_delete,
-    permissions=(permission_cabinet_delete,), tags='dangerous',
+    permission=permission_cabinet_delete, tags='dangerous',
     text=_(message='Delete'), view='cabinets:cabinet_delete'
 )
 link_cabinet_edit = Link(
     args='object.pk', icon=icon_cabinet_edit,
-    permissions=(permission_cabinet_edit,), text=_(message='Edit'),
+    permission=permission_cabinet_edit, text=_(message='Edit'),
     view='cabinets:cabinet_edit'
 )
 link_cabinet_list = Link(
@@ -82,6 +82,6 @@ link_cabinet_list = Link(
 )
 link_cabinet_view = Link(
     args='object.pk', icon=icon_cabinet_view,
-    permissions=(permission_cabinet_view,), text=_(message='Details'),
+    permission=permission_cabinet_view, text=_(message='Details'),
     view='cabinets:cabinet_view'
 )

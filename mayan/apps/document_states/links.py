@@ -49,18 +49,18 @@ from .permissions import (
 link_document_type_workflow_template_list = Link(
     args='resolved_object.pk',
     icon=icon_document_type_workflow_template_list,
-    permissions=(permission_document_type_edit,), text=_(message='Workflows'),
+    permission=permission_document_type_edit, text=_(message='Workflows'),
     view='document_states:document_type_workflow_templates'
 )
 link_workflow_template_create = Link(
     icon=icon_workflow_template_create,
-    permissions=(permission_workflow_template_create,),
+    permission=permission_workflow_template_create,
     text=_(message='Create workflow'), view='document_states:workflow_template_create'
 )
 link_workflow_template_document_type_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_document_type_list,
-    permissions=(permission_workflow_template_edit,), text=_(message='Document types'),
+    permission=permission_workflow_template_edit, text=_(message='Document types'),
     view='document_states:workflow_template_document_types'
 )
 link_workflow_template_delete_multiple = Link(
@@ -71,20 +71,20 @@ link_workflow_template_delete_multiple = Link(
 link_workflow_template_delete_single = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_delete,
-    permissions=(permission_workflow_template_delete,),
+    permission=permission_workflow_template_delete,
     tags='dangerous', text=_(message='Delete'),
     view='document_states:workflow_template_single_delete'
 )
 link_workflow_template_edit = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_edit,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Edit'), view='document_states:workflow_template_edit'
 )
 link_workflow_template_launch = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_launch,
-    permissions=(permission_workflow_tools,),
+    permission=permission_workflow_tools,
     text=_(message='Launch workflow'),
     view='document_states:workflow_template_launch'
 )
@@ -104,7 +104,7 @@ link_workflow_template_setup = Link(
 link_workflow_template_preview = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_preview,
-    permissions=(permission_workflow_template_view,),
+    permission=permission_workflow_template_view,
     text=_(message='Preview'), view='document_states:workflow_template_preview'
 )
 
@@ -113,28 +113,28 @@ link_workflow_template_preview = Link(
 link_workflow_template_state_action_delete = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_action_delete,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     tags='dangerous', text=_(message='Delete'),
     view='document_states:workflow_template_state_action_delete'
 )
 link_workflow_template_state_action_edit = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_action_edit,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Edit'),
     view='document_states:workflow_template_state_action_edit'
 )
 link_workflow_template_state_action_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_action_list,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Actions'),
     view='document_states:workflow_template_state_action_list'
 )
 link_workflow_template_state_action_selection = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_action_selection,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Create action'),
     view='document_states:workflow_template_state_action_selection'
 )
@@ -144,28 +144,28 @@ link_workflow_template_state_action_selection = Link(
 link_workflow_template_state_escalation_create = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_escalation_create,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Create escalation'),
     view='document_states:workflow_template_state_escalation_create'
 )
 link_workflow_template_state_escalation_delete = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_escalation_delete,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     tags='dangerous', text=_(message='Delete'),
     view='document_states:workflow_template_state_escalation_delete'
 )
 link_workflow_template_state_escalation_edit = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_escalation_edit,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Edit'),
     view='document_states:workflow_template_state_escalation_edit'
 )
 link_workflow_template_state_escalation_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_escalation_list,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Escalations'),
     view='document_states:workflow_template_state_escalation_list'
 )
@@ -175,26 +175,26 @@ link_workflow_template_state_escalation_list = Link(
 link_workflow_template_state_create = Link(
     args='workflow.pk',
     icon=icon_workflow_template_state_create,
-    permissions=(permission_workflow_template_edit,), text=_(message='Create state'),
+    permission=permission_workflow_template_edit, text=_(message='Create state'),
     view='document_states:workflow_template_state_create'
 )
 link_workflow_template_state_delete = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_delete,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     tags='dangerous', text=_(message='Delete'),
     view='document_states:workflow_template_state_delete'
 )
 link_workflow_template_state_edit = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_state_edit,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Edit'), view='document_states:workflow_template_state_edit'
 )
 link_workflow_template_state_list = Link(
     args='resolved_object.pk',
     icon=link_workflow_template_state_list,
-    permissions=(permission_workflow_template_view,), text=_(message='States'),
+    permission=permission_workflow_template_view, text=_(message='States'),
     view='document_states:workflow_template_state_list'
 )
 
@@ -203,34 +203,34 @@ link_workflow_template_state_list = Link(
 link_workflow_template_transition_create = Link(
     args='workflow.pk',
     icon=icon_workflow_template_transition_create,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Create transition'),
     view='document_states:workflow_template_transition_create'
 )
 link_workflow_template_transition_delete = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_delete,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     tags='dangerous', text=_(message='Delete'),
     view='document_states:workflow_template_transition_delete'
 )
 link_workflow_template_transition_edit = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_edit,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Edit'), view='document_states:workflow_template_transition_edit'
 )
 link_workflow_template_transition_triggers = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_triggers,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Transition triggers'),
     view='document_states:workflow_template_transition_triggers'
 )
 link_workflow_template_transition_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_list,
-    permissions=(permission_workflow_template_view,), text=_(message='Transitions'),
+    permission=permission_workflow_template_view, text=_(message='Transitions'),
     view='document_states:workflow_template_transition_list'
 )
 
@@ -244,33 +244,33 @@ link_document_multiple_workflow_templates_launch = Link(
 link_document_single_workflow_templates_launch = Link(
     args='resolved_object.pk',
     icon=icon_document_workflow_templates_launch,
-    permissions=(permission_workflow_tools,), text=_(message='Launch workflows'),
+    permission=permission_workflow_tools, text=_(message='Launch workflows'),
     view='document_states:document_single_workflow_templates_launch'
 )
 link_workflow_template_transition_field_create = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_field_create,
-    permissions=(permission_workflow_template_edit,), text=_(message='Create field'),
+    permission=permission_workflow_template_edit, text=_(message='Create field'),
     view='document_states:workflow_template_transition_field_create'
 )
 link_workflow_template_transition_field_delete = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_field_delete,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     tags='dangerous', text=_(message='Delete'),
     view='document_states:workflow_template_transition_field_delete'
 )
 link_workflow_template_transition_field_edit = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_field_edit,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Edit'),
     view='document_states:workflow_template_transition_field_edit'
 )
 link_workflow_template_transition_field_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_template_transition_field_list,
-    permissions=(permission_workflow_template_edit,),
+    permission=permission_workflow_template_edit,
     text=_(message='Fields'),
     view='document_states:workflow_template_transition_field_list'
 )
@@ -280,13 +280,13 @@ link_workflow_template_transition_field_list = Link(
 link_workflow_instance_detail = Link(
     args='resolved_object.pk',
     icon=icon_workflow_instance_detail,
-    permissions=(permission_workflow_template_view,),
+    permission=permission_workflow_template_view,
     text=_(message='Detail'), view='document_states:workflow_instance_detail'
 )
 link_workflow_instance_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_instance_list,
-    permissions=(permission_workflow_template_view,), text=_(message='Workflows'),
+    permission=permission_workflow_template_view, text=_(message='Workflows'),
     view='document_states:workflow_instance_list'
 )
 link_workflow_instance_transition = Link(
@@ -301,7 +301,7 @@ link_workflow_instance_transition = Link(
 link_workflow_runtime_proxy_document_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_runtime_proxy_document_list,
-    permissions=(permission_workflow_template_view,),
+    permission=permission_workflow_template_view,
     text=_(message='Workflow documents'),
     view='document_states:workflow_runtime_proxy_document_list'
 )
@@ -315,14 +315,14 @@ link_workflow_runtime_proxy_list = Link(
 link_workflow_runtime_proxy_state_document_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_runtime_proxy_state_document_list,
-    permissions=(permission_workflow_template_view,),
+    permission=permission_workflow_template_view,
     text=_(message='State documents'),
     view='document_states:workflow_runtime_proxy_state_document_list'
 )
 link_workflow_runtime_proxy_state_list = Link(
     args='resolved_object.pk',
     icon=icon_workflow_runtime_proxy_state_list,
-    permissions=(permission_workflow_template_view,), text=_(message='States'),
+    permission=permission_workflow_template_view, text=_(message='States'),
     view='document_states:workflow_runtime_proxy_state_list'
 )
 
@@ -330,7 +330,7 @@ link_workflow_runtime_proxy_state_list = Link(
 
 link_tool_launch_workflows = Link(
     icon=icon_tool_launch_workflows,
-    permissions=(permission_workflow_tools,),
+    permission=permission_workflow_tools,
     text=_(message='Launch all workflows'),
     view='document_states:tool_launch_workflows'
 )

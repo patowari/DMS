@@ -25,27 +25,27 @@ link_document_multiple_tag_multiple_remove = Link(
 )
 link_document_tag_list = Link(
     args='resolved_object.pk', icon=icon_document_tag_list,
-    permissions=(permission_tag_view,), text=_(message='Tags'),
+    permission=permission_tag_view, text=_(message='Tags'),
     view='tags:document_tag_list'
 )
 link_document_tag_multiple_remove = Link(
     args='object.id', icon=icon_document_tag_multiple_remove,
-    permissions=(permission_tag_remove,), text=_(message='Remove tags'),
+    permission=permission_tag_remove, text=_(message='Remove tags'),
     view='tags:single_document_multiple_tag_remove'
 )
 link_document_tag_multiple_attach = Link(
     args='object.pk', icon=icon_document_tag_multiple_attach,
-    permissions=(permission_tag_attach,), text=_(message='Attach tags'),
+    permission=permission_tag_attach, text=_(message='Attach tags'),
     view='tags:tag_attach'
 )
 
 link_tag_create = Link(
-    icon=icon_tag_create, permissions=(permission_tag_create,),
+    icon=icon_tag_create, permission=permission_tag_create,
     text=_(message='Create new tag'), view='tags:tag_create'
 )
 link_tag_single_delete = Link(
     args='object.id', icon=icon_tag_single_delete,
-    permissions=(permission_tag_delete,), tags='dangerous',
+    permission=permission_tag_delete, tags='dangerous',
     text=_(message='Delete'), view='tags:tag_single_delete'
 )
 link_tag_multiple_delete = Link(
@@ -54,7 +54,7 @@ link_tag_multiple_delete = Link(
 )
 link_tag_edit = Link(
     args='object.id', icon=icon_tag_edit,
-    permissions=(permission_tag_edit,), text=_(message='Edit'),
+    permission=permission_tag_edit, text=_(message='Edit'),
     view='tags:tag_edit'
 )
 link_tag_list = Link(

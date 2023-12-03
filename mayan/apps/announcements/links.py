@@ -13,24 +13,24 @@ from .permissions import (
 )
 
 link_announcement_create = Link(
-    icon=icon_announcement_create, permissions=(
-        permission_announcement_create,
-    ), text=_(message='Create announcement'),
+    icon=icon_announcement_create, permission=permission_announcement_create,
+    text=_(message='Create announcement'),
     view='announcements:announcement_create'
 )
 link_announcement_multiple_delete = Link(
-    icon=icon_announcement_delete, tags='dangerous', text=_(message='Delete'),
+    icon=icon_announcement_delete, tags='dangerous',
+    text=_(message='Delete'),
     view='announcements:announcement_multiple_delete'
 )
 link_announcement_single_delete = Link(
     args='object.pk', icon=icon_announcement_delete,
-    permissions=(permission_announcement_delete,),
+    permission=permission_announcement_delete,
     tags='dangerous', text=_(message='Delete'),
     view='announcements:announcement_single_delete'
 )
 link_announcement_edit = Link(
     args='object.pk', icon=icon_announcement_edit,
-    permissions=(permission_announcement_edit,), text=_(message='Edit'),
+    permission=permission_announcement_edit, text=_(message='Edit'),
     view='announcements:announcement_edit'
 )
 link_announcement_list = Link(

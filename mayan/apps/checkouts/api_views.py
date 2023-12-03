@@ -91,8 +91,8 @@ class APIDocumentCheckoutView(
     """
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
-    mayan_external_object_permissions = {
-        'GET': (permission_document_check_out_detail_view,)
+    mayan_external_object_permission_map = {
+        'GET': permission_document_check_out_detail_view
     }
     serializer_class = DocumentCheckoutSerializer
 
@@ -102,7 +102,7 @@ class APIDocumentCheckoutView(
             '_event_keep_attributes': ('_event_actor',)
         }
 
-    def get_mayan_object_permissions(self):
+    def get_mayan_object_permission(self):
         if self.request.method == 'DELETE':
             try:
                 checkout = self.get_external_object().checkout

@@ -13,11 +13,11 @@ class APIAnnouncementListView(generics.ListCreateAPIView):
     get: Returns a list of all the announcements.
     post: Create a new announcement.
     """
-    mayan_object_permissions = {
-        'GET': (permission_announcement_view,)
+    mayan_object_permission_map = {
+       'GET': permission_announcement_view
     }
-    mayan_view_permissions = {
-        'POST': (permission_announcement_create,)
+    mayan_view_permission_map = {
+       'POST': permission_announcement_create
     }
     ordering_fields = (
         'enabled', 'end_datetime', 'id', 'label', 'start_datetime'
@@ -39,11 +39,11 @@ class APIAnnouncementView(generics.RetrieveUpdateDestroyAPIView):
     put: Edit the selected announcement.
     """
     lookup_url_kwarg = 'announcement_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_announcement_delete,),
-        'GET': (permission_announcement_view,),
-        'PATCH': (permission_announcement_edit,),
-        'PUT': (permission_announcement_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_announcement_delete,
+       'GET': permission_announcement_view,
+       'PATCH': permission_announcement_edit,
+       'PUT': permission_announcement_edit
     }
     serializer_class = AnnouncementSerializer
     source_queryset = Announcement.objects.all()

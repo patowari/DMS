@@ -176,7 +176,7 @@ class LayerTestMixin(PermissionTestMixin):
 
             self._test_layer = Layer(
                 label=TEST_LAYER_LABEL, name=TEST_LAYER_NAME,
-                order=TEST_LAYER_ORDER, permissions={
+                order=TEST_LAYER_ORDER, permission_map={
                     'create': self._test_layer_permission_create,
                     'delete': self._test_layer_permission_delete,
                     'edit': self._test_layer_permission_edit,

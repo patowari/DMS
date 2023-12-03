@@ -49,8 +49,8 @@ def factory_condition_queryset_access(
         if view_permission:
             if user.is_authenticated:
                 try:
-                    Permission.check_user_permissions(
-                        permissions=(view_permission,), user=user
+                    Permission.check_user_permission(
+                        permission=view_permission, user=user
                     )
                 except PermissionDenied:
                     """

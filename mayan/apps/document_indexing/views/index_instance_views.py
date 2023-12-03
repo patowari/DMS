@@ -103,9 +103,8 @@ class IndexInstanceNodeView(DocumentListView):
             klass=IndexInstanceNode, pk=self.kwargs['index_instance_node_id']
         )
         AccessControlList.objects.check_access(
-            obj=instance, permissions=(
-                permission_index_instance_view,
-            ), user=self.request.user
+            obj=instance, permission=permission_index_instance_view,
+            user=self.request.user
         )
         return instance
 

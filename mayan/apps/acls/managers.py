@@ -261,7 +261,7 @@ class AccessControlListManager(models.Manager):
 
         return result
 
-    def check_access(self, obj, permissions, user):
+    def check_access(self, obj, permission, user):
         # Allow specific managers for models that have more than one
         # for example the Document model when checking for access for a trashed
         # document.
@@ -281,11 +281,10 @@ class AccessControlListManager(models.Manager):
             source_queryset = manager.all()
 
         restricted_queryset = manager.none()
-        for permission in permissions:
-            # Default relationship betweens permissions is OR.
-            restricted_queryset = restricted_queryset | self.restrict_queryset(
-                permission=permission, queryset=source_queryset, user=user
-            )
+        # Default relationship between permissions is OR.
+        restricted_queryset = restricted_queryset | self.restrict_queryset(
+            permission=permission, queryset=source_queryset, user=user
+        )
 
         if restricted_queryset.filter(pk=obj.pk).exists():
             return True
@@ -300,8 +299,8 @@ class AccessControlListManager(models.Manager):
 
         # Check directly granted permission via a role
         try:
-            Permission.check_user_permissions(
-                permissions=(permission,), user=user
+            Permission.check_user_permission(
+                permission=permission, user=user
             )
         except PermissionDenied:
             acl_filters = self._get_acl_filters(

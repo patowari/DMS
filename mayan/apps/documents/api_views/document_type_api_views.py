@@ -21,8 +21,8 @@ class APIDocumentTypeListView(generics.ListCreateAPIView):
     get: Returns a list of all the document types.
     post: Create a new document type.
     """
-    mayan_object_permissions = {'GET': (permission_document_type_view,)}
-    mayan_view_permissions = {'POST': (permission_document_type_create,)}
+    mayan_object_permission_map = {'GET': permission_document_type_view}
+    mayan_view_permission_map = {'POST': permission_document_type_create}
     ordering_fields = ('id', 'label')
     serializer_class = DocumentTypeSerializer
     source_queryset = DocumentType.objects.all()
@@ -41,11 +41,11 @@ class APIDocumentTypeDetailView(generics.RetrieveUpdateDestroyAPIView):
     put: Edit the properties of the selected document type.
     """
     lookup_url_kwarg = 'document_type_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_document_type_delete,),
-        'GET': (permission_document_type_view,),
-        'PATCH': (permission_document_type_edit,),
-        'PUT': (permission_document_type_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_document_type_delete,
+       'GET': permission_document_type_view,
+       'PATCH': permission_document_type_edit,
+       'PUT': permission_document_type_edit
     }
     serializer_class = DocumentTypeSerializer
     source_queryset = DocumentType.objects.all()
@@ -67,11 +67,11 @@ class APIDocumentTypeQuickLabelDetailView(
     put: Edit the properties of the selected quick label.
     """
     lookup_url_kwarg = 'document_type_quick_label_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_document_type_edit,),
-        'GET': (permission_document_type_view,),
-        'PATCH': (permission_document_type_edit,),
-        'PUT': (permission_document_type_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_document_type_edit,
+       'GET': permission_document_type_view,
+       'PATCH': permission_document_type_edit,
+       'PUT': permission_document_type_edit
     }
     ordering_fields = ('filename', 'enabled', 'id')
     serializer_class = DocumentTypeQuickLabelSerializer

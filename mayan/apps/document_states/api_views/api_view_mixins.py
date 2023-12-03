@@ -19,11 +19,13 @@ class ParentObjectWorkflowTemplateAPIViewMixin:
         queryset = self.get_workflow_template_queryset()
 
         if not permission:
-            permission = getattr(
-                self, 'mayan_external_object_permissions', {}
-            ).get(
-                self.request.method, (None,)
-            )[0]
+            mayan_external_object_permission_map = getattr(
+                self, 'mayan_external_object_permission_map', {}
+            )
+
+            permission = mayan_external_object_permission_map.get(
+                self.request.method, None
+            )
 
         if permission:
             queryset = AccessControlList.objects.restrict_queryset(

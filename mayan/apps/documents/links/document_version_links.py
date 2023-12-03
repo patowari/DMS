@@ -24,19 +24,19 @@ from ..permissions import (
 link_document_version_active = Link(
     args='resolved_object.pk',
     icon=icon_document_version_active,
-    permissions=(permission_document_version_edit,),
+    permission=permission_document_version_edit,
     text=_(message='Make active'), view='documents:document_version_active'
 )
 link_document_version_create = Link(
     args='resolved_object.pk', icon=icon_document_version_create,
-    permissions=(permission_document_version_create,),
+    permission=permission_document_version_create,
     text=_(message='Create document version'),
     view='documents:document_version_create'
 )
 link_document_version_single_delete = Link(
     args='resolved_object.pk',
     icon=icon_document_version_delete,
-    permissions=(permission_document_version_delete,), tags='dangerous',
+    permission=permission_document_version_delete, tags='dangerous',
     text=_(message='Delete'), view='documents:document_version_single_delete'
 )
 link_document_version_multiple_delete = Link(
@@ -45,58 +45,58 @@ link_document_version_multiple_delete = Link(
 )
 link_document_version_edit = Link(
     args='resolved_object.pk', icon=icon_document_version_edit,
-    permissions=(permission_document_version_edit,),
+    permission=permission_document_version_edit,
     text=_(message='Edit'), view='documents:document_version_edit'
 )
 link_document_version_list = Link(
     args='resolved_object.pk', icon=icon_document_version_list,
-    permissions=(permission_document_version_view,), text=_(message='Versions'),
+    permission=permission_document_version_view, text=_(message='Versions'),
     view='documents:document_version_list'
 )
 link_document_version_modification = Link(
     args='resolved_object.pk', icon=icon_document_version_modification,
-    permissions=(permission_document_version_edit,), text=_(message='Modify'),
+    permission=permission_document_version_edit, text=_(message='Modify'),
     view='documents:document_version_modify'
 )
 link_document_version_preview = Link(
     args='resolved_object.pk', icon=icon_document_version_preview,
-    permissions=(permission_document_version_view,),
+    permission=permission_document_version_view,
     text=_(message='Preview'), view='documents:document_version_preview'
 )
 link_document_version_print_form = Link(
     args='resolved_object.id', icon=icon_document_version_print,
-    permissions=(permission_document_version_print,), text=_(message='Print'),
+    permission=permission_document_version_print, text=_(message='Print'),
     view='documents:document_version_print_form'
 )
 link_document_version_return_to_document = Link(
     args='resolved_object.document.pk',
     icon=icon_document_version_return_document,
-    permissions=(permission_document_view,), text=_(message='Document'),
+    permission=permission_document_view, text=_(message='Document'),
     view='documents:document_preview'
 )
 link_document_version_return_list = Link(
     args='resolved_object.document.pk',
     icon=icon_document_version_return_list,
-    permissions=(permission_document_version_view,), text=_(message='Versions'),
+    permission=permission_document_version_view, text=_(message='Versions'),
     view='documents:document_version_list'
 )
 link_document_version_transformations_clear = Link(
     args='resolved_object.id',
     icon=icon_document_version_transformation_list_clear,
-    permissions=(permission_transformation_delete,),
+    permission=permission_transformation_delete,
     text=_(message='Clear transformations'),
     view='documents:document_version_transformations_clear'
 )
 link_document_version_multiple_transformations_clear = Link(
     icon=icon_document_version_transformation_list_clear,
-    permissions=(permission_transformation_delete,),
+    permission=permission_transformation_delete,
     text=_(message='Clear transformations'),
     view='documents:document_version_multiple_transformations_clear'
 )
 link_document_version_transformations_clone = Link(
     args='resolved_object.id',
     icon=icon_document_version_transformation_list_clone,
-    permissions=(permission_transformation_edit,),
+    permission=permission_transformation_edit,
     text=_(message='Clone transformations'),
     view='documents:document_version_transformations_clone'
 )

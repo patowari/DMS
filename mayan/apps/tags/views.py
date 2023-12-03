@@ -97,7 +97,7 @@ class TagAttachActionView(MultipleObjectFormActionView):
     def object_action(self, form, instance):
         for tag in form.cleaned_data['tags']:
             AccessControlList.objects.check_access(
-                obj=tag, permissions=(permission_tag_attach,),
+                obj=tag, permission=permission_tag_attach,
                 user=self.request.user
             )
 
@@ -310,7 +310,7 @@ class TagRemoveActionView(MultipleObjectFormActionView):
     def object_action(self, form, instance):
         for tag in form.cleaned_data['tags']:
             AccessControlList.objects.check_access(
-                obj=tag, permissions=(permission_tag_remove,),
+                obj=tag, permission=permission_tag_remove,
                 user=self.request.user
             )
 

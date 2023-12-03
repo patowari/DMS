@@ -5,7 +5,7 @@ from mayan.apps.acls.models import AccessControlList
 
 class MayanObjectPermissionsFilter(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
-        permission = self.get_mayan_object_permissions(
+        permission = self.get_mayan_object_permission(
             request=request, view=view
         )
 
@@ -17,17 +17,23 @@ class MayanObjectPermissionsFilter(BaseFilterBackend):
         else:
             return queryset
 
-    def get_mayan_object_permissions(self, request, view):
+    def get_mayan_object_permission(self, request, view):
         try:
-            method_get_mayan_object_permissions = getattr(
-                view, 'get_mayan_object_permissions'
+            method_get_mayan_object_permission = getattr(
+                view, 'get_mayan_object_permission_map'
             )
         except AttributeError:
-            return getattr(
-                view, 'mayan_object_permissions', {}
-            ).get(request.method, (None,))[0]
+            mayan_object_permission_map = getattr(
+                view, 'mayan_object_permission_map', {}
+            )
+
+            permission = mayan_object_permission_map.get(
+                request.method, None
+            )
+
+            return permission
         else:
-            return method_get_mayan_object_permissions()
+            return method_get_mayan_object_permission()
 
 
 class MayanSortingFilter(OrderingFilter):

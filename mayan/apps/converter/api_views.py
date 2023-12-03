@@ -23,12 +23,8 @@ class APIAssetListView(generics.ListCreateAPIView):
     get: Returns a list of all the assets.
     post: Create a new asset.
     """
-    mayan_object_permissions = {
-        'GET': (permission_asset_view,)
-    }
-    mayan_view_permissions = {
-        'POST': (permission_asset_create,)
-    }
+    mayan_object_permission_map = {'GET': permission_asset_view}
+    mayan_view_permission_map = {'POST': permission_asset_create}
     ordering_fields = ('id', 'internal_name', 'label')
     serializer_class = AssetSerializer
     source_queryset = Asset.objects.all()
@@ -47,11 +43,11 @@ class APIAssetDetailView(generics.RetrieveUpdateDestroyAPIView):
     put: Edit the properties of the selected asset.
     """
     lookup_url_kwarg = 'asset_id'
-    mayan_object_permissions = {
-        'DELETE': (permission_asset_delete,),
-        'GET': (permission_asset_view,),
-        'PATCH': (permission_asset_edit,),
-        'PUT': (permission_asset_edit,)
+    mayan_object_permission_map = {
+       'DELETE': permission_asset_delete,
+       'GET': permission_asset_view,
+       'PATCH': permission_asset_edit,
+       'PUT': permission_asset_edit
     }
     serializer_class = AssetSerializer
     source_queryset = Asset.objects.all()
@@ -67,9 +63,7 @@ class APIAssetImageView(APIImageViewMixin, generics.RetrieveAPIView):
     get: Returns an image representation of the selected asset.
     """
     lookup_url_kwarg = 'asset_id'
-    mayan_object_permissions = {
-        'GET': (permission_asset_view,),
-    }
+    mayan_object_permission_map = {'GET': permission_asset_view}
     source_queryset = Asset.objects.all()
 
 

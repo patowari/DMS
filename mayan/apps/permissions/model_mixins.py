@@ -85,7 +85,9 @@ class StoredPermissionBusinessLogicMixin:
         try:
             permission = self.volatile_permission
         except KeyError:
-            return _(message='Unknown or obsolete permission: %s') % self.name
+            return _(
+                message='Unknown or obsolete permission: %s'
+            ) % self.name
         else:
             return permission.label
 

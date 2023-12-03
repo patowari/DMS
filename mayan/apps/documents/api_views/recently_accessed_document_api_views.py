@@ -11,8 +11,8 @@ class APIRecentlyAccessedDocumentListView(generics.ListAPIView):
     """
     get: Return a list of the recently accessed documents for the current user.
     """
-    mayan_object_permissions = {
-        'GET': (permission_document_view,)
+    mayan_object_permission_map = {
+       'GET': permission_document_view
     }
     serializer_class = RecentlyAccessedDocumentSerializer
 

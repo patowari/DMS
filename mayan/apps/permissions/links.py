@@ -18,19 +18,19 @@ from .permissions import (
 
 link_group_role_list = Link(
     args='object.id', icon=icon_group_role_list,
-    permissions=(permission_group_edit,), text=_(message='Roles'),
+    permission=permission_group_edit, text=_(message='Roles'),
     view='permissions:group_role_list'
 )
 
 # Role
 
 link_role_create = Link(
-    icon=icon_role_create, permissions=(permission_role_create,),
+    icon=icon_role_create, permission=permission_role_create,
     text=_(message='Create new role'), view='permissions:role_create'
 )
 link_role_delete_single = Link(
     args='object.id', icon=icon_role_single_delete,
-    permissions=(permission_role_delete,), tags='dangerous',
+    permission=permission_role_delete, tags='dangerous',
     text=_(message='Delete'), view='permissions:role_single_delete'
 )
 link_role_delete_multiple = Link(
@@ -39,12 +39,12 @@ link_role_delete_multiple = Link(
 )
 link_role_edit = Link(
     args='object.id', icon=icon_role_edit,
-    permissions=(permission_role_edit,), text=_(message='Edit'),
+    permission=permission_role_edit, text=_(message='Edit'),
     view='permissions:role_edit'
 )
 link_role_group_list = Link(
     args='object.id', icon=icon_role_group_list,
-    permissions=(permission_role_edit,), text=_(message='Groups'),
+    permission=permission_role_edit, text=_(message='Groups'),
     view='permissions:role_group_list'
 )
 link_role_list = Link(
@@ -52,7 +52,7 @@ link_role_list = Link(
 )
 link_role_permission_list = Link(
     args='object.id', icon=icon_role_permission_list,
-    permissions=(permission_role_edit,),
+    permission=permission_role_edit,
     text=_(message='Role permissions'), view='permissions:role_permission_list'
 )
 link_role_setup = Link(
