@@ -12,18 +12,19 @@ from .icons import (
     icon_document_version_attachment_send_single,
     icon_document_version_link_send_single,
     icon_document_version_link_send_multiple,
-    icon_document_version_attachment_send_multiple, icon_user_mailer_create,
-    icon_user_mailer_delete, icon_user_mailer_edit, icon_user_mailer_list,
-    icon_user_mailer_test
+    icon_document_version_attachment_send_multiple,
+    icon_mailing_profile_create, icon_mailing_profile_delete,
+    icon_mailing_profile_edit, icon_mailing_profile_list,
+    icon_mailing_profile_test
 )
 from .permissions import (
     permission_send_document_file_attachment,
     permission_send_document_file_link,
     permission_send_document_version_attachment,
     permission_send_document_version_link, permission_send_document_link,
-    permission_user_mailer_create, permission_user_mailer_delete,
-    permission_user_mailer_edit, permission_user_mailer_use,
-    permission_user_mailer_view
+    permission_mailing_profile_create, permission_mailing_profile_delete,
+    permission_mailing_profile_edit, permission_mailing_profile_use,
+    permission_mailing_profile_view
 )
 
 # Document
@@ -31,10 +32,12 @@ from .permissions import (
 link_send_document_link_single = Link(
     args='resolved_object.pk', icon=icon_document_link_send_single,
     permission=permission_send_document_link,
-    text=_(message='Email document link'), view='mailer:send_document_link_single'
+    text=_(message='Email document link'),
+    view='mailer:send_document_link_single'
 )
 link_send_document_link_multiple = Link(
-    icon=icon_document_link_send_multiple, text=_(message='Email document link'),
+    icon=icon_document_link_send_multiple,
+    text=_(message='Email document link'),
     view='mailer:send_document_link_multiple'
 )
 
@@ -92,41 +95,41 @@ link_send_document_version_link_multiple = Link(
 
 # Mailing profile
 
-link_user_mailer_create = Link(
-    icon=icon_user_mailer_create,
-    permission=permission_user_mailer_create,
+link_mailing_profile_create = Link(
+    icon=icon_mailing_profile_create,
+    permission=permission_mailing_profile_create,
     text=_(message='Create mailing profile'),
-    view='mailer:user_mailer_backend_selection'
+    view='mailer:mailing_profile_backend_selection'
 )
-link_user_mailer_delete = Link(
-    args='resolved_object.pk', icon=icon_user_mailer_delete,
-    permission=permission_user_mailer_delete, tags='dangerous',
-    text=_(message='Delete'), view='mailer:user_mailer_delete'
+link_mailing_profile_delete = Link(
+    args='resolved_object.pk', icon=icon_mailing_profile_delete,
+    permission=permission_mailing_profile_delete, tags='dangerous',
+    text=_(message='Delete'), view='mailer:mailing_profile_delete'
 )
-link_user_mailer_edit = Link(
-    args='object.pk', icon=icon_user_mailer_edit,
-    permission=permission_user_mailer_edit, text=_(message='Edit'),
-    view='mailer:user_mailer_edit'
+link_mailing_profile_edit = Link(
+    args='object.pk', icon=icon_mailing_profile_edit,
+    permission=permission_mailing_profile_edit, text=_(message='Edit'),
+    view='mailer:mailing_profile_edit'
 )
-link_user_mailer_list = Link(
-    icon=icon_user_mailer_list, text=_(message='Mailing profiles'),
-    view='mailer:user_mailer_list'
+link_mailing_profile_list = Link(
+    icon=icon_mailing_profile_list, text=_(message='Mailing profiles'),
+    view='mailer:mailing_profile_list'
 )
-link_user_mailer_setup = Link(
+link_mailing_profile_setup = Link(
     condition=factory_condition_queryset_access(
         app_label='mailer', model_name='UserMailer',
-        object_permission=permission_user_mailer_view,
-        view_permission=permission_user_mailer_create,
-    ), icon=icon_user_mailer_list, text=_(message='Mailing profiles'),
-    view='mailer:user_mailer_list'
+        object_permission=permission_mailing_profile_view,
+        view_permission=permission_mailing_profile_create,
+    ), icon=icon_mailing_profile_list, text=_(message='Mailing profiles'),
+    view='mailer:mailing_profile_list'
 )
-link_user_mailer_list = Link(
-    icon=icon_user_mailer_list,
-    permission=permission_user_mailer_view,
-    text=_(message='Mailing profiles'), view='mailer:user_mailer_list'
+link_mailing_profile_list = Link(
+    icon=icon_mailing_profile_list,
+    permission=permission_mailing_profile_view,
+    text=_(message='Mailing profiles'), view='mailer:mailing_profile_list'
 )
-link_user_mailer_test = Link(
-    args='object.pk', icon=icon_user_mailer_test,
-    permission=permission_user_mailer_use, text=_(message='Test'),
-    view='mailer:user_mailer_test'
+link_mailing_profile_test = Link(
+    args='object.pk', icon=icon_mailing_profile_test,
+    permission=permission_mailing_profile_use, text=_(message='Test'),
+    view='mailer:mailing_profile_test'
 )

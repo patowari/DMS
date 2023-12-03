@@ -41,15 +41,21 @@ icon_document_version_link_send_single = Icon(
 
 # Mailing profile
 
-icon_user_mailer_backend_select = Icon(
+icon_mailing_profile_backend_select = Icon(
     driver_name='fontawesome-dual', primary_symbol='envelope',
     secondary_symbol='plus'
 )
-icon_user_mailer_create = Icon(
+icon_mailing_profile_create = Icon(
     driver_name='fontawesome-dual', primary_symbol='envelope',
     secondary_symbol='plus'
 )
-icon_user_mailer_delete = Icon(driver_name='fontawesome', symbol='times')
-icon_user_mailer_edit = Icon(driver_name='fontawesome', symbol='pencil-alt')
-icon_user_mailer_list = Icon(driver_name='fontawesome', symbol='envelope')
-icon_user_mailer_test = Icon(driver_name='fontawesome', symbol='play')
+icon_mailing_profile_delete = Icon(
+    driver_name='fontawesome', symbol='times'
+)
+icon_mailing_profile_edit = Icon(
+    driver_name='fontawesome', symbol='pencil-alt'
+)
+icon_mailing_profile_list = Icon(
+    driver_name='fontawesome', symbol='envelope'
+)
+icon_mailing_profile_test = Icon(driver_name='fontawesome', symbol='play')

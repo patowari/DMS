@@ -9,10 +9,11 @@ from mayan.apps.common.settings import (
 
 from .classes import MailerBackend
 from .models import UserMailer
-from .permissions import permission_user_mailer_use
+from .permissions import permission_mailing_profile_use
 from .settings import (
     setting_attachment_body_template, setting_attachment_subject_template,
-    setting_document_link_body_template, setting_document_link_subject_template
+    setting_document_link_body_template,
+    setting_document_link_subject_template
 )
 from .validators import validate_email_multiple
 
@@ -43,39 +44,46 @@ class ObjectMailForm(forms.Form):
             }
 
         queryset = AccessControlList.objects.restrict_queryset(
-            permission=permission_user_mailer_use,
+            permission=permission_mailing_profile_use,
             queryset=UserMailer.objects.filter(enabled=True), user=user
         )
 
-        self.fields['user_mailer'].queryset = queryset
+        self.fields['mailing_profile'].queryset = queryset
         try:
-            self.fields['user_mailer'].initial = queryset.get(default=True)
+            self.fields['mailing_profile'].initial = queryset.get(
+                default=True
+            )
         except UserMailer.DoesNotExist:
             pass
 
     email = forms.CharField(
         help_text=_(
-            'Email address of the recipient. Can be multiple addresses '
-            'separated by comma or semicolon.'
-        ), label=_(message='Email address'), validators=[validate_email_multiple]
+            message='Email address of the recipient. Can be multiple '
+            'addresses separated by comma or semicolon.'
+        ), label=_(message='Email address'), validators=[
+            validate_email_multiple
+        ]
     )
     subject = forms.CharField(
         label=_(message='Subject'), required=False
     )
     body = forms.CharField(
-        label=_(message='Body'), widget=forms.widgets.Textarea(), required=False
+        label=_(message='Body'), widget=forms.widgets.Textarea(),
+        required=False
     )
-    user_mailer = forms.ModelChoiceField(
+    mailing_profile = forms.ModelChoiceField(
         help_text=_(
-            'The email profile that will be used to send this email.'
-        ), label=_(message='Mailing profile'), queryset=UserMailer.objects.none()
+            message='The email profile that will be used to send this email.'
+        ), label=_(message='Mailing profile'),
+        queryset=UserMailer.objects.none()
     )
 
 
 class UserMailerBackendSelectionForm(forms.Form):
     backend = forms.ChoiceField(
-        choices=(), help_text=_(message='The driver to use when sending emails.'),
-        label=_(message='Backend')
+        choices=(), help_text=_(
+            message='The driver to use when sending emails.'
+        ), label=_(message='Backend')
     )
 
     def __init__(self, *args, **kwargs):
@@ -92,7 +100,9 @@ class UserMailerSetupDynamicForm(FormDynamicModelBackend):
 class UserMailerTestForm(forms.Form):
     email = forms.CharField(
         help_text=_(
-            'Email address of the recipient. Can be multiple addresses '
-            'separated by comma or semicolon.'
-        ), label=_(message='Email address'), validators=[validate_email_multiple]
+            message='Email address of the recipient. Can be multiple '
+            'addresses separated by comma or semicolon.'
+        ), label=_(message='Email address'), validators=[
+            validate_email_multiple
+        ]
     )

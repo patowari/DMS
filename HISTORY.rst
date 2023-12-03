@@ -45,6 +45,14 @@
   are remapped.
 - Normalize the permission system to work with single permissions per filter
   or check.
+- Mailer app refactor
+
+  - Replace uses of ``mailer`` and ``user mailer`` to ``mailing profile``.
+  - Add mailing profile API.
+  - Add generic object mailing API. Supports emailing object links and
+    object attachments.
+  - Add class ``ModelMailingAction`` to defined available mailing actions
+    per model.
 
 4.5.7 (2023-10-25)
 ==================

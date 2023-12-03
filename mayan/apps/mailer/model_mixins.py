@@ -9,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 import mayan
 from mayan.apps.templating.classes import Template
 
+from .classes import ModelMailingAction
 from .events import event_email_sent
 from .utils import split_recipient_list
 
@@ -99,14 +100,21 @@ class UserMailerBusinessLogicMixin:
 
     def send_object(
         self, obj, to, as_attachment=False, bcc=None, body='', cc=None,
-        content_function_dotted_path=None,
-        mime_type_function_dotted_path=None, object_name=None,
-        organization_installation_url='', reply_to=None, subject='',
-        user=None
+        object_name=None, organization_installation_url='', reply_to=None,
+        subject='', user=None
     ):
         """
         Send an object file using this user mailing profile.
         """
+        if as_attachment:
+            action_name = 'attachment'
+        else:
+            action_name = 'link'
+
+        model_mailing_action = ModelMailingAction.get_action_for_model(
+            action_name=action_name, model=obj._meta.model
+        )
+
         context_dictionary = {
             'link': furl(organization_installation_url).join(
                 obj.get_absolute_url()
@@ -127,24 +135,16 @@ class UserMailerBusinessLogicMixin:
 
         attachments = []
         if as_attachment:
-            if not content_function_dotted_path:
-                raise ValueError(
-                    'Must provide `content_function_dotted_path` '
-                    'to allow sending the object as an attachment.'
-                )
-
-            if not mime_type_function_dotted_path:
-                raise ValueError(
-                    'Must provide `mime_type_function_dotted_path` to '
-                    'allow sending the object as an attachment.'
-                )
-
             content_function = import_string(
-                dotted_path=content_function_dotted_path
+                dotted_path=model_mailing_action.kwargs[
+                    'content_function_dotted_path'
+                ]
             )
 
             mime_type_function = import_string(
-                dotted_path=mime_type_function_dotted_path
+                dotted_path=model_mailing_action.kwargs[
+                    'mime_type_function_dotted_path'
+                ]
             )
             mime_type = mime_type_function(obj=obj)
 

@@ -9,9 +9,9 @@ namespace = EventTypeNamespace(
 event_email_sent = namespace.add_event_type(
     label=_(message='Email sent'), name='email_send'
 )
-event_profile_created = namespace.add_event_type(
+event_mailing_profile_created = namespace.add_event_type(
     label=_(message='Mailing profile created'), name='profile_created'
 )
-event_profile_edited = namespace.add_event_type(
+event_mailing_profile_edited = namespace.add_event_type(
     label=_(message='Mailing profile edited'), name='profile_edited'
 )
