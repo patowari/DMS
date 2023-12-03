@@ -43,6 +43,7 @@ from .permissions import (
 class MailerApp(MayanAppConfig):
     app_namespace = 'mailer'
     app_url = 'mailer'
+    has_rest_api = True
     has_tests = True
     name = 'mayan.apps.mailer'
     verbose_name = _(message='Mailer')

@@ -8,15 +8,16 @@ from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 from ..models import UserMailer
 
 from .literals import (
-    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS, MAILER_BACKEND_TEST_PATH,
-    TEST_USER_MAILER_LABEL
+    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS,
+    TEST_USER_MAILER_BACKEND_PATH, TEST_USER_MAILER_LABEL,
+    TEST_USER_MAILER_LABEL_EDITED
 )
 
 
 class MailerTestMixin(
     StoredCredentialPasswordUsernameTestMixin, TestMixinObjectCreationTrack
 ):
-    _test_mailer_backend_path = MAILER_BACKEND_TEST_PATH
+    _test_mailer_backend_path = TEST_USER_MAILER_BACKEND_PATH
     _test_object_model = UserMailer
     _test_object_name = '_test_user_mailer'
 
@@ -37,7 +38,7 @@ class MailerTestMixin(
             default=True,
             enabled=True,
             label=TEST_USER_MAILER_LABEL,
-            backend_path=self._test_mailer_backend_class.backend_id,
+            backend_path=TEST_USER_MAILER_BACKEND_PATH,
             backend_data=json.dumps(obj=backend_data)
         )
 
@@ -170,17 +171,65 @@ class DocumentVersionMailerViewTestMixin(MailerTestMixin):
         )
 
 
+class MailerAPIViewTestMixin(MailerTestMixin):
+    def _request_test_mailer_create_api_view(self):
+        self._test_object_track()
+
+        response = self.post(
+            viewname='rest_api:mailer-list', data={
+                'backend_path': TEST_USER_MAILER_BACKEND_PATH,
+                'label': TEST_USER_MAILER_LABEL
+            }
+        )
+
+        self._test_object_set()
+
+        return response
+
+    def _request_test_mailer_delete_api_view(self):
+        return self.delete(
+            viewname='rest_api:mailer-detail',
+            kwargs={'mailer_id': self._test_user_mailer.pk}
+        )
+
+    def _request_test_mailer_detail_api_view(self):
+        return self.get(
+            viewname='rest_api:mailer-detail',
+            kwargs={'mailer_id': self._test_user_mailer.pk}
+        )
+
+    def _request_test_mailer_edit_api_view(
+        self, extra_data=None, verb='patch'
+    ):
+        data = {
+            'backend_path': TEST_USER_MAILER_BACKEND_PATH,
+            'label': TEST_USER_MAILER_LABEL_EDITED
+        }
+
+        if extra_data:
+            data.update(extra_data)
+
+        return getattr(self, verb)(
+            viewname='rest_api:mailer-detail',
+            kwargs={'mailer_id': self._test_user_mailer.pk},
+            data=data
+        )
+
+    def _request_test_mailer_list_api_view(self):
+        return self.get(viewname='rest_api:mailer-list')
+
+
 class MailerViewTestMixin(MailerTestMixin):
     def _request_test_user_mailer_create_view(self):
         self._test_object_track()
 
         response = self.post(
             viewname='mailer:user_mailer_create', kwargs={
-                'backend_path': self._test_mailer_backend_class.backend_id
+                'backend_path': TEST_USER_MAILER_BACKEND_PATH
             }, data={
                 'default': True,
                 'enabled': True,
-                'label': TEST_USER_MAILER_LABEL,
+                'label': TEST_USER_MAILER_LABEL
             }
         )
 
