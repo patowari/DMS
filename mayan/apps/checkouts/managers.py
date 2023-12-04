@@ -9,7 +9,9 @@ from mayan.apps.documents.models.document_models import Document
 
 from .exceptions import DocumentNotCheckedOut
 from .literals import STATE_CHECKED_OUT, STATE_CHECKED_IN
-from .permissions import permission_document_check_in
+from .permissions import (
+    permission_document_check_in, permission_document_check_in_override
+)
 
 logger = logging.getLogger(name=__name__)
 
