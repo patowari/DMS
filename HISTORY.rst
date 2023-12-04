@@ -54,6 +54,8 @@
   - Add class ``ModelMailingAction`` to defined available mailing actions
     per model.
 
+- Move file metadata queue to worker D.
+
 4.5.7 (2023-10-25)
 ==================
 - Fix select2 widget in the metadata edit workflow action form.
