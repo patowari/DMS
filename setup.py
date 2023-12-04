@@ -61,60 +61,60 @@ def find_packages(directory):
 
 
 install_requires = """
-django==4.2.7
-CairoSVG==2.5.2
-Pillow==10.0.0
+django==4.2.8
+CairoSVG==2.7.1
+Pillow==10.1.0
 PyYAML==6.0.1
 Whoosh==2.7.4
-bleach==6.0.0
-boto3==1.28.16
-celery==5.3.5
-dateparser==1.1.8
+bleach==6.1.0
+boto3==1.33.7
+celery==5.3.6
+dateparser==1.2.0
 django-activity-stream==2.0.0
-django-auth-ldap==4.4.0
+django-auth-ldap==4.6.0
 django-celery-beat==2.5.0
-django-cors-headers==4.2.0
+django-cors-headers==4.3.1
 django-formtools==2.3
 django-mathfilters==1.0.0
 django-model-utils==4.3.1
-django-mptt==0.14.0
+django-mptt==0.15.0
 django-qsstats-magic==1.1.0
-django-solo==2.0.0
-django-storages==1.13.2
+django-solo==2.1.0
+django-storages==1.14.2
 django-stronghold==0.4.0
-django-widget-tweaks==1.4.12
+django-widget-tweaks==1.5.0
 djangorestframework==3.14.0
 djangorestframework-recursive==0.1.2
 drf-yasg==1.21.7
 elasticsearch==7.17.9
 elasticsearch-dsl==7.4.1
-extract-msg==0.37.1
+extract-msg==0.46.2
 flanker==0.9.11
 flex==6.14.1
 furl==2.1.3
 fusepy==3.0.1
-gevent==22.10.2
-graphviz==0.17
-greenlet==2.0.2
+gevent==23.9.1
+graphviz==0.20.1
+greenlet==3.0.1
 gunicorn==21.2.0
 importlib-metadata==6.8.0
-jsonschema==4.18.0
-mozilla-django-oidc==2.0.0
-node-semver==0.8.1
+jsonschema==4.20.0
+mozilla-django-oidc==3.0.0
+node-semver==0.9.0
 pycountry==22.3.5
-pycryptodome==3.18.0
-pyotp==2.6.0
-pypdf==3.14.0
+pycryptodome==3.19.0
+pyotp==2.9.0
+pypdf==3.17.1
 python-dateutil==2.8.2
 python-magic==0.4.27
-python_gnupg==0.4.8
-pytz==2022.1
-qrcode==7.3.1
+python_gnupg==0.4.9
+pytz==2023.3.post1
+qrcode==7.4.2
 requests==2.31.0
-sentry-sdk==1.29.0
-sh==2.0.4
+sentry-sdk==1.38.0
+sh==2.0.6
 swagger-spec-validator==3.0.3
-whitenoise==6.5.0
+whitenoise==6.6.0
 """.split()
 
 with open(file='README.rst') as file_object:
@@ -162,5 +162,5 @@ setup(
     scripts=['mayan/bin/mayan-edms.py'],
     url=mayan.__website__,
     version=mayan.__version__,
-    zip_safe=False
+    zip_safe=False,
 )

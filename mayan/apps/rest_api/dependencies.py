@@ -24,7 +24,7 @@ PythonDependency(
         OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
         WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     ''', module=__name__, name='django-cors-headers',
-    version_string='==4.2.0'
+    version_string='==4.3.1'
 )
 PythonDependency(
     legal_text='''
@@ -63,7 +63,7 @@ PythonDependency(
     module=__name__, name='flex', version_string='==6.14.1'
 )
 PythonDependency(
-    module=__name__, name='jsonschema', version_string='==4.18.0'
+    module=__name__, name='jsonschema', version_string='==4.20.0'
 )
 PythonDependency(
     module=__name__, name='swagger-spec-validator', version_string='==3.0.3'

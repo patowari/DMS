@@ -36,7 +36,7 @@ PythonDependency(
         ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django', version_string='==4.2.7'
+    ''', module=__name__, name='django', version_string='==4.2.8'
 )
 PythonDependency(
     legal_text='''
@@ -116,7 +116,7 @@ PythonDependency(
         COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
         IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    ''', module=__name__, name='django-mptt', version_string='==0.14.0'
+    ''', module=__name__, name='django-mptt', version_string='==0.15.0'
 )
 PythonDependency(
     module=__name__, name='importlib-metadata', version_string='==6.8.0'
@@ -151,7 +151,7 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
-    ''', module=__name__, name='sh', version_string='==2.0.4'
+    ''', module=__name__, name='sh', version_string='==2.0.6'
 )
 
 # Build
@@ -175,7 +175,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-debug-toolbar', version_string='==3.2.4'
+    name='django-debug-toolbar', version_string='==4.2.0'
 )
 PythonDependency(
     environment=environment_development, module=__name__,
@@ -184,11 +184,11 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Used to allow offline translation of the code text strings.'
-    ), module=__name__, name='django-rosetta', version_string='==0.9.9'
+    ), module=__name__, name='django-rosetta', version_string='==0.10.0'
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-silk', version_string='==5.0.3'
+    name='django-silk', version_string='==5.0.4'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
@@ -198,7 +198,7 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==8.14.0'
+    ), module=__name__, name='ipython', version_string='==8.18.1'
 )
 PythonDependency(
     module=__name__, environment=environment_development,
@@ -208,6 +208,10 @@ PythonDependency(
     environment=environment_development, help_text=_(
         'Checks proper formatting of the README file.'
     ), module=__name__, name='readme', version_string='==0.7.1'
+)
+PythonDependency(
+    environment=environment_development,
+    module=__name__, name='ruff', version_string='==0.1.6'
 )
 PythonDependency(
     environment=environment_development,

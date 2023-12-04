@@ -8,7 +8,7 @@ import sys
 
 from furl import furl
 import requests
-from semver import max_satisfying
+from nodesemver import max_satisfying
 
 from django.apps import apps
 from django.utils.functional import cached_property

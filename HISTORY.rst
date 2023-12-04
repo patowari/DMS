@@ -10,14 +10,58 @@
   the setting. Added a new view and link to revert unsaved settings.
 - Override the test runner's logging setup to avoid having its output
   being concatenated when calling management commands and makefile targets.
-- Update dependencies:
+- Add ``ruff`` dependency, version 0.1.6.
+- Update dependency versions:
 
-  - Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.x.
-  - Update AMQP from Version 5.1.0 to 5.2.0.
-  - Update PIP from version 23.2.1 to 23.3.1.
-  - Add the Django series version to the setup generation script.
-  - Update ``django-test-migrations`` from version 1.1.0 to 1.3.0.
-  - Update Debian from version 12.1-slim to 12.2-slim.
+  - Docker
+
+    - Debian image from 12.1-slim to 12.2-slim.
+
+  - Python
+
+    - Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.1.14.
+    - AMQP from 5.1.0 to 5.2.0.
+    - PIP from 23.2.1 to 23.3.1.
+    - Add the Django series version to the setup generation script.
+    - ``django-test-migrations`` from 1.1.0 to 1.3.0.
+    - ``redis`` from 4.6.0 to 5.0.1.
+    - ``wheel`` from 0.41.0 to 0.42.0.
+    - ``bleach`` from 6.0.0 to 6.1.0.
+    - ``django-auth-ldap`` from 4.4.0 to 4.6.0.
+    - ``mozilla-django-oidc`` from 2.0.0 to 3.0.0.
+    - ``pyotp`` from 2.6.0 to 2.9.0.
+    - ``django-solo`` from 2.0.0 to 2.1.0.
+    - ``django`` from 3.2 to 4.2.8.
+    - ``django-mptt`` from 0.14.0 to 0.15.0.
+    - ``sh`` from 2.0.4 to 2.0.6.
+    - ``django-debug-toolbar`` from 3.2.4 to 4.2.0.
+    - ``django-rosetta`` from 0.9.9 to 0.10.0.
+    - ``django-silk`` from 5.0.3 to 5.0.3.
+    - ``ipython`` from 8.14.0 to 8.18.1.
+    - ``Pillow`` from 10.0.0 to 10.1.0.
+    - ``pypdf`` from 3.14.0 to 3.17.1.
+    - ``qrcode`` from 7.3.1 to 7.4.2.
+    - ``node-semver`` from 0.8.1 to 0.9.0.
+    - ``python_gnupg`` from 0.4.8 to 0.4.9.
+    - ``graphviz`` from 0.17 to 0.20.1.
+    - ``dateparser`` from 1.1.8 to 1.2.0.
+    - ``pytz`` from 2022 to 2023.3.post1.
+    - ``gevent`` from 22.10.2 to 23.9.1.
+    - ``greenlet`` from 2.0.2 to 3.0.1.
+    - ``sentry-sdk`` from 1.29.0 to 1.38.0.
+    - ``whitenoise`` from 6.5.0 to 6.6.0.
+    - ``django-cors-headers`` from 4.2.0 to 4.3.1.
+    - ``jsonschema`` from 4.18.0 to 4.20.0.
+    - ``CairoSVG`` from 2.5.2 to 2.7.1.
+    - ``boto3`` from 1.28.16 to 1.33.7.
+    - ``django-storages`` from 1.13.2 to 1.14.2.
+    - ``extract-msg`` from 0.37.1 to 0.46.2.
+    - ``pycryptodome`` from 3.18.0 to 3.19.0.
+    - ``celery`` from 5.3.5 to 5.3.6.
+    - ``coverage`` from 5.5 to 6.5.0.
+    - ``coveralls`` from 3.2.0 to 3.3.1.
+    - ``psutil`` from 5.8.0 to 5.9.6.
+    - ``django-widget-tweaks`` from 1.4.12 to 1.5.0.
 
 - Refactor file metadata app:
 

@@ -34,7 +34,7 @@ PythonDependency(
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
     ''', module=__name__, name='django-widget-tweaks',
-    version_string='==1.4.12'
+    version_string='==1.5.0'
 )
 PythonDependency(
     module=__name__, name='furl', version_string='==2.1.3'
