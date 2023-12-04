@@ -73,7 +73,7 @@ class DocumentListView(SingleObjectListView):
 
     def get_source_queryset(self):
         queryset = ModelQueryFields.get(model=Document).get_queryset()
-        return self.get_document_queryset().filter(pk__in=queryset)
+        return self.get_document_queryset().filter(pk__in=queryset).order_by()
 
 
 class DocumentTypeChangeView(MultipleObjectFormActionView):
