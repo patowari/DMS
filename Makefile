@@ -21,6 +21,24 @@ ifndef SETTINGS
 override SETTINGS = mayan.settings.testing.development
 endif
 
+HOST_IP = `/sbin/ip route get 1.0.0.0|cut --delimiter=" " --fields=7`
+
+ifeq ($(origin APT_PROXY), undefined)
+	ifneq ($(origin APT_PROXY_IP), undefined)
+		APT_PROXY = "$(APT_PROXY_IP):3142"
+	endif
+endif
+
+ifeq ($(origin PIP_INDEX_URL), undefined)
+	ifneq ($(origin PIP_PROXY_IP), undefined)
+		PIP_INDEX_URL = "http://$(PIP_PROXY_IP):3141/root/pypi/+simple/"
+	endif
+endif
+
+ifeq ($(origin PIP_TRUSTED_HOST), undefined)
+	PIP_TRUSTED_HOST = "$(PIP_PROXY_IP)"
+endif
+
 COMMAND_SENTRY = \
 	if [ $(SENTRY_DSN) ]; then \
 	export MAYAN_PLATFORM_CLIENT_BACKEND_ENABLED='["mayan.apps.platform.client_backends.ClientBackendSentry"]'; \

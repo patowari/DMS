@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 05:10+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,6 @@ msgstr ""
 msgid "Backend"
 msgstr ""
 
-#: model_mixins.py:74
+#: model_mixins.py:75
 msgid "The backend class for this entry."
 msgstr ""

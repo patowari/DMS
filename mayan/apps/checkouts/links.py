@@ -8,7 +8,6 @@ from .icons import (
 )
 from .permissions import (
     permission_document_check_out, permission_document_check_in,
-    permission_document_check_in_override,
     permission_document_check_out_detail_view
 )
 

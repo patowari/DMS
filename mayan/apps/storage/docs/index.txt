@@ -5,20 +5,28 @@
 Storage
 =======
 
-Mayan EDMS stores documents in their original file format only changing the
-filename to avoid collision. By default, documents files are stored in the
-same filesystem as the program code but by using different drivers, these
-can also be placed in other storage systems like object storage.
+.. include::  ../../partials/kb_migration.txt
 
-.. important::
+.. note::
 
-   Sometimes this method of controlling documents files is caraterized as
-   being "destructive". However, that is not the case as the actual files
-   are never destroyed or modified in anyway. This method is only used
-   to avoid the operating system filesystem's inability to save two or more
-   files using the same filename and to be able to assing a label to a
-   document using characters that go beyond those normally supported by the
-   filesystem.
+    Articles:
+
+    - Overview:
+
+      - How storage works
+      - Filename normalization
+      - Filename generator (normalization) backends
+      - Storage backends (drivers)
+      - Indirect access network storage
+      - Direct access network storage
+
+    Tutorials:
+
+    - Seting up and migrating to object storage
+
+    Troubleshooting:
+
+    - Error message “IOError: [Errno 37] No locks available” when using a NFS volume
 
 
 - :doc:`file_storage`

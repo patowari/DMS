@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -81,12 +81,12 @@ msgstr "Anzahl der Berechtigungen"
 #: model_mixins.py:88
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr ""
+msgstr "Unbekannte oder obsolete Berechtigung %s"
 
 #: model_mixins.py:100
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr ""
+msgstr "Unbekannter oder obsoleter Berechtigungsnamensraum %s"
 
 #: models.py:26
 msgid "A short text describing the role."
@@ -134,23 +134,24 @@ msgstr "Gruppenname"
 
 #: serializers.py:17
 msgid "Primary key"
-msgstr ""
+msgstr "Primärschlüssel"
 
 #: serializers.py:36
 msgid "Primary key of the group to add to the role."
-msgstr ""
+msgstr "Primärschlüssel der Gruppe, die zur Rolle hinzugefügt werden soll."
 
 #: serializers.py:37 serializers.py:45
 msgid "Group ID"
-msgstr ""
+msgstr "Gruppen-ID"
 
 #: serializers.py:44
 msgid "Primary key of the group to remove from the role."
-msgstr ""
+msgstr "Primärschlüssel der Gruppe, die von der Rolle entfernt werden soll."
 
 #: serializers.py:52
 msgid "Primary key of the permission to add to the role."
 msgstr ""
+"Primärschlüssel der Berechtigung, die zur Rolle hinzugefügt werden soll."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
@@ -159,18 +160,19 @@ msgstr "Berechtigungs-ID"
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
 msgstr ""
+"Primärschlüssel der Berechtigung, die von der Rolle entfernt werden soll."
 
 #: serializers.py:67
 msgid "Groups URL"
-msgstr ""
+msgstr "Gruppen-URL"
 
 #: serializers.py:71
 msgid "Groups add URL"
-msgstr ""
+msgstr "Gruppen hinzufügen URL"
 
 #: serializers.py:75
 msgid "Groups remove URL"
-msgstr ""
+msgstr "Gruppen entfernen URL"
 
 #: serializers.py:79
 msgid "Permissions URL"
@@ -204,37 +206,37 @@ msgstr "Rollen von Gruppe %s"
 #: views.py:64
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Fehler bei Löschen der Rolle \"%(instance)s\"; %(exception)s"
 
 #: views.py:69
 #, python-format
 msgid "%(count)d roles deleted successfully."
-msgstr ""
+msgstr "%(count)d Rollen erfolgreich gelöscht."
 
 #: views.py:70
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Rolle \"%(object)s\" erfolgreich gelöscht."
 
 #: views.py:71
 #, python-format
 msgid "%(count)d role deleted successfully."
-msgstr ""
+msgstr "%(count)d Rolle erfolgreich gelöscht."
 
 #: views.py:72
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr ""
+msgstr "Rolle %(object)s löschen."
 
 #: views.py:73
 #, python-format
 msgid "Delete the %(count)d selected role."
-msgstr ""
+msgstr "Die %(count)d  ausgewählte Rolle löschen."
 
 #: views.py:74
 #, python-format
 msgid "Delete the %(count)d selected roles."
-msgstr ""
+msgstr "Die %(count)d  ausgewählten Rollen löschen."
 
 #: views.py:103
 msgid ""
@@ -298,4 +300,4 @@ msgstr "Berechtigungen der Rolle %s"
 #: views.py:208
 #, python-format
 msgid "Details of permission: %s"
-msgstr ""
+msgstr "Details für Berechtigung %s"

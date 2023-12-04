@@ -79,6 +79,13 @@ For enterprise installations.
 
 Use the official Helm chart located at: https://gitlab.com/mayan-edms/helm-chart
 
+.. note::
+
+    For more information about installating Mayan EDMS on Kubernetes read
+    Knowledge Base tutorials:
+
+    - Deploy Mayan EDMS on Kubernetes using a MicroK8s cluster and shared storage
+
 
 Portainer
 ---------
@@ -91,6 +98,12 @@ For users with an existing installation of Portainer.
     :hidden:
 
     ../chapters/portainer/installation
+
+
+Direct deployment
+-----------------
+
+The direct deployment method is no longer supported.
 
 
 .. _Docker: https://www.docker.com/

@@ -6,7 +6,6 @@ from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixi
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
-from mayan.apps.documents.tests.mixins.document_version_mixins import DocumentVersionTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 
 from ..workflow_actions import UpdateDocumentPageOCRAction
@@ -19,8 +18,8 @@ from .mixins import DocumentVersionOCRTestMixin
 
 
 class UpdateDocumentPageOCRActionTestCase(
-    DocumentVersionOCRTestMixin, DocumentVersionTestMixin,
-    WorkflowTemplateStateActionTestMixin, BaseTestCase
+    DocumentVersionOCRTestMixin, WorkflowTemplateStateActionTestMixin,
+    BaseTestCase
 ):
     auto_create_test_document_version = True
     auto_create_test_document_version_page = True

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-06 15:30+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Language-Team: Thai (https://app.transifex.com/rosarior/teams/13584/th/)\n"
 "MIME-Version: 1.0\n"
@@ -26,22 +26,22 @@ msgid ""
 "modifications like deletion of files are disabled."
 msgstr ""
 
-#: source_backends/mixins.py:29
+#: source_backends/mixins.py:30
 msgid "Assign a document type to documents uploaded from this source."
 msgstr ""
 
-#: source_backends/mixins.py:37
+#: source_backends/mixins.py:38
 msgid "Document type"
 msgstr ""
 
-#: source_backends/mixins.py:44
+#: source_backends/mixins.py:45
 msgid "Interval in seconds between checks for new documents."
 msgstr ""
 
-#: source_backends/mixins.py:50
+#: source_backends/mixins.py:51
 msgid "Interval"
 msgstr ""
 
-#: source_backends/mixins.py:64
+#: source_backends/mixins.py:65
 msgid "Unattended"
 msgstr ""

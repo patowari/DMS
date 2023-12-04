@@ -4,13 +4,13 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import get_content_type_kwargs_factory
 
 from .icons import (
-    icon_about, icon_book, icon_documentation, icon_forum, icon_license,
-    icon_object_copy, icon_setup, icon_source_code, icon_store, icon_support,
-    icon_tools
+    icon_about, icon_book, icon_documentation, icon_forum,
+    icon_knowledge_base, icon_license, icon_object_copy, icon_setup,
+    icon_source_code, icon_store, icon_support, icon_tools
 )
 from .literals import (
-    URL_BOOK, URL_DOCUMENTATION, URL_FORUM, URL_SOURCE_CODE, URL_STORE,
-    URL_SUPPORT
+    URL_BOOK, URL_DOCUMENTATION, URL_FORUM, URL_KNOWLEDGE_BASE,
+    URL_SOURCE_CODE, URL_STORE, URL_SUPPORT
 )
 from .permissions import permission_object_copy
 
@@ -44,6 +44,10 @@ link_documentation = Link(
 link_forum = Link(
     icon=icon_forum, tags='new_window', text=_(message='Forum'),
     url=URL_FORUM
+)
+link_knowledge_base = Link(
+    icon=icon_knowledge_base, tags='new_window',
+    text=_('Knowledge base'), url=URL_KNOWLEDGE_BASE
 )
 link_license = Link(
     icon=icon_license, text=_(message='License'), view='common:license_view'

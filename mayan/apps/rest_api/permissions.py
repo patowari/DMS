@@ -26,8 +26,8 @@ class MayanPermission(BasePermission):
 
     def get_mayan_view_permission(self, request, view):
         try:
-            method_get_mayan_view_permission = getattr(
-                view, 'get_mayan_view_permission'
+            method_get_mayan_view_permission_map = getattr(
+                view, 'get_mayan_view_permission_map'
             )
         except AttributeError:
             mayan_view_permission_map = getattr(
@@ -40,7 +40,7 @@ class MayanPermission(BasePermission):
 
             return permission
         else:
-            return method_get_mayan_view_permission()
+            return method_get_mayan_view_permission_map()
 
     def has_object_permission(self, request, view, obj):
         permission = self.get_mayan_object_permission(

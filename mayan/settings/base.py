@@ -10,7 +10,6 @@ from mayan.apps.smart_settings.utils import SettingNamespaceSingleton
 
 from .literals import DEFAULT_SECRET_KEY, SECRET_KEY_FILENAME, SYSTEM_DIR
 
-#BASE_DIR = Path(__file__).parent.parent
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 setting_namespace = SettingNamespaceSingleton(

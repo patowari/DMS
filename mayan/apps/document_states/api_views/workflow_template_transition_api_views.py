@@ -25,8 +25,8 @@ class APIWorkflowTemplateTransitionListView(
     post: Create a new workflow template transition.
     """
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view,
-       'POST': permission_workflow_template_edit
+        'GET': permission_workflow_template_view,
+        'POST': permission_workflow_template_edit
     }
     ordering_fields = ('destination_state', 'id', 'label', 'origin_state')
     serializer_class = WorkflowTemplateTransitionSerializer
@@ -54,10 +54,10 @@ class APIWorkflowTemplateTransitionDetailView(
     put: Edit the selected workflow template transition.
     """
     mayan_object_permission_map = {
-       'DELETE': permission_workflow_template_edit,
-       'GET': permission_workflow_template_view,
-       'PATCH': permission_workflow_template_edit,
-       'PUT': permission_workflow_template_edit
+        'DELETE': permission_workflow_template_edit,
+        'GET': permission_workflow_template_view,
+        'PATCH': permission_workflow_template_edit,
+        'PUT': permission_workflow_template_edit
     }
     lookup_url_kwarg = 'workflow_template_transition_id'
     serializer_class = WorkflowTemplateTransitionSerializer
@@ -86,8 +86,8 @@ class APIWorkflowTemplateTransitionFieldListView(
     post: Create a new workflow template transition field.
     """
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view,
-       'POST': permission_workflow_template_edit
+        'GET': permission_workflow_template_view,
+        'POST': permission_workflow_template_edit
     }
     ordering_fields = ('id', 'label', 'name', 'required', 'widget_kwargs')
     serializer_class = WorkflowTransitionFieldSerializer
@@ -115,10 +115,10 @@ class APIWorkflowTemplateTransitionFieldDetailView(
     put: Edit the selected workflow template transition field.
     """
     mayan_object_permission_map = {
-       'DELETE': permission_workflow_template_edit,
-       'GET': permission_workflow_template_view,
-       'PATCH': permission_workflow_template_edit,
-       'PUT': permission_workflow_template_edit
+        'DELETE': permission_workflow_template_edit,
+        'GET': permission_workflow_template_view,
+        'PATCH': permission_workflow_template_edit,
+        'PUT': permission_workflow_template_edit
     }
     lookup_url_kwarg = 'workflow_template_transition_field_id'
     serializer_class = WorkflowTransitionFieldSerializer
@@ -144,8 +144,8 @@ class APIWorkflowTemplateTransitionTriggerListView(
     post: Create a new workflow template transition trigger.
     """
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view,
-       'POST': permission_workflow_template_edit
+        'GET': permission_workflow_template_view,
+        'POST': permission_workflow_template_edit
     }
     ordering_fields = ('event_type', 'id')
     serializer_class = WorkflowTemplateTransitionTriggerSerializer
@@ -171,10 +171,10 @@ class APIWorkflowTemplateTransitionTriggerDetailView(
     put: Edit the selected workflow template transition trigger.
     """
     mayan_object_permission_map = {
-       'DELETE': permission_workflow_template_edit,
-       'GET': permission_workflow_template_view,
-       'PATCH': permission_workflow_template_edit,
-       'PUT': permission_workflow_template_edit
+        'DELETE': permission_workflow_template_edit,
+        'GET': permission_workflow_template_view,
+        'PATCH': permission_workflow_template_edit,
+        'PUT': permission_workflow_template_edit
     }
     lookup_url_kwarg = 'workflow_template_transition_trigger_id'
     serializer_class = WorkflowTemplateTransitionTriggerSerializer

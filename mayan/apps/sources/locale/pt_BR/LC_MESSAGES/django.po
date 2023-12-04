@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Márcia Ferreira, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:7 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:13 views/source_views.py:285
 msgid "Sources"
 msgstr "Fontes"
 
@@ -199,15 +199,15 @@ msgstr "Editar fontes de documentos"
 msgid "View existing document sources"
 msgstr "Ver fontes de documentos existentes"
 
-#: queues.py:10
+#: queues.py:12
 msgid "Sources periodic"
 msgstr "Fontes periódicas"
 
-#: queues.py:15
+#: queues.py:17
 msgid "Handle source backend action background task"
 msgstr ""
 
-#: queues.py:19
+#: queues.py:21
 msgid "Check interval source"
 msgstr "Verificar a fonte de intervalo"
 
@@ -325,7 +325,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: source_backends/base.py:131
+#: source_backends/base.py:134
 msgid "Null backend"
 msgstr "Backend nulo"
 

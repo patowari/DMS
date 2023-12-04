@@ -11,7 +11,7 @@ from mayan.apps.views.forms import DynamicForm
 from mayan.apps.views.generics import FormView, SingleObjectListView
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms import WorkflowInstanceTransitionSelectForm
+from ..forms.workflow_instance_forms import WorkflowInstanceTransitionSelectForm
 from ..icons import (
     icon_workflow_instance_detail, icon_workflow_instance_list,
     icon_workflow_instance_transition,

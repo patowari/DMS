@@ -2,6 +2,7 @@ import json
 
 from django.core.files.base import ContentFile
 
+from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
 from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
@@ -16,7 +17,9 @@ from .literals import (
 )
 
 
-class MailingProfileTestMixin(TestMixinObjectCreationTrack):
+class MailingProfileTestMixin(
+    StoredCredentialPasswordUsernameTestMixin, TestMixinObjectCreationTrack
+):
     _test_mailing_profile_auto_create = False
     _test_mailing_profile_backend_path = TEST_MAILING_PROFILE_BACKEND_PATH
     _test_object_model = UserMailer
@@ -28,15 +31,16 @@ class MailingProfileTestMixin(TestMixinObjectCreationTrack):
         if self._test_mailing_profile_auto_create:
             self._create_test_mailing_profile()
 
-    def _create_test_mailing_profile(self):
+    def _create_test_mailing_profile(self, extra_backend_data=None):
+        backend_data = {'from': TEST_EMAIL_FROM_ADDRESS}
+
+        if extra_backend_data:
+            backend_data.update(**extra_backend_data)
+
         self._test_mailing_profile = UserMailer.objects.create(
             default=True, enabled=True, label=TEST_MAILING_PROFILE_LABEL,
-            backend_path=TEST_MAILING_PROFILE_BACKEND_PATH,
-            backend_data=json.dumps(
-                obj={
-                    'from': TEST_EMAIL_FROM_ADDRESS
-                }
-            )
+            backend_path=self._test_mailing_profile_backend_path,
+            backend_data=json.dumps(obj=backend_data)
         )
 
 

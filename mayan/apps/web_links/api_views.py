@@ -29,10 +29,10 @@ class APIResolvedWebLinkListView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     mayan_external_object_permission_map = {
-       'GET': permission_web_link_instance_view
+        'GET': permission_web_link_instance_view
     }
     mayan_object_permission_map = {
-       'GET': permission_web_link_instance_view
+        'GET': permission_web_link_instance_view
     }
     serializer_class = ResolvedWebLinkSerializer
 
@@ -52,10 +52,10 @@ class APIResolvedWebLinkView(
     external_object_pk_url_kwarg = 'document_id'
     lookup_url_kwarg = 'resolved_web_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_web_link_instance_view
+        'GET': permission_web_link_instance_view
     }
     mayan_object_permission_map = {
-       'GET': permission_web_link_instance_view
+        'GET': permission_web_link_instance_view
     }
     serializer_class = ResolvedWebLinkSerializer
 
@@ -75,10 +75,10 @@ class APIResolvedWebLinkNavigateView(
     external_object_pk_url_kwarg = 'document_id'
     lookup_url_kwarg = 'resolved_web_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_web_link_instance_view
+        'GET': permission_web_link_instance_view
     }
     mayan_object_permission_map = {
-       'GET': permission_web_link_instance_view
+        'GET': permission_web_link_instance_view
     }
     serializer_class = BlankSerializer
 
@@ -99,10 +99,10 @@ class APIWebLinkListView(generics.ListCreateAPIView):
     post: Create a new web link.
     """
     mayan_object_permission_map = {
-       'GET': permission_web_link_view
+        'GET': permission_web_link_view
     }
     mayan_view_permission_map = {
-       'POST': permission_web_link_create
+        'POST': permission_web_link_create
     }
     ordering_fields = ('enabled', 'id', 'label')
     serializer_class = WebLinkSerializer
@@ -123,10 +123,10 @@ class APIWebLinkView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'web_link_id'
     mayan_object_permission_map = {
-       'DELETE': permission_web_link_delete,
-       'GET': permission_web_link_view,
-       'PATCH': permission_web_link_edit,
-       'PUT': permission_web_link_edit
+        'DELETE': permission_web_link_delete,
+        'GET': permission_web_link_view,
+        'PATCH': permission_web_link_edit,
+        'PUT': permission_web_link_edit
     }
     serializer_class = WebLinkSerializer
     source_queryset = WebLink.objects.all()
@@ -143,7 +143,7 @@ class APIWebLinkDocumentTypeAddView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'web_link_id'
     mayan_object_permission_map = {
-       'POST': permission_web_link_edit
+        'POST': permission_web_link_edit
     }
     serializer_class = WebLinkDocumentTypeAddSerializer
     source_queryset = WebLink.objects.all()
@@ -165,10 +165,10 @@ class APIWebLinkDocumentTypeListView(
     external_object_class = WebLink
     external_object_pk_url_kwarg = 'web_link_id'
     mayan_external_object_permission_map = {
-       'GET': permission_web_link_view
+        'GET': permission_web_link_view
     }
     mayan_object_permission_map = {
-       'GET': permission_document_type_view
+        'GET': permission_document_type_view
     }
     serializer_class = DocumentTypeSerializer
 
@@ -182,7 +182,7 @@ class APIWebLinkDocumentTypeRemoveView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'web_link_id'
     mayan_object_permission_map = {
-       'POST': permission_web_link_edit
+        'POST': permission_web_link_edit
     }
     serializer_class = WebLinkDocumentTypeRemoveSerializer
     source_queryset = WebLink.objects.all()

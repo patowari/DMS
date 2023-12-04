@@ -152,7 +152,9 @@ class SourceBackendMixinStoredFileDeleteInteractive:
     def get_action_class_list(self):
         action_class_list = super().get_action_class_list()
 
-        action_class_list += (SourceBackendActionFileStoredDeleteInteractive,)
+        action_class_list += (
+            SourceBackendActionFileStoredDeleteInteractive,
+        )
 
         return action_class_list
 

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -120,7 +120,7 @@ msgstr "Nicht spezifiziert"
 
 #: classes.py:477
 msgid "Patching files... "
-msgstr "Dateien werden gepatcht ..."
+msgstr "Dateien werden gepatcht ... "
 
 #: classes.py:505
 msgid "Executables that are called directly by the code."
@@ -144,15 +144,15 @@ msgstr "JavaScript"
 
 #: classes.py:559 classes.py:853
 msgid "Downloading... "
-msgstr "Herunterladen..."
+msgstr "Herunterladen... "
 
 #: classes.py:564
 msgid "Verifying... "
-msgstr "Verifizieren..."
+msgstr "Verifizieren... "
 
 #: classes.py:569 classes.py:858
 msgid "Extracting... "
-msgstr "Entpacken..."
+msgstr "Entpacken... "
 
 #: classes.py:779
 msgid "Python packages downloaded from PyPI."
@@ -255,10 +255,14 @@ msgid ""
 "unpinned or immutable depedency bugs in third party libraries. End users can"
 " ignore missing dependencies under this environment."
 msgstr ""
+"Umgebung, die für die Spezifizierung direkter Dokumentationsabhängigkeiten "
+"verwendet wird, um ungepinnte oder unveränderliche Fehler in "
+"Abhängigkeitsbibliotheken zu umgehen. Endbenutzer können fehlende "
+"Abhängigkeiten in dieser Umgebung ignorieren."
 
 #: environments.py:40
 msgid "Documentation (override)"
-msgstr ""
+msgstr "Dokumentation (überschrieben)"
 
 #: environments.py:44
 msgid ""
@@ -312,6 +316,8 @@ msgid ""
 "Your version (%(version_local)s), is more recent than the published version "
 "(%(version_server)s)."
 msgstr ""
+"Ihre Version (%(version_local)s) ist neuer als die publizierte Version "
+"(%(version_server)s)."
 
 #: literals.py:14
 #, python-format
@@ -319,6 +325,8 @@ msgid ""
 "The version you are using (%(version_local)s) is outdated. The latest "
 "version is %(version_server)s."
 msgstr ""
+"Die verwendete Version (%(version_local)s) ist veraltet. Die letzte Versin "
+"ist %(version_server)s."
 
 #: literals.py:18
 msgid "It is not possible to determine the latest version available."
@@ -330,6 +338,9 @@ msgid ""
 "Unexpected error trying to determine the latest version available. Make sure"
 " your installation has a connection to the internet; %(exception)s"
 msgstr ""
+"Unerwarteter Fehler beim Verusch die ltzte verfügbare Version zu ermitteln. "
+"Stellen Sie sicher, dass Ihre Installation Zugang zum Internet hat; "
+"%(exception)s"
 
 #: management/commands/dependencies_check.py:13
 msgid "Outputs the dependencies as a comma delimited values list."
@@ -364,13 +375,15 @@ msgstr "Abhängigkeiten ansehen"
 
 #: views.py:27
 msgid "This process only checks the Python component of Mayan EDMS."
-msgstr ""
+msgstr "Dieser Vorgang überprüft nur die Python Komponente von Mayan EDMS."
 
 #: views.py:31
 msgid ""
 "It does not verify versions of other components like packaging or deployment"
 " technologies, such as container or virtual machine images."
 msgstr ""
+"Versionen anderer Komponenten wie Paketierungs- oder Deploymenttechnologien "
+"wie Container oder Abbilder für Virtuelle Maschinen werden nicht überprüft."
 
 #: views.py:51
 #, python-format

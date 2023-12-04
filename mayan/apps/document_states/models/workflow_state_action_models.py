@@ -42,7 +42,6 @@ class WorkflowStateAction(
             'At which moment of the state this action will execute.'
         ), verbose_name=_(message='When')
     )
-
     condition = models.TextField(
         blank=True, help_text=_(
             'The condition that will determine if this state action '

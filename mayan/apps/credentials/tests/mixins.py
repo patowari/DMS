@@ -35,6 +35,9 @@ class StoredCredentialTestMixin(TestMixinObjectCreationTrack):
         label = '{}_{}'.format(
             TEST_STORED_CREDENTIAL_LABEL, total_test_stored_credential_count
         )
+        internal_name = '{}_{}'.format(
+            TEST_STORED_CREDENTIAL_INTERNAL_NAME, total_test_stored_credential_count
+        )
 
         if backend_data is None:
             backend_data = self._test_stored_credential_backend_data
@@ -46,7 +49,7 @@ class StoredCredentialTestMixin(TestMixinObjectCreationTrack):
         self._test_stored_credential = StoredCredential.objects.create(
             backend_data=backend_data_serialized,
             backend_path=self._test_stored_credential_backend_path,
-            internal_name=TEST_STORED_CREDENTIAL_INTERNAL_NAME, label=label
+            internal_name=internal_name, label=label
         )
         self._test_stored_credential_list.append(
             self._test_stored_credential

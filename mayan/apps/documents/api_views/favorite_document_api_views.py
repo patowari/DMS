@@ -18,8 +18,8 @@ class APIFavoriteDocumentDetailView(generics.RetrieveDestroyAPIView):
     """
     lookup_url_kwarg = 'favorite_document_id'
     mayan_object_permission_map = {
-       'DELETE': permission_document_view,
-       'GET': permission_document_view
+        'DELETE': permission_document_view,
+        'GET': permission_document_view
     }
     serializer_class = FavoriteDocumentSerializer
 
@@ -32,9 +32,7 @@ class APIFavoriteDocumentListView(generics.ListCreateAPIView):
     get: Return a list of the favorite documents for the current user.
     post: Add a new document to the list of favorite documents for the current user.
     """
-    mayan_object_permission_map = {
-       'GET': permission_document_view
-    }
+    mayan_object_permission_map = {'GET': permission_document_view}
     serializer_class = FavoriteDocumentSerializer
 
     def get_instance_extra_data(self):

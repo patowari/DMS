@@ -8,7 +8,7 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
+    event_document_version_edited, event_document_version_page_created
 )
 from ..models.document_file_models import DocumentFile
 from ..models.document_models import Document
@@ -85,7 +85,7 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         # Document created
 
@@ -129,6 +129,11 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, self._test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, self._test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     @mock.patch(target='mayan.apps.documents.tests.test_document_tasks.DocumentTaskTestCase._test_post_document_create_callback')
     def test_task_post_document_create_callback(self, mocked_callback):
@@ -210,7 +215,7 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         # Document created
 
@@ -254,3 +259,8 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, self._test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, self._test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)

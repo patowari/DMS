@@ -29,16 +29,22 @@ class CredentialSourceTestMixin(StoredCredentialPasswordUsernameTestMixin):
 
 
 class EmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
-    _test_email_source_content = None
     _test_source_backend_path = TEST_SOURCE_BACKEND_PATH_TEST_EMAIL
     _test_source_content = TEST_EMAIL_ATTACHMENT_AND_INLINE
+
+    def _test_source_create(self, *args, **kwargs):
+        super()._test_source_create(*args, **kwargs)
+        backend_instance = self._test_source.get_backend_instance()
+        backend_instance.reset_test_mock_server(
+            test_content=self._test_source_content
+        )
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(
             action_name=action_name, interface_name=interface_name
         )
 
-        result['_test_content'] = force_str(self._test_source_content)
+        result['_test_content'] = force_str(s=self._test_source_content)
 
         if action_name == TEST_CASE_ACTION_NAME_SOURCE_CREATE:
             result.update(
@@ -65,6 +71,13 @@ class EmailSourceTestMixin(SourceTestMixin, CredentialSourceTestMixin):
                 )
 
         return result
+
+    def get_test_source_stored_file_list(self):
+        backend_instance = self._test_source.get_backend_instance()
+
+        return list(
+            backend_instance.get_stored_file_list()
+        )
 
 
 class IMAPEmailSourceTestMixin(EmailSourceTestMixin):
@@ -102,7 +115,7 @@ class POP3EmailSourceTestMixin(EmailSourceTestMixin):
             result.update(
                 {
                     'port': 110,
-                    'timeout': DEFAULT_EMAIL_POP3_TIMEOUT,
+                    'timeout': DEFAULT_EMAIL_POP3_TIMEOUT
                 }
             )
 

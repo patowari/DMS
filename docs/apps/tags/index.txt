@@ -5,12 +5,21 @@
 Tags
 ====
 
-Tags are color coded properties that can be attached or removed from documents.
-Tags allow giving documents a binary property. Documents can also be tagged
-with more than one tag.
+.. include::  ../../partials/kb_migration.txt
 
-Once tagged, documents can be searched by their tags. It is also possible to
-show all the documents tagged with a particular
-tag via the **Documents** link of each tag.
+.. note::
 
-Tags are one way to manually and visually organize documents.
+    Knowledge Base content
+
+    Articles:
+
+    - Document tagging
+
+    Tutorial:
+
+    - Detecting and tagging documents that contain social security numbers in the OCR
+    - Optimized condition template to detect the presence of a document tag
+
+    Troubleshooting:
+
+    - At upload, users can access tags, cabinets, and metadata they for which they don’t have permissions

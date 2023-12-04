@@ -1,3 +1,6 @@
+MAILER_BACKEND_DJANGO_PATH = 'mayan.apps.mailer.mailers.DjangoSMTP'
+MAILER_BACKEND_TEST_PATH = 'mayan.apps.mailer.tests.mailers.TestBackend'
+
 TEST_EMAIL_ADDRESS = 'test@example.com'
 TEST_EMAIL_BODY = 'test body'
 TEST_EMAIL_BODY_HTML = '<strong>test body</strong>'

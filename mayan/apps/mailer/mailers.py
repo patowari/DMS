@@ -1,14 +1,11 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.credentials.models import StoredCredential
-from mayan.apps.credentials.permissions import permission_credential_use
-
-from .classes import MailerBackendBaseEmail
+from .classes import MailerBackendBaseEmail, MailerBackendCredentials
 
 
-class DjangoSMTP(MailerBackendBaseEmail):
+class DjangoSMTP(MailerBackendCredentials):
     """
-    Backend that wraps Django's SMTP backend
+    Backend that wraps Django's SMTP backend.
     """
     class_path = 'django.core.mail.backends.smtp.EmailBackend'
     label = _(message='Django SMTP backend')
@@ -59,18 +56,6 @@ class DjangoSMTP(MailerBackendBaseEmail):
                         'are mutually exclusive, so only set one of those '
                         'settings to True.'
                     ), 'required': False
-                }, 'stored_credential_id': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
-                    'help_text': _(
-                        message='The credential entry to use to '
-                        'authenticate against the email server.'
-                    ),
-                    'kwargs': {
-                        'source_model': StoredCredential,
-                        'permission': permission_credential_use
-                    },
-                    'label': _(message='Credential'),
-                    'required': True
                 }
             }
         )
@@ -83,22 +68,32 @@ class DjangoSMTP(MailerBackendBaseEmail):
 
         fieldsets += (
             (
-                _(message='Server'), {
-                    'fields': ('host', 'port', 'use_tls', 'use_ssl')
+                _('Server'), {
+                    'fields': ('host', 'port', 'use_ssl', 'use_tls')
                 }
-            ), (
-                _(message='Authentication'), {
-                    'fields': ('stored_credential_id',)
-                }
-            )
+            ),
         )
 
         return fieldsets
 
+    def get_connection_kwargs(self):
+        result = super().get_connection_kwargs()
+
+        result.update(
+            {
+                'host': self.kwargs['host'],
+                'port': self.kwargs['port'],
+                'use_ssl': self.kwargs.get('use_ssl'),
+                'use_tls': self.kwargs.get('use_tls')
+            }
+        )
+
+        return result
+
 
 class DjangoFileBased(MailerBackendBaseEmail):
     """
-    Mailing backend that wraps Django's file based email backend
+    Mailing backend that wraps Django's file based email backend.
     """
     class_path = 'django.core.mail.backends.filebased.EmailBackend'
     label = _(message='Django file based backend')

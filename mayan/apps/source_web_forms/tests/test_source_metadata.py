@@ -1,7 +1,7 @@
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
+    event_document_version_edited, event_document_version_page_created
 )
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 from mayan.apps.documents.models.document_models import Document
@@ -42,7 +42,7 @@ class WebFormSourceBackendDocumentUploadSourceMetadataTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, test_document)
@@ -70,3 +70,8 @@ class WebFormSourceBackendDocumentUploadSourceMetadataTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, test_document_version)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)

@@ -8,16 +8,16 @@
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
 # tetjarediske <tetja.rediske@googlemail.com>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 09:34+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,10 +84,12 @@ msgid ""
 "The event list has been exported and is available for download using the "
 "link: %(download_url)s or from the downloads area (%(download_list_url)s)."
 msgstr ""
+"Die Ereignisliste wurde exportiert und ist unter %(download_url)s oder in "
+"dem Downloadbereich (%(download_list_url)s) verfügbar."
 
 #: events.py:15
 msgid "Events cleared"
-msgstr ""
+msgstr "Ereignisse zurückgesetzt"
 
 #: events.py:18
 msgid "Events exported"
@@ -111,7 +113,7 @@ msgstr "System"
 
 #: links.py:55 links.py:100 views/clear_views.py:63
 msgid "Clear events"
-msgstr ""
+msgstr "Ereignisse zurücksetzen"
 
 #: links.py:59 links.py:107 views/export_views.py:60
 msgid "Export events"
@@ -184,35 +186,35 @@ msgstr "Objektereignissubskription"
 
 #: permissions.py:10
 msgid "Clear the events of an object"
-msgstr ""
+msgstr "Ereignisse für ein Objekt zurücksetzen"
 
 #: permissions.py:13
 msgid "Export the events of an object"
-msgstr ""
+msgstr "Ereignisse für ein Objekt exportieren"
 
 #: permissions.py:16
 msgid "View the events of an object"
-msgstr ""
+msgstr "Die Ereignisse für ein Objekt anzeigen"
 
 #: queues.py:7
 msgid "Events fast"
-msgstr ""
+msgstr "Ereignisse schnell"
 
 #: queues.py:10
 msgid "Events slow"
-msgstr ""
+msgstr "Ereignisse langsam"
 
 #: queues.py:16
 msgid "Commit an event"
-msgstr ""
+msgstr "Ein Ereignis speichern"
 
 #: queues.py:21
 msgid "Clear event querysets"
-msgstr ""
+msgstr "Ereignissuchanfragen löschen"
 
 #: queues.py:25
 msgid "Export event querysets"
-msgstr ""
+msgstr "Ereignissuchanfragen exportieren"
 
 #: serializers.py:27
 msgid "URL"
@@ -220,7 +222,7 @@ msgstr "URL"
 
 #: serializers.py:40
 msgid "Event type namespace URL"
-msgstr ""
+msgstr "Ereignistyp Namensraum URL"
 
 #: serializers.py:43
 msgid "ID"
@@ -228,11 +230,11 @@ msgstr "ID"
 
 #: serializers.py:75
 msgid "Actor content type"
-msgstr ""
+msgstr "Akteur Inhaltstyp"
 
 #: serializers.py:81
 msgid "Target content type"
-msgstr ""
+msgstr "Ziel Inhaltstyp"
 
 #: serializers.py:84
 msgid "Verb"
@@ -243,30 +245,35 @@ msgid ""
 "Disables asynchronous events mode. All events will be committed in the same "
 "process that triggers them. This was the behavior prior to version 4.5."
 msgstr ""
+"Deaktiviert asynchronen Ereignismodus. Alle Ereignisse werden in demselben "
+"Vorgang gespeichert, der sie ausgelöst hat. Dies war das Verhalten vor der "
+"Version 4.5 ."
 
 #: views/clear_views.py:27
 msgid ""
 "This action is not reversible. The process will be performed in the "
 "background. "
 msgstr ""
+"Diese Aktion ist nicht umkehrbar. Der Vorgang wird im Hintergrund "
+"ausgeführt."
 
 #: views/clear_views.py:51
 msgid "Event list clear task queued successfully."
-msgstr ""
+msgstr "Task für die Löschung der Ereignisliste erfolgreich eingereicht."
 
 #: views/clear_views.py:84
 #, python-format
 msgid "Clear events of: %s"
-msgstr ""
+msgstr "Ereignisse löschen für %s"
 
 #: views/clear_views.py:109
 #, python-format
 msgid "Clear events of type: %s"
-msgstr ""
+msgstr "Ereignisse löschen für Typ %s"
 
 #: views/event_views.py:25
 msgid "Events track actions that have been performed on, to, or with objects."
-msgstr ""
+msgstr "Ereignisse dokumentieren Aktionen aller Art an Objekten."
 
 #: views/event_views.py:28
 msgid "There are no events"
@@ -305,12 +312,12 @@ msgstr "Export der Ereignisliste erfolgreich eingereiht."
 #: views/export_views.py:81
 #, python-format
 msgid "Export events of: %s"
-msgstr ""
+msgstr "Ereignisse für %s exportieren"
 
 #: views/export_views.py:100
 #, python-format
 msgid "Export events of type: %s"
-msgstr ""
+msgstr "Ereignisse für Typ %s exportieren"
 
 #: views/notification_views.py:29
 msgid "Subscribe to global or object events to receive notifications."
@@ -366,7 +373,8 @@ msgid ""
 "Subscribe to the events of an object to received notifications when those "
 "events occur."
 msgstr ""
+"Mitteilungen für Objektereignisse abonnieren, sobald diese stattfinden."
 
 #: views/subscription_views.py:167
 msgid "There are no object event subscriptions"
-msgstr ""
+msgstr "Keine Ereignissubskriptionen vorhanden"

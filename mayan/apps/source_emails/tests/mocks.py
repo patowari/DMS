@@ -4,10 +4,11 @@ from .literals import TEST_EMAIL_BASE64_FILENAME
 
 
 class MockIMAPMessage:
-    def __init__(self, uid):
+    def __init__(self, body, uid):
         self.flags = set()
         self.mailbox = None
         self.uid = uid
+        self.body = body
 
     def flags_add(self, flags_string):
         for flag_string in flags_string.split():
@@ -41,15 +42,16 @@ class MockIMAPMessage:
 
 
 class MockIMAPMailbox:
-    messages = {}
-
     def __init__(self, name='INBOX'):
+        self.messages = {}
         self.name = name
 
     def get_message_by_number(self, message_number):
-        return list(
+        message_list = list(
             self.messages.values()
-        )[message_number - 1]
+        )
+
+        return message_list[message_number - 1]
 
     def get_message_by_uid(self, uid):
         uid = force_str(s=uid)
@@ -59,10 +61,12 @@ class MockIMAPMailbox:
         return len(self.messages)
 
     def get_messages(self):
-        return list(self.messages.values())
+        return list(
+            self.messages.values()
+        )
 
-    def messages_add(self, uid):
-        self.messages[uid] = MockIMAPMessage(uid=uid)
+    def messages_add(self, body, uid):
+        self.messages[uid] = MockIMAPMessage(body=body, uid=uid)
         self.messages[uid].mailbox = self
 
 
@@ -80,11 +84,15 @@ class MockIMAPServer:
         }
         self.mailbox_selected = None
 
-    def _add_test_message(self, uid=None):
+    def _add_test_message(self, content=None, uid=None):
+        body = content or TEST_EMAIL_BASE64_FILENAME
+
         uid = uid or str(
             len(self.mailboxes['INBOX'].messages)
         )
-        self.mailboxes['INBOX'].messages_add(uid=uid)
+        self.mailboxes['INBOX'].messages_add(
+            body=force_bytes(s=body), uid=uid
+        )
 
     def _fetch(self, messages):
         flag = '\\Seen'
@@ -104,7 +112,7 @@ class MockIMAPServer:
             )
             uid = message.uid
             uids.append(uid)
-            body = TEST_EMAIL_BASE64_FILENAME
+            body = message.body
 
             results.append(
                 (
@@ -156,11 +164,15 @@ class MockIMAPServer:
                 )
             )
 
-        return ('OK', self._fetch(messages=messages))
+        return (
+            'OK', self._fetch(messages=messages)
+        )
 
     def login(self, user, password):
         return (
-            'OK', ['{} authenticated (Success)'.format(user)]
+            'OK', [
+                '{} authenticated (Success)'.format(user)
+            ]
         )
 
     def logout(self):
@@ -192,7 +204,9 @@ class MockIMAPServer:
                 )
             )
 
-        return ('OK', ' '.join(message_sequences))
+        return (
+            'OK', ' '.join(message_sequences)
+        )
 
     def select(self, mailbox='INBOX', readonly=False):
         self.mailbox_selected = self.mailboxes[mailbox]
@@ -256,11 +270,14 @@ class MockIMAPServer:
             )
             return ('OK', results)
         elif command == 'SEARCH':
-            message_sequences = [
-                self.mailbox_selected.get_message_by_number(
+            try:
+                message = self.mailbox_selected.get_message_by_number(
                     message_number=1
-                ).uid
-            ]
+                )
+            except IndexError:
+                message_sequences = ()
+            else:
+                message_sequences = (message.uid,)
 
             return (
                 'OK', [
@@ -277,15 +294,16 @@ class MockPOP3Mailbox:
     # Don't add __enter__ and __exit__ attributes. The Python poplib library
     # does not support opening as a context.
 
-    def _add_test_message(self, message_content=None):
-        message_content = message_content or TEST_EMAIL_BASE64_FILENAME
-
+    def _add_test_message(self, content=None):
+        content = content or TEST_EMAIL_BASE64_FILENAME
         self.message_list.append(
-            [message_content]
+            [
+                force_bytes(s=content)
+            ]
         )
 
     def dele(self, which):
-        return self.message_list.pop(which)
+        return self.message_list.pop(which - self._message_index_base)
 
     def getwelcome(self):
         return force_bytes(

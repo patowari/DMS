@@ -1,6 +1,9 @@
 from django.urls import re_path
 
-from .api_views import APICheckedoutDocumentListView, APICheckedoutDocumentView, APIDocumentCheckoutView
+from .api_views import (
+    APICheckedoutDocumentListView, APICheckedoutDocumentView,
+    APIDocumentCheckoutView
+)
 from .views import (
     DocumentCheckInView, DocumentCheckOutDetailView, DocumentCheckOutListView,
     DocumentCheckOutView

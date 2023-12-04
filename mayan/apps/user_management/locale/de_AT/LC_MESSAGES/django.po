@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -67,7 +67,7 @@ msgstr "Aktiv"
 
 #: apps.py:113
 msgid "Is super user?"
-msgstr ""
+msgstr "Superuser?"
 
 #: apps.py:116 search.py:37
 msgid "Last name"
@@ -163,7 +163,7 @@ msgstr "Konto"
 
 #: literals.py:12 literals.py:23
 msgid "Personal"
-msgstr ""
+msgstr "Persönlich"
 
 #: literals.py:16
 msgid "Attributes"
@@ -220,15 +220,15 @@ msgstr ""
 
 #: serializers.py:18
 msgid "Users URL"
-msgstr ""
+msgstr "Benutzer-URL"
 
 #: serializers.py:22
 msgid "Users add URL"
-msgstr ""
+msgstr "Benutzer hinzufügen-URL"
 
 #: serializers.py:26
 msgid "Users remove URL"
-msgstr ""
+msgstr "Benutzer entfernen-URL"
 
 #: serializers.py:33 serializers.py:80
 msgid "URL"
@@ -256,7 +256,7 @@ msgstr ""
 
 #: serializers.py:68
 msgid "Groups URL"
-msgstr ""
+msgstr "Gruppen-URL"
 
 #: utils.py:26
 msgid "Anonymous"
@@ -375,6 +375,8 @@ msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
 msgstr ""
+"Warnung! Sie sind dabei Ihr eigenes Benutzerkonto zu löschen. Sie werden "
+"keinen Zugang zum System mehr haben. Dieser Vorgang ist nicht umkehrbar."
 
 #: views/user_views.py:93
 #, python-format

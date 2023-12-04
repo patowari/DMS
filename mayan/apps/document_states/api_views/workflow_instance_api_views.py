@@ -20,9 +20,7 @@ class APIWorkflowInstanceLaunchActionView(generics.ObjectActionAPIView):
     post: Launch a new workflow instance for the specified document.
     """
     lookup_url_kwarg = 'document_id'
-    mayan_object_permission_map = {
-       'POST': permission_workflow_tools
-    }
+    mayan_object_permission_map = {'POST': permission_workflow_tools}
     serializer_class = WorkflowInstanceLaunchSerializer
     source_queryset = Document.valid.all()
 
@@ -46,11 +44,9 @@ class APIWorkflowInstanceListView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view
+        'GET': permission_workflow_template_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_workflow_template_view
-    }
+    mayan_object_permission_map = {'GET': permission_workflow_template_view}
     serializer_class = WorkflowInstanceSerializer
 
     def get_source_queryset(self):
@@ -67,11 +63,9 @@ class APIWorkflowInstanceDetailView(
     external_object_pk_url_kwarg = 'document_id'
     lookup_url_kwarg = 'workflow_instance_id'
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view
+        'GET': permission_workflow_template_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_workflow_template_view
-    }
+    mayan_object_permission_map = {'GET': permission_workflow_template_view}
     serializer_class = WorkflowInstanceSerializer
 
     def get_source_queryset(self):
@@ -87,7 +81,7 @@ class APIWorkflowInstanceLogEntryDetailView(
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view
+        'GET': permission_workflow_template_view
     }
     serializer_class = WorkflowInstanceLogEntrySerializer
     lookup_url_kwarg = 'workflow_instance_log_entry_id'
@@ -114,12 +108,10 @@ class APIWorkflowInstanceLogEntryListView(
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view,
-       'POST': permission_workflow_instance_transition
+        'GET': permission_workflow_template_view,
+        'POST': permission_workflow_instance_transition
     }
-    mayan_object_permission_map = {
-       'GET': permission_workflow_template_view
-    }
+    mayan_object_permission_map = {'GET': permission_workflow_template_view}
     ordering_fields = (
         'comment', 'id', 'transition', 'transition__destination_state',
         'transition__origin_state'
@@ -155,11 +147,9 @@ class APIWorkflowInstanceLogEntryTransitionListView(
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
     mayan_external_object_permission_map = {
-       'GET': permission_workflow_template_view
+        'GET': permission_workflow_template_view
     }
-    mayan_object_permission_map = {
-       'GET': permission_workflow_template_view
-    }
+    mayan_object_permission_map = {'GET': permission_workflow_template_view}
     ordering_fields = ('destination_state', 'id', 'origin_state')
     serializer_class = WorkflowTemplateTransitionSerializer
 

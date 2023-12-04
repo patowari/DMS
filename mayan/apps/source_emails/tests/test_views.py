@@ -2,7 +2,7 @@ from mayan.apps.credentials.permissions import permission_credential_use
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
+    event_document_version_edited, event_document_version_page_created
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
@@ -22,7 +22,7 @@ from .mixins import (
 class EmailSourceBackendViewTestCase(
     EmailSourceTestMixin, SourceViewTestMixin, GenericDocumentViewTestCase
 ):
-    _test_email_source_content = TEST_EMAIL_BASE64_FILENAME
+    _test_source_content = TEST_EMAIL_BASE64_FILENAME
     auto_upload_test_document = False
 
     def test_email_source_create_view_no_permission(self):
@@ -126,11 +126,12 @@ class EmailSourceBackendViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
         test_document_version = test_document.version_active
+        test_document_version_page = test_document_version.pages.first()
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -144,14 +145,31 @@ class EmailSourceBackendViewTestCase(
 
         self.assertEqual(events[2].action_object, test_document)
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(events[2].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_created.id)
+
+        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(
+            events[4].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
 
 class IMAPEmailSourceBackendViewTestCase(
     IMAPEmailSourceTestMixin, SourceViewTestMixin, GenericDocumentViewTestCase
 ):
-    _test_email_source_content = TEST_EMAIL_BASE64_FILENAME
+    _test_source_content = TEST_EMAIL_BASE64_FILENAME
     auto_upload_test_document = False
 
     def test_email_source_create_view_no_permission(self):
@@ -255,7 +273,7 @@ class IMAPEmailSourceBackendViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -288,12 +306,17 @@ class IMAPEmailSourceBackendViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
 
 class POP3EmailSourceBackendViewTestCase(
     POP3EmailSourceTestMixin, SourceViewTestMixin, GenericDocumentViewTestCase
 ):
-    _test_email_source_content = TEST_EMAIL_BASE64_FILENAME
+    _test_source_content = TEST_EMAIL_BASE64_FILENAME
     auto_upload_test_document = False
 
     def test_email_source_create_view_no_permission(self):
@@ -397,7 +420,7 @@ class POP3EmailSourceBackendViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -430,3 +453,8 @@ class POP3EmailSourceBackendViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)

@@ -44,10 +44,10 @@ class APIIndexTemplateDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'index_template_id'
     mayan_object_permission_map = {
-       'GET': permission_index_template_view,
-       'PUT': permission_index_template_edit,
-       'PATCH': permission_index_template_edit,
-       'DELETE': permission_index_template_delete
+        'DELETE': permission_index_template_delete,
+        'GET': permission_index_template_view,
+        'PATCH': permission_index_template_edit,
+        'PUT': permission_index_template_edit
     }
     serializer_class = IndexTemplateSerializer
     source_queryset = IndexTemplate.objects.all()
@@ -67,7 +67,7 @@ class APIIndexTemplateDocumentTypeListView(
     external_object_class = IndexTemplate
     external_object_pk_url_kwarg = 'index_template_id'
     mayan_external_object_permission_map = {
-       'GET': permission_index_template_view
+        'GET': permission_index_template_view
     }
     mayan_object_permission_map = {'GET': permission_document_type_view}
     serializer_class = DocumentTypeSerializer
@@ -81,9 +81,7 @@ class APIIndexTemplateDocumentTypeAddView(generics.ObjectActionAPIView):
     post: Add a document type to an index template.
     """
     lookup_url_kwarg = 'index_template_id'
-    mayan_object_permission_map = {
-       'POST': permission_index_template_edit
-    }
+    mayan_object_permission_map = {'POST': permission_index_template_edit}
     serializer_class = DocumentTypeAddSerializer
     source_queryset = IndexTemplate.objects.all()
 
@@ -99,9 +97,7 @@ class APIIndexTemplateDocumentTypeRemoveView(generics.ObjectActionAPIView):
     post: Remove a document type from an index template.
     """
     lookup_url_kwarg = 'index_template_id'
-    mayan_object_permission_map = {
-       'POST': permission_index_template_edit
-    }
+    mayan_object_permission_map = {'POST': permission_index_template_edit}
     serializer_class = DocumentTypeRemoveSerializer
     source_queryset = IndexTemplate.objects.all()
 
@@ -146,7 +142,7 @@ class APIIndexTemplateRebuildView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'index_template_id'
     mayan_object_permission_map = {
-       'POST': permission_index_template_rebuild
+        'POST': permission_index_template_rebuild
     }
     source_queryset = IndexTemplate.objects.all()
 
@@ -164,7 +160,7 @@ class APIIndexTemplateResetView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'index_template_id'
     mayan_object_permission_map = {
-       'POST': permission_index_template_rebuild
+        'POST': permission_index_template_rebuild
     }
     source_queryset = IndexTemplate.objects.all()
 

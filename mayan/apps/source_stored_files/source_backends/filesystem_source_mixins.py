@@ -59,6 +59,30 @@ class SourceBackendMixinStoredFileLocationFilesystem:
 
         return fieldsets
 
+    def get_storage_backend_arguments(self):
+        return {
+            'location': '{}'.format(
+                self.kwargs['folder_path']
+            )
+        }
+
+    def get_storage_backend_class(self):
+        return FileSystemStorage
+
+    def get_storage_backend_instance(self):
+        storage_backend_arguments = self.get_storage_backend_arguments()
+        storage_backend_class = self.get_storage_backend_class()
+
+        try:
+            return storage_backend_class(**storage_backend_arguments)
+        except Exception as exception:
+            message = _(
+                'Unable to initialize storage; %s'
+            ) % exception
+
+            logger.fatal(message)
+            raise TypeError(message) from exception
+
     def get_stored_file_list(self):
         path = Path(
             self.kwargs['folder_path']
@@ -102,27 +126,3 @@ class SourceBackendMixinStoredFileLocationFilesystem:
 
             logger.error(message)
             raise ValueError(message) from exception
-
-    def get_storage_backend_arguments(self):
-        return {
-            'location': '{}'.format(
-                self.kwargs['folder_path']
-            )
-        }
-
-    def get_storage_backend_class(self):
-        return FileSystemStorage
-
-    def get_storage_backend_instance(self):
-        storage_backend_arguments = self.get_storage_backend_arguments()
-        storage_backend_class = self.get_storage_backend_class()
-
-        try:
-            return storage_backend_class(**storage_backend_arguments)
-        except Exception as exception:
-            message = _(
-                'Unable to initialize storage; %s'
-            ) % exception
-
-            logger.fatal(message)
-            raise TypeError(message) from exception

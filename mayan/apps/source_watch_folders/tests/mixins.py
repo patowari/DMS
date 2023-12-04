@@ -19,7 +19,6 @@ class WatchFolderSourceTestMixin(SourceTestMixinStoredFile):
         if action_name == TEST_CASE_ACTION_NAME_SOURCE_CREATE:
             result.update(
                 {
-                    'delete_after_upload': True,
                     'document_type_id': self._test_document_type.pk,
                     'folder_path': self._test_source_temporary_folder,
                     'interval': DEFAULT_PERIOD_INTERVAL,

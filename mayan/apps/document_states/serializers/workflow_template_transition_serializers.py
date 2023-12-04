@@ -10,7 +10,7 @@ from mayan.apps.rest_api.relations import (
     FilteredPrimaryKeyRelatedField, MultiKwargHyperlinkedIdentityField
 )
 
-from ..models import (
+from ..models.workflow_transition_models import (
     WorkflowTransition, WorkflowTransitionField,
     WorkflowTransitionTriggerEvent
 )

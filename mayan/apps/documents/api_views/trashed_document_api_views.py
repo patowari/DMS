@@ -26,8 +26,8 @@ class APITrashedDocumentDetailView(generics.RetrieveDestroyAPIView):
     """
     lookup_url_kwarg = 'document_id'
     mayan_object_permission_map = {
-       'DELETE': permission_trashed_document_delete,
-       'GET': permission_document_view
+        'DELETE': permission_trashed_document_delete,
+        'GET': permission_document_view
     }
     serializer_class = TrashedDocumentSerializer
     source_queryset = TrashedDocument.objects.all()
@@ -49,9 +49,7 @@ class APITrashedDocumentListView(generics.ListAPIView):
     """
     get: Returns a list of all the trashed documents.
     """
-    mayan_object_permission_map = {
-       'GET': permission_document_view
-    }
+    mayan_object_permission_map = {'GET': permission_document_view}
     ordering_fields = ('id', 'label')
     serializer_class = TrashedDocumentSerializer
     source_queryset = TrashedDocument.objects.all()
@@ -63,7 +61,7 @@ class APITrashedDocumentRestoreView(generics.ObjectActionAPIView):
     """
     lookup_url_kwarg = 'document_id'
     mayan_object_permission_map = {
-       'POST': permission_trashed_document_restore
+        'POST': permission_trashed_document_restore
     }
     source_queryset = TrashedDocument.objects.all()
 
@@ -78,9 +76,7 @@ class APITrashedDocumentImageView(
     get: Returns an image representation of the selected trashed document.
     """
     lookup_url_kwarg = 'document_id'
-    mayan_object_permission_map = {
-       'GET': permission_document_version_view
-    }
+    mayan_object_permission_map = {'GET': permission_document_version_view}
 
     def get_object(self):
         obj = super().get_object()

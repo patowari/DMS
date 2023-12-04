@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 03:22+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:7 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:13 views/source_views.py:285
 msgid "Sources"
 msgstr "Sources"
 
@@ -196,15 +196,15 @@ msgstr "Modifier les sources de documents"
 msgid "View existing document sources"
 msgstr "Afficher les sources de documents"
 
-#: queues.py:10
+#: queues.py:12
 msgid "Sources periodic"
 msgstr "Sources périodiques"
 
-#: queues.py:15
+#: queues.py:17
 msgid "Handle source backend action background task"
 msgstr ""
 
-#: queues.py:19
+#: queues.py:21
 msgid "Check interval source"
 msgstr "Intervalle de vérification de la source"
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "General"
 msgstr "Général"
 
-#: source_backends/base.py:131
+#: source_backends/base.py:134
 msgid "Null backend"
 msgstr "Back-back sans valeur"
 

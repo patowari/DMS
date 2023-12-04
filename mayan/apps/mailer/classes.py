@@ -4,6 +4,7 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
 from mayan.apps.backends.classes import ModelBaseBackend
+from mayan.apps.credentials.class_mixins import BackendMixinCredentials
 
 from .exceptions import MailerError
 
@@ -30,6 +31,11 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
         )
 
         return fieldsets
+
+    def get_connection_kwargs(self):
+        result = {}
+
+        return result
 
 
 class MailerBackendBaseEmail(MailerBackend):
@@ -61,6 +67,35 @@ class MailerBackendBaseEmail(MailerBackend):
         )
 
         return fieldsets
+
+    def get_connection_kwargs(self):
+        result = super().get_connection_kwargs()
+
+        result['from'] = self.kwargs.get('from')
+
+        return result
+
+
+class MailerBackendCredentials(
+    BackendMixinCredentials, MailerBackendBaseEmail
+):
+    label = _('Null backend')
+
+    def get_connection_kwargs(self):
+        result = super().get_connection_kwargs()
+
+        credential = self.get_credential()
+
+        password = credential.get('password')
+        username = credential['username']
+
+        result.update(
+            {
+                'password': password, 'username': username
+            }
+        )
+
+        return result
 
 
 class MailerBackendNull(MailerBackend):

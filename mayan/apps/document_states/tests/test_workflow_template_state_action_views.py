@@ -105,7 +105,7 @@ class WorkflowStateActionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_worflow_template_state_action_delete_view()
+        response = self._request_test_workflow_template_state_action_delete_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
@@ -125,7 +125,7 @@ class WorkflowStateActionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_worflow_template_state_action_delete_view()
+        response = self._request_test_workflow_template_state_action_delete_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
@@ -147,7 +147,7 @@ class WorkflowStateActionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_worflow_template_state_action_edit_view()
+        response = self._request_test_workflow_template_state_action_edit_post_view()
         self.assertEqual(response.status_code, 404)
 
         self._test_workflow_template_state_action.refresh_from_db()
@@ -168,7 +168,7 @@ class WorkflowStateActionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_worflow_template_state_action_edit_view()
+        response = self._request_test_workflow_template_state_action_edit_post_view()
         self.assertEqual(response.status_code, 302)
 
         self._test_workflow_template_state_action.refresh_from_db()
@@ -192,7 +192,7 @@ class WorkflowStateActionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_worflow_template_state_action_list_view()
+        response = self._request_test_workflow_template_state_action_list_view()
         self.assertNotContains(
             response=response,
             text=self._test_workflow_template_state_action.label,
@@ -211,7 +211,7 @@ class WorkflowStateActionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_worflow_template_state_action_list_view()
+        response = self._request_test_workflow_template_state_action_list_view()
         self.assertContains(
             response=response,
             text=self._test_workflow_template_state_action.label,

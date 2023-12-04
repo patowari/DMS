@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-12 18:27+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:93 events.py:6 forms.py:41 links.py:52 links.py:92 links.py:100
-#: links.py:289 links.py:313 models/workflow_models.py:58 queues.py:11
-#: settings.py:14 views/workflow_proxy_views.py:70
-#: views/workflow_template_views.py:279 workflow_actions.py:131
-#: workflow_actions.py:145
+#: apps.py:93 events.py:6 forms/workflow_template_forms.py:20 links.py:52
+#: links.py:92 links.py:100 links.py:289 links.py:313
+#: models/workflow_models.py:58 queues.py:11 settings.py:14
+#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:280
+#: workflow_actions.py:133 workflow_actions.py:147
 msgid "Workflows"
 msgstr "תזרימי עבודה"
 
@@ -135,12 +135,12 @@ msgstr "Documents"
 msgid "General"
 msgstr ""
 
-#: classes.py:109
+#: classes.py:107
 #, python-format
 msgid "%(field_name)s template error: %(exception)s"
 msgstr ""
 
-#: classes.py:120
+#: classes.py:118
 msgid "Null backend"
 msgstr ""
 
@@ -160,43 +160,12 @@ msgstr "נוצר תהליך עבודה"
 msgid "Workflow edited"
 msgstr ""
 
-#: forms.py:19
-msgid "The action type for this action entry."
-msgstr ""
-
-#: forms.py:20
-msgid "Action"
-msgstr ""
-
-#: forms.py:126
-msgid "Namespace"
-msgstr "מרחב שמות (namespace)"
-
-#: forms.py:132 models/workflow_models.py:45
-#: models/workflow_state_action_models.py:34
-#: models/workflow_state_models.py:39 models/workflow_transition_models.py:38
-#: models/workflow_transition_models.py:116
-msgid "Label"
-msgstr "Label"
-
-#: forms.py:139
-msgid "No"
-msgstr "לא"
-
-#: forms.py:140
-msgid "Yes"
-msgstr "כן"
-
-#: forms.py:141 models/workflow_state_action_models.py:37
-#: models/workflow_state_escalation_models.py:47
-msgid "Enabled"
-msgstr "מופעל/מאופשר"
-
-#: forms.py:187
+#: forms/workflow_instance_forms.py:16
 msgid "Select a transition to execute in the next step."
 msgstr ""
 
-#: forms.py:188 links.py:295 models/workflow_instance_models.py:96
+#: forms/workflow_instance_forms.py:17 links.py:295
+#: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
 #: models/workflow_transition_models.py:181
@@ -204,16 +173,49 @@ msgstr ""
 msgid "Transition"
 msgstr "מַעֲבָר (משלב לשלב)"
 
-#: forms.py:194
+#: forms/workflow_template_forms.py:27
 msgid "Workflow template preview image"
 msgstr "תמונת תצוגה מקדימה של תבנית תהליך עבודה"
+
+#: forms/workflow_template_state_forms.py:36
+msgid "The action type for this action entry."
+msgstr ""
+
+#: forms/workflow_template_state_forms.py:37
+msgid "Action"
+msgstr ""
+
+#: forms/workflow_template_transition_forms.py:39
+msgid "Namespace"
+msgstr "מרחב שמות (namespace)"
+
+#: forms/workflow_template_transition_forms.py:45 models/workflow_models.py:45
+#: models/workflow_state_action_models.py:34
+#: models/workflow_state_models.py:39 models/workflow_transition_models.py:38
+#: models/workflow_transition_models.py:116
+msgid "Label"
+msgstr "Label"
+
+#: forms/workflow_template_transition_forms.py:52
+msgid "No"
+msgstr "לא"
+
+#: forms/workflow_template_transition_forms.py:53
+msgid "Yes"
+msgstr "כן"
+
+#: forms/workflow_template_transition_forms.py:54
+#: models/workflow_state_action_models.py:37
+#: models/workflow_state_escalation_models.py:47
+msgid "Enabled"
+msgstr "מופעל/מאופשר"
 
 #: handlers.py:81
 #, python-format
 msgid "Event trigger: %s"
 msgstr ""
 
-#: links.py:58 views/workflow_template_views.py:136
+#: links.py:58 views/workflow_template_views.py:137
 msgid "Create workflow"
 msgstr "יצירת תהליך עבודה"
 
@@ -452,7 +454,7 @@ msgstr "באיזה רגע של מצב התהליך פעולה זו תתבצע."
 msgid "When"
 msgstr ""
 
-#: models/workflow_state_action_models.py:48
+#: models/workflow_state_action_models.py:47
 msgid ""
 "The condition that will determine if this state action is executed or not. "
 "The condition is evaluated against the workflow instance. Conditions that do"
@@ -465,16 +467,16 @@ msgstr ""
 "מחרוזת ריקה (&#39;&#39;) נחשבים logical false, כל ערך אחר נחשב ל-logical "
 "true."
 
-#: models/workflow_state_action_models.py:54
+#: models/workflow_state_action_models.py:53
 #: models/workflow_transition_models.py:56
 msgid "Condition"
 msgstr "תנאי"
 
-#: models/workflow_state_action_models.py:60
+#: models/workflow_state_action_models.py:59
 msgid "Workflow state action"
 msgstr "פעולה במצב תהליך עבודה"
 
-#: models/workflow_state_action_models.py:61
+#: models/workflow_state_action_models.py:60
 msgid "Workflow state actions"
 msgstr "פעולות במצב תהליך עבודה"
 
@@ -759,7 +761,7 @@ msgstr "מזהה מעבר שלב"
 #: serializers/workflow_template_transition_serializers.py:25
 #: serializers/workflow_template_transition_serializers.py:108
 #: serializers/workflow_template_transition_serializers.py:202
-#: workflow_actions.py:173
+#: workflow_actions.py:175
 msgid "URL"
 msgstr "כתובת אתר (URL)"
 
@@ -1053,7 +1055,7 @@ msgid "Documents in the workflow \"%s\", state \"%s\""
 msgstr "מסמכים בתהליך העבודה &quot;%s&quot;, במצב &quot;%s&quot;"
 
 #: views/workflow_proxy_views.py:126
-#: views/workflow_template_state_views.py:349
+#: views/workflow_template_state_views.py:351
 msgid "Create states and link them using transitions."
 msgstr "יצירת מצבים וקישורם באמצעות מעברי שלב."
 
@@ -1062,7 +1064,7 @@ msgid "This workflow doesn't have any state"
 msgstr "לתהליך עבודה הזה לא הוגדר מצב כלשהו"
 
 #: views/workflow_proxy_views.py:132
-#: views/workflow_template_state_views.py:355
+#: views/workflow_template_state_views.py:357
 #, python-format
 msgid "States of workflow: %s"
 msgstr "מצבי תהליך עבודה: %s"
@@ -1109,12 +1111,12 @@ msgstr ""
 msgid "Delete workflow state action: %s"
 msgstr "מחיקת פעולת מצב תהליך עבודה: %s"
 
-#: views/workflow_template_state_views.py:135
+#: views/workflow_template_state_views.py:137
 #, python-format
 msgid "Edit workflow state action: %s"
 msgstr "עריכת פעולת מצב תהליך עבודה: %s"
 
-#: views/workflow_template_state_views.py:186
+#: views/workflow_template_state_views.py:188
 msgid ""
 "Workflow state actions are macros that get executed when documents enters or"
 " leaves the state in which they reside."
@@ -1122,36 +1124,36 @@ msgstr ""
 "פעולות במצב תהליך עבודה הן פקודות מאקרו שמתבצעות כאשר מסמכים נכנסים או "
 "יוצאים מהמצב שבו הם נמצאים."
 
-#: views/workflow_template_state_views.py:190
+#: views/workflow_template_state_views.py:192
 msgid "There are no actions for this workflow state"
 msgstr "אין פעולות עבור מצב תהליך עבודה זה"
 
-#: views/workflow_template_state_views.py:194
+#: views/workflow_template_state_views.py:196
 #, python-format
 msgid "Actions for workflow state: %s"
 msgstr "פעולות עבור מצב תהליך עבודה: %s"
 
-#: views/workflow_template_state_views.py:218
+#: views/workflow_template_state_views.py:220
 #, python-format
 msgid "New workflow state action selection for: %s"
 msgstr "בחירת פעולה חדשה של מצב תהליך עבודה עבור: %s"
 
-#: views/workflow_template_state_views.py:248
+#: views/workflow_template_state_views.py:250
 #, python-format
 msgid "Create states for workflow: %s"
 msgstr "יצירת מצבים עבור תהליך עבודה: %s"
 
-#: views/workflow_template_state_views.py:282
+#: views/workflow_template_state_views.py:284
 #, python-format
 msgid "Delete workflow state: %s?"
 msgstr "למחוק מצב תהליך עבודה: %s?"
 
-#: views/workflow_template_state_views.py:313
+#: views/workflow_template_state_views.py:315
 #, python-format
 msgid "Edit workflow state: %s"
 msgstr "עריכת מצב תהליך עבודה: %s"
 
-#: views/workflow_template_state_views.py:352
+#: views/workflow_template_state_views.py:354
 msgid "This workflow doesn't have any states"
 msgstr "לתהליך העבודה הזה אין מצבים כלשהם"
 
@@ -1238,63 +1240,63 @@ msgstr ""
 msgid "Workflow transition trigger events for: %s"
 msgstr "טריגרים להפעלת מעבר שלב בתהליך עבודה עבור: %s"
 
-#: views/workflow_template_views.py:41
+#: views/workflow_template_views.py:42
 msgid "Workflows assigned this document type"
 msgstr "תהליכי עבודה הוקצו לסוג מסמך זה"
 
-#: views/workflow_template_views.py:42
+#: views/workflow_template_views.py:43
 msgid "Available workflows"
 msgstr "תהליכי עבודה זמינים"
 
-#: views/workflow_template_views.py:60
+#: views/workflow_template_views.py:61
 msgid ""
 "Removing a workflow from a document type will also remove all running "
 "instances of that workflow."
 msgstr ""
 "הסרת תהליך עבודה מסוג מסמך תסיר גם את כל המופעים הפעילים של תהליך עבודה זה."
 
-#: views/workflow_template_views.py:64
+#: views/workflow_template_views.py:65
 #, python-format
 msgid "Workflows assigned the document type: %s"
 msgstr "תהליכי עבודה הוקצו לסוג המסמך: %s"
 
-#: views/workflow_template_views.py:71
+#: views/workflow_template_views.py:72
 #, python-format
 msgid "Error launching workflows for document \"%(instance)s\"; %(exception)s"
 msgstr ""
 "שגיאה בהפעלת תהליכי עבודה עבור המסמך &quot;%(instance)s&quot;; %(exception)s"
 
-#: views/workflow_template_views.py:79
+#: views/workflow_template_views.py:80
 #, python-format
 msgid "Workflows launched successfully for %(count)d documents."
 msgstr "תהליכי עבודה שוגרו בהצלחה עבור %(count)d מסמכים."
 
-#: views/workflow_template_views.py:82
+#: views/workflow_template_views.py:83
 #, python-format
 msgid "Workflows launched successfully for document \"%(object)s\"."
 msgstr "תהליכי עבודה שוגרו בהצלחה עבור המסמך &quot;%(object)s&quot;."
 
-#: views/workflow_template_views.py:85
+#: views/workflow_template_views.py:86
 #, python-format
 msgid "Workflows launched successfully for %(count)d document."
 msgstr "תהליכי עבודה הושקו בהצלחה עבור מסמך %(count)d."
 
-#: views/workflow_template_views.py:88
+#: views/workflow_template_views.py:89
 #, python-format
 msgid "Launch workflows for the selected %(count)d documents."
 msgstr "שיגור תהליכי עבודה עבור %(count)d מסמכים שנבחרו."
 
-#: views/workflow_template_views.py:90
+#: views/workflow_template_views.py:91
 #, python-format
 msgid "Launch workflow: %(object)s."
 msgstr "שיגור תהליך עבודה: %(object)s."
 
-#: views/workflow_template_views.py:92
+#: views/workflow_template_views.py:93
 #, python-format
 msgid "Launch workflows for the selected %(count)d document."
 msgstr "שיגור תהליכי עבודה עבור מסמך %(count)d שנבחר."
 
-#: views/workflow_template_views.py:99
+#: views/workflow_template_views.py:100
 msgid ""
 "Workflows already launched or workflows not applicable to some documents "
 "when multiple documents are selected, will be silently ignored."
@@ -1302,63 +1304,63 @@ msgstr ""
 "תהליכי עבודה שכבר שוגרו או תהליכי עבודה שאינם חלים על מסמכים מסוימים (כאשר "
 "נבחרים מסמכים מרובים), לא יפיקו הודעה מיוחדת."
 
-#: views/workflow_template_views.py:111
+#: views/workflow_template_views.py:112
 msgid "Workflows to be launched."
 msgstr "תהליכי עבודה שישוגרו."
 
-#: views/workflow_template_views.py:153
+#: views/workflow_template_views.py:154
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr "שגיאה במחיקת תהליך העבודה &quot;%(instance)s&quot;; %(exception)s"
 
-#: views/workflow_template_views.py:161
+#: views/workflow_template_views.py:162
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr "%(count)d תהליכי עבודה נמחקו בהצלחה."
 
-#: views/workflow_template_views.py:162
+#: views/workflow_template_views.py:163
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr "תהליך העבודה &quot;%(object)s&quot; נמחק בהצלחה."
 
-#: views/workflow_template_views.py:163
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr "תהליך העבודה %(count)d נמחק בהצלחה."
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr "מחיקת%(count)d  תהליכי העבודה שנבחרו."
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr "מחיקת תהליך עבודה: %(object)s."
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr "מחיקת תהליך עבודה %(count)d שנבחר."
 
-#: views/workflow_template_views.py:171
+#: views/workflow_template_views.py:172
 msgid "All workflow instances will also be deleted."
 msgstr "גם כל מופעי תהליך העבודה יימחקו."
 
-#: views/workflow_template_views.py:191
+#: views/workflow_template_views.py:192
 #, python-format
 msgid "Edit workflow: %s"
 msgstr "עריכת תהליך עבודה: %s"
 
-#: views/workflow_template_views.py:202
+#: views/workflow_template_views.py:203
 msgid "Document types assigned this workflow"
 msgstr "סוגי מסמכים הוקצו לתהליך עבודה זה"
 
-#: views/workflow_template_views.py:203
+#: views/workflow_template_views.py:204
 msgid "Available document types"
 msgstr "Available document types"
 
-#: views/workflow_template_views.py:221
+#: views/workflow_template_views.py:222
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
@@ -1366,25 +1368,25 @@ msgstr ""
 "הסרת סוג מסמך מתהליך עבודה תסיר גם את כל המופעים הפעילים של אותו תהליך עבודה"
 " עבור מסמכים מסוג המסמך שזה עתה הוסר."
 
-#: views/workflow_template_views.py:226
+#: views/workflow_template_views.py:227
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "סוגי מסמכים שהוקצו לתהליך העבודה: %s"
 
-#: views/workflow_template_views.py:240
+#: views/workflow_template_views.py:241
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr "פעולה זו תפעיל את תהליך העבודה עבור מסמכים שכבר נטענו."
 
-#: views/workflow_template_views.py:243
+#: views/workflow_template_views.py:244
 msgid "Launch workflow?"
 msgstr "לשגר תהליך עבודה?"
 
-#: views/workflow_template_views.py:254 views/workflow_template_views.py:314
+#: views/workflow_template_views.py:255 views/workflow_template_views.py:315
 msgid "Workflow launch queued successfully."
 msgstr "שיגור תהליך העבודה נוסף לתור המשימות בהצלחה."
 
-#: views/workflow_template_views.py:272
+#: views/workflow_template_views.py:273
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
@@ -1392,22 +1394,22 @@ msgstr ""
 "תהליכי עבודה מורכבים מסדרה של מצבים ועוקבים אחר המצב הנוכחי של מסמך. מעברי "
 "שלב משמשים כדי לשנות את המצב הנוכחי של המסמך למצב חדש."
 
-#: views/workflow_template_views.py:277
+#: views/workflow_template_views.py:278
 msgid "No workflows have been defined"
 msgstr "לא הוגדרו תהליכי עבודה"
 
-#: views/workflow_template_views.py:294
+#: views/workflow_template_views.py:295
 #, python-format
 msgid "Preview of: %s"
 msgstr ""
 
-#: views/workflow_template_views.py:301
+#: views/workflow_template_views.py:302
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
 msgstr "פעולה זו תשגר את כל תהליכי העבודה שנוצרו אחרי שמסמכים כבר הועלו."
 
-#: views/workflow_template_views.py:304
+#: views/workflow_template_views.py:305
 msgid "Launch all workflows?"
 msgstr "לשגר את כל תהליכי העבודה?"
 
@@ -1435,19 +1437,19 @@ msgstr "שינוי מאפייני מסמך"
 msgid "Document properties"
 msgstr ""
 
-#: workflow_actions.py:125
+#: workflow_actions.py:127
 msgid "Additional workflows to launch for the document."
 msgstr "תהליכי עבודה נוספים לשיגור עבור המסמך."
 
-#: workflow_actions.py:179
+#: workflow_actions.py:181
 msgid "The URL to access."
 msgstr "כתובת האתר (URL) לגישה."
 
-#: workflow_actions.py:188
+#: workflow_actions.py:190
 msgid "Method"
 msgstr "שיטה (מתודה)"
 
-#: workflow_actions.py:195
+#: workflow_actions.py:197
 msgid ""
 "The HTTP method to use for the request. Typical choices are OPTIONS, HEAD, "
 "POST, GET, PUT, PATCH, DELETE."
@@ -1455,59 +1457,59 @@ msgstr ""
 "שיטת (מתודת) ה-HTTP לשימוש עבור הבקשה. האפשרויות האופייניות הן OPTIONS, "
 "HEAD, POST, GET, PUT, PATCH, DELETE."
 
-#: workflow_actions.py:206
+#: workflow_actions.py:208
 msgid "Username"
 msgstr ""
 
-#: workflow_actions.py:213
+#: workflow_actions.py:215
 msgid "Username to use for making the request with HTTP Basic Auth."
 msgstr ""
 
-#: workflow_actions.py:217 workflow_actions.py:239 workflow_actions.py:261
+#: workflow_actions.py:219 workflow_actions.py:241 workflow_actions.py:263
 msgid "The credential object is available as {{ credential }}."
 msgstr ""
 
-#: workflow_actions.py:228
+#: workflow_actions.py:230
 msgid "Password"
 msgstr ""
 
-#: workflow_actions.py:235
+#: workflow_actions.py:237
 msgid "Password to use for making the request with HTTP Basic Auth."
 msgstr "סיסמה לשימוש לביצוע הבקשה עם HTTP Basic Auth."
 
-#: workflow_actions.py:250
+#: workflow_actions.py:252
 msgid "Headers"
 msgstr "כותרות (קידומות)"
 
-#: workflow_actions.py:257
+#: workflow_actions.py:259
 msgid "Headers to send with the HTTP request. Must be in JSON format."
 msgstr "כותרות (קידומות) לשליחה עם בקשת ה-HTTP. חייב להיות בפורמט JSON."
 
-#: workflow_actions.py:271
+#: workflow_actions.py:273
 msgid "Payload"
 msgstr ""
 
-#: workflow_actions.py:277
+#: workflow_actions.py:279
 msgid "A JSON document to include in the request."
 msgstr ""
 
-#: workflow_actions.py:286
+#: workflow_actions.py:288
 msgid "Timeout"
 msgstr ""
 
-#: workflow_actions.py:293
+#: workflow_actions.py:295
 msgid "Time in seconds to wait for a response."
 msgstr ""
 
-#: workflow_actions.py:304
+#: workflow_actions.py:306
 msgid "Perform an HTTP request"
 msgstr "ביצוע בקשת HTTP"
 
-#: workflow_actions.py:315
+#: workflow_actions.py:317
 msgid "HTTP"
 msgstr ""
 
-#: workflow_actions.py:337
+#: workflow_actions.py:339
 #, python-format
 msgid "%(field_name)s JSON error: %(exception)s"
 msgstr "שגיאת JSON בשדה %(field_name)s : %(exception)s"

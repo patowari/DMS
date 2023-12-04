@@ -13,12 +13,8 @@ class APISourceListView(generics.ListCreateAPIView):
     get: Returns a list of all the source.
     post: Create a new source.
     """
-    mayan_object_permission_map = {
-       'GET': permission_sources_view
-    }
-    mayan_view_permission_map = {
-       'POST': permission_sources_create
-    }
+    mayan_object_permission_map = {'GET': permission_sources_view}
+    mayan_view_permission_map = {'POST': permission_sources_create}
     serializer_class = SourceSerializer
     source_queryset = Source.objects.all()
 
@@ -37,10 +33,10 @@ class APISourceView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'source_id'
     mayan_object_permission_map = {
-       'DELETE': permission_sources_delete,
-       'GET': permission_sources_view,
-       'PATCH': permission_sources_edit,
-       'PUT': permission_sources_edit
+        'DELETE': permission_sources_delete,
+        'GET': permission_sources_view,
+        'PATCH': permission_sources_edit,
+        'PUT': permission_sources_edit
     }
     serializer_class = SourceSerializer
     source_queryset = Source.objects.all()

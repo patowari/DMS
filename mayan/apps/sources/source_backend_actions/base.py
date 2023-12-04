@@ -1,7 +1,8 @@
 from django.utils.functional import classproperty
 
 from ..exceptions import (
-    SourceActionException, SourceActionExceptionInterfaceUnknown
+    SourceActionException, SourceActionExceptionInterface,
+    SourceActionExceptionInterfaceUnknown
 )
 from ..tasks import task_source_backend_action_background_task
 
@@ -143,10 +144,19 @@ class SourceBackendActionBase(metaclass=SourceBackendActionMetaclass):
                 )
             ) from exception
 
-        result = self._execute(**execute_kwargs)
+        backend_instance = self.source.get_backend_instance()
+
+        allow_action_execution = backend_instance.get_allow_action_execute(
+            action=self, action_execute_kwargs=execute_kwargs
+        )
+
+        if allow_action_execution:
+            action_data = self._execute(**execute_kwargs)
+        else:
+            action_data = None
 
         return interface_instance.retrieve(
-            context=interface_retrieve_kwargs, data=result
+            context=interface_retrieve_kwargs, data=action_data
         )
 
     def get_confirmation_context(
@@ -158,7 +168,6 @@ class SourceBackendActionBase(metaclass=SourceBackendActionMetaclass):
             interface_name=interface_name
         )
 
-        from ..exceptions import SourceActionExceptionInterface
         try:
             result = interface_instance.get_confirmation_context(
                 **interface_load_kwargs

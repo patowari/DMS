@@ -128,8 +128,7 @@ class DocumentTypeOCRViewTestCase(
 
 
 class DocumentVersionOCRViewTestCase(
-    DocumentVersionOCRTestMixin, DocumentVersionOCRViewTestMixin,
-    GenericDocumentViewTestCase
+    DocumentVersionOCRViewTestMixin, GenericDocumentViewTestCase
 ):
     def test_document_verions_ocr_content_single_delete_view_no_permission(self):
         self._create_test_document_version_ocr_content()

@@ -21,8 +21,6 @@ class ParentObjectSourceAPIViewMixin:
                 self.request.method, None
             )
 
-            return permission
-
         if permission:
             queryset = AccessControlList.objects.restrict_queryset(
                 permission=permission, queryset=queryset,

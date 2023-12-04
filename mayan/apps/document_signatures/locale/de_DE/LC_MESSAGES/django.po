@@ -11,16 +11,16 @@
 # Roberto Rosario, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Tobias Paepke <tobias.paepke@paepke.net>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Tobias Paepke <tobias.paepke@paepke.net>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,19 +54,19 @@ msgstr "Typ"
 
 #: events.py:10
 msgid "Detached signature created"
-msgstr ""
+msgstr "Abgelöste Unterschrift erstellt"
 
 #: events.py:13
 msgid "Detached signature deleted"
-msgstr ""
+msgstr "Abgelöste Unterschrift gelöscht"
 
 #: events.py:16
 msgid "Detached signature uploaded"
-msgstr ""
+msgstr "Abgelöste Unterschrift hochgeladen"
 
 #: events.py:20
 msgid "Embedded signature created"
-msgstr ""
+msgstr "Eingebettete Unterschrift erstellt"
 
 #: forms.py:17 forms.py:31 workflow_actions.py:69
 msgid "Key"
@@ -77,6 +77,8 @@ msgid ""
 "The passphrase to unlock the key and allow it to be used to sign the "
 "document file."
 msgstr ""
+"Das Passwort um den Schlüssel zu entsperren und mit ihm die Dokumentendatei "
+"zu unterschreiben."
 
 #: forms.py:24 serializers.py:68 workflow_actions.py:28
 msgid "Passphrase"
@@ -84,11 +86,11 @@ msgstr "Passwort"
 
 #: forms.py:33
 msgid "Private key that will be used to sign this document file."
-msgstr ""
+msgstr "Privater Schlüssel für die Unterschrift dieser Dokumentendatei."
 
 #: forms.py:45
 msgid "Signature is embedded?"
-msgstr "Eingebettete Unterschrift"
+msgstr "Eingebettete Unterschrift?"
 
 #: forms.py:48
 msgid "Signature date"
@@ -100,7 +102,7 @@ msgstr "Unterschriftsschlüssel-ID"
 
 #: forms.py:55
 msgid "Signature key present?"
-msgstr "Unterschriftsschlüssel vorhanden"
+msgstr "Unterschriftsschlüssel vorhanden?"
 
 #: forms.py:68
 msgid "Key fingerprint"
@@ -160,7 +162,7 @@ msgstr "Unterschriften"
 
 #: links.py:100
 msgid "Refresh all signatures"
-msgstr ""
+msgstr "Alle Unterschriften erneuern"
 
 #: links.py:106
 msgid "Verify all documents"
@@ -168,7 +170,7 @@ msgstr "Alle Dokumente überprüfen"
 
 #: managers.py:94
 msgid "signed"
-msgstr ""
+msgstr "unterschrieben"
 
 #: model_mixins.py:15
 msgid "Detached"
@@ -184,7 +186,7 @@ msgstr "Dokumentendatei"
 
 #: models.py:47
 msgid "Date and time signed"
-msgstr ""
+msgstr "Datum und Zeit der Unterschrift"
 
 #: models.py:51
 msgid "ID of the key that will be used to sign the document."
@@ -196,11 +198,11 @@ msgstr "Fingerabdruck des öffentlichen Schlüssels"
 
 #: models.py:68
 msgid "Document file signature"
-msgstr ""
+msgstr "Dokumentendateiunterschrift"
 
 #: models.py:69
 msgid "Document file signatures"
-msgstr ""
+msgstr "Dokumentendateiunterschriften"
 
 #: models.py:86
 msgid "Signature file previously generated."
@@ -212,11 +214,11 @@ msgstr "Unterschriftsdatei"
 
 #: models.py:95
 msgid "Document file detached signature"
-msgstr ""
+msgstr "Abgelöste Dokumentendateiunterschrift"
 
 #: models.py:96
 msgid "Document file detached signatures"
-msgstr ""
+msgstr "Abgelöste Dokumentendateiunterschriften"
 
 #: models.py:100
 msgid "signature"
@@ -224,11 +226,11 @@ msgstr "Unterschrift"
 
 #: models.py:151
 msgid "Document file embedded signature"
-msgstr ""
+msgstr "Eingebettete Dokumentendateiunterschrift"
 
 #: models.py:152
 msgid "Document file embedded signatures"
-msgstr ""
+msgstr "Eingebettete Dokumentendateiunterschriften"
 
 #: permissions.py:10
 msgid "Sign documents with detached signatures"
@@ -256,11 +258,11 @@ msgstr "Dokumentenunterschriften überprüfen"
 
 #: permissions.py:34
 msgid "View document signatures"
-msgstr ""
+msgstr "Dokumentendateiunterschriften anzeigen"
 
 #: queues.py:10
 msgid "Signatures slow"
-msgstr ""
+msgstr "Dokumentendateiunterschriften langsam"
 
 #: queues.py:15
 msgid "Verify key signatures"
@@ -272,7 +274,7 @@ msgstr "Verifizierung von Schlüsselsignaturen zurücknehmen"
 
 #: queues.py:23
 msgid "Verify document file"
-msgstr ""
+msgstr "Dokumentendatei überprüfen"
 
 #: queues.py:28
 msgid "Verify missing embedded signature"
@@ -280,7 +282,7 @@ msgstr "Fehlende eingebettete Unterschrift überprüfen"
 
 #: queues.py:32
 msgid "Refresh existing signature information"
-msgstr ""
+msgstr "Bestehende Unterschrifteninformation aktualisieren"
 
 #: serializers.py:17
 msgid "Document file URL"
@@ -289,6 +291,8 @@ msgstr "URL der Dokumentendatei"
 #: serializers.py:59
 msgid "Primary key of the secret key used to sign the document file."
 msgstr ""
+"Primärschlüssel des geheimen Schlüssels, der für die Unterzeichnung der "
+"Dokumentendatei verwendet wird."
 
 #: serializers.py:110
 msgid "URL"
@@ -327,17 +331,17 @@ msgstr "Passwort ist ungültig."
 
 #: views.py:101 views.py:171
 msgid "Document file signed successfully."
-msgstr ""
+msgstr "Dokumentendatei erfolgreich unterzeichnet."
 
 #: views.py:111
 #, python-format
 msgid "Sign document file \"%s\" with a detached signature"
-msgstr ""
+msgstr "Dokumentendatei \"%s\" mit einer abgelösten Unterschrift unterzeichnen"
 
 #: views.py:188
 #, python-format
 msgid "Sign document file \"%s\" with a embedded signature"
-msgstr ""
+msgstr "Dokumentendatei \"%s\" mit einer eingebetteten Unterschrift unterzeichnen"
 
 #: views.py:205
 #, python-format
@@ -347,7 +351,7 @@ msgstr "Separate Unterschrift %s löschen"
 #: views.py:257
 #, python-format
 msgid "Upload detached signature for document file: %s"
-msgstr ""
+msgstr "Abgelöste Unterschrift für Dokumentendatei %s hochladen"
 
 #: views.py:287
 #, python-format
@@ -367,12 +371,12 @@ msgstr ""
 
 #: views.py:341
 msgid "There are no signatures for this document file."
-msgstr ""
+msgstr "Keine Unterschriften für diese Dokumentendatei vorhanden."
 
 #: views.py:345
 #, python-format
 msgid "Signatures for document file: %s"
-msgstr ""
+msgstr "Unterschriften für Dokumentendatei %s"
 
 #: views.py:356 views.py:377
 msgid "On large databases this operation may take some time to execute."
@@ -381,11 +385,13 @@ msgstr ""
 
 #: views.py:358
 msgid "Refresh all signatures information?"
-msgstr ""
+msgstr "Sämtliche Unterschrifteninformationen aktualisieren?"
 
 #: views.py:369
 msgid "Signature information refresh queued successfully."
 msgstr ""
+"Aktualisierung der Unterschrifteninformation erfolgreich in die "
+"Warteschlange eingereiht."
 
 #: views.py:379
 msgid "Verify all document for signatures?"
@@ -402,16 +408,21 @@ msgstr "Dokument signieren (abgetrennt)"
 #: workflow_actions.py:48
 msgid "Private key that will be used to sign the document file."
 msgstr ""
+"Privater Schlüssel, der für die Unterschrift der Dokumentdatei verwendet "
+"wird."
 
 #: workflow_actions.py:55
 msgid "Private key"
-msgstr ""
+msgstr "Privater Schlüssel"
 
 #: workflow_actions.py:81
 msgid ""
 "Document has no file to sign. You might be trying to use this action in an "
 "initial state before the created document is yet to be processed."
 msgstr ""
+"Das Dokument hat keine Datei für eine Unterschrift. Es könnte sein, dass Sie"
+" diese Aktion bereits durchgeführt haben als das Dokument noch nicht "
+"verarbeitet wurde."
 
 #: workflow_actions.py:102
 msgid "Sign document (embedded)"

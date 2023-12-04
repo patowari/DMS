@@ -1,6 +1,5 @@
 from rest_framework import status
 
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
@@ -22,7 +21,7 @@ from .mixins import (
 
 
 class DocumentVersionOCRAPIViewTestCase(
-    DocumentTestMixin, DocumentVersionOCRAPIViewTestMixin, BaseAPITestCase
+    DocumentVersionOCRAPIViewTestMixin, BaseAPITestCase
 ):
     def test_document_version_ocr_submit_api_view_no_permission(self):
         self._clear_events()
@@ -91,8 +90,8 @@ class DocumentVersionOCRAPIViewTestCase(
 
 
 class DocumentVersionPageOCRAPIViewTestCase(
-    DocumentTestMixin, DocumentVersionOCRTestMixin,
-    DocumentVersionPageOCRAPIViewTestMixin, BaseAPITestCase
+    DocumentVersionOCRTestMixin, DocumentVersionPageOCRAPIViewTestMixin,
+    BaseAPITestCase
 ):
     def test_document_version_page_content_detail_api_view_via_get_no_permission(self):
         self._create_test_document_version_ocr_content()

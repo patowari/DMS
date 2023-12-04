@@ -2,13 +2,13 @@
 Troubleshooting
 ===============
 
+.. include::  ../../../partials/kb_migration.txt
 
-The system fails to start or some features are not working
-==========================================================
+.. note::
 
-Execute the ``dependencies_check`` command to verify that all the dependencies
-needed for a production installation are present and accessible to the system.
+    Knowledge Base content
 
-.. code-block:: console
+    Troubleshooting:
 
-    MAYAN_MEDIA_ROOT=<your Mayan media root setting> /<installation directory>mayan-edms.py dependencies_check
+    - The system fails to start or some features are not working
+

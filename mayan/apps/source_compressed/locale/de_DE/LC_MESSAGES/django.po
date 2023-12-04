@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,13 +23,15 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source compressed"
-msgstr ""
+msgstr "Quelle komprimiert"
 
 #: source_backend_actions/arguments.py:7
 msgid ""
 "Controls whether or not the uploaded file will be uncompressed and processed"
 " and individual files."
 msgstr ""
+"Kontrolliert, ob eine hochgeladene Datei entpackt und in individuellen "
+"Dateien verarbeitet wird."
 
 #: source_backends/literals.py:8 source_backends/literals.py:13
 msgid "Always"
@@ -53,7 +55,7 @@ msgstr "Ob komprimierte Archive entpackt werden sollen."
 
 #: source_backends/mixins.py:57
 msgid "Decompression"
-msgstr ""
+msgstr "Entpacken"
 
 #: source_backends/mixins.py:90
 msgid "Expand compressed files"

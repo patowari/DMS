@@ -5,7 +5,8 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from ..events import (
     event_document_file_created, event_document_file_deleted,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created, event_document_version_page_deleted
+    event_document_version_edited, event_document_version_page_created,
+    event_document_version_page_deleted
 )
 from ..permissions import (
     permission_document_file_delete, permission_document_file_new,
@@ -246,7 +247,7 @@ class DocumentFileAPIViewTestCase(
         self.assertEqual(self._test_document.pages.count(), 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 4)
+        self.assertEqual(events.count(), 5)
 
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -271,6 +272,11 @@ class DocumentFileAPIViewTestCase(
         self.assertEqual(
             events[3].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[4].action_object, self._test_document)
+        self.assertEqual(events[4].actor, self._test_case_user)
+        self.assertEqual(events[4].target, self._test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_edited.id)
 
     def test_trashed_document_file_upload_api_view_with_access(self):
         self._upload_test_document()

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -24,25 +24,25 @@ msgstr ""
 msgid "Mailer"
 msgstr "Mailer"
 
-#: classes.py:27
+#: classes.py:28
 msgid "General"
 msgstr ""
 
-#: classes.py:40
+#: classes.py:46
 msgid "From"
 msgstr ""
 
-#: classes.py:43
+#: classes.py:49
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
 msgstr ""
 
-#: classes.py:58
+#: classes.py:64
 msgid "Compatibility"
 msgstr ""
 
-#: classes.py:68
+#: classes.py:83 classes.py:103
 msgid "Null backend"
 msgstr ""
 
@@ -170,31 +170,31 @@ msgstr ""
 msgid "Link for {{ object_name }}: {{ object }}"
 msgstr ""
 
-#: mailers.py:14
+#: mailers.py:11
 msgid "Django SMTP backend"
 msgstr "Django SMTP backend"
 
-#: mailers.py:23
+#: mailers.py:20
 msgid "Host"
 msgstr "Domaćin"
 
-#: mailers.py:26
+#: mailers.py:23
 msgid "The host to use for sending email."
 msgstr "Domaćin koji će koristiti za slanje e-pošte."
 
-#: mailers.py:31
+#: mailers.py:28
 msgid "Port"
 msgstr "Port"
 
-#: mailers.py:33
+#: mailers.py:30
 msgid "Port to use for the SMTP server."
 msgstr "Port koji će se koristiti za SMTP server."
 
-#: mailers.py:36
+#: mailers.py:33
 msgid "Use TLS"
 msgstr "Koristite TLS"
 
-#: mailers.py:39
+#: mailers.py:36
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
@@ -202,11 +202,11 @@ msgstr ""
 "Da li da koristite TLS (sigurno) vezu prilikom razgovora s SMTP serverom. "
 "Ovo se koristi za eksplicitne TLS veze, uglavnom na portu 587."
 
-#: mailers.py:44
+#: mailers.py:41
 msgid "Use SSL"
 msgstr "Koristi SSL"
 
-#: mailers.py:47
+#: mailers.py:44
 msgid ""
 "Whether to use an implicit TLS (secure) connection when talking to the SMTP "
 "server. In most email documentation this type of TLS connection is referred "
@@ -222,35 +222,23 @@ msgstr ""
 "\"Use SSL\" međusobno isključuju, tako da samo jedan od tih postavki "
 "podesite na True."
 
-#: mailers.py:59
-msgid "The credential entry to use to authenticate against the email server."
-msgstr ""
-
-#: mailers.py:66
-msgid "Credential"
-msgstr ""
-
-#: mailers.py:80
+#: mailers.py:65
 msgid "Server"
 msgstr ""
 
-#: mailers.py:84
-msgid "Authentication"
-msgstr "Autentikacija"
-
-#: mailers.py:98
+#: mailers.py:93
 msgid "Django file based backend"
 msgstr "Django bazirani fajl"
 
-#: mailers.py:106
+#: mailers.py:101
 msgid "File path"
 msgstr "Putanja fajla"
 
-#: mailers.py:122
+#: mailers.py:117
 msgid "Storage"
 msgstr "Skladište"
 
-#: model_mixins.py:171
+#: model_mixins.py:172
 msgid "Test email from Mayan EDMS"
 msgstr "Testirajte email od Mayan EDMS"
 

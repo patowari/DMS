@@ -18,7 +18,7 @@ class APIDocumentFilePageContentView(
     get: Returns the content of the selected document page.
     """
     mayan_object_permission_map = {
-       'GET': permission_document_file_content_view
+        'GET': permission_document_file_content_view
     }
     serializer_class = DocumentFilePageContentSerializer
 
@@ -46,9 +46,9 @@ class APIDocumentTypeParsingSettingsView(generics.RetrieveUpdateAPIView):
     lookup_field = 'document_type__pk'
     lookup_url_kwarg = 'document_type_id'
     mayan_object_permission_map = {
-       'GET': permission_document_type_parsing_setup,
-       'PATCH': permission_document_type_parsing_setup,
-       'PUT': permission_document_type_parsing_setup
+        'GET': permission_document_type_parsing_setup,
+        'PATCH': permission_document_type_parsing_setup,
+        'PUT': permission_document_type_parsing_setup
     }
     serializer_class = DocumentTypeParsingSettingsSerializer
     source_queryset = DocumentTypeSettings.objects.all()

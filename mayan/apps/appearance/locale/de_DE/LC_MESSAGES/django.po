@@ -5,7 +5,6 @@
 # Translators:
 # Translators:
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
-# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
 # Florian Merges, 2023
 # Tobias Paepke <tobias.paepke@paepke.net>, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
@@ -14,16 +13,16 @@
 # Niklas Maurer <niklas.maurer@web.energy>, 2023
 # Björn E <b1pum@web.de>, 2023
 # Roberto Rosario, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Berny <berny@bernhard-marx.de>, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Berny <berny@bernhard-marx.de>, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,7 +92,7 @@ msgstr "Thema bearbeitet"
 
 #: events.py:16
 msgid "User theme edited"
-msgstr ""
+msgstr "Benutzerthema bearbeitet"
 
 #: links.py:20
 msgid "Theme settings"
@@ -121,7 +120,7 @@ msgstr "Themen"
 
 #: models.py:19
 msgid "A short text describing the theme."
-msgstr "Ein kurzer Text um das Thema zu beschreiben"
+msgstr "Ein kurzer Text um das Thema zu beschreiben."
 
 #: models.py:20
 msgid "Label"
@@ -132,8 +131,8 @@ msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
-"Das CSS-Stylesheet um die Erscheinung der verschiedenen User Interface "
-"Elemente zu bearbeiten"
+"Das CSS-Stylesheet um die Erscheinung der verschiedenen Elemente der "
+"Benutzeroberfläche zu bearbeiten."
 
 #: models.py:26
 msgid "Stylesheet"
@@ -173,7 +172,7 @@ msgstr "Betrachte existierende Themen"
 
 #: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Benutzerdefinierter HTTP Antwortcode für AJAX Umleitungen."
 
 #: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
@@ -182,23 +181,27 @@ msgstr ""
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Position wo die Systemnachrichten eingeblendet werden."
 
 #: settings.py:40
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Verzögerung in Millisekunden nach der Menüs auf Aktualisierungen überprüft "
+"werden."
 
 #: settings.py:47
 msgid ""
 "Maximum number of requests that can be made before throttling is enabled."
-msgstr ""
+msgstr "Die maximale Anzahl von Anfragen bevor Drosselung aktiviert wird."
 
 #: settings.py:54
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Zeit in Millisekunden nach der eine gedrosselte Anfrage freigegeben wird, um"
+" die nächste Anfrage auszuführen."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -300,7 +303,8 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Eine umfassende Liste der Neuerungen ist einsehbar in den <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release Notes %(icon_documentation)s oder als Kurzversion<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">im Changelog %(icon_documentation)s</a>."
+"Eine umfassende Liste der Neuerungen ist einsehbar in den <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release Notes %(icon_documentation)s oder als Kurzversion<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">im Changelog %(icon_documentation)s</a>.\n"
+"          "
 
 #: templates/appearance/about.html:94
 #, python-format
@@ -328,6 +332,8 @@ msgid ""
 "Too many pending requests. Additional requests will be blocked until a "
 "pending one is completed or after the cooling off period ends."
 msgstr ""
+"Zu viele wartende Anfragen. Weitere Anfragen werden zurückgewiesen bis eine "
+"wartende Anfrage ausgeführt ist oder bis die Abkühlungsfrist endet."
 
 #: templates/appearance/base.html:73
 msgid "Object"
@@ -484,7 +490,7 @@ msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Themen erlauben es das Erscheinungsbild zu verändern, ohne Code zu verändern"
-" zu müssen"
+" zu müssen."
 
 #: views.py:97
 msgid "There are no themes"
@@ -493,9 +499,9 @@ msgstr "Keine Themen verfügbar"
 #: views.py:122
 #, python-format
 msgid "Theme settings for user: %s"
-msgstr ""
+msgstr "Themaeinstellungen für Benutzer: %s"
 
 #: views.py:144
 #, python-format
 msgid "Edit theme settings for user: %s"
-msgstr ""
+msgstr "Themaeinstellungen für Benutzer: %s bearbeiten"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:7 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:13 views/source_views.py:285
 msgid "Sources"
 msgstr "Izvori"
 
@@ -184,15 +184,15 @@ msgstr "Uredi izvore dokumenata"
 msgid "View existing document sources"
 msgstr "Pregledaj postojeće izvore dokumenata"
 
-#: queues.py:10
+#: queues.py:12
 msgid "Sources periodic"
 msgstr ""
 
-#: queues.py:15
+#: queues.py:17
 msgid "Handle source backend action background task"
 msgstr ""
 
-#: queues.py:19
+#: queues.py:21
 msgid "Check interval source"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: source_backends/base.py:131
+#: source_backends/base.py:134
 msgid "Null backend"
 msgstr ""
 

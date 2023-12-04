@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "Mailer"
 msgstr "Mailer"
 
-#: classes.py:27
+#: classes.py:28
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
-#: classes.py:40
+#: classes.py:46
 msgid "From"
 msgstr "Von"
 
-#: classes.py:43
+#: classes.py:49
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
@@ -45,11 +45,11 @@ msgstr ""
 "Die Adresse des Absenders. Einige Systeme verweigern die Verarbeitung von "
 "Nachrichten, wenn dieser Wert nicht gesetzt ist."
 
-#: classes.py:58
+#: classes.py:64
 msgid "Compatibility"
-msgstr ""
+msgstr "Kompatibilität"
 
-#: classes.py:68
+#: classes.py:83 classes.py:103
 msgid "Null backend"
 msgstr "Null Backend"
 
@@ -63,11 +63,11 @@ msgstr "E-Mail verschickt"
 
 #: events.py:13
 msgid "Mailing profile created"
-msgstr ""
+msgstr "Mailprofil erstellt"
 
 #: events.py:16
 msgid "Mailing profile edited"
-msgstr ""
+msgstr "Mailprofil bearbeitet"
 
 #: forms.py:58 forms.py:95
 msgid ""
@@ -108,27 +108,27 @@ msgstr "Backend"
 
 #: links.py:34 links.py:37
 msgid "Email document link"
-msgstr ""
+msgstr "Dokumentenlink mailen"
 
 #: links.py:47 links.py:52
 msgid "Email document file"
-msgstr ""
+msgstr "Dokumentendatei mailen"
 
 #: links.py:58 links.py:63
 msgid "Email document file link"
-msgstr ""
+msgstr "Dokumentendateilink mailen"
 
 #: links.py:73 links.py:78
 msgid "Email document version"
-msgstr ""
+msgstr "Dokumentenversion mailen"
 
 #: links.py:84
 msgid "Email document version link"
-msgstr ""
+msgstr "Dokumentenversionslink mailen"
 
 #: links.py:89
 msgid "Email link version"
-msgstr ""
+msgstr "Versionslink mailen"
 
 #: links.py:98
 msgid "Create mailing profile"
@@ -159,10 +159,14 @@ msgid ""
 " --------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"Angehängt an diese E-Mail ist {{ object_name }}: {{ object }}\n"
+"\n"
+" --------\n"
+" Diese E-Mail wurde gesendet von %(project_title)s (%(project_website)s)"
 
 #: literals.py:11
 msgid "{{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "{{ object_name }}: {{ object }}"
 
 #: literals.py:13
 #, python-format
@@ -172,36 +176,40 @@ msgid ""
 "--------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"Für den Zugang zu {{ object_name }} klicken Sie bitte auf den folgenden Link: {{ link }}\n"
+"\n"
+"--------\n"
+" Diese E-Mail wurde gesendet von %(project_title)s (%(project_website)s)"
 
 #: literals.py:17
 msgid "Link for {{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "Link für {{ object_name }}: {{ object }}"
 
-#: mailers.py:14
+#: mailers.py:11
 msgid "Django SMTP backend"
 msgstr "Django SMTP Backend"
 
-#: mailers.py:23
+#: mailers.py:20
 msgid "Host"
 msgstr "Host"
 
-#: mailers.py:26
+#: mailers.py:23
 msgid "The host to use for sending email."
 msgstr "Der Host für ausgehende Mails."
 
-#: mailers.py:31
+#: mailers.py:28
 msgid "Port"
 msgstr "Port"
 
-#: mailers.py:33
+#: mailers.py:30
 msgid "Port to use for the SMTP server."
 msgstr "Der Port des SMTP-Servers."
 
-#: mailers.py:36
+#: mailers.py:33
 msgid "Use TLS"
 msgstr "TLS benutzen"
 
-#: mailers.py:39
+#: mailers.py:36
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
@@ -209,11 +217,11 @@ msgstr ""
 "Ob eine TLS-gesicherte Verbindung zum SMTP-Server benutzt werden soll. Es "
 "werden explizite TLS-Verbindungen aufgebaut, üblicherweise an Port 587."
 
-#: mailers.py:44
+#: mailers.py:41
 msgid "Use SSL"
 msgstr "SSL benutzen"
 
-#: mailers.py:47
+#: mailers.py:44
 msgid ""
 "Whether to use an implicit TLS (secure) connection when talking to the SMTP "
 "server. In most email documentation this type of TLS connection is referred "
@@ -229,35 +237,23 @@ msgstr ""
 "benutzen\". TLS und SSL schließen sich gegenseitig aus, also setzen Sie nur "
 "eine der beiden Einstellungen."
 
-#: mailers.py:59
-msgid "The credential entry to use to authenticate against the email server."
-msgstr ""
-
-#: mailers.py:66
-msgid "Credential"
-msgstr ""
-
-#: mailers.py:80
+#: mailers.py:65
 msgid "Server"
-msgstr ""
+msgstr "Server"
 
-#: mailers.py:84
-msgid "Authentication"
-msgstr "Authentifizierung"
-
-#: mailers.py:98
+#: mailers.py:93
 msgid "Django file based backend"
 msgstr "Django dateibasiertes Backend"
 
-#: mailers.py:106
+#: mailers.py:101
 msgid "File path"
 msgstr "Dateipfad"
 
-#: mailers.py:122
+#: mailers.py:117
 msgid "Storage"
 msgstr "Dateispeicher"
 
-#: model_mixins.py:171
+#: model_mixins.py:172
 msgid "Test email from Mayan EDMS"
 msgstr "Testmail aus Mayan EDMS"
 
@@ -311,23 +307,23 @@ msgstr "Link zum Dokument per E-Mail senden"
 
 #: permissions.py:36
 msgid "Send document file via email"
-msgstr ""
+msgstr "Dokumentendatei per E-Mail senden"
 
 #: permissions.py:40
 msgid "Send document file link via email"
-msgstr ""
+msgstr "Dokumentendateilink per E-Mail senden"
 
 #: permissions.py:47
 msgid "Send document version via email"
-msgstr ""
+msgstr "Dokumentenversion per E-Mail senden"
 
 #: permissions.py:51
 msgid "Send document version link via email"
-msgstr ""
+msgstr "Dokumentenversionslink per E-Mail senden"
 
 #: queues.py:12
 msgid "Send object"
-msgstr ""
+msgstr "Objekt senden"
 
 #: settings.py:17
 msgid "Template for the document email form subject line."
@@ -361,42 +357,44 @@ msgstr "Dokumentendatei"
 #: views/document_file_views.py:21
 #, python-format
 msgid "%(count)d document file queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendatei in die E-Mailwarteschlange eingereicht"
 
 #: views/document_file_views.py:23
 #, python-format
 msgid "%(count)d document files queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendateien in die E-Mailwarteschlange eingereicht"
 
 #: views/document_file_views.py:36
 #, python-format
 msgid "%(count)d document file link queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendateilink in die E-Mailwarteschlange eingereicht"
 
 #: views/document_file_views.py:39
 #, python-format
 msgid "%(count)d document file links queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentendateilinks in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document version queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentenversion in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:25
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
-msgstr ""
+msgstr "%(count)d Dokumentenversionen in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:38
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
+"%(count)d Dokumentenversionslink in die E-Mailwarteschlange eingereicht"
 
 #: views/document_version_views.py:41
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
 msgstr ""
+"%(count)d Dokumentenversionslinks in die E-Mailwarteschlange eingereicht"
 
 #: views/document_views.py:15
 #, python-format
@@ -464,7 +462,7 @@ msgstr ""
 
 #: workflow_action_mixins.py:26
 msgid "CC"
-msgstr ""
+msgstr "CC"
 
 #: workflow_action_mixins.py:29 workflow_action_mixins.py:41
 msgid ""
@@ -472,14 +470,17 @@ msgid ""
 "addresses separated by comma or semicolon. A template can be used to "
 "reference properties of the document."
 msgstr ""
+"Addresse für die \"Bcc\"-Kopfzeile. Können mehrere durch Komma oder "
+"Semikolon getrennte Adressen sein. Eine Vorlage kann verwendet werden, um "
+"auf Dokumenteneigenschaften zu verweisen."
 
 #: workflow_action_mixins.py:38
 msgid "BCC"
-msgstr ""
+msgstr "BCC"
 
 #: workflow_action_mixins.py:50
 msgid "Reply to"
-msgstr ""
+msgstr "Reply to"
 
 #: workflow_action_mixins.py:53
 msgid ""
@@ -487,6 +488,9 @@ msgid ""
 "multiple addresses separated by comma or semicolon. A template can be used "
 "to reference properties of the document."
 msgstr ""
+"Addresse für die \"Reply-to\"-Kopfzeile. Können mehrere durch Komma oder "
+"Semikolon getrennte Adressen sein. Eine Vorlage kann verwendet werden, um "
+"auf Dokumenteneigenschaften zu verweisen."
 
 #: workflow_action_mixins.py:65
 msgid "Subject of the email. Can be a string or a template."
@@ -500,15 +504,15 @@ msgstr ""
 
 #: workflow_action_mixins.py:81 workflow_actions.py:22
 msgid "Attachment"
-msgstr ""
+msgstr "Anhang"
 
 #: workflow_action_mixins.py:84
 msgid "Attach an object to the email."
-msgstr ""
+msgstr "Ein Objekt an die E-Mail anhängen."
 
 #: workflow_action_mixins.py:89
 msgid "Send object via email"
-msgstr ""
+msgstr "Ein Objekt per E-Mail senden"
 
 #: workflow_action_mixins.py:101
 msgid "Mailing profile to use when sending the email."
@@ -516,7 +520,7 @@ msgstr "Mail-Profil, das beim Senden der E-Mail verwendet werden soll."
 
 #: workflow_action_mixins.py:125
 msgid "Parties"
-msgstr ""
+msgstr "Parteien"
 
 #: workflow_action_mixins.py:129
 msgid "Content"
@@ -524,8 +528,8 @@ msgstr "Inhalt"
 
 #: workflow_actions.py:10
 msgid "Send document via email"
-msgstr "Dokument als E-Mailanhang senden"
+msgstr "Dokument als Mailanhang senden"
 
 #: workflow_actions.py:25
 msgid "Attach the exported document version to the email."
-msgstr ""
+msgstr "Die exportierte Dokumentenversion an die E-Mail anhängen."

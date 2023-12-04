@@ -14,11 +14,11 @@ from ..serializers import (
 
 class APIIndexTemplateNodeViewMixin(AsymmetricSerializerAPIViewMixin):
     object_permission_map = {
+        'DELETE': permission_index_template_edit,
         'GET': permission_index_template_view,
         'PATCH': permission_index_template_edit,
         'PUT': permission_index_template_edit,
-        'POST': permission_index_template_edit,
-        'DELETE': permission_index_template_edit
+        'POST': permission_index_template_edit
     }
     read_serializer_class = IndexTemplateNodeSerializer
     write_serializer_class = IndexTemplateNodeWriteSerializer

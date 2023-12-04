@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -64,31 +64,35 @@ msgstr "Dokumentation"
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:49 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr "Knowledge Base"
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "Lizenz"
 
-#: links.py:54
+#: links.py:58
 msgid "Copy"
 msgstr "Kopieren"
 
-#: links.py:58
+#: links.py:62
 msgid "Setup"
 msgstr "Einrichtung"
 
-#: links.py:61
+#: links.py:65
 msgid "Source code"
 msgstr "Quelltext"
 
-#: links.py:65
+#: links.py:69
 msgid "Online store"
 msgstr "Online-Shop"
 
-#: links.py:69
+#: links.py:73
 msgid "Get support"
 msgstr "Support erhalten"
 
-#: links.py:73 views.py:134
+#: links.py:77 views.py:134
 msgid "Tools"
 msgstr "Werkzeuge"
 
@@ -151,12 +155,16 @@ msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
+"Zeige im Listenmodus die \"Listenfacetten\"-Menüoptionen als Aufklappmenü "
+"anstelle einzelner Knöpfe."
 
 #: settings.py:33
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
+"Zeige im Listenmodus die \"Objekt\"-Menüoptionen als Aufklappmenü anstelle "
+"einzelner Knöpfe."
 
 #: settings.py:41
 msgid ""
@@ -164,6 +172,9 @@ msgid ""
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
+"Deaktiviert die Verwendung des lokalen `media`-Verzeichnisses. Mit dieser "
+"Einstellung müssen auch alle Apps in ihren jeweiligen Dateispeicher-"
+"Backendeinstellungen entsprechend konfiguriert sein."
 
 #: settings.py:49
 msgid ""
@@ -172,6 +183,11 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Eine Liste von Zeichenketten der Applikationen, die von der Liste der "
+"üblicherweise von Mayan EDMS installierten Applikationen entfernt werden "
+"sollen. Jede Zeichenkette sollte ein punktierter Pythonpfad sein: zu einer "
+"Applikationskonfigurationsklasse (bevorzugt) oder zu einem Paket, das die "
+"Applikation enthält. Beispiel: ['app_1', 'app_2']"
 
 #: settings.py:59
 msgid ""
@@ -180,6 +196,11 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Eine Liste von Zeichenketten der Applikationen, die zu der Liste der "
+"üblicherweise von Mayan EDMS installierten Applikationen zusätzlich "
+"installiert werden sollen. Jede Zeichenkette sollte ein punktierter "
+"Pythonpfad sein: zu einer Applikationskonfigurationsklasse (bevorzugt) oder "
+"zu einem Paket, das die Applikation enthält. Beispiel: ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -189,6 +210,11 @@ msgid ""
 " containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"Eine Liste von Zeichenketten der Applikationen, die zu der Liste der "
+"üblicherweise von Mayan EDMS installierten Applikationen zusätzlich "
+"installiert werden sollen. Jede Zeichenkette sollte ein punktierter "
+"Pythonpfad sein: zu einer Applikationskonfigurationsklasse (bevorzugt) oder "
+"zu einem Paket, das die Applikation enthält. Beispiel: ['app_1', 'app_2']"
 
 #: settings.py:81
 msgid ""
@@ -201,15 +227,15 @@ msgstr ""
 
 #: settings.py:90
 msgid "Name of the dashboard to display in the home view."
-msgstr ""
+msgstr "Name des Dashboards in der Heimansicht."
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr ""
+msgstr "Setzt den Projektnamen."
 
 #: settings.py:99
 msgid "URL of the project's homepage."
-msgstr ""
+msgstr "URL der Projekthomepage."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

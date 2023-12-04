@@ -28,9 +28,9 @@ class APIDocumentTypeOCRSettingsView(generics.RetrieveUpdateAPIView):
     lookup_field = 'document_type__pk'
     lookup_url_kwarg = 'document_type_id'
     mayan_object_permission_map = {
-       'GET': permission_document_type_ocr_setup,
-       'PATCH': permission_document_type_ocr_setup,
-       'PUT': permission_document_type_ocr_setup
+        'GET': permission_document_type_ocr_setup,
+        'PATCH': permission_document_type_ocr_setup,
+        'PUT': permission_document_type_ocr_setup
     }
     serializer_class = DocumentTypeOCRSettingsSerializer
     source_queryset = DocumentTypeOCRSettings.objects.all()
@@ -41,9 +41,7 @@ class APIDocumentOCRSubmitView(generics.GenericAPIView):
     post: Submit a document for OCR.
     """
     lookup_url_kwarg = 'document_id'
-    mayan_object_permission_map = {
-       'POST': permission_document_version_ocr
-    }
+    mayan_object_permission_map = {'POST': permission_document_version_ocr}
     source_queryset = Document.valid.all()
 
     def get_serializer(self, *args, **kwargs):
@@ -67,9 +65,9 @@ class APIDocumentVersionPageOCRContentDetailView(
     put: Edit the OCR content of the selected document page.
     """
     mayan_object_permission_map = {
-       'GET': permission_document_version_ocr_content_view,
-       'PATCH': permission_document_version_ocr_content_edit,
-       'PUT': permission_document_version_ocr_content_edit
+        'GET': permission_document_version_ocr_content_view,
+        'PATCH': permission_document_version_ocr_content_edit,
+        'PUT': permission_document_version_ocr_content_edit
     }
     serializer_class = DocumentVersionPageOCRContentSerializer
 
@@ -98,9 +96,7 @@ class APIDocumentVersionOCRSubmitView(generics.GenericAPIView):
     post: Submit a document version for OCR.
     """
     lookup_url_kwarg = 'document_version_id'
-    mayan_object_permission_map = {
-       'POST': permission_document_version_ocr
-    }
+    mayan_object_permission_map = {'POST': permission_document_version_ocr}
     source_queryset = DocumentVersion.objects.all()
 
     def get_document(self):

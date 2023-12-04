@@ -318,30 +318,27 @@ class DocumentsApp(MayanAppConfig):
             model=DocumentVersion, bind_link=True, register_permission=True
         ).add_fields(
             field_names=(
-                'document', 'timestamp', 'comment', 'version_pages',
+                'document', 'timestamp', 'comment', 'version_pages'
             )
         )
         ModelCopy(
-            model=DocumentVersionPage, bind_link=True, register_permission=True
+            model=DocumentVersionPage, bind_link=True,
+            register_permission=True
         ).add_fields(
             field_names=(
-                'document_version', 'page_number', 'content_type', 'object_id',
+                'document_version', 'page_number', 'content_type',
+                'object_id'
             )
         )
 
         ModelEventType.register(
             model=Document, event_types=(
-                event_document_edited,
-                event_document_type_changed,
-                event_document_file_created,
-                event_document_file_edited,
-                event_document_file_deleted,
-                event_document_version_created,
+                event_document_edited, event_document_type_changed,
+                event_document_file_created, event_document_file_edited,
+                event_document_file_deleted, event_document_version_created,
                 event_document_version_edited,
-                event_document_version_deleted,
-                event_document_viewed,
-                event_document_trashed,
-                event_trashed_document_restored
+                event_document_version_deleted, event_document_viewed,
+                event_document_trashed, event_trashed_document_restored
             )
         )
         ModelEventType.register(
@@ -351,8 +348,7 @@ class DocumentsApp(MayanAppConfig):
         )
         ModelEventType.register(
             model=DocumentType, event_types=(
-                event_document_created,
-                event_document_type_edited,
+                event_document_created, event_document_type_edited,
                 event_document_type_quick_label_created,
                 event_trashed_document_deleted
             )
@@ -421,11 +417,13 @@ class DocumentsApp(MayanAppConfig):
 
         ModelProperty(
             description=_(message='Return the latest file of the document.'),
-            model=Document, label=_(message='Latest file'), name='latest_file'
+            model=Document, label=_(message='Latest file'),
+            name='latest_file'
         )
         ModelProperty(
             description=_(message='Return the document instance.'),
-            model=DocumentFilePage, label=_(message='Document'), name='document'
+            model=DocumentFilePage, label=_(message='Document'),
+            name='document'
         )
 
         ModelPermission.register(
@@ -519,7 +517,9 @@ class DocumentsApp(MayanAppConfig):
             field_name='document_type'
         )
 
-        model_query_fields_document_file = ModelQueryFields(model=DocumentFile)
+        model_query_fields_document_file = ModelQueryFields(
+            model=DocumentFile
+        )
         model_query_fields_document_file.add_prefetch_related_field(
             field_name='file_pages'
         )
@@ -559,11 +559,13 @@ class DocumentsApp(MayanAppConfig):
 
         SourceColumn(
             attribute='document_type', include_label=True, is_sortable=True,
-            label=_(message='Type'), name='document_type', order=-9, source=Document
+            label=_(message='Type'), name='document_type', order=-9,
+            source=Document
         )
         SourceColumn(
             func=lambda context: context['object'].pages.count(),
-            label=_(message='Pages'), include_label=True, order=-8, source=Document
+            label=_(message='Pages'), include_label=True, order=-8,
+            source=Document
         )
 
         # FavoriteDocumentProxy
@@ -648,7 +650,8 @@ class DocumentsApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: context['object'].get_document_count(
                 user=context['request'].user
-            ), include_label=True, label=_(message='Documents'), source=DocumentType
+            ), include_label=True, label=_(message='Documents'),
+            source=DocumentType
         )
 
         SourceColumn(
@@ -663,8 +666,8 @@ class DocumentsApp(MayanAppConfig):
         # DocumentVersion
 
         SourceColumn(
-            source=DocumentVersion, attribute='get_label', is_identifier=True,
-            is_object_absolute_url=True
+            source=DocumentVersion, attribute='get_label',
+            is_identifier=True, is_object_absolute_url=True
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
@@ -693,8 +696,8 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             html_extra_classes='text-center document-thumbnail-list',
-            label=_(message='Thumbnail'), order=-99, source=DocumentVersionPage,
-            widget=ThumbnailWidget
+            label=_(message='Thumbnail'), order=-99,
+            source=DocumentVersionPage, widget=ThumbnailWidget
         )
 
         # TrashedDocument
@@ -742,8 +745,9 @@ class DocumentsApp(MayanAppConfig):
         menu_documents.bind_links(
             links=(
                 link_document_recently_accessed_list,
-                link_document_recently_created_list, link_document_favorites_list,
-                link_document_list, link_document_list_deleted
+                link_document_recently_created_list,
+                link_document_favorites_list, link_document_list,
+                link_document_list_deleted
             )
         )
 
@@ -761,7 +765,8 @@ class DocumentsApp(MayanAppConfig):
             links=(link_document_preview,), sources=(Document,), position=0
         )
         menu_list_facet.bind_links(
-            links=(link_document_properties,), sources=(Document,), position=2
+            links=(link_document_properties,), sources=(Document,),
+            position=2
         )
         menu_list_facet.bind_links(
             links=(
@@ -900,14 +905,16 @@ class DocumentsApp(MayanAppConfig):
         menu_secondary.bind_links(
             links=(link_document_type_filename_create,),
             sources=(
-                DocumentTypeFilename, 'documents:document_type_filename_list',
+                DocumentTypeFilename,
+                'documents:document_type_filename_list',
                 'documents:document_type_filename_create'
             )
         )
         menu_secondary.bind_links(
             links=(link_trash_can_empty,),
             sources=(
-                'documents:document_list_deleted', 'documents:trash_can_empty'
+                'documents:document_list_deleted',
+                'documents:trash_can_empty'
             )
         )
 
@@ -928,9 +935,9 @@ class DocumentsApp(MayanAppConfig):
         )
         menu_object.bind_links(
             links=(
-                link_document_version_active,
-                link_cache_partition_purge,
-                link_document_version_single_delete, link_document_version_edit,
+                link_document_version_active, link_cache_partition_purge,
+                link_document_version_single_delete,
+                link_document_version_edit,
                 link_document_version_modification,
                 link_document_version_page_list_remap,
                 link_document_version_print_form,

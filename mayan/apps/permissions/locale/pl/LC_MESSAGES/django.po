@@ -9,14 +9,15 @@
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -152,7 +153,7 @@ msgstr ""
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
-msgstr ""
+msgstr "ID Uprawnienia"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
@@ -172,15 +173,15 @@ msgstr ""
 
 #: serializers.py:79
 msgid "Permissions URL"
-msgstr ""
+msgstr "Uprawnienia URL"
 
 #: serializers.py:83
 msgid "Permissions add URL"
-msgstr ""
+msgstr "Uprawnienia dodawania URL"
 
 #: serializers.py:87
 msgid "Permissions remove URL"
-msgstr ""
+msgstr "Uprawnienia usuwania URL"
 
 #: serializers.py:94
 msgid "URL"

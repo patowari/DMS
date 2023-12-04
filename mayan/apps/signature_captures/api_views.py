@@ -20,10 +20,10 @@ class APISignatureCaptureDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'signature_capture_id'
     mayan_object_permission_map = {
-       'DELETE': permission_signature_capture_delete,
-       'GET': permission_signature_capture_view,
-       'PATCH': permission_signature_capture_edit,
-       'PUT': permission_signature_capture_edit
+        'DELETE': permission_signature_capture_delete,
+        'GET': permission_signature_capture_view,
+        'PATCH': permission_signature_capture_edit,
+        'PUT': permission_signature_capture_edit
     }
     serializer_class = SignatureCaptureSerializer
     source_queryset = SignatureCapture.valid.all()
@@ -41,9 +41,7 @@ class APISignatureCapturesImageView(
     get: Returns an image representation of the selected signature capture.
     """
     lookup_url_kwarg = 'signature_capture_id'
-    mayan_object_permission_map = {
-       'GET': permission_signature_capture_view
-    }
+    mayan_object_permission_map = {'GET': permission_signature_capture_view}
     source_queryset = SignatureCapture.valid.all()
 
 
@@ -57,11 +55,9 @@ class APISignatureCaptureListView(
     external_object_queryset = Document.valid.all()
     external_object_pk_url_kwarg = 'document_id'
     mayan_external_object_permission_map = {
-       'POST': permission_signature_capture_create
+        'POST': permission_signature_capture_create
     }
-    mayan_object_permission_map = {
-       'GET': permission_signature_capture_view
-    }
+    mayan_object_permission_map = {'GET': permission_signature_capture_view}
     serializer_class = SignatureCaptureSerializer
 
     def get_instance_extra_data(self):

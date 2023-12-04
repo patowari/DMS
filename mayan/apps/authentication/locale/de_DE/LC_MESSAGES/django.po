@@ -9,16 +9,16 @@
 # Jesaja Everling <jeverling@gmail.com>, 2023
 # Marvin Haschker <marvin@haschker.me>, 2023
 # Berny <berny@bernhard-marx.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # Roberto Rosario, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-04 04:15+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,11 +96,11 @@ msgstr "Entfernt den \"Passwort vergessen?\"-Link auf dem Anmeldeformular."
 
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
-msgstr ""
+msgstr "Punktierter Pfad zum Backend für die Benutzerauthentifizierung."
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "Argumente für das AUTHENTICATION_BACKEND."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format
@@ -110,7 +110,8 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"Identität des Benutzers \"%(user)s\" angenommen."
+"Identität des Benutzers \"%(user)s\" angenommen.\n"
+"   "
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
@@ -205,6 +206,9 @@ msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
 msgstr ""
+"Es ist nicht erlaubt das Passwort von Mitarbeitern oder Administratoren über"
+" die Benutzeroberfläche zu ändern. Benutzen Sie stattdessen "
+"Administrationswerkzeuge."
 
 #: views/authentication_views.py:365
 msgid "Change user password"

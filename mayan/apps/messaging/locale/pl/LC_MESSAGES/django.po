@@ -7,14 +7,15 @@
 # mic <winterfall24@gmail.com>, 2023
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-25 16:04+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgstr "Brak"
 
 #: apps.py:67
 msgid "Sender"
-msgstr ""
+msgstr "Nadawca"
 
 #: events.py:10
 msgid "Message created"
@@ -56,15 +57,15 @@ msgstr "Usuń"
 
 #: links.py:68 links.py:79
 msgid "Mark as read"
-msgstr ""
+msgstr "Oznacz jako przeczytane"
 
 #: links.py:74 links.py:83
 msgid "Mark as unread"
-msgstr ""
+msgstr "Oznacz jako nieprzeczytane"
 
 #: links.py:87
 msgid "Mark all as read"
-msgstr ""
+msgstr "Oznacz wszystkie jako przeczytane"
 
 #: model_mixins.py:16
 msgid "Label"
@@ -96,7 +97,7 @@ msgstr ""
 
 #: models.py:41
 msgid "This field determines if the message has been read or not."
-msgstr ""
+msgstr "To pole określa, czy wiadomość została przeczytana, czy nie."
 
 #: models.py:42
 msgid "Read"
@@ -104,11 +105,11 @@ msgstr "Przeczytane"
 
 #: models.py:46
 msgid "Date and time of the message creation."
-msgstr ""
+msgstr "Data i godzina utworzenia wiadomości."
 
 #: models.py:47
 msgid "Creation date and time"
-msgstr ""
+msgstr "Data i godzina utworzenia"
 
 #: models.py:52
 msgid "Message"
@@ -229,25 +230,25 @@ msgstr ""
 #: views.py:151
 #, python-format
 msgid "Mark the %(count)d selected messages as read."
-msgstr ""
+msgstr "Oznacz %(count)d wybranych wiadomości  jako przeczytane."
 
 #: views.py:152
 #, python-format
 msgid "Mark the message \"%(object)s\" as read."
-msgstr ""
+msgstr "Oznacz wiadomość \"%(object)s\" jako przeczytaną."
 
 #: views.py:153
 #, python-format
 msgid "Mark the %(count)d selected message as read."
-msgstr ""
+msgstr "Oznacz %(count)d wybraną wiadomość  jako przeczytaną."
 
 #: views.py:181
 msgid "Mark all message as read?"
-msgstr ""
+msgstr "Oznaczyć wszystkie wiadomości jako przeczytane?"
 
 #: views.py:197
 msgid "All messages marked as read."
-msgstr ""
+msgstr "Wszystkie wiadomości oznaczone jako przeczytane."
 
 #: views.py:204
 #, python-format
@@ -272,17 +273,17 @@ msgstr ""
 #: views.py:218
 #, python-format
 msgid "Mark the %(count)d selected messages as unread."
-msgstr ""
+msgstr "Oznacz %(count)d wybranych wiadomości  jako nieprzeczytane."
 
 #: views.py:219
 #, python-format
 msgid "Mark the message \"%(object)s\" as unread."
-msgstr ""
+msgstr "Oznacz wiadomość \"%(object)s\" jako nieprzeczytaną."
 
 #: views.py:220
 #, python-format
 msgid "Mark the %(count)d selected message as unread."
-msgstr ""
+msgstr "Oznacz %(count)d wybraną wiadomość  jako nieprzeczytaną."
 
 #: workflow_actions.py:19
 msgid "Username list"

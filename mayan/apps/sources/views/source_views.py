@@ -288,7 +288,7 @@ class SourceListView(SingleObjectListView):
 
 class SourceTestView(ExternalObjectViewMixin, ConfirmView):
     """
-    Trigger the task_source_process_document task for a given source to
+    Trigger the task_source_backend_action_execute task for a given source to
     test/debug their configuration irrespective of the schedule task setup.
     """
     external_object_permission = permission_sources_edit

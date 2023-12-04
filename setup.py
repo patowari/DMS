@@ -162,5 +162,5 @@ setup(
     scripts=['mayan/bin/mayan-edms.py'],
     url=mayan.__website__,
     version=mayan.__version__,
-    zip_safe=False,
+    zip_safe=False
 )

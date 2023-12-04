@@ -31,7 +31,13 @@ class DocumentCheckoutBusinessLogicManager(models.Manager):
                 user=user
             )
 
-            for checkout in user_document_checkouts:
+            others_document_checkouts = AccessControlList.objects.restrict_queryset(
+                permission=permission_document_check_in_override,
+                queryset=self.exclude(user_id=user.pk, document__in=queryset),
+                user=user
+            )
+
+            for checkout in user_document_checkouts | others_document_checkouts:
                 checkout._event_actor = user
                 checkout._event_keep_attributes = ('_event_actor',)
                 checkout.delete()

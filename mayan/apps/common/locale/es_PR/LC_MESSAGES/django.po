@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -58,31 +58,35 @@ msgstr "Documentación"
 msgid "Forum"
 msgstr "Foro"
 
-#: links.py:49 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr "Base de conocimientos"
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "Licencia"
 
-#: links.py:54
+#: links.py:58
 msgid "Copy"
 msgstr "Copiar"
 
-#: links.py:58
+#: links.py:62
 msgid "Setup"
 msgstr "Configuración"
 
-#: links.py:61
+#: links.py:65
 msgid "Source code"
 msgstr "Código fuente"
 
-#: links.py:65
+#: links.py:69
 msgid "Online store"
 msgstr "Tienda en línea"
 
-#: links.py:69
+#: links.py:73
 msgid "Get support"
 msgstr "Obtener apoyo"
 
-#: links.py:73 views.py:134
+#: links.py:77 views.py:134
 msgid "Tools"
 msgstr "Herramientas"
 

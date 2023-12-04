@@ -16,10 +16,10 @@ class APIMessageDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     lookup_url_kwarg = 'message_id'
     mayan_object_permission_map = {
-       'GET': permission_message_view,
-       'PUT': permission_message_edit,
-       'PATCH': permission_message_edit,
-       'DELETE': permission_message_delete
+        'GET': permission_message_view,
+        'PUT': permission_message_edit,
+        'PATCH': permission_message_edit,
+        'DELETE': permission_message_delete
     }
     serializer_class = MessageSerializer
 
@@ -37,12 +37,8 @@ class APIMessageListView(generics.ListCreateAPIView):
     get: Returns a list of all the messages.
     post: Create a new message.
     """
-    mayan_object_permission_map = {
-       'GET': permission_message_view
-    }
-    mayan_view_permission_map = {
-       'POST': permission_message_create
-    }
+    mayan_object_permission_map = {'GET': permission_message_view}
+    mayan_view_permission_map = {'POST': permission_message_create}
     ordering_fields = ('date_time', 'id')
     serializer_class = MessageSerializer
 

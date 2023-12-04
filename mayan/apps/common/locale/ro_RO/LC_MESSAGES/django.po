@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:35+0000\n"
+"POT-Creation-Date: 2023-10-25 16:03+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -59,31 +59,35 @@ msgstr "Documentație"
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:49 views.py:53
+#: links.py:50
+msgid "Knowledge base"
+msgstr ""
+
+#: links.py:53 views.py:53
 msgid "License"
 msgstr "Licenţă"
 
-#: links.py:54
+#: links.py:58
 msgid "Copy"
 msgstr "Copiere"
 
-#: links.py:58
+#: links.py:62
 msgid "Setup"
 msgstr "Configurare"
 
-#: links.py:61
+#: links.py:65
 msgid "Source code"
 msgstr "Cod sursă"
 
-#: links.py:65
+#: links.py:69
 msgid "Online store"
 msgstr "Magazin online"
 
-#: links.py:69
+#: links.py:73
 msgid "Get support"
 msgstr "Obțineți sprijin"
 
-#: links.py:73 views.py:134
+#: links.py:77 views.py:134
 msgid "Tools"
 msgstr "Unelte"
 

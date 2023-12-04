@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2023-10-13 03:51+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -43,7 +43,7 @@ msgstr "Letzte Aktualisierung"
 
 #: classes.py:45
 msgid "Statistics namespace"
-msgstr ""
+msgstr "Statistiken Namensraum"
 
 #: classes.py:162
 msgid "Never"
@@ -51,15 +51,15 @@ msgstr "Niemals"
 
 #: classes.py:207
 msgid "Doughnut chart"
-msgstr ""
+msgstr "Ringdiagramm"
 
 #: classes.py:212
 msgid "Line chart"
-msgstr ""
+msgstr "Liniendiagramm"
 
 #: classes.py:217
 msgid "Pie chart"
-msgstr ""
+msgstr "Kreisdiagramm"
 
 #: links.py:15
 msgid "Namespace details"
@@ -99,7 +99,7 @@ msgstr "Statistik Ergebnisse"
 
 #: permissions.py:10
 msgid "View statistics"
-msgstr "Statsitiken anzeigen."
+msgstr "Statsitiken anzeigen"
 
 #: queues.py:12
 msgid "Execute statistic"
@@ -121,11 +121,11 @@ msgstr "Statistik \"%s\" nicht gefunden."
 
 #: views.py:24
 msgid "Statistics namespaces group statistics into logical units. "
-msgstr ""
+msgstr "Statistik-Namensräume gruppieren Statistiken in logische Einheiten."
 
 #: views.py:26
 msgid "No statistic namespaces available"
-msgstr ""
+msgstr "Keine Statistik-Namensräume verfügbar"
 
 #: views.py:27
 msgid "Statistics namespaces"
@@ -134,10 +134,12 @@ msgstr "Statistiken Namensräume"
 #: views.py:50
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
+"Statistiken sind metrische und Diagrammdarstellungen von existierenden "
+"Daten."
 
 #: views.py:53
 msgid "No statistic available"
-msgstr ""
+msgstr "Keine Statistiken verfügbar"
 
 #: views.py:55
 #, python-format

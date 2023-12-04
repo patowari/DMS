@@ -6,8 +6,9 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
 from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
+from mayan.apps.sources.literals import SOURCE_ACTION_EXECUTE_TASK_PATH
 
-from .literals import DEFAULT_PERIOD_INTERVAL
+from .literals import DEFAULT_PERIOD_INTERVAL, SOURCE_PERIODIC_ACTION_NAME
 
 logger = logging.getLogger(name=__name__)
 
@@ -101,12 +102,13 @@ class SourceBackendMixinPeriodic:
         )
 
         PeriodicTask.objects.create(
-            interval=interval_instance,
-            kwargs=json.dumps(
-                obj={'source_id': self.model_instance_id}
-            ),
-            name=self.get_periodic_task_name(),
-            task='mayan.apps.sources.tasks.task_source_process_document'
+            interval=interval_instance, kwargs=json.dumps(
+                obj={
+                    'action_name': SOURCE_PERIODIC_ACTION_NAME,
+                    'source_id': self.model_instance_id
+                }
+            ), name=self.get_periodic_task_name(),
+            task=SOURCE_ACTION_EXECUTE_TASK_PATH
         )
 
     def delete(self):
@@ -135,6 +137,9 @@ class SourceBackendMixinPeriodic:
                 'Tried to delete non existent periodic task "%s"',
                 self.get_periodic_task_name(pk=pk)
             )
+
+    def get_allow_action_execute(self, action, action_execute_kwargs=None):
+        return self.get_model_instance().enabled or action_execute_kwargs.get('dry_run', False)
 
     def get_document_type(self):
         DocumentType = apps.get_model(

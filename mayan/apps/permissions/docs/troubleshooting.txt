@@ -3,34 +3,18 @@ Troubleshooting
 ===============
 
 
-Error message: ``Unknown or obsolete permission...``
-====================================================
+.. include::  ../../partials/kb_migration.txt
 
-There are two possible causes for this error message.
+.. note::
 
-The first is that an upgrade did not complete successfully and previous
-permission identifiers were not updated.
+    Knowledge Base content
 
-The second is that an upgrade did finish successfully but some permissions
-were made obsolete and removed.
+    Articles:
 
-To fix the issue use the following management command:
+    - The permissions system
 
-For Mayan EDMS version 4.2 or earlier:
+    Troubleshooting:
 
-.. code-block:: console
-
-    docker-compose run app run_command purgepermissions
-
-For Mayan EDMS version 4.3 or later:
-
-.. code-block:: console
-
-    docker-compose run app run_command permissions_purge
-
-
-Error message: ``Unknown or obsolete permission namespace...``
-==============================================================
-
-This error shares the same root cause as the error above and the solution
-is the same too.
+    - Error message: “Unknown or obsolete permission namespace…”
+    - Error message: “Unknown or obsolete permission…”
+    - At upload, users can access tags, cabinets, and metadata they for which they don’t have permissions
