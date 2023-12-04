@@ -56,6 +56,7 @@
 
 - Move file metadata queue to worker D.
 - Remove sorting from the all document view.
+- Update minimum and recommended requirements.
 
 4.5.7 (2023-10-25)
 ==================

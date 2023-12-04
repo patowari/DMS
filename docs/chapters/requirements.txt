@@ -9,12 +9,9 @@ Requirements
 Minimum
 =======
 
-All deployment methods
-----------------------
-
-- RAM: 2 GB.
-- CPU: dual core, 32 bit, 1 GHz, Intel Core 2 Duo or similar.
-- Database manager: PostgreSQL 9.6.
+- RAM: 4 GB.
+- CPU: dual core, 64 bit, 1 GHz, Intel Core 2 Duo or similar.
+- Database manager: PostgreSQL 13.11.
 - Platform: GNU/Linux distributions or operating systems that support mature
   virtualization and mature Docker with Docker Compose support.
 
@@ -37,26 +34,17 @@ All deployment methods
    For best results use Docker on a well supported GNU/Linux distribution.
 
 
-Direct deployment method
-------------------------
-
-
-- |DEFAULT_OS_DISTRIBUTION| GNU/Linux or a derivative distribution.
-- Python version 3.9.
-
-
 Recommended
 ===========
 
 
-All sizes
----------
+Docker Compose
+--------------
 
-- RAM: 4 GB or more.
-- CPU: 64 bit, 4 cores or more, 2 GHz or faster, third generation of the
+- RAM: 16 GB or more.
+- CPU: 64 bit, 8 cores or more, 2 GHz or faster, third generation of the
   Intel Core processors (Core i7, i5, i3) "IvyBridge" or better.
 - Storage: solid state drive.
-- Database manager: PostgreSQL 13 or later.
 
 
 Enterprise
