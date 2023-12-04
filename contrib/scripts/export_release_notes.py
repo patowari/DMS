@@ -34,12 +34,12 @@ class ReleaseNoteExporter:
             if element.attrib.get('id') not in ignore_ids_list:
 
                 if element.tag == 'div':
-                    if not element.attrib.get('id') in ignore_ids_list:
+                    if element.attrib.get('id') not in ignore_ids_list:
                         result.extend(
                             ReleaseNoteExporter.filter_elements(tree=element)
                         )
                 else:
-                    if not element.attrib.get('id') in ignore_ids_list:
+                    if element.attrib.get('id') not in ignore_ids_list:
                         result.append(
                             etree.tostring(element).replace(b'\n', b' ')
                         )
