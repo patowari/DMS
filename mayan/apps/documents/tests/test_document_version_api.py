@@ -69,7 +69,7 @@ class DocumentVersionModificationAPIViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -78,7 +78,9 @@ class DocumentVersionModificationAPIViewTestCase(
             events[0].verb, event_document_version_page_deleted.id
         )
 
-        self.assertEqual(events[1].action_object, self._test_document_version)
+        self.assertEqual(
+            events[1].action_object, self._test_document_version
+        )
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(
             events[1].target, self._test_document_version.pages[0]
@@ -86,7 +88,10 @@ class DocumentVersionModificationAPIViewTestCase(
         self.assertEqual(
             events[1].verb, event_document_version_page_created.id
         )
-        self.assertEqual(events[2].action_object, self._test_document_version)
+
+        self.assertEqual(
+            events[2].action_object, self._test_document_version
+        )
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(
             events[2].target, self._test_document_version.pages[1]
@@ -94,6 +99,11 @@ class DocumentVersionModificationAPIViewTestCase(
         self.assertEqual(
             events[2].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[3].action_object, self._test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, self._test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     def test_trashed_document_version_action_page_append_api_view_with_access(self):
         self._upload_test_document_file(
@@ -175,7 +185,7 @@ class DocumentVersionModificationAPIViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -191,7 +201,9 @@ class DocumentVersionModificationAPIViewTestCase(
             events[1].verb, event_document_version_page_deleted.id
         )
 
-        self.assertEqual(events[2].action_object, self._test_document_version)
+        self.assertEqual(
+            events[2].action_object, self._test_document_version
+        )
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(
             events[2].target, self._test_document_version.pages[0]
@@ -199,6 +211,11 @@ class DocumentVersionModificationAPIViewTestCase(
         self.assertEqual(
             events[2].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[3].action_object, self._test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, self._test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     def test_trashed_document_version_action_page_reset_api_view_with_access(self):
         self._upload_test_document_file(

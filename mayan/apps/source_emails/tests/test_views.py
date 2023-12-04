@@ -2,7 +2,7 @@ from mayan.apps.credentials.permissions import permission_credential_use
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
+    event_document_version_edited, event_document_version_page_created
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
@@ -126,7 +126,7 @@ class EmailSourceBackendViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -159,6 +159,11 @@ class EmailSourceBackendViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
 
 class IMAPEmailSourceBackendViewTestCase(
@@ -268,7 +273,7 @@ class IMAPEmailSourceBackendViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -301,6 +306,11 @@ class IMAPEmailSourceBackendViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
 
 class POP3EmailSourceBackendViewTestCase(
@@ -410,7 +420,7 @@ class POP3EmailSourceBackendViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -443,3 +453,8 @@ class POP3EmailSourceBackendViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)

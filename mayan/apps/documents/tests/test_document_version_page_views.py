@@ -8,7 +8,8 @@ from mayan.apps.converter.tests.mixins import LayerTestMixin
 from mayan.apps.documents.tests.literals import TEST_FILE_MULTI_PAGE_TIFF_FILENAME
 
 from ..events import (
-    event_document_version_page_created, event_document_version_page_deleted
+    event_document_version_edited, event_document_version_page_created,
+    event_document_version_page_deleted
 )
 from ..permissions import (
     permission_document_version_edit, permission_document_version_view
@@ -433,7 +434,7 @@ class DocumentVersionPageRemapViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 2)
+        self.assertEqual(events.count(), 3)
 
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -450,6 +451,11 @@ class DocumentVersionPageRemapViewTestCase(
         self.assertEqual(
             events[1].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[2].action_object, self._test_document)
+        self.assertEqual(events[2].actor, self._test_case_user)
+        self.assertEqual(events[2].target, self._test_document_version)
+        self.assertEqual(events[2].verb, event_document_version_edited.id)
 
     def test_trashed_document_version_remap_view_with_access(self):
         self.grant_access(

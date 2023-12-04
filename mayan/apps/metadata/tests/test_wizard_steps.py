@@ -1,7 +1,7 @@
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
+    event_document_version_edited, event_document_version_page_created
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_create
@@ -62,7 +62,7 @@ class DocumentUploadMetadataSpecialCharacterTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 7)
+        self.assertEqual(events.count(), 8)
 
         test_metadata = Document.objects.first()
         test_metadata_file = test_metadata.file_latest
@@ -105,6 +105,11 @@ class DocumentUploadMetadataSpecialCharacterTestCase(
         self.assertEqual(
             events[6].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[7].action_object, test_metadata)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_metadata_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
     def test_ampersand_value(self):
         self.grant_access(
@@ -138,7 +143,7 @@ class DocumentUploadMetadataSpecialCharacterTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 7)
+        self.assertEqual(events.count(), 8)
 
         test_metadata = Document.objects.first()
         test_metadata_file = test_metadata.file_latest
@@ -181,6 +186,11 @@ class DocumentUploadMetadataSpecialCharacterTestCase(
         self.assertEqual(
             events[6].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[7].action_object, test_metadata)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_metadata_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
 
 class DocumentUploadMetadataViewTestCase(
@@ -223,7 +233,7 @@ class DocumentUploadMetadataViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -256,6 +266,11 @@ class DocumentUploadMetadataViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_post_view_with_metadata_type_single_access_source_access(self):
         self.grant_access(
@@ -287,7 +302,7 @@ class DocumentUploadMetadataViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -320,6 +335,11 @@ class DocumentUploadMetadataViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_post_view_with_document_type_access_metadata_single_access_source_access(self):
         self.grant_access(
@@ -355,7 +375,7 @@ class DocumentUploadMetadataViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 7)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -403,6 +423,11 @@ class DocumentUploadMetadataViewTestCase(
             events[6].verb, event_document_version_page_created.id
         )
 
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
+
     def test_post_view_with_document_type_access_metadata_multiple_access_source_access(self):
         self.grant_access(
             obj=self._test_document_type,
@@ -441,7 +466,7 @@ class DocumentUploadMetadataViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 9)
+        self.assertEqual(events.count(), 10)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -502,6 +527,11 @@ class DocumentUploadMetadataViewTestCase(
         self.assertEqual(
             events[8].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[9].action_object, test_document)
+        self.assertEqual(events[9].actor, self._test_case_user)
+        self.assertEqual(events[9].target, test_document_version)
+        self.assertEqual(events[9].verb, event_document_version_edited.id)
 
 
 class DocumentUploadMetadataRequiredViewTestCase(
@@ -546,7 +576,7 @@ class DocumentUploadMetadataRequiredViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -579,6 +609,11 @@ class DocumentUploadMetadataRequiredViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_post_view_with_metadata_type_single_access_source_access(self):
         self.grant_access(
@@ -610,7 +645,7 @@ class DocumentUploadMetadataRequiredViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -643,6 +678,11 @@ class DocumentUploadMetadataRequiredViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_post_view_with_document_type_access_metadata_single_access_source_access(self):
         self.grant_access(
@@ -678,7 +718,7 @@ class DocumentUploadMetadataRequiredViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 7)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -726,6 +766,11 @@ class DocumentUploadMetadataRequiredViewTestCase(
             events[6].verb, event_document_version_page_created.id
         )
 
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
+
     def test_post_view_with_document_type_access_metadata_multiple_access_source_access(self):
         self.grant_access(
             obj=self._test_document_type,
@@ -764,7 +809,7 @@ class DocumentUploadMetadataRequiredViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 9)
+        self.assertEqual(events.count(), 10)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -825,6 +870,11 @@ class DocumentUploadMetadataRequiredViewTestCase(
         self.assertEqual(
             events[8].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[9].action_object, test_document)
+        self.assertEqual(events[9].actor, self._test_case_user)
+        self.assertEqual(events[9].target, test_document_version)
+        self.assertEqual(events[9].verb, event_document_version_edited.id)
 
 
 class DocumentUploadWizardMetadataStepTestCase(

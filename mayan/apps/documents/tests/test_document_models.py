@@ -1,7 +1,8 @@
 from ..events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_type_changed,
-    event_document_version_created, event_document_version_page_created
+    event_document_version_created, event_document_version_edited,
+    event_document_version_page_created
 )
 from ..models.document_models import Document
 from ..models.document_type_models import DocumentType
@@ -186,7 +187,7 @@ class DocumentTestCase(GenericDocumentTestCase):
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         # Document created
 
@@ -230,6 +231,11 @@ class DocumentTestCase(GenericDocumentTestCase):
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, self._test_document)
+        self.assertEqual(events[5].actor, self._test_document_version)
+        self.assertEqual(events[5].target, self._test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_method_get_absolute_url(self):
         self._create_test_document_stub()

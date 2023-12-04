@@ -1,6 +1,6 @@
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
-    event_document_version_created
+    event_document_version_edited, event_document_version_created
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
@@ -96,7 +96,7 @@ class PeriodicSourceViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -116,6 +116,11 @@ class PeriodicSourceViewTestCase(
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     def test_source_test_disabled_post_view_with_access(self):
         self._silence_logger(name='mayan.apps.converter.backends')
@@ -137,7 +142,7 @@ class PeriodicSourceViewTestCase(
         self.assertEqual(Document.objects.count(), document_count + 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -157,3 +162,8 @@ class PeriodicSourceViewTestCase(
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)

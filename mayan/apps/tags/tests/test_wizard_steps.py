@@ -1,7 +1,7 @@
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_page_created
+    event_document_version_edited, event_document_version_page_created
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_create
@@ -49,7 +49,7 @@ class TaggedDocumentUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -82,6 +82,11 @@ class TaggedDocumentUploadViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_post_view_tag_single_access_source_access(self):
         self.grant_access(
@@ -108,7 +113,7 @@ class TaggedDocumentUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -141,6 +146,11 @@ class TaggedDocumentUploadViewTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_post_view_document_type_access_tag_single_access_source_access(self):
         self.grant_access(
@@ -170,7 +180,7 @@ class TaggedDocumentUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 7)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -211,6 +221,11 @@ class TaggedDocumentUploadViewTestCase(
             events[5].verb, event_document_version_page_created.id
         )
 
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version)
+        self.assertEqual(events[6].verb, event_document_version_edited.id)
+
     def test_post_view_document_type_access_tag_multiple_access_source_access(self):
         self.grant_access(
             obj=self._test_document_type,
@@ -242,7 +257,7 @@ class TaggedDocumentUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 7)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -289,6 +304,11 @@ class TaggedDocumentUploadViewTestCase(
         self.assertEqual(
             events[6].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
 
 class TagStepDocumentUploadWizardTestCase(

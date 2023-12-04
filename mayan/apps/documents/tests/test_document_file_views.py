@@ -11,8 +11,8 @@ from mayan.apps.file_caching.tests.mixins import CachePartitionViewTestMixin
 
 from ..events import (
     event_document_file_deleted, event_document_file_edited,
-    event_document_version_created, event_document_version_page_created,
-    event_document_version_page_deleted
+    event_document_version_created, event_document_version_edited,
+    event_document_version_page_created, event_document_version_page_deleted
 )
 from ..permissions import (
     permission_document_file_delete, permission_document_file_edit,
@@ -101,7 +101,7 @@ class DocumentFileIntrospectViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -119,6 +119,11 @@ class DocumentFileIntrospectViewTestCase(
         self.assertEqual(
             events[2].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[3].action_object, self._test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, self._test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     def test_trashed_document_file_introspect_single_view_with_access(self):
         self.grant_access(
@@ -209,7 +214,7 @@ class DocumentFileIntrospectViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -227,6 +232,11 @@ class DocumentFileIntrospectViewTestCase(
         self.assertEqual(
             events[2].verb, event_document_version_page_created.id
         )
+
+        self.assertEqual(events[3].action_object, self._test_document)
+        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].target, self._test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     def test_trashed_document_file_introspect_multiple_view_with_access(self):
         self.grant_access(

@@ -2,7 +2,7 @@ from unittest import mock
 
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
-    event_document_version_created
+    event_document_version_created, event_document_version_edited
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
@@ -34,7 +34,7 @@ class SourceBackendDocumentUploadCallbackTestCase(
         self.assertEqual(mocked_source_method.call_count, 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -54,6 +54,11 @@ class SourceBackendDocumentUploadCallbackTestCase(
         self.assertEqual(events[2].actor, test_document_version)
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_version)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     @mock.patch(
         target='mayan.apps.sources.models.Source.callback_post_document_file_create'
@@ -74,7 +79,7 @@ class SourceBackendDocumentUploadCallbackTestCase(
         self.assertEqual(mocked_source_method.call_count, 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -94,6 +99,11 @@ class SourceBackendDocumentUploadCallbackTestCase(
         self.assertEqual(events[2].actor, test_document_version)
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_version)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
 
     @mock.patch(
         target='mayan.apps.sources.models.Source.callback_post_document_file_upload'
@@ -114,7 +124,7 @@ class SourceBackendDocumentUploadCallbackTestCase(
         self.assertEqual(mocked_source_method.call_count, 1)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -134,3 +144,8 @@ class SourceBackendDocumentUploadCallbackTestCase(
         self.assertEqual(events[2].actor, test_document_version)
         self.assertEqual(events[2].target, test_document_version)
         self.assertEqual(events[2].verb, event_document_version_created.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_version)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
