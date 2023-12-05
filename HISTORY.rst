@@ -109,6 +109,7 @@
   settings app.
 - Expose Django's setting named ``CSRF_USE_SESSIONS`` via the smart
   settings app.
+- Optimize document type retention policy queries.
 
 4.5.7 (2023-10-25)
 ==================
