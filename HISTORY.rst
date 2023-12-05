@@ -101,6 +101,9 @@
 - Move file metadata queue to worker D.
 - Remove sorting from the all document view.
 - Update minimum and recommended requirements.
+- Lower the severity of searching indexing problems to ``INFO``. This
+  reduces user confusion between normal messages when processing the
+  asynchronous task queue and actual coding errors.
 
 4.5.7 (2023-10-25)
 ==================
