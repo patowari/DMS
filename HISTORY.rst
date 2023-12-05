@@ -111,6 +111,8 @@
   settings app.
 - Optimize document type retention policy queries.
 - Minor optimization to the ACL calculation queries.
+- Fix search query warning when parsing dates. Default all date values the
+  timezone UTC.
 
 4.5.7 (2023-10-25)
 ==================

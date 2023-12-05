@@ -26,35 +26,45 @@ class SearchQueryTypeTestCase(BaseTestCase):
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypePartial))
+        self.assertTrue(
+            issubclass(query_type, QueryTypePartial)
+        )
 
     def test_exact(self):
         self._test_query_type_alias = QueryTypeExact.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeExact))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeExact)
+        )
 
     def test_fuzzy(self):
         self._test_query_type_alias = QueryTypeFuzzy.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeFuzzy))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeFuzzy)
+        )
 
     def test_greater_than(self):
         self._test_query_type_alias = QueryTypeGreaterThan.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeGreaterThan))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeGreaterThan)
+        )
 
     def test_greater_than_or_equal(self):
         self._test_query_type_alias = QueryTypeGreaterThanOrEqual.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeGreaterThanOrEqual))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeGreaterThanOrEqual)
+        )
 
     def test_invalid_with_default(self):
         self._test_query_type_alias = TEST_QUERY_TYPE_ALIAS_INVALID
@@ -64,7 +74,9 @@ class SearchQueryTypeTestCase(BaseTestCase):
         self.assertEqual(
             value, '{}term1'.format(TEST_QUERY_TYPE_ALIAS_INVALID)
         )
-        self.assertTrue(issubclass(query_type, QueryTypePartial))
+        self.assertTrue(
+            issubclass(query_type, QueryTypePartial)
+        )
 
     def test_invalid_with_default_unset(self):
         default_query_class = QueryType._default_klass
@@ -82,21 +94,27 @@ class SearchQueryTypeTestCase(BaseTestCase):
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeLessThan))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeLessThan)
+        )
 
     def test_less_than_or_equal(self):
         self._test_query_type_alias = QueryTypeLessThanOrEqual.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeLessThanOrEqual))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeLessThanOrEqual)
+        )
 
     def test_partial(self):
         self._test_query_type_alias = QueryTypePartial.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypePartial))
+        self.assertTrue(
+            issubclass(query_type, QueryTypePartial)
+        )
 
     def test_range(self):
         self._test_query_type_alias = QueryTypeRange.alias
@@ -105,7 +123,9 @@ class SearchQueryTypeTestCase(BaseTestCase):
         )
 
         self.assertEqual(value, 'term1..term2')
-        self.assertTrue(issubclass(query_type, QueryTypeRange))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeRange)
+        )
 
     def test_range_exclusive(self):
         self._test_query_type_alias = QueryTypeRangeExclusive.alias
@@ -114,11 +134,15 @@ class SearchQueryTypeTestCase(BaseTestCase):
         )
 
         self.assertEqual(value, 'term1..term2')
-        self.assertTrue(issubclass(query_type, QueryTypeRangeExclusive))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeRangeExclusive)
+        )
 
     def test_range_regular_expression(self):
         self._test_query_type_alias = QueryTypeRegularExpression.alias
         query_type, value = self._do_test_query_type_check()
 
         self.assertEqual(value, 'term1')
-        self.assertTrue(issubclass(query_type, QueryTypeRegularExpression))
+        self.assertTrue(
+            issubclass(query_type, QueryTypeRegularExpression)
+        )

@@ -7,6 +7,7 @@ import dateutil
 from django.utils.translation import gettext_lazy as _
 
 from .exceptions import DynamicSearchValueTransformationError
+from .value_transformation_mixins import ValueTransformationTimezoneMixin
 
 
 class ValueTransformation:
@@ -98,16 +99,21 @@ class ValueTransformationToBoolean(ValueTransformation):
                 return None
 
 
-class ValueTransformationToDateTime(ValueTransformation):
+class ValueTransformationToDateTime(
+    ValueTransformationTimezoneMixin, ValueTransformation
+):
     label = _(message='To date time')
 
-    def _execute(self):
+    def _execute_(self):
         if self.value is not None:
             try:
+                datetime_default = datetime.datetime(
+                    year=datetime.MINYEAR, month=1, day=1, hour=0,
+                    minute=0, tzinfo=datetime.timezone.utc
+                )
+
                 result = dateutil.parser.parse(
-                    default=datetime.datetime(
-                        datetime.MINYEAR, 1, 1, 0, 0
-                    ), timestr=self.value
+                    default=datetime_default, timestr=self.value
                 )
                 return result.replace(microsecond=0)
             except dateutil.parser.ParserError:
@@ -120,36 +126,46 @@ class ValueTransformationToDateTime(ValueTransformation):
             return None
 
 
-class ValueTransformationToDateTimeISOFormat(ValueTransformation):
+class ValueTransformationToDateTimeISOFormat(
+    ValueTransformationTimezoneMixin, ValueTransformation
+):
     label = _(message='Date time ISO format')
 
-    def _execute(self):
+    def _execute_(self):
         if self.value is not None:
-            return self.value.replace(microsecond=0).isoformat()
+            value = self.value.replace(microsecond=0)
+
+            return value.isoformat()
         else:
             return None
 
 
-class ValueTransformationToDateTimeSimpleFormat(ValueTransformation):
+class ValueTransformationToDateTimeSimpleFormat(
+    ValueTransformationTimezoneMixin, ValueTransformation
+):
     label = _(message='Date time simple format')
 
-    def _execute(self):
+    def _execute_(self):
         if self.value is not None:
             return self.value.strftime('%Y%m%d%H%M%S')
         else:
             return None
 
 
-class ValueTransformationToDateTimeTimestamp(ValueTransformation):
+class ValueTransformationToDateTimeTimestamp(
+    ValueTransformationTimezoneMixin, ValueTransformation
+):
     label = _(message='Date time timestamp format')
 
-    def _execute(self):
+    def _execute_(self):
         if self.value is not None:
             # ElasticSearch works with decimal seconds for exact match
             # but not for comparison (greater than, etc) matches.
             # Typecasting to integer works for all use cases for all
             # backends.
-            return int(self.value.timestamp() * 1000)
+            return int(
+                self.value.timestamp() * 1000
+            )
         else:
             return None
 
