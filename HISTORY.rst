@@ -99,7 +99,6 @@
     per model.
 
 - Move file metadata queue to worker D.
-- Remove sorting from the all document view.
 - Update minimum and recommended requirements.
 - Lower the severity of searching indexing problems to ``INFO``. This
   reduces user confusion between normal messages when processing the
