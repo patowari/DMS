@@ -5,9 +5,11 @@ from mayan.apps.smart_settings.classes import SettingCluster
 from .literals import (
     DEFAULT_ALLOWED_HOSTS, DEFAULT_APPEND_SLASH,
     DEFAULT_AUTH_PASSWORD_VALIDATORS, DEFAULT_AUTHENTICATION_BACKENDS,
-    DEFAULT_DATABASES, DEFAULT_DATA_UPLOAD_MAX_MEMORY_SIZE,
-    DEFAULT_DEFAULT_FROM_EMAIL, DEFAULT_DISALLOWED_USER_AGENTS,
-    DEFAULT_EMAIL_BACKEND, DEFAULT_EMAIL_HOST, DEFAULT_EMAIL_HOST_PASSWORD,
+    DEFAULT_CSRF_COOKIE_SECURE, DEFAULT_CSRF_TRUSTED_ORIGINS,
+    DEFAULT_CSRF_USE_SESSIONS, DEFAULT_DATABASES,
+    DEFAULT_DATA_UPLOAD_MAX_MEMORY_SIZE, DEFAULT_DEFAULT_FROM_EMAIL,
+    DEFAULT_DISALLOWED_USER_AGENTS, DEFAULT_EMAIL_BACKEND,
+    DEFAULT_EMAIL_HOST, DEFAULT_EMAIL_HOST_PASSWORD,
     DEFAULT_EMAIL_HOST_USER, DEFAULT_EMAIL_PORT, DEFAULT_EMAIL_TIMEOUT,
     DEFAULT_EMAIL_USE_SSL, DEFAULT_EMAIL_USE_TLS,
     DEFAULT_FILE_UPLOAD_MAX_MEMORY_SIZE, DEFAULT_LOGIN_URL,
@@ -67,6 +69,31 @@ setting_django_authentication_backends = setting_namespace.do_setting_add(
     global_name='AUTHENTICATION_BACKENDS', help_text=_(
         'A list of authentication backend classes (as strings) to use when '
         'attempting to authenticate a user.'
+    )
+)
+setting_django_csrf_cookie_secure = setting_namespace.do_setting_add(
+    default=DEFAULT_CSRF_COOKIE_SECURE, global_name='CSRF_COOKIE_SECURE',
+    help_text=_(
+        'Whether to use a secure cookie for the CSRF cookie. '
+        'If this is set to True, the cookie will be marked as "secure", '
+        'which means browsers may ensure that the cookie is only sent '
+        'with an HTTPS connection. '
+        'https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-CSRF_COOKIE_SECURE'
+    )
+)
+setting_django_csrf_trusted_origins = setting_namespace.do_setting_add(
+    default=DEFAULT_CSRF_TRUSTED_ORIGINS, global_name='CSRF_TRUSTED_ORIGINS',
+    help_text=_(
+        'A list of trusted origins for unsafe requests (e.g. POST). '
+        'https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-CSRF_TRUSTED_ORIGINS'
+    )
+)
+setting_django_csrf_use_sessions = setting_namespace.do_setting_add(
+    default=DEFAULT_CSRF_USE_SESSIONS, global_name='CSRF_USE_SESSIONS',
+    help_text=_(
+        'Whether to store the CSRF token in the user\'s session '
+        'instead of in a cookie. '
+        'https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-CSRF_USE_SESSIONS'
     )
 )
 setting_django_databases = setting_namespace.do_setting_add(

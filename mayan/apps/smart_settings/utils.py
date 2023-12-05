@@ -361,6 +361,27 @@ SettingNamespaceSingleton.register_setting(
     klass=BaseSetting, name='AUTHENTICATION_BACKENDS'
 )
 SettingNamespaceSingleton.register_setting(
+    klass=BaseSetting,
+    kwargs={
+        'has_default': True,
+        'default_value': False
+    }, name='CSRF_COOKIE_SECURE'
+)
+SettingNamespaceSingleton.register_setting(
+    klass=BaseSetting,
+    kwargs={
+        'has_default': True,
+        'default_value': []
+    }, name='CSRF_TRUSTED_ORIGINS'
+)
+SettingNamespaceSingleton.register_setting(
+    klass=BaseSetting,
+    kwargs={
+        'has_default': True,
+        'default_value': False
+    }, name='CSRF_USE_SESSIONS'
+)
+SettingNamespaceSingleton.register_setting(
     name='DATA_UPLOAD_MAX_MEMORY_SIZE', klass=BaseSetting,
 )
 SettingNamespaceSingleton.register_setting(

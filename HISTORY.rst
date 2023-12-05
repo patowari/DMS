@@ -103,6 +103,12 @@
 - Lower the severity of searching indexing problems to ``INFO``. This
   reduces user confusion between normal messages when processing the
   asynchronous task queue and actual coding errors.
+- Expose Django's setting named ``CSRF_TRUSTED_ORIGINS`` via the smart
+  settings app.
+- Expose Django's setting named ``CSRF_COOKIE_SECURE`` via the smart
+  settings app.
+- Expose Django's setting named ``CSRF_USE_SESSIONS`` via the smart
+  settings app.
 
 4.5.7 (2023-10-25)
 ==================
