@@ -97,7 +97,7 @@ class ClientBackend(BaseBackend):
 
             urlpatterns += (
                 re_path(
-                    regex=r'^{}'.format(top_url), view=include(
+                    route=r'^{}'.format(top_url), view=include(
                         backend_instance.get_url_patterns()
                     )
                 ),
