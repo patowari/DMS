@@ -1,6 +1,7 @@
 import logging
 
 from django.apps import apps
+from django.core.exceptions import ObjectDoesNotExist
 
 from mayan.apps.lock_manager.exceptions import LockError
 from mayan.celery import app
@@ -35,6 +36,13 @@ def task_deindex_instance(self, app_label, model_name, object_id):
         SearchBackend.get_instance().deindex_instance(instance=instance)
     except (DynamicSearchRetry, LockError) as exception:
         raise self.retry(exc=exception)
+    except ObjectDoesNotExist as exception:
+        # Object was deleted before it could be deindexed.
+        logger.info(
+            str(
+                exception
+            )
+        )
 
     logger.info('Finished')
 
@@ -70,6 +78,13 @@ def task_index_instance(
         )
     except (DynamicSearchRetry, LockError) as exception:
         raise self.retry(exc=exception)
+    except ObjectDoesNotExist as exception:
+        # Object was deleted before it could be indexed.
+        logger.info(
+            str(
+                exception
+            )
+        )
     except Exception as exception:
         kwargs = {
             'app_label': app_label,

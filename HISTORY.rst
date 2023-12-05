@@ -6,6 +6,9 @@
   upstream version calculations.
 - Add makefile target to refresh the Docker and Python module versions.
 - Ensure Tools and Setup view buttons are rendered with consistent heights.
+- Lower the severity of searching indexing problems to ``INFO``. This
+  reduces user confusion between normal messages when processing the
+  asynchronous task queue and actual coding errors.
 
 4.4.14 (2024-03-27)
 ===================
