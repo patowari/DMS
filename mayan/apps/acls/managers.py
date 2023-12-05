@@ -74,7 +74,7 @@ class AccessControlListManager(models.Manager):
                         recursive_related_reference
                     )
 
-                content_type_object_id_queryset = queryset.annotate(
+                queryset_content_type_object_id = queryset.annotate(
                     ct_fk_combination=Concat(
                         '{}{}'.format(
                             recursive_related_reference,
@@ -85,26 +85,26 @@ class AccessControlListManager(models.Manager):
                             related_field.fk_field
                         ), output_field=CharField()
                     )
-                ).values('ct_fk_combination')
+                ).only('ct_fk_combination').values('ct_fk_combination')
 
-                acl_filter = self.annotate(
+                queryset_acl_filter = self.annotate(
                     ct_fk_combination=Concat(
                         'content_type', Value('-'), 'object_id',
                         output_field=CharField()
                     )
                 ).filter(
                     permissions=stored_permission, role__groups__user=user,
-                    ct_fk_combination__in=content_type_object_id_queryset
+                    ct_fk_combination__in=queryset_content_type_object_id
                 )
 
                 if fk_field_cast:
-                    clean_acl_filter = acl_filter.annotate(
+                    clean_acl_filter = queryset_acl_filter.annotate(
                         clean_object_id=Cast(
                             'object_id', output_field=fk_field_cast()
                         )
                     ).values_list('clean_object_id')
                 else:
-                    clean_acl_filter = acl_filter.values('object_id')
+                    clean_acl_filter = queryset_acl_filter.values('object_id')
 
                 field_lookup = '{}{}__in'.format(
                     recursive_related_reference, related_field.fk_field
@@ -121,17 +121,17 @@ class AccessControlListManager(models.Manager):
                     model=related_field.related_model
                 )
                 field_lookup = '{}_id__in'.format(related_field_name)
-                acl_filter = self.filter(
+                queryset_acl_filter = self.filter(
                     content_type=content_type, permissions=stored_permission,
                     role__groups__user=user
                 ).values('object_id')
                 # Don't add empty filters otherwise the default AND operator
                 # of the Q object will return an empty queryset when reduced
                 # and filter out objects that should be in the final queryset.
-                if acl_filter:
+                if queryset_acl_filter.exists():
                     result.append(
                         Q(
-                            **{field_lookup: acl_filter}
+                            **{field_lookup: queryset_acl_filter}
                         )
                     )
 
@@ -176,13 +176,13 @@ class AccessControlListManager(models.Manager):
                 model=queryset.model
             )
             field_lookup = 'id__in'
-            acl_filter = self.filter(
+            queryset_acl_filter = self.filter(
                 content_type=content_type, permissions=stored_permission,
                 role__groups__user=user
             ).values('object_id')
             result.append(
                 Q(
-                    **{field_lookup: acl_filter}
+                    **{field_lookup: queryset_acl_filter}
                 )
             )
 
@@ -234,20 +234,20 @@ class AccessControlListManager(models.Manager):
                 content_type = ContentType.objects.get_for_model(
                     model=queryset.model
                 )
-                acl_filter = self.filter(
+                queryset_acl_filter = self.filter(
                     content_type=content_type, permissions=stored_permission,
                     role__groups__user=user
                 ).values('object_id')
 
                 # Obtain a queryset of filtered, authorized model instances.
-                acl_queryset = queryset.model._meta.default_manager.filter(
-                    id__in=acl_filter
+                queryset_acl = queryset.model._meta.default_manager.filter(
+                    id__in=queryset_acl_filter
                 ).filter(
                     **function_results['acl_filter']
                 )
 
                 if 'acl_values' in function_results:
-                    acl_queryset = acl_queryset.values(
+                    queryset_acl = queryset_acl.values(
                         *function_results['acl_values']
                     )
 
@@ -255,7 +255,9 @@ class AccessControlListManager(models.Manager):
                 # reference.
                 result.append(
                     Q(
-                        **{function_results['field_lookup']: acl_queryset}
+                        **{
+                            function_results['field_lookup']: queryset_acl
+                        }
                     )
                 )
 
@@ -280,9 +282,7 @@ class AccessControlListManager(models.Manager):
             manager = ModelPermission.get_manager(model=obj._meta.model)
             source_queryset = manager.all()
 
-        restricted_queryset = manager.none()
-        # Default relationship between permissions is OR.
-        restricted_queryset = restricted_queryset | self.restrict_queryset(
+        restricted_queryset = self.restrict_queryset(
             permission=permission, queryset=source_queryset, user=user
         )
 
@@ -323,17 +323,21 @@ class AccessControlListManager(models.Manager):
 
     def get_inherited_permissions(self, obj, role):
         # Get permission inherited from a related object's ACLs.
-        queryset = self._get_inherited_object_permissions(obj=obj, role=role)
+        queryset_permissions_inherited = self._get_inherited_object_permissions(
+            obj=obj, role=role
+        )
 
-        # Get permission granted to the role
-        queryset = queryset | role.permissions.all()
+        # Get permission granted to the role.
+        queryset_permission_total = (
+            queryset_permissions_inherited | role.permissions.all()
+        ).only('id').values('pk')
 
         # Filter the permissions to the ones that apply to the model.
-        queryset = ModelPermission.get_for_instance(
+        queryset_final = ModelPermission.get_for_instance(
             instance=obj
-        ).filter(pk__in=queryset)
+        ).filter(pk__in=queryset_permission_total)
 
-        return queryset
+        return queryset_final
 
     def _get_inherited_object_permissions(self, obj, role):
         queryset = StoredPermission.objects.none()
