@@ -23,8 +23,8 @@ class Role(ExtraDataModelMixin, RoleBusinessLogicMixin, models.Model):
     to a group using a role, are granted for the entire system.
     """
     label = models.CharField(
-        help_text=_(message='A short text describing the role.'), max_length=128,
-        unique=True, verbose_name=_(message='Label')
+        help_text=_(message='A short text describing the role.'),
+        max_length=128, unique=True, verbose_name=_(message='Label')
     )
     permissions = models.ManyToManyField(
         related_name='roles', to='StoredPermission',
@@ -72,8 +72,12 @@ class StoredPermission(StoredPermissionBusinessLogicMixin, models.Model):
     class. Allows storing a database counterpart of a permission class.
     It is used to store the permissions help by a role or in an ACL.
     """
-    namespace = models.CharField(max_length=64, verbose_name=_(message='Namespace'))
-    name = models.CharField(max_length=64, verbose_name=_(message='Name'))
+    namespace = models.CharField(
+        max_length=64, verbose_name=_(message='Namespace')
+    )
+    name = models.CharField(
+        max_length=64, verbose_name=_(message='Name')
+    )
 
     objects = StoredPermissionManager()
 
