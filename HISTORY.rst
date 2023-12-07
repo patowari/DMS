@@ -5,6 +5,8 @@
 - Code style fixes.
 - Add sanity check to ``DynamicFormBackendMixin`` to ensure form
   definition dictionaries are not copied.
+- Update the Debian Docker base image from version debian:12.1-slim to
+  debian:12.2-slim.
 
 4.5.7 (2023-10-25)
 ==================
