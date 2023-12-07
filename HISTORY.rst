@@ -10,6 +10,7 @@
 - Code style fixes.
 - Fix typos in comments, help texts, transformations labels.
 - Use right field when sorting document file pages
+- Generate markup for GitHub issues
 
 4.4.9 (2023-10-15)
 ==================
