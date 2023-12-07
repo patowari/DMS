@@ -121,3 +121,14 @@ class DjangoFileBased(MailerBackendBaseEmail):
         )
 
         return fieldsets
+
+    def get_connection_kwargs(self):
+        result = super().get_connection_kwargs()
+
+        result.update(
+            {
+                'file_path': self.kwargs['file_path']
+            }
+        )
+
+        return result

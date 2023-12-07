@@ -1,3 +1,17 @@
+4.5.8 (2023-12-07)
+==================
+- Code style fixes.
+- Add sanity check to ``DynamicFormBackendMixin`` to ensure form
+  definition dictionaries are not mangled but copied instead.
+- Update the Debian Docker base image from version debian:12.1-slim to
+  debian:12.2-slim.
+- Update Django from version 3.2.22 to 3.2.23.
+- Add missing mailing profile ``default`` field to creation and edit forms.
+- Fix Django file based mailer.
+- Replace hard coded mailer ``object_name`` with model verbose introspection.
+- Support Django series in setup generation script.
+- Update translation files.
+
 4.5.7 (2023-10-25)
 ==================
 - Fix select2 widget in the metadata edit workflow action form.

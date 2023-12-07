@@ -183,7 +183,7 @@ class DocumentVersionBusinessLogicMixin:
 
         document_file_pages = DocumentFilePage.objects.filter(
             document_file__document=self.document
-        ).order_by('document_file__timestamp', 'document_file__page_number')
+        ).order_by('document_file__timestamp', 'page_number')
 
         annotated_content_object_list = DocumentVersion.annotate_content_object_list(
             content_object_list=list(document_file_pages)

@@ -231,7 +231,7 @@ job_documentation_build:
     - key: pip-cache-4.5
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - builds/documentation
     - releases/all/major
@@ -271,7 +271,7 @@ job_documentation_push:
     - key: pip-cache-4.5
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - releases/all/major
     - releases/documentation
@@ -309,7 +309,7 @@ job_python_build:
     - key: pip-cache-4.5
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - builds/python
     - releases/all/major
@@ -352,7 +352,7 @@ job_python_push_pypi:
     - key: pip-cache-4.5
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - releases/all/major
     - releases/all/minor
@@ -395,7 +395,7 @@ job_python_push_pypi:
         - ${PIP_CACHE_DIR}
   dependencies:
     - job_python_build
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   needs:
     - job_python_build
   only:
@@ -467,7 +467,7 @@ job_sqlite_upgrade_test:
     - key: pip-cache-4.5
       paths:
         - ${PIP_CACHE_DIR}
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - releases/all/major
     - releases/all/minor
@@ -532,7 +532,7 @@ job_demo_deploy:
         - ${APT_CACHE_DIR}
   environment:
     name: demo
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - builds/docker
     - deployments/demo
@@ -574,7 +574,7 @@ job_staging_deploy:
         - ${APT_CACHE_DIR}
   environment:
     name: staging
-  image: debian:12.1-slim
+  image: debian:12.2-slim
   only:
     - builds/docker
     - deployments/staging

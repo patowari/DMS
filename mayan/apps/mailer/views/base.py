@@ -57,15 +57,22 @@ class ObjectLinkMailView(MultipleObjectFormActionView):
 
         content_type = ContentType.objects.get_for_model(model=instance)
 
+        organization_installation_url = get_organization_installation_url(
+            request=self.request
+        )
+
+        try:
+            object_name = instance._meta.model._meta.verbose_name
+        except AttributeError:
+            object_name = _('Object')
+
         kwargs = {
             'as_attachment': self.as_attachment,
             'body': form.cleaned_data['body'],
             'content_type_id': content_type.pk,
             'object_id': instance.pk,
-            'object_name': _('Document file'),
-            'organization_installation_url': get_organization_installation_url(
-                request=self.request
-            ),
+            'object_name': object_name,
+            'organization_installation_url': organization_installation_url,
             'recipient': form.cleaned_data['email'],
             'sender': self.request.user.email,
             'subject': form.cleaned_data['subject'],

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 15:30+0000\n"
+"POT-Creation-Date: 2023-12-07 04:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -60,8 +60,8 @@ msgid "Overridden"
 msgstr "Geçersiz kılındı"
 
 #: classes.py:415
-msgid "Is this settings being overridden by an environment variable?"
-msgstr "Bu ayarlar bir ortam değişkeni tarafından geçersiz kılınıyor mu?"
+msgid "Is this setting being overridden by an environment variable?"
+msgstr ""
 
 #: forms.py:28
 msgid "Enter the new setting value."
