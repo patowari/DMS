@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:07+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -157,15 +157,15 @@ msgstr "Wygaśnięcie blokady musi nastąpić w przyszłości."
 
 #: permissions.py:10
 msgid "Check in documents"
-msgstr "Odblokuj dokumenty"
+msgstr "Odblokowywanie dokumentów"
 
 #: permissions.py:13
 msgid "Forcefully check in documents"
-msgstr "Wymuś odblokowanie dokumentów"
+msgstr "Wymuszanie odblokowania dokumentów"
 
 #: permissions.py:16
 msgid "Check out documents"
-msgstr "Zablokuj dokumenty"
+msgstr "Blokada dokumentów"
 
 #: permissions.py:19
 msgid "Check out details view"
@@ -189,7 +189,7 @@ msgstr "Klucz podstawowy dokumentu do zablokowania."
 
 #: serializers.py:45
 msgid "Document ID"
-msgstr ""
+msgstr "Dokument ID"
 
 #: views.py:28
 #, python-format

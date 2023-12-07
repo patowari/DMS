@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -145,11 +145,11 @@ msgstr "Błąd szablonu %(field_name)s: %(exception)s"
 
 #: events.py:10
 msgid "Workflow instance created"
-msgstr ""
+msgstr "Obieg dokumentów utworzono instancję"
 
 #: events.py:13
 msgid "Workflow instance transitioned"
-msgstr ""
+msgstr "Obieg dokumentów wykonano przejście"
 
 #: events.py:18
 msgid "Workflow created"
@@ -706,7 +706,7 @@ msgstr ""
 
 #: permissions.py:25
 msgid "Transition workflow instances"
-msgstr ""
+msgstr "Przejście obieg dokumentów"
 
 #: permissions.py:28
 msgid "Execute workflow tools"
@@ -742,7 +742,7 @@ msgstr "Uruchom obieg dokumentów"
 
 #: search.py:13 search.py:20 search.py:27 search.py:34 search.py:41
 msgid "Document workflow transition comment"
-msgstr ""
+msgstr "Komentarz przejścia obieg dokumentów"
 
 #: serializers/workflow_instance_serializers.py:24
 msgid "Primary key of the workflow template to launch."
@@ -1000,7 +1000,7 @@ msgid ""
 "This view will show the state changes as a workflow instance is "
 "transitioned."
 msgstr ""
-"Ten widok pokaże zmiany stanu po przeniesieniu instancji obiegu dokumentów."
+"Ten widok pokaże zmiany stanu po wykonaniu przejścia obiegu dokumentów."
 
 #: views/workflow_instance_views.py:78
 msgid "There are no details for this workflow instance"

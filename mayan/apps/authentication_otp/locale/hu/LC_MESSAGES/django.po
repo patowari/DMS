@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 07:35+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -28,23 +28,23 @@ msgstr "OTP hitelesítés"
 
 #: events.py:10
 msgid "OTP disabled"
-msgstr ""
+msgstr "OTP letiltva"
 
 #: events.py:13
 msgid "OTP enabled"
-msgstr ""
+msgstr "OTP engedélyezve"
 
 #: forms.py:20
 msgid "Token is either invalid or expired."
-msgstr ""
+msgstr "A token érvénytelen vagy lejárt."
 
 #: forms.py:25
 msgid "TOTP token"
-msgstr ""
+msgstr "TOTP token"
 
 #: forms.py:86
 msgid "OTP enabled?"
-msgstr ""
+msgstr "OTP engedélyezve?"
 
 #: forms.py:87
 msgid "Yes"
@@ -59,15 +59,19 @@ msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
 msgstr ""
+"Olvassa be a QR-kódot, vagy írja be a titkot a hitelesítő eszközbe. Ne ossza"
+" meg ezt a titkot, kezelje jelszóként."
 
 #: forms.py:106 forms.py:111
 msgid "Secret"
-msgstr ""
+msgstr "Titok"
 
 #: forms.py:117
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr ""
+"Írja be a megfelelő tokent annak ellenőrzéséhez, hogy a titok helyesen lett "
+"elmentve."
 
 #: forms.py:120
 msgid "Token"
@@ -75,19 +79,19 @@ msgstr "Token"
 
 #: forms.py:155
 msgid "Token is incorrect for the specified secret."
-msgstr ""
+msgstr "A token nem megfelelő a megadott titokhoz."
 
 #: links.py:29
 msgid "OTP details"
-msgstr ""
+msgstr "OTP részletek"
 
 #: links.py:33
 msgid "Disable OTP"
-msgstr ""
+msgstr "OTP letiltása"
 
 #: links.py:37
 msgid "Enable OTP"
-msgstr ""
+msgstr "OTP engedélyezése"
 
 #: models.py:17
 msgid "User"
@@ -95,42 +99,42 @@ msgstr "Felhasználó"
 
 #: models.py:21
 msgid "16 character, base32 encoded random string."
-msgstr "16 karakter hosszú, base32 kódolású véletlenszerű karakterlánc."
+msgstr "16 karakter, base32 kódolású véletlenszerű karakterlánc."
 
 #: models.py:26
 msgid "User OTP data"
-msgstr ""
+msgstr "Felhasználói OTP adatok"
 
 #: models.py:27
 msgid "Users OTP data"
-msgstr ""
+msgstr "Felhasználók OTP adatai"
 
 #: views.py:28
 #, python-format
 msgid "One time pad details for user: %s"
-msgstr "Egyszeri idősáv a felhasználó számára: %s"
+msgstr "Egyszeri használatos kód részletei a felhasználó számára: %s"
 
 #: views.py:45
 #, python-format
 msgid "Disable one time pad for user: %s"
-msgstr "Az egyszeri idősáv letiltása a felhasználó számára: %s"
+msgstr "Az egyszer használatos kód letiltása a felhasználó számára: %s"
 
 #: views.py:56
 msgid "OTP disable successfully."
-msgstr ""
+msgstr "Az OTP letiltása sikeres volt."
 
 #: views.py:78
 msgid "OTP is already enabled."
-msgstr ""
+msgstr "Az OTP már engedélyezve van."
 
 #: views.py:94
 msgid "OTP enabled successfully."
-msgstr ""
+msgstr "Az OTP sikeresen engedélyezve."
 
 #: views.py:103
 #, python-format
 msgid "Enable one time pad for user: %s"
-msgstr "Engedélyezze az egyszeri idősávot a felhasználó számára: %s"
+msgstr "Engedélyezze az egyszer használatos kódot a felhasználó számára: %s"
 
 #: views.py:115
 msgid "OTP secret validation error."

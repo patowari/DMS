@@ -6,14 +6,15 @@
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
 # Dezső József <dejo60@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
-"Last-Translator: Dezső József <dejo60@gmail.com>, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,19 +24,19 @@ msgstr ""
 
 #: apps.py:28 events.py:6
 msgid "Locales"
-msgstr ""
+msgstr "Területi beállítások"
 
 #: events.py:10
 msgid "User locale profile edited"
-msgstr ""
+msgstr "A felhasználói területi profil szerkesztve"
 
 #: links.py:15
 msgid "Locale profile"
-msgstr ""
+msgstr "Nyelvi profil"
 
 #: links.py:20
 msgid "Edit locale profile"
-msgstr ""
+msgstr "A nyelvi profil szerkesztése"
 
 #: models.py:20
 msgid "User"
@@ -43,7 +44,7 @@ msgstr "Felhasználó"
 
 #: models.py:24
 msgid "Timezone"
-msgstr ""
+msgstr "Időzóna"
 
 #: models.py:28
 msgid "Language"
@@ -51,11 +52,11 @@ msgstr "Nyelv"
 
 #: models.py:34
 msgid "User locale profile"
-msgstr ""
+msgstr "Felhasználói területi profil"
 
 #: models.py:35
 msgid "User locale profiles"
-msgstr ""
+msgstr "Felhasználói területi beállítások"
 
 #: models.py:39
 msgid "None"
@@ -64,9 +65,9 @@ msgstr "Semmi"
 #: views.py:40
 #, python-format
 msgid "Locale profile for user: %s"
-msgstr ""
+msgstr "A felhasználó nyelvi profilja: %s"
 
 #: views.py:88
 #, python-format
 msgid "Edit locale profile for user: %s"
-msgstr ""
+msgstr "A következő felhasználó területi beállításainak szerkesztése: %s"

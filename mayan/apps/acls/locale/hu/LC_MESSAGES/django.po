@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 07:35+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -86,15 +86,15 @@ msgstr "Elégtelen jogosultság az:%s"
 
 #: model_mixins.py:23
 msgid "Permission count"
-msgstr ""
+msgstr "Engedélyek száma"
 
 #: models.py:40 serializers.py:16
 msgid "Content type"
-msgstr ""
+msgstr "Tartalom típus"
 
 #: models.py:43 workflow_actions.py:32
 msgid "Object ID"
-msgstr ""
+msgstr "Objektum azonosító"
 
 #: models.py:54
 msgid "Role to which the access is granted for the specified object."
@@ -123,35 +123,35 @@ msgstr "Hozzáférési listák megtekintése"
 
 #: serializers.py:19
 msgid "Permissions add URL"
-msgstr ""
+msgstr "Engedélyeket adó URL"
 
 #: serializers.py:39
 msgid "Permissions remove URL"
-msgstr ""
+msgstr "Engedélyeket eltávolító URL"
 
 #: serializers.py:59
 msgid "Permissions URL"
-msgstr ""
+msgstr "Engedélyek URL-je"
 
 #: serializers.py:82
 msgid "Role ID"
-msgstr ""
+msgstr "Szerepkör azonosító"
 
 #: serializers.py:85
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:118
 msgid "Primary key of the permission to add to the ACL."
-msgstr ""
+msgstr "Az ACL-hez való hozzáadáshoz szükséges engedély elsődleges kulcsa."
 
 #: serializers.py:119 serializers.py:126
 msgid "Permission ID"
-msgstr ""
+msgstr "Engedély azonosító"
 
 #: serializers.py:125
 msgid "Primary key of the permission to remove from the ACL."
-msgstr ""
+msgstr "Az ACL-ből való eltávolítási engedély elsődleges kulcsa."
 
 #: views.py:44
 #, python-format
@@ -165,16 +165,16 @@ msgstr ""
 #: views.py:59
 #, python-format
 msgid "New access control lists for: %s"
-msgstr ""
+msgstr "Új hozzáférés-vezérlési listák a következőhöz: %s"
 
 #: views.py:103
 #, python-format
 msgid "Delete ACL: %s"
-msgstr ""
+msgstr "ACL törlése: %s"
 
 #: views.py:149
 msgid "There are no ACLs for this object"
-msgstr ""
+msgstr "Ehhez az objektumhoz nincsenek ACL-ek"
 
 #: views.py:152 views.py:272
 msgid ""
@@ -182,6 +182,10 @@ msgid ""
 "access to objects in the system. ACLs allow granting a permission to a role "
 "but only for a specific object or set of objects."
 msgstr ""
+"Az ACL az Access Control List a hozzáférés-vezérlési lista rövidítése, és "
+"egy pontos módszer a rendszerben lévő objektumokhoz való felhasználói "
+"hozzáférés ellenőrzésére. Az ACL-ek lehetővé teszik, hogy egy szerepkörnek "
+"engedélyt adjunk, de csak egy adott objektumhoz vagy objektumkészlethez."
 
 #: views.py:159
 #, python-format
@@ -190,11 +194,11 @@ msgstr "Hozzáférési lista a: %s -hoz"
 
 #: views.py:168
 msgid "Granted permissions"
-msgstr "Élvezett jogosúltságok"
+msgstr "Megadott engedélyek"
 
 #: views.py:169
 msgid "Available permissions"
-msgstr "Elérhető jogosúltságok"
+msgstr "Elérhető engedélyek"
 
 #: views.py:219
 #, python-format
@@ -208,27 +212,32 @@ msgid ""
 "to be removed from the parent object's ACL or from them role via the Setup "
 "menu."
 msgstr ""
+"A letiltott jogosultságok a szülőobjektumtól öröklődnek, vagy közvetlenül a "
+"szerepkörnek vannak megadva, és nem távolíthatók el ebből a nézetből. Az "
+"öröklött jogosultságokat a szülőobjektum ACL-éből vagy a szerepkörből kell "
+"eltávolítani a Beállítás menü segítségével."
 
 #: views.py:269
 msgid "There are no ACLs"
-msgstr ""
+msgstr "Nincsenek ACL-ek"
 
 #: views.py:278
 msgid "Global access control lists"
-msgstr ""
+msgstr "Globális hozzáférés-vezérlési listák"
 
 #: workflow_actions.py:23
 msgid "Object type"
-msgstr ""
+msgstr "Objektum típusa"
 
 #: workflow_actions.py:26
 msgid "Type of the object for which the access will be modified."
-msgstr ""
+msgstr "Az objektum típusa, amelyhez a hozzáférés módosul."
 
 #: workflow_actions.py:35
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
+"Annak az objektumnak a numerikus azonosítója, amelyhez a hozzáférés módosul."
 
 #: workflow_actions.py:40 workflow_actions.py:160
 msgid "Roles"
@@ -236,25 +245,27 @@ msgstr "Szerepkörök"
 
 #: workflow_actions.py:42 workflow_actions.py:162
 msgid "Roles whose access will be modified."
-msgstr ""
+msgstr "Szerepkörök, amelyek hozzáférése módosul."
 
 #: workflow_actions.py:49 workflow_actions.py:169
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
+"Engedélyek a fent kiválasztott objektum szerepkörének "
+"megadásához/visszavonásához."
 
 #: workflow_actions.py:57
 msgid "Grant object access"
-msgstr ""
+msgstr "Objektum hozzáférés engedélyezése"
 
 #: workflow_actions.py:145
 msgid "Revoke object access"
-msgstr ""
+msgstr "Az objektum hozzáférés visszavonása"
 
 #: workflow_actions.py:177
 msgid "Grant document access"
-msgstr ""
+msgstr "Dokumentum hozzáférés engedélyezése"
 
 #: workflow_actions.py:218
 msgid "Revoke document access"
-msgstr ""
+msgstr "Dokumentum hozzáférés visszavonása"

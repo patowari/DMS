@@ -7,14 +7,15 @@
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
 # Tamás Benkovszky, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Tamás Benkovszky, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,15 +38,15 @@ msgstr "Szereplő"
 
 #: apps.py:89 apps.py:124
 msgid "Event"
-msgstr ""
+msgstr "Esemény"
 
 #: apps.py:93 apps.py:129 serializers.py:78
 msgid "Target"
-msgstr ""
+msgstr "Cél"
 
 #: apps.py:97 apps.py:133
 msgid "Action object"
-msgstr ""
+msgstr "Műveleti objektum"
 
 #: apps.py:104 forms.py:10 forms.py:67
 msgid "Namespace"
@@ -57,7 +58,7 @@ msgstr "Cimke"
 
 #: apps.py:138
 msgid "Seen"
-msgstr ""
+msgstr "Látott"
 
 #: apps.py:145
 msgid "Object"
@@ -69,11 +70,11 @@ msgstr "Esemény típus"
 
 #: classes.py:91
 msgid "Event list export to CSV"
-msgstr ""
+msgstr "Eseménylista exportálása CSV-be"
 
 #: classes.py:119
 msgid "Events exported."
-msgstr ""
+msgstr "Események exportálva."
 
 #: classes.py:121
 #, python-format
@@ -81,18 +82,20 @@ msgid ""
 "The event list has been exported and is available for download using the "
 "link: %(download_url)s or from the downloads area (%(download_list_url)s)."
 msgstr ""
+"Az eseménylistát exportáltuk, és letölthető a következő linkről: "
+"%(download_url)s vagy a letöltési területről ( %(download_list_url)s )."
 
 #: events.py:15
 msgid "Events cleared"
-msgstr ""
+msgstr "Az események törölve"
 
 #: events.py:18
 msgid "Events exported"
-msgstr ""
+msgstr "Események exportálva"
 
 #: forms.py:18 forms.py:75
 msgid "Subscription"
-msgstr ""
+msgstr "Feliratkozás"
 
 #: forms.py:20 forms.py:77
 msgid "No"
@@ -100,44 +103,44 @@ msgstr "Nem"
 
 #: forms.py:21 forms.py:78
 msgid "Subscribed"
-msgstr ""
+msgstr "Feliratkozva"
 
 #: html_widgets.py:23
 msgid "System"
-msgstr ""
+msgstr "Rendszer"
 
 #: links.py:55 links.py:100 views/clear_views.py:63
 msgid "Clear events"
-msgstr ""
+msgstr "Események törlése"
 
 #: links.py:59 links.py:107 views/export_views.py:60
 msgid "Export events"
-msgstr ""
+msgstr "Események exportálása"
 
 #: links.py:65 models.py:53 views/subscription_views.py:54
 msgid "Event subscriptions"
-msgstr ""
+msgstr "Esemény feliratkozások"
 
 #: links.py:71 models.py:113 views/subscription_views.py:169
 msgid "Object event subscriptions"
-msgstr ""
+msgstr "Objektum esemény feliratkozások"
 
 #: links.py:83
 msgid "Mark as seen"
-msgstr ""
+msgstr "Megjelölés látottként"
 
 #: links.py:87
 msgid "Mark all as seen"
-msgstr ""
+msgstr "Az összes megjelölése látottként"
 
 #: links.py:114
 msgid "Subscriptions"
-msgstr ""
+msgstr "Feliratkozások"
 
 #: literals.py:12
 #, python-format
 msgid "Unknown or obsolete event type: %s"
-msgstr ""
+msgstr "Ismeretlen vagy elavult eseménytípus: %s"
 
 #: models.py:23 serializers.py:24 serializers.py:49
 msgid "Name"
@@ -145,11 +148,11 @@ msgstr "Név"
 
 #: models.py:27
 msgid "Stored event type"
-msgstr ""
+msgstr "Tárolt eseménytípus"
 
 #: models.py:28
 msgid "Stored event types"
-msgstr ""
+msgstr "Tárolt eseménytípusok"
 
 #: models.py:42 models.py:68 models.py:101 serializers.py:103
 msgid "User"
@@ -157,67 +160,67 @@ msgstr "Felhasználó"
 
 #: models.py:52
 msgid "Event subscription"
-msgstr ""
+msgstr "Esemény feliratkozás"
 
 #: models.py:72 serializers.py:100
 msgid "Action"
-msgstr ""
+msgstr "Művelet"
 
 #: models.py:75
 msgid "Read"
-msgstr ""
+msgstr "Olvasás"
 
 #: models.py:82
 msgid "Notification"
-msgstr ""
+msgstr "Értesítés"
 
 #: models.py:83 views/notification_views.py:33
 msgid "Notifications"
-msgstr ""
+msgstr "Értesítések"
 
 #: models.py:112
 msgid "Object event subscription"
-msgstr ""
+msgstr "Objektum esemény feliratkozás"
 
 #: permissions.py:10
 msgid "Clear the events of an object"
-msgstr ""
+msgstr "Objektum eseményeinek törlése"
 
 #: permissions.py:13
 msgid "Export the events of an object"
-msgstr ""
+msgstr "Objektum eseményeinek exportálása"
 
 #: permissions.py:16
 msgid "View the events of an object"
-msgstr ""
+msgstr "Objektum eseményeinek megtekintése"
 
 #: queues.py:13
 msgid "Clear event querysets"
-msgstr ""
+msgstr "Esemény lekérdezéskészletek törlése"
 
 #: queues.py:17
 msgid "Export event querysets"
-msgstr ""
+msgstr "Esemény lekérdezéskészletek exportálása"
 
 #: serializers.py:27
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:40
 msgid "Event type namespace URL"
-msgstr ""
+msgstr "Eseménytípus névtér URL-je"
 
 #: serializers.py:43
 msgid "ID"
-msgstr ""
+msgstr "Azonosító"
 
 #: serializers.py:75
 msgid "Actor content type"
-msgstr ""
+msgstr "Szereplő tartalomtípus"
 
 #: serializers.py:81
 msgid "Target content type"
-msgstr ""
+msgstr "Cél tartalomtípus"
 
 #: serializers.py:84
 msgid "Verb"
@@ -227,121 +230,129 @@ msgstr "Ige"
 msgid ""
 "This action is not reversible. The process will be performed in the "
 "background. "
-msgstr ""
+msgstr "Ez a művelet nem visszafordítható. A folyamat a háttérben történik."
 
 #: views/clear_views.py:51
 msgid "Event list clear task queued successfully."
-msgstr ""
+msgstr "Eseménylista törlése feladat sikeresen várakozva."
 
 #: views/clear_views.py:84
 #, python-format
 msgid "Clear events of: %s"
-msgstr ""
+msgstr "A következő események törlése: %s"
 
 #: views/clear_views.py:109
 #, python-format
 msgid "Clear events of type: %s"
-msgstr ""
+msgstr "A következő típusú események törlése: %s"
 
 #: views/event_views.py:25
 msgid "Events track actions that have been performed on, to, or with objects."
 msgstr ""
+"Az események nyomon követik az objektumon, az objektumokra vagy az "
+"objektumokkal végrehajtott műveleteket."
 
 #: views/event_views.py:28
 msgid "There are no events"
-msgstr ""
+msgstr "Nincsenek események"
 
 #: views/event_views.py:49
 msgid "There are no events for this object"
-msgstr ""
+msgstr "Ehhez az objektumhoz nincsenek események"
 
 #: views/event_views.py:51
 #, python-format
 msgid "Events for: %s"
-msgstr ""
+msgstr "Események ehhez: %s"
 
 #: views/event_views.py:67
 msgid "There are no events of this type"
-msgstr ""
+msgstr "Nincsenek ilyen típusú események"
 
 #: views/event_views.py:69
 #, python-format
 msgid "Events of type: %s"
-msgstr ""
+msgstr "Események típusonként: %s"
 
 #: views/export_views.py:27
 msgid ""
 "The process will be performed in the background. The exported events will be"
 " available in the downloads area."
 msgstr ""
+"A folyamat a háttérben történik. Az exportált események elérhetők lesznek a "
+"letöltési területen."
 
 #: views/export_views.py:47
 msgid "Event list export task queued successfully."
-msgstr ""
+msgstr "Eseménylista exportálási feladat sikeresen várakozva."
 
 #: views/export_views.py:81
 #, python-format
 msgid "Export events of: %s"
-msgstr ""
+msgstr "A következő eseményeinek exportálása: %s"
 
 #: views/export_views.py:100
 #, python-format
 msgid "Export events of type: %s"
-msgstr ""
+msgstr "A következő típusú események exportálása: %s"
 
 #: views/notification_views.py:29
 msgid "Subscribe to global or object events to receive notifications."
 msgstr ""
+"Iratkozzon fel a globális vagy objektum eseményekre, hogy értesítéseket "
+"kapjon."
 
 #: views/notification_views.py:32
 msgid "There are no notifications"
-msgstr ""
+msgstr "Nincsenek értesítések"
 
 #: views/notification_views.py:45
 msgid "Mark the selected notification as read?"
-msgstr ""
+msgstr "Megjelöli olvasottként a kiválasztott értesítést?"
 
 #: views/notification_views.py:60
 msgid "Notification marked as read."
-msgstr ""
+msgstr "Értesítés olvasottként megjelölve."
 
 #: views/notification_views.py:72
 msgid "Mark all notification as read?"
-msgstr ""
+msgstr "Megjelöli az összes értesítést olvasottként?"
 
 #: views/notification_views.py:79
 msgid "All notifications marked as read."
-msgstr ""
+msgstr "Minden értesítés olvasottként megjelölve."
 
 #: views/subscription_views.py:38
 #, python-format
 msgid "Error updating event subscription; %s"
-msgstr ""
+msgstr "Hiba történt az esemény feliratkozás frissítésekor; %s"
 
 #: views/subscription_views.py:43
 msgid "Event subscriptions updated successfully"
-msgstr ""
+msgstr "Az esemény feliratkozások frissítése sikeresen megtörtént"
 
 #: views/subscription_views.py:117
 #, python-format
 msgid "Error updating object event subscription; %s"
-msgstr ""
+msgstr "Hiba történt az objektum esemény feliratkozásának frissítésekor; %s"
 
 #: views/subscription_views.py:123
 msgid "Object event subscriptions updated successfully"
-msgstr ""
+msgstr "Az objektum esemény feliratkozásai sikeresen frissítve"
 
 #: views/subscription_views.py:134
 #, python-format
 msgid "Event subscriptions for: %s"
-msgstr ""
+msgstr "Esemény feliratkozások: %s"
 
 #: views/subscription_views.py:164
 msgid ""
 "Subscribe to the events of an object to received notifications when those "
 "events occur."
 msgstr ""
+"Iratkozzon fel egy objektum eseményeire, hogy értesítéseket kapjon az "
+"események bekövetkeztekor."
 
 #: views/subscription_views.py:167
 msgid "There are no object event subscriptions"
-msgstr ""
+msgstr "Nincsenek objektumesemény feliratkozások"

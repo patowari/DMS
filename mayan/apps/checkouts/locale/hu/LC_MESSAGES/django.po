@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 07:35+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:41 events.py:6 links.py:33
 msgid "Checkouts"
-msgstr "Kikölcsönzések"
+msgstr "Lefoglalások"
 
 #: dashboard_widgets.py:14 views.py:185
 msgid "Checked out documents"
@@ -32,31 +32,31 @@ msgstr "Lefoglalt dokumentumok"
 
 #: events.py:10
 msgid "Document automatically checked in"
-msgstr "Dokumentum automatikusan feltöltve"
+msgstr "Dokumentum automatikusan visszaadva"
 
 #: events.py:14
 msgid "Document checked in"
-msgstr "Dokumentum feltöltve (check-in)"
+msgstr "Visszaadott dokumentum"
 
 #: events.py:17
 msgid "Document checked out"
-msgstr "Dokumentum kikölcsönözve (check-out)"
+msgstr "Lefoglalt dokumentum"
 
 #: events.py:20
 msgid "Document forcefully checked in"
-msgstr "Dokumentum felűlbíráltan feltöltve"
+msgstr "Visszaadatott dokumentum"
 
 #: exceptions.py:15
 msgid "Document not checked out."
-msgstr "Dokumentum nincs lefoglalva."
+msgstr "Nem lefoglalt dokumentum."
 
 #: exceptions.py:23
 msgid "Document already checked out."
-msgstr "Dokumentum már kikölcsönözve"
+msgstr "Dokumentum már lefoglalva"
 
 #: forms.py:26
 msgid "Document status"
-msgstr ""
+msgstr "Dokumentum állapot"
 
 #: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
 msgid "User"
@@ -72,7 +72,7 @@ msgstr "Lefoglalás lejárati ideje"
 
 #: forms.py:51
 msgid "New files allowed?"
-msgstr ""
+msgstr "Új fájlok engedélyezettek?"
 
 #: forms.py:52
 msgid "Yes"
@@ -84,39 +84,39 @@ msgstr "Nem"
 
 #: links.py:40
 msgid "Check out document"
-msgstr "Dokumentum kikölcsönzése"
+msgstr "Dokumentum lefoglalása"
 
 #: links.py:44
 msgid "Check out"
-msgstr "Kikölcsönzés"
+msgstr "Lefoglalás"
 
 #: links.py:51
 msgid "Check in document"
-msgstr "Dokumentum feltöltése"
+msgstr "Dokumentum visszaadása"
 
 #: links.py:55
 msgid "Check in"
-msgstr "Visszavitel"
+msgstr "Visszaadás"
 
 #: links.py:61
 msgid "Check in/out"
-msgstr "Feltöltés/kikölcsönzés"
+msgstr "Lefoglalás/visszaadás"
 
 #: literals.py:10
 msgid "Checked out"
-msgstr "Kikölcsönözve"
+msgstr "Lefoglalva"
 
 #: literals.py:11
 msgid "Checked in/available"
-msgstr "Feltöltve/elérhető"
+msgstr "Visszaadva/elérhető"
 
 #: model_mixins.py:14
 msgid "Checkout time and date"
-msgstr "Kikölcsönzés dátuma és ideje"
+msgstr "Lefoglalás dátuma és ideje"
 
 #: model_mixins.py:19
 msgid "Checkout expiration"
-msgstr "Kikölcsönzés lejárta"
+msgstr "Lefoglalás lejárta"
 
 #: models.py:34 serializers.py:17
 msgid "Document"
@@ -124,158 +124,158 @@ msgstr "Dokumentum"
 
 #: models.py:37
 msgid "Check out date and time"
-msgstr "Kikölcsönzés dátuma és ideje"
+msgstr "Lefoglalás dátuma és ideje"
 
 #: models.py:41
 msgid "Amount of time to hold the document checked out in minutes."
-msgstr "Dokumentum kikölcsönzött státuszban tartásának ideje percekben"
+msgstr "Dokumentum lefoglalt állapotban tartásának ideje percekben"
 
 #: models.py:42
 msgid "Check out expiration date and time"
-msgstr "Kikülcsönzés lejárati ideje"
+msgstr "Lefoglalás lejárati dátuma és ideje"
 
 #: models.py:50
 msgid "Do not allow new file of this document to be uploaded."
-msgstr ""
+msgstr "Ne engedélyezze a dokumentum új fájljának feltöltését."
 
 #: models.py:51
 msgid "Block new file upload"
-msgstr ""
+msgstr "Új fájl feltöltésének blokkolása"
 
 #: models.py:59 permissions.py:6
 msgid "Document checkout"
-msgstr "Dokumentum kikölcsönzés"
+msgstr "Dokumentum lefoglalás"
 
 #: models.py:60
 msgid "Document checkouts"
-msgstr "Dokumentumok kikölcsönzések"
+msgstr "Dokumentum lefoglalások"
 
 #: models.py:69
 msgid "Check out expiration date and time must be in the future."
-msgstr "A kikölcsönzés lejárati dátumának és idejének a jövőben kell lennie."
+msgstr "A lefoglalás lejárati dátumának és idejének a jövőben kell lennie."
 
 #: permissions.py:10
 msgid "Check in documents"
-msgstr "Dokumentumok feltöltése"
+msgstr "Dokumentumok visszaadása"
 
 #: permissions.py:13
 msgid "Forcefully check in documents"
-msgstr "Felülbírált dokumentum feltöltés"
+msgstr "Dokumentum visszaadatása"
 
 #: permissions.py:16
 msgid "Check out documents"
-msgstr "Dokumentumok kikölcsönzése"
+msgstr "Dokumentumok lefoglalása"
 
 #: permissions.py:19
 msgid "Check out details view"
-msgstr "Kikölcsönzés részletes nézete"
+msgstr "Lefoglalás részletes nézete"
 
 #: queues.py:11
 msgid "Checkouts periodic"
-msgstr "Kikölcsönzések periodikussága"
+msgstr "Lefoglalások időszaka"
 
 #: queues.py:16
 msgid "Check expired checkouts"
-msgstr "Lejárt kikölcsönzések ellenőrzése"
+msgstr "Lejárt lefoglalások ellenőrzése"
 
 #: serializers.py:26
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:44
 msgid "Primary key of the document to be checked out."
-msgstr "A kikölcsönözni kívánt dokumentum elsődleges kulcsa."
+msgstr "A lefoglalni kívánt dokumentum elsődleges kulcsa."
 
 #: serializers.py:45
 msgid "Document ID"
-msgstr ""
+msgstr "Dokumentumazonosító"
 
 #: views.py:28
 #, python-format
 msgid "Unable to check in document \"%(instance)s\"; %(exception)s"
-msgstr "A \"%(instance)s\" dokumentum nem vehető vissza; %(exception)s"
+msgstr "A \"%(instance)s\" dokumentum nem adható vissza; %(exception)s"
 
 #: views.py:32
 #, python-format
 msgid "%(count)d documents checked in successfully."
-msgstr "%(count)d dokumentum sikeresen visszavéve."
+msgstr "%(count)d dokumentum sikeresen visszaadva."
 
 #: views.py:35
 #, python-format
 msgid "Document \"%(object)s\" checked in successfully."
-msgstr "A \"%(object)s\" dokumentum sikeresen visszavéve."
+msgstr "A \"%(object)s\" dokumentum sikeresen visszaadva."
 
 #: views.py:38
 #, python-format
 msgid "%(count)d document checked in successfully."
-msgstr "%(count)d dokumentum sikeresen visszavéve."
+msgstr "%(count)d dokumentum sikeresen visszaadva."
 
 #: views.py:40
 #, python-format
 msgid "Check in %(count)d documents."
-msgstr "%(count)d dokumentum visszavétele."
+msgstr "%(count)d dokumentum visszaadása."
 
 #: views.py:41
 #, python-format
 msgid "Check in document \"%(object)s\"."
-msgstr "\"%(object)s\" dokumentum visszavétele."
+msgstr "\"%(object)s\" dokumentum visszaadása."
 
 #: views.py:42
 #, python-format
 msgid "Check in %(count)d document."
-msgstr "%(count)d dokumentum visszavétele."
+msgstr "%(count)d dokumentum visszaadása."
 
 #: views.py:95
 #, python-format
 msgid "Unable to checkout document \"%(instance)s\"; %(exception)s"
-msgstr "Nem lehet kikölcsönözni a \"%(instance)s\" dokumentumot; %(exception)s"
+msgstr "Nem lehet lefoglalni a \"%(instance)s\" dokumentumot; %(exception)s"
 
 #: views.py:102
 #, python-format
 msgid "%(count)d documents checked out successfully."
-msgstr "%(count)d dokumentum sikeresen kikölcsönözve."
+msgstr "%(count)d dokumentum sikeresen lefoglalva."
 
 #: views.py:105
 #, python-format
 msgid "Document \"%(object)s\" checked out successfully."
-msgstr "A \"%(object)s\" dokumentum sikeresen kikölcsönözve."
+msgstr "A \"%(object)s\" dokumentum sikeresen lefoglalva."
 
 #: views.py:108
 #, python-format
 msgid "%(count)d document checked out successfully."
-msgstr "%(count)d dokumentum sikeresen kikölcsönözve."
+msgstr "%(count)d dokumentum sikeresen lefoglalva."
 
 #: views.py:110
 #, python-format
 msgid "Checkout %(count)d documents."
-msgstr "%(count)d dokumentum kikölcsönzése."
+msgstr "%(count)d dokumentum lefoglalása."
 
 #: views.py:111
 #, python-format
 msgid "Checkout document \"%(object)s\"."
-msgstr "\"%(object)s\" dokumentum kikölcsönzése."
+msgstr "\"%(object)s\" dokumentum lefoglalása."
 
 #: views.py:112
 #, python-format
 msgid "Checkout %(count)d document."
-msgstr "%(count)d dokumentum kikölcsönzése."
+msgstr "%(count)d dokumentum lefoglalása."
 
 #: views.py:160
 #, python-format
 msgid "Check out details for document: %s"
-msgstr "Dokumentum kikölcsönzés részletei: %s"
+msgstr "Dokumentum lefoglalás részletei: %s"
 
 #: views.py:181
 msgid ""
 "Checking out a document, blocks certain operations for a predetermined "
 "amount of time."
 msgstr ""
-"Egy dokumentum kikölcsönzése bizonyos műveleteket blokkol egy előre "
+"Egy dokumentum lefoglalása bizonyos műveleteket blokkol egy előre "
 "meghatározott ideig."
 
 #: views.py:184
 msgid "No documents have been checked out"
-msgstr "Nincsenek dokumentumok kikölcsönözve"
+msgstr "Nincsenek dokumentumok lefoglalva"
 
 #: widgets.py:20
 msgid "Amount"

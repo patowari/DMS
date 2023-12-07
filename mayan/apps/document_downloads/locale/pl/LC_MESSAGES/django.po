@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6
 msgid "Document downloads"
-msgstr ""
+msgstr "Pobieranie dokumenów"
 
 #: classes.py:42
 msgid "Document_file_bundle.zip"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: events.py:6
 msgid "Documents downloads"
-msgstr ""
+msgstr "Pobieranie dokumentów"
 
 #: events.py:10
 msgid "Document file downloaded"
@@ -79,7 +79,7 @@ msgstr "Pliki dokumentów gotowe do pobrania."
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr "Pobierz pliki dokumentów"
+msgstr "Pobieranie plików dokumentów"
 
 #: queues.py:7
 msgid "Generate a compressed document file bundle"

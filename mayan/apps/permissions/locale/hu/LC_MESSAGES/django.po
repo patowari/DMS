@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,23 +27,23 @@ msgstr "Engedélyek"
 
 #: apps.py:106 model_mixins.py:35
 msgid "Group count"
-msgstr ""
+msgstr "Csoportok száma"
 
 #: classes.py:66
 msgid "Insufficient permissions."
-msgstr "Elégtelen jogosúltság"
+msgstr "Elégtelen engedélyek"
 
 #: dashboard_widgets.py:13
 msgid "Total roles"
-msgstr ""
+msgstr "Összes szerepkör"
 
 #: events.py:10
 msgid "Role created"
-msgstr ""
+msgstr "A szerepkör létrejött"
 
 #: events.py:13
 msgid "Role edited"
-msgstr ""
+msgstr "Szerepkör szerkesztve"
 
 #: links.py:20 links.py:46 models.py:42 views.py:111
 msgid "Roles"
@@ -70,21 +71,21 @@ msgstr "Szerepkör jogok"
 
 #: model_mixins.py:43
 msgid "Permission count"
-msgstr ""
+msgstr "Engedélyek száma"
 
 #: model_mixins.py:88
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr ""
+msgstr "Ismeretlen vagy elavult engedély: %s"
 
 #: model_mixins.py:100
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr ""
+msgstr "Ismeretlen vagy elavult engedély névtér: %s"
 
 #: models.py:26
 msgid "A short text describing the role."
-msgstr ""
+msgstr "Rövid szöveg a szerepkörről."
 
 #: models.py:27 search.py:14 serializers.py:20
 msgid "Label"
@@ -128,107 +129,108 @@ msgstr "Csoportnév"
 
 #: serializers.py:17
 msgid "Primary key"
-msgstr ""
+msgstr "Elsődleges kulcs"
 
 #: serializers.py:36
 msgid "Primary key of the group to add to the role."
-msgstr ""
+msgstr "A csoport elsődleges kulcsa a szerepkörhöz."
 
 #: serializers.py:37 serializers.py:45
 msgid "Group ID"
-msgstr ""
+msgstr "Csoportazonosító"
 
 #: serializers.py:44
 msgid "Primary key of the group to remove from the role."
-msgstr ""
+msgstr "A szerepkörből eltávolítandó csoport elsődleges kulcsa."
 
 #: serializers.py:52
 msgid "Primary key of the permission to add to the role."
 msgstr ""
+"A szerepkörhöz való hozzáadáshoz szükséges engedély elsődleges kulcsa."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
-msgstr ""
+msgstr "Engedély azonosító"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
-msgstr ""
+msgstr "A szerepkörből való eltávolítás engedélyének elsődleges kulcsa."
 
 #: serializers.py:67
 msgid "Groups URL"
-msgstr ""
+msgstr "Csoportok URL"
 
 #: serializers.py:71
 msgid "Groups add URL"
-msgstr ""
+msgstr "Csoportok hozzáadása URL"
 
 #: serializers.py:75
 msgid "Groups remove URL"
-msgstr ""
+msgstr "Csoportok eltávolítása URL"
 
 #: serializers.py:79
 msgid "Permissions URL"
-msgstr ""
+msgstr "Engedélyek URL-je"
 
 #: serializers.py:83
 msgid "Permissions add URL"
-msgstr ""
+msgstr "Hozzáférés adó URL"
 
 #: serializers.py:87
 msgid "Permissions remove URL"
-msgstr ""
+msgstr "Engedélyeket eltávolító URL"
 
 #: serializers.py:94
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: views.py:27
 msgid "Group roles"
-msgstr ""
+msgstr "Csoport szerepkörök"
 
 #: views.py:28
 msgid "Available roles"
-msgstr ""
+msgstr "Elérhető szerepkörök"
 
 #: views.py:45
 #, python-format
 msgid "Roles of group: %s"
-msgstr ""
+msgstr "A csoport szerepkörei: %s"
 
 #: views.py:64
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Hiba a \"%(instance)s\" szerepkör törlésekor; %(exception)s"
 
 #: views.py:69
 #, python-format
 msgid "%(count)d roles deleted successfully."
-msgstr ""
+msgstr "%(count)d szerepkör sikeresen törölve."
 
 #: views.py:70
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "A \"%(object)s\" szerepkör sikeresen törölve."
 
 #: views.py:71
 #, python-format
 msgid "%(count)d role deleted successfully."
-msgstr ""
+msgstr "%(count)d szerepkör sikeresen törölve."
 
 #: views.py:72
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr ""
+msgstr "Szerepkör törlése: %(object)s ."
 
 #: views.py:73
 #, python-format
 msgid "Delete the %(count)d selected role."
-msgstr ""
+msgstr "A %(count)d kiválasztott szerepkör törlése."
 
 #: views.py:74
 #, python-format
 msgid "Delete the %(count)d selected roles."
-msgstr ""
+msgstr "A %(count)d kiválasztott szerepkör törlése."
 
 #: views.py:103
 msgid ""
@@ -237,10 +239,15 @@ msgid ""
 "controls lists. Access controls list are permissions granted to a role for "
 "specific objects which its group members inherit."
 msgstr ""
+"A szerepkörök jogosultsági egységek. Olyan felhasználói csoportokat "
+"tartalmaznak, amelyek a teljes rendszer szerepkör-engedélyeit öröklik. A "
+"szerepkörök a hozzáférés-szabályozási listák részei is lehetnek. A "
+"hozzáférés-ellenőrzési lista egy szerepkörnek adott jogosultságokat jelent "
+"bizonyos objektumokhoz, amelyeket a csoporttagok örökölnek."
 
 #: views.py:110
 msgid "There are no roles"
-msgstr ""
+msgstr "Nincsenek szerepkörök"
 
 #: views.py:116
 msgid "Role groups"
@@ -255,6 +262,8 @@ msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr ""
+"Csoportok hozzáadása, hogy egy szerep része legyen. Ezek öröklik a szerepkör"
+" engedélyeit és hozzáférési vezérlőit."
 
 #: views.py:138
 #, python-format
@@ -273,13 +282,15 @@ msgstr "Elérhető jogosúltságok"
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
+"Az itt megadott engedélyek a teljes rendszerre és minden objektumra "
+"vonatkoznak."
 
 #: views.py:188
 #, python-format
 msgid "Permissions for role: %s"
-msgstr "Szerepkörhöz tartozó jogosúltságok: %s"
+msgstr "Szerepkörhöz tartozó engedélyek: %s"
 
 #: views.py:208
 #, python-format
 msgid "Details of permission: %s"
-msgstr ""
+msgstr "Az engedély részletei: %s"

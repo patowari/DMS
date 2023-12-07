@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -89,16 +89,20 @@ msgstr "Zindeksuj instancję modelu w silniku wyszukiwania."
 
 #: queues.py:25
 msgid "Index all instances of a search model to the search engine."
-msgstr ""
+msgstr "Indeksuj wszystkie wystąpienia modelu wyszukiwania w wyszukiwarce."
 
 #: queues.py:31
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
+"Indeksuj wszystkie powiązane wystąpienia modelu wyszukiwania po zdarzeniu "
+"„wiele do wielu”."
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
+"Zresetuj indeksy zaplecza wyszukiwania i ponownie zindeksuj wszystkie "
+"wystąpienia."
 
 #: scoped_queries.py:352
 msgid ""

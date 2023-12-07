@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:07+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -498,8 +498,8 @@ msgid "Paste an asset (absolute coordinates)"
 msgstr "Pegar un activo (coordenadas absolutas)"
 
 #: transformations.py:206
-msgid "Paste an asset (percents coordinates)"
-msgstr "Pegar un activo (coordenadas de porcentajes)"
+msgid "Paste an asset (percent coordinates)"
+msgstr "Pegar una imagen (coordenadas porcentuales)"
 
 #: transformations.py:220
 msgid "Crop"
@@ -542,8 +542,8 @@ msgid "Bottom side location in pixels."
 msgstr "Ubicación del lado inferior en píxeles."
 
 #: transformations.py:418
-msgid "Draw rectangle (percents coordinates)"
-msgstr "Dibujar rectángulo (coordenadas de porcentajes)"
+msgid "Draw rectangle (percent coordinates)"
+msgstr "Dibujar rectángulo (coordenadas porcentuales)"
 
 #: transformations.py:423
 msgid "Left side location in percent."

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:08+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -51,11 +51,11 @@ msgstr "Darmowy silnik OCR Open Source"
 
 #: events.py:10
 msgid "Document version OCR content deleted"
-msgstr ""
+msgstr "Wersja dokumentu Zawartość OCR usunięta"
 
 #: events.py:14
 msgid "Document version page OCR content edited"
-msgstr ""
+msgstr "Edytowano stronę wersji dokumentu. Treść OCR została zmieniona"
 
 #: events.py:18
 msgid "Document version submitted for OCR"

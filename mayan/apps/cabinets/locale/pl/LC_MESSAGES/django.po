@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 06:07+0000\n"
+"POT-Creation-Date: 2023-12-07 19:44+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -35,7 +35,7 @@ msgstr "Utworzono szafkę"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr ""
+msgstr "Szafka usunięta"
 
 #: events.py:17
 msgid "Cabinet edited"
@@ -99,7 +99,7 @@ msgstr "Pełna ścieżka"
 
 #: models.py:30 serializers.py:41
 msgid "Parent"
-msgstr ""
+msgstr "Rodzic"
 
 #: models.py:33
 msgid "A short text used to identify the cabinet."
@@ -188,7 +188,7 @@ msgstr "Lista podrzędnych szafek."
 
 #: serializers.py:18
 msgid "Children"
-msgstr ""
+msgstr "Dzieci"
 
 #: serializers.py:23
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr ""
+msgstr "URL Dokumentów"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -207,7 +207,7 @@ msgstr "Nazwa tego poziomu szafy dołączona do nazw jego przodków."
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr ""
+msgstr "URL Rodziców"
 
 #: serializers.py:51
 msgid "URL"
@@ -215,15 +215,15 @@ msgstr "URL"
 
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
-msgstr ""
+msgstr "Podstawowy klucz dokumentu do dodania do szafki."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
-msgstr ""
+msgstr "Dokument ID"
 
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
-msgstr ""
+msgstr "Podstawowy klucz dokumentu do usunięcia z szafki."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"

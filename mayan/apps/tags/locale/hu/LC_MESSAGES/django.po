@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-21 07:36+0000\n"
+"POT-Creation-Date: 2023-12-07 19:45+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -34,35 +34,35 @@ msgstr "Dokumentumok"
 
 #: events.py:10
 msgid "Tag attached to document"
-msgstr ""
+msgstr "Jelölő csatolva a dokumentumhoz"
 
 #: events.py:13
 msgid "Tag created"
-msgstr ""
+msgstr "Jelölő létrehozva"
 
 #: events.py:16
 msgid "Tag edited"
-msgstr ""
+msgstr "Jelölő szerkesztve"
 
 #: events.py:19
 msgid "Tag removed from document"
-msgstr ""
+msgstr "Jelölő eltávolítva a dokumentumból"
 
 #: links.py:19 links.py:38
 msgid "Attach tags"
-msgstr "Címke hozzárendelése"
+msgstr "Jelölő csatolása"
 
 #: links.py:23 workflow_actions.py:74
 msgid "Remove tag"
-msgstr "Címke levétele"
+msgstr "Jelölő eltávolítása"
 
 #: links.py:33
 msgid "Remove tags"
-msgstr "Címkék levétele"
+msgstr "Jelölők eltávolítása"
 
 #: links.py:44
 msgid "Create new tag"
-msgstr "Új címke készítése"
+msgstr "Új jelölő létrehozása"
 
 #: links.py:49 links.py:52
 msgid "Delete"
@@ -78,11 +78,11 @@ msgstr "Mind"
 
 #: methods.py:19
 msgid "Return the tags attached to the document."
-msgstr ""
+msgstr "Adja vissza a dokumentumhoz csatolt jelölőket."
 
 #: methods.py:21
 msgid "get_tags()"
-msgstr ""
+msgstr "get_tags()"
 
 #: model_mixins.py:63
 msgid "Preview"
@@ -90,7 +90,7 @@ msgstr "Előnézet"
 
 #: models.py:21
 msgid "A short text used as the tag name."
-msgstr ""
+msgstr "A jelölő neveként használt rövid szöveg."
 
 #: models.py:22
 msgid "Label"
@@ -98,7 +98,7 @@ msgstr "Cimke"
 
 #: models.py:25
 msgid "The RGB color values for the tag."
-msgstr ""
+msgstr "A jelölő RGB színértékei."
 
 #: models.py:26
 msgid "Color"
@@ -106,15 +106,15 @@ msgstr "Szín"
 
 #: models.py:34
 msgid "Tag"
-msgstr "Címke"
+msgstr "Jelölő"
 
 #: models.py:63
 msgid "Document tag"
-msgstr "Dokumentum címke"
+msgstr "Dokumentum jelölő"
 
 #: models.py:64 search.py:24 search.py:30 search.py:36 search.py:42
 msgid "Document tags"
-msgstr "Dokumentum címkék"
+msgstr "Dokumentum jelölők"
 
 #: permissions.py:10
 msgid "Create new tags"
@@ -134,19 +134,19 @@ msgstr "Címkék szerkesztése"
 
 #: permissions.py:22
 msgid "Attach tags to documents"
-msgstr "Címkék dokumentumokhoz rendelése"
+msgstr "Jelölők dokumentumokhoz csatolása"
 
 #: permissions.py:25
 msgid "Remove tags from documents"
-msgstr "Címkék levétele a dokumentumokról"
+msgstr "Címkék eltávolítása a dokumentumokról"
 
 #: search.py:15
 msgid "Tag label"
-msgstr ""
+msgstr "Jelölő címke"
 
 #: search.py:18
 msgid "Tag color"
-msgstr ""
+msgstr "Jelölő színe"
 
 #: search.py:56
 msgid "Document type"
@@ -154,11 +154,11 @@ msgstr "Dokumentum típus"
 
 #: search.py:59
 msgid "Document label"
-msgstr ""
+msgstr "Dokumentumcímke"
 
 #: search.py:62
 msgid "Document description"
-msgstr ""
+msgstr "Dokumentum leírása"
 
 #: search.py:65
 msgid "Document UUID"
@@ -166,104 +166,104 @@ msgstr "Dokumentum UUID-je"
 
 #: search.py:69
 msgid "Document file checksum"
-msgstr ""
+msgstr "Dokumentumfájl ellenőrző összeg"
 
 #: search.py:72
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Dokumentumfájl MIME típusa"
 
 #: serializers.py:12
 msgid "Documents URL"
-msgstr ""
+msgstr "Dokumentumok URL"
 
 #: serializers.py:19
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:33
 msgid "Primary key of the tag to add to the document."
-msgstr ""
+msgstr "A dokumentumhoz hozzáadandó jelölő elsődleges kulcsa."
 
 #: serializers.py:34 serializers.py:43
 msgid "Tag ID"
-msgstr ""
+msgstr "Jelölőazonosító"
 
 #: serializers.py:42
 msgid "Primary key of the tag to remove from the document."
-msgstr ""
+msgstr "A dokumentumból eltávolítandó jelölő elsődleges kulcsa."
 
 #: views.py:43
 #, python-format
 msgid "Tags attached to %(count)d documents successfully."
-msgstr ""
+msgstr "%(count)d dokumentumhoz sikeresen csatolódtak jelölők."
 
 #: views.py:46
 #, python-format
 msgid "Tags attached to document \"%(object)s\" successfully."
-msgstr ""
+msgstr "A \"%(object)s\" dokumentumhoz sikeresen csatolt jelölők."
 
 #: views.py:49
 #, python-format
 msgid "Tags attached to %(count)d document successfully."
-msgstr ""
+msgstr "%(count)d dokumentumhoz sikeresen csatolódtak jelölők."
 
 #: views.py:51
 #, python-format
 msgid "Attach tags to %(count)d documents."
-msgstr ""
+msgstr "Jelölők csatolása %(count)d dokumentumhoz."
 
 #: views.py:52
 #, python-format
 msgid "Attach tags to document: %(object)s"
-msgstr ""
+msgstr "Jelölők csatolása a dokumentumhoz: %(object)s"
 
 #: views.py:53
 #, python-format
 msgid "Attach tags to %(count)d document."
-msgstr ""
+msgstr "Jelölők csatolása a %(count)d dokumentumhoz."
 
 #: views.py:70 wizard_steps.py:28
 msgid "Tags to be attached."
-msgstr "Hozzárendelendő címkék."
+msgstr "Csatolandó jelölők."
 
 #: views.py:108
 msgid "Create tag"
-msgstr "Címke készítése"
+msgstr "Jelölő létrehozása"
 
 #: views.py:121
 #, python-format
 msgid "Error deleting tag \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Hiba a \"%(instance)s\" jelölő törlésekor; %(exception)s"
 
 #: views.py:126
 #, python-format
 msgid "%(count)d tags deleted successfully."
-msgstr ""
+msgstr "%(count)d jelölő sikeresen törölve."
 
 #: views.py:127
 #, python-format
 msgid "Tag \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "A \"%(object)s\" jelölő sikeresen törölve."
 
 #: views.py:128
 #, python-format
 msgid "%(count)d tag deleted successfully."
-msgstr ""
+msgstr "%(count)d jelölő sikeresen törölve."
 
 #: views.py:129
 #, python-format
 msgid "Delete the %(count)d selected tags"
-msgstr ""
+msgstr "A %(count)d kiválasztott jelölő törlése"
 
 #: views.py:130
 #, python-format
 msgid "Delete tag: %(object)s"
-msgstr ""
+msgstr "Jelölő törlése: %(object)s"
 
 #: views.py:131
 #, python-format
 msgid "Delete the %(count)d selected tag"
-msgstr ""
+msgstr "A %(count)d kiválasztott jelölő törlése"
 
 #: views.py:137
 msgid "Will be removed from all documents."
@@ -272,78 +272,80 @@ msgstr "Minden dokumentumról el lesz távolítva."
 #: views.py:153
 #, python-format
 msgid "Edit tag: %s"
-msgstr "Címke szerkesztése: %s"
+msgstr "Jelölő szerkesztése: %s"
 
 #: views.py:176
 msgid ""
 "Tags are color coded properties that can be attached or removed from "
 "documents."
 msgstr ""
+"A jelölők színkódolt tulajdonságok, amelyek csatolhatók vagy eltávolíthatók "
+"a dokumentumokból."
 
 #: views.py:179
 msgid "No tags available"
-msgstr ""
+msgstr "Nincsenek elérhető jelölők"
 
 #: views.py:210
 #, python-format
 msgid "Documents with the tag: %s"
-msgstr "Dokumentumok a címkével: %s"
+msgstr "Dokumentumok a jelölővel: %s"
 
 #: views.py:237
 msgid "Document has no tags attached"
-msgstr ""
+msgstr "A dokumentumhoz nincsenek jelölők csatolva"
 
 #: views.py:240
 #, python-format
 msgid "Tags for document: %s"
-msgstr "Címkék a dokumentumon: %s"
+msgstr "Jelölők a dokumentumon: %s"
 
 #: views.py:258
 #, python-format
 msgid "Tags removed from %(count)d documents successfully."
-msgstr ""
+msgstr "A jelölők sikeresen eltávolítva %(count)d dokumentumból."
 
 #: views.py:261
 #, python-format
 msgid "Tags removed from document \"%(object)s\" successfully."
-msgstr ""
+msgstr "A jelölők sikeresen eltávolítva a \"%(object)s\" dokumentumból."
 
 #: views.py:264
 #, python-format
 msgid "Tags removed from %(count)d document successfully."
-msgstr ""
+msgstr "A jelölők sikeresen eltávolítva %(count)d dokumentumból."
 
 #: views.py:266
 #, python-format
 msgid "Remove tags from %(count)d documents."
-msgstr ""
+msgstr "Jelölők eltávolítása %(count)d dokumentumból."
 
 #: views.py:267
 #, python-format
 msgid "Remove tags from document: %(object)s"
-msgstr ""
+msgstr "Jelölők eltávolítása a dokumentumból: %(object)s"
 
 #: views.py:268
 #, python-format
 msgid "Remove tags from %(count)d document."
-msgstr ""
+msgstr "Jelölők eltávolítása %(count)d dokumentumból."
 
 #: views.py:285
 msgid "Tags to be removed."
-msgstr "Leszedendő címkék."
+msgstr "Eltávolítandó jelölők."
 
 #: wizard_steps.py:15
 msgid "Select tags"
-msgstr ""
+msgstr "Jelölők kiválasztása"
 
 #: workflow_actions.py:20
 msgid "Tags to attach to the document"
-msgstr ""
+msgstr "A dokumentumhoz csatolandó jelölők"
 
 #: workflow_actions.py:25
 msgid "Attach tag"
-msgstr ""
+msgstr "Jelölő csatolása"
 
 #: workflow_actions.py:69
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "A dokumentumból eltávolítandó jelölők."
