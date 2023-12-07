@@ -1,6 +1,7 @@
 4.4.10 (XXXX-XX-XX)
 ===================
 - Update Django from version 3.2.22 to 3.2.23.
+- Support Django series in setup generation script.
 
 4.4.9 (2023-10-15)
 ==================
