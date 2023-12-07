@@ -1,3 +1,7 @@
+4.4.10 (XXXX-XX-XX)
+===================
+- Update Django from version 3.2.22 to 3.2.23.
+
 4.4.9 (2023-10-15)
 ==================
 - Fix the ``add_file`` method for the ``TarArchive`` class.
