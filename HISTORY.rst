@@ -1,8 +1,11 @@
 4.4.10 (XXXX-XX-XX)
 ===================
-- Update Django from version 3.2.22 to 3.2.23.
 - Support Django series in setup generation script.
 - Add missing mailing profile ``default`` field to creation and edit forms.
+- Update dependencies:
+
+  - Update Django from version 3.2.22 to 3.2.23.
+  - ``redis`` from version 4.2.0 to 4.2.2.
 
 4.4.9 (2023-10-15)
 ==================
