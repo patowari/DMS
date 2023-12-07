@@ -4,6 +4,7 @@
 - Fix typos in comments and transformations labels.
 - Code style fixes.
 - Fix code style warning E713.
+- ``redis`` from version 4.2.0 to 4.2.2.
 
 4.3.10 (2023-07-14)
 ===================
