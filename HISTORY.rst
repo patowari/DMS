@@ -11,6 +11,8 @@
 - Fix typos in comments, help texts, transformations labels.
 - Use right field when sorting document file pages
 - Generate markup for GitHub issues
+- Tweak main view horizontal margins to avoid sidebar issue in recent
+  FireFox versions.
 
 4.4.9 (2023-10-15)
 ==================
