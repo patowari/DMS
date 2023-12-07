@@ -1,4 +1,4 @@
-4.4.10 (XXXX-XX-XX)
+4.4.10 (2023-12-07)
 ===================
 - Support Django series in setup generation script.
 - Add missing mailing profile ``default`` field to creation and edit forms.
