@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 18:28+0000\n"
+"POT-Creation-Date: 2023-12-07 04:22+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -520,8 +520,8 @@ msgstr ""
 
 #: wizards.py:106
 msgid "Previous"
-msgstr "Poprzedni"
+msgstr "Wstecz"
 
 #: wizards.py:113
 msgid "Next"
-msgstr "Następny"
+msgstr "Dalej"

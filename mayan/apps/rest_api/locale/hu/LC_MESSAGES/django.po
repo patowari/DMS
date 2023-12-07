@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 16:04+0000\n"
+"POT-Creation-Date: 2023-12-07 04:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -33,30 +33,30 @@ msgstr "A sorosító osztály nem található a %s-hoz"
 
 #: links.py:21
 msgid "API Documentation (Swagger)"
-msgstr ""
+msgstr "API dokumentáció (Swagger)"
 
 #: links.py:26
 msgid "API Documentation (ReDoc)"
-msgstr ""
+msgstr "API dokumentáció (ReDoc)"
 
 #: relations.py:33
 #, python-brace-format
 msgid "Invalid pk \"{pk_value}\" - object does not exist."
-msgstr ""
+msgstr "Érvénytelen pk \"{pk_value}\" – az objektum nem létezik."
 
 #: relations.py:36
 #, python-brace-format
 msgid "Incorrect type. Expected pk value, received {data_type}."
-msgstr ""
+msgstr "Helytelen típus. Várt pk érték, érkezett {data_type} ."
 
 #: relations.py:38
 msgid "This field is required."
-msgstr ""
+msgstr "Ez a mező kötelező."
 
 #: schemas.py:11
 #, python-format
 msgid "%s API"
-msgstr ""
+msgstr "%s API"
 
 #: serializers.py:37
 msgid "Content"
@@ -68,7 +68,7 @@ msgstr "Adat"
 
 #: serializers.py:43
 msgid "Headers"
-msgstr ""
+msgstr "Fejlécek"
 
 #: serializers.py:46
 msgid "Name"
@@ -76,11 +76,11 @@ msgstr "Név"
 
 #: serializers.py:49
 msgid "Status code"
-msgstr ""
+msgstr "Állapotkód"
 
 #: serializers.py:52
 msgid "Requests"
-msgstr ""
+msgstr "Kérések"
 
 #: serializers.py:75
 msgid "Label"
@@ -88,27 +88,27 @@ msgstr "Cimke"
 
 #: serializers.py:78
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:106
 msgid "Author"
-msgstr ""
+msgstr "Szerző"
 
 #: serializers.py:109
 msgid "Author email"
-msgstr ""
+msgstr "Szerző emailcíme"
 
 #: serializers.py:112
 msgid "Build"
-msgstr ""
+msgstr "Build"
 
 #: serializers.py:115
 msgid "Build string"
-msgstr ""
+msgstr "Build sztring"
 
 #: serializers.py:118
 msgid "Copyright"
-msgstr ""
+msgstr "Szerzői jog"
 
 #: serializers.py:121
 msgid "Description"
@@ -116,7 +116,7 @@ msgstr "Leírás"
 
 #: serializers.py:124
 msgid "Django version"
-msgstr ""
+msgstr "Django verzió"
 
 #: serializers.py:127
 msgid "License"
@@ -132,16 +132,16 @@ msgstr "Verzió"
 
 #: serializers.py:136
 msgid "Website"
-msgstr ""
+msgstr "Weboldal"
 
 #: settings.py:17
 msgid "Disable the REST API links in the tools menu."
-msgstr ""
+msgstr "REST API hivatkozások letiltása az eszközök menüben."
 
 #: settings.py:23
 msgid "The maximum page size that can be requested."
-msgstr ""
+msgstr "Az igényelhető maximális oldalméret."
 
 #: settings.py:29
 msgid "The default page size if none is specified."
-msgstr ""
+msgstr "Az alapértelmezett oldalméret, ha nincs megadva."

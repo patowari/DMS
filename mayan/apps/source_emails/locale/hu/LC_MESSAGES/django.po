@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 16:04+0000\n"
+"POT-Creation-Date: 2023-12-07 04:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,29 +23,32 @@ msgstr ""
 
 #: apps.py:13
 msgid "Emails"
-msgstr ""
+msgstr "Emailek"
 
 #: source_backends/imap_source_backends.py:21
 msgid "IMAP email"
-msgstr ""
+msgstr "IMAP email"
 
 #: source_backends/imap_source_backends.py:50
 msgid "IMAP Mailbox from which to check for messages."
-msgstr ""
+msgstr "IMAP-postafiók, amelyből ellenőrizhetők az üzenetek."
 
 #: source_backends/imap_source_backends.py:55
 msgid "Mailbox"
-msgstr ""
+msgstr "Postafiók"
 
 #: source_backends/imap_source_backends.py:62
 msgid ""
 "Criteria to use when searching for messages to process. Use the format "
 "specified in https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 msgstr ""
+"A feldolgozandó üzenetek keresésekor használandó kritériumok. Használja a "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.4 helyen megadott "
+"formátumot"
 
 #: source_backends/imap_source_backends.py:66
 msgid "Search criteria"
-msgstr ""
+msgstr "Keresőfeltétel"
 
 #: source_backends/imap_source_backends.py:74
 msgid ""
@@ -53,30 +57,36 @@ msgid ""
 "https://tools.ietf.org/html/rfc2060.html#section-6.4.6 or the custom "
 "commands for your IMAP server."
 msgstr ""
+"IMAP STORE parancs, amelyet az üzenetek feldolgozása után kell végrehajtani."
+" Soronként egy parancs. Használja a "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.6 oldalon megadott "
+"parancsokat vagy az IMAP-kiszolgálóhoz tartozó egyéni parancsokat."
 
 #: source_backends/imap_source_backends.py:80
 msgid "Store commands"
-msgstr ""
+msgstr "Parancsok tárolása"
 
 #: source_backends/imap_source_backends.py:87
 msgid "Execute the IMAP expunge command after processing each email message."
 msgstr ""
+"Minden email üzenet feldolgozása után hajtsa végre az IMAP expunge "
+"parancsot."
 
 #: source_backends/imap_source_backends.py:90
 msgid "Execute expunge"
-msgstr ""
+msgstr "Törlés végrehajtása"
 
 #: source_backends/imap_source_backends.py:97
 msgid "IMAP Mailbox to which processed messages will be copied."
-msgstr ""
+msgstr "IMAP-postafiók, amelybe a feldolgozott üzenetek másolásra kerülnek."
 
 #: source_backends/imap_source_backends.py:100
 msgid "Destination mailbox"
-msgstr ""
+msgstr "Cél postafiók"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "IMAP protokoll"
 
 #: source_backends/mixins.py:31
 msgid "Host"
@@ -84,33 +94,35 @@ msgstr "Kiszolgáló"
 
 #: source_backends/mixins.py:40
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 #: source_backends/mixins.py:46
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
 msgstr ""
+"A tipikus választások a következők: 110 POP3, 995 POP3 SSL, 143 IMAP, 993 "
+"IMAP SSL felett."
 
 #: source_backends/mixins.py:52
 msgid "Port"
-msgstr ""
+msgstr "Portszám"
 
 #: source_backends/mixins.py:58
 msgid "Store the body of the email as a text document."
-msgstr ""
+msgstr "Az email szövegtörzsét szöveges dokumentumként tárolja."
 
 #: source_backends/mixins.py:60
 msgid "Store email body"
-msgstr ""
+msgstr "Az email szövegtörzsének tárolása"
 
 #: source_backends/mixins.py:74
 msgid "Common email options"
-msgstr ""
+msgstr "Általános email beállítások"
 
 #: source_backends/pop3_source_backends.py:18
 msgid "POP3 email"
-msgstr ""
+msgstr "POP3 email"
 
 #: source_backends/pop3_source_backends.py:32
 msgid "Timeout"
@@ -118,12 +130,12 @@ msgstr "időtúllépés"
 
 #: source_backends/pop3_source_backends.py:45
 msgid "POP3 protocol"
-msgstr ""
+msgstr "POP3 protokoll"
 
 #: tests/source_backends.py:58
 msgid "Test IMAP email"
-msgstr ""
+msgstr "IMAP email tesztelése"
 
 #: tests/source_backends.py:73
 msgid "Test POP3 email"
-msgstr ""
+msgstr "POP3 email tesztelése"
