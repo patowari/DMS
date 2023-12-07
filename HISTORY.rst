@@ -11,6 +11,7 @@
 - Fix typos in comments and transformations labels.
 - Code style fixes.
 - Fix code style warning E713.
+- Add missing mailing profile ``default`` field to creation and edit forms.
 
 4.2.17 (2023-07-10)
 ===================
