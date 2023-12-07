@@ -12,6 +12,7 @@
 - Code style fixes.
 - Fix code style warning E713.
 - Add missing mailing profile ``default`` field to creation and edit forms.
+- Support Django series in setup generation script.
 
 4.2.17 (2023-07-10)
 ===================
