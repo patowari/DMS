@@ -85,7 +85,7 @@ class UserMailerBackendSelectionForm(forms.Form):
 
 class UserMailerDynamicForm(BackendDynamicForm):
     class Meta:
-        fields = ('label', 'enabled')
+        fields = ('label', 'enabled', 'default')
         model = UserMailer
 
 
