@@ -1,3 +1,7 @@
+4.3.11 (XXXX-XX-XX)
+===================
+- Use correct field when sorting document file pages.
+
 4.3.10 (2023-07-14)
 ===================
 - Fixes from version 4.2.17.
