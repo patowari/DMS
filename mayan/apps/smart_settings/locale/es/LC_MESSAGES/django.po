@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -58,7 +58,7 @@ msgstr "Anulado"
 
 #: classes.py:415
 msgid "Is this setting being overridden by an environment variable?"
-msgstr ""
+msgstr "¿Esta configuración está siendo anulada por una variable de entorno?"
 
 #: forms.py:28
 msgid "Enter the new setting value."
