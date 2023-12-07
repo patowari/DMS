@@ -1,7 +1,8 @@
 4.5.8 (XXXX-XX-XX)
 ==================
-- Re add example variable ``MAYAN_MIRROR_INDEX_NAME`` which was 
+- Re add example variable ``MAYAN_MIRROR_INDEX_NAME`` which was
   removed as part of a previous clean up.
+- Code style fixes.
 
 4.5.7 (2023-10-25)
 ==================
