@@ -112,6 +112,7 @@ if __name__ == '__main__':
                 {
                     'build': upstream_build,
                     'build_string': generate_build_number(),
+                    'django_series': literals.DJANGO_SERIES,
                     'timestamp': generate_commit_timestamp(),
                     'version': upstream_version
                 }
