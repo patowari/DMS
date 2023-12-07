@@ -11,6 +11,7 @@
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Fix Django file based mailer.
 - Replace hard coded mailer ``object_name`` with model verbose introspection.
+- Support Django series in setup generation script.
 
 4.5.7 (2023-10-25)
 ==================
