@@ -9,6 +9,7 @@
   debian:12.2-slim.
 - Update Debian from version 3.2.22 to 3.2.23.
 - Add missing mailing profile ``default`` field to creation and edit forms.
+- Fix Django file based mailer.
 
 4.5.7 (2023-10-25)
 ==================
