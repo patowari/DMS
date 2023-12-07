@@ -7,6 +7,8 @@
   - Update Django from version 3.2.22 to 3.2.23.
   - ``redis`` from version 4.2.0 to 4.2.2.
 
+- Code style fixes.
+
 4.4.9 (2023-10-15)
 ==================
 - Fix the ``add_file`` method for the ``TarArchive`` class.
