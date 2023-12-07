@@ -3,6 +3,8 @@
 - Re add example variable ``MAYAN_MIRROR_INDEX_NAME`` which was
   removed as part of a previous clean up.
 - Code style fixes.
+- Add sanity check to ``DynamicFormBackendMixin`` to ensure form
+  definition dictionaries are not copied.
 
 4.5.7 (2023-10-25)
 ==================
