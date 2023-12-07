@@ -8,7 +8,8 @@
   - ``redis`` from version 4.2.0 to 4.2.2.
 
 - Code style fixes.
-- Fix typos in comments and transformations labels.
+- Fix typos in comments, help texts, transformations labels.
+- Use right field when sorting document file pages
 
 4.4.9 (2023-10-15)
 ==================
