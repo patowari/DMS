@@ -19,6 +19,7 @@ sys.path.insert(
 
 import mayan  # NOQA
 from mayan.settings import BASE_DIR as mayan_base_dir  # NOQA
+from mayan.settings import literals  # NOQA
 
 try:
     BUILD = sh.Command('git').bake('describe', '--tags', '--always', 'HEAD')
