@@ -5,6 +5,7 @@
 - Code style fixes.
 - Fix code style warning E713.
 - ``redis`` from version 4.2.0 to 4.2.2.
+- Add missing mailing profile ``default`` field to creation and edit forms.
 
 4.3.10 (2023-07-14)
 ===================
