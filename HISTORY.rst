@@ -9,6 +9,8 @@
 - Fix a setting help text typo.
 - Use correct field when sorting document file pages.
 - Fix typos in comments and transformations labels.
+- Code style fixes.
+- Fix code style warning E713.
 
 4.2.17 (2023-07-10)
 ===================
