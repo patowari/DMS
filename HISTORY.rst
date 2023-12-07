@@ -7,6 +7,7 @@
   definition dictionaries are not copied.
 - Update the Debian Docker base image from version debian:12.1-slim to
   debian:12.2-slim.
+- Update Debian from version 3.2.22 to 3.2.23.
 
 4.5.7 (2023-10-25)
 ==================
