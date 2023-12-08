@@ -282,7 +282,7 @@ class TransformationAssetPaste(AssetTransformationMixin, BaseTransformation):
 
 
 class TransformationAssetPastePercent(TransformationAssetPaste):
-    label = _('Paste an asset (percents coordinates)')
+    label = _('Paste an asset (percent coordinates)')
     name = 'paste_asset_percent'
 
     def _execute_on(self, *args, **kwargs):
@@ -569,7 +569,7 @@ class TransformationDrawRectanglePercent(BaseTransformation):
         'left', 'top', 'right', 'bottom', 'fillcolor', 'outlinecolor',
         'outlinewidth'
     )
-    label = _('Draw rectangle (percents coordinates)')
+    label = _('Draw rectangle (percent coordinates)')
     name = 'draw_rectangle_percent'
 
     def execute_on(self, *args, **kwargs):
