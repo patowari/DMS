@@ -8,14 +8,15 @@
 # Roberto Rosario, 2022
 # Berny <berny@bernhard-marx.de>, 2022
 # Mathias Behrle <mathiasb@m9s.biz>, 2022
+# T W, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: T W, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +26,7 @@ msgstr ""
 
 #: apps.py:39 events.py:5 permissions.py:5
 msgid "Messaging"
-msgstr ""
+msgstr "Benachrichtigungen"
 
 #: apps.py:61
 msgid "None"
@@ -33,7 +34,7 @@ msgstr "Keine"
 
 #: apps.py:67
 msgid "Sender"
-msgstr ""
+msgstr "Absender"
 
 #: events.py:8
 msgid "Message created"
@@ -57,15 +58,15 @@ msgstr "Löschen"
 
 #: links.py:67 links.py:78
 msgid "Mark as read"
-msgstr ""
+msgstr "Als gelesen kennzeichnen"
 
 #: links.py:73 links.py:82
 msgid "Mark as unread"
-msgstr ""
+msgstr "Als ungelesen kennzeichnen"
 
 #: links.py:86
 msgid "Mark all as read"
-msgstr ""
+msgstr "Alle als gelesen kennzeichnen"
 
 #: models.py:30
 msgid "User"
@@ -81,11 +82,11 @@ msgstr "Betreff"
 
 #: models.py:37
 msgid "The actual content of the message."
-msgstr ""
+msgstr "Der konkrete Inhalt der Nachricht."
 
 #: models.py:42
 msgid "This field determines if the message has been read or not."
-msgstr ""
+msgstr "Dieses Feld bestimmt, ob die Nachricht gelesen wurde oder nicht."
 
 #: models.py:43
 msgid "Read"
@@ -93,11 +94,11 @@ msgstr "Gelesen"
 
 #: models.py:47
 msgid "Date and time of the message creation."
-msgstr ""
+msgstr "Datum und Uhrzeit der Nachrichtenerstellung."
 
 #: models.py:48
 msgid "Creation date and time"
-msgstr ""
+msgstr "Erstellungsdatum und -uhrzeit"
 
 #: models.py:53
 msgid "Message"
@@ -129,137 +130,142 @@ msgstr "Nachrichten anzeigen"
 
 #: serializers.py:19
 msgid "Primary key of the recipient user of this message."
-msgstr ""
+msgstr "Primärschlüssel des Empfängers dieser Nachricht."
 
 #: views.py:49
 #, python-format
 msgid "Error deleting message \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Fehler beim Löschen der Nachricht „ %(instance)s “; %(exception)s"
 
 #: views.py:53
 #, python-format
 msgid "Message \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Nachricht „ %(object)s “ erfolgreich gelöscht."
 
 #: views.py:54
 #, python-format
 msgid "%(count)d message deleted successfully."
-msgstr ""
+msgstr "%(count)d Nachrichten erfolgreich gelöscht."
 
 #: views.py:55
 #, python-format
 msgid "%(count)d messages deleted successfully."
-msgstr ""
+msgstr "%(count)d Nachrichten erfolgreich gelöscht."
 
 #: views.py:56
 #, python-format
 msgid "Delete message: %(object)s."
-msgstr ""
+msgstr "Nachricht löschen: %(object)s ."
 
 #: views.py:57
 #, python-format
 msgid "Delete the %(count)d selected message."
-msgstr ""
+msgstr "Löschen der ausgewählten %(count)d Nachrichten."
 
 #: views.py:58
 #, python-format
 msgid "Delete the %(count)d selected messages."
-msgstr ""
+msgstr "Löschen der ausgewählten %(count)d Nachrichten."
 
 #: views.py:99
 #, python-format
 msgid "Details of message: %s"
-msgstr ""
+msgstr "Details der Nachricht: %s"
 
 #: views.py:123
 msgid "Here you will find text messages from other users or from the system."
 msgstr ""
+"Hier finden Sie Nachrichten von anderen Benutzern oder Systemmitteilungen."
 
 #: views.py:126
 msgid "There are no messages"
-msgstr ""
+msgstr "Keine Nachrichten liegen vor"
 
 #: views.py:136
 #, python-format
 msgid "Error marking message \"%(instance)s\" as read; %(exception)s"
 msgstr ""
+"Fehler beim Markieren der Nachricht „ %(instance)s “ als gelesen; "
+"%(exception)s"
 
 #: views.py:142
 #, python-format
 msgid "Message \"%(object)s\" marked as read successfully."
-msgstr ""
+msgstr "Nachricht „ %(object)s “ wurde erfolgreich als gelesen markiert."
 
 #: views.py:145
 #, python-format
 msgid "%(count)d message marked as read successfully."
-msgstr ""
+msgstr "%(count)d Nachrichten wurden erfolgreich als gelesen markiert."
 
 #: views.py:148
 #, python-format
 msgid "%(count)d messages marked as read successfully."
-msgstr ""
+msgstr "%(count)d Nachrichten wurden erfolgreich gelesen markiert."
 
 #: views.py:150
 #, python-format
 msgid "Mark the message \"%(object)s\" as read."
-msgstr ""
+msgstr "Markieren der Nachricht „ %(object)s “ als gelesen."
 
 #: views.py:151
 #, python-format
 msgid "Mark the %(count)d selected message as read."
-msgstr ""
+msgstr "Markieren der ausgewählten %(count)d -Nachricht als gelesen."
 
 #: views.py:152
 #, python-format
 msgid "Mark the %(count)d selected messages as read."
-msgstr ""
+msgstr "Markieren der %(count)d Nachrichten als gelesen."
 
 #: views.py:181
 msgid "Mark all message as read?"
-msgstr ""
+msgstr "Alle Nachrichten als gelesen markieren?"
 
 #: views.py:198
 msgid "All messages marked as read."
-msgstr ""
+msgstr "Alle Nachrichten als gelesen markiert."
 
 #: views.py:205
 #, python-format
 msgid "Error marking message \"%(instance)s\" as unread; %(exception)s"
 msgstr ""
+"Fehler beim Markieren der Nachricht „ %(instance)s “ als ungelesen; "
+"%(exception)s"
 
 #: views.py:211
 #, python-format
 msgid "Message \"%(object)s\" marked as unread successfully."
-msgstr ""
+msgstr "Nachricht „ %(object)s “ erfolgreich als ungelesen markiert."
 
 #: views.py:214
 #, python-format
 msgid "%(count)d message marked as unread successfully."
-msgstr ""
+msgstr "%(count)d Nachricht erfolgreich als ungelesen markiert."
 
 #: views.py:217
 #, python-format
 msgid "%(count)d messages marked as unread successfully."
-msgstr ""
+msgstr "%(count)d Nachrichten wurden erfolgreich als ungelesen markiert."
 
 #: views.py:219
 #, python-format
 msgid "Mark the message \"%(object)s\" as unread."
-msgstr ""
+msgstr "Markieren der Nachricht „ %(object)s “ als ungelesen."
 
 #: views.py:220
 #, python-format
 msgid "Mark the %(count)d selected message as unread."
-msgstr ""
+msgstr "Markieren der %(count)d ausgewählten Nachricht als ungelesen."
 
 #: views.py:221
 #, python-format
 msgid "Mark the %(count)d selected messages as unread."
-msgstr ""
+msgstr "Markieren der %(count)d ausgewählten Nachrichten als  ungelesen."
 
 #: workflow_actions.py:19
 msgid "Username list"
-msgstr ""
+msgstr "Benutzernamen"
 
 #: workflow_actions.py:26
 msgid "Comma separated list of username that will receive the message."
@@ -271,8 +277,8 @@ msgstr ""
 
 #: workflow_actions.py:62
 msgid "The actual text to send."
-msgstr ""
+msgstr "Konkret zu sendender Text."
 
 #: workflow_actions.py:73
 msgid "Send user message"
-msgstr ""
+msgstr "Benutzernachricht senden"

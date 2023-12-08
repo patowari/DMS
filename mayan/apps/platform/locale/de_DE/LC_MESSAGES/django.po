@@ -6,15 +6,15 @@
 # Translators:
 # Stefan Lodders <sl@suchreflex.de>, 2022
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:37+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: classes.py:227
 msgid "Template that generates a Dockerfile file."
-msgstr ""
+msgstr "Vorlage zur Generierung einer Dockerfile-Datei."
 
 #: classes.py:242
 msgid "Template for Supervisord inside a Docker image."
@@ -42,7 +42,7 @@ msgstr "Konfigurationsvorlage innerhalb des Dockerimages für Supervisord."
 
 #: classes.py:260
 msgid "Template that generates a GitLab CI config file."
-msgstr ""
+msgstr "Vorlage zur Generierung einer GitLab CI Konfigurations-Datei."
 
 #: classes.py:404
 msgid "Template for Supervisord."
@@ -58,9 +58,14 @@ msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
+"Liste der Client Backends, die nach dem Start gestartet werden sollen. "
+"Verwenden Sie den vollen punktierten Pfad zur Klasse des Client Backends."
 
 #: settings.py:23
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."
 msgstr ""
+"Argumente für die Client Backends, die nach dem Start gestartet werden "
+"sollen. Verwenden Sie den vollen punktierten Pfad zur Klasse des Client "
+"Backends."

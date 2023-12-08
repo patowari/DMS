@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
+# Mahmood Ali, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2023\n"
+"Last-Translator: Mahmood Ali, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -724,11 +725,11 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:61
 msgid "Primary key of the document type to add to the workflow."
-msgstr ""
+msgstr "المفتاح الأساسي لنوع المستند المراد إضافته إلى رابط المسار."
 
 #: serializers/workflow_template_serializers.py:70
 msgid "Primary key of the document type to remove from the workflow."
-msgstr ""
+msgstr "المفتاح الأساسي لنوع المستند المراد حذفه من رابط المسار."
 
 #: serializers/workflow_template_state_escalation_serializers.py:50
 msgid "Primary key of the workflow template transition to be added."
@@ -748,12 +749,12 @@ msgstr ""
 
 #: serializers/workflow_template_transition_serializers.py:184
 msgid "Event Type ID"
-msgstr ""
+msgstr "معرف نوع الحدث"
 
 #: serializers/workflow_template_transition_serializers.py:274
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
-msgstr ""
+msgstr "معرف الحدث غير معروف او غير صالح `%s`"
 
 #: settings.py:18
 msgid ""

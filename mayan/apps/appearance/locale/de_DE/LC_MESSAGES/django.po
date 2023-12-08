@@ -14,15 +14,15 @@
 # Marvin Haschker <marvin@haschker.me>, 2022
 # Berny <berny@bernhard-marx.de>, 2022
 # Niklas Maurer <niklas.maurer@web.energy>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,7 +92,7 @@ msgstr "Thema bearbeitet"
 
 #: events.py:14
 msgid "User theme edited"
-msgstr ""
+msgstr "Benutzerthema bearbeitet"
 
 #: links.py:18
 msgid "Theme settings"
@@ -172,7 +172,7 @@ msgstr "Betrachte existierende Themen"
 
 #: settings.py:15
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Benutzerdefinierter HTTP Antwortcode für AJAX Umleitungen."
 
 #: settings.py:21
 msgid "Maximum number of characters that will be displayed as the view title."
@@ -192,6 +192,8 @@ msgstr ""
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Verzögerung in Millisekunden nach der Menüs auf Aktualisierungen überprüft "
+"werden."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -485,9 +487,9 @@ msgstr "Keine Themen verfügbar"
 #: views.py:122
 #, python-format
 msgid "Theme settings for user: %s"
-msgstr ""
+msgstr "Themaeinstellungen für Benutzer: %s"
 
 #: views.py:144
 #, python-format
 msgid "Edit theme settings for user: %s"
-msgstr ""
+msgstr "Themaeinstellungen für Benutzer: %s bearbeiten"

@@ -5,15 +5,15 @@
 # 
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2022
-# Dezső József <dejo60@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: Dezső József <dejo60@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,59 +23,59 @@ msgstr ""
 
 #: apps.py:26 events.py:6 permissions.py:5 queues.py:8 settings.py:10
 msgid "File caching"
-msgstr ""
+msgstr "Fájlok gyorsítótárazása"
 
 #: events.py:10
 msgid "Cache created"
-msgstr ""
+msgstr "Gyorsítótár létrehozva"
 
 #: events.py:13
 msgid "Cache edited"
-msgstr ""
+msgstr "A gyorsítótár szerkesztve"
 
 #: events.py:16
 msgid "Cache purged"
-msgstr ""
+msgstr "A gyorsítótár kiürítve"
 
 #: events.py:19
 msgid "Cache partition purged"
-msgstr ""
+msgstr "A gyorsítótár-partíció törölve"
 
 #: links.py:24
 msgid "File caches"
-msgstr ""
+msgstr "Fájl gyorsítótárak"
 
 #: links.py:29 links.py:35 links.py:39
 msgid "Purge cache"
-msgstr ""
+msgstr "Gyorsítótár törlése"
 
 #: models.py:41
 msgid "Internal name of the defined storage for this cache."
-msgstr ""
+msgstr "A gyorsítótár meghatározott tárhelyének belső neve."
 
 #: models.py:42
 msgid "Defined storage name"
-msgstr ""
+msgstr "Meghatározott tárhelynév"
 
 #: models.py:45
 msgid "Maximum size of the cache in bytes."
-msgstr ""
+msgstr "A gyorsítótár maximális mérete bájtban."
 
 #: models.py:47 models.py:74
 msgid "Maximum size"
-msgstr ""
+msgstr "Maximális méret"
 
 #: models.py:52 models.py:214
 msgid "Cache"
-msgstr ""
+msgstr "Gyorsítótár"
 
 #: models.py:53
 msgid "Caches"
-msgstr ""
+msgstr "Gyorsítótárak"
 
 #: models.py:72
 msgid "Size at which the cache will start deleting old entries."
-msgstr ""
+msgstr "Méret, amelynél a gyorsítótár elkezdi törölni a régi bejegyzéseket."
 
 #: models.py:81
 msgid "Unknown"
@@ -83,11 +83,11 @@ msgstr "Ismeretlen"
 
 #: models.py:98 models.py:319
 msgid "Current size"
-msgstr ""
+msgstr "Jelenlegi méret"
 
 #: models.py:99
 msgid "Current size of the cache."
-msgstr ""
+msgstr "A gyorsítótár jelenlegi mérete."
 
 #: models.py:217
 msgid "Name"
@@ -95,15 +95,15 @@ msgstr "Név"
 
 #: models.py:222 models.py:346
 msgid "Cache partition"
-msgstr ""
+msgstr "Gyorsítótár-partíció"
 
 #: models.py:223
 msgid "Cache partitions"
-msgstr ""
+msgstr "Gyorsítótár-partíciók"
 
 #: models.py:321
 msgid "Current size of the cache partition."
-msgstr ""
+msgstr "A gyorsítótár-partíció jelenlegi mérete."
 
 #: models.py:349
 msgid "Date time"
@@ -111,87 +111,93 @@ msgstr "Dátum idő"
 
 #: models.py:351
 msgid "Filename"
-msgstr "Fájlnév"
+msgstr "Fájl név"
 
 #: models.py:353
 msgid "File size"
-msgstr "Fájl mérete"
+msgstr "Fájl méret"
 
 #: models.py:357
 msgid "Times this cache partition file has been accessed."
-msgstr ""
+msgstr "A gyorsítótár partíciós fájljának elérési ideje."
 
 #: models.py:364
 msgid "Cache partition file"
-msgstr ""
+msgstr "A gyorsítótár partíciós fájlja"
 
 #: models.py:365
 msgid "Cache partition files"
-msgstr ""
+msgstr "Gyorsítótár partíciós fájlok"
 
 #: permissions.py:8
 msgid "Purge an object cache"
-msgstr ""
+msgstr "Objektum-gyorsítótár ürítése"
 
 #: permissions.py:11 queues.py:18
 msgid "Purge a file cache"
-msgstr ""
+msgstr "Fájl-gyorsítótár ürítése"
 
 #: permissions.py:14
 msgid "View a file cache"
-msgstr ""
+msgstr "Fájl-gyorsítótár megtekintése"
 
 #: queues.py:13
 msgid "Purge a file cache partition"
-msgstr ""
+msgstr "Törölje ki a fájl-gyorsítótár partíciót"
 
 #: settings.py:15
 msgid ""
 "Number of times a cache will retry failed attempts to prune files to free up"
 " space for new a file being requested, before giving up."
 msgstr ""
+"Azoknak az alkalmaknak a száma, amikor a gyorsítótár megismétli a sikertelen"
+" próbálkozásokat a fájlok törlésére, hogy helyet szabadítson fel az újonnan "
+"kért fájl számára, mielőtt feladná."
 
 #: settings.py:23
 msgid ""
 "Number of times a cache will attempt to prune files to free up space for new"
 " a file being requested, before giving up."
 msgstr ""
+"Azoknak az alkalmaknak a száma, amikor a gyorsítótár megkísérli a fájlok "
+"törlését, hogy helyet szabadítson fel az újonnan kért fájl számára, mielőtt "
+"feladná."
 
 #: views.py:50
 #, python-format
 msgid "Details of cache: %s"
-msgstr ""
+msgstr "A gyorsítótár adatai: %s"
 
 #: views.py:62
 msgid "File caches list"
-msgstr ""
+msgstr "Fájl gyorsítótárak listája"
 
 #: views.py:83
 #, python-format
 msgid "Details cache: %s"
-msgstr ""
+msgstr "Részletek gyorsítótár: %s"
 
 #: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
-msgstr ""
+msgstr "Kiüríti a \"%s \" gyorsítótár partícióit?"
 
 #: views.py:116
 msgid "Object cache partitions submitted for purging."
-msgstr ""
+msgstr "Az objektum-gyorsítótár partíciók elküldve törlésre."
 
 #: views.py:125
 #, python-format
 msgid "%(count)d cache submitted for purging."
-msgstr ""
+msgstr "%(count)d gyorsítótár megtisztításra küldve."
 
 #: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
-msgstr ""
+msgstr "%(count)d gyorsítótár tisztításra küldve."
 
 #: views.py:134
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Elküldi a kiválasztott gyorsítótárat tisztításra?"
+msgstr[1] "Elküldi a kiválasztott gyorsítótárakat tisztításra?"

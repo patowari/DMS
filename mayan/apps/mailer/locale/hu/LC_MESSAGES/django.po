@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,37 +23,39 @@ msgstr ""
 
 #: apps.py:48
 msgid "Mailer"
-msgstr "Levelező"
+msgstr "Postázó"
 
 #: classes.py:54
 msgid "Null backend"
-msgstr ""
+msgstr "Null háttérrendszer"
 
 #: events.py:5 permissions.py:5 queues.py:7 settings.py:10
 msgid "Mailing"
-msgstr ""
+msgstr "Levelezés"
 
 #: events.py:8
 msgid "Email sent"
-msgstr ""
+msgstr "Email elküldve"
 
 #: events.py:11
 msgid "Mailing profile created"
-msgstr ""
+msgstr "Levelezési profil létrehozva"
 
 #: events.py:14
 msgid "Mailing profile edited"
-msgstr ""
+msgstr "Levelezési profil szerkesztve"
 
 #: forms.py:58 forms.py:93
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
 msgstr ""
+"A címzett email címe. Több cím is lehet, vesszővel vagy pontosvesszővel "
+"elválasztva."
 
 #: forms.py:60 forms.py:95
 msgid "Email address"
-msgstr "Emailcím"
+msgstr "Email cím"
 
 #: forms.py:62 workflow_actions.py:74
 msgid "Subject"
@@ -64,48 +67,48 @@ msgstr "Szövegtörzs"
 
 #: forms.py:68
 msgid "The email profile that will be used to send this email."
-msgstr ""
+msgstr "Az email elküldéséhez használt email-profil."
 
 #: forms.py:69 models.py:61 views/mailing_profile_views.py:135
 #: workflow_actions.py:19
 msgid "Mailing profile"
-msgstr ""
+msgstr "Levelezési profil"
 
 #: forms.py:75
 msgid "The driver to use when sending emails."
-msgstr ""
+msgstr "Az emailek küldésekor használt illesztőprogram."
 
 #: forms.py:76
 msgid "Backend"
-msgstr ""
+msgstr "Háttérrendszer"
 
 #: links.py:33 links.py:36
 msgid "Email document link"
-msgstr ""
+msgstr "Email dokumentum hivatkozás"
 
 #: links.py:46 links.py:51
 msgid "Email document file"
-msgstr ""
+msgstr "Dokumentumfájl elküldése emailben"
 
 #: links.py:57 links.py:62
 msgid "Email document file link"
-msgstr ""
+msgstr "Dokumentumfájl hivatkozás küldése emailben"
 
 #: links.py:72 links.py:77
 msgid "Email document version"
-msgstr ""
+msgstr "Email dokumentum verzió"
 
 #: links.py:83
 msgid "Email document version link"
-msgstr ""
+msgstr "A dokumentum verzió hivatkozásának elküldése e-mailben"
 
 #: links.py:88
 msgid "Email link version"
-msgstr ""
+msgstr "Email hivatkozás verzió"
 
 #: links.py:97
 msgid "Create mailing profile"
-msgstr ""
+msgstr "Levelezési profil létrehozása"
 
 #: links.py:103
 msgid "Delete"
@@ -117,15 +120,15 @@ msgstr "Szerkesztés"
 
 #: links.py:113
 msgid "Mailing profiles list"
-msgstr ""
+msgstr "Levelezési profilok listája"
 
 #: links.py:117 models.py:62
 msgid "Mailing profiles"
-msgstr ""
+msgstr "Levelezési profilok"
 
 #: links.py:122 views/mailing_profile_views.py:162
 msgid "Test"
-msgstr ""
+msgstr "Teszt"
 
 #: literals.py:7
 #, python-format
@@ -135,10 +138,14 @@ msgid ""
 " --------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"Ehhez az emailhez csatoltuk a következőt: {{ object_name }}: {{ object }}\n"
+"\n"
+" --------\n"
+" Ezt az emailt innen küldte: %(project_title)s ( %(project_website)s )"
 
 #: literals.py:11
 msgid "{{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "{{ object_name }}: {{ object }}"
 
 #: literals.py:13
 #, python-format
@@ -148,20 +155,26 @@ msgid ""
 "--------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"A(z) {{ object_name }} eléréséhez kattintson a következő linkre: {{ link }}\n"
+"\n"
+" --------\n"
+" Ezt az emailt innen küldte: %(project_title)s ( %(project_website)s )"
 
 #: literals.py:17
 msgid "Link for {{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "Link a következőhöz: {{ object_name }}: {{ object }}"
 
 #: mailers.py:19 mailers.py:108
 msgid "From"
-msgstr ""
+msgstr "Feladó"
 
 #: mailers.py:22 mailers.py:111
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
 msgstr ""
+"A feladó címe. Egyes rendszerek megtagadják az üzenetek küldését, ha ez az "
+"érték nincs beállítva."
 
 #: mailers.py:28
 msgid "Host"
@@ -169,29 +182,32 @@ msgstr "Kiszolgáló"
 
 #: mailers.py:30
 msgid "The host to use for sending email."
-msgstr ""
+msgstr "Az emailek küldésére használt gazdagép."
 
 #: mailers.py:35
 msgid "Port"
-msgstr ""
+msgstr "Portszám"
 
 #: mailers.py:37
 msgid "Port to use for the SMTP server."
-msgstr ""
+msgstr "Az SMTP-kiszolgálóhoz használandó port."
 
 #: mailers.py:40
 msgid "Use TLS"
-msgstr ""
+msgstr "TLS használata"
 
 #: mailers.py:43
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
 msgstr ""
+"Használjon-e TLS (biztonságos) kapcsolatot, amikor az SMTP-kiszolgálóhoz "
+"kapcsolódik. Ez az explicit TLS-kapcsolatokhoz használatos, általában az "
+"587-es porton."
 
 #: mailers.py:48
 msgid "Use SSL"
-msgstr ""
+msgstr "SSL használata"
 
 #: mailers.py:51
 msgid ""
@@ -202,16 +218,25 @@ msgid ""
 "and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
 " True."
 msgstr ""
+"Használjon-e implicit TLS (biztonságos) kapcsolatot, amikor az SMTP-"
+"kiszolgálóhoz kapcsolódik. A legtöbb e-mail dokumentációban ezt a fajta TLS-"
+"kapcsolatot SSL-ként említik. Általában a 465-ös porton használják. Ha "
+"problémákat tapasztal, lásd az explicit TLS beállítás \"TLS használata\"-t ."
+" Vegye figyelembe, hogy a \"TLS használata\" és az \"SSL használata\" "
+"kölcsönösen kizárják egymást, ezért csak az egyik beállítást állítsa jelölje"
+" be."
 
 #: mailers.py:60
 msgid "Username"
-msgstr ""
+msgstr "Felhasználónév"
 
 #: mailers.py:63
 msgid ""
 "Username to use for the SMTP server. If empty, authentication won't "
 "attempted."
 msgstr ""
+"Az SMTP-kiszolgálóhoz használandó felhasználónév. Ha üres, a hitelesítés nem"
+" történik meg."
 
 #: mailers.py:69
 msgid "Password"
@@ -223,221 +248,233 @@ msgid ""
 "with the username when authenticating to the SMTP server. If either of these"
 " settings is empty, authentication won't be attempted."
 msgstr ""
+"Az SMTP szerverhez használandó jelszó. Ez a beállítás a felhasználónévvel "
+"együtt használatos az SMTP-kiszolgálón történő hitelesítés során. Ha a "
+"beállítások bármelyike üres, a hitelesítés nem történik meg."
 
 #: mailers.py:81
 msgid "Django SMTP backend"
-msgstr ""
+msgstr "Django SMTP háttérrendszer"
 
 #: mailers.py:103
 msgid "File path"
-msgstr ""
+msgstr "Fájl elérési út"
 
 #: mailers.py:118
 msgid "Django file based backend"
-msgstr ""
+msgstr "Django fájl alapú háttérrendszer"
 
 #: models.py:38
 msgid "A short text describing the mailing profile."
-msgstr ""
+msgstr "A levelezési profilt leíró rövid szöveg."
 
 #: models.py:39
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: models.py:43
 msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
 msgstr ""
+"Alapértelmezés szerint ez a levelezési profil előre lesz kiválasztva a "
+"dokumentumküldési űrlapon."
 
 #: models.py:45
 msgid "Default"
-msgstr "Alapéretelmezett"
+msgstr "Alapértelmezett"
 
 #: models.py:47
 msgid "Enabled"
-msgstr "Bekapcsolt"
+msgstr "Engedélyezve"
 
 #: models.py:50
 msgid "The dotted Python path to the backend class."
-msgstr ""
+msgstr "A pontozott Python elérési út a háttérosztályhoz."
 
 #: models.py:51
 msgid "Backend path"
-msgstr ""
+msgstr "Háttérrendszer elérési útja"
 
 #: models.py:54
 msgid "Backend data"
-msgstr ""
+msgstr "Háttérrendszerbeli adatok"
 
 #: models.py:237
 msgid "Test email from Mayan EDMS"
-msgstr ""
+msgstr "Teszt e-mail a Mayan EDMS-től"
 
 #: permissions.py:10
 msgid "Create a mailing profile"
-msgstr ""
+msgstr "Levelezési profil létrehozása"
 
 #: permissions.py:13
 msgid "Delete a mailing profile"
-msgstr ""
+msgstr "Levelezési profil törlése"
 
 #: permissions.py:16
 msgid "Edit a mailing profile"
-msgstr ""
+msgstr "Levelezési profil szerkesztése"
 
 #: permissions.py:19
 msgid "View a mailing profile"
-msgstr ""
+msgstr "Levelezési profil megtekintése"
 
 #: permissions.py:22
 msgid "Use a mailing profile"
-msgstr ""
+msgstr "Levelezési profil használata"
 
 #: permissions.py:28
 msgid "Send document link via email"
-msgstr ""
+msgstr "Dokumentum hivatkozás küldése emailben"
 
 #: permissions.py:34
 msgid "Send document file via email"
-msgstr ""
+msgstr "Dokumentumfájl küldése emailben"
 
 #: permissions.py:38
 msgid "Send document file link via email"
-msgstr ""
+msgstr "Dokumentumfájl hivatkozás küldése emailben"
 
 #: permissions.py:45
 msgid "Send document version via email"
-msgstr ""
+msgstr "Dokumentum verziójának küldése emailben"
 
 #: permissions.py:49
 msgid "Send document version link via email"
-msgstr ""
+msgstr "A dokumentum verzió hivatkozásának elküldése emailben"
 
 #: queues.py:11
 msgid "Send object"
-msgstr ""
+msgstr "Objektum küldése"
 
 #: settings.py:15
 msgid "Template for the document email form subject line."
-msgstr ""
+msgstr "Sablon a dokumentum email űrlapjának tárgysorához."
 
 #: settings.py:21
 msgid "Template for the document email form body text. Can include HTML."
 msgstr ""
+"Sablon a dokumentum email űrlapjának szövegtörzséhez. Tartalmazhat HTML-t."
 
 #: settings.py:27
 msgid "Template for the document link email form subject line."
-msgstr ""
+msgstr "Sablon a dokumentumhivatkozás  email űrlap tárgysorához."
 
 #: settings.py:33
 msgid "Template for the document link email form body text. Can include HTML."
 msgstr ""
+"Sablon a dokumentumhivatkozás email űrlapjának szövegtörzséhez. Tartalmazhat"
+" HTML-t."
 
 #: validators.py:12
 #, python-format
 msgid "%(email)s is not a valid email address."
-msgstr ""
+msgstr "A %(email)s nem érvényes email cím."
 
 #: views/base.py:65
 msgid "Document file"
-msgstr ""
+msgstr "Dokumentumfájl"
 
 #: views/document_file_views.py:21
 #, python-format
 msgid "%(count)d document file queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumfájl emailben történő kézbesítéshez várakozik"
 
 #: views/document_file_views.py:23
 #, python-format
 msgid "%(count)d document files queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumfájl várakozik az email kézbesítésre"
 
 #: views/document_file_views.py:36
 #, python-format
 msgid "%(count)d document file link queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumfájl hivatkozás várakozik az email kézbesítésre"
 
 #: views/document_file_views.py:39
 #, python-format
 msgid "%(count)d document file links queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumfájl-hivatkozás várakozik az email kézbesítésre"
 
 #: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document version queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumverzió várakozik az email kézbesítésre"
 
 #: views/document_version_views.py:25
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumverzió várakozik az email kézbesítésre"
 
 #: views/document_version_views.py:38
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumverzió hivatkozás várakozik az email kézbesítésre"
 
 #: views/document_version_views.py:41
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumverzió hivatkozás várakozik az email kézbesítésre"
 
 #: views/document_views.py:15
 #, python-format
 msgid "%(count)d document link queued for email delivery"
-msgstr ""
+msgstr "%(count)d dokumentumhivatkozás sorban áll az e-mail-kézbesítéshez"
 
 #: views/document_views.py:17
 #, python-format
 msgid "%(count)d document links queued for email delivery"
 msgstr ""
+"%(count)d dokumentumhivatkozások sorban állnak az e-mail-kézbesítéshez"
 
 #: views/mailing_profile_views.py:33
 msgid "New mailing profile backend selection"
-msgstr ""
+msgstr "Új levelezési profil háttérrendszer választás"
 
 #: views/mailing_profile_views.py:67
 #, python-format
 msgid "Create a \"%s\" mailing profile"
-msgstr ""
+msgstr "\"%s\" levelezési profil létrehozása"
 
 #: views/mailing_profile_views.py:92
 #, python-format
 msgid "Delete mailing profile: %s"
-msgstr ""
+msgstr "Levelezési profil törlése: %s"
 
 #: views/mailing_profile_views.py:105
 #, python-format
 msgid "Edit mailing profile: %s"
-msgstr ""
+msgstr "Levelezési profil szerkesztése: %s"
 
 #: views/mailing_profile_views.py:130
 msgid ""
 "Mailing profiles are email configurations. Mailing profiles allow sending "
 "documents as attachments or as links via email."
 msgstr ""
+"A levelezési profilok email konfigurációk. A levelezési profilok lehetővé "
+"teszik a dokumentumok csatolmányként vagy hivatkozásként történő elküldését "
+"emailben."
 
 #: views/mailing_profile_views.py:134
 msgid "No mailing profiles available"
-msgstr ""
+msgstr "Nem állnak rendelkezésre levelezési profilok"
 
 #: views/mailing_profile_views.py:154
 msgid "Test email sent."
-msgstr ""
+msgstr "Teszt email elküldve."
 
 #: views/mailing_profile_views.py:163
 #, python-format
 msgid "Test mailing profile: %s"
-msgstr ""
+msgstr "Levelezési profil tesztelése: %s"
 
 #: workflow_actions.py:22
 msgid "Mailing profile to use when sending the email."
-msgstr ""
+msgstr "Az email küldésekor használandó levelezési profil."
 
 #: workflow_actions.py:27
 msgid "Recipient"
-msgstr ""
+msgstr "Címzett"
 
 #: workflow_actions.py:30
 msgid ""
@@ -445,10 +482,13 @@ msgid ""
 " or semicolon. A template can be used to reference properties of the "
 "document."
 msgstr ""
+"A címzett e-mail címe. Több cím is lehet, vesszővel vagy pontosvesszővel "
+"elválasztva. Egy sablon használható a dokumentum tulajdonságainak "
+"hivatkozására."
 
 #: workflow_actions.py:38
 msgid "CC"
-msgstr ""
+msgstr "Másolat"
 
 #: workflow_actions.py:41 workflow_actions.py:53
 msgid ""
@@ -456,14 +496,17 @@ msgid ""
 "addresses separated by comma or semicolon. A template can be used to "
 "reference properties of the document."
 msgstr ""
+"Az email küldésekor a „Titkos másolat” fejlécben használt cím. Több cím is "
+"lehet, vesszővel vagy pontosvesszővel elválasztva. Egy sablon használható a "
+"dokumentum tulajdonságainak hivatkozására."
 
 #: workflow_actions.py:50
 msgid "BCC"
-msgstr ""
+msgstr "Titkos másolat"
 
 #: workflow_actions.py:62
 msgid "Reply to"
-msgstr ""
+msgstr "Válaszcím"
 
 #: workflow_actions.py:65
 msgid ""
@@ -471,31 +514,34 @@ msgid ""
 "multiple addresses separated by comma or semicolon. A template can be used "
 "to reference properties of the document."
 msgstr ""
+"Az e-mail küldésekor a \"Válaszcím\" fejlécben használt cím. Több cím is "
+"lehet, vesszővel vagy pontosvesszővel elválasztva. Egy sablon használható a "
+"dokumentum tulajdonságainak hivatkozására."
 
 #: workflow_actions.py:77
 msgid "Subject of the email. Can be a string or a template."
-msgstr ""
+msgstr "Az email tárgya. Lehet karakterlánc vagy sablon."
 
 #: workflow_actions.py:86
 msgid "Body of the email to send. Can be a string or a template."
-msgstr ""
+msgstr "Az elküldendő email szövegtörzse. Lehet karakterlánc vagy sablon."
 
 #: workflow_actions.py:93 workflow_actions.py:170
 msgid "Attachment"
-msgstr ""
+msgstr "Melléklet"
 
 #: workflow_actions.py:96
 msgid "Attach an object to the email."
-msgstr ""
+msgstr "Objektum csatolása az emailhez."
 
 #: workflow_actions.py:105
 msgid "Send object via email"
-msgstr ""
+msgstr "Objektum küldése emailben"
 
 #: workflow_actions.py:173
 msgid "Attach the exported document version to the email."
-msgstr ""
+msgstr "Az exportált dokumentumverzió csatolása az emailhez."
 
 #: workflow_actions.py:182
 msgid "Send document via email"
-msgstr ""
+msgstr "Dokumentum küldése emailben"

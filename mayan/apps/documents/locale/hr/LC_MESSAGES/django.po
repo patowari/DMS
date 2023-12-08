@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -863,7 +863,7 @@ msgstr ""
 
 #: models/document_type_models.py:84
 msgid "Documents types"
-msgstr ""
+msgstr "Vrste dokumenata"
 
 #: models/document_type_models.py:205
 msgid "Enabled"
@@ -1026,7 +1026,7 @@ msgstr ""
 
 #: permissions.py:83
 msgid "Create document types"
-msgstr ""
+msgstr "Izradi vrste dokumenata"
 
 #: permissions.py:86
 msgid "Delete document types"

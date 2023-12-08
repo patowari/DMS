@@ -7,14 +7,15 @@
 # Roberto Rosario, 2022
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2022
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:33+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,11 +168,11 @@ msgstr "UUID dokumentu"
 
 #: search.py:52
 msgid "Document file checksum"
-msgstr ""
+msgstr "Suma kontrolna pliku dokumentu"
 
 #: search.py:55
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Plik dokumentu typu MIME"
 
 #: serializers.py:18
 msgid "List of children cabinets."
@@ -239,32 +240,32 @@ msgstr "Brak dostępnych szafek"
 #: views.py:191
 #, python-format
 msgid "Document \"%(object)s\" added to cabinets successfully."
-msgstr ""
+msgstr "Dokument \"%(object)s\" pomyślnie dodany do szafek."
 
 #: views.py:194
 #, python-format
 msgid "%(count)d document added to cabinets successfully."
-msgstr ""
+msgstr "Dokument został pomyślnie dodany do szafek (w ilości: %(count)d)."
 
 #: views.py:197
 #, python-format
 msgid "%(count)d documents added to cabinets successfully."
-msgstr ""
+msgstr "Dokument został pomyślnie dodany do szafek (w ilości: %(count)d)."
 
 #: views.py:199
 #, python-format
 msgid "Add document \"%(object)s\" to cabinets."
-msgstr ""
+msgstr "Dodaj dokument \"%(object)s\" do szafek."
 
 #: views.py:200
 #, python-format
 msgid "Add %(count)d document to cabinets."
-msgstr ""
+msgstr "Dodaj %(count)ddokument do szafek."
 
 #: views.py:201
 #, python-format
 msgid "Add %(count)d documents to cabinets."
-msgstr ""
+msgstr "Dodaj %(count)d dokumenty do szafek."
 
 #: views.py:219
 msgid "Cabinets to which the selected documents will be added."
@@ -286,32 +287,32 @@ msgstr "Szafki zawierające dokument: %s"
 #: views.py:289
 #, python-format
 msgid "Document \"%(object)s\" removed from cabinets successfully."
-msgstr ""
+msgstr "Dokument \"%(object)s\" został pomyślnie usunięty z szafek."
 
 #: views.py:292
 #, python-format
 msgid "%(count)d document removed from cabinets successfully."
-msgstr ""
+msgstr "%(count)d dokument został pomyślnie usunięty z szafek."
 
 #: views.py:295
 #, python-format
 msgid "%(count)d documents removed from cabinets successfully."
-msgstr ""
+msgstr "%(count)d dokumenty pomyślnie usunięto z szafek."
 
 #: views.py:297
 #, python-format
 msgid "Remove document \"%(object)s\" from cabinets."
-msgstr ""
+msgstr "Usuń %(object)s dokument z szafek."
 
 #: views.py:298
 #, python-format
 msgid "Remove %(count)d document from cabinets."
-msgstr ""
+msgstr "Wyjmij %(count)d dokument z szafek."
 
 #: views.py:299
 #, python-format
 msgid "Remove %(count)d documents from cabinets."
-msgstr ""
+msgstr "Wyjmij %(count)d dokumenty z szafek."
 
 #: views.py:317
 msgid "Cabinets from which the selected documents will be removed."

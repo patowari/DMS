@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: apps.py:57 events.py:5 links.py:141 menus.py:5 models.py:42 queues.py:7
 #: settings.py:13 views/source_views.py:173
 msgid "Sources"
-msgstr ""
+msgstr "Izvori"
 
 #: apps.py:87
 msgid "Create a document source"
@@ -134,23 +134,23 @@ msgstr ""
 
 #: permissions.py:6
 msgid "Sources setup"
-msgstr ""
+msgstr "Postavljanje izvora dokumenata"
 
 #: permissions.py:10
 msgid "Create new document sources"
-msgstr ""
+msgstr "Izradi nove izvore dokumenata"
 
 #: permissions.py:13
 msgid "Delete document sources"
-msgstr ""
+msgstr "Briši izvore dokumenata"
 
 #: permissions.py:16
 msgid "Edit document sources"
-msgstr ""
+msgstr "Uredi izvore dokumenata"
 
 #: permissions.py:19
 msgid "View existing document sources"
-msgstr ""
+msgstr "Pregledaj postojeće izvore dokumenata"
 
 #: queues.py:10
 msgid "Sources periodic"
@@ -646,7 +646,7 @@ msgstr ""
 
 #: views/source_views.py:172
 msgid "No sources available"
-msgstr ""
+msgstr "Nema dostupnih izvora"
 
 #: views/source_views.py:191
 msgid ""

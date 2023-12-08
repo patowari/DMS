@@ -10,15 +10,15 @@
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
 # Roberto Rosario, 2022
 # tetjarediske <tetja.rediske@googlemail.com>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,11 +32,11 @@ msgstr "Protokollierung"
 
 #: events.py:8
 msgid "Error log deleted"
-msgstr ""
+msgstr "Fehlerlog gelöscht"
 
 #: links.py:15 views.py:36
 msgid "Global error log"
-msgstr ""
+msgstr "Globaler Fehlerlog"
 
 #: links.py:26
 msgid "Delete"
@@ -68,11 +68,11 @@ msgstr "App-Label"
 
 #: models.py:58 models.py:68
 msgid "Error log partition"
-msgstr ""
+msgstr "Fehlerlogpartition"
 
 #: models.py:59
 msgid "Error log partitions"
-msgstr ""
+msgstr "Fehlerlogpartitionen"
 
 #: models.py:71
 msgid "Date and time"
@@ -84,11 +84,11 @@ msgstr "Text"
 
 #: models.py:80
 msgid "Error log partition entry"
-msgstr ""
+msgstr "Fehlerlogpartitionseintrag"
 
 #: models.py:81
 msgid "Error log partition entries"
-msgstr ""
+msgstr "Fehlerlogpartitionseinträge"
 
 #: models.py:97
 msgid "Object"
@@ -96,7 +96,7 @@ msgstr "Objekt"
 
 #: permissions.py:8
 msgid "Delete error log"
-msgstr ""
+msgstr "Fehlerlog löschen"
 
 #: permissions.py:11
 msgid "View error log"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: settings.py:25
 msgid "Level for the logging system."
-msgstr ""
+msgstr "Level des Loggingsystems."
 
 #: settings.py:31
 msgid "Path to the logfile that will track errors during production."
@@ -126,6 +126,8 @@ msgid ""
 "This view displays the error log of different objects. An empty list is a "
 "good thing."
 msgstr ""
+"Diese Ansicht stellt die Fehlerlogs von verschiedenen Objekten dar. Eine "
+"leere Liste ist von Vorteil..."
 
 #: views.py:34 views.py:101
 msgid "There are no error log entries"
@@ -143,13 +145,15 @@ msgstr "Objektfehlerlog erfolgreich gelöscht"
 #: views.py:74
 #, python-format
 msgid "Delete error log entry: %s"
-msgstr ""
+msgstr "Fehlerlogeintrag %s löschen"
 
 #: views.py:97
 msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
+"Diese Ansicht stellt den Fehlerlog eines Objektes dar. Eine leere Liste ist "
+"von Vorteil..."
 
 #: views.py:104
 #, python-format

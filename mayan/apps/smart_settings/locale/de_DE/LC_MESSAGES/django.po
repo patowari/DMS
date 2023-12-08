@@ -10,15 +10,15 @@
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2022
 # Marvin Haschker <marvin@haschker.me>, 2022
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,8 +47,8 @@ msgid "Overridden"
 msgstr "Überschrieben"
 
 #: classes.py:376
-msgid "Is this settings being overridden by an environment variable?"
-msgstr "Wird diese Einstellung von einer Umgebungsvariablen überschrieben?"
+msgid "Is this setting being overridden by an environment variable?"
+msgstr ""
 
 #: forms.py:12
 msgid "Enter the new setting value."
@@ -513,6 +513,8 @@ msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
+"Lokaler Speicher momentan nicht verfügbar, Änderungen an Einstellungen "
+"werden nicht gespeichert oder wirksam."
 
 #: views.py:38
 msgid "Setting updated successfully."

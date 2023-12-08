@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2022
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2022\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,7 +79,7 @@ msgstr ""
 
 #: apps.py:320 apps.py:344 models/workflow_instance_models.py:236
 msgid "User"
-msgstr ""
+msgstr "Хэрэглэгч"
 
 #: apps.py:324
 msgid "Last transition"
@@ -123,7 +124,7 @@ msgstr ""
 
 #: apps.py:494 apps.py:500
 msgid "Documents"
-msgstr ""
+msgstr "Баримт"
 
 #: classes.py:127
 #, python-format
@@ -167,11 +168,11 @@ msgstr "Гарчиг"
 
 #: forms.py:163
 msgid "No"
-msgstr ""
+msgstr "Үгүй"
 
 #: forms.py:164
 msgid "Yes"
-msgstr ""
+msgstr "Тийм"
 
 #: forms.py:165 models/workflow_state_escalation_models.py:46
 #: models/workflow_state_models.py:182
@@ -1225,7 +1226,7 @@ msgstr ""
 
 #: workflow_actions.py:25
 msgid "Document label"
-msgstr ""
+msgstr "Баримтын шошго"
 
 #: workflow_actions.py:31
 msgid "The new label to be assigned to the document."
@@ -1233,7 +1234,7 @@ msgstr ""
 
 #: workflow_actions.py:40
 msgid "Document description"
-msgstr ""
+msgstr "Баримтын тайлбар"
 
 #: workflow_actions.py:47
 msgid "The new description to be assigned to the document."
@@ -1281,7 +1282,7 @@ msgstr ""
 
 #: workflow_actions.py:198
 msgid "Password"
-msgstr ""
+msgstr "Нууц үг"
 
 #: workflow_actions.py:205
 msgid "Password to use for making the request with HTTP Basic Auth."

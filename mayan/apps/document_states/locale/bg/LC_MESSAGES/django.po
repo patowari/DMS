@@ -7,15 +7,15 @@
 # Roberto Rosario, 2022
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2022
 # 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2022
-# Lyudmil Antonov <lantonov.here@gmail.com>, 2022
+# Lyudmil Antonov <lantonov.here@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2022\n"
+"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -750,7 +750,7 @@ msgstr "Коментар за преход на работен поток на �
 
 #: serializers/workflow_instance_serializers.py:24
 msgid "Primary key of the workflow template to launch."
-msgstr ""
+msgstr "Първичен ключ на шаблона на работния поток за стартиране."
 
 #: serializers/workflow_instance_serializers.py:47
 msgid "Primary key of the transition to be added."
@@ -797,12 +797,12 @@ msgstr "Основен ключ на първоначалното състоян
 
 #: serializers/workflow_template_transition_serializers.py:184
 msgid "Event Type ID"
-msgstr ""
+msgstr "Идентификатор на тип събитие"
 
 #: serializers/workflow_template_transition_serializers.py:274
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
-msgstr ""
+msgstr "Неизвестен или невалиден идентификатор на тип събитие „ %s “."
 
 #: settings.py:18
 msgid ""

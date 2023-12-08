@@ -7,14 +7,15 @@
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2022
 # Roberto Rosario, 2022
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,7 +86,7 @@ msgstr "Backend"
 
 #: links.py:33 links.py:36
 msgid "Email document link"
-msgstr ""
+msgstr "Link dokumentu e-mailem"
 
 #: links.py:46 links.py:51
 msgid "Email document file"
@@ -152,10 +153,14 @@ msgid ""
 "--------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"Aby uzyskać dostęp do {{ object_name }}, kliknij następujący link: {{ link }}\n"
+"\n"
+" -------- \n"
+"Ten e-mail został wysłany z %(project_title)s (%(project_website)s)"
 
 #: literals.py:17
 msgid "Link for {{ object_name }}: {{ object }}"
-msgstr ""
+msgstr "Link do {{ object_name }}: {{ obiekt }}"
 
 #: mailers.py:19 mailers.py:108
 msgid "From"
@@ -364,7 +369,7 @@ msgstr "%(email)s nie jest prawidłowym adresem e-mail."
 
 #: views/base.py:65
 msgid "Document file"
-msgstr ""
+msgstr "Plik dokumentu"
 
 #: views/document_file_views.py:21
 #, python-format

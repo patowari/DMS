@@ -10,15 +10,15 @@
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2022
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2022
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2022
-# Frédéric Sheedy <sheedf@gmail.com>, 2022
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:33+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2022\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -476,8 +476,8 @@ msgid "Paste an asset (absolute coordinates)"
 msgstr "Coller un actif (coordonnées absolues)"
 
 #: transformations.py:177
-msgid "Paste an asset (percents coordinates)"
-msgstr "Coller un élément (coordonnées en pourcentage)"
+msgid "Paste an asset (percent coordinates)"
+msgstr ""
 
 #: transformations.py:191
 msgid "Crop"
@@ -520,8 +520,8 @@ msgid "Bottom side location in pixels."
 msgstr "Emplacement du côté inférieur en pixels."
 
 #: transformations.py:387
-msgid "Draw rectangle (percents coordinates)"
-msgstr "Dessiner un rectangle (coordonnées en pourcentage)"
+msgid "Draw rectangle (percent coordinates)"
+msgstr ""
 
 #: transformations.py:392
 msgid "Left side location in percent."
@@ -625,7 +625,7 @@ msgstr "Changement de luminosité minimum qui sera accentué."
 
 #: transformations.py:667
 msgid "Tthreshold"
-msgstr ""
+msgstr "Limite"
 
 #: views/asset_views.py:50
 #, python-format

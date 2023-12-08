@@ -6,14 +6,15 @@
 # Translators:
 # Roberto Rosario, 2022
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: apps.py:15 settings.py:9
 msgid "Views"
-msgstr ""
+msgstr "Nézetek"
 
 #: forms.py:54
 msgid "Search"
@@ -35,11 +36,11 @@ msgstr "Kiválasztás"
 
 #: forms.py:385
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: forms.py:389
 msgid "Relationship"
-msgstr ""
+msgstr "Kapcsolat"
 
 #: generics.py:148
 msgid ""
@@ -47,6 +48,9 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
+"Válassza ki az eltávolítandó bejegyzéseket. Több bejegyzés kiválasztásához "
+"tartsa lenyomva a Control billentyűt. A kijelölés befejezése után kattintson"
+" az alábbi gombra, vagy kattintson duplán a listára a művelet aktiválásához."
 
 #: generics.py:153
 msgid ""
@@ -54,177 +58,182 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
+"Válassza ki a hozzáadni kívánt bejegyzéseket. Több bejegyzés kiválasztásához"
+" tartsa lenyomva a Control billentyűt. A kijelölés befejezése után "
+"kattintson az alábbi gombra, vagy kattintson duplán a listára a művelet "
+"aktiválásához."
 
 #: generics.py:288
 msgid "Add all"
-msgstr ""
+msgstr "Az összes hozzáadása"
 
 #: generics.py:296
 msgid "Add"
-msgstr ""
+msgstr "Hozzáadás"
 
 #: generics.py:306
 msgid "Remove all"
-msgstr ""
+msgstr "Összes eltávolítása"
 
 #: generics.py:314
 msgid "Remove"
-msgstr "Levétel"
+msgstr "Eltávolítás"
 
 #: generics.py:533
 #, python-format
 msgid "Error updating relationship; %s"
-msgstr ""
+msgstr "Hiba a kapcsolat frissítése során; %s"
 
 #: generics.py:540
 msgid "Relationships updated successfully"
-msgstr ""
+msgstr "A kapcsolatok frissítése sikeresen megtörtént"
 
 #: generics.py:603
 #, python-format
 msgid "Duplicate data error: %(error)s"
-msgstr ""
+msgstr "Ismétlődő adathiba: %(error)s"
 
 #: generics.py:622
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
-msgstr ""
+msgstr "%(object)s nem jött létre, hiba: %(error)s"
 
 #: generics.py:633
 #, python-format
 msgid "%(object)s created successfully."
-msgstr ""
+msgstr "%(object)s sikeresen létrehozva."
 
 #: generics.py:673
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
-msgstr ""
+msgstr "%(object)s nincs törölve, hiba: %(error)s ."
 
 #: generics.py:682
 #, python-format
 msgid "%(object)s deleted successfully."
-msgstr ""
+msgstr "%(object)s sikeresen törölve."
 
 #: generics.py:737
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
-msgstr ""
+msgstr "Hiba %(object)s lekérésekor ; %(error)s"
 
 #: generics.py:843
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
-msgstr ""
+msgstr "%(object)s nincs frissítve, hiba: %(error)s ."
 
 #: generics.py:852
 #, python-format
 msgid "%(object)s updated successfully."
-msgstr ""
+msgstr "%(object)s sikeresen frissítve."
 
 #: generics.py:914
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "\"%(object)s\" sikeresen törölve."
 
 #: generics.py:915
 #, python-format
 msgid "%(count)d object deleted successfully."
-msgstr ""
+msgstr "%(count)d objektum sikeresen törölve."
 
 #: generics.py:916
 #, python-format
 msgid "%(count)d objects deleted successfully."
-msgstr ""
+msgstr "%(count)d objektum sikeresen törölve."
 
 #: generics.py:917
 #, python-format
 msgid "Delete \"%(object)s\"."
-msgstr ""
+msgstr "\"%(object)s\" törlése."
 
 #: generics.py:918
 #, python-format
 msgid "Delete %(count)d object."
-msgstr ""
+msgstr "%(count)d objektum törlése."
 
 #: generics.py:919
 #, python-format
 msgid "Delete %(count)d objects."
-msgstr ""
+msgstr "%(count)d objektum törlése."
 
 #: mixins.py:374
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
-msgstr ""
+msgstr "Nem található a lekérdezésnek megfelelő %(verbose_name)s"
 
 #: mixins.py:399
 #, python-format
 msgid "Unable to perform operation on object %(instance)s; %(exception)s."
 msgstr ""
+"Nem lehet műveletet végrehajtani a %(instance)s objektumon; %(exception)s ."
 
 #: mixins.py:401
 #, python-format
 msgid "Operation performed on %(object)s."
-msgstr ""
+msgstr "Művelet végrehajtva a %(object)s objektumon."
 
 #: mixins.py:402
 #, python-format
 msgid "Operation performed on %(count)d object."
-msgstr ""
+msgstr "Művelet végrehajtva  %(count)d objektumon."
 
 #: mixins.py:403
 #, python-format
 msgid "Operation performed on %(count)d objects."
-msgstr ""
+msgstr "Művelet végrehajtva %(count)d objektumon."
 
 #: mixins.py:404
 #, python-format
 msgid "Perform operation on %(object)s."
-msgstr ""
+msgstr "Művelet végrehajtása a%(object)s objektumon."
 
 #: mixins.py:405
 #, python-format
 msgid "Perform operation on %(count)d object."
-msgstr ""
+msgstr "Művelet végrehajtása %(count)d objektumon."
 
 #: mixins.py:406
 #, python-format
 msgid "Perform operation on %(count)d objects."
-msgstr ""
+msgstr "Művelet végrehajtása %(count)d objektumon."
 
 #: mixins.py:488
 msgid "Object"
-msgstr ""
+msgstr "Objektum"
 
 #: settings.py:14
 msgid "The number objects that will be displayed per page."
-msgstr ""
+msgstr "Az oldalanként megjelenített objektumok száma."
 
 #: settings.py:21
 msgid "A string specifying the name to use for the paging parameter."
-msgstr ""
+msgstr "A lapozási paraméterhez használandó nevet meghatározó karakterlánc."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"
-msgstr ""
+msgstr "Törlés jóváhagyása"
 
 #: templatetags/views_tags.py:35
 #, python-format
 msgid "Edit %s"
-msgstr ""
+msgstr "%s szerkesztése"
 
 #: templatetags/views_tags.py:38
 msgid "Confirm"
-msgstr ""
+msgstr "Jóváhagyás"
 
 #: templatetags/views_tags.py:42
 #, python-format
 msgid "Details for: %s"
-msgstr ""
+msgstr "Részletek: %s"
 
 #: templatetags/views_tags.py:46
 #, python-format
 msgid "Edit: %s"
-msgstr ""
+msgstr "Szerkesztés: %s"
 
 #: templatetags/views_tags.py:50
 msgid "Create"
-msgstr ""
+msgstr "Létrehozás"

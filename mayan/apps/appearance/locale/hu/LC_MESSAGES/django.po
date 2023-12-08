@@ -6,14 +6,16 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2022
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Tamás Benkovszky, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:31+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:32+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,75 +29,75 @@ msgstr "Kinézet"
 
 #: dependencies.py:8
 msgid "Lato font"
-msgstr ""
+msgstr "Lato font"
 
 #: dependencies.py:12
 msgid "Bootstrap"
-msgstr ""
+msgstr "Bootstrap"
 
 #: dependencies.py:16
 msgid "Bootswatch"
-msgstr ""
+msgstr "Bootswatch"
 
 #: dependencies.py:30
 msgid "Fancybox"
-msgstr ""
+msgstr "Fancybox"
 
 #: dependencies.py:34
 msgid "FontAwesome"
-msgstr ""
+msgstr "FontAwesome"
 
 #: dependencies.py:38
 msgid "jQuery"
-msgstr ""
+msgstr "jQuery"
 
 #: dependencies.py:42
 msgid "JQuery Form"
-msgstr ""
+msgstr "JQuery űrlap"
 
 #: dependencies.py:46
 msgid "jQuery Lazy Load"
-msgstr ""
+msgstr "jQuery Lazy Load"
 
 #: dependencies.py:50
 msgid "JQuery Match Height"
-msgstr ""
+msgstr "JQuery Match Height"
 
 #: dependencies.py:54
 msgid "Select 2"
-msgstr ""
+msgstr "Select 2"
 
 #: dependencies.py:58
 msgid "Toastr"
-msgstr ""
+msgstr "Toastr"
 
 #: dependencies.py:62
 msgid "URI.js"
-msgstr ""
+msgstr "URI.js"
 
 #: events.py:8
 msgid "Theme created"
-msgstr ""
+msgstr "Téma létrehozva"
 
 #: events.py:11
 msgid "Theme edited"
-msgstr ""
+msgstr "Téma szerkesztve"
 
 #: events.py:14
 msgid "User theme edited"
-msgstr ""
+msgstr "Felhasználói téma szerkesztve"
 
 #: links.py:18
 msgid "Theme settings"
-msgstr ""
+msgstr "Téma beállítások"
 
 #: links.py:25
 msgid "Edit theme settings"
-msgstr ""
+msgstr "Szerkessze a téma beállításait"
 
 #: links.py:31 views.py:31
 msgid "Create new theme"
-msgstr ""
+msgstr "Hozzon létre új témát"
 
 #: links.py:36
 msgid "Delete"
@@ -107,11 +109,11 @@ msgstr "Szerkesztés"
 
 #: links.py:44 links.py:49 models.py:32 views.py:99
 msgid "Themes"
-msgstr ""
+msgstr "Témák"
 
 #: models.py:19
 msgid "A short text describing the theme."
-msgstr ""
+msgstr "A témát leíró rövid szöveg."
 
 #: models.py:20
 msgid "Label"
@@ -122,14 +124,16 @@ msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
+"A CSS-stíluslap a különböző felhasználói felület elemeinek megjelenésének "
+"megváltoztatásához."
 
 #: models.py:26
 msgid "Stylesheet"
-msgstr ""
+msgstr "Stíluslap"
 
 #: models.py:31 models.py:69
 msgid "Theme"
-msgstr ""
+msgstr "Téma"
 
 #: models.py:65
 msgid "User"
@@ -137,50 +141,54 @@ msgstr "Felhasználó"
 
 #: models.py:73
 msgid "User theme setting"
-msgstr ""
+msgstr "Felhasználói téma beállítása"
 
 #: models.py:74
 msgid "User theme settings"
-msgstr ""
+msgstr "Felhasználói téma beállításai"
 
 #: permissions.py:8
 msgid "Create new themes"
-msgstr ""
+msgstr "Hozzon létre új témákat"
 
 #: permissions.py:11
 msgid "Delete themes"
-msgstr ""
+msgstr "Témák törlése"
 
 #: permissions.py:14
 msgid "Edit themes"
-msgstr ""
+msgstr "Témák szerkesztése"
 
 #: permissions.py:17
 msgid "View existing themes"
-msgstr ""
+msgstr "Meglévő témák megtekintése"
 
 #: settings.py:15
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Egyéni HTTP válaszkód AJAX átirányításokhoz."
 
 #: settings.py:21
 msgid "Maximum number of characters that will be displayed as the view title."
-msgstr ""
+msgstr "A nézet címeként megjelenő karakterek maximális száma."
 
 #: settings.py:28
 msgid ""
 "Position where the system message will be displayed. Options are: top-left, "
 "top-center, top-right, bottom-left, bottom-center, bottom-right."
 msgstr ""
+"Pozíció, ahol a rendszerüzenet megjelenik. A lehetőségek a következők: bal "
+"felső, felső közép, jobb felső, bal alsó, alsó közép, jobb alsó."
 
 #: settings.py:36
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Késleltetés ezredmásodpercben, amely után a rendszer ellenőrzi a menük "
+"frissítéseit."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
-msgstr ""
+msgstr "Elégtelen engedély"
 
 #: templates/403.html:32
 msgid "You don't have enough permissions for this operation."
@@ -192,63 +200,69 @@ msgstr "Oldal nem található"
 
 #: templates/404.html:32
 msgid "The requested page could not be found."
-msgstr ""
+msgstr "A keresett oldal nem található."
 
 #: templates/404.html:40
 msgid "Possible reasons"
-msgstr ""
+msgstr "Lehetséges okok"
 
 #: templates/404.html:44
 msgid "The location of the item is incorrect."
-msgstr ""
+msgstr "A tétel helye helytelen."
 
 #: templates/404.html:45
 msgid "The location is correct, but the item no longer exists."
-msgstr ""
+msgstr "A hely megfelelő, de az elem már nem létezik."
 
 #: templates/404.html:46
 msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
 msgstr ""
+"A hely megfelel, de fiókja nem rendelkezik a hozzáféréshez szükséges "
+"engedéllyel."
 
 #: templates/500.html:5 templates/500.html:30
 #: templates/appearance/root.html:47
 msgid "Server error"
-msgstr ""
+msgstr "Szerver hiba"
 
 #: templates/500.html:32
 msgid "There's been an unexpected error."
-msgstr ""
+msgstr "Váratlan hiba történt."
 
 #: templates/500.html:40
 msgid "What to do next?"
-msgstr ""
+msgstr "Mi legyen a következő?"
 
 #: templates/500.html:44
 msgid "Refresh the page."
-msgstr ""
+msgstr "Frissítse az oldalt."
 
 #: templates/500.html:45
 msgid "Wait a bit. The system might be overloaded."
-msgstr ""
+msgstr "Várj egy kicsit. Lehetséges, hogy a rendszer túlterhelt."
 
 #: templates/500.html:46
 msgid "Contact your system administrator."
-msgstr ""
+msgstr "Forduljon a rendszergazdához."
 
 #: templates/500.html:47
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
+"Ellenőrizze, hogy a naplókban vannak-e „HIBA”, „KRITIKUS” vagy „FATAL” "
+"címkével ellátott üzenetek."
 
 #: templates/500.html:48
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
+"Nyisson meg egy jegyet a <a href=\"%(issue_url)s\">problémakövető</a> "
+"segítségével."
 
 #: templates/appearance/about.html:10
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
 #: templates/appearance/about.html:72
 #, python-format
@@ -257,6 +271,9 @@ msgid ""
 "                    %(setting_project_title)s is based on %(project_title)s\n"
 "                "
 msgstr ""
+"\n"
+"                    %(setting_project_title)s a %(project_title)s-n alapul\n"
+"                "
 
 #: templates/appearance/about.html:77
 msgid "Version"
@@ -265,11 +282,11 @@ msgstr "Verzió"
 #: templates/appearance/about.html:79
 #, python-format
 msgid "Build number: %(build_number)s"
-msgstr ""
+msgstr "Build szám: %(build_number)s"
 
 #: templates/appearance/about.html:92
 msgid "Released under the license:"
-msgstr ""
+msgstr "A licenc ami alapján megjelent:"
 
 #: templates/appearance/about.html:98
 #, python-format
@@ -278,6 +295,9 @@ msgid ""
 "                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
 "            "
 msgstr ""
+"\n"
+"                A változások teljes listája elérhető a <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Kiadási jegyzetben %(icon_documentation)s</a> vagy a rövid verzió <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">a változásnaplóban %(icon_documentation)s</a>.\n"
+"            "
 
 #: templates/appearance/about.html:104
 #, python-format
@@ -286,6 +306,9 @@ msgid ""
 "                For questions check the <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
 "            "
 msgstr ""
+"\n"
+"                Ha kérdései vannak, nézze meg a <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Dokumentációt %(icon_documentation)s</a>.\n"
+"            "
 
 #: templates/appearance/about.html:110
 #, python-format
@@ -294,6 +317,9 @@ msgid ""
 "                If you found a bug or have a feature idea, visit the <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> or open a ticket in the <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Source code repository %(icon_source_code)s</a>.\n"
 "            "
 msgstr ""
+"\n"
+"                Ha hibát talált, vagy új funkciót szeretne, látogassa meg a <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Fórumot %(icon_forum)s</a> vagy nyisson hibajegyet a <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Forráskód repository-ban %(icon_source_code)s</a>.\n"
+"            "
 
 #: templates/appearance/about.html:115
 #, python-format
@@ -302,14 +328,17 @@ msgid ""
 "                Spread the word. Talk to your friends and colleagues about how awesome %(project_title)s is!\n"
 "            "
 msgstr ""
+"\n"
+"                Terjessze a hírt. Mondja el a kollégáknak és barátoknak hogy a%(project_title)s milyen nagyszerű!\n"
+"            "
 
 #: templates/appearance/base.html:73
 msgid "Object"
-msgstr ""
+msgstr "Tárgy"
 
 #: templates/appearance/generic_confirm.html:13
 msgid "Are you sure?"
-msgstr ""
+msgstr "biztos vagy ebben?"
 
 #: templates/appearance/generic_confirm.html:37
 msgid "Yes"
@@ -324,50 +353,50 @@ msgstr "Nem"
 #: templates/appearance/partials/form_field.html:10
 #: templates/appearance/partials/form_field.html:16
 msgid "required"
-msgstr ""
+msgstr "kívánt"
 
 #: templates/appearance/generic_form_subtemplate.html:84
 #: templates/appearance/generic_form_subtemplate.html:94
 #: templates/appearance/generic_form_subtemplate.html:108
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
-msgstr ""
+msgstr "Megment"
 
 #: templates/appearance/generic_form_subtemplate.html:84
 #: templates/appearance/generic_form_subtemplate.html:94
 #: templates/appearance/generic_form_subtemplate.html:108
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Submit"
-msgstr ""
+msgstr "Beküldés"
 
 #: templates/appearance/generic_form_subtemplate.html:98
 #: templates/appearance/generic_multiform_subtemplate.html:66
 msgid "Cancel"
-msgstr ""
+msgstr "Megszünteti"
 
 #: templates/appearance/generic_list_subtemplate.html:35
 msgid "Identifier"
-msgstr ""
+msgstr "Azonosító"
 
 #: templates/appearance/generic_list_subtemplate.html:134
 msgid "Facets"
-msgstr ""
+msgstr "Szempontok"
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
-msgstr ""
+msgstr "Elkezdeni"
 
 #: templates/appearance/home.html:30
 msgid "Before you can fully use Mayan EDMS you need the following:"
-msgstr ""
+msgstr "A Mayan EDMS teljes körű használatához a következőkre van szüksége:"
 
 #: templates/appearance/menus/menu_topbar.html:11
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Kapcsolja be a navigációt"
 
 #: templates/appearance/partials/form_title.html:10
 msgid "Open main menu"
-msgstr ""
+msgstr "Nyissa meg a főmenüt"
 
 #: templates/appearance/partials/list_header.html:11
 #, python-format
@@ -375,79 +404,86 @@ msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
 "%(total_pages)s)"
 msgstr ""
+"Összesen (%(start)s - %(end)s a %(total)s-ból) (%(page_number)s oldal a "
+"%(total_pages)s-ból)"
 
 #: templates/appearance/partials/list_header.html:13
 #: templates/appearance/partials/list_header.html:16
 #, python-format
 msgid "Total: %(total)s"
-msgstr ""
+msgstr "Összesen: %(total)s"
 
 #: templates/appearance/partials/list_toolbar.html:14
 msgid "Select/Deselect all"
-msgstr ""
+msgstr "Összes kijelölése/kijelölésének törlése"
 
 #: templates/appearance/partials/list_toolbar.html:18
 msgid "Toggle list display mode"
-msgstr ""
+msgstr "Lista megjelenítési mód váltása"
 
 #: templates/appearance/partials/list_toolbar.html:63
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
+"Válassza ki az elemeket a tömeges műveletek aktiválásához. Használja a Shift"
+" + kattintást sok kiválasztásához."
 
 #: templates/appearance/partials/list_toolbar.html:68
 msgid "Bulk actions"
-msgstr ""
+msgstr "Tömeges műveletek"
 
 #: templates/appearance/partials/list_toolbar.html:70
 msgid "Toggle Dropdown"
-msgstr ""
+msgstr "Váltás a legördülő menüben"
 
 #: templates/appearance/partials/no_results.html:18
 msgid "No results"
-msgstr ""
+msgstr "Nincs eredmény"
 
 #: templates/appearance/root.html:52
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #: templates/appearance/root.html:60
 msgid "Server communication error"
-msgstr ""
+msgstr "Szerver kommunikációs hiba"
 
 #: templates/appearance/root.html:62
 msgid "Check you network connection and try again in a few moments."
 msgstr ""
+"Ellenőrizze a hálózati kapcsolatot, és néhány pillanat múlva próbálja újra."
 
 #: templatetags/appearance_tags.py:61
 msgid "None"
-msgstr "Semmi"
+msgstr "Nincs"
 
 #: views.py:55
 #, python-format
 msgid "Delete theme: %s"
-msgstr ""
+msgstr "Téma törlése: %s"
 
 #: views.py:72
 #, python-format
 msgid "Edit theme: %s"
-msgstr ""
+msgstr "Téma szerkesztése: %s"
 
 #: views.py:93
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
+"A témák lehetővé teszik a vizuális megjelenés megváltoztatását kódmódosítás "
+"nélkül."
 
 #: views.py:97
 msgid "There are no themes"
-msgstr ""
+msgstr "Nincsenek témák"
 
 #: views.py:122
 #, python-format
 msgid "Theme settings for user: %s"
-msgstr ""
+msgstr "Témabeállítások a felhasználó számára: %s"
 
 #: views.py:144
 #, python-format
 msgid "Edit theme settings for user: %s"
-msgstr ""
+msgstr "Szerkessze a téma beállításait a következő felhasználó számára: %s"

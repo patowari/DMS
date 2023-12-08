@@ -5,14 +5,15 @@
 # 
 # Translators:
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2022
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2022\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,6 +38,8 @@ msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
 msgstr ""
+"Za pomocą tego modułu można określić typ MIME pliku. Próbuje zaimplementować"
+" specyfikację freedesktop dla współdzielonej bazy danych MIME."
 
 #: dependencies.py:17
 msgid "determine file type using content tests"

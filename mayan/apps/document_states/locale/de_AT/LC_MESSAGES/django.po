@@ -12,17 +12,17 @@
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
 # Roberto Rosario, 2022
 # Marvin Haschker <marvin@haschker.me>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2022
 # Nico Reins, 2023
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Nico Reins, 2023\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -151,11 +151,11 @@ msgstr "%(field_name)s Vorlagenfehler: %(exception)s"
 
 #: events.py:10
 msgid "Workflow instance created"
-msgstr ""
+msgstr "Workflowinstanz erstellt"
 
 #: events.py:13
 msgid "Workflow instance transitioned"
-msgstr ""
+msgstr "Workflowinstanz übergegangen"
 
 #: events.py:18
 msgid "Workflow created"
@@ -212,7 +212,7 @@ msgstr "Übergang"
 
 #: forms.py:219
 msgid "Workflow template preview image"
-msgstr ""
+msgstr "Workflowvorlagenvorschau"
 
 #: handlers.py:81
 #, python-format
@@ -255,11 +255,11 @@ msgstr "Aktion erstellen"
 
 #: links.py:140
 msgid "Create escalation"
-msgstr ""
+msgstr "Eskalation erstellen"
 
 #: links.py:161
 msgid "Escalations"
-msgstr ""
+msgstr "Eskalationen"
 
 #: links.py:170
 msgid "Create state"
@@ -317,6 +317,11 @@ msgid ""
 "\"transition\", \"user\", \"comment\") and any values from workflow template"
 " fields."
 msgstr ""
+"Kann ein statischer Wert oder eine Vorlage sein. Zusätzlich zur "
+"Workflowinstanz erhält die Vorlage den Kontext der Workflowinstanz, welche "
+"ihrerseits den \"entry_log\" einschließt (der die Variablen "
+"\"workflow_instance\", \"datetime\", \"transition\", \"user\", \"comment\" "
+"beinhaltet) und alle Werte der Worklflowvorlagenfelder."
 
 #: literals.py:29
 msgid "Character"
@@ -345,7 +350,7 @@ msgstr "Workflow"
 
 #: models/workflow_instance_models.py:40
 msgid "Workflow instance creation date time."
-msgstr ""
+msgstr "Erstellungszeitpunkt der Workflowinstanz."
 
 #: models/workflow_instance_models.py:41
 #: models/workflow_instance_models.py:228
@@ -439,24 +444,29 @@ msgid ""
 "with a lower priority number are executed before escalations with a higher "
 "priority number."
 msgstr ""
+"Legt die Reihenfolge fest, in der die Eskalationen evaluiert werden. "
+"Eskalationen mit niedriger Priorität werden vor Eskalationen mit hoher "
+"Priorität ausgeführt."
 
 #: models/workflow_state_escalation_models.py:40
 msgid "Priority"
-msgstr ""
+msgstr "Priorität"
 
 #: models/workflow_state_escalation_models.py:44
 msgid ""
 "Enable automatic transition the workflow after a specified amount of time "
 "has elapsed in the state without change."
 msgstr ""
+"Automatischen Workflowübergang nach einer definierten Zeitspanne ohne "
+"Änderung im selben Status aktivieren."
 
 #: models/workflow_state_escalation_models.py:51
 msgid "Time unit"
-msgstr ""
+msgstr "Zeiteinheit"
 
 #: models/workflow_state_escalation_models.py:56
 msgid "Amount of the selected escalation units of time."
-msgstr ""
+msgstr "Betrag der Zeiteinheiten der ausgewählten Eskalation."
 
 #: models/workflow_state_escalation_models.py:57
 msgid "Amount"
@@ -466,18 +476,20 @@ msgstr "Anzahl"
 msgid ""
 "Comment to save to the workflow instance when the escalation is executed."
 msgstr ""
+"Kommentar, der auf der Workflowinstanz gespeichert wird, wenn die Eskalation"
+" durchgeführt wird."
 
 #: models/workflow_state_escalation_models.py:69
 msgid "Workflow state escalation"
-msgstr ""
+msgstr "Workflowstatuseskalation"
 
 #: models/workflow_state_escalation_models.py:70
 msgid "Workflow state escalations"
-msgstr ""
+msgstr "Workflowstatuseskalationen"
 
 #: models/workflow_state_escalation_models.py:103
 msgid "Workflow escalation."
-msgstr ""
+msgstr "Workfloweskalation."
 
 #: models/workflow_state_models.py:54
 msgid "A short text to describe the workflow state."
@@ -733,11 +745,11 @@ msgstr "Alle Workflows für ein Dokument starten"
 
 #: queues.py:25
 msgid "Check a workflow instance for state escalation."
-msgstr ""
+msgstr "Eine Workflowinstanz auf Statuseskalation überprüfen."
 
 #: queues.py:29
 msgid "Check all workflow instances for state escalation."
-msgstr ""
+msgstr "Alle Workflowinstanzen auf Statuseskalation überprüfen."
 
 #: queues.py:37
 msgid "Launch all workflows for all documents"
@@ -749,11 +761,11 @@ msgstr "Einen Workflow starten"
 
 #: search.py:13 search.py:20 search.py:27 search.py:34 search.py:41
 msgid "Document workflow transition comment"
-msgstr ""
+msgstr "Kommentar für Workflowübergang"
 
 #: serializers/workflow_instance_serializers.py:24
 msgid "Primary key of the workflow template to launch."
-msgstr ""
+msgstr "Primärschlüssel der Workflowvorlage."
 
 #: serializers/workflow_instance_serializers.py:47
 msgid "Primary key of the transition to be added."
@@ -775,18 +787,21 @@ msgstr ""
 #: serializers/workflow_template_serializers.py:61
 msgid "Primary key of the document type to add to the workflow."
 msgstr ""
+"Primärschlüssel des Dokumententyps, der zum Workflow hinzugefügt werden "
+"soll."
 
 #: serializers/workflow_template_serializers.py:70
 msgid "Primary key of the document type to remove from the workflow."
 msgstr ""
+"Primärschlüssel des Dokumententyps, der vom Workflow entfernt werden soll."
 
 #: serializers/workflow_template_state_escalation_serializers.py:50
 msgid "Primary key of the workflow template transition to be added."
-msgstr ""
+msgstr "Primärschlüssel der Workflowvorlage, die hinzugefügt werden soll."
 
 #: serializers/workflow_template_state_escalation_serializers.py:51
 msgid "Workflow template transition ID"
-msgstr ""
+msgstr "Workflowvorlagenübergangs-ID"
 
 #: serializers/workflow_template_transition_serializers.py:86
 msgid "Primary key of the destination state to be added."
@@ -798,12 +813,12 @@ msgstr "Primärschlüssel des hinzuzufügenden Herkunftsstatus."
 
 #: serializers/workflow_template_transition_serializers.py:184
 msgid "Event Type ID"
-msgstr ""
+msgstr "Ereignistyp-URL"
 
 #: serializers/workflow_template_transition_serializers.py:274
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
-msgstr ""
+msgstr "Unbekannte oder ungültige Ereignistyp-ID `%s`"
 
 #: settings.py:18
 msgid ""
@@ -837,6 +852,8 @@ msgid ""
 "Interval in seconds on which the task to check for expired workflow states "
 "will be launched."
 msgstr ""
+"Intervall in Sekunden, in dem der Task für die Überprüfung abgelaufener "
+"Workflowstatus gestartet wird."
 
 #: storages.py:14
 msgid ""
@@ -906,6 +923,8 @@ msgstr "Auswählen"
 #, python-format
 msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
+"Übergang für Workflow \"%(workflow)s\" von Dokument \"%(document)s\" "
+"auswählen"
 
 #: views/workflow_proxy_views.py:35
 msgid ""
@@ -963,32 +982,34 @@ msgstr "Status für Workflow %s"
 #: views/workflow_template_state_escalation_views.py:41
 #, python-format
 msgid "Create escalation for workflow state: %s"
-msgstr ""
+msgstr "Eskalation für Workflowstatus %s erstellen"
 
 #: views/workflow_template_state_escalation_views.py:84
 #, python-format
 msgid "Delete workflow state escalation: %s"
-msgstr ""
+msgstr "Workflowstatuseskalation %s löschen"
 
 #: views/workflow_template_state_escalation_views.py:116
 #, python-format
 msgid "Edit workflow state escalation: %s"
-msgstr ""
+msgstr "Workflowstatuseskalation %s bearbeiten"
 
 #: views/workflow_template_state_escalation_views.py:155
 msgid ""
 "Workflow state escalation allow workflows to execute a a transition "
 "automatically after a specific amount of time."
 msgstr ""
+"Workflowstatuseskalationen erlauben Ausführung automatischer Übergänge nach "
+"einem definierten Zeitraum."
 
 #: views/workflow_template_state_escalation_views.py:159
 msgid "There are no escalations for this workflow state"
-msgstr ""
+msgstr "Keine Eskalationen für diesen Workflowstatus definiert"
 
 #: views/workflow_template_state_escalation_views.py:162
 #, python-format
 msgid "Escalations for workflow template state: %s"
-msgstr ""
+msgstr "Eskalationen für Workflowvorlagenstatus %s"
 
 #: views/workflow_template_state_views.py:60
 #, python-format
@@ -1025,7 +1046,7 @@ msgstr "Aktionen für Workflowstatus %s"
 #: views/workflow_template_state_views.py:221
 #, python-format
 msgid "New workflow state action selection for: %s"
-msgstr ""
+msgstr "Neue Auswahl von Workflowstatusaktion für %s"
 
 #: views/workflow_template_state_views.py:251
 #, python-format
@@ -1159,6 +1180,7 @@ msgstr "An Dokumententyp %s zugewiesene Workflows"
 #, python-format
 msgid "Error launching workflows for document \"%(instance)s\"; %(exception)s"
 msgstr ""
+"Fehler beim Start von Workflows für Dokument \"%(instance)s\"; %(exception)s"
 
 #: views/workflow_template_views.py:91
 #, python-format
@@ -1318,7 +1340,7 @@ msgstr "Dokumentenbezeichner"
 
 #: workflow_actions.py:31
 msgid "The new label to be assigned to the document."
-msgstr ""
+msgstr "Neuer Bezeichner für das Dokument."
 
 #: workflow_actions.py:40
 msgid "Document description"
@@ -1326,7 +1348,7 @@ msgstr "Dokumentenbeschreibung"
 
 #: workflow_actions.py:47
 msgid "The new description to be assigned to the document."
-msgstr ""
+msgstr "Neue Beschreibung für das Dokument."
 
 #: workflow_actions.py:59
 msgid "Modify document properties"
@@ -1342,7 +1364,7 @@ msgstr "URL"
 
 #: workflow_actions.py:140
 msgid "The URL to access."
-msgstr ""
+msgstr "Zugriffs-URL."
 
 #: workflow_actions.py:149
 msgid "Timeout"
@@ -1358,7 +1380,7 @@ msgstr "Payload"
 
 #: workflow_actions.py:171
 msgid "A JSON document to include in the request."
-msgstr ""
+msgstr "Ein JSON-Dokument, das in die Anfrage eingeschlossen wird."
 
 #: workflow_actions.py:180
 msgid "Username"
@@ -1366,7 +1388,7 @@ msgstr "Benutzer"
 
 #: workflow_actions.py:187
 msgid "Username to use for making the request with HTTP Basic Auth."
-msgstr ""
+msgstr "Zu verwendender Benutzername für die Anfrage mit HTTP Basic Auth."
 
 #: workflow_actions.py:198
 msgid "Password"
@@ -1374,7 +1396,7 @@ msgstr "Passwort"
 
 #: workflow_actions.py:205
 msgid "Password to use for making the request with HTTP Basic Auth."
-msgstr ""
+msgstr "Zu verwendender Passwort für die Anfrage mit HTTP Basic Auth."
 
 #: workflow_actions.py:216
 msgid "Method"
@@ -1385,6 +1407,8 @@ msgid ""
 "The HTTP method to use for the request. Typical choices are OPTIONS, HEAD, "
 "POST, GET, PUT, PATCH, DELETE."
 msgstr ""
+"Die HTTP-Methode, die für die Anfrage zu verwenden ist. Typische Werte sind "
+"OPTIONS, HEAD, POST, GET, PUT, PATCH, DELETE."
 
 #: workflow_actions.py:234
 msgid "Headers"
@@ -1392,7 +1416,7 @@ msgstr "Header"
 
 #: workflow_actions.py:241
 msgid "Headers to send with the HTTP request. Must be in JSON format."
-msgstr ""
+msgstr "Headers (im JSON Format) für den HTTP request."
 
 #: workflow_actions.py:256
 msgid "Perform an HTTP request"

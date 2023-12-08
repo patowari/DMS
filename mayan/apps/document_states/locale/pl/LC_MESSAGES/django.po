@@ -9,14 +9,15 @@
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2022
 # Roberto Rosario, 2022
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,28 +30,30 @@ msgstr ""
 #: views/workflow_proxy_views.py:68 views/workflow_template_views.py:291
 #: workflow_actions.py:88
 msgid "Workflows"
-msgstr "Przepływy pracy"
+msgstr "Obiegi dokumentów"
 
 #: apps.py:211 apps.py:218
 msgid "Current state of a workflow"
-msgstr "Bieżący stan przepływu pracy"
+msgstr "Bieżący stan obiegu dokumentów"
 
 #: apps.py:212
 msgid "Return the current state of the selected workflow."
-msgstr "Zwraca bieżący stan wybranego przepływu pracy."
+msgstr "Zwraca bieżący stan wybranego obiegu dokumentów."
 
 #: apps.py:219
 msgid ""
 "Return the completion value of the current state of the selected workflow."
-msgstr "Zwraca wartość zakończenia bieżącego stanu wybranego przepływu pracy."
+msgstr ""
+"Zwraca wartość zakończenia bieżącego stanu wybranego obiegu dokumentów."
 
 #: apps.py:277
 msgid ""
 "Return the last workflow instance log entry. The log entry itself has the "
 "following fields: datetime, transition, user, and comment."
 msgstr ""
-"Zwraca ostatni wpis dziennika instancji przepływu pracy. Sam wpis dziennika "
-"zawiera następujące pola: data / godzina, przejście, użytkownik i komentarz."
+"Zwraca ostatni wpis dziennika instancji obiegu dokumentów. Sam wpis "
+"dziennika zawiera następujące pola: data / godzina, przejście, użytkownik i "
+"komentarz."
 
 #: apps.py:280
 msgid "Get last log entry"
@@ -62,7 +65,7 @@ msgid ""
 "workflow transition fields."
 msgstr ""
 "Zwraca bieżący słownik kontekstowy, który zawiera dane środowiska "
-"wykonawczego z pól przejścia przepływu pracy."
+"wykonawczego z pól przejścia obiegu dokumentów."
 
 #: apps.py:287
 msgid "Get the context"
@@ -70,7 +73,7 @@ msgstr "Pobierz kontekst"
 
 #: apps.py:292
 msgid "Return the transition of the workflow instance."
-msgstr "Zwróć przejście instancji przepływu pracy."
+msgstr "Zwróć przejście instancji obiegu dokumentów."
 
 #: apps.py:293
 msgid "Get last transition"
@@ -141,19 +144,19 @@ msgstr "Błąd szablonu %(field_name)s: %(exception)s"
 
 #: events.py:10
 msgid "Workflow instance created"
-msgstr ""
+msgstr "Obieg dokumentów utworzono instancję"
 
 #: events.py:13
 msgid "Workflow instance transitioned"
-msgstr ""
+msgstr "Obieg dokumentów wykonano przejście"
 
 #: events.py:18
 msgid "Workflow created"
-msgstr "Utworzono przepływ pracy"
+msgstr "Utworzono obieg dokumentów"
 
 #: events.py:21
 msgid "Workflow edited"
-msgstr "Edytowany przepływ pracy"
+msgstr "Edytowano obieg dokumentów"
 
 #: forms.py:23
 msgid "The action type for this action entry."
@@ -209,7 +212,7 @@ msgstr "Wyzwalacz zdarzenia: %s"
 
 #: links.py:58 views/workflow_template_views.py:148
 msgid "Create workflow"
-msgstr "Utwórz przepływ pracy"
+msgstr "Utwórz obieg dokumentów"
 
 #: links.py:62 links.py:69 links.py:109 links.py:147 links.py:177 links.py:206
 #: links.py:252
@@ -227,7 +230,7 @@ msgstr "Edytuj"
 
 #: links.py:88
 msgid "Launch workflow"
-msgstr "Uruchom przepływ pracy"
+msgstr "Uruchom obieg dokumentów"
 
 #: links.py:100
 msgid "Preview"
@@ -271,7 +274,7 @@ msgstr "Przejścia"
 
 #: links.py:233 links.py:239 workflow_actions.py:97
 msgid "Launch workflows"
-msgstr "Uruchom przepływy pracy"
+msgstr "Uruchom obiegi dokumentów"
 
 #: links.py:245
 msgid "Create field"
@@ -287,7 +290,7 @@ msgstr "Szczegół"
 
 #: links.py:297
 msgid "Workflow documents"
-msgstr "Przepływ pracy dokumentów"
+msgstr "Obieg dokumentów"
 
 #: links.py:311
 msgid "State documents"
@@ -295,7 +298,7 @@ msgstr "Stan dokumentów"
 
 #: links.py:326
 msgid "Launch all workflows"
-msgstr "Uruchom wszystkie przepływy pracy"
+msgstr "Uruchom wszystkie obiegi dokumentów"
 
 #: literals.py:7
 msgid ""
@@ -351,11 +354,11 @@ msgstr "Kontekst"
 #: models/workflow_instance_models.py:57
 #: models/workflow_instance_models.py:225
 msgid "Workflow instance"
-msgstr "Instancja przepływu pracy"
+msgstr "Instancja obiegu dokumentów"
 
 #: models/workflow_instance_models.py:58
 msgid "Workflow instances"
-msgstr "Instancje przepływu pracy"
+msgstr "Instancje obiegu dokumentów"
 
 #: models/workflow_instance_models.py:238
 #: models/workflow_state_escalation_models.py:63
@@ -369,11 +372,11 @@ msgstr "Dodatkowe dane"
 
 #: models/workflow_instance_models.py:243
 msgid "Workflow instance log entry"
-msgstr "Wpis do dziennika instancji przepływu pracy"
+msgstr "Wpis do dziennika instancji obiegu dokumentów"
 
 #: models/workflow_instance_models.py:244
 msgid "Workflow instance log entries"
-msgstr "Wpisy do dziennika instancji przepływu pracy"
+msgstr "Wpisy do dziennika instancji obiegu dokumentów"
 
 #: models/workflow_instance_models.py:251
 msgid "Not a valid transition choice."
@@ -381,7 +384,7 @@ msgstr "Nieprawidłowy wybór przejścia."
 
 #: models/workflow_models.py:42
 msgid "Launch workflow when document is created."
-msgstr "Uruchom przepływ pracy podczas tworzenia dokumentu."
+msgstr "Uruchom obieg dokumentów podczas tworzenia dokumentu."
 
 #: models/workflow_models.py:43
 msgid "Auto launch"
@@ -392,8 +395,8 @@ msgid ""
 "This value will be used by other apps to reference this workflow. Can only "
 "contain letters, numbers, and underscores."
 msgstr ""
-"Ta wartość będzie używana przez inne aplikacje w odniesieniu do tego "
-"przepływu pracy. Może zawierać tylko litery, cyfry i znaki podkreślenia."
+"Ta wartość będzie używana przez inne aplikacje w odniesieniu do tego obiegu "
+"dokumentów. Może zawierać tylko litery, cyfry i znaki podkreślenia."
 
 #: models/workflow_models.py:50 models/workflow_transition_models.py:145
 msgid "Internal name"
@@ -401,7 +404,7 @@ msgstr "Nazwa wewnętrzna"
 
 #: models/workflow_models.py:53
 msgid "A short text to describe the workflow."
-msgstr "Krótki tekst opisujący przepływ pracy."
+msgstr "Krótki tekst opisujący obieg dokumentów."
 
 #: models/workflow_models.py:169
 msgid "Initial state"
@@ -409,16 +412,16 @@ msgstr "Stan początkowy"
 
 #: models/workflow_models.py:319
 msgid "Workflow runtime proxy"
-msgstr "Serwer proxy środowiska wykonawczego przepływu pracy"
+msgstr "Serwer proxy środowiska wykonawczego obiegu dokumentów"
 
 #: models/workflow_models.py:320
 msgid "Workflow runtime proxies"
-msgstr "Proxy środowiska uruchomieniowego przepływu pracy"
+msgstr "Proxy środowiska uruchomieniowego obiegu dokumentów"
 
 #: models/workflow_state_escalation_models.py:29
 #: models/workflow_state_models.py:74 models/workflow_state_models.py:176
 msgid "Workflow state"
-msgstr "Stan przepływu pracy"
+msgstr "Stan obiegu dokumentów"
 
 #: models/workflow_state_escalation_models.py:37
 msgid ""
@@ -468,14 +471,14 @@ msgstr ""
 
 #: models/workflow_state_models.py:54
 msgid "A short text to describe the workflow state."
-msgstr "Krótki tekst opisujący stan przepływu pracy."
+msgstr "Krótki tekst opisujący stan obiegu dokumentów."
 
 #: models/workflow_state_models.py:60
 msgid ""
 "The state at which the workflow will start in. Only one state can be the "
 "initial state."
 msgstr ""
-"Stan, w którym rozpocznie się przepływ pracy. Tylko jeden stan może być "
+"Stan, w którym rozpocznie się obieg dokumentów. Tylko jeden stan może być "
 "stanem początkowym."
 
 #: models/workflow_state_models.py:62
@@ -487,12 +490,12 @@ msgid ""
 "The percent of completion that this state represents in relation to the "
 "workflow. Use numbers without the percent sign."
 msgstr ""
-"Procent ukończenia reprezentowany przez ten stan w odniesieniu do przepływu "
-"pracy. Używaj liczb bez znaku procentu."
+"Procent ukończenia reprezentowany przez ten stan w odniesieniu do obiegu "
+"dokumentów. Używaj liczb bez znaku procentu."
 
 #: models/workflow_state_models.py:75
 msgid "Workflow states"
-msgstr "Stany przepływu pracy"
+msgstr "Stany obiegu dokumentów"
 
 #: models/workflow_state_models.py:179
 msgid "A short text describing the action."
@@ -509,7 +512,7 @@ msgstr "Kiedy"
 #: models/workflow_state_models.py:191
 msgid "The dotted Python path to the workflow action class to execute."
 msgstr ""
-"Kropkowana ścieżka Pythona do klasy akcji przepływu pracy do wykonania."
+"Kropkowana ścieżka Pythona do klasy akcji obiegu dokumentów do wykonania."
 
 #: models/workflow_state_models.py:192
 msgid "Entry action path"
@@ -528,9 +531,9 @@ msgid ""
 "considered to be the logical true."
 msgstr ""
 "Warunek określający czy akcja dotycząca stanu zostanie wykonana. Warunek "
-"jest wyliczany względem wystąpienia przepływu pracy. Warunki nie zwracające "
-"żadnych wartości, zwracające None lub pusty łańcuch (\") traktowane są jako "
-"false, pozostałe wartości traktowane są jako true."
+"jest wyliczany względem wystąpienia obiegu dokumentów. Warunki nie "
+"zwracające żadnych wartości, zwracające None lub pusty łańcuch (\") "
+"traktowane są jako false, pozostałe wartości traktowane są jako true."
 
 #: models/workflow_state_models.py:205 models/workflow_transition_models.py:57
 msgid "Condition"
@@ -538,11 +541,11 @@ msgstr "Warunek"
 
 #: models/workflow_state_models.py:211
 msgid "Workflow state action"
-msgstr "Akcja stanu przepływu pracy"
+msgstr "Akcja stanu obiegu dokumentów"
 
 #: models/workflow_state_models.py:212
 msgid "Workflow state actions"
-msgstr "Akcje stanu przepływu pracy"
+msgstr "Akcje stanu obiegu dokumentów"
 
 #: models/workflow_state_models.py:269
 msgid "Unknown action type"
@@ -561,11 +564,11 @@ msgstr "Ma warunek?"
 
 #: models/workflow_state_models.py:302
 msgid "Workflow state runtime proxy"
-msgstr "Serwer proxy środowiska wykonawczego stanu przepływu pracy"
+msgstr "Serwer proxy środowiska wykonawczego stanu obiegu dokumentów"
 
 #: models/workflow_state_models.py:303
 msgid "Workflow state runtime proxies"
-msgstr "Serwery proxy środowiska wykonawczego stanu przepływu pracy"
+msgstr "Serwery proxy środowiska wykonawczego stanu obiegu dokumentów"
 
 #: models/workflow_transition_models.py:38
 msgid "A short text to describe the transition."
@@ -587,18 +590,18 @@ msgid ""
 "('') are considered to be logical false, any other value is considered to be"
 " the logical true."
 msgstr ""
-"Warunek określający czy przejście przepływu pracy jest aktywowane. Warunek "
-"jest wyliczany względem wystąpienia przepływu pracy. Warunki nie zwracające "
-"żadnych wartości, zwracające None lub pusty łańcuch (\") traktowane są jako "
-"false, pozostałe wartości traktowane są jako true."
+"Warunek określający czy przejście przepływu obiegu dokumentów jest "
+"aktywowane. Warunek jest wyliczany względem wystąpienia obiegu dokumentów. "
+"Warunki nie zwracające żadnych wartości, zwracające None lub pusty łańcuch "
+"(\") traktowane są jako false, pozostałe wartości traktowane są jako true."
 
 #: models/workflow_transition_models.py:65
 msgid "Workflow transition"
-msgstr "Przejście przepływu pracy"
+msgstr "Przejście obiegu dokumentów"
 
 #: models/workflow_transition_models.py:66
 msgid "Workflow transitions"
-msgstr "Przejścia przepływu pracy"
+msgstr "Przejścia obiegu dokumentów"
 
 #: models/workflow_transition_models.py:111
 msgid ""
@@ -611,7 +614,7 @@ msgid ""
 "workflow system."
 msgstr ""
 "Nazwa, która będzie używana do identyfikacji tego pola w innych częściach "
-"systemu przepływu pracy."
+"systemu obiegu dokumentów."
 
 #: models/workflow_transition_models.py:149
 msgid "The field name that will be shown on the user interface."
@@ -655,11 +658,11 @@ msgstr "Argumenty słów kluczowych widgetu"
 
 #: models/workflow_transition_models.py:177
 msgid "Workflow transition field"
-msgstr "Pole przejścia przepływu pracy"
+msgstr "Pole przejścia obiegu dokumentów"
 
 #: models/workflow_transition_models.py:178
 msgid "Workflow transition fields"
-msgstr "Pola przejściowe przepływu pracy"
+msgstr "Pola przejścia obiegu dokumentów"
 
 #: models/workflow_transition_models.py:224
 msgid "Event type"
@@ -667,15 +670,15 @@ msgstr "Typ zdarzenia"
 
 #: models/workflow_transition_models.py:230
 msgid "Workflow transition trigger event"
-msgstr "Zdarzenie uruchamiające przejście przepływu pracy"
+msgstr "Zdarzenie uruchamiające przejście obiegu dokumentów"
 
 #: models/workflow_transition_models.py:231
 msgid "Workflow transitions trigger events"
-msgstr "Zdarzenia uruchamiające przejścia przepływu pracy"
+msgstr "Zdarzenia uruchamiające przejście obiegu dokumentów"
 
 #: permissions.py:6
 msgid "Document workflows"
-msgstr "Przepływy pracy z dokumentami"
+msgstr "Obieg dokumentów"
 
 #: permissions.py:10
 msgid "Create workflow templates"
@@ -695,11 +698,11 @@ msgstr ""
 
 #: permissions.py:25
 msgid "Transition workflow instances"
-msgstr ""
+msgstr "Przejście obieg dokumentów"
 
 #: permissions.py:28
 msgid "Execute workflow tools"
-msgstr "Uruchom narzędzia przepływu pracy"
+msgstr "Uruchom narzędzia obiegu dokumentów"
 
 #: queues.py:12
 msgid "Document states medium"
@@ -707,11 +710,11 @@ msgstr ""
 
 #: queues.py:17
 msgid "Launch a workflow for a document"
-msgstr "Uruchom przepływ pracy dla dokumentu"
+msgstr "Uruchom obieg dokumentów dla dokumentu"
 
 #: queues.py:21
 msgid "Launch all workflows for a document"
-msgstr "Uruchom wszystkie przepływy pracy dla dokumentu"
+msgstr "Uruchom wszystkie obiegi dokumentów dla dokumentu"
 
 #: queues.py:25
 msgid "Check a workflow instance for state escalation."
@@ -723,15 +726,15 @@ msgstr ""
 
 #: queues.py:37
 msgid "Launch all workflows for all documents"
-msgstr "Uruchom wszystkie przepływy pracy dla wszystkich dokumentów"
+msgstr "Uruchom wszystkie obiegi dokumentów dla wszystkich dokumentów"
 
 #: queues.py:41
 msgid "Launch a workflow"
-msgstr "Uruchom przepływ pracy"
+msgstr "Uruchom obieg dokumentów"
 
 #: search.py:13 search.py:20 search.py:27 search.py:34 search.py:41
 msgid "Document workflow transition comment"
-msgstr ""
+msgstr "Komentarz przejścia obieg dokumentów"
 
 #: serializers/workflow_instance_serializers.py:24
 msgid "Primary key of the workflow template to launch."
@@ -743,16 +746,16 @@ msgstr "Klucz podstawowy przejścia, które należy dodać."
 
 #: serializers/workflow_instance_serializers.py:131
 msgid "A link to the entire history of this workflow."
-msgstr "Link do całej historii przepływu pracy."
+msgstr "Link do całej historii obiegu dokumentów."
 
 #: serializers/workflow_instance_serializers.py:140
 msgid ""
 "API URL pointing to a workflow in relation to the document to which it is "
 "attached. This URL is different than the canonical workflow URL."
 msgstr ""
-"Adres URL interfejsu API wskazujący na przepływ pracy dokumentu, do którego "
-"jest dołączony. Ten adres URL jest inny niż kanoniczny adres URL przepływu "
-"pracy."
+"Adres URL interfejsu API wskazujący na obieg dokumentów dokumentu, do "
+"którego jest dołączony. Ten adres URL jest inny niż kanoniczny adres URL "
+"przepływu pracy."
 
 #: serializers/workflow_template_serializers.py:61
 msgid "Primary key of the document type to add to the workflow."
@@ -792,7 +795,7 @@ msgid ""
 "File path to the graphviz dot program used to generate workflow previews."
 msgstr ""
 "Ścieżka pliku do programu dot z zestawu graphviz służącego do tworzenia "
-"grafów przepływu pracy."
+"grafów obiegu dokumentów."
 
 #: settings.py:26
 msgid ""
@@ -800,7 +803,7 @@ msgid ""
 "deleting the oldest workflow image cache files. Specify the size in bytes."
 msgstr ""
 "Próg, poniżej którego WORKFLOWS_IMAGE_CACHE_STORAGE_BACKEND rozpocznie "
-"usuwanie najstarszych plików pamięci podręcznej obrazów przepływu pracy. "
+"usuwanie najstarszych plików pamięci podręcznej obrazów obiegu dokumentów. "
 "Określ rozmiar w bajtach."
 
 #: settings.py:35
@@ -809,7 +812,7 @@ msgid ""
 "files."
 msgstr ""
 "Ścieżka do podklasy Storage, która ma być używana podczas przechowywania "
-"buforowanych plików obrazów przepływu pracy."
+"buforowanych plików obrazów obiegu dokumentów."
 
 #: settings.py:43
 msgid "Arguments to pass to the WORKFLOWS_IMAGE_CACHE_STORAGE_BACKEND."
@@ -826,24 +829,24 @@ msgid ""
 "Unable to initialize the workflow preview storage. Check the settings {} and"
 " {} for formatting errors."
 msgstr ""
-"Nie można zainicjować magazynu podglądu przepływu pracy. Sprawdź ustawienia "
-"{} i {} pod kątem błędów formatowania."
+"Nie można zainicjować magazynu podglądu obiegu dokumentów. Sprawdź "
+"ustawienia {} i {} pod kątem błędów formatowania."
 
 #: storages.py:21
 msgid "Workflow preview images"
-msgstr "Podgląd obrazów przepływu pracy"
+msgstr "Podgląd obrazów obiegu dokumentów"
 
 #: views/workflow_instance_views.py:40
 msgid ""
 "Assign workflows to the document type of this document to have this document"
 " execute those workflows. "
 msgstr ""
-"Przypisz przepływy pracy do typu dokumentu tego dokumentu, aby ten dokument "
-"mógł wykonać przepływy pracy."
+"Przypisz obiegi dokumentów do odpowiedniego typu dokumentu, aby rozpocząć "
+"ich realizację."
 
 #: views/workflow_instance_views.py:44
 msgid "There are no workflows for this document"
-msgstr "Brak przepływów pracy dla tego dokumentu."
+msgstr "Brak obiegów dokumentów dla tego dokumentu."
 
 #: views/workflow_instance_views.py:48
 #, python-format
@@ -855,11 +858,11 @@ msgid ""
 "This view will show the state changes as a workflow instance is "
 "transitioned."
 msgstr ""
-"Ten widok pokaże zmiany stanu po przeniesieniu instancji przepływu pracy."
+"Ten widok pokaże zmiany stanu po wykonaniu przejścia obiegu dokumentów."
 
 #: views/workflow_instance_views.py:78
 msgid "There are no details for this workflow instance"
-msgstr "Brak szczegółów dla tego wystąpienia przepływu pracy"
+msgstr "Brak szczegółów dla tego wystąpienia obiegu dokumentów"
 
 #: views/workflow_instance_views.py:81
 #, python-format
@@ -874,7 +877,8 @@ msgstr "Dokument „%s” został pomyślnie przeniesiony"
 #: views/workflow_instance_views.py:130
 #, python-format
 msgid "Execute transition \"%(transition)s\" for workflow: %(workflow)s"
-msgstr "Wykonaj przejście „%(transition)s” dla przepływu pracy: %(workflow)s"
+msgstr ""
+"Wykonaj przejście „%(transition)s” dla obiegu dokumentów: %(workflow)s"
 
 #: views/workflow_instance_views.py:145
 msgid "Optional comment to attach to the transition."
@@ -894,38 +898,39 @@ msgid ""
 "Associate a workflow with some document types and documents of those types "
 "will be listed in this view."
 msgstr ""
-"Skojarz przepływ pracy z niektórymi typami dokumentów, a dokumenty tych "
+"Skojarz obiegi dokumentów z niektórymi typami dokumentów, a dokumenty tych "
 "typów zostaną wymienione w tym widoku."
 
 #: views/workflow_proxy_views.py:39
 msgid "There are no documents executing this workflow"
-msgstr "Brak dokumentów wykonujących ten przepływ pracy"
+msgstr "Brak dokumentów wykonujących ten obieg dokumentów"
 
 #: views/workflow_proxy_views.py:43
 #, python-format
 msgid "Documents with the workflow: %s"
-msgstr "Dokumenty z przepływem pracy: %s"
+msgstr "Dokumenty z obiegiem dokumentów: %s"
 
 #: views/workflow_proxy_views.py:63
 msgid ""
 "Create some workflows and associated them with a document type. Active "
 "workflows will be shown here and the documents for which they are executing."
 msgstr ""
-"Utwórz przepływy pracy i powiąż je z typem dokumentu. Aktywne przepływy "
-"pracy zostaną wyświetlone tutaj oraz dokumenty, dla których są wykonywane."
+"Utwórz obieg dokumentów i powiąż je z typem dokumentu. Aktywne obiegi "
+"dokumentów zostaną wyświetlone tutaj oraz dokumenty, dla których są "
+"wykonywane."
 
 #: views/workflow_proxy_views.py:67
 msgid "There are no workflows"
-msgstr "Brak przepływów pracy"
+msgstr "Brak obiegów dokumentów"
 
 #: views/workflow_proxy_views.py:90
 msgid "There are no documents in this workflow state"
-msgstr "Brak dokumentów w tym stanie przepływu pracy"
+msgstr "Brak dokumentów w tym stanie obiegu dokumentów"
 
 #: views/workflow_proxy_views.py:93
 #, python-format
 msgid "Documents in the workflow \"%s\", state \"%s\""
-msgstr "Dokumenty w przepływie pracy „%s”, wpisz „%s”"
+msgstr "Dokumenty w obiegu dokumentów „%s”, wpisz „%s”"
 
 #: views/workflow_proxy_views.py:123
 #: views/workflow_template_state_views.py:351
@@ -934,7 +939,7 @@ msgstr "Twórz stany i łącz je za pomocą przejść."
 
 #: views/workflow_proxy_views.py:126
 msgid "This workflow doesn't have any state"
-msgstr "Ten przepływ pracy nie ma żadnego stanu"
+msgstr "Ten obieg dokumentów nie ma żadnego stanu"
 
 #: views/workflow_proxy_views.py:129
 #: views/workflow_template_state_views.py:357
@@ -980,29 +985,29 @@ msgstr ""
 #: views/workflow_template_state_views.py:106
 #, python-format
 msgid "Delete workflow state action: %s"
-msgstr "Usuń akcję stanu przepływu pracy: %s"
+msgstr "Usuń akcję stanu obiegu dokumentów: %s"
 
 #: views/workflow_template_state_views.py:138
 #, python-format
 msgid "Edit workflow state action: %s"
-msgstr "Edytuj działanie stanu przepływu pracy: %s"
+msgstr "Edytuj działanie stanu obiegu dokumentów: %s"
 
 #: views/workflow_template_state_views.py:189
 msgid ""
 "Workflow state actions are macros that get executed when documents enters or"
 " leaves the state in which they reside."
 msgstr ""
-"Akcje stanu przepływu pracy to makra, które są wykonywane, gdy dokumenty "
+"Akcje stanu obiegu dokumentów to makra, które są wykonywane, gdy dokumenty "
 "wchodzą lub wychodzą ze stanu, w którym się znajdują."
 
 #: views/workflow_template_state_views.py:193
 msgid "There are no actions for this workflow state"
-msgstr "Brak działań dla tego stanu przepływu pracy"
+msgstr "Brak działań dla tego stanu obiegu dokumentów"
 
 #: views/workflow_template_state_views.py:197
 #, python-format
 msgid "Actions for workflow state: %s"
-msgstr "Działania dla stanu przepływu pracy: %s"
+msgstr "Działania dla stanu obiegu dokumentów: %s"
 
 #: views/workflow_template_state_views.py:221
 #, python-format
@@ -1017,16 +1022,16 @@ msgstr "Utwórz stany obiegu dokumentów: %s"
 #: views/workflow_template_state_views.py:285
 #, python-format
 msgid "Delete workflow state: %s?"
-msgstr "Usunąć stan przepływu pracy: %s?"
+msgstr "Usunąć stan obiegu dokumentów: %s?"
 
 #: views/workflow_template_state_views.py:316
 #, python-format
 msgid "Edit workflow state: %s"
-msgstr "Edytuj stan przepływu pracy: %s"
+msgstr "Edytuj stan obiegu dokumentów: %s"
 
 #: views/workflow_template_state_views.py:354
 msgid "This workflow doesn't have any states"
-msgstr "Ten przepływ pracy nie ma żadnych stanów"
+msgstr "Ten obieg dokumentów nie ma żadnych stanów"
 
 #: views/workflow_template_transition_views.py:53
 #, python-format
@@ -1036,24 +1041,24 @@ msgstr "Utwórz zmiany w obiegu dokumentów: %s"
 #: views/workflow_template_transition_views.py:94
 #, python-format
 msgid "Delete workflow transition: %s?"
-msgstr "Usunąć przejście do przepływu pracy: %s?"
+msgstr "Usunąć przejście do obiegu dokumentów: %s?"
 
 #: views/workflow_template_transition_views.py:123
 #, python-format
 msgid "Edit workflow transition: %s"
-msgstr "Edytuj przejście do przepływu pracy: %s"
+msgstr "Edytuj przejście do obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_views.py:164
 msgid ""
 "Create a transition and use it to move a workflow from  one state to "
 "another."
 msgstr ""
-"Utwórz przejście i użyj go, aby przenieść przepływ pracy z jednego stanu do "
-"drugiego."
+"Utwórz przejście i użyj go, aby przenieść obieg dokumentów z jednego stanu "
+"do drugiego."
 
 #: views/workflow_template_transition_views.py:168
 msgid "This workflow doesn't have any transitions"
-msgstr "Ten przepływ pracy nie ma żadnych przejść"
+msgstr "Ten obieg dokumentów nie ma żadnych przejść"
 
 #: views/workflow_template_transition_views.py:172
 #, python-format
@@ -1063,17 +1068,17 @@ msgstr "Zmiany obiegu dokumentów: %s"
 #: views/workflow_template_transition_views.py:198
 #, python-format
 msgid "Create a field for workflow transition: %s"
-msgstr "Utwórz pole dla przejścia przepływu pracy: %s"
+msgstr "Utwórz pole dla przejścia obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_views.py:233
 #, python-format
 msgid "Delete workflow transition field: %s"
-msgstr "Usuń pole przejścia przepływu pracy: %s"
+msgstr "Usuń pole przejścia obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_views.py:268
 #, python-format
 msgid "Edit workflow transition field: %s"
-msgstr "Edytuj pole przejścia przepływu pracy: %s"
+msgstr "Edytuj pole przejścia obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_views.py:308
 msgid ""
@@ -1081,30 +1086,31 @@ msgid ""
 " additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
-"Pola przejścia przepływu pracy umożliwiają dodawanie danych do kontekstu "
-"przepływu pracy. Te dodatkowe dane kontekstowe mogą być następnie "
-"wykorzystane przez inne elementy systemu przepływu pracy, takie jak akcje "
-"stanu przepływu pracy."
+"Pola przejścia obiegu dokumentów umożliwiają dodawanie danych do kontekstu "
+"obiegu dokumentów. Te dodatkowe dane kontekstowe mogą być następnie "
+"wykorzystane przez inne elementy systemu obiegu dokumentów, takie jak akcje "
+"stanu obiegu dokumentów."
 
 #: views/workflow_template_transition_views.py:314
 msgid "There are no fields for this workflow transition"
-msgstr "Brak pól dla tego przejścia przepływu pracy"
+msgstr "Brak pól dla tego przejścia obiegu dokumentów"
 
 #: views/workflow_template_transition_views.py:318
 #, python-format
 msgid "Fields for workflow transition: %s"
-msgstr "Pola do przejścia przepływu pracy: %s"
+msgstr "Pola do przejścia obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_views.py:347
 #, python-format
 msgid "Error updating workflow transition trigger events; %s"
 msgstr ""
-"Błąd podczas aktualizowania zdarzeń wyzwalacza przejścia przepływu pracy; %s"
+"Błąd podczas aktualizowania zdarzeń wyzwalacza przejścia obiegu dokumentów; "
+"%s"
 
 #: views/workflow_template_transition_views.py:354
 msgid "Workflow transition trigger events updated successfully"
 msgstr ""
-"Zdarzenia wyzwalacza przejścia przepływu pracy zostały zaktualizowane "
+"Zdarzenia wyzwalacza przejścia obiegu dokumentów zostały zaktualizowane "
 "pomyślnie"
 
 #: views/workflow_template_transition_views.py:366
@@ -1117,28 +1123,28 @@ msgstr ""
 #: views/workflow_template_transition_views.py:370
 #, python-format
 msgid "Workflow transition trigger events for: %s"
-msgstr "Zdarzenia wyzwalacza przejścia przepływu pracy dla: %s"
+msgstr "Zdarzenia wyzwalacza przejścia obiegu dokumentów dla: %s"
 
 #: views/workflow_template_views.py:46
 msgid "Available workflows"
-msgstr "Dostępne przepływy pracy"
+msgstr "Dostępne obiegi dokumentów"
 
 #: views/workflow_template_views.py:47
 msgid "Workflows assigned this document type"
-msgstr "Przepływy pracy przypisane do tego typu dokumentu"
+msgstr "Obiegów dokumentów przypisane do tego typu dokumentu"
 
 #: views/workflow_template_views.py:72
 msgid ""
 "Removing a workflow from a document type will also remove all running "
 "instances of that workflow."
 msgstr ""
-"Usunięcie przepływu pracy z typu dokumentu spowoduje również usunięcie "
-"wszystkich działających instancji tego przepływu pracy."
+"Usunięcie obiegu dokumentów z typu dokumentu spowoduje również usunięcie "
+"wszystkich działających instancji tego obiegu dokumentów."
 
 #: views/workflow_template_views.py:76
 #, python-format
 msgid "Workflows assigned the document type: %s"
-msgstr "Przepływy pracy przypisane do typu dokumentu: %s"
+msgstr "Obiegi dokumentów przypisane do typu dokumentu: %s"
 
 #: views/workflow_template_views.py:83
 #, python-format
@@ -1180,13 +1186,13 @@ msgid ""
 "Workflows already launched or workflows not applicable to some documents "
 "when multiple documents are selected, will be silently ignored."
 msgstr ""
-"Przepływy pracy uruchomione lub przepływy pracy niemożliwe do zastosowania "
-"do niektórych dokumentów, zostaną zignorowane w przypadku zaznaczenia wielu "
-"dokumentów."
+"Obiegi dokumentów uruchomione lub obiegi dokumentów niemożliwe do "
+"zastosowania do niektórych dokumentów, zostaną zignorowane w przypadku "
+"zaznaczenia wielu dokumentów."
 
 #: views/workflow_template_views.py:123
 msgid "Workflows to be launched."
-msgstr "Przepływy pracy przeznaczone do uruchomienia."
+msgstr "Obiegi dokumentów przeznaczone do uruchomienia."
 
 #: views/workflow_template_views.py:165
 #, python-format
@@ -1225,12 +1231,12 @@ msgstr ""
 
 #: views/workflow_template_views.py:183
 msgid "All workflow instances will also be deleted."
-msgstr "Wszystkie wystąpienia przepływu pracy również zostaną usunięte."
+msgstr "Wszystkie wystąpienia obiegu dokumentów również zostaną usunięte."
 
 #: views/workflow_template_views.py:203
 #, python-format
 msgid "Edit workflow: %s"
-msgstr "Edytuj przepływ pracy: %s"
+msgstr "Edytuj obieg dokumentów: %s"
 
 #: views/workflow_template_views.py:221
 msgid "Available document types"
@@ -1238,15 +1244,15 @@ msgstr "Dostępne typy dokumentów"
 
 #: views/workflow_template_views.py:222
 msgid "Document types assigned this workflow"
-msgstr "Typy dokumentów przypisane do tego przepływu pracy"
+msgstr "Typy dokumentów przypisane do tego obiegu dokumentów"
 
 #: views/workflow_template_views.py:233
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
 msgstr ""
-"Usunięcie typu dokumentu z przepływu pracy spowoduje również usunięcie "
-"wszystkich działających instancji tego przepływu pracy dla dokumentów "
+"Usunięcie typu dokumentu z obiegu dokumentów spowoduje również usunięcie "
+"wszystkich działających instancji tego obiegu dokumentów dla dokumentów "
 "usuniętego typu dokumentu."
 
 #: views/workflow_template_views.py:238
@@ -1256,30 +1262,30 @@ msgstr "Typy dokumentów przypisane do obiegu dokumentów: %s"
 
 #: views/workflow_template_views.py:251
 msgid "Launch workflow?"
-msgstr "Uruchomić przepływ pracy?"
+msgstr "Uruchomić obieg dokumentów?"
 
 #: views/workflow_template_views.py:253
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr ""
-"Spowoduje to uruchomienie przepływu pracy dla dokumentów, które zostały już "
-"przesłane."
+"Spowoduje to uruchomienie obiegu dokumentów dla dokumentów, które zostały "
+"już przesłane."
 
 #: views/workflow_template_views.py:266 views/workflow_template_views.py:326
 msgid "Workflow launch queued successfully."
-msgstr "Uruchomienie przepływu pracy w kolejce powiodło się."
+msgstr "Uruchomienie obiegu dokumentów w kolejce powiodło się."
 
 #: views/workflow_template_views.py:284
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
 msgstr ""
-"Przepływy pracy przechowują serię stanów i śledzą bieżący stan dokumentu. "
+"Obiegi dokumentów przechowują serię stanów i śledzą bieżący stan dokumentu. "
 "Przejścia służą do zmiany bieżącego stanu na nowy."
 
 #: views/workflow_template_views.py:289
 msgid "No workflows have been defined"
-msgstr "Nie zdefiniowano przepływów pracy"
+msgstr "Nie zdefiniowano obiegów dokumentów"
 
 #: views/workflow_template_views.py:306
 #, python-format
@@ -1288,14 +1294,14 @@ msgstr "Podgląd: %s"
 
 #: views/workflow_template_views.py:312
 msgid "Launch all workflows?"
-msgstr "Uruchomić wszystkie przepływy pracy?"
+msgstr "Uruchomić wszystkie obiegi dokumentów?"
 
 #: views/workflow_template_views.py:314
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
 msgstr ""
-"Spowoduje to uruchomienie wszystkich przepływów pracy utworzonych po "
+"Spowoduje to uruchomienie wszystkich obiegów dokumentów utworzonych po "
 "przesłaniu dokumentów."
 
 #: workflow_actions.py:25
@@ -1320,7 +1326,8 @@ msgstr "Zmodyfikuj właściwości dokumentu"
 
 #: workflow_actions.py:91
 msgid "Additional workflows to launch for the document."
-msgstr "Dodatkowe przepływy pracy przeznaczone do uruchomienia na dokumencie."
+msgstr ""
+"Dodatkowe obiegi dokumentów przeznaczone do uruchomienia na dokumencie."
 
 #: workflow_actions.py:134
 msgid "URL"

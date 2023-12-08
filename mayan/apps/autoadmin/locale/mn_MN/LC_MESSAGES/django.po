@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Zoljargal Munkhjargal, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:33+0000\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,39 +22,42 @@ msgstr ""
 
 #: apps.py:13 settings.py:7
 msgid "Auto administrator"
-msgstr ""
+msgstr "Авто админ"
 
 #: auth/allauth.py:51
 msgid ""
 "Welcome Admin! You have been given superuser privileges. Use them with "
 "caution."
 msgstr ""
+"Тавтай морил! Танд сүпер хэрэглэгчийн эрх олголоо. Болгоомжтой хэрэглээрэй."
 
 #: models.py:13
 msgid "Account"
-msgstr ""
+msgstr "Эрх"
 
 #: models.py:16
 msgid "Password"
-msgstr ""
+msgstr "Нууц үг"
 
 #: models.py:19
 msgid "Password hash"
-msgstr ""
+msgstr "Нууц үгийн Hash"
 
 #: models.py:25
 msgid "Autoadmin properties"
-msgstr ""
+msgstr "Авто-админ шинж"
 
 #: settings.py:11
 msgid "Sets the email of the automatically created super user account."
-msgstr ""
+msgstr "Автоматаар үүссэн сүпер админы и-мэйл хаяг тохируулах."
 
 #: settings.py:16
 msgid ""
 "The password of the automatically created super user account. If it is equal"
 " to None, the password is randomly generated."
 msgstr ""
+"Автоматаар үүссэн сүпер амдины нууц үг. Хэрэв None бол нууц үг "
+"санамсаргүйгээр үүснэ."
 
 #: settings.py:22
 msgid "The username of the automatically created super user account."
@@ -74,20 +81,20 @@ msgstr ""
 #: templates/autoadmin/credentials.html:19
 #, python-format
 msgid "Username: <strong>%(account)s</strong>"
-msgstr ""
+msgstr "Хэрэглэгчийн нэр: <strong>%(account)s</strong>"
 
 #: templates/autoadmin/credentials.html:20
 #, python-format
 msgid "Email: <strong>%(email)s</strong>"
-msgstr ""
+msgstr "Имэйл: <strong>%(email)s</strong>"
 
 #: templates/autoadmin/credentials.html:21
 #, python-format
 msgid "Password: <strong>%(password)s</strong>"
-msgstr ""
+msgstr "Нууц үг: <strong>%(password)s</strong>"
 
 #: templates/autoadmin/credentials.html:23
 msgid ""
 "Be sure to change the password to increase security and to disable this "
 "message."
-msgstr ""
+msgstr "Нууц үгийг сольж аюулгүй байдлыг сайжруулна уу."

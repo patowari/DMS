@@ -7,17 +7,17 @@
 # Marvin Haschker <marvin@haschker.me>, 2022
 # Jesaja Everling <jeverling@gmail.com>, 2022
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
 # Berny <berny@bernhard-marx.de>, 2022
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -244,17 +244,17 @@ msgstr "%(count)d Tags erfolgreich gelöscht."
 #: views.py:130
 #, python-format
 msgid "Delete tag: %(object)s"
-msgstr ""
+msgstr "Tag%(object)s löschen"
 
 #: views.py:131
 #, python-format
 msgid "Delete the %(count)d selected tag"
-msgstr ""
+msgstr "Den %(count)d  ausgewählten Tag löschen."
 
 #: views.py:132
 #, python-format
 msgid "Delete the %(count)d selected tags"
-msgstr ""
+msgstr "Die %(count)d  ausgewählten Tags löschen."
 
 #: views.py:138
 msgid "Will be removed from all documents."
@@ -337,4 +337,4 @@ msgstr "Tag zuweisen"
 
 #: workflow_actions.py:67
 msgid "Tags to remove from the document."
-msgstr ""
+msgstr "Tag, der vom Dokument entfernt werden soll."

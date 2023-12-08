@@ -6,14 +6,15 @@
 # Translators:
 # Roberto Rosario, 2022
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,29 +32,35 @@ msgid ""
 "Search backend error. Verify that the search service is available and that "
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
+"Keresési háttérrendszer hiba. Ellenőrizze, hogy a keresési szolgáltatás "
+"elérhető-e, és hogy a keresési szintaxis megfelelő-e az aktív keresési "
+"háttérprogramhoz; %s"
 
 #: classes.py:596
 #, python-format
 msgid "Unknown search model `%s`."
-msgstr ""
+msgstr "Ismeretlen keresési modell ` %s `."
 
 #: classes.py:652
 msgid "ID"
-msgstr ""
+msgstr "Azonosító"
 
 #: forms.py:9
 msgid "Match all"
-msgstr "Mind összeegyeztetése"
+msgstr "Egyezik minden"
 
 #: forms.py:10
 msgid ""
 "When checked, only results that match all fields will be returned. When "
 "unchecked results that match at least one field will be returned."
 msgstr ""
+"Ha be van jelölve, csak az összes mezőnek megfelelő eredmények kerülnek "
+"visszaadásra. Ha nincs bejelölve, akkor a legalább egy mezőnek megfelelő "
+"eredmények kerülnek visszaadásra."
 
 #: forms.py:31 templates/dynamic_search/search_box.html:41
 msgid "Search terms"
-msgstr "keresési feltételek"
+msgstr "Keresési kifejezések"
 
 #: links.py:13 permissions.py:5 queues.py:7 settings.py:11
 #: templates/dynamic_search/search_box.html:45 views.py:133 views.py:147
@@ -62,108 +69,120 @@ msgstr "Keresés"
 
 #: links.py:17 templates/dynamic_search/search_box.html:47 views.py:171
 msgid "Advanced search"
-msgstr "Részletes keresés"
+msgstr "Kiterjesztett keresés"
 
 #: links.py:21
 msgid "Search again"
-msgstr "Újra keresés"
+msgstr "Keresés újra"
 
 #: links.py:25 views.py:110
 msgid "Reindex search backend"
-msgstr ""
+msgstr "Reindex keresési háttérrendszer"
 
 #: permissions.py:8
 msgid "Execute search tools"
-msgstr ""
+msgstr "Hajtsa végre a keresőeszközöket"
 
 #: queues.py:10
 msgid "Search slow"
-msgstr ""
+msgstr "Lassú keresés"
 
 #: queues.py:15
 msgid "Remove a model instance from the search engine."
-msgstr ""
+msgstr "Távolítson el egy modellpéldányt a keresőmotorból."
 
 #: queues.py:20
 msgid "Index a model instance to the search engine."
-msgstr ""
+msgstr "Indexeljen egy modellpéldányt a keresőmotorba."
 
 #: queues.py:25
 msgid "Index all instances of a search model to the search engine."
-msgstr ""
+msgstr "Indexelje a keresőmodell összes példányát a keresőmotorba."
 
 #: queues.py:31
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
+"Indexelje a keresési modell összes kapcsolódó példányát a túl sok esemény "
+"után."
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
+"Állítsa vissza a keresési háttértár indexeit, és indexelje újra az összes "
+"példányt."
 
 #: settings.py:16
 msgid "Full path to the backend to be used to handle the search."
-msgstr ""
+msgstr "A keresés kezeléséhez használt háttérrendszer teljes elérési útja."
 
 #: settings.py:23
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
+"A keresési háttérrendszernek átadandó argumentumok. Például értékek, amelyek"
+" megváltoztatják a viselkedést, a gazdagépneveket vagy a hitelesítési "
+"argumentumokat."
 
 #: settings.py:30
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
+"Letiltja az egyszavas keresést, csak a speciális keresés gombot hagyja meg."
 
 #: settings.py:38
 msgid "Amount of objects to process when performing bulk indexing."
-msgstr ""
+msgstr "A tömeges indexelés végrehajtásakor feldolgozandó objektumok száma."
 
 #: settings.py:44
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr ""
+"Beállítja az „Összes egyezés” jelölőnégyzet alapértelmezett állapotát."
 
 #: settings.py:48
 msgid "Maximum number search results to fetch and display."
-msgstr ""
+msgstr "A lekérhető és megjeleníthető keresési eredmények maximális száma."
 
 #: templates/dynamic_search/app/list_toolbar.html:13
 msgid "List filter"
-msgstr ""
+msgstr "Listaszűrő"
 
 #: templates/dynamic_search/search_box.html:47
 msgid "Advanced"
-msgstr ""
+msgstr "Haladó"
 
 #: views.py:48
 msgid "Try again using different terms. "
-msgstr ""
+msgstr "Próbálkozzon újra más kifejezésekkel."
 
 #: views.py:50
 msgid "No search results"
-msgstr ""
+msgstr "Nincs találat"
 
 #: views.py:52
 #, python-format
 msgid "Search results for: %s"
-msgstr ""
+msgstr "Keresési eredmények a következőre: %s"
 
 #: views.py:106
 msgid ""
 "This tool is required only for some search backends. Search results will be "
 "affected while the backend is being reindexed."
 msgstr ""
+"Ez az eszköz csak bizonyos keresési háttérrendszerekhez szükséges. A "
+"háttérrendszer újraindexelése hatással lesz a keresési eredményekre."
 
 #: views.py:112
 msgid "This tool erases and populates the search backend's internal index."
 msgstr ""
+"Ez az eszköz törli és feltölti a keresési háttérrendszer belső indexét."
 
 #: views.py:126
 msgid "Search backend reindexing queued."
-msgstr ""
+msgstr "A keresési háttérrendszer újraindexelése sorban áll."
 
 #: views.py:149
 #, python-format
 msgid "Search for: %s"
-msgstr ""
+msgstr "Keresés: %s"

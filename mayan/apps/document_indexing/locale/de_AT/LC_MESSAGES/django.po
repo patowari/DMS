@@ -11,16 +11,16 @@
 # Jesaja Everling <jeverling@gmail.com>, 2022
 # Berny <berny@bernhard-marx.de>, 2022
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
 # Roberto Rosario, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Roberto Rosario, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,11 +46,11 @@ msgstr "Ebene"
 
 #: apps.py:147 apps.py:177
 msgid "Depth"
-msgstr ""
+msgstr "Tiefe"
 
 #: apps.py:151
 msgid "Total nodes"
-msgstr ""
+msgstr "Knotenpunkte gesamt"
 
 #: apps.py:158
 msgid "Total documents"
@@ -58,11 +58,11 @@ msgstr "Alle Dokumente"
 
 #: apps.py:160 apps.py:198
 msgid "Number of unique documents this item contains."
-msgstr ""
+msgstr "Anzahl einmaliger Dokumente, die dieses Element beinhaltet."
 
 #: apps.py:185
 msgid "Nodes"
-msgstr ""
+msgstr "Knotenpunkte"
 
 #: apps.py:196 models/index_instance_models.py:284
 msgid "Documents"
@@ -70,11 +70,11 @@ msgstr "Dokumente"
 
 #: events.py:10
 msgid "Index template created"
-msgstr ""
+msgstr "Indexvorlage erstellt"
 
 #: events.py:13
 msgid "Index template edited"
-msgstr ""
+msgstr "Indexvorlage bearbeitet"
 
 #: forms.py:19 forms.py:23
 msgid "Namespace"
@@ -179,14 +179,16 @@ msgstr ""
 #: models/index_instance_models.py:230
 msgid "Total number of nodes with unique values this item contains."
 msgstr ""
+"Gesamtzahl der Knotenpunkte mit einmaligen Werten, die dieses Element "
+"beinhaltet."
 
 #: models/index_instance_models.py:239
 msgid "Total number of unique documents this item contains."
-msgstr ""
+msgstr "Gesamtzahl einmaliger Dokumente, die dieses Element beinhaltet."
 
 #: models/index_instance_models.py:249
 msgid "Total number of node levels this item contains."
-msgstr ""
+msgstr "Gesamtzahl der Knotenpunktebenen, die dieses Element beinhaltet."
 
 #: models/index_instance_models.py:277 models/index_template_models.py:263
 msgid "Index template node"
@@ -245,7 +247,7 @@ msgstr ""
 
 #: models/index_template_models.py:59 models/index_template_models.py:185
 msgid "Index template"
-msgstr ""
+msgstr "Indexvorlage"
 
 #: models/index_template_models.py:189
 msgid "Event type"
@@ -253,15 +255,15 @@ msgstr "Ereignistyp"
 
 #: models/index_template_models.py:194
 msgid "Index template event trigger"
-msgstr ""
+msgstr "Indexvorlagen-Ereignistrigger"
 
 #: models/index_template_models.py:195
 msgid "Index template event triggers"
-msgstr ""
+msgstr "Indexvorlagen-Ereignistrigger"
 
 #: models/index_template_models.py:230
 msgid "Parent index template node of this node."
-msgstr ""
+msgstr "Übergeordnete Knotenpunkt-Indexvorlage."
 
 #: models/index_template_models.py:236
 msgid "Index"
@@ -270,6 +272,8 @@ msgstr "Index"
 #: models/index_template_models.py:240
 msgid "Enter a template to render. Use Django's default templating language."
 msgstr ""
+"Vorlage zur Generierung eingeben. Django's Standard-Vorlagen-Sprache "
+"benutzen."
 
 #: models/index_template_models.py:243
 msgid "Indexing expression"
@@ -296,7 +300,7 @@ msgstr "Dokumente verknüpfen"
 
 #: models/index_template_models.py:264
 msgid "Index template nodes"
-msgstr ""
+msgstr "Indexvorlagenknotenpunkte"
 
 #: models/index_template_models.py:268
 msgid "Root"
@@ -308,23 +312,23 @@ msgstr "Indizierung"
 
 #: permissions.py:8
 msgid "View index instances"
-msgstr ""
+msgstr "Index Instanzen betrachten"
 
 #: permissions.py:11
 msgid "Create new index templates"
-msgstr ""
+msgstr "Neue Indexvorlagen erstellen"
 
 #: permissions.py:14
 msgid "Edit index templates"
-msgstr ""
+msgstr "Indexvorlagen bearbeiten"
 
 #: permissions.py:17
 msgid "Delete index templates"
-msgstr ""
+msgstr "Indexvorlagen löschen"
 
 #: permissions.py:20
 msgid "View index templates"
-msgstr ""
+msgstr "Indexvorlagen betrachten"
 
 #: permissions.py:23 views/index_template_views.py:431
 msgid "Rebuild index templates"
@@ -371,23 +375,33 @@ msgid ""
 "URL of the API endpoint showing the list document types associated with this"
 " index template."
 msgstr ""
+"URL des API-Endpunktes, der die Liste der mit dieser Indexvorlage "
+"verknüpften Dokumententypen zeigt."
 
 #: serializers.py:212
 msgid "URL of the API endpoint to add document types to this index template."
 msgstr ""
+"URL des API Endpunktes, um Dokumententypen zu dieser Indexvorlage "
+"hinzuzufügen."
 
 #: serializers.py:219
 msgid ""
 "URL of the API endpoint to remove document types from this index template."
 msgstr ""
+"URL des API Endpunktes, um Dokumententypen von dieser Indexvorlage zu "
+"entfernen."
 
 #: serializers.py:276
 msgid "Primary key of the document type to add to the index template."
 msgstr ""
+"Primärschlüssel des Dokumententyps, der zu dieser Indexvorlage hinzugefügt "
+"wird."
 
 #: serializers.py:285
 msgid "Primary key of the document type to remove from the index template."
 msgstr ""
+"Primärschlüssel des Dokumententyps, der von dieser Indexvorlage entfernt "
+"wird."
 
 #: views/index_instance_views.py:37
 msgid ""
@@ -464,7 +478,7 @@ msgstr ""
 
 #: views/index_template_views.py:114
 msgid "There are no index templates."
-msgstr ""
+msgstr "Keine Indexvorlagen vorhanden."
 
 #: views/index_template_views.py:145
 #, python-format
@@ -502,22 +516,24 @@ msgstr "Index %s bearbeiten"
 #: views/index_template_views.py:234
 #, python-format
 msgid "Error updating index template event trigger; %s"
-msgstr ""
+msgstr "Fehler bei der Aktualisierung des Indexvorlagen-Ereignistriggers; %s"
 
 #: views/index_template_views.py:243
 msgid "Index template event triggers updated successfully."
-msgstr ""
+msgstr "Indexvorlagen-Ereignistrigger erfolgreich aktualisiert."
 
 #: views/index_template_views.py:253
 msgid ""
 "Triggers are document events that cause instances of this index template to "
 "be updated."
 msgstr ""
+"Trigger sind Ereignisse für Dokumente, die Instanzen dieser Indexvorlage zur"
+" Aktualisierung veranlassen."
 
 #: views/index_template_views.py:258
 #, python-format
 msgid "Index template event triggers for: %s"
-msgstr ""
+msgstr "Indexvorlagen-Ereignistrigger für: %s"
 
 #: views/index_template_views.py:303
 #, python-format
@@ -537,7 +553,7 @@ msgstr "Indexvorlagen-Knotenpunkt %s löschen?"
 #: views/index_template_views.py:381
 #, python-format
 msgid "Edit the index template node: %s"
-msgstr ""
+msgstr "Den Indexvorlagenknotenpunkt %s bearbeiten"
 
 #: views/index_template_views.py:402
 #, python-format
@@ -559,8 +575,8 @@ msgstr[1] ""
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d Index zurückgesetzt."
+msgstr[1] "%(count)d Indices zurückgesetzt."
 
 #: views/index_template_views.py:495
 msgid "Index templates for which their instances will be deleted."

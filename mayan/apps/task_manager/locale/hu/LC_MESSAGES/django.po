@@ -5,14 +5,15 @@
 # 
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "Név"
 
 #: apps.py:106
 msgid "Default queue?"
-msgstr "Alapértelmezett munkasor?"
+msgstr "Alapértelmezett várólista?"
 
 #: apps.py:111
 msgid "Is transient?"
@@ -54,7 +55,7 @@ msgstr "Kiszolgáló"
 
 #: apps.py:128
 msgid "Arguments"
-msgstr "Paraméterek"
+msgstr "Argumentumok"
 
 #: apps.py:132
 msgid "Keyword arguments"
@@ -70,11 +71,13 @@ msgstr "Feladatok megtekintése"
 
 #: settings.py:10
 msgid "Celery"
-msgstr ""
+msgstr "Celery"
 
 #: settings.py:15
 msgid "Default: \"AMQPLAIN\". Set custom amqp login method."
 msgstr ""
+"Alapértelmezett\\: \"AMQPLAIN\". Egyéni amqp bejelentkezési módszer "
+"beállítása."
 
 #: settings.py:21
 msgid ""
@@ -83,12 +86,20 @@ msgid ""
 " (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
+"Alapértelmezett: \"amqp://\". Alapértelmezett bróker URL. Ennek az URL-nek a"
+" következő formájúnak kell lennie: "
+"transport://userid:password@hostname:port/virtual_host Csak a séma része "
+"(transport://) kötelező, a többi rész opcionális, és alapértelmezésként az "
+"adott szállítás alapértelmezett értékeit veszi fel."
 
 #: settings.py:30
 msgid ""
 "Default: \"Disabled\". Toggles SSL usage on broker connection and SSL "
 "settings. The valid values for this option vary by transport."
 msgstr ""
+"Alapértelmezett: \"Letiltva\". Az SSL-használat bekapcsolása a "
+"brókerkapcsolat és az SSL-beállítások esetén. Ennek az opciónak az érvényes "
+"értékei szállításonként változnak."
 
 #: settings.py:38
 msgid ""
@@ -97,10 +108,15 @@ msgid ""
 "http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
 "backend"
 msgstr ""
+"Alapértelmezett: Alapértelmezés szerint nincs engedélyezve az "
+"eredményháttér. A feladatok eredményeinek (tombstones) tárolására használt "
+"backend. Lásd: "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend."
 
 #: tests/literals.py:11
 msgid "Test queue"
-msgstr ""
+msgstr "Teszt munkasor"
 
 #: views.py:13
 msgid "Background task queues"

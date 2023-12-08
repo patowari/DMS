@@ -9,19 +9,19 @@
 # Bruno CAPELETO <bruno.capeleto@abcreseau.com>, 2022
 # Olivier W, 2022
 # Roberto Rosario, 2022
-# Yves Dubois <ydubois@gmail.com>, 2022
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2022
+# Yves Dubois <ydubois@gmail.com>, 2022
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2022
 # Guillaume Trottier <gui.trottier@gmail.com>, 2022
-# Frédéric Sheedy <sheedf@gmail.com>, 2022
+# Frédéric Sheedy <sheedf@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2022\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,7 +155,7 @@ msgstr "Nombre de pages"
 
 #: dashboard_widgets.py:55
 msgid "Total documents"
-msgstr "Nombre total de documents"
+msgstr "Nombre de documents"
 
 #: dashboard_widgets.py:73 views/trashed_document_views.py:159
 msgid "Documents in trash"
@@ -845,7 +845,7 @@ msgstr "Document parcellaire, id : %d"
 
 #: models/document_type_models.py:40
 msgid "A short text identifying the document type."
-msgstr ""
+msgstr "Un court texte identifiant le type de document."
 
 #: models/document_type_models.py:45
 msgid ""
@@ -1336,15 +1336,15 @@ msgstr "Nouvelles pages de documents par mois"
 
 #: statistics.py:255
 msgid "Total documents at each month"
-msgstr "Nombre total de documents chaque mois"
+msgstr "Nombre de documents chaque mois"
 
 #: statistics.py:262
 msgid "Total document files at each month"
-msgstr "Nombre total de documents chaque mois"
+msgstr "Nombre de documents chaque mois"
 
 #: statistics.py:269
 msgid "Total document pages at each month"
-msgstr "Nombre total de pages de documents chaque mois"
+msgstr "Nombre de pages de documents chaque mois"
 
 #: storages.py:21
 msgid ""

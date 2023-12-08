@@ -6,15 +6,15 @@
 # Translators:
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2022
 # Roberto Rosario, 2022
-# bwakkie <bwakkie@gmail.com>, 2022
+# bwakkie <bwakkie@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: bwakkie <bwakkie@gmail.com>, 2022\n"
+"Last-Translator: bwakkie <bwakkie@gmail.com>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,6 +208,8 @@ msgstr "Het aantal objecten dat per pagina wordt weergegeven."
 #: settings.py:21
 msgid "A string specifying the name to use for the paging parameter."
 msgstr ""
+"Een tekenreeks die als naam voor de pagineringsparameter moet worden "
+"gebruikt."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:33+0000\n"
 "Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2022\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
@@ -481,8 +481,8 @@ msgid "Paste an asset (absolute coordinates)"
 msgstr "Prilepite sredstvo (absolutne koordinate)"
 
 #: transformations.py:177
-msgid "Paste an asset (percents coordinates)"
-msgstr "Prilepite sredstvo (odstotne koordinate)"
+msgid "Paste an asset (percent coordinates)"
+msgstr ""
 
 #: transformations.py:191
 msgid "Crop"
@@ -525,8 +525,8 @@ msgid "Bottom side location in pixels."
 msgstr "Lokacija na spodnji strani v slikovnih pikah."
 
 #: transformations.py:387
-msgid "Draw rectangle (percents coordinates)"
-msgstr "Nariši pravokotnik (odstotki koordinat)"
+msgid "Draw rectangle (percent coordinates)"
+msgstr ""
 
 #: transformations.py:392
 msgid "Left side location in percent."

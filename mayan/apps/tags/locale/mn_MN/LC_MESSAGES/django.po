@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2022
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2022\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +29,7 @@ msgstr ""
 
 #: apps.py:168 models.py:33
 msgid "Documents"
-msgstr ""
+msgstr "Баримт"
 
 #: events.py:8
 msgid "Tag attached to document"
@@ -72,7 +73,7 @@ msgstr "Засах"
 
 #: links.py:65
 msgid "All"
-msgstr ""
+msgstr "Бүгд"
 
 #: methods.py:18
 msgid "Return the tags attached to the document."
@@ -148,27 +149,27 @@ msgstr ""
 
 #: search.py:65
 msgid "Document type"
-msgstr ""
+msgstr "Баримтын төрөл"
 
 #: search.py:68
 msgid "Document label"
-msgstr ""
+msgstr "Баримтын шошго"
 
 #: search.py:71
 msgid "Document description"
-msgstr ""
+msgstr "Баримтын тайлбар"
 
 #: search.py:74
 msgid "Document UUID"
-msgstr ""
+msgstr "Баримтын UUID"
 
 #: search.py:79
 msgid "Document file checksum"
-msgstr ""
+msgstr "Баримтын checksum"
 
 #: search.py:82
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Баримтын MIME төрөл"
 
 #: serializers.py:32
 msgid "Primary key of the tag to add to the document."

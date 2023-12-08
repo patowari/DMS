@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
@@ -157,7 +157,7 @@ msgstr ""
 #: views/metadata_type_views.py:115 workflow_actions.py:23
 #: workflow_actions.py:170
 msgid "Metadata types"
-msgstr ""
+msgstr "Vrste metapodataka"
 
 #: links.py:71
 msgid "Document types"
@@ -348,11 +348,11 @@ msgstr ""
 
 #: permissions.py:26
 msgid "Edit metadata types"
-msgstr ""
+msgstr "Uredi vrste metapodataka"
 
 #: permissions.py:29
 msgid "Create new metadata types"
-msgstr ""
+msgstr "Izradi novu vrstu metapodataka"
 
 #: permissions.py:32
 msgid "Delete metadata types"

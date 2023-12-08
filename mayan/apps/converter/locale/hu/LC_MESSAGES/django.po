@@ -6,14 +6,15 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2022
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:33+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,26 +33,29 @@ msgstr "Átalakítás"
 #: backends/python.py:122 backends/python.py:135
 #, python-format
 msgid "Exception determining PDF page count; %s"
-msgstr ""
+msgstr "A PDF oldalszámát meghatározó kivétel; %s"
 
 #: backends/python.py:149
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
-msgstr ""
+msgstr "Kivétel az oldalszám meghatározására a Pillow használatával; %s"
 
 #: classes.py:158
 msgid "LibreOffice not installed or not found."
-msgstr ""
+msgstr "A LibreOffice nincs telepítve vagy nem található."
 
 #: classes.py:259
 msgid "Not an office file format."
-msgstr ""
+msgstr "Nem office fájlformátum."
 
 #: classes.py:393
 msgid ""
 "Transformations allow changing the visual appearance of documents without "
 "making permanent changes to the document file themselves."
 msgstr ""
+"Az átalakítások lehetővé teszik a dokumentumok vizuális megjelenésének "
+"megváltoztatását anélkül, hogy magukat a dokumentumfájlokat állandóan "
+"módosítanák."
 
 #: classes.py:444
 msgid "transformation"
@@ -60,24 +64,27 @@ msgstr "átalakítás"
 #: dependencies.py:14
 msgid "Utility from the poppler-utils package used to inspect PDF files."
 msgstr ""
+"A PDF-fájlok ellenőrzésére használt poppler-utils csomag segédprogramja."
 
 #: dependencies.py:19
 msgid ""
 "Utility from the popper-utils package used to extract pages from PDF files "
 "into PPM format images."
 msgstr ""
+"A popper-utils csomag segédprogramja, amellyel PDF-fájlokból oldalakat PPM "
+"formátumú képekké bonthat ki."
 
 #: events.py:8
 msgid "Asset created"
-msgstr ""
+msgstr "Tartalom létrehozva"
 
 #: events.py:11
 msgid "Asset edited"
-msgstr ""
+msgstr "Tartalom szerkesztve"
 
 #: forms.py:17
 msgid "Asset preview image"
-msgstr ""
+msgstr "Tartalom előnézeti képe"
 
 #: forms.py:17
 msgid "Preview"
@@ -85,29 +92,31 @@ msgstr "Előnézet"
 
 #: forms.py:38
 msgid "Available transformations for this layer."
-msgstr ""
+msgstr "Ehhez a réteghez elérhető átalakítások."
 
 #: forms.py:84 workflow_actions.py:74
 #, python-format
 msgid "\"%s\" not a valid entry."
-msgstr ""
+msgstr "A \"%s\" egy érvénytelen bejegyzés."
 
 #: layers.py:11
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
+"A dekorációk olyan vizuális elemek, amelyek kontextuális információkat adnak"
+" a képekhez."
 
 #: layers.py:13
 msgid "Decorations"
-msgstr ""
+msgstr "Dekorációk"
 
 #: layers.py:24
 msgid "Saved transformations"
-msgstr ""
+msgstr "Mentett átalakítások"
 
 #: links.py:35 views/asset_views.py:36
 msgid "Create asset"
-msgstr ""
+msgstr "Tartalom létrehozása"
 
 #: links.py:38 links.py:44 links.py:64
 msgid "Delete"
@@ -119,15 +128,15 @@ msgstr "Szerkesztés"
 
 #: links.py:56 models.py:64 storages.py:21 views/asset_views.py:144
 msgid "Assets"
-msgstr ""
+msgstr "Tartalmak"
 
 #: links.py:77
 msgid "Transformations"
-msgstr ""
+msgstr "Átalakítások"
 
 #: links.py:82
 msgid "Select new transformation"
-msgstr ""
+msgstr "Új átalakítás választása"
 
 #: models.py:47
 msgid "Label"
@@ -138,18 +147,20 @@ msgid ""
 "This value will be used when referencing this asset. Can only contain "
 "letters, numbers, and underscores."
 msgstr ""
+"Ezt az értéket használja a rendszer a tartalomra való hivatkozáskor. Csak "
+"betűket, számokat és aláhúzásjeleket tartalmazhat."
 
 #: models.py:54
 msgid "Internal name"
-msgstr ""
+msgstr "Belső név"
 
 #: models.py:58
 msgid "File"
-msgstr "Állomány"
+msgstr "Fájl"
 
 #: models.py:63 transformation_mixins.py:299
 msgid "Asset"
-msgstr ""
+msgstr "Tartalom"
 
 #: models.py:173 models.py:244
 msgid "Name"
@@ -161,389 +172,408 @@ msgstr "Sorrend"
 
 #: models.py:181 models.py:200
 msgid "Stored layer"
-msgstr ""
+msgstr "Tárolt réteg"
 
 #: models.py:182
 msgid "Stored layers"
-msgstr ""
+msgstr "Tárolt rétegek"
 
 #: models.py:197 models.py:251
 msgid "Enabled"
-msgstr "Bekapcsolt"
+msgstr "Engedélyezve"
 
 #: models.py:208 models.py:236
 msgid "Object layer"
-msgstr ""
+msgstr "Objektumréteg"
 
 #: models.py:209
 msgid "Object layers"
-msgstr ""
+msgstr "Objektumrétegek"
 
 #: models.py:240
 msgid ""
 "Order in which the transformations will be executed. If left unchanged, an "
 "automatic order value will be assigned."
 msgstr ""
+"Az átalakítások végrehajtásának sorrendje. Ha nem változtatja meg, a "
+"rendszer egy automatikus rendelési értéket rendel hozzá."
 
 #: models.py:247 workflow_actions.py:45
 msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
-msgstr ""
+msgstr "Adja meg az átalakítás argumentumait YAML-szótárként. pl: {\"fok\": 180}"
 
 #: models.py:249 models.py:275
 msgid "Arguments"
-msgstr "Paraméterek"
+msgstr "Argumentumok"
 
 #: models.py:258
 msgid "Layer transformation"
-msgstr ""
+msgstr "Réteg átalakítás"
 
 #: models.py:259
 msgid "Layer transformations"
-msgstr ""
+msgstr "Réteg átalakítások"
 
 #: models.py:265
 msgid "Unknown transformation class"
-msgstr ""
+msgstr "Ismeretlen átalakítás osztály"
 
 #: permissions.py:8
 msgid "Create new assets"
-msgstr ""
+msgstr "Új tartalmak létrehozása"
 
 #: permissions.py:11
 msgid "Delete assets"
-msgstr ""
+msgstr "Tartalmak törlése"
 
 #: permissions.py:14
 msgid "Edit assets"
-msgstr ""
+msgstr "Tartalmak szerkesztése"
 
 #: permissions.py:17
 msgid "View existing assets"
-msgstr ""
+msgstr "Meglévő tartalmak megtekintése"
 
 #: permissions.py:21
 msgid "Create new transformations"
-msgstr ""
+msgstr "Új átalakítások létrehozása"
 
 #: permissions.py:24
 msgid "Delete transformations"
-msgstr ""
+msgstr "Átalakítások törlése"
 
 #: permissions.py:27
 msgid "Edit transformations"
-msgstr ""
+msgstr "Átalakítások szerkesztése"
 
 #: permissions.py:30
 msgid "View existing transformations"
-msgstr ""
+msgstr "Meglévő átalakítások megtekintése"
 
 #: queues.py:12
 msgid "Generate a image of an object."
-msgstr ""
+msgstr "Kép létrehozása egy objektumról."
 
 #: settings.py:30
 msgid ""
 "The threshold at which the CONVERTER_ASSET_CACHE_STORAGE_BACKEND will start "
 "deleting the oldest asset cache files. Specify the size in bytes."
 msgstr ""
+"Az a küszöbérték, amelynél a CONVERTER_ASSET_CACHE_STORAGE_BACKEND megkezdi "
+"a legrégebbi tartalom-gyorsítótár-fájlok törlését. Adja meg a méretet "
+"bájtban."
 
 #: settings.py:38
 msgid ""
 "Path to the Storage subclass to use when storing the cached asset files."
 msgstr ""
+"A Tárolás alosztály elérési útja a gyorsítótárazott tartalomfájlok "
+"tárolásakor."
 
 #: settings.py:46
 msgid "Arguments to pass to the CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
-msgstr ""
+msgstr "A CONVERTER_ASSET_CACHE_STORAGE_BACKEND-hez továbbítandó paraméterek."
 
 #: settings.py:52
 msgid "Path to the Storage subclass to use when storing assets."
-msgstr ""
+msgstr "A tartalmak tárolásakor használandó Storage alosztály elérési útja."
 
 #: settings.py:58
 msgid "Arguments to pass to the CONVERTER_ASSET_STORAGE_BACKEND."
-msgstr ""
+msgstr "A CONVERTER_ASSET_STORAGE_BACKEND-nek átadandó paraméterek."
 
 #: settings.py:64
 msgid "Graphics conversion backend to use."
-msgstr ""
+msgstr "Használható grafikus konverziós háttérrendszer."
 
 #: settings.py:70
 msgid "Configuration options for the graphics conversion backend."
-msgstr ""
+msgstr "A grafikus konverziós háttérrendszer konfigurációs beállításai."
 
 #: settings.py:77
 msgid "Time in seconds that the browser should cache the supplied image. "
 msgstr ""
+"Az az idő másodpercben, ameddig a böngészőnek gyorsítótárba kell helyeznie a"
+" mellékelt képet."
 
 #: settings.py:84
 msgid ""
 "Maximum number of retries before giving up. A value of None means the task "
 "will retry forever."
 msgstr ""
+"Az újrapróbálkozások maximális száma mielőtt abbahagyja. A None érték azt "
+"jelenti, hogy a feladat örökre újra próbálkozik."
 
 #: settings.py:92
 msgid ""
 "Time in seconds after which the image generation task will stop running and "
 "raise an error."
 msgstr ""
+"Az az idő másodpercben, amely után a képgenerálási feladat leáll, és hibát "
+"jelez."
 
 #: storages.py:15
 msgid ""
 "Unable to initialize the converter asset storage. Check the settings {} and "
 "{} for formatting errors."
 msgstr ""
+"Nem sikerült inicializálni a konverter eszköztárát. Ellenőrizze a "
+"beállításokat, valamint a {} és {} formázási hibákat."
 
 #: storages.py:28
 msgid ""
 "Unable to initialize the converter asset cachestorage. Check the settings {}"
 " and {} for formatting errors."
 msgstr ""
+"Nem sikerült inicializálni a konverter eszköz gyorsítótárát. Ellenőrizze a "
+"beállításokat, valamint a {} és {} formázási hibákat."
 
 #: storages.py:34
 msgid "Assets cache"
-msgstr ""
+msgstr "Tartalom gyorsítótár"
 
 #: transformation_mixins.py:20 transformations.py:583
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
+"Fokszám a kép óramutató járásával ellentétes irányú elforgatásához a "
+"középpontja körül."
 
 #: transformation_mixins.py:22
 msgid "Rotation"
-msgstr ""
+msgstr "Elforgatás"
 
 #: transformation_mixins.py:25
 msgid "Opacity level of the image in percent"
-msgstr ""
+msgstr "A kép átlátszatlansági szintje százalékban"
 
 #: transformation_mixins.py:26
 msgid "Transparency"
-msgstr ""
+msgstr "Átlátszóság"
 
 #: transformation_mixins.py:29 transformations.py:688
 msgid "Zoom level in percent."
-msgstr ""
+msgstr "Nagyítási szint százalékban."
 
 #: transformation_mixins.py:29 transformations.py:683
 msgid "Zoom"
-msgstr ""
+msgstr "Nagyítás"
 
 #: transformation_mixins.py:111
 msgid "Paste an image"
-msgstr ""
+msgstr "Kép beillesztése"
 
 #: transformation_mixins.py:116
 msgid "Horizontal position in pixels from the left."
-msgstr ""
+msgstr "Vízszintes helyzet pixelben balról."
 
 #: transformation_mixins.py:117 transformation_mixins.py:159
 #: transformation_mixins.py:220 transformations.py:197 transformations.py:294
 #: transformations.py:393
 msgid "Left"
-msgstr ""
+msgstr "Bal"
 
 #: transformation_mixins.py:120
 msgid "Vertical position in pixels from the top."
-msgstr ""
+msgstr "Függőleges pozíció pixelben felülről."
 
 #: transformation_mixins.py:121 transformation_mixins.py:163
 #: transformation_mixins.py:228 transformations.py:201 transformations.py:298
 #: transformations.py:397
 msgid "Top"
-msgstr ""
+msgstr "Felső"
 
 #: transformation_mixins.py:153
 msgid "Paste an image (percents coordinates)"
-msgstr ""
+msgstr "Kép beillesztése (koordináták százalékában)"
 
 #: transformation_mixins.py:158
 msgid "Horizontal position in percent from the left."
-msgstr ""
+msgstr "Vízszintes helyzet százalékban balról."
 
 #: transformation_mixins.py:162
 msgid "Vertical position in percent from the top."
-msgstr ""
+msgstr "Függőleges pozíció százalékban felülről."
 
 #: transformation_mixins.py:214 transformations.py:185
 msgid "Paste an asset as watermark"
-msgstr ""
+msgstr "Tartalom beillesztése vízjelként"
 
 #: transformation_mixins.py:219
 msgid "Horizontal start position in pixels from the left."
-msgstr ""
+msgstr "Vízszintes kezdőpozíció pixelben balról."
 
 #: transformation_mixins.py:223
 msgid "Horizontal end position in pixels from the right."
-msgstr ""
+msgstr "Vízszintes véghelyzet pixelben jobbról."
 
 #: transformation_mixins.py:224 transformations.py:205 transformations.py:302
 #: transformations.py:401
 msgid "Right"
-msgstr ""
+msgstr "Jobb"
 
 #: transformation_mixins.py:227
 msgid "Vertical start position in pixels from the top."
-msgstr ""
+msgstr "Függőleges kezdőpozíció pixelben felülről."
 
 #: transformation_mixins.py:231
 msgid "Vertical end position in pixels from the top."
-msgstr ""
+msgstr "Függőleges véghelyzet pixelben felülről."
 
 #: transformation_mixins.py:232 transformations.py:209 transformations.py:307
 #: transformations.py:405
 msgid "Bottom"
-msgstr ""
+msgstr "Alsó"
 
 #: transformation_mixins.py:235
 msgid "Horizontal position increments in pixels."
-msgstr ""
+msgstr "A vízszintes pozíció növelése képpontokban."
 
 #: transformation_mixins.py:236
 msgid "Horizontal increment"
-msgstr ""
+msgstr "Vízszintes növelés"
 
 #: transformation_mixins.py:239
 msgid "Vertical position increments in pixels."
-msgstr ""
+msgstr "Függőleges pozíció növelése képpontokban."
 
 #: transformation_mixins.py:240
 msgid "Vertical increment"
-msgstr ""
+msgstr "Függőleges növelés"
 
 #: transformation_mixins.py:299
 msgid "Asset name"
-msgstr ""
+msgstr "Tartalomnév"
 
 #: transformation_mixins.py:342
 msgid "Color used to fill the rectangle."
-msgstr ""
+msgstr "A téglalap kitöltésére használt szín."
 
 #: transformation_mixins.py:343 transformations.py:590
 msgid "Fill color"
-msgstr ""
+msgstr "Kitöltőszín"
 
 #: transformation_mixins.py:346
 msgid "Opacity level of the fill color in percent"
-msgstr ""
+msgstr "A kitöltőszín átlátszatlansági szintje százalékban"
 
 #: transformation_mixins.py:347
 msgid "Fill transparency"
-msgstr ""
+msgstr "A kitöltőszín átlátszósága"
 
 #: transformation_mixins.py:350
 msgid "Color used for the outline of the rectangle."
-msgstr ""
+msgstr "A téglalap körvonalához használt szín."
 
 #: transformation_mixins.py:351
 msgid "Outline color"
-msgstr ""
+msgstr "A körvonal színe"
 
 #: transformation_mixins.py:354
 msgid "Width in pixels of the rectangle outline."
-msgstr ""
+msgstr "A téglalap körvonalának szélessége pixelben."
 
 #: transformation_mixins.py:355
 msgid "Outline width"
-msgstr ""
+msgstr "Körvonal vastagsága"
 
 #: transformations.py:169
 msgid "Paste an asset (absolute coordinates)"
-msgstr ""
+msgstr "Tartalom beillesztése (abszolút koordináták)"
 
 #: transformations.py:177
-msgid "Paste an asset (percents coordinates)"
+msgid "Paste an asset (percent coordinates)"
 msgstr ""
 
 #: transformations.py:191
 msgid "Crop"
-msgstr ""
+msgstr "Kivágás"
 
 #: transformations.py:196
 msgid "Number of pixels to remove from the left."
-msgstr ""
+msgstr "Az eltávolítandó képpontok száma balról."
 
 #: transformations.py:200
 msgid "Number of pixels to remove from the top."
-msgstr ""
+msgstr "A felülről eltávolítandó képpontok száma."
 
 #: transformations.py:204
 msgid "Number of pixels to remove from the right."
-msgstr ""
+msgstr "Jobbról eltávolítandó képpontok száma."
 
 #: transformations.py:208
 msgid "Number of pixels to remove from the bottom."
-msgstr ""
+msgstr "Az alulról eltávolítandó képpontok száma."
 
 #: transformations.py:289
 msgid "Draw rectangle"
-msgstr ""
+msgstr "Téglalap rajzolása"
 
 #: transformations.py:294
 msgid "Left side location in pixels."
-msgstr ""
+msgstr "Bal oldali helyzet képpontokban."
 
 #: transformations.py:298
 msgid "Top side location in pixels."
-msgstr ""
+msgstr "A felső oldal helyzete pixelben."
 
 #: transformations.py:302
 msgid "Right side location in pixels."
-msgstr ""
+msgstr "Jobb oldali helyzet pixelben."
 
 #: transformations.py:306
 msgid "Bottom side location in pixels."
-msgstr ""
+msgstr "Az alsó oldali helyzet pixelben."
 
 #: transformations.py:387
-msgid "Draw rectangle (percents coordinates)"
+msgid "Draw rectangle (percent coordinates)"
 msgstr ""
 
 #: transformations.py:392
 msgid "Left side location in percent."
-msgstr ""
+msgstr "Bal oldali helyzet százalékban."
 
 #: transformations.py:396
 msgid "Top side location in percent."
-msgstr ""
+msgstr "Felső oldali helyzet százalékban."
 
 #: transformations.py:400
 msgid "Right side location in percent."
-msgstr ""
+msgstr "Jobb oldali helyzet százalékban."
 
 #: transformations.py:404
 msgid "Bottom side location in percent."
-msgstr ""
+msgstr "Alsó oldali helyzet százalékban"
 
 #: transformations.py:483
 msgid "Flip"
-msgstr ""
+msgstr "Megfordítás"
 
 #: transformations.py:494
 msgid "Gaussian blur"
-msgstr ""
+msgstr "Gauss-elmosás"
 
 #: transformations.py:499 transformations.py:658
 msgid "Radius"
-msgstr ""
+msgstr "Sugár"
 
 #: transformations.py:511
 msgid "Line art"
-msgstr ""
+msgstr "Vonalrajz"
 
 #: transformations.py:525
 msgid "Mirror"
-msgstr ""
+msgstr "Tükrözés"
 
 #: transformations.py:536
 msgid "Resize"
-msgstr "Átméretez"
+msgstr "Átméretezés"
 
 #: transformations.py:542
 msgid "New width in pixels."
-msgstr ""
+msgstr "Új szélesség pixelben."
 
 #: transformations.py:543
 msgid "Width"
@@ -551,7 +581,7 @@ msgstr "Szélesség"
 
 #: transformations.py:547
 msgid "New height in pixels."
-msgstr ""
+msgstr "Új magasság pixelben."
 
 #: transformations.py:548
 msgid "Height"
@@ -559,107 +589,109 @@ msgstr "Magasság"
 
 #: transformations.py:577
 msgid "Rotate"
-msgstr ""
+msgstr "Forgatás"
 
 #: transformations.py:585
 msgid "Degrees"
-msgstr ""
+msgstr "Fokok"
 
 #: transformations.py:589
 msgid "Color to be used for area outside of the rotated image."
-msgstr ""
+msgstr "Az elforgatott képen kívüli területhez használandó szín."
 
 #: transformations.py:620
 msgid "Rotate 90 degrees"
-msgstr ""
+msgstr "90 fokos elforgatás"
 
 #: transformations.py:631
 msgid "Rotate 180 degrees"
-msgstr ""
+msgstr "180 fokos elforgatás"
 
 #: transformations.py:642
 msgid "Rotate 270 degrees"
-msgstr ""
+msgstr "270 fokos elforgatás"
 
 #: transformations.py:652
 msgid "Unsharp masking"
-msgstr ""
+msgstr "Életlen maszkolás"
 
 #: transformations.py:657
 msgid "The blur radius in pixels."
-msgstr ""
+msgstr "Az elmosódási sugár pixelben."
 
 #: transformations.py:661
 msgid "Unsharp strength in percent."
-msgstr ""
+msgstr "Életlenség erőssége százalékban."
 
 #: transformations.py:662 transformations.py:689
 msgid "Percent"
-msgstr ""
+msgstr "Százalék"
 
 #: transformations.py:666
 msgid "Minimum brightness change that will be sharpened."
-msgstr ""
+msgstr "Minimális fényerő-változás, amely élesebb lesz."
 
 #: transformations.py:667
 msgid "Tthreshold"
-msgstr ""
+msgstr "Küszöbérték"
 
 #: views/asset_views.py:50
 #, python-format
 msgid "Delete request performed on %(count)d asset"
-msgstr ""
+msgstr "A %(count)d tartalmon végrehajtott törlési kérelem"
 
 #: views/asset_views.py:52
 #, python-format
 msgid "Delete request performed on %(count)d assets"
-msgstr ""
+msgstr "A %(count)d tartalmakon végrehajtott törlési kérelem"
 
 #: views/asset_views.py:60
 msgid "Delete the selected asset?"
 msgid_plural "Delete the selected assets?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Törli a kiválasztott elemet?"
+msgstr[1] "Törli a kiválasztott tartalmakat?"
 
 #: views/asset_views.py:70
 #, python-format
 msgid "Delete asset: %s?"
-msgstr ""
+msgstr "Tartalom törlése: %s ?"
 
 #: views/asset_views.py:81
 #, python-format
 msgid "Asset \"%s\" deleted successfully."
-msgstr ""
+msgstr "A \"%s\" tartalom sikeresen törölve."
 
 #: views/asset_views.py:86
 #, python-format
 msgid "Error deleting asset \"%(asset)s\": %(error)s"
-msgstr ""
+msgstr "Hiba a \"%(asset)s\" tartalom törlésekor: %(error)s"
 
 #: views/asset_views.py:102
 #, python-format
 msgid "Details asset: %s"
-msgstr ""
+msgstr "A tartalom részletei: %s"
 
 #: views/asset_views.py:117
 #, python-format
 msgid "Edit asset: %s"
-msgstr ""
+msgstr "Tartalom szerkesztése: %s"
 
 #: views/asset_views.py:140
 msgid ""
 "Assets are files that can be used in conjuction with certain "
 "transformations."
 msgstr ""
+"Az tartalmak olyan fájlok, amelyek bizonyos átalakításokkal együtt "
+"használhatók."
 
 #: views/asset_views.py:143
 msgid "No assets available"
-msgstr ""
+msgstr "Nincsenek rendelkezésre álló tartalmak"
 
 #: views/transformation_views.py:52
 #, python-format
 msgid "Error creating transformation: %s."
-msgstr ""
+msgstr "Hiba a transzformáció létrehozásakor: %s ."
 
 #: views/transformation_views.py:69
 #, python-format
@@ -667,62 +699,72 @@ msgid ""
 "Create layer \"%(layer)s\" transformation \"%(transformation)s\" for: "
 "%(object)s"
 msgstr ""
+"\"%(layer)s\" réteg átalakítása \"%(transformation)s\" létrehozása a "
+"következőhöz: %(object)s"
 
 #: views/transformation_views.py:126
 #, python-format
 msgid "Delete transformation \"%(transformation)s\" for: %(content_object)s?"
 msgstr ""
+"A \"%(transformation)s” transzformáció törlése a következőhöz: "
+"%(content_object)s ?"
 
 #: views/transformation_views.py:177
 #, python-format
 msgid "Edit transformation \"%(transformation)s\" for: %(content_object)s"
 msgstr ""
+"A \"%(transformation)s\" transzformáció szerkesztése a következőhöz: "
+"%(content_object)s"
 
 #: views/transformation_views.py:236
 #, python-format
 msgid "There are no entries for layer \"%(layer_name)s\""
-msgstr ""
+msgstr "Nincsenek bejegyzések a \"%(layer_name)s\" réteghez"
 
 #: views/transformation_views.py:239
 #, python-format
 msgid "Layer \"%(layer)s\" transformations for: %(object)s"
-msgstr ""
+msgstr "\"%(layer)s\" réteg transzformáció a következőhöz: %(object)s"
 
 #: views/transformation_views.py:285
 msgid "Transformation created successfully."
-msgstr ""
+msgstr "A transzformáció sikeresen létrehozva."
 
 #: views/transformation_views.py:309
 msgid "Select"
-msgstr "Kiválaszt"
+msgstr "Kiválasztás"
 
 #: views/transformation_views.py:311
 #, python-format
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
 msgstr ""
+"Válasszon új \"%(layer)s\" réteg transzformációt a következőhöz: %(object)s"
 
 #: workflow_actions.py:22
 msgid "Pages"
-msgstr "Lapok"
+msgstr "Oldal"
 
 #: workflow_actions.py:25
 msgid ""
 "Pages to which the new transformations will be added. Separate by commas "
 "and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
+"Oldalak, amelyekhez az új transzformációk hozzáadódnak. Vesszővel válassza "
+"el, és/vagy használjon kötőjelet a tartományokhoz. Hagyja üresen az összes "
+"oldal kiválasztásához."
 
 #: workflow_actions.py:32
 msgid "Transformation class"
-msgstr ""
+msgstr "Transzformációs osztály"
 
 #: workflow_actions.py:37
 msgid "Type of transformation to add."
-msgstr ""
+msgstr "A hozzáadandó transzformáció típusa."
 
 #: workflow_actions.py:42
 msgid "Transformation arguments"
-msgstr ""
+msgstr "Transzformációs argumentumok"
 
 #: workflow_actions.py:51
 msgid "Add transformation"
-msgstr ""
+msgstr "Transzformáció hozzáadása"

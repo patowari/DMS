@@ -7,14 +7,15 @@
 # kicior kicior <kiciorek+github@gmail.com>, 2022
 # mic <winterfall24@gmail.com>, 2022
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,15 +43,15 @@ msgstr ""
 
 #: events.py:10
 msgid "Document file parsed content deleted"
-msgstr ""
+msgstr "Usunięto zawartość przeanalizowanego pliku dokumentu"
 
 #: events.py:14
 msgid "Document file submitted for parsing"
-msgstr ""
+msgstr "Plik dokumentu przesłany do analizy"
 
 #: events.py:17
 msgid "Document file parsing finished"
-msgstr ""
+msgstr "Zakończono analizowanie pliku dokumentu"
 
 #: forms.py:37
 #, python-format
@@ -83,7 +84,7 @@ msgstr "Analizuj dokumenty według typu"
 
 #: models.py:17
 msgid "Document file page"
-msgstr ""
+msgstr "Strona pliku dokumentu"
 
 #: models.py:21
 msgid "The actual text content as extracted by the document parsing backend."
@@ -125,15 +126,15 @@ msgstr "Nie można znaleźć pliku wykonywalnego pdftotext w lokalizacji: %s"
 
 #: permissions.py:10
 msgid "View the content of a document file"
-msgstr ""
+msgstr "Wyświetlanie zawartości pliku dokumentu"
 
 #: permissions.py:13
 msgid "Parse the content of a document file"
-msgstr ""
+msgstr "Analiza zawartość pliku dokumentu"
 
 #: permissions.py:16
 msgid "Change document type parsing settings"
-msgstr "Zmień ustawienia analizy typu dokumentu"
+msgstr "Zmiana ustawień analizy typu dokumentu"
 
 #: queues.py:7
 msgid "Parsing"

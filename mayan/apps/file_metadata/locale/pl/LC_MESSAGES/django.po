@@ -7,14 +7,15 @@
 # Roberto Rosario, 2022
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2022
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022
+# tomkolp, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022\n"
+"Last-Translator: tomkolp, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,11 +61,11 @@ msgstr "Narzędzie EXIF"
 
 #: events.py:10
 msgid "Document file submitted for file metadata processing"
-msgstr ""
+msgstr "Plik dokumentu przesłany do przetwarzania metadanych pliku"
 
 #: events.py:14
 msgid "Document file file metadata processing finished"
-msgstr ""
+msgstr "Zakończono przetwarzanie metadanych pliku dokumentu"
 
 #: links.py:27
 msgid "Attributes"
@@ -128,7 +129,7 @@ msgstr "Ustawienia typów dokumentów"
 
 #: models.py:74
 msgid "Document file"
-msgstr ""
+msgstr "Plik dokumentu"
 
 #: models.py:80 models.py:95
 msgid "Document file driver entry"

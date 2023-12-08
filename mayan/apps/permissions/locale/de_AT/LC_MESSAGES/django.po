@@ -9,15 +9,15 @@
 # Roberto Rosario, 2022
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2022
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:37+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,19 +123,21 @@ msgstr "Gruppenname"
 
 #: serializers.py:30
 msgid "Primary key of the group to add to the role."
-msgstr ""
+msgstr "Primärschlüssel der Gruppe, die zur Rolle hinzugefügt werden soll."
 
 #: serializers.py:38
 msgid "Primary key of the group to remove from the role."
-msgstr ""
+msgstr "Primärschlüssel der Gruppe, die von der Rolle entfernt werden soll."
 
 #: serializers.py:46
 msgid "Primary key of the permission to add to the role."
 msgstr ""
+"Primärschlüssel der Berechtigung, die zur Rolle hinzugefügt werden soll."
 
 #: serializers.py:53
 msgid "Primary key of the permission to remove from the role."
 msgstr ""
+"Primärschlüssel der Berechtigung, die von der Rolle entfernt werden soll."
 
 #: views.py:35
 msgid "Available roles"
@@ -153,37 +155,37 @@ msgstr "Rollen von Gruppe %s"
 #: views.py:65
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Fehler bei Löschen der Rolle \"%(instance)s\"; %(exception)s"
 
 #: views.py:70
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Rolle \"%(object)s\" erfolgreich gelöscht."
 
 #: views.py:71
 #, python-format
 msgid "%(count)d role deleted successfully."
-msgstr ""
+msgstr "%(count)d Rolle erfolgreich gelöscht."
 
 #: views.py:72
 #, python-format
 msgid "%(count)d roles deleted successfully."
-msgstr ""
+msgstr "%(count)d Rollen erfolgreich gelöscht."
 
 #: views.py:73
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr ""
+msgstr "Rolle %(object)s löschen."
 
 #: views.py:74
 #, python-format
 msgid "Delete the %(count)d selected role."
-msgstr ""
+msgstr "Die %(count)d  ausgewählte Rolle löschen."
 
 #: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected roles."
-msgstr ""
+msgstr "Die %(count)d  ausgewählten Rollen löschen."
 
 #: views.py:104
 msgid ""
@@ -247,4 +249,4 @@ msgstr "Berechtigungen der Rolle %s"
 #: views.py:209
 #, python-format
 msgid "Details of permission: %s"
-msgstr ""
+msgstr "Details für Berechtigung %s"

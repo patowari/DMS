@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2022
+# Roberto Rosario, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: Roberto Rosario, 2022\n"
+"Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -413,9 +413,9 @@ msgstr ""
 #: views/document_views.py:56
 msgid "Add metadata types to document"
 msgid_plural "Add metadata types to documents"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Agregar tipos de metadatos al documento"
+msgstr[1] "Agregar tipos de metadatos a los documentos"
+msgstr[2] "Agregar tipos de metadatos a los documentos"
 
 #: views/document_views.py:67
 #, python-format
@@ -473,9 +473,9 @@ msgstr "No hay metadatos para editar"
 #: views/document_views.py:227
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Editar metadatos del documento"
+msgstr[1] "Editar metadatos de documentos"
+msgstr[2] "Editar metadatos de documentos"
 
 #: views/document_views.py:238
 #, python-format
@@ -527,9 +527,9 @@ msgstr ""
 #: views/document_views.py:399
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Eliminar tipos de metadatos del documento"
+msgstr[1] "Eliminar tipos de metadatos de los documentos."
+msgstr[2] "Eliminar tipos de metadatos de los documentos."
 
 #: views/document_views.py:410
 #, python-format

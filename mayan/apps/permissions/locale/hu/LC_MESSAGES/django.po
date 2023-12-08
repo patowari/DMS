@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2022
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:37+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2022\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,23 +27,23 @@ msgstr "Engedélyek"
 
 #: apps.py:106 models.py:75
 msgid "Group count"
-msgstr ""
+msgstr "Csoportok száma"
 
 #: classes.py:73
 msgid "Insufficient permissions."
-msgstr "Elégtelen jogosúltság"
+msgstr "Elégtelen engedélyek."
 
 #: dashboard_widgets.py:13
 msgid "Total roles"
-msgstr ""
+msgstr "Összes szerepkör"
 
 #: events.py:10
 msgid "Role created"
-msgstr ""
+msgstr "A szerepkör létrejött"
 
 #: events.py:13
 msgid "Role edited"
-msgstr ""
+msgstr "Szerepkör szerkesztve"
 
 #: links.py:20 links.py:46 models.py:48 views.py:112
 msgid "Roles"
@@ -66,15 +67,15 @@ msgstr "Csoportok"
 
 #: links.py:56
 msgid "Role permissions"
-msgstr "Szerepkör jogok"
+msgstr "Szerepkör engedélyek"
 
 #: models.py:32
 msgid "A short text describing the role."
-msgstr ""
+msgstr "Rövid szöveg a szerepkörről."
 
 #: models.py:33 search.py:14
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: models.py:47
 msgid "Role"
@@ -82,7 +83,7 @@ msgstr "Szerepkör"
 
 #: models.py:83
 msgid "Permission count"
-msgstr ""
+msgstr "Engedélyek száma"
 
 #: models.py:148
 msgid "Namespace"
@@ -110,75 +111,76 @@ msgstr "Szerepkörök szerkesztése"
 
 #: permissions.py:17
 msgid "View roles"
-msgstr "Szerepkörök megtekintése"
+msgstr "Szerepek megtekintése"
 
 #: search.py:18
 msgid "Group name"
-msgstr "Csoportnév"
+msgstr "Csoport név"
 
 #: serializers.py:30
 msgid "Primary key of the group to add to the role."
-msgstr ""
+msgstr "A csoport elsődleges kulcsa a szerepkörhöz."
 
 #: serializers.py:38
 msgid "Primary key of the group to remove from the role."
-msgstr ""
+msgstr "A szerepkörből eltávolítandó csoport elsődleges kulcsa."
 
 #: serializers.py:46
 msgid "Primary key of the permission to add to the role."
 msgstr ""
+"A szerepkörhöz való hozzáadáshoz szükséges engedély elsődleges kulcsa."
 
 #: serializers.py:53
 msgid "Primary key of the permission to remove from the role."
-msgstr ""
+msgstr "A szerepkörből való eltávolítás engedélyének elsődleges kulcsa."
 
 #: views.py:35
 msgid "Available roles"
-msgstr ""
+msgstr "Elérhető szerepkörök"
 
 #: views.py:36
 msgid "Group roles"
-msgstr ""
+msgstr "Csoport szerepkörök"
 
 #: views.py:46
 #, python-format
 msgid "Roles of group: %s"
-msgstr ""
+msgstr "A csoport szerepei: %s"
 
 #: views.py:65
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Hiba a \"%(instance)s\" szerepkör törlésekor; %(exception)s"
 
 #: views.py:70
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "A \"%(object)s\" szerepkör sikeresen törölve."
 
 #: views.py:71
 #, python-format
 msgid "%(count)d role deleted successfully."
-msgstr ""
+msgstr "%(count)d szerepkör sikeresen törölve."
 
 #: views.py:72
 #, python-format
 msgid "%(count)d roles deleted successfully."
-msgstr ""
+msgstr "%(count)d szerepkör sikeresen törölve."
 
 #: views.py:73
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr ""
+msgstr "Szerepkör törlése: %(object)s ."
 
 #: views.py:74
 #, python-format
 msgid "Delete the %(count)d selected role."
-msgstr ""
+msgstr "A %(count)d kiválasztott szerepkör törlése."
 
 #: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected roles."
-msgstr ""
+msgstr "A %(count)d kiválasztott szerepkör törlése."
 
 #: views.py:104
 msgid ""
@@ -187,10 +189,15 @@ msgid ""
 "controls lists. Access controls list are permissions granted to a role for "
 "specific objects which its group members inherit."
 msgstr ""
+"A szerepkörök jogosultsági egységek. Olyan felhasználói csoportokat "
+"tartalmaznak, amelyek a teljes rendszer szerepkör-engedélyeit öröklik. A "
+"szerepkörök a hozzáférés-szabályozási listák részei is lehetnek. A "
+"hozzáférés-ellenőrzési lista egy szerepkörnek adott jogosultságokat jelent "
+"bizonyos objektumokhoz, amelyeket a csoporttagok örökölnek."
 
 #: views.py:111
 msgid "There are no roles"
-msgstr ""
+msgstr "Nincsenek szerepkörök"
 
 #: views.py:124
 msgid "Available groups"
@@ -203,33 +210,37 @@ msgstr "Szerepkör csoportok"
 #: views.py:135
 #, python-format
 msgid "Groups of role: %s"
-msgstr "Szerepkörhöz tartozó csoportok: %s"
+msgstr "Szerepkör csoportok: %s"
 
 #: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr ""
+"Csoportok hozzáadása, hogy egy szerep része legyen. Ezek öröklik a szerepkör"
+" engedélyeit és hozzáférési vezérlőit."
 
 #: views.py:150
 msgid "Available permissions"
-msgstr "Elérhető jogosúltságok"
+msgstr "Rendelkezésre álló engedélyek"
 
 #: views.py:151
 msgid "Granted permissions"
-msgstr "Élvezett jogosúltságok"
+msgstr "Megadott engedélyek"
 
 #: views.py:186
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
+"Az itt megadott engedélyek a teljes rendszerre és minden objektumra "
+"vonatkoznak."
 
 #: views.py:189
 #, python-format
 msgid "Permissions for role: %s"
-msgstr "Szerepkörhöz tartozó jogosúltságok: %s"
+msgstr "Szerepkörhöz tartozó engedélyek: %s"
 
 #: views.py:209
 #, python-format
 msgid "Details of permission: %s"
-msgstr ""
+msgstr "Az engedély részletei: %s"

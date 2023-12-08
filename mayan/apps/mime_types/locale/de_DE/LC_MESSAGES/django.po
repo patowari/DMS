@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,26 +26,29 @@ msgstr "MIME Typen"
 
 #: backends/file_command.py:26
 msgid "file command not installed or not found."
-msgstr ""
+msgstr "file Programm nicht installiert oder nicht gefunden."
 
 #: backends/perl_file_mimeinfo.py:26
 msgid "mimetype not installed or not found."
-msgstr ""
+msgstr "mimetype Programm nicht installiert oder nicht gefunden."
 
 #: dependencies.py:10
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
 msgstr ""
+"Dieses Modul kann für die Erkennung des MIME-Typs einer Datei verwendet "
+"werden. Es versucht die Freedesktop Spezifikation für eine geteilte "
+"Datenbank zu implementieren."
 
 #: dependencies.py:17
 msgid "determine file type using content tests"
-msgstr ""
+msgstr "Dateityp mittels Test von Inhalt bestimmen"
 
 #: settings.py:14
 msgid "Path to the class to use when to detect file MIME types."
-msgstr ""
+msgstr "Pfad zur Klasse für die MIME-Typerkennung."
 
 #: settings.py:20
 msgid "Arguments to pass to the MIME_TYPE_BACKEND."
-msgstr ""
+msgstr "Argumente für die Übergabe an das MIME_TYPE_BACKEND."

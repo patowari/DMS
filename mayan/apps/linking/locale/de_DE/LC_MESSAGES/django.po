@@ -5,16 +5,16 @@
 # Translators:
 # Translators:
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2022
-# Mathias Behrle <mathiasb@m9s.biz>, 2022
 # Roberto Rosario, 2022
+# Mathias Behrle <mathiasb@m9s.biz>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:35+0000\n"
-"Last-Translator: Roberto Rosario, 2022\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -226,7 +226,7 @@ msgstr "Voller Bezeichner"
 
 #: permissions.py:8
 msgid "View resolved smart links"
-msgstr ""
+msgstr "Aufgelöste Smartlinks betrachten"
 
 #: permissions.py:11
 msgid "Create new smart links"
@@ -247,10 +247,13 @@ msgstr "Existierende Smart Links anzeigen"
 #: serializers.py:50
 msgid "Primary key of the document type to add to the smart link."
 msgstr ""
+"Primärschlüssel des Dokumententyps, der zum Smartlink hinzugefügt werden "
+"soll."
 
 #: serializers.py:59
 msgid "Primary key of the document type to remove from the smart link."
 msgstr ""
+"Primärschlüssel des Dokumententyps, der vom Smartlink entfernt werden soll."
 
 #: views/smart_link_condition_views.py:45
 msgid ""
@@ -286,12 +289,12 @@ msgstr "Bedingung für Smart Link bearbeiten"
 #: views/smart_link_views.py:74
 #, python-format
 msgid "Resolved smart link query error: %s"
-msgstr ""
+msgstr "Fehler für Abfrage von aufgelöstem Smartlink %s"
 
 #: views/smart_link_views.py:101
 #, python-format
 msgid "Resolved smart link dynamic label error: %s"
-msgstr ""
+msgstr "Fehler für dynamischen Bezeichner von aufgelöstem Smartlink %s"
 
 #: views/smart_link_views.py:106
 #, python-format
@@ -299,6 +302,8 @@ msgid ""
 "Documents in resolved smart link \"%(resolved_smart_link)s\" for "
 "\"%(document)s\""
 msgstr ""
+"Dokumente in aufgelöstem Smartlink \"%(resolved_smart_link)s\" für "
+"\"%(document)s\""
 
 #: views/smart_link_views.py:148
 msgid ""
@@ -326,12 +331,12 @@ msgstr ""
 
 #: views/smart_link_views.py:182
 msgid "There are no resolved smart links for this document"
-msgstr ""
+msgstr "Keine aufgelösten Smartlinks für dieses Dokument verfügbar"
 
 #: views/smart_link_views.py:186
 #, python-format
 msgid "Resolved smart links for document: %s"
-msgstr ""
+msgstr "Aufgelöste Smartlinks für Dokument %s"
 
 #: views/smart_link_views.py:202
 msgid "Available smart links"

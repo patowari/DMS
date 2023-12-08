@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Bilgutei Erdenebayar <beke0130@gmail.com>, 2022
+# Zoljargal Munkhjargal, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
-"Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2022\n"
+"Last-Translator: Zoljargal Munkhjargal, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -215,7 +216,7 @@ msgstr ""
 
 #: source_backends/email_backends.py:82
 msgid "Password"
-msgstr ""
+msgstr "Нууц үг"
 
 #: source_backends/email_backends.py:89
 msgid ""
@@ -378,7 +379,7 @@ msgstr ""
 
 #: source_backends/mixins.py:257
 msgid "Document type"
-msgstr ""
+msgstr "Баримтын төрөл"
 
 #: source_backends/mixins.py:264
 msgid "Interval in seconds between checks for new documents."
@@ -601,7 +602,7 @@ msgstr ""
 
 #: views/document_file_views.py:139
 msgid "Submit"
-msgstr ""
+msgstr "Илгээх"
 
 #: views/document_views.py:41
 #, python-format
@@ -671,7 +672,7 @@ msgstr ""
 #: wizards.py:77
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
-msgstr ""
+msgstr "Алхам %(step)d / %(total_steps)d: %(step_label)s"
 
 #: wizards.py:82
 msgid "Document upload wizard"
@@ -687,4 +688,4 @@ msgstr ""
 
 #: wizards.py:104
 msgid "Next"
-msgstr ""
+msgstr "Дараах"

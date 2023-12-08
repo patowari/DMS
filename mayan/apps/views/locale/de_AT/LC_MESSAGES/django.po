@@ -12,14 +12,15 @@
 # Berny <berny@bernhard-marx.de>, 2022
 # Mathias Behrle <mathiasb@m9s.biz>, 2022
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022
+# T W, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-11 00:32+0000\n"
+"POT-Creation-Date: 2023-12-08 02:32+0000\n"
 "PO-Revision-Date: 2022-07-27 05:39+0000\n"
-"Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2022\n"
+"Last-Translator: T W, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -217,7 +218,7 @@ msgstr "Die Anzahl der Objekte, die pro Seite angezeigt werden."
 
 #: settings.py:21
 msgid "A string specifying the name to use for the paging parameter."
-msgstr ""
+msgstr "Eine Zeichenfolge, die den Namen für den Paging-Parameters angibt."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"
