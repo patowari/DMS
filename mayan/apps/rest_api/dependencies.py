@@ -57,7 +57,7 @@ PythonDependency(
     version_string='==0.1.2'
 )
 PythonDependency(
-    module=__name__, name='drf-yasg', version_string='==1.20.0'
+    module=__name__, name='drf-yasg', version_string='==1.21.7'
 )
 PythonDependency(
     module=__name__, name='flex', version_string='==6.14.1'

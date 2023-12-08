@@ -83,7 +83,7 @@ django-stronghold==0.4.0
 django-widget-tweaks==1.4.12
 djangorestframework==3.13.1
 djangorestframework-recursive==0.1.2
-drf-yasg==1.20.0
+drf-yasg==1.21.7
 elasticsearch==7.17.1
 elasticsearch-dsl==7.4.0
 extract-msg==0.34.3
