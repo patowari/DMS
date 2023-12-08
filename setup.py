@@ -65,7 +65,7 @@ django==3.2.23
 CairoSVG==2.5.2
 Pillow==9.2.0
 PyPDF2==1.28.4
-PyYAML==6.0
+PyYAML==6.0.1
 Whoosh==2.7.4
 bleach==4.1.0
 celery==5.2.3

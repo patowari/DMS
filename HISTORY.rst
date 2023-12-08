@@ -9,11 +9,14 @@
   - Update Django from version 3.2.20 to 3.2.23.
   - ``redis`` from version 4.2.0 to 4.2.2.
   - ``drf-yasg`` from version 1.20.0 to 1.21.7.
+  - ``PyYAML`` from version 6.0 to 6.0.1.
 
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Support Django series in setup generation script.
 - Use Mayan CLI full path in DockerFile.
 - Generate markup for GitHub issues.
+- Workaround Cython and PyYAML dependency bug from unpinned requirement
+  version.
 
 4.3.10 (2023-07-14)
 ===================
