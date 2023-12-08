@@ -61,7 +61,7 @@ def find_packages(directory):
 
 
 install_requires = """
-django==3.2.20
+django==3.2.23
 CairoSVG==2.5.2
 Pillow==9.2.0
 PyPDF2==1.28.4

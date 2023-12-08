@@ -4,7 +4,11 @@
 - Fix typos in comments and transformations labels.
 - Code style fixes.
 - Fix code style warning E713.
-- ``redis`` from version 4.2.0 to 4.2.2.
+- Update dependencies:
+
+  - Update Django from version 3.2.20 to 3.2.23.
+  - ``redis`` from version 4.2.0 to 4.2.2.
+
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Support Django series in setup generation script.
 - Use Mayan CLI full path in DockerFile.
