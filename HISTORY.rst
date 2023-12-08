@@ -1,4 +1,4 @@
-4.3.11 (XXXX-XX-XX)
+4.3.11 (2023-12-08)
 ===================
 - Use correct field when sorting document file pages.
 - Fix typos in comments and transformations labels.
@@ -8,11 +8,12 @@
 
   - Update Django from version 3.2.20 to 3.2.23.
   - ``redis`` from version 4.2.0 to 4.2.2.
-  - ``drf-yasg`` from  version 1.20.0 to 1.21.7.
+  - ``drf-yasg`` from version 1.20.0 to 1.21.7.
 
 - Add missing mailing profile ``default`` field to creation and edit forms.
 - Support Django series in setup generation script.
 - Use Mayan CLI full path in DockerFile.
+- Generate markup for GitHub issues.
 
 4.3.10 (2023-07-14)
 ===================
