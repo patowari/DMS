@@ -64,7 +64,7 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE.
-    ''', module=__name__, name='PyYAML', version_string='==5.4.1'
+    ''', module=__name__, name='PyYAML', version_string='==6.0.1'
 )
 PythonDependency(
     copyright_text='''

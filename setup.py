@@ -64,7 +64,7 @@ install_requires = """
 django==3.2.23
 Pillow==8.3.2
 PyPDF2==1.28.4
-PyYAML==5.4.1
+PyYAML==6.0.1
 Whoosh==2.7.4
 bleach==4.0.0
 celery==5.1.2

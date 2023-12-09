@@ -22,6 +22,7 @@
   value (True, true, T, t, Yes, yes, Y, y, 1).
 - Fix the ``add_file`` method for the ``TarArchive`` class.
 - Fix ``select2`` widget in the metadata edit workflow action form.
+- Update ``PyYAML`` from version 5.4.1 to 6.0.1.
 
 4.2.17 (2023-07-10)
 ===================
