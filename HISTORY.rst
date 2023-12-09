@@ -21,6 +21,7 @@
   of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
   value (True, true, T, t, Yes, yes, Y, y, 1).
 - Fix the ``add_file`` method for the ``TarArchive`` class.
+- Fix ``select2`` widget in the metadata edit workflow action form.
 
 4.2.17 (2023-07-10)
 ===================
