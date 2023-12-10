@@ -1,3 +1,14 @@
+4.4.11 (XXXX-XX-XX)
+===================
+- Fix test asserts. Fix test that were asserting for True values instead of
+  asserting for equality.
+- Fix document file page search content field label.
+- Continue purge loops even during errors. Update the cache and cache
+  partition purge loop to continue executing even when there are files that
+  cannot be purged. Cache partition files will be skipped and retried on the
+  next purge execution.
+- Code style fixes.
+
 4.4.10 (2023-12-07)
 ===================
 - Support Django series in setup generation script.
@@ -24,7 +35,8 @@
 - Fix editing existing metadata workflow actions.
 - Update the Docker image ``entrypoint.sh`` to skip changing the ownership
   of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
-  value (True, true, T, t, Yes, yes, Y, y, 1).
+  value (``True``, ``true``, ``T``, ``t``, ``Yes``, ``yes``, ``Y``, ``y``,
+  ``1``).
 - Backport periodic task import checking.
 - Backport source periodic task changes.
 - Update PyYAML from version 6.0 to 6.0.1.
