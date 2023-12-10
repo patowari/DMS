@@ -152,7 +152,7 @@ msgstr "Extracción de contenido"
 msgid "Document file parsing"
 msgstr "Extracción de contenido de archivos de documentos"
 
-#: search.py:24
+#: search.py:17 search.py:24
 msgid "Document file content"
 msgstr "Contenido del archivo de documento"
 

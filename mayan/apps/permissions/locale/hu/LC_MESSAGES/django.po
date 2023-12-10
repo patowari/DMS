@@ -67,7 +67,7 @@ msgstr "Csoportok"
 
 #: links.py:56
 msgid "Role permissions"
-msgstr "Szerepkör engedélyek"
+msgstr "Szerepkör jogok"
 
 #: model_mixins.py:43
 msgid "Permission count"
@@ -89,7 +89,7 @@ msgstr "Rövid szöveg a szerepkörről."
 
 #: models.py:27 search.py:14 serializers.py:20
 msgid "Label"
-msgstr "Címke"
+msgstr "Cimke"
 
 #: models.py:41
 msgid "Role"
@@ -121,11 +121,11 @@ msgstr "Szerepkörök szerkesztése"
 
 #: permissions.py:19
 msgid "View roles"
-msgstr "Szerepek megtekintése"
+msgstr "Szerepkörök megtekintése"
 
 #: search.py:18
 msgid "Group name"
-msgstr "Csoport név"
+msgstr "Csoportnév"
 
 #: serializers.py:17
 msgid "Primary key"
@@ -272,7 +272,7 @@ msgstr "Szerepkörhöz tartozó csoportok: %s"
 
 #: views.py:143
 msgid "Granted permissions"
-msgstr "Megadott engedélyek"
+msgstr "Élvezett jogosúltságok"
 
 #: views.py:144
 msgid "Available permissions"

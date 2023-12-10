@@ -48,7 +48,7 @@ msgstr "Törlés"
 
 #: links.py:39 models.py:37
 msgid "Document types"
-msgstr "Dokumentumtípusok"
+msgstr "Dokumentum típusok"
 
 #: links.py:44
 msgid "Edit"
@@ -64,7 +64,7 @@ msgstr "Egy rövid szöveg, amely leírja a webes linket."
 
 #: models.py:24
 msgid "Label"
-msgstr "Címke"
+msgstr "Cimke"
 
 #: models.py:28
 msgid "Template that will be used to craft the final URL of the web link."

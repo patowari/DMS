@@ -99,11 +99,11 @@ msgstr "Utilisateur"
 
 #: models.py:49
 msgid "Date and time created"
-msgstr "Création"
+msgstr "Date et heure de création"
 
 #: models.py:53
 msgid "Date and time edited"
-msgstr "Modification"
+msgstr "Date et heure de la modification"
 
 #: models.py:57
 msgid ""

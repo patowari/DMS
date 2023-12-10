@@ -106,7 +106,7 @@ msgstr "Az irattartó azonosítására szolgáló rövid szöveg."
 
 #: models.py:34
 msgid "Label"
-msgstr "Címke"
+msgstr "Cimke"
 
 #: models.py:38
 msgid "Documents"

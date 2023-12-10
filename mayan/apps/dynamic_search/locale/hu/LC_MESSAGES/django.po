@@ -28,7 +28,7 @@ msgstr "Dinamikus keresés"
 
 #: forms.py:15
 msgid "Match all"
-msgstr "Egyezik minden"
+msgstr "Mind összeegyeztetése"
 
 #: forms.py:16
 msgid "Return only results that match all fields."
@@ -48,11 +48,11 @@ msgstr "Egyszerű keresés"
 #: links.py:24 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced search"
-msgstr "Kiterjesztett keresés"
+msgstr "Részletes keresés"
 
 #: links.py:28
 msgid "Search again"
-msgstr "Keresés újra"
+msgstr "Újra keresés"
 
 #: links.py:33 views.py:62
 msgid "Reindex search backend"

@@ -60,7 +60,7 @@ msgstr "Felhasználói területi beállítások"
 
 #: models.py:39
 msgid "None"
-msgstr "Nincs"
+msgstr "Semmi"
 
 #: views.py:40
 #, python-format

@@ -148,7 +148,7 @@ msgstr "解析"
 msgid "Document file parsing"
 msgstr "文件檔案解析中"
 
-#: search.py:24
+#: search.py:17 search.py:24
 msgid "Document file content"
 msgstr "文件檔案內容"
 

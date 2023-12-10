@@ -54,7 +54,7 @@ msgstr "Névtér"
 
 #: apps.py:109 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
 msgid "Label"
-msgstr "Címke"
+msgstr "Cimke"
 
 #: apps.py:138
 msgid "Seen"

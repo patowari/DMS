@@ -26,7 +26,7 @@ msgstr ""
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
 #: search.py:18 settings.py:11
 msgid "OCR"
-msgstr "OCR"
+msgstr "Karakterfelismerés"
 
 #: apps.py:116
 msgid "The OCR content."
@@ -104,8 +104,7 @@ msgstr "Dokumentum típus"
 
 #: models.py:26
 msgid "Automatically queue newly created documents for OCR."
-msgstr ""
-"Az újonnan létrehozott dokumentumok automatikus sorba állítása az OCR-hez."
+msgstr "Automatically queue newly created documents for OCR."
 
 #: models.py:27
 msgid "Auto OCR"
@@ -113,11 +112,11 @@ msgstr "Automatikus OCR"
 
 #: models.py:33
 msgid "Document type settings"
-msgstr "Dokumentumtípus beállításai"
+msgstr "Dokumentum típus beállítások"
 
 #: models.py:34
 msgid "Document types settings"
-msgstr "Dokumentumtípusok beállításai"
+msgstr "Dokumentum típusok beállítása"
 
 #: models.py:47
 msgid "Document version page"
@@ -149,11 +148,11 @@ msgstr "A dokumentumból kivont szöveg szerkesztése"
 
 #: permissions.py:17
 msgid "View the transcribed text from document"
-msgstr "A dokumentumból kivont szöveg áttekintése"
+msgstr "A dokumentum átirat megtekintlse"
 
 #: permissions.py:21
 msgid "Change document type OCR settings"
-msgstr "Módosítsa a dokumentumtípus OCR-beállításait"
+msgstr "A dokumentum típus karakterfelismerő beállításának megváltoztatása"
 
 #: queues.py:10
 msgid "Finish document version OCR"
@@ -165,7 +164,7 @@ msgstr "Dokumentumverzió oldal OCR"
 
 #: queues.py:18 search.py:12 search.py:24
 msgid "Document version OCR"
-msgstr "Dokumentumverzió OCR"
+msgstr "Dokumentum verzió karakterfelismerés"
 
 #: settings.py:18
 msgid "Set new document types to perform OCR automatically by default."

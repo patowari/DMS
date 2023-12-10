@@ -30,7 +30,7 @@ msgstr "Források"
 
 #: apps.py:83
 msgid "Create a document source"
-msgstr "Hozzon létre egy dokumentumforrást"
+msgstr "Egy dokumentum forrás létrehozása"
 
 #: apps.py:85
 msgid ""
@@ -97,7 +97,7 @@ msgstr "Fájl"
 
 #: handlers.py:18
 msgid "Default"
-msgstr "Alapértelmezett"
+msgstr "Alapéretelmezett"
 
 #: links.py:115
 msgid "New document"
@@ -129,7 +129,7 @@ msgstr "Egy rövid szöveg a forrás leírására."
 
 #: models.py:24
 msgid "Label"
-msgstr "Címke"
+msgstr "Cimke"
 
 #: models.py:27
 msgid "Enabled"
@@ -145,19 +145,19 @@ msgstr "Források beállítása"
 
 #: permissions.py:10
 msgid "Create new document sources"
-msgstr "Új dokumentumforrások létrehozása"
+msgstr "Új dokumentum források létrehozása"
 
 #: permissions.py:13
 msgid "Delete document sources"
-msgstr "Dokumentumforrások törlése"
+msgstr "Dokumentum források törlése"
 
 #: permissions.py:16
 msgid "Edit document sources"
-msgstr "Dokumentumforrások szerkesztése"
+msgstr "Dokumentum források szerkesztése"
 
 #: permissions.py:19
 msgid "View existing document sources"
-msgstr "Meglévő dokumentumforrások megtekintése"
+msgstr "Létező dokumentum források megtekintése"
 
 #: queues.py:10
 msgid "Sources periodic"

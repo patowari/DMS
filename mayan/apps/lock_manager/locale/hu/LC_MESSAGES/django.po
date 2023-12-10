@@ -31,7 +31,7 @@ msgstr "Létrehozás dátuma és ideje"
 
 #: models.py:19
 msgid "Timeout"
-msgstr "Időtúllépés"
+msgstr "időtúllépés"
 
 #: models.py:22
 msgid "Name"

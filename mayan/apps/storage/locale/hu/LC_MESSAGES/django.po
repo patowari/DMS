@@ -112,7 +112,7 @@ msgstr "Fájl"
 
 #: models.py:43
 msgid "Label"
-msgstr "Címke"
+msgstr "Cimke"
 
 #: models.py:55
 msgid "Download file"
