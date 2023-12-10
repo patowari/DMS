@@ -346,8 +346,9 @@ class AccessControlListManager(models.Manager):
                 except self.model.DoesNotExist:
                     pass
 
-                if type(parent_object) == type(obj):
-                    # Object and parent are of the same type. Break recursion.
+                if type(parent_object) is type(obj):
+                    # Object and parent are of the same type. Break
+                    # recursion.
                     return queryset
                 else:
                     queryset = queryset | self._get_inherited_object_permissions(

@@ -119,7 +119,7 @@ class IndexFilesystem(LoggingMixIn, Operations):
         )
 
     def _get_next_file_descriptor(self):
-        while(True):
+        while (True):
             self.file_descriptor_count += 1
             if self.file_descriptor_count > MAX_FILE_DESCRIPTOR:
                 self.file_descriptor_count = MIN_FILE_DESCRIPTOR
@@ -311,4 +311,4 @@ class IndexFilesystem(LoggingMixIn, Operations):
 
     def release(self, path, fh):
         self.file_descriptors[fh] = None
-        del(self.file_descriptors[fh])
+        del (self.file_descriptors[fh])
