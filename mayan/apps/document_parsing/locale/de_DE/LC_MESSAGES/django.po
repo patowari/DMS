@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:51+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -93,7 +93,7 @@ msgstr "Seite der Dokumentendatei"
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr "Vom Parser-Backend extrahierter Inhalt."
 
-#: models.py:29
+#: models.py:29 search.py:17
 msgid "Document file page content"
 msgstr "Inhalt der Dokumentendateiseite"
 
@@ -147,7 +147,7 @@ msgstr "Parsing"
 msgid "Document file parsing"
 msgstr "Parsen von Dokumentendatei"
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr "Inhalt einer Dokumentendatei"
 

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:52+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -496,7 +496,7 @@ msgstr ""
 "Ayarlar güncellendi, kurulumunuzu yeniden başlatın ve değişikliklerin etkili"
 " olması için tarayıcınızı yenileyin."
 
-#: tests/test_classes.py:162
+#: tests/test_classes.py:164
 msgid "English"
 msgstr "İngilizce"
 

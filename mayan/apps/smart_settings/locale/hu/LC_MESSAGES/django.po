@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:52+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -500,7 +500,7 @@ msgstr ""
 "A beállítások frissítve, indítsa újra a telepítést, és frissítse a "
 "böngészőt, hogy a változtatások életbe lépjenek."
 
-#: tests/test_classes.py:162
+#: tests/test_classes.py:164
 msgid "English"
 msgstr "angol"
 

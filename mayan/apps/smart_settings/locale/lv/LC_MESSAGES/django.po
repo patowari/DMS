@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:52+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2022\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
@@ -441,7 +441,7 @@ msgstr ""
 "Iestatījumi ir atjaunināti, restartējiet instalēšanu un atsvaidziniet "
 "pārlūku, lai izmaiņas stātos spēkā."
 
-#: tests/test_classes.py:162
+#: tests/test_classes.py:164
 msgid "English"
 msgstr ""
 

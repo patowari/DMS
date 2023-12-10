@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:52+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2022\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -385,39 +385,39 @@ msgstr "Ποτέ"
 msgid "Ask user"
 msgstr "Ρώτησε χρήστη"
 
-#: source_backends/mixins.py:132
+#: source_backends/mixins.py:133
 msgid "Uncompress"
 msgstr "Αποσυμπίεση"
 
-#: source_backends/mixins.py:136
+#: source_backends/mixins.py:137
 msgid "Whether to expand or not compressed archives."
 msgstr "Αν θα αποσυμπιέζονται ή όχι συμπιεσμένα αρχεία."
 
-#: source_backends/mixins.py:160
+#: source_backends/mixins.py:161
 msgid "Expand compressed files"
 msgstr "Αποσυμπίεση αρχείου"
 
-#: source_backends/mixins.py:162
+#: source_backends/mixins.py:163
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""
 "Ανάρτηση των περιεχόμενων αρχείων ενός συμπιεσμένου αρχείου ως μεμονωμένα "
 "έγγραφα."
 
-#: source_backends/mixins.py:251
+#: source_backends/mixins.py:252
 msgid "Assign a document type to documents uploaded from this source."
 msgstr ""
 "Ορισμός ενός τύπου εγγράφου για τα έγγραφα που μεταφορτώθηκαν από αυτή την "
 "πηγή."
 
-#: source_backends/mixins.py:257
+#: source_backends/mixins.py:258
 msgid "Document type"
 msgstr "Τύπος εγγράφου"
 
-#: source_backends/mixins.py:264
+#: source_backends/mixins.py:265
 msgid "Interval in seconds between checks for new documents."
 msgstr "Χρονικό διάστημα μεταξύ ελέγχων για νέα έγγραφα."
 
-#: source_backends/mixins.py:270
+#: source_backends/mixins.py:271
 msgid "Interval"
 msgstr "Χρονικό διάστημα"
 

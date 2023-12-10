@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:52+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Roberto Rosario, 2022\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -365,36 +365,36 @@ msgstr "Nikada"
 msgid "Ask user"
 msgstr "Pitaj korisnika"
 
-#: source_backends/mixins.py:132
+#: source_backends/mixins.py:133
 msgid "Uncompress"
 msgstr "Dekompresuj"
 
-#: source_backends/mixins.py:136
+#: source_backends/mixins.py:137
 msgid "Whether to expand or not compressed archives."
 msgstr "Otpakuj ili ne kompresovane datoteke"
 
-#: source_backends/mixins.py:160
+#: source_backends/mixins.py:161
 msgid "Expand compressed files"
 msgstr "Otpakuj kompresovane datoteke"
 
-#: source_backends/mixins.py:162
+#: source_backends/mixins.py:163
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""
 
-#: source_backends/mixins.py:251
+#: source_backends/mixins.py:252
 msgid "Assign a document type to documents uploaded from this source."
 msgstr ""
 "Dodeli vrstu dokumenta dokumentima koji su postavljeni iz ovog izvora."
 
-#: source_backends/mixins.py:257
+#: source_backends/mixins.py:258
 msgid "Document type"
 msgstr "Tip dokumenta"
 
-#: source_backends/mixins.py:264
+#: source_backends/mixins.py:265
 msgid "Interval in seconds between checks for new documents."
 msgstr "Interval u sekundama između provera novih dokumenata."
 
-#: source_backends/mixins.py:270
+#: source_backends/mixins.py:271
 msgid "Interval"
 msgstr "Interval"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:51+0000\n"
 "PO-Revision-Date: 2022-07-27 05:34+0000\n"
 "Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2022\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
@@ -92,7 +92,7 @@ msgstr ""
 "Dejanska vsebina besedila, kot jo izvleče zaledje za razčlenjevanje "
 "dokumenta."
 
-#: models.py:29
+#: models.py:29 search.py:17
 msgid "Document file page content"
 msgstr "Vsebina strani datoteke dokumenta"
 
@@ -148,7 +148,7 @@ msgstr "Razčlenjevanje"
 msgid "Document file parsing"
 msgstr "Razčlenjevanje datoteke dokumenta"
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr "Vsebina datoteke dokumenta"
 

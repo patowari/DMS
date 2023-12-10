@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 02:32+0000\n"
+"POT-Creation-Date: 2023-12-10 07:52+0000\n"
 "PO-Revision-Date: 2022-07-27 05:38+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -395,35 +395,35 @@ msgstr "Niemals"
 msgid "Ask user"
 msgstr "Benutzer fragen"
 
-#: source_backends/mixins.py:132
+#: source_backends/mixins.py:133
 msgid "Uncompress"
 msgstr "Entpacken"
 
-#: source_backends/mixins.py:136
+#: source_backends/mixins.py:137
 msgid "Whether to expand or not compressed archives."
 msgstr "Ob komprimierte Archive entpackt werden sollen."
 
-#: source_backends/mixins.py:160
+#: source_backends/mixins.py:161
 msgid "Expand compressed files"
 msgstr "Komprimierte Dateien entpacken"
 
-#: source_backends/mixins.py:162
+#: source_backends/mixins.py:163
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr "Ein komprimiertes Archiv hochladen, das einzelne Dokumente enthält."
 
-#: source_backends/mixins.py:251
+#: source_backends/mixins.py:252
 msgid "Assign a document type to documents uploaded from this source."
 msgstr "Ordnen Sie einen Dokumententyp für Dokumente aus dieser Quelle zu."
 
-#: source_backends/mixins.py:257
+#: source_backends/mixins.py:258
 msgid "Document type"
 msgstr "Dokumententyp"
 
-#: source_backends/mixins.py:264
+#: source_backends/mixins.py:265
 msgid "Interval in seconds between checks for new documents."
 msgstr "Intervall in Sekunden zwischen den Überprüfungen auf neue Dokumente."
 
-#: source_backends/mixins.py:270
+#: source_backends/mixins.py:271
 msgid "Interval"
 msgstr "Intervall"
 
