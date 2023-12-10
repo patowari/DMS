@@ -302,7 +302,7 @@ class CacheModelTestCase(CacheTestMixin, BaseTestCase):
         test_case_instance = self
 
         def fake_method_delete(self, *args, **kwargs):
-            if self.pk == test_case_instance.test_cache_partition_files[0].pk:
+            if self.pk == test_case_instance._test_cache_partition_files[0].pk:
                 raise Exception
 
             return super(CachePartitionFile, self).delete(*args, **kwargs)
@@ -357,7 +357,7 @@ class CachePartitionModelTestCase(CacheTestMixin, BaseTestCase):
         test_case_instance = self
 
         def fake_method_delete(self, *args, **kwargs):
-            if self.pk == test_case_instance.test_cache_partition_files[0].pk:
+            if self.pk == test_case_instance._test_cache_partition_files[0].pk:
                 raise Exception
 
             return super(CachePartitionFile, self).delete(*args, **kwargs)
