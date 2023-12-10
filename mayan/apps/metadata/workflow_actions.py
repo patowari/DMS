@@ -103,7 +103,7 @@ class DocumentMetadataEditAction(WorkflowAction):
     field_order = ('metadata_type', 'value')
     label = _('Edit metadata')
     widgets = {
-        'metadata_types': {
+        'metadata_type': {
             'class': 'django.forms.widgets.Select', 'kwargs': {
                 'attrs': {'class': 'select2'},
             }

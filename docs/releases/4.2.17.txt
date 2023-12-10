@@ -14,7 +14,7 @@ Documents
 ^^^^^^^^^
 
 Ensure only the filename of the uploaded file is used as the document
-label, omiting all path content.
+label, omitting all path content.
 
 The valid document is now referenced as the event target when restoring a
 trashed document to allow the event to be accessible.

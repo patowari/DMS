@@ -11,6 +11,7 @@ from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.tasks import task_document_file_upload
 
 from ..classes import DocumentCreateWizardStep
+from ..literals import SOURCE_ACTION_EXECUTE_TASK_PATH
 from ..tasks import task_process_document_upload
 
 from .literals import (
@@ -302,7 +303,7 @@ class SourceBackendPeriodicMixin:
         PeriodicTask.objects.create(
             name=self.get_periodic_task_name(),
             interval=interval_instance,
-            task='mayan.apps.sources.tasks.task_source_process_document',
+            task=SOURCE_ACTION_EXECUTE_TASK_PATH,
             kwargs=json.dumps(obj={'source_id': self.model_instance_id})
         )
 

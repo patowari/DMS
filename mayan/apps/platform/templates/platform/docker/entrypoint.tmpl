@@ -3,6 +3,15 @@
 # -e  Exit immediately if a command exits with a non-zero status.
 set -e
 
+any_to_bool () {
+    local argument="$(echo ${1} | tr '[:upper:]' '[:lower:]')"
+
+    if [ "${argument}" = true ] || [ "${argument}" = t ] || [ "${argument}" = yes ] || [ "${argument}" = y ] || [ "${argument}" = 1 ]; then
+        local function_result=True
+        echo "$function_result"
+    fi
+}
+
 apt_get_install() {
     apt-get update
     apt-get install --auto-remove --force-yes --no-install-recommends --yes "$@"
@@ -46,21 +55,27 @@ pip_installs() {
 }
 
 update_uid_gid() {
-    # Change the owner of the /var/lib/mayan always to allow adding the
-    # initial files. Top level only.
-    chown mayan:mayan ${MAYAN_MEDIA_ROOT}
+    result="$(any_to_bool ${MAYAN_COMMON_DISABLE_LOCAL_STORAGE})"
 
-    echo "mayan: update_uid_gid()"
-    groupmod mayan --gid ${MAYAN_USER_GID} --non-unique
-    usermod mayan --uid ${MAYAN_USER_UID} --non-unique
+    if [ "${result}" ]; then
+        echo "mayan: skipping uid and gid update."
+    else 
+        # Change the owner of the /var/lib/mayan always to allow adding the
+        # initial files. Top level only.
+        chown mayan:mayan ${MAYAN_MEDIA_ROOT}
 
-    if [ ${MAYAN_USER_UID} -ne ${DEFAULT_USER_UID} ] || [ ${MAYAN_USER_GID} -ne ${DEFAULT_USER_GID} ]; then
-        echo "mayan: Updating file ownership. This might take a while if there are many documents."
-        chown --recursive mayan:mayan ${MAYAN_INSTALL_DIR} ${MAYAN_STATIC_ROOT}
-        if [ "${MAYAN_SKIP_CHOWN_ON_STARTUP}" = "true" ]; then
-            echo "mayan: skipping chown on startup"
-        else
-            chown --recursive mayan:mayan ${MAYAN_MEDIA_ROOT}
+        echo "mayan: update_uid_gid()"
+        groupmod mayan --gid ${MAYAN_USER_GID} --non-unique
+        usermod mayan --uid ${MAYAN_USER_UID} --non-unique
+
+        if [ ${MAYAN_USER_UID} -ne ${DEFAULT_USER_UID} ] || [ ${MAYAN_USER_GID} -ne ${DEFAULT_USER_GID} ]; then
+            echo "mayan: Updating file ownership. This might take a while if there are many documents."
+            chown --recursive mayan:mayan ${MAYAN_INSTALL_DIR} ${MAYAN_STATIC_ROOT}
+            if [ "${MAYAN_SKIP_CHOWN_ON_STARTUP}" = "true" ]; then
+                echo "mayan: skipping chown on startup"
+            else
+                chown --recursive mayan:mayan ${MAYAN_MEDIA_ROOT}
+            fi
         fi
     fi
 }

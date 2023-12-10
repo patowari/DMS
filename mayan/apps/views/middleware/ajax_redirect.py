@@ -15,6 +15,6 @@ class AjaxRedirect(MiddlewareMixin):
 
     def process_response(self, request, response):
         if request.is_ajax():
-            if type(response) == HttpResponseRedirect:
+            if isinstance(response, HttpResponseRedirect):
                 response.status_code = setting_ajax_redirection_code.value
         return response

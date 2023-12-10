@@ -453,8 +453,6 @@ job_demo_deploy:
     - {{ GITLAB_CI_BRANCH_RELEASES_NIGHTLY }}
     - {{ GITLAB_CI_BRANCH_RELEASES_STAGING }}
   script:
-    - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "curl --silent --show-error --location https://get.docker.com/ | sh"
-    - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "sudo usermod --append --groups docker ubuntu"
     - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "docker compose down --remove-orphans --volumes || true"
     - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "curl --silent --show-error --remote-name https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/docker-compose.yml"
     - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "curl --silent --show-error --remote-name https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/.env"
@@ -485,8 +483,6 @@ job_staging_deploy:
     - {{ GITLAB_CI_BRANCH_RELEASES_NIGHTLY }}
     - {{ GITLAB_CI_BRANCH_RELEASES_STAGING }}
   script:
-    - ssh ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME} "curl --silent --show-error --location https://get.docker.com/ | sh"
-    - ssh ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME} "sudo usermod --append --groups docker ubuntu"
     - ssh ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME} "docker compose down --remove-orphans --volumes || true"
     - scp docker/docker-compose.yml ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME}:~
     - scp docker/.env ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME}:~

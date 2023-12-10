@@ -15,7 +15,7 @@ class AppImageError(ConvertError):
         super().__init__()
 
     def __str__(self):
-        return('Error name: {}'.format(repr(self.error_name)))
+        return ('Error name: {}'.format(repr(self.error_name)))
 
 
 class UnknownFileFormat(ConvertError):
@@ -26,7 +26,7 @@ class UnknownFileFormat(ConvertError):
 
 class UnkownConvertError(ConvertError):
     """
-    Raised when an error is found but there is no disernible way to
+    Raised when an error is found but there is no discernible way to
     identify the kind of error.
     """
 

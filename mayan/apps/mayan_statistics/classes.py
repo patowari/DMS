@@ -49,7 +49,7 @@ class Statistic:
             for key, value in data.items():
                 return {key: Statistic.evaluate(data=value)}
         except AttributeError:
-            if type(data) == map:
+            if type(data) is map:
                 data = list(data)
 
         return data

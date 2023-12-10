@@ -10,7 +10,7 @@ def code_rename_duplicates(apps, schema_editor):
     for entry in StatisticResult.objects.using(alias=schema_editor.connection.alias).all():
         if entry.slug in slugs:
             counter = 1
-            while(True):
+            while (True):
                 attempt = '{}_{}'.format(entry.slug, counter)
                 if attempt not in slugs:
                     break

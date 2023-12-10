@@ -1,3 +1,26 @@
+4.3.12 (XXXX-XX-XX)
+===================
+- Don't install Docker when deploying. Update the GitLab CI deployment
+  stage to not install the Docker runtime.
+- Fix document file page search content field label.
+- Fix test asserts. Fix test that were asserting for True values instead of
+  asserting for equality.
+- Continue purge loops even during errors. Update the cache and cache
+  partition purge loop to continue executing even when there are files that
+  cannot be purged. Cache partition files will be skipped and retried on the
+  next purge execution.
+- Add event asserts in tests.
+- Fix the workflow metadata action ``select2`` widget.
+- Code style fixes.
+- Use long form for the command options in the Dockerfile.
+- Skip Docker volume ownership code. Update the Docker image
+  ``entrypoint.sh`` to skip changing the ownership of files if
+  ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy value
+  (``True``, ``true``, ``T``, ``t``, ``Yes``, ``yes``, ``Y``, ``y``, ``1``).
+- Backport source periodic task changes. Use a constant instead of a literal
+  to track the name of the source action execute task.
+- Fix the `add_file` method of ``TarArchive``.
+
 4.3.11 (2023-12-08)
 ===================
 - Use correct field when sorting document file pages.
@@ -654,6 +677,30 @@
 - Disable the settings edit link when local storage is disabled.
 - Display a warning message in the setting edit view when local storage is
   disabled.
+
+4.2.18 (2023-12-09)
+===================
+- Update the cache and cache partition purge loop to continue executing even
+  when there are files that cannot be purged. Cache partition files will be
+  skipped and retried on the next purge execution.
+- Fix document file page search content field label.
+- Upgrade Django from version 3.2.19 to 3.2.23.
+- Generate markup for GitHub issues.
+- Fix a setting help text typo.
+- Add missing mailing profile ``default`` field to creation and edit forms.
+- Support Django series in setup generation script.
+- Use Mayan CLI full path in DockerFile.
+- Update the GitLab CI deployment stage to not install the Docker runtime.
+- Backport source periodic task changes.
+- Update the Docker image ``entrypoint.sh`` to skip changing the ownership
+  of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
+  value (True, true, T, t, Yes, yes, Y, y, 1).
+- Fix the ``add_file`` method of the ``TarArchive`` class.
+- Fix ``select2`` widget in the metadata edit workflow action form.
+- Update ``PyYAML`` from version 5.4.1 to 6.0.1.
+- Update ``drf-yasg`` from version 1.20.0 to 1.21.7.
+- Fix test that were asserting for True values instead of
+  asserting for equality.
 
 4.2.17 (2023-07-10)
 ===================

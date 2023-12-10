@@ -14,7 +14,7 @@ search_model_document_file.add_model_field(
 # Document file page
 
 search_model_document_file_page.add_model_field(
-    field='content__content', label=_('Document file content')
+    field='content__content', label=_('Document file page content')
 )
 
 # Document

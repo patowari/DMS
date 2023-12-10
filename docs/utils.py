@@ -52,7 +52,7 @@ def patch_files(path=None, replace_list=None):
                             source_position = 0
                             destination_position = 0
 
-                            while(True):
+                            while (True):
                                 source_file_object.seek(source_position)
                                 letter = source_file_object.read(1)
 
