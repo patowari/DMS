@@ -116,7 +116,7 @@ class MirrorFilesystem(LoggingMixIn, Operations):
         )
 
     def _get_next_file_descriptor(self):
-        while(True):
+        while (True):
             self.file_descriptor_count += 1
             if self.file_descriptor_count > MAX_FILE_DESCRIPTOR:
                 self.file_descriptor_count = MIN_FILE_DESCRIPTOR

@@ -34,7 +34,7 @@ msgstr "Típus"
 #. which the statistic will be updated
 #: apps.py:45
 msgid "Schedule"
-msgstr "Időzítés"
+msgstr "Ütemezés"
 
 #: apps.py:51
 msgid "Last update"

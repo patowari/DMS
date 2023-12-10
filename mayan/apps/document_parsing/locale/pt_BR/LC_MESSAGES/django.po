@@ -157,7 +157,7 @@ msgstr "Análise"
 msgid "Document file parsing"
 msgstr "Análise do ficheiro do documento."
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr "Conteúdo do ficheiro de documento."
 

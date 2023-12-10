@@ -133,7 +133,7 @@ msgstr "Másodlagos"
 
 #: menus.py:18
 msgid "Return"
-msgstr "Vissza"
+msgstr "Visszatérés"
 
 #: menus.py:22
 msgid "User"

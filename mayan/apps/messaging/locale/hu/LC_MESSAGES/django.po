@@ -28,7 +28,7 @@ msgstr "Üzenetküldés"
 
 #: apps.py:61
 msgid "None"
-msgstr "Semmi"
+msgstr "Nincs"
 
 #: apps.py:67
 msgid "Sender"
@@ -68,7 +68,7 @@ msgstr "Összes megjelölése olvasottként"
 
 #: model_mixins.py:16
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: models.py:19
 msgid "Sender content type"

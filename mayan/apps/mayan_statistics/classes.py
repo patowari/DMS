@@ -57,7 +57,7 @@ class StatisticType:
                     key: StatisticType.evaluate(data=value)
                 }
         except AttributeError:
-            if type(data) == map:
+            if type(data) is map:
                 data = list(data)
 
         return data

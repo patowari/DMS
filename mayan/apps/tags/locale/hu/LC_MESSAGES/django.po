@@ -26,7 +26,7 @@ msgstr ""
 #: events.py:6 forms.py:27 links.py:28 menus.py:14 models.py:35
 #: permissions.py:6 views.py:180 workflow_actions.py:18 workflow_actions.py:67
 msgid "Tags"
-msgstr "Címkék"
+msgstr "Jelölők"
 
 #: apps.py:171 models.py:29
 msgid "Documents"
@@ -118,19 +118,19 @@ msgstr "Dokumentum jelölők"
 
 #: permissions.py:10
 msgid "Create new tags"
-msgstr "Új címkék készítése"
+msgstr "Új jelölők létrehozása"
 
 #: permissions.py:13
 msgid "Delete tags"
-msgstr "Címkék tölrése"
+msgstr "Jelölők törlése"
 
 #: permissions.py:16
 msgid "View tags"
-msgstr "Címkék megtekintése"
+msgstr "Jelölők megtekintése"
 
 #: permissions.py:19
 msgid "Edit tags"
-msgstr "Címkék szerkesztése"
+msgstr "Jelölők szerkesztése"
 
 #: permissions.py:22
 msgid "Attach tags to documents"

@@ -155,7 +155,9 @@ class DocumentVersionBusinessLogicMixin:
         queryset = ModelQueryFields.get(
             model=DocumentVersionPage
         ).get_queryset()
-        return queryset.filter(pk__in=self.version_pages.all())
+        return queryset.filter(
+            pk__in=self.version_pages.all()
+        )
 
     def pages_append_all(self, user=None):
         """

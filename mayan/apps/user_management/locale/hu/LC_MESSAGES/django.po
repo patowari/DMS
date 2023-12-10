@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:62 events.py:6 permissions.py:6
 msgid "User management"
-msgstr "Felhasználó kezelés"
+msgstr "Felhasználókezelés"
 
 #: apps.py:77 search.py:10
 msgid "Group"
@@ -82,11 +82,11 @@ msgstr "Van használható jelszó?"
 
 #: apps.py:155
 msgid "All the groups."
-msgstr "Minden csoport."
+msgstr "Az összes csoport."
 
 #: apps.py:159
 msgid "All the users."
-msgstr "Minden felhasználó."
+msgstr "Az összes felhasználó."
 
 #: dashboard_widgets.py:14
 msgid "Total users"
@@ -126,7 +126,7 @@ msgstr "Felhasználó kijelentkezve"
 
 #: links.py:28
 msgid "User details"
-msgstr "A felhasználó adatai"
+msgstr "Felhasználói adatok"
 
 #: links.py:36 views/group_views.py:25
 msgid "Create new group"

@@ -44,7 +44,7 @@ msgstr "Közlemény létrehozása"
 
 #: links.py:22 links.py:28
 msgid "Delete"
-msgstr "Törlés"
+msgstr "Töröl"
 
 #: links.py:33
 msgid "Edit"

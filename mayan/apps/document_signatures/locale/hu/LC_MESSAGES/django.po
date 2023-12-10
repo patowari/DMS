@@ -40,7 +40,7 @@ msgstr "Nincs"
 
 #: apps.py:121 forms.py:65 models.py:57
 msgid "Signature ID"
-msgstr "Aláírás azonosító"
+msgstr "Aláírási azonosító"
 
 #: apps.py:126
 msgid "Type"

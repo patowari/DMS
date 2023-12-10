@@ -25,7 +25,7 @@ msgstr ""
 #: apps.py:70 apps.py:208 apps.py:214 apps.py:218 apps.py:223 apps.py:227
 #: events.py:6 links.py:52 permissions.py:6 queues.py:7
 msgid "Metadata"
-msgstr "Metaadat"
+msgstr "Metaadatok"
 
 #: apps.py:140
 msgid "Return the value of a specific document metadata."
@@ -37,11 +37,11 @@ msgstr "Metaadat érték"
 
 #: apps.py:146
 msgid "Metadata type name"
-msgstr "Metaadat típusnevek"
+msgstr "Metaadattípus neve"
 
 #: apps.py:150 search.py:17
 msgid "Metadata value"
-msgstr "Metaadat érték"
+msgstr "A metaadat értéke"
 
 #: events.py:10
 msgid "Document metadata added"
@@ -109,7 +109,7 @@ msgstr "A kiválasztott dokumentumokhoz hozzáadandó metaadat ."
 #: forms.py:138 models.py:89 models.py:279 search.py:14 serializers.py:48
 #: serializers.py:108 workflow_actions.py:88
 msgid "Metadata type"
-msgstr "Metaadat típus"
+msgstr "Metaadat típusa"
 
 #: forms.py:163
 msgid "Remove"
@@ -163,7 +163,7 @@ msgstr "Metaadat típusok"
 
 #: links.py:71
 msgid "Document types"
-msgstr "Dokumentum típusok"
+msgstr "Dokumentumtípusok"
 
 #: links.py:75
 msgid "Create new"
@@ -235,7 +235,7 @@ msgstr "Ennek metaadattípusnak a rövid leírása."
 
 #: models.py:45
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: models.py:49
 msgid "Enter a template to render."
@@ -243,7 +243,7 @@ msgstr "Adjon meg egy sablont a megjelenítéshez."
 
 #: models.py:50
 msgid "Default"
-msgstr "Alapéretelmezett"
+msgstr "Alapértelmezett"
 
 #: models.py:54
 msgid "Enter a template to render. Must result in a comma delimited string."

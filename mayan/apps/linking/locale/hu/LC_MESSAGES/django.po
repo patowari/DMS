@@ -27,7 +27,7 @@ msgstr "Hivatkozás"
 
 #: apps.py:119 models.py:30 serializers.py:129
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:49
 #: permissions.py:6 views/smart_link_views.py:156
@@ -56,7 +56,7 @@ msgstr "Törlés"
 
 #: links.py:53 models.py:41
 msgid "Document types"
-msgstr "Dokumentum típusok"
+msgstr "Dokumentumtípusok"
 
 #: links.py:58 links.py:91
 msgid "Edit"
@@ -195,7 +195,7 @@ msgstr "Ez az összes többi dokumentum metaadatait jelenti."
 
 #: models.py:96
 msgid "Foreign document attribute"
-msgstr "Külső dokumentum paraméter"
+msgstr "Külsős dokumentum attribútum"
 
 #: models.py:101
 msgid ""

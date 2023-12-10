@@ -30,7 +30,7 @@ class UnknownFileFormat(ConvertError):
 
 class UnkownConvertError(ConvertError):
     """
-    Raised when an error is found but there is no disernible way to
+    Raised when an error is found but there is no discernible way to
     identify the kind of error.
     """
 

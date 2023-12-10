@@ -24,7 +24,7 @@ msgstr ""
 
 #: admin.py:13
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: apps.py:49 events.py:6 links.py:21 permissions.py:6 queues.py:7
 #: settings.py:12
@@ -134,11 +134,11 @@ msgstr "Automatikus folyamat"
 
 #: models.py:51
 msgid "Document type settings"
-msgstr "Dokumentum típus beállítások"
+msgstr "Dokumentumtípus beállításai"
 
 #: models.py:52
 msgid "Document types settings"
-msgstr "Dokumentum típusok beállítása"
+msgstr "Dokumentumtípus beállítások"
 
 #: models.py:66
 msgid "Name of the file metadata entry."

@@ -172,7 +172,7 @@ msgstr "Wiadomość z nowym hasłem została wysłana!"
 
 #: views/authentication_views.py:159
 msgid "Next"
-msgstr "Następny"
+msgstr "Dalej"
 
 #: views/authentication_views.py:165
 #, python-format
@@ -194,12 +194,12 @@ msgstr "Dla tego konta zmiana hasła jest zabroniona."
 #: views/authentication_views.py:329
 #, python-format
 msgid "Password change request performed on %(count)d user"
-msgstr "Zmieniono hasło dla %(count)d użytkownika"
+msgstr "Zmieniono hasło dla %(count)d użytkownika(ów)"
 
 #: views/authentication_views.py:332
 #, python-format
 msgid "Password change request performed on %(count)d users"
-msgstr "Zmieniono hasła dla %(count)d użytkowników"
+msgstr "Zmieniono hasła dla %(count)d użytkowników(ów)"
 
 #: views/authentication_views.py:341
 msgid "Change user password"

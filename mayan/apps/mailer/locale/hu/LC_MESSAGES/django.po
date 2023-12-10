@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:48
 msgid "Mailer"
-msgstr "Levelező"
+msgstr "Postázó"
 
 #: classes.py:60
 msgid "Null backend"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: forms.py:60 forms.py:97
 msgid "Email address"
-msgstr "Emailcím"
+msgstr "Email cím"
 
 #: forms.py:63 workflow_action_mixins.py:67
 msgid "Subject"
@@ -274,7 +274,7 @@ msgstr "A levelezési profilt leíró rövid szöveg."
 
 #: models.py:28
 msgid "Label"
-msgstr "Cimke"
+msgstr "Címke"
 
 #: models.py:32
 msgid ""
@@ -286,7 +286,7 @@ msgstr ""
 
 #: models.py:34
 msgid "Default"
-msgstr "Alapéretelmezett"
+msgstr "Alapértelmezett"
 
 #: models.py:36
 msgid "Enabled"

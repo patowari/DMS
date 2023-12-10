@@ -30,15 +30,15 @@ msgstr "Dokumentumok"
 
 #: apps.py:293
 msgid "Create a document type"
-msgstr "Dokumentum típus létrehozása"
+msgstr "Dokumentumtípus létrehozása"
 
 #: apps.py:295
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
 msgstr ""
-"Minden betöltött dokumentumhoz hozzá kell rendelni egy típust, ez az "
-"alapvető kategorizálási elv a Mayan EDMS-ben."
+"Minden feltöltött dokumentumhoz hozzá kell rendelni egy dokumentumtípust, ez"
+" a Mayan EDMS alapvető módja a dokumentumok kategorizálásának."
 
 #: apps.py:394
 msgid "File comments"
@@ -102,7 +102,7 @@ msgstr "Típus"
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
-msgstr "Lapok"
+msgstr "Oldalak"
 
 #: apps.py:572 models/favorite_document_models.py:33
 msgid "Date and time added"
@@ -157,11 +157,11 @@ msgstr "Dokumentumok a kukában"
 #: links/document_type_links.py:85 permissions.py:78
 #: views/document_type_views.py:82
 msgid "Document types"
-msgstr "Dokumentum típusok"
+msgstr "Dokumentumtípusok"
 
 #: dashboard_widgets.py:109
 msgid "New documents this month"
-msgstr "Új dokumentumok a hónapban"
+msgstr "Új dokumentumok ebben a hónapban"
 
 #: dashboard_widgets.py:123
 msgid "New pages this month"
@@ -204,7 +204,7 @@ msgstr "Minden oldal párosítása a legutóbbi dokumentumfájl oldalával."
 
 #: events.py:12
 msgid "Document created"
-msgstr "Dokumentum létrehozva"
+msgstr "A dokumentum létrehozva"
 
 #: events.py:15
 msgid "Document edited"
@@ -212,7 +212,7 @@ msgstr "Dokumentum szerkesztve"
 
 #: events.py:18
 msgid "Document viewed"
-msgstr "Dokumentum megtekintve"
+msgstr "A dokumentum megtekintve"
 
 #: events.py:24
 msgid "Document file created"
@@ -248,7 +248,7 @@ msgstr "Dokumentumtípus gyorscímke szerkesztve"
 
 #: events.py:55
 msgid "Document type changed"
-msgstr "Dokumentum típus megváltoztatva"
+msgstr "A dokumentum típusa megváltozott"
 
 #: events.py:61
 msgid "Document version created"
@@ -332,7 +332,7 @@ msgstr "Méret"
 
 #: forms/document_file_forms.py:80
 msgid "Exists in storage"
-msgstr "Létezik a tárolóban"
+msgstr "A tárolóban létezik"
 
 #: forms/document_file_forms.py:83
 msgid "Path in storage"
@@ -344,7 +344,7 @@ msgstr "Ellenőrző összeg"
 
 #: forms/document_forms.py:46
 msgid "Quick document rename"
-msgstr "Dokumentum gyors átnevezése"
+msgstr "Gyors dokumentum átnevezés"
 
 #: forms/document_forms.py:54
 msgid "Preserve extension"
@@ -408,7 +408,7 @@ msgstr "Oldalcsoport"
 
 #: forms/misc_forms.py:13 literals.py:91
 msgid "Page range"
-msgstr "Oldal tartomány"
+msgstr "Oldaltartomány"
 
 #: forms/misc_forms.py:20
 msgid ""
@@ -495,7 +495,7 @@ msgstr "Forgatás jobbra"
 #: links/document_file_page_links.py:100
 #: links/document_version_page_links.py:118
 msgid "Page image"
-msgstr "Oldal kép"
+msgstr "Oldal képe"
 
 #: links/document_file_page_links.py:105
 #: links/document_version_page_links.py:123
@@ -505,20 +505,20 @@ msgstr "Nézet visszaállítása"
 #: links/document_file_page_links.py:111
 #: links/document_version_page_links.py:129
 msgid "Zoom in"
-msgstr "Közelít"
+msgstr "Nagyítás"
 
 #: links/document_file_page_links.py:117
 #: links/document_version_page_links.py:135
 msgid "Zoom out"
-msgstr "Távolít"
+msgstr "Kicsinyítés"
 
 #: links/document_file_page_links.py:127 links/document_file_page_links.py:134
 msgid "Recalculate page count"
-msgstr "Oldalszámok újraszámlálása"
+msgstr "Számolja újra az oldalszámot"
 
 #: links/document_links.py:17 links/document_links.py:33
 msgid "Change type"
-msgstr "Típus változtatása"
+msgstr "Típus módosítása"
 
 #: links/document_links.py:22 views/document_views.py:71
 msgid "All documents"
@@ -538,7 +538,7 @@ msgstr "Tulajdonságok szerkesztése"
 
 #: links/document_type_links.py:23 views/document_type_views.py:97
 msgid "Create document type"
-msgstr "Dokumentum típus létrehozása"
+msgstr "Dokumentumtípus létrehozása"
 
 #: links/document_type_links.py:34
 msgid "Deletion policies"
@@ -546,7 +546,7 @@ msgstr "Törlési szabályok"
 
 #: links/document_type_links.py:45
 msgid "Add quick label to document type"
-msgstr "Gyorscímke dokumentum típushoz adása"
+msgstr "Gyorscímke hozzáadása a dokumentumtípushoz"
 
 #: links/document_type_links.py:65 models/document_type_models.py:139
 msgid "Quick labels"
@@ -580,7 +580,7 @@ msgstr "Az oldalak újratervezése"
 #: models/document_version_models.py:51
 #: models/document_version_page_models.py:32 search.py:123
 msgid "Document version"
-msgstr "Dokumentum verzió"
+msgstr "Dokumentumverzió"
 
 #: links/document_version_page_links.py:102
 #: models/document_version_page_models.py:55
@@ -622,7 +622,7 @@ msgstr "Kuka ürítése"
 
 #: literals.py:14
 msgid "Default"
-msgstr "Alapéretelmezett"
+msgstr "Alapértelmezett"
 
 #: literals.py:83
 msgid "January"
@@ -674,7 +674,7 @@ msgstr "December"
 
 #: literals.py:91
 msgid "All pages"
-msgstr "Minden oldal"
+msgstr "Az összes oldal"
 
 #: models/document_file_model_mixins.py:298
 #: models/document_file_page_model_mixins.py:230
@@ -709,7 +709,7 @@ msgstr "Fájl"
 
 #: models/document_file_models.py:75
 msgid "Filename"
-msgstr "Fájlnév"
+msgstr "Fájl név"
 
 #: models/document_file_models.py:79
 msgid ""
@@ -835,7 +835,7 @@ msgstr "Kukában tartás időszak"
 
 #: models/document_type_models.py:48
 msgid "Trash time unit"
-msgstr "Kuka időegység"
+msgstr "Kukában tartás időegysége"
 
 #: models/document_type_models.py:52
 msgid ""
@@ -874,7 +874,7 @@ msgstr "Fájlnévgenerátor háttérrendszer argumentumai"
 
 #: models/document_type_models.py:81
 msgid "Documents types"
-msgstr "Dokumentum típusok"
+msgstr "Dokumentumtípusok"
 
 #: models/document_type_models.py:133
 msgid "Enabled"
@@ -953,7 +953,7 @@ msgstr "Legutóbbi dokumentum"
 
 #: models/recently_accessed_document_models.py:37
 msgid "Recent documents"
-msgstr "Mostanában használt dokumentumok"
+msgstr "Legutóbbi dokumentumok"
 
 #: models/recently_accessed_document_models.py:55
 msgid "Recently accessed document"
@@ -977,7 +977,7 @@ msgstr "Dokumentumok szerkesztése"
 
 #: permissions.py:21
 msgid "Edit document properties"
-msgstr "Dokumentum tulajdonságok szerkesztése"
+msgstr "A dokumentum tulajdonságainak szerkesztése"
 
 #: permissions.py:24
 msgid "Execute document modifying tools"
@@ -1393,20 +1393,23 @@ msgstr "A dokumentum indexképének magassága pixelben."
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
-msgstr "Egy dokumentum oldal százalékos (%) nagyításának aránya egy lépésben."
+msgstr ""
+"Maximális mennyiség százalékban (%), amely lehetővé teszi a felhasználó "
+"számára a dokumentumoldal interaktív nagyítását."
 
 #: settings.py:198
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
 msgstr ""
-"Egy dokumentum oldal százalékos (%) kicsinyítésének aránya egy lépésben."
+"Minimális százalék százalékban (%), hogy a felhasználó interaktív módon "
+"kicsinyítsen egy dokumentumoldalt."
 
 #: settings.py:205
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
-"Egy dokumentum oldal százalékos nagyításának vagy kicsinyítésének aránya egy"
-" lépésben."
+"Összeg százalékban egy dokumentumoldal nagyítása vagy kicsinyítése "
+"felhasználói interakciónként."
 
 #: statistics.py:290
 msgid "New documents per month"
@@ -1418,7 +1421,7 @@ msgstr "Új dokumentumfájlok havonta"
 
 #: statistics.py:304
 msgid "New document pages per month"
-msgstr "Új dokumentum oldalak havonta"
+msgstr "Új dokumentumoldalak havonta"
 
 #: statistics.py:311
 msgid "Total documents at each month"
@@ -1566,13 +1569,13 @@ msgstr "A dokumentumnak nincs több oldala"
 #: views/document_file_page_views.py:209
 #: views/document_version_page_views.py:324
 msgid "You are already at the first page of this document"
-msgstr "Ez már a dokumentum első oldala"
+msgstr "Már a dokumentum első oldalán van"
 
 #: views/document_file_page_views.py:244
 #: views/document_version_page_views.py:363
 #, python-format
 msgid "Image of: %s"
-msgstr "%s képe"
+msgstr "Kép erről: %s"
 
 #: views/document_file_views.py:48
 #, python-format
@@ -1701,7 +1704,7 @@ msgstr "A dokumentumfájl oldalátalakításainak klónozása: %s"
 #: views/document_type_views.py:55
 #, python-format
 msgid "Documents of type: %s"
-msgstr "%s típusú dokumentumok"
+msgstr "A következő típusú dokumentumok: %s"
 
 #: views/document_type_views.py:75
 msgid ""
@@ -1721,7 +1724,7 @@ msgstr "Nem állnak rendelkezésre dokumentumtípusok"
 
 #: views/document_type_views.py:117
 msgid "All documents of this type will be deleted too."
-msgstr "Minden ilyen típusú dokumentum törlésre kerül."
+msgstr "Az összes ilyen típusú dokumentum is törlésre kerül."
 
 #: views/document_type_views.py:119
 #, python-format
@@ -1745,7 +1748,7 @@ msgstr "Törlési szabályzat a következő dokumentumtípushoz: %s"
 #: views/document_type_views.py:197
 #, python-format
 msgid "Create quick label for document type: %s"
-msgstr "Gyorscímke létrehozása a %s dokumentum típushoz"
+msgstr "Hozzon létre gyorscímkét a következő dokumentumtípushoz: %s"
 
 #: views/document_type_views.py:217
 #, python-format
@@ -1758,8 +1761,8 @@ msgstr ""
 #, python-format
 msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
 msgstr ""
-"\"%(document_type)s\" dokumentum típushoz tartozó \"%(filename)s\" "
-"gyorscímke szerkesztése"
+"\"%(filename)s\" gyorscímke szerkesztése a \"%(document_type)s\" "
+"dokumentumtípusból"
 
 #: views/document_type_views.py:285
 msgid ""
@@ -1902,7 +1905,7 @@ msgstr "Nem állnak rendelkezésre verziók"
 #: views/document_version_views.py:205
 #, python-format
 msgid "Versions of document: %s"
-msgstr "%s dokumentum verziói"
+msgstr "A dokumentum verziói: %s"
 
 #: views/document_version_views.py:237
 msgid "Document version modification backend queued successfully."
