@@ -1,4 +1,4 @@
-4.3.12 (XXXX-XX-XX)
+4.3.12 (2023-12-10)
 ===================
 - Don't install Docker when deploying. Update the GitLab CI deployment
   stage to not install the Docker runtime.
