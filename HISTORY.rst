@@ -1,5 +1,5 @@
 4.2.18 (2023-12-09)
-==================
+===================
 - Update the cache and cache partition purge loop to continue executing even
   when there are files that cannot be purged. Cache partition files will be
   skipped and retried on the next purge execution.
