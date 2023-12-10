@@ -1,4 +1,4 @@
-4.2.18 (XXXX-XX-XX)
+4.2.18 (2023-12-09)
 ==================
 - Update the cache and cache partition purge loop to continue executing even
   when there are files that cannot be purged. Cache partition files will be
@@ -15,15 +15,16 @@
 - Support Django series in setup generation script.
 - Use Mayan CLI full path in DockerFile.
 - Update the GitLab CI deployment stage to not install the Docker runtime.
-- Backport periodic task import checking.
 - Backport source periodic task changes.
 - Update the Docker image ``entrypoint.sh`` to skip changing the ownership
   of files if ``MAYAN_COMMON_DISABLE_LOCAL_STORAGE`` is set to any truthy
   value (True, true, T, t, Yes, yes, Y, y, 1).
-- Fix the ``add_file`` method for the ``TarArchive`` class.
+- Fix the ``add_file`` method of the ``TarArchive`` class.
 - Fix ``select2`` widget in the metadata edit workflow action form.
 - Update ``PyYAML`` from version 5.4.1 to 6.0.1.
 - Update ``drf-yasg`` from version 1.20.0 to 1.21.7.
+- Fix test that were asserting for True values instead of
+  asserting for equality.
 
 4.2.17 (2023-07-10)
 ===================
