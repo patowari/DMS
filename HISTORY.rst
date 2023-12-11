@@ -113,6 +113,7 @@
 - Minor optimization to the ACL calculation queries.
 - Fix search query warning when parsing dates. Default all date values the
   timezone UTC.
+- Convert worker nice levels from literals to config constants.
 
 4.5.7 (2023-10-25)
 ==================
