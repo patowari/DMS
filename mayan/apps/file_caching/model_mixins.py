@@ -79,6 +79,13 @@ class CacheBusinessLogicMixin:
     )
     get_partition_file_count.help_text = _(message='Total cached files.')
 
+    def get_queryset_files_for_eviction(self):
+        queryset_cache_partition_files_sorted = self.get_files().order_by(
+            'hits', 'datetime'
+        )
+
+        return queryset_cache_partition_files_sorted
+
     def get_total_size(self):
         """
         Return the actual usage of the cache.
@@ -126,11 +133,9 @@ class CacheBusinessLogicMixin:
             app_label='file_caching', model_name='CachePartitionFile'
         )
 
-        while self.get_total_size() >= self.maximum_size:
-            queryset_cache_partition_file = self.get_files().order_by(
-                'hits', 'datetime'
-            )
+        get_queryset_eviction = self.get_queryset_files_for_eviction()
 
+        while self.get_total_size() >= self.maximum_size:
             try:
                 cache_partition_file = queryset_cache_partition_file[
                     file_index
@@ -138,6 +143,7 @@ class CacheBusinessLogicMixin:
             except IndexError:
                 # Attempted to get a file beyond what the queryset provided.
                 file_index = 0
+                get_queryset_eviction = self.get_queryset_files_for_eviction()
             else:
                 try:
                     cache_partition_file.delete()

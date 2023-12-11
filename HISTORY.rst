@@ -114,6 +114,7 @@
 - Fix search query warning when parsing dates. Default all date values the
   timezone UTC.
 - Convert worker nice levels from literals to config constants.
+- Optimize the file cache eviction selection.
 
 4.5.9 (XXXX-XX-XX)
 ==================
