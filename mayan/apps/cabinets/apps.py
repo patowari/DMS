@@ -160,6 +160,13 @@ class CabinetsApp(MayanAppConfig):
         )
 
         SourceColumn(
+            func=lambda context: context['object'].get_descendants_document_count(
+                user=context['request'].user
+            ), include_label=True, label=_(message='Documents'),
+            source=Cabinet
+        )
+
+        SourceColumn(
             attribute='get_full_path', source=CabinetSearchResult
         )
 

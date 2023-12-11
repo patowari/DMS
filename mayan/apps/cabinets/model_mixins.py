@@ -17,6 +17,20 @@ class CabinetBusinessLogicMixin:
     def document_remove(self, document, user):
         return self._document_remove(document=document, user=user)
 
+    def get_descendants_document_count(self, user):
+        queryset_documents = Document.valid.filter(
+            cabinets__in=self.get_descendants(
+                include_self=True
+            )
+        ).distinct()
+
+        queryset_documents_filtered = AccessControlList.objects.restrict_queryset(
+            permission=permission_document_view,
+            queryset=queryset_documents, user=user
+        )
+
+        return queryset_documents_filtered.count()
+
     def get_document_count(self, user):
         """
         Return numeric count of the total documents in a cabinet. The count
