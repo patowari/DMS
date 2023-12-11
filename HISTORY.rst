@@ -1,4 +1,4 @@
-4.4.11 (XXXX-XX-XX)
+4.4.11 (2023-12-10)
 ===================
 - Fix test asserts. Fix test that were asserting for True values instead of
   asserting for equality.
