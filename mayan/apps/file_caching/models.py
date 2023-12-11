@@ -129,5 +129,6 @@ class CachePartitionFile(CachePartitionFileBusinessLogicMixin, models.Model):
 
     @locked_class_method
     def delete(self, *args, **kwargs):
-        self.partition.cache.storage.delete(name=self.full_filename)
+        storage_instance = self.partition.cache.storage
+        storage_instance.delete(name=self.full_filename)
         return super().delete(*args, **kwargs)
