@@ -137,7 +137,7 @@ class CacheBusinessLogicMixin:
 
         while self.get_total_size() >= self.maximum_size:
             try:
-                cache_partition_file = queryset_cache_partition_file[
+                cache_partition_file = get_queryset_eviction[
                     file_index
                 ]
             except IndexError:
