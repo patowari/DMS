@@ -245,10 +245,10 @@ class DocumentVersionTestMixin(DocumentTestMixin):
             self._create_test_document_version_page()
 
     def _create_test_document_version(self, user=None):
-        if self._test_document.versions.count() == 0:
-            active = True
-        else:
+        if self._test_document.versions.exists():
             active = False
+        else:
+            active = True
 
         self._test_document_version = DocumentVersion(
             active=active, document=self._test_document

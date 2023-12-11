@@ -411,5 +411,5 @@ class AccessControlListManager(models.Manager):
 
         acl.permissions.remove(permission.stored_permission)
 
-        if acl.permissions.count() == 0:
+        if not acl.permissions.exists():
             acl.delete()

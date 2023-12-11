@@ -98,7 +98,10 @@ class MailingObjectSendView(MultipleObjectFormActionView):
             request=self.request
         )
 
-        object_name = instance._meta.model._meta.verbose_name
+        try:
+            object_name = instance._meta.model._meta.verbose_name
+        except AttributeError:
+            object_name = _('Object')
 
         kwargs = {
             'as_attachment': as_attachment,

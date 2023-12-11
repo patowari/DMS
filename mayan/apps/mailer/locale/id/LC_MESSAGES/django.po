@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 16:03+0000\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Adek Lanin, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
@@ -320,8 +320,8 @@ msgstr ""
 msgid "%(email)s is not a valid email address."
 msgstr ""
 
-#: views/base.py:65
-msgid "Document file"
+#: views/base.py:67
+msgid "Object"
 msgstr ""
 
 #: views/document_file_views.py:21

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 16:03+0000\n"
+"POT-Creation-Date: 2023-12-07 04:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -27,19 +27,19 @@ msgstr ""
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
-msgstr "Fiók"
+msgstr "Irattartók"
 
 #: events.py:11
 msgid "Cabinet created"
-msgstr "Az irattartó létrehozva"
+msgstr "Irattartó létrehozva"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr ""
+msgstr "Irattartó törölve"
 
 #: events.py:17
 msgid "Cabinet edited"
-msgstr "Az irattartó szerkesztve"
+msgstr "Irattartó szerkesztve"
 
 #: events.py:20
 msgid "Document added to cabinet"
@@ -51,19 +51,19 @@ msgstr "A dokumentumot eltávolították az irattartóból"
 
 #: links.py:36 links.py:48 workflow_actions.py:75
 msgid "Remove from cabinets"
-msgstr "Fiókból törlés"
+msgstr "Eltávolítás az irattartókból"
 
 #: links.py:41 links.py:44 workflow_actions.py:21
 msgid "Add to cabinets"
-msgstr "Fiókhoz adás"
+msgstr "Hozzáadás az irattartókhoz"
 
 #: links.py:59
 msgid "Add new level"
-msgstr ""
+msgstr "Új szint hozzáadása"
 
 #: links.py:64 views.py:47
 msgid "Create cabinet"
-msgstr "Készítsen irattartót"
+msgstr "Irattartó létrehozása"
 
 #: links.py:69
 msgid "Delete"
@@ -87,7 +87,7 @@ msgstr "Adja vissza a dokumentumot tartalmazó irattartók listáját."
 
 #: methods.py:23
 msgid "get_cabinets()"
-msgstr ""
+msgstr "get_cabinets()"
 
 #: model_mixins.py:50
 msgid "The path to the cabinet including all ancestors."
@@ -95,11 +95,11 @@ msgstr "Az irattartó elérési útja, beleértve az összes őst."
 
 #: model_mixins.py:52 serializers.py:32
 msgid "Full path"
-msgstr ""
+msgstr "Teljes elérési út"
 
 #: models.py:32 serializers.py:41
 msgid "Parent"
-msgstr ""
+msgstr "Fölérendelt"
 
 #: models.py:35
 msgid "A short text used to identify the cabinet."
@@ -119,12 +119,12 @@ msgstr "Irattartó"
 
 #: models.py:133
 msgid "Parent and Label"
-msgstr ""
+msgstr "Fölérendelt és címke"
 
 #: models.py:140
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s a %(field_labels)s-al már létezik."
 
 #: models.py:169
 msgid "Document cabinet"
@@ -140,7 +140,7 @@ msgstr "Dokumentumok hozzáadása az irattartókhoz"
 
 #: permissions.py:15
 msgid "Create cabinets"
-msgstr "Hozzon létre irattartókat"
+msgstr "Irattartók létrehozása"
 
 #: permissions.py:18
 msgid "Delete cabinets"
@@ -164,31 +164,31 @@ msgstr "Dokumentum típus"
 
 #: search.py:27
 msgid "Document label"
-msgstr ""
+msgstr "Dokumentumcímke"
 
 #: search.py:30
 msgid "Document description"
-msgstr ""
+msgstr "Dokumentum leírása"
 
 #: search.py:33
 msgid "Document UUID"
-msgstr "Dokumentum UUID-je"
+msgstr "Dokumentum UUID"
 
 #: search.py:39
 msgid "Document file checksum"
-msgstr ""
+msgstr "Dokumentumfájl ellenőrző összeg"
 
 #: search.py:42
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Dokumentumfájl MIME típusa"
 
 #: serializers.py:18
 msgid "List of children cabinets."
-msgstr "Gyermek-irattartók listája."
+msgstr "Alárendelt irattartók listája."
 
 #: serializers.py:18
 msgid "Children"
-msgstr ""
+msgstr "Alárendeltek"
 
 #: serializers.py:23
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr ""
+msgstr "Dokumentumok URL"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -207,32 +207,32 @@ msgstr "Ennek a irattartó szintnek a neve az ősei nevéhez fűződik."
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr ""
+msgstr "Fölérendelt URL"
 
 #: serializers.py:51
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
-msgstr ""
+msgstr "Az irattartóhoz hozzáadandó dokumentum elsődleges kulcsa."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
-msgstr ""
+msgstr "Dokumentumazonosító"
 
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
-msgstr ""
+msgstr "Az irattartóból eltávolítandó dokumentum elsődleges kulcsa."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
-msgstr ""
+msgstr "Navigáció:"
 
 #: views.py:64
 #, python-format
 msgid "Add new level to: %s"
-msgstr ""
+msgstr "Új szint hozzáadása ehhez: %s"
 
 #: views.py:89
 #, python-format
@@ -273,7 +273,7 @@ msgstr ""
 
 #: views.py:179
 msgid "No cabinets available"
-msgstr ""
+msgstr "Nem állnak rendelkezésre irattartók"
 
 #: views.py:192
 #, python-format
@@ -321,7 +321,7 @@ msgstr "Ez a dokumentum egyetlen irattartóban sem található"
 #: views.py:273
 #, python-format
 msgid "Cabinets containing document: %s"
-msgstr "Dokumentumot tartalmazó szekrények: %s"
+msgstr "Dokumentumot tartalmazó irattartók: %s"
 
 #: views.py:289
 #, python-format
@@ -368,4 +368,4 @@ msgstr "Irattartók, amelyekhez a dokumentum hozzáadásra kerül."
 
 #: workflow_actions.py:83
 msgid "Cabinets from which the document will be removed"
-msgstr ""
+msgstr "Irattartók, amelyekből a dokumentum eltávolításra kerül"

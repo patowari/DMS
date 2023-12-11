@@ -32,7 +32,6 @@ class ReleaseNoteExporter:
 
         for element in tree:
             if element.attrib.get('id') not in ignore_ids_list:
-
                 if element.tag == 'div':
                     if element.attrib.get('id') not in ignore_ids_list:
                         result.extend(

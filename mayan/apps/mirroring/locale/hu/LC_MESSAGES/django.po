@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
+# Csaba Tarjányi, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 16:04+0000\n"
+"POT-Creation-Date: 2023-12-07 04:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +28,11 @@ msgstr "Tükrözés"
 #: settings.py:17
 msgid "Time in seconds to cache the path lookup to a document."
 msgstr ""
+"A dokumentum elérési útvonalának gyorsítótárba helyezéséhez szükséges idő "
+"másodpercben."
 
 #: settings.py:22
 msgid "Time in seconds to cache the path lookup to an index node."
 msgstr ""
+"Az indexcsomóponthoz vezető útvonalkeresés gyorsítótárba helyezésének ideje "
+"másodpercben."

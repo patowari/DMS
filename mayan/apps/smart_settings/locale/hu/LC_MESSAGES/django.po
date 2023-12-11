@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 16:04+0000\n"
+"POT-Creation-Date: 2023-12-07 04:21+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6
 msgid "Smart settings"
-msgstr "Okos beállítás"
+msgstr "Intelligens beállítások"
 
 #: apps.py:33
 msgid "Setting count"
@@ -39,15 +39,15 @@ msgstr "Érték"
 
 #: classes.py:116
 msgid "Settings namespace"
-msgstr ""
+msgstr "Beállítások névtere"
 
 #: classes.py:397
 msgid "Choices"
-msgstr ""
+msgstr "Választások"
 
 #: classes.py:399
 msgid "Possible values allowed for this setting."
-msgstr ""
+msgstr "Ennél a beállításnál megengedett értékek."
 
 #: classes.py:405
 msgid "Default"
@@ -55,15 +55,15 @@ msgstr "Alapéretelmezett"
 
 #: classes.py:413
 msgid "Overridden"
-msgstr ""
+msgstr "Felülbírált"
 
 #: classes.py:415
-msgid "Is this settings being overridden by an environment variable?"
+msgid "Is this setting being overridden by an environment variable?"
 msgstr ""
 
 #: forms.py:28
 msgid "Enter the new setting value."
-msgstr ""
+msgstr "Új beállítási érték megadása."
 
 #: forms.py:40
 #, python-format
@@ -72,11 +72,11 @@ msgstr "A \"%s\" egy érvénytelen bejegyzés."
 
 #: links.py:20 links.py:24
 msgid "Settings"
-msgstr "Beállítás"
+msgstr "Beállítások"
 
 #: links.py:31
 msgid "Namespaces"
-msgstr ""
+msgstr "Névterek"
 
 #: links.py:36
 msgid "Edit"
@@ -84,15 +84,15 @@ msgstr "Szerkesztés"
 
 #: permissions.py:10
 msgid "Edit settings"
-msgstr ""
+msgstr "Beállítások szerkesztése"
 
 #: permissions.py:13
 msgid "View settings"
-msgstr "Beállítás megtekintése"
+msgstr "Beállítások megtekintése"
 
 #: settings.py:27
 msgid "Django"
-msgstr ""
+msgstr "Django"
 
 #: settings.py:32
 msgid ""
@@ -108,6 +108,18 @@ msgid ""
 "validation of the Host header (perhaps in a middleware; if so this "
 "middleware must be listed first in MIDDLEWARE)."
 msgstr ""
+"A webhely által kiszolgálható állomás/tartományneveket jelölő karakterláncok"
+" listája. Ez egy biztonsági intézkedés a HTTP Host fejléc elleni támadások "
+"megelőzésére, amelyek még sok biztonságosnak tűnő webkiszolgáló konfiguráció"
+" esetén is lehetségesek. A lista értékei lehetnek teljesen minősített nevek "
+"(pl. 'www.example.com'), ebben az esetben a rendszer pontosan összeveti őket"
+" a kérés Host fejlécével (a nagy- és kisbetűket nem érzékelve, a portot nem "
+"beleértve). A ponttal kezdődő értékek aldomain vadkártyaként használhatók\\:"
+" a '.example.com' az example.com, a www.example.com és az example.com "
+"bármely más aldomainjére illik. A '*' érték bármire megfelel; ebben az "
+"esetben a felhasználónak kell gondoskodnia a Host fejléc saját "
+"érvényesítéséről (esetleg egy middleware-ben; ha igen, akkor ezt a "
+"middleware-t kell elsőként feltüntetni a MIDDLEWARE-ben)."
 
 #: settings.py:49
 msgid ""
@@ -118,18 +130,28 @@ msgid ""
 "used if CommonMiddleware is installed (see Middleware). See also "
 "PREPEND_WWW."
 msgstr ""
+"True értékre állítva, ha a kérés URL címe nem felel meg az URLconf egyik "
+"mintájának sem, és nem végződik egy perjelre, a rendszer HTTP átirányítást "
+"ad ki ugyanarra az URL címre, egy perjel hozzáadásával. Vegye figyelembe, "
+"hogy az átirányítás miatt a POST-kérelemben megadott adatok elveszhetnek. Az"
+" APPEND_SLASH beállítás csak akkor használható, ha a CommonMiddleware "
+"telepítve van (lásd Middleware). Lásd még PREPEND_WWWW."
 
 #: settings.py:61
 msgid ""
 "The list of validators that are used to check the strength of user's "
 "passwords."
 msgstr ""
+"A felhasználói jelszavak erősségének ellenőrzésére használt érvényesítők "
+"listája."
 
 #: settings.py:68
 msgid ""
 "A list of authentication backend classes (as strings) to use when attempting"
 " to authenticate a user."
 msgstr ""
+"A felhasználó hitelesítésének megkísérlésekor használandó hitelesítési "
+"háttérosztályok listája (karakterláncként)."
 
 #: settings.py:74
 msgid ""
@@ -139,6 +161,12 @@ msgid ""
 "setting must configure a default database; any number of additional "
 "databases may also be specified."
 msgstr ""
+"Egy szótár, amely tartalmazza a Djangóval használandó összes adatbázis "
+"beállításait. Ez egy egymásba ágyazott szótár, amelynek tartalma egy "
+"adatbázis aliasát egy olyan szótárhoz képezi le, amely az egyes adatbázisok "
+"beállításait tartalmazza. A DATABASES beállításban egy alapértelmezett "
+"adatbázist kell beállítani; tetszőleges számú további adatbázis is "
+"megadható."
 
 #: settings.py:85
 msgid ""
@@ -154,6 +182,19 @@ msgid ""
 "typically perform deep request inspection, it's not possible to perform a "
 "similar check at that level. See also FILE_UPLOAD_MAX_MEMORY_SIZE."
 msgstr ""
+"Alapértelmezett\\: 2621440 (azaz 2,5 MB). A maximális méret bájtokban "
+"kifejezve, amelyet egy kérés teste elérhet, mielőtt SuspiciousOperation "
+"(RequestDataTooBig) jelzést kapna. Az ellenőrzés a request.body vagy a "
+"request.POST elérésekor történik, és a teljes kérés mérete alapján kerül "
+"kiszámításra, kivéve a fájlfeltöltési adatokat. Az ellenőrzés letiltásához "
+"beállíthatja ezt a None értékre. Azoknak az alkalmazásoknak, amelyek "
+"várhatóan szokatlanul nagy űrlappostokat kapnak, érdemes ezt a beállítást "
+"hangolniuk. A kérés adatainak mennyisége a kérés feldolgozásához és a GET és"
+" POST szótárak feltöltéséhez szükséges memória mennyiségével korrelál. A "
+"nagy kérések szolgáltatásmegtagadási támadás vektoraként használhatók fel, "
+"ha nem kapcsolja be. Mivel a webkiszolgálók jellemzően nem végeznek "
+"mélyreható kérésvizsgálatot, ezen a szinten nem lehet hasonló ellenőrzést "
+"végezni. Lásd még FILE_UPLOAD_MAX_MEMORY_SIZE."
 
 #: settings.py:104
 msgid ""
@@ -161,6 +202,10 @@ msgid ""
 "automated correspondence from the site manager(s). This doesn't include "
 "error messages sent to ADMINS and MANAGERS; for that, see SERVER_EMAIL."
 msgstr ""
+"Default\\: 'webmaster@localhost' Alapértelmezett e-mail cím, amelyet a "
+"webhely vezetőjének (vezetőinek) különböző automatikus levelezéséhez "
+"használnak. Ez nem tartalmazza az ADMINS-nek és MANAGERS-nek küldött "
+"hibaüzeneteket; erre vonatkozóan lásd a SERVER_EMAIL-t."
 
 #: settings.py:113
 msgid ""
@@ -169,16 +214,24 @@ msgid ""
 "systemwide. Use this for bad robots/crawlers. This is only used if "
 "CommonMiddleware is installed (see Middleware)."
 msgstr ""
+"Alapértelmezett: [] (Üres lista). Az olyan User-Agent karakterláncokat "
+"reprezentáló, összeállított reguláris kifejezések objektumainak listája, "
+"amelyek nem látogathatók semmilyen oldalra, az egész rendszerben. Használja "
+"ezt a rossz robotok/lánctalpasok számára. Ez csak akkor használható, ha a "
+"CommonMiddleware telepítve van (lásd Middleware)."
 
 #: settings.py:122
 msgid ""
 "Default: 'django.core.mail.backends.smtp.EmailBackend'. The backend to use "
 "for sending emails."
 msgstr ""
+"Alapértelmezett: 'django.core.mail.backends.smtp.EmailBackend'. Az e-mailek "
+"küldésére használható háttérprogram."
 
 #: settings.py:128
 msgid "Default: 'localhost'. The host to use for sending email."
 msgstr ""
+"Alapértelmezett: 'localhost'. Az e-mailek küldésére használt gazdagép."
 
 #: settings.py:134
 msgid ""
@@ -187,22 +240,33 @@ msgid ""
 "authenticating to the SMTP server. If either of these settings is empty, "
 "Django won't attempt authentication."
 msgstr ""
+"Alapértelmezett: '' (üres karakterlánc). Az EMAIL_HOST-ban meghatározott "
+"SMTP-kiszolgálóhoz használandó jelszó. Ezt a beállítást az EMAIL_HOST_USER-"
+"rel együtt kell használni az SMTP-kiszolgálóval való hitelesítéskor. Ha "
+"bármelyik beállítás üres, a Django nem próbálkozik a hitelesítéssel."
 
 #: settings.py:144
 msgid ""
 "Default: '' (Empty string). Username to use for the SMTP server defined in "
 "EMAIL_HOST. If empty, Django won't attempt authentication."
 msgstr ""
+"Alapértelmezett: '' (üres karakterlánc). Az EMAIL_HOST-ban meghatározott "
+"SMTP-kiszolgálóhoz használandó felhasználónév. Ha üres, a Django nem "
+"próbálkozik a hitelesítéssel."
 
 #: settings.py:151
 msgid "Default: 25. Port to use for the SMTP server defined in EMAIL_HOST."
 msgstr ""
+"Alapértelmezés: 25. A EMAIL_HOST-ban meghatározott SMTP-kiszolgálóhoz "
+"használandó port."
 
 #: settings.py:156
 msgid ""
 "Default: None. Specifies a timeout in seconds for blocking operations like "
 "the connection attempt."
 msgstr ""
+"Alapértelmezés: Nincs. Megadja az időtúllépést másodpercben a blokkolási "
+"műveletekhez, például a csatlakozási kísérlethez."
 
 #: settings.py:162
 msgid ""
@@ -213,6 +277,13 @@ msgid ""
 "that EMAIL_USE_TLS/EMAIL_USE_SSL are mutually exclusive, so only set one of "
 "those settings to True."
 msgstr ""
+"Alapértelmezett: False. Használjon-e implicit TLS (biztonságos) kapcsolatot,"
+" amikor az SMTP-kiszolgálóval beszél. A legtöbb e-mail dokumentációban ezt a"
+" fajta TLS-kapcsolatot SSL-ként említik. Általában a 465-ös porton "
+"használják. Ha problémákat tapasztal, lásd az EMAIL_USE_TLS explicit TLS "
+"beállítását. Vegye figyelembe, hogy az EMAIL_USE_TLS/EMAIL_USE_SSL "
+"kölcsönösen kizárják egymást, ezért csak az egyik beállítást állítsa True "
+"értékre."
 
 #: settings.py:172
 msgid ""
@@ -221,6 +292,10 @@ msgid ""
 "587. If you are experiencing hanging connections, see the implicit TLS "
 "setting EMAIL_USE_SSL."
 msgstr ""
+"Alapértelmezett: False. TLS (biztonságos) kapcsolat használata az SMTP-"
+"kiszolgálóval való kommunikáció során. Ezt a kifejezett TLS-kapcsolatoknál "
+"használjuk, általában az 587-es porton. Ha akadozó kapcsolatokat tapasztal, "
+"lásd az EMAIL_USE_SSL implicit TLS beállítását."
 
 #: settings.py:181
 msgid ""
@@ -228,6 +303,9 @@ msgid ""
 "will be before it gets streamed to the file system. See Managing files for "
 "details. See also DATA_UPLOAD_MAX_MEMORY_SIZE."
 msgstr ""
+"Alapértelmezett: 2621440 (azaz 2,5 MB). A maximális méret (bájtokban), "
+"amelyet egy feltöltés elérhet, mielőtt az a fájlrendszerbe kerül. A "
+"részletekért lásd: Fájlok kezelése. Lásd még DATA_UPLOAD_MAX_MEMORY_SIZE."
 
 #: settings.py:189
 msgid ""
@@ -237,6 +315,11 @@ msgid ""
 "duplication since you don't have to define the URL in two places (settings "
 "and URLconf)."
 msgstr ""
+"Alapértelmezett: '/accounts/login/' Az az URL, ahová a kéréseket a "
+"bejelentkezéshez átirányítják, különösen a login_required() dekorátor "
+"használata esetén. Ez a beállítás névre szóló URL-mintákat is elfogad, "
+"amelyekkel csökkenthető a konfiguráció duplikálása, mivel nem kell két "
+"helyen (settings és URLconf) meghatározni az URL-t."
 
 #: settings.py:200
 msgid ""
@@ -246,6 +329,12 @@ msgid ""
 "named URL patterns which can be used to reduce configuration duplication "
 "since you don't have to define the URL in two places (settings and URLconf)."
 msgstr ""
+"Alapértelmezett: '/accounts/profile/' Az az URL, ahová a kérések "
+"bejelentkezés után átirányításra kerülnek, ha a contrib.auth.login nézet nem"
+" kap következő paramétert. Ezt használja például a login_required() "
+"dekorátor. Ez a beállítás névre szóló URL-mintákat is elfogad, amelyekkel "
+"csökkenthető a konfigurációs duplikáció, mivel nem kell két helyen (settings"
+" és URLconf) definiálni az URL-t."
 
 #: settings.py:211
 msgid ""
@@ -256,6 +345,12 @@ msgid ""
 "configuration duplication since you don't have to define the URL in two "
 "places (settings and URLconf)."
 msgstr ""
+"Alapértelmezett: Nincs. Az az URL, ahová a kérések átirányításra kerülnek, "
+"miután a felhasználó kijelentkezik a LogoutView használatával (ha a nézet "
+"nem kap next_page argumentumot). Ha None, akkor nem történik átirányítás, és"
+" a kijelentkezési nézet lesz megjelenítve. Ez a beállítás névre szóló URL-"
+"mintákat is elfogad, amelyekkel csökkenthető a konfiguráció duplikálása, "
+"mivel nem kell az URL-t két helyen (settings és URLconf) definiálni."
 
 #: settings.py:222
 msgid ""
@@ -264,6 +359,11 @@ msgid ""
 "admindocs bookmarklets even if not logged in as a staff user. Are marked as "
 "\"internal\" (as opposed to \"EXTERNAL\") in AdminEmailHandler emails."
 msgstr ""
+"IP-címek listája, karakterláncokként, amelyek: Lehetővé teszi a debug() "
+"kontextusfeldolgozó számára, hogy néhány változót hozzáadjon a sablon-"
+"kontextushoz. Használhatja az admindocs könyvjelzőket akkor is, ha nem "
+"személyzeti felhasználóként van bejelentkezve. Az AdminEmailHandler "
+"e-mailekben \"belső\" (szemben az \"EXTERNAL\" jelzéssel) vannak jelölve."
 
 #: settings.py:231
 msgid ""
@@ -273,6 +373,12 @@ msgid ""
 "the default value should suffice. Only set this setting if you want to "
 "restrict language selection to a subset of the Django-provided languages. "
 msgstr ""
+"Az összes elérhető nyelv listája. A lista két tuplából álló lista, a "
+"következő formátumban (nyelvkód, nyelv neve), például: ('ja', 'japán'). Ez "
+"adja meg, hogy mely nyelvek állnak rendelkezésre a nyelvválasztáshoz. "
+"Általában az alapértelmezett értéknek elegendőnek kell lennie. Csak akkor "
+"állítsa be ezt a beállítást, ha a nyelvválasztást a Django által biztosított"
+" nyelvek egy részhalmazára szeretné korlátozni."
 
 #: settings.py:242
 msgid ""
@@ -285,6 +391,14 @@ msgid ""
 "provides the fallback translation when a translation for a given literal "
 "doesn't exist for the user's preferred language."
 msgstr ""
+"A telepítés nyelvi kódját jelölő karakterlánc. Ennek a szabványos nyelvi "
+"azonosító formátumban kell lennie. Például az amerikai angol \"en-us\". Két "
+"célt szolgál: Ha a locale middleware nincs használatban, ez dönti el, hogy "
+"melyik fordítás kerül kiszolgálásra az összes felhasználónak. Ha a locale "
+"middleware aktív, akkor egy tartalék nyelvet biztosít arra az esetre, ha a "
+"felhasználó preferált nyelve nem határozható meg, vagy a weboldal nem "
+"támogatja. A tartalék fordítást akkor is biztosítja, ha egy adott szó "
+"szerinti fordítás nem létezik a felhasználó által preferált nyelvre."
 
 #: settings.py:256
 msgid ""
@@ -292,12 +406,17 @@ msgid ""
 " whatever you want (as long as it's different from the other cookie names in"
 " your application)."
 msgstr ""
+"Alapértelmezett: 'sessionid'. A munkamenetekhez használandó süti neve.Ez "
+"bármilyen lehet (feltéve, hogy különbözik az alkalmazásban lévő többi süti "
+"nevétől)."
 
 #: settings.py:264
 msgid ""
 "Default: 'django.contrib.sessions.backends.db'. Controls where Django stores"
 " session data."
 msgstr ""
+"Alapértelmezett: 'django.contrib.sessions.backends.db'. Azt szabályozza, "
+"hogy a Django hol tárolja a munkamenetadatokat."
 
 #: settings.py:271
 msgid ""
@@ -306,6 +425,11 @@ msgid ""
 "is_secure() method. Warning: Modifying this setting can compromise your "
 "site’s security. Ensure you fully understand your setup before changing it."
 msgstr ""
+"Egy HTTP fejléc/érték kombinációt reprezentáló tuple, amely azt jelzi, hogy "
+"a kérés biztonságos. Ez vezérli a request objektum is_secure() metódusának "
+"viselkedését. Figyelmeztetés: Ennek a beállításnak a módosítása "
+"veszélyeztetheti a webhely biztonságát. Győződjön meg róla, hogy teljesen "
+"megértette a beállításait, mielőtt megváltoztatná."
 
 #: settings.py:280
 msgid ""
@@ -314,6 +438,11 @@ msgid ""
 "used as the base path for asset definitions (the Media class) and the "
 "staticfiles app. It must end in a slash if set to a non-empty value."
 msgstr ""
+"A STATIC_ROOT-ban található statikus fájlokra való hivatkozáskor használandó"
+" URL. Példa: \"vagy \"http://static.example.com/\". Ha nem None, akkor ez "
+"lesz az eszközdefiníciók (a Media osztály) és a staticfiles alkalmazás alap "
+"elérési útvonala. Ha nem üres értékre van beállítva, akkor a végének egy "
+"slash-re kell végződnie."
 
 #: settings.py:290
 msgid ""
@@ -322,6 +451,10 @@ msgid ""
 "backend defined in this setting can be found at "
 "django.contrib.staticfiles.storage.staticfiles_storage."
 msgstr ""
+"A statikus fájlok collectstatic kezelési paranccsal történő összegyűjtésekor"
+" használandó fájltároló motor. Az ebben a beállításban definiált tároló "
+"háttértár egy használatra kész példánya a "
+"django.contrib.staticfiles.storage.staticfiles_storage címen található."
 
 #: settings.py:298
 msgid ""
@@ -329,6 +462,10 @@ msgid ""
 "isn't necessarily the time zone of the server. For example, one server may "
 "serve multiple Django-powered sites, each with a separate time zone setting."
 msgstr ""
+"A telepítés időzónáját jelölő karakterlánc. Vegye figyelembe, hogy ez nem "
+"feltétlenül a kiszolgáló időzónája. Egy szerver például több Django által "
+"működtetett oldalt is kiszolgálhat, mindegyiknek külön időzóna beállítása "
+"van."
 
 #: settings.py:307
 msgid ""
@@ -336,6 +473,9 @@ msgid ""
 "preference to the Host header. This should only be enabled if a proxy which "
 "sets this header is in use."
 msgstr ""
+"Egy bólus, amely megadja, hogy az X-Forwarded-Host fejlécet használja-e a "
+"Host fejléc helyett. Ezt csak akkor kell engedélyezni, ha olyan proxy van "
+"használatban, amely ezt a fejlécet állítja be."
 
 #: settings.py:315
 msgid ""
@@ -344,6 +484,10 @@ msgid ""
 "a proxy which sets this header is in use. USE_X_FORWARDED_HOST takes "
 "priority over this setting."
 msgstr ""
+"Egy bólus, amely meghatározza, hogy a SERVER_PORT META változó helyett az "
+"X-Forwarded-Port fejlécet használja-e. Ezt csak akkor kell engedélyezni, ha "
+"olyan proxy van használatban, amely ezt a fejlécet beállítja. A "
+"USE_X_FORWARDED_HOST elsőbbséget élvez ezzel a beállítással szemben."
 
 #: settings.py:324
 msgid ""
@@ -352,41 +496,52 @@ msgid ""
 "command will create a simple wsgi.py file with an application callable in "
 "it, and point this setting to that application."
 msgstr ""
+"A WSGI alkalmazásobjektum teljes Python elérési útvonala, amelyet a Django "
+"beépített szerverei (pl. runserver) használni fognak. A django-admin "
+"startproject kezelési parancs létrehoz egy egyszerű wsgi.py fájlt, amelyben "
+"van egy alkalmazás hívható, és ezt a beállítást erre az alkalmazásra "
+"irányítja."
 
 #: templates/smart_settings/app/viewport.html:11
 msgid "Warning"
-msgstr ""
+msgstr "Figyelmeztetés"
 
 #: templates/smart_settings/app/viewport.html:11
 msgid ""
 "Settings updated, restart your installation and refresh your browser for "
 "changes to take effect."
 msgstr ""
+"A beállítások frissítve, indítsa újra a telepítést, és frissítse a "
+"böngészőt, hogy a változtatások életbe lépjenek."
 
 #: tests/test_classes.py:177
 msgid "English"
-msgstr ""
+msgstr "Angol"
 
 #: views.py:27
 msgid ""
 "Local storage is currently disabled, changes to setting values will not be "
 "saved or take effect."
 msgstr ""
+"A helyi tárhely jelenleg le van tiltva, a beállítási értékek módosításai nem"
+" kerülnek mentésre és nem lépnek érvénybe."
 
 #: views.py:40
 msgid "Setting updated successfully."
-msgstr ""
+msgstr "A beállítás sikeresen frissítve."
 
 #: views.py:51
 #, python-format
 msgid "Edit setting: %s"
-msgstr ""
+msgstr "Beállítás szerkesztése: %s"
 
 #: views.py:79
 msgid ""
 "Settings inherited from an environment variable take precedence and cannot "
 "be changed in this view. "
 msgstr ""
+"A környezeti változótól örökölt beállítások elsőbbséget élveznek, és ebben a"
+" nézetben nem módosíthatók."
 
 #: views.py:82
 #, python-format
@@ -400,4 +555,4 @@ msgstr "%s névtér nem található"
 
 #: views.py:102
 msgid "Setting namespaces"
-msgstr "Beállítás névtere"
+msgstr "Beállítás névterei"

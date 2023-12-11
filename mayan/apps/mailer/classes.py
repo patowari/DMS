@@ -13,7 +13,7 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
     """
     Base class for the mailing backends. This class is mainly a wrapper
     for other Django backends that adds a few metadata to specify the
-    fields it needs to be instanciated at runtime.
+    fields it needs to be instantiated at runtime.
     """
     _loader_module_name = 'mailers'
     _backend_app_label = 'mailer'
@@ -25,7 +25,7 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
         fieldsets = (
             (
                 _(message='General'), {
-                    'fields': ('label', 'enabled')
+                    'fields': ('label', 'enabled', 'default')
                 }
             ),
         )
