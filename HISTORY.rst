@@ -1,3 +1,7 @@
+4.5.9 (XXXX-XX-XX)
+==================
+- Minor query optimizations.
+
 4.5.8 (2023-12-07)
 ==================
 - Code style fixes.

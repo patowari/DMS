@@ -31,7 +31,7 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
             TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
             total_test_workflow_template_states
         )
-        initial = self._test_workflow_template.states.count() == 0
+        initial = not self._test_workflow_template.states.exist()
 
         self._test_workflow_template_state = self._test_workflow_template.states.create(
             completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
