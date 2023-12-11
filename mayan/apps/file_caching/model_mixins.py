@@ -189,7 +189,7 @@ class CacheBusinessLogicMixin:
                         partition.pk, exception
                     )
                     # Don't raise exceptions to allow the loop to continue and
-                    # avoid a single exception from stoping the purge.
+                    # avoid a single exception from stopping the purge.
 
     @cached_property
     def storage(self):
@@ -325,7 +325,7 @@ class CachePartitionBusinessLogicMixin:
                     parition_file.pk, exception
                 )
                 # Don't raise exceptions to allow the loop to continue and
-                # avoid a single exception from stoping the purge.
+                # avoid a single exception from stopping the purge.
 
 
 class CachePartitionFileBusinessLogicMixin:

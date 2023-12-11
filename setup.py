@@ -86,9 +86,9 @@ django-widget-tweaks==1.4.12
 djangorestframework==3.14.0
 djangorestframework-recursive==0.1.2
 drf-yasg==1.21.7
-elasticsearch==7.17.9
-elasticsearch-dsl==7.4.1
-extract-msg==0.37.1
+elasticsearch==7.17.1
+elasticsearch-dsl==7.4.0
+extract-msg==0.36.4
 flanker==0.9.11
 flex==6.14.1
 furl==2.1.3

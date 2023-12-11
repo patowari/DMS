@@ -54,7 +54,6 @@ class CacheModelTestCase(CacheTestMixin, BaseTestCase):
         cache_total_size = self._test_cache.get_total_size()
 
         self._clear_events()
-
         self._test_cache.purge(user=self._test_case_user)
 
         self.assertNotEqual(
