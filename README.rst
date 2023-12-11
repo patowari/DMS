@@ -45,12 +45,6 @@ The final version of the book "Exploring Mayan EDMS" available now!
 
 Click the image or visit: https://sellfy.com/p/um2fkx/
 
-Hardware requirements
-
-- 2 Gigabytes of RAM (1 Gigabyte if OCR is turned off).
-- Multiple core CPU (64 bit, faster than 1 GHz recommended).
-
-
 Important links
 
 - `Homepage <http://www.mayan-edms.com>`__
