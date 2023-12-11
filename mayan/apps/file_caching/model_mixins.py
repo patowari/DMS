@@ -48,11 +48,15 @@ class CacheBusinessLogicMixin:
 
     def get_defined_storage(self):
         try:
-            return DefinedStorage.get(name=self.defined_storage_name)
+            defined_storage_class = DefinedStorage.get(
+                name=self.defined_storage_name
+            )
         except KeyError:
-            return DefinedStorage(
+            defined_storage_class = DefinedStorage(
                 dotted_path='', label=_('Unknown'), name='unknown'
             )
+
+        return defined_storage_class
 
     def get_partition_count(self):
         CachePartition = apps.get_model(
@@ -102,7 +106,8 @@ class CacheBusinessLogicMixin:
 
     @cached_property
     def label(self):
-        return self.get_defined_storage().label
+        defined_storage_class = self.get_defined_storage()
+        return defined_storage_class.label
 
     def prune(self):
         """
@@ -118,12 +123,14 @@ class CacheBusinessLogicMixin:
         )
 
         while self.get_total_size() >= self.maximum_size:
-            cache_partition_file_queryset = self.get_files().order_by(
+            queryset_cache_partition_file = self.get_files().order_by(
                 'hits', 'datetime'
             )
 
             try:
-                cache_partition_file = cache_partition_file_queryset[file_index]
+                cache_partition_file = queryset_cache_partition_file[
+                    file_index
+                ]
             except IndexError:
                 # Attempted to get a file beyond what the queryset provided.
                 file_index = 0
@@ -194,7 +201,7 @@ class CacheBusinessLogicMixin:
     @cached_property
     def storage(self):
         defined_storage_class = self.get_defined_storage()
-        defined_storage_instance = defined_storage_class.get_storage_instance
+        defined_storage_instance = defined_storage_class.get_storage_instance()
 
         return defined_storage_instance
 
