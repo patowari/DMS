@@ -14,6 +14,9 @@ def callback_update_asset_cache_size(setting):
     except (OperationalError, ProgrammingError):
         """
         Non fatal. Non initialized installation. Ignore exception.
+        This will generate an error log entry similar to this.
+        2023-12-12 09:12:46.925 UTC [79] ERROR:  relation "file_caching_cache" does not exist at character 121
+        2023-12-12 09:12:46.925 UTC [79] STATEMENT:  SELECT "file_caching_cache"."id", "file_caching_cache"."defined_storage_name", "file_caching_cache"."maximum_size" FROM "file_caching_cache" WHERE "file_caching_cache"."defined_storage_name" = 'converter__assets_cache' LIMIT 21
         """
     else:
         cache.maximum_size = setting.value

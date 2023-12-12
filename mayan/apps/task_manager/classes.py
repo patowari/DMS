@@ -73,8 +73,7 @@ class CeleryQueue(AppsModuleLoaderMixin):
         return cls._registry[queue_name]
 
     @classmethod
-    def load_modules(cls):
-        super().load_modules()
+    def post_load_modules(cls):
         CeleryQueue.update_celery()
 
         for task_name, task in celery_app.tasks.items():

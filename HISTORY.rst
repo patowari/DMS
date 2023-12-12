@@ -115,6 +115,10 @@
 - Convert worker nice levels from literals to config constants.
 - Optimize the file cache eviction selection.
 - Convert the Docker Compose Keycloak services into a platform template.
+- Check if database tables are available before preloading and caching
+  permissions and file metadata drivers.
+- Use the correct ``post_load_modules`` method to execute initialization
+  code after app module loading.
 
 4.5.9 (XXXX-XX-XX)
 ==================

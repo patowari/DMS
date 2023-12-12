@@ -130,9 +130,7 @@ class QuotaBackend(QuotaBackendBase, metaclass=QuotaBackendMetaclass):
         return cls.widgets
 
     @classmethod
-    def load_modules(cls):
-        super().load_modules()
-
+    def post_load_modules(cls):
         for backend in QuotaBackend.get_all():
             backend._initialize()
 

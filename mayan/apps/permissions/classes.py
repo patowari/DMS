@@ -73,7 +73,11 @@ class Permission(AppsModuleLoaderMixin):
     def get_choices(cls):
         results = PermissionCollection()
 
-        for namespace, permissions in itertools.groupby(cls.all(), lambda entry: entry.namespace):
+        groups_permissions = itertools.groupby(
+            cls.all(), lambda entry: entry.namespace
+        )
+
+        for namespace, permissions in groups_permissions:
             permission_options = [
                 (permission.pk, permission) for permission in permissions
             ]
@@ -84,12 +88,30 @@ class Permission(AppsModuleLoaderMixin):
         return results
 
     @classmethod
-    def load_modules(cls):
-        super().load_modules()
-
+    def post_load_modules(cls):
         # Prime cache for all permissions.
-        for permission in cls.all():
-            permission.stored_permission
+        StoredPermission = apps.get_model(
+            app_label='permissions', model_name='StoredPermission'
+        )
+
+        try:
+            """
+            Check is the table is ready.
+            If not, this will log an error similar to this:
+            2023-12-12 09:00:54.666 UTC [79] ERROR:  relation "permissions_storedpermission" does not exist at character 22
+            2023-12-12 09:00:54.666 UTC [79] STATEMENT:  SELECT 1 AS "a" FROM "permissions_storedpermission" LIMIT 1
+            This error is expected and should be ignored.
+            """
+            StoredPermission.objects.exists()
+        except (OperationalError, ProgrammingError):
+            """
+            This error is expected when trying to initialize the
+            stored permissions during the initial creation of the
+            database. Can be safely ignored under that situation.
+            """
+        else:
+            for permission in cls.all():
+                permission.stored_permission
 
     @classmethod
     def invalidate_cache(cls):
@@ -121,18 +143,10 @@ class Permission(AppsModuleLoaderMixin):
             app_label='permissions', model_name='StoredPermission'
         )
 
-        try:
-            stored_permission, created = StoredPermission.objects.get_or_create(
-                name=self.name, namespace=self.namespace.name
-            )
-
-            return stored_permission
-        except (OperationalError, ProgrammingError):
-            """
-            This error is expected when trying to initialize the
-            stored permissions during the initial creation of the
-            database. Can be safely ignore under that situation.
-            """
+        stored_permission, created = StoredPermission.objects.get_or_create(
+            name=self.name, namespace=self.namespace.name
+        )
+        return stored_permission
 
 
 class PermissionCollection(ClassCollection):

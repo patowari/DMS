@@ -119,19 +119,12 @@ class FileMetadataDriver(
         StoredDriver = apps.get_model(
             app_label='file_metadata', model_name='StoredDriver'
         )
-
-        try:
-            model_instance, created = StoredDriver.objects.get_or_create(
-                driver_path=cls.dotted_path, defaults={
-                    'internal_name': cls.internal_name
-                }
-            )
-        except (OperationalError, ProgrammingError):
-            """
-            Non fatal. Installation is not ready.
-            """
-        else:
-            cls.model_instance = model_instance
+        model_instance, created = StoredDriver.objects.get_or_create(
+            driver_path=cls.dotted_path, defaults={
+                'internal_name': cls.internal_name
+            }
+        )
+        cls.model_instance = model_instance
 
     @classmethod
     def get_mime_type_list_display(cls):
@@ -139,8 +132,28 @@ class FileMetadataDriver(
 
     @classmethod
     def post_load_modules(cls):
-        for driver in cls.collection.get_all():
-            driver.do_model_instance_populate()
+        StoredDriver = apps.get_model(
+            app_label='file_metadata', model_name='StoredDriver'
+        )
+
+        try:
+            """
+            Check is the table is ready.
+            If not, this will log an error similar to this:
+            2023-12-12 09:12:46.985 UTC [79] ERROR:  relation "file_metadata_storeddriver" does not exist at character 22
+            2023-12-12 09:12:46.985 UTC [79] STATEMENT:  SELECT 1 AS "a" FROM "file_metadata_storeddriver" LIMIT 1
+            This error is expected and should be ignored.
+            """
+            StoredDriver.objects.exists()
+        except (OperationalError, ProgrammingError):
+            """
+            This error is expected when trying to initialize the
+            stored permissions during the initial creation of the
+            database. Can be safely ignored under that situation.
+            """
+        else:
+            for driver in cls.collection.get_all():
+                driver.do_model_instance_populate()
 
     def __init__(self, auto_initialize=True, **kwargs):
         self.auto_initialize = auto_initialize
