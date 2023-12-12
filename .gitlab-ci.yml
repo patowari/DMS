@@ -21,7 +21,7 @@ job_docker_build:
     - set -a && . ./config.env && set +a
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
-    - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
     - apk update
     - apk add --cache-dir ${APK_CACHE_DIR} cairo gcc libffi-dev libjpeg-turbo-dev libmagic make musl-dev python3 python3-dev zlib-dev
     - python3 -m venv venv
@@ -63,7 +63,7 @@ job_docker_build:
 job_docker_test:
   before_script:
     - set -a && . ./config.env && set +a
-    - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   image: docker:23.0.6-dind
   needs:
     - job_docker_build
@@ -96,7 +96,7 @@ job_docker_push_major:
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
     - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
-    - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   cache:
     - key: apk-cache-4.6
       paths:
@@ -135,7 +135,7 @@ job_docker_push_minor:
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
     - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
-    - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   cache:
     - key: apk-cache-4.6
       paths:
@@ -166,7 +166,7 @@ job_docker_push_minor:
 job_docker_nightly:
   before_script:
     - set -a && . ./config.env && set +a
-    - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   image: docker:23.0.6-dind
   needs:
     - job_docker_build
@@ -187,7 +187,7 @@ job_docker_nightly:
 job_docker_testing:
   before_script:
     - set -a && . ./config.env && set +a
-    - docker login --username "${CI_REGISTRY_USER}" --password "${CI_REGISTRY_PASSWORD}" ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   image: docker:23.0.6-dind
   needs:
     - job_docker_test
