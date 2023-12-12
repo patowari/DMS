@@ -119,6 +119,8 @@
   permissions and file metadata drivers.
 - Use the correct ``post_load_modules`` method to execute initialization
   code after app module loading.
+- Reorganize make files. Remove unused and outdated targets. Move all Docker
+  related targets to the Docker make file. Improve staging targets.
 
 4.5.9 (XXXX-XX-XX)
 ==================
