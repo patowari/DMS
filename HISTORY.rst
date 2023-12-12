@@ -80,7 +80,6 @@
   driver and a new app named ``file_metadata_clamav``. ClamAV and the latest
   database are included in the Docker image.
 - Support source column resolution for non model subclasses.
-- Remove KeyCloak from the Docker Compose file.
 - Convert the Docker Compose file into a platform template.
 - Generate unique test lock names to avoid unintended lock errors when
   validating the lock manager backend. Closes GitLab issue #1157, thanks

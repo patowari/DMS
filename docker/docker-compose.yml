@@ -55,6 +55,10 @@ x-mayan-traefik-labels:
     - "traefik.http.services.mayan_frontend_http.loadbalancer.server.port=8000"
 
 networks:
+  keycloak:
+    driver: bridge
+    # Change to true when using Traefik for increased security.
+    internal: false
   mayan:
     driver: bridge
     # Change to true when using Traefik for increased security.
@@ -90,6 +94,58 @@ services:
         hard: -1
     volumes:
       - ${MAYAN_ELASTICSEARCH_VOLUME:-elasticsearch}:/usr/share/elasticsearch/data
+
+  keycloak:
+    command:
+      - start
+    environment:
+      KEYCLOAK_ADMIN: ${MAYAN_KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${MAYAN_KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KC_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
+      KC_DB_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
+      KC_DB_URL_DATABASE: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
+      KC_DB_URL_HOST: keycloak-postgres
+      KC_DB_USERNAME: ${MAYAN_DATABASE_KEYCLOAK_USER:-keycloak}
+      KC_HOSTNAME_URL: http://127.0.0.1:8081/
+      KC_HOSTNAME_STRICT: false
+      KC_HTTP_ENABLED: true
+    image: ${MAYAN_DOCKER_KEYCLOAK_IMAGE:-keycloak/keycloak}:${MAYAN_DOCKER_KEYCLOAK_TAG:-20.0.1}
+    labels:
+      - "traefik.enable=${MAYAN_TRAEFIK_KEYCLOAK_ENABLE:-false}"
+      - "traefik.http.middlewares.keycloak_http_redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.keycloak_http_redirect.redirectscheme.permanent=false"
+      - "traefik.http.routers.keycloak_http.entrypoints=http"
+      - "traefik.http.routers.keycloak_http.middlewares=keycloak_http_redirect"
+      - "traefik.http.routers.keycloak_http.rule=Host(`${MAYAN_TRAEFIK_EXTERNAL_DOMAIN}`)"
+      - "traefik.http.routers.keycloak_https.entrypoints=https"
+      - "traefik.http.routers.keycloak_https.rule=Host(`${MAYAN_TRAEFIK_EXTERNAL_DOMAIN}`)"
+      - "traefik.http.routers.keycloak_https.service=keycloak_http"
+      - "traefik.http.routers.keycloak_https.tls=true"
+      - "traefik.http.routers.keycloak_https.tls.certresolver=letsencrypt"
+      - "traefik.http.services.keycloak_http.loadbalancer.server.port=${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}"
+    networks:
+      - keycloak
+      - mayan
+    # Disable ports if using Traefik.
+    ports:
+      - "${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}:${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}"
+    profiles:
+      - keycloak
+    restart: unless-stopped
+
+  keycloak-postgres:
+    environment:
+      POSTGRES_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
+      POSTGRES_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
+      POSTGRES_USER: ${MAYAN_DATABASE_KEYCLOAK_USER:-keycloak}
+    image: postgres:${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_TAG:-13.8-alpine}
+    networks:
+      - keycloak
+    profiles:
+      - keycloak_postgresql
+    restart: unless-stopped
+    volumes:
+      - ${MAYAN_KEYCLOAK_POSTGRESQL_VOLUME:-keycloak-postgres}:/var/lib/postgresql/data
 
   postgresql:
     command:
@@ -308,6 +364,7 @@ services:
       - "--certificatesresolvers.letsencrypt.acme.tlschallenge=${MAYAN_TRAEFIK_LETS_ENCRYPT_TLS_CHALLENGE:-false}"
       - "--entrypoints.http.address=:80"
       - "--entrypoints.https.address=:443"
+      - "--entrypoints.keycloak_http.address=:${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}"
       - "--entrypoints.rabbitmq_admin_http.address=:15672"
       - "--entrypoints.traefik_dashboard_http.address=:8080"
       - "--providers.docker=true"
@@ -342,6 +399,7 @@ services:
 volumes:
   app:
   elasticsearch:
+  keycloak-postgres:
   postgres:
   mountindex:
   rabbitmq:
