@@ -400,7 +400,7 @@ docker-oracle-stop: ## Stop and delete the Oracle test container.
 	@docker volume rm $(CONTAINER_NAME_TEST_ORACLE) >/dev/null 2>&1 || true
 
 docker-postgresql-start: ## Start a PostgreSQL Docker test container.
-	@docker run --detach --name $(CONTAINER_NAME_TEST_POSTGRESQL) --env POSTGRES_HOST_AUTH_METHOD=trust --env POSTGRES_USER=$(DEFAULT_DATABASE_USER) --env POSTGRES_PASSWORD=$(DEFAULT_DATABASE_PASSWORD) --env POSTGRES_DB=$(DEFAULT_DATABASE_NAME) --publish 5432:5432 --volume $(CONTAINER_NAME_TEST_POSTGRESQL):/var/lib/postgresql/data $(DOCKER_POSTGRES_IMAGE_NAME):$(DOCKER_POSTGRES_IMAGE_TAG)
+	@docker run --detach --name $(CONTAINER_NAME_TEST_POSTGRESQL) --env POSTGRES_HOST_AUTH_METHOD=trust --env POSTGRES_USER=$(DEFAULT_DATABASE_USER) --env POSTGRES_PASSWORD=$(DEFAULT_DATABASE_PASSWORD) --env POSTGRES_DB=$(DEFAULT_DATABASE_NAME) --publish 5432:5432 --volume $(CONTAINER_NAME_TEST_POSTGRESQL):/var/lib/postgresql/data $(DOCKER_POSTGRESQL_IMAGE_NAME):$(DOCKER_POSTGRESQL_IMAGE_TAG)
 	@while ! docker exec --interactive --tty $(CONTAINER_NAME_TEST_POSTGRESQL) psql --command "\l" --dbname=$(DEFAULT_DATABASE_NAME) --host=127.0.0.1 --username=$(DEFAULT_DATABASE_USER) >/dev/null 2>&1; do echo -n .;sleep 1; done
 
 docker-postgresql-stop: ## Stop and delete the PostgreSQL container.

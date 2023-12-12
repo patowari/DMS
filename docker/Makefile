@@ -108,7 +108,7 @@ docker-staging-container-postgresql-start:
 	--env POSTGRES_DB=$(DEFAULT_DATABASE_NAME) \
 	--env POSTGRES_PASSWORD=$(DEFAULT_DATABASE_PASSWORD) \
 	--volume mayan-staging-postgres:/var/lib/postgresql/data \
-	$(DOCKER_POSTGRES_IMAGE_NAME):$(DOCKER_POSTGRES_IMAGE_TAG)
+	$(DOCKER_POSTGRESQL_IMAGE_NAME):$(DOCKER_POSTGRESQL_IMAGE_TAG)
 
 docker-staging-container-redis-start:
 	docker run \
@@ -200,7 +200,7 @@ docker-development-container-postgresql-start:
 	--publish 5432:5432 \
 	--env POSTGRES_PASSWORD=postgres \
 	--volume mayan-development-postgres:/var/lib/postgresql/data \
-	$(DOCKER_POSTGRES_IMAGE_NAME):$(DOCKER_POSTGRES_IMAGE_TAG)
+	$(DOCKER_POSTGRESQL_IMAGE_NAME):$(DOCKER_POSTGRESQL_IMAGE_TAG)
 
 docker-development-cleanup: ## Delete the test container and the test volume.
 	@docker rm --file mayan-development-postgres || true

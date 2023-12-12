@@ -114,6 +114,7 @@
   timezone UTC.
 - Convert worker nice levels from literals to config constants.
 - Optimize the file cache eviction selection.
+- Convert the Docker Compose Keycloak services into a platform template.
 
 4.5.9 (XXXX-XX-XX)
 ==================
