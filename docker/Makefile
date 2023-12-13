@@ -163,7 +163,7 @@ docker-staging-start: docker-staging-stop docker-postgresql-start docker-redis-s
 	export MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'$(DEFAULT_DATABASE_NAME)','PASSWORD':'$(DEFAULT_DATABASE_PASSWORD)','USER':'$(DEFAULT_DATABASE_USER)','HOST':'127.0.0.1'}}"; \
 	rm --force --recursive $(MAYAN_TEST_MEDIA_ROOT); \
 	export MAYAN_MEDIA_ROOT=$(MAYAN_TEST_MEDIA_ROOT); \
-	./manage.py common_initial_setup --no-dependencies --settings=mayan.settings.staging.docker
+	./manage.py common_initial_setup --settings=mayan.settings.staging.docker
 
 docker-staging-stop: ## Stop and delete the Docker production-like services.
 docker-staging-stop: docker-postgresql-stop docker-redis-stop
