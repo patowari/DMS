@@ -1,0 +1,39 @@
+Version 4.6
+===========
+
+Released: XXXX XX, XXXX
+
+Changes
+-------
+
+
+Other
+^^^^^
+
+- Update translation files.
+
+
+Removals
+--------
+
+.. include:: partials/removals-4.6.txt
+
+
+Backward incompatible changes
+-----------------------------
+
+.. include:: partials/backward-incompatible-4.6.txt
+
+
+Deprecations
+------------
+
+.. include:: partials/deprecations-4.6.txt
+
+
+Issues closed
+-------------
+
+- None
+
+.. _PyPI: https://pypi.python.org/pypi/mayan-edms/

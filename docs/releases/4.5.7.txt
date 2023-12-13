@@ -72,7 +72,7 @@ Backward incompatible changes
 Deprecations
 ------------
 
-.. include:: partials/deprecations-4.4.txt
+.. include:: partials/deprecations-4.5.txt
 
 
 Issues closed

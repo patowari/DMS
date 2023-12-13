@@ -1,0 +1,2 @@
+- The Keycloak Docker Compose service will be removed from the
+  Docker Compose file.
