@@ -1,11 +1,9 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
+import mayan
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.backends.forms import FormDynamicModelBackend
-from mayan.apps.common.settings import (
-    setting_project_title, setting_project_url
-)
 
 from .classes import MailerBackend
 from .models import UserMailer
@@ -23,6 +21,10 @@ class ObjectMailForm(forms.Form):
         as_attachment = kwargs.pop('as_attachment', False)
         user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
+
+        project_title = mayan.__title__
+        project_website = mayan.__website__
+
         if as_attachment:
             self.fields[
                 'subject'
@@ -31,16 +33,16 @@ class ObjectMailForm(forms.Form):
             self.fields[
                 'body'
             ].initial = setting_attachment_body_template.value % {
-                'project_title': setting_project_title.value,
-                'project_website': setting_project_url.value
+                'project_title': project_title,
+                'project_website': project_website
             }
         else:
             self.fields[
                 'subject'
             ].initial = setting_document_link_subject_template.value
             self.fields['body'].initial = setting_document_link_body_template.value % {
-                'project_title': setting_project_title.value,
-                'project_website': setting_project_url.value
+                'project_title': project_title,
+                'project_website': project_website
             }
 
         queryset = AccessControlList.objects.restrict_queryset(

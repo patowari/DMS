@@ -96,6 +96,8 @@
     object attachments.
   - Add class ``ModelMailingAction`` to defined available mailing actions
     per model.
+  - Use the ``__title__`` and ``__website__`` from the ``mayan`` module
+    as the email's body project name and website.
 
 - Move file metadata queue to worker D.
 - Update minimum and recommended requirements.
