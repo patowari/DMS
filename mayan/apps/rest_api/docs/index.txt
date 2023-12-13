@@ -85,14 +85,14 @@ Create a new document:
      'version_list_url': 'http://127.0.0.1:8000/api/v4/documents/1/versions/'}
 
 
-After creating a document, you need to upload a file to it. Use ``action`` code
-``1`` to also have a new document version created and its pages pointing to
-the pages of the new file uploaded:
+After creating a document, you need to upload a file to it. Use
+``action_name`` code ``replace`` to also have a new document version
+created and its pages pointing to the pages of the new file uploaded:
 
 .. code-block:: python
 
     with open(file='test_document.pdf', mode='rb') as file_object:
-        response = requests.post(url='http://127.0.0.1:8000/api/v4/documents/1/files/', auth=('username', 'password'), files={'file_new': file_object}, data={'action': 1})
+        response = requests.post(url='http://127.0.0.1:8000/api/v4/documents/1/files/', auth=('username', 'password'), files={'file_new': file_object}, data={'action_name': 'replace'})
 
     response.status_code
     202
