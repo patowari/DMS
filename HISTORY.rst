@@ -124,6 +124,7 @@
 - Reorganize make files. Remove unused and outdated targets. Move all Docker
   related targets to the Docker make file. Improve staging targets.
 - Show the logo in the login form.
+- Move the logo font to the `head` template.
 
 4.5.9 (XXXX-XX-XX)
 ==================
