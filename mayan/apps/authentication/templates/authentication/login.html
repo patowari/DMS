@@ -21,6 +21,11 @@
                     <h3 class="panel-title">{% trans 'Sign in' %}</h3>
                 </div>
                 <div class="panel-body">
+
+                    <div class align="center">
+                       <p class="text-center mayan-edms-logo"><span class="icon-mayan-edms-logo"></span> {% common_project_information '__title__' %}</p>
+                    </div>
+
                     <div class="content login">
                         {% if form.is_multipart %}
                             <form action="{{ form_action }}" class="{{ form_css_classes|default:'form login' }}" enctype="multipart/form-data" method="{{ submit_method|default:'post' }}" name="{{ form.prefix|default:'' }}" target="{{ submit_target|default:'_self' }}">
@@ -97,6 +102,7 @@
                             <div>
                                 <a class="pull-right" href="{% url 'authentication:password_reset_view' %}">{% trans 'Forgot your password?' %}</a>
                             </div>
+                            <br>
                         {% endif %}
                     </div>
                 </div>
