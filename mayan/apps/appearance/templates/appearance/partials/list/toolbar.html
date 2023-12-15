@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        {% include 'appearance/partials/pagination.html' %}
+        {% include 'appearance/partials/list/pagination.html' %}
 
         {% appearance_app_templates template_name='list_toolbar' %}
 
@@ -49,7 +49,6 @@
                             {% endwith %}
                             {% endwith %}
                             {% endwith %}
-
                         {% endfor %}
                         {% if not forloop.last and link_group %}
                             <li class="divider"></li>

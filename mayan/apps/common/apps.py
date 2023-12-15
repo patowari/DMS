@@ -137,12 +137,12 @@ class CommonApp(MayanAppConfig):
         admin.autodiscover()
 
         AJAXTemplate(
-            name='menu_main', template_name='appearance/menus/menu_main.html'
+            name='menu_main', template_name='appearance/menus/main.html'
         )
         AJAXTemplate(
             context={'home_view': setting_home_view.value},
             name='menu_topbar',
-            template_name='appearance/menus/menu_topbar.html'
+            template_name='appearance/menus/topbar.html'
         )
 
         menu_about.bind_links(

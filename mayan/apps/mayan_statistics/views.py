@@ -26,7 +26,7 @@ class StatisticNamespaceListView(SingleObjectListView):
         'no_results_title': _(message='No statistic namespaces available'),
         'title': _(message='Statistics namespaces')
     }
-    template_name = 'appearance/generic_list.html'
+    template_name = 'appearance/list.html'
     view_icon = icon_statistic_namespace_list
     view_permission = permission_statistics_view
 

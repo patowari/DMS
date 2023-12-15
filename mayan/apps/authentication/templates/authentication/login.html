@@ -11,7 +11,7 @@
 
 {% block project_name %}{% endblock %}
 
-{% block content_plain %}
+{% block content %}
     {% appearance_app_templates template_name='login_content' %}
 
     <div class="row">
@@ -41,16 +41,16 @@
 
                                     {% with wizard.form as form %}
                                     {% with 'true' as form_display_mode_table %}
-                                        {% include 'appearance/generic_form_instance.html' %}
+                                        {% include 'appearance/partials/form/body.html' %}
                                     {% endwith %}
                                     {% endwith %}
                                 {% else %}
                                     {% if wizard.form %}
                                         {% with wizard.form as form %}
-                                            {% include 'appearance/generic_form_instance.html' %}
+                                            {% include 'appearance/partials/form/body.html' %}
                                         {% endwith %}
                                     {% else %}
-                                        {% include 'appearance/generic_form_instance.html' %}
+                                        {% include 'appearance/partials/form/body.html' %}
                                     {% endif %}
                                 {% endif %}
 

@@ -15,7 +15,7 @@ from .utils import PyPIClient
 
 
 class CheckVersionView(SimpleView):
-    template_name = 'appearance/generic_template.html'
+    template_name = 'appearance/content_container.html'
     view_icon = icon_check_version
     view_permission = permission_dependencies_view
 
@@ -133,7 +133,7 @@ class DependencyGroupEntryDetailView(SingleObjectListView):
 
 
 class DependencyLicensesView(SimpleView):
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_dependency_licenses
 
     def get_extra_context(self):

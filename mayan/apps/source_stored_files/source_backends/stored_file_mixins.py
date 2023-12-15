@@ -104,11 +104,11 @@ class SourceBackendMixinStoredFileUploadBase:
                 'context': {
                     'forms': context['forms']
                 },
-                'name': 'appearance/generic_multiform_subtemplate.html'
+                'name': 'appearance/partials/form/multiple.html'
             },
             {
                 'context': template_source_stored_file_list_context,
-                'name': 'appearance/generic_list_subtemplate.html'
+                'name': 'appearance/partials/list/table.html'
             }
         ]
 

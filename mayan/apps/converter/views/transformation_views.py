@@ -264,7 +264,7 @@ class TransformationSelectView(
     ViewMixinLayer, ExternalContentTypeObjectViewMixin, FormView
 ):
     form_class = LayerTransformationSelectForm
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_transformation_select
 
     def form_valid(self, form):

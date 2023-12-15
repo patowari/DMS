@@ -52,7 +52,7 @@ class LicenseView(SimpleView):
         'read_only': True,
         'title': _(message='License'),
     }
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_license
 
 
@@ -98,7 +98,7 @@ class RootView(StrongholdPublicMixin, SimpleView):
 
 
 class SetupListView(SimpleView):
-    template_name = 'appearance/generic_list_horizontal.html'
+    template_name = 'appearance/list_horizontal.html'
     view_icon = icon_setup
 
     def get_extra_context(self, **kwargs):
@@ -120,7 +120,7 @@ class SetupListView(SimpleView):
 
 
 class ToolsListView(SimpleView):
-    template_name = 'appearance/generic_list_horizontal.html'
+    template_name = 'appearance/list_horizontal.html'
     view_icon = icon_tools
 
     def get_extra_context(self):

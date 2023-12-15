@@ -18,7 +18,7 @@ class DashboardListView(SingleObjectListView):
 
 
 class DashboardDetailView(SimpleView):
-    template_name = 'appearance/generic_template.html'
+    template_name = 'appearance/content_container.html'
     view_icon = icon_dashboard_detail
 
     def get_extra_context(self):

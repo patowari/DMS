@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
     <head>
-        {% include 'appearance/partials/meta_tags.html' %}
+        {% include 'appearance/partials/meta.html' %}
         <title>
             {% block base_title %}
                 {% block title %}{% endblock %} :: {% block project_name %}{% common_get_project_title %}{% endblock %}
@@ -21,13 +21,13 @@
     </head>
     <body>
         {% if appearance_type == 'plain' %}
-            {% block content_plain %}{% endblock %}
+            {% block content %}{% endblock %}
         {% else %}
             <div id="menu-topbar">
-                {% include 'appearance/menus/menu_topbar.html' %}
+                {% include 'appearance/menus/topbar.html' %}
             </div>
             <div id="menu-main">
-                {% include 'appearance/menus/menu_main.html' %}
+                {% include 'appearance/menus/main.html' %}
             </div>
             <div id="appearance-main-viewport">
                 <div class="row zero-margin">

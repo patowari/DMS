@@ -54,7 +54,7 @@
             {% with form|appearance_form_get_visile_fields_map as field_map %}
                 {% for field_name in fieldset.1.fields %}
                     {% with field_map|dict_get:field_name as field %}
-                        {% include 'appearance/partials/form_field.html' %}
+                        {% include 'appearance/partials/form/field.html' %}
                     {% endwith %}
                 {% endfor %}
             {% endwith %}
@@ -65,7 +65,7 @@
     {% empty %}
         {# Non fieldset form. Retain compatibility. #}
         {% for field in form.visible_fields %}
-            {% include 'appearance/partials/form_field.html' %}
+            {% include 'appearance/partials/form/field.html' %}
         {% endfor %}
     {% endfor %}
 {% endif %}

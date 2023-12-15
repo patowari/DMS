@@ -91,7 +91,7 @@ class SearchBackendReindexView(ConfirmView):
 
 
 class SearchSimpleView(SearchModelViewMixin, SearchQueryViewMixin, FormView):
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_search
 
     def get_extra_context(self):

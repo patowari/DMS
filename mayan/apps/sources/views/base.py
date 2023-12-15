@@ -22,7 +22,7 @@ class UploadBaseView(
     MultiFormView
 ):
     prefixes = {'document_form': 'document', 'source_form': 'source'}
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
 
     def dispatch(self, request, *args, **kwargs):
         self.queryset_source_valid = self.get_queryset_source_valid()

@@ -27,7 +27,7 @@ class IconDriver:
 
 class FontAwesomeDriver(IconDriver):
     name = 'fontawesome'
-    template_name = 'appearance/icons/font_awesome_symbol.html'
+    template_name = 'appearance/icons/font_awesome/symbol.html'
 
     def __init__(self, symbol):
         self.symbol = symbol
@@ -38,7 +38,7 @@ class FontAwesomeDriver(IconDriver):
 
 class FontAwesomeDualClassesDriver(IconDriver):
     name = 'fontawesome-dual-classes'
-    template_name = 'appearance/icons/font_awesome_layers.html'
+    template_name = 'appearance/icons/font_awesome/layers.html'
 
     def __init__(self, primary_class, secondary_class):
         self.primary_class = primary_class
@@ -63,7 +63,7 @@ class FontAwesomeDualClassesDriver(IconDriver):
 
 class FontAwesomeDualDriver(IconDriver):
     name = 'fontawesome-dual'
-    template_name = 'appearance/icons/font_awesome_layers.html'
+    template_name = 'appearance/icons/font_awesome/layers.html'
 
     def __init__(self, primary_symbol, secondary_symbol):
         self.primary_symbol = primary_symbol
@@ -88,7 +88,7 @@ class FontAwesomeDualDriver(IconDriver):
 
 class FontAwesomeCSSDriver(IconDriver):
     name = 'fontawesomecss'
-    template_name = 'appearance/icons/font_awesome_css.html'
+    template_name = 'appearance/icons/font_awesome/css.html'
 
     def __init__(self, css_classes):
         self.css_classes = css_classes
@@ -99,7 +99,7 @@ class FontAwesomeCSSDriver(IconDriver):
 
 class FontAwesomeMasksDriver(IconDriver):
     name = 'fontawesome-masks'
-    template_name = 'appearance/icons/font_awesome_masks.html'
+    template_name = 'appearance/icons/font_awesome/masks.html'
 
     def __init__(self, data):
         self.data = data
@@ -110,7 +110,7 @@ class FontAwesomeMasksDriver(IconDriver):
 
 class FontAwesomeLayersDriver(IconDriver):
     name = 'fontawesome-layers'
-    template_name = 'appearance/icons/font_awesome_layers.html'
+    template_name = 'appearance/icons/font_awesome/layers.html'
 
     def __init__(self, data):
         self.data = data
@@ -123,7 +123,7 @@ class FontAwesomeLayersDriver(IconDriver):
 
 class FontAwesomeStackDriver(IconDriver):
     name = 'fontawesome-stack'
-    template_name = 'appearance/icons/font_awesome_stack.html'
+    template_name = 'appearance/icons/font_awesome/stack.html'
 
     def __init__(self, data):
         self.data = data

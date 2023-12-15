@@ -107,7 +107,7 @@ class WorkflowInstanceTransitionExecuteView(
     external_object_pk_url_kwarg = 'workflow_instance_id'
     external_object_queryset = WorkflowInstance.valid.all()
     form_class = DynamicForm
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_workflow_instance_transition
 
     def form_valid(self, form):
@@ -211,7 +211,7 @@ class WorkflowInstanceTransitionSelectView(
     external_object_pk_url_kwarg = 'workflow_instance_id'
     external_object_queryset = WorkflowInstance.valid.all()
     form_class = WorkflowInstanceTransitionSelectForm
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_workflow_instance_transition_select
 
     def form_valid(self, form):

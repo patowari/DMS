@@ -41,7 +41,7 @@
                     {% endif %}
 
                     {% for form in formset.forms %}
-                        {% include 'appearance/generic_form_instance.html' %}
+                        {% include 'appearance/partials/form/body.html' %}
                     {% endfor %}
                     {% if form_display_mode_table %}
                         </tbody>
@@ -49,7 +49,7 @@
                     {% endif %}
                 {% endwith %}
             {% else %}
-                {% include 'appearance/generic_form_instance.html' %}
+                {% include 'appearance/partials/form/body.html' %}
             {% endif %}
             {% if not forloop.last %}
                 <hr style="border: 1px solid #ffffff;">

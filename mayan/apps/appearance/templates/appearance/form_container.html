@@ -2,11 +2,11 @@
 
 {% load views_tags %}
 
-{% block title %}{% include 'appearance/partials/form_title.html' with non_html_title=True %}{% endblock %}
+{% block title %}{% include 'appearance/partials/title.html' with non_html_title=True %}{% endblock %}
 {% block content %}
     {% if form %}
         {% with '' as title %}
-            {% include 'appearance/generic_form_subtemplate.html' %}
+            {% include 'appearance/partials/form/single.html' %}
         {% endwith %}
     {% endif %}
 

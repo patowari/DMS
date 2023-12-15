@@ -331,7 +331,7 @@ class DocumentVersionPageView(ExternalObjectViewMixin, SimpleView):
     external_object_permission = permission_document_version_view
     external_object_pk_url_kwarg = 'document_version_page_id'
     external_object_queryset = DocumentVersionPage.valid.all()
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_document_version_page_detail
 
     def get_extra_context(self):

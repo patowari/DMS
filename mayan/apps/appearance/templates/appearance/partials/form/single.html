@@ -54,10 +54,10 @@
                 {% endif %}
 
                 {% for form in formset.forms %}
-                    {% include 'appearance/generic_form_instance.html' %}
+                    {% include 'appearance/partials/form/body.html' %}
                 {% empty %}
                     <tr><td class="text-center" colspan=99>
-                        {% include 'appearance/partials/no_results.html' %}
+                        {% include 'appearance/partials/list/no_results.html' %}
                     </td></tr>
                 {% endfor %}
 
@@ -68,7 +68,7 @@
                 {% endif %}
             {% endwith %}
         {% else %}
-            {% include 'appearance/generic_form_instance.html' %}
+            {% include 'appearance/partials/form/body.html' %}
         {% endif %}
         {% if not read_only %}
             {% if not form.management_form or wizard.management_form or form.forms %}

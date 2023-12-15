@@ -134,7 +134,7 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                         'title': _(message='Document properties'),
                         'submit_label': _(message='Scan')
                     },
-                    'name': 'appearance/generic_multiform_subtemplate.html'
+                    'name': 'appearance/partials/form/multiple.html'
                 }
             ]
         }

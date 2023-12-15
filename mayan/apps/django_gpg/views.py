@@ -150,7 +150,7 @@ class KeyQueryResultView(SingleObjectListView):
 
 
 class KeyQueryView(SimpleView):
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_keyserver_search
     view_permission = permission_keyserver_query
 

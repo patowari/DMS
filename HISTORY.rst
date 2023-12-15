@@ -123,8 +123,13 @@
   code after app module loading.
 - Reorganize make files. Remove unused and outdated targets. Move all Docker
   related targets to the Docker make file. Improve staging targets.
-- Show the logo in the login form.
-- Move the logo font to the `head` template.
+- Reorganize templates:
+
+  - Unify the blocks ``content`` and ``content_plain``.
+  - Show the logo in the login form.
+  - Move the logo font to the ``head`` template.
+  - Split templates into small components.
+  - Move templates into sub-folders and shorten their names.
 
 4.5.9 (XXXX-XX-XX)
 ==================

@@ -48,7 +48,7 @@ class SourceBackendWebForm(
                         'form_id': 'html5upload',
                         'is_multipart': True
                     },
-                    'name': 'appearance/generic_multiform_subtemplate.html'
+                    'name': 'appearance/partials/form/multiple.html'
                 }
             ]
         }

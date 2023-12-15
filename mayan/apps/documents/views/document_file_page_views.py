@@ -166,7 +166,7 @@ class DocumentFilePageView(ExternalObjectViewMixin, SimpleView):
     external_object_permission = permission_document_file_view
     external_object_pk_url_kwarg = 'document_file_page_id'
     external_object_queryset = DocumentFilePage.valid.all()
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_document_file_page_detail
 
     def get_extra_context(self):

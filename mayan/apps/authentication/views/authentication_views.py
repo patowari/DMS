@@ -251,7 +251,7 @@ class MayanPasswordChangeView(ViewIconMixin, PasswordChangeView):
     success_url = reverse_lazy(
         viewname='authentication:password_change_done'
     )
-    template_name = 'appearance/generic_form.html'
+    template_name = 'appearance/form_container.html'
     view_icon = icon_password_change
 
     def dispatch(self, *args, **kwargs):

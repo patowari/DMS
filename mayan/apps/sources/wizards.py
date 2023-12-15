@@ -21,7 +21,7 @@ from .icons import (
 
 
 class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
-    template_name = 'appearance/generic_wizard.html'
+    template_name = 'appearance/wizard.html'
     view_icon = icon_document_upload_wizard
 
     @classonlymethod

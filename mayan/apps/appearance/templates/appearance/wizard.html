@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}{% include 'appearance/partials/form_title.html' with non_html_title=True %}{% endblock %}
+{% block title %}{% include 'appearance/partials/title.html' with non_html_title=True %}{% endblock %}
 
 {% block content %}
     {{ wizard.management_form }}
@@ -13,12 +13,12 @@
 
             {% with wizard.form as form %}
             {% with 'true' as form_display_mode_table %}
-                {% include 'appearance/generic_form_subtemplate.html' %}
+                {% include 'appearance/partials/form/single.html' %}
             {% endwith %}
             {% endwith %}
         {% else %}
             {% with wizard.form as form %}
-                {% include 'appearance/generic_form_subtemplate.html' %}
+                {% include 'appearance/partials/form/single.html' %}
             {% endwith %}
         {% endif %}
     {% endwith %}
