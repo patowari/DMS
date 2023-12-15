@@ -17,6 +17,10 @@
 
     - Debian image from 12.1-slim to 12.2-slim.
 
+  - JavaScript
+
+    - jQuery from version 3.6.0 to 3.7.1.
+
   - Python
 
     - Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.1.14.

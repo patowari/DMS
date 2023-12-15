@@ -36,7 +36,7 @@ JavaScriptDependency(
 )
 JavaScriptDependency(
     label=_(message='jQuery'), module=__name__, name='jquery',
-    version_string='=3.6.0'
+    version_string='=3.7.1'
 )
 JavaScriptDependency(
     label=_(message='JQuery Form'), module=__name__, name='jquery-form',
