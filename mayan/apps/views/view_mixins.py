@@ -50,7 +50,7 @@ class ContentTypeViewMixin:
 
 class ExtraDataDeleteViewMixin:
     """
-    Mixin to populate the extra data needed for delete views
+    Mixin to populate the extra data needed for delete views.
     """
     def form_valid(self, form):
         if hasattr(self, 'get_instance_extra_data'):
@@ -211,7 +211,8 @@ class ExternalContentTypeObjectViewMixin(
     ContentTypeViewMixin, ExternalObjectViewMixin
 ):
     """
-    Mixin to retrieve an external object by content type from the URL pattern.
+    Mixin to retrieve an external object by content type from the URL
+    pattern.
     """
     external_object_pk_url_kwarg = 'object_id'
 
@@ -241,7 +242,7 @@ class ExtraContextViewMixin:
 
 class FormExtraKwargsViewMixin:
     """
-    Mixin that allows a view to pass extra keyword arguments to forms
+    Mixin that allows a view to pass extra keyword arguments to forms.
     """
     form_extra_kwargs = {}
 
@@ -372,7 +373,7 @@ class MultipleObjectViewMixin(SingleObjectMixin):
         self.view_mode_multiple = False
 
         # Use a custom queryset if provided; this is required for subclasses
-        # like DateDetailView
+        # like DateDetailView.
         if queryset is None:
             queryset = self.get_queryset()
 
@@ -423,7 +424,7 @@ class MultipleObjectViewMixin(SingleObjectMixin):
     def get_pk_list(self):
         # Accept pk_list even on POST request to allowing direct requests
         # to the view bypassing the initial GET request to submit the form.
-        # Example: when the view is called from a test or a custom UI
+        # Example: when the view is called from a test or a custom UI.
         result = self.request.GET.get(
             self.pk_list_key, self.request.POST.get(self.pk_list_key)
         )
@@ -436,15 +437,19 @@ class MultipleObjectViewMixin(SingleObjectMixin):
 
 class ObjectActionViewMixin:
     """
-    Mixin that performs a user action to a queryset
+    Mixin that performs a user action on a queryset.
     """
     error_message = _(
         'Unable to perform operation on object %(instance)s; %(exception)s.'
     )
     post_object_action_url = None
-    success_message_plural = _(message='Operation performed on %(count)d objects.')
+    success_message_plural = _(
+        message='Operation performed on %(count)d objects.'
+    )
     success_message_single = _(message='Operation performed on %(object)s.')
-    success_message_singular = _(message='Operation performed on %(count)d object.')
+    success_message_singular = _(
+        message='Operation performed on %(count)d object.'
+    )
     title_plural = _(message='Perform operation on %(count)d objects.')
     title_single = _(message='Perform operation on %(object)s.')
     title_singular = _(message='Perform operation on %(count)d object.')
@@ -485,7 +490,7 @@ class ObjectActionViewMixin:
             }
 
     def object_action(self, instance, form=None):
-        # User supplied method
+        # User supplied method.
         raise NotImplementedError
 
     def view_action(self, form=None):
@@ -510,8 +515,8 @@ class ObjectActionViewMixin:
             request=self.request
         )
 
-        # Allow get_post_object_action_url to override the redirect URL with a
-        # calculated URL after all objects are processed.
+        # Allow `get_post_object_action_url` to override the redirect URL
+        # with a calculated URL after all objects are processed.
         success_url = self.get_post_object_action_url()
         if success_url:
             self.success_url = success_url

@@ -232,7 +232,7 @@ class Link(TemplateObjectMixin):
             # Sometimes we are required to remove a key from the URL query.
             parsed_url = furl(
                 force_str(
-                    request.get_full_path() or request.META.get(
+                    s=request.get_full_path() or request.META.get(
                         'HTTP_REFERER', reverse(setting_home_view.value)
                     )
                 )
