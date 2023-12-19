@@ -85,7 +85,6 @@ class SettingValueEditView(FormView):
         self.object.do_value_set(
             value=form.cleaned_data['value']
         )
-        setting_cluster.do_configuration_file_save()
         messages.success(
             message=_(message='Setting updated successfully.'),
             request=self.request
@@ -96,8 +95,8 @@ class SettingValueEditView(FormView):
         if self.object.get_is_overridden():
             messages.warning(
                 message=_(
-                    'This setting is overridden by an environment variable. '
-                    'Changing its value will have no effect.'
+                    'This setting is overridden by an environment '
+                    'variable, changing its value will have no effect.'
                 ), request=self.request
             )
 
@@ -127,8 +126,12 @@ class SettingValueEditView(FormView):
 
 class SettingValueRevertView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'setting_global_name'
-    success_message_plural = _(message='%(count)d settings value reverted.')
-    success_message_single = _(message='Value of setting "%(object)s" reverted.')
+    success_message_plural = _(
+        message='%(count)d settings value reverted.'
+    )
+    success_message_single = _(
+        message='Value of setting "%(object)s" reverted.'
+    )
     success_message_singular = _(message='%(count)d setting value reverted.')
     view_icon = icon_setting_revert
     view_permission = permission_settings_edit

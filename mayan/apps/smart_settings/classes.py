@@ -8,6 +8,7 @@ import sys
 import yaml
 
 from django.apps import apps
+from django.db.utils import OperationalError, ProgrammingError
 from django.conf import settings
 from django.utils.encoding import force_str
 from django.utils.functional import Promise
@@ -16,7 +17,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.serialization import yaml_dump, yaml_load
 
-from .exceptions import SettingsException
+from .exceptions import SettingsException, SettingsExceptionRevert
 from .literals import (
     COMMAND_NAME_SETTINGS_REVERT, NAMESPACE_VERSION_INITIAL,
     SMART_SETTINGS_NAMESPACES_NAME
@@ -143,6 +144,20 @@ class SettingCluster(AppsModuleLoaderMixin):
         # the apps objects are created.
         ContentType.objects.clear_cache()
 
+    def do_settings_updated_clear(self):
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
+        )
+
+        queryset = UpdatedSetting.objects.all()
+
+        try:
+            queryset.delete()
+        except (OperationalError, ProgrammingError):
+            """
+            Non fatal. Non initialized installation. Ignore exception.
+            """
+
     def get_configuration_file_content(self):
         if settings.CONFIGURATION_FILE_IGNORE:
             return {}
@@ -156,6 +171,10 @@ class SettingCluster(AppsModuleLoaderMixin):
             return self.configuration_file_cache
 
     def get_data_dump(self, filter_term=None, namespace_name=None):
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
+        )
+
         dictionary = {}
 
         if not namespace_name:
@@ -180,18 +199,29 @@ class SettingCluster(AppsModuleLoaderMixin):
                 # namespace otherwise return always True to include all
                 # (or not None == True).
                 if (filter_term and filter_term.lower() in setting.global_name.lower()) or not filter_term:
-                    dictionary[setting.global_name] = Setting.express_promises(
-                        value=setting.value
-                    )
+                    try:
+                        updated_setting = UpdatedSetting.objects.get(
+                            global_name=setting.global_name
+                        )
+                    except (OperationalError, ProgrammingError, UpdatedSetting.DoesNotExist):
+                        expressed_value = Setting.express_promises(
+                            value=setting.value
+                        )
+                        dictionary[setting.global_name] = expressed_value
+                    else:
+                        dictionary[setting.global_name] = updated_setting.value_new
 
         return yaml_dump(data=dictionary, default_flow_style=False)
 
     def get_is_changed(self):
-        return any(
-            [
-                setting.get_has_value_new() for setting in self.setting_dict.values()
-            ]
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
         )
+
+        try:
+            return UpdatedSetting.objects.exists()
+        except (OperationalError, ProgrammingError):
+            return False
 
     def get_namespace(self, name):
         return self.namespace_dict[name]
@@ -361,7 +391,7 @@ class Setting:
                 Setting.express_promises(item) for item in value
             ]
         elif isinstance(value, Promise):
-            return force_str(value)
+            return force_str(s=value)
         else:
             return value
 
@@ -382,7 +412,6 @@ class Setting:
         self, namespace, global_name, default, choices=None, help_text=None,
         is_path=False, post_edit_function=None, validation_function=None
     ):
-        self._has_value_new = False
         self.choices = choices
         self.default = default
         self.help_text = help_text
@@ -480,17 +509,46 @@ class Setting:
             )
 
     def do_value_revert(self):
-        self.do_value_set(value=self.value)
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
+        )
+
+        if not self.get_has_value_new():
+            raise SettingsExceptionRevert(
+                _(
+                    'Cannot revert setting. Setting value has not been '
+                    'updated.'
+                )
+            )
+
+        updated_setting = UpdatedSetting.objects.get(
+            global_name=self.global_name
+        )
+
+        self.do_value_set(value=updated_setting.value_old)
+        updated_setting.delete()
 
     def do_value_set(self, value):
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
+        )
+
         raw_value = Setting.deserialize_value(value=value)
 
         self.value_raw_new = raw_value
 
         if self.value_raw_new != self.value:
-            self._has_value_new = True
+            updated_setting, created = UpdatedSetting.objects.update_or_create(
+                global_name=self.global_name, defaults={
+                    'value_new': self.value_raw_new,
+                    'value_old': self.value
+                }
+            )
         else:
-            self._has_value_new = False
+            queryset = UpdatedSetting.objects.filter(
+                global_name=self.global_name
+            )
+            queryset.delete()
 
     def get_default(self):
         return Setting.serialize_value(value=self.default)
@@ -498,7 +556,15 @@ class Setting:
     get_default.short_description = _(message='Default')
 
     def get_has_value_new(self):
-        return self._has_value_new
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
+        )
+
+        queryset = UpdatedSetting.objects.filter(
+            global_name=self.global_name
+        )
+
+        return queryset.exists()
 
     get_has_value_new.short_description = _(message='Modified')
     get_has_value_new.help_text = _(
@@ -515,10 +581,18 @@ class Setting:
     )
 
     def get_value_current(self):
+        UpdatedSetting = apps.get_model(
+            app_label='smart_settings', model_name='UpdatedSetting'
+        )
+
         has_value_new = self.get_has_value_new()
 
         if has_value_new:
-            return Setting.serialize_value(value=self.value_raw_new)
+            updated_setting = UpdatedSetting.objects.get(
+                global_name=self.global_name
+            )
+
+            return Setting.serialize_value(value=updated_setting.value_new)
         else:
             return self.serialized_value
 

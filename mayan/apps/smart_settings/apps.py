@@ -80,5 +80,6 @@ class SmartSettingsApp(MayanAppConfig):
             links=(link_setting_cluster_namespace_list,)
         )
 
+        setting_cluster.do_settings_updated_clear()
         setting_cluster.do_post_edit_function_call()
         setting_cluster.do_last_known_good_save()

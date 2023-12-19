@@ -11,6 +11,18 @@ from .icons import (
 from .permissions import permission_settings_edit, permission_settings_view
 
 
+def condition_has_value_new(context, resolved_object):
+    return resolved_object.get_has_value_new()
+
+
+def condition_has_value_new_and_local_storage_enabled(context, resolved_object):
+    return condition_has_value_new(
+        context=context, resolved_object=resolved_object
+    ) and condition_local_storage_enabled(
+        context=context, resolved_object=resolved_object
+    )
+
+
 def condition_local_storage_enabled(context, resolved_object):
     return not settings.COMMON_DISABLE_LOCAL_STORAGE
 
@@ -35,9 +47,9 @@ link_setting_edit = Link(
 )
 link_setting_revert = Link(
     args='resolved_object.global_name',
-    condition=condition_local_storage_enabled, icon=icon_setting_revert,
-    permission=permission_settings_edit, text=_(message='Revert'),
-    view='settings:setting_revert_view'
+    condition=condition_has_value_new_and_local_storage_enabled,
+    icon=icon_setting_revert, permission=permission_settings_edit,
+    text=_(message='Revert'), view='settings:setting_revert_view'
 )
 link_setting_namespace_detail = Link(
     args='resolved_object.name', icon=icon_setting_namespace_detail,
