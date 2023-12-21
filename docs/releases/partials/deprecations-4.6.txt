@@ -1,2 +1,2 @@
 - The Keycloak Docker Compose service will be removed from the
-  Docker Compose file.
+  Mayan EDMS Docker Compose file into a separate Docker Compose file.

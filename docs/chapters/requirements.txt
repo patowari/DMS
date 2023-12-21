@@ -42,8 +42,8 @@ Docker Compose
 --------------
 
 - RAM: 16 GB or more.
-- CPU: 64 bit, 8 cores or more, 2 GHz or faster, third generation of the
-  Intel Core processors (Core i7, i5, i3) "IvyBridge" or better.
+- CPU: 64 bit, 8 cores or more, 2 GHz or faster, third generation "IvyBridge"
+  of the Intel Core processors or better.
 - Storage: solid state drive.
 
 
