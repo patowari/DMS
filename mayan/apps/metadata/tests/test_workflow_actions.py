@@ -298,7 +298,6 @@ class DocumentMetadataEditActionViewTestCase(
 
         self._create_test_workflow_template_state_action(
             extra_backend_data={
-                # ~ 'metadata_types': self._test_metadata_type.pk
                 'metadata_type': self._test_metadata_type.pk
             }
         )
@@ -330,7 +329,6 @@ class DocumentMetadataEditActionViewTestCase(
 
         self._create_test_workflow_template_state_action(
             extra_backend_data={
-                # ~ 'metadata_types': self._test_metadata_type.pk
                 'metadata_type': self._test_metadata_type.pk
             }
         )
