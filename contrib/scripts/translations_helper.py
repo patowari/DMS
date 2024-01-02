@@ -192,7 +192,7 @@ class MessageProcessor:
         else:
             self.selected_languages = MessageProcessor.get_language_list()
 
-        command_manage = sh.Command('django-admin.py')
+        command_manage = sh.Command('django-admin')
         self.command_makemessages = command_manage.bake('makemessages')
         self.command_compilemessages = command_manage.bake('compilemessages')
 
