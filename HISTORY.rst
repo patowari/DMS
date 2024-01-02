@@ -25,7 +25,7 @@
 
     - Update use of ``psycopg2`` version to 2.x to ``psycopg`` version 3.1.14.
     - AMQP from 5.1.0 to 5.2.0.
-    - PIP from 23.2.1 to 23.3.1.
+    - PIP from 23.2.1 to 23.3.2.
     - Add the Django series version to the setup generation script.
     - ``django-test-migrations`` from 1.1.0 to 1.3.0.
     - ``redis`` from 4.6.0 to 5.0.1.
