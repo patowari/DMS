@@ -42,7 +42,7 @@
     - ``django-rosetta`` from 0.9.9 to 0.10.0.
     - ``django-silk`` from 5.0.3 to 5.0.3.
     - ``ipython`` from 8.14.0 to 8.18.1.
-    - ``Pillow`` from 10.0.0 to 10.1.0.
+    - ``Pillow`` from 10.0.0 to 10.2.0.
     - ``pypdf`` from 3.14.0 to 3.17.1.
     - ``qrcode`` from 7.3.1 to 7.4.2.
     - ``node-semver`` from 0.8.1 to 0.9.0.
