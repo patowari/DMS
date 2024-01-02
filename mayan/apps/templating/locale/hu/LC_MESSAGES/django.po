@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:19 permissions.py:6
 msgid "Templating"
-msgstr "Sablonozás"
+msgstr ""
 
 #: fields.py:21
 #, python-format
@@ -57,23 +57,23 @@ msgstr "Eredmény"
 
 #: forms.py:20
 msgid "The template string to be evaluated."
-msgstr "A kiértékelendő sablon karakterlánc."
+msgstr ""
 
 #: forms.py:21
 msgid "Template"
-msgstr "Sablon"
+msgstr ""
 
 #: links.py:11
 msgid "Sandbox"
-msgstr "Sandbox"
+msgstr ""
 
 #: permissions.py:10
 msgid "Use the template sandbox"
-msgstr "Használja a sablon sandboxot"
+msgstr "Sandbox használata"
 
 #: serializers.py:8
 msgid "Hex hash"
-msgstr "Hex hash"
+msgstr ""
 
 #: serializers.py:11
 msgid "Name"
@@ -81,7 +81,7 @@ msgstr "Név"
 
 #: serializers.py:14
 msgid "HTML"
-msgstr "HTML"
+msgstr ""
 
 #: serializers.py:17
 msgid "URL"
@@ -90,16 +90,16 @@ msgstr "URL"
 #: views.py:44
 #, python-format
 msgid "Template sandbox for: %s"
-msgstr "Sablon sandbox ehhez: %s"
+msgstr ""
 
 #: views.py:65
 #, python-format
 msgid "Template error; %(exception)s"
-msgstr "Sablon hiba; %(exception)s"
+msgstr ""
 
 #: widgets.py:69
 msgid "Filters"
-msgstr "Szűrők"
+msgstr ""
 
 #: widgets.py:76
 msgid "Tags"

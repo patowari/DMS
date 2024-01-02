@@ -4,17 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2023
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -122,7 +121,7 @@ msgstr "Jelölők dokumentumokhoz csatolása"
 
 #: permissions.py:13
 msgid "Create new tags"
-msgstr "Új jelölők készítése"
+msgstr "Új jelölők létrehozása"
 
 #: permissions.py:16
 msgid "Delete tags"
@@ -138,7 +137,7 @@ msgstr "Jelölők szerkesztése"
 
 #: permissions.py:25
 msgid "Remove tags from documents"
-msgstr "Jelölők levétele a dokumentumokról"
+msgstr "Címkék eltávolítása a dokumentumokról"
 
 #: search.py:11
 msgid "Tag label"
@@ -146,19 +145,19 @@ msgstr "Jelölő címke"
 
 #: search.py:14
 msgid "Tag color"
-msgstr "Jelölő színe"
+msgstr "Jelölő szín"
 
 #: search.py:28
 msgid "Document type"
-msgstr "Dokumentum típus"
+msgstr "Dokumentumtípus"
 
 #: search.py:31
 msgid "Document label"
-msgstr "Dokumentumcímke"
+msgstr ""
 
 #: search.py:34
 msgid "Document description"
-msgstr "Dokumentum leírása"
+msgstr ""
 
 #: search.py:37
 msgid "Document UUID"
@@ -166,11 +165,11 @@ msgstr "Dokumentum UUID"
 
 #: search.py:41
 msgid "Document file checksum"
-msgstr "Dokumentumfájl ellenőrző összege"
+msgstr "Dokumentumfájl ellenőrző összeg"
 
 #: search.py:44
 msgid "Document file MIME type"
-msgstr "Dokumentumfájl MIME típusa"
+msgstr ""
 
 #: serializers.py:12
 msgid "Documents URL"
@@ -289,7 +288,7 @@ msgstr "Nincsenek elérhető jelölők"
 #: views.py:210
 #, python-format
 msgid "Documents with the tag: %s"
-msgstr "Dokumentumok a címkével: %s"
+msgstr "Dokumentumok a jelölővel: %s"
 
 #: views.py:237
 msgid "Document has no tags attached"

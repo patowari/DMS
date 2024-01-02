@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
-# Tomasz Szymanowicz <alakdae@gmail.com>, 2023
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
-# tomkolp, 2023
+# Roberto Rosario, 2024
+# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
+# tomkolp, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,16 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
+#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
 #: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Szafki"
+
+#: apps.py:165 models.py:40
+msgid "Documents"
+msgstr "Dokumenty"
 
 #: events.py:11
 msgid "Cabinet created"
@@ -90,11 +94,11 @@ msgstr "Zwróć listę szafek zawierających dokument."
 msgid "get_cabinets()"
 msgstr "get_cabinets ()"
 
-#: model_mixins.py:50
+#: model_mixins.py:64
 msgid "The path to the cabinet including all ancestors."
 msgstr "Ścieżka do szafki obejmująca wszystkich przodków."
 
-#: model_mixins.py:52 serializers.py:32
+#: model_mixins.py:66 serializers.py:32
 msgid "Full path"
 msgstr "Pełna ścieżka"
 
@@ -109,10 +113,6 @@ msgstr "Krótki tekst identyfikujący szafkę."
 #: models.py:36
 msgid "Label"
 msgstr "Etykieta"
-
-#: models.py:40
-msgid "Documents"
-msgstr "Dokumenty"
 
 #: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"
@@ -282,12 +282,12 @@ msgstr "Dokument \"%(object)s\" pomyślnie dodany do szafek."
 #: views.py:195
 #, python-format
 msgid "%(count)d document added to cabinets successfully."
-msgstr "Dokument %(count)d został pomyślnie dodany do szafek."
+msgstr "Dokument został pomyślnie dodany do szafek (w ilości: %(count)d)."
 
 #: views.py:198
 #, python-format
 msgid "%(count)d documents added to cabinets successfully."
-msgstr "%(count)d dokumenty  pomyślnie dodano do szafek."
+msgstr "Dokument został pomyślnie dodany do szafek (w ilości: %(count)d)."
 
 #: views.py:200
 #, python-format
@@ -302,7 +302,7 @@ msgstr "Dodaj dokument \"%(object)s\" do szafek."
 #: views.py:202
 #, python-format
 msgid "Add %(count)d document to cabinets."
-msgstr "Dodaj dokument %(count)d do szafek."
+msgstr "Dodaj %(count)ddokument do szafek."
 
 #: views.py:220
 msgid "Cabinets to which the selected documents will be added."

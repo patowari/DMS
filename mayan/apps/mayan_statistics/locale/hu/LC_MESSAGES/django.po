@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2023
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Roberto Rosario, 2024
+# Csaba Tarjányi, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgstr "Típus"
 #. which the statistic will be updated
 #: apps.py:45
 msgid "Schedule"
-msgstr "Időzítés"
+msgstr "Ütemezés"
 
 #: apps.py:51
 msgid "Last update"
@@ -50,15 +50,15 @@ msgstr "Soha"
 
 #: classes.py:207
 msgid "Doughnut chart"
-msgstr "Fánk diagram"
+msgstr ""
 
 #: classes.py:212
 msgid "Line chart"
-msgstr "Vonaldiagram"
+msgstr ""
 
 #: classes.py:217
 msgid "Pie chart"
-msgstr "Kördiagram"
+msgstr ""
 
 #: links.py:15
 msgid "Namespace details"
@@ -121,11 +121,10 @@ msgstr "Nem található a \"%s\" statisztika"
 #: views.py:24
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
-"A Statisztika névterek logikai egységekre csoportosítják a statisztikákat."
 
 #: views.py:26
 msgid "No statistic namespaces available"
-msgstr "Nem állnak rendelkezésre statisztikai névterek"
+msgstr ""
 
 #: views.py:27
 msgid "Statistics namespaces"
@@ -133,11 +132,11 @@ msgstr "Statisztikai névterek"
 
 #: views.py:50
 msgid "Statistics are metrics and chart representations of existing data."
-msgstr "A statisztikák a meglévő adatok metrikái és diagramjai."
+msgstr ""
 
 #: views.py:53
 msgid "No statistic available"
-msgstr "Nem áll rendelkezésre statisztika"
+msgstr ""
 
 #: views.py:55
 #, python-format

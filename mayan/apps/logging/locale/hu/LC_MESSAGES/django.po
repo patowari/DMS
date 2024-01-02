@@ -4,17 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Tamás Benkovszky, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,11 +27,11 @@ msgstr "Naplózás"
 
 #: events.py:10
 msgid "Error log deleted"
-msgstr "Hibanapló törölve"
+msgstr ""
 
 #: links.py:15 views.py:36
 msgid "Global error log"
-msgstr "Globális hibanapló"
+msgstr ""
 
 #: links.py:26
 msgid "Delete"
@@ -40,7 +39,7 @@ msgstr "Törlés"
 
 #: links.py:31
 msgid "Errors"
-msgstr "Hibák"
+msgstr ""
 
 #: links.py:37
 msgid "Clear errors"
@@ -52,7 +51,7 @@ msgstr "Objektum"
 
 #: model_mixins.py:18
 msgid "App label"
-msgstr "Alkalmazáscímke"
+msgstr ""
 
 #: models.py:19 models.py:37
 msgid "Internal name"
@@ -60,19 +59,19 @@ msgstr "Belső név"
 
 #: models.py:24 models.py:34
 msgid "Error log"
-msgstr "Hibanapló"
+msgstr ""
 
 #: models.py:25
 msgid "Error logs"
-msgstr "Hibanaplók"
+msgstr ""
 
 #: models.py:51 models.py:63
 msgid "Error log partition"
-msgstr "Hibanapló-partíció"
+msgstr ""
 
 #: models.py:52
 msgid "Error log partitions"
-msgstr "Hibanapló-partíciók"
+msgstr ""
 
 #: models.py:66
 msgid "Date and time"
@@ -84,19 +83,19 @@ msgstr "Szöveg"
 
 #: models.py:75
 msgid "Error log partition entry"
-msgstr "Hibanapló partíció bejegyzés"
+msgstr "Hibanapló-partíció bejegyzés"
 
 #: models.py:76
 msgid "Error log partition entries"
-msgstr "Hibanapló-partíció bejegyzések"
+msgstr ""
 
 #: permissions.py:10
 msgid "Delete error log"
-msgstr "Hibanapló törlése"
+msgstr ""
 
 #: permissions.py:13
 msgid "View error log"
-msgstr "Hibanapló megtekintése"
+msgstr ""
 
 #: serializers.py:12
 msgid "Content type"
@@ -112,19 +111,19 @@ msgstr "URL"
 
 #: settings.py:18
 msgid "Disable logging message ANSI color codes."
-msgstr "Az üzenetek ANSI színkódjainak naplózásának letiltása."
+msgstr "Az üzenetek ANSI színkódos naplózásának letiltása."
 
 #: settings.py:24
 msgid "Automatically enable logging to all apps."
-msgstr "A naplózás automatikus engedélyezése az összes alkalmazáshoz."
+msgstr ""
 
 #: settings.py:30
 msgid "List of handlers to which logging messages will be sent."
-msgstr "Azon kezelők listája, amelyeknek naplózási üzeneteket küldenek."
+msgstr ""
 
 #: settings.py:35
 msgid "Level for the logging system."
-msgstr "A naplózási rendszer szintje."
+msgstr ""
 
 #: settings.py:41
 msgid "Path to the logfile that will track errors during production."
@@ -137,8 +136,6 @@ msgid ""
 "This view displays the error log of different objects. An empty list is a "
 "good thing."
 msgstr ""
-"Ez a nézet a különböző objektumok hibanaplóját jeleníti meg. Az üres lista "
-"jó dolog."
 
 #: views.py:34 views.py:101
 msgid "There are no error log entries"
@@ -147,7 +144,7 @@ msgstr "Nincsenek hibanapló bejegyzések"
 #: views.py:50
 #, python-format
 msgid "Clear error log entries for: %s"
-msgstr "Törölje a hibanapló bejegyzéseit a következőhöz: %s"
+msgstr ""
 
 #: views.py:57
 msgid "Object error log cleared successfully"
@@ -163,9 +160,8 @@ msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
-"Ez a nézet egy objektum hibanaplóját jeleníti meg. Az üres lista jó dolog."
 
-#: views.py:104
+#: views.py:105
 #, python-format
 msgid "Error log entries for: %s"
 msgstr "Hibanapló bejegyzések a következőhöz: %s"

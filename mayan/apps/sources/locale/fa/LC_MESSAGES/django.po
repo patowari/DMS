@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Nima Towhidi <nima.towhidi@gmail.com>, 2023
-# Roberto Rosario, 2023
-# Mehdi Amani <MehdiAmani@toorintan.com>, 2023
+# Nima Towhidi <nima.towhidi@gmail.com>, 2024
+# Mehdi Amani <MehdiAmani@toorintan.com>, 2024
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mehdi Amani <MehdiAmani@toorintan.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Persian (https://app.transifex.com/rosarior/teams/13584/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,11 +191,11 @@ msgstr "دیدن سورس اسناد موجود"
 msgid "Sources periodic"
 msgstr "منابع دوره ای"
 
-#: queues.py:17
+#: queues.py:18
 msgid "Handle source backend action background task"
 msgstr ""
 
-#: queues.py:21
+#: queues.py:22
 msgid "Check interval source"
 msgstr "بررسی منبع فاصله"
 

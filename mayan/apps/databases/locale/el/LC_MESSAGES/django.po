@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# pyrotech <anastasios@tutamail.com>, 2023
+# pyrotech <anastasios@tutamail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,19 +24,19 @@ msgstr ""
 msgid "Databases"
 msgstr ""
 
-#: classes.py:80
+#: classes.py:82
 msgid "Model fields"
 msgstr "Πεδία μοντέλου"
 
-#: classes.py:128
+#: classes.py:130
 msgid "Model related fields"
 msgstr "Πεδία σχετιζόμενα με το μοντέλο"
 
-#: classes.py:133
+#: classes.py:135
 msgid "Model properties"
 msgstr "Ιδιότητες μοντέλου"
 
-#: classes.py:138
+#: classes.py:140
 msgid "Model reverse fields"
 msgstr "Πεδία αντιστροφής μοντέλου"
 

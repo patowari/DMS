@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2023
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Dezső József <dejo60@gmail.com>, 2024
+# Csaba Tarjányi, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,15 +69,15 @@ msgstr "Dokumentum"
 
 #: models.py:31
 msgid "Data representing the handwritten signature."
-msgstr "A kézzel írt aláírást reprezentáló adatok."
+msgstr ""
 
 #: models.py:32
 msgid "Signature capture data"
-msgstr "Aláírásrögzítési adatok"
+msgstr ""
 
 #: models.py:36
 msgid "Vector representation of the handwritten signature."
-msgstr "A kézzel írott aláírás vektoros ábrázolása."
+msgstr ""
 
 #: models.py:37
 msgid "SVG signature capture data"
@@ -85,7 +85,7 @@ msgstr "SVG aláírásrögzítési adatok"
 
 #: models.py:40
 msgid "Print version of the captured signature."
-msgstr "A rögzített aláírás nyomtatott változata."
+msgstr ""
 
 #: models.py:41
 msgid "Text"
@@ -97,11 +97,11 @@ msgstr "Felhasználó"
 
 #: models.py:49
 msgid "Date and time created"
-msgstr "Létrehozás dátuma és ideje"
+msgstr ""
 
 #: models.py:53
 msgid "Date and time edited"
-msgstr "Dátum és idő szerkesztve"
+msgstr ""
 
 #: models.py:57
 msgid ""
@@ -109,9 +109,6 @@ msgid ""
 "relationship to the document. Can only contain letters, numbers, and "
 "underscores."
 msgstr ""
-"Ezt az értéket használja a rendszer, amikor erre az aláírás rögzítésére "
-"hivatkozik a dokumentummal kapcsolatban. Csak betűket, számokat és "
-"aláhúzásjeleket tartalmazhat."
 
 #: models.py:61 transformations.py:40
 msgid "Internal name"
@@ -131,7 +128,7 @@ msgstr "Aláírásrögzítések törlése"
 
 #: permissions.py:18
 msgid "Edit signature captures"
-msgstr "Aláírás rögzítések szerkesztése"
+msgstr "Aláírásrögzítés szerkesztése"
 
 #: permissions.py:22
 msgid "View signature captures"
@@ -155,23 +152,23 @@ msgstr "Aláírásrögzítő felhasználó felhasználóneve"
 
 #: search.py:35
 msgid "Document type label"
-msgstr "Dokumentumtípus címke"
+msgstr ""
 
 #: search.py:38
 msgid "Document label"
-msgstr "Dokumentumcímke"
+msgstr ""
 
 #: search.py:42
 msgid "User first name"
-msgstr "Felhasználó keresztneve"
+msgstr ""
 
 #: search.py:45
 msgid "User last name"
-msgstr "Felhasználó vezetékneve"
+msgstr ""
 
 #: search.py:48
 msgid "User username"
-msgstr "Felhasználói felhasználónév"
+msgstr "Felhasználó felhasználóneve"
 
 #: serializers.py:11
 msgid "Document URL"
@@ -201,15 +198,13 @@ msgid ""
 "Path to the Storage subclass to use when storing the cached signature "
 "capture files."
 msgstr ""
-"A Tárolás alosztály elérési útja a gyorsítótárazott aláírásrögzítési fájlok "
-"tárolásakor."
 
 #: settings.py:38
 msgid ""
 "Arguments to pass to the "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 msgstr ""
-"Argumentumokt a következőhöz: "
+"Argumentumok a következőhöz: "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 
 #: storages.py:15
@@ -217,8 +212,6 @@ msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the"
 " settings {} and {} for formatting errors."
 msgstr ""
-"Nem sikerült inicializálni a konverter aláírásrögzítési gyorsítótárát. "
-"Ellenőrizze a beállításokat {} és {} formázási hibákért."
 
 #: storages.py:21
 msgid "Signature captures cache"
@@ -249,7 +242,7 @@ msgstr "Aláírásrögzítés törlése: %s"
 #: views.py:100
 #, python-format
 msgid "Details of: %s"
-msgstr "Részletek: %s"
+msgstr ""
 
 #: views.py:116
 #, python-format
@@ -271,4 +264,4 @@ msgstr "A dokumentumnak nincs aláírásrögzítése"
 #: views.py:151
 #, python-format
 msgid "Signature captures for document: %s"
-msgstr "Aláírás rögzítése a következő dokumentumhoz: %s"
+msgstr ""

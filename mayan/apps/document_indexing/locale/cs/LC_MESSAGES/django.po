@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Jiri Fait <fait@orkasolutions.cz>, 2023
-# Jiří Podhorecký, 2023
-# Michal Švábík <snadno@lehce.cz>, 2023
+# Jiri Fait <fait@orkasolutions.cz>, 2024
+# Jiří Podhorecký, 2024
+# Michal Švábík <snadno@lehce.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,7 +119,7 @@ msgstr "Odstraní a vytvoří od začátku všechny rejstříky dokumentů"
 msgid "Rebuild indexes"
 msgstr "Znovu setsavit rejstříky"
 
-#: links.py:70 views/index_template_views.py:452
+#: links.py:70 views/index_template_views.py:451
 msgid "Reset indexes"
 msgstr "Resetujte indexy"
 
@@ -322,7 +322,7 @@ msgstr "Odstranit šablony indexu"
 msgid "View index templates"
 msgstr "Zobrazit šablony indexu"
 
-#: permissions.py:25 views/index_template_views.py:414
+#: permissions.py:25 views/index_template_views.py:413
 msgid "Rebuild index templates"
 msgstr "Znovu sestavte šablony rejtříků"
 
@@ -473,7 +473,7 @@ msgstr "Navigace: %s"
 msgid "Contents for index: %s"
 msgstr "Obsah rejstříku: %s"
 
-#: views/index_instance_views.py:143
+#: views/index_instance_views.py:142
 msgid ""
 "Assign the document type of this document to an index to have it appear in "
 "instances of those indexes organization units. "
@@ -481,11 +481,11 @@ msgstr ""
 "Přiřaďte typ dokumentu tohoto dokumentu k rejstříku, aby se zobrazoval v "
 "případech těchto organizačních jednotek rejstříků."
 
-#: views/index_instance_views.py:148
+#: views/index_instance_views.py:147
 msgid "This document is not in any index"
 msgstr "Tento dokument není v žádném rejstříku"
 
-#: views/index_instance_views.py:152
+#: views/index_instance_views.py:151
 #, python-format
 msgid "Indexes nodes containing document: %s"
 msgstr "Uzel rejstříku obsahuje dokument: %s"
@@ -534,7 +534,7 @@ msgstr "Smazat rejstřík: %s"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr "Dostupné typy dokumentů"
+msgstr ""
 
 #: views/index_template_views.py:138
 msgid "Document types linked"
@@ -584,31 +584,31 @@ msgstr ""
 msgid "Tree template nodes for index: %s"
 msgstr "Uzly stromové šablony pro rejstřík: %s"
 
-#: views/index_template_views.py:312
+#: views/index_template_views.py:311
 #, python-format
 msgid "Create child node of: %s"
 msgstr "Vytvořit podřízený uzel: %s"
 
-#: views/index_template_views.py:339
+#: views/index_template_views.py:338
 #, python-format
 msgid "Delete the index template node: %s?"
 msgstr "Odstranit uzel šablony rejstříku: %s?"
 
-#: views/index_template_views.py:364
+#: views/index_template_views.py:363
 #, python-format
 msgid "Edit the index template node: %s"
 msgstr "Upravte šablonu rejstříku uzlu: %s"
 
-#: views/index_template_views.py:385
+#: views/index_template_views.py:384
 #, python-format
 msgid "Rebuild index template: %s"
 msgstr "Znovu vytvořit šablonu rejstříku: %s"
 
-#: views/index_template_views.py:407
+#: views/index_template_views.py:406
 msgid "Index template queued for rebuild."
 msgstr "Šablona indexu ve frontě na opětovné sestavení."
 
-#: views/index_template_views.py:431
+#: views/index_template_views.py:430
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
@@ -617,7 +617,7 @@ msgstr[1] "Šablony indexu %(count)d ve frontě na opětovné sestavení."
 msgstr[2] "Šablony indexu %(count)d ve frontě na opětovné sestavení."
 msgstr[3] "Šablony rejstříku %(count)d ve frontě na opětovné sestavení."
 
-#: views/index_template_views.py:465
+#: views/index_template_views.py:464
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
@@ -626,6 +626,6 @@ msgstr[1] "indexy %(count)d resetovány."
 msgstr[2] "indexy %(count)d resetovány."
 msgstr[3] "%(count)d rejstříků resetováno."
 
-#: views/index_template_views.py:478
+#: views/index_template_views.py:477
 msgid "Index templates for which their instances will be deleted."
 msgstr "Šablony indexů, pro které budou jejich instance odstraněny."

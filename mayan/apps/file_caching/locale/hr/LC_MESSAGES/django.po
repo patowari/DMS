@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mario Jakovina <mario.jakovina@gmail.com>, 2023
+# Mario Jakovina <mario.jakovina@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2024\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,43 +56,43 @@ msgstr ""
 msgid "Purge cache"
 msgstr ""
 
-#: model_mixins.py:45
-msgid "Size at which the cache will start deleting old entries."
-msgstr ""
-
-#: model_mixins.py:47 models.py:28
-msgid "Maximum size"
-msgstr ""
-
-#: model_mixins.py:54
+#: model_mixins.py:39
 msgid "Unknown"
 msgstr ""
 
-#: model_mixins.py:64
-msgid "Partition count"
+#: model_mixins.py:57
+msgid "Size at which the cache will start deleting old entries."
 msgstr ""
 
-#: model_mixins.py:65
-msgid "Total cached objects."
+#: model_mixins.py:59 models.py:31
+msgid "Maximum size"
 msgstr ""
 
 #: model_mixins.py:70
-msgid "Partition file count"
+msgid "Partition count"
 msgstr ""
 
 #: model_mixins.py:71
+msgid "Total cached objects."
+msgstr ""
+
+#: model_mixins.py:78
+msgid "Partition file count"
+msgstr ""
+
+#: model_mixins.py:80
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:90 model_mixins.py:286
+#: model_mixins.py:113 model_mixins.py:324
 msgid "Current size"
 msgstr ""
 
-#: model_mixins.py:91
+#: model_mixins.py:115
 msgid "Current size of the cache."
 msgstr ""
 
-#: model_mixins.py:288
+#: model_mixins.py:326
 msgid "Current size of the cache partition."
 msgstr ""
 
@@ -100,55 +100,55 @@ msgstr ""
 msgid "Internal name of the defined storage for this cache."
 msgstr ""
 
-#: models.py:22
+#: models.py:23
 msgid "Defined storage name"
 msgstr ""
 
-#: models.py:25
+#: models.py:28
 msgid "Maximum size of the cache in bytes."
 msgstr ""
 
-#: models.py:33 models.py:73
+#: models.py:36 models.py:76
 msgid "Cache"
 msgstr ""
 
-#: models.py:34
+#: models.py:37
 msgid "Caches"
 msgstr ""
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "Ime"
 
-#: models.py:81 models.py:104
+#: models.py:84 models.py:107
 msgid "Cache partition"
 msgstr ""
 
-#: models.py:82
+#: models.py:85
 msgid "Cache partitions"
 msgstr ""
 
-#: models.py:107
+#: models.py:110
 msgid "Date time"
 msgstr ""
 
-#: models.py:110
+#: models.py:113
 msgid "Filename"
 msgstr ""
 
-#: models.py:113
+#: models.py:116
 msgid "File size"
 msgstr ""
 
-#: models.py:117
+#: models.py:120
 msgid "Times this cache partition file has been accessed."
 msgstr ""
 
-#: models.py:124
+#: models.py:127
 msgid "Cache partition file"
 msgstr ""
 
-#: models.py:125
+#: models.py:128
 msgid "Cache partition files"
 msgstr ""
 
@@ -184,26 +184,26 @@ msgid ""
 " a file being requested, before giving up."
 msgstr ""
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr ""
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr ""
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr ""
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr ""
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr ""
 
@@ -212,12 +212,12 @@ msgstr ""
 msgid "%(count)d caches submitted for purging."
 msgstr ""
 
-#: views.py:128
+#: views.py:130
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr ""
 
-#: views.py:136
+#: views.py:139
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] ""

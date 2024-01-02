@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2020-03-28 07:24+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -84,15 +84,15 @@ msgstr ""
 msgid "Date time"
 msgstr ""
 
-#: model_mixins.py:82
+#: model_mixins.py:83
 msgid "Unnamed file"
 msgstr ""
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid "Size"
 msgstr ""
 
-#: model_mixins.py:108 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:48 serializers.py:15
 msgid "User"
 msgstr ""
 

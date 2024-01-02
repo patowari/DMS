@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:18 settings.py:11
+#: apps.py:19 settings.py:11
 msgid "Lock manager"
 msgstr "Zárolás kezelő"
 
 #: models.py:15
 msgid "Creation datetime"
-msgstr "Létrehozás dátumideje"
+msgstr "Létrehozás dátuma és ideje"
 
 #: models.py:19
 msgid "Timeout"
@@ -60,5 +60,3 @@ msgid ""
 "Default amount of time in seconds after which a resource lock will be "
 "automatically released."
 msgstr ""
-"Az alapértelmezett időtartam másodpercben, amely után az erőforrás zárolása "
-"automatikusan feloldódik."

@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# mic <winterfall24@gmail.com>, 2023
-# Daniel Winiarski <daniel.winiarski.dw@gmail.com>, 2023
-# Marcin Lozynski <mlozynski@wp.pl>, 2023
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
-# Tomasz Szymanowicz <alakdae@gmail.com>, 2023
-# tomkolp, 2023
+# mic <winterfall24@gmail.com>, 2024
+# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
+# Marcin Lozynski <mlozynski@wp.pl>, 2024
+# Daniel Winiarski <daniel.winiarski.dw@gmail.com>, 2024
+# tomkolp, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: tomkolp, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:26 classes.py:204 links.py:27
+#: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
 msgstr "Listy ACL"
 
@@ -77,13 +77,13 @@ msgstr "Uprawnienia"
 msgid "Global ACLs"
 msgstr "Globalne listy ACL"
 
-#: managers.py:274
+#: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
 msgstr ""
 "Obiekt \"%s\" nie jest modelem i nie może być sprawdzony pod kątem dostępu."
 
-#: managers.py:294
+#: managers.py:293
 #, python-format
 msgid "Insufficient access for: %s"
 msgstr "Niewystarczający dostęp dla: %s"

@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,27 +23,27 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
-msgstr "Dokumentumletöltések"
+msgstr ""
 
 #: classes.py:49
 msgid "Document_file_bundle.zip"
-msgstr "Document_file_bundle.zip"
+msgstr ""
 
 #: classes.py:52
 msgid "Compressed document files"
-msgstr "Tömörített dokumentumfájlok"
+msgstr ""
 
 #: events.py:6 queues.py:7
 msgid "Documents downloads"
-msgstr "Dokumentumok letöltése"
+msgstr "Dokumentum letöltések"
 
 #: events.py:10
 msgid "Document file downloaded"
-msgstr "Dokumentumfájl letöltve"
+msgstr ""
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr "Dokumentumfájl azonosítója"
+msgstr ""
 
 #: forms.py:11
 msgid "Document"
@@ -51,19 +51,19 @@ msgstr "Dokumentum"
 
 #: forms.py:19
 msgid "Document file"
-msgstr "Dokumentumfájl"
+msgstr ""
 
 #: forms.py:27
 msgid "Include"
-msgstr "Tartalmazza"
+msgstr ""
 
 #: links.py:12 links.py:18
 msgid "Download files"
-msgstr "Fájlok letöltése"
+msgstr "Letöltési fájlok"
 
 #: links.py:24
 msgid "Quick download"
-msgstr "Gyors letöltés"
+msgstr ""
 
 #: literals.py:4
 msgid ""
@@ -71,16 +71,14 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
-"A dokumentumfájlokat tömörítettük, és letölthetők a következő linkről: {{ "
-"download_url }} vagy a letöltési területről ({{ download_list_url }})."
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr "Dokumentumfájlok letöltésre készen."
+msgstr ""
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr "Dokumentumfájlok letöltése"
+msgstr ""
 
 #: queues.py:13
 msgid "Generate a compressed document file bundle"
@@ -91,16 +89,12 @@ msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
 msgstr ""
-"Sablon a dokumentumletöltési üzenet törzsszövegéhez. Tartalmazhat HTML-t. "
-"Elérhető változók: {}"
 
 #: settings.py:27
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
 msgstr ""
-"Sablon a dokumentumletöltési üzenet tárgysorához. Nem tartalmazhat HTML-t. "
-"Elérhető változók: {}"
 
 #: views.py:24
 #, python-format
@@ -113,7 +107,7 @@ msgstr ""
 #: views.py:33
 #, python-format
 msgid "%(count)d document files queued for download."
-msgstr "%(count)d dokumentumfájlok letöltésre várnak."
+msgstr "%(count)d dokumentumfájl letöltésre vár."
 
 #: views.py:36
 #, python-format
@@ -123,17 +117,17 @@ msgstr "A \"%(object)s\" dokumentumfájl letöltési sorba áll."
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
-msgstr "%(count)d dokumentumfájl letöltésre vár."
+msgstr ""
 
 #: views.py:41
 #, python-format
 msgid "Download files of %(count)d documents"
-msgstr "Töltse le a %(count)d dokumentumok fájljait"
+msgstr "%(count)d dokumentumfájl letöltése"
 
 #: views.py:42
 #, python-format
 msgid "Download files of document: %(object)s"
-msgstr "A következő dokumentum fájljainak letöltése: %(object)s"
+msgstr ""
 
 #: views.py:43
 #, python-format
@@ -145,5 +139,3 @@ msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
-"A folyamat a háttérben történik. A dokumentumfájlok elérhetők lesznek a "
-"letöltési területen."

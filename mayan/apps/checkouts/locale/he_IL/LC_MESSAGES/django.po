@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Ovadia Ovadia, 2023
+# Ovadia Ovadia, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Ovadia Ovadia, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:41 events.py:6 links.py:33
+#: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
 msgstr "הוצאות מסמכים מהארכיון"
 
@@ -80,23 +80,23 @@ msgstr "כן"
 msgid "No"
 msgstr "לא"
 
-#: links.py:40
+#: links.py:39
 msgid "Check out document"
 msgstr "הוצא את המסמך מהארכיון"
 
-#: links.py:44
+#: links.py:43
 msgid "Check out"
 msgstr "הוצאה מהארכיון"
 
-#: links.py:51
+#: links.py:48
 msgid "Check in document"
 msgstr "החזר מסמך לארכיון"
 
-#: links.py:55
+#: links.py:53
 msgid "Check in"
 msgstr "החזרה לארכיון"
 
-#: links.py:61
+#: links.py:59
 msgid "Check in/out"
 msgstr "החזרה/הוצאה לארכיון"
 

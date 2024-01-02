@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2023
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Vasyl Olenchenko <olenchenko@gmail.com>, 2024
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +21,16 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
+#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
 #: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Кабінети"
+
+#: apps.py:165 models.py:40
+msgid "Documents"
+msgstr "Документи"
 
 #: events.py:11
 msgid "Cabinet created"
@@ -88,11 +92,11 @@ msgstr "Повернути список кабінетів, що містять 
 msgid "get_cabinets()"
 msgstr ""
 
-#: model_mixins.py:50
+#: model_mixins.py:64
 msgid "The path to the cabinet including all ancestors."
 msgstr "Шлях до кабінету, включаючи всіх предків."
 
-#: model_mixins.py:52 serializers.py:32
+#: model_mixins.py:66 serializers.py:32
 msgid "Full path"
 msgstr "Повний шлях"
 
@@ -107,10 +111,6 @@ msgstr "Короткий текст, який використовується �
 #: models.py:36
 msgid "Label"
 msgstr "Мітка"
-
-#: models.py:40
-msgid "Documents"
-msgstr "Документи"
 
 #: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"

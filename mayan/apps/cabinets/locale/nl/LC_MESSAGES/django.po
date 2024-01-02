@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
-# e6bc1d20d3f0031709c3c11db1061ebc_be0a371 <8b4e580508477646e97982ebad39e3af_312311>, 2023
-# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
-# bwakkie <bwakkie@gmail.com>, 2023
+# e6bc1d20d3f0031709c3c11db1061ebc_be0a371 <8b4e580508477646e97982ebad39e3af_312311>, 2024
+# Roberto Rosario, 2024
+# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
+# bwakkie <bwakkie@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: bwakkie <bwakkie@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: bwakkie <bwakkie@gmail.com>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,16 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
+#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
 #: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Rekken"
+
+#: apps.py:165 models.py:40
+msgid "Documents"
+msgstr "Documenten"
 
 #: events.py:11
 msgid "Cabinet created"
@@ -36,7 +40,7 @@ msgstr "Rek aangemaakt"
 
 #: events.py:14
 msgid "Cabinet deleted"
-msgstr "Kabinet verwijderd"
+msgstr ""
 
 #: events.py:17
 msgid "Cabinet edited"
@@ -90,17 +94,17 @@ msgstr "Maak een lijst met rekken waarin het document voorkomt."
 msgid "get_cabinets()"
 msgstr "get_cabinets()"
 
-#: model_mixins.py:50
+#: model_mixins.py:64
 msgid "The path to the cabinet including all ancestors."
 msgstr "Het pad naar het rek inclusief alle bovenliggende rekken"
 
-#: model_mixins.py:52 serializers.py:32
+#: model_mixins.py:66 serializers.py:32
 msgid "Full path"
 msgstr "Volledig pad"
 
 #: models.py:32 serializers.py:41
 msgid "Parent"
-msgstr "Ouder"
+msgstr ""
 
 #: models.py:35
 msgid "A short text used to identify the cabinet."
@@ -109,10 +113,6 @@ msgstr "Een korte tekst om het rek te herkennen."
 #: models.py:36
 msgid "Label"
 msgstr "Label"
-
-#: models.py:40
-msgid "Documents"
-msgstr "Documenten"
 
 #: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"
@@ -189,7 +189,7 @@ msgstr "Lijst van onderliggende rekken"
 
 #: serializers.py:18
 msgid "Children"
-msgstr "Kinderen"
+msgstr ""
 
 #: serializers.py:23
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: serializers.py:25
 msgid "Documents URL"
-msgstr "Documenten-URL"
+msgstr ""
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
@@ -209,7 +209,7 @@ msgstr ""
 
 #: serializers.py:35
 msgid "Parents URL"
-msgstr "URL van ouders"
+msgstr ""
 
 #: serializers.py:51
 msgid "URL"
@@ -218,16 +218,14 @@ msgstr "URL"
 #: serializers.py:84
 msgid "Primary key of the document to add to the cabinet."
 msgstr ""
-"Primaire sleutel van het document dat aan de kast moet worden toegevoegd."
 
 #: serializers.py:85 serializers.py:94
 msgid "Document ID"
-msgstr "Document-ID"
+msgstr ""
 
 #: serializers.py:93
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
-"Primaire sleutel van het document dat uit de kast moet worden verwijderd."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
@@ -369,4 +367,4 @@ msgstr "Rekken waaraan het document wordt toegevoegd."
 
 #: workflow_actions.py:83
 msgid "Cabinets from which the document will be removed"
-msgstr "Kasten waaruit het document wordt verwijderd"
+msgstr ""

@@ -4,22 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Jesaja Everling <jeverling@gmail.com>, 2023
-# Felix <felix.com@gmx.com>, 2023
-# Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
-# Berny <berny@bernhard-marx.de>, 2023
-# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
-# Marvin Haschker <marvin@haschker.me>, 2023
-# Roberto Rosario, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# Jesaja Everling <jeverling@gmail.com>, 2024
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
+# Felix <felix.com@gmx.com>, 2024
+# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
+# Roberto Rosario, 2024
+# Berny <berny@bernhard-marx.de>, 2024
+# Marvin Haschker <marvin@haschker.me>, 2024
+# Mathias Behrle <mathiasb@m9s.biz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +47,7 @@ msgstr "Beschreibung"
 msgid "Type"
 msgstr "Typ"
 
-#: apps.py:49 classes.py:220
+#: apps.py:49 classes.py:221
 msgid "Other data"
 msgstr "Andere Daten"
 
@@ -55,7 +55,7 @@ msgstr "Andere Daten"
 msgid "Declared by"
 msgstr "Deklariert von"
 
-#: apps.py:57 classes.py:218
+#: apps.py:57 classes.py:219
 msgid "Version"
 msgstr "Version"
 
@@ -63,7 +63,7 @@ msgstr "Version"
 msgid "Environment"
 msgstr "Umgebung"
 
-#: apps.py:64 classes.py:220
+#: apps.py:64 classes.py:221
 msgid "Check"
 msgstr "Überprüfen"
 
@@ -75,62 +75,62 @@ msgstr "Name"
 msgid "App"
 msgstr "App"
 
-#: classes.py:219 classes.py:950
+#: classes.py:220 classes.py:961
 msgid "Environments"
 msgstr "Umgebungen"
 
-#: classes.py:318
+#: classes.py:329
 msgid "Need to specify at least one: app_label or module."
 msgstr ""
 "Es muss wenigstens eines von beiden angegeben werden: app_label oder Modul."
 
-#: classes.py:323
+#: classes.py:334
 #, python-format
 msgid "Dependency \"%s\" already registered."
 msgstr "Abhängigkeit \"%s\" bereits registriert."
 
-#: classes.py:374
+#: classes.py:385
 #, python-format
 msgid "Installing package: %s... "
 msgstr "Installiere Paket: %s... "
 
-#: classes.py:381
+#: classes.py:392
 msgid "Already installed."
 msgstr "Bereits installiert."
 
-#: classes.py:386 classes.py:393 classes.py:399
+#: classes.py:397 classes.py:404 classes.py:410
 msgid "Complete."
 msgstr "Vollständig."
 
-#: classes.py:426
+#: classes.py:437
 msgid "Installed and correct version"
 msgstr "Installierte und korrekte Version"
 
-#: classes.py:428
+#: classes.py:439
 msgid "Missing or incorrect version"
 msgstr "Fehlende oder inkorrekte Version"
 
-#: classes.py:465
+#: classes.py:476
 msgid "None"
 msgstr "Keine"
 
-#: classes.py:474
+#: classes.py:485
 msgid "Not specified"
 msgstr "Nicht spezifiziert"
 
-#: classes.py:477
+#: classes.py:488
 msgid "Patching files... "
 msgstr "Dateien werden gepatcht ... "
 
-#: classes.py:505
+#: classes.py:516
 msgid "Executables that are called directly by the code."
 msgstr "Programme, die direkt durch den Code aufgerufen werden."
 
-#: classes.py:507
+#: classes.py:518
 msgid "Binary"
 msgstr "Binärdatei"
 
-#: classes.py:524
+#: classes.py:535
 msgid ""
 "JavaScript libraries downloaded the from NPM registry and used for front-end"
 " functionality."
@@ -138,51 +138,51 @@ msgstr ""
 "JavaScript Bibliotheken, die aus der NPM Registry heruntergeladen werden und"
 " für die Front-End-Funktionalität benötigt werden."
 
-#: classes.py:527
+#: classes.py:538
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:559 classes.py:853
+#: classes.py:570 classes.py:864
 msgid "Downloading... "
 msgstr "Herunterladen... "
 
-#: classes.py:564
+#: classes.py:575
 msgid "Verifying... "
 msgstr "Verifizieren... "
 
-#: classes.py:569 classes.py:858
+#: classes.py:580 classes.py:869
 msgid "Extracting... "
 msgstr "Entpacken... "
 
-#: classes.py:779
+#: classes.py:790
 msgid "Python packages downloaded from PyPI."
 msgstr "Pythonpakete, die von PyPI heruntergeladen werden."
 
-#: classes.py:781
+#: classes.py:792
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:833
+#: classes.py:844
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "Von fonts.googleapis.com heruntergeladene Schriftarten."
 
-#: classes.py:835
+#: classes.py:846
 msgid "Google font"
 msgstr "Google-Schriftart"
 
-#: classes.py:931
+#: classes.py:942
 msgid "Declared in app"
 msgstr "In App deklariert"
 
-#: classes.py:932
+#: classes.py:943
 msgid "Show dependencies by the app that declared them."
 msgstr "Abhängigkeiten nach der deklarierenden App anzeigen."
 
-#: classes.py:936
+#: classes.py:947
 msgid "Class"
 msgstr "Klasse"
 
-#: classes.py:937
+#: classes.py:948
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -190,11 +190,11 @@ msgstr ""
 "Unterschiedliche Klassen von Abhängigkeiten anzeigen. Klassen sind "
 "üblicherweise unterteilt nach Sprache oder Dateityp der Abhängigkeit."
 
-#: classes.py:942
+#: classes.py:953
 msgid "State"
 msgstr "Status"
 
-#: classes.py:943
+#: classes.py:954
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -205,7 +205,7 @@ msgstr ""
 "False (Falsch) bedeutet eine fehlende oder inkorrekte Version der "
 "Abhängigkeit."
 
-#: classes.py:951
+#: classes.py:962
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Language-Team: Thai (https://app.transifex.com/rosarior/teams/13584/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,57 +90,57 @@ msgstr ""
 msgid "%(object)s created successfully."
 msgstr ""
 
-#: generics.py:724
+#: generics.py:723
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr ""
 
-#: generics.py:734
+#: generics.py:733
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr ""
 
-#: generics.py:797
+#: generics.py:796
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:909
+#: generics.py:908
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr ""
 
-#: generics.py:919
+#: generics.py:918
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr ""
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:989
+#: generics.py:988
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:990
+#: generics.py:989
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:991
+#: generics.py:990
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -214,46 +214,46 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: view_mixins.py:426
+#: view_mixins.py:417
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr ""
 
-#: view_mixins.py:452
+#: view_mixins.py:443
 #, python-format
 msgid "Unable to perform operation on object %(instance)s; %(exception)s."
 msgstr ""
 
-#: view_mixins.py:455
+#: view_mixins.py:447
 #, python-format
 msgid "Operation performed on %(count)d objects."
 msgstr ""
 
-#: view_mixins.py:456
+#: view_mixins.py:449
 #, python-format
 msgid "Operation performed on %(object)s."
 msgstr ""
 
-#: view_mixins.py:457
+#: view_mixins.py:451
 #, python-format
 msgid "Operation performed on %(count)d object."
 msgstr ""
 
-#: view_mixins.py:458
+#: view_mixins.py:453
 #, python-format
 msgid "Perform operation on %(count)d objects."
 msgstr ""
 
-#: view_mixins.py:459
+#: view_mixins.py:454
 #, python-format
 msgid "Perform operation on %(object)s."
 msgstr ""
 
-#: view_mixins.py:460
+#: view_mixins.py:455
 #, python-format
 msgid "Perform operation on %(count)d object."
 msgstr ""
 
-#: view_mixins.py:544
+#: view_mixins.py:539
 msgid "Object"
 msgstr ""

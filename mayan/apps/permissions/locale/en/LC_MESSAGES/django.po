@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2019-12-13 05:15+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:44 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr ""
 
@@ -26,8 +26,8 @@ msgstr ""
 msgid "Group count"
 msgstr ""
 
-#: classes.py:66
-msgid "Insufficient permissions."
+#: classes.py:65
+msgid "Insufficient permission."
 msgstr ""
 
 #: dashboard_widgets.py:13
@@ -70,12 +70,12 @@ msgstr ""
 msgid "Permission count"
 msgstr ""
 
-#: model_mixins.py:88
+#: model_mixins.py:89
 #, python-format
 msgid "Unknown or obsolete permission: %s"
 msgstr ""
 
-#: model_mixins.py:100
+#: model_mixins.py:102
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
 msgstr ""
@@ -92,15 +92,15 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr ""
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr ""
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr ""
 

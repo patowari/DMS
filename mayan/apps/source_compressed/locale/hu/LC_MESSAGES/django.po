@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
-# Csaba Tarjányi, 2023
+# Roberto Rosario, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,8 +30,6 @@ msgid ""
 "Controls whether or not the uploaded file will be uncompressed and processed"
 " and individual files."
 msgstr ""
-"Azt szabályozza, hogy a feltöltött fájl tömörítetlen és feldolgozott "
-"legyen-e vagy sem, valamint az egyes fájlokat."
 
 #: source_backends/literals.py:8 source_backends/literals.py:13
 msgid "Always"
@@ -51,17 +49,17 @@ msgstr "Kitömörítés"
 
 #: source_backends/mixins.py:39
 msgid "Whether to expand or not compressed archives."
-msgstr "Kell-e kibontani vagy sem a tömörített archívumot."
+msgstr "Kell-e kibontani vagy sem a tömörített archívumokat."
 
-#: source_backends/mixins.py:57
+#: source_backends/mixins.py:58
 msgid "Decompression"
 msgstr "Kibontás"
 
-#: source_backends/mixins.py:90
+#: source_backends/mixins.py:91
 msgid "Expand compressed files"
 msgstr "Tömörített fájlok kibontása"
 
-#: source_backends/mixins.py:92
+#: source_backends/mixins.py:93
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""
 "A tömörített fájlban lévő fájlok feltöltése különálló dokumentumokként."

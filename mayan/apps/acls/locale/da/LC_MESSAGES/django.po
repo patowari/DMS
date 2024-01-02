@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Mads L. Nielsen <sirlundgaard@gmail.com>, 2023
-# Rasmus Kierudsen <tebrasso@gmail.com>, 2023
+# Mads L. Nielsen <sirlundgaard@gmail.com>, 2024
+# Rasmus Kierudsen <tebrasso@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Rasmus Kierudsen <tebrasso@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Rasmus Kierudsen <tebrasso@gmail.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:26 classes.py:204 links.py:27
+#: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
 msgstr "ACLs"
 
@@ -71,12 +71,12 @@ msgstr "Tilladelse"
 msgid "Global ACLs"
 msgstr ""
 
-#: managers.py:274
+#: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
 msgstr ""
 
-#: managers.py:294
+#: managers.py:293
 #, python-format
 msgid "Insufficient access for: %s"
 msgstr "Utilstrækkelig adgang til: %s"

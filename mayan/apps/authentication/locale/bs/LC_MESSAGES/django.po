@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -114,25 +114,25 @@ msgstr "Prijava"
 msgid "Sign in"
 msgstr "Prijavite se"
 
-#: templates/authentication/login.html:62
-#: templates/authentication/login.html:72
-#: templates/authentication/login.html:86
+#: templates/authentication/login.html:67
+#: templates/authentication/login.html:77
+#: templates/authentication/login.html:91
 msgid "Save"
 msgstr "Sačuvati"
 
-#: templates/authentication/login.html:62
-#: templates/authentication/login.html:72
-#: templates/authentication/login.html:86
+#: templates/authentication/login.html:67
+#: templates/authentication/login.html:77
+#: templates/authentication/login.html:91
 #: templates/authentication/password_reset_confirm.html:29
 #: templates/authentication/password_reset_form.html:29
 msgid "Submit"
 msgstr "Podnijeti"
 
-#: templates/authentication/login.html:76
+#: templates/authentication/login.html:81
 msgid "Cancel"
 msgstr "Otkazati"
 
-#: templates/authentication/login.html:98
+#: templates/authentication/login.html:103
 msgid "Forgot your password?"
 msgstr "Zaboravili lozinku?"
 
@@ -159,61 +159,61 @@ msgstr "Prijava na stranicu"
 msgid "Password reset email sent!"
 msgstr "Resetovana lozinka poslata na vaš email!"
 
-#: views/authentication_views.py:161
+#: views/authentication_views.py:160
 msgid "Next"
 msgstr ""
 
-#: views/authentication_views.py:167
+#: views/authentication_views.py:166
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "Korak %(step)d od %(total_steps)d: %(step_label)s"
 
-#: views/authentication_views.py:237
+#: views/authentication_views.py:238
 msgid "Your password has been successfully changed."
 msgstr "Vaš password je uspješno promjenjen"
 
-#: views/authentication_views.py:247
+#: views/authentication_views.py:249
 msgid "Current user password change"
 msgstr "Promjeniti trenutni pasvord"
 
-#: views/authentication_views.py:259
+#: views/authentication_views.py:261
 msgid "Changing the password is not allowed for this account."
 msgstr ""
 
-#: views/authentication_views.py:331
+#: views/authentication_views.py:334
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Zahtev za promjenu lozinke izvršen %(count)d korisnika"
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:337
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Zahtev za promjenu lozinke izvršen %(count)d korisnika"
 
-#: views/authentication_views.py:351
+#: views/authentication_views.py:354
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
 msgstr ""
 
-#: views/authentication_views.py:365
+#: views/authentication_views.py:368
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: views/authentication_views.py:376
+#: views/authentication_views.py:379
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Izmjenite lozinku korisnika: %s"
 
-#: views/authentication_views.py:400
+#: views/authentication_views.py:403
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Uspešno resetovanje lozinke za korisnika: %s"
 
-#: views/authentication_views.py:406
+#: views/authentication_views.py:409
 #, python-format
 msgid "Error reseting password for user \"%(user)s\": %(error)s"
 msgstr "Greška resetovanja lozinke za korisnika \"%(user)s\": %(error)s"

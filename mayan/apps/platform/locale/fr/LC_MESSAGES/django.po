@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# PatrickHetu <patrick.hetu@gmail.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
+# PatrickHetu <patrick.hetu@gmail.com>, 2024
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,31 +21,35 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:14 permissions.py:6 settings.py:12
+#: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
 msgstr "Plateforme"
 
-#: classes.py:227
+#: classes.py:240
 msgid "Template for entrypoint.sh file inside a Docker image."
 msgstr "Modèle pour le fichier entrypoint.sh dans une image Docker."
 
-#: classes.py:242
-msgid "Template that generates a Dockerfile file."
-msgstr "Modèle qui génère un fichier Dockerfile."
+#: classes.py:255
+msgid "Template that generates the Docker Compose file."
+msgstr ""
 
-#: classes.py:257
+#: classes.py:415
 msgid "Template for Supervisord inside a Docker image."
 msgstr "Modèle pour Supervisord dans une image Docker."
 
-#: classes.py:275
+#: classes.py:433
+msgid "Template that generates a Dockerfile file."
+msgstr "Modèle qui génère un fichier Dockerfile."
+
+#: classes.py:448
 msgid "Template that generates a GitLab CI config file."
 msgstr "Modèle qui génère un fichier de configuration GitLab CI."
 
-#: classes.py:419
+#: classes.py:597
 msgid "Template for Supervisord."
 msgstr "Modèle pour Supervisord."
 
-#: classes.py:493
+#: classes.py:671
 msgid "Template showing the queues of a worker."
 msgstr "Modèle montrant les files d'attente d'un processus de travail."
 
@@ -57,13 +61,13 @@ msgstr ""
 msgid "Trigger tests"
 msgstr ""
 
-#: settings.py:18
+#: settings.py:17
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
 
-#: settings.py:25
+#: settings.py:24
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."

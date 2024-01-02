@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2023
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Dezső József <dejo60@gmail.com>, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,11 +30,11 @@ msgstr "Metaadat"
 
 #: apps.py:139
 msgid "Return the value of a specific document metadata."
-msgstr "Egy adott dokumentum metaadatának értékét adja vissza."
+msgstr ""
 
 #: apps.py:140
 msgid "Metadata value of"
-msgstr "A metaadat értéke"
+msgstr "Metaadat érték"
 
 #: apps.py:145
 msgid "Metadata type name"
@@ -66,7 +66,7 @@ msgstr "Metaadattípus szerkesztve"
 
 #: events.py:25
 msgid "Metadata type relationship updated"
-msgstr "A metaadattípus kapcsolat frissítve"
+msgstr "Metaadat típusú kapcsolat frissítve"
 
 #: forms.py:16
 msgid "ID"
@@ -82,21 +82,21 @@ msgstr "Érték"
 
 #: forms.py:32
 msgid "Update"
-msgstr "Frissítés"
+msgstr ""
 
 #: forms.py:52 forms.py:236 models.py:283
 msgid "Required"
-msgstr "Kívánt"
+msgstr ""
 
 #: forms.py:84
 #, python-format
 msgid "Lookup value error: %s"
-msgstr "Keresési érték hiba: %s"
+msgstr ""
 
 #: forms.py:97
 #, python-format
 msgid "Default value error: %s"
-msgstr "Az alapértelmezett érték hiba: %s"
+msgstr ""
 
 #: forms.py:118 models.py:128
 #, python-format
@@ -105,7 +105,7 @@ msgstr "Ehhez a dokumentumtípushoz a \"%s\" megadása szükséges."
 
 #: forms.py:137
 msgid "Metadata types to be added to the selected documents."
-msgstr "A kiválasztott dokumentumokhoz hozzáadandó metaadattípusok."
+msgstr "A kiválasztott dokumentumokhoz hozzáadandó metaadat ."
 
 #: forms.py:138 models.py:90 models.py:280 search.py:11 serializers.py:48
 #: serializers.py:108 workflow_actions.py:145
@@ -142,7 +142,7 @@ msgstr "Nincs"
 
 #: forms.py:235
 msgid "Optional"
-msgstr "Választható"
+msgstr ""
 
 #: links.py:26 links.py:35 workflow_actions.py:28
 msgid "Add metadata"
@@ -160,11 +160,11 @@ msgstr "Metaadat eltávolítása"
 #: views/metadata_type_views.py:115 workflow_actions.py:52
 #: workflow_actions.py:66
 msgid "Metadata types"
-msgstr "Metaadattípusok"
+msgstr "Metaadat típusok"
 
 #: links.py:72
 msgid "Document types"
-msgstr "Dokumentum típusok"
+msgstr "Dokumentumtípusok"
 
 #: links.py:76
 msgid "Create new"
@@ -172,7 +172,7 @@ msgstr "Új létrehozása"
 
 #: links.py:82 links.py:87
 msgid "Delete"
-msgstr "Törlés"
+msgstr ""
 
 #: links.py:92
 msgid "Edit"
@@ -180,35 +180,35 @@ msgstr "Szerkesztés"
 
 #: metadata_parsers.py:11
 msgid "Date and time parser"
-msgstr "Dátum és idő elemző"
+msgstr ""
 
 #: metadata_parsers.py:18
 msgid "Date parser"
-msgstr "Dátumelemző"
+msgstr ""
 
 #: metadata_parsers.py:26
 msgid "Regular expression parser"
-msgstr "Reguláris kifejezés elemző"
+msgstr ""
 
 #: metadata_parsers.py:36
 msgid "Time parser"
-msgstr "Időelemző"
+msgstr ""
 
 #: metadata_validators.py:12
 msgid "Date and time validator"
-msgstr "Dátum és idő érvényesítő"
+msgstr ""
 
 #: metadata_validators.py:19
 msgid "Date validator"
-msgstr "Dátum érvényesítő"
+msgstr ""
 
 #: metadata_validators.py:27
 msgid "Regular expression validator"
-msgstr "Reguláris kifejezés érvényesítő"
+msgstr ""
 
 #: metadata_validators.py:35
 msgid "The input string does not match the pattern."
-msgstr "A bemeneti karakterlánc nem egyezik a mintával."
+msgstr ""
 
 #: metadata_validators.py:40
 msgid "Time validator"
@@ -220,19 +220,19 @@ msgstr "A dokumentum metaadatainak visszaadása."
 
 #: mixins.py:19
 msgid "Selected documents must be of the same type."
-msgstr "A kiválasztott dokumentumoknak azonos típusúaknak kell lenniük."
+msgstr ""
 
 #: models.py:39
 msgid ""
 "Name used by other apps to reference this metadata type. Do not use python "
 "reserved words, or spaces."
 msgstr ""
-"Más alkalmazások által erre a metaadattípusra hivatkozó név. Ne használjon "
+"Más alkalmazások által erre a metaadat típusra hivatkozó név. Ne használjon "
 "python által fenntartott szavakat vagy szóközöket."
 
 #: models.py:45
 msgid "Short description of this metadata type."
-msgstr "Ennek a metaadattípusnak a rövid leírása."
+msgstr "Ennek metaadattípusnak a rövid leírása."
 
 #: models.py:46
 msgid "Label"
@@ -240,7 +240,7 @@ msgstr "Cimke"
 
 #: models.py:50
 msgid "Enter a template to render."
-msgstr "Adjon meg egy sablont a megjelenítéshez."
+msgstr ""
 
 #: models.py:51
 msgid "Default"
@@ -249,8 +249,6 @@ msgstr "Alapéretelmezett"
 #: models.py:55
 msgid "Enter a template to render. Must result in a comma delimited string."
 msgstr ""
-"Adjon meg egy sablont a megjelenítéshez. Vesszővel tagolt karakterláncot "
-"kell eredményeznie."
 
 #: models.py:57
 msgid "Lookup"
@@ -261,8 +259,6 @@ msgid ""
 "The validator will reject data entry if the value entered does not conform "
 "to the expected format."
 msgstr ""
-"Az érvényesítő elutasítja az adatbevitelt, ha a megadott érték nem felel meg"
-" az elvárt formátumnak."
 
 #: models.py:63
 msgid "Validator"
@@ -270,7 +266,7 @@ msgstr "Érvényesítő"
 
 #: models.py:67
 msgid "Enter the arguments for the validator in YAML format."
-msgstr "Adja meg az érvényesítő argumentumait YAML formátumban."
+msgstr ""
 
 #: models.py:69
 msgid "Validator arguments"
@@ -281,24 +277,22 @@ msgid ""
 "The parser will reformat the value entered to conform to the expected "
 "format."
 msgstr ""
-"Az értelmező újraformázza a megadott értéket, hogy megfeleljen a várt "
-"formátumnak."
 
 #: models.py:76
 msgid "Parser"
-msgstr "Elemző"
+msgstr ""
 
 #: models.py:80
 msgid "Enter the arguments for the parser in YAML format."
-msgstr "Írja be az elemző argumentumait YAML formátumban."
+msgstr ""
 
 #: models.py:82
 msgid "Parser arguments"
-msgstr "Elemző argumentumok"
+msgstr ""
 
 #: models.py:137
 msgid "Value is not one of the provided options."
-msgstr "Az érték nem tartozik a rendelkezésre álló lehetőségek közé."
+msgstr ""
 
 #: models.py:151
 #, python-format
@@ -315,19 +309,19 @@ msgstr "Típus"
 
 #: models.py:184
 msgid "The actual value stored in the metadata type field for the document."
-msgstr "A dokumentum metaadattípus mezőjében tárolt tényleges érték."
+msgstr ""
 
 #: models.py:192 models.py:193
 msgid "Document metadata"
-msgstr "Dokumentum metaadatai"
+msgstr ""
 
 #: models.py:229
 msgid "Metadata type is required for this document type."
-msgstr "Ehhez a dokumentumtípushoz metaadattípus szükséges."
+msgstr "Ehhez a dokumentumtípushoz metaadat típus szükséges."
 
 #: models.py:262
 msgid "Metadata type is not valid for this document type."
-msgstr "A metaadattípus nem érvényes ehhez a dokumentumtípushoz."
+msgstr "A metaadat típus nem érvényes ehhez a dokumentumtípushoz."
 
 #: models.py:276 serializers.py:45
 msgid "Document type"
@@ -335,15 +329,15 @@ msgstr "Dokumentumtípus"
 
 #: models.py:291
 msgid "Document type metadata type options"
-msgstr "Dokumentumtípus metaadattípus beállításai"
+msgstr "Dokumentumtípus metaadat típus beállításai"
 
 #: models.py:292
 msgid "Document type metadata types options"
-msgstr "Dokumentumtípus metaadattípusok beállításai"
+msgstr "Dokumentumtípus metaadat típusok beállításai"
 
 #: permissions.py:10
 msgid "Add metadata to a document"
-msgstr "Metaadatok hozzáadása a dokumentumhoz"
+msgstr "Metaadat hozzáadása egy dokumentumhoz"
 
 #: permissions.py:13
 msgid "Edit a document's metadata"
@@ -355,7 +349,7 @@ msgstr "Dokumentum metaadatainak eltávolítása"
 
 #: permissions.py:20
 msgid "View metadata from a document"
-msgstr "Metaadatok megtekintése egy dokumentumból"
+msgstr "Metaadat megtekintése egy dokumentumból"
 
 #: permissions.py:28
 msgid "Edit metadata types"
@@ -379,7 +373,7 @@ msgstr "Metaadattípus eltávolítása"
 
 #: queues.py:15
 msgid "Add required metadata type"
-msgstr "A szükséges metaadattípus hozzáadása"
+msgstr "A szükséges metaadat típus hozzáadása"
 
 #: serializers.py:28 serializers.py:57 serializers.py:111
 msgid "URL"
@@ -387,7 +381,7 @@ msgstr "URL"
 
 #: serializers.py:52
 msgid "Primary key of the metadata type to be added."
-msgstr "A hozzáadandó metaadattípus elsődleges kulcsa."
+msgstr ""
 
 #: serializers.py:53 serializers.py:101
 msgid "Metadata type ID"
@@ -395,7 +389,7 @@ msgstr "Metaadattípus azonosító"
 
 #: serializers.py:100
 msgid "Primary key of the metadata type to be added to the document."
-msgstr "A dokumentumhoz hozzáadandó metaadattípus elsődleges kulcsa."
+msgstr ""
 
 #: views/document_views.py:45
 #, python-format
@@ -410,13 +404,13 @@ msgstr "%(count)d dokumentumon végrehajtott metaadatok hozzáadása"
 #: views/document_views.py:57
 msgid "Add metadata types to document"
 msgid_plural "Add metadata types to documents"
-msgstr[0] "Metaadattípusok hozzáadása a dokumentumhoz"
-msgstr[1] "Metaadattípusok hozzáadása a dokumentumokhoz"
+msgstr[0] ""
+msgstr[1] ""
 
 #: views/document_views.py:68
 #, python-format
 msgid "Add metadata types to document: %s"
-msgstr "Metaadattípusok hozzáadása a dokumentumhoz: %s"
+msgstr ""
 
 #: views/document_views.py:146
 #, python-format
@@ -433,8 +427,6 @@ msgid ""
 "Metadata type: %(metadata_type)s successfully added to document "
 "%(document)s."
 msgstr ""
-"Metaadattípus: %(metadata_type)s sikeresen hozzáadva a %(document)s "
-"dokumentumhoz."
 
 #: views/document_views.py:171
 #, python-format
@@ -464,7 +456,7 @@ msgstr ""
 
 #: views/document_views.py:227
 msgid "There is no metadata to edit"
-msgstr "Nincsenek szerkeszthető metaadatok"
+msgstr ""
 
 #: views/document_views.py:229
 msgid "Edit document metadata"
@@ -475,19 +467,17 @@ msgstr[1] "Dokumentumok metaadatainak szerkesztése"
 #: views/document_views.py:240
 #, python-format
 msgid "Edit metadata for document: %s"
-msgstr "A következő dokumentum metaadatainak szerkesztése: %s"
+msgstr ""
 
 #: views/document_views.py:329
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr ""
-"Hiba a következő dokumentum metaadatainak szerkesztése során: %(document)s ;"
-" %(exception)s ."
 
 #: views/document_views.py:342
 #, python-format
 msgid "Metadata for document %s edited successfully."
-msgstr "A %s dokumentum metaadatai sikeresen szerkesztve."
+msgstr ""
 
 #: views/document_views.py:368
 msgid ""
@@ -495,18 +485,15 @@ msgid ""
 " documents. Once added to individual document, you can then edit their "
 "values."
 msgstr ""
-"Metaadattípusok hozzáadása ehhez a dokumentumtípushoz, hogy hozzáadhassa "
-"őket az egyes dokumentumokhoz. Miután hozzáadta az egyes dokumentumokhoz, "
-"szerkesztheti az értékeket."
 
 #: views/document_views.py:374
 msgid "This document doesn't have any metadata"
-msgstr "Ez a dokumentum nem tartalmaz metaadatokat"
+msgstr ""
 
 #: views/document_views.py:376
 #, python-format
 msgid "Metadata for document: %s"
-msgstr "A dokumentum metaadatai: %s"
+msgstr ""
 
 #: views/document_views.py:391
 #, python-format
@@ -590,7 +577,7 @@ msgstr "A %(count)d kiválasztott metaadattípus törlése."
 #: views/metadata_type_views.py:84
 #, python-format
 msgid "Edit metadata type: %s"
-msgstr "Metaadattípus szerkesztése: %s"
+msgstr ""
 
 #: views/metadata_type_views.py:107
 msgid ""
@@ -609,7 +596,7 @@ msgstr ""
 
 #: views/metadata_type_views.py:114
 msgid "There are no metadata types"
-msgstr "Nincsenek metaadattípusok"
+msgstr ""
 
 #: views/metadata_type_views.py:138
 msgid ""
@@ -626,12 +613,12 @@ msgstr "Nem állnak rendelkezésre metaadattípus kapcsolatok"
 #: views/metadata_type_views.py:146
 #, python-format
 msgid "Metadata type relationships for document type: %s"
-msgstr "A dokumentumtípus metaadattípus-kapcsolatai: %s"
+msgstr ""
 
 #: views/metadata_type_views.py:191
 #, python-format
 msgid "Document type relationships for metadata type: %s"
-msgstr "A metaadattípus dokumentumtípus-kapcsolatai: %s"
+msgstr ""
 
 #: wizard_steps.py:21
 msgid "Enter document metadata"
@@ -642,12 +629,10 @@ msgid ""
 "One of more metadata types that are required for this document type are not "
 "available."
 msgstr ""
-"Az ehhez a dokumentumtípushoz szükséges metaadattípusok közül egy nem érhető"
-" el."
 
 #: workflow_actions.py:46
 msgid "Metadata types to add to the document."
-msgstr "A dokumentumhoz hozzáadandó metaadattípusok."
+msgstr ""
 
 #: workflow_actions.py:81
 #, python-format
@@ -662,12 +647,10 @@ msgstr ""
 msgid ""
 "Value to assign to the metadata. Can be a literal value or template code."
 msgstr ""
-"A metaadatokhoz hozzárendelendő érték. Lehet szó szerinti érték vagy "
-"sablonkód."
 
 #: workflow_actions.py:139
 msgid "Metadata types to edit."
-msgstr "Szerkesztendő metaadattípusok."
+msgstr ""
 
 #: workflow_actions.py:178
 #, python-format
@@ -682,7 +665,7 @@ msgstr ""
 
 #: workflow_actions.py:209
 msgid "Metadata types to remove from the document."
-msgstr "A dokumentumból eltávolítandó metaadattípusok."
+msgstr ""
 
 #: workflow_actions.py:225
 #, python-format

@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Caner Başaran <basaran.caner@gmail.com>, 2023
-# Emine Öztürk <oemine075@gmail.com>, 2023
-# Nurgül Özkan <nurgulozkan@hotmail.com>, 2023
-# abc Def <hdogan1974@gmail.com>, 2023
-# Bedreddin Şahbaz, 2023
-# serhatcan77 <serhat_can@yahoo.com>, 2023
+# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
+# Bedreddin Şahbaz, 2024
+# Caner Başaran <basaran.caner@gmail.com>, 2024
+# Emine Öztürk <oemine075@gmail.com>, 2024
+# serhatcan77 <serhat_can@yahoo.com>, 2024
+# abc Def <hdogan1974@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: abc Def <hdogan1974@gmail.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: apps.py:93 events.py:6 forms/workflow_template_forms.py:20 links.py:52
 #: links.py:92 links.py:100 links.py:289 links.py:313
 #: models/workflow_models.py:58 queues.py:11 settings.py:14
-#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:280
+#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:282
 #: workflow_actions.py:133 workflow_actions.py:147
 msgid "Workflows"
 msgstr "İş Akışları"
@@ -161,11 +161,11 @@ msgstr ""
 msgid "Workflow edited"
 msgstr ""
 
-#: forms/workflow_instance_forms.py:16
+#: forms/workflow_instance_forms.py:17
 msgid "Select a transition to execute in the next step."
 msgstr ""
 
-#: forms/workflow_instance_forms.py:17 links.py:295
+#: forms/workflow_instance_forms.py:18 links.py:295
 #: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
@@ -178,11 +178,11 @@ msgstr "Geçiş"
 msgid "Workflow template preview image"
 msgstr ""
 
-#: forms/workflow_template_state_forms.py:36
+#: forms/workflow_template_state_forms.py:37
 msgid "The action type for this action entry."
 msgstr ""
 
-#: forms/workflow_template_state_forms.py:37
+#: forms/workflow_template_state_forms.py:38
 msgid "Action"
 msgstr "Eylem"
 
@@ -216,7 +216,7 @@ msgstr "Etkin"
 msgid "Event trigger: %s"
 msgstr ""
 
-#: links.py:58 views/workflow_template_views.py:137
+#: links.py:58 views/workflow_template_views.py:138
 msgid "Create workflow"
 msgstr "İş akışı oluştur"
 
@@ -1264,104 +1264,104 @@ msgstr ""
 msgid "Workflows to be launched."
 msgstr ""
 
-#: views/workflow_template_views.py:154
+#: views/workflow_template_views.py:156
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views/workflow_template_views.py:162
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:163
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr ""
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:168
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr ""
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:169
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr ""
 
-#: views/workflow_template_views.py:172
+#: views/workflow_template_views.py:174
 msgid "All workflow instances will also be deleted."
 msgstr ""
 
-#: views/workflow_template_views.py:192
+#: views/workflow_template_views.py:194
 #, python-format
 msgid "Edit workflow: %s"
 msgstr ""
 
-#: views/workflow_template_views.py:203
+#: views/workflow_template_views.py:205
 msgid "Document types assigned this workflow"
 msgstr "Bu iş akışına atanan belge türleri"
 
-#: views/workflow_template_views.py:204
+#: views/workflow_template_views.py:206
 msgid "Available document types"
 msgstr "Kullanılabilir belge türleri"
 
-#: views/workflow_template_views.py:222
+#: views/workflow_template_views.py:224
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
 msgstr ""
 
-#: views/workflow_template_views.py:227
+#: views/workflow_template_views.py:229
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "İş akışına atanan belge türleri: %s"
 
-#: views/workflow_template_views.py:241
+#: views/workflow_template_views.py:243
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr ""
 
-#: views/workflow_template_views.py:244
+#: views/workflow_template_views.py:246
 msgid "Launch workflow?"
 msgstr ""
 
-#: views/workflow_template_views.py:255 views/workflow_template_views.py:315
+#: views/workflow_template_views.py:257 views/workflow_template_views.py:317
 msgid "Workflow launch queued successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:273
+#: views/workflow_template_views.py:275
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
 msgstr ""
 
-#: views/workflow_template_views.py:278
+#: views/workflow_template_views.py:280
 msgid "No workflows have been defined"
 msgstr ""
 
-#: views/workflow_template_views.py:295
+#: views/workflow_template_views.py:297
 #, python-format
 msgid "Preview of: %s"
 msgstr ""
 
-#: views/workflow_template_views.py:302
+#: views/workflow_template_views.py:304
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
 msgstr ""
 
-#: views/workflow_template_views.py:305
+#: views/workflow_template_views.py:307
 msgid "Launch all workflows?"
 msgstr "Tüm iş akışlarını başlatmak istiyor musunuz?"
 

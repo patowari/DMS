@@ -4,23 +4,23 @@
 # 
 # Translators:
 # Translators:
-# Benoît GROUSSET <benoit@grousset.xyz>, 2023
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# SadE54 <yannsuisini@gmail.com>, 2023
-# Yves Dubois <ydubois@gmail.com>, 2023
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023
-# Olivier W, 2023
-# Guillaume Trottier <gui.trottier@gmail.com>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
+# SadE54 <yannsuisini@gmail.com>, 2024
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
+# Guillaume Trottier <gui.trottier@gmail.com>, 2024
+# Yves Dubois <ydubois@gmail.com>, 2024
+# Olivier W, 2024
+# Benoît GROUSSET <benoit@grousset.xyz>, 2024
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -277,20 +277,20 @@ msgstr ""
 msgid "About"
 msgstr "À propos"
 
-#: templates/appearance/about.html:67
+#: templates/appearance/about.html:21
 msgid "Version"
 msgstr "Version"
 
-#: templates/appearance/about.html:69
+#: templates/appearance/about.html:23
 #, python-format
 msgid "Build number: %(build_number)s"
 msgstr "Numéro de build : %(build_number)s"
 
-#: templates/appearance/about.html:82
+#: templates/appearance/about.html:36
 msgid "Released under the license:"
 msgstr "Publié sous la licence :"
 
-#: templates/appearance/about.html:88
+#: templates/appearance/about.html:40
 #, python-format
 msgid ""
 "\n"
@@ -301,7 +301,7 @@ msgstr ""
 "                La liste complète des changements est disponible dans les <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">notes de publication %(icon_documentation)s</a> ou en version courte dans le <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">journal des modifications %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:94
+#: templates/appearance/about.html:46
 #, python-format
 msgid ""
 "\n"
@@ -312,7 +312,7 @@ msgstr ""
 "                Pour des questions, consulter la <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
 "            "
 
-#: templates/appearance/about.html:100
+#: templates/appearance/about.html:52
 #, python-format
 msgid ""
 "\n"
@@ -329,61 +329,17 @@ msgid ""
 "pending one is completed or after the cooling off period ends."
 msgstr ""
 
-#: templates/appearance/base.html:73
-msgid "Object"
-msgstr "Objet"
-
-#: templates/appearance/generic_confirm.html:13
+#: templates/appearance/confirm.html:13
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr?"
 
-#: templates/appearance/generic_confirm.html:37
+#: templates/appearance/confirm.html:37
 msgid "Yes"
 msgstr "Oui"
 
-#: templates/appearance/generic_confirm.html:47
+#: templates/appearance/confirm.html:47
 msgid "No"
 msgstr "Non"
-
-#: templates/appearance/generic_form_subtemplate.html:50
-#: templates/appearance/generic_multiform_subtemplate.html:37
-#: templates/appearance/partials/form_field.html:10
-#: templates/appearance/partials/form_field.html:16
-msgid "required"
-msgstr "obligatoire"
-
-#: templates/appearance/generic_form_subtemplate.html:85
-#: templates/appearance/generic_form_subtemplate.html:95
-#: templates/appearance/generic_form_subtemplate.html:109
-#: templates/appearance/generic_multiform_subtemplate.html:62
-msgid "Save"
-msgstr "Enregistrer"
-
-#: templates/appearance/generic_form_subtemplate.html:85
-#: templates/appearance/generic_form_subtemplate.html:95
-#: templates/appearance/generic_form_subtemplate.html:109
-#: templates/appearance/generic_multiform_subtemplate.html:62
-msgid "Submit"
-msgstr "Soumettre"
-
-#: templates/appearance/generic_form_subtemplate.html:99
-#: templates/appearance/generic_multiform_subtemplate.html:66
-msgid "Cancel"
-msgstr "Annuler"
-
-#: templates/appearance/generic_list_subtemplate.html:35
-msgid "Identifier"
-msgstr "Identifiant"
-
-#: templates/appearance/generic_list_subtemplate.html:85
-#: templates/appearance/partials/list_object_facet_links_column.html:8
-#: templates/appearance/partials/list_object_facet_links_column.html:39
-msgid "Views"
-msgstr "Vues"
-
-#: templates/appearance/generic_list_subtemplate.html:91
-msgid "Actions"
-msgstr "Actions"
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
@@ -395,15 +351,43 @@ msgstr ""
 "Avant de pouvoir utiliser pleinement Mayan EDMS, les éléments suivants sont "
 "nécessaires :"
 
-#: templates/appearance/menus/menu_topbar.html:11
+#: templates/appearance/menus/topbar.html:11
 msgid "Toggle navigation"
 msgstr "Activer la navigation"
 
-#: templates/appearance/partials/form_title.html:10
-msgid "Open main menu"
-msgstr "Ouvrir le menu principal"
+#: templates/appearance/partials/form/field.html:10
+#: templates/appearance/partials/form/field.html:16
+#: templates/appearance/partials/form/multiple.html:37
+#: templates/appearance/partials/form/single.html:50
+msgid "required"
+msgstr "obligatoire"
 
-#: templates/appearance/partials/list_header.html:11
+#: templates/appearance/partials/form/multiple.html:62
+#: templates/appearance/partials/form/single.html:85
+#: templates/appearance/partials/form/single.html:95
+#: templates/appearance/partials/form/single.html:109
+msgid "Save"
+msgstr "Enregistrer"
+
+#: templates/appearance/partials/form/multiple.html:62
+#: templates/appearance/partials/form/single.html:85
+#: templates/appearance/partials/form/single.html:95
+#: templates/appearance/partials/form/single.html:109
+msgid "Submit"
+msgstr "Soumettre"
+
+#: templates/appearance/partials/form/multiple.html:66
+#: templates/appearance/partials/form/single.html:99
+msgid "Cancel"
+msgstr "Annuler"
+
+#: templates/appearance/partials/list/column_object_facet_links.html:8
+#: templates/appearance/partials/list/column_object_facet_links.html:39
+#: templates/appearance/partials/list/table/head/row_cell_links.html:8
+msgid "Views"
+msgstr "Vues"
+
+#: templates/appearance/partials/list/header.html:11
 #, python-format
 msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
@@ -412,48 +396,64 @@ msgstr ""
 "Total (%(start)s - %(end)s sur %(total)s) (page %(page_number)s sur "
 "%(total_pages)s)"
 
-#: templates/appearance/partials/list_header.html:13
-#: templates/appearance/partials/list_header.html:16
+#: templates/appearance/partials/list/header.html:13
+#: templates/appearance/partials/list/header.html:16
 #, python-format
 msgid "Total: %(total)s"
 msgstr "Total : %(total)s"
 
-#: templates/appearance/partials/list_toolbar.html:14
+#: templates/appearance/partials/list/no_results.html:18
+msgid "No results"
+msgstr "Aucun résultat"
+
+#: templates/appearance/partials/list/pagination.html:12
+#: templates/appearance/partials/list/pagination.html:14
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: templates/appearance/partials/list/pagination.html:30
+#: templates/appearance/partials/list/pagination.html:32
+msgid "Next page"
+msgstr "Page suivante"
+
+#: templates/appearance/partials/list/table/head/row_cell_identifier.html:6
+msgid "Identifier"
+msgstr "Identifiant"
+
+#: templates/appearance/partials/list/table/head/row_cell_links.html:14
+msgid "Actions"
+msgstr "Actions"
+
+#: templates/appearance/partials/list/toolbar.html:14
 msgid "Select/Deselect all"
 msgstr "Tout sélectionner/Désélectionner"
 
-#: templates/appearance/partials/list_toolbar.html:18
+#: templates/appearance/partials/list/toolbar.html:18
 msgid "Toggle list display mode"
 msgstr "Basculer en mode d'affichage « liste »"
 
-#: templates/appearance/partials/list_toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:31
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "Sélectionner les éléments pour activer les actions en masse. Utilisez Maj + "
 "clic pour en sélectionner plusieurs."
 
-#: templates/appearance/partials/list_toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:36
 msgid "Bulk actions"
 msgstr "Action groupée"
 
-#: templates/appearance/partials/list_toolbar.html:38
+#: templates/appearance/partials/list/toolbar.html:38
 msgid "Toggle Dropdown"
 msgstr "Activer la liste déroulante"
 
-#: templates/appearance/partials/no_results.html:18
-msgid "No results"
-msgstr "Aucun résultat"
+#: templates/appearance/partials/sidebar.html:17
+msgid "Object"
+msgstr "Objet"
 
-#: templates/appearance/partials/pagination.html:12
-#: templates/appearance/partials/pagination.html:14
-msgid "Previous page"
-msgstr "Page précédente"
-
-#: templates/appearance/partials/pagination.html:30
-#: templates/appearance/partials/pagination.html:32
-msgid "Next page"
-msgstr "Page suivante"
+#: templates/appearance/partials/title.html:10
+msgid "Open main menu"
+msgstr "Ouvrir le menu principal"
 
 #: templates/appearance/root.html:51
 msgid "Close"

@@ -4,22 +4,22 @@
 # 
 # Translators:
 # Translators:
-# Benjamin Epp, 2023
-# Marvin Haschker <marvin@haschker.me>, 2023
-# Paul Patolla <appdev.blackrose@gmail.com>, 2023
-# tetjarediske <tetja.rediske@googlemail.com>, 2023
-# Roberto Rosario, 2023
-# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# tetjarediske <tetja.rediske@googlemail.com>, 2024
+# Roberto Rosario, 2024
+# Benjamin Epp, 2024
+# Paul Patolla <appdev.blackrose@gmail.com>, 2024
+# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
+# Marvin Haschker <marvin@haschker.me>, 2024
+# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:26 classes.py:204 links.py:27
+#: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
 msgstr "Zugriffsberechtigungen"
 
@@ -79,14 +79,14 @@ msgstr "Berechtigungen"
 msgid "Global ACLs"
 msgstr "Globale Zugriffsberechtigungen"
 
-#: managers.py:274
+#: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
 msgstr ""
 "Objekt \"%s\" ist kein Modell und kann nicht auf Zugriffsberechtigungen "
 "überprüft werden."
 
-#: managers.py:294
+#: managers.py:293
 #, python-format
 msgid "Insufficient access for: %s"
 msgstr "Unzureichende Berechtigung für: %s"
@@ -130,15 +130,15 @@ msgstr "Zugriffsberechtigungen anzeigen"
 
 #: serializers.py:19
 msgid "Permissions add URL"
-msgstr "Berechtigung hinzufügen URL"
+msgstr "Berechtigungen hinzufügen URL"
 
 #: serializers.py:39
 msgid "Permissions remove URL"
-msgstr "Berechtigung entziehen URL"
+msgstr "Berechtigungen entziehen URL"
 
 #: serializers.py:59
 msgid "Permissions URL"
-msgstr "Berechtigungs-URL"
+msgstr "Berechtigungen URL"
 
 #: serializers.py:82
 msgid "Role ID"

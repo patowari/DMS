@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2023
-# Yves Dubois <ydubois@gmail.com>, 2023
-# Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2023
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023
-# Frédéric Sheedy <sheedf@gmail.com>, 2023
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
+# Yves Dubois <ydubois@gmail.com>, 2024
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
+# Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2024
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "Annonce créée"
 msgid "Announcement edited"
 msgstr "Annonce modifiée"
 
-#: links.py:18 views.py:34
+#: links.py:17 views.py:34
 msgid "Create announcement"
 msgstr "Créer une annonce"
 

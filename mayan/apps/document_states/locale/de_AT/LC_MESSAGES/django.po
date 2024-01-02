@@ -4,27 +4,27 @@
 # 
 # Translators:
 # Translators:
-# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
-# Tobias Paepke <tobias.paepke@paepke.net>, 2023
-# Berny <berny@bernhard-marx.de>, 2023
-# Ampérlo Voltić <amperlo.voltic@gmail.com>, 2023
-# Nico Reins, 2023
-# Felix <felix.com@gmx.com>, 2023
-# Siegfried Albrecht, 2023
-# Jesaja Everling <jeverling@gmail.com>, 2023
-# Marvin Haschker <marvin@haschker.me>, 2023
-# Roberto Rosario, 2023
-# Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# Siegfried Albrecht, 2024
+# Ampérlo Voltić <amperlo.voltic@gmail.com>, 2024
+# Nico Reins, 2024
+# Berny <berny@bernhard-marx.de>, 2024
+# Tobias Paepke <tobias.paepke@paepke.net>, 2024
+# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
+# Felix <felix.com@gmx.com>, 2024
+# Jesaja Everling <jeverling@gmail.com>, 2024
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
+# Roberto Rosario, 2024
+# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Marvin Haschker <marvin@haschker.me>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Marvin Haschker <marvin@haschker.me>, 2024\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: apps.py:93 events.py:6 forms/workflow_template_forms.py:20 links.py:52
 #: links.py:92 links.py:100 links.py:289 links.py:313
 #: models/workflow_models.py:58 queues.py:11 settings.py:14
-#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:280
+#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:282
 #: workflow_actions.py:133 workflow_actions.py:147
 msgid "Workflows"
 msgstr "Workflows"
@@ -177,13 +177,13 @@ msgstr "Workflow erstellt"
 msgid "Workflow edited"
 msgstr "Workflow bearbeitet"
 
-#: forms/workflow_instance_forms.py:16
+#: forms/workflow_instance_forms.py:17
 msgid "Select a transition to execute in the next step."
 msgstr ""
 "Wählen Sie einen Übergang aus, der im nächsten Schritt ausgeführt werden "
 "soll."
 
-#: forms/workflow_instance_forms.py:17 links.py:295
+#: forms/workflow_instance_forms.py:18 links.py:295
 #: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
@@ -196,11 +196,11 @@ msgstr "Übergang"
 msgid "Workflow template preview image"
 msgstr "Workflowvorlagenvorschau"
 
-#: forms/workflow_template_state_forms.py:36
+#: forms/workflow_template_state_forms.py:37
 msgid "The action type for this action entry."
 msgstr "Der Aktionstyp für diesen Aktionseintrag."
 
-#: forms/workflow_template_state_forms.py:37
+#: forms/workflow_template_state_forms.py:38
 msgid "Action"
 msgstr "Aktion"
 
@@ -234,7 +234,7 @@ msgstr "Aktiviert"
 msgid "Event trigger: %s"
 msgstr "Ereignistrigger %s"
 
-#: links.py:58 views/workflow_template_views.py:137
+#: links.py:58 views/workflow_template_views.py:138
 msgid "Create workflow"
 msgstr "Workflow erstellen"
 
@@ -1360,59 +1360,59 @@ msgstr ""
 msgid "Workflows to be launched."
 msgstr "Zu startende Workflows."
 
-#: views/workflow_template_views.py:154
+#: views/workflow_template_views.py:156
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr "Fehler beim Löschen des Workflows \"%(instance)s\": %(exception)s"
 
-#: views/workflow_template_views.py:162
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr "%(count)d  Workflows erfolgreich gelöscht"
 
-#: views/workflow_template_views.py:163
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr "Workflow \"%(object)s\" erfolgreich gelöscht"
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr "%(count)d Workflow erfolgreich gelöscht"
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr "%(count)d  ausgewählte Workflows löschen"
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:168
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr "Workflow %(object)s löschen"
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:169
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr "%(count)d ausgewählten Workflow löschen"
 
-#: views/workflow_template_views.py:172
+#: views/workflow_template_views.py:174
 msgid "All workflow instances will also be deleted."
 msgstr "Alle Workflow-Instanzen werden ebenfalls gelöscht."
 
-#: views/workflow_template_views.py:192
+#: views/workflow_template_views.py:194
 #, python-format
 msgid "Edit workflow: %s"
 msgstr "Workflow bearbeiten: %s"
 
-#: views/workflow_template_views.py:203
+#: views/workflow_template_views.py:205
 msgid "Document types assigned this workflow"
 msgstr "Dokumententypen zugeordnet zu diesem Workflow"
 
-#: views/workflow_template_views.py:204
+#: views/workflow_template_views.py:206
 msgid "Available document types"
 msgstr "Verfügbare Dokumententypen"
 
-#: views/workflow_template_views.py:222
+#: views/workflow_template_views.py:224
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
@@ -1420,27 +1420,27 @@ msgstr ""
 "Das Entfernen eines Dokumententyps von einem Workflow wird auch sämtliche "
 "laufenden Workflowinstanzen für andere Dokumente dieses Typs entfernen."
 
-#: views/workflow_template_views.py:227
+#: views/workflow_template_views.py:229
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "Dokumententypen zugeordnet zu Workflow %s"
 
-#: views/workflow_template_views.py:241
+#: views/workflow_template_views.py:243
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr ""
 "Dies wird den Workflow für Dokumente starten, die bereits hochgeladen "
 "wurden."
 
-#: views/workflow_template_views.py:244
+#: views/workflow_template_views.py:246
 msgid "Launch workflow?"
 msgstr "Workflow starten?"
 
-#: views/workflow_template_views.py:255 views/workflow_template_views.py:315
+#: views/workflow_template_views.py:257 views/workflow_template_views.py:317
 msgid "Workflow launch queued successfully."
 msgstr "Workflow-Start wurde erfolgreich vorgemerkt."
 
-#: views/workflow_template_views.py:273
+#: views/workflow_template_views.py:275
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
@@ -1449,16 +1449,16 @@ msgstr ""
 "den aktuellen Status eines Dokuments. Übergänge werden dazu verwendet, vom "
 "aktuellen Status zu einem neuen zu wechseln."
 
-#: views/workflow_template_views.py:278
+#: views/workflow_template_views.py:280
 msgid "No workflows have been defined"
 msgstr "Es sind keine Workflows definiert"
 
-#: views/workflow_template_views.py:295
+#: views/workflow_template_views.py:297
 #, python-format
 msgid "Preview of: %s"
 msgstr "Vorschau von %s"
 
-#: views/workflow_template_views.py:302
+#: views/workflow_template_views.py:304
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
@@ -1466,7 +1466,7 @@ msgstr ""
 "Dies wird alle Workflows anstoßen, die erst nach dem Upload von Dokumenten "
 "erstellt wurden."
 
-#: views/workflow_template_views.py:305
+#: views/workflow_template_views.py:307
 msgid "Launch all workflows?"
 msgstr "Alle Workflows starten?"
 

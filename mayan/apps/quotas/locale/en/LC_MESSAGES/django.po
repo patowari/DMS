@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "none"
 msgstr ""
 
-#: classes.py:163
+#: classes.py:161
 msgid "Does not apply"
 msgstr ""
 
-#: classes.py:167 classes.py:171
+#: classes.py:165 classes.py:169
 msgid "Null backend"
 msgstr ""
 

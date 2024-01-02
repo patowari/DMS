@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# Stefaniu Criste <gupi@hangar.ro>, 2023
-# Roberto Rosario, 2023
-# Badea Gabriel <gcbadea@gmail.com>, 2023
-# Harald Ersch, 2023
+# Stefaniu Criste <gupi@hangar.ro>, 2024
+# Roberto Rosario, 2024
+# Badea Gabriel <gcbadea@gmail.com>, 2024
+# Harald Ersch, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Harald Ersch, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:26 classes.py:204 links.py:27
+#: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
 msgstr "ACL-uri"
 
@@ -75,12 +75,12 @@ msgstr "Permisiuni"
 msgid "Global ACLs"
 msgstr "ACL-uri globale"
 
-#: managers.py:274
+#: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
 msgstr "Obiectul \"%s\" nu este un model și nu poate fi verificat pentru acces."
 
-#: managers.py:294
+#: managers.py:293
 #, python-format
 msgid "Insufficient access for: %s"
 msgstr "Acces insuficient pentru: %s"
@@ -128,7 +128,7 @@ msgstr "Adresa URL adăugare permisiuni"
 
 #: serializers.py:39
 msgid "Permissions remove URL"
-msgstr "Adresa URL ștergere permisiuni"
+msgstr "Adresa URL eliminare permisiuni"
 
 #: serializers.py:59
 msgid "Permissions URL"

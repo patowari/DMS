@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
-# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023
-# bwakkie <bwakkie@gmail.com>, 2023
+# Roberto Rosario, 2024
+# bwakkie <bwakkie@gmail.com>, 2024
+# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: bwakkie <bwakkie@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,15 +24,15 @@ msgstr ""
 
 #: apps.py:31 events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "File caching"
-msgstr "Bestanden cachen"
+msgstr "Bestandscaching"
 
 #: dashboard_widgets.py:16
 msgid "Total cache allocated"
-msgstr "Totaal toegewezen cache"
+msgstr ""
 
 #: dashboard_widgets.py:45
 msgid "Total cache used"
-msgstr "Totaal gebruikte cache"
+msgstr ""
 
 #: events.py:10
 msgid "Cache created"
@@ -44,11 +44,11 @@ msgstr "Cache bewerkt"
 
 #: events.py:16
 msgid "Cache purged"
-msgstr "Cache gewist"
+msgstr "Cache geleegd"
 
 #: events.py:19
 msgid "Cache partition purged"
-msgstr "Cachepartitie gewist"
+msgstr ""
 
 #: links.py:27 links.py:50
 msgid "File caches"
@@ -56,123 +56,123 @@ msgstr "Bestandscaches"
 
 #: links.py:33 links.py:39 links.py:43
 msgid "Purge cache"
-msgstr "Cache leegmaken"
+msgstr "Cache legen"
 
-#: model_mixins.py:45
-msgid "Size at which the cache will start deleting old entries."
-msgstr "Grootte waarop de cache oude vermeldingen begint te verwijderen."
-
-#: model_mixins.py:47 models.py:28
-msgid "Maximum size"
-msgstr "Maximumgrootte"
-
-#: model_mixins.py:54
+#: model_mixins.py:39
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: model_mixins.py:64
-msgid "Partition count"
-msgstr "Partitietelling"
+#: model_mixins.py:57
+msgid "Size at which the cache will start deleting old entries."
+msgstr "Omvang waarbij de cache begint met verwijderen van oude bestanddelen."
 
-#: model_mixins.py:65
-msgid "Total cached objects."
-msgstr "Totaal aantal in de cache opgeslagen objecten."
+#: model_mixins.py:59 models.py:31
+msgid "Maximum size"
+msgstr "Maximale omvang"
 
 #: model_mixins.py:70
-msgid "Partition file count"
-msgstr "Aantal partitiebestanden"
+msgid "Partition count"
+msgstr ""
 
 #: model_mixins.py:71
+msgid "Total cached objects."
+msgstr ""
+
+#: model_mixins.py:78
+msgid "Partition file count"
+msgstr ""
+
+#: model_mixins.py:80
 msgid "Total cached files."
-msgstr "Totaal aantal in de cache opgeslagen bestanden."
+msgstr ""
 
-#: model_mixins.py:90 model_mixins.py:286
+#: model_mixins.py:113 model_mixins.py:324
 msgid "Current size"
-msgstr "Huidige grootte"
+msgstr "Huidige omvang"
 
-#: model_mixins.py:91
+#: model_mixins.py:115
 msgid "Current size of the cache."
-msgstr "Huidige grootte van de cache."
+msgstr "Huidige omvang van de cache."
 
-#: model_mixins.py:288
+#: model_mixins.py:326
 msgid "Current size of the cache partition."
-msgstr "Huidige grootte van de cachepartitie."
+msgstr ""
 
 #: models.py:21
 msgid "Internal name of the defined storage for this cache."
-msgstr "Interne naam van de gedefinieerde opslag voor deze cache."
+msgstr "Interne naam van de vastgestelde opslag voor deze cache."
 
-#: models.py:22
+#: models.py:23
 msgid "Defined storage name"
-msgstr "Gedefinieerde opslagnaam"
+msgstr "Vastgestelde naam opslag"
 
-#: models.py:25
+#: models.py:28
 msgid "Maximum size of the cache in bytes."
-msgstr "Maximale grootte van de cache in bytes."
+msgstr "Maximale omvang van de cache in bytes."
 
-#: models.py:33 models.py:73
+#: models.py:36 models.py:76
 msgid "Cache"
 msgstr "Cache"
 
-#: models.py:34
+#: models.py:37
 msgid "Caches"
 msgstr "Caches"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "Naam"
 
-#: models.py:81 models.py:104
+#: models.py:84 models.py:107
 msgid "Cache partition"
-msgstr "Cachepartitie"
+msgstr "Partitie cachen"
 
-#: models.py:82
+#: models.py:85
 msgid "Cache partitions"
-msgstr "Cachepartities"
-
-#: models.py:107
-msgid "Date time"
-msgstr "Datum Tijd"
+msgstr "Partities cachen"
 
 #: models.py:110
+msgid "Date time"
+msgstr "Datum en tijd"
+
+#: models.py:113
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: models.py:113
+#: models.py:116
 msgid "File size"
 msgstr "Bestandsgrootte"
 
-#: models.py:117
+#: models.py:120
 msgid "Times this cache partition file has been accessed."
-msgstr "Aantal keren dat dit cachepartitiebestand is geopend."
+msgstr ""
 
-#: models.py:124
+#: models.py:127
 msgid "Cache partition file"
-msgstr "Partitiebestand in cache opslaan"
+msgstr "Partitiebestand cachen"
 
-#: models.py:125
+#: models.py:128
 msgid "Cache partition files"
-msgstr "Partitiebestanden in cache opslaan"
+msgstr "Partitiebestanden cachen"
 
 #: permissions.py:10
 msgid "Purge an object cache"
-msgstr "Een objectcache leegmaken"
+msgstr ""
 
 #: permissions.py:14 queues.py:20
 msgid "Purge a file cache"
-msgstr "Een bestandscache leegmaken"
+msgstr "Een bestandscache legen"
 
 #: permissions.py:17
 msgid "View a file cache"
-msgstr "Bekijk een bestandscache"
+msgstr "Een bestandscache bekijken"
 
 #: queues.py:10
 msgid "File caching slow"
-msgstr "Bestandcaching traag"
+msgstr ""
 
 #: queues.py:15
 msgid "Purge a file cache partition"
-msgstr "Een bestandscachepartitie leegmaken"
+msgstr ""
 
 #: settings.py:17
 msgid ""
@@ -188,30 +188,27 @@ msgid ""
 "Number of times a cache will attempt to prune files to free up space for new"
 " a file being requested, before giving up."
 msgstr ""
-"Aantal keren dat een cache zal proberen bestanden op te schonen om ruimte "
-"vrij te maken voor een nieuw bestand dat wordt aangevraagd, voordat het "
-"opgeeft."
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
-msgstr "Details van cache: %s"
+msgstr ""
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
-msgstr "Lijst met bestandscaches"
+msgstr "Bestandscache lijst"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
-msgstr "Details van cachepartitie: %s"
+msgstr ""
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
-msgstr "Cachepartities van &quot; %s &quot; leegmaken?"
+msgstr ""
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr "Objectcachepartities ingediend voor opschoning."
 
@@ -220,12 +217,12 @@ msgstr "Objectcachepartities ingediend voor opschoning."
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d -caches ingediend voor opschoning."
 
-#: views.py:128
+#: views.py:130
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d -cache ingediend voor opschoning."
 
-#: views.py:136
+#: views.py:139
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "De geselecteerde cache indienen voor opschonen?"

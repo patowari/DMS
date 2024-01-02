@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Daniele Bortoluzzi <daniele@elkos.it>, 2023
-# Giovanni Tricarico <gtricarico92@gmail.com>, 2023
-# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023
-# Roberto Rosario, 2023
-# Marco Camplese <marco.camplese.mc@gmail.com>, 2023
+# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
+# Daniele Bortoluzzi <daniele@elkos.it>, 2024
+# Giovanni Tricarico <gtricarico92@gmail.com>, 2024
+# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Marco Camplese <marco.camplese.mc@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -244,47 +244,47 @@ msgstr ""
 msgid "Advanced"
 msgstr "Avanzato"
 
-#: value_transformations.py:37
+#: value_transformations.py:38
 msgid "Replace accents"
 msgstr ""
 
-#: value_transformations.py:49
+#: value_transformations.py:50
 msgid "@ sign replace"
 msgstr ""
 
-#: value_transformations.py:59
+#: value_transformations.py:60
 msgid "Case fold"
 msgstr ""
 
-#: value_transformations.py:69 value_transformations.py:79
+#: value_transformations.py:70 value_transformations.py:80
 msgid "Hyphen replace"
 msgstr ""
 
-#: value_transformations.py:89
+#: value_transformations.py:90
 msgid "To boolean"
 msgstr ""
 
-#: value_transformations.py:102
+#: value_transformations.py:105
 msgid "To date time"
 msgstr ""
 
-#: value_transformations.py:124
+#: value_transformations.py:132
 msgid "Date time ISO format"
 msgstr ""
 
-#: value_transformations.py:134
+#: value_transformations.py:146
 msgid "Date time simple format"
 msgstr ""
 
-#: value_transformations.py:144
+#: value_transformations.py:158
 msgid "Date time timestamp format"
 msgstr ""
 
-#: value_transformations.py:158
+#: value_transformations.py:174
 msgid "To integer"
 msgstr ""
 
-#: value_transformations.py:168
+#: value_transformations.py:184
 msgid "To string"
 msgstr ""
 

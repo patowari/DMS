@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2023
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Dezső József <dejo60@gmail.com>, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr "Django GPG"
 
 #: apps.py:53 apps.py:59 forms.py:16
 msgid "Key ID"
-msgstr "Kulcsazonosító"
+msgstr "Kulcs ID"
 
 #: apps.py:63 forms.py:42 models.py:50
 msgid "Type"
@@ -40,15 +40,15 @@ msgstr "Létrehozás dátuma"
 
 #: apps.py:72
 msgid "No expiration"
-msgstr "Nincs lejárat"
+msgstr ""
 
 #: apps.py:73 forms.py:28 models.py:33
 msgid "Expiration date"
-msgstr "Lejárati dátum"
+msgstr ""
 
 #: apps.py:77 forms.py:35 models.py:40
 msgid "Length"
-msgstr "Hossz"
+msgstr ""
 
 #: apps.py:82 forms.py:20 models.py:46
 msgid "User ID"
@@ -56,19 +56,19 @@ msgstr "Felhasználói azonosító"
 
 #: dependencies.py:10
 msgid "GNU privacy guard - a PGP implementation."
-msgstr "GNU adatvédelmi őr – PGP implementáció."
+msgstr ""
 
 #: events.py:6 links.py:42 permissions.py:6
 msgid "Key management"
-msgstr "Kulcskezelés"
+msgstr ""
 
 #: events.py:10
 msgid "Key created"
-msgstr "Kulcs létrehozva"
+msgstr ""
 
 #: events.py:14
 msgid "Key downloaded"
-msgstr "Kulcs letöltve"
+msgstr ""
 
 #: forms.py:27
 msgid "None"
@@ -76,11 +76,11 @@ msgstr "Nincs"
 
 #: forms.py:32 models.py:37
 msgid "Fingerprint"
-msgstr "Ujjlenyomat"
+msgstr ""
 
 #: forms.py:38 models.py:43
 msgid "Algorithm"
-msgstr "Algoritmus"
+msgstr ""
 
 #: forms.py:56
 msgid "Term"
@@ -88,7 +88,7 @@ msgstr "Futamidő"
 
 #: forms.py:57
 msgid "Name, e-mail, key ID or key fingerprint to look for."
-msgstr "Keresendő név, email, kulcs ID vagy kulcs lenyomat."
+msgstr "Keresendő név, email cím, kulcsazonosító vagy kulcsujjlenyomat."
 
 #: links.py:17
 msgid "Delete"
@@ -104,11 +104,11 @@ msgstr "Letöltés"
 
 #: links.py:32 permissions.py:28
 msgid "Query keyservers"
-msgstr "Kulcsszerverek lekérdezése"
+msgstr ""
 
 #: links.py:37
 msgid "Import"
-msgstr "Importálás"
+msgstr ""
 
 #: links.py:46
 msgid "Upload key"
@@ -116,19 +116,19 @@ msgstr "Kulcs feltöltése"
 
 #: links.py:50 views.py:215
 msgid "Private keys"
-msgstr "Privát kulcsok"
+msgstr ""
 
 #: links.py:54 views.py:240
 msgid "Public keys"
-msgstr "Nyilvános kulcsok"
+msgstr ""
 
 #: literals.py:23 literals.py:31
 msgid "Public"
-msgstr "Nyilvános"
+msgstr ""
 
 #: literals.py:24 literals.py:32
 msgid "Secret"
-msgstr "Titok"
+msgstr ""
 
 #: literals.py:41 literals.py:50
 msgid "RSA"
@@ -144,29 +144,27 @@ msgstr "Elgamal"
 
 #: literals.py:70
 msgid "Bad signature."
-msgstr "Rossz aláírás."
+msgstr ""
 
 #: literals.py:73
 msgid "Document not signed or invalid signature."
-msgstr "A dokumentum nincs aláírva, vagy érvénytelen az aláírás."
+msgstr ""
 
 #: literals.py:76
 msgid "Signature error."
-msgstr "Aláírási hiba."
+msgstr ""
 
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
 msgstr ""
-"A dokumentum alá van írva, de nem áll rendelkezésre nyilvános kulcs az "
-"ellenőrzéshez."
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."
-msgstr "A dokumentum aláírva, az aláírás jó."
+msgstr ""
 
 #: literals.py:88
 msgid "Document is signed with a valid signature."
-msgstr "A dokumentumot érvényes aláírással írják alá."
+msgstr ""
 
 #: models.py:25
 msgid "ASCII armored version of the key."
@@ -174,47 +172,47 @@ msgstr "A kulcs ASCII kódolt változata."
 
 #: models.py:26
 msgid "Key data"
-msgstr "Kulcsadatok"
+msgstr ""
 
 #: models.py:56
 msgid "Key"
-msgstr "Kulcs"
+msgstr ""
 
 #: models.py:57
 msgid "Keys"
-msgstr "Kulcsok"
+msgstr ""
 
 #: models.py:72
 msgid "Invalid key data"
-msgstr "Érvénytelen kulcsadatok"
+msgstr ""
 
 #: models.py:77
 msgid "Key already exists."
-msgstr "A kulcs már létezik."
+msgstr ""
 
 #: permissions.py:10
 msgid "Delete keys"
-msgstr "Kulcsok törlése"
+msgstr ""
 
 #: permissions.py:13
 msgid "Download keys"
-msgstr "Kulcsok letöltése"
+msgstr ""
 
 #: permissions.py:16
 msgid "Import keys from keyservers"
-msgstr "Kulcsok importálása kulcsszerverekről"
+msgstr ""
 
 #: permissions.py:19
 msgid "Use keys to sign content"
-msgstr "Használjon kulcsokat a tartalom aláírásához"
+msgstr ""
 
 #: permissions.py:22
 msgid "Upload keys"
-msgstr "Kulcsok feltöltése"
+msgstr ""
 
 #: permissions.py:25
 msgid "View keys"
-msgstr "Kulcsok megtekintése"
+msgstr ""
 
 #: serializers.py:12
 msgid "URL"
@@ -222,17 +220,15 @@ msgstr "URL"
 
 #: settings.py:11
 msgid "Signatures"
-msgstr "Aláírások"
+msgstr ""
 
 #: settings.py:18
 msgid "Full path to the backend to be used to handle keys and signatures."
 msgstr ""
-"A kulcsok és aláírások kezelésére szolgáló háttérrendszer teljes elérési "
-"útja."
 
 #: settings.py:27
 msgid "Keyserver used to query for keys."
-msgstr "A kulcsok lekérdezésére használt kulcsszerver."
+msgstr ""
 
 #: views.py:42
 #, python-format
@@ -242,21 +238,21 @@ msgstr "Kulcs törlése: %s"
 #: views.py:61
 #, python-format
 msgid "Details for key: %s"
-msgstr "A kulcs részletei: %s"
+msgstr ""
 
 #: views.py:97
 #, python-format
 msgid "Import key ID: %s?"
-msgstr "Kulcsazonosító importálása: %s ?"
+msgstr ""
 
 #: views.py:98
 msgid "Import key"
-msgstr "Kulcs importálása"
+msgstr ""
 
 #: views.py:109
 #, python-format
 msgid "Unable to import key: %(key_id)s; %(error)s"
-msgstr "Nem sikerült importálni a kulcsot: %(key_id)s ; %(error)s"
+msgstr ""
 
 #: views.py:117
 #, python-format
@@ -285,20 +281,17 @@ msgstr "Kulcsszerver lekérdezése"
 
 #: views.py:186
 msgid "Upload new key"
-msgstr "Új kulcs feltöltése"
+msgstr ""
 
 #: views.py:208
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
 msgstr ""
-"Az aláírt dokumentumokhoz privát kulcsokat használnak. Privát kulcsokat csak"
-" a felhasználó tölthet fel. A privát és nyilvános kulcsok feltöltésének "
-"nézete megegyezik."
 
 #: views.py:213
 msgid "There no private keys"
-msgstr "Nincsenek privát kulcsok"
+msgstr ""
 
 #: views.py:232
 msgid ""
@@ -306,10 +299,7 @@ msgid ""
 " by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
-"Nyilvános kulcsokat használnak az aláírt dokumentumok ellenőrzésére. A "
-"nyilvános kulcsokat a felhasználó feltöltheti, vagy kulcsszerverekről "
-"töltheti le. A privát és nyilvános kulcsok feltöltésének nézete megegyezik."
 
 #: views.py:238
 msgid "There no public keys"
-msgstr "Nincsenek nyilvános kulcsok"
+msgstr ""

@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:44 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "Dozvole"
 
@@ -28,9 +28,9 @@ msgstr "Dozvole"
 msgid "Group count"
 msgstr ""
 
-#: classes.py:66
-msgid "Insufficient permissions."
-msgstr "Nedovoljne dozvole."
+#: classes.py:65
+msgid "Insufficient permission."
+msgstr ""
 
 #: dashboard_widgets.py:13
 msgid "Total roles"
@@ -72,12 +72,12 @@ msgstr "Dozvole za ulogu"
 msgid "Permission count"
 msgstr ""
 
-#: model_mixins.py:88
+#: model_mixins.py:89
 #, python-format
 msgid "Unknown or obsolete permission: %s"
 msgstr ""
 
-#: model_mixins.py:100
+#: model_mixins.py:102
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
 msgstr ""
@@ -94,15 +94,15 @@ msgstr "Labela"
 msgid "Role"
 msgstr "Uloga"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "Imenovani prostor"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "Ime"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "Permisija"
 

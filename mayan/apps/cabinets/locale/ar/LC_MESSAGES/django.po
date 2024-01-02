@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mohammed ALDOUB <voulnet@gmail.com>, 2023
-# Yaman Sanobar <yman.snober@gmail.com>, 2023
-# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Yaman Sanobar <yman.snober@gmail.com>, 2024
+# Mohammed ALDOUB <voulnet@gmail.com>, 2024
+# Marwan Rahhal <Marwanr@sssit.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,12 +22,16 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
+#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
 #: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "الخزائن"
+
+#: apps.py:165 models.py:40
+msgid "Documents"
+msgstr "الوثائق"
 
 #: events.py:11
 msgid "Cabinet created"
@@ -89,11 +93,11 @@ msgstr "ارجاع الوثائق الى الخزائن"
 msgid "get_cabinets()"
 msgstr "إستعراض الخزائن()"
 
-#: model_mixins.py:50
+#: model_mixins.py:64
 msgid "The path to the cabinet including all ancestors."
 msgstr "الوصول الى الخزائن"
 
-#: model_mixins.py:52 serializers.py:32
+#: model_mixins.py:66 serializers.py:32
 msgid "Full path"
 msgstr "مكان الوصول الكامل"
 
@@ -108,10 +112,6 @@ msgstr "وصف الخزانة"
 #: models.py:36
 msgid "Label"
 msgstr "العنوان"
-
-#: models.py:40
-msgid "Documents"
-msgstr "الوثائق"
 
 #: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"

@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Przemysław Bodio <przemyslawbodio.dev@gmail.com>, 2023
-# mic <winterfall24@gmail.com>, 2023
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
-# Roberto Rosario, 2023
-# tomkolp, 2023
+# mic <winterfall24@gmail.com>, 2024
+# Przemysław Bodio <przemyslawbodio.dev@gmail.com>, 2024
+# tomkolp, 2024
+# Roberto Rosario, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
-#: settings.py:7 views/event_views.py:29
+#: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr "Zdarzenia"
 
@@ -49,11 +49,11 @@ msgstr "Cel"
 msgid "Action object"
 msgstr "Obiekt akcji"
 
-#: apps.py:105 forms.py:10 forms.py:67
+#: apps.py:105 forms.py:10 forms.py:71
 msgid "Namespace"
 msgstr "Przestrzeń nazw"
 
-#: apps.py:110 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
+#: apps.py:110 forms.py:16 forms.py:77 serializers.py:21 serializers.py:46
 msgid "Label"
 msgstr "Etykieta"
 
@@ -92,15 +92,15 @@ msgstr "Zdarzenia wyczyszczone"
 msgid "Events exported"
 msgstr "Zdarzenia wyeksportowane"
 
-#: forms.py:18 forms.py:75
+#: forms.py:22 forms.py:83
 msgid "Subscription"
 msgstr "Subskrypcja"
 
-#: forms.py:20 forms.py:77
+#: forms.py:24 forms.py:85
 msgid "No"
 msgstr "Nie"
 
-#: forms.py:21 forms.py:78
+#: forms.py:25 forms.py:86
 msgid "Subscribed"
 msgstr "Subskrybowany"
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Clear event querysets"
 msgstr ""
 
-#: queues.py:25
+#: queues.py:26
 msgid "Export event querysets"
 msgstr ""
 
@@ -237,7 +237,7 @@ msgstr ""
 msgid "Verb"
 msgstr "Słowo"
 
-#: settings.py:13
+#: settings.py:15
 msgid ""
 "Disables asynchronous events mode. All events will be committed in the same "
 "process that triggers them. This was the behavior prior to version 4.5."

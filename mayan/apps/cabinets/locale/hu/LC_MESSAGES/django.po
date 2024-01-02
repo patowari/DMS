@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2023
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Dezső József <dejo60@gmail.com>, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,12 +22,16 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
+#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
 #: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Irattartók"
+
+#: apps.py:165 models.py:40
+msgid "Documents"
+msgstr "Dokumentumok"
 
 #: events.py:11
 msgid "Cabinet created"
@@ -47,7 +51,7 @@ msgstr "A dokumentum hozzáadva az irattartóhoz"
 
 #: events.py:23
 msgid "Document removed from cabinet"
-msgstr "A dokumentumot eltávolították az irattartóból"
+msgstr "A dokumentum eltávolítva az irattartóból"
 
 #: links.py:36 links.py:48 workflow_actions.py:75
 msgid "Remove from cabinets"
@@ -89,11 +93,11 @@ msgstr "Adja vissza a dokumentumot tartalmazó irattartók listáját."
 msgid "get_cabinets()"
 msgstr "get_cabinets()"
 
-#: model_mixins.py:50
+#: model_mixins.py:64
 msgid "The path to the cabinet including all ancestors."
 msgstr "Az irattartó elérési útja, beleértve az összes őst."
 
-#: model_mixins.py:52 serializers.py:32
+#: model_mixins.py:66 serializers.py:32
 msgid "Full path"
 msgstr "Teljes elérési út"
 
@@ -108,10 +112,6 @@ msgstr "Az irattartó azonosítására szolgáló rövid szöveg."
 #: models.py:36
 msgid "Label"
 msgstr "Cimke"
-
-#: models.py:40
-msgid "Documents"
-msgstr "Dokumentumok"
 
 #: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"
@@ -152,7 +152,7 @@ msgstr "Irattartók szerkesztése"
 
 #: permissions.py:24
 msgid "Remove documents from cabinets"
-msgstr "Távolítsa el a dokumentumokat az irattartókból"
+msgstr "Dokumentumok eltávolítása az irattartókból"
 
 #: permissions.py:27
 msgid "View cabinets"
@@ -160,15 +160,15 @@ msgstr "Irattartók megtekintése"
 
 #: search.py:24
 msgid "Document type"
-msgstr "Dokumentum típus"
+msgstr "Dokumentumtípus"
 
 #: search.py:27
 msgid "Document label"
-msgstr "Dokumentumcímke"
+msgstr ""
 
 #: search.py:30
 msgid "Document description"
-msgstr "Dokumentum leírása"
+msgstr ""
 
 #: search.py:33
 msgid "Document UUID"
@@ -180,7 +180,7 @@ msgstr "Dokumentumfájl ellenőrző összeg"
 
 #: search.py:42
 msgid "Document file MIME type"
-msgstr "Dokumentumfájl MIME típusa"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
@@ -203,7 +203,7 @@ msgstr "Dokumentumok URL"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
-msgstr "Ennek a irattartó szintnek a neve az ősei nevéhez fűződik."
+msgstr "Ennek a irattartó szintnek a neve az ősei nevéhez van fűzve."
 
 #: serializers.py:35
 msgid "Parents URL"
@@ -227,12 +227,12 @@ msgstr "Az irattartóból eltávolítandó dokumentum elsődleges kulcsa."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
-msgstr "Navigáció:"
+msgstr ""
 
 #: views.py:64
 #, python-format
 msgid "Add new level to: %s"
-msgstr "Új szint hozzáadása ehhez: %s"
+msgstr ""
 
 #: views.py:89
 #, python-format
@@ -303,7 +303,7 @@ msgstr "A \"%(object)s\" dokumentum hozzáadása az irattartókhoz."
 #: views.py:202
 #, python-format
 msgid "Add %(count)d document to cabinets."
-msgstr "A %(count)d dokumentum hozzáadása az irattartókhoz."
+msgstr "%(count)d dokumentum hozzáadása az irattartókhoz."
 
 #: views.py:220
 msgid "Cabinets to which the selected documents will be added."
@@ -312,7 +312,7 @@ msgstr ""
 
 #: views.py:266
 msgid "Documents can be added to many cabinets."
-msgstr "Számos irattartóhoz lehet a dokumentumokat hozzáadni."
+msgstr "Több irattartóhoz is lehet a dokumentumokat hozzáadni."
 
 #: views.py:269
 msgid "This document is not in any cabinet"
@@ -346,7 +346,7 @@ msgstr "%(count)d dokumentum eltávolítása az irattartókból.."
 #: views.py:298
 #, python-format
 msgid "Remove document \"%(object)s\" from cabinets."
-msgstr "Távolítsa el a \"%(object)s\" dokumentumot az irattartókból."
+msgstr "A \"%(object)s\" dokumentum eltávolítása az irattartókból."
 
 #: views.py:299
 #, python-format

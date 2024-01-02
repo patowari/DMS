@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# Pavlin Koldamov <pkoldamov@gmail.com>, 2023
-# Roberto Rosario, 2023
-# 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2023
-# Lyudmil Antonov <lantonov.here@gmail.com>, 2023
+# Pavlin Koldamov <pkoldamov@gmail.com>, 2024
+# Roberto Rosario, 2024
+# 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
+# Lyudmil Antonov <lantonov.here@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:215 apps.py:651 events.py:6 menus.py:8
+#: apps.py:215 apps.py:653 events.py:6 menus.py:8
 #: models/document_models.py:116 permissions.py:6 settings.py:33
 #: statistics.py:286
 msgid "Documents"
@@ -41,46 +41,46 @@ msgstr ""
 "На всеки качен документ трябва да бъде присвоен тип документ, това е "
 "основният начин, по който Mayan EDMS категоризира документите."
 
-#: apps.py:397
+#: apps.py:393
 msgid "File comments"
 msgstr "Файлови коментари"
 
-#: apps.py:401
+#: apps.py:397
 msgid "File encodings"
 msgstr "Файлови кодирания"
 
-#: apps.py:405
+#: apps.py:401
 msgid "File MIME types"
 msgstr "Файлови MIME типове"
 
-#: apps.py:409
+#: apps.py:405
 msgid "File timestamps"
 msgstr "Файлови времеви печати"
 
-#: apps.py:414 links/document_file_page_links.py:77
+#: apps.py:410 links/document_file_page_links.py:77
 #: models/document_file_models.py:106 models/document_file_page_models.py:26
 #: search.py:49
 msgid "Document file"
 msgstr "Файл на документа"
 
-#: apps.py:418 models/document_file_page_models.py:30
+#: apps.py:414 models/document_file_page_models.py:30
 #: models/document_version_page_models.py:40
 msgid "Page number"
 msgstr "Номер на страница"
 
-#: apps.py:423
+#: apps.py:419
 msgid "Return the latest file of the document."
 msgstr "Върнете най-новия файл на документа."
 
-#: apps.py:424
+#: apps.py:420
 msgid "Latest file"
 msgstr "Последен файл"
 
-#: apps.py:427
+#: apps.py:424
 msgid "Return the document instance."
 msgstr "Върнете екземпляра на документа."
 
-#: apps.py:428 links/document_file_links.py:70
+#: apps.py:425 links/document_file_links.py:70
 #: links/document_file_page_links.py:71 links/document_version_links.py:74
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:115 models/document_version_models.py:28
@@ -91,7 +91,7 @@ msgstr "Върнете екземпляра на документа."
 msgid "Document"
 msgstr "Документ"
 
-#: apps.py:556 apps.py:608 apps.py:637 apps.py:671 apps.py:696
+#: apps.py:556 apps.py:610 apps.py:639 apps.py:674 apps.py:699
 msgid "Thumbnail"
 msgstr "Умалено изображение"
 
@@ -99,17 +99,17 @@ msgstr "Умалено изображение"
 msgid "Type"
 msgstr "Тип"
 
-#: apps.py:566 apps.py:613 apps.py:676 forms/document_file_forms.py:89
+#: apps.py:567 apps.py:615 apps.py:679 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:120
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Страници"
 
-#: apps.py:575 models/favorite_document_models.py:33
+#: apps.py:577 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr "Добавени дата и час"
 
-#: apps.py:586
+#: apps.py:588
 msgid "Access date and time"
 msgstr "Дата и час на достъп"
 
@@ -677,11 +677,11 @@ msgid "All pages"
 msgstr "Всички страници"
 
 #: models/document_file_model_mixins.py:299
-#: models/document_file_page_model_mixins.py:230
-#: models/document_model_mixins.py:174 models/document_models.py:67
+#: models/document_file_page_model_mixins.py:240
+#: models/document_model_mixins.py:176 models/document_models.py:67
 #: models/document_type_models.py:41 models/document_type_models.py:151
-#: models/document_version_model_mixins.py:124
-#: models/document_version_page_model_mixins.py:280
+#: models/document_version_model_mixins.py:128
+#: models/document_version_page_model_mixins.py:290
 #: serializers/document_serializers.py:22
 #: serializers/document_version_serializers.py:17
 msgid "Label"
@@ -737,7 +737,7 @@ msgstr ""
 msgid "Document files"
 msgstr "Файлове на документи"
 
-#: models/document_file_page_model_mixins.py:224
+#: models/document_file_page_model_mixins.py:234
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "%(document_file)s - страница %(page_num)d на %(total_pages)d"
@@ -747,7 +747,7 @@ msgstr "%(document_file)s - страница %(page_num)d на %(total_pages)d"
 msgid "Document file page"
 msgstr "Страница на файл с документи"
 
-#: models/document_model_mixins.py:172
+#: models/document_model_mixins.py:173
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Кочан на документ, №: %d"
@@ -936,7 +936,7 @@ msgstr "Активен"
 msgid "Document versions"
 msgstr "Версии на документа"
 
-#: models/document_version_page_model_mixins.py:274
+#: models/document_version_page_model_mixins.py:284
 #, python-format
 msgid "%(document_version)s page %(page_number)d of %(total_pages)d"
 msgstr "%(document_version)s страница %(page_number)d на %(total_pages)d"
@@ -1722,10 +1722,9 @@ msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] ""
-"Да се изчистят ли всички трансформации на страници за избрания файл на "
-"документа?"
+"Изчистване на всички трансформации на страници за избрания файл с документ?"
 msgstr[1] ""
-"Да се изчистят ли всички преобразувания на страници за избраните файлове на "
+"Изчистване на всички трансформации на страници за избраните файлове с "
 "документи?"
 
 #: views/document_file_views.py:347
@@ -2012,11 +2011,11 @@ msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
 msgstr[0] ""
-"Да изчистите ли всички преобразувания на страници за избраната версия на "
-"документа?"
+"Изчистване на всички трансформации на страници за избраната версия на "
+"документ?"
 msgstr[1] ""
-"Да изчистите ли всички преобразувания на страници за избраната версия на "
-"документа?"
+"Изчистване на всички трансформации на страници за избраната версия на "
+"документ?"
 
 #: views/document_version_views.py:348
 #, python-format
@@ -2134,8 +2133,8 @@ msgstr "%(count)d документи добавени към предпочит�
 #: views/favorite_document_views.py:59
 msgid "Add the selected document to favorites?"
 msgid_plural "Add the selected documents to favorites?"
-msgstr[0] "Да добавите избрания документ към любими?"
-msgstr[1] "Да добавите ли избраните документи към предпочитани?"
+msgstr[0] "Добавяне на избрания документ към любими?"
+msgstr[1] "Добавяне на избраните документи към любими?"
 
 #: views/favorite_document_views.py:77
 #, python-format
@@ -2155,8 +2154,8 @@ msgstr "%(count)d документи премахнати от предпочи�
 #: views/favorite_document_views.py:92
 msgid "Remove the selected document from favorites?"
 msgid_plural "Remove the selected documents from favorites?"
-msgstr[0] "Да се премахне ли избрания документ от любимите?"
-msgstr[1] "Да се премахнат ли избраните документи от предпочитаните?"
+msgstr[0] "Премахване на избрания документ от любимите?"
+msgstr[1] "Премахване на избраните документи от любимите?"
 
 #: views/misc_views.py:44
 #, python-format
@@ -2206,7 +2205,7 @@ msgstr "Преместване на документа &quot; %(object)s &quot; 
 
 #: views/trashed_document_views.py:46
 msgid "Move the selected document to the trash?"
-msgstr "Преместване на избрания документ в кошчето?"
+msgstr "Да се премести ли избраният документ в кошчето?"
 
 #: views/trashed_document_views.py:47
 #, python-format
@@ -2249,7 +2248,7 @@ msgstr "Изтриване на изхвърления в кошчето док�
 
 #: views/trashed_document_views.py:111
 msgid "Delete the selected trashed document?"
-msgstr "Да се изтрие ли избраният документ в кошчето?"
+msgstr "Изтриване на избрания документ в кошчето?"
 
 #: views/trashed_document_views.py:149
 msgid ""

@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2023
-# Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
+# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Ingo Buchholz <ingo.buchholz@takwa.de>, 2024\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:18 settings.py:11
+#: apps.py:19 settings.py:11
 msgid "Lock manager"
 msgstr "Sperrverwaltung"
 

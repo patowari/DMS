@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,14 +47,14 @@ msgstr ""
 msgid "Whether to expand or not compressed archives."
 msgstr ""
 
-#: source_backends/mixins.py:57
+#: source_backends/mixins.py:58
 msgid "Decompression"
 msgstr ""
 
-#: source_backends/mixins.py:90
+#: source_backends/mixins.py:91
 msgid "Expand compressed files"
 msgstr ""
 
-#: source_backends/mixins.py:92
+#: source_backends/mixins.py:93
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""

@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +56,7 @@ msgstr "Törlés"
 
 #: links.py:54 models.py:41
 msgid "Document types"
-msgstr "Dokumentum típusok"
+msgstr "Dokumentumtípusok"
 
 #: links.py:59 links.py:94
 msgid "Edit"
@@ -76,19 +76,19 @@ msgstr "Feltételek"
 
 #: literals.py:7
 msgid "and"
-msgstr "és"
+msgstr ""
 
 #: literals.py:8
 msgid "or"
-msgstr "vagy"
+msgstr ""
 
 #: literals.py:12
 msgid "is equal to"
-msgstr "egyenlő"
+msgstr ""
 
 #: literals.py:13
 msgid "is equal to (case insensitive)"
-msgstr "egyenlő a (kis- és nagybetűk megkülönböztetése)"
+msgstr "egyenlő a (kis- és nagybetű érzékeny)"
 
 #: literals.py:14
 msgid "contains"
@@ -96,7 +96,7 @@ msgstr "tartalmaz"
 
 #: literals.py:15
 msgid "contains (case insensitive)"
-msgstr "tartalmaz (nincs kis- és nagybetű megkülönböztetés)"
+msgstr "tartalmaz (nem kis- és nagybetű érzékeny)"
 
 #: literals.py:16
 msgid "is in"
@@ -104,19 +104,19 @@ msgstr "benne van"
 
 #: literals.py:17
 msgid "is greater than"
-msgstr "nagyobb, mint"
+msgstr ""
 
 #: literals.py:18
 msgid "is greater than or equal to"
-msgstr "nagyobb vagy egyenlő, mint"
+msgstr ""
 
 #: literals.py:19
 msgid "is less than"
-msgstr "kevesebb mint"
+msgstr ""
 
 #: literals.py:20
 msgid "is less than or equal to"
-msgstr "kisebb vagy egyenlő, mint"
+msgstr ""
 
 #: literals.py:21
 msgid "starts with"
@@ -124,7 +124,7 @@ msgstr "ezzel kezdődik"
 
 #: literals.py:22
 msgid "starts with (case insensitive)"
-msgstr "ezzel kezdődik (nincs kis- és nagybetű megkülönböztetés)"
+msgstr "ezzel kezdődik (nem kis- és nagybetű érzékeny)"
 
 #: literals.py:23
 msgid "ends with"
@@ -132,11 +132,11 @@ msgstr "ezzel végződik"
 
 #: literals.py:24
 msgid "ends with (case insensitive)"
-msgstr "ezzel végződik (nincs kis- és nagybetű megkülönböztetés)"
+msgstr "ezzel végződik (nem kis- és nagybetű érzékeny)"
 
 #: literals.py:25
 msgid "is in regular expression"
-msgstr "reguláris kifejezésben van"
+msgstr ""
 
 #: literals.py:26
 msgid "is in regular expression (case insensitive)"
@@ -145,13 +145,11 @@ msgstr "reguláris kifejezésben van (nem kis- és nagybetű érzékeny)"
 #: model_mixins.py:43
 #, python-format
 msgid "Error generating dynamic label; %s"
-msgstr "Hiba a dinamikus címke generálásakor; %s"
+msgstr ""
 
 #: model_mixins.py:58
 msgid "This smart link is not allowed for the selected document's type."
 msgstr ""
-"Ez az intelligens hivatkozás nem engedélyezett a kiválasztott "
-"dokumentumtípushoz."
 
 #: model_mixins.py:108
 msgid "not"
@@ -159,7 +157,7 @@ msgstr "nem"
 
 #: model_mixins.py:112
 msgid "Full label"
-msgstr "Teljes címke"
+msgstr ""
 
 #: models.py:29
 msgid "A short text describing the smart link."
@@ -187,11 +185,11 @@ msgstr "Intelligens hivatkozás"
 
 #: models.py:91
 msgid "The inclusion is ignored for the first item."
-msgstr "A rendszer figyelmen kívül hagyja a felvételt az első elemnél."
+msgstr ""
 
 #: models.py:95
 msgid "This represents the metadata of all other documents."
-msgstr "Ez az összes többi dokumentum metaadatait jelenti."
+msgstr ""
 
 #: models.py:96
 msgid "Foreign document attribute"
@@ -207,15 +205,15 @@ msgstr ""
 
 #: models.py:103
 msgid "Expression"
-msgstr "Kifejezés"
+msgstr ""
 
 #: models.py:106
 msgid "Inverts the logic of the operator."
-msgstr "Megfordítja az operátor logikáját."
+msgstr ""
 
 #: models.py:107
 msgid "Negated"
-msgstr "Negált"
+msgstr ""
 
 #: models.py:114
 msgid "Link condition"
@@ -231,7 +229,7 @@ msgstr "Megoldott intelligens hivatkozások megtekintése"
 
 #: permissions.py:13
 msgid "Create new smart links"
-msgstr "Új intelligens hivatkozás létrehozása"
+msgstr "Új intelligens hivatkozások létrehozása"
 
 #: permissions.py:16
 msgid "Delete smart links"
@@ -239,11 +237,11 @@ msgstr "Intelligens hivatkozások törlése"
 
 #: permissions.py:19
 msgid "Edit smart links"
-msgstr "Intelligens hivatkozások szerkesztése"
+msgstr ""
 
 #: permissions.py:22
 msgid "View existing smart links"
-msgstr "Meglévő intelligens hivatkozások megtekintése"
+msgstr ""
 
 #: serializers.py:20 serializers.py:132
 msgid "Smart link URL"
@@ -256,7 +254,6 @@ msgstr "URL"
 #: serializers.py:49
 msgid "Primary key of the document type to add to the smart link."
 msgstr ""
-"Az intelligens hivatkozáshoz hozzáadandó dokumentumtípus elsődleges kulcsa."
 
 #: serializers.py:50 serializers.py:59
 msgid "Document type ID"
@@ -265,16 +262,14 @@ msgstr "Dokumentumtípus azonosító"
 #: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
 msgstr ""
-"Az intelligens hivatkozásról eltávolítandó dokumentumtípus elsődleges "
-"kulcsa."
 
 #: serializers.py:66
 msgid "Conditions URL"
-msgstr "Feltételek URL-je"
+msgstr "Feltételek URL"
 
 #: serializers.py:70
 msgid "Document types URL"
-msgstr "Dokumentumtípusok URL"
+msgstr ""
 
 #: serializers.py:74
 msgid "Document types add URL"
@@ -282,7 +277,7 @@ msgstr "Dokumentumtípusok URL hozzáadása"
 
 #: serializers.py:78
 msgid "Document types remove URL"
-msgstr "A dokumentumtípusok URL eltávolítása"
+msgstr "Dokumentumtípusok URL eltávolítása"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"
@@ -369,12 +364,12 @@ msgstr ""
 
 #: views/smart_link_views.py:182
 msgid "There are no resolved smart links for this document"
-msgstr "Nincsenek megoldott intelligens hivatkozások ehhez a dokumentumhoz"
+msgstr ""
 
 #: views/smart_link_views.py:186
 #, python-format
 msgid "Resolved smart links for document: %s"
-msgstr "Megoldott intelligens hivatkozások a következő dokumentumhoz: %s"
+msgstr ""
 
 #: views/smart_link_views.py:204
 msgid "Available smart links"
@@ -387,11 +382,11 @@ msgstr "Intelligens hivatkozások engedélyezve"
 #: views/smart_link_views.py:216
 #, python-format
 msgid "Smart links to enable for document type: %s"
-msgstr "Intelligens hivatkozások a következő dokumentumtípushoz: %s"
+msgstr ""
 
 #: views/smart_link_views.py:229
 msgid "Available document types"
-msgstr "Elérhető dokumentumtípusok"
+msgstr ""
 
 #: views/smart_link_views.py:230
 msgid "Document types enabled"
@@ -401,7 +396,6 @@ msgstr "Engedélyezett dokumentumtípusok"
 #, python-format
 msgid "Document type for which to enable smart link: %s"
 msgstr ""
-"Dokumentumtípus, amelynél engedélyezni kell az intelligens hivatkozást: %s"
 
 #: views/smart_link_views.py:271
 #, python-format
@@ -411,4 +405,4 @@ msgstr "Intelligens hivatkozás törlése: %s"
 #: views/smart_link_views.py:288
 #, python-format
 msgid "Edit smart link: %s"
-msgstr "Intelligens hivatkozás szerkesztése: %s"
+msgstr ""

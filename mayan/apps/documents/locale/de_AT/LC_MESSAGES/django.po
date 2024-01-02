@@ -4,29 +4,29 @@
 # 
 # Translators:
 # Translators:
-# tetjarediske <tetja.rediske@googlemail.com>, 2023
-# Ampérlo Voltić <amperlo.voltic@gmail.com>, 2023
-# Marvin Haschker <marvin@haschker.me>, 2023
-# Jesaja Everling <jeverling@gmail.com>, 2023
-# Tobias Paepke <tobias.paepke@paepke.net>, 2023
-# 847f3f05406324d125c568a4b098bddb, 2023
-# Timo Hocker, 2023
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2023
-# Ingo Buchholz <ingo.buchholz@takwa.de>, 2023
-# Roberto Rosario, 2023
-# Felix <felix.com@gmx.com>, 2023
-# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2023
-# Siegfried Albrecht, 2023
-# Berny <berny@bernhard-marx.de>, 2023
-# Mathias Behrle <mathiasb@m9s.biz>, 2023
+# tetjarediske <tetja.rediske@googlemail.com>, 2024
+# Marvin Haschker <marvin@haschker.me>, 2024
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
+# Tobias Paepke <tobias.paepke@paepke.net>, 2024
+# 847f3f05406324d125c568a4b098bddb, 2024
+# Roberto Rosario, 2024
+# Ampérlo Voltić <amperlo.voltic@gmail.com>, 2024
+# Siegfried Albrecht, 2024
+# Felix <felix.com@gmx.com>, 2024
+# Timo Hocker, 2024
+# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
+# Jesaja Everling <jeverling@gmail.com>, 2024
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
+# Berny <berny@bernhard-marx.de>, 2024
+# Mathias Behrle <mathiasb@m9s.biz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:215 apps.py:651 events.py:6 menus.py:8
+#: apps.py:215 apps.py:653 events.py:6 menus.py:8
 #: models/document_models.py:116 permissions.py:6 settings.py:33
 #: statistics.py:286
 msgid "Documents"
@@ -52,46 +52,46 @@ msgstr ""
 "Jedes hochgeladene Dokument muss einen Dokumententyp zugewiesen bekommen, da"
 " Mayan EDMS Dokumente auf der Grundlage von Dokumententypen kategorisiert."
 
-#: apps.py:397
+#: apps.py:393
 msgid "File comments"
 msgstr "Dateikommentare"
 
-#: apps.py:401
+#: apps.py:397
 msgid "File encodings"
 msgstr "Dateikodierungen"
 
-#: apps.py:405
+#: apps.py:401
 msgid "File MIME types"
 msgstr "Datei-MIME-Typen"
 
-#: apps.py:409
+#: apps.py:405
 msgid "File timestamps"
 msgstr "Dateizeitstempel"
 
-#: apps.py:414 links/document_file_page_links.py:77
+#: apps.py:410 links/document_file_page_links.py:77
 #: models/document_file_models.py:106 models/document_file_page_models.py:26
 #: search.py:49
 msgid "Document file"
 msgstr "Dokumentendatei"
 
-#: apps.py:418 models/document_file_page_models.py:30
+#: apps.py:414 models/document_file_page_models.py:30
 #: models/document_version_page_models.py:40
 msgid "Page number"
 msgstr "Seitennummer"
 
-#: apps.py:423
+#: apps.py:419
 msgid "Return the latest file of the document."
 msgstr "Die neueste Datei des Dokuments zurückgeben."
 
-#: apps.py:424
+#: apps.py:420
 msgid "Latest file"
 msgstr "Neueste Datei"
 
-#: apps.py:427
+#: apps.py:424
 msgid "Return the document instance."
 msgstr "Dokumenteninstanz zurückgeben."
 
-#: apps.py:428 links/document_file_links.py:70
+#: apps.py:425 links/document_file_links.py:70
 #: links/document_file_page_links.py:71 links/document_version_links.py:74
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:115 models/document_version_models.py:28
@@ -102,7 +102,7 @@ msgstr "Dokumenteninstanz zurückgeben."
 msgid "Document"
 msgstr "Dokument"
 
-#: apps.py:556 apps.py:608 apps.py:637 apps.py:671 apps.py:696
+#: apps.py:556 apps.py:610 apps.py:639 apps.py:674 apps.py:699
 msgid "Thumbnail"
 msgstr "Bild"
 
@@ -110,17 +110,17 @@ msgstr "Bild"
 msgid "Type"
 msgstr "Typ"
 
-#: apps.py:566 apps.py:613 apps.py:676 forms/document_file_forms.py:89
+#: apps.py:567 apps.py:615 apps.py:679 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:120
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Seiten"
 
-#: apps.py:575 models/favorite_document_models.py:33
+#: apps.py:577 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr "Datum und Uhrzeit hinzugefügt"
 
-#: apps.py:586
+#: apps.py:588
 msgid "Access date and time"
 msgstr "Datum und Zeit des Zugriffs"
 
@@ -689,11 +689,11 @@ msgid "All pages"
 msgstr "Alle Seiten"
 
 #: models/document_file_model_mixins.py:299
-#: models/document_file_page_model_mixins.py:230
-#: models/document_model_mixins.py:174 models/document_models.py:67
+#: models/document_file_page_model_mixins.py:240
+#: models/document_model_mixins.py:176 models/document_models.py:67
 #: models/document_type_models.py:41 models/document_type_models.py:151
-#: models/document_version_model_mixins.py:124
-#: models/document_version_page_model_mixins.py:280
+#: models/document_version_model_mixins.py:128
+#: models/document_version_page_model_mixins.py:290
 #: serializers/document_serializers.py:22
 #: serializers/document_version_serializers.py:17
 msgid "Label"
@@ -751,7 +751,7 @@ msgstr ""
 msgid "Document files"
 msgstr "Dokumentendateien"
 
-#: models/document_file_page_model_mixins.py:224
+#: models/document_file_page_model_mixins.py:234
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "%(document_file)s - Seite %(page_num)d von %(total_pages)d"
@@ -761,7 +761,7 @@ msgstr "%(document_file)s - Seite %(page_num)d von %(total_pages)d"
 msgid "Document file page"
 msgstr "Seite der Dokumentendatei"
 
-#: models/document_model_mixins.py:172
+#: models/document_model_mixins.py:173
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Fragment, ID: %d"
@@ -964,7 +964,7 @@ msgstr "Aktiv"
 msgid "Document versions"
 msgstr "Dokumentversionen"
 
-#: models/document_version_page_model_mixins.py:274
+#: models/document_version_page_model_mixins.py:284
 #, python-format
 msgid "%(document_version)s page %(page_number)d of %(total_pages)d"
 msgstr "%(document_version)s Seite %(page_number)d von %(total_pages)d"

@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
-# Yaman Sanobar <yman.snober@gmail.com>, 2023
-# Mohammed ALDOUB <voulnet@gmail.com>, 2023
-# WM Shinkada <shinkadawasim@gmail.com>, 2023
-# Marwan Rahhal <Marwanr@sssit.net>, 2023
+# Roberto Rosario, 2024
+# Yaman Sanobar <yman.snober@gmail.com>, 2024
+# Mohammed ALDOUB <voulnet@gmail.com>, 2024
+# WM Shinkada <shinkadawasim@gmail.com>, 2024
+# Marwan Rahhal <Marwanr@sssit.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,7 @@ msgstr "الوصف"
 msgid "Type"
 msgstr "النوع"
 
-#: apps.py:49 classes.py:220
+#: apps.py:49 classes.py:221
 msgid "Other data"
 msgstr "بيانات اخرى"
 
@@ -52,7 +52,7 @@ msgstr "بيانات اخرى"
 msgid "Declared by"
 msgstr "عرف من قبل"
 
-#: apps.py:57 classes.py:218
+#: apps.py:57 classes.py:219
 msgid "Version"
 msgstr "الاصدار"
 
@@ -60,7 +60,7 @@ msgstr "الاصدار"
 msgid "Environment"
 msgstr "البيئة"
 
-#: apps.py:64 classes.py:220
+#: apps.py:64 classes.py:221
 msgid "Check"
 msgstr "مراجعة"
 
@@ -72,128 +72,128 @@ msgstr "اسم"
 msgid "App"
 msgstr "التطبيقات"
 
-#: classes.py:219 classes.py:950
+#: classes.py:220 classes.py:961
 msgid "Environments"
 msgstr ""
 
-#: classes.py:318
+#: classes.py:329
 msgid "Need to specify at least one: app_label or module."
 msgstr "بحاجة الى تحديد: app_label or module."
 
-#: classes.py:323
+#: classes.py:334
 #, python-format
 msgid "Dependency \"%s\" already registered."
 msgstr "الارتباطات \"%s\" معرفة سابقاً."
 
-#: classes.py:374
+#: classes.py:385
 #, python-format
 msgid "Installing package: %s... "
 msgstr "تم تنصيب الملفات: %s... "
 
-#: classes.py:381
+#: classes.py:392
 msgid "Already installed."
 msgstr "التنصيب معرف مسبقاً"
 
-#: classes.py:386 classes.py:393 classes.py:399
+#: classes.py:397 classes.py:404 classes.py:410
 msgid "Complete."
 msgstr "أكتمل"
 
-#: classes.py:426
+#: classes.py:437
 msgid "Installed and correct version"
 msgstr "الإصدار الصحيح"
 
-#: classes.py:428
+#: classes.py:439
 msgid "Missing or incorrect version"
 msgstr "تفتقد او إصدار غير متطابق"
 
-#: classes.py:465
+#: classes.py:476
 msgid "None"
 msgstr "لا شيء"
 
-#: classes.py:474
+#: classes.py:485
 msgid "Not specified"
 msgstr "لم يتم التحديد"
 
-#: classes.py:477
+#: classes.py:488
 msgid "Patching files... "
 msgstr "تصحيح الملفات"
 
-#: classes.py:505
+#: classes.py:516
 msgid "Executables that are called directly by the code."
 msgstr "ملفات قابلة للتنفيذ"
 
-#: classes.py:507
+#: classes.py:518
 msgid "Binary"
 msgstr "ثنائي"
 
-#: classes.py:524
+#: classes.py:535
 msgid ""
 "JavaScript libraries downloaded the from NPM registry and used for front-end"
 " functionality."
 msgstr "تم تنزيل الملفات المطلوبة للتعديل"
 
-#: classes.py:527
+#: classes.py:538
 msgid "JavaScript"
 msgstr "جافا سكريبت"
 
-#: classes.py:559 classes.py:853
+#: classes.py:570 classes.py:864
 msgid "Downloading... "
 msgstr "تحميل "
 
-#: classes.py:564
+#: classes.py:575
 msgid "Verifying... "
 msgstr "تحقق..."
 
-#: classes.py:569 classes.py:858
+#: classes.py:580 classes.py:869
 msgid "Extracting... "
 msgstr "فك الضغط"
 
-#: classes.py:779
+#: classes.py:790
 msgid "Python packages downloaded from PyPI."
 msgstr "تم تنزيل ملفات البايثون"
 
-#: classes.py:781
+#: classes.py:792
 msgid "Python"
 msgstr "بايثون"
 
-#: classes.py:833
+#: classes.py:844
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "خطوط تم تحميلها "
 
-#: classes.py:835
+#: classes.py:846
 msgid "Google font"
 msgstr "خط قوقل"
 
-#: classes.py:931
+#: classes.py:942
 msgid "Declared in app"
 msgstr "تم اعلان التطبيق"
 
-#: classes.py:932
+#: classes.py:943
 msgid "Show dependencies by the app that declared them."
 msgstr "اظهار الارتباطات للنظام"
 
-#: classes.py:936
+#: classes.py:947
 msgid "Class"
 msgstr "الفئة"
 
-#: classes.py:937
+#: classes.py:948
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
 msgstr "يتم تقسيم الفئات حسب اللغة"
 
-#: classes.py:942
+#: classes.py:953
 msgid "State"
 msgstr "الحالة"
 
-#: classes.py:943
+#: classes.py:954
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
 "dependencies is missing or an incorrect version is present."
 msgstr "يوجد خطأ في الارتباطات للتأكد من ادخال القيم الصحيحة"
 
-#: classes.py:951
+#: classes.py:962
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."

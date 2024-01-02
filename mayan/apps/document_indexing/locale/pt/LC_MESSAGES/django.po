@@ -4,21 +4,21 @@
 # 
 # Translators:
 # Translators:
-# Emerson Soares <on.emersonsoares@gmail.com>, 2023
-# Roberto Rosario, 2023
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023
-# Aline Freitas <aline@alinefreitas.com.br>, 2023
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
-# Márcia Ferreira, 2023
+# Roberto Rosario, 2024
+# Emerson Soares <on.emersonsoares@gmail.com>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Aline Freitas <aline@alinefreitas.com.br>, 2024
+# Márcia Ferreira, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Márcia Ferreira, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Márcia Ferreira, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -122,7 +122,7 @@ msgstr "Exclui e cria a partir do zero todos os índices de documentos."
 msgid "Rebuild indexes"
 msgstr "Reconstruir índices "
 
-#: links.py:70 views/index_template_views.py:452
+#: links.py:70 views/index_template_views.py:451
 msgid "Reset indexes"
 msgstr "Redefinir índices"
 
@@ -328,7 +328,7 @@ msgstr "Remover templastes de índice"
 msgid "View index templates"
 msgstr "Ver templates de índice"
 
-#: permissions.py:25 views/index_template_views.py:414
+#: permissions.py:25 views/index_template_views.py:413
 msgid "Rebuild index templates"
 msgstr "Reconstruir templastes de índice"
 
@@ -480,7 +480,7 @@ msgstr "Navegação: %s"
 msgid "Contents for index: %s"
 msgstr "Conteúdo para o índice? %s"
 
-#: views/index_instance_views.py:143
+#: views/index_instance_views.py:142
 msgid ""
 "Assign the document type of this document to an index to have it appear in "
 "instances of those indexes organization units. "
@@ -488,11 +488,11 @@ msgstr ""
 "Associe o tipo deste documento a um índice para que ele apareça em "
 "instâncias das unidades de organização desses índices."
 
-#: views/index_instance_views.py:148
+#: views/index_instance_views.py:147
 msgid "This document is not in any index"
 msgstr "Este documento não está em nenhum índice"
 
-#: views/index_instance_views.py:152
+#: views/index_instance_views.py:151
 #, python-format
 msgid "Indexes nodes containing document: %s"
 msgstr "Indexar nós contendo documento: %s"
@@ -542,7 +542,7 @@ msgstr "Apagar o índice: %s?"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr "Tipos de documento disponíveis"
+msgstr ""
 
 #: views/index_template_views.py:138
 msgid "Document types linked"
@@ -593,31 +593,31 @@ msgstr ""
 msgid "Tree template nodes for index: %s"
 msgstr "Nós de modelo da árvore do índice: %s"
 
-#: views/index_template_views.py:312
+#: views/index_template_views.py:311
 #, python-format
 msgid "Create child node of: %s"
 msgstr "Criar nó filho de: %s"
 
-#: views/index_template_views.py:339
+#: views/index_template_views.py:338
 #, python-format
 msgid "Delete the index template node: %s?"
 msgstr "Excluir o nó de template de índice: %s?"
 
-#: views/index_template_views.py:364
+#: views/index_template_views.py:363
 #, python-format
 msgid "Edit the index template node: %s"
 msgstr "Editar o nó do modelo de índice: %s"
 
-#: views/index_template_views.py:385
+#: views/index_template_views.py:384
 #, python-format
 msgid "Rebuild index template: %s"
 msgstr "Reconstruir modelo de índice: %s"
 
-#: views/index_template_views.py:407
+#: views/index_template_views.py:406
 msgid "Index template queued for rebuild."
 msgstr "Modelo de índice em linha para reconstrução. "
 
-#: views/index_template_views.py:431
+#: views/index_template_views.py:430
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
@@ -625,7 +625,7 @@ msgstr[0] "%(count)dmodelo de índice em linha para reconstrução "
 msgstr[1] "%(count)dmodelos de índice em linha para reconstrução "
 msgstr[2] "%(count)dmodelos de índice em linha para reconstrução "
 
-#: views/index_template_views.py:465
+#: views/index_template_views.py:464
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
@@ -633,6 +633,6 @@ msgstr[0] "%(count)díndice redefinidos."
 msgstr[1] "%(count)d índices redefinidos."
 msgstr[2] "%(count)d índices redefinidos."
 
-#: views/index_template_views.py:478
+#: views/index_template_views.py:477
 msgid "Index templates for which their instances will be deleted."
 msgstr "Templates de índice para os quais suas instâncias serão excluídas."

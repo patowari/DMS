@@ -4,22 +4,22 @@
 # 
 # Translators:
 # Translators:
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2023
-# Emerson Soares <on.emersonsoares@gmail.com>, 2023
-# Roberto Rosario, 2023
-# Vítor Figueiró <vfigueiro@gmail.com>, 2023
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023
-# Marco Morais <marco@edgoo.io>, 2023
-# Márcia Ferreira, 2023
+# Emerson Soares <on.emersonsoares@gmail.com>, 2024
+# Roberto Rosario, 2024
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Marco Morais <marco@edgoo.io>, 2024
+# Vítor Figueiró <vfigueiro@gmail.com>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
+# Márcia Ferreira, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Márcia Ferreira, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Márcia Ferreira, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:26 classes.py:204 links.py:27
+#: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
 msgstr "ACL's"
 
@@ -79,12 +79,12 @@ msgstr "Permissões"
 msgid "Global ACLs"
 msgstr "ACLs globais"
 
-#: managers.py:274
+#: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
 msgstr "O objecto \"%s\" não é um modelo e não é possível verificar o acesso"
 
-#: managers.py:294
+#: managers.py:293
 #, python-format
 msgid "Insufficient access for: %s"
 msgstr "Acesso insuficiente para: \"%s\""

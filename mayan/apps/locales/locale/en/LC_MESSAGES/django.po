@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Locales"
 msgstr ""
 
-#: dependencies.py:11
+#: dependencies.py:12
 msgid "Transifex Client"
 msgstr ""
 
@@ -61,12 +61,12 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: views.py:40
+#: views.py:39
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr ""
 
-#: views.py:88
+#: views.py:72
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr ""

@@ -4,20 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Panasoft, 2023
-# Alex Chigrin <chalex84@mail.ru>, 2023
-# Sergey Glita <gsv70@mail.ru>, 2023
-# Oleg Sizov <olegsm35@gmail.com>, 2023
-# Daler Abdulloev <abdulloevdaler@gmail.com>, 2023
-# Ilya Pavlov <spirkaa@gmail.com>, 2023
+# Alex Chigrin <chalex84@mail.ru>, 2024
+# Panasoft, 2024
+# Oleg Sizov <olegsm35@gmail.com>, 2024
+# Daler Abdulloev <abdulloevdaler@gmail.com>, 2024
+# Sergey Glita <gsv70@mail.ru>, 2024
+# Ilya Pavlov <spirkaa@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,12 +25,16 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
+#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
 #: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Кабинеты"
+
+#: apps.py:165 models.py:40
+msgid "Documents"
+msgstr "Документы"
 
 #: events.py:11
 msgid "Cabinet created"
@@ -92,11 +96,11 @@ msgstr "Возвращает список всех кабинетов, соде�
 msgid "get_cabinets()"
 msgstr "get_cabinets()"
 
-#: model_mixins.py:50
+#: model_mixins.py:64
 msgid "The path to the cabinet including all ancestors."
 msgstr "Путь к кабинету включая всех предков."
 
-#: model_mixins.py:52 serializers.py:32
+#: model_mixins.py:66 serializers.py:32
 msgid "Full path"
 msgstr "Полный путь"
 
@@ -111,10 +115,6 @@ msgstr "Краткое описание кабинета."
 #: models.py:36
 msgid "Label"
 msgstr "Заголовок"
-
-#: models.py:40
-msgid "Documents"
-msgstr "Документы"
 
 #: models.py:50 models.py:132 models.py:157
 msgid "Cabinet"

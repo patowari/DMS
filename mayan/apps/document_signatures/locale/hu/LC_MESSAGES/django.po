@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Dezső József <dejo60@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Dezső József <dejo60@gmail.com>, 2024
+# Csaba Tarjányi, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +32,7 @@ msgstr "Dátum és idő"
 
 #: apps.py:116 models.py:52 serializers.py:61
 msgid "Key ID"
-msgstr "Kulcsazonosító"
+msgstr "Kulcs ID"
 
 #: apps.py:120 forms.py:78
 msgid "None"
@@ -40,7 +40,7 @@ msgstr "Nincs"
 
 #: apps.py:121 forms.py:65 models.py:57
 msgid "Signature ID"
-msgstr "Aláírási azonosító"
+msgstr "Aláírás azonosító"
 
 #: apps.py:126
 msgid "Type"
@@ -48,7 +48,7 @@ msgstr "Típus"
 
 #: events.py:10
 msgid "Detached signature created"
-msgstr "Leválasztott aláírás létrehozva"
+msgstr ""
 
 #: events.py:13
 msgid "Detached signature deleted"
@@ -56,73 +56,73 @@ msgstr "Leválasztott aláírás törölve"
 
 #: events.py:16
 msgid "Detached signature uploaded"
-msgstr "Leválasztott aláírás feltöltve"
+msgstr ""
 
 #: events.py:20
 msgid "Embedded signature created"
-msgstr "Beágyazott aláírás létrehozva"
+msgstr ""
 
 #: forms.py:17 forms.py:31 workflow_actions.py:69
 msgid "Key"
-msgstr "Kulcs"
+msgstr ""
 
 #: forms.py:22 serializers.py:66 workflow_actions.py:31
 msgid ""
 "The passphrase to unlock the key and allow it to be used to sign the "
 "document file."
-msgstr "Jelszó a kulcs feloldásához és a dokumentumfájl aláírásához."
+msgstr ""
 
 #: forms.py:24 serializers.py:68 workflow_actions.py:28
 msgid "Passphrase"
-msgstr "Jelszó"
+msgstr ""
 
 #: forms.py:33
 msgid "Private key that will be used to sign this document file."
-msgstr "A dokumentumfájl aláírásához használt privát kulcs."
+msgstr ""
 
 #: forms.py:45
 msgid "Signature is embedded?"
-msgstr "Az aláírás be van ágyazva?"
+msgstr ""
 
 #: forms.py:48
 msgid "Signature date"
-msgstr "Aláírás dátuma"
+msgstr ""
 
 #: forms.py:52
 msgid "Signature key ID"
-msgstr "Aláíró kulcs azonosítója"
+msgstr "Aláírás kulcs azonosítója"
 
 #: forms.py:55
 msgid "Signature key present?"
-msgstr "Megvan az aláírási kulcs?"
+msgstr "Megvan az aláírás kulcs?"
 
 #: forms.py:68
 msgid "Key fingerprint"
-msgstr "Kulcs ujjlenyomata"
+msgstr ""
 
 #: forms.py:72
 msgid "Key creation date"
-msgstr "Kulcs létrehozásának dátuma"
+msgstr ""
 
 #: forms.py:77
 msgid "Key expiration date"
-msgstr "Kulcs lejárati dátuma"
+msgstr ""
 
 #: forms.py:82
 msgid "Key length"
-msgstr "Kulcs hossza"
+msgstr ""
 
 #: forms.py:86
 msgid "Key algorithm"
-msgstr "Kulcs algoritmus"
+msgstr ""
 
 #: forms.py:90
 msgid "Key user ID"
-msgstr "Kulcs felhasználói azonosító"
+msgstr ""
 
 #: forms.py:94
 msgid "Key type"
-msgstr "Kulcs típusa"
+msgstr ""
 
 #: links.py:44
 msgid "Sign detached"
@@ -150,19 +150,19 @@ msgstr "Részletek"
 
 #: links.py:92 queues.py:7
 msgid "Signatures"
-msgstr "Aláírások"
+msgstr ""
 
 #: links.py:100
 msgid "Refresh all signatures"
-msgstr "Az összes aláírás frissítése"
+msgstr ""
 
 #: links.py:106
 msgid "Verify all documents"
-msgstr "Ellenőrizze az összes dokumentumot"
+msgstr ""
 
 #: managers.py:94
 msgid "signed"
-msgstr "aláírva"
+msgstr ""
 
 #: model_mixins.py:15
 msgid "Detached"
@@ -170,59 +170,59 @@ msgstr "Leválasztott"
 
 #: model_mixins.py:17
 msgid "Embedded"
-msgstr "Beágyazott"
+msgstr ""
 
 #: models.py:42
 msgid "Document file"
-msgstr "Dokumentumfájl"
+msgstr ""
 
 #: models.py:47
 msgid "Date and time signed"
-msgstr "Aláírás dátuma és időpontja"
+msgstr ""
 
 #: models.py:51
 msgid "ID of the key that will be used to sign the document."
-msgstr "A dokumentum aláírásához használt kulcs azonosítója."
+msgstr ""
 
 #: models.py:61
 msgid "Public key fingerprint"
-msgstr "Nyilvános kulcsú ujjlenyomat"
+msgstr ""
 
 #: models.py:68
 msgid "Document file signature"
-msgstr "Dokumentumfájl aláírása"
+msgstr "Dokumentumfájl aláírás"
 
 #: models.py:69
 msgid "Document file signatures"
-msgstr "Dokumentumfájl aláírások"
+msgstr ""
 
 #: models.py:86
 msgid "Signature file previously generated."
-msgstr "Korábban létrehozott aláírási fájl."
+msgstr ""
 
 #: models.py:89
 msgid "Signature file"
-msgstr "Aláírási fájl"
+msgstr "Aláíró állomány"
 
 #: models.py:95
 msgid "Document file detached signature"
-msgstr "A dokumentumfájl leválasztott aláírása"
+msgstr ""
 
 #: models.py:96
 msgid "Document file detached signatures"
-msgstr "A dokumentumfájlból leválasztott aláírások"
+msgstr ""
 
 #: models.py:100
 msgid "signature"
-msgstr "aláírás"
+msgstr ""
 
 #: models.py:151
 msgid "Document file embedded signature"
-msgstr "Dokumentumfájl beágyazott aláírása"
+msgstr ""
 
 #: models.py:152
 msgid "Document file embedded signatures"
-msgstr "Dokumentumfájlba beágyazott aláírások"
+msgstr ""
 
 #: permissions.py:10
 msgid "Sign documents with detached signatures"
@@ -238,19 +238,19 @@ msgstr "Leválasztott aláírások törlése"
 
 #: permissions.py:22
 msgid "Download detached document signatures"
-msgstr "Leválasztott dokumentumaláírások letöltése"
+msgstr ""
 
 #: permissions.py:26
 msgid "Upload detached document signatures"
-msgstr "Leválasztott dokumentumaláírások feltöltése"
+msgstr ""
 
 #: permissions.py:30
 msgid "Verify document signatures"
-msgstr "Ellenőrizze a dokumentumok aláírásait"
+msgstr "Dokumentum aláírások ellenőrzése"
 
 #: permissions.py:34
 msgid "View document signatures"
-msgstr "Dokumentum aláírások megtekintése"
+msgstr ""
 
 #: queues.py:10
 msgid "Signatures slow"
@@ -282,7 +282,7 @@ msgstr "Dokumentumfájl URL"
 
 #: serializers.py:59
 msgid "Primary key of the secret key used to sign the document file."
-msgstr "A dokumentumfájl aláírásához használt titkos kulcs elsődleges kulcsa."
+msgstr ""
 
 #: serializers.py:110
 msgid "URL"
@@ -290,8 +290,7 @@ msgstr "URL"
 
 #: settings.py:20
 msgid "Path to the Storage subclass to use when storing detached signatures."
-msgstr ""
-"A Storage alosztály elérési útja a leválasztott aláírások tárolásakor."
+msgstr "A Tároló alosztály elérési útja a leválasztott aláírások tárolásakor."
 
 #: settings.py:27
 msgid "Arguments to pass to the SIGNATURE_STORAGE_BACKEND."
@@ -302,24 +301,22 @@ msgid ""
 "Unable to initialize the detached signatures storage. Check the settings {} "
 "and {} for formatting errors."
 msgstr ""
-"Nem sikerült inicializálni a leválasztott aláírástárolót. Ellenőrizze a "
-"beállításokat {} és {} formázási hibákért."
 
 #: storages.py:20
 msgid "Detached signatures"
-msgstr "Leválasztott aláírások"
+msgstr ""
 
 #: views.py:75 views.py:145
 msgid "Passphrase is needed to unlock this key."
-msgstr "A kulcs feloldásához jelszóra van szükség."
+msgstr ""
 
 #: views.py:88 views.py:158
 msgid "Passphrase is incorrect."
-msgstr "A jelszó hibás."
+msgstr ""
 
 #: views.py:101 views.py:171
 msgid "Document file signed successfully."
-msgstr "A dokumentumfájl aláírása sikeresen megtörtént."
+msgstr ""
 
 #: views.py:111
 #, python-format
@@ -334,17 +331,17 @@ msgstr " A \"%s\" dokumentumfájlt aláírása beágyazott aláírással"
 #: views.py:205
 #, python-format
 msgid "Delete detached signature: %s"
-msgstr "A leválasztott aláírás törlése: %s"
+msgstr ""
 
 #: views.py:257
 #, python-format
 msgid "Upload detached signature for document file: %s"
-msgstr "Leválasztott aláírás feltöltése a dokumentumfájlhoz: %s"
+msgstr ""
 
 #: views.py:287
 #, python-format
 msgid "Details for signature: %s"
-msgstr "Részletek az aláíráshoz: %s"
+msgstr ""
 
 #: views.py:312
 msgid ""
@@ -358,12 +355,12 @@ msgstr ""
 
 #: views.py:341
 msgid "There are no signatures for this document file."
-msgstr "Nincsenek aláírások ehhez a dokumentumfájlhoz."
+msgstr ""
 
 #: views.py:345
 #, python-format
 msgid "Signatures for document file: %s"
-msgstr "A dokumentumfájl aláírásai: %s"
+msgstr ""
 
 #: views.py:356 views.py:377
 msgid "On large databases this operation may take some time to execute."
@@ -371,7 +368,7 @@ msgstr "A nagy adatbázisok esetében a művelet sokáig is tarthat."
 
 #: views.py:358
 msgid "Refresh all signatures information?"
-msgstr "Frissíti az összes aláírási információt?"
+msgstr ""
 
 #: views.py:369
 msgid "Signature information refresh queued successfully."
@@ -379,7 +376,7 @@ msgstr "Az aláírási információk frissítése sikeresen sorba került."
 
 #: views.py:379
 msgid "Verify all document for signatures?"
-msgstr "Ellenőrzi az összes dokumentumot aláírás céljából?"
+msgstr ""
 
 #: views.py:390
 msgid "Signature verification queued successfully."
@@ -391,11 +388,11 @@ msgstr "Dokumentum aláírása (leválasztott)"
 
 #: workflow_actions.py:48
 msgid "Private key that will be used to sign the document file."
-msgstr "Privát kulcs, amely a dokumentumfájl aláírására szolgál."
+msgstr ""
 
 #: workflow_actions.py:55
 msgid "Private key"
-msgstr "Privát kulcs"
+msgstr ""
 
 #: workflow_actions.py:81
 msgid ""
@@ -408,4 +405,4 @@ msgstr ""
 
 #: workflow_actions.py:102
 msgid "Sign document (embedded)"
-msgstr "Dokumentum aláírása (beágyazott)"
+msgstr ""

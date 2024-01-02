@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,15 +92,15 @@ msgstr "Nombre del archivo"
 msgid "Date time"
 msgstr "Fecha y hora"
 
-#: model_mixins.py:82
+#: model_mixins.py:83
 msgid "Unnamed file"
 msgstr "Archivo sin nombre"
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid "Size"
 msgstr "Tamaño"
 
-#: model_mixins.py:108 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:48 serializers.py:15
 msgid "User"
 msgstr "Usuario"
 

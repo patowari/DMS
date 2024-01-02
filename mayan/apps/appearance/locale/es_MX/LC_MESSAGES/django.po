@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -273,20 +273,20 @@ msgstr ""
 msgid "About"
 msgstr "Sobre"
 
-#: templates/appearance/about.html:67
+#: templates/appearance/about.html:21
 msgid "Version"
 msgstr "Versión"
 
-#: templates/appearance/about.html:69
+#: templates/appearance/about.html:23
 #, python-format
 msgid "Build number: %(build_number)s"
 msgstr "Número de compilación: %(build_number)s"
 
-#: templates/appearance/about.html:82
+#: templates/appearance/about.html:36
 msgid "Released under the license:"
 msgstr "Publicado bajo la licencia:"
 
-#: templates/appearance/about.html:88
+#: templates/appearance/about.html:40
 #, python-format
 msgid ""
 "\n"
@@ -297,7 +297,7 @@ msgstr ""
 "                La lista completa de cambios está disponible a través de <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\"> Notas de la versión %(icon_documentation)s </a> o la versión corta <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\"> Changelog %(icon_documentation)s </a>.\n"
 "            "
 
-#: templates/appearance/about.html:94
+#: templates/appearance/about.html:46
 #, python-format
 msgid ""
 "\n"
@@ -307,7 +307,7 @@ msgstr ""
 "\n"
 "Para preguntas, consulte la <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentación %(icon_documentation)s</a> ."
 
-#: templates/appearance/about.html:100
+#: templates/appearance/about.html:52
 #, python-format
 msgid ""
 "\n"
@@ -327,61 +327,17 @@ msgstr ""
 " hasta que se complete una pendiente o después de que finalice el período de"
 " limitación."
 
-#: templates/appearance/base.html:73
-msgid "Object"
-msgstr "Objeto"
-
-#: templates/appearance/generic_confirm.html:13
+#: templates/appearance/confirm.html:13
 msgid "Are you sure?"
 msgstr "¿Está seguro?"
 
-#: templates/appearance/generic_confirm.html:37
+#: templates/appearance/confirm.html:37
 msgid "Yes"
 msgstr "Si"
 
-#: templates/appearance/generic_confirm.html:47
+#: templates/appearance/confirm.html:47
 msgid "No"
 msgstr "No"
-
-#: templates/appearance/generic_form_subtemplate.html:50
-#: templates/appearance/generic_multiform_subtemplate.html:37
-#: templates/appearance/partials/form_field.html:10
-#: templates/appearance/partials/form_field.html:16
-msgid "required"
-msgstr "requerido"
-
-#: templates/appearance/generic_form_subtemplate.html:85
-#: templates/appearance/generic_form_subtemplate.html:95
-#: templates/appearance/generic_form_subtemplate.html:109
-#: templates/appearance/generic_multiform_subtemplate.html:62
-msgid "Save"
-msgstr "Guardar"
-
-#: templates/appearance/generic_form_subtemplate.html:85
-#: templates/appearance/generic_form_subtemplate.html:95
-#: templates/appearance/generic_form_subtemplate.html:109
-#: templates/appearance/generic_multiform_subtemplate.html:62
-msgid "Submit"
-msgstr "Enviar"
-
-#: templates/appearance/generic_form_subtemplate.html:99
-#: templates/appearance/generic_multiform_subtemplate.html:66
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: templates/appearance/generic_list_subtemplate.html:35
-msgid "Identifier"
-msgstr "Identificador"
-
-#: templates/appearance/generic_list_subtemplate.html:85
-#: templates/appearance/partials/list_object_facet_links_column.html:8
-#: templates/appearance/partials/list_object_facet_links_column.html:39
-msgid "Views"
-msgstr "Vistas"
-
-#: templates/appearance/generic_list_subtemplate.html:91
-msgid "Actions"
-msgstr "Acciones"
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
@@ -391,15 +347,43 @@ msgstr "Primeros pasos"
 msgid "Before you can fully use Mayan EDMS you need the following:"
 msgstr "Antes de comenzar a utilizar Mayan EDMS usted necesita lo siguiente:"
 
-#: templates/appearance/menus/menu_topbar.html:11
+#: templates/appearance/menus/topbar.html:11
 msgid "Toggle navigation"
 msgstr "Activar/Desactivar navegación"
 
-#: templates/appearance/partials/form_title.html:10
-msgid "Open main menu"
-msgstr "Abrir menú principal"
+#: templates/appearance/partials/form/field.html:10
+#: templates/appearance/partials/form/field.html:16
+#: templates/appearance/partials/form/multiple.html:37
+#: templates/appearance/partials/form/single.html:50
+msgid "required"
+msgstr "requerido"
 
-#: templates/appearance/partials/list_header.html:11
+#: templates/appearance/partials/form/multiple.html:62
+#: templates/appearance/partials/form/single.html:85
+#: templates/appearance/partials/form/single.html:95
+#: templates/appearance/partials/form/single.html:109
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/appearance/partials/form/multiple.html:62
+#: templates/appearance/partials/form/single.html:85
+#: templates/appearance/partials/form/single.html:95
+#: templates/appearance/partials/form/single.html:109
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/appearance/partials/form/multiple.html:66
+#: templates/appearance/partials/form/single.html:99
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/appearance/partials/list/column_object_facet_links.html:8
+#: templates/appearance/partials/list/column_object_facet_links.html:39
+#: templates/appearance/partials/list/table/head/row_cell_links.html:8
+msgid "Views"
+msgstr "Vistas"
+
+#: templates/appearance/partials/list/header.html:11
 #, python-format
 msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
@@ -408,48 +392,64 @@ msgstr ""
 "Total (%(start)s - %(end)s de %(total)s) (Página %(page_number)s de "
 "%(total_pages)s)"
 
-#: templates/appearance/partials/list_header.html:13
-#: templates/appearance/partials/list_header.html:16
+#: templates/appearance/partials/list/header.html:13
+#: templates/appearance/partials/list/header.html:16
 #, python-format
 msgid "Total: %(total)s"
 msgstr "Total: %(total)s"
 
-#: templates/appearance/partials/list_toolbar.html:14
+#: templates/appearance/partials/list/no_results.html:18
+msgid "No results"
+msgstr "Ningún resultado"
+
+#: templates/appearance/partials/list/pagination.html:12
+#: templates/appearance/partials/list/pagination.html:14
+msgid "Previous page"
+msgstr "Pagina anterior"
+
+#: templates/appearance/partials/list/pagination.html:30
+#: templates/appearance/partials/list/pagination.html:32
+msgid "Next page"
+msgstr "Siguiente página"
+
+#: templates/appearance/partials/list/table/head/row_cell_identifier.html:6
+msgid "Identifier"
+msgstr "Identificador"
+
+#: templates/appearance/partials/list/table/head/row_cell_links.html:14
+msgid "Actions"
+msgstr "Acciones"
+
+#: templates/appearance/partials/list/toolbar.html:14
 msgid "Select/Deselect all"
 msgstr "Seleccionar/Deseleccionar todo"
 
-#: templates/appearance/partials/list_toolbar.html:18
+#: templates/appearance/partials/list/toolbar.html:18
 msgid "Toggle list display mode"
 msgstr "Cambiar el modo de visualización de la lista"
 
-#: templates/appearance/partials/list_toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:31
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "Seleccione elementos para activar acciones masivas. Use Shift + clic para "
 "seleccionar muchos."
 
-#: templates/appearance/partials/list_toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:36
 msgid "Bulk actions"
 msgstr "Acciones masivas"
 
-#: templates/appearance/partials/list_toolbar.html:38
+#: templates/appearance/partials/list/toolbar.html:38
 msgid "Toggle Dropdown"
 msgstr "Alternar desplegable"
 
-#: templates/appearance/partials/no_results.html:18
-msgid "No results"
-msgstr "Ningún resultado"
+#: templates/appearance/partials/sidebar.html:17
+msgid "Object"
+msgstr "Objeto"
 
-#: templates/appearance/partials/pagination.html:12
-#: templates/appearance/partials/pagination.html:14
-msgid "Previous page"
-msgstr "Pagina anterior"
-
-#: templates/appearance/partials/pagination.html:30
-#: templates/appearance/partials/pagination.html:32
-msgid "Next page"
-msgstr "Siguiente página"
+#: templates/appearance/partials/title.html:10
+msgid "Open main menu"
+msgstr "Abrir menú principal"
 
 #: templates/appearance/root.html:51
 msgid "Close"

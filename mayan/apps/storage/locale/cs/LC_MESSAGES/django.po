@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Jiri Fait <fait@orkasolutions.cz>, 2023
-# Michal Švábík <snadno@lehce.cz>, 2023
-# Jiří Podhorecký, 2023
+# Jiri Fait <fait@orkasolutions.cz>, 2024
+# Jiří Podhorecký, 2024
+# Michal Švábík <snadno@lehce.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,15 +92,15 @@ msgstr "Název souboru"
 msgid "Date time"
 msgstr "Datum a čas"
 
-#: model_mixins.py:82
+#: model_mixins.py:83
 msgid "Unnamed file"
 msgstr "Nejmenovaný soubor"
 
-#: model_mixins.py:101
+#: model_mixins.py:103
 msgid "Size"
 msgstr "Velikost"
 
-#: model_mixins.py:108 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:48 serializers.py:15
 msgid "User"
 msgstr "Uživatel"
 

@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,21 +21,21 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:44 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "Engedélyek"
 
 #: apps.py:106 model_mixins.py:35
 msgid "Group count"
-msgstr "Csoportok száma"
+msgstr ""
 
-#: classes.py:66
-msgid "Insufficient permissions."
-msgstr "Elégtelen engedélyek"
+#: classes.py:65
+msgid "Insufficient permission."
+msgstr ""
 
 #: dashboard_widgets.py:13
 msgid "Total roles"
-msgstr "Összes szerepkör"
+msgstr ""
 
 #: events.py:10
 msgid "Role created"
@@ -67,21 +67,21 @@ msgstr "Csoportok"
 
 #: links.py:56
 msgid "Role permissions"
-msgstr "Szerepkör jogok"
+msgstr "Szerepkör engedélyek"
 
 #: model_mixins.py:43
 msgid "Permission count"
 msgstr "Engedélyek száma"
 
-#: model_mixins.py:88
+#: model_mixins.py:89
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr "Ismeretlen vagy elavult engedély: %s"
+msgstr ""
 
-#: model_mixins.py:100
+#: model_mixins.py:102
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr "Ismeretlen vagy elavult engedély névtér: %s"
+msgstr ""
 
 #: models.py:26
 msgid "A short text describing the role."
@@ -95,15 +95,15 @@ msgstr "Cimke"
 msgid "Role"
 msgstr "Szerepkör"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "Névtér"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "Név"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "Engedély"
 
@@ -146,7 +146,6 @@ msgstr "A szerepkörből eltávolítandó csoport elsődleges kulcsa."
 #: serializers.py:52
 msgid "Primary key of the permission to add to the role."
 msgstr ""
-"A szerepkörhöz való hozzáadáshoz szükséges engedély elsődleges kulcsa."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
@@ -154,7 +153,7 @@ msgstr "Engedély azonosító"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
-msgstr "A szerepkörből való eltávolítás engedélyének elsődleges kulcsa."
+msgstr ""
 
 #: serializers.py:67
 msgid "Groups URL"
@@ -174,7 +173,7 @@ msgstr "Engedélyek URL"
 
 #: serializers.py:83
 msgid "Permissions add URL"
-msgstr "Hozzáférés adó URL"
+msgstr "Engedélyeket adó URL"
 
 #: serializers.py:87
 msgid "Permissions remove URL"
@@ -220,7 +219,7 @@ msgstr "%(count)d szerepkör sikeresen törölve."
 #: views.py:72
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr "Szerepkör törlése: %(object)s ."
+msgstr ""
 
 #: views.py:73
 #, python-format
@@ -268,7 +267,7 @@ msgstr ""
 #: views.py:138
 #, python-format
 msgid "Groups of role: %s"
-msgstr "Szerepkörhöz tartozó csoportok: %s"
+msgstr "Szerepkör csoportok: %s"
 
 #: views.py:143
 msgid "Granted permissions"
@@ -282,8 +281,6 @@ msgstr "Elérhető engedélyek"
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
-"Az itt megadott engedélyek a teljes rendszerre és minden objektumra "
-"vonatkoznak."
 
 #: views.py:188
 #, python-format
@@ -293,4 +290,4 @@ msgstr "Szerepkörhöz tartozó engedélyek: %s"
 #: views.py:208
 #, python-format
 msgid "Details of permission: %s"
-msgstr "Az engedély részletei: %s"
+msgstr ""

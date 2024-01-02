@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# molnars <szabolcs.molnar@gmail.com>, 2024
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,11 +35,11 @@ msgstr "Null háttérrendszer"
 
 #: duplicate_backends.py:9
 msgid "Exact document file checksum"
-msgstr "Pontos dokumentumfájl ellenőrző összeg"
+msgstr ""
 
 #: duplicate_backends.py:32
 msgid "Exact document label"
-msgstr "Pontos dokumentumcímke"
+msgstr ""
 
 #: links.py:18 models.py:39 views.py:79
 msgid "Duplicated documents"
@@ -47,7 +47,7 @@ msgstr "Duplikált dokumentumok"
 
 #: links.py:24 queues.py:24
 msgid "Duplicated document scan"
-msgstr "Dokumentum digitalizálás duplikálása"
+msgstr "Duplikált dokumentum szkennelés"
 
 #: models.py:19 models.py:31
 msgid "Stored duplicate backend"
@@ -84,7 +84,6 @@ msgstr "Dokumentum duplikálások beolvasása"
 #: views.py:36
 msgid "Only exact copies of this document will be shown in the this list."
 msgstr ""
-"Csak ennek a dokumentumnak a pontos másolatai jelennek meg ebben a listában."
 
 #: views.py:40
 msgid "There are no duplicates for this document"
@@ -116,4 +115,4 @@ msgstr "Duplikált dokumentumok keresése?"
 
 #: views.py:95
 msgid "Duplicated document scan queued successfully."
-msgstr "A duplikált dokumentum szkennelése sikeresen beállt a sorba."
+msgstr ""

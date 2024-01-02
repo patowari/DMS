@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Panasoft, 2023
-# Roberto Rosario, 2023
-# Sergey Glita <gsv70@mail.ru>, 2023
-# Alex Chigrin <chalex84@mail.ru>, 2023
-# lilo.panic, 2023
-# Ilya Pavlov <spirkaa@gmail.com>, 2023
+# Panasoft, 2024
+# Sergey Glita <gsv70@mail.ru>, 2024
+# Roberto Rosario, 2024
+# lilo.panic, 2024
+# Alex Chigrin <chalex84@mail.ru>, 2024
+# Ilya Pavlov <spirkaa@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
+"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:26 classes.py:204 links.py:27
+#: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
 msgstr "Списки контроля доступа"
 
@@ -77,12 +77,12 @@ msgstr "Разрешения"
 msgid "Global ACLs"
 msgstr "Глобальные списки контроля доступа"
 
-#: managers.py:274
+#: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
 msgstr "Объект \"%s\" не является моделью и не может быть проверен на доступ."
 
-#: managers.py:294
+#: managers.py:293
 #, python-format
 msgid "Insufficient access for: %s"
 msgstr "Недостаточный доступ для: %s"

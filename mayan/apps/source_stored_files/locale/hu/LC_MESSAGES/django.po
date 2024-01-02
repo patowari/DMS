@@ -4,16 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
-"PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,8 +52,6 @@ msgstr "A feldolgozandó tárolt fájl URL biztos fájlneve."
 msgid ""
 "Execute source backend specific, built-in post processing clean up code."
 msgstr ""
-"Forrás-háttér-specifikus, beépített utófeldolgozási tisztítókód "
-"végrehajtása."
 
 #: source_backend_actions/arguments.py:16
 msgid ""
@@ -65,7 +62,7 @@ msgstr ""
 
 #: source_backend_actions/mixins.py:75
 msgid "Stored file"
-msgstr "Tárolt fájl"
+msgstr ""
 
 #: source_backend_actions/mixins.py:76
 #, python-format
@@ -74,11 +71,11 @@ msgstr "Törli a \"%s\" tárolt fájlt?"
 
 #: source_backends/filesystem_source_mixins.py:25
 msgid "Server side filesystem path."
-msgstr "Szerver oldali fájlrendszer elérési útja."
+msgstr ""
 
 #: source_backends/filesystem_source_mixins.py:30
 msgid "Folder path"
-msgstr "Mappa elérési útja"
+msgstr ""
 
 #: source_backends/filesystem_source_mixins.py:37
 msgid ""
@@ -90,7 +87,7 @@ msgstr ""
 
 #: source_backends/filesystem_source_mixins.py:40
 msgid "Include subdirectories?"
-msgstr "Tartalmazza az alkönyvtárakat?"
+msgstr ""
 
 #: source_backends/filesystem_source_mixins.py:54
 #: source_backends/storage_backend_source_mixins.py:69
@@ -101,12 +98,11 @@ msgstr "Tároló"
 #: source_backends/storage_backend_source_mixins.py:127
 #, python-format
 msgid "Unable to initialize storage; %s"
-msgstr "Nem sikerült inicializálni a tárhelyet; %s"
+msgstr ""
 
 #: source_backends/storage_backend_source_mixins.py:35
 msgid "Python path to the Storage subclass used to access the source files."
 msgstr ""
-"A forrásfájlok eléréséhez használt Storage alosztály Python elérési útja."
 
 #: source_backends/storage_backend_source_mixins.py:41
 msgid "Storage backend"
@@ -133,12 +129,10 @@ msgstr ""
 #: source_backends/storage_backend_source_mixins.py:114
 msgid "Unable to initialize storage. Check the storage backend dotted path."
 msgstr ""
-"A tárhely inicializálása nem lehetséges. Ellenőrizze a háttértár pontozott "
-"elérési útját."
 
 #: source_backends/stored_file_mixins.py:37
 msgid "Delete the file after is has been successfully uploaded."
-msgstr "A sikeres feltöltés után törölje a fájlt."
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:40
 msgid "Delete after upload"
@@ -146,12 +140,12 @@ msgstr "Törlés feltöltés után"
 
 #: source_backends/stored_file_mixins.py:54
 msgid "File content"
-msgstr "Fájl tartalma"
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:72
 #, python-format
 msgid "Unable get list of files; %s"
-msgstr "A fájlok listája nem érhető el; %s"
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:90
 msgid ""
@@ -165,19 +159,19 @@ msgstr ""
 
 #: source_backends/stored_file_mixins.py:95
 msgid "No source files available"
-msgstr "Nem állnak rendelkezésre forrásfájlok"
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:190
 msgid "Width value to be passed to the converter backend."
-msgstr "A konverter háttérrendszerének átadandó szélességi érték."
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:195
 msgid "Preview width"
-msgstr "Előnézet szélessége"
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:201
 msgid "Height value to be passed to the converter backend."
-msgstr "A konverter háttérrendszerének átadandó magasságérték."
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:206
 msgid "Preview height"
@@ -188,16 +182,15 @@ msgid ""
 "Maximum size in bytes for which previews will be generated. Example: 20000 ="
 " 20KB."
 msgstr ""
-"Maximális méret bájtban, amelyhez előnézetek készülnek. Példa: 20000 = 20KB."
 
 #: source_backends/stored_file_mixins.py:216
 msgid "Max size preview"
-msgstr "Max méretű előnézet"
+msgstr ""
 
 #: source_backends/stored_file_mixins.py:230
 msgid "File images"
-msgstr "Fájlképek"
+msgstr ""
 
 #: templates/source_stored_files/errors/staging_file_too_large.html:5
 msgid "File too large for preview"
-msgstr "A fájl túl nagy az előnézethez"
+msgstr ""
