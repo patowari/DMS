@@ -515,7 +515,7 @@ msgstr "حذف الفهرس: %s؟"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr ""
+msgstr "أنواع الوثائق المتاحة"
 
 #: views/index_template_views.py:138
 msgid "Document types linked"

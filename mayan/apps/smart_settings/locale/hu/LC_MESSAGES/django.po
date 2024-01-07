@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:26 permissions.py:6
 msgid "Smart settings"
-msgstr "Okos beállítás"
+msgstr "Intelligens beállítások"
 
 #: apps.py:36
 msgid "Setting count"
@@ -47,11 +47,11 @@ msgstr "Választások"
 
 #: classes.py:498
 msgid "Possible values allowed for this setting."
-msgstr ""
+msgstr "Ennél a beállításnál megengedett értékek."
 
 #: classes.py:519
 msgid "Cannot revert setting. Setting value has not been updated."
-msgstr ""
+msgstr "A beállítás nem állítható vissza. A beállítási érték nem frissült."
 
 #: classes.py:556
 msgid "Default"
@@ -59,11 +59,11 @@ msgstr "Alapéretelmezett"
 
 #: classes.py:569
 msgid "Modified"
-msgstr ""
+msgstr "Módosított"
 
 #: classes.py:571
 msgid "The value of this setting being modified since the last restart."
-msgstr ""
+msgstr "Ennek a beállításnak az értéke az utolsó újraindítás óta módosul."
 
 #: classes.py:577
 msgid "Overridden"
@@ -72,7 +72,7 @@ msgstr "Felülbírált"
 #: classes.py:579
 msgid ""
 "The value of the setting is being overridden by an environment variable."
-msgstr ""
+msgstr "A beállítás értékét egy környezeti változó felülírja."
 
 #: forms.py:32
 msgid "Enter the new setting value."
@@ -108,6 +108,9 @@ msgid ""
 "Local storage is currently disabled, changes to settings will not be saved. "
 "Instead, use environment variables to modify settings."
 msgstr ""
+"A helyi tárhely jelenleg le van tiltva, a beállítások módosításai nem "
+"kerülnek mentésre. Ehelyett használjon környezeti változókat a beállítások "
+"módosításához."
 
 #: models.py:8
 msgid "A short text used as the tag name."
@@ -115,23 +118,23 @@ msgstr "A jelölő neveként használt rövid szöveg."
 
 #: models.py:9
 msgid "Global name"
-msgstr ""
+msgstr "Globális név"
 
 #: models.py:12
 msgid "New value"
-msgstr ""
+msgstr "Új érték"
 
 #: models.py:15
 msgid "Old value"
-msgstr ""
+msgstr "Régi érték"
 
 #: models.py:19
 msgid "Updated setting"
-msgstr ""
+msgstr "Frissített beállítás"
 
 #: models.py:20
 msgid "Updated settings"
-msgstr ""
+msgstr "Frissített beállítások"
 
 #: permissions.py:10
 msgid "Edit settings"
@@ -193,12 +196,16 @@ msgid ""
 "The list of validators that are used to check the strength of user's "
 "passwords."
 msgstr ""
+"A felhasználói jelszavak erősségének ellenőrzésére használt érvényesítők "
+"listája."
 
 #: settings.py:70
 msgid ""
 "A list of authentication backend classes (as strings) to use when attempting"
 " to authenticate a user."
 msgstr ""
+"A felhasználó hitelesítésének megkísérlésekor használandó hitelesítési "
+"háttérosztályok listája (karakterláncként)."
 
 #: settings.py:77
 msgid ""
@@ -208,6 +215,12 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_COOKIE_SECURE"
 msgstr ""
+"Használjon-e biztonságos cookie-t a CSRF cookie-hoz. Ha ez igaz értékre van "
+"állítva, a cookie \"biztonságos\"-ként lesz megjelölve, ami azt jelenti, "
+"hogy a böngészők biztosíthatják, hogy a cookie csak HTTPS kapcsolattal "
+"kerüljön elküldésre. "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_COOKIE_SECURE"
 
 #: settings.py:87
 msgid ""
@@ -215,6 +228,9 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_TRUSTED_ORIGINS"
 msgstr ""
+"A nem biztonságos kérések (pl. POST) megbízható forrásainak listája. "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_TRUSTED_ORIGINS"
 
 #: settings.py:94
 msgid ""
@@ -222,6 +238,9 @@ msgid ""
 "cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_USE_SESSIONS"
 msgstr ""
+"Meghatározza, hogy a CSRF tokent a felhasználói munkamenetben tárolja-e "
+"cookie-k helyett. https://docs.djangoproject.com/en/4.2/ref/settings/#std-"
+"setting-CSRF_USE_SESSIONS"
 
 #: settings.py:101
 msgid ""
@@ -272,8 +291,8 @@ msgid ""
 "automated correspondence from the site manager(s). This doesn't include "
 "error messages sent to ADMINS and MANAGERS; for that, see SERVER_EMAIL."
 msgstr ""
-"Alapértelmezett: 'webmaster@localhost' Alapértelmezett e-mail cím, amelyet a"
-" webhely vezetőjének (vezetőinek) különböző automatikus levelezéséhez "
+"Alapértelmezett: 'webmaster@localhost' Alapértelmezett email cím, amelyet a "
+"webhely vezetőjének (vezetőinek) különböző automatikus levelezéséhez "
 "használnak. Ez nem tartalmazza az ADMINS-nek és MANAGERS-nek küldött "
 "hibaüzeneteket; erre vonatkozóan lásd a SERVER_EMAIL-t."
 
@@ -295,13 +314,12 @@ msgid ""
 "Default: 'django.core.mail.backends.smtp.EmailBackend'. The backend to use "
 "for sending emails."
 msgstr ""
-"Alapértelmezett: 'django.core.mail.backends.smtp.EmailBackend'. Az e-mailek "
+"Alapértelmezett: 'django.core.mail.backends.smtp.EmailBackend'. Az emailek "
 "küldésére használható háttérprogram."
 
 #: settings.py:155
 msgid "Default: 'localhost'. The host to use for sending email."
-msgstr ""
-"Alapértelmezett: 'localhost'. Az e-mailek küldésére használt gazdagép."
+msgstr "Alapértelmezett: 'localhost'. Az emailek küldésére használt gazdagép."
 
 #: settings.py:161
 msgid ""
@@ -335,6 +353,8 @@ msgid ""
 "Default: None. Specifies a timeout in seconds for blocking operations like "
 "the connection attempt."
 msgstr ""
+"Alapértelmezés: Nincs. Megadja az időtúllépést másodpercben a blokkolási "
+"műveletekhez, például a csatlakozási kísérlethez."
 
 #: settings.py:189
 msgid ""
@@ -346,8 +366,8 @@ msgid ""
 "those settings to True."
 msgstr ""
 "Alapértelmezett: False. Használjon-e implicit TLS (biztonságos) kapcsolatot,"
-" amikor az SMTP-kiszolgálóval beszél. A legtöbb e-mail dokumentációban ezt a"
-" fajta TLS-kapcsolatot SSL-ként említik. Általában a 465-ös porton "
+" amikor az SMTP-kiszolgálóval beszél. A legtöbb email dokumentációban ezt a "
+"fajta TLS-kapcsolatot SSL-ként említik. Általában a 465-ös porton "
 "használják. Ha problémákat tapasztal, lásd az EMAIL_USE_TLS explicit TLS "
 "beállítását. Vegye figyelembe, hogy az EMAIL_USE_TLS/EMAIL_USE_SSL "
 "kölcsönösen kizárják egymást, ezért csak az egyik beállítást állítsa True "
@@ -431,7 +451,7 @@ msgstr ""
 "kontextusfeldolgozó számára, hogy néhány változót hozzáadjon a sablon-"
 "kontextushoz. Használhatja az admindocs könyvjelzőket akkor is, ha nem "
 "személyzeti felhasználóként van bejelentkezve. Az AdminEmailHandler "
-"e-mailekben \"belső\" (szemben az \"EXTERNAL\" jelzéssel) vannak jelölve."
+"emailekben \"belső\" (szemben az \"KÜLSŐ\" jelzéssel) vannak jelölve."
 
 #: settings.py:258
 msgid ""
@@ -518,6 +538,10 @@ msgid ""
 "Django. It is a nested dictionary whose contents map a storage alias to a "
 "dictionary containing the options for an individual storage."
 msgstr ""
+"Egy szótár, amely tartalmazza a Django-val használható összes tárhely "
+"beállításait. Ez egy beágyazott szótár, amelynek tartalma egy tárolási "
+"álnevet képez le egy szótárhoz, amely az egyes tárolók beállításait "
+"tartalmazza."
 
 #: settings.py:325
 msgid ""
@@ -574,6 +598,8 @@ msgid ""
 "Settings updated. Save and restart your installation for changes to take "
 "effect."
 msgstr ""
+"Beállítások frissítve. Mentse el és indítsa újra a telepítést, hogy a "
+"változtatások érvénybe lépjenek."
 
 #: tests/test_classes.py:190
 msgid "English"
@@ -581,15 +607,15 @@ msgstr "Angol"
 
 #: views.py:41
 msgid "This will overwrite the content of the configuration file."
-msgstr ""
+msgstr "Ez felülírja a konfigurációs fájl tartalmát."
 
 #: views.py:44
 msgid "Save settings to the configuration file?"
-msgstr ""
+msgstr "Menti a beállításokat a konfigurációs fájlba?"
 
 #: views.py:52
 msgid "Settings saved to configuration file successfully."
-msgstr ""
+msgstr "A beállítások sikeresen mentve a konfigurációs fájlba."
 
 #: views.py:60
 msgid "Setting namespaces"
@@ -597,49 +623,53 @@ msgstr "Beállítás névterei"
 
 #: views.py:89
 msgid "Setting updated successfully."
-msgstr ""
+msgstr "A beállítás sikeresen frissítve."
 
 #: views.py:98
 msgid ""
 "This setting is overridden by an environment variable, changing its value "
 "will have no effect."
 msgstr ""
+"Ezt a beállítást egy környezeti változó felülírja, értékének változtatása "
+"nem lesz hatással."
 
 #: views.py:108
 #, python-format
 msgid "Edit setting: %s"
-msgstr ""
+msgstr "Beállítás szerkesztése: %s"
 
 #: views.py:130
 #, python-format
 msgid "%(count)d settings value reverted."
-msgstr ""
+msgstr "%(count)d beállítások értéke visszaállítva."
 
 #: views.py:133
 #, python-format
 msgid "Value of setting \"%(object)s\" reverted."
-msgstr ""
+msgstr "A „ %(object)s ” beállítás értéke visszaállt."
 
 #: views.py:135
 #, python-format
 msgid "%(count)d setting value reverted."
-msgstr ""
+msgstr "%(count)d beállítási értéke visszaállt."
 
 #: views.py:144
 msgid "Unsaved changes will be lost."
-msgstr ""
+msgstr "A nem mentett módosítások elvesznek."
 
 #: views.py:147
 msgid "Revert the selected setting value?"
 msgid_plural "Revert the selected settings value?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Visszaállítja a kiválasztott beállítási értéket?"
+msgstr[1] "Visszaállítja a kiválasztott beállítási értéket?"
 
 #: views.py:186
 msgid ""
 "Settings inherited from an environment variable take precedence and cannot "
 "be changed in this view. "
 msgstr ""
+"A környezeti változótól örökölt beállítások elsőbbséget élveznek, és ebben a"
+" nézetben nem módosíthatók."
 
 #: views.py:189
 #, python-format

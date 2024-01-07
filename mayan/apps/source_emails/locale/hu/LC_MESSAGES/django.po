@@ -41,6 +41,9 @@ msgid ""
 "Criteria to use when searching for messages to process. Use the format "
 "specified in https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 msgstr ""
+"A feldolgozandó üzenetek keresésekor használandó kritériumok. Használja a "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.4 helyen megadott "
+"formátumot"
 
 #: source_backends/imap_source_backends.py:66
 msgid "Search criteria"
@@ -73,15 +76,15 @@ msgstr "Törlés végrehajtása"
 
 #: source_backends/imap_source_backends.py:97
 msgid "IMAP Mailbox to which processed messages will be copied."
-msgstr ""
+msgstr "IMAP-postafiók, amelybe a feldolgozott üzenetek másolásra kerülnek."
 
 #: source_backends/imap_source_backends.py:100
 msgid "Destination mailbox"
-msgstr ""
+msgstr "Cél postafiók"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "IMAP protokoll"
 
 #: source_backends/mixins.py:31
 msgid "Host"
@@ -96,6 +99,8 @@ msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
 msgstr ""
+"A tipikus választások a következők: 110 POP3, 995 POP3 SSL, 143 IMAP, 993 "
+"IMAP SSL felett."
 
 #: source_backends/mixins.py:52
 msgid "Port"

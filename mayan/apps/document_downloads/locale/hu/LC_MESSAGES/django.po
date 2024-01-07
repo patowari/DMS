@@ -23,15 +23,15 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
-msgstr ""
+msgstr "Dokumentumletöltések"
 
 #: classes.py:49
 msgid "Document_file_bundle.zip"
-msgstr ""
+msgstr "Document_file_bundle.zip"
 
 #: classes.py:52
 msgid "Compressed document files"
-msgstr ""
+msgstr "Tömörített dokumentumfájlok"
 
 #: events.py:6 queues.py:7
 msgid "Documents downloads"
@@ -39,11 +39,11 @@ msgstr "Dokumentum letöltések"
 
 #: events.py:10
 msgid "Document file downloaded"
-msgstr ""
+msgstr "Letöltött dokumentumfájlok"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "Dokumentumfájl azonosító"
 
 #: forms.py:11
 msgid "Document"
@@ -51,11 +51,11 @@ msgstr "Dokumentum"
 
 #: forms.py:19
 msgid "Document file"
-msgstr ""
+msgstr "Dokumentumfájl"
 
 #: forms.py:27
 msgid "Include"
-msgstr ""
+msgstr "Tartalmaz"
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -63,7 +63,7 @@ msgstr "Letöltési fájlok"
 
 #: links.py:24
 msgid "Quick download"
-msgstr ""
+msgstr "Gyors letöltés"
 
 #: literals.py:4
 msgid ""
@@ -71,14 +71,16 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
+"A dokumentumfájlokat tömörítettük, és letölthetők a következő linkről: {{ "
+"download_url }} vagy a letöltési területről ({{ download_list_url }})."
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Dokumentumfájlok letöltésre készen."
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr ""
+msgstr "Dokumentumfájlok letöltése"
 
 #: queues.py:13
 msgid "Generate a compressed document file bundle"
@@ -89,12 +91,16 @@ msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
 msgstr ""
+"Sablon a dokumentumletöltési üzenet törzsszövegéhez. Tartalmazhat HTML-t. "
+"Elérhető változók: {}"
 
 #: settings.py:27
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
 msgstr ""
+"Sablon a dokumentumletöltési üzenet tárgysorához. Nem tartalmazhat HTML-t. "
+"Elérhető változók: {}"
 
 #: views.py:24
 #, python-format
@@ -117,7 +123,7 @@ msgstr "A \"%(object)s\" dokumentumfájl letöltési sorba áll."
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
-msgstr ""
+msgstr "%(count)d dokumentumfájl letöltésre vár."
 
 #: views.py:41
 #, python-format
@@ -127,7 +133,7 @@ msgstr "%(count)d dokumentumfájl letöltése"
 #: views.py:42
 #, python-format
 msgid "Download files of document: %(object)s"
-msgstr ""
+msgstr "A következő dokumentum fájljainak letöltése: %(object)s"
 
 #: views.py:43
 #, python-format
@@ -139,3 +145,5 @@ msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"A folyamat a háttérben történik. A dokumentumfájlok a letöltési területen "
+"lesznek elérhetők."

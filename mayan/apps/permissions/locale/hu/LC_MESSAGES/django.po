@@ -27,15 +27,15 @@ msgstr "Engedélyek"
 
 #: apps.py:106 model_mixins.py:35
 msgid "Group count"
-msgstr ""
+msgstr "Csoportok száma"
 
 #: classes.py:65
 msgid "Insufficient permission."
-msgstr ""
+msgstr "Elégtelen engedély."
 
 #: dashboard_widgets.py:13
 msgid "Total roles"
-msgstr ""
+msgstr "Összes szerepkör"
 
 #: events.py:10
 msgid "Role created"
@@ -76,12 +76,12 @@ msgstr "Engedélyek száma"
 #: model_mixins.py:89
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr ""
+msgstr "Ismeretlen vagy elavult engedély: %s"
 
 #: model_mixins.py:102
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr ""
+msgstr "Ismeretlen vagy elavult engedély névtér: %s"
 
 #: models.py:26
 msgid "A short text describing the role."
@@ -145,7 +145,7 @@ msgstr "A szerepkörből eltávolítandó csoport elsődleges kulcsa."
 
 #: serializers.py:52
 msgid "Primary key of the permission to add to the role."
-msgstr ""
+msgstr "A szerepkör hozzáadásának engedélyének elsődleges kulcsa."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
@@ -153,7 +153,7 @@ msgstr "Engedély azonosító"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
-msgstr ""
+msgstr "A szerepkörből való eltávolítás engedélyének elsődleges kulcsa."
 
 #: serializers.py:67
 msgid "Groups URL"
@@ -219,7 +219,7 @@ msgstr "%(count)d szerepkör sikeresen törölve."
 #: views.py:72
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr ""
+msgstr "Szerepkör törlése: %(object)s ."
 
 #: views.py:73
 #, python-format
@@ -281,6 +281,8 @@ msgstr "Elérhető engedélyek"
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
+"Az itt megadott engedélyek a teljes rendszerre és minden objektumra "
+"vonatkoznak."
 
 #: views.py:188
 #, python-format
@@ -290,4 +292,4 @@ msgstr "Szerepkörhöz tartozó engedélyek: %s"
 #: views.py:208
 #, python-format
 msgid "Details of permission: %s"
-msgstr ""
+msgstr "Az engedély részletei: %s"

@@ -29,10 +29,13 @@ msgid ""
 "Executes the primary action of the source in test mode. Permanent "
 "modifications like deletion of files are disabled."
 msgstr ""
+"Teszt módban végrehajtja a forrás elsődleges műveletét. A végleges "
+"módosítások, például a fájlok törlése le vannak tiltva."
 
 #: source_backends/mixins.py:30
 msgid "Assign a document type to documents uploaded from this source."
 msgstr ""
+"Rendeljen dokumentumtípust az ebből a forrásból feltöltött dokumentumokhoz."
 
 #: source_backends/mixins.py:38
 msgid "Document type"
@@ -40,7 +43,7 @@ msgstr "Dokumentumtípus"
 
 #: source_backends/mixins.py:45
 msgid "Interval in seconds between checks for new documents."
-msgstr ""
+msgstr "Az új dokumentumok ellenőrzése közötti időköz másodpercekben."
 
 #: source_backends/mixins.py:51
 msgid "Interval"
@@ -48,4 +51,4 @@ msgstr "Időköz"
 
 #: source_backends/mixins.py:65
 msgid "Unattended"
-msgstr ""
+msgstr "Felügyelet nélkül"

@@ -164,11 +164,11 @@ msgstr "Dokumentumtípus"
 
 #: search.py:27
 msgid "Document label"
-msgstr ""
+msgstr "Dokumentumcímke"
 
 #: search.py:30
 msgid "Document description"
-msgstr ""
+msgstr "Dokumentum leírása"
 
 #: search.py:33
 msgid "Document UUID"
@@ -180,7 +180,7 @@ msgstr "Dokumentumfájl ellenőrző összeg"
 
 #: search.py:42
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Dokumentumfájl MIME típusa"
 
 #: serializers.py:18
 msgid "List of children cabinets."
@@ -227,12 +227,12 @@ msgstr "Az irattartóból eltávolítandó dokumentum elsődleges kulcsa."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
-msgstr ""
+msgstr "Navigáció:"
 
 #: views.py:64
 #, python-format
 msgid "Add new level to: %s"
-msgstr ""
+msgstr "Új szint hozzáadása ehhez: %s"
 
 #: views.py:89
 #, python-format
@@ -321,7 +321,7 @@ msgstr "Ez a dokumentum egyetlen irattartóban sem található"
 #: views.py:273
 #, python-format
 msgid "Cabinets containing document: %s"
-msgstr "Dokumentumot tartalmazó irattartók: %s"
+msgstr "Irattartók melyek ezt a dokumentumot tartalmazzák: %s"
 
 #: views.py:289
 #, python-format

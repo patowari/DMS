@@ -314,6 +314,8 @@ msgstr "A grafikus konverziós háttérrendszer konfigurációs beállításai."
 #: settings.py:79
 msgid "Time in seconds that the browser should cache the supplied image."
 msgstr ""
+"Az az idő másodpercben, ameddig a böngészőnek gyorsítótárba kell helyeznie a"
+" mellékelt képet."
 
 #: settings.py:87
 msgid ""
@@ -614,7 +616,7 @@ msgstr "Fokok"
 
 #: transformations.py:638
 msgid "Color to be used for area outside of the rotated image."
-msgstr ""
+msgstr "Az elforgatott képen kívüli területhez használandó szín."
 
 #: transformations.py:670
 msgid "Rotate 90 degrees"
@@ -630,11 +632,11 @@ msgstr "270 fokos elforgatás"
 
 #: transformations.py:702
 msgid "Unsharp masking"
-msgstr ""
+msgstr "Életlen maszkolás"
 
 #: transformations.py:707
 msgid "The blur radius in pixels."
-msgstr ""
+msgstr "Az elmosódási sugár pixelben."
 
 #: transformations.py:711
 msgid "Unsharp strength in percent."

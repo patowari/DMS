@@ -51,6 +51,8 @@ msgstr "Posibles valores permitidos para esta configuración."
 #: classes.py:519
 msgid "Cannot revert setting. Setting value has not been updated."
 msgstr ""
+"No se puede revertir la configuración. El valor de configuración no se ha "
+"actualizado."
 
 #: classes.py:556
 msgid "Default"
@@ -58,11 +60,11 @@ msgstr "Por defecto"
 
 #: classes.py:569
 msgid "Modified"
-msgstr ""
+msgstr "Modificado"
 
 #: classes.py:571
 msgid "The value of this setting being modified since the last restart."
-msgstr ""
+msgstr "El valor de esta configuración modificado desde el último reinicio."
 
 #: classes.py:577
 msgid "Overridden"
@@ -72,6 +74,8 @@ msgstr "Anulado"
 msgid ""
 "The value of the setting is being overridden by an environment variable."
 msgstr ""
+"El valor de la configuración está siendo reemplazado por una variable de "
+"entorno."
 
 #: forms.py:32
 msgid "Enter the new setting value."
@@ -107,6 +111,9 @@ msgid ""
 "Local storage is currently disabled, changes to settings will not be saved. "
 "Instead, use environment variables to modify settings."
 msgstr ""
+"El almacenamiento local está actualmente deshabilitado, los cambios en la "
+"configuración no se guardarán. En su lugar, utilice variables de entorno "
+"para modificar la configuración."
 
 #: models.py:8
 msgid "A short text used as the tag name."
@@ -114,23 +121,23 @@ msgstr "Un texto corto usado como el nombre de la etiqueta."
 
 #: models.py:9
 msgid "Global name"
-msgstr ""
+msgstr "Nombre global"
 
 #: models.py:12
 msgid "New value"
-msgstr ""
+msgstr "Nuevo valor"
 
 #: models.py:15
 msgid "Old value"
-msgstr ""
+msgstr "Valor antiguo"
 
 #: models.py:19
 msgid "Updated setting"
-msgstr ""
+msgstr "Configuración actualizada"
 
 #: models.py:20
 msgid "Updated settings"
-msgstr ""
+msgstr "Configuraciones actualizadas"
 
 #: permissions.py:10
 msgid "Edit settings"
@@ -212,6 +219,11 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_COOKIE_SECURE"
 msgstr ""
+"Si se debe utilizar una cookie segura para la cookie CSRF. Si se establece "
+"en Verdadero, la cookie se marcará como \"segura\", lo que significa que los"
+" navegadores pueden garantizar que la cookie solo se envíe con una conexión "
+"HTTPS. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_COOKIE_SECURE"
 
 #: settings.py:87
 msgid ""
@@ -219,6 +231,9 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_TRUSTED_ORIGINS"
 msgstr ""
+"Una lista de orígenes confiables para solicitudes inseguras (por ejemplo, "
+"POST). https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_TRUSTED_ORIGINS"
 
 #: settings.py:94
 msgid ""
@@ -226,6 +241,9 @@ msgid ""
 "cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_USE_SESSIONS"
 msgstr ""
+"Si se debe almacenar el token CSRF en la sesión del usuario en lugar de en "
+"una cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_USE_SESSIONS"
 
 #: settings.py:101
 msgid ""
@@ -532,6 +550,10 @@ msgid ""
 "Django. It is a nested dictionary whose contents map a storage alias to a "
 "dictionary containing the options for an individual storage."
 msgstr ""
+"Un diccionario que contiene la configuración de todos los almacenamientos "
+"que se utilizarán con Django. Es un diccionario multiniveles cuyo contenido "
+"asigna un alias de almacenamiento a un diccionario que contiene las opciones"
+" para un almacenamiento individual."
 
 #: settings.py:325
 msgid ""
@@ -588,6 +610,8 @@ msgid ""
 "Settings updated. Save and restart your installation for changes to take "
 "effect."
 msgstr ""
+"Ajustes actualizados. Guarde y reinicie su instalación para que los cambios "
+"surtan efecto."
 
 #: tests/test_classes.py:190
 msgid "English"
@@ -595,15 +619,16 @@ msgstr "inglés"
 
 #: views.py:41
 msgid "This will overwrite the content of the configuration file."
-msgstr ""
+msgstr "Esto sobrescribirá el contenido del archivo de configuración."
 
 #: views.py:44
 msgid "Save settings to the configuration file?"
-msgstr ""
+msgstr "¿Guardar la configuración en el archivo de configuración?"
 
 #: views.py:52
 msgid "Settings saved to configuration file successfully."
 msgstr ""
+"La configuración se guardó correctamente en el archivo de configuración."
 
 #: views.py:60
 msgid "Setting namespaces"
@@ -618,6 +643,8 @@ msgid ""
 "This setting is overridden by an environment variable, changing its value "
 "will have no effect."
 msgstr ""
+"Esta configuración es reemplazada por una variable de entorno; cambiar su "
+"valor no tendrá ningún efecto."
 
 #: views.py:108
 #, python-format
@@ -627,28 +654,28 @@ msgstr "Editar ajuste: %s"
 #: views.py:130
 #, python-format
 msgid "%(count)d settings value reverted."
-msgstr ""
+msgstr "%(count)d valor de configuración revertido."
 
 #: views.py:133
 #, python-format
 msgid "Value of setting \"%(object)s\" reverted."
-msgstr ""
+msgstr "Se revirtió el valor de la configuración \"%(object)s\"."
 
 #: views.py:135
 #, python-format
 msgid "%(count)d setting value reverted."
-msgstr ""
+msgstr "%(count)d valor de configuración revertido."
 
 #: views.py:144
 msgid "Unsaved changes will be lost."
-msgstr ""
+msgstr "Los cambios no guardados se perderán."
 
 #: views.py:147
 msgid "Revert the selected setting value?"
 msgid_plural "Revert the selected settings value?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "¿Revertir el valor de configuración seleccionado?"
+msgstr[1] "¿Revertir el valor de las configuraciones seleccionadas?"
+msgstr[2] "¿Revertir el valor de configuración seleccionada?"
 
 #: views.py:186
 msgid ""

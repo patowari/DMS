@@ -173,7 +173,7 @@ msgstr "Yeni oluştur"
 
 #: links.py:82 links.py:87
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #: links.py:92
 msgid "Edit"

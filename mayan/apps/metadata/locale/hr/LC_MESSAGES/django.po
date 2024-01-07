@@ -171,7 +171,7 @@ msgstr ""
 
 #: links.py:82 links.py:87
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: links.py:92
 msgid "Edit"

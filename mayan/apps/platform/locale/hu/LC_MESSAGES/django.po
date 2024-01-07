@@ -26,11 +26,11 @@ msgstr "Platform"
 
 #: classes.py:240
 msgid "Template for entrypoint.sh file inside a Docker image."
-msgstr ""
+msgstr "Sablon az enterpoint.sh fájlhoz egy Docker-képben."
 
 #: classes.py:255
 msgid "Template that generates the Docker Compose file."
-msgstr ""
+msgstr "Sablon, amely létrehozza a Docker Compose fájlt."
 
 #: classes.py:415
 msgid "Template for Supervisord inside a Docker image."
@@ -38,11 +38,11 @@ msgstr "Sablon a Supervisord számára egy Docker-képen belül."
 
 #: classes.py:433
 msgid "Template that generates a Dockerfile file."
-msgstr ""
+msgstr "Dockerfile-fájlt létrehozó sablon."
 
 #: classes.py:448
 msgid "Template that generates a GitLab CI config file."
-msgstr ""
+msgstr "GitLab CI konfigurációs fájlt létrehozó sablon."
 
 #: classes.py:597
 msgid "Template for Supervisord."
@@ -54,7 +54,7 @@ msgstr "Egy worker sorait bemutató sablon."
 
 #: client_backends.py:34
 msgid "Sentry test error"
-msgstr ""
+msgstr "Sentry teszt hiba"
 
 #: permissions.py:10
 msgid "Trigger tests"
@@ -65,6 +65,8 @@ msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
+"Az indítás után elindítandó kliens háttérprogramok listája. Használja a "
+"teljes pontozott elérési utat az ügyfél háttérosztályaihoz."
 
 #: settings.py:24
 msgid ""

@@ -31,7 +31,7 @@ msgstr ""
 
 #: classes.py:255
 msgid "Template that generates the Docker Compose file."
-msgstr ""
+msgstr "Plantilla que genera el archivo Docker Compose."
 
 #: classes.py:415
 msgid "Template for Supervisord inside a Docker image."

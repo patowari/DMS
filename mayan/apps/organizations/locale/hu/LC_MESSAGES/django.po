@@ -26,7 +26,7 @@ msgstr "Szervezeti egységek"
 
 #: setting_validators.py:13
 msgid "The path value must not include a leading or trailing slash."
-msgstr ""
+msgstr "Az elérési út értéke nem tartalmazhat kezdő vagy záró perjelet."
 
 #: settings.py:19
 msgid ""
@@ -34,9 +34,16 @@ msgid ""
 "one. Do not include the path. Use the ORGANIZATIONS_URL_BASE_PATH setting to"
 " specify the path. Example: https://www.example.com:8080"
 msgstr ""
+"Teljesen minősített domain, beleértve a sémát és a portszámot, ha egyénit "
+"használ. Ne adja meg az elérési utat. Használja az "
+"ORGANIZATIONS_URL_BASE_PATH beállítást az elérési út megadásához. Példa: "
+"https://www.example.com:8080"
 
 #: settings.py:29
 msgid ""
 "Base URL path to use for all views. Used when hosting using a path that is "
 "not the root path of the web server. Example: /mayan-installations/home/"
 msgstr ""
+"Az összes nézethez használandó alap URL-útvonal. Akkor használatos, ha olyan"
+" elérési utat használ, amely nem a webszerver gyökérútvonala. Példa: /maya-"
+"installations/home/"

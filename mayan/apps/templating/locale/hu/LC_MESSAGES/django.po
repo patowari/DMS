@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:19 permissions.py:6
 msgid "Templating"
-msgstr ""
+msgstr "Sablonozás"
 
 #: fields.py:21
 #, python-format
@@ -57,15 +57,15 @@ msgstr "Eredmény"
 
 #: forms.py:20
 msgid "The template string to be evaluated."
-msgstr ""
+msgstr "A kiértékelendő sablon karakterlánc."
 
 #: forms.py:21
 msgid "Template"
-msgstr ""
+msgstr "Sablon"
 
 #: links.py:11
 msgid "Sandbox"
-msgstr ""
+msgstr "Sandbox"
 
 #: permissions.py:10
 msgid "Use the template sandbox"
@@ -73,7 +73,7 @@ msgstr "Sandbox használata"
 
 #: serializers.py:8
 msgid "Hex hash"
-msgstr ""
+msgstr "Hex hash"
 
 #: serializers.py:11
 msgid "Name"
@@ -81,7 +81,7 @@ msgstr "Név"
 
 #: serializers.py:14
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: serializers.py:17
 msgid "URL"
@@ -90,16 +90,16 @@ msgstr "URL"
 #: views.py:44
 #, python-format
 msgid "Template sandbox for: %s"
-msgstr ""
+msgstr "Sablon sandbox ehhez: %s"
 
 #: views.py:65
 #, python-format
 msgid "Template error; %(exception)s"
-msgstr ""
+msgstr "Sablon hiba; %(exception)s"
 
 #: widgets.py:69
 msgid "Filters"
-msgstr ""
+msgstr "Szűrők"
 
 #: widgets.py:76
 msgid "Tags"

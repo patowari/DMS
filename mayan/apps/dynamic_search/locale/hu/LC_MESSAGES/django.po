@@ -33,10 +33,12 @@ msgstr "Mind összeegyeztetése"
 #: forms.py:20
 msgid "Return only results that match all fields."
 msgstr ""
+"Csak azokat az eredményeket adja vissza, amelyek megfelelnek az összes "
+"mezőnek."
 
 #: forms.py:52
 msgid "Search logic"
-msgstr ""
+msgstr "Keresési logika"
 
 #: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
@@ -76,23 +78,23 @@ msgstr "Keresés"
 
 #: permissions.py:10
 msgid "Execute search tools"
-msgstr ""
+msgstr "Keresőeszközök végrehajtása"
 
 #: queues.py:10
 msgid "Search slow"
-msgstr ""
+msgstr "Lassú keresés"
 
 #: queues.py:15
 msgid "Remove a model instance from the search engine."
-msgstr ""
+msgstr "Távolítson el egy modellpéldányt a keresőmotorból."
 
 #: queues.py:20
 msgid "Index a model instance to the search engine."
-msgstr ""
+msgstr "Indexeljen egy modellpéldányt a keresőmotorba."
 
 #: queues.py:25
 msgid "Index all instances of a search model to the search engine."
-msgstr ""
+msgstr "Indexelje a keresőmodell összes példányát a keresőmotorba."
 
 #: queues.py:31
 msgid ""
@@ -113,6 +115,9 @@ msgid ""
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
+"A keresési eredmények túllépik a korlátot. Előfordulhat, hogy az eredmények "
+"nem megbízhatóak, ha több hatókört használnak. Szűkítse a keresési "
+"feltételeket, vagy növelje a találati korlát beállításának értékét."
 
 #: scoped_queries.py:368
 #, python-format
@@ -131,39 +136,39 @@ msgstr "Bármely"
 #: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
-msgstr ""
+msgstr "Ismeretlen keresési modell ` %s `."
 
 #: search_models.py:114
 msgid "All content"
-msgstr ""
+msgstr "Minden tartalom"
 
 #: search_query_types.py:167
 msgid "Exact"
-msgstr ""
+msgstr "Egyező"
 
 #: search_query_types.py:173
 msgid "Fuzzy"
-msgstr "Laza"
+msgstr "Közelítő"
 
 #: search_query_types.py:179
 msgid "Greater than"
-msgstr ""
+msgstr "Nagyobb, mint"
 
 #: search_query_types.py:185
 msgid "Greater than or equal"
-msgstr ""
+msgstr "Nagyobb vagy egyenlő"
 
 #: search_query_types.py:191
 msgid "Less than"
-msgstr ""
+msgstr "Kevesebb, mint"
 
 #: search_query_types.py:197
 msgid "Less than or equal"
-msgstr ""
+msgstr "Kisebb vagy egyenlő"
 
 #: search_query_types.py:203
 msgid "Partial"
-msgstr ""
+msgstr "Részleges"
 
 #: search_query_types.py:209
 msgid "Range"
@@ -175,7 +180,7 @@ msgstr "Exkluzív tartomány"
 
 #: search_query_types.py:250
 msgid "Regular expression"
-msgstr ""
+msgstr "Reguláris kifejezés"
 
 #: serializers.py:14
 msgid "Field name"
@@ -187,11 +192,11 @@ msgstr "Cimke"
 
 #: serializers.py:23
 msgid "App label"
-msgstr ""
+msgstr "Alkalmazáscímke"
 
 #: serializers.py:26
 msgid "Model name"
-msgstr ""
+msgstr "Modell név"
 
 #: serializers.py:29
 msgid "Primary key"
@@ -203,7 +208,7 @@ msgstr "Keresőmezők"
 
 #: settings.py:20
 msgid "Full path to the backend to be used to handle the search."
-msgstr ""
+msgstr "A kereséshez használt háttérrendszer teljes elérési útja."
 
 #: settings.py:27
 msgid ""
@@ -216,29 +221,33 @@ msgstr ""
 
 #: settings.py:36
 msgid "The search operator to use when none is specified."
-msgstr ""
+msgstr "A keresési operátor, amelyet akkor használ, ha nincs semmi megadva."
 
 #: settings.py:43
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
+"Letiltja az egyszavas keresést, csak a speciális keresés gombot hagyja meg."
 
 #: settings.py:51
 msgid "Amount of objects to process when performing bulk indexing."
-msgstr ""
+msgstr "A tömeges indexelés végrehajtásakor feldolgozandó objektumok száma."
 
 #: settings.py:57
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr ""
+"Beállítja az „Összes egyezés” jelölőnégyzet alapértelmezett állapotát."
 
 #: settings.py:63
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
+"A lekérhető és megjeleníthető keresési eredmények maximális száma keresési "
+"lekérdezési egységenként."
 
 #: settings.py:69
 msgid "Maximum number of search results to fetch and display."
-msgstr ""
+msgstr "A lekérhető és megjeleníthető keresési eredmények maximális száma."
 
 #: templates/dynamic_search/app/list_toolbar.html:18
 msgid "Filter terms"
@@ -251,11 +260,11 @@ msgstr "Haladó"
 
 #: value_transformations.py:38
 msgid "Replace accents"
-msgstr ""
+msgstr "Cserélje ki az ékezeteket"
 
 #: value_transformations.py:50
 msgid "@ sign replace"
-msgstr ""
+msgstr "@ jel csere"
 
 #: value_transformations.py:60
 msgid "Case fold"
@@ -263,7 +272,7 @@ msgstr "Kisbetűssé alakítás"
 
 #: value_transformations.py:70 value_transformations.py:80
 msgid "Hyphen replace"
-msgstr ""
+msgstr "Kötőjel csere"
 
 #: value_transformations.py:90
 msgid "To boolean"
@@ -275,15 +284,15 @@ msgstr "Dátum és idő"
 
 #: value_transformations.py:132
 msgid "Date time ISO format"
-msgstr ""
+msgstr "Dátum és idő ISO formátum"
 
 #: value_transformations.py:146
 msgid "Date time simple format"
-msgstr ""
+msgstr "Dátum és idő egyszerű formátum"
 
 #: value_transformations.py:158
 msgid "Date time timestamp format"
-msgstr ""
+msgstr "Dátum, idő, időbélyeg formátuma"
 
 #: value_transformations.py:174
 msgid "To integer"
@@ -296,6 +305,7 @@ msgstr "Karakterlánc"
 #: views.py:59
 msgid "This tool erases and populates the search backend's internal index."
 msgstr ""
+"Ez az eszköz törli és feltölti a keresési háttérrendszer belső indexét."
 
 #: views.py:69
 msgid ""
@@ -320,27 +330,27 @@ msgstr "A keresési háttérrendszer újraindexelése sorban áll."
 #: views.py:110
 #, python-format
 msgid "Search for: %s"
-msgstr ""
+msgstr "Keresés: %s"
 
 #: views.py:139
 #, python-format
 msgid "Advanced search for: %s"
-msgstr ""
+msgstr "Részletes keresés a következőre: %s"
 
 #: views.py:174
 msgid "Try again using different terms. "
-msgstr ""
+msgstr "Próbálkozzon újra más kifejezésekkel."
 
 #: views.py:176
 msgid "No search results"
-msgstr ""
+msgstr "Nincs találat"
 
 #: views.py:179
 #, python-format
 msgid "Search query: %s"
-msgstr ""
+msgstr "Keresési lekérdezés: %s"
 
 #: views.py:181
 #, python-format
 msgid "Search results for: %s"
-msgstr ""
+msgstr "Keresési eredmények a következőre: %s"

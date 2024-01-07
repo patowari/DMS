@@ -316,6 +316,8 @@ msgstr "Opciones de configuración para el modulo de conversión de gráficos."
 #: settings.py:79
 msgid "Time in seconds that the browser should cache the supplied image."
 msgstr ""
+"Tiempo en segundos que el navegador debe almacenar en caché la imagen "
+"proporcionada."
 
 #: settings.py:87
 msgid ""

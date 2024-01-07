@@ -512,7 +512,7 @@ msgstr "删除索引：%s？"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr ""
+msgstr "可用的文档类型"
 
 #: views/index_template_views.py:138
 msgid "Document types linked"

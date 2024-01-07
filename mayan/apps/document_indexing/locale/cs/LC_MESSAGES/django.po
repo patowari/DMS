@@ -534,7 +534,7 @@ msgstr "Smazat rejstřík: %s"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr ""
+msgstr "Dostupné typy dokumentů"
 
 #: views/index_template_views.py:138
 msgid "Document types linked"

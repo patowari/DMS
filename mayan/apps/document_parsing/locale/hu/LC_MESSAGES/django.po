@@ -46,7 +46,7 @@ msgstr ""
 
 #: events.py:10
 msgid "Document file parsed content deleted"
-msgstr ""
+msgstr "A dokumentumfájl elemzett tartalma törölve"
 
 #: events.py:14
 msgid "Document file submitted for parsing"
@@ -54,7 +54,7 @@ msgstr "A dokumentumfájl elemzésre beküldve"
 
 #: events.py:17
 msgid "Document file parsing finished"
-msgstr ""
+msgstr "A dokumentumfájl elemzése befejeződött"
 
 #: forms.py:41
 #, python-format
@@ -79,7 +79,7 @@ msgstr "Küldés elemzésre"
 
 #: links.py:71
 msgid "Setup parsing"
-msgstr ""
+msgstr "Az elemzés beállítása"
 
 #: links.py:80
 msgid "Parse documents per type"
@@ -87,15 +87,17 @@ msgstr "dokumentum értelmezés típusonként"
 
 #: models.py:19
 msgid "Document file page"
-msgstr ""
+msgstr "Dokumentumfájl oldal"
 
 #: models.py:23
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr ""
+"A tényleges szövegtartalom, amelyet a dokumentumelemző háttérrendszer "
+"bontott ki."
 
 #: models.py:31 search.py:24
 msgid "Document file page content"
-msgstr ""
+msgstr "Dokumentumfájl oldal tartalma"
 
 #: models.py:32
 msgid "Document file page contents"
@@ -108,10 +110,11 @@ msgstr "Dokumentumtípus"
 #: models.py:48
 msgid "Automatically queue newly created documents for parsing."
 msgstr ""
+"Az újonnan létrehozott dokumentumok automatikus sorba állítása elemzéshez."
 
 #: models.py:49
 msgid "Auto parsing"
-msgstr ""
+msgstr "Automatikus elemzés"
 
 #: models.py:59
 msgid "Document type settings"
@@ -149,11 +152,11 @@ msgstr "Elemzés"
 
 #: queues.py:12
 msgid "Document file parsing"
-msgstr ""
+msgstr "Dokumentumfájl elemzése"
 
 #: search.py:12
 msgid "Document file content"
-msgstr ""
+msgstr "Dokumentumfájl tartalom"
 
 #: settings.py:18
 msgid "Set new document types to perform parsing automatically by default."
@@ -189,7 +192,7 @@ msgstr "A \"%(object)s\" tartalma sikeresen törölve."
 #: views.py:50
 #, python-format
 msgid "Content of %(count)d document version deleted successfully."
-msgstr ""
+msgstr "%(count)d dokumentumverzió tartalma sikeresen törölve."
 
 #: views.py:52
 #, python-format
@@ -209,17 +212,17 @@ msgstr "%(count)d kiválasztott dokumentumverzió tartalmának törlése."
 #: views.py:98
 #, python-format
 msgid "Content for document file: %s"
-msgstr ""
+msgstr "A dokumentumfájl tartalma: %s"
 
 #: views.py:120
 #, python-format
 msgid "Content for document file page: %s"
-msgstr ""
+msgstr "A dokumentumfájl oldalának tartalma: %s"
 
 #: views.py:135
 #, python-format
 msgid "%(count)d document file added to the parsing queue"
-msgstr ""
+msgstr "%(count)d dokumentumfájl hozzáadva az elemzési sorhoz"
 
 #: views.py:138
 #, python-format
@@ -230,8 +233,8 @@ msgstr "%(count)d dokumentumfájl hozzáadva az elemzési sorhoz"
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Elküldi a %(count)d dokumentumfájlt az elemzési sorba?"
+msgstr[1] "Elküldi a %(count)d dokumentumfájlokat az elemzési sorba?"
 
 #: views.py:160
 #, python-format

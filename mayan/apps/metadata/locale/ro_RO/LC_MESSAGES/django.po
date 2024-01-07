@@ -4,10 +4,10 @@
 # 
 # Translators:
 # Translators:
-# Stefaniu Criste <gupi@hangar.ro>, 2024
 # Badea Gabriel <gcbadea@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Harald Ersch, 2024
+# Stefaniu Criste <gupi@hangar.ro>, 2024
 # 
 msgid ""
 msgstr ""
@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-07 07:19+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Harald Ersch, 2024\n"
+"Last-Translator: Stefaniu Criste <gupi@hangar.ro>, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,7 +174,7 @@ msgstr "Crează nou"
 
 #: links.py:82 links.py:87
 msgid "Delete"
-msgstr ""
+msgstr "Șterge"
 
 #: links.py:92
 msgid "Edit"

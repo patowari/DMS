@@ -33,11 +33,11 @@ msgstr "A sorosító osztály nem található a %s-hoz"
 
 #: links.py:21
 msgid "API Documentation (Swagger)"
-msgstr ""
+msgstr "API dokumentáció (Swagger)"
 
 #: links.py:26
 msgid "API Documentation (ReDoc)"
-msgstr ""
+msgstr "API dokumentáció (ReDoc)"
 
 #: relations.py:33
 #, python-brace-format
@@ -47,16 +47,16 @@ msgstr "Érvénytelen pk \"{pk_value}\" – az objektum nem létezik."
 #: relations.py:36
 #, python-brace-format
 msgid "Incorrect type. Expected pk value, received {data_type}."
-msgstr ""
+msgstr "Helytelen típus. Várt pk érték, érkezett {data_type} ."
 
 #: relations.py:38
 msgid "This field is required."
-msgstr ""
+msgstr "Ez a mező kötelező."
 
 #: schemas.py:11
 #, python-format
 msgid "%s API"
-msgstr ""
+msgstr "%s API"
 
 #: serializers.py:37
 msgid "Content"
@@ -68,7 +68,7 @@ msgstr "Adat"
 
 #: serializers.py:43
 msgid "Headers"
-msgstr ""
+msgstr "Fejlécek"
 
 #: serializers.py:46
 msgid "Name"
@@ -76,11 +76,11 @@ msgstr "Név"
 
 #: serializers.py:49
 msgid "Status code"
-msgstr ""
+msgstr "Állapotkód"
 
 #: serializers.py:52
 msgid "Requests"
-msgstr ""
+msgstr "Kérések"
 
 #: serializers.py:75
 msgid "Label"
@@ -140,8 +140,8 @@ msgstr "REST API hivatkozások letiltása az eszközök menüben."
 
 #: settings.py:23
 msgid "The maximum page size that can be requested."
-msgstr ""
+msgstr "Az igényelhető maximális oldalméret."
 
 #: settings.py:29
 msgid "The default page size if none is specified."
-msgstr ""
+msgstr "Az alapértelmezett oldalméret, ha nincs megadva."

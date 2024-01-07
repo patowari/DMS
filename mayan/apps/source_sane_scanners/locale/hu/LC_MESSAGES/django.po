@@ -22,17 +22,19 @@ msgstr ""
 
 #: apps.py:11
 msgid "SANE scanners"
-msgstr ""
+msgstr "SANE szkennerek"
 
 #: dependencies.py:10
 msgid ""
 "Utility provided by the SANE package. Used to control the scanner and "
 "obtained the scanned document image."
 msgstr ""
+"A SANE csomag által biztosított segédprogram. A szkenner vezérlésére és a "
+"beolvasott dokumentum képének lekérésére szolgál."
 
 #: source_backends.py:29
 msgid "SANE Scanner"
-msgstr ""
+msgstr "SANE szkenner"
 
 #: source_backends.py:48
 msgid "Device name as returned by the SANE backend."
@@ -58,7 +60,7 @@ msgstr "Argumentumok"
 
 #: source_backends.py:76
 msgid "SANE client"
-msgstr ""
+msgstr "SANE kliens"
 
 #: source_backends.py:134
 msgid "Document properties"

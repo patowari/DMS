@@ -27,7 +27,7 @@ msgstr "Navigáció"
 
 #: classes.py:965
 msgid "Unnamed function"
-msgstr ""
+msgstr "Névtelen függvény"
 
 #: templates/navigation/actions_dropdown.html:5
 msgid "Actions"

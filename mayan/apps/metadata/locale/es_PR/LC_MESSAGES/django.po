@@ -170,7 +170,7 @@ msgstr "Crear nuevo"
 
 #: links.py:82 links.py:87
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: links.py:92
 msgid "Edit"

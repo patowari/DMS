@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:39 events.py:6 permissions.py:6
 msgid "Messaging"
-msgstr ""
+msgstr "Üzenetküldés"
 
 #: apps.py:61
 msgid "None"
@@ -36,11 +36,11 @@ msgstr "Küldő"
 
 #: events.py:10
 msgid "Message created"
-msgstr ""
+msgstr "Üzenet létrehozva"
 
 #: events.py:13
 msgid "Message edited"
-msgstr ""
+msgstr "Üzenet szerkesztve"
 
 #: forms.py:26 models.py:37 workflow_actions.py:55
 msgid "Body"
@@ -48,7 +48,7 @@ msgstr "Szövegtörzs"
 
 #: links.py:49 views.py:38
 msgid "Create message"
-msgstr ""
+msgstr "Üzenet létrehozása"
 
 #: links.py:52 links.py:58
 msgid "Delete"
@@ -72,11 +72,11 @@ msgstr "Cimke"
 
 #: models.py:19
 msgid "Sender content type"
-msgstr ""
+msgstr "Feladó tartalomtípusa"
 
 #: models.py:22
 msgid "Sender object ID"
-msgstr ""
+msgstr "Feladó objektum azonosítója"
 
 #: models.py:29
 msgid "User"
@@ -84,7 +84,7 @@ msgstr "Felhasználó"
 
 #: models.py:32
 msgid "Short description of this message."
-msgstr ""
+msgstr "Az üzenet rövid leírása."
 
 #: models.py:33 workflow_actions.py:38
 msgid "Subject"
@@ -92,11 +92,11 @@ msgstr "Tárgy"
 
 #: models.py:36
 msgid "The actual content of the message."
-msgstr ""
+msgstr "Az üzenet tényleges tartalma."
 
 #: models.py:41
 msgid "This field determines if the message has been read or not."
-msgstr ""
+msgstr "Ez a mező határozza meg, hogy az üzenetet elolvasták-e vagy sem."
 
 #: models.py:42
 msgid "Read"
@@ -104,7 +104,7 @@ msgstr "Olvasás"
 
 #: models.py:46
 msgid "Date and time of the message creation."
-msgstr ""
+msgstr "Az üzenet létrehozásának dátuma és ideje."
 
 #: models.py:47
 msgid "Creation date and time"
@@ -120,35 +120,35 @@ msgstr "Üzenetek"
 
 #: permissions.py:10
 msgid "Create messages"
-msgstr ""
+msgstr "Üzenetek létrehozása"
 
 #: permissions.py:13
 msgid "Delete messages"
-msgstr ""
+msgstr "Üzenetek törlése"
 
 #: permissions.py:16
 msgid "Edit messages"
-msgstr ""
+msgstr "Üzenetek szerkesztése"
 
 #: permissions.py:19
 msgid "View messages"
-msgstr ""
+msgstr "Üzenetek megtekintése"
 
 #: serializers.py:15
 msgid "Sender app label"
-msgstr ""
+msgstr "Feladó alkalmazás címke"
 
 #: serializers.py:18
 msgid "Sender model name"
-msgstr ""
+msgstr "Feladó modell neve"
 
 #: serializers.py:21
 msgid "Sender URL"
-msgstr ""
+msgstr "Feladó URL-je"
 
 #: serializers.py:25
 msgid "Primary key of the recipient user of this message."
-msgstr ""
+msgstr "Az üzenet címzett felhasználójának elsődleges kulcsa."
 
 #: serializers.py:26
 msgid "User ID"
@@ -176,7 +176,7 @@ msgstr "A \"%(object)s\" üzenet sikeresen törölve."
 #: views.py:55
 #, python-format
 msgid "%(count)d message deleted successfully."
-msgstr ""
+msgstr "%(count)d üzenet sikeresen törölve."
 
 #: views.py:56
 #, python-format
@@ -186,7 +186,7 @@ msgstr "%(count)d kiválasztott üzenet törlése."
 #: views.py:57
 #, python-format
 msgid "Delete message: %(object)s."
-msgstr ""
+msgstr "Üzenet törlése: %(object)s ."
 
 #: views.py:58
 #, python-format
@@ -196,15 +196,15 @@ msgstr "%(count)d kiválasztott üzenet törlése."
 #: views.py:100
 #, python-format
 msgid "Details of message: %s"
-msgstr ""
+msgstr "Az üzenet részletei: %s"
 
 #: views.py:124
 msgid "Here you will find text messages from other users or from the system."
-msgstr ""
+msgstr "Itt talál szöveges üzeneteket más felhasználóktól vagy a rendszertől."
 
 #: views.py:127
 msgid "There are no messages"
-msgstr ""
+msgstr "Nincsenek üzenetek"
 
 #: views.py:137
 #, python-format
@@ -226,7 +226,7 @@ msgstr "A \"%(object)s\" üzenet sikeresen olvasottként megjelölve."
 #: views.py:149
 #, python-format
 msgid "%(count)d message marked as read successfully."
-msgstr ""
+msgstr "%(count)d üzenet sikeresen olvasottként megjelölve."
 
 #: views.py:151
 #, python-format
@@ -245,11 +245,11 @@ msgstr "A %(count)d kiválasztott üzenet olvasottként megjelölése."
 
 #: views.py:181
 msgid "Mark all message as read?"
-msgstr ""
+msgstr "Megjelöli az összes üzenetet olvasottként?"
 
 #: views.py:197
 msgid "All messages marked as read."
-msgstr ""
+msgstr "Minden üzenet olvasottként megjelölve."
 
 #: views.py:204
 #, python-format
@@ -271,7 +271,7 @@ msgstr "A \"%(object)s\" üzenet sikeresen olvasatlanként megjelölve."
 #: views.py:216
 #, python-format
 msgid "%(count)d message marked as unread successfully."
-msgstr ""
+msgstr "%(count)d üzenet sikeresen olvasatlanként megjelölve."
 
 #: views.py:218
 #, python-format
@@ -290,27 +290,27 @@ msgstr "A %(count)d kiválasztott üzenetet olvasatlanként megjelölése."
 
 #: workflow_actions.py:19
 msgid "Username list"
-msgstr ""
+msgstr "Felhasználónév lista"
 
 #: workflow_actions.py:26
 msgid "Comma separated list of usernames that will receive the message."
-msgstr ""
+msgstr "Az üzenetet fogadó felhasználónevek vesszővel tagolt listája."
 
 #: workflow_actions.py:45
 msgid "Subject of the message to be sent."
-msgstr ""
+msgstr "Az elküldendő üzenet tárgya."
 
 #: workflow_actions.py:62
 msgid "The actual text to send."
-msgstr ""
+msgstr "A tényleges küldendő szöveg."
 
 #: workflow_actions.py:72
 msgid "Send user message"
-msgstr ""
+msgstr "Felhasználói üzenet küldése"
 
 #: workflow_actions.py:80
 msgid "Recipients"
-msgstr ""
+msgstr "Címzettek"
 
 #: workflow_actions.py:84
 msgid "Content"

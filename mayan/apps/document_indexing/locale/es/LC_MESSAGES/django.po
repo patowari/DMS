@@ -539,7 +539,7 @@ msgstr "¿Borrar el indice: %s?"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr ""
+msgstr "Tipos de documentos disponibles"
 
 #: views/index_template_views.py:138
 msgid "Document types linked"

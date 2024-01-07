@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:20 events.py:6 permissions.py:6
 msgid "Document exports"
-msgstr ""
+msgstr "Dokumentum exportálások"
 
 #: classes.py:59
 msgid "Document version export to PDF"
@@ -53,15 +53,15 @@ msgstr "Dokumentumverzió exportálva."
 
 #: permissions.py:10
 msgid "Export document versions"
-msgstr ""
+msgstr "Dokumentumverziók exportálása"
 
 #: queues.py:7
 msgid "Documents exports"
-msgstr ""
+msgstr "Dokumentum exportálások"
 
 #: queues.py:13
 msgid "Export a document version to a PDF"
-msgstr ""
+msgstr "Dokumentumverzió exportálása PDF formátumba"
 
 #: views.py:17
 #, python-format
@@ -71,7 +71,7 @@ msgstr "A \"%(object)s\" dokumentumverzió exportálása sikeresen sorba került
 #: views.py:20
 #, python-format
 msgid "%(count)d document version export successfully queued."
-msgstr ""
+msgstr "%(count)d dokumentumverzió exportálása sikeresen sorba került."
 
 #: views.py:23
 #, python-format
@@ -98,3 +98,5 @@ msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."
 msgstr ""
+"A folyamat a háttérben történik. Az exportált fájl elérhető lesz a letöltési"
+" területen."

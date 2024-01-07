@@ -22,29 +22,31 @@ msgstr ""
 
 #: apps.py:9 settings.py:10
 msgid "MIME types"
-msgstr ""
+msgstr "MIME típusok"
 
 #: backends/file_command.py:26
 msgid "file command not installed or not found."
-msgstr ""
+msgstr "file parancs nincs telepítve vagy nem található."
 
 #: backends/perl_file_mimeinfo.py:26
 msgid "mimetype not installed or not found."
-msgstr ""
+msgstr "A mimetype nincs telepítve vagy nem található."
 
 #: dependencies.py:10
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
 msgstr ""
+"Ez a modul használható egy fájl MIME típusának meghatározására. Megpróbálja "
+"megvalósítani a freedesktop specifikációt egy megosztott MIME-adatbázishoz."
 
 #: dependencies.py:17
 msgid "determine file type using content tests"
-msgstr ""
+msgstr "tartalomtesztek segítségével határozza meg a fájltípust"
 
 #: settings.py:16
 msgid "Path to the class to use when to detect file MIME types."
-msgstr ""
+msgstr "Az osztály elérési útja a MIME fájltípusok észlelésekor."
 
 #: settings.py:22
 msgid "Arguments to pass to the MIME_TYPE_BACKEND."

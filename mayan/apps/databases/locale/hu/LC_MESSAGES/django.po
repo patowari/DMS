@@ -26,25 +26,27 @@ msgstr "Adatbázisok"
 
 #: classes.py:82
 msgid "Model fields"
-msgstr ""
+msgstr "Modellmezők"
 
 #: classes.py:130
 msgid "Model related fields"
-msgstr ""
+msgstr "Modellhez kapcsolódó mezők"
 
 #: classes.py:135
 msgid "Model properties"
-msgstr ""
+msgstr "Modell tulajdonságai"
 
 #: classes.py:140
 msgid "Model reverse fields"
-msgstr ""
+msgstr "Modell fordított mezők"
 
 #: literals.py:10
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
 msgstr ""
+"Az adatbázis-háttérrendszer SQLite használatára van beállítva. Az SQLite-t "
+"csak fejlesztésre és tesztelésre szabad használni, élesre nem."
 
 #: model_mixins.py:26
 msgid ""
@@ -60,15 +62,16 @@ msgstr ""
 
 #: model_mixins.py:31
 msgid "Condition"
-msgstr ""
+msgstr "Feltétel"
 
 #: model_mixins.py:52
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
+"Az objektum a feltétel visszatérési értékétől függően végrehajtásra kerül."
 
 #: model_mixins.py:55
 msgid "Has a condition?"
-msgstr ""
+msgstr "Van feltétele?"
 
 #: templates/databases/app/viewport.html:11
 msgid "Warning"

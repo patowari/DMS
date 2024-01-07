@@ -24,7 +24,7 @@ msgstr ""
 #: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
 #: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
-msgstr ""
+msgstr "Közlemények"
 
 #: apps.py:79 apps.py:83
 msgid "None"
@@ -32,11 +32,11 @@ msgstr "Nincs"
 
 #: events.py:10
 msgid "Announcement created"
-msgstr ""
+msgstr "Közlemény létrehozva"
 
 #: events.py:13
 msgid "Announcement edited"
-msgstr ""
+msgstr "Közlemény szerkesztve"
 
 #: links.py:17 views.py:34
 msgid "Create announcement"
@@ -52,7 +52,7 @@ msgstr "Szerkesztés"
 
 #: models.py:19
 msgid "Short description of this announcement."
-msgstr ""
+msgstr "A közlemény rövid leírása."
 
 #: models.py:20
 msgid "Label"
@@ -60,7 +60,7 @@ msgstr "Cimke"
 
 #: models.py:23
 msgid "The actual text to be displayed."
-msgstr ""
+msgstr "A ténylegesen megjelenítendő szöveg."
 
 #: models.py:24
 msgid "Text"
@@ -72,7 +72,7 @@ msgstr "Engedélyezett"
 
 #: models.py:29
 msgid "Date and time after which this announcement will be displayed."
-msgstr ""
+msgstr "Dátum és idő, amely után ez a közlemény megjelenik."
 
 #: models.py:30
 msgid "Start date time"
@@ -80,7 +80,7 @@ msgstr "Kezdés dátuma és ideje"
 
 #: models.py:34
 msgid "Date and time until when this announcement is to be displayed."
-msgstr ""
+msgstr "Dátum és idő, ameddig ez a közlemény megjelenik."
 
 #: models.py:35
 msgid "End date time"
@@ -88,7 +88,7 @@ msgstr "Befejezés dátuma és ideje"
 
 #: models.py:42
 msgid "Announcement"
-msgstr ""
+msgstr "Közlemény"
 
 #: permissions.py:10
 msgid "Create announcements"
@@ -96,11 +96,11 @@ msgstr "Közlemények létrehozása"
 
 #: permissions.py:13
 msgid "Delete announcements"
-msgstr ""
+msgstr "Közlemények törlése"
 
 #: permissions.py:16
 msgid "Edit announcements"
-msgstr ""
+msgstr "Közlemények szerkesztése"
 
 #: permissions.py:19
 msgid "View announcements"
@@ -128,7 +128,7 @@ msgstr "A \"%(object)s\" közlemény sikeresen törölve."
 #: views.py:60
 #, python-format
 msgid "%(count)d announcement deleted successfully."
-msgstr ""
+msgstr "%(count)d közlemény sikeresen törölve."
 
 #: views.py:62
 #, python-format
@@ -138,7 +138,7 @@ msgstr "%(count)d kiválasztott közlemény törlése."
 #: views.py:63
 #, python-format
 msgid "Delete announcement: %(object)s."
-msgstr ""
+msgstr "Közlemény törlése: %(object)s ."
 
 #: views.py:64
 #, python-format
@@ -148,7 +148,7 @@ msgstr "%(count)d kiválasztott közlemény törlése."
 #: views.py:98
 #, python-format
 msgid "Edit announcement: %s"
-msgstr ""
+msgstr "Közlemény szerkesztése: %s"
 
 #: views.py:121
 msgid ""
@@ -162,4 +162,4 @@ msgstr ""
 
 #: views.py:125
 msgid "No announcements available"
-msgstr ""
+msgstr "Nem állnak rendelkezésre közlemények"

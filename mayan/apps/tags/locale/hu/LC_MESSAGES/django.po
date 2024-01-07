@@ -153,11 +153,11 @@ msgstr "Dokumentumtípus"
 
 #: search.py:31
 msgid "Document label"
-msgstr ""
+msgstr "Dokumentumcímke"
 
 #: search.py:34
 msgid "Document description"
-msgstr ""
+msgstr "Dokumentum leírása"
 
 #: search.py:37
 msgid "Document UUID"
@@ -169,7 +169,7 @@ msgstr "Dokumentumfájl ellenőrző összeg"
 
 #: search.py:44
 msgid "Document file MIME type"
-msgstr ""
+msgstr "Dokumentumfájl MIME típusa"
 
 #: serializers.py:12
 msgid "Documents URL"

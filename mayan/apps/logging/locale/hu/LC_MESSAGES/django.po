@@ -27,11 +27,11 @@ msgstr "Naplózás"
 
 #: events.py:10
 msgid "Error log deleted"
-msgstr ""
+msgstr "Hibanapló törölve"
 
 #: links.py:15 views.py:36
 msgid "Global error log"
-msgstr ""
+msgstr "Globális hibanapló"
 
 #: links.py:26
 msgid "Delete"
@@ -39,7 +39,7 @@ msgstr "Törlés"
 
 #: links.py:31
 msgid "Errors"
-msgstr ""
+msgstr "Hibák"
 
 #: links.py:37
 msgid "Clear errors"
@@ -51,7 +51,7 @@ msgstr "Objektum"
 
 #: model_mixins.py:18
 msgid "App label"
-msgstr ""
+msgstr "Alkalmazáscímke"
 
 #: models.py:19 models.py:37
 msgid "Internal name"
@@ -59,19 +59,19 @@ msgstr "Belső név"
 
 #: models.py:24 models.py:34
 msgid "Error log"
-msgstr ""
+msgstr "Hibanapló"
 
 #: models.py:25
 msgid "Error logs"
-msgstr ""
+msgstr "Hibanaplók"
 
 #: models.py:51 models.py:63
 msgid "Error log partition"
-msgstr ""
+msgstr "Hibanapló-partíció"
 
 #: models.py:52
 msgid "Error log partitions"
-msgstr ""
+msgstr "Hibanapló-partíciók"
 
 #: models.py:66
 msgid "Date and time"
@@ -87,15 +87,15 @@ msgstr "Hibanapló-partíció bejegyzés"
 
 #: models.py:76
 msgid "Error log partition entries"
-msgstr ""
+msgstr "Hibanapló-partíció bejegyzések"
 
 #: permissions.py:10
 msgid "Delete error log"
-msgstr ""
+msgstr "Hibanapló törlése"
 
 #: permissions.py:13
 msgid "View error log"
-msgstr ""
+msgstr "Hibanapló megtekintése"
 
 #: serializers.py:12
 msgid "Content type"
@@ -115,15 +115,15 @@ msgstr "Az üzenetek ANSI színkódos naplózásának letiltása."
 
 #: settings.py:24
 msgid "Automatically enable logging to all apps."
-msgstr ""
+msgstr "A naplózás automatikus engedélyezése az összes alkalmazáshoz."
 
 #: settings.py:30
 msgid "List of handlers to which logging messages will be sent."
-msgstr ""
+msgstr "Azon kezelők listája, amelyeknek a naplózási üzeneteket elküldik."
 
 #: settings.py:35
 msgid "Level for the logging system."
-msgstr ""
+msgstr "A naplózási rendszer szintje."
 
 #: settings.py:41
 msgid "Path to the logfile that will track errors during production."
@@ -136,6 +136,8 @@ msgid ""
 "This view displays the error log of different objects. An empty list is a "
 "good thing."
 msgstr ""
+"Ez a nézet a különböző objektumok hibanaplóját jeleníti meg. Az üres lista "
+"jó dolog."
 
 #: views.py:34 views.py:101
 msgid "There are no error log entries"
@@ -144,7 +146,7 @@ msgstr "Nincsenek hibanapló bejegyzések"
 #: views.py:50
 #, python-format
 msgid "Clear error log entries for: %s"
-msgstr ""
+msgstr "Hibanapló bejegyzések törlése a következőhöz: %s"
 
 #: views.py:57
 msgid "Object error log cleared successfully"
@@ -160,6 +162,7 @@ msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
+"Ez a nézet egy objektum hibanaplóját jeleníti meg. Az üres lista jó dolog."
 
 #: views.py:105
 #, python-format

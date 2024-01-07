@@ -22,11 +22,11 @@ msgstr ""
 
 #: apps.py:10
 msgid "Backends"
-msgstr ""
+msgstr "Háttérrendszerek"
 
 #: model_mixins.py:22
 msgid "The dotted Python path to the backend class."
-msgstr ""
+msgstr "A pontozott Python elérési út a háttérosztályhoz."
 
 #: model_mixins.py:23
 msgid "Backend path"
@@ -42,7 +42,7 @@ msgstr "Háttérrendszerbeli adatok"
 
 #: model_mixins.py:73
 msgid "Backend"
-msgstr ""
+msgstr "Háttérrendszer"
 
 #: model_mixins.py:75
 msgid "The backend class for this entry."

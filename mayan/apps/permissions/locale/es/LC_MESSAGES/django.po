@@ -30,7 +30,7 @@ msgstr "Número de grupos"
 
 #: classes.py:65
 msgid "Insufficient permission."
-msgstr ""
+msgstr "Permiso insuficiente."
 
 #: dashboard_widgets.py:13
 msgid "Total roles"

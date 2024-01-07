@@ -514,7 +514,7 @@ msgstr "حذف نمایه: %s؟"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr ""
+msgstr "نوع سند موجود"
 
 #: views/index_template_views.py:138
 msgid "Document types linked"

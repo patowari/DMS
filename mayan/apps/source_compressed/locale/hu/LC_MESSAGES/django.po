@@ -30,6 +30,8 @@ msgid ""
 "Controls whether or not the uploaded file will be uncompressed and processed"
 " and individual files."
 msgstr ""
+"Azt szabályozza, hogy a feltöltött fájl tömörítetlen és feldolgozott "
+"legyen-e vagy sem, valamint az egyes fájlokat."
 
 #: source_backends/literals.py:8 source_backends/literals.py:13
 msgid "Always"

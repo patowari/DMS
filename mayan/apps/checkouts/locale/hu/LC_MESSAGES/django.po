@@ -72,7 +72,7 @@ msgstr "Lefoglalás lejárati ideje"
 
 #: forms.py:51
 msgid "New files allowed?"
-msgstr ""
+msgstr "Új fájlok engedélyezettek?"
 
 #: forms.py:52
 msgid "Yes"
@@ -136,11 +136,11 @@ msgstr "Lefoglalás lejárati dátuma és ideje"
 
 #: models.py:50
 msgid "Do not allow new file of this document to be uploaded."
-msgstr ""
+msgstr "Ne engedélyezze a dokumentum új fájljának feltöltését."
 
 #: models.py:51
 msgid "Block new file upload"
-msgstr ""
+msgstr "Új fájl feltöltésének blokkolása"
 
 #: models.py:59 permissions.py:6
 msgid "Document checkout"

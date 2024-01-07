@@ -30,7 +30,7 @@ msgstr "OCR"
 
 #: apps.py:116
 msgid "The OCR content."
-msgstr ""
+msgstr "Az OCR tartalom."
 
 #: apps.py:121
 msgid "A generator returning the document's version pages OCR content."
@@ -39,19 +39,19 @@ msgstr ""
 
 #: apps.py:123
 msgid "OCR content"
-msgstr ""
+msgstr "OCR tartalom"
 
 #: backends/tesseract.py:84
 msgid "Tesseract OCR not found."
-msgstr ""
+msgstr "A Tesseact OCR nem található."
 
 #: dependencies.py:24
 msgid "Free Open Source OCR Engine"
-msgstr ""
+msgstr "Ingyenes nyílt forráskódú OCR motor"
 
 #: events.py:10
 msgid "Document version OCR content deleted"
-msgstr ""
+msgstr "A dokumentumverzió OCR tartalma törölve"
 
 #: events.py:14
 msgid "Document version page OCR content edited"
@@ -84,7 +84,7 @@ msgstr "Karakterfelismerés dokumentum típus alapján"
 
 #: links.py:40 links.py:47
 msgid "Delete OCR content"
-msgstr ""
+msgstr "Az OCR-tartalom törlése"
 
 #: links.py:60
 msgid "Download OCR text"
@@ -96,7 +96,7 @@ msgstr "OCR-re küldés"
 
 #: links.py:86
 msgid "Edit OCR"
-msgstr ""
+msgstr "OCR szerkesztése"
 
 #: models.py:22
 msgid "Document type"
@@ -108,7 +108,7 @@ msgstr "Automatically queue newly created documents for OCR."
 
 #: models.py:27
 msgid "Auto OCR"
-msgstr ""
+msgstr "Automatikus OCR"
 
 #: models.py:33
 msgid "Document type settings"
@@ -156,7 +156,7 @@ msgstr "A dokumentum típus karakterfelismerő beállításának megváltoztatá
 
 #: queues.py:10
 msgid "Finish document version OCR"
-msgstr ""
+msgstr "A dokumentumverzió OCR befejezése"
 
 #: queues.py:14
 msgid "Document version page OCR"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: settings.py:23
 msgid "Full path to the backend to be used to do OCR."
-msgstr ""
+msgstr "Az OCR végrehajtásához használt háttérrendszer teljes elérési útja."
 
 #: views.py:57
 #, python-format
@@ -209,7 +209,7 @@ msgstr "A \"%(object)s\" OCR tartalma sikeresen törölve."
 #: views.py:118
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
-msgstr ""
+msgstr "A %(count)d dokumentumverzió OCR tartalma sikeresen törölve."
 
 #: views.py:121
 #, python-format
@@ -229,37 +229,37 @@ msgstr "A %(count)d kiválasztott dokumentumverzió OCR tartalmának törlése."
 #: views.py:156
 #, python-format
 msgid "OCR result for document: %s"
-msgstr ""
+msgstr "OCR eredménye a következő dokumentumhoz: %s"
 
 #: views.py:178
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
-msgstr ""
+msgstr "%(count)d dokumentumverzió elküldve az OCR-sorba."
 
 #: views.py:181
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
-msgstr ""
+msgstr "Az OCR-sorba elküldött %(count)d dokumentumverzió."
 
 #: views.py:190
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Elküldi a kiválasztott dokumentumverziót az OCR-sorba?"
+msgstr[1] "Elküldi a kiválasztott dokumentumverziókat az OCR-sorba?"
 
 #: views.py:226
 #, python-format
 msgid "OCR result for document version page: %s"
-msgstr ""
+msgstr "OCR-eredmény a dokumentum verzióoldalához: %s"
 
 #: views.py:254
 #, python-format
 msgid "Edit OCR for document version page: %s"
-msgstr ""
+msgstr "OCR szerkesztése a dokumentum verzióoldalához: %s"
 
 #: workflow_actions.py:15
 msgid "Page condition"
-msgstr ""
+msgstr "Az oldal állapota"
 
 #: workflow_actions.py:19
 msgid ""
@@ -277,12 +277,12 @@ msgstr ""
 
 #: workflow_actions.py:31
 msgid "Page content"
-msgstr ""
+msgstr "Az oldal tartalma"
 
 #: workflow_actions.py:35
 msgid "A template that will generate the OCR content to be saved."
-msgstr ""
+msgstr "Egy sablon, amely létrehozza a mentendő OCR-tartalmat."
 
 #: workflow_actions.py:42
 msgid "Update document page OCR content"
-msgstr ""
+msgstr "A dokumentumoldal OCR tartalmának frissítése"

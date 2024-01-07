@@ -167,7 +167,7 @@ msgstr ""
 #: views.py:59
 #, python-format
 msgid "New access control lists for: %s"
-msgstr ""
+msgstr "Új hozzáférési listák a következőhöz: %s"
 
 #: views.py:103
 #, python-format
@@ -184,10 +184,10 @@ msgid ""
 "access to objects in the system. ACLs allow granting a permission to a role "
 "but only for a specific object or set of objects."
 msgstr ""
-"Az ACL az Access Control List a hozzáférés-vezérlési lista rövidítése, és "
-"egy pontos módszer a rendszerben lévő objektumokhoz való felhasználói "
-"hozzáférés ellenőrzésére. Az ACL-ek lehetővé teszik, hogy egy szerepkörnek "
-"engedélyt adjunk, de csak egy adott objektumhoz vagy objektumkészlethez."
+"Az ACL az Access Control List a hozzáférési lista rövidítése, és egy pontos "
+"módszer a rendszerben lévő objektumokhoz való felhasználói hozzáférés "
+"ellenőrzésére. Az ACL-ek lehetővé teszik, hogy egy szerepkörnek engedélyt "
+"adjunk, de csak egy adott objektumhoz vagy objektumkészlethez."
 
 #: views.py:159
 #, python-format
@@ -221,24 +221,25 @@ msgstr ""
 
 #: views.py:269
 msgid "There are no ACLs"
-msgstr ""
+msgstr "Nincsenek ACL-ek"
 
 #: views.py:278
 msgid "Global access control lists"
-msgstr ""
+msgstr "Globális hozzáférési listák"
 
 #: workflow_actions.py:44
 msgid "Object type"
-msgstr ""
+msgstr "Objektumtípus"
 
 #: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
-msgstr ""
+msgstr "Az objektum típusa, amelyhez a hozzáférés módosul."
 
 #: workflow_actions.py:56
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
+"Annak az objektumnak a numerikus azonosítója, amelyhez a hozzáférés módosul."
 
 #: workflow_actions.py:61 workflow_actions.py:197
 msgid "Roles"
@@ -246,20 +247,22 @@ msgstr "Szerepkörök"
 
 #: workflow_actions.py:63 workflow_actions.py:199
 msgid "Roles whose access will be modified."
-msgstr ""
+msgstr "Szerepkörök, amelyek hozzáférése módosul."
 
 #: workflow_actions.py:70 workflow_actions.py:206
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
+"Engedélyek a fent kiválasztott objektum szerepkörének "
+"megadásához/visszavonásához."
 
 #: workflow_actions.py:77
 msgid "Grant object access"
-msgstr ""
+msgstr "Objektum hozzáférés engedélyezése"
 
 #: workflow_actions.py:132 workflow_actions.py:231
 msgid "Access"
-msgstr ""
+msgstr "Hozzáférés"
 
 #: workflow_actions.py:170
 msgid "Revoke object access"

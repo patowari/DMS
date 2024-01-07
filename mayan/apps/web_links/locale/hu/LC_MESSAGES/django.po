@@ -28,7 +28,7 @@ msgstr "Weblinkek"
 
 #: events.py:10
 msgid "Web link created"
-msgstr ""
+msgstr "Weblink létrehozva"
 
 #: events.py:13
 msgid "Web link edited"
@@ -36,7 +36,7 @@ msgstr "Weblink szerkesztve"
 
 #: events.py:16
 msgid "Web link navigated"
-msgstr ""
+msgstr "Weblink navigálva"
 
 #: forms.py:14
 msgid "General"
@@ -44,7 +44,7 @@ msgstr "Általános"
 
 #: forms.py:19
 msgid "Templating"
-msgstr ""
+msgstr "Sablonozás"
 
 #: links.py:31 views.py:83
 msgid "Create new web link"
@@ -76,11 +76,11 @@ msgstr "Cimke"
 
 #: models.py:28
 msgid "Template that will be used to craft the final URL of the web link."
-msgstr ""
+msgstr "Sablon, amelyet a weblink végső URL-jének kialakításához használunk."
 
 #: models.py:30
 msgid "Template"
-msgstr ""
+msgstr "Sablon"
 
 #: models.py:33
 msgid "Enabled"
@@ -108,7 +108,7 @@ msgstr "Meglévő weblinkek megtekintése"
 
 #: permissions.py:22
 msgid "View web link instances"
-msgstr ""
+msgstr "Weblink példányok megtekintése"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
@@ -132,7 +132,7 @@ msgstr "Dokumentumtípusok URL eltávolítása"
 
 #: serializers.py:41
 msgid "Document types URL"
-msgstr ""
+msgstr "Dokumentumtípusok URL"
 
 #: serializers.py:48 serializers.py:63
 msgid "URL"
@@ -140,7 +140,7 @@ msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "Navigáció URL"
 
 #: views.py:33
 msgid "Web links enabled"
@@ -158,7 +158,7 @@ msgstr "Weblinkek a következő dokumentumtípushoz: %s"
 #: views.py:106
 #, python-format
 msgid "Delete web link: %s"
-msgstr ""
+msgstr "Weblink törlése: %s"
 
 #: views.py:111
 msgid "Document types enabled"
@@ -166,17 +166,17 @@ msgstr "Engedélyezett dokumentumtípusok"
 
 #: views.py:112
 msgid "Available document types"
-msgstr ""
+msgstr "Elérhető dokumentumtípusok"
 
 #: views.py:129
 #, python-format
 msgid "Document type for which to enable web link: %s"
-msgstr ""
+msgstr "Dokumentumtípus, amelynél engedélyezni kell a webes hivatkozást: %s"
 
 #: views.py:146
 #, python-format
 msgid "Edit web link: %s"
-msgstr ""
+msgstr "Weblink szerkesztése: %s"
 
 #: views.py:165 views.py:195
 msgid ""

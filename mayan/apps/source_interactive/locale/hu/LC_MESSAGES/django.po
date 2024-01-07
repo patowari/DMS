@@ -22,11 +22,11 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source interactive"
-msgstr ""
+msgstr "Interaktív forrás"
 
 #: source_backend_actions/arguments.py:7
 msgid "Binary form field containing the file to upload."
-msgstr ""
+msgstr "A feltöltendő fájlt tartalmazó bináris űrlapmező."
 
 #: source_backend_actions/arguments.py:11
 msgid "Python file like object."
@@ -34,4 +34,4 @@ msgstr "Python fájl-szerű objektum."
 
 #: source_backend_actions/arguments.py:18
 msgid "ID of the shared uploaded file to be processed."
-msgstr ""
+msgstr "A feldolgozandó megosztott feltöltött fájl azonosítója."

@@ -7,9 +7,9 @@
 # Roberto Rosario, 2024
 # Panasoft, 2024
 # Sergey Glita <gsv70@mail.ru>, 2024
-# lilo.panic, 2024
 # Alex Chigrin <chalex84@mail.ru>, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
+# lilo.panic, 2024
 # 
 msgid ""
 msgstr ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
+"Last-Translator: lilo.panic, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -536,7 +536,7 @@ msgstr "Удалить индекс: %s?"
 
 #: views/index_template_views.py:137
 msgid "Available document types"
-msgstr ""
+msgstr "Доступные типы документов"
 
 #: views/index_template_views.py:138
 msgid "Document types linked"

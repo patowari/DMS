@@ -33,7 +33,7 @@ msgstr "Fájl metaadat"
 
 #: apps.py:106
 msgid "File metadata internal name"
-msgstr ""
+msgstr "A fájl metaadatának belső neve"
 
 #: apps.py:110 search.py:15 search.py:26
 msgid "File metadata value"
@@ -49,7 +49,7 @@ msgstr "Fájl metaadat értéke"
 
 #: apps.py:173
 msgid "MIME types"
-msgstr ""
+msgstr "MIME típusok"
 
 #: apps.py:178 models.py:71 models.py:122
 msgid "Internal name"
@@ -68,16 +68,18 @@ msgstr ""
 
 #: drivers/exiftool.py:20
 msgid "Read meta information stored in files."
-msgstr ""
+msgstr "Olvassa el a fájlokban tárolt metainformációkat."
 
 #: drivers/exiftool.py:21
 msgid "EXIF Tool"
-msgstr ""
+msgstr "EXIF eszköz"
 
 #: drivers/extract_msg.py:16
 msgid ""
 "Extracts information from emails saved in Microsoft Outlook's .msg files."
 msgstr ""
+"Kivonja az információkat a Microsoft Outlook .msg fájljaiban mentett "
+"emailekből."
 
 #: drivers/extract_msg.py:19
 msgid "Extract msg"
@@ -89,11 +91,11 @@ msgstr "Fájl metaadat-feldolgozásra beküldött dokumentumfájl"
 
 #: events.py:14
 msgid "Document file file metadata processing finished"
-msgstr ""
+msgstr "A dokumentumfájl metaadat-feldolgozása befejeződött"
 
 #: links.py:28
 msgid "Attributes"
-msgstr ""
+msgstr "Attribútumok"
 
 #: links.py:35 links.py:40
 msgid "Submit for file metadata"
@@ -105,11 +107,11 @@ msgstr "Beállítási fájl metaadata"
 
 #: links.py:56
 msgid "File metadata processing per type"
-msgstr ""
+msgstr "Fájl metaadat-feldolgozás típusonként"
 
 #: links.py:65 views.py:233
 msgid "File metadata drivers"
-msgstr ""
+msgstr "Fájl metaadat illesztőprogramok"
 
 #: methods.py:58
 msgid "Return the specified document file file metadata entry."
@@ -117,7 +119,7 @@ msgstr "A megadott dokumentumfájl fájl metaadat bejegyzésének visszaadása."
 
 #: model_mixins.py:9
 msgid "Attribute count"
-msgstr ""
+msgstr "Attribútumok száma"
 
 #: models.py:20 models.py:127
 msgid "Driver"
@@ -125,15 +127,15 @@ msgstr "Illesztőprogram"
 
 #: models.py:24
 msgid "Document file"
-msgstr ""
+msgstr "Dokumentumfájl"
 
 #: models.py:30 models.py:66
 msgid "Document file driver entry"
-msgstr ""
+msgstr "Dokumentumfájl illesztőprogram bejegyzés"
 
 #: models.py:31
 msgid "Document file driver entries"
-msgstr ""
+msgstr "Dokumentumfájl illesztőprogram bejegyzései"
 
 #: models.py:43
 msgid "Document type"
@@ -142,10 +144,12 @@ msgstr "Dokumentumtípus"
 #: models.py:47
 msgid "Automatically queue newly created documents for processing."
 msgstr ""
+"Az újonnan létrehozott dokumentumok automatikus sorba állítása "
+"feldolgozásra."
 
 #: models.py:48
 msgid "Auto process"
-msgstr ""
+msgstr "Automatikus folyamat"
 
 #: models.py:54
 msgid "Document type settings"
@@ -157,19 +161,19 @@ msgstr "Dokumentumtípusok beállításai"
 
 #: models.py:70
 msgid "Normalized name of the file metadata entry."
-msgstr ""
+msgstr "A fájl metaadat-bejegyzésének normalizált neve."
 
 #: models.py:75
 msgid "Name of the file metadata entry as provided by the driver."
-msgstr ""
+msgstr "A fájl metaadat-bejegyzésének az illesztőprogram által megadott neve."
 
 #: models.py:77
 msgid "Key"
-msgstr ""
+msgstr "Kulcs"
 
 #: models.py:80
 msgid "Value of the file metadata entry."
-msgstr ""
+msgstr "A fájl metaadat-bejegyzésének értéke."
 
 #: models.py:81
 msgid "Value"
@@ -177,11 +181,11 @@ msgstr "Érték"
 
 #: models.py:87
 msgid "File metadata entry"
-msgstr ""
+msgstr "Fájl metaadat bejegyzése"
 
 #: models.py:88
 msgid "File metadata entries"
-msgstr ""
+msgstr "Fájl metaadat bejegyzései"
 
 #: models.py:118
 msgid "Driver path"
@@ -201,19 +205,19 @@ msgstr "Dokumentum beküldése fájl metaadat-feldolgozásra"
 
 #: permissions.py:19
 msgid "View file metadata"
-msgstr ""
+msgstr "Fájl metaadatainak megtekintése"
 
 #: queues.py:12
 msgid "Process document file"
-msgstr ""
+msgstr "Dokumentumfájl feldolgozása"
 
 #: queues.py:16
 msgid "Finish document file metadata processing"
-msgstr ""
+msgstr "Fejezd be a dokumentumfájl metaadat feldolgozását"
 
 #: queues.py:20
 msgid "Process file metadata driver"
-msgstr ""
+msgstr "Folyamatfájl metaadat-illesztőprogram"
 
 #: search.py:11 search.py:22
 msgid "File metadata key"
@@ -267,7 +271,7 @@ msgstr ""
 
 #: views.py:97
 msgid "No file metadata available for this driver."
-msgstr ""
+msgstr "Ehhez az illesztőprogramhoz nem állnak rendelkezésre fájl metaadatok."
 
 #: views.py:101
 #, python-format
@@ -290,17 +294,19 @@ msgstr "%(count)d dokumentumfájl elküldve a fájl metaadatsorba."
 #: views.py:135
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Elküldi a kiválasztott dokumentumfájlt a fájl metaadat-sorába?"
+msgstr[1] "Elküldi a kiválasztott dokumentumfájlokat a fájl metaadat-sorába?"
 
 #: views.py:166
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr ""
+"Szerkessze a fájl metaadat-beállításait a következő dokumentumtípushoz: %s"
 
 #: views.py:177
 msgid "Submit all documents of a type for file metadata processing."
 msgstr ""
+"Minden típusú dokumentumot be kell küldeni fájl metaadat-feldolgozásra."
 
 #: views.py:204
 #, python-format
@@ -312,7 +318,10 @@ msgid ""
 "File metadata drivers extract embedded information from document files. File"
 " metadata drivers are configure in code only."
 msgstr ""
+"A fájl metaadat-illesztőprogramjai beágyazott információkat nyernek ki a "
+"dokumentumfájlokból. A fájl metaadat-illesztőprogramjai csak kódban "
+"konfigurálhatók."
 
 #: views.py:230
 msgid "No file metadata drivers available."
-msgstr ""
+msgstr "Nem állnak rendelkezésre fájl-metaadat-illesztőprogramok."
