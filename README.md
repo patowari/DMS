@@ -37,7 +37,7 @@
     Mayan EDMS is a document management system. Its main purpose is to store,
     introspect, and categorize files, with a strong emphasis on preserving the
     contextual and business information of documents. It can also OCR, preview,
-    label, sign, send, and receive thoses files. Other features of interest
+    label, sign, send, and receive those files. Other features of interest
     are its workflow system, role based access control, and REST API.
   <p>
 
@@ -61,7 +61,7 @@ Click the image or visit: https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q
 
 <h2 align="center">Book</h2>
 
-The final version of the book "Exploring Mayan EDMS" available now!
+The final version of the book "Exploring Mayan EDMS" is available now!
 
 <p align="center">
     <a href="https://sellfy.com/p/um2fkx/">
