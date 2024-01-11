@@ -2,9 +2,12 @@ from mayan.apps.appearance.classes import Icon
 
 icon_about = Icon(driver_name='fontawesome', symbol='info')
 icon_book = Icon(driver_name='fontawesome', symbol='book')
+icon_changelog = Icon(
+    driver_name='fontawesome', symbol='history'
+)
 icon_documentation = Icon(driver_name='fontawesome', symbol='book')
 icon_forum = Icon(
-    driver_name='fontawesome', symbol='life-ring'
+    driver_name='fontawesome', symbol='comment'
 )
 icon_home = Icon(
     driver_name='fontawesome', symbol='home'
@@ -15,6 +18,9 @@ icon_knowledge_base = Icon(
 icon_license = Icon(
     driver_name='fontawesome', symbol='certificate'
 )
+icon_mailing_list = Icon(
+    driver_name='fontawesome', symbol='envelope'
+)
 icon_menu_about = Icon(
     driver_name='fontawesome', symbol='info'
 )
@@ -23,6 +29,9 @@ icon_menu_user = Icon(
 )
 icon_object_copy = Icon(
     driver_name='fontawesome', symbol='stamp'
+)
+icon_release_notes = Icon(
+    driver_name='fontawesome', symbol='clipboard-list'
 )
 icon_setup = Icon(
     driver_name='fontawesome', symbol='cog'

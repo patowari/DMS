@@ -38,7 +38,7 @@ class AppearanceApp(MayanAppConfig):
         'MAINTAIN*', 'README*', '*.less', '*.md', '*.nupkg', '*.nuspec',
         '*.scss*', '*.sh', '*tests*', 'bower*', 'composer.json*',
         'demo*', 'grunt*', 'gulp*', 'install', 'less', 'package.json*',
-        'package-lock*', 'test', 'tests', 'variable*',
+        'package-lock*', 'test', 'tests', 'variable*', '*.xcf',
         'appearance/node_modules/@fancyapps/fancybox/docs/*',
         'appearance/node_modules/@fancyapps/fancybox/src/*',
         'appearance/node_modules/@fortawesome/fontawesome-free/svgs/*',

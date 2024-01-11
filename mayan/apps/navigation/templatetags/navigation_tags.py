@@ -1,4 +1,5 @@
 from django.template import Library
+from django.utils.module_loading import import_string
 
 from ..classes import Menu, SourceColumn
 
@@ -21,6 +22,11 @@ def _navigation_resolve_menu(context, name, source=None, sort_results=None):
         )
 
     return result
+
+
+@register.simple_tag
+def navigation_get_link(dotted_path):
+    return import_string(dotted_path=dotted_path)
 
 
 @register.simple_tag(takes_context=True)

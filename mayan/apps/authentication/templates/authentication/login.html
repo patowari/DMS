@@ -16,14 +16,12 @@
 
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{% trans 'Sign in' %}</h3>
-                </div>
                 <div class="panel-body">
 
-                    <div class align="center">
-                       <p class="text-center mayan-edms-logo"><span class="icon-mayan-edms-logo"></span> {% common_project_information '__title__' %}</p>
+                    <div id="authentication-login-image-wrapper">
+                        <img class="center-block img-responsive" id="authentication-login-image-top" src="{% static 'authentication/images/login-top.jpg' %}"/>
                     </div>
 
                     <div class="content login">
@@ -96,13 +94,17 @@
                             </div>
                         </form>
 
+                        <hr>
+
+                        <p class="text-center small">
+                            {% common_project_information '__copyright__' %}
+                        </p>
+
                         {% smart_setting global_name="AUTHENTICATION_DISABLE_PASSWORD_RESET" as setting_disable_password_reset %}
                         {% if not setting_disable_password_reset %}
-                            <hr>
-                            <div>
-                                <a class="pull-right" href="{% url 'authentication:password_reset_view' %}">{% trans 'Forgot your password?' %}</a>
+                            <div class="text-center">
+                                <a href="{% url 'authentication:password_reset_view' %}">{% trans 'Forgot your password?' %}</a>
                             </div>
-                            <br>
                         {% endif %}
                     </div>
                 </div>

@@ -4,6 +4,8 @@
 {% load navigation_tags %}
 {% load smart_settings_tags %}
 
+{% smart_setting "COMMON_PROJECT_TITLE" as common_project_title %}
+
 {% spaceless %}
     <div aria-multiselectable="true" class="panel-group" id="accordion-sidebar" role="tablist">
         <div class="panel-heading" id="menu-main-button-close" role="tab">
@@ -71,5 +73,15 @@
                 {% endfor %}
             {% endfor %}
         {% endfor %}
+
+        <div class="footer navbar-fixed-bottom text-center" id="main-menu-footer">
+            <hr>
+            <span class="text-center">
+                {% if common_project_title %}<p>{{ common_project_title }}</p>{% endif %}
+                <p id="main-menu-footer-copyright"><a class="new_window" href="{% common_project_information '__website__' %}">{% common_project_information '__title__' %}</a></p>
+                <p>{% common_project_information '__copyright__' %}</p>
+            </span>
+        </div>
+
     </div>
 {% endspaceless %}

@@ -5,12 +5,14 @@ from mayan.apps.navigation.utils import get_content_type_kwargs_factory
 
 from .icons import (
     icon_about, icon_book, icon_documentation, icon_forum,
-    icon_knowledge_base, icon_license, icon_object_copy, icon_setup,
-    icon_source_code, icon_store, icon_support, icon_tools
+    icon_knowledge_base, icon_license, icon_mailing_list, icon_object_copy,
+    icon_release_notes, icon_setup, icon_source_code, icon_store,
+    icon_support, icon_tools
 )
 from .literals import (
     URL_BOOK, URL_DOCUMENTATION, URL_FORUM, URL_KNOWLEDGE_BASE,
-    URL_SOURCE_CODE, URL_STORE, URL_SUPPORT
+    URL_MAILING_LIST, URL_RELEASE_NOTES, URL_SOURCE_CODE, URL_STORE,
+    URL_SUPPORT
 )
 from .permissions import permission_object_copy
 
@@ -52,11 +54,19 @@ link_knowledge_base = Link(
 link_license = Link(
     icon=icon_license, text=_(message='License'), view='common:license_view'
 )
+link_mailing_list = Link(
+    icon=icon_mailing_list, text=_(message='Mailing list'),
+    url=URL_MAILING_LIST
+)
 link_object_copy = Link(
     condition=object_copy_conditional_disable,
     icon=icon_object_copy, kwargs=get_content_type_kwargs_factory(),
     text=_(message='Copy'), permission=permission_object_copy,
     view='common:object_copy'
+)
+link_release_notes = Link(
+    icon=icon_release_notes, tags='new_window',
+    text=_(message='Release notes'), url=URL_RELEASE_NOTES
 )
 link_setup = Link(
     icon=icon_setup, text=_(message='Setup'), view='common:setup_list'

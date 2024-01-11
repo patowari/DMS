@@ -39,7 +39,7 @@ from mayan.apps.views.http import URL
 
 from ..classes import AuthenticationBackend
 from ..forms import AuthenticationFormBase
-from ..icons import icon_password_change
+from ..icons import icon_login, icon_password_change
 from ..literals import SESSION_MULTI_FACTOR_USER_ID_KEY
 from ..settings import setting_disable_password_reset
 
@@ -185,7 +185,9 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
 
 class MayanLoginView(StrongholdPublicMixin, LoginView):
     extra_context = {
-        'appearance_type': 'plain'
+        'appearance_type': 'plain',
+        'submit_icon': icon_login,
+        'submit_label': _('Sign in')
     }
     redirect_authenticated_user = True
     template_name = 'authentication/login.html'
