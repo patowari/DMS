@@ -135,6 +135,8 @@
   - Split templates into small components.
   - Move templates into sub-folders and shorten their names.
 
+- Fix double separator in the user menu.
+
 4.5.9 (XXXX-XX-XX)
 ==================
 - Minor query optimizations.

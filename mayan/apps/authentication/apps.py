@@ -10,7 +10,6 @@ from mayan.apps.common.menus import (
     menu_multi_item, menu_object, menu_tools, menu_user
 )
 from mayan.apps.events.classes import ModelEventType
-from mayan.apps.navigation.classes import Separator
 
 from .classes import AuthenticationBackend
 from .events import (
@@ -74,7 +73,7 @@ class AuthenticationApp(MayanAppConfig):
 
         menu_user.bind_links(
             links=(
-                Separator(), link_password_change, link_logout
+                link_password_change, link_logout
             ), position=99
         )
 
