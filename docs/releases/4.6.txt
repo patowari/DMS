@@ -190,6 +190,13 @@ Since antivirus scanning is a CPU-heavy operation, the file metadata
 queue was moved to the D worker.
 
 
+License
+^^^^^^^
+
+Mayan EDMS is once again licensed under the GPL, but this time under version
+2.0.
+
+
 Lock manager
 ^^^^^^^^^^^^
 
@@ -293,7 +300,8 @@ Other
   code after app module loading.
 - Reorganize make files. Remove unused and outdated targets. Move all Docker
   related targets to the Docker make file. Improve staging targets.
-
+- Fix double separator in the user menu.
+- Theme updates.
 
 Removals
 --------
