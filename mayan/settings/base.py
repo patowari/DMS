@@ -284,7 +284,6 @@ MEDIA_URL = 'media/'
 # Silence warning and keep default for the time being.
 # https://docs.djangoproject.com/en/3.2/releases/3.2/#customizing-type-of-auto-created-primary-keys
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
