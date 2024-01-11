@@ -1,4 +1,4 @@
-4.6 (XXXX-XX-XX)
+4.6 (2024-01-11)
 ================
 - Improve the index mirroring profile. Add ``MAYAN_MIRROR_INDEX_NAME`` to
   allow mounting different indexes without modifying the Docker Compose
