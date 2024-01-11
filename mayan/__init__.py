@@ -1,12 +1,12 @@
 __title__ = 'Mayan EDMS'
 __version__ = '4.6b1'
 __build__ = 0x040600
-__build_string__ = 'v4.5.6-306-g33905205a6a_Tue Jan 2 12:56:56 2024 -0400'
+__build_string__ = 'v4.4.11-440-g74d68fb3b5f_Wed Jan 10 21:57:21 2024 -0400'
 __django_version__ = '4.2'
 __author__ = 'Roberto Rosario'
 __author_email__ = 'roberto.rosario@mayan-edms.com'
 __description__ = 'Free Open Source Electronic Document Management System'
-__license__ = 'Apache 2.0'
+__license__ = 'GPL 2.0'
 __copyright_short__ = '2011 Roberto Rosario'
 __copyright__ = '{} {}'.format('Copyright', __copyright_short__)
 __website__ = 'https://www.mayan-edms.com'

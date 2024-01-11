@@ -137,6 +137,7 @@
 
 - Fix double separator in the user menu.
 - Theme updates.
+- Switch from Apache 2.0 to GPL 2.0 license.
 
 4.5.9 (XXXX-XX-XX)
 ==================
