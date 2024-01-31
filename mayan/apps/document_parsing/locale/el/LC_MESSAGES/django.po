@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -90,7 +90,7 @@ msgstr ""
 "Το πραγματικό περιεχόμενο κειμένου όπως εξάγεται από το υποκείμενο σύστημα "
 "ανάλυσης εγγράφων."
 
-#: models.py:31
+#: models.py:31 search.py:17
 msgid "Document file page content"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr "Ανάλυση"
 msgid "Document file parsing"
 msgstr ""
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr ""
 

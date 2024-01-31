@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -95,7 +95,7 @@ msgstr ""
 "Conținutul actual de text extras de către backend-ul de analiză a "
 "documentelor."
 
-#: models.py:31
+#: models.py:31 search.py:17
 msgid "Document file page content"
 msgstr "Conținutul paginii fișierului documentului"
 
@@ -153,7 +153,7 @@ msgstr "Analizare"
 msgid "Document file parsing"
 msgstr "Analiza fișierelor de document"
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr "Conținutul fișierului document"
 

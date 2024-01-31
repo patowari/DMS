@@ -5,15 +5,15 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,7 +59,7 @@ msgstr "Felülbírált"
 
 #: classes.py:412
 msgid "Is this setting being overridden by an environment variable?"
-msgstr ""
+msgstr "Ezt a beállítást felülírja egy környezeti változó?"
 
 #: forms.py:28
 msgid "Enter the new setting value."
@@ -202,7 +202,7 @@ msgid ""
 "automated correspondence from the site manager(s). This doesn't include "
 "error messages sent to ADMINS and MANAGERS; for that, see SERVER_EMAIL."
 msgstr ""
-"Default\\: 'webmaster@localhost' Alapértelmezett e-mail cím, amelyet a "
+"Default\\: 'webmaster@localhost' Alapértelmezett email cím, amelyet a "
 "webhely vezetőjének (vezetőinek) különböző automatikus levelezéséhez "
 "használnak. Ez nem tartalmazza az ADMINS-nek és MANAGERS-nek küldött "
 "hibaüzeneteket; erre vonatkozóan lásd a SERVER_EMAIL-t."
@@ -225,13 +225,12 @@ msgid ""
 "Default: 'django.core.mail.backends.smtp.EmailBackend'. The backend to use "
 "for sending emails."
 msgstr ""
-"Alapértelmezett: 'django.core.mail.backends.smtp.EmailBackend'. Az e-mailek "
+"Alapértelmezett: 'django.core.mail.backends.smtp.EmailBackend'. Az emailek "
 "küldésére használható háttérprogram."
 
 #: settings.py:128
 msgid "Default: 'localhost'. The host to use for sending email."
-msgstr ""
-"Alapértelmezett: 'localhost'. Az e-mailek küldésére használt gazdagép."
+msgstr "Alapértelmezett: 'localhost'. Az emailek küldésére használt gazdagép."
 
 #: settings.py:134
 msgid ""
@@ -278,8 +277,8 @@ msgid ""
 "those settings to True."
 msgstr ""
 "Alapértelmezett: False. Használjon-e implicit TLS (biztonságos) kapcsolatot,"
-" amikor az SMTP-kiszolgálóval beszél. A legtöbb e-mail dokumentációban ezt a"
-" fajta TLS-kapcsolatot SSL-ként említik. Általában a 465-ös porton "
+" amikor az SMTP-kiszolgálóval beszél. A legtöbb email dokumentációban ezt a "
+"fajta TLS-kapcsolatot SSL-ként említik. Általában a 465-ös porton "
 "használják. Ha problémákat tapasztal, lásd az EMAIL_USE_TLS explicit TLS "
 "beállítását. Vegye figyelembe, hogy az EMAIL_USE_TLS/EMAIL_USE_SSL "
 "kölcsönösen kizárják egymást, ezért csak az egyik beállítást állítsa True "
@@ -363,7 +362,7 @@ msgstr ""
 "kontextusfeldolgozó számára, hogy néhány változót hozzáadjon a sablon-"
 "kontextushoz. Használhatja az admindocs könyvjelzőket akkor is, ha nem "
 "személyzeti felhasználóként van bejelentkezve. Az AdminEmailHandler "
-"e-mailekben \"belső\" (szemben az \"EXTERNAL\" jelzéssel) vannak jelölve."
+"emailekben \"belső\" (szemben az \"KÜLSŐ\" jelzéssel) vannak jelölve."
 
 #: settings.py:231
 msgid ""

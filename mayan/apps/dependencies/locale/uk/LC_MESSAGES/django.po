@@ -6,14 +6,15 @@
 # Translators:
 # Сергій Гарашко, 2023
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
-msgstr ""
+msgstr "Залежності"
 
 #: apps.py:32 apps.py:69 apps.py:78
 msgid "Label"
@@ -31,23 +32,23 @@ msgstr "Мітка"
 
 #: apps.py:36
 msgid "Internal name"
-msgstr ""
+msgstr "Внутрішнє ім'я"
 
 #: apps.py:41 apps.py:74 apps.py:83
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: apps.py:45 classes.py:218
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: apps.py:49 classes.py:220
 msgid "Other data"
-msgstr ""
+msgstr "Інші дані"
 
 #: apps.py:53
 msgid "Declared by"
-msgstr ""
+msgstr "Заявлено від"
 
 #: apps.py:57 classes.py:218
 msgid "Version"
@@ -55,53 +56,53 @@ msgstr "Версія"
 
 #: apps.py:61
 msgid "Environment"
-msgstr ""
+msgstr "Середовище"
 
 #: apps.py:64 classes.py:220
 msgid "Check"
-msgstr ""
+msgstr "Позначення"
 
 #: classes.py:218
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: classes.py:219
 msgid "App"
-msgstr ""
+msgstr "Додаток"
 
 #: classes.py:219 classes.py:911
 msgid "Environments"
-msgstr ""
+msgstr "Середовища"
 
 #: classes.py:316
 msgid "Need to specify at least one: app_label or module."
-msgstr ""
+msgstr "Потрібно вказати принаймні одне: app_label або module."
 
 #: classes.py:321
 #, python-format
 msgid "Dependency \"%s\" already registered."
-msgstr ""
+msgstr "Залежність \"%s\" вже зареєстрована."
 
 #: classes.py:350
 #, python-format
 msgid "Installing package: %s... "
-msgstr ""
+msgstr "Встановлення пакету: %s..."
 
 #: classes.py:357
 msgid "Already installed."
-msgstr ""
+msgstr "Вже встановлено."
 
 #: classes.py:362 classes.py:369 classes.py:375
 msgid "Complete."
-msgstr ""
+msgstr "Завершено."
 
 #: classes.py:402
 msgid "Installed and correct version"
-msgstr ""
+msgstr "Встановлена і відкорегована версія"
 
 #: classes.py:404
 msgid "Missing or incorrect version"
-msgstr ""
+msgstr "Відсутня або неправильна версія"
 
 #: classes.py:441
 msgid "None"
@@ -109,79 +110,83 @@ msgstr "None"
 
 #: classes.py:450
 msgid "Not specified"
-msgstr ""
+msgstr "Не вказано"
 
 #: classes.py:453
 msgid "Patching files... "
-msgstr ""
+msgstr "Виправлення файлів..."
 
 #: classes.py:481
 msgid "Executables that are called directly by the code."
-msgstr ""
+msgstr "Виконувані файли, які викликаються безпосередньо кодом."
 
 #: classes.py:483
 msgid "Binary"
-msgstr ""
+msgstr "Двійковий"
 
 #: classes.py:500
 msgid ""
 "JavaScript libraries downloaded the from NPM registry and used for front-end"
 " functionality."
 msgstr ""
+"JavaScript бібліотеки завантажуються з реєстру NPM та використовуються для "
+"функціональності на фронтенді."
 
 #: classes.py:503
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: classes.py:535 classes.py:814
 msgid "Downloading... "
-msgstr ""
+msgstr "Завантаження..."
 
 #: classes.py:540
 msgid "Verifying... "
-msgstr ""
+msgstr "Перевірка..."
 
 #: classes.py:545 classes.py:819
 msgid "Extracting... "
-msgstr ""
+msgstr "Розпакування..."
 
 #: classes.py:751
 msgid "Python packages downloaded from PyPI."
-msgstr ""
+msgstr "Пакети Python, завантажені з PyPI."
 
 #: classes.py:753
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: classes.py:794
 msgid "Fonts downloaded from fonts.googleapis.com."
-msgstr ""
+msgstr "Шрифти завантажені з fonts.googleapis.com."
 
 #: classes.py:796
 msgid "Google font"
-msgstr ""
+msgstr "Google шрифт"
 
 #: classes.py:892
 msgid "Declared in app"
-msgstr ""
+msgstr "Заявлено в додатку"
 
 #: classes.py:893
 msgid "Show dependencies by the app that declared them."
-msgstr ""
+msgstr "Показати залежності за допомогою додатку, який їх оголосив."
 
 #: classes.py:897
 msgid "Class"
-msgstr ""
+msgstr "Клас"
 
 #: classes.py:898
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
 msgstr ""
+"Показати різні класи залежностей. Класи зазвичай поділяються за мовою або "
+"типами файлів залежностей."
 
 #: classes.py:903
 msgid "State"
-msgstr ""
+msgstr "Стан"
 
 #: classes.py:904
 msgid ""
@@ -189,42 +194,54 @@ msgid ""
 "dependencies is installed and is of a correct version. False means the "
 "dependencies is missing or an incorrect version is present."
 msgstr ""
+"Показати різні стани залежностей. True означає, що залежність встановлена і "
+"має правильну версію. False означає, що залежність відсутня або присутня "
+"неправильна версія."
 
 #: classes.py:912
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
 msgstr ""
+"Залежності, необхідні для одного середовища, можуть бути непотрібними для "
+"іншого. Приклади середовищ:  Production, Development."
 
 #: environments.py:17
 msgid ""
 "Environment used for building distributable packages of the software. End "
 "users can ignore missing dependencies under this environment."
 msgstr ""
+"Середовище, використовуване для створення розповсюджуваних пакетів "
+"програмного забезпечення. Кінцеві користувачі можуть не звертати увагу на "
+"відсутність залежностей у цьому середовищі."
 
 #: environments.py:20
 msgid "Build"
-msgstr ""
+msgstr "Будувати"
 
 #: environments.py:24
 msgid ""
 "Environment used for developers to make code changes. End users can ignore "
 "missing dependencies under this environment."
 msgstr ""
+"Середовище, використовуване розробниками для внесення змін у код. Кінцеві "
+"користувачі можуть ігнорувати відсутність залежностей у цьому середовищі."
 
 #: environments.py:26
 msgid "Development"
-msgstr ""
+msgstr "Розробка"
 
 #: environments.py:30
 msgid ""
 "Environment used for building the documentation. End users can ignore "
 "missing dependencies under this environment."
 msgstr ""
+"Середовище, використовуване для створення документації. Кінцеві користувачі "
+"можуть не звертати увагу на відсутність залежностей у цьому середовищі."
 
 #: environments.py:32
 msgid "Documentation"
-msgstr ""
+msgstr "Документація"
 
 #: environments.py:36
 msgid ""
@@ -232,20 +249,27 @@ msgid ""
 "unpinned or immutable depedency bugs in third party libraries. End users can"
 " ignore missing dependencies under this environment."
 msgstr ""
+"Середовище використовується для вказівки прямих залежностей документації для"
+" обходу незакріплених або незмінних помилок залежностей у сторонніх "
+"бібліотеках. Кінцеві користувачі можуть ігнорувати відсутні залежності в "
+"цьому середовищі."
 
 #: environments.py:40
 msgid "Documentation (override)"
-msgstr ""
+msgstr "Документація (перезапис)"
 
 #: environments.py:44
 msgid ""
 "Normal environment for end users. A missing dependency under this "
 "environment will result in issues and errors during normal use."
 msgstr ""
+"Нормальне середовище для кінцевих користувачів. Відсутність залежності в "
+"цьому середовищі призведе до проблем і помилок під час звичайного "
+"використання."
 
 #: environments.py:46
 msgid "Production"
-msgstr ""
+msgstr "Production"
 
 #: environments.py:50
 msgid ""
@@ -253,6 +277,9 @@ msgid ""
 "code. Dependencies in this environment are not needed for normal production "
 "usage."
 msgstr ""
+"Середовище, використане під час виконання набору тестів для перевірки "
+"функціональності коду. Залежності в цьому середовищі не потрібні для "
+"звичайного використання виробництва."
 
 #: environments.py:53
 msgid "Testing"
@@ -260,15 +287,15 @@ msgstr "Тестування"
 
 #: links.py:14 views.py:25
 msgid "Check for updates"
-msgstr ""
+msgstr "Перевірити оновлення"
 
 #: links.py:18
 msgid "Groups"
-msgstr ""
+msgstr "Групи"
 
 #: links.py:23
 msgid "Entries"
-msgstr ""
+msgstr "Записи"
 
 #: links.py:29
 msgid "Details"
@@ -276,59 +303,63 @@ msgstr "Подробиці"
 
 #: links.py:33
 msgid "Dependencies licenses"
-msgstr ""
+msgstr "Залежності ліцензій"
 
 #: management/commands/dependencies_check.py:13
 msgid "Outputs the dependencies as a comma delimited values list."
-msgstr ""
+msgstr "Виводить залежності у вигляді списку значень, розділених комами."
 
 #: management/commands/dependencies_generate_requirements.py:14
 msgid ""
 "Comma separated names of dependencies to exclude from the list generated."
 msgstr ""
+"Розділені комами назви залежностей, які потрібно виключити зі створеного "
+"списку."
 
 #: management/commands/dependencies_generate_requirements.py:20
 msgid ""
 "Comma separated names of dependencies to show in the list while excluding "
 "every other one."
 msgstr ""
+"Розділені комами назви залежностей, які слід відображати у списку, "
+"виключаючи всі інші."
 
 #: management/commands/dependencies_install.py:13
 msgid "Process a specific app."
-msgstr ""
+msgstr "Обробити конкретний додаток."
 
 #: management/commands/dependencies_install.py:17
 msgid "Force installation even if already installed."
-msgstr ""
+msgstr "Примусова установка навіть якщо вже встановлено."
 
 #: permissions.py:10
 msgid "View dependencies"
-msgstr ""
+msgstr "Переглянути залежності"
 
 #: views.py:40
 #, python-format
 msgid "Entries for dependency group: %s"
-msgstr ""
+msgstr "Записи для групи залежностей: %s"
 
 #: views.py:54 views.py:103
 #, python-format
 msgid "Group %s not found."
-msgstr ""
+msgstr "Групу %s не знайдено."
 
 #: views.py:68
 msgid "Dependency groups"
-msgstr ""
+msgstr "Групи залежностей"
 
 #: views.py:90
 #, python-format
 msgid "Dependency group and entry: %(group)s, %(entry)s"
-msgstr ""
+msgstr "Група залежностей та запис: %(group)s, %(entry)s"
 
 #: views.py:115
 #, python-format
 msgid "Entry %s not found."
-msgstr ""
+msgstr "Запис %s не знайдено."
 
 #: views.py:134
 msgid "Other packages licenses"
-msgstr ""
+msgstr "Інші ліцензії пакетів"

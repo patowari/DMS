@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
@@ -93,7 +93,7 @@ msgstr ""
 "Il contenuto testuale così come estratto dal backend di analisi del "
 "documento."
 
-#: models.py:31
+#: models.py:31 search.py:17
 msgid "Document file page content"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr "Analisi"
 msgid "Document file parsing"
 msgstr ""
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr ""
 

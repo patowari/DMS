@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -95,7 +95,7 @@ msgid "The actual text content as extracted by the document parsing backend."
 msgstr ""
 "Фактическое текстовое содержимое, извлеченное бэкэндом анализа документов."
 
-#: models.py:31
+#: models.py:31 search.py:17
 msgid "Document file page content"
 msgstr "Содержимое страницы файла документа"
 
@@ -154,7 +154,7 @@ msgstr "Анализ"
 msgid "Document file parsing"
 msgstr "Анализ файла документа"
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr "Содержимое файла документа"
 

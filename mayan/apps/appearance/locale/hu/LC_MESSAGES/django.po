@@ -6,15 +6,15 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:58+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -371,7 +371,7 @@ msgstr "Nem"
 #: templates/appearance/partials/form_field.html:10
 #: templates/appearance/partials/form_field.html:16
 msgid "required"
-msgstr "kívánt"
+msgstr "kötelező"
 
 #: templates/appearance/generic_form_subtemplate.html:84
 #: templates/appearance/generic_form_subtemplate.html:94

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:88 model_mixins.py:281
+#: model_mixins.py:88 model_mixins.py:282
 msgid "Current size"
 msgstr "Текущ размер"
 
@@ -87,7 +87,7 @@ msgstr "Текущ размер"
 msgid "Current size of the cache."
 msgstr "Текущ размер на кеша."
 
-#: model_mixins.py:283
+#: model_mixins.py:284
 msgid "Current size of the cache partition."
 msgstr "Текущ размер на кешовия дял."
 

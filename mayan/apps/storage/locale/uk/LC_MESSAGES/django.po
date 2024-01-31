@@ -6,14 +6,15 @@
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:45+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Vasyl Olenchenko <olenchenko@gmail.com>, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: apps.py:27 permissions.py:6 settings.py:15
 msgid "Storage"
-msgstr ""
+msgstr "Сховище"
 
 #: classes.py:88 classes.py:109
 #, python-format
@@ -31,22 +32,24 @@ msgid ""
 "Unable to initialize storage: %(name)s. Check the storage backend dotted "
 "path and arguments."
 msgstr ""
+"Неможливо ініціалізувати сховище: %(name)s. Перевірте шлях та аргументи "
+"сховища."
 
 #: events.py:6 links.py:20 models.py:56 storages.py:22
 msgid "Download files"
-msgstr ""
+msgstr "Завантажити файли"
 
 #: events.py:10
 msgid "Download file created"
-msgstr ""
+msgstr "Файл для завантаження створено"
 
 #: events.py:13
 msgid "Download file deleted"
-msgstr ""
+msgstr "Файл для завантаження видалено"
 
 #: events.py:16
 msgid "Download file downloaded"
-msgstr ""
+msgstr "Файл для завантаження завантажено"
 
 #: links.py:12
 msgid "Delete"
@@ -54,46 +57,50 @@ msgstr "Видалити"
 
 #: links.py:16
 msgid "Download"
-msgstr ""
+msgstr "Завантажити"
 
 #: management/commands/storage_process.py:13
 msgid "Name of the app to process."
-msgstr ""
+msgstr "Назва програми для обробки."
 
 #: management/commands/storage_process.py:19
 msgid ""
 "Path of the database (.dbm) file that will be created/read to keep track of "
 "items processed."
 msgstr ""
+"Шлях до файлу бази даних (.dbm), який буде створено/прочитано для "
+"відстеження оброблених елементів."
 
 #: management/commands/storage_process.py:26
 msgid "Process a specific model."
-msgstr ""
+msgstr "Обробити конкретну модель."
 
 #: management/commands/storage_process.py:32
 msgid ""
 "Process the files in reverse to undo the storage pipeline transformations."
 msgstr ""
+"Обробити файли у зворотному порядку, щоб скасувати перетворення в системі "
+"зберігання."
 
 #: management/commands/storage_process.py:38
 msgid "Name of the storage to process."
-msgstr ""
+msgstr "Назва сховища для обробки."
 
 #: model_mixins.py:18 models.py:94
 msgid "Filename"
-msgstr ""
+msgstr "Ім'я файлу"
 
 #: model_mixins.py:21
 msgid "Date time"
-msgstr ""
+msgstr "Дата і час"
 
 #: model_mixins.py:82
 msgid "Unnamed file"
-msgstr ""
+msgstr "Файл без назви"
 
 #: model_mixins.py:101
 msgid "Size"
-msgstr ""
+msgstr "Розмір"
 
 #: model_mixins.py:108 models.py:48
 msgid "User"
@@ -101,7 +108,7 @@ msgstr "Користувач"
 
 #: models.py:40 models.py:91
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 #: models.py:43
 msgid "Label"
@@ -109,75 +116,86 @@ msgstr "Мітка"
 
 #: models.py:55
 msgid "Download file"
-msgstr ""
+msgstr "Завантажити файл"
 
 #: models.py:100
 msgid "Shared uploaded file"
-msgstr ""
+msgstr "Спільно завантажений файл"
 
 #: models.py:101 storages.py:36
 msgid "Shared uploaded files"
-msgstr ""
+msgstr "Спільно завантажені файли"
 
 #: permissions.py:10
 msgid "Delete user files"
-msgstr ""
+msgstr "Видалити файли користувача"
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr ""
+msgstr "Завантажити користувацькі файли"
 
 #: permissions.py:16
 msgid "View user files"
-msgstr ""
+msgstr "Переглянути файли користувача"
 
 #: queues.py:13
 msgid "Storage periodic"
-msgstr ""
+msgstr "Періодичність зберігання"
 
 #: queues.py:19
 msgid "Delete stale uploads"
-msgstr ""
+msgstr "Видалити застарілі завантаження"
 
 #: queues.py:26
 msgid "Delete stale download files"
-msgstr ""
+msgstr "Видаліть застарілі файли завантаження"
 
 #: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
-msgstr ""
+msgstr "Час у секундах, після якого завантажені файли буде видалено."
 
 #: settings.py:27
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
+"Сервер зберігання, який усі працівники можуть використовувати для створення "
+"та зберігання файлів для завантаження."
 
 #: settings.py:38
 msgid "A storage backend that all workers can use to share files."
 msgstr ""
+"Сервер зберігання, який усі працівники можуть використовувати для обміну "
+"файлами."
 
 #: settings.py:48
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
 msgstr ""
+"Тимчасова директорія використовується на всьому сайті для зберігання "
+"мініатюр, превью і тимчасових файлів."
 
 #: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
+"Час у секундах, після якого тимчасово завантажені файли буде видалено."
 
 #: storages.py:15
 msgid ""
 "Unable to initialize the download file storage. Check the settings {} and {}"
 " for formatting errors."
 msgstr ""
+"Не вдалося ініціалізувати сховище файлів для завантаження. Перевірте "
+"налаштування {} і {} на наявність помилок форматування."
 
 #: storages.py:29
 msgid ""
 "Unable to initialize the shared uploaded file storage. Check the settings {}"
 " and {} for formatting errors."
 msgstr ""
+"Не вдалося ініціалізувати спільне сховище завантажених файлів. Перевірте "
+"налаштування {} і {} на наявність помилок форматування."
 
 #: views.py:67
 msgid ""
@@ -185,11 +203,14 @@ msgid ""
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
+"Файли завантаження створюються в результаті зовнішнього процесу, наприклад "
+"експорту. Завантажені файли зберігаються протягом певного періоду часу, а "
+"потім автоматично видаляються."
 
 #: views.py:71
 msgid "There are no files to download."
-msgstr ""
+msgstr "Немає файлів для завантаження."
 
 #: views.py:72
 msgid "Downloads"
-msgstr ""
+msgstr "Завантаження"

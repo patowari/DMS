@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,19 +22,19 @@ msgstr ""
 
 #: apps.py:20 events.py:6 permissions.py:6
 msgid "Document exports"
-msgstr ""
+msgstr "Експорт документів"
 
 #: classes.py:59
 msgid "Document version export to PDF"
-msgstr ""
+msgstr "Експорт версії документа в PDF"
 
 #: events.py:10
 msgid "Document version exported"
-msgstr ""
+msgstr "Версію документа експортовано"
 
 #: links.py:11
 msgid "Export"
-msgstr ""
+msgstr "Експорт"
 
 #: literals.py:4
 #, python-format
@@ -39,51 +43,56 @@ msgid ""
 " for download using the link: %(download_url)s or from the downloads area "
 "(%(download_list_url)s)."
 msgstr ""
+"Версію документа \"%(document_version)s\" експортовано та доступно для "
+"завантаження за посиланням: %(download_url)s або з області завантажень ( "
+"%(download_list_url)s )."
 
 #: literals.py:9
 msgid "Document version exported."
-msgstr ""
+msgstr "Версія документа експортована."
 
 #: permissions.py:10
 msgid "Export document versions"
-msgstr ""
+msgstr "Експорт версій документів"
 
 #: queues.py:7
 msgid "Export a document version to a PDF"
-msgstr ""
+msgstr "Експортувати версію документа в PDF"
 
 #: views.py:17
 #, python-format
 msgid "Document version \"%(object)s\" export successfully queued."
-msgstr ""
+msgstr "Експорт версії документа \"%(object)s\" успішно поставлено в чергу."
 
 #: views.py:20
 #, python-format
 msgid "%(count)d document version export successfully queued."
-msgstr ""
+msgstr "Експорт версії документа %(count)d успішно поставлено в чергу."
 
 #: views.py:23
 #, python-format
 msgid "%(count)d document versions exports successfully queued."
-msgstr ""
+msgstr "%(count)d експорт версій документів успішно поставлено в чергу."
 
 #: views.py:25
 #, python-format
 msgid "Export %(count)d document versions."
-msgstr ""
+msgstr "Експорт версій документа %(count)d ."
 
 #: views.py:26
 #, python-format
 msgid "Export document version \"%(object)s\"."
-msgstr ""
+msgstr "Експорт версії документа \"%(object)s\"."
 
 #: views.py:27
 #, python-format
 msgid "Export %(count)d document version."
-msgstr ""
+msgstr "Експортувати версію документа %(count)d ."
 
 #: views.py:33
 msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."
 msgstr ""
+"Процес виконуватиметься у фоновому режимі. Експортований файл буде доступний"
+" в області завантажень."

@@ -7,14 +7,15 @@
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2023
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Сергій Гарашко, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:45+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: Сергій Гарашко, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,23 +26,23 @@ msgstr ""
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
 #: models.py:43 permissions.py:6 views.py:169
 msgid "Web links"
-msgstr ""
+msgstr "Веб-посилання"
 
 #: events.py:10
 msgid "Web link created"
-msgstr ""
+msgstr "Веб-посилання створено"
 
 #: events.py:13
 msgid "Web link edited"
-msgstr ""
+msgstr "Веб-посилання відредаговано"
 
 #: events.py:16
 msgid "Web link navigated"
-msgstr ""
+msgstr "Перехід по веб-посиланню"
 
 #: links.py:29 views.py:81
 msgid "Create new web link"
-msgstr ""
+msgstr "Створити нове веб-посилання"
 
 #: links.py:35
 msgid "Delete"
@@ -61,7 +62,7 @@ msgstr "Переміщення"
 
 #: models.py:23
 msgid "A short text describing the web link."
-msgstr ""
+msgstr "Короткий текст, що описує веб-посилання."
 
 #: models.py:24
 msgid "Label"
@@ -70,6 +71,8 @@ msgstr "Мітка"
 #: models.py:28
 msgid "Template that will be used to craft the final URL of the web link."
 msgstr ""
+"Шаблон, який використовуватиметься для створення кінцевої URL-адреси веб-"
+"посилання."
 
 #: models.py:30
 msgid "Template"
@@ -97,95 +100,99 @@ msgstr "Редагувати веб-посилання"
 
 #: permissions.py:19
 msgid "View existing web links"
-msgstr ""
+msgstr "Переглянути існуючі веб-посилання"
 
 #: permissions.py:22
 msgid "View web link instances"
-msgstr ""
+msgstr "Перегляд екземплярів веб-посилань"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
-msgstr ""
+msgstr "Первинний ключ типу документа, який потрібно додати до веб-посилання."
 
 #: serializers.py:17 serializers.py:26
 msgid "Document type ID"
-msgstr ""
+msgstr "ID типу документа"
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
 msgstr ""
+"Первинний ключ типу документа, який потрібно видалити з веб-посилання."
 
 #: serializers.py:33
 msgid "Document types add URL"
-msgstr ""
+msgstr "Додати URL типів документа"
 
 #: serializers.py:37
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Видалити URL типів документа"
 
 #: serializers.py:41
 msgid "Document types URL"
-msgstr ""
+msgstr "URL типів документів "
 
 #: serializers.py:48 serializers.py:63
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "URL навігації"
 
 #: views.py:32
 msgid "Web links enabled"
-msgstr ""
+msgstr "Веб-посилання ввімкнено"
 
 #: views.py:33
 msgid "Available web links"
-msgstr ""
+msgstr "Доступні веб-посилання"
 
 #: views.py:50
 #, python-format
 msgid "Web links to enable for document type: %s"
-msgstr ""
+msgstr "Веб-посилання для активації типу документу: %s"
 
 #: views.py:103
 #, python-format
 msgid "Delete web link: %s"
-msgstr ""
+msgstr "Видалити веб-посилання: %s"
 
 #: views.py:108
 msgid "Document types enabled"
-msgstr ""
+msgstr "Увімкнені типи документів"
 
 #: views.py:109
 msgid "Available document types"
-msgstr ""
+msgstr "Доступні типи документів"
 
 #: views.py:126
 #, python-format
 msgid "Document type for which to enable web link: %s"
-msgstr ""
+msgstr "Тип документу, для якого потрібно увімкнути веб-посилання: %s"
 
 #: views.py:143
 #, python-format
 msgid "Edit web link: %s"
-msgstr ""
+msgstr "Редагувати веб-посилання: %s"
 
 #: views.py:162 views.py:192
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
 msgstr ""
+"Веб-посилання дозволяють генерувати HTTP-посилання з документів на зовнішні "
+"ресурси. URL-адреси посилань можуть містити значення властивостей "
+"документів."
 
 #: views.py:167
 msgid "There are no web links"
-msgstr ""
+msgstr "Немає веб-посилань"
 
 #: views.py:197
 msgid "There are no web links for this document"
-msgstr ""
+msgstr "Для цього документа немає веб-посилань"
 
 #: views.py:200
 #, python-format
 msgid "Web links for document: %s"
-msgstr ""
+msgstr "Веб-посилання на документ: %s"

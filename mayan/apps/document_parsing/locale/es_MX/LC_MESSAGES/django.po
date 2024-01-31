@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -93,7 +93,7 @@ msgstr ""
 "El contenido de texto real extraído por el documento que analiza el "
 "servidor."
 
-#: models.py:31
+#: models.py:31 search.py:17
 msgid "Document file page content"
 msgstr "Contenido de la página del archivo de documento"
 
@@ -152,7 +152,7 @@ msgstr "Extracción de contenido"
 msgid "Document file parsing"
 msgstr "Extracción de contenido de archivos de documentos"
 
-#: search.py:17 search.py:24
+#: search.py:24
 msgid "Document file content"
 msgstr "Contenido del archivo de documento"
 

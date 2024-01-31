@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 19:44+0000\n"
+"POT-Creation-Date: 2024-01-31 10:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,39 +23,39 @@ msgstr ""
 
 #: apps.py:41 events.py:6 links.py:33
 msgid "Checkouts"
-msgstr ""
+msgstr "Перевірки"
 
 #: dashboard_widgets.py:14 views.py:185
 msgid "Checked out documents"
-msgstr ""
+msgstr "Перевірені документи"
 
 #: events.py:10
 msgid "Document automatically checked in"
-msgstr ""
+msgstr "Документ автоматично перевірено"
 
 #: events.py:14
 msgid "Document checked in"
-msgstr ""
+msgstr "Документ зареєстровано"
 
 #: events.py:17
 msgid "Document checked out"
-msgstr ""
+msgstr "Документ перевірено"
 
 #: events.py:20
 msgid "Document forcefully checked in"
-msgstr ""
+msgstr "Документ примусово перевірено"
 
 #: exceptions.py:15
 msgid "Document not checked out."
-msgstr ""
+msgstr "Документ не перевірено."
 
 #: exceptions.py:23
 msgid "Document already checked out."
-msgstr ""
+msgstr "Документ уже перевірено."
 
 #: forms.py:26
 msgid "Document status"
-msgstr ""
+msgstr "Статус документа"
 
 #: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
 msgid "User"
@@ -62,15 +63,15 @@ msgstr "Користувач"
 
 #: forms.py:41
 msgid "Check out time"
-msgstr ""
+msgstr "Час перевірки"
 
 #: forms.py:46
 msgid "Check out expiration"
-msgstr ""
+msgstr "Термін дії перевірки"
 
 #: forms.py:51
 msgid "New files allowed?"
-msgstr ""
+msgstr "Дозволено нові файли?"
 
 #: forms.py:52
 msgid "Yes"
@@ -82,197 +83,199 @@ msgstr "Ні"
 
 #: links.py:40
 msgid "Check out document"
-msgstr ""
+msgstr "Перевірити документ"
 
 #: links.py:44
 msgid "Check out"
-msgstr ""
+msgstr "Перевірити"
 
 #: links.py:51
 msgid "Check in document"
-msgstr ""
+msgstr "Зареєструвати документ"
 
 #: links.py:55
 msgid "Check in"
-msgstr ""
+msgstr "Перевірити"
 
 #: links.py:61
 msgid "Check in/out"
-msgstr ""
+msgstr "Перевірити/Зареєструвати"
 
 #: literals.py:10
 msgid "Checked out"
-msgstr ""
+msgstr "Перевірено"
 
 #: literals.py:11
 msgid "Checked in/available"
-msgstr ""
+msgstr "Перевірено / доступно"
 
 #: model_mixins.py:14
 msgid "Checkout time and date"
-msgstr ""
+msgstr "Час і дата оформлення"
 
 #: model_mixins.py:19
 msgid "Checkout expiration"
-msgstr ""
+msgstr "Термін дії перевірки"
 
 #: models.py:34 serializers.py:17
 msgid "Document"
-msgstr ""
+msgstr "Документ"
 
 #: models.py:37
 msgid "Check out date and time"
-msgstr ""
+msgstr "Перевірте дату та час виїзду"
 
 #: models.py:41
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr ""
+"Кількість часу у хвилинах, протягом якого документ буде утримуватися "
+"перевіреним."
 
 #: models.py:42
 msgid "Check out expiration date and time"
-msgstr ""
+msgstr "Перевірте дату та час закінчення дії."
 
 #: models.py:50
 msgid "Do not allow new file of this document to be uploaded."
-msgstr ""
+msgstr "Не дозволяти завантажувати новий файл цього документа."
 
 #: models.py:51
 msgid "Block new file upload"
-msgstr ""
+msgstr "Блокувати завантаження нового файлу"
 
 #: models.py:59 permissions.py:6
 msgid "Document checkout"
-msgstr ""
+msgstr "Документ перевірено"
 
 #: models.py:60
 msgid "Document checkouts"
-msgstr ""
+msgstr "Документи перевірено"
 
 #: models.py:69
 msgid "Check out expiration date and time must be in the future."
-msgstr ""
+msgstr "Переконайтесь, що дата та час закінчення знаходяться у майбутньому."
 
 #: permissions.py:10
 msgid "Check in documents"
-msgstr ""
+msgstr "Перевірка документів"
 
 #: permissions.py:13
 msgid "Forcefully check in documents"
-msgstr ""
+msgstr "Примусово перевірити документи"
 
 #: permissions.py:16
 msgid "Check out documents"
-msgstr ""
+msgstr "Перевірте документи"
 
 #: permissions.py:19
 msgid "Check out details view"
-msgstr ""
+msgstr "Перегляньте деталі вигляду"
 
 #: queues.py:11
 msgid "Checkouts periodic"
-msgstr ""
+msgstr "Періодичні перевірки"
 
 #: queues.py:16
 msgid "Check expired checkouts"
-msgstr ""
+msgstr "Перевірити прострочені перевірки"
 
 #: serializers.py:26
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:44
 msgid "Primary key of the document to be checked out."
-msgstr ""
+msgstr "Первинний ключ \"Primary key\" документа, що перевіряється."
 
 #: serializers.py:45
 msgid "Document ID"
-msgstr ""
+msgstr "ID документа"
 
 #: views.py:28
 #, python-format
 msgid "Unable to check in document \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Не вдалося перевірити документ \"%(instance)s\"; %(exception)s"
 
 #: views.py:32
 #, python-format
 msgid "%(count)d documents checked in successfully."
-msgstr ""
+msgstr "%(count)d документи успішно перевірено."
 
 #: views.py:35
 #, python-format
 msgid "Document \"%(object)s\" checked in successfully."
-msgstr ""
+msgstr "Документ \"%(object)s\" успішно перевірено."
 
 #: views.py:38
 #, python-format
 msgid "%(count)d document checked in successfully."
-msgstr ""
+msgstr "%(count)d документ успішно перевірено."
 
 #: views.py:40
 #, python-format
 msgid "Check in %(count)d documents."
-msgstr ""
+msgstr "Перевірено %(count)d документів."
 
 #: views.py:41
 #, python-format
 msgid "Check in document \"%(object)s\"."
-msgstr ""
+msgstr "Перевірено %(object)s документ."
 
 #: views.py:42
 #, python-format
 msgid "Check in %(count)d document."
-msgstr ""
+msgstr "Перевірено документ %(count)d ."
 
 #: views.py:95
 #, python-format
 msgid "Unable to checkout document \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Неможливо перевірити документ \"%(instance)s\"; %(exception)s"
 
 #: views.py:102
 #, python-format
 msgid "%(count)d documents checked out successfully."
-msgstr ""
+msgstr "%(count)d документів успішно перевірено."
 
 #: views.py:105
 #, python-format
 msgid "Document \"%(object)s\" checked out successfully."
-msgstr ""
+msgstr "Документ \"%(object)s\" успішно видалено."
 
 #: views.py:108
 #, python-format
 msgid "%(count)d document checked out successfully."
-msgstr ""
+msgstr "%(count)d документів успішно перевірено."
 
 #: views.py:110
 #, python-format
 msgid "Checkout %(count)d documents."
-msgstr ""
+msgstr "Перевірено %(count)d документів."
 
 #: views.py:111
 #, python-format
 msgid "Checkout document \"%(object)s\"."
-msgstr ""
+msgstr "Перевірено документ \"%(object)s\"."
 
 #: views.py:112
 #, python-format
 msgid "Checkout %(count)d document."
-msgstr ""
+msgstr "Перевірено %(count)d документ."
 
 #: views.py:160
 #, python-format
 msgid "Check out details for document: %s"
-msgstr ""
+msgstr "Перевірте деталі для документа: %s"
 
 #: views.py:181
 msgid ""
 "Checking out a document, blocks certain operations for a predetermined "
 "amount of time."
-msgstr ""
+msgstr "Перевірка документа блокує певні операції на певний час."
 
 #: views.py:184
 msgid "No documents have been checked out"
-msgstr ""
+msgstr "Жодних документів не було перевірено."
 
 #: widgets.py:20
 msgid "Amount"
-msgstr ""
+msgstr "Сума"
