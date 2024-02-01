@@ -6,7 +6,7 @@ Whoosh==2.7.4
 bleach==4.1.0
 boto3==1.24.70
 celery==5.2.7
-dateparser==1.1.1
+dateparser==1.2.0
 django-activity-stream==1.4.0
 django-auth-ldap==4.0.0
 django-celery-beat==2.2.1

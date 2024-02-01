@@ -11,6 +11,7 @@
   - redis from 4.2.2 to 4.6.0 due to CVE-2023-28858.
   - pycryptodome from 3.10.4 to 3.20.0 due to PVE-2021-42084.
   - pip from 23.2.1 to 23.3.2 due to CVE-2023-5752.
+  - dateparser from 1.1.1 to 1.2.0 due to PVE-2023-62361.
 
 4.4.11 (2023-12-10)
 ===================
