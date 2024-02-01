@@ -28,8 +28,6 @@ class SearchField:
     # virtual fields.
     priority = None
 
-    label = None
-
     @staticmethod
     class ValueTransformationNull(ValueTransformation):
         def _execute(self):

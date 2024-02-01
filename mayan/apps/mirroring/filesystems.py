@@ -302,6 +302,6 @@ class MirrorFilesystem(LoggingMixIn, Operations):
 
     def release(self, path, fh):
         self.file_descriptors[fh] = None
-        del(
+        del (
             self.file_descriptors[fh]
         )
