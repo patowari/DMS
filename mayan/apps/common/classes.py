@@ -176,7 +176,9 @@ class ModelCopy:
 
         # Base fields whose values are copied.
         for field in self.fields_copy:
-            value = values.get(field, getattr(instance, field))
+            value = values.get(
+                field, getattr(instance, field)
+            )
 
             value = self._evaluate_field_get_for_field(
                 field=field, instance=instance, value=value, values=values
