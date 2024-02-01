@@ -189,7 +189,7 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Provides style checking.'
-    ), module=__name__, name='flake8', version_string='==4.0.1'
+    ), module=__name__, name='flake8', version_string='==7.0.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
