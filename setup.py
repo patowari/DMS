@@ -64,7 +64,7 @@ install_requires = """
 django==3.2.23
 CairoSVG==2.5.2
 Pillow==9.4.0
-PyPDF2==1.28.4
+PyPDF2==1.28.6
 PyYAML==6.0.1
 Whoosh==2.7.4
 bleach==4.1.0
