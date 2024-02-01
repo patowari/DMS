@@ -4,6 +4,9 @@
 - Fix logging issue when unexpected cache file access problems are
   encountered.
 - Backport minor query optimizations.
+- Update dependency versions:
+
+  - wheel from 0.37.0 to 0.42.0 due to CVE-2022-40898.
 
 4.4.11 (2023-12-10)
 ===================
