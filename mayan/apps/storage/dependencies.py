@@ -7,7 +7,7 @@ PythonDependency(
     module=__name__, name='django-storages', version_string='==1.13.1'
 )
 PythonDependency(
-    module=__name__, name='extract-msg', version_string='==0.36.4'
+    module=__name__, name='extract-msg', version_string='==0.47.0'
 )
 PythonDependency(
     module=__name__, name='pycryptodome', version_string='==3.20.0'
