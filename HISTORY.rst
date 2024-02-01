@@ -1,3 +1,9 @@
+4.4.12 (XXXX-XX-XX)
+===================
+- Translation file updates.
+- Fix logging issue when unexpected cache file access problems are
+  encountered.
+
 4.4.11 (2023-12-10)
 ===================
 - Fix test asserts. Fix test that were asserting for True values instead of
