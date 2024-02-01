@@ -9,6 +9,7 @@
   - wheel from 0.37.0 to 0.42.0 due to CVE-2022-40898.
   - sentry-sdk from 1.12.1 to 1.40.0 due to CVE-2023-28117.
   - redis from 4.2.2 to 4.6.0 due to CVE-2023-28858.
+  - pycryptodome from 3.10.4 to 3.20.0 due to PVE-2021-42084.
 
 4.4.11 (2023-12-10)
 ===================

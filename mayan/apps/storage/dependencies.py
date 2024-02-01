@@ -10,5 +10,5 @@ PythonDependency(
     module=__name__, name='extract-msg', version_string='==0.36.4'
 )
 PythonDependency(
-    module=__name__, name='pycryptodome', version_string='==3.10.4'
+    module=__name__, name='pycryptodome', version_string='==3.20.0'
 )
