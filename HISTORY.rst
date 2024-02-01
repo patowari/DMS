@@ -14,6 +14,7 @@
   - dateparser from 1.1.1 to 1.2.0 due to PVE-2023-62361.
   - extract-msg from 0.36.4 to 0.47.0.
   - PyPDF2 from 1.28.4 to 1.28.6.
+  - Pillow from 9.4.0 to 10.2.0 due to CVE-2023-44271.
 
 4.4.11 (2023-12-10)
 ===================
