@@ -18,6 +18,7 @@
   - twine from 3.8.0 to 4.0.2.
   - Update CairoSVG from 2.5.2 to 2.7.1 due to CVE-2023-27586.
   - ipython from 8.21.0 to 7.32.0 due to CVE-2023-24816.
+  - amqp from 5.1.0 to 5.2.0.
 
 4.4.11 (2023-12-10)
 ===================
