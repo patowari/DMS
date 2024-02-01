@@ -10,7 +10,7 @@ PythonDependency(
     module=__name__, name='gunicorn', version_string='==20.1.0'
 )
 PythonDependency(
-    module=__name__, name='sentry-sdk', version_string='==1.12.1'
+    module=__name__, name='sentry-sdk', version_string='==1.40.0'
 )
 PythonDependency(
     module=__name__, name='whitenoise', version_string='==6.2.0'
