@@ -210,7 +210,7 @@ PythonDependency(
 
 PythonDependency(
     environment=environment_build, module=__name__, name='twine',
-    version_string='==3.8.0'
+    version_string='==4.0.2'
 )
 PythonDependency(
     environments=(environment_build, environment_documentation),
