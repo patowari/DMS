@@ -3,6 +3,7 @@
 - Translation file updates.
 - Fix logging issue when unexpected cache file access problems are
   encountered.
+- Backport minor query optimizations.
 
 4.4.11 (2023-12-10)
 ===================
