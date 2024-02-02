@@ -21,6 +21,10 @@
   - amqp from 5.1.0 to 5.2.0.
   - flake8 from 4.0.1 to 7.0.0.
 
+- Update the deprecated/removed Pillow constants:
+  https://pillow.readthedocs.io/en/stable/deprecations.html#constants
+  Replace ANTIALIASING with LANCZOS.
+
 4.4.11 (2023-12-10)
 ===================
 - Fix test asserts. Fix test that were asserting for True values instead of

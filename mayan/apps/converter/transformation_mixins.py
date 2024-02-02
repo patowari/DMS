@@ -84,7 +84,7 @@ class ImagePasteTransformationMixin:
             instance_image.putalpha(alpha=255)
 
         instance_image = instance_image.rotate(
-            angle=360 - self.rotation, resample=Image.BICUBIC,
+            angle=360 - self.rotation, resample=Image.Resampling.BICUBIC,
             expand=True
         )
 
@@ -94,7 +94,7 @@ class ImagePasteTransformationMixin:
                 size=(
                     int(instance_image.size[0] * zoom_decimal_value),
                     int(instance_image.size[1] * zoom_decimal_value)
-                ), resample=Image.ANTIALIAS
+                ), resample=Image.Resampling.LANCZOS
             )
 
         paste_mask = instance_image.getchannel(channel='A').point(
