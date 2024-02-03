@@ -1,4 +1,4 @@
-4.4.12 (XXXX-XX-XX)
+4.4.12 (2024-02-03)
 ===================
 - Translation file updates.
 - Fix logging issue when unexpected cache file access problems are
