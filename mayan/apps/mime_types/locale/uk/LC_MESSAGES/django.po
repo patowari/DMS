@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,30 +21,33 @@ msgstr ""
 
 #: apps.py:9 settings.py:10
 msgid "MIME types"
-msgstr ""
+msgstr "MIME типи"
 
 #: backends/file_command.py:26
 msgid "file command not installed or not found."
-msgstr ""
+msgstr "файлова команда не встановлена або не знайдена."
 
 #: backends/perl_file_mimeinfo.py:26
 msgid "mimetype not installed or not found."
-msgstr ""
+msgstr "міме тип не встановлено або не знайдено."
 
 #: dependencies.py:10
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
 msgstr ""
+"Цей модуль можна використовувати для визначення типу MIME файлу. Він "
+"намагається реалізувати специфікацію freedesktop для спільної бази даних "
+"MIME."
 
 #: dependencies.py:17
 msgid "determine file type using content tests"
-msgstr ""
+msgstr "визначити тип файлу за допомогою тестів вмісту"
 
 #: settings.py:16
 msgid "Path to the class to use when to detect file MIME types."
-msgstr ""
+msgstr "Шлях до класу, який використовується для виявлення типів MIME файлів."
 
 #: settings.py:22
 msgid "Arguments to pass to the MIME_TYPE_BACKEND."
-msgstr ""
+msgstr "Аргументи, які передаються до MIME_TYPE_BACKEND."

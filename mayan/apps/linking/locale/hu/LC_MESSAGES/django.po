@@ -5,7 +5,7 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -227,7 +227,7 @@ msgstr "Hivatkozás feltételek"
 
 #: permissions.py:10
 msgid "View resolved smart links"
-msgstr "Megoldott intelligens hivatkozások megtekintése"
+msgstr "Feloldott intelligens hivatkozások megtekintése"
 
 #: permissions.py:13
 msgid "Create new smart links"
@@ -286,7 +286,7 @@ msgstr "A dokumentumtípusok URL eltávolítása"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"
-msgstr "Megoldott intelligens hivatkozás URL"
+msgstr "Feloldott intelligens hivatkozás URL-je"
 
 #: serializers.py:126
 msgid "Documents URL"
@@ -326,12 +326,12 @@ msgstr "Intelligens hivatkozás feltétel szerkesztése"
 #: views/smart_link_views.py:74
 #, python-format
 msgid "Resolved smart link query error: %s"
-msgstr "A megoldott intelligens hivatkozás lekérdezési hibája: %s"
+msgstr "A feloldott intelligens hivatkozás lekérdezési hibája: %s"
 
 #: views/smart_link_views.py:101
 #, python-format
 msgid "Resolved smart link dynamic label error: %s"
-msgstr "A megoldott intelligens hivatkozás dinamikus címkehibája: %s"
+msgstr "A feloldott intelligens hivatkozás dinamikus címkehibája: %s"
 
 #: views/smart_link_views.py:106
 #, python-format
@@ -369,12 +369,12 @@ msgstr ""
 
 #: views/smart_link_views.py:182
 msgid "There are no resolved smart links for this document"
-msgstr "Nincsenek megoldott intelligens hivatkozások ehhez a dokumentumhoz"
+msgstr "Nincsenek feloldott intelligens hivatkozások ehhez a dokumentumhoz"
 
 #: views/smart_link_views.py:186
 #, python-format
 msgid "Resolved smart links for document: %s"
-msgstr "Megoldott intelligens hivatkozások a következő dokumentumhoz: %s"
+msgstr "Feloldott intelligens hivatkozások a következő dokumentumhoz: %s"
 
 #: views/smart_link_views.py:204
 msgid "Available smart links"

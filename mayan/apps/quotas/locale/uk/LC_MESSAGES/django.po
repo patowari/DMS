@@ -25,39 +25,39 @@ msgstr ""
 #: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
 #: views.py:150
 msgid "Quotas"
-msgstr ""
+msgstr "Квоти"
 
 #: classes.py:63
 msgid "none"
-msgstr ""
+msgstr "none"
 
 #: classes.py:163
 msgid "Does not apply"
-msgstr ""
+msgstr "Не застосовувати"
 
 #: classes.py:167 classes.py:171
 msgid "Null backend"
-msgstr ""
+msgstr "Null backend"
 
 #: events.py:10
 msgid "Quota created"
-msgstr ""
+msgstr "Квота створена"
 
 #: events.py:13
 msgid "Quota edited"
-msgstr ""
+msgstr "Квоту відредаговано"
 
 #: forms.py:15 model_mixins.py:16
 msgid "Backend"
-msgstr ""
+msgstr "Backend"
 
 #: forms.py:16
 msgid "The quota driver for this entry."
-msgstr ""
+msgstr "Драйвер квоти для цього запису."
 
 #: links.py:17
 msgid "Create quota"
-msgstr ""
+msgstr "Створити квоту"
 
 #: links.py:22
 msgid "Delete"
@@ -69,17 +69,19 @@ msgstr "Редагувати"
 
 #: links.py:30
 msgid "Quotas list"
-msgstr ""
+msgstr "Список квот"
 
 #: mixins.py:17
 msgid "All document types"
-msgstr ""
+msgstr "Всі види документів"
 
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
 "indiviual document type selection."
 msgstr ""
+"Застосовується до всіх типів документів. Якщо це ввімкнено, квота "
+"ігноруватиме вибір окремого типу документа."
 
 #: mixins.py:26
 msgid "Document types"
@@ -87,28 +89,28 @@ msgstr "Тип документа"
 
 #: mixins.py:33
 msgid "Document types to which the quota will be applied."
-msgstr ""
+msgstr "Типи документів, до яких буде застосована квота."
 
 #: mixins.py:67
 msgid "all document types"
-msgstr ""
+msgstr "всі види документів"
 
 #: mixins.py:70
 #, python-format
 msgid "document types: %(document_types)s"
-msgstr ""
+msgstr "типи документів: %(document_types)s"
 
 #: mixins.py:94
 msgid "Groups"
-msgstr ""
+msgstr "Групи"
 
 #: mixins.py:101
 msgid "Groups to which the quota will be applied."
-msgstr ""
+msgstr "Групи, до яких буде застосована квота."
 
 #: mixins.py:105
 msgid "All users"
-msgstr ""
+msgstr "Всі користувачі"
 
 #: mixins.py:108
 msgid ""
@@ -116,51 +118,54 @@ msgid ""
 "Enabling this option, the quota will ignore the indiviual user and group "
 "selection."
 msgstr ""
+"Застосуйте квоту до всіх користувачів системи, за винятком адміністраторів і"
+" персоналу. Якщо ввімкнути цей параметр, квота ігноруватиме вибір окремого "
+"користувача та групи."
 
 #: mixins.py:115
 msgid "Users"
-msgstr ""
+msgstr "Користувачі"
 
 #: mixins.py:122
 msgid "Users to which the quota will be applied."
-msgstr ""
+msgstr "Користувачі, до яких буде застосована квота."
 
 #: mixins.py:160
 msgid "all users"
-msgstr ""
+msgstr "всі користувачі"
 
 #: mixins.py:162
 #, python-format
 msgid "groups: %(groups)s, users: %(users)s"
-msgstr ""
+msgstr "групи: %(groups)s, користувачі: %(users)s"
 
 #: model_mixins.py:15
 msgid "Driver used for this quota entry."
-msgstr ""
+msgstr "Драйвер, використаний для цього запису квоти."
 
 #: model_mixins.py:20
 msgid "Arguments"
-msgstr ""
+msgstr "Аргументи"
 
 #: model_mixins.py:24
 msgid "Usage"
-msgstr ""
+msgstr "Використання"
 
 #: models.py:16
 msgid "The dotted Python path to the backend class."
-msgstr ""
+msgstr "Позначений пунктиром шлях Python до базового класу."
 
 #: models.py:17
 msgid "Backend path"
-msgstr ""
+msgstr "Backend шлях"
 
 #: models.py:20
 msgid "Backend data"
-msgstr ""
+msgstr "Серверні (Backend) дані"
 
 #: models.py:24
 msgid "Allow quick disable or enable of the quota."
-msgstr ""
+msgstr "Дозволити швидке вимикання або вмикання квоти."
 
 #: models.py:25
 msgid "Enabled"
@@ -168,85 +173,85 @@ msgstr "Активовано"
 
 #: models.py:30
 msgid "Quota"
-msgstr ""
+msgstr "Квота"
 
 #: permissions.py:10
 msgid "Create a quota"
-msgstr ""
+msgstr "Створити квоту"
 
 #: permissions.py:13
 msgid "Delete a quota"
-msgstr ""
+msgstr "Видалити квоту"
 
 #: permissions.py:16
 msgid "Edit a quota"
-msgstr ""
+msgstr "Редагувати квоту"
 
 #: permissions.py:19
 msgid "View a quota"
-msgstr ""
+msgstr "Переглянути квоту"
 
 #: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
-msgstr ""
+msgstr "Перевищено квоту на кількість документів."
 
 #: quota_backends.py:76
 msgid "Documents limit"
-msgstr ""
+msgstr "Ліміт документів"
 
 #: quota_backends.py:79
 msgid "Maximum number of documents."
-msgstr ""
+msgstr "Максимальна кількість документів."
 
 #: quota_backends.py:83
 msgid "Document count limit"
-msgstr ""
+msgstr "Ліміт кількості документів"
 
 #: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
-msgstr ""
+msgstr "кількість документів: %(document_count)s"
 
 #: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
-msgstr ""
+msgstr "Максимальний розмір документа в мегабайтах (МБ)."
 
 #: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
-msgstr ""
+msgstr "Обмеження розміру документа"
 
 #: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
-msgstr ""
+msgstr "розмір документа: %(formatted_file_size)s"
 
 #: quota_backends.py:234
 msgid "Document size quota exceeded."
-msgstr ""
+msgstr "Перевищено квоту розміру документа."
 
 #: views.py:27
 msgid "New quota backend selection"
-msgstr ""
+msgstr "Новий вибір бекенду квоти"
 
 #: views.py:65
 #, python-format
 msgid "Create a \"%s\" quota"
-msgstr ""
+msgstr "Створити квоту \"%s\""
 
 #: views.py:98
 #, python-format
 msgid "Delete quota: %s"
-msgstr ""
+msgstr "Видалити квоту: %s"
 
 #: views.py:114
 #, python-format
 msgid "Edit quota: %s"
-msgstr ""
+msgstr "Редагувати квоту: %s"
 
 #: views.py:147
 msgid "Quotas restrict usage of system resources. "
-msgstr ""
+msgstr "Квоти обмежують використання системних ресурсів."
 
 #: views.py:149
 msgid "No quotas available"
-msgstr ""
+msgstr "Немає доступних квот"

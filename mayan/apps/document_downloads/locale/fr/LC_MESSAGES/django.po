@@ -7,6 +7,7 @@
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
+# Benoît GROUSSET <benoit@grousset.xyz>, 2024
 # 
 msgid ""
 msgstr ""
@@ -44,7 +45,7 @@ msgstr "Fichier de document téléchargé"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "ID de fichier"
 
 #: forms.py:11
 msgid "Document"
@@ -72,10 +73,13 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
+"Les documents sont compressés et disponible au téléchargement via le lien "
+"%(download_url)s ou dans la zone de téléchargement ( %(download_list_url)s "
+")."
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Fichiers prêts à être téléchargé."
 
 #: permissions.py:10
 msgid "Download document files"
@@ -138,3 +142,5 @@ msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"Le processus sera exécuté en arrière-plan. Les fichiers seront disponible "
+"dans la zone de téléchargement."

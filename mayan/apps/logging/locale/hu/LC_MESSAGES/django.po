@@ -147,7 +147,7 @@ msgstr "Nincsenek hibanapló bejegyzések"
 #: views.py:50
 #, python-format
 msgid "Clear error log entries for: %s"
-msgstr "Törölje a hibanapló bejegyzéseit a következőhöz: %s"
+msgstr "Hibanapló bejegyzések törlése a következőhöz: %s"
 
 #: views.py:57
 msgid "Object error log cleared successfully"

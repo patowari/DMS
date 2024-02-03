@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,47 +21,47 @@ msgstr ""
 
 #: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
-msgstr ""
+msgstr "Завантаження документів"
 
 #: classes.py:49
 msgid "Document_file_bundle.zip"
-msgstr ""
+msgstr "Document_file_bundle.zip"
 
 #: classes.py:52
 msgid "Compressed document files"
-msgstr ""
+msgstr "Стислі файли документів"
 
 #: events.py:6 queues.py:7
 msgid "Documents downloads"
-msgstr ""
+msgstr "Завантаження документів"
 
 #: events.py:10
 msgid "Document file downloaded"
-msgstr ""
+msgstr "Документ завантажено"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "ID файлу документа"
 
 #: forms.py:11
 msgid "Document"
-msgstr ""
+msgstr "Документ"
 
 #: forms.py:19
 msgid "Document file"
-msgstr ""
+msgstr "Файл документа"
 
 #: forms.py:27
 msgid "Include"
-msgstr ""
+msgstr "Включити"
 
 #: links.py:12 links.py:18
 msgid "Download files"
-msgstr ""
+msgstr "Завантажити файли"
 
 #: links.py:24
 msgid "Quick download"
-msgstr ""
+msgstr "Швидке завантаження"
 
 #: literals.py:4
 msgid ""
@@ -66,18 +69,20 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
+"Документи були стиснуті і доступні для завантаження за посиланням: "
+"%(download_url)s або з області завантажень (%(download_list_url)s)."
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Файли документу готові до завантаження."
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr ""
+msgstr "Завантажити файли документу"
 
 #: queues.py:13
 msgid "Generate a compressed document file bundle"
-msgstr ""
+msgstr "Створити пакет файлів стисненого документа"
 
 #: settings.py:18
 msgid ""
@@ -96,39 +101,43 @@ msgstr ""
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
 msgstr ""
+"Неможливо поставити документ \"%(instance)s\" в чергу для завантаження "
+"файлу; %(exception)s."
 
 #: views.py:33
 #, python-format
 msgid "%(count)d document files queued for download."
-msgstr ""
+msgstr "%(count)d файлів документа очікують на завантаження."
 
 #: views.py:36
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
-msgstr ""
+msgstr "Документ \"%(object)s\" поставлено в чергу для завантаження."
 
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
-msgstr ""
+msgstr "%(count)d файлів документа поставлено в чергу для завантаження."
 
 #: views.py:41
 #, python-format
 msgid "Download files of %(count)d documents"
-msgstr ""
+msgstr "Завантажити файли %(count)d документів"
 
 #: views.py:42
 #, python-format
 msgid "Download files of document: %(object)s"
-msgstr ""
+msgstr "Завантажити файли документа: %(object)s"
 
 #: views.py:43
 #, python-format
 msgid "Download files of %(count)d document"
-msgstr ""
+msgstr "Завантажити файли %(count)d документа"
 
 #: views.py:50
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"Процес буде виконуватися в фоновому режимі. Файли документів будуть доступні"
+" в області завантажень."

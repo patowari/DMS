@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -26,7 +27,7 @@ msgstr "Інформаційні панелі"
 
 #: apps.py:25
 msgid "Widgets"
-msgstr ""
+msgstr "Віджети"
 
 #: apps.py:29
 msgid "Label"
@@ -34,7 +35,7 @@ msgstr "Мітка"
 
 #: dashboards.py:6
 msgid "Administrator dashboard"
-msgstr ""
+msgstr "Панель адміністратора"
 
 #: links.py:9
 msgid "Details"
@@ -47,4 +48,4 @@ msgstr "Переглянути подробиці"
 
 #: views.py:30
 msgid "Dashboard detail"
-msgstr ""
+msgstr "Деталі інформаційної панелі"

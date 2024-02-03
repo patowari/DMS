@@ -5,6 +5,7 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -22,63 +23,63 @@ msgstr ""
 
 #: apps.py:23 links.py:17 settings.py:11
 msgid "REST API"
-msgstr ""
+msgstr "REST API"
 
 #: fields.py:30
 #, python-format
 msgid "Unable to find serializer class for: %s"
-msgstr ""
+msgstr "Неможливо знайти клас серіалізатора для: %s"
 
 #: links.py:21
 msgid "API Documentation (Swagger)"
-msgstr ""
+msgstr "Документація API (Swagger)"
 
 #: links.py:26
 msgid "API Documentation (ReDoc)"
-msgstr ""
+msgstr "Документація API (ReDoc)"
 
 #: relations.py:33
 #, python-brace-format
 msgid "Invalid pk \"{pk_value}\" - object does not exist."
-msgstr ""
+msgstr "Недійсний pk \"{pk_value}\" - об'єкт не існує."
 
 #: relations.py:36
 #, python-brace-format
 msgid "Incorrect type. Expected pk value, received {data_type}."
-msgstr ""
+msgstr "Неправильний тип. Очікуване значення pk, отримано {data_type}."
 
 #: relations.py:38
 msgid "This field is required."
-msgstr ""
+msgstr "Це поле обов'язкове."
 
 #: schemas.py:11
 #, python-format
 msgid "%s API"
-msgstr ""
+msgstr "%s API"
 
 #: serializers.py:37
 msgid "Content"
-msgstr ""
+msgstr "Зміст"
 
 #: serializers.py:40
 msgid "Data"
-msgstr ""
+msgstr "Дані"
 
 #: serializers.py:43
 msgid "Headers"
-msgstr ""
+msgstr "Заголовки"
 
 #: serializers.py:46
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: serializers.py:49
 msgid "Status code"
-msgstr ""
+msgstr "Код стану"
 
 #: serializers.py:52
 msgid "Requests"
-msgstr ""
+msgstr "Запити"
 
 #: serializers.py:75
 msgid "Label"
@@ -86,43 +87,43 @@ msgstr "Мітка"
 
 #: serializers.py:78
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:106
 msgid "Author"
-msgstr ""
+msgstr "Автор"
 
 #: serializers.py:109
 msgid "Author email"
-msgstr ""
+msgstr "Електронна адреса автора"
 
 #: serializers.py:112
 msgid "Build"
-msgstr ""
+msgstr "Будувати"
 
 #: serializers.py:115
 msgid "Build string"
-msgstr ""
+msgstr "Рядок побудови"
 
 #: serializers.py:118
 msgid "Copyright"
-msgstr ""
+msgstr "Авторське право"
 
 #: serializers.py:121
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: serializers.py:124
 msgid "Django version"
-msgstr ""
+msgstr "Версія Django"
 
 #: serializers.py:127
 msgid "License"
-msgstr ""
+msgstr "Ліцензія"
 
 #: serializers.py:130
 msgid "Title"
-msgstr ""
+msgstr "Назва"
 
 #: serializers.py:133
 msgid "Version"
@@ -130,16 +131,16 @@ msgstr "Версія"
 
 #: serializers.py:136
 msgid "Website"
-msgstr ""
+msgstr "Веб-сайт"
 
 #: settings.py:17
 msgid "Disable the REST API links in the tools menu."
-msgstr ""
+msgstr "Вимкнути посилання REST API у меню інструментів."
 
 #: settings.py:23
 msgid "The maximum page size that can be requested."
-msgstr ""
+msgstr "Максимальний розмір сторінки, який можна запитати."
 
 #: settings.py:29
 msgid "The default page size if none is specified."
-msgstr ""
+msgstr "Розмір сторінки за умовчанням, якщо не вказано."

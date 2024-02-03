@@ -23,23 +23,23 @@ msgstr ""
 
 #: apps.py:32 events.py:6
 msgid "Document comments"
-msgstr ""
+msgstr "Коментарі до документа"
 
 #: events.py:10
 msgid "Document comment created"
-msgstr ""
+msgstr "Створено коментар до документа"
 
 #: events.py:13
 msgid "Document comment deleted"
-msgstr ""
+msgstr "Коментар до документа видалено"
 
 #: events.py:16
 msgid "Document comment edited"
-msgstr ""
+msgstr "Коментар до документа відредаговано"
 
 #: links.py:16
 msgid "Add comment"
-msgstr ""
+msgstr "Додати коментар"
 
 #: links.py:22
 msgid "Delete"
@@ -51,7 +51,7 @@ msgstr "Редагувати"
 
 #: links.py:31 models.py:47 permissions.py:6 search.py:8
 msgid "Comments"
-msgstr ""
+msgstr "Коментарі"
 
 #: model_mixins.py:10 models.py:33
 msgid "User"
@@ -59,71 +59,73 @@ msgstr "Користувач"
 
 #: models.py:29
 msgid "Document"
-msgstr ""
+msgstr "Документ"
 
 #: models.py:36
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: models.py:40
 msgid "Date time submitted"
-msgstr ""
+msgstr "Дата та час подання"
 
 #: models.py:46
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 #: permissions.py:10
 msgid "Create new comments"
-msgstr ""
+msgstr "Створити нові коментарі"
 
 #: permissions.py:13
 msgid "Delete comments"
-msgstr ""
+msgstr "Видалити коментарі"
 
 #: permissions.py:16
 msgid "Edit comments"
-msgstr ""
+msgstr "Редагувати коментарі"
 
 #: permissions.py:19
 msgid "View comments"
-msgstr ""
+msgstr "Переглянути коментарі"
 
 #: serializers.py:12
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: views.py:37
 #, python-format
 msgid "Add comment to document: %s"
-msgstr ""
+msgstr "Додати коментар до документу: %s"
 
 #: views.py:67
 #, python-format
 msgid "Delete comment: %s?"
-msgstr ""
+msgstr "Видалити коментар: %s?"
 
 #: views.py:99
 #, python-format
 msgid "Details for comment: %s?"
-msgstr ""
+msgstr "Деталі для коментаря: %s?"
 
 #: views.py:119
 #, python-format
 msgid "Edit comment: %s?"
-msgstr ""
+msgstr "Редагувати коментар: %s?"
 
 #: views.py:158
 msgid ""
 "Document comments are timestamped text entries from users. They are great "
 "for collaboration."
 msgstr ""
+"Документарні коментарі - це часові відмітки текстових записів від "
+"користувачів. Вони чудово підходять для співпраці."
 
 #: views.py:161
 msgid "There are no comments"
-msgstr ""
+msgstr "Немає коментарів"
 
 #: views.py:163
 #, python-format
 msgid "Comments for document: %s"
-msgstr ""
+msgstr "Коментарі до документа: %s"

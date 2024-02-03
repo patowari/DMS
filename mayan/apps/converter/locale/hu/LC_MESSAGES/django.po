@@ -5,7 +5,7 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -402,7 +402,7 @@ msgstr "Függőleges pozíció pixelben felülről."
 #: transformation_mixins.py:235 transformations.py:230 transformations.py:329
 #: transformations.py:428
 msgid "Top"
-msgstr "Felül"
+msgstr "Felső"
 
 #: transformation_mixins.py:157
 msgid "Paste an image (percents coordinates)"
@@ -504,7 +504,7 @@ msgstr "Tartalom beillesztése (abszolút koordináták)"
 
 #: transformations.py:206
 msgid "Paste an asset (percent coordinates)"
-msgstr ""
+msgstr "Tartalom beillesztése (százalékos koordináták)"
 
 #: transformations.py:220
 msgid "Crop"
@@ -548,7 +548,7 @@ msgstr "Az alsó oldali helyzet képpontokban."
 
 #: transformations.py:418
 msgid "Draw rectangle (percent coordinates)"
-msgstr ""
+msgstr "Téglalap rajzolása (százalékos koordináták)"
 
 #: transformations.py:423
 msgid "Left side location in percent."

@@ -6,7 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -105,19 +105,19 @@ msgstr "Háttérrendszer"
 
 #: links.py:34 links.py:37
 msgid "Email document link"
-msgstr "Email dokumentum hivatkozás"
+msgstr "Dokumentum hivatkozás küldése"
 
 #: links.py:47 links.py:52
 msgid "Email document file"
-msgstr "Dokumentumfájl elküldése emailben"
+msgstr "Dokumentumfájl küldése"
 
 #: links.py:58 links.py:63
 msgid "Email document file link"
-msgstr "Dokumentumfájl hivatkozás küldése emailben"
+msgstr "Dokumentumfájl hivatkozás küldése"
 
 #: links.py:73 links.py:78
 msgid "Email document version"
-msgstr "Email dokumentum verzió"
+msgstr "Dokumentum verzió küldése"
 
 #: links.py:84
 msgid "Email document version link"
@@ -125,7 +125,7 @@ msgstr "A dokumentum verzió hivatkozásának elküldése e-mailben"
 
 #: links.py:89
 msgid "Email link version"
-msgstr "Email hivatkozás verzió"
+msgstr "Hivatkozás verzió küldése"
 
 #: links.py:98
 msgid "Create mailing profile"
@@ -229,7 +229,7 @@ msgid ""
 " True."
 msgstr ""
 "Használjon-e implicit TLS (biztonságos) kapcsolatot, amikor az SMTP-"
-"kiszolgálóhoz kapcsolódik. A legtöbb e-mail dokumentációban ezt a fajta TLS-"
+"kiszolgálóhoz kapcsolódik. A legtöbb email dokumentációban ezt a fajta TLS-"
 "kapcsolatot SSL-ként említik. Általában a 465-ös porton használják. Ha "
 "problémákat tapasztal, lásd az explicit TLS beállítás \"TLS használata\"-t ."
 " Vegye figyelembe, hogy a \"TLS használata\" és az \"SSL használata\" "

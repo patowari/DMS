@@ -7,7 +7,7 @@
 # Tamás Benkovszky, 2023
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -350,7 +350,7 @@ msgstr "Nem"
 #: templates/appearance/partials/form_field.html:10
 #: templates/appearance/partials/form_field.html:16
 msgid "required"
-msgstr "kívánt"
+msgstr "kötelező"
 
 #: templates/appearance/generic_form_subtemplate.html:85
 #: templates/appearance/generic_form_subtemplate.html:95

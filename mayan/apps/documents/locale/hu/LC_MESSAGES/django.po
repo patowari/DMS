@@ -102,7 +102,7 @@ msgstr "Típus"
 #: links/document_file_page_links.py:120
 #: links/document_version_page_links.py:50
 msgid "Pages"
-msgstr "Lapok"
+msgstr "Oldalak"
 
 #: apps.py:575 models/favorite_document_models.py:33
 msgid "Date and time added"

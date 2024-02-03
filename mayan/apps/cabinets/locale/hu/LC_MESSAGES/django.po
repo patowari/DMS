@@ -6,7 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -321,7 +321,7 @@ msgstr "Ez a dokumentum egyetlen irattartóban sem található"
 #: views.py:273
 #, python-format
 msgid "Cabinets containing document: %s"
-msgstr "Dokumentumot tartalmazó irattartók: %s"
+msgstr "Irattartók melyek ezt a dokumentumot tartalmazzák: %s"
 
 #: views.py:289
 #, python-format

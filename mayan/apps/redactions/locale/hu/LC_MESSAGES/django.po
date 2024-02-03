@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:33 layers.py:16 links.py:10 permissions.py:6
 msgid "Redactions"
-msgstr "Redukálások"
+msgstr "Kitakarások"
 
 #: dependencies.py:6
 msgid "JavaScript image cropper"
@@ -33,29 +33,29 @@ msgid ""
 "Redactions allow removing access to confidential and sensitive information "
 "without having to modify the document."
 msgstr ""
-"A redukálások lehetővé teszik a bizalmas és érzékeny információkhoz való "
+"A kitakarások lehetővé teszik a bizalmas és érzékeny információkhoz való "
 "hozzáférés megszüntetését anélkül, hogy módosítani kellene a dokumentumot."
 
 #: permissions.py:10
 msgid "Create new redactions"
-msgstr "Új redukálások létrehozása"
+msgstr "Új kitakarások létrehozása"
 
 #: permissions.py:13
 msgid "Delete redactions"
-msgstr "Redukálások törlése"
+msgstr "Kitakarások törlése"
 
 #: permissions.py:16
 msgid "Edit redactions"
-msgstr "Redukálások szerkesztése"
+msgstr "Kitakarások szerkesztése"
 
 #: permissions.py:19
 msgid "Exclude redactions"
-msgstr "Redukálások kizárása"
+msgstr "Kitakarások kizárása"
 
 #: permissions.py:22
 msgid "View existing redactions"
-msgstr "Meglévő redukálások megtekintése"
+msgstr "Meglévő kitakarások megtekintése"
 
 #: transformations.py:12
 msgid "Redaction"
-msgstr "Redukálás"
+msgstr "Kitakarás"

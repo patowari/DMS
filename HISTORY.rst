@@ -1,6 +1,7 @@
 4.5.9 (XXXX-XX-XX)
 ==================
 - Minor query optimizations.
+- Changes from version 4.4.12.
 
 4.5.8 (2023-12-07)
 ==================
@@ -436,6 +437,33 @@
   - Test improvements.
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
+
+4.4.12 (2024-02-03)
+===================
+- Translation file updates.
+- Fix logging issue when unexpected cache file access problems are
+  encountered.
+- Backport minor query optimizations.
+- Update dependency versions:
+
+  - wheel from 0.37.0 to 0.42.0 due to CVE-2022-40898.
+  - sentry-sdk from 1.12.1 to 1.40.0 due to CVE-2023-28117.
+  - redis from 4.2.2 to 4.6.0 due to CVE-2023-28858.
+  - pycryptodome from 3.10.4 to 3.20.0 due to PVE-2021-42084.
+  - pip from 23.2.1 to 23.3.2 due to CVE-2023-5752.
+  - dateparser from 1.1.1 to 1.2.0 due to PVE-2023-62361.
+  - extract-msg from 0.36.4 to 0.47.0.
+  - PyPDF2 from 1.28.4 to 1.28.6.
+  - Pillow from 9.4.0 to 10.2.0 due to CVE-2023-44271.
+  - twine from 3.8.0 to 4.0.2.
+  - Update CairoSVG from 2.5.2 to 2.7.1 due to CVE-2023-27586.
+  - ipython from 8.21.0 to 7.32.0 due to CVE-2023-24816.
+  - amqp from 5.1.0 to 5.2.0.
+  - flake8 from 4.0.1 to 7.0.0.
+
+- Update the deprecated/removed Pillow constants:
+  https://pillow.readthedocs.io/en/stable/deprecations.html#constants
+  Replace ANTIALIASING with LANCZOS.
 
 4.4.11 (2023-12-10)
 ===================

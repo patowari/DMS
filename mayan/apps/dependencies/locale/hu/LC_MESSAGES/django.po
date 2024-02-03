@@ -94,7 +94,7 @@ msgstr "Már telepítve."
 
 #: classes.py:386 classes.py:393 classes.py:399
 msgid "Complete."
-msgstr "Teljes."
+msgstr "Kész."
 
 #: classes.py:426
 msgid "Installed and correct version"

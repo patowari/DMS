@@ -25,7 +25,7 @@ msgstr ""
 #: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
 #: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
-msgstr ""
+msgstr "Оголошення"
 
 #: apps.py:79 apps.py:83
 msgid "None"
@@ -33,15 +33,15 @@ msgstr "None"
 
 #: events.py:10
 msgid "Announcement created"
-msgstr ""
+msgstr "Оголошення створено"
 
 #: events.py:13
 msgid "Announcement edited"
-msgstr ""
+msgstr "Оголошення відредаговано"
 
 #: links.py:18 views.py:34
 msgid "Create announcement"
-msgstr ""
+msgstr "Створити оголошення"
 
 #: links.py:22 links.py:28
 msgid "Delete"
@@ -53,7 +53,7 @@ msgstr "Редагувати"
 
 #: models.py:19
 msgid "Short description of this announcement."
-msgstr ""
+msgstr "Короткий опис цього оголошення."
 
 #: models.py:20
 msgid "Label"
@@ -61,11 +61,11 @@ msgstr "Мітка"
 
 #: models.py:23
 msgid "The actual text to be displayed."
-msgstr ""
+msgstr "Фактичний текст, який буде показано."
 
 #: models.py:24
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: models.py:26
 msgid "Enabled"
@@ -73,83 +73,83 @@ msgstr "Активовано"
 
 #: models.py:29
 msgid "Date and time after which this announcement will be displayed."
-msgstr ""
+msgstr "Дата та час, після яких це оголошення буде показано."
 
 #: models.py:30
 msgid "Start date time"
-msgstr ""
+msgstr "Дата та час початку"
 
 #: models.py:34
 msgid "Date and time until when this announcement is to be displayed."
-msgstr ""
+msgstr "Дата й час, до якого це оголошення має відображатися."
 
 #: models.py:35
 msgid "End date time"
-msgstr ""
+msgstr "Дата та час закінчення"
 
 #: models.py:42
 msgid "Announcement"
-msgstr ""
+msgstr "Оголошення"
 
 #: permissions.py:10
 msgid "Create announcements"
-msgstr ""
+msgstr "Створити оголошення"
 
 #: permissions.py:13
 msgid "Delete announcements"
-msgstr ""
+msgstr "Видалити оголошення"
 
 #: permissions.py:16
 msgid "Edit announcements"
-msgstr ""
+msgstr "Редагувати оголошення"
 
 #: permissions.py:19
 msgid "View announcements"
-msgstr ""
+msgstr "Переглянути оголошення"
 
 #: serializers.py:12
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: views.py:45
 #, python-format
 msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Помилка видалення оголошення%(instance)s;%(exception)s"
 
 #: views.py:54
 #, python-format
 msgid "%(count)d announcements deleted successfully."
-msgstr ""
+msgstr "%(count)d оголошень видалено успішно."
 
 #: views.py:57
 #, python-format
 msgid "Announcement \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Оголошення %(object)sвидалено успішно."
 
 #: views.py:60
 #, python-format
 msgid "%(count)d announcement deleted successfully."
-msgstr ""
+msgstr "%(count)dоголошень видалено успішно."
 
 #: views.py:62
 #, python-format
 msgid "Delete the %(count)d selected announcements."
-msgstr ""
+msgstr "Видалено %(count)dобраних оголошень."
 
 #: views.py:63
 #, python-format
 msgid "Delete announcement: %(object)s."
-msgstr ""
+msgstr "Видалити оголошення: %(object)s."
 
 #: views.py:64
 #, python-format
 msgid "Delete the %(count)d selected announcement."
-msgstr ""
+msgstr "Видалити %(count)d обраних оголошення."
 
 #: views.py:98
 #, python-format
 msgid "Edit announcement: %s"
-msgstr ""
+msgstr "Редагувати оголошення: %s"
 
 #: views.py:121
 msgid ""
@@ -157,7 +157,10 @@ msgid ""
 "convery information about your organzation, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"Оголошення відображаються у вікні входу. Ви можете використовувати "
+"оголошення, щоб передати інформацію про вашу організацію, оголошення або "
+"вказівки щодо використання для ваших користувачів."
 
 #: views.py:125
 msgid "No announcements available"
-msgstr ""
+msgstr "Оголошення відсутні"

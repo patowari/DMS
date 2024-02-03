@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,38 +21,40 @@ msgstr ""
 
 #: apps.py:33 layers.py:16 links.py:10 permissions.py:6
 msgid "Redactions"
-msgstr ""
+msgstr "Редакції"
 
 #: dependencies.py:6
 msgid "JavaScript image cropper"
-msgstr ""
+msgstr "Обрізка зображень JavaScript"
 
 #: layers.py:14
 msgid ""
 "Redactions allow removing access to confidential and sensitive information "
 "without having to modify the document."
 msgstr ""
+"Редагування дозволяє скасувати доступ до конфіденційної та чутливої "
+"інформації без необхідності змінювати документ."
 
 #: permissions.py:10
 msgid "Create new redactions"
-msgstr ""
+msgstr "Створити нові редакції"
 
 #: permissions.py:13
 msgid "Delete redactions"
-msgstr ""
+msgstr "Видалити редакції"
 
 #: permissions.py:16
 msgid "Edit redactions"
-msgstr ""
+msgstr "Редагувати редакції"
 
 #: permissions.py:19
 msgid "Exclude redactions"
-msgstr ""
+msgstr "Виключити редауції"
 
 #: permissions.py:22
 msgid "View existing redactions"
-msgstr ""
+msgstr "Переглянути наявні редакції"
 
 #: transformations.py:12
 msgid "Redaction"
-msgstr ""
+msgstr "Редакція"

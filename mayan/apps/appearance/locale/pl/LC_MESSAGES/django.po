@@ -86,7 +86,7 @@ msgstr "Motyw zmodyfikowany"
 
 #: events.py:16
 msgid "User theme edited"
-msgstr ""
+msgstr "Edytowano motyw użytkownika"
 
 #: links.py:20
 msgid "Theme settings"

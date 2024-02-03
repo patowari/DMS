@@ -6,6 +6,7 @@
 # Translators:
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2023
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -27,75 +28,75 @@ msgstr "Вигляд"
 
 #: dependencies.py:8
 msgid "Lato font"
-msgstr ""
+msgstr "Шрифт Lato"
 
 #: dependencies.py:12
 msgid "Bootstrap"
-msgstr ""
+msgstr "Бутстрап (Bootstrap)"
 
 #: dependencies.py:16
 msgid "Bootswatch"
-msgstr ""
+msgstr "Bootswatch"
 
 #: dependencies.py:30
 msgid "Fancybox"
-msgstr ""
+msgstr "Fancybox"
 
 #: dependencies.py:34
 msgid "FontAwesome"
-msgstr ""
+msgstr "FontAwesome"
 
 #: dependencies.py:38
 msgid "jQuery"
-msgstr ""
+msgstr "jQuery"
 
 #: dependencies.py:42
 msgid "JQuery Form"
-msgstr ""
+msgstr "JQuery Form"
 
 #: dependencies.py:46
 msgid "jQuery Lazy Load"
-msgstr ""
+msgstr "jQuery Lazy Load"
 
 #: dependencies.py:50
 msgid "JQuery Match Height"
-msgstr ""
+msgstr "JQuery Match Height"
 
 #: dependencies.py:54
 msgid "Select 2"
-msgstr ""
+msgstr "Виберіть 2"
 
 #: dependencies.py:58
 msgid "Toastr"
-msgstr ""
+msgstr "Toastr"
 
 #: dependencies.py:62
 msgid "URI.js"
-msgstr ""
+msgstr "URI.js"
 
 #: events.py:10
 msgid "Theme created"
-msgstr ""
+msgstr "Тему створено"
 
 #: events.py:13
 msgid "Theme edited"
-msgstr ""
+msgstr "Тему відредаговано"
 
 #: events.py:16
 msgid "User theme edited"
-msgstr ""
+msgstr "Тему користувача відредаговано"
 
 #: links.py:20
 msgid "Theme settings"
-msgstr ""
+msgstr "Налаштування теми"
 
 #: links.py:27
 msgid "Edit theme settings"
-msgstr ""
+msgstr "Редагувати налаштування теми"
 
 #: links.py:33 views.py:31
 msgid "Create new theme"
-msgstr ""
+msgstr "Створити нову тему"
 
 #: links.py:38
 msgid "Delete"
@@ -107,11 +108,11 @@ msgstr "Редагувати"
 
 #: links.py:46 links.py:54 models.py:32 views.py:99
 msgid "Themes"
-msgstr ""
+msgstr "Теми"
 
 #: models.py:19
 msgid "A short text describing the theme."
-msgstr ""
+msgstr "Короткий опис теми"
 
 #: models.py:20
 msgid "Label"
@@ -122,14 +123,16 @@ msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
+"Таблиця стилів CSS для зміни зовнішнього вигляду різних елементів інтерфейсу"
+" користувача."
 
 #: models.py:26
 msgid "Stylesheet"
-msgstr ""
+msgstr "Таблиця стилів"
 
 #: models.py:31 models.py:69
 msgid "Theme"
-msgstr ""
+msgstr "Тема"
 
 #: models.py:65
 msgid "User"
@@ -137,31 +140,31 @@ msgstr "Користувач"
 
 #: models.py:73
 msgid "User theme setting"
-msgstr ""
+msgstr "Налаштування теми користувача"
 
 #: models.py:74
 msgid "User theme settings"
-msgstr ""
+msgstr "Налаштування теми користувача"
 
 #: permissions.py:10
 msgid "Create new themes"
-msgstr ""
+msgstr "Створити нові теми"
 
 #: permissions.py:13
 msgid "Delete themes"
-msgstr ""
+msgstr "Видалити теми"
 
 #: permissions.py:16
 msgid "Edit themes"
-msgstr ""
+msgstr "Редагувати теми"
 
 #: permissions.py:19
 msgid "View existing themes"
-msgstr ""
+msgstr "Переглянути існуючі теми"
 
 #: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Спеціальний HTTP код відповіді для перенаправлень AJAX."
 
 #: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
@@ -171,23 +174,27 @@ msgstr ""
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Позиція, де відображатимуться системні повідомлення."
 
 #: settings.py:40
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Затримка в мілісекундах, після якої меню буде перевірено на оновлення."
 
 #: settings.py:47
 msgid ""
 "Maximum number of requests that can be made before throttling is enabled."
 msgstr ""
+"Максимальна кількість запитів, які можна зробити до ввімкнення тротлінгу."
 
 #: settings.py:54
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Час у мілісекундах, після якого обмежений запит очищається, що дозволяє "
+"виконати додатковий запит."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
@@ -315,10 +322,13 @@ msgid ""
 "Too many pending requests. Additional requests will be blocked until a "
 "pending one is completed or after the cooling off period ends."
 msgstr ""
+"Забагато запитів, що очікують на розгляд. Додаткові запити буде заблоковано,"
+" доки не буде завершено незавершений або після закінчення періоду "
+"завершення."
 
 #: templates/appearance/base.html:73
 msgid "Object"
-msgstr ""
+msgstr "Об'єкт"
 
 #: templates/appearance/generic_confirm.html:13
 msgid "Are you sure?"
@@ -337,7 +347,7 @@ msgstr "Ні"
 #: templates/appearance/partials/form_field.html:10
 #: templates/appearance/partials/form_field.html:16
 msgid "required"
-msgstr "вимагає"
+msgstr "обов'язково"
 
 #: templates/appearance/generic_form_subtemplate.html:85
 #: templates/appearance/generic_form_subtemplate.html:95
@@ -366,7 +376,7 @@ msgstr "Ідентифікатор"
 #: templates/appearance/partials/list_object_facet_links_column.html:8
 #: templates/appearance/partials/list_object_facet_links_column.html:39
 msgid "Views"
-msgstr ""
+msgstr "Перегляди"
 
 #: templates/appearance/generic_list_subtemplate.html:91
 msgid "Actions"
@@ -435,12 +445,12 @@ msgstr "Без результату"
 #: templates/appearance/partials/pagination.html:12
 #: templates/appearance/partials/pagination.html:14
 msgid "Previous page"
-msgstr ""
+msgstr "Попередня сторінка"
 
 #: templates/appearance/partials/pagination.html:30
 #: templates/appearance/partials/pagination.html:32
 msgid "Next page"
-msgstr ""
+msgstr "Наступна сторінка"
 
 #: templates/appearance/root.html:51
 msgid "Close"
@@ -462,28 +472,28 @@ msgstr "None"
 #: views.py:55
 #, python-format
 msgid "Delete theme: %s"
-msgstr ""
+msgstr "Видалити тему: %s "
 
 #: views.py:72
 #, python-format
 msgid "Edit theme: %s"
-msgstr ""
+msgstr "Редагувати тему: %s"
 
 #: views.py:93
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
-msgstr ""
+msgstr "Теми дозволяють змінювати візуальний вигляд, не вимагаючи зміни коду."
 
 #: views.py:97
 msgid "There are no themes"
-msgstr ""
+msgstr "Теми відсутні"
 
 #: views.py:122
 #, python-format
 msgid "Theme settings for user: %s"
-msgstr ""
+msgstr "Налаштування теми для користувача: %s"
 
 #: views.py:144
 #, python-format
 msgid "Edit theme settings for user: %s"
-msgstr ""
+msgstr "Змінити налаштування теми для користувача: %s"

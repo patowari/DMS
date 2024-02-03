@@ -6,7 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -650,7 +650,7 @@ msgstr "A folytatáshoz ki kell-e tölteni ezeket a mezőket vagy sem."
 
 #: models/workflow_transition_models.py:126
 msgid "Required"
-msgstr "Kívánt"
+msgstr "Kötelező"
 
 #: models/workflow_transition_models.py:130
 msgid "An optional class to change the default presentation of the field."
@@ -1005,7 +1005,7 @@ msgstr "Ehhez a dokumentumhoz nincsenek munkafolyamatok"
 #: views/workflow_instance_views.py:48
 #, python-format
 msgid "Workflows for document: %s"
-msgstr "A dokumentum munkafolyamatai: %s"
+msgstr "Munkafolyamatok ehhez a dokumentumhoz: %s"
 
 #: views/workflow_instance_views.py:76
 msgid ""
@@ -1022,7 +1022,7 @@ msgstr "Ehhez a munkafolyamat-példányhoz nincsenek részletek"
 #: views/workflow_instance_views.py:83
 #, python-format
 msgid "Detail of workflow: %(workflow)s"
-msgstr "A munkafolyamat részlete: %(workflow)s"
+msgstr "Részlet ehhez a munkafolyamathoz: %(workflow)s"
 
 #: views/workflow_instance_views.py:124
 #, python-format
@@ -1103,12 +1103,12 @@ msgstr "Ennek a munkafolyamatnak nincs állapota"
 #: views/workflow_template_state_views.py:357
 #, python-format
 msgid "States of workflow: %s"
-msgstr "A munkafolyamat állapotai: %s"
+msgstr "Ennek a munkafolyamatnak az állapotai: %s"
 
 #: views/workflow_template_state_escalation_views.py:41
 #, python-format
 msgid "Create escalation for workflow state: %s"
-msgstr "Eszkaláció létrehozása a munkafolyamat állapotához: %s"
+msgstr "Eszkaláció létrehozása ehhez a munkafolyamat állapothoz: %s"
 
 #: views/workflow_template_state_escalation_views.py:84
 #, python-format
@@ -1170,7 +1170,7 @@ msgstr "Ehhez a munkafolyamat-állapothoz nincsenek műveletek"
 #: views/workflow_template_state_views.py:196
 #, python-format
 msgid "Actions for workflow state: %s"
-msgstr "Műveletek a munkafolyamat-állapothoz: %s"
+msgstr "Műveletek ehhez a munkafolyamat-állapothoz: %s"
 
 #: views/workflow_template_state_views.py:220
 #, python-format
@@ -1180,7 +1180,7 @@ msgstr "Új munkafolyamat-állapot műveletválasztás a következőhöz: %s"
 #: views/workflow_template_state_views.py:250
 #, python-format
 msgid "Create states for workflow: %s"
-msgstr "Állapotok létrehozása a munkafolyamathoz: %s"
+msgstr "Állapotok létrehozása ehhez a munkafolyamathoz: %s"
 
 #: views/workflow_template_state_views.py:284
 #, python-format
@@ -1199,7 +1199,7 @@ msgstr "Ennek a munkafolyamatnak nincsenek állapotai"
 #: views/workflow_template_transition_views.py:53
 #, python-format
 msgid "Create transitions for workflow: %s"
-msgstr "Átvezetések létrehozása a munkafolyamathoz: %s"
+msgstr "Átvezetések létrehozása ehhez a munkafolyamathoz: %s"
 
 #: views/workflow_template_transition_views.py:94
 #, python-format
@@ -1226,12 +1226,12 @@ msgstr "Ez a munkafolyamat nem tartalmaz átvezetéseket"
 #: views/workflow_template_transition_views.py:173
 #, python-format
 msgid "Transitions of workflow: %s"
-msgstr "A munkafolyamat átvezetései %s"
+msgstr "Átvezetések ehhez a munkafolyamathoz: %s"
 
 #: views/workflow_template_transition_views.py:199
 #, python-format
 msgid "Create a field for workflow transition: %s"
-msgstr "Mező létrehozása a munkafolyamat átvezetéshez: %s"
+msgstr "Mező létrehozása ehhez a munkafolyamat átvezetéshez: %s"
 
 #: views/workflow_template_transition_views.py:234
 #, python-format
@@ -1261,13 +1261,14 @@ msgstr "Nincsenek mezők ehhez a munkafolyamat átvezetéshez"
 #: views/workflow_template_transition_views.py:319
 #, python-format
 msgid "Fields for workflow transition: %s"
-msgstr "A munkafolyamat átvezetési mezői: %s"
+msgstr "Átvezetési mezők ehhez a munkafolyamathoz: %s"
 
 #: views/workflow_template_transition_views.py:348
 #, python-format
 msgid "Error updating workflow transition trigger events; %s"
 msgstr ""
-"Hiba a munkafolyamat átvezetési eseményindító események frissítése során; %s"
+"Hiba a munkafolyamat átvezetési eseményindító eseményeinek frissítése során;"
+" %s"
 
 #: views/workflow_template_transition_views.py:355
 msgid "Workflow transition trigger events updated successfully"

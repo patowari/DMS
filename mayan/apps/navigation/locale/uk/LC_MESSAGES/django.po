@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -22,11 +23,11 @@ msgstr ""
 
 #: apps.py:9
 msgid "Navigation"
-msgstr ""
+msgstr "Навігація"
 
 #: classes.py:951
 msgid "Unnamed function"
-msgstr ""
+msgstr "Функція без назви"
 
 #: templates/navigation/actions_dropdown.html:5
 msgid "Actions"

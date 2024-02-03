@@ -6,7 +6,7 @@
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2023
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -86,7 +86,7 @@ msgstr "Frissítés"
 
 #: forms.py:52 forms.py:236 models.py:283
 msgid "Required"
-msgstr "Kívánt"
+msgstr "Kötelező"
 
 #: forms.py:84
 #, python-format
