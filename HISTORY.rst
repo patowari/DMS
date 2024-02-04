@@ -6,6 +6,7 @@
 
   - django-test-migrations from 1.1.0 to 1.3.0.
   - pypdf from 3.14.0 to 3.17.4 due to CVE-2023-46250.
+  - safety from 3.0.1 to 2.3.5.
 
 4.5.8 (2023-12-07)
 ==================
