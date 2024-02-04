@@ -2,6 +2,9 @@
 ==================
 - Minor query optimizations.
 - Changes from version 4.4.12.
+- Update dependency version:
+
+  - pypdf from 3.14.0 to 3.17.4 due to CVE-2023-46250.
 
 4.5.8 (2023-12-07)
 ==================

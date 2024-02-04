@@ -104,7 +104,7 @@ node-semver==0.8.1
 pycountry==22.3.5
 pycryptodome==3.20.0
 pyotp==2.6.0
-pypdf==3.14.0
+pypdf==3.17.4
 python-dateutil==2.8.2
 python-magic==0.4.27
 python_gnupg==0.4.8
