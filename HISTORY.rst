@@ -4,6 +4,7 @@
 - Changes from version 4.4.12.
 - Update dependency version:
 
+  - django-test-migrations from 1.1.0 to 1.3.0.
   - pypdf from 3.14.0 to 3.17.4 due to CVE-2023-46250.
 
 4.5.8 (2023-12-07)
