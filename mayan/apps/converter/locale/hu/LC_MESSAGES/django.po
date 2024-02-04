@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:13+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -725,14 +725,14 @@ msgstr ""
 #, python-format
 msgid "Delete transformation \"%(transformation)s\" for: %(content_object)s?"
 msgstr ""
-"A \"%(transformation)s” transzformáció törlése a következőhöz: "
+"A \"%(transformation)s” átalakítás törlése a következőhöz: "
 "%(content_object)s ?"
 
 #: views/transformation_views.py:184
 #, python-format
 msgid "Edit transformation \"%(transformation)s\" for: %(content_object)s"
 msgstr ""
-"A \"%(transformation)s\" transzformáció szerkesztése a következőhöz: "
+"A \"%(transformation)s\" átalakítás szerkesztése a következőhöz: "
 "%(content_object)s"
 
 #: views/transformation_views.py:248
@@ -743,11 +743,11 @@ msgstr "Nincsenek bejegyzések a \"%(layer_name)s\" réteghez"
 #: views/transformation_views.py:251
 #, python-format
 msgid "Layer \"%(layer)s\" transformations for: %(object)s"
-msgstr "\"%(layer)s\" réteg transzformáció a következőhöz: %(object)s"
+msgstr "\"%(layer)s\" réteg átalakítás a következőhöz: %(object)s"
 
 #: views/transformation_views.py:297
 msgid "Transformation created successfully."
-msgstr "A transzformáció sikeresen létrehozva."
+msgstr "Az átalakítás sikeresen létrehozva."
 
 #: views/transformation_views.py:321
 msgid "Select"
@@ -756,8 +756,7 @@ msgstr "Kiválasztás"
 #: views/transformation_views.py:323
 #, python-format
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
-msgstr ""
-"Válasszon új \"%(layer)s\" réteg transzformációt a következőhöz: %(object)s"
+msgstr "Új \"%(layer)s\" réteg átalakítás választása a következőhöz: %(object)s"
 
 #: workflow_actions.py:34
 msgid "Pages"
@@ -768,9 +767,9 @@ msgid ""
 "Pages to which the new transformations will be added. Separate by commas "
 "and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
-"Oldalak, amelyekhez az új transzformációk hozzáadódnak. Vesszővel válassza "
-"el, és/vagy használjon kötőjelet a tartományokhoz. Hagyja üresen az összes "
-"oldal kiválasztásához."
+"Oldalak, amelyekhez az új átalakítások hozzáadódnak. Vesszővel válassza el, "
+"és/vagy használjon kötőjelet a tartományokhoz. Hagyja üresen az összes oldal"
+" kiválasztásához."
 
 #: workflow_actions.py:44
 msgid "Transformation class"
@@ -778,7 +777,7 @@ msgstr "Átalakítási osztály"
 
 #: workflow_actions.py:49
 msgid "Type of transformation to add."
-msgstr "A hozzáadandó transzformáció típusa."
+msgstr "A hozzáadandó átalakítás típusa."
 
 #: workflow_actions.py:54
 msgid "Transformation arguments"
@@ -786,7 +785,7 @@ msgstr "Átalakítás argumentumai"
 
 #: workflow_actions.py:63
 msgid "Add transformation"
-msgstr "Transzformáció hozzáadása"
+msgstr "Átalakítás hozzáadása"
 
 #: workflow_actions.py:86
 msgid "Objects"

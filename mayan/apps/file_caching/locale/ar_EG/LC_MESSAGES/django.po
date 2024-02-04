@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
@@ -66,35 +66,35 @@ msgstr "الحجم الإفتراضي لملف التخزين المؤقت"
 msgid "Maximum size"
 msgstr "أكبر حجم للملف"
 
-#: model_mixins.py:54
+#: model_mixins.py:56
 msgid "Unknown"
 msgstr "غير معرف"
 
-#: model_mixins.py:64
+#: model_mixins.py:70
 msgid "Partition count"
 msgstr ""
 
-#: model_mixins.py:65
+#: model_mixins.py:71
 msgid "Total cached objects."
 msgstr ""
 
-#: model_mixins.py:70
+#: model_mixins.py:77
 msgid "Partition file count"
 msgstr ""
 
-#: model_mixins.py:71
+#: model_mixins.py:78
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:90 model_mixins.py:286
+#: model_mixins.py:104 model_mixins.py:312
 msgid "Current size"
 msgstr "الحجم الحالي"
 
-#: model_mixins.py:91
+#: model_mixins.py:105
 msgid "Current size of the cache."
 msgstr "الحجم الحالي للملف المؤقت"
 
-#: model_mixins.py:288
+#: model_mixins.py:314
 msgid "Current size of the cache partition."
 msgstr ""
 

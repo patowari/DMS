@@ -6,15 +6,15 @@
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
 # Dezső József <dejo60@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Csaba Tarjányi, 2023\n"
+"Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -416,8 +416,8 @@ msgid ""
 "Page number from which all the transformations will be cloned. Existing "
 "transformations will be lost."
 msgstr ""
-"Oldalszám, amelyről az összes transzformáció klónozásra kerül. A meglévő "
-"transzformációk elvesznek."
+"Oldalszám, amelyről az összes átalakítás klónozásra kerül. A meglévő "
+"átalakítások elvesznek."
 
 #: links/document_file_links.py:26 links/document_file_links.py:31
 #: links/document_type_links.py:28 links/document_type_links.py:46

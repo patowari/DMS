@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -69,35 +69,35 @@ msgstr "Größe, bei der der Cache beginnt, alte Einträge zu löschen."
 msgid "Maximum size"
 msgstr "Maximale Größe"
 
-#: model_mixins.py:54
+#: model_mixins.py:56
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: model_mixins.py:64
+#: model_mixins.py:70
 msgid "Partition count"
 msgstr "Anzahl Partitionen"
 
-#: model_mixins.py:65
+#: model_mixins.py:71
 msgid "Total cached objects."
 msgstr "Gesamtzahl gecachter Objekte."
 
-#: model_mixins.py:70
+#: model_mixins.py:77
 msgid "Partition file count"
 msgstr "Anzahl Dateien auf Partition"
 
-#: model_mixins.py:71
+#: model_mixins.py:78
 msgid "Total cached files."
 msgstr "Gesamtzahl gecachte Dateien."
 
-#: model_mixins.py:90 model_mixins.py:286
+#: model_mixins.py:104 model_mixins.py:312
 msgid "Current size"
 msgstr "Momentane Größe"
 
-#: model_mixins.py:91
+#: model_mixins.py:105
 msgid "Current size of the cache."
 msgstr "Aktuelle Größe des Caches."
 
-#: model_mixins.py:288
+#: model_mixins.py:314
 msgid "Current size of the cache partition."
 msgstr "Gegenwärtige Größe der Cachepartition."
 

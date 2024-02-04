@@ -7,14 +7,15 @@
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Сергій Гарашко, 2023
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Vasyl Olenchenko <olenchenko@gmail.com>, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,21 +29,23 @@ msgstr "Розсилка"
 
 #: classes.py:28
 msgid "General"
-msgstr ""
+msgstr "Загальний"
 
 #: classes.py:46
 msgid "From"
-msgstr ""
+msgstr "Від"
 
 #: classes.py:49
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
 msgstr ""
+"Адреса відправника. Деякі системи відмовляться надсилати повідомлення, якщо "
+"це значення не встановлено."
 
 #: classes.py:64
 msgid "Compatibility"
-msgstr ""
+msgstr "Сумісність"
 
 #: classes.py:83 classes.py:103
 msgid "Null backend"
@@ -184,7 +187,7 @@ msgstr "Посилання на {{ object_name }}: {{ object }}"
 
 #: mailers.py:11
 msgid "Django SMTP backend"
-msgstr ""
+msgstr "Сервер Django SMTP"
 
 #: mailers.py:20
 msgid "Host"
@@ -237,7 +240,7 @@ msgstr ""
 
 #: mailers.py:65
 msgid "Server"
-msgstr ""
+msgstr "Сервер"
 
 #: mailers.py:93
 msgid "Django file based backend"
@@ -245,11 +248,11 @@ msgstr "Django файловий бекенд"
 
 #: mailers.py:101
 msgid "File path"
-msgstr ""
+msgstr "Шлях до файлу"
 
 #: mailers.py:117
 msgid "Storage"
-msgstr ""
+msgstr "Сховище"
 
 #: model_mixins.py:172
 msgid "Test email from Mayan EDMS"
@@ -349,7 +352,7 @@ msgstr "%(email)s не є дійсною адресою електронної �
 
 #: views/base.py:67
 msgid "Object"
-msgstr ""
+msgstr "Об'єкт"
 
 #: views/document_file_views.py:21
 #, python-format
@@ -531,19 +534,20 @@ msgstr "Надіслати об'єкт електронною поштою"
 #: workflow_action_mixins.py:101
 msgid "Mailing profile to use when sending the email."
 msgstr ""
+"Профіль розсилки для використання під час надсилання електронної пошти."
 
 #: workflow_action_mixins.py:125
 msgid "Parties"
-msgstr ""
+msgstr "Вечірки"
 
 #: workflow_action_mixins.py:129
 msgid "Content"
-msgstr ""
+msgstr "Зміст"
 
 #: workflow_actions.py:10
 msgid "Send document via email"
-msgstr ""
+msgstr "Надіслати документ електронною поштою"
 
 #: workflow_actions.py:25
 msgid "Attach the exported document version to the email."
-msgstr ""
+msgstr "Додати експортовану версію документа до електронного листа."

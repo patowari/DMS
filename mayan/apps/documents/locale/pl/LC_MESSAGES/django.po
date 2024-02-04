@@ -12,15 +12,15 @@
 # kicior kicior <kiciorek+github@gmail.com>, 2023
 # Marcin Lozynski <mlozynski@wp.pl>, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
-# tomkolp, 2023
+# tomkolp, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"Last-Translator: tomkolp, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -559,7 +559,7 @@ msgstr "Generowanie nazwy pliku"
 
 #: links/document_type_links.py:75
 msgid "Retention policies"
-msgstr ""
+msgstr "Zasady przechowywania"
 
 #: links/document_version_links.py:28
 msgid "Make active"
@@ -694,7 +694,7 @@ msgstr "Etykieta"
 
 #: models/document_file_model_mixins.py:457
 msgid "Controls what happens when a new document file is uploaded."
-msgstr ""
+msgstr "Kontroluje, co się stanie po przesłaniu nowego pliku dokumentu."
 
 #: models/document_file_models.py:61
 msgid "The server date and time when the document file was processed."
@@ -759,7 +759,7 @@ msgstr "Niepełny dokument, id: %d"
 
 #: models/document_models.py:47
 msgid "Latest document file"
-msgstr ""
+msgstr "Najnowszy plik dokumentu"
 
 #: models/document_models.py:52
 msgid ""
@@ -833,7 +833,7 @@ msgstr "Czy niepełny?"
 
 #: models/document_models.py:105
 msgid "Active document version"
-msgstr ""
+msgstr "Aktywna wersja dokumentu"
 
 #: models/document_type_models.py:40
 msgid "A short text identifying the document type."
@@ -892,10 +892,12 @@ msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
 msgstr ""
+"Usuń dokumenty niezawierające żadnych plików po upływie skonfigurowanego "
+"okresu ważności."
 
 #: models/document_type_models.py:85
 msgid "Document stub pruning"
-msgstr ""
+msgstr "Czyszczenie niekompletnych dokumentów"
 
 #: models/document_type_models.py:89
 msgid ""
@@ -903,10 +905,13 @@ msgid ""
 " deleted, if pruning is enabled. This an optimization setting and should "
 "only be changed for specific circumstances."
 msgstr ""
+"Czas (w sekundach), po którym fragment dokumentu zostanie uznany za nieważny"
+" i usunięty, jeśli włączone jest czyszczenie. Jest to ustawienie "
+"optymalizacyjne i należy je zmieniać tylko w określonych okolicznościach."
 
 #: models/document_type_models.py:93
 msgid "Document stub expiration interval"
-msgstr ""
+msgstr "Interwał ważności niekompletnego dokumentu"
 
 #: models/document_type_models.py:101
 msgid "Documents types"

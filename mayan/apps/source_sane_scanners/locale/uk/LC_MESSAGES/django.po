@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:22+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,25 +22,27 @@ msgstr ""
 
 #: apps.py:11
 msgid "SANE scanners"
-msgstr ""
+msgstr "SANE сканери"
 
 #: dependencies.py:10
 msgid ""
 "Utility provided by the SANE package. Used to control the scanner and "
 "obtained the scanned document image."
 msgstr ""
+"Утиліта, надана пакетом SANE. Використовується для керування сканером та "
+"отримання зображення сканованого документа."
 
 #: source_backends.py:29
 msgid "SANE Scanner"
-msgstr ""
+msgstr "SANE Сканер"
 
 #: source_backends.py:48
 msgid "Device name as returned by the SANE backend."
-msgstr ""
+msgstr "Назва пристрою, яку повертає серверна частина SANE."
 
 #: source_backends.py:51
 msgid "Device name"
-msgstr ""
+msgstr "Ім'я пристрою"
 
 #: source_backends.py:57
 msgid ""
@@ -44,19 +50,22 @@ msgid ""
 "will change depending on the device. Execute `scanimage --help --device-"
 "name=DEVICE` for the list of supported arguments."
 msgstr ""
+"Аргументи у форматі YAML для передачі команді `scanimage`. Аргументи "
+"змінюватимуться залежно від пристрою. Виконайте `scanimage --help --device-"
+"name=DEVICE`, щоб отримати список підтримуваних аргументів."
 
 #: source_backends.py:62
 msgid "Arguments"
-msgstr ""
+msgstr "Аргументи"
 
 #: source_backends.py:76
 msgid "SANE client"
-msgstr ""
+msgstr "SANE клієнт"
 
 #: source_backends.py:134
 msgid "Document properties"
-msgstr ""
+msgstr "Властивості документа"
 
 #: source_backends.py:135
 msgid "Scan"
-msgstr ""
+msgstr "Сканувати"

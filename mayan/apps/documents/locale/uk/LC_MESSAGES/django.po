@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Сергій Гарашко, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -432,7 +432,7 @@ msgstr "Редагувати"
 
 #: links/document_file_links.py:40 links/document_file_links.py:47
 msgid "Introspect"
-msgstr ""
+msgstr "Самоаналіз"
 
 #: links/document_file_links.py:54 links/document_file_links.py:76
 msgid "Files"
@@ -553,7 +553,7 @@ msgstr "Генерація імені файлу"
 
 #: links/document_type_links.py:75
 msgid "Retention policies"
-msgstr ""
+msgstr "Політики збереження"
 
 #: links/document_version_links.py:28
 msgid "Make active"
@@ -689,6 +689,7 @@ msgstr "Мітка"
 #: models/document_file_model_mixins.py:457
 msgid "Controls what happens when a new document file is uploaded."
 msgstr ""
+"Керує тим, що відбувається під час завантаження нового файлу документа."
 
 #: models/document_file_models.py:61
 msgid "The server date and time when the document file was processed."
@@ -752,7 +753,7 @@ msgstr "Документ заглушка, id: %d"
 
 #: models/document_models.py:47
 msgid "Latest document file"
-msgstr ""
+msgstr "Останній файл документа"
 
 #: models/document_models.py:52
 msgid ""
@@ -826,7 +827,7 @@ msgstr "Заглушка ?"
 
 #: models/document_models.py:105
 msgid "Active document version"
-msgstr ""
+msgstr "Активна версія документа"
 
 #: models/document_type_models.py:40
 msgid "A short text identifying the document type."
@@ -857,38 +858,42 @@ msgid ""
 "Amount of time after which documents of this type will be moved to the "
 "trash."
 msgstr ""
+"Період часу, після якого документи цього типу буде переміщено до кошика."
 
 #: models/document_type_models.py:64
 msgid "Trash time period"
-msgstr ""
+msgstr "Період часу знищення"
 
 #: models/document_type_models.py:68
 msgid "Trash time unit"
-msgstr ""
+msgstr "Період знищення"
 
 #: models/document_type_models.py:72
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
 msgstr ""
+"Проміжок часу, після якого документи цього типу в кошику буде видалено."
 
 #: models/document_type_models.py:74
 msgid "Delete time period"
-msgstr ""
+msgstr "Період часу видалення"
 
 #: models/document_type_models.py:79
 msgid "Delete time unit"
-msgstr ""
+msgstr "Одиниця часу видалення"
 
 #: models/document_type_models.py:83
 msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
 msgstr ""
+"Видалити документи, які не містять жодних файлів, після закінчення "
+"налаштованого інтервалу."
 
 #: models/document_type_models.py:85
 msgid "Document stub pruning"
-msgstr ""
+msgstr "Обрізка заглушки документа"
 
 #: models/document_type_models.py:89
 msgid ""
@@ -896,10 +901,13 @@ msgid ""
 " deleted, if pruning is enabled. This an optimization setting and should "
 "only be changed for specific circumstances."
 msgstr ""
+"Час (у секундах), після якого заглушка документа буде вважатися недійсною та"
+" видаленою, якщо ввімкнено обрізку. Це налаштування оптимізації і повинно "
+"змінюватися лише для конкретних обставин."
 
 #: models/document_type_models.py:93
 msgid "Document stub expiration interval"
-msgstr ""
+msgstr "Інтервал закінчення заповнення документа"
 
 #: models/document_type_models.py:101
 msgid "Documents types"
@@ -1089,15 +1097,15 @@ msgstr "Перемістити документи до кошика"
 
 #: queues.py:14
 msgid "Documents fast"
-msgstr ""
+msgstr "Документи fast"
 
 #: queues.py:17
 msgid "Documents file"
-msgstr ""
+msgstr "Файл документів"
 
 #: queues.py:20
 msgid "Documents file slow"
-msgstr ""
+msgstr "Файл документів slow"
 
 #: queues.py:24
 msgid "Documents periodic"
@@ -1105,15 +1113,15 @@ msgstr "Документи періодичні"
 
 #: queues.py:28
 msgid "Documents trash"
-msgstr ""
+msgstr "Кошик для документів"
 
 #: queues.py:31
 msgid "Documents version"
-msgstr ""
+msgstr "Версія документів"
 
 #: queues.py:36
 msgid "Create new document file"
-msgstr ""
+msgstr "Створити новий файл документа"
 
 #: queues.py:40
 msgid "Upload new document file"
@@ -1125,63 +1133,63 @@ msgstr "Завантажити новий документ"
 
 #: queues.py:49
 msgid "Calculate and update document file checksum"
-msgstr ""
+msgstr "Обчислити та оновити контрольну суму файлу документа"
 
 #: queues.py:53
 msgid "Calculate and update document file MIME type"
-msgstr ""
+msgstr "Обчислити та оновити тип файлу документа MIME"
 
 #: queues.py:57
 msgid "Update document file page count"
-msgstr ""
+msgstr "Оновити кількість сторінок файлу документа"
 
 #: queues.py:61
 msgid "Update document file size"
-msgstr ""
+msgstr "Оновити розмір файлу документа"
 
 #: queues.py:65
 msgid "Create a new version after the file is processed"
-msgstr ""
+msgstr "Після обробки файлу створити нову версію"
 
 #: queues.py:70
 msgid "Delete a document file"
-msgstr ""
+msgstr "Видалити файл документа"
 
 #: queues.py:75
 msgid "Check document type trash periods"
-msgstr ""
+msgstr "Періоди перевірки типів документів у кошику"
 
 #: queues.py:81
 msgid "Delete document stubs"
-msgstr ""
+msgstr "Видалити документи заглушки"
 
 #: queues.py:87
 msgid "Check document type delete periods"
-msgstr ""
+msgstr "Перевірити періоди видалення типу документа"
 
 #: queues.py:96
 msgid "Empty the trash can"
-msgstr ""
+msgstr "Очистити кошик"
 
 #: queues.py:100
 msgid "Delete a document"
-msgstr ""
+msgstr "Видалити документ"
 
 #: queues.py:105
 msgid "Append all document file pages to a document version"
-msgstr ""
+msgstr "Додайте всі сторінки файлу документа до версії документа"
 
 #: queues.py:109
 msgid "Reset the page list of a document version"
-msgstr ""
+msgstr "Скинути список сторінок версії документа"
 
 #: queues.py:113
 msgid "Export a document version"
-msgstr ""
+msgstr "Експорт версії документа"
 
 #: queues.py:117
 msgid "Delete a document version"
-msgstr ""
+msgstr "Видалити версію документа"
 
 #: search.py:30 search.py:61 search.py:92 search.py:129 search.py:156
 msgid "Document type label"
@@ -1227,7 +1235,7 @@ msgstr "URL"
 
 #: serializers/document_file_serializers.py:69
 msgid "Action name"
-msgstr ""
+msgstr "Назва дії"
 
 #: serializers/document_file_serializers.py:72
 #: serializers/document_version_serializers.py:104
@@ -1284,7 +1292,7 @@ msgstr "URL списку файлів"
 
 #: serializers/document_serializers.py:46
 msgid "Version active"
-msgstr "Активна версія"
+msgstr "Версія активна"
 
 #: serializers/document_serializers.py:49
 msgid "Version list URL"
@@ -1571,8 +1579,10 @@ msgid ""
 " that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
-"%(count)d файлів документа поставлено в чергу для перерахунку кількості "
-"сторінок."
+"Це може означати, що файл документа має формат, який не підтримується, що "
+"він пошкоджений або що процес завантаження був перерваний. Використовуйте "
+"посилання на інтроспекцію файлу документа, щоб спробувати знову визначити "
+"кількість сторінок."
 
 #: views/document_file_page_views.py:60
 msgid "No document file pages available"
@@ -1607,22 +1617,22 @@ msgstr "Помилка видалення файлу документа \"%(inst
 #: views/document_file_views.py:57
 #, python-format
 msgid "Document file \"%(object)s\" deletion queued successfully."
-msgstr ""
+msgstr "Видалення версії документа \"%(object)s\" успішно поставлено в чергу."
 
 #: views/document_file_views.py:60
 #, python-format
 msgid "%(count)d document file deletion queued successfully."
-msgstr ""
+msgstr "%(count)d документів успішно видалено з черги."
 
 #: views/document_file_views.py:63
 #, python-format
 msgid "%(count)d document files deletions queued successfully."
-msgstr ""
+msgstr "%(count)d документів успішно видалено з черги."
 
 #: views/document_file_views.py:65
 #, python-format
 msgid "Delete document file: %(object)s."
-msgstr ""
+msgstr "Видалити файл документа: %(object)s ."
 
 #: views/document_file_views.py:66
 #, python-format
@@ -1640,8 +1650,9 @@ msgid ""
 "pages linked to them will be deleted too. The process will be performed in "
 "the background."
 msgstr ""
-"Усі сторінки файлів документа з цього файлу документа та сторінки версій "
-"документа, пов'язані з ними, також будуть видалені."
+"Усі сторінки файлів документів з цього файлу документа та сторінки версій "
+"документа, пов'язані з ними, також будуть видалені. Процес буде виконуватися"
+" в фоновому режимі."
 
 #: views/document_file_views.py:113
 #, python-format
@@ -1651,25 +1662,25 @@ msgstr "Редагувати файл документа: %s"
 #: views/document_file_views.py:134
 #, python-format
 msgid "%(count)d document file queued for introspection."
-msgstr ""
+msgstr "%(count)d документів файлу поставлено в чергу для перевірки."
 
 #: views/document_file_views.py:137
 #, python-format
 msgid "%(count)d document files queued for introspection."
-msgstr ""
+msgstr "%(count)d файлів документів поставлено в чергу для перевірки."
 
 #: views/document_file_views.py:146
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Перевірити вибраний файл документа?"
+msgstr[1] "Перевірити вибрані файлі документів?"
+msgstr[2] "Перевірити вибрані файлі документів?"
+msgstr[3] "Перевірити вибрані файлі документів?"
 
 #: views/document_file_views.py:157
 #, python-format
 msgid "Introspect the document file: %s?"
-msgstr ""
+msgstr "Перевірити файл документа: %s?"
 
 #: views/document_file_views.py:163
 msgid ""
@@ -1677,6 +1688,9 @@ msgid ""
 "and its related document version pages re-created. All transformations will "
 "be lost."
 msgstr ""
+"Файл документа буде повторно перевірено на предмет розміру файлу, кількості "
+"сторінок, контрольної суми, а також буде повторно створено відповідні "
+"сторінки версії документа. Усі перетворення будуть втрачені."
 
 #: views/document_file_views.py:192
 msgid ""
@@ -1759,20 +1773,20 @@ msgstr "Перетворення клонування сторінок файл�
 
 #: views/document_type_retention_policy_views.py:23
 msgid "Trashing"
-msgstr ""
+msgstr "Викидання"
 
 #: views/document_type_retention_policy_views.py:27
 msgid "Deletion"
-msgstr ""
+msgstr "Видалення"
 
 #: views/document_type_retention_policy_views.py:31
 msgid "Stub pruning"
-msgstr ""
+msgstr "Видалення заглушки"
 
 #: views/document_type_retention_policy_views.py:51
 #, python-format
 msgid "Retention policies for document type: %s"
-msgstr ""
+msgstr "Збереження політик для типу документа: %s"
 
 #: views/document_type_views.py:54
 #, python-format
@@ -1947,7 +1961,7 @@ msgstr "Видалити %(count)d версії документа."
 
 #: views/document_version_views.py:123
 msgid "The process will be performed in the background."
-msgstr ""
+msgstr "Процес виконуватиметься у фоновому режимі."
 
 #: views/document_version_views.py:162
 #, python-format

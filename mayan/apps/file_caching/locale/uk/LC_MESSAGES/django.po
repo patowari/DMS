@@ -10,8 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,11 +26,11 @@ msgstr "Кешування файлів"
 
 #: dashboard_widgets.py:16
 msgid "Total cache allocated"
-msgstr ""
+msgstr "Загальна кількість виділеного кешу"
 
 #: dashboard_widgets.py:45
 msgid "Total cache used"
-msgstr ""
+msgstr "Загальна кількість використаного кешу"
 
 #: events.py:10
 msgid "Cache created"
@@ -63,35 +64,35 @@ msgstr "Розмір, при якому кеш почне видаляти ст�
 msgid "Maximum size"
 msgstr "Максимальний розмір"
 
-#: model_mixins.py:54
+#: model_mixins.py:56
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: model_mixins.py:64
+#: model_mixins.py:70
 msgid "Partition count"
 msgstr "Кількість розділів"
 
-#: model_mixins.py:65
+#: model_mixins.py:71
 msgid "Total cached objects."
 msgstr "Усього кешованих об’єктів."
 
-#: model_mixins.py:70
+#: model_mixins.py:77
 msgid "Partition file count"
 msgstr "Кількість файлів розділу"
 
-#: model_mixins.py:71
+#: model_mixins.py:78
 msgid "Total cached files."
 msgstr "Усього кешованих файлів."
 
-#: model_mixins.py:90 model_mixins.py:286
+#: model_mixins.py:104 model_mixins.py:312
 msgid "Current size"
 msgstr "Поточний розмір"
 
-#: model_mixins.py:91
+#: model_mixins.py:105
 msgid "Current size of the cache."
 msgstr "Поточний розмір кешу."
 
-#: model_mixins.py:288
+#: model_mixins.py:314
 msgid "Current size of the cache partition."
 msgstr "Поточний розмір розділу кешу."
 
@@ -165,7 +166,7 @@ msgstr "Переглянути кеш файлу"
 
 #: queues.py:10
 msgid "File caching slow"
-msgstr ""
+msgstr "Повільне кешування файлів"
 
 #: queues.py:15
 msgid "Purge a file cache partition"

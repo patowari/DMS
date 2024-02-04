@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -65,35 +65,35 @@ msgstr "Méret, amelynél a gyorsítótár elkezdi törölni a régi bejegyzése
 msgid "Maximum size"
 msgstr "Maximális méret"
 
-#: model_mixins.py:54
+#: model_mixins.py:56
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: model_mixins.py:64
+#: model_mixins.py:70
 msgid "Partition count"
 msgstr "Partíciók száma"
 
-#: model_mixins.py:65
+#: model_mixins.py:71
 msgid "Total cached objects."
 msgstr "Összes gyorsítótárazott objektum."
 
-#: model_mixins.py:70
+#: model_mixins.py:77
 msgid "Partition file count"
 msgstr "Partíció fájlok száma"
 
-#: model_mixins.py:71
+#: model_mixins.py:78
 msgid "Total cached files."
 msgstr "Összes gyorsítótárazott fájl."
 
-#: model_mixins.py:90 model_mixins.py:286
+#: model_mixins.py:104 model_mixins.py:312
 msgid "Current size"
 msgstr "Jelenlegi méret"
 
-#: model_mixins.py:91
+#: model_mixins.py:105
 msgid "Current size of the cache."
 msgstr "A gyorsítótár jelenlegi mérete."
 
-#: model_mixins.py:288
+#: model_mixins.py:314
 msgid "Current size of the cache partition."
 msgstr "A gyorsítótár-partíció jelenlegi mérete."
 

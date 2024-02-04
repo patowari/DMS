@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:14+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -194,15 +194,15 @@ msgstr "Переглянути події об'єкту"
 
 #: queues.py:7
 msgid "Events fast"
-msgstr ""
+msgstr "Швидкі події"
 
 #: queues.py:10
 msgid "Events slow"
-msgstr ""
+msgstr "Повільні події"
 
 #: queues.py:16
 msgid "Commit an event"
-msgstr ""
+msgstr "Зафіксувати подію"
 
 #: queues.py:21
 msgid "Clear event querysets"
@@ -241,6 +241,8 @@ msgid ""
 "Disables asynchronous events mode. All events will be committed in the same "
 "process that triggers them. This was the behavior prior to version 4.5."
 msgstr ""
+"Вимикає режим асинхронних подій. Всі події будуть зафіксовані у тому ж "
+"процесі, який їх викликав. Так було до версії 4.5."
 
 #: views/clear_views.py:27
 msgid ""

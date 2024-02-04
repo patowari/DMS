@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:13+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,28 +22,28 @@ msgstr ""
 
 #: apps.py:10
 msgid "Backends"
-msgstr ""
+msgstr "Сервер"
 
 #: model_mixins.py:22
 msgid "The dotted Python path to the backend class."
-msgstr ""
+msgstr "Позначений пунктиром шлях Python до базового класу."
 
 #: model_mixins.py:23
 msgid "Backend path"
-msgstr ""
+msgstr "Backend шлях"
 
 #: model_mixins.py:27
 msgid "JSON encoded data for the backend class."
-msgstr ""
+msgstr "Дані в кодуванні JSON для backend класу."
 
 #: model_mixins.py:28
 msgid "Backend data"
-msgstr ""
+msgstr "Серверні (Backend) дані"
 
 #: model_mixins.py:73
 msgid "Backend"
-msgstr ""
+msgstr "Backend"
 
 #: model_mixins.py:75
 msgid "The backend class for this entry."
-msgstr ""
+msgstr "Базовий клас \"backend\" для цього запису."

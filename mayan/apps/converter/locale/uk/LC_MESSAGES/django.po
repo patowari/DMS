@@ -7,14 +7,15 @@
 # Сергій Гарашко, 2023
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2023
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:13+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Vasyl Olenchenko <olenchenko@gmail.com>, 2023\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +40,7 @@ msgstr ""
 #: backends/python.py:194 backends/python.py:211
 #, python-format
 msgid "Exception determining PDF page count; %s"
-msgstr ""
+msgstr "Виникла помилка при визначенні кількості сторінок PDF; %s"
 
 #: classes.py:173
 msgid "LibreOffice not installed or not found."
@@ -266,7 +267,7 @@ msgstr "Створити зображення об'єкту."
 
 #: serializers.py:13
 msgid "Image path"
-msgstr ""
+msgstr "Шлях до зображення"
 
 #: serializers.py:16 serializers.py:32
 msgid "Image URL"
@@ -274,7 +275,7 @@ msgstr "URL зображення"
 
 #: serializers.py:21
 msgid "Template name"
-msgstr ""
+msgstr "Назва шаблону"
 
 #: serializers.py:24 serializers.py:39
 msgid "URL"
@@ -789,8 +790,8 @@ msgstr "Аргументи перетворення"
 
 #: workflow_actions.py:63
 msgid "Add transformation"
-msgstr ""
+msgstr "Додати перетворення"
 
 #: workflow_actions.py:86
 msgid "Objects"
-msgstr ""
+msgstr "Об'єкти"

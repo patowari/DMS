@@ -10,8 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 04:21+0000\n"
+"POT-Creation-Date: 2024-02-03 21:13+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +54,7 @@ msgstr "Файл документа"
 
 #: forms.py:27
 msgid "Include"
-msgstr "Включити"
+msgstr "Включати"
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -69,8 +70,8 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
-"Документи були стиснуті і доступні для завантаження за посиланням: "
-"%(download_url)s або з області завантажень (%(download_list_url)s)."
+"Документи були стиснуті і доступні для завантаження за посиланням: {{ "
+"download_url }} або з області завантажень ({{ download_list_url }})."
 
 #: literals.py:10
 msgid "Document files ready for download."
@@ -89,12 +90,16 @@ msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
 msgstr ""
+"Шаблон для тексту повідомлення про завантаження документу. Може містити "
+"HTML. Доступні змінні: {}"
 
 #: settings.py:27
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
 msgstr ""
+"Шаблон для заголовка повідомлення про завантаження документа. Не може "
+"містити HTML. Доступні змінні: {}"
 
 #: views.py:24
 #, python-format
