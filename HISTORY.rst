@@ -11,6 +11,13 @@
 - Don't raise an error if a form view has no form defined. This can be the
   case for dynamic forms based on ACL where the current user has no access
   for any of the fields.
+- Complete the changes started in version 4.5 to normalize how the
+  project/installation title and URL are calculated. The setting
+  ``COMMON_PROJECT_URL`` is now removed as its intended purpose is now
+  performed by the settings ``ORGANIZATIONS_INSTALLATION_URL`` and
+  ``ORGANIZATIONS_URL_BASE_PATH``. This change also fixes the title of the
+  REST API documentation showing the text 'None' when the
+  ``COMMON_PROJECT_TITLE`` setting was left to its default value.
 
 4.5.8 (2023-12-07)
 ==================

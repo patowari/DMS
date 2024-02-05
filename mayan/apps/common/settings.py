@@ -8,8 +8,7 @@ from .literals import (
     DEFAULT_COMMON_DISABLE_LOCAL_STORAGE, DEFAULT_COMMON_DISABLED_APPS,
     DEFAULT_COMMON_EXTRA_APPS, DEFAULT_COMMON_EXTRA_APPS_PRE,
     DEFAULT_COMMON_HOME_VIEW, DEFAULT_COMMON_HOME_VIEW_DASHBOARD_NAME,
-    DEFAULT_COMMON_PROJECT_TITLE,
-    DEFAULT_COMMON_PROJECT_URL
+    DEFAULT_COMMON_PROJECT_TITLE
 )
 
 namespace = SettingNamespace(
@@ -93,8 +92,4 @@ setting_home_view_dashboard = namespace.add_setting(
 setting_project_title = namespace.add_setting(
     default=DEFAULT_COMMON_PROJECT_TITLE, global_name='COMMON_PROJECT_TITLE',
     help_text=_('Sets the project\'s name.')
-)
-setting_project_url = namespace.add_setting(
-    default=DEFAULT_COMMON_PROJECT_URL, global_name='COMMON_PROJECT_URL',
-    help_text=_('URL of the project\'s homepage.')
 )
