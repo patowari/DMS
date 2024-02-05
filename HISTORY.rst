@@ -8,6 +8,10 @@
   - pypdf from 3.14.0 to 3.17.4 due to CVE-2023-46250.
   - safety from 3.0.1 to 2.3.5.
 
+- Don't raise an error if a form view has no form defined. This can be the
+  case for dynamic forms based on ACL where the current user has no access
+  for any of the fields.
+
 4.5.8 (2023-12-07)
 ==================
 - Code style fixes.

@@ -78,10 +78,11 @@ def appearance_get_choice_value(field):
 
 
 @register.filter
-def appearance_get_form_media_js(form):
-    return [
-        form.media.absolute_path(path) for path in form.media._js
-    ]
+def appearance_get_form_media_js(form=None):
+    if form:
+        return [
+            form.media.absolute_path(path) for path in form.media._js
+        ]
 
 
 @register.simple_tag
