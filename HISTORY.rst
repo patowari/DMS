@@ -1,4 +1,4 @@
-4.5.9 (XXXX-XX-XX)
+4.5.9 (2024-02-05)
 ==================
 - Minor query optimizations.
 - Changes from version 4.4.12.
