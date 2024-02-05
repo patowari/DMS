@@ -18,6 +18,15 @@
   ``ORGANIZATIONS_URL_BASE_PATH``. This change also fixes the title of the
   REST API documentation showing the text 'None' when the
   ``COMMON_PROJECT_TITLE`` setting was left to its default value.
+- Update Docker image tags:
+
+  - debian from 12.2-slim to 12.4-slim.
+  - elastic from 7.17.9 to 7.17.17.
+  - keycloak from 20.0.1 to 20.0.5-0.
+  - postgresql from 13.11-alpine to 13.13-alpine.
+  - python from 3.11.4-slim to 3.11.7-slim.
+  - rabbitmq from 3.12.2-alpine to 3.12.12-alpine.
+  - redis from 7.0.12-alpine to 7.0.15-alpine.
 
 4.5.8 (2023-12-07)
 ==================
