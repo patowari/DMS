@@ -82,7 +82,7 @@ Some dependencies were removed:
 Docker
 ^^^^^^
 
-Docker Compose is now the prefered method of installation. The installation
+Docker Compose is now the preferred method of installation. The installation
 documentation was updated to reflect this. A Docker Compose files is
 provided along with new instructions. Data in Docker containers using the
 existing methods is safe and will be read when reinstalling using the Docker
@@ -97,7 +97,7 @@ File caching
 
 The maximum size of the file caches was increased. The file cache model now
 uses a BigIntegerField instance for the size and supports up to
-9223372036854775807 bytes or 8,192 PetaBytes per cache entry.
+9223372036854775807 bytes or 8,192 Petabytes per cache entry.
 
 A column showing the percentage of usage of each cache entry was added.
 
@@ -174,7 +174,7 @@ allows compressing files transparently regardless of the final type storage
 Similar to the compression stage, an encryption stage was added. This
 encryption stage uses AES and can transparently encrypt any storage stream (
 document files, preview images, cached files). With this encryption stage
-Mayan EDMS can now provide ecnryption-at-a-rest regardless of the final
+Mayan EDMS can now provide encryption-at-a-rest regardless of the final
 storage medium.
 
 
@@ -195,11 +195,11 @@ User interface
 ^^^^^^^^^^^^^^
 
 Support was added to switch a view from the list mode to item mode and
-viceversa. A new icon is displayed in the list toolbal. Almost all views
+vice versa. A new icon is displayed in the list toolbar. Almost all views
 support this feature.
 
 The icons of several app were improve using icon composition for a more
-intuitive visual languge. Some of the apps that received these icon updates
+intuitive visual language. Some of the apps that received these icon updates
 were the OCR, file metadata, and document parsing apps.
 
 The login view will now detect and stop redirect loops.
@@ -240,10 +240,10 @@ for integrators if using direct URL requests instead of the API.
 
 The document document type and document models where updated to avoid a
 double save when creating a new document. This results in a small optimization
-that is very benefitial when doing massive imports.
+that is very beneficial when doing massive imports.
 
 Several classes were updated to detect misconfiguration and provide
-explantions to help integrator pinpoint the source.
+explanations to help integrator pinpoint the source.
 
 The SourceColumn class will now detect and halt using non field attributes
 as sortable columns.

@@ -15,7 +15,7 @@ The way the history events for a document are presented has been improved and
 it is now more useful as it provides filtering by event type.  To improve
 the diagnosis of installation of runtime error a simple view showing the
 number of internal interval jobs being used by Mayan EDMS as well as a
-new app which shows a detail of the current installation enviroment were added.
+new app which shows a detail of the current installation environment were added.
 
 
 Changes

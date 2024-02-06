@@ -33,7 +33,7 @@ These commands are:
 
 - ``authentication_otp_disable`` disable OTP authentication for a user
 - ``authentication_otp_initialize`` initialize the OTP state data for
-  all users. This command is for debuging and maintenance in case the
+  all users. This command is for debugging and maintenance in case the
   database migration does not correctly initialize the OTP state data
   for existing users.
 - ``authentication_otp_status`` display the OTP status of a user
@@ -145,7 +145,7 @@ added, enable as workflow triggers and for subscription.
 Metadata
 ^^^^^^^^
 
-A regular expression metadata validator and parser were addeed. These
+A regular expression metadata validator and parser were added. These
 offer unlimited verification of user input and transformation of user input.
 
 Support for passing arguments to the metadata validators and parsers

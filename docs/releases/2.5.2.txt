@@ -13,7 +13,7 @@ Previously the way document creation code was enclosed in a single database
 transactions. This cause the duplicate scan at upload code to received a
 document reference to uncommitted database data. The single database
 transaction was split into smaller units to make sure the duplicate scan
-recevies saved and committed data.
+receives saved and committed data.
 
 
 Removals

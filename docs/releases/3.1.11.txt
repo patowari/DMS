@@ -23,8 +23,8 @@ Limited tests suggest 65535 to be a good alternative.
 Tag wizard step
 ^^^^^^^^^^^^^^^
 
-The tag wizard step was fixed and will now allow attaching multple tags to a
-new document.
+The tag wizard step was fixed and will now allow attaching multiple tags to
+a new document.
 
 
 Permissions

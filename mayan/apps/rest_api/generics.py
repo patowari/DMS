@@ -59,7 +59,7 @@ class ListAPIView(
     )
     # permission_classes is required for the EventListAPIView
     # when Actions objects support ACLs then this can be removed
-    # as was intented.
+    # as was intended.
     permission_classes = (MayanPermission,)
 
 

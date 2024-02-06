@@ -11,7 +11,7 @@
 - Fix new mailer creation view. GitLab issue #431.
   Thanks to Robert Schöftner (@robert.schoeftner) for the
   report and the solution.
-- Consolidate intial document created event and the first
+- Consolidate initial document created event and the first
   document properties edited events. Preserve the user that
   initially creates the document. GitLab issue #433. Thanks
   to Jesaja Everling (@jeverling) for the report.
@@ -101,11 +101,12 @@
 ==================
 - Fix deprecation warning to prepare upgrade to Django 1.11 and 2.0.
 - Fix document page zoom.
-- Add support to run tests against a MySQL, Postgres or Oracle container.
+- Add support to run tests against a MySQL, PostgreSQL or Oracle container.
 - Improve tag widget customization by moving the markup to its own template.
 - Fix document page widget appearance in the document page list view.
 - Make document version order deterministic.
-- Allow total page number instrospection of encrypted PDF with non ASCII user properties. GitLab issue #411.
+- Allow total page number introspection of encrypted PDF with non ASCII user
+  properties. GitLab issue #411.
 - Oracle database compatibility update in the cabinets app. GitHub #258.
 
 2.6.1 (2017-07-18)
@@ -156,7 +157,7 @@
 - Fix SANE source resolution field.
 - About and Profile menu reorganization.
 - PDF compatibility improvements.
-- Office document coversion improvements.
+- Office document conversion improvements.
 - New metadata type setup UI.
 - Duplicated document scan support.
 - "Remember me" login support.
@@ -165,10 +166,10 @@
 - Translation improvements.
 - Image loading improvements.
 - Lower JavaScript memory utilization.
-- HTML reponsive layout improvements.
+- HTML responsive layout improvements.
 - Make document deletion a background task.
 - Unicode handling improvements.
-- Python3 compatilibyt improvements.
+- Python3 compatibility improvements.
 - New screen messages using Toastr.
 
 2.4 (2017-06-23)
@@ -232,10 +233,10 @@
 - Implemented document workflows transition ACLs. GitLab issue #321.
 - Add document comments API endpoints. GitHub issue #249.
 - Add support for overriding the Celery class.
-- Changed the document upload view in source app to not use the HTTP referer
+- Changed the document upload view in source app to not use the HTTP referrer
   URL blindly, but instead recompose the URL using known view name. Needed
   when integrating Mayan EDMS into other app via using iframes.
-- Addes size field to the document version serializer.
+- Added size field to the document version serializer.
 - Removed the serializer from the deleted document restore API endpoint.
 - Added support for adding or editing document types to smart links via the
   API.
@@ -257,10 +258,10 @@
 - The version of django-mptt is preserved in case mayan-cabinets is installed.
 - Add Django GPG API endpoints for singing keys.
 - Add API endpoints for the document states (workflows) app.
-- Add API endpoints for the messsage of the day (MOTD) app.
+- Add API endpoints for the message of the day (MOTD) app.
 - Add Smart link API endpoints.
 - Add writable versions of the Document and Document Type serializers (GitLab issues #348 and #349).
-- Close GitLab issue #310 "Metadata's lookup with chinese messages when new document"
+- Close GitLab issue #310 "Metadata's lookup with Chinese messages when new document"
 
 2.1.7 (2017-02-01)
 ==================

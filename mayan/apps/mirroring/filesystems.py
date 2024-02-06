@@ -48,7 +48,7 @@ class MirrorFilesystem(LoggingMixIn, Operations):
         queryset, source_field_name, destination_field_name='clean_value'
     ):
         # Remove newline carriage returns and the first and last space
-        # to make multiline indexes valid directoy names
+        # to make multiline indexes valid directory names
         return queryset.annotate(
             **{
                 destination_field_name: Trim(
@@ -96,7 +96,7 @@ class MirrorFilesystem(LoggingMixIn, Operations):
         ).filter(repeated_count__gt=1).values(source_field_name)
 
         # This is a conditional expression that is executed only for
-        # duplicates. The primary key is appended inside a parethesis to
+        # duplicates. The primary key is appended inside a parenthesis to
         # the source field.
         return queryset.annotate(
             **{

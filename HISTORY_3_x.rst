@@ -222,7 +222,7 @@
 3.5.2 (2020-10-26)
 ==================
 - Allow JavaScript from Django REST framework to be served.
-  Needed for the browseable API UI.
+  Needed for the browsable API UI.
 - Merges and fixes from 3.4 series.
 
 3.5.1 (2020-10-11)
@@ -862,7 +862,7 @@
 - Add support for GPG backends. Add two new settings ``SIGNATURES_BACKEND`` and
   ``SIGNATURES_BACKEND_ARGUMENTS``. This change also removes two settings:
   ``SIGNATURES_GPG_HOME`` and ``SIGNATURES_GPG_PATH``. ``SIGNATURES_GPG_HOME``
-  had already been deprecated and was innactive. ``SIGNATURES_GPG_PATH`` is now
+  had already been deprecated and was inactive. ``SIGNATURES_GPG_PATH`` is now
   component ``gpg_path`` of the setting ``SIGNATURES_BACKEND_ARGUMENTS``.
 - Add sane default paths for the GPG binary for Linux, FreeBSD, OpenBSD, and
   MaCOS.
@@ -1421,7 +1421,7 @@
   on processed messages.
 - Add support to execute the IMAP expunge command after each
   processed message.
-- Add support for specifing a destination IMAP mailbox for
+- Add support for specifying a destination IMAP mailbox for
   processed messages. GitLab issue #399. Thanks to
   Robert Schöftner (@robert.schoeftner).
 - Support simple search disable via the new
@@ -1596,7 +1596,7 @@
 - Update Pillow to version 6.2.1.
 - Move Celery and Django Celery dependencies
   to the task manager app.
-- Improve dependecies app tests.
+- Improve dependencies app tests.
 - Return st_nlink of 1 files in mirrored indexes. GitLab issue #676.
   Thanks to Ezio Vernacotola (@eziove) for the report and solution.
 - Fix MAYAN_GUNICORN_TIMEOUT Docker image setting. GitLab issue #671.
@@ -1896,7 +1896,7 @@
 - Add favorite document views tests.
 - Add document state action view test.
 - Remove sidebar menu instance. The secondary menu and the
-  previour sidebar menu now perform the same function.
+  previous sidebar menu now perform the same function.
 - Backport source column identifiable and sortable
   improvements.
 - Update the way the no-result template is shown.
@@ -1980,7 +1980,7 @@
 - Use copyfileobj to save documents to files
 - Add user logged in and logged out events.
 - Add transaction handling in more places.
-- Update ACLs tests to use ephimeral models.
+- Update ACLs tests to use ephemeral models.
 - Add new app to handle all dependencies.
 - Remove the licenses.py module and replace
   it with a dependencies.py module.
@@ -1990,7 +1990,7 @@
   now handled by the related field registration.
 - Allow nested access control checking.
 - check_access's permissions argument must now be
-  an interable.
+  an iterable.
 - Remove permissions_related from links.
 - Remove mayan_permission_attribute_check from
   API permission.
@@ -2003,7 +2003,7 @@
   from the document type side.
 - Make workflows, workflows states, workflow
   transitions column sortable.
-- Show completion and intial state in the
+- Show completion and initial state in the
   workflow proxy instance menu list.
 - Fix translation of the source upload forms
   using dropzone.js
@@ -2026,7 +2026,7 @@
 - Remove Internet Explorer specific markup.
 - Fix optional metadata remove when mixed with required
   metadata.
-- Create intermedia file cache folder. Fixes preview errors
+- Create intermediate file cache folder. Fixes preview errors
   when the first document uploaded is an office file.
 - Move queue and task registration to the CeleryQueue class.
   The .queues.py module is now loaded automatically.
@@ -2053,7 +2053,7 @@
 - Remove the included Lato font. The font is now downloaded
   at install time.
 - Add support for Google Fonts dependencies.
-- Add support for patchin dependency files using rewriting rules.
+- Add support for patching dependency files using rewriting rules.
 - Allow searching documents by UUID.
 - Improve search negation logic.
 - Add support for search field transformations.
@@ -2134,8 +2134,8 @@
 - Reorganize documentation into topics and chapters.
 - Add Workflows and API chapters.
 - Add new material from the Wiki to the documentation.
-- Add data migrations to the sources app migraton 0019 to ensure all labels
-  are unique before performing the schema migations.
+- Add data migrations to the sources app migration 0019 to ensure all labels
+  are unique before performing the schema migrations.
 - Add improvements to the metadata URL encoding and decoding to support
   ampersand characters as part of the metadata value. GitLab issue
   #529. Thanks to Mark Maglana @relaxdiego for the report.
@@ -2234,7 +2234,7 @@
 
 3.1.4 (2018-10-04)
 ==================
-- Fix the link to the documenation. Closes GitLab issue #516.
+- Fix the link to the documentation. Closes GitLab issue #516.
   Thanks to Matthias Urlichs @smurfix for the report.
 - Update related links. Add links to the new Wiki and Forum.
 - Add Redis config entries in the Docker images to disable
@@ -2281,7 +2281,7 @@
 - Add test mixin to test the db conversion (dumping and loading) of a
   specific app.
 - Add an user test mixin to group user testing.
-- Add test the user managament app for database conversion.
+- Add test the user management app for database conversion.
 - Add support for natural keys to the DocumentPageImageCache model.
 - Add database conversion test to the common app.
 - Fix label display for resolved smart links when not using a dynamic label.
@@ -2318,7 +2318,7 @@
 - The document quick label selection field now uses a select2 widget.
 - Include querystring when force reload of a bare template view.
 - Speed up document image fade in reveal.
-- Use reseteable timer to ensure more document panels heights are matched.
+- Use resettable timer to ensure more document panels heights are matched.
 - Rewrote Mayan's JavaScript suite MayanApp into ECMAScript2015.
 - Remove use is waitForJQuery.
 - Remove code statistics from the documentation.
@@ -2361,12 +2361,12 @@
   ACL for each individual index.
 - Add cascade permission check to the index rebuild tool link.
 - The index rebuild tool now responds with the number of indexes
-  queued to rebuild instead of a static acknowledment.
+  queued to rebuild instead of a static acknowledgment.
 - Add missing permission check to the document duplicate scan
   link.
 - Add new document indexing permission. This permission allows
   user to view an index instance as opposed to the current
-  permission which allows viewing an index definiton on the
+  permission which allows viewing an index definition on the
   setup menu.
 - Add support to conditionally disable menus.
 - Disable the Tags menu when the user doesn't have the
@@ -2384,14 +2384,14 @@
   DOCUMENTS_RECENT_COUNT has been renamed to
   DOCUMENTS_RECENT_ACCESS_COUNT. New setting
   DOCUMENTS_RECENT_ADDED_COUNT added.
-- Use platform independant hashing for transformations.
+- Use platform independent hashing for transformations.
 - Add support to the ObjectActionMixin to report on instance action
   failures. Add also an error_message class property and the new
   ActionError exception.
 - Add favorite documents per user. Adds new setting option
   DOCUMENTS_FAVORITE_COUNT.
 - Add new class based dashboard widget. This new widget supports
-  subclassing and is template based. All exising widgets have been
+  subclassing and is template based. All existing widgets have been
   converted. ACL filtering was added to the widget results.
 - In addition to the document view permission, the checkout detail
   view permission is now needed to view the list of checked out
@@ -2401,11 +2401,11 @@
 - The multiple document action dropdown is now sorted alphabetically.
 - Improve statistics subclassing. Split class module into classes
   and renderers.
-- Sort facet link, object, secondady and sidebar actions.
+- Sort facet link, object, secondary and sidebar actions.
 - Add support for extended templates when there are no results.
 - Add help messages and useful links to several apps when there
   are no results available.
-- Add a new column to settings showing if they are overrided
+- Add a new column to settings showing if they are overridden
   via environment variable.
 - The official config filename is config.yml.
 - Interpret ALLOWED_HOSTS as YAML.
@@ -2462,7 +2462,7 @@
 - Chart updates: Show last update date and time in list view and details
   view. Change color scheme to match rest of project. Increase size of
   data points. Improve responsive settings. Redirect to the current view
-  after queueing.
+  after queuing.
 - Split document type retention policies into it own view.
 
 3.0.3 (2018-08-17)
@@ -2518,12 +2518,12 @@
 - Cabinets app: Escape cabinet labels to avoid possible exploit of
   cross site scripting. Thanks to Lokesh (@lokesh1095) for the report
   and proposed solutions. Closes GitLab issue #495.
-- Language translation synchonization.
+- Language translation synchronization.
 
 3.0.1 (2018-07-08)
 ==================
-- Pin javascript libraries to specific versions to avoid using
-  potentianlly broken updates automatically. GitLab issue #486.
+- Pin JavaScript libraries to specific versions to avoid using
+  potentially broken updates automatically. GitLab issue #486.
 - French and Polish language translation updates.
 - Merge request #25. Thanks to Daniel Albert @esclear
   for the patch.
@@ -2590,7 +2590,7 @@
 - Add statistics script to produce a report of the views, APIs and test
   for each app.
 - Merge base64 filename patch from Cornelius Ludmann.
-- SearchModel retrun interface changed. The class no longer returns the
+- SearchModel return interface changed. The class no longer returns the
   result_set value. Use the queryset returned instead.
 - Update to Font Awesome 5.
 - Turn Mayan EDMS into a single page app.
@@ -2600,14 +2600,14 @@
   as a single url variable.
 - Use history.back instead of history.go(-1).
 - Don't use the previous variable when canceling a form action. Form now
-  use only javascript's history.back().
+  use only JavaScript's history.back().
 - Add template and modal to display server side errors.
 - Remove the unused scrollable_content internal feature.
 - Remove unused animate.css package.
 - Add page loading indicator.
 - Add periodic AJAX workers to update the value of the notifications link.
 - Add notification count inside a badge on the notification link.
-- Add the MERC specifying javascript library usage.
+- Add the MERC specifying JavaScript library usage.
 - Documents without at least a version are not scanned for duplicates.
 - Use a SHA256 hex digest of the secret key at the name of the lockfile.
   This makes the generation of the name repeatable while unique
@@ -2622,7 +2622,7 @@
 - Move the invalid document markup to a separate HTML template.
 - Update to Fancybox 3.
 - Update to jQuery 3.3.1
-- Move transfomations to their own module.
+- Move transformations to their own module.
 - Split documents.tests.test_views into base.py,
   test_deleted_document_views.py,
   test_document_page_views.py, test_document_type_views.py,
@@ -2644,12 +2644,12 @@
 - Fix documentation formatting.
 - Add upload wizard step chapte.
 - Improve and add additional diagrams.
-- Change documenation theme to rtd.
+- Change documentation theme to rtd.
 - Fix carousel item height issues.
-- Add the "to=" keyword argument to all ForeignKey, ManayToMany and OneToOne
+- Add the "to=" keyword argument to all ForeignKey, ManyToMany and OneToOne
   Fields.
 - Add Makefile target to check the format of the README.rst file.
-- Mark the feature to detect and fix the orientatin of PDF as experimental.
+- Mark the feature to detect and fix the orientation of PDF as experimental.
 - Don't show documents with 0 duplicates in the duplicated document list.
 - Clean up the duplicated document model after a document is deleted.
 - Add support for roles ACLs.
@@ -2670,7 +2670,7 @@
   SIGNATURES_STORAGE_BACKEND_ARGUMENTS.
 - Remove the setting STORAGE_FILESTORAGE_LOCATION. Document storage
   location for the storage.backend.filebasedstorage.FileBasedStorage
-  backdend must now passed via the DOCUMENTS_STORAGE_BACKEND_ARGUMENTS,
+  backend must now passed via the DOCUMENTS_STORAGE_BACKEND_ARGUMENTS,
   DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS, or
   SIGNATURES_STORAGE_BACKEND_ARGUMENTS if the backend is used to documents,
   the document image cache and/or document signatures. Use
@@ -2730,7 +2730,7 @@
   errors in production. Defaults to False.
 - Change the error log file handle class to RotatingFileHandle to avoid an
   indefinitely growing log file.
-- Disable embedded signatute verification during the perform upgrade command.
+- Disable embedded signature verification during the perform upgrade command.
 - Replace the DOCUMENTS_LANGUAGE_CHOICES setting option. Replaced with the
   new DOCUMENTS_LANGUAGE_CODES.
 - Fix error when trying to upload a document from and email account with

@@ -40,7 +40,7 @@ Builds
 ^^^^^^
 
 Limit the number of branches that trigger the full test suit. Makes better use
-of the amount of free continous integration available in GitLab.
+of the amount of free continuous integration available in GitLab.
 
 
 Program code

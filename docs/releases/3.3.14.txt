@@ -273,7 +273,7 @@ Issues closed
 -------------
 
 - :gitlab-issue:`778` Feature Request: An api to promote a staging file into a document
-- :gitlab-issue:`780` Direct Deployment web page missing a "\" on inital `apt-get install`
+- :gitlab-issue:`780` Direct Deployment web page missing a "\" on initial `apt-get install`
 - :gitlab-issue:`785` management.call_command - > interactive=False leftover
 - :gitlab-issue:`786` exclude favicon.ico from Stronghold
 

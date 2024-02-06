@@ -29,7 +29,7 @@
 
 <div align="center">
   <a href="http://www.mayan-edms.com">
-    <img width="200" heigth="200" src="https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png">
+    <img width="200" height="200" src="https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png">
   </a>
   <br>
   <br>

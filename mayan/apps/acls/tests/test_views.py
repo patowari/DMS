@@ -311,8 +311,8 @@ class OrphanAccessControlListViewTestCase(
 
         self._clear_events()
 
-        reponse = self._request_test_acl_create_post_view()
-        self.assertEqual(reponse.status_code, 302)
+        response = self._request_test_acl_create_post_view()
+        self.assertEqual(response.status_code, 302)
 
         response = self._request_test_acl_create_get_view()
         self.assertNotContains(

@@ -22,7 +22,7 @@ class APITrashedDocumentDetailView(generics.RetrieveDestroyAPIView):
     """
     Returns the selected trashed document details.
     delete: Delete the trashed document.
-    get: Retreive the details of the trashed document.
+    get: Retrieve the details of the trashed document.
     """
     lookup_url_kwarg = 'document_id'
     mayan_object_permission_map = {

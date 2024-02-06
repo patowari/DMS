@@ -954,7 +954,7 @@
   - Configurable Traefik Let's Encrypt certificate volume location.
   - Support Let's Encrypt DNS challenge.
 
-- Isolate compressed file MIME type matchin exception catching to the
+- Isolate compressed file MIME type matching exception catching to the
   pertinent code.
 - Download file updates:
 
@@ -1487,9 +1487,9 @@
 - Add API endpoint called ``document_file_actions`` to list the available
   actions and their properties. API endpoint URL: /api/v4/document_file_actions/
 - Add document version modification backend. Convert the document version
-  page reset and append functions into document version modication backends.
-  Update document version views and API endpoints to use document version
-  modification backends.
+  page reset and append functions into document version modification
+  backends. Update document version views and API endpoints to use document
+  version modification backends.
   Adds new API endpoints:
 
     - /api/v4/documents/{ ID }/versions/{ ID }/modify/
@@ -1889,7 +1889,7 @@
 4.2.17 (2023-07-10)
 ===================
 - Ensure only the filename of the uploaded file is used as the document
-  label, omiting all path content.
+  label, omitting all path content.
 - Backport MIME type file command backend improvements to make it more
   usable in series 4.2.
 - Only clear the source error log if the source is enabled or was
@@ -2315,7 +2315,7 @@
 - Move the ``docker-dockerfile-update`` target to the Docker makefile.
 - Update Docker image tags:
 
-  - Postgresq from 10.18-alpine to 12.9-alpine.
+  - PostgreSQL from 10.18-alpine to 12.9-alpine.
   - Python from 3.8-slim to 3.11-slim.
 
 - Update psycopg2 from version 2.8.6 to 2.9.2.
@@ -2446,7 +2446,7 @@
 
     - ``authentication_otp_disable``: disables OTP for a user
     - ``authentication_otp_initialize``: initializes the OTP state data for
-      all users. This command is for debuging and maintenance in case the
+      all users. This command is for debugging and maintenance in case the
       database migration does not correctly initialize the OTP state data
       for existing users.
     - ``authentication_otp_status``: display the OTP status for a user
@@ -2833,7 +2833,7 @@
   - Show interactive source processing as a message.
 
 - Fix the copying of the bootstrap alert style.
-- Optimize the copying of the boostrap alert style by executing it only
+- Optimize the copying of the bootstrap alert style by executing it only
   in the root template. This runs the code just once instead of running it
   on each page refresh. The element ``#div-javascript-dynamic-content`` was
   also remove and it is now created and destroyed dynamically once just.

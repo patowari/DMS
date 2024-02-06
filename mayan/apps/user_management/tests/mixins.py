@@ -175,13 +175,13 @@ class GroupUserViewTestMixin:
 
 class GroupViewTestMixin:
     def _request_test_group_create_view(self):
-        reponse = self.post(
+        response = self.post(
             viewname='user_management:group_create', data={
                 'name': TEST_GROUP_NAME
             }
         )
         self._test_group = Group.objects.filter(name=TEST_GROUP_NAME).first()
-        return reponse
+        return response
 
     def _request_test_group_single_delete_view(self):
         return self.post(
@@ -416,7 +416,7 @@ class UserViewTestMixin:
         )
 
     def _request_test_user_create_view(self):
-        reponse = self.post(
+        response = self.post(
             viewname='user_management:user_create', data={
                 'password': TEST_USER_PASSWORD,
                 'username': TEST_USER_USERNAME
@@ -426,7 +426,7 @@ class UserViewTestMixin:
         self._test_user = get_user_model().objects.filter(
             username=TEST_USER_USERNAME
         ).first()
-        return reponse
+        return response
 
     def _request_test_user_single_delete_get_view(self):
         return self.get(

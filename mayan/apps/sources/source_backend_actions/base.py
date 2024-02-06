@@ -222,7 +222,7 @@ class SourceBackendAction(
     """
     Class to define actions per source backends. Each action also defines
     interfaces. The action backend will process the input data and transform
-    the source backend output for each interace class.
+    the source backend output for each interface class.
     """
 
 

@@ -15,7 +15,7 @@ Changes
 - The version of django-mptt is preserved in case mayan-cabinets is installed.
 - Add Django GPG API endpoints for singing keys.
 - Add API endpoints for the document states app.
-- Add API endpoints for the messsage of the day (MOTD) app.
+- Add API endpoints for the message of the day (MOTD) app.
 - Add Smart link API endpoints.
 - Add writable versions of the Document and Document Type serializers (GitLab issues #348 and #349).
 

@@ -82,7 +82,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`319` TransformationResize issue with very "long" image
 * :gitlab-issue:`331` Trash List View: Items actions should be limited
 * :gitlab-issue:`333` "Unable to run gpg - it may not be available."
-* :gitlab-issue:`334` Perfomance improvment: prevent unnecessary image.resize in TransformationZoom
+* :gitlab-issue:`334` Performance improvement: prevent unnecessary image.resize in TransformationZoom
 * :gitlab-issue:`335` Wrong HTML Content-Type in ACL->NEW
 
 .. _PyPI: https://pypi.python.org/pypi/mayan-edms/

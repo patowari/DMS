@@ -373,7 +373,7 @@ App logging to the console is now automatically enabled. If Django's ``DEBUG``
 flag is ``True`` the default level for auto logging is ``DEBUG``. If Django's
 ``DEBUG`` flag is ``False`` (as in production), the default level changes to
 ``INFO``. This should make it easier to add relevant messages to issue tickets
-as well as a adecuate logging during production.
+as well as a adequate logging during production.
 
 
 Other changes
@@ -522,7 +522,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`59` New bootstrap based UI
 * :gitlab-issue:`60` Backport class based navigation code from the unstable branch
 * :gitlab-issue:`62` Simplify and reduce code in templates
-* :gitlab-issue:`67` Python 3 compatibility: Update models __unicode__ methdo to __str__ methods (using Django's six library)
+* :gitlab-issue:`67` Python 3 compatibility: Update models __unicode__ method to __str__ methods (using Django's six library)
 * :gitlab-issue:`121` Twitter Bootstrap theme for Mayan EDMS
 * :gitlab-issue:`155` Header does not fit list on documents/list on small screens (laptop)
 * :gitlab-issue:`170` Remove use of python-hkp
@@ -564,7 +564,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`201` Untranslated items
 * :gitlab-issue:`202` AutoAdminSingleton matching query does not exist.
 * :gitlab-issue:`203` KeyError at /sources/upload/document/new/interactive/
-* :gitlab-issue:`204` Problems to add required metadata after changin the document type
+* :gitlab-issue:`204` Problems to add required metadata after changing the document type
 * :gitlab-issue:`216` Add default_app_config value to each app
 * :gitlab-issue:`223` [Documents] Trigger event_document_type_change on the model not on the view
 * :gitlab-issue:`227` decoder zip not available

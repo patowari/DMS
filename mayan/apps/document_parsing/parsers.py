@@ -38,7 +38,7 @@ class Parser:
             except ParserError:
                 """If parser raises error, try next parser in the list."""
             else:
-                # If parser was successfull there is no need to try
+                # If parser was successful there is no need to try
                 # others in the list for this mimetype.
                 return
 
@@ -55,7 +55,7 @@ class Parser:
             except ParserError:
                 """If parser raises error, try next parser in the list."""
             else:
-                # If parser was successfull there is no need to try
+                # If parser was successful there is no need to try
                 # others in the list for this mimetype.
                 return
 

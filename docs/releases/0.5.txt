@@ -7,7 +7,7 @@ Version 0.5
 * Added no-parent-history class to document page links so that iframe clicking doesn't affect the parent window history
 
   - Fixes back button issue on Chrome 9 & 10
-  
+
 * Added per app version display tag
 * Added loading spinner animation
 * Messages tweaks and translation updates
@@ -25,24 +25,24 @@ Version 0.5
 * Added link to close all notifications with one click
 * Made the queue processing interval configurable by means of a new
   setting: ``OCR_QUEUE_PROCESSING_INTERVAL``
-* Added detection and reset of orphaned ocr documents being left as
+* Added detection and reset of orphaned OCR documents being left as
   'processing' when celery dies
 * Improved unknown format detection in the graphicsmagick backend
-* Improved document convertion API
+* Improved document conversion API
 * Added initial support for converting office documents (only ods and
   docx tested)
-* Added sample configuration files for supervisor and apache under
+* Added sample configuration files for supervisor and Apache under
   contrib/
 * Avoid duplicates in recent document list
 * Added the configuration option CONVERTER_GM_SETTINGS to pass
   GraphicsMagicks specific commands the the GM backend
-* Lower image convertion quality if the format is jpg
+* Lower image conversion quality if the format is jpg
 * Inverted the rotation button, more intuitive this way
 * Merged and reduced the document page zoom and rotation views
 * Increased permissions app permission's label field size
 
   - DB Update required
-    
+
 * Added support for metadata group actions
 * Reduced the document pages widget size
 * Display the metadata group numeric total in the metadata group form
@@ -71,7 +71,7 @@ Version 0.5
 * Added support user document folders
 
   - Must do a ``syncdb`` to add the new tables
-    
+
 * Added support for listing the most recent accessed documents per user
 * Added document page navigation
 * Fixed diagnostics url resolution
@@ -89,7 +89,7 @@ Version 0.5
 * New document page view
 * Added view to add or remove user to a specific role
 * Updated the jQuery packages with the web_theme app to version 1.5.2
-* Made ``AVAILABLE_INDEXING_FUNCTION`` setting a setting of the documents 
+* Made ``AVAILABLE_INDEXING_FUNCTION`` setting a setting of the documents
   app instead of the filesystem_serving app
 * Fixed document download in FireFox for documents containing spaces in
   the filename
@@ -112,37 +112,37 @@ Version 0.5
 
   - ``FILESYSTEM_INDEXING_AVAILABLE_FUNCTIONS`` - a dictionary to allow users
     to add custom functions
-      
+
 * Made automatic OCR a function of the OCR app and not of Documents app (via signals)
 
   - Renamed setup option ``DOCUMENT_AUTOMATIC_OCR`` to ``OCR_AUTOMATIC_OCR``
-    
+
 * Clear node name when requeueing a document for OCR
 * Added support for editing the metadata of multiple documents at the
   same time
-* Added Graphics magick support by means of user selectable graphic convertion backends
+* Added Graphics magick support by means of user selectable graphic conversion backends
 
   - Some settings renamed to support this change:
-    
+
     + ``CONVERTER_CONVERT_PATH`` is now ``CONVERTER_IM_CONVERT_PATH``
     + ``CONVERTER_IDENTIFY_PATH`` is now ``CONVERTER_IM_IDENTIFY_PATH``
-        
+
   - Added options:
-    
+
     + ``CONVERTER_GM_PATH`` - File path to graphicsmagick's program.
-    + ``CONVERTER_GRAPHICS_BACKEND`` - Backend to use: ``ImageMagick`` or 
+    + ``CONVERTER_GRAPHICS_BACKEND`` - Backend to use: ``ImageMagick`` or
       ``GraphicMagick``
-          
-* Raise ImportError and notify user when specifying a non existant
+
+* Raise ImportError and notify user when specifying a non existent
   converter graphics backend
 * Fixed issue #4, avoid circular import in permissions/__init__.py
 * Add a user to a default role only when the user is created
 * Added total page count to statistics view
 * Added support to disable the default scrolling JS code included in
   web_theme app, saving some KBs in transfer
-* Clear last ocr results when requeueing a document
+* Clear last OCR results when requeueing a document
 * Removed the 'exists' column in document list view, diagnostics
-  superceded this
+  superseded this
 * Added 3rd party sendfile app (support apache's X-sendfile)
 * Updated the get_document_image view to use the new sendfile app
 * Fixed the issue of the strip spaces middleware conflicting with
@@ -158,12 +158,12 @@ Version 0.5
   a race condition, until row locking can be implemented or is
   implemented by Django
 * Moved navigation code to its own app
-* Reimplemented OCR delay code, only delay new document
+* Re-implemented OCR delay code, only delay new document
   Added a new field: delay, update your database schema accordingly
-* Made the concurrent ocr code more granular, per node, every node can
-  handle different amounts of concurrent ocr tasks
-  Added a new field: node_name, update your database schema acordinging
-* Reduced default ocr delay time
+* Made the concurrent OCR code more granular, per node, every node can
+  handle different amounts of concurrent OCR tasks
+  Added a new field: node_name, update your database schema accordingly
+* Reduced default OCR delay time
 * Added a new diagnostics tab under the tools menu
 * Added a new option ``OCR_REPLICATION_DELAY`` to allow the storage some
   time for replication before attempting to do OCR to a document
@@ -173,8 +173,8 @@ Version 0.5
   based by default)
 * Added multi document delete
 * Fixed a few HTML validation errors
-* Issues are now tracked using github
-* Added indexing flags to ocr model
+* Issues are now tracked using GitHub
+* Added indexing flags to OCR model
 * Small optimization in document list view
 * Small search optimization
 * Display "DEBUG mode" string in title if ``DEBUG`` variable is set to True
@@ -210,19 +210,19 @@ Version 0.5
 * Show current metadata in document upload view sidebar
 * Show sentry login for admin users
 * Do not reinitialize document queue and/or queued document on reentry
-* Try extra hard not to assign same uuid to two documents
+* Try extra hard not to assign same UUID to two documents
 * Added new transformation preview size setting
 * Renamed document queue state links
-* Changed ocr status display sidebar from form based to text based
+* Changed OCR status display sidebar from form based to text based
 * Added document action to clear all the document's page transformations
 * Allow search across related fields
-* Optimzed search for speed and memory footprint
+* Optimized search for speed and memory footprint
 * Added ``LIMIT`` setting to search
 * Show search elapsed time on result page
 * Converter now differentiates between unknown file format and convert
-  errors 
+  errors
 * Close file descriptors when executing external programs to
-  prevent/reduce file descriptior leaks
+  prevent/reduce file descriptor leaks
 * Improved exception handling of external programs
 * Show document thumbnail in document ocr queue list
 * Make ocr document date submitted column non breakable
@@ -249,7 +249,7 @@ Version 0.5
 * Implement GridFS storage user settings
 * Added document link in the OCR document queue list
 * Link to manually re queue failed OCR
-* Don't separate links (encose object list links with white-space:
+* Don't separate links (enclose object list links with white-space:
   nowrap;)
 * Added document description to the field search list
 * Sort OCR queued documents according to submitted date & time
@@ -257,19 +257,19 @@ Version 0.5
 
   - Steps to update (Some warnings may be returned, but these are not
     fatal as they might be related to missing metadata in some documents):
-  
+
     + rename the following settings:
-    
+
       + ``DOCUMENTS_FILESYSTEM_FILESERVING_ENABLE`` to ``FILESYSTEM_FILESERVING_ENABLE``
       + ``DOCUMENTS_FILESYSTEM_FILESERVING_PATH`` to ``FILESYSTEM_FILESERVING_PATH``
       + ``DOCUMENTS_FILESYSTEM_SLUGIFY_PATHS`` to ``FILESYSTEM_SLUGIFY_PATHS``
       + ``DOCUMENTS_FILESYSTEM_MAX_RENAME_COUNT`` to ``FILESYSTEM_MAX_RENAME_COUNT``
-      
+
     + Do a ./manage.py syncdb
     + Execute 'Recreate index links' locate in the tools menu
     + Wait a few minutes
-      
-* Added per document duplicate search and a tools menu option to seach
+
+* Added per document duplicate search and a tools menu option to search
   all duplicated documents
 * Added document tool that deletes and re-creates all documents
   filesystem links
@@ -280,12 +280,12 @@ Version 0.5
   individually in one step
 * Added support for concurrent, queued OCR processing using celery
 * Apply default transformations to document before OCR
-* Added unpaper to the OCR convertion pipe
+* Added unpaper to the OCR conversion pipe
 * Added views to create, edit and grant/revoke permissions to roles
 * Added multipage documents support (only tested on pdfs)
 
   - To update a previous database do: [d.update_page_count() for d in Document.objects.all()]
-    
+
 * Added support for document page transformation (no GUI yet)
 * Added permissions and roles support
 * Added python-magic for smarter MIME type detection

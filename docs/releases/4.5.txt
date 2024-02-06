@@ -203,7 +203,7 @@ The active version and latest file attributes of documents were updated to
 be stored fields instead of computed values. This increases performance
 is large installations by a significant margin. Migrations for large
 installation will take longer in order to populate these fields, account for
-theses extended times during the upgrade.
+these extended times during the upgrade.
 
 Added a new document file introspection link and view. This view re-scans the
 document file and populates the size, checksum, and mimetype of files. It also

@@ -154,7 +154,7 @@ Support for restoring forgotten password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Views and templates were added to enable the typical "Forgotten
-password" worflow using a signed token via email.
+password" workflow using a signed token via email.
 
 
 Other Changes
@@ -172,7 +172,7 @@ Other Changes
 - Rename the mayan_task_manager app to task_manager.
 - Make the task manager translatable.
 - Add Turkish to the list of processes languages.
-- Use Toastr libary for screen messages.
+- Use Toastr library for screen messages.
 - Reduce verbosity of some debug messages in the MayanAppConfig, settings and,
   mailing discovery.
 - Make sure lookup selection widgets also trigger the metadata update
