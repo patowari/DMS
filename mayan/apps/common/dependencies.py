@@ -188,7 +188,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-silk', version_string='==5.0.4'
+    name='django-silk', version_string='==5.1.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
