@@ -101,7 +101,7 @@ importlib-metadata==7.0.1
 jsonschema==4.20.0
 mozilla-django-oidc==3.0.0
 node-semver==0.9.0
-pycountry==22.3.5
+pycountry==23.12.11
 pycryptodome==3.20.0
 pyotp==2.9.0
 pypdf==3.17.4
