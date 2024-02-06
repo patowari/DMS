@@ -10,6 +10,7 @@
   - django-silk from 5.0.4 to 5.1.0.
   - ruff from 0.2.1 to 0.1.6.
   - jstree from 3.3.16. 3.3.12.
+  - django-solo from 2.1.0 to 2.2.0.
 
 4.6 (2024-01-11)
 ================

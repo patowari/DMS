@@ -79,7 +79,7 @@ django-mathfilters==1.0.0
 django-model-utils==4.3.1
 django-mptt==0.16.0
 django-qsstats-magic==1.1.0
-django-solo==2.1.0
+django-solo==2.2.0
 django-storages==1.14.2
 django-stronghold==0.4.0
 django-widget-tweaks==1.5.0
