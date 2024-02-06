@@ -107,7 +107,7 @@ class SourceBackend(
         return fieldsets
 
     @classmethod
-    def intialize(cls):
+    def initialize(cls):
         """
         Optional method for subclasses execute their own initialization
         code.
@@ -116,7 +116,7 @@ class SourceBackend(
     @classmethod
     def post_load_modules(cls):
         for source_backend in cls.get_all():
-            source_backend.intialize()
+            source_backend.initialize()
 
     def get_allow_action_execute(self, action, action_execute_kwargs=None):
         return self.get_model_instance().enabled
