@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from actstream.models import Action
 
 from mayan.apps.databases.classes import QuerysetParametersSerializer
+from mayan.apps.organizations.utils import get_organization_installation_url
 from mayan.apps.views.generics import ConfirmView
 from mayan.apps.views.view_mixins import ExternalContentTypeObjectViewMixin
 
@@ -38,6 +39,9 @@ class EventExportBaseView(ConfirmView):
         task_event_queryset_export.apply_async(
             kwargs={
                 'decomposed_queryset': decomposed_queryset,
+                'organization_installation_url': get_organization_installation_url(
+                    request=self.request
+                ),
                 'user_id': self.request.user.pk
             }
         )

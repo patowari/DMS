@@ -22,9 +22,6 @@ class ObjectMailForm(forms.Form):
         user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
 
-        project_title = mayan.__title__
-        project_website = mayan.__website__
-
         if as_attachment:
             self.fields[
                 'subject'
@@ -33,16 +30,16 @@ class ObjectMailForm(forms.Form):
             self.fields[
                 'body'
             ].initial = setting_attachment_body_template.value % {
-                'project_title': project_title,
-                'project_website': project_website
+                'project_title': mayan.__title__,
+                'project_website': mayan.__website__
             }
         else:
             self.fields[
                 'subject'
             ].initial = setting_document_link_subject_template.value
             self.fields['body'].initial = setting_document_link_body_template.value % {
-                'project_title': project_title,
-                'project_website': project_website
+                'project_title': mayan.__title__,
+                'project_website': mayan.__website__
             }
 
         queryset = AccessControlList.objects.restrict_queryset(

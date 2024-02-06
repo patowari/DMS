@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,11 +21,11 @@ msgstr ""
 
 #: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
-msgstr ""
+msgstr "Платформа"
 
 #: classes.py:240
 msgid "Template for entrypoint.sh file inside a Docker image."
-msgstr ""
+msgstr "Шаблон для файлу entrypoint.sh всередині Docker-образу."
 
 #: classes.py:255
 msgid "Template that generates the Docker Compose file."
@@ -30,7 +33,7 @@ msgstr ""
 
 #: classes.py:415
 msgid "Template for Supervisord inside a Docker image."
-msgstr ""
+msgstr "Шаблон для Supervisord у Docker-образі."
 
 #: classes.py:433
 msgid "Template that generates a Dockerfile file."
@@ -38,32 +41,36 @@ msgstr ""
 
 #: classes.py:448
 msgid "Template that generates a GitLab CI config file."
-msgstr ""
+msgstr "Шаблон, що генерує файл конфігурації GitLab CI."
 
 #: classes.py:597
 msgid "Template for Supervisord."
-msgstr ""
+msgstr "Шаблон для Supervisord."
 
 #: classes.py:671
 msgid "Template showing the queues of a worker."
-msgstr ""
+msgstr "Шаблон, що показує черги працівника."
 
 #: client_backends.py:34
 msgid "Sentry test error"
-msgstr ""
+msgstr "Помилка тесту Sentry"
 
 #: permissions.py:10
 msgid "Trigger tests"
-msgstr ""
+msgstr "Тестування тригерів"
 
 #: settings.py:17
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
+"Список клієнтських бекендів для запуску після старту. Використовуйте повний "
+"крапкований шлях до класів клієнтських бекендів."
 
 #: settings.py:24
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."
 msgstr ""
+"Аргументи для клієнтських бекендів. Використовуйте крапковий шлях "
+"клієнтського бекенду як ключ словника для аргументів у форматі словника."

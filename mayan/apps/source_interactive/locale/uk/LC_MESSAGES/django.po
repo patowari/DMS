@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,16 +21,16 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source interactive"
-msgstr ""
+msgstr "Інтерактивне джерело"
 
 #: source_backend_actions/arguments.py:7
 msgid "Binary form field containing the file to upload."
-msgstr ""
+msgstr "Бінарне поле форми, що містить файл для завантаження."
 
 #: source_backend_actions/arguments.py:11
 msgid "Python file like object."
-msgstr ""
+msgstr "Python файл як об'єкт."
 
 #: source_backend_actions/arguments.py:18
 msgid "ID of the shared uploaded file to be processed."
-msgstr ""
+msgstr "ID спільного завантаженого файлу, який потрібно обробити."

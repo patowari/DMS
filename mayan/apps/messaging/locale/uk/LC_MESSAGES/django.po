@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:39 events.py:6 permissions.py:6
 msgid "Messaging"
-msgstr ""
+msgstr "Повідомлення"
 
 #: apps.py:61
 msgid "None"
@@ -31,23 +31,23 @@ msgstr "None"
 
 #: apps.py:67
 msgid "Sender"
-msgstr ""
+msgstr "Відправник"
 
 #: events.py:10
 msgid "Message created"
-msgstr ""
+msgstr "Повідомлення створено"
 
 #: events.py:13
 msgid "Message edited"
-msgstr ""
+msgstr "Повідомлення відредаговано"
 
 #: forms.py:26 models.py:37 workflow_actions.py:55
 msgid "Body"
-msgstr ""
+msgstr "Зміст листа"
 
 #: links.py:49 views.py:38
 msgid "Create message"
-msgstr ""
+msgstr "Створити повідомлення"
 
 #: links.py:52 links.py:58
 msgid "Delete"
@@ -55,15 +55,15 @@ msgstr "Видалити"
 
 #: links.py:68 links.py:79
 msgid "Mark as read"
-msgstr ""
+msgstr "Позначити як прочитане"
 
 #: links.py:74 links.py:83
 msgid "Mark as unread"
-msgstr ""
+msgstr "Позначити як непрочитане"
 
 #: links.py:87
 msgid "Mark all as read"
-msgstr ""
+msgstr "Позначити все як прочитане"
 
 #: model_mixins.py:16
 msgid "Label"
@@ -71,11 +71,11 @@ msgstr "Мітка"
 
 #: models.py:19
 msgid "Sender content type"
-msgstr ""
+msgstr "Тип вмісту відправника"
 
 #: models.py:22
 msgid "Sender object ID"
-msgstr ""
+msgstr "ID об’єкта відправника"
 
 #: models.py:29
 msgid "User"
@@ -83,230 +83,237 @@ msgstr "Користувач"
 
 #: models.py:32
 msgid "Short description of this message."
-msgstr ""
+msgstr "Короткий опис цього повідомлення."
 
 #: models.py:33 workflow_actions.py:38
 msgid "Subject"
-msgstr ""
+msgstr "Тема"
 
 #: models.py:36
 msgid "The actual content of the message."
-msgstr ""
+msgstr "Фактичний зміст повідомлення."
 
 #: models.py:41
 msgid "This field determines if the message has been read or not."
-msgstr ""
+msgstr "Це поле визначає, чи було прочитано повідомлення чи ні."
 
 #: models.py:42
 msgid "Read"
-msgstr ""
+msgstr "Читати"
 
 #: models.py:46
 msgid "Date and time of the message creation."
-msgstr ""
+msgstr "Дата і час створення повідомлення."
 
 #: models.py:47
 msgid "Creation date and time"
-msgstr ""
+msgstr "Дата і час створення"
 
 #: models.py:52
 msgid "Message"
-msgstr ""
+msgstr "Повідомлення"
 
 #: models.py:53 views.py:128
 msgid "Messages"
-msgstr ""
+msgstr "Повідомлення"
 
 #: permissions.py:10
 msgid "Create messages"
-msgstr ""
+msgstr "Створити повідомлення"
 
 #: permissions.py:13
 msgid "Delete messages"
-msgstr ""
+msgstr "Видалити повідомлення"
 
 #: permissions.py:16
 msgid "Edit messages"
-msgstr ""
+msgstr "Редагувати повідомлення"
 
 #: permissions.py:19
 msgid "View messages"
-msgstr ""
+msgstr "Переглянути повідомлення"
 
 #: serializers.py:15
 msgid "Sender app label"
-msgstr ""
+msgstr "Мітка програми відправника"
 
 #: serializers.py:18
 msgid "Sender model name"
-msgstr ""
+msgstr "Назва моделі відправника"
 
 #: serializers.py:21
 msgid "Sender URL"
-msgstr ""
+msgstr "URL відправника"
 
 #: serializers.py:25
 msgid "Primary key of the recipient user of this message."
-msgstr ""
+msgstr "Первинний ключ отримувача цього повідомлення."
 
 #: serializers.py:26
 msgid "User ID"
-msgstr ""
+msgstr "ID користувача"
 
 #: serializers.py:33
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: views.py:49
 #, python-format
 msgid "Error deleting message \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Помилка видалення повідомлення \"%(instance)s\"; %(exception)s"
 
 #: views.py:53
 #, python-format
 msgid "%(count)d messages deleted successfully."
-msgstr ""
+msgstr "%(count)d повідомлень успішно видалено."
 
 #: views.py:54
 #, python-format
 msgid "Message \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Повідомлення \"%(object)s\" успішно видалено."
 
 #: views.py:55
 #, python-format
 msgid "%(count)d message deleted successfully."
-msgstr ""
+msgstr "%(count)d повідомлення успішно видалено."
 
 #: views.py:56
 #, python-format
 msgid "Delete the %(count)d selected messages."
-msgstr ""
+msgstr "Видалити %(count)d вибраних повідомлень."
 
 #: views.py:57
 #, python-format
 msgid "Delete message: %(object)s."
-msgstr ""
+msgstr "Видалити повідомлення: %(object)s."
 
 #: views.py:58
 #, python-format
 msgid "Delete the %(count)d selected message."
-msgstr ""
+msgstr "Видалити %(count)d вибране повідомлення."
 
 #: views.py:100
 #, python-format
 msgid "Details of message: %s"
-msgstr ""
+msgstr "Деталі повідомлення: %s"
 
 #: views.py:124
 msgid "Here you will find text messages from other users or from the system."
 msgstr ""
+"Тут ви знайдете текстові повідомлення від інших користувачів або від "
+"системи."
 
 #: views.py:127
 msgid "There are no messages"
-msgstr ""
+msgstr "Немає повідомлень"
 
 #: views.py:137
 #, python-format
 msgid "Error marking message \"%(instance)s\" as read; %(exception)s"
 msgstr ""
+"Помилка позначення повідомлення \"%(instance)s\" як прочитаного; "
+"%(exception)s"
 
 #: views.py:143
 #, python-format
 msgid "%(count)d messages marked as read successfully."
-msgstr ""
+msgstr "%(count)d повідомлень успішно позначено як прочитані."
 
 #: views.py:146
 #, python-format
 msgid "Message \"%(object)s\" marked as read successfully."
-msgstr ""
+msgstr "Повідомлення \"%(object)s\" успішно позначено як прочитане."
 
 #: views.py:149
 #, python-format
 msgid "%(count)d message marked as read successfully."
-msgstr ""
+msgstr "%(count)d повідомлення успішно позначено як прочитані."
 
 #: views.py:151
 #, python-format
 msgid "Mark the %(count)d selected messages as read."
-msgstr ""
+msgstr "Позначте %(count)d вибраних повідомлень як прочитані."
 
 #: views.py:152
 #, python-format
 msgid "Mark the message \"%(object)s\" as read."
-msgstr ""
+msgstr "Позначте повідомлення \"%(object)s\" як прочитане."
 
 #: views.py:153
 #, python-format
 msgid "Mark the %(count)d selected message as read."
-msgstr ""
+msgstr "Позначте %(count)d вибране повідомлення як прочитане."
 
 #: views.py:181
 msgid "Mark all message as read?"
-msgstr ""
+msgstr "Позначити всі повідомлення як прочитані?"
 
 #: views.py:197
 msgid "All messages marked as read."
-msgstr ""
+msgstr "Усі повідомлення позначені як прочитані."
 
 #: views.py:204
 #, python-format
 msgid "Error marking message \"%(instance)s\" as unread; %(exception)s"
 msgstr ""
+"Помилка позначення повідомлення \"%(instance)s\" як непрочитаного; "
+"%(exception)s"
 
 #: views.py:210
 #, python-format
 msgid "%(count)d messages marked as unread successfully."
-msgstr ""
+msgstr "%(count)d повідомлень успішно позначено як непрочитані."
 
 #: views.py:213
 #, python-format
 msgid "Message \"%(object)s\" marked as unread successfully."
-msgstr ""
+msgstr "Повідомлення \"%(object)s\" успішно позначено як непрочитане."
 
 #: views.py:216
 #, python-format
 msgid "%(count)d message marked as unread successfully."
-msgstr ""
+msgstr "%(count)d повідомлення успішно позначено як непрочитані."
 
 #: views.py:218
 #, python-format
 msgid "Mark the %(count)d selected messages as unread."
-msgstr ""
+msgstr "Позначити %(count)d вибраних повідомлень як непрочитані."
 
 #: views.py:219
 #, python-format
 msgid "Mark the message \"%(object)s\" as unread."
-msgstr ""
+msgstr "Позначте повідомлення \"%(object)s\" як непрочитане."
 
 #: views.py:220
 #, python-format
 msgid "Mark the %(count)d selected message as unread."
-msgstr ""
+msgstr "Позначте %(count)d вибране повідомлення як непрочитане."
 
 #: workflow_actions.py:19
 msgid "Username list"
-msgstr ""
+msgstr "Список користувачів"
 
 #: workflow_actions.py:26
 msgid "Comma separated list of usernames that will receive the message."
 msgstr ""
+"Розділений комами список імен користувачів, які отримають повідомлення."
 
 #: workflow_actions.py:45
 msgid "Subject of the message to be sent."
-msgstr ""
+msgstr "Тема повідомлення, яке буде надіслано."
 
 #: workflow_actions.py:62
 msgid "The actual text to send."
-msgstr ""
+msgstr "Фактичний текст для надсилання."
 
 #: workflow_actions.py:72
 msgid "Send user message"
-msgstr ""
+msgstr "Надіслати повідомлення користувача"
 
 #: workflow_actions.py:80
 msgid "Recipients"
-msgstr ""
+msgstr "Одержувачі"
 
 #: workflow_actions.py:84
 msgid "Content"
-msgstr ""
+msgstr "Зміст"

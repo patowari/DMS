@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
@@ -18,38 +21,42 @@ msgstr ""
 
 #: apps.py:19 settings.py:11
 msgid "Lock manager"
-msgstr ""
+msgstr "Менеджер блокувань"
 
 #: models.py:15
 msgid "Creation datetime"
-msgstr ""
+msgstr "Дата і час створення"
 
 #: models.py:19
 msgid "Timeout"
-msgstr ""
+msgstr "Таймаут"
 
 #: models.py:22
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: models.py:28
 msgid "Lock"
-msgstr ""
+msgstr "Замок"
 
 #: models.py:29
 msgid "Locks"
-msgstr ""
+msgstr "Замки"
 
 #: settings.py:17
 msgid "Path to the class to use when to request and release resource locks."
 msgstr ""
+"Шлях до класу, який використовуватиметься для запиту та зняття блокувань "
+"ресурсів."
 
 #: settings.py:24
 msgid "Arguments to pass to the LOCK_MANAGER_BACKEND."
-msgstr ""
+msgstr "Аргументи для передачі в LOCK_MANAGER_BACKEND."
 
 #: settings.py:30
 msgid ""
 "Default amount of time in seconds after which a resource lock will be "
 "automatically released."
 msgstr ""
+"Стандартний проміжок часу в секундах, після якого блокування ресурсу буде "
+"автоматично знято."

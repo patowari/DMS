@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
@@ -18,8 +21,8 @@ msgstr ""
 
 #: apps.py:13
 msgid "Staging folders"
-msgstr ""
+msgstr "Проміжні папки"
 
 #: source_backends.py:19
 msgid "Staging folder"
-msgstr ""
+msgstr "Проміжна папка"

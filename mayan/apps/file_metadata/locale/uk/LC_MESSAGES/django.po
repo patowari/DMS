@@ -27,7 +27,7 @@ msgstr "Мітка"
 #: apps.py:52 events.py:6 links.py:22 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
-msgstr ""
+msgstr "Метадані файлу"
 
 #: apps.py:106
 msgid "File metadata internal name"
@@ -35,15 +35,15 @@ msgstr ""
 
 #: apps.py:110 search.py:15 search.py:26
 msgid "File metadata value"
-msgstr ""
+msgstr "Значення метаданих файлу"
 
 #: apps.py:136 apps.py:142
 msgid "Return the value of a specific file metadata."
-msgstr ""
+msgstr "Повертає значення певних метаданих файлу."
 
 #: apps.py:137 apps.py:143
 msgid "File metadata value of"
-msgstr ""
+msgstr "Значення метаданих файлу"
 
 #: apps.py:173
 msgid "MIME types"
@@ -61,6 +61,8 @@ msgstr ""
 msgid ""
 "Library and program to read and write meta information in multimedia files."
 msgstr ""
+"Бібліотека та програма для читання та запису метаінформації в мультимедійних"
+" файлах."
 
 #: drivers/exiftool.py:20
 msgid "Read meta information stored in files."
@@ -68,7 +70,7 @@ msgstr ""
 
 #: drivers/exiftool.py:21
 msgid "EXIF Tool"
-msgstr ""
+msgstr "Інструмент EXIF"
 
 #: drivers/extract_msg.py:16
 msgid ""
@@ -77,31 +79,31 @@ msgstr ""
 
 #: drivers/extract_msg.py:19
 msgid "Extract msg"
-msgstr ""
+msgstr "Витягнути повідомлення"
 
 #: events.py:10
 msgid "Document file submitted for file metadata processing"
-msgstr ""
+msgstr "Файл документа, надісланий для обробки метаданих файлу"
 
 #: events.py:14
 msgid "Document file file metadata processing finished"
-msgstr ""
+msgstr "Обробку метаданих файлу документа завершено"
 
 #: links.py:28
 msgid "Attributes"
-msgstr ""
+msgstr "Атрибути"
 
 #: links.py:35 links.py:40
 msgid "Submit for file metadata"
-msgstr ""
+msgstr "Надіслати метадані файлу"
 
 #: links.py:50
 msgid "Setup file metadata"
-msgstr ""
+msgstr "Налаштувати метадані файлу"
 
 #: links.py:56
 msgid "File metadata processing per type"
-msgstr ""
+msgstr "Обробка метаданих файлів за типом"
 
 #: links.py:65 views.py:233
 msgid "File metadata drivers"
@@ -109,27 +111,27 @@ msgstr ""
 
 #: methods.py:58
 msgid "Return the specified document file file metadata entry."
-msgstr ""
+msgstr "Повернути вказаний запис метаданих файлу документа."
 
 #: model_mixins.py:9
 msgid "Attribute count"
-msgstr ""
+msgstr "Кількість атрибутів"
 
 #: models.py:20 models.py:127
 msgid "Driver"
-msgstr ""
+msgstr "Носій"
 
 #: models.py:24
 msgid "Document file"
-msgstr ""
+msgstr "Файл документа"
 
 #: models.py:30 models.py:66
 msgid "Document file driver entry"
-msgstr ""
+msgstr "Запис драйвера файлу документа"
 
 #: models.py:31
 msgid "Document file driver entries"
-msgstr ""
+msgstr "Записи драйвера файлу документа"
 
 #: models.py:43
 msgid "Document type"
@@ -137,19 +139,19 @@ msgstr "Тип документа"
 
 #: models.py:47
 msgid "Automatically queue newly created documents for processing."
-msgstr ""
+msgstr "Автоматично ставити новостворені документи в чергу для обробки."
 
 #: models.py:48
 msgid "Auto process"
-msgstr ""
+msgstr "Автоматична обробка"
 
 #: models.py:54
 msgid "Document type settings"
-msgstr ""
+msgstr "Параметри типу документа"
 
 #: models.py:55
 msgid "Document types settings"
-msgstr ""
+msgstr "Налаштування типів документів"
 
 #: models.py:70
 msgid "Normalized name of the file metadata entry."
@@ -173,35 +175,35 @@ msgstr ""
 
 #: models.py:87
 msgid "File metadata entry"
-msgstr ""
+msgstr "Запис метаданих файлу"
 
 #: models.py:88
 msgid "File metadata entries"
-msgstr ""
+msgstr "Записи метаданих файлу"
 
 #: models.py:118
 msgid "Driver path"
-msgstr ""
+msgstr "Шлях носія"
 
 #: models.py:128
 msgid "Drivers"
-msgstr ""
+msgstr "Носії"
 
 #: permissions.py:10
 msgid "Change document type file metadata settings"
-msgstr ""
+msgstr "Змінити параметри метаданих файлу типу документа"
 
 #: permissions.py:15
 msgid "Submit document for file metadata processing"
-msgstr ""
+msgstr "Надіслати документ для обробки метаданих файлу"
 
 #: permissions.py:19
 msgid "View file metadata"
-msgstr ""
+msgstr "Переглянути метадані файлу"
 
 #: queues.py:12
 msgid "Process document file"
-msgstr ""
+msgstr "Обробити файл документа"
 
 #: queues.py:16
 msgid "Finish document file metadata processing"
@@ -220,10 +222,12 @@ msgid ""
 "Set new document types to perform file metadata processing automatically by "
 "default."
 msgstr ""
+"Встановити нові типи документів для автоматичної обробки метаданих файлів за"
+" замовчуванням."
 
 #: settings.py:26
 msgid "Arguments to pass to the drivers."
-msgstr ""
+msgstr "Аргументи що передаються драйверам."
 
 #: views.py:54
 msgid ""
@@ -233,15 +237,21 @@ msgid ""
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
 msgstr ""
+"Метадані файлу - це атрибути файлу документа. Вони можуть включати "
+"інформацію про камеру, використану для зйомки фотографії, або автора, який "
+"створив файл. Метадані файлу встановлюються при створенні самого файлу "
+"документа. Атрибути метаданих файлу знаходяться в самому файлі. Вони не є "
+"тими самими, що й метадані документа, які визначаються користувачем і "
+"знаходяться в базі даних."
 
 #: views.py:62
 msgid "No file metadata available."
-msgstr ""
+msgstr "Немає доступних метаданих файлу."
 
 #: views.py:65
 #, python-format
 msgid "File metadata drivers for: %s"
-msgstr ""
+msgstr "Драйвери файлу метаданих для: %s"
 
 #: views.py:92
 msgid ""
@@ -249,43 +259,46 @@ msgid ""
 "the driver does not support any metadata field for the file type of this "
 "document."
 msgstr ""
+"Це може означати, що виявлення метаданих файлу не завершено або драйвер не "
+"підтримує жодного поля метаданих для типу файлу цього документа."
 
 #: views.py:97
 msgid "No file metadata available for this driver."
-msgstr ""
+msgstr "Немає доступних метаданих файлу для цього драйвера."
 
 #: views.py:101
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
+"Атрибути метаданих файлу для: %(document_file)s з драйвером: %(driver)s"
 
 #: views.py:123
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
-msgstr ""
+msgstr "%(count)d документів файлів подано до черги метаданих файлу."
 
 #: views.py:126
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
-msgstr ""
+msgstr "%(count)d документів файлів надіслано до черги метаданих файлу."
 
 #: views.py:135
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Надіслати вибраний файл документа до черги метаданих?"
+msgstr[1] "Надіслати вибрані файли документів до черги метаданих?"
+msgstr[2] "Надіслати вибрані файли документів до черги метаданих?"
+msgstr[3] "Надіслати вибрані файли документів до черги метаданих?"
 
 #: views.py:166
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
-msgstr ""
+msgstr "Редагувати налаштування метаданих файлу для типу документу: %s"
 
 #: views.py:177
 msgid "Submit all documents of a type for file metadata processing."
-msgstr ""
+msgstr "Надіслати усі документи певного типу для обробки метаданих файлів."
 
 #: views.py:204
 #, python-format

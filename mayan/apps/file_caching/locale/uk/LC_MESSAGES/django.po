@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,39 +21,39 @@ msgstr ""
 
 #: apps.py:31 events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "File caching"
-msgstr ""
+msgstr "Кешування файлів"
 
 #: dashboard_widgets.py:16
 msgid "Total cache allocated"
-msgstr ""
+msgstr "Загальна кількість виділеного кешу"
 
 #: dashboard_widgets.py:45
 msgid "Total cache used"
-msgstr ""
+msgstr "Загальна кількість використаного кешу"
 
 #: events.py:10
 msgid "Cache created"
-msgstr ""
+msgstr "Кеш створено"
 
 #: events.py:13
 msgid "Cache edited"
-msgstr ""
+msgstr "Кеш відредаговано"
 
 #: events.py:16
 msgid "Cache purged"
-msgstr ""
+msgstr "Кеш очищено"
 
 #: events.py:19
 msgid "Cache partition purged"
-msgstr ""
+msgstr "Розділ кешу очищено"
 
 #: links.py:27 links.py:50
 msgid "File caches"
-msgstr ""
+msgstr "Кеші файлу"
 
 #: links.py:33 links.py:39 links.py:43
 msgid "Purge cache"
-msgstr ""
+msgstr "Очистити кеш"
 
 #: model_mixins.py:39
 msgid "Unknown"
@@ -78,145 +81,149 @@ msgstr ""
 
 #: model_mixins.py:80
 msgid "Total cached files."
-msgstr ""
+msgstr "Усього кешованих файлів."
 
 #: model_mixins.py:113 model_mixins.py:324
 msgid "Current size"
-msgstr ""
+msgstr "Поточний розмір"
 
 #: model_mixins.py:115
 msgid "Current size of the cache."
-msgstr ""
+msgstr "Поточний розмір кешу."
 
 #: model_mixins.py:326
 msgid "Current size of the cache partition."
-msgstr ""
+msgstr "Поточний розмір розділу кешу."
 
 #: models.py:21
 msgid "Internal name of the defined storage for this cache."
-msgstr ""
+msgstr "Внутрішня назва визначеного сховища для цього кешу."
 
 #: models.py:23
 msgid "Defined storage name"
-msgstr ""
+msgstr "Визначене ім'я сховища"
 
 #: models.py:28
 msgid "Maximum size of the cache in bytes."
-msgstr ""
+msgstr "Максимальний розмір кешу в байтах."
 
 #: models.py:36 models.py:76
 msgid "Cache"
-msgstr ""
+msgstr "Кеш"
 
 #: models.py:37
 msgid "Caches"
-msgstr ""
+msgstr "Кеші"
 
 #: models.py:79
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: models.py:84 models.py:107
 msgid "Cache partition"
-msgstr ""
+msgstr "Розділ кешу"
 
 #: models.py:85
 msgid "Cache partitions"
-msgstr ""
+msgstr "Розділи кешу"
 
 #: models.py:110
 msgid "Date time"
-msgstr ""
+msgstr "Дата і час"
 
 #: models.py:113
 msgid "Filename"
-msgstr ""
+msgstr "Ім'я файлу"
 
 #: models.py:116
 msgid "File size"
-msgstr ""
+msgstr "Розмір файлу"
 
 #: models.py:120
 msgid "Times this cache partition file has been accessed."
-msgstr ""
+msgstr "Кількість звернень до цього файлу розділу кешу."
 
 #: models.py:127
 msgid "Cache partition file"
-msgstr ""
+msgstr "Файл розділу кешу"
 
 #: models.py:128
 msgid "Cache partition files"
-msgstr ""
+msgstr "Файли розділів кешу"
 
 #: permissions.py:10
 msgid "Purge an object cache"
-msgstr ""
+msgstr "Очистити кеш об’єкта"
 
 #: permissions.py:14 queues.py:20
 msgid "Purge a file cache"
-msgstr ""
+msgstr "Очистити кеш файлів"
 
 #: permissions.py:17
 msgid "View a file cache"
-msgstr ""
+msgstr "Переглянути кеш файлу"
 
 #: queues.py:10
 msgid "File caching slow"
-msgstr ""
+msgstr "Повільне кешування файлів"
 
 #: queues.py:15
 msgid "Purge a file cache partition"
-msgstr ""
+msgstr "Очистити розділ кеш файлу"
 
 #: settings.py:17
 msgid ""
 "Number of times a cache will retry failed attempts to prune files to free up"
 " space for new a file being requested, before giving up."
 msgstr ""
+"Кількість разів, які кеш буде повторювати невдалий спроби очищення файлів "
+"для звільнення місця для нового запитуваного файлу, перед відмовою."
 
 #: settings.py:25
 msgid ""
 "Number of times a cache will attempt to prune files to free up space for new"
 " a file being requested, before giving up."
 msgstr ""
+"Кількість разів, які кеш спробує видалити файли, щоб звільнити місце для "
+"нового запитуваного файлу, перед відмовою."
 
 #: views.py:49
 #, python-format
 msgid "Details of cache: %s"
-msgstr ""
+msgstr "Деталі кешу: %s"
 
 #: views.py:61
 msgid "File caches list"
-msgstr ""
+msgstr "Список кешів файлів"
 
 #: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
-msgstr ""
+msgstr "Деталі розділу кешу: %s"
 
 #: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
-msgstr ""
+msgstr "Очистити розділи кешу \"%s\"?"
 
 #: views.py:117
 msgid "Object cache partitions submitted for purging."
-msgstr ""
+msgstr "Розділи кешу об’єктів надіслано на очищення."
 
 #: views.py:127
 #, python-format
 msgid "%(count)d caches submitted for purging."
-msgstr ""
+msgstr "%(count)d кеші, подані на очищення."
 
 #: views.py:130
 #, python-format
 msgid "%(count)d cache submitted for purging."
-msgstr ""
+msgstr "%(count)d кеш надіслано на очищення."
 
 #: views.py:139
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Надіслати вибраний кеш для очищення?"
+msgstr[1] "Надіслати вибрані кеші на очищення?"
+msgstr[2] "Надіслати вибрані кеші на очищення?"
+msgstr[3] "Надіслати вибрані кеші на очищення?"

@@ -435,8 +435,8 @@ class CachePartitionFileBusinessLogicMixin:
                 )
             except Exception as exception:
                 logger.error(
-                    msg='Unexpected exception opening the cache file; %s',
-                    args=(exception,), exc_info=True
+                    'Unexpected exception opening the cache file; %s',
+                    exception, exc_info=True
                 )
                 raise
             else:

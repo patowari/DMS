@@ -22,23 +22,23 @@ msgstr ""
 
 #: apps.py:28 events.py:6
 msgid "Locales"
-msgstr ""
+msgstr "Локалізація"
 
 #: dependencies.py:12
 msgid "Transifex Client"
-msgstr ""
+msgstr "Клієнт Transifex"
 
 #: events.py:10
 msgid "User locale profile edited"
-msgstr ""
+msgstr "Відредаговано мовний профіль користувача"
 
 #: links.py:15
 msgid "Locale profile"
-msgstr ""
+msgstr "Локальний профіль"
 
 #: links.py:20
 msgid "Edit locale profile"
-msgstr ""
+msgstr "Редагувати локальний профіль"
 
 #: models.py:20
 msgid "User"
@@ -46,19 +46,19 @@ msgstr "Користувач"
 
 #: models.py:24
 msgid "Timezone"
-msgstr ""
+msgstr "Часовий пояс"
 
 #: models.py:28
 msgid "Language"
-msgstr ""
+msgstr "Мова"
 
 #: models.py:34
 msgid "User locale profile"
-msgstr ""
+msgstr "Локальний профіль користувача"
 
 #: models.py:35
 msgid "User locale profiles"
-msgstr ""
+msgstr "Локальні профілі користувача"
 
 #: models.py:39
 msgid "None"
@@ -67,9 +67,9 @@ msgstr "None"
 #: views.py:39
 #, python-format
 msgid "Locale profile for user: %s"
-msgstr ""
+msgstr "Профіль локалізації для користувача: %s"
 
 #: views.py:72
 #, python-format
 msgid "Edit locale profile for user: %s"
-msgstr ""
+msgstr "Редагувати локальний профіль для користувача: %s"

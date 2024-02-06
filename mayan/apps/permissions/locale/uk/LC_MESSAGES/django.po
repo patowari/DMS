@@ -27,7 +27,7 @@ msgstr "Дозволи"
 
 #: apps.py:106 model_mixins.py:35
 msgid "Group count"
-msgstr ""
+msgstr "Кількість груп"
 
 #: classes.py:65
 msgid "Insufficient permission."
@@ -35,15 +35,15 @@ msgstr ""
 
 #: dashboard_widgets.py:13
 msgid "Total roles"
-msgstr ""
+msgstr "Всього ролей"
 
 #: events.py:10
 msgid "Role created"
-msgstr ""
+msgstr "Роль створено"
 
 #: events.py:13
 msgid "Role edited"
-msgstr ""
+msgstr "Роль відредагована"
 
 #: links.py:21 links.py:51 links.py:63 models.py:42 views.py:111
 msgid "Roles"
@@ -51,7 +51,7 @@ msgstr "Ролі"
 
 #: links.py:29 views.py:57
 msgid "Create new role"
-msgstr ""
+msgstr "Створити нову роль"
 
 #: links.py:34 links.py:37
 msgid "Delete"
@@ -63,29 +63,29 @@ msgstr "Редагувати"
 
 #: links.py:47 models.py:34
 msgid "Groups"
-msgstr ""
+msgstr "Групи"
 
 #: links.py:56
 msgid "Role permissions"
-msgstr ""
+msgstr "Дозволи ролі"
 
 #: model_mixins.py:43
 msgid "Permission count"
-msgstr ""
+msgstr "Кількість дозволів"
 
 #: model_mixins.py:89
 #, python-format
 msgid "Unknown or obsolete permission: %s"
-msgstr ""
+msgstr "Невідомий або застарілий дозвіл: %s"
 
 #: model_mixins.py:102
 #, python-format
 msgid "Unknown or obsolete permission namespace: %s"
-msgstr ""
+msgstr "Невідомий або застарілий простір імен дозволу: %s"
 
 #: models.py:26
 msgid "A short text describing the role."
-msgstr ""
+msgstr "Короткий текст, що описує роль."
 
 #: models.py:27 search.py:14 serializers.py:20
 msgid "Label"
@@ -97,139 +97,139 @@ msgstr "Роль"
 
 #: models.py:76 serializers.py:14
 msgid "Namespace"
-msgstr ""
+msgstr "Простір імен"
 
 #: models.py:79
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: models.py:87
 msgid "Permission"
-msgstr ""
+msgstr "Дозвіл"
 
 #: permissions.py:10
 msgid "Create roles"
-msgstr ""
+msgstr "Створити ролі"
 
 #: permissions.py:13
 msgid "Delete roles"
-msgstr ""
+msgstr "Видалити ролі"
 
 #: permissions.py:16
 msgid "Edit roles"
-msgstr ""
+msgstr "Редагувати ролі"
 
 #: permissions.py:19
 msgid "View roles"
-msgstr ""
+msgstr "Переглянути ролі"
 
 #: search.py:18
 msgid "Group name"
-msgstr ""
+msgstr "Назва групи"
 
 #: serializers.py:17
 msgid "Primary key"
-msgstr ""
+msgstr "Первинний ключ"
 
 #: serializers.py:36
 msgid "Primary key of the group to add to the role."
-msgstr ""
+msgstr "Первинний ключ групи, який потрібно додати до ролі."
 
 #: serializers.py:37 serializers.py:45
 msgid "Group ID"
-msgstr ""
+msgstr "ID групи"
 
 #: serializers.py:44
 msgid "Primary key of the group to remove from the role."
-msgstr ""
+msgstr "Первинний ключ групи, яку потрібно видалити з ролі."
 
 #: serializers.py:52
 msgid "Primary key of the permission to add to the role."
-msgstr ""
+msgstr "Первинний ключ дозволу на додавання до ролі."
 
 #: serializers.py:53 serializers.py:61
 msgid "Permission ID"
-msgstr ""
+msgstr "ID Дозволу"
 
 #: serializers.py:60
 msgid "Primary key of the permission to remove from the role."
-msgstr ""
+msgstr "Первинний ключ дозволу на видалення з ролі."
 
 #: serializers.py:67
 msgid "Groups URL"
-msgstr ""
+msgstr "URL-адреса груп"
 
 #: serializers.py:71
 msgid "Groups add URL"
-msgstr ""
+msgstr "Додати URL групи"
 
 #: serializers.py:75
 msgid "Groups remove URL"
-msgstr ""
+msgstr "Видалити URL груп"
 
 #: serializers.py:79
 msgid "Permissions URL"
-msgstr ""
+msgstr "Дозволені URL"
 
 #: serializers.py:83
 msgid "Permissions add URL"
-msgstr ""
+msgstr "Дозволи на додавання URL"
 
 #: serializers.py:87
 msgid "Permissions remove URL"
-msgstr ""
+msgstr "Дозволи на видалення URL"
 
 #: serializers.py:94
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: views.py:27
 msgid "Group roles"
-msgstr ""
+msgstr "Групові ролі"
 
 #: views.py:28
 msgid "Available roles"
-msgstr ""
+msgstr "Доступні ролі"
 
 #: views.py:45
 #, python-format
 msgid "Roles of group: %s"
-msgstr ""
+msgstr "Ролі групи: %s"
 
 #: views.py:64
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Помилка видалення ролі \"%(instance)s\"; %(exception)s"
 
 #: views.py:69
 #, python-format
 msgid "%(count)d roles deleted successfully."
-msgstr ""
+msgstr "%(count)d ролей успішно видалено."
 
 #: views.py:70
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Роль \"%(object)s\" успішно видалено."
 
 #: views.py:71
 #, python-format
 msgid "%(count)d role deleted successfully."
-msgstr ""
+msgstr "%(count)d роль успішно видалено."
 
 #: views.py:72
 #, python-format
 msgid "Delete role: %(object)s."
-msgstr ""
+msgstr "Видалити роль: %(object)s."
 
 #: views.py:73
 #, python-format
 msgid "Delete the %(count)d selected role."
-msgstr ""
+msgstr "Видалити %(count)d обрану роль."
 
 #: views.py:74
 #, python-format
 msgid "Delete the %(count)d selected roles."
-msgstr ""
+msgstr "Видалити %(count)d обраних ролей."
 
 #: views.py:103
 msgid ""
@@ -238,29 +238,35 @@ msgid ""
 "controls lists. Access controls list are permissions granted to a role for "
 "specific objects which its group members inherit."
 msgstr ""
+"Ролі - це одиниці авторизації. Вони містять групи користувачів, які "
+"успадковують дозволи ролі для всієї системи. Ролі також можуть бути частиною"
+" списків контролю доступу. Списки контролю доступу - це дозволи, надані ролі"
+" для конкретних об'єктів, які успадковують їхні члени групи."
 
 #: views.py:110
 msgid "There are no roles"
-msgstr ""
+msgstr "Немає ролей"
 
 #: views.py:116
 msgid "Role groups"
-msgstr ""
+msgstr "Групи ролей"
 
 #: views.py:117
 msgid "Available groups"
-msgstr ""
+msgstr "Доступні групи"
 
 #: views.py:135
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr ""
+"Додайте групи, щоб вони стали частиною ролі. Вони успадковуватимуть дозволи "
+"та контроль доступу ролі."
 
 #: views.py:138
 #, python-format
 msgid "Groups of role: %s"
-msgstr ""
+msgstr "Групи ролей: %s"
 
 #: views.py:143
 msgid "Granted permissions"
@@ -274,13 +280,14 @@ msgstr "Доступні дозволи"
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
+"Дозволи, надані тут, застосовуватимуться до всієї системи та всіх об'єктів."
 
 #: views.py:188
 #, python-format
 msgid "Permissions for role: %s"
-msgstr ""
+msgstr "Дозволи для ролі: %s"
 
 #: views.py:208
 #, python-format
 msgid "Details of permission: %s"
-msgstr ""
+msgstr "Деталі дозволу: %s"

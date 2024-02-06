@@ -22,41 +22,41 @@ msgstr ""
 
 #: apps.py:27
 msgid "Dynamic search"
-msgstr ""
+msgstr "Динамічний пошук"
 
 #: forms.py:19
 msgid "Match all"
-msgstr ""
+msgstr "Збіг усіх"
 
 #: forms.py:20
 msgid "Return only results that match all fields."
-msgstr ""
+msgstr "Повертати лише ті результати, які відповідають усім полям."
 
 #: forms.py:52
 msgid "Search logic"
-msgstr ""
+msgstr "Логіка пошуку"
 
 #: forms.py:72 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
-msgstr ""
+msgstr "Пошукові запити"
 
 #: links.py:20
 msgid "Basic search"
-msgstr ""
+msgstr "Базовий пошук"
 
 #: links.py:24 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced search"
-msgstr ""
+msgstr "Розширений пошук"
 
 #: links.py:28
 msgid "Search again"
-msgstr ""
+msgstr "Шукати знову"
 
 #: links.py:33 views.py:62
 msgid "Reindex search backend"
-msgstr ""
+msgstr "Переіндексувати пошуковий бекенд"
 
 #: literals.py:21
 msgid "Yes"
@@ -70,36 +70,39 @@ msgstr "Ні"
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 #: permissions.py:10
 msgid "Execute search tools"
-msgstr ""
+msgstr "Запустити пошукові інструменти"
 
 #: queues.py:10
 msgid "Search slow"
-msgstr ""
+msgstr "Повільний пошук"
 
 #: queues.py:15
 msgid "Remove a model instance from the search engine."
-msgstr ""
+msgstr "Видаліть екземпляр моделі з пошукової системи."
 
 #: queues.py:20
 msgid "Index a model instance to the search engine."
-msgstr ""
+msgstr "Індексувати екземпляр моделі у пошуковий двигун."
 
 #: queues.py:25
 msgid "Index all instances of a search model to the search engine."
-msgstr ""
+msgstr "Індексувати всі екземпляри моделі пошуку в пошуковій системі."
 
 #: queues.py:31
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
+"Індексувати всі пов’язані екземпляри моделі пошуку після події «багато до "
+"багатьох»."
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
+"Скинути внутрішні індекси пошуку та знову проіндексувати всі екземпляри."
 
 #: scoped_queries.py:352
 msgid ""
@@ -107,6 +110,9 @@ msgid ""
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
+"Результати пошуку перевищують налаштування обмеження. Результати можуть бути"
+" ненадійними, якщо використовуються кілька областей. Звужуйте критерії "
+"пошуку або збільшуйте значення налаштування обмеження результатів."
 
 #: scoped_queries.py:368
 #, python-format
@@ -114,63 +120,65 @@ msgid ""
 "Search backend error. Verify that the search service is available and that "
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
+"Помилка пошукового бекенду. Перевірте, що пошуковий сервіс доступний і "
+"синтаксис пошуку є дійсним для активного пошукового бекенду; %s"
 
 #: search_fields.py:311
 msgid "Any"
-msgstr ""
+msgstr "Будь-який"
 
 #: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
-msgstr ""
+msgstr "Невідома модель пошуку `%s`."
 
 #: search_models.py:114
 msgid "All content"
-msgstr ""
+msgstr "Весь контент"
 
 #: search_query_types.py:167
 msgid "Exact"
-msgstr ""
+msgstr "Точний"
 
 #: search_query_types.py:173
 msgid "Fuzzy"
-msgstr ""
+msgstr "Нечіткий"
 
 #: search_query_types.py:179
 msgid "Greater than"
-msgstr ""
+msgstr "Більше ніж"
 
 #: search_query_types.py:185
 msgid "Greater than or equal"
-msgstr ""
+msgstr "Більше або дорівнює"
 
 #: search_query_types.py:191
 msgid "Less than"
-msgstr ""
+msgstr "Менше ніж"
 
 #: search_query_types.py:197
 msgid "Less than or equal"
-msgstr ""
+msgstr "Менше або дорівнює"
 
 #: search_query_types.py:203
 msgid "Partial"
-msgstr ""
+msgstr "Частковий"
 
 #: search_query_types.py:209
 msgid "Range"
-msgstr ""
+msgstr "Діапазон"
 
 #: search_query_types.py:244
 msgid "Range exclusive"
-msgstr ""
+msgstr "Ексклюзивний діапазон"
 
 #: search_query_types.py:250
 msgid "Regular expression"
-msgstr ""
+msgstr "Регулярний вираз"
 
 #: serializers.py:14
 msgid "Field name"
-msgstr ""
+msgstr "Назва поля"
 
 #: serializers.py:17
 msgid "Label"
@@ -178,153 +186,168 @@ msgstr "Мітка"
 
 #: serializers.py:23
 msgid "App label"
-msgstr ""
+msgstr "Мітка програми"
 
 #: serializers.py:26
 msgid "Model name"
-msgstr ""
+msgstr "Назва моделі"
 
 #: serializers.py:29
 msgid "Primary key"
-msgstr ""
+msgstr "Первинний ключ"
 
 #: serializers.py:32
 msgid "Search fields"
-msgstr ""
+msgstr "Поля пошуку"
 
 #: settings.py:20
 msgid "Full path to the backend to be used to handle the search."
 msgstr ""
+"Повний шлях до серверної частини, яка буде використовуватися для обробки "
+"пошуку."
 
 #: settings.py:27
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
+"Аргументи для передачі до серверної частини пошуку. Наприклад, значення для "
+"зміни поведінки, імена хостів або аргументи автентифікації."
 
 #: settings.py:36
 msgid "The search operator to use when none is specified."
-msgstr ""
+msgstr "Оператор пошуку для використання, якщо не вказано жодного."
 
 #: settings.py:43
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
+"Вимикає пошук на панелі за одним терміном, залишаючи лише кнопку розширеного"
+" пошуку."
 
 #: settings.py:51
 msgid "Amount of objects to process when performing bulk indexing."
-msgstr ""
+msgstr "Кількість об’єктів для обробки під час масового індексування."
 
 #: settings.py:57
 msgid "Sets the default state of the \"Match all\" checkbox."
-msgstr ""
+msgstr "Встановлює стан за замовчуванням прапорця «Відповідати всім»."
 
 #: settings.py:63
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
+"Максимальна кількість результатів пошуку для отримання та відображення на "
+"одиницю пошукового запиту."
 
 #: settings.py:69
 msgid "Maximum number of search results to fetch and display."
 msgstr ""
+"Максимальна кількість результатів пошуку для отримання та відображення."
 
 #: templates/dynamic_search/app/list_toolbar.html:18
 msgid "Filter terms"
-msgstr ""
+msgstr "Терміни фільтрування"
 
 #: templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced"
-msgstr ""
+msgstr "Розширений"
 
 #: value_transformations.py:38
 msgid "Replace accents"
-msgstr ""
+msgstr "Замінити акценти"
 
 #: value_transformations.py:50
 msgid "@ sign replace"
-msgstr ""
+msgstr "@ знак заміни"
 
 #: value_transformations.py:60
 msgid "Case fold"
-msgstr ""
+msgstr "Основа вибору"
 
 #: value_transformations.py:70 value_transformations.py:80
 msgid "Hyphen replace"
-msgstr ""
+msgstr "Замінити дефіс"
 
 #: value_transformations.py:90
 msgid "To boolean"
-msgstr ""
+msgstr "До булевого"
 
 #: value_transformations.py:105
 msgid "To date time"
-msgstr ""
+msgstr "До позначки дати і часу"
 
 #: value_transformations.py:132
 msgid "Date time ISO format"
-msgstr ""
+msgstr "Дата і час у ISO форматі"
 
 #: value_transformations.py:146
 msgid "Date time simple format"
-msgstr ""
+msgstr "Простий формат дати і часу"
 
 #: value_transformations.py:158
 msgid "Date time timestamp format"
-msgstr ""
+msgstr "Дата і час  timestamp мітки часу"
 
 #: value_transformations.py:174
 msgid "To integer"
-msgstr ""
+msgstr "До цілого"
 
 #: value_transformations.py:184
 msgid "To string"
-msgstr ""
+msgstr "До строки"
 
 #: views.py:59
 msgid "This tool erases and populates the search backend's internal index."
 msgstr ""
+"Цей інструмент стирає та заповнює внутрішній індекс серверної частини "
+"пошуку."
 
 #: views.py:69
 msgid ""
 "This tool is required only for some search backends. Search results will be "
 "affected while the backend is being reindexed."
 msgstr ""
+"Цей інструмент потрібен лише для деяких систем пошуку. Під час повторного "
+"індексування серверної частини це вплине на результати пошуку."
 
 #: views.py:75
 msgid ""
 "The currently selected search backend does not support or requires "
 "reindexing."
 msgstr ""
+"Поточно обраний пошуковий двигун не підтримує або вимагає повторного "
+"індексування."
 
 #: views.py:88
 msgid "Search backend reindexing queued."
-msgstr ""
+msgstr "Повторне індексування серверної частини пошуку в черзі."
 
 #: views.py:110
 #, python-format
 msgid "Search for: %s"
-msgstr ""
+msgstr "Шукати: %s"
 
 #: views.py:139
 #, python-format
 msgid "Advanced search for: %s"
-msgstr ""
+msgstr "Розширений пошук для: %s"
 
 #: views.py:174
 msgid "Try again using different terms. "
-msgstr ""
+msgstr "Спробуйте ще раз, використовуючи інші терміни."
 
 #: views.py:176
 msgid "No search results"
-msgstr ""
+msgstr "Немає результатів пошуку"
 
 #: views.py:179
 #, python-format
 msgid "Search query: %s"
-msgstr ""
+msgstr "Пошуковий запит: %s"
 
 #: views.py:181
 #, python-format
 msgid "Search results for: %s"
-msgstr ""
+msgstr "Результати пошуку для: %s"

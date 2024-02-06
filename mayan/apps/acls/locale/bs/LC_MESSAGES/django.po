@@ -139,7 +139,7 @@ msgstr "URL"
 
 #: serializers.py:118
 msgid "Primary key of the permission to add to the ACL."
-msgstr ""
+msgstr "Primarni ključ odredišnog stanja koji treba dodati."
 
 #: serializers.py:119 serializers.py:126
 msgid "Permission ID"

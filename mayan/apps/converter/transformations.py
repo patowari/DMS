@@ -611,11 +611,11 @@ class TransformationResize(BaseTransformation):
                 size=(
                     self.image.size[0] / factor,
                     self.image.size[1] / factor
-                ), resample=Image.NEAREST
+                ), resample=Image.Resampling.NEAREST
             )
 
         self.image.thumbnail(
-            size=(width, height), resample=Image.Resampling.BICUBIC
+            size=(width, height), resample=Image.Resampling.LANCZOS
         )
 
         return self.image
@@ -660,7 +660,7 @@ class TransformationRotate(BaseTransformation):
 
         return self.image.rotate(
             angle=360 - self.degrees, expand=True, fillcolor=fillcolor,
-            resample=Image.BICUBIC
+            resample=Image.Resampling.BICUBIC
         )
 
 
@@ -758,7 +758,7 @@ class TransformationZoom(BaseTransformation):
             height = 1
 
         return self.image.resize(
-            size=(width, height), resample=Image.Resampling.BICUBIC
+            size=(width, height), resample=Image.Resampling.LANCZOS
         )
 
 

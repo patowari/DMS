@@ -2,8 +2,6 @@ from django.conf import settings
 
 from django.utils.translation import gettext_lazy as _
 
-import mayan
-
 COMMAND_NAME_COMMON_INITIAL_SETUP = 'common_initial_setup'
 COMMAND_NAME_COMMON_PERFORM_UPGRADE = 'common_perform_upgrade'
 COMMAND_NAME_MIGRATE = 'migrate'
@@ -17,7 +15,6 @@ DEFAULT_COMMON_EXTRA_APPS_PRE = settings.COMMON_EXTRA_APPS_PRE
 DEFAULT_COMMON_HOME_VIEW = 'common:home'
 DEFAULT_COMMON_HOME_VIEW_DASHBOARD_NAME = 'user'
 DEFAULT_COMMON_PROJECT_TITLE = None
-DEFAULT_COMMON_PROJECT_URL = mayan.__website__
 
 EMPTY_LABEL = '---------'
 

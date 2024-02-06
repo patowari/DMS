@@ -102,7 +102,9 @@ def task_event_queryset_clear(
 
 
 @app.task(ignore_result=True)
-def task_event_queryset_export(decomposed_queryset, user_id=None):
+def task_event_queryset_export(
+    decomposed_queryset, organization_installation_url=None, user_id=None
+):
     queryset = QuerysetParametersSerializer.rebuild(
         decomposed_queryset=decomposed_queryset
     )
@@ -112,4 +114,7 @@ def task_event_queryset_export(decomposed_queryset, user_id=None):
     else:
         user = None
 
-    ActionExporter(queryset=queryset).export_to_download_file(user=user)
+    ActionExporter(queryset=queryset).export_to_download_file(
+        organization_installation_url=organization_installation_url,
+        user=user
+    )

@@ -44,7 +44,7 @@ msgstr "Fichier de document téléchargé"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "ID de fichier"
 
 #: forms.py:11
 msgid "Document"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Fichiers prêts à être téléchargé."
 
 #: permissions.py:10
 msgid "Download document files"
@@ -138,3 +138,5 @@ msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"Le processus sera exécuté en arrière-plan. Les fichiers seront disponible "
+"dans la zone de téléchargement."

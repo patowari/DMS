@@ -240,9 +240,9 @@ msgid ""
 msgstr ""
 "A szerepkörök jogosultsági egységek. Olyan felhasználói csoportokat "
 "tartalmaznak, amelyek a teljes rendszer szerepkör-engedélyeit öröklik. A "
-"szerepkörök a hozzáférés-szabályozási listák részei is lehetnek. A "
-"hozzáférés-ellenőrzési lista egy szerepkörnek adott jogosultságokat jelent "
-"bizonyos objektumokhoz, amelyeket a csoporttagok örökölnek."
+"szerepkörök a hozzáférési listák részei is lehetnek. A hozzáférési lista egy"
+" szerepkörnek adott jogosultságokat jelent bizonyos objektumokhoz, amelyeket"
+" a csoporttagok örökölnek."
 
 #: views.py:110
 msgid "There are no roles"

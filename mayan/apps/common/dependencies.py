@@ -193,12 +193,12 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Provides style checking.'
-    ), module=__name__, name='flake8', version_string='==6.1.0'
+    ), module=__name__, name='flake8', version_string='==7.0.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==8.18.1'
+    ), module=__name__, name='ipython', version_string='==8.21.0'
 )
 PythonDependency(
     module=__name__, environment=environment_development,
@@ -215,7 +215,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='safety', version_string='==2.3.5'
+    module=__name__, name='safety', version_string='==3.0.1'
 )
 
 # Documentation

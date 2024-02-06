@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:19 permissions.py:6
 msgid "Templating"
-msgstr ""
+msgstr "Шаблонування"
 
 #: fields.py:21
 #, python-format
@@ -31,6 +31,8 @@ msgid ""
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " "
 msgstr ""
+"Використовуйте стандартну мову шаблонізації Django "
+"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 
 #: fields.py:41
 #, python-format
@@ -39,18 +41,21 @@ msgid ""
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " The {{ %(variable)s }} variable is available to the template."
 msgstr ""
+"Використовуйте стандартну мову шаблонізації Django "
+"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
+" Змінна {{ %(variable)s }} доступна у шаблоні."
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."
-msgstr ""
+msgstr "Отриманий текст із оціненого шаблону."
 
 #: forms.py:10
 msgid "Result"
-msgstr ""
+msgstr "Результат"
 
 #: forms.py:20
 msgid "The template string to be evaluated."
-msgstr ""
+msgstr "Рядок шаблону для оцінки."
 
 #: forms.py:21
 msgid "Template"
@@ -58,50 +63,50 @@ msgstr "Шаблон"
 
 #: links.py:11
 msgid "Sandbox"
-msgstr ""
+msgstr "Пісочниця"
 
 #: permissions.py:10
 msgid "Use the template sandbox"
-msgstr ""
+msgstr "Використати шаблон пісочниці"
 
 #: serializers.py:8
 msgid "Hex hash"
-msgstr ""
+msgstr "Hex хеш"
 
 #: serializers.py:11
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: serializers.py:14
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: serializers.py:17
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: views.py:44
 #, python-format
 msgid "Template sandbox for: %s"
-msgstr ""
+msgstr "Шаблон пісочниці для: %s"
 
 #: views.py:65
 #, python-format
 msgid "Template error; %(exception)s"
-msgstr ""
+msgstr "Помилка шаблону; %(exception)s"
 
 #: widgets.py:69
 msgid "Filters"
-msgstr ""
+msgstr "Фільтри"
 
 #: widgets.py:76
 msgid "Tags"
-msgstr ""
+msgstr "Теги"
 
 #: widgets.py:83
 msgid "<Filters and tags>"
-msgstr ""
+msgstr "<Filters and tags>"
 
 #: widgets.py:128
 msgid "<Model attributes>"
-msgstr ""
+msgstr "<Model attributes>"

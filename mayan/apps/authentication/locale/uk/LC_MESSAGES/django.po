@@ -34,11 +34,11 @@ msgstr "Дії від імені користувача розпочато"
 
 #: events.py:16
 msgid "User logged in"
-msgstr ""
+msgstr "Користувач увійшов в систему"
 
 #: events.py:19
 msgid "User logged out"
-msgstr ""
+msgstr "Користувач вийшов із системи"
 
 #: forms.py:31
 msgid "Remember me"
@@ -70,7 +70,7 @@ msgstr "Діяти від імені користувача"
 
 #: links.py:50
 msgid "Impersonate"
-msgstr ""
+msgstr "Видавати себе за іншу особу"
 
 #: links.py:55 links.py:60
 msgid "Set password"
@@ -91,10 +91,12 @@ msgstr ""
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
+"Шлях до модуля (розширення), який використовується для обробки "
+"автентифікації користувача."
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "Аргументи для AUTHENTICATION_BACKEND."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format
@@ -103,6 +105,8 @@ msgid ""
 "                Impersonating user \"%(user)s\".\n"
 "            "
 msgstr ""
+"\n"
+"Видавати себе за користувача \"%(user)s\"."
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
@@ -161,12 +165,12 @@ msgstr "Електронний лист для скидання пароля в�
 
 #: views/authentication_views.py:160
 msgid "Next"
-msgstr ""
+msgstr "Наступний"
 
 #: views/authentication_views.py:166
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
-msgstr ""
+msgstr "Крок %(step)d з %(total_steps)d : %(step_label)s"
 
 #: views/authentication_views.py:238
 msgid "Your password has been successfully changed."
@@ -195,14 +199,17 @@ msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
 msgstr ""
+"Змінювати пароль облікових записів персоналу або суперкористувача через "
+"інтерфейс користувача заборонено. Для виконання цієї операції використовуйте"
+" інструменти адміністрування."
 
 #: views/authentication_views.py:368
 msgid "Change user password"
 msgid_plural "Change users passwords"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Змінити пароль користувача"
+msgstr[1] "Змінити паролі користувачів"
+msgstr[2] "Змінити паролі користувачів"
+msgstr[3] "Змінити паролі користувачів"
 
 #: views/authentication_views.py:379
 #, python-format
@@ -222,4 +229,4 @@ msgstr "Помилка скидання пароля для користувач
 #: views/impersonation_views.py:81
 #, python-format
 msgid "Impersonate user: %s"
-msgstr ""
+msgstr "Видавати себе за користувача: %s"

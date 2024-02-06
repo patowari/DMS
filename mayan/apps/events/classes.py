@@ -12,7 +12,7 @@ from actstream import action
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.menus import menu_list_facet
-from mayan.apps.common.settings import setting_project_url
+from mayan.apps.organizations.utils import get_organization_installation_url
 
 from .literals import (
     DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_TYPE_NAMESPACE_NAME,
@@ -70,7 +70,9 @@ class ActionExporter:
             ]
             writer.writerow(row)
 
-    def export_to_download_file(self, user=None):
+    def export_to_download_file(
+        self, organization_installation_url=None, user=None
+    ):
         event_type_namespace = EventTypeNamespace.get(
             name=EVENT_TYPE_NAMESPACE_NAME
         )
@@ -100,12 +102,15 @@ class ActionExporter:
         )
 
         if user:
-            download_list_url = furl(setting_project_url.value).join(
+            if not organization_installation_url:
+                organization_installation_url = get_organization_installation_url()
+
+            download_list_url = furl(organization_installation_url).join(
                 reverse(
                     viewname='storage:download_file_list'
                 )
             ).tostr()
-            download_url = furl(setting_project_url.value).join(
+            download_url = furl(organization_installation_url).join(
                 reverse(
                     viewname='storage:download_file_download',
                     kwargs={'download_file_id': download_file.pk}

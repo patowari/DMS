@@ -23,15 +23,15 @@ msgstr ""
 
 #: apps.py:23 events.py:6 permissions.py:6 settings.py:12
 msgid "Logging"
-msgstr ""
+msgstr "Логування"
 
 #: events.py:10
 msgid "Error log deleted"
-msgstr ""
+msgstr "Журнал помилок видалено"
 
 #: links.py:15 views.py:36
 msgid "Global error log"
-msgstr ""
+msgstr "Глобальний журнал помилок"
 
 #: links.py:26
 msgid "Delete"
@@ -39,67 +39,67 @@ msgstr "Видалити"
 
 #: links.py:31
 msgid "Errors"
-msgstr ""
+msgstr "Помилки"
 
 #: links.py:37
 msgid "Clear errors"
-msgstr ""
+msgstr "Очистити помилки"
 
 #: model_mixins.py:10
 msgid "Object"
-msgstr ""
+msgstr "Об'єкт"
 
 #: model_mixins.py:18
 msgid "App label"
-msgstr ""
+msgstr "Мітка програми"
 
 #: models.py:19 models.py:37
 msgid "Internal name"
-msgstr ""
+msgstr "Внутрішнє ім'я"
 
 #: models.py:24 models.py:34
 msgid "Error log"
-msgstr ""
+msgstr "Журнал помилок"
 
 #: models.py:25
 msgid "Error logs"
-msgstr ""
+msgstr "Журнали помилок"
 
 #: models.py:51 models.py:63
 msgid "Error log partition"
-msgstr ""
+msgstr "Розділ журналу помилок"
 
 #: models.py:52
 msgid "Error log partitions"
-msgstr ""
+msgstr "Розділи журналу помилок"
 
 #: models.py:66
 msgid "Date and time"
-msgstr ""
+msgstr "Дата і час"
 
 #: models.py:68
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: models.py:75
 msgid "Error log partition entry"
-msgstr ""
+msgstr "Запис розділу журналу помилок"
 
 #: models.py:76
 msgid "Error log partition entries"
-msgstr ""
+msgstr "Записи розділу журналу помилок"
 
 #: permissions.py:10
 msgid "Delete error log"
-msgstr ""
+msgstr "Видалити журнал помилок"
 
 #: permissions.py:13
 msgid "View error log"
-msgstr ""
+msgstr "Переглянути журнал помилок"
 
 #: serializers.py:12
 msgid "Content type"
-msgstr ""
+msgstr "Тип вмісту"
 
 #: serializers.py:16
 msgid "Object ID"
@@ -107,59 +107,64 @@ msgstr "ID об'єкта"
 
 #: serializers.py:19
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: settings.py:18
 msgid "Disable logging message ANSI color codes."
-msgstr ""
+msgstr "Вимкнути реєстрацію повідомлень про кольорові коди ANSI."
 
 #: settings.py:24
 msgid "Automatically enable logging to all apps."
-msgstr ""
+msgstr "Автоматично ввімкнути журналювання для всіх програм."
 
 #: settings.py:30
 msgid "List of handlers to which logging messages will be sent."
 msgstr ""
+"Список обробників, на які будуть надсилатися повідомлення журналування."
 
 #: settings.py:35
 msgid "Level for the logging system."
-msgstr ""
+msgstr "Рівень для системи журналювання."
 
 #: settings.py:41
 msgid "Path to the logfile that will track errors during production."
-msgstr ""
+msgstr "Шлях до файлу журналу, який відстежуватиме помилки в продакшені."
 
 #: views.py:30
 msgid ""
 "This view displays the error log of different objects. An empty list is a "
 "good thing."
 msgstr ""
+"Цей вигляд відображає журнал помилок різних об'єктів. Порожній список - це "
+"хороша річ."
 
 #: views.py:34 views.py:101
 msgid "There are no error log entries"
-msgstr ""
+msgstr "Немає записів у журналі помилок"
 
 #: views.py:50
 #, python-format
 msgid "Clear error log entries for: %s"
-msgstr ""
+msgstr "Очистити записи журналу помилок для: %s"
 
 #: views.py:57
 msgid "Object error log cleared successfully"
-msgstr ""
+msgstr "Об'єкт журналу помилок успішно очищено"
 
 #: views.py:74
 #, python-format
 msgid "Delete error log entry: %s"
-msgstr ""
+msgstr "Видалити запис про помилку в журналі: %s"
 
 #: views.py:97
 msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
+"Цей вигляд відображає журнал помилок об'єкта. Порожній список - це хороша "
+"річ."
 
 #: views.py:105
 #, python-format
 msgid "Error log entries for: %s"
-msgstr ""
+msgstr "Записи журналу помилок для: %s"

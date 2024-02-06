@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
@@ -18,8 +21,8 @@ msgstr ""
 
 #: apps.py:11
 msgid "Watch storages"
-msgstr ""
+msgstr "Watch сховища"
 
 #: source_backends.py:18
 msgid "Watch storage"
-msgstr ""
+msgstr "Watch сховище"

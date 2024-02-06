@@ -22,17 +22,19 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source periodic"
-msgstr ""
+msgstr "Періодичне джерело"
 
 #: source_backend_actions/arguments.py:7
 msgid ""
 "Executes the primary action of the source in test mode. Permanent "
 "modifications like deletion of files are disabled."
 msgstr ""
+"Виконує основну дію джерела в тестовому режимі. Постійні модифікації, такі "
+"як видалення файлів, вимкнено."
 
 #: source_backends/mixins.py:30
 msgid "Assign a document type to documents uploaded from this source."
-msgstr ""
+msgstr "Призначити тип документа документам, завантаженим із цього джерела."
 
 #: source_backends/mixins.py:38
 msgid "Document type"
@@ -40,12 +42,12 @@ msgstr "Тип документа"
 
 #: source_backends/mixins.py:45
 msgid "Interval in seconds between checks for new documents."
-msgstr ""
+msgstr "Інтервал у секундах між перевірками нових документів."
 
 #: source_backends/mixins.py:51
 msgid "Interval"
-msgstr ""
+msgstr "Інтервал"
 
 #: source_backends/mixins.py:65
 msgid "Unattended"
-msgstr ""
+msgstr "Без уваги"

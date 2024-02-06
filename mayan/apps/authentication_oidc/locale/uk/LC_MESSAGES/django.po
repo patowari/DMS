@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,16 +21,16 @@ msgstr ""
 
 #: apps.py:18 settings.py:8
 msgid "Authentication OIDC"
-msgstr ""
+msgstr "Аутентифікація OIDC"
 
 #: authentication_backends.py:97
 msgid "Login via OIDC"
-msgstr ""
+msgstr "Вхід через OIDC"
 
 #: links.py:22
 msgid "OIDC user details"
-msgstr ""
+msgstr "Деталі користувача OIDC"
 
 #: settings.py:14
 msgid "URL for the OIDC user profile page."
-msgstr ""
+msgstr "URL для сторінки профілю користувача OIDC."

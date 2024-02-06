@@ -22,96 +22,97 @@ msgstr ""
 
 #: apps.py:132 permissions.py:6 settings.py:16
 msgid "Common"
-msgstr ""
+msgstr "Загальне"
 
 #: dependencies.py:186
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
+"Використовується для дозволу офлайнового перекладу текстових рядків коду."
 
 #: dependencies.py:195
 msgid "Provides style checking."
-msgstr ""
+msgstr "Забезпечує перевірку стилю."
 
 #: dependencies.py:200
 msgid "Command line environment with autocompletion."
-msgstr ""
+msgstr "Середовище командного рядка з автозавершенням."
 
 #: dependencies.py:209
 msgid "Checks proper formatting of the README file."
-msgstr ""
+msgstr "Перевіряє правильність форматування файлу README."
 
 #: links.py:34
 msgid "About this"
-msgstr ""
+msgstr "Про це"
 
 #: links.py:37
 msgid "Get the book"
-msgstr ""
+msgstr "Отримати книгу"
 
 #: links.py:42
 msgid "Documentation"
-msgstr ""
+msgstr "Документація"
 
 #: links.py:45
 msgid "Forum"
-msgstr ""
+msgstr "Форум"
 
 #: links.py:50
 msgid "Knowledge base"
-msgstr ""
+msgstr "База знань"
 
 #: links.py:53 views.py:53
 msgid "License"
-msgstr ""
+msgstr "Ліцензія"
 
 #: links.py:58
 msgid "Copy"
-msgstr ""
+msgstr "Копія"
 
 #: links.py:62
 msgid "Setup"
-msgstr ""
+msgstr "Налаштування"
 
 #: links.py:65
 msgid "Source code"
-msgstr ""
+msgstr "Джерело коду"
 
 #: links.py:69
 msgid "Online store"
-msgstr ""
+msgstr "Онлайн-магазин"
 
 #: links.py:73
 msgid "Get support"
-msgstr ""
+msgstr "Отримати підтримку"
 
 #: links.py:77 views.py:134
 msgid "Tools"
-msgstr ""
+msgstr "Інструменти"
 
 #: literals.py:27
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
-msgstr ""
+msgstr "Ця функція застаріла та буде видалена в наступній версії."
 
 #: literals.py:36
 msgid "Days"
-msgstr ""
+msgstr "Дні"
 
 #: literals.py:37
 msgid "Hours"
-msgstr ""
+msgstr "Години"
 
 #: literals.py:38
 msgid "Minutes"
-msgstr ""
+msgstr "Хвилини"
 
 #: menus.py:8
 msgid "System"
-msgstr ""
+msgstr "Система"
 
 #: menus.py:10 menus.py:11
 msgid "Facet"
-msgstr ""
+msgstr "Грань"
 
 #: menus.py:14
 msgid "Actions"
@@ -119,15 +120,15 @@ msgstr "Дія"
 
 #: menus.py:15
 msgid "Related"
-msgstr ""
+msgstr "Пов'язані"
 
 #: menus.py:16
 msgid "Secondary"
-msgstr ""
+msgstr "Другорядний"
 
 #: menus.py:18
 msgid "Return"
-msgstr ""
+msgstr "Повернутись"
 
 #: menus.py:22
 msgid "User"
@@ -135,23 +136,27 @@ msgstr "Користувач"
 
 #: permissions.py:10
 msgid "Copy object"
-msgstr ""
+msgstr "Копіювати об'єкт"
 
 #: serializers.py:11
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: settings.py:24
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
+"У режимі списку показувати параметри меню \"списку\" як випадаюче меню "
+"замість окремих кнопок."
 
 #: settings.py:33
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
+"У режимі списку показувати пункти меню \"об'єкт\" як випадаюче меню замість "
+"окремих кнопок."
 
 #: settings.py:41
 msgid ""
@@ -159,6 +164,9 @@ msgid ""
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
+"Вимикає використання локальної папки `media`. При використанні цього "
+"параметру всі програми також повинні бути налаштовані через відповідні "
+"налаштування зберігання для використання альтернативного зберігання."
 
 #: settings.py:49
 msgid ""
@@ -167,6 +175,10 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Список рядків, що вказують на всі програми, які мають бути видалені зі "
+"списку, зазвичай встановлених Mayan EDMS. Кожен рядок повинен бути шляхом "
+"Python до: конфігурації класу програми (переважно), або пакету, що містить "
+"програму. Приклад: ['app_1', 'app_2']"
 
 #: settings.py:59
 msgid ""
@@ -175,6 +187,10 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Список рядків, що вказують на всі програми, які встановлені поза тими, що "
+"зазвичай встановлюються Mayan EDMS. Кожен рядок повинен бути  шляхом Python "
+"до: конфігурації класу програми (переважно), або пакету, що містить "
+"програму. Приклад: ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -184,24 +200,31 @@ msgid ""
 " containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"Список рядків, що вказують на всі програми, які встановлені поза тими, що "
+"зазвичай встановлюються Mayan EDMS. Кожен рядок повинен бути шляхом Python "
+"до: конфігурації класу програми, або пакету, що містить програму. Ці "
+"програми будуть встановлені перед типовими програмами. Приклад: ['app_1', "
+"'app_2']"
 
 #: settings.py:81
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
 msgstr ""
+"Назва виду, прикріпленого до якоря бренду в головному меню. Це також вид, на"
+" який користувачі будуть перенаправлені після входу в систему."
 
 #: settings.py:90
 msgid "Name of the dashboard to display in the home view."
-msgstr ""
+msgstr "Назва панелі управління для відображення на головній сторінці."
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr ""
+msgstr "Встановлює назву проекту."
 
 #: settings.py:99
 msgid "URL of the project's homepage."
-msgstr ""
+msgstr "URL домашньої сторінки."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."
@@ -209,17 +232,19 @@ msgstr "Клацніть сюди, щоб виправити це."
 
 #: validators.py:41
 msgid "Enter a valid JSON value."
-msgstr ""
+msgstr "Введіть дійсне значення JSON."
 
 #: validators.py:65
 msgid "Enter a valid YAML value."
-msgstr ""
+msgstr "Введіть дійсне значення YAML."
 
 #: validators.py:80
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
+"Введіть дійсне \"внутрішнє ім'я\", що складається з літер, цифр та "
+"підкреслень."
 
 #: views.py:25
 msgid "About"
@@ -227,40 +252,43 @@ msgstr "Про"
 
 #: views.py:43
 msgid "Home"
-msgstr ""
+msgstr "Головна"
 
 #: views.py:69
 #, python-format
 msgid "Fields to be copied: %s"
-msgstr ""
+msgstr "Поля, що копіюватимуться: %s"
 
 #: views.py:79
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
-msgstr ""
+msgstr "Зробити копію %(object_name)s \"%(object)s\"?"
 
 #: views.py:90
 msgid "Object copied successfully."
-msgstr ""
+msgstr "Об'єкт успішно скопійовано."
 
 #: views.py:108
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr ""
+"Немає результатів тут означає, що у вас немає необхідних дозволів для "
+"виконання адміністративного завдання."
 
 #: views.py:111
 msgid "No setup options available."
-msgstr ""
+msgstr "Немає доступних параметрів налаштування."
 
 #: views.py:116
 msgid "Here you can configure all aspects of the system."
-msgstr ""
+msgstr "Тут ви можете налаштувати всі аспекти системи."
 
 #: views.py:118
 msgid "Setup items"
-msgstr ""
+msgstr "Налаштування елементів"
 
 #: views.py:132
 msgid "These modules are used to do system maintenance."
 msgstr ""
+"Ці модулі використовуються для проведення технічного обслуговування системи."

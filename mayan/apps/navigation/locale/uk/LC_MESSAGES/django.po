@@ -22,11 +22,11 @@ msgstr ""
 
 #: apps.py:9
 msgid "Navigation"
-msgstr ""
+msgstr "Навігація"
 
 #: classes.py:965
 msgid "Unnamed function"
-msgstr ""
+msgstr "Функція без назви"
 
 #: templates/navigation/actions_dropdown.html:5
 msgid "Actions"

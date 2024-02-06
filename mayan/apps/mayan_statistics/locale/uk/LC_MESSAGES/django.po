@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
@@ -18,136 +21,136 @@ msgstr ""
 
 #: apps.py:29 links.py:35 permissions.py:6 queues.py:7
 msgid "Statistics"
-msgstr ""
+msgstr "Статистика"
 
 #: apps.py:38
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #. Translators: Schedule here is a noun, the 'schedule' at
 #. which the statistic will be updated
 #: apps.py:45
 msgid "Schedule"
-msgstr ""
+msgstr "Розклад"
 
 #: apps.py:51
 msgid "Last update"
-msgstr ""
+msgstr "Останнє оновлення"
 
 #: classes.py:45
 msgid "Statistics namespace"
-msgstr ""
+msgstr "Статистика простору імен"
 
 #: classes.py:162
 msgid "Never"
-msgstr ""
+msgstr "Ніколи"
 
 #: classes.py:207
 msgid "Doughnut chart"
-msgstr ""
+msgstr "Кругла діаграма"
 
 #: classes.py:212
 msgid "Line chart"
-msgstr ""
+msgstr "Лінійна діаграма"
 
 #: classes.py:217
 msgid "Pie chart"
-msgstr ""
+msgstr "Кругова діаграма"
 
 #: links.py:15
 msgid "Namespace details"
-msgstr ""
+msgstr "Деталі простору імен"
 
 #: links.py:20
 msgid "Namespace list"
-msgstr ""
+msgstr "Список просторів імен"
 
 #: links.py:25
 msgid "Queue"
-msgstr ""
+msgstr "Черга"
 
 #: links.py:30
 msgid "View"
-msgstr ""
+msgstr "Перегляд"
 
 #: models.py:11
 msgid "Slug"
-msgstr ""
+msgstr "Слимак"
 
 #: models.py:14
 msgid "Date time"
-msgstr ""
+msgstr "Дата і час"
 
 #: models.py:17
 msgid "Data"
-msgstr ""
+msgstr "Дані"
 
 #: models.py:21
 msgid "Statistics result"
-msgstr ""
+msgstr "Результат статистики"
 
 #: models.py:22
 msgid "Statistics results"
-msgstr ""
+msgstr "Результати статистики"
 
 #: permissions.py:10
 msgid "View statistics"
-msgstr ""
+msgstr "Переглянути статистику"
 
 #: queues.py:12
 msgid "Execute statistic"
-msgstr ""
+msgstr "Виконати аналіз даних"
 
 #: templates/statistics/renderers/chartjs/base.html:12
 msgid "No data available."
-msgstr ""
+msgstr "Немає даних."
 
 #: templates/statistics/renderers/chartjs/base.html:14
 #, python-format
 msgid "Last update: %(datetime)s"
-msgstr ""
+msgstr "Останнє оновлення: %(datetime)s"
 
 #: view_mixins.py:19
 #, python-format
 msgid "Statistic \"%s\" not found."
-msgstr ""
+msgstr "Статистика \"%s\" не знайдена."
 
 #: views.py:24
 msgid "Statistics namespaces group statistics into logical units. "
-msgstr ""
+msgstr "Простори імен статистики групують статистику в логічні одиниці."
 
 #: views.py:26
 msgid "No statistic namespaces available"
-msgstr ""
+msgstr "Немає доступних просторів імен статистики"
 
 #: views.py:27
 msgid "Statistics namespaces"
-msgstr ""
+msgstr "Простори імен статистики"
 
 #: views.py:50
 msgid "Statistics are metrics and chart representations of existing data."
-msgstr ""
+msgstr "Статистика – це показники та діаграми, що відображають наявні дані."
 
 #: views.py:53
 msgid "No statistic available"
-msgstr ""
+msgstr "Немає статистики"
 
 #: views.py:55
 #, python-format
 msgid "Namespace details for: %s"
-msgstr ""
+msgstr "Деталі простору імен для: %s"
 
 #: views.py:78
 #, python-format
 msgid "Results for: %s"
-msgstr ""
+msgstr "Результати для: %s"
 
 #: views.py:98
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
-msgstr ""
+msgstr "Чи потрібно оновити статистику черги \"%s\"?"
 
 #: views.py:106
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
-msgstr ""
+msgstr "Статистика \"%s\" успішно поставлена в чергу для оновлення."

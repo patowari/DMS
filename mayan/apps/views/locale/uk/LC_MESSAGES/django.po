@@ -22,15 +22,15 @@ msgstr ""
 
 #: apps.py:20 settings.py:11
 msgid "Views"
-msgstr ""
+msgstr "Перегляди"
 
 #: forms.py:35
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 #: forms.py:53
 msgid "Selection"
-msgstr ""
+msgstr "Вибір"
 
 #: forms.py:233
 msgid "Label"
@@ -38,7 +38,7 @@ msgstr "Мітка"
 
 #: forms.py:239
 msgid "Relationship"
-msgstr ""
+msgstr "Зв'язки"
 
 #: generics.py:164
 msgid ""
@@ -46,6 +46,9 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
+"Виберіть записи, які потрібно видалити. Утримуйте клавішу Control, щоб "
+"вибрати кілька записів. Після завершення вибору натисніть кнопку нижче або "
+"двічі клацніть по списку, щоб активувати дію."
 
 #: generics.py:169
 msgid ""
@@ -53,211 +56,218 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
+"Виберіть записи, які потрібно додати. Утримуйте клавішу Control, щоб вибрати"
+" кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
+"клацніть по списку, щоб активувати дію."
 
 #: generics.py:323
 msgid "Add all"
-msgstr ""
+msgstr "Додати все"
 
 #: generics.py:330
 msgid "Add"
-msgstr ""
+msgstr "Додати"
 
 #: generics.py:341
 msgid "Remove all"
-msgstr ""
+msgstr "Видалити все"
 
 #: generics.py:348
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: generics.py:579
 #, python-format
 msgid "Error updating relationship; %s"
-msgstr ""
+msgstr "Помилка оновлення відношення; %s"
 
 #: generics.py:586
 msgid "Relationships updated successfully"
-msgstr ""
+msgstr "Відносини успішно оновлені"
 
 #: generics.py:649
 #, python-format
 msgid "Duplicate data error: %(error)s"
-msgstr ""
+msgstr "Помилка дублювання даних: %(error)s"
 
 #: generics.py:668
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
-msgstr ""
+msgstr "%(object)s не створено, помилка: %(error)s"
 
 #: generics.py:679
 #, python-format
 msgid "%(object)s created successfully."
-msgstr ""
+msgstr "%(object)s успішно створено."
 
 #: generics.py:723
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
-msgstr ""
+msgstr "%(object)s не видалено, помилка: %(error)s."
 
 #: generics.py:733
 #, python-format
 msgid "%(object)s deleted successfully."
-msgstr ""
+msgstr "%(object)s успішно видалено."
 
 #: generics.py:796
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
-msgstr ""
+msgstr "Помилка отримання %(object)s; %(error)s"
 
 #: generics.py:908
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
-msgstr ""
+msgstr "%(object)s не оновлено, помилка: %(error)s."
 
 #: generics.py:918
 #, python-format
 msgid "%(object)s updated successfully."
-msgstr ""
+msgstr "%(object)s успішно оновлено."
 
 #: generics.py:985
 #, python-format
 msgid "%(count)d objects deleted successfully."
-msgstr ""
+msgstr "%(count)d об'єктів успішно видалено."
 
 #: generics.py:986
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "\"%(object)s\" успішно видалено."
 
 #: generics.py:987
 #, python-format
 msgid "%(count)d object deleted successfully."
-msgstr ""
+msgstr "%(count)d об'єкт успішно видалено."
 
 #: generics.py:988
 #, python-format
 msgid "Delete %(count)d objects."
-msgstr ""
+msgstr "Видалити %(count)d об'єктів."
 
 #: generics.py:989
 #, python-format
 msgid "Delete \"%(object)s\"."
-msgstr ""
+msgstr "Видалити \"%(object)s\"."
 
 #: generics.py:990
 #, python-format
 msgid "Delete %(count)d object."
-msgstr ""
+msgstr "Видалити об’єкт %(count)d ."
 
 #: settings.py:17
 msgid "The number objects that will be displayed per page."
-msgstr ""
+msgstr "Кількість об’єктів, які відображатимуться на сторінці."
 
 #: settings.py:23
 msgid "A string specifying the name to use for the paging parameter."
 msgstr ""
+"Рядок, що вказує ім'я, яке слід використовувати для параметра розбивки на "
+"сторінки."
 
 #: settings.py:29
 msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr ""
+"Відображати кнопку відправлення і очікувати натискання кнопки відправлення, "
+"перш ніж обробляти завантаження."
 
 #: templates/views/app/foot.html:45
 msgid "Cancel upload"
-msgstr ""
+msgstr "Скасувати завантаження"
 
 #: templates/views/app/foot.html:46
 msgid "Are you sure you want to cancel this upload?"
-msgstr ""
+msgstr "Ви впевнені, що бажаєте скасувати це завантаження?"
 
 #: templates/views/app/foot.html:47
 msgid "Drop files or click here to upload files"
-msgstr ""
+msgstr "Перетягніть файли або натисніть тут, щоб завантажити файли"
 
 #: templates/views/app/foot.html:48
 msgid "Your browser does not support drag and drop file uploads."
-msgstr ""
+msgstr "Ваш браузер не підтримує завантаження файлів методом перетягування."
 
 #: templates/views/app/foot.html:49
 msgid "Please use the fallback form below to upload your files."
-msgstr ""
+msgstr "Щоб завантажити файли, скористайтеся резервною формою нижче."
 
 #: templates/views/app/foot.html:50
 msgid "Clear"
-msgstr ""
+msgstr "Очистити"
 
 #: templates/views/app/foot.html:51
 msgid "Server responded with {{statusCode}} code."
-msgstr ""
+msgstr "Сервер відповів кодом {{statusCode}}."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"
-msgstr ""
+msgstr "Підтвердити видалення"
 
 #: templatetags/views_tags.py:35
 #, python-format
 msgid "Edit %s"
-msgstr ""
+msgstr "Редагувати %s"
 
 #: templatetags/views_tags.py:38
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 #: templatetags/views_tags.py:42
 #, python-format
 msgid "Details for: %s"
-msgstr ""
+msgstr "Деталі для: %s"
 
 #: templatetags/views_tags.py:46
 #, python-format
 msgid "Edit: %s"
-msgstr ""
+msgstr "Редагувати: %s"
 
 #: templatetags/views_tags.py:50
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 #: view_mixins.py:417
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
-msgstr ""
+msgstr "Не знайдено жодного %(verbose_name)s, що відповідає запиту."
 
 #: view_mixins.py:443
 #, python-format
 msgid "Unable to perform operation on object %(instance)s; %(exception)s."
-msgstr ""
+msgstr "Неможливо виконати операцію над об'єктом %(instance)s; %(exception)s."
 
 #: view_mixins.py:447
 #, python-format
 msgid "Operation performed on %(count)d objects."
-msgstr ""
+msgstr "Операція виконана на %(count)d об'єктів."
 
 #: view_mixins.py:449
 #, python-format
 msgid "Operation performed on %(object)s."
-msgstr ""
+msgstr "Операція виконана на %(object)s."
 
 #: view_mixins.py:451
 #, python-format
 msgid "Operation performed on %(count)d object."
-msgstr ""
+msgstr "Операція виконана на %(count)d об'єкті."
 
 #: view_mixins.py:453
 #, python-format
 msgid "Perform operation on %(count)d objects."
-msgstr ""
+msgstr "Виконайти операцію над об’єктами %(count)d ."
 
 #: view_mixins.py:454
 #, python-format
 msgid "Perform operation on %(object)s."
-msgstr ""
+msgstr "Виконати операцію на %(object)s ."
 
 #: view_mixins.py:455
 #, python-format
 msgid "Perform operation on %(count)d object."
-msgstr ""
+msgstr "Виконайти операцію над об’єктом %(count)d ."
 
 #: view_mixins.py:539
 msgid "Object"
-msgstr ""
+msgstr "Об'єкт"
