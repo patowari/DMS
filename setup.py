@@ -77,7 +77,7 @@ django-cors-headers==4.3.1
 django-formtools==2.3
 django-mathfilters==1.0.0
 django-model-utils==4.3.1
-django-mptt==0.15.0
+django-mptt==0.16.0
 django-qsstats-magic==1.1.0
 django-solo==2.1.0
 django-storages==1.14.2
