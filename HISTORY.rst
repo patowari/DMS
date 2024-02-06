@@ -12,6 +12,7 @@
   - jstree from 3.3.16. 3.3.12.
   - django-solo from 2.1.0 to 2.2.0.
   - pytz from 2023.3.post1 to 2024.1.
+  - greenlet from 3.0.1 to 3.0.3.
 
 4.6 (2024-01-11)
 ================

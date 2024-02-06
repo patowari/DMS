@@ -95,7 +95,7 @@ furl==2.1.3
 fusepy==3.0.1
 gevent==23.9.1
 graphviz==0.20.1
-greenlet==3.0.1
+greenlet==3.0.3
 gunicorn==21.2.0
 importlib-metadata==7.0.1
 jsonschema==4.20.0

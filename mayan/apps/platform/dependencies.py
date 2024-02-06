@@ -4,7 +4,7 @@ PythonDependency(
     module=__name__, name='gevent', version_string='==23.9.1'
 )
 PythonDependency(
-    module=__name__, name='greenlet', version_string='==3.0.1'
+    module=__name__, name='greenlet', version_string='==3.0.3'
 )
 PythonDependency(
     module=__name__, name='gunicorn', version_string='==21.2.0'
