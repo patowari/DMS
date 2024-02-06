@@ -5,6 +5,7 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -12,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,6 +52,7 @@ msgstr "Можливі значення, дозволені для цього п
 #: classes.py:519
 msgid "Cannot revert setting. Setting value has not been updated."
 msgstr ""
+"Не вдається скасувати налаштування. Значення налаштування не було оновлено."
 
 #: classes.py:556
 msgid "Default"
@@ -58,11 +60,12 @@ msgstr "За замовчуванням"
 
 #: classes.py:569
 msgid "Modified"
-msgstr ""
+msgstr "Змінено"
 
 #: classes.py:571
 msgid "The value of this setting being modified since the last restart."
 msgstr ""
+"Значення цього параметра змінюється з моменту останнього перезавантаження."
 
 #: classes.py:577
 msgid "Overridden"
@@ -71,7 +74,7 @@ msgstr "Перевизначено"
 #: classes.py:579
 msgid ""
 "The value of the setting is being overridden by an environment variable."
-msgstr ""
+msgstr "Значення налаштування перезаписується змінною середовища."
 
 #: forms.py:32
 msgid "Enter the new setting value."
@@ -96,7 +99,7 @@ msgstr "Редагувати"
 
 #: links.py:52
 msgid "Revert"
-msgstr ""
+msgstr "Повернути"
 
 #: links.py:63
 msgid "Namespaces"
@@ -107,30 +110,33 @@ msgid ""
 "Local storage is currently disabled, changes to settings will not be saved. "
 "Instead, use environment variables to modify settings."
 msgstr ""
+"Локальне сховище в даний час вимкнено, зміни до налаштувань не будуть "
+"збережені. Замість цього використовуйте змінні середовища для зміни "
+"налаштувань."
 
 #: models.py:8
 msgid "A short text used as the tag name."
-msgstr ""
+msgstr "Короткий текст, який використовується як назва тегу."
 
 #: models.py:9
 msgid "Global name"
-msgstr ""
+msgstr "Глобальне ім'я"
 
 #: models.py:12
 msgid "New value"
-msgstr ""
+msgstr "Нове значення"
 
 #: models.py:15
 msgid "Old value"
-msgstr ""
+msgstr "Старе значення"
 
 #: models.py:19
 msgid "Updated setting"
-msgstr ""
+msgstr "Оновлене налаштування"
 
 #: models.py:20
 msgid "Updated settings"
-msgstr ""
+msgstr "Оновлені налаштування"
 
 #: permissions.py:10
 msgid "Edit settings"
@@ -211,6 +217,11 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_COOKIE_SECURE"
 msgstr ""
+"Чи використовувати безпечний cookie для CSRF cookie. Якщо це встановлено на "
+"True, cookie буде позначено як \"безпечний\", що означає, що браузери можуть"
+" впевненими, що cookie надсилається лише з HTTPS-з'єднанням. "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_COOKIE_SECURE"
 
 #: settings.py:87
 msgid ""
@@ -218,6 +229,9 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_TRUSTED_ORIGINS"
 msgstr ""
+"Список довірених джерел для небезпечних запитів (наприклад, POST). "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_TRUSTED_ORIGINS"
 
 #: settings.py:94
 msgid ""
@@ -225,6 +239,9 @@ msgid ""
 "cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_USE_SESSIONS"
 msgstr ""
+"Чи зберігати токен CSRF у сесії користувача замість кукі. "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_USE_SESSIONS"
 
 #: settings.py:101
 msgid ""
@@ -520,10 +537,9 @@ msgid ""
 "Django. It is a nested dictionary whose contents map a storage alias to a "
 "dictionary containing the options for an individual storage."
 msgstr ""
-"Файловий двигун для використання при зборі статичних файлів за допомогою "
-"команди управління collectstatic. Готовий до використання екземпляр сховища,"
-" визначеного в цьому налаштуванні, можна знайти за адресою "
-"django.contrib.staticfiles.storage.staticfiles_storage."
+"Словник, що містить налаштування для всіх сховищ, які будуть "
+"використовуватися з Django. Це вкладений словник, вміст якого відображає "
+"псевдонім сховища на словник, що містить параметри для окремого сховища."
 
 #: settings.py:325
 msgid ""
@@ -579,6 +595,8 @@ msgid ""
 "Settings updated. Save and restart your installation for changes to take "
 "effect."
 msgstr ""
+"Налаштування оновлено. Збережіть і перезапустіть вашу установку, щоб зміни "
+"набрали чинності."
 
 #: tests/test_classes.py:190
 msgid "English"
@@ -586,21 +604,19 @@ msgstr "Англійська"
 
 #: views.py:41
 msgid "This will overwrite the content of the configuration file."
-msgstr ""
-"Локальне сховище в даний час вимкнено, зміни значень налаштувань не будуть "
-"збережені або набувати чинності."
+msgstr "Це перезапише вміст файлу конфігурації."
 
 #: views.py:44
 msgid "Save settings to the configuration file?"
-msgstr ""
+msgstr "Зберегти налаштування у файл конфігурації?"
 
 #: views.py:52
 msgid "Settings saved to configuration file successfully."
-msgstr ""
+msgstr "Налаштування успішно збережено у конфігураційному файлі."
 
 #: views.py:60
 msgid "Setting namespaces"
-msgstr ""
+msgstr "Встановлення просторів імен"
 
 #: views.py:89
 msgid "Setting updated successfully."
@@ -611,6 +627,8 @@ msgid ""
 "This setting is overridden by an environment variable, changing its value "
 "will have no effect."
 msgstr ""
+"Це налаштування перевизначається змінною середовища, зміна її значення не "
+"матиме жодного ефекту."
 
 #: views.py:108
 #, python-format
@@ -620,29 +638,29 @@ msgstr "Редагувати налаштування: %s"
 #: views.py:130
 #, python-format
 msgid "%(count)d settings value reverted."
-msgstr ""
+msgstr "%(count)d значень налаштувань скасовано."
 
 #: views.py:133
 #, python-format
 msgid "Value of setting \"%(object)s\" reverted."
-msgstr ""
+msgstr "Значення налаштування \"%(object)s\" відновлено."
 
 #: views.py:135
 #, python-format
 msgid "%(count)d setting value reverted."
-msgstr ""
+msgstr "%(count)d значення налаштування скасовано."
 
 #: views.py:144
 msgid "Unsaved changes will be lost."
-msgstr ""
+msgstr "Незбережені зміни будуть втрачені."
 
 #: views.py:147
 msgid "Revert the selected setting value?"
 msgid_plural "Revert the selected settings value?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Повернути обране значення налаштування?"
+msgstr[1] "Повернути обране значення налаштувань?"
+msgstr[2] "Повернути обране значення налаштувань?"
+msgstr[3] "Повернути обране значення налаштувань?"
 
 #: views.py:186
 msgid ""
@@ -660,4 +678,4 @@ msgstr "Налаштування в просторі імен: %s"
 #: views.py:199
 #, python-format
 msgid "Namespace: %s, not found"
-msgstr ""
+msgstr "Простір імен: %s, не знайдено"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -67,7 +67,7 @@ msgstr "Posta profili oluşturuldu"
 msgid "Mailing profile edited"
 msgstr "Posta profili düzenlendi"
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -75,32 +75,32 @@ msgstr ""
 "Alıcının e-posta adresi. Birden çok alıcıya posta göndermek için alıcı "
 "e-posta adreslerini vigül veya noktalı virgülle ayrırabilirsiniz."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "E-posta adresi"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Konu"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Gövde"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr "Bu e-postayı göndermek için kullanılacak e-posta profili."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "E-posta profili"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "E-posta gönderirken kullanılacak sürücü."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Backend"
 

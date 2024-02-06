@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -71,7 +71,7 @@ msgstr "Profil de messagerie créé"
 msgid "Mailing profile edited"
 msgstr "Profil de messagerie modifié"
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -79,34 +79,34 @@ msgstr ""
 "Adresse électronique du destinataire. Il peut s'agir de plusieurs adresses "
 "séparées par une virgule ou un point-virgule."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "Adresse du courriel"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Sujet"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Contenu"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr ""
 "Le profil de messagerie qui sera utilisé pour envoyer ce courrier "
 "électronique."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Profil de la liste de diffusion"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "Le pilote à utiliser pour envoyer les mails."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Backend"
 

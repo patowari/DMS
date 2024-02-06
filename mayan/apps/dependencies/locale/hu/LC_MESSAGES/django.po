@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -245,20 +245,16 @@ msgstr "Dokumentáció"
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
-"Közvetlen dokumentációs függőségek meghatározására használt környezet a "
-"harmadik féltől származó könyvtárak rögzítetlen vagy megváltoztathatatlan "
-"függőségi hibáinak megoldására. A végfelhasználók figyelmen kívül hagyhatják"
-" a hiányzó függőségeket ebben a környezetben."
 
 #: environments.py:40
 msgid "Documentation (override)"
 msgstr "Dokumentáció (felülbírálás)"
 
-#: environments.py:44
+#: environments.py:45
 msgid ""
 "Normal environment for end users. A missing dependency under this "
 "environment will result in issues and errors during normal use."
@@ -266,11 +262,11 @@ msgstr ""
 "Normál környezet a végfelhasználók számára. A hiányzó függőség ebben a "
 "környezetben problémákat és hibákat eredményez a normál használat során."
 
-#: environments.py:46
+#: environments.py:47
 msgid "Production"
 msgstr "Éles üzem"
 
-#: environments.py:50
+#: environments.py:51
 msgid ""
 "Environment used running the test suit to verify the functionality of the "
 "code. Dependencies in this environment are not needed for normal production "
@@ -280,7 +276,7 @@ msgstr ""
 "szolgál. Ebben a környezetben nincs szükség függőségekre a normál éles üzem "
 "használathoz."
 
-#: environments.py:53
+#: environments.py:54
 msgid "Testing"
 msgstr "Tesztelés"
 

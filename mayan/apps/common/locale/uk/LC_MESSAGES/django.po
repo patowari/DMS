@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Загальне"
 
@@ -41,68 +42,76 @@ msgstr "Середовище командного рядка з автозаве
 msgid "Checks proper formatting of the README file."
 msgstr "Перевіряє правильність форматування файлу README."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "Про це"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "Отримати книгу"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Документація"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Форум"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
 msgstr "База знань"
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:53
 msgid "License"
 msgstr "Ліцензія"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr ""
+
+#: links.py:64
 msgid "Copy"
 msgstr "Копія"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr ""
+
+#: links.py:72
 msgid "Setup"
 msgstr "Налаштування"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Джерело коду"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Онлайн-магазин"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Отримати підтримку"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:134
 msgid "Tools"
 msgstr "Інструменти"
 
-#: literals.py:27
+#: literals.py:24
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Ця функція застаріла та буде видалена в наступній версії."
 
-#: literals.py:36
+#: literals.py:33
 msgid "Days"
 msgstr "Дні"
 
-#: literals.py:37
+#: literals.py:34
 msgid "Hours"
 msgstr "Години"
 
-#: literals.py:38
+#: literals.py:35
 msgid "Minutes"
 msgstr "Хвилини"
 
@@ -142,7 +151,7 @@ msgstr "Копіювати об'єкт"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -150,7 +159,7 @@ msgstr ""
 "У режимі списку показувати параметри меню \"списку\" як випадаюче меню "
 "замість окремих кнопок."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -158,7 +167,7 @@ msgstr ""
 "У режимі списку показувати пункти меню \"об'єкт\" як випадаюче меню замість "
 "окремих кнопок."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -168,7 +177,7 @@ msgstr ""
 "параметру всі програми також повинні бути налаштовані через відповідні "
 "налаштування зберігання для використання альтернативного зберігання."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -180,7 +189,7 @@ msgstr ""
 "Python до: конфігурації класу програми (переважно), або пакету, що містить "
 "програму. Приклад: ['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -192,7 +201,7 @@ msgstr ""
 "до: конфігурації класу програми (переважно), або пакету, що містить "
 "програму. Приклад: ['app_1', 'app_2']"
 
-#: settings.py:70
+#: settings.py:69
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -206,7 +215,7 @@ msgstr ""
 "програми будуть встановлені перед типовими програмами. Приклад: ['app_1', "
 "'app_2']"
 
-#: settings.py:81
+#: settings.py:80
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
@@ -214,17 +223,13 @@ msgstr ""
 "Назва виду, прикріпленого до якоря бренду в головному меню. Це також вид, на"
 " який користувачі будуть перенаправлені після входу в систему."
 
-#: settings.py:90
+#: settings.py:89
 msgid "Name of the dashboard to display in the home view."
 msgstr "Назва панелі управління для відображення на головній сторінці."
 
-#: settings.py:95
+#: settings.py:94
 msgid "Sets the project's name."
 msgstr "Встановлює назву проекту."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "URL домашньої сторінки."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

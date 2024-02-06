@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Ustawienia wspólne"
 
@@ -45,69 +45,77 @@ msgstr "Środowisko wiersza poleceń z funkcją autouzupełniania."
 msgid "Checks proper formatting of the README file."
 msgstr "Sprawdza poprawność formatowania pliku README."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "O programie"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "Pobierz książkę"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Dokumentacja"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:53
 msgid "License"
 msgstr "Licencja"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr ""
+
+#: links.py:64
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr ""
+
+#: links.py:72
 msgid "Setup"
 msgstr "Ustawienia"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Kod źródłowy"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Sklep internetowy"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Uzyskaj wsparcie"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:134
 msgid "Tools"
 msgstr "Narzędzia"
 
-#: literals.py:27
+#: literals.py:24
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Ta funkcja jest przestarzała i zostanie usunięta w przyszłych wersjach."
 
-#: literals.py:36
+#: literals.py:33
 msgid "Days"
 msgstr "Dni"
 
-#: literals.py:37
+#: literals.py:34
 msgid "Hours"
 msgstr "Godziny"
 
-#: literals.py:38
+#: literals.py:35
 msgid "Minutes"
 msgstr "Minuty"
 
@@ -147,26 +155,26 @@ msgstr "Obiekt kopii"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -174,7 +182,7 @@ msgid ""
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -182,7 +190,7 @@ msgid ""
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 
-#: settings.py:70
+#: settings.py:69
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -191,7 +199,7 @@ msgid ""
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
-#: settings.py:81
+#: settings.py:80
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
@@ -199,16 +207,12 @@ msgstr ""
 "Nazwa widoku dołączonego do marki w menu głównym. Jest to również widok, do "
 "którego użytkownicy będą przekierowywani po zalogowaniu."
 
-#: settings.py:90
+#: settings.py:89
 msgid "Name of the dashboard to display in the home view."
 msgstr ""
 
-#: settings.py:95
+#: settings.py:94
 msgid "Sets the project's name."
-msgstr ""
-
-#: settings.py:99
-msgid "URL of the project's homepage."
 msgstr ""
 
 #: templates/common/app/viewport.html:15

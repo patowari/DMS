@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -66,7 +66,7 @@ msgstr "Profil de corespondență a fost creat"
 msgid "Mailing profile edited"
 msgstr "Profilul de corespondență a fost editat"
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -74,32 +74,32 @@ msgstr ""
 "Adresa de e-mail a destinatarului. Pot fi mai multe adrese separate prin "
 "virgulă sau punct și virgulă."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "Adresa de email"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Subiect"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Corp"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr "Profilul de e-mail care va fi folosit pentru a trimite acest e-mail."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Profilul de corespondență"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "Pilotul software ce trebuie folosit atunci când trimiteți e-mailuri."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Backend"
 

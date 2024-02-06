@@ -1267,8 +1267,7 @@ msgstr "Ennek a munkafolyamatnak az átvezetési mezői: %s"
 #, python-format
 msgid "Error updating workflow transition trigger events; %s"
 msgstr ""
-"Hiba a munkafolyamat átvezetési eseményindító eseményeinek frissítése során;"
-" %s"
+"Hiba a munkafolyamat átvezetési eseményindító események frissítése során; %s"
 
 #: views/workflow_template_transition_views.py:355
 msgid "Workflow transition trigger events updated successfully"
@@ -1400,7 +1399,7 @@ msgstr "Az összes munkafolyamat-példány is törlődik."
 #: views/workflow_template_views.py:194
 #, python-format
 msgid "Edit workflow: %s"
-msgstr "Ennek a munkafolyamatnak a szerkesztése: %s"
+msgstr "Munkafolyamat szerkesztése: %s"
 
 #: views/workflow_template_views.py:205
 msgid "Document types assigned this workflow"
@@ -1422,7 +1421,7 @@ msgstr ""
 #: views/workflow_template_views.py:229
 #, python-format
 msgid "Document types assigned the workflow: %s"
-msgstr "Ehhez a munkafolyamathoz rendelt dokumentumtípusok: %s"
+msgstr "A munkafolyamathoz rendelt dokumentumtípusok: %s"
 
 #: views/workflow_template_views.py:243
 msgid ""

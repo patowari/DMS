@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -66,15 +66,15 @@ msgstr "Objekt"
 msgid "Event type"
 msgstr "Typ události"
 
-#: classes.py:90
+#: classes.py:92
 msgid "Event list export to CSV"
 msgstr "Export seznamu událostí do CSV"
 
-#: classes.py:118
+#: classes.py:123
 msgid "Events exported."
 msgstr "Události byly exportovány."
 
-#: classes.py:120
+#: classes.py:125
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -109,7 +109,7 @@ msgstr "Systém"
 msgid "Clear events"
 msgstr ""
 
-#: links.py:59 links.py:107 views/export_views.py:60
+#: links.py:59 links.py:107 views/export_views.py:64
 msgid "Export events"
 msgstr "Exportovat události"
 
@@ -287,7 +287,7 @@ msgstr "Neexistují žádné události tohoto typu"
 msgid "Events of type: %s"
 msgstr "Události typu: %s"
 
-#: views/export_views.py:27
+#: views/export_views.py:28
 msgid ""
 "The process will be performed in the background. The exported events will be"
 " available in the downloads area."
@@ -295,16 +295,16 @@ msgstr ""
 "Proces bude probíhat na pozadí. Exportované události budou k dispozici v "
 "oblasti stahování."
 
-#: views/export_views.py:47
+#: views/export_views.py:51
 msgid "Event list export task queued successfully."
 msgstr "Úloha exportu seznamu událostí byla úspěšně zařazena do fronty."
 
-#: views/export_views.py:81
+#: views/export_views.py:85
 #, python-format
 msgid "Export events of: %s"
 msgstr ""
 
-#: views/export_views.py:100
+#: views/export_views.py:104
 #, python-format
 msgid "Export events of type: %s"
 msgstr ""

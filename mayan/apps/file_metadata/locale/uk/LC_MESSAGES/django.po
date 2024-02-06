@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -12,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +32,7 @@ msgstr "Метадані файлу"
 
 #: apps.py:106
 msgid "File metadata internal name"
-msgstr ""
+msgstr "Внутрішня назва метаданих файлу"
 
 #: apps.py:110 search.py:15 search.py:26
 msgid "File metadata value"
@@ -47,15 +48,15 @@ msgstr "Значення метаданих файлу"
 
 #: apps.py:173
 msgid "MIME types"
-msgstr ""
+msgstr "MIME типи"
 
 #: apps.py:178 models.py:71 models.py:122
 msgid "Internal name"
-msgstr ""
+msgstr "Внутрішнє ім'я"
 
 #: apps.py:182
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: dependencies.py:12
 msgid ""
@@ -66,7 +67,7 @@ msgstr ""
 
 #: drivers/exiftool.py:20
 msgid "Read meta information stored in files."
-msgstr ""
+msgstr "Читати метаінформацію, що зберігається у файлах."
 
 #: drivers/exiftool.py:21
 msgid "EXIF Tool"
@@ -76,6 +77,8 @@ msgstr "Інструмент EXIF"
 msgid ""
 "Extracts information from emails saved in Microsoft Outlook's .msg files."
 msgstr ""
+"Добути інформацію з електронних листів, збережених у файлі .msg Microsoft "
+"Outlook."
 
 #: drivers/extract_msg.py:19
 msgid "Extract msg"
@@ -107,7 +110,7 @@ msgstr "Обробка метаданих файлів за типом"
 
 #: links.py:65 views.py:233
 msgid "File metadata drivers"
-msgstr ""
+msgstr "Драйвери метаданих файлу"
 
 #: methods.py:58
 msgid "Return the specified document file file metadata entry."
@@ -155,23 +158,23 @@ msgstr "Налаштування типів документів"
 
 #: models.py:70
 msgid "Normalized name of the file metadata entry."
-msgstr ""
+msgstr "Нормалізоване ім'я запису метаданих файлу."
 
 #: models.py:75
 msgid "Name of the file metadata entry as provided by the driver."
-msgstr ""
+msgstr "Ім'я запису метаданих файлу, надане драйвером."
 
 #: models.py:77
 msgid "Key"
-msgstr ""
+msgstr "Ключ"
 
 #: models.py:80
 msgid "Value of the file metadata entry."
-msgstr ""
+msgstr "Значення запису метаданих файлу."
 
 #: models.py:81
 msgid "Value"
-msgstr ""
+msgstr "Значення"
 
 #: models.py:87
 msgid "File metadata entry"
@@ -207,15 +210,15 @@ msgstr "Обробити файл документа"
 
 #: queues.py:16
 msgid "Finish document file metadata processing"
-msgstr ""
+msgstr "Завершити обробку метаданих файлу документа"
 
 #: queues.py:20
 msgid "Process file metadata driver"
-msgstr ""
+msgstr "Процес драйвера метаданих файлу"
 
 #: search.py:11 search.py:22
 msgid "File metadata key"
-msgstr ""
+msgstr "Ключ метаданих файлу"
 
 #: settings.py:19
 msgid ""
@@ -303,14 +306,16 @@ msgstr "Надіслати усі документи певного типу д�
 #: views.py:204
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
-msgstr ""
+msgstr "%(count)d документів додано до черги обробки метаданих файлу."
 
 #: views.py:225
 msgid ""
 "File metadata drivers extract embedded information from document files. File"
 " metadata drivers are configure in code only."
 msgstr ""
+"Файлові драйвери метаданих витягують вбудовану інформацію з файлів "
+"документів. Файлові драйвери метаданих налаштовуються лише в коді."
 
 #: views.py:230
 msgid "No file metadata drivers available."
-msgstr ""
+msgstr "Немає доступних драйверів метаданих файлу."

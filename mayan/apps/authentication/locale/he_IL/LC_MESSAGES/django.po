@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:36 events.py:6 permissions.py:6 settings.py:11
+#: apps.py:35 events.py:6 permissions.py:6 settings.py:11
 msgid "Authentication"
 msgstr "אימות משתמש"
 
@@ -113,29 +113,25 @@ msgstr "לחץ כאן בסיום"
 msgid "Login"
 msgstr ""
 
-#: templates/authentication/login.html:21
-msgid "Sign in"
-msgstr ""
-
-#: templates/authentication/login.html:67
-#: templates/authentication/login.html:77
-#: templates/authentication/login.html:91
+#: templates/authentication/login.html:65
+#: templates/authentication/login.html:75
+#: templates/authentication/login.html:89
 msgid "Save"
 msgstr "שמירה"
 
-#: templates/authentication/login.html:67
-#: templates/authentication/login.html:77
-#: templates/authentication/login.html:91
+#: templates/authentication/login.html:65
+#: templates/authentication/login.html:75
+#: templates/authentication/login.html:89
 #: templates/authentication/password_reset_confirm.html:29
 #: templates/authentication/password_reset_form.html:29
 msgid "Submit"
 msgstr "שליחה"
 
-#: templates/authentication/login.html:81
+#: templates/authentication/login.html:79
 msgid "Cancel"
 msgstr "ביטול"
 
-#: templates/authentication/login.html:103
+#: templates/authentication/login.html:106
 msgid "Forgot your password?"
 msgstr "שכחת סיסמה?"
 
@@ -160,44 +156,48 @@ msgstr "דף התחברות"
 msgid "Password reset email sent!"
 msgstr "דוא&quot;ל לאיפוס סיסמה נשלח!"
 
-#: views/authentication_views.py:160
+#: views/authentication_views.py:159
 msgid "Next"
 msgstr ""
 
-#: views/authentication_views.py:166
+#: views/authentication_views.py:165
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr ""
 
-#: views/authentication_views.py:238
+#: views/authentication_views.py:189
+msgid "Sign in"
+msgstr ""
+
+#: views/authentication_views.py:239
 msgid "Your password has been successfully changed."
 msgstr ""
 
-#: views/authentication_views.py:249
+#: views/authentication_views.py:250
 msgid "Current user password change"
 msgstr "שינוי סיסמת משתמש נוכחי"
 
-#: views/authentication_views.py:261
+#: views/authentication_views.py:262
 msgid "Changing the password is not allowed for this account."
 msgstr ""
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:361
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "בקשת שינוי סיסמה בוצעה על משתמש %(count)d "
 
-#: views/authentication_views.py:337
+#: views/authentication_views.py:364
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "בקשת שינוי סיסמה בוצעה על %(count)d משתמשים"
 
-#: views/authentication_views.py:354
+#: views/authentication_views.py:381
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
 msgstr ""
 
-#: views/authentication_views.py:368
+#: views/authentication_views.py:395
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] ""
@@ -205,19 +205,19 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: views/authentication_views.py:379
+#: views/authentication_views.py:406
 #, python-format
 msgid "Change password for user: %s"
 msgstr ""
 
-#: views/authentication_views.py:403
+#: views/authentication_views.py:430
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr ""
 
-#: views/authentication_views.py:409
+#: views/authentication_views.py:436
 #, python-format
-msgid "Error reseting password for user \"%(user)s\": %(error)s"
+msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
 
 #: views/impersonation_views.py:81

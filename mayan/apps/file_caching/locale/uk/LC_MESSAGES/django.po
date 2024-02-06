@@ -12,6 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,27 +58,27 @@ msgstr "Очистити кеш"
 
 #: model_mixins.py:39
 msgid "Unknown"
-msgstr ""
+msgstr "Невідомий"
 
 #: model_mixins.py:57
 msgid "Size at which the cache will start deleting old entries."
-msgstr ""
+msgstr "Розмір, при якому кеш почне видаляти старі записи."
 
 #: model_mixins.py:59 models.py:31
 msgid "Maximum size"
-msgstr ""
+msgstr "Максимальний розмір"
 
 #: model_mixins.py:70
 msgid "Partition count"
-msgstr ""
+msgstr "Кількість розділів"
 
 #: model_mixins.py:71
 msgid "Total cached objects."
-msgstr ""
+msgstr "Усього кешованих об’єктів."
 
 #: model_mixins.py:78
 msgid "Partition file count"
-msgstr ""
+msgstr "Кількість файлів розділу"
 
 #: model_mixins.py:80
 msgid "Total cached files."

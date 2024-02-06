@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
+# bwakkie <bwakkie@gmail.com>, 2024
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
 # Roberto Rosario, 2024
-# bwakkie <bwakkie@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: bwakkie <bwakkie@gmail.com>, 2024\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
 msgid "Announcements"
 msgstr "Aankondiging"
 
@@ -154,13 +154,10 @@ msgstr "Verander aankondiging: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Aankondigingen worden weergegeven in het login overzicht. Je kunt berichten "
-"gebruiken om informatie over uw organisatie, aankondigingen of "
-"gebruiksrichtlijnen te verspreiden onder de gebruikers. "
 
-#: views.py:125
+#: views.py:126
 msgid "No announcements available"
 msgstr "Geen aankondigingen beschikbaar"

@@ -4,9 +4,9 @@
 # 
 # Translators:
 # Translators:
+# Daniele Bortoluzzi <daniele@elkos.it>, 2024
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
-# Daniele Bortoluzzi <daniele@elkos.it>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
 # 
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Comune"
 
@@ -46,68 +46,76 @@ msgstr "Ambiente a riga di comando con autocompletamento."
 msgid "Checks proper formatting of the README file."
 msgstr "Controlla la corretta formattazione del file README."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "Informazioni sul software"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "Prendi il libro"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Documentazione"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:53
 msgid "License"
 msgstr "Licenza"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr ""
+
+#: links.py:64
 msgid "Copy"
 msgstr "Copia"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr ""
+
+#: links.py:72
 msgid "Setup"
 msgstr "Configurazione"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Codice sorgente"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Negozio online"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Ottieni supporto"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:134
 msgid "Tools"
 msgstr "Strumenti"
 
-#: literals.py:27
+#: literals.py:24
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Questa funzionalità è obsoleta e verrà rimossa nelle versioni future."
 
-#: literals.py:36
+#: literals.py:33
 msgid "Days"
 msgstr "Giorni"
 
-#: literals.py:37
+#: literals.py:34
 msgid "Hours"
 msgstr "Orario"
 
-#: literals.py:38
+#: literals.py:35
 msgid "Minutes"
 msgstr "Minuti"
 
@@ -147,7 +155,7 @@ msgstr "Copia oggetto"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -155,7 +163,7 @@ msgstr ""
 "In modalità lista, mostra le opzioni menù \"vai a...\" come menù a tendina "
 "anziché bottoni singoli."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -163,7 +171,7 @@ msgstr ""
 "In modalità lista, mostra le azioni sull'oggetto in un menù a tendina "
 "anziché tanti bottoni singoli."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -173,7 +181,7 @@ msgstr ""
 "app devono essere configurate con un backend di storage alternativo per "
 "poter avere la persistenza dei dati."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -186,7 +194,7 @@ msgstr ""
 "dell'applicazione (opzione preferita) o un pacchetto contenente "
 "un'applicazione. Esempio: ['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -199,7 +207,7 @@ msgstr ""
 "(preferita) o un pacchetto contenente un'applicazione. Esempio: ['app_1', "
 "'app_2']"
 
-#: settings.py:70
+#: settings.py:69
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -214,7 +222,7 @@ msgstr ""
 "saranno installate prima delle applicazioni di default. Esempio: ['app_1', "
 "'app_2']"
 
-#: settings.py:81
+#: settings.py:80
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
@@ -222,17 +230,13 @@ msgstr ""
 "Nome della vista collegata all'ancora brand nel menù principale. Questa è "
 "anche la vista alla quale gli utenti verranno reindirizzati dopo il login."
 
-#: settings.py:90
+#: settings.py:89
 msgid "Name of the dashboard to display in the home view."
 msgstr "Nome della dashboard da visualizzare nella schermata principale."
 
-#: settings.py:95
+#: settings.py:94
 msgid "Sets the project's name."
 msgstr "Configura il nome del progetto."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "URL della home del progetto."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

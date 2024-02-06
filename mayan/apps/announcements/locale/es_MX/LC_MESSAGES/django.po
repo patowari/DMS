@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
 msgid "Announcements"
 msgstr "Anuncios"
 
@@ -153,13 +153,10 @@ msgstr "Editar anuncio: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Los anuncios se muestran en la vista de inicio de sesión. Puede utilizarlos "
-"para transmitir información sobre su organización, anuncios o pautas de uso "
-"para sus usuarios."
 
-#: views.py:125
+#: views.py:126
 msgid "No announcements available"
 msgstr "No hay anuncios disponibles"

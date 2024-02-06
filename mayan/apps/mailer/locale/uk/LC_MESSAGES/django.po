@@ -7,14 +7,15 @@
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +67,7 @@ msgstr "Створено профіль розсилки"
 msgid "Mailing profile edited"
 msgstr "Профіль розсилки відредаговано"
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -74,34 +75,34 @@ msgstr ""
 "Адреса електронної пошти одержувача. Може бути кілька адрес, розділених "
 "комою або крапкою з комою."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "Адреса електронної пошти"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Тема"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Зміст листа"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr ""
 "Профіль електронної пошти, який використовуватиметься для надсилання цього "
 "електронного листа."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Профіль розсилки"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "Драйвер для надсилання електронних листів."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Backend"
 
@@ -256,7 +257,7 @@ msgstr "Сховище"
 #: model_mixins.py:173
 #, python-format
 msgid "Test email from %s"
-msgstr ""
+msgstr "Тестовий електронний лист від %s"
 
 #: models.py:31
 msgid "A short text describing the mailing profile."
@@ -300,7 +301,7 @@ msgstr "Використовувати профіль розсилки"
 
 #: permissions.py:26
 msgid "View a mailing profile"
-msgstr ""
+msgstr "Переглянути профіль розсилки"
 
 #: permissions.py:32
 msgid "Send document link via email"
@@ -328,19 +329,19 @@ msgstr "Надіслати об'єкт"
 
 #: serializers.py:14
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:32
 msgid "Primary key of the mailing profile to use."
-msgstr ""
+msgstr "Первинний ключ профілю розсилки, який слід використовувати."
 
 #: serializers.py:33
 msgid "Mailing profile ID"
-msgstr ""
+msgstr "ID профілю розсилки"
 
 #: serializers.py:38 workflow_action_mixins.py:15
 msgid "Recipient"
-msgstr ""
+msgstr "Отримувач"
 
 #: settings.py:17
 msgid "Template for the document email form subject line."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -698,11 +698,9 @@ msgstr "Редактиране на актив: %s"
 
 #: views/asset_views.py:140
 msgid ""
-"Assets are files that can be used in conjuction with certain "
+"Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
-"Активите са файлове, които могат да се използват заедно с определени "
-"трансформации."
 
 #: views/asset_views.py:143
 msgid "No assets available"

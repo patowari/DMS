@@ -7,14 +7,15 @@
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -320,7 +321,7 @@ msgstr "Конфігураційні параметри для backend зобр�
 #: settings.py:79
 msgid "Time in seconds that the browser should cache the supplied image."
 msgstr ""
-"Час у секундах, протягом якого браузер повинен кешувати надане зображення."
+"Час у секундах, протягом якого браузер має кешувати надане зображення."
 
 #: settings.py:87
 msgid ""
@@ -705,11 +706,9 @@ msgstr "Редагувати ресурс: %s"
 
 #: views/asset_views.py:140
 msgid ""
-"Assets are files that can be used in conjuction with certain "
+"Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
-"Ресурси - це файли, які можуть використовуватися разом з певними "
-"перетвореннями."
 
 #: views/asset_views.py:143
 msgid "No assets available"

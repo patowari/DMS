@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
 msgid "Announcements"
 msgstr "Közlemények"
 
@@ -153,13 +153,10 @@ msgstr "Közlemény szerkesztése: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"A közlemények a bejelentkezési nézetben jelennek meg. A közlemények "
-"segítségével információkat közölhet szervezetéről, bejelentéseket vagy "
-"használati irányelveket a felhasználók számára."
 
-#: views.py:125
+#: views.py:126
 msgid "No announcements available"
 msgstr "Nem állnak rendelkezésre közlemények"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Общи"
 
@@ -42,68 +42,76 @@ msgstr "Команден ред с автоматично довършване."
 msgid "Checks proper formatting of the README file."
 msgstr "Проверява правилното форматиране на файла README."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "Относно това"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "Вземете книгата"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Документация"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Форум"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:53
 msgid "License"
 msgstr "Лиценз"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr ""
+
+#: links.py:64
 msgid "Copy"
 msgstr "Копие"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr ""
+
+#: links.py:72
 msgid "Setup"
 msgstr "Настройка"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Изходен код"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Онлайн магазин"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Поддръжка"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:134
 msgid "Tools"
 msgstr "Инструменти"
 
-#: literals.py:27
+#: literals.py:24
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Тази функция е оттеглена и ще бъде премахната в бъдеща версия."
 
-#: literals.py:36
+#: literals.py:33
 msgid "Days"
 msgstr "Дни"
 
-#: literals.py:37
+#: literals.py:34
 msgid "Hours"
 msgstr "Часове"
 
-#: literals.py:38
+#: literals.py:35
 msgid "Minutes"
 msgstr "Минути"
 
@@ -143,7 +151,7 @@ msgstr "Копиране на обект"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -151,7 +159,7 @@ msgstr ""
 "В режим на списък покажете опциите на менюто &quot;фасет списък&quot; като "
 "падащо меню вместо отделни бутони."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -159,14 +167,14 @@ msgstr ""
 "В режим на списък покажете опциите на менюто &quot;обект&quot; като падащо "
 "меню вместо отделни бутони."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -179,7 +187,7 @@ msgstr ""
 "приложение (за предпочитане) или пакет, съдържащ приложение. Пример: "
 "[&#39;app_1&#39;, &#39;app_2&#39;]"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -192,7 +200,7 @@ msgstr ""
 "предпочитане) или пакет, съдържащ приложение. Пример: [&#39;app_1&#39;, "
 "&#39;app_2&#39;]"
 
-#: settings.py:70
+#: settings.py:69
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -207,7 +215,7 @@ msgstr ""
 "инсталирани преди приложенията по подразбиране. Пример: [&#39;app_1&#39;, "
 "&#39;app_2&#39;]"
 
-#: settings.py:81
+#: settings.py:80
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
@@ -215,17 +223,13 @@ msgstr ""
 "Име на изгледа, прикрепен към котвата на марката в главното меню. Това е и "
 "изгледът, към който потребителите ще бъдат пренасочени след влизане."
 
-#: settings.py:90
+#: settings.py:89
 msgid "Name of the dashboard to display in the home view."
 msgstr "Име на таблото за управление, което да се показва в началния изглед."
 
-#: settings.py:95
+#: settings.py:94
 msgid "Sets the project's name."
 msgstr "Задава името на проекта."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "URL на началната страница на проекта."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

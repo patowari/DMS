@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Mailing profile edited"
 msgstr ""
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -75,32 +75,32 @@ msgstr ""
 "Имейл адрес на получателя. Могат да бъдат множество адреси, разделени със "
 "запетая или точка и запетая."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "Имейл адрес"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Относно"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Съдържание"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr "Профилът на имейла, който ще се използва за изпращане на този имейл."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Профил за изпращане на електронно съобщение"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "Драйверът, който се използва при изпращане на електронни съобщения."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Бекенд"
 

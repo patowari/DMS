@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Általános"
 
@@ -42,68 +42,76 @@ msgstr "Parancssori környezet automatikus kiegészítéssel."
 msgid "Checks proper formatting of the README file."
 msgstr "Ellenőrzi a README fájl megfelelő formázását."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "Névjegy"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "A könyv beszerzése"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Dokumentáció"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Fórum"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
 msgstr "Tudásbázis"
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:53
 msgid "License"
 msgstr "Licenc"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr ""
+
+#: links.py:64
 msgid "Copy"
 msgstr "Másolás"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr ""
+
+#: links.py:72
 msgid "Setup"
 msgstr "Beállítás"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Forráskód"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Online áruház"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Támogatás-kérés"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:134
 msgid "Tools"
 msgstr "Eszközök"
 
-#: literals.py:27
+#: literals.py:24
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Ez a funkció elavult, és egy későbbi verzióban eltávolítjuk."
 
-#: literals.py:36
+#: literals.py:33
 msgid "Days"
 msgstr "Nap"
 
-#: literals.py:37
+#: literals.py:34
 msgid "Hours"
 msgstr "Óra"
 
-#: literals.py:38
+#: literals.py:35
 msgid "Minutes"
 msgstr "Perc"
 
@@ -143,7 +151,7 @@ msgstr "Objektum másolása"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -151,7 +159,7 @@ msgstr ""
 "Lista módban az egyes gombok helyett legördülő menüként jelenítse meg a "
 "\"szempont lista\" menüpontokat."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -159,7 +167,7 @@ msgstr ""
 "Lista módban a különálló gombok helyett legördülő menüként jelenítse meg az "
 "\"objektum\" menüpontokat."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -169,7 +177,7 @@ msgstr ""
 "használatakor az összes alkalmazást a megfelelő háttértár-beállításokon "
 "keresztül is konfigurálni kell az alternatív perzisztencia használatához."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -182,7 +190,7 @@ msgstr ""
 "osztályához (ajánlott), vagy egy alkalmazást tartalmazó csomaghoz. Példa: "
 "['app_1, 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -195,7 +203,7 @@ msgstr ""
 "osztályához (ajánlott), vagy egy alkalmazást tartalmazó csomaghoz. Példa: "
 "['app_1', 'app_2']"
 
-#: settings.py:70
+#: settings.py:69
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
@@ -210,7 +218,7 @@ msgstr ""
 "alkalmazások az alapértelmezett alkalmazások előtt lesznek telepítve. Példa:"
 " ['app_1', 'app_2']"
 
-#: settings.py:81
+#: settings.py:80
 msgid ""
 "Name of the view attached to the brand anchor in the main menu. This is also"
 " the view to which users will be redirected after log in."
@@ -218,17 +226,13 @@ msgstr ""
 "A főmenüben a márkahorgonyhoz csatolt nézet neve. Ez az a nézet, ahová a "
 "felhasználók bejelentkezés után át lesznek irányítva."
 
-#: settings.py:90
+#: settings.py:89
 msgid "Name of the dashboard to display in the home view."
 msgstr "A kezdőképernyőn megjelenítendő irányítópult neve."
 
-#: settings.py:95
+#: settings.py:94
 msgid "Sets the project's name."
 msgstr "Beállítja a projekt nevét."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "A projekt kezdőlapjának URL-je."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -258,55 +258,86 @@ msgstr "檢查日誌中是否帶有“ ERROR”錯誤，“ CRITICAL”中型錯
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr "開啟一個<a href=\"%(issue_url)s\">問題追蹤</a>的項目"
 
-#: templates/appearance/about.html:9
+#: templates/appearance/about.html:10
 msgid "About"
 msgstr "關於"
 
-#: templates/appearance/about.html:21
+#: templates/appearance/about.html:39
 msgid "Version"
 msgstr "版本"
 
-#: templates/appearance/about.html:23
+#: templates/appearance/about.html:41
 #, python-format
-msgid "Build number: %(build_number)s"
-msgstr "版本號：%(build_number)s"
+msgid "Build number: %(project_build_number)s"
+msgstr ""
 
-#: templates/appearance/about.html:36
+#: templates/appearance/about.html:48
 msgid "Released under the license:"
 msgstr "依據此授權發布："
 
-#: templates/appearance/about.html:40
+#: templates/appearance/about.html:57
 #, python-format
 msgid ""
 "\n"
-"                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
-"            "
+"                                To get the latest news subscribe to the <a class=\"new_window\" href=\"%(link_mailing_list_url)s\"> Mailing list</a>.\n"
+"                            "
 msgstr ""
-"\n"
-"                完整的更改列表可見於<a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">發布說明%(icon_documentation)s </a>或簡短版本<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">更改日誌%(icon_documentation)s </a>。\n"
-"            "
 
-#: templates/appearance/about.html:46
+#: templates/appearance/about.html:68
 #, python-format
 msgid ""
 "\n"
-"                For questions check the <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
-"            "
+"                                For articles, tutorials, troubleshooting, subscribe to the <a class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</a>.\n"
+"                            "
 msgstr ""
-"\n"
-"                可以查找問題解說於此 <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
-"            "
 
-#: templates/appearance/about.html:52
+#: templates/appearance/about.html:79
 #, python-format
 msgid ""
 "\n"
-"                If you found a bug or have a feature idea, visit the <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> or open a ticket in the <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Source code repository %(icon_source_code)s</a>.\n"
-"            "
+"                                Need professional help? Check out the <a class=\"new_window\" href=\"%(link_support_url)s\"> Support</a> offerings.\n"
+"                            "
 msgstr ""
+
+#: templates/appearance/about.html:90
+#, python-format
+msgid ""
 "\n"
-"                如果您發現了bug或有功能上的建議，請瀏覽<a class=\"new_window\" href=\"https://forum.mayan-edms.com\">論壇˙%(icon_forum)s </a>或在<a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">源代碼倉庫%(icon_source_code)s </a>提交問題。\n"
-"            "
+"                                For discussions visit the <a class=\"new_window\" href=\"%(link_forum_url)s\">Community forum</a>.\n"
+"                            "
+msgstr ""
+
+#: templates/appearance/about.html:101
+#, python-format
+msgid ""
+"\n"
+"                                The complete list of changes is available via the <a class=\"new_window\" href=\"%(link_release_notes_url)s\">Release notes</a>.\n"
+"                            "
+msgstr ""
+
+#: templates/appearance/about.html:112
+#, python-format
+msgid ""
+"\n"
+"                                For questions check the <a class=\"new_window\" href=\"%(link_documentation_url)s\">Documentation</a>.\n"
+"                            "
+msgstr ""
+
+#: templates/appearance/about.html:123
+#, python-format
+msgid ""
+"\n"
+"                                If you found a bug or have a feature idea open a ticket in the <a class=\"new_window\" href=\"%(link_source_code_url)s\">Source code repository</a>.\n"
+"                            "
+msgstr ""
+
+#: templates/appearance/about.html:131
+#, python-format
+msgid ""
+"\n"
+"                        %(project_title)s is Free and Open Source software, which is provided as-is with no warranty.\n"
+"                    "
+msgstr ""
 
 #: templates/appearance/app/foot.html:70
 msgid ""

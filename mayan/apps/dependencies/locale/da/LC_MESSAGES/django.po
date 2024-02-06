@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: René Rovsing Bach <reroba@outlook.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
@@ -230,33 +230,33 @@ msgstr ""
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
 
 #: environments.py:40
 msgid "Documentation (override)"
 msgstr ""
 
-#: environments.py:44
+#: environments.py:45
 msgid ""
 "Normal environment for end users. A missing dependency under this "
 "environment will result in issues and errors during normal use."
 msgstr ""
 
-#: environments.py:46
+#: environments.py:47
 msgid "Production"
 msgstr ""
 
-#: environments.py:50
+#: environments.py:51
 msgid ""
 "Environment used running the test suit to verify the functionality of the "
 "code. Dependencies in this environment are not needed for normal production "
 "usage."
 msgstr ""
 
-#: environments.py:53
+#: environments.py:54
 msgid "Testing"
 msgstr ""
 

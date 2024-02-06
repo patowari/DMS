@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -73,7 +73,7 @@ msgstr "Perfil de envio criado"
 msgid "Mailing profile edited"
 msgstr "Perfil de envio editado"
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -81,32 +81,32 @@ msgstr ""
 "Endereço de e-mail do destinatário. Podem ser vários endereços separados por"
 " vírgula ou ponto e vírgula."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Assunto"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Corpo"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr "O perfil de e-mail que será usado para enviar este e-mail."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Perfil de e-mail"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "O driver a ser usado no envio de e-mails."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Backend"
 

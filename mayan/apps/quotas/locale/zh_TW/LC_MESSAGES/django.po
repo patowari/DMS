@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:31+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: yan songwei <yansw@vip.163.com>, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -79,8 +79,8 @@ msgstr "所有文件类型"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
-msgstr "适用于所有文档类型。启用此功能后，配额将忽略单个文档类型的选择。"
+"individual document type selection."
+msgstr ""
 
 #: mixins.py:26
 msgid "Document types"
@@ -114,7 +114,7 @@ msgstr "全部用户"
 #: mixins.py:108
 msgid ""
 "Apply the quota to all users in the system, excluding admins and staff. "
-"Enabling this option, the quota will ignore the indiviual user and group "
+"Enabling this option, the quota will ignore the individual user and group "
 "selection."
 msgstr ""
 
