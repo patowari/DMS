@@ -7,5 +7,5 @@ flake8==7.0.0
 ipython==8.21.0
 pdbpp==0.10.3
 readme==0.7.1
-ruff==0.1.6
+ruff==0.2.1
 safety==3.0.1

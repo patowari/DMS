@@ -8,6 +8,7 @@
   - importlib-metadata from 6.8.0 to 7.0.1.
   - pycountry from 22.3.5 to 23.12.11.
   - django-silk from 5.0.4 to 5.1.0.
+  - ruff from 0.2.1 to 0.1.6.
 
 4.6 (2024-01-11)
 ================

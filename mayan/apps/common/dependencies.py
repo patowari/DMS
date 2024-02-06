@@ -211,7 +211,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='ruff', version_string='==0.1.6'
+    module=__name__, name='ruff', version_string='==0.2.1'
 )
 PythonDependency(
     environment=environment_development,
