@@ -5,6 +5,7 @@
 
   - django from 4.2.8 to 4.2.10 due to CVE-2024-24680.
   - django-mptt from 0.15.0 to 0.16.0.
+  - importlib-metadata from 6.8.0 to 7.0.1.
 
 4.6 (2024-01-11)
 ================
