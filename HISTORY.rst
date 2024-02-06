@@ -1,3 +1,10 @@
+4.6.1 (2024-02-06)
+==================
+- Merge changes from versions 4.5.9 and 4.4.12.
+- Update dependency versions:
+
+  - django from 4.2.8 to 4.2.10 due to CVE-2024-24680.
+
 4.6 (2024-01-11)
 ================
 - Improve the index mirroring profile. Add ``MAYAN_MIRROR_INDEX_NAME`` to

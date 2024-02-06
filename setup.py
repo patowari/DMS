@@ -61,7 +61,7 @@ def find_packages(directory):
 
 
 install_requires = """
-django==4.2.8
+django==4.2.10
 CairoSVG==2.7.1
 Pillow==10.2.0
 PyYAML==6.0.1
