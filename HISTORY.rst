@@ -1,4 +1,4 @@
-4.6.1 (2024-02-06)
+4.6.1 (2024-02-07)
 ==================
 - Merge changes from versions 4.5.9 and 4.4.12.
 - Update dependency versions:
@@ -15,6 +15,17 @@
   - greenlet from 3.0.1 to 3.0.3.
   - sentry-sdk from 1.40.0 to 1.40.1.
   - psutil from 5.9.6 to 5.9.8.
+
+- Code style updates.
+
+  - Sort imports
+  - Collapse long import lines
+  - Expand import lines that are too short
+  - Fix variable names
+
+- Update translation files.
+- Fix sources app class method name.
+- Fix typos.
 
 4.6 (2024-01-11)
 ================
