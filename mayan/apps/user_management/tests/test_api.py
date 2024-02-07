@@ -10,9 +10,8 @@ from ..events import (
     event_user_edited
 )
 from ..permissions import (
-    permission_group_create, permission_group_delete,
-    permission_group_edit, permission_group_view,
-    permission_user_create, permission_user_delete,
+    permission_group_create, permission_group_delete, permission_group_edit,
+    permission_group_view, permission_user_create, permission_user_delete,
     permission_user_edit, permission_user_view
 )
 

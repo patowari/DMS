@@ -43,9 +43,9 @@ from .methods import (
     method_document_type_index_template_remove
 )
 from .permissions import (
-    permission_index_template_delete, permission_index_template_edit,
-    permission_index_instance_view,
-    permission_index_template_rebuild, permission_index_template_view
+    permission_index_instance_view, permission_index_template_delete,
+    permission_index_template_edit, permission_index_template_rebuild,
+    permission_index_template_view
 )
 
 

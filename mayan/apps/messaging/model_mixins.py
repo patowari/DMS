@@ -1,7 +1,7 @@
-from django.utils.translation import gettext_lazy as _
-
 from bleach import Cleaner
 from bleach.linkifier import LinkifyFilter
+
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.classes import Template
 

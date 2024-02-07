@@ -6,7 +6,7 @@ from ..caches import MirrorFilesystemCache
 
 from .literals import (
     TEST_CACHE_KEY_BAD_CHARACTERS, TEST_DOCUMENT_PK, TEST_KEY_UNICODE,
-    TEST_KEY_UNICODE_HASH, TEST_NODE_PK, TEST_PATH,
+    TEST_KEY_UNICODE_HASH, TEST_NODE_PK, TEST_PATH
 )
 
 

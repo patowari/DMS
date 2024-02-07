@@ -7,9 +7,8 @@ from .exceptions import (
     DynamicSearchBackendException, DynamicSearchScopedQueryError
 )
 from .literals import (
-    ERROR_TEXT_NO_RESULT_SCOPE, SCOPE_DELIMITER,
-    SCOPE_MARKER, SCOPE_OPERATOR_CHOICES, SCOPE_RESULT_MARKER,
-    TERM_MARKER_QUOTE
+    ERROR_TEXT_NO_RESULT_SCOPE, SCOPE_DELIMITER, SCOPE_MARKER,
+    SCOPE_OPERATOR_CHOICES, SCOPE_RESULT_MARKER, TERM_MARKER_QUOTE
 )
 from .search_query_terms import QueryToken
 from .search_query_types import QueryType

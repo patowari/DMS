@@ -3,7 +3,8 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.storage.classes import DefinedStorage
 
 from .literals import (
-    STORAGE_NAME_DOCUMENT_FILES, STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE,
+    STORAGE_NAME_DOCUMENT_FILES,
+    STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
 from .settings import (

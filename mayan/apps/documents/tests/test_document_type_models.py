@@ -1,4 +1,7 @@
-from ..classes import OriginalDocumentFilenameGenerator, UUIDDocumentFilenameGenerator, UUIDPlusOriginalFilename
+from ..classes import (
+    OriginalDocumentFilenameGenerator, UUIDDocumentFilenameGenerator,
+    UUIDPlusOriginalFilename
+)
 from ..models import TrashedDocument, Document, DocumentType
 
 from .base import GenericDocumentTestCase

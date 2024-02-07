@@ -18,8 +18,8 @@ from .forms import CabinetListForm
 from .icons import (
     icon_cabinet, icon_cabinet_child_add, icon_cabinet_create,
     icon_cabinet_delete, icon_cabinet_detail, icon_cabinet_edit,
-    icon_cabinet_list, icon_document_cabinet_add, icon_document_cabinet_list,
-    icon_document_cabinet_remove
+    icon_cabinet_list, icon_document_cabinet_add,
+    icon_document_cabinet_list, icon_document_cabinet_remove
 )
 from .links import (
     link_document_cabinet_add, link_cabinet_child_add, link_cabinet_create

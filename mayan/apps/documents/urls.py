@@ -33,13 +33,6 @@ from .api_views.trashed_document_api_views import (
     APITrashedDocumentDetailView, APITrashedDocumentListView,
     APITrashedDocumentRestoreView, APITrashedDocumentImageView
 )
-from .views.document_file_views import (
-    DocumentFileDeleteView, DocumentFileEditView, DocumentFileListView,
-    DocumentFileIntrospectView, DocumentFilePrintFormView,
-    DocumentFilePrintView, DocumentFilePropertiesView,
-    DocumentFilePreviewView, DocumentFileTransformationsClearView,
-    DocumentFileTransformationsCloneView
-)
 from .views.document_file_page_views import (
     DocumentFilePageListView, DocumentFilePageNavigationFirst,
     DocumentFilePageNavigationLast, DocumentFilePageNavigationNext,
@@ -47,6 +40,13 @@ from .views.document_file_page_views import (
     DocumentFilePageRotateRightView, DocumentFilePageView,
     DocumentFilePageViewResetView, DocumentFilePageZoomInView,
     DocumentFilePageZoomOutView
+)
+from .views.document_file_views import (
+    DocumentFileDeleteView, DocumentFileEditView, DocumentFileListView,
+    DocumentFileIntrospectView, DocumentFilePrintFormView,
+    DocumentFilePrintView, DocumentFilePropertiesView,
+    DocumentFilePreviewView, DocumentFileTransformationsClearView,
+    DocumentFileTransformationsCloneView
 )
 from .views.document_type_retention_policy_views import DocumentTypeRetentionPoliciesEditView
 from .views.document_type_views import (
@@ -60,10 +60,10 @@ from .views.document_version_page_views import (
     DocumentVersionPageDeleteView, DocumentVersionPageListView,
     DocumentVersionPageListRemapView, DocumentVersionPageNavigationFirst,
     DocumentVersionPageNavigationLast, DocumentVersionPageNavigationNext,
-    DocumentVersionPageNavigationPrevious, DocumentVersionPageRotateLeftView,
-    DocumentVersionPageRotateRightView, DocumentVersionPageView,
-    DocumentVersionPageViewResetView, DocumentVersionPageZoomInView,
-    DocumentVersionPageZoomOutView
+    DocumentVersionPageNavigationPrevious,
+    DocumentVersionPageRotateLeftView, DocumentVersionPageRotateRightView,
+    DocumentVersionPageView, DocumentVersionPageViewResetView,
+    DocumentVersionPageZoomInView, DocumentVersionPageZoomOutView
 )
 from .views.document_version_views import (
     DocumentVersionActiveView, DocumentVersionCreateView,

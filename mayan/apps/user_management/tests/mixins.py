@@ -6,11 +6,11 @@ from ..links import link_group_setup, link_user_setup
 from .literals import (
     TEST_CASE_GROUP_NAME, TEST_CASE_SUPER_USER_EMAIL,
     TEST_CASE_SUPER_USER_PASSWORD, TEST_CASE_SUPER_USER_USERNAME,
-    TEST_CASE_USER_EMAIL, TEST_CASE_USER_FIRST_NAME, TEST_CASE_USER_LAST_NAME,
-    TEST_CASE_USER_PASSWORD, TEST_CASE_USER_USERNAME,
-    TEST_GROUP_NAME, TEST_GROUP_NAME_EDITED, TEST_USER_EMAIL,
-    TEST_USER_PASSWORD, TEST_USER_PASSWORD_EDITED, TEST_USER_USERNAME,
-    TEST_USER_USERNAME_EDITED
+    TEST_CASE_USER_EMAIL, TEST_CASE_USER_FIRST_NAME,
+    TEST_CASE_USER_LAST_NAME, TEST_CASE_USER_PASSWORD,
+    TEST_CASE_USER_USERNAME, TEST_GROUP_NAME, TEST_GROUP_NAME_EDITED,
+    TEST_USER_EMAIL, TEST_USER_PASSWORD, TEST_USER_PASSWORD_EDITED,
+    TEST_USER_USERNAME, TEST_USER_USERNAME_EDITED
 )
 
 
@@ -53,7 +53,9 @@ class GroupAPIViewTestMixin:
             }
         )
         if 'id' in result.json():
-            self._test_group = Group.objects.get(pk=result.json()['id'])
+            self._test_group = Group.objects.get(
+                pk=result.json()['id']
+            )
 
         return result
 

@@ -8,7 +8,7 @@ from .api_views import (
 from .views import (
     DocumentCabinetAddView, DocumentCabinetListView,
     DocumentCabinetRemoveView, CabinetChildAddView, CabinetCreateView,
-    CabinetDeleteView, CabinetDetailView, CabinetEditView, CabinetListView,
+    CabinetDeleteView, CabinetDetailView, CabinetEditView, CabinetListView
 )
 
 urlpatterns_cabinets = [

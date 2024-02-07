@@ -1,6 +1,6 @@
 from .exceptions import (
-    DynamicSearchInterpreterError, DynamicSearchInterpreterUnknownSearchType,
-    DynamicSearchScopedQueryError
+    DynamicSearchInterpreterError,
+    DynamicSearchInterpreterUnknownSearchType, DynamicSearchScopedQueryError
 )
 from .literals import MATCH_ALL_FIELD_NAME, SCOPE_MARKER
 from .scoped_queries import (

@@ -2,14 +2,14 @@ from io import BytesIO
 
 from PIL import Image
 
+from mayan.apps.documents.document_file_actions import (
+    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
+    DocumentFileActionUseNewPages
+)
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
     event_document_version_edited, event_document_version_page_created
-)
-from mayan.apps.documents.document_file_actions import (
-    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
-    DocumentFileActionUseNewPages
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase

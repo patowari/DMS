@@ -2,8 +2,9 @@ from django.urls import re_path
 
 from .api_views import APIMessageDetailView, APIMessageListView
 from .views import (
-    MessageCreateView, MessageDeleteView, MessageDetailView, MessageListView,
-    MessageMarkReadAllView, MessageMarkReadView, MessageMarkUnReadView
+    MessageCreateView, MessageDeleteView, MessageDetailView,
+    MessageListView, MessageMarkReadAllView, MessageMarkReadView,
+    MessageMarkUnReadView
 )
 
 urlpatterns = [

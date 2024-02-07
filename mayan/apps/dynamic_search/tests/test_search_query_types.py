@@ -3,9 +3,9 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..exceptions import DynamicSearchQueryError
 from ..search_query_types import (
     QueryType, QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
-    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
-    QueryTypeRegularExpression
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+    QueryTypeLessThanOrEqual, QueryTypePartial, QueryTypeRange,
+    QueryTypeRangeExclusive, QueryTypeRegularExpression
 )
 
 from .literals import TEST_QUERY_TYPE_ALIAS_INVALID

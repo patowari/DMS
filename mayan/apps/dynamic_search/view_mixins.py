@@ -10,8 +10,8 @@ from .exceptions import (
 from .literals import FILTER_PREFIX, SEARCH_MODEL_NAME_KWARG
 from .mixins import QuerysetSearchModelMixin
 from .search_backends import SearchBackend
-from .search_models import SearchModel
 from .search_interpreters import SearchInterpreter
+from .search_models import SearchModel
 
 logger = logging.getLogger(name=__name__)
 

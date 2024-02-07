@@ -14,8 +14,7 @@ from .literals import MESSAGE_FEATURE_NO_STATUS
 from .search_interpreters import SearchInterpreter
 from .search_models import SearchModel
 from .settings import (
-    setting_backend, setting_backend_arguments,
-    setting_results_limit
+    setting_backend, setting_backend_arguments, setting_results_limit
 )
 
 logger = logging.getLogger(name=__name__)

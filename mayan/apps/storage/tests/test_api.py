@@ -12,7 +12,7 @@ from ..permissions import (
     permission_download_file_view
 )
 
-from .mixins import DownloadFileTestMixin, DownloadFileAPIViewTestMixin
+from .mixins import DownloadFileAPIViewTestMixin, DownloadFileTestMixin
 
 
 class DownloadFileViewAPITestCase(

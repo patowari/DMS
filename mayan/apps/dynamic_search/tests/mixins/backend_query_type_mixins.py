@@ -1,9 +1,9 @@
 from ...literals import QUERY_PARAMETER_ANY_FIELD
 from ...search_query_types import (
     QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
-    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
-    QueryTypeRegularExpression
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+    QueryTypeLessThanOrEqual, QueryTypePartial, QueryTypeRange,
+    QueryTypeRangeExclusive, QueryTypeRegularExpression
 )
 
 from ..literals import TEST_OBJECT_INTEGER_VALUE

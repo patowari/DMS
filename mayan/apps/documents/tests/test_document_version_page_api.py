@@ -3,17 +3,15 @@ from rest_framework import status
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
-    event_document_version_page_created, event_document_version_page_deleted,
-    event_document_version_page_edited
+    event_document_version_page_created,
+    event_document_version_page_deleted, event_document_version_page_edited
 )
 from ..permissions import (
     permission_document_version_edit, permission_document_version_view
 )
 
 from .mixins.document_mixins import DocumentTestMixin
-from .mixins.document_version_mixins import (
-    DocumentVersionPageAPIViewTestMixin
-)
+from .mixins.document_version_mixins import DocumentVersionPageAPIViewTestMixin
 
 
 class DocumentVersionPageAPIViewTestCase(

@@ -14,8 +14,8 @@ from ..search_interpreters import (
     SearchInterpreter, SearchInterpreterAdvanced, SearchInterpreterScoped
 )
 
-from .mixins.search_interpreter_mixins import SearchInterpreterTestMixin
 from .mixins.base import SearchTestMixin
+from .mixins.search_interpreter_mixins import SearchInterpreterTestMixin
 
 
 class SearchInterpreterAdvancedDecodeTestCase(

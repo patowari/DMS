@@ -10,9 +10,7 @@ from mayan.apps.mayan_statistics.icons import icon_statistics
 from .icons import (
     icon_dashboard_documents_in_trash, icon_dashboard_document_types,
     icon_dashboard_pages_per_month, icon_dashboard_new_documents_this_month,
-    icon_dashboard_total_document,
-
-    icon_document_recently_accessed_list
+    icon_dashboard_total_document, icon_document_recently_accessed_list
 )
 from .links.document_links import (
     link_document_recently_accessed_list,

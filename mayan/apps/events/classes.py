@@ -14,12 +14,12 @@ from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.menus import menu_list_facet
 from mayan.apps.organizations.utils import get_organization_installation_url
 
+from .links import (
+    link_object_event_list, link_object_event_type_user_subscription_list
+)
 from .literals import (
     DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_TYPE_NAMESPACE_NAME,
     EVENT_EVENTS_CLEARED_NAME, EVENT_EVENTS_EXPORTED_NAME
-)
-from .links import (
-    link_object_event_list, link_object_event_type_user_subscription_list
 )
 from .permissions import (
     permission_events_clear, permission_events_export, permission_events_view

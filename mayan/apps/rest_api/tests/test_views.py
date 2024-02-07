@@ -14,7 +14,9 @@ from .. import generics, serializers
 
 from .base import BaseAPITestCase
 from .literals import TEST_OBJECT_LABEL, TEST_OBJECT_LABEL_EDITED
-from .mixins import DynamicFieldSerializerAPIViewTestCaseMixin, RESTAPIViewTestMixin
+from .mixins import (
+    DynamicFieldSerializerAPIViewTestCaseMixin, RESTAPIViewTestMixin
+)
 
 
 class RESTAPIViewTestCase(RESTAPIViewTestMixin, GenericViewTestCase):

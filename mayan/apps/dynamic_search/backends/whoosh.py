@@ -29,14 +29,14 @@ from ..search_fields import SearchFieldVirtualAllFields
 from ..search_models import SearchModel
 from ..search_query_types import (
     BackendQueryType, QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
-    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
-    QueryTypeRegularExpression
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+    QueryTypeLessThanOrEqual, QueryTypePartial, QueryTypeRange,
+    QueryTypeRangeExclusive, QueryTypeRegularExpression
 )
 
 from .literals.whoosh_literals import (
     DJANGO_TO_WHOOSH_FIELD_MAP, TEXT_LOCK_INSTANCE_DEINDEX,
-    TEXT_LOCK_INSTANCE_INDEX, WHOOSH_INDEX_DIRECTORY_NAME,
+    TEXT_LOCK_INSTANCE_INDEX, WHOOSH_INDEX_DIRECTORY_NAME
 )
 logger = logging.getLogger(name=__name__)
 

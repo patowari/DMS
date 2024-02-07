@@ -10,11 +10,11 @@ from mayan.apps.rest_api import generics
 
 from .classes import BatchRequestCollection, Endpoint
 from .generics import RetrieveAPIView, ListAPIView
+from .schemas import openapi_info
 from .serializers import (
     BatchAPIRequestResponseSerializer, EndpointSerializer,
     ProjectInformationSerializer
 )
-from .schemas import openapi_info
 
 
 class APIRoot(ListAPIView):

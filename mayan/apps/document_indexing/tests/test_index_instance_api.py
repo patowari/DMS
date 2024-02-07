@@ -1,7 +1,7 @@
 from rest_framework import status
 
-from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 from mayan.apps.documents.permissions import permission_document_view
+from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 
 from ..permissions import permission_index_instance_view
 

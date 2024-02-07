@@ -9,9 +9,8 @@ from mayan.apps.mayan_statistics.classes import (
     StatisticNamespace, StatisticTypeDoughnutChart, StatisticTypeLineChart
 )
 
-from .permissions import permission_document_view
-
 from .literals import MONTH_NAMES
+from .permissions import permission_document_view
 
 
 def get_month_name(month_number):

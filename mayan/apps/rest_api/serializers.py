@@ -9,16 +9,16 @@ from rest_framework.fields import (  # NOQA
     MultipleChoiceField, ReadOnlyField, RegexField, SerializerMethodField,
     SlugField, TimeField, URLField, UUIDField
 )
-from rest_framework.serializers import (
-    HyperlinkedModelSerializer as RESTFrameworkHyperlinkedModelSerializer,
-    ModelSerializer as RESTFrameworkModelSerializer
-)
 from rest_framework.relations import (  # NOQA
     HyperlinkedIdentityField, HyperlinkedRelatedField, ManyRelatedField,
     PrimaryKeyRelatedField, RelatedField, SlugRelatedField,
     StringRelatedField
 )
 from rest_framework.reverse import reverse
+from rest_framework.serializers import (
+    HyperlinkedModelSerializer as RESTFrameworkHyperlinkedModelSerializer,
+    ModelSerializer as RESTFrameworkModelSerializer
+)
 
 from .classes import BatchRequestCollection
 from .serializer_mixins import (

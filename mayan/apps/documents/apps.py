@@ -15,9 +15,8 @@ from mayan.apps.common.signals import signal_post_initial_setup
 from mayan.apps.converter.classes import AppImageErrorImage
 from mayan.apps.converter.links import link_transformation_list
 from mayan.apps.converter.permissions import (
-    permission_transformation_create,
-    permission_transformation_delete, permission_transformation_edit,
-    permission_transformation_view,
+    permission_transformation_create, permission_transformation_delete,
+    permission_transformation_edit, permission_transformation_view
 )
 from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.databases.classes import (
@@ -38,8 +37,8 @@ from .column_widgets import ThumbnailWidget
 from .dashboard_widgets import (
     DashboardWidgetDocumentFilePagesTotal, DashboardWidgetDocumentsInTrash,
     DashboardWidgetDocumentsNewThisMonth,
-    DashboardWidgetDocumentsPagesNewThisMonth, DashboardWidgetDocumentsTotal,
-    DashboardWidgetDocumentsTypesTotal,
+    DashboardWidgetDocumentsPagesNewThisMonth,
+    DashboardWidgetDocumentsTotal, DashboardWidgetDocumentsTypesTotal,
     DashboardWidgetUserRecentlyAccessedDocuments,
     DashboardWidgetUserRecentlyCreatedDocuments,
     DashboardWidgetUserFavoriteDocuments
@@ -85,10 +84,10 @@ from .handlers import (
     handler_create_document_version_page_image_cache
 )
 from .links.document_links import (
-    link_document_type_change, link_document_properties_edit,
-    link_document_list, link_document_recently_accessed_list,
-    link_document_recently_created_list, link_document_multiple_type_change,
-    link_document_preview, link_document_properties
+    link_document_list, link_document_multiple_type_change,
+    link_document_properties, link_document_properties_edit,
+    link_document_preview, link_document_recently_accessed_list,
+    link_document_recently_created_list, link_document_type_change
 )
 from .links.document_file_links import (
     link_document_file_delete, link_document_file_multiple_delete,
@@ -96,7 +95,8 @@ from .links.document_file_links import (
     link_document_file_introspect_single, link_document_file_list,
     link_document_file_preview, link_document_file_print_form,
     link_document_file_properties, link_document_file_return_to_document,
-    link_document_file_return_list, link_document_file_transformations_clear,
+    link_document_file_return_list,
+    link_document_file_transformations_clear,
     link_document_file_multiple_transformations_clear,
     link_document_file_transformations_clone
 )
@@ -108,9 +108,10 @@ from .links.document_file_page_links import (
     link_document_file_page_return_to_document,
     link_document_file_page_return_to_document_file,
     link_document_file_page_return_to_document_file_page_list,
-    link_document_file_page_rotate_left, link_document_file_page_rotate_right,
-    link_document_file_page_view, link_document_file_page_view_reset,
-    link_document_file_page_zoom_in, link_document_file_page_zoom_out
+    link_document_file_page_rotate_left,
+    link_document_file_page_rotate_right, link_document_file_page_view,
+    link_document_file_page_view_reset, link_document_file_page_zoom_in,
+    link_document_file_page_zoom_out
 )
 from .links.document_type_links import (
     link_document_type_create, link_document_type_delete,
@@ -156,8 +157,8 @@ from .links.miscellaneous_links import link_decorations_list
 from .links.trashed_document_links import (
     link_document_delete, link_document_list_deleted,
     link_document_multiple_delete, link_document_multiple_restore,
-    link_document_multiple_trash, link_document_restore, link_document_trash,
-    link_trash_can_empty
+    link_document_multiple_trash, link_document_restore,
+    link_document_trash, link_trash_can_empty
 )
 from .literals import (
     IMAGE_ERROR_NO_ACTIVE_VERSION, IMAGE_ERROR_NO_VERSION_PAGES,

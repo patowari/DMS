@@ -1,8 +1,8 @@
+from mayan.apps.converter.models import LayerTransformation
+from mayan.apps.converter.tests.mixins import LayerTestMixin
 from mayan.apps.converter.transformations import (
     BaseTransformation, TransformationRotate90
 )
-from mayan.apps.converter.models import LayerTransformation
-from mayan.apps.converter.tests.mixins import LayerTestMixin
 
 from ..document_file_actions import DocumentFileActionAppendNewPages
 

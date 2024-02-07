@@ -1,17 +1,17 @@
 from rest_framework import status
 
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
-from mayan.apps.user_management.tests.mixins import GroupTestMixin
 from mayan.apps.user_management.permissions import (
     permission_group_edit, permission_group_view
 )
+from mayan.apps.user_management.tests.mixins import GroupTestMixin
 
 from ..classes import Permission
 from ..events import event_role_created, event_role_edited
 from ..models import Role
 from ..permissions import (
-    permission_role_create, permission_role_delete,
-    permission_role_edit, permission_role_view
+    permission_role_create, permission_role_delete, permission_role_edit,
+    permission_role_view
 )
 
 from .mixins import (

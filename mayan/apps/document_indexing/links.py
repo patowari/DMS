@@ -13,9 +13,8 @@ from .icons import (
     icon_index_template_node_delete, icon_index_template_node_edit
 )
 from .permissions import (
-    permission_index_template_create, permission_index_template_edit,
-    permission_index_template_delete,
-    permission_index_instance_view,
+    permission_index_instance_view, permission_index_template_create,
+    permission_index_template_delete, permission_index_template_edit,
     permission_index_template_rebuild, permission_index_template_view
 )
 

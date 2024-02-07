@@ -24,10 +24,9 @@ from .literals.elasticsearch_literals import (
     DEFAULT_ELASTICSEARCH_CLIENT_MAXSIZE,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_START,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_CONNECTION_FAIL,
-    DEFAULT_ELASTICSEARCH_CLIENT_SNIFFER_TIMEOUT, DEFAULT_ELASTICSEARCH_HOST,
-    DEFAULT_ELASTICSEARCH_INDICES_NAMESPACE,
-    DJANGO_TO_ELASTICSEARCH_FIELD_MAP,
-    MAXIMUM_API_ATTEMPT_COUNT
+    DEFAULT_ELASTICSEARCH_CLIENT_SNIFFER_TIMEOUT,
+    DEFAULT_ELASTICSEARCH_HOST, DEFAULT_ELASTICSEARCH_INDICES_NAMESPACE,
+    DJANGO_TO_ELASTICSEARCH_FIELD_MAP, MAXIMUM_API_ATTEMPT_COUNT
 )
 
 logger = logging.getLogger(name=__name__)
@@ -61,12 +60,16 @@ class BackendQueryTypeExact(BackendQueryType):
             if self.is_quoted_value:
                 return Q(
                     name_or_query='match_phrase', _expand__to_dot=False,
-                    **{self.search_field.field_name: template.format(self.value)}
+                    **{
+                        self.search_field.field_name: template.format(self.value)
+                    }
                 )
             else:
                 return Q(
                     name_or_query='match', _expand__to_dot=False,
-                    **{self.search_field.field_name: template.format(self.value)}
+                    **{
+                        self.search_field.field_name: template.format(self.value)
+                    }
                 )
 
 
@@ -88,7 +91,9 @@ class BackendQueryTypeGreaterThan(BackendQueryType):
         if self.value is not None:
             return Q(
                 name_or_query='range', _expand__to_dot=False,
-                **{self.search_field.field_name: {'gt': self.value}}
+                **{
+                    self.search_field.field_name: {'gt': self.value}
+                }
             )
 
 
@@ -99,7 +104,9 @@ class BackendQueryTypeGreaterThanOrEqual(BackendQueryType):
         if self.value is not None:
             return Q(
                 name_or_query='range', _expand__to_dot=False,
-                **{self.search_field.field_name: {'gte': self.value}}
+                **{
+                    self.search_field.field_name: {'gte': self.value}
+                }
             )
 
 
@@ -110,7 +117,9 @@ class BackendQueryTypeLessThan(BackendQueryType):
         if self.value is not None:
             return Q(
                 name_or_query='range', _expand__to_dot=False,
-                **{self.search_field.field_name: {'lt': self.value}}
+                **{
+                    self.search_field.field_name: {'lt': self.value}
+                }
             )
 
 
@@ -121,7 +130,9 @@ class BackendQueryTypeLessThanOrEqual(BackendQueryType):
         if self.value is not None:
             return Q(
                 name_or_query='range', _expand__to_dot=False,
-                **{self.search_field.field_name: {'lte': self.value}}
+                **{
+                    self.search_field.field_name: {'lte': self.value}
+                }
             )
 
 
@@ -134,13 +145,17 @@ class BackendQueryTypePartial(BackendQueryType):
                 if self.is_quoted_value:
                     return Q(
                         name_or_query='match_phrase', _expand__to_dot=False,
-                        **{self.search_field.field_name: '{}'.format(self.value)}
+                        **{
+                            self.search_field.field_name: '{}'.format(self.value)
+                        }
                     )
                 else:
                     if self.get_search_backend_field_type() != elasticsearch_dsl.field.Integer:
                         return Q(
                             name_or_query='wildcard', _expand__to_dot=False,
-                            **{self.search_field.field_name: '*{}*'.format(self.value)}
+                            **{
+                                self.search_field.field_name: '*{}*'.format(self.value)
+                            }
                         )
 
 
@@ -220,7 +235,11 @@ class ElasticSearchBackend(SearchBackend):
         result = set()
 
         for hit in response:
-            result.add(int(hit['id']))
+            result.add(
+                int(
+                    hit['id']
+                )
+            )
 
         return result
 
@@ -352,7 +371,9 @@ class ElasticSearchBackend(SearchBackend):
                     return ()
                 else:
                     search = search.source(None).query(search_field_query)
-                    response = self.do_search_execute(search=search[0:limit])
+                    response = self.do_search_execute(
+                        search=search[0:limit]
+                    )
                     return self._do_response_process(response=response)
 
     def _update_mappings(self, search_model=None):
@@ -411,12 +432,14 @@ class ElasticSearchBackend(SearchBackend):
             index=self._get_index_name(search_model=search_model)
         )
 
-    def index_instance(self, instance, exclude_model=None, exclude_kwargs=None):
+    def index_instance(
+        self, instance, exclude_model=None, exclude_kwargs=None
+    ):
         search_model = SearchModel.get_for_model(instance=instance)
 
         document = search_model.populate(
-            search_backend=self, instance=instance, exclude_model=exclude_model,
-            exclude_kwargs=exclude_kwargs
+            exclude_kwargs=exclude_kwargs, exclude_model=exclude_model,
+            instance=instance, search_backend=self
         )
         self._get_client().index(
             index=self._get_index_name(search_model=search_model),
@@ -441,7 +464,7 @@ class ElasticSearchBackend(SearchBackend):
                 yield kwargs
 
         bulk_indexing_generator = helpers.streaming_bulk(
-            client=client, index=index_name, actions=generate_actions(),
+            actions=generate_actions(), client=client, index=index_name,
             yield_ok=False
         )
 

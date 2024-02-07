@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.documents.permissions import permission_document_view
+from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..events import (

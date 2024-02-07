@@ -8,8 +8,8 @@ from ..document_file_actions import (
 )
 from ..events import (
     event_document_version_deleted, event_document_version_edited,
-    event_document_version_page_created, event_document_version_page_deleted,
-    event_document_viewed
+    event_document_version_page_created,
+    event_document_version_page_deleted, event_document_viewed
 )
 from ..permissions import (
     permission_document_version_delete, permission_document_version_edit,
