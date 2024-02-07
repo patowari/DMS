@@ -2,7 +2,8 @@ from django.urls import re_path
 
 from .api_views import APIAnnouncementListView, APIAnnouncementView
 from .views import (
-    AnnouncementCreateView, AnnouncementDeleteView, AnnouncementEditView, AnnouncementListView
+    AnnouncementCreateView, AnnouncementDeleteView, AnnouncementEditView,
+    AnnouncementListView
 )
 
 urlpatterns = [

@@ -1,5 +1,5 @@
-from django.db import migrations
 from django.conf import settings
+from django.db import migrations
 
 
 def code_migrate_old_comments(apps, schema_editor):

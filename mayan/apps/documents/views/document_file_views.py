@@ -31,8 +31,8 @@ from ..icons import (
     icon_document_file_transformation_list_clone
 )
 from ..literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
-from ..models.document_models import Document
 from ..models.document_file_models import DocumentFile
+from ..models.document_models import Document
 from ..permissions import (
     permission_document_file_delete, permission_document_file_edit,
     permission_document_file_print, permission_document_file_tools,

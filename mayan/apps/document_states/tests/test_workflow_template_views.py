@@ -1,5 +1,5 @@
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.permissions import permission_document_type_edit
+from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (
@@ -8,9 +8,9 @@ from ..events import (
 )
 from ..models.workflow_models import Workflow
 from ..permissions import (
-    permission_workflow_template_create, permission_workflow_template_delete,
-    permission_workflow_template_edit, permission_workflow_template_view,
-    permission_workflow_tools
+    permission_workflow_template_create,
+    permission_workflow_template_delete, permission_workflow_template_edit,
+    permission_workflow_template_view, permission_workflow_tools
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_LABEL

@@ -10,7 +10,8 @@ from ..icons import (
     icon_document_file_introspect, icon_document_file_list,
     icon_document_file_print, icon_document_file_properties_detail,
     icon_document_file_return_to_document, icon_document_file_return_list,
-    icon_document_file_preview, icon_document_file_transformation_list_clear,
+    icon_document_file_preview,
+    icon_document_file_transformation_list_clear,
     icon_document_file_transformation_list_clone
 )
 from ..permissions import (

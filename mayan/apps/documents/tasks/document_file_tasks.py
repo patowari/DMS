@@ -6,8 +6,8 @@ from django.contrib.auth import get_user_model
 from django.core.files import File
 from django.db import OperationalError
 
-from mayan.celery import app
 from mayan.apps.storage.tasks import task_shared_upload_delete
+from mayan.celery import app
 
 from ..literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 

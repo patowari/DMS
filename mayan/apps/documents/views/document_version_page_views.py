@@ -19,8 +19,8 @@ from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.views.generics import (
     FormView, SingleObjectDeleteView, SingleObjectListView, SimpleView
 )
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import resolve
+from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.document_version_page_forms import (
     DocumentVersionPageForm, DocumentVersionPageMappingFormSet
@@ -59,7 +59,9 @@ class DocumentVersionPageDeleteView(SingleObjectDeleteView):
                 'page remap action instead.'
             ),
             'object': self.object,
-            'title': _(message='Delete document version page %s ?') % self.object
+            'title': _(
+                message='Delete document version page %s ?'
+            ) % self.object
         }
 
     def get_instance_extra_data(self):
@@ -102,7 +104,9 @@ class DocumentVersionPageListView(
                 'Create them using the page remap actions or the version '
                 'modification action.'
             ),
-            'no_results_title': _(message='No document version pages available'),
+            'no_results_title': _(
+                message='No document version pages available'
+            ),
             'object': self.external_object,
             'title': _(
                 'Pages of document version: %s'
@@ -155,7 +159,11 @@ class DocumentVersionPageListRemapView(ExternalObjectViewMixin, FormView):
         return super().form_valid(form=form)
 
     def get_form_extra_kwargs(self):
-        target_page_number_choices = [(0, _(message='None'))]
+        target_page_number_choices = [
+            (
+                0, _(message='None')
+            )
+        ]
 
         page_index = 1
 

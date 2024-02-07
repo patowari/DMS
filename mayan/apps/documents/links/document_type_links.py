@@ -13,7 +13,7 @@ from ..icons import (
 )
 from ..permissions import (
     permission_document_type_create, permission_document_type_delete,
-    permission_document_type_edit, permission_document_type_view,
+    permission_document_type_edit, permission_document_type_view
 )
 
 

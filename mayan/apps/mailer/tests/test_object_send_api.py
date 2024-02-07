@@ -9,8 +9,7 @@ from ..events import event_email_sent
 from ..permissions import (
     permission_mailing_profile_use,
     permission_send_document_file_attachment,
-    permission_send_document_file_link,
-    permission_send_document_link,
+    permission_send_document_file_link, permission_send_document_link,
     permission_send_document_version_attachment,
     permission_send_document_version_link
 )

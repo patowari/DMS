@@ -1,9 +1,7 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import event_cache_partition_purged, event_cache_purged
-from ..permissions import (
-    permission_cache_purge, permission_cache_view
-)
+from ..permissions import permission_cache_purge, permission_cache_view
 
 from .mixins import CacheTestMixin, CacheViewTestMixin
 

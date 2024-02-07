@@ -5,7 +5,7 @@ from .api_views.workflow_instance_api_views import (
     APIWorkflowInstanceLaunchActionView,
     APIWorkflowInstanceLogEntryDetailView,
     APIWorkflowInstanceLogEntryListView,
-    APIWorkflowInstanceLogEntryTransitionListView,
+    APIWorkflowInstanceLogEntryTransitionListView
 )
 from .api_views.workflow_template_api_views import (
     APIWorkflowTemplateDetailView, APIWorkflowTemplateDocumentTypeAddView,
@@ -15,8 +15,8 @@ from .api_views.workflow_template_api_views import (
 )
 from .api_views.workflow_template_state_api_views import (
     APIWorkflowTemplateStateActionDetailView,
-    APIWorkflowTemplateStateActionListView, APIWorkflowTemplateStateListView,
-    APIWorkflowTemplateStateView
+    APIWorkflowTemplateStateActionListView,
+    APIWorkflowTemplateStateListView, APIWorkflowTemplateStateView
 )
 from .api_views.workflow_template_transition_api_views import (
     APIWorkflowTemplateTransitionListView,
@@ -41,19 +41,21 @@ from .views.workflow_proxy_views import (
     WorkflowRuntimeProxyStateListView
 )
 from .views.workflow_template_views import (
-    DocumentTypeWorkflowTemplateAddRemoveView, DocumentWorkflowTemplatesLaunchView,
-    ToolLaunchWorkflows, WorkflowTemplateCreateView,
-    WorkflowTemplateDeleteView, WorkflowTemplateEditView,
-    WorkflowTemplateLaunchView, WorkflowTemplateListView,
-    WorkflowTemplatePreviewView, WorkflowTemplateDocumentTypeAddRemoveView
+    DocumentTypeWorkflowTemplateAddRemoveView,
+    DocumentWorkflowTemplatesLaunchView, ToolLaunchWorkflows,
+    WorkflowTemplateCreateView, WorkflowTemplateDeleteView,
+    WorkflowTemplateEditView, WorkflowTemplateLaunchView,
+    WorkflowTemplateListView, WorkflowTemplatePreviewView,
+    WorkflowTemplateDocumentTypeAddRemoveView
 )
 from .views.workflow_template_state_views import (
     WorkflowTemplateStateActionCreateView,
-    WorkflowTemplateStateActionDeleteView, WorkflowTemplateStateActionEditView,
+    WorkflowTemplateStateActionDeleteView,
+    WorkflowTemplateStateActionEditView,
     WorkflowTemplateStateActionListView,
-    WorkflowTemplateStateActionSelectionView, WorkflowTemplateStateCreateView,
-    WorkflowTemplateStateDeleteView, WorkflowTemplateStateEditView,
-    WorkflowTemplateStateListView
+    WorkflowTemplateStateActionSelectionView,
+    WorkflowTemplateStateCreateView, WorkflowTemplateStateDeleteView,
+    WorkflowTemplateStateEditView, WorkflowTemplateStateListView
 )
 from .views.workflow_template_state_escalation_views import (
     WorkflowTemplateStateEscalationCreateView,
@@ -62,7 +64,8 @@ from .views.workflow_template_state_escalation_views import (
     WorkflowTemplateStateEscalationListView
 )
 from .views.workflow_template_transition_views import (
-    WorkflowTemplateTransitionCreateView, WorkflowTemplateTransitionDeleteView,
+    WorkflowTemplateTransitionCreateView,
+    WorkflowTemplateTransitionDeleteView,
     WorkflowTemplateTransitionEditView, WorkflowTemplateTransitionListView,
     WorkflowTemplateTransitionTriggerEventListView,
     WorkflowTemplateTransitionFieldCreateView,

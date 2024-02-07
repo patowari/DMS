@@ -11,7 +11,6 @@ from mayan.apps.source_compressed.source_backends.literals import (
 )
 from mayan.apps.sources.events import event_source_created
 from mayan.apps.sources.models import Source
-
 from mayan.apps.sources.permissions import (
     permission_sources_create, permission_sources_edit
 )

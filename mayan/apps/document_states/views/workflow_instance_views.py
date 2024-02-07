@@ -21,7 +21,8 @@ from ..links import link_workflow_instance_transition
 from ..literals import FIELD_TYPE_MAPPING, WIDGET_CLASS_MAPPING
 from ..models import WorkflowInstance
 from ..permissions import (
-    permission_workflow_instance_transition, permission_workflow_template_view
+    permission_workflow_instance_transition,
+    permission_workflow_template_view
 )
 
 

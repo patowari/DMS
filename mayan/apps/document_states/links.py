@@ -20,9 +20,9 @@ from .icons import (
     icon_workflow_template_state_action_edit,
     icon_workflow_template_state_action_list,
     icon_workflow_template_state_action_selection,
-    icon_workflow_template_state_create, icon_workflow_template_state_delete,
-    icon_workflow_template_state_edit,
-    link_workflow_template_state_list,
+    icon_workflow_template_state_create,
+    icon_workflow_template_state_delete, icon_workflow_template_state_edit,
+    icon_workflow_template_state_list,
     icon_workflow_template_state_escalation_create,
     icon_workflow_template_state_escalation_delete,
     icon_workflow_template_state_escalation_edit,
@@ -39,9 +39,9 @@ from .icons import (
     icon_document_workflow_templates_launch
 )
 from .permissions import (
-    permission_workflow_template_create, permission_workflow_template_delete,
-    permission_workflow_template_edit, permission_workflow_tools,
-    permission_workflow_template_view
+    permission_workflow_template_create,
+    permission_workflow_template_delete, permission_workflow_template_edit,
+    permission_workflow_tools, permission_workflow_template_view
 )
 
 # Workflow template
@@ -193,7 +193,7 @@ link_workflow_template_state_edit = Link(
 )
 link_workflow_template_state_list = Link(
     args='resolved_object.pk',
-    icon=link_workflow_template_state_list,
+    icon=icon_workflow_template_state_list,
     permission=permission_workflow_template_view, text=_(message='States'),
     view='document_states:workflow_template_state_list'
 )

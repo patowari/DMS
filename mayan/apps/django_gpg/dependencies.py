@@ -4,7 +4,6 @@ from mayan.apps.dependencies.classes import BinaryDependency, PythonDependency
 
 from .backends.python_gnupg import gpg_path
 
-
 BinaryDependency(
     label='GNU privacy guard', help_text=_(
         'GNU privacy guard - a PGP implementation.'

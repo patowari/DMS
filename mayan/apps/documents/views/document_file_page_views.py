@@ -14,8 +14,8 @@ from mayan.apps.converter.transformations import (
 )
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.views.generics import SimpleView, SingleObjectListView
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import resolve
+from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.document_file_page_forms import DocumentFilePageForm
 from ..icons import (

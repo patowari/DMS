@@ -5,13 +5,13 @@ from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.events.decorators import method_event
+from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.views.generics import (
     ConfirmView, SingleObjectCreateView, SingleObjectDeleteView,
     SingleObjectDetailView, SingleObjectDownloadView, SingleObjectListView,
     SimpleView
 )
-from mayan.apps.events.decorators import method_event
-from mayan.apps.events.event_managers import EventManagerMethodAfter
 
 from .events import event_key_downloaded
 from .forms import KeyDetailForm, KeySearchForm

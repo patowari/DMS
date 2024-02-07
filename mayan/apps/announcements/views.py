@@ -10,8 +10,8 @@ from mayan.apps.views.generics import (
 )
 
 from .icons import (
-    icon_announcement_create, icon_announcement_delete, icon_announcement_edit,
-    icon_announcement_list
+    icon_announcement_create, icon_announcement_delete,
+    icon_announcement_edit, icon_announcement_list
 )
 from .links import link_announcement_create
 from .models import Announcement

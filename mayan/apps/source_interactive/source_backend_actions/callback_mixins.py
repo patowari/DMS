@@ -1,5 +1,6 @@
 from mayan.apps.sources.source_backend_actions.interfaces import (
-    SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
+    SourceBackendActionInterface,
+    SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestView,
     SourceBackendActionInterfaceTask
 )

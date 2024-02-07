@@ -25,8 +25,9 @@ from ..icons import (
     icon_workflow_template_state_action_edit,
     icon_workflow_template_state_action_list,
     icon_workflow_template_state_action_selection,
-    icon_workflow_template_state_create, icon_workflow_template_state_delete,
-    icon_workflow_template_state_edit, link_workflow_template_state_list
+    icon_workflow_template_state_create,
+    icon_workflow_template_state_delete, icon_workflow_template_state_edit,
+    icon_workflow_template_state_list
 )
 from ..links import (
     link_workflow_template_state_create,
@@ -335,7 +336,7 @@ class WorkflowTemplateStateListView(
     external_object_class = Workflow
     external_object_permission = permission_workflow_template_view
     external_object_pk_url_kwarg = 'workflow_template_id'
-    view_icon = link_workflow_template_state_list
+    view_icon = icon_workflow_template_state_list
 
     def get_extra_context(self):
         return {

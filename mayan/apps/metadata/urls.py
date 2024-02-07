@@ -15,7 +15,6 @@ from .views.metadata_type_views import (
     MetadataTypesDocumentTypeRelationshipView
 )
 
-
 urlpatterns_document_type = [
     re_path(
         route=r'^document_types/(?P<document_type_id>\d+)/metadata_types/$',

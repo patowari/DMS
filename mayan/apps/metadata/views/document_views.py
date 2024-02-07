@@ -13,8 +13,8 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.views.generics import (
     MultipleObjectFormActionView, SingleObjectListView
 )
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import convert_to_id_list
+from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms import (
     DocumentMetadataAddForm, DocumentMetadataFormSet,
@@ -22,7 +22,8 @@ from ..forms import (
 )
 from ..icons import (
     icon_document_metadata_add, icon_document_metadata_edit,
-    icon_document_metadata_list, icon_document_metadata_remove, icon_metadata
+    icon_document_metadata_list, icon_document_metadata_remove,
+    icon_metadata
 )
 from ..links import link_metadata_add, link_metadata_multiple_add
 from ..mixins import DocumentMetadataSameTypeViewMixin

@@ -11,10 +11,10 @@ from ..managers import (
     DocumentIndexInstanceNodeManager, IndexInstanceManager
 )
 
-from .index_template_models import IndexTemplate, IndexTemplateNode
 from .index_instance_model_mixins import (
     IndexInstanceBusinessLogicMixin, IndexInstanceNodeBusinessLogicMixin
 )
+from .index_template_models import IndexTemplate, IndexTemplateNode
 
 
 class IndexInstance(IndexInstanceBusinessLogicMixin, IndexTemplate):

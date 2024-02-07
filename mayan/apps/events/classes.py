@@ -22,7 +22,8 @@ from .literals import (
     EVENT_EVENTS_CLEARED_NAME, EVENT_EVENTS_EXPORTED_NAME
 )
 from .permissions import (
-    permission_events_clear, permission_events_export, permission_events_view
+    permission_events_clear, permission_events_export,
+    permission_events_view
 )
 from .settings import setting_disable_asynchronous_mode
 

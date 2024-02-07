@@ -11,8 +11,8 @@ from mayan.apps.events.event_managers import (
 )
 
 from ..events import (
-    event_document_version_page_created, event_document_version_page_deleted,
-    event_document_version_page_edited
+    event_document_version_page_created,
+    event_document_version_page_deleted, event_document_version_page_edited
 )
 from ..managers import ValidDocumentVersionPageManager
 

@@ -5,8 +5,8 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _, ngettext
 
 from mayan.apps.documents.forms.document_type_forms import DocumentTypeFilteredSelectForm
-from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_file_models import DocumentFile
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.views.generics import (
     FormView, MultipleObjectConfirmActionView, SingleObjectEditView,
@@ -20,8 +20,7 @@ from .icons import (
     icon_document_type_file_metadata_settings,
     icon_document_type_file_metadata_submit, icon_file_metadata,
     icon_document_file_metadata_driver_list,
-    icon_file_metadata_driver_attribute_list,
-    icon_file_metadata_driver_list
+    icon_file_metadata_driver_attribute_list, icon_file_metadata_driver_list
 )
 from .links import link_document_file_metadata_single_submit
 from .models import DocumentFileDriverEntry

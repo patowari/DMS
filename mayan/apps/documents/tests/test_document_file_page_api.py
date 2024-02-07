@@ -4,8 +4,8 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..permissions import permission_document_file_view
 
-from .mixins.document_mixins import DocumentTestMixin
 from .mixins.document_file_mixins import DocumentFilePageAPIViewTestMixin
+from .mixins.document_mixins import DocumentTestMixin
 
 
 class DocumentFilePageAPIViewTestCase(

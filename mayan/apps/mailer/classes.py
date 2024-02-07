@@ -1,10 +1,10 @@
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
 from mayan.apps.backends.classes import ModelBaseBackend
 from mayan.apps.credentials.class_mixins import BackendMixinCredentials
+from mayan.apps.events.classes import EventModelRegistry
 
 from .exceptions import MailerError
 

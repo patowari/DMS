@@ -4,17 +4,17 @@ from .api_views import (
     APIMailObjectAttachmentView, APIMailObjectLinkView,
     APIMailingProfileDetailView, APIMailingProfileListView
 )
-from .views.document_views import MailDocumentLinkView
 from .views.document_file_views import (
     MailDocumentFileLinkView, MailDocumentFileAttachmentView
 )
 from .views.document_version_views import (
     MailDocumentVersionLinkView, MailDocumentVersionAttachmentView
 )
+from .views.document_views import MailDocumentLinkView
 from .views.mailing_profile_views import (
     MailingProfileBackendSelectionView, MailingProfileCreateView,
-    MailingProfileDeleteView, MailingProfileEditView, MailingProfileTestView,
-    MailingProfileListView
+    MailingProfileDeleteView, MailingProfileEditView,
+    MailingProfileTestView, MailingProfileListView
 )
 
 

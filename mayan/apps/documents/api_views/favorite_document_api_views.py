@@ -5,10 +5,8 @@ from mayan.apps.rest_api import generics
 
 from ..models.document_models import Document
 from ..models.favorite_document_models import FavoriteDocument
-from ..serializers.favorite_document_serializers import (
-    FavoriteDocumentSerializer
-)
 from ..permissions import permission_document_view
+from ..serializers.favorite_document_serializers import FavoriteDocumentSerializer
 
 
 class APIFavoriteDocumentDetailView(generics.RetrieveDestroyAPIView):

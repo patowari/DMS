@@ -5,7 +5,8 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from ..events import (
     event_ocr_document_version_content_deleted,
     event_ocr_document_version_page_content_edited,
-    event_ocr_document_version_submitted, event_ocr_document_version_finished
+    event_ocr_document_version_submitted,
+    event_ocr_document_version_finished
 )
 from ..models import DocumentVersionPageOCRContent
 from ..permissions import (
