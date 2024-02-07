@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -20,31 +20,31 @@ msgstr ""
 msgid "Platform"
 msgstr ""
 
-#: classes.py:240
+#: classes.py:241
 msgid "Template for entrypoint.sh file inside a Docker image."
 msgstr ""
 
-#: classes.py:255
+#: classes.py:256
 msgid "Template that generates the Docker Compose file."
 msgstr ""
 
-#: classes.py:415
+#: classes.py:416
 msgid "Template for Supervisord inside a Docker image."
 msgstr ""
 
-#: classes.py:433
+#: classes.py:434
 msgid "Template that generates a Dockerfile file."
 msgstr ""
 
-#: classes.py:448
+#: classes.py:449
 msgid "Template that generates a GitLab CI config file."
 msgstr ""
 
-#: classes.py:597
+#: classes.py:598
 msgid "Template for Supervisord."
 msgstr ""
 
-#: classes.py:671
+#: classes.py:672
 msgid "Template showing the queues of a worker."
 msgstr ""
 

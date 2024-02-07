@@ -156,6 +156,9 @@ msgid ""
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"Los anuncios se muestran en la vista de inicio de sesión. Puede utilizar "
+"anuncios para transmitir información sobre su organización, anuncios o "
+"pautas de uso para sus usuarios."
 
 #: views.py:126
 msgid "No announcements available"

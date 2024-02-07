@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-02-07 13:48+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -23,39 +23,39 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:31
+#: apps.py:33
 msgid "Django GPG"
 msgstr "Django GPG"
 
-#: apps.py:53 apps.py:59 forms.py:16
+#: apps.py:55 apps.py:61 forms.py:16
 msgid "Key ID"
 msgstr "Anahtar Kimliği"
 
-#: apps.py:63 forms.py:42 models.py:50
+#: apps.py:65 forms.py:42 models.py:49
 msgid "Type"
 msgstr "Tür"
 
-#: apps.py:67 forms.py:23 models.py:29
+#: apps.py:69 forms.py:23 models.py:28
 msgid "Creation date"
 msgstr "Oluşturulma tarihi"
 
-#: apps.py:72
+#: apps.py:74
 msgid "No expiration"
 msgstr "Süresiz"
 
-#: apps.py:73 forms.py:28 models.py:33
+#: apps.py:75 forms.py:28 models.py:32
 msgid "Expiration date"
 msgstr "Son kullanma tarihi"
 
-#: apps.py:77 forms.py:35 models.py:40
+#: apps.py:79 forms.py:35 models.py:39
 msgid "Length"
 msgstr "Uzunluk"
 
-#: apps.py:82 forms.py:20 models.py:46
+#: apps.py:84 forms.py:20 models.py:45
 msgid "User ID"
 msgstr "Kullanıcı ID"
 
-#: dependencies.py:10
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU gizlilik koruması - bir PGP uygulaması."
 
@@ -75,11 +75,11 @@ msgstr "Anahtar indirildi"
 msgid "None"
 msgstr "Yok"
 
-#: forms.py:32 models.py:37
+#: forms.py:32 models.py:36
 msgid "Fingerprint"
 msgstr "Parmakizi"
 
-#: forms.py:38 models.py:43
+#: forms.py:38 models.py:42
 msgid "Algorithm"
 msgstr "Algoritma"
 
@@ -167,27 +167,27 @@ msgstr "Belge imzalanmış ve imza iyi."
 msgid "Document is signed with a valid signature."
 msgstr "Belge geçerli bir imza ile imzalanmıştır."
 
-#: models.py:25
+#: models.py:24
 msgid "ASCII armored version of the key."
 msgstr "Anahtarın ASCII şifreli versiyonu."
 
-#: models.py:26
+#: models.py:25
 msgid "Key data"
 msgstr "Anahtar verisi"
 
-#: models.py:56
+#: models.py:55
 msgid "Key"
 msgstr "Anahtar"
 
-#: models.py:57
+#: models.py:56
 msgid "Keys"
 msgstr "Anahtarlar"
 
-#: models.py:72
+#: models.py:71
 msgid "Invalid key data"
 msgstr "Geçersiz anahtar verisi"
 
-#: models.py:77
+#: models.py:76
 msgid "Key already exists."
 msgstr "Anahtar zaten var."
 

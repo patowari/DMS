@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Adek Lanin, 2024\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
@@ -22,15 +22,15 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:39 events.py:6 permissions.py:6
+#: apps.py:38 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr ""
 
-#: apps.py:61
+#: apps.py:60
 msgid "None"
 msgstr "Nihil"
 
-#: apps.py:67
+#: apps.py:66
 msgid "Sender"
 msgstr ""
 

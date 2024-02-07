@@ -704,6 +704,8 @@ msgid ""
 "Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
+"Los activos son archivos que se pueden utilizar junto con determinadas "
+"transformaciones."
 
 #: views/asset_views.py:143
 msgid "No assets available"

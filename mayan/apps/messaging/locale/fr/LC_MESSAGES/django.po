@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -25,15 +25,15 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:39 events.py:6 permissions.py:6
+#: apps.py:38 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr "Messagerie"
 
-#: apps.py:61
+#: apps.py:60
 msgid "None"
 msgstr "Aucun"
 
-#: apps.py:67
+#: apps.py:66
 msgid "Sender"
 msgstr "Expéditeur"
 

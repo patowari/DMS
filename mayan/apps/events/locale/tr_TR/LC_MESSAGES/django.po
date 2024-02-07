@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-02-07 13:48+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -67,15 +67,15 @@ msgstr "Nesne"
 msgid "Event type"
 msgstr "Etkinlik türü"
 
-#: classes.py:92
+#: classes.py:93
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:123
+#: classes.py:124
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:125
+#: classes.py:126
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "

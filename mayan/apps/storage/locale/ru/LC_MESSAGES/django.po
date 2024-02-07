@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-07 11:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:16
 msgid "Storage"
 msgstr "Хранилище"
 
@@ -37,7 +37,7 @@ msgstr ""
 "Невозможно инициализировать хранилище: %(name)s. Проверьте путь к бэкэнду и "
 "его аргументы."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Файлы для скачивания"
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Имя обрабатываемого хранилища."
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -104,27 +104,27 @@ msgstr "Безымянный файл"
 msgid "Size"
 msgstr "Размер"
 
-#: model_mixins.py:110 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:46 serializers.py:15
 msgid "User"
 msgstr "Пользователь"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "Файл"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Заголовок"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Файл для скачивания"
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr "Загруженный файл совместного пользования"
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Загруженные файлы совместного пользования"
 
@@ -164,11 +164,11 @@ msgstr ""
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:21
+#: settings.py:22
 msgid "Time in seconds, after which download files will be deleted."
 msgstr ""
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
@@ -176,13 +176,13 @@ msgstr ""
 "Бэкэнд хранилища, который могут использовать все процессы (workers) для "
 "генерации и хранения файлов для скачивания."
 
-#: settings.py:38
+#: settings.py:39
 msgid "A storage backend that all workers can use to share files."
 msgstr ""
 "Бэкэнд хранилища, который могут использовать все процессы (workers) для "
 "хранения файлов."
 
-#: settings.py:48
+#: settings.py:49
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
@@ -190,7 +190,7 @@ msgstr ""
 "Временный каталог, используемый на всем сайте для хранения миниатюр, превью "
 "и временных файлов."
 
-#: settings.py:55
+#: settings.py:56
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
 

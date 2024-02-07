@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2024\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
@@ -281,65 +281,59 @@ msgstr "Izdots saskaņā ar licenci:"
 #: templates/appearance/about.html:57
 #, python-format
 msgid ""
-"\n"
-"                                To get the latest news subscribe to the <a class=\"new_window\" href=\"%(link_mailing_list_url)s\"> Mailing list</a>.\n"
-"                            "
+"To get the latest news subscribe to the <a class=\"new_window\" "
+"href=\"%(link_mailing_list_url)s\"> Mailing list</a>."
 msgstr ""
 
-#: templates/appearance/about.html:68
+#: templates/appearance/about.html:66
 #, python-format
 msgid ""
-"\n"
-"                                For articles, tutorials, troubleshooting, subscribe to the <a class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</a>.\n"
-"                            "
+"For articles, tutorials, troubleshooting, subscribe to the <a "
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
-#: templates/appearance/about.html:79
+#: templates/appearance/about.html:75
 #, python-format
 msgid ""
-"\n"
-"                                Need professional help? Check out the <a class=\"new_window\" href=\"%(link_support_url)s\"> Support</a> offerings.\n"
-"                            "
+"Need professional help? Check out the <a class=\"new_window\" "
+"href=\"%(link_support_url)s\"> Support</a> offerings."
 msgstr ""
 
-#: templates/appearance/about.html:90
+#: templates/appearance/about.html:84
 #, python-format
 msgid ""
-"\n"
-"                                For discussions visit the <a class=\"new_window\" href=\"%(link_forum_url)s\">Community forum</a>.\n"
-"                            "
+"For discussions visit the <a class=\"new_window\" "
+"href=\"%(link_forum_url)s\">Community forum</a>."
 msgstr ""
 
-#: templates/appearance/about.html:101
+#: templates/appearance/about.html:93
 #, python-format
 msgid ""
-"\n"
-"                                The complete list of changes is available via the <a class=\"new_window\" href=\"%(link_release_notes_url)s\">Release notes</a>.\n"
-"                            "
+"The complete list of changes is available via the <a class=\"new_window\" "
+"href=\"%(link_release_notes_url)s\">Release notes</a>."
 msgstr ""
 
-#: templates/appearance/about.html:112
+#: templates/appearance/about.html:102
 #, python-format
 msgid ""
-"\n"
-"                                For questions check the <a class=\"new_window\" href=\"%(link_documentation_url)s\">Documentation</a>.\n"
-"                            "
+"For questions check the <a class=\"new_window\" "
+"href=\"%(link_documentation_url)s\">Documentation</a>."
 msgstr ""
 
-#: templates/appearance/about.html:123
+#: templates/appearance/about.html:111
 #, python-format
 msgid ""
-"\n"
-"                                If you found a bug or have a feature idea open a ticket in the <a class=\"new_window\" href=\"%(link_source_code_url)s\">Source code repository</a>.\n"
-"                            "
+"If you found a bug or have a feature idea open a ticket in the <a "
+"class=\"new_window\" href=\"%(link_source_code_url)s\">Source code "
+"repository</a>."
 msgstr ""
 
-#: templates/appearance/about.html:131
+#: templates/appearance/about.html:117
 #, python-format
 msgid ""
-"\n"
-"                        %(project_title)s is Free and Open Source software, which is provided as-is with no warranty.\n"
-"                    "
+"%(project_title)s is Free and Open Source software, which is provided as-is "
+"with no warranty."
 msgstr ""
 
 #: templates/appearance/app/foot.html:70

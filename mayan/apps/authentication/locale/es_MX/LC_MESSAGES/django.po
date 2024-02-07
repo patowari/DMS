@@ -225,7 +225,7 @@ msgstr "Restablecimiento de contraseña exitoso para el usuario: %s."
 #: views/authentication_views.py:436
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
-msgstr ""
+msgstr "Error restaurando la contraseña para el usuario \"%(user)s\": %(error)s "
 
 #: views/impersonation_views.py:81
 #, python-format

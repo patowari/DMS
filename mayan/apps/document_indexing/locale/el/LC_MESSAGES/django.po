@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "None"
 msgstr "Κανένα"
 
-#: admin.py:26 links.py:89 models/index_template_models.py:50
+#: admin.py:26 links.py:88 models/index_template_models.py:50
 #: serializers.py:281
 msgid "Document types"
 msgstr "Τύποι εγγράφων"
@@ -88,7 +88,7 @@ msgid "Index templates to be queued for rebuilding."
 msgstr ""
 "Πρότυπα ευρετηρίων που θα προστεθούν στην ουρά αναμονής προς αναδόμηση."
 
-#: forms.py:49 links.py:38 models/index_template_models.py:58
+#: forms.py:49 links.py:37 models/index_template_models.py:58
 #: views/index_template_views.py:95
 msgid "Index templates"
 msgstr "Πρότυπα ευρετηρίου"
@@ -101,48 +101,48 @@ msgstr "Πρότυπο"
 msgid "Creation date"
 msgstr "Ημερομηνία δημιουργίας"
 
-#: links.py:32 links.py:48 links.py:102 links.py:110
+#: links.py:31 links.py:47 links.py:101 links.py:109
 #: views/index_instance_views.py:42
 msgid "Indexes"
 msgstr "Ευρετήρια"
 
-#: links.py:53 queues.py:23
+#: links.py:52 queues.py:23
 msgid "Rebuild index"
 msgstr "Αναδόμηση ευρετηρίου"
 
-#: links.py:60 links.py:69
+#: links.py:59 links.py:68
 msgid "Deletes and creates from scratch all the document indexes."
 msgstr "Διαγράφει και αναδομεί από την αρχή όλα τα ευρετήρια εγγράφων."
 
-#: links.py:61
+#: links.py:60
 msgid "Rebuild indexes"
 msgstr "Αναδόμηση ευρετηρίων"
 
-#: links.py:70 views/index_template_views.py:451
+#: links.py:69 views/index_template_views.py:451
 msgid "Reset indexes"
 msgstr "Επαναφορά ευρετηρίων"
 
-#: links.py:79 views/index_template_views.py:100
+#: links.py:78 views/index_template_views.py:100
 msgid "Create index"
 msgstr "Δημιουργία ευρετηρίου"
 
-#: links.py:84 links.py:128
+#: links.py:83 links.py:127
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: links.py:93 links.py:132
+#: links.py:92 links.py:131
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: links.py:98
+#: links.py:97
 msgid "Triggers"
 msgstr "Εκκινητές"
 
-#: links.py:118
+#: links.py:117
 msgid "Tree template"
 msgstr "Δέντρο υποδειγμάτων"
 
-#: links.py:123
+#: links.py:122
 msgid "New child node"
 msgstr "Νέος κόμβος"
 

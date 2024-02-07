@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-07 13:48+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: apps.py:93 events.py:6 forms/workflow_template_forms.py:20 links.py:52
 #: links.py:92 links.py:100 links.py:289 links.py:313
 #: models/workflow_models.py:58 queues.py:11 settings.py:14
-#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:282
+#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:283
 #: workflow_actions.py:133 workflow_actions.py:147
 msgid "Workflows"
 msgstr "Работни потоци"
@@ -221,7 +221,7 @@ msgstr "Активиран"
 msgid "Event trigger: %s"
 msgstr "Задействане на събитието: %s"
 
-#: links.py:58 views/workflow_template_views.py:138
+#: links.py:58 views/workflow_template_views.py:139
 msgid "Create workflow"
 msgstr "Създайте работен поток"
 
@@ -378,7 +378,7 @@ msgstr "Копия на работния поток"
 
 #: models/workflow_instance_models.py:103
 #: models/workflow_state_escalation_models.py:64
-#: views/workflow_instance_views.py:161
+#: views/workflow_instance_views.py:162
 msgid "Comment"
 msgstr "Коментар"
 
@@ -983,7 +983,7 @@ msgstr ""
 msgid "Workflow preview images"
 msgstr "Визуализации на работния поток"
 
-#: views/workflow_instance_views.py:40
+#: views/workflow_instance_views.py:41
 msgid ""
 "Assign workflows to the document type of this document to have this document"
 " execute those workflows. "
@@ -991,16 +991,16 @@ msgstr ""
 "Задайте работни потоци към типа на документа, за да може този документ да "
 "изпълнява тези работни потоци."
 
-#: views/workflow_instance_views.py:44
+#: views/workflow_instance_views.py:45
 msgid "There are no workflows for this document"
 msgstr "За този документ няма работни потоци"
 
-#: views/workflow_instance_views.py:48
+#: views/workflow_instance_views.py:49
 #, python-format
 msgid "Workflows for document: %s"
 msgstr "Работни потоци за документ: %s"
 
-#: views/workflow_instance_views.py:76
+#: views/workflow_instance_views.py:77
 msgid ""
 "This view will show the state changes as a workflow instance is "
 "transitioned."
@@ -1008,35 +1008,35 @@ msgstr ""
 "Този изглед ще покаже промените в състоянието при преминаване на етап на "
 "работен поток."
 
-#: views/workflow_instance_views.py:80
+#: views/workflow_instance_views.py:81
 msgid "There are no details for this workflow instance"
 msgstr "Няма данни за този етап на работния поток"
 
-#: views/workflow_instance_views.py:83
+#: views/workflow_instance_views.py:84
 #, python-format
 msgid "Detail of workflow: %(workflow)s"
 msgstr "Данни за работния поток: %(workflow)s"
 
-#: views/workflow_instance_views.py:124
+#: views/workflow_instance_views.py:125
 #, python-format
 msgid "Document \"%s\" transitioned successfully"
 msgstr "Документът &quot;%s&quot; е преминал успешно"
 
-#: views/workflow_instance_views.py:148
+#: views/workflow_instance_views.py:149
 #, python-format
 msgid "Execute transition \"%(transition)s\" for workflow: %(workflow)s"
 msgstr ""
 "Изпълнете преход &quot;%(transition)s&quot; за работен поток: %(workflow)s"
 
-#: views/workflow_instance_views.py:164
+#: views/workflow_instance_views.py:165
 msgid "Optional comment to attach to the transition."
 msgstr "Незадължителен коментар за прикачване към прехода."
 
-#: views/workflow_instance_views.py:232
+#: views/workflow_instance_views.py:233
 msgid "Select"
 msgstr "Изберете"
 
-#: views/workflow_instance_views.py:234
+#: views/workflow_instance_views.py:235
 #, python-format
 msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
@@ -1082,7 +1082,7 @@ msgid "Documents in the workflow \"%s\", state \"%s\""
 msgstr "Документи в работния поток &quot;%s&quot;, състояние &quot;%s&quot;"
 
 #: views/workflow_proxy_views.py:126
-#: views/workflow_template_state_views.py:351
+#: views/workflow_template_state_views.py:352
 msgid "Create states and link them using transitions."
 msgstr "Създайте състояния и ги свържете с помощта на преходи."
 
@@ -1091,7 +1091,7 @@ msgid "This workflow doesn't have any state"
 msgstr "Този работен поток няма състояние"
 
 #: views/workflow_proxy_views.py:132
-#: views/workflow_template_state_views.py:357
+#: views/workflow_template_state_views.py:358
 #, python-format
 msgid "States of workflow: %s"
 msgstr "Състояния на работния поток: %s"
@@ -1126,22 +1126,22 @@ msgstr ""
 msgid "Escalations for workflow template state: %s"
 msgstr ""
 
-#: views/workflow_template_state_views.py:56
+#: views/workflow_template_state_views.py:57
 #, python-format
 msgid "Create a \"%(backend_label)s\" workflow action for: %(workflow_state)s"
 msgstr ""
 
-#: views/workflow_template_state_views.py:103
+#: views/workflow_template_state_views.py:104
 #, python-format
 msgid "Delete workflow state action: %s"
 msgstr "Изтрийте действие за състояние на работен поток: %s"
 
-#: views/workflow_template_state_views.py:137
+#: views/workflow_template_state_views.py:138
 #, python-format
 msgid "Edit workflow state action: %s"
 msgstr "Редактиране на действие за състояние на работен поток: %s"
 
-#: views/workflow_template_state_views.py:188
+#: views/workflow_template_state_views.py:189
 msgid ""
 "Workflow state actions are macros that get executed when documents enters or"
 " leaves the state in which they reside."
@@ -1149,55 +1149,55 @@ msgstr ""
 "Действията за състояние на работен поток са макроси, които се изпълняват, "
 "когато документите влизат или напускат състоянието, в което пребивават."
 
-#: views/workflow_template_state_views.py:192
+#: views/workflow_template_state_views.py:193
 msgid "There are no actions for this workflow state"
 msgstr "За това състояние на работния поток няма действия"
 
-#: views/workflow_template_state_views.py:196
+#: views/workflow_template_state_views.py:197
 #, python-format
 msgid "Actions for workflow state: %s"
 msgstr "Действия за състояние на работния поток: %s"
 
-#: views/workflow_template_state_views.py:220
+#: views/workflow_template_state_views.py:221
 #, python-format
 msgid "New workflow state action selection for: %s"
 msgstr "Избор на ново действие за състоянието на работния процес за: %s"
 
-#: views/workflow_template_state_views.py:250
+#: views/workflow_template_state_views.py:251
 #, python-format
 msgid "Create states for workflow: %s"
 msgstr "Създайте състояния за работен поток: %s"
 
-#: views/workflow_template_state_views.py:284
+#: views/workflow_template_state_views.py:285
 #, python-format
 msgid "Delete workflow state: %s?"
 msgstr "Изтриване на състояние на работен поток: %s?"
 
-#: views/workflow_template_state_views.py:315
+#: views/workflow_template_state_views.py:316
 #, python-format
 msgid "Edit workflow state: %s"
 msgstr "Редактиране на състояние на работен поток: %s"
 
-#: views/workflow_template_state_views.py:354
+#: views/workflow_template_state_views.py:355
 msgid "This workflow doesn't have any states"
 msgstr "Този работен поток няма състояния"
 
-#: views/workflow_template_transition_views.py:53
+#: views/workflow_template_transition_views.py:54
 #, python-format
 msgid "Create transitions for workflow: %s"
 msgstr "Създайте преходи за работния поток: %s"
 
-#: views/workflow_template_transition_views.py:94
+#: views/workflow_template_transition_views.py:95
 #, python-format
 msgid "Delete workflow transition: %s?"
 msgstr "Изтриване на преход на работния поток: %s?"
 
-#: views/workflow_template_transition_views.py:123
+#: views/workflow_template_transition_views.py:124
 #, python-format
 msgid "Edit workflow transition: %s"
 msgstr "Редактиране на преход на работния поток: %s"
 
-#: views/workflow_template_transition_views.py:165
+#: views/workflow_template_transition_views.py:166
 msgid ""
 "Create a transition and use it to move a workflow from  one state to "
 "another."
@@ -1205,31 +1205,31 @@ msgstr ""
 "Създайте преход и го използвайте за преместване на работен поток от едно "
 "състояние в друго."
 
-#: views/workflow_template_transition_views.py:169
+#: views/workflow_template_transition_views.py:170
 msgid "This workflow doesn't have any transitions"
 msgstr "Този работен поток няма преходи"
 
-#: views/workflow_template_transition_views.py:173
+#: views/workflow_template_transition_views.py:174
 #, python-format
 msgid "Transitions of workflow: %s"
 msgstr "Преходи на работния поток: %s"
 
-#: views/workflow_template_transition_views.py:199
+#: views/workflow_template_transition_views.py:200
 #, python-format
 msgid "Create a field for workflow transition: %s"
 msgstr "Създайте поле за преход на работния поток: %s"
 
-#: views/workflow_template_transition_views.py:234
+#: views/workflow_template_transition_views.py:235
 #, python-format
 msgid "Delete workflow transition field: %s"
 msgstr "Изтрийте полето за преход на работния поток: %s"
 
-#: views/workflow_template_transition_views.py:269
+#: views/workflow_template_transition_views.py:270
 #, python-format
 msgid "Edit workflow transition field: %s"
 msgstr "Редактиране на поле за преход на работния поток: %s"
 
-#: views/workflow_template_transition_views.py:309
+#: views/workflow_template_transition_views.py:310
 msgid ""
 "Workflow transition fields allow adding data to the workflow's context. This"
 " additional context data can then be used by other elements of the workflow "
@@ -1240,48 +1240,48 @@ msgstr ""
 "могат да бъдат използвани от други елементи на системата на работния поток, "
 "като действията на състоянието на работния поток."
 
-#: views/workflow_template_transition_views.py:315
+#: views/workflow_template_transition_views.py:316
 msgid "There are no fields for this workflow transition"
 msgstr "Няма полета за този преход на работния поток"
 
-#: views/workflow_template_transition_views.py:319
+#: views/workflow_template_transition_views.py:320
 #, python-format
 msgid "Fields for workflow transition: %s"
 msgstr "Полета за преход на работния поток: %s"
 
-#: views/workflow_template_transition_views.py:348
+#: views/workflow_template_transition_views.py:349
 #, python-format
 msgid "Error updating workflow transition trigger events; %s"
 msgstr ""
 "Грешка при актуализиране на събитията задействащи прехода на работния поток;"
 " %s"
 
-#: views/workflow_template_transition_views.py:355
+#: views/workflow_template_transition_views.py:356
 msgid "Workflow transition trigger events updated successfully"
 msgstr ""
 "Събитията задействащи прехода на работния поток са актуализирани успешно"
 
-#: views/workflow_template_transition_views.py:367
+#: views/workflow_template_transition_views.py:368
 msgid ""
 "Triggers are events that cause this transition to execute automatically."
 msgstr ""
 "Тригерите са събития, които предизвикват този преход да се изпълни "
 "автоматично."
 
-#: views/workflow_template_transition_views.py:371
+#: views/workflow_template_transition_views.py:372
 #, python-format
 msgid "Workflow transition trigger events for: %s"
 msgstr "Събития задействащи прехода на работния поток за: %s"
 
-#: views/workflow_template_views.py:42
+#: views/workflow_template_views.py:43
 msgid "Workflows assigned this document type"
 msgstr "Работни потоци прикачени към този тип документ"
 
-#: views/workflow_template_views.py:43
+#: views/workflow_template_views.py:44
 msgid "Available workflows"
 msgstr "Налични работни потоци"
 
-#: views/workflow_template_views.py:61
+#: views/workflow_template_views.py:62
 msgid ""
 "Removing a workflow from a document type will also remove all running "
 "instances of that workflow."
@@ -1289,49 +1289,49 @@ msgstr ""
 "Премахването на работен поток от типа документ също ще премахне всички "
 "работещи копия на този работен поток."
 
-#: views/workflow_template_views.py:65
+#: views/workflow_template_views.py:66
 #, python-format
 msgid "Workflows assigned the document type: %s"
 msgstr "Работни потоци прикачени към този тип документ: %s"
 
-#: views/workflow_template_views.py:72
+#: views/workflow_template_views.py:73
 #, python-format
 msgid "Error launching workflows for document \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Грешка при стартиране на работни потоци за документ "
 "&quot;%(instance)s&quot;; %(exception)s"
 
-#: views/workflow_template_views.py:80
+#: views/workflow_template_views.py:81
 #, python-format
 msgid "Workflows launched successfully for %(count)d documents."
 msgstr "Успешно стартирани работни потоци за документи %(count)d."
 
-#: views/workflow_template_views.py:83
+#: views/workflow_template_views.py:84
 #, python-format
 msgid "Workflows launched successfully for document \"%(object)s\"."
 msgstr "Успешно стартирани работни потоци за документ &quot;%(object)s&quot;."
 
-#: views/workflow_template_views.py:86
+#: views/workflow_template_views.py:87
 #, python-format
 msgid "Workflows launched successfully for %(count)d document."
 msgstr "Работните потоци стартираха успешно за документ %(count)d."
 
-#: views/workflow_template_views.py:89
+#: views/workflow_template_views.py:90
 #, python-format
 msgid "Launch workflows for the selected %(count)d documents."
 msgstr "Стартиране на работни потоци за избраните %(count)dдокумента."
 
-#: views/workflow_template_views.py:91
+#: views/workflow_template_views.py:92
 #, python-format
 msgid "Launch workflow: %(object)s."
 msgstr "Стартирайте работния поток: %(object)s."
 
-#: views/workflow_template_views.py:93
+#: views/workflow_template_views.py:94
 #, python-format
 msgid "Launch workflows for the selected %(count)d document."
 msgstr "Стартиране на работни потоци за избрания документ %(count)d."
 
-#: views/workflow_template_views.py:100
+#: views/workflow_template_views.py:101
 msgid ""
 "Workflows already launched or workflows not applicable to some documents "
 "when multiple documents are selected, will be silently ignored."
@@ -1340,65 +1340,65 @@ msgstr ""
 " за някои документи, когато са избрани множество документи, ще бъдат тихо "
 "игнорирани."
 
-#: views/workflow_template_views.py:112
+#: views/workflow_template_views.py:113
 msgid "Workflows to be launched."
 msgstr "Работни потоци, които ще бъдат стартирани."
 
-#: views/workflow_template_views.py:156
+#: views/workflow_template_views.py:157
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Грешка при изтриването на работния поток &quot;%(instance)s&quot;; "
 "%(exception)s"
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr "%(count)d работни потоци бяха изтрити успешно."
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr "Работен поток &quot;%(object)s&quot; беше изтрит успешно."
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr "%(count)d работен поток е изтрит успешно."
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:168
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr "Изтрийте%(count)d избрани работни потоци."
 
-#: views/workflow_template_views.py:168
+#: views/workflow_template_views.py:169
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr "Изтрийте работния поток: %(object)s."
 
-#: views/workflow_template_views.py:169
+#: views/workflow_template_views.py:170
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr "Изтрийте %(count)d избран работен поток."
 
-#: views/workflow_template_views.py:174
+#: views/workflow_template_views.py:175
 msgid "All workflow instances will also be deleted."
 msgstr "Всички екземпляри на работния поток също ще бъдат изтрити."
 
-#: views/workflow_template_views.py:194
+#: views/workflow_template_views.py:195
 #, python-format
 msgid "Edit workflow: %s"
 msgstr "Редактиране на работния поток: %s"
 
-#: views/workflow_template_views.py:205
+#: views/workflow_template_views.py:206
 msgid "Document types assigned this workflow"
 msgstr "Типове документи прикачени към този работен поток"
 
-#: views/workflow_template_views.py:206
+#: views/workflow_template_views.py:207
 msgid "Available document types"
 msgstr "Налични типове документи"
 
-#: views/workflow_template_views.py:224
+#: views/workflow_template_views.py:225
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
@@ -1407,25 +1407,25 @@ msgstr ""
 "работещи копия на този работен поток за документи от току-що премахнатия тип"
 " документ."
 
-#: views/workflow_template_views.py:229
+#: views/workflow_template_views.py:230
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "Типове документи присвоили работния поток: %s"
 
-#: views/workflow_template_views.py:243
+#: views/workflow_template_views.py:244
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr "Това ще стартира работния поток за вече качени документи."
 
-#: views/workflow_template_views.py:246
+#: views/workflow_template_views.py:247
 msgid "Launch workflow?"
 msgstr "Да стартира ли работния поток?"
 
-#: views/workflow_template_views.py:257 views/workflow_template_views.py:317
+#: views/workflow_template_views.py:258 views/workflow_template_views.py:318
 msgid "Workflow launch queued successfully."
 msgstr "Пускането на работния поток е поставено в опашката успешно."
 
-#: views/workflow_template_views.py:275
+#: views/workflow_template_views.py:276
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
@@ -1433,16 +1433,16 @@ msgstr ""
 "Работните потоци съхраняват серия състояния и следят текущото състояние на "
 "документа. Преходите се използват за промяна на текущото състояние в ново."
 
-#: views/workflow_template_views.py:280
+#: views/workflow_template_views.py:281
 msgid "No workflows have been defined"
 msgstr "Не са дефинирани работни потоци"
 
-#: views/workflow_template_views.py:297
+#: views/workflow_template_views.py:298
 #, python-format
 msgid "Preview of: %s"
 msgstr "Визуализация на: %s"
 
-#: views/workflow_template_views.py:304
+#: views/workflow_template_views.py:305
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
@@ -1450,7 +1450,7 @@ msgstr ""
 "Това ще пусне всички работни потоци, създадени след като вече са качени "
 "документи."
 
-#: views/workflow_template_views.py:307
+#: views/workflow_template_views.py:308
 msgid "Launch all workflows?"
 msgstr "Пусни всички работни потоци?"
 

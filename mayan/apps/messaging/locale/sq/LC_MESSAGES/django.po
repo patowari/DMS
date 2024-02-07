@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2024\n"
 "Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:39 events.py:6 permissions.py:6
+#: apps.py:38 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr ""
 
-#: apps.py:61
+#: apps.py:60
 msgid "None"
 msgstr "Asnjë"
 
-#: apps.py:67
+#: apps.py:66
 msgid "Sender"
 msgstr ""
 

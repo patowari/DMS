@@ -68,7 +68,7 @@ msgstr "Licencia"
 
 #: links.py:58
 msgid "Mailing list"
-msgstr ""
+msgstr "Lista de correo"
 
 #: links.py:64
 msgid "Copy"
@@ -76,7 +76,7 @@ msgstr "Copiar"
 
 #: links.py:69
 msgid "Release notes"
-msgstr ""
+msgstr "Notas de lanzamiento"
 
 #: links.py:72
 msgid "Setup"

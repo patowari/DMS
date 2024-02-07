@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-07 11:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: yan songwei <yansw@vip.163.com>, 2024\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:16
 msgid "Storage"
 msgstr "存储"
 
@@ -34,7 +34,7 @@ msgid ""
 "path and arguments."
 msgstr ""
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgstr "反向处理文件以撤消存储管道转换。"
 msgid "Name of the storage to process."
 msgstr "要处理的存储的名称。"
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "文件名"
 
@@ -97,27 +97,27 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: model_mixins.py:110 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:46 serializers.py:15
 msgid "User"
 msgstr "用户"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "文件"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "标签"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr ""
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr "共享的上传文件"
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr "共享的上传文件"
 
@@ -157,27 +157,27 @@ msgstr ""
 msgid "URL"
 msgstr "网址"
 
-#: settings.py:21
+#: settings.py:22
 msgid "Time in seconds, after which download files will be deleted."
 msgstr ""
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
 
-#: settings.py:38
+#: settings.py:39
 msgid "A storage backend that all workers can use to share files."
 msgstr "所有工作人员可用于共享文件的存储后端。"
 
-#: settings.py:48
+#: settings.py:49
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
 msgstr "临时目录用于站点范围以存储缩略图，预览和临时文件。"
 
-#: settings.py:55
+#: settings.py:56
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -67,7 +67,7 @@ msgstr "Так"
 msgid "No"
 msgstr "Ні"
 
-#: permissions.py:6 queues.py:7 settings.py:14
+#: permissions.py:6 queues.py:7 settings.py:15
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
@@ -105,7 +105,7 @@ msgid "Reset the search backend indices and index all instances again."
 msgstr ""
 "Скинути внутрішні індекси пошуку та знову проіндексувати всі екземпляри."
 
-#: scoped_queries.py:352
+#: scoped_queries.py:351
 msgid ""
 "Search results exceed limit setting. Results might not be reliable if "
 "multiple scopes are used. Narrow down the search criteria or increase the "
@@ -115,7 +115,7 @@ msgstr ""
 " ненадійними, якщо використовуються кілька областей. Звужуйте критерії "
 "пошуку або збільшуйте значення налаштування обмеження результатів."
 
-#: scoped_queries.py:368
+#: scoped_queries.py:367
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
@@ -201,13 +201,13 @@ msgstr "Первинний ключ"
 msgid "Search fields"
 msgstr "Поля пошуку"
 
-#: settings.py:20
+#: settings.py:21
 msgid "Full path to the backend to be used to handle the search."
 msgstr ""
 "Повний шлях до серверної частини, яка буде використовуватися для обробки "
 "пошуку."
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
@@ -215,33 +215,33 @@ msgstr ""
 "Аргументи для передачі до серверної частини пошуку. Наприклад, значення для "
 "зміни поведінки, імена хостів або аргументи автентифікації."
 
-#: settings.py:36
+#: settings.py:37
 msgid "The search operator to use when none is specified."
 msgstr "Оператор пошуку для використання, якщо не вказано жодного."
 
-#: settings.py:43
+#: settings.py:44
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
 "Вимикає пошук на панелі за одним терміном, залишаючи лише кнопку розширеного"
 " пошуку."
 
-#: settings.py:51
+#: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr "Кількість об’єктів для обробки під час масового індексування."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr "Встановлює стан за замовчуванням прапорця «Відповідати всім»."
 
-#: settings.py:63
+#: settings.py:64
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 "Максимальна кількість результатів пошуку для отримання та відображення на "
 "одиницю пошукового запиту."
 
-#: settings.py:69
+#: settings.py:70
 msgid "Maximum number of search results to fetch and display."
 msgstr ""
 "Максимальна кількість результатів пошуку для отримання та відображення."

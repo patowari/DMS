@@ -78,6 +78,8 @@ msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
 "individual document type selection."
 msgstr ""
+"Aplicar a todos los tipos de documentos. Habilitando esto, la cuota ignorará"
+" la selección de tipo de documento individual."
 
 #: mixins.py:26
 msgid "Document types"
@@ -114,6 +116,9 @@ msgid ""
 "Enabling this option, the quota will ignore the individual user and group "
 "selection."
 msgstr ""
+"Aplicar la cuota a todos los usuarios del sistema, excluyendo "
+"administradores y personal. Al habilitar esta opción, la cuota ignorará la "
+"selección individual de usuarios y grupos."
 
 #: mixins.py:115
 msgid "Users"
