@@ -26,6 +26,8 @@ Updated dependency versions:
 - greenlet from 3.0.1 to 3.0.3.
 - sentry-sdk from 1.40.0 to 1.40.1.
 - psutil from 5.9.6 to 5.9.8.
+- sphinx from 4.5.0 to 5.3.0.
+- sphinx_rtd_theme from 0.5.2 to 2.0.0.
 
 
 Other
