@@ -1,3 +1,7 @@
+4.7 (XXXX-XX-XX)
+================
+- Remove local version from the platform cache identifiers.
+
 4.6 (2024-01-11)
 ================
 - Improve the index mirroring profile. Add ``MAYAN_MIRROR_INDEX_NAME`` to
