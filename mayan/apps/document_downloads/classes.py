@@ -96,7 +96,7 @@ class DocumentFileCompressor:
                         promise=setting_message_body_template.value
                     )
                 )
-                messge_body_content = message_body_template.render(
+                message_body_content = message_body_template.render(
                     context=context_dictionary
                 )
 
@@ -113,6 +113,6 @@ class DocumentFileCompressor:
                 )
 
                 Message.objects.create(
-                    body=messge_body_content, sender_object=download_file,
+                    body=message_body_content, sender_object=download_file,
                     subject=message_subject_text, user=user
                 )
