@@ -1,5 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 
+from mptt.exceptions import InvalidMove
+from rest_framework.exceptions import ValidationError
 from rest_framework.reverse import reverse
 from rest_framework_recursive.fields import RecursiveField
 
@@ -229,6 +231,14 @@ class IndexTemplateNodeWriteSerializer(serializers.ModelSerializer):
                 'index_template_node_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
+
+    def update(self, instance, validated_data):
+        try:
+            return super().update(
+                instance=instance, validated_data=validated_data
+            )
+        except InvalidMove as exception:
+            raise ValidationError(detail=exception)
 
 
 class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):

@@ -769,6 +769,28 @@ class IndexTemplateNodeAPIViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
+    def test_index_template_node_edit_parent_itself_via_patch_api_view_with_access(self):
+        self.grant_access(
+            obj=self._test_index_template,
+            permission=permission_index_template_edit
+        )
+        index_template_node_expression = self._test_index_template_node.expression
+
+        self._clear_events()
+
+        response = self._request_test_index_template_node_edit_via_patch_api_view(
+            extra_data={'parent': self._test_index_template_node.pk}
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self._test_index_template_node.refresh_from_db()
+        self.assertEqual(
+            index_template_node_expression,
+            self._test_index_template_node.expression
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_index_template_node_list_api_view_no_permission(self):
         self._clear_events()
 

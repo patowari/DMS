@@ -399,7 +399,7 @@ class IndexTemplateNodeAPITestMixin:
         return self.delete(
             viewname='rest_api:indextemplatenode-detail', kwargs={
                 'index_template_id': self._test_index_template.pk,
-                'index_template_node_id': self._test_index_template_node.pk,
+                'index_template_node_id': self._test_index_template_node.pk
             }
         )
 
@@ -407,31 +407,36 @@ class IndexTemplateNodeAPITestMixin:
         return self.get(
             viewname='rest_api:indextemplatenode-detail', kwargs={
                 'index_template_id': self._test_index_template.pk,
-                'index_template_node_id': self._test_index_template_node.pk,
+                'index_template_node_id': self._test_index_template_node.pk
             }
         )
 
-    def _request_test_index_template_node_edit_via_patch_api_view(self):
+    def _request_test_index_template_node_edit_via_patch_api_view(
+        self, extra_data=None
+    ):
         data = {
             'enabled': self._test_index_template_node.enabled,
             'expression': self._test_index_template_node.expression,
             'index': self._test_index_template.pk,
             'link_documents': self._test_index_template_node.link_documents,
-            'parent': self._test_index_template_node.parent.pk,
+            'parent': self._test_index_template_node.parent.pk
         }
         data['expression'] = TEST_INDEX_TEMPLATE_NODE_EXPRESSION_EDITED
+
+        if extra_data:
+            data.update(**extra_data)
 
         return self.patch(
             viewname='rest_api:indextemplatenode-detail', kwargs={
                 'index_template_id': self._test_index_template.pk,
-                'index_template_node_id': self._test_index_template_node.pk,
+                'index_template_node_id': self._test_index_template_node.pk
             }, data=data
         )
 
     def _request_test_index_template_node_list_api_view(self):
         return self.get(
             viewname='rest_api:indextemplatenode-list', kwargs={
-                'index_template_id': self._test_index_template.pk,
+                'index_template_id': self._test_index_template.pk
             }
         )
 
