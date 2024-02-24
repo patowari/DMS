@@ -3,6 +3,8 @@
 - Update ``DEFAULT_SEARCH_QUERY_RESULTS_LIMIT`` from 100000 to 10000 to
   workaround conflicting with ElasticSearch non scroll search limit.
 - Minor code style fixes.
+- Add an extra line to ``COMMON_EXTRA_APPS`` help text to clarify the apps
+  inclusion order.
 
 4.5.9 (2024-02-05)
 ==================
