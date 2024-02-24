@@ -1,10 +1,10 @@
 from django.conf.urls import url
 
-from .api_views import (
+from .api_views.download_file_api_views import (
     APIDownloadFileDetailView, APIDownloadFileDownloadView,
     APIDownloadFileListView
 )
-from .views import (
+from .views.download_file_views import (
     DownloadFileDeleteView, DownloadFileDownloadViewView,
     DownloadFileListView
 )

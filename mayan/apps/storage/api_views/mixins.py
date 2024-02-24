@@ -1,8 +1,14 @@
 class OwnerPlusFilteredQuerysetAPIViewMixin:
     def filter_queryset(self, queryset):
-        queryset_user_owned = queryset.filter(user=self.request.user)
+        user = self.request.user
 
-        queryset_filtered = super().filter_queryset(queryset=queryset)
+        if user.is_authenticated:
+            queryset_user_owned = queryset.filter(user=self.request.user)
+        else:
+            queryset_user_owned = queryset.none()
 
-        queryset = queryset_user_owned | queryset_filtered
+        queryset = super().filter_queryset(queryset=queryset)
+
+        queryset = queryset_user_owned | queryset
+
         return queryset.distinct()
