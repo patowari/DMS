@@ -496,7 +496,7 @@ class Dependency(AppsModuleLoaderMixin):
         raise NotImplementedError
 
 
-# Depedency subclasses
+# Dependency subclasses
 
 
 class BinaryDependency(Dependency):

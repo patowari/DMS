@@ -328,7 +328,7 @@ generate-setup: generate-requirements
 	@./contrib/scripts/generate_setup.py
 	@echo "Complete."
 
-generate-requirements: ## Generate all requirements files from the project depedency declarations.
+generate-requirements: ## Generate all requirements files from the project dependency declarations.
 	@./manage.py dependencies_generate_requirements build > requirements/build.txt
 	@./manage.py dependencies_generate_requirements development > requirements/development.txt
 	@./manage.py dependencies_generate_requirements documentation > requirements/documentation.txt

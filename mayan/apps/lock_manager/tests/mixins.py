@@ -85,8 +85,8 @@ class LockBackendTestCaseMixin:
         lock_1.release()
         # No exception is raised even though the lock has expired.
         # The logic is that checking for expired locks during release is
-        # not necessary as any attempt by someone else to aquire the lock
-        # would be successfull, even after an extended lapse of time
+        # not necessary as any attempt by someone else to acquire the lock
+        # would be successful, even after an extended lapse of time
 
     def test_release_expired_reaquired(self):
         self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=1)

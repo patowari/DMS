@@ -97,7 +97,7 @@ class Tesseract(OCRBackendBase):
             # osd
             # <- empty line
 
-            # Extaction: strip last line, split by newline, discard the first
+            # Extraction: strip last line, split by newline, discard the first
             # line.
             self.languages = output.strip().split('\n')[1:]
 

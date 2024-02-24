@@ -862,7 +862,7 @@
 - Add support for GPG backends. Add two new settings ``SIGNATURES_BACKEND`` and
   ``SIGNATURES_BACKEND_ARGUMENTS``. This change also removes two settings:
   ``SIGNATURES_GPG_HOME`` and ``SIGNATURES_GPG_PATH``. ``SIGNATURES_GPG_HOME``
-  had already been deprecated and was innactive. ``SIGNATURES_GPG_PATH`` is now
+  had already been deprecated and was inactive. ``SIGNATURES_GPG_PATH`` is now
   component ``gpg_path`` of the setting ``SIGNATURES_BACKEND_ARGUMENTS``.
 - Add sane default paths for the GPG binary for Linux, FreeBSD, OpenBSD, and
   MaCOS.
@@ -1421,7 +1421,7 @@
   on processed messages.
 - Add support to execute the IMAP expunge command after each
   processed message.
-- Add support for specifing a destination IMAP mailbox for
+- Add support for specifying a destination IMAP mailbox for
   processed messages. GitLab issue #399. Thanks to
   Robert Schöftner (@robert.schoeftner).
 - Support simple search disable via the new
@@ -1596,7 +1596,7 @@
 - Update Pillow to version 6.2.1.
 - Move Celery and Django Celery dependencies
   to the task manager app.
-- Improve dependecies app tests.
+- Improve dependencies app tests.
 - Return st_nlink of 1 files in mirrored indexes. GitLab issue #676.
   Thanks to Ezio Vernacotola (@eziove) for the report and solution.
 - Fix MAYAN_GUNICORN_TIMEOUT Docker image setting. GitLab issue #671.
@@ -2003,7 +2003,7 @@
   from the document type side.
 - Make workflows, workflows states, workflow
   transitions column sortable.
-- Show completion and intial state in the
+- Show completion and initial state in the
   workflow proxy instance menu list.
 - Fix translation of the source upload forms
   using dropzone.js
@@ -2234,7 +2234,7 @@
 
 3.1.4 (2018-10-04)
 ==================
-- Fix the link to the documenation. Closes GitLab issue #516.
+- Fix the link to the documentation. Closes GitLab issue #516.
   Thanks to Matthias Urlichs @smurfix for the report.
 - Update related links. Add links to the new Wiki and Forum.
 - Add Redis config entries in the Docker images to disable
@@ -2281,7 +2281,7 @@
 - Add test mixin to test the db conversion (dumping and loading) of a
   specific app.
 - Add an user test mixin to group user testing.
-- Add test the user managament app for database conversion.
+- Add test the user management app for database conversion.
 - Add support for natural keys to the DocumentPageImageCache model.
 - Add database conversion test to the common app.
 - Fix label display for resolved smart links when not using a dynamic label.
@@ -2366,7 +2366,7 @@
   link.
 - Add new document indexing permission. This permission allows
   user to view an index instance as opposed to the current
-  permission which allows viewing an index definiton on the
+  permission which allows viewing an index definition on the
   setup menu.
 - Add support to conditionally disable menus.
 - Disable the Tags menu when the user doesn't have the
@@ -2405,7 +2405,7 @@
 - Add support for extended templates when there are no results.
 - Add help messages and useful links to several apps when there
   are no results available.
-- Add a new column to settings showing if they are overrided
+- Add a new column to settings showing if they are overridden
   via environment variable.
 - The official config filename is config.yml.
 - Interpret ALLOWED_HOSTS as YAML.

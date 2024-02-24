@@ -428,7 +428,7 @@ class UserSetPasswordView(MultipleObjectFormActionView):
         except Exception as exception:
             messages.error(
                 message=_(
-                    'Error reseting password for user "%(user)s": %(error)s'
+                    'Error resetting password for user "%(user)s": %(error)s'
                 ) % {
                     'error': exception, 'user': instance
                 }, request=self.request
