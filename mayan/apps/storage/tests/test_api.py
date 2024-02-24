@@ -22,6 +22,24 @@ class DownloadFileViewAPITestCase(
         super().setUp()
         self._create_test_user()
 
+    def test_download_file_delete_view_not_owner_anonymous(self):
+        self._create_test_download_file(user=self._test_user)
+
+        download_file_count = DownloadFile.objects.count()
+
+        self.logout()
+
+        self._clear_events()
+
+        response = self._request_test_download_file_delete_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+        self.assertEqual(
+            DownloadFile.objects.count(), download_file_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_download_file_delete_view_not_owner_no_permission(self):
         self._create_test_download_file(user=self._test_user)
 
@@ -63,6 +81,24 @@ class DownloadFileViewAPITestCase(
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, None)
         self.assertEqual(events[0].verb, event_download_file_deleted.id)
+
+    def test_download_file_delete_view_owner_anonymous(self):
+        self._create_test_download_file()
+
+        download_file_count = DownloadFile.objects.count()
+
+        self.logout()
+
+        self._clear_events()
+
+        response = self._request_test_download_file_delete_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+        self.assertEqual(
+            DownloadFile.objects.count(), download_file_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
     def test_download_file_delete_view_owner_no_permission(self):
         self._create_test_download_file()
@@ -111,6 +147,21 @@ class DownloadFileViewAPITestCase(
         self.assertEqual(events[0].target, None)
         self.assertEqual(events[0].verb, event_download_file_deleted.id)
 
+    def test_download_file_download_view_not_owner_anonymous(self):
+        self._create_test_download_file(
+            content=TEST_BINARY_CONTENT, user=self._test_user
+        )
+
+        self.logout()
+
+        self._clear_events()
+
+        response = self._request_test_download_file_download_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_download_file_download_view_not_owner_no_permission(self):
         self._create_test_download_file(
             content=TEST_BINARY_CONTENT, user=self._test_user
@@ -153,6 +204,19 @@ class DownloadFileViewAPITestCase(
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_download_file)
         self.assertEqual(events[0].verb, event_download_file_downloaded.id)
+
+    def test_download_file_download_view_owner_anonymous(self):
+        self._create_test_download_file(content=TEST_BINARY_CONTENT)
+
+        self.logout()
+
+        self._clear_events()
+
+        response = self._request_test_download_file_download_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
     def test_download_file_download_view_owner_no_permission(self):
         self._create_test_download_file(content=TEST_BINARY_CONTENT)
@@ -205,6 +269,20 @@ class DownloadFileViewAPITestCase(
         self.assertEqual(events[0].target, self._test_download_file)
         self.assertEqual(events[0].verb, event_download_file_downloaded.id)
 
+    def test_download_file_list_view_not_owner_anonymous(self):
+        self._create_test_download_file(user=self._test_user)
+
+        self.logout()
+
+        self._clear_events()
+
+        response = self._request_test_download_file_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['count'], 0)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_download_file_list_view_not_owner_no_permission(self):
         self._create_test_download_file(user=self._test_user)
 
@@ -232,6 +310,20 @@ class DownloadFileViewAPITestCase(
         self.assertEqual(
             response.data['results'][0]['id'], self._test_download_file.id
         )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_download_file_list_view_owner_anonymous(self):
+        self._create_test_download_file()
+
+        self.logout()
+
+        self._clear_events()
+
+        response = self._request_test_download_file_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['count'], 0)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
