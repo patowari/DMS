@@ -1,3 +1,8 @@
+4.5.10 (XXXX-XX-XX)
+===================
+- Update ``DEFAULT_SEARCH_QUERY_RESULTS_LIMIT`` from 100000 to 10000 to
+  workaround conflicting with ElasticSearch non scroll search limit.
+
 4.5.9 (2024-02-05)
 ==================
 - Minor query optimizations.
