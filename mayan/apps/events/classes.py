@@ -26,14 +26,12 @@ from .permissions import (
 )
 from .settings import setting_disable_asynchronous_mode
 
-logger = logging.getLogger(name=__name__)
-
-
 DEFAULT_ACTION_EXPORTER_FIELD_NAMES = (
     'timestamp', 'id', 'actor_content_type', 'actor_object_id', 'actor',
     'target_content_type', 'target_object_id', 'target', 'verb',
     'action_object_content_type', 'action_object_object_id', 'action_object'
 )
+logger = logging.getLogger(name=__name__)
 
 
 class ActionExporter:
