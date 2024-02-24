@@ -6,6 +6,8 @@
 - Fix typos and text formatting.
 - Encapsulate MPTT exceptions as validation errors when users attempt
   to perform invalid index template node tree manipulations.
+- Update ``DEFAULT_SEARCH_QUERY_RESULTS_LIMIT`` from 100000 to 10000 to
+  workaround conflicting with ElasticSearch non scroll search limit.
 
 4.4.12 (2024-02-03)
 ===================
