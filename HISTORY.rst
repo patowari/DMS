@@ -8,6 +8,7 @@
 - Changed the internal variable name of ``COMMON_EXTRA_APPS_PRE`` to avoid
   possible conflicts.
 - Fix typos.
+- Updated the download file API to handle anonymous user gracefully.
 
 4.5.9 (2024-02-05)
 ==================
