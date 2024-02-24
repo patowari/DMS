@@ -64,7 +64,7 @@ setting_extra_apps = namespace.add_setting(
         'Example: [\'app_1\', \'app_2\']'
     )
 )
-setting_extra_apps = namespace.add_setting(
+setting_extra_apps_pre = namespace.add_setting(
     default=DEFAULT_COMMON_EXTRA_APPS_PRE,
     global_name='COMMON_EXTRA_APPS_PRE',
     help_text=_(

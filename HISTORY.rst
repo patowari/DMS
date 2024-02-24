@@ -11,6 +11,8 @@
 - Minor code style fixes.
 - Add an extra line to ``COMMON_EXTRA_APPS`` help text to clarify the apps
   inclusion order.
+- Changed the internal variable name of ``COMMON_EXTRA_APPS_PRE`` to avoid
+  possible conflicts.
 
 4.4.12 (2024-02-03)
 ===================
