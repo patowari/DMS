@@ -3,6 +3,7 @@
 - Update PIP from version 23.3.2 to 24.0.
 - Fix source class and JavaScript ``MayanImage`` class ``.initialize()``
   method name.
+- Fix typos and text formatting.
 
 4.4.12 (2024-02-03)
 ===================
