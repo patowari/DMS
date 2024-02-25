@@ -1,3 +1,7 @@
+4.4.13 (XXXX-XX-XX)
+===================
+- Update PIP from version 23.3.2 to 24.0.
+
 4.4.12 (2024-02-03)
 ===================
 - Translation file updates.
