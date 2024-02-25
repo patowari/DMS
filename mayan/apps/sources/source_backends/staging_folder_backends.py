@@ -357,7 +357,7 @@ class SourceBackendStagingFolder(
     upload_form_class = StagingUploadForm
 
     @classmethod
-    def intialize(cls):
+    def initialize(cls):
         link_staging_folder_file_delete = Link(
             icon=cls.icon_staging_folder_file_delete, kwargs={
                 'source_id': 'source.pk',

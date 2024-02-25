@@ -146,7 +146,7 @@ class SourceBackend(ModelBaseBackend):
     @classmethod
     def post_load_modules(cls):
         for source_backend in cls.get_all():
-            source_backend.intialize()
+            source_backend.initialize()
 
     @classmethod
     def get_action(cls, name):
@@ -194,7 +194,7 @@ class SourceBackend(ModelBaseBackend):
         )
 
     @classmethod
-    def intialize(cls):
+    def initialize(cls):
         """
         Optional method for subclasses execute their own initialization
         code.
