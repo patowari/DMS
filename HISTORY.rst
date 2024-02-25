@@ -13,6 +13,8 @@
   inclusion order.
 - Changed the internal variable name of ``COMMON_EXTRA_APPS_PRE`` to avoid
   possible conflicts.
+- Add extra logging to report storage errors when deleting trashed documents
+  as part of the retention policies.
 
 4.4.12 (2024-02-03)
 ===================

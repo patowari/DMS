@@ -89,7 +89,13 @@ class DocumentTypeManager(models.Manager):
                         'delete period', document, document.pk,
                         document.trashed_date_time
                     )
-                    document.delete()
+                    try:
+                        document.delete()
+                    except Exception as exception:
+                        logger.error(
+                            'Unable to delete trashed document ID: %d; %s',
+                            document.pk, exception
+                        )
             else:
                 logger.info(
                     'Document type: %s, has a no retention delta',
