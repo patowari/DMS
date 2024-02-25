@@ -43,7 +43,7 @@ By default JPG used but via the `pdftoppm_format` and `pillow_format` entries
 of the CONVERTER_GRAPHICS_BACKEND_CONFIG setting option any other format
 support by Python's Pillow can use used. Support was also added to change the
 DPI value used by the conversion process of PDF files to images. The default
-value for this coversion was set to 300 DPI. The entry used to specify this
+value for this conversion was set to 300 DPI. The entry used to specify this
 value is `pdftoppm_dpi`.
 
 

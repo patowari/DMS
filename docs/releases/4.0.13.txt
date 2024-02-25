@@ -95,7 +95,7 @@ Backward incompatible changes
 Issues closed
 -------------
 
-- :gitlab-issue:`966` Feature Request: Configurable sceme part of returned URIs (at least for the API)
+- :gitlab-issue:`966` Feature Request: Configurable scheme part of returned URIs (at least for the API)
 - :gitlab-issue:`1002` Make mayan-edms work in a subdirectory
 
 .. _PyPI: https://pypi.python.org/pypi/mayan-edms/

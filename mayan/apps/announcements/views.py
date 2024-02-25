@@ -119,7 +119,7 @@ class AnnouncementListView(SingleObjectListView):
             ),
             'no_results_text': _(
                 'Announcements are displayed in the login view. You can use '
-                'announcements to convery information about your organzation, '
+                'announcements to convey information about your organization, '
                 'announcements or usage guidelines for your users.'
             ),
             'no_results_title': _('No announcements available'),

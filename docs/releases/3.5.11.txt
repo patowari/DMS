@@ -6,7 +6,7 @@ Released: August 19, 2021
 Status: Maintenance
 
 
-This version containes backported fixes from version 4.0 and 4.1-a.
+This version contains backported fixes from version 4.0 and 4.1-a.
 
 
 Changes

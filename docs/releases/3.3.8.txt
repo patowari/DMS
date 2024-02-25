@@ -291,7 +291,7 @@ Bugs fixed or issues closed
 - :gitlab-issue:`736` Installation Documentation for direct install not fully correct
 - :gitlab-issue:`739` Generated supervisor configuration refers to nonexisting /opt/mayan-edms
 - :gitlab-issue:`748` Web Links: Can't create web link as model property choices box is locked
-- :gitlab-issue:`749` Cant convert document...DOS Bomb attack?
+- :gitlab-issue:`749` Can't convert document...DOS Bomb attack?
 - :gitlab-issue:`757` Permissions list does not show an object until one has been created
 - :gitlab-merge:`68` Add Darwin to the OS prober check so utilities can be found correctly
 - :gitlab-merge:`69` Documentation: Use Tee Instead of Sudo Redirection

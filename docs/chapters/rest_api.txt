@@ -229,7 +229,7 @@ Responses
 
 The response for each batch API request will contain the data returned as
 a dictionary, the headers as a dictionary, the name of the request, and
-the status code as an interger.
+the status code as an integer.
 
 Each batch API request response will be enclosed in a top level response with
 following format:

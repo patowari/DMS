@@ -814,8 +814,8 @@ Backward incompatible changes
 - Due to the change of using the entire dotted path of apps, the backend
   of existing mailing profiles will be invalid and must be re-created.
 
-- Paths to apps must be updated in existing ``config.yml`` files. Preprend
-  ``mayan.apps.`` to any app reference. Some instances:
+- Paths to apps must be updated in existing ``config.yml`` files. Add the
+  prefix ``mayan.apps.`` to any app reference. Some instances:
 
   .. code-block :: python
 

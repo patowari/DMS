@@ -53,7 +53,7 @@ Add locking to the file metadata document processing task.
 Settings
 ^^^^^^^^
 
-The setting override colums was changed from text to a check mark widget.
+The setting override columns was changed from text to a check mark widget.
 This makes it clear when a setting is being overridden by an environment
 variable.
 

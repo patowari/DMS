@@ -24,7 +24,7 @@ Changes
 - Changed the document upload view in source app to not use the HTTP referer
   URL blindly, but instead recompose the URL using known view name. Needed
   when integrating Mayan EDMS into other app via using iframes.
-- Addes size field to the document version serializer.
+- Added size field to the document version serializer.
 - Removed the serializer from the deleted document restore API endpoint
   it doesn't need a serializer being just an action POST endpoint.
 - Added support for adding or editing document types to smart links via the

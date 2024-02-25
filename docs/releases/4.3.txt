@@ -442,7 +442,7 @@ level scoped search.
 
 The ``UUID`` field to ElasticSearch field mapping was changed from ``Keyword``
 to ``Text`` to avoid search indexing error when processing document
-ontainers with more than 910 documents. ElasticSearch's ``Keyword`` field
+containers with more than 910 documents. ElasticSearch's ``Keyword`` field
 is limited to 32766 bytes and attempting to index a container with more
 than 910 documents would exceed this limit.
 
@@ -550,7 +550,7 @@ unittest.mock in Python 3.3 and onward.
 Views
 ^^^^^
 
-Added support for form fieldsets. Fieldset crate groups of fields.
+Added support for form fieldsets. Fieldset create groups of fields.
 
 Fieldsets were added to the following forms:
 

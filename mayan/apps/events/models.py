@@ -60,7 +60,7 @@ class Notification(NotificationBusinessLogicMixin, models.Model):
     """
     This model keeps track of the notifications for a user. Notifications are
     created when an event to which this user has been subscribed, are
-    commited elsewhere in the system.
+    committed elsewhere in the system.
     """
     user = models.ForeignKey(
         db_index=True, on_delete=models.CASCADE,

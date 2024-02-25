@@ -80,8 +80,8 @@ References:
 - https://github.com/benoitc/gunicorn/issues/996
 
 
-Postgresq database connection isn't set to UTC
-----------------------------------------------
+PostgreSQL database connection isn't set to UTC
+-----------------------------------------------
 
 Django 2.2 not compatible with psycopg 2.9 and this issue won't be fixed
 upstream.

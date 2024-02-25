@@ -142,7 +142,7 @@ Release using GitLab CI using the makefile
 Release using GitLab CI manually
 --------------------------------
 
-#. Push the current brach:
+#. Push the current branch:
    ::
 
        git push

@@ -12,7 +12,7 @@ class MailerBackend(BaseBackend):
     """
     Base class for the mailing backends. This class is mainly a wrapper
     for other Django backends that adds a few metadata to specify the
-    fields it needs to be instanciated at runtime.
+    fields it needs to be instantiated at runtime.
 
     The fields attribute is a list of dictionaries with the format:
     {
@@ -25,7 +25,7 @@ class MailerBackend(BaseBackend):
     }
     """
     _loader_module_name = 'mailers'
-    class_path = ''  # Dot path to the actual class that will handle the mail
+    class_path = ''  # Dot path to the actual class that will handle the mail.
 
     @classmethod
     def get_field_order(cls):

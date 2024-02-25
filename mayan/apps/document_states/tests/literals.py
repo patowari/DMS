@@ -67,4 +67,4 @@ TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME = 'test_workflow_template_transitio
 TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE = FIELD_TYPE_CHOICE_CHAR
 
 TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL = 'test workflow template transition label'
-TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED = 'test worfklow template transition label edited'
+TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED = 'test workflow template transition label edited'

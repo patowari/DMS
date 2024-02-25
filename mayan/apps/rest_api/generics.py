@@ -57,9 +57,9 @@ class ListAPIView(
     filter_backends = (
         MayanObjectPermissionsFilter, MayanSortingFilter, RESTAPISearchFilter
     )
-    # permission_classes is required for the EventListAPIView
-    # when Actions objects support ACLs then this can be removed
-    # as was intented.
+    # `permission_classes` is required for the `EventListAPIView`
+    # when `Actions` objects support ACLs then this can be removed
+    # as was intended.
     permission_classes = (MayanPermission,)
 
 
@@ -90,7 +90,7 @@ class ObjectActionAPIView(
         context = super().get_serializer_context()
 
         # When rendering the exception handler, DRF calls this class
-        # method via .override_method() hiding the real request method.
+        # method via `.override_method()` hiding the real request method.
         # Use the real request method instead which saved during the view
         # initialization for correct behavior.
         if self.request_method_real == 'POST':
@@ -137,7 +137,7 @@ class ObjectActionAPIView(
         )
 
         if result:
-            # If object action returned serializer.data.
+            # If object action returned `serializer.data`.
             headers = self.get_success_headers(data=result)
             return Response(
                 headers=headers, data=result,

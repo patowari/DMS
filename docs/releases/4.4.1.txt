@@ -23,8 +23,8 @@ Other
 
   - Add makefile targets to trigger standalone builds.
   - Increase artifact expiration.
-  - Add PIP and APT caching to documenation and python build stages.
-  - Add GitLab CI job dependecies.
+  - Add PIP and APT caching to documentation and python build stages.
+  - Add GitLab CI job dependencies.
   - Reuse Python build in stages.
   - Convert branches into literals.
   - Remove duplicated code in jobs.

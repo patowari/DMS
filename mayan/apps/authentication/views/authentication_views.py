@@ -78,16 +78,16 @@ class MultiFactorAuthenticationView(
 
     @classonlymethod
     def as_view(cls, *args, **kwargs):
-        # SessionWizardView needs at least one form in order to be
+        # `SessionWizardView` needs at least one form in order to be
         # initialized as a view. Declare one empty form and then change the
-        # form list in the .dispatch() method.
+        # form list in the `.dispatch()` method.
         class EmptyForm(AuthenticationFormBase):
             """Empty form"""
 
         cls.form_list = [EmptyForm]
 
-        # Allow super to initialize and pass the form_list len() assert
-        # before replacing the form_list attribute with our property.
+        # Allow super to initialize and pass the `form_list` `len()` assert
+        # before replacing the `form_list` attribute with our property.
         result = super().as_view(*args, **kwargs)
 
         def null_setter(self, value):
@@ -128,7 +128,7 @@ class MultiFactorAuthenticationView(
 
     def done(self, form_list=None, **kwargs):
         """
-        Perform the same function as Django's LoginView.form_valid().
+        Perform the same function as Django's `LoginView.form_valid()`.
         """
         kwargs = self.get_all_cleaned_data()
         self.authentication_backend.process(
@@ -226,7 +226,7 @@ class MayanLoginView(StrongholdPublicMixin, LoginView):
 
 
 class MayanLogoutView(LogoutView):
-    """No current change or overrides, left here for future expansion"""
+    """No current change or overrides, left here for future expansion."""
 
 
 class MayanPasswordChangeDoneView(PasswordChangeDoneView):
@@ -379,7 +379,7 @@ class UserSetPasswordView(MultipleObjectFormActionView):
         except Exception as exception:
             messages.error(
                 message=_(
-                    'Error reseting password for user "%(user)s": %(error)s'
+                    'Error resetting password for user "%(user)s": %(error)s'
                 ) % {
                     'error': exception, 'user': instance
                 }, request=self.request

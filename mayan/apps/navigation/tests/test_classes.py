@@ -83,7 +83,8 @@ class LinkClassTestCase(GenericViewTestCase):
         self.assertEqual(resolved_link.url, reverse(viewname=self._test_view_name))
 
     def test_link_permission_resolve_with_acl(self):
-        # ACL is tested agains the resolved_object or just {{ object }} if not
+        # ACL is tested against the resolved_object or just {{ object }}
+        # if not.
         link = Link(
             permissions=(self._test_permission,), text=TEST_LINK_TEXT,
             view=self._test_view_name

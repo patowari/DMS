@@ -26,9 +26,9 @@ class FileMetadataDriver:
 
     @classmethod
     def process_document_file(cls, document_file, user=None):
-        # Get list of drivers for the document's MIME type
+        # Get list of drivers for the document's MIME type.
         driver_classes = cls._registry.get(document_file.mimetype, ())
-        # Add wilcard drivers, drivers meant to be executed for all MIME
+        # Add wildcard drivers, drivers meant to be executed for all MIME
         # types.
         driver_classes += tuple(cls._registry.get('*', ()))
 

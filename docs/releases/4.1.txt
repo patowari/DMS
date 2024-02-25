@@ -666,9 +666,9 @@ Other
   passed was empty as it only used an empty ``if`` statement. The
   comparison is now performed using ``is None``.
 - Add a queryset attribute check mixin to ensure view are
-  specifing a complete queryset and not just a manager.
+  specifying a complete queryset and not just a manager.
 - Update all view and API views not passing a complete
-  queryset declaratio
+  queryset declaration.
 - Update UI double click to act on elements. Previously it bonded to the
   entire form. By binding it to an element other element can be made to
   react to the double click event for other purposes.
@@ -739,7 +739,7 @@ Issues closed
 -------------
 
 - :gitlab-issue:`442` [NFR] Preserve extension checkbox should be always available and not only when downloading version
-- :gitlab-issue:`592` Possiblity to revise OCR result
+- :gitlab-issue:`592` Possibility to revise OCR result
 - :gitlab-issue:`845` Python 3.8: mod_wsgi: os.fork() RuntimeError: fork not supported for subinterpreters
 - :gitlab-issue:`863` Start workflows when changing document type
 - :gitlab-issue:`981` 4.0, version export and messages app

@@ -73,7 +73,7 @@ References:
 Error: ``IOError: [Errno 37] No locks available`` when using a NFS volume for ``MAYAN_MEDIA_ROOT``
 ==================================================================================================
 
-This is caused by an upstream Django issue and occurrs when using a NFS
+This is caused by an upstream Django issue and occurs when using a NFS
 volume for ``MAYAN_MEDIA_ROOT``. File lock issues can prevent Mayan from
 generating the static media inside ``MAYAN_MEDIA_ROOT``.
 

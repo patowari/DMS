@@ -332,18 +332,19 @@ project (www.paperattor.com).
 Add JavaScript dependency manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An internal utility to install and upgrade the JavaScript dependencies was added.
-This depency manager allows for the easier maintenance of the JavaScript libraries
-used through the project.
+An internal utility to install and upgrade the JavaScript dependencies was
+added. This dependency manager allows for the easier maintenance of the
+JavaScript libraries used through the project.
 
-Previously JavaScript libraries we downloaded and installed by manually. These
-libraries were them checked into the Git repository. Finally to enable them
-the corresponding imports were added to the base templates in the appeance app.
+Previously JavaScript libraries we downloaded and installed by manually.
+These libraries were them checked into the Git repository. Finally to enable
+them the corresponding imports were added to the base templates in the
+appearance app.
 
-This new manager is the first step to start resolving these issues. The manager
-allows apps to specify their own dependencies. These dependencies are then
-downloaded when the project is installed or upgraded. As such they are not
-part of the repository and lower the file size of the project.
+This new manager is the first step to start resolving these issues. The
+manager allows apps to specify their own dependencies. These dependencies
+are then downloaded when the project is installed or upgraded. As such they
+are not part of the repository and lower the file size of the project.
 
 
 Workflow changes
@@ -392,7 +393,7 @@ Other changes worth mentioning
 
 - Add Makefile target to check the format of the README.rst file.
 - Fix permission filtering when performing document page searching
-- base.js was splitted into mayan_app.js, mayan_image.js, and
+- base.js was split into mayan_app.js, mayan_image.js, and
   partial_navigation.js.
 - Cabinet detail view pagination was fixed.
 - Improve permission handling in the workflow app.
@@ -575,7 +576,7 @@ Known issues
 ------------
 
 The newly added 'flanker' dependency used to process email, produces a number
-of warnings on the console that are imposible to turn off. These are not
+of warnings on the console that are impossible to turn off. These are not
 critical and are related to coding practices in the library. All warning
 from flanker can be ignored.
 

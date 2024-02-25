@@ -137,7 +137,7 @@ class AssetListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Assets are files that can be used in conjuction with '
+                'Assets are files that can be used in conjunction with '
                 'certain transformations.'
             ),
             'no_results_title': _('No assets available'),

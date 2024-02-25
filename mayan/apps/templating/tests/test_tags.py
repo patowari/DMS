@@ -108,7 +108,7 @@ class TemplateTagSetTestCase(TemplateTagTestMixin, BaseTestCase):
 
     def test_tag_set_nonexistant(self):
         result = self._render_test_template(
-            template_string='{% set nonexistant as result %}{{ result }}'
+            template_string='{% set nonexistent as result %}{{ result }}'
         )
         self.assertEqual(result, '')
 

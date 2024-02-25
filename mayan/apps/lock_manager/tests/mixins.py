@@ -18,7 +18,7 @@ class LockBackendManagementCommandTestCaseMixin(ManagementCommandTestMixin):
     def test_purge_locks_command(self):
         self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=20)
 
-        # lock_1 not release and not expired, should raise LockError
+        # lock_1 not release and not expired, should raise LockError.
         with self.assertRaises(expected_exception=LockError):
             self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
@@ -26,10 +26,10 @@ class LockBackendManagementCommandTestCaseMixin(ManagementCommandTestMixin):
         SettingNamespace.invalidate_cache_all()
         self._call_test_management_command()
 
-        # lock_1 not release but has expired, should not raise LockError
+        # lock_1 not release but has expired, should not raise LockError.
         lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
-        # Cleanup
+        # Cleanup.
         lock_2.release()
 
 
@@ -47,7 +47,7 @@ class LockBackendTestCaseMixin:
         with self.assertRaises(expected_exception=LockError):
             self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
-        # Cleanup
+        # Cleanup.
         lock_1.release()
 
     def test_release(self):
@@ -55,22 +55,22 @@ class LockBackendTestCaseMixin:
         lock_1.release()
         lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
-        # Cleanup
+        # Cleanup.
         lock_2.release()
 
     def test_timeout_expired(self):
         self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=1)
 
-        # lock_1 not release and not expired, should raise LockError
+        # lock_1 not release and not expired, should raise LockError.
         with self.assertRaises(expected_exception=LockError):
             self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
         self._test_delay(seconds=1.01)
 
-        # lock_1 not release but has expired, should not raise LockError
+        # lock_1 not release but has expired, should not raise LockError.
         lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
-        # Cleanup
+        # Cleanup.
         lock_2.release()
 
     def test_double_release(self):
@@ -85,8 +85,8 @@ class LockBackendTestCaseMixin:
         lock_1.release()
         # No exception is raised even though the lock has expired.
         # The logic is that checking for expired locks during release is
-        # not necessary as any attempt by someone else to aquire the lock
-        # would be successfull, even after an extended lapse of time
+        # not necessary as any attempt by someone else to acquire the lock
+        # would be successful, even after an extended lapse of time.
 
     def test_release_expired_reaquired(self):
         self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=1)
@@ -97,22 +97,22 @@ class LockBackendTestCaseMixin:
         # error.
         lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=1)
 
-        # Cleanup
+        # Cleanup.
         lock_2.release()
 
     def test_purge(self):
         self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=30)
 
-        # lock_1 not release and not expired, should raise LockError
+        # lock_1 not release and not expired, should raise LockError.
         with self.assertRaises(expected_exception=LockError):
             self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
         self._test_locking_backend.purge_locks()
 
-        # lock_1 not release but has expired, should not raise LockError
+        # lock_1 not release but has expired, should not raise LockError.
         lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
-        # Cleanup
+        # Cleanup.
         lock_2.release()
 
 
@@ -128,14 +128,14 @@ class DefaultTimeoutTestMixin:
     def test_default_timeout_expired(self):
         self._test_locking_backend.acquire_lock(name=TEST_LOCK_1, timeout=None)
 
-        # lock_1 not release and not expired, should raise LockError
+        # lock_1 not release and not expired, should raise LockError.
         with self.assertRaises(expected_exception=LockError):
             self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
         self._test_delay(seconds=1.01)
 
-        # lock_1 not release but has expired, should not raise LockError
+        # lock_1 not release but has expired, should not raise LockError.
         lock_2 = self._test_locking_backend.acquire_lock(name=TEST_LOCK_1)
 
-        # Cleanup
+        # Cleanup.
         lock_2.release()

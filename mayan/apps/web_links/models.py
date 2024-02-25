@@ -70,7 +70,7 @@ class WebLink(ExtraDataModelMixin, WebLinkBusinessLogicMixin, models.Model):
 class ResolvedWebLink(ResolvedWebLinkBusinessLogicMixin, WebLink):
     """
     Proxy model to represent an already resolved web link. Used for easier
-    colums registration.
+    columns registration.
     """
     objects = WebLinkManager()
 

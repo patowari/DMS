@@ -82,7 +82,7 @@ Some dependencies were removed:
 Docker
 ^^^^^^
 
-Docker Compose is now the prefered method of installation. The installation
+Docker Compose is now the preferred method of installation. The installation
 documentation was updated to reflect this. A Docker Compose files is
 provided along with new instructions. Data in Docker containers using the
 existing methods is safe and will be read when reinstalling using the Docker
@@ -195,11 +195,11 @@ User interface
 ^^^^^^^^^^^^^^
 
 Support was added to switch a view from the list mode to item mode and
-viceversa. A new icon is displayed in the list toolbal. Almost all views
+vice-versa. A new icon is displayed in the list toolbar. Almost all views
 support this feature.
 
 The icons of several app were improve using icon composition for a more
-intuitive visual languge. Some of the apps that received these icon updates
+intuitive visual language. Some of the apps that received these icon updates
 were the OCR, file metadata, and document parsing apps.
 
 The login view will now detect and stop redirect loops.
@@ -240,10 +240,10 @@ for integrators if using direct URL requests instead of the API.
 
 The document document type and document models where updated to avoid a
 double save when creating a new document. This results in a small optimization
-that is very benefitial when doing massive imports.
+that is very beneficial when doing massive imports.
 
 Several classes were updated to detect misconfiguration and provide
-explantions to help integrator pinpoint the source.
+explanations to help integrator pinpoint the source.
 
 The SourceColumn class will now detect and halt using non field attributes
 as sortable columns.

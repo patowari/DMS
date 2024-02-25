@@ -123,7 +123,7 @@ need to be additional variables entries needed for the
 ``MAYAN_DOCUMENTS_FILE_STORAGE_BACKEND_ARGUMENTS`` line.
 
 The ``default_acl`` configuration may also need to be
-ommitted if the platform does not support AWS-style ACLs,
+omitted if the platform does not support AWS-style ACLs,
 but try first with the ``default_acl`` value set for
 security:
 

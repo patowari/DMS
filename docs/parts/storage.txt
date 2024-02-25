@@ -9,11 +9,11 @@ can also be placed in other storage systems like object storage.
 
 .. important::
 
-   Sometimes this method of controlling documents files is caraterized as
+   Sometimes this method of controlling documents files is characterized as
    being "destructive". However, that is not the case as the actual files
    are never destroyed or modified in anyway. This method is only used
    to avoid the operating system filesystem's inability to save two or more
-   files using the same filename and to be able to assing a label to a
+   files using the same filename and to be able to assign a label to a
    document using characters that go beyond those normally supported by the
    filesystem.
 

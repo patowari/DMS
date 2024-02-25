@@ -21,7 +21,7 @@ from .mixins import DocumentTypesQuotaMixin, GroupsUsersQuotaMixin
 
 def hook_factory_document_check_quota(klass):
     def hook_check_quota(**kwargs):
-        # Fake Document to be able to reuse the .process() method
+        # Fake Document to be able to reuse the `.process()` method
         # for pre check.
         fake_document_instance = types.SimpleNamespace(pk=None)
 
@@ -44,8 +44,8 @@ def hook_factory_document_file_check_quota(klass):
             document = types.SimpleNamespace(
                 document_type=kwargs['kwargs']['document_type']
             )
-        # Fake DocumentFile to be able to reuse the
-        # .process() method for pre check.
+        # Fake `DocumentFile` to be able to reuse the
+        # `.process()` method for pre check.
         file_object = kwargs['kwargs']['file_object']
 
         if file_object:
@@ -218,7 +218,7 @@ class DocumentSizeQuota(
         if not kwargs['instance'].pk:
             if kwargs['instance'].file.size >= self._allowed():
                 if self.document_type_all or self._get_document_types().filter(pk=kwargs['instance'].document.document_type.pk).exists():
-                    # Don't asume there is always a user in the signal.
+                    # Don't assume there is always a user in the signal.
                     # Non interactive uploads might not include a user.
                     if kwargs['user']:
                         if kwargs['user'].is_superuser or kwargs['user'].is_staff:

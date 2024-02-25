@@ -20,7 +20,7 @@ control over which level of release to pin their deployments.
 Development
 ^^^^^^^^^^^
 
-The selenium Firefox geckodriver was added to the setup-dev-environment
+The selenium Firefox geckodriver was added to the ``setup-dev-environment``
 target that spins up a development environment with a single command.
 
 
@@ -35,11 +35,11 @@ Documents
 
 The document language field is now a "lazy" field. This means that the field
 is evaluated on demand and not during start up. This allows starting Mayan
-even when there are invalid language codes in the DOCUMENTS_LANGUAGE_CODES
-setting.
+even when there are invalid language codes in the
+``DOCUMENTS_LANGUAGE_CODES`` setting.
 
 A warning was added when there are invalid document language codes in the
-DOCUMENTS_LANGUAGE_CODES setting.
+``DOCUMENTS_LANGUAGE_CODES`` setting.
 
 
 Error reporting
@@ -273,7 +273,7 @@ Issues closed
 -------------
 
 - :gitlab-issue:`778` Feature Request: An api to promote a staging file into a document
-- :gitlab-issue:`780` Direct Deployment web page missing a "\" on inital `apt-get install`
+- :gitlab-issue:`780` Direct Deployment web page missing a "\" on initial `apt-get install`
 - :gitlab-issue:`785` management.call_command - > interactive=False leftover
 - :gitlab-issue:`786` exclude favicon.ico from Stronghold
 

@@ -49,7 +49,7 @@ project sources. Translation completion as reported by Transifex:
 * Italian - 77%
 * Portuguese - 76%
 * Dutch - 68%
-* Portugese (Brazil) - 67%
+* Portuguese (Brazil) - 67%
 * Bulgarian - 62%
 * Danish - 42%
 * Vietnamese - 40%
@@ -113,7 +113,7 @@ recent version if not to their most recent released version.
 Database connection leaks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Stale database connection being left open by scheduler tasks are now explictly
+Stale database connection being left open by scheduler tasks are now explicitly
 closed. This avoids consumption of the pool of database connections, increases
 stability and reduces memory usage.
 

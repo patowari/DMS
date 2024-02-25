@@ -34,7 +34,7 @@ class QuotaBackendBase(AppsModuleLoaderMixin):
     """
     Base class for the mailing backends. This class is mainly a wrapper
     for other Django backends that adds a few metadata to specify the
-    fields it needs to be instanciated at runtime.
+    fields it needs to be instantiated at runtime.
 
     The fields attribute is a list of dictionaries with the format:
     {
