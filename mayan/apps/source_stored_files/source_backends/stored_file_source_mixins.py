@@ -20,7 +20,7 @@ logger = logging.getLogger(name=__name__)
 
 class SourceBackendMixinStoredFileSourceBase:
     @classmethod
-    def intialize(cls):
+    def initialize(cls):
         SourceStoredFile.initialize()
 
     def action_file_get(self, **kwargs):

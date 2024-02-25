@@ -11,6 +11,8 @@
 - Updated the download file API to handle anonymous user gracefully.
 - Encapsulate MPTT exceptions as validation errors when users attempt
   to perform invalid index template node tree manipulations.
+- Fix source class and JavaScript MayanImage class ``.initialize()``
+  method name.
 
 4.5.9 (2024-02-05)
 ==================
