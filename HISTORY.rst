@@ -4,6 +4,8 @@
 - Fix source class and JavaScript ``MayanImage`` class ``.initialize()``
   method name.
 - Fix typos and text formatting.
+- Encapsulate MPTT exceptions as validation errors when users attempt
+  to perform invalid index template node tree manipulations.
 
 4.4.12 (2024-02-03)
 ===================
