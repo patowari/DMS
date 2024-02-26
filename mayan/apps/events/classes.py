@@ -15,13 +15,13 @@ from mayan.apps.common.menus import menu_list_facet
 from mayan.apps.common.settings import setting_project_url
 from mayan.apps.common.utils import return_attrib
 
-from .literals import (
-    DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_MANAGER_ORDER_AFTER,
-    EVENT_TYPE_NAMESPACE_NAME, EVENT_EVENTS_CLEARED_NAME,
-    EVENT_EVENTS_EXPORTED_NAME
-)
 from .links import (
     link_object_event_list, link_object_event_type_user_subscription_list
+)
+from .literals import (
+    DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_EVENTS_CLEARED_NAME,
+    EVENT_EVENTS_EXPORTED_NAME, EVENT_MANAGER_ORDER_AFTER,
+    EVENT_TYPE_NAMESPACE_NAME
 )
 from .permissions import (
     permission_events_clear, permission_events_export, permission_events_view
@@ -245,6 +245,7 @@ class EventModelRegistry:
     ):
         # Hidden imports.
         from actstream import registry
+
         from mayan.apps.acls.classes import ModelPermission
 
         AccessControlList = apps.get_model(

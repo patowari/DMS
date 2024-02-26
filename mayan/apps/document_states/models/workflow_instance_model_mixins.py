@@ -49,7 +49,9 @@ class WorkflowInstanceBusinessLogicMixin:
 
                 workflow_instance_log_entry = WorkflowInstanceLogEntry(
                     comment=comment or '',
-                    extra_data=json.dumps(obj=extra_data or {}),
+                    extra_data=json.dumps(
+                        obj=extra_data or {}
+                    ),
                     transition=transition, user=user,
                     workflow_instance=self
                 )

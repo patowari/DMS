@@ -3,17 +3,16 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('linking', '0001_initial'),
+        ('linking', '0001_initial')
     ]
 
     operations = [
         migrations.CreateModel(
             name='ResolvedSmartLink',
-            fields=[
-            ],
+            fields=[],
             options={
-                'proxy': True,
+                'proxy': True
             },
             bases=('linking.smartlink',),
-        ),
+        )
     ]

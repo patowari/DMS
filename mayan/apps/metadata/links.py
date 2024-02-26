@@ -5,11 +5,11 @@ from mayan.apps.navigation.classes import Link
 
 from .icons import (
     icon_document_metadata_add, icon_document_metadata_edit,
-    icon_document_metadata_remove, icon_document_metadata_list,
-    icon_metadata_type_create, icon_metadata_type_single_delete,
-    icon_metadata_type_multiple_delete,
+    icon_document_metadata_list, icon_document_metadata_remove,
+    icon_document_type_metadata_type_list, icon_metadata_type_create,
     icon_metadata_type_document_type_list, icon_metadata_type_edit,
-    icon_metadata_type_list, icon_document_type_metadata_type_list
+    icon_metadata_type_list, icon_metadata_type_multiple_delete,
+    icon_metadata_type_single_delete
 )
 from .permissions import (
     permission_document_metadata_add, permission_document_metadata_edit,

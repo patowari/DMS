@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('metadata', '0009_auto_20180402_0339'),
+        ('metadata', '0009_auto_20180402_0339')
     ]
 
     operations = [
@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
                 "templating language "
                 "(https://docs.djangoproject.com/en/1.11/ref/templates/builtins/)",
                 max_length=128, null=True, verbose_name='Default'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='metadatatype',
@@ -27,6 +27,6 @@ class Migration(migrations.Migration):
                 "delimited string. Use Django's default templating language "
                 "(https://docs.djangoproject.com/en/1.11/ref/templates/builtins/).",
                 null=True, verbose_name='Lookup'
-            ),
-        ),
+            )
+        )
     ]

@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0012_auto_20170205_0743'),
+        ('sources', '0012_auto_20170205_0743')
     ]
 
     operations = [
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 '(simplex/duplex). If this option is not supported by '
                 'your scanner, leave it blank.', max_length=16,
                 verbose_name='ADF mode'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='sanescanner',
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 '(such as a document-feeder). If this option is not '
                 'supported by your scanner, leave it blank.', max_length=16,
                 verbose_name='Paper source'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='sanescanner',
@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                 '(e.g., lineart, monochrome, or color). If this option is '
                 'not supported by your scanner, leave it blank.',
                 max_length=16, verbose_name='Mode'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='sanescanner',
@@ -54,6 +54,6 @@ class Migration(migrations.Migration):
                 'image in DPI (dots per inch). Typical value is 200. If '
                 'this option is not supported by your scanner, leave it '
                 'blank.', verbose_name='Resolution'
-            ),
-        ),
+            )
+        )
     ]

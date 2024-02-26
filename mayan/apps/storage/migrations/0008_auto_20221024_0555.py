@@ -31,6 +31,6 @@ class Migration(migrations.Migration):
                 related_name='download_files', to='auth.user',
                 verbose_name='User'
             ),
-            preserve_default=False,
+            preserve_default=False
         )
     ]

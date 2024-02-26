@@ -7,10 +7,10 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..exceptions import DynamicSearchBackendException
 from ..search_query_types import QueryTypeExact
 
-from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
 from .mixins.backend_mixins import BackendSearchTestMixin
 from .mixins.backend_search_field_mixins import BackendSearchFieldTestCaseMixin
 from .mixins.backend_query_type_mixins import BackendFieldTypeQueryTypeTestCaseMixin
+from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
 
 
 class DjangoSearchBackendSearchFieldTestCase(

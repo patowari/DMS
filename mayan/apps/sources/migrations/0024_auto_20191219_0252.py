@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0023_auto_20191213_0044'),
+        ('sources', '0023_auto_20191213_0044')
     ]
 
     operations = [
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='interval_sources', to='documents.DocumentType',
                 verbose_name='Document type'
-            ),
-        ),
+            )
+        )
     ]

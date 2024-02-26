@@ -10,11 +10,11 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.workflow_template_state_forms import WorkflowTemplateStateEscalationForm
 from ..icons import (
+    icon_workflow_template_state_escalation,
     icon_workflow_template_state_escalation_create,
     icon_workflow_template_state_escalation_delete,
     icon_workflow_template_state_escalation_edit,
-    icon_workflow_template_state_escalation_list,
-    icon_workflow_template_state_escalation
+    icon_workflow_template_state_escalation_list
 )
 from ..links import link_workflow_template_state_escalation_create
 from ..models import WorkflowState, WorkflowStateEscalation

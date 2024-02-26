@@ -162,7 +162,9 @@ class DocumentFile(
         if self.document.files.count() == 0:
             self.document.is_stub = False
             self.document._event_ignore = True
-            self.document.save(update_fields=('is_stub',))
+            self.document.save(
+                update_fields=('is_stub',)
+            )
 
         return result
 

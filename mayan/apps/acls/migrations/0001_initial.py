@@ -1,10 +1,10 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('contenttypes', '0001_initial'),
-        ('permissions', '__first__'),
+        ('permissions', '__first__')
     ]
 
     operations = [
@@ -41,11 +41,11 @@ class Migration(migrations.Migration):
                         to='permissions.StoredPermission',
                         verbose_name='Permission'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Access entry',
-                'verbose_name_plural': 'Access entries',
+                'verbose_name_plural': 'Access entries'
             },
             bases=(models.Model,),
         ),
@@ -57,13 +57,13 @@ class Migration(migrations.Migration):
                         verbose_name='ID', serialize=False,
                         auto_created=True, primary_key=True
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Creator',
-                'verbose_name_plural': 'Creator',
+                'verbose_name_plural': 'Creator'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DefaultAccessEntry',
@@ -95,12 +95,12 @@ class Migration(migrations.Migration):
                         to='permissions.StoredPermission',
                         verbose_name='Permission'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Default access entry',
-                'verbose_name_plural': 'Default access entries',
+                'verbose_name_plural': 'Default access entries'
             },
-            bases=(models.Model,),
-        ),
+            bases=(models.Model,)
+        )
     ]

@@ -227,18 +227,30 @@ class Dependency(AppsModuleLoaderMixin):
                     template.format(
                         dependency.name,
                         str(dependency.class_name_verbose_name),
-                        str(dependency.get_version_string()),
-                        str(dependency.app_label_verbose_name()),
-                        str(dependency.get_environments_verbose_name()),
-                        str(dependency.get_other_data()),
-                        str(result['check'])
+                        str(
+                            dependency.get_version_string()
+                        ),
+                        str(
+                            dependency.app_label_verbose_name()
+                        ),
+                        str(
+                            dependency.get_environments_verbose_name()
+                        ),
+                        str(
+                            dependency.get_other_data()
+                        ),
+                        str(
+                            result['check']
+                        )
                     )
                 )
         else:
             for result in cls._check_all():
                 dependency = result['dependency']
                 print('-' * 40)
-                print('* {}'.format(dependency.name))
+                print(
+                    '* {}'.format(dependency.name)
+                )
                 print(
                     'Class: {class_name} | Version: {version} '
                     '| App: {app_label} | Environments: {environments} '
@@ -263,7 +275,9 @@ class Dependency(AppsModuleLoaderMixin):
         dependencies = cls._registry.values()
         if subclass_only:
             dependencies = [
-                dependency for dependency in dependencies if isinstance(dependency, cls)
+                dependency for dependency in dependencies if isinstance(
+                    dependency, cls
+                )
             ]
 
         return Dependency.return_sorted(dependencies=dependencies)
@@ -647,7 +661,9 @@ class JavaScriptDependency(Dependency):
                     'licenses'
                 )[0]['type']
             )
-            author = package_info.get('author', {})
+            author = package_info.get(
+                'author', {}
+            )
 
             try:
                 author = author.get('name')

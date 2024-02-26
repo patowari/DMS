@@ -1,4 +1,4 @@
-from django.db import models, migrations, reset_queries
+from django.db import migrations, models, reset_queries
 from django.db.models import Max
 from django.db.models.functions import Concat
 
@@ -123,7 +123,9 @@ def code_set_active_versions(apps, schema_editor):
             document_version_values += (row[0],)
 
         query_argument_placeholders = ('%s',) * len(rows)
-        values_query = '({})'.format(', '.join(query_argument_placeholders))
+        values_query = '({})'.format(
+            ', '.join(query_argument_placeholders)
+        )
         cursor_document_version.execute(
             query_document_version_active_update.format(values_query),
             document_version_values

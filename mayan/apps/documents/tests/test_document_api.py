@@ -336,14 +336,22 @@ class DocumentAPIViewTestCase(
             Document.objects.count(), document_count + 1
         )
 
-        self.assertEqual(self._test_document.pk, response.data['id'])
         self.assertEqual(
-            self._test_document.label, self._test_document.file_latest.filename
+            self._test_document.pk, response.data['id']
         )
-        self.assertEqual(self._test_document.pages.count(), 1)
-
-        self.assertEqual(self._test_document.files.count(), 1)
-        self.assertEqual(self._test_document.file_latest.exists(), True)
+        self.assertEqual(
+            self._test_document.label,
+            self._test_document.file_latest.filename
+        )
+        self.assertEqual(
+            self._test_document.pages.count(), 1
+        )
+        self.assertEqual(
+            self._test_document.files.count(), 1
+        )
+        self.assertEqual(
+            self._test_document.file_latest.exists(), True
+        )
         self.assertEqual(self._test_document.file_latest.size, 17436)
         self.assertEqual(
             self._test_document.file_latest.mimetype, 'image/png'
@@ -498,7 +506,9 @@ class DocumentChangeTypeAPIViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, self._test_document_types[1])
+        self.assertEqual(
+            events[0].action_object, self._test_document_types[1]
+        )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_document_type_changed.id)

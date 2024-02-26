@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('documents', '0034_auto_20160509_2321'),
+        ('documents', '0034_auto_20160509_2321')
     ]
 
     operations = [
@@ -58,27 +58,28 @@ class Migration(migrations.Migration):
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name='children', to='cabinets.Cabinet'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('parent__label', 'label'),
                 'verbose_name': 'Cabinet',
-                'verbose_name_plural': 'Cabinets',
-            },
+                'verbose_name_plural': 'Cabinets'
+            }
         ),
         migrations.CreateModel(
             name='DocumentCabinet',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Document cabinet',
                 'proxy': True,
-                'verbose_name_plural': 'Document cabinets',
+                'verbose_name_plural': 'Document cabinets'
             },
-            bases=('cabinets.cabinet',),
+            bases=('cabinets.cabinet',)
         ),
         migrations.AlterUniqueTogether(
             name='cabinet',
-            unique_together={('parent', 'label')},
-        ),
+            unique_together={
+                ('parent', 'label')
+            }
+        )
     ]

@@ -1,6 +1,6 @@
 from django_celery_beat.models import IntervalSchedule, PeriodicTask
 
-from ..classes import Worker, CeleryQueue
+from ..classes import CeleryQueue, Worker
 
 from .literals import (
     TEST_INTERVAL_SCHEDULE_EVERY, TEST_INTERVAL_SCHEDULE_PERIOD,

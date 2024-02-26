@@ -20,7 +20,7 @@ class MayanImage {
             animationDuration : 100,
             buttons : [
                 'fullScreen',
-                'close',
+                'close'
             ],
             idleTime: false,
             infobar: true,

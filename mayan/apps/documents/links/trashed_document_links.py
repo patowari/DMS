@@ -8,8 +8,8 @@ from ..icons import (
     icon_trashed_document_restore
 )
 from ..permissions import (
-    permission_trashed_document_delete, permission_trashed_document_restore,
-    permission_document_trash, permission_trash_empty
+    permission_document_trash, permission_trash_empty,
+    permission_trashed_document_delete, permission_trashed_document_restore
 )
 
 

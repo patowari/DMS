@@ -3,7 +3,7 @@ from actstream.models import Action, any_stream
 from mayan.apps.acls.classes import ModelPermission
 
 from ..classes import (
-    EventModelRegistry, EventTypeNamespace, EventType, ModelEventType
+    EventModelRegistry, EventType, EventTypeNamespace, ModelEventType
 )
 from ..models import Notification, ObjectEventSubscription
 from ..permissions import permission_events_view

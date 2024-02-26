@@ -171,12 +171,14 @@ class StagingFolderFile:
         result = [
             TransformationResize(
                 width=self.staging_folder.kwargs['preview_width'],
-                height=self.staging_folder.kwargs['preview_height'],
+                height=self.staging_folder.kwargs['preview_height']
             )
         ]
 
         # Interactive transformations second.
-        result.extend(transformation_instance_list or [])
+        result.extend(
+            transformation_instance_list or []
+        )
 
         return result
 
@@ -282,7 +284,7 @@ class SourceBackendStagingFolder(
                 'Server side filesystem path.'
             ),
             'kwargs': {
-                'max_length': 255,
+                'max_length': 255
             },
             'label': _('Folder path'),
             'required': True
@@ -556,7 +558,9 @@ class SourceBackendStagingFolder(
 
     def get_callback_kwargs(self):
         callback_kwargs = super().get_callback_kwargs()
-        callback_kwargs.setdefault('extra_data', {})
+        callback_kwargs.setdefault(
+            'extra_data', {}
+        )
 
         callback_kwargs['extra_data'].update(
             {

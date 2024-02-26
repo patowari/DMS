@@ -286,7 +286,9 @@ class DocumentPropertiesEditActionTestCase(
             instance=self._test_document
         )
 
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
         self._test_document.refresh_from_db()
 
         self.assertNotEqual(
@@ -303,7 +305,9 @@ class DocumentPropertiesEditActionTestCase(
         action = DocumentPropertiesEditAction(
             form_data=TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEMPLATE_DATA
         )
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertEqual(
             self._test_document.label,

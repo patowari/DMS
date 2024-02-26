@@ -199,7 +199,9 @@ def patch_files(path=None, replace_list=None):
                                     if letter == pattern['search'][0]:
                                         text = '{}{}'.format(
                                             letter, source_file_object.read(
-                                                len(pattern['search']) - 1
+                                                len(
+                                                    pattern['search']
+                                                ) - 1
                                             )
                                         )
 

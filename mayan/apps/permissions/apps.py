@@ -6,7 +6,6 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
     permission_acl_edit, permission_acl_view
 )
-
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
@@ -23,11 +22,13 @@ from mayan.apps.user_management.links import link_group_list
 from .classes import Permission
 from .dashboard_widgets import DashboardWidgetRoleTotal
 from .events import event_role_created, event_role_edited
-from .handlers import handler_permission_initialize, handler_purge_permissions
+from .handlers import (
+    handler_permission_initialize, handler_purge_permissions
+)
 from .links import (
-    link_group_role_list, link_role_create, link_role_single_delete,
-    link_role_multiple_delete, link_role_edit, link_role_group_list,
-    link_role_list, link_role_permission_list
+    link_group_role_list, link_role_create, link_role_edit,
+    link_role_group_list, link_role_list, link_role_multiple_delete,
+    link_role_permission_list, link_role_single_delete
 )
 from .methods import method_group_roles_add, method_group_roles_remove
 from .permissions import (
@@ -110,7 +111,9 @@ class PermissionsApp(MayanAppConfig):
             widget=DashboardWidgetRoleTotal, order=99
         )
 
-        menu_setup.bind_links(links=(link_role_list,))
+        menu_setup.bind_links(
+            links=(link_role_list,)
+        )
 
         # Group
 

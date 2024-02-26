@@ -142,7 +142,9 @@ class DocumentVersionModificationViewTestMixin:
 
 class DocumentVersionPageAPIViewTestMixin:
     def _request_test_document_version_page_create_api_view(self):
-        pk_list = list(DocumentVersionPage.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentVersionPage.objects.values_list('pk', flat=True)
+        )
 
         content_type = ContentType.objects.get_for_model(
             model=self._test_document_file_page
@@ -224,7 +226,7 @@ class DocumentVersionPageAPIViewTestMixin:
         return self.get(
             viewname='rest_api:documentversionpage-list', kwargs={
                 'document_id': self._test_document.pk,
-                'document_version_id': self._test_document_version.pk,
+                'document_version_id': self._test_document_version.pk
             }
         )
 
@@ -302,7 +304,7 @@ class DocumentVersionViewTestMixin:
     def _request_test_document_version_print_form_view(self):
         return self.get(
             viewname='documents:document_version_print_form', kwargs={
-                'document_version_id': self._test_document_version.pk,
+                'document_version_id': self._test_document_version.pk
             }, data={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -311,7 +313,7 @@ class DocumentVersionViewTestMixin:
     def _request_test_document_version_print_view(self):
         return self.get(
             viewname='documents:document_version_print_view', kwargs={
-                'document_version_id': self._test_document_version.pk,
+                'document_version_id': self._test_document_version.pk
             }, query={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -322,7 +324,7 @@ class DocumentVersionPageViewTestMixin:
     def _request_test_document_version_page_delete_view(self):
         return self.post(
             viewname='documents:document_version_page_delete', kwargs={
-                'document_version_page_id': self._test_document_version_page.pk,
+                'document_version_page_id': self._test_document_version_page.pk
             }
         )
 
@@ -350,7 +352,7 @@ class DocumentVersionPageViewTestMixin:
     def _request_test_document_version_page_view(self, document_version_page):
         return self.get(
             viewname='documents:document_version_page_view', kwargs={
-                'document_version_page_id': document_version_page.pk,
+                'document_version_page_id': document_version_page.pk
             }
         )
 

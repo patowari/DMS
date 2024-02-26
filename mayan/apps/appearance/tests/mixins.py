@@ -16,11 +16,13 @@ class ThemeTestMixin:
 
 class ThemeViewTestMixin:
     def _request_test_theme_create_view(self):
-        pk_list = list(Theme.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Theme.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='appearance:theme_create', data={
-                'label': TEST_THEME_LABEL,
+                'label': TEST_THEME_LABEL
             }
         )
 
@@ -40,7 +42,7 @@ class ThemeViewTestMixin:
             viewname='appearance:theme_edit', kwargs={
                 'theme_id': self._test_theme.pk
             }, data={
-                'label': TEST_THEME_LABEL_EDITED,
+                'label': TEST_THEME_LABEL_EDITED
             }
         )
 

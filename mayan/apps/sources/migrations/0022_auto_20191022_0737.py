@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0021_auto_20190629_0648'),
+        ('sources', '0021_auto_20190629_0648')
     ]
 
     operations = [
@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
                 default=True, help_text='Execute the IMAP expunge command '
                 'after processing each email message.',
                 verbose_name='Execute expunge'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='imapemail',
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 blank=True, help_text='IMAP Mailbox to which processed '
                 'messages will be copied.', max_length=96, null=True,
                 verbose_name='Destination mailbox'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='imapemail',
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 'https://tools.ietf.org/html/rfc2060.html#section-6.4.6 or '
                 'the custom commands for your IMAP server.', null=True,
                 verbose_name='Store commands'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='imapemail',
@@ -47,6 +47,6 @@ class Migration(migrations.Migration):
                 'format specified in '
                 'https://tools.ietf.org/html/rfc2060.html#section-6.4.4',
                 null=True, verbose_name='Search criteria'
-            ),
-        ),
+            )
+        )
     ]

@@ -1,5 +1,5 @@
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.permissions import permission_document_type_edit
+from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (

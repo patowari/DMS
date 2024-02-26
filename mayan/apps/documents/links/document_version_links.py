@@ -9,8 +9,8 @@ from ..icons import (
     icon_document_version_active, icon_document_version_create,
     icon_document_version_delete, icon_document_version_edit,
     icon_document_version_list, icon_document_version_modification,
-    icon_document_version_print, icon_document_version_return_document,
-    icon_document_version_return_list, icon_document_version_preview,
+    icon_document_version_preview, icon_document_version_print,
+    icon_document_version_return_document, icon_document_version_return_list,
     icon_document_version_transformation_list_clear,
     icon_document_version_transformation_list_clone
 )

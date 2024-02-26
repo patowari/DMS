@@ -41,6 +41,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 db_index=True, max_length=64, unique=True,
                 verbose_name='Label'
-            ),
+            )
         )
     ]

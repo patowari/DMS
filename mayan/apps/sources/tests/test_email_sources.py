@@ -151,7 +151,7 @@ class EmailSourceBackendMedatadataTestCase(
     def test_email_from_value_as_metadata(self):
         self._create_test_email_source_backend(
             extra_data={
-                'from_metadata_type_id': self._test_metadata_type.pk,
+                'from_metadata_type_id': self._test_metadata_type.pk
             }
         )
         source_backend_instance = self._test_source.get_backend_instance()
@@ -172,7 +172,7 @@ class EmailSourceBackendMedatadataTestCase(
     def test_email_subjet_value_as_metadata(self):
         self._create_test_email_source_backend(
             extra_data={
-                'subject_metadata_type_id': self._test_metadata_type.pk,
+                'subject_metadata_type_id': self._test_metadata_type.pk
             }
         )
         source_backend_instance = self._test_source.get_backend_instance()
@@ -193,7 +193,7 @@ class EmailSourceBackendMedatadataTestCase(
     def test_message_id_subjet_value_as_metadata(self):
         self._create_test_email_source_backend(
             extra_data={
-                'message_id_metadata_type_id': self._test_metadata_type.pk,
+                'message_id_metadata_type_id': self._test_metadata_type.pk
             }
         )
         source_backend_instance = self._test_source.get_backend_instance()
@@ -238,7 +238,7 @@ class EmailSourceBackendMetadataYAMLAttachmentTestCase(
         test_metadata_yaml = yaml_dump(
             data={
                 test_metadata_type_1.name: TEST_METADATA_VALUE_1,
-                test_metadata_type_2.name: TEST_METADATA_VALUE_2,
+                test_metadata_type_2.name: TEST_METADATA_VALUE_2
             }
         )
 

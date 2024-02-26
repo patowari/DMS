@@ -14,8 +14,8 @@ from ..events import (
     event_document_metadata_removed
 )
 from ..permissions import (
-    permission_document_metadata_add, permission_document_metadata_remove,
-    permission_document_metadata_edit, permission_document_metadata_view
+    permission_document_metadata_add, permission_document_metadata_edit,
+    permission_document_metadata_remove, permission_document_metadata_view
 )
 
 from .literals import TEST_METADATA_VALUE, TEST_METADATA_VALUE_EDITED
@@ -309,8 +309,14 @@ class DocumentMetadataViewTestCase(
         )
 
         self.assertEqual(
-            set(map(int, url.args['id_list'].split(','))),
-            {self._test_documents[0].pk, self._test_documents[1].pk}
+            set(
+                map(
+                    int, url.args['id_list'].split(',')
+                )
+            ),
+            {
+                self._test_documents[0].pk, self._test_documents[1].pk
+            }
         )
 
         events = self._get_test_events()
@@ -381,12 +387,16 @@ class DocumentMetadataViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
-        self.assertEqual(events[0].action_object, self._test_metadata_types[0])
+        self.assertEqual(
+            events[0].action_object, self._test_metadata_types[0]
+        )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_document_metadata_added.id)
 
-        self.assertEqual(events[1].action_object, self._test_metadata_types[1])
+        self.assertEqual(
+            events[1].action_object, self._test_metadata_types[1]
+        )
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, self._test_document)
         self.assertEqual(events[1].verb, event_document_metadata_added.id)
@@ -404,7 +414,8 @@ class DocumentMetadataViewTestCase(
         self._test_document.metadata.first().refresh_from_db()
 
         self.assertEqual(
-            self._test_document.metadata.first().value, document_metadata_value
+            self._test_document.metadata.first().value,
+            document_metadata_value
         )
 
         events = self._get_test_events()
@@ -428,7 +439,8 @@ class DocumentMetadataViewTestCase(
         self._test_document.metadata.first().refresh_from_db()
 
         self.assertEqual(
-            self._test_document.metadata.first().value, document_metadata_value
+            self._test_document.metadata.first().value,
+            document_metadata_value
         )
 
         events = self._get_test_events()
@@ -452,7 +464,8 @@ class DocumentMetadataViewTestCase(
         self._test_document.metadata.first().refresh_from_db()
 
         self.assertEqual(
-            self._test_document.metadata.first().value, document_metadata_value
+            self._test_document.metadata.first().value,
+            document_metadata_value
         )
 
         events = self._get_test_events()
@@ -480,7 +493,8 @@ class DocumentMetadataViewTestCase(
         self._test_document.metadata.first().refresh_from_db()
 
         self.assertNotEqual(
-            self._test_document.metadata.first().value, document_metadata_value
+            self._test_document.metadata.first().value,
+            document_metadata_value
         )
 
         events = self._get_test_events()
@@ -515,7 +529,8 @@ class DocumentMetadataViewTestCase(
         self._test_document.metadata.first().refresh_from_db()
 
         self.assertEqual(
-            self._test_document.metadata.first().value, document_metadata_value
+            self._test_document.metadata.first().value,
+            document_metadata_value
         )
 
         events = self._get_test_events()
@@ -551,7 +566,7 @@ class DocumentMetadataViewTestCase(
 
         response = self._request_test_document_metadata_edit_post_view(
             extra_data={
-                'form-0-metadata_type_id': test_document_metadata_2.metadata_type.pk,
+                'form-0-metadata_type_id': test_document_metadata_2.metadata_type.pk
             }, follow=True
         )
 
@@ -626,8 +641,14 @@ class DocumentMetadataViewTestCase(
         )
 
         self.assertEqual(
-            set(map(int, url.args['id_list'].split(','))),
-            {self._test_documents[0].pk, self._test_documents[1].pk}
+            set(
+                map(
+                    int, url.args['id_list'].split(',')
+                )
+            ),
+            {
+                self._test_documents[0].pk, self._test_documents[1].pk
+            }
         )
 
         events = self._get_test_events()
@@ -758,7 +779,8 @@ class DocumentMetadataViewTestCase(
         response = self._request_test_document_metadata_remove_get_view()
 
         self.assertNotContains(
-            response=response, text=self._test_metadata_type.label, status_code=404
+            response=response, text=self._test_metadata_type.label,
+            status_code=404
         )
         self.assertTrue(
             self._test_document_metadata in self._test_document.metadata.all()
@@ -831,7 +853,8 @@ class DocumentMetadataViewTestCase(
 
         response = self._request_test_document_metadata_remove_get_view()
         self.assertNotContains(
-            response=response, text=self._test_metadata_type.label, status_code=404
+            response=response, text=self._test_metadata_type.label,
+            status_code=404
         )
 
         self.assertTrue(
@@ -1176,7 +1199,9 @@ class DocumentMetadataRequiredTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, self._test_metadata_types[0])
+        self.assertEqual(
+            events[0].action_object, self._test_metadata_types[0]
+        )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_document_metadata_removed.id)
@@ -1202,7 +1227,9 @@ class DocumentMetadataRequiredTestCase(
 
         self._clear_events()
 
-        response = self._request_test_document_metadata_remove_post_view(index=1)
+        response = self._request_test_document_metadata_remove_post_view(
+            index=1
+        )
         self.assertEqual(response.status_code, 302)
 
         self.assertTrue(
@@ -1252,7 +1279,7 @@ class DocumentMetadataRequiredTestCase(
                 'form-1-value': TEST_METADATA_VALUE_EDITED,
                 'form-TOTAL_FORMS': '2',
                 'form-INITIAL_FORMS': '0',
-                'form-MAX_NUM_FORMS': '',
+                'form-MAX_NUM_FORMS': ''
             }
         )
         self.assertEqual(response.status_code, 302)
@@ -1271,7 +1298,9 @@ class DocumentMetadataRequiredTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, self._test_metadata_types[0])
+        self.assertEqual(
+            events[0].action_object, self._test_metadata_types[0]
+        )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_document_metadata_edited.id)

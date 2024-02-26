@@ -52,7 +52,9 @@ class WorkflowAction(BaseBackend):
         for klass in WorkflowAction.get_all():
             for app_name, app in apps_name_map.items():
                 if klass.__module__.startswith(app_name):
-                    apps_workflow_action_map.setdefault(app, [])
+                    apps_workflow_action_map.setdefault(
+                        app, []
+                    )
                     apps_workflow_action_map[app].append(
                         (klass.id(), klass.label)
                     )
@@ -62,7 +64,11 @@ class WorkflowAction(BaseBackend):
         ]
 
         # Sort by app, then by workflow action.
-        return sorted(result, key=lambda x: (x[0], x[1]))
+        return sorted(
+            result, key=lambda x: (
+                x[0], x[1]
+            )
+        )
 
     @classmethod
     def id(cls):
@@ -77,7 +83,9 @@ class WorkflowAction(BaseBackend):
             try:
                 WorkflowStateAction.objects.filter(
                     action_path=previous_dotted_path
-                ).update(action_path=cls.id())
+                ).update(
+                    action_path=cls.id()
+                )
             except (OperationalError, ProgrammingError):
                 # Ignore errors during the database migration and
                 # quit further attempts.
@@ -108,7 +116,7 @@ class WorkflowAction(BaseBackend):
         result = {
             'fields': self.get_fields(),
             'media': self.get_media(),
-            'widgets': self.get_widgets(),
+            'widgets': self.get_widgets()
         }
 
         field_order = self.get_field_order()

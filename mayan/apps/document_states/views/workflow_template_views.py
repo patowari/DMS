@@ -8,15 +8,15 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.permissions import permission_document_type_edit
 from mayan.apps.views.generics import (
-    AddRemoveView, ConfirmView, MultipleObjectFormActionView,
-    MultipleObjectDeleteView, SingleObjectCreateView, SingleObjectDetailView,
-    SingleObjectEditView, SingleObjectListView
+    AddRemoveView, ConfirmView, MultipleObjectDeleteView,
+    MultipleObjectFormActionView, SingleObjectCreateView,
+    SingleObjectDetailView, SingleObjectEditView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.workflow_template_forms import (
-    WorkflowTemplateForm, WorkflowTemplateSelectionForm,
-    WorkflowTemplatePreviewForm
+    WorkflowTemplateForm, WorkflowTemplatePreviewForm,
+    WorkflowTemplateSelectionForm
 )
 from ..icons import (
     icon_document_type_workflow_template_list,
@@ -30,8 +30,8 @@ from ..links import link_workflow_template_create
 from ..models import Workflow
 from ..permissions import (
     permission_workflow_template_create, permission_workflow_template_delete,
-    permission_workflow_template_edit, permission_workflow_tools,
-    permission_workflow_template_view
+    permission_workflow_template_edit, permission_workflow_template_view,
+    permission_workflow_tools
 )
 from ..tasks import (
     task_launch_all_workflows, task_launch_workflow, task_launch_workflow_for

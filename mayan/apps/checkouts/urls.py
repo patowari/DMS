@@ -1,9 +1,12 @@
 from django.conf.urls import url
 
-from .api_views import APICheckedoutDocumentListView, APICheckedoutDocumentView, APIDocumentCheckoutView
+from .api_views import (
+    APICheckedoutDocumentListView, APICheckedoutDocumentView,
+    APIDocumentCheckoutView
+)
 from .views import (
-    DocumentCheckInView, DocumentCheckOutDetailView, DocumentCheckOutListView,
-    DocumentCheckOutView
+    DocumentCheckInView, DocumentCheckOutDetailView,
+    DocumentCheckOutListView, DocumentCheckOutView
 )
 
 urlpatterns = [

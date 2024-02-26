@@ -53,11 +53,11 @@ class WorkflowTransitionFieldSerializer(
         label=_('Workflow transition URL'), view_kwargs=(
             {
                 'lookup_field': 'transition.workflow_id',
-                'lookup_url_kwarg': 'workflow_template_id',
+                'lookup_url_kwarg': 'workflow_template_id'
             },
             {
                 'lookup_field': 'transition_id',
-                'lookup_url_kwarg': 'workflow_template_transition_id',
+                'lookup_url_kwarg': 'workflow_template_transition_id'
             }
         ), view_name='rest_api:workflow-template-transition-detail'
     )
@@ -144,7 +144,7 @@ class WorkflowTemplateTransitionSerializer(
             viewname='rest_api:workflow-template-transition-field-list',
             kwargs={
                 'workflow_template_id': instance.workflow_id,
-                'workflow_template_transition_id': instance.pk,
+                'workflow_template_transition_id': instance.pk
             }, request=self.context['request'], format=self.context['format']
         )
 
@@ -153,7 +153,7 @@ class WorkflowTemplateTransitionSerializer(
             viewname='rest_api:workflow-template-transition-trigger-list',
             kwargs={
                 'workflow_template_id': instance.workflow_id,
-                'workflow_template_transition_id': instance.pk,
+                'workflow_template_transition_id': instance.pk
             }, request=self.context['request'], format=self.context['format']
         )
 
@@ -171,7 +171,7 @@ class WorkflowTemplateTransitionSerializer(
     def get_workflow_template_url(self, instance):
         return reverse(
             viewname='rest_api:workflow-template-detail', kwargs={
-                'workflow_template_id': instance.workflow.pk,
+                'workflow_template_id': instance.workflow.pk
             }, request=self.context['request'], format=self.context['format']
         )
 

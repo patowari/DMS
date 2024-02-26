@@ -45,7 +45,9 @@ class DocumentQuickLabelViewTestMixin:
             # View needs at least an empty label for quick
             # label to work. Cause is unknown.
         }
-        data.update(extra_data or {})
+        data.update(
+            extra_data or {}
+        )
 
         return self.post(
             viewname='documents:document_properties_edit', kwargs={
@@ -56,7 +58,9 @@ class DocumentQuickLabelViewTestMixin:
 
 class DocumentTypeAPIViewTestMixin:
     def _request_test_document_type_create_api_view(self):
-        pk_list = list(DocumentType.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentType.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:documenttype-list', data={
@@ -76,28 +80,28 @@ class DocumentTypeAPIViewTestMixin:
     def _request_test_document_type_delete_api_view(self):
         return self.delete(
             viewname='rest_api:documenttype-detail', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }
         )
 
     def _request_test_document_type_detail_api_view(self):
         return self.get(
             viewname='rest_api:documenttype-detail', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }
         )
 
     def _request_test_document_type_edit_via_patch_api_view(self):
         return self.patch(
             viewname='rest_api:documenttype-detail', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={'label': TEST_DOCUMENT_TYPE_LABEL_EDITED}
         )
 
     def _request_test_document_type_edit_via_put_api_view(self):
         return self.put(
             viewname='rest_api:documenttype-detail', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={'label': TEST_DOCUMENT_TYPE_LABEL_EDITED}
         )
 
@@ -141,11 +145,13 @@ class DocumentTypeFilenameGeneratorViewTestMixin:
 
 class DocumentTypeQuickLabelAPIViewTestMixin:
     def _request_test_document_type_quick_label_create_api_view(self):
-        pk_list = list(DocumentTypeFilename.objects.values('pk'))
+        pk_list = list(
+            DocumentTypeFilename.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:documenttype-quicklabel-list', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL
             }
@@ -164,7 +170,7 @@ class DocumentTypeQuickLabelAPIViewTestMixin:
         return self.delete(
             viewname='rest_api:documenttype-quicklabel-detail', kwargs={
                 'document_type_id': self._test_document_type.pk,
-                'document_type_quick_label_id': self._test_document_type_quick_label.pk,
+                'document_type_quick_label_id': self._test_document_type_quick_label.pk
             }
         )
 
@@ -172,7 +178,7 @@ class DocumentTypeQuickLabelAPIViewTestMixin:
         return self.get(
             viewname='rest_api:documenttype-quicklabel-detail', kwargs={
                 'document_type_id': self._test_document_type.pk,
-                'document_type_quick_label_id': self._test_document_type_quick_label.pk,
+                'document_type_quick_label_id': self._test_document_type_quick_label.pk
             }
         )
 
@@ -180,7 +186,7 @@ class DocumentTypeQuickLabelAPIViewTestMixin:
         return self.patch(
             viewname='rest_api:documenttype-quicklabel-detail', kwargs={
                 'document_type_id': self._test_document_type.pk,
-                'document_type_quick_label_id': self._test_document_type_quick_label.pk,
+                'document_type_quick_label_id': self._test_document_type_quick_label.pk
             }, data={'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL_EDITED}
         )
 
@@ -188,7 +194,7 @@ class DocumentTypeQuickLabelAPIViewTestMixin:
         return self.put(
             viewname='rest_api:documenttype-quicklabel-detail', kwargs={
                 'document_type_id': self._test_document_type.pk,
-                'document_type_quick_label_id': self._test_document_type_quick_label.pk,
+                'document_type_quick_label_id': self._test_document_type_quick_label.pk
             }, data={'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL_EDITED}
         )
 
@@ -206,7 +212,7 @@ class DocumentTypeQuickLabelViewTestMixin:
             viewname='documents:document_type_filename_create', kwargs={
                 'document_type_id': self._test_document_type.pk
             }, data={
-                'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL,
+                'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL
             }
         )
 
@@ -222,7 +228,7 @@ class DocumentTypeQuickLabelViewTestMixin:
             viewname='documents:document_type_filename_edit', kwargs={
                 'document_type_filename_id': self._test_document_type_quick_label.pk
             }, data={
-                'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL_EDITED,
+                'filename': TEST_DOCUMENT_TYPE_QUICK_LABEL_EDITED
             }
         )
 
@@ -264,7 +270,7 @@ class DocumentTypeViewTestMixin:
             viewname='documents:document_type_edit', kwargs={
                 'document_type_id': self._test_document_type.pk
             }, data={
-                'label': TEST_DOCUMENT_TYPE_LABEL_EDITED,
+                'label': TEST_DOCUMENT_TYPE_LABEL_EDITED
             }
         )
 

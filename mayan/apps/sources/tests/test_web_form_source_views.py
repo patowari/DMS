@@ -85,12 +85,15 @@ class WebFormDocumentUploadWizardViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 11)
 
-        test_documents = (Document.objects.first(), Document.objects.last())
+        test_documents = (
+            Document.objects.first(), Document.objects.last()
+        )
         test_document_files = (
             test_documents[0].file_latest, test_documents[1].file_latest
         )
         test_document_versions = (
-            test_documents[0].version_active, test_documents[1].version_active
+            test_documents[0].version_active,
+            test_documents[1].version_active
         )
         test_document_version_pages = (
             test_document_versions[0].pages.first(),

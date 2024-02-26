@@ -21,7 +21,8 @@ from ..links import link_workflow_instance_transition
 from ..literals import FIELD_TYPE_MAPPING, WIDGET_CLASS_MAPPING
 from ..models import WorkflowInstance
 from ..permissions import (
-    permission_workflow_instance_transition, permission_workflow_template_view
+    permission_workflow_instance_transition,
+    permission_workflow_template_view
 )
 
 
@@ -120,7 +121,9 @@ class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
                 'Document "%s" transitioned successfully'
             ) % self.external_object.document, request=self.request
         )
-        return HttpResponseRedirect(redirect_to=self.get_success_url())
+        return HttpResponseRedirect(
+            redirect_to=self.get_success_url()
+        )
 
     def get_external_object_queryset_filtered(self):
         queryset = super().get_external_object_queryset_filtered()
@@ -142,7 +145,7 @@ class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
                 'Execute transition "%(transition)s" for workflow: %(workflow)s'
             ) % {
                 'transition': self.get_workflow_template_transition(),
-                'workflow': self.external_object,
+                'workflow': self.external_object
             },
             'workflow_instance': self.external_object
         }

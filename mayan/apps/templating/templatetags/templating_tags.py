@@ -135,7 +135,9 @@ class SpacelessPlusNode(Node):
             if line.strip() != '':
                 result.append(line)
 
-        return strip_spaces_between_tags(value='\n'.join(result))
+        return strip_spaces_between_tags(
+            value='\n'.join(result)
+        )
 
 
 @register.tag
@@ -143,7 +145,9 @@ def spaceless_plus(parser, token):
     """
     Removes empty lines between the tag nodes.
     """
-    nodelist = parser.parse(('endspaceless_plus',))
+    nodelist = parser.parse(
+        ('endspaceless_plus',)
+    )
     parser.delete_first_token()
     return SpacelessPlusNode(nodelist)
 

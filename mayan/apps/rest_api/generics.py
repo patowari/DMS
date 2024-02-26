@@ -10,7 +10,7 @@ from mayan.apps.dynamic_search.api_filters import RESTAPISearchFilter
 from .api_view_mixins import (
     CheckQuerysetAPIViewMixin, DynamicFieldListAPIViewMixin,
     InstanceExtraDataAPIViewMixin, QuerySetOverrideCheckAPIViewMixin,
-    SerializerExtraContextAPIViewMixin, SchemaInspectionAPIViewMixin
+    SchemaInspectionAPIViewMixin, SerializerExtraContextAPIViewMixin
 )
 from .filters import MayanObjectPermissionsFilter, MayanSortingFilter
 from .permissions import MayanPermission

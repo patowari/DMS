@@ -1,6 +1,6 @@
 import uuid
 
-from django.db import models, migrations
+from django.db import migrations, models
 from django.core.files.storage import FileSystemStorage
 
 

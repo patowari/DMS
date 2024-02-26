@@ -1,6 +1,8 @@
 from django.conf.urls import url
 
-from .api_views import APISourceActionDetailView, APISourceListView, APISourceView
+from .api_views import (
+    APISourceActionDetailView, APISourceListView, APISourceView
+)
 from .views.document_file_views import DocumentFileUploadInteractiveView
 from .views.document_views import DocumentUploadInteractiveView
 from .views.source_views import (

@@ -66,7 +66,9 @@ class ObjectCopyTestMixin:
                 getattr(test_object_copy, self._test_copy_method)()
             )
         else:
-            test_objects = ((test_object, test_object_copy),)
+            test_objects = (
+                (test_object, test_object_copy),
+            )
 
         for test_object, test_object_copy in test_objects:
             for field in model_copy.fields:

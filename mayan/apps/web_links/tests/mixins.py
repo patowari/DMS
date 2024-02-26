@@ -66,7 +66,9 @@ class ResolvedWebLinkAPIViewTestMixin:
 
 class WebLinkAPIViewTestMixin:
     def _request_test_web_link_create_api_view(self):
-        pk_list = list(WebLink.objects.values('pk'))
+        pk_list = list(
+            WebLink.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:web_link-list', data={
@@ -196,7 +198,9 @@ class WebLinkViewTestMixin:
         )
 
     def _request_test_web_link_create_view(self):
-        pk_list = list(WebLink.objects.values('pk'))
+        pk_list = list(
+            WebLink.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='web_links:web_link_create', data={

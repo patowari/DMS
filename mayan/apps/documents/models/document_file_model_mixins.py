@@ -102,7 +102,9 @@ class DocumentFileBusinessLogicMixin:
                 self.document.label = str(self.file)
 
             self.document._event_ignore = True
-            self.document.save(update_fields=('is_stub', 'label'))
+            self.document.save(
+                update_fields=('is_stub', 'label')
+            )
 
         except Exception as exception:
             logger.error(
@@ -202,9 +204,13 @@ class DocumentFileBusinessLogicMixin:
 
                     hash_object.update(data)
 
-            self.checksum = str(hash_object.hexdigest())
+            self.checksum = str(
+                hash_object.hexdigest()
+            )
             if save:
-                self.save(update_fields=('checksum',))
+                self.save(
+                    update_fields=('checksum',)
+                )
 
             return self.checksum
 
@@ -257,7 +263,9 @@ class DocumentFileBusinessLogicMixin:
         cache_filename = 'intermediate_file'
 
         try:
-            cache_file = self.cache_partition.get_file(filename=cache_filename)
+            cache_file = self.cache_partition.get_file(
+                filename=cache_filename
+            )
         except CachePartitionFile.DoesNotExist:
             logger.debug(msg='Intermediate file not found.')
 

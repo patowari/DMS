@@ -20,7 +20,9 @@ from .literals import (
 
 class AssetAPIViewTestMixin:
     def _request_test_asset_create_api_view(self):
-        pk_list = list(Asset.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Asset.objects.values_list('pk', flat=True)
+        )
 
         with open(file=TEST_ASSET_PATH, mode='rb') as file_object:
             response = self.post(
@@ -32,7 +34,9 @@ class AssetAPIViewTestMixin:
             )
 
         try:
-            self._test_asset = Asset.objects.get(~Q(pk__in=pk_list))
+            self._test_asset = Asset.objects.get(
+                ~Q(pk__in=pk_list)
+            )
         except Asset.DoesNotExist:
             self._test_asset = None
 
@@ -97,7 +101,9 @@ class AssetTestMixin:
 
 class AssetViewTestMixin:
     def _request_test_asset_create_view(self):
-        pk_list = list(Asset.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Asset.objects.values_list('pk', flat=True)
+        )
 
         with open(file=TEST_ASSET_PATH, mode='rb') as file_object:
             response = self.post(
@@ -134,7 +140,7 @@ class AssetViewTestMixin:
                 'asset_id': self._test_asset.pk
             }, data={
                 'label': TEST_ASSET_LABEL_EDITED,
-                'internal_name': TEST_ASSET_INTERNAL_NAME,
+                'internal_name': TEST_ASSET_INTERNAL_NAME
             }
         )
 
@@ -244,7 +250,7 @@ class TransformationTestMixin(LayerTestMixin):
 class TransformationViewTestMixin:
     def _request_transformation_create_post_view(self):
         pk_list = list(
-            LayerTransformation.objects.values('pk')
+            LayerTransformation.objects.values_list('pk', flat=True)
         )
 
         response = self.post(

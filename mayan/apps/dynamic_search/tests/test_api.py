@@ -55,7 +55,9 @@ class SearchAPIViewTestCase(
         self.assertEqual(
             response.data['results'][0]['label'], self._test_document.label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -81,12 +83,16 @@ class SearchAPIViewTestCase(
 
         self._clear_events()
 
-        response = self._request_search_simple_view(query={'format': 'json'})
+        response = self._request_search_simple_view(
+            query={'format': 'json'}
+        )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             response.data['results'][0]['label'], self._test_document.label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
     def test_search_api_view_empty_extra_query_with_access(self):
         self.grant_access(
@@ -123,7 +129,9 @@ class SearchAPIViewTestCase(
         self.assertEqual(
             response.data['results'][0]['label'], self._test_document.label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -164,11 +172,13 @@ class SearchFilterCombinatiomAPITestCase(
         response = self._request_search_simple_view(
             search_model_name='documents.Document', search_term='AAA',
             query={
-                'filter_label': 'BBB',
+                'filter_label': 'BBB'
             }
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -246,7 +256,9 @@ class RESTAPISearchFilterTestCase(
             response.data['results'][0]['label'],
             self._test_documents[0].label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -263,7 +275,9 @@ class RESTAPISearchFilterTestCase(
             response.data['results'][0]['label'],
             self._test_documents[1].label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -288,7 +302,9 @@ class RESTAPISearchFilterTestCase(
             response.data['results'][0]['label'],
             self._test_documents[0].label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

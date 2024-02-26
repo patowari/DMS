@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0019_auto_20180803_0440'),
+        ('sources', '0019_auto_20180803_0440')
     ]
 
     operations = [
@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
                 'folder path be scanned for files but also its '
                 'subdirectories.', verbose_name='Include subdirectories?'
             ),
-            preserve_default=False,
+            preserve_default=False
         ),
         migrations.AlterField(
             model_name='watchfoldersource',
@@ -23,6 +23,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 help_text='Server side filesystem path to scan for files.',
                 max_length=255, verbose_name='Folder path'
-            ),
-        ),
+            )
+        )
     ]

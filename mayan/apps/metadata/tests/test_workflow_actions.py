@@ -9,13 +9,13 @@ from ..events import (
     event_document_metadata_removed
 )
 from ..models import MetadataType
-from ..workflow_actions import (
-    DocumentMetadataAddAction, DocumentMetadataEditAction,
-    DocumentMetadataRemoveAction
-)
 from ..permissions import (
     permission_document_metadata_add, permission_document_metadata_edit,
     permission_document_metadata_remove
+)
+from ..workflow_actions import (
+    DocumentMetadataAddAction, DocumentMetadataEditAction,
+    DocumentMetadataRemoveAction
 )
 
 from .literals import (

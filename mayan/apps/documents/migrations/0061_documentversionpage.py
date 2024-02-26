@@ -5,7 +5,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         ('contenttypes', '0002_remove_content_type_name'),
-        ('documents', '0060_documentversion'),
+        ('documents', '0060_documentversion')
     ]
     operations = [
         migrations.CreateModel(
@@ -36,13 +36,15 @@ class Migration(migrations.Migration):
                         related_name='pages', to='documents.DocumentVersion',
                         verbose_name='Document version'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version page',
                 'verbose_name_plural': 'Document version pages',
                 'ordering': ('page_number',),
-                'unique_together': {('document_version', 'page_number')},
-            },
-        ),
+                'unique_together': {
+                    ('document_version', 'page_number')
+                }
+            }
+        )
     ]

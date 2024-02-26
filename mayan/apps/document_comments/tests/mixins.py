@@ -7,7 +7,9 @@ from .literals import TEST_COMMENT_TEXT, TEST_COMMENT_TEXT_EDITED
 
 class CommentAPIViewTestMixin:
     def _request_test_comment_create_api_view(self):
-        pk_list = list(Comment.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Comment.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:comment-list', kwargs={
@@ -30,7 +32,7 @@ class CommentAPIViewTestMixin:
         return self.delete(
             viewname='rest_api:comment-detail', kwargs={
                 'document_id': self._test_document.pk,
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }
         )
 
@@ -46,7 +48,7 @@ class CommentAPIViewTestMixin:
         return self.patch(
             viewname='rest_api:comment-detail', kwargs={
                 'document_id': self._test_document.pk,
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }, data={'text': TEST_COMMENT_TEXT_EDITED}
         )
 
@@ -54,7 +56,7 @@ class CommentAPIViewTestMixin:
         return self.put(
             viewname='rest_api:comment-detail', kwargs={
                 'document_id': self._test_document.pk,
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }, data={'text': TEST_COMMENT_TEXT_EDITED}
         )
 
@@ -78,7 +80,9 @@ class DocumentCommentTestMixin:
 
 class DocumentCommentViewTestMixin:
     def _request_test_comment_create_view(self):
-        pk_list = list(Comment.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Comment.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='comments:comment_add', kwargs={
@@ -112,7 +116,7 @@ class DocumentCommentViewTestMixin:
     def _request_test_comment_edit_view(self):
         return self.post(
             viewname='comments:comment_edit', kwargs={
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }, data={
                 'text': TEST_COMMENT_TEXT_EDITED
             }
@@ -121,6 +125,6 @@ class DocumentCommentViewTestMixin:
     def _request_test_comment_list_view(self):
         return self.get(
             viewname='comments:comments_for_document', kwargs={
-                'document_id': self._test_document.pk,
+                'document_id': self._test_document.pk
             }
         )

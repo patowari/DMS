@@ -1,9 +1,9 @@
 from rest_framework import status
 
-from mayan.apps.rest_api import generics
 from mayan.apps.documents.api_views.api_view_mixins import (
     ParentObjectDocumentAPIViewMixin
 )
+from mayan.apps.rest_api import generics
 
 from .permissions import permission_document_version_export
 from .tasks import task_document_version_export

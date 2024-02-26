@@ -34,7 +34,9 @@ class TaggedDocumentUploadViewTestCase(
         response = self._request_upload_interactive_document_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_tag in Document.objects.first().tags.all())
+        self.assertTrue(
+            self._test_tag in Document.objects.first().tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)

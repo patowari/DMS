@@ -24,8 +24,7 @@ from .literals import (
     SOURCE_INTERVAL_UNCOMPRESS_CHOICES
 )
 from .mixins import (
-    SourceBackendCompressedMixin, SourceBackendPeriodicMixin,
-    SourceBaseMixin
+    SourceBackendCompressedMixin, SourceBackendPeriodicMixin, SourceBaseMixin
 )
 
 __all__ = (
@@ -399,7 +398,7 @@ class SourceBackendIMAPEmail(
             'default': DEFAULT_EMAIL_IMAP_MAILBOX,
             'help_text': _('IMAP Mailbox from which to check for messages.'),
             'kwargs': {
-                'max_length': 64,
+                'max_length': 64
             },
             'label': _('Mailbox')
         },

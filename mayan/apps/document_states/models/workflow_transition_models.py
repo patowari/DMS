@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import YAMLValidator
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.classes import (
     EventManagerMethodAfter, EventManagerSave
 )
@@ -113,7 +113,8 @@ class WorkflowTransitionField(
     label = models.CharField(
         help_text=_(
             'The field name that will be shown on the user interface.'
-        ), max_length=128, verbose_name=_('Label'))
+        ), max_length=128, verbose_name=_('Label')
+    )
     help_text = models.TextField(
         blank=True, help_text=_(
             'An optional message that will help users better understand the '

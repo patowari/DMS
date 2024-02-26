@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('duplicates', '0003_auto_20201130_0431'),
+        ('duplicates', '0003_auto_20201130_0431')
     ]
 
     operations = [
@@ -26,11 +26,11 @@ class Migration(migrations.Migration):
                     'backend_data', models.TextField(
                         blank=True, verbose_name='Backend data'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Stored duplicate backend',
-                'verbose_name_plural': 'Stored duplicate backends',
-            },
-        ),
+                'verbose_name_plural': 'Stored duplicate backends'
+            }
+        )
     ]

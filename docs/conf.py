@@ -219,7 +219,7 @@ latex_documents = [
     (
         'index', 'MayanEDMS.tex', 'Mayan EDMS Documentation',
         mayan.__author__, 'manual'
-    ),
+    )
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -268,10 +268,12 @@ extlinks = {
         'https://forum.mayan-edms.com/viewtopic.php?t=%s', 'Forum topic #'
     ),
     'github-issue': (
-        'https://github.com/mayan-edms/mayan-edms/issues/%s', 'GitHub issue #'
+        'https://github.com/mayan-edms/mayan-edms/issues/%s',
+        'GitHub issue #'
     ),
     'gitlab-issue': (
-        'https://gitlab.com/mayan-edms/mayan-edms/issues/%s', 'GitLab issue #'
+        'https://gitlab.com/mayan-edms/mayan-edms/issues/%s',
+        'GitLab issue #'
     ),
     'gitlab-merge': (
         'https://gitlab.com/mayan-edms/mayan-edms/merge_requests/%s',
@@ -341,4 +343,6 @@ def setup(app):
             substitutions=substitutions
         )
     )
-    utils.patch_theme_template(app, templates_path=templates_path[0])
+    utils.patch_theme_template(
+        app, templates_path=templates_path[0]
+    )

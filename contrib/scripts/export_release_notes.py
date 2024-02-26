@@ -52,8 +52,12 @@ class ReleaseNoteExporter:
         return result
 
     def __init__(self):
-        sys.path.insert(0, os.path.abspath('..'))
-        sys.path.insert(1, os.path.abspath('.'))
+        sys.path.insert(
+            0, os.path.abspath('..')
+        )
+        sys.path.insert(
+            1, os.path.abspath('.')
+        )
 
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mayan.settings')
 
@@ -159,8 +163,14 @@ class ReleaseNoteExporter:
             return '\n'.join(
                 (
                     '---',
-                    'date: {}-{:02d}-{:02d}'.format(year, MONTHS_TO_NUMBER[month], int(day[:-1])),
-                    'title: "{}"'.format(tree[0].text),
+                    'date: {}-{:02d}-{:02d}'.format(
+                        year, MONTHS_TO_NUMBER[month], int(
+                            day[:-1]
+                        )
+                    ),
+                    'title: "{}"'.format(
+                        tree[0].text
+                    ),
                     '---',
                     str(result_body)
                 )

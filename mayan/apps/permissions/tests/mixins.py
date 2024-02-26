@@ -21,7 +21,7 @@ class GroupRoleAddRemoveViewTestMixin:
     def _request_test_group_role_add_view(self):
         return self.post(
             viewname='permissions:group_role_list', kwargs={
-                'group_id': self._test_group.pk,
+                'group_id': self._test_group.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_role.pk
@@ -31,7 +31,7 @@ class GroupRoleAddRemoveViewTestMixin:
     def _request_test_group_role_remove_view(self):
         return self.post(
             viewname='permissions:group_role_list', kwargs={
-                'group_id': self._test_group.pk,
+                'group_id': self._test_group.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_role.pk
@@ -74,7 +74,9 @@ class PermissionTestCaseMixin:
 
 class RoleAPIViewTestMixin:
     def _request_test_role_create_api_view(self, extra_data=None):
-        pk_list = list(Role.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Role.objects.values_list('pk', flat=True)
+        )
 
         data = {
             'label': TEST_ROLE_LABEL
@@ -214,7 +216,7 @@ class RoleGroupAddRemoveViewTestMixin:
     def _request_test_role_group_add_view(self):
         return self.post(
             viewname='permissions:role_group_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_group.pk
@@ -224,7 +226,7 @@ class RoleGroupAddRemoveViewTestMixin:
     def _request_test_role_group_remove_view(self):
         return self.post(
             viewname='permissions:role_group_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_group.pk
@@ -243,7 +245,7 @@ class RolePermissionAddRemoveViewTestMixin:
     def _request_test_role_permission_add_view(self):
         return self.post(
             viewname='permissions:role_permission_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_permission.stored_permission.pk
@@ -253,7 +255,7 @@ class RolePermissionAddRemoveViewTestMixin:
     def _request_test_role_permission_remove_view(self):
         return self.post(
             viewname='permissions:role_permission_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_permission.stored_permission.pk
@@ -281,11 +283,13 @@ class RoleTestMixin:
 class RoleViewTestMixin:
     def _request_test_role_create_view(self):
         # Typecast to list to force queryset evaluation
-        values = list(Role.objects.values_list('pk', flat=True))
+        values = list(
+            Role.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='permissions:role_create', data={
-                'label': TEST_ROLE_LABEL,
+                'label': TEST_ROLE_LABEL
             }
         )
 
@@ -312,7 +316,7 @@ class RoleViewTestMixin:
             viewname='permissions:role_edit', kwargs={
                 'role_id': self._test_role.pk
             }, data={
-                'label': TEST_ROLE_LABEL_EDITED,
+                'label': TEST_ROLE_LABEL_EDITED
             }
         )
 

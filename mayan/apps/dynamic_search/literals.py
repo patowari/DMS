@@ -37,7 +37,9 @@ SCOPE_OPERATOR_OR = 'OR'
 
 
 def scope_operation_and(*args):
-    result = set(args[0])
+    result = set(
+        args[0]
+    )
     for argument in args[1:]:
         result = result.intersection(argument)
 
@@ -45,7 +47,9 @@ def scope_operation_and(*args):
 
 
 def scope_operation_not(*args):
-    result = set(args[0])
+    result = set(
+        args[0]
+    )
     for argument in args[1:]:
         result = result.difference(argument)
 
@@ -53,7 +57,9 @@ def scope_operation_not(*args):
 
 
 def scope_operation_or(*args):
-    result = set(args[0])
+    result = set(
+        args[0]
+    )
     for argument in args[1:]:
         result = result.union(argument)
 

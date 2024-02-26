@@ -23,7 +23,7 @@ class DocumentFileUploadViewTestMixin:
         return self.get(
             viewname='sources:document_file_upload', kwargs={
                 'document_id': self._test_document.pk,
-                'source_id': self._test_source.pk,
+                'source_id': self._test_source.pk
             }
         )
 
@@ -55,7 +55,7 @@ class DocumentUploadWizardViewTestMixin:
     def _request_upload_interactive_view(self):
         return self.get(
             viewname='sources:document_upload_interactive', data={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }
         )
 
@@ -96,7 +96,9 @@ class SourceAPIViewTestMixin:
     def _request_test_source_create_api_view(
         self, backend_path=None, extra_data=None
     ):
-        pk_list = list(Source.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Source.objects.values_list('pk', flat=True)
+        )
 
         data = {
             'backend_path': backend_path or TEST_SOURCE_BACKEND_PATH,
@@ -110,7 +112,9 @@ class SourceAPIViewTestMixin:
         response = self.post(viewname='rest_api:source-list', data=data)
 
         try:
-            self._test_source = Source.objects.get(~Q(pk__in=pk_list))
+            self._test_source = Source.objects.get(
+                ~Q(pk__in=pk_list)
+            )
         except Source.DoesNotExist:
             self._test_source = None
 
@@ -164,7 +168,9 @@ class SourceTestMixin:
 
         self._test_source = Source.objects.create(
             backend_path=backend_path or TEST_SOURCE_BACKEND_PATH,
-            backend_data=json.dumps(obj=backend_data or {}),
+            backend_data=json.dumps(
+                obj=backend_data or {}
+            ),
             label=label
         )
         self._test_sources.append(self._test_source)
@@ -176,7 +182,7 @@ class SourceDocumentUploadViewTestMixin:
             viewname='sources:document_upload_interactive', kwargs={
                 'source_id': self._test_source.pk
             }, data={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }
         )
 
@@ -207,7 +213,9 @@ class SourceViewTestMixin:
     def _request_test_source_create_view(
         self, backend_path=None, extra_data=None
     ):
-        pk_list = list(Source.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Source.objects.values_list('pk', flat=True)
+        )
 
         data = {
             'enabled': True,
@@ -225,7 +233,9 @@ class SourceViewTestMixin:
         )
 
         try:
-            self._test_source = Source.objects.get(~Q(pk__in=pk_list))
+            self._test_source = Source.objects.get(
+                ~Q(pk__in=pk_list)
+            )
         except Source.DoesNotExist:
             self._test_source = None
 

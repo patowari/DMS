@@ -4,7 +4,7 @@ import mayan.apps.common.validators
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('converter', '0018_asset'),
+        ('converter', '0018_asset')
     ]
 
     operations = [
@@ -17,5 +17,5 @@ class Migration(migrations.Migration):
                 validators=[mayan.apps.common.validators.YAMLValidator()],
                 verbose_name='Arguments'
             ),
-        ),
+        )
     ]

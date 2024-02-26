@@ -37,7 +37,8 @@ class DocumentViewTestCase(
 
         response = self._request_test_document_properties_view()
         self.assertContains(
-            response=response, status_code=200, text=self._test_document.label
+            response=response, status_code=200,
+            text=self._test_document.label
         )
 
         events = self._get_test_events()
@@ -107,7 +108,8 @@ class DocumentViewTestCase(
 
         response = self._request_test_document_properties_view()
         self.assertContains(
-            response=response, status_code=200, text=self._test_document.label
+            response=response, status_code=200,
+            text=self._test_document.label
         )
         self.assertContains(
             response=response, status_code=200,
@@ -155,7 +157,8 @@ class DocumentViewTestCase(
 
         response = self._request_test_document_list_view()
         self.assertContains(
-            response=response, status_code=200, text=self._test_document.label
+            response=response, status_code=200,
+            text=self._test_document.label
         )
 
         events = self._get_test_events()
@@ -172,7 +175,8 @@ class DocumentViewTestCase(
 
         response = self._request_test_document_list_view()
         self.assertNotContains(
-            response=response, status_code=200, text=self._test_document.label
+            response=response, status_code=200,
+            text=self._test_document.label
         )
 
         events = self._get_test_events()
@@ -551,7 +555,9 @@ class DocumentChangeTypeViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
 
-        self.assertEqual(events[0].action_object, self._test_document_types[1])
+        self.assertEqual(
+            events[0].action_object, self._test_document_types[1]
+        )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
         self.assertEqual(events[0].verb, event_document_type_changed.id)

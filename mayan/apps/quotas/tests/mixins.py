@@ -3,8 +3,8 @@ import json
 from ..models import Quota
 
 from .literals import (
-    TEST_QUOTA_DATA, TEST_QUOTA_DOTTED_PATH, TEST_QUOTA_WITH_MIXINS_DOTTED_PATH,
-    TEST_QUOTA_TEST_LIMIT_EDITED
+    TEST_QUOTA_DATA, TEST_QUOTA_DOTTED_PATH, TEST_QUOTA_TEST_LIMIT_EDITED,
+    TEST_QUOTA_WITH_MIXINS_DOTTED_PATH
 )
 
 
@@ -27,7 +27,9 @@ class QuotaViewTestMixin:
         return self.get(viewname='quotas:quota_backend_selection')
 
     def _request_test_quota_create_get_view(self):
-        values = list(Quota.objects.values_list('pk', flat=True))
+        values = list(
+            Quota.objects.values_list('pk', flat=True)
+        )
 
         response = self.get(
             viewname='quotas:quota_create', kwargs={
@@ -41,7 +43,9 @@ class QuotaViewTestMixin:
         return response
 
     def _request_test_quota_with_mixins_create_get_view(self):
-        values = list(Quota.objects.values_list('pk', flat=True))
+        values = list(
+            Quota.objects.values_list('pk', flat=True)
+        )
 
         response = self.get(
             viewname='quotas:quota_create', kwargs={
@@ -55,7 +59,9 @@ class QuotaViewTestMixin:
         return response
 
     def _request_test_quota_create_post_view(self):
-        values = list(Quota.objects.values_list('pk', flat=True))
+        values = list(
+            Quota.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='quotas:quota_create', kwargs={
@@ -71,7 +77,7 @@ class QuotaViewTestMixin:
     def _request_test_quota_delete_view(self):
         return self.post(
             viewname='quotas:quota_delete', kwargs={
-                'quota_id': self._test_quota.pk,
+                'quota_id': self._test_quota.pk
             }
         )
 
@@ -80,7 +86,7 @@ class QuotaViewTestMixin:
             viewname='quotas:quota_edit', kwargs={
                 'quota_id': self._test_quota.pk
             }, data={
-                'test_limit': TEST_QUOTA_TEST_LIMIT_EDITED,
+                'test_limit': TEST_QUOTA_TEST_LIMIT_EDITED
             }
         )
 

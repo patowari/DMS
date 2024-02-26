@@ -1,10 +1,10 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('metadata', '0007_auto_20150918_0800'),
-        ('sources', '0008_auto_20150815_0351'),
+        ('sources', '0008_auto_20150815_0351')
     ]
 
     operations = [
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 related_name='email_from', to='metadata.MetadataType',
                 verbose_name='From metadata type'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AddField(
             model_name='emailbasemodel',
@@ -33,6 +33,6 @@ class Migration(migrations.Migration):
                 null=True, to='metadata.MetadataType',
                 verbose_name='Subject metadata type'
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

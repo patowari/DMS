@@ -155,7 +155,9 @@ class MailerTestMixin:
 
 class MailerViewTestMixin:
     def _request_test_user_mailer_create_view(self):
-        pk_list = list(UserMailer.objects.values('pk'))
+        pk_list = list(
+            UserMailer.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='mailer:user_mailer_create', kwargs={
@@ -163,7 +165,7 @@ class MailerViewTestMixin:
             }, data={
                 'default': True,
                 'enabled': True,
-                'label': TEST_USER_MAILER_LABEL,
+                'label': TEST_USER_MAILER_LABEL
             }
         )
 

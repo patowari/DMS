@@ -14,10 +14,10 @@ from mayan.apps.views.html_widgets import ObjectLinkWidget, TwoStateWidget
 from .classes import EventTypeNamespace
 from .html_widgets import widget_event_actor_link, widget_event_type_link
 from .links import (
-    link_event_type_subscription_list, link_object_event_list_clear,
-    link_object_event_list_export, link_event_list, link_event_list_clear,
-    link_event_list_export, link_notification_mark_read,
-    link_notification_mark_read_all, link_notification_list,
+    link_event_list, link_event_list_clear, link_event_list_export,
+    link_event_type_subscription_list, link_notification_list,
+    link_notification_mark_read, link_notification_mark_read_all,
+    link_object_event_list_clear, link_object_event_list_export,
     link_user_object_subscription_list
 )
 

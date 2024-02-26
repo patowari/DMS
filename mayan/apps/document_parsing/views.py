@@ -221,7 +221,7 @@ class DocumentTypeSubmitView(FormView):
             message=_(
                 '%(count)d documents added to the parsing queue.'
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 

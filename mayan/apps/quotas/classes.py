@@ -5,10 +5,10 @@ from django.apps import apps
 from django.utils.text import format_lazy
 from django.utils.translation import ugettext_lazy as _
 
+from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
+
 from .exceptions import QuotaExceeded
 from .handlers import handler_process_quota_signal
-
-from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 
 __all__ = ('QuotaBackend',)
 logger = logging.getLogger(name=__name__)
@@ -56,7 +56,11 @@ class QuotaBackend(QuotaBackendBase, metaclass=QuotaBackendMetaclass):
 
     @staticmethod
     def _queryset_to_text_list(queryset):
-        return ','.join(list(map(str, queryset))) or _('none')
+        return ','.join(
+            list(
+                map(str, queryset)
+            )
+        ) or _('none')
 
     @staticmethod
     def connect_signals():

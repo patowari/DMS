@@ -100,7 +100,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
     widgets = {
         'workflows': {
             'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'},
+                'attrs': {'class': 'select2'}
             }
         }
     }
@@ -120,7 +120,9 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
 
     def execute(self, context):
         workflows = Workflow.objects.filter(
-            pk__in=self.form_data.get('workflows', ())
+            pk__in=self.form_data.get(
+                'workflows', ()
+            )
         )
 
         for workflow in workflows:

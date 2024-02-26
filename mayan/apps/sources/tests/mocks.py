@@ -35,7 +35,9 @@ class MockIMAPMessage:
         return ' '.join(self.flags)
 
     def get_number(self):
-        return list(self.mailbox.messages.values()).index(self)
+        return list(
+            self.mailbox.messages.values()
+        ).index(self)
 
 
 class MockIMAPMailbox:
@@ -45,7 +47,9 @@ class MockIMAPMailbox:
         self.name = name
 
     def get_message_by_number(self, message_number):
-        return list(self.messages.values())[message_number - 1]
+        return list(
+            self.messages.values()
+        )[message_number - 1]
 
     def get_message_by_uid(self, uid):
         return self.messages[uid]
@@ -54,7 +58,9 @@ class MockIMAPMailbox:
         return len(self.messages)
 
     def get_messages(self):
-        return list(self.messages.values())
+        return list(
+            self.messages.values()
+        )
 
     def messages_add(self, uid):
         self.messages[uid] = MockIMAPMessage(uid=uid)
@@ -76,7 +82,11 @@ class MockIMAPServer:
         self.mailbox_selected = None
 
     def _add_test_message(self, uid=None):
-        uid = uid or str(len(self.mailboxes['INBOX'].messages))
+        uid = uid or str(
+            len(
+                self.mailboxes['INBOX'].messages
+            )
+        )
         self.mailboxes['INBOX'].messages_add(uid=uid)
 
     def _fetch(self, messages):
@@ -92,15 +102,18 @@ class MockIMAPServer:
                 flag_modified.append(message)
 
             message_number = message.get_number()
-            message_numbers.append(force_text(s=message_number))
+            message_numbers.append(
+                force_text(s=message_number)
+            )
             uid = message.uid
             uids.append(uid)
             body = TEST_EMAIL_BASE64_FILENAME
 
             results.append(
                 (
-                    '{} (UID {} RFC822 {{{}}}'.format(message_number, uid, len(body)),
-                    body,
+                    '{} (UID {} RFC822 {{{}}}'.format(
+                        message_number, uid, len(body)
+                    ), body
                 )
             )
 
@@ -115,7 +128,9 @@ class MockIMAPServer:
         return results
 
     def close(self):
-        return ('OK', ['Returned to authenticated state. (Success)'])
+        return (
+            'OK', ['Returned to authenticated state. (Success)']
+        )
 
     def expunge(self):
         result = []
@@ -123,11 +138,15 @@ class MockIMAPServer:
         for message in self.mailbox_selected.get_messages():
             if '\\Deleted' in message.flags:
                 result.append(
-                    force_text(s=message.get_number())
+                    force_text(
+                        s=message.get_number()
+                    )
                 )
                 message.delete()
 
-        return ('OK', ' '.join(result))
+        return (
+            'OK', ' '.join(result)
+        )
 
     def fetch(self, message_set, message_parts):
         messages = []
@@ -139,13 +158,21 @@ class MockIMAPServer:
                 )
             )
 
-        return ('OK', self._fetch(messages=messages))
+        return (
+            'OK', self._fetch(messages=messages)
+        )
 
     def login(self, user, password):
-        return ('OK', ['{} authenticated (Success)'.format(user)])
+        return (
+            'OK', [
+                '{} authenticated (Success)'.format(user)
+            ]
+        )
 
     def logout(self):
-        return ('BYE', ['LOGOUT Requested'])
+        return (
+            'BYE', ['LOGOUT Requested']
+        )
 
     def search(self, charset, *criteria):
         """
@@ -165,9 +192,15 @@ class MockIMAPServer:
 
         message_sequences = []
         for message in results:
-            message_sequences.append(force_text(s=message.get_number()))
+            message_sequences.append(
+                force_text(
+                    s=message.get_number()
+                )
+            )
 
-        return ('OK', ' '.join(message_sequences))
+        return (
+            'OK', ' '.join(message_sequences)
+        )
 
     def select(self, mailbox='INBOX', readonly=False):
         self.mailbox_selected = self.mailboxes[mailbox]
@@ -182,7 +215,9 @@ class MockIMAPServer:
         results = []
 
         for message_number in message_set.split():
-            message = self.mailbox_selected.messages[int(message_number) - 1]
+            message = self.mailbox_selected.messages[
+                int(message_number) - 1
+            ]
 
             if command == 'FLAGS':
                 message.flags_set(flags_string=flags)
@@ -192,7 +227,9 @@ class MockIMAPServer:
                 message.flags_remove(flags_string=flags)
 
             results.append(
-                '{} (FLAGS ({}))'.format(message_number, message.get_flags())
+                '{} (FLAGS ({}))'.format(
+                    message_number, message.get_flags()
+                )
             )
 
         return ('OK', results)
@@ -200,8 +237,12 @@ class MockIMAPServer:
     def uid(self, command, *args):
         if command == 'FETCH':
             uid = args[0]
-            messages = [self.mailbox_selected.get_message_by_uid(uid=uid)]
-            return ('OK', self._fetch(messages=messages))
+            messages = [
+                self.mailbox_selected.get_message_by_uid(uid=uid)
+            ]
+            return (
+                'OK', self._fetch(messages=messages)
+            )
         elif command == 'STORE':
             results = []
             uid = args[0]
@@ -217,7 +258,9 @@ class MockIMAPServer:
                 message.flags_remove(flags_string=flags)
 
             results.append(
-                '{} (FLAGS ({}))'.format(uid, message.get_flags())
+                '{} (FLAGS ({}))'.format(
+                    uid, message.get_flags()
+                )
             )
             return ('OK', results)
         elif command == 'SEARCH':
@@ -227,7 +270,11 @@ class MockIMAPServer:
                 ).uid
             ]
 
-            return ('OK', [' '.join(message_sequences)])
+            return (
+                'OK', [
+                    ' '.join(message_sequences)
+                ]
+            )
 
 
 class MockPOP3Mailbox:
@@ -270,7 +317,9 @@ class MockPOP3Mailbox:
 
             messages_total_size += message_size
             message_list.append(
-                force_bytes(s='{} {}'.format(message_number, message_size))
+                force_bytes(
+                    s='{} {}'.format(message_number, message_size)
+                )
             )
 
             message_number += 1
@@ -298,7 +347,9 @@ class MockPOP3Mailbox:
         return
 
     def retr(self, which):
-        return (None, self.messages[which], None)
+        return (
+            None, self.messages[which], None
+        )
 
 
 class MockRequest:

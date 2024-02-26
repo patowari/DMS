@@ -38,7 +38,7 @@ class SourceBackendWatchFolder(
                 'Server side filesystem path.'
             ),
             'kwargs': {
-                'max_length': 255,
+                'max_length': 255
             },
             'label': _('Folder path'),
             'required': True

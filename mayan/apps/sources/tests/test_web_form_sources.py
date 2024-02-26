@@ -3,7 +3,7 @@ from django.core.files import File
 from mayan.apps.documents.models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import (
-    TEST_FILE_COMPRESSED_PATH, TEST_DOCUMENT_SMALL_CHECKSUM,
+    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_COMPRESSED_PATH,
     TEST_FILE_SMALL_PATH
 )
 
@@ -28,7 +28,7 @@ class WebFormSourceBackendTestCase(
                 'document_form': self._test_document_form,
                 'source_form': InteractiveSourceBackendTestMixin.MockSourceForm(
                     file=File(file=file_object)
-                ),
+                )
             }
 
             source_backend_instance.process_documents(

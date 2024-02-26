@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('contenttypes', '0002_remove_content_type_name'),
+        ('contenttypes', '0002_remove_content_type_name')
     ]
 
     operations = [
@@ -23,12 +23,12 @@ class Migration(migrations.Migration):
                 ('date_time', models.DateTimeField(auto_now_add=True, help_text='Date and time of the message creation.', verbose_name='Creation date and time')),
                 ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='messages', to='messaging.Message', verbose_name='Parent message')),
                 ('sender_content_type', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='contenttypes.ContentType')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='messages', to=settings.AUTH_USER_MODEL, verbose_name='User')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='messages', to=settings.AUTH_USER_MODEL, verbose_name='User'))
             ],
             options={
                 'verbose_name': 'Message',
                 'verbose_name_plural': 'Messages',
-                'ordering': ('-date_time',),
-            },
-        ),
+                'ordering': ('-date_time',)
+            }
+        )
     ]

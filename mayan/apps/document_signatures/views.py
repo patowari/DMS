@@ -335,7 +335,7 @@ class DocumentFileSignatureListView(
                             'object': self.external_object
                         }, request=self.request
                     )
-                ),
+                )
             ],
             'no_results_title': _(
                 'There are no signatures for this document file.'

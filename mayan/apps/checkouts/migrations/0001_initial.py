@@ -1,10 +1,10 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('documents', '__first__'),
-        ('contenttypes', '0001_initial'),
+        ('contenttypes', '0001_initial')
     ]
 
     operations = [
@@ -58,12 +58,12 @@ class Migration(migrations.Migration):
                         blank=True, null=True, on_delete=models.CASCADE,
                         to='contenttypes.ContentType'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document checkout',
-                'verbose_name_plural': 'Document checkouts',
+                'verbose_name_plural': 'Document checkouts'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

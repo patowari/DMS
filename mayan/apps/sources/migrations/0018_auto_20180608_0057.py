@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0017_auto_20180510_2151'),
+        ('sources', '0017_auto_20180510_2151')
     ]
 
     operations = [
@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
                 '(simplex/duplex). If this option is not supported by your '
                 'scanner, leave it blank.', max_length=16,
                 verbose_name='ADF mode'
-            ),
-        ),
+            )
+        )
     ]

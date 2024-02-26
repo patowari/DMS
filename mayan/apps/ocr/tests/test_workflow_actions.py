@@ -38,7 +38,9 @@ class UpdateDocumentPageOCRActionTestCase(
             }
         )
 
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         document_version_page.refresh_from_db()
         self.assertEqual(
@@ -61,7 +63,9 @@ class UpdateDocumentPageOCRActionTestCase(
                 'page_content': TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
             }
         )
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         document_version_page.refresh_from_db()
         self.assertEqual(
@@ -84,7 +88,9 @@ class UpdateDocumentPageOCRActionTestCase(
                 'page_content': '{{ document_version_page.ocr_content.content }}+update'
             }
         )
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         document_version_page.refresh_from_db()
         self.assertEqual(
@@ -117,7 +123,9 @@ class UpdateDocumentPageOCRActionTestCase(
         )
 
         self.assertEqual(
-            ''.join(self._test_document.ocr_content()), self._test_document.label
+            ''.join(
+                self._test_document.ocr_content()
+            ), self._test_document.label
         )
 
 

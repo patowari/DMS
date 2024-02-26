@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 def code_create_ocr_setting_for_existing_document_types(apps, schema_editor):
@@ -48,11 +48,11 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document type'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document type settings',
-                'verbose_name_plural': 'Document types settings',
+                'verbose_name_plural': 'Document types settings'
             },
             bases=(models.Model,)
         ),

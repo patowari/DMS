@@ -10,8 +10,8 @@ from .exceptions import (
 from .literals import FILTER_PREFIX, SEARCH_MODEL_NAME_KWARG
 from .mixins import QuerysetSearchModelMixin
 from .search_backends import SearchBackend
-from .search_models import SearchModel
 from .search_interpreters import SearchInterpreter
+from .search_models import SearchModel
 
 logger = logging.getLogger(name=__name__)
 
@@ -21,7 +21,9 @@ class SearchQueryViewMixin:
         request = request or self.request
 
         query_dict = request.GET.dict().copy()
-        query_dict.update(request.POST.dict())
+        query_dict.update(
+            request.POST.dict()
+        )
         return query_dict
 
 
@@ -148,9 +150,13 @@ class SearchModelViewMixin:
 
     def get_search_model(self):
         try:
-            return SearchModel.get(name=self.get_search_model_name())
+            return SearchModel.get(
+                name=self.get_search_model_name()
+            )
         except KeyError as exception:
-            raise Http404(str(exception))
+            raise Http404(
+                str(exception)
+            )
 
 
 class SearchResultViewMixin(SearchQueryViewMixin):

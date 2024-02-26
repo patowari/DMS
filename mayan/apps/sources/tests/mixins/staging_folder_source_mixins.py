@@ -19,7 +19,8 @@ class StagingFolderActionAPIViewTestMixin:
     def _request_test_staging_folder_file_delete_action_api_view(self):
         return self.post(
             viewname='rest_api:source-action', kwargs={
-                'action_name': 'file_delete', 'source_id': self._test_source.pk
+                'action_name': 'file_delete',
+                'source_id': self._test_source.pk
             }, data={
                 'arguments': json.dumps(
                     obj={
@@ -32,21 +33,24 @@ class StagingFolderActionAPIViewTestMixin:
     def _request_test_staging_folder_file_image_action_api_view(self):
         return self.get(
             viewname='rest_api:source-action', kwargs={
-                'action_name': 'file_image', 'source_id': self._test_source.pk
+                'action_name': 'file_image',
+                'source_id': self._test_source.pk
             }, query={'encoded_filename': self._test_staging_folder_file.encoded_filename}
         )
 
     def _request_test_staging_folder_file_list_action_api_view(self):
         return self.get(
             viewname='rest_api:source-action', kwargs={
-                'action_name': 'file_list', 'source_id': self._test_source.pk
+                'action_name': 'file_list',
+                'source_id': self._test_source.pk
             }
         )
 
     def _request_test_staging_folder_file_upload_action_api_view(self):
         return self.post(
             viewname='rest_api:source-action', kwargs={
-                'action_name': 'file_upload', 'source_id': self._test_source.pk
+                'action_name': 'file_upload',
+                'source_id': self._test_source.pk
             }, data={
                 'arguments': json.dumps(
                     obj={
@@ -79,7 +83,9 @@ class StagingFolderTestMixin(SourceTestMixin):
         self._temporary_folders.append(temporary_folder)
 
         if add_subdirectory:
-            self._temporary_subfolder = mkdtemp(dir=str(temporary_folder))
+            self._temporary_subfolder = mkdtemp(
+                dir=str(temporary_folder)
+            )
             self._temporary_folders.append(self._temporary_subfolder)
 
         backend_data = {
@@ -97,14 +103,20 @@ class StagingFolderTestMixin(SourceTestMixin):
             backend_data=backend_data
         )
 
-    def _copy_test_staging_folder_document(self, filename=None, to_subfolder=False):
-        path = Path(self._test_source.get_backend_data()['folder_path'])
+    def _copy_test_staging_folder_document(
+        self, filename=None, to_subfolder=False
+    ):
+        path = Path(
+            self._test_source.get_backend_data()['folder_path']
+        )
 
         if to_subfolder:
             path = Path(self._temporary_subfolder)
 
         shutil.copy(
-            src=TEST_FILE_SMALL_PATH, dst=str(path / (filename or ''))
+            src=TEST_FILE_SMALL_PATH, dst=str(
+                path / (filename or '')
+            )
         )
 
         test_staging_folder_file_list = list(
@@ -112,7 +124,9 @@ class StagingFolderTestMixin(SourceTestMixin):
         )
         if test_staging_folder_file_list:
             self._test_staging_folder_file = test_staging_folder_file_list[0]
-            self._test_staging_folder_files.append(self._test_staging_folder_file)
+            self._test_staging_folder_files.append(
+                self._test_staging_folder_file
+            )
 
 
 class StagingFolderViewTestMixin:

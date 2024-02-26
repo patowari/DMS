@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_indexing', '0015_auto_20190429_1922'),
+        ('document_indexing', '0015_auto_20190429_1922')
     ]
 
     operations = [
@@ -14,5 +14,5 @@ class Migration(migrations.Migration):
                 help_text='Short description of this index.',
                 max_length=128, unique=True, verbose_name='Label'
             ),
-        ),
+        )
     ]

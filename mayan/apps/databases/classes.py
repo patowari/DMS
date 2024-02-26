@@ -76,11 +76,17 @@ class BaseBackend(AppsModuleLoaderMixin, metaclass=BackendMetaclass):
 
     @classmethod
     def get(cls, name):
-        return cls._registry.get(cls, {})[name]
+        return cls._registry.get(
+            cls, {}
+        )[name]
 
     @classmethod
     def get_all(cls):
-        return list(cls._registry.get(cls, {}).values())
+        return list(
+            cls._registry.get(
+                cls, {}
+            ).values()
+        )
 
     @classmethod
     def get_choices(cls):
@@ -90,7 +96,9 @@ class BaseBackend(AppsModuleLoaderMixin, metaclass=BackendMetaclass):
             ) for backend in cls.get_all()
         ]
 
-        choices.sort(key=lambda x: x[1])
+        choices.sort(
+            key=lambda x: x[1]
+        )
 
         return choices
 
@@ -152,7 +160,9 @@ class ModelAttribute:
             if model.__class__ == models.base.ModelBase:
                 return []
 
-            return cls.get_for(model=type(model))
+            return cls.get_for(
+                model=type(model)
+            )
 
     @classmethod
     def register(cls, klass):

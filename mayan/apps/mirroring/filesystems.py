@@ -15,7 +15,7 @@ from django.db.models.functions import Concat
 from mayan.apps.documents.models import Document
 
 from .literals import (
-    MAX_FILE_DESCRIPTOR, MIN_FILE_DESCRIPTOR, FILE_MODE, DIRECTORY_MODE
+    DIRECTORY_MODE, FILE_MODE, MAX_FILE_DESCRIPTOR, MIN_FILE_DESCRIPTOR
 )
 from .runtime import cache
 

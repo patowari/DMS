@@ -3,9 +3,9 @@ from django.db.models import Q
 from ..models import SmartLink, SmartLinkCondition
 
 from .literals import (
-    TEST_SMART_LINK_CONDITION_FOREIGN_DOCUMENT_DATA,
     TEST_SMART_LINK_CONDITION_EXPRESSION,
     TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED,
+    TEST_SMART_LINK_CONDITION_FOREIGN_DOCUMENT_DATA,
     TEST_SMART_LINK_CONDITION_INCLUSION, TEST_SMART_LINK_CONDITION_OPERATOR,
     TEST_SMART_LINK_DYNAMIC_LABEL, TEST_SMART_LINK_LABEL,
     TEST_SMART_LINK_LABEL_EDITED
@@ -16,14 +16,14 @@ class DocumentTypeAddRemoveSmartLinkViewTestMixin:
     def _request_test_document_type_smart_link_add_remove_get_view(self):
         return self.get(
             viewname='linking:document_type_smart_links', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }
         )
 
     def _request_test_document_type_smart_link_add_view(self):
         return self.post(
             viewname='linking:document_type_smart_links', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_smart_link.pk
@@ -33,7 +33,7 @@ class DocumentTypeAddRemoveSmartLinkViewTestMixin:
     def _request_test_document_type_smart_link_remove_view(self):
         return self.post(
             viewname='linking:document_type_smart_links', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_smart_link.pk
@@ -71,7 +71,9 @@ class ResolvedSmartLinkAPIViewTestMixin:
 
 class SmartLinkAPIViewTestMixin:
     def _request_test_smart_link_create_api_view(self):
-        pk_list = list(SmartLink.objects.values('pk'))
+        pk_list = list(
+            SmartLink.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:smartlink-list', data={
@@ -124,7 +126,9 @@ class SmartLinkAPIViewTestMixin:
 
 class SmartLinkConditionAPIViewTestMixin:
     def _request_smart_link_condition_create_api_view(self):
-        pk_list = list(SmartLinkCondition.objects.values('pk'))
+        pk_list = list(
+            SmartLinkCondition.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:smartlinkcondition-list',
@@ -169,7 +173,7 @@ class SmartLinkConditionAPIViewTestMixin:
                 'smart_link_id': self._test_smart_link.pk,
                 'smart_link_condition_id': self._test_smart_link_condition.pk
             }, data={
-                'expression': TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED,
+                'expression': TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED
             }
         )
 
@@ -197,7 +201,9 @@ class SmartLinkConditionAPIViewTestMixin:
 
 class SmartLinkConditionViewTestMixin:
     def _request_test_smart_link_condition_create_view(self):
-        pk_list = list(SmartLinkCondition.objects.values('pk'))
+        pk_list = list(
+            SmartLinkCondition.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='linking:smart_link_condition_create', kwargs={
@@ -258,7 +264,7 @@ class SmartLinkDocumentTypeAPIViewTestMixin:
     def _request_test_smart_link_document_type_list_api_view(self):
         return self.get(
             viewname='rest_api:smartlink-document_type-list', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }
         )
 
@@ -275,14 +281,14 @@ class SmartLinkDocumentTypeViewTestMixin:
     def _request_test_smart_link_document_type_add_remove_get_view(self):
         return self.get(
             viewname='linking:smart_link_document_types', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }
         )
 
     def _request_test_smart_link_document_type_add_view(self):
         return self.post(
             viewname='linking:smart_link_document_types', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_document_type.pk
@@ -292,7 +298,7 @@ class SmartLinkDocumentTypeViewTestMixin:
     def _request_test_smart_link_document_type_remove_view(self):
         return self.post(
             viewname='linking:smart_link_document_types', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_document_type.pk
@@ -338,7 +344,9 @@ class SmartLinkTestMixin:
 class SmartLinkViewTestMixin:
     def _request_test_smart_link_create_view(self):
         # Typecast to list to force queryset evaluation
-        values = list(SmartLink.objects.values_list('pk', flat=True))
+        values = list(
+            SmartLink.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='linking:smart_link_create', data={

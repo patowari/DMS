@@ -3,6 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.navigation.classes import Link
 
 from ..icons import (
+    icon_document_file_page_count_update, icon_document_file_page_detail,
+    icon_document_file_page_detail_reset, icon_document_file_page_list,
     icon_document_file_page_navigation_first,
     icon_document_file_page_navigation_last,
     icon_document_file_page_navigation_next,
@@ -12,9 +14,7 @@ from ..icons import (
     icon_document_file_page_return_to_document_file_page_list,
     icon_document_file_page_rotate_left,
     icon_document_file_page_rotate_right, icon_document_file_page_zoom_in,
-    icon_document_file_page_zoom_out, icon_document_file_page_detail,
-    icon_document_file_page_detail_reset, icon_document_file_page_count_update,
-    icon_document_file_page_list
+    icon_document_file_page_zoom_out
 )
 from ..permissions import (
     permission_document_file_tools, permission_document_file_view,

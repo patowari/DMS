@@ -7,7 +7,9 @@ from .literals import TEST_MESSAGE_BODY, TEST_MESSAGE_SUBJECT
 
 class MessageAPIViewTestMixin:
     def _request_test_message_create_api_view(self, extra_data=None):
-        pk_list = list(Message.objects.values('pk'))
+        pk_list = list(
+            Message.objects.values_list('pk', flat=True)
+        )
 
         data = {
             'body': TEST_MESSAGE_BODY,
@@ -73,7 +75,9 @@ class MessageTestMixin:
 
 class MessageViewTestMixin:
     def _request_test_message_create_view(self, extra_data=None):
-        pk_list = list(Message.objects.values('pk'))
+        pk_list = list(
+            Message.objects.values_list('pk', flat=True)
+        )
 
         data = {
             'body': TEST_MESSAGE_BODY,
@@ -89,7 +93,9 @@ class MessageViewTestMixin:
         )
 
         try:
-            self._test_message = Message.objects.get(~Q(pk__in=pk_list))
+            self._test_message = Message.objects.get(
+                ~Q(pk__in=pk_list)
+            )
         except Message.DoesNotExist:
             self._test_message = None
 

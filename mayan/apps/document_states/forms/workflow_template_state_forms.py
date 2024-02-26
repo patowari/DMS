@@ -11,8 +11,8 @@ from mayan.apps.views.forms import DynamicModelForm
 
 from ..classes import WorkflowAction
 from ..models import (
-    WorkflowStateEscalation, WorkflowInstance, WorkflowState,
-    WorkflowStateAction
+    WorkflowInstance, WorkflowState, WorkflowStateAction,
+    WorkflowStateEscalation
 )
 
 

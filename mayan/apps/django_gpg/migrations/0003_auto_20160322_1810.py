@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('django_gpg', '0002_auto_20160322_1756'),
+        ('django_gpg', '0002_auto_20160322_1756')
     ]
 
     operations = [
@@ -68,5 +68,5 @@ class Migration(migrations.Migration):
             model_name='key',
             name='user_id',
             field=models.TextField(verbose_name='User ID', editable=False),
-        ),
+        )
     ]

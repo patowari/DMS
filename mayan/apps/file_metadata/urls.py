@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from .views import (
-    DocumentFileDriverListView, DocumentFileDriverAttributeListView,
+    DocumentFileDriverAttributeListView, DocumentFileDriverListView,
     DocumentFileSubmitView, DocumentTypeFileMetadataSettingsEditView,
     DocumentTypeFileMetadataSubmitView
 )

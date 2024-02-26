@@ -95,7 +95,9 @@ class BaseTransformation(metaclass=BaseTransformationType):
     def get_label(cls):
         arguments = cls.get_arguments()
         if arguments:
-            return format_lazy('{}: {}', cls.label, ', '.join(arguments))
+            return format_lazy(
+                '{}: {}', cls.label, ', '.join(arguments)
+            )
         else:
             return cls.label
 
@@ -103,7 +105,9 @@ class BaseTransformation(metaclass=BaseTransformationType):
     def get_transformation_choices(cls, group_by_layer=False, layer=None):
         if layer:
             transformation_list = [
-                (transformation.name, transformation) for transformation in cls._layer_transformations.get(layer, ())
+                (transformation.name, transformation) for transformation in cls._layer_transformations.get(
+                    layer, ()
+                )
             ]
         else:
             transformation_list = cls._registry.items()
@@ -498,8 +502,12 @@ class TransformationDrawRectanglePercent(
         # that can crop from the right and bottom borders without
         # having to know the real dimensions of an image.
 
-        right = self.image.size[0] - (right / 100.0 * self.image.size[0])
-        bottom = self.image.size[1] - (bottom / 100.0 * self.image.size[1])
+        right = self.image.size[0] - (
+            right / 100.0 * self.image.size[0]
+        )
+        bottom = self.image.size[1] - (
+            bottom / 100.0 * self.image.size[1]
+        )
 
         self.bottom = bottom
         self.left = left

@@ -26,7 +26,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -46,7 +48,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -57,7 +61,8 @@ class MailDocumentFileViewTestCase(
         mail_messages = len(mail.outbox)
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -65,7 +70,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -80,7 +87,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_link
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -88,9 +96,15 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(len(mail.outbox), mail_messages + 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            len(mail.outbox), mail_messages + 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -110,7 +124,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_link
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._test_document.delete()
@@ -120,7 +135,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -135,7 +152,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_multiple_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -155,7 +174,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_multiple_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -166,7 +187,8 @@ class MailDocumentFileViewTestCase(
         mail_messages = len(mail.outbox)
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -174,7 +196,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_multiple_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -189,7 +213,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_link
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -197,9 +222,15 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_multiple_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(len(mail.outbox), mail_messages + 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
+        self.assertEqual(
+            len(mail.outbox), mail_messages + 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -219,7 +250,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_link
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._test_document.delete()
@@ -229,7 +261,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_multiple_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -244,7 +278,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -264,7 +300,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_single_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -275,7 +313,8 @@ class MailDocumentFileViewTestCase(
         mail_messages = len(mail.outbox)
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -283,7 +322,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -298,7 +339,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_attachment
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -306,10 +348,18 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_single_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(len(mail.outbox), mail_messages + 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
-        self.assertEqual(len(mail.outbox[0].attachments), 1)
+        self.assertEqual(
+            len(mail.outbox), mail_messages + 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
+        self.assertEqual(
+            len(mail.outbox[0].attachments), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -329,7 +379,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_attachment
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._test_document.delete()
@@ -339,7 +390,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -354,7 +407,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_multiple_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -374,7 +429,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_multiple_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -385,7 +442,8 @@ class MailDocumentFileViewTestCase(
         mail_messages = len(mail.outbox)
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -393,7 +451,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_multiple_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -408,7 +468,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_attachment
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -416,10 +477,18 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_multiple_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(len(mail.outbox), mail_messages + 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
-        self.assertEqual(mail.outbox[0].to, [TEST_EMAIL_ADDRESS])
-        self.assertEqual(len(mail.outbox[0].attachments), 1)
+        self.assertEqual(
+            len(mail.outbox), mail_messages + 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
+        self.assertEqual(
+            len(mail.outbox[0].attachments), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -439,7 +508,8 @@ class MailDocumentFileViewTestCase(
             permission=permission_send_document_file_attachment
         )
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._test_document.delete()
@@ -449,7 +519,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_attachment_send_multiple_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

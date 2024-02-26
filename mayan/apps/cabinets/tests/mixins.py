@@ -14,7 +14,9 @@ class CabinetAPIViewTestMixin:
             'parent': self._test_cabinet.pk
         }
 
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
         response = self.post(viewname='rest_api:cabinet-list', data=data)
 
         self._test_cabinet_child = Cabinet.objects.exclude(pk__in=values).first()
@@ -35,7 +37,9 @@ class CabinetAPIViewTestMixin:
             data.update(extra_data)
 
         # Typecast to list to force queryset evaluation
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(viewname='rest_api:cabinet-list', data=data)
 
@@ -151,7 +155,9 @@ class CabinetViewTestMixin:
 
     def _request_test_cabinet_create_view(self):
         # Typecast to list to force queryset evaluation
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             'cabinets:cabinet_create', data={
@@ -182,7 +188,9 @@ class CabinetViewTestMixin:
 
     def _request_test_cabinet_child_create_view(self):
         # Typecast to list to force queryset evaluation
-        values = list(Cabinet.objects.values_list('pk', flat=True))
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='cabinets:cabinet_child_add', kwargs={
@@ -226,7 +234,7 @@ class CabinetViewTestMixin:
             viewname='cabinets:document_cabinet_remove', kwargs={
                 'document_id': self._test_document.pk
             }, data={
-                'cabinets': (self._test_cabinet.pk,),
+                'cabinets': (self._test_cabinet.pk,)
             }
         )
 

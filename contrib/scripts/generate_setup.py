@@ -59,7 +59,9 @@ def generate_commit_timestamp():
 def get_requirements(base_directory, filename):
     result = []
 
-    with open(file=os.path.join(base_directory, filename)) as file_object:
+    file_requirements = os.path.join(base_directory, filename)
+
+    with open(file=file_requirements) as file_object:
         for line in file_object:
             if line.startswith('-r'):
                 line = line.split('\n')[0][3:]

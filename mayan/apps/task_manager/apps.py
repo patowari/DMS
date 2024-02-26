@@ -152,7 +152,9 @@ class TaskManagerApp(MayanAppConfig):
             include_label=True, label=_('Worker process ID'), source=Task
         )
 
-        menu_tools.bind_links(links=(link_queue_list,))
+        menu_tools.bind_links(
+            links=(link_queue_list,)
+        )
 
         signal_perform_upgrade.connect(
             dispatch_uid='task_manager_handler_perform_upgrade',

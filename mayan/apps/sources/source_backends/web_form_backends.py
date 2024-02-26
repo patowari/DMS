@@ -13,7 +13,7 @@ from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.storage.models import SharedUploadedFile
 from mayan.apps.views.settings import setting_show_dropzone_submit_button
 
-from ..classes import SourceBackendAction, SourceBackend
+from ..classes import SourceBackend, SourceBackendAction
 from ..forms import WebFormUploadFormHTML5
 from ..tasks import task_process_document_upload
 

@@ -8,8 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.storage.utils import TemporaryDirectory
 
-from ..literals import DEFAULT_EXIF_PATH
 from ..classes import FileMetadataDriver
+from ..literals import DEFAULT_EXIF_PATH
 from ..settings import setting_drivers_arguments
 
 logger = logging.getLogger(name=__name__)

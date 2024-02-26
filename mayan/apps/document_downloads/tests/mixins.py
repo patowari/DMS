@@ -67,7 +67,7 @@ class DocumentFileDownloadAPIViewTestMixin:
         return self.get(
             viewname='rest_api:documentfile-download', kwargs={
                 'document_id': self._test_document.pk,
-                'document_file_id': self._test_document.file_latest.pk,
+                'document_file_id': self._test_document.file_latest.pk
             }
         )
 

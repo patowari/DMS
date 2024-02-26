@@ -49,7 +49,9 @@ class ChoiceForm(Form):
     )
 
     def __init__(self, *args, **kwargs):
-        choices = kwargs.pop('choices', [])
+        choices = kwargs.pop(
+            'choices', []
+        )
         label = kwargs.pop(
             'label', _('Selection')
         )

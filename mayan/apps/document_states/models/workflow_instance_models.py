@@ -99,8 +99,12 @@ class WorkflowInstanceLogEntry(
         blank=True, null=True, on_delete=models.CASCADE,
         to=settings.AUTH_USER_MODEL, verbose_name=_('User')
     )
-    comment = models.TextField(blank=True, verbose_name=_('Comment'))
-    extra_data = models.TextField(blank=True, verbose_name=_('Extra data'))
+    comment = models.TextField(
+        blank=True, verbose_name=_('Comment')
+    )
+    extra_data = models.TextField(
+        blank=True, verbose_name=_('Extra data')
+    )
 
     class Meta:
         ordering = ('datetime',)

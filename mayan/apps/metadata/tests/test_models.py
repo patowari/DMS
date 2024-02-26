@@ -10,8 +10,8 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..models import DocumentMetadata
 
 from .literals import (
-    TEST_DEFAULT_VALUE, TEST_LOOKUP_TEMPLATE, TEST_LOOKUP_VALUE_INCORRECT,
-    TEST_LOOKUP_VALUE_CORRECT
+    TEST_DEFAULT_VALUE, TEST_LOOKUP_TEMPLATE, TEST_LOOKUP_VALUE_CORRECT,
+    TEST_LOOKUP_VALUE_INCORRECT
 )
 from .mixins import MetadataTypeTestMixin
 

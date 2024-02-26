@@ -7,7 +7,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL)
     ]
 
     operations = [
@@ -33,13 +33,13 @@ class Migration(migrations.Migration):
                         'change the appearance of the different user '
                         'interface elements.', verbose_name='Stylesheet'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Theme',
                 'verbose_name_plural': 'Themes',
-                'ordering': ('label',),
-            },
+                'ordering': ('label',)
+            }
         ),
         migrations.CreateModel(
             name='UserThemeSetting',
@@ -64,11 +64,11 @@ class Migration(migrations.Migration):
                         related_name='theme_settings',
                         to=settings.AUTH_USER_MODEL, verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'User theme setting',
-                'verbose_name_plural': 'User theme settings',
-            },
-        ),
+                'verbose_name_plural': 'User theme settings'
+            }
+        )
     ]

@@ -4,7 +4,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('file_caching', '0003_auto_20191130_2208'),
+        ('file_caching', '0003_auto_20191130_2208')
     ]
 
     operations = [
@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
                 validators=[
                     django.core.validators.MinValueValidator(limit_value=1)
                 ], verbose_name='Maximum size'
-            ),
-        ),
+            )
+        )
     ]

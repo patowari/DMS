@@ -57,11 +57,11 @@ class Migration(migrations.Migration):
                         related_name='user_options',
                         to=settings.AUTH_USER_MODEL, verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'User settings',
-                'verbose_name_plural': 'Users settings',
+                'verbose_name_plural': 'Users settings'
             },
         ),
         migrations.RunPython(

@@ -11,7 +11,7 @@ from .icons import (
 )
 from .permissions import (
     permission_web_link_create, permission_web_link_delete,
-    permission_web_link_edit, permission_web_link_instance_view,
+    permission_web_link_edit, permission_web_link_instance_view
 )
 
 link_document_type_web_links = Link(

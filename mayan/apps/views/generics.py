@@ -22,9 +22,10 @@ from mayan.apps.dynamic_search.view_mixins import SearchFilterEnabledListViewMix
 
 from .forms import ChoiceForm
 from .icons import (
-    icon_add_all, icon_confirm_form_cancel, icon_confirm_form_submit,
-    icon_remove_all, icon_assign_remove_add, icon_assign_remove_remove
+    icon_add_all, icon_assign_remove_add, icon_assign_remove_remove,
+    icon_confirm_form_cancel, icon_confirm_form_submit, icon_remove_all
 )
+from .settings import setting_paginate_by
 from .view_mixins import (
     ExtraDataDeleteViewMixin, DownloadViewMixin, DynamicFormViewMixin,
     ExternalObjectViewMixin, ExtraContextViewMixin, FormExtraKwargsViewMixin,
@@ -33,8 +34,6 @@ from .view_mixins import (
     RestrictedQuerysetViewMixin, SortingViewMixin, ViewIconMixin,
     ViewPermissionCheckViewMixin
 )
-
-from .settings import setting_paginate_by
 
 logger = logging.getLogger(name=__name__)
 
@@ -1010,6 +1009,8 @@ class MultipleObjectDeleteView(MultipleObjectConfirmActionView):
                 setattr(instance, key, value)
 
         if hasattr(self, 'get_delete_extra_data'):
-            instance.delete(**self.get_delete_extra_data())
+            instance.delete(
+                **self.get_delete_extra_data()
+            )
         else:
             instance.delete()

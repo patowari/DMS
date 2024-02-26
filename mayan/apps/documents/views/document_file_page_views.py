@@ -8,7 +8,9 @@ from django.utils.translation import ugettext_lazy as _, ungettext
 from django.views.generic import RedirectView
 
 from mayan.apps.common.settings import setting_home_view
-from mayan.apps.converter.literals import DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
+from mayan.apps.converter.literals import (
+    DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
+)
 from mayan.apps.converter.transformations import (
     TransformationResize, TransformationRotate, TransformationZoom
 )
@@ -16,13 +18,13 @@ from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.views.generics import (
     MultipleObjectConfirmActionView, SimpleView, SingleObjectListView
 )
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import resolve
+from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.document_file_page_forms import DocumentFilePageForm
 from ..icons import (
-    icon_document_file_page_count_update, icon_document_file_page_list,
-    icon_document_file_page_detail
+    icon_document_file_page_count_update, icon_document_file_page_detail,
+    icon_document_file_page_list
 )
 from ..links.document_file_page_links import link_document_file_page_count_update
 from ..models.document_file_models import DocumentFile

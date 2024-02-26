@@ -1,13 +1,13 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from .mixins import MessageTestMixin, MessageViewTestMixin
-
 from ..events import event_message_created, event_message_edited
 from ..models import Message
 from ..permissions import (
     permission_message_create, permission_message_delete,
     permission_message_edit, permission_message_view
 )
+
+from .mixins import MessageTestMixin, MessageViewTestMixin
 
 
 class MessageViewTestCase(

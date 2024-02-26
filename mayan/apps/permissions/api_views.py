@@ -13,8 +13,8 @@ from .permissions import (
 )
 from .serializers import (
     PermissionSerializer, RoleGroupAddSerializer, RoleGroupRemoveSerializer,
-    RoleSerializer, RolePermissionAddSerializer,
-    RolePermissionRemoveSerializer
+    RolePermissionAddSerializer, RolePermissionRemoveSerializer,
+    RoleSerializer
 )
 
 

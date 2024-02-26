@@ -4,8 +4,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.navigation.classes import Link
 
 from .icons import (
-    icon_setting_namespace_detail, icon_setting_namespace_list,
-    icon_setting_edit
+    icon_setting_edit, icon_setting_namespace_detail,
+    icon_setting_namespace_list
 )
 from .permissions import permission_settings_edit, permission_settings_view
 

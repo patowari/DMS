@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -18,12 +18,12 @@ class Migration(migrations.Migration):
                     'name', models.CharField(
                         unique=True, max_length=64, verbose_name='Name'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Event type',
-                'verbose_name_plural': 'Event types',
+                'verbose_name_plural': 'Event types'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

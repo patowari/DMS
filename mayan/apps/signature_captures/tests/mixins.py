@@ -11,7 +11,9 @@ from .literals import (
 
 class SignatureCaptureAPIViewTestMixin:
     def _request_test_signature_capture_create_api_view(self):
-        pk_list = list(SignatureCapture.objects.values('pk'))
+        pk_list = list(
+            SignatureCapture.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:signature_capture-list', kwargs={
@@ -105,7 +107,9 @@ class SignatureCaptureTestMixin:
 
 class SignatureCaptureViewTestMixin:
     def _request_test_signature_capture_create_view(self):
-        pk_list = list(SignatureCapture.objects.values('pk'))
+        pk_list = list(
+            SignatureCapture.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='signature_captures:signature_capture_create', kwargs={

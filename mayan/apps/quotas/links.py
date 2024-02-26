@@ -7,8 +7,8 @@ from .icons import (
     icon_quota_setup
 )
 from .permissions import (
-    permission_quota_create, permission_quota_delete,
-    permission_quota_edit, permission_quota_view,
+    permission_quota_create, permission_quota_delete, permission_quota_edit,
+    permission_quota_view
 )
 
 link_quota_create = Link(

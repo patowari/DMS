@@ -1,12 +1,16 @@
 from rest_framework import status
 
-from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 from mayan.apps.documents.permissions import (
     permission_document_type_edit, permission_document_type_view
 )
+from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 
-from ..events import event_index_template_created, event_index_template_edited
-from ..models.index_instance_models import IndexInstanceNode, IndexTemplate, IndexTemplateNode
+from ..events import (
+    event_index_template_created, event_index_template_edited
+)
+from ..models.index_instance_models import (
+    IndexInstanceNode, IndexTemplate, IndexTemplateNode
+)
 from ..permissions import (
     permission_index_template_create, permission_index_template_delete,
     permission_index_template_edit, permission_index_template_rebuild,
@@ -15,9 +19,9 @@ from ..permissions import (
 
 from .literals import TEST_INDEX_TEMPLATE_LABEL
 from .mixins import (
-    IndexInstanceTestMixin, IndexTemplateTestMixin,
-    IndexTemplateActionAPIViewTestMixin, IndexTemplateAPIViewTestMixin,
-    IndexTemplateDocumentTypeAPIViewTestMixin, IndexTemplateNodeAPITestMixin
+    IndexInstanceTestMixin, IndexTemplateActionAPIViewTestMixin,
+    IndexTemplateAPIViewTestMixin, IndexTemplateDocumentTypeAPIViewTestMixin,
+    IndexTemplateNodeAPITestMixin, IndexTemplateTestMixin
 )
 
 
@@ -191,7 +195,9 @@ class IndexTemplateAPIViewTestCase(
 
         response = self._request_test_index_template_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'], self._test_index_template.pk
         )
@@ -258,7 +264,9 @@ class IndexTemplateDocumentTypeAPIViewTestCase(
 
         response = self._request_test_index_template_document_type_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'], self._test_document_type.pk
         )
@@ -811,7 +819,9 @@ class IndexTemplateNodeAPIViewTestCase(
 
         response = self._request_test_index_template_node_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'],
             self._test_index_template_node.pk

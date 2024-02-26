@@ -4,20 +4,21 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..events import (
     event_ocr_document_version_content_deleted,
+    event_ocr_document_version_finished,
     event_ocr_document_version_page_content_edited,
-    event_ocr_document_version_submitted, event_ocr_document_version_finished
+    event_ocr_document_version_submitted
 )
 from ..models import DocumentVersionPageOCRContent
 from ..permissions import (
+    permission_document_type_ocr_setup, permission_document_version_ocr,
     permission_document_version_ocr_content_edit,
-    permission_document_version_ocr_content_view,
-    permission_document_version_ocr, permission_document_type_ocr_setup
+    permission_document_version_ocr_content_view
 )
 
 from .literals import TEST_DOCUMENT_VERSION_OCR_CONTENT
 from .mixins import (
-    DocumentVersionOCRTestMixin, DocumentVersionOCRViewTestMixin,
-    DocumentVersionPageOCRViewTestMixin, DocumentTypeOCRViewTestMixin
+    DocumentTypeOCRViewTestMixin, DocumentVersionOCRTestMixin,
+    DocumentVersionOCRViewTestMixin, DocumentVersionPageOCRViewTestMixin
 )
 
 

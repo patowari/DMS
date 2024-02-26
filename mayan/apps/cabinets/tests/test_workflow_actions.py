@@ -21,12 +21,16 @@ class CabinetWorkflowActionTestCase(CabinetTestMixin, ActionTestCase):
 
     def test_cabinet_document_add_action(self):
         action = CabinetAddAction(
-            form_data={'cabinets': Cabinet.objects.all()}
+            form_data={
+                'cabinets': Cabinet.objects.all()
+            }
         )
 
         self._clear_events()
 
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertTrue(
             self._test_document in self._test_cabinet.documents.all()
@@ -46,12 +50,16 @@ class CabinetWorkflowActionTestCase(CabinetTestMixin, ActionTestCase):
         )
 
         action = CabinetRemoveAction(
-            form_data={'cabinets': Cabinet.objects.all()}
+            form_data={
+                'cabinets': Cabinet.objects.all()
+            }
         )
 
         self._clear_events()
 
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertFalse(
             self._test_document in self._test_cabinet.documents.all()

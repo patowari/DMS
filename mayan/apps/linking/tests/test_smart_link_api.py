@@ -13,7 +13,7 @@ from ..permissions import (
     permission_smart_link_edit, permission_smart_link_view
 )
 
-from .literals import TEST_SMART_LINK_LABEL_EDITED, TEST_SMART_LINK_LABEL
+from .literals import TEST_SMART_LINK_LABEL, TEST_SMART_LINK_LABEL_EDITED
 from .mixins import (
     SmartLinkAPIViewTestMixin, SmartLinkDocumentTypeAPIViewTestMixin,
     SmartLinkTestMixin

@@ -5,7 +5,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('common', '0009_auto_20180402_0339'),
+        ('common', '0009_auto_20180402_0339')
     ]
 
     operations = [
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
                     location=b'mayan/media/shared_files'
                 ), upload_to=mayan.apps.common.models.upload_to,
                 verbose_name='File'
-            ),
-        ),
+            )
+        )
     ]

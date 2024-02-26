@@ -133,7 +133,7 @@ class DocumentVersionOCRViewTestMixin:
     def _request_test_document_version_ocr_multiple_submit_view(self):
         return self.post(
             viewname='ocr:document_version_ocr_multiple_submit', data={
-                'id_list': self._test_document_version.pk,
+                'id_list': self._test_document_version.pk
             }
         )
 

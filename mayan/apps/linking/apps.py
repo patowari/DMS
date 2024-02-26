@@ -18,12 +18,12 @@ from mayan.apps.views.html_widgets import TwoStateWidget
 
 from .events import event_smart_link_edited
 from .links import (
-    link_document_type_smart_links, link_smart_link_create,
+    link_document_smart_link_instance_list, link_document_type_smart_links,
     link_smart_link_condition_create, link_smart_link_condition_delete,
     link_smart_link_condition_edit, link_smart_link_condition_list,
-    link_smart_link_delete, link_smart_link_document_types,
-    link_smart_link_edit, link_smart_link_instance_view,
-    link_document_smart_link_instance_list, link_smart_link_list,
+    link_smart_link_create, link_smart_link_delete,
+    link_smart_link_document_types, link_smart_link_edit,
+    link_smart_link_instance_view, link_smart_link_list,
     link_smart_link_setup
 )
 from .methods import (

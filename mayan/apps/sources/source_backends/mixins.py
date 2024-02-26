@@ -89,7 +89,9 @@ class SourceBaseMixin:
                 'user_id': user_id
             }
 
-            kwargs.update(self.get_task_extra_kwargs())
+            kwargs.update(
+                self.get_task_extra_kwargs()
+            )
 
             task_document_file_upload.apply_async(kwargs=kwargs)
 
@@ -115,7 +117,9 @@ class SourceBaseMixin:
                 'source_id': self.model_instance_id,
                 'user_id': user_id
             }
-            kwargs.update(self.get_task_extra_kwargs())
+            kwargs.update(
+                self.get_task_extra_kwargs()
+            )
 
             task_process_document_upload.apply_async(kwargs=kwargs)
 

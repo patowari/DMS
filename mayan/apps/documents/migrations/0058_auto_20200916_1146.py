@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0057_auto_20200916_1057'),
+        ('documents', '0057_auto_20200916_1057')
     ]
 
     operations = [
@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
             options={
                 'ordering': ('timestamp',), 'verbose_name': 'Document file',
                 'verbose_name_plural': 'Document files'
-            },
+            }
         ),
         migrations.AlterField(
             model_name='documentfile',
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
             field=models.TextField(
                 blank=True, default='', help_text='An optional short text '
                 'describing the document file.', verbose_name='Comment'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentfile',
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='files', to='documents.Document',
                 verbose_name='Document'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentfile',
@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 blank=True, editable=False, help_text='The document file '
                 'file encoding. binary 7-bit, binary 8-bit, text, base64, '
                 'etc.', max_length=64, null=True, verbose_name='Encoding'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentfile',
@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
                 'format of the document. Some examples: "text/plain" or '
                 '"image/jpeg". ', max_length=255, null=True,
                 verbose_name='MIME type'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentfile',
@@ -60,7 +60,7 @@ class Migration(migrations.Migration):
                 auto_now_add=True, db_index=True, help_text='The server '
                 'date and time when the document file was processed.',
                 verbose_name='Timestamp'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentpage',
@@ -69,6 +69,6 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='file_pages', to='documents.DocumentFile',
                 verbose_name='Document file'
-            ),
-        ),
+            )
+        )
     ]

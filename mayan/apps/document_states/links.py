@@ -5,17 +5,17 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
+    icon_document_type_workflow_template_list,
+    icon_document_workflow_templates_launch, icon_tool_launch_workflows,
     icon_workflow_instance_detail, icon_workflow_instance_list,
     icon_workflow_instance_transition,
     icon_workflow_runtime_proxy_document_list,
     icon_workflow_runtime_proxy_list,
     icon_workflow_runtime_proxy_state_document_list,
-    icon_workflow_runtime_proxy_state_list,
-    icon_tool_launch_workflows, icon_document_type_workflow_template_list,
-    icon_workflow_template_create, icon_workflow_template_delete,
-    icon_workflow_template_document_type_list, icon_workflow_template_edit,
-    icon_workflow_template_launch, icon_workflow_template_list,
-    icon_workflow_template_preview,
+    icon_workflow_runtime_proxy_state_list, icon_workflow_template_create,
+    icon_workflow_template_delete, icon_workflow_template_document_type_list,
+    icon_workflow_template_edit, icon_workflow_template_launch,
+    icon_workflow_template_list, icon_workflow_template_preview,
     icon_workflow_template_state_action_delete,
     icon_workflow_template_state_action_edit,
     icon_workflow_template_state_action_list,
@@ -35,13 +35,13 @@ from .icons import (
     icon_workflow_template_transition_field_delete,
     icon_workflow_template_transition_field_edit,
     icon_workflow_template_transition_field_list,
-    icon_workflow_template_transition_list,
-    icon_document_workflow_templates_launch
+    icon_workflow_template_transition_list
+
 )
 from .permissions import (
     permission_workflow_template_create, permission_workflow_template_delete,
-    permission_workflow_template_edit, permission_workflow_tools,
-    permission_workflow_template_view
+    permission_workflow_template_edit, permission_workflow_template_view,
+    permission_workflow_tools
 )
 
 # Workflow template

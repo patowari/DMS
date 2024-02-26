@@ -1,10 +1,10 @@
-from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.document_indexing.models.index_instance_models import IndexInstanceNode
 from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
+from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from .literals import (
-    TEST_METADATA_INDEX_NODE_TEMPLATE, TEST_METADATA_VALUE,
-    TEST_METADATA_TYPE_LABEL_EDITED, TEST_METADATA_VALUE_EDITED
+    TEST_METADATA_INDEX_NODE_TEMPLATE, TEST_METADATA_TYPE_LABEL_EDITED,
+    TEST_METADATA_VALUE, TEST_METADATA_VALUE_EDITED
 )
 from .mixins import DocumentMetadataMixin, MetadataTypeTestMixin
 

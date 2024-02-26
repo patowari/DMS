@@ -11,7 +11,7 @@ from mayan.apps.views.generics import (
 )
 
 from .exceptions import DocumentAlreadyCheckedOut, DocumentNotCheckedOut
-from .forms import DocumentCheckOutForm, DocumentCheckOutDetailForm
+from .forms import DocumentCheckOutDetailForm, DocumentCheckOutForm
 from .icons import (
     icon_check_in_document, icon_check_out_document, icon_check_out_info,
     icon_check_out_list

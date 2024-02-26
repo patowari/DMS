@@ -5,8 +5,9 @@ from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..events import (
-    event_cabinet_created, event_cabinet_deleted, event_cabinet_edited,
-    event_cabinet_document_added, event_cabinet_document_removed
+    event_cabinet_created, event_cabinet_deleted,
+    event_cabinet_document_added, event_cabinet_document_removed,
+    event_cabinet_edited
 )
 from ..models import Cabinet
 

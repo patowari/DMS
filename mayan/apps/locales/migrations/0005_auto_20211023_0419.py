@@ -4,7 +4,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('locales', '0004_auto_20210130_0333'),
+        ('locales', '0004_auto_20210130_0333')
     ]
 
     operations = [
@@ -485,6 +485,6 @@ class Migration(migrations.Migration):
                     ('US/Pacific', 'US/Pacific'),
                     ('UTC', 'UTC')
                 ], max_length=48, verbose_name='Timezone'
-            ),
-        ),
+            )
+        )
     ]

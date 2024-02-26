@@ -13,7 +13,7 @@ from mayan.apps.views.generics import (
 from mayan.apps.views.literals import LIST_MODE_CHOICE_ITEM
 
 from .exceptions import DynamicSearchException
-from .forms import SearchForm, AdvancedSearchForm
+from .forms import AdvancedSearchForm, SearchForm
 from .icons import (
     icon_result_list, icon_search, icon_search_advanced,
     icon_search_backend_reindex, icon_search_submit

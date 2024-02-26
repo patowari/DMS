@@ -26,19 +26,19 @@ from ..forms.misc_forms import PageNumberForm
 from ..icons import (
     icon_document_file_delete, icon_document_file_edit,
     icon_document_file_list, icon_document_file_preview,
-    icon_document_file_properties_detail, icon_document_file_print,
+    icon_document_file_print, icon_document_file_properties_detail,
     icon_document_file_transformation_list_clear,
     icon_document_file_transformation_list_clone
 )
-from ..models.document_models import Document
 from ..models.document_file_models import DocumentFile
+from ..models.document_models import Document
 from ..permissions import (
     permission_document_file_delete, permission_document_file_edit,
     permission_document_file_print, permission_document_file_view
 )
 from ..settings import setting_preview_height, setting_preview_width
 
-from .misc_views import PrintFormView, DocumentPrintBaseView
+from .misc_views import DocumentPrintBaseView, PrintFormView
 
 logger = logging.getLogger(name=__name__)
 

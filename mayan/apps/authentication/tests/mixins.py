@@ -64,7 +64,9 @@ class LoginViewTestMixin:
             'multi_factor_authentication_view-current_step': '0'
         }
 
-        default_data.update(data or {})
+        default_data.update(
+            data or {}
+        )
 
         return self.post(
             data=default_data, follow=follow, query=query,
@@ -93,14 +95,14 @@ class PasswordResetViewTestMixin:
     def _request_password_reset_get_view(self):
         return self.get(
             viewname='authentication:password_reset_view', data={
-                'email': self._test_case_superuser.email,
+                'email': self._test_case_superuser.email
             }
         )
 
     def _request_password_reset_post_view(self):
         return self.post(
             viewname='authentication:password_reset_view', data={
-                'email': self._test_case_superuser.email,
+                'email': self._test_case_superuser.email
             }
         )
 

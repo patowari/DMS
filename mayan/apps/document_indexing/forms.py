@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.documents.models import Document
 from mayan.apps.templating.fields import ModelTemplateField
-from mayan.apps.views.forms import Form, FilteredSelectionForm
+from mayan.apps.views.forms import FilteredSelectionForm, Form
 
 from .literals import RELATIONSHIP_CHOICES
 from .models.index_template_models import IndexTemplate, IndexTemplateNode

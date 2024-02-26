@@ -5,9 +5,7 @@ from mayan.apps.sources.classes import DocumentCreateWizardStep
 from mayan.apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
 
 from .forms import DocumentMetadataFormSet
-from .utils import (
-    decode_metadata_from_query_string, save_metadata_list
-)
+from .utils import decode_metadata_from_query_string, save_metadata_list
 
 
 class DocumentCreateWizardStepMetadata(DocumentCreateWizardStep):

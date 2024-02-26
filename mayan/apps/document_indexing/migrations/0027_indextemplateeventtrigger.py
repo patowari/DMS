@@ -39,7 +39,9 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Index template event trigger',
                 'verbose_name_plural': 'Index template event triggers',
-                'unique_together': {('index_template', 'stored_event_type')},
+                'unique_together': {
+                    ('index_template', 'stored_event_type')
+                }
             },
             bases=(
                 mayan.apps.databases.model_mixins.ExtraDataModelMixin,

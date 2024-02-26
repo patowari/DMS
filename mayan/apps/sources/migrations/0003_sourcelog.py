@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0002_auto_20150608_1902'),
+        ('sources', '0002_auto_20150608_1902')
     ]
 
     operations = [
@@ -12,8 +12,8 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     'id', models.AutoField(
-                        verbose_name='ID', serialize=False, auto_created=True,
-                        primary_key=True
+                        verbose_name='ID', serialize=False,
+                        auto_created=True, primary_key=True
                     )
                 ),
                 (
@@ -31,14 +31,14 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE, related_name='logs',
                         to='sources.Source', verbose_name='Source'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ['-datetime'],
                 'get_latest_by': 'datetime',
                 'verbose_name': 'Log entry',
-                'verbose_name_plural': 'Log entries',
+                'verbose_name_plural': 'Log entries'
             },
-            bases=(models.Model,),
-        ),
+            bases=(models.Model,)
+        )
     ]

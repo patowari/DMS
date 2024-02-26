@@ -20,10 +20,18 @@ class TagWorkflowActionTestCase(TagTestMixin, ActionTestCase):
     def test_tag_attach_action(self):
         self._clear_events()
 
-        action = AttachTagAction(form_data={'tags': Tag.objects.all()})
-        action.execute(context={'document': self._test_document})
+        action = AttachTagAction(
+            form_data={
+                'tags': Tag.objects.all()
+            }
+        )
+        action.execute(
+            context={'document': self._test_document}
+        )
 
-        self.assertEqual(self._test_tag.documents.count(), 1)
+        self.assertEqual(
+            self._test_tag.documents.count(), 1
+        )
         self.assertTrue(
             self._test_document in self._test_tag.documents.all()
         )
@@ -43,10 +51,18 @@ class TagWorkflowActionTestCase(TagTestMixin, ActionTestCase):
 
         self._clear_events()
 
-        action = RemoveTagAction(form_data={'tags': Tag.objects.all()})
-        action.execute(context={'document': self._test_document})
+        action = RemoveTagAction(
+            form_data={
+                'tags': Tag.objects.all()
+            }
+        )
+        action.execute(
+            context={'document': self._test_document}
+        )
 
-        self.assertEqual(self._test_tag.documents.count(), 0)
+        self.assertEqual(
+            self._test_tag.documents.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

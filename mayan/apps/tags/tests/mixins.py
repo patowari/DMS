@@ -34,7 +34,7 @@ class DocumentTagViewTestMixin:
             viewname='tags:single_document_multiple_tag_remove', kwargs={
                 'document_id': self._test_document.pk
             }, data={
-                'tags': self._test_tag.pk,
+                'tags': self._test_tag.pk
             }
         )
 
@@ -42,7 +42,7 @@ class DocumentTagViewTestMixin:
         return self.post(
             viewname='tags:multiple_documents_selection_tag_remove', data={
                 'id_list': self._test_document.pk,
-                'tags': self._test_tag.pk,
+                'tags': self._test_tag.pk
             }
         )
 
@@ -84,7 +84,9 @@ class TagAPIViewTestMixin:
         )
 
     def _request_test_tag_create_api_view(self):
-        pk_list = list(Tag.objects.values('pk'))
+        pk_list = list(
+            Tag.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:tag-list', data={
@@ -169,7 +171,9 @@ class TagTestMixin:
 
 class TagViewTestMixin:
     def _request_test_tag_create_view(self):
-        pk_list = list(Tag.objects.values('pk'))
+        pk_list = list(
+            Tag.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='tags:tag_create', data={

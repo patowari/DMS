@@ -3,7 +3,8 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from ..events import event_workflow_instance_transitioned
 from ..literals import WIDGET_CLASS_TEXTAREA
 from ..permissions import (
-    permission_workflow_instance_transition, permission_workflow_template_view
+    permission_workflow_instance_transition,
+    permission_workflow_template_view
 )
 
 from .mixins.workflow_instance_mixins import WorkflowInstanceViewTestMixin
@@ -211,7 +212,9 @@ class WorkflowInstanceTransitionViewTestCase(
         )
         self.assertNotContains(
             response=response,
-            text=str(self._test_workflow_template_transitions[0]),
+            text=str(
+                self._test_workflow_template_transitions[0]
+            ),
             status_code=200
         )
 
@@ -260,7 +263,9 @@ class WorkflowInstanceTransitionViewTestCase(
         )
         self.assertContains(
             response=response,
-            text=str(self._test_workflow_template_transitions[0]),
+            text=str(
+                self._test_workflow_template_transitions[0]
+            ),
             status_code=200
         )
 
@@ -309,7 +314,9 @@ class WorkflowInstanceTransitionViewTestCase(
         )
         self.assertContains(
             response=response,
-            text=str(self._test_workflow_template_transitions[0]),
+            text=str(
+                self._test_workflow_template_transitions[0]
+            ),
             status_code=200
         )
 

@@ -28,7 +28,9 @@ class SearchModel(AppsModuleLoaderMixin):
 
     @classmethod
     def all(cls):
-        result = set(cls._registry.values())
+        result = set(
+            cls._registry.values()
+        )
         result = list(result)
         result.sort(key=lambda entry: entry.label)
         return result
@@ -76,7 +78,9 @@ class SearchModel(AppsModuleLoaderMixin):
                         except AttributeError:
                             through_model = field.remote_field.through
 
-                        through_models.setdefault(through_model, {})
+                        through_models.setdefault(
+                            through_model, {}
+                        )
                         through_models[through_model].setdefault(
                             related_model, set()
                         )

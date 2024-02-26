@@ -8,7 +8,7 @@ class DocumentTypeViewTestMixin:
     def _request_document_type_file_metadata_submit_view(self):
         return self.post(
             viewname='file_metadata:document_type_file_metadata_submit', data={
-                'document_type': self._test_document_type.pk,
+                'document_type': self._test_document_type.pk
             }
         )
 
@@ -38,6 +38,6 @@ class FileMetadataViewTestMixin:
         return self.post(
             viewname='file_metadata:document_file_metadata_multiple_submit',
             data={
-                'id_list': self._test_document_file.pk,
+                'id_list': self._test_document_file.pk
             }
         )

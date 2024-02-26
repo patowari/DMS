@@ -28,14 +28,19 @@ class Migration(migrations.Migration):
                 ('date_time_edited', models.DateTimeField(auto_now=True, db_index=True, verbose_name='Date and time edited')),
                 ('internal_name', models.CharField(db_index=True, help_text='This value will be used when referencing this signature capture in relationship to the document. Can only contain letters, numbers, and underscores.', max_length=255, validators=[django.core.validators.RegexValidator(re.compile('^[a-zA-Z0-9_]+\\Z'), "Enter a valid 'internal name' consisting of letters, numbers, and underscores.", 'invalid')], verbose_name='Internal name')),
                 ('document', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='signature_captures', to='documents.document', verbose_name='Document')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='signature_captures', to=settings.AUTH_USER_MODEL, verbose_name='User')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='signature_captures', to=settings.AUTH_USER_MODEL, verbose_name='User'))
             ],
             options={
                 'verbose_name': 'Signature capture',
                 'verbose_name_plural': 'Signature captures',
                 'ordering': ('-date_time_created',),
-                'unique_together': {('document', 'internal_name')}
+                'unique_together': {
+                    ('document', 'internal_name')
+                }
             },
-            bases=(mayan.apps.databases.model_mixins.ExtraDataModelMixin, models.Model)
+            bases=(
+                mayan.apps.databases.model_mixins.ExtraDataModelMixin,
+                models.Model
+            )
         )
     ]

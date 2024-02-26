@@ -19,13 +19,14 @@ from ..icons import (
     icon_workflow_template_transition_create,
     icon_workflow_template_transition_delete,
     icon_workflow_template_transition_edit,
-    icon_workflow_template_transition_list,
-    icon_workflow_template_transition_triggers,
     icon_workflow_template_transition_field,
     icon_workflow_template_transition_field_create,
     icon_workflow_template_transition_field_delete,
     icon_workflow_template_transition_field_edit,
-    icon_workflow_template_transition_field_list
+    icon_workflow_template_transition_field_list,
+    icon_workflow_template_transition_list,
+    icon_workflow_template_transition_triggers
+
 )
 from ..links import (
     link_workflow_template_transition_create,

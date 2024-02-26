@@ -84,11 +84,13 @@ class DocumentTypeOCRSubmitView(FormView):
             message=_(
                 '%(count)d documents added to the OCR queue.'
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 
-        return HttpResponseRedirect(redirect_to=self.get_success_url())
+        return HttpResponseRedirect(
+            redirect_to=self.get_success_url()
+        )
 
     def get_form_extra_kwargs(self):
         return {

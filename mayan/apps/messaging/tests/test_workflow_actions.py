@@ -31,7 +31,9 @@ class WorkflowActionMessageSendTestCase(
 
         self._clear_events()
 
-        action.execute(context={})
+        action.execute(
+            context={}
+        )
 
         self.assertEqual(
             Message.objects.count(), test_message_count + 1

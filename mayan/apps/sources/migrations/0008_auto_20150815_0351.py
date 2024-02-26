@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0007_emailbasemodel_metadata_attachment_name'),
+        ('sources', '0007_emailbasemodel_metadata_attachment_name')
     ]
 
     operations = [
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
                 'Note: This attachment has to be the first attachment.',
                 max_length=128, verbose_name='Metadata attachment name'
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0009_auto_20150930_2341'),
+        ('sources', '0009_auto_20150930_2341')
     ]
 
     operations = [
@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
                 help_text='Store the body of the email as a text document.',
                 verbose_name='Store email body'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AlterField(
             model_name='imapemail',
@@ -25,6 +25,6 @@ class Migration(migrations.Migration):
                 help_text='IMAP Mailbox from which to check for messages.',
                 max_length=64, verbose_name='Mailbox'
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

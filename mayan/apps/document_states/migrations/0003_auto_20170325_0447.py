@@ -3,29 +3,27 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_states', '0002_workflowstate_completion'),
+        ('document_states', '0002_workflowstate_completion')
     ]
 
     operations = [
         migrations.CreateModel(
             name='WorkflowRuntimeProxy',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Workflow runtime proxy',
                 'proxy': True,
-                'verbose_name_plural': 'Workflow runtime proxies',
+                'verbose_name_plural': 'Workflow runtime proxies'
             },
             bases=('document_states.workflow',),
         ),
         migrations.CreateModel(
             name='WorkflowStateRuntimeProxy',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Workflow state runtime proxy',
                 'proxy': True,
-                'verbose_name_plural': 'Workflow state runtime proxies',
+                'verbose_name_plural': 'Workflow state runtime proxies'
             },
             bases=('document_states.workflowstate',),
         ),
@@ -50,5 +48,5 @@ class Migration(migrations.Migration):
                 'ordering': ('label',), 'verbose_name': 'Workflow transition',
                 'verbose_name_plural': 'Workflow transitions'
             },
-        ),
+        )
     ]

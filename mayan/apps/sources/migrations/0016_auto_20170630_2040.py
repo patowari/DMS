@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0015_auto_20170206_0835'),
+        ('sources', '0015_auto_20170206_0835')
     ]
 
     operations = [
@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
                 'DPI (dots per inch). Typical value is 200. If this option '
                 'is not supported by your scanner, leave it blank.',
                 null=True, verbose_name='Resolution'
-            ),
-        ),
+            )
+        )
     ]

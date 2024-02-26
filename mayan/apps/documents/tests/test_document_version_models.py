@@ -15,13 +15,17 @@ class DocumentVersionTestCase(
     def test_version_new_file_new_pages(self):
         test_document_version_page_content_objects = self._test_document_version.page_content_objects
 
-        self.assertEqual(self._test_document.versions.count(), 1)
+        self.assertEqual(
+            self._test_document.versions.count(), 1
+        )
 
         self._upload_test_document_file(
             action=DocumentFileActionUseNewPages.backend_id
         )
 
-        self.assertEqual(self._test_document.versions.count(), 2)
+        self.assertEqual(
+            self._test_document.versions.count(), 2
+        )
 
         self.assertNotEqual(
             self._test_document_version.page_content_objects,
@@ -29,19 +33,25 @@ class DocumentVersionTestCase(
         )
         self.assertEqual(
             self._test_document_version.page_content_objects,
-            list(self._test_document.file_latest.pages.all())
+            list(
+                self._test_document.file_latest.pages.all()
+            )
         )
 
     def test_version_new_version_keep_pages(self):
         test_document_version_page_content_objects = self._test_document_version.page_content_objects
 
-        self.assertEqual(self._test_document.versions.count(), 1)
+        self.assertEqual(
+            self._test_document.versions.count(), 1
+        )
 
         self._upload_test_document_file(
             action=DocumentFileActionNothing.backend_id
         )
 
-        self.assertEqual(self._test_document.versions.count(), 1)
+        self.assertEqual(
+            self._test_document.versions.count(), 1
+        )
 
         self.assertEqual(
             self._test_document_version.page_content_objects,
@@ -49,21 +59,31 @@ class DocumentVersionTestCase(
         )
         self.assertNotEqual(
             self._test_document_version.page_content_objects,
-            list(self._test_document.file_latest.pages.all())
+            list(
+                self._test_document.file_latest.pages.all()
+            )
         )
 
     def test_version_new_file_append_pages(self):
         test_document_version_page_content_objects = self._test_document_version.page_content_objects
 
-        self.assertEqual(self._test_document.versions.count(), 1)
-        self.assertEqual(self._test_document.files.count(), 1)
+        self.assertEqual(
+            self._test_document.versions.count(), 1
+        )
+        self.assertEqual(
+            self._test_document.files.count(), 1
+        )
 
         self._upload_test_document_file(
             action=DocumentFileActionAppendNewPages.backend_id
         )
 
-        self.assertEqual(self._test_document.files.count(), 2)
-        self.assertEqual(self._test_document.versions.count(), 2)
+        self.assertEqual(
+            self._test_document.files.count(), 2
+        )
+        self.assertEqual(
+            self._test_document.versions.count(), 2
+        )
 
         test_document_version_expected_page_content_objects = list(
             self._test_document.files.first().pages.all()
@@ -103,8 +123,12 @@ class DocumentVersionBusinessLogicTestCase(
         self._test_document_versions[0].refresh_from_db()
         self._test_document_versions[1].refresh_from_db()
 
-        self.assertEqual(self._test_document_versions[0].active, False)
-        self.assertEqual(self._test_document_versions[1].active, True)
+        self.assertEqual(
+            self._test_document_versions[0].active, False
+        )
+        self.assertEqual(
+            self._test_document_versions[1].active, True
+        )
 
         self._clear_events()
 
@@ -115,8 +139,12 @@ class DocumentVersionBusinessLogicTestCase(
         self._test_document_versions[0].refresh_from_db()
         self._test_document_versions[1].refresh_from_db()
 
-        self.assertEqual(self._test_document_versions[0].active, True)
-        self.assertEqual(self._test_document_versions[1].active, False)
+        self.assertEqual(
+            self._test_document_versions[0].active, True
+        )
+        self.assertEqual(
+            self._test_document_versions[1].active, False
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

@@ -7,8 +7,8 @@ from ..links import link_web_link_instance_view
 from ..models import ResolvedWebLink, WebLink
 from ..permissions import (
     permission_web_link_create, permission_web_link_delete,
-    permission_web_link_edit, permission_web_link_view,
-    permission_web_link_instance_view
+    permission_web_link_edit, permission_web_link_instance_view,
+    permission_web_link_view
 )
 
 from .literals import TEST_WEB_LINK_TEMPLATE

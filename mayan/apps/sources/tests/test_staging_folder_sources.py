@@ -25,7 +25,7 @@ class StagingFolderSourceBackendTestCase(
             'document_form': self._test_document_form,
             'source_form': InteractiveSourceBackendTestMixin.MockSourceForm(
                 staging_folder_file_id=self._test_staging_folder_file.encoded_filename
-            ),
+            )
         }
 
         source_backend_instance.process_documents(
@@ -83,6 +83,12 @@ class StagingFolderSourceBackendTestCase(
             TEST_DOCUMENT_SMALL_CHECKSUM
         )
 
-        path = Path(self._test_source.get_backend_data()['folder_path'])
+        path = Path(
+            self._test_source.get_backend_data()['folder_path']
+        )
 
-        self.assertEqual(sum(1 for x in path.glob('*') if x.is_file()), 0)
+        self.assertEqual(
+            sum(
+                1 for x in path.glob('*') if x.is_file()
+            ), 0
+        )

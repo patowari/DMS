@@ -33,7 +33,7 @@ class AssetCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _('Create asset'),
+            'title': _('Create asset')
         }
 
     def get_instance_extra_data(self):
@@ -141,5 +141,5 @@ class AssetListView(SingleObjectListView):
                 'certain transformations.'
             ),
             'no_results_title': _('No assets available'),
-            'title': _('Assets'),
+            'title': _('Assets')
         }

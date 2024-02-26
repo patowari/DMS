@@ -72,8 +72,12 @@ class StoredPermission(StoredPermissionBusinessLogicMixin, models.Model):
     class. Allows storing a database counterpart of a permission class.
     It is used to store the permissions help by a role or in an ACL.
     """
-    namespace = models.CharField(max_length=64, verbose_name=_('Namespace'))
-    name = models.CharField(max_length=64, verbose_name=_('Name'))
+    namespace = models.CharField(
+        max_length=64, verbose_name=_('Namespace')
+    )
+    name = models.CharField(
+        max_length=64, verbose_name=_('Name')
+    )
 
     objects = StoredPermissionManager()
 

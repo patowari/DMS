@@ -7,11 +7,11 @@ from mayan.apps.common.menus import (
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.html_widgets import TwoStateWidget
 
-from .classes import SettingNamespace, Setting
+from .classes import Setting, SettingNamespace
 from .html_widgets import WidgetSettingValue
 from .links import (
-    link_setting_namespace_detail, link_setting_namespace_list,
-    link_namespace_root_list, link_setting_edit
+    link_namespace_root_list, link_setting_edit,
+    link_setting_namespace_detail, link_setting_namespace_list
 )
 from .widgets import setting_widget
 
@@ -29,13 +29,15 @@ class SmartSettingsApp(MayanAppConfig):
         SettingNamespace.load_modules()
 
         SourceColumn(
-            func=lambda context: len(context['object'].settings),
-            label=_('Setting count'), include_label=True,
+            func=lambda context: len(
+                context['object'].settings
+            ), label=_('Setting count'), include_label=True,
             source=SettingNamespace
         )
         SourceColumn(
-            func=lambda context: setting_widget(context['object']),
-            label=_('Name'), is_identifier=True, source=Setting
+            func=lambda context: setting_widget(
+                context['object']
+            ), label=_('Name'), is_identifier=True, source=Setting
         )
         SourceColumn(
             attribute='serialized_value', include_label=True,

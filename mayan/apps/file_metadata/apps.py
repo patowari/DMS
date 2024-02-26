@@ -23,8 +23,8 @@ from .handlers import (
     process_document_file_metadata
 )
 from .links import (
-    link_document_file_metadata_driver_list,
     link_document_file_metadata_driver_attribute_list,
+    link_document_file_metadata_driver_list,
     link_document_file_metadata_single_submit,
     link_document_file_metadata_submit_multiple,
     link_document_type_file_metadata_settings,
@@ -33,7 +33,7 @@ from .links import (
 from .methods import (
     method_document_file_metadata_submit,
     method_document_file_metadata_submit_single,
-    method_get_document_file_metadata, method_get_document_file_file_metadata
+    method_get_document_file_file_metadata, method_get_document_file_metadata
 )
 from .permissions import (
     permission_document_type_file_metadata_setup,

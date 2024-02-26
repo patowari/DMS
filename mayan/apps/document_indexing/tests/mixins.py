@@ -254,7 +254,7 @@ class IndexTemplateActionAPIViewTestMixin:
 class IndexTemplateAPIViewTestMixin:
     def _request_test_index_template_create_api_view(self):
         pk_list = list(
-            IndexTemplate.objects.values('pk')
+            IndexTemplate.objects.values_list('pk', flat=True)
         )
 
         response = self.post(
@@ -469,7 +469,9 @@ class IndexToolsViewTestMixin:
 
 class IndexTemplateViewTestMixin:
     def _request_test_index_template_create_view(self):
-        pk_list = list(IndexTemplate.objects.values('pk'))
+        pk_list = list(
+            IndexTemplate.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='indexing:index_template_create', data={

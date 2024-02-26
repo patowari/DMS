@@ -21,7 +21,9 @@ class DisableableSelectWidget(forms.widgets.SelectMultiple):
         # Current interface as of Django 1.11
         # def create_option(self, name, value, label, selected, index,
         # subindex=None, attrs=None):
-        value = kwargs.get('value', args[1])
+        value = kwargs.get(
+            'value', args[1]
+        )
 
         if value in self.disabled_choices:
             result['attrs'].update(
@@ -42,7 +44,9 @@ class NamedMultiWidget(forms.widgets.Widget):
             self.widgets[name] = widget() if isinstance(widget, type) else widget
 
         if not self.subwidgets_order:
-            self.subwidgets_order = list(self.widgets.keys())
+            self.subwidgets_order = list(
+                self.widgets.keys()
+            )
 
         super().__init__(attrs)
 
@@ -73,7 +77,7 @@ class NamedMultiWidget(forms.widgets.Widget):
         id_ = final_attrs.get('id')
         subwidgets = []
 
-        # Include new subwidgets added by subclasses after __init__
+        # Include new subwidgets added by subclasses after __init__.
         _subwidgets_order = self.subwidgets_order.copy()
         for widget in self.widgets.keys():
             if widget not in _subwidgets_order:

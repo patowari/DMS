@@ -31,7 +31,9 @@ class ModelPermission:
 
         for namespace, permissions in itertools.groupby(cls.get_for_class(klass=klass), lambda entry: entry.namespace):
             permission_options = [
-                (permission.pk, str(permission)) for permission in permissions
+                (
+                    permission.pk, str(permission)
+                ) for permission in permissions
             ]
             permission_options.sort(
                 key=lambda entry: entry[1]
@@ -41,7 +43,9 @@ class ModelPermission:
             )
 
         # Sort by namespace label.
-        result.sort(key=lambda entry: entry[0].label)
+        result.sort(
+            key=lambda entry: entry[0].label
+        )
         return result
 
     @classmethod
@@ -219,7 +223,9 @@ class ModelPermission:
         )
         cls._inheritances_reverse[model_reverse].append(model)
 
-        cls._inheritances.setdefault(model, [])
+        cls._inheritances.setdefault(
+            model, []
+        )
         cls._inheritances[model].append(
             {'field_name': related, 'fk_field_cast': fk_field_cast}
         )

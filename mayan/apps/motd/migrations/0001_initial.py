@@ -2,8 +2,7 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -11,8 +10,8 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     'id', models.AutoField(
-                        verbose_name='ID', serialize=False, auto_created=True,
-                        primary_key=True
+                        verbose_name='ID', serialize=False,
+                        auto_created=True, primary_key=True
                     )
                 ),
                 (
@@ -39,11 +38,11 @@ class Migration(migrations.Migration):
                     'end_datetime', models.DateTimeField(
                         verbose_name='End date time', blank=True
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Message of the day',
-                'verbose_name_plural': 'Messages of the day',
-            },
-        ),
+                'verbose_name_plural': 'Messages of the day'
+            }
+        )
     ]

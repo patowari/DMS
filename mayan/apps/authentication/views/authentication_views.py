@@ -7,8 +7,7 @@ from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.views import (
     LoginView, LogoutView, PasswordChangeDoneView, PasswordChangeView,
     PasswordResetCompleteView, PasswordResetConfirmView,
-    PasswordResetDoneView, PasswordResetView,
-    SuccessURLAllowedHostsMixin
+    PasswordResetDoneView, PasswordResetView, SuccessURLAllowedHostsMixin
 )
 from django.core.exceptions import PermissionDenied
 from django.forms import formsets
@@ -32,8 +31,8 @@ from mayan.apps.common.settings import (
 from mayan.apps.user_management.permissions import permission_user_edit
 from mayan.apps.user_management.querysets import get_user_queryset
 from mayan.apps.views.generics import MultipleObjectFormActionView
-from mayan.apps.views.view_mixins import ViewIconMixin
 from mayan.apps.views.http import URL
+from mayan.apps.views.view_mixins import ViewIconMixin
 
 from ..classes import AuthenticationBackend
 from ..forms import AuthenticationFormBase

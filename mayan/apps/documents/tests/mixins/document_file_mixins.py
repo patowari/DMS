@@ -38,7 +38,9 @@ class DocumentFileAPIViewTestMixin:
         )
 
     def _request_test_document_file_upload_api_view(self):
-        pk_list = list(DocumentFile.objects.values_list('pk', flat=True))
+        pk_list = list(
+            DocumentFile.objects.values_list('pk', flat=True)
+        )
 
         with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_descriptor:
             response = self.post(
@@ -86,7 +88,9 @@ class DocumentFileTestMixin:
 
         self._test_document_file_page = self._test_document_file.pages.first()
         self._test_document_file_pages.extend(
-            list(self._test_document_file.pages.all())
+            list(
+                self._test_document_file.pages.all()
+            )
         )
         self._test_document_files.append(self._test_document_file)
         self._test_document_version = self._test_document.version_active
@@ -135,7 +139,7 @@ class DocumentFileViewTestMixin:
     def _request_test_document_file_print_form_view(self):
         return self.get(
             viewname='documents:document_file_print_form', kwargs={
-                'document_file_id': self._test_document_file.pk,
+                'document_file_id': self._test_document_file.pk
             }, data={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -144,7 +148,7 @@ class DocumentFileViewTestMixin:
     def _request_test_document_file_print_view(self):
         return self.get(
             viewname='documents:document_file_print_view', kwargs={
-                'document_file_id': self._test_document_file.pk,
+                'document_file_id': self._test_document_file.pk
             }, query={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -183,7 +187,7 @@ class DocumentFilePageAPIViewTestMixin:
         return self.get(
             viewname='rest_api:documentfilepage-list', kwargs={
                 'document_id': self._test_document.pk,
-                'document_file_id': self._test_document_file.pk,
+                'document_file_id': self._test_document_file.pk
             }
         )
 
@@ -225,7 +229,7 @@ class DocumentFilePageViewTestMixin:
     def _request_test_document_file_page_view(self, document_file_page):
         return self.get(
             viewname='documents:document_file_page_view', kwargs={
-                'document_file_page_id': document_file_page.pk,
+                'document_file_page_id': document_file_page.pk
             }
         )
 

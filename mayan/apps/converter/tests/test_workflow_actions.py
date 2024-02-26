@@ -26,7 +26,9 @@ class TransformationActionTestCase(ActionTestCase):
         transformation_count = LayerTransformation.objects.get_for_object(
             obj=self._test_document.pages.first()
         ).count()
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertEqual(
             LayerTransformation.objects.get_for_object(
@@ -46,7 +48,9 @@ class TransformationActionTestCase(ActionTestCase):
         transformation_count = LayerTransformation.objects.get_for_object(
             obj=self._test_document.pages.first()
         ).count()
-        action.execute(context={'document': self._test_document})
+        action.execute(
+            context={'document': self._test_document}
+        )
 
         self.assertEqual(
             LayerTransformation.objects.get_for_object(

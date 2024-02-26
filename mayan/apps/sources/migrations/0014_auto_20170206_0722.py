@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0013_auto_20170206_0710'),
+        ('sources', '0013_auto_20170206_0710')
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 'mode (simplex/duplex). If this option is not supported by '
                 'your scanner, leave it blank.', max_length=16,
                 verbose_name='ADF mode'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='sanescanner',
@@ -30,6 +30,6 @@ class Migration(migrations.Migration):
                 '(such as a document-feeder). If this option is not '
                 'supported by your scanner, leave it blank.', max_length=32,
                 verbose_name='Paper source'
-            ),
-        ),
+            )
+        )
     ]

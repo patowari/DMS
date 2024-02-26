@@ -181,7 +181,11 @@ class LoginOTPTestCase(
             }, follow=True, query={'next': TEST_REDIRECT_URL}
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.redirect_chain, [(TEST_REDIRECT_URL, 302)])
+        self.assertEqual(
+            response.redirect_chain, [
+                (TEST_REDIRECT_URL, 302)
+            ]
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)

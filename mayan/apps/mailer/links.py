@@ -3,15 +3,15 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.navigation.classes import Link
 
 from .icons import (
-    icon_document_file_attachment_send_single,
-    icon_document_file_link_send_single,
     icon_document_file_attachment_send_multiple,
+    icon_document_file_attachment_send_single,
     icon_document_file_link_send_multiple,
-    icon_document_link_send_single, icon_document_link_send_multiple,
+    icon_document_file_link_send_single, icon_document_link_send_multiple,
+    icon_document_link_send_single,
+    icon_document_version_attachment_send_multiple,
     icon_document_version_attachment_send_single,
-    icon_document_version_link_send_single,
     icon_document_version_link_send_multiple,
-    icon_document_version_attachment_send_multiple, icon_user_mailer_create,
+    icon_document_version_link_send_single, icon_user_mailer_create,
     icon_user_mailer_delete, icon_user_mailer_edit, icon_user_mailer_list,
     icon_user_mailer_setup, icon_user_mailer_test
 )

@@ -7,8 +7,8 @@ from mayan.apps.views.generics import (
 
 from .classes import StatisticNamespace
 from .icons import (
-    icon_statistic_detail, icon_statistic_queue,
-    icon_statistic_namespace_detail, icon_statistic_namespace_list
+    icon_statistic_detail, icon_statistic_namespace_detail,
+    icon_statistic_namespace_list, icon_statistic_queue
 )
 
 from .permissions import permission_statistics_view

@@ -432,7 +432,7 @@ class IndexTemplateAllRebuildView(FormView):
                 plural='%(count)d index templates queued for rebuild.',
                 number=count
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 
@@ -466,7 +466,7 @@ class IndexTemplateResetView(FormView):
                 plural='%(count)d indexes reset.',
                 number=count
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 

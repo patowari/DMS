@@ -31,7 +31,9 @@ class WorkflowStateAction(ExtraDataModelMixin, models.Model):
         max_length=255, help_text=_('A short text describing the action.'),
         verbose_name=_('Label')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_('Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_('Enabled')
+    )
     when = models.PositiveIntegerField(
         choices=WORKFLOW_ACTION_WHEN_CHOICES,
         default=WORKFLOW_ACTION_ON_ENTRY, help_text=_(

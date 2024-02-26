@@ -33,7 +33,9 @@ class UserMailer(
             'document mailing form.'
         ), verbose_name=_('Default')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_('Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_('Enabled')
+    )
     backend_path = models.CharField(
         max_length=128,
         help_text=_('The dotted Python path to the backend class.'),

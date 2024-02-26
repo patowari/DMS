@@ -1,7 +1,7 @@
 from ..classes import SourceBackend
 from ..source_backends.email_backends import SourceBackendEmailMixin
 from ..source_backends.mixins import (
-    SourceBaseMixin, SourceBackendPeriodicMixin
+    SourceBackendPeriodicMixin, SourceBaseMixin
 )
 
 __all__ = (
@@ -32,6 +32,8 @@ class SourceBackendTestEmail(
     def get_shared_uploaded_files(self):
         data = self.get_model_instance().get_backend_data()
 
-        message = getattr(self, 'content', data.get('_test_content'))
+        message = getattr(
+            self, 'content', data.get('_test_content')
+        )
 
         return self.process_message(message=message)

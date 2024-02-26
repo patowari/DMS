@@ -10,8 +10,8 @@ from mayan.apps.document_states.exceptions import WorkflowStateActionError
 
 from .models import DocumentMetadata, MetadataType
 from .permissions import (
-    permission_document_metadata_add, permission_document_metadata_remove,
-    permission_document_metadata_edit
+    permission_document_metadata_add, permission_document_metadata_edit,
+    permission_document_metadata_remove
 )
 
 logger = logging.getLogger(name=__name__)

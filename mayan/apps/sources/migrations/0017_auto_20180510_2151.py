@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0016_auto_20170630_2040'),
+        ('sources', '0016_auto_20170630_2040')
     ]
 
     operations = [
@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
                 'document-feeder). If this option is not supported by your '
                 'scanner, leave it blank.', max_length=32, null=True,
                 verbose_name='Paper source'
-            ),
-        ),
+            )
+        )
     ]

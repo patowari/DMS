@@ -244,7 +244,7 @@ class DocumentViewTestMixin:
     def _request_test_document_print_form_view(self):
         return self.get(
             viewname='documents:document_print_form', kwargs={
-                'document_id': self._test_document.pk,
+                'document_id': self._test_document.pk
             }, data={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -253,7 +253,7 @@ class DocumentViewTestMixin:
     def _request_test_document_print_view(self):
         return self.get(
             viewname='documents:document_print_view', kwargs={
-                'document_id': self._test_document.pk,
+                'document_id': self._test_document.pk
             }, query={
                 'page_group': PAGE_RANGE_ALL
             }

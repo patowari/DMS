@@ -106,7 +106,7 @@ class WorkflowInstanceViewTestMixin(WorkflowInstanceTestMixin):
             viewname='document_states:workflow_instance_transition_execute',
             kwargs={
                 'workflow_instance_id': self._test_workflow_instance.pk,
-                'workflow_template_transition_id': self._test_workflow_template_transition.pk,
+                'workflow_template_transition_id': self._test_workflow_template_transition.pk
             }
         )
 
@@ -114,7 +114,7 @@ class WorkflowInstanceViewTestMixin(WorkflowInstanceTestMixin):
         return self.get(
             viewname='document_states:workflow_instance_transition_selection',
             kwargs={
-                'workflow_instance_id': self._test_workflow_instance.pk,
+                'workflow_instance_id': self._test_workflow_instance.pk
             }
         )
 
@@ -122,8 +122,8 @@ class WorkflowInstanceViewTestMixin(WorkflowInstanceTestMixin):
         return self.post(
             viewname='document_states:workflow_instance_transition_selection',
             kwargs={
-                'workflow_instance_id': self._test_workflow_instance.pk,
+                'workflow_instance_id': self._test_workflow_instance.pk
             }, data={
-                'transition': self._test_workflow_template_transition.pk,
+                'transition': self._test_workflow_template_transition.pk
             }
         )

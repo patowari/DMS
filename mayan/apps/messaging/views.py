@@ -14,8 +14,8 @@ from mayan.apps.views.generics import (
 from .forms import MessageCreateForm, MessageDetailForm
 from .icons import (
     icon_message_create, icon_message_delete, icon_message_detail,
-    icon_message_list, icon_message_mark_read, icon_message_mark_unread,
-    icon_message_mark_read_all
+    icon_message_list, icon_message_mark_read, icon_message_mark_read_all,
+    icon_message_mark_unread
 )
 from .links import link_message_create
 from .models import Message

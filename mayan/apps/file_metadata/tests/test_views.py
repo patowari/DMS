@@ -3,8 +3,8 @@ from django.test import override_settings
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..events import (
-    event_file_metadata_document_file_submitted,
-    event_file_metadata_document_file_finished
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
 )
 from ..permissions import (
     permission_document_type_file_metadata_setup,

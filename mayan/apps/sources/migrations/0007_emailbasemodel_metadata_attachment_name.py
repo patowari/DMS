@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('sources', '0006_auto_20150708_0330'),
+        ('sources', '0006_auto_20150708_0330')
     ]
 
     operations = [
@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
                 'assigned to the rest of the downloaded attachments.',
                 max_length=128, verbose_name='Metadata attachment name'
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

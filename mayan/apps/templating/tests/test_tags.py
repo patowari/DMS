@@ -12,19 +12,25 @@ class TemplateTagDateParseTestCase(TemplateTagTestMixin, BaseTestCase):
         result = self._render_test_template(
             template_string='{{% set "{}"|date_parse as date_object %}}{{{{ date_object.year }}}}'.format(now.isoformat())
         )
-        self.assertEqual(result, str(now.year))
+        self.assertEqual(
+            result, str(now.year)
+        )
 
 
 class TemplateFilterDictGetTestCase(TemplateTagTestMixin, BaseTestCase):
     def test_filter_dict_get_valid(self):
         result = self._render_test_template(
-            template_string='{{ dict|dict_get:1 }}', context={'dict': {1: 'a'}}
+            template_string='{{ dict|dict_get:1 }}', context={
+                'dict': {1: 'a'}
+            }
         )
         self.assertEqual(result, 'a')
 
     def test_filter_dict_get_invalid(self):
         result = self._render_test_template(
-            template_string='{{ dict|dict_get:2 }}', context={'dict': {1: 'a'}}
+            template_string='{{ dict|dict_get:2 }}', context={
+                'dict': {1: 'a'}
+            }
         )
         self.assertEqual(result, '')
 
@@ -120,4 +126,6 @@ class TemplateTagTimeDeltaTestCase(TemplateTagTestMixin, BaseTestCase):
         result = self._render_test_template(
             template_string='{{% set "{}"|date_parse as date_object %}}{{% timedelta date_object days=366 as date_new %}}{{{{ date_new.year }}}}'.format(now.isoformat())
         )
-        self.assertEqual(result, str(now.year + 1))
+        self.assertEqual(
+            result, str(now.year + 1)
+        )

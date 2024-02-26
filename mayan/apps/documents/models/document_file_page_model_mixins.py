@@ -71,7 +71,9 @@ class DocumentFilePageBusinessLogicMixin:
                         transformation_instance_list=combined_transformation_list
                     )
                     with self.cache_partition.create_file(filename=combined_cache_filename) as file_object:
-                        file_object.write(image.getvalue())
+                        file_object.write(
+                            image.getvalue()
+                        )
                 else:
                     logger.debug(
                         'transformations cache file "%s" found', combined_cache_filename
@@ -161,7 +163,9 @@ class DocumentFilePageBusinessLogicMixin:
         )
 
         # Interactive transformations second.
-        result.extend(transformation_instance_list or [])
+        result.extend(
+            transformation_instance_list or []
+        )
 
         return result
 
@@ -186,7 +190,9 @@ class DocumentFilePageBusinessLogicMixin:
                     # Since open "wb+" doesn't create files, create it
                     # explicitly.
                     with self.cache_partition.create_file(filename=cache_filename) as file_object:
-                        file_object.write(page_image.getvalue())
+                        file_object.write(
+                            page_image.getvalue()
+                        )
 
                     # Apply runtime transformations.
                     for transformation in transformation_instance_list or ():

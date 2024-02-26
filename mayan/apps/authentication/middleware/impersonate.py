@@ -10,7 +10,7 @@ from ..events import (
     event_user_impersonation_ended, event_user_impersonation_started
 )
 from ..literals import (
-    USER_IMPERSONATE_VARIABLE_ID, USER_IMPERSONATE_VARIABLE_DISABLE,
+    USER_IMPERSONATE_VARIABLE_DISABLE, USER_IMPERSONATE_VARIABLE_ID,
     USER_IMPERSONATE_VARIABLE_PERMANENT
 )
 from ..permissions import permission_users_impersonate

@@ -12,7 +12,8 @@ from .models import UserMailer
 from .permissions import permission_user_mailer_use
 from .settings import (
     setting_attachment_body_template, setting_attachment_subject_template,
-    setting_document_link_body_template, setting_document_link_subject_template
+    setting_document_link_body_template,
+    setting_document_link_subject_template
 )
 from .validators import validate_email_multiple
 

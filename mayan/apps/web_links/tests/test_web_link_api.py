@@ -13,9 +13,9 @@ from ..permissions import (
     permission_web_link_edit, permission_web_link_view
 )
 
-from .literals import TEST_WEB_LINK_LABEL_EDITED, TEST_WEB_LINK_LABEL
+from .literals import TEST_WEB_LINK_LABEL, TEST_WEB_LINK_LABEL_EDITED
 from .mixins import (
-    WebLinkDocumentTypeAPIViewMixin, WebLinkAPIViewTestMixin,
+    WebLinkAPIViewTestMixin, WebLinkDocumentTypeAPIViewMixin,
     WebLinkTestMixin
 )
 

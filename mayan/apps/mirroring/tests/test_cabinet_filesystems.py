@@ -14,8 +14,9 @@ from ..runtime import cache
 
 from .literals import (
     TEST_CABINET_LABEL, TEST_CABINET_LABEL_INVALID,
-    TEST_CABINET_LABEL_MULTILINE, TEST_CABINET_LABEL_MULTILINE_EXPECTED,
-    TEST_CABINET_LABEL_MULTILINE_2, TEST_CABINET_LABEL_MULTILINE_2_EXPECTED
+    TEST_CABINET_LABEL_MULTILINE, TEST_CABINET_LABEL_MULTILINE_2,
+    TEST_CABINET_LABEL_MULTILINE_2_EXPECTED,
+    TEST_CABINET_LABEL_MULTILINE_EXPECTED
 )
 
 
@@ -145,8 +146,9 @@ class CabinetMirroringTestCase(
 
         test_filesystem = self._get_test_filesystem()
         self.assertEqual(
-            list(test_filesystem.readdir('/', ''))[2:],
-            [TEST_CABINET_LABEL_MULTILINE_EXPECTED]
+            list(
+                test_filesystem.readdir('/', '')
+            )[2:], [TEST_CABINET_LABEL_MULTILINE_EXPECTED]
         )
 
     def test_multiline_indexes_first_and_last(self):
@@ -157,8 +159,9 @@ class CabinetMirroringTestCase(
 
         test_filesystem = self._get_test_filesystem()
         self.assertEqual(
-            list(test_filesystem.readdir('/', ''))[2:],
-            [TEST_CABINET_LABEL_MULTILINE_2_EXPECTED]
+            list(
+                test_filesystem.readdir('/', '')
+            )[2:], [TEST_CABINET_LABEL_MULTILINE_2_EXPECTED]
         )
 
     def test_stub_documents(self):
@@ -176,8 +179,12 @@ class CabinetMirroringTestCase(
         self._create_test_cabinet(label=TEST_CABINET_LABEL)
         self._create_test_document_stub()
         self._create_test_document_stub(label=self._test_document.label)
-        self._test_cabinet.documents.add(self._test_documents[0])
-        self._test_cabinet.documents.add(self._test_documents[1])
+        self._test_cabinet.documents.add(
+            self._test_documents[0]
+        )
+        self._test_cabinet.documents.add(
+            self._test_documents[1]
+        )
 
         test_filesystem = self._get_test_filesystem()
         self.assertTrue(
@@ -199,8 +206,12 @@ class CabinetMirroringTestCase(
         self._create_test_cabinet(label=TEST_CABINET_LABEL)
         self._upload_test_document()
         self._upload_test_document()
-        self._test_cabinet.documents.add(self._test_documents[0])
-        self._test_cabinet.documents.add(self._test_documents[1])
+        self._test_cabinet.documents.add(
+            self._test_documents[0]
+        )
+        self._test_cabinet.documents.add(
+            self._test_documents[1]
+        )
 
         test_filesystem = self._get_test_filesystem()
 
