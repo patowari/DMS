@@ -15,6 +15,8 @@
   possible conflicts.
 - Add extra logging to report storage errors when deleting trashed documents
   as part of the retention policies.
+- Minor test fixes.
+- Fix workflow icon variable name.
 
 4.4.12 (2024-02-03)
 ===================
