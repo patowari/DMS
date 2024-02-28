@@ -548,7 +548,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`164` Keep fancybox prev & next buttons enabled all the time
 * :gitlab-issue:`167` Add workflow completion number to states
 * :gitlab-issue:`168` Add field to store last error of source during execution
-* :gitlab-issue:`171` tesseract fails with german language (wrong abbreviation)
+* :gitlab-issue:`171` Tesseract fails with German language (wrong abbreviation)
 * :gitlab-issue:`173` Add post_document_upload signal
 * :gitlab-issue:`174` Bootstrap UI with master branch
 * :gitlab-issue:`176` Replace default email domain
@@ -567,7 +567,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`201` Untranslated items
 * :gitlab-issue:`202` AutoAdminSingleton matching query does not exist.
 * :gitlab-issue:`203` KeyError at /sources/upload/document/new/interactive/
-* :gitlab-issue:`204` Problems to add required metadata after changin the document type
+* :gitlab-issue:`204` Problems to add required metadata after changing the document type
 * :gitlab-issue:`216` Add default_app_config value to each app
 * :gitlab-issue:`223` [Documents] Trigger event_document_type_change on the model not on the view
 * :gitlab-issue:`227` decoder zip not available

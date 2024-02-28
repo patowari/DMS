@@ -298,7 +298,7 @@ class AccessControlListManager(models.Manager):
         if not user.is_authenticated:
             return queryset.none()
 
-        # Check directly granted permission via a role
+        # Check directly granted permission via a role.
         try:
             Permission.check_user_permissions(
                 permissions=(permission,), user=user
@@ -374,7 +374,7 @@ class AccessControlListManager(models.Manager):
                     pass
 
                 if type(parent_object) is type(obj):
-                    # Object and parent are of the same type. Break
+                    # Object and parent are of the same type, break
                     # recursion.
                     return queryset
                 else:

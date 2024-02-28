@@ -2227,7 +2227,7 @@
   - Show interactive source processing as a message.
 
 - Fix the copying of the bootstrap alert style.
-- Optimize the copying of the Boostrap alert style by executing it only
+- Optimize the copying of the Bootstrap alert style by executing it only
   in the root template. This runs the code just once instead of running it
   on each page refresh. The element ``#div-javascript-dynamic-content`` was
   also remove and it is now created and destroyed dynamically once just.

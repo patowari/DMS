@@ -55,7 +55,7 @@ unless being granted the ``Allow overriding check out restrictions`` or
 Installation environment app
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Diagnosting remote installations of web based applications without access to the
+Diagnosing remote installations of web based applications without access to the
 command line can be a bit hard, to alleviate this situation a new installation
 environment details app has been added.  The purpose of this app is to provide
 support staff information about the physical environment where Mayan EDMS has
@@ -117,8 +117,8 @@ Backward incompatible changes
 Bugs fixed
 ----------
 
-:github-issue:`24 "Duplicated filename extension when uploading a new version of a document"
-:github-issue:`26` "checkout feature request"
+* :github-issue:`24 "Duplicated filename extension when uploading a new version of a document"
+* :github-issue:`26` "checkout feature request"
 
 Removals
 --------

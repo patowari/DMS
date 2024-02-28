@@ -28,7 +28,7 @@ Version 0.5
 * Added detection and reset of orphaned ocr documents being left as
   'processing' when celery dies.
 * Improved unknown format detection in the graphicsmagick backend.
-* Improved document convertion API.
+* Improved document conversion API.
 * Added initial support for converting office documents (only ods and
   docx tested).
 * Added sample configuration files for Supervisor and Apache under
@@ -133,14 +133,14 @@ Version 0.5
     + ``CONVERTER_GRAPHICS_BACKEND`` - Backend to use: ``ImageMagick`` or
       ``GraphicMagick``
 
-* Raise ImportError and notify user when specifying a non existant
+* Raise ImportError and notify user when specifying a non existent
   converter graphics backend.
 * Fixed issue #4, avoid circular import in permissions/__init__.py.
 * Add a user to a default role only when the user is created.
 * Added total page count to statistics view.
 * Added support to disable the default scrolling JS code included in
   web_theme app, saving some KBs in transfer.
-* Clear last ocr results when requeueing a document.
+* Clear last OCR results when requeueing a document.
 * Removed the 'exists' column in document list view, diagnostics
   superseded this.
 * Added 3rd party sendfile app (support apache's X-sendfile).
@@ -184,8 +184,8 @@ Version 0.5
 * Added missing config option from the setup menu.
 * Close file descriptor to avoid leaks.
 * Don't allow duplicate documents in queues.
-* Don't raise ``PermissionDenied`` exception in ``PermissionDenied middleware``,
-  even while debugging.
+* Don't raise ``PermissionDenied`` exception in ``PermissionDenied``
+  middleware, even while debugging.
 * Fixed page number detection.
 * Created 'simple document' for non technical users with all of a
   document pages content.
@@ -195,7 +195,7 @@ Version 0.5
 * Show document file path in regards of its storage.
 * Added new setting: side bar search box.
 * Implemented new ``PermissioDenied`` exception middleware handler.
-* Permissions app api now returns a ``PermissionDenied`` exception instead
+* Permissions app API now returns a ``PermissionDenied`` exception instead
   of a custom one.
 * Added new 403 error template.
 * Updated the 404 template to display only a not found message.
@@ -210,7 +210,7 @@ Version 0.5
 * Show current metadata in document upload view sidebar.
 * Show sentry login for admin users.
 * Do not reinitialize document queue and/or queued document on reentry.
-* Try extra hard not to assign same uuid to two documents.
+* Try extra hard not to assign same UUID to two documents.
 * Added new transformation preview size setting.
 * Renamed document queue state links.
 * Changed OCR status display sidebar from form based to text based.
@@ -224,8 +224,8 @@ Version 0.5
 * Close file descriptors when executing external programs to
   prevent/reduce file descriptor leaks.
 * Improved exception handling of external programs.
-* Show document thumbnail in document ocr queue list.
-* Make ocr document date submitted column non breakable.
+* Show document thumbnail in document OCR queue list.
+* Make OCR document date submitted column non breakable.
 * Fix permissions, directories set to mode 755 and files to mode 644.
 * Try to fix issue #2, "random ORM field error on search while doing OCR".
 * Added configurable location setting for file based storage.
@@ -282,7 +282,7 @@ Version 0.5
 * Apply default transformations to document before OCR.
 * Added unpaper to the OCR conversion pipe.
 * Added views to create, edit and grant/revoke permissions to roles.
-* Added multipage documents support (only tested on pdfs).
+* Added multipage documents support (only tested on PDFs).
 
   - To update a previous database do: [d.update_page_count() for d in Document.objects.all()]
 

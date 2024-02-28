@@ -40,7 +40,7 @@ Converter customization improvements
 For users wanting more control over the document image conversion process,
 support was added to change the internal format used for image conversion.
 By default JPG used but via the `pdftoppm_format` and `pillow_format` entries
-of the CONVERTER_GRAPHICS_BACKEND_CONFIG setting option any other format
+of the ``CONVERTER_GRAPHICS_BACKEND_CONFIG`` setting option any other format
 support by Python's Pillow can use used. Support was also added to change the
 DPI value used by the conversion process of PDF files to images. The default
 value for this conversion was set to 300 DPI. The entry used to specify this
@@ -86,7 +86,7 @@ Document parsing
 ^^^^^^^^^^^^^^^^
 
 Historically Mayan has had two methods to extract text from PDF files. First
-it will try the program called `pdftotext` and failing that will try the
+it will try the program called ``pdftotext`` and failing that will try the
 PDFMiner Python library. The official PDFMiner library is unmaintained and
 doesn't support Python 3 will be a requirement for Django 2.0, which will
 force Mayan to move to Python 3 exclusively in the near future. For this
@@ -101,7 +101,7 @@ Document version UI
 ^^^^^^^^^^^^^^^^^^^
 
 The list of versions of a document was updated to use the new item list
-view templated added in version 2.6 for document lists. Along with this update
+view template added in version 2.6 for document lists. Along with this update
 preview support was added for individual document version. It is also possible
 to explore and navigate different versions of a document much easier and with
 more information that previously available, being able to visually see for

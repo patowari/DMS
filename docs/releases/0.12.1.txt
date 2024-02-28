@@ -11,7 +11,7 @@ Overview
 While bug fixes and minor feature were the focus for this release, some
 bigger changes were included because of their importance.  The parsing of
 documents saw a complete rewrite being now class based and allows for more
-than one parser per mimetype with sequencial fallback.  This provides the
+than one parser per MIME type with sequential fallback.  This provides the
 best text extraction on deployments where users have control over the
 installation and basic extraction when deploying on the cloud or other
 environments where users don't have the ability to install OS level
@@ -38,9 +38,9 @@ Documentation update
 ^^^^^^^^^^^^^^^^^^^^
 
 The installation instructions were updated to include the installation of
-the libpng-dev and libjpeg-dev libraries as well as the installation of
-the ``poppler-utils`` package.  An additional step to help users test their
-new installation of Mayan EDMS was also added.
+the ``libpng-dev`` and ``libjpeg-dev`` libraries as well as the installation
+of the ``poppler-utils`` package.  An additional step to help users test
+their new installation of Mayan EDMS was also added.
 
 
 Translations
@@ -123,7 +123,8 @@ Backward incompatible changes
 
 Bugs fixed
 ----------
-:github-issue:`25` "Office document conversion error"
+
+* :github-issue:`25` "Office document conversion error"
 
 
 Removals
