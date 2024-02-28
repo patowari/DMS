@@ -21,7 +21,7 @@ from .icons import (
     icon_workflow_template_state_action_list,
     icon_workflow_template_state_action_selection,
     icon_workflow_template_state_create, icon_workflow_template_state_delete,
-    icon_workflow_template_state_edit, link_workflow_template_state_list,
+    icon_workflow_template_state_edit, icon_workflow_template_state_list,
     icon_workflow_template_state_escalation_create,
     icon_workflow_template_state_escalation_delete,
     icon_workflow_template_state_escalation_edit,
@@ -35,7 +35,6 @@ from .icons import (
     icon_workflow_template_transition_field_edit,
     icon_workflow_template_transition_field_list,
     icon_workflow_template_transition_list
-
 )
 from .permissions import (
     permission_workflow_template_create, permission_workflow_template_delete,
@@ -184,7 +183,7 @@ link_workflow_template_state_edit = Link(
 )
 link_workflow_template_state_list = Link(
     args='resolved_object.pk',
-    icon=link_workflow_template_state_list,
+    icon=icon_workflow_template_state_list,
     permissions=(permission_workflow_template_view,), text=_('States'),
     view='document_states:workflow_template_state_list'
 )
