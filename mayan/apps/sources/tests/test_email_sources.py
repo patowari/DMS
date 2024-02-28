@@ -20,7 +20,6 @@ from .mixins.email_source_mixins import (
     EmailSourceBackendTestMixin, IMAPEmailSourceTestMixin,
     POP3EmailSourceTestMixin
 )
-
 from .mocks import MockIMAPServer, MockPOP3Mailbox
 
 
@@ -67,7 +66,9 @@ class EmailSourceBackendTestCase(
 
         source_backend_instance.process_documents()
 
-        self.assertEqual(Document.objects.count(), 0)
+        self.assertEqual(
+            Document.objects.count(), 0
+        )
 
     def test_decode_email_with_inline_image(self):
         self._create_test_email_source_backend(
@@ -82,7 +83,9 @@ class EmailSourceBackendTestCase(
 
         source_backend_instance.process_documents()
 
-        self.assertTrue(Document.objects.count(), 2)
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
         self.assertQuerysetEqual(
             ordered=False, qs=Document.objects.all(), values=(
                 '<Document: test-01.png>', '<Document: email_body.html>'
@@ -101,7 +104,9 @@ class EmailSourceBackendTestCase(
         source_backend_instance.content = TEST_EMAIL_ATTACHMENT_AND_INLINE
         source_backend_instance.process_documents()
 
-        self.assertTrue(Document.objects.count(), 2)
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
         self.assertQuerysetEqual(
             ordered=False, qs=Document.objects.all(), values=(
                 '<Document: test-01.png>', '<Document: email_body.html>',
@@ -119,7 +124,9 @@ class EmailSourceBackendTestCase(
         source_backend_instance.process_documents()
 
         # Only two attachments, no body document.
-        self.assertEqual(Document.objects.count(), 1)
+        self.assertEqual(
+            Document.objects.count(), 1
+        )
 
     def test_document_upload_with_body(self):
         self._create_test_email_source_backend(
@@ -134,7 +141,9 @@ class EmailSourceBackendTestCase(
         source_backend_instance.process_documents()
 
         # Only two attachments and a body document
-        self.assertEqual(Document.objects.count(), 2)
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
 
 
 class EmailSourceBackendMedatadataTestCase(
@@ -273,7 +282,9 @@ class EmailSourceBackendMetadataYAMLAttachmentTestCase(
 
         source_backend_instance.process_documents()
 
-        self.assertEqual(Document.objects.count(), 2)
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
 
         for document in Document.objects.all():
             self.assertEqual(

@@ -326,7 +326,9 @@ class DocumentVersionOCRViewTestCase(
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
-            ''.join(self._test_document_version.ocr_content()), ''
+            ''.join(
+                self._test_document_version.ocr_content()
+            ), ''
         )
 
         events = self._get_test_events()
@@ -395,7 +397,9 @@ class DocumentVersionOCRViewTestCase(
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
-            ''.join(self._test_document_version.ocr_content()), ''
+            ''.join(
+                self._test_document_version.ocr_content()
+            ), ''
         )
 
         events = self._get_test_events()

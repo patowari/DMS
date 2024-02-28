@@ -244,7 +244,9 @@ class EmbeddedSignatureDocumentAPIViewTestCase(
 
         self.assertEqual(events[3].action_object, test_document_version)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version.pages.first())
+        self.assertEqual(
+            events[3].target, test_document_version.pages.first()
+        )
         self.assertEqual(
             events[3].verb, event_document_version_page_created.id
         )

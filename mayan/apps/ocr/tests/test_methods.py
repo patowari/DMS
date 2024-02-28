@@ -15,22 +15,30 @@ class DocumentOCRContentMethodTestCase(
 
     def test_document_ocr_content(self):
         self._create_test_document_version_ocr_content()
-        value = ' '.join(self._test_document.ocr_content())
+        value = ' '.join(
+            self._test_document.ocr_content()
+        )
 
         self.assertEqual(value, TEST_DOCUMENT_VERSION_OCR_CONTENT)
 
     def test_document_ocr_content_empty(self):
-        value = ' '.join(self._test_document.ocr_content())
+        value = ' '.join(
+            self._test_document.ocr_content()
+        )
 
         self.assertFalse(value)
 
     def test_document_version_ocr_content(self):
         self._create_test_document_version_ocr_content()
-        value = ' '.join(self._test_document_version.ocr_content())
+        value = ' '.join(
+            self._test_document_version.ocr_content()
+        )
 
         self.assertEqual(value, TEST_DOCUMENT_VERSION_OCR_CONTENT)
 
     def test_document_version_ocr_content_empty(self):
-        value = ' '.join(self._test_document_version.ocr_content())
+        value = ' '.join(
+            self._test_document_version.ocr_content()
+        )
 
         self.assertFalse(value)

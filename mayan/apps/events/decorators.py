@@ -1,8 +1,6 @@
 import functools
 
-from .literals import (
-    EVENT_MANAGER_ORDER_AFTER, EVENT_MANAGER_ORDER_BEFORE
-)
+from .literals import EVENT_MANAGER_ORDER_AFTER, EVENT_MANAGER_ORDER_BEFORE
 
 
 def method_event(event_manager_class, **event_manager_kwargs):

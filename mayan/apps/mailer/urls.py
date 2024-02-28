@@ -12,7 +12,6 @@ from .views.mailing_profile_views import (
     UserMailingCreateView, UserMailingDeleteView, UserMailingEditView
 )
 
-
 urlpatterns_document = [
     url(
         regex=r'^documents/(?P<document_id>\d+)/send/link/$',

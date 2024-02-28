@@ -288,7 +288,9 @@ class SmartLinkViewTestCase(
         response = self._request_test_smart_link_create_view()
         self.assertEqual(response.status_code, 403)
 
-        self.assertEqual(SmartLink.objects.count(), 0)
+        self.assertEqual(
+            SmartLink.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -301,7 +303,9 @@ class SmartLinkViewTestCase(
         response = self._request_test_smart_link_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(SmartLink.objects.count(), 1)
+        self.assertEqual(
+            SmartLink.objects.count(), 1
+        )
         self.assertEqual(
             SmartLink.objects.first().label, TEST_SMART_LINK_LABEL
         )
@@ -322,7 +326,9 @@ class SmartLinkViewTestCase(
         response = self._request_test_smart_link_delete_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(SmartLink.objects.count(), 1)
+        self.assertEqual(
+            SmartLink.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -338,7 +344,9 @@ class SmartLinkViewTestCase(
         response = self._request_test_smart_link_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(SmartLink.objects.count(), 0)
+        self.assertEqual(
+            SmartLink.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

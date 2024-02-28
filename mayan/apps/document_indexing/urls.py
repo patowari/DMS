@@ -13,7 +13,6 @@ from .api_views.index_template_api_views import (
     APIIndexTemplateNodeDetailView, APIIndexTemplateNodeListView,
     APIIndexTemplateRebuildView, APIIndexTemplateResetView
 )
-
 from .views.index_instance_views import (
     DocumentIndexInstanceNodeListView, IndexInstanceListView,
     IndexInstanceNodeView

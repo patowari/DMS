@@ -1,7 +1,6 @@
 from unittest import mock
 
 import mayan
-
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..classes import DependencyGroup

@@ -5,7 +5,9 @@ from ...models.favorite_document_models import FavoriteDocument
 
 class FavoriteDocumentAPIViewTestMixin:
     def _request_test_favorite_document_create_api_view(self):
-        pk_list = list(FavoriteDocument.valid.values_list('pk', flat=True))
+        pk_list = list(
+            FavoriteDocument.valid.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:favoritedocument-list', data={

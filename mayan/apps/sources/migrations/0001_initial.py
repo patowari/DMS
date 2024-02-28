@@ -72,7 +72,9 @@ class Migration(migrations.Migration):
                     'uncompress', models.CharField(
                         help_text='Whether to expand or not, compressed '
                         'archives.', max_length=1, verbose_name='Uncompress',
-                        choices=[('y', 'Always'), ('n', 'Never')]
+                        choices=[
+                            ('y', 'Always'), ('n', 'Never')
+                        ]
                     )
                 )
             ],

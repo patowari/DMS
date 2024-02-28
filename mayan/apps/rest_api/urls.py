@@ -6,7 +6,6 @@ from .api_views import (
 )
 from .literals import API_VERSION
 
-
 api_version_urls = [
     url(
         regex=r'^$', name='api_version_root', view=APIVersionRoot.as_view()

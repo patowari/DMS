@@ -38,7 +38,9 @@ class IndexTemplateAPIViewTestCase(
         response = self._request_test_index_template_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        self.assertEqual(IndexTemplate.objects.count(), 0)
+        self.assertEqual(
+            IndexTemplate.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -56,7 +58,9 @@ class IndexTemplateAPIViewTestCase(
             response.data['label'], self._test_index_template.label
         )
 
-        self.assertEqual(IndexTemplate.objects.count(), 1)
+        self.assertEqual(
+            IndexTemplate.objects.count(), 1
+        )
         self.assertEqual(
             self._test_index_template.label, TEST_INDEX_TEMPLATE_LABEL
         )

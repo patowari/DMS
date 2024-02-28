@@ -4,9 +4,7 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..permissions import permission_events_view
 
-from .mixins import (
-    EventTestMixin, EventTypeTestMixin, EventViewTestMixin
-)
+from .mixins import EventTestMixin, EventTypeTestMixin, EventViewTestMixin
 
 
 class EventsViewTestCase(

@@ -143,7 +143,9 @@ class DocumentViewTestCase(
         response = self._request_test_document_list_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(response.context['object_list'].count(), 0)
+        self.assertEqual(
+            response.context['object_list'].count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

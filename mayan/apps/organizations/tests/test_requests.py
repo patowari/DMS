@@ -3,7 +3,6 @@ from django.test import override_settings
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.views.http import URL
 
-
 TEST_INSTALLATION_SCHEME = 'https'
 TEST_INSTALLATION_NETLOC = 'example.com:9999'
 

@@ -1,6 +1,6 @@
-from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
-
 from django.db.models import Q
+
+from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 
 from ..models import Tag
 

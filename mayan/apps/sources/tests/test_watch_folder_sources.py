@@ -155,7 +155,9 @@ class WatchFolderSourceBackendTestCase(
         document = Document.objects.first()
 
         self.assertEqual(document.label, TEST_FILE_NON_ASCII_FILENAME)
-        self.assertEqual(document.file_latest.exists(), True)
+        self.assertEqual(
+            document.file_latest.exists(), True
+        )
         self.assertEqual(document.file_latest.size, 17436)
         self.assertEqual(document.file_latest.mimetype, 'image/png')
         self.assertEqual(document.file_latest.encoding, 'binary')

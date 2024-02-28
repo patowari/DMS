@@ -17,8 +17,7 @@ from ..permissions import (
 from .base import GenericDocumentViewTestCase
 from .mixins.document_file_mixins import DocumentFileTestMixin
 from .mixins.document_version_mixins import (
-    DocumentVersionPageRemapViewTestMixin,
-    DocumentVersionPageViewTestMixin,
+    DocumentVersionPageRemapViewTestMixin, DocumentVersionPageViewTestMixin,
     DocumentVersionTransformationTestMixin,
     DocumentVersionTransformationViewTestMixin
 )

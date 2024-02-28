@@ -25,7 +25,9 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self._test_workflow_template.refresh_from_db()
-        self.assertEqual(self._test_workflow_template_state.actions.count(), 0)
+        self.assertEqual(
+            self._test_workflow_template_state.actions.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -62,7 +64,9 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self._test_workflow_template.refresh_from_db()
-        self.assertEqual(self._test_workflow_template_state.actions.count(), 1)
+        self.assertEqual(
+            self._test_workflow_template_state.actions.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -81,7 +85,9 @@ class WorkflowTemplateStateActionsAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
         self._test_workflow_template.refresh_from_db()
-        self.assertEqual(self._test_workflow_template_state.actions.count(), 0)
+        self.assertEqual(
+            self._test_workflow_template_state.actions.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

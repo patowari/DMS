@@ -6,15 +6,13 @@ from mayan.apps.converter.tests.mixins import (
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
 from ..layers import layer_redactions
-from ..transformations import TransformationRedactionPercent
 from ..permissions import (
     permission_redaction_create, permission_redaction_delete,
     permission_redaction_edit, permission_redaction_view
 )
+from ..transformations import TransformationRedactionPercent
 
-from .literals import (
-    TEST_REDACTION_ARGUMENT, TEST_REDACTION_ARGUMENT_EDITED
-)
+from .literals import TEST_REDACTION_ARGUMENT, TEST_REDACTION_ARGUMENT_EDITED
 
 
 class RedactionViewTestCase(

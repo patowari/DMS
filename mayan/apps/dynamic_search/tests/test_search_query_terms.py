@@ -10,7 +10,9 @@ class SearchTermDecodeEmptyTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 0)
+        self.assertEqual(
+            len(query_term), 0
+        )
 
     def test_term_decode_empty_quoted_term(self):
         query = {'q': '""'}
@@ -18,7 +20,9 @@ class SearchTermDecodeEmptyTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, True)
         self.assertEqual(query_term[0].is_raw, False)
@@ -30,7 +34,9 @@ class SearchTermDecodeEmptyTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 2)
+        self.assertEqual(
+            len(query_term), 2
+        )
 
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, True)
@@ -50,7 +56,9 @@ class SearchTermDecodeTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, False)
         self.assertEqual(query_term[0].is_raw, False)
@@ -62,7 +70,9 @@ class SearchTermDecodeTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 2)
+        self.assertEqual(
+            len(query_term), 2
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, False)
         self.assertEqual(query_term[0].is_raw, False)
@@ -79,7 +89,9 @@ class SearchTermDecodeTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 3)
+        self.assertEqual(
+            len(query_term), 3
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, False)
         self.assertEqual(query_term[0].is_raw, False)
@@ -103,7 +115,9 @@ class SearchInterpreterTermDecodeQuotedTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, True)
         self.assertEqual(query_term[0].is_raw, False)
@@ -115,7 +129,9 @@ class SearchInterpreterTermDecodeQuotedTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 3)
+        self.assertEqual(
+            len(query_term), 3
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, True)
         self.assertEqual(query_term[0].is_raw, False)
@@ -139,7 +155,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, False)
         self.assertEqual(query_term[0].is_raw, True)
@@ -151,7 +169,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, False)
         self.assertEqual(query_term[0].is_raw, True)
@@ -163,7 +183,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, True)
         self.assertEqual(query_term[0].is_raw, False)
@@ -175,7 +197,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, True)
         self.assertEqual(query_term[0].is_raw, False)
@@ -187,7 +211,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 1)
+        self.assertEqual(
+            len(query_term), 1
+        )
         self.assertEqual(query_term[0].is_meta, False)
         self.assertEqual(query_term[0].is_quoted, False)
         self.assertEqual(query_term[0].is_raw, True)
@@ -199,7 +225,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 0)
+        self.assertEqual(
+            len(query_term), 0
+        )
 
     def test_term_decode_raw_unterminated(self):
         query = {'q': '`term1'}
@@ -207,7 +235,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 0)
+        self.assertEqual(
+            len(query_term), 0
+        )
 
     def test_term_decode_raw_unterminated_quote(self):
         query = {'q': '`term1"'}
@@ -215,7 +245,9 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 0)
+        self.assertEqual(
+            len(query_term), 0
+        )
 
     def test_term_decode_raw_unterminated_quote_double_terms(self):
         query = {'q': '`term1 "term2'}
@@ -223,4 +255,6 @@ class SearchTermDecodeRawTestCase(BaseTestCase):
         query_terms = QueryTerm.do_query_parse(query=query)
         query_term = query_terms['q']
 
-        self.assertEqual(len(query_term), 0)
+        self.assertEqual(
+            len(query_term), 0
+        )

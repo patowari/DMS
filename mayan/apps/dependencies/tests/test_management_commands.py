@@ -1,7 +1,6 @@
 from unittest import mock
 
 import mayan
-
 from mayan.apps.common.tests.mixins import ManagementCommandTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 

@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.documents.permissions import permission_document_view
+from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..events import (
@@ -21,9 +21,13 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
 
         self._create_test_cabinet()
 
-        self.assertEqual(Cabinet.objects.all().count(), 1)
+        self.assertEqual(
+            Cabinet.objects.all().count(), 1
+        )
         self.assertQuerysetEqual(
-            Cabinet.objects.all(), (repr(self._test_cabinet),)
+            Cabinet.objects.all(), (
+                repr(self._test_cabinet),
+            )
         )
 
         events = self._get_test_events()
@@ -43,7 +47,9 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
 
         self._test_cabinet.delete()
 
-        self.assertEqual(Cabinet.objects.count(), test_cabinet_count - 1)
+        self.assertEqual(
+            Cabinet.objects.count(), test_cabinet_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -58,9 +64,13 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
             cabinet_2.validate_unique()
             cabinet_2.save()
 
-        self.assertEqual(Cabinet.objects.all().count(), 1)
+        self.assertEqual(
+            Cabinet.objects.all().count(), 1
+        )
         self.assertQuerysetEqual(
-            Cabinet.objects.all(), (repr(self._test_cabinet),)
+            Cabinet.objects.all(), (
+                repr(self._test_cabinet),
+            )
         )
 
         events = self._get_test_events()
@@ -97,10 +107,14 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
             parent=self._test_cabinet, label=TEST_CABINET_LABEL
         )
 
-        self.assertEqual(Cabinet.objects.count(), test_cabinet_count + 1)
+        self.assertEqual(
+            Cabinet.objects.count(), test_cabinet_count + 1
+        )
         self.assertQuerysetEqual(
             Cabinet.objects.all(),
-            map(repr, (self._test_cabinet, inner_cabinet))
+            map(
+                repr, (self._test_cabinet, inner_cabinet)
+            )
         )
 
         events = self._get_test_events()
@@ -121,7 +135,9 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
 
         self._test_cabinet_child.delete()
 
-        self.assertEqual(Cabinet.objects.count(), test_cabinet_count - 1)
+        self.assertEqual(
+            Cabinet.objects.count(), test_cabinet_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -136,7 +152,9 @@ class CabinetTestCase(CabinetTestMixin, BaseTestCase):
 
         self._clear_events()
 
-        self.assertTrue(self._test_cabinet.get_absolute_url())
+        self.assertTrue(
+            self._test_cabinet.get_absolute_url()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -166,7 +184,9 @@ class CabinetDocumentTestCase(
             test_cabinet_document_count + 1
         )
         self.assertQuerysetEqual(
-            self._test_cabinet.documents.all(), (repr(self._test_document),)
+            self._test_cabinet.documents.all(), (
+                repr(self._test_document),
+            )
         )
 
         events = self._get_test_events()
@@ -194,7 +214,9 @@ class CabinetDocumentTestCase(
             self._test_cabinet.documents.count(),
             test_cabinet_document_count - 1
         )
-        self.assertQuerysetEqual(self._test_cabinet.documents.all(), ())
+        self.assertQuerysetEqual(
+            self._test_cabinet.documents.all(), ()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

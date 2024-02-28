@@ -23,7 +23,9 @@ class Migration(migrations.Migration):
                         verbose_name='Page number'
                     )
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'content_type', models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,

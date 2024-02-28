@@ -30,5 +30,9 @@ class SignatureStorageSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
             DefinedStorage.get(
                 name=STORAGE_NAME_DOCUMENT_SIGNATURES_DETACHED_SIGNATURE
             ).get_storage_instance()
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
-        self.assertTrue('detached signatures' in str(assertion.exception))
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
+        self.assertTrue(
+            'detached signatures' in str(assertion.exception)
+        )

@@ -47,11 +47,11 @@ from .views.workflow_template_state_escalation_views import (
 )
 from .views.workflow_template_state_views import (
     WorkflowTemplateStateActionCreateView,
-    WorkflowTemplateStateActionDeleteView, WorkflowTemplateStateActionEditView,
-    WorkflowTemplateStateActionListView,
-    WorkflowTemplateStateActionSelectionView, WorkflowTemplateStateCreateView,
-    WorkflowTemplateStateDeleteView, WorkflowTemplateStateEditView,
-    WorkflowTemplateStateListView
+    WorkflowTemplateStateActionDeleteView,
+    WorkflowTemplateStateActionEditView, WorkflowTemplateStateActionListView,
+    WorkflowTemplateStateActionSelectionView,
+    WorkflowTemplateStateCreateView, WorkflowTemplateStateDeleteView,
+    WorkflowTemplateStateEditView, WorkflowTemplateStateListView
 )
 from .views.workflow_template_transition_views import (
     WorkflowTemplateTransitionCreateView,

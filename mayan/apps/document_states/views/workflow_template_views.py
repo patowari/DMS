@@ -118,12 +118,12 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
         return result
 
     def object_action(self, form, instance):
-        workflow_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_workflows = AccessControlList.objects.restrict_queryset(
             permission=permission_workflow_tools,
             queryset=form.cleaned_data['workflows'], user=self.request.user
         )
 
-        for workflow in workflow_queryset:
+        for workflow in queryset_workflows:
             task_launch_workflow_for.apply_async(
                 kwargs={
                     'document_id': instance.pk,
@@ -134,7 +134,9 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
 
 
 class WorkflowTemplateCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create workflow')}
+    extra_context = {
+        'title': _('Create workflow')
+    }
     form_class = WorkflowTemplateForm
     model = Workflow
     post_action_redirect = reverse_lazy(

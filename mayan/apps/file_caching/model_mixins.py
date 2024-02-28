@@ -13,7 +13,7 @@ from mayan.apps.events.classes import EventManagerMethodAfter
 from mayan.apps.events.decorators import method_event
 from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.decorators import (
-    acquire_lock_class_method, release_lock_class_method, locked_class_method
+    acquire_lock_class_method, locked_class_method, release_lock_class_method
 )
 from mayan.apps.lock_manager.exceptions import LockError
 from mayan.apps.storage.classes import DefinedStorage
@@ -106,12 +106,12 @@ class CacheBusinessLogicMixin:
         )
 
         while self.get_total_size() >= self.maximum_size:
-            cache_partition_file_queryset = self.get_files().order_by(
+            queryset_cache_partition_file = self.get_files().order_by(
                 'hits', 'datetime'
             )
 
             try:
-                cache_partition_file = cache_partition_file_queryset[file_index]
+                cache_partition_file = queryset_cache_partition_file[file_index]
             except IndexError:
                 # Attempted to get a file beyond what the queryset provided.
                 file_index = 0

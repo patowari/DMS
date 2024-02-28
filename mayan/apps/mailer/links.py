@@ -17,12 +17,11 @@ from .icons import (
 )
 from .permissions import (
     permission_send_document_file_attachment,
-    permission_send_document_file_link,
+    permission_send_document_file_link, permission_send_document_link,
     permission_send_document_version_attachment,
-    permission_send_document_version_link, permission_send_document_link,
-    permission_user_mailer_create, permission_user_mailer_delete,
-    permission_user_mailer_edit, permission_user_mailer_use,
-    permission_user_mailer_view
+    permission_send_document_version_link, permission_user_mailer_create,
+    permission_user_mailer_delete, permission_user_mailer_edit,
+    permission_user_mailer_use, permission_user_mailer_view
 )
 
 # Document

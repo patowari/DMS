@@ -13,12 +13,11 @@ from mayan.apps.storage.utils import NamedTemporaryFile
 
 from ..classes import ConverterBase
 from ..exceptions import PageCountError
-from ..settings import setting_graphics_backend_arguments
-
 from ..literals import (
     DEFAULT_PDFTOPPM_DPI, DEFAULT_PDFTOPPM_FORMAT, DEFAULT_PDFTOPPM_PATH,
     DEFAULT_PDFINFO_PATH, DEFAULT_PILLOW_MAXIMUM_IMAGE_PIXELS
 )
+from ..settings import setting_graphics_backend_arguments
 
 logger = logging.getLogger(name=__name__)
 pdftoppm_path = setting_graphics_backend_arguments.value.get(
@@ -196,10 +195,12 @@ class Python(ConverterBase):
     def get_pdfinfo_page_count(self, file_object):
         process = pdfinfo('-', _in=file_object)
         page_count = int(
-            list(filter(
-                lambda line: line.startswith('Pages:'),
-                str(process.stdout).split('\n')
-            ))[0].replace('Pages:', '')
+            list(
+                filter(
+                    lambda line: line.startswith('Pages:'),
+                    str(process.stdout).split('\n')
+                )
+            )[0].replace('Pages:', '')
         )
         file_object.seek(0)
         logger.debug('Document contains %d pages', page_count)

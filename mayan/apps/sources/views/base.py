@@ -33,7 +33,9 @@ class UploadBaseView(ViewIconMixin, MultiFormView):
             )
             view = 'sources:document_file_upload'
         else:
-            args = ('"{}"'.format(source.pk),)
+            args = (
+                '"{}"'.format(source.pk),
+            )
             view = 'sources:document_upload_interactive'
 
         return Link(

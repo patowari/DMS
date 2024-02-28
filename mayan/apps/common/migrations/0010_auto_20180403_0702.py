@@ -1,6 +1,7 @@
-import mayan.apps.common.models
 import django.core.files.storage
 from django.db import migrations, models
+
+import mayan.apps.common.models
 
 
 class Migration(migrations.Migration):

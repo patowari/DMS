@@ -188,7 +188,9 @@ class DocumentFilePageSearchResultWidgetViewTestCase(
 ):
     def setUp(self):
         super().setUp()
-        self._test_object_text = str(self._test_document_file.pages.first())
+        self._test_object_text = str(
+            self._test_document_file.pages.first()
+        )
         self._test_object_permission = permission_document_file_view
         self._test_search_model = search_model_document_file_page
         self._test_search_term_data = {

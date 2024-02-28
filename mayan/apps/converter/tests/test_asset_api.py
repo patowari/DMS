@@ -5,8 +5,8 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from ..events import event_asset_created, event_asset_edited
 from ..models import Asset
 from ..permissions import (
-    permission_asset_create, permission_asset_delete,
-    permission_asset_edit, permission_asset_view
+    permission_asset_create, permission_asset_delete, permission_asset_edit,
+    permission_asset_view
 )
 
 from .mixins import AssetAPIViewTestMixin, AssetTestMixin

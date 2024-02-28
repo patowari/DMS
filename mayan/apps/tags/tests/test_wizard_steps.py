@@ -10,7 +10,7 @@ from mayan.apps.sources.tests.mixins.web_form_source_mixins import WebFormSource
 
 from ..events import event_tag_attached
 
-from .mixins import TagTestMixin, TaggedDocumentUploadWizardStepViewTestMixin
+from .mixins import TaggedDocumentUploadWizardStepViewTestMixin, TagTestMixin
 
 
 class TaggedDocumentUploadViewTestCase(

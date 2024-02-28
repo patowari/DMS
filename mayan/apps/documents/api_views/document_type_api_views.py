@@ -8,7 +8,7 @@ from ..permissions import (
     permission_document_type_edit, permission_document_type_view
 )
 from ..serializers.document_type_serializers import (
-    DocumentTypeQuickLabelSerializer, DocumentTypeSerializer,
+    DocumentTypeQuickLabelSerializer, DocumentTypeSerializer
 )
 
 from .api_view_mixins import ParentObjectDocumentTypeAPIViewMixin
@@ -21,8 +21,12 @@ class APIDocumentTypeListView(generics.ListCreateAPIView):
     get: Returns a list of all the document types.
     post: Create a new document type.
     """
-    mayan_object_permissions = {'GET': (permission_document_type_view,)}
-    mayan_view_permissions = {'POST': (permission_document_type_create,)}
+    mayan_object_permissions = {
+        'GET': (permission_document_type_view,)
+    }
+    mayan_view_permissions = {
+        'POST': (permission_document_type_create,)
+    }
     ordering_fields = ('id', 'label')
     serializer_class = DocumentTypeSerializer
     source_queryset = DocumentType.objects.all()

@@ -60,12 +60,16 @@ class BackendQueryTypeExact(BackendQueryType):
             if self.is_quoted_value:
                 return Q(
                     name_or_query='match_phrase', _expand__to_dot=False,
-                    **{self.search_field.field_name: template.format(self.value)}
+                    **{
+                        self.search_field.field_name: template.format(self.value)
+                    }
                 )
             else:
                 return Q(
                     name_or_query='match', _expand__to_dot=False,
-                    **{self.search_field.field_name: template.format(self.value)}
+                    **{
+                        self.search_field.field_name: template.format(self.value)
+                    }
                 )
 
 
@@ -133,13 +137,17 @@ class BackendQueryTypePartial(BackendQueryType):
                 if self.is_quoted_value:
                     return Q(
                         name_or_query='match_phrase', _expand__to_dot=False,
-                        **{self.search_field.field_name: '{}'.format(self.value)}
+                        **{
+                            self.search_field.field_name: '{}'.format(self.value)
+                        }
                     )
                 else:
                     if self.get_search_backend_field_type() != elasticsearch_dsl.field.Integer:
                         return Q(
                             name_or_query='wildcard', _expand__to_dot=False,
-                            **{self.search_field.field_name: '*{}*'.format(self.value)}
+                            **{
+                                self.search_field.field_name: '*{}*'.format(self.value)
+                            }
                         )
 
 

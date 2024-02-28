@@ -67,19 +67,19 @@ class DocumentCheckInView(MultipleObjectConfirmActionView):
     def get_source_queryset(self):
         # object_permission is None to disable restricting queryset mixin
         # and restrict the queryset ourselves from two permissions.
-        document_queryset = Document.valid.all()
+        queryset_documents = Document.valid.all()
 
-        check_in_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_check_ins = AccessControlList.objects.restrict_queryset(
             permission=permission_document_check_in,
-            queryset=document_queryset, user=self.request.user
+            queryset=queryset_documents, user=self.request.user
         )
 
-        check_in_override_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_check_in_overrides = AccessControlList.objects.restrict_queryset(
             permission=permission_document_check_in_override,
-            queryset=document_queryset, user=self.request.user
+            queryset=queryset_documents, user=self.request.user
         )
 
-        return check_in_queryset | check_in_override_queryset
+        return queryset_check_ins | queryset_check_in_overrides
 
     def object_action(self, form, instance):
         try:

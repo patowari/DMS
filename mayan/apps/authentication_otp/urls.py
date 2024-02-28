@@ -5,7 +5,6 @@ from .views import (
     UserOTPDataVerifyTokenView
 )
 
-
 urlpatterns = [
     url(
         regex=r'^otp/$', name='otp_detail',

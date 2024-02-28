@@ -1,13 +1,13 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from .mixins import AssetTestMixin, AssetViewTestMixin
-
 from ..events import event_asset_created, event_asset_edited
 from ..models import Asset
 from ..permissions import (
-    permission_asset_create, permission_asset_delete,
-    permission_asset_edit, permission_asset_view,
+    permission_asset_create, permission_asset_delete, permission_asset_edit,
+    permission_asset_view
 )
+
+from .mixins import AssetTestMixin, AssetViewTestMixin
 
 
 class AssetViewTestCase(

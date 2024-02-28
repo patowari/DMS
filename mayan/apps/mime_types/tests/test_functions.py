@@ -20,16 +20,22 @@ class MIMETypeTestCase(DocumentTestMixin, BaseTestCase):
 
     def setUp(self):
         super().setUp()
-        resource.setrlimit(resource.RLIMIT_DATA, (MAXIMUM_HEAP_MEMORY, -1))
+        resource.setrlimit(
+            resource.RLIMIT_DATA, (MAXIMUM_HEAP_MEMORY, -1)
+        )
 
     def test_little_memory_full_file(self):
         with self.assertRaises(expected_exception=Exception):
             self._upload_test_document()
 
-        self.assertEqual(Document.objects.count(), 0)
+        self.assertEqual(
+            Document.objects.count(), 0
+        )
 
     @override_settings(MIMETYPE_FILE_READ_SIZE=1024)
     def test_little_memory_partial_file(self):
         self._upload_test_document()
 
-        self.assertEqual(Document.objects.count(), 1)
+        self.assertEqual(
+            Document.objects.count(), 1
+        )

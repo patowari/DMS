@@ -77,7 +77,9 @@ class MetadataType(
     parser_arguments = models.TextField(
         blank=True, help_text=_(
             'Enter the arguments for the parser in YAML format.'
-        ), validators=[YAMLValidator()], verbose_name=_(
+        ), validators=[
+            YAMLValidator()
+        ], verbose_name=_(
             'Parser arguments'
         )
     )

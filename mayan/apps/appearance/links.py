@@ -4,9 +4,9 @@ from mayan.apps.authentication.link_conditions import condition_user_is_authenti
 from mayan.apps.navigation.classes import Link
 
 from .icons import (
-    icon_user_theme_settings_detail,
-    icon_user_theme_settings_edit, icon_theme_create,
-    icon_theme_delete, icon_theme_edit, icon_theme_list, icon_theme_setup
+    icon_theme_create, icon_theme_delete, icon_theme_edit, icon_theme_list,
+    icon_theme_setup, icon_user_theme_settings_detail,
+    icon_user_theme_settings_edit
 )
 from .permissions import (
     permission_theme_create, permission_theme_delete, permission_theme_edit

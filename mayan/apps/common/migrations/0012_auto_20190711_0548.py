@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import migrations, models
+
 import mayan.apps.common.models
 import mayan.apps.storage.classes
 

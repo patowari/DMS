@@ -1,7 +1,9 @@
 from mayan.apps.dynamic_search.tests.mixins.base import SearchTestMixin
 
 from ..permissions import permission_document_file_view
-from ..search import search_model_document_file_page, search_model_document_file
+from ..search import (
+    search_model_document_file, search_model_document_file_page
+)
 
 from .base import GenericDocumentViewTestCase
 from .literals import TEST_DOCUMENT_FILE_COMMENT

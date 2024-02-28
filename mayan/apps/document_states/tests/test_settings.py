@@ -17,5 +17,9 @@ class WorkflowStorageSettingsTestCase(
             storage_name=STORAGE_NAME_WORKFLOW_CACHE
         )
 
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
-        self.assertTrue('workflow preview' in str(assertion.exception))
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
+        self.assertTrue(
+            'workflow preview' in str(assertion.exception)
+        )

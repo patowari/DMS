@@ -67,7 +67,7 @@ class BufferedEncryptedFile(BufferedFile):
             try:
                 chunk = chunk.encode('utf-8')
             except AttributeError:
-                """Already a byte string"""
+                """Already a byte string."""
 
             count = count + len(chunk)
             if chunk:
@@ -77,7 +77,9 @@ class BufferedEncryptedFile(BufferedFile):
             else:
                 break
 
-            self.file_object.write(self.cipher.encrypt(chunk))
+            self.file_object.write(
+                self.cipher.encrypt(chunk)
+            )
 
         self.position = self.position + count
         return count
@@ -102,7 +104,9 @@ class EncryptedPassthroughStorage(PassthroughStorage):
             next_kwargs['mode'] = mode
 
             if issubclass(self.next_storage_class, PassthroughStorage):
-                next_kwargs.update({'_direct': _direct})
+                next_kwargs.update(
+                    {'_direct': _direct}
+                )
 
             return self._call_backend_method(
                 method_name='open', kwargs=next_kwargs
@@ -123,7 +127,9 @@ class EncryptedPassthroughStorage(PassthroughStorage):
             next_kwargs['content'] = content
 
             if issubclass(self.next_storage_class, PassthroughStorage):
-                next_kwargs.update({'_direct': _direct})
+                next_kwargs.update(
+                    {'_direct': _direct}
+                )
 
             return self._call_backend_method(
                 method_name='save', kwargs=next_kwargs
@@ -152,7 +158,7 @@ class EncryptedPassthroughStorage(PassthroughStorage):
                     try:
                         chunk = chunk.encode('utf-8')
                     except AttributeError:
-                        """Already a byte string"""
+                        """Already a byte string."""
 
                     if chunk:
                         chunk = pad(
@@ -161,6 +167,8 @@ class EncryptedPassthroughStorage(PassthroughStorage):
                     else:
                         break
 
-                    file_object.write(cipher.encrypt(chunk))
+                    file_object.write(
+                        cipher.encrypt(chunk)
+                    )
 
             return name

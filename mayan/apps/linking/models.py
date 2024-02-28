@@ -35,7 +35,9 @@ class SmartLink(
             'document from which the smart link is being accessed.'
         ), verbose_name=_('Dynamic label')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_('Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_('Enabled')
+    )
     document_types = models.ManyToManyField(
         related_name='smart_links', to=DocumentType,
         verbose_name=_('Document types')

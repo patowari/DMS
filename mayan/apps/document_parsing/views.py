@@ -18,12 +18,10 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from .forms import DocumentFileContentForm, DocumentFilePageContentForm
 from .icons import (
     icon_document_file_content_single_delete,
-    icon_document_file_content_detail,
-    icon_document_file_content_download,
+    icon_document_file_content_detail, icon_document_file_content_download,
     icon_document_file_parsing_single_submit,
     icon_document_file_page_content_detail,
-    icon_document_type_parsing_settings,
-    icon_document_type_parsing_submit
+    icon_document_type_parsing_settings, icon_document_type_parsing_submit
 )
 from .models import DocumentFilePageContent
 from .permissions import (
@@ -121,9 +119,9 @@ class DocumentFilePageContentView(SingleObjectDetailView):
         }
 
     def get_source_queryset(self):
-        document_file_queryset = DocumentFile.valid.all()
+        queryset_document_files = DocumentFile.valid.all()
         return DocumentFilePage.objects.filter(
-            document_file_id__in=document_file_queryset.values('pk')
+            document_file_id__in=queryset_document_files.values('pk')
         )
 
 

@@ -4,7 +4,8 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_GERMAN_PATH
 
 from .literals import (
-    TEST_DOCUMENT_VERSION_OCR_CONTENT, TEST_DOCUMENT_VERSION_OCR_CONTENT_DEU_1,
+    TEST_DOCUMENT_VERSION_OCR_CONTENT,
+    TEST_DOCUMENT_VERSION_OCR_CONTENT_DEU_1,
     TEST_DOCUMENT_VERSION_OCR_CONTENT_DEU_2
 )
 

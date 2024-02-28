@@ -37,13 +37,19 @@ class Migration(migrations.Migration):
                         unique=True, max_length=40, verbose_name='Fingerprint'
                     )
                 ),
-                ('length', models.PositiveIntegerField(verbose_name='Length')),
+                (
+                    'length', models.PositiveIntegerField(verbose_name='Length')
+                ),
                 (
                     'algorithm', models.PositiveIntegerField(
                         verbose_name='Algorithm'
                     )
                 ),
-                ('user_id', models.TextField(verbose_name='User ID')),
+                (
+                    'user_id', models.TextField(
+                        verbose_name='User ID'
+                    )
+                ),
                 (
                     'key_type', models.CharField(
                         max_length=3, verbose_name='Type'

@@ -130,15 +130,15 @@ class DuplicateBackendEntryManager(models.Manager):
             app_label='duplicates', model_name='DuplicateTargetDocument'
         )
 
-        target_document_queryset = DuplicateTargetDocument.valid.all()
+        queryset_target_documents = DuplicateTargetDocument.valid.all()
 
         if permission:
-            target_document_queryset = AccessControlList.objects.restrict_queryset(
-                queryset=target_document_queryset, permission=permission,
+            queryset_target_documents = AccessControlList.objects.restrict_queryset(
+                queryset=queryset_target_documents, permission=permission,
                 user=user
             )
 
-        queryset = self.filter(documents__in=target_document_queryset).only(
+        queryset = self.filter(documents__in=queryset_target_documents).only(
             'document_id'
         ).values('document_id')
 
@@ -160,8 +160,12 @@ class DuplicateBackendEntryManager(models.Manager):
 
             when_list.append(
                 models.When(
-                    Q(pk__in=entry.documents.only('pk').values('pk')),
-                    then=Value(value=str(entry.stored_backend))
+                    Q(
+                        pk__in=entry.documents.only('pk').values('pk')
+                    ),
+                    then=Value(
+                        value=str(entry.stored_backend)
+                    )
                 )
             )
 

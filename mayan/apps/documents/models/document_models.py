@@ -5,14 +5,14 @@ from django.urls import reverse
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.signals import signal_mayan_pre_save
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
 
 from ..events import (
-    event_document_created, event_document_edited,
-    event_document_trashed, event_trashed_document_deleted
+    event_document_created, event_document_edited, event_document_trashed,
+    event_trashed_document_deleted
 )
 from ..literals import DEFAULT_LANGUAGE
 from ..managers import (

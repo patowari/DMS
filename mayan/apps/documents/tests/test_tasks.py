@@ -14,8 +14,8 @@ from ..models.document_models import Document
 from ..tasks import task_document_upload
 
 from .literals import (
-    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_SMALL_FILENAME,
-    TEST_DOCUMENT_SMALL_MIMETYPE, TEST_DOCUMENT_SMALL_SIZE
+    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_DOCUMENT_SMALL_MIMETYPE,
+    TEST_DOCUMENT_SMALL_SIZE, TEST_FILE_SMALL_FILENAME
 )
 from .mixins.document_mixins import DocumentTestMixin
 
@@ -86,28 +86,28 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)
 
-        # Document created
+        # Document created.
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self.test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        # Document file created
+        # Document file created.
 
         self.assertEqual(events[1].action_object, self.test_document)
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, self.test_document_file)
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
-        # Document file edited (MIME type, page count update)
+        # Document file edited (MIME type, page count update).
 
         self.assertEqual(events[2].action_object, self.test_document)
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, self.test_document_file)
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
-        # Document version created
+        # Document version created.
 
         self.assertEqual(events[3].action_object, self.test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
@@ -116,7 +116,7 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         )
         self.assertEqual(events[3].verb, event_document_version_created.id)
 
-        # Document version page created
+        # Document version page created.
 
         self.assertEqual(
             events[4].action_object, self.test_document_version
@@ -197,28 +197,28 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)
 
-        # Document created
+        # Document created.
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self.test_document)
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        # Document file created
+        # Document file created.
 
         self.assertEqual(events[1].action_object, self.test_document)
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, self.test_document_file)
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
-        # Document file edited (MIME type, page count update)
+        # Document file edited (MIME type, page count update).
 
         self.assertEqual(events[2].action_object, self.test_document)
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, self.test_document_file)
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
-        # Document version created
+        # Document version created.
 
         self.assertEqual(events[3].action_object, self.test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
@@ -227,7 +227,7 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
         )
         self.assertEqual(events[3].verb, event_document_version_created.id)
 
-        # Document version page created
+        # Document version page created.
 
         self.assertEqual(
             events[4].action_object, self.test_document_version

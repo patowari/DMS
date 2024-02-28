@@ -22,7 +22,9 @@ from .settings import setting_home_view
 
 
 class AboutView(SimpleView):
-    extra_context = {'title': _('About')}
+    extra_context = {
+        'title': _('About')
+    }
     template_name = 'appearance/about.html'
     view_icon = icon_about
 

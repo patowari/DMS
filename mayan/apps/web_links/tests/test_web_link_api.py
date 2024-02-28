@@ -29,7 +29,9 @@ class WebLinkAPIViewTestCase(
         response = self._request_test_web_link_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        self.assertEqual(WebLink.objects.count(), 0)
+        self.assertEqual(
+            WebLink.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -43,10 +45,16 @@ class WebLinkAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         web_link = WebLink.objects.first()
-        self.assertEqual(response.data['id'], web_link.pk)
-        self.assertEqual(response.data['label'], TEST_WEB_LINK_LABEL)
+        self.assertEqual(
+            response.data['id'], web_link.pk
+        )
+        self.assertEqual(
+            response.data['label'], TEST_WEB_LINK_LABEL
+        )
 
-        self.assertEqual(WebLink.objects.count(), 1)
+        self.assertEqual(
+            WebLink.objects.count(), 1
+        )
         self.assertEqual(web_link.label, TEST_WEB_LINK_LABEL)
 
         events = self._get_test_events()
@@ -65,7 +73,9 @@ class WebLinkAPIViewTestCase(
         response = self._request_test_web_link_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(WebLink.objects.count(), 1)
+        self.assertEqual(
+            WebLink.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -81,7 +91,9 @@ class WebLinkAPIViewTestCase(
         response = self._request_test_web_link_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertEqual(WebLink.objects.count(), 0)
+        self.assertEqual(
+            WebLink.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

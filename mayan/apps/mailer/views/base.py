@@ -1,6 +1,6 @@
 from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
-from django.utils.translation import ungettext, ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ungettext
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.organizations.utils import get_organization_installation_url

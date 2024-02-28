@@ -5,8 +5,8 @@ import os
 from django.conf import settings
 from django.utils.encoding import force_bytes
 
-from mayan.apps.testing.tests.mixins import EnvironmentTestCaseMixin
 from mayan.apps.storage.utils import NamedTemporaryFile, fs_cleanup
+from mayan.apps.testing.tests.mixins import EnvironmentTestCaseMixin
 
 from ..classes import Setting, SettingNamespace
 from ..utils import BaseSetting, SettingNamespaceSingleton

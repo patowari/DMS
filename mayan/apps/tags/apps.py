@@ -16,17 +16,15 @@ from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 
-from .events import (
-    event_tag_attached, event_tag_edited, event_tag_removed
-)
+from .events import event_tag_attached, event_tag_edited, event_tag_removed
 from .handlers import handler_index_document, handler_tag_pre_delete
 from .html_widgets import DocumentTagWidget
 from .links import (
-    link_document_tag_list, link_document_multiple_tag_multiple_attach,
-    link_document_multiple_tag_multiple_remove,
-    link_document_tag_multiple_remove, link_document_tag_multiple_attach,
-    link_tag_create, link_tag_single_delete, link_tag_multiple_delete,
-    link_tag_edit, link_tag_list, link_tag_document_list
+    link_document_multiple_tag_multiple_attach,
+    link_document_multiple_tag_multiple_remove, link_document_tag_list,
+    link_document_tag_multiple_attach, link_document_tag_multiple_remove,
+    link_tag_create, link_tag_document_list, link_tag_edit, link_tag_list,
+    link_tag_multiple_delete, link_tag_single_delete
 )
 from .menus import menu_tags
 from .methods import method_document_get_tags

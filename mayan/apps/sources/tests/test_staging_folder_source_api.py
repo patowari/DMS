@@ -30,7 +30,9 @@ class StagingFolderActionAPIViewTestCase(
         test_staging_folder = self._test_source.get_backend_instance()
 
         staging_folder_file_count = len(
-            list(test_staging_folder.get_files())
+            list(
+                test_staging_folder.get_files()
+            )
         )
 
         self._clear_events()
@@ -40,7 +42,9 @@ class StagingFolderActionAPIViewTestCase(
 
         self.assertEqual(
             len(
-                list(test_staging_folder.get_files())
+                list(
+                    test_staging_folder.get_files()
+                )
             ), staging_folder_file_count
         )
 
@@ -57,7 +61,9 @@ class StagingFolderActionAPIViewTestCase(
         test_staging_folder = self._test_source.get_backend_instance()
 
         staging_folder_file_count = len(
-            list(test_staging_folder.get_files())
+            list(
+                test_staging_folder.get_files()
+            )
         )
 
         self._clear_events()
@@ -67,7 +73,9 @@ class StagingFolderActionAPIViewTestCase(
 
         self.assertEqual(
             len(
-                list(test_staging_folder.get_files())
+                list(
+                    test_staging_folder.get_files()
+                )
             ), staging_folder_file_count - 1
         )
 
@@ -96,7 +104,9 @@ class StagingFolderActionAPIViewTestCase(
 
         response = self._request_test_staging_folder_file_image_action_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertTrue(isinstance(response, StreamingHttpResponse))
+        self.assertTrue(
+            isinstance(response, StreamingHttpResponse)
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

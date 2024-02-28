@@ -108,9 +108,15 @@ def views_render_subtemplate(context, template_name, template_context):
     Renders the specified template with the mixed parent and
     subtemplate contexts.
     """
-    new_context = Context(context.flatten())
-    new_context.update(Context(template_context))
-    return get_template(template_name).render(new_context.flatten())
+    new_context = Context(
+        context.flatten()
+    )
+    new_context.update(
+        Context(template_context)
+    )
+    return get_template(template_name).render(
+        new_context.flatten()
+    )
 
 
 @register.simple_tag(takes_context=True)
@@ -134,4 +140,6 @@ def views_update_query_string(context, **kwargs):
     for key, value in kwargs.items():
         query[key] = value
 
-    return '?{}'.format(query.urlencode())
+    return '?{}'.format(
+        query.urlencode()
+    )

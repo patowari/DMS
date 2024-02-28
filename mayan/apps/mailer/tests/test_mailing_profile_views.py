@@ -36,7 +36,9 @@ class MailerViewTestCase(
             response=response, status_code=403, text=TestBackend.label
         )
 
-        self.assertEqual(UserMailer.objects.count(), 0)
+        self.assertEqual(
+            UserMailer.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -50,7 +52,9 @@ class MailerViewTestCase(
         response = self._request_test_user_mailer_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(UserMailer.objects.count(), 1)
+        self.assertEqual(
+            UserMailer.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -90,7 +94,9 @@ class MailerViewTestCase(
         response = self._request_test_user_mailer_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(UserMailer.objects.count(), 0)
+        self.assertEqual(
+            UserMailer.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -206,7 +212,9 @@ class MailerViewTestCase(
         response = self._request_test_user_mailer_test_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), 0)
+        self.assertEqual(
+            len(mail.outbox), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

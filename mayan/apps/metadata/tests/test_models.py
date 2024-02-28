@@ -47,7 +47,9 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document.metadata.count(), 1
+        )
         self.assertEqual(
             self._test_document.metadata.first().value, TEST_DEFAULT_VALUE
         )
@@ -88,7 +90,7 @@ class MetadataTypeTestCase(
         )
 
     def test_delete_metadata_type_present_assigned_as_document_metadata(self):
-        # GitLab issue #753
+        # GitLab issue #753.
         document_metadata = DocumentMetadata(
             document=self._test_document,
             metadata_type=self._test_metadata_type, value=TEST_DEFAULT_VALUE
@@ -97,13 +99,13 @@ class MetadataTypeTestCase(
         document_metadata.full_clean()
         document_metadata.save()
 
-        # Must not raise an error
+        # Must not raise an error.
         self._test_metadata_type.delete()
 
     def test_delete_metadata_value_on_document_type_change(self):
         """
         Delete the old document metadata whose types are not present in the
-        new document type
+        new document type.
         """
         document_metadata = DocumentMetadata(
             document=self._test_document,
@@ -122,12 +124,14 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 0)
+        self.assertEqual(
+            self._test_document.metadata.count(), 0
+        )
 
     def test_duplicate_metadata_value_on_document_type_change(self):
         """
         Delete the old document metadata whose types are not present in the
-        new document type
+        new document type.
         """
         document_metadata = DocumentMetadata(
             document=self._test_document,
@@ -149,7 +153,9 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document.metadata.count(), 1
+        )
         self.assertEqual(
             self._test_document.metadata.first().value, TEST_DEFAULT_VALUE
         )
@@ -250,7 +256,9 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document.metadata.count(), 1
+        )
         self.assertEqual(
             self._test_document.metadata.first().value, TEST_DEFAULT_VALUE
         )
@@ -293,4 +301,6 @@ class MetadataTypeTestCase(
     def test_method_get_absolute_url(self):
         self._create_test_metadata_type()
 
-        self.assertTrue(self._test_metadata_type.get_absolute_url())
+        self.assertTrue(
+            self._test_metadata_type.get_absolute_url()
+        )

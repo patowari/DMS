@@ -8,8 +8,8 @@ from ..exceptions import DynamicSearchBackendException
 from ..search_query_types import QueryTypeExact
 
 from .mixins.backend_mixins import BackendSearchTestMixin
-from .mixins.backend_search_field_mixins import BackendSearchFieldTestCaseMixin
 from .mixins.backend_query_type_mixins import BackendFieldTypeQueryTypeTestCaseMixin
+from .mixins.backend_search_field_mixins import BackendSearchFieldTestCaseMixin
 from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
 
 
@@ -105,7 +105,9 @@ class WhooshSearchBackendSpecificTestCase(
             value='today'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_datetime_search_raw_parsed_date_human_range(self):
@@ -116,7 +118,9 @@ class WhooshSearchBackendSpecificTestCase(
             value='[\'last tuesday\' to \'next friday\']'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_datetime_search_raw_parsed_date_numeric_range(self):
@@ -130,7 +134,9 @@ class WhooshSearchBackendSpecificTestCase(
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_integer_search_raw_parsed_numeric_range(self):
@@ -144,7 +150,9 @@ class WhooshSearchBackendSpecificTestCase(
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
 

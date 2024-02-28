@@ -20,7 +20,6 @@ from ..permissions import (
     permission_document_version_view, permission_document_view
 )
 
-
 link_document_version_active = Link(
     args='resolved_object.pk',
     icon=icon_document_version_active,

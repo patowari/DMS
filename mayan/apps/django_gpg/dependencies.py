@@ -1,6 +1,8 @@
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.dependencies.classes import BinaryDependency, PythonDependency
+from mayan.apps.dependencies.classes import (
+    BinaryDependency, PythonDependency
+)
 
 from .backends.python_gnupg import gpg_path
 

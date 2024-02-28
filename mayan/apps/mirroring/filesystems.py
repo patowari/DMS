@@ -159,12 +159,12 @@ class MirrorFilesystem(LoggingMixIn, Operations):
 
             for count, part in enumerate(iterable=parts[1:]):
                 try:
-                    node_queryset = MirrorFilesystem._clean_queryset(
+                    queryset_nodes = MirrorFilesystem._clean_queryset(
                         queryset=node.get_descendants(include_self=True),
                         destination_field_name='value_clean',
                         source_field_name=self.node_text_attribute
                     )
-                    node = node_queryset.get(value_clean=part)
+                    node = queryset_nodes.get(value_clean=part)
                 except self.func_document_container_node()._meta.model.DoesNotExist:
                     logger.debug('%s does not exists', part)
 

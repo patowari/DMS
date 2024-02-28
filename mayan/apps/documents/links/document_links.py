@@ -12,7 +12,6 @@ from ..permissions import (
     permission_document_properties_edit, permission_document_view
 )
 
-
 link_document_type_change = Link(
     args='resolved_object.id', icon=icon_document_type_change,
     permissions=(permission_document_properties_edit,), text=_('Change type'),

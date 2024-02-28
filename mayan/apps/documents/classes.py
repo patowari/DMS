@@ -1,7 +1,7 @@
 import uuid
 
-from django.utils.translation import ugettext_lazy as _
 from django.utils.text import format_lazy
+from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.databases.classes import BaseBackend
 

@@ -24,7 +24,9 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
         self.TestModelChild.objects.create(parent_id=self._test_object_parent.pk)
 
     def _assertQuerysetEqual(self):
-        rebuilt_items = list(map(repr, self.queryset_rebuilt))
+        rebuilt_items = list(
+            map(repr, self.queryset_rebuilt)
+        )
 
         self.assertQuerysetEqual(
             qs=self.queryset_original, values=rebuilt_items

@@ -6,7 +6,6 @@ from mayan.apps.dependencies.classes import (
 
 from .backends.literals import DEFAULT_FILE_PATH, DEFAULT_MIMETYPE_PATH
 
-
 BinaryDependency(
     label='File::MimeInfo', help_text=_(
         'This module can be used to determine the MIME type of a file. '

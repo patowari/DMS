@@ -237,10 +237,10 @@ class DocumentTypeMetadataTypeRelationshipForm(RelationshipForm):
     )
 
     def get_relationship_type(self):
-        relationship_queryset = self.get_relationship_queryset()
+        queryset_relationship = self.get_queryset_relationship()
 
-        if relationship_queryset.exists():
-            if relationship_queryset.get().required:
+        if queryset_relationship.exists():
+            if queryset_relationship.get().required:
                 return self.RELATIONSHIP_TYPE_REQUIRED
             else:
                 return self.RELATIONSHIP_TYPE_OPTIONAL

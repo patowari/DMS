@@ -10,7 +10,9 @@ class TemplateTagDateParseTestCase(TemplateTagTestMixin, BaseTestCase):
         now = datetime.now()
 
         result = self._render_test_template(
-            template_string='{{% set "{}"|date_parse as date_object %}}{{{{ date_object.year }}}}'.format(now.isoformat())
+            template_string='{{% set "{}"|date_parse as date_object %}}{{{{ date_object.year }}}}'.format(
+                now.isoformat()
+            )
         )
         self.assertEqual(
             result, str(now.year)
@@ -124,7 +126,9 @@ class TemplateTagTimeDeltaTestCase(TemplateTagTestMixin, BaseTestCase):
         now = datetime.now()
 
         result = self._render_test_template(
-            template_string='{{% set "{}"|date_parse as date_object %}}{{% timedelta date_object days=366 as date_new %}}{{{{ date_new.year }}}}'.format(now.isoformat())
+            template_string='{{% set "{}"|date_parse as date_object %}}{{% timedelta date_object days=366 as date_new %}}{{{{ date_new.year }}}}'.format(
+                now.isoformat()
+            )
         )
         self.assertEqual(
             result, str(now.year + 1)

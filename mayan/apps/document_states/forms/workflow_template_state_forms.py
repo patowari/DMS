@@ -48,12 +48,12 @@ class WorkflowTemplateStateActionDynamicForm(DynamicModelForm):
                 field_name, field_data.get('default', None)
             )
             if isinstance(action_data[field_name], QuerySet):
-                # Flatten the queryset to a list of ids
+                # Flatten the queryset to a list of ids.
                 action_data[field_name] = list(
                     action_data[field_name].values_list('id', flat=True)
                 )
             elif isinstance(action_data[field_name], Model):
-                # Store only the ID of a model instance
+                # Store only the ID of a model instance.
                 action_data[field_name] = action_data[field_name].pk
 
         data['action_data'] = action_data
@@ -84,11 +84,11 @@ class WorkflowTemplateStateEscalationForm(forms.ModelForm):
         self.workflow_template_state = workflow_template_state
         super().__init__(*args, **kwargs)
 
-        self.fields[
-            'transition'
-        ].queryset = self.workflow_template_state.workflow.transitions.filter(
+        queryset_transitions = self.workflow_template_state.workflow.transitions.filter(
             origin_state=self.workflow_template_state
         )
+
+        self.fields['transition'].queryset = queryset_transitions
 
         self.fields['condition'] = ModelTemplateField(
             initial_help_text=self.fields['condition'].help_text,

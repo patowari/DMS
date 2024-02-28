@@ -173,7 +173,9 @@ class WorkflowInstanceSerializer(serializers.ModelSerializer):
         )
 
     def get_context(self, instance):
-        return {'workflow_instance_context': instance.loads()}
+        return {
+            'workflow_instance_context': instance.loads()
+        }
 
     def get_log_entries_url(self, instance):
         return reverse(

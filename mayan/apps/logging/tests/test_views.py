@@ -92,7 +92,9 @@ class ErrorLoggingViewTestCase(
         response = self._request_object_error_log_clear_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertNotEqual(self._test_object.error_log.count(), 0)
+        self.assertNotEqual(
+            self._test_object.error_log.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -108,7 +110,9 @@ class ErrorLoggingViewTestCase(
         response = self._request_object_error_log_clear_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(self._test_object.error_log.count(), 0)
+        self.assertEqual(
+            self._test_object.error_log.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

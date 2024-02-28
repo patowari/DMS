@@ -8,7 +8,6 @@ from .settings import (
     setting_signature_capture_cache_storage_backend_arguments
 )
 
-
 storage_signature_captures_cache = DefinedStorage(
     dotted_path=setting_signature_capture_cache_storage_backend.value,
     error_message=_(

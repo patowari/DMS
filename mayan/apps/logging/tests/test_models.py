@@ -29,7 +29,9 @@ class ErrorLoggingModelTestCase(ErrorLogPartitionEntryTestMixin, BaseTestCase):
         self._clear_events()
 
         self._test_object.delete()
-        self.assertEqual(ErrorLogPartitionEntry.objects.count(), 0)
+        self.assertEqual(
+            ErrorLogPartitionEntry.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -38,7 +40,9 @@ class ErrorLoggingModelTestCase(ErrorLogPartitionEntryTestMixin, BaseTestCase):
         self._clear_events()
 
         self._test_error_log_entry.delete()
-        self.assertEqual(ErrorLogPartitionEntry.objects.count(), 0)
+        self.assertEqual(
+            ErrorLogPartitionEntry.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

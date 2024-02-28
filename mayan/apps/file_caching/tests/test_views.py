@@ -1,9 +1,7 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import event_cache_partition_purged, event_cache_purged
-from ..permissions import (
-    permission_cache_purge, permission_cache_view
-)
+from ..permissions import permission_cache_purge, permission_cache_view
 
 from .mixins import CacheTestMixin, CacheViewTestMixin
 
@@ -83,7 +81,9 @@ class CacheViewTestCase(
         response = self._request_test_cache_purge_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(cache_total_size, self._test_cache.get_total_size())
+        self.assertEqual(
+            cache_total_size, self._test_cache.get_total_size()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -133,7 +133,9 @@ class CacheViewTestCase(
         response = self._request_test_cache_multiple_purge_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(cache_total_size, self._test_cache.get_total_size())
+        self.assertEqual(
+            cache_total_size, self._test_cache.get_total_size()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

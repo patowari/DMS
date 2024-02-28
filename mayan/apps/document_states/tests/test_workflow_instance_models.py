@@ -37,14 +37,18 @@ class WorkflowInstanceModelTestCase(
 
         self._clear_events()
 
-        self.assertEqual(self._test_document.workflows.count(), 0)
+        self.assertEqual(
+            self._test_document.workflows.count(), 0
+        )
 
         self._test_document.document_type_change(
             document_type=self._test_document_types[0],
             user=self._test_case_user
         )
 
-        self.assertEqual(self._test_document.workflows.count(), 1)
+        self.assertEqual(
+            self._test_document.workflows.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -80,7 +84,9 @@ class WorkflowInstanceModelTestCase(
 
         self._create_test_document_stub()
 
-        self.assertEqual(self._test_document.workflows.count(), 1)
+        self.assertEqual(
+            self._test_document.workflows.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -109,7 +115,9 @@ class WorkflowInstanceModelTestCase(
 
         self._create_test_document_stub()
 
-        self.assertEqual(self._test_document.workflows.count(), 0)
+        self.assertEqual(
+            self._test_document.workflows.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

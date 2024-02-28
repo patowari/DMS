@@ -135,7 +135,9 @@ class WorkflowTransitionField(
         blank=True, help_text=_(
             'A group of keyword arguments to customize the widget. '
             'Use YAML format.'
-        ), validators=[YAMLValidator()],
+        ), validators=[
+            YAMLValidator()
+        ],
         verbose_name=_('Widget keyword arguments')
     )
 

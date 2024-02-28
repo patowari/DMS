@@ -34,8 +34,7 @@ from ..permissions import (
 )
 from ..settings import (
     setting_display_height, setting_display_width, setting_rotation_step,
-    setting_zoom_percent_step, setting_zoom_max_level,
-    setting_zoom_min_level
+    setting_zoom_percent_step, setting_zoom_max_level, setting_zoom_min_level
 )
 from ..tasks import task_document_file_page_count_update
 

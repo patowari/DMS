@@ -22,8 +22,8 @@ from .events import event_web_link_edited, event_web_link_navigated
 from .links import (
     link_document_type_web_links, link_document_web_link_list,
     link_web_link_create, link_web_link_delete, link_web_link_document_types,
-    link_web_link_edit, link_web_link_instance_view,
-    link_web_link_list, link_web_link_setup
+    link_web_link_edit, link_web_link_instance_view, link_web_link_list,
+    link_web_link_setup
 )
 from .methods import (
     method_document_type_web_links_add, method_document_type_web_links_remove
@@ -170,4 +170,6 @@ class WebLinksApp(MayanAppConfig):
                 'web_links:web_link_create'
             )
         )
-        menu_setup.bind_links(links=(link_web_link_setup,))
+        menu_setup.bind_links(
+            links=(link_web_link_setup,)
+        )

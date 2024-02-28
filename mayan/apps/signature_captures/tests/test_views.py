@@ -9,9 +9,7 @@ from ..permissions import (
     permission_signature_capture_edit, permission_signature_capture_view
 )
 
-from .mixins import (
-    SignatureCaptureTestMixin, SignatureCaptureViewTestMixin
-)
+from .mixins import SignatureCaptureTestMixin, SignatureCaptureViewTestMixin
 
 
 class SignatureCaptureViewTestCase(

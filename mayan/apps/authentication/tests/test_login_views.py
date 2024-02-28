@@ -160,7 +160,9 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
             extra_data={'remember_me': False}
         )
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(self.client.session.get_expire_at_browser_close())
+        self.assertTrue(
+            self.client.session.get_expire_at_browser_close()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)

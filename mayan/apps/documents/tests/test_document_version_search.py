@@ -2,7 +2,7 @@ from mayan.apps.dynamic_search.tests.mixins.base import SearchTestMixin
 
 from ..permissions import permission_document_version_view
 from ..search import (
-    search_model_document_version_page, search_model_document_version
+    search_model_document_version, search_model_document_version_page
 )
 
 from .base import GenericDocumentViewTestCase
@@ -255,7 +255,8 @@ class DocumentVersionSearchTestCase(
 
     def test_search_model_document_version_by_document_type_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_version_view
+            obj=self._test_document,
+            permission=permission_document_version_view
         )
 
         self._clear_events()
@@ -425,7 +426,9 @@ class DocumentVersionPageSearchTestCase(
 
         queryset = self._do_test_search(
             query={
-                'document_version__document__uuid': str(self._test_document.uuid)
+                'document_version__document__uuid': str(
+                    self._test_document.uuid
+                )
             }
         )
         self.assertTrue(self._test_document_version_page not in queryset)
@@ -443,7 +446,9 @@ class DocumentVersionPageSearchTestCase(
 
         queryset = self._do_test_search(
             query={
-                'document_version__document__uuid': str(self._test_document.uuid)
+                'document_version__document__uuid': str(
+                    self._test_document.uuid
+                )
             }
         )
         self.assertTrue(self._test_document_version_page in queryset)

@@ -18,7 +18,9 @@ class Migration(migrations.Migration):
                         primary_key=True
                     )
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'content_type', models.ForeignKey(
                         on_delete=models.CASCADE,

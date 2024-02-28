@@ -20,7 +20,9 @@ class Migration(migrations.Migration):
                 (
                     'holder_id', models.PositiveIntegerField()
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'content_type', models.ForeignKey(
                         on_delete=models.CASCADE,
@@ -74,7 +76,9 @@ class Migration(migrations.Migration):
                         auto_created=True, primary_key=True
                     )
                 ),
-                ('holder_id', models.PositiveIntegerField()),
+                (
+                    'holder_id', models.PositiveIntegerField()
+                ),
                 (
                     'content_type', models.ForeignKey(
                         on_delete=models.CASCADE,

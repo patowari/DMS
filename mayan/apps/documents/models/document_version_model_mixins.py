@@ -8,8 +8,8 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.converter.exceptions import AppImageError
+from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.templating.classes import Template
 
 from ..literals import (

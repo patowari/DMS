@@ -8,12 +8,12 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet
 
 from .links import link_redaction_list
-from .transformations import *  # NOQA
 from .permissions import (
     permission_redaction_create, permission_redaction_delete,
     permission_redaction_edit, permission_redaction_exclude,
     permission_redaction_view
 )
+from .transformations import *  # NOQA
 
 logger = logging.getLogger(name=__name__)
 

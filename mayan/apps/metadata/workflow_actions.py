@@ -59,14 +59,14 @@ class DocumentMetadataAddAction(WorkflowAction):
     def get_form_schema(self, **kwargs):
         result = super().get_form_schema(**kwargs)
 
-        document_types_queryset = kwargs['workflow_template_state'].workflow.document_types
+        queryset_document_types = kwargs['workflow_template_state'].workflow.document_types
 
-        metadata_type_queryset = MetadataType.objects.get_for_document_types(
-            queryset=document_types_queryset
+        queryset_metadata_types = MetadataType.objects.get_for_document_types(
+            queryset=queryset_document_types
         )
 
         queryset = AccessControlList.objects.restrict_queryset(
-            permission=self.permission, queryset=metadata_type_queryset,
+            permission=self.permission, queryset=queryset_metadata_types,
             user=kwargs['request'].user
         )
 
@@ -146,15 +146,15 @@ class DocumentMetadataEditAction(WorkflowAction):
     def get_form_schema(self, **kwargs):
         result = super().get_form_schema(**kwargs)
 
-        document_types_queryset = kwargs['workflow_template_state'].workflow.document_types
+        queryset_document_types = kwargs['workflow_template_state'].workflow.document_types
 
-        metadata_type_queryset = MetadataType.objects.get_for_document_types(
-            queryset=document_types_queryset
+        queryset_metadata_types = MetadataType.objects.get_for_document_types(
+            queryset=queryset_document_types
         )
 
         queryset = AccessControlList.objects.restrict_queryset(
             permission=permission_document_metadata_edit,
-            queryset=metadata_type_queryset,
+            queryset=queryset_metadata_types,
             user=kwargs['request'].user
         )
 

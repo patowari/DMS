@@ -134,7 +134,8 @@ class DocumentVersionDeleteView(MultipleObjectDeleteView):
         return context
 
     def get_post_action_redirect(self):
-        # Use [0] instead of first(). First returns None and it is not usable.
+        # Use [0] instead of first(). First returns None and it is not
+        # usable.
         return reverse(
             viewname='documents:document_version_list', kwargs={
                 'document_id': self.object_list[0].document_id

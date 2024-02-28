@@ -27,7 +27,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_attach_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -42,7 +44,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_attach_api_view()
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -57,7 +61,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_attach_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -75,7 +81,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_attach_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -100,7 +108,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_attach_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -202,7 +212,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -221,7 +233,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -240,7 +254,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -262,7 +278,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertFalse(self._test_tag in self._test_document.tags.all())
+        self.assertFalse(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -291,7 +309,9 @@ class DocumentTagAPIViewTestCase(
         response = self._request_test_document_tag_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

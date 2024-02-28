@@ -236,7 +236,9 @@ class DocumentVersionPageBusinessLogicMixin:
                     # Since open "wb+" doesn't create versions, create it
                     # explicitly.
                     with self.cache_partition.create_file(filename=cache_filename) as file_object:
-                        file_object.write(page_image.getvalue())
+                        file_object.write(
+                            page_image.getvalue()
+                        )
 
                     # Apply runtime transformations.
                     for transformation in transformation_instance_list or ():

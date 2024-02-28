@@ -804,7 +804,9 @@ class SourceColumn(TemplateObjectMixin):
                 else:
                     # Get model columns.
                     columns.extend(
-                        cls._registry.get(model, ())
+                        cls._registry.get(
+                            model, ()
+                        )
                     )
 
                     # Get proxy columns.

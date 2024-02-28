@@ -1,5 +1,5 @@
-from django.db import migrations, models
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 import mayan.apps.document_signatures.models
 

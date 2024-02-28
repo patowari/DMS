@@ -15,8 +15,8 @@ from .icons import (
     icon_document_type_parsing_submit
 )
 from .permissions import (
-    permission_document_file_content_view, permission_document_type_parsing_setup,
-    permission_document_file_parse
+    permission_document_file_content_view,
+    permission_document_type_parsing_setup, permission_document_file_parse
 )
 
 # Document file

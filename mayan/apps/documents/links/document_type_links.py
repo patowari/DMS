@@ -16,7 +16,6 @@ from ..permissions import (
     permission_document_type_edit, permission_document_type_view
 )
 
-
 link_document_type_create = Link(
     icon=icon_document_type_create,
     permissions=(permission_document_type_create,),

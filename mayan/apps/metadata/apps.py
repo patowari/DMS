@@ -327,7 +327,9 @@ class MetadataApp(MayanAppConfig):
             )
         )
 
-        menu_setup.bind_links(links=(link_metadata_type_list,))
+        menu_setup.bind_links(
+            links=(link_metadata_type_list,)
+        )
 
         # Signals
 

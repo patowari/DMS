@@ -11,7 +11,6 @@ from mayan.settings.literals import PYTHON_WHEEL_VERSION
 
 from .literals import DEFAULT_TX_PATH
 
-
 PythonDependency(
     copyright_text='''
         Copyright (c) Django Software Foundation and individual contributors.

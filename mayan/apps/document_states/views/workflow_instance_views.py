@@ -86,14 +86,14 @@ class WorkflowInstanceDetailView(ExternalObjectViewMixin, SingleObjectListView):
         }
 
     def get_external_object_queryset(self):
-        document_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_documents = AccessControlList.objects.restrict_queryset(
             queryset=Document.valid.all(),
             permission=permission_workflow_template_view,
             user=self.request.user
         )
 
         return WorkflowInstance.objects.filter(
-            document_id__in=document_queryset.values('pk')
+            document_id__in=queryset_documents.values('pk')
         )
 
     def get_source_queryset(self):
@@ -129,13 +129,13 @@ class WorkflowInstanceTransitionExecuteView(ExternalObjectViewMixin, FormView):
         queryset = super().get_external_object_queryset_filtered()
 
         # Filter further down by document access.
-        document_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_documents = AccessControlList.objects.restrict_queryset(
             permission=permission_workflow_instance_transition,
             queryset=Document.valid.all(),
             user=self.request.user
         )
 
-        return queryset.filter(document__in=document_queryset)
+        return queryset.filter(document__in=queryset_documents)
 
     def get_extra_context(self):
         return {
@@ -237,13 +237,13 @@ class WorkflowInstanceTransitionSelectView(ExternalObjectViewMixin, FormView):
         queryset = super().get_external_object_queryset_filtered()
 
         # Filter further down by document access.
-        document_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_documents = AccessControlList.objects.restrict_queryset(
             permission=permission_workflow_instance_transition,
             queryset=Document.valid.all(),
             user=self.request.user
         )
 
-        return queryset.filter(document__in=document_queryset)
+        return queryset.filter(document__in=queryset_documents)
 
     def get_form_extra_kwargs(self):
         return {

@@ -5,12 +5,12 @@ from mayan.apps.navigation.classes import Link, Separator, Text
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_current_user_detail, icon_group_create, icon_group_single_delete,
-    icon_group_multiple_delete, icon_group_edit, icon_group_list,
-    icon_group_setup, icon_group_user_list, icon_user_create,
+    icon_current_user_detail, icon_group_create, icon_group_edit,
+    icon_group_list, icon_group_multiple_delete, icon_group_setup,
+    icon_group_single_delete, icon_group_user_list, icon_user_create,
     icon_user_edit, icon_user_group_list, icon_user_list,
-    icon_user_single_delete, icon_user_multiple_delete,
-    icon_user_set_options, icon_user_setup
+    icon_user_multiple_delete, icon_user_set_options, icon_user_setup,
+    icon_user_single_delete
 )
 from .link_conditions import condition_user_is_not_superuser
 from .permissions import (

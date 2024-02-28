@@ -20,7 +20,9 @@ class StoredDuplicateBackend(BackendModelMixin, models.Model):
         verbose_name_plural = _('Stored duplicate backends')
 
     def __str__(self):
-        return str(self.get_backend_label())
+        return str(
+            self.get_backend_label()
+        )
 
 
 class DuplicateBackendEntry(models.Model):

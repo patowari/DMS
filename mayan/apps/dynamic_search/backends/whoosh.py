@@ -38,6 +38,7 @@ from .literals.whoosh_literals import (
     DJANGO_TO_WHOOSH_FIELD_MAP, TEXT_LOCK_INSTANCE_DEINDEX,
     TEXT_LOCK_INSTANCE_INDEX, WHOOSH_INDEX_DIRECTORY_NAME
 )
+
 logger = logging.getLogger(name=__name__)
 
 

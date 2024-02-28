@@ -144,8 +144,9 @@ class ModelPermission:
         Match a model class to a set of permissions. And connect the model
         to the ACLs via a GenericRelation field.
         """
-        # Hidden imports
+        # Hidden imports.
         from django.contrib.contenttypes.fields import GenericRelation
+
         from mayan.apps.common.classes import ModelCopy
         from mayan.apps.events.classes import (
             EventModelRegistry, ModelEventType

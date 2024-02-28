@@ -8,5 +8,7 @@ class Command(management.BaseCommand):
 
     def handle(self, *args, **options):
         self.stdout.write(
-            msg='{}\n'.format(PyPIClient().check_version_verbose())
+            msg='{}\n'.format(
+                PyPIClient().check_version_verbose()
+            )
         )

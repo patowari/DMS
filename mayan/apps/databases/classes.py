@@ -404,7 +404,11 @@ class QuerysetParametersSerializer:
 
         kwargs = {}
 
-        for parameter in decomposed_queryset.get('kwargs', ()):
+        parameters = decomposed_queryset.get(
+            'kwargs', ()
+        )
+
+        for parameter in parameters:
             if 'content_type_id' in parameter:
                 content_type = ContentType.objects.get(
                     pk=parameter['content_type_id']

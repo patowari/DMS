@@ -6,10 +6,10 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import (
     YAMLValidator, validate_internal_name
 )
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
 from mayan.apps.storage.classes import DefinedStorageLazy
@@ -164,7 +164,9 @@ class LayerTransformation(
         blank=True, help_text=_(
             'Enter the arguments for the transformation as a YAML '
             'dictionary. ie: {"degrees": 180}'
-        ), validators=[YAMLValidator()], verbose_name=_('Arguments')
+        ), validators=[
+            YAMLValidator()
+        ], verbose_name=_('Arguments')
     )
     enabled = models.BooleanField(
         default=True, verbose_name=_('Enabled')

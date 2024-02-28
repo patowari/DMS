@@ -4,7 +4,6 @@ from mayan.apps.navigation.classes import Link
 
 from .icons import icon_dashboard_detail, icon_dashboard_list
 
-
 link_dashboard_list = Link(
     icon=icon_dashboard_list, text=_('Dashboards'), view='dashboards:dashboard_list'
 )

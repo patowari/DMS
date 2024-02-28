@@ -12,7 +12,6 @@ from ..permissions import (
     permission_trashed_document_delete, permission_trashed_document_restore
 )
 
-
 link_document_delete = Link(
     args='resolved_object.id', icon=icon_trashed_document_delete,
     permissions=(permission_trashed_document_delete,),

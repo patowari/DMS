@@ -28,7 +28,9 @@ class DocumentVersionOCRIndexingTestCase(
 
     def test_indexing_document_version_ocr_delete(self):
         self._create_test_document_version_ocr_content()
-        value = ' '.join(self._test_document.version_active.ocr_content())
+        value = ' '.join(
+            self._test_document.version_active.ocr_content()
+        )
 
         self._do_test_document_version_ocr_content_delete()
 
@@ -41,11 +43,15 @@ class DocumentVersionOCRIndexingTestCase(
 
     def test_indexing_document_version_ocr_edit(self):
         self._create_test_document_version_ocr_content()
-        value = ' '.join(self._test_document.version_active.ocr_content())
+        value = ' '.join(
+            self._test_document.version_active.ocr_content()
+        )
 
         self._test_document_version_page.ocr_content.content = TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
         self._test_document_version_page.ocr_content.save()
-        value_edited = ' '.join(self._test_document.version_active.ocr_content())
+        value_edited = ' '.join(
+            self._test_document.version_active.ocr_content()
+        )
 
         self.assertFalse(
             IndexInstanceNode.objects.filter(
@@ -62,7 +68,9 @@ class DocumentVersionOCRIndexingTestCase(
 
     def test_indexing_document_version_ocr_finished(self):
         self._create_test_document_version_ocr_content()
-        value = ' '.join(self._test_document.version_active.ocr_content())
+        value = ' '.join(
+            self._test_document.version_active.ocr_content()
+        )
 
         self.assertTrue(
             IndexInstanceNode.objects.filter(

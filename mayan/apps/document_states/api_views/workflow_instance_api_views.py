@@ -1,16 +1,16 @@
 from django.shortcuts import get_object_or_404
 
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 from mayan.apps.rest_api import generics
+from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 
 from ..permissions import (
     permission_workflow_instance_transition,
     permission_workflow_template_view, permission_workflow_tools
 )
 from ..serializers.workflow_instance_serializers import (
-    WorkflowInstanceLaunchSerializer, WorkflowInstanceSerializer,
-    WorkflowInstanceLogEntrySerializer
+    WorkflowInstanceLaunchSerializer, WorkflowInstanceLogEntrySerializer,
+    WorkflowInstanceSerializer
 )
 from ..serializers.workflow_template_transition_serializers import WorkflowTemplateTransitionSerializer
 

@@ -204,7 +204,9 @@ class DocumentMetadataEditView(
         if queryset.count() == 1:
             no_results_main_link = link_metadata_add.resolve(
                 context=RequestContext(
-                    dict_={'object': queryset.first()},
+                    dict_={
+                        'object': queryset.first()
+                    },
                     request=self.request
                 )
             )
@@ -251,12 +253,12 @@ class DocumentMetadataEditView(
         initial = []
 
         for document in queryset:
-            document_metadata_queryset = AccessControlList.objects.restrict_queryset(
+            queryset_document_metadata = AccessControlList.objects.restrict_queryset(
                 queryset=document.metadata.all(),
                 permission=permission_document_metadata_edit,
                 user=self.request.user
             )
-            for document_metadata in document_metadata_queryset:
+            for document_metadata in queryset_document_metadata:
                 metadata_dict.setdefault(
                     document_metadata.metadata_type, set()
                 )
@@ -296,7 +298,7 @@ class DocumentMetadataEditView(
             return url.tostr()
 
     def object_action(self, form, instance):
-        document_metadata_queryset = AccessControlList.objects.restrict_queryset(
+        queryset_document_metadata = AccessControlList.objects.restrict_queryset(
             queryset=instance.metadata.all(),
             permission=permission_document_metadata_edit,
             user=self.request.user
@@ -305,7 +307,7 @@ class DocumentMetadataEditView(
         errors = []
         for form in form.forms:
             if form.cleaned_data['update']:
-                if document_metadata_queryset.filter(metadata_type=form.cleaned_data['metadata_type_id']).exists():
+                if queryset_document_metadata.filter(metadata_type=form.cleaned_data['metadata_type_id']).exists():
                     try:
                         save_metadata_list(
                             document=instance,
@@ -424,15 +426,15 @@ class DocumentMetadataRemoveView(
 
         metadata = {}
         for document in queryset:
-            document_metadata_queryset = AccessControlList.objects.restrict_queryset(
+            queryset_document_metadata = AccessControlList.objects.restrict_queryset(
                 queryset=document.metadata.all(),
                 permission=permission_document_metadata_remove,
                 user=self.request.user
             )
 
-            for document_metadata in document_metadata_queryset:
+            for document_metadata in queryset_document_metadata:
                 # Metadata value cannot be None here, fallback to an empty
-                # string
+                # string.
                 value = document_metadata.value or ''
                 if document_metadata.metadata_type in metadata:
                     if value not in metadata[document_metadata.metadata_type]:

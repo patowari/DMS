@@ -39,4 +39,6 @@ class DashboardsApp(MayanAppConfig):
                 Dashboard, 'dashboards:dashboard_list',
             )
         )
-        menu_tools.bind_links(links=(link_dashboard_list,))
+        menu_tools.bind_links(
+            links=(link_dashboard_list,)
+        )

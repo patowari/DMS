@@ -112,7 +112,7 @@ class DocumentTagViewTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_document_tags_list_tag_edit_link_with_full_access(self):
-        # Ensure that DocumentTag instances and links are
+        # Ensure that `DocumentTag` instances and links are
         # resolved in this view and not base Tag instances.
         self._create_test_tag(add_test_document=True)
 
@@ -175,7 +175,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_attach_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -192,7 +194,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_attach_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -212,7 +216,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_attach_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -254,7 +260,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_multiple_attach_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -271,7 +279,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_multiple_attach_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -288,7 +298,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_multiple_attach_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -308,7 +320,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_multiple_attach_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -335,7 +349,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_multiple_attach_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -349,7 +365,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_multiple_remove_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -367,7 +385,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_multiple_remove_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -385,7 +405,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_multiple_remove_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -406,7 +428,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_multiple_remove_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -434,7 +458,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_tag_multiple_remove_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -448,7 +474,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_remove_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -466,7 +494,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_remove_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -484,7 +514,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_remove_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -505,7 +537,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_remove_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_tag not in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag not in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -533,7 +567,9 @@ class DocumentTagViewTestCase(
         response = self._request_test_document_multiple_tag_remove_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_tag in self._test_document.tags.all())
+        self.assertTrue(
+            self._test_tag in self._test_document.tags.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

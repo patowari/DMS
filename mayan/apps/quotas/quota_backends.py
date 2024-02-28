@@ -109,7 +109,7 @@ class DocumentCountQuota(
         }
 
     def _get_user_document_count(self, user):
-        action_queryset = Action.objects.annotate(
+        queryset_action = Action.objects.annotate(
             target_object_id_int=Cast(
                 'target_object_id', output_field=IntegerField()
             )
@@ -153,11 +153,11 @@ class DocumentCountQuota(
                         }
                     )
 
-        action_queryset = action_queryset.filter(**action_filter_kwargs)
+        queryset_action = queryset_action.filter(**action_filter_kwargs)
 
         document_filter_kwargs.update(
             {
-                'pk__in': action_queryset.values('target_object_id_int')
+                'pk__in': queryset_action.values('target_object_id_int')
             }
         )
 

@@ -192,4 +192,6 @@ class MailerApp(MayanAppConfig):
             )
         )
 
-        menu_setup.bind_links(links=(link_user_mailer_setup,))
+        menu_setup.bind_links(
+            links=(link_user_mailer_setup,)
+        )

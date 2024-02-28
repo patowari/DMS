@@ -17,7 +17,8 @@ from mayan.apps.views.html_widgets import TwoStateWidget
 from .events import event_announcement_edited
 from .links import (
     link_announcement_create, link_announcement_multiple_delete,
-    link_announcement_single_delete, link_announcement_edit, link_announcement_list
+    link_announcement_single_delete, link_announcement_edit,
+    link_announcement_list
 )
 from .permissions import (
     permission_announcement_delete, permission_announcement_edit,

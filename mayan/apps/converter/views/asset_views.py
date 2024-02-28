@@ -18,8 +18,8 @@ from ..icons import (
 from ..links import link_asset_create
 from ..models import Asset
 from ..permissions import (
-    permission_asset_create, permission_asset_delete,
-    permission_asset_edit, permission_asset_view
+    permission_asset_create, permission_asset_delete, permission_asset_edit,
+    permission_asset_view
 )
 
 logger = logging.getLogger(name=__name__)

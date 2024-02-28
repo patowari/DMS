@@ -31,7 +31,9 @@ class MetadataTypeAPITestCase(
 
         response = self._request_test_metadata_type_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-        self.assertEqual(MetadataType.objects.count(), 0)
+        self.assertEqual(
+            MetadataType.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -63,7 +65,9 @@ class MetadataTypeAPITestCase(
         response = self._request_test_metadata_type_delete_api_view()
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-        self.assertEqual(MetadataType.objects.count(), 1)
+        self.assertEqual(
+            MetadataType.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -80,7 +84,9 @@ class MetadataTypeAPITestCase(
         response = self._request_test_metadata_type_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertEqual(MetadataType.objects.count(), 0)
+        self.assertEqual(
+            MetadataType.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -266,7 +272,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_create_api_view()
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-        self.assertEqual(self._test_document_type.metadata.count(), 0)
+        self.assertEqual(
+            self._test_document_type.metadata.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -282,7 +290,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(self._test_document_type.metadata.count(), 0)
+        self.assertEqual(
+            self._test_document_type.metadata.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -298,7 +308,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(self._test_document_type.metadata.count(), 0)
+        self.assertEqual(
+            self._test_document_type.metadata.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -347,7 +359,11 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_create_api_view()
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(list(response.data.keys())[0], 'non_field_errors')
+        self.assertEqual(
+            list(
+                response.data.keys()
+            )[0], 'non_field_errors'
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -360,7 +376,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(self._test_document_type.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document_type.metadata.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -378,7 +396,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(self._test_document_type.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document_type.metadata.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -396,7 +416,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(self._test_document_type.metadata.count(), 1)
+        self.assertEqual(
+            self._test_document_type.metadata.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -418,7 +440,9 @@ class DocumentTypeMetadataTypeAPITestCase(
         response = self._request_document_type_metadata_type_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertEqual(self._test_document_type.metadata.all().count(), 0)
+        self.assertEqual(
+            self._test_document_type.metadata.all().count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -453,7 +477,9 @@ class DocumentTypeMetadataTypeAPITestCase(
 
         response = self._request_document_type_metadata_type_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

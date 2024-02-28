@@ -20,4 +20,6 @@ class Migration0003UniqueFieldsTestCase(MayanMigratorTestCase):
         StoredDriver = self.new_state.apps.get_model(
             'file_metadata', 'StoredDriver'
         )
-        self.assertEqual(StoredDriver.objects.count(), 1)
+        self.assertEqual(
+            StoredDriver.objects.count(), 1
+        )

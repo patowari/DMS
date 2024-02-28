@@ -113,7 +113,9 @@ class SourcesApp(MayanAppConfig):
             widget=TwoStateWidget
         )
 
-        menu_documents.bind_links(links=(link_document_create_multiple,))
+        menu_documents.bind_links(
+            links=(link_document_create_multiple,)
+        )
 
         menu_list_facet.bind_links(
             links=(

@@ -16,11 +16,15 @@ class DownloadFileModelTestCase(DownloadFileTestMixin, BaseTestCase):
         setting_download_file_expiration_interval.set(value=60)
         self._create_test_download_file()
 
-        self.assertEqual(DownloadFile.objects.stale().count(), 0)
+        self.assertEqual(
+            DownloadFile.objects.stale().count(), 0
+        )
 
         setting_download_file_expiration_interval.set(value=0)
 
-        self.assertEqual(DownloadFile.objects.stale().count(), 1)
+        self.assertEqual(
+            DownloadFile.objects.stale().count(), 1
+        )
 
     def test_method_get_absolute_url(self):
         self._create_test_download_file()
@@ -38,8 +42,12 @@ class SharedUploadedFileManagerTestCase(
         setting_shared_uploaded_file_expiration_interval.set(value=60)
         self._create_test_shared_uploaded_file()
 
-        self.assertEqual(SharedUploadedFile.objects.stale().count(), 0)
+        self.assertEqual(
+            SharedUploadedFile.objects.stale().count(), 0
+        )
 
         setting_shared_uploaded_file_expiration_interval.set(value=0)
 
-        self.assertEqual(SharedUploadedFile.objects.stale().count(), 1)
+        self.assertEqual(
+            SharedUploadedFile.objects.stale().count(), 1
+        )

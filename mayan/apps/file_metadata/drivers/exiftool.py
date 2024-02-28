@@ -70,4 +70,6 @@ class EXIFToolDriver(FileMetadataDriver):
         ).get('exiftool_path', DEFAULT_EXIF_PATH)
 
 
-EXIFToolDriver.register(mimetypes=('*',))
+EXIFToolDriver.register(
+    mimetypes=('*',)
+)

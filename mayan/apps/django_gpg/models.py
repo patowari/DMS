@@ -10,7 +10,6 @@ from mayan.apps.events.decorators import method_event
 from .classes import GPGBackend
 from .events import event_key_created
 from .literals import KEY_TYPE_CHOICES
-
 from .managers import KeyManager
 from .model_mixins import KeyBusinessLogicMixin
 

@@ -28,7 +28,9 @@ class UserImpersonateEndView(RedirectionViewMixin, View):
                 USER_IMPERSONATE_VARIABLE_DISABLE: ''
             }
         )
-        return HttpResponseRedirect(redirect_to=url.to_string())
+        return HttpResponseRedirect(
+            redirect_to=url.to_string()
+        )
 
 
 class UserImpersonateFormStartView(FormView):
@@ -45,7 +47,9 @@ class UserImpersonateFormStartView(FormView):
         url = URL(
             viewname=setting_home_view.value, query=query
         )
-        return HttpResponseRedirect(redirect_to=url.to_string())
+        return HttpResponseRedirect(
+            redirect_to=url.to_string()
+        )
 
     def get_extra_context(self):
         return {
@@ -73,7 +77,9 @@ class UserImpersonateStartView(ExternalObjectViewMixin, FormView):
         url = URL(
             query=query, viewname=setting_home_view.value
         )
-        return HttpResponseRedirect(redirect_to=url.to_string())
+        return HttpResponseRedirect(
+            redirect_to=url.to_string()
+        )
 
     def get_extra_context(self):
         return {

@@ -27,7 +27,9 @@ from ..permissions import (
 
 
 class MetadataTypeCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create metadata type')}
+    extra_context = {
+        'title': _('Create metadata type')
+    }
     form_class = MetadataTypeForm
     model = MetadataType
     post_action_redirect = reverse_lazy(

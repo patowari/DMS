@@ -1,5 +1,6 @@
 from django.db import migrations, models
 import django.db.models.deletion
+
 import mayan.apps.databases.model_mixins
 
 

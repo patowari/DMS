@@ -4,8 +4,8 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.literals import TIME_DELTA_UNIT_CHOICES
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import YAMLValidator
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.classes import (
     EventManagerMethodAfter, EventManagerSave
 )
@@ -68,7 +68,9 @@ class DocumentType(
         blank=True, help_text=_(
             'The arguments for the filename generator backend as a '
             'YAML dictionary.'
-        ), validators=[YAMLValidator()], verbose_name=_(
+        ), validators=[
+            YAMLValidator()
+        ], verbose_name=_(
             'Filename generator backend arguments'
         )
     )
@@ -130,7 +132,9 @@ class DocumentTypeFilename(ExtraDataModelMixin, models.Model):
     filename = models.CharField(
         db_index=True, max_length=128, verbose_name=_('Label')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_('Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_('Enabled')
+    )
 
     class Meta:
         ordering = ('filename',)

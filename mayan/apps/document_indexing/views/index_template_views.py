@@ -97,7 +97,9 @@ class IndexTemplateListView(SingleObjectListView):
 
 
 class IndexTemplateCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create index')}
+    extra_context = {
+        'title': _('Create index')
+    }
     fields = ('label', 'slug', 'enabled')
     model = IndexTemplate
     post_action_redirect = reverse_lazy(

@@ -133,7 +133,9 @@ class SettingTestCase(
         )
 
         Setting.save_last_known_good()
-        self.assertTrue(path_config_backup.exists())
+        self.assertTrue(
+            path_config_backup.exists()
+        )
 
     def test_config_backup_creation_no_tags(self):
         path_config_backup = Path(settings.CONFIGURATION_LAST_GOOD_FILEPATH)

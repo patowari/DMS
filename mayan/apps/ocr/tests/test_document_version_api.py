@@ -5,8 +5,7 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
     event_ocr_document_version_page_content_edited,
-    event_ocr_document_version_finished,
-    event_ocr_document_version_submitted
+    event_ocr_document_version_finished, event_ocr_document_version_submitted
 )
 from ..permissions import (
     permission_document_version_ocr,

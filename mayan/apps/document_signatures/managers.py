@@ -10,8 +10,7 @@ from mayan.apps.documents.models import DocumentFile
 from mayan.apps.storage.utils import NamedTemporaryFile
 
 from .events import (
-    event_detached_signature_created,
-    event_embedded_signature_created
+    event_detached_signature_created, event_embedded_signature_created
 )
 
 logger = logging.getLogger(name=__name__)

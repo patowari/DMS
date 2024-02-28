@@ -8,8 +8,7 @@ from ..models import LayerTransformation
 from ..workflow_actions import TransformationAddAction
 
 from .literals import (
-    TEST_TRANSFORMATION_ROTATE_ARGUMENT,
-    TEST_TRANSFORMATION_ROTATE_NAME
+    TEST_TRANSFORMATION_ROTATE_ARGUMENT, TEST_TRANSFORMATION_ROTATE_NAME
 )
 
 

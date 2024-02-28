@@ -72,7 +72,9 @@ class Version:
             return 0
 
     def __repr__(self):
-        return 'Version: {}'.format(self.get_version_string())
+        return 'Version: {}'.format(
+            self.get_version_string()
+        )
 
     def as_major(self):
         return self.major
@@ -96,9 +98,11 @@ class Version:
 
     def increment_part(self, part):
         # Fill version parts if the requested part is lower than what is
-        # available
+        # available.
         self._version_parts.extend(
-            ['0'] * (part - len(self._version_parts) + 1)
+            ['0'] * (
+                part - len(self._version_parts) + 1
+            )
         )
 
         try:
@@ -121,7 +125,7 @@ class Version:
             part_numeric_pre, part_text, part_numeric_post
         )
 
-        # Discard version parts lower than what is being increased
+        # Discard version parts lower than what is being increased.
         self._version_parts = self._version_parts[0:part + 1]
         self._version_string = '.'.join(self._version_parts)
 

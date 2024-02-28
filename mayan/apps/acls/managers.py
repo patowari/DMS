@@ -16,8 +16,8 @@ from mayan.apps.common.utils import (
 from mayan.apps.permissions import Permission
 from mayan.apps.permissions.models import StoredPermission
 
-from .exceptions import PermissionNotValidForClass
 from .classes import ModelPermission
+from .exceptions import PermissionNotValidForClass
 
 logger = logging.getLogger(name=__name__)
 
@@ -74,7 +74,7 @@ class AccessControlListManager(models.Manager):
                         recursive_related_reference
                     )
 
-                content_type_object_id_queryset = queryset.annotate(
+                queryset_content_type_object_ids = queryset.annotate(
                     ct_fk_combination=Concat(
                         '{}{}'.format(
                             recursive_related_reference,
@@ -94,7 +94,7 @@ class AccessControlListManager(models.Manager):
                     )
                 ).filter(
                     permissions=stored_permission, role__groups__user=user,
-                    ct_fk_combination__in=content_type_object_id_queryset
+                    ct_fk_combination__in=queryset_content_type_object_ids
                 )
 
                 if fk_field_cast:
@@ -240,14 +240,14 @@ class AccessControlListManager(models.Manager):
                 ).values('object_id')
 
                 # Obtain a queryset of filtered, authorized model instances.
-                acl_queryset = queryset.model._meta.default_manager.filter(
+                queryset_acls = queryset.model._meta.default_manager.filter(
                     id__in=acl_filter
                 ).filter(
                     **function_results['acl_filter']
                 )
 
                 if 'acl_values' in function_results:
-                    acl_queryset = acl_queryset.values(
+                    queryset_acls = queryset_acls.values(
                         *function_results['acl_values']
                     )
 
@@ -255,7 +255,7 @@ class AccessControlListManager(models.Manager):
                 # reference.
                 result.append(
                     Q(
-                        **{function_results['field_lookup']: acl_queryset}
+                        **{function_results['field_lookup']: queryset_acls}
                     )
                 )
 
@@ -263,8 +263,8 @@ class AccessControlListManager(models.Manager):
 
     def check_access(self, obj, permissions, user):
         # Allow specific managers for models that have more than one
-        # for example the Document model when checking for access for a trashed
-        # document.
+        # for example the Document model when checking for access for a
+        # trashed document.
 
         meta = getattr(obj, '_meta', None)
 
@@ -278,16 +278,16 @@ class AccessControlListManager(models.Manager):
             return True
         else:
             manager = ModelPermission.get_manager(model=obj._meta.model)
-            source_queryset = manager.all()
+            queryset_source = manager.all()
 
-        restricted_queryset = manager.none()
+        queryset_restricted = manager.none()
         for permission in permissions:
-            # Default relationship betweens permissions is OR.
-            restricted_queryset = restricted_queryset | self.restrict_queryset(
-                permission=permission, queryset=source_queryset, user=user
+            # Default relationship between permissions is OR.
+            queryset_restricted = queryset_restricted | self.restrict_queryset(
+                permission=permission, queryset=queryset_source, user=user
             )
 
-        if restricted_queryset.filter(pk=obj.pk).exists():
+        if queryset_restricted.filter(pk=obj.pk).exists():
             return True
         else:
             raise PermissionDenied(

@@ -7,8 +7,8 @@ from ..permissions import (
 )
 
 from .literals import (
-    TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-    TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION
+    TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
+    TEST_WORKFLOW_TEMPLATE_STATE_LABEL
 )
 from .mixins.workflow_template_state_mixins import WorkflowStateViewTestMixin
 
@@ -26,7 +26,9 @@ class WorkflowStateViewTestCase(
         response = self._request_test_workflow_template_state_create_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(WorkflowState.objects.count(), 0)
+        self.assertEqual(
+            WorkflowState.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -42,7 +44,9 @@ class WorkflowStateViewTestCase(
         response = self._request_test_workflow_template_state_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(WorkflowState.objects.count(), 1)
+        self.assertEqual(
+            WorkflowState.objects.count(), 1
+        )
         self.assertEqual(
             WorkflowState.objects.all()[0].label,
             TEST_WORKFLOW_TEMPLATE_STATE_LABEL
@@ -74,7 +78,9 @@ class WorkflowStateViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(WorkflowState.objects.count(), 1)
+        self.assertEqual(
+            WorkflowState.objects.count(), 1
+        )
         self.assertEqual(
             WorkflowState.objects.all()[0].label,
             TEST_WORKFLOW_TEMPLATE_STATE_LABEL
@@ -101,7 +107,9 @@ class WorkflowStateViewTestCase(
         response = self._request_test_workflow_template_state_delete_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(WorkflowState.objects.count(), 2)
+        self.assertEqual(
+            WorkflowState.objects.count(), 2
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -120,7 +128,9 @@ class WorkflowStateViewTestCase(
         response = self._request_test_workflow_template_state_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(WorkflowState.objects.count(), 1)
+        self.assertEqual(
+            WorkflowState.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

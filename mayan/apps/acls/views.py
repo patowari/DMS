@@ -187,17 +187,20 @@ class ACLPermissionAddRemoveView(AddRemoveView):
         # Group permissions by namespace
         for permission in object_list:
             namespaces_dictionary.setdefault(
-                permission.volatile_permission.namespace.label,
-                []
+                permission.volatile_permission.namespace.label, []
             )
             namespaces_dictionary[
                 permission.volatile_permission.namespace.label
             ].append(
-                (permission.pk, force_text(s=permission))
+                (
+                    permission.pk, force_text(s=permission)
+                )
             )
 
-        # Sort permissions by their translatable namespace label
-        return sorted(namespaces_dictionary.items())
+        # Sort permissions by their translatable namespace label.
+        return sorted(
+            namespaces_dictionary.items()
+        )
 
     def get_actions_extra_kwargs(self):
         return {'user': self.request.user}

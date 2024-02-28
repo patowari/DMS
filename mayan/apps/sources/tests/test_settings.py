@@ -29,5 +29,9 @@ class SourcesStorageSettingsTestCase(SmartSettingTestMixin, BaseTestCase):
             DefinedStorage.get(
                 name=STORAGE_NAME_SOURCE_CACHE_FOLDER
             ).get_storage_instance()
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
-        self.assertTrue('staging folder' in str(assertion.exception))
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
+        self.assertTrue(
+            'staging folder' in str(assertion.exception)
+        )

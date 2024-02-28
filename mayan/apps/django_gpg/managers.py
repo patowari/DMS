@@ -89,7 +89,9 @@ class KeyManager(models.Manager):
 
         result = []
         for key_data in key_data_list:
-            result.append(KeyStub(raw=key_data))
+            result.append(
+                KeyStub(raw=key_data)
+            )
 
         return result
 

@@ -1,5 +1,5 @@
-import logging
 from io import BytesIO, StringIO
+import logging
 
 from django.core.files.base import File
 from django.core.files.storage import Storage

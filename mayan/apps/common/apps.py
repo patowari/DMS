@@ -16,7 +16,6 @@ from .links import (
     link_about, link_book, link_knowledge_base, link_license, link_setup,
     link_store, link_support, link_tools
 )
-
 from .menus import menu_about, menu_topbar, menu_user
 from .settings import setting_home_view
 from .signals import signal_pre_initial_setup, signal_pre_upgrade

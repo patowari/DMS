@@ -7,7 +7,7 @@ from ..events import event_acl_created, event_acl_deleted, event_acl_edited
 from ..models import AccessControlList
 from ..permissions import permission_acl_edit, permission_acl_view
 
-from .mixins import ACLTestMixin, AccessControlListViewTestMixin
+from .mixins import AccessControlListViewTestMixin, ACLTestMixin
 
 
 class AccessControlListViewTestCase(

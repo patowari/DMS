@@ -65,7 +65,9 @@ class ErrorLogPartitionEntry(
     datetime = models.DateTimeField(
         auto_now_add=True, db_index=True, verbose_name=_('Date and time')
     )
-    text = models.TextField(blank=True, null=True, verbose_name=_('Text'))
+    text = models.TextField(
+        blank=True, null=True, verbose_name=_('Text')
+    )
 
     objects = ErrorLogPartitionEntryManager()
 

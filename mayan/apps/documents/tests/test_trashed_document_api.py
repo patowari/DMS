@@ -6,12 +6,11 @@ from ..events import (
     event_document_trashed, event_trashed_document_deleted,
     event_trashed_document_restored
 )
-
 from ..models.document_models import Document
 from ..permissions import (
-    permission_trashed_document_delete, permission_trashed_document_restore,
     permission_document_trash, permission_document_version_view,
-    permission_document_view
+    permission_document_view, permission_trashed_document_delete,
+    permission_trashed_document_restore
 )
 
 from .mixins.document_mixins import DocumentTestMixin

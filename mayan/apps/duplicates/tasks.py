@@ -1,7 +1,7 @@
 from django.apps import apps
 
-from mayan.celery import app
 from mayan.apps.lock_manager.exceptions import LockError
+from mayan.celery import app
 
 
 @app.task(ignore_result=True)

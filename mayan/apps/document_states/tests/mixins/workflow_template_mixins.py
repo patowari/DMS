@@ -4,7 +4,7 @@ from mayan.apps.documents.tests.mixins.document_type_mixins import DocumentTypeT
 
 from ...models.workflow_models import Workflow, WorkflowRuntimeProxy
 from ...tasks import (
-    task_launch_all_workflows, task_launch_all_workflow_for,
+    task_launch_all_workflow_for, task_launch_all_workflows,
     task_launch_workflow, task_launch_workflow_for
 )
 

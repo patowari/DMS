@@ -78,7 +78,9 @@ class ResolvedWebLinkView(ExternalObjectViewMixin, RedirectView):
 
 
 class WebLinkCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create new web link')}
+    extra_context = {
+        'title': _('Create new web link')
+    }
     form_class = WebLinkForm
     post_action_redirect = reverse_lazy(
         viewname='web_links:web_link_list'

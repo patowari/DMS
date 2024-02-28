@@ -13,8 +13,8 @@ from ..settings import setting_stub_expiration_interval
 
 from .base import GenericDocumentTestCase
 from .literals import (
-    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_SMALL_FILENAME,
-    TEST_DOCUMENT_SMALL_MIMETYPE, TEST_DOCUMENT_SMALL_SIZE
+    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_DOCUMENT_SMALL_MIMETYPE,
+    TEST_DOCUMENT_SMALL_SIZE, TEST_FILE_SMALL_FILENAME
 )
 
 
@@ -260,7 +260,9 @@ class DocumentManagerTestCase(GenericDocumentTestCase):
 
         Document.objects.delete_stubs()
 
-        self.assertEqual(Document.objects.count(), 1)
+        self.assertEqual(
+            Document.objects.count(), 1
+        )
 
         document_stub.datetime_created = document_stub.datetime_created - timedelta(
             seconds=setting_stub_expiration_interval.value + 1
@@ -269,7 +271,9 @@ class DocumentManagerTestCase(GenericDocumentTestCase):
 
         Document.objects.delete_stubs()
 
-        self.assertEqual(Document.objects.count(), 0)
+        self.assertEqual(
+            Document.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

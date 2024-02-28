@@ -6,7 +6,6 @@ from .views import (
     MessageMarkReadAllView, MessageMarkReadView, MessageMarkUnReadView
 )
 
-
 urlpatterns = [
     url(
         regex=r'^messages/$', name='message_list',

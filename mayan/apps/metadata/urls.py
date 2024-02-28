@@ -15,7 +15,6 @@ from .views.metadata_type_views import (
     MetadataTypesDocumentTypeRelationshipView
 )
 
-
 urlpatterns_document_type = [
     url(
         regex=r'^document_types/(?P<document_type_id>\d+)/metadata_types/$',

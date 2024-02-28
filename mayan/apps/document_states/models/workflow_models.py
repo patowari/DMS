@@ -3,8 +3,8 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import validate_internal_name
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models import Document, DocumentType
 from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.events.classes import EventManagerSave

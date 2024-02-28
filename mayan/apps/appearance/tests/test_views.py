@@ -5,11 +5,11 @@ from selenium.common.exceptions import NoAlertPresentException
 from django.conf import settings
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
+from mayan.apps.testing.tests.base import GenericViewTestCase
+from mayan.apps.testing.tests.mixins import SeleniumTestMixin
 from mayan.apps.user_management.permissions import (
     permission_user_edit, permission_user_view
 )
-from mayan.apps.testing.tests.base import GenericViewTestCase
-from mayan.apps.testing.tests.mixins import SeleniumTestMixin
 
 from ..events import (
     event_theme_created, event_theme_edited, event_user_theme_settings_edited

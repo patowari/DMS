@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from django.db import migrations, models
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 import mayan.apps.common.models
 

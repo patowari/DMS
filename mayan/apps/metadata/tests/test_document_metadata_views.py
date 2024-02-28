@@ -1069,8 +1069,12 @@ class DocumentMetadataViewTestCase(
         response = self._request_test_document_multiple_metadata_remove_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(self._test_documents[0].metadata.count(), 0)
-        self.assertEqual(self._test_documents[1].metadata.count(), 0)
+        self.assertEqual(
+            self._test_documents[0].metadata.count(), 0
+        )
+        self.assertEqual(
+            self._test_documents[1].metadata.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)

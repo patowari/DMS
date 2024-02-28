@@ -15,10 +15,9 @@ from mayan.apps.navigation.classes import SourceColumn
 from .events import event_asset_edited
 from .handlers import handler_create_asset_cache
 from .links import (
-    link_asset_create, link_asset_multiple_delete,
-    link_asset_single_delete, link_asset_edit, link_asset_list,
-    link_transformation_delete, link_transformation_edit,
-    link_transformation_select
+    link_asset_create, link_asset_multiple_delete, link_asset_single_delete,
+    link_asset_edit, link_asset_list, link_transformation_delete,
+    link_transformation_edit, link_transformation_select
 )
 from .permissions import (
     permission_asset_delete, permission_asset_edit, permission_asset_view

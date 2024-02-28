@@ -49,7 +49,9 @@ class DocumentUploadMetadataTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), 1)
+        self.assertEqual(
+            Document.objects.count(), 1
+        )
         self.assertEqual(
             Document.objects.first().metadata.first().value,
             TEST_METADATA_VALUE_UNICODE
@@ -117,7 +119,9 @@ class DocumentUploadMetadataTestCase(
 
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), 1)
+        self.assertEqual(
+            Document.objects.count(), 1
+        )
         self.assertEqual(
             Document.objects.first().metadata.first().value,
             TEST_METADATA_VALUE_WITH_AMPERSAND
