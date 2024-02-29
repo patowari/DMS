@@ -333,7 +333,7 @@ setup-dev-environment: ## Bootstrap a virtualenv by install all dependencies to 
 setup-dev-environment: setup-dev-operating-system-packages setup-dev-python-libraries
 
 setup-dev-operating-system-packages:  ## Install the operating system packages needed for development.
-	sudo apt-get install --yes exiftool gcc gettext gnupg1 graphviz libcairo2 libffi-dev libfuse2 libjpeg-dev libldap2-dev libpng-dev libsasl2-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
+	sudo apt-get install --yes clamav exiftool gcc gettext gnupg1 graphviz libcairo2 libffi-dev libfuse2 libjpeg-dev libldap2-dev libpng-dev libsasl2-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
 
 setup-dev-python-libraries: ## Install the Python libraries needed for development.
 	pip install --requirement requirements.txt --requirement requirements/development.txt --requirement requirements/testing-base.txt --requirement requirements/documentation.txt --requirement requirements/build.txt

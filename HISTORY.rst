@@ -1,3 +1,7 @@
+4.6.2 (XXXX-XX-XX)
+==================
+- Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
+
 4.6.1 (2024-02-07)
 ==================
 - Merge changes from versions 4.5.9 and 4.4.12.
