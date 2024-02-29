@@ -56,9 +56,10 @@ class BackendMixinCredentials:
         stored_credential_id = self.kwargs.get('stored_credential_id')
 
         if stored_credential_id:
-            return StoredCredential.objects.get(
+            stored_credential = StoredCredential.objects.get(
                 pk=stored_credential_id
-            ).get_backend_data()
+            )
+            return stored_credential.get_backend_data()
 
 
 class BackendMixinCredentialsOptional(BackendMixinCredentials):
