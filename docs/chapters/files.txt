@@ -11,107 +11,18 @@ Document files
    relationship to a document file. That relationship extended to the pages
    and their layout.
 
-
 Mayan EDMS support creating multiple files in relation to a single document.
 In essence, the Document is a file container.
-
-
-.. blockdiag::
-
-    blockdiag {
-        default_shape = roundedbox
-        orientation = portrait
-        node_width = 200;
-
-        document [ label = "Document" ];
-        files [ label = "Files", stacked ];
-
-        document -> files;
-   }
-
 
 When a new file is uploaded, by default a new document version is created.
 The new version page layout will match the page layout of the uploaded file.
 The page layout of the document version can be updated without affecting
 the page layout of the uploaded document files.
 
-
-.. blockdiag::
-
-   blockdiag {
-     default_shape = roundedbox;
-     orientation = portrait;
-     node_width = 200;
-
-     Document -> "File 1" [label = "Upload", fontsize = 11];
-     "File 1" -> "File 2" [label = "Upload", fontsize = 11];
-     Document -> "Version 1" ;
-     "File 1" -> "Version 1" [folded] ;
-     "File 2" -> "Version 2" [folded] ;
-     "Version 1" -> "Version 2";
-   }
-
-
-.. blockdiag::
-
-   blockdiag {
-     default_shape = roundedbox
-     orientation = portrait
-     "File pages" [ stacked ];
-     "File" -> "File pages"   ;
-     "Version pages" [ stacked ];
-     "Version" -> "Version pages"  ;
-     "File pages" ->"Version pages" [ folded ];
-   }
-
-
 If more than one file was uploaded for a given document, the pages all of the
 document files are available to be mapped to any number of document versions
 that users may which to created. This allows reconfiguring or remapping the
 pages of the uploaded files in a non-destructive way.
-
-.. blockdiag::
-
-   blockdiag {
-     default_shape = roundedbox
-     orientation = landscape
-
-     group {
-       shape = line;
-       style = dashed;
-       color = lightgray;
-       label = 'Document files';
-       orientation = portrait;
-
-       group {
-         color = lightgray;
-         orientation = portrait
-         "File 1 page 1";
-         "File 1 page 2";
-       }
-
-       group {
-         color = lightgray;
-         orientation = portrait
-         "File 2 page 1";
-         "File 2 page 2";
-       }
-     }
-
-     group {
-       color = lightgray;
-       label = 'Document version';
-       orientation = portrait
-       "Version page 1";
-       "Version page 2";
-
-     }
-
-     "File 1 page 1" -> "Version page 1" [folded];
-     "File 2 page 2" -> "Version page 2" [folded];
-
-   }
-
 
 The uploaded files are never modified, using the remapping function,
 only the document version (which acts a the visual representation of the

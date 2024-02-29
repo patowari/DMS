@@ -20,29 +20,6 @@ provide and order for the sequence of possible states changes.
 Transitions can be executed manually by users if they have the required access
 level as configure by the system administrator.
 
-.. blockdiag::
-   :caption: Example workflow. Circles represent states, rectangles represent transitions.
-
-      span_width = 30;
-
-      submitted [shape = circle, width = 60, height = 60];
-      approved [shape = circle, width = 60, height = 60];
-      rejected [shape = circle, width = 60, height = 60];
-      archived [shape = circle, width = 60, height = 60];
-
-      approve [label = approve];
-      reject [label = reject];
-      reopen [label = "re-open"];
-
-
-      submitted -> approve -> approved;
-      approved -> archived;
-      submitted -> reject -> rejected;
-      rejected -> archived;
-      archived -> reopen -> submitted;
-
-
-
 Workflows in Mayan EDMS are implemented as finite state machines
 (https://en.wikipedia.org/wiki/Finite-state_machine).
 

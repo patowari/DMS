@@ -8,22 +8,6 @@ uploaded, this signature is readily detected as part of the document
 inspection step. The status of the signature can be verified by accessing the
 signatures sections of a document.
 
-.. blockdiag::
-
-   blockdiag {
-
-      orientation = portrait
-      span_width = 240;
-
-      user [ shape = "actor" ];
-      key [ shape = flowchart.database, label = "Key" ];
-      document [ shape = "note", label = "Document" ];
-      document_signed [ label = "Signed\nDocument" ];
-
-
-      key -> user -> document -> document_signed;
-   }
-
 Signed documents are tamper-proof. That means that if any part of the document's
 file is edited (even just one character or one pixel), the document's
 signature becomes invalid alerting that an unauthorized change has occurred.

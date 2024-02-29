@@ -15,21 +15,6 @@ Every time a :doc:`document file <files>` is upload, a corresponding
 document version object is created. Document versions act like a "view" that
 presents the pages of document files to the end user in a specific layout.
 
-
-.. blockdiag::
-
-    blockdiag {
-        default_shape = roundedbox
-        orientation = portrait
-        node_width = 200;
-
-        document [ label = "Document" ];
-        versions [ label = "Versions", stacked ];
-
-        document -> versions;
-   }
-
-
 Page composition
 ================
 
@@ -42,49 +27,6 @@ Document version pages can disabled, enabled, appended, removed, or even
 reordered. All of this is achieved in a non destructive way (the original
 uploaded file is never changed in any way), all of the changes happen only
 at the application level for the document version.
-
-.. blockdiag::
-
-   blockdiag {
-     default_shape = roundedbox
-     orientation = landscape
-
-     group {
-       shape = line;
-       style = dashed;
-       color = lightgray;
-       label = 'Document files';
-       orientation = portrait;
-
-       group {
-         color = lightgray;
-         orientation = portrait
-         "File 1 page 1";
-         "File 1 page 2";
-       }
-
-       group {
-         color = lightgray;
-         orientation = portrait
-         "File 2 page 1";
-         "File 2 page 2";
-       }
-     }
-
-     group {
-       color = lightgray;
-       label = 'Document version';
-       orientation = portrait
-       "Version page 1";
-       "Version page 2";
-
-     }
-
-     "File 1 page 1" -> "Version page 1" [folded];
-     "File 2 page 2" -> "Version page 2" [folded];
-
-   }
-
 
 There is no limit to the number of versions a document can have. Document
 versions can also be deleted in any order and at any time.

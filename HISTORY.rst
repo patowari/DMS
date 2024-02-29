@@ -22,6 +22,10 @@
   - sphinx from 4.5.0 to 5.3.0.
   - sphinx_rtd_theme from 0.5.2 to 2.0.0.
 
+- Remove diagram generator markup. The library used to generate diagrams is
+  not longer maintained and breaks after the last Pillow upgrade. Removed
+  all diagram markup until a replacement can be found.
+
 4.4.12 (2024-02-03)
 ===================
 - Translation file updates.

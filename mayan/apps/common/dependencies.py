@@ -241,10 +241,6 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-blockdiag', version_string='==2.0.0'
-)
-PythonDependency(
-    environment=environment_documentation, module=__name__,
     name='sphinxcontrib-spelling', version_string='==7.1.0'
 )
 PythonDependency(
