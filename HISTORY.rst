@@ -1,6 +1,7 @@
 4.6.2 (XXXX-XX-XX)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
+- Update the Debian Docker image from 12.4-slim to 12.5-slim.
 
 4.6.1 (2024-02-07)
 ==================
