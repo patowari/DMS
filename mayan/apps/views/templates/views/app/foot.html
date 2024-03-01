@@ -6,39 +6,6 @@
 
 <script src="{% url 'locales:javascript_catalog' 'mayan.apps.views' %}" type="text/javascript"></script>
 
-<script type="text/x-template" id="previewTemplate">
-    <div class="dz-preview dz-file-preview">
-        <i class="far fa-file fa-10x"></i>
-        <div class="dz-details">
-            <div class="dz-filename"><span data-dz-name></span></div>
-            <div class="dz-size" data-dz-size></div>
-            <img data-dz-thumbnail />
-        </div>
-
-        <div class="dz-progress">
-            <span class="dz-upload" data-dz-uploadprogress>
-                <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 100%">
-                </div>
-            </span>
-        </div>
-
-        <div class="dz-success-mark">
-            <span>
-                <i class="text-success fa fa-4x fa-check-circle"></i>
-            </span>
-        </div>
-        <div class="dz-error-mark">
-            <span>
-                <i class="text-danger fa fa-4x fa-times-circle"></i>
-            </span>
-        </div>
-        <div class="dz-error-message">
-            <span data-dz-errormessage>
-            </span>
-        </div>
-    </div>
-</script>
-
 {% smart_setting "VIEWS_SHOW_DROPZONE_SUBMIT_BUTTON" as setting_views_show_dropzone_submit_button %}
 
 <script>
@@ -129,4 +96,37 @@
             });
         });
     });
+</script>
+
+<script type="text/x-template" id="previewTemplate">
+    <div class="dz-preview dz-file-preview">
+        <i class="far fa-file fa-10x"></i>
+        <div class="dz-details">
+            <div class="dz-filename"><span data-dz-name></span></div>
+            <div class="dz-size" data-dz-size></div>
+            <img data-dz-thumbnail />
+        </div>
+
+        <div class="dz-progress">
+            <span class="dz-upload" data-dz-uploadprogress>
+                <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 100%">
+                </div>
+            </span>
+        </div>
+
+        <div class="dz-success-mark">
+            <span>
+                <i class="text-success fa fa-4x fa-check-circle"></i>
+            </span>
+        </div>
+        <div class="dz-error-mark">
+            <span>
+                <i class="text-danger fa fa-4x fa-times-circle"></i>
+            </span>
+        </div>
+        <div class="dz-error-message">
+            <span data-dz-errormessage>
+            </span>
+        </div>
+    </div>
 </script>
