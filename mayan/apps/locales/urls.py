@@ -1,8 +1,17 @@
 from django.conf.urls import url
+from django.views.i18n import JavaScriptCatalog
 
 from .views import UserLocaleProfileDetailView, UserLocaleProfileEditView
 
 urlpatterns = [
+    url(
+        regex=r'^jsi18n/$', name='javascript_catalog',
+        view=JavaScriptCatalog.as_view()
+    ),
+    url(
+        regex=r'^jsi18n/(?P<packages>\S+?)/$', name='javascript_catalog',
+        view=JavaScriptCatalog.as_view()
+    ),
     url(
         regex=r'^user/(?P<user_id>\d+)/locale/$',
         name='user_locale_profile_detail',

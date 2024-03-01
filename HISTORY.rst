@@ -26,6 +26,9 @@
   not longer maintained and breaks after the last Pillow upgrade. Removed
   all diagram markup until a replacement can be found.
 - Update the Debian Docker image from 11.8-slim to 11.9-slim.
+- Separate code/template translation and JavaScript translation handling.
+  Rename the app flag ``has_translations`` to ``has_app_translations``.
+  Add the app flag ``has_javascript_translations`` which defaults to False.
 
 4.4.12 (2024-02-03)
 ===================

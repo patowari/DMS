@@ -21,7 +21,7 @@ PROJECT_LANGUAGE_MAPPING = {
     'tr': 'tr_TR',
     'zh-hans': 'zh_Hans'
 }
-VERSION = '2.0'
+VERSION = '3.0'
 
 
 class TransifexHelper:
@@ -91,11 +91,11 @@ class TransifexHelper:
             output.append('')
 
         for app_name in self.message_processor.app_list:
-            app_has_translations = getattr(
-                apps.app_configs[app_name], 'has_translations', True
+            has_app_translations = getattr(
+                apps.app_configs[app_name], 'has_app_translations', True
             )
 
-            if app_has_translations:
+            if has_app_translations:
                 output.append(
                     '[o:rosarior:p:mayan-edms:r:{}-{}]'.format(app_name, version_string)
                 )
@@ -104,6 +104,24 @@ class TransifexHelper:
                 )
                 output.append(
                     'source_file = mayan/apps/{}/locale/en/LC_MESSAGES/django.po'.format(app_name)
+                )
+                output.append('source_lang = en')
+                output.append('type        = PO')
+                output.append('')
+
+            has_javascript_translations = getattr(
+                apps.app_configs[app_name], 'has_javascript_translations',
+                False
+            )
+            if has_javascript_translations:
+                output.append(
+                    '[o:rosarior:p:mayan-edms:r:{}-{}-javascript]'.format(app_name, version_string)
+                )
+                output.append(
+                    'file_filter = mayan/apps/{}/locale/<lang>/LC_MESSAGES/djangojs.po'.format(app_name)
+                )
+                output.append(
+                    'source_file = mayan/apps/{}/locale/en/LC_MESSAGES/djangojs.po'.format(app_name)
                 )
                 output.append('source_lang = en')
                 output.append('type        = PO')
@@ -144,18 +162,12 @@ class MessageProcessor:
         return result
 
     def __init__(self):
-        sys.path.insert(
-            1, os.path.abspath('.')
-        )
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mayan.settings')
-
-        import mayan
-
-        self.mayan = mayan
+        self._initialize_mayan()
 
         self.argument_method_map = {
-            'compile': 'do_compilemessages',
-            'make': 'do_makemessages',
+            'django_compile': 'do_compilemessages',
+            'django_make': 'do_makemessages',
+            'django_make_javascript': 'do_makemessages_javascript',
             'transifex_missing_apps': 'do_transifex_check_missing_apps',
             'transifex_generate_config': 'do_transifex_generate_configuration_file',
             'transifex_pull': 'do_transifex_pull_translations',
@@ -208,6 +220,19 @@ class MessageProcessor:
             command=args[0]
         )
 
+    def _initialize_mayan(self):
+        path_current = Path('.')
+        sys.path.insert(
+            1, str(
+                path_current.absolute()
+            )
+        )
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mayan.settings')
+
+        import mayan
+
+        self.mayan = mayan
+
     def call_command(self, command):
         try:
             method = self.argument_method_map[command]
@@ -218,19 +243,12 @@ class MessageProcessor:
 
         return getattr(self, method)()
 
-    def get_django_language_argument(self):
-        command_argument_locales = []
-        for language in self.selected_languages:
-            command_argument_locales.append('--locale')
-            command_argument_locales.append(language)
-
-        return command_argument_locales
-
     def do_compilemessages(self):
         print('Compiling messages')
 
         for app in self.selected_apps:
             print('Processing app: %s...' % app)
+
             app_path = os.path.join(settings.BASE_DIR, 'apps', app)
             os.chdir(app_path)
 
@@ -245,8 +263,10 @@ class MessageProcessor:
                 environment = os.environ.copy()
                 environment.pop('DJANGO_SETTINGS_MODULE')
 
+                command_arguments = self.get_django_language_arguments()
+
                 self.command_compilemessages(
-                    _env=environment, *self.get_django_language_argument()
+                    _env=environment, *command_arguments
                 )
             else:
                 print(
@@ -258,11 +278,12 @@ class MessageProcessor:
 
         for app in self.selected_apps:
             print('Processing app: %s...' % app)
-            app_path = os.path.join(settings.BASE_DIR, 'apps', app)
-            os.chdir(app_path)
 
-            path = Path(app_path) / 'locale'
-            if path.exists():
+            path_app = Path(settings.BASE_DIR, 'apps', app)
+            os.chdir(path_app)
+
+            path_locale = path_app / 'locale'
+            if path_locale.exists():
                 print(
                     'Doing languages: {}'.format(
                         ', '.join(self.selected_languages)
@@ -272,8 +293,39 @@ class MessageProcessor:
                 environment = os.environ.copy()
                 environment.pop('DJANGO_SETTINGS_MODULE')
 
+                command_arguments = self.get_django_language_arguments()
                 self.command_makemessages(
-                    _env=environment, *self.get_django_language_argument()
+                    _env=environment, *command_arguments, no_obsolete=True
+                )
+            else:
+                print(
+                    'Skipping app: {}, missing `locale` folder'.format(app)
+                )
+
+    def do_makemessages_javascript(self):
+        print('Making messages, Javascript')
+
+        for app in self.selected_apps:
+            print('Processing app: %s...' % app)
+
+            path_app = Path(settings.BASE_DIR, 'apps', app)
+            os.chdir(path_app)
+
+            path_locale = path_app / 'locale'
+            if path_locale.exists():
+                print(
+                    'Doing languages: {}'.format(
+                        ', '.join(self.selected_languages)
+                    )
+                )
+
+                environment = os.environ.copy()
+                environment.pop('DJANGO_SETTINGS_MODULE')
+
+                command_arguments = self.get_django_language_arguments()
+                self.command_makemessages(
+                    _env=environment, *command_arguments, domain='djangojs',
+                    extension='html', no_obsolete=True
                 )
             else:
                 print(
@@ -329,6 +381,14 @@ class MessageProcessor:
             self.command_transifex_push_translations(
                 '-s', '-l', ','.join(self.selected_languages)
             )
+
+    def get_django_language_arguments(self):
+        command_argument_locales = []
+        for language in self.selected_languages:
+            command_argument_locales.append('--locale')
+            command_argument_locales.append(language)
+
+        return command_argument_locales
 
 
 if __name__ == '__main__':
