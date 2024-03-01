@@ -17,6 +17,14 @@
   as part of the retention policies.
 - Minor test fixes.
 - Fix workflow icon variable name.
+- Replace distutils with setuptool.
+
+  - Add setuptool as an explicit dependency.
+  - Replace distutils with setuptools following the deprecation
+    of distutils.
+    https://docs.python.org/3.10/whatsnew/3.10.html#distutils-deprecated
+  - Remove distutils from the Docker image.
+
 - Update dependency versions:
 
   - sphinx from 4.5.0 to 5.3.0.
