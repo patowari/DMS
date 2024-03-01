@@ -20,6 +20,12 @@ source_file = mayan/apps/appearance/locale/en/LC_MESSAGES/django.po
 source_lang = en
 type        = PO
 
+[o:rosarior:p:mayan-edms:r:appearance-4-6-javascript]
+file_filter = mayan/apps/appearance/locale/<lang>/LC_MESSAGES/djangojs.po
+source_file = mayan/apps/appearance/locale/en/LC_MESSAGES/djangojs.po
+source_lang = en
+type        = PO
+
 [o:rosarior:p:mayan-edms:r:authentication-4-6]
 file_filter = mayan/apps/authentication/locale/<lang>/LC_MESSAGES/django.po
 source_file = mayan/apps/authentication/locale/en/LC_MESSAGES/django.po
@@ -425,6 +431,12 @@ type        = PO
 [o:rosarior:p:mayan-edms:r:views-4-6]
 file_filter = mayan/apps/views/locale/<lang>/LC_MESSAGES/django.po
 source_file = mayan/apps/views/locale/en/LC_MESSAGES/django.po
+source_lang = en
+type        = PO
+
+[o:rosarior:p:mayan-edms:r:views-4-6-javascript]
+file_filter = mayan/apps/views/locale/<lang>/LC_MESSAGES/djangojs.po
+source_file = mayan/apps/views/locale/en/LC_MESSAGES/djangojs.po
 source_lang = en
 type        = PO
 

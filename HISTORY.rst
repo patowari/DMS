@@ -2,6 +2,10 @@
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
 - Update the Debian Docker image from 12.4-slim to 12.5-slim.
+- Separate code/template translation and JavaScript translation handling.
+  Rename the app flag ``has_translations`` to ``has_app_translations``.
+  Add the app flag ``has_javascript_translations`` which defaults to False.
+
 
 4.6.1 (2024-02-07)
 ==================

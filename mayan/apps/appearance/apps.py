@@ -30,6 +30,7 @@ from .permissions import (
 class AppearanceApp(MayanAppConfig):
     app_namespace = 'appearance'
     app_url = 'appearance'
+    has_javascript_translations = True
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.appearance'

@@ -198,11 +198,14 @@ translations-transifex-check: ## Check that all app have a Transifex entry
 translations-transifex-generate: ## Check that all app have a Transifex entry
 	contrib/scripts/translations_helper.py transifex_generate_config > ./.tx/config
 
-translations-make: ## Refresh all translation files.
-	contrib/scripts/translations_helper.py make
+translations-django-make: ## Refresh all translation files.
+	contrib/scripts/translations_helper.py django_make
 
-translations-compile: ## Compile all translation files.
-	contrib/scripts/translations_helper.py compile
+translations-django-make-javascript: ## Refresh all JavaScript translation files.
+	contrib/scripts/translations_helper.py django_make_javascript
+
+translations-django-compile: ## Compile all translation files.
+	contrib/scripts/translations_helper.py django_compile
 
 translations-transifex-push: ## Upload all translation files to Transifex.
 	tx push -s
@@ -211,7 +214,7 @@ translations-transifex-pull: ## Download all translation files from Transifex.
 	tx pull -f
 
 translations-all: ## Execute all translations targets.
-translations-all: translations-source-clear translations-source-fuzzy-remove translations-transifex-generate translations-make translations-transifex-push translations-transifex-pull translations-compile
+translations-all: translations-source-clear translations-source-fuzzy-remove translations-transifex-generate translations-django-make translations-django-make-javascript translations-transifex-push translations-transifex-pull translations-django-compile
 
 # Releases
 
