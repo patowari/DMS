@@ -25,6 +25,7 @@
 - Remove diagram generator markup. The library used to generate diagrams is
   not longer maintained and breaks after the last Pillow upgrade. Removed
   all diagram markup until a replacement can be found.
+- Update the Debian Docker image from 11.8-slim to 11.9-slim.
 
 4.4.12 (2024-02-03)
 ===================
