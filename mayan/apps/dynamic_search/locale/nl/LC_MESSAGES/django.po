@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -64,7 +64,7 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nee"
 
-#: permissions.py:6 queues.py:7 settings.py:14
+#: permissions.py:6 queues.py:7 settings.py:15
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
@@ -99,14 +99,14 @@ msgstr ""
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
 
-#: scoped_queries.py:352
+#: scoped_queries.py:351
 msgid ""
 "Search results exceed limit setting. Results might not be reliable if "
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
 
-#: scoped_queries.py:368
+#: scoped_queries.py:367
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
@@ -117,12 +117,12 @@ msgstr ""
 msgid "Any"
 msgstr ""
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr ""
 
-#: search_models.py:108
+#: search_models.py:112
 msgid "All content"
 msgstr ""
 
@@ -190,43 +190,43 @@ msgstr ""
 msgid "Search fields"
 msgstr ""
 
-#: settings.py:20
+#: settings.py:21
 msgid "Full path to the backend to be used to handle the search."
 msgstr ""
 "Volledige pad naar de backend die gebruikt wordt om de zoekopdracht af te "
 "handelen."
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
 
-#: settings.py:36
+#: settings.py:37
 msgid "The search operator to use when none is specified."
 msgstr ""
 
-#: settings.py:43
+#: settings.py:44
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
 "Schakelt de zoekbalk voor één begrip uit, waardoor alleen de geavanceerd "
 "zoeken-knop overblijft."
 
-#: settings.py:51
+#: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr ""
 
-#: settings.py:57
+#: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr ""
 
-#: settings.py:63
+#: settings.py:64
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 
-#: settings.py:69
+#: settings.py:70
 msgid "Maximum number of search results to fetch and display."
 msgstr ""
 

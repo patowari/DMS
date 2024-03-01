@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Mohammed ALDOUB <voulnet@gmail.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:26 events.py:6 permissions.py:6 queues.py:8 settings.py:11
+#: apps.py:28 events.py:6 permissions.py:6 queues.py:8 settings.py:11
 msgid "File caching"
 msgstr "الحفظ المؤقت"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:88 model_mixins.py:282
+#: model_mixins.py:88 model_mixins.py:284
 msgid "Current size"
 msgstr "الحجم الحالي"
 
@@ -86,7 +86,7 @@ msgstr "الحجم الحالي"
 msgid "Current size of the cache."
 msgstr "الحجم الحالي للملف المؤقت"
 
-#: model_mixins.py:284
+#: model_mixins.py:286
 msgid "Current size of the cache partition."
 msgstr ""
 
@@ -174,40 +174,40 @@ msgid ""
 " a file being requested, before giving up."
 msgstr ""
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr ""
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr "حفظ الملفات المؤقتة"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr ""
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr ""
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr ""
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr ""
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr ""
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] ""

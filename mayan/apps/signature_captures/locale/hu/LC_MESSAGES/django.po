@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -137,39 +137,39 @@ msgstr "Aláíráskép szerkesztése"
 msgid "View signature captures"
 msgstr "Aláírásképek megtekintése"
 
-#: search.py:12
+#: search.py:11
 msgid "Signature capture text"
 msgstr "Aláíráskép szöveg"
 
-#: search.py:16
+#: search.py:15
 msgid "Signature capture user first name"
 msgstr "Aláírásrögzítő felhasználó keresztneve"
 
-#: search.py:20
+#: search.py:19
 msgid "Signature capture user last name"
 msgstr "Aláírásrögzítő felhasználó vezetékneve"
 
-#: search.py:24
+#: search.py:23
 msgid "Signature capture user username"
 msgstr "Aláírásrögzítő felhasználó felhasználóneve"
 
-#: search.py:35
+#: search.py:34
 msgid "Document type label"
 msgstr "Dokumentumtípus címke"
 
-#: search.py:38
+#: search.py:37
 msgid "Document label"
 msgstr "Dokumentumcímke"
 
-#: search.py:42
+#: search.py:41
 msgid "User first name"
 msgstr "Felhasználó keresztneve"
 
-#: search.py:45
+#: search.py:44
 msgid "User last name"
 msgstr "Felhasználó vezetékneve"
 
-#: search.py:48
+#: search.py:47
 msgid "User username"
 msgstr "Felhasználó felhasználóneve"
 
@@ -212,7 +212,7 @@ msgstr ""
 "Argumentumokt a következőhöz: "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 
-#: storages.py:15
+#: storages.py:14
 msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the"
 " settings {} and {} for formatting errors."
@@ -220,7 +220,7 @@ msgstr ""
 "Nem sikerült inicializálni a konverter aláíráskép gyorsítótárát. Ellenőrizze"
 " a beállításokat {} és {} formázási hibákért."
 
-#: storages.py:21
+#: storages.py:20
 msgid "Signature captures cache"
 msgstr "Aláírásrögzítő gyorsítótár"
 

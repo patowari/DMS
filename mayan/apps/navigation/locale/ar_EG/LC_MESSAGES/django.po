@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Mohammed ALDOUB <voulnet@gmail.com>, 2023\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Navigation"
 msgstr "التصفح"
 
-#: classes.py:951
+#: classes.py:963
 msgid "Unnamed function"
 msgstr "وظيفة غير محددة"
 

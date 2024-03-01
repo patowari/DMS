@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:49 models.py:156
+#: apps.py:53 apps.py:163 apps.py:167 apps.py:171 apps.py:175 apps.py:179
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
 #: permissions.py:6 search.py:52 views.py:169 workflow_actions.py:20
 msgid "Cabinets"
 msgstr "Ερμάρια"
@@ -95,40 +95,40 @@ msgstr "Διαδρομή στο ερμάριο συμπεριλαμβανομέ�
 msgid "Full path"
 msgstr "Πλήρης διαδρομή"
 
-#: models.py:30 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:33
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Σύντομο κείμενο που προσδιορίζει το ερμάριο."
 
-#: models.py:34
+#: models.py:37
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: models.py:38
+#: models.py:41
 msgid "Documents"
 msgstr "Έγγραφα"
 
-#: models.py:48 models.py:130 models.py:155 workflow_actions.py:68
+#: models.py:51 models.py:133 models.py:158 workflow_actions.py:68
 msgid "Cabinet"
 msgstr "Ερμάριο"
 
-#: models.py:131
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Γονέας και Ετικέτα"
 
-#: models.py:138
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s με την ετικέτα %(field_labels)s υπάρχει ήδη."
 
-#: models.py:167
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Ερμάριο εγγράφων"
 
-#: models.py:168 search.py:59 search.py:66 search.py:73 search.py:80
+#: models.py:171 search.py:59 search.py:66 search.py:73 search.py:80
 msgid "Document cabinets"
 msgstr "Ερμάρια εγγράφων"
 

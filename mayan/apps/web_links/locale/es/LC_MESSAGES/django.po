@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: jmcainzos <jmcainzos@vodafone.es>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "Enlaces web"
 
@@ -38,7 +38,7 @@ msgstr "Enlace web editado"
 msgid "Web link navigated"
 msgstr "Enlace web visitado"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "Crear nuevo enlace web"
 
@@ -148,30 +148,30 @@ msgstr "Enlaces web disponibles"
 msgid "Web links to enable for document type: %s"
 msgstr "Enlaces web para habilitar por tipo de documento: %s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "Eliminar enlace web: %s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "Tipos de documentos habilitados"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "Tipos de documentos disponibles"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "Tipo de documento para el cual habilitar el enlace web: %s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "Editar enlace web: %s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -180,15 +180,15 @@ msgstr ""
 "externos. Las URL de enlace pueden contener valores de propiedades del "
 "documento."
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "No hay enlaces web"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "No hay enlaces web para este documento"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "Enlaces web para el documento: %s"

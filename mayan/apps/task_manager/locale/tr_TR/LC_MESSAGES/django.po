@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -22,47 +22,47 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:31 links.py:10 permissions.py:6
+#: apps.py:30 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "Görev Yöneticisi"
 
-#: apps.py:113
+#: apps.py:112
 msgid "Label"
 msgstr "Etiket"
 
-#: apps.py:117
+#: apps.py:116
 msgid "Name"
 msgstr "İsim"
 
-#: apps.py:122
+#: apps.py:121
 msgid "Default queue?"
 msgstr "Varsayılan sıra?"
 
-#: apps.py:127
+#: apps.py:126
 msgid "Is transient?"
 msgstr "Geçici mi?"
 
-#: apps.py:131
+#: apps.py:130
 msgid "Type"
 msgstr "Tür"
 
-#: apps.py:136
+#: apps.py:135
 msgid "Start time"
 msgstr "Başlangıç zamanı"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Host"
 msgstr "Sunucu"
 
-#: apps.py:144
+#: apps.py:143
 msgid "Arguments"
 msgstr "Argümanlar"
 
-#: apps.py:148
+#: apps.py:147
 msgid "Keyword arguments"
 msgstr "Anahtar kelime değişkenleri"
 
-#: apps.py:152
+#: apps.py:151
 msgid "Worker process ID"
 msgstr "Worker proses ID"
 

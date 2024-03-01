@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -20,47 +20,47 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: apps.py:31 links.py:10 permissions.py:6
+#: apps.py:30 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "Menadzer rada"
 
-#: apps.py:113
+#: apps.py:112
 msgid "Label"
 msgstr "Labela"
 
-#: apps.py:117
+#: apps.py:116
 msgid "Name"
 msgstr "Ime"
 
-#: apps.py:122
+#: apps.py:121
 msgid "Default queue?"
 msgstr "Default queue?"
 
-#: apps.py:127
+#: apps.py:126
 msgid "Is transient?"
 msgstr "Da li je prolazan?"
 
-#: apps.py:131
+#: apps.py:130
 msgid "Type"
 msgstr "Tip"
 
-#: apps.py:136
+#: apps.py:135
 msgid "Start time"
 msgstr "Početno vrijeme"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Host"
 msgstr "Domaćin"
 
-#: apps.py:144
+#: apps.py:143
 msgid "Arguments"
 msgstr "Argumenti"
 
-#: apps.py:148
+#: apps.py:147
 msgid "Keyword arguments"
 msgstr "Argumenti ključnih riječi"
 
-#: apps.py:152
+#: apps.py:151
 msgid "Worker process ID"
 msgstr "Id procesa rada"
 

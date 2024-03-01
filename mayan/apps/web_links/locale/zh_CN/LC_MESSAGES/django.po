@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: bo feng <87289884@qq.com>, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "网页链接"
 
@@ -40,7 +40,7 @@ msgstr "网络链接已编辑"
 msgid "Web link navigated"
 msgstr "网页链接已导航"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "建立新的网页连结"
 
@@ -149,44 +149,44 @@ msgstr "可用的网页链接"
 msgid "Web links to enable for document type: %s"
 msgstr "将要启用文档类型的Web链接：%s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "删除网页链接：%s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "文档类型已启用"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "可用的文档类型"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "要为其启用Web链接的文档类型：%s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "编辑网页链接：%s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
 msgstr "网页链接允许生成包括文档及外部资源的HTTP链接。链接URL可以包含文档属性值。"
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "没有网页链接"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "该文档没有网页链接"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "文档的网页链接：%s"

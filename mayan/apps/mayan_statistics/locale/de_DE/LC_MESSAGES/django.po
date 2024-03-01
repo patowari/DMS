@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr "Statistiken"
 
@@ -41,39 +41,39 @@ msgstr "Plan"
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr "Statistiken Namensraum"
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr "Niemals"
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr "Ringdiagramm"
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr "Liniendiagramm"
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr "Kreisdiagramm"
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr "Namensraumdetails"
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr "Namensraumliste"
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr "In die Warteschlange einreihen"
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr "Anzeigen"
 
@@ -119,44 +119,44 @@ msgstr "Letzte Aktualisierung: %(datetime)s"
 msgid "Statistic \"%s\" not found."
 msgstr "Statistik \"%s\" nicht gefunden."
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr "Statistik-Namensräume gruppieren Statistiken in logische Einheiten."
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr "Keine Statistik-Namensräume verfügbar"
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr "Statistiken Namensräume"
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
 "Statistiken sind metrische und Diagrammdarstellungen von existierenden "
 "Daten."
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr "Keine Statistiken verfügbar"
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr "Namensraumdetails für %s"
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr "Ergebnis für %s"
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr "Statistik \"%s\"  für die Aktualisierung vorsehen?"
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr ""

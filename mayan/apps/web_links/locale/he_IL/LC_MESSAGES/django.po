@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "קישורי אינטרנט"
 
@@ -38,7 +38,7 @@ msgstr "קישור אינטרנט נערך"
 msgid "Web link navigated"
 msgstr "קישור אינטרנט בוצע"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "צור קישור אינטרנט חדש"
 
@@ -147,30 +147,30 @@ msgstr "קישורי אינטרנט זמינים"
 msgid "Web links to enable for document type: %s"
 msgstr "קישורי אינטרנט להפעלה עבור סוג מסמך: %s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "מחיקת קישור אינטרנט: %s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "סוגי מסמכים אפשריים"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "סוגי מסמכים זמינים"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "סוג מסמך שעבורו יש לאפשר קישור אינטרנט: %s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "עריכת קישור אינטרנט: %s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -178,15 +178,15 @@ msgstr ""
 "קישורי אינטרנט מאפשרים יצירת קישורי HTTP ממסמכים למשאבים חיצוניים. כתובות "
 "האתר (URLs) יכולים להכיל ערכי מאפיינים של מסמך."
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "אין קישורי אינטרנט"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "אין קישורי אינטרנט למסמך זה"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "קישורי אינטרנט למסמך: %s"

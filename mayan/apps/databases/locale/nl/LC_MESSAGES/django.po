@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -26,19 +26,19 @@ msgstr ""
 msgid "Databases"
 msgstr ""
 
-#: classes.py:205
+#: classes.py:215
 msgid "Model fields"
 msgstr "Model velden"
 
-#: classes.py:253
+#: classes.py:263
 msgid "Model related fields"
 msgstr "Model gerelateerde velden"
 
-#: classes.py:258
+#: classes.py:268
 msgid "Model properties"
 msgstr "Model eigenschappen"
 
-#: classes.py:263
+#: classes.py:273
 msgid "Model reverse fields"
 msgstr "Model omgekeerde velden"
 
@@ -74,7 +74,7 @@ msgstr "Backend"
 msgid "The backend class for this entry."
 msgstr "De backend class voor deze invoer."
 
-#: model_mixins.py:103
+#: model_mixins.py:105
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -82,15 +82,15 @@ msgid ""
 "value is considered to be the logical true."
 msgstr ""
 
-#: model_mixins.py:108
+#: model_mixins.py:110
 msgid "Condition"
 msgstr "Voorwaarde"
 
-#: model_mixins.py:129
+#: model_mixins.py:131
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 
-#: model_mixins.py:132
+#: model_mixins.py:134
 msgid "Has a condition?"
 msgstr "Heeft een voorwaarde?"
 

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "Quotas"
 msgstr "Kotalar"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "yok"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "Geçerli değil"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "Boş backend"
 
@@ -79,10 +79,8 @@ msgstr "Tüm belge türleri"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
+"individual document type selection."
 msgstr ""
-"Tüm belge türlerine uygula. Bu etkinleştirildiğinde, kota, bireysel belge "
-"türü seçimini yok sayar."
 
 #: mixins.py:26
 msgid "Document types"

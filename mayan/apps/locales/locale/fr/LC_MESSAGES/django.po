@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -32,11 +32,11 @@ msgstr "Langues"
 msgid "User locale profile edited"
 msgstr "Profil de paramètres régionaux de l'utilisateur modifié"
 
-#: links.py:15
+#: links.py:14
 msgid "Locale profile"
 msgstr "Paramètres régionaux du profil"
 
-#: links.py:20
+#: links.py:19
 msgid "Edit locale profile"
 msgstr "Modifier les paramètres régionaux du profil"
 

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Bruno Martins <bruno.martins@bewgpt.com.pt>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:8 views.py:12
 msgid "Dashboards"
 msgstr "Painéis"
 
@@ -40,7 +40,7 @@ msgstr "Rótulo"
 msgid "Administrator dashboard"
 msgstr "Painel de controlo do administrador"
 
-#: links.py:14
+#: links.py:13
 msgid "Details"
 msgstr "Detalhes"
 
@@ -49,6 +49,6 @@ msgstr "Detalhes"
 msgid "View details"
 msgstr "Ver detalhes"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Detalhes do painel do controlo"

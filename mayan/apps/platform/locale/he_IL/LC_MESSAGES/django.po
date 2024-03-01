@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:14 permissions.py:6 settings.py:12
+#: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
 msgstr "פּלַטפוֹרמָה"
 
@@ -56,7 +56,7 @@ msgstr "שגיאת בדיקת זקיף"
 msgid "Trigger tests"
 msgstr "בדיקות טריגר"
 
-#: settings.py:18
+#: settings.py:17
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
@@ -64,7 +64,7 @@ msgstr ""
 "רשימת הקצה האחורי של הלקוח שיושק לאחר ההפעלה. השתמש בנתיב המקווקו המלא "
 "לשיעורי הקצה של הלקוח."
 
-#: settings.py:25
+#: settings.py:24
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."

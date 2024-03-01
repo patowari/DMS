@@ -4,16 +4,15 @@
 # 
 # Translators:
 # Translators:
-# jmcainzos <jmcainzos@vodafone.es>, 2023
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,19 +40,19 @@ msgstr "Usuario conectado"
 msgid "User logged out"
 msgstr "Usuario desconectado"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "Recuérdame"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "Permanente"
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr "Si se selecciona, deshabilita terminar la personificación."
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "Usuario"
 
@@ -65,7 +64,7 @@ msgstr "Cerrar sesión"
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Personificar usuario"
 
@@ -166,60 +165,60 @@ msgstr "Página de inicio de sesión"
 msgid "Password reset email sent!"
 msgstr "Correo electrónico de restablecimiento de contraseña enviado!"
 
-#: views/authentication_views.py:159
+#: views/authentication_views.py:160
 msgid "Next"
 msgstr "Siguiente paso"
 
-#: views/authentication_views.py:165
+#: views/authentication_views.py:166
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "Paso %(step)d de %(total_steps)d: %(step_label)s"
 
-#: views/authentication_views.py:235
+#: views/authentication_views.py:236
 msgid "Your password has been successfully changed."
 msgstr "Su contraseña ha sido actualizada con éxito."
 
-#: views/authentication_views.py:245
+#: views/authentication_views.py:246
 msgid "Current user password change"
 msgstr "Cambio de contraseña de usuario actual"
 
-#: views/authentication_views.py:257
+#: views/authentication_views.py:258
 msgid "Changing the password is not allowed for this account."
 msgstr "No se permite cambiar la contraseña para esta cuenta."
 
-#: views/authentication_views.py:329
+#: views/authentication_views.py:330
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Solicitud de cambio de contraseña realizada para %(count)d usuario"
 
-#: views/authentication_views.py:332
+#: views/authentication_views.py:333
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Solicitud de cambio de contraseña realizada para %(count)d usuarios"
 
-#: views/authentication_views.py:341
+#: views/authentication_views.py:342
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "Cambiar contraseña de usuario"
 msgstr[1] "Cambiar las contraseñas de los usuarios"
 msgstr[2] "Cambiar las contraseñas de los usuarios"
 
-#: views/authentication_views.py:352
+#: views/authentication_views.py:353
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Cambiar contraseñas para el usuario: %s"
 
-#: views/authentication_views.py:376
+#: views/authentication_views.py:377
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Restablecimiento de contraseña exitoso para el usuario: %s."
 
-#: views/authentication_views.py:382
+#: views/authentication_views.py:383
 #, python-format
-msgid "Error reseting password for user \"%(user)s\": %(error)s"
+msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr "Error restaurando la contraseña para el usuario \"%(user)s\": %(error)s "
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
 msgstr "Personificar el usuario: %s"

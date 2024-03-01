@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: yan songwei <yansw@vip.163.com>, 2023\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -27,15 +27,15 @@ msgstr ""
 msgid "Quotas"
 msgstr "配额"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "没有"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "不适用"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "空后端"
 
@@ -78,8 +78,8 @@ msgstr "所有文件类型"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
-msgstr "适用于所有文档类型。启用此功能后，配额将忽略单个文档类型的选择。"
+"individual document type selection."
+msgstr ""
 
 #: mixins.py:26
 msgid "Document types"

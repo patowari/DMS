@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -68,7 +68,7 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nein"
 
-#: permissions.py:6 queues.py:7 settings.py:14
+#: permissions.py:6 queues.py:7 settings.py:15
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
@@ -106,7 +106,7 @@ msgid "Reset the search backend indices and index all instances again."
 msgstr ""
 "Die Indices im Suchbackend zurücksetzen und alle Indices neu aufbauen."
 
-#: scoped_queries.py:352
+#: scoped_queries.py:351
 msgid ""
 "Search results exceed limit setting. Results might not be reliable if "
 "multiple scopes are used. Narrow down the search criteria or increase the "
@@ -117,7 +117,7 @@ msgstr ""
 "Schränken Sie die Suchkriterien weiter ein oder erhöhen Sie den Grenzwert "
 "für die Ergebnisse."
 
-#: scoped_queries.py:368
+#: scoped_queries.py:367
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
@@ -130,12 +130,12 @@ msgstr ""
 msgid "Any"
 msgstr "Beliebig"
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr "Unbekanntes Suchmodell `%s`."
 
-#: search_models.py:108
+#: search_models.py:112
 msgid "All content"
 msgstr "Gesamter Inhalt"
 
@@ -203,11 +203,11 @@ msgstr "Primärschlüssel"
 msgid "Search fields"
 msgstr "Suchfelder"
 
-#: settings.py:20
+#: settings.py:21
 msgid "Full path to the backend to be used to handle the search."
 msgstr "Vollständiger Pfad zum Backend, der für die Suche verantwortlich ist."
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
@@ -215,34 +215,34 @@ msgstr ""
 "Argumente für das Suchbackend. Beispielsweise Werte um das Verhalten, "
 "Hostnamen oder Authentifizierungsargumente zu ändern."
 
-#: settings.py:36
+#: settings.py:37
 msgid "The search operator to use when none is specified."
 msgstr "Der Suchoperator, der bei none benutzt werden soll."
 
-#: settings.py:43
+#: settings.py:44
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
 "Deaktiviert die Suche in der Einzelbegriffsleiste, nur die Schaltfläche für "
 "die erweiterte Suche wird angezeigt."
 
-#: settings.py:51
+#: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr ""
 "Anzahl der Objekte, die bei der Massenindizierung verarbeite.t werden sollen"
 
-#: settings.py:57
+#: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr "Setzt den Vorgabewert für die \"Alle Felder\" Checkbox."
 
-#: settings.py:63
+#: settings.py:64
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 "Maximale Anzahl von Suchergebnissen, die pro Suchanfrage geholt und "
 "angezeigt werden sollen."
 
-#: settings.py:69
+#: settings.py:70
 msgid "Maximum number of search results to fetch and display."
 msgstr ""
 "Maximale Anzahl von Suchergebnissen, die geholt und angezeigt werden sollen."

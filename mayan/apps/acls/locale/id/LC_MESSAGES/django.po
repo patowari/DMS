@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:58+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Faiqul Azmi <kasempurnaningurip@gmail.com>, 2023\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:205 links.py:26
 msgid "ACLs"
 msgstr "Daftar akses kontrol"
 
@@ -55,19 +55,19 @@ msgstr "Daftar akses kontrol diubah"
 msgid "Role"
 msgstr "Peranan"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Daftar akses kontrol baru"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Hapus"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:31 models.py:50 workflow_actions.py:46 workflow_actions.py:166
 msgid "Permissions"
 msgstr "Izin"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr "Hapus daftar akses kontrol: %s"
 msgid "There are no ACLs for this object"
 msgstr "Tidak ada daftar akses kontrol untuk objek ini"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -197,12 +197,12 @@ msgstr "Izin yang diberikan"
 msgid "Available permissions"
 msgstr "Izin yang tersedia"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Peran \"%(role)s\" memiliki izin untuk \"%(object)s\"."
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -214,11 +214,11 @@ msgstr ""
 "harus dihapus dari daftar akses kontrol objek induk atau dari peran mereka "
 "melalui menu Pengaturan."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr ""
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr ""
 

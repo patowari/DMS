@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -29,7 +29,7 @@ msgstr "Hivatkozás"
 msgid "Label"
 msgstr "Cimke"
 
-#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:49
+#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:51
 #: permissions.py:6 views/smart_link_views.py:156
 msgid "Smart links"
 msgstr "Intelligens hivatkozások"
@@ -54,7 +54,7 @@ msgstr "Új intelligens hivatkozás létrehozása"
 msgid "Delete"
 msgstr "Törlés"
 
-#: links.py:53 models.py:41
+#: links.py:53 models.py:43
 msgid "Document types"
 msgstr "Dokumentum típusok"
 
@@ -177,27 +177,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Dinamikus címke"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Engedélyezett"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Intelligens hivatkozás"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "A rendszer figyelmen kívül hagyja a felvételt az első elemnél."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Ez az összes többi dokumentum metaadatait jelenti."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Külső dokumentum paraméter"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -205,23 +205,23 @@ msgstr ""
 "A dokumentumtulajdonságokat használó kifejezés, amelyet a külsős "
 "dokumentummezővel szemben kell kiértékelni."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Kifejezés"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Megfordítja az operátor logikáját."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Negált"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Hivatkozás feltétel"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Hivatkozások feltételei"
 

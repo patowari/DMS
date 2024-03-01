@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -21,28 +21,28 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Загальне"
 
-#: dependencies.py:165
+#: dependencies.py:167
 msgid "Transifex Client"
 msgstr "Клієнт Transifex"
 
-#: dependencies.py:182
+#: dependencies.py:184
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Використовується для дозволу офлайнового перекладу текстових рядків коду."
 
-#: dependencies.py:191
+#: dependencies.py:193
 msgid "Provides style checking."
 msgstr "Забезпечує перевірку стилю."
 
-#: dependencies.py:196
+#: dependencies.py:198
 msgid "Command line environment with autocompletion."
 msgstr "Середовище командного рядка з автозавершенням."
 
-#: dependencies.py:201
+#: dependencies.py:203
 msgid "Checks proper formatting of the README file."
 msgstr "Перевіряє правильність форматування файлу README."
 
@@ -66,7 +66,7 @@ msgstr "Форум"
 msgid "Knowledge base"
 msgstr "База знань"
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "Ліцензія"
 
@@ -90,24 +90,24 @@ msgstr "Онлайн-магазин"
 msgid "Get support"
 msgstr "Отримати підтримку"
 
-#: links.py:77 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:136
 msgid "Tools"
 msgstr "Інструменти"
 
-#: literals.py:30
+#: literals.py:29
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Ця функція застаріла та буде видалена в наступній версії."
 
-#: literals.py:39
+#: literals.py:38
 msgid "Days"
 msgstr "Дні"
 
-#: literals.py:40
+#: literals.py:39
 msgid "Hours"
 msgstr "Години"
 
-#: literals.py:41
+#: literals.py:40
 msgid "Minutes"
 msgstr "Хвилини"
 
@@ -143,7 +143,7 @@ msgstr "Користувач"
 msgid "Copy object"
 msgstr "Копіювати об'єкт"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -151,7 +151,7 @@ msgstr ""
 "У режимі списку показувати параметри меню \"списку\" як випадаюче меню "
 "замість окремих кнопок."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -159,7 +159,7 @@ msgstr ""
 "У режимі списку показувати пункти меню \"об'єкт\" як випадаюче меню замість "
 "окремих кнопок."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -169,7 +169,7 @@ msgstr ""
 "параметру всі програми також повинні бути налаштовані через відповідні "
 "налаштування зберігання для використання альтернативного зберігання."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -181,17 +181,14 @@ msgstr ""
 "Python до: конфігурації класу програми (переважно), або пакету, що містить "
 "програму. Приклад: ['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Список рядків, що вказують на всі програми, які встановлені поза тими, що "
-"зазвичай встановлюються Mayan EDMS. Кожен рядок повинен бути  шляхом Python "
-"до: конфігурації класу програми (переважно), або пакету, що містить "
-"програму. Приклад: ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -231,15 +228,15 @@ msgstr "URL домашньої сторінки."
 msgid "Click here to fix this."
 msgstr "Клацніть сюди, щоб виправити це."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Введіть дійсне значення JSON."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Введіть дійсне значення YAML."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -247,29 +244,29 @@ msgstr ""
 "Введіть дійсне \"внутрішнє ім'я\", що складається з літер, цифр та "
 "підкреслень."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Про"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Головна"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Поля, що копіюватимуться: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Зробити копію %(object_name)s \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Об'єкт успішно скопійовано."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -277,19 +274,19 @@ msgstr ""
 "Немає результатів тут означає, що у вас немає необхідних дозволів для "
 "виконання адміністративного завдання."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Немає доступних параметрів налаштування."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Тут ви можете налаштувати всі аспекти системи."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Налаштування елементів"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr ""
 "Ці модулі використовуються для проведення технічного обслуговування системи."

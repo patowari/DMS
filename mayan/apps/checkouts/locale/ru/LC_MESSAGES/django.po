@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:41 events.py:6 links.py:33
+#: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
 msgstr "Забронированные документы"
 
@@ -82,23 +82,23 @@ msgstr "Да"
 msgid "No"
 msgstr "Нет"
 
-#: links.py:40
+#: links.py:39
 msgid "Check out document"
 msgstr "Забронировать документ"
 
-#: links.py:44
+#: links.py:43
 msgid "Check out"
 msgstr "Забронировать"
 
-#: links.py:51
+#: links.py:50
 msgid "Check in document"
 msgstr "Освободить документ"
 
-#: links.py:55
+#: links.py:54
 msgid "Check in"
 msgstr "Освободить"
 
-#: links.py:61
+#: links.py:60
 msgid "Check in/out"
 msgstr "Бронирование"
 

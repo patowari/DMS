@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Márcia Ferreira, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:41 events.py:6 links.py:33
+#: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
 msgstr "Requisitados "
 
@@ -83,23 +83,23 @@ msgstr "Sim"
 msgid "No"
 msgstr "Não"
 
-#: links.py:40
+#: links.py:39
 msgid "Check out document"
 msgstr "Documento requisitado"
 
-#: links.py:44
+#: links.py:43
 msgid "Check out"
 msgstr "Requisitar"
 
-#: links.py:51
+#: links.py:50
 msgid "Check in document"
 msgstr "Devolver documento"
 
-#: links.py:55
+#: links.py:54
 msgid "Check in"
 msgstr "Devolução"
 
-#: links.py:61
+#: links.py:60
 msgid "Check in/out"
 msgstr "Devolver/Requisitar"
 

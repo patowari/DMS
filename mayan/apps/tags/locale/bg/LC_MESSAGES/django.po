@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -23,13 +23,13 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:46 apps.py:133 apps.py:137 apps.py:141 apps.py:146 apps.py:150
-#: events.py:6 forms.py:27 links.py:28 menus.py:14 models.py:35
-#: permissions.py:6 views.py:180 workflow_actions.py:18 workflow_actions.py:67
+#: apps.py:44 apps.py:131 apps.py:135 apps.py:139 apps.py:144 apps.py:148
+#: events.py:6 forms.py:27 links.py:27 menus.py:14 models.py:35
+#: permissions.py:6 views.py:181 workflow_actions.py:18 workflow_actions.py:67
 msgid "Tags"
 msgstr "Маркери"
 
-#: apps.py:171 models.py:29
+#: apps.py:169 models.py:29
 msgid "Documents"
 msgstr "Документи"
 
@@ -49,31 +49,31 @@ msgstr "Маркерът е редактиран"
 msgid "Tag removed from document"
 msgstr "Маркерът е премахнат от документа"
 
-#: links.py:19 links.py:38
+#: links.py:18 links.py:37
 msgid "Attach tags"
 msgstr "Прикачване на маркери"
 
-#: links.py:23 workflow_actions.py:74
+#: links.py:22 workflow_actions.py:74
 msgid "Remove tag"
 msgstr "Премахване на маркер"
 
-#: links.py:33
+#: links.py:32
 msgid "Remove tags"
 msgstr "Премахване на маркери"
 
-#: links.py:44
+#: links.py:43
 msgid "Create new tag"
 msgstr "Създаване на нов маркер"
 
-#: links.py:49 links.py:52
+#: links.py:48 links.py:51
 msgid "Delete"
 msgstr "Изтрийте"
 
-#: links.py:57
+#: links.py:56
 msgid "Edit"
 msgstr "Редактиране"
 
-#: links.py:65
+#: links.py:64
 msgid "All"
 msgstr "Всичко"
 
@@ -193,37 +193,37 @@ msgstr "ID на маркер"
 msgid "Primary key of the tag to remove from the document."
 msgstr "Основен ключ на маркера, който да се премахне от документа."
 
-#: views.py:43
+#: views.py:42
 #, python-format
 msgid "Tags attached to %(count)d documents successfully."
 msgstr "Маркерите са прикачени към %(count)d документа успешно."
 
-#: views.py:46
+#: views.py:45
 #, python-format
 msgid "Tags attached to document \"%(object)s\" successfully."
 msgstr "Маркерите са прикачени към документ &quot;%(object)s&quot; успешно."
 
-#: views.py:49
+#: views.py:48
 #, python-format
 msgid "Tags attached to %(count)d document successfully."
 msgstr "Маркерите са прикачени към %(count)d документ успешно."
 
-#: views.py:51
+#: views.py:50
 #, python-format
 msgid "Attach tags to %(count)d documents."
 msgstr "Прикачете маркери към %(count)dдокументи."
 
-#: views.py:52
+#: views.py:51
 #, python-format
 msgid "Attach tags to document: %(object)s"
 msgstr "Прикачете маркери към документ: %(object)s"
 
-#: views.py:53
+#: views.py:52
 #, python-format
 msgid "Attach tags to %(count)d document."
 msgstr "Прикачете маркери към %(count)dдокумент."
 
-#: views.py:70 wizard_steps.py:28
+#: views.py:69 wizard_steps.py:28
 msgid "Tags to be attached."
 msgstr "Маркери за прикачване."
 
@@ -231,51 +231,51 @@ msgstr "Маркери за прикачване."
 msgid "Create tag"
 msgstr "Създаване на маркер"
 
-#: views.py:121
+#: views.py:122
 #, python-format
 msgid "Error deleting tag \"%(instance)s\"; %(exception)s"
 msgstr "Грешка при изтриване на маркер „%(instance)s“; %(exception)s"
 
-#: views.py:126
+#: views.py:127
 #, python-format
 msgid "%(count)d tags deleted successfully."
 msgstr "%(count)d маркера бяха изтрити успешно."
 
-#: views.py:127
+#: views.py:128
 #, python-format
 msgid "Tag \"%(object)s\" deleted successfully."
 msgstr "Маркерът &quot;%(object)s&quot; беше изтрит успешно."
 
-#: views.py:128
+#: views.py:129
 #, python-format
 msgid "%(count)d tag deleted successfully."
 msgstr "%(count)d маркер е изтрит успешно."
 
-#: views.py:129
+#: views.py:130
 #, python-format
 msgid "Delete the %(count)d selected tags"
 msgstr "Изтрийте %(count)d избрани маркери"
 
-#: views.py:130
+#: views.py:131
 #, python-format
 msgid "Delete tag: %(object)s"
 msgstr "Изтриване на маркер: %(object)s"
 
-#: views.py:131
+#: views.py:132
 #, python-format
 msgid "Delete the %(count)d selected tag"
 msgstr "Изтрийте %(count)d избран маркер"
 
-#: views.py:137
+#: views.py:138
 msgid "Will be removed from all documents."
 msgstr "Ще бъде премахнат от всички документи."
 
-#: views.py:153
+#: views.py:154
 #, python-format
 msgid "Edit tag: %s"
 msgstr "Редактиране на маркер: %s"
 
-#: views.py:176
+#: views.py:177
 msgid ""
 "Tags are color coded properties that can be attached or removed from "
 "documents."
@@ -283,55 +283,55 @@ msgstr ""
 "Маркерите са цветно кодирани свойства, които могат да бъдат прикачени или "
 "премахнати от документите."
 
-#: views.py:179
+#: views.py:180
 msgid "No tags available"
 msgstr "Няма налични маркери"
 
-#: views.py:210
+#: views.py:213
 #, python-format
 msgid "Documents with the tag: %s"
 msgstr "Документи с маркер: %s"
 
-#: views.py:237
+#: views.py:240
 msgid "Document has no tags attached"
 msgstr "Документът няма прикачени маркери"
 
-#: views.py:240
+#: views.py:243
 #, python-format
 msgid "Tags for document: %s"
 msgstr "Маркери за документ: %s"
 
-#: views.py:258
+#: views.py:261
 #, python-format
 msgid "Tags removed from %(count)d documents successfully."
 msgstr "Маркерите са премахнати от %(count)d документа успешно."
 
-#: views.py:261
+#: views.py:264
 #, python-format
 msgid "Tags removed from document \"%(object)s\" successfully."
 msgstr "Маркерите бяха премахнати от документ „%(object)s“ успешно."
 
-#: views.py:264
+#: views.py:267
 #, python-format
 msgid "Tags removed from %(count)d document successfully."
 msgstr "Маркерите са премахнати от %(count)d документ успешно."
 
-#: views.py:266
+#: views.py:269
 #, python-format
 msgid "Remove tags from %(count)d documents."
 msgstr "Премахнете маркери от %(count)d документа."
 
-#: views.py:267
+#: views.py:270
 #, python-format
 msgid "Remove tags from document: %(object)s"
 msgstr "Премахване на маркери от документ: %(object)s"
 
-#: views.py:268
+#: views.py:271
 #, python-format
 msgid "Remove tags from %(count)d document."
 msgstr "Премахнете маркери от %(count)d документ."
 
-#: views.py:285
+#: views.py:288
 msgid "Tags to be removed."
 msgstr "Маркери за премахване."
 

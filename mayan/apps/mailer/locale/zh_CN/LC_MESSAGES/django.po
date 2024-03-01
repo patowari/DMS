@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
@@ -48,86 +48,86 @@ msgstr ""
 msgid "Mailing profile edited"
 msgstr ""
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
 msgstr "收件人的电子邮件地址。可以是以逗号或分号分隔的多个地址。"
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "电子邮件地址"
 
-#: forms.py:63 workflow_action_mixins.py:67
+#: forms.py:64 workflow_action_mixins.py:67
 msgid "Subject"
 msgstr "主题"
 
-#: forms.py:66 workflow_action_mixins.py:76
+#: forms.py:67 workflow_action_mixins.py:76
 msgid "Body"
 msgstr "正文"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr "将用于发送此电子邮件的电子邮件配置文件。"
 
-#: forms.py:71 models.py:50 views/mailing_profile_views.py:139
+#: forms.py:72 models.py:52 views/mailing_profile_views.py:139
 #: workflow_action_mixins.py:12
 msgid "Mailing profile"
 msgstr "邮件配置文件"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "发送电子邮件时使用的驱动程序。"
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "后端"
 
-#: links.py:33 links.py:36
+#: links.py:32 links.py:35
 msgid "Email document link"
 msgstr ""
 
-#: links.py:46 links.py:51
+#: links.py:45 links.py:50
 msgid "Email document file"
 msgstr ""
 
-#: links.py:57 links.py:62
+#: links.py:56 links.py:61
 msgid "Email document file link"
 msgstr ""
 
-#: links.py:72 links.py:77
+#: links.py:71 links.py:76
 msgid "Email document version"
 msgstr ""
 
-#: links.py:83
+#: links.py:82
 msgid "Email document version link"
 msgstr ""
 
-#: links.py:88
+#: links.py:87
 msgid "Email link version"
 msgstr ""
 
-#: links.py:97
+#: links.py:96
 msgid "Create mailing profile"
 msgstr ""
 
-#: links.py:103
+#: links.py:102
 msgid "Delete"
 msgstr "删除"
 
-#: links.py:107
+#: links.py:106
 msgid "Edit"
 msgstr "编辑"
 
-#: links.py:113
+#: links.py:112
 msgid "Mailing profiles list"
 msgstr "邮件配置文件列表"
 
-#: links.py:117 models.py:51
+#: links.py:116 models.py:53
 msgid "Mailing profiles"
 msgstr "邮件配置文件"
 
-#: links.py:122 views/mailing_profile_views.py:168
+#: links.py:121 views/mailing_profile_views.py:168
 msgid "Test"
 msgstr "测试"
 
@@ -263,19 +263,19 @@ msgstr "如果是默认值，则会在文档邮件表单上预先选择此邮件
 msgid "Default"
 msgstr "默认"
 
-#: models.py:36
+#: models.py:37
 msgid "Enabled"
 msgstr "启用"
 
-#: models.py:39
+#: models.py:41
 msgid "The dotted Python path to the backend class."
 msgstr ""
 
-#: models.py:40
+#: models.py:42
 msgid "Backend path"
 msgstr "后端路径"
 
-#: models.py:43
+#: models.py:45
 msgid "Backend data"
 msgstr "后端数据"
 

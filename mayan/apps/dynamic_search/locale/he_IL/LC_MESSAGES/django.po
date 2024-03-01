@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: apps.py:27
 msgid "Dynamic search"
@@ -63,7 +63,7 @@ msgstr "כן"
 msgid "No"
 msgstr "לא"
 
-#: permissions.py:6 queues.py:7 settings.py:14
+#: permissions.py:6 queues.py:7 settings.py:15
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Reset the search backend indices and index all instances again."
 msgstr "אפס את מדדי החיפוש העורפי והוסף שוב את כל המופעים."
 
-#: scoped_queries.py:352
+#: scoped_queries.py:351
 msgid ""
 "Search results exceed limit setting. Results might not be reliable if "
 "multiple scopes are used. Narrow down the search criteria or increase the "
@@ -109,7 +109,7 @@ msgstr ""
 "שימוש במספר היקפים. צמצם את קריטריוני החיפוש או הגדל את הערך של הגדרת מגבלת "
 "התוצאות."
 
-#: scoped_queries.py:368
+#: scoped_queries.py:367
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
@@ -122,12 +122,12 @@ msgstr ""
 msgid "Any"
 msgstr "כל"
 
-#: search_models.py:42
+#: search_models.py:44
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr "דגם חיפוש לא ידוע `%s`."
 
-#: search_models.py:108
+#: search_models.py:112
 msgid "All content"
 msgstr "כל התוכן"
 
@@ -195,11 +195,11 @@ msgstr "מפתח ראשי"
 msgid "Search fields"
 msgstr "שדות חיפוש"
 
-#: settings.py:20
+#: settings.py:21
 msgid "Full path to the backend to be used to handle the search."
 msgstr "נתיב מלא לקצה האחורי שישמש לטיפול בחיפוש."
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
@@ -207,29 +207,29 @@ msgstr ""
 "טיעונים להעביר לקצה העורפי של החיפוש. לדוגמה ערכים לשינוי ההתנהגות, שמות "
 "מארחים או ארגומנטים של אימות."
 
-#: settings.py:36
+#: settings.py:37
 msgid "The search operator to use when none is specified."
 msgstr "אופרטור החיפוש לשימוש כאשר אף אחד לא צוין."
 
-#: settings.py:43
+#: settings.py:44
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr "משבית את החיפוש בסרגל מונחים בודדים ומשאיר רק את לחצן החיפוש המתקדם."
 
-#: settings.py:51
+#: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr "כמות האובייקטים לעיבוד בעת ביצוע אינדקס בכמות גדולה."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr "מגדיר את מצב ברירת המחדל של תיבת הסימון &quot;התאמה לכל&quot;."
 
-#: settings.py:63
+#: settings.py:64
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr "מספר מקסימלי של תוצאות חיפוש לאחזור והצגה לכל יחידת שאילתת חיפוש."
 
-#: settings.py:69
+#: settings.py:70
 msgid "Maximum number of search results to fetch and display."
 msgstr "מספר מקסימלי של תוצאות חיפוש לאחזור והצגה."
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "הרשאות"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "ספירת קבוצות"
 
@@ -45,11 +45,11 @@ msgstr "התפקיד נוצר"
 msgid "Role edited"
 msgstr "התפקיד נערך"
 
-#: links.py:20 links.py:46 models.py:42 views.py:111
+#: links.py:20 links.py:46 models.py:42 views.py:113
 msgid "Roles"
 msgstr "תפקידים"
 
-#: links.py:28 views.py:57
+#: links.py:28 views.py:58
 msgid "Create new role"
 msgstr "צור תפקיד חדש"
 
@@ -95,15 +95,15 @@ msgstr "תווית"
 msgid "Role"
 msgstr "תַפְקִיד"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "מרחב שמות"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "שֵׁם"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "רְשׁוּת"
 
@@ -196,42 +196,42 @@ msgstr "תפקידים זמינים"
 msgid "Roles of group: %s"
 msgstr "תפקידי הקבוצה: %s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr "שגיאה במחיקת התפקיד &quot;%(instance)s&quot;; %(exception)s"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr "תפקידי %(count)d נמחקו בהצלחה."
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr "התפקיד &quot;%(object)s&quot; נמחק בהצלחה."
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr "תפקיד %(count)d נמחק בהצלחה."
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr "מחק תפקיד: %(object)s."
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr "מחק את התפקיד %(count)d שנבחר."
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr "מחק את התפקידים שנבחרו %(count)d."
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -243,19 +243,19 @@ msgstr ""
 "בקרות הגישה הן הרשאות המוענקות לתפקיד עבור אובייקטים ספציפיים שחברי הקבוצה "
 "שלו יורשים."
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "אין תפקידים"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "קבוצות תפקידים"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "קבוצות זמינות"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
@@ -263,30 +263,30 @@ msgstr ""
 "הוסף קבוצות כדי להיות חלק מתפקיד. הם יירשו את ההרשאות ובקרות הגישה של "
 "התפקיד."
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "קבוצות תפקיד: %s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "ניתנו הרשאות"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "הרשאות זמינות"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr "ההרשאות שניתנו כאן יחולו על המערכת כולה ועל כל האובייקטים."
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "הרשאות לתפקיד: %s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr "פרטי הרשאה: %s"

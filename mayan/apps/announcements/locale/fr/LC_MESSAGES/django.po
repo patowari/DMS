@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:58+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -25,12 +25,12 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
+#: apps.py:37 events.py:6 links.py:42 models.py:46 permissions.py:6
 #: templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
 msgstr "Annonces"
 
-#: apps.py:78 apps.py:82
+#: apps.py:79 apps.py:83
 msgid "None"
 msgstr "Aucun"
 
@@ -54,43 +54,43 @@ msgstr "Supprimer"
 msgid "Edit"
 msgstr "Modifier"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Brève description de cette annonce."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Étiquette"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Le texte réel à afficher."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Texte"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Activé"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Date et heure représentant le moment que cette annonce sera affichée."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Date de début"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Date et heure qui indique quand cette annonce doit être affichée."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Date de fin"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Annonce"
 
@@ -158,12 +158,9 @@ msgstr "Modifier l'annonce: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Les annonces sont affichées dans la page de connexion. Vous pouvez utiliser "
-"les annonces pour transmettre des informations sur votre organisation, des "
-"annonces ou des consignes d'utilisation pour vos utilisateurs."
 
 #: views.py:125
 msgid "No announcements available"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -22,29 +22,29 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:91 events.py:6 forms/workflow_template_forms.py:20 links.py:52
-#: links.py:93 links.py:281 links.py:305 models/workflow_models.py:57
+#: apps.py:90 events.py:6 forms/workflow_template_forms.py:20 links.py:50
+#: links.py:91 links.py:279 links.py:303 models/workflow_models.py:57
 #: settings.py:14 views/workflow_proxy_views.py:70
-#: views/workflow_template_views.py:280 workflow_actions.py:90
+#: views/workflow_template_views.py:282 workflow_actions.py:90
 msgid "Workflows"
 msgstr "Workflows"
 
-#: apps.py:224 apps.py:231
+#: apps.py:223 apps.py:230
 msgid "Current state of a workflow"
 msgstr "Huidige status van een workflow"
 
-#: apps.py:225
+#: apps.py:224
 msgid "Return the current state of the selected workflow."
 msgstr "Geeft de huidige status van de geselecteerde workflow."
 
-#: apps.py:232
+#: apps.py:231
 msgid ""
 "Return the completion value of the current state of the selected workflow."
 msgstr ""
 "Retourneer de voltooiingswaarde van de huidige status van de geselecteerde "
 "workflow."
 
-#: apps.py:290
+#: apps.py:289
 msgid ""
 "Return the last workflow instance log entry. The log entry itself has the "
 "following fields: datetime, transition, user, and comment."
@@ -53,11 +53,11 @@ msgstr ""
 "logboekvermelding zelf heeft de volgende velden: datumtijd, overgang, "
 "gebruiker en opmerking."
 
-#: apps.py:293
+#: apps.py:292
 msgid "Get last log entry"
 msgstr "Laatste loginvoer ophalen"
 
-#: apps.py:298
+#: apps.py:297
 msgid ""
 "Return the current context dictionary which includes runtime data from the "
 "workflow transition fields."
@@ -65,79 +65,79 @@ msgstr ""
 "Retourneer de huidige contextwoordenlijst met runtime-gegevens uit de "
 "workflow transitievelden."
 
-#: apps.py:300
+#: apps.py:299
 msgid "Get the context"
 msgstr "De context ophalen"
 
-#: apps.py:305
+#: apps.py:304
 msgid "Return the transition of the workflow instance."
 msgstr "Geeft de transitie van de workflow instantie."
 
-#: apps.py:306
+#: apps.py:305
 msgid "Get last transition"
 msgstr "Laatste transitie ophalen"
 
-#: apps.py:322 apps.py:334 apps.py:343 apps.py:350
+#: apps.py:321 apps.py:333 apps.py:342 apps.py:349
 msgid "None"
 msgstr "Geen"
 
-#: apps.py:330 serializers/workflow_instance_serializers.py:129
+#: apps.py:329 serializers/workflow_instance_serializers.py:129
 msgid "Current state"
 msgstr "Huidige status"
 
-#: apps.py:335 apps.py:360 models/workflow_instance_models.py:100
+#: apps.py:334 apps.py:359 models/workflow_instance_models.py:100
 #: serializers/workflow_instance_serializers.py:71
 msgid "User"
 msgstr "Gebruiker"
 
-#: apps.py:339
+#: apps.py:338
 msgid "Last transition"
 msgstr "Laatste transitie"
 
-#: apps.py:344 apps.py:357
+#: apps.py:343 apps.py:356
 msgid "Date and time"
 msgstr "Datum en tijd"
 
-#: apps.py:351 models/workflow_state_models.py:52
+#: apps.py:350 models/workflow_state_models.py:52
 msgid "Completion"
 msgstr "Voltooiing"
 
-#: apps.py:381
+#: apps.py:380
 msgid "Additional details"
 msgstr "Aanvullende details"
 
-#: apps.py:415
+#: apps.py:414
 msgid "When?"
 msgstr "Wanneer?"
 
-#: apps.py:419
+#: apps.py:418
 msgid "Action type"
 msgstr "Actie type"
 
-#: apps.py:475
+#: apps.py:474
 msgid ""
 "Triggers are system events that will cause the transition to be applied."
 msgstr ""
 "Triggers zijn systeemgebeurtenissen die initiëren dat transities worden "
 "toegepast."
 
-#: apps.py:477
+#: apps.py:476
 msgid "Triggers"
 msgstr "Triggers"
 
-#: apps.py:491 models/workflow_transition_models.py:105
+#: apps.py:490 models/workflow_transition_models.py:105
 msgid "Type"
 msgstr "Type"
 
-#: apps.py:499
+#: apps.py:498
 msgid "Widget"
 msgstr "Widget"
 
-#: apps.py:510 apps.py:516
+#: apps.py:509 apps.py:515
 msgid "Documents"
 msgstr "Documenten"
 
-#: classes.py:133
+#: classes.py:141
 #, python-format
 msgid "%(field_name)s template error: %(exception)s"
 msgstr "%(field_name)s sjabloon fout: %(exception)s"
@@ -162,11 +162,11 @@ msgstr "Workflow bewerkt"
 msgid "Select a transition to execute in the next step."
 msgstr "Selecteer een transitie om uit te voeren in de volgende stap."
 
-#: forms/workflow_instance_forms.py:17 links.py:287
+#: forms/workflow_instance_forms.py:17 links.py:285
 #: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
-#: models/workflow_transition_models.py:181
+#: models/workflow_transition_models.py:184
 #: serializers/workflow_instance_serializers.py:45
 msgid "Transition"
 msgstr "Transitie"
@@ -203,7 +203,7 @@ msgid "Yes"
 msgstr "Ja"
 
 #: forms/workflow_template_transition_forms.py:54
-#: models/workflow_state_action_models.py:34
+#: models/workflow_state_action_models.py:35
 #: models/workflow_state_escalation_models.py:47
 msgid "Enabled"
 msgstr "Ingeschakeld"
@@ -213,93 +213,93 @@ msgstr "Ingeschakeld"
 msgid "Event trigger: %s"
 msgstr "Gebeurtenis trigger: %s"
 
-#: links.py:58 views/workflow_template_views.py:137
+#: links.py:56 views/workflow_template_views.py:138
 msgid "Create workflow"
 msgstr "Workflow aanmaken"
 
-#: links.py:62 links.py:69 links.py:109 links.py:147 links.py:177 links.py:206
-#: links.py:252
+#: links.py:60 links.py:67 links.py:107 links.py:145 links.py:175 links.py:204
+#: links.py:250
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: links.py:75 models/workflow_models.py:48
+#: links.py:73 models/workflow_models.py:48
 msgid "Document types"
 msgstr "Documenttypes"
 
-#: links.py:82 links.py:116 links.py:154 links.py:184 links.py:213
-#: links.py:259
+#: links.py:80 links.py:114 links.py:152 links.py:182 links.py:211
+#: links.py:257
 msgid "Edit"
 msgstr "Bewerken"
 
-#: links.py:88
+#: links.py:86
 msgid "Launch workflow"
 msgstr "Workflow starten"
 
-#: links.py:100
+#: links.py:98
 msgid "Preview"
 msgstr "Voorbeeldweergave"
 
-#: links.py:123 models/workflow_state_model_mixins.py:30
+#: links.py:121 models/workflow_state_model_mixins.py:30
 msgid "Actions"
 msgstr "Acties"
 
-#: links.py:130
+#: links.py:128
 msgid "Create action"
 msgstr "Actie aanmaken"
 
-#: links.py:140
+#: links.py:138
 msgid "Create escalation"
 msgstr ""
 
-#: links.py:161
+#: links.py:159
 msgid "Escalations"
 msgstr ""
 
-#: links.py:170
+#: links.py:168
 msgid "Create state"
 msgstr "Status aanmaken"
 
-#: links.py:189 links.py:317
+#: links.py:187 links.py:315
 msgid "States"
 msgstr "Statussen"
 
-#: links.py:199
+#: links.py:197
 msgid "Create transition"
 msgstr "Transitie aanmaken"
 
-#: links.py:219
+#: links.py:217
 msgid "Transition triggers"
 msgstr "Transitie triggers"
 
-#: links.py:225
+#: links.py:223
 msgid "Transitions"
 msgstr "Transities"
 
-#: links.py:233 links.py:239 workflow_actions.py:99
+#: links.py:231 links.py:237 workflow_actions.py:99
 msgid "Launch workflows"
 msgstr ""
 
-#: links.py:245
+#: links.py:243
 msgid "Create field"
 msgstr "Veld aanmaken"
 
-#: links.py:266 models/workflow_transition_model_mixins.py:27
+#: links.py:264 models/workflow_transition_model_mixins.py:27
 msgid "Fields"
 msgstr "Velden"
 
-#: links.py:276
+#: links.py:274
 msgid "Detail"
 msgstr "Detail"
 
-#: links.py:297
+#: links.py:295
 msgid "Workflow documents"
 msgstr "Workflow documenten"
 
-#: links.py:311
+#: links.py:309
 msgid "State documents"
 msgstr "Status documenten"
 
-#: links.py:326
+#: links.py:324
 msgid "Launch all workflows"
 msgstr "Alle workflows starten"
 
@@ -367,25 +367,25 @@ msgstr "Workflowinstantie"
 msgid "Workflow instances"
 msgstr "Workflowinstanties"
 
-#: models/workflow_instance_models.py:102
+#: models/workflow_instance_models.py:103
 #: models/workflow_state_escalation_models.py:64
-#: views/workflow_instance_views.py:154
+#: views/workflow_instance_views.py:157
 msgid "Comment"
 msgstr "Commentaar"
 
-#: models/workflow_instance_models.py:103
+#: models/workflow_instance_models.py:106
 msgid "Extra data"
 msgstr "Extra gegevens"
 
-#: models/workflow_instance_models.py:107
+#: models/workflow_instance_models.py:111
 msgid "Workflow instance log entry"
 msgstr "Workflow instantie loginvoer"
 
-#: models/workflow_instance_models.py:108
+#: models/workflow_instance_models.py:112
 msgid "Workflow instance log entries"
 msgstr "Workflow instantie loginvoer"
 
-#: models/workflow_instance_models.py:116
+#: models/workflow_instance_models.py:120
 msgid "Not a valid transition choice."
 msgstr "Geen geldige transitiekeuze."
 
@@ -435,27 +435,27 @@ msgstr "Workflowstatus"
 msgid "A short text describing the action."
 msgstr "Een korte tekst die de actie beschrijft."
 
-#: models/workflow_state_action_models.py:38
+#: models/workflow_state_action_models.py:40
 msgid "At which moment of the state this action will execute."
 msgstr "Op welk moment van de status deze actie wordt uitgevoerd."
 
-#: models/workflow_state_action_models.py:39
+#: models/workflow_state_action_models.py:41
 msgid "When"
 msgstr "Wanneer"
 
-#: models/workflow_state_action_models.py:43
+#: models/workflow_state_action_models.py:45
 msgid "The dotted Python path to the workflow action class to execute."
 msgstr "Het Python-pad naar de workflow actie class om uit te voeren."
 
-#: models/workflow_state_action_models.py:44
+#: models/workflow_state_action_models.py:46
 msgid "Entry action path"
 msgstr "Invoer actiepad"
 
-#: models/workflow_state_action_models.py:47
+#: models/workflow_state_action_models.py:49
 msgid "Entry action data"
 msgstr "Invoer actiegegevens"
 
-#: models/workflow_state_action_models.py:51
+#: models/workflow_state_action_models.py:53
 msgid ""
 "The condition that will determine if this state action is executed or not. "
 "The condition is evaluated against the workflow instance. Conditions that do"
@@ -469,32 +469,32 @@ msgstr ""
 "('') worden beschouwd als logisch false, iedere andere waarde wordt "
 "beschouwd als logisch true."
 
-#: models/workflow_state_action_models.py:57
+#: models/workflow_state_action_models.py:59
 #: models/workflow_transition_models.py:56
 msgid "Condition"
 msgstr "Voorwaarde"
 
-#: models/workflow_state_action_models.py:63
+#: models/workflow_state_action_models.py:65
 msgid "Workflow state action"
 msgstr "Workflowstaat actie"
 
-#: models/workflow_state_action_models.py:64
+#: models/workflow_state_action_models.py:66
 msgid "Workflow state actions"
 msgstr "Workflowstaat actie"
 
-#: models/workflow_state_action_models.py:125
+#: models/workflow_state_action_models.py:127
 msgid "Unknown action type"
 msgstr "Onbekend actietype"
 
-#: models/workflow_state_action_models.py:130
+#: models/workflow_state_action_models.py:132
 msgid ""
 "The state action will be executed, depending on the condition return value."
 msgstr ""
 "De staat actie zal worden uitgevoerd afhankelijk van het resultaat van de "
 "voorwaarde."
 
-#: models/workflow_state_action_models.py:133
-#: models/workflow_transition_model_mixins.py:51
+#: models/workflow_state_action_models.py:135
+#: models/workflow_transition_model_mixins.py:53
 msgid "Has a condition?"
 msgstr "Heeft een voorwaarde?"
 
@@ -580,7 +580,7 @@ msgstr "Workflowstaat runtime proxy"
 msgid "Workflow state runtime proxies"
 msgstr "Workflowstaat runtime proxies"
 
-#: models/workflow_transition_model_mixins.py:48
+#: models/workflow_transition_model_mixins.py:50
 msgid ""
 "The transition will be available, depending on the condition return value."
 msgstr ""
@@ -635,7 +635,7 @@ msgstr ""
 msgid "The field name that will be shown on the user interface."
 msgstr "De veldnaam die wordt getoond in de gebruikersinterface."
 
-#: models/workflow_transition_models.py:119
+#: models/workflow_transition_models.py:120
 msgid ""
 "An optional message that will help users better understand the purpose of "
 "the field and data to provide."
@@ -643,55 +643,55 @@ msgstr ""
 "Een optioneel bericht dat gebruikers helpt het doel van het veld en de te "
 "verstrekken gegevens beter te begrijpen."
 
-#: models/workflow_transition_models.py:121
+#: models/workflow_transition_models.py:122
 msgid "Help text"
 msgstr "Helptekst"
 
-#: models/workflow_transition_models.py:125
+#: models/workflow_transition_models.py:126
 msgid "Whether this fields needs to be filled out or not to proceed."
 msgstr "Of deze velden moeten worden ingevuld of niet om verder te gaan."
 
-#: models/workflow_transition_models.py:126
+#: models/workflow_transition_models.py:127
 msgid "Required"
 msgstr "Verplicht"
 
-#: models/workflow_transition_models.py:130
+#: models/workflow_transition_models.py:131
 msgid "An optional class to change the default presentation of the field."
 msgstr ""
 "Een optionele class om de standaard presentatie van het veld te wijzigen."
 
-#: models/workflow_transition_models.py:131
+#: models/workflow_transition_models.py:132
 msgid "Widget class"
 msgstr "Widget class"
 
-#: models/workflow_transition_models.py:135
+#: models/workflow_transition_models.py:136
 msgid "A group of keyword arguments to customize the widget. Use YAML format."
 msgstr ""
 "Een groep zoekwoordargumenten om de widget aan te passen. Gebruik YAML-"
 "indeling."
 
-#: models/workflow_transition_models.py:138
+#: models/workflow_transition_models.py:141
 msgid "Widget keyword arguments"
 msgstr "Widget zoekwoord argumenten"
 
-#: models/workflow_transition_models.py:143
+#: models/workflow_transition_models.py:146
 msgid "Workflow transition field"
 msgstr "Workflow transitie veld"
 
-#: models/workflow_transition_models.py:144
+#: models/workflow_transition_models.py:147
 msgid "Workflow transition fields"
 msgstr "Workflow transactievelden"
 
-#: models/workflow_transition_models.py:185
+#: models/workflow_transition_models.py:188
 #: serializers/workflow_template_transition_serializers.py:195
 msgid "Event type"
 msgstr "Evenementsoort"
 
-#: models/workflow_transition_models.py:191
+#: models/workflow_transition_models.py:194
 msgid "Workflow transition trigger event"
 msgstr "Workflow transitie trigger gebeurtenis"
 
-#: models/workflow_transition_models.py:192
+#: models/workflow_transition_models.py:195
 msgid "Workflow transitions trigger events"
 msgstr "Workflow transitie trigger gebeurtenissen"
 
@@ -787,7 +787,7 @@ msgstr ""
 #: serializers/workflow_template_transition_serializers.py:25
 #: serializers/workflow_template_transition_serializers.py:108
 #: serializers/workflow_template_transition_serializers.py:202
-#: workflow_actions.py:138
+#: workflow_actions.py:140
 msgid "URL"
 msgstr "URL"
 
@@ -989,7 +989,7 @@ msgstr ""
 msgid "Workflow preview images"
 msgstr "Workflow voorbeeldweergave afbeeldingen"
 
-#: views/workflow_instance_views.py:40
+#: views/workflow_instance_views.py:41
 msgid ""
 "Assign workflows to the document type of this document to have this document"
 " execute those workflows. "
@@ -997,16 +997,16 @@ msgstr ""
 "Workflows toewijzen aan het documenttype van dit document om de workflows te"
 " laten uitvoeren door dit document."
 
-#: views/workflow_instance_views.py:44
+#: views/workflow_instance_views.py:45
 msgid "There are no workflows for this document"
 msgstr ""
 
-#: views/workflow_instance_views.py:48
+#: views/workflow_instance_views.py:49
 #, python-format
 msgid "Workflows for document: %s"
 msgstr "Workflows voor document: %s"
 
-#: views/workflow_instance_views.py:74
+#: views/workflow_instance_views.py:75
 msgid ""
 "This view will show the state changes as a workflow instance is "
 "transitioned."
@@ -1014,34 +1014,34 @@ msgstr ""
 "Dit overzicht toont de statuswijzigingen wanneer een werkstroominstantie "
 "wordt overgezet."
 
-#: views/workflow_instance_views.py:78
+#: views/workflow_instance_views.py:79
 msgid "There are no details for this workflow instance"
 msgstr "Er zijn geen details voor deze workflow instantie"
 
-#: views/workflow_instance_views.py:81
+#: views/workflow_instance_views.py:82
 #, python-format
 msgid "Detail of workflow: %(workflow)s"
 msgstr "Detail van workflow: %(workflow)s"
 
-#: views/workflow_instance_views.py:120
+#: views/workflow_instance_views.py:121
 #, python-format
 msgid "Document \"%s\" transitioned successfully"
 msgstr "Document \"%s\" met succes omgezet"
 
-#: views/workflow_instance_views.py:142
+#: views/workflow_instance_views.py:145
 #, python-format
 msgid "Execute transition \"%(transition)s\" for workflow: %(workflow)s"
 msgstr "Transitie \"%(transition)s\" uitvoeren voor workflow: %(workflow)s"
 
-#: views/workflow_instance_views.py:157
+#: views/workflow_instance_views.py:160
 msgid "Optional comment to attach to the transition."
 msgstr "Optioneel commentaar om aan de transitie toe te voegen."
 
-#: views/workflow_instance_views.py:223
+#: views/workflow_instance_views.py:226
 msgid "Select"
 msgstr "Selecteren"
 
-#: views/workflow_instance_views.py:225
+#: views/workflow_instance_views.py:228
 #, python-format
 msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
@@ -1341,59 +1341,59 @@ msgstr ""
 msgid "Workflows to be launched."
 msgstr ""
 
-#: views/workflow_template_views.py:154
+#: views/workflow_template_views.py:156
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views/workflow_template_views.py:162
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:163
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr ""
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:168
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr ""
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:169
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr ""
 
-#: views/workflow_template_views.py:172
+#: views/workflow_template_views.py:174
 msgid "All workflow instances will also be deleted."
 msgstr ""
 
-#: views/workflow_template_views.py:192
+#: views/workflow_template_views.py:194
 #, python-format
 msgid "Edit workflow: %s"
 msgstr "Bewerk workflow: %s"
 
-#: views/workflow_template_views.py:203
+#: views/workflow_template_views.py:205
 msgid "Document types assigned this workflow"
 msgstr "Documenttypes die aan workflow zijn toegekend"
 
-#: views/workflow_template_views.py:204
+#: views/workflow_template_views.py:206
 msgid "Available document types"
 msgstr "Beschikbare documenttypes"
 
-#: views/workflow_template_views.py:222
+#: views/workflow_template_views.py:224
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
@@ -1402,25 +1402,25 @@ msgstr ""
 " lopende instanties van die workflow voor documenten van het juist "
 "verwijderde documenttype."
 
-#: views/workflow_template_views.py:227
+#: views/workflow_template_views.py:229
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "Documenttypes die aan workflow zijn toegekend: %s"
 
-#: views/workflow_template_views.py:241
+#: views/workflow_template_views.py:243
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr "Dit start de workflow voor documenten die al zijn geüpload."
 
-#: views/workflow_template_views.py:244
+#: views/workflow_template_views.py:246
 msgid "Launch workflow?"
 msgstr "Start workflow?"
 
-#: views/workflow_template_views.py:255 views/workflow_template_views.py:315
+#: views/workflow_template_views.py:257 views/workflow_template_views.py:317
 msgid "Workflow launch queued successfully."
 msgstr "Workflow start met succes in wachtrij geplaatst."
 
-#: views/workflow_template_views.py:273
+#: views/workflow_template_views.py:275
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
@@ -1429,22 +1429,22 @@ msgstr ""
 "document. Transities worden gebruikt om de huidige status in een nieuwe te "
 "wijzigen. "
 
-#: views/workflow_template_views.py:278
+#: views/workflow_template_views.py:280
 msgid "No workflows have been defined"
 msgstr "Er zijn geen workflows gedefinieerd"
 
-#: views/workflow_template_views.py:295
+#: views/workflow_template_views.py:297
 #, python-format
 msgid "Preview of: %s"
 msgstr "Voorbeeldweergave van: %s"
 
-#: views/workflow_template_views.py:302
+#: views/workflow_template_views.py:304
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
 msgstr "Dit start alle aangemaakte workflows nadat documenten zijn geüpload."
 
-#: views/workflow_template_views.py:305
+#: views/workflow_template_views.py:307
 msgid "Launch all workflows?"
 msgstr "Alle workflows starten?"
 
@@ -1472,65 +1472,65 @@ msgstr "Document-eigenschappen aanpassen"
 msgid "Additional workflows to launch for the document."
 msgstr ""
 
-#: workflow_actions.py:144
+#: workflow_actions.py:146
 msgid "The URL to access."
 msgstr ""
 
-#: workflow_actions.py:153
+#: workflow_actions.py:155
 msgid "Timeout"
 msgstr "Timeout"
 
-#: workflow_actions.py:160
+#: workflow_actions.py:162
 msgid "Time in seconds to wait for a response."
 msgstr ""
 
-#: workflow_actions.py:169
+#: workflow_actions.py:171
 msgid "Payload"
 msgstr "Belasting"
 
-#: workflow_actions.py:175
+#: workflow_actions.py:177
 msgid "A JSON document to include in the request."
 msgstr ""
 
-#: workflow_actions.py:184
+#: workflow_actions.py:186
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: workflow_actions.py:191
+#: workflow_actions.py:193
 msgid "Username to use for making the request with HTTP Basic Auth."
 msgstr ""
 
-#: workflow_actions.py:202
+#: workflow_actions.py:204
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: workflow_actions.py:209
+#: workflow_actions.py:211
 msgid "Password to use for making the request with HTTP Basic Auth."
 msgstr ""
 
-#: workflow_actions.py:220
+#: workflow_actions.py:222
 msgid "Method"
 msgstr "Methode"
 
-#: workflow_actions.py:227
+#: workflow_actions.py:229
 msgid ""
 "The HTTP method to use for the request. Typical choices are OPTIONS, HEAD, "
 "POST, GET, PUT, PATCH, DELETE."
 msgstr ""
 
-#: workflow_actions.py:238
+#: workflow_actions.py:240
 msgid "Headers"
 msgstr "Kopteksten"
 
-#: workflow_actions.py:245
+#: workflow_actions.py:247
 msgid "Headers to send with the HTTP request. Must be in JSON format."
 msgstr ""
 
-#: workflow_actions.py:260
+#: workflow_actions.py:262
 msgid "Perform an HTTP request"
 msgstr "Een HTTP-verzoek uitvoeren"
 
-#: workflow_actions.py:277
+#: workflow_actions.py:279
 #, python-format
 msgid "%(field_name)s JSON error: %(exception)s"
 msgstr "%(field_name)s JSON fout: %(exception)s"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Language-Team: Thai (https://app.transifex.com/rosarior/teams/13584/th/)\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:8 views.py:12
 msgid "Dashboards"
 msgstr ""
 
@@ -32,7 +32,7 @@ msgstr ""
 msgid "Administrator dashboard"
 msgstr ""
 
-#: links.py:14
+#: links.py:13
 msgid "Details"
 msgstr ""
 
@@ -41,6 +41,6 @@ msgstr ""
 msgid "View details"
 msgstr ""
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr ""

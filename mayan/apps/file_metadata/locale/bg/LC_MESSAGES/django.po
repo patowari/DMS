@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Arguments to pass to the drivers."
 msgstr "Аргументи за подаване към драйверите"
 
-#: views.py:52
+#: views.py:51
 msgid ""
 "File metadata are the attributes of the document's file. They can range from"
 " camera information used to take a photo to the author that created a file. "
@@ -217,16 +217,16 @@ msgstr ""
 "файл. Те не са същото като метаданни на документа, които се определят от "
 "потребителя и съществуват в базата данни."
 
-#: views.py:60
+#: views.py:59
 msgid "No file metadata available."
 msgstr "Няма метаданни на файл"
 
-#: views.py:63
+#: views.py:62
 #, python-format
 msgid "File metadata drivers for: %s"
 msgstr "Драйвери на метаданни на файл за: %s"
 
-#: views.py:90
+#: views.py:89
 msgid ""
 "This could mean that the file metadata detection has not completed or that "
 "the driver does not support any metadata field for the file type of this "
@@ -236,29 +236,29 @@ msgstr ""
 "или че драйверът не поддържа никакво поле с метаданни за типа файл на този "
 "документ."
 
-#: views.py:95
+#: views.py:94
 msgid "No file metadata available for this driver."
 msgstr "Няма налични файлови метаданни за този драйвер."
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 "Атрибути на метаданните на файла за: %(document_file)s с драйвер: %(driver)s"
 
-#: views.py:121
+#: views.py:120
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
 "%(count)d файлове с документи, изпратени до опашката с метаданни на файла."
 
-#: views.py:124
+#: views.py:123
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
 msgstr "%(count)d файл с документ, изпратен в опашката с метаданни на файла."
 
-#: views.py:133
+#: views.py:132
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
@@ -266,17 +266,17 @@ msgstr[0] ""
 msgstr[1] ""
 "Изпращане на избраните файлове с документи в опашката с метаданни на файла?"
 
-#: views.py:164
+#: views.py:163
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr "Редактирайте настройките на метаданните на файла за типа документ: %s"
 
-#: views.py:175
+#: views.py:174
 msgid "Submit all documents of a type for file metadata processing."
 msgstr ""
 "Подайте всички документи от дадения тип за обработка на метаданните на файла"
 
-#: views.py:202
+#: views.py:201
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
 msgstr ""

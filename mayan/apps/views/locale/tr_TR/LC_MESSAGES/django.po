@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "Görünümler"
 
@@ -30,19 +30,19 @@ msgstr "Görünümler"
 msgid "Search"
 msgstr "Arama"
 
-#: forms.py:54
+#: forms.py:56
 msgid "Selection"
 msgstr "Seçim"
 
-#: forms.py:342
+#: forms.py:344
 msgid "Label"
 msgstr "Etiket"
 
-#: forms.py:348
+#: forms.py:350
 msgid "Relationship"
 msgstr "İlişki"
 
-#: generics.py:163
+#: generics.py:162
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -52,7 +52,7 @@ msgstr ""
 "tutun. Seçim tamamlandığında, eylemi etkinleştirmek için aşağıdaki düğmeye "
 "tıklayın veya listeye çift tıklayın."
 
-#: generics.py:168
+#: generics.py:167
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -62,97 +62,97 @@ msgstr ""
 "Seçim tamamlandığında, eylemi etkinleştirmek için aşağıdaki düğmeye tıklayın"
 " veya listeye çift tıklayın."
 
-#: generics.py:322
+#: generics.py:321
 msgid "Add all"
 msgstr "Hepsini ekle"
 
-#: generics.py:329
+#: generics.py:328
 msgid "Add"
 msgstr "Ekle"
 
-#: generics.py:340
+#: generics.py:339
 msgid "Remove all"
 msgstr "Hepsini kaldır"
 
-#: generics.py:347
+#: generics.py:346
 msgid "Remove"
 msgstr "Kaldır"
 
-#: generics.py:576
+#: generics.py:575
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "İlişki güncellenirken hata oluştu; %s"
 
-#: generics.py:583
+#: generics.py:582
 msgid "Relationships updated successfully"
 msgstr "İlişkiler başarıyla güncellendi"
 
-#: generics.py:646
+#: generics.py:645
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Yinelenen veri hatası: %(error)s"
 
-#: generics.py:665
+#: generics.py:664
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s oluşturulamadı, hata: %(error)s"
 
-#: generics.py:676
+#: generics.py:675
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s başarıyla oluşturuldu."
 
-#: generics.py:721
+#: generics.py:720
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s silinemedi, hata: %(error)s."
 
-#: generics.py:731
+#: generics.py:730
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s başarıyla silindi."
 
-#: generics.py:794
+#: generics.py:793
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "%(object)s alınırken hata oluştu; %(error)s"
 
-#: generics.py:906
+#: generics.py:905
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s güncellenemedi, hata: %(error)s."
 
-#: generics.py:916
+#: generics.py:915
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s başarıyla güncellendi."
 
-#: generics.py:983
+#: generics.py:982
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d nesneleri başarıyla silindi."
 
-#: generics.py:984
+#: generics.py:983
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" başarıyla silindi."
 
-#: generics.py:985
+#: generics.py:984
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d nesnesi başarıyla silindi."
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "%(count)d nesnelerini sil."
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "\"%(object)s\" sil."
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "%(count)d nesnesini sil."
@@ -172,34 +172,6 @@ msgid ""
 msgstr ""
 "Bir gönder düğmesi görüntüleyin ve yüklemeyi işlemeden önce gönder düğmesine"
 " basılmasını bekleyin."
-
-#: templates/views/app/foot.html:46
-msgid "Cancel upload"
-msgstr "Yüklemeyi iptal et"
-
-#: templates/views/app/foot.html:47
-msgid "Are you sure you want to cancel this upload?"
-msgstr "Bu yüklemeyi iptal etmek istediğinizden emin misiniz?"
-
-#: templates/views/app/foot.html:48
-msgid "Drop files or click here to upload files"
-msgstr "Dosyaları sürükleyip bırakın veya yükleme yapmak için buraya tıklayın"
-
-#: templates/views/app/foot.html:49
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "Tarayıcınız sürükle ve bırak dosya yüklemelerini desteklemiyor."
-
-#: templates/views/app/foot.html:50
-msgid "Please use the fallback form below to upload your files."
-msgstr "Dosyalarınızı yüklemek için lütfen aşağıdaki formu kullanın."
-
-#: templates/views/app/foot.html:51
-msgid "Clear"
-msgstr "Temizle"
-
-#: templates/views/app/foot.html:52
-msgid "Server responded with {{statusCode}} code."
-msgstr "Sunucu {{statusCode}} koduyla yanıt verdi."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

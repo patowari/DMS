@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "Веб-посилання"
 
@@ -40,7 +40,7 @@ msgstr "Веб-посилання відредаговано"
 msgid "Web link navigated"
 msgstr "Перехід по веб-посиланню"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "Створити нове веб-посилання"
 
@@ -152,30 +152,30 @@ msgstr "Доступні веб-посилання"
 msgid "Web links to enable for document type: %s"
 msgstr "Веб-посилання для активації типу документу: %s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "Видалити веб-посилання: %s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "Увімкнені типи документів"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "Доступні типи документів"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "Тип документу, для якого потрібно увімкнути веб-посилання: %s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "Редагувати веб-посилання: %s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -184,15 +184,15 @@ msgstr ""
 "ресурси. URL-адреси посилань можуть містити значення властивостей "
 "документів."
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "Немає веб-посилань"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "Для цього документа немає веб-посилань"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "Веб-посилання на документ: %s"

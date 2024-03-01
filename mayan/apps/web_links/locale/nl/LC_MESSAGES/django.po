@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "Weblinks"
 
@@ -39,7 +39,7 @@ msgstr "Weblink bewerkt"
 msgid "Web link navigated"
 msgstr "Weblink bezocht"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "Nieuwe weblink aanmaken"
 
@@ -153,30 +153,30 @@ msgstr "Beschikbare weblinks"
 msgid "Web links to enable for document type: %s"
 msgstr "Weblinks om in te schakelen voor documenttype: %s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "Verwijder weblink: %s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "Ingeschakelde documenttypes"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "Beschikbare documenttypes"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "Documenttype waarvoor weblink wordt ingeschakeld: %s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "Bewerk weblink: %s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -184,15 +184,15 @@ msgstr ""
 "Met weblinks kunnen HTTP links worden gemaakt van documenten naar externe "
 "bronnen. De URLs kunnen documenteigenschappen bevatten."
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "Er zijn geen weblinks"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "Er zijn geen weblinks voor dit document"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "Weblinks voor document: %s"

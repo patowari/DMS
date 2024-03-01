@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:58+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
+#: apps.py:37 events.py:6 links.py:42 models.py:46 permissions.py:6
 #: templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
 msgstr "Anunțuri"
 
-#: apps.py:78 apps.py:82
+#: apps.py:79 apps.py:83
 msgid "None"
 msgstr "Nici unul"
 
@@ -52,43 +52,43 @@ msgstr "Șterge"
 msgid "Edit"
 msgstr "Editați"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Scurtă descriere a acestui anunț."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Conținut etichetă"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Textul real care urmează să fie afișat."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Text"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Activat"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Data și ora după care va fi afișat acest anunț."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Marcaj temporal al începutului"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Data și ora până la care urmează să fie afișat acest anunț."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Marcaj temporal al sfârșitului"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Anunţ"
 
@@ -155,12 +155,9 @@ msgstr "Editați anunțul: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Anunțurile sunt afișate în ecranul de conectare. Puteți folosi anunțuri "
-"pentru a transmite informații despre organizația dvs., anunțuri sau ghiduri "
-"de utilizare pentru utilizatorii dvs."
 
 #: views.py:125
 msgid "No announcements available"

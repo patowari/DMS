@@ -5,21 +5,21 @@
 # 
 # Translators:
 # Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
-# Ovadia Ovadia, 2023
+# Ovadia Ovadia, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Ovadia Ovadia, 2023\n"
+"Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: admin.py:13
 msgid "Label"
@@ -198,7 +198,7 @@ msgstr ""
 msgid "Arguments to pass to the drivers."
 msgstr "טיעונים לעבור לנהגים."
 
-#: views.py:52
+#: views.py:51
 msgid ""
 "File metadata are the attributes of the document's file. They can range from"
 " camera information used to take a photo to the author that created a file. "
@@ -211,16 +211,16 @@ msgstr ""
 " המסמך נוצר לראשונה. תכונות מטא-נתונים של קובץ נמצאות בקובץ עצמו. הם אינם "
 "זהים למטא-נתונים של המסמך, המוגדרים על ידי המשתמש ושוכנים במסד הנתונים."
 
-#: views.py:60
+#: views.py:59
 msgid "No file metadata available."
 msgstr "אין מטא נתונים זמינים לקובץ."
 
-#: views.py:63
+#: views.py:62
 #, python-format
 msgid "File metadata drivers for: %s"
 msgstr "מנהלי התקנים של מטא נתונים של קובץ עבור: %s"
 
-#: views.py:90
+#: views.py:89
 msgid ""
 "This could mean that the file metadata detection has not completed or that "
 "the driver does not support any metadata field for the file type of this "
@@ -229,45 +229,44 @@ msgstr ""
 "פירוש הדבר יכול להיות שזיהוי המטא נתונים של הקבצים לא הושלם או שמנהל ההתקן "
 "אינו תומך בשדה מטא נתונים כלשהו עבור סוג הקובץ של מסמך זה."
 
-#: views.py:95
+#: views.py:94
 msgid "No file metadata available for this driver."
 msgstr "אין מטא נתונים זמינים עבור מנהל ההתקן הזה."
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 "תכונות מטא נתונים של קובץ עבור: %(document_file)s עם מנהל ההתקן: %(driver)s"
 
-#: views.py:121
+#: views.py:120
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr "%(count)d קבצי מסמכים שנשלחו לתור המטא נתונים של הקבצים."
 
-#: views.py:124
+#: views.py:123
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
 msgstr "קובץ מסמך %(count)d שנשלח לתור המטא נתונים של הקבצים."
 
-#: views.py:133
+#: views.py:132
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] "האם לשלוח את קובץ המסמך שנבחר לתור המטא נתונים של הקבצים?"
 msgstr[1] "האם לשלוח את קבצי המסמכים שנבחרו לתור המטא נתונים של הקבצים?"
 msgstr[2] "האם לשלוח את קבצי המסמכים שנבחרו לתור המטא נתונים של הקבצים?"
-msgstr[3] "האם לשלוח את קבצי המסמכים שנבחרו לתור המטא נתונים של הקבצים?"
 
-#: views.py:164
+#: views.py:163
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr "ערוך הגדרות מטא נתונים של קובץ עבור סוג המסמך: %s"
 
-#: views.py:175
+#: views.py:174
 msgid "Submit all documents of a type for file metadata processing."
 msgstr "שלח את כל המסמכים מסוג זה לעיבוד מטא נתונים של קבצים."
 
-#: views.py:202
+#: views.py:201
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
 msgstr "מסמכי %(count)d שנוספו לתור עיבוד המטא נתונים של הקבצים."

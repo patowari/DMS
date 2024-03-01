@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,9 +19,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "צפיות"
 
@@ -29,19 +29,19 @@ msgstr "צפיות"
 msgid "Search"
 msgstr "לחפש"
 
-#: forms.py:54
+#: forms.py:56
 msgid "Selection"
 msgstr "בְּחִירָה"
 
-#: forms.py:342
+#: forms.py:344
 msgid "Label"
 msgstr "תווית"
 
-#: forms.py:348
+#: forms.py:350
 msgid "Relationship"
 msgstr "מערכת יחסים"
 
-#: generics.py:163
+#: generics.py:162
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -50,7 +50,7 @@ msgstr ""
 "בחר ערכים להסרה. החזק את Control כדי לבחור ערכים מרובים. לאחר השלמת הבחירה, "
 "לחץ על הלחצן למטה או לחץ פעמיים על הרשימה כדי להפעיל את הפעולה."
 
-#: generics.py:168
+#: generics.py:167
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -59,97 +59,97 @@ msgstr ""
 "בחר ערכים להוספת. החזק את Control כדי לבחור ערכים מרובים. לאחר השלמת הבחירה,"
 " לחץ על הלחצן למטה או לחץ פעמיים על הרשימה כדי להפעיל את הפעולה."
 
-#: generics.py:322
+#: generics.py:321
 msgid "Add all"
 msgstr "הוסף הכל"
 
-#: generics.py:329
+#: generics.py:328
 msgid "Add"
 msgstr "לְהוֹסִיף"
 
-#: generics.py:340
+#: generics.py:339
 msgid "Remove all"
 msgstr "להסיר את כל"
 
-#: generics.py:347
+#: generics.py:346
 msgid "Remove"
 msgstr "לְהַסִיר"
 
-#: generics.py:576
+#: generics.py:575
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "שגיאה בעדכון הקשר; %s"
 
-#: generics.py:583
+#: generics.py:582
 msgid "Relationships updated successfully"
 msgstr "מערכות היחסים עודכנו בהצלחה"
 
-#: generics.py:646
+#: generics.py:645
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "שגיאת נתונים כפולים: %(error)s"
 
-#: generics.py:665
+#: generics.py:664
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s לא נוצר, שגיאה: %(error)s"
 
-#: generics.py:676
+#: generics.py:675
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s נוצר בהצלחה."
 
-#: generics.py:721
+#: generics.py:720
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s לא נמחק, שגיאה: %(error)s."
 
-#: generics.py:731
+#: generics.py:730
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s נמחק בהצלחה."
 
-#: generics.py:794
+#: generics.py:793
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "שגיאה באחזור %(object)s; %(error)s"
 
-#: generics.py:906
+#: generics.py:905
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s לא עודכן, שגיאה: %(error)s."
 
-#: generics.py:916
+#: generics.py:915
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s עודכן בהצלחה."
 
-#: generics.py:983
+#: generics.py:982
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "אובייקטים %(count)d נמחקו בהצלחה."
 
-#: generics.py:984
+#: generics.py:983
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "&quot;%(object)s&quot; נמחק בהצלחה."
 
-#: generics.py:985
+#: generics.py:984
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "אובייקט %(count)d נמחק בהצלחה."
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "מחק אובייקטים %(count)d."
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "מחק את &quot;%(object)s&quot;."
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "מחק אובייקט %(count)d."
@@ -167,34 +167,6 @@ msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr "הצג כפתור שליחה והמתן עד ללחוץ על כפתור השליחה לפני עיבוד העלאה."
-
-#: templates/views/app/foot.html:46
-msgid "Cancel upload"
-msgstr "בטל העלאה"
-
-#: templates/views/app/foot.html:47
-msgid "Are you sure you want to cancel this upload?"
-msgstr "האם אתה בטוח שברצונך לבטל העלאה זו?"
-
-#: templates/views/app/foot.html:48
-msgid "Drop files or click here to upload files"
-msgstr "שחרר קבצים או לחץ כאן כדי להעלות קבצים"
-
-#: templates/views/app/foot.html:49
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "הדפדפן שלך אינו תומך בהעלאות קבצים בגרירה ושחרור."
-
-#: templates/views/app/foot.html:50
-msgid "Please use the fallback form below to upload your files."
-msgstr "אנא השתמש בטופס ההחזר שלהלן כדי להעלות את הקבצים שלך."
-
-#: templates/views/app/foot.html:51
-msgid "Clear"
-msgstr "ברור"
-
-#: templates/views/app/foot.html:52
-msgid "Server responded with {{statusCode}} code."
-msgstr "השרת הגיב בקוד {{statusCode}}."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

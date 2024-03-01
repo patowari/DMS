@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -21,47 +21,47 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:31 links.py:10 permissions.py:6
+#: apps.py:30 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "Управление на задачите"
 
-#: apps.py:113
+#: apps.py:112
 msgid "Label"
 msgstr "Етикет"
 
-#: apps.py:117
+#: apps.py:116
 msgid "Name"
 msgstr "Име"
 
-#: apps.py:122
+#: apps.py:121
 msgid "Default queue?"
 msgstr "Опашка по подразбиране?"
 
-#: apps.py:127
+#: apps.py:126
 msgid "Is transient?"
 msgstr "Преходен ли е?"
 
-#: apps.py:131
+#: apps.py:130
 msgid "Type"
 msgstr "Тип"
 
-#: apps.py:136
+#: apps.py:135
 msgid "Start time"
 msgstr "Начален час"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Host"
 msgstr "Хост"
 
-#: apps.py:144
+#: apps.py:143
 msgid "Arguments"
 msgstr "Аргументи"
 
-#: apps.py:148
+#: apps.py:147
 msgid "Keyword arguments"
 msgstr "Аргументи на ключови думи"
 
-#: apps.py:152
+#: apps.py:151
 msgid "Worker process ID"
 msgstr "Идентификационен номер на работния процес"
 

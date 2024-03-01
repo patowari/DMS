@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2023\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: lv\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr ""
 
@@ -28,19 +28,19 @@ msgstr ""
 msgid "Search"
 msgstr "Meklēt"
 
-#: forms.py:54
+#: forms.py:56
 msgid "Selection"
 msgstr "Selekcija"
 
-#: forms.py:342
+#: forms.py:344
 msgid "Label"
 msgstr "Etiķete"
 
-#: forms.py:348
+#: forms.py:350
 msgid "Relationship"
 msgstr ""
 
-#: generics.py:163
+#: generics.py:162
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -50,7 +50,7 @@ msgstr ""
 "Control taustiņu. Kad atlase ir pabeigta, noklikšķiniet uz zemāk redzamās "
 "pogas vai veiciet dubultklikšķi uz saraksta, lai aktivizētu darbību."
 
-#: generics.py:168
+#: generics.py:167
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -60,97 +60,97 @@ msgstr ""
 "Control taustiņu. Kad atlase ir pabeigta, noklikšķiniet uz zemāk redzamās "
 "pogas vai veiciet dubultklikšķi uz saraksta, lai aktivizētu darbību."
 
-#: generics.py:322
+#: generics.py:321
 msgid "Add all"
 msgstr "Pievienot visus"
 
-#: generics.py:329
+#: generics.py:328
 msgid "Add"
 msgstr "Pievienot"
 
-#: generics.py:340
+#: generics.py:339
 msgid "Remove all"
 msgstr "Noņemt visus"
 
-#: generics.py:347
+#: generics.py:346
 msgid "Remove"
 msgstr "Noņemt"
 
-#: generics.py:576
+#: generics.py:575
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr ""
 
-#: generics.py:583
+#: generics.py:582
 msgid "Relationships updated successfully"
 msgstr ""
 
-#: generics.py:646
+#: generics.py:645
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Datu kopijas kļūda: %(error)s"
 
-#: generics.py:665
+#: generics.py:664
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s nav izveidots, kļūda: %(error)s"
 
-#: generics.py:676
+#: generics.py:675
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s izveidots veiksmīgi."
 
-#: generics.py:721
+#: generics.py:720
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s nav dzēsts, kļūda: %(error)s."
 
-#: generics.py:731
+#: generics.py:730
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s veiksmīgi izdzēsts."
 
-#: generics.py:794
+#: generics.py:793
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:906
+#: generics.py:905
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s nav atjaunināts, kļūda: %(error)s."
 
-#: generics.py:916
+#: generics.py:915
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s veiksmīgi atjaunināts."
 
-#: generics.py:983
+#: generics.py:982
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:984
+#: generics.py:983
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:985
+#: generics.py:984
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -167,34 +167,6 @@ msgstr ""
 msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
-msgstr ""
-
-#: templates/views/app/foot.html:46
-msgid "Cancel upload"
-msgstr ""
-
-#: templates/views/app/foot.html:47
-msgid "Are you sure you want to cancel this upload?"
-msgstr ""
-
-#: templates/views/app/foot.html:48
-msgid "Drop files or click here to upload files"
-msgstr ""
-
-#: templates/views/app/foot.html:49
-msgid "Your browser does not support drag and drop file uploads."
-msgstr ""
-
-#: templates/views/app/foot.html:50
-msgid "Please use the fallback form below to upload your files."
-msgstr ""
-
-#: templates/views/app/foot.html:51
-msgid "Clear"
-msgstr ""
-
-#: templates/views/app/foot.html:52
-msgid "Server responded with {{statusCode}} code."
 msgstr ""
 
 #: templatetags/views_tags.py:30

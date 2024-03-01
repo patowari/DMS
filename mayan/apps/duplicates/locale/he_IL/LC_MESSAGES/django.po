@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:28 apps.py:54 links.py:14 queues.py:9
+#: apps.py:28 apps.py:54 links.py:14 queues.py:8
 msgid "Duplicates"
 msgstr "כפילויות"
 
@@ -28,7 +28,7 @@ msgstr "כפילויות"
 msgid "Duplicate backend"
 msgstr "שכפול backend"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Backend אפס"
 
@@ -40,15 +40,15 @@ msgstr "סכום בקרה (checksum) מדויק של קובץ המסמך"
 msgid "Exact document label"
 msgstr "תווית מסמך מדויקת"
 
-#: links.py:18 models.py:37 views.py:79
+#: links.py:18 models.py:39 views.py:79
 msgid "Duplicated documents"
 msgstr "מסמכים משוכפלים"
 
-#: links.py:24 queues.py:23
+#: links.py:24 queues.py:22
 msgid "Duplicated document scan"
 msgstr "סריקת מסמכים משוכפלים"
 
-#: models.py:19 models.py:29
+#: models.py:19 models.py:31
 msgid "Stored duplicate backend"
 msgstr "backends לאחסון כפולים"
 
@@ -56,23 +56,23 @@ msgstr "backends לאחסון כפולים"
 msgid "Stored duplicate backends"
 msgstr "backends לאחסון כפולים"
 
-#: models.py:33
+#: models.py:35
 msgid "Document"
 msgstr "מסמך"
 
-#: models.py:45
+#: models.py:47
 msgid "Duplicated backend entry"
 msgstr "ערך backend משוכפל"
 
-#: models.py:46
+#: models.py:48
 msgid "Duplicated backend entries"
 msgstr "ערכי backend משוכפלים"
 
-#: queues.py:14
+#: queues.py:13
 msgid "Clean empty duplicate lists"
 msgstr "נקוי רשימות כפולים ריקות"
 
-#: queues.py:18
+#: queues.py:17
 msgid "Scan document duplicates"
 msgstr "סרוק כפילויות של מסמכים"
 

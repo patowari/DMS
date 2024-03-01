@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:28 apps.py:54 links.py:14 queues.py:9
+#: apps.py:28 apps.py:54 links.py:14 queues.py:8
 msgid "Duplicates"
 msgstr "Trùng lặp"
 
@@ -28,7 +28,7 @@ msgstr "Trùng lặp"
 msgid "Duplicate backend"
 msgstr ""
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr ""
 
@@ -40,15 +40,15 @@ msgstr ""
 msgid "Exact document label"
 msgstr ""
 
-#: links.py:18 models.py:37 views.py:79
+#: links.py:18 models.py:39 views.py:79
 msgid "Duplicated documents"
 msgstr "Các tài liệu trùng lặp"
 
-#: links.py:24 queues.py:23
+#: links.py:24 queues.py:22
 msgid "Duplicated document scan"
 msgstr "Quét tài liệu trùng lặp"
 
-#: models.py:19 models.py:29
+#: models.py:19 models.py:31
 msgid "Stored duplicate backend"
 msgstr ""
 
@@ -56,23 +56,23 @@ msgstr ""
 msgid "Stored duplicate backends"
 msgstr ""
 
-#: models.py:33
+#: models.py:35
 msgid "Document"
 msgstr "Tài liệu"
 
-#: models.py:45
+#: models.py:47
 msgid "Duplicated backend entry"
 msgstr ""
 
-#: models.py:46
+#: models.py:48
 msgid "Duplicated backend entries"
 msgstr ""
 
-#: queues.py:14
+#: queues.py:13
 msgid "Clean empty duplicate lists"
 msgstr "Dọn danh sách trùng lặp rỗng"
 
-#: queues.py:18
+#: queues.py:17
 msgid "Scan document duplicates"
 msgstr "Tìm tài liệu trùng lặp"
 

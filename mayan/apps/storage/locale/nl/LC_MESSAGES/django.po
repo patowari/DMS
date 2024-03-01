@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:27 permissions.py:6 settings.py:15
+#: apps.py:29 permissions.py:6 settings.py:15
 msgid "Storage"
 msgstr "Opslag"
 
@@ -35,7 +35,7 @@ msgstr ""
 "Niet mogelijk om opslag %(name)s te initialiseren. Controleer de opslag "
 "backend pad en argumenten."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Download bestanden"
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Naam van de opslag om te verwerken."
 
-#: model_mixins.py:18 models.py:94
+#: model_mixins.py:18 models.py:92
 msgid "Filename"
 msgstr "Bestandsnaam"
 
@@ -102,27 +102,27 @@ msgstr "Naamloos bestand"
 msgid "Size"
 msgstr "Maat"
 
-#: model_mixins.py:108 models.py:48
+#: model_mixins.py:108 models.py:46
 msgid "User"
 msgstr "Gebruiker"
 
-#: models.py:40 models.py:91
+#: models.py:38 models.py:89
 msgid "File"
 msgstr "Bestand"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Label"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Download bestand"
 
-#: models.py:100
+#: models.py:98
 msgid "Shared uploaded file"
 msgstr "Gedeeld geüpload document"
 
-#: models.py:101 storages.py:36
+#: models.py:99 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Gedeelde geüploade bestanden"
 

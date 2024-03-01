@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:8 views.py:12
 msgid "Dashboards"
 msgstr "Nadzorne plošče"
 
@@ -37,7 +37,7 @@ msgstr "Oznaka"
 msgid "Administrator dashboard"
 msgstr "Skrbnik nadzorne plošče"
 
-#: links.py:14
+#: links.py:13
 msgid "Details"
 msgstr "Podrobnosti"
 
@@ -46,6 +46,6 @@ msgstr "Podrobnosti"
 msgid "View details"
 msgstr "Ogled podrobnosti"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Podrobnosti nadzorne plošče"

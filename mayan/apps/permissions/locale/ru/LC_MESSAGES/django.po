@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: lilo.panic, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -24,11 +24,11 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "Разрешения"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "Количество групп"
 
@@ -48,11 +48,11 @@ msgstr "Роль создана"
 msgid "Role edited"
 msgstr "Роль изменена"
 
-#: links.py:20 links.py:46 models.py:42 views.py:111
+#: links.py:20 links.py:46 models.py:42 views.py:113
 msgid "Roles"
 msgstr "Роли"
 
-#: links.py:28 views.py:57
+#: links.py:28 views.py:58
 msgid "Create new role"
 msgstr "Создать роль"
 
@@ -98,15 +98,15 @@ msgstr "Заголовок"
 msgid "Role"
 msgstr "Роль"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "Пространство имен"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "Имя"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "Разрешение"
 
@@ -199,42 +199,42 @@ msgstr "Доступные роли"
 msgid "Roles of group: %s"
 msgstr "Роли группы: %s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr ""
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr ""
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr ""
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr ""
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr ""
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -247,19 +247,19 @@ msgstr ""
 "предоставленные роли для определенных объектов, которые наследуются членами "
 "ее группы."
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "Нет ролей"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "Группы роли"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "Доступные группы"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
@@ -267,32 +267,32 @@ msgstr ""
 "Добавьте группы, чтобы они стали частью роли. Они унаследуют разрешения и "
 "контроль доступа роли."
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "Группы роли: %s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "Предоставленные разрешения"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "Доступные разрешения"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
 "Предоставленные здесь разрешения будут применяться ко всей системе и ко всем"
 " объектам."
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "Разрешения роли: %s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "網頁連結"
 
@@ -38,7 +38,7 @@ msgstr "網頁連結已編輯"
 msgid "Web link navigated"
 msgstr "網頁連結已瀏覽"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "建立新的網頁連結"
 
@@ -147,44 +147,44 @@ msgstr "可用的網頁連結"
 msgid "Web links to enable for document type: %s"
 msgstr "將要取用文件類型的網頁連結：%s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "刪除網頁連結：%s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "文件類型已啟用"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "可用的文件類型"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "要為其啟用網頁連結的文件類型：%s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "編輯網頁連結：%s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
 msgstr "網頁連結允許產生包含˙文件及外部資源的HTTP連結。連結的URL可以包含文件參數。"
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "沒有網頁連結"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "該文件沒有網頁連結"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "文件的網頁連結：%s"

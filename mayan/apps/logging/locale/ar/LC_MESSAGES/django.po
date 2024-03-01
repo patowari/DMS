@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -79,15 +79,15 @@ msgstr "خطأ في التقسيمات"
 msgid "Date and time"
 msgstr "الوقت والتاريخ"
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "النص"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr "إدخال خاطيء "
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr "إدخالات خاطئة"
 

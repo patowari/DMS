@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:27 permissions.py:6 settings.py:15
+#: apps.py:29 permissions.py:6 settings.py:15
 msgid "Storage"
 msgstr "Depolama"
 
@@ -37,7 +37,7 @@ msgstr ""
 "Depolama başlatılamıyor: %(name)s. Depolama yolunu ve bağımsız değişkenleri "
 "kontrol edin."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Dosyaları indir"
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "İşlenecek depolamanın adı."
 
-#: model_mixins.py:18 models.py:94
+#: model_mixins.py:18 models.py:92
 msgid "Filename"
 msgstr "Dosya adı"
 
@@ -104,27 +104,27 @@ msgstr "Adsız dosya"
 msgid "Size"
 msgstr "Boyut"
 
-#: model_mixins.py:108 models.py:48
+#: model_mixins.py:108 models.py:46
 msgid "User"
 msgstr "Kullanıcı"
 
-#: models.py:40 models.py:91
+#: models.py:38 models.py:89
 msgid "File"
 msgstr "Dosya"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Etiket"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Dosyayı indir"
 
-#: models.py:100
+#: models.py:98
 msgid "Shared uploaded file"
 msgstr "Paylaşılan yüklenen dosya"
 
-#: models.py:101 storages.py:36
+#: models.py:99 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Paylaşılan yüklenen dosyalar"
 

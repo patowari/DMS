@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:58+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:26 classes.py:200 links.py:27
+#: apps.py:26 classes.py:205 links.py:26
 msgid "ACLs"
 msgstr "存取控制列表"
 
@@ -59,19 +59,19 @@ msgstr "ACL已编辑"
 msgid "Role"
 msgstr "角色"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "新建访问控制表"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "删除"
 
-#: links.py:32 models.py:50 workflow_actions.py:46 workflow_actions.py:166
+#: links.py:31 models.py:50 workflow_actions.py:46 workflow_actions.py:166
 msgid "Permissions"
 msgstr "权限"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "全域ACLs(存取控制清單)"
 
@@ -175,7 +175,7 @@ msgstr "删除访问控制列表: %s"
 msgid "There are no ACLs for this object"
 msgstr "无此对象的访问控制列表"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -195,12 +195,12 @@ msgstr "被授权的权限"
 msgid "Available permissions"
 msgstr "有效的权限"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "为\"%(object)s\"的角色 \"%(role)s\" 权限"
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -208,11 +208,11 @@ msgid ""
 "menu."
 msgstr "禁用的权限是从父对象继承或直接授予角色的，不能从此视图中删除。需要通过“设置”菜单从父对象的ACL或角色中删除继承的权限。"
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "沒有ACLs存取控制"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "全域存取控制列表"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -27,15 +27,15 @@ msgstr ""
 msgid "Quotas"
 msgstr "Limit"
 
-#: classes.py:59
+#: classes.py:63
 msgid "none"
 msgstr "Żaden"
 
-#: classes.py:159
+#: classes.py:163
 msgid "Does not apply"
 msgstr "Nie dotyczy"
 
-#: classes.py:163 classes.py:167
+#: classes.py:167 classes.py:171
 msgid "Null backend"
 msgstr "Zerowy backend"
 
@@ -78,10 +78,8 @@ msgstr "Wszystkie typy dokumentów"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
+"individual document type selection."
 msgstr ""
-"Zastosuj do wszystkich typów dokumentów. Włączenie tego przydziału spowoduje"
-" zignorowanie indywidualnego wyboru typu dokumentu."
 
 #: mixins.py:26
 msgid "Document types"

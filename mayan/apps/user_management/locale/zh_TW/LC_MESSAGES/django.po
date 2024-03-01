@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -25,69 +25,69 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "用户管理"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "组"
 
-#: apps.py:78 apps.py:107 links.py:56 links.py:70 links.py:99 search.py:34
+#: apps.py:77 apps.py:108 links.py:56 links.py:70 links.py:99 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr "用户组"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "名称"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "使用者"
 
-#: apps.py:100 apps.py:219 links.py:61 links.py:102 links.py:120
+#: apps.py:101 apps.py:220 links.py:61 links.py:102 links.py:120
 #: views/user_views.py:170
 msgid "Users"
 msgstr "用户"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "電子郵件"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "名字"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "已激活？"
 
-#: apps.py:113 search.py:37
+#: apps.py:114 search.py:37
 msgid "Last name"
 msgstr "姓氏"
 
-#: apps.py:116 serializers.py:72
+#: apps.py:117 serializers.py:72
 msgid "Password"
 msgstr "密碼"
 
-#: apps.py:119 search.py:40
+#: apps.py:120 search.py:40
 msgid "Username"
 msgstr "用户名"
 
-#: apps.py:122
+#: apps.py:123
 msgid "Last login"
 msgstr "上次登录"
 
-#: apps.py:148
+#: apps.py:149
 msgid "Has usable password?"
 msgstr "有可用的密码吗？"
 
-#: apps.py:155
+#: apps.py:156
 msgid "All the groups."
 msgstr "所有用户组"
 
-#: apps.py:159
+#: apps.py:160
 msgid "All the users."
 msgstr "所有用户"
 

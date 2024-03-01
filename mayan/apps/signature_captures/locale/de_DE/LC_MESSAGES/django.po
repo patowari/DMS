@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -141,39 +141,39 @@ msgstr "Unterschriftserfassungen bearbeiten"
 msgid "View signature captures"
 msgstr "Unterschriftserfassungen anzeigen"
 
-#: search.py:12
+#: search.py:11
 msgid "Signature capture text"
 msgstr "Unterschriftserfassungstext"
 
-#: search.py:16
+#: search.py:15
 msgid "Signature capture user first name"
 msgstr "Unterschriftserfassung Vorname"
 
-#: search.py:20
+#: search.py:19
 msgid "Signature capture user last name"
 msgstr "Unterschriftserfassung Nachname"
 
-#: search.py:24
+#: search.py:23
 msgid "Signature capture user username"
 msgstr "Unterschriftserfassung Benutzername"
 
-#: search.py:35
+#: search.py:34
 msgid "Document type label"
 msgstr "Dokumententypbezeichner"
 
-#: search.py:38
+#: search.py:37
 msgid "Document label"
 msgstr "Dokumentenbezeichner"
 
-#: search.py:42
+#: search.py:41
 msgid "User first name"
 msgstr "Vorname Benutzer"
 
-#: search.py:45
+#: search.py:44
 msgid "User last name"
 msgstr "Nachname Benutzer"
 
-#: search.py:48
+#: search.py:47
 msgid "User username"
 msgstr "Benutzername"
 
@@ -216,7 +216,7 @@ msgstr ""
 "Argumente, die an das "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND übergeben werden."
 
-#: storages.py:15
+#: storages.py:14
 msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the"
 " settings {} and {} for formatting errors."
@@ -225,7 +225,7 @@ msgstr ""
 "initialisieren. Überprüfen Sie die Einstellungen {} und {} auf "
 "Formatierungsfehler."
 
-#: storages.py:21
+#: storages.py:20
 msgid "Signature captures cache"
 msgstr "Unterschriftserfassungscache"
 

@@ -5,33 +5,33 @@
 # Translators:
 # Translators:
 # Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2023
-# Ovadia Ovadia, 2023
+# Ovadia Ovadia, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
-"Last-Translator: Ovadia Ovadia, 2023\n"
+"Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:212 apps.py:648 events.py:6 menus.py:8
-#: models/document_models.py:103 permissions.py:6 queues.py:21 settings.py:33
+#: apps.py:216 apps.py:653 events.py:6 menus.py:8
+#: models/document_models.py:103 permissions.py:6 queues.py:21 settings.py:34
 #: statistics.py:286
 msgid "Documents"
 msgstr "מסמכים"
 
-#: apps.py:293
+#: apps.py:297
 msgid "Create a document type"
 msgstr "יצירת סוג מסמך"
 
-#: apps.py:295
+#: apps.py:299
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
@@ -39,47 +39,47 @@ msgstr ""
 "לכל מסמך שהועלה יש להקצות סוג מסמך, זו הדרך הבסיסית של Mayan EDMS לקטלג "
 "מסמכים."
 
-#: apps.py:394
+#: apps.py:399
 msgid "File comments"
 msgstr "הערות לקובץ"
 
-#: apps.py:398
+#: apps.py:403
 msgid "File encodings"
 msgstr "קידודי קבצים"
 
-#: apps.py:402
+#: apps.py:407
 msgid "File MIME types"
 msgstr "סוגי MIME של קבצים"
 
-#: apps.py:406
+#: apps.py:411
 msgid "File timestamps"
 msgstr "חותמות זמן של קובץ"
 
-#: apps.py:411 links/document_file_page_links.py:79
+#: apps.py:416 links/document_file_page_links.py:79
 #: models/document_file_models.py:106 models/document_file_page_models.py:24
 #: search.py:49
 msgid "Document file"
 msgstr "קובץ מסמך"
 
-#: apps.py:415 models/document_file_page_models.py:28
+#: apps.py:420 models/document_file_page_models.py:28
 #: models/document_version_page_models.py:38
 msgid "Page number"
 msgstr "מספר עמוד"
 
-#: apps.py:420
+#: apps.py:425
 msgid "Return the latest file of the document."
 msgstr "החזר את הקובץ האחרון של המסמך."
 
-#: apps.py:421
+#: apps.py:426
 msgid "Latest file"
 msgstr "הקובץ האחרון ביותר"
 
-#: apps.py:424
+#: apps.py:429
 msgid "Return the document instance."
 msgstr "החזר את מופע המסמך."
 
-#: apps.py:425 links/document_file_links.py:58
-#: links/document_file_page_links.py:73 links/document_version_links.py:74
+#: apps.py:430 links/document_file_links.py:58
+#: links/document_file_page_links.py:73 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:102 models/document_version_models.py:28
 #: models/favorite_document_models.py:30
@@ -89,25 +89,25 @@ msgstr "החזר את מופע המסמך."
 msgid "Document"
 msgstr "מסמך"
 
-#: apps.py:553 apps.py:605 apps.py:634 apps.py:668 apps.py:693
+#: apps.py:558 apps.py:610 apps.py:639 apps.py:673 apps.py:698
 msgid "Thumbnail"
 msgstr "תמונה ממוזערת"
 
-#: apps.py:559
+#: apps.py:564
 msgid "Type"
 msgstr "סוּג"
 
-#: apps.py:563 apps.py:610 apps.py:673 forms/document_file_forms.py:89
+#: apps.py:568 apps.py:615 apps.py:678 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "דפים"
 
-#: apps.py:572 models/favorite_document_models.py:33
+#: apps.py:577 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr "תאריך ושעה נוספו"
 
-#: apps.py:583
+#: apps.py:588
 msgid "Access date and time"
 msgstr "תאריך ושעת גישה"
 
@@ -139,29 +139,29 @@ msgstr ""
 "מחולל UUID אקראי ובלתי ניתן לשינוי (RFC 4122) עבור כל קובץ ומשרשר לו את שם "
 "הקובץ המקורי של הקובץ שהועלה."
 
-#: dashboard_widgets.py:32
+#: dashboard_widgets.py:29
 msgid "Total pages"
 msgstr "סך העמודים"
 
-#: dashboard_widgets.py:55
+#: dashboard_widgets.py:52
 msgid "Total documents"
 msgstr "סך המסמכים"
 
-#: dashboard_widgets.py:73 views/trashed_document_views.py:156
+#: dashboard_widgets.py:70 views/trashed_document_views.py:156
 msgid "Documents in trash"
 msgstr "מסמכים בפח מחזור"
 
-#: dashboard_widgets.py:91 links/document_type_links.py:77
-#: links/document_type_links.py:85 permissions.py:78
+#: dashboard_widgets.py:88 links/document_type_links.py:76
+#: links/document_type_links.py:84 permissions.py:78
 #: views/document_type_views.py:82
 msgid "Document types"
 msgstr "סוגי מסמכים"
 
-#: dashboard_widgets.py:109
+#: dashboard_widgets.py:106
 msgid "New documents this month"
 msgstr "מסמכים חדשים החודש"
 
-#: dashboard_widgets.py:123
+#: dashboard_widgets.py:120
 msgid "New pages this month"
 msgstr "דפים חדשים החודש"
 
@@ -362,7 +362,7 @@ msgid "Language"
 msgstr "שפה"
 
 #: forms/document_type_forms.py:42 models/document_models.py:52
-#: models/document_type_models.py:80 models/document_type_models.py:128
+#: models/document_type_models.py:82 models/document_type_models.py:130
 #: serializers/document_serializers.py:28 workflow_actions.py:11
 msgid "Document type"
 msgstr "סוג מסמך"
@@ -412,15 +412,15 @@ msgid ""
 msgstr "מספר עמוד שממנו ישוכפלו כל הטרנספורמציות. טרנספורמציות קיימות יאבדו."
 
 #: links/document_file_links.py:26 links/document_file_links.py:31
-#: links/document_type_links.py:28 links/document_type_links.py:52
-#: links/document_version_links.py:40 links/document_version_links.py:44
-#: links/document_version_page_links.py:46 links/trashed_document_links.py:19
-#: links/trashed_document_links.py:41 views/document_type_views.py:156
+#: links/document_type_links.py:27 links/document_type_links.py:51
+#: links/document_version_links.py:39 links/document_version_links.py:43
+#: links/document_version_page_links.py:46 links/trashed_document_links.py:18
+#: links/trashed_document_links.py:40 views/document_type_views.py:156
 msgid "Delete"
 msgstr "מחיקה"
 
-#: links/document_file_links.py:36 links/document_type_links.py:38
-#: links/document_type_links.py:59 links/document_version_links.py:49
+#: links/document_file_links.py:36 links/document_type_links.py:37
+#: links/document_type_links.py:58 links/document_version_links.py:48
 msgid "Edit"
 msgstr "עריכה"
 
@@ -428,7 +428,7 @@ msgstr "עריכה"
 msgid "Files"
 msgstr "קבצים"
 
-#: links/document_file_links.py:46 links/document_version_links.py:68
+#: links/document_file_links.py:46 links/document_version_links.py:67
 msgid "Print"
 msgstr "הדפסה"
 
@@ -437,16 +437,16 @@ msgid "Properties"
 msgstr "מאפיינים (תכונות)"
 
 #: links/document_file_links.py:71 links/document_links.py:38
-#: links/document_version_links.py:64
+#: links/document_version_links.py:63
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
 #: links/document_file_links.py:77 links/document_file_links.py:83
-#: links/document_version_links.py:87 links/document_version_links.py:93
+#: links/document_version_links.py:86 links/document_version_links.py:92
 msgid "Clear transformations"
 msgstr "טרנספורמציות ברורות"
 
-#: links/document_file_links.py:90 links/document_version_links.py:100
+#: links/document_file_links.py:90 links/document_version_links.py:99
 msgid "Clone transformations"
 msgstr "טרנספורמציות שיבוט"
 
@@ -529,39 +529,39 @@ msgstr "נוצר לאחרונה"
 msgid "Edit properties"
 msgstr "עריכת מאפיינים (תכונות)"
 
-#: links/document_type_links.py:23 views/document_type_views.py:97
+#: links/document_type_links.py:22 views/document_type_views.py:97
 msgid "Create document type"
 msgstr "יצירת סוג מסמך"
 
-#: links/document_type_links.py:34
+#: links/document_type_links.py:33
 msgid "Deletion policies"
 msgstr "מדיניות מחיקה"
 
-#: links/document_type_links.py:45
+#: links/document_type_links.py:44
 msgid "Add quick label to document type"
 msgstr "הוספת תווית מהירה לסוג המסמך"
 
-#: links/document_type_links.py:65 models/document_type_models.py:139
+#: links/document_type_links.py:64 models/document_type_models.py:143
 msgid "Quick labels"
 msgstr "תוויות מהירות"
 
-#: links/document_type_links.py:70
+#: links/document_type_links.py:69
 msgid "Filename generation"
 msgstr "מחולל יצירת שם קובץ"
 
-#: links/document_version_links.py:28
+#: links/document_version_links.py:27
 msgid "Make active"
 msgstr "הפוך לפעיל"
 
-#: links/document_version_links.py:33
+#: links/document_version_links.py:32
 msgid "Create document version"
 msgstr "יצירת גרסת מסמך"
 
-#: links/document_version_links.py:53 links/document_version_links.py:80
+#: links/document_version_links.py:52 links/document_version_links.py:79
 msgid "Versions"
 msgstr "גרסאות"
 
-#: links/document_version_links.py:58
+#: links/document_version_links.py:57
 msgid "Modify"
 msgstr "שינוי"
 
@@ -597,19 +597,19 @@ msgstr "הסרה מהמועדפים"
 msgid "Decorations"
 msgstr "קישוטים (Decorations)"
 
-#: links/trashed_document_links.py:24 links/trashed_document_links.py:37
+#: links/trashed_document_links.py:23 links/trashed_document_links.py:36
 msgid "Move to trash"
 msgstr "העבר לפח מחזור"
 
-#: links/trashed_document_links.py:27
+#: links/trashed_document_links.py:26
 msgid "Trash can"
 msgstr "פח מחזור"
 
-#: links/trashed_document_links.py:32 links/trashed_document_links.py:44
+#: links/trashed_document_links.py:31 links/trashed_document_links.py:43
 msgid "Restore"
 msgstr "שחזור"
 
-#: links/trashed_document_links.py:49 permissions.py:105
+#: links/trashed_document_links.py:48 permissions.py:105
 msgid "Empty trash"
 msgstr "ריקון פח המחזור"
 
@@ -669,12 +669,12 @@ msgstr "דֵצֶמבֶּר"
 msgid "All pages"
 msgstr "כל הדפים"
 
-#: models/document_file_model_mixins.py:298
-#: models/document_file_page_model_mixins.py:230
+#: models/document_file_model_mixins.py:306
+#: models/document_file_page_model_mixins.py:236
 #: models/document_model_mixins.py:180 models/document_models.py:60
-#: models/document_type_models.py:38 models/document_type_models.py:131
-#: models/document_version_model_mixins.py:113
-#: models/document_version_page_model_mixins.py:280
+#: models/document_type_models.py:38 models/document_type_models.py:133
+#: models/document_version_model_mixins.py:115
+#: models/document_version_page_model_mixins.py:282
 #: serializers/document_serializers.py:22
 #: serializers/document_version_serializers.py:17
 msgid "Label"
@@ -725,7 +725,7 @@ msgstr ""
 msgid "Document files"
 msgstr "קבצי מסמכים"
 
-#: models/document_file_page_model_mixins.py:224
+#: models/document_file_page_model_mixins.py:230
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "קובץ מסמך %(document_file)s - עמוד %(page_num)d מתוך %(total_pages)d"
@@ -853,19 +853,19 @@ msgstr "מחולל שמות קבצים ב-backend"
 msgid "The arguments for the filename generator backend as a YAML dictionary."
 msgstr "הפרמטרים למחולל שמות הקבצים ב-backend בצורה של מילון YAML."
 
-#: models/document_type_models.py:72
+#: models/document_type_models.py:74
 msgid "Filename generator backend arguments"
 msgstr "פרמטרים למחולל שם קובץ ב-backend"
 
-#: models/document_type_models.py:81
+#: models/document_type_models.py:83
 msgid "Documents types"
 msgstr "סוגי מסמכים"
 
-#: models/document_type_models.py:133
+#: models/document_type_models.py:136
 msgid "Enabled"
 msgstr "מופעל/מאופשר"
 
-#: models/document_type_models.py:138
+#: models/document_type_models.py:142
 msgid "Quick label"
 msgstr "תווית מהירה"
 
@@ -889,7 +889,7 @@ msgstr "פָּעִיל"
 msgid "Document versions"
 msgstr "גרסאות מסמך"
 
-#: models/document_version_page_model_mixins.py:274
+#: models/document_version_page_model_mixins.py:276
 #, python-format
 msgid "%(document_version)s page %(page_number)d of %(total_pages)d"
 msgstr "%(document_version)s עמוד %(page_number)d מתוך %(total_pages)d"
@@ -1258,7 +1258,7 @@ msgstr "מזהה מסמך"
 msgid "Restore URL"
 msgstr "שחזר כתובת URL"
 
-#: settings.py:49
+#: settings.py:50
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
 "will start deleting the oldest document file page image cache files. Specify"
@@ -1267,15 +1267,15 @@ msgstr ""
 "הסף שבו ה-DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND יתחיל למחוק את "
 "קבצי הקובץ העתיקים ביותר של עמודי המסמך. ציין את הגודל בבתים."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr "נתיב למחלקת המשנה Storage לשימוש בעת אחסון קבצי מסמכים."
 
-#: settings.py:64
+#: settings.py:65
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
 msgstr "טיעונים להעביר ל-DOCUMENT_FILE_STORAGE_BACKEND."
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
@@ -1283,16 +1283,16 @@ msgstr ""
 "נתיב למחלקת המשנה Storage לשימוש בעת אחסון קבצי תמונה של דף קובץ המסמך "
 "המאוחסן."
 
-#: settings.py:78
+#: settings.py:79
 msgid ""
 "Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr "טיעונים להעביר ל-DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:84
+#: settings.py:85
 msgid "Maximum number of favorite documents to remember per user."
 msgstr "מספר מקסימלי של מסמכים מועדפים לזכור לכל משתמש."
 
-#: settings.py:90
+#: settings.py:91
 msgid ""
 "Size of blocks to use when calculating the document file's checksum. A value"
 " of 0 disables the block calculation and the entire file will be loaded into"
@@ -1301,15 +1301,15 @@ msgstr ""
 "גודל בלוקים לשימוש בעת חישוב סכום הבדיקה של קובץ המסמך. ערך 0 משבית את חישוב"
 " הבלוק והקובץ כולו ייטען לזיכרון."
 
-#: settings.py:97
+#: settings.py:98
 msgid "Default documents language (in ISO639-3 format)."
 msgstr "שפת ברירת המחדל של מסמכים (בפורמט ISO639-3)."
 
-#: settings.py:101
+#: settings.py:102
 msgid "List of supported document languages. In ISO639-3 format."
 msgstr "רשימה של שפות מסמכים נתמכות. בפורמט ISO639-3."
 
-#: settings.py:107
+#: settings.py:108
 msgid ""
 "The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
 " will start deleting the oldest document version page image cache versions. "
@@ -1318,7 +1318,7 @@ msgstr ""
 "הסף שבו ה-DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND יתחיל למחוק את "
 "גרסאות המטמון העתיקות ביותר של דף גרסת המסמך. ציין את הגודל בבתים."
 
-#: settings.py:116
+#: settings.py:117
 msgid ""
 "Path to the Storage subclass to use when storing the cached document version"
 " page image versions."
@@ -1326,36 +1326,36 @@ msgstr ""
 "נתיב למחלקת המשנה Storage לשימוש בעת אחסון גרסאות התמונה של גרסת המסמך "
 "המאוחסנת."
 
-#: settings.py:124
+#: settings.py:125
 msgid ""
 "Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr "טיעונים להעביר ל-DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:146
+#: settings.py:147
 msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
 msgstr ""
 "מספר מקסימלי של מסמכים שניגשו לאחרונה (נוצרו, נערכו, צפו) לזכור לכל משתמש."
 
-#: settings.py:153
+#: settings.py:154
 msgid "Maximum number of recently created documents to show."
 msgstr "המספר המרבי של מסמכים שנוצרו לאחרונה להצגה."
 
-#: settings.py:159
+#: settings.py:160
 msgid "Amount in degrees to rotate a document page per user interaction."
 msgstr "כמות במעלות לסובב דף מסמך לכל אינטראקציה של משתמש."
 
-#: settings.py:165
+#: settings.py:166
 msgid ""
 "Time after which a document stub will be considered invalid and deleted."
 msgstr "פרק זמן שאחריו מסמך עם מאפיינים ללא תוכן ייחשב לא חוקי ויימחק."
 
-#: settings.py:172
+#: settings.py:173
 msgid "Height in pixels of the document thumbnail image."
 msgstr "גובה בפיקסלים של התמונה הממוזערת של המסמך."
 
-#: settings.py:191
+#: settings.py:192
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
@@ -1363,7 +1363,7 @@ msgstr ""
 "כמות מקסימלית באחוזים (%) כדי לאפשר למשתמש להתקרב לדף מסמך באופן "
 "אינטראקטיבי."
 
-#: settings.py:198
+#: settings.py:199
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
@@ -1371,43 +1371,43 @@ msgstr ""
 "כמות מינימלית באחוזים (%) כדי לאפשר למשתמש להקטין עמוד מסמך באופן "
 "אינטראקטיבי."
 
-#: settings.py:205
+#: settings.py:206
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr "כמות באחוזים הגדלה או הקטנה של דף מסמך לכל אינטראקציה של משתמש."
 
-#: statistics.py:290
+#: statistics.py:291
 msgid "New documents per month"
 msgstr "מסמכים חדשים לחודש"
 
-#: statistics.py:297
+#: statistics.py:298
 msgid "New document files per month"
 msgstr "קבצי מסמכים חדשים בחודש"
 
-#: statistics.py:304
+#: statistics.py:305
 msgid "New document pages per month"
 msgstr "דפי מסמכים חדשים בחודש"
 
-#: statistics.py:311
+#: statistics.py:312
 msgid "Total documents at each month"
 msgstr "סך המסמכים בכל חודש"
 
-#: statistics.py:318
+#: statistics.py:319
 msgid "Total document files at each month"
 msgstr "סך כל קבצי המסמכים בכל חודש"
 
-#: statistics.py:325
+#: statistics.py:326
 msgid "Total document pages at each month"
 msgstr "סך כל עמודי המסמכים בכל חודש"
 
-#: statistics.py:332
+#: statistics.py:333
 msgid "Total documents per document type"
 msgstr "סך המסמכים לכל סוג מסמך"
 
-#: statistics.py:339
+#: statistics.py:340
 msgid "Total document files per document type"
 msgstr "סך כל קבצי המסמכים לכל סוג מסמך"
 
-#: statistics.py:346
+#: statistics.py:347
 msgid "Total document file pages per document type"
 msgstr "סך כל עמודי קובץ המסמכים לכל סוג מסמך"
 
@@ -1482,17 +1482,17 @@ msgstr "אין דפים להצגה"
 msgid "Unknown language \"%s\""
 msgstr "שפה לא ידועה &quot;%s&quot;"
 
-#: views/document_file_page_views.py:48
+#: views/document_file_page_views.py:49
 #, python-format
 msgid "%(count)d document file queued for page count recalculation."
 msgstr "קובץ מסמך %(count)d תור לחישוב מחדש של ספירת עמודים."
 
-#: views/document_file_page_views.py:51
+#: views/document_file_page_views.py:52
 #, python-format
 msgid "%(count)d document files queued for page count recalculation."
 msgstr "%(count)d קבצי מסמכים בתור לחישוב מחדש של ספירת עמודים."
 
-#: views/document_file_page_views.py:60
+#: views/document_file_page_views.py:61
 msgid "Recalculate the page count of the selected document file?"
 msgid_plural "Recalculate the page count of the selected document files?"
 msgstr[0] "לחשב מחדש את ספירת הדפים של קובץ המסמך שנבחר?"
@@ -1500,12 +1500,12 @@ msgstr[1] "לחשב מחדש את ספירת הדפים של קבצי המסמכ
 msgstr[2] "לחשב מחדש את ספירת הדפים של קבצי המסמכים שנבחרו?"
 msgstr[3] "לחשב מחדש את ספירת הדפים של קבצי המסמכים שנבחרו?"
 
-#: views/document_file_page_views.py:71
+#: views/document_file_page_views.py:72
 #, python-format
 msgid "Recalculate the page count of the document file: %s?"
 msgstr "לחשב מחדש את ספירת הדפים של קובץ המסמך: %s?"
 
-#: views/document_file_page_views.py:104
+#: views/document_file_page_views.py:105
 msgid ""
 "This could mean that the document file is of a format that is not supported,"
 " that it is corrupted or that the upload process was interrupted. Use the "
@@ -1516,27 +1516,27 @@ msgstr ""
 "ההעלאה נקטע. השתמש בפעולת החישוב מחדש של דף קובץ המסמך כדי לנסות לבחון שוב "
 "את ספירת הדפים."
 
-#: views/document_file_page_views.py:110
+#: views/document_file_page_views.py:111
 msgid "No document file pages available"
 msgstr "אין דפי קובץ מסמכים זמינים"
 
-#: views/document_file_page_views.py:112
+#: views/document_file_page_views.py:113
 #, python-format
 msgid "Pages of document file: %s"
 msgstr "דפי קובץ מסמך: %s"
 
-#: views/document_file_page_views.py:193
-#: views/document_version_page_views.py:308
+#: views/document_file_page_views.py:194
+#: views/document_version_page_views.py:311
 msgid "There are no more pages in this document"
 msgstr "אין עוד דפים במסמך זה"
 
-#: views/document_file_page_views.py:209
-#: views/document_version_page_views.py:324
+#: views/document_file_page_views.py:210
+#: views/document_version_page_views.py:327
 msgid "You are already at the first page of this document"
 msgstr "אתה כבר בעמוד הראשון של מסמך זה"
 
-#: views/document_file_page_views.py:244
-#: views/document_version_page_views.py:363
+#: views/document_file_page_views.py:245
+#: views/document_version_page_views.py:366
 #, python-format
 msgid "Image of: %s"
 msgstr "תמונה של: %s"
@@ -1658,7 +1658,7 @@ msgstr ""
 "שגיאה בשיבוט טרנספורמציות העמוד עבור קובץ המסמך: %(document_file)s; "
 "%(error)s."
 
-#: views/document_file_views.py:351 views/document_version_views.py:411
+#: views/document_file_views.py:351 views/document_version_views.py:412
 msgid "Transformations cloned successfully."
 msgstr "טרנספורמציות שובטו בהצלחה."
 
@@ -1753,7 +1753,7 @@ msgstr "תוויות מהירות לסוג מסמך: %s"
 msgid "Filename generation setup for document type: %s"
 msgstr "הגדרת יצירת שם קובץ עבור סוג מסמך: %s"
 
-#: views/document_version_page_views.py:57
+#: views/document_version_page_views.py:56
 msgid ""
 "The page number of this page will be skipped. If you want to achieve "
 "sequential page numbering, use the page remap action instead."
@@ -1761,12 +1761,12 @@ msgstr ""
 "מספר העמוד של עמוד זה ידלג. אם ברצונך להשיג מספור עמודים ברצף, השתמש במקום "
 "זאת בפעולת המיפוי מחדש של העמוד."
 
-#: views/document_version_page_views.py:62
+#: views/document_version_page_views.py:61
 #, python-format
 msgid "Delete document version page %s ?"
 msgstr "למחוק את דף גרסת המסמך %s ?"
 
-#: views/document_version_page_views.py:101
+#: views/document_version_page_views.py:100
 msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
@@ -1774,28 +1774,28 @@ msgstr ""
 "דפי גרסת מסמך הם קישורים לדפי תוכן בפועל. יצירת אותם באמצעות פעולות המיפוי "
 "מחדש של הדף או פעולת שינוי הגרסה."
 
-#: views/document_version_page_views.py:105
+#: views/document_version_page_views.py:104
 msgid "No document version pages available"
 msgstr "אין דפי גרסת מסמך זמינים"
 
-#: views/document_version_page_views.py:108
+#: views/document_version_page_views.py:107
 #, python-format
 msgid "Pages of document version: %s"
 msgstr "דפי גרסת המסמך: %s"
 
-#: views/document_version_page_views.py:158
+#: views/document_version_page_views.py:159
 msgid "None"
 msgstr "אף אחד"
 
-#: views/document_version_page_views.py:183
+#: views/document_version_page_views.py:186
 msgid "There are no sources available to remap for this document version."
 msgstr "אין מקורות זמינים למיפוי מחדש עבור גרסת מסמך זו."
 
-#: views/document_version_page_views.py:186
+#: views/document_version_page_views.py:189
 msgid "No page sources available"
 msgstr "אין מקורות דפים זמינים"
 
-#: views/document_version_page_views.py:189
+#: views/document_version_page_views.py:192
 #, python-format
 msgid "Remap pages of document version: %s"
 msgstr "מיפוי מחדש של דפים של גרסת המסמך: %s"
@@ -1848,12 +1848,12 @@ msgstr "מחיקת גרסאות מסמך %(count)d."
 msgid "The process will be performed in the background. "
 msgstr "התהליך יתבצע ברקע."
 
-#: views/document_version_views.py:162
+#: views/document_version_views.py:163
 #, python-format
 msgid "Edit document version: %s"
 msgstr "עריכת גרסת מסמך: %s"
 
-#: views/document_version_views.py:199
+#: views/document_version_views.py:200
 msgid ""
 "Versions are views that can display document file pages as they are, remap "
 "or merge them into different layouts."
@@ -1861,55 +1861,54 @@ msgstr ""
 "גרסאות הן תצוגות שיכולות להציג דפי קובץ מסמכים כפי שהם, למפות מחדש או למזג "
 "אותם לפריסות שונות."
 
-#: views/document_version_views.py:202
+#: views/document_version_views.py:203
 msgid "No versions available"
 msgstr "אין גרסאות זמינות"
 
-#: views/document_version_views.py:205
+#: views/document_version_views.py:206
 #, python-format
 msgid "Versions of document: %s"
 msgstr "גרסאות של מסמך: %s"
 
-#: views/document_version_views.py:237
+#: views/document_version_views.py:238
 msgid "Document version modification backend queued successfully."
 msgstr "הקצה האחורי של שינוי גרסת המסמך הוצב בתור בהצלחה."
 
-#: views/document_version_views.py:247
+#: views/document_version_views.py:248
 #, python-format
 msgid "Execute version modification action for document version: %s"
 msgstr "בצע פעולת שינוי גרסה עבור גרסת המסמך: %s"
 
-#: views/document_version_views.py:278
+#: views/document_version_views.py:279
 #, python-format
 msgid "Preview of document version: %s"
 msgstr "תצוגה מקדימה של גרסת המסמך: %s"
 
-#: views/document_version_views.py:325
+#: views/document_version_views.py:326
 #, python-format
 msgid "Transformation clear request processed for %(count)d document version."
 msgstr "עיבוד בקשה ברורה לשינוי עבור גרסת מסמך %(count)d."
 
-#: views/document_version_views.py:329
+#: views/document_version_views.py:330
 #, python-format
 msgid ""
 "Transformation clear request processed for %(count)d document versions."
 msgstr "בקשה ברורה לשינוי מעובד עבור גרסאות מסמך %(count)d."
 
-#: views/document_version_views.py:337
+#: views/document_version_views.py:338
 msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
 msgstr[0] "לנקות את כל שינויי העמודים עבור גרסת המסמך שנבחרה?"
 msgstr[1] "לנקות את כל שינויי העמודים עבור גרסת המסמך שנבחרה?"
 msgstr[2] "לנקות את כל שינויי העמודים עבור גרסת המסמך שנבחרה?"
-msgstr[3] "לנקות את כל שינויי העמודים עבור גרסת המסמך שנבחרה?"
 
-#: views/document_version_views.py:348
+#: views/document_version_views.py:349
 #, python-format
 msgid "Clear all the page transformations for the document version: %s?"
 msgstr "לנקות את כל שינויי העמודים עבור גרסת המסמך: %s?"
 
-#: views/document_version_views.py:365
+#: views/document_version_views.py:366
 #, python-format
 msgid ""
 "Error deleting the page transformations for document version: "
@@ -1918,7 +1917,7 @@ msgstr ""
 "שגיאה במחיקת טרנספורמציות העמוד עבור גרסת המסמך: %(document_version)s; "
 "%(error)s."
 
-#: views/document_version_views.py:402
+#: views/document_version_views.py:403
 #, python-format
 msgid ""
 "Error cloning the page transformations for document version: "
@@ -1927,7 +1926,7 @@ msgstr ""
 "שגיאה בשיבוט טרנספורמציות העמוד עבור גרסת המסמך: %(document_version)s; "
 "%(error)s."
 
-#: views/document_version_views.py:426
+#: views/document_version_views.py:427
 #, python-format
 msgid "Clone page transformations of document version: %s"
 msgstr "שיבוט עמוד טרנספורמציות של גרסת המסמך: %s"

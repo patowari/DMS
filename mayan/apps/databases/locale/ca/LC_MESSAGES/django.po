@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -20,19 +20,19 @@ msgstr ""
 msgid "Databases"
 msgstr ""
 
-#: classes.py:205
+#: classes.py:215
 msgid "Model fields"
 msgstr ""
 
-#: classes.py:253
+#: classes.py:263
 msgid "Model related fields"
 msgstr ""
 
-#: classes.py:258
+#: classes.py:268
 msgid "Model properties"
 msgstr ""
 
-#: classes.py:263
+#: classes.py:273
 msgid "Model reverse fields"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "The backend class for this entry."
 msgstr ""
 
-#: model_mixins.py:103
+#: model_mixins.py:105
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -74,15 +74,15 @@ msgid ""
 "value is considered to be the logical true."
 msgstr ""
 
-#: model_mixins.py:108
+#: model_mixins.py:110
 msgid "Condition"
 msgstr ""
 
-#: model_mixins.py:129
+#: model_mixins.py:131
 msgid "The object will be executed, depending on the condition return value."
 msgstr ""
 
-#: model_mixins.py:132
+#: model_mixins.py:134
 msgid "Has a condition?"
 msgstr ""
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -20,47 +20,47 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:31 links.py:10 permissions.py:6
+#: apps.py:30 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "Administrador de tareas"
 
-#: apps.py:113
+#: apps.py:112
 msgid "Label"
 msgstr "Etiqueta"
 
-#: apps.py:117
+#: apps.py:116
 msgid "Name"
 msgstr "Nombre"
 
-#: apps.py:122
+#: apps.py:121
 msgid "Default queue?"
 msgstr "¿Cola principal?"
 
-#: apps.py:127
+#: apps.py:126
 msgid "Is transient?"
 msgstr "¿Es transitoria?"
 
-#: apps.py:131
+#: apps.py:130
 msgid "Type"
 msgstr "Tipo"
 
-#: apps.py:136
+#: apps.py:135
 msgid "Start time"
 msgstr "Tiempo de inicio"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Host"
 msgstr "Servidor"
 
-#: apps.py:144
+#: apps.py:143
 msgid "Arguments"
 msgstr "Argumentos"
 
-#: apps.py:148
+#: apps.py:147
 msgid "Keyword arguments"
 msgstr "Argumentos explícitos"
 
-#: apps.py:152
+#: apps.py:151
 msgid "Worker process ID"
 msgstr "ID del proceso trabajador"
 

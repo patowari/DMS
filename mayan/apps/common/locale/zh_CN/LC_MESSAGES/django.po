@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
@@ -23,27 +23,27 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "常用"
 
-#: dependencies.py:165
+#: dependencies.py:167
 msgid "Transifex Client"
 msgstr ""
 
-#: dependencies.py:182
+#: dependencies.py:184
 msgid "Used to allow offline translation of the code text strings."
 msgstr "用來允許離現翻譯程式碼的文字字串"
 
-#: dependencies.py:191
+#: dependencies.py:193
 msgid "Provides style checking."
 msgstr "提供格式檢查"
 
-#: dependencies.py:196
+#: dependencies.py:198
 msgid "Command line environment with autocompletion."
 msgstr "含有自動完成之命令列環境"
 
-#: dependencies.py:201
+#: dependencies.py:203
 msgid "Checks proper formatting of the README file."
 msgstr "檢查適當的README檔案格式"
 
@@ -67,7 +67,7 @@ msgstr "论坛"
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "许可证"
 
@@ -91,24 +91,24 @@ msgstr "線上商店"
 msgid "Get support"
 msgstr "取得協助"
 
-#: links.py:77 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:136
 msgid "Tools"
 msgstr "工具"
 
-#: literals.py:30
+#: literals.py:29
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "此功能已經被反對將於未來新版本上移除"
 
-#: literals.py:39
+#: literals.py:38
 msgid "Days"
 msgstr "天"
 
-#: literals.py:40
+#: literals.py:39
 msgid "Hours"
 msgstr "小时"
 
-#: literals.py:41
+#: literals.py:40
 msgid "Minutes"
 msgstr "分钟"
 
@@ -144,26 +144,26 @@ msgstr "用户"
 msgid "Copy object"
 msgstr "複製物件"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr "此模式下, 顯示\"列出項目\"選單選項如拖拉選單來取代個別的按鈕"
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr "此模式下, 顯示\"列出物件\"選單選項如拖拉選單來取代個別的按鈕"
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -173,15 +173,14 @@ msgstr ""
 "透過Mayan EDMS安裝的, 設計用來給所有應用程式的字串列表將將被移除.\n"
 "各個字串必須是虛擬的Python路徑. 各應用程式設定類別或含有其應用程式的封裝.例如['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"透過Mayan EDMS安裝的, 設計用來給所有應用程式的字串列表將被安裝.各個字串必須是虛擬的Python路徑(偏好的). "
-"各應用程式設定類別或含有其應用程式的封裝.例如['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -216,60 +215,60 @@ msgstr "專案首頁的URL"
 msgid "Click here to fix this."
 msgstr "单击此处修复此问题。"
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "輸入有效的 JSON 值"
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "输入有效的YAML值。"
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr "输入由字母，数字和下划线组成的有效“内部名称”。"
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "关于"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "首頁"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "將要被複製的區段: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "製作 %(object_name)s的副本 \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "物件複製成功"
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr "此处没有结果表示没有执行管理任务所需的权限。"
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "没有可用的设置选项。"
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "你可以對此系統各項的設定"
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "设置项目"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "這些模組通常用來做系統維護使用"

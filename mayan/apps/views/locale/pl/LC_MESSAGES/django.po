@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "Widoki"
 
@@ -33,19 +33,19 @@ msgstr "Widoki"
 msgid "Search"
 msgstr "Szukaj"
 
-#: forms.py:54
+#: forms.py:56
 msgid "Selection"
 msgstr "Zaznaczenie"
 
-#: forms.py:342
+#: forms.py:344
 msgid "Label"
 msgstr "Etykieta"
 
-#: forms.py:348
+#: forms.py:350
 msgid "Relationship"
 msgstr "Związek"
 
-#: generics.py:163
+#: generics.py:162
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -55,7 +55,7 @@ msgstr ""
 " zakończeniu wyboru kliknij przycisk poniżej lub kliknij dwukrotnie listę, "
 "aby aktywować akcję."
 
-#: generics.py:168
+#: generics.py:167
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -65,97 +65,97 @@ msgstr ""
 "zakończeniu wyboru kliknij przycisk poniżej lub kliknij dwukrotnie listę, "
 "aby aktywować akcję."
 
-#: generics.py:322
+#: generics.py:321
 msgid "Add all"
 msgstr "Dodaj wszystko"
 
-#: generics.py:329
+#: generics.py:328
 msgid "Add"
 msgstr "Dodaj"
 
-#: generics.py:340
+#: generics.py:339
 msgid "Remove all"
 msgstr "Usuń wszystko"
 
-#: generics.py:347
+#: generics.py:346
 msgid "Remove"
 msgstr "Usuń"
 
-#: generics.py:576
+#: generics.py:575
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Błąd uaktualnienia relacji; %s"
 
-#: generics.py:583
+#: generics.py:582
 msgid "Relationships updated successfully"
 msgstr "Relację uaktualniono pomyślnie"
 
-#: generics.py:646
+#: generics.py:645
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Błąd powielenia danych: %(error)s"
 
-#: generics.py:665
+#: generics.py:664
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s nie utworzono, błąd: %(error)s"
 
-#: generics.py:676
+#: generics.py:675
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s utworzono pomyślnie."
 
-#: generics.py:721
+#: generics.py:720
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s nie usunięto, błąd: %(error)s."
 
-#: generics.py:731
+#: generics.py:730
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s usunięto pomyślnie."
 
-#: generics.py:794
+#: generics.py:793
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:906
+#: generics.py:905
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s nie zaktualizowano, błąd: %(error)s."
 
-#: generics.py:916
+#: generics.py:915
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s zaktualizowano pomyślnie."
 
-#: generics.py:983
+#: generics.py:982
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:984
+#: generics.py:983
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:985
+#: generics.py:984
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -173,36 +173,6 @@ msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr ""
-
-#: templates/views/app/foot.html:46
-msgid "Cancel upload"
-msgstr "Anuluj przesyłanie"
-
-#: templates/views/app/foot.html:47
-msgid "Are you sure you want to cancel this upload?"
-msgstr "Czy na pewno chcesz anulować przesyłanie?"
-
-#: templates/views/app/foot.html:48
-msgid "Drop files or click here to upload files"
-msgstr "Upuść pliki lub kliknij tutaj, aby przesłać pliki"
-
-#: templates/views/app/foot.html:49
-msgid "Your browser does not support drag and drop file uploads."
-msgstr ""
-"Twoja przeglądarka nie obsługuje przesyłania plików metodą „przeciągnij i "
-"upuść”."
-
-#: templates/views/app/foot.html:50
-msgid "Please use the fallback form below to upload your files."
-msgstr "Aby przesłać pliki, skorzystaj z poniższego formularza rezerwowego."
-
-#: templates/views/app/foot.html:51
-msgid "Clear"
-msgstr "Wyczyść"
-
-#: templates/views/app/foot.html:52
-msgid "Server responded with {{statusCode}} code."
-msgstr "Serwer odpowiedział kodem {{statusCode}}."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

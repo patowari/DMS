@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,49 +19,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:31 links.py:10 permissions.py:6
+#: apps.py:30 links.py:10 permissions.py:6
 msgid "Task manager"
 msgstr "מנהל משימות"
 
-#: apps.py:113
+#: apps.py:112
 msgid "Label"
 msgstr "תווית"
 
-#: apps.py:117
+#: apps.py:116
 msgid "Name"
 msgstr "שֵׁם"
 
-#: apps.py:122
+#: apps.py:121
 msgid "Default queue?"
 msgstr "תור ברירת מחדל?"
 
-#: apps.py:127
+#: apps.py:126
 msgid "Is transient?"
 msgstr "האם חולף?"
 
-#: apps.py:131
+#: apps.py:130
 msgid "Type"
 msgstr "סוּג"
 
-#: apps.py:136
+#: apps.py:135
 msgid "Start time"
 msgstr "שעת התחלה"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Host"
 msgstr "מנחה"
 
-#: apps.py:144
+#: apps.py:143
 msgid "Arguments"
 msgstr "טיעונים"
 
-#: apps.py:148
+#: apps.py:147
 msgid "Keyword arguments"
 msgstr "ארגומנטים של מילות מפתח"
 
-#: apps.py:152
+#: apps.py:151
 msgid "Worker process ID"
 msgstr "מזהה תהליך עובד"
 

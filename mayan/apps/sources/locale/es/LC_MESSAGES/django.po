@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:53 events.py:6 links.py:144 menus.py:6 models.py:35 queues.py:7
-#: settings.py:13 views/source_views.py:177
+#: settings.py:12 views/source_views.py:177
 msgid "Sources"
 msgstr "Fuentes"
 
@@ -95,7 +95,7 @@ msgstr "Controlador"
 msgid "File"
 msgstr "Archivo"
 
-#: handlers.py:18
+#: handlers.py:22
 msgid "Default"
 msgstr "Por defecto"
 
@@ -111,7 +111,7 @@ msgstr "Subir archivo nuevo"
 msgid "Create source"
 msgstr "Crear fuente"
 
-#: links.py:135 source_backends/staging_folder_backends.py:370
+#: links.py:135 source_backends/staging_folder_backends.py:372
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -195,29 +195,29 @@ msgstr "Argumentos"
 msgid "Binary content for the new file."
 msgstr "Contenido binario para el nuevo archivo."
 
-#: settings.py:20
+#: settings.py:19
 msgid "Arguments to use when creating source backends."
 msgstr "Argumentos para usar al crear backends de origen."
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 "Ruta a la subclase de almacenamiento utilizada para almacenar archivos de "
 "imagen de origen almacenados en caché."
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr "Argumentos para pasar a SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 
-#: source_backends/email_backends.py:47
+#: source_backends/email_backends.py:46
 msgid "Host"
 msgstr "Servidor"
 
-#: source_backends/email_backends.py:56
+#: source_backends/email_backends.py:55
 msgid "SSL"
 msgstr "SSL"
 
-#: source_backends/email_backends.py:62
+#: source_backends/email_backends.py:61
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
@@ -225,19 +225,19 @@ msgstr ""
 "Las opciones típicas son 110 para POP3, 995 para POP3 sobre SSL, 143 para "
 "IMAP, 993 para IMAP sobre SSL."
 
-#: source_backends/email_backends.py:68
+#: source_backends/email_backends.py:67
 msgid "Port"
 msgstr "Puerto"
 
-#: source_backends/email_backends.py:75
+#: source_backends/email_backends.py:74
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: source_backends/email_backends.py:82
+#: source_backends/email_backends.py:81
 msgid "Password"
 msgstr "Contraseña"
 
-#: source_backends/email_backends.py:89
+#: source_backends/email_backends.py:88
 msgid ""
 "Name of the attachment that will contains the metadata type names and value "
 "pairs to be assigned to the rest of the downloaded attachments."
@@ -246,11 +246,11 @@ msgstr ""
 "los pares de valores que se asignarán al resto de los archivos adjuntos "
 "descargados."
 
-#: source_backends/email_backends.py:96
+#: source_backends/email_backends.py:95
 msgid "Metadata attachment name"
 msgstr "Nombre del anejo de metadatos"
 
-#: source_backends/email_backends.py:102
+#: source_backends/email_backends.py:101
 msgid ""
 "Select a metadata type to store the email's \"from\" value. Must be a valid "
 "metadata type for the document type selected previously."
@@ -259,11 +259,11 @@ msgstr ""
 "electrónico. Debe ser un tipo de metadatos válido para el tipo de documento "
 "seleccionado previamente."
 
-#: source_backends/email_backends.py:115
+#: source_backends/email_backends.py:114
 msgid "From metadata type"
 msgstr "Tipo de metadato de remitente"
 
-#: source_backends/email_backends.py:123
+#: source_backends/email_backends.py:122
 msgid ""
 "Select a metadata type to store the email's subject value. Must be a valid "
 "metadata type for the document type selected previously."
@@ -272,11 +272,11 @@ msgstr ""
 "correo electrónico. Debe ser un tipo de metadatos válido para el tipo de "
 "documento seleccionado previamente."
 
-#: source_backends/email_backends.py:137
+#: source_backends/email_backends.py:136
 msgid "Subject metadata type"
 msgstr "Tipo de metadatos de asunto "
 
-#: source_backends/email_backends.py:145
+#: source_backends/email_backends.py:144
 msgid ""
 "Select a metadata type to store the email's message ID value. Must be a "
 "valid metadata type for the document type selected previously."
@@ -285,20 +285,20 @@ msgstr ""
 " correo electrónico. Debe ser un tipo de metadatos válido para el tipo de "
 "documento seleccionado anteriormente."
 
-#: source_backends/email_backends.py:159
+#: source_backends/email_backends.py:158
 msgid "Message ID metadata type"
 msgstr "ID de tipo de metadatos de mensaje"
 
-#: source_backends/email_backends.py:167
+#: source_backends/email_backends.py:166
 msgid "Store the body of the email as a text document."
 msgstr ""
 "Almacenar el cuerpo del correo electrónico como un documento de texto."
 
-#: source_backends/email_backends.py:169
+#: source_backends/email_backends.py:168
 msgid "Store email body"
 msgstr "Almacenar cuerpo del correo electrónico"
 
-#: source_backends/email_backends.py:321
+#: source_backends/email_backends.py:320
 #, python-format
 msgid ""
 "\"From\" metadata type \"%(metadata_type)s\" is not valid for the document "
@@ -307,7 +307,7 @@ msgstr ""
 "\"De\" tipo de metadatos \"%(metadata_type)s\" no es válido para el tipo de "
 "documento: %(document_type)s"
 
-#: source_backends/email_backends.py:336
+#: source_backends/email_backends.py:335
 #, python-format
 msgid ""
 "Subject metadata type \"%(metadata_type)s\" is not valid for the document "
@@ -316,7 +316,7 @@ msgstr ""
 "El tipo de metadatos de tema \"%(metadata_type)s\" no es válido para el tipo"
 " de documento: %(document_type)s"
 
-#: source_backends/email_backends.py:351
+#: source_backends/email_backends.py:350
 #, python-format
 msgid ""
 "Message ID metadata type \"%(metadata_type)s\" is not valid for the document"
@@ -325,15 +325,15 @@ msgstr ""
 "El ID de tipo de metadatos de mensaje \"%(metadata_type)s\" no es válido "
 "para el tipo de documento: %(document_type)s"
 
-#: source_backends/email_backends.py:400
+#: source_backends/email_backends.py:399
 msgid "IMAP Mailbox from which to check for messages."
 msgstr "Buzón IMAP en el cual revisar mensajes."
 
-#: source_backends/email_backends.py:404
+#: source_backends/email_backends.py:403
 msgid "Mailbox"
 msgstr "Buzón"
 
-#: source_backends/email_backends.py:411
+#: source_backends/email_backends.py:410
 msgid ""
 "Criteria to use when searching for messages to process. Use the format "
 "specified in https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
@@ -341,11 +341,11 @@ msgstr ""
 "Criterios a utilizar al buscar mensajes para procesar. Use el formato "
 "especificado en https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 
-#: source_backends/email_backends.py:415
+#: source_backends/email_backends.py:414
 msgid "Search criteria"
 msgstr "Criterio de búsqueda"
 
-#: source_backends/email_backends.py:423
+#: source_backends/email_backends.py:422
 msgid ""
 "IMAP STORE command to execute on messages after they are processed. One "
 "command per line. Use the commands specified in "
@@ -357,37 +357,37 @@ msgstr ""
 "https://tools.ietf.org/html/rfc2060.html#section-6.4.6 o los comandos "
 "personalizados para su servidor IMAP."
 
-#: source_backends/email_backends.py:428
+#: source_backends/email_backends.py:427
 msgid "Store commands"
 msgstr "Comandos  STORE"
 
-#: source_backends/email_backends.py:435
+#: source_backends/email_backends.py:434
 msgid "Execute the IMAP expunge command after processing each email message."
 msgstr ""
 "Ejecute el comando de eliminación de IMAP después de procesar cada mensaje "
 "de correo electrónico."
 
-#: source_backends/email_backends.py:438
+#: source_backends/email_backends.py:437
 msgid "Execute expunge"
 msgstr "Ejecutar expunge"
 
-#: source_backends/email_backends.py:445
+#: source_backends/email_backends.py:444
 msgid "IMAP Mailbox to which processed messages will be copied."
 msgstr "Buzón IMAP en el que se copiarán los mensajes procesados."
 
-#: source_backends/email_backends.py:447
+#: source_backends/email_backends.py:446
 msgid "Destination mailbox"
 msgstr "Buzón de destino"
 
-#: source_backends/email_backends.py:453
+#: source_backends/email_backends.py:452
 msgid "IMAP email"
 msgstr "Correo electrónico IMAP"
 
-#: source_backends/email_backends.py:599
+#: source_backends/email_backends.py:598
 msgid "Timeout"
 msgstr "Tiempo de expiración"
 
-#: source_backends/email_backends.py:602
+#: source_backends/email_backends.py:601
 msgid "POP3 email"
 msgstr "Correo electrónico POP3"
 
@@ -403,38 +403,38 @@ msgstr "Nunca"
 msgid "Ask user"
 msgstr "Preguntar al usuario"
 
-#: source_backends/mixins.py:133
+#: source_backends/mixins.py:137
 msgid "Uncompress"
 msgstr "Descomprimir"
 
-#: source_backends/mixins.py:137
+#: source_backends/mixins.py:141
 msgid "Whether to expand or not compressed archives."
 msgstr "Expandir o no archivos comprimidos."
 
-#: source_backends/mixins.py:161
+#: source_backends/mixins.py:165
 msgid "Expand compressed files"
 msgstr "Expandir archivos comprimidos"
 
-#: source_backends/mixins.py:163
+#: source_backends/mixins.py:167
 msgid "Upload a compressed file's contained files as individual documents."
 msgstr ""
 "Cargar los archivos contenidos de un archivo comprimido como documentos "
 "individuales."
 
-#: source_backends/mixins.py:262
+#: source_backends/mixins.py:266
 msgid "Assign a document type to documents uploaded from this source."
 msgstr ""
 "Asignar un tipo de documento a los documentos subidos desde esta fuente"
 
-#: source_backends/mixins.py:270
+#: source_backends/mixins.py:274
 msgid "Document type"
 msgstr "Tipo de documento"
 
-#: source_backends/mixins.py:277
+#: source_backends/mixins.py:281
 msgid "Interval in seconds between checks for new documents."
 msgstr "Intérvalo en segundos para detectar documentos nuevos"
 
-#: source_backends/mixins.py:283
+#: source_backends/mixins.py:287
 msgid "Interval"
 msgstr "Intérvalo"
 
@@ -468,46 +468,46 @@ msgstr "Propiedades de documento"
 msgid "Scan"
 msgstr "Escanear"
 
-#: source_backends/staging_folder_backends.py:247
-#: source_backends/staging_folder_backends.py:579
+#: source_backends/staging_folder_backends.py:249
+#: source_backends/staging_folder_backends.py:583
 msgid "Staging file"
 msgstr "Archivo provisional"
 
-#: source_backends/staging_folder_backends.py:282
+#: source_backends/staging_folder_backends.py:284
 #: source_backends/watch_folder_backends.py:38
 msgid "Server side filesystem path."
 msgstr "Ruta a los archivos en el servidor."
 
-#: source_backends/staging_folder_backends.py:287
+#: source_backends/staging_folder_backends.py:289
 #: source_backends/watch_folder_backends.py:43
 msgid "Folder path"
 msgstr "Ruta de la carpeta"
 
-#: source_backends/staging_folder_backends.py:293
+#: source_backends/staging_folder_backends.py:295
 msgid "Width value to be passed to the converter backend."
 msgstr "Valor de la anchura que se pasa al backend convertidor."
 
-#: source_backends/staging_folder_backends.py:298
+#: source_backends/staging_folder_backends.py:300
 msgid "Preview width"
 msgstr "Ancho de muestra"
 
-#: source_backends/staging_folder_backends.py:304
+#: source_backends/staging_folder_backends.py:306
 msgid "Height value to be passed to the converter backend."
 msgstr "Valor de la altura que se pasa al backend convertidor."
 
-#: source_backends/staging_folder_backends.py:309
+#: source_backends/staging_folder_backends.py:311
 msgid "Preview height"
 msgstr "Alto de muestra"
 
-#: source_backends/staging_folder_backends.py:315
+#: source_backends/staging_folder_backends.py:317
 msgid "Delete the file after is has been successfully uploaded."
 msgstr "Eliminar el archivo después de que se haya cargado correctamente."
 
-#: source_backends/staging_folder_backends.py:317
+#: source_backends/staging_folder_backends.py:319
 msgid "Delete after upload"
 msgstr "Borrar después de subir"
 
-#: source_backends/staging_folder_backends.py:324
+#: source_backends/staging_folder_backends.py:326
 #: source_backends/watch_folder_backends.py:50
 msgid ""
 "If checked, not only will the folder path be scanned for files but also its "
@@ -516,63 +516,63 @@ msgstr ""
 "Si se marca, no solo se analizará la ruta de la carpeta en busca de "
 "archivos, sino también sus subdirectorios."
 
-#: source_backends/staging_folder_backends.py:327
+#: source_backends/staging_folder_backends.py:329
 #: source_backends/watch_folder_backends.py:53
 msgid "Include subdirectories?"
 msgstr "¿Incluir subdirectorios?"
 
-#: source_backends/staging_folder_backends.py:334
+#: source_backends/staging_folder_backends.py:336
 #: source_backends/watch_folder_backends.py:60
 msgid "Regular expression used to select which files to upload."
 msgstr "Expresión regular utilizada para seleccionar qué archivos cargar."
 
-#: source_backends/staging_folder_backends.py:336
+#: source_backends/staging_folder_backends.py:338
 #: source_backends/watch_folder_backends.py:62
 msgid "Include regular expression"
 msgstr "Expresión regular de inclusión"
 
-#: source_backends/staging_folder_backends.py:343
+#: source_backends/staging_folder_backends.py:345
 #: source_backends/watch_folder_backends.py:69
 msgid "Regular expression used to exclude which files to upload."
 msgstr "Expresión regular utilizada para excluir qué archivos cargar."
 
-#: source_backends/staging_folder_backends.py:345
+#: source_backends/staging_folder_backends.py:347
 #: source_backends/watch_folder_backends.py:71
 msgid "Exclude regular expression"
 msgstr "Expresión regular de exclusión"
 
-#: source_backends/staging_folder_backends.py:356
+#: source_backends/staging_folder_backends.py:358
 msgid "Staging folder"
 msgstr "Archivos provisionales"
 
-#: source_backends/staging_folder_backends.py:376
+#: source_backends/staging_folder_backends.py:378
 msgid "Select"
 msgstr "Seleccionar"
 
-#: source_backends/staging_folder_backends.py:388
+#: source_backends/staging_folder_backends.py:390
 msgid "Created"
 msgstr "Creado"
 
-#: source_backends/staging_folder_backends.py:392
+#: source_backends/staging_folder_backends.py:394
 msgid "Thumbnail"
 msgstr "Foto miniatura"
 
-#: source_backends/staging_folder_backends.py:554
+#: source_backends/staging_folder_backends.py:556
 #, python-format
 msgid "Error deleting staging file; %s"
 msgstr "Error al borrar archivo de provisional; %s"
 
-#: source_backends/staging_folder_backends.py:580
+#: source_backends/staging_folder_backends.py:584
 #, python-format
 msgid "Delete staging file \"%s\"?"
 msgstr "¿Eliminar archivo provisional \"%s\"?"
 
-#: source_backends/staging_folder_backends.py:653
+#: source_backends/staging_folder_backends.py:657
 #, python-format
 msgid "Unable get list of staging files; %s"
 msgstr "No se puede obtener la lista de archivos provisionales; %s"
 
-#: source_backends/staging_folder_backends.py:671
+#: source_backends/staging_folder_backends.py:675
 msgid ""
 "This could mean that the staging folder is empty. It could also mean that "
 "the operating system user account being used for Mayan EDMS doesn't have the"
@@ -583,7 +583,7 @@ msgstr ""
 "para Mayan EDMS no tiene los permisos necesarios del sistema de archivos "
 "para la carpeta."
 
-#: source_backends/staging_folder_backends.py:678
+#: source_backends/staging_folder_backends.py:682
 msgid "No staging files available"
 msgstr "No hay archivos de ensayo disponibles."
 
@@ -608,7 +608,7 @@ msgstr ""
 msgid "Staging folder files"
 msgstr "Archivos de carpetas de ensayo"
 
-#: views/base.py:55 wizards.py:58
+#: views/base.py:57 wizards.py:58
 msgid ""
 "No interactive document sources have been defined or none have been enabled,"
 " create one before proceeding."

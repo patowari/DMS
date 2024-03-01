@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -71,61 +71,61 @@ msgstr "İsim"
 msgid "App"
 msgstr "Uygulama"
 
-#: classes.py:219 classes.py:911
+#: classes.py:219 classes.py:927
 msgid "Environments"
 msgstr "Çevresel değişkenler"
 
-#: classes.py:316
+#: classes.py:330
 msgid "Need to specify at least one: app_label or module."
 msgstr "En az birini belirtmeniz gerekiyor: app_label veya modül."
 
-#: classes.py:321
+#: classes.py:335
 #, python-format
 msgid "Dependency \"%s\" already registered."
 msgstr "Bağımlılık \"%s\" zaten yüklü."
 
-#: classes.py:350
+#: classes.py:364
 #, python-format
 msgid "Installing package: %s... "
 msgstr "Paket yükleniyor: %s..."
 
-#: classes.py:357
+#: classes.py:371
 msgid "Already installed."
 msgstr "Zaten yüklenmiş."
 
-#: classes.py:362 classes.py:369 classes.py:375
+#: classes.py:376 classes.py:383 classes.py:389
 msgid "Complete."
 msgstr "Tamamlandı."
 
-#: classes.py:402
+#: classes.py:416
 msgid "Installed and correct version"
 msgstr "Yüklü ve doğru sürüm"
 
-#: classes.py:404
+#: classes.py:418
 msgid "Missing or incorrect version"
 msgstr "Eksik veya yanlış sürüm"
 
-#: classes.py:441
+#: classes.py:455
 msgid "None"
 msgstr "Yok"
 
-#: classes.py:450
+#: classes.py:464
 msgid "Not specified"
 msgstr "Belirtilmemiş"
 
-#: classes.py:453
+#: classes.py:467
 msgid "Patching files... "
 msgstr "Dosyalar ekleniyor..."
 
-#: classes.py:481
+#: classes.py:495
 msgid "Executables that are called directly by the code."
 msgstr "Doğrudan kod tarafından çağrılan yürütülebilir dosyalar."
 
-#: classes.py:483
+#: classes.py:497
 msgid "Binary"
 msgstr "Binary"
 
-#: classes.py:500
+#: classes.py:514
 msgid ""
 "JavaScript libraries downloaded the from NPM registry and used for front-end"
 " functionality."
@@ -133,51 +133,51 @@ msgstr ""
 "JavaScript kitaplıkları, NPM kayıt defterinden indirilir ve front-end işlevi"
 " için kullanılır."
 
-#: classes.py:503
+#: classes.py:517
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:535 classes.py:814
+#: classes.py:549 classes.py:830
 msgid "Downloading... "
 msgstr "İndiriliyor..."
 
-#: classes.py:540
+#: classes.py:554
 msgid "Verifying... "
 msgstr "Doğrulanıyor..."
 
-#: classes.py:545 classes.py:819
+#: classes.py:559 classes.py:835
 msgid "Extracting... "
 msgstr "Ayıklanıyor..."
 
-#: classes.py:751
+#: classes.py:767
 msgid "Python packages downloaded from PyPI."
 msgstr "Python paketleri PyPI'den indirildi."
 
-#: classes.py:753
+#: classes.py:769
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:794
+#: classes.py:810
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "fonts.googleapis.com adresinden indirilen yazı tipleri."
 
-#: classes.py:796
+#: classes.py:812
 msgid "Google font"
 msgstr "Google yazı tipi"
 
-#: classes.py:892
+#: classes.py:908
 msgid "Declared in app"
 msgstr "Uygulamada bildirildi"
 
-#: classes.py:893
+#: classes.py:909
 msgid "Show dependencies by the app that declared them."
 msgstr "Bağımlılıkları, bunları bildiren uygulamaya göre gösterin."
 
-#: classes.py:897
+#: classes.py:913
 msgid "Class"
 msgstr "Sınıf"
 
-#: classes.py:898
+#: classes.py:914
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -185,11 +185,11 @@ msgstr ""
 "Farklı bağımlılık sınıflarını göster. Sınıflar genellikle dile veya "
 "bağımlılığın dosya türlerine göre bölünür."
 
-#: classes.py:903
+#: classes.py:919
 msgid "State"
 msgstr "Durum"
 
-#: classes.py:904
+#: classes.py:920
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -199,7 +199,7 @@ msgstr ""
 "olduğu ve doğru bir sürüm olduğu anlamına gelir. False, bağımlılıkların "
 "eksik olduğu veya yanlış bir sürümün mevcut olduğu anlamına gelir."
 
-#: classes.py:912
+#: classes.py:928
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
@@ -245,14 +245,10 @@ msgstr "Belgeleme"
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
-"Ortam, üçüncü taraf kitaplıklarındaki sabitlenmemiş veya değişmez bağımlılık"
-" hatalarına geçici bir çözüm bulmak için doğrudan belge bağımlılıklarını "
-"belirtmek için kullanılır. Son kullanıcılar bu ortamdaki eksik "
-"bağımlılıkları yok sayabilir."
 
 #: environments.py:40
 msgid "Documentation (override)"

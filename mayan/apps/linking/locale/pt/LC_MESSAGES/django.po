@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -35,7 +35,7 @@ msgstr "Ligações"
 msgid "Label"
 msgstr "Nome"
 
-#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:49
+#: events.py:6 links.py:27 links.py:35 links.py:68 links.py:73 models.py:51
 #: permissions.py:6 views/smart_link_views.py:156
 msgid "Smart links"
 msgstr "Ligações inteligentes"
@@ -60,7 +60,7 @@ msgstr "Criar nova ligação inteligente"
 msgid "Delete"
 msgstr "Remover"
 
-#: links.py:53 models.py:41
+#: links.py:53 models.py:43
 msgid "Document types"
 msgstr "Tipos de documento"
 
@@ -182,27 +182,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Rótulo dinâmico"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Ativado"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Link inteligente"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "A inclusão é ignorada para o primeiro item."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Esta expressão será avaliada contra o documento atual."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Atributo documento externo"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -210,23 +210,23 @@ msgstr ""
 "A expressão usando propriedades de documento a ser avaliada contra o campo "
 "de documento externo."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Expressão"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Inverte a lógica do operador."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Negada"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Condição de ligação"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Condições de ligação"
 

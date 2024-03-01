@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:26 events.py:6 permissions.py:6 queues.py:8 settings.py:11
+#: apps.py:28 events.py:6 permissions.py:6 queues.py:8 settings.py:11
 msgid "File caching"
 msgstr "Кешування файлів"
 
@@ -76,7 +76,7 @@ msgstr "Кількість файлів розділу"
 msgid "Total cached files."
 msgstr "Усього кешованих файлів."
 
-#: model_mixins.py:88 model_mixins.py:282
+#: model_mixins.py:88 model_mixins.py:284
 msgid "Current size"
 msgstr "Поточний розмір"
 
@@ -84,7 +84,7 @@ msgstr "Поточний розмір"
 msgid "Current size of the cache."
 msgstr "Поточний розмір кешу."
 
-#: model_mixins.py:284
+#: model_mixins.py:286
 msgid "Current size of the cache partition."
 msgstr "Поточний розмір розділу кешу."
 
@@ -176,40 +176,40 @@ msgstr ""
 "Кількість разів, які кеш спробує видалити файли, щоб звільнити місце для "
 "нового запитуваного файлу, перед відмовою."
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Деталі кешу: %s"
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr "Список кешів файлів"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Деталі розділу кешу: %s"
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "Очистити розділи кешу \"%s\"?"
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr "Розділи кешу об’єктів надіслано на очищення."
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d кеші, подані на очищення."
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d кеш надіслано на очищення."
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "Надіслати вибраний кеш для очищення?"

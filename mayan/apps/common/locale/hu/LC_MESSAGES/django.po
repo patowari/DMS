@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -21,28 +21,28 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Általános"
 
-#: dependencies.py:165
+#: dependencies.py:167
 msgid "Transifex Client"
 msgstr "Transifex kliens"
 
-#: dependencies.py:182
+#: dependencies.py:184
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "A kódszöveg karakterláncainak offline fordításának engedélyezésére szolgál."
 
-#: dependencies.py:191
+#: dependencies.py:193
 msgid "Provides style checking."
 msgstr "Stílusellenőrzést biztosít."
 
-#: dependencies.py:196
+#: dependencies.py:198
 msgid "Command line environment with autocompletion."
 msgstr "Parancssori környezet automatikus kiegészítéssel."
 
-#: dependencies.py:201
+#: dependencies.py:203
 msgid "Checks proper formatting of the README file."
 msgstr "Ellenőrzi a README fájl megfelelő formázását."
 
@@ -66,7 +66,7 @@ msgstr "Fórum"
 msgid "Knowledge base"
 msgstr "Tudásbázis"
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "Licenc"
 
@@ -90,24 +90,24 @@ msgstr "Online áruház"
 msgid "Get support"
 msgstr "Támogatás-kérés"
 
-#: links.py:77 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:136
 msgid "Tools"
 msgstr "Eszközök"
 
-#: literals.py:30
+#: literals.py:29
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Ez a funkció elavult, és egy későbbi verzióban eltávolítjuk."
 
-#: literals.py:39
+#: literals.py:38
 msgid "Days"
 msgstr "Nap"
 
-#: literals.py:40
+#: literals.py:39
 msgid "Hours"
 msgstr "Óra"
 
-#: literals.py:41
+#: literals.py:40
 msgid "Minutes"
 msgstr "Perc"
 
@@ -143,7 +143,7 @@ msgstr "Felhasználó"
 msgid "Copy object"
 msgstr "Objektum másolása"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -151,7 +151,7 @@ msgstr ""
 "Lista módban az egyes gombok helyett legördülő menüként jelenítse meg a "
 "\"szempont lista\" menüpontokat."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -159,7 +159,7 @@ msgstr ""
 "Lista módban az egyes gombok helyett legördülő menüként jelenítse meg az "
 "&quot;objektum&quot; menüpontokat."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -169,7 +169,7 @@ msgstr ""
 " használatakor az összes alkalmazást a megfelelő háttértár-beállításokon "
 "keresztül is konfigurálni kell az alternatív perzisztencia használatához."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -182,18 +182,14 @@ msgstr ""
 "konfigurációs osztályához (előnyben részesített), vagy egy alkalmazást "
 "tartalmazó csomaghoz. Példa: [&#39;app_1&#39;, &#39;app_2&#39;]"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Az összes olyan alkalmazást jelölő karakterláncok listája, amelyek a Mayan "
-"EDMS által szokásosan telepítetteken kívül telepítve vannak. Minden "
-"karakterláncnak egy pontozott Python-útvonalnak kell lennie: egy alkalmazás "
-"konfigurációs osztályához (előnyben részesítve), vagy egy alkalmazást "
-"tartalmazó csomaghoz. Példa: [&#39;app_1&#39;, &#39;app_2&#39;]"
 
 #: settings.py:70
 msgid ""
@@ -234,15 +230,15 @@ msgstr "A projekt kezdőlapjának URL-je."
 msgid "Click here to fix this."
 msgstr "Kattintson ide a javításhoz."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Adjon meg egy érvényes JSON-értéket."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Adjon meg egy érvényes YAML értéket."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -250,29 +246,29 @@ msgstr ""
 "Adjon meg egy érvényes „belső nevet”, amely betűkből, számokból és "
 "aláhúzásjelekből áll."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Ról ről"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "itthon"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Másolandó mezők: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Készítsen másolatot %(object_name)s &quot; %(object)s &quot; fájlról?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Az objektum sikeresen másolva."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -280,18 +276,18 @@ msgstr ""
 "Ha itt nincs eredmény, az azt jelenti, hogy nem rendelkezik a szükséges "
 "engedélyekkel az adminisztrációs feladat végrehajtásához."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Nem állnak rendelkezésre beállítási lehetőségek."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Itt konfigurálhatja a rendszer összes aspektusát."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Beállítási elemek"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Ezeket a modulokat a rendszer karbantartására használják."

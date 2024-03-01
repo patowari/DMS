@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -18,29 +18,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "מְשׁוּתָף"
 
-#: dependencies.py:165
+#: dependencies.py:167
 msgid "Transifex Client"
 msgstr "לקוח Transifex"
 
-#: dependencies.py:182
+#: dependencies.py:184
 msgid "Used to allow offline translation of the code text strings."
 msgstr "משמש כדי לאפשר תרגום לא מקוון של מחרוזות טקסט הקוד."
 
-#: dependencies.py:191
+#: dependencies.py:193
 msgid "Provides style checking."
 msgstr "מספק בדיקת סגנון."
 
-#: dependencies.py:196
+#: dependencies.py:198
 msgid "Command line environment with autocompletion."
 msgstr "סביבת שורת פקודה עם השלמה אוטומטית."
 
-#: dependencies.py:201
+#: dependencies.py:203
 msgid "Checks proper formatting of the README file."
 msgstr "בודק עיצוב תקין של קובץ README."
 
@@ -64,7 +64,7 @@ msgstr "פוֹרוּם"
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "רישיון"
 
@@ -88,24 +88,24 @@ msgstr "חנות מקוונת"
 msgid "Get support"
 msgstr "קבל תמיכה"
 
-#: links.py:77 queues.py:7 views.py:134
+#: links.py:77 queues.py:7 views.py:136
 msgid "Tools"
 msgstr "כלים"
 
-#: literals.py:30
+#: literals.py:29
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "תכונה זו הוצאה משימוש והיא תוסר בגרסה עתידית."
 
-#: literals.py:39
+#: literals.py:38
 msgid "Days"
 msgstr "ימים"
 
-#: literals.py:40
+#: literals.py:39
 msgid "Hours"
 msgstr "שעות"
 
-#: literals.py:41
+#: literals.py:40
 msgid "Minutes"
 msgstr "דקות"
 
@@ -141,7 +141,7 @@ msgstr "מִשׁתַמֵשׁ"
 msgid "Copy object"
 msgstr "העתקת אובייקט"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -149,7 +149,7 @@ msgstr ""
 "במצב רשימה, הצג את אפשרויות התפריט &quot;היבט רשימה&quot; כתפריט נפתח במקום "
 "כפתורים בודדים."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -157,7 +157,7 @@ msgstr ""
 "במצב רשימה, הצג את אפשרויות התפריט &quot;אובייקט&quot; כתפריט נפתח במקום "
 "כפתורים בודדים."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -167,7 +167,7 @@ msgstr ""
 " האפליקציות גם באמצעות הגדרות הקצה האחורי של האחסון שלהן כדי להשתמש בהתמדה "
 "חלופית."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -179,17 +179,14 @@ msgstr ""
 "של יישום (מועדף), או חבילה המכילה יישום. דוגמה: [&#39;app_1&#39;, "
 "&#39;app_2&#39;]"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"רשימה של מחרוזות המציינות את כל היישומים המותקנים מעבר לאלו המותקנות בדרך "
-"כלל על ידי Mayan EDMS. כל מחרוזת צריכה להיות נתיב Python מנוקד אל: מחלקת "
-"תצורה של יישום (מועדף), או חבילה המכילה יישום. דוגמה: [&#39;app_1&#39;, "
-"&#39;app_2&#39;]"
 
 #: settings.py:70
 msgid ""
@@ -228,60 +225,60 @@ msgstr "כתובת האתר של דף הבית של הפרויקט."
 msgid "Click here to fix this."
 msgstr "לחיצה כאן כדי לתקן זאת."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "הזנת ערך JSON חוקי."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "הזנת ערך YAML חוקי."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr "הזנת &#39;שם פנימי&#39; חוקי המורכב מאותיות, מספרים וקווים תחתונים."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "אודות"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "בית"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "שדות להעתקה: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "האם ליצור עותק של %(object_name)s &quot;%(object)s&quot;?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "האובייקט הועתק בהצלחה."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr "אין תוצאות כאן פירושו שאין להם את ההרשאות הנדרשות לביצוע מטלות ניהול."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "אין אפשרויות הגדרה זמינות."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "כאן תוכל להגדיר את כל ההיבטים של המערכת."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "פריטי הגדרה"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "מודולים אלה משמשים לתחזוקת מערכת."

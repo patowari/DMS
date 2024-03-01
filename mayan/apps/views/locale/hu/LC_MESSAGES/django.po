@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "Nézetek"
 
@@ -30,19 +30,19 @@ msgstr "Nézetek"
 msgid "Search"
 msgstr "Keresés"
 
-#: forms.py:54
+#: forms.py:56
 msgid "Selection"
 msgstr "Kiválasztás"
 
-#: forms.py:342
+#: forms.py:344
 msgid "Label"
 msgstr "Cimke"
 
-#: forms.py:348
+#: forms.py:350
 msgid "Relationship"
 msgstr "Kapcsolat"
 
-#: generics.py:163
+#: generics.py:162
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -52,7 +52,7 @@ msgstr ""
 "tartsa lenyomva a Control billentyűt. A kijelölés befejezése után kattintson"
 " az alábbi gombra, vagy kattintson duplán a listára a művelet aktiválásához."
 
-#: generics.py:168
+#: generics.py:167
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -63,97 +63,97 @@ msgstr ""
 "kattintson az alábbi gombra, vagy kattintson duplán a listára a művelet "
 "aktiválásához."
 
-#: generics.py:322
+#: generics.py:321
 msgid "Add all"
 msgstr "Az összes hozzáadása"
 
-#: generics.py:329
+#: generics.py:328
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: generics.py:340
+#: generics.py:339
 msgid "Remove all"
 msgstr "Összes eltávolítása"
 
-#: generics.py:347
+#: generics.py:346
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: generics.py:576
+#: generics.py:575
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Hiba a kapcsolat frissítése során; %s"
 
-#: generics.py:583
+#: generics.py:582
 msgid "Relationships updated successfully"
 msgstr "A kapcsolatok frissítése sikeresen megtörtént"
 
-#: generics.py:646
+#: generics.py:645
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Ismétlődő adathiba: %(error)s"
 
-#: generics.py:665
+#: generics.py:664
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s nem jött létre, hiba: %(error)s"
 
-#: generics.py:676
+#: generics.py:675
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s sikeresen létrehozva."
 
-#: generics.py:721
+#: generics.py:720
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s nincs törölve, hiba: %(error)s ."
 
-#: generics.py:731
+#: generics.py:730
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s sikeresen törölve."
 
-#: generics.py:794
+#: generics.py:793
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Hiba %(object)s lekérésekor ; %(error)s"
 
-#: generics.py:906
+#: generics.py:905
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s nincs frissítve, hiba: %(error)s ."
 
-#: generics.py:916
+#: generics.py:915
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s sikeresen frissítve."
 
-#: generics.py:983
+#: generics.py:982
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d objektum sikeresen törölve."
 
-#: generics.py:984
+#: generics.py:983
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" sikeresen törölve."
 
-#: generics.py:985
+#: generics.py:984
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d objektum sikeresen törölve."
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "%(count)d objektum törlése."
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "\"%(object)s\" törlése."
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "%(count)d objektum törlése."
@@ -173,34 +173,6 @@ msgid ""
 msgstr ""
 "Megjeleníti meg a küldés gombot, és megvárja, amíg megnyomja a küldés "
 "gombot, mielőtt feldolgozná a feltöltést."
-
-#: templates/views/app/foot.html:46
-msgid "Cancel upload"
-msgstr "Feltöltés megszakítása"
-
-#: templates/views/app/foot.html:47
-msgid "Are you sure you want to cancel this upload?"
-msgstr "Biztosan megszakítja ezt a feltöltést?"
-
-#: templates/views/app/foot.html:48
-msgid "Drop files or click here to upload files"
-msgstr "Húzza ide a fájlokat, vagy kattintson ide a fájlok feltöltéséhez"
-
-#: templates/views/app/foot.html:49
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "Az Ön böngészője nem támogatja a drag and drop fájlfeltöltést."
-
-#: templates/views/app/foot.html:50
-msgid "Please use the fallback form below to upload your files."
-msgstr "Kérjük, használja az alábbi tartalék űrlapot a fájlok feltöltéséhez."
-
-#: templates/views/app/foot.html:51
-msgid "Clear"
-msgstr "Törlés"
-
-#: templates/views/app/foot.html:52
-msgid "Server responded with {{statusCode}} code."
-msgstr "A szerver {{statusCode}} kóddal válaszolt."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -70,61 +70,61 @@ msgstr "Ім'я"
 msgid "App"
 msgstr "Додаток"
 
-#: classes.py:219 classes.py:911
+#: classes.py:219 classes.py:927
 msgid "Environments"
 msgstr "Середовища"
 
-#: classes.py:316
+#: classes.py:330
 msgid "Need to specify at least one: app_label or module."
 msgstr "Потрібно вказати принаймні одне: app_label або module."
 
-#: classes.py:321
+#: classes.py:335
 #, python-format
 msgid "Dependency \"%s\" already registered."
 msgstr "Залежність \"%s\" вже зареєстрована."
 
-#: classes.py:350
+#: classes.py:364
 #, python-format
 msgid "Installing package: %s... "
 msgstr "Встановлення пакету: %s..."
 
-#: classes.py:357
+#: classes.py:371
 msgid "Already installed."
 msgstr "Вже встановлено."
 
-#: classes.py:362 classes.py:369 classes.py:375
+#: classes.py:376 classes.py:383 classes.py:389
 msgid "Complete."
 msgstr "Завершено."
 
-#: classes.py:402
+#: classes.py:416
 msgid "Installed and correct version"
 msgstr "Встановлена і відкорегована версія"
 
-#: classes.py:404
+#: classes.py:418
 msgid "Missing or incorrect version"
 msgstr "Відсутня або неправильна версія"
 
-#: classes.py:441
+#: classes.py:455
 msgid "None"
 msgstr "None"
 
-#: classes.py:450
+#: classes.py:464
 msgid "Not specified"
 msgstr "Не вказано"
 
-#: classes.py:453
+#: classes.py:467
 msgid "Patching files... "
 msgstr "Виправлення файлів..."
 
-#: classes.py:481
+#: classes.py:495
 msgid "Executables that are called directly by the code."
 msgstr "Виконувані файли, які викликаються безпосередньо кодом."
 
-#: classes.py:483
+#: classes.py:497
 msgid "Binary"
 msgstr "Двійковий"
 
-#: classes.py:500
+#: classes.py:514
 msgid ""
 "JavaScript libraries downloaded the from NPM registry and used for front-end"
 " functionality."
@@ -132,51 +132,51 @@ msgstr ""
 "JavaScript бібліотеки завантажуються з реєстру NPM та використовуються для "
 "функціональності на фронтенді."
 
-#: classes.py:503
+#: classes.py:517
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:535 classes.py:814
+#: classes.py:549 classes.py:830
 msgid "Downloading... "
 msgstr "Завантаження..."
 
-#: classes.py:540
+#: classes.py:554
 msgid "Verifying... "
 msgstr "Перевірка..."
 
-#: classes.py:545 classes.py:819
+#: classes.py:559 classes.py:835
 msgid "Extracting... "
 msgstr "Розпакування..."
 
-#: classes.py:751
+#: classes.py:767
 msgid "Python packages downloaded from PyPI."
 msgstr "Пакети Python, завантажені з PyPI."
 
-#: classes.py:753
+#: classes.py:769
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:794
+#: classes.py:810
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "Шрифти завантажені з fonts.googleapis.com."
 
-#: classes.py:796
+#: classes.py:812
 msgid "Google font"
 msgstr "Google шрифт"
 
-#: classes.py:892
+#: classes.py:908
 msgid "Declared in app"
 msgstr "Заявлено в додатку"
 
-#: classes.py:893
+#: classes.py:909
 msgid "Show dependencies by the app that declared them."
 msgstr "Показати залежності за допомогою додатку, який їх оголосив."
 
-#: classes.py:897
+#: classes.py:913
 msgid "Class"
 msgstr "Клас"
 
-#: classes.py:898
+#: classes.py:914
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -184,11 +184,11 @@ msgstr ""
 "Показати різні класи залежностей. Класи зазвичай поділяються за мовою або "
 "типами файлів залежностей."
 
-#: classes.py:903
+#: classes.py:919
 msgid "State"
 msgstr "Стан"
 
-#: classes.py:904
+#: classes.py:920
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -198,7 +198,7 @@ msgstr ""
 "має правильну версію. False означає, що залежність відсутня або присутня "
 "неправильна версія."
 
-#: classes.py:912
+#: classes.py:928
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
@@ -245,14 +245,10 @@ msgstr "Документація"
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
-"Середовище використовується для вказівки прямих залежностей документації для"
-" обходу незакріплених або незмінних помилок залежностей у сторонніх "
-"бібліотеках. Кінцеві користувачі можуть ігнорувати відсутні залежності в "
-"цьому середовищі."
 
 #: environments.py:40
 msgid "Documentation (override)"

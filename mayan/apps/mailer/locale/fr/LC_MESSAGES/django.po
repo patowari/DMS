@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -50,7 +50,7 @@ msgstr "Profil de messagerie créé"
 msgid "Mailing profile edited"
 msgstr "Profil de messagerie modifié"
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -58,82 +58,82 @@ msgstr ""
 "Adresse électronique du destinataire. Il peut s'agir de plusieurs adresses "
 "séparées par une virgule ou un point-virgule."
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "Adresse du courriel"
 
-#: forms.py:63 workflow_action_mixins.py:67
+#: forms.py:64 workflow_action_mixins.py:67
 msgid "Subject"
 msgstr "Sujet"
 
-#: forms.py:66 workflow_action_mixins.py:76
+#: forms.py:67 workflow_action_mixins.py:76
 msgid "Body"
 msgstr "Contenu"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr ""
 "Le profil de messagerie qui sera utilisé pour envoyer ce courrier "
 "électronique."
 
-#: forms.py:71 models.py:50 views/mailing_profile_views.py:139
+#: forms.py:72 models.py:52 views/mailing_profile_views.py:139
 #: workflow_action_mixins.py:12
 msgid "Mailing profile"
 msgstr "Profil de la liste de diffusion"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "Le pilote à utiliser pour envoyer les mails."
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "Backend"
 
-#: links.py:33 links.py:36
+#: links.py:32 links.py:35
 msgid "Email document link"
 msgstr "Envoyer par courriel le lien vers le"
 
-#: links.py:46 links.py:51
+#: links.py:45 links.py:50
 msgid "Email document file"
 msgstr "Envoyer par courriel le document"
 
-#: links.py:57 links.py:62
+#: links.py:56 links.py:61
 msgid "Email document file link"
 msgstr "Envoyer par courriel le lien vers le fichier"
 
-#: links.py:72 links.py:77
+#: links.py:71 links.py:76
 msgid "Email document version"
 msgstr "Envoyer par courriel la version du document"
 
-#: links.py:83
+#: links.py:82
 msgid "Email document version link"
 msgstr "Envoyer par courriel le lien vers la version du document"
 
-#: links.py:88
+#: links.py:87
 msgid "Email link version"
 msgstr "Envoyer par courriel le lien de la version"
 
-#: links.py:97
+#: links.py:96
 msgid "Create mailing profile"
 msgstr "Créer un profil de messagerie"
 
-#: links.py:103
+#: links.py:102
 msgid "Delete"
 msgstr "Supprimer"
 
-#: links.py:107
+#: links.py:106
 msgid "Edit"
 msgstr "Modifier"
 
-#: links.py:113
+#: links.py:112
 msgid "Mailing profiles list"
 msgstr "Liste des profils de diffusion"
 
-#: links.py:117 models.py:51
+#: links.py:116 models.py:53
 msgid "Mailing profiles"
 msgstr "Profil de diffusion"
 
-#: links.py:122 views/mailing_profile_views.py:168
+#: links.py:121 views/mailing_profile_views.py:168
 msgid "Test"
 msgstr "Test"
 
@@ -287,19 +287,19 @@ msgstr ""
 msgid "Default"
 msgstr "Défaut"
 
-#: models.py:36
+#: models.py:37
 msgid "Enabled"
 msgstr "Activé"
 
-#: models.py:39
+#: models.py:41
 msgid "The dotted Python path to the backend class."
 msgstr "Un chemin Python séparé par des point vers la classe de support."
 
-#: models.py:40
+#: models.py:42
 msgid "Backend path"
 msgstr "Chemin du backend"
 
-#: models.py:43
+#: models.py:45
 msgid "Backend data"
 msgstr "Données du backend"
 

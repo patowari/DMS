@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -23,17 +23,17 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:212 apps.py:648 events.py:6 menus.py:8
-#: models/document_models.py:103 permissions.py:6 queues.py:21 settings.py:33
+#: apps.py:216 apps.py:653 events.py:6 menus.py:8
+#: models/document_models.py:103 permissions.py:6 queues.py:21 settings.py:34
 #: statistics.py:286
 msgid "Documents"
 msgstr "Документи"
 
-#: apps.py:293
+#: apps.py:297
 msgid "Create a document type"
 msgstr "Створити тип документу"
 
-#: apps.py:295
+#: apps.py:299
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
@@ -41,47 +41,47 @@ msgstr ""
 "Кожному завантаженому документу повинен бути призначений тип документа, це "
 "основний спосіб, яким Mayan EDMS категоризує документи."
 
-#: apps.py:394
+#: apps.py:399
 msgid "File comments"
 msgstr "Коментарі до файлу"
 
-#: apps.py:398
+#: apps.py:403
 msgid "File encodings"
 msgstr "Кодування файлу"
 
-#: apps.py:402
+#: apps.py:407
 msgid "File MIME types"
 msgstr "Типи MIME файлу"
 
-#: apps.py:406
+#: apps.py:411
 msgid "File timestamps"
 msgstr "Часові мітки файлу"
 
-#: apps.py:411 links/document_file_page_links.py:79
+#: apps.py:416 links/document_file_page_links.py:79
 #: models/document_file_models.py:106 models/document_file_page_models.py:24
 #: search.py:49
 msgid "Document file"
 msgstr "Файл документа"
 
-#: apps.py:415 models/document_file_page_models.py:28
+#: apps.py:420 models/document_file_page_models.py:28
 #: models/document_version_page_models.py:38
 msgid "Page number"
 msgstr "Номер сторінки"
 
-#: apps.py:420
+#: apps.py:425
 msgid "Return the latest file of the document."
 msgstr "Повернути останній файл документа."
 
-#: apps.py:421
+#: apps.py:426
 msgid "Latest file"
 msgstr "Останній файл"
 
-#: apps.py:424
+#: apps.py:429
 msgid "Return the document instance."
 msgstr "Повернути екземпляр документа."
 
-#: apps.py:425 links/document_file_links.py:58
-#: links/document_file_page_links.py:73 links/document_version_links.py:74
+#: apps.py:430 links/document_file_links.py:58
+#: links/document_file_page_links.py:73 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:102 models/document_version_models.py:28
 #: models/favorite_document_models.py:30
@@ -91,25 +91,25 @@ msgstr "Повернути екземпляр документа."
 msgid "Document"
 msgstr "Документ"
 
-#: apps.py:553 apps.py:605 apps.py:634 apps.py:668 apps.py:693
+#: apps.py:558 apps.py:610 apps.py:639 apps.py:673 apps.py:698
 msgid "Thumbnail"
 msgstr "Мініатюра"
 
-#: apps.py:559
+#: apps.py:564
 msgid "Type"
 msgstr "Тип"
 
-#: apps.py:563 apps.py:610 apps.py:673 forms/document_file_forms.py:89
+#: apps.py:568 apps.py:615 apps.py:678 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Сторінки"
 
-#: apps.py:572 models/favorite_document_models.py:33
+#: apps.py:577 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr "Дата та час додання"
 
-#: apps.py:583
+#: apps.py:588
 msgid "Access date and time"
 msgstr "Дата та час доступу"
 
@@ -141,29 +141,29 @@ msgstr ""
 "Генерувати незмінний, випадковий UUID (RFC 4122) для кожного файлу та "
 "додавати оригінальне ім'я завантаженого файлу."
 
-#: dashboard_widgets.py:32
+#: dashboard_widgets.py:29
 msgid "Total pages"
 msgstr "Всього сторінок"
 
-#: dashboard_widgets.py:55
+#: dashboard_widgets.py:52
 msgid "Total documents"
 msgstr "Загальна кількість документів"
 
-#: dashboard_widgets.py:73 views/trashed_document_views.py:156
+#: dashboard_widgets.py:70 views/trashed_document_views.py:156
 msgid "Documents in trash"
 msgstr "Документи в кошику"
 
-#: dashboard_widgets.py:91 links/document_type_links.py:77
-#: links/document_type_links.py:85 permissions.py:78
+#: dashboard_widgets.py:88 links/document_type_links.py:76
+#: links/document_type_links.py:84 permissions.py:78
 #: views/document_type_views.py:82
 msgid "Document types"
 msgstr "Тип документа"
 
-#: dashboard_widgets.py:109
+#: dashboard_widgets.py:106
 msgid "New documents this month"
 msgstr "Нові документи цього місяця"
 
-#: dashboard_widgets.py:123
+#: dashboard_widgets.py:120
 msgid "New pages this month"
 msgstr "Нові сторінки цього місяця"
 
@@ -365,7 +365,7 @@ msgid "Language"
 msgstr "Мова"
 
 #: forms/document_type_forms.py:42 models/document_models.py:52
-#: models/document_type_models.py:80 models/document_type_models.py:128
+#: models/document_type_models.py:82 models/document_type_models.py:130
 #: serializers/document_serializers.py:28 workflow_actions.py:11
 msgid "Document type"
 msgstr "Тип документа"
@@ -417,15 +417,15 @@ msgstr ""
 "перетворення будуть втрачені."
 
 #: links/document_file_links.py:26 links/document_file_links.py:31
-#: links/document_type_links.py:28 links/document_type_links.py:52
-#: links/document_version_links.py:40 links/document_version_links.py:44
-#: links/document_version_page_links.py:46 links/trashed_document_links.py:19
-#: links/trashed_document_links.py:41 views/document_type_views.py:156
+#: links/document_type_links.py:27 links/document_type_links.py:51
+#: links/document_version_links.py:39 links/document_version_links.py:43
+#: links/document_version_page_links.py:46 links/trashed_document_links.py:18
+#: links/trashed_document_links.py:40 views/document_type_views.py:156
 msgid "Delete"
 msgstr "Видалити"
 
-#: links/document_file_links.py:36 links/document_type_links.py:38
-#: links/document_type_links.py:59 links/document_version_links.py:49
+#: links/document_file_links.py:36 links/document_type_links.py:37
+#: links/document_type_links.py:58 links/document_version_links.py:48
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -433,7 +433,7 @@ msgstr "Редагувати"
 msgid "Files"
 msgstr "Файли"
 
-#: links/document_file_links.py:46 links/document_version_links.py:68
+#: links/document_file_links.py:46 links/document_version_links.py:67
 msgid "Print"
 msgstr "Друк"
 
@@ -442,16 +442,16 @@ msgid "Properties"
 msgstr "Властивості"
 
 #: links/document_file_links.py:71 links/document_links.py:38
-#: links/document_version_links.py:64
+#: links/document_version_links.py:63
 msgid "Preview"
 msgstr "Попередній перегляд"
 
 #: links/document_file_links.py:77 links/document_file_links.py:83
-#: links/document_version_links.py:87 links/document_version_links.py:93
+#: links/document_version_links.py:86 links/document_version_links.py:92
 msgid "Clear transformations"
 msgstr "Очистити трансформації"
 
-#: links/document_file_links.py:90 links/document_version_links.py:100
+#: links/document_file_links.py:90 links/document_version_links.py:99
 msgid "Clone transformations"
 msgstr "Клонувати перетворення"
 
@@ -534,39 +534,39 @@ msgstr "Нещодавно створений"
 msgid "Edit properties"
 msgstr "Редагувати властивості"
 
-#: links/document_type_links.py:23 views/document_type_views.py:97
+#: links/document_type_links.py:22 views/document_type_views.py:97
 msgid "Create document type"
 msgstr "Створити типу документа"
 
-#: links/document_type_links.py:34
+#: links/document_type_links.py:33
 msgid "Deletion policies"
 msgstr "Політики видалення"
 
-#: links/document_type_links.py:45
+#: links/document_type_links.py:44
 msgid "Add quick label to document type"
 msgstr "Додати швидку мітку до типу документа"
 
-#: links/document_type_links.py:65 models/document_type_models.py:139
+#: links/document_type_links.py:64 models/document_type_models.py:143
 msgid "Quick labels"
 msgstr "Швидкі етикетки"
 
-#: links/document_type_links.py:70
+#: links/document_type_links.py:69
 msgid "Filename generation"
 msgstr "Генерація імені файлу"
 
-#: links/document_version_links.py:28
+#: links/document_version_links.py:27
 msgid "Make active"
 msgstr "Зробити активним"
 
-#: links/document_version_links.py:33
+#: links/document_version_links.py:32
 msgid "Create document version"
 msgstr "Створити версію документа"
 
-#: links/document_version_links.py:53 links/document_version_links.py:80
+#: links/document_version_links.py:52 links/document_version_links.py:79
 msgid "Versions"
 msgstr "Версії"
 
-#: links/document_version_links.py:58
+#: links/document_version_links.py:57
 msgid "Modify"
 msgstr "Змінити"
 
@@ -602,19 +602,19 @@ msgstr "Видалити з улюблених"
 msgid "Decorations"
 msgstr "Декорації"
 
-#: links/trashed_document_links.py:24 links/trashed_document_links.py:37
+#: links/trashed_document_links.py:23 links/trashed_document_links.py:36
 msgid "Move to trash"
 msgstr "Перемістити у кошик"
 
-#: links/trashed_document_links.py:27
+#: links/trashed_document_links.py:26
 msgid "Trash can"
 msgstr "Кошик"
 
-#: links/trashed_document_links.py:32 links/trashed_document_links.py:44
+#: links/trashed_document_links.py:31 links/trashed_document_links.py:43
 msgid "Restore"
 msgstr "Відновити"
 
-#: links/trashed_document_links.py:49 permissions.py:105
+#: links/trashed_document_links.py:48 permissions.py:105
 msgid "Empty trash"
 msgstr "Очистити кошик"
 
@@ -674,12 +674,12 @@ msgstr "Грудень"
 msgid "All pages"
 msgstr "Усі сторінки"
 
-#: models/document_file_model_mixins.py:298
-#: models/document_file_page_model_mixins.py:230
+#: models/document_file_model_mixins.py:306
+#: models/document_file_page_model_mixins.py:236
 #: models/document_model_mixins.py:180 models/document_models.py:60
-#: models/document_type_models.py:38 models/document_type_models.py:131
-#: models/document_version_model_mixins.py:113
-#: models/document_version_page_model_mixins.py:280
+#: models/document_type_models.py:38 models/document_type_models.py:133
+#: models/document_version_model_mixins.py:115
+#: models/document_version_page_model_mixins.py:282
 #: serializers/document_serializers.py:22
 #: serializers/document_version_serializers.py:17
 msgid "Label"
@@ -730,7 +730,7 @@ msgstr ""
 msgid "Document files"
 msgstr "Файли докумену"
 
-#: models/document_file_page_model_mixins.py:224
+#: models/document_file_page_model_mixins.py:230
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "%(document_file)s - сторінка %(page_num)d з %(total_pages)d"
@@ -865,19 +865,19 @@ msgstr "Сервер генератора імен файлів"
 msgid "The arguments for the filename generator backend as a YAML dictionary."
 msgstr "Аргументи для генератора імен файлів як словник YAML."
 
-#: models/document_type_models.py:72
+#: models/document_type_models.py:74
 msgid "Filename generator backend arguments"
 msgstr "Серверні аргументи генератора імен файлів"
 
-#: models/document_type_models.py:81
+#: models/document_type_models.py:83
 msgid "Documents types"
 msgstr "Типи документів"
 
-#: models/document_type_models.py:133
+#: models/document_type_models.py:136
 msgid "Enabled"
 msgstr "Активовано"
 
-#: models/document_type_models.py:138
+#: models/document_type_models.py:142
 msgid "Quick label"
 msgstr "Швидка мітка"
 
@@ -901,7 +901,7 @@ msgstr "Активний"
 msgid "Document versions"
 msgstr "Версії документа"
 
-#: models/document_version_page_model_mixins.py:274
+#: models/document_version_page_model_mixins.py:276
 #, python-format
 msgid "%(document_version)s page %(page_number)d of %(total_pages)d"
 msgstr "%(document_version)s сторінка %(page_number)d з %(total_pages)d"
@@ -1271,7 +1271,7 @@ msgstr "ID документа"
 msgid "Restore URL"
 msgstr "Відновити URL"
 
-#: settings.py:49
+#: settings.py:50
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
 "will start deleting the oldest document file page image cache files. Specify"
@@ -1281,17 +1281,17 @@ msgstr ""
 "видаляти найдавніші файли кешу зображень сторінок документів. Вкажіть розмір"
 " у байтах."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr ""
 "Шлях до підкласу сховища, який використовується для зберігання файлів "
 "документів."
 
-#: settings.py:64
+#: settings.py:65
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
 msgstr "Аргументи, які потрібно передати до DOCUMENT_FILE_STORAGE_BACKEND."
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
@@ -1299,20 +1299,20 @@ msgstr ""
 "Шлях до підкласу сховища, який використовується при зберіганні файлів "
 "зображень сторінок кешованого документа."
 
-#: settings.py:78
+#: settings.py:79
 msgid ""
 "Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Аргументи, які передаються до "
 "DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:84
+#: settings.py:85
 msgid "Maximum number of favorite documents to remember per user."
 msgstr ""
 "Максимальна кількість улюблених документів, яку слід запам'ятовувати для "
 "кожного користувача."
 
-#: settings.py:90
+#: settings.py:91
 msgid ""
 "Size of blocks to use when calculating the document file's checksum. A value"
 " of 0 disables the block calculation and the entire file will be loaded into"
@@ -1322,15 +1322,15 @@ msgstr ""
 "документа. Значення 0 вимикає обчислення блоку, і весь файл буде завантажено"
 " в пам'ять."
 
-#: settings.py:97
+#: settings.py:98
 msgid "Default documents language (in ISO639-3 format)."
 msgstr "Мова документів за замовчуванням (у форматі ISO639-3)."
 
-#: settings.py:101
+#: settings.py:102
 msgid "List of supported document languages. In ISO639-3 format."
 msgstr "Список підтримуваних мов документом. У форматі ISO639-3."
 
-#: settings.py:107
+#: settings.py:108
 msgid ""
 "The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
 " will start deleting the oldest document version page image cache versions. "
@@ -1340,7 +1340,7 @@ msgstr ""
 "видаляти найдавніші версії кешу зображень сторінок документів. Вкажіть "
 "розмір у байтах."
 
-#: settings.py:116
+#: settings.py:117
 msgid ""
 "Path to the Storage subclass to use when storing the cached document version"
 " page image versions."
@@ -1348,14 +1348,14 @@ msgstr ""
 "Шлях до підкласу сховища, який використовується при збереженні версій "
 "зображень сторінок кешованої версії документа."
 
-#: settings.py:124
+#: settings.py:125
 msgid ""
 "Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Аргументи, які потрібно передати до "
 "DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:146
+#: settings.py:147
 msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
@@ -1363,75 +1363,75 @@ msgstr ""
 "Максимальна кількість недавно відкритих документів (створених, редагованих, "
 "переглянутих) для запам'ятовування на кожного користувача."
 
-#: settings.py:153
+#: settings.py:154
 msgid "Maximum number of recently created documents to show."
 msgstr "Максимальна кількість недавно створених документів для відображення."
 
-#: settings.py:159
+#: settings.py:160
 msgid "Amount in degrees to rotate a document page per user interaction."
 msgstr "Обертання сторінки документа в градусах за раз."
 
-#: settings.py:165
+#: settings.py:166
 msgid ""
 "Time after which a document stub will be considered invalid and deleted."
 msgstr ""
 "Час, після якого документ-заглушка буде вважатися недійсним і видаленим."
 
-#: settings.py:172
+#: settings.py:173
 msgid "Height in pixels of the document thumbnail image."
 msgstr "Висота в пікселях зображення мініатюри документа."
 
-#: settings.py:191
+#: settings.py:192
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
 msgstr "Максимальний відсоток, на який можна збільшити сторінку документу."
 
-#: settings.py:198
+#: settings.py:199
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
 msgstr ""
 "Максимальний відсоток (%), на який можна зменьшити сторінку документу."
 
-#: settings.py:205
+#: settings.py:206
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
 "Кількість відсотків збільшення або зменшення сторінки документа за раз."
 
-#: statistics.py:290
+#: statistics.py:291
 msgid "New documents per month"
 msgstr "Нові документи на місяць"
 
-#: statistics.py:297
+#: statistics.py:298
 msgid "New document files per month"
 msgstr "Нові файли документа на місяць"
 
-#: statistics.py:304
+#: statistics.py:305
 msgid "New document pages per month"
 msgstr "Нові сторінки документа на місяць"
 
-#: statistics.py:311
+#: statistics.py:312
 msgid "Total documents at each month"
 msgstr "Загальна кількість документів за кожен місяць"
 
-#: statistics.py:318
+#: statistics.py:319
 msgid "Total document files at each month"
 msgstr "Загальна кількість файлів документа за кожен місяць"
 
-#: statistics.py:325
+#: statistics.py:326
 msgid "Total document pages at each month"
 msgstr "Загальна кількість сторінок документа за кожен місяць"
 
-#: statistics.py:332
+#: statistics.py:333
 msgid "Total documents per document type"
 msgstr "Загальна кількість документів за типом документу"
 
-#: statistics.py:339
+#: statistics.py:340
 msgid "Total document files per document type"
 msgstr "Загальна кількість файлів документів за типом документу"
 
-#: statistics.py:346
+#: statistics.py:347
 msgid "Total document file pages per document type"
 msgstr "Загальна кількість сторінок документу за типом документу"
 
@@ -1507,21 +1507,21 @@ msgstr "Немає сторінок для відображення"
 msgid "Unknown language \"%s\""
 msgstr "Невідома мова \"%s\""
 
-#: views/document_file_page_views.py:48
+#: views/document_file_page_views.py:49
 #, python-format
 msgid "%(count)d document file queued for page count recalculation."
 msgstr ""
 "%(count)d файл документа поставлено в чергу для перерахунку кількості "
 "сторінок."
 
-#: views/document_file_page_views.py:51
+#: views/document_file_page_views.py:52
 #, python-format
 msgid "%(count)d document files queued for page count recalculation."
 msgstr ""
 "%(count)d файлів документа поставлено в чергу для перерахунку кількості "
 "сторінок."
 
-#: views/document_file_page_views.py:60
+#: views/document_file_page_views.py:61
 msgid "Recalculate the page count of the selected document file?"
 msgid_plural "Recalculate the page count of the selected document files?"
 msgstr[0] "Перерахувати кількість сторінок вибраного файлу документа?"
@@ -1529,12 +1529,12 @@ msgstr[1] "Перерахувати кількість сторінок вибр
 msgstr[2] "Перерахувати кількість сторінок вибраних файлів документів?"
 msgstr[3] "Перерахувати кількість сторінок вибраних файлів документа?"
 
-#: views/document_file_page_views.py:71
+#: views/document_file_page_views.py:72
 #, python-format
 msgid "Recalculate the page count of the document file: %s?"
 msgstr "Перерахувати кількість сторінок у файлі документа: %s ?"
 
-#: views/document_file_page_views.py:104
+#: views/document_file_page_views.py:105
 msgid ""
 "This could mean that the document file is of a format that is not supported,"
 " that it is corrupted or that the upload process was interrupted. Use the "
@@ -1546,27 +1546,27 @@ msgstr ""
 "дією переобчислення сторінок файлу документа, щоб спробувати ще раз "
 "перевірити кількість сторінок."
 
-#: views/document_file_page_views.py:110
+#: views/document_file_page_views.py:111
 msgid "No document file pages available"
 msgstr "Немає доступних сторінок файлу документа"
 
-#: views/document_file_page_views.py:112
+#: views/document_file_page_views.py:113
 #, python-format
 msgid "Pages of document file: %s"
 msgstr "Сторінки файлу документа: %s"
 
-#: views/document_file_page_views.py:193
-#: views/document_version_page_views.py:308
+#: views/document_file_page_views.py:194
+#: views/document_version_page_views.py:311
 msgid "There are no more pages in this document"
 msgstr "У цьому документі більше немає сторінок"
 
-#: views/document_file_page_views.py:209
-#: views/document_version_page_views.py:324
+#: views/document_file_page_views.py:210
+#: views/document_version_page_views.py:327
 msgid "You are already at the first page of this document"
 msgstr "Ви вже на першій сторінці цього документа"
 
-#: views/document_file_page_views.py:244
-#: views/document_version_page_views.py:363
+#: views/document_file_page_views.py:245
+#: views/document_version_page_views.py:366
 #, python-format
 msgid "Image of: %s"
 msgstr "Зображення: %s"
@@ -1689,7 +1689,7 @@ msgstr ""
 "Помилка клонування перетворень сторінки для файлу документа: "
 "%(document_file)s; %(error)s."
 
-#: views/document_file_views.py:351 views/document_version_views.py:411
+#: views/document_file_views.py:351 views/document_version_views.py:412
 msgid "Transformations cloned successfully."
 msgstr "Перетворення успішно клоновано."
 
@@ -1784,7 +1784,7 @@ msgstr "Швидкі мітки для типу документа: %s"
 msgid "Filename generation setup for document type: %s"
 msgstr "Налаштування створення імені файлу для типу документа: %s"
 
-#: views/document_version_page_views.py:57
+#: views/document_version_page_views.py:56
 msgid ""
 "The page number of this page will be skipped. If you want to achieve "
 "sequential page numbering, use the page remap action instead."
@@ -1793,12 +1793,12 @@ msgstr ""
 "послідовної нумерації сторінок, замість цього скористайтеся функцією "
 "переналаштування сторінки."
 
-#: views/document_version_page_views.py:62
+#: views/document_version_page_views.py:61
 #, python-format
 msgid "Delete document version page %s ?"
 msgstr "Видалити сторінку версії документа %s ?"
 
-#: views/document_version_page_views.py:101
+#: views/document_version_page_views.py:100
 msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
@@ -1807,29 +1807,29 @@ msgstr ""
 "Створіть їх за допомогою дій переналаштування сторінки або дії модифікації "
 "версії."
 
-#: views/document_version_page_views.py:105
+#: views/document_version_page_views.py:104
 msgid "No document version pages available"
 msgstr "Немає доступних сторінок версії документа"
 
-#: views/document_version_page_views.py:108
+#: views/document_version_page_views.py:107
 #, python-format
 msgid "Pages of document version: %s"
 msgstr "Сторінки версії документа: %s"
 
-#: views/document_version_page_views.py:158
+#: views/document_version_page_views.py:159
 msgid "None"
 msgstr "None"
 
-#: views/document_version_page_views.py:183
+#: views/document_version_page_views.py:186
 msgid "There are no sources available to remap for this document version."
 msgstr ""
 "Немає доступних джерел для переналаштування для цієї версії документа."
 
-#: views/document_version_page_views.py:186
+#: views/document_version_page_views.py:189
 msgid "No page sources available"
 msgstr "Немає доступних джерел сторінки"
 
-#: views/document_version_page_views.py:189
+#: views/document_version_page_views.py:192
 #, python-format
 msgid "Remap pages of document version: %s"
 msgstr "Переназначити сторінки документа версії: %s"
@@ -1882,12 +1882,12 @@ msgstr "Видалити %(count)d версії документа."
 msgid "The process will be performed in the background. "
 msgstr "Процес виконуватиметься у фоновому режимі."
 
-#: views/document_version_views.py:162
+#: views/document_version_views.py:163
 #, python-format
 msgid "Edit document version: %s"
 msgstr "Редагувати версію документа: %s"
 
-#: views/document_version_views.py:199
+#: views/document_version_views.py:200
 msgid ""
 "Versions are views that can display document file pages as they are, remap "
 "or merge them into different layouts."
@@ -1895,43 +1895,43 @@ msgstr ""
 "Версії — це перегляди, які можуть відображати сторінки файлу документа "
 "такими, якими вони є, переназначати або об’єднувати їх у різні шари."
 
-#: views/document_version_views.py:202
+#: views/document_version_views.py:203
 msgid "No versions available"
 msgstr "Немає доступних версій"
 
-#: views/document_version_views.py:205
+#: views/document_version_views.py:206
 #, python-format
 msgid "Versions of document: %s"
 msgstr "Версії документа: %s"
 
-#: views/document_version_views.py:237
+#: views/document_version_views.py:238
 msgid "Document version modification backend queued successfully."
 msgstr "Зміни версії документу додані успішно у чергу бекенду."
 
-#: views/document_version_views.py:247
+#: views/document_version_views.py:248
 #, python-format
 msgid "Execute version modification action for document version: %s"
 msgstr "Виконати дію модифікації версії документа версії: %s"
 
-#: views/document_version_views.py:278
+#: views/document_version_views.py:279
 #, python-format
 msgid "Preview of document version: %s"
 msgstr "Попередній перегляд версії документа: %s"
 
-#: views/document_version_views.py:325
+#: views/document_version_views.py:326
 #, python-format
 msgid "Transformation clear request processed for %(count)d document version."
 msgstr ""
 "Запит на очищення перетворення оброблено для версії документа %(count)d ."
 
-#: views/document_version_views.py:329
+#: views/document_version_views.py:330
 #, python-format
 msgid ""
 "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 "Запит на очищення перетворення оброблено для версій документа %(count)d ."
 
-#: views/document_version_views.py:337
+#: views/document_version_views.py:338
 msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
@@ -1940,12 +1940,12 @@ msgstr[1] "Очистити всі трансформації сторінки �
 msgstr[2] "Очистити всі трансформації сторінки для вибраної версії документа?"
 msgstr[3] "Очистити всі перетворення сторінки для вибраної версії документа?"
 
-#: views/document_version_views.py:348
+#: views/document_version_views.py:349
 #, python-format
 msgid "Clear all the page transformations for the document version: %s?"
 msgstr "Очистити всі перетворення сторінки для версії документа: %s ?"
 
-#: views/document_version_views.py:365
+#: views/document_version_views.py:366
 #, python-format
 msgid ""
 "Error deleting the page transformations for document version: "
@@ -1954,7 +1954,7 @@ msgstr ""
 "Помилка видалення перетворень сторінки для версії документа: "
 "%(document_version)s ; %(error)s ."
 
-#: views/document_version_views.py:402
+#: views/document_version_views.py:403
 #, python-format
 msgid ""
 "Error cloning the page transformations for document version: "
@@ -1963,7 +1963,7 @@ msgstr ""
 "Помилка клонування перетворень сторінки для версії документа: "
 "%(document_version)s ; %(error)s ."
 
-#: views/document_version_views.py:426
+#: views/document_version_views.py:427
 #, python-format
 msgid "Clone page transformations of document version: %s"
 msgstr "Перетворення клону сторінки версії документа: %s"

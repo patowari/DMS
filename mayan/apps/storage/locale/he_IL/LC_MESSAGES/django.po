@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,9 +19,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:27 permissions.py:6 settings.py:15
+#: apps.py:29 permissions.py:6 settings.py:15
 msgid "Storage"
 msgstr "אִחסוּן"
 
@@ -34,7 +34,7 @@ msgstr ""
 "לא ניתן לאתחל את האחסון: %(name)s. בדוק את הנתיב המקווקו והארגומנטים "
 "האחוריים של האחסון."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "להוריד קבצים"
 
@@ -82,7 +82,7 @@ msgstr "עבד את הקבצים הפוך כדי לבטל את השינויים 
 msgid "Name of the storage to process."
 msgstr "שם האחסון לעיבוד."
 
-#: model_mixins.py:18 models.py:94
+#: model_mixins.py:18 models.py:92
 msgid "Filename"
 msgstr "שם קובץ"
 
@@ -98,27 +98,27 @@ msgstr "קובץ ללא שם"
 msgid "Size"
 msgstr "גודל"
 
-#: model_mixins.py:108 models.py:48
+#: model_mixins.py:108 models.py:46
 msgid "User"
 msgstr "מִשׁתַמֵשׁ"
 
-#: models.py:40 models.py:91
+#: models.py:38 models.py:89
 msgid "File"
 msgstr "קוֹבֶץ"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "תווית"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "הורד קובץ"
 
-#: models.py:100
+#: models.py:98
 msgid "Shared uploaded file"
 msgstr "קובץ שהועלה משותף"
 
-#: models.py:101 storages.py:36
+#: models.py:99 storages.py:36
 msgid "Shared uploaded files"
 msgstr "קבצים שהועלו משותפים"
 

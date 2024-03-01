@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:51+0000\n"
 "Last-Translator: Emerson Soares <on.emersonsoares@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -175,68 +175,68 @@ msgstr ""
 "Caminho para o programa poppler pdftotext usado para extrair texto de "
 "arquivos PDF."
 
-#: views.py:37
+#: views.py:35
 #, python-format
 msgid "Error deleting document version content \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Erro ao eliminar o conteúdo da versão do documento \" %(instance)s \"; "
 "2%(exception)s"
 
-#: views.py:44
+#: views.py:42
 #, python-format
 msgid "Content of %(count)d document versions deleted successfully."
 msgstr ""
 "Conteúdo de %(count)d das versões do documento eliminadas com sucesso."
 
-#: views.py:47
+#: views.py:45
 #, python-format
 msgid "Content of \"%(object)s\" deleted successfully."
 msgstr "Conteúdo de \" %(object)s \" eliminados com sucesso."
 
-#: views.py:50
+#: views.py:48
 #, python-format
 msgid "Content of %(count)d document version deleted successfully."
 msgstr "Conteúdo de %(count)d da versão do documento eliminada com sucesso."
 
-#: views.py:52
+#: views.py:50
 #, python-format
 msgid "Delete the content of: %(object)s."
 msgstr "Eliminar o conteúdo de: %(object)s ."
 
-#: views.py:54
+#: views.py:52
 #, python-format
 msgid "Delete the content of the %(count)d selected document version."
 msgstr "Eliminar o conteúdo de %(count)d da versão do documento selecionada."
 
-#: views.py:57
+#: views.py:55
 #, python-format
 msgid "Delete the content of the %(count)d selected document versions."
 msgstr ""
 "Eliminar os conteúdos de %(count)d das versões do documento selecionado."
 
-#: views.py:98
+#: views.py:96
 #, python-format
 msgid "Content for document file: %s"
 msgstr "Conteúdo para o ficheiro de documento: %s"
 
-#: views.py:120
+#: views.py:118
 #, python-format
 msgid "Content for document file page: %s"
 msgstr "Conteúdo para a página do ficheiro de documento: %s"
 
-#: views.py:135
+#: views.py:133
 #, python-format
 msgid "%(count)d document file added to the parsing queue"
 msgstr ""
 "%(count)d ficheiro de documento adicionado à fila de espera de análise."
 
-#: views.py:138
+#: views.py:136
 #, python-format
 msgid "%(count)d documents files added to the parsing queue"
 msgstr ""
 "%(count)d ficheiros de documentos adicionado à linha de espera de análise."
 
-#: views.py:147
+#: views.py:145
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
@@ -244,21 +244,21 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: views.py:160
+#: views.py:158
 #, python-format
 msgid "Submit document file \"%s\" to the parsing queue"
 msgstr "Submeter o ficheiro de documento \" %s \" à fila de espera de análise."
 
-#: views.py:190
+#: views.py:188
 #, python-format
 msgid "Edit parsing settings for document type: %s."
 msgstr "Editar as configurações de análise para o tipo de documento: %s."
 
-#: views.py:200
+#: views.py:198
 msgid "Submit all documents of a type for parsing"
 msgstr "Enviar todos os documento de um tipo para análise"
 
-#: views.py:222
+#: views.py:220
 #, python-format
 msgid "%(count)d documents added to the parsing queue."
 msgstr "%(count)d documentos adicinados à fila de análise."

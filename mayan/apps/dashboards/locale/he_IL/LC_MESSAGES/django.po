@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -19,9 +19,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:8 views.py:12
 msgid "Dashboards"
 msgstr "לוחות מחוונים"
 
@@ -37,7 +37,7 @@ msgstr "תווית"
 msgid "Administrator dashboard"
 msgstr "לוח המחוונים של מנהל מערכת"
 
-#: links.py:14
+#: links.py:13
 msgid "Details"
 msgstr "פרטים"
 
@@ -46,6 +46,6 @@ msgstr "פרטים"
 msgid "View details"
 msgstr "הצג פרטים"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "פירוט לוח המחוונים"

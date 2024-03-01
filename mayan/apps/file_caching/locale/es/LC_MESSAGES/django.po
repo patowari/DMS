@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:52+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:26 events.py:6 permissions.py:6 queues.py:8 settings.py:11
+#: apps.py:28 events.py:6 permissions.py:6 queues.py:8 settings.py:11
 msgid "File caching"
 msgstr "Caché de archivos"
 
@@ -76,7 +76,7 @@ msgstr "Número de archivos de partición"
 msgid "Total cached files."
 msgstr "Total de archivos en caché."
 
-#: model_mixins.py:88 model_mixins.py:282
+#: model_mixins.py:88 model_mixins.py:284
 msgid "Current size"
 msgstr "Tamaño actual"
 
@@ -84,7 +84,7 @@ msgstr "Tamaño actual"
 msgid "Current size of the cache."
 msgstr "Tamaño actual de la caché."
 
-#: model_mixins.py:284
+#: model_mixins.py:286
 msgid "Current size of the cache partition."
 msgstr "Tamaño actual de la caché."
 
@@ -177,40 +177,40 @@ msgstr ""
 "Número de veces que una caché intentará remover archivos para liberar "
 "espacio para un nuevo archivo que se solicita, antes de darse por vencido."
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Detalles de la caché: %s"
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr "Lista de cachés de archivos"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Detalles de la partición de caché: %s"
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "¿Purgar las particiones de caché de \"%s\"?"
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr "Particiones de caché de objetos enviadas para depuración."
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d cachés enviados para purgar."
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d caché enviado para purgar."
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "¿Someter el caché seleccionado para su eliminación?"

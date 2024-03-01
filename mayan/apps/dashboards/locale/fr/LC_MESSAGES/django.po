@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:18 links.py:9 views.py:12
+#: apps.py:18 links.py:8 views.py:12
 msgid "Dashboards"
 msgstr "Tableaux de bord"
 
@@ -38,7 +38,7 @@ msgstr "Étiquette"
 msgid "Administrator dashboard"
 msgstr "Tableau de bord de l'administrateur"
 
-#: links.py:14
+#: links.py:13
 msgid "Details"
 msgstr "Détails"
 
@@ -47,6 +47,6 @@ msgstr "Détails"
 msgid "View details"
 msgstr "Voir les détails"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Détail du tableau de bord"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:27 permissions.py:6 settings.py:15
+#: apps.py:29 permissions.py:6 settings.py:15
 msgid "Storage"
 msgstr "Dateispeicher"
 
@@ -39,7 +39,7 @@ msgstr ""
 "Dateispeicher kann nicht initialisiert werden: %(name)s. Überprüfen Sie den "
 "Pfad und die Argumente für das Speicher-Backend."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Dateien herunterladen"
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Name des zu verarbeitenden Dateispeichers."
 
-#: model_mixins.py:18 models.py:94
+#: model_mixins.py:18 models.py:92
 msgid "Filename"
 msgstr "Dateiname"
 
@@ -106,27 +106,27 @@ msgstr "Unbenannte Datei"
 msgid "Size"
 msgstr "Größe"
 
-#: model_mixins.py:108 models.py:48
+#: model_mixins.py:108 models.py:46
 msgid "User"
 msgstr "Benutzer"
 
-#: models.py:40 models.py:91
+#: models.py:38 models.py:89
 msgid "File"
 msgstr "Datei"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Bezeichner"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Datei herunterladen"
 
-#: models.py:100
+#: models.py:98
 msgid "Shared uploaded file"
 msgstr "Geteilte hochgeladene Datei"
 
-#: models.py:101 storages.py:36
+#: models.py:99 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Geteilte hochgeladene Dateien"
 

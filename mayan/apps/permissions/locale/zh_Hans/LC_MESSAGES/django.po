@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:54+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "权限"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr ""
 
@@ -46,11 +46,11 @@ msgstr "创建角色"
 msgid "Role edited"
 msgstr "编辑角色"
 
-#: links.py:20 links.py:46 models.py:42 views.py:111
+#: links.py:20 links.py:46 models.py:42 views.py:113
 msgid "Roles"
 msgstr "角色"
 
-#: links.py:28 views.py:57
+#: links.py:28 views.py:58
 msgid "Create new role"
 msgstr "创造新角色"
 
@@ -96,15 +96,15 @@ msgstr "标签"
 msgid "Role"
 msgstr "角色"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "命名空间"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "名称"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "权限"
 
@@ -197,42 +197,42 @@ msgstr "可用角色"
 msgid "Roles of group: %s"
 msgstr "用户组的角色：%s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr ""
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr ""
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr ""
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr ""
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr ""
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -241,48 +241,48 @@ msgid ""
 msgstr ""
 "角色是授权单位。它们包含继承整个系统的角色权限的用户组。角色也可以是访问控制列表的一部分。访问控制列表是授予其组成员继承的特定对象的角色的权限。"
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "没有角色"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "角色用户组"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "可用的用户组"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr "添加用户组以成为角色的一部分。他们将继承角色的权限和访问控制。"
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "角色的用户组：%s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "授予的权限"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "可用权限"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr "此处授予的权限将适用于整个系统和所有对象。"
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "角色的权限：%s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr ""

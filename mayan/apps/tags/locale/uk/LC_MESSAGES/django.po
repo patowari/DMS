@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -22,13 +22,13 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:46 apps.py:133 apps.py:137 apps.py:141 apps.py:146 apps.py:150
-#: events.py:6 forms.py:27 links.py:28 menus.py:14 models.py:35
-#: permissions.py:6 views.py:180 workflow_actions.py:18 workflow_actions.py:67
+#: apps.py:44 apps.py:131 apps.py:135 apps.py:139 apps.py:144 apps.py:148
+#: events.py:6 forms.py:27 links.py:27 menus.py:14 models.py:35
+#: permissions.py:6 views.py:181 workflow_actions.py:18 workflow_actions.py:67
 msgid "Tags"
 msgstr "Теги"
 
-#: apps.py:171 models.py:29
+#: apps.py:169 models.py:29
 msgid "Documents"
 msgstr "Документи"
 
@@ -48,31 +48,31 @@ msgstr "Тег відредаговано"
 msgid "Tag removed from document"
 msgstr "Тег видалено з документа"
 
-#: links.py:19 links.py:38
+#: links.py:18 links.py:37
 msgid "Attach tags"
 msgstr "Прикріпити теги"
 
-#: links.py:23 workflow_actions.py:74
+#: links.py:22 workflow_actions.py:74
 msgid "Remove tag"
 msgstr "Видалити тег"
 
-#: links.py:33
+#: links.py:32
 msgid "Remove tags"
 msgstr "Видалити теги"
 
-#: links.py:44
+#: links.py:43
 msgid "Create new tag"
 msgstr "Створити новий тег"
 
-#: links.py:49 links.py:52
+#: links.py:48 links.py:51
 msgid "Delete"
 msgstr "Видалити"
 
-#: links.py:57
+#: links.py:56
 msgid "Edit"
 msgstr "Редагувати"
 
-#: links.py:65
+#: links.py:64
 msgid "All"
 msgstr "Все"
 
@@ -192,37 +192,37 @@ msgstr "ID тегу"
 msgid "Primary key of the tag to remove from the document."
 msgstr "Первинний ключ тегу, який потрібно видалити з документа."
 
-#: views.py:43
+#: views.py:42
 #, python-format
 msgid "Tags attached to %(count)d documents successfully."
 msgstr "Теги успішно додано до документів %(count)d ."
 
-#: views.py:46
+#: views.py:45
 #, python-format
 msgid "Tags attached to document \"%(object)s\" successfully."
 msgstr "Теги, прикріплені до документа \"%(object)s\", успішно."
 
-#: views.py:49
+#: views.py:48
 #, python-format
 msgid "Tags attached to %(count)d document successfully."
 msgstr "Теги успішно додано до документа %(count)d ."
 
-#: views.py:51
+#: views.py:50
 #, python-format
 msgid "Attach tags to %(count)d documents."
 msgstr "Додати теги до документів %(count)d ."
 
-#: views.py:52
+#: views.py:51
 #, python-format
 msgid "Attach tags to document: %(object)s"
 msgstr "Додати теги до документа: %(object)s"
 
-#: views.py:53
+#: views.py:52
 #, python-format
 msgid "Attach tags to %(count)d document."
 msgstr "Додати теги до документа %(count)d ."
 
-#: views.py:70 wizard_steps.py:28
+#: views.py:69 wizard_steps.py:28
 msgid "Tags to be attached."
 msgstr "Теги, які потрібно додати."
 
@@ -230,51 +230,51 @@ msgstr "Теги, які потрібно додати."
 msgid "Create tag"
 msgstr "Створити тег"
 
-#: views.py:121
+#: views.py:122
 #, python-format
 msgid "Error deleting tag \"%(instance)s\"; %(exception)s"
 msgstr "Помилка видалення тегу \"%(instance)s\"; %(exception)s"
 
-#: views.py:126
+#: views.py:127
 #, python-format
 msgid "%(count)d tags deleted successfully."
 msgstr "%(count)d тегів успішно видалено."
 
-#: views.py:127
+#: views.py:128
 #, python-format
 msgid "Tag \"%(object)s\" deleted successfully."
 msgstr "Тег \"%(object)s\" успішно видалено."
 
-#: views.py:128
+#: views.py:129
 #, python-format
 msgid "%(count)d tag deleted successfully."
 msgstr "%(count)d тег успішно видалено."
 
-#: views.py:129
+#: views.py:130
 #, python-format
 msgid "Delete the %(count)d selected tags"
 msgstr "Видалити %(count)d обраних тегів"
 
-#: views.py:130
+#: views.py:131
 #, python-format
 msgid "Delete tag: %(object)s"
 msgstr "Видалити тег: %(object)s"
 
-#: views.py:131
+#: views.py:132
 #, python-format
 msgid "Delete the %(count)d selected tag"
 msgstr "Видалити вибраний тег %(count)d"
 
-#: views.py:137
+#: views.py:138
 msgid "Will be removed from all documents."
 msgstr "Буде видалено з усіх документів."
 
-#: views.py:153
+#: views.py:154
 #, python-format
 msgid "Edit tag: %s"
 msgstr "Редагувати тег: %s"
 
-#: views.py:176
+#: views.py:177
 msgid ""
 "Tags are color coded properties that can be attached or removed from "
 "documents."
@@ -282,55 +282,55 @@ msgstr ""
 "Теги – це властивості, позначені кольором, які можна додавати або видаляти з"
 " документів."
 
-#: views.py:179
+#: views.py:180
 msgid "No tags available"
 msgstr "Немає доступних тегів"
 
-#: views.py:210
+#: views.py:213
 #, python-format
 msgid "Documents with the tag: %s"
 msgstr "Документи з тегом: %s"
 
-#: views.py:237
+#: views.py:240
 msgid "Document has no tags attached"
 msgstr "Документ не має доданих тегів"
 
-#: views.py:240
+#: views.py:243
 #, python-format
 msgid "Tags for document: %s"
 msgstr "Теги для документа: %s"
 
-#: views.py:258
+#: views.py:261
 #, python-format
 msgid "Tags removed from %(count)d documents successfully."
 msgstr "Теги успішно видалено з %(count)d документів."
 
-#: views.py:261
+#: views.py:264
 #, python-format
 msgid "Tags removed from document \"%(object)s\" successfully."
 msgstr "Теги успішно видалено з документа \"%(object)s\"."
 
-#: views.py:264
+#: views.py:267
 #, python-format
 msgid "Tags removed from %(count)d document successfully."
 msgstr "Теги успішно видалено з %(count)d документу."
 
-#: views.py:266
+#: views.py:269
 #, python-format
 msgid "Remove tags from %(count)d documents."
 msgstr "Видалити теги з %(count)d документів."
 
-#: views.py:267
+#: views.py:270
 #, python-format
 msgid "Remove tags from document: %(object)s"
 msgstr "Видалити теги з документа: %(object)s"
 
-#: views.py:268
+#: views.py:271
 #, python-format
 msgid "Remove tags from %(count)d document."
 msgstr "Видалити теги з %(count)d документу."
 
-#: views.py:285
+#: views.py:288
 msgid "Tags to be removed."
 msgstr "Теги, які потрібно видалити."
 

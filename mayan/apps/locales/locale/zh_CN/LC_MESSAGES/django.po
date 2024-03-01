@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
@@ -30,11 +30,11 @@ msgstr "地區語系"
 msgid "User locale profile edited"
 msgstr ""
 
-#: links.py:15
+#: links.py:14
 msgid "Locale profile"
 msgstr "区域配置文件"
 
-#: links.py:20
+#: links.py:19
 msgid "Edit locale profile"
 msgstr "编辑区域配置文件"
 

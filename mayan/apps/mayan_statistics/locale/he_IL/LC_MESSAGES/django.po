@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Ovadia Ovadia, 2023\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr "סטָטִיסטִיקָה"
 
@@ -38,39 +38,39 @@ msgstr "לוח זמנים"
 msgid "Last update"
 msgstr "העדכון אחרון"
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr "מרחב השמות של סטטיסטיקה"
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr "לעולם לא"
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr "תרשים סופגניות"
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr "תרשים קווים"
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr "תרשים עוגה"
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr "פרטי מרחב שמות"
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr "רשימת מרחב השמות"
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr "תוֹר"
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr "נוף"
 
@@ -116,42 +116,42 @@ msgstr "עדכון אחרון: %(datetime)s"
 msgid "Statistic \"%s\" not found."
 msgstr "הנתון &quot;%s&quot; לא נמצא."
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr "מרחבי השמות של סטטיסטיקה מקבצים נתונים סטטיסטיים ליחידות לוגיות."
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr "אין מרחבי שמות סטטיסטיים זמינים"
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr "מרחבי שמות של סטטיסטיקה"
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr "סטטיסטיקה היא מדדים וייצוג תרשים של נתונים קיימים."
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr "אין סטטיסטיקה זמינה"
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr "פרטי מרחב שמות עבור: %s"
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr "תוצאות עבור: %s"
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr "תור את נתוני &quot;%s&quot; לעדכון?"
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr "סטטיסטיקה &quot;%s&quot; עמדה בתור בהצלחה לעדכון."

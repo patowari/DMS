@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:58+0000\n"
+"POT-Creation-Date: 2024-03-01 13:59+0000\n"
 "PO-Revision-Date: 2023-01-05 02:49+0000\n"
 "Last-Translator: Pavlin Koldamov <pkoldamov@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -22,12 +22,12 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:36 events.py:6 links.py:42 models.py:43 permissions.py:6
+#: apps.py:37 events.py:6 links.py:42 models.py:46 permissions.py:6
 #: templates/announcements/announcements.html:8 views.py:126
 msgid "Announcements"
 msgstr "Съобщения"
 
-#: apps.py:78 apps.py:82
+#: apps.py:79 apps.py:83
 msgid "None"
 msgstr "Няма"
 
@@ -51,43 +51,43 @@ msgstr "Изтрийте"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Кратко описание на това съобщение."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Етикет"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Действителният текст за показване."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Активиран"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Дата и час, след които това съобщение ще се покаже."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Начални дата и час"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Дата и час, до които трябва да се покаже това съобщение."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Крайни дата и час"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Съобщение"
 
@@ -154,12 +154,9 @@ msgstr "Редактиране на съобщение: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Съобщенията се показват в изгледа за вход. Можете да използвате съобщения за"
-" събиране на информация за вашата организация, съобщения или насоки за "
-"използване за вашите потребители."
 
 #: views.py:125
 msgid "No announcements available"

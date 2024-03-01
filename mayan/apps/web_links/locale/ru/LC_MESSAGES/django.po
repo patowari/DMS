@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 10:59+0000\n"
+"POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: apps.py:43 events.py:6 links.py:19 links.py:24 links.py:54 links.py:59
-#: models.py:43 permissions.py:6 views.py:169
+#: models.py:43 permissions.py:6 views.py:171
 msgid "Web links"
 msgstr "Веб-ссылки"
 
@@ -41,7 +41,7 @@ msgstr "Веб-ссылка изменена"
 msgid "Web link navigated"
 msgstr "Выполнен переход по веб-ссылке"
 
-#: links.py:29 views.py:81
+#: links.py:29 views.py:82
 msgid "Create new web link"
 msgstr "Создать веб-ссылку"
 
@@ -152,30 +152,30 @@ msgstr "Доступные веб-ссылки"
 msgid "Web links to enable for document type: %s"
 msgstr "Веб-ссылки для типа документа: %s"
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Delete web link: %s"
 msgstr "Удалить веб-ссылку: %s"
 
-#: views.py:108
+#: views.py:110
 msgid "Document types enabled"
 msgstr "Включенные типы документов"
 
-#: views.py:109
+#: views.py:111
 msgid "Available document types"
 msgstr "Доступные типы документов"
 
-#: views.py:126
+#: views.py:128
 #, python-format
 msgid "Document type for which to enable web link: %s"
 msgstr "Типы документов, для которых нужно включить веб-ссылку: %s"
 
-#: views.py:143
+#: views.py:145
 #, python-format
 msgid "Edit web link: %s"
 msgstr "Редактировать веб-ссылку: %s"
 
-#: views.py:162 views.py:192
+#: views.py:164 views.py:194
 msgid ""
 "Web links allow generating HTTP links from documents to external resources. "
 "The link URL's can contain document properties values."
@@ -183,15 +183,15 @@ msgstr ""
 "Веб-ссылки позволяют создавать HTTP-ссылки из документов на внешние ресурсы."
 " URL-адрес ссылок может содержать значения свойств документа."
 
-#: views.py:167
+#: views.py:169
 msgid "There are no web links"
 msgstr "Нет веб-ссылок"
 
-#: views.py:197
+#: views.py:199
 msgid "There are no web links for this document"
 msgstr "Для этого документа нет веб-ссылок"
 
-#: views.py:200
+#: views.py:202
 #, python-format
 msgid "Web links for document: %s"
 msgstr "Веб-ссылки для документа: %s"
