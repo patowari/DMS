@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Translators:
+# Tobias Paepke <tobias.paepke@paepke.net>, 2024
+# tetjarediske <tetja.rediske@googlemail.com>, 2024
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
+# Björn E <b1pum@web.de>, 2024
+# Roberto Rosario, 2024
+# Berny <berny@bernhard-marx.de>, 2024
+# Marvin Haschker <marvin@haschker.me>, 2024
+# Niklas Maurer <niklas.maurer@web.energy>, 2024
+# Mathias Behrle <mathiasb@m9s.biz>, 2024
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mayan EDMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-01 01:14+0000\n"
+"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/appearance/app/foot.html:71
+msgid ""
+"Too many pending requests. Additional requests will be blocked until a "
+"pending one is completed or after the cooling off period ends."
+msgstr ""
+"Zu viele wartende Anfragen. Weitere Anfragen werden zurückgewiesen bis eine "
+"wartende Anfrage ausgeführt ist oder bis die Abkühlungsfrist endet."

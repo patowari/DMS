@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Māris Teivāns <maris.teivans@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2024\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
@@ -356,8 +357,8 @@ msgstr ""
 
 #: views/user_views.py:73
 msgid ""
-"Warning! You are about to delete your own user account. You will lose access"
-" to the system. This process is not reversible."
+"Warning! You are about to delete your own user account. You will lose access "
+"to the system. This process is not reversible."
 msgstr ""
 
 #: views/user_views.py:93
@@ -390,8 +391,8 @@ msgid ""
 "User accounts can be create from this view. After creating a user account "
 "you will prompted to set a password for it. "
 msgstr ""
-"No šī skata var izveidot lietotāju kontus. Pēc lietotāja konta izveidošanas,"
-"  jums tiks piedāvāts iestatīt paroli."
+"No šī skata var izveidot lietotāju kontus. Pēc lietotāja konta "
+"izveidošanas,  jums tiks piedāvāts iestatīt paroli."
 
 #: views/user_views.py:169
 msgid "There are no user accounts"

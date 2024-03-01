@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
+"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/"
+"bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
@@ -232,8 +233,7 @@ msgstr ""
 
 #: serializers.py:51
 msgid "Optional arguments for the action. Must be JSON formatted."
-msgstr ""
-"Незадължителни аргументи за действието. Трябва да е форматиран в JSON."
+msgstr "Незадължителни аргументи за действието. Трябва да е форматиран в JSON."
 
 #: serializers.py:56
 msgid "Confirmation"
@@ -292,8 +292,8 @@ msgstr ""
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process"
-" happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process "
+"happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -465,8 +465,8 @@ msgid ""
 "and require user input to operate. Others are automatic and run in the "
 "background without user intervention."
 msgstr ""
-"Източниците предоставят средства за качване на документи. Някои източници са"
-" интерактивни и изискват въвеждане от потребителя за да работят. Други са "
+"Източниците предоставят средства за качване на документи. Някои източници са "
+"интерактивни и изискват въвеждане от потребителя за да работят. Други са "
 "автоматични и работят във фонов режим без намеса на потребителя."
 
 #: views/source_views.py:284
@@ -482,13 +482,13 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources"
-" that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources "
+"that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
-"Това ще изпълни изходния код, дори ако източникът не е активиран. Източници,"
-" които изтриват съдържание след изтегляне, няма да го направят, докато се "
+"Това ще изпълни изходния код, дори ако източникът не е активиран. Източници, "
+"които изтриват съдържание след изтегляне, няма да го направят, докато се "
 "тестват. Проверете дневника на грешките на източника за информация по време "
 "на тестването. Успешен тест ще изчисти регистъра на грешките."
 
@@ -509,8 +509,8 @@ msgstr "Изберете типа документ"
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled,"
-" create one before proceeding."
+"No interactive document sources have been defined or none have been enabled, "
+"create one before proceeding."
 msgstr ""
 "Не са дефинирани интерактивни източници на документи или никой не е "
 "активиран, създайте такъв преди да продължите."

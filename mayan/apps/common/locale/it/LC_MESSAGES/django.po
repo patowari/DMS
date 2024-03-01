@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
@@ -9,20 +9,21 @@
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
@@ -165,8 +166,8 @@ msgstr ""
 
 #: settings.py:32
 msgid ""
-"In list mode, show the \"object\" menu options as a dropdown menu instead of"
-" individual buttons."
+"In list mode, show the \"object\" menu options as a dropdown menu instead of "
+"individual buttons."
 msgstr ""
 "In modalità lista, mostra le azioni sull'oggetto in un menù a tendina "
 "anziché tanti bottoni singoli."
@@ -185,8 +186,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 "Un elenco di stringhe con tutte le applicazioni che devono essere rimosse "
 "dall'elenco normalmente installato da Mayan EDMS. Ogni stringa dovrebbe "
@@ -198,8 +199,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 "Un elenco di stringhe con tutte le applicazioni installate oltre a quelle "
 "normalmente installate da Mayan EDMS. Ogni stringa dovrebbe essere un "
@@ -211,8 +212,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. These apps will be installed before the default "
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 "Un elenco di stringhe con tutte le applicazioni installate oltre a quelle "
@@ -224,8 +225,8 @@ msgstr ""
 
 #: settings.py:80
 msgid ""
-"Name of the view attached to the brand anchor in the main menu. This is also"
-" the view to which users will be redirected after log in."
+"Name of the view attached to the brand anchor in the main menu. This is also "
+"the view to which users will be redirected after log in."
 msgstr ""
 "Nome della vista collegata all'ancora brand nel menù principale. Questa è "
 "anche la vista alla quale gli utenti verranno reindirizzati dopo il login."
@@ -255,8 +256,7 @@ msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
-"Inserisci un 'internal name' valido composto da lettere, numeri e "
-"underscore."
+"Inserisci un 'internal name' valido composto da lettere, numeri e underscore."
 
 #: views.py:25
 msgid "About"
@@ -285,8 +285,8 @@ msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr ""
-"Nessun risultato qui significa che non si hanno le autorizzazioni necessarie"
-" per eseguire l'attività amministrativa."
+"Nessun risultato qui significa che non si hanno le autorizzazioni necessarie "
+"per eseguire l'attività amministrativa."
 
 #: views.py:111
 msgid "No setup options available."

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Siegfried Albrecht, 2024
@@ -14,19 +14,20 @@
 # Marvin Haschker <marvin@haschker.me>, 2024
 # Roberto Rosario, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: admin.py:24
@@ -241,8 +242,7 @@ msgid "Slug"
 msgstr "Webkürzel"
 
 #: models/index_template_models.py:44
-msgid ""
-"Causes this index to be visible and updated when document data changes."
+msgid "Causes this index to be visible and updated when document data changes."
 msgstr ""
 "Bewirkt Sichtbarkeit und Aktualisierung des Index, wenn Dokumente geändert "
 "werden."
@@ -289,8 +289,8 @@ msgstr ""
 
 #: models/index_template_models.py:169
 msgid ""
-"Check this option to have this node act as a container for documents and not"
-" as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not "
+"as a parent for further nodes."
 msgstr ""
 "Wählen Sie diese Option, wenn Dokumente in diesem Knoten dargestellt werden "
 "sollen (und dieser Knoten nicht als Eltern-Knoten für weitere Kind-"
@@ -407,8 +407,8 @@ msgstr "Übergeordneter Aktenschrank"
 
 #: serializers.py:237
 msgid ""
-"URL of the API endpoint showing the list document types associated with this"
-" index template."
+"URL of the API endpoint showing the list document types associated with this "
+"index template."
 msgstr ""
 "URL des API-Endpunktes, der die Liste der mit dieser Indexvorlage "
 "verknüpften Dokumententypen zeigt."
@@ -531,13 +531,13 @@ msgstr "Indices verknüpft mit Dokumententyp: %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like"
-" label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like "
+"label or description, or that of extended properties like metadata."
 msgstr ""
-"Indiziert das Gruppendokument automatisch in Ebenen. Indizes werden mithilfe"
-" einer Vorlage definiert, deren Markierungen durch direkte Eigenschaften von"
-" Dokumenten wie Beschriftung oder Beschreibung, oder erweiterte "
-"Eigenschaften wie Metadaten ersetzt werden."
+"Indiziert das Gruppendokument automatisch in Ebenen. Indizes werden mithilfe "
+"einer Vorlage definiert, deren Markierungen durch direkte Eigenschaften von "
+"Dokumenten wie Beschriftung oder Beschreibung, oder erweiterte Eigenschaften "
+"wie Metadaten ersetzt werden."
 
 #: views/index_template_views.py:94
 msgid "There are no index templates."
@@ -590,8 +590,8 @@ msgid ""
 "Triggers are document events that cause instances of this index template to "
 "be updated."
 msgstr ""
-"Trigger sind Ereignisse für Dokumente, die Instanzen dieser Indexvorlage zur"
-" Aktualisierung veranlassen."
+"Trigger sind Ereignisse für Dokumente, die Instanzen dieser Indexvorlage zur "
+"Aktualisierung veranlassen."
 
 #: views/index_template_views.py:240
 #, python-format

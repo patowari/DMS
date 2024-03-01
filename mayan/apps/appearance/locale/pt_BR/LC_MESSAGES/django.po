@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
@@ -14,22 +14,24 @@
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # Márcia Ferreira, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:28+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/"
+"teams/13584/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Aparência"
 
@@ -237,8 +239,7 @@ msgstr ""
 "O local está correto, mas sua conta não tem a permissão necessária para "
 "acessá-lo."
 
-#: templates/500.html:5 templates/500.html:30
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:30 templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Erro de servidor"
 
@@ -263,7 +264,9 @@ msgid "Contact your system administrator."
 msgstr "Entre em contato com o administrador do sistema."
 
 #: templates/500.html:47
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
 msgstr ""
 "Verifique os logs em busca de mensagens com as etiquetas \"ERROR\", "
 "\"CRITICA\" ou \"FATAL\"."
@@ -272,8 +275,8 @@ msgstr ""
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
-"Abra um ticket usando o <a href=\"%(issue_url)s\">rastreador de "
-"problemas</a> ."
+"Abra um ticket usando o <a href=\"%(issue_url)s\">rastreador de problemas</"
+"a> ."
 
 #: templates/appearance/about.html:10
 msgid "About"
@@ -303,8 +306,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -348,12 +351,6 @@ msgstr ""
 msgid ""
 "%(project_title)s is Free and Open Source software, which is provided as-is "
 "with no warranty."
-msgstr ""
-
-#: templates/appearance/app/foot.html:70
-msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
 msgstr ""
 
 #: templates/appearance/confirm.html:13
@@ -510,8 +507,7 @@ msgstr "Editar tema: %s"
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
-"Os temas permitem alterar a aparência visual sem exigir alterações de "
-"código."
+"Os temas permitem alterar a aparência visual sem exigir alterações de código."
 
 #: views.py:97
 msgid "There are no themes"

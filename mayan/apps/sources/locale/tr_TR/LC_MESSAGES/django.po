@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
@@ -9,19 +9,20 @@
 # abc Def <hdogan1974@gmail.com>, 2024
 # Bedreddin Şahbaz, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
+"teams/13584/tr_TR/)\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
@@ -232,8 +233,7 @@ msgstr ""
 
 #: serializers.py:51
 msgid "Optional arguments for the action. Must be JSON formatted."
-msgstr ""
-"Eylem için isteğe bağlı bağımsız değişkenler. JSON formatlı olmalıdır."
+msgstr "Eylem için isteğe bağlı bağımsız değişkenler. JSON formatlı olmalıdır."
 
 #: serializers.py:56
 msgid "Confirmation"
@@ -292,8 +292,8 @@ msgstr ""
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process"
-" happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process "
+"happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -386,7 +386,8 @@ msgstr ""
 #: views/document_file_views.py:96
 #, python-format
 msgid "Unable to upload new files for document \"%(document)s\". %(exception)s"
-msgstr "\"%(document)s\" belgesi için yeni dosyalar yüklenemiyor. %(exception)s"
+msgstr ""
+"\"%(document)s\" belgesi için yeni dosyalar yüklenemiyor. %(exception)s"
 
 #: views/document_file_views.py:141
 #, python-format
@@ -396,8 +397,8 @@ msgstr "Belge dosyası yükleme görevi yürütülürken hata oluştu; %(excepti
 #: views/document_file_views.py:162
 msgid "New document file queued for upload and will be available shortly."
 msgstr ""
-"Yeni belge dosyası yükleme için kuyruğa alındı ve kısa süre içinde kullanıma"
-" sunulacak."
+"Yeni belge dosyası yükleme için kuyruğa alındı ve kısa süre içinde kullanıma "
+"sunulacak."
 
 #: views/document_file_views.py:187
 #, python-format
@@ -481,8 +482,8 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources"
-" that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources "
+"that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -508,8 +509,8 @@ msgstr "Belge türünü seçin"
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled,"
-" create one before proceeding."
+"No interactive document sources have been defined or none have been enabled, "
+"create one before proceeding."
 msgstr ""
 "Etkileşimli belge kaynakları tanımlanmamış veya hiçbiri etkinleştirilmemiş, "
 "devam etmeden önce bir tane oluşturun."

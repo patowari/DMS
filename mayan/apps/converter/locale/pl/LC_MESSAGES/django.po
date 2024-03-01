@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
@@ -9,20 +9,22 @@
 # Daniel Winiarski <daniel.winiarski.dw@gmail.com>, 2024
 # mic <winterfall24@gmail.com>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
 msgid "Converter"
@@ -67,8 +69,8 @@ msgid ""
 "Utility from the popper-utils package used to extract pages from PDF files "
 "into PPM format images."
 msgstr ""
-"Narzędzie z pakietu popper-utils używane do wyodrębniania stron z plików PDF"
-" do obrazów w formacie PPM."
+"Narzędzie z pakietu popper-utils używane do wyodrębniania stron z plików PDF "
+"do obrazów w formacie PPM."
 
 #: events.py:10
 msgid "Asset created"
@@ -99,8 +101,8 @@ msgstr "„%s” nie jest prawidłowym wpisem."
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
-"Dekoracje są wizualnymi elementami, który dostarczają kontekstową informację"
-" do obrazów."
+"Dekoracje są wizualnymi elementami, który dostarczają kontekstową informację "
+"do obrazów."
 
 #: layers.py:14
 msgid "Decorations"
@@ -122,8 +124,7 @@ msgstr "Usuń"
 msgid "Edit"
 msgstr "Edytuj"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21
-#: views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
 msgid "Assets"
 msgstr "Zasoby"
 
@@ -336,8 +337,8 @@ msgstr ""
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {}"
-" and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {} "
+"and {} for formatting errors."
 msgstr ""
 
 #: storages.py:34
@@ -707,8 +708,7 @@ msgid ""
 "Create layer \"%(layer)s\" transformation \"%(transformation)s\" for: "
 "%(object)s"
 msgstr ""
-"Utwórz warstwę %(layer)s przekształcenia „%(transformation)s” dla: "
-"%(object)s"
+"Utwórz warstwę %(layer)s przekształcenia „%(transformation)s” dla: %(object)s"
 
 #: views/transformation_views.py:131
 #, python-format
@@ -749,10 +749,12 @@ msgstr "Strony"
 
 #: workflow_actions.py:37
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas "
-"and/or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas and/"
+"or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
-"Strony, do których zostaną dodane nowe przekształcenia. Oddziel przecinkami i / lub użyj myślników dla zakresów. Pozostaw puste, aby zaznaczyć wszystkie strony. \n"
+"Strony, do których zostaną dodane nowe przekształcenia. Oddziel przecinkami "
+"i / lub użyj myślników dla zakresów. Pozostaw puste, aby zaznaczyć wszystkie "
+"strony. \n"
 " \n"
 " "
 

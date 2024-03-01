@@ -2,23 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Ovadia Ovadia, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
-"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/"
+"teams/13584/he_IL/)\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
@@ -124,8 +126,8 @@ msgstr ""
 
 #: classes.py:535
 msgid ""
-"JavaScript libraries downloaded the from NPM registry and used for front-end"
-" functionality."
+"JavaScript libraries downloaded the from NPM registry and used for front-end "
+"functionality."
 msgstr ""
 "ספריות JavaScript הורידו את הרישום של NPM והשתמשו בהם לפונקציונליות ב-front-"
 "end."
@@ -230,8 +232,7 @@ msgid ""
 "Environment used for building the documentation. End users can ignore "
 "missing dependencies under this environment."
 msgstr ""
-"סביבה המשמשת לבניית התיעוד. משתמשי קצה יכולים להתעלם מתלויות חסרות בסביבה "
-"זו."
+"סביבה המשמשת לבניית התיעוד. משתמשי קצה יכולים להתעלם מתלויות חסרות בסביבה זו."
 
 #: environments.py:32
 msgid "Documentation"
@@ -264,8 +265,8 @@ msgid ""
 "code. Dependencies in this environment are not needed for normal production "
 "usage."
 msgstr ""
-"הסביבה השתמשה בהפעלת סדרת בדיקות כדי לאמת את הפונקציונליות של הקוד. אין צורך"
-" בתלויות בסביבה זו עבור שימוש בייצור רגיל."
+"הסביבה השתמשה בהפעלת סדרת בדיקות כדי לאמת את הפונקציונליות של הקוד. אין צורך "
+"בתלויות בסביבה זו עבור שימוש בייצור רגיל."
 
 #: environments.py:54
 msgid "Testing"
@@ -312,8 +313,8 @@ msgstr ""
 #: literals.py:21
 #, python-format
 msgid ""
-"Unexpected error trying to determine the latest version available. Make sure"
-" your installation has a connection to the internet; %(exception)s"
+"Unexpected error trying to determine the latest version available. Make sure "
+"your installation has a connection to the internet; %(exception)s"
 msgstr ""
 
 #: management/commands/dependencies_check.py:13
@@ -349,8 +350,8 @@ msgstr ""
 
 #: views.py:31
 msgid ""
-"It does not verify versions of other components like packaging or deployment"
-" technologies, such as container or virtual machine images."
+"It does not verify versions of other components like packaging or deployment "
+"technologies, such as container or virtual machine images."
 msgstr ""
 
 #: views.py:51

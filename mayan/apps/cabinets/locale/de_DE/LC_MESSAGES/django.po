@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Björn E <b1pum@web.de>, 2024
 # Siegfried Albrecht, 2024
@@ -13,19 +13,20 @@
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
 # Jesaja Everling <jeverling@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Jesaja Everling <jeverling@gmail.com>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
@@ -198,8 +199,7 @@ msgid "Children"
 msgstr "Untergeordnete Aktenschränke"
 
 #: serializers.py:23
-msgid ""
-"URL of the API endpoint showing the list documents inside this cabinet."
+msgid "URL of the API endpoint showing the list documents inside this cabinet."
 msgstr ""
 "Die URL dieses API-Endpunkts zeigt eine Liste der Dokumente in diesem "
 "Aktenschrank."

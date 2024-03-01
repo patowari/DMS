@@ -2,27 +2,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Roberto Rosario, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
@@ -128,8 +129,8 @@ msgstr "Binaire"
 
 #: classes.py:535
 msgid ""
-"JavaScript libraries downloaded the from NPM registry and used for front-end"
-" functionality."
+"JavaScript libraries downloaded the from NPM registry and used for front-end "
+"functionality."
 msgstr ""
 "Les bibliothèques JavaScript sont téléchargées à partir du NPM et utilisé "
 "pour les fonctionnalités front-end."
@@ -206,8 +207,8 @@ msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
 msgstr ""
-"Les dépendances requises pour un environnement peuvent ne pas l'être pour un"
-" autre. Exemples d'environnements: production, développement."
+"Les dépendances requises pour un environnement peuvent ne pas l'être pour un "
+"autre. Exemples d'environnements: production, développement."
 
 #: environments.py:17
 msgid ""
@@ -326,8 +327,8 @@ msgstr "Il n'est pas possible de déterminer la dernière disponible"
 #: literals.py:21
 #, python-format
 msgid ""
-"Unexpected error trying to determine the latest version available. Make sure"
-" your installation has a connection to the internet; %(exception)s"
+"Unexpected error trying to determine the latest version available. Make sure "
+"your installation has a connection to the internet; %(exception)s"
 msgstr ""
 
 #: management/commands/dependencies_check.py:13
@@ -345,8 +346,8 @@ msgid ""
 "Comma separated names of dependencies to show in the list while excluding "
 "every other one."
 msgstr ""
-"Noms de dépendances à afficher dans la liste en excluant les autres, séparés"
-" par des virgules."
+"Noms de dépendances à afficher dans la liste en excluant les autres, séparés "
+"par des virgules."
 
 #: management/commands/dependencies_install.py:13
 msgid "Process a specific app."
@@ -366,8 +367,8 @@ msgstr ""
 
 #: views.py:31
 msgid ""
-"It does not verify versions of other components like packaging or deployment"
-" technologies, such as container or virtual machine images."
+"It does not verify versions of other components like packaging or deployment "
+"technologies, such as container or virtual machine images."
 msgstr ""
 
 #: views.py:51

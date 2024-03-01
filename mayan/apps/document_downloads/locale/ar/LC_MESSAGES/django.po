@@ -2,23 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
@@ -66,9 +67,9 @@ msgstr "تحميل"
 
 #: literals.py:4
 msgid ""
-"The document files have been compressed and are available for download using"
-" the link: {{ download_url }} or from the downloads area ({{ "
-"download_list_url }})."
+"The document files have been compressed and are available for download using "
+"the link: {{ download_url }} or from the downloads area "
+"({{ download_list_url }})."
 msgstr ""
 
 #: literals.py:10
@@ -91,8 +92,8 @@ msgstr ""
 
 #: settings.py:27
 msgid ""
-"Template for the document download message subject line. Can't include HTML."
-" Available variables: {}"
+"Template for the document download message subject line. Can't include HTML. "
+"Available variables: {}"
 msgstr ""
 
 #: views.py:24

@@ -1,31 +1,34 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:48+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
+"uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:216 apps.py:654 events.py:6 menus.py:8
-#: models/document_models.py:116 permissions.py:6 settings.py:35
-#: statistics.py:285
+#: apps.py:216 apps.py:654 events.py:6 menus.py:8 models/document_models.py:116
+#: permissions.py:6 settings.py:35 statistics.py:285
 msgid "Documents"
 msgstr "Документи"
 
@@ -135,8 +138,8 @@ msgstr "UUID плюс оригінал"
 
 #: classes.py:92
 msgid ""
-"Generates an immutable, random UUID (RFC 4122) for each file and appends the"
-" original filename of the uploaded file."
+"Generates an immutable, random UUID (RFC 4122) for each file and appends the "
+"original filename of the uploaded file."
 msgstr ""
 "Генерувати незмінний, випадковий UUID (RFC 4122) для кожного файлу та "
 "додавати оригінальне ім'я завантаженого файлу."
@@ -460,23 +463,19 @@ msgstr "Очистити трансформації"
 msgid "Clone transformations"
 msgstr "Клонувати перетворення"
 
-#: links/document_file_page_links.py:44
-#: links/document_version_page_links.py:63
+#: links/document_file_page_links.py:44 links/document_version_page_links.py:63
 msgid "First page"
 msgstr "Перша сторінка"
 
-#: links/document_file_page_links.py:50
-#: links/document_version_page_links.py:69
+#: links/document_file_page_links.py:50 links/document_version_page_links.py:69
 msgid "Last page"
 msgstr "Остання сторінка"
 
-#: links/document_file_page_links.py:58
-#: links/document_version_page_links.py:77
+#: links/document_file_page_links.py:58 links/document_version_page_links.py:77
 msgid "Previous page"
 msgstr "Попередня сторінка"
 
-#: links/document_file_page_links.py:64
-#: links/document_version_page_links.py:83
+#: links/document_file_page_links.py:64 links/document_version_page_links.py:83
 msgid "Next page"
 msgstr "Наступна сторінка"
 
@@ -575,8 +574,7 @@ msgstr "Змінити"
 msgid "Remap pages"
 msgstr "Перепризначити сторінки"
 
-#: links/document_version_page_links.py:97
-#: models/document_version_models.py:51
+#: links/document_version_page_links.py:97 models/document_version_models.py:51
 #: models/document_version_page_models.py:34 search.py:116
 msgid "Document version"
 msgstr "Версія документа"
@@ -717,13 +715,13 @@ msgstr "Ім'я файлу"
 
 #: models/document_file_models.py:79
 msgid ""
-"The document file's file mimetype. MIME types are a standard way to describe"
-" the format of a file, in this case the file format of the document. Some "
+"The document file's file mimetype. MIME types are a standard way to describe "
+"the format of a file, in this case the file format of the document. Some "
 "examples: \"text/plain\" or \"image/jpeg\". "
 msgstr ""
 "MIME-тип файлу документа. Типи MIME є стандартним способом опису формату "
-"файлу, у даному випадку формату файлу документа. Деякі приклади: "
-"\"text/plain\" або \"image/jpeg\"."
+"файлу, у даному випадку формату файлу документа. Деякі приклади: \"text/"
+"plain\" або \"image/jpeg\"."
 
 #: models/document_file_models.py:87
 msgid ""
@@ -855,8 +853,7 @@ msgstr "Серверні аргументи генератора імен фай
 
 #: models/document_type_models.py:62
 msgid ""
-"Amount of time after which documents of this type will be moved to the "
-"trash."
+"Amount of time after which documents of this type will be moved to the trash."
 msgstr ""
 "Період часу, після якого документи цього типу буде переміщено до кошика."
 
@@ -885,8 +882,8 @@ msgstr "Одиниця часу видалення"
 
 #: models/document_type_models.py:83
 msgid ""
-"Delete documents that do not contain any files after a configured expiration"
-" interval."
+"Delete documents that do not contain any files after a configured expiration "
+"interval."
 msgstr ""
 "Видалити документи, які не містять жодних файлів, після закінчення "
 "налаштованого інтервалу."
@@ -897,12 +894,12 @@ msgstr "Обрізка заглушки документа"
 
 #: models/document_type_models.py:89
 msgid ""
-"Time (in seconds) after which a document stub will be considered invalid and"
-" deleted, if pruning is enabled. This an optimization setting and should "
-"only be changed for specific circumstances."
+"Time (in seconds) after which a document stub will be considered invalid and "
+"deleted, if pruning is enabled. This an optimization setting and should only "
+"be changed for specific circumstances."
 msgstr ""
-"Час (у секундах), після якого заглушка документа буде вважатися недійсною та"
-" видаленою, якщо ввімкнено обрізку. Це налаштування оптимізації і повинно "
+"Час (у секундах), після якого заглушка документа буде вважатися недійсною та "
+"видаленою, якщо ввімкнено обрізку. Це налаштування оптимізації і повинно "
 "змінюватися лише для конкретних обставин."
 
 #: models/document_type_models.py:93
@@ -1346,12 +1343,12 @@ msgstr "Відновити URL"
 #: settings.py:51
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
-"will start deleting the oldest document file page image cache files. Specify"
-" the size in bytes."
+"will start deleting the oldest document file page image cache files. Specify "
+"the size in bytes."
 msgstr ""
 "Поріг, при якому DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND почне "
-"видаляти найдавніші файли кешу зображень сторінок документів. Вкажіть розмір"
-" у байтах."
+"видаляти найдавніші файли кешу зображень сторінок документів. Вкажіть розмір "
+"у байтах."
 
 #: settings.py:59
 msgid "Path to the Storage subclass to use when storing document files."
@@ -1386,13 +1383,13 @@ msgstr ""
 
 #: settings.py:92
 msgid ""
-"Size of blocks to use when calculating the document file's checksum. A value"
-" of 0 disables the block calculation and the entire file will be loaded into"
-" memory."
+"Size of blocks to use when calculating the document file's checksum. A value "
+"of 0 disables the block calculation and the entire file will be loaded into "
+"memory."
 msgstr ""
 "Розмір блоків, які використовуються при обчисленні контрольної суми файлу "
-"документа. Значення 0 вимикає обчислення блоку, і весь файл буде завантажено"
-" в пам'ять."
+"документа. Значення 0 вимикає обчислення блоку, і весь файл буде завантажено "
+"в пам'ять."
 
 #: settings.py:99
 msgid "Default documents language (in ISO639-3 format)."
@@ -1404,8 +1401,8 @@ msgstr "Список підтримуваних мов документом. У 
 
 #: settings.py:109
 msgid ""
-"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
-" will start deleting the oldest document version page image cache versions. "
+"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
+"will start deleting the oldest document version page image cache versions. "
 "Specify the size in bytes."
 msgstr ""
 "Поріг, при якому DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND почне "
@@ -1414,8 +1411,8 @@ msgstr ""
 
 #: settings.py:118
 msgid ""
-"Path to the Storage subclass to use when storing the cached document version"
-" page image versions."
+"Path to the Storage subclass to use when storing the cached document version "
+"page image versions."
 msgstr ""
 "Шлях до підкласу сховища, який використовується при збереженні версій "
 "зображень сторінок кешованої версії документа."
@@ -1457,8 +1454,7 @@ msgstr "Максимальний відсоток, на який можна зб
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
-msgstr ""
-"Максимальний відсоток (%), на який можна зменьшити сторінку документу."
+msgstr "Максимальний відсоток (%), на який можна зменьшити сторінку документу."
 
 #: settings.py:200
 msgid "Amount in percent zoom in or out a document page per user interaction."
@@ -1503,19 +1499,19 @@ msgstr "Загальна кількість сторінок документу 
 
 #: storages.py:22
 msgid ""
-"Unable to initialize the document file storage. Check the settings {} and {}"
-" for formatting errors."
+"Unable to initialize the document file storage. Check the settings {} and {} "
+"for formatting errors."
 msgstr ""
-"Неможливо ініціалізувати сховище файлів документа. Перевірте налаштування {}"
-" та {} на наявність помилок форматування."
+"Неможливо ініціалізувати сховище файлів документа. Перевірте налаштування {} "
+"та {} на наявність помилок форматування."
 
 #: storages.py:36
 msgid ""
 "Unable to initialize the document file image storage. Check the settings {} "
 "and {} for formatting errors."
 msgstr ""
-"Неможливо ініціалізувати зберігання зображень документа. Перевірте наявність"
-" помилок у налаштуваннях {} та {} форматування."
+"Неможливо ініціалізувати зберігання зображень документа. Перевірте наявність "
+"помилок у налаштуваннях {} та {} форматування."
 
 #: storages.py:42
 msgid "Document file page images"
@@ -1575,8 +1571,8 @@ msgstr "Невідома мова \"%s\""
 
 #: views/document_file_page_views.py:54
 msgid ""
-"This could mean that the document file is of a format that is not supported,"
-" that it is corrupted, or that the upload process was interrupted. Use the "
+"This could mean that the document file is of a format that is not supported, "
+"that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 "Це може означати, що файл документа має формат, який не підтримується, що "
@@ -1651,8 +1647,8 @@ msgid ""
 "the background."
 msgstr ""
 "Усі сторінки файлів документів з цього файлу документа та сторінки версій "
-"документа, пов'язані з ними, також будуть видалені. Процес буде виконуватися"
-" в фоновому режимі."
+"документа, пов'язані з ними, також будуть видалені. Процес буде виконуватися "
+"в фоновому режимі."
 
 #: views/document_file_views.py:113
 #, python-format
@@ -1756,8 +1752,8 @@ msgstr ""
 #: views/document_file_views.py:401
 #, python-format
 msgid ""
-"Error cloning the page transformations for document file: %(document_file)s;"
-" %(error)s."
+"Error cloning the page transformations for document file: %(document_file)s; "
+"%(error)s."
 msgstr ""
 "Помилка клонування перетворень сторінки для файлу документа: "
 "%(document_file)s; %(error)s."
@@ -1796,8 +1792,8 @@ msgstr "Тип документів: %s"
 #: views/document_type_views.py:74
 msgid ""
 "Document types are the most basic units of configuration. Everything in the "
-"system will depend on them. Define a document type for each type of physical"
-" document you intend to upload. Example document types: invoice, receipt, "
+"system will depend on them. Define a document type for each type of physical "
+"document you intend to upload. Example document types: invoice, receipt, "
 "manual, prescription, balance sheet."
 msgstr ""
 "Типи документів є найбільш базовими одиницями конфігурації. Все в системі "
@@ -1832,11 +1828,13 @@ msgstr "Створити швидку мітку для типу докумен�
 #, python-format
 msgid ""
 "Delete the quick label: %(label)s, from document type \"%(document_type)s\"?"
-msgstr "Видалити швидку мітку: %(label)s, з типу документу \"%(document_type)s\"?"
+msgstr ""
+"Видалити швидку мітку: %(label)s, з типу документу \"%(document_type)s\"?"
 
 #: views/document_type_views.py:207
 #, python-format
-msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
+msgid ""
+"Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
 msgstr ""
 "Редагувати швидку мітку \"%(filename)s\" з типу документа "
 "\"%(document_type)s\""
@@ -1903,8 +1901,7 @@ msgstr "None"
 
 #: views/document_version_page_views.py:191
 msgid "There are no sources available to remap for this document version."
-msgstr ""
-"Немає доступних джерел для переналаштування для цієї версії документа."
+msgstr "Немає доступних джерел для переналаштування для цієї версії документа."
 
 #: views/document_version_page_views.py:194
 msgid "No page sources available"
@@ -2007,8 +2004,7 @@ msgstr ""
 
 #: views/document_version_views.py:329
 #, python-format
-msgid ""
-"Transformation clear request processed for %(count)d document versions."
+msgid "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 "Запит на очищення перетворення оброблено для версій документа %(count)d ."
 
@@ -2172,8 +2168,8 @@ msgstr "Друк: %s"
 
 #: views/recently_accessed_document_views.py:23
 msgid ""
-"This view will list the latest documents viewed or manipulated in any way by"
-" this user account."
+"This view will list the latest documents viewed or manipulated in any way by "
+"this user account."
 msgstr ""
 "Цей перегляд буде містити список останніх документів, переглянутих або "
 "змінених будь-яким чином цим обліковим записом користувача."

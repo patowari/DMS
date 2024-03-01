@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Daniel Winiarski <daniel.winiarski.dw@gmail.com>, 2024
@@ -13,24 +13,25 @@
 # mic <winterfall24@gmail.com>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # tomkolp, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:48+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: tomkolp, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:216 apps.py:654 events.py:6 menus.py:8
-#: models/document_models.py:116 permissions.py:6 settings.py:35
-#: statistics.py:285
+#: apps.py:216 apps.py:654 events.py:6 menus.py:8 models/document_models.py:116
+#: permissions.py:6 settings.py:35 statistics.py:285
 msgid "Documents"
 msgstr "Dokumenty"
 
@@ -141,8 +142,8 @@ msgstr "UUID plus oryginał"
 
 #: classes.py:92
 msgid ""
-"Generates an immutable, random UUID (RFC 4122) for each file and appends the"
-" original filename of the uploaded file."
+"Generates an immutable, random UUID (RFC 4122) for each file and appends the "
+"original filename of the uploaded file."
 msgstr ""
 "Generuje niezmienny, losowy identyfikator UUID (RFC 4122) dla każdego pliku "
 "i dołącza oryginalną nazwę przesłanego pliku."
@@ -358,9 +359,9 @@ msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
 msgstr ""
-"Pobiera rozszerzenie pliku i przenosi go na koniec nazwy pliku, umożliwiając"
-" systemom operacyjnym korzystającym z rozszerzeń plików prawidłowe "
-"otwieranie dokumentu."
+"Pobiera rozszerzenie pliku i przenosi go na koniec nazwy pliku, umożliwiając "
+"systemom operacyjnym korzystającym z rozszerzeń plików prawidłowe otwieranie "
+"dokumentu."
 
 #: forms/document_forms.py:105
 msgid "Date created"
@@ -466,23 +467,19 @@ msgstr "Wyczyść transformacje"
 msgid "Clone transformations"
 msgstr "Sklonuj przekształcenia"
 
-#: links/document_file_page_links.py:44
-#: links/document_version_page_links.py:63
+#: links/document_file_page_links.py:44 links/document_version_page_links.py:63
 msgid "First page"
 msgstr "Pierwsza strona"
 
-#: links/document_file_page_links.py:50
-#: links/document_version_page_links.py:69
+#: links/document_file_page_links.py:50 links/document_version_page_links.py:69
 msgid "Last page"
 msgstr "Ostatnia strona"
 
-#: links/document_file_page_links.py:58
-#: links/document_version_page_links.py:77
+#: links/document_file_page_links.py:58 links/document_version_page_links.py:77
 msgid "Previous page"
 msgstr "Poprzednia strona"
 
-#: links/document_file_page_links.py:64
-#: links/document_version_page_links.py:83
+#: links/document_file_page_links.py:64 links/document_version_page_links.py:83
 msgid "Next page"
 msgstr "Następna strona"
 
@@ -581,8 +578,7 @@ msgstr "Modyfikuj"
 msgid "Remap pages"
 msgstr "Zmień mapowanie stron"
 
-#: links/document_version_page_links.py:97
-#: models/document_version_models.py:51
+#: links/document_version_page_links.py:97 models/document_version_models.py:51
 #: models/document_version_page_models.py:34 search.py:116
 msgid "Document version"
 msgstr "Wersja dokumentu"
@@ -722,13 +718,13 @@ msgstr "Nazwa"
 
 #: models/document_file_models.py:79
 msgid ""
-"The document file's file mimetype. MIME types are a standard way to describe"
-" the format of a file, in this case the file format of the document. Some "
+"The document file's file mimetype. MIME types are a standard way to describe "
+"the format of a file, in this case the file format of the document. Some "
 "examples: \"text/plain\" or \"image/jpeg\". "
 msgstr ""
 "Typ MIME pliku dokumentu. Typy MIME to standardowy sposób opisu formatu "
-"pliku, w tym przypadku formatu pliku dokumentu. Kilka przykładów: "
-"\"text/plain\" lub \"image/jpeg\". "
+"pliku, w tym przypadku formatu pliku dokumentu. Kilka przykładów: \"text/"
+"plain\" lub \"image/jpeg\". "
 
 #: models/document_file_models.py:87
 msgid ""
@@ -861,8 +857,7 @@ msgstr "Argumenty silnika generatora nazw plików"
 
 #: models/document_type_models.py:62
 msgid ""
-"Amount of time after which documents of this type will be moved to the "
-"trash."
+"Amount of time after which documents of this type will be moved to the trash."
 msgstr "Czas, po jakim dokumenty tego typu zostaną przeniesione do kosza."
 
 #: models/document_type_models.py:64
@@ -889,8 +884,8 @@ msgstr "Jednostka czasu dotycząca usunięcia dokumentu"
 
 #: models/document_type_models.py:83
 msgid ""
-"Delete documents that do not contain any files after a configured expiration"
-" interval."
+"Delete documents that do not contain any files after a configured expiration "
+"interval."
 msgstr ""
 "Usuń dokumenty niezawierające żadnych plików po upływie skonfigurowanego "
 "okresu ważności."
@@ -901,12 +896,12 @@ msgstr "Czyszczenie niekompletnych dokumentów"
 
 #: models/document_type_models.py:89
 msgid ""
-"Time (in seconds) after which a document stub will be considered invalid and"
-" deleted, if pruning is enabled. This an optimization setting and should "
-"only be changed for specific circumstances."
+"Time (in seconds) after which a document stub will be considered invalid and "
+"deleted, if pruning is enabled. This an optimization setting and should only "
+"be changed for specific circumstances."
 msgstr ""
-"Czas (w sekundach), po którym fragment dokumentu zostanie uznany za nieważny"
-" i usunięty, jeśli włączone jest czyszczenie. Jest to ustawienie "
+"Czas (w sekundach), po którym fragment dokumentu zostanie uznany za nieważny "
+"i usunięty, jeśli włączone jest czyszczenie. Jest to ustawienie "
 "optymalizacyjne i należy je zmieniać tylko w określonych okolicznościach."
 
 #: models/document_type_models.py:93
@@ -1351,15 +1346,14 @@ msgstr "Przywróć adres URL"
 #: settings.py:51
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
-"will start deleting the oldest document file page image cache files. Specify"
-" the size in bytes."
+"will start deleting the oldest document file page image cache files. Specify "
+"the size in bytes."
 msgstr ""
 
 #: settings.py:59
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr ""
-"Ścieżka do podklasy Storage używana podczas przechowywania plików "
-"dokumentów."
+"Ścieżka do podklasy Storage używana podczas przechowywania plików dokumentów."
 
 #: settings.py:66
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
@@ -1386,12 +1380,12 @@ msgstr ""
 
 #: settings.py:92
 msgid ""
-"Size of blocks to use when calculating the document file's checksum. A value"
-" of 0 disables the block calculation and the entire file will be loaded into"
-" memory."
+"Size of blocks to use when calculating the document file's checksum. A value "
+"of 0 disables the block calculation and the entire file will be loaded into "
+"memory."
 msgstr ""
-"Rozmiar bloków używanych podczas obliczania sumy kontrolnej pliku dokumentu."
-" Wartość 0 wyłącza obliczanie bloku, a cały plik zostanie załadowany do "
+"Rozmiar bloków używanych podczas obliczania sumy kontrolnej pliku dokumentu. "
+"Wartość 0 wyłącza obliczanie bloku, a cały plik zostanie załadowany do "
 "pamięci."
 
 #: settings.py:99
@@ -1404,8 +1398,8 @@ msgstr "Lista wspieranych języków dokumentu w formacie ISO639-3."
 
 #: settings.py:109
 msgid ""
-"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
-" will start deleting the oldest document version page image cache versions. "
+"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
+"will start deleting the oldest document version page image cache versions. "
 "Specify the size in bytes."
 msgstr ""
 "Próg, od którego DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
@@ -1414,8 +1408,8 @@ msgstr ""
 
 #: settings.py:118
 msgid ""
-"Path to the Storage subclass to use when storing the cached document version"
-" page image versions."
+"Path to the Storage subclass to use when storing the cached document version "
+"page image versions."
 msgstr ""
 "Ścieżka do podklasy Storage, która ma być używana podczas przechowywania "
 "wersji obrazu strony z wersją dokumentu w pamięci podręcznej."
@@ -1432,8 +1426,8 @@ msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
 msgstr ""
-"Maksymalna liczba ostatnio otwieranych dokumentów (utworzonych, edytowanych,"
-" przeglądanych) do zapamiętania na użytkownika."
+"Maksymalna liczba ostatnio otwieranych dokumentów (utworzonych, edytowanych, "
+"przeglądanych) do zapamiętania na użytkownika."
 
 #: settings.py:155
 msgid "Maximum number of recently created documents to show."
@@ -1507,8 +1501,8 @@ msgstr ""
 
 #: storages.py:22
 msgid ""
-"Unable to initialize the document file storage. Check the settings {} and {}"
-" for formatting errors."
+"Unable to initialize the document file storage. Check the settings {} and {} "
+"for formatting errors."
 msgstr ""
 
 #: storages.py:36
@@ -1573,8 +1567,8 @@ msgstr "Nieznany język : \"%s\""
 
 #: views/document_file_page_views.py:54
 msgid ""
-"This could mean that the document file is of a format that is not supported,"
-" that it is corrupted, or that the upload process was interrupted. Use the "
+"This could mean that the document file is of a format that is not supported, "
+"that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 "Może to oznaczać, że plik dokumentu ma nieobsługiwany format, jest "
@@ -1684,8 +1678,8 @@ msgid ""
 "and its related document version pages re-created. All transformations will "
 "be lost."
 msgstr ""
-"Plik dokumentu zostanie ponownie sprawdzony pod kątem rozmiaru, liczby stron"
-" i sumy kontrolnej, a powiązane z nim strony wersji dokumentu zostaną "
+"Plik dokumentu zostanie ponownie sprawdzony pod kątem rozmiaru, liczby stron "
+"i sumy kontrolnej, a powiązane z nim strony wersji dokumentu zostaną "
 "ponownie utworzone. Wszystkie transformacje zostaną utracone."
 
 #: views/document_file_views.py:192
@@ -1719,15 +1713,14 @@ msgstr "Właściwości pliku dokumentu: %s"
 #, python-format
 msgid "Transformation clear request processed for %(count)d document file."
 msgstr ""
-"Przetworzono żądanie usunięcia transformacji dla %(count)d pliku dokumentu  "
-"."
+"Przetworzono żądanie usunięcia transformacji dla %(count)d pliku dokumentu  ."
 
 #: views/document_file_views.py:329
 #, python-format
 msgid "Transformation clear request processed for %(count)d document files."
 msgstr ""
-"Przetworzono żądanie usunięcia transformacji dla %(count)d plików dokumentów"
-"  ."
+"Przetworzono żądanie usunięcia transformacji dla %(count)d plików "
+"dokumentów  ."
 
 #: views/document_file_views.py:336
 msgid "Clear all the page transformations for the selected document file?"
@@ -1759,8 +1752,8 @@ msgstr ""
 #: views/document_file_views.py:401
 #, python-format
 msgid ""
-"Error cloning the page transformations for document file: %(document_file)s;"
-" %(error)s."
+"Error cloning the page transformations for document file: %(document_file)s; "
+"%(error)s."
 msgstr ""
 "Błąd podczas klonowania przekształceń stron dla pliku dokumentu: "
 "%(document_file)s ; %(error)s ."
@@ -1799,14 +1792,14 @@ msgstr "Dokumenty typu: %s"
 #: views/document_type_views.py:74
 msgid ""
 "Document types are the most basic units of configuration. Everything in the "
-"system will depend on them. Define a document type for each type of physical"
-" document you intend to upload. Example document types: invoice, receipt, "
+"system will depend on them. Define a document type for each type of physical "
+"document you intend to upload. Example document types: invoice, receipt, "
 "manual, prescription, balance sheet."
 msgstr ""
 "Typy dokumentów są najbardziej podstawowymi jednostkami konfiguracji. "
 "Wszystko w systemie będzie od nich zależeć. Zdefiniuj typ dokumentu dla "
-"każdego rodzaju fizycznego dokumentu, który zamierzasz przesłać. Przykładowe"
-" typy dokumentów: faktura, paragon, instrukcja, recepta, bilans."
+"każdego rodzaju fizycznego dokumentu, który zamierzasz przesłać. Przykładowe "
+"typy dokumentów: faktura, paragon, instrukcja, recepta, bilans."
 
 #: views/document_type_views.py:80
 msgid "No document types available"
@@ -1835,12 +1828,15 @@ msgstr "Utwórz szybką etykietę dla typu dokumentu: %s"
 #, python-format
 msgid ""
 "Delete the quick label: %(label)s, from document type \"%(document_type)s\"?"
-msgstr "Usunąć szybką etykietę: %(label)s z typu dokumentu \"%(document_type)s\"?"
+msgstr ""
+"Usunąć szybką etykietę: %(label)s z typu dokumentu \"%(document_type)s\"?"
 
 #: views/document_type_views.py:207
 #, python-format
-msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
-msgstr "Edytuj szybką etykietę \"%(filename)s\" typu dokumentu \"%(document_type)s\""
+msgid ""
+"Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
+msgstr ""
+"Edytuj szybką etykietę \"%(filename)s\" typu dokumentu \"%(document_type)s\""
 
 #: views/document_type_views.py:246
 msgid ""
@@ -1849,8 +1845,8 @@ msgid ""
 "can also be used after the documents have been uploaded."
 msgstr ""
 "Szybkie etykiety to z góry określone nazwy plików, które umożliwiają szybką "
-"zmianę nazw dokumentów podczas ich przesyłania przez wybranie ich z listy. Z"
-" szybkich etykiet można również korzystać po przesłaniu dokumentów."
+"zmianę nazw dokumentów podczas ich przesyłania przez wybranie ich z listy. Z "
+"szybkich etykiet można również korzystać po przesłaniu dokumentów."
 
 #: views/document_type_views.py:252
 msgid "There are no quick labels for this document type"
@@ -1884,8 +1880,8 @@ msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
 msgstr ""
-"Strony wersji dokumentu są łączami do stron z rzeczywistą treścią. Utwórz je"
-" za pomocą akcji zmiany mapowania strony lub akcji modyfikacji wersji."
+"Strony wersji dokumentu są łączami do stron z rzeczywistą treścią. Utwórz je "
+"za pomocą akcji zmiany mapowania strony lub akcji modyfikacji wersji."
 
 #: views/document_version_page_views.py:108
 msgid "No document version pages available"
@@ -2007,8 +2003,7 @@ msgstr ""
 
 #: views/document_version_views.py:329
 #, python-format
-msgid ""
-"Transformation clear request processed for %(count)d document versions."
+msgid "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 "Przetworzono żądanie usunięcia transformacji dla %(count)d wersji dokumentu."
 
@@ -2176,8 +2171,8 @@ msgstr "Wydruk: %s"
 
 #: views/recently_accessed_document_views.py:23
 msgid ""
-"This view will list the latest documents viewed or manipulated in any way by"
-" this user account."
+"This view will list the latest documents viewed or manipulated in any way by "
+"this user account."
 msgstr ""
 "W tym widoku wymienione są najnowsze dokumenty przeglądane lub modyfikowane "
 "w jakikolwiek sposób przez to konto użytkownika."
@@ -2272,8 +2267,7 @@ msgid ""
 "restored."
 msgstr ""
 "Aby uniknąć utraty danych, dokumenty nie są bezpośrednio usuwane. Najpierw "
-"umieszczane są w koszu na śmieci, skąd można je trwale usunąć lub "
-"przywrócić."
+"umieszczane są w koszu na śmieci, skąd można je trwale usunąć lub przywrócić."
 
 #: views/trashed_document_views.py:154
 msgid "There are no documents in the trash can"

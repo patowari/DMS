@@ -1,23 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Jorge <emailcurro@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Jorge <emailcurro@gmail.com>, 2024\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
@@ -282,8 +282,8 @@ msgstr ""
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process"
-" happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process "
+"happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -460,8 +460,8 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources"
-" that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources "
+"that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -483,8 +483,8 @@ msgstr ""
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled,"
-" create one before proceeding."
+"No interactive document sources have been defined or none have been enabled, "
+"create one before proceeding."
 msgstr ""
 
 #: wizards.py:85

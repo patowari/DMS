@@ -2,24 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefan Lodders <sl@suchreflex.de>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
+"teams/13584/de_AT/)\n"
+"Language: de_AT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:14 permissions.py:6 settings.py:11
@@ -29,8 +30,7 @@ msgstr "Plattform"
 #: classes.py:241
 msgid "Template for entrypoint.sh file inside a Docker image."
 msgstr ""
-"Konfigurationsvorlage für die Datei entrypoint.sh innerhalb des "
-"Dockerimages."
+"Konfigurationsvorlage für die Datei entrypoint.sh innerhalb des Dockerimages."
 
 #: classes.py:256
 msgid "Template that generates the Docker Compose file."
@@ -67,16 +67,16 @@ msgstr "Triggertests"
 
 #: settings.py:17
 msgid ""
-"List of client backends to launch after startup. Use full dotted path to the"
-" client backend classes."
+"List of client backends to launch after startup. Use full dotted path to the "
+"client backend classes."
 msgstr ""
 "Liste der Client Backends, die nach dem Start gestartet werden sollen. "
 "Verwenden Sie den vollen punktierten Pfad zur Klasse des Client Backends."
 
 #: settings.py:24
 msgid ""
-"Arguments for the client backends. Use the client backend dotted path as the"
-" dictionary key for the arguments in dictionary format."
+"Arguments for the client backends. Use the client backend dotted path as the "
+"dictionary key for the arguments in dictionary format."
 msgstr ""
 "Argumente für die Client Backends, die nach dem Start gestartet werden "
 "sollen. Verwenden Sie den vollen punktierten Pfad zur Klasse des Client "

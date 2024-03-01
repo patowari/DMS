@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Marvin Haschker <marvin@haschker.me>, 2024
@@ -12,19 +12,20 @@
 # Berny <berny@bernhard-marx.de>, 2024
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:61 events.py:6 permissions.py:6
@@ -251,8 +252,8 @@ msgstr ""
 #: serializers.py:66
 msgid "URL of the API endpoint showing the list groups this user belongs to."
 msgstr ""
-"Die URL dieses API-Endpunkts zeigt eine Liste der Gruppen, in welcher dieser"
-" Benutzer Mitglied ist."
+"Die URL dieses API-Endpunkts zeigt eine Liste der Gruppen, in welcher dieser "
+"Benutzer Mitglied ist."
 
 #: serializers.py:68
 msgid "Groups URL"
@@ -372,8 +373,8 @@ msgstr "%(count)dausgewählten Nutzer löschen."
 
 #: views/user_views.py:73
 msgid ""
-"Warning! You are about to delete your own user account. You will lose access"
-" to the system. This process is not reversible."
+"Warning! You are about to delete your own user account. You will lose access "
+"to the system. This process is not reversible."
 msgstr ""
 "Warnung! Sie sind dabei Ihr eigenes Benutzerkonto zu löschen. Sie werden "
 "keinen Zugang zum System mehr haben. Dieser Vorgang ist nicht umkehrbar."

@@ -2,23 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
+"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/"
+"teams/13584/es_PR/)\n"
+"Language: es_PR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_PR\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
@@ -63,16 +65,16 @@ msgstr "Activar pruebas"
 
 #: settings.py:17
 msgid ""
-"List of client backends to launch after startup. Use full dotted path to the"
-" client backend classes."
+"List of client backends to launch after startup. Use full dotted path to the "
+"client backend classes."
 msgstr ""
 "Lista de backends de cliente para iniciar después del arranque. Utilice la "
 "ruta de separada por puntos a las clases de backend del cliente."
 
 #: settings.py:24
 msgid ""
-"Arguments for the client backends. Use the client backend dotted path as the"
-" dictionary key for the arguments in dictionary format."
+"Arguments for the client backends. Use the client backend dotted path as the "
+"dictionary key for the arguments in dictionary format."
 msgstr ""
 "Argumentos para los backends del cliente. Utilice la ruta separada por "
 "puntos del backend del cliente como llave para los argumentos en formato de "

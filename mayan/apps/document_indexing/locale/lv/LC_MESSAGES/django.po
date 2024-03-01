@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Māris Teivāns <maris.teivans@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2024\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: admin.py:24
 msgid "None"
@@ -228,8 +229,7 @@ msgid "Slug"
 msgstr "Lode"
 
 #: models/index_template_models.py:44
-msgid ""
-"Causes this index to be visible and updated when document data changes."
+msgid "Causes this index to be visible and updated when document data changes."
 msgstr ""
 
 #: models/index_template_models.py:57 models/index_template_models.py:98
@@ -270,8 +270,8 @@ msgstr ""
 
 #: models/index_template_models.py:169
 msgid ""
-"Check this option to have this node act as a container for documents and not"
-" as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not "
+"as a parent for further nodes."
 msgstr ""
 
 #: models/index_template_models.py:172
@@ -385,8 +385,8 @@ msgstr ""
 
 #: serializers.py:237
 msgid ""
-"URL of the API endpoint showing the list document types associated with this"
-" index template."
+"URL of the API endpoint showing the list document types associated with this "
+"index template."
 msgstr ""
 
 #: serializers.py:239
@@ -492,8 +492,8 @@ msgstr ""
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like"
-" label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like "
+"label or description, or that of extended properties like metadata."
 msgstr ""
 
 #: views/index_template_views.py:94

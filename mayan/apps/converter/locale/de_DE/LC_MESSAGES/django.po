@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Robin Schubert <robin.schubert@gmx.de>, 2024
@@ -14,19 +14,20 @@
 # Ampérlo Voltić <amperlo.voltic@gmail.com>, 2024
 # Jesaja Everling <jeverling@gmail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
@@ -105,8 +106,8 @@ msgstr "\"%s\" ist kein gültiger Eintrag."
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
-"Dekorationen sind visuelle Elemente, die kontextuelle Information zu Bildern"
-" hinzufügen."
+"Dekorationen sind visuelle Elemente, die kontextuelle Information zu Bildern "
+"hinzufügen."
 
 #: layers.py:14
 msgid "Decorations"
@@ -128,8 +129,7 @@ msgstr "Löschen"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21
-#: views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
 msgid "Assets"
 msgstr "Assets"
 
@@ -210,8 +210,8 @@ msgid ""
 "Order in which the transformations will be executed. If left unchanged, an "
 "automatic order value will be assigned."
 msgstr ""
-"Reihenfolge in der die Transformationen ausgeführt werden. Ohne Eintrag wird"
-" automatisch eine Reihenfolge zugewiesen."
+"Reihenfolge in der die Transformationen ausgeführt werden. Ohne Eintrag wird "
+"automatisch eine Reihenfolge zugewiesen."
 
 #: models.py:165 workflow_actions.py:57
 msgid ""
@@ -344,13 +344,13 @@ msgid ""
 "Unable to initialize the converter asset storage. Check the settings {} and "
 "{} for formatting errors."
 msgstr ""
-"Fehler bei Initialisierung des Konverter Asset Storage. Die Einstellungen {}"
-" und {} auf Formatierungsfehler überprüfen."
+"Fehler bei Initialisierung des Konverter Asset Storage. Die Einstellungen {} "
+"und {} auf Formatierungsfehler überprüfen."
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {}"
-" and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {} "
+"and {} for formatting errors."
 msgstr ""
 "Fehler bei Initialisierung des Konverter Asset Cache Storage. Die "
 "Einstellungen {} und {} auf Formatierungsfehler überprüfen."
@@ -735,7 +735,8 @@ msgstr ""
 #: views/transformation_views.py:193
 #, python-format
 msgid "Edit transformation \"%(transformation)s\" for: %(content_object)s"
-msgstr "Transformation \"%(transformation)s\" für %(content_object)s bearbeiten"
+msgstr ""
+"Transformation \"%(transformation)s\" für %(content_object)s bearbeiten"
 
 #: views/transformation_views.py:249
 #, python-format
@@ -766,8 +767,8 @@ msgstr "Seiten"
 
 #: workflow_actions.py:37
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas "
-"and/or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas and/"
+"or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 "Seiten zu denen neue Transformationen hinzugefügt werden. Trennung durch "
 "Kommata und/oder Bindestriche für Bereiche. Leer lassen für alle Seiten."

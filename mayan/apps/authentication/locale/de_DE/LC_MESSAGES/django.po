@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # 847f3f05406324d125c568a4b098bddb, 2024
@@ -11,19 +11,20 @@
 # Berny <berny@bernhard-marx.de>, 2024
 # Roberto Rosario, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:28+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 settings.py:11
@@ -155,8 +156,7 @@ msgstr "Passwort zurücksetzen"
 #: templates/authentication/password_reset_complete.html:15
 msgid "Password reset complete! Click the link below to login."
 msgstr ""
-"Passwortrücksetzung erfolgreich! Klicken Sie auf den Link um sich "
-"anzumelden."
+"Passwortrücksetzung erfolgreich! Klicken Sie auf den Link um sich anzumelden."
 
 #: templates/authentication/password_reset_complete.html:17
 msgid "Login page"
@@ -203,11 +203,11 @@ msgstr "Passwortwechsel für %(count)d Benutzer durchgeführt"
 
 #: views/authentication_views.py:381
 msgid ""
-"Changing the password of staff or super user accounts via the user interface"
-" is not allowed. Use administration tools to perform this operation."
+"Changing the password of staff or super user accounts via the user interface "
+"is not allowed. Use administration tools to perform this operation."
 msgstr ""
-"Es ist nicht erlaubt das Passwort von Mitarbeitern oder Administratoren über"
-" die Benutzeroberfläche zu ändern. Benutzen Sie stattdessen "
+"Es ist nicht erlaubt das Passwort von Mitarbeitern oder Administratoren über "
+"die Benutzeroberfläche zu ändern. Benutzen Sie stattdessen "
 "Administrationswerkzeuge."
 
 #: views/authentication_views.py:395

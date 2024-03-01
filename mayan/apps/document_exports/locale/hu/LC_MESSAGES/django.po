@@ -2,22 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Csaba Tarjányi, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
+"hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:20 events.py:6 permissions.py:6
@@ -39,13 +40,13 @@ msgstr "Exportálás"
 #: literals.py:4
 #, python-format
 msgid ""
-"Document version \"%(document_version)s\" has been exported and is available"
-" for download using the link: %(download_url)s or from the downloads area "
+"Document version \"%(document_version)s\" has been exported and is available "
+"for download using the link: %(download_url)s or from the downloads area "
 "(%(download_list_url)s)."
 msgstr ""
 "A \"%(document_version)s\" dokumentumverzió exportálva, és letölthető a "
-"következő linkről: %(download_url)s vagy a letöltési területről ( "
-"%(download_list_url)s )."
+"következő linkről: %(download_url)s vagy a letöltési területről "
+"( %(download_list_url)s )."
 
 #: literals.py:9
 msgid "Document version exported."
@@ -98,5 +99,5 @@ msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."
 msgstr ""
-"A folyamat a háttérben történik. Az exportált fájl elérhető lesz a letöltési"
-" területen."
+"A folyamat a háttérben történik. Az exportált fájl elérhető lesz a letöltési "
+"területen."

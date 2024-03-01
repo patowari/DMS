@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
@@ -10,20 +10,21 @@
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
@@ -258,7 +259,8 @@ msgstr "Anonyme"
 #: views/group_views.py:40
 #, python-format
 msgid "Error deleting group \"%(instance)s\"; %(exception)s"
-msgstr "Erreur lors de la suppression du groupe \"%(instance)s\"; %(exception)s"
+msgstr ""
+"Erreur lors de la suppression du groupe \"%(instance)s\"; %(exception)s"
 
 #: views/group_views.py:47
 #, python-format
@@ -307,9 +309,9 @@ msgid ""
 "roles for permissions and access control, add groups to them."
 msgstr ""
 "Les groupes d'utilisateurs sont des unités d'organisation. Ils doivent "
-"refléter les unités organisationnelles de votre organisation. Les groupes ne"
-" peuvent pas être utilisés pour le contrôle d'accès. Utilisez les rôles pour"
-" les autorisations et le contrôle d'accès, ajoutez-leur des groupes."
+"refléter les unités organisationnelles de votre organisation. Les groupes ne "
+"peuvent pas être utilisés pour le contrôle d'accès. Utilisez les rôles pour "
+"les autorisations et le contrôle d'accès, ajoutez-leur des groupes."
 
 #: views/group_views.py:110
 msgid "There are no user groups"
@@ -367,8 +369,8 @@ msgstr "Supprimez %(count)d utilisateur sélectionné."
 
 #: views/user_views.py:73
 msgid ""
-"Warning! You are about to delete your own user account. You will lose access"
-" to the system. This process is not reversible."
+"Warning! You are about to delete your own user account. You will lose access "
+"to the system. This process is not reversible."
 msgstr ""
 "Avertissement! Vous êtes sur le point de supprimer votre propre compte "
 "utilisateur. Vous perdrez l'accès au système. Cette action n'est pas "

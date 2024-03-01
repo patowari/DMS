@@ -2,26 +2,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Domagoj Crljenko <domagoj@rii.hr>, 2024
 # Mario Jakovina <mario.jakovina@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2024\n"
-"Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
+"Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/"
+"hr/)\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "Pogledi"
 
@@ -170,34 +172,6 @@ msgid ""
 "processing up the upload."
 msgstr ""
 "Prikaži tipku za slanje i pričekaj da bude prisitnuta prije učitavanja."
-
-#: templates/views/app/foot.html:45
-msgid "Cancel upload"
-msgstr "Poništi preuzimanje (upload)"
-
-#: templates/views/app/foot.html:46
-msgid "Are you sure you want to cancel this upload?"
-msgstr "Jeste li sigurni da želite obustaviti preuzimanje (upload)?"
-
-#: templates/views/app/foot.html:47
-msgid "Drop files or click here to upload files"
-msgstr "Dovuci datoteke ili klikni za preuzimanje"
-
-#: templates/views/app/foot.html:48
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "Vaš preglednik ne podržava povuci/spusti preuzimanja datoteka."
-
-#: templates/views/app/foot.html:49
-msgid "Please use the fallback form below to upload your files."
-msgstr "Molim korisitt fallback ispod ua preuzimanje datoteka."
-
-#: templates/views/app/foot.html:50
-msgid "Clear"
-msgstr "Očisti"
-
-#: templates/views/app/foot.html:51
-msgid "Server responded with {{statusCode}} code."
-msgstr "Server je odgovorio kodom: {{statusCode}}."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

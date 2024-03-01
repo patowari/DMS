@@ -2,24 +2,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
+"uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:32 permissions.py:6
 msgid "Task manager"
@@ -40,8 +44,8 @@ msgstr "Черга за замовчуванням?"
 #: apps.py:128
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non"
-" critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non "
+"critical tasks."
 msgstr ""
 "Тимчасові черги не є постійними. Завдання в тимчасовій черзі втрачаються, "
 "якщо брокер перезапускається. Тимчасові черги використовують менше ресурсів "
@@ -121,8 +125,8 @@ msgstr "Паралелізм"
 
 #: apps.py:208
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers"
-" the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers "
+"the priority. The default value is 0."
 msgstr ""
 "Значення nice визначає пріоритет процесу. Вище значення знижує пріоритет. "
 "Значення за замовчуванням - 0."
@@ -161,20 +165,21 @@ msgstr "Селера"
 
 #: settings.py:17
 msgid "Default: \"AMQPLAIN\". Set custom amqp login method."
-msgstr "Типове значення: \"AMQPLAIN\". Встановити спеціальний метод входу в amqp."
+msgstr ""
+"Типове значення: \"AMQPLAIN\". Встановити спеціальний метод входу в amqp."
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
-" transport://userid:password@hostname:port/virtual_host Only the scheme part"
-" (transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
+"transport://userid:password@hostname:port/virtual_host Only the scheme part "
+"(transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
-"За замовчуванням: \"amqp://\". URL-адреса брокера за умовчанням. Це має бути"
-" URL-адреса у такому вигляді: "
-"transport://userid:password@hostname:port/virtual_host Потрібна лише частина"
-" схеми (transport://), решта є необов’язковою та за замовчуванням "
-"використовується для конкретних транспортних значень за замовчуванням."
+"За замовчуванням: \"amqp://\". URL-адреса брокера за умовчанням. Це має бути "
+"URL-адреса у такому вигляді: transport://userid:password@hostname:port/"
+"virtual_host Потрібна лише частина схеми (transport://), решта є "
+"необов’язковою та за замовчуванням використовується для конкретних "
+"транспортних значень за замовчуванням."
 
 #: settings.py:32
 msgid ""
@@ -188,15 +193,13 @@ msgstr ""
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to "
-"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
-"backend"
+"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
+"userguide/configuration.html#result-backend"
 msgstr ""
 "За замовчуванням: За замовчуванням не включено жодного резервного кінцевого "
 "пункту. Кінцевий пункт, який використовується для зберігання результатів "
-"завдань (надгробки). Див. "
-"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
-"backend"
+"завдань (надгробки). Див. http://docs.celeryproject.org/en/v4.1.0/userguide/"
+"configuration.html#result-backend"
 
 #: tests/literals.py:11
 msgid "Test queue"

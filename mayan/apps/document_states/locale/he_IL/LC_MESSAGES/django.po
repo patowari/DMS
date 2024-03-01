@@ -1,24 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Ovadia Ovadia, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:48+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
-"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/"
+"teams/13584/he_IL/)\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: apps.py:93 events.py:6 forms/workflow_template_forms.py:20 links.py:52
 #: links.py:92 links.py:100 links.py:289 links.py:313
@@ -190,8 +192,8 @@ msgid "Namespace"
 msgstr "מרחב שמות (namespace)"
 
 #: forms/workflow_template_transition_forms.py:45 models/workflow_models.py:45
-#: models/workflow_state_action_models.py:34
-#: models/workflow_state_models.py:39 models/workflow_transition_models.py:38
+#: models/workflow_state_action_models.py:34 models/workflow_state_models.py:39
+#: models/workflow_transition_models.py:38
 #: models/workflow_transition_models.py:116
 msgid "Label"
 msgstr "Label"
@@ -228,8 +230,7 @@ msgstr "Document types"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: links.py:82 links.py:124 links.py:162 links.py:192 links.py:221
-#: links.py:267
+#: links.py:82 links.py:124 links.py:162 links.py:192 links.py:221 links.py:267
 msgid "Edit"
 msgstr "עריכה"
 
@@ -310,13 +311,13 @@ msgid ""
 "Can be a static value or a template. In addition to the workflow instance, "
 "the template receives the workflow instance context which itself includes "
 "the \"entry_log\" (containing \"workflow_instance\", \"datetime\", "
-"\"transition\", \"user\", \"comment\") and any values from workflow template"
-" fields."
+"\"transition\", \"user\", \"comment\") and any values from workflow template "
+"fields."
 msgstr ""
 "יכול להיות ערך קבוע או תבנית. בנוסף למופע תהליך העבודה, התבנית מקבלת את "
 "ההקשר של מופע תהליך העבודה שכולל בעצמו את ה-&quot;entry_log&quot; (המכיל "
-"&quot;workflow_instance&quot;, &quot;datetime&quot;, &quot;transition&quot;,"
-" &quot;user&quot;, &quot;comment&quot;) וכל הערכים משדות תבנית תהליך העבודה."
+"&quot;workflow_instance&quot;, &quot;datetime&quot;, &quot;transition&quot;, "
+"&quot;user&quot;, &quot;comment&quot;) וכל הערכים משדות תבנית תהליך העבודה."
 
 #: literals.py:29
 msgid "Character"
@@ -457,8 +458,8 @@ msgstr ""
 #: models/workflow_state_action_models.py:47
 msgid ""
 "The condition that will determine if this state action is executed or not. "
-"The condition is evaluated against the workflow instance. Conditions that do"
-" not return any value, that return the Python logical None, or an empty "
+"The condition is evaluated against the workflow instance. Conditions that do "
+"not return any value, that return the Python logical None, or an empty "
 "string ('') are considered to be logical false, any other value is "
 "considered to be the logical true."
 msgstr ""
@@ -502,8 +503,7 @@ msgid ""
 "Enable automatic transition the workflow after a specified amount of time "
 "has elapsed in the state without change."
 msgstr ""
-"לאפשר מעבר אוטומטי של תהליך העבודה בחלוף פרק זמן מוגדר ללא שינוי במצב "
-"התהליך."
+"לאפשר מעבר אוטומטי של תהליך העבודה בחלוף פרק זמן מוגדר ללא שינוי במצב התהליך."
 
 #: models/workflow_state_escalation_models.py:52
 msgid "Time unit"
@@ -585,10 +585,10 @@ msgstr ""
 #: models/workflow_transition_models.py:50
 msgid ""
 "The condition that will determine if this transition is enabled or not. The "
-"condition is evaluated against the workflow instance. Conditions that do not"
-" return any value, that return the Python logical None, or an empty string "
-"('') are considered to be logical false, any other value is considered to be"
-" the logical true."
+"condition is evaluated against the workflow instance. Conditions that do not "
+"return any value, that return the Python logical None, or an empty string "
+"('') are considered to be logical false, any other value is considered to be "
+"the logical true."
 msgstr ""
 "התנאי שיקבע אם מעבר שלב זה מתבצע או לא. התנאי מוערך מול מופע תהליך העבודה. "
 "תנאים שלא מחזירים שום ערך, או מחזירים את ה-Python logical None, או מחרוזת "
@@ -641,8 +641,7 @@ msgstr "Class יישומונים"
 
 #: models/workflow_transition_models.py:135
 msgid "A group of keyword arguments to customize the widget. Use YAML format."
-msgstr ""
-"קבוצת פרמטרים של מילות מפתח להתאמה אישית של הווידג&#39;ט. בפורמט YAML."
+msgstr "קבוצת פרמטרים של מילות מפתח להתאמה אישית של הווידג&#39;ט. בפורמט YAML."
 
 #: models/workflow_transition_models.py:138
 msgid "Widget keyword arguments"
@@ -935,8 +934,8 @@ msgid ""
 "Path to the Storage subclass to use when storing the cached workflow image "
 "files."
 msgstr ""
-"נתיב ל subclass של Storage לשימוש בעת אחסון קבצי תמונת תהליך העבודה המאוחסנת"
-" במטמון."
+"נתיב ל subclass של Storage לשימוש בעת אחסון קבצי תמונת תהליך העבודה המאוחסנת "
+"במטמון."
 
 #: settings.py:45
 msgid "Arguments to pass to the WORKFLOWS_IMAGE_CACHE_STORAGE_BACKEND."
@@ -950,8 +949,8 @@ msgstr "מרווח בשניות שבו תופעל המשימה לבדיקת מצ
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the workflow preview storage. Check the settings {} and"
-" {} for formatting errors."
+"Unable to initialize the workflow preview storage. Check the settings {} and "
+"{} for formatting errors."
 msgstr ""
 "לא ניתן לאתחל את אחסון התצוגה המקדימה של תהליך העבודה. לבדוק שגיאות עיצוב "
 "בהגדרות {} ו-{} ."
@@ -962,8 +961,8 @@ msgstr "תמונות תצוגה מקדימה של תהליך עבודה"
 
 #: views/workflow_instance_views.py:41
 msgid ""
-"Assign workflows to the document type of this document to have this document"
-" execute those workflows. "
+"Assign workflows to the document type of this document to have this document "
+"execute those workflows. "
 msgstr ""
 "הקצאת תהליכי עבודה לסוג המסמך של מסמך זה כדי שמסמך זה יבצע את תהליכי העבודה "
 "הללו."
@@ -979,8 +978,7 @@ msgstr "תהליכי עבודה עבור מסמך: %s"
 
 #: views/workflow_instance_views.py:77
 msgid ""
-"This view will show the state changes as a workflow instance is "
-"transitioned."
+"This view will show the state changes as a workflow instance is transitioned."
 msgstr "תצוגה זו תציג את שינויי המצב כאשר מופע תהליך עבודה מועבר שלב."
 
 #: views/workflow_instance_views.py:81
@@ -1013,10 +1011,11 @@ msgstr "בחירה"
 
 #: views/workflow_instance_views.py:235
 #, python-format
-msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
+msgid ""
+"Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
-"בחירת מעבר שלב עבור תהליך העבודה &quot;%(workflow)s&quot; של המסמך "
-"&quot;%(document)s&quot;"
+"בחירת מעבר שלב עבור תהליך העבודה &quot;%(workflow)s&quot; של המסמך &quot;"
+"%(document)s&quot;"
 
 #: views/workflow_proxy_views.py:37
 msgid ""
@@ -1054,8 +1053,7 @@ msgstr "אין מסמכים במצב תהליך עבודה זה"
 msgid "Documents in the workflow \"%s\", state \"%s\""
 msgstr "מסמכים בתהליך העבודה &quot;%s&quot;, במצב &quot;%s&quot;"
 
-#: views/workflow_proxy_views.py:126
-#: views/workflow_template_state_views.py:352
+#: views/workflow_proxy_views.py:126 views/workflow_template_state_views.py:352
 msgid "Create states and link them using transitions."
 msgstr "יצירת מצבים וקישורם באמצעות מעברי שלב."
 
@@ -1063,8 +1061,7 @@ msgstr "יצירת מצבים וקישורם באמצעות מעברי שלב."
 msgid "This workflow doesn't have any state"
 msgstr "לתהליך עבודה הזה לא הוגדר מצב כלשהו"
 
-#: views/workflow_proxy_views.py:132
-#: views/workflow_template_state_views.py:358
+#: views/workflow_proxy_views.py:132 views/workflow_template_state_views.py:358
 #, python-format
 msgid "States of workflow: %s"
 msgstr "מצבי תהליך עבודה: %s"
@@ -1118,8 +1115,8 @@ msgstr "עריכת פעולת מצב תהליך עבודה: %s"
 
 #: views/workflow_template_state_views.py:189
 msgid ""
-"Workflow state actions are macros that get executed when documents enters or"
-" leaves the state in which they reside."
+"Workflow state actions are macros that get executed when documents enters or "
+"leaves the state in which they reside."
 msgstr ""
 "פעולות במצב תהליך עבודה הן פקודות מאקרו שמתבצעות כאשר מסמכים נכנסים או "
 "יוצאים מהמצב שבו הם נמצאים."
@@ -1174,8 +1171,7 @@ msgstr "עריכת מעבר שלב של תהליך עבודה: %s"
 
 #: views/workflow_template_transition_views.py:166
 msgid ""
-"Create a transition and use it to move a workflow from  one state to "
-"another."
+"Create a transition and use it to move a workflow from  one state to another."
 msgstr "יצירת מעבר שלב ושימוש בו כדי להעביר תהליך עבודה ממצב אחד לאחר."
 
 #: views/workflow_template_transition_views.py:170
@@ -1204,8 +1200,8 @@ msgstr "עריכת שדה מעבר שלב של תהליך עבודה: %s"
 
 #: views/workflow_template_transition_views.py:310
 msgid ""
-"Workflow transition fields allow adding data to the workflow's context. This"
-" additional context data can then be used by other elements of the workflow "
+"Workflow transition fields allow adding data to the workflow's context. This "
+"additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
 "שדות מעבר שלב של תהליך עבודה מאפשרים הוספת נתונים להקשר של תהליך העבודה. "
@@ -1365,8 +1361,8 @@ msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
 msgstr ""
-"הסרת סוג מסמך מתהליך עבודה תסיר גם את כל המופעים הפעילים של אותו תהליך עבודה"
-" עבור מסמכים מסוג המסמך שזה עתה הוסר."
+"הסרת סוג מסמך מתהליך עבודה תסיר גם את כל המופעים הפעילים של אותו תהליך עבודה "
+"עבור מסמכים מסוג המסמך שזה עתה הוסר."
 
 #: views/workflow_template_views.py:230
 #, python-format

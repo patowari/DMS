@@ -1,24 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:58+0000\n"
+"POT-Creation-Date: 2024-03-01 01:30+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
+"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/"
+"teams/13584/es_PR/)\n"
+"Language: es_PR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_PR\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: apps.py:30 permissions.py:6 queues.py:13 settings.py:16
 msgid "Storage"
@@ -66,8 +68,8 @@ msgid ""
 "Path of the database (.dbm) file that will be created/read to keep track of "
 "items processed."
 msgstr ""
-"Ruta del archivo de base de datos (.dbm) que se creará / leerá para realizar"
-" un seguimiento de los elementos procesados."
+"Ruta del archivo de base de datos (.dbm) que se creará / leerá para realizar "
+"un seguimiento de los elementos procesados."
 
 #: management/commands/storage_process.py:26
 msgid "Process a specific model."
@@ -170,8 +172,8 @@ msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
-"Un controlador de almacenamiento que todos los trabajadores pueden usar para"
-" generar y almacenar archivos para descargar."
+"Un controlador de almacenamiento que todos los trabajadores pueden usar para "
+"generar y almacenar archivos para descargar."
 
 #: settings.py:39
 msgid "A storage backend that all workers can use to share files."
@@ -195,16 +197,16 @@ msgstr ""
 
 #: storages.py:15
 msgid ""
-"Unable to initialize the download file storage. Check the settings {} and {}"
-" for formatting errors."
+"Unable to initialize the download file storage. Check the settings {} and {} "
+"for formatting errors."
 msgstr ""
-"No se puede inicializar el almacenamiento de archivos de descarga. Verifique"
-" la configuración {} y {} para ver si hay errores de formato."
+"No se puede inicializar el almacenamiento de archivos de descarga. Verifique "
+"la configuración {} y {} para ver si hay errores de formato."
 
 #: storages.py:29
 msgid ""
-"Unable to initialize the shared uploaded file storage. Check the settings {}"
-" and {} for formatting errors."
+"Unable to initialize the shared uploaded file storage. Check the settings {} "
+"and {} for formatting errors."
 msgstr ""
 "No se puede inicializar el almacenamiento de archivos cargados compartidos. "
 "Verifique las configuraciones {} y {} para errores de formato."
@@ -216,8 +218,8 @@ msgid ""
 "automatically."
 msgstr ""
 "Los archivos de descarga se crean como resultado de un proceso externo como "
-"una exportación. Los archivos de descarga se conservan durante un período de"
-" tiempo y luego se eliminan automáticamente."
+"una exportación. Los archivos de descarga se conservan durante un período de "
+"tiempo y luego se eliminan automáticamente."
 
 #: views.py:71
 msgid "There are no files to download."

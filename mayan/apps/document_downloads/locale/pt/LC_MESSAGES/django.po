@@ -2,24 +2,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
 # Márcia Ferreira, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
+"pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:24 permissions.py:6 settings.py:12
 msgid "Document downloads"
@@ -67,9 +69,9 @@ msgstr "Download rápido"
 
 #: literals.py:4
 msgid ""
-"The document files have been compressed and are available for download using"
-" the link: {{ download_url }} or from the downloads area ({{ "
-"download_list_url }})."
+"The document files have been compressed and are available for download using "
+"the link: {{ download_url }} or from the downloads area "
+"({{ download_list_url }})."
 msgstr ""
 
 #: literals.py:10
@@ -92,8 +94,8 @@ msgstr ""
 
 #: settings.py:27
 msgid ""
-"Template for the document download message subject line. Can't include HTML."
-" Available variables: {}"
+"Template for the document download message subject line. Can't include HTML. "
+"Available variables: {}"
 msgstr ""
 
 #: views.py:24

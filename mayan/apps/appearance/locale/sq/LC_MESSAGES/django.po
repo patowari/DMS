@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Erjon Sulaj <erjon1282@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:28+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2024\n"
-"Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
+"Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/"
+"sq/)\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Paraqitja"
 
@@ -224,8 +225,7 @@ msgstr ""
 "Vendndodhja është e saktë por llogaria juaj e përdoruesit nuk ka privilegje "
 "të mjaftueshme për ta aksesuar."
 
-#: templates/500.html:5 templates/500.html:30
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:30 templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Gabim në server"
 
@@ -250,7 +250,9 @@ msgid "Contact your system administrator."
 msgstr "Kontakto administratorin e sistemit."
 
 #: templates/500.html:47
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
 msgstr ""
 "Kontrollo regjistrat e ngjarjeve për mesazhet me etiketat \"ERROR\", "
 "\"CRITICAL\" ose \"FATAL\"."
@@ -290,8 +292,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -337,12 +339,6 @@ msgid ""
 "with no warranty."
 msgstr ""
 
-#: templates/appearance/app/foot.html:70
-msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
-msgstr ""
-
 #: templates/appearance/confirm.html:13
 msgid "Are you sure?"
 msgstr "Jeni të sigurtë?"
@@ -361,8 +357,7 @@ msgstr "Hapat e para"
 
 #: templates/appearance/home.html:30
 msgid "Before you can fully use Mayan EDMS you need the following:"
-msgstr ""
-"Përpara se të përdorni plotësisht sistemin, ju nevojitet sa më poshtë:"
+msgstr "Përpara se të përdorni plotësisht sistemin, ju nevojitet sa më poshtë:"
 
 #: templates/appearance/menus/topbar.html:11
 msgid "Toggle navigation"

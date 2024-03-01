@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Jiri Fait <fait@orkasolutions.cz>, 2024
 # Michal Švábík <snadno@lehce.cz>, 2024
 # Jiří Podhorecký, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:28+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: apps.py:26 classes.py:206 links.py:27
 msgid "ACLs"
@@ -213,9 +214,8 @@ msgid ""
 "menu."
 msgstr ""
 "Zakázaná oprávnění jsou zděděna z nadřazeného objektu nebo přímo udělena "
-"roli a nelze je z tohoto pohledu odebrat. Zděděná oprávnění je třeba odebrat"
-" z ACL nadřazeného objektu nebo z jeho role prostřednictvím nabídky "
-"Nastavení."
+"roli a nelze je z tohoto pohledu odebrat. Zděděná oprávnění je třeba odebrat "
+"z ACL nadřazeného objektu nebo z jeho role prostřednictvím nabídky Nastavení."
 
 #: views.py:269
 msgid "There are no ACLs"
@@ -234,8 +234,7 @@ msgid "Type of the object for which the access will be modified."
 msgstr "Typ objektu, pro který bude přístup upraven."
 
 #: workflow_actions.py:56
-msgid ""
-"Numeric identifier of the object for which the access will be modified."
+msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "Numerický identifikátor objektu, pro který bude přístup upraven."
 
 #: workflow_actions.py:61 workflow_actions.py:197

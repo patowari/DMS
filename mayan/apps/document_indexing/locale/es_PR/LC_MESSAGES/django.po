@@ -1,24 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
+"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/"
+"teams/13584/es_PR/)\n"
+"Language: es_PR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_PR\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: admin.py:24
 msgid "None"
@@ -232,8 +234,7 @@ msgid "Slug"
 msgstr "Identificador"
 
 #: models/index_template_models.py:44
-msgid ""
-"Causes this index to be visible and updated when document data changes."
+msgid "Causes this index to be visible and updated when document data changes."
 msgstr ""
 "Hace que este índice sea visible y actualizado cuando los datos de "
 "documentos cambien."
@@ -280,11 +281,11 @@ msgstr ""
 
 #: models/index_template_models.py:169
 msgid ""
-"Check this option to have this node act as a container for documents and not"
-" as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not "
+"as a parent for further nodes."
 msgstr ""
-"Marque esta opción para que el nodo actúe como un contenedor de documentos y"
-" no como un padre para otros nodos secundarios."
+"Marque esta opción para que el nodo actúe como un contenedor de documentos y "
+"no como un padre para otros nodos secundarios."
 
 #: models/index_template_models.py:172
 msgid "Link documents"
@@ -397,11 +398,11 @@ msgstr "Padre"
 
 #: serializers.py:237
 msgid ""
-"URL of the API endpoint showing the list document types associated with this"
-" index template."
+"URL of the API endpoint showing the list document types associated with this "
+"index template."
 msgstr ""
-"URL de la API que muestra la lista de tipos de documentos asociados con esta"
-" plantilla de índice."
+"URL de la API que muestra la lista de tipos de documentos asociados con esta "
+"plantilla de índice."
 
 #: serializers.py:239
 msgid "Document types URL"
@@ -518,8 +519,8 @@ msgstr "Índices vinculados al tipo de documento: %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like"
-" label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like "
+"label or description, or that of extended properties like metadata."
 msgstr ""
 "Los índices agrupan el documento automáticamente en niveles. Los índices se "
 "definen utilizando una plantilla cuyos marcadores se reemplazan con "

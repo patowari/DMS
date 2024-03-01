@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:30+0000\n"
+"POT-Creation-Date: 2024-03-01 01:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
+"hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:58
@@ -36,8 +37,8 @@ msgstr "Feladó"
 
 #: classes.py:48
 msgid ""
-"The sender's address. Some system will refuse to send messages if this value"
-" is not set."
+"The sender's address. Some system will refuse to send messages if this value "
+"is not set."
 msgstr ""
 "A feladó címe. Egyes rendszerek megtagadják az üzenetek küldését, ha ez az "
 "érték nincs beállítva."
@@ -68,8 +69,8 @@ msgstr "Levelezési profil szerkesztve"
 
 #: forms.py:60 forms.py:102
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma"
-" or semicolon."
+"Email address of the recipient. Can be multiple addresses separated by comma "
+"or semicolon."
 msgstr ""
 "A címzett email címe. Több cím is lehet, vesszővel vagy pontosvesszővel "
 "elválasztva."
@@ -212,8 +213,8 @@ msgid ""
 "This is used for explicit TLS connections, generally on port 587."
 msgstr ""
 "Használjon-e TLS (biztonságos) kapcsolatot, amikor az SMTP-kiszolgálóhoz "
-"kapcsolódik. Ez az explicit TLS-kapcsolatokhoz használatos, általában az "
-"587-es porton."
+"kapcsolódik. Ez az explicit TLS-kapcsolatokhoz használatos, általában az 587-"
+"es porton."
 
 #: mailers.py:46
 msgid "Use SSL"
@@ -225,16 +226,16 @@ msgid ""
 "server. In most email documentation this type of TLS connection is referred "
 "to as SSL. It is generally used on port 465. If you are experiencing "
 "problems, see the explicit TLS setting \"Use TLS\". Note that \"Use TLS\" "
-"and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
-" True."
+"and \"Use SSL\" are mutually exclusive, so only set one of those settings to "
+"True."
 msgstr ""
 "Használjon-e implicit TLS (biztonságos) kapcsolatot, amikor az SMTP-"
 "kiszolgálóhoz kapcsolódik. A legtöbb email dokumentációban ezt a fajta TLS-"
 "kapcsolatot SSL-ként említik. Általában a 465-ös porton használják. Ha "
-"problémákat tapasztal, lásd az explicit TLS beállítás \"TLS használata\"-t ."
-" Vegye figyelembe, hogy a \"TLS használata\" és az \"SSL használata\" "
-"kölcsönösen kizárják egymást, ezért csak az egyik beállítást állítsa jelölje"
-" be."
+"problémákat tapasztal, lásd az explicit TLS beállítás \"TLS használata\"-t . "
+"Vegye figyelembe, hogy a \"TLS használata\" és az \"SSL használata\" "
+"kölcsönösen kizárják egymást, ezért csak az egyik beállítást állítsa jelölje "
+"be."
 
 #: mailers.py:71
 msgid "Server"
@@ -357,8 +358,8 @@ msgstr "Sablon a dokumentumhivatkozás  email űrlap tárgysorához."
 #: settings.py:36
 msgid "Template for the document link email form body text. Can include HTML."
 msgstr ""
-"Sablon a dokumentumhivatkozás email űrlapjának szövegtörzséhez. Tartalmazhat"
-" HTML-t."
+"Sablon a dokumentumhivatkozás email űrlapjának szövegtörzséhez. Tartalmazhat "
+"HTML-t."
 
 #: validators.py:14
 #, python-format
@@ -462,9 +463,8 @@ msgstr "Levelezési profil tesztelése: %s"
 
 #: workflow_action_mixins.py:18
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma"
-" or semicolon. A template can be used to reference properties of the "
-"document."
+"Email address of the recipient. Can be multiple addresses separated by comma "
+"or semicolon. A template can be used to reference properties of the document."
 msgstr ""
 "A címzett email címe. Több cím is lehet, vesszővel vagy pontosvesszővel "
 "elválasztva. Egy sablon használható a dokumentum tulajdonságainak "
