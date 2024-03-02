@@ -142,15 +142,15 @@ msgstr ""
 "Genereert een onveranderlijke, willekeurige UUID (RFC 4122) voor elk bestand"
 " en voegt de originele bestandsnaam van het geüploade bestand toe."
 
-#: dashboard_widgets.py:32
+#: dashboard_widgets.py:29
 msgid "Total pages"
 msgstr "Totaal aantal pagina's"
 
-#: dashboard_widgets.py:55
+#: dashboard_widgets.py:52
 msgid "Total documents"
 msgstr "Totaal aantal documenten"
 
-#: dashboard_widgets.py:73 views/trashed_document_views.py:156
+#: dashboard_widgets.py:70 views/trashed_document_views.py:156
 msgid "Documents in trash"
 msgstr "Documenten in prullenbak"
 
@@ -160,11 +160,11 @@ msgstr "Documenten in prullenbak"
 msgid "Document types"
 msgstr "Documenttypes"
 
-#: dashboard_widgets.py:109
+#: dashboard_widgets.py:106
 msgid "New documents this month"
 msgstr "Nieuwe documenten deze maand"
 
-#: dashboard_widgets.py:123
+#: dashboard_widgets.py:120
 msgid "New pages this month"
 msgstr "Nieuwe pagina's deze maand"
 
@@ -563,15 +563,15 @@ msgstr ""
 msgid "Make active"
 msgstr "Maak actief"
 
-#: links/document_version_links.py:33
+#: links/document_version_links.py:32
 msgid "Create document version"
 msgstr "Documentversie maken"
 
-#: links/document_version_links.py:53 links/document_version_links.py:80
+#: links/document_version_links.py:52 links/document_version_links.py:79
 msgid "Versions"
 msgstr "Versies"
 
-#: links/document_version_links.py:58
+#: links/document_version_links.py:57
 msgid "Modify"
 msgstr ""
 
@@ -607,19 +607,19 @@ msgstr "Uit favorieten verwijderen"
 msgid "Decorations"
 msgstr "Decoraties"
 
-#: links/trashed_document_links.py:24 links/trashed_document_links.py:37
+#: links/trashed_document_links.py:23 links/trashed_document_links.py:36
 msgid "Move to trash"
 msgstr "Naar prullenbak verplaatsen"
 
-#: links/trashed_document_links.py:27
+#: links/trashed_document_links.py:26
 msgid "Trash can"
 msgstr "Prullenbak"
 
-#: links/trashed_document_links.py:32 links/trashed_document_links.py:44
+#: links/trashed_document_links.py:31 links/trashed_document_links.py:43
 msgid "Restore"
 msgstr "Herstellen"
 
-#: links/trashed_document_links.py:49 permissions.py:105
+#: links/trashed_document_links.py:48 permissions.py:105
 msgid "Empty trash"
 msgstr "Prullenbak legen"
 
@@ -740,7 +740,7 @@ msgstr ""
 msgid "Document files"
 msgstr "Documentbestanden"
 
-#: models/document_file_page_model_mixins.py:224
+#: models/document_file_page_model_mixins.py:230
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "%(document_file)s - pagina %(page_num)d van %(total_pages)d"
@@ -946,7 +946,7 @@ msgstr "Actief"
 msgid "Document versions"
 msgstr "Documentversies"
 
-#: models/document_version_page_model_mixins.py:274
+#: models/document_version_page_model_mixins.py:276
 #, python-format
 msgid "%(document_version)s page %(page_number)d of %(total_pages)d"
 msgstr "%(document_version)s pagina %(page_number)d of %(total_pages)d"
@@ -1348,7 +1348,7 @@ msgstr ""
 msgid "Restore URL"
 msgstr ""
 
-#: settings.py:49
+#: settings.py:50
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
 "will start deleting the oldest document file page image cache files. Specify"
@@ -1358,17 +1358,17 @@ msgstr ""
 " met het verwijderen van de cachebestanden van de oudste "
 "documentbestandspagina's. Geef de grootte op in bytes."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr ""
 "Pad naar de Storage subclass die gebruikt wordt bij opslag van "
 "documentbestanden."
 
-#: settings.py:64
+#: settings.py:65
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
 msgstr "Argumenten om door te geven aan de DOCUMENT_FILE_STORAGE_BACKEND."
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
@@ -1376,18 +1376,18 @@ msgstr ""
 "Pad naar de subklasse Opslag die moet worden gebruikt bij het opslaan van de"
 " paginabeeldbestanden van het documentbestand in de cache."
 
-#: settings.py:78
+#: settings.py:79
 msgid ""
 "Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Argumenten om door te geven aan de "
 "DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:84
+#: settings.py:85
 msgid "Maximum number of favorite documents to remember per user."
 msgstr "Maximale aantal favoriete documenten om te onthouden per gebruiker."
 
-#: settings.py:90
+#: settings.py:91
 msgid ""
 "Size of blocks to use when calculating the document file's checksum. A value"
 " of 0 disables the block calculation and the entire file will be loaded into"
@@ -1397,15 +1397,15 @@ msgstr ""
 "bestandsdocument. Een waarde van 0 schakelt de blokberekening uit en laadt "
 "het gehele bestand in het geheugen. "
 
-#: settings.py:97
+#: settings.py:98
 msgid "Default documents language (in ISO639-3 format)."
 msgstr "Standaard taal van documenten (in ISO639-3 opmaak)."
 
-#: settings.py:101
+#: settings.py:102
 msgid "List of supported document languages. In ISO639-3 format."
 msgstr "Lijst met ondersteunde talen voor documenten. In ISO639-3 opmaak."
 
-#: settings.py:107
+#: settings.py:108
 msgid ""
 "The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
 " will start deleting the oldest document version page image cache versions. "
@@ -1415,7 +1415,7 @@ msgstr ""
 "begint met het verwijderen van de cacheversies van de paginaafbeeldingen met"
 " de oudste documentversie. Geef de grootte op in bytes."
 
-#: settings.py:116
+#: settings.py:117
 msgid ""
 "Path to the Storage subclass to use when storing the cached document version"
 " page image versions."
@@ -1423,14 +1423,14 @@ msgstr ""
 "Pad naar de subklasse Opslag die moet worden gebruikt bij het opslaan van de"
 " pagina-afbeeldingsversies van de documentversie in de cache."
 
-#: settings.py:124
+#: settings.py:125
 msgid ""
 "Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Argumenten om door te geven aan de "
 "DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:146
+#: settings.py:147
 msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
@@ -1438,11 +1438,11 @@ msgstr ""
 "Maximaal aantal recent geopende documenten (gemaakt, bewerkt, bekeken) om "
 "per gebruiker te onthouden."
 
-#: settings.py:153
+#: settings.py:154
 msgid "Maximum number of recently created documents to show."
 msgstr "Maximale aantal recent aangemaakt documenten om te tonen."
 
-#: settings.py:159
+#: settings.py:160
 msgid "Amount in degrees to rotate a document page per user interaction."
 msgstr "Aantal graden waarmee documentpagina roteert per gebruikersactie."
 
@@ -1468,39 +1468,39 @@ msgstr ""
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr "Percentage in- of uitzoomen voor documentpagina per gebruikeractie."
 
-#: statistics.py:290
+#: statistics.py:291
 msgid "New documents per month"
 msgstr "Nieuwe documenten per maand"
 
-#: statistics.py:297
+#: statistics.py:298
 msgid "New document files per month"
 msgstr "Nieuwe documentbestanden per maand"
 
-#: statistics.py:304
+#: statistics.py:305
 msgid "New document pages per month"
 msgstr "Nieuwe documentpagina's per maand"
 
-#: statistics.py:311
+#: statistics.py:312
 msgid "Total documents at each month"
 msgstr "Totaal aantal documenten voor iedere maand"
 
-#: statistics.py:318
+#: statistics.py:319
 msgid "Total document files at each month"
 msgstr "Totaal aantal documentbestanden per maand"
 
-#: statistics.py:325
+#: statistics.py:326
 msgid "Total document pages at each month"
 msgstr "Totaal aantal documentpagina's voor iedere maand"
 
-#: statistics.py:332
+#: statistics.py:333
 msgid "Total documents per document type"
 msgstr ""
 
-#: statistics.py:339
+#: statistics.py:340
 msgid "Total document files per document type"
 msgstr ""
 
-#: statistics.py:346
+#: statistics.py:347
 msgid "Total document file pages per document type"
 msgstr ""
 
@@ -1859,7 +1859,7 @@ msgstr "Snel labels voor documenttype: %s"
 msgid "Filename generation setup for document type: %s"
 msgstr "Instelling bestandsnaam genereren voor documenttype: %s"
 
-#: views/document_version_page_views.py:57
+#: views/document_version_page_views.py:56
 msgid ""
 "The page number of this page will be skipped. If you want to achieve "
 "sequential page numbering, use the page remap action instead."
@@ -1868,41 +1868,41 @@ msgstr ""
 "paginanummering wilt bereiken, gebruikt u in plaats daarvan de actie pagina "
 "opnieuw toewijzen."
 
-#: views/document_version_page_views.py:62
+#: views/document_version_page_views.py:61
 #, python-format
 msgid "Delete document version page %s ?"
 msgstr "Documentversiepagina %s verwijderen?"
 
-#: views/document_version_page_views.py:101
+#: views/document_version_page_views.py:100
 msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
 msgstr ""
 
-#: views/document_version_page_views.py:105
+#: views/document_version_page_views.py:104
 msgid "No document version pages available"
 msgstr "Geen documentversiepagina's beschikbaar"
 
-#: views/document_version_page_views.py:108
+#: views/document_version_page_views.py:107
 #, python-format
 msgid "Pages of document version: %s"
 msgstr "Pagina's van documentversie: %s"
 
-#: views/document_version_page_views.py:158
+#: views/document_version_page_views.py:159
 msgid "None"
 msgstr "Geen"
 
-#: views/document_version_page_views.py:183
+#: views/document_version_page_views.py:186
 msgid "There are no sources available to remap for this document version."
 msgstr ""
 "Er zijn geen bronnen beschikbaar om opnieuw toe te wijzen voor deze "
 "documentversie."
 
-#: views/document_version_page_views.py:186
+#: views/document_version_page_views.py:189
 msgid "No page sources available"
 msgstr "Geen paginabronnen beschikbaar"
 
-#: views/document_version_page_views.py:189
+#: views/document_version_page_views.py:192
 #, python-format
 msgid "Remap pages of document version: %s"
 msgstr "Pagina&#39;s van documentversie opnieuw toewijzen: %s"
@@ -1960,12 +1960,12 @@ msgstr "Verwijder %(count)d documentversies."
 msgid "The process will be performed in the background."
 msgstr ""
 
-#: views/document_version_views.py:162
+#: views/document_version_views.py:163
 #, python-format
 msgid "Edit document version: %s"
 msgstr "Documentversie bewerken: %s"
 
-#: views/document_version_views.py:199
+#: views/document_version_views.py:200
 msgid ""
 "Versions are views that can display document file pages as they are, remap "
 "or merge them into different layouts."
@@ -1974,43 +1974,43 @@ msgstr ""
 "ze zijn, opnieuw kunnen toewijzen of ze kunnen samenvoegen in verschillende "
 "lay-outs."
 
-#: views/document_version_views.py:202
+#: views/document_version_views.py:203
 msgid "No versions available"
 msgstr "Geen versies beschikbaar"
 
-#: views/document_version_views.py:205
+#: views/document_version_views.py:206
 #, python-format
 msgid "Versions of document: %s"
 msgstr "Versies van document: %s"
 
-#: views/document_version_views.py:237
+#: views/document_version_views.py:238
 msgid "Document version modification backend queued successfully."
 msgstr ""
 
-#: views/document_version_views.py:247
+#: views/document_version_views.py:248
 #, python-format
 msgid "Execute version modification action for document version: %s"
 msgstr ""
 
-#: views/document_version_views.py:278
+#: views/document_version_views.py:279
 #, python-format
 msgid "Preview of document version: %s"
 msgstr "Voorbeeldweergave van documentversie: %s"
 
-#: views/document_version_views.py:325
+#: views/document_version_views.py:326
 #, python-format
 msgid "Transformation clear request processed for %(count)d document version."
 msgstr ""
 "Verzoek om transformatie wissen verwerkt voor documentversie %(count)d."
 
-#: views/document_version_views.py:329
+#: views/document_version_views.py:330
 #, python-format
 msgid ""
 "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 "Verzoek om transformatie wissen verwerkt voor %(count)d documentversies."
 
-#: views/document_version_views.py:337
+#: views/document_version_views.py:338
 msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
@@ -2019,12 +2019,12 @@ msgstr[0] ""
 msgstr[1] ""
 "Alle paginatransformaties voor de geselecteerde documentversie wissen?"
 
-#: views/document_version_views.py:348
+#: views/document_version_views.py:349
 #, python-format
 msgid "Clear all the page transformations for the document version: %s?"
 msgstr "Wis alle paginatransformaties voor de documentversie: %s?"
 
-#: views/document_version_views.py:365
+#: views/document_version_views.py:366
 #, python-format
 msgid ""
 "Error deleting the page transformations for document version: "
@@ -2033,7 +2033,7 @@ msgstr ""
 "Fout bij het verwijderen van de paginatransformaties voor documentversie: "
 "%(document_version)s; %(error)s."
 
-#: views/document_version_views.py:402
+#: views/document_version_views.py:403
 #, python-format
 msgid ""
 "Error cloning the page transformations for document version: "
@@ -2042,7 +2042,7 @@ msgstr ""
 "Fout bij het klonen van de paginatransformaties voor documentversie: "
 "%(document_version)s; %(error)s."
 
-#: views/document_version_views.py:426
+#: views/document_version_views.py:427
 #, python-format
 msgid "Clone page transformations of document version: %s"
 msgstr "Paginatransformaties van documentversie klonen: %s"

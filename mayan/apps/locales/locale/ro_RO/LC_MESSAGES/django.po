@@ -33,11 +33,11 @@ msgstr "Client Transifex"
 msgid "User locale profile edited"
 msgstr "Profilul local al utilizatorului a fost editat"
 
-#: links.py:15
+#: links.py:14
 msgid "Locale profile"
 msgstr "Profilul localizării"
 
-#: links.py:20
+#: links.py:19
 msgid "Edit locale profile"
 msgstr "Editați profilul localizării"
 

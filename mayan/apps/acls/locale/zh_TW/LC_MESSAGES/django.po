@@ -57,11 +57,11 @@ msgstr "已編輯的ACL存取控制"
 msgid "Role"
 msgstr "角色"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "建立存取清單"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "刪除"
 
@@ -69,7 +69,7 @@ msgstr "刪除"
 msgid "Permissions"
 msgstr "權限"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "全域ACLs-存取控制清單"
 
@@ -173,7 +173,7 @@ msgstr "删除存取控制列表: %s"
 msgid "There are no ACLs for this object"
 msgstr "對此物件無存取控制列表"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -193,12 +193,12 @@ msgstr "已授予的權限"
 msgid "Available permissions"
 msgstr "可用的權限"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "為\"%(object)s\"的角色 \"%(role)s\" 權限"
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -206,11 +206,11 @@ msgid ""
 "menu."
 msgstr "禁用的權限是從母物件繼承或直接授予角色的，不能從此視圖中删除。需要透過“設置”選單從母物件的ACL或角色中删除所繼承的權限。"
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "沒有ACLs存取控制"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "全域存取控制列表"
 

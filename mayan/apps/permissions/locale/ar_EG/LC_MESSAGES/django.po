@@ -23,11 +23,11 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "أذونات"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "عدد المجموعة"
 
@@ -97,15 +97,15 @@ msgstr "العنوان"
 msgid "Role"
 msgstr "دور"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "مساحة الاسم"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "اسم"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "الإذن"
 
@@ -198,42 +198,42 @@ msgstr "الأدوار المتاحة"
 msgid "Roles of group: %s"
 msgstr "أدوار المجموعة: %s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr ""
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr ""
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr ""
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr ""
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr ""
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -244,48 +244,48 @@ msgstr ""
 "بأكمله. يمكن أيضًا أن تكون الأدوار جزءًا من قوائم ضوابط الوصول. قائمة عناصر "
 "التحكم في الوصول هي أذونات تُمنح لدور لمتغيرات معينة يرثها أعضاء المجموعة."
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "لا توجد أدوار"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "أدوار المجموعات"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "المجموعات المتاحة"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr "أضف مجموعات لتكون جزءًا من دور. سيرثون أذونات الدور وضوابط الوصول."
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "أدوار المجموعات: %s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "الأذونات الممنوحة"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "الأذونات المتاحة"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr "سيتم تطبيق الأذونات الممنوحة هنا على النظام بأكمله وجميع المتغيرات"
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "أذونات الدور: %s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr ""

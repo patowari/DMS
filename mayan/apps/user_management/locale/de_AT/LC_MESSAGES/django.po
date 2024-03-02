@@ -27,11 +27,11 @@ msgstr ""
 "Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Benutzerverwaltung"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "Gruppe"
 
@@ -40,11 +40,11 @@ msgstr "Gruppe"
 msgid "Groups"
 msgstr "Gruppen"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Name"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "Benutzer"
 
@@ -53,15 +53,15 @@ msgstr "Benutzer"
 msgid "Users"
 msgstr "Benutzer"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "E-Mail"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "Vorname"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "Aktiv"
 

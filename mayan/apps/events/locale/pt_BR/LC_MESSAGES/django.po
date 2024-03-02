@@ -111,7 +111,7 @@ msgstr "Inscrito"
 msgid "System"
 msgstr "Sistema"
 
-#: links.py:55 links.py:100 views/clear_views.py:63
+#: links.py:55 links.py:100 views/clear_views.py:65
 msgid "Clear events"
 msgstr "Limpar eventos"
 
@@ -253,16 +253,16 @@ msgid ""
 msgstr ""
 "Esta ação não é reversível. O processo irá acontecer em segundo plano."
 
-#: views/clear_views.py:51
+#: views/clear_views.py:53
 msgid "Event list clear task queued successfully."
 msgstr "Tarefa de eliminar a lista de evento em linha com sucesso."
 
-#: views/clear_views.py:84
+#: views/clear_views.py:86
 #, python-format
 msgid "Clear events of: %s"
 msgstr "Eliminar os eventos de: %s"
 
-#: views/clear_views.py:109
+#: views/clear_views.py:111
 #, python-format
 msgid "Clear events of type: %s"
 msgstr "Limpar eventos do tipo: %s"

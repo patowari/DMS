@@ -23,11 +23,11 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Management utilizatori"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "Grup"
 
@@ -36,11 +36,11 @@ msgstr "Grup"
 msgid "Groups"
 msgstr "Grupuri"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Nume"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "Utilizator"
 
@@ -49,15 +49,15 @@ msgstr "Utilizator"
 msgid "Users"
 msgstr "Utilizatorii"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "email"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "Prenume"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "Este activ?"
 

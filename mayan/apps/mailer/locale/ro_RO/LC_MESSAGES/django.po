@@ -66,7 +66,7 @@ msgstr "Profil de corespondență a fost creat"
 msgid "Mailing profile edited"
 msgstr "Profilul de corespondență a fost editat"
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -74,7 +74,7 @@ msgstr ""
 "Adresa de e-mail a destinatarului. Pot fi mai multe adrese separate prin "
 "virgulă sau punct și virgulă."
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "Adresa de email"
 
@@ -86,7 +86,7 @@ msgstr "Subiect"
 msgid "Body"
 msgstr "Corp"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr "Profilul de e-mail care va fi folosit pentru a trimite acest e-mail."
 
@@ -95,11 +95,11 @@ msgstr "Profilul de e-mail care va fi folosit pentru a trimite acest e-mail."
 msgid "Mailing profile"
 msgstr "Profilul de corespondență"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "Pilotul software ce trebuie folosit atunci când trimiteți e-mailuri."
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "Backend"
 

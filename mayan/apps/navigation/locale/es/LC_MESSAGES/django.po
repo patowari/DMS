@@ -24,7 +24,7 @@ msgstr ""
 msgid "Navigation"
 msgstr "Navegación"
 
-#: classes.py:951
+#: classes.py:963
 msgid "Unnamed function"
 msgstr "Función sin nombre"
 

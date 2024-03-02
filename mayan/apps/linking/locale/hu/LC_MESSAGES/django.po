@@ -177,27 +177,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Dinamikus címke"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Engedélyezett"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Intelligens hivatkozás"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "A rendszer figyelmen kívül hagyja a felvételt az első elemnél."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Ez az összes többi dokumentum metaadatait jelenti."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Külsős dokumentum attribútum"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -205,23 +205,23 @@ msgstr ""
 "A dokumentumtulajdonságokat használó kifejezés, amelyet a külsős "
 "dokumentummezővel szemben kell kiértékelni."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Kifejezés"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Megfordítja az operátor logikáját."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Negált"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Hivatkozás feltétel"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Hivatkozás feltételek"
 

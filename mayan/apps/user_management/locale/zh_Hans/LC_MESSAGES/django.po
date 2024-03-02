@@ -24,11 +24,11 @@ msgstr ""
 "Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "用户管理"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "组"
 
@@ -37,11 +37,11 @@ msgstr "组"
 msgid "Groups"
 msgstr "用户组"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "名称"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "用户"
 
@@ -50,15 +50,15 @@ msgstr "用户"
 msgid "Users"
 msgstr "用户"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "电子邮件"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "名字"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "已激活？"
 

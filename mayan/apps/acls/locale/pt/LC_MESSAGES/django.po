@@ -63,11 +63,11 @@ msgstr "ACL editada"
 msgid "Role"
 msgstr "Função"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Nova ACL"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Remover"
 
@@ -75,7 +75,7 @@ msgstr "Remover"
 msgid "Permissions"
 msgstr "Permissões"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "ACLs globais"
 
@@ -181,7 +181,7 @@ msgstr "Eliminar ACL: \"%s\""
 msgid "There are no ACLs for this object"
 msgstr "Não existem ACLs definidas para este objeto."
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -205,12 +205,12 @@ msgstr "Permissões garantidas"
 msgid "Available permissions"
 msgstr "Permissões disponíveis"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Permissões da função \"%(role)s\" para \"%(object)s\""
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -222,11 +222,11 @@ msgstr ""
 "ser removidas da ACL do objeto pai ou da função associada ao mesmo através "
 "do menu Definições."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "Não existem ACLs"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "Listas de controlo de acesso globais"
 

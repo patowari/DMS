@@ -22,7 +22,7 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Общи"
 
@@ -62,7 +62,7 @@ msgstr "Форум"
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "Лиценз"
 
@@ -151,7 +151,7 @@ msgstr ""
 "В режим на списък покажете опциите на менюто &quot;фасет списък&quot; като "
 "падащо меню вместо отделни бутони."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -159,14 +159,14 @@ msgstr ""
 "В режим на списък покажете опциите на менюто &quot;обект&quot; като падащо "
 "меню вместо отделни бутони."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -179,18 +179,14 @@ msgstr ""
 "приложение (за предпочитане) или пакет, съдържащ приложение. Пример: "
 "[&#39;app_1&#39;, &#39;app_2&#39;]"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Списък с низове, обозначаващи всички приложения, които са инсталирани извън "
-"тези, които обикновено са инсталирани от Mayan EDMS. Всеки низ трябва да "
-"бъде точкуван Python път към: конфигурационен клас на приложение (за "
-"предпочитане) или пакет, съдържащ приложение. Пример: [&#39;app_1&#39;, "
-"&#39;app_2&#39;]"
 
 #: settings.py:70
 msgid ""
@@ -231,44 +227,44 @@ msgstr "URL на началната страница на проекта."
 msgid "Click here to fix this."
 msgstr "Кликнете тук, за да поправите това."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Въведете валидна JSON стойност."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Въведете валидна YAML стойност."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Въведете валидно „вътрешно име“, състоящо се от букви, цифри и долни черти."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Относно"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Начало"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Полета за копиране: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Да направя ли копие на %(object_name)s &quot;%(object)s&quot;?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Обектът е копиран успешно."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -276,18 +272,18 @@ msgstr ""
 "Липса на резултати тук означава, че нямате необходимите разрешения за "
 "изпълнение на административна задача."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Няма опции за настройка."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Тук можете да конфигурирате всички аспекти на системата."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Елементи за настройка"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Тези модули се използват за поддръжка на системата."

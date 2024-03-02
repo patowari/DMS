@@ -26,7 +26,7 @@ msgstr ""
 msgid "Navigation"
 msgstr "Navigation"
 
-#: classes.py:951
+#: classes.py:963
 msgid "Unnamed function"
 msgstr "Unbenannte Funktion"
 

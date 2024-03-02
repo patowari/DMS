@@ -79,10 +79,8 @@ msgstr "Tüm belge türleri"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
+"individual document type selection."
 msgstr ""
-"Tüm belge türlerine uygula. Bu etkinleştirildiğinde, kota, bireysel belge "
-"türü seçimini yok sayar."
 
 #: mixins.py:26
 msgid "Document types"

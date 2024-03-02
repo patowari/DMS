@@ -64,7 +64,7 @@ msgstr "De sjabloon tekenreeks om te beoordelen."
 msgid "Template"
 msgstr "Sjabloon"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

@@ -200,7 +200,7 @@ msgstr ""
 msgid "Arguments to pass to the drivers."
 msgstr "Argumentos para os drivers"
 
-#: views.py:52
+#: views.py:51
 msgid ""
 "File metadata are the attributes of the document's file. They can range from"
 " camera information used to take a photo to the author that created a file. "
@@ -215,16 +215,16 @@ msgstr ""
 "arquivo em si. Eles não são a mesma coisa que os metadados do documento, que"
 " são definidos pelo usuário e são armazenados no banco de dados."
 
-#: views.py:60
+#: views.py:59
 msgid "No file metadata available."
 msgstr "Não há metadados do arquivo disponíveis"
 
-#: views.py:63
+#: views.py:62
 #, python-format
 msgid "File metadata drivers for: %s"
 msgstr "Drivers de metadados de arquivo para: %s"
 
-#: views.py:90
+#: views.py:89
 msgid ""
 "This could mean that the file metadata detection has not completed or that "
 "the driver does not support any metadata field for the file type of this "
@@ -234,28 +234,28 @@ msgstr ""
 "concluída ou que o driver não oferece suporte a nenhum campo de metadados "
 "para o tipo de arquivo deste documento."
 
-#: views.py:95
+#: views.py:94
 msgid "No file metadata available for this driver."
 msgstr "Não existem ficheiros metadata para este driver."
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 "Arquivar atributos metadata para: %(document_file)scom driver: %(driver)s"
 
-#: views.py:121
+#: views.py:120
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
 
-#: views.py:124
+#: views.py:123
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
 msgstr ""
 
-#: views.py:133
+#: views.py:132
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
@@ -268,18 +268,18 @@ msgstr[2] ""
 "Submeter os ficheiros de documento selecionados para à fila de espera do "
 "ficheiro metadata?"
 
-#: views.py:164
+#: views.py:163
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr "Editar as configurações de metadados para o tipo de documento: %s"
 
-#: views.py:175
+#: views.py:174
 msgid "Submit all documents of a type for file metadata processing."
 msgstr ""
 "Enviar todos os documentos de um tipo para processamento de metadados de "
 "arquivo."
 
-#: views.py:202
+#: views.py:201
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
 msgstr ""

@@ -24,11 +24,11 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "إدارة المستخدم"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "المجموعة"
 
@@ -37,11 +37,11 @@ msgstr "المجموعة"
 msgid "Groups"
 msgstr "المجموعات"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "اسم"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "مستخدم"
 
@@ -50,15 +50,15 @@ msgstr "مستخدم"
 msgid "Users"
 msgstr "المستخدمين"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "الاسم الاول"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "مفعل؟"
 

@@ -77,10 +77,8 @@ msgstr "Alle documenttypes"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
+"individual document type selection."
 msgstr ""
-"Toepassen op alle documenttypes. Door dit in te schakelen zulle de quota de "
-"individuele documenttype selectie negeren."
 
 #: mixins.py:26
 msgid "Document types"

@@ -52,43 +52,43 @@ msgstr "Удалить"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Краткое описание объявления."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Заголовок"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Сообщение, которое будет отображаться."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Включено"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Дата и время начала отображения объявления."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Дата и время начала"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Дата и время окончания отображения объявления."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Дата и время окончания"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Объявления"
 
@@ -155,12 +155,9 @@ msgstr "Редактировать объявление: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Объявления отображаются на странице входа в систему. Вы можете использовать "
-"объявления для передачи информации о вашей организации, объявлений или "
-"руководств по использованию для ваших пользователей."
 
 #: views.py:125
 msgid "No announcements available"

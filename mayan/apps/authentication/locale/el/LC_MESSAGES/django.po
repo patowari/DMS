@@ -41,20 +41,20 @@ msgstr "Χρήστης συνδέθηκε"
 msgid "User logged out"
 msgstr "Χρήστης αποσυνδέθηκε"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "Να με θυμάσαι"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "Μόνιμα"
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr ""
 "Εάν επιλεγεί, απενεργοποιεί την δυνατότητα τερματισμού μίμησης χρήστη."
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "Χρήστης"
 
@@ -66,7 +66,7 @@ msgstr "Αποσύνδεση"
 msgid "Change password"
 msgstr "Αλλαγή κωδικού πρόσβασης"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Μίμηση χρήστη"
 
@@ -218,12 +218,10 @@ msgstr "Επιτυχής επαναφορά κωδικού για τον χρή�
 
 #: views/authentication_views.py:406
 #, python-format
-msgid "Error reseting password for user \"%(user)s\": %(error)s"
+msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
-"Σφάλμα κατά την αρχικοποίηση του κωδικού για τον χρήστη \"%(user)s\": "
-"%(error)s"
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
 msgstr ""

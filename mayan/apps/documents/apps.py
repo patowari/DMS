@@ -84,9 +84,10 @@ from .handlers import (
     handler_create_document_version_page_image_cache
 )
 from .links.document_file_links import (
-    link_document_file_delete, link_document_file_multiple_delete,
-    link_document_file_edit, link_document_file_introspect_multiple,
+    link_document_file_delete, link_document_file_edit,
+    link_document_file_introspect_multiple,
     link_document_file_introspect_single, link_document_file_list,
+    link_document_file_multiple_delete,
     link_document_file_multiple_transformations_clear,
     link_document_file_preview, link_document_file_print_form,
     link_document_file_properties, link_document_file_return_list,

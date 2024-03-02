@@ -50,43 +50,43 @@ msgstr "Устгах"
 msgid "Edit"
 msgstr "Засах"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Энэхүү зарлалын товч тайлбар."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Шошго"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Хэрэглэгчдэд харагдах текст."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Идэвхжүүлсэн"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Энэ зарлалыг тавьж эхлэх огноо."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Эхлэх огноо"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Энэ зарлалыг тавьж дуусах огноо."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Дуусах огноо"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Зарлал"
 
@@ -153,12 +153,9 @@ msgstr "%s зарлалыг засах"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Таны үүсгэсэн зарлалууд нь хэрэглэгчийн нэвтрэх дэлгэцэнд харагдана. Та "
-"байгууллагынхаа тухай мэдээлэл, зарлал эсвэл зааварчилгааг дамжуулахын тулд "
-"зарлалыг ашиглаж болно."
 
 #: views.py:125
 msgid "No announcements available"

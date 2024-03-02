@@ -35,7 +35,7 @@ msgstr ""
 "Неможливо ініціалізувати сховище: %(name)s. Перевірте шлях та аргументи "
 "сховища."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Завантажити файли"
 
@@ -110,11 +110,11 @@ msgstr "Користувач"
 msgid "File"
 msgstr "Файл"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Мітка"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Завантажити файл"
 

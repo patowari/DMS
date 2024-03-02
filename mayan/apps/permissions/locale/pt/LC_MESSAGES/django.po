@@ -28,11 +28,11 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:84 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "Permissões"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "Contagem de grupos"
 
@@ -102,15 +102,15 @@ msgstr "Nome"
 msgid "Role"
 msgstr "Função"
 
-#: models.py:75 serializers.py:14
+#: models.py:76 serializers.py:14
 msgid "Namespace"
 msgstr "Namespace"
 
-#: models.py:76
+#: models.py:79
 msgid "Name"
 msgstr "Nome"
 
-#: models.py:83
+#: models.py:87
 msgid "Permission"
 msgstr "Permissão"
 
@@ -203,42 +203,42 @@ msgstr "Papéis disponíveis"
 msgid "Roles of group: %s"
 msgstr "Papéis do grupo: %s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr "Erro ao eliminar a função \"%(instance)s\"; %(exception)s"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr "%(count)d funções eliminadas com sucesso."
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr "Função \"%(object)s\" eliminada com sucesso."
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr "%(count)dfunção eliminada com sucesso"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr "Eliminar função: %(object)s."
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr "Eliminar a função selecionada %(count)d"
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr "Eliminar as funções %(count)dselecionadas"
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -251,19 +251,19 @@ msgstr ""
 "são permissões concedidas a um papel para objetos específicos que seus "
 "membros de grupo herdam."
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "Não há papéis"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "Grupos do papel"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "Grupos disponíveis"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
@@ -271,32 +271,32 @@ msgstr ""
 "Adicione grupos para que façam parte de um papel. Eles irão herdar as "
 "permissões do papel e os controles de acesso."
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "Grupos do papel: %s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "Permissões garantidas"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "Permissões disponíveis"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
 "Permissões concedidas aqui serão aplicadas em todo o sistema e em todos os "
 "objetos."
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "Permissões para papel: %s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr "Detalhes de permissão: %s"

@@ -44,19 +44,19 @@ msgstr "用户已登录"
 msgid "User logged out"
 msgstr "用户已退出"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "记住账号"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "永久的"
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr "如果選擇了, 將禁用中止使用者模擬"
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "用户"
 
@@ -68,7 +68,7 @@ msgstr "登出"
 msgid "Change password"
 msgstr "更改密码"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "模擬用戶"
 
@@ -217,10 +217,10 @@ msgstr "用户成功重置密码：%s。"
 
 #: views/authentication_views.py:406
 #, python-format
-msgid "Error reseting password for user \"%(user)s\": %(error)s"
-msgstr "重置用户“%(user)s”的密码时出错：%(error)s"
+msgid "Error resetting password for user \"%(user)s\": %(error)s"
+msgstr ""
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
 msgstr "模擬使用者 : 1%s"

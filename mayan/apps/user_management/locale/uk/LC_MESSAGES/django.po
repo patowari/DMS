@@ -22,11 +22,11 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Керування користувачами"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "Група"
 
@@ -35,11 +35,11 @@ msgstr "Група"
 msgid "Groups"
 msgstr "Групи"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Ім'я"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "Користувач"
 
@@ -48,15 +48,15 @@ msgstr "Користувач"
 msgid "Users"
 msgstr "Користувачі"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "Електронна адреса"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "Ім'я"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "Чи активний?"
 

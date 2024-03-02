@@ -22,7 +22,7 @@ msgstr ""
 "Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:41 events.py:6 links.py:33
+#: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
 msgstr "签出"
 
@@ -82,23 +82,23 @@ msgstr "是"
 msgid "No"
 msgstr "否"
 
-#: links.py:40
+#: links.py:39
 msgid "Check out document"
 msgstr "签出文档"
 
-#: links.py:44
+#: links.py:43
 msgid "Check out"
 msgstr "簽出"
 
-#: links.py:51
+#: links.py:50
 msgid "Check in document"
 msgstr "签入文档"
 
-#: links.py:55
+#: links.py:54
 msgid "Check in"
 msgstr "簽入"
 
-#: links.py:61
+#: links.py:60
 msgid "Check in/out"
 msgstr "签入/签出"
 

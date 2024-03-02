@@ -172,7 +172,7 @@ msgstr "Виберіть перехід для виконання на наст�
 #: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
-#: models/workflow_transition_models.py:181
+#: models/workflow_transition_models.py:184
 #: serializers/workflow_instance_serializers.py:45
 msgid "Transition"
 msgstr "Перехід"
@@ -219,7 +219,7 @@ msgstr "Активовано"
 msgid "Event trigger: %s"
 msgstr "Тригер події: %s"
 
-#: links.py:58 views/workflow_template_views.py:137
+#: links.py:56 views/workflow_template_views.py:138
 msgid "Create workflow"
 msgstr "Створити робочий процес"
 
@@ -237,7 +237,7 @@ msgstr "Видалити"
 msgid "Edit"
 msgstr "Редагувати"
 
-#: links.py:88
+#: links.py:86
 msgid "Launch workflow"
 msgstr "Запустити робочий процес"
 
@@ -572,7 +572,7 @@ msgstr "Проксі-сервер середовища виконання ста
 msgid "Workflow state runtime proxies"
 msgstr "Проксі-сервери середовища виконання стану робочого процесу"
 
-#: models/workflow_transition_model_mixins.py:48
+#: models/workflow_transition_model_mixins.py:50
 msgid ""
 "The transition will be available, depending on the condition return value."
 msgstr "Перехід буде доступний, залежно від значення, що повертається."
@@ -625,7 +625,7 @@ msgstr ""
 msgid "The field name that will be shown on the user interface."
 msgstr "Назва поля, яке відображатиметься в інтерфейсі користувача."
 
-#: models/workflow_transition_models.py:119
+#: models/workflow_transition_models.py:120
 msgid ""
 "An optional message that will help users better understand the purpose of "
 "the field and data to provide."
@@ -633,54 +633,54 @@ msgstr ""
 "Додаткове повідомлення, яке допоможе користувачам краще зрозуміти "
 "призначення поля та дані, які потрібно надати."
 
-#: models/workflow_transition_models.py:121
+#: models/workflow_transition_models.py:122
 msgid "Help text"
 msgstr "Текст довідки"
 
-#: models/workflow_transition_models.py:125
+#: models/workflow_transition_models.py:126
 msgid "Whether this fields needs to be filled out or not to proceed."
 msgstr "Чи потрібно заповнити це поле, щоб продовжити."
 
-#: models/workflow_transition_models.py:126
+#: models/workflow_transition_models.py:127
 msgid "Required"
 msgstr "Обов'язково"
 
-#: models/workflow_transition_models.py:130
+#: models/workflow_transition_models.py:131
 msgid "An optional class to change the default presentation of the field."
 msgstr "Додатковий клас для зміни представлення поля за замовчуванням."
 
-#: models/workflow_transition_models.py:131
+#: models/workflow_transition_models.py:132
 msgid "Widget class"
 msgstr "Клас віджету"
 
-#: models/workflow_transition_models.py:135
+#: models/workflow_transition_models.py:136
 msgid "A group of keyword arguments to customize the widget. Use YAML format."
 msgstr ""
 "Група ключових аргументів для налаштування віджета. Використовуйте формат "
 "YAML."
 
-#: models/workflow_transition_models.py:138
+#: models/workflow_transition_models.py:141
 msgid "Widget keyword arguments"
 msgstr "Аргументи ключового слова віджету"
 
-#: models/workflow_transition_models.py:143
+#: models/workflow_transition_models.py:146
 msgid "Workflow transition field"
 msgstr "Поле переходу робочого процесу"
 
-#: models/workflow_transition_models.py:144
+#: models/workflow_transition_models.py:147
 msgid "Workflow transition fields"
 msgstr "Поля переходу робочого процесу"
 
-#: models/workflow_transition_models.py:185
+#: models/workflow_transition_models.py:188
 #: serializers/workflow_template_transition_serializers.py:195
 msgid "Event type"
 msgstr "Тип події"
 
-#: models/workflow_transition_models.py:191
+#: models/workflow_transition_models.py:194
 msgid "Workflow transition trigger event"
 msgstr "Подія запуску переходу робочого процесу"
 
-#: models/workflow_transition_models.py:192
+#: models/workflow_transition_models.py:195
 msgid "Workflow transitions trigger events"
 msgstr "Події тригерів запускаючі робочі процеси"
 
@@ -981,7 +981,7 @@ msgstr ""
 msgid "Workflow preview images"
 msgstr "Зображення попереднього перегляду робочого процесу"
 
-#: views/workflow_instance_views.py:40
+#: views/workflow_instance_views.py:41
 msgid ""
 "Assign workflows to the document type of this document to have this document"
 " execute those workflows. "
@@ -989,11 +989,11 @@ msgstr ""
 "Призначте робочі процеси типу документа цього документа, щоб цей документ "
 "виконував ці робочі процеси."
 
-#: views/workflow_instance_views.py:44
+#: views/workflow_instance_views.py:45
 msgid "There are no workflows for this document"
 msgstr "Для цього документа немає робочих процесів"
 
-#: views/workflow_instance_views.py:48
+#: views/workflow_instance_views.py:49
 #, python-format
 msgid "Workflows for document: %s"
 msgstr "Робочі процеси для документа: %s"
@@ -1339,59 +1339,59 @@ msgstr ""
 msgid "Workflows to be launched."
 msgstr "Робочі процеси, які будуть запущені."
 
-#: views/workflow_template_views.py:154
+#: views/workflow_template_views.py:156
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr "Помилка видалення робочого процесу \"%(instance)s\"; %(exception)s"
 
-#: views/workflow_template_views.py:162
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr "%(count)d робочих процесів успішно видалено."
 
-#: views/workflow_template_views.py:163
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr "Робочий процес \"%(object)s\" успішно видалено."
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr "%(count)d робочий процес успішно видалено."
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr "Видалити %(count)d вибраних робочих процесів."
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:168
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr "Видалити робочий процес: %(object)s."
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:169
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr "Видалити %(count)d вибраний робочий процес."
 
-#: views/workflow_template_views.py:172
+#: views/workflow_template_views.py:174
 msgid "All workflow instances will also be deleted."
 msgstr "Усі екземпляри робочого процесу також будуть видалені."
 
-#: views/workflow_template_views.py:192
+#: views/workflow_template_views.py:194
 #, python-format
 msgid "Edit workflow: %s"
 msgstr "Редагувати робочий процес: %s"
 
-#: views/workflow_template_views.py:203
+#: views/workflow_template_views.py:205
 msgid "Document types assigned this workflow"
 msgstr "Типи документів, призначені цьому робочому процесу"
 
-#: views/workflow_template_views.py:204
+#: views/workflow_template_views.py:206
 msgid "Available document types"
 msgstr "Доступні типи документів"
 
-#: views/workflow_template_views.py:222
+#: views/workflow_template_views.py:224
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
@@ -1400,25 +1400,25 @@ msgstr ""
 " запущених екземплярів цього робочого процесу для документів типу документа,"
 " що був видалений."
 
-#: views/workflow_template_views.py:227
+#: views/workflow_template_views.py:229
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "Типи документів, призначені для робочого процесу: %s"
 
-#: views/workflow_template_views.py:241
+#: views/workflow_template_views.py:243
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr "Це запустить робочий процес для документів, які вже були завантажені."
 
-#: views/workflow_template_views.py:244
+#: views/workflow_template_views.py:246
 msgid "Launch workflow?"
 msgstr "Запустити робочий процес?"
 
-#: views/workflow_template_views.py:255 views/workflow_template_views.py:315
+#: views/workflow_template_views.py:257 views/workflow_template_views.py:317
 msgid "Workflow launch queued successfully."
 msgstr "Робочий процес успішно поставлений в чергу."
 
-#: views/workflow_template_views.py:273
+#: views/workflow_template_views.py:275
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
@@ -1426,23 +1426,23 @@ msgstr ""
 "Робочі процеси зберігають послідовність станів і відстежують поточний стан "
 "документа. Переходи використовуються для зміни поточного стану на новий."
 
-#: views/workflow_template_views.py:278
+#: views/workflow_template_views.py:280
 msgid "No workflows have been defined"
 msgstr "Жодних робочих процесів не визначено"
 
-#: views/workflow_template_views.py:295
+#: views/workflow_template_views.py:297
 #, python-format
 msgid "Preview of: %s"
 msgstr "Попередній перегляд: %s"
 
-#: views/workflow_template_views.py:302
+#: views/workflow_template_views.py:304
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
 msgstr ""
 "Це запустить всі робочі процеси, створені після завантаження документів."
 
-#: views/workflow_template_views.py:305
+#: views/workflow_template_views.py:307
 msgid "Launch all workflows?"
 msgstr "Запустити всі робочі процеси?"
 

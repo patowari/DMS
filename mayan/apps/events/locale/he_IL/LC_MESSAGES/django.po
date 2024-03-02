@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
 #: settings.py:7 views/event_views.py:29
@@ -104,7 +104,7 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: links.py:55 links.py:100 views/clear_views.py:63
+#: links.py:55 links.py:100 views/clear_views.py:65
 msgid "Clear events"
 msgstr ""
 
@@ -245,16 +245,16 @@ msgid ""
 "background. "
 msgstr ""
 
-#: views/clear_views.py:51
+#: views/clear_views.py:53
 msgid "Event list clear task queued successfully."
 msgstr ""
 
-#: views/clear_views.py:84
+#: views/clear_views.py:86
 #, python-format
 msgid "Clear events of: %s"
 msgstr ""
 
-#: views/clear_views.py:109
+#: views/clear_views.py:111
 #, python-format
 msgid "Clear events of type: %s"
 msgstr ""

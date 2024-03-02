@@ -193,40 +193,40 @@ msgstr ""
 "Anzahl der Versuche, die ein Cache versucht alte Dateien zu löschen, um "
 "Platz für neue Cachedateien zu machen."
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Cachedetails für %s"
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr "Liste Datei-Caches"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Details für Cachepartition %s"
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "Cachepartition \"%s\" brereinigen?"
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr "Cachepartionen, die zur Bereinigung eingereicht werden."
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d Caches zur Bereinigung eingereicht."
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d Cache zur Bereinigung eingereicht."
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "Ausgewählte Cachepartion zur Bereinigung einreichen?"

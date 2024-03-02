@@ -177,27 +177,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Динамичен етикет"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Активиран"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Умна връзка"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "Включването се игнорира за първия елемент."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Това представлява метаданните на всички останали документи."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Характеристика на чужд документ"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -205,23 +205,23 @@ msgstr ""
 "Изразът, използващ свойствата на документа, които трябва да бъдат оценени "
 "спрямо чуждото документно поле."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Израз"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Обръща логиката на оператора."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Отказано"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Състояние на връзката"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Състояния на връзката"
 

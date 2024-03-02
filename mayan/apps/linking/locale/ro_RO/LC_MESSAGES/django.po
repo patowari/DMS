@@ -179,27 +179,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Etichetă dinamică"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Activat"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Legătură inteligentă"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "Includerea este ignorată pentru primul element."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Aceasta reprezintă metadatele tuturor celorlalte documente."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Atribut document străin"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -207,23 +207,23 @@ msgstr ""
 "Expresia care trebuie evaluată  folosind proprietățile documentului pe "
 "câmpul documentului străin."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Expresie"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Inversează logica operatorului."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Negat"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Condiție de conectare"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Condiții de conectare"
 

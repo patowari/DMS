@@ -21,7 +21,7 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:41 events.py:6 links.py:33
+#: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
 msgstr "Δεσμευμένα"
 
@@ -81,23 +81,23 @@ msgstr "Ναι"
 msgid "No"
 msgstr "Όχι"
 
-#: links.py:40
+#: links.py:39
 msgid "Check out document"
 msgstr "Δέσμευση εγγράφου"
 
-#: links.py:44
+#: links.py:43
 msgid "Check out"
 msgstr "Δέσμευση"
 
-#: links.py:51
+#: links.py:50
 msgid "Check in document"
 msgstr "Αποδέσμευση εγγράφου"
 
-#: links.py:55
+#: links.py:54
 msgid "Check in"
 msgstr "Αποδέσμευση"
 
-#: links.py:61
+#: links.py:60
 msgid "Check in/out"
 msgstr "Δέσμευση/Αποδέσμευση"
 

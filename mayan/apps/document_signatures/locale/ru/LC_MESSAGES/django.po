@@ -25,27 +25,27 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr "Подписи документа"
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr "Дата и время"
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr "ID ключа"
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "Нет"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr "ID подписи"
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr "Тип"
 
@@ -167,7 +167,7 @@ msgstr "Обновить все подписи"
 msgid "Verify all documents"
 msgstr "Проверить подписи документов"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr ""
 

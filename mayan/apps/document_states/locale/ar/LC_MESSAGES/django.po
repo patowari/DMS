@@ -175,7 +175,7 @@ msgstr "حدد انتقالًا لتنفيذه في الخطوة التالية.
 #: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
-#: models/workflow_transition_models.py:181
+#: models/workflow_transition_models.py:184
 #: serializers/workflow_instance_serializers.py:45
 msgid "Transition"
 msgstr "انتقال"
@@ -222,7 +222,7 @@ msgstr "مفعل"
 msgid "Event trigger: %s"
 msgstr "مشغل الحدث: %s"
 
-#: links.py:58 views/workflow_template_views.py:137
+#: links.py:56 views/workflow_template_views.py:138
 msgid "Create workflow"
 msgstr "إنشاء المسار"
 
@@ -240,7 +240,7 @@ msgstr "حذف"
 msgid "Edit"
 msgstr "تعديل"
 
-#: links.py:88
+#: links.py:86
 msgid "Launch workflow"
 msgstr "تشغيل المسار"
 
@@ -564,7 +564,7 @@ msgstr " وقت تشغيل حالة المسار"
 msgid "Workflow state runtime proxies"
 msgstr "وقت تشغيل حالة المسار"
 
-#: models/workflow_transition_model_mixins.py:48
+#: models/workflow_transition_model_mixins.py:50
 msgid ""
 "The transition will be available, depending on the condition return value."
 msgstr "سيكون الانتقال متاحًا ، اعتمادًا على قيمة إرجاع الشرط."
@@ -614,7 +614,7 @@ msgstr ""
 msgid "The field name that will be shown on the user interface."
 msgstr "اسم الحقل الذي سيظهر على واجهة المستخدم."
 
-#: models/workflow_transition_models.py:119
+#: models/workflow_transition_models.py:120
 msgid ""
 "An optional message that will help users better understand the purpose of "
 "the field and data to provide."
@@ -622,52 +622,52 @@ msgstr ""
 "رسالة اختيارية تساعد المستخدمين على فهم الغرض من الحقل والبيانات التي يجب "
 "توفيرها بشكل أفضل."
 
-#: models/workflow_transition_models.py:121
+#: models/workflow_transition_models.py:122
 msgid "Help text"
 msgstr "نص المساعدة"
 
-#: models/workflow_transition_models.py:125
+#: models/workflow_transition_models.py:126
 msgid "Whether this fields needs to be filled out or not to proceed."
 msgstr "ما إذا كان يجب ملء هذه الحقول أم لا للمتابعة."
 
-#: models/workflow_transition_models.py:126
+#: models/workflow_transition_models.py:127
 msgid "Required"
 msgstr "متطلب"
 
-#: models/workflow_transition_models.py:130
+#: models/workflow_transition_models.py:131
 msgid "An optional class to change the default presentation of the field."
 msgstr "فئة اختيارية لتغيير العرض التقديمي الافتراضي للحقل."
 
-#: models/workflow_transition_models.py:131
+#: models/workflow_transition_models.py:132
 msgid "Widget class"
 msgstr "فئة القطعة"
 
-#: models/workflow_transition_models.py:135
+#: models/workflow_transition_models.py:136
 msgid "A group of keyword arguments to customize the widget. Use YAML format."
 msgstr "إستخدام نوع التنسيق المحدد"
 
-#: models/workflow_transition_models.py:138
+#: models/workflow_transition_models.py:141
 msgid "Widget keyword arguments"
 msgstr "وسيطات الكلمات الرئيسية القطعة"
 
-#: models/workflow_transition_models.py:143
+#: models/workflow_transition_models.py:146
 msgid "Workflow transition field"
 msgstr "حقل انتقال المسار"
 
-#: models/workflow_transition_models.py:144
+#: models/workflow_transition_models.py:147
 msgid "Workflow transition fields"
 msgstr "حقول انتقال المسار"
 
-#: models/workflow_transition_models.py:185
+#: models/workflow_transition_models.py:188
 #: serializers/workflow_template_transition_serializers.py:195
 msgid "Event type"
 msgstr "نوع الحدث"
 
-#: models/workflow_transition_models.py:191
+#: models/workflow_transition_models.py:194
 msgid "Workflow transition trigger event"
 msgstr "حدث انتقال المسار"
 
-#: models/workflow_transition_models.py:192
+#: models/workflow_transition_models.py:195
 msgid "Workflow transitions trigger events"
 msgstr "تؤدي انتقالات المسار إلى تشغيل الأحداث"
 
@@ -961,17 +961,17 @@ msgstr ""
 msgid "Workflow preview images"
 msgstr "معاينة المسار"
 
-#: views/workflow_instance_views.py:40
+#: views/workflow_instance_views.py:41
 msgid ""
 "Assign workflows to the document type of this document to have this document"
 " execute those workflows. "
 msgstr "يجب تحديد مسارات الوثيقة أولاً ! لتفعيل المسارات للوثيقة"
 
-#: views/workflow_instance_views.py:44
+#: views/workflow_instance_views.py:45
 msgid "There are no workflows for this document"
 msgstr "لم يتم العثور على مسارات لهذه الوثيقة"
 
-#: views/workflow_instance_views.py:48
+#: views/workflow_instance_views.py:49
 #, python-format
 msgid "Workflows for document: %s"
 msgstr "سير عمل الوثيقة: %s"
@@ -1300,104 +1300,104 @@ msgstr ""
 msgid "Workflows to be launched."
 msgstr "سيتم تفعيل المسارات"
 
-#: views/workflow_template_views.py:154
+#: views/workflow_template_views.py:156
 #, python-format
 msgid "Error deleting workflow \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views/workflow_template_views.py:162
+#: views/workflow_template_views.py:164
 #, python-format
 msgid "%(count)d workflows deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:163
+#: views/workflow_template_views.py:165
 #, python-format
 msgid "Workflow \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:164
+#: views/workflow_template_views.py:166
 #, python-format
 msgid "%(count)d workflow deleted successfully."
 msgstr ""
 
-#: views/workflow_template_views.py:165
+#: views/workflow_template_views.py:167
 #, python-format
 msgid "Delete the %(count)d selected workflows."
 msgstr ""
 
-#: views/workflow_template_views.py:166
+#: views/workflow_template_views.py:168
 #, python-format
 msgid "Delete workflow: %(object)s."
 msgstr ""
 
-#: views/workflow_template_views.py:167
+#: views/workflow_template_views.py:169
 #, python-format
 msgid "Delete the %(count)d selected workflow."
 msgstr ""
 
-#: views/workflow_template_views.py:172
+#: views/workflow_template_views.py:174
 msgid "All workflow instances will also be deleted."
 msgstr "سيتم حذف جميع حالات المسار."
 
-#: views/workflow_template_views.py:192
+#: views/workflow_template_views.py:194
 #, python-format
 msgid "Edit workflow: %s"
 msgstr "تعديل المسار: %s"
 
-#: views/workflow_template_views.py:203
+#: views/workflow_template_views.py:205
 msgid "Document types assigned this workflow"
 msgstr "أنواع الوثائق المحددة بمسار"
 
-#: views/workflow_template_views.py:204
+#: views/workflow_template_views.py:206
 msgid "Available document types"
 msgstr "أنواع الوثائق المتاحة"
 
-#: views/workflow_template_views.py:222
+#: views/workflow_template_views.py:224
 msgid ""
 "Removing a document type from a workflow will also remove all running "
 "instances of that workflow for documents of the document type just removed."
 msgstr "سيقوم النظام بالغاء جميع المسارات للوثيقة والوثائق المرتبطة "
 
-#: views/workflow_template_views.py:227
+#: views/workflow_template_views.py:229
 #, python-format
 msgid "Document types assigned the workflow: %s"
 msgstr "أنواع الوثائق المحددة بمسار: %s"
 
-#: views/workflow_template_views.py:241
+#: views/workflow_template_views.py:243
 msgid ""
 "This will launch the workflow for documents that have already been uploaded."
 msgstr "سيؤدي هذا إلى  تشغيل المسار للمستندات التي تم تحميلها بالفعل."
 
-#: views/workflow_template_views.py:244
+#: views/workflow_template_views.py:246
 msgid "Launch workflow?"
 msgstr "تشغيل المسار؟"
 
-#: views/workflow_template_views.py:255 views/workflow_template_views.py:315
+#: views/workflow_template_views.py:257 views/workflow_template_views.py:317
 msgid "Workflow launch queued successfully."
 msgstr "تشغيل المسار في قائمة الانتظار "
 
-#: views/workflow_template_views.py:273
+#: views/workflow_template_views.py:275
 msgid ""
 "Workflows store a series of states and keep track of the current state of a "
 "document. Transitions are used to change the current state to a new one."
 msgstr "تغير المسارات للوثائق من الحالة الحالية الى الحالة الجديدة"
 
-#: views/workflow_template_views.py:278
+#: views/workflow_template_views.py:280
 msgid "No workflows have been defined"
 msgstr "لم يتم تحديد أية مسارات للوثيقة"
 
-#: views/workflow_template_views.py:295
+#: views/workflow_template_views.py:297
 #, python-format
 msgid "Preview of: %s"
 msgstr "معاينة: %s"
 
-#: views/workflow_template_views.py:302
+#: views/workflow_template_views.py:304
 msgid ""
 "This will launch all workflows created after documents have already been "
 "uploaded."
 msgstr "سيتم تفعيل المسارات على الوثيقة "
 
-#: views/workflow_template_views.py:305
+#: views/workflow_template_views.py:307
 msgid "Launch all workflows?"
 msgstr "تفعيل جميع المسارات؟"
 

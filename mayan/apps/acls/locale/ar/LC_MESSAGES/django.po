@@ -60,11 +60,11 @@ msgstr "تعديل الصلاحيات"
 msgid "Role"
 msgstr "الدور"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "إنشاء صلاحيات جديدة"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "حذف"
 
@@ -72,7 +72,7 @@ msgstr "حذف"
 msgid "Permissions"
 msgstr "الصلاحيات"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "قوائم حق الوصول ACL شاملة"
 
@@ -178,7 +178,7 @@ msgstr "حذف قائمة التحكم في الوصول: %s"
 msgid "There are no ACLs for this object"
 msgstr "لا توجد قوائم تحكم في الوصول لهذا الكائن"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -199,12 +199,12 @@ msgstr "الصلاحيات الممنوحة"
 msgid "Available permissions"
 msgstr "الصلاحيات المتاحة"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "صلاحية الدور \"%(role)s\" لـ \"%(object)s\"."
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -215,11 +215,11 @@ msgstr ""
 "يمكن إزالتها من هذا العرض. يجب إزالة الصلاحيات الموروثة من قائمة التحكم في "
 "الوصول للكائن الأصلي أو من دورها عبر قائمة الإعداد."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "لا توجد قوائم بحق الوصول ACL"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 

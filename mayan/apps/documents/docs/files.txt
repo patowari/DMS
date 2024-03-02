@@ -15,12 +15,10 @@ Document files
 Mayan EDMS support creating multiple files in relation to a single document.
 In essence, the Document is a file container.
 
-
 When a new file is uploaded, by default a new document version is created.
 The new version page layout will match the page layout of the uploaded file.
 The page layout of the document version can be updated without affecting
 the page layout of the uploaded document files.
-
 
 If more than one file was uploaded for a given document, the pages all of the
 document files are available to be mapped to any number of document versions

@@ -34,11 +34,11 @@ msgstr "Transifex İstemcisi"
 msgid "User locale profile edited"
 msgstr "Kullanıcı yerel ayar profili düzenlendi"
 
-#: links.py:15
+#: links.py:14
 msgid "Locale profile"
 msgstr "Yerel profil ayarı"
 
-#: links.py:20
+#: links.py:19
 msgid "Edit locale profile"
 msgstr "Yerel Profili Düzenle"
 

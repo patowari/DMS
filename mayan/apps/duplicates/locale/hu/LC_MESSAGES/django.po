@@ -29,7 +29,7 @@ msgstr "Duplikátumok"
 msgid "Duplicate backend"
 msgstr "Duplikátum háttérrendszer"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Null háttérrendszer"
 

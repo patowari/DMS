@@ -188,40 +188,40 @@ msgstr ""
 "Кількість разів, які кеш спробує видалити файли, щоб звільнити місце для "
 "нового запитуваного файлу, перед відмовою."
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Деталі кешу: %s"
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr "Список кешів файлів"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Деталі розділу кешу: %s"
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "Очистити розділи кешу \"%s\"?"
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr "Розділи кешу об’єктів надіслано на очищення."
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d кеші, подані на очищення."
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d кеш надіслано на очищення."
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "Надіслати вибраний кеш для очищення?"

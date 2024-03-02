@@ -35,7 +35,7 @@ msgstr ""
 "Nelze inicializovat úložiště: %(name)s. Zkontrolujte tečkovanou cestu a "
 "argumenty backendu úložiště."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Stáhnout soubory"
 
@@ -108,11 +108,11 @@ msgstr "Uživatel"
 msgid "File"
 msgstr "Soubor"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Jmenovka"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Stáhnout soubor"
 

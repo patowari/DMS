@@ -48,6 +48,6 @@ msgstr "Details"
 msgid "View details"
 msgstr "Details ansehen"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Dashboard Details"

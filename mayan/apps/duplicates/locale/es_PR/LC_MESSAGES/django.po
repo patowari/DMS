@@ -28,7 +28,7 @@ msgstr "Duplicados"
 msgid "Duplicate backend"
 msgstr "Controlador de duplicados"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Controlador nulo"
 

@@ -53,43 +53,43 @@ msgstr "Cancella"
 msgid "Edit"
 msgstr "Modifica"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Breve descrizione di questo avviso."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Etichetta"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Il testo che verrà visualizzato."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Testo"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Abilitato"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Data e ora a partire dalla quale verrà visualizzato l'avviso."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Data e ora inizio"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Data e ora di fine visualizzazione dell'avviso."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Data e ora fine"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Avviso"
 
@@ -156,12 +156,9 @@ msgstr "Modifica avviso: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Gli avvisi sono visualizzati nella schermata di login. Puoi usare gli avvisi"
-" per comunicare informazioni sulla tua azienda, annunci vari o linee guida "
-"di utilizzo per gli utenti."
 
 #: views.py:125
 msgid "No announcements available"

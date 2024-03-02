@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: apps.py:23 events.py:6 permissions.py:6 settings.py:12
 msgid "Logging"
@@ -76,15 +76,15 @@ msgstr ""
 msgid "Date and time"
 msgstr ""
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "מלל"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr ""
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr ""
 

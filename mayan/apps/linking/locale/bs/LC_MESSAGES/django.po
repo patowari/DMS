@@ -172,49 +172,49 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Dinamička oznaka"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Omogućeno"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Pametni link"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "Inkluzija je ignorisana za prvu stavku"
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Ovo predstavlja metapodatke svih ostalih dokumenata."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Atribut inostranih dokumenata"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
 msgstr ""
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Izraz"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Obrće logiku operatora"
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Negiran"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Stanje veze"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Link uslovi"
 

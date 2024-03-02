@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
@@ -31,7 +31,7 @@ msgid ""
 "path and arguments."
 msgstr ""
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "הורדת קבצים"
 
@@ -102,11 +102,11 @@ msgstr "משתמש"
 msgid "File"
 msgstr ""
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Label"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr ""
 

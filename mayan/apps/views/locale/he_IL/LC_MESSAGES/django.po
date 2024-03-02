@@ -18,9 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "תצוגות"
 
@@ -119,17 +119,17 @@ msgstr ""
 msgid "%(object)s updated successfully."
 msgstr ""
 
-#: generics.py:986
+#: generics.py:985
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:986
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:987
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""

@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: apps.py:26 classes.py:204 links.py:27
 msgid "ACLs"
@@ -58,11 +58,11 @@ msgstr "רשימת בקרת גישה (ACL) נערכה"
 msgid "Role"
 msgstr "תפקיד"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "רשימת בקרת גישה (ACL) חדשה"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "מחיקה"
 
@@ -70,7 +70,7 @@ msgstr "מחיקה"
 msgid "Permissions"
 msgstr "הרשאות"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "רשימות בקרת גישה (ACL) כלליות"
 
@@ -176,7 +176,7 @@ msgstr "מחיקת רשימת בקרת גישה (ACL) %s"
 msgid "There are no ACLs for this object"
 msgstr "אין רשימות בקרת גישה (ACL) לרכיב זה"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -199,12 +199,12 @@ msgstr "הרשאות ניתנו"
 msgid "Available permissions"
 msgstr "הרשאות זמינות "
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "הרשאות תפקיד %(role)s לרכיב %(object)s "
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -215,11 +215,11 @@ msgstr ""
 "להסיר אותן מתצוגה זו. הרשאות בירושה ניתנות להסרה מרשימת בקרת הגישה של הרכיב "
 "או מהתפקיד בעזרת תפריט \"הגדרות\"."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "אין רשימות בקרת גישה (ACL)"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "רשימות בקרת גישה (ACL) כלליות"
 

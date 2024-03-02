@@ -21,7 +21,7 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Společný"
 
@@ -61,7 +61,7 @@ msgstr "Forum"
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "Licence"
 
@@ -150,7 +150,7 @@ msgstr ""
 "V režimu seznamu místo jednotlivých tlačítek zobrazte možnosti nabídky "
 "„seznam faset“ jako rozevírací nabídku."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -158,14 +158,14 @@ msgstr ""
 "V režimu seznamu místo jednotlivých tlačítek zobrazte možnosti nabídky "
 "„objekt“ jako rozevírací nabídku."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -177,17 +177,14 @@ msgstr ""
 "tečkovaná cesta Pythonu k: třídě konfigurace aplikace (upřednostňované) nebo"
 " balíčku, který obsahuje aplikaci. Příklad: ['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Seznam řetězců označujících všechny aplikace, které jsou nainstalovány nad "
-"rámec těch, které normálně nainstaloval Mayan EDMS. Každý řetězec by měl být"
-" tečkovaná cesta Pythonu k: třídě konfigurace aplikace (upřednostňované) "
-"nebo balíčku, který obsahuje aplikaci. Příklad:  ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -222,44 +219,44 @@ msgstr "URL domovské stránky projektu."
 msgid "Click here to fix this."
 msgstr "Klepnutím sem to vyřešíte."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Zadejte platnou hodnotu JSON."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Zadejte platnou hodnotu YAML."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Zadejte platný „interní název“ skládající se z písmen, číslic a podtržítek."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "O nás"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Domů"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Pole ke kopírování: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Vytvořit kopii %(object_name)s &quot;%(object)s&quot;?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Objekt byl úspěšně zkopírován."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -267,18 +264,18 @@ msgstr ""
 "Žádné výsledky zde znamenají, že nemáte potřebná oprávnění k provedení "
 "administrativní úlohy."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Nejsou k dispozici žádné možnosti nastavení."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Zde můžete nakonfigurovat všechny aspekty systému."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Položky nastavení"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Tyto moduly se používají k údržbě systému."

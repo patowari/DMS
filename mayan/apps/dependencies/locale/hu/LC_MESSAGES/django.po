@@ -245,14 +245,10 @@ msgstr "Dokumentáció"
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
-"Közvetlen dokumentációs függőségek meghatározására használt környezet a "
-"harmadik féltől származó könyvtárak rögzítetlen vagy megváltoztathatatlan "
-"függőségi hibáinak megoldására. A végfelhasználók figyelmen kívül hagyhatják"
-" a hiányzó függőségeket ebben a környezetben."
 
 #: environments.py:40
 msgid "Documentation (override)"

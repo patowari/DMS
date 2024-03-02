@@ -35,7 +35,7 @@ msgstr ""
 "Niet mogelijk om opslag %(name)s te initialiseren. Controleer de opslag "
 "backend pad en argumenten."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Download bestanden"
 
@@ -110,11 +110,11 @@ msgstr "Gebruiker"
 msgid "File"
 msgstr "Bestand"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Label"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Download bestand"
 

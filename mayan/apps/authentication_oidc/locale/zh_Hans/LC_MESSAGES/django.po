@@ -16,7 +16,7 @@ msgstr ""
 "Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:18 settings.py:8
+#: apps.py:17 settings.py:8
 msgid "Authentication OIDC"
 msgstr ""
 

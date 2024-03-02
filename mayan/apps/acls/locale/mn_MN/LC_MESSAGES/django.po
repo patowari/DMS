@@ -57,11 +57,11 @@ msgstr "ХУЖ засагдлаа"
 msgid "Role"
 msgstr "Үүрэг"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Шинэ ХУЖ"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Устгах"
 
@@ -69,7 +69,7 @@ msgstr "Устгах"
 msgid "Permissions"
 msgstr "Эрх"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "Глобал хандалтын удирдлагууд"
 
@@ -173,7 +173,7 @@ msgstr "ХУЖ устгах: %s"
 msgid "There are no ACLs for this object"
 msgstr "Энэ объектод ХУЖ байхгүй байна."
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -196,12 +196,12 @@ msgstr "Олгосон эрхүүд"
 msgid "Available permissions"
 msgstr "Боломжит эрхүүд"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr ""
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -209,11 +209,11 @@ msgid ""
 "menu."
 msgstr ""
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "ХУЖ байхгүй байна"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "Глобал хандалтын удирдлагын жагсаалт"
 

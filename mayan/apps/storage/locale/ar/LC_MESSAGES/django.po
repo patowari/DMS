@@ -34,7 +34,7 @@ msgid ""
 "path and arguments."
 msgstr "غير قادر على تهيئة التخزين: %(name)s. يرجى مراجعة مدير النظام."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr ""
 
@@ -105,11 +105,11 @@ msgstr "مستخدم"
 msgid "File"
 msgstr "ملف"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "العنوان"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr ""
 

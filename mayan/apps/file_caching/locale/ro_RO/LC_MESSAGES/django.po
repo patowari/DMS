@@ -192,40 +192,40 @@ msgstr ""
 "De câte ori un cache va încerca să elimine fișiere pentru a elibera spațiu "
 "pentru un fișier nou solicitat, înainte de a renunța."
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Detalii despre cache: %s"
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr "Lista de cache de fișiere"
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Detalii despre partiția cache: %s"
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "Goliți partițiile cache ale „%s”?"
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr "Partiții din memoria cache a obiectelor trimise pentru curățare."
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d din memoria cache trimise pentru eliminare."
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d din memoria cache trimis pentru eliminare."
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "Trimiteți memoria cache selectată pentru curățare?"

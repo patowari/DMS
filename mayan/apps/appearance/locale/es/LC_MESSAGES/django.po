@@ -20,7 +20,7 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Apariencia"
 

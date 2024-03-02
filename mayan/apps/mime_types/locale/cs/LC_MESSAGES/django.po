@@ -33,7 +33,7 @@ msgstr ""
 msgid "mimetype not installed or not found."
 msgstr ""
 
-#: dependencies.py:10
+#: dependencies.py:11
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
@@ -41,7 +41,7 @@ msgstr ""
 "Tento modul lze použít k určení typu MIME souboru. Snaží se implementovat "
 "specifikaci freedesktopu pro sdílenou databázi MIME."
 
-#: dependencies.py:17
+#: dependencies.py:18
 msgid "determine file type using content tests"
 msgstr ""
 

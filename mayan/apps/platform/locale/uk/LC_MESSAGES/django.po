@@ -20,7 +20,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:14 permissions.py:6 settings.py:12
+#: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
 msgstr "Платформа"
 
@@ -56,7 +56,7 @@ msgstr "Помилка тесту Sentry"
 msgid "Trigger tests"
 msgstr "Тестування тригерів"
 
-#: settings.py:18
+#: settings.py:17
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
@@ -64,7 +64,7 @@ msgstr ""
 "Список клієнтських бекендів для запуску після старту. Використовуйте повний "
 "крапкований шлях до класів клієнтських бекендів."
 
-#: settings.py:25
+#: settings.py:24
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."

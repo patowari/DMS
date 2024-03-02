@@ -28,7 +28,7 @@ msgstr ""
 msgid "Tags"
 msgstr "Značky"
 
-#: apps.py:171 models.py:29
+#: apps.py:169 models.py:29
 msgid "Documents"
 msgstr "Dokumenty"
 
@@ -48,7 +48,7 @@ msgstr "Značka byla upravena"
 msgid "Tag removed from document"
 msgstr "Značka byla z dokumentu odstraněna"
 
-#: links.py:19 links.py:38
+#: links.py:18 links.py:37
 msgid "Attach tags"
 msgstr "Připojte značky"
 
@@ -56,23 +56,23 @@ msgstr "Připojte značky"
 msgid "Remove tag"
 msgstr "Odstranit značku"
 
-#: links.py:33
+#: links.py:32
 msgid "Remove tags"
 msgstr "Odebrat značky"
 
-#: links.py:44
+#: links.py:43
 msgid "Create new tag"
 msgstr "Vytvořit novou značku"
 
-#: links.py:49 links.py:52
+#: links.py:48 links.py:51
 msgid "Delete"
 msgstr "Odstranit"
 
-#: links.py:57
+#: links.py:56
 msgid "Edit"
 msgstr "Upravit"
 
-#: links.py:65
+#: links.py:64
 msgid "All"
 msgstr "Vše"
 
@@ -192,32 +192,32 @@ msgstr ""
 msgid "Primary key of the tag to remove from the document."
 msgstr "Primární klíč značky, která má být z dokumentu odstraněna."
 
-#: views.py:43
+#: views.py:42
 #, python-format
 msgid "Tags attached to %(count)d documents successfully."
 msgstr ""
 
-#: views.py:46
+#: views.py:45
 #, python-format
 msgid "Tags attached to document \"%(object)s\" successfully."
 msgstr ""
 
-#: views.py:49
+#: views.py:48
 #, python-format
 msgid "Tags attached to %(count)d document successfully."
 msgstr ""
 
-#: views.py:51
+#: views.py:50
 #, python-format
 msgid "Attach tags to %(count)d documents."
 msgstr ""
 
-#: views.py:52
+#: views.py:51
 #, python-format
 msgid "Attach tags to document: %(object)s"
 msgstr ""
 
-#: views.py:53
+#: views.py:52
 #, python-format
 msgid "Attach tags to %(count)d document."
 msgstr ""
@@ -230,51 +230,51 @@ msgstr "Značky, které mají být připojeny."
 msgid "Create tag"
 msgstr "Vytvořit značku"
 
-#: views.py:121
+#: views.py:122
 #, python-format
 msgid "Error deleting tag \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:126
+#: views.py:127
 #, python-format
 msgid "%(count)d tags deleted successfully."
 msgstr ""
 
-#: views.py:127
+#: views.py:128
 #, python-format
 msgid "Tag \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:128
+#: views.py:129
 #, python-format
 msgid "%(count)d tag deleted successfully."
 msgstr ""
 
-#: views.py:129
+#: views.py:130
 #, python-format
 msgid "Delete the %(count)d selected tags"
 msgstr ""
 
-#: views.py:130
+#: views.py:131
 #, python-format
 msgid "Delete tag: %(object)s"
 msgstr ""
 
-#: views.py:131
+#: views.py:132
 #, python-format
 msgid "Delete the %(count)d selected tag"
 msgstr ""
 
-#: views.py:137
+#: views.py:138
 msgid "Will be removed from all documents."
 msgstr "Bude odstraněna ze všech dokumentů."
 
-#: views.py:153
+#: views.py:154
 #, python-format
 msgid "Edit tag: %s"
 msgstr "Upravit značku: %s"
 
-#: views.py:176
+#: views.py:177
 msgid ""
 "Tags are color coded properties that can be attached or removed from "
 "documents."
@@ -282,55 +282,55 @@ msgstr ""
 "Značky jsou barevně označené vlastnosti, které lze připojit nebo odebrat z "
 "dokumentů."
 
-#: views.py:179
+#: views.py:180
 msgid "No tags available"
 msgstr "Nejsou k dispozici žádné značky"
 
-#: views.py:210
+#: views.py:213
 #, python-format
 msgid "Documents with the tag: %s"
 msgstr "Dokumenty se značkou: %s"
 
-#: views.py:237
+#: views.py:240
 msgid "Document has no tags attached"
 msgstr "K dokumentu nejsou připojeny žádné značky"
 
-#: views.py:240
+#: views.py:243
 #, python-format
 msgid "Tags for document: %s"
 msgstr "Značky pro dokument: %s"
 
-#: views.py:258
+#: views.py:261
 #, python-format
 msgid "Tags removed from %(count)d documents successfully."
 msgstr ""
 
-#: views.py:261
+#: views.py:264
 #, python-format
 msgid "Tags removed from document \"%(object)s\" successfully."
 msgstr ""
 
-#: views.py:264
+#: views.py:267
 #, python-format
 msgid "Tags removed from %(count)d document successfully."
 msgstr ""
 
-#: views.py:266
+#: views.py:269
 #, python-format
 msgid "Remove tags from %(count)d documents."
 msgstr ""
 
-#: views.py:267
+#: views.py:270
 #, python-format
 msgid "Remove tags from document: %(object)s"
 msgstr ""
 
-#: views.py:268
+#: views.py:271
 #, python-format
 msgid "Remove tags from %(count)d document."
 msgstr ""
 
-#: views.py:285
+#: views.py:288
 msgid "Tags to be removed."
 msgstr "Značky, které mají být odstraněny."
 

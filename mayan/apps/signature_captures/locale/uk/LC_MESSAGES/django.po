@@ -136,39 +136,39 @@ msgstr "Редагувати захоплення підпису"
 msgid "View signature captures"
 msgstr "Переглянути захоплення підпису"
 
-#: search.py:12
+#: search.py:11
 msgid "Signature capture text"
 msgstr "Підписати захзоплений підпис"
 
-#: search.py:16
+#: search.py:15
 msgid "Signature capture user first name"
 msgstr "Ім'я користувача для запису підпису"
 
-#: search.py:20
+#: search.py:19
 msgid "Signature capture user last name"
 msgstr "Підпис фіксує прізвище користувача"
 
-#: search.py:24
+#: search.py:23
 msgid "Signature capture user username"
 msgstr "Підпис фіксує ім'я користувача"
 
-#: search.py:35
+#: search.py:34
 msgid "Document type label"
 msgstr "Мітка типу документа"
 
-#: search.py:38
+#: search.py:37
 msgid "Document label"
 msgstr "Мітка документа"
 
-#: search.py:42
+#: search.py:41
 msgid "User first name"
 msgstr "Ім'я користувача"
 
-#: search.py:45
+#: search.py:44
 msgid "User last name"
 msgstr "Прізвище користувача"
 
-#: search.py:48
+#: search.py:47
 msgid "User username"
 msgstr "Логін користувача"
 
@@ -210,7 +210,7 @@ msgstr ""
 "Аргументи, які передаються до "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 
-#: storages.py:15
+#: storages.py:14
 msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the"
 " settings {} and {} for formatting errors."
@@ -218,7 +218,7 @@ msgstr ""
 "Неможливо ініціалізувати кеш-сховище підпису конвертера. Перевірте "
 "налаштування {} та {} на наявність помилок форматування."
 
-#: storages.py:21
+#: storages.py:20
 msgid "Signature captures cache"
 msgstr "Кеш захопленого підпису"
 

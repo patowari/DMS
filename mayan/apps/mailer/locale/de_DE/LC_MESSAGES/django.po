@@ -70,7 +70,7 @@ msgstr "Mailprofil erstellt"
 msgid "Mailing profile edited"
 msgstr "Mailprofil bearbeitet"
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -78,7 +78,7 @@ msgstr ""
 "E-Mailadresse des Empfängers. Es können mehrere Adressen eingetragen werden,"
 " getrennt durch Komma oder Semikolon."
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "E-Mailadresse"
 
@@ -90,7 +90,7 @@ msgstr "Betreff"
 msgid "Body"
 msgstr "Nachrichtenteil"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr "Das Mailprofil, das für die Versendung dieser E-Mail verwendet wird."
 
@@ -99,11 +99,11 @@ msgstr "Das Mailprofil, das für die Versendung dieser E-Mail verwendet wird."
 msgid "Mailing profile"
 msgstr "Mailprofil"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "Der Treiber, der für das Senden von E-Mails verwendet werden soll."
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "Backend"
 

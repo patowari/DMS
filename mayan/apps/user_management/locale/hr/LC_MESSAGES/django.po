@@ -21,11 +21,11 @@ msgstr ""
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Upravljanje korisnicima"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "Grupa"
 
@@ -34,11 +34,11 @@ msgstr "Grupa"
 msgid "Groups"
 msgstr "Grupe"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Ime"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:100 models.py:20 search.py:22
 msgid "User"
 msgstr "Korisnik"
 
@@ -47,15 +47,15 @@ msgstr "Korisnik"
 msgid "Users"
 msgstr "Korisnici"
 
-#: apps.py:103 search.py:31
+#: apps.py:104 search.py:31
 msgid "Email"
 msgstr "E-mail"
 
-#: apps.py:106 search.py:28
+#: apps.py:107 search.py:28
 msgid "First name"
 msgstr "Ime"
 
-#: apps.py:110
+#: apps.py:111
 msgid "Is active?"
 msgstr "Je li aktivan?"
 

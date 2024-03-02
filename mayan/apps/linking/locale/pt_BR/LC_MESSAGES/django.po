@@ -182,27 +182,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Rótulo dinâmico"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Link inteligente"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "A inclusão é ignorada para o primeiro item."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Esta expressão será avaliada contra o documento atual."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Atributo documento externo"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -210,23 +210,23 @@ msgstr ""
 "A expressão usando propriedades de documento a ser avaliada contra o campo "
 "de documento externo."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Expressão"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Inverte a lógica do operador."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Negada"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Condição de ligação"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Condições de ligação"
 

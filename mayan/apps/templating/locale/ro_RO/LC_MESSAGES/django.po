@@ -62,7 +62,7 @@ msgstr "Șirul șablon care trebuie evaluat."
 msgid "Template"
 msgstr "Șablon"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Mediu de testare"
 

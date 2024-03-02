@@ -37,7 +37,7 @@ msgstr ""
 "Nie można zainicjować pamięci: %(name)s. Sprawdź kropkowaną ścieżkę zaplecza"
 " pamięci i argumenty."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Pobierz pliki"
 
@@ -112,11 +112,11 @@ msgstr "Użytkownik"
 msgid "File"
 msgstr "Plik"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Etykieta"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Pobieranie pliku"
 

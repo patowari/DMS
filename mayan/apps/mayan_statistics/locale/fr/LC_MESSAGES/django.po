@@ -24,7 +24,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr "Statistiques"
 
@@ -42,39 +42,39 @@ msgstr "Planification"
 msgid "Last update"
 msgstr "Dernière mise à jour"
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr "Espace de noms des statistiques"
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr "Jamais"
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr "Graphique en anneau"
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr "Graphique en ligne"
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr "Diagramme circulaire"
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr "Détails de l'espace de nommage"
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr "Liste de l'espace de nommage"
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr "File d'attente"
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr "Afficher"
 
@@ -120,42 +120,42 @@ msgstr "Dernière mise à jour: %(datetime)s"
 msgid "Statistic \"%s\" not found."
 msgstr "Statistique \"%s\" non trouvée."
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr ""
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr "Statistiques des espaces de nommage"
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr ""
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr "Détails de l'espace de nommage pour : %s"
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr "Résultats pour : %s"
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr "Mettre en file d'attente la statistique \"%s\" à mettre à jour ?"
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr "Statistique \"%s\" à mettre à jour mise en file d'attente avec succès."

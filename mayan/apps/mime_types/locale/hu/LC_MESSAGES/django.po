@@ -32,7 +32,7 @@ msgstr "fájl parancs nincs telepítve vagy nem található."
 msgid "mimetype not installed or not found."
 msgstr "A mimetype nincs telepítve vagy nem található."
 
-#: dependencies.py:10
+#: dependencies.py:11
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
@@ -40,7 +40,7 @@ msgstr ""
 "Ez a modul használható egy fájl MIME típusának meghatározására. Megpróbálja "
 "megvalósítani a freedesktop specifikációt egy megosztott MIME-adatbázishoz."
 
-#: dependencies.py:17
+#: dependencies.py:18
 msgid "determine file type using content tests"
 msgstr "tartalomtesztek segítségével határozza meg a fájltípust"
 

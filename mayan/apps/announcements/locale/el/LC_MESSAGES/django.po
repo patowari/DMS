@@ -50,43 +50,43 @@ msgstr "Διαγραφή"
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr ""
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr ""
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Κείμενο"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr ""
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Ημερομηνία και ώρα έναρξης"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr ""
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Ημερομηνία και ώρα λήξης"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr ""
 
@@ -153,7 +153,7 @@ msgstr ""
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
 

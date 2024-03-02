@@ -275,13 +275,13 @@ msgstr "URL de acciones"
 msgid "Arguments to use when creating source backends."
 msgstr "Argumentos para usar al crear backends de la fuente."
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 "Ruta a la subclase de almacenamiento para usar cuando se almacenan los "
 "archivos de imagen de staging_file almacenados en caché."
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr "Argumentos para pasar a SOURCES_STAGING_FILE_CACHE_STORAGE_BACKEND."
 

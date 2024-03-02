@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
@@ -244,14 +244,14 @@ msgstr "Documentación"
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
 "Entorno utilizado para especificar dependencias de documentación directa "
-"para solucionar errores de dependencia no fijados o inmutables en librerias "
-"de terceros. Los usuarios finales pueden ignorar las dependencias que faltan"
-" en este entorno."
+"para solucionar errores de dependencias no fijadas o inmutables en librerías"
+" de terceros. Los usuarios finales pueden ignorar las dependencias que "
+"faltan en este entorno."
 
 #: environments.py:40
 msgid "Documentation (override)"

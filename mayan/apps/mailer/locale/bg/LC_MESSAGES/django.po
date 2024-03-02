@@ -67,7 +67,7 @@ msgstr ""
 msgid "Mailing profile edited"
 msgstr ""
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -75,7 +75,7 @@ msgstr ""
 "Имейл адрес на получателя. Могат да бъдат множество адреси, разделени със "
 "запетая или точка и запетая."
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "Имейл адрес"
 
@@ -87,7 +87,7 @@ msgstr "Относно"
 msgid "Body"
 msgstr "Съдържание"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr "Профилът на имейла, който ще се използва за изпращане на този имейл."
 
@@ -96,11 +96,11 @@ msgstr "Профилът на имейла, който ще се използв�
 msgid "Mailing profile"
 msgstr "Профил за изпращане на електронно съобщение"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "Драйверът, който се използва при изпращане на електронни съобщения."
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "Бекенд"
 

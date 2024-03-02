@@ -46,6 +46,6 @@ msgstr "Detalii"
 msgid "View details"
 msgstr "Vizualizare detalii"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Detaliu tablou de bord"

@@ -219,7 +219,7 @@ msgstr "Валідатор часу"
 msgid "Return the metadata of the document."
 msgstr "Повернути метадані документа."
 
-#: mixins.py:19
+#: mixins.py:23
 msgid "Selected documents must be of the same type."
 msgstr "Вибрані документи мають бути одного типу."
 
@@ -455,7 +455,7 @@ msgstr "Запит на редагування метаданих виконан
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr "Запит на редагування метаданих виконано на %(count)d документах"
 
-#: views/document_views.py:224
+#: views/document_views.py:226
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -463,11 +463,11 @@ msgstr ""
 "Додати типи метаданих, доступні для цього типу документа, і призначити їм "
 "відповідні значення."
 
-#: views/document_views.py:227
+#: views/document_views.py:229
 msgid "There is no metadata to edit"
 msgstr "Немає метаданих для редагування"
 
-#: views/document_views.py:229
+#: views/document_views.py:231
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] "Редагувати метадані документа"
@@ -475,22 +475,22 @@ msgstr[1] "Редагувати метадані документів"
 msgstr[2] "Редагувати метадані документів"
 msgstr[3] "Редагувати метадані документів"
 
-#: views/document_views.py:240
+#: views/document_views.py:242
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr "Редагувати метадані для документа: %s"
 
-#: views/document_views.py:329
+#: views/document_views.py:331
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr "Помилка редагування метаданих документа: %(document)s; %(exception)s."
 
-#: views/document_views.py:342
+#: views/document_views.py:344
 #, python-format
 msgid "Metadata for document %s edited successfully."
 msgstr "Метадані для документа %s успішно відредаговано."
 
-#: views/document_views.py:368
+#: views/document_views.py:370
 msgid ""
 "Add metadata types this document's type to be able to add them to individual"
 " documents. Once added to individual document, you can then edit their "
@@ -500,26 +500,26 @@ msgstr ""
 " їх до окремих документів. Після додавання до окремого документа ви можете "
 "редагувати їхні значення."
 
-#: views/document_views.py:374
+#: views/document_views.py:376
 msgid "This document doesn't have any metadata"
 msgstr "Цей документ не має жодних метаданих"
 
-#: views/document_views.py:376
+#: views/document_views.py:378
 #, python-format
 msgid "Metadata for document: %s"
 msgstr "Метадані для документа: %s"
 
-#: views/document_views.py:391
+#: views/document_views.py:393
 #, python-format
 msgid "Metadata remove request performed on %(count)d document"
 msgstr "Запит на видалення метаданих виконано в документі %(count)d"
 
-#: views/document_views.py:394
+#: views/document_views.py:396
 #, python-format
 msgid "Metadata remove request performed on %(count)d documents"
 msgstr "Запит на видалення метаданих виконано для %(count)dдокументів"
 
-#: views/document_views.py:404
+#: views/document_views.py:406
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
 msgstr[0] "Видалити типи метаданих із документа"
@@ -527,12 +527,12 @@ msgstr[1] "Видалити типи метаданих із документі�
 msgstr[2] "Видалити типи метаданих із документів"
 msgstr[3] "Видалити типи метаданих із документів"
 
-#: views/document_views.py:415
+#: views/document_views.py:417
 #, python-format
 msgid "Remove metadata types from the document: %s"
 msgstr "Видалити типи метаданих з документа: %s"
 
-#: views/document_views.py:481
+#: views/document_views.py:483
 #, python-format
 msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
@@ -541,7 +541,7 @@ msgstr ""
 "Успішно видалено тип метаданих \"%(metadata_type)s\" з документа: "
 "%(document)s ."
 
-#: views/document_views.py:490
+#: views/document_views.py:492
 #, python-format
 msgid ""
 "Error removing metadata type \"%(metadata_type)s\" from document: "
@@ -554,47 +554,47 @@ msgstr ""
 msgid "Create metadata type"
 msgstr "Створити тип метаданих"
 
-#: views/metadata_type_views.py:48
+#: views/metadata_type_views.py:49
 #, python-format
 msgid "Error deleting metadata type \"%(instance)s\"; %(exception)s"
 msgstr "Помилка видалення типу метаданих \"%(instance)s\"; %(exception)s"
 
-#: views/metadata_type_views.py:57
+#: views/metadata_type_views.py:58
 #, python-format
 msgid "%(count)d metadata types deleted successfully."
 msgstr "%(count)d типів метаданих успішно видалено."
 
-#: views/metadata_type_views.py:60
+#: views/metadata_type_views.py:61
 #, python-format
 msgid "Metadata type \"%(object)s\" deleted successfully."
 msgstr "Метадані типу \"%(object)s\" успішно видалено."
 
-#: views/metadata_type_views.py:63
+#: views/metadata_type_views.py:64
 #, python-format
 msgid "%(count)d metadata type deleted successfully."
 msgstr "%(count)d тип метаданих успішно видалено."
 
-#: views/metadata_type_views.py:65
+#: views/metadata_type_views.py:66
 #, python-format
 msgid "Delete the %(count)d selected metadata types."
 msgstr "Видалити %(count)d вибраних типів метаданих."
 
-#: views/metadata_type_views.py:66
+#: views/metadata_type_views.py:67
 #, python-format
 msgid "Delete metadata type: %(object)s."
 msgstr "Видалити тип метаданих: %(object)s."
 
-#: views/metadata_type_views.py:67
+#: views/metadata_type_views.py:68
 #, python-format
 msgid "Delete the %(count)d selected metadata type."
 msgstr "Видалити %(count)d вибраний тип метаданих."
 
-#: views/metadata_type_views.py:84
+#: views/metadata_type_views.py:85
 #, python-format
 msgid "Edit metadata type: %s"
 msgstr "Редагувати тип метаданих: %s"
 
-#: views/metadata_type_views.py:107
+#: views/metadata_type_views.py:108
 msgid ""
 "Metadata types are user defined properties that can be assigned values. Once"
 " created they must be associated to document types, either as optional or "
@@ -608,11 +608,11 @@ msgstr ""
 "Встановлення типу метаданих як обов'язкового для типу документу блокуватиме "
 "завантаження документів цього типу, поки не буде надане значення метаданих."
 
-#: views/metadata_type_views.py:114
+#: views/metadata_type_views.py:115
 msgid "There are no metadata types"
 msgstr "Немає типів метаданих"
 
-#: views/metadata_type_views.py:138
+#: views/metadata_type_views.py:139
 msgid ""
 "Create metadata type relationships to be able to associate them to this "
 "document type."
@@ -620,16 +620,16 @@ msgstr ""
 "Створити зв’язки типів метаданих, щоб мати можливість зв’язати їх із цим "
 "типом документа."
 
-#: views/metadata_type_views.py:142
+#: views/metadata_type_views.py:143
 msgid "There are no metadata type relationships available"
 msgstr "Немає доступних зв’язків типів метаданих"
 
-#: views/metadata_type_views.py:146
+#: views/metadata_type_views.py:147
 #, python-format
 msgid "Metadata type relationships for document type: %s"
 msgstr "Зв’язки типу метаданих для типу документа: %s"
 
-#: views/metadata_type_views.py:191
+#: views/metadata_type_views.py:192
 #, python-format
 msgid "Document type relationships for metadata type: %s"
 msgstr "Зв’язки типу документа для типу метаданих: %s"

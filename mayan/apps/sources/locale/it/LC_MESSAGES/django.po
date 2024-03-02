@@ -271,11 +271,11 @@ msgstr ""
 msgid "Arguments to use when creating source backends."
 msgstr ""
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr ""
 

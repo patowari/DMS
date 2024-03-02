@@ -23,11 +23,11 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
+#: apps.py:34 events.py:6 permissions.py:6 queues.py:7 settings.py:21
 msgid "Converter"
 msgstr "转换器"
 
-#: apps.py:82 forms.py:41
+#: apps.py:81 forms.py:41
 msgid "Transformation"
 msgstr "转换"
 
@@ -128,7 +128,7 @@ msgstr "转换"
 msgid "Select new transformation"
 msgstr "选择新的转换"
 
-#: model_mixins.py:124 models.py:167
+#: model_mixins.py:124 models.py:169
 msgid "Arguments"
 msgstr "参数"
 
@@ -178,7 +178,7 @@ msgstr ""
 msgid "Object ID"
 msgstr "物件ID"
 
-#: models.py:120 models.py:170
+#: models.py:120 models.py:172
 msgid "Enabled"
 msgstr "啟用"
 
@@ -202,15 +202,15 @@ msgid ""
 "{\"degrees\": 180}"
 msgstr "输入转换的参数作为YAML字典。例如：{“度”：180}"
 
-#: models.py:178
+#: models.py:180
 msgid "Layer transformation"
 msgstr "图层转换"
 
-#: models.py:179
+#: models.py:181
 msgid "Layer transformations"
 msgstr "图层转换"
 
-#: models.py:187
+#: models.py:189
 msgid "Unknown transformation class"
 msgstr "未知的轉變格式型別"
 
@@ -363,8 +363,8 @@ msgid "Horizontal position in pixels from the left."
 msgstr ""
 
 #: transformation_mixins.py:119 transformation_mixins.py:163
-#: transformation_mixins.py:227 transformations.py:226 transformations.py:325
-#: transformations.py:424
+#: transformation_mixins.py:227 transformations.py:230 transformations.py:329
+#: transformations.py:428
 msgid "Left"
 msgstr ""
 
@@ -373,8 +373,8 @@ msgid "Vertical position in pixels from the top."
 msgstr ""
 
 #: transformation_mixins.py:123 transformation_mixins.py:167
-#: transformation_mixins.py:235 transformations.py:230 transformations.py:329
-#: transformations.py:428
+#: transformation_mixins.py:235 transformations.py:234 transformations.py:333
+#: transformations.py:432
 msgid "Top"
 msgstr ""
 
@@ -390,7 +390,7 @@ msgstr ""
 msgid "Vertical position in percent from the top."
 msgstr ""
 
-#: transformation_mixins.py:220 transformations.py:214
+#: transformation_mixins.py:220 transformations.py:218
 msgid "Paste an asset as watermark"
 msgstr "將資源項目作為浮水印貼入"
 
@@ -402,8 +402,8 @@ msgstr ""
 msgid "Horizontal end position in pixels from the right."
 msgstr ""
 
-#: transformation_mixins.py:231 transformations.py:234 transformations.py:333
-#: transformations.py:432
+#: transformation_mixins.py:231 transformations.py:238 transformations.py:337
+#: transformations.py:436
 msgid "Right"
 msgstr ""
 
@@ -415,8 +415,8 @@ msgstr ""
 msgid "Vertical end position in pixels from the top."
 msgstr ""
 
-#: transformation_mixins.py:239 transformations.py:238 transformations.py:338
-#: transformations.py:436
+#: transformation_mixins.py:239 transformations.py:242 transformations.py:342
+#: transformations.py:440
 msgid "Bottom"
 msgstr ""
 
@@ -472,79 +472,79 @@ msgstr ""
 msgid "Outline width"
 msgstr ""
 
-#: transformations.py:198
+#: transformations.py:202
 msgid "Paste an asset (absolute coordinates)"
 msgstr ""
 
-#: transformations.py:206
+#: transformations.py:210
 msgid "Paste an asset (percent coordinates)"
 msgstr ""
 
-#: transformations.py:220
+#: transformations.py:224
 msgid "Crop"
 msgstr "裁剪"
 
-#: transformations.py:225
+#: transformations.py:229
 msgid "Number of pixels to remove from the left."
 msgstr ""
 
-#: transformations.py:229
+#: transformations.py:233
 msgid "Number of pixels to remove from the top."
 msgstr ""
 
-#: transformations.py:233
+#: transformations.py:237
 msgid "Number of pixels to remove from the right."
 msgstr ""
 
-#: transformations.py:237
+#: transformations.py:241
 msgid "Number of pixels to remove from the bottom."
 msgstr ""
 
-#: transformations.py:320
+#: transformations.py:324
 msgid "Draw rectangle"
 msgstr "繪製長方形"
 
-#: transformations.py:325
+#: transformations.py:329
 msgid "Left side location in pixels."
 msgstr ""
 
-#: transformations.py:329
+#: transformations.py:333
 msgid "Top side location in pixels."
 msgstr ""
 
-#: transformations.py:333
+#: transformations.py:337
 msgid "Right side location in pixels."
 msgstr ""
 
-#: transformations.py:337
+#: transformations.py:341
 msgid "Bottom side location in pixels."
 msgstr ""
 
-#: transformations.py:418
+#: transformations.py:422
 msgid "Draw rectangle (percent coordinates)"
 msgstr ""
 
-#: transformations.py:423
+#: transformations.py:427
 msgid "Left side location in percent."
 msgstr ""
 
-#: transformations.py:427
+#: transformations.py:431
 msgid "Top side location in percent."
 msgstr ""
 
-#: transformations.py:431
+#: transformations.py:435
 msgid "Right side location in percent."
 msgstr ""
 
-#: transformations.py:435
+#: transformations.py:439
 msgid "Bottom side location in percent."
 msgstr ""
 
-#: transformations.py:514
+#: transformations.py:522
 msgid "Flip"
 msgstr "翻动"
 
-#: transformations.py:525
+#: transformations.py:533
 msgid "Gaussian blur"
 msgstr "高斯模糊"
 
@@ -552,31 +552,31 @@ msgstr "高斯模糊"
 msgid "Radius"
 msgstr ""
 
-#: transformations.py:542
+#: transformations.py:550
 msgid "Line art"
 msgstr "线条艺术"
 
-#: transformations.py:556
+#: transformations.py:564
 msgid "Mirror"
 msgstr "镜像"
 
-#: transformations.py:567
+#: transformations.py:575
 msgid "Resize"
 msgstr "调整大小"
 
-#: transformations.py:573
+#: transformations.py:581
 msgid "New width in pixels."
 msgstr ""
 
-#: transformations.py:574
+#: transformations.py:582
 msgid "Width"
 msgstr ""
 
-#: transformations.py:578
+#: transformations.py:586
 msgid "New height in pixels."
 msgstr ""
 
-#: transformations.py:579
+#: transformations.py:587
 msgid "Height"
 msgstr ""
 
@@ -670,9 +670,9 @@ msgstr "編輯資源項目 : %s"
 
 #: views/asset_views.py:140
 msgid ""
-"Assets are files that can be used in conjuction with certain "
+"Assets are files that can be used in conjunction with certain "
 "transformations."
-msgstr "資源項目是依些可以用來連接特定轉變格式"
+msgstr ""
 
 #: views/asset_views.py:143
 msgid "No assets available"

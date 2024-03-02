@@ -272,13 +272,13 @@ msgstr "Adresa URL a acțiunilor"
 msgid "Arguments to use when creating source backends."
 msgstr "Argumente de folosit la crearea backend-urilor sursă."
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 "Calea către subclasa Stocare utilizată pentru a stoca fișierele imagine "
 "sursă stocate în cache."
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr "Argumente de transmis către SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 

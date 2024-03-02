@@ -22,7 +22,7 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Vzhled"
 

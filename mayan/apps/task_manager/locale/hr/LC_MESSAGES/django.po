@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Mario Jakovina <mario.jakovina@gmail.com>, 2023
+# Mario Jakovina <mario.jakovina@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""

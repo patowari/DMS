@@ -26,39 +26,39 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:31
+#: apps.py:33
 msgid "Django GPG"
 msgstr "Django GPG"
 
-#: apps.py:53 apps.py:59 forms.py:16
+#: apps.py:55 apps.py:61 forms.py:16
 msgid "Key ID"
 msgstr "Schlüssel-ID"
 
-#: apps.py:63 forms.py:42 models.py:50
+#: apps.py:65 forms.py:42 models.py:49
 msgid "Type"
 msgstr "Typ"
 
-#: apps.py:67 forms.py:23 models.py:29
+#: apps.py:69 forms.py:23 models.py:28
 msgid "Creation date"
 msgstr "Erstellungsdatum"
 
-#: apps.py:72
+#: apps.py:74
 msgid "No expiration"
 msgstr "Ohne Ablaufdatum"
 
-#: apps.py:73 forms.py:28 models.py:33
+#: apps.py:75 forms.py:28 models.py:32
 msgid "Expiration date"
 msgstr "Ablaufdatum"
 
-#: apps.py:77 forms.py:35 models.py:40
+#: apps.py:79 forms.py:35 models.py:39
 msgid "Length"
 msgstr "Länge"
 
-#: apps.py:82 forms.py:20 models.py:46
+#: apps.py:84 forms.py:20 models.py:45
 msgid "User ID"
 msgstr "Benutzer-ID"
 
-#: dependencies.py:10
+#: dependencies.py:12
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU Privacy Guard - eine PGP-Implementierung."
 
@@ -78,11 +78,11 @@ msgstr "Schlüssel heruntergeladen"
 msgid "None"
 msgstr "Keine"
 
-#: forms.py:32 models.py:37
+#: forms.py:32 models.py:36
 msgid "Fingerprint"
 msgstr "Fingerabdruck"
 
-#: forms.py:38 models.py:43
+#: forms.py:38 models.py:42
 msgid "Algorithm"
 msgstr "Verfahren"
 
@@ -174,27 +174,27 @@ msgstr "Dokument ist signiert mit gültiger Unterschrift."
 msgid "Document is signed with a valid signature."
 msgstr "Das Dokument ist mit einer gültigen Signatur signiert."
 
-#: models.py:25
+#: models.py:24
 msgid "ASCII armored version of the key."
 msgstr "ASCII Version des Schlüssels."
 
-#: models.py:26
+#: models.py:25
 msgid "Key data"
 msgstr "Schlüssel-Daten"
 
-#: models.py:56
+#: models.py:55
 msgid "Key"
 msgstr "Schlüssel"
 
-#: models.py:57
+#: models.py:56
 msgid "Keys"
 msgstr "Schlüssel"
 
-#: models.py:72
+#: models.py:71
 msgid "Invalid key data"
 msgstr "Ungültige Schlüssel-Daten"
 
-#: models.py:77
+#: models.py:80
 msgid "Key already exists."
 msgstr "Schlüssel existiert bereits."
 

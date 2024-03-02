@@ -61,11 +61,11 @@ msgstr "Список контроля доступа изменен"
 msgid "Role"
 msgstr "Роль"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Новый список контроля доступа"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Удалить"
 
@@ -73,7 +73,7 @@ msgstr "Удалить"
 msgid "Permissions"
 msgstr "Разрешения"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "Глобальные списки контроля доступа"
 
@@ -179,7 +179,7 @@ msgstr "Удалить список контроля доступа: %s"
 msgid "There are no ACLs for this object"
 msgstr "Для этого объекта нет списков контроля доступа"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -203,12 +203,12 @@ msgstr "Предоставленные разрешения"
 msgid "Available permissions"
 msgstr "Доступные разрешения"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Разрешения роли \"%(role)s\" для \"%(object)s\""
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -220,11 +220,11 @@ msgstr ""
 "Унаследованные разрешения должны быть удалены из списка контроля доступа "
 "родительского объекта или из роли через меню Настройки."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "Нет списков контроля доступа"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "Глобальные списки контроля доступа"
 

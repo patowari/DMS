@@ -38,7 +38,7 @@ msgstr ""
 "Impossible d'initialiser le stockage : %(name)s. Vérifiez le chemin en "
 "pointillés et les arguments du backend de stockage."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Télécharger les fichiers"
 
@@ -113,11 +113,11 @@ msgstr "Utilisateur"
 msgid "File"
 msgstr "Fichier"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Libellé"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Télécharger le fichier"
 

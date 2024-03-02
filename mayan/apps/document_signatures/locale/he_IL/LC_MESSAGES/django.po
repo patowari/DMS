@@ -18,29 +18,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr ""
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr ""
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr ""
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "אף אחד/כלום"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr ""
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr "רענון את כל החתימות"
 msgid "Verify all documents"
 msgstr "אימות את כל המסמכים"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr "חתום"
 

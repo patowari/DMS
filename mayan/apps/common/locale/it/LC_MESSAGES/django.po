@@ -24,7 +24,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Comune"
 
@@ -66,7 +66,7 @@ msgstr "Forum"
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr "Licenza"
 
@@ -155,7 +155,7 @@ msgstr ""
 "In modalità lista, mostra le opzioni menù \"vai a...\" come menù a tendina "
 "anziché bottoni singoli."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -163,7 +163,7 @@ msgstr ""
 "In modalità lista, mostra le azioni sull'oggetto in un menù a tendina "
 "anziché tanti bottoni singoli."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -173,7 +173,7 @@ msgstr ""
 "app devono essere configurate con un backend di storage alternativo per "
 "poter avere la persistenza dei dati."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -186,18 +186,14 @@ msgstr ""
 "dell'applicazione (opzione preferita) o un pacchetto contenente "
 "un'applicazione. Esempio: ['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Un elenco di stringhe con tutte le applicazioni installate oltre a quelle "
-"normalmente installate da Mayan EDMS. Ogni stringa dovrebbe essere un "
-"percorso Python puntato a: una classe di configurazione dell'applicazione "
-"(preferita) o un pacchetto contenente un'applicazione. Esempio: ['app_1', "
-"'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -238,15 +234,15 @@ msgstr "URL della home del progetto."
 msgid "Click here to fix this."
 msgstr "Clicca qui per risolvere questo problema."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Immettere un valore JSON valido."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Inserisci un valore YAML valido."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -254,29 +250,29 @@ msgstr ""
 "Inserisci un 'internal name' valido composto da lettere, numeri e "
 "underscore."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Informazioni"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Home"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Campi da copiare: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Creare una copia di %(object_name)s \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Oggetto copiato con successo."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -284,19 +280,19 @@ msgstr ""
 "Nessun risultato qui significa che non si hanno le autorizzazioni necessarie"
 " per eseguire l'attività amministrativa."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Nessuna opzione di configurazione disponibile."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Qui puoi configurare tutti gli aspetti del sistema."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Parametri di configurazione"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr ""
 "Questi moduli vengono utilizzati per eseguire la manutenzione del sistema."

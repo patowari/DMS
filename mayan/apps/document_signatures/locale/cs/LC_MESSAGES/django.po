@@ -22,27 +22,27 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr "Podpisy dokumentů"
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr "Datum a čas"
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr "ID klíče"
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "Žádný"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr "ID podpisu"
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr "Typ"
 
@@ -161,7 +161,7 @@ msgstr "Obnovit všechny podpisy"
 msgid "Verify all documents"
 msgstr "Ověřte všechny dokumenty"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr ""
 

@@ -35,7 +35,7 @@ msgstr ""
 "Nem sikerült inicializálni a tárhelyet: %(name)s . Ellenőrizze a háttértár "
 "pontozott elérési útját és argumentumait."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Letöltési fájlok"
 
@@ -110,11 +110,11 @@ msgstr "Felhasználó"
 msgid "File"
 msgstr "Fájl"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Cimke"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Fájl letöltése"
 

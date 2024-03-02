@@ -78,15 +78,15 @@ msgstr "Розділи журналу помилок"
 msgid "Date and time"
 msgstr "Дата і час"
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr "Запис розділу журналу помилок"
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr "Записи розділу журналу помилок"
 

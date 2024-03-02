@@ -69,7 +69,7 @@ msgstr ""
 msgid "Mailing profile edited"
 msgstr ""
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -77,7 +77,7 @@ msgstr ""
 "Adres e-mail odbiorcy. Możesz podać wiele adresów oddzielonych przecinkiem "
 "lub średnikiem."
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "Adres e-mail"
 
@@ -89,7 +89,7 @@ msgstr "Temat"
 msgid "Body"
 msgstr "Treść"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr "Profil e-mail, który zostanie użyty do wysłania tego e-maila."
 
@@ -98,11 +98,11 @@ msgstr "Profil e-mail, który zostanie użyty do wysłania tego e-maila."
 msgid "Mailing profile"
 msgstr "Profil pocztowy"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "Sterownik używany podczas wysyłania wiadomości e-mail."
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "Backend"
 

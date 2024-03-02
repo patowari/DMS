@@ -14,9 +14,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:14 permissions.py:6 settings.py:12
+#: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
 msgstr ""
 
@@ -52,13 +52,13 @@ msgstr ""
 msgid "Trigger tests"
 msgstr ""
 
-#: settings.py:18
+#: settings.py:17
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
 
-#: settings.py:25
+#: settings.py:24
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."

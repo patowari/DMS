@@ -32,7 +32,7 @@ msgstr "file Programm nicht installiert oder nicht gefunden."
 msgid "mimetype not installed or not found."
 msgstr "mimetype Programm nicht installiert oder nicht gefunden."
 
-#: dependencies.py:10
+#: dependencies.py:11
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
@@ -41,7 +41,7 @@ msgstr ""
 "werden. Es versucht die Freedesktop Spezifikation für eine geteilte "
 "Datenbank zu implementieren."
 
-#: dependencies.py:17
+#: dependencies.py:18
 msgid "determine file type using content tests"
 msgstr "Dateityp mittels Test von Inhalt bestimmen"
 

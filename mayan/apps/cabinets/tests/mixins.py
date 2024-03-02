@@ -158,7 +158,15 @@ class CabinetViewTestMixin(CabinetTestMixin):
     def _request_test_cabinet_create_view(self, label=None):
         self._test_object_track()
 
+<<<<<<< HEAD
         label = self._get_test_cabinet_label(label=label)
+=======
+    def _request_test_cabinet_create_view(self):
+        # Typecast to list to force queryset evaluation
+        values = list(
+            Cabinet.objects.values_list('pk', flat=True)
+        )
+>>>>>>> internal/series/4.4
 
         response = self.post(
             'cabinets:cabinet_create', data={'label': label}

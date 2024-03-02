@@ -66,14 +66,14 @@ msgstr ""
 msgid "Mailing profile edited"
 msgstr ""
 
-#: forms.py:58 forms.py:95
+#: forms.py:59 forms.py:96
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
 msgstr ""
 "يمكن إضافة أكثر من عنوان بريدي مع التأكد من إضافة فاصلة او فاصة منقوطة "
 
-#: forms.py:60 forms.py:97
+#: forms.py:61 forms.py:98
 msgid "Email address"
 msgstr "عنوان البريد الالكترونى"
 
@@ -85,7 +85,7 @@ msgstr "موضوع"
 msgid "Body"
 msgstr "الجسم"
 
-#: forms.py:70
+#: forms.py:71
 msgid "The email profile that will be used to send this email."
 msgstr ""
 "ملف تعريف البريد الإلكتروني الذي سيتم استخدامه لإرسال هذا البريد الإلكتروني."
@@ -95,11 +95,11 @@ msgstr ""
 msgid "Mailing profile"
 msgstr "قالب البريد الإلكتروني"
 
-#: forms.py:77
+#: forms.py:78
 msgid "The driver to use when sending emails."
 msgstr "برنامج التشغيل الذي يجب استخدامه عند إرسال رسائل البريد الإلكتروني."
 
-#: forms.py:78
+#: forms.py:79
 msgid "Backend"
 msgstr "في الخفاء"
 

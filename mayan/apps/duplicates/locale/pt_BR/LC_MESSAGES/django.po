@@ -31,7 +31,7 @@ msgstr "Duplicados"
 msgid "Duplicate backend"
 msgstr "Back-end duplicado"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Backend nulo"
 

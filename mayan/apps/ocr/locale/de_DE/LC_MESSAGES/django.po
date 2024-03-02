@@ -29,16 +29,16 @@ msgstr ""
 msgid "OCR"
 msgstr "OCR-Schrifterkennung"
 
-#: apps.py:116
+#: apps.py:115
 msgid "The OCR content."
 msgstr "Der OCR-Inhalt."
 
-#: apps.py:121
+#: apps.py:120
 msgid "A generator returning the document's version pages OCR content."
 msgstr ""
 "Ein Generator, der den OCR-Inhalt von Dokumentenversionsseiten zurückgibt."
 
-#: apps.py:123
+#: apps.py:122
 msgid "OCR content"
 msgstr "OCR Inhalt"
 
@@ -189,64 +189,64 @@ msgstr "OCR-Einstellungen für Dokumententyp %s bearbeiten."
 msgid "Submit all documents of a type for OCR"
 msgstr "Alle Dokumente eines Typs in die OCR-Verarbeitung einstellen"
 
-#: views.py:85
+#: views.py:88
 #, python-format
 msgid "%(count)d documents added to the OCR queue."
 msgstr "%(count)d Dokumente zur OCR-Warteschlange hinzugefügt."
 
-#: views.py:106
+#: views.py:111
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Fehler bei Löschung von Dokumentenversions-OCR \"%(instance)s\"; "
 "%(exception)s"
 
-#: views.py:112
+#: views.py:117
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
 msgstr "OCR-Inhalt von %(count)d Dokumentenversionen erfolgreich gelöscht."
 
-#: views.py:115
+#: views.py:120
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
 msgstr "OCR-Inhalt von \"%(object)s\" erfolgreich gelöscht."
 
-#: views.py:118
+#: views.py:123
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
 msgstr "OCR-Inhalt von %(count)d Dokumentenversion erfolgreich gelöscht."
 
-#: views.py:121
+#: views.py:126
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document versions."
 msgstr "OCR-Inhalt der %(count)d ausgewählten Dokumentenversionen löschen."
 
-#: views.py:123
+#: views.py:128
 #, python-format
 msgid "Delete the OCR content of: %(object)s."
 msgstr "OCR-Inhalt von \"%(object)s\" löschen."
 
-#: views.py:125
+#: views.py:130
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document version."
 msgstr "OCR-Inhalt der %(count)d ausgewählten Dokumentenversion löschen."
 
-#: views.py:156
+#: views.py:161
 #, python-format
 msgid "OCR result for document: %s"
 msgstr "Ergebnis der OCR-Texterkennung für Dokument %s"
 
-#: views.py:178
+#: views.py:183
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
 msgstr "%(count)d Dokumentenversion in die OCR-Warteschlange eingereiht."
 
-#: views.py:181
+#: views.py:186
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
 msgstr "%(count)d Dokumentenversionen in die OCR-Warteschlange eingereiht."
 
-#: views.py:190
+#: views.py:195
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
 msgstr[0] ""
@@ -254,12 +254,12 @@ msgstr[0] ""
 msgstr[1] ""
 "Die ausgewählten Dokumentenversionen in die OCR-Warteschlange einreihen?"
 
-#: views.py:226
+#: views.py:231
 #, python-format
 msgid "OCR result for document version page: %s"
 msgstr "OCR-Ergebnis für Dokumentenversionsseite %s"
 
-#: views.py:254
+#: views.py:259
 #, python-format
 msgid "Edit OCR for document version page: %s"
 msgstr "OCR-Ergebnis für Dokumentenversionsseite %s bearbeiten"

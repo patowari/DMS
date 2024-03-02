@@ -245,14 +245,10 @@ msgstr "Документація"
 
 #: environments.py:36
 msgid ""
-"Environment used to specify direct documentation depedencies to workaround "
-"unpinned or immutable depedency bugs in third party libraries. End users can"
-" ignore missing dependencies under this environment."
+"Environment used to specify direct documentation dependencies to workaround "
+"unpinned or immutable dependency bugs in third party libraries. End users "
+"can ignore missing dependencies under this environment."
 msgstr ""
-"Середовище використовується для вказівки прямих залежностей документації для"
-" обходу незакріплених або незмінних помилок залежностей у сторонніх "
-"бібліотеках. Кінцеві користувачі можуть ігнорувати відсутні залежності в "
-"цьому середовищі."
 
 #: environments.py:40
 msgid "Documentation (override)"

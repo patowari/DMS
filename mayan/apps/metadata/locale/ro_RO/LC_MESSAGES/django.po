@@ -220,7 +220,7 @@ msgstr "Validator de timp"
 msgid "Return the metadata of the document."
 msgstr "Returnează metadatele documentului."
 
-#: mixins.py:19
+#: mixins.py:23
 msgid "Selected documents must be of the same type."
 msgstr "Documentele selectate trebuie să fie de același tip."
 
@@ -459,7 +459,7 @@ msgstr "Cererea de editare de metadate efectuată pe %(count)ddocument"
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr "Cererea de editare de metadate efectuată pe %(count)ddocumente"
 
-#: views/document_views.py:224
+#: views/document_views.py:226
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -467,34 +467,34 @@ msgstr ""
 "Adăugați tipuri de metadate disponibile pentru tipul acestui document și "
 "atribuiți-le valorile corespunzătoare."
 
-#: views/document_views.py:227
+#: views/document_views.py:229
 msgid "There is no metadata to edit"
 msgstr "Nu există metadate pentru a fi editate"
 
-#: views/document_views.py:229
+#: views/document_views.py:231
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] "Editați metadatele documentului"
 msgstr[1] "Editați metadatele documentelor"
 msgstr[2] "Editați metadatele documentelor"
 
-#: views/document_views.py:240
+#: views/document_views.py:242
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr "Editați metadate pentru document:% s"
 
-#: views/document_views.py:329
+#: views/document_views.py:331
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr ""
 "Eroare la editarea metadatelor pentru document: %(document)s; %(exception)s."
 
-#: views/document_views.py:342
+#: views/document_views.py:344
 #, python-format
 msgid "Metadata for document %s edited successfully."
 msgstr "Metadatele pentru documentul %s au fost editate cu succes."
 
-#: views/document_views.py:368
+#: views/document_views.py:370
 msgid ""
 "Add metadata types this document's type to be able to add them to individual"
 " documents. Once added to individual document, you can then edit their "
@@ -504,38 +504,38 @@ msgstr ""
 "adăuga la documente individuale. După ce ați adăugat la un document "
 "individual, puteți să le modificați valorile."
 
-#: views/document_views.py:374
+#: views/document_views.py:376
 msgid "This document doesn't have any metadata"
 msgstr "Acest document nu conține metadate"
 
-#: views/document_views.py:376
+#: views/document_views.py:378
 #, python-format
 msgid "Metadata for document: %s"
 msgstr "Metadate pentru documentul: %s"
 
-#: views/document_views.py:391
+#: views/document_views.py:393
 #, python-format
 msgid "Metadata remove request performed on %(count)d document"
 msgstr "Solicitarea de eliminare a metadatelor efectuată la %(count)ddocument"
 
-#: views/document_views.py:394
+#: views/document_views.py:396
 #, python-format
 msgid "Metadata remove request performed on %(count)d documents"
 msgstr "Cererea de eliminare a metadatelor efectuată pe %(count)ddocumente "
 
-#: views/document_views.py:404
+#: views/document_views.py:406
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
 msgstr[0] "Eliminați tipurile de metadate din document"
 msgstr[1] "Eliminați tipurile de metadate din documente"
 msgstr[2] "Eliminați tipurile de metadate din documente"
 
-#: views/document_views.py:415
+#: views/document_views.py:417
 #, python-format
 msgid "Remove metadata types from the document: %s"
 msgstr "Eliminați tipurile de metadate din documentul: %s"
 
-#: views/document_views.py:481
+#: views/document_views.py:483
 #, python-format
 msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
@@ -544,7 +544,7 @@ msgstr ""
 "Ttipul de metadate \"%(metadata_type)s\"  a fost șters cu succes din "
 "documentul: %(document)s."
 
-#: views/document_views.py:490
+#: views/document_views.py:492
 #, python-format
 msgid ""
 "Error removing metadata type \"%(metadata_type)s\" from document: "
@@ -557,47 +557,47 @@ msgstr ""
 msgid "Create metadata type"
 msgstr "Creați un tip de metadate"
 
-#: views/metadata_type_views.py:48
+#: views/metadata_type_views.py:49
 #, python-format
 msgid "Error deleting metadata type \"%(instance)s\"; %(exception)s"
 msgstr "Eroare la ștergerea tipului de metadate „%(instance)s”; %(exception)s"
 
-#: views/metadata_type_views.py:57
+#: views/metadata_type_views.py:58
 #, python-format
 msgid "%(count)d metadata types deleted successfully."
 msgstr "%(count)d tipuri de metadate au fost șterse cu succes."
 
-#: views/metadata_type_views.py:60
+#: views/metadata_type_views.py:61
 #, python-format
 msgid "Metadata type \"%(object)s\" deleted successfully."
 msgstr "Tipul de metadate „%(object)s” a fost șters cu succes."
 
-#: views/metadata_type_views.py:63
+#: views/metadata_type_views.py:64
 #, python-format
 msgid "%(count)d metadata type deleted successfully."
 msgstr "Tipul de metadate %(count)d a fost șters cu succes."
 
-#: views/metadata_type_views.py:65
+#: views/metadata_type_views.py:66
 #, python-format
 msgid "Delete the %(count)d selected metadata types."
 msgstr "Ștergeți %(count)d tipuri de metadate selectate."
 
-#: views/metadata_type_views.py:66
+#: views/metadata_type_views.py:67
 #, python-format
 msgid "Delete metadata type: %(object)s."
 msgstr "Ștergeți tipul de metadate: %(object)s."
 
-#: views/metadata_type_views.py:67
+#: views/metadata_type_views.py:68
 #, python-format
 msgid "Delete the %(count)d selected metadata type."
 msgstr "Ștergeți %(count)d  tip de metadate selectat. "
 
-#: views/metadata_type_views.py:84
+#: views/metadata_type_views.py:85
 #, python-format
 msgid "Edit metadata type: %s"
 msgstr "Editați tipul de metadate: %s"
 
-#: views/metadata_type_views.py:107
+#: views/metadata_type_views.py:108
 msgid ""
 "Metadata types are user defined properties that can be assigned values. Once"
 " created they must be associated to document types, either as optional or "
@@ -612,11 +612,11 @@ msgstr ""
 "încărcarea documentelor de acest tip până când este furnizată o valoare de "
 "metadate."
 
-#: views/metadata_type_views.py:114
+#: views/metadata_type_views.py:115
 msgid "There are no metadata types"
 msgstr "Nu există tipuri de metadate"
 
-#: views/metadata_type_views.py:138
+#: views/metadata_type_views.py:139
 msgid ""
 "Create metadata type relationships to be able to associate them to this "
 "document type."
@@ -624,16 +624,16 @@ msgstr ""
 "Creați relații de tip de metadate pentru a le putea asocia cu acest tip de "
 "document."
 
-#: views/metadata_type_views.py:142
+#: views/metadata_type_views.py:143
 msgid "There are no metadata type relationships available"
 msgstr "Nu există relații de tip metadate disponibile"
 
-#: views/metadata_type_views.py:146
+#: views/metadata_type_views.py:147
 #, python-format
 msgid "Metadata type relationships for document type: %s"
 msgstr "Relații de tip metadate pentru tipul de document: %s"
 
-#: views/metadata_type_views.py:191
+#: views/metadata_type_views.py:192
 #, python-format
 msgid "Document type relationships for metadata type: %s"
 msgstr "Relații între tipul de document și tipul de metadate: %s"

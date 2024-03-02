@@ -16,7 +16,7 @@ msgstr ""
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:53 views.py:55
 msgid "License"
 msgstr ""
 
@@ -143,20 +143,20 @@ msgid ""
 "instead of individual buttons."
 msgstr ""
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -164,12 +164,13 @@ msgid ""
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
 #: settings.py:70
@@ -203,60 +204,60 @@ msgstr ""
 msgid "Click here to fix this."
 msgstr ""
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr ""
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr ""
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr ""
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr ""
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr ""
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr ""
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr ""
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr ""
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr ""
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr ""
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr ""
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr ""

@@ -52,43 +52,43 @@ msgstr "Odstranit"
 msgid "Edit"
 msgstr "Upravit"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Krátký popis tohoto oznámení."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Jmenovka"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Skutečný text, který se má zobrazit."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Text"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Datum a čas, po kterém se toto oznámení zobrazí."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Počáteční datum"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Datum a čas, do kdy se má toto oznámení zobrazit."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Datum ukončení"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Oznámení"
 
@@ -155,12 +155,9 @@ msgstr ""
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Oznámení se zobrazují v přihlašovacím zobrazení. Oznámení můžete použít ke "
-"shromažďování informací o vaší organizaci, oznámení nebo pokynů k použití "
-"pro vaše uživatele."
 
 #: views.py:125
 msgid "No announcements available"

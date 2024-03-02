@@ -79,10 +79,8 @@ msgstr "Toate tipurile de documente"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
+"individual document type selection."
 msgstr ""
-"Aplicați la toate tipurile de documente. Activând acest lucru, cota va "
-"ignora selectarea tipului de document individual."
 
 #: mixins.py:26
 msgid "Document types"

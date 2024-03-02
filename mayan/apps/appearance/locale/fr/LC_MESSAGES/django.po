@@ -28,7 +28,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Apparence"
 
@@ -178,7 +178,7 @@ msgstr "Nombre maximal de caractères affichés comme titre."
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Position où seront affichés les messages système ."
 
 #: settings.py:40
 msgid ""
@@ -191,12 +191,16 @@ msgstr ""
 msgid ""
 "Maximum number of requests that can be made before throttling is enabled."
 msgstr ""
+"Nombre maximum de requêtes pouvant être effectuées avant que la limitation "
+"ne soit activée."
 
 #: settings.py:54
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Temps en millisecondes après lequel une requête limitée s'effacera, "
+"permettant ainsi l'exécution d'une requête supplémentaire."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"

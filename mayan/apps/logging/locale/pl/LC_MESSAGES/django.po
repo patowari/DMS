@@ -80,15 +80,15 @@ msgstr "Partycje dziennika błędów"
 msgid "Date and time"
 msgstr "Data i godzina"
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "Tekst"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr "Wpis w partycji dziennika błędów"
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr "Wpisy w partycji błędów."
 

@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:18 settings.py:8
+#: apps.py:17 settings.py:8
 msgid "Authentication OIDC"
 msgstr ""
 

@@ -20,7 +20,7 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:14 permissions.py:6 settings.py:12
+#: apps.py:14 permissions.py:6 settings.py:11
 msgid "Platform"
 msgstr "Plataforma"
 
@@ -57,7 +57,7 @@ msgstr "Error de prueba de Sentry"
 msgid "Trigger tests"
 msgstr "Activar pruebas"
 
-#: settings.py:18
+#: settings.py:17
 msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
@@ -65,7 +65,7 @@ msgstr ""
 "Lista de backends de cliente para iniciar después del arranque. Utilice la "
 "ruta de separada por puntos a las clases de backend del cliente."
 
-#: settings.py:25
+#: settings.py:24
 msgid ""
 "Arguments for the client backends. Use the client backend dotted path as the"
 " dictionary key for the arguments in dictionary format."

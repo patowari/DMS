@@ -22,7 +22,7 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr "Statistică"
 
@@ -40,39 +40,39 @@ msgstr "Orar"
 msgid "Last update"
 msgstr "Ultima actualizare"
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr "Spațiu de nume statistici"
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr "niciodată"
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr "Grafic gogoașă"
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr "Diagramă cu linii"
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr "Diagramă gen plăcintă"
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr "Detalii privind spațiul pentru nume"
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr "Lista de spații de nume"
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr "Coadă"
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr "Vedere"
 
@@ -118,44 +118,44 @@ msgstr "Ultima actualizare: %(datetime)s"
 msgid "Statistic \"%s\" not found."
 msgstr "Statistica \"%s\" nu a fost găsită."
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
 "Spațiile de nume pentru statistici grupează statisticile în unități logice."
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr "Nu sunt disponibile spații de nume statistice"
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr "Numele de spațiu pentru statistici"
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
 "Statisticile sunt valori și reprezentări grafice ale datelor existente."
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr "Nu există statistici disponibile"
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr "Detalii despre spațiul de nume pentru: %s"
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr "Rezultate pentru: %s"
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr "Trimite în coada de statistici \"%s\" pentru a fi actualizată?"
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr "Statistica \"%s\" a fost așezată cu succes  la coada pentru actualizare."

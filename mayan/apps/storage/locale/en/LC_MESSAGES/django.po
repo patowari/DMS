@@ -29,7 +29,7 @@ msgid ""
 "path and arguments."
 msgstr ""
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr ""
 
@@ -100,11 +100,11 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr ""
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr ""
 

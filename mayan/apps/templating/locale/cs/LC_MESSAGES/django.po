@@ -62,7 +62,7 @@ msgstr "Řetězec šablony, který má být vyhodnocen."
 msgid "Template"
 msgstr "Šablona"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Karanténa"
 

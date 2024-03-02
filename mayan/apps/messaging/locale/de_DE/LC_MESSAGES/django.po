@@ -25,15 +25,15 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:39 events.py:6 permissions.py:6
+#: apps.py:38 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr "Benachrichtigungen"
 
-#: apps.py:61
+#: apps.py:60
 msgid "None"
 msgstr "Keine"
 
-#: apps.py:67
+#: apps.py:66
 msgid "Sender"
 msgstr "Absender"
 

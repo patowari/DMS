@@ -36,7 +36,7 @@ msgstr ""
 "Съхранението не може да бъде инициализирано: %(name)s. Проверете пътя и "
 "аргументите на бекенд скрипта на съхранението."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Изтеглете файлове"
 
@@ -111,11 +111,11 @@ msgstr "Потребител"
 msgid "File"
 msgstr "Файл"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Етикет"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Изтегли файл"
 

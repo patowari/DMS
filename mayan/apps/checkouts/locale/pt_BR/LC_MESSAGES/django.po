@@ -26,7 +26,7 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:41 events.py:6 links.py:33
+#: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
 msgstr "Retiradas"
 
@@ -86,23 +86,23 @@ msgstr "Sim"
 msgid "No"
 msgstr "Não"
 
-#: links.py:40
+#: links.py:39
 msgid "Check out document"
 msgstr "Retirar documentos"
 
-#: links.py:44
+#: links.py:43
 msgid "Check out"
 msgstr "Retirar"
 
-#: links.py:51
+#: links.py:50
 msgid "Check in document"
 msgstr "Devolver documento"
 
-#: links.py:55
+#: links.py:54
 msgid "Check in"
 msgstr "Devolver"
 
-#: links.py:61
+#: links.py:60
 msgid "Check in/out"
 msgstr "Devolver / Retirar"
 

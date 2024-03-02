@@ -196,7 +196,7 @@ msgstr ""
 msgid "Arguments to pass to the drivers."
 msgstr "Az illesztőprogramoknak átadandó argumentumok."
 
-#: views.py:52
+#: views.py:51
 msgid ""
 "File metadata are the attributes of the document's file. They can range from"
 " camera information used to take a photo to the author that created a file. "
@@ -211,16 +211,16 @@ msgstr ""
 "fájlban találhatók. Nem azonosak a dokumentum metaadataival, amelyek a "
 "felhasználó által meghatározottak és az adatbázisban találhatók."
 
-#: views.py:60
+#: views.py:59
 msgid "No file metadata available."
 msgstr "Nem áll rendelkezésre fájl metaadat."
 
-#: views.py:63
+#: views.py:62
 #, python-format
 msgid "File metadata drivers for: %s"
 msgstr "Fájl metaadat illesztőprogramok a következőhöz: %s"
 
-#: views.py:90
+#: views.py:89
 msgid ""
 "This could mean that the file metadata detection has not completed or that "
 "the driver does not support any metadata field for the file type of this "
@@ -230,11 +230,11 @@ msgstr ""
 "vagy hogy az illesztőprogram nem támogatja az adott dokumentum fájltípusának"
 " metaadatmezőit."
 
-#: views.py:95
+#: views.py:94
 msgid "No file metadata available for this driver."
 msgstr "Ehhez az illesztőprogramhoz nem állnak rendelkezésre fájl metaadatok."
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid ""
 "File metadata attributes for: %(document_file)s with driver: %(driver)s"
@@ -242,34 +242,34 @@ msgstr ""
 "Fájl metaadat attribútumai a következőhöz: %(document_file)s "
 "illesztőprogramja: %(driver)s"
 
-#: views.py:121
+#: views.py:120
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr "%(count)d a fájl metaadatsorába elküldött fájlokat dokumentálja."
 
-#: views.py:124
+#: views.py:123
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
 msgstr "%(count)d dokumentumfájl elküldve a fájl metaadatsorába."
 
-#: views.py:133
+#: views.py:132
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] "Elküldi a kiválasztott dokumentumfájlt a fájl metaadat-sorába?"
 msgstr[1] "Elküldi a kiválasztott dokumentumfájlokat a fájl metaadat-sorába?"
 
-#: views.py:164
+#: views.py:163
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr ""
 "Szerkessze a fájl metaadat-beállításait a következő dokumentumtípushoz: %s"
 
-#: views.py:175
+#: views.py:174
 msgid "Submit all documents of a type for file metadata processing."
 msgstr ""
 "Minden típusú dokumentumot be kell küldeni fájl metaadat-feldolgozásra."
 
-#: views.py:202
+#: views.py:201
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
 msgstr "%(count)d dokumentum hozzáadva a fájl metaadat-feldolgozási sorához."

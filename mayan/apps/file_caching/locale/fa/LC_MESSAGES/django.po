@@ -185,40 +185,40 @@ msgid ""
 " a file being requested, before giving up."
 msgstr ""
 
-#: views.py:50
+#: views.py:49
 #, python-format
 msgid "Details of cache: %s"
 msgstr ""
 
-#: views.py:62
+#: views.py:61
 msgid "File caches list"
 msgstr ""
 
-#: views.py:83
+#: views.py:82
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr ""
 
-#: views.py:101
+#: views.py:100
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr ""
 
-#: views.py:118
+#: views.py:117
 msgid "Object cache partitions submitted for purging."
 msgstr ""
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr ""
 
-#: views.py:128
+#: views.py:127
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr ""
 
-#: views.py:136
+#: views.py:135
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] ""

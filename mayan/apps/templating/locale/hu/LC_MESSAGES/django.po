@@ -63,7 +63,7 @@ msgstr "A kiértékelendő sablon karakterlánc."
 msgid "Template"
 msgstr "Sablon"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

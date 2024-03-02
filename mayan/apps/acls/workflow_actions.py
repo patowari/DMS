@@ -44,7 +44,8 @@ class GrantAccessAction(WorkflowAction):
             'label': _('Object type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
                 'help_text': _(
-                    'Type of the object for which the access will be modified.'
+                    'Type of the object for which the access will be '
+                    'modified.'
                 ),
                 'queryset': ContentType.objects.none(),
                 'required': True
@@ -251,7 +252,8 @@ class GrantDocumentAccessAction(WorkflowAction):
         for role in self.roles:
             for permission in self.permissions:
                 AccessControlList.objects.grant(
-                    obj=context['workflow_instance'].document, permission=permission, role=role
+                    obj=context['workflow_instance'].document,
+                    permission=permission, role=role
                 )
 
 
@@ -264,5 +266,6 @@ class RevokeDocumentAccessAction(GrantDocumentAccessAction):
         for role in self.roles:
             for permission in self.permissions:
                 AccessControlList.objects.revoke(
-                    obj=context['workflow_instance'].document, permission=permission, role=role
+                    obj=context['workflow_instance'].document,
+                    permission=permission, role=role
                 )

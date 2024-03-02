@@ -30,7 +30,7 @@ msgstr "Дубликаты"
 msgid "Duplicate backend"
 msgstr "Бэкэнд дубликатов"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Пустой бэкэнд"
 
