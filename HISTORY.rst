@@ -13,6 +13,12 @@
   to perform invalid index template node tree manipulations.
 - Fix source class and JavaScript MayanImage class ``.initialize()``
   method name.
+- Update Docker container image versions:
+
+  - Debian from 12.4-slim to 12.5-slim
+  - PostgreSQL from 13.12-alpine to 13.13-alpine
+  - Python from 3.11.7-slim to 3.11.8-slim
+  - RabbitMQ from 3.12.12-alpine to 3.12.13-alpine
 
 4.5.9 (2024-02-05)
 ==================
