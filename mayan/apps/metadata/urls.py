@@ -10,11 +10,10 @@ from .views.document_views import (
     DocumentMetadataListView, DocumentMetadataRemoveView
 )
 from .views.metadata_type_views import (
-    MetadataTypeCreateView, MetadataTypeDeleteView, MetadataTypeEditView,
-    MetadataTypeListView, DocumentTypeMetadataTypeRelationshipView,
+    DocumentTypeMetadataTypeRelationshipView, MetadataTypeCreateView,
+    MetadataTypeDeleteView, MetadataTypeEditView, MetadataTypeListView,
     MetadataTypesDocumentTypeRelationshipView
 )
-
 
 urlpatterns_document_type = [
     url(

@@ -14,12 +14,12 @@ from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.menus import menu_list_facet
 from mayan.apps.organizations.utils import get_organization_installation_url
 
-from .literals import (
-    DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_TYPE_NAMESPACE_NAME,
-    EVENT_EVENTS_CLEARED_NAME, EVENT_EVENTS_EXPORTED_NAME
-)
 from .links import (
     link_object_event_list, link_object_event_type_user_subscription_list
+)
+from .literals import (
+    DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_EVENTS_CLEARED_NAME,
+    EVENT_EVENTS_EXPORTED_NAME, EVENT_TYPE_NAMESPACE_NAME
 )
 from .permissions import (
     permission_events_clear, permission_events_export, permission_events_view
@@ -141,6 +141,7 @@ class EventModelRegistry:
     ):
         # Hidden imports.
         from actstream import registry
+
         from mayan.apps.acls.classes import ModelPermission
 
         AccessControlList = apps.get_model(
@@ -310,7 +311,7 @@ class EventType:
         # Create notifications for the actions created by the event committed.
 
         # Gather the users subscribed globally to the event.
-        user_queryset = User.objects.filter(
+        queryset_users = User.objects.filter(
             id__in=EventSubscription.objects.filter(
                 stored_event_type__name=result.verb
             ).values('user')
@@ -318,7 +319,7 @@ class EventType:
 
         # Gather the users subscribed to the target object event.
         if result.target:
-            user_queryset = user_queryset | User.objects.filter(
+            queryset_users = queryset_users | User.objects.filter(
                 id__in=ObjectEventSubscription.objects.filter(
                     content_type=result.target_content_type,
                     object_id=result.target.pk,
@@ -328,7 +329,7 @@ class EventType:
 
         # Gather the users subscribed to the action object event.
         if result.action_object:
-            user_queryset = user_queryset | User.objects.filter(
+            queryset_users = queryset_users | User.objects.filter(
                 id__in=ObjectEventSubscription.objects.filter(
                     content_type=result.action_object_content_type,
                     object_id=result.action_object.pk,
@@ -336,7 +337,7 @@ class EventType:
                 ).values('user')
             )
 
-        for user in user_queryset:
+        for user in queryset_users:
             if result.action_object:
                 Notification.objects.create(action=result, user=user)
                 # Don't check or add any other notification for the

@@ -9,13 +9,14 @@ Overview
 --------
 
 As with the previous release bug fixes and minor feature were the focus
-for this release too.  `issue #24`_ has been fixed and document
-check outs have been added too as per the feature request posted as `issue #26`_.
+for this release too.  `issue #24`_ has been fixed and document check outs
+have been added too as per the feature request posted as `issue #26`_.
 The way the history events for a document are presented has been improved and
 it is now more useful as it provides filtering by event type.  To improve
 the diagnosis of installation of runtime error a simple view showing the
 number of internal interval jobs being used by Mayan EDMS as well as a
-new app which shows a detail of the current installation enviroment were added.
+new app which shows a detail of the current installation environment were
+added.
 
 
 Changes
@@ -26,13 +27,14 @@ Smarter auto admin creation
 
 Mayan EDMS creates a administrator user during the
 database creation phase to reduce the amount of steps required for a
-functional install.  The creation of this account is controlled by the configuration
-option ``COMMON_AUTO_CREATE_ADMIN``, the username of the account is
-specified with the configuration option ``COMMON_AUTO_ADMIN_USERNAME``
-and the password of this account by the option ``COMMON_AUTO_ADMIN_PASSWORD``.
-Previously the ``COMMON_AUTO_ADMIN_PASSWORD`` defaulted to 'admin' which
-created an administrator account of username 'admin' with a password of
-'admin'.  The new default is to randomize an initial password and show this password
+functional install.  The creation of this account is controlled by the
+configuration option ``COMMON_AUTO_CREATE_ADMIN``, the username of the
+account is specified with the configuration option
+``COMMON_AUTO_ADMIN_USERNAME`` and the password of this account by the
+option ``COMMON_AUTO_ADMIN_PASSWORD``. Previously the
+``COMMON_AUTO_ADMIN_PASSWORD`` defaulted to 'admin' which created an
+administrator account of username 'admin' with a password of 'admin'.
+The new default is to randomize an initial password and show this password
 at the login screen until the administrator password is changed.
 
 
@@ -53,7 +55,7 @@ unless being granted the ``Allow overriding check out restrictions`` or
 Installation environment app
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Diagnosting remote installations of web based applications without access to the
+Diagnosing remote installations of web based applications without access to the
 command line can be a bit hard, to alleviate this situation a new installation
 environment details app has been added.  The purpose of this app is to provide
 support staff information about the physical environment where Mayan EDMS has
@@ -115,8 +117,8 @@ Backward incompatible changes
 Bugs fixed
 ----------
 
-:github-issue:`24 "Duplicated filename extension when uploading a new version of a document"
-:github-issue:`26` "checkout feature request"
+* :github-issue:`24 "Duplicated filename extension when uploading a new version of a document"
+* :github-issue:`26` "checkout feature request"
 
 Removals
 --------

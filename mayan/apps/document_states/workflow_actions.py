@@ -103,7 +103,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
     form_field_widgets = {
         'workflows': {
             'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'},
+                'attrs': {'class': 'select2'}
             }
         }
     }

@@ -11,7 +11,7 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..html_widgets import node_tree
 from ..icons import (
-    icon_index, icon_document_index_instance_list, icon_index_instance_list,
+    icon_document_index_instance_list, icon_index, icon_index_instance_list,
     icon_index_instance_node_with_documents
 )
 from ..links import link_index_template_create

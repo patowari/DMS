@@ -88,11 +88,14 @@ class MockIMAPServer:
         body = content or TEST_EMAIL_BASE64_FILENAME
 
         uid = uid or str(
-            len(self.mailboxes['INBOX'].messages)
+            len(
+                self.mailboxes['INBOX'].messages
+            )
         )
-        self.mailboxes['INBOX'].messages_add(
-            body=force_bytes(s=body), uid=uid
-        )
+
+        body = force_bytes(s=body)
+
+        self.mailboxes['INBOX'].messages_add(body=body, uid=uid)
 
     def _fetch(self, messages):
         flag = '\\Seen'
@@ -118,8 +121,7 @@ class MockIMAPServer:
                 (
                     '{} (UID {} RFC822 {{{}}}'.format(
                         message_number, uid, len(body)
-                    ),
-                    body,
+                    ), body
                 )
             )
 
@@ -330,7 +332,7 @@ class MockPOP3Mailbox:
             for line in value:
                 entry_size = entry_size + len(line)
 
-            result_total_size = result_total_size + entry_size
+            result_total_size += entry_size
             result.append(
                 force_bytes(
                     s='{} {}'.format(result_entry_number, entry_size)

@@ -5,7 +5,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0028_newversionblock'),
+        ('documents', '0028_newversionblock')
     ]
 
     operations = [
@@ -7899,6 +7899,6 @@ class Migration(migrations.Migration):
                     [b'zza', b'Zaza'],
                     [b'zzj', b'Zhuang, Zuojiang']
                 ]
-            ),
-        ),
+            )
+        )
     ]

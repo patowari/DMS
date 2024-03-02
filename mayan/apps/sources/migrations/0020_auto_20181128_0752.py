@@ -23,6 +23,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 help_text='Server side filesystem path to scan for files.',
                 max_length=255, verbose_name='Folder path'
-            ),
+            )
         )
     ]

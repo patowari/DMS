@@ -5,9 +5,9 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_user_theme_settings_detail,
-    icon_user_theme_settings_edit, icon_theme_create,
-    icon_theme_delete, icon_theme_edit, icon_theme_list, icon_theme_setup
+    icon_theme_create, icon_theme_delete, icon_theme_edit, icon_theme_list,
+    icon_theme_setup, icon_user_theme_settings_detail,
+    icon_user_theme_settings_edit
 )
 from .permissions import (
     permission_theme_create, permission_theme_delete, permission_theme_edit,

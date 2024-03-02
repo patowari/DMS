@@ -262,7 +262,7 @@ class RelationshipForm(Form):
             }
         )
 
-    def get_relationship_queryset(self):
+    def get_queryset_relationship(self):
         return getattr(
             self.initial.get('object'),
             self.initial['relationship_related_field']
@@ -273,9 +273,9 @@ class RelationshipForm(Form):
         )
 
     def get_relationship_instance(self):
-        relationship_queryset = self.get_relationship_queryset()
-        if relationship_queryset.exists():
-            return relationship_queryset.get()
+        queryset_relationship = self.get_queryset_relationship()
+        if queryset_relationship.exists():
+            return queryset_relationship.get()
         else:
             return self.get_new_relationship_instance()
 

@@ -1,11 +1,11 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 import mayan.apps.common.validators
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('contenttypes', '0001_initial'),
+        ('contenttypes', '0001_initial')
     ]
 
     operations = [
@@ -18,7 +18,9 @@ class Migration(migrations.Migration):
                         primary_key=True
                     )
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'order', models.PositiveIntegerField(
                         default=0, null=True, verbose_name='Order',
@@ -48,13 +50,13 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE,
                         to='contenttypes.ContentType'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('order',),
                 'verbose_name': 'Transformation',
-                'verbose_name_plural': 'Transformations',
+                'verbose_name_plural': 'Transformations'
             },
-            bases=(models.Model,),
-        ),
+            bases=(models.Model,)
+        )
     ]

@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('duplicates', '0002_auto_20201130_0342'),
+        ('duplicates', '0002_auto_20201130_0342')
     ]
 
     operations = [
@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='duplicates', to='documents.Document',
                 verbose_name='Document'
-            ),
-        ),
+            )
+        )
     ]

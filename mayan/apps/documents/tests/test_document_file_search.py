@@ -1,7 +1,9 @@
 from mayan.apps.dynamic_search.tests.mixins.base import SearchTestMixin
 
 from ..permissions import permission_document_file_view
-from ..search import search_model_document_file_page, search_model_document_file
+from ..search import (
+    search_model_document_file, search_model_document_file_page
+)
 
 from .base import GenericDocumentViewTestCase
 from .literals import TEST_DOCUMENT_FILE_COMMENT
@@ -34,7 +36,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_checksum_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -51,7 +54,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_checksum_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -83,7 +87,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_comment_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -100,7 +105,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_comment_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -132,7 +138,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_filename_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -149,7 +156,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_filename_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -181,7 +189,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_mime_type_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -198,7 +207,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_mime_type_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -230,7 +240,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_document_description_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -247,7 +258,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_document_description_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -279,7 +291,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_document_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -296,7 +309,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_document_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -328,7 +342,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_document_uuid_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -345,7 +360,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_document_uuid_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -377,7 +393,8 @@ class DocumentFileSearchTestCase(
 
     def test_search_model_document_file_by_document_type_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -394,7 +411,8 @@ class DocumentFileSearchTestCase(
 
     def test_trashed_search_model_document_file_by_document_type_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -437,7 +455,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_search_model_document_file_page_by_document_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -454,7 +473,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_trashed_search_model_document_file_page_by_document_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -486,7 +506,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_search_model_document_file_page_by_document_file_checksum_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -503,7 +524,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_trashed_search_model_document_file_page_by_document_file_checksum_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -525,7 +547,9 @@ class DocumentFilePageSearchTestCase(
 
         queryset = self._do_test_search(
             query={
-                'document_file__document__uuid': str(self._test_document.uuid)
+                'document_file__document__uuid': str(
+                    self._test_document.uuid
+                )
             }
         )
         self.assertTrue(self._test_document_file_page not in queryset)
@@ -535,14 +559,17 @@ class DocumentFilePageSearchTestCase(
 
     def test_search_model_document_file_page_by_document_uuid_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
 
         queryset = self._do_test_search(
             query={
-                'document_file__document__uuid': str(self._test_document.uuid)
+                'document_file__document__uuid': str(
+                    self._test_document.uuid
+                )
             }
         )
         self.assertTrue(self._test_document_file_page in queryset)
@@ -552,7 +579,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_trashed_search_model_document_file_page_by_document_uuid_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()
@@ -561,7 +589,9 @@ class DocumentFilePageSearchTestCase(
 
         queryset = self._do_test_search(
             query={
-                'document_file__document__uuid': str(self._test_document.uuid)
+                'document_file__document__uuid': str(
+                    self._test_document.uuid
+                )
             }
         )
         self.assertTrue(self._test_document_file_page not in queryset)
@@ -584,7 +614,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_search_model_document_file_page_by_document_type_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._clear_events()
@@ -601,7 +632,8 @@ class DocumentFilePageSearchTestCase(
 
     def test_trashed_search_model_document_file_page_by_document_type_label_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_file_view
+            obj=self._test_document,
+            permission=permission_document_file_view
         )
 
         self._test_document.delete()

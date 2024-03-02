@@ -120,7 +120,7 @@ class UpdateDocumentPageOCRActionViewTestCase(
         action_count = self._test_workflow_template_state.actions.count()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            backend_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction',
+            backend_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction'
         )
         self.assertEqual(response.status_code, 404)
 
@@ -137,7 +137,7 @@ class UpdateDocumentPageOCRActionViewTestCase(
         action_count = self._test_workflow_template_state.actions.count()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
-            backend_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction',
+            backend_path='mayan.apps.ocr.workflow_actions.UpdateDocumentPageOCRAction'
         )
         self.assertEqual(response.status_code, 200)
 

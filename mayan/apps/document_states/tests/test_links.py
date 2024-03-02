@@ -6,7 +6,7 @@ from ..links import (
     link_workflow_runtime_proxy_document_list,
     link_workflow_runtime_proxy_list,
     link_workflow_runtime_proxy_state_document_list,
-    link_workflow_runtime_proxy_state_list,
+    link_workflow_runtime_proxy_state_list
 )
 from ..permissions import permission_workflow_template_view
 

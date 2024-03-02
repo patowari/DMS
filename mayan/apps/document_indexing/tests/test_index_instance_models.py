@@ -225,9 +225,13 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
             set(
                 IndexInstanceNode.objects.values_list('value', flat=True)
             ), {
-                '', str(self._test_documents[1].uuid),
+                '', str(
+                    self._test_documents[1].uuid
+                ),
                 self._test_documents[1].label,
-                str(self._test_documents[0].uuid),
+                str(
+                    self._test_documents[0].uuid
+                ),
                 self._test_documents[0].label
             }
         )
@@ -262,13 +266,15 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
         self._test_index_template.rebuild()
 
         self.assertEqual(
-            IndexInstanceNode.objects.last().value, self._test_document.label
+            IndexInstanceNode.objects.last().value,
+            self._test_document.label
         )
         self._test_document.label = TEST_DOCUMENT_LABEL_EDITED
         self._test_document.save()
 
         self.assertEqual(
-            IndexInstanceNode.objects.last().value, self._test_document.label
+            IndexInstanceNode.objects.last().value,
+            self._test_document.label
         )
 
     def test_document_type_index(self):
@@ -284,7 +290,9 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
         )
 
         self._create_test_document_type()
-        self._test_index_template.document_types.add(self._test_document_type)
+        self._test_index_template.document_types.add(
+            self._test_document_type
+        )
 
         self._test_document._document_type_change(
             document_type=self._test_document_type
@@ -339,13 +347,19 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(
             list(
-                IndexTemplateNode.objects.values_list('expression', flat=True)
+                IndexTemplateNode.objects.values_list(
+                    'expression', flat=True
+                )
             ), ['', '{{ document.metadata_value_of.test }}']
         )
 
         # There should be only a root index instances nodes.
-        self.assertEqual(IndexInstanceNode.objects.count(), 1)
-        self.assertEqual(IndexInstanceNode.objects.first().parent, None)
+        self.assertEqual(
+            IndexInstanceNode.objects.count(), 1
+        )
+        self.assertEqual(
+            IndexInstanceNode.objects.first().parent, None
+        )
 
         # Rebuild all indexes.
         IndexTemplate.objects.rebuild()

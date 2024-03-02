@@ -12,8 +12,7 @@ from .permissions import (
     permission_tag_edit, permission_tag_remove, permission_tag_view
 )
 from .serializers import (
-    DocumentTagAttachSerializer, DocumentTagRemoveSerializer,
-    TagSerializer
+    DocumentTagAttachSerializer, DocumentTagRemoveSerializer, TagSerializer
 )
 
 

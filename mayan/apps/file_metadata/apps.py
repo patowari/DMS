@@ -22,8 +22,8 @@ from .handlers import (
     process_document_file_metadata
 )
 from .links import (
-    link_document_file_metadata_driver_list,
     link_document_file_metadata_driver_attribute_list,
+    link_document_file_metadata_driver_list,
     link_document_file_metadata_single_submit,
     link_document_file_metadata_submit_multiple,
     link_document_type_file_metadata_settings,

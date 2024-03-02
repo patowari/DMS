@@ -15,11 +15,11 @@ class SignatureCaptureSerializer(serializers.HyperlinkedModelSerializer):
         label=_('Image URL'), view_kwargs=(
             {
                 'lookup_field': 'document_id',
-                'lookup_url_kwarg': 'document_id',
+                'lookup_url_kwarg': 'document_id'
             },
             {
                 'lookup_field': 'pk',
-                'lookup_url_kwarg': 'signature_capture_id',
+                'lookup_url_kwarg': 'signature_capture_id'
             }
         ), view_name='rest_api:signature_capture-image'
     )
@@ -27,11 +27,11 @@ class SignatureCaptureSerializer(serializers.HyperlinkedModelSerializer):
         label=_('URL'), view_kwargs=(
             {
                 'lookup_field': 'document_id',
-                'lookup_url_kwarg': 'document_id',
+                'lookup_url_kwarg': 'document_id'
             },
             {
                 'lookup_field': 'pk',
-                'lookup_url_kwarg': 'signature_capture_id',
+                'lookup_url_kwarg': 'signature_capture_id'
             }
         ), view_name='rest_api:signature_capture-detail'
     )

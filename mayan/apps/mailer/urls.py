@@ -1,18 +1,16 @@
 from django.conf.urls import url
 
-from .views.document_views import MailDocumentLinkView
 from .views.document_file_views import (
-    MailDocumentFileLinkView, MailDocumentFileAttachmentView
+    MailDocumentFileAttachmentView, MailDocumentFileLinkView
 )
 from .views.document_version_views import (
-    MailDocumentVersionLinkView, MailDocumentVersionAttachmentView
+    MailDocumentVersionAttachmentView, MailDocumentVersionLinkView
 )
+from .views.document_views import MailDocumentLinkView
 from .views.mailing_profile_views import (
-    UserMailerBackendSelectionView, UserMailingCreateView,
-    UserMailingDeleteView, UserMailingEditView, UserMailerTestView,
-    UserMailerListView
+    UserMailerBackendSelectionView, UserMailerListView, UserMailerTestView,
+    UserMailingCreateView, UserMailingDeleteView, UserMailingEditView
 )
-
 
 urlpatterns_document = [
     url(

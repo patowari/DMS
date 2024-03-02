@@ -13,7 +13,9 @@ class AJAXTemplateAPIViewTestCase(BaseAPITestCase):
     def test_template_detail_anonymous_api_view(self):
         template_main_menu = AJAXTemplate.get(name='menu_main')
 
-        response = self.get(path=template_main_menu.get_absolute_url())
+        response = self.get(
+            path=template_main_menu.get_absolute_url()
+        )
         self.assertNotContains(
             response=response, text=TEST_AJAXTEMPLATE_RESULT, status_code=403
         )
@@ -23,7 +25,9 @@ class AJAXTemplateAPIViewTestCase(BaseAPITestCase):
         self.login_user()
         template_main_menu = AJAXTemplate.get(name='menu_main')
 
-        response = self.get(path=template_main_menu.get_absolute_url())
+        response = self.get(
+            path=template_main_menu.get_absolute_url()
+        )
         self.assertContains(
             response=response, text=TEST_AJAXTEMPLATE_RESULT, status_code=200
         )

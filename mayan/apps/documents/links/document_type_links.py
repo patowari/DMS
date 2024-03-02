@@ -7,15 +7,14 @@ from ..icons import (
     icon_document_type_create, icon_document_type_delete,
     icon_document_type_edit, icon_document_type_filename_create,
     icon_document_type_filename_delete, icon_document_type_filename_edit,
-    icon_document_type_filename_list, icon_document_type_filename_generator,
-    icon_document_type_retention_policies, icon_document_type_setup,
-    icon_document_type_list
+    icon_document_type_filename_generator, icon_document_type_filename_list,
+    icon_document_type_list, icon_document_type_retention_policies,
+    icon_document_type_setup
 )
 from ..permissions import (
     permission_document_type_create, permission_document_type_delete,
-    permission_document_type_edit, permission_document_type_view,
+    permission_document_type_edit, permission_document_type_view
 )
-
 
 link_document_type_create = Link(
     icon=icon_document_type_create,

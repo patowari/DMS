@@ -16,12 +16,12 @@ from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 
 from .events import event_theme_edited, event_user_theme_settings_edited
+from .handlers import handler_user_theme_setting_create
 from .links import (
     link_theme_create, link_theme_delete, link_theme_edit, link_theme_list,
     link_theme_setup, link_user_theme_settings_detail,
     link_user_theme_settings_edit
 )
-from .handlers import handler_user_theme_setting_create
 from .permissions import (
     permission_theme_delete, permission_theme_edit, permission_theme_view
 )
@@ -30,6 +30,7 @@ from .permissions import (
 class AppearanceApp(MayanAppConfig):
     app_namespace = 'appearance'
     app_url = 'appearance'
+    has_javascript_translations = True
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.appearance'

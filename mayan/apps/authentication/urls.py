@@ -13,7 +13,6 @@ from .views.impersonation_views import (
     UserImpersonateStartView
 )
 
-
 urlpatterns_authenticattion = [
     url(
         regex=r'^login/$', name='login_view',

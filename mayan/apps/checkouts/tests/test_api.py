@@ -34,7 +34,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -49,7 +51,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -71,7 +75,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -84,7 +90,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -101,7 +109,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -127,7 +137,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -145,8 +157,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
-
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
@@ -164,7 +177,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -192,7 +207,9 @@ class CheckoutsAPITestCase(
         response = self._request_test_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -368,7 +385,9 @@ class DocumentCheckoutAPITestCase(
         response = self._request_test_document_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -385,7 +404,9 @@ class DocumentCheckoutAPITestCase(
         response = self._request_test_document_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -411,7 +432,9 @@ class DocumentCheckoutAPITestCase(
         response = self._request_test_document_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -429,7 +452,9 @@ class DocumentCheckoutAPITestCase(
         response = self._request_test_document_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -448,7 +473,9 @@ class DocumentCheckoutAPITestCase(
         response = self._request_test_document_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -476,7 +503,9 @@ class DocumentCheckoutAPITestCase(
         response = self._request_test_document_check_out_detail_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

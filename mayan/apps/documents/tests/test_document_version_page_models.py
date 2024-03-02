@@ -1,8 +1,8 @@
+from mayan.apps.converter.models import LayerTransformation
+from mayan.apps.converter.tests.mixins import LayerTestMixin
 from mayan.apps.converter.transformations import (
     BaseTransformation, TransformationRotate90
 )
-from mayan.apps.converter.models import LayerTransformation
-from mayan.apps.converter.tests.mixins import LayerTestMixin
 
 from ..document_file_actions import DocumentFileActionAppendNewPages
 
@@ -39,7 +39,9 @@ class DocumentVersionPageTestCase(
         )
         self.assertEqual(
             self._test_document.versions.last().page_content_objects,
-            list(self._test_document.file_latest.pages.all())
+            list(
+                self._test_document.file_latest.pages.all()
+            )
         )
 
     def test_method_get_absolute_url(self):

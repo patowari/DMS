@@ -9,8 +9,8 @@ from ..permissions import permission_document_change_type
 
 from .base import GenericDocumentTestCase
 from .literals import (
-    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_SMALL_FILENAME,
-    TEST_DOCUMENT_SMALL_MIMETYPE, TEST_DOCUMENT_SMALL_SIZE
+    TEST_DOCUMENT_SMALL_CHECKSUM, TEST_DOCUMENT_SMALL_MIMETYPE,
+    TEST_DOCUMENT_SMALL_SIZE, TEST_FILE_SMALL_FILENAME
 )
 
 

@@ -6,7 +6,7 @@ import shutil
 from django.core.files.base import ContentFile
 
 from mayan.apps.common.tests.literals import (
-    TEST_COMPRESSED_FILE_CONTENTS, TEST_FILE_CONTENTS_1, TEST_FILE3_PATH,
+    TEST_COMPRESSED_FILE_CONTENTS, TEST_FILE3_PATH, TEST_FILE_CONTENTS_1,
     TEST_FILENAME1, TEST_FILENAME3
 )
 from mayan.apps.documents.literals import STORAGE_NAME_DOCUMENT_FILES

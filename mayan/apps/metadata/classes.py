@@ -80,7 +80,9 @@ class MetadataTypeModuleMixin(AppsModuleLoaderMixin):
                 entry.get_import_path(), entry.get_full_label()
             ) for entry in cls.get_all()
         ]
-        choices.sort(key=lambda x: x[1])
+        choices.sort(
+            key=lambda x: x[1]
+        )
 
         if add_blank:
             choices.insert(

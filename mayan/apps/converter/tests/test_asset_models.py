@@ -1,14 +1,12 @@
 from unittest import mock
 
-from mayan.apps.testing.tests.base import BaseTestCase
 from mayan.apps.file_caching.models import CachePartition
+from mayan.apps.testing.tests.base import BaseTestCase
 
 from .mixins import AssetTestMixin
 
 
-class AssetModelTestCase(
-    AssetTestMixin, BaseTestCase
-):
+class AssetModelTestCase(AssetTestMixin, BaseTestCase):
     def test_asset_get_absolute_url_method(self):
         self._create_test_asset()
 

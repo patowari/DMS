@@ -8,8 +8,8 @@ from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 from ..models import Quota
 
 from .literals import (
-    TEST_QUOTA_DATA, TEST_QUOTA_DOTTED_PATH, TEST_QUOTA_WITH_MIXINS_DOTTED_PATH,
-    TEST_QUOTA_TEST_LIMIT_EDITED
+    TEST_QUOTA_DATA, TEST_QUOTA_DOTTED_PATH, TEST_QUOTA_TEST_LIMIT_EDITED,
+    TEST_QUOTA_WITH_MIXINS_DOTTED_PATH
 )
 
 
@@ -85,7 +85,7 @@ class QuotaViewTestMixin(QuotaTestMixin):
     def _request_test_quota_delete_view(self):
         return self.post(
             viewname='quotas:quota_delete', kwargs={
-                'quota_id': self._test_quota.pk,
+                'quota_id': self._test_quota.pk
             }
         )
 
@@ -94,7 +94,7 @@ class QuotaViewTestMixin(QuotaTestMixin):
             viewname='quotas:quota_edit', kwargs={
                 'quota_id': self._test_quota.pk
             }, data={
-                'test_limit': TEST_QUOTA_TEST_LIMIT_EDITED,
+                'test_limit': TEST_QUOTA_TEST_LIMIT_EDITED
             }
         )
 

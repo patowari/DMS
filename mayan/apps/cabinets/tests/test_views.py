@@ -3,8 +3,9 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (
-    event_cabinet_created, event_cabinet_deleted, event_cabinet_edited,
-    event_cabinet_document_added, event_cabinet_document_removed
+    event_cabinet_created, event_cabinet_deleted,
+    event_cabinet_document_added, event_cabinet_document_removed,
+    event_cabinet_edited
 )
 from ..models import Cabinet
 from ..permissions import (
@@ -23,7 +24,9 @@ class CabinetViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         response = self._request_test_cabinet_create_view()
         self.assertEqual(response.status_code, 403)
 
-        self.assertEqual(Cabinet.objects.count(), 0)
+        self.assertEqual(
+            Cabinet.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -36,7 +39,9 @@ class CabinetViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         response = self._request_test_cabinet_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Cabinet.objects.count(), 1)
+        self.assertEqual(
+            Cabinet.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -61,8 +66,12 @@ class CabinetViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         # HTTP 200 with error message.
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(Cabinet.objects.count(), cabinet_count)
-        self.assertEqual(Cabinet.objects.first(), cabinet_original)
+        self.assertEqual(
+            Cabinet.objects.count(), cabinet_count
+        )
+        self.assertEqual(
+            Cabinet.objects.first(), cabinet_original
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -75,7 +84,9 @@ class CabinetViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         response = self._request_test_cabinet_delete_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Cabinet.objects.count(), 1)
+        self.assertEqual(
+            Cabinet.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -91,7 +102,9 @@ class CabinetViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         response = self._request_test_cabinet_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Cabinet.objects.count(), 0)
+        self.assertEqual(
+            Cabinet.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -195,7 +208,9 @@ class CabinetChildViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         self.assertEqual(response.status_code, 302)
 
         self._test_cabinet_list[0].refresh_from_db()
-        self.assertEqual(Cabinet.objects.count(), cabinet_count + 1)
+        self.assertEqual(
+            Cabinet.objects.count(), cabinet_count + 1
+        )
         self.assertTrue(
             self._test_cabinet_child in self._test_cabinet_list[0].get_descendants()
         )
@@ -236,7 +251,9 @@ class CabinetChildViewTestCase(CabinetViewTestMixin, GenericViewTestCase):
         response = self._request_test_cabinet_child_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Cabinet.objects.count(), cabinet_count - 1)
+        self.assertEqual(
+            Cabinet.objects.count(), cabinet_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

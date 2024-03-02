@@ -3,8 +3,8 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (
-    event_metadata_type_relationship_updated, event_metadata_type_created,
-    event_metadata_type_edited
+    event_metadata_type_created, event_metadata_type_edited,
+    event_metadata_type_relationship_updated
 )
 from ..models import MetadataType
 from ..permissions import (

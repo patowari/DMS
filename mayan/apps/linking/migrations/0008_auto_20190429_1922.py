@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('linking', '0007_auto_20180823_2353'),
+        ('linking', '0007_auto_20180823_2353')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 related_name='smart_links', to='documents.DocumentType',
                 verbose_name='Document types'
-            ),
-        ),
+            )
+        )
     ]

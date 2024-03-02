@@ -48,7 +48,9 @@ class ModelAttribute:
             if model.__class__ == models.base.ModelBase:
                 return []
 
-            return cls.get_for(model=type(model))
+            return cls.get_for(
+                model=type(model)
+            )
 
     @classmethod
     def register(cls, klass):
@@ -269,7 +271,11 @@ class QuerysetParametersSerializer:
 
         kwargs = {}
 
-        for parameter in decomposed_queryset.get('kwargs', ()):
+        parameters = decomposed_queryset.get(
+            'kwargs', ()
+        )
+
+        for parameter in parameters:
             if 'content_type_id' in parameter:
                 content_type = ContentType.objects.get(
                     pk=parameter['content_type_id']

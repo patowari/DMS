@@ -4,18 +4,17 @@ from PIL import Image
 
 from rest_framework import status
 
-from mayan.apps.rest_api.tests.base import BaseAPITestCase
-
 from mayan.apps.converter.layers import layer_saved_transformations
 from mayan.apps.converter.tests.literals import TEST_TRANSFORMATION_DOCUMENT_PATH
 from mayan.apps.converter.transformations import TransformationRotate270
-from mayan.apps.documents.tests.mixins.document_file_mixins import DocumentFilePageAPIViewTestMixin
 from mayan.apps.documents.permissions import permission_document_file_view
+from mayan.apps.documents.tests.mixins.document_file_mixins import DocumentFilePageAPIViewTestMixin
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..layers import layer_redactions
-from ..transformations import TransformationRedactionPercent
 from ..permissions import permission_redaction_exclude
+from ..transformations import TransformationRedactionPercent
 
 
 class LayerMaximumOrderAPIViewTestCase(
@@ -45,7 +44,11 @@ class LayerMaximumOrderAPIViewTestCase(
         )
         image = Image.open(fp=image_buffer)
 
-        self.assertEqual(image.getpixel(xy=(0, 0)), (254, 0, 0))
+        self.assertEqual(
+            image.getpixel(
+                xy=(0, 0)
+            ), (254, 0, 0)
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -74,7 +77,11 @@ class LayerMaximumOrderAPIViewTestCase(
         )
         image = Image.open(fp=image_buffer)
 
-        self.assertEqual(image.getpixel(xy=(0, 0)), (0, 0, 0))
+        self.assertEqual(
+            image.getpixel(
+                xy=(0, 0)
+            ), (0, 0, 0)
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -106,7 +113,11 @@ class LayerMaximumOrderAPIViewTestCase(
         )
         image = Image.open(fp=image_buffer)
 
-        self.assertEqual(image.getpixel(xy=(0, 0)), (254, 0, 0))
+        self.assertEqual(
+            image.getpixel(
+                xy=(0, 0)
+            ), (254, 0, 0)
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

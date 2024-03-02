@@ -7,7 +7,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ('contenttypes', '0002_remove_content_type_name'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('events', '0005_auto_20170731_0452'),
+        ('events', '0005_auto_20170731_0452')
     ]
 
     operations = [
@@ -20,7 +20,9 @@ class Migration(migrations.Migration):
                         verbose_name='ID'
                     )
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'content_type', models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
@@ -31,7 +33,8 @@ class Migration(migrations.Migration):
                     'stored_event_type', models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name='object_subscriptions',
-                        to='events.StoredEventType', verbose_name='Event type'
+                        to='events.StoredEventType',
+                        verbose_name='Event type'
                     )
                 ),
                 (
@@ -40,11 +43,11 @@ class Migration(migrations.Migration):
                         related_name='object_subscriptions',
                         to=settings.AUTH_USER_MODEL, verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Object event subscription',
-                'verbose_name_plural': 'Object event subscriptions',
-            },
-        ),
+                'verbose_name_plural': 'Object event subscriptions'
+            }
+        )
     ]

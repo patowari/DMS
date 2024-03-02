@@ -1,13 +1,12 @@
 from django.conf.urls import url
 
 from .api_views.document_api_views import (
-    APIDocumentDetailView, APIDocumentChangeTypeView,
-    APIDocumentFileActionListView, APIDocumentListView,
-    APIDocumentUploadView
+    APIDocumentChangeTypeView, APIDocumentDetailView,
+    APIDocumentFileActionListView, APIDocumentListView, APIDocumentUploadView
 )
 from .api_views.document_file_api_views import (
     APIDocumentFileDetailView, APIDocumentFileListView,
-    APIDocumentFilePageImageView, APIDocumentFilePageDetailView,
+    APIDocumentFilePageDetailView, APIDocumentFilePageImageView,
     APIDocumentFilePageListView
 )
 from .api_views.document_type_api_views import (
@@ -30,8 +29,8 @@ from .api_views.recently_created_document_api_views import (
     APIRecentlyCreatedDocumentListView
 )
 from .api_views.trashed_document_api_views import (
-    APITrashedDocumentDetailView, APITrashedDocumentListView,
-    APITrashedDocumentRestoreView, APITrashedDocumentImageView
+    APITrashedDocumentDetailView, APITrashedDocumentImageView,
+    APITrashedDocumentListView, APITrashedDocumentRestoreView
 )
 from .views.document_file_views import (
     DocumentFileDeleteView, DocumentFileEditView, DocumentFileListView,
@@ -52,13 +51,13 @@ from .views.document_type_retention_policy_views import DocumentTypeRetentionPol
 from .views.document_type_views import (
     DocumentTypeCreateView, DocumentTypeDeleteView,
     DocumentTypeDocumentListView, DocumentTypeEditView,
-    DocumentTypeFilenameGeneratorEditView, DocumentTypeFilenameCreateView,
-    DocumentTypeFilenameDeleteView, DocumentTypeFilenameEditView,
+    DocumentTypeFilenameCreateView, DocumentTypeFilenameDeleteView,
+    DocumentTypeFilenameEditView, DocumentTypeFilenameGeneratorEditView,
     DocumentTypeFilenameListView, DocumentTypeListView
 )
 from .views.document_version_page_views import (
-    DocumentVersionPageDeleteView, DocumentVersionPageListView,
-    DocumentVersionPageListRemapView, DocumentVersionPageNavigationFirst,
+    DocumentVersionPageDeleteView, DocumentVersionPageListRemapView,
+    DocumentVersionPageListView, DocumentVersionPageNavigationFirst,
     DocumentVersionPageNavigationLast, DocumentVersionPageNavigationNext,
     DocumentVersionPageNavigationPrevious, DocumentVersionPageRotateLeftView,
     DocumentVersionPageRotateRightView, DocumentVersionPageView,
@@ -74,8 +73,8 @@ from .views.document_version_views import (
     DocumentVersionTransformationsCloneView
 )
 from .views.document_views import (
-    DocumentTypeChangeView, DocumentListView, DocumentPreviewView,
-    DocumentPropertiesEditView, DocumentPropertiesView
+    DocumentListView, DocumentPreviewView, DocumentPropertiesEditView,
+    DocumentPropertiesView, DocumentTypeChangeView
 )
 from .views.favorite_document_views import (
     FavoriteAddView, FavoriteDocumentListView, FavoriteRemoveView

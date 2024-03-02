@@ -11,7 +11,7 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.documents.views.document_views import DocumentListView
 from mayan.apps.views.generics import (
-    MultipleObjectFormActionView, MultipleObjectDeleteView,
+    MultipleObjectDeleteView, MultipleObjectFormActionView,
     SingleObjectCreateView, SingleObjectEditView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
@@ -23,7 +23,6 @@ from .icons import (
     icon_tag_document_list, icon_tag_edit, icon_tag_list,
     icon_tag_single_delete
 )
-
 from .links import link_document_tag_multiple_attach, link_tag_create
 from .models import DocumentTag, Tag
 from .permissions import (
@@ -105,7 +104,9 @@ class TagAttachActionView(MultipleObjectFormActionView):
 
 
 class TagCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create tag')}
+    extra_context = {
+        'title': _('Create tag')
+    }
     form_class = TagForm
     post_action_redirect = reverse_lazy(viewname='tags:tag_list')
     view_icon = icon_tag_create
@@ -182,7 +183,9 @@ class TagListView(SingleObjectListView):
 
     def get_source_queryset(self):
         queryset = ModelQueryFields.get(model=self.tag_model).get_queryset()
-        return queryset.filter(pk__in=self.get_tag_queryset())
+        return queryset.filter(
+            pk__in=self.get_tag_queryset()
+        )
 
     def get_tag_queryset(self):
         return Tag.objects.all()

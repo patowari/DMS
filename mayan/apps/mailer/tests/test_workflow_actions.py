@@ -42,7 +42,9 @@ class DocumentEmailActionTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -59,8 +61,12 @@ class DocumentEmailActionTestCase(
                 'body': TEST_EMAIL_BODY
             }
         )
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -83,7 +89,9 @@ class DocumentEmailActionTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -118,7 +126,9 @@ class DocumentEmailActionTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -152,9 +162,19 @@ class DocumentEmailActionTemplateTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
         self.assertEqual(
-            mail.outbox[0].to, [self._test_document.metadata.first().value]
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [
+                self._test_document.metadata.first().value
+            ]
         )
 
     def test_email_action_subject_template(self):
@@ -181,12 +201,24 @@ class DocumentEmailActionTemplateTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
         self.assertEqual(
-            mail.outbox[0].subject, self._test_document.metadata.first().value
+            len(mail.outbox), 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
+        )
+        self.assertEqual(
+            mail.outbox[0].subject,
+            self._test_document.metadata.first().value
         )
 
     def test_email_action_body_template(self):
@@ -207,17 +239,21 @@ class DocumentEmailActionTemplateTestCase(
                 'subject': TEST_EMAIL_SUBJECT,
                 'body': '{{{{ workflow_instance.document.metadata_value_of.{} }}}}'.format(
                     self._test_metadata_type.name
-                ),
+                )
             }
         )
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
-        self.assertEqual(mail.outbox[0].body, TEST_EMAIL_BODY)
+        self.assertEqual(
+            mail.outbox[0].body, TEST_EMAIL_BODY
+        )
 
     def test_email_action_attachment(self):
         # This action requires a document with an active version.
@@ -247,7 +283,9 @@ class DocumentEmailActionTemplateTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )

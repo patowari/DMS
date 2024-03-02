@@ -29,14 +29,18 @@ class SourceColumnWidget:
         context = {
             'column': self.column, 'value': value
         }
-        context.update(self.get_extra_context())
+        context.update(
+            self.get_extra_context()
+        )
 
         if template_name:
             return render_to_string(
                 template_name=self.template_name, context=context
             )
         elif template_string:
-            return Template(template_string=template_string).render(context=context)
+            return Template(template_string=template_string).render(
+                context=context
+            )
         else:
             raise ImproperlyConfigured(
                 'SourceColumnWidget `{}` must provide either '

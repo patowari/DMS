@@ -2,7 +2,6 @@ from mayan.apps.dynamic_search.search_models import SearchModel
 
 from .permissions import permission_message_view
 
-
 search_model_message = SearchModel(
     app_label='messaging', model_name='Message',
     permission=permission_message_view,

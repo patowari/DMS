@@ -7,9 +7,8 @@ from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.exceptions import LockError
 from mayan.celery import app
 
-from .literals import LOCK_EXPIRE
-
 from .classes import FileMetadataDriver
+from .literals import LOCK_EXPIRE
 
 logger = logging.getLogger(name=__name__)
 

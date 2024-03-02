@@ -221,7 +221,9 @@ class SearchInterpreterAdvanced(SearchInterpreter):
                 operand_right = scope_id
 
                 scoped_query_entry = ScopedQueryEntryDataOperator(
-                    operand_list=(str(operand_left), str(operand_right)),
+                    operand_list=(
+                        str(operand_left), str(operand_right)
+                    ),
                     operator_text=operator_text,
                     scope_identifier=str(result_scope),
                     scoped_query=scoped_query

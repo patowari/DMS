@@ -22,9 +22,10 @@ from .views.subscription_views import (
     UserObjectSubscriptionList
 )
 
-
 urlpatterns_events = [
-    url(regex=r'^events/$', name='event_list', view=EventListView.as_view()),
+    url(
+        regex=r'^events/$', name='event_list', view=EventListView.as_view()
+    ),
     url(
         regex=r'^object/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/events/$',
         name='object_event_list', view=ObjectEventListView.as_view()

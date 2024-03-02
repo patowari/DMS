@@ -1,8 +1,8 @@
-from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.document_indexing.models.index_instance_models import IndexInstanceNode
 from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
+from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .literals import TEST_TAG_LABEL_EDITED, TEST_TAG_INDEX_NODE_TEMPLATE
+from .literals import TEST_TAG_INDEX_NODE_TEMPLATE, TEST_TAG_LABEL_EDITED
 from .mixins import TagTestMixin
 
 

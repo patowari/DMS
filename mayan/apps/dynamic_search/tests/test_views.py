@@ -225,7 +225,7 @@ class SearchFilterViewTestCase(
         response = self._request_search_results_view(
             data={
                 'q': TEST_SEARCH_OBJECT_TERM,
-                'filter_q': '*stub_3',
+                'filter_q': '*stub_3'
             }, kwargs={
                 SEARCH_MODEL_NAME_KWARG: search_model_document.full_name
             }
@@ -444,7 +444,9 @@ class SearchToolsViewTestCase(
 
         queryset = self._test_search_backend.search(
             search_model=self._test_search_model,
-            query={QUERY_PARAMETER_ANY_FIELD: str(self._test_object.uuid)},
+            query={
+                QUERY_PARAMETER_ANY_FIELD: str(self._test_object.uuid)
+            },
             user=self._test_case_user
         )
         self.assertEqual(queryset.count(), 0)
@@ -470,7 +472,9 @@ class SearchToolsViewTestCase(
 
         queryset = self._test_search_backend.search(
             search_model=self._test_search_model,
-            query={QUERY_PARAMETER_ANY_FIELD: str(self._test_object.uuid)},
+            query={
+                QUERY_PARAMETER_ANY_FIELD: str(self._test_object.uuid)
+            },
             user=self._test_case_user
         )
         self.assertNotEqual(queryset.count(), 0)

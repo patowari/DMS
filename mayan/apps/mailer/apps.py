@@ -18,21 +18,21 @@ from mayan.apps.views.column_widgets import TwoStateWidget
 from .classes import MailerBackend
 from .events import event_email_sent, event_profile_edited
 from .links import (
-    link_send_document_link_single, link_send_document_link_multiple,
-    link_send_document_file_attachment_single,
     link_send_document_file_attachment_multiple,
-    link_send_document_file_link_single,
+    link_send_document_file_attachment_single,
     link_send_document_file_link_multiple,
-    link_send_document_version_attachment_single,
+    link_send_document_file_link_single, link_send_document_link_multiple,
+    link_send_document_link_single,
     link_send_document_version_attachment_multiple,
-    link_send_document_version_link_single,
+    link_send_document_version_attachment_single,
     link_send_document_version_link_multiple,
-    link_user_mailer_create, link_user_mailer_delete, link_user_mailer_edit,
-    link_user_mailer_list, link_user_mailer_setup, link_user_mailer_test
+    link_send_document_version_link_single, link_user_mailer_create,
+    link_user_mailer_delete, link_user_mailer_edit, link_user_mailer_list,
+    link_user_mailer_setup, link_user_mailer_test
 )
 from .permissions import (
-    permission_send_document_link, permission_send_document_file_attachment,
-    permission_send_document_file_link,
+    permission_send_document_file_attachment,
+    permission_send_document_file_link, permission_send_document_link,
     permission_send_document_version_attachment,
     permission_send_document_version_link, permission_user_mailer_delete,
     permission_user_mailer_edit, permission_user_mailer_use,

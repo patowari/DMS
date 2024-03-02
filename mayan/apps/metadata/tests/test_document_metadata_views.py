@@ -14,8 +14,8 @@ from ..events import (
     event_document_metadata_removed
 )
 from ..permissions import (
-    permission_document_metadata_add, permission_document_metadata_remove,
-    permission_document_metadata_edit, permission_document_metadata_view
+    permission_document_metadata_add, permission_document_metadata_edit,
+    permission_document_metadata_remove, permission_document_metadata_view
 )
 
 from .literals import TEST_METADATA_VALUE, TEST_METADATA_VALUE_EDITED
@@ -210,7 +210,8 @@ class DocumentMetadataViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_document.metadata.count(), document_metadata_count + 1
+            self._test_document.metadata.count(),
+            document_metadata_count + 1
         )
 
         events = self._get_test_events()
@@ -313,7 +314,9 @@ class DocumentMetadataViewTestCase(
                     int, url.args['id_list'].split(',')
                 )
             ),
-            {self._test_documents[0].pk, self._test_documents[1].pk}
+            {
+                self._test_documents[0].pk, self._test_documents[1].pk
+            }
         )
 
         events = self._get_test_events()
@@ -537,9 +540,12 @@ class DocumentMetadataViewTestCase(
 
     def test_document_metadata_edit_after_document_type_change(self):
         # Gitlab issue #204
-        # Problems to add required metadata after changing the document type.
+        # Problems to add required metadata after changing the document
+        # type.
 
-        self.grant_permission(permission=permission_document_properties_edit)
+        self.grant_permission(
+            permission=permission_document_properties_edit
+        )
         self.grant_permission(permission=permission_document_metadata_edit)
         self.grant_permission(permission=permission_document_metadata_view)
 
@@ -565,7 +571,7 @@ class DocumentMetadataViewTestCase(
 
         response = self._request_test_document_metadata_edit_post_view(
             extra_data={
-                'form-0-metadata_type_id': test_document_metadata_2.metadata_type.pk,
+                'form-0-metadata_type_id': test_document_metadata_2.metadata_type.pk
             }, follow=True
         )
 
@@ -644,7 +650,9 @@ class DocumentMetadataViewTestCase(
                     int, url.args['id_list'].split(',')
                 )
             ),
-            {self._test_documents[0].pk, self._test_documents[1].pk}
+            {
+                self._test_documents[0].pk, self._test_documents[1].pk
+            }
         )
 
         events = self._get_test_events()
@@ -1064,8 +1072,12 @@ class DocumentMetadataViewTestCase(
         response = self._request_test_document_multiple_metadata_remove_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(self._test_documents[0].metadata.count(), 0)
-        self.assertEqual(self._test_documents[1].metadata.count(), 0)
+        self.assertEqual(
+            self._test_documents[0].metadata.count(), 0
+        )
+        self.assertEqual(
+            self._test_documents[1].metadata.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -1243,11 +1255,11 @@ class DocumentMetadataRequiredTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_document_multiple_metadata_edit_mixed_required_non_selection_required_view(self):
-        # Tried to edit the multiple metadata from two documents, deselecting
-        # the update checkmark from the required metadata which already has
-        # a value. GitLab issue #936
+        # Tried to edit the multiple metadata from two documents,
+        # deselecting the update checkmark from the required metadata which
+        # already has a value. GitLab issue #936
         # "Bulk editing of metadata: error when "update" option of a
-        # required field is unchecked"
+        # required field is unchecked".
         self._create_test_document_metadata()
 
         self.grant_access(

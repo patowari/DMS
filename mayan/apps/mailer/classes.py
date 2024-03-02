@@ -16,9 +16,9 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
     for other Django backends that adds a few metadata to specify the
     fields it needs to be instantiated at runtime.
     """
-    _loader_module_name = 'mailers'
     _backend_app_label = 'mailer'
     _backend_model_name = 'UserMailer'
+    _loader_module_name = 'mailers'
     class_path = ''  # Dot path to the actual class that will handle the mail.
 
     @classmethod

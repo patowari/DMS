@@ -79,8 +79,8 @@ class DocumentSignatureDetachedAction(WorkflowAction):
             raise WorkflowStateActionError(
                 _(
                     'Document has no file to sign. You might be trying to '
-                    'use this action in an initial state before the created '
-                    'document is yet to be processed.'
+                    'use this action in an initial state before the '
+                    'created document is yet to be processed.'
                 )
             )
 

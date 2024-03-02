@@ -24,6 +24,8 @@ with open(file='.env') as file_object:
             else:
                 variable_name = line.strip().split('#')[-1].strip()
 
-                print('{}"{}"'.format(
-                    variable_name, secrets.token_urlsafe(PASSWORD_LENGTH))
+                print(
+                    '{}"{}"'.format(
+                        variable_name, secrets.token_urlsafe(PASSWORD_LENGTH)
+                    )
                 )

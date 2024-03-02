@@ -231,7 +231,7 @@ class RoleGroupAddRemoveViewTestMixin(RoleTestMixin):
     def _request_test_role_group_add_view(self):
         return self.post(
             viewname='permissions:role_group_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_group.pk
@@ -241,7 +241,7 @@ class RoleGroupAddRemoveViewTestMixin(RoleTestMixin):
     def _request_test_role_group_remove_view(self):
         return self.post(
             viewname='permissions:role_group_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_group.pk
@@ -260,7 +260,7 @@ class RolePermissionAddRemoveViewTestMixin(RoleTestMixin):
     def _request_test_role_permission_add_view(self):
         return self.post(
             viewname='permissions:role_permission_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'available-selection': self._test_permission.stored_permission.pk,
                 'available-submit': 'true'
@@ -270,7 +270,7 @@ class RolePermissionAddRemoveViewTestMixin(RoleTestMixin):
     def _request_test_role_permission_remove_view(self):
         return self.post(
             viewname='permissions:role_permission_list', kwargs={
-                'role_id': self._test_role.pk,
+                'role_id': self._test_role.pk
             }, data={
                 'added-selection': self._test_permission.stored_permission.pk,
                 'added-submit': 'true'
@@ -286,7 +286,7 @@ class RoleViewTestMixin(RoleTestMixin):
 
         response = self.post(
             viewname='permissions:role_create', data={
-                'label': TEST_ROLE_LABEL,
+                'label': TEST_ROLE_LABEL
             }
         )
 
@@ -318,7 +318,7 @@ class RoleViewTestMixin(RoleTestMixin):
             viewname='permissions:role_edit', kwargs={
                 'role_id': self._test_role.pk
             }, data={
-                'label': TEST_ROLE_LABEL_EDITED,
+                'label': TEST_ROLE_LABEL_EDITED
             }
         )
 

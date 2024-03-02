@@ -101,7 +101,9 @@ class ConnectionsCheckTestCaseMixin:
     _open_connections_check_enable = True
 
     def _get_open_connections_count(self):
-        return len(connections.all())
+        return len(
+            connections.all()
+        )
 
     def setUp(self):
         super().setUp()
@@ -205,7 +207,9 @@ class DownloadTestCaseMixin:
         self, response, content=None, filename=None, is_attachment=None,
         mime_type=None
     ):
-        self.assertTrue(isinstance(response, FileResponse))
+        self.assertTrue(
+            isinstance(response, FileResponse)
+        )
 
         if filename:
             self.assertEqual(response.filename, filename)

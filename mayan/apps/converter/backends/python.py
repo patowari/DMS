@@ -13,12 +13,11 @@ from mayan.apps.storage.utils import NamedTemporaryFile
 
 from ..classes import ConverterBase
 from ..exceptions import PageCountError
-from ..settings import setting_graphics_backend_arguments
-
 from ..literals import (
     DEFAULT_PDFTOPPM_DPI, DEFAULT_PDFTOPPM_FORMAT, DEFAULT_PDFTOPPM_PATH,
     DEFAULT_PDFINFO_PATH, DEFAULT_PILLOW_MAXIMUM_IMAGE_PIXELS
 )
+from ..settings import setting_graphics_backend_arguments
 
 logger = logging.getLogger(name=__name__)
 pdftoppm_path = setting_graphics_backend_arguments.value.get(
@@ -197,7 +196,7 @@ class Python(ConverterBase):
                         raise PageCountError(error_message)
             elif str(exception) == 'EOF marker not found':
                 # PyPDF2 issue: https://github.com/mstamy2/PyPDF2/issues/177
-                # Try poppler-util's pdfinfo
+                # Try poppler-util's pdfinfo.
                 logger.debug(
                     msg='PyPDF2 GitHub issue #177 : EOF marker not found'
                 )

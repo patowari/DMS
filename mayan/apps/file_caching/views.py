@@ -1,6 +1,5 @@
 from django.contrib import messages
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext
+from django.utils.translation import ugettext_lazy as _, ungettext
 
 from mayan.apps.views.generics import (
     ConfirmView, MultipleObjectConfirmActionView, SingleObjectDetailView,
@@ -10,11 +9,11 @@ from mayan.apps.views.view_mixins import (
     ContentTypeViewMixin, ExternalObjectViewMixin
 )
 
+from .forms import CacheDetailForm, CachePartitionDetailForm
 from .icons import (
     icon_cache_detail, icon_cache_list, icon_cache_partition_detail,
     icon_cache_partition_purge, icon_cache_purge
 )
-from .forms import CacheDetailForm, CachePartitionDetailForm
 from .models import Cache, CachePartition
 from .permissions import (
     permission_cache_partition_purge, permission_cache_purge,

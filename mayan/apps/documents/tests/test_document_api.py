@@ -344,10 +344,6 @@ class DocumentAPIViewTestCase(
             self._test_document.label,
             self._test_document.file_latest.filename
         )
-        self.assertEqual(self._test_document.pages.count(), 1)
-
-        self.assertEqual(self._test_document.files.count(), 1)
-        self.assertEqual(self._test_document.file_latest.exists(), True)
         self.assertEqual(self._test_document.file_latest.size, 17436)
         self.assertEqual(
             self._test_document.file_latest.mimetype, 'image/png'

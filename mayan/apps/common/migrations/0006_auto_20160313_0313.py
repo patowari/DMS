@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('common', '0005_auto_20150706_1832'),
+        ('common', '0005_auto_20150706_1832')
     ]
 
     operations = [
@@ -25,6 +25,6 @@ class Migration(migrations.Migration):
                     ('vi', 'Vietnamese (Viet Nam)'),
                     ('zh-cn', 'Chinese (China)')
                 ]
-            ),
-        ),
+            )
+        )
     ]

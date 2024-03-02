@@ -1,9 +1,10 @@
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.dependencies.classes import BinaryDependency, PythonDependency
+from mayan.apps.dependencies.classes import (
+    BinaryDependency, PythonDependency
+)
 
 from .backends.literals import DEFAULT_FILE_PATH, DEFAULT_MIMETYPE_PATH
-
 
 BinaryDependency(
     label='File::MimeInfo', help_text=_(

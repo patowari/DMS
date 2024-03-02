@@ -38,7 +38,7 @@ class DocumentCommentAPIViewTestMixin(DocumentCommentTestMixin):
         return self.delete(
             viewname='rest_api:comment-detail', kwargs={
                 'document_id': self._test_document.pk,
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }
         )
 
@@ -54,7 +54,7 @@ class DocumentCommentAPIViewTestMixin(DocumentCommentTestMixin):
         return self.patch(
             viewname='rest_api:comment-detail', kwargs={
                 'document_id': self._test_document.pk,
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }, data={'text': TEST_COMMENT_TEXT_EDITED}
         )
 
@@ -62,7 +62,7 @@ class DocumentCommentAPIViewTestMixin(DocumentCommentTestMixin):
         return self.put(
             viewname='rest_api:comment-detail', kwargs={
                 'document_id': self._test_document.pk,
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }, data={'text': TEST_COMMENT_TEXT_EDITED}
         )
 
@@ -92,20 +92,20 @@ class DocumentCommentViewTestMixin(DocumentCommentTestMixin):
         return self.post(
             viewname='comments:comment_delete', kwargs={
                 'comment_id': self._test_document_comment.pk
-            },
+            }
         )
 
     def _request_test_comment_detail_view(self):
         return self.get(
             viewname='comments:comment_details', kwargs={
                 'comment_id': self._test_document_comment.pk
-            },
+            }
         )
 
     def _request_test_comment_edit_view(self):
         return self.post(
             viewname='comments:comment_edit', kwargs={
-                'comment_id': self._test_document_comment.pk,
+                'comment_id': self._test_document_comment.pk
             }, data={
                 'text': TEST_COMMENT_TEXT_EDITED
             }
@@ -114,6 +114,6 @@ class DocumentCommentViewTestMixin(DocumentCommentTestMixin):
     def _request_test_comment_list_view(self):
         return self.get(
             viewname='comments:comments_for_document', kwargs={
-                'document_id': self._test_document.pk,
+                'document_id': self._test_document.pk
             }
         )

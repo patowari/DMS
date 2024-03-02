@@ -79,7 +79,7 @@ This MERC proposes the new branch layout:
   a ``merges`` branch will make it clear the source and destination branch
   of a merge. The ``merges`` branch itself will be located in the ``series``
   branch of the corresponding releases that will received the code from the
-  merge. For example, to marge the latest 3.3 maintenance series code to
+  merge. For example, to merge the latest 3.3 maintenance series code to
   a current 3.4 series, the following branch is created:
   ``series/3.4/merges/3.3``. This makes it easy to know where the code comes
   from and which series is the destination.

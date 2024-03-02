@@ -4,7 +4,7 @@ from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 
 from ...models.workflow_models import Workflow, WorkflowRuntimeProxy
 from ...tasks import (
-    task_launch_all_workflows, task_launch_all_workflow_for,
+    task_launch_all_workflow_for, task_launch_all_workflows,
     task_launch_workflow, task_launch_workflow_for
 )
 
@@ -230,7 +230,7 @@ class WorkflowTemplateDocumentTypeAPIViewMixin(WorkflowTemplateTestMixin):
         return self.post(
             viewname='rest_api:workflow-template-document-type-add',
             kwargs={
-                'workflow_template_id': self._test_workflow_template.pk,
+                'workflow_template_id': self._test_workflow_template.pk
             }, data={
                 'document_type_id': self._test_document_type.pk
             }
@@ -248,7 +248,7 @@ class WorkflowTemplateDocumentTypeAPIViewMixin(WorkflowTemplateTestMixin):
         return self.post(
             viewname='rest_api:workflow-template-document-type-remove',
             kwargs={
-                'workflow_template_id': self._test_workflow_template.pk,
+                'workflow_template_id': self._test_workflow_template.pk
             }, data={
                 'document_type_id': self._test_document_type.pk
             }

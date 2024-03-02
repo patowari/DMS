@@ -5,13 +5,13 @@ def code_make_labels_unique(apps, schema_editor):
     Source = apps.get_model(app_label='sources', model_name='Source')
 
     for source in Source.objects.using(alias=schema_editor.connection.alias).all():
-        # Look for sources with the same label
-        duplicate_queryset = Source.objects.using(
+        # Look for sources with the same label.
+        queryset_duplicates = Source.objects.using(
             alias=schema_editor.connection.alias
         ).filter(label=source.label).exclude(pk=source.pk)
-        if duplicate_queryset:
+        if queryset_duplicates.exists():
             # If a duplicate is found, append the id to the original source
-            # label
+            # label.
             source.label = '{}__{}'.format(source.label, source.pk)
             source.save()
 
@@ -21,7 +21,9 @@ def code_make_labels_unique_reverse(apps, schema_editor):
 
     for source in Source.objects.using(alias=schema_editor.connection.alias).all():
         if source.label.endswith('__{}'.format(source.pk)):
-            source.label = source.label.replace('__{}'.format(source.pk), '')
+            source.label = source.label.replace(
+                '__{}'.format(source.pk), ''
+            )
             source.save()
 
 
@@ -41,6 +43,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 db_index=True, max_length=64, unique=True,
                 verbose_name='Label'
-            ),
+            )
         )
     ]

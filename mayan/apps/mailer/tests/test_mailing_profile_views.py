@@ -89,7 +89,9 @@ class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
         response = self._request_test_user_mailer_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(UserMailer.objects.count(), 0)
+        self.assertEqual(
+            UserMailer.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -216,7 +218,8 @@ class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
         self._create_test_user_mailer()
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._clear_events()
@@ -227,7 +230,9 @@ class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -244,7 +249,8 @@ class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
         self._create_test_user_mailer()
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._test_email_address = TEST_RECIPIENTS_MULTIPLE_COMMA
@@ -276,7 +282,8 @@ class MailerViewTestCase(MailerViewTestMixin, GenericViewTestCase):
         self._create_test_user_mailer()
 
         self.grant_access(
-            obj=self._test_user_mailer, permission=permission_user_mailer_use
+            obj=self._test_user_mailer,
+            permission=permission_user_mailer_use
         )
 
         self._test_email_address = TEST_RECIPIENTS_MULTIPLE_MIXED

@@ -59,7 +59,9 @@ class UserOTPDataDisableView(OTPBackendEnabledViewMixin, ConfirmView):
 
 class UserOTPDataEnableView(OTPBackendEnabledViewMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        signed_secret = dumps(obj=pyotp.random_base32())
+        signed_secret = dumps(
+            obj=pyotp.random_base32()
+        )
 
         return URL(
             path=reverse(viewname='authentication_otp:otp_verify'),
@@ -120,7 +122,7 @@ class UserOTPDataVerifyTokenView(OTPBackendEnabledViewMixin, FormView):
         return {
             'initial': {
                 'secret': secret,
-                'signed_secret': signed_secret,
+                'signed_secret': signed_secret
             },
             'user': self.request.user
         }

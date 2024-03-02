@@ -140,7 +140,9 @@ class SearchField:
     def get_backend_field_query_type_list(self, search_backend):
         return self.get_search_field_type_backend_dictionary(
             search_backend=search_backend
-        ).get('query_type_list', [])
+        ).get(
+            'query_type_list', []
+        )
 
     @functools.cache
     def get_backend_field_transformations(self, search_backend):

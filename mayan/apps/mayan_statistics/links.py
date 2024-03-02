@@ -3,9 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.navigation.classes import Link
 
 from .icons import (
-    icon_statistic_detail, icon_statistic_queue,
-    icon_statistic_namespace_detail, icon_statistic_namespace_list,
-    icon_statistics
+    icon_statistic_detail, icon_statistic_namespace_detail,
+    icon_statistic_namespace_list, icon_statistic_queue, icon_statistics
 )
 from .permissions import permission_statistics_view
 

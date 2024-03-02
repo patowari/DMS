@@ -3,9 +3,7 @@ import logging
 from furl import furl
 
 from django.apps import apps
-from django.contrib.admin.utils import (
-    help_text_for_field, label_for_field
-)
+from django.contrib.admin.utils import help_text_for_field, label_for_field
 from django.core.exceptions import (
     FieldDoesNotExist, ImproperlyConfigured, PermissionDenied
 )
@@ -442,9 +440,13 @@ class Menu(TemplateObjectMixin):
                             set(
                                 self.bound_links[resolved_navigation_object]
                             ) - set(
-                                self.unbound_links.get(resolved_navigation_object, ())
+                                self.unbound_links.get(
+                                    resolved_navigation_object, ()
+                                )
                             ) - set(
-                                self.excluded_links.get(resolved_navigation_object, ())
+                                self.excluded_links.get(
+                                    resolved_navigation_object, ()
+                                )
                             )
                         )
                     except KeyError:
@@ -474,11 +476,17 @@ class Menu(TemplateObjectMixin):
                             # Get model link.
                             matched_links.update(
                                 set(
-                                    self.bound_links.get(model, ())
+                                    self.bound_links.get(
+                                        model, ()
+                                    )
                                 ) - set(
-                                    self.unbound_links.get(model, ())
+                                    self.unbound_links.get(
+                                        model, ()
+                                    )
                                 ) - set(
-                                    self.excluded_links.get(model, ())
+                                    self.excluded_links.get(
+                                        model, ()
+                                    )
                                 )
                             )
 
@@ -497,7 +505,9 @@ class Menu(TemplateObjectMixin):
                                             model._meta.proxy_for_model, ()
                                         )
                                     ) - set(
-                                        self.excluded_links.get(model, ())
+                                        self.excluded_links.get(
+                                            model, ()
+                                        )
                                     )
                                 )
                 else:
@@ -794,7 +804,9 @@ class SourceColumn(TemplateObjectMixin):
                 else:
                     # Get model columns.
                     columns.extend(
-                        cls._registry.get(model, ())
+                        cls._registry.get(
+                            model, ()
+                        )
                     )
 
                     # Get proxy columns.

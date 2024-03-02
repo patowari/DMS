@@ -3,9 +3,7 @@ from datetime import datetime
 from django.utils.module_loading import import_string
 from django.utils.timezone import make_aware
 
-from .settings import (
-    setting_gpg_backend, setting_gpg_backend_arguments
-)
+from .settings import setting_gpg_backend, setting_gpg_backend_arguments
 
 
 class GPGBackend:

@@ -97,7 +97,9 @@ class IndexTemplateListView(SingleObjectListView):
 
 
 class IndexTemplateCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create index')}
+    extra_context = {
+        'title': _('Create index')
+    }
     fields = ('label', 'slug', 'enabled')
     model = IndexTemplate
     post_action_redirect = reverse_lazy(
@@ -432,7 +434,7 @@ class IndexTemplateAllRebuildView(FormView):
                 plural='%(count)d index templates queued for rebuild.',
                 number=count
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 
@@ -466,7 +468,7 @@ class IndexTemplateResetView(FormView):
                 plural='%(count)d indexes reset.',
                 number=count
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 

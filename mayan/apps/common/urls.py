@@ -1,8 +1,6 @@
 from django.conf.urls import url
 from django.contrib import admin
 
-from django.views.i18n import JavaScriptCatalog
-
 from .api_views import APIContentTypeDetailView, APIContentTypeListView
 from .views import (
     AboutView, FaviconRedirectView, HomeView, LicenseView, ObjectCopyView,
@@ -12,10 +10,6 @@ from .views import (
 urlpatterns_misc = [
     url(
         regex=r'^favicon\.ico$', view=FaviconRedirectView.as_view()
-    ),
-    url(
-        regex=r'^jsi18n/(?P<packages>\S+?)/$', name='javascript_catalog',
-        view=JavaScriptCatalog.as_view()
     ),
     url(
         regex=r'^object/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/copy/$',

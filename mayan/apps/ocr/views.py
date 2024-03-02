@@ -73,10 +73,13 @@ class DocumentTypeOCRSubmitView(FormView):
     def form_valid(self, form):
         count = 0
 
-        valid_documents_queryset = Document.valid.all()
+        queryset_valid_documents = Document.valid.all()
 
         for document_type in form.cleaned_data['document_type']:
-            for document in document_type.documents.filter(pk__in=valid_documents_queryset.values('pk')):
+            queryset = document_type.documents.filter(
+                pk__in=queryset_valid_documents.values('pk')
+            )
+            for document in queryset:
                 document.submit_for_ocr(user=self.request.user)
                 count += 1
 
@@ -84,11 +87,13 @@ class DocumentTypeOCRSubmitView(FormView):
             message=_(
                 '%(count)d documents added to the OCR queue.'
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 
-        return HttpResponseRedirect(redirect_to=self.get_success_url())
+        return HttpResponseRedirect(
+            redirect_to=self.get_success_url()
+        )
 
     def get_form_extra_kwargs(self):
         return {

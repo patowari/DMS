@@ -17,7 +17,9 @@ class StatisticNamespace(AppsModuleLoaderMixin):
 
     @classmethod
     def get_all(cls):
-        return list(cls._registry.values())
+        return list(
+            cls._registry.values()
+        )
 
     @classmethod
     def get(cls, slug):
@@ -95,7 +97,9 @@ class StatisticType:
 
     @classmethod
     def get_all(cls):
-        return list(cls._registry.values())
+        return list(
+            cls._registry.values()
+        )
 
     @classmethod
     def get_task_names(cls):
@@ -125,7 +129,7 @@ class StatisticType:
                     'task': task_execute_statistic.dotted_path,
                     'schedule': self.schedule,
                     'args': (self.slug,)
-                },
+                }
             }
         )
 

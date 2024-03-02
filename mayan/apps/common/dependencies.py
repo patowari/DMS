@@ -131,6 +131,9 @@ PythonDependency(
     module=__name__, name='requests', version_string='==2.31.0'
 )
 PythonDependency(
+    module=__name__, name='setuptools', version_string='==69.1.1'
+)
+PythonDependency(
     legal_text='''
         Copyright (C) 2011-2012 by Andrew Moffat
 
@@ -218,7 +221,7 @@ PythonDependency(
 
 PythonDependency(
     environment=environment_documentation, module=__name__, name='Sphinx',
-    version_string='==4.5.0'
+    version_string='==5.3.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
@@ -230,11 +233,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx_rtd_theme', version_string='==0.5.2'
-)
-PythonDependency(
-    environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-blockdiag', version_string='==2.0.0'
+    name='sphinx_rtd_theme', version_string='==2.0.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,

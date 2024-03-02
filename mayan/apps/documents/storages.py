@@ -3,14 +3,14 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.storage.classes import DefinedStorage
 
 from .literals import (
-    STORAGE_NAME_DOCUMENT_FILES, STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE,
+    STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE, STORAGE_NAME_DOCUMENT_FILES,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
 from .settings import (
-    setting_document_file_storage_backend,
-    setting_document_file_storage_backend_arguments,
     setting_document_file_page_image_cache_storage_backend,
     setting_document_file_page_image_cache_storage_backend_arguments,
+    setting_document_file_storage_backend,
+    setting_document_file_storage_backend_arguments,
     setting_document_version_page_image_cache_storage_backend,
     setting_document_version_page_image_cache_storage_backend_arguments
 )

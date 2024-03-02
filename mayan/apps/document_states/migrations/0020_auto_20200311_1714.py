@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_states', '0019_workflowtransition_condition'),
+        ('document_states', '0019_workflowtransition_condition')
     ]
 
     operations = [
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 "string ('') are considered to be logical false, "
                 "any other value is considered to be the logical "
                 "true.", verbose_name='Condition'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='workflowtransition',
@@ -31,6 +31,6 @@ class Migration(migrations.Migration):
                 "string ('') are considered to be logical false, "
                 "any other value is considered to be the logical "
                 "true.", verbose_name='Condition'
-            ),
-        ),
+            )
+        )
     ]

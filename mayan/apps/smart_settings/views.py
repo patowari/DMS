@@ -6,11 +6,11 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.views.generics import FormView, SingleObjectListView
 
-from .classes import SettingNamespace, Setting
+from .classes import Setting, SettingNamespace
 from .forms import SettingForm
 from .icons import (
-    icon_setting_namespace_detail, icon_setting_namespace_list,
-    icon_setting_edit
+    icon_setting_edit, icon_setting_namespace_detail,
+    icon_setting_namespace_list
 )
 from .permissions import permission_settings_edit, permission_settings_view
 

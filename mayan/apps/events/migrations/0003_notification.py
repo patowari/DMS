@@ -7,7 +7,7 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('actstream', '0002_remove_action_data'),
-        ('events', '0002_eventsubscription'),
+        ('events', '0002_eventsubscription')
     ]
 
     operations = [
@@ -38,11 +38,11 @@ class Migration(migrations.Migration):
                         related_name='notifications',
                         to=settings.AUTH_USER_MODEL, verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Notification',
-                'verbose_name_plural': 'Notifications',
-            },
-        ),
+                'verbose_name_plural': 'Notifications'
+            }
+        )
     ]

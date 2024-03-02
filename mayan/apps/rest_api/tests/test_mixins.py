@@ -85,7 +85,7 @@ class ChildExternalObjectAPIViewMixinTestCase(
 
             def get_source_queryset(self):
                 # Normally this would return a queryset based on the
-                # external object. This incomplete method is good enought for
+                # external object. This incomplete method is good enough for
                 # the test.
                 return self.get_external_object()
 

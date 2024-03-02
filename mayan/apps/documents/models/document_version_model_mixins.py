@@ -9,8 +9,8 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.converter.exceptions import AppImageError
+from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.templating.classes import Template
 
 from ..events import event_document_version_page_created
@@ -257,7 +257,9 @@ class DocumentVersionBusinessLogicMixin:
         latest_file = document_file or self.document.file_latest
 
         if latest_file:
-            content_object_list = list(latest_file.pages.all())
+            content_object_list = list(
+                latest_file.pages.all()
+            )
         else:
             content_object_list = None
 

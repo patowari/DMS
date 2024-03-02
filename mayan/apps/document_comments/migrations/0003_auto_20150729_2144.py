@@ -1,5 +1,5 @@
-from django.db import migrations
 from django.conf import settings
+from django.db import migrations
 
 
 def code_migrate_old_comments(apps, schema_editor):
@@ -20,7 +20,9 @@ def code_migrate_old_comments(apps, schema_editor):
         Document = apps.get_model(
             app_label='documents', model_name='Document'
         )
-        User = apps.get_model(*settings.AUTH_USER_MODEL.split('.'))
+        User = apps.get_model(
+            *settings.AUTH_USER_MODEL.split('.')
+        )
 
         for old_comment in OldComment.objects.using(alias=schema_editor.connection.alias).all():
             comment = Comment(

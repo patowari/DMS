@@ -9,9 +9,8 @@ from mayan.apps.mayan_statistics.classes import (
     StatisticNamespace, StatisticTypeDoughnutChart, StatisticTypeLineChart
 )
 
-from .permissions import permission_document_view
-
 from .literals import MONTH_NAMES
+from .permissions import permission_document_view
 
 
 def get_month_name(month_number):
@@ -283,7 +282,9 @@ def statistic_document_file_page_count_per_document_type():
     }
 
 
-namespace = StatisticNamespace(slug='documents', label=_('Documents'))
+namespace = StatisticNamespace(
+    slug='documents', label=_('Documents')
+)
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='new-documents-per-month',

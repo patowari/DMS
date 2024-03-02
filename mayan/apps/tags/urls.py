@@ -1,14 +1,13 @@
 from django.conf.urls import url
 
 from .api_views import (
-    APIDocumentTagAttachView, APIDocumentTagRemoveView,
-    APIDocumentTagListView, APITagDocumentListView, APITagListView,
-    APITagDetailView
+    APIDocumentTagAttachView, APIDocumentTagListView,
+    APIDocumentTagRemoveView, APITagDetailView, APITagDocumentListView,
+    APITagListView
 )
 from .views import (
-    DocumentTagListView, TagAttachActionView, TagCreateView,
-    TagDeleteView, TagEditView, TagListView, TagRemoveActionView,
-    TagDocumentListView
+    DocumentTagListView, TagAttachActionView, TagCreateView, TagDeleteView,
+    TagDocumentListView, TagEditView, TagListView, TagRemoveActionView
 )
 
 urlpatterns_documents = [
@@ -38,7 +37,9 @@ urlpatterns_documents = [
 ]
 
 urlpatterns_tags = [
-    url(regex=r'^tags/$', name='tag_list', view=TagListView.as_view()),
+    url(
+        regex=r'^tags/$', name='tag_list', view=TagListView.as_view()
+    ),
     url(
         regex=r'^tags/create/$', name='tag_create',
         view=TagCreateView.as_view()

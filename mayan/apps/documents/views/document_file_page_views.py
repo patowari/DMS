@@ -8,18 +8,20 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView
 
 from mayan.apps.common.settings import setting_home_view
-from mayan.apps.converter.literals import DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
+from mayan.apps.converter.literals import (
+    DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
+)
 from mayan.apps.converter.transformations import (
     TransformationResize, TransformationRotate, TransformationZoom
 )
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.views.generics import SimpleView, SingleObjectListView
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import resolve
+from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.document_file_page_forms import DocumentFilePageForm
 from ..icons import (
-    icon_document_file_page_list, icon_document_file_page_detail
+    icon_document_file_page_detail, icon_document_file_page_list
 )
 from ..links.document_file_links import link_document_file_introspect_single
 from ..models.document_file_models import DocumentFile
@@ -27,8 +29,7 @@ from ..models.document_file_page_models import DocumentFilePage
 from ..permissions import permission_document_file_view
 from ..settings import (
     setting_display_height, setting_display_width, setting_rotation_step,
-    setting_zoom_percent_step, setting_zoom_max_level,
-    setting_zoom_min_level
+    setting_zoom_percent_step, setting_zoom_max_level, setting_zoom_min_level
 )
 
 logger = logging.getLogger(name=__name__)

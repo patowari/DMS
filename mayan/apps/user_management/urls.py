@@ -10,8 +10,8 @@ from .views.group_views import (
     GroupListView, GroupUserAddRemoveView
 )
 from .views.user_views import (
-    UserCreateView, UserDeleteView, UserDetailView,
-    UserEditView, UserGroupAddRemoveView, UserListView, UserOptionsEditView
+    UserCreateView, UserDeleteView, UserDetailView, UserEditView,
+    UserGroupAddRemoveView, UserListView, UserOptionsEditView
 )
 
 urlpatterns_groups = [

@@ -10,8 +10,8 @@ from mayan.apps.document_states.models.workflow_instance_models import WorkflowI
 
 from .models import DocumentMetadata, MetadataType
 from .permissions import (
-    permission_document_metadata_add, permission_document_metadata_remove,
-    permission_document_metadata_edit
+    permission_document_metadata_add, permission_document_metadata_edit,
+    permission_document_metadata_remove
 )
 
 logger = logging.getLogger(name=__name__)
@@ -75,7 +75,7 @@ class DocumentMetadataAddAction(WorkflowAction):
             try:
                 context['workflow_instance'].document.metadata.create(metadata_type=metadata_type)
             except IntegrityError as exception:
-                """This document already has the metadata type added"""
+                """This document already has the metadata type added."""
                 raise WorkflowStateActionError(
                     _(
                         'Unable to add metadata type "%(metadata_type)s" '
@@ -218,7 +218,7 @@ class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
                     metadata_type=metadata_type
                 ).delete()
             except DocumentMetadata.DoesNotExist:
-                """This document does not have the metadata type added"""
+                """This document does not have the metadata type added."""
             except ValidationError as exception:
                 raise WorkflowStateActionError(
                     _(

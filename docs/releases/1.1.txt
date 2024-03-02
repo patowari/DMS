@@ -64,16 +64,16 @@ uploaded as documents in Mayan EDMS.
 Vagrant file included
 ^^^^^^^^^^^^^^^^^^^^^
 
-A vagrant file is now included to allow developers to provision a virtual machine
-with the latest development version of Mayan EDMS.
+A vagrant file is now included to allow developers to provision a virtual
+machine with the latest development version of Mayan EDMS.
 
 
 User locale profile (language and timezone)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Interface language and locale setting can now be setup for each user and are not
-installation wide as before. Date and times offsets are automatically ajusted to
-each user's timezone settings.
+Interface language and locale setting can now be setup for each user and are
+not installation wide as before. Date and times offsets are automatically
+adjusted to each user's timezone settings.
 
 
 Document states
@@ -143,7 +143,7 @@ Messages contextual improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Many updates and simplifications were made to the source text messages to
-reduce the difficulty of translating Mayan EDMS and maintaing the contextual
+reduce the difficulty of translating Mayan EDMS and maintain the contextual
 meaning of the text messages.
 
 
@@ -325,7 +325,7 @@ Bugs fixed or issues closed
 * :github-issue:`49` Problems with large pdf files
 * :github-issue:`50` raise CommandNotFound(path)
 * :github-issue:`51` Search with ANONYMOUS error
-* :github-issue:`55` Document approval cicle?
+* :github-issue:`55` Document approval cycle?
 * :github-issue:`56` Removal of non essential features, views, models
 * :github-issue:`57` Migrate to Celery for task query and periodic tasks
 * :github-issue:`64` Pluralize messages properly

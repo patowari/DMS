@@ -2,8 +2,7 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -11,11 +10,13 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     'id', models.AutoField(
-                        verbose_name='ID', serialize=False, auto_created=True,
-                        primary_key=True
+                        verbose_name='ID', serialize=False,
+                        auto_created=True, primary_key=True
                     )
                 ),
-                ('data', models.TextField(verbose_name='Data')),
+                (
+                    'data', models.TextField(verbose_name='Data')
+                ),
                 (
                     'key_id', models.CharField(
                         unique=True, max_length=16, verbose_name='Key ID'
@@ -36,22 +37,28 @@ class Migration(migrations.Migration):
                         unique=True, max_length=40, verbose_name='Fingerprint'
                     )
                 ),
-                ('length', models.PositiveIntegerField(verbose_name='Length')),
+                (
+                    'length', models.PositiveIntegerField(verbose_name='Length')
+                ),
                 (
                     'algorithm', models.PositiveIntegerField(
                         verbose_name='Algorithm'
                     )
                 ),
-                ('user_id', models.TextField(verbose_name='User ID')),
+                (
+                    'user_id', models.TextField(
+                        verbose_name='User ID'
+                    )
+                ),
                 (
                     'key_type', models.CharField(
                         max_length=3, verbose_name='Type'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Key',
-                'verbose_name_plural': 'Keys',
-            },
-        ),
+                'verbose_name_plural': 'Keys'
+            }
+        )
     ]

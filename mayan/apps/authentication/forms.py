@@ -13,7 +13,9 @@ class AuthenticationFormBase(forms.Form):
     _label = None
     PASSWORD_FIELD = 'username'
 
-    def __init__(self, data, files, prefix, initial, request=None, wizard=None):
+    def __init__(
+        self, data, files, prefix, initial, request=None, wizard=None
+    ):
         self.request = request
         self.user_cache = None
         self.wizard = wizard
@@ -28,7 +30,9 @@ class AuthenticationFormBase(forms.Form):
 
 class AuthenticationFormMixinRememberMe(forms.Form):
     _form_field_name_remember_me = 'remember_me'
-    remember_me = forms.BooleanField(label=_('Remember me'), required=False)
+    remember_me = forms.BooleanField(
+        label=_('Remember me'), required=False
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -94,6 +98,10 @@ class UserImpersonationSelectionForm(
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        queryset = get_user_queryset().exclude(pk=kwargs['user'].pk)
+        queryset = get_user_queryset().exclude(
+            pk=kwargs['user'].pk
+        )
         self.fields['user_to_impersonate'].queryset = queryset
-        self.order_fields(field_order=('user_to_impersonate', 'permanent'))
+        self.order_fields(
+            field_order=('user_to_impersonate', 'permanent')
+        )

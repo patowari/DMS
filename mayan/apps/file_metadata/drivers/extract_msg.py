@@ -16,7 +16,9 @@ class ExtractMSGToolDriver(FileMetadataDriver):
     internal_name = 'extract_msg'
 
     def _process(self, document_file):
-        message = extract_msg.Message(path=document_file.open())
+        message = extract_msg.Message(
+            path=document_file.open()
+        )
         result = {}
 
         if message.cc:
@@ -36,4 +38,6 @@ class ExtractMSGToolDriver(FileMetadataDriver):
         return result
 
 
-ExtractMSGToolDriver.register(mimetypes=list(MSG_MIME_TYPES))
+ExtractMSGToolDriver.register(
+    mimetypes=list(MSG_MIME_TYPES)
+)

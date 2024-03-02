@@ -6,8 +6,8 @@ from mayan.apps.user_management.permissions import (
 
 from ..events import event_user_locale_profile_edited
 
-from .mixins import UserLocaleProfileViewMixin
 from .literals import TEST_TRANSLATED_WORD
+from .mixins import UserLocaleProfileViewMixin
 
 
 class CurrentUserViewTestCase(

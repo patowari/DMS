@@ -157,7 +157,9 @@ class DocumentFieldsSearchTestCase(
         self._clear_events()
 
         queryset = self._do_test_search(
-            query={'uuid': str(self._test_document.uuid)}
+            query={
+                'uuid': str(self._test_document.uuid)
+            }
         )
         self.assertFalse(self._test_document in queryset)
 
@@ -172,7 +174,9 @@ class DocumentFieldsSearchTestCase(
         self._clear_events()
 
         queryset = self._do_test_search(
-            query={'uuid': str(self._test_document.uuid)}
+            query={
+                'uuid': str(self._test_document.uuid)
+            }
         )
         self.assertTrue(self._test_document in queryset)
 
@@ -189,7 +193,9 @@ class DocumentFieldsSearchTestCase(
         self._clear_events()
 
         queryset = self._do_test_search(
-            query={'uuid': str(self._test_document.uuid)}
+            query={
+                'uuid': str(self._test_document.uuid)
+            }
         )
         self.assertTrue(self._test_document not in queryset)
 

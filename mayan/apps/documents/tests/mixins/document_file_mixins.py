@@ -172,7 +172,7 @@ class DocumentFileViewTestMixin:
     def _request_test_document_file_print_form_view(self):
         return self.get(
             viewname='documents:document_file_print_form', kwargs={
-                'document_file_id': self._test_document_file.pk,
+                'document_file_id': self._test_document_file.pk
             }, data={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -181,7 +181,7 @@ class DocumentFileViewTestMixin:
     def _request_test_document_file_print_view(self):
         return self.get(
             viewname='documents:document_file_print_view', kwargs={
-                'document_file_id': self._test_document_file.pk,
+                'document_file_id': self._test_document_file.pk
             }, query={
                 'page_group': PAGE_RANGE_ALL
             }
@@ -220,7 +220,7 @@ class DocumentFilePageAPIViewTestMixin:
         return self.get(
             viewname='rest_api:documentfilepage-list', kwargs={
                 'document_id': self._test_document.pk,
-                'document_file_id': self._test_document_file.pk,
+                'document_file_id': self._test_document_file.pk
             }
         )
 
@@ -250,7 +250,7 @@ class DocumentFilePageViewTestMixin:
     def _request_test_document_file_page_view(self, document_file_page):
         return self.get(
             viewname='documents:document_file_page_view', kwargs={
-                'document_file_page_id': document_file_page.pk,
+                'document_file_page_id': document_file_page.pk
             }
         )
 

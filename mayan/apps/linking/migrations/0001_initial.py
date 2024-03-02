@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '__first__'),
+        ('documents', '__first__')
     ]
 
     operations = [
@@ -38,11 +38,11 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document types'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Smart link',
-                'verbose_name_plural': 'Smart links',
+                'verbose_name_plural': 'Smart links'
             },
             bases=(models.Model,),
         ),
@@ -115,12 +115,12 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE, related_name='conditions',
                         to='linking.SmartLink', verbose_name='Smart link'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Link condition',
-                'verbose_name_plural': 'Link conditions',
+                'verbose_name_plural': 'Link conditions'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

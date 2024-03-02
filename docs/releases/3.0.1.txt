@@ -6,8 +6,8 @@ Released: July 08, 2018
 Changes
 -------
 
-- Pin javascript libraries to specific versions to avoid using
-  potentianlly broken updates automatically. GitLab issue #486.
+- Pin JavaScript libraries to specific versions to avoid using
+  potentially broken updates automatically. GitLab issue #486.
 - French and Polish language translation updates.
 - Merge request #25. Thanks to Daniel Albert @esclear
   for the patch.
@@ -71,6 +71,6 @@ Backward incompatible changes
 Bugs fixed or issues closed
 ---------------------------
 
-* :gitlab-issue:`486` Docker Verison 3.0 not working
+* :gitlab-issue:`486` Docker Version 3.0 not working
 
 .. _PyPI: https://pypi.python.org/pypi/mayan-edms/

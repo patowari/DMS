@@ -9,4 +9,6 @@ class MayanOIDCAuthenticationCallbackView(OIDCAuthenticationCallbackView):
         # Pull the next url from the session or settings--we don't need to
         # sanitize here because it should already have been sanitized.
         next_url = self.request.session.get('oidc_login_next', None)
-        return next_url or resolve_url(self.get_settings('LOGIN_REDIRECT_URL', '/'))
+        return next_url or resolve_url(
+            self.get_settings('LOGIN_REDIRECT_URL', '/')
+        )

@@ -23,7 +23,9 @@ from mayan.apps.views.generics import (
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..exceptions import SourceActionException
-from ..forms import SourceBackendSelectionForm, SourceBackendSetupDynamicForm
+from ..forms import (
+    SourceBackendSelectionForm, SourceBackendSetupDynamicForm
+)
 from ..icons import (
     icon_source_action, icon_source_backend_selection, icon_source_create,
     icon_source_delete, icon_source_edit, icon_source_list, icon_source_test
@@ -32,7 +34,7 @@ from ..links import link_source_backend_selection
 from ..models import Source
 from ..permissions import (
     permission_sources_create, permission_sources_delete,
-    permission_sources_edit, permission_sources_view,
+    permission_sources_edit, permission_sources_view
 )
 from ..source_backends.base import SourceBackend
 from ..tasks import task_source_backend_action_execute

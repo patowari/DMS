@@ -1,19 +1,24 @@
 # -*- coding: utf-8 -*-
 from django.db import migrations, models
+
 import mayan.apps.common.models
 import mayan.apps.storage.classes
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('common', '0011_auto_20180429_0758'),
+        ('common', '0011_auto_20180429_0758')
     ]
 
     operations = [
         migrations.AlterField(
             model_name='shareduploadedfile',
             name='file',
-            field=models.FileField(storage=mayan.apps.storage.classes.FakeStorageSubclass(), upload_to=mayan.apps.common.models.upload_to, verbose_name='File'),
+            field=models.FileField(
+                storage=mayan.apps.storage.classes.FakeStorageSubclass(),
+                upload_to=mayan.apps.common.models.upload_to,
+                verbose_name='File'
+            )
         ),
         migrations.AlterField(
             model_name='userlocaleprofile',
@@ -32,7 +37,7 @@ class Migration(migrations.Migration):
                     ('tr', 'Turkish'), ('vi', 'Vietnamese'),
                     ('zh', 'Chinese')
                 ], max_length=8, verbose_name='Language'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='userlocaleprofile',
@@ -540,6 +545,6 @@ class Migration(migrations.Migration):
                     (b'US/Pacific', b'US/Pacific'),
                     (b'UTC', b'UTC')
                 ], max_length=48, verbose_name='Timezone'
-            ),
-        ),
+            )
+        )
     ]

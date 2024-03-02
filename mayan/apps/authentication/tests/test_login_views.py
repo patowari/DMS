@@ -13,7 +13,7 @@ from ..classes import AuthenticationBackend
 from ..events import event_user_logged_in, event_user_logged_out
 
 from .literals import (
-    PATH_AUTHENTICATION_BACKEND_EMAIL, PATH_AUTHENTICATION_BACKEND_USERNAME,
+    PATH_AUTHENTICATION_BACKEND_EMAIL, PATH_AUTHENTICATION_BACKEND_USERNAME
 )
 from .mixins import LoginViewTestMixin, LogoutViewTestMixin
 
@@ -80,7 +80,9 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
             extra_data={'remember_me': False}
         )
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(self.client.session.get_expire_at_browser_close())
+        self.assertTrue(
+            self.client.session.get_expire_at_browser_close()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -109,7 +111,9 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
             self.client.session.get_expiry_age(),
             AuthenticationBackend.cls_get_instance().maximum_session_length
         )
-        self.assertFalse(self.client.session.get_expire_at_browser_close())
+        self.assertFalse(
+            self.client.session.get_expire_at_browser_close()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -156,7 +160,9 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
             extra_data={'remember_me': False}
         )
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(self.client.session.get_expire_at_browser_close())
+        self.assertTrue(
+            self.client.session.get_expire_at_browser_close()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -185,7 +191,9 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
             self.client.session.get_expiry_age(),
             AuthenticationBackend.cls_get_instance().maximum_session_length
         )
-        self.assertFalse(self.client.session.get_expire_at_browser_close())
+        self.assertFalse(
+            self.client.session.get_expire_at_browser_close()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -212,7 +220,11 @@ class LoginTestCase(LoginViewTestMixin, GenericViewTestCase):
             query={'next': TEST_REDIRECT_URL}, follow=True
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.redirect_chain, [(TEST_REDIRECT_URL, 302)])
+        self.assertEqual(
+            response.redirect_chain, [
+                (TEST_REDIRECT_URL, 302)
+            ]
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)

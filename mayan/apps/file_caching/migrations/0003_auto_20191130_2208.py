@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('file_caching', '0002_auto_20190729_0236'),
+        ('file_caching', '0002_auto_20190729_0236')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 db_index=True, help_text='Internal name of the cache.',
                 max_length=128, unique=True, verbose_name='Name'
-            ),
-        ),
+            )
+        )
     ]

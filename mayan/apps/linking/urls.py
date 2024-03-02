@@ -3,20 +3,20 @@ from django.conf.urls import url
 from .api_views import (
     APIDocumentResolvedSmartLinkDetailView,
     APIDocumentResolvedSmartLinkDocumentListView,
-    APIDocumentResolvedSmartLinkListView, APISmartLinkListView, APISmartLinkDetailView,
-    APISmartLinkConditionListView, APISmartLinkConditionView,
+    APIDocumentResolvedSmartLinkListView, APISmartLinkConditionListView,
+    APISmartLinkConditionView, APISmartLinkDetailView,
     APISmartLinkDocumentTypeAddView, APISmartLinkDocumentTypeListView,
-    APISmartLinkDocumentTypeRemoveView
+    APISmartLinkDocumentTypeRemoveView, APISmartLinkListView
 )
 from .views.smart_link_condition_views import (
     SmartLinkConditionCreateView, SmartLinkConditionDeleteView,
     SmartLinkConditionEditView, SmartLinkConditionListView
 )
 from .views.smart_link_views import (
+    DocumentResolvedSmartLinkDocumentListView,
     DocumentResolvedSmartLinkListView, DocumentTypeSmartLinkAddRemoveView,
-    DocumentResolvedSmartLinkDocumentListView, SmartLinkCreateView,
-    SmartLinkDeleteView, SmartLinkDocumentTypeAddRemoveView,
-    SmartLinkEditView, SmartLinkListView
+    SmartLinkCreateView, SmartLinkDeleteView,
+    SmartLinkDocumentTypeAddRemoveView, SmartLinkEditView, SmartLinkListView
 )
 
 urlpatterns = [

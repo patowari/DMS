@@ -36,7 +36,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_get_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -56,7 +58,9 @@ class DocumentCheckoutViewTestCase(
             status_code=200
         )
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -75,7 +79,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_get_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -88,7 +94,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -105,7 +113,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -129,7 +139,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -138,16 +150,24 @@ class DocumentCheckoutViewTestCase(
         # Upload second document.
         self._upload_test_document()
 
-        self._check_out_test_document(document=self._test_documents[0])
-        self._check_out_test_document(document=self._test_documents[1])
+        self._check_out_test_document(
+            document=self._test_documents[0]
+        )
+        self._check_out_test_document(
+            document=self._test_documents[1]
+        )
 
         self._clear_events()
 
         response = self._request_test_document_multiple_check_in_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_documents[0].is_checked_out())
-        self.assertTrue(self._test_documents[1].is_checked_out())
+        self.assertTrue(
+            self._test_documents[0].is_checked_out()
+        )
+        self.assertTrue(
+            self._test_documents[1].is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -156,8 +176,12 @@ class DocumentCheckoutViewTestCase(
         # Upload second document.
         self._upload_test_document()
 
-        self._check_out_test_document(document=self._test_documents[0])
-        self._check_out_test_document(document=self._test_documents[1])
+        self._check_out_test_document(
+            document=self._test_documents[0]
+        )
+        self._check_out_test_document(
+            document=self._test_documents[1]
+        )
 
         self.grant_access(
             obj=self._test_documents[0],
@@ -169,8 +193,12 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_multiple_check_in_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertFalse(self._test_documents[0].is_checked_out())
-        self.assertTrue(self._test_documents[1].is_checked_out())
+        self.assertFalse(
+            self._test_documents[0].is_checked_out()
+        )
+        self.assertTrue(
+            self._test_documents[1].is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -184,8 +212,12 @@ class DocumentCheckoutViewTestCase(
         # Upload second document.
         self._upload_test_document()
 
-        self._check_out_test_document(document=self._test_documents[0])
-        self._check_out_test_document(document=self._test_documents[1])
+        self._check_out_test_document(
+            document=self._test_documents[0]
+        )
+        self._check_out_test_document(
+            document=self._test_documents[1]
+        )
 
         self.grant_access(
             obj=self._test_documents[0],
@@ -201,8 +233,12 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_multiple_check_in_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertFalse(self._test_documents[0].is_checked_out())
-        self.assertFalse(self._test_documents[1].is_checked_out())
+        self.assertFalse(
+            self._test_documents[0].is_checked_out()
+        )
+        self.assertFalse(
+            self._test_documents[1].is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -223,7 +259,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_out_get_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -238,7 +276,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_out_get_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -255,7 +295,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_out_get_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -266,7 +308,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_out_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -285,7 +329,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_out_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -311,7 +357,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_out_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -334,8 +382,12 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_multiple_check_out_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertFalse(self._test_documents[0].is_checked_out())
-        self.assertFalse(self._test_documents[1].is_checked_out())
+        self.assertFalse(
+            self._test_documents[0].is_checked_out()
+        )
+        self.assertFalse(
+            self._test_documents[1].is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -362,8 +414,12 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_multiple_check_out_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_documents[0].is_checked_out())
-        self.assertFalse(self._test_documents[1].is_checked_out())
+        self.assertTrue(
+            self._test_documents[0].is_checked_out()
+        )
+        self.assertFalse(
+            self._test_documents[1].is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -399,8 +455,12 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_multiple_check_out_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_documents[0].is_checked_out())
-        self.assertTrue(self._test_documents[1].is_checked_out())
+        self.assertTrue(
+            self._test_documents[0].is_checked_out()
+        )
+        self.assertTrue(
+            self._test_documents[1].is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
@@ -536,7 +596,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -557,7 +619,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -587,7 +651,9 @@ class DocumentCheckoutViewTestCase(
         response = self._request_test_document_check_in_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertTrue(self._test_document.is_checked_out())
+        self.assertTrue(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

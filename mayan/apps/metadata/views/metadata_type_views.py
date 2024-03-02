@@ -3,9 +3,7 @@ from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.documents.models.document_type_models import DocumentType
-from mayan.apps.documents.permissions import (
-    permission_document_type_edit
-)
+from mayan.apps.documents.permissions import permission_document_type_edit
 from mayan.apps.views.generics import (
     MultipleObjectDeleteView, RelationshipView, SingleObjectCreateView,
     SingleObjectEditView, SingleObjectListView
@@ -15,9 +13,10 @@ from ..forms import (
     DocumentTypeMetadataTypeRelationshipFormSet, MetadataTypeForm
 )
 from ..icons import (
-    icon_document_type_metadata_type_list, icon_metadata_type_create,
-    icon_metadata_type_single_delete, icon_metadata_type_document_type_list,
-    icon_metadata_type_edit, icon_metadata_type_list, icon_metadata
+    icon_document_type_metadata_type_list, icon_metadata,
+    icon_metadata_type_create, icon_metadata_type_document_type_list,
+    icon_metadata_type_edit, icon_metadata_type_list,
+    icon_metadata_type_single_delete
 )
 from ..links import link_metadata_type_create
 from ..models import MetadataType
@@ -28,7 +27,9 @@ from ..permissions import (
 
 
 class MetadataTypeCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create metadata type')}
+    extra_context = {
+        'title': _('Create metadata type')
+    }
     form_class = MetadataTypeForm
     model = MetadataType
     post_action_redirect = reverse_lazy(

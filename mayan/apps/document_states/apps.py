@@ -28,8 +28,7 @@ from .events import (
     event_workflow_template_edited
 )
 from .handlers import (
-    handler_create_workflow_image_cache,
-    handler_launch_workflow_on_create,
+    handler_create_workflow_image_cache, handler_launch_workflow_on_create,
     handler_launch_workflow_on_type_change, handler_trigger_transition,
     handler_workflow_template_post_edit,
     handler_workflow_template_state_post_edit,

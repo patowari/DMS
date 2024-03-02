@@ -479,6 +479,46 @@
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
 
+4.4.13 (2024-03-01)
+===================
+- Update PIP from version 23.3.2 to 24.0.
+- Fix source class and JavaScript ``MayanImage`` class ``.initialize()``
+  method name.
+- Fix typos and text formatting.
+- Encapsulate MPTT exceptions as validation errors when users attempt
+  to perform invalid index template node tree manipulations.
+- Update ``DEFAULT_SEARCH_QUERY_RESULTS_LIMIT`` from 100000 to 10000 to
+  workaround conflicting with ElasticSearch non scroll search limit.
+- Minor code style fixes.
+- Add an extra line to ``COMMON_EXTRA_APPS`` help text to clarify the apps
+  inclusion order.
+- Changed the internal variable name of ``COMMON_EXTRA_APPS_PRE`` to avoid
+  possible conflicts.
+- Add extra logging to report storage errors when deleting trashed documents
+  as part of the retention policies.
+- Minor test fixes.
+- Fix workflow icon variable name.
+- Replace distutils with setuptool.
+
+  - Add setuptool as an explicit dependency.
+  - Replace distutils with setuptools following the deprecation
+    of distutils.
+    https://docs.python.org/3.10/whatsnew/3.10.html#distutils-deprecated
+  - Remove distutils from the Docker image.
+
+- Update dependency versions:
+
+  - sphinx from 4.5.0 to 5.3.0.
+  - sphinx_rtd_theme from 0.5.2 to 2.0.0.
+
+- Remove diagram generator markup. The library used to generate diagrams is
+  not longer maintained and breaks after the last Pillow upgrade. Removed
+  all diagram markup until a replacement can be found.
+- Update the Debian Docker image from 11.8-slim to 11.9-slim.
+- Separate code/template translation and JavaScript translation handling.
+  Rename the app flag ``has_translations`` to ``has_app_translations``.
+  Add the app flag ``has_javascript_translations`` which defaults to False.
+
 4.4.12 (2024-02-03)
 ===================
 - Translation file updates.
@@ -2690,7 +2730,11 @@
   - Show interactive source processing as a message.
 
 - Fix the copying of the bootstrap alert style.
+<<<<<<< HEAD
 - Optimize the copying of the bootstrap alert style by executing it only
+=======
+- Optimize the copying of the Bootstrap alert style by executing it only
+>>>>>>> internal/series/4.4
   in the root template. This runs the code just once instead of running it
   on each page refresh. The element ``#div-javascript-dynamic-content`` was
   also remove and it is now created and destroyed dynamically once just.

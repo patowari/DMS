@@ -15,15 +15,15 @@ from ..settings import (
     setting_document_version_page_image_cache_storage_backend,
     setting_document_version_page_image_cache_storage_backend_arguments,
     setting_recently_accessed_document_count,
-    setting_recently_created_document_count,
+    setting_recently_created_document_count
 )
 
 from .literals import (
     TEST_DOCUMENTS_CACHE_STORAGE_BACKEND,
     TEST_DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS,
-    TEST_DOCUMENTS_STORAGE_BACKEND, TEST_DOCUMENTS_STORAGE_BACKEND_ARGUMENTS,
     TEST_DOCUMENTS_RECENTLY_ACCESSED_COUNT,
-    TEST_DOCUMENTS_RECENTLY_CREATED_COUNT
+    TEST_DOCUMENTS_RECENTLY_CREATED_COUNT, TEST_DOCUMENTS_STORAGE_BACKEND,
+    TEST_DOCUMENTS_STORAGE_BACKEND_ARGUMENTS
 )
 
 

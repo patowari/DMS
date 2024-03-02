@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('django_gpg', '0005_remove_key_key_id'),
+        ('django_gpg', '0005_remove_key_key_id')
     ]
 
     operations = [
@@ -14,5 +14,5 @@ class Migration(migrations.Migration):
                 help_text='ASCII armored version of the key.',
                 verbose_name='Key data'
             ),
-        ),
+        )
     ]

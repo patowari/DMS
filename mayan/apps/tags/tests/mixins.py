@@ -65,7 +65,7 @@ class DocumentTagViewTestMixin(TagTestMixin):
             viewname='tags:single_document_multiple_tag_remove', kwargs={
                 'document_id': self._test_document.pk
             }, data={
-                'tags': self._test_tag.pk,
+                'tags': self._test_tag.pk
             }
         )
 
@@ -73,7 +73,7 @@ class DocumentTagViewTestMixin(TagTestMixin):
         return self.post(
             viewname='tags:multiple_documents_selection_tag_remove', data={
                 'id_list': self._test_document.pk,
-                'tags': self._test_tag.pk,
+                'tags': self._test_tag.pk
             }
         )
 

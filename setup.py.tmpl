@@ -47,7 +47,11 @@ def find_packages(directory):
             if os.path.basename(dirpath).startswith('.'):
                 continue
             if '__init__.py' in filenames:
-                packages.append('.'.join(fullsplit(dirpath)))
+                packages.append(
+                    '.'.join(
+                        fullsplit(dirpath)
+                    )
+                )
             elif filenames:
                 data_files.append(
                     [
@@ -88,7 +92,7 @@ setup(
         'Programming Language :: Python :: 3.10',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
-        'Topic :: Communications :: File Sharing',
+        'Topic :: Communications :: File Sharing'
     ],
     description=mayan.__description__,
     include_package_data=True,
@@ -109,5 +113,5 @@ setup(
     scripts=['mayan/bin/mayan-edms.py'],
     url=mayan.__website__,
     version=mayan.__version__,
-    zip_safe=False,
+    zip_safe=False
 )

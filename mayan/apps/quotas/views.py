@@ -17,8 +17,8 @@ from .icons import (
 from .links import link_quota_create
 from .models import Quota
 from .permissions import (
-    permission_quota_create, permission_quota_delete,
-    permission_quota_edit, permission_quota_view
+    permission_quota_create, permission_quota_delete, permission_quota_edit,
+    permission_quota_view
 )
 
 

@@ -11,8 +11,8 @@ from ..tasks import task_content_object_image_generate
 from ..transformations import BaseTransformation
 
 from .literals import (
-    TEST_ASSET_LABEL, TEST_ASSET_LABEL_EDITED, TEST_ASSET_INTERNAL_NAME,
-    TEST_ASSET_PATH, TEST_LAYER_LABEL, TEST_LAYER_ORDER, TEST_LAYER_NAME,
+    TEST_ASSET_INTERNAL_NAME, TEST_ASSET_LABEL, TEST_ASSET_LABEL_EDITED,
+    TEST_ASSET_PATH, TEST_LAYER_LABEL, TEST_LAYER_NAME, TEST_LAYER_ORDER,
     TEST_TRANSFORMATION_ARGUMENT, TEST_TRANSFORMATION_ARGUMENT_EDITED,
     TEST_TRANSFORMATION_LABEL, TEST_TRANSFORMATION_NAME
 )
@@ -132,7 +132,7 @@ class AssetViewTestMixin(AssetTestMixin):
                 'asset_id': self._test_asset.pk
             }, data={
                 'label': TEST_ASSET_LABEL_EDITED,
-                'internal_name': TEST_ASSET_INTERNAL_NAME,
+                'internal_name': TEST_ASSET_INTERNAL_NAME
             }
         )
 

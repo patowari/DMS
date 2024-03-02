@@ -25,11 +25,11 @@ class Migration(migrations.Migration):
                         'backend.', max_length=255,
                         verbose_name='Device name'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'SANE Scanner',
-                'verbose_name_plural': 'SANE Scanners',
+                'verbose_name_plural': 'SANE Scanners'
             },
             bases=('sources.interactivesource',),
         )

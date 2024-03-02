@@ -11,7 +11,7 @@ from mayan.apps.events.event_managers import (
 
 from ..classes import WorkflowActionNull
 from ..events import event_workflow_template_edited
-from ..literals import WORKFLOW_ACTION_WHEN_CHOICES, WORKFLOW_ACTION_ON_ENTRY
+from ..literals import WORKFLOW_ACTION_ON_ENTRY, WORKFLOW_ACTION_WHEN_CHOICES
 
 from .workflow_state_action_model_mixins import WorkflowStateActionBusinessLogicMixin
 from .workflow_state_models import WorkflowState

@@ -1,4 +1,4 @@
-from ...tasks import task_reindex_backend, task_index_instances
+from ...tasks import task_index_instances, task_reindex_backend
 
 
 class SearchTaskTestMixin:

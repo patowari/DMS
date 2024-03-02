@@ -33,7 +33,9 @@ class WorkflowTransitionBusinessLogicMixin:
             ).encode()
         )
         for trigger_event in self.trigger_events.all():
-            result.update(trigger_event.get_hash().encode())
+            result.update(
+                trigger_event.get_hash().encode()
+            )
 
         for field in self.fields.all():
             result.update(

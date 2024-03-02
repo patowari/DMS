@@ -69,12 +69,16 @@ class ZipArchiveClassTestCase(ArchiveClassTestCaseMixin, BaseTestCase):
     def test_open_member_with_special_characters_filename(self):
         with open(file=TEST_ARCHIVE_ZIP_SPECIAL_CHARACTERS_FILENAME_MEMBER_PATH, mode='rb') as file_object:
             archive = Archive.open(file_object=file_object)
-            list(archive.get_members())
+            list(
+                archive.get_members()
+            )
 
     def test_open_cp437_member(self):
         with open(file=TEST_ARCHIVE_ZIP_CP437_MEMBER_PATH, mode='rb') as file_object:
             archive = Archive.open(file_object=file_object)
-            list(archive.get_members())
+            list(
+                archive.get_members()
+            )
 
 
 class TarArchiveClassTestCase(ArchiveClassTestCaseMixin, BaseTestCase):

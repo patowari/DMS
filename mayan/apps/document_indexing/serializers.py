@@ -31,14 +31,14 @@ class IndexInstanceSerializer(serializers.ModelSerializer):
     def get_url(self, obj):
         return reverse(
             viewname='rest_api:indexinstance-detail', kwargs={
-                'index_instance_id': obj.pk,
+                'index_instance_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
     def get_nodes_url(self, obj):
         return reverse(
             viewname='rest_api:indexinstancenode-list', kwargs={
-                'index_instance_id': obj.pk,
+                'index_instance_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -87,7 +87,7 @@ class IndexInstanceNodeSerializer(serializers.ModelSerializer):
     def get_index_url(self, obj):
         return reverse(
             viewname='rest_api:indexinstance-detail', kwargs={
-                'index_instance_id': obj.index().pk,
+                'index_instance_id': obj.index().pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -145,7 +145,7 @@ class IndexTemplateNodeSerializer(serializers.ModelSerializer):
     def get_index_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplate-detail', kwargs={
-                'index_template_id': obj.index.pk,
+                'index_template_id': obj.index.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -205,7 +205,7 @@ class IndexTemplateNodeWriteSerializer(serializers.ModelSerializer):
     def get_index_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplate-detail', kwargs={
-                'index_template_id': obj.index.pk,
+                'index_template_id': obj.index.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -309,14 +309,14 @@ class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):
     def get_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplate-detail', kwargs={
-                'index_template_id': obj.pk,
+                'index_template_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
     def get_nodes_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplatenode-list', kwargs={
-                'index_template_id': obj.pk,
+                'index_template_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 

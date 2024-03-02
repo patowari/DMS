@@ -8,8 +8,10 @@ from mayan.apps.testing.tests.utils import mute_stdout
 from ..classes import JavaScriptDependency
 from ..exceptions import DependenciesException
 
+from .literals import (
+    TEST_TAR_CVE_2007_4559_FILENAME, TEST_TAR_CVE_2007_4559_PATH
+)
 from .mocks import TestDependency
-from .literals import TEST_TAR_CVE_2007_4559_FILENAME, TEST_TAR_CVE_2007_4559_PATH
 
 
 class DependencyClassTestCase(BaseTestCase):

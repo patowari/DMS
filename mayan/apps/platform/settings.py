@@ -7,7 +7,6 @@ from .literals import (
     DEFAULT_PLATFORM_CLIENT_BACKEND_ENABLED
 )
 
-
 namespace = SettingNamespace(
     label=_('Platform'), name='platform'
 )

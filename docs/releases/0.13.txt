@@ -53,11 +53,11 @@ updates.
 Bootstrap
 ^^^^^^^^^
 
-Setting up Mayan EDMS after installation has been indetified by users as the
+Setting up Mayan EDMS after installation has been identified by users as the
 main difficulty when knowledge about Mayan EDMS is relatively low. To
 address this situation a new feature that provides preconfigured setups has been
 added. These preconfigured setups are published in the Mayan EDMS website and
-upon synchonization are available to users, this gives users access and integrators
+upon synchronization are available to users, this gives users access and integrators
 access to new setups without having to wait for new versions of Mayan EDMS.
 Aside from including preconfigured setups, the new bootstrap app
 has the ability of dumping an user's current setup into a serialized text file
@@ -108,7 +108,7 @@ Support for UNOCONV dropped
 
 Support for converting office documents by calling LibreOffice via ``UNOCONV``
 has been disabled for a while ever since LibreOffice start including
-document conversion support from the command line.  This version completly
+document conversion support from the command line.  This version completely
 removes any traces of code and configuration options related to ``UNOCONV``.
 
 
@@ -165,7 +165,7 @@ Bugs fixed or issues closed
 
 * :github-issue:`28` "Document indexing based on filesystem problem"
 * :github-issue:`29` Default ACL documentation
-* :github-issue:`30` "Ubuntu 12.0.4 LTS complaining about mising 'fabfile/templates/settings_local.py' (master branch)"
+* :github-issue:`30` "Ubuntu 12.0.4 LTS complaining about missing 'fabfile/templates/settings_local.py' (master branch)"
 * :github-issue:`31` "Bulk add tags Feature request"
 * :github-issue:`32` "Error run $python manage.py syncdb"
 * :github-issue:`33` "Fetches translations from Transifex. "

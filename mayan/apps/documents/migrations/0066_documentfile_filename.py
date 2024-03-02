@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0065_documentversion_active'),
+        ('documents', '0065_documentversion_active')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 default='', max_length=255, verbose_name='Filename'
             ),
-            preserve_default=False,
-        ),
+            preserve_default=False
+        )
     ]

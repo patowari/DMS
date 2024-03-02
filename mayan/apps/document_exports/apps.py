@@ -2,9 +2,9 @@ from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.events.classes import ModelEventType
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_object
+from mayan.apps.events.classes import ModelEventType
 
 from .events import event_document_version_exported
 from .links import link_document_version_export

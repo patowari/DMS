@@ -80,7 +80,7 @@ class DocumentFileContentViewTestMixin:
         return self.get(
             viewname='document_parsing:document_file_page_content_view',
             kwargs={
-                'document_file_page_id': self._test_document_file.pages.first().pk,
+                'document_file_page_id': self._test_document_file.pages.first().pk
             }
         )
 

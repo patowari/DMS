@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 def code_make_existing_documents_not_stubs(apps, schema_editor):

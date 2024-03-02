@@ -1,5 +1,5 @@
-from django.db import migrations, models
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 import mayan.apps.document_signatures.models
 
@@ -7,7 +7,7 @@ import mayan.apps.document_signatures.models
 class Migration(migrations.Migration):
     dependencies = [
         ('documents', '0033_auto_20160325_0052'),
-        ('document_signatures', '0002_auto_20150608_1902'),
+        ('document_signatures', '0002_auto_20150608_1902')
     ]
 
     operations = [
@@ -41,23 +41,23 @@ class Migration(migrations.Migration):
                         verbose_name='Public key fingerprint', unique=True,
                         max_length=40, editable=False
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version signature',
-                'verbose_name_plural': 'Document version signatures',
-            },
+                'verbose_name_plural': 'Document version signatures'
+            }
         ),
         migrations.RemoveField(
             model_name='documentversionsignature',
-            name='has_embedded_signature',
+            name='has_embedded_signature'
         ),
         migrations.AddField(
             model_name='documentversionsignature',
             name='date',
             field=models.DateField(
                 null=True, verbose_name='Date signed', blank=True
-            ),
+            )
         ),
         migrations.AddField(
             model_name='documentversionsignature',
@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 max_length=64, null=True, verbose_name='Signature ID',
                 blank=True
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentversionsignature',
@@ -74,7 +74,7 @@ class Migration(migrations.Migration):
                 editable=False, on_delete=models.CASCADE,
                 related_name='signature', to='documents.DocumentVersion',
                 verbose_name='Document version'
-            ),
+            )
         ),
         migrations.CreateModel(
             name='DetachedSignature',
@@ -92,13 +92,13 @@ class Migration(migrations.Migration):
                         upload_to=mayan.apps.document_signatures.models.upload_to,
                         null=True, verbose_name='Signature file', blank=True
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version detached signature',
-                'verbose_name_plural': 'Document version detached signatures',
+                'verbose_name_plural': 'Document version detached signatures'
             },
-            bases=('document_signatures.signaturebasemodel',),
+            bases=('document_signatures.signaturebasemodel',)
         ),
         migrations.CreateModel(
             name='EmbeddedSignature',
@@ -109,13 +109,13 @@ class Migration(migrations.Migration):
                         parent_link=True, primary_key=True, serialize=False,
                         to='document_signatures.SignatureBaseModel'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version embedded signature',
-                'verbose_name_plural': 'Document version embedded signatures',
+                'verbose_name_plural': 'Document version embedded signatures'
             },
-            bases=('document_signatures.signaturebasemodel',),
+            bases=('document_signatures.signaturebasemodel',)
         ),
         migrations.AddField(
             model_name='signaturebasemodel',
@@ -125,6 +125,6 @@ class Migration(migrations.Migration):
                 related_name='signaturebasemodel',
                 to='documents.DocumentVersion',
                 verbose_name='Document version'
-            ),
-        ),
+            )
+        )
     ]

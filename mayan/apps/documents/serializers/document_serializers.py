@@ -95,7 +95,9 @@ class DocumentUploadSerializer(DocumentSerializer):
 
     def create(self, validated_data):
         file = validated_data.pop('file')
-        validated_data['label'] = validated_data.get('label', str(file))
+        validated_data['label'] = validated_data.get(
+            'label', str(file)
+        )
         user = validated_data['_instance_extra_data']['_event_actor']
         instance = super().create(validated_data=validated_data)
 

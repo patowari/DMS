@@ -1,4 +1,3 @@
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.permissions import (
     permission_document_version_view, permission_document_view
 )
@@ -6,6 +5,7 @@ from mayan.apps.documents.search import (
     search_model_document, search_model_document_version,
     search_model_document_version_page
 )
+from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.dynamic_search.tests.mixins.base import SearchTestMixin
 
 from .mixins import DocumentVersionOCRTestMixin

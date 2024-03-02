@@ -180,7 +180,7 @@ class MailerViewTestMixin(MailerTestMixin):
             }, data={
                 'default': True,
                 'enabled': True,
-                'label': TEST_USER_MAILER_LABEL,
+                'label': TEST_USER_MAILER_LABEL
             }
         )
 

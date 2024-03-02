@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -23,13 +23,13 @@ class Migration(migrations.Migration):
                     'message', models.TextField(
                         verbose_name='Message', editable=False, blank=True
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('-datetime',),
                 'get_latest_by': 'datetime',
                 'verbose_name': 'Log entry',
-                'verbose_name_plural': 'Log entries',
+                'verbose_name_plural': 'Log entries'
             },
             bases=(models.Model,)
         )

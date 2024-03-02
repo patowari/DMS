@@ -33,7 +33,7 @@ class ObjectCopyViewTestCase(ObjectCopyViewTestMixin, GenericViewTestCase):
     def test_object_copy_view_no_permission(self):
         test_object_count = self.TestModel.objects.count()
         response = self._request_object_copy_view()
-        self.assertTrue(response.status_code, 404)
+        self.assertEqual(response.status_code, 404)
 
         queryset = self.TestModel.objects.all()
         self.assertEqual(queryset.count(), test_object_count)
@@ -51,7 +51,7 @@ class ObjectCopyViewTestCase(ObjectCopyViewTestMixin, GenericViewTestCase):
 
         test_object_count = self.TestModel.objects.count()
         response = self._request_object_copy_view()
-        self.assertTrue(response.status_code, 302)
+        self.assertEqual(response.status_code, 302)
 
         queryset = self.TestModel.objects.all()
         self.assertEqual(queryset.count(), test_object_count + 1)

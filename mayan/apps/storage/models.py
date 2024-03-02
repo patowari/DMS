@@ -12,9 +12,7 @@ from mayan.apps.events.event_managers import (
 )
 
 from .classes import DefinedStorageLazy
-from .events import (
-    event_download_file_created, event_download_file_deleted
-)
+from .events import event_download_file_created, event_download_file_deleted
 from .literals import (
     STORAGE_NAME_DOWNLOAD_FILE, STORAGE_NAME_SHARED_UPLOADED_FILE
 )

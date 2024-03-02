@@ -3,8 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.smart_settings.classes import SettingNamespace
 
 from .literals import (
-    DEFAULT_SOURCES_BACKEND_ARGUMENTS,
-    DEFAULT_SOURCES_CACHE_STORAGE_BACKEND,
+    DEFAULT_SOURCES_BACKEND_ARGUMENTS, DEFAULT_SOURCES_CACHE_STORAGE_BACKEND,
     DEFAULT_SOURCES_CACHE_STORAGE_BACKEND_ARGUMENTS
 )
 from .setting_migrations import SourcesSettingMigration

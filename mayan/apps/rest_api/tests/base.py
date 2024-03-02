@@ -3,7 +3,7 @@ from rest_framework.test import APITestCase, APITransactionTestCase
 from mayan.apps.permissions.classes import Permission
 from mayan.apps.smart_settings.classes import SettingNamespace
 from mayan.apps.testing.tests.base import (
-    GenericViewTestCase, GenericTransactionViewTestCase
+    GenericTransactionViewTestCase, GenericViewTestCase
 )
 
 from .mixins import TestAPIViewTestCaseMixin

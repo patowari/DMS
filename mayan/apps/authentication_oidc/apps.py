@@ -2,7 +2,6 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
-
 from mayan.apps.common.menus import menu_user
 
 from .links import link_current_user_oidc_details, separator_oidc_user

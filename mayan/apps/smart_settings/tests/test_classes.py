@@ -16,10 +16,10 @@ from .literals import (
     TEST_SETTING_INITIAL_VALUE, TEST_SETTING_VALIDATION_BAD_VALUE,
     TEST_SETTING_VALIDATION_GOOD_VALUE, TEST_SETTING_VALUE
 )
-from .mixins import SmartSettingTestMixin, SmartSettingNamespaceTestMixin
+from .mixins import SmartSettingNamespaceTestMixin, SmartSettingTestMixin
 from .mocks import (
-    TestNamespaceMigrationOne, TestNamespaceMigrationTwo,
     TestNamespaceMigrationInvalid, TestNamespaceMigrationInvalidDual,
+    TestNamespaceMigrationOne, TestNamespaceMigrationTwo,
     test_validation_function
 )
 

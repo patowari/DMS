@@ -32,7 +32,9 @@ class WorkflowTemplateAPIViewTestCase(
         response = self._request_test_workflow_template_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        self.assertEqual(Workflow.objects.count(), 0)
+        self.assertEqual(
+            Workflow.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -49,7 +51,9 @@ class WorkflowTemplateAPIViewTestCase(
             response.data['label'], TEST_WORKFLOW_TEMPLATE_LABEL
         )
 
-        self.assertEqual(Workflow.objects.count(), 1)
+        self.assertEqual(
+            Workflow.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -66,7 +70,9 @@ class WorkflowTemplateAPIViewTestCase(
 
         response = self._request_test_workflow_template_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-        self.assertEqual(Workflow.objects.count(), 1)
+        self.assertEqual(
+            Workflow.objects.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -83,7 +89,9 @@ class WorkflowTemplateAPIViewTestCase(
         response = self._request_test_workflow_template_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertEqual(Workflow.objects.count(), 0)
+        self.assertEqual(
+            Workflow.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

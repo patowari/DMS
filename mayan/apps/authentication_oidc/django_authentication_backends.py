@@ -9,7 +9,9 @@ class DjangoAuthenticationBackendOIDC(OIDCAuthenticationBackend):
 
         user.first_name = claims.get('given_name', '')
         user.last_name = claims.get('family_name', '')
-        user.save(update_fields=('first_name', 'last_name'))
+        user.save(
+            update_fields=('first_name', 'last_name')
+        )
 
         return user
 
@@ -20,6 +22,8 @@ class DjangoAuthenticationBackendOIDC(OIDCAuthenticationBackend):
 
         user.first_name = claims.get('given_name', '')
         user.last_name = claims.get('family_name', '')
-        user.save(update_fields=('first_name', 'last_name'))
+        user.save(
+            update_fields=('first_name', 'last_name')
+        )
 
         return user

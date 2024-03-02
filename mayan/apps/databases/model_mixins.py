@@ -59,7 +59,9 @@ class ValueChangeModelMixin:
     @classmethod
     def from_db(cls, db, field_names, values):
         new = super().from_db(db=db, field_names=field_names, values=values)
-        new._values_previous = dict(zip(field_names, values))
+        new._values_previous = dict(
+            zip(field_names, values)
+        )
         return new
 
     def __init__(self, *args, **kwargs):

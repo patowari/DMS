@@ -44,7 +44,7 @@ class WorkflowTemplateTransitionFieldAPIViewTestMixin(
             viewname='rest_api:workflow-template-transition-field-list',
             kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_transition_id': self._test_workflow_template_transition.pk,
+                'workflow_template_transition_id': self._test_workflow_template_transition.pk
             }, data={
                 'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
                 'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,

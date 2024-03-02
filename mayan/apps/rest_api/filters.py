@@ -25,7 +25,9 @@ class MayanObjectPermissionsFilter(BaseFilterBackend):
         except AttributeError:
             return getattr(
                 view, 'mayan_object_permissions', {}
-            ).get(request.method, (None,))[0]
+            ).get(
+                request.method, (None,)
+            )[0]
         else:
             return method_get_mayan_object_permissions()
 

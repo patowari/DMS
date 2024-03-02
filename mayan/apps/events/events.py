@@ -3,8 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 from mayan.apps.events.classes import EventTypeNamespace
 
 from .literals import (
-    EVENT_TYPE_NAMESPACE_NAME, EVENT_EVENTS_CLEARED_NAME,
-    EVENT_EVENTS_EXPORTED_NAME
+    EVENT_EVENTS_CLEARED_NAME, EVENT_EVENTS_EXPORTED_NAME,
+    EVENT_TYPE_NAMESPACE_NAME
 )
 
 namespace = EventTypeNamespace(

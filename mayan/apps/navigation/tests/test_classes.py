@@ -10,10 +10,11 @@ from mayan.apps.testing.tests.base import GenericViewTestCase
 from ..classes import Link, Menu, SourceColumn
 
 from .literals import (
-    TEST_PERMISSION_NAMESPACE_NAME, TEST_PERMISSION_NAMESPACE_TEXT,
-    TEST_PERMISSION_NAME, TEST_PERMISSION_LABEL, TEST_LINK_TEXT,
-    TEST_MENU_NAME, TEST_QUERYSTRING_ONE_KEY, TEST_QUERYSTRING_TWO_KEYS,
-    TEST_SUBMENU_NAME, TEST_UNICODE_STRING, TEST_URL
+    TEST_LINK_TEXT, TEST_MENU_NAME, TEST_PERMISSION_LABEL,
+    TEST_PERMISSION_NAME, TEST_PERMISSION_NAMESPACE_NAME,
+    TEST_PERMISSION_NAMESPACE_TEXT, TEST_QUERYSTRING_ONE_KEY,
+    TEST_QUERYSTRING_TWO_KEYS, TEST_SUBMENU_NAME, TEST_UNICODE_STRING,
+    TEST_URL
 )
 
 
@@ -45,7 +46,9 @@ class LinkClassTestCase(GenericViewTestCase):
     def test_link_resolve(self):
         response = self.get(viewname=self._test_view_name)
 
-        context = Context({'request': response.wsgi_request})
+        context = Context(
+            {'request': response.wsgi_request}
+        )
 
         resolved_link = self.link.resolve(context=context)
         self.assertEqual(
@@ -59,7 +62,9 @@ class LinkClassTestCase(GenericViewTestCase):
         )
 
         response = self.get(viewname=self._test_view_name)
-        response.context.update({'request': response.wsgi_request})
+        response.context.update(
+            {'request': response.wsgi_request}
+        )
 
         context = Context(response.context)
 
@@ -72,42 +77,59 @@ class LinkClassTestCase(GenericViewTestCase):
             view=self._test_view_name
         )
 
-        self.grant_access(obj=self._test_object, permission=self._test_permission)
+        self.grant_access(
+            obj=self._test_object, permission=self._test_permission
+        )
 
         response = self.get(viewname=self._test_view_name)
-        response.context.update({'request': response.wsgi_request})
+        response.context.update(
+            {'request': response.wsgi_request}
+        )
 
         context = Context(response.context)
 
         resolved_link = link.resolve(context=context)
-        self.assertEqual(resolved_link.url, reverse(viewname=self._test_view_name))
+        self.assertEqual(
+            resolved_link.url, reverse(viewname=self._test_view_name)
+        )
 
     def test_link_permission_resolve_with_acl(self):
-        # ACL is tested agains the resolved_object or just {{ object }} if not
+        # ACL is tested against the resolved_object or just {{ object }}
+        # if not.
         link = Link(
             permissions=(self._test_permission,), text=TEST_LINK_TEXT,
             view=self._test_view_name
         )
 
-        self.grant_access(obj=self._test_object, permission=self._test_permission)
+        self.grant_access(
+            obj=self._test_object, permission=self._test_permission
+        )
 
         response = self.get(viewname=self._test_view_name)
-        response.context.update({'request': response.wsgi_request})
+        response.context.update(
+            {'request': response.wsgi_request}
+        )
 
         context = Context(response.context)
 
         resolved_link = link.resolve(context=context)
         self.assertNotEqual(resolved_link, None)
-        self.assertEqual(resolved_link.url, reverse(viewname=self._test_view_name))
+        self.assertEqual(
+            resolved_link.url, reverse(viewname=self._test_view_name)
+        )
 
     def test_link_with_unicode_querystring_request(self):
-        url = furl(reverse(self._test_view_name))
+        url = furl(
+            reverse(self._test_view_name)
+        )
         url.args['unicode_key'] = TEST_UNICODE_STRING
 
         self.link.keep_query = True
         response = self.get(path=url.url)
 
-        context = Context({'request': response.wsgi_request})
+        context = Context(
+            {'request': response.wsgi_request}
+        )
 
         resolved_link = self.link.resolve(context=context)
 
@@ -122,7 +144,9 @@ class LinkClassTestCase(GenericViewTestCase):
         self.link.view = None
         response = self.get(path=previous_url)
 
-        context = Context({'request': response.wsgi_request})
+        context = Context(
+            {'request': response.wsgi_request}
+        )
 
         resolved_link = self.link.resolve(context=context)
         self.assertEqual(
@@ -140,7 +164,9 @@ class LinkClassTestCase(GenericViewTestCase):
         self.link.remove_from_query = ['key2']
         response = self.get(path=previous_url)
 
-        context = Context({'request': response.wsgi_request})
+        context = Context(
+            {'request': response.wsgi_request}
+        )
 
         resolved_link = self.link.resolve(context=context)
         self.assertEqual(
@@ -197,34 +223,52 @@ class MenuClassTestCase(GenericViewTestCase):
             links=(self.link,)
         )
 
-        self.assertEqual(self.menu.resolve(context=context), [])
+        self.assertEqual(
+            self.menu.resolve(context=context), []
+        )
 
     def test_null_source_link_unbinding(self):
-        self.menu.bind_links(links=(self.link,))
+        self.menu.bind_links(
+            links=(self.link,)
+        )
 
         response = self.get(viewname=self._test_view_name)
-        context = Context({'request': response.wsgi_request})
+        context = Context(
+            {'request': response.wsgi_request}
+        )
         self.assertEqual(
             self.menu.resolve(context=context)[0]['links'][0].link, self.link
         )
 
-        self.menu.unbind_links(links=(self.link,))
+        self.menu.unbind_links(
+            links=(self.link,)
+        )
 
-        self.assertEqual(self.menu.resolve(context=context), [])
+        self.assertEqual(
+            self.menu.resolve(context=context), []
+        )
 
     def test_null_source_submenu_unbinding(self):
-        self.menu.bind_links(links=(self.sub_menu,))
+        self.menu.bind_links(
+            links=(self.sub_menu,)
+        )
 
         response = self.get(viewname=self._test_view_name)
-        context = Context({'request': response.wsgi_request})
+        context = Context(
+            {'request': response.wsgi_request}
+        )
 
         self.assertEqual(
             self.menu.resolve(context=context)[0]['links'], [self.sub_menu]
         )
 
-        self.menu.unbind_links(links=(self.sub_menu,))
+        self.menu.unbind_links(
+            links=(self.sub_menu,)
+        )
 
-        self.assertEqual(self.menu.resolve(context=context), [])
+        self.assertEqual(
+            self.menu.resolve(context=context), []
+        )
 
 
 class SourceColumnClassTestCase(GenericViewTestCase):
@@ -257,7 +301,9 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
         columns = SourceColumn.get_for_source(source=test_model_proxy)
 
-        self.assertEqual(len(columns), 1)
+        self.assertEqual(
+            len(columns), 1
+        )
 
     def test_get_for_source_for_model_proxies_and_exclude_with_columns(self):
         column = SourceColumn(
@@ -292,7 +338,9 @@ class SourceColumnClassTestCase(GenericViewTestCase):
             source=self.TestModel.objects.all()
         )
 
-        self.assertEqual(len(columns), 1)
+        self.assertEqual(
+            len(columns), 1
+        )
 
     def test_get_for_source_for_empty_querysets_with_columns(self):
         SourceColumn(
@@ -303,7 +351,9 @@ class SourceColumnClassTestCase(GenericViewTestCase):
             source=self.TestModel.objects.none()
         )
 
-        self.assertEqual(len(columns), 1)
+        self.assertEqual(
+            len(columns), 1
+        )
 
     def test_get_for_source_for_proxy_model_queryset_with_parent_columns(self):
         SourceColumn(
@@ -345,7 +395,9 @@ class SourceColumnClassTestCase(GenericViewTestCase):
             source=TestModelProxy.objects.all(), only_identifier=True
         )
 
-        self.assertEqual(len(columns), 1)
+        self.assertEqual(
+            len(columns), 1
+        )
         self.assertNotEqual(columns[0], root_source_column)
         self.assertEqual(columns[0], proxy_source_column)
 
@@ -357,9 +409,15 @@ class SourceColumnClassTestCase(GenericViewTestCase):
             attribute='__str__', source=TestClass
         )
 
-        columns = SourceColumn.get_for_source(source=(TestClass(),))
+        columns = SourceColumn.get_for_source(
+            source=(
+                TestClass(),
+            )
+        )
 
-        self.assertEqual(len(columns), 1)
+        self.assertEqual(
+            len(columns), 1
+        )
 
     def test_get_for_source_subclass_list(self):
         class TestClass:
@@ -372,9 +430,15 @@ class SourceColumnClassTestCase(GenericViewTestCase):
             attribute='__str__', source=TestClass
         )
 
-        columns = SourceColumn.get_for_source(source=(SubClass(),))
+        columns = SourceColumn.get_for_source(
+            source=(
+                SubClass(),
+            )
+        )
 
-        self.assertEqual(len(columns), 1)
+        self.assertEqual(
+            len(columns), 1
+        )
 
     def test_get_for_source_subsubclass_list(self):
         class TestClass:
@@ -396,6 +460,12 @@ class SourceColumnClassTestCase(GenericViewTestCase):
             attribute='__str__', source=SubSubClass
         )
 
-        columns = SourceColumn.get_for_source(source=(SubSubClass(),))
+        columns = SourceColumn.get_for_source(
+            source=(
+                SubSubClass(),
+            )
+        )
 
-        self.assertEqual(len(columns), 3)
+        self.assertEqual(
+            len(columns), 3
+        )

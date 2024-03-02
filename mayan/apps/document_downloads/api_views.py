@@ -1,7 +1,7 @@
-from mayan.apps.rest_api import generics
 from mayan.apps.documents.api_views.api_view_mixins import (
     ParentObjectDocumentAPIViewMixin
 )
+from mayan.apps.rest_api import generics
 from mayan.apps.views.generics import DownloadViewMixin
 
 from .permissions import permission_document_file_download

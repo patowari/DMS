@@ -8,13 +8,13 @@ from .api_views import (
     APIDocumentFileEmbeddedSignatureListView,
     APIDocumentFileSignDetachedView, APIDocumentFileSignEmbeddedView
 )
-
 from .views import (
     AllDocumentSignatureRefreshView, AllDocumentSignatureVerifyView,
     DocumentFileDetachedSignatureCreateView,
-    DocumentFileEmbeddedSignatureCreateView, DocumentFileDetachedSignatureDeleteView,
-    DocumentFileSignatureDetailView, DocumentFileDetachedSignatureDownloadView,
-    DocumentFileSignatureListView, DocumentFileDetachedSignatureUploadView
+    DocumentFileEmbeddedSignatureCreateView,
+    DocumentFileDetachedSignatureDeleteView, DocumentFileSignatureDetailView,
+    DocumentFileDetachedSignatureDownloadView, DocumentFileSignatureListView,
+    DocumentFileDetachedSignatureUploadView
 )
 
 urlpatterns = [

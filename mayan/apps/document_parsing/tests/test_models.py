@@ -14,7 +14,9 @@ class DocumentAutoParsingTestCase(GenericDocumentTestCase):
         self._create_test_document_type()
         self._upload_test_document()
         with self.assertRaises(expected_exception=StopIteration):
-            next(self._test_document_file.content())
+            next(
+                self._test_document_file.content()
+            )
 
     @override_settings(DOCUMENT_PARSING_AUTO_PARSING=True)
     def test_enabled_auto_parsing(self):

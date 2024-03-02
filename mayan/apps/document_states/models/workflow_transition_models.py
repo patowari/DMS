@@ -113,7 +113,8 @@ class WorkflowTransitionField(
     label = models.CharField(
         help_text=_(
             'The field name that will be shown on the user interface.'
-        ), max_length=128, verbose_name=_('Label'))
+        ), max_length=128, verbose_name=_('Label')
+    )
     help_text = models.TextField(
         blank=True, help_text=_(
             'An optional message that will help users better understand the '
@@ -134,7 +135,9 @@ class WorkflowTransitionField(
         blank=True, help_text=_(
             'A group of keyword arguments to customize the widget. '
             'Use YAML format.'
-        ), validators=[YAMLValidator()],
+        ), validators=[
+            YAMLValidator()
+        ],
         verbose_name=_('Widget keyword arguments')
     )
 

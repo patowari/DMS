@@ -11,7 +11,7 @@ from mayan.apps.views.generics import (
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.document_type_forms import (
-    DocumentTypeFilenameGeneratorForm, DocumentTypeFilenameForm_create
+    DocumentTypeFilenameForm_create, DocumentTypeFilenameGeneratorForm
 )
 from ..icons import (
     icon_document_type_create, icon_document_type_delete,

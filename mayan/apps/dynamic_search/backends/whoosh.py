@@ -7,7 +7,7 @@ from whoosh import qparser
 from whoosh.filedb.filestore import FileStorage
 from whoosh.index import EmptyIndexError
 from whoosh.qparser import (
-    GtLtPlugin, FuzzyTermPlugin, MultifieldParser, OrGroup, RegexPlugin
+    FuzzyTermPlugin, GtLtPlugin, MultifieldParser, OrGroup, RegexPlugin
 )
 from whoosh.qparser.dateparse import DateParserPlugin
 from whoosh.query import Every
@@ -36,8 +36,9 @@ from ..search_query_types import (
 
 from .literals.whoosh_literals import (
     DJANGO_TO_WHOOSH_FIELD_MAP, TEXT_LOCK_INSTANCE_DEINDEX,
-    TEXT_LOCK_INSTANCE_INDEX, WHOOSH_INDEX_DIRECTORY_NAME,
+    TEXT_LOCK_INSTANCE_INDEX, WHOOSH_INDEX_DIRECTORY_NAME
 )
+
 logger = logging.getLogger(name=__name__)
 
 
@@ -45,7 +46,9 @@ class BackendQueryTypeWhoosh(BackendQueryType):
     def do_resolve(self):
         if self.get_search_backend_field_type() == whoosh.fields.DATETIME:
 
-            self.extra_kwargs['parser'].add_plugin(DateParserPlugin())
+            self.extra_kwargs['parser'].add_plugin(
+                DateParserPlugin()
+            )
 
         return self._do_resolve()
 
@@ -72,7 +75,9 @@ class BackendQueryTypeFuzzy(BackendQueryTypeWhoosh):
     query_type = QueryTypeFuzzy
 
     def _do_resolve(self):
-        self.extra_kwargs['parser'].add_plugin(FuzzyTermPlugin())
+        self.extra_kwargs['parser'].add_plugin(
+            FuzzyTermPlugin()
+        )
 
         if self.value is not None:
             if self.is_quoted_value:
@@ -87,7 +92,9 @@ class BackendQueryTypeFuzzy(BackendQueryTypeWhoosh):
 
 class BackendQueryTypeComparison(BackendQueryTypeWhoosh):
     def _do_resolve(self):
-        self.extra_kwargs['parser'].add_plugin(GtLtPlugin())
+        self.extra_kwargs['parser'].add_plugin(
+            GtLtPlugin()
+        )
 
         if self.value is not None:
             return self.template.format(
@@ -158,7 +165,9 @@ class BackendQueryTypeRegularExpression(BackendQueryTypeWhoosh):
     query_type = QueryTypeRegularExpression
 
     def _do_resolve(self):
-        self.extra_kwargs['parser'].add_plugin(RegexPlugin())
+        self.extra_kwargs['parser'].add_plugin(
+            RegexPlugin()
+        )
 
         if self.value is not None:
             return '{}:r"{}"'.format(
@@ -438,7 +447,8 @@ class WhooshSearchBackend(SearchBackend):
                                 writer.add_document(**kwargs)
                             except Exception as exception:
                                 # The parenthesis is used to define a multi
-                                # line error message not a translatable string.
+                                # line error message not a translatable
+                                # string.
                                 error_text = (
                                     'Unexpected exception while '
                                     'indexing search object id: {id}, '

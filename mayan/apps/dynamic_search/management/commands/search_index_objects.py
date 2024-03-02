@@ -49,6 +49,8 @@ class Command(BaseCommand):
 
         self.stdout.write(
             msg='\nInstances queued for indexing: {}'.format(
-                len(list(id_range))
+                len(
+                    list(id_range)
+                )
             )
         )

@@ -22,7 +22,7 @@ from .mixins import DocumentTypesQuotaMixin, GroupsUsersQuotaMixin
 
 def hook_factory_document_check_quota(klass):
     def hook_check_quota(**kwargs):
-        # Fake Document to be able to reuse the .process() method
+        # Fake Document to be able to reuse the `.process()` method
         # for pre check.
         fake_document_instance = types.SimpleNamespace(pk=None)
 
@@ -45,8 +45,8 @@ def hook_factory_document_file_check_quota(klass):
             document = types.SimpleNamespace(
                 document_type=kwargs['kwargs']['document_type']
             )
-        # Fake DocumentFile to be able to reuse the
-        # .process() method for pre check.
+        # Fake `DocumentFile` to be able to reuse the
+        # `.process()` method for pre check.
         file_object = kwargs['kwargs']['file_object']
 
         if file_object:
@@ -110,7 +110,7 @@ class DocumentCountQuota(
         }
 
     def _get_user_document_count(self, user):
-        action_queryset = Action.objects.annotate(
+        queryset_action = Action.objects.annotate(
             target_object_id_int=Cast(
                 'target_object_id', output_field=IntegerField()
             )
@@ -154,11 +154,11 @@ class DocumentCountQuota(
                         }
                     )
 
-        action_queryset = action_queryset.filter(**action_filter_kwargs)
+        queryset_action = queryset_action.filter(**action_filter_kwargs)
 
         document_filter_kwargs.update(
             {
-                'pk__in': action_queryset.values('target_object_id_int')
+                'pk__in': queryset_action.values('target_object_id_int')
             }
         )
 
@@ -219,7 +219,7 @@ class DocumentSizeQuota(
         if not kwargs['instance'].pk:
             if kwargs['instance'].file.size >= self._allowed():
                 if self.document_type_all or self._get_document_types().filter(pk=kwargs['instance'].document.document_type.pk).exists():
-                    # Don't asume there is always a user in the signal.
+                    # Don't assume there is always a user in the signal.
                     # Non interactive uploads might not include a user.
                     if kwargs['user']:
                         if kwargs['user'].is_superuser or kwargs['user'].is_staff:

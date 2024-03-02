@@ -5,7 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 
-
 __all__ = ('DuplicateBackend',)
 logger = logging.getLogger(name=__name__)
 

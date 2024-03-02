@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '__first__'),
+        ('documents', '__first__')
     ]
 
     operations = [
@@ -27,13 +27,13 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE, related_name='metadata',
                         to='documents.Document', verbose_name='Document'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document metadata',
-                'verbose_name_plural': 'Document metadata',
+                'verbose_name_plural': 'Document metadata'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DocumentTypeMetadataType',
@@ -55,13 +55,13 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document type'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document type metadata type options',
-                'verbose_name_plural': 'Document type metadata types options',
+                'verbose_name_plural': 'Document type metadata types options'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='MetadataType',
@@ -107,14 +107,14 @@ class Migration(migrations.Migration):
                             ('Parse time', 'Parse time')
                         ]
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('title',),
                 'verbose_name': 'Metadata type',
-                'verbose_name_plural': 'Metadata types',
+                'verbose_name_plural': 'Metadata types'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.AddField(
             model_name='documenttypemetadatatype',
@@ -123,11 +123,13 @@ class Migration(migrations.Migration):
                 on_delete=models.CASCADE, to='metadata.MetadataType',
                 verbose_name='Metadata type'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AlterUniqueTogether(
             name='documenttypemetadatatype',
-            unique_together={('document_type', 'metadata_type')},
+            unique_together={
+                ('document_type', 'metadata_type')
+            }
         ),
         migrations.AddField(
             model_name='documentmetadata',
@@ -140,6 +142,8 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='documentmetadata',
-            unique_together={('document', 'metadata_type')},
-        ),
+            unique_together={
+                ('document', 'metadata_type')
+            }
+        )
     ]

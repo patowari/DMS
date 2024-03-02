@@ -3,22 +3,21 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0075_delete_duplicateddocumentold'),
+        ('documents', '0075_delete_duplicateddocumentold')
     ]
 
     operations = [
         migrations.CreateModel(
             name='RecentlyAccessedDocumentProxy',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Recently accessed document',
                 'verbose_name_plural': 'Recently accessed documents',
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.document',),
+            bases=('documents.document',)
         ),
         migrations.AlterField(
             model_name='document',
@@ -26,6 +25,6 @@ class Migration(migrations.Migration):
             field=models.DateTimeField(
                 auto_now_add=True, db_index=True, help_text='The date and '
                 'time of the document creation.', verbose_name='Created'
-            ),
-        ),
+            )
+        )
     ]

@@ -23,7 +23,9 @@ class TagDocumentTestCase(DocumentTestMixin, TagTestMixin, BaseTestCase):
             document=self._test_document, user=self._test_case_user
         )
 
-        self.assertTrue(self._test_document in self._test_tag.documents.all())
+        self.assertTrue(
+            self._test_document in self._test_tag.documents.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -94,7 +96,9 @@ class TagDocumentTestCase(DocumentTestMixin, TagTestMixin, BaseTestCase):
 
         self._clear_events()
 
-        self.assertTrue(self._test_tag.get_absolute_url())
+        self.assertTrue(
+            self._test_tag.get_absolute_url()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

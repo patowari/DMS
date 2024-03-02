@@ -9,7 +9,7 @@ from .classes import EventType, EventTypeNamespace
 from .models import Notification
 from .permissions import permission_events_view
 from .serializers import (
-    EventSerializer, EventTypeSerializer, EventTypeNamespaceSerializer,
+    EventSerializer, EventTypeNamespaceSerializer, EventTypeSerializer,
     NotificationSerializer
 )
 
@@ -27,7 +27,9 @@ class APIObjectEventListView(
     serializer_class = EventSerializer
 
     def get_source_queryset(self):
-        return any_stream(obj=self.get_external_object())
+        return any_stream(
+            obj=self.get_external_object()
+        )
 
 
 class APIEventTypeNamespaceDetailView(generics.RetrieveAPIView):
@@ -38,7 +40,9 @@ class APIEventTypeNamespaceDetailView(generics.RetrieveAPIView):
 
     def get_object(self):
         try:
-            return EventTypeNamespace.get(name=self.kwargs['name'])
+            return EventTypeNamespace.get(
+                name=self.kwargs['name']
+            )
         except KeyError:
             raise Http404
 

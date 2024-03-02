@@ -4,16 +4,15 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_document_tag_multiple_attach, icon_document_tag_multiple_remove,
-    icon_document_tag_list, icon_tag_create, icon_tag_single_delete,
-    icon_tag_multiple_delete, icon_tag_document_list, icon_tag_edit,
-    icon_tag_list
+    icon_document_tag_list, icon_document_tag_multiple_attach,
+    icon_document_tag_multiple_remove, icon_tag_create,
+    icon_tag_document_list, icon_tag_edit, icon_tag_list,
+    icon_tag_multiple_delete, icon_tag_single_delete
 )
 from .permissions import (
     permission_tag_attach, permission_tag_create, permission_tag_delete,
     permission_tag_edit, permission_tag_remove, permission_tag_view
 )
-
 
 link_document_multiple_tag_multiple_attach = Link(
     icon=icon_document_tag_multiple_attach, text=_('Attach tags'),

@@ -4,8 +4,8 @@ from ..models.index_instance_models import IndexInstanceNode
 from ..permissions import permission_index_template_rebuild
 
 from .mixins import (
-    IndexInstanceTestMixin, IndexTemplateTestMixin, IndexToolsViewTestMixin,
-    IndexTemplateViewTestMixin
+    IndexInstanceTestMixin, IndexTemplateTestMixin,
+    IndexTemplateViewTestMixin, IndexToolsViewTestMixin
 )
 
 

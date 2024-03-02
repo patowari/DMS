@@ -1,10 +1,10 @@
-from django.db import models, migrations
 from django.conf import settings
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL)
     ]
 
     operations = [
@@ -39,13 +39,13 @@ class Migration(migrations.Migration):
                         to=settings.AUTH_USER_MODEL,
                         verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('-datetime_created',),
                 'verbose_name': 'Recent search',
-                'verbose_name_plural': 'Recent searches',
+                'verbose_name_plural': 'Recent searches'
             },
-            bases=(models.Model,),
-        ),
+            bases=(models.Model,)
+        )
     ]

@@ -5,31 +5,29 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         ('documents', '0075_delete_duplicateddocumentold'),
-        ('duplicates', '0007_auto_20201130_0828'),
+        ('duplicates', '0007_auto_20201130_0828')
     ]
 
     operations = [
         migrations.CreateModel(
             name='DuplicateSourceDocument',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.document',),
+            bases=('documents.document',)
         ),
         migrations.CreateModel(
             name='DuplicateTargetDocument',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.document',),
+            bases=('documents.document',)
         ),
         migrations.AlterField(
             model_name='duplicatebackendentry',
@@ -38,10 +36,12 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='duplicates', to='documents.Document',
                 verbose_name='Document'
-            ),
+            )
         ),
         migrations.AlterUniqueTogether(
             name='duplicatebackendentry',
-            unique_together={('stored_backend', 'document')},
-        ),
+            unique_together={
+                ('stored_backend', 'document')
+            }
+        )
     ]

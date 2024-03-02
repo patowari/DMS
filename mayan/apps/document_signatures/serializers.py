@@ -77,15 +77,15 @@ class DetachedSignatureSerializer(BaseSignatureSerializer):
         view_kwargs=(
             {
                 'lookup_field': 'document_file.document_id',
-                'lookup_url_kwarg': 'document_id',
+                'lookup_url_kwarg': 'document_id'
             },
             {
                 'lookup_field': 'document_file_id',
-                'lookup_url_kwarg': 'document_file_id',
+                'lookup_url_kwarg': 'document_file_id'
             },
             {
                 'lookup_field': 'pk',
-                'lookup_url_kwarg': 'detached_signature_id',
+                'lookup_url_kwarg': 'detached_signature_id'
             },
         ),
         view_name='rest_api:detachedsignature-detail'

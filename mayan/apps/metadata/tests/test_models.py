@@ -10,8 +10,8 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..models import DocumentMetadata
 
 from .literals import (
-    TEST_DEFAULT_VALUE, TEST_LOOKUP_TEMPLATE, TEST_LOOKUP_VALUE_INCORRECT,
-    TEST_LOOKUP_VALUE_CORRECT
+    TEST_DEFAULT_VALUE, TEST_LOOKUP_TEMPLATE, TEST_LOOKUP_VALUE_CORRECT,
+    TEST_LOOKUP_VALUE_INCORRECT
 )
 from .mixins.metadata_type_mixins import MetadataTypeTestMixin
 
@@ -90,7 +90,7 @@ class MetadataTypeTestCase(
         )
 
     def test_delete_metadata_type_present_assigned_as_document_metadata(self):
-        # GitLab issue #753
+        # GitLab issue #753.
         document_metadata = DocumentMetadata(
             document=self._test_document,
             metadata_type=self._test_metadata_type, value=TEST_DEFAULT_VALUE
@@ -99,13 +99,13 @@ class MetadataTypeTestCase(
         document_metadata.full_clean()
         document_metadata.save()
 
-        # Must not raise an error
+        # Must not raise an error.
         self._test_metadata_type.delete()
 
     def test_delete_metadata_value_on_document_type_change(self):
         """
         Delete the old document metadata whose types are not present in the
-        new document type
+        new document type.
         """
         document_metadata = DocumentMetadata(
             document=self._test_document,
@@ -124,12 +124,14 @@ class MetadataTypeTestCase(
             document_type=self._test_document_type_2
         )
 
-        self.assertEqual(self._test_document.metadata.count(), 0)
+        self.assertEqual(
+            self._test_document.metadata.count(), 0
+        )
 
     def test_duplicate_metadata_value_on_document_type_change(self):
         """
         Delete the old document metadata whose types are not present in the
-        new document type
+        new document type.
         """
         document_metadata = DocumentMetadata(
             document=self._test_document,

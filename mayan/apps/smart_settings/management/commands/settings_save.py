@@ -13,4 +13,6 @@ class Command(management.BaseCommand):
         )
 
     def handle(self, *args, **options):
-        Setting.save_configuration(path=options.get('filepath'))
+        Setting.save_configuration(
+            path=options.get('filepath')
+        )

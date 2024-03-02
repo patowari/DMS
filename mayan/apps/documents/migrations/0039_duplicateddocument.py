@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0038_auto_20170705_2008'),
+        ('documents', '0038_auto_20170705_2008')
     ]
 
     operations = [
@@ -35,11 +35,11 @@ class Migration(migrations.Migration):
                         to='documents.Document',
                         verbose_name='Duplicated documents'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Duplicated document',
-                'verbose_name_plural': 'Duplicated documents',
-            },
-        ),
+                'verbose_name_plural': 'Duplicated documents'
+            }
+        )
     ]

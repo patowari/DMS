@@ -1,7 +1,7 @@
 import uuid
 
-from django.db import models, migrations
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):

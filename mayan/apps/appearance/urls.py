@@ -7,7 +7,6 @@ from .views import (
     UserThemeSettingsDetailsView, UserThemeSettingsEditView
 )
 
-
 urlpatterns_error_pages = [
     url(
         regex=r'^errors/403/$', name='error_403', view=SimpleView.as_view(

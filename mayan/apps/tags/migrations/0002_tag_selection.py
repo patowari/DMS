@@ -23,7 +23,7 @@ RGB_VALUES = {
     COLOR_MAGENTA: '#ff00ff',
     COLOR_ORANGE: '#ffa500',
     COLOR_RED: '#ff0000',
-    COLOR_YELLOW: '#ffff00',
+    COLOR_YELLOW: '#ffff00'
 }
 
 
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
             model_name='tag',
             name='selection',
             field=RGBColorField(default='#FFFFFF'),
-            preserve_default=False,
+            preserve_default=False
         ),
         migrations.RunPython(code=code_convert_color_names_to_rgb)
     ]

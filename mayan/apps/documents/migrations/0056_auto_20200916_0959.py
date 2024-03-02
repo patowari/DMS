@@ -1,8 +1,7 @@
 from django.db import migrations
 
-from mayan.apps.storage.classes import DefinedStorage
-
 from mayan.apps.documents import settings
+from mayan.apps.storage.classes import DefinedStorage
 
 STORAGE_NAME_DOCUMENT_IMAGE = 'documents__documentimagecache'
 

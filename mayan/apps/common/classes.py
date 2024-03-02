@@ -22,7 +22,9 @@ class ModelCopy:
 
     @classmethod
     def add_fields_lazy(cls, model, **kwargs):
-        cls._lazy.setdefault(model, [])
+        cls._lazy.setdefault(
+            model, []
+        )
         cls._lazy[model].append(kwargs)
 
     @classmethod

@@ -7,8 +7,7 @@ import mayan.apps.storage.models
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -38,11 +37,11 @@ class Migration(migrations.Migration):
                     'datetime', models.DateTimeField(
                         auto_now_add=True, verbose_name='Date time'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Shared uploaded file',
-                'verbose_name_plural': 'Shared uploaded files',
-            },
-        ),
+                'verbose_name_plural': 'Shared uploaded files'
+            }
+        )
     ]
