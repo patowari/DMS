@@ -68,7 +68,7 @@ class APIDocumentListView(generics.ListCreateAPIView):
     post: Create a new document.
     """
     mayan_object_permissions = {
-        'GET': (permission_document_view,),
+        'GET': (permission_document_view,)
     }
     ordering_fields = ('datetime_created', 'document_type', 'id', 'label')
     serializer_class = DocumentSerializer

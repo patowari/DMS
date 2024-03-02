@@ -57,7 +57,7 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
                 'label': _('URL'),
                 'lookup_url_kwarg': 'document_id',
                 'view_name': 'rest_api:document-detail'
-            },
+            }
         }
         fields = (
             'datetime_created', 'description', 'document_change_type_url',

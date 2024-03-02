@@ -127,7 +127,9 @@ class WorkflowInstanceAPIViewTestCase(
 
         response = self._request_test_workflow_instance_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -198,7 +200,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 0)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -217,7 +221,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 0)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -236,7 +242,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 0)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -259,7 +267,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 1)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -293,7 +303,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 0)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -312,7 +324,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 0)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -335,7 +349,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 1)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -369,7 +385,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 0)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -394,7 +412,9 @@ class WorkflowInstanceAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self.assertEqual(workflow_instance.log_entries.count(), 1)
+        self.assertEqual(
+            workflow_instance.log_entries.count(), 1
+        )
         workflow_instance.refresh_from_db()
 
         self.assertEqual(

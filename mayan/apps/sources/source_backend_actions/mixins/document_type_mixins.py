@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404
 
-from rest_framework.generics import get_object_or_404 as rest_get_object_or_404
+from rest_framework.generics import (
+    get_object_or_404 as rest_get_object_or_404
+)
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_type_models import DocumentType

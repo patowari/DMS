@@ -1,6 +1,6 @@
 from django.apps import apps
-from django.db import OperationalError
 from django.contrib.auth import get_user_model
+from django.db import OperationalError
 
 from mayan.apps.databases.classes import QuerysetParametersSerializer
 from mayan.celery import app

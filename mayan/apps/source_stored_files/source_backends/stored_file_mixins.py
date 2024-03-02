@@ -54,7 +54,7 @@ class SourceBackendMixinStoredFileUploadBase:
                 _('File content'), {
                     'fields': (
                         'delete_after_upload',
-                    ),
+                    )
                 },
             ),
         )
@@ -231,7 +231,7 @@ class SourceBackendMixinStoredFileImage:
                     'fields': (
                         'preview_width', 'preview_height',
                         'preview_max_size'
-                    ),
+                    )
                 },
             ),
         )

@@ -184,7 +184,9 @@ class CabinetAPITestCase(CabinetAPIViewTestMixin, BaseAPITestCase):
 
         response = self._request_test_cabinet_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -443,7 +445,9 @@ class CabinetDocumentAPITestCase(
 
         response = self._request_test_cabinet_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -508,7 +512,9 @@ class CabinetDocumentAPITestCase(
 
         response = self._request_test_cabinet_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -677,7 +683,9 @@ class DocumentCabinetAPITestCase(
 
         response = self._request_test_document_cabinet_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

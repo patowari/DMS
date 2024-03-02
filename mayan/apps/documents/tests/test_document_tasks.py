@@ -161,7 +161,9 @@ class DocumentTaskTestCase(DocumentTestMixin, BaseTestCase):
             }
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count + 1
         )

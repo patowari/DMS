@@ -31,7 +31,9 @@ class DocumentSearchResultWidgetViewTestCase(
         self._test_object_permission = permission_document_view
         self._test_object_text = self._test_document.label
         self._test_search_model = search_model_document
-        self._test_search_term_data = {'uuid': str(self._test_document.uuid)}
+        self._test_search_term_data = {
+            'uuid': str(self._test_document.uuid)
+        }
 
     def test_document_cabinet_widget_no_permission(self):
         response = self._request_search_results_view(

@@ -372,7 +372,9 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
             requests=json.dumps(obj=requests)
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 2)
+        self.assertEqual(
+            response.data['count'], 2
+        )
 
         self.assertEqual(
             response.data['results'][0]['status_code'], status.HTTP_200_OK

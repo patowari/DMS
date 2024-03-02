@@ -21,7 +21,7 @@ class CredentialBackendAccessToken(CredentialBackend):
             ), 'kwargs': {
                 'max_length': 255
             }, 'required': True
-        },
+        }
     }
     label = _('Access token')
 
@@ -66,7 +66,7 @@ class CredentialBackendUsernamePassword(CredentialBackend):
             ), 'kwargs': {
                 'max_length': 192
             }, 'required': False
-        },
+        }
     }
     label = _('Username and password')
 

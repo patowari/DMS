@@ -128,7 +128,9 @@ class SourceActionAPIViewTestCase(
             self._test_source.get_action_list()
         )
 
-        self.assertEqual(response.data['count'], 2)
+        self.assertEqual(
+            response.data['count'], 2
+        )
         self.assertEqual(
             response.data['results'][0]['name'],
             test_source_action_list[0].name
@@ -329,7 +331,9 @@ class SourceAPIViewTestCase(SourceAPIViewTestMixin, BaseAPITestCase):
 
         response = self._request_test_source_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

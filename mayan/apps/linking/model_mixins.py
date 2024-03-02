@@ -37,7 +37,9 @@ class SmartLinkBusinessLogicMixin:
         if self.dynamic_label:
             try:
                 template = Template(template_string=self.dynamic_label)
-                return template.render(context={'document': document})
+                return template.render(
+                    context={'document': document}
+                )
             except Exception as exception:
                 return _(
                     'Error generating dynamic label; %s' % str(
@@ -65,13 +67,15 @@ class SmartLinkBusinessLogicMixin:
         for condition in self.conditions.filter(enabled=True):
             template = Template(template_string=condition.expression)
 
-            condition_query = Q(**{
-                '{}__{}'.format(
-                    condition.foreign_document_data, condition.operator
-                ): template.render(
-                    context={'document': document}
-                )
-            })
+            condition_query = Q(
+                **{
+                    '{}__{}'.format(
+                        condition.foreign_document_data, condition.operator
+                    ): template.render(
+                        context={'document': document}
+                    )
+                }
+            )
             if condition.negated:
                 condition_query = ~condition_query
 

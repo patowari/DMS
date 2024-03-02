@@ -42,7 +42,7 @@ class FaviconRedirectView(RedirectView):
 
 class HomeView(SimpleView):
     extra_context = {
-        'title': _('Home'),
+        'title': _('Home')
     }
     template_name = 'appearance/home.html'
     view_icon = icon_home
@@ -52,7 +52,7 @@ class LicenseView(SimpleView):
     extra_context = {
         'form': LicenseForm(),
         'read_only': True,
-        'title': _('License'),
+        'title': _('License')
     }
     template_name = 'appearance/generic_form.html'
     view_icon = icon_license

@@ -8,11 +8,15 @@ from .models import EventSubscription, ObjectEventSubscription
 class EventTypeUserRelationshipForm(forms.Form):
     namespace = forms.CharField(
         label=_('Namespace'), required=False,
-        widget=forms.TextInput(attrs={'readonly': 'readonly'})
+        widget=forms.TextInput(
+            attrs={'readonly': 'readonly'}
+        )
     )
     label = forms.CharField(
         label=_('Label'), required=False,
-        widget=forms.TextInput(attrs={'readonly': 'readonly'})
+        widget=forms.TextInput(
+            attrs={'readonly': 'readonly'}
+        )
     )
     subscription = forms.ChoiceField(
         label=_('Subscription'),
@@ -65,11 +69,15 @@ EventTypeUserRelationshipFormSet = formset_factory(
 class ObjectEventTypeUserRelationshipForm(forms.Form):
     namespace = forms.CharField(
         label=_('Namespace'), required=False,
-        widget=forms.TextInput(attrs={'readonly': 'readonly'})
+        widget=forms.TextInput(
+            attrs={'readonly': 'readonly'}
+        )
     )
     label = forms.CharField(
         label=_('Label'), required=False,
-        widget=forms.TextInput(attrs={'readonly': 'readonly'})
+        widget=forms.TextInput(
+            attrs={'readonly': 'readonly'}
+        )
     )
     subscription = forms.ChoiceField(
         label=_('Subscription'),

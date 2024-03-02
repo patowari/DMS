@@ -120,7 +120,9 @@ def code_set_active_versions(apps, schema_editor):
             break
 
         for row in rows:
-            document_version_values += (row[0],)
+            document_version_values += (
+                row[0],
+            )
 
         query_argument_placeholders = ('%s',) * len(rows)
         values_query = '({})'.format(

@@ -10,9 +10,7 @@ from mayan.apps.user_management.permissions import permission_user_edit
 from mayan.apps.user_management.tests.literals import TEST_USER_PASSWORD_EDITED
 
 from .literals import TEST_PASSWORD_NEW
-from .mixins import (
-    PasswordResetViewTestMixin, UserPasswordViewTestMixin
-)
+from .mixins import PasswordResetViewTestMixin, UserPasswordViewTestMixin
 
 
 class CurrentUserViewTestCase(GenericViewTestCase):
@@ -62,7 +60,9 @@ class PasswordResetViewTestCase(
         response = self._request_password_reset_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
         email_parts = mail.outbox[0].body.replace('\n', '').split('/')
         uidb64 = email_parts[-3]
         token = email_parts[-2]
@@ -109,7 +109,9 @@ class PasswordResetViewTestCase(
 
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(len(mail.outbox), 0)
+        self.assertEqual(
+            len(mail.outbox), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -127,7 +129,9 @@ class PasswordResetViewTestCase(
             response.url, reverse(viewname=setting_home_view.value)
         )
 
-        self.assertEqual(len(mail.outbox), 0)
+        self.assertEqual(
+            len(mail.outbox), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -143,7 +147,9 @@ class PasswordResetViewTestCase(
         self.assertEqual(response.status_code, 302)
         self.assertNotEqual(response.url, setting_home_view.value)
 
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -161,7 +167,9 @@ class PasswordResetViewTestCase(
             response.url, reverse(viewname=setting_home_view.value)
         )
 
-        self.assertEqual(len(mail.outbox), 0)
+        self.assertEqual(
+            len(mail.outbox), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

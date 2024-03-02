@@ -1,5 +1,5 @@
-import json
 from io import BytesIO
+import json
 import logging
 from packaging import version
 import pkg_resources
@@ -352,7 +352,7 @@ class Dependency(AppsModuleLoaderMixin):
 
     def download(self):
         """
-        Download the dependency from a repository
+        Download the dependency from a repository.
         """
         raise NotImplementedError
 
@@ -420,7 +420,7 @@ class Dependency(AppsModuleLoaderMixin):
 
     def check(self):
         """
-        Returns the version found or an exception
+        Returns the version found or an exception.
         """
         if self._check():
             return True
@@ -503,7 +503,7 @@ class Dependency(AppsModuleLoaderMixin):
 
     def verify(self):
         """
-        Verify the integrity of the dependency
+        Verify the integrity of the dependency.
         """
         raise NotImplementedError
 
@@ -626,14 +626,14 @@ class JavaScriptDependency(Dependency):
                 path=str(path_install), ignore_errors=True
             )
 
-            # Scoped packages are nested under a parent directory
-            # create it to avoid rename errors.
+            # Scoped packages are nested under a parent directory create it
+            # to avoid rename errors.
             path_install.mkdir(parents=True)
 
-            # Copy the content under the dependency's extracted content folder
-            # 'package' to the final location.
-            # We do a copy and delete instead of move because os.rename doesn't
-            # support renames across filesystems.
+            # Copy the content under the dependency's extracted content
+            # folder 'package' to the final location.
+            # We do a copy and delete instead of move because os.rename
+            # doesn't support renames across filesystems.
             path_uncompressed_package = Path(temporary_directory, 'package')
             shutil.rmtree(
                 path=str(path_install)

@@ -1,21 +1,20 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
-from django.utils.translation import ugettext_lazy as _
 from django.http import StreamingHttpResponse
+from django.utils.translation import ugettext_lazy as _
 
 from rest_framework import status
 from rest_framework.response import Response
 
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.utils import IndexedDictionary
-from mayan.apps.storage.models import SharedUploadedFile
-
 from mayan.apps.sources.source_backend_actions.interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestView,
     SourceBackendActionInterfaceRequestViewForm,
     SourceBackendActionInterfaceTask
 )
+from mayan.apps.storage.models import SharedUploadedFile
 
 from .arguments import (
     argument_encoded_filename, argument_file_cleanup,

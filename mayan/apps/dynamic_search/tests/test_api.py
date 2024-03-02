@@ -23,7 +23,9 @@ class SearchAPIViewBackwardCompatilityTestCase(
             search_model_name='documents.Document', search_term='_'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -38,7 +40,9 @@ class SearchAPIViewTestCase(
 
         response = self._request_search_simple_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -71,7 +75,9 @@ class SearchAPIViewTestCase(
 
         response = self._request_search_simple_view(search_term='')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -105,14 +111,18 @@ class SearchAPIViewTestCase(
             search_term='', query={'format': 'json'}
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
     def test_advanced_search_api_view_no_permission(self):
         self._clear_events()
 
         response = self._request_search_advanced_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -162,7 +172,9 @@ class SearchFilterCombinatiomAPITestCase(
             search_model_name='documents.Document', search_term='AAA'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 2)
+        self.assertEqual(
+            response.data['count'], 2
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

@@ -227,7 +227,7 @@ class WorkflowBusinessLogicMixin:
                     ] = {
                         'label': label,
                         'destination': 's{}'.format(escalation.transition.destination_state.pk),
-                        'state': 's{}'.format(state.pk),
+                        'state': 's{}'.format(state.pk)
                     }
 
         for transition in self.transitions.all():
@@ -304,7 +304,7 @@ class WorkflowBusinessLogicMixin:
                     'style': 'dashed',
                     'tail_name': '{}'.format(
                         value['state']
-                    ),
+                    )
                 }
             )
 

@@ -50,7 +50,9 @@ class SearchInterpreter:
         if priority in cls._registry:
             raise DynamicSearchInterpreterError(
                 'Search interpreter `{}` is already registered for '
-                'priority `{}`.'.format(cls._registry[priority], priority)
+                'priority `{}`.'.format(
+                    cls._registry[priority], priority
+                )
             )
         else:
             cls._registry[priority] = klass

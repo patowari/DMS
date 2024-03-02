@@ -105,7 +105,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -152,7 +154,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -199,7 +203,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -249,7 +255,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -331,7 +339,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -385,7 +395,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
 
         self._test_document.refresh_from_db()
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -470,7 +482,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -561,7 +575,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -626,7 +642,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -710,7 +728,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadAPIViewTestCase(
 
         self._test_document.refresh_from_db()
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -787,7 +807,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -815,7 +837,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -848,7 +872,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -885,7 +911,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -960,7 +988,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertEqual(
             len(
@@ -1076,7 +1106,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1132,7 +1164,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertEqual(
             len(
@@ -1248,7 +1282,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1304,7 +1340,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -1379,7 +1417,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -1454,7 +1494,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label, 'test-label'
         )
@@ -1532,7 +1574,9 @@ class StagingStorageSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().language, 'deu'
         )
@@ -1610,7 +1654,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -1646,7 +1692,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -1681,7 +1729,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -1721,7 +1771,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -1801,7 +1853,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1862,7 +1916,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1923,7 +1979,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1984,7 +2042,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -2043,7 +2103,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -2121,7 +2183,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -2197,7 +2261,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label, 'test-label'
         )
@@ -2276,7 +2342,9 @@ class StagingStorageSourceBackendActionDocumentUploadImmediateModeAPIViewTestCas
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(response.data['id'], Document.objects.first().pk)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().language, 'deu'
         )

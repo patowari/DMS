@@ -4,9 +4,8 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_credential_backend_selection,
-    icon_credential_delete, icon_credential_edit,
-    icon_credential_list, icon_credential_setup
+    icon_credential_backend_selection, icon_credential_delete,
+    icon_credential_edit, icon_credential_list, icon_credential_setup
 )
 from .permissions import (
     permission_credential_create, permission_credential_delete,

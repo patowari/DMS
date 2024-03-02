@@ -1,11 +1,11 @@
+from mayan.apps.documents.document_file_actions import (
+    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
+    DocumentFileActionUseNewPages
+)
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
     event_document_version_page_created
-)
-from mayan.apps.documents.document_file_actions import (
-    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
-    DocumentFileActionUseNewPages
 )
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.documents.models.document_models import Document
@@ -44,7 +44,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -78,7 +80,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -111,7 +115,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -152,7 +158,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -221,7 +229,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -265,7 +275,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
 
         self._test_document.refresh_from_db()
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -339,7 +351,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -419,7 +433,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -473,7 +489,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -537,7 +555,9 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -557,7 +577,9 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -576,7 +598,9 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -599,7 +623,9 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_SOURCE_SANE_SCANNER_FILE_CHECKSUM
@@ -660,7 +686,9 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(Document.objects.first().language, 'deu')
 
         events = self._get_test_events()

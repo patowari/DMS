@@ -244,7 +244,9 @@ class SmartLinkDocumentTypeAddRemoveView(AddRemoveView):
 
 
 class SmartLinkCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create new smart link')}
+    extra_context = {
+        'title': _('Create new smart link')
+    }
     form_class = SmartLinkForm
     post_action_redirect = reverse_lazy(
         viewname='linking:smart_link_list'

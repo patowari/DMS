@@ -23,8 +23,12 @@ class APIIndexTemplateListView(generics.ListCreateAPIView):
     get: Returns a list of all the defined indexes template.
     post: Create a new index template.
     """
-    mayan_object_permissions = {'GET': (permission_index_template_view,)}
-    mayan_view_permissions = {'POST': (permission_index_template_create,)}
+    mayan_object_permissions = {
+        'GET': (permission_index_template_view,)
+    }
+    mayan_view_permissions = {
+        'POST': (permission_index_template_create,)
+    }
     ordering_fields = ('enabled', 'id', 'label', 'slug')
     serializer_class = IndexTemplateSerializer
     source_queryset = IndexTemplate.objects.all()
@@ -69,7 +73,9 @@ class APIIndexTemplateDocumentTypeListView(
     mayan_external_object_permissions = {
         'GET': (permission_index_template_view,)
     }
-    mayan_object_permissions = {'GET': (permission_document_type_view,)}
+    mayan_object_permissions = {
+        'GET': (permission_document_type_view,)
+    }
     serializer_class = DocumentTypeSerializer
 
     def get_source_queryset(self):

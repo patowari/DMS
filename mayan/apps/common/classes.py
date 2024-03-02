@@ -194,7 +194,10 @@ class ModelCopy:
 
             while True:
                 value = '{}_{}'.format(base_value, counter)
-                if not self.model._meta.default_manager.filter(**{field: value}).exists():
+                queryset = self.model._meta.default_manager.filter(
+                    **{field: value}
+                )
+                if not queryset.exists():
                     break
 
                 counter += 1
@@ -226,7 +229,10 @@ class ModelCopy:
 
                 while True:
                     value = '{}_{}'.format(base_value, counter)
-                    if not self.model._meta.default_manager.filter(**{field: value}).exists():
+                    queryset = self.model._meta.default_manager.filter(
+                        **{field: value}
+                    )
+                    if not queryset.exists():
                         break
 
                     counter += 1

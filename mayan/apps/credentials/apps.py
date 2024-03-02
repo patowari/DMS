@@ -14,8 +14,7 @@ from .classes import CredentialBackend
 from .events import event_credential_edited, event_credential_used
 from .links import (
     link_credential_backend_selection, link_credential_delete,
-    link_credential_edit, link_credential_list,
-    link_credential_setup
+    link_credential_edit, link_credential_list, link_credential_setup
 )
 from .permissions import (
     permission_credential_delete, permission_credential_edit,

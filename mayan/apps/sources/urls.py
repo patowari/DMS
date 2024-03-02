@@ -10,9 +10,8 @@ from .views.document_file_views import (
 )
 from .views.document_views import DocumentUploadView
 from .views.source_views import (
-    SourceActionView, SourceBackendSelectionView,
-    SourceCreateView, SourceDeleteView, SourceEditView, SourceListView,
-    SourceTestView
+    SourceActionView, SourceBackendSelectionView, SourceCreateView,
+    SourceDeleteView, SourceEditView, SourceListView, SourceTestView
 )
 from .wizards import DocumentCreateWizard
 

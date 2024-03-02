@@ -171,7 +171,7 @@ class LoginOTPTestCase(
                             viewname='authentication:multi_factor_authentication_view'
                         ), query={'next': TEST_REDIRECT_URL}
                     ).to_string(), 302
-                ),
+                )
             ]
         )
 

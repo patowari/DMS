@@ -1,13 +1,13 @@
 from rest_framework import status
 
+from mayan.apps.documents.document_file_actions import (
+    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
+    DocumentFileActionUseNewPages
+)
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
     event_document_version_page_created
-)
-from mayan.apps.documents.document_file_actions import (
-    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
-    DocumentFileActionUseNewPages
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import (
@@ -89,7 +89,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -124,7 +126,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -159,7 +163,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -197,7 +203,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -267,7 +275,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -309,7 +319,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
 
         self._test_document.refresh_from_db()
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -382,7 +394,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -461,7 +475,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -514,7 +530,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -586,7 +604,9 @@ class SANEScannerSourceBackendActionDocumentFileUploadAPIViewTestCase(
 
         self._test_document.refresh_from_db()
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -655,7 +675,9 @@ class SANEScannerSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -677,7 +699,9 @@ class SANEScannerSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -698,7 +722,9 @@ class SANEScannerSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -723,7 +749,9 @@ class SANEScannerSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_SOURCE_SANE_SCANNER_FILE_CHECKSUM
@@ -786,7 +814,9 @@ class SANEScannerSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label, 'test-label'
         )
@@ -852,7 +882,9 @@ class SANEScannerSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().language, 'deu'
         )

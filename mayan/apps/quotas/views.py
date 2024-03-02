@@ -24,7 +24,7 @@ from .permissions import (
 
 class QuotaBackendSelectionView(FormView):
     extra_context = {
-        'title': _('New quota backend selection'),
+        'title': _('New quota backend selection')
     }
     form_class = QuotaBackendSelectionForm
     view_icon = icon_quota_backend_selection

@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                     'backend_data', models.TextField(
                         blank=True, verbose_name='Backend data'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Credential',

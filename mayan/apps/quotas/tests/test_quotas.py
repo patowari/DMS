@@ -326,7 +326,9 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(events[3].action_object, self._test_documents[0])
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, self._test_document_version_list[0])
+        self.assertEqual(
+            events[3].target, self._test_document_version_list[0]
+        )
         self.assertEqual(events[3].verb, event_document_version_created.id)
 
         self.assertEqual(
@@ -488,7 +490,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document()
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )
@@ -520,7 +524,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document()
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )
@@ -552,7 +558,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document(user=self._test_case_user)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )
@@ -587,7 +595,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document(user=self._test_case_user)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )

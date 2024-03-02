@@ -1,5 +1,4 @@
 import os
-
 import platform
 
 from django.conf import settings

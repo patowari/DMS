@@ -21,7 +21,7 @@ class DocumentTypeRetentionPoliciesEditView(SingleObjectEditView):
     fieldsets = (
         (
             _('Trashing'), {
-                'fields': ('trash_time_unit', 'trash_time_period'),
+                'fields': ('trash_time_unit', 'trash_time_period')
             }
         ), (
             _('Deletion'), {

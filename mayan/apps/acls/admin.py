@@ -12,5 +12,5 @@ class AccessControlListAdmin(admin.ModelAdmin):
     related_lookup_fields = {
         'generic': (
             ('content_type', 'object_id'),
-        ),
+        )
     }

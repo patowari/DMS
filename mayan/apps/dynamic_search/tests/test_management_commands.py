@@ -32,7 +32,9 @@ class SearchReindexManagementCommandTestCaseMixin(
                 'char': self._test_objects[0].char
             }
         )
-        self.assertTrue(self._test_objects[0] not in queryset)
+        self.assertTrue(
+            self._test_objects[0] not in queryset
+        )
 
         self._call_test_management_command()
 

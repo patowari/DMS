@@ -291,7 +291,7 @@ class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):
                 'label': _('Document types'),
                 'lookup_url_kwarg': 'document_type_id',
                 'view_name': 'rest_api:documenttype-detail'
-            },
+            }
         }
         fields = (
             'document_types_add_url', 'document_types_url',

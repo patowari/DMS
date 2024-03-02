@@ -68,7 +68,7 @@ class APIAssetImageView(APIImageViewMixin, generics.RetrieveAPIView):
     """
     lookup_url_kwarg = 'asset_id'
     mayan_object_permissions = {
-        'GET': (permission_asset_view,),
+        'GET': (permission_asset_view,)
     }
     source_queryset = Asset.objects.all()
 

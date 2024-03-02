@@ -29,8 +29,8 @@ from .settings import setting_paginate_by
 from .view_mixins import (
     ExtraDataDeleteViewMixin, DownloadViewMixin,
     DynamicFieldSetFormViewMixin, ExternalObjectViewMixin,
-    ExtraContextViewMixin, FormExtraKwargsViewMixin,
-    ListModeViewMixin, ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
+    ExtraContextViewMixin, FormExtraKwargsViewMixin, ListModeViewMixin,
+    ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
     ObjectActionViewMixin, ObjectNameViewMixin, RedirectionViewMixin,
     RestrictedQuerysetViewMixin, SortingViewMixin, ViewIconMixin,
     ViewPermissionCheckViewMixin
@@ -147,7 +147,12 @@ class MultiFormView(DjangoFormView):
         return self.prefixes.get(form_name, self.prefix)
 
     def post(self, request, *args, **kwargs):
-        if all([form.is_valid() for form in self.forms.values()]):
+        form_list = self.forms.values()
+        form_list_valid = [
+            form.is_valid() for form in form_list
+        ]
+
+        if all(form_list_valid):
             return self.forms_valid(forms=self.forms)
         else:
             return self.forms_invalid(forms=self.forms)

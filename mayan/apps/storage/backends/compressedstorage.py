@@ -61,13 +61,15 @@ class ZipCompressedPassthroughStorage(PassthroughStorage):
             next_kwargs['mode'] = mode
 
             if issubclass(self.next_storage_class, PassthroughStorage):
-                next_kwargs.update({'_direct': _direct})
+                next_kwargs.update(
+                    {'_direct': _direct}
+                )
 
             return self._call_backend_method(
                 method_name='open', kwargs=next_kwargs
             )
         else:
-            # Next storage mode is always 'rb+' when reading the zip file
+            # Next storage mode is always 'rb+' when reading the zip file.
             next_kwargs['mode'] = 'rb+'
 
             storage_file = self._call_backend_method(
@@ -85,7 +87,9 @@ class ZipCompressedPassthroughStorage(PassthroughStorage):
             next_kwargs['content'] = content
 
             if issubclass(self.next_storage_class, PassthroughStorage):
-                next_kwargs.update({'_direct': _direct})
+                next_kwargs.update(
+                    {'_direct': _direct}
+                )
 
             return self._call_backend_method(
                 method_name='save', kwargs=next_kwargs
@@ -105,7 +109,7 @@ class ZipCompressedPassthroughStorage(PassthroughStorage):
                     'name': name, 'mode': 'wb'
                 }
             ) as file_object:
-                # From Python: ZipFile requires mode 'r', 'w', 'x', or 'a'
+                # From Python: ZipFile requires mode 'r', 'w', 'x', or 'a'.
                 with zipfile.ZipFile(file=file_object, mode='w', compression=COMPRESSION) as zip_file_object:
                     zip_file_object.writestr(
                         zinfo_or_arcname=ZIP_MEMBER_FILENAME,

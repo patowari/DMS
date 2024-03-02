@@ -2,8 +2,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from mayan.apps.backends.model_mixins import BackendModelMixin
-from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
+from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
 

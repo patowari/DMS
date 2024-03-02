@@ -549,7 +549,9 @@ class SignatureCaptureAPIViewTestCase(
 
         response = self._request_test_signature_capture_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

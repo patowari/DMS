@@ -1,5 +1,5 @@
-import logging
 import json
+import logging
 
 import requests
 
@@ -38,7 +38,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
-            },
+            }
         }, 'document_description': {
             'label': _('Document description'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -185,7 +185,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': True
-            },
+            }
         }, 'method': {
             'label': _('Method'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -225,7 +225,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
-            },
+            }
         }, 'password': {
             'label': _('Password'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -247,7 +247,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
-            },
+            }
         }, 'headers': {
             'label': _('Headers'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',

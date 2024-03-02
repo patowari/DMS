@@ -151,7 +151,7 @@ class APICabinetDocumentListView(
         'GET': (permission_cabinet_view,)
     }
     mayan_object_permissions = {
-        'GET': (permission_document_view,),
+        'GET': (permission_document_view,)
     }
     serializer_class = DocumentSerializer
 

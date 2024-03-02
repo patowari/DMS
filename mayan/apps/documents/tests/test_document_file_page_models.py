@@ -1,7 +1,7 @@
-from .base import GenericDocumentTestCase
-
 from ..events import event_document_version_page_deleted
 from ..models.document_version_page_models import DocumentVersionPage
+
+from .base import GenericDocumentTestCase
 
 
 class DocumentFilePageTestCase(GenericDocumentTestCase):

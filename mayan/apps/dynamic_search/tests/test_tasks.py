@@ -47,7 +47,9 @@ class SearchTaskTestCase(SearchTaskTestMixin, SearchTestMixin, BaseTestCase):
         queryset = self._do_search(
             search_terms=self._test_objects[0].test_field
         )
-        self.assertFalse(self._test_objects[0] in queryset)
+        self.assertFalse(
+            self._test_objects[0] in queryset
+        )
 
         self._execute_task_index_instances()
 
@@ -61,7 +63,9 @@ class SearchTaskTestCase(SearchTaskTestMixin, SearchTestMixin, BaseTestCase):
         queryset = self._do_search(
             search_terms=self._test_objects[0].test_field
         )
-        self.assertFalse(self._test_objects[0] in queryset)
+        self.assertFalse(
+            self._test_objects[0] in queryset
+        )
 
         self._execute_task_reindex_backend()
 

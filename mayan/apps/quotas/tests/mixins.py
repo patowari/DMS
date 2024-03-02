@@ -1,8 +1,8 @@
 import json
 
 from mayan.apps.documents.tests.base import DocumentTestMixin
-from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
 from mayan.apps.source_web_forms.tests.mixins import WebFormSourceTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import Quota

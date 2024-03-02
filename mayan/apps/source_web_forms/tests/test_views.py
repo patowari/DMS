@@ -1,11 +1,11 @@
+from mayan.apps.documents.document_file_actions import (
+    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
+    DocumentFileActionUseNewPages
+)
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
     event_document_version_page_created
-)
-from mayan.apps.documents.document_file_actions import (
-    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
-    DocumentFileActionUseNewPages
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import (
@@ -49,7 +49,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -83,7 +85,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -116,7 +120,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -153,7 +159,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -222,7 +230,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         response = self._request_test_source_document_file_upload_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -265,7 +275,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
 
         self._test_document.refresh_from_db()
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -339,7 +351,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -419,7 +433,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -473,7 +489,9 @@ class WebFormSourceBackendActionDocumentFileUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -537,7 +555,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -557,7 +577,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -576,7 +598,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -599,7 +623,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         response = self._request_test_source_document_upload_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -664,7 +690,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertTrue(
             'first document.pdf' in Document.objects.values_list(
@@ -780,7 +808,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -825,7 +855,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertTrue(
             'first document.pdf' in Document.objects.values_list(
@@ -940,7 +972,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
@@ -982,7 +1016,9 @@ class WebFormSourceBackendActionDocumentUploadViewTestCase(
         )
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM

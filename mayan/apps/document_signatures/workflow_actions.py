@@ -31,8 +31,8 @@ class DocumentSignatureDetachedAction(WorkflowAction):
                     'The passphrase to unlock the key and allow it to be '
                     'used to sign the document file.'
                 ), 'required': False
-            },
-        },
+            }
+        }
     }
     label = _('Sign document (detached)')
 

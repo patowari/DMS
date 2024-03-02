@@ -23,9 +23,7 @@ from mayan.apps.views.generics import (
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..exceptions import SourceActionException
-from ..forms import (
-    SourceBackendSelectionForm, SourceBackendSetupDynamicForm
-)
+from ..forms import SourceBackendSelectionForm, SourceBackendSetupDynamicForm
 from ..icons import (
     icon_source_action, icon_source_backend_selection, icon_source_create,
     icon_source_delete, icon_source_edit, icon_source_list, icon_source_test
@@ -178,7 +176,7 @@ class SourceActionView(
 
 class SourceBackendSelectionView(FormView):
     extra_context = {
-        'title': _('New source backend selection'),
+        'title': _('New source backend selection')
     }
     form_class = SourceBackendSelectionForm
     view_icon = icon_source_backend_selection

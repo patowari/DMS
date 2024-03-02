@@ -49,7 +49,7 @@ class SourceBackendMixinEmail(
                     'kwargs': {
                         'min_value': 0
                     },
-                    'label': _('Port'),
+                    'label': _('Port')
                 },
                 'store_body': {
                     'class': 'django.forms.BooleanField',

@@ -28,7 +28,9 @@ from .permissions import (
 
 
 class ThemeCreateView(SingleObjectCreateView):
-    extra_context = {'title': _('Create new theme')}
+    extra_context = {
+        'title': _('Create new theme')
+    }
     form_class = ThemeForm
     post_action_redirect = reverse_lazy(
         viewname='appearance:theme_list'

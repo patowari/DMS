@@ -9,7 +9,6 @@ from .views import (
     StoredCredentialListView
 )
 
-
 urlpatterns = [
     url(
         regex=r'^credentials/backend/selection/$',

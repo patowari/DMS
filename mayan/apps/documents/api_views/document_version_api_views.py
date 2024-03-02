@@ -87,7 +87,7 @@ class APIDocumentVersionModificationView(
     action_response_status = status.HTTP_202_ACCEPTED
     lookup_url_kwarg = 'document_version_id'
     mayan_object_permissions = {
-        'POST': (permission_document_version_edit,),
+        'POST': (permission_document_version_edit,)
     }
     serializer_class = DocumentVersionModificationExecuteSerializer
 

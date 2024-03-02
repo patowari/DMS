@@ -61,7 +61,9 @@ class SettingNamespace(AppsModuleLoaderMixin):
 
     @classmethod
     def get_namespace_config(cls, name):
-        return cls.get_namespaces_config().get(name, {})
+        return cls.get_namespaces_config().get(
+            name, {}
+        )
 
     @classmethod
     def get_namespaces_config(cls):

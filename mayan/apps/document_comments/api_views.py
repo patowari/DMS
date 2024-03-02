@@ -49,7 +49,7 @@ class APICommentView(
         'DELETE': (permission_document_comment_delete,),
         'GET': (permission_document_comment_view,),
         'PATCH': (permission_document_comment_edit,),
-        'PUT': (permission_document_comment_edit,),
+        'PUT': (permission_document_comment_edit,)
     }
     lookup_url_kwarg = 'comment_id'
     serializer_class = CommentSerializer

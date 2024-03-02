@@ -21,7 +21,7 @@ class APIDownloadFileDetailView(
     lookup_url_kwarg = 'download_file_id'
     mayan_object_permissions = {
         'DELETE': (permission_download_file_delete,),
-        'GET': (permission_download_file_view,),
+        'GET': (permission_download_file_view,)
     }
     serializer_class = DownloadFileSerializer
     source_queryset = DownloadFile.objects.all()
@@ -41,7 +41,7 @@ class APIDownloadFileDownloadView(
     """
     lookup_url_kwarg = 'download_file_id'
     mayan_object_permissions = {
-        'GET': (permission_download_file_download,),
+        'GET': (permission_download_file_download,)
     }
     model = DownloadFile
 

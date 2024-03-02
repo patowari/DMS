@@ -71,7 +71,7 @@ class APIDocumentFileDetailView(
         'DELETE': (permission_document_file_delete,),
         'GET': (permission_document_file_view,),
         'PATCH': (permission_document_file_edit,),
-        'PUT': (permission_document_file_edit,),
+        'PUT': (permission_document_file_edit,)
     }
     serializer_class = DocumentFileSerializer
 
@@ -106,7 +106,7 @@ class APIDocumentFilePageDetailView(
     lookup_url_kwarg = 'document_file_page_id'
     serializer_class = DocumentFilePageSerializer
     mayan_object_permissions = {
-        'GET': (permission_document_file_view,),
+        'GET': (permission_document_file_view,)
     }
 
     def get_source_queryset(self):
@@ -122,7 +122,7 @@ class APIDocumentFilePageImageView(
     """
     lookup_url_kwarg = 'document_file_page_id'
     mayan_object_permissions = {
-        'GET': (permission_document_file_view,),
+        'GET': (permission_document_file_view,)
     }
 
     def get_source_queryset(self):

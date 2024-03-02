@@ -139,7 +139,9 @@ class WatchFolderSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         self.assertEqual(
             len(
@@ -172,7 +174,9 @@ class WatchFolderSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         self.assertEqual(
             len(

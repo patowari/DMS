@@ -67,7 +67,7 @@ SIGNATURE_STATE_VALID = 'signature valid'
 
 SIGNATURE_STATES = {
     SIGNATURE_STATE_BAD: {
-        'text': _('Bad signature.'),
+        'text': _('Bad signature.')
     },
     SIGNATURE_STATE_NONE: {
         'text': _('Document not signed or invalid signature.')

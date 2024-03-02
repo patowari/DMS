@@ -9,7 +9,7 @@ class TestQuota(QuotaBackend):
         'test_limit': {
             'label': 'test limit',
             'class': 'django.forms.IntegerField',
-        },
+        }
     }
     label = 'Test quota'
 
@@ -51,7 +51,7 @@ class TestQuotaWithMixins(
         'test_limit': {
             'label': 'test limit',
             'class': 'django.forms.IntegerField',
-        },
+        }
     }
     label = 'Test quota'
 

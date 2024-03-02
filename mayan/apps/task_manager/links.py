@@ -7,7 +7,6 @@ from .icons import (
 )
 from .permissions import permission_task_view
 
-
 link_queue_task_type_list = Link(
     icon=icon_queue_task_type_list, kwargs={
         'queue_name': 'resolved_object.name'

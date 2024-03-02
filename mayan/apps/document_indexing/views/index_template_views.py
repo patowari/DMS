@@ -413,7 +413,7 @@ class IndexTemplateRebuildView(ConfirmView):
 
 class IndexTemplateAllRebuildView(FormView):
     extra_context = {
-        'title': _('Rebuild index templates'),
+        'title': _('Rebuild index templates')
     }
     form_class = IndexTemplateFilteredForm
     view_icon = icon_index_instances_rebuild
@@ -451,7 +451,7 @@ class IndexTemplateAllRebuildView(FormView):
 
 class IndexTemplateResetView(FormView):
     extra_context = {
-        'title': _('Reset indexes'),
+        'title': _('Reset indexes')
     }
     form_class = IndexTemplateFilteredForm
     view_icon = icon_index_instances_reset

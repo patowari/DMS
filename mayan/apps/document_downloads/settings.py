@@ -5,7 +5,7 @@ from mayan.apps.smart_settings.classes import SettingNamespace
 from .classes import DocumentFileCompressor
 from .literals import (
     DEFAULT_DOCUMENT_FILE_DOWNLOAD_MESSAGE_BODY,
-    DEFAULT_DOCUMENT_FILE_DOWNLOAD_MESSAGE_SUBJECT,
+    DEFAULT_DOCUMENT_FILE_DOWNLOAD_MESSAGE_SUBJECT
 )
 
 namespace = SettingNamespace(

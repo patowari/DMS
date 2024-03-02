@@ -355,7 +355,7 @@ class AllDocumentSignatureRefreshView(ConfirmView):
         'message': _(
             'On large databases this operation may take some time '
             'to execute.'
-        ), 'title': _('Refresh all signatures information?'),
+        ), 'title': _('Refresh all signatures information?')
     }
     view_icon = icon_document_file_all_signature_refresh
     view_permission = permission_document_file_signature_verify
@@ -376,7 +376,7 @@ class AllDocumentSignatureVerifyView(ConfirmView):
         'message': _(
             'On large databases this operation may take some time to '
             'execute.'
-        ), 'title': _('Verify all document for signatures?'),
+        ), 'title': _('Verify all document for signatures?')
     }
     view_icon = icon_document_file_all_signature_verify
     view_permission = permission_document_file_signature_verify

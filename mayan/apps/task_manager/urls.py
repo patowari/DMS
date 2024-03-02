@@ -1,8 +1,6 @@
 from django.conf.urls import url
 
-from .views import (
-    QueueTaskTypeListView, WorkerListView, WorkerQueueListView
-)
+from .views import QueueTaskTypeListView, WorkerListView, WorkerQueueListView
 
 urlpatterns = [
     url(

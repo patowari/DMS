@@ -75,7 +75,9 @@ def code_duplicated_document_old_copy(apps, schema_editor):
                 )
             )
             cursor_tertiary.execute(
-                duplicated_document_select_query, (row[0],)
+                duplicated_document_select_query, (
+                    row[0],
+                )
             )
             new_instance_pk = cursor_tertiary.fetchone()[0]
 

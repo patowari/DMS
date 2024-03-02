@@ -3,14 +3,14 @@ import logging
 from django.apps import apps
 from django.core.files import File
 
-from mayan.apps.storage.compressed_files import Archive
-from mayan.apps.storage.exceptions import NoMIMETypeMatch
-from mayan.apps.storage.tasks import task_shared_upload_delete
 from mayan.apps.sources.source_backend_actions.interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestViewForm,
     SourceBackendActionInterfaceTask
 )
+from mayan.apps.storage.compressed_files import Archive
+from mayan.apps.storage.exceptions import NoMIMETypeMatch
+from mayan.apps.storage.tasks import task_shared_upload_delete
 
 from .arguments import argument_expand
 from .literals import (
