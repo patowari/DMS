@@ -7,11 +7,10 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..search_backends import SearchBackend
 from ..search_models import SearchModel
 
-from .mixins.base import SearchTestMixin
 from .mixins.task_mixins import SearchTaskTestMixin
 
 
-class SearchTaskTestCase(SearchTaskTestMixin, SearchTestMixin, BaseTestCase):
+class SearchTaskTestCase(SearchTaskTestMixin, BaseTestCase):
     auto_create_test_object_model = True
     auto_create_test_object_fields = {
         'test_field': models.CharField(max_length=8)

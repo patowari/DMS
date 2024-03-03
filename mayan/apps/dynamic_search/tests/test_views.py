@@ -16,13 +16,88 @@ from ..literals import (
 from ..permissions import permission_search_tools
 
 from .literals import TEST_SEARCH_OBJECT_TERM
-from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
+from .mixins.base import TestSearchObjectSimpleTestMixin
 from .mixins.view_mixins import SearchToolsViewTestMixin, SearchViewTestMixin
+
+
+class FilterViewMixinTestCase(
+    DocumentViewTestMixin, SearchViewTestMixin,
+    TestSearchObjectSimpleTestMixin, GenericViewTestCase
+):
+    auto_test_search_objects_create = False
+    auto_upload_test_document = False
+
+    def test_document_list_filter_view_with_access(self):
+        self._create_test_document_stubs(count=4)
+
+        for test_document in self._test_documents:
+            self.grant_access(
+                obj=test_document, permission=permission_document_view
+            )
+
+        self._clear_events()
+
+        response = self._request_test_document_list_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_document.label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+        self._clear_events()
+
+        response = self._request_test_document_list_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_documents[0].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_documents[1].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_documents[2].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_documents[3].label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+        self._clear_events()
+
+        response = self._request_test_document_list_view(
+            data={'filter_q': '*stub_3'}
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_documents[0].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_documents[1].label
+        )
+        self.assertNotContains(
+            response=response, status_code=200,
+            text=self._test_documents[2].label
+        )
+        self.assertContains(
+            response=response, status_code=200,
+            text=self._test_documents[3].label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class SearchAdvancedViewTestCase(
     DocumentTestMixin, SearchViewTestMixin, TestSearchObjectSimpleTestMixin,
-    SearchTestMixin, GenericViewTestCase
+    GenericViewTestCase
 ):
     auto_test_search_objects_create = False
     auto_upload_test_document = False
@@ -101,84 +176,9 @@ class SearchAdvancedViewTestCase(
             self.assertEqual(events.count(), 0)
 
 
-class FilterViewMixinTestCase(
-    DocumentTestMixin, DocumentViewTestMixin, SearchTestMixin,
-    SearchViewTestMixin, TestSearchObjectSimpleTestMixin, GenericViewTestCase
-):
-    auto_test_search_objects_create = False
-    auto_upload_test_document = False
-
-    def test_document_list_filter_view_with_access(self):
-        self._create_test_document_stubs(count=4)
-
-        for test_document in self._test_documents:
-            self.grant_access(
-                obj=test_document, permission=permission_document_view
-            )
-
-        self._clear_events()
-
-        response = self._request_test_document_list_view()
-        self.assertContains(
-            response=response, status_code=200,
-            text=self._test_document.label
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-        self._clear_events()
-
-        response = self._request_test_document_list_view()
-        self.assertContains(
-            response=response, status_code=200,
-            text=self._test_documents[0].label
-        )
-        self.assertContains(
-            response=response, status_code=200,
-            text=self._test_documents[1].label
-        )
-        self.assertContains(
-            response=response, status_code=200,
-            text=self._test_documents[2].label
-        )
-        self.assertContains(
-            response=response, status_code=200,
-            text=self._test_documents[3].label
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-        self._clear_events()
-
-        response = self._request_test_document_list_view(
-            data={'filter_q': '*stub_3'}
-        )
-        self.assertNotContains(
-            response=response, status_code=200,
-            text=self._test_documents[0].label
-        )
-        self.assertNotContains(
-            response=response, status_code=200,
-            text=self._test_documents[1].label
-        )
-        self.assertNotContains(
-            response=response, status_code=200,
-            text=self._test_documents[2].label
-        )
-        self.assertContains(
-            response=response, status_code=200,
-            text=self._test_documents[3].label
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-
 class SearchFilterViewTestCase(
-    DocumentTestMixin, SearchTestMixin, SearchViewTestMixin,
-    TestSearchObjectSimpleTestMixin, GenericViewTestCase
+    DocumentTestMixin, SearchViewTestMixin, TestSearchObjectSimpleTestMixin,
+    GenericViewTestCase
 ):
     auto_test_search_objects_create = False
     auto_upload_test_document = False
@@ -252,8 +252,7 @@ class SearchFilterViewTestCase(
 
 
 class SearchViewTestCase(
-    SearchViewTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    GenericViewTestCase
+    SearchViewTestMixin, TestSearchObjectSimpleTestMixin, GenericViewTestCase
 ):
     auto_test_search_objects_create = False
 
@@ -346,8 +345,7 @@ class SearchViewTestCase(
 
 
 class SearchResultViewTestCase(
-    SearchViewTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    GenericViewTestCase
+    SearchViewTestMixin, TestSearchObjectSimpleTestMixin, GenericViewTestCase
 ):
     def test_result_view_any_field_no_value(self):
         self._clear_events()
@@ -429,7 +427,7 @@ class SearchResultViewTestCase(
 
 class SearchToolsViewTestCase(
     SearchToolsViewTestMixin, TestSearchObjectSimpleTestMixin,
-    SearchTestMixin, GenericViewTestCase
+    GenericViewTestCase
 ):
     @skip(reason='Test with a backend that supports reindexing.')
     def test_search_backend_reindex_view_no_permission(self):
@@ -449,7 +447,9 @@ class SearchToolsViewTestCase(
             },
             user=self._test_case_user
         )
-        self.assertEqual(queryset.count(), 0)
+        self.assertEqual(
+            queryset.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -477,4 +477,6 @@ class SearchToolsViewTestCase(
             },
             user=self._test_case_user
         )
-        self.assertNotEqual(queryset.count(), 0)
+        self.assertNotEqual(
+            queryset.count(), 0
+        )

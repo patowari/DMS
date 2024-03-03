@@ -48,8 +48,7 @@ class DjangoSearchBackendFieldTypeQueryTypeTestCase(
 
 @skip(reason='Skip until a Mock ElasticSearch server class is added.')
 class ElasticSearchBackendIndexingTestCase(
-    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    BaseTestCase
+    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, BaseTestCase
 ):
     _test_search_backend_path = 'mayan.apps.dynamic_search.backends.elasticsearch.ElasticSearchBackend'
 
@@ -92,8 +91,7 @@ class WhooshSearchBackendFieldTypeQueryTypeTestCase(
 
 
 class WhooshSearchBackendSpecificTestCase(
-    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    BaseTestCase
+    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, BaseTestCase
 ):
     _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
 

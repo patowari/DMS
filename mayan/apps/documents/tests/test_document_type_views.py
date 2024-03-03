@@ -141,8 +141,7 @@ class DocumentTypeViewTestCase(
 
 
 class DocumentTypeQuickLabelViewTestCase(
-    DocumentTypeQuickLabelTestMixin, DocumentTypeQuickLabelViewTestMixin,
-    GenericDocumentViewTestCase
+    DocumentTypeQuickLabelViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

@@ -1,6 +1,5 @@
-from django.db.models import Q
-
 from mayan.apps.events.classes import EventType
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..literals import RELATIONSHIP_NO, RELATIONSHIP_YES
 from ..models.index_instance_models import IndexInstance
@@ -163,8 +162,10 @@ class IndexTemplateNodeViewTestMixin:
         )
 
 
-class IndexTemplateTestMixin:
+class IndexTemplateTestMixin(TestMixinObjectCreationTrack):
     _test_index_template_node_expression = None
+    _test_object_model = IndexTemplate
+    _test_object_name = '_test_index_template'
     auto_add_test_index_template_to_test_document_type = True
     auto_create_test_index_template = True
     auto_create_test_index_template_node = True
@@ -251,11 +252,9 @@ class IndexTemplateActionAPIViewTestMixin:
         )
 
 
-class IndexTemplateAPIViewTestMixin:
+class IndexTemplateAPIViewTestMixin(IndexTemplateTestMixin):
     def _request_test_index_template_create_api_view(self):
-        pk_list = list(
-            IndexTemplate.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:indextemplate-list', data={
@@ -264,12 +263,7 @@ class IndexTemplateAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_index_template = IndexTemplate.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except IndexTemplate.DoesNotExist:
-            self._test_index_template = None
+        self._test_object_set()
 
         return response
 
@@ -469,9 +463,7 @@ class IndexToolsViewTestMixin:
 
 class IndexTemplateViewTestMixin:
     def _request_test_index_template_create_view(self):
-        pk_list = list(
-            IndexTemplate.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='indexing:index_template_create', data={
@@ -480,12 +472,7 @@ class IndexTemplateViewTestMixin:
             }
         )
 
-        try:
-            self._test_index_template = IndexTemplate.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except IndexTemplate.DoesNotExist:
-            self._test_index_template = None
+        self._test_object_set()
 
         return response
 

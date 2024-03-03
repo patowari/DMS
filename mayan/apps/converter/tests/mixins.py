@@ -2,7 +2,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.files import File
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.permissions.tests.mixins import PermissionTestMixin
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..classes import Layer
@@ -146,7 +145,7 @@ class LayerTestCaseMixin:
         Layer.invalidate_cache()
 
 
-class LayerTestMixin(PermissionTestMixin):
+class LayerTestMixin:
     _test_transformation_object = None
     _test_transformation_object_parent = None
     auto_create_test_layer = True

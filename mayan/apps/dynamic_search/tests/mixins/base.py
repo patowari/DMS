@@ -13,7 +13,75 @@ from ..literals import (
 )
 
 
-class TestSearchObjectHierarchyTestMixin:
+class SearchTestMixin:
+    auto_test_search_backend_initialize = True
+    auto_test_search_objects_create = False
+
+    def _deindex_instance(self, instance):
+        self._test_search_backend.deindex_instance(instance=instance)
+
+    def _do_test_search(self, query):
+        terms = str(
+            tuple(
+                query.values()
+            )[0]
+        ).strip()
+
+        self.assertTrue(terms is not None)
+        self.assertTrue(terms != '')
+
+        return self._test_search_backend.search(
+            search_model=self._test_search_model, query=query,
+            user=self._test_case_user
+        )
+
+    def _index_instance(self, instance):
+        self._test_search_backend.index_instance(instance=instance)
+
+    def _setup_test_model_search(self):
+        """
+        This method allows tests to add model search configurations and
+        not have to import and initialize the SearchBackend.
+        """
+
+    def setUp(self):
+        self._existing_search_models = SearchModel._registry.copy()
+        super().setUp()
+
+        self._default_query_type_class = QueryType.get_default()
+        QueryType.set_default(klass=QueryTypeExact)
+
+        TestSearchBackendProxy._test_class = self.__class__
+        self._test_search_backend = SearchBackend.get_instance()
+
+        # Monkeypatch the search class so that the test behavior is only
+        # enabled when called from a search test.
+        self._setup_test_model_search()
+
+        SearchBackend._enable()
+
+        if self.auto_test_search_backend_initialize:
+            self._test_search_backend._initialize()
+
+        if self.auto_test_search_objects_create:
+            self._create_test_search_objects()
+
+        self._silence_logger(
+            name='mayan.apps.dynamic_search.search_query_types'
+        )
+
+    def tearDown(self):
+        self._test_search_backend.tear_down()
+        self._test_search_backend.test_mode_stop()
+
+        SearchBackend._disable()
+
+        super().tearDown()
+        QueryType.set_default(klass=self._default_query_type_class)
+        SearchModel._registry = self._existing_search_models
+
+
+class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
     auto_test_search_objects_create = True
 
     def _create_test_models(self):
@@ -141,9 +209,9 @@ class TestSearchObjectHierarchyTestMixin:
         self._test_search_model = self._test_search_attribute
 
 
-class TestSearchObjectSimpleTestMixin:
-    auto_test_search_objects_create = True
+class TestSearchObjectSimpleTestMixin(SearchTestMixin):
     _test_object_integer_set = True
+    auto_test_search_objects_create = True
 
     def _create_test_models(self):
         self.TestModel = self._create_test_model(
@@ -195,71 +263,3 @@ class TestSearchObjectSimpleTestMixin:
         self._test_search_model.add_model_field(field='positiveinteger')
         self._test_search_model.add_model_field(field='text')
         self._test_search_model.add_model_field(field='uuid')
-
-
-class SearchTestMixin:
-    auto_test_search_backend_initialize = True
-    auto_test_search_objects_create = False
-
-    def _deindex_instance(self, instance):
-        self._test_search_backend.deindex_instance(instance=instance)
-
-    def _do_test_search(self, query):
-        terms = str(
-            tuple(
-                query.values()
-            )[0]
-        ).strip()
-
-        self.assertTrue(terms is not None)
-        self.assertTrue(terms != '')
-
-        return self._test_search_backend.search(
-            search_model=self._test_search_model, query=query,
-            user=self._test_case_user
-        )
-
-    def _index_instance(self, instance):
-        self._test_search_backend.index_instance(instance=instance)
-
-    def _setup_test_model_search(self):
-        """
-        This method allows tests to add model search configurations and
-        not have to import and initialize the SearchBackend.
-        """
-
-    def setUp(self):
-        self._existing_search_models = SearchModel._registry.copy()
-        super().setUp()
-
-        self._default_query_type_class = QueryType.get_default()
-        QueryType.set_default(klass=QueryTypeExact)
-
-        TestSearchBackendProxy._test_class = self.__class__
-        self._test_search_backend = SearchBackend.get_instance()
-
-        # Monkeypatch the search class so that the test behavior is only
-        # enabled when called from a search test.
-        self._setup_test_model_search()
-
-        SearchBackend._enable()
-
-        if self.auto_test_search_backend_initialize:
-            self._test_search_backend._initialize()
-
-        if self.auto_test_search_objects_create:
-            self._create_test_search_objects()
-
-        self._silence_logger(
-            name='mayan.apps.dynamic_search.search_query_types'
-        )
-
-    def tearDown(self):
-        self._test_search_backend.tear_down()
-        self._test_search_backend.test_mode_stop()
-
-        SearchBackend._disable()
-
-        super().tearDown()
-        QueryType.set_default(klass=self._default_query_type_class)
-        SearchModel._registry = self._existing_search_models

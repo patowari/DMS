@@ -26,8 +26,7 @@ from .mixins import (
 
 
 class IndexTemplateAPIViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateAPIViewTestMixin,
-    GenericDocumentAPIViewTestCase
+    IndexTemplateAPIViewTestMixin, GenericDocumentAPIViewTestCase
 ):
     auto_create_test_index_template = False
     auto_upload_test_document = False

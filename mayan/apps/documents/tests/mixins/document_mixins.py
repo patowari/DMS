@@ -1,7 +1,6 @@
 import os
 
 from django.conf import settings
-from django.db.models import Q
 
 from mayan.apps.converter.classes import Layer
 
@@ -17,83 +16,6 @@ from ..literals import (
 from .document_type_mixins import DocumentTypeTestMixin
 
 
-class DocumentAPIViewTestMixin:
-    def _request_test_document_change_type_api_view(self):
-        return self.post(
-            viewname='rest_api:document-change-type', kwargs={
-                'document_id': self._test_document.pk
-            }, data={
-                'document_type_id': self._test_document_types[1].pk
-            }
-        )
-
-    def _request_test_document_create_api_view(self):
-        pk_list = list(
-            Document.objects.values_list('pk', flat=True)
-        )
-
-        response = self.post(
-            viewname='rest_api:document-list', data={
-                'document_type_id': self._test_document_type.pk
-            }
-        )
-
-        try:
-            self._test_document = Document.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Document.DoesNotExist:
-            self._test_document = None
-
-        return response
-
-    def _request_test_document_detail_api_view(self):
-        return self.get(
-            viewname='rest_api:document-detail', kwargs={
-                'document_id': self._test_document.pk
-            }
-        )
-
-    def _request_test_document_edit_via_patch_api_view(self):
-        return self.patch(
-            viewname='rest_api:document-detail', kwargs={
-                'document_id': self._test_document.pk
-            }, data={'description': TEST_DOCUMENT_DESCRIPTION_EDITED}
-        )
-
-    def _request_test_document_edit_via_put_api_view(self):
-        return self.put(
-            viewname='rest_api:document-detail', kwargs={
-                'document_id': self._test_document.pk
-            }, data={'description': TEST_DOCUMENT_DESCRIPTION_EDITED}
-        )
-
-    def _request_test_document_list_api_view(self):
-        return self.get(viewname='rest_api:document-list')
-
-    def _request_test_document_upload_api_view(self):
-        pk_list = list(
-            Document.objects.values_list('pk', flat=True)
-        )
-
-        with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
-            response = self.post(
-                viewname='rest_api:document-upload', data={
-                    'document_type_id': self._test_document_type.pk,
-                    'file': file_object
-                }
-            )
-
-        try:
-            self._test_document = Document.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Document.DoesNotExist:
-            self._test_document = None
-
-        return response
-
-
 class DocumentTestMixin(DocumentTypeTestMixin):
     _test_document_count = 1
     _test_document_file_filename = TEST_FILE_SMALL_FILENAME
@@ -101,6 +23,8 @@ class DocumentTestMixin(DocumentTypeTestMixin):
     _test_document_filename = TEST_FILE_SMALL_FILENAME
     _test_document_language = None
     _test_document_path = None
+    _test_object_model = Document
+    _test_object_name = '_test_document'
     auto_create_test_document_stub = False
     auto_upload_test_document = True
 
@@ -228,7 +152,70 @@ class DocumentTestMixin(DocumentTypeTestMixin):
             self._test_document_version.save()
 
 
-class DocumentViewTestMixin:
+class DocumentAPIViewTestMixin(DocumentTestMixin):
+    def _request_test_document_change_type_api_view(self):
+        return self.post(
+            viewname='rest_api:document-change-type', kwargs={
+                'document_id': self._test_document.pk
+            }, data={
+                'document_type_id': self._test_document_types[1].pk
+            }
+        )
+
+    def _request_test_document_create_api_view(self):
+        self._test_object_track()
+
+        response = self.post(
+            viewname='rest_api:document-list', data={
+                'document_type_id': self._test_document_type.pk
+            }
+        )
+
+        self._test_object_set()
+
+        return response
+
+    def _request_test_document_detail_api_view(self):
+        return self.get(
+            viewname='rest_api:document-detail', kwargs={
+                'document_id': self._test_document.pk
+            }
+        )
+
+    def _request_test_document_edit_via_patch_api_view(self):
+        return self.patch(
+            viewname='rest_api:document-detail', kwargs={
+                'document_id': self._test_document.pk
+            }, data={'description': TEST_DOCUMENT_DESCRIPTION_EDITED}
+        )
+
+    def _request_test_document_edit_via_put_api_view(self):
+        return self.put(
+            viewname='rest_api:document-detail', kwargs={
+                'document_id': self._test_document.pk
+            }, data={'description': TEST_DOCUMENT_DESCRIPTION_EDITED}
+        )
+
+    def _request_test_document_list_api_view(self):
+        return self.get(viewname='rest_api:document-list')
+
+    def _request_test_document_upload_api_view(self):
+        self._test_object_track()
+
+        with open(file=TEST_FILE_SMALL_PATH, mode='rb') as file_object:
+            response = self.post(
+                viewname='rest_api:document-upload', data={
+                    'document_type_id': self._test_document_type.pk,
+                    'file': file_object
+                }
+            )
+
+        self._test_object_set()
+
+        return response
+
+
+class DocumentViewTestMixin(DocumentTestMixin):
     def _request_test_document_list_view(self, data=None):
         return self.get(viewname='documents:document_list', data=data)
 

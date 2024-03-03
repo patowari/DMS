@@ -1,4 +1,4 @@
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ...classes import BaseDocumentFilenameGenerator
 from ...models.document_type_models import DocumentType, DocumentTypeFilename
@@ -10,7 +10,9 @@ from ..literals import (
 )
 
 
-class DocumentTypeTestMixin:
+class DocumentTypeTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = DocumentType
+    _test_object_name = '_test_document_type'
     auto_create_test_document_type = True
     auto_delete_test_document_type = True
 
@@ -37,7 +39,17 @@ class DocumentTypeTestMixin:
         self._test_document_types.append(self._test_document_type)
 
 
-class DocumentQuickLabelViewTestMixin:
+class DocumentTypeQuickLabelTestMixin(DocumentTypeTestMixin):
+    _test_object_model = DocumentTypeFilename
+    _test_object_name = '_test_document_type_quick_label'
+
+    def _create_test_document_type_quick_label(self):
+        self._test_document_type_quick_label = self._test_document_type.filenames.create(
+            filename=TEST_DOCUMENT_TYPE_QUICK_LABEL
+        )
+
+
+class DocumentQuickLabelViewTestMixin(DocumentTypeQuickLabelTestMixin):
     def _request_test_document_quick_label_edit_view(self, extra_data=None):
         data = {
             'document_type_available_filenames': self._test_document_type_quick_label.pk,
@@ -56,11 +68,9 @@ class DocumentQuickLabelViewTestMixin:
         )
 
 
-class DocumentTypeAPIViewTestMixin:
+class DocumentTypeAPIViewTestMixin(DocumentTypeTestMixin):
     def _request_test_document_type_create_api_view(self):
-        pk_list = list(
-            DocumentType.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:documenttype-list', data={
@@ -68,12 +78,7 @@ class DocumentTypeAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_document_type = DocumentType.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except DocumentType.DoesNotExist:
-            self._test_document_type = None
+        self._test_object_set()
 
         return response
 
@@ -109,7 +114,7 @@ class DocumentTypeAPIViewTestMixin:
         return self.get(viewname='rest_api:documenttype-list')
 
 
-class DocumentTypeFilenameGeneratorViewTestMixin:
+class DocumentTypeFilenameGeneratorViewTestMixin(DocumentTypeTestMixin):
     def _request_test_document_type_filename_generator_get_view(self):
         return self.get(
             viewname='documents:document_type_filename_generator', kwargs={
@@ -127,11 +132,9 @@ class DocumentTypeFilenameGeneratorViewTestMixin:
         )
 
 
-class DocumentTypeQuickLabelAPIViewTestMixin:
+class DocumentTypeQuickLabelAPIViewTestMixin(DocumentTypeQuickLabelTestMixin):
     def _request_test_document_type_quick_label_create_api_view(self):
-        pk_list = list(
-            DocumentTypeFilename.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:documenttype-quicklabel-list', kwargs={
@@ -141,12 +144,7 @@ class DocumentTypeQuickLabelAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_document_type_quick_label = DocumentTypeFilename.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except DocumentTypeFilename.DoesNotExist:
-            self._test_document_type_quick_label = None
+        self._test_object_set()
 
         return response
 
@@ -190,7 +188,7 @@ class DocumentTypeQuickLabelAPIViewTestMixin:
         )
 
 
-class DocumentTypeQuickLabelViewTestMixin:
+class DocumentTypeQuickLabelViewTestMixin(DocumentTypeQuickLabelTestMixin):
     def _request_test_quick_label_create_view(self):
         return self.post(
             viewname='documents:document_type_filename_create', kwargs={
@@ -224,14 +222,7 @@ class DocumentTypeQuickLabelViewTestMixin:
         )
 
 
-class DocumentTypeQuickLabelTestMixin:
-    def _create_test_document_type_quick_label(self):
-        self._test_document_type_quick_label = self._test_document_type.filenames.create(
-            filename=TEST_DOCUMENT_TYPE_QUICK_LABEL
-        )
-
-
-class DocumentTypeRetentionPoliciesViewTestMixin:
+class DocumentTypeRetentionPoliciesViewTestMixin(DocumentTypeTestMixin):
     def _request_test_document_type_retention_policies_get_view(self):
         return self.get(
             viewname='documents:document_type_retention_policies', kwargs={
@@ -257,7 +248,7 @@ class DocumentTypeRetentionPoliciesViewTestMixin:
         )
 
 
-class DocumentTypeViewTestMixin:
+class DocumentTypeViewTestMixin(DocumentTypeTestMixin):
     def _request_test_document_type_create_view(self):
         return self.post(
             viewname='documents:document_type_create',

@@ -1,5 +1,3 @@
-from django.db.models import Q
-
 from mayan.apps.events.classes import EventType
 from mayan.apps.events.tests.mixins import EventTypeTestMixin
 
@@ -11,6 +9,9 @@ from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestM
 class WorkflowTemplateTransitionTriggerTestMixin(
     EventTypeTestMixin, WorkflowTemplateTransitionTestMixin
 ):
+    _test_object_model = WorkflowTransitionTriggerEvent
+    _test_object_name = '_test_workflow_template_transition_trigger'
+
     def setUp(self):
         super().setUp()
         self._test_workflow_template_transition_triggers = []
@@ -34,11 +35,7 @@ class WorkflowTemplateTransitionTriggerAPIViewTestMixin(
             'event_type_id': self._test_event_type.id
         }
 
-        pk_list = list(
-            WorkflowTransitionTriggerEvent.objects.values_list(
-                'pk', flat=True
-            )
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:workflow-template-transition-trigger-list',
@@ -48,12 +45,7 @@ class WorkflowTemplateTransitionTriggerAPIViewTestMixin(
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_transition_trigger = WorkflowTransitionTriggerEvent.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowTransitionTriggerEvent.DoesNotExist:
-            self._test_workflow_template_transition_trigger = None
+        self._test_object_set()
 
         return response
 

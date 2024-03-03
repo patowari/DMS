@@ -7,11 +7,11 @@ from ..permissions import (
     permission_announcement_edit, permission_announcement_view
 )
 
-from .mixins import AnnouncementTestMixin, AnnouncementViewTestMixin
+from .mixins import AnnouncementViewTestMixin
 
 
 class AnnouncementViewTestCase(
-    AnnouncementTestMixin, AnnouncementViewTestMixin, GenericViewTestCase
+    AnnouncementViewTestMixin, GenericViewTestCase
 ):
     def test_announcement_create_view_no_permission(self):
         announcement_count = Announcement.objects.count()

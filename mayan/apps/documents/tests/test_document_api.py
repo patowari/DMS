@@ -19,9 +19,7 @@ from .mixins.document_mixins import (
 )
 
 
-class DocumentAPIViewTestCase(
-    DocumentAPIViewTestMixin, DocumentTestMixin, BaseAPITestCase
-):
+class DocumentAPIViewTestCase(DocumentAPIViewTestMixin, BaseAPITestCase):
     auto_upload_test_document = False
 
     def test_document_create_api_view_no_permission(self):

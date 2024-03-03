@@ -18,15 +18,13 @@ from ..permissions import (
 from .literals import (
     TEST_DOCUMENT_TYPE_LABEL, TEST_DOCUMENT_TYPE_QUICK_LABEL
 )
-from .mixins.document_mixins import DocumentTestMixin
 from .mixins.document_type_mixins import (
-    DocumentTypeAPIViewTestMixin, DocumentTypeQuickLabelAPIViewTestMixin,
-    DocumentTypeQuickLabelTestMixin
+    DocumentTypeAPIViewTestMixin, DocumentTypeQuickLabelAPIViewTestMixin
 )
 
 
 class DocumentTypeAPIViewTestCase(
-    DocumentTypeAPIViewTestMixin, DocumentTestMixin, BaseAPITestCase
+    DocumentTypeAPIViewTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
     auto_create_test_document_type = False
@@ -328,7 +326,6 @@ class DocumentTypeAPIViewTestCase(
 
 
 class DocumentTypeQuickLabelAPIViewTestCase(
-    DocumentTestMixin, DocumentTypeQuickLabelTestMixin,
     DocumentTypeQuickLabelAPIViewTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False

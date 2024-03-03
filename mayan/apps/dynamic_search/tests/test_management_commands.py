@@ -10,12 +10,12 @@ from ..literals import (
 from ..search_backends import SearchBackend
 
 from .mixins.backend_mixins import BackendSearchTestMixin
-from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
+from .mixins.base import TestSearchObjectSimpleTestMixin
 
 
 class SearchReindexManagementCommandTestCaseMixin(
     BackendSearchTestMixin, ManagementCommandTestMixin,
-    TestSearchObjectSimpleTestMixin, SearchTestMixin
+    TestSearchObjectSimpleTestMixin
 ):
     _test_management_command_name = COMMAND_NAME_SEARCH_REINDEX
 
@@ -79,7 +79,7 @@ class WhooshSearchReindexManagementCommandTestCase(
 
 class SearchIndexObjectManagementCommandTestCaseMixin(
     BackendSearchTestMixin, ManagementCommandTestMixin,
-    TestSearchObjectSimpleTestMixin, SearchTestMixin
+    TestSearchObjectSimpleTestMixin
 ):
     _test_management_command_name = COMMAND_NAME_SEARCH_INDEX_OBJECTS
 
@@ -202,8 +202,7 @@ class WhooshSearchIndexObjectManagementCommandTestCase(
 
 
 class SearchStatusManagementCommandTestCaseMixin(
-    ManagementCommandTestMixin, TestSearchObjectSimpleTestMixin,
-    SearchTestMixin
+    ManagementCommandTestMixin, TestSearchObjectSimpleTestMixin
 ):
     _test_management_command_name = COMMAND_NAME_SEARCH_STATUS
 

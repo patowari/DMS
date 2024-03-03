@@ -10,11 +10,11 @@ from ..permissions import (
 )
 
 from .literals import TEST_ANNOUNCEMENT_LABEL, TEST_ANNOUNCEMENT_TEXT
-from .mixins import AnnouncementAPIViewTestMixin, AnnouncementTestMixin
+from .mixins import AnnouncementAPIViewTestMixin
 
 
 class AnnouncementAPIViewTestCase(
-    AnnouncementAPIViewTestMixin, AnnouncementTestMixin, BaseAPITestCase
+    AnnouncementAPIViewTestMixin, BaseAPITestCase
 ):
     def test_announcement_create_api_view_no_permission(self):
         self._clear_events()
