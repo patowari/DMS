@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -191,42 +191,42 @@ msgstr "Alteração da palavra-passe do utilizador atual"
 msgid "Changing the password is not allowed for this account."
 msgstr "Alteração de palavra-passe não é permitida para este utilizador."
 
-#: views/authentication_views.py:331
+#: views/authentication_views.py:357
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr ""
 "Pedido de alteração de palavra-passe realizado em %(count)d utilizador"
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:360
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr ""
 "Pedido de alteração de palavra-passe realizado em %(count)d utilizadores"
 
-#: views/authentication_views.py:351
+#: views/authentication_views.py:377
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
 msgstr ""
 
-#: views/authentication_views.py:365
+#: views/authentication_views.py:391
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "Alterar palavra-passe de utilizador"
 msgstr[1] "Alterar palavra-passe de utilizadores"
 msgstr[2] "Alterar palavra-passe de utilizadores"
 
-#: views/authentication_views.py:376
+#: views/authentication_views.py:402
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Alterar palavra-passe para o utilizador 1%s"
 
-#: views/authentication_views.py:400
+#: views/authentication_views.py:426
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Palavra-passe alterada com sucesso para utilizador: 1%s"
 
-#: views/authentication_views.py:406
+#: views/authentication_views.py:432
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""

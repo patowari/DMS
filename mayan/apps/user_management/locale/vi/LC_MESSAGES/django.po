@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
@@ -30,7 +30,7 @@ msgstr "Quản lý người dùng"
 msgid "Group"
 msgstr ""
 
-#: apps.py:78 apps.py:107 links.py:53 links.py:67 links.py:96 search.py:34
+#: apps.py:77 apps.py:108 links.py:53 links.py:67 links.py:96 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr ""
@@ -43,7 +43,7 @@ msgstr "Tên"
 msgid "User"
 msgstr "Người dùng"
 
-#: apps.py:100 apps.py:222 links.py:58 links.py:99 links.py:111
+#: apps.py:101 apps.py:223 links.py:58 links.py:99 links.py:111
 #: views/user_views.py:170
 msgid "Users"
 msgstr ""
@@ -60,35 +60,35 @@ msgstr ""
 msgid "Is active?"
 msgstr ""
 
-#: apps.py:113
+#: apps.py:114
 msgid "Is super user?"
 msgstr ""
 
-#: apps.py:116 search.py:37
+#: apps.py:117 search.py:37
 msgid "Last name"
 msgstr ""
 
-#: apps.py:119 serializers.py:72
+#: apps.py:120 serializers.py:72
 msgid "Password"
 msgstr ""
 
-#: apps.py:122 search.py:40
+#: apps.py:123 search.py:40
 msgid "Username"
 msgstr ""
 
-#: apps.py:125
+#: apps.py:126
 msgid "Last login"
 msgstr ""
 
-#: apps.py:151
+#: apps.py:152
 msgid "Has usable password?"
 msgstr ""
 
-#: apps.py:158
+#: apps.py:159
 msgid "All the groups."
 msgstr ""
 
-#: apps.py:162
+#: apps.py:163
 msgid "All the users."
 msgstr ""
 

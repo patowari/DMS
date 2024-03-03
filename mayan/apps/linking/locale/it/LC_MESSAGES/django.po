@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marco Camplese <marco.camplese.mc@gmail.com>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
@@ -30,7 +30,7 @@ msgstr "Collegamento"
 msgid "Label"
 msgstr "Etichetta"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:51
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Link intelligenti"
@@ -47,7 +47,7 @@ msgstr "Collegamento intelligente modificato"
 msgid "Foreign document field"
 msgstr "Campo documento estero"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Crea un nuovo link intelligente"
 
@@ -55,7 +55,7 @@ msgstr "Crea un nuovo link intelligente"
 msgid "Delete"
 msgstr "Cancella"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:43
 msgid "Document types"
 msgstr "Tipi documento"
 
@@ -143,21 +143,21 @@ msgstr "è un'espressione regolare"
 msgid "is in regular expression (case insensitive)"
 msgstr "è un'espressione regolare (case insensitive)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Errore generando l'etichetta dinamica; %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr ""
 "Questo link intelligente non è consentito per questo tipo di documento."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "not"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr "Etichetta completa"
 
@@ -395,12 +395,12 @@ msgstr "Tipi documento abilitati"
 msgid "Document type for which to enable smart link: %s"
 msgstr "Tipo di documento per il quale attivare collegamento intelligente: %s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Cancella collegamento intelligente: %s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Modifica il link intelligente: %s"

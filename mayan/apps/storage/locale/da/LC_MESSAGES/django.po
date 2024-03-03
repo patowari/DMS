@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: René Rovsing Bach <reroba@outlook.com>, 2023\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr ""
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: model_mixins.py:108 models.py:48 serializers.py:15
+#: model_mixins.py:108 models.py:46 serializers.py:15
 msgid "User"
 msgstr "Bruger"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "Fil"
 
@@ -114,11 +114,11 @@ msgstr "Etiket"
 msgid "Download file"
 msgstr ""
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr ""
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr ""
 
@@ -194,17 +194,17 @@ msgid ""
 " and {} for formatting errors."
 msgstr ""
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr ""
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr ""

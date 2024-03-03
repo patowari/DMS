@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -95,7 +95,7 @@ msgstr "Téma beállítások"
 msgid "Edit theme settings"
 msgstr "Téma beállításainak szerkesztése"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Új téma létrehozása"
 
@@ -107,7 +107,7 @@ msgstr "Törlés"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Témák"
 
@@ -321,14 +321,6 @@ msgstr ""
 "                Ha hibát talált, vagy új funkciót szeretne, látogassa meg a <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Fórumot %(icon_forum)s</a> vagy nyisson hibajegyet a <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Forráskód repository-ban %(icon_source_code)s</a>.\n"
 "            "
 
-#: templates/appearance/app/foot.html:70
-msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
-msgstr ""
-"Túl sok függőben lévő kérelem. A további kéréseket blokkoljuk egy függőben "
-"lévő kérés befejezéséig, vagy a lemondási időszak lejárta után."
-
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr "Objektum"
@@ -470,33 +462,33 @@ msgstr ""
 msgid "None"
 msgstr "Nincs"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Téma törlése: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Téma szerkesztése: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "A témák lehetővé teszik a vizuális megjelenés megváltoztatását kódmódosítás "
 "nélkül."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Nincsenek témák"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Témabeállítások a felhasználó számára: %s"
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Szerkessze a téma beállításait a következő felhasználó számára: %s"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -23,20 +23,20 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:34 events.py:6 permissions.py:6 queues.py:7 settings.py:21
+#: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
 msgid "Converter"
 msgstr "Convertizor"
 
-#: apps.py:81 forms.py:41
+#: apps.py:82 forms.py:41
 msgid "Transformation"
 msgstr "Transformare"
 
-#: backends/python.py:106
+#: backends/python.py:105
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr "Excepție de determinare a numărului de pagini PDF; %s"
 
-#: backends/python.py:194 backends/python.py:211
+#: backends/python.py:193 backends/python.py:210
 #, python-format
 msgid "Exception determining PDF page count; %s"
 msgstr "Excepție determinând numărul de pagini PDF; %s"
@@ -357,7 +357,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "Cache de active"
 
-#: transformation_mixins.py:20 transformations.py:617
+#: transformation_mixins.py:20 transformations.py:625
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -376,11 +376,11 @@ msgstr "Nivelul de opacitate al imaginii în procente"
 msgid "Transparency"
 msgstr "Transparenţă"
 
-#: transformation_mixins.py:29 transformations.py:722
+#: transformation_mixins.py:29 transformations.py:730
 msgid "Zoom level in percent."
 msgstr "Nivel de zoom în procente."
 
-#: transformation_mixins.py:29 transformations.py:717
+#: transformation_mixins.py:29 transformations.py:725
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -474,7 +474,7 @@ msgstr "Numele activului"
 msgid "Color used to fill the rectangle."
 msgstr "Culoarea folosită pentru a umple dreptunghiul."
 
-#: transformation_mixins.py:350 transformations.py:624
+#: transformation_mixins.py:350 transformations.py:632
 msgid "Fill color"
 msgstr "Culoare de umplere"
 
@@ -578,7 +578,7 @@ msgstr "Basculare"
 msgid "Gaussian blur"
 msgstr "Încețoșare Gaussiană"
 
-#: transformations.py:530 transformations.py:692
+#: transformations.py:538 transformations.py:700
 msgid "Radius"
 msgstr "Rază"
 
@@ -610,52 +610,52 @@ msgstr "Înălțime nouă în pixeli."
 msgid "Height"
 msgstr "Înălţime"
 
-#: transformations.py:611
+#: transformations.py:619
 msgid "Rotate"
 msgstr "Rotire"
 
-#: transformations.py:619
+#: transformations.py:627
 msgid "Degrees"
 msgstr "Grade"
 
-#: transformations.py:623
+#: transformations.py:631
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 "Culoarea care trebuie utilizată pentru zona din afara imaginii rotite."
 
-#: transformations.py:654
+#: transformations.py:662
 msgid "Rotate 90 degrees"
 msgstr "Rotiți 90 de grade"
 
-#: transformations.py:665
+#: transformations.py:673
 msgid "Rotate 180 degrees"
 msgstr "Rotiți 180 de grade"
 
-#: transformations.py:676
+#: transformations.py:684
 msgid "Rotate 270 degrees"
 msgstr "Rotiți 270 de grade"
 
-#: transformations.py:686
+#: transformations.py:694
 msgid "Unsharp masking"
 msgstr "Unsharp masking"
 
-#: transformations.py:691
+#: transformations.py:699
 msgid "The blur radius in pixels."
 msgstr "Raza de estompare în pixeli."
 
-#: transformations.py:695
+#: transformations.py:703
 msgid "Unsharp strength in percent."
 msgstr "Intensitate accentuare în procente."
 
-#: transformations.py:696 transformations.py:723
+#: transformations.py:704 transformations.py:731
 msgid "Percent"
 msgstr "Procent"
 
-#: transformations.py:700
+#: transformations.py:708
 msgid "Minimum brightness change that will be sharpened."
 msgstr "Nivelul minim al luminozității care va fi accentuat."
 
-#: transformations.py:701
+#: transformations.py:709
 msgid "Tthreshold"
 msgstr "Prag"
 

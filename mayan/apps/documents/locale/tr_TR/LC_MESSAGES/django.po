@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -25,17 +25,17 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:215 apps.py:651 events.py:6 menus.py:8
-#: models/document_models.py:116 permissions.py:6 settings.py:33
+#: apps.py:218 apps.py:655 events.py:6 menus.py:8
+#: models/document_models.py:116 permissions.py:6 settings.py:34
 #: statistics.py:286
 msgid "Documents"
 msgstr "Belgeler"
 
-#: apps.py:296
+#: apps.py:299
 msgid "Create a document type"
 msgstr ""
 
-#: apps.py:298
+#: apps.py:301
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
@@ -43,47 +43,47 @@ msgstr ""
 "Yüklenen her belgeye bir belge türü atanmalıdır; bu, Mayan EDMS'in belgeleri"
 " sınıflandırmasının temel şeklidir."
 
-#: apps.py:397
+#: apps.py:401
 msgid "File comments"
 msgstr ""
 
-#: apps.py:401
+#: apps.py:405
 msgid "File encodings"
 msgstr ""
 
-#: apps.py:405
+#: apps.py:409
 msgid "File MIME types"
 msgstr ""
 
-#: apps.py:409
+#: apps.py:413
 msgid "File timestamps"
 msgstr ""
 
-#: apps.py:414 links/document_file_page_links.py:77
+#: apps.py:418 links/document_file_page_links.py:77
 #: models/document_file_models.py:106 models/document_file_page_models.py:26
 #: search.py:49
 msgid "Document file"
 msgstr "Belge dosyası"
 
-#: apps.py:418 models/document_file_page_models.py:30
+#: apps.py:422 models/document_file_page_models.py:30
 #: models/document_version_page_models.py:40
 msgid "Page number"
 msgstr "Sayfa numarası"
 
-#: apps.py:423
+#: apps.py:427
 msgid "Return the latest file of the document."
 msgstr ""
 
-#: apps.py:424
+#: apps.py:428
 msgid "Latest file"
 msgstr ""
 
-#: apps.py:427
+#: apps.py:431
 msgid "Return the document instance."
 msgstr ""
 
-#: apps.py:428 links/document_file_links.py:70
-#: links/document_file_page_links.py:71 links/document_version_links.py:74
+#: apps.py:432 links/document_file_links.py:71
+#: links/document_file_page_links.py:71 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:115 models/document_version_models.py:28
 #: models/favorite_document_models.py:30
@@ -93,25 +93,25 @@ msgstr ""
 msgid "Document"
 msgstr "Belge"
 
-#: apps.py:556 apps.py:608 apps.py:637 apps.py:671 apps.py:696
+#: apps.py:560 apps.py:612 apps.py:641 apps.py:675 apps.py:700
 msgid "Thumbnail"
 msgstr "Küçük Resim"
 
-#: apps.py:562
+#: apps.py:566
 msgid "Type"
 msgstr "Tür"
 
-#: apps.py:566 apps.py:613 apps.py:676 forms/document_file_forms.py:89
+#: apps.py:570 apps.py:617 apps.py:680 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:120
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Sayfalar"
 
-#: apps.py:575 models/favorite_document_models.py:33
+#: apps.py:579 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr ""
 
-#: apps.py:586
+#: apps.py:590
 msgid "Access date and time"
 msgstr ""
 
@@ -153,8 +153,8 @@ msgstr ""
 msgid "Documents in trash"
 msgstr ""
 
-#: dashboard_widgets.py:91 links/document_type_links.py:68
-#: links/document_type_links.py:83 permissions.py:78
+#: dashboard_widgets.py:88 links/document_type_links.py:67
+#: links/document_type_links.py:82 permissions.py:78
 #: views/document_type_views.py:81
 msgid "Document types"
 msgstr "Belge türleri"
@@ -360,7 +360,7 @@ msgid "Language"
 msgstr "Dil"
 
 #: forms/document_type_forms.py:42 models/document_models.py:59
-#: models/document_type_models.py:100 models/document_type_models.py:148
+#: models/document_type_models.py:102 models/document_type_models.py:150
 #: serializers/document_serializers.py:28 workflow_actions.py:18
 #: workflow_actions.py:34
 msgid "Document type"
@@ -410,46 +410,46 @@ msgid ""
 "transformations will be lost."
 msgstr ""
 
-#: links/document_file_links.py:26 links/document_file_links.py:31
-#: links/document_type_links.py:28 links/document_type_links.py:46
-#: links/document_version_links.py:40 links/document_version_links.py:44
-#: links/document_version_page_links.py:46 links/trashed_document_links.py:19
-#: links/trashed_document_links.py:41
+#: links/document_file_links.py:27 links/document_file_links.py:32
+#: links/document_type_links.py:27 links/document_type_links.py:45
+#: links/document_version_links.py:39 links/document_version_links.py:43
+#: links/document_version_page_links.py:46 links/trashed_document_links.py:18
+#: links/trashed_document_links.py:40
 msgid "Delete"
 msgstr "Sil"
 
-#: links/document_file_links.py:36 links/document_type_links.py:32
-#: links/document_type_links.py:53 links/document_version_links.py:49
+#: links/document_file_links.py:37 links/document_type_links.py:31
+#: links/document_type_links.py:52 links/document_version_links.py:48
 msgid "Edit"
 msgstr "Düzenle"
 
-#: links/document_file_links.py:40 links/document_file_links.py:47
+#: links/document_file_links.py:41 links/document_file_links.py:48
 msgid "Introspect"
 msgstr ""
 
-#: links/document_file_links.py:54 links/document_file_links.py:76
+#: links/document_file_links.py:55 links/document_file_links.py:77
 msgid "Files"
 msgstr ""
 
-#: links/document_file_links.py:58 links/document_version_links.py:68
+#: links/document_file_links.py:59 links/document_version_links.py:67
 msgid "Print"
 msgstr "Yazdır"
 
-#: links/document_file_links.py:65 links/document_links.py:43
+#: links/document_file_links.py:66 links/document_links.py:43
 msgid "Properties"
 msgstr "Özellikler"
 
-#: links/document_file_links.py:83 links/document_links.py:38
-#: links/document_version_links.py:64
+#: links/document_file_links.py:84 links/document_links.py:38
+#: links/document_version_links.py:63
 msgid "Preview"
 msgstr "Önizleme"
 
-#: links/document_file_links.py:89 links/document_file_links.py:95
-#: links/document_version_links.py:87 links/document_version_links.py:93
+#: links/document_file_links.py:90 links/document_file_links.py:96
+#: links/document_version_links.py:86 links/document_version_links.py:92
 msgid "Clear transformations"
 msgstr "Dönüşümleri temizle"
 
-#: links/document_file_links.py:102 links/document_version_links.py:100
+#: links/document_file_links.py:103 links/document_version_links.py:99
 msgid "Clone transformations"
 msgstr ""
 
@@ -528,27 +528,27 @@ msgstr ""
 msgid "Edit properties"
 msgstr "Özellikleri düzenle"
 
-#: links/document_type_links.py:23 views/document_type_views.py:96
+#: links/document_type_links.py:22 views/document_type_views.py:96
 msgid "Create document type"
 msgstr "Belge türü oluştur"
 
-#: links/document_type_links.py:39
+#: links/document_type_links.py:38
 msgid "Add quick label to document type"
 msgstr ""
 
-#: links/document_type_links.py:59 models/document_type_models.py:161
+#: links/document_type_links.py:58 models/document_type_models.py:163
 msgid "Quick labels"
 msgstr ""
 
-#: links/document_type_links.py:64
+#: links/document_type_links.py:63
 msgid "Filename generation"
 msgstr ""
 
-#: links/document_type_links.py:75
+#: links/document_type_links.py:74
 msgid "Retention policies"
 msgstr ""
 
-#: links/document_version_links.py:28
+#: links/document_version_links.py:27
 msgid "Make active"
 msgstr ""
 
@@ -669,11 +669,11 @@ msgid "All pages"
 msgstr ""
 
 #: models/document_file_model_mixins.py:299
-#: models/document_file_page_model_mixins.py:230
+#: models/document_file_page_model_mixins.py:236
 #: models/document_model_mixins.py:174 models/document_models.py:67
-#: models/document_type_models.py:41 models/document_type_models.py:151
+#: models/document_type_models.py:41 models/document_type_models.py:153
 #: models/document_version_model_mixins.py:124
-#: models/document_version_page_model_mixins.py:280
+#: models/document_version_page_model_mixins.py:282
 #: serializers/document_serializers.py:22
 #: serializers/document_version_serializers.py:17
 msgid "Label"
@@ -831,68 +831,68 @@ msgstr ""
 msgid "The arguments for the filename generator backend as a YAML dictionary."
 msgstr ""
 
-#: models/document_type_models.py:54
+#: models/document_type_models.py:56
 msgid "Filename generator backend arguments"
 msgstr ""
 
-#: models/document_type_models.py:62
+#: models/document_type_models.py:64
 msgid ""
 "Amount of time after which documents of this type will be moved to the "
 "trash."
 msgstr ""
 
-#: models/document_type_models.py:64
+#: models/document_type_models.py:66
 msgid "Trash time period"
 msgstr ""
 
-#: models/document_type_models.py:68
+#: models/document_type_models.py:70
 msgid "Trash time unit"
 msgstr ""
 
-#: models/document_type_models.py:72
+#: models/document_type_models.py:74
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
 msgstr ""
 
-#: models/document_type_models.py:74
+#: models/document_type_models.py:76
 msgid "Delete time period"
 msgstr ""
 
-#: models/document_type_models.py:79
+#: models/document_type_models.py:81
 msgid "Delete time unit"
 msgstr ""
 
-#: models/document_type_models.py:83
+#: models/document_type_models.py:85
 msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
 msgstr ""
 
-#: models/document_type_models.py:85
+#: models/document_type_models.py:87
 msgid "Document stub pruning"
 msgstr ""
 
-#: models/document_type_models.py:89
+#: models/document_type_models.py:91
 msgid ""
 "Time (in seconds) after which a document stub will be considered invalid and"
 " deleted, if pruning is enabled. This an optimization setting and should "
 "only be changed for specific circumstances."
 msgstr ""
 
-#: models/document_type_models.py:93
+#: models/document_type_models.py:95
 msgid "Document stub expiration interval"
 msgstr ""
 
-#: models/document_type_models.py:101
+#: models/document_type_models.py:103
 msgid "Documents types"
 msgstr "Belge türleri"
 
-#: models/document_type_models.py:154
+#: models/document_type_models.py:156
 msgid "Enabled"
 msgstr "Etkin"
 
-#: models/document_type_models.py:160
+#: models/document_type_models.py:162
 msgid "Quick label"
 msgstr ""
 
@@ -1396,11 +1396,11 @@ msgstr ""
 "Kullanıcı etkileşimi başına bir doküman sayfasını döndürmek için gereken "
 "derece miktarı."
 
-#: settings.py:165
+#: settings.py:166
 msgid "Height in pixels of the document thumbnail image."
 msgstr ""
 
-#: settings.py:184
+#: settings.py:185
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
@@ -1408,7 +1408,7 @@ msgstr ""
 "Kullanıcının bir belge sayfasını etkileşimli olarak yakınlaştırmasını "
 "sağlamak için yüzde olarak maksimum miktarı (%)."
 
-#: settings.py:191
+#: settings.py:192
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
@@ -1416,7 +1416,7 @@ msgstr ""
 "Kullanıcıya bir belge sayfasını etkileşimli olarak uzaklaştırmak için yüzde "
 "olarak minimum tutar (%)."
 
-#: settings.py:198
+#: settings.py:199
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
 "Kullanıcı etkileşimi başına belge sayfasında yakınlaştırma veya uzaklaştırma"
@@ -1521,179 +1521,179 @@ msgstr ""
 msgid "Unknown language \"%s\""
 msgstr ""
 
-#: views/document_file_page_views.py:54
+#: views/document_file_page_views.py:55
 msgid ""
 "This could mean that the document file is of a format that is not supported,"
 " that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 
-#: views/document_file_page_views.py:60
+#: views/document_file_page_views.py:61
 msgid "No document file pages available"
 msgstr ""
 
-#: views/document_file_page_views.py:62
+#: views/document_file_page_views.py:63
 #, python-format
 msgid "Pages of document file: %s"
 msgstr ""
 
-#: views/document_file_page_views.py:143
-#: views/document_version_page_views.py:308
+#: views/document_file_page_views.py:144
+#: views/document_version_page_views.py:311
 msgid "There are no more pages in this document"
 msgstr "Bu belgede başka sayfa yok"
 
-#: views/document_file_page_views.py:159
-#: views/document_version_page_views.py:324
+#: views/document_file_page_views.py:160
+#: views/document_version_page_views.py:327
 msgid "You are already at the first page of this document"
 msgstr "Zaten bu belgenin ilk sayfasındasın"
 
-#: views/document_file_page_views.py:194
-#: views/document_version_page_views.py:363
+#: views/document_file_page_views.py:195
+#: views/document_version_page_views.py:366
 #, python-format
 msgid "Image of: %s"
 msgstr ""
 
-#: views/document_file_views.py:51
+#: views/document_file_views.py:52
 #, python-format
 msgid "Error deleting document file \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views/document_file_views.py:57
+#: views/document_file_views.py:58
 #, python-format
 msgid "Document file \"%(object)s\" deletion queued successfully."
 msgstr ""
 
-#: views/document_file_views.py:60
+#: views/document_file_views.py:61
 #, python-format
 msgid "%(count)d document file deletion queued successfully."
 msgstr ""
 
-#: views/document_file_views.py:63
+#: views/document_file_views.py:64
 #, python-format
 msgid "%(count)d document files deletions queued successfully."
 msgstr ""
 
-#: views/document_file_views.py:65
+#: views/document_file_views.py:66
 #, python-format
 msgid "Delete document file: %(object)s."
 msgstr ""
 
-#: views/document_file_views.py:66
+#: views/document_file_views.py:67
 #, python-format
 msgid "Delete the %(count)d selected document file."
 msgstr ""
 
-#: views/document_file_views.py:67
+#: views/document_file_views.py:68
 #, python-format
 msgid "Delete the %(count)d selected document files."
 msgstr ""
 
-#: views/document_file_views.py:73
+#: views/document_file_views.py:74
 msgid ""
 "All document files pages from this document file and the document version "
 "pages linked to them will be deleted too. The process will be performed in "
 "the background."
 msgstr ""
 
-#: views/document_file_views.py:113
+#: views/document_file_views.py:114
 #, python-format
 msgid "Edit document file: %s"
 msgstr ""
 
-#: views/document_file_views.py:134
+#: views/document_file_views.py:135
 #, python-format
 msgid "%(count)d document file queued for introspection."
 msgstr ""
 
-#: views/document_file_views.py:137
+#: views/document_file_views.py:138
 #, python-format
 msgid "%(count)d document files queued for introspection."
 msgstr ""
 
-#: views/document_file_views.py:146
+#: views/document_file_views.py:147
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/document_file_views.py:157
+#: views/document_file_views.py:158
 #, python-format
 msgid "Introspect the document file: %s?"
 msgstr ""
 
-#: views/document_file_views.py:163
+#: views/document_file_views.py:164
 msgid ""
 "The document file will be re-examined for file size, page count, checksum, "
 "and its related document version pages re-created. All transformations will "
 "be lost."
 msgstr ""
 
-#: views/document_file_views.py:192
+#: views/document_file_views.py:193
 msgid ""
 "File are the actual files that were uploaded for each document. Their "
 "contents needs to be mapped to a version before it can be used."
 msgstr ""
 
-#: views/document_file_views.py:196
+#: views/document_file_views.py:197
 msgid "No files available"
 msgstr ""
 
-#: views/document_file_views.py:221
+#: views/document_file_views.py:222
 #, python-format
 msgid "Files of document: %s"
 msgstr ""
 
-#: views/document_file_views.py:257
+#: views/document_file_views.py:258
 #, python-format
 msgid "Preview of document file: %s"
 msgstr ""
 
-#: views/document_file_views.py:317
+#: views/document_file_views.py:318
 #, python-format
 msgid "Properties of document file: %s"
 msgstr ""
 
-#: views/document_file_views.py:326
+#: views/document_file_views.py:327
 #, python-format
 msgid "Transformation clear request processed for %(count)d document file."
 msgstr ""
 
-#: views/document_file_views.py:329
+#: views/document_file_views.py:330
 #, python-format
 msgid "Transformation clear request processed for %(count)d document files."
 msgstr ""
 
-#: views/document_file_views.py:336
+#: views/document_file_views.py:337
 msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/document_file_views.py:347
+#: views/document_file_views.py:348
 #, python-format
 msgid "Clear all the page transformations for the document file: %s?"
 msgstr ""
 
-#: views/document_file_views.py:364
+#: views/document_file_views.py:365
 #, python-format
 msgid ""
 "Error deleting the page transformations for document file: "
 "%(document_file)s; %(error)s."
 msgstr ""
 
-#: views/document_file_views.py:401
+#: views/document_file_views.py:402
 #, python-format
 msgid ""
 "Error cloning the page transformations for document file: %(document_file)s;"
 " %(error)s."
 msgstr ""
 
-#: views/document_file_views.py:410 views/document_version_views.py:411
+#: views/document_file_views.py:411 views/document_version_views.py:412
 msgid "Transformations cloned successfully."
 msgstr "Dönüşümler başarıyla kopyalandı."
 
-#: views/document_file_views.py:425
+#: views/document_file_views.py:426
 #, python-format
 msgid "Clone page transformations of document file: %s"
 msgstr ""

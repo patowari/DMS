@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr "Dateispeicher"
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Name des zu verarbeitenden Dateispeichers."
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "Dateiname"
 
@@ -106,11 +106,11 @@ msgstr "Unbenannte Datei"
 msgid "Size"
 msgstr "Größe"
 
-#: model_mixins.py:108 models.py:48 serializers.py:15
+#: model_mixins.py:108 models.py:46 serializers.py:15
 msgid "User"
 msgstr "Benutzer"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "Datei"
 
@@ -122,11 +122,11 @@ msgstr "Bezeichner"
 msgid "Download file"
 msgstr "Datei herunterladen"
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr "Geteilte hochgeladene Datei"
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Geteilte hochgeladene Dateien"
 
@@ -212,7 +212,7 @@ msgstr ""
 "initialisiert werden. Überprüfen Sie die Einstellungen {} und {} auf "
 "Formatierungsfehler."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -222,10 +222,10 @@ msgstr ""
 "eines Exports erstellt. Downloaddateien werden für eine gewisse Zeitspanne "
 "vorgehalten und dann automatisch gelöscht."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Keine Dateien für Download vorhanden."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Downloads"

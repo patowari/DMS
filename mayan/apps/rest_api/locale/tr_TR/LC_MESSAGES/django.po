@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -55,7 +55,7 @@ msgstr "Yanlış tip. Beklenen pk değeri, alınan {data_type}."
 msgid "This field is required."
 msgstr "Bu alan gereklidir."
 
-#: schemas.py:11
+#: schemas.py:10
 #, python-format
 msgid "%s API"
 msgstr "%s API'si"

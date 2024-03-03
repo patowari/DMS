@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -188,17 +188,17 @@ msgstr "Jelenlegi felhasználói jelszó módosítása"
 msgid "Changing the password is not allowed for this account."
 msgstr "A jelszó módosítása nem engedélyezett ennél a fióknál."
 
-#: views/authentication_views.py:331
+#: views/authentication_views.py:357
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Jelszómódosítási kérés végrehajtva a %(count)d felhasználón"
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:360
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Jelszómódosítási kérés végrehajtva %(count)d felhasználókon"
 
-#: views/authentication_views.py:351
+#: views/authentication_views.py:377
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
@@ -207,27 +207,26 @@ msgstr ""
 "felhasználói felületen keresztül nem megengedett. A művelet végrehajtásához "
 "használjon adminisztrációs eszközöket."
 
-#: views/authentication_views.py:365
+#: views/authentication_views.py:391
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "Felhasználói jelszó módosítása"
 msgstr[1] "Felhasználói jelszavak módosítása"
 
-#: views/authentication_views.py:376
+#: views/authentication_views.py:402
 #, python-format
 msgid "Change password for user: %s"
 msgstr "A felhasználó jelszavának módosítása: %s"
 
-#: views/authentication_views.py:400
+#: views/authentication_views.py:426
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Sikeres jelszó-visszaállítás a következő felhasználóhoz: %s ."
 
-#: views/authentication_views.py:406
+#: views/authentication_views.py:432
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
-"Hiba a \"%(user)s\"felhasználó jelszavának visszaállítása során: %(error)s"
 
 #: views/impersonation_views.py:87
 #, python-format

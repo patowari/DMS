@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -29,7 +29,7 @@ msgstr "Σύνδεση"
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:51
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Έξυπνοι σύνδεσμοι"
@@ -46,7 +46,7 @@ msgstr "Τροποποιήθηκε ο έξυπνος σύνδεσμος"
 msgid "Foreign document field"
 msgstr "Πεδίο έταιρου εγγράφου"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Δημιουργία νέου έξυπνου σύνδεσμου"
 
@@ -54,7 +54,7 @@ msgstr "Δημιουργία νέου έξυπνου σύνδεσμου"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:43
 msgid "Document types"
 msgstr "Τύποι εγγράφων"
 
@@ -142,21 +142,21 @@ msgstr "περιέχεται στο regular expression"
 msgid "is in regular expression (case insensitive)"
 msgstr "περιέχεται στο regular expression (χωρίς διάκριση κεφαλαίων / πεζών)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Σφάλμα κατά την δημιουργία δυναμικής ετικέτας: %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr ""
 "Αυτός ο έξυπνος συνδεσμός δεν επιτρέπεται για τον επιλεγμένο τύπο εγγράφου."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "δεν"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr "Πλήρης ετικέτα"
 
@@ -395,12 +395,12 @@ msgid "Document type for which to enable smart link: %s"
 msgstr ""
 "Τύποι εγγράφων για τους οποίους θα ενεργοποιηθούν οι έξυπνοι σύνδεσμοι: %s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Διαγραφή έξυπνου συνδέσμου: %s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Τροποποίηση έξυπνου συνδέσμου: %s"

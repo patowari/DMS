@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -121,7 +121,7 @@ msgid ""
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
 
-#: search_fields.py:311
+#: search_fields.py:313
 msgid "Any"
 msgstr ""
 
@@ -134,43 +134,43 @@ msgstr "Неизвестен модел за търсене `%s`."
 msgid "All content"
 msgstr ""
 
-#: search_query_types.py:167
+#: search_query_types.py:169
 msgid "Exact"
 msgstr ""
 
-#: search_query_types.py:173
+#: search_query_types.py:175
 msgid "Fuzzy"
 msgstr ""
 
-#: search_query_types.py:179
+#: search_query_types.py:181
 msgid "Greater than"
 msgstr ""
 
-#: search_query_types.py:185
+#: search_query_types.py:187
 msgid "Greater than or equal"
 msgstr ""
 
-#: search_query_types.py:191
+#: search_query_types.py:193
 msgid "Less than"
 msgstr ""
 
-#: search_query_types.py:197
+#: search_query_types.py:199
 msgid "Less than or equal"
 msgstr ""
 
-#: search_query_types.py:203
+#: search_query_types.py:205
 msgid "Partial"
 msgstr ""
 
-#: search_query_types.py:209
+#: search_query_types.py:211
 msgid "Range"
 msgstr ""
 
-#: search_query_types.py:244
+#: search_query_types.py:246
 msgid "Range exclusive"
 msgstr ""
 
-#: search_query_types.py:250
+#: search_query_types.py:252
 msgid "Regular expression"
 msgstr ""
 

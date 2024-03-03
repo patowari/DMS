@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -25,19 +25,19 @@ msgstr ""
 msgid "Databases"
 msgstr "Бази даних"
 
-#: classes.py:80
+#: classes.py:82
 msgid "Model fields"
 msgstr "Поля моделі"
 
-#: classes.py:128
+#: classes.py:130
 msgid "Model related fields"
 msgstr "Поля, пов'язані з моделлю"
 
-#: classes.py:133
+#: classes.py:135
 msgid "Model properties"
 msgstr "Властивості моделі"
 
-#: classes.py:138
+#: classes.py:140
 msgid "Model reverse fields"
 msgstr "Модель зворотніх полів"
 

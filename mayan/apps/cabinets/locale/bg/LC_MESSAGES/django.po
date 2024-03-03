@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -22,8 +22,8 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:54 apps.py:164 apps.py:168 apps.py:172 apps.py:176 apps.py:180
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
+#: apps.py:53 apps.py:163 apps.py:167 apps.py:171 apps.py:175 apps.py:179
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
@@ -97,40 +97,40 @@ msgstr "Път до шкафа, включващ всички предци."
 msgid "Full path"
 msgstr "Пълен път"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Кратък текст, използван за идентифициране на шкафа."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Етикет"
 
-#: models.py:40
+#: models.py:41
 msgid "Documents"
 msgstr "Документи"
 
-#: models.py:50 models.py:132 models.py:157
+#: models.py:51 models.py:133 models.py:158
 msgid "Cabinet"
 msgstr "Шкаф"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Родител и Етикет"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s с този %(field_labels)s вече съществува."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Шкаф за документи"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Шкафове за документи"
 

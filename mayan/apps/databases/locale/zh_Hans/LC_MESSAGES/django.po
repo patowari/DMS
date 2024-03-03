@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -25,19 +25,19 @@ msgstr ""
 msgid "Databases"
 msgstr ""
 
-#: classes.py:80
+#: classes.py:82
 msgid "Model fields"
 msgstr "Model fields"
 
-#: classes.py:128
+#: classes.py:130
 msgid "Model related fields"
 msgstr "Model related fields"
 
-#: classes.py:133
+#: classes.py:135
 msgid "Model properties"
 msgstr "模型特性"
 
-#: classes.py:138
+#: classes.py:140
 msgid "Model reverse fields"
 msgstr "Model reverse fields"
 

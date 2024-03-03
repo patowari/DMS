@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -25,21 +25,21 @@ msgstr ""
 msgid "Common"
 msgstr "Common"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Χρησιμοποιείται για την εκτός σύνδεσης μετάφραση συμβολοσειρών κειμένου του "
 "κώδικα."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Παρέχει έλεγχο του στυλ."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Γραμμή εντολών με αυτόματη συμπλήρωση."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Ελέγχει την ορθή μορφοποίηση του αρχείου README."
 
@@ -87,25 +87,25 @@ msgstr "Ηλεκτρονικό κατάστημα"
 msgid "Get support"
 msgstr "Βοήθεια"
 
-#: links.py:77 views.py:134
+#: links.py:77 views.py:136
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Αυτό το χαρακτηριστικό είναι ξεπερασμένο και θα αφαιρεθεί σε επόμενη έκδοση."
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Ημέρες"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Ώρες"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Λεπτά"
 
@@ -145,7 +145,7 @@ msgstr "Αντιγραφή αντικειμένου"
 msgid "URL"
 msgstr "Διεύθυνση URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -205,10 +205,6 @@ msgstr ""
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr ""
-
-#: settings.py:99
-msgid "URL of the project's homepage."
 msgstr ""
 
 #: templates/common/app/viewport.html:15

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Emerson Soares <on.emersonsoares@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -45,7 +45,7 @@ msgstr "Rótulo"
 msgid "Relationship"
 msgstr "Relacionamento"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -55,7 +55,7 @@ msgstr ""
 "múltiplas entradas. Uma vez completa a seleção, clique no botão abaixo ou dê"
 " um duplo clique na lista para ativar a ação."
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -65,97 +65,97 @@ msgstr ""
 "múltiplas entradas. Uma vez completa a seleção, clique no botão abaixo ou dê"
 " um duplo clique na lista para ativar a ação."
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "Adicionar tudo"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "Adicionar"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "Remover tudo"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "Remover"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Erro ao atualizar o relacionamento; %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "Relacionamentos atualizados com sucesso"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Erro de dados duplicados: %(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s não criado, erro: %(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s criados com sucesso."
 
-#: generics.py:724
+#: generics.py:728
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s não removidos, erro: %(error)s."
 
-#: generics.py:734
+#: generics.py:738
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s excluídos com sucesso."
 
-#: generics.py:797
+#: generics.py:801
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Erro a recuperar %(object)s;%(error)s"
 
-#: generics.py:909
+#: generics.py:913
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s não atualizado, erro: %(error)s."
 
-#: generics.py:919
+#: generics.py:923
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s atualizados com sucesso."
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)dobjetos eliminados com sucesso."
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" eliminada com sucesso."
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)dobjeto eliminado com sucesso. "
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Eliminar %(count)d objetos"
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Eliminar \"%(object)s\"."
 
-#: generics.py:991
+#: generics.py:995
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Eliminar objeto %(count)d"
@@ -173,34 +173,6 @@ msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr ""
-
-#: templates/views/app/foot.html:45
-msgid "Cancel upload"
-msgstr "Cancelar upload."
-
-#: templates/views/app/foot.html:46
-msgid "Are you sure you want to cancel this upload?"
-msgstr "Você tem certeza que deseja cancelar esse upload?"
-
-#: templates/views/app/foot.html:47
-msgid "Drop files or click here to upload files"
-msgstr "Solte os arquivos ou clique aqui para carregá-los"
-
-#: templates/views/app/foot.html:48
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "Seu navegador não suporta uploads de arquivos com drag and drop."
-
-#: templates/views/app/foot.html:49
-msgid "Please use the fallback form below to upload your files."
-msgstr "Por favor use o formulário abaixo para carregar seus arquivos."
-
-#: templates/views/app/foot.html:50
-msgid "Clear"
-msgstr "Limpar"
-
-#: templates/views/app/foot.html:51
-msgid "Server responded with {{statusCode}} code."
-msgstr "O servidor responder com o código {{statusCode}}."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -58,7 +58,7 @@ msgstr "Tipo incorreto. Valor pk esperado recebido {data_type}."
 msgid "This field is required."
 msgstr " Este campo é obrigatório."
 
-#: schemas.py:11
+#: schemas.py:10
 #, python-format
 msgid "%s API"
 msgstr "API %s"

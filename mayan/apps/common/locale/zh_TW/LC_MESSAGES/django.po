@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Leon Chu, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -26,19 +26,19 @@ msgstr ""
 msgid "Common"
 msgstr "Common"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "用來允許離現翻譯程式碼的文字字串"
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "提供格式檢查"
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "含有自動完成之命令列環境"
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "檢查適當的README檔案格式"
 
@@ -86,24 +86,24 @@ msgstr "線上商店"
 msgid "Get support"
 msgstr "取得協助"
 
-#: links.py:77 views.py:134
+#: links.py:77 views.py:136
 msgid "Tools"
 msgstr "工具"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "此功能已經被反對將於未來新版本上移除"
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "日"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "時"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "分"
 
@@ -143,7 +143,7 @@ msgstr "複製物件"
 msgid "URL"
 msgstr "网址"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -205,10 +205,6 @@ msgstr "顯示於首頁的告示牌名稱"
 #: settings.py:95
 msgid "Sets the project's name."
 msgstr "設定專案名稱"
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "專案首頁的URL"
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

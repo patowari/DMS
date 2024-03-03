@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -29,7 +29,7 @@ msgstr "Hivatkozás"
 msgid "Label"
 msgstr "Cimke"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:51
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Intelligens hivatkozások"
@@ -46,7 +46,7 @@ msgstr "Intelligens hivatkozás szerkesztve"
 msgid "Foreign document field"
 msgstr "Külsős dokumentum mező"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Új intelligens hivatkozás létrehozása"
 
@@ -54,7 +54,7 @@ msgstr "Új intelligens hivatkozás létrehozása"
 msgid "Delete"
 msgstr "Törlés"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:43
 msgid "Document types"
 msgstr "Dokumentum típusok"
 
@@ -142,22 +142,22 @@ msgstr "reguláris kifejezésben van"
 msgid "is in regular expression (case insensitive)"
 msgstr "reguláris kifejezésben van (nem kis- és nagybetű érzékeny)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Hiba a dinamikus címke generálásakor; %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr ""
 "Ez az intelligens hivatkozás nem engedélyezett a kiválasztott "
 "dokumentumtípushoz."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "nem"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr "Teljes címke"
 
@@ -403,12 +403,12 @@ msgid "Document type for which to enable smart link: %s"
 msgstr ""
 "Dokumentumtípus, amelynél engedélyezni kell az intelligens hivatkozást: %s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Intelligens hivatkozás törlése: %s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Intelligens hivatkozás szerkesztése: %s"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Badea Gabriel <gcbadea@gmail.com>, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -66,7 +66,7 @@ msgstr "Profil de corespondență a fost creat"
 msgid "Mailing profile edited"
 msgstr "Profilul de corespondență a fost editat"
 
-#: forms.py:59 forms.py:96
+#: forms.py:57 forms.py:94
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -74,77 +74,77 @@ msgstr ""
 "Adresa de e-mail a destinatarului. Pot fi mai multe adrese separate prin "
 "virgulă sau punct și virgulă."
 
-#: forms.py:61 forms.py:98
+#: forms.py:59 forms.py:96
 msgid "Email address"
 msgstr "Adresa de email"
 
-#: forms.py:63 workflow_action_mixins.py:62
+#: forms.py:62 workflow_action_mixins.py:62
 msgid "Subject"
 msgstr "Subiect"
 
-#: forms.py:66 workflow_action_mixins.py:71
+#: forms.py:65 workflow_action_mixins.py:71
 msgid "Body"
 msgstr "Corp"
 
-#: forms.py:71
+#: forms.py:69
 msgid "The email profile that will be used to send this email."
 msgstr "Profilul de e-mail care va fi folosit pentru a trimite acest e-mail."
 
-#: forms.py:71 models.py:44 workflow_action_mixins.py:107
+#: forms.py:70 models.py:44 workflow_action_mixins.py:107
 #: workflow_action_mixins.py:121
 msgid "Mailing profile"
 msgstr "Profilul de corespondență"
 
-#: forms.py:78
+#: forms.py:76
 msgid "The driver to use when sending emails."
 msgstr "Pilotul software ce trebuie folosit atunci când trimiteți e-mailuri."
 
-#: forms.py:79
+#: forms.py:77
 msgid "Backend"
 msgstr "Backend"
 
-#: links.py:34 links.py:37
+#: links.py:33 links.py:36
 msgid "Email document link"
 msgstr "Trimiteți prin e-mail linkul documentului"
 
-#: links.py:47 links.py:52
+#: links.py:46 links.py:51
 msgid "Email document file"
 msgstr "Trimiteți prin e-mail fișierul document"
 
-#: links.py:58 links.py:63
+#: links.py:57 links.py:62
 msgid "Email document file link"
 msgstr "Trimiteți prin e-mail un link pentru fișierul documentului"
 
-#: links.py:73 links.py:78
+#: links.py:72 links.py:77
 msgid "Email document version"
 msgstr "Trimiteți versiunea documentului prin e-mail"
 
-#: links.py:84
+#: links.py:83
 msgid "Email document version link"
 msgstr "Trimiteți prin e-mail linkul versiunii documentului"
 
-#: links.py:89
+#: links.py:88
 msgid "Email link version"
 msgstr "Trimiteți versiunea linkului prin e-mail"
 
-#: links.py:98
+#: links.py:97
 msgid "Create mailing profile"
 msgstr "Creați un profil de corespondență electronică"
 
-#: links.py:104
+#: links.py:103
 msgid "Delete"
 msgstr "Șterge"
 
-#: links.py:108
+#: links.py:107
 msgid "Edit"
 msgstr "Editați"
 
-#: links.py:112 links.py:120 links.py:126 models.py:45
+#: links.py:111 links.py:119 links.py:125 models.py:45
 #: views/mailing_profile_views.py:134
 msgid "Mailing profiles"
 msgstr "Profiluri de corespondență"
 
-#: links.py:130 views/mailing_profile_views.py:164
+#: links.py:129 views/mailing_profile_views.py:164
 msgid "Test"
 msgstr "Test"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -26,20 +26,20 @@ msgstr ""
 msgid "Common"
 msgstr "Általános"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "A kódszöveg karakterláncainak offline fordításának engedélyezésére szolgál."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Stílusellenőrzést biztosít."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Parancssori környezet automatikus kiegészítéssel."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Ellenőrzi a README fájl megfelelő formázását."
 
@@ -87,24 +87,24 @@ msgstr "Online áruház"
 msgid "Get support"
 msgstr "Támogatás kérése"
 
-#: links.py:77 views.py:134
+#: links.py:77 views.py:136
 msgid "Tools"
 msgstr "Eszközök"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Ez a funkció elavult, és egy későbbi verzióban eltávolítjuk."
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Nap"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Óra"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Perc"
 
@@ -144,7 +144,7 @@ msgstr "Objektum másolása"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -191,11 +191,6 @@ msgid ""
 " containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Az összes olyan alkalmazást jelölő karakterláncok listája, amelyek a Mayan "
-"EDMS által telepítetteken kívül vannak telepítve. Minden karakterláncnak egy"
-" pontozott Python-útvonalnak kell lennie: egy alkalmazás konfigurációs "
-"osztályához (ajánlott), vagy egy alkalmazást tartalmazó csomaghoz. Példa: "
-"['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -227,10 +222,6 @@ msgstr "A kezdőképernyőn megjelenítendő irányítópult neve."
 #: settings.py:95
 msgid "Sets the project's name."
 msgstr "Beállítja a projekt nevét."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "A projekt kezdőlapjának URL-je."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

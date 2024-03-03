@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -25,9 +25,9 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:46 apps.py:133 apps.py:137 apps.py:141 apps.py:146 apps.py:150
-#: events.py:6 forms.py:27 links.py:28 menus.py:14 models.py:35
-#: permissions.py:6 views.py:180 workflow_actions.py:40 workflow_actions.py:54
+#: apps.py:44 apps.py:131 apps.py:135 apps.py:139 apps.py:144 apps.py:148
+#: events.py:6 forms.py:27 links.py:27 menus.py:14 models.py:35
+#: permissions.py:6 views.py:181 workflow_actions.py:40 workflow_actions.py:54
 msgid "Tags"
 msgstr "Tags"
 
@@ -55,7 +55,7 @@ msgstr "Tag von Dokument entfernt"
 msgid "Attach tags"
 msgstr "Tags zuweisen"
 
-#: links.py:23 workflow_actions.py:76
+#: links.py:22 workflow_actions.py:76
 msgid "Remove tag"
 msgstr "Tag entfernen"
 
@@ -225,7 +225,7 @@ msgstr "Tags anhängen an Dokument: %(object)s"
 msgid "Attach tags to %(count)d document."
 msgstr "Tags an %(count)d Dokument anhängen."
 
-#: views.py:70 wizard_steps.py:80
+#: views.py:69 wizard_steps.py:80
 msgid "Tags to be attached."
 msgstr "Hinzuzufügende Tags."
 

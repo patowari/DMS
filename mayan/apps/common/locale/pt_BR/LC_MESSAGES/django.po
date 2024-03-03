@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
@@ -33,19 +33,19 @@ msgstr ""
 msgid "Common"
 msgstr "Comum"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Usada para permitir a tradução offline do texto do código"
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Fornece verificação de estilo"
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Ambiente de linha de comando com auto completar."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Verificar a formatação adequada do arquivo de README."
 
@@ -93,24 +93,24 @@ msgstr "Loja online"
 msgid "Get support"
 msgstr "Obtenha ajuda"
 
-#: links.py:77 views.py:134
+#: links.py:77 views.py:136
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Essa funcionalidade foi deprecada e será removida numa versão futura"
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Dias"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Horas"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minutos"
 
@@ -150,7 +150,7 @@ msgstr "Copiar objeto"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -225,10 +225,6 @@ msgstr "Nome do painel a ser exibido na visualização do início. "
 #: settings.py:95
 msgid "Sets the project's name."
 msgstr "Nomeia o projeto."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "url da página inicial do projeto."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

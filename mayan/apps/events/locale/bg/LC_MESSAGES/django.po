@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Pavlin Koldamov <pkoldamov@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -47,11 +47,11 @@ msgstr "Цел"
 msgid "Action object"
 msgstr "Обект на действие"
 
-#: apps.py:105 forms.py:10 forms.py:67
+#: apps.py:105 forms.py:10 forms.py:71
 msgid "Namespace"
 msgstr "Именно пространство"
 
-#: apps.py:110 forms.py:14 forms.py:71 serializers.py:21 serializers.py:46
+#: apps.py:110 forms.py:16 forms.py:77 serializers.py:21 serializers.py:46
 msgid "Label"
 msgstr "Етикет"
 
@@ -71,11 +71,11 @@ msgstr "Тип на събитието"
 msgid "Event list export to CSV"
 msgstr "Експорт на списък със събития в CSV"
 
-#: classes.py:118
+#: classes.py:121
 msgid "Events exported."
 msgstr "Събитията са експортирани."
 
-#: classes.py:120
+#: classes.py:123
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -92,15 +92,15 @@ msgstr "Събитията са изчистени"
 msgid "Events exported"
 msgstr "Експортирани събития"
 
-#: forms.py:18 forms.py:75
+#: forms.py:22 forms.py:83
 msgid "Subscription"
 msgstr "Абонамент"
 
-#: forms.py:20 forms.py:77
+#: forms.py:24 forms.py:85
 msgid "No"
 msgstr "Не"
 
-#: forms.py:21 forms.py:78
+#: forms.py:25 forms.py:86
 msgid "Subscribed"
 msgstr "Абониран"
 
@@ -112,7 +112,7 @@ msgstr "Система"
 msgid "Clear events"
 msgstr "Изчистете събитията"
 
-#: links.py:59 links.py:107 views/export_views.py:60
+#: links.py:59 links.py:107 views/export_views.py:64
 msgid "Export events"
 msgstr "Експортирай събития"
 
@@ -290,7 +290,7 @@ msgstr "Няма събития от този тип"
 msgid "Events of type: %s"
 msgstr "Събития от тип: %s"
 
-#: views/export_views.py:27
+#: views/export_views.py:28
 msgid ""
 "The process will be performed in the background. The exported events will be"
 " available in the downloads area."
@@ -298,18 +298,18 @@ msgstr ""
 "Процесът ще се извърши във фонов режим. Експортираните събития ще бъдат "
 "налични в областта за изтегляне."
 
-#: views/export_views.py:47
+#: views/export_views.py:51
 msgid "Event list export task queued successfully."
 msgstr ""
 "Задачата за експортиране на списък със събития е поставена на опашка "
 "успешно."
 
-#: views/export_views.py:81
+#: views/export_views.py:85
 #, python-format
 msgid "Export events of: %s"
 msgstr "Експортирайте събития на: %s"
 
-#: views/export_views.py:100
+#: views/export_views.py:104
 #, python-format
 msgid "Export events of type: %s"
 msgstr ""

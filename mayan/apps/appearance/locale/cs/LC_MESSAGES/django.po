@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -94,7 +94,7 @@ msgstr "Nastavení motivu"
 msgid "Edit theme settings"
 msgstr "Upravit nastavení motivu"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Vytvořit nový motiv"
 
@@ -106,7 +106,7 @@ msgstr "Odstranit"
 msgid "Edit"
 msgstr "Upravit"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Motivy"
 
@@ -309,12 +309,6 @@ msgstr ""
 "\n"
 "Pokud jste našli chybu nebo máte nějaký nápad, navštivte <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">fórum %(icon_forum)s</a> nebo otevřete lístek v <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">úložišti zdrojových kódů %(icon_source_code)s</a> ."
 
-#: templates/appearance/app/foot.html:70
-msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
-msgstr ""
-
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr "Objekt"
@@ -455,31 +449,31 @@ msgstr "Zkontrolujte připojení k síti a zkuste to znovu za chvíli."
 msgid "None"
 msgstr "Žádný"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Odstranit motiv: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Upravit motiv: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "Motivy umožňují změnu vizuálního vzhledu bez nutnosti změn kódu."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Neexistují žádné motivy"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

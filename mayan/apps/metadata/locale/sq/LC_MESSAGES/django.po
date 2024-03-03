@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2023\n"
 "Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: forms.py:27 models.py:186 workflow_actions.py:109
+#: forms.py:27 models.py:188 workflow_actions.py:109
 msgid "Value"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: forms.py:52 forms.py:236 models.py:283
+#: forms.py:52 forms.py:236 models.py:285
 msgid "Required"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Default value error: %s"
 msgstr ""
 
-#: forms.py:118 models.py:128
+#: forms.py:118 models.py:130
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr ""
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Metadata types to be added to the selected documents."
 msgstr ""
 
-#: forms.py:138 models.py:90 models.py:280 search.py:11 serializers.py:48
+#: forms.py:138 models.py:92 models.py:282 search.py:11 serializers.py:48
 #: serializers.py:108 workflow_actions.py:145
 msgid "Metadata type"
 msgstr ""
@@ -154,8 +154,8 @@ msgstr ""
 msgid "Remove metadata"
 msgstr ""
 
-#: links.py:63 links.py:95 links.py:103 models.py:91 permissions.py:24
-#: views/metadata_type_views.py:115 workflow_actions.py:52
+#: links.py:63 links.py:95 links.py:103 models.py:93 permissions.py:24
+#: views/metadata_type_views.py:116 workflow_actions.py:52
 #: workflow_actions.py:66
 msgid "Metadata types"
 msgstr ""
@@ -282,52 +282,52 @@ msgstr ""
 msgid "Enter the arguments for the parser in YAML format."
 msgstr ""
 
-#: models.py:82
+#: models.py:84
 msgid "Parser arguments"
 msgstr ""
 
-#: models.py:137
+#: models.py:139
 msgid "Value is not one of the provided options."
 msgstr ""
 
-#: models.py:151
+#: models.py:153
 #, python-format
 msgid "Metadata type validation error; %(exception)s"
 msgstr ""
 
-#: models.py:177 serializers.py:105
+#: models.py:179 serializers.py:105
 msgid "Document"
 msgstr ""
 
-#: models.py:180
+#: models.py:182
 msgid "Type"
 msgstr ""
 
-#: models.py:184
+#: models.py:186
 msgid "The actual value stored in the metadata type field for the document."
 msgstr ""
 
-#: models.py:192 models.py:193
+#: models.py:194 models.py:195
 msgid "Document metadata"
 msgstr ""
 
-#: models.py:229
+#: models.py:231
 msgid "Metadata type is required for this document type."
 msgstr ""
 
-#: models.py:262
+#: models.py:264
 msgid "Metadata type is not valid for this document type."
 msgstr ""
 
-#: models.py:276 serializers.py:45
+#: models.py:278 serializers.py:45
 msgid "Document type"
 msgstr ""
 
-#: models.py:291
+#: models.py:293
 msgid "Document type metadata type options"
 msgstr ""
 
-#: models.py:292
+#: models.py:294
 msgid "Document type metadata types options"
 msgstr ""
 
@@ -597,11 +597,11 @@ msgstr ""
 msgid "Document type relationships for metadata type: %s"
 msgstr ""
 
-#: wizard_steps.py:21
+#: wizard_steps.py:19
 msgid "Enter document metadata"
 msgstr ""
 
-#: wizard_steps.py:203
+#: wizard_steps.py:201
 msgid ""
 "One of more metadata types that are required for this document type are not "
 "available."

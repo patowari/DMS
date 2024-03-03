@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Rogerio Falcone <rogerio@falconeit.com.br>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -27,19 +27,19 @@ msgstr ""
 msgid "Databases"
 msgstr "Base de dados"
 
-#: classes.py:80
+#: classes.py:82
 msgid "Model fields"
 msgstr "Campos do modelo"
 
-#: classes.py:128
+#: classes.py:130
 msgid "Model related fields"
 msgstr "Campos relacionados com o modelo"
 
-#: classes.py:133
+#: classes.py:135
 msgid "Model properties"
 msgstr "Propriedades do modelo"
 
-#: classes.py:138
+#: classes.py:140
 msgid "Model reverse fields"
 msgstr "Campos reversos do modelo"
 

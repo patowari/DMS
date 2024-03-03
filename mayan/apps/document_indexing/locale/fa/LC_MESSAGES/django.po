@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mehdi Amani <MehdiAmani@toorintan.com>, 2023\n"
 "Language-Team: Persian (https://app.transifex.com/rosarior/teams/13584/fa/)\n"
@@ -105,7 +105,7 @@ msgstr "تاریخ ایجاد"
 msgid "Indexes"
 msgstr "نمایه ها"
 
-#: links.py:53 queues.py:23
+#: links.py:52 queues.py:23
 msgid "Rebuild index"
 msgstr "بازسازی نمایه"
 

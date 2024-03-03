@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -25,19 +25,19 @@ msgstr ""
 msgid "Common"
 msgstr "Společný"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Slouží k povolení offline překladu textových řetězců."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Poskytuje kontrolu stylu."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Prostředí příkazového řádku s automatickým dokončováním."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Zkontroluje správné formátování souboru README."
 
@@ -85,24 +85,24 @@ msgstr "Internetový obchod"
 msgid "Get support"
 msgstr "Získat podporu"
 
-#: links.py:77 views.py:134
+#: links.py:77 views.py:136
 msgid "Tools"
 msgstr "Nástroje"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Tato funkce byla ukončena a v budoucí verzi bude odstraněna."
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Dny"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Hodiny"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minuty"
 
@@ -142,7 +142,7 @@ msgstr "Zkopírujte objekt"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -210,10 +210,6 @@ msgstr "Název řídicího panelu, který se má zobrazit v domovském zobrazen�
 #: settings.py:95
 msgid "Sets the project's name."
 msgstr "Nastavuje název projektu."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "URL domovské stránky projektu."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

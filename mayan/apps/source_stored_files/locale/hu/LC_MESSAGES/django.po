@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Csaba Tarjányi, 2023\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Source stored files"
 msgstr "Forrásban tárolt fájlok"
 
-#: classes.py:44
+#: classes.py:46
 msgid "Size"
 msgstr "Méret"
 
-#: classes.py:48
+#: classes.py:50
 msgid "Thumbnail"
 msgstr "Miniatűr"
 
@@ -63,11 +63,11 @@ msgstr ""
 "Egyedi azonosító, amellyel kiválasztható, hogy melyik forrás-háttérrendszer "
 "tárolt fájlt kell feldolgozni."
 
-#: source_backend_actions/mixins.py:75
+#: source_backend_actions/mixins.py:74
 msgid "Stored file"
 msgstr "Tárolt fájl"
 
-#: source_backend_actions/mixins.py:76
+#: source_backend_actions/mixins.py:75
 #, python-format
 msgid "Delete stored file \"%s\"?"
 msgstr "Törli a \"%s\" tárolt fájlt?"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
@@ -97,7 +97,7 @@ msgstr "Impostazioni di tema"
 msgid "Edit theme settings"
 msgstr "Modifica le impostazioni del tema"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Crea un nuovo tema"
 
@@ -109,7 +109,7 @@ msgstr "Cancella"
 msgid "Edit"
 msgstr "Modifica"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Temi"
 
@@ -315,12 +315,6 @@ msgstr ""
 "\n"
 "Se trovi un bug o hai un'idea per una nuova funzionalità, visita il <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> o apri un ticket nel <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">repository del codice %(icon_source_code)s</a>."
 
-#: templates/appearance/app/foot.html:70
-msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
-msgstr ""
-
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr "Oggetto"
@@ -461,33 +455,33 @@ msgstr "Controlla la connessione di rete e riprova"
 msgid "None"
 msgstr "Nessuno"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Elimina tema: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Modifica tema: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "I temi consentono di modificare l'aspetto visivo senza richiedere modifiche "
 "al codice."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Non ci sono temi"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Impostazioni del tema per l'utente: %s"
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Modifica impostazioni del tema per l'utente: %s"

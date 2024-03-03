@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2023
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: Roberto Rosario, 2023\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,8 +44,10 @@ msgstr ""
 #: settings.py:29
 msgid ""
 "Base URL path to use for all views. Used when hosting using a path that is "
-"not the root path of the web server. Example: /mayan-installations/home/"
+"not the root path of the web server. The path value must not include a "
+"leading or trailing slash. Example: mayan-installations/home"
 msgstr ""
-"Ruta base de URL que se utilizará para todas las vistas. Se utiliza cuando "
-"se aloja utilizando una ruta que no es la ruta raíz del servidor web. "
-"Ejemplo: /instalaciones-mayan/inicio/"
+"Ruta URL base que se utilizará para todas las vistas. Se utiliza cuando se "
+"aloja utilizando una ruta que no es la ruta raíz del servidor web. El valor "
+"de la ruta no debe incluir una barra diagonal inicial o final. Ejemplo: "
+"instalaciones-mayan/inicio"

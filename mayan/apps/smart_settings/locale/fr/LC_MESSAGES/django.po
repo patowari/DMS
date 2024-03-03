@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -41,27 +41,27 @@ msgstr "Nom"
 msgid "Value"
 msgstr "Valeur"
 
-#: classes.py:116
+#: classes.py:118
 msgid "Settings namespace"
 msgstr ""
 
-#: classes.py:397
+#: classes.py:399
 msgid "Choices"
 msgstr "Choix"
 
-#: classes.py:399
+#: classes.py:401
 msgid "Possible values allowed for this setting."
 msgstr ""
 
-#: classes.py:405
+#: classes.py:407
 msgid "Default"
 msgstr "Défaut"
 
-#: classes.py:413
+#: classes.py:415
 msgid "Overridden"
 msgstr "Remplacé"
 
-#: classes.py:415
+#: classes.py:417
 msgid "Is this setting being overridden by an environment variable?"
 msgstr ""
 

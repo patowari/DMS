@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2023\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -27,20 +27,20 @@ msgstr ""
 msgid "Common"
 msgstr "Ortak"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Kod metin dizelerinin çevrimdışı çevirisine izin vermek için kullanılır."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Stil kontrolü sağlar."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Otomatik tamamlama ile komut satırı ortamı."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "README dosyasının doğru biçimlendirmesini denetler."
 
@@ -88,26 +88,26 @@ msgstr "Çevrimiçi mağaza"
 msgid "Get support"
 msgstr "Destek alın"
 
-#: links.py:77 views.py:134
+#: links.py:77 views.py:136
 msgid "Tools"
 msgstr "Araçlar"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Bu özellik kullanımdan kaldırılmıştır ve gelecekteki bir sürümde "
 "kaldırılacaktır."
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Günler"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Saatler"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Dakikalar"
 
@@ -147,7 +147,7 @@ msgstr "Nesneyi Kopyala"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -223,10 +223,6 @@ msgstr "Giriş görünümünde görüntülenecek gösterge tablosunun adı."
 #: settings.py:95
 msgid "Sets the project's name."
 msgstr "Projenin adını ayarlar."
-
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "Projenin ana sayfasının URL'si."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

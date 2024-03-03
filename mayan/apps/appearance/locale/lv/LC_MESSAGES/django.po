@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2023\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
@@ -92,7 +92,7 @@ msgstr "Tēmas iestatījumi"
 msgid "Edit theme settings"
 msgstr "Rediģēt tēmas iestatījumus"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Izveidot jaunu tēmu"
 
@@ -104,7 +104,7 @@ msgstr "Dzēst"
 msgid "Edit"
 msgstr "Rediģēt"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Tēmas"
 
@@ -308,12 +308,6 @@ msgstr ""
 "\n"
 "Ja atradāt kļūdu vai ir kāda funkcionalitātes ideja, apmeklējiet <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">forumu %(icon_forum)s</a> vai atveriet biļeti <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">pirmkoda repozitorijā %(icon_source_code)s</a> ."
 
-#: templates/appearance/app/foot.html:70
-msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
-msgstr ""
-
 #: templates/appearance/base.html:73
 msgid "Object"
 msgstr "Objekts"
@@ -454,31 +448,31 @@ msgstr "Pārbaudiet tīkla savienojumu un pēc brīža mēģiniet vēlreiz."
 msgid "None"
 msgstr "Nav neviens"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Dzēst tēmu: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Rediģēt tēmu: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "Tēmas ļauj mainīt vizuālo izskatu, neprasot koda izmaiņas."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Nav tēmu"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

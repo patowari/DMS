@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -48,11 +48,11 @@ msgstr "创建角色"
 msgid "Role edited"
 msgstr "编辑角色"
 
-#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:111
+#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:113
 msgid "Roles"
 msgstr "角色"
 
-#: links.py:29 views.py:57
+#: links.py:29 views.py:58
 msgid "Create new role"
 msgstr "创造新角色"
 

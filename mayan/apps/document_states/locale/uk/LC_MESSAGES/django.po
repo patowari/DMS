@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -23,29 +23,29 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:93 events.py:6 forms/workflow_template_forms.py:20 links.py:52
-#: links.py:92 links.py:100 links.py:289 links.py:313
+#: apps.py:91 events.py:6 forms/workflow_template_forms.py:20 links.py:50
+#: links.py:90 links.py:98 links.py:287 links.py:311
 #: models/workflow_models.py:58 queues.py:11 settings.py:14
-#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:280
+#: views/workflow_proxy_views.py:70 views/workflow_template_views.py:282
 #: workflow_actions.py:133 workflow_actions.py:147
 msgid "Workflows"
 msgstr "Робочі процеси"
 
-#: apps.py:226 apps.py:233
+#: apps.py:224 apps.py:231
 msgid "Current state of a workflow"
 msgstr "Поточний стан робочого процесу"
 
-#: apps.py:227
+#: apps.py:225
 msgid "Return the current state of the selected workflow."
 msgstr "Повернути поточний стан вибраного робочого процесу."
 
-#: apps.py:234
+#: apps.py:232
 msgid ""
 "Return the completion value of the current state of the selected workflow."
 msgstr ""
 "Повернути значення завершення поточного стану вибраного робочого процесу."
 
-#: apps.py:292
+#: apps.py:290
 msgid ""
 "Return the last workflow instance log entry. The log entry itself has the "
 "following fields: datetime, transition, user, and comment."
@@ -53,11 +53,11 @@ msgstr ""
 "Повернути останній запис журналу екземпляра робочого процесу. Сам запис "
 "журналу містить такі поля: дата, час, перехід, користувач і коментар."
 
-#: apps.py:295
+#: apps.py:293
 msgid "Get last log entry"
 msgstr "Отримати останній запис журналу"
 
-#: apps.py:300
+#: apps.py:298
 msgid ""
 "Return the current context dictionary which includes runtime data from the "
 "workflow transition fields."
@@ -65,73 +65,73 @@ msgstr ""
 "Повернути поточний словник контексту, який включає дані виконання з полів "
 "переходу робочого процесу."
 
-#: apps.py:302
+#: apps.py:300
 msgid "Get the context"
 msgstr "Отримати контекст"
 
-#: apps.py:307
+#: apps.py:305
 msgid "Return the transition of the workflow instance."
 msgstr "Повернути перехід екземпляра робочого процесу."
 
-#: apps.py:308
+#: apps.py:306
 msgid "Get last transition"
 msgstr "Отримати останній перехід"
 
-#: apps.py:324 apps.py:336 apps.py:345 apps.py:352
+#: apps.py:322 apps.py:334 apps.py:343 apps.py:350
 msgid "None"
 msgstr "None"
 
-#: apps.py:332 serializers/workflow_instance_serializers.py:129
+#: apps.py:330 serializers/workflow_instance_serializers.py:129
 msgid "Current state"
 msgstr "Поточний стан"
 
-#: apps.py:337 apps.py:362 models/workflow_instance_models.py:100
+#: apps.py:335 apps.py:360 models/workflow_instance_models.py:100
 #: serializers/workflow_instance_serializers.py:71
 msgid "User"
 msgstr "Користувач"
 
-#: apps.py:341
+#: apps.py:339
 msgid "Last transition"
 msgstr "Останній перехід"
 
-#: apps.py:346 apps.py:359
+#: apps.py:344 apps.py:357
 msgid "Date and time"
 msgstr "Дата і час"
 
-#: apps.py:353 models/workflow_state_models.py:52
+#: apps.py:351 models/workflow_state_models.py:52
 msgid "Completion"
 msgstr "Завершення"
 
-#: apps.py:383
+#: apps.py:381
 msgid "Additional details"
 msgstr "Додаткова інформація"
 
-#: apps.py:424
+#: apps.py:422
 msgid "When?"
 msgstr "Коли?"
 
-#: apps.py:428
+#: apps.py:426
 msgid "Action type"
 msgstr "Тип дії"
 
-#: apps.py:488
+#: apps.py:486
 msgid ""
 "Triggers are system events that will cause the transition to be applied."
 msgstr "Тригери – це системні події, які спричинять застосування переходу."
 
-#: apps.py:490
+#: apps.py:488
 msgid "Triggers"
 msgstr "Тригери"
 
-#: apps.py:504 models/workflow_transition_models.py:105
+#: apps.py:502 models/workflow_transition_models.py:105
 msgid "Type"
 msgstr "Тип"
 
-#: apps.py:512
+#: apps.py:510
 msgid "Widget"
 msgstr "Віджет"
 
-#: apps.py:523 apps.py:529
+#: apps.py:521 apps.py:527
 msgid "Documents"
 msgstr "Документи"
 
@@ -168,7 +168,7 @@ msgstr "Робочий процес відредаговано"
 msgid "Select a transition to execute in the next step."
 msgstr "Виберіть перехід для виконання на наступному кроці."
 
-#: forms/workflow_instance_forms.py:17 links.py:295
+#: forms/workflow_instance_forms.py:17 links.py:293
 #: models/workflow_instance_models.py:96
 #: models/workflow_state_escalation_models.py:34
 #: models/workflow_transition_models.py:102
@@ -194,7 +194,7 @@ msgid "Namespace"
 msgstr "Простір імен"
 
 #: forms/workflow_template_transition_forms.py:45 models/workflow_models.py:45
-#: models/workflow_state_action_models.py:34
+#: models/workflow_state_action_models.py:33
 #: models/workflow_state_models.py:39 models/workflow_transition_models.py:38
 #: models/workflow_transition_models.py:116
 msgid "Label"
@@ -209,7 +209,7 @@ msgid "Yes"
 msgstr "Так"
 
 #: forms/workflow_template_transition_forms.py:54
-#: models/workflow_state_action_models.py:37
+#: models/workflow_state_action_models.py:36
 #: models/workflow_state_escalation_models.py:47
 msgid "Enabled"
 msgstr "Активовано"
@@ -223,17 +223,17 @@ msgstr "Тригер події: %s"
 msgid "Create workflow"
 msgstr "Створити робочий процес"
 
-#: links.py:63 models/workflow_models.py:49
+#: links.py:61 models/workflow_models.py:49
 msgid "Document types"
 msgstr "Тип документа"
 
-#: links.py:68 links.py:75 links.py:117 links.py:155 links.py:185 links.py:214
-#: links.py:260
+#: links.py:66 links.py:73 links.py:115 links.py:153 links.py:183 links.py:212
+#: links.py:258
 msgid "Delete"
 msgstr "Видалити"
 
-#: links.py:82 links.py:124 links.py:162 links.py:192 links.py:221
-#: links.py:267
+#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219
+#: links.py:265
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -241,71 +241,71 @@ msgstr "Редагувати"
 msgid "Launch workflow"
 msgstr "Запустити робочий процес"
 
-#: links.py:108
+#: links.py:106
 msgid "Preview"
 msgstr "Попередній перегляд"
 
-#: links.py:131 models/workflow_state_model_mixins.py:30
+#: links.py:129 models/workflow_state_model_mixins.py:30
 msgid "Actions"
 msgstr "Дія"
 
-#: links.py:138
+#: links.py:136
 msgid "Create action"
 msgstr "Створити дію"
 
-#: links.py:148
+#: links.py:146
 msgid "Create escalation"
 msgstr "Створити ескалацію"
 
-#: links.py:169 models/workflow_state_model_mixins.py:40
+#: links.py:167 models/workflow_state_model_mixins.py:40
 msgid "Escalations"
 msgstr "Ескалації"
 
-#: links.py:178
+#: links.py:176
 msgid "Create state"
 msgstr "Створити стан"
 
-#: links.py:197 links.py:325
+#: links.py:195 links.py:323
 msgid "States"
 msgstr "Стани"
 
-#: links.py:207
+#: links.py:205
 msgid "Create transition"
 msgstr "Створити перехід"
 
-#: links.py:227
+#: links.py:225
 msgid "Transition triggers"
 msgstr "Тригери переходу"
 
-#: links.py:233
+#: links.py:231
 msgid "Transitions"
 msgstr "Переходи"
 
-#: links.py:241 links.py:247 workflow_actions.py:110
+#: links.py:239 links.py:245 workflow_actions.py:110
 msgid "Launch workflows"
 msgstr "Запуск робочих процесів"
 
-#: links.py:253
+#: links.py:251
 msgid "Create field"
 msgstr "Створити поле"
 
-#: links.py:274 models/workflow_transition_model_mixins.py:27
+#: links.py:272 models/workflow_transition_model_mixins.py:27
 msgid "Fields"
 msgstr "Поля"
 
-#: links.py:284
+#: links.py:282
 msgid "Detail"
 msgstr "Деталі"
 
-#: links.py:305
+#: links.py:303
 msgid "Workflow documents"
 msgstr "Документи робочого процесу"
 
-#: links.py:319
+#: links.py:317
 msgid "State documents"
 msgstr "Стани документів"
 
-#: links.py:334
+#: links.py:332
 msgid "Launch all workflows"
 msgstr "Запустити всі робочі процеси"
 
@@ -375,7 +375,7 @@ msgstr "Робочі екземпляри"
 
 #: models/workflow_instance_models.py:103
 #: models/workflow_state_escalation_models.py:64
-#: views/workflow_instance_views.py:161
+#: views/workflow_instance_views.py:162
 msgid "Comment"
 msgstr "Коментар"
 
@@ -437,29 +437,29 @@ msgid ""
 msgstr "Виконуватиметься дія залежно від значення повернення умови."
 
 #: models/workflow_state_action_model_mixins.py:57
-#: models/workflow_transition_model_mixins.py:51
+#: models/workflow_transition_model_mixins.py:53
 msgid "Has a condition?"
 msgstr "Є умова?"
 
-#: models/workflow_state_action_models.py:30
+#: models/workflow_state_action_models.py:29
 #: models/workflow_state_escalation_models.py:30
 #: models/workflow_state_models.py:58
 msgid "Workflow state"
 msgstr "Стан робочого процесу"
 
-#: models/workflow_state_action_models.py:33
+#: models/workflow_state_action_models.py:32
 msgid "A short text describing the action."
 msgstr "Короткий текст опису дії."
 
-#: models/workflow_state_action_models.py:42
+#: models/workflow_state_action_models.py:41
 msgid "At which moment of the state this action will execute."
 msgstr "У який момент стану ця дія буде виконана."
 
-#: models/workflow_state_action_models.py:43
+#: models/workflow_state_action_models.py:42
 msgid "When"
 msgstr "Коли"
 
-#: models/workflow_state_action_models.py:47
+#: models/workflow_state_action_models.py:46
 msgid ""
 "The condition that will determine if this state action is executed or not. "
 "The condition is evaluated against the workflow instance. Conditions that do"
@@ -473,16 +473,16 @@ msgstr ""
 "(''), вважаються логічним хибним, будь-яке інше значення вважається логічним"
 " істинним."
 
-#: models/workflow_state_action_models.py:53
+#: models/workflow_state_action_models.py:52
 #: models/workflow_transition_models.py:56
 msgid "Condition"
 msgstr "Умова"
 
-#: models/workflow_state_action_models.py:59
+#: models/workflow_state_action_models.py:58
 msgid "Workflow state action"
 msgstr "Стан виконання робочого процесу"
 
-#: models/workflow_state_action_models.py:60
+#: models/workflow_state_action_models.py:59
 msgid "Workflow state actions"
 msgstr "Стани виконання робочого процесу"
 
@@ -998,7 +998,7 @@ msgstr "Для цього документа немає робочих проц�
 msgid "Workflows for document: %s"
 msgstr "Робочі процеси для документа: %s"
 
-#: views/workflow_instance_views.py:76
+#: views/workflow_instance_views.py:77
 msgid ""
 "This view will show the state changes as a workflow instance is "
 "transitioned."
@@ -1006,34 +1006,34 @@ msgstr ""
 "У цьому поданні відображатимуться зміни стану під час переходу екземпляра "
 "робочого процесу."
 
-#: views/workflow_instance_views.py:80
+#: views/workflow_instance_views.py:81
 msgid "There are no details for this workflow instance"
 msgstr "Немає деталей для цього екземпляра робочого процесу"
 
-#: views/workflow_instance_views.py:83
+#: views/workflow_instance_views.py:84
 #, python-format
 msgid "Detail of workflow: %(workflow)s"
 msgstr "Деталі робочого процесу: %(workflow)s"
 
-#: views/workflow_instance_views.py:124
+#: views/workflow_instance_views.py:125
 #, python-format
 msgid "Document \"%s\" transitioned successfully"
 msgstr "Документ \"%s\" успішно перейшов"
 
-#: views/workflow_instance_views.py:148
+#: views/workflow_instance_views.py:149
 #, python-format
 msgid "Execute transition \"%(transition)s\" for workflow: %(workflow)s"
 msgstr "Виконати перехід \"%(transition)s\" для робочого процесу: %(workflow)s"
 
-#: views/workflow_instance_views.py:164
+#: views/workflow_instance_views.py:165
 msgid "Optional comment to attach to the transition."
 msgstr "Необов’язковий коментар, який потрібно додати до переходу."
 
-#: views/workflow_instance_views.py:232
+#: views/workflow_instance_views.py:233
 msgid "Select"
 msgstr "Вибрати"
 
-#: views/workflow_instance_views.py:234
+#: views/workflow_instance_views.py:235
 #, python-format
 msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""

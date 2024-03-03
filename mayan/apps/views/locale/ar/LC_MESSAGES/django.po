@@ -5,7 +5,6 @@
 # 
 # Translators:
 # Mohammed ALDOUB <voulnet@gmail.com>, 2023
-# John Kawas <john@clinicalclouds.com>, 2023
 # Yaman Sanobar <yman.snober@gmail.com>, 2023
 # WM Shinkada <shinkadawasim@gmail.com>, 2023
 # Roberto Rosario, 2023
@@ -15,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:14+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -45,7 +44,7 @@ msgstr "العنوان"
 msgid "Relationship"
 msgstr "صلة"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -55,7 +54,7 @@ msgstr ""
 "إدخالات. بمجرد اكتمال التحديد ، انقر فوق الزر أدناه أو انقر نقرًا مزدوجًا "
 "فوق القائمة لتنشيط الإجراء"
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -65,97 +64,97 @@ msgstr ""
 " ، بمجرد اكتمال التحديد ، انقر فوق الزر أدناه أو انقر نقرًا مزدوجًا فوق "
 "القائمة لتنشيط الإجراء"
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "إضافة الكل"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "إضافة"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "حذف الكل"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "حذف"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "خطأ في تحديث العلاقة ؛ %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "تم تحديث العلاقات بنجاح"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "تكرار خطأ في المعلومات : %(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s لم ينشأ , الخطأ : %(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s الإنشاء الناجح."
 
-#: generics.py:724
+#: generics.py:728
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s لم تحذف , الخطأ : %(error)s."
 
-#: generics.py:734
+#: generics.py:738
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s احذف الناجح."
 
-#: generics.py:797
+#: generics.py:801
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:909
+#: generics.py:913
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s لم يتم التعديل, الخطأ: %(error)s."
 
-#: generics.py:919
+#: generics.py:923
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s التعديل الناجح."
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:991
+#: generics.py:995
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -173,34 +172,6 @@ msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
 msgstr ""
-
-#: templates/views/app/foot.html:45
-msgid "Cancel upload"
-msgstr "إلغاء الرفع"
-
-#: templates/views/app/foot.html:46
-msgid "Are you sure you want to cancel this upload?"
-msgstr "هل أنت متأكد أنك تريد إلغاء هذا التحميل؟"
-
-#: templates/views/app/foot.html:47
-msgid "Drop files or click here to upload files"
-msgstr "قم بإسقاط الملفات أو انقر هنا لتحميل الملفات"
-
-#: templates/views/app/foot.html:48
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "السحب والإفلات لا يدعمه متصفحك"
-
-#: templates/views/app/foot.html:49
-msgid "Please use the fallback form below to upload your files."
-msgstr "الرجاء استخدام النموذج أدناه لتحميل الملفات الخاصة بك"
-
-#: templates/views/app/foot.html:50
-msgid "Clear"
-msgstr "مسح "
-
-#: templates/views/app/foot.html:51
-msgid "Server responded with {{statusCode}} code."
-msgstr "استجاب الخادم برمز {{statusCode}}."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"
