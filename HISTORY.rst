@@ -1,24 +1,22 @@
 4.5.10 (XXXX-XX-XX)
 ===================
-- Update ``DEFAULT_SEARCH_QUERY_RESULTS_LIMIT`` from 100000 to 10000 to
-  workaround conflicting with ElasticSearch non scroll search limit.
+- Include changes from version 4.4.13.
 - Minor code style fixes.
-- Add an extra line to ``COMMON_EXTRA_APPS`` help text to clarify the apps
-  inclusion order.
-- Changed the internal variable name of ``COMMON_EXTRA_APPS_PRE`` to avoid
-  possible conflicts.
 - Fix typos.
 - Updated the download file API to handle anonymous user gracefully.
-- Encapsulate MPTT exceptions as validation errors when users attempt
-  to perform invalid index template node tree manipulations.
-- Fix source class and JavaScript MayanImage class ``.initialize()``
-  method name.
 - Update Docker container image versions:
 
   - Debian from 12.4-slim to 12.5-slim
   - PostgreSQL from 13.12-alpine to 13.13-alpine
   - Python from 3.11.7-slim to 3.11.8-slim
   - RabbitMQ from 3.12.12-alpine to 3.12.13-alpine
+
+- Test updates:
+
+  - Remove more direct uses of ``values_list``.
+  - Remove more direct imports of base test mixins.
+  - Sort test mixins.
+  - Testing style updates.
 
 4.5.9 (2024-02-05)
 ==================
