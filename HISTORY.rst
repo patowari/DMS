@@ -18,6 +18,8 @@
   - Sort test mixins.
   - Testing style updates.
 
+- Update Django from version 3.2.23 to 3.2.24.
+
 4.5.9 (2024-02-05)
 ==================
 - Minor query optimizations.
@@ -26,7 +28,7 @@
 
   - django-test-migrations from 1.1.0 to 1.3.0.
   - pypdf from 3.14.0 to 3.17.4 due to CVE-2023-46250.
-  - safety from 3.0.1 to 2.3.5.
+  - safety from 2.3.5 to 3.0.1.
 
 - Don't raise an error if a form view has no form defined. This can be the
   case for dynamic forms based on ACL where the current user has no access
