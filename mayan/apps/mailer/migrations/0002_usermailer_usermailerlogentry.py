@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 'ordering': ('label',),
                 'verbose_name': 'User mailer',
                 'verbose_name_plural': 'User mailers'
-            },
+            }
         ),
         migrations.CreateModel(
             name='UserMailerLogEntry',

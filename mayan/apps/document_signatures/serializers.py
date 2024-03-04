@@ -86,7 +86,7 @@ class DetachedSignatureSerializer(BaseSignatureSerializer):
             {
                 'lookup_field': 'pk',
                 'lookup_url_kwarg': 'detached_signature_id'
-            },
+            }
         ),
         view_name='rest_api:detachedsignature-detail'
     )
@@ -119,7 +119,7 @@ class EmbeddedSignatureSerializer(
             {
                 'lookup_field': 'pk',
                 'lookup_url_kwarg': 'embedded_signature_id'
-            },
+            }
         ), view_name='rest_api:embeddedsignature-detail'
     )
 

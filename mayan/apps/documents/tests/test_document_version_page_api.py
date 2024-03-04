@@ -3,8 +3,8 @@ from rest_framework import status
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
-    event_document_version_page_created,
-    event_document_version_page_deleted, event_document_version_page_edited
+    event_document_version_page_created, event_document_version_page_deleted,
+    event_document_version_page_edited
 )
 from ..permissions import (
     permission_document_version_edit, permission_document_version_view

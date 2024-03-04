@@ -50,7 +50,7 @@ class DocumentCheckOutDetailForm(DetailForm):
                 {
                     'label': _(message='New files allowed?'),
                     'func': lambda instance: _(message='Yes') if not checkout_info.block_new_file else _(message='No')
-                },
+                }
             )
 
         kwargs['extra_fields'] = extra_fields

@@ -109,7 +109,7 @@ class Migration(migrations.Migration):
                 'get_latest_by': 'datetime',
                 'verbose_name': 'Cache partition file',
                 'verbose_name_plural': 'Cache partition files'
-            },
+            }
         ),
         migrations.AlterUniqueTogether(
             name='cachepartitionfile',

@@ -17,13 +17,13 @@ class Migration(migrations.Migration):
                 'indexes': [],
                 'constraints': []
             },
-            bases=('document_indexing.indexinstancenode',),
+            bases=('document_indexing.indexinstancenode',)
         ),
         migrations.AlterModelOptions(
             name='indexinstancenode',
             options={
                 'verbose_name': 'Index instance node',
                 'verbose_name_plural': 'Indexes instances node'
-            },
+            }
         )
     ]

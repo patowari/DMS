@@ -3,8 +3,7 @@ from mayan.apps.storage.tests.mixins import StorageSettingTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..literals import (
-    STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE,
-    STORAGE_NAME_DOCUMENT_FILES,
+    STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE, STORAGE_NAME_DOCUMENT_FILES,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
 from ..settings import (

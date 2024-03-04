@@ -66,7 +66,7 @@ class DocumentMailingProfileViewTestMixin(MailingProfileTestMixin):
                     self, '_test_email_address', TEST_EMAIL_ADDRESS
                 ),
                 'mailing_profile': self._test_mailing_profile.pk
-            },
+            }
         )
 
 
@@ -130,7 +130,7 @@ class DocumentVersionMailingProfileViewTestMixin(MailingProfileTestMixin):
                     self, '_test_email_address', TEST_EMAIL_ADDRESS
                 ),
                 'mailing_profile': self._test_mailing_profile.pk
-            },
+            }
         )
 
     def _request_test_document_version_link_send_multiple_view(self):
@@ -142,7 +142,7 @@ class DocumentVersionMailingProfileViewTestMixin(MailingProfileTestMixin):
                     self, '_test_email_address', TEST_EMAIL_ADDRESS
                 ),
                 'mailing_profile': self._test_mailing_profile.pk
-            },
+            }
         )
 
     def _request_test_document_version_attachment_send_single_view(self):

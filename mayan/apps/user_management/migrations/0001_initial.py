@@ -62,7 +62,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'User settings',
                 'verbose_name_plural': 'Users settings'
-            },
+            }
         ),
         migrations.RunPython(
             code=code_add_user_options_to_existing_users,

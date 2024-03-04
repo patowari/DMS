@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Document type settings',
                 'verbose_name_plural': 'Document types settings'
-            },
+            }
         ),
         migrations.RunPython(
             code=code_create_parsing_setting_for_existing_document_types,

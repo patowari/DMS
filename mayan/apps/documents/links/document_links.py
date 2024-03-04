@@ -5,8 +5,8 @@ from mayan.apps.navigation.classes import Link
 from ..icons import (
     icon_document_list, icon_document_preview,
     icon_document_properties_detail, icon_document_properties_edit,
-    icon_document_recently_accessed_list, icon_document_recently_created_list,
-    icon_document_type_change
+    icon_document_recently_accessed_list,
+    icon_document_recently_created_list, icon_document_type_change
 )
 from ..permissions import (
     permission_document_properties_edit, permission_document_view

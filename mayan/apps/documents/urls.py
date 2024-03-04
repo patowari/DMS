@@ -59,10 +59,10 @@ from .views.document_version_page_views import (
     DocumentVersionPageDeleteView, DocumentVersionPageListRemapView,
     DocumentVersionPageListView, DocumentVersionPageNavigationFirst,
     DocumentVersionPageNavigationLast, DocumentVersionPageNavigationNext,
-    DocumentVersionPageNavigationPrevious,
-    DocumentVersionPageRotateLeftView, DocumentVersionPageRotateRightView,
-    DocumentVersionPageView, DocumentVersionPageViewResetView,
-    DocumentVersionPageZoomInView, DocumentVersionPageZoomOutView
+    DocumentVersionPageNavigationPrevious, DocumentVersionPageRotateLeftView,
+    DocumentVersionPageRotateRightView, DocumentVersionPageView,
+    DocumentVersionPageViewResetView, DocumentVersionPageZoomInView,
+    DocumentVersionPageZoomOutView
 )
 from .views.document_version_views import (
     DocumentVersionActiveView, DocumentVersionCreateView,

@@ -7,11 +7,11 @@ class Migration(migrations.Migration):
     ]
     operations = [
         migrations.DeleteModel(
-            name='DocumentPageResult',
+            name='DocumentPageResult'
         ),
         migrations.RenameModel(
             old_name='DocumentPage',
-            new_name='DocumentFilePage',
+            new_name='DocumentFilePage'
         ),
         migrations.CreateModel(
             name='DocumentFilePageResult',
@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 'indexes': [],
                 'constraints': []
             },
-            bases=('documents.documentfilepage',),
+            bases=('documents.documentfilepage',)
         ),
         migrations.AlterModelOptions(
             name='documentfilepage',
@@ -32,6 +32,6 @@ class Migration(migrations.Migration):
                 'ordering': ('page_number',),
                 'verbose_name': 'Document file page',
                 'verbose_name_plural': 'Document file pages'
-            },
+            }
         )
     ]

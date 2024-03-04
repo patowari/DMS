@@ -13,8 +13,8 @@ from mayan.apps.converter.permissions import (
 from mayan.apps.converter.transformations import TransformationResize
 from mayan.apps.views.generics import (
     ConfirmView, FormView, MultipleObjectConfirmActionView,
-    MultipleObjectDeleteView, SingleObjectCreateView,
-    SingleObjectDetailView, SingleObjectEditView, SingleObjectListView
+    MultipleObjectDeleteView, SingleObjectCreateView, SingleObjectDetailView,
+    SingleObjectEditView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 

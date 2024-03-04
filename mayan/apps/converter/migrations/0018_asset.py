@@ -56,6 +56,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Asset',
                 'verbose_name_plural': 'Assets',
                 'ordering': ('label',)
-            },
+            }
         )
     ]

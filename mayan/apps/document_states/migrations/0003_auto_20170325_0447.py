@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
                 'proxy': True,
                 'verbose_name_plural': 'Workflow runtime proxies'
             },
-            bases=('document_states.workflow',),
+            bases=('document_states.workflow',)
         ),
         migrations.CreateModel(
             name='WorkflowStateRuntimeProxy',
@@ -25,14 +25,15 @@ class Migration(migrations.Migration):
                 'proxy': True,
                 'verbose_name_plural': 'Workflow state runtime proxies'
             },
-            bases=('document_states.workflowstate',),
+            bases=('document_states.workflowstate',)
         ),
         migrations.AlterModelOptions(
             name='workflow',
             options={
                 'ordering': ('label',),
-                'verbose_name': 'Workflow', 'verbose_name_plural': 'Workflows'
-            },
+                'verbose_name': 'Workflow',
+                'verbose_name_plural': 'Workflows'
+            }
         ),
         migrations.AlterModelOptions(
             name='workflowstate',
@@ -40,13 +41,14 @@ class Migration(migrations.Migration):
                 'ordering': ('label',),
                 'verbose_name': 'Workflow state',
                 'verbose_name_plural': 'Workflow states'
-            },
+            }
         ),
         migrations.AlterModelOptions(
             name='workflowtransition',
             options={
-                'ordering': ('label',), 'verbose_name': 'Workflow transition',
+                'ordering': ('label',),
+                'verbose_name': 'Workflow transition',
                 'verbose_name_plural': 'Workflow transitions'
-            },
+            }
         )
     ]

@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Document page content',
                 'verbose_name_plural': 'Document pages contents'
-            },
+            }
         ),
         migrations.CreateModel(
             name='DocumentVersionParseError',
@@ -70,6 +70,6 @@ class Migration(migrations.Migration):
                 'ordering': ('datetime_submitted',),
                 'verbose_name': 'Document version parse error',
                 'verbose_name_plural': 'Document version parse errors'
-            },
+            }
         )
     ]
