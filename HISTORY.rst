@@ -6,6 +6,14 @@
   Rename the app flag ``has_translations`` to ``has_app_translations``.
   Add the app flag ``has_javascript_translations`` which defaults to False.
 - Move the flanker dependency from the sources to the source_emails app.
+- Update dependency versions:
+
+  - redis from 5.0.1 to 5.0.2.
+  - django from 4.2.10 to 4.2.11.
+  - ruff from 0.2.1 to 0.3.0.
+  - sentry-sdk from 1.40.1 to 1.40.6.
+  - jsonschema from 4.20.0 to 4.21.1.
+  - extract-msg from 0.47.0 to 0.48.0.
 
 4.6.1 (2024-02-07)
 ==================
