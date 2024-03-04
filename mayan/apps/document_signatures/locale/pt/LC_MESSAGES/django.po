@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Vítor Figueiró <vfigueiro@gmail.com>, 2024
@@ -13,22 +13,20 @@
 # Roberto Rosario, 2024
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
 # Márcia Ferreira, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
-"pt/)\n"
-"Language: pt\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
@@ -366,8 +364,8 @@ msgid ""
 "document itself or uploaded as a separate file."
 msgstr ""
 "Assinaturas ajudam a proporcionar evidência de autoria e detecção de "
-"manipulação. São muito seguras e difíceis de falsificar. Uma assinatura pode "
-"ser integrada ao próprio documento ou carregada como um arquivo destacado."
+"manipulação. São muito seguras e difíceis de falsificar. Uma assinatura pode"
+" ser integrada ao próprio documento ou carregada como um arquivo destacado."
 
 #: views.py:341
 msgid "There are no signatures for this document file."
@@ -378,7 +376,7 @@ msgstr "Não há assinaturas para este arquivo de documento."
 msgid "Signatures for document file: %s"
 msgstr "Assinaturas para arquivo de documento: %s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr "Esta operação pode levar algum tempo em bases de dados grandes."
 
@@ -386,16 +384,16 @@ msgstr "Esta operação pode levar algum tempo em bases de dados grandes."
 msgid "Refresh all signatures information?"
 msgstr "Atualizar todas as informações de assinaturas?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr ""
 "Atualização de informação de assinatura em lista de espera, com sucesso."
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "Verificar todos os documentos para assinaturas?"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "Verificação de assinaturas colocada em fila."
 
@@ -405,7 +403,8 @@ msgstr "Assinar o documento (destacado)"
 
 #: workflow_actions.py:48
 msgid "Private key that will be used to sign the document file."
-msgstr "Chave privada que será utilizada para assinar o ficheiro do documento."
+msgstr ""
+"Chave privada que será utilizada para assinar o ficheiro do documento."
 
 #: workflow_actions.py:55
 msgid "Private key"

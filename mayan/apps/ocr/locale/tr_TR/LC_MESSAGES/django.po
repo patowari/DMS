@@ -1,42 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Emine Öztürk <oemine075@gmail.com>, 2024
 # Bedreddin Şahbaz, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
-"teams/13584/tr_TR/)\n"
-"Language: tr_TR\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:56 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
+#: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
 #: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
 msgstr "OCR"
 
-#: apps.py:117
+#: apps.py:116
 msgid "The OCR content."
 msgstr "OCR içeriği."
 
-#: apps.py:122
+#: apps.py:121
 msgid "A generator returning the document's version pages OCR content."
 msgstr "Belgenin sürüm sayfaları OCR içeriğini döndüren bir oluşturucu."
 
-#: apps.py:124
+#: apps.py:123
 msgid "OCR content"
 msgstr "OCR içeriği"
 
@@ -192,8 +191,7 @@ msgstr "%(count)d belgeleri OCR kuyruğuna eklendi."
 #: views.py:111
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
-msgstr ""
-"OCR \"%(instance)s\" belge sürümü silinirken hata oluştu; %(exception)s"
+msgstr "OCR \"%(instance)s\" belge sürümü silinirken hata oluştu; %(exception)s"
 
 #: views.py:117
 #, python-format
@@ -270,8 +268,8 @@ msgid ""
 msgstr ""
 "Bir belge sayfasının OCR içeriğinin değiştirilip değiştirilmeyeceğini "
 "belirleyen koşul. Koşul, yinelenen belge sayfasına göre değerlendirilir. "
-"Herhangi bir değer döndürmeyen, Python mantıksal None veya boş bir dize ('') "
-"döndüren koşullar mantıksal yanlış olarak kabul edilir, diğer tüm değerler "
+"Herhangi bir değer döndürmeyen, Python mantıksal None veya boş bir dize ('')"
+" döndüren koşullar mantıksal yanlış olarak kabul edilir, diğer tüm değerler "
 "mantıksal doğru olarak kabul edilir."
 
 #: workflow_actions.py:31

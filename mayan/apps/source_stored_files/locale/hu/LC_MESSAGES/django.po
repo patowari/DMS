@@ -2,23 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:11
@@ -156,11 +155,11 @@ msgstr "Nem lehet letölteni a fájlok listáját; %s"
 #: source_backends/stored_file_mixins.py:90
 msgid ""
 "This could mean that the source file list is empty. It could also mean that "
-"the operating system user account being used for Mayan EDMS doesn't have the "
-"necessary file system permissions to access the source files."
+"the operating system user account being used for Mayan EDMS doesn't have the"
+" necessary file system permissions to access the source files."
 msgstr ""
-"Ez azt jelentheti, hogy a forrásfájlok listája üres. Azt is jelentheti, hogy "
-"a Mayan EDMS-hez használt operációs rendszer felhasználói fiókja nem "
+"Ez azt jelentheti, hogy a forrásfájlok listája üres. Azt is jelentheti, hogy"
+" a Mayan EDMS-hez használt operációs rendszer felhasználói fiókja nem "
 "rendelkezik a forrásfájlok eléréséhez szükséges fájlrendszeri engedélyekkel."
 
 #: source_backends/stored_file_mixins.py:95
@@ -185,8 +184,8 @@ msgstr "Előnézet magassága"
 
 #: source_backends/stored_file_mixins.py:213
 msgid ""
-"Maximum size in bytes for which previews will be generated. Example: 20000 = "
-"20KB."
+"Maximum size in bytes for which previews will be generated. Example: 20000 ="
+" 20KB."
 msgstr ""
 "Maximális méret bájtban, amelyhez előnézetek készülnek. Példa: 20000 = 20KB."
 

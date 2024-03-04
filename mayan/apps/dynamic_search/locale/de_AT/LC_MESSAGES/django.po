@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
@@ -11,20 +11,19 @@
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
 # Jesaja Everling <jeverling@gmail.com>, 2024
 # 847f3f05406324d125c568a4b098bddb, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: 847f3f05406324d125c568a4b098bddb, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
-"teams/13584/de_AT/)\n"
-"Language: de_AT\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:27
@@ -108,7 +107,8 @@ msgstr ""
 
 #: queues.py:39
 msgid "Reset the search backend indices and index all instances again."
-msgstr "Die Indices im Suchbackend zurücksetzen und alle Indices neu aufbauen."
+msgstr ""
+"Die Indices im Suchbackend zurücksetzen und alle Indices neu aufbauen."
 
 #: scoped_queries.py:351
 msgid ""

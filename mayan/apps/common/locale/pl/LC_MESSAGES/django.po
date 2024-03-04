@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
@@ -9,22 +9,20 @@
 # Marcin Lozynski <mlozynski@wp.pl>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
-"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
-"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
@@ -67,7 +65,7 @@ msgstr "Forum"
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:55 views.py:53
+#: links.py:55 views.py:55
 msgid "License"
 msgstr "Licencja"
 
@@ -99,25 +97,25 @@ msgstr "Sklep internetowy"
 msgid "Get support"
 msgstr "Uzyskaj wsparcie"
 
-#: links.py:87 views.py:134
+#: links.py:87 views.py:136
 msgid "Tools"
 msgstr "Narzędzia"
 
-#: literals.py:24
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Ta funkcja jest przestarzała i zostanie usunięta w przyszłych wersjach."
 
-#: literals.py:33
+#: literals.py:32
 msgid "Days"
 msgstr "Dni"
 
-#: literals.py:34
+#: literals.py:33
 msgid "Hours"
 msgstr "Godziny"
 
-#: literals.py:35
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minuty"
 
@@ -165,8 +163,8 @@ msgstr ""
 
 #: settings.py:32
 msgid ""
-"In list mode, show the \"object\" menu options as a dropdown menu instead of "
-"individual buttons."
+"In list mode, show the \"object\" menu options as a dropdown menu instead of"
+" individual buttons."
 msgstr ""
 
 #: settings.py:40
@@ -180,40 +178,41 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 
 #: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. Example: ['app_1', 'app_2']"
-msgstr ""
-
-#: settings.py:69
-msgid ""
-"A list of strings designating all applications that are installed beyond "
-"those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. These apps will be installed before the default "
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
-#: settings.py:80
+#: settings.py:70
 msgid ""
-"Name of the view attached to the brand anchor in the main menu. This is also "
-"the view to which users will be redirected after log in."
+"A list of strings designating all applications that are installed beyond "
+"those normally installed by Mayan EDMS. Each string should be a dotted "
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. These apps will be installed before the default "
+"apps. Example: ['app_1', 'app_2']"
+msgstr ""
+
+#: settings.py:81
+msgid ""
+"Name of the view attached to the brand anchor in the main menu. This is also"
+" the view to which users will be redirected after log in."
 msgstr ""
 "Nazwa widoku dołączonego do marki w menu głównym. Jest to również widok, do "
 "którego użytkownicy będą przekierowywani po zalogowaniu."
 
-#: settings.py:89
+#: settings.py:90
 msgid "Name of the dashboard to display in the home view."
 msgstr ""
 
-#: settings.py:94
+#: settings.py:95
 msgid "Sets the project's name."
 msgstr ""
 

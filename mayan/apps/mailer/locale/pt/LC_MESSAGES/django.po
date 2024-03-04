@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
@@ -14,22 +14,20 @@
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
 # Márcia Ferreira, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
-"pt/)\n"
-"Language: pt\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:58
 msgid "Mailer"
@@ -45,11 +43,11 @@ msgstr "De"
 
 #: classes.py:48
 msgid ""
-"The sender's address. Some system will refuse to send messages if this value "
-"is not set."
+"The sender's address. Some system will refuse to send messages if this value"
+" is not set."
 msgstr ""
-"O endereço do remetente. Alguns sistemas podem recusar a enviar mensagens se "
-"este valor não for definido."
+"O endereço do remetente. Alguns sistemas podem recusar a enviar mensagens se"
+" este valor não for definido."
 
 #: classes.py:63
 msgid "Compatibility"
@@ -77,11 +75,11 @@ msgstr "Perfil de envio editado"
 
 #: forms.py:60 forms.py:102
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon."
 msgstr ""
-"Endereço de e-mail do destinatário. Podem ser vários endereços separados por "
-"vírgula ou ponto e vírgula."
+"Endereço de e-mail do destinatário. Podem ser vários endereços separados por"
+" vírgula ou ponto e vírgula."
 
 #: forms.py:62 forms.py:104
 msgid "Email address"
@@ -112,48 +110,48 @@ msgstr "O driver a ser usado no envio de e-mails."
 msgid "Backend"
 msgstr "Backend"
 
-#: links.py:35 links.py:40
+#: links.py:34 links.py:39
 msgid "Email document link"
 msgstr "Link do documento do e-mail"
 
-#: links.py:50 links.py:55
+#: links.py:49 links.py:54
 msgid "Email document file"
 msgstr "Ficheiro do documento de e-mail"
 
-#: links.py:61 links.py:66
+#: links.py:60 links.py:65
 msgid "Email document file link"
 msgstr "Link de ficheiro de documento de e-mail"
 
-#: links.py:76 links.py:81
+#: links.py:75 links.py:80
 msgid "Email document version"
 msgstr "Versão do documento de e-mail"
 
-#: links.py:87
+#: links.py:86
 msgid "Email document version link"
 msgstr "Link de versão de documento de e-mail"
 
-#: links.py:92
+#: links.py:91
 msgid "Email link version"
 msgstr "Versão de link de e-mail"
 
-#: links.py:101
+#: links.py:100
 msgid "Create mailing profile"
 msgstr "Criar perfil de mailing"
 
-#: links.py:107
+#: links.py:106
 msgid "Delete"
 msgstr "Remover"
 
-#: links.py:111
+#: links.py:110
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:115 links.py:123 links.py:129 models.py:49
+#: links.py:114 links.py:122 links.py:128 models.py:49
 #: views/mailing_profile_views.py:138
 msgid "Mailing profiles"
 msgstr "Perfis de e-mail"
 
-#: links.py:133 views/mailing_profile_views.py:168
+#: links.py:132 views/mailing_profile_views.py:168
 msgid "Test"
 msgstr "Teste"
 
@@ -233,16 +231,16 @@ msgid ""
 "server. In most email documentation this type of TLS connection is referred "
 "to as SSL. It is generally used on port 465. If you are experiencing "
 "problems, see the explicit TLS setting \"Use TLS\". Note that \"Use TLS\" "
-"and \"Use SSL\" are mutually exclusive, so only set one of those settings to "
-"True."
+"and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
+" True."
 msgstr ""
-"Define se deve ser utilizada uma conexão implícita TLS (segura) ao comunicar-"
-"se com o servidor SMTP. Na maior parte da documentação de e-mail este tipo "
-"de conexão TLS é conhecida como SSL. Geralmente é usada a porta 465. Se você "
-"está experimentando problemas, veja o parâmetro de TSL explícita \"Use TLS\" "
-"EMAIL_USE_TLS. Tenha em mente que \"Use TLS\" EMAIL_USE_TLS  e \"Use SSL\" "
-"EMAIL_USE_SSL são mutuamente excludentes, razão pela qual apenas um dos "
-"parâmetros pode ser True."
+"Define se deve ser utilizada uma conexão implícita TLS (segura) ao "
+"comunicar-se com o servidor SMTP. Na maior parte da documentação de e-mail "
+"este tipo de conexão TLS é conhecida como SSL. Geralmente é usada a porta "
+"465. Se você está experimentando problemas, veja o parâmetro de TSL "
+"explícita \"Use TLS\" EMAIL_USE_TLS. Tenha em mente que \"Use TLS\" "
+"EMAIL_USE_TLS  e \"Use SSL\" EMAIL_USE_SSL são mutuamente excludentes, razão"
+" pela qual apenas um dos parâmetros pode ser True."
 
 #: mailers.py:71
 msgid "Server"
@@ -394,20 +392,21 @@ msgstr "%(count)dlink de ficheiros em lista de espera para entrega de e-mail"
 #, python-format
 msgid "%(count)d document file link queued for email delivery"
 msgstr ""
-"%(count)dlink de ficheiro de documento em lista de espera para entrega de e-"
-"mail"
+"%(count)dlink de ficheiro de documento em lista de espera para entrega de "
+"e-mail"
 
 #: views/document_file_views.py:35
 #, python-format
 msgid "%(count)d document file links queued for email delivery"
 msgstr ""
-"%(count)dlinks de ficheiro de documento em lista de espera para entrega de e-"
-"mail"
+"%(count)dlinks de ficheiro de documento em lista de espera para entrega de "
+"e-mail"
 
 #: views/document_version_views.py:17
 #, python-format
 msgid "%(count)d document version queued for email delivery"
-msgstr "%(count)dversão de documento em lista de espera para entrega de e-mail"
+msgstr ""
+"%(count)dversão de documento em lista de espera para entrega de e-mail"
 
 #: views/document_version_views.py:20
 #, python-format
@@ -418,15 +417,15 @@ msgstr "%(count)dversões de documento em lista de espera de e-mail"
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
-"%(count)dlink de versão de documento em lista de espera para entrega de e-"
-"mail"
+"%(count)dlink de versão de documento em lista de espera para entrega de "
+"e-mail"
 
 #: views/document_version_views.py:35
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
 msgstr ""
-"%(count)dlinks de versão de documento em lista de espera para entrega de e-"
-"mail"
+"%(count)dlinks de versão de documento em lista de espera para entrega de "
+"e-mail"
 
 #: views/document_views.py:14
 #, python-format
@@ -480,11 +479,12 @@ msgstr "Testar perfil de mailing: %s"
 
 #: workflow_action_mixins.py:18
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon. A template can be used to reference properties of the document."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon. A template can be used to reference properties of the "
+"document."
 msgstr ""
-"Endereço de e-mail do destinatário. Podem ser vários endereços separados por "
-"vírgulas ou pontos e vírgulas. Um template pode ser usado para referênciar "
+"Endereço de e-mail do destinatário. Podem ser vários endereços separados por"
+" vírgulas ou pontos e vírgulas. Um template pode ser usado para referênciar "
 "propriedades do documento."
 
 #: workflow_action_mixins.py:27
@@ -498,8 +498,8 @@ msgid ""
 "reference properties of the document."
 msgstr ""
 "Endereço usado no cabeçalho \"Cco\" ao enviar o e-mail. Podem ser vários "
-"endereços separados por vírgula ou ponto e vírgula. Um modelo pode ser usado "
-"para fazer referência às propriedades do documento."
+"endereços separados por vírgula ou ponto e vírgula. Um modelo pode ser usado"
+" para fazer referência às propriedades do documento."
 
 #: workflow_action_mixins.py:39
 msgid "BCC"
@@ -515,8 +515,8 @@ msgid ""
 "multiple addresses separated by comma or semicolon. A template can be used "
 "to reference properties of the document."
 msgstr ""
-"Endereço usado no cabeçalho \"Responder para\" ao enviar o e-mail. Podem ser "
-"vários endereços separados por vírgula ou ponto e vírgula. Um modelo pode "
+"Endereço usado no cabeçalho \"Responder para\" ao enviar o e-mail. Podem ser"
+" vários endereços separados por vírgula ou ponto e vírgula. Um modelo pode "
 "ser usado para fazer referência às propriedades do documento."
 
 #: workflow_action_mixins.py:66

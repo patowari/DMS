@@ -2,37 +2,36 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Daniele Bortoluzzi <daniele@elkos.it>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: it\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
+#: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Cartelle"
 
-#: apps.py:165 models.py:40
+#: apps.py:164 models.py:41
 msgid "Documents"
 msgstr "Documenti"
 
@@ -116,7 +115,7 @@ msgstr "Un breve testo utilizzato per identificare la cartella."
 msgid "Label"
 msgstr "Etichetta"
 
-#: models.py:50 models.py:132 models.py:157
+#: models.py:51 models.py:133 models.py:158
 msgid "Cabinet"
 msgstr "Cartella"
 
@@ -194,7 +193,8 @@ msgid "Children"
 msgstr ""
 
 #: serializers.py:23
-msgid "URL of the API endpoint showing the list documents inside this cabinet."
+msgid ""
+"URL of the API endpoint showing the list documents inside this cabinet."
 msgstr ""
 "URL dell'endpoint API che mostra i documenti all'interno di questa cartella."
 

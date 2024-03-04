@@ -1,27 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # jmcainzos <jmcainzos@vodafone.es>, 2024
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/"
-"teams/13584/es_PR/)\n"
-"Language: es_PR\n"
+"Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: es_PR\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
 #: queues.py:9 settings.py:12 views/source_views.py:285
@@ -201,7 +199,8 @@ msgstr "Fuentes periódicas"
 #: queues.py:18
 msgid "Handle source backend action background task"
 msgstr ""
-"Manejar la tarea en segundo plano de la acción de backend de fuente de origen"
+"Manejar la tarea en segundo plano de la acción de backend de fuente de "
+"origen"
 
 #: queues.py:22
 msgid "Check interval source"
@@ -298,8 +297,8 @@ msgstr "Documento al que se cargará un nuevo archivo."
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process "
-"happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process"
+" happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 "Cuando está habilitado, se crea inmediatamente un recibo de documento y se "
@@ -485,8 +484,8 @@ msgid ""
 "and require user input to operate. Others are automatic and run in the "
 "background without user intervention."
 msgstr ""
-"Las fuentes proporcionan los medios para cargar documentos. Algunas fuentes, "
-"como el formulario web, son interactivas y requieren la intervención del "
+"Las fuentes proporcionan los medios para cargar documentos. Algunas fuentes,"
+" como el formulario web, son interactivas y requieren la intervención del "
 "usuario para operar. Otros, como las fuentes de correo electrónico, son "
 "automáticos y se ejecutan en segundo plano sin la intervención del usuario."
 
@@ -505,8 +504,8 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources "
-"that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources"
+" that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -535,8 +534,8 @@ msgstr "Seleccione el tipo de documento"
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled, "
-"create one before proceeding."
+"No interactive document sources have been defined or none have been enabled,"
+" create one before proceeding."
 msgstr ""
 "No se han definido fuentes de documentos interactivos o no hay ninguna "
 "habilitada, cree una antes de continuar."

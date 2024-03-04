@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
@@ -15,21 +15,20 @@
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
@@ -377,7 +376,7 @@ msgstr "Il n'y a pas de signatures pour ce document."
 msgid "Signatures for document file: %s"
 msgstr "Signatures pour le document: %s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr ""
 "Sur de grosses bases de données, cette opération peut prendre un certain "
@@ -387,17 +386,17 @@ msgstr ""
 msgid "Refresh all signatures information?"
 msgstr "Actualiser toutes les informations de signatures?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr ""
 "L'actualisation des informations de signature a bien été mise en file "
 "d'attente."
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "Vérifier les signatures de tous les documents ?"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "Vérification de la signature ajoutée à la file d'attente avec succès."
 

@@ -1,31 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
 msgid "Converter"
@@ -73,8 +69,8 @@ msgid ""
 "Utility from the popper-utils package used to extract pages from PDF files "
 "into PPM format images."
 msgstr ""
-"Утиліта з пакету popper-utils, яка використовується для отримання сторінок з "
-"PDF-файлів у формат зображень PPM."
+"Утиліта з пакету popper-utils, яка використовується для отримання сторінок з"
+" PDF-файлів у формат зображень PPM."
 
 #: events.py:10
 msgid "Asset created"
@@ -128,7 +124,8 @@ msgstr "Видалити"
 msgid "Edit"
 msgstr "Редагувати"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21
+#: views/asset_views.py:148
 msgid "Assets"
 msgstr "Активи"
 
@@ -323,7 +320,8 @@ msgstr "Конфігураційні параметри для backend зобр�
 
 #: settings.py:79
 msgid "Time in seconds that the browser should cache the supplied image."
-msgstr "Час у секундах, протягом якого браузер має кешувати надане зображення."
+msgstr ""
+"Час у секундах, протягом якого браузер має кешувати надане зображення."
 
 #: settings.py:87
 msgid ""
@@ -351,8 +349,8 @@ msgstr ""
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {} "
-"and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {}"
+" and {} for formatting errors."
 msgstr ""
 "Не вдалося ініціалізувати кеш-сховище активів конвертера. Перевірте "
 "наявність помилок у налаштуваннях {} та {} у форматуванні."
@@ -361,7 +359,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "Кеш ресурсів"
 
-#: transformation_mixins.py:20 transformations.py:632
+#: transformation_mixins.py:20 transformations.py:634
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -380,11 +378,11 @@ msgstr "Рівень непрозорості зображення у відсо
 msgid "Transparency"
 msgstr "Прозорість"
 
-#: transformation_mixins.py:29 transformations.py:738
+#: transformation_mixins.py:29 transformations.py:740
 msgid "Zoom level in percent."
 msgstr "Рівень масштабування у відсотках."
 
-#: transformation_mixins.py:30 transformations.py:733
+#: transformation_mixins.py:30 transformations.py:735
 msgid "Zoom"
 msgstr "Збільшення"
 
@@ -397,8 +395,8 @@ msgid "Horizontal position in pixels from the left."
 msgstr "Горизонтальне положення в пікселях зліва."
 
 #: transformation_mixins.py:120 transformation_mixins.py:165
-#: transformation_mixins.py:230 transformations.py:235 transformations.py:337
-#: transformations.py:435
+#: transformation_mixins.py:230 transformations.py:237 transformations.py:339
+#: transformations.py:437
 msgid "Left"
 msgstr "Ліворуч"
 
@@ -407,8 +405,8 @@ msgid "Vertical position in pixels from the top."
 msgstr "Вертикальна позиція в пікселях від верху."
 
 #: transformation_mixins.py:124 transformation_mixins.py:170
-#: transformation_mixins.py:240 transformations.py:239 transformations.py:341
-#: transformations.py:439
+#: transformation_mixins.py:240 transformations.py:241 transformations.py:343
+#: transformations.py:441
 msgid "Top"
 msgstr "Верх"
 
@@ -424,7 +422,7 @@ msgstr "Горизонтальне положення у відсотках зл
 msgid "Vertical position in percent from the top."
 msgstr "Вертикальна позиція у відсотках від верху."
 
-#: transformation_mixins.py:223 transformations.py:223
+#: transformation_mixins.py:223 transformations.py:225
 msgid "Paste an asset as watermark"
 msgstr "Вставте ресурс як водяний знак"
 
@@ -436,8 +434,8 @@ msgstr "Горизонтальна початкова позиція в пікс
 msgid "Horizontal end position in pixels from the right."
 msgstr "Горизонтальна кінцева позиція в пікселях справа."
 
-#: transformation_mixins.py:235 transformations.py:244 transformations.py:345
-#: transformations.py:443
+#: transformation_mixins.py:235 transformations.py:246 transformations.py:347
+#: transformations.py:445
 msgid "Right"
 msgstr "Праворуч"
 
@@ -449,8 +447,8 @@ msgstr "Вертикальна початкова позиція в піксел
 msgid "Vertical end position in pixels from the top."
 msgstr "Вертикальна кінцева позиція в пікселях від верху."
 
-#: transformation_mixins.py:245 transformations.py:249 transformations.py:349
-#: transformations.py:447
+#: transformation_mixins.py:245 transformations.py:251 transformations.py:351
+#: transformations.py:449
 msgid "Bottom"
 msgstr "Знизу"
 
@@ -478,7 +476,7 @@ msgstr "Назва ресурсу"
 msgid "Color used to fill the rectangle."
 msgstr "Колір, який використовується для заповнення прямокутника."
 
-#: transformation_mixins.py:356 transformations.py:639
+#: transformation_mixins.py:356 transformations.py:641
 msgid "Fill color"
 msgstr "Колір заповнення"
 
@@ -506,160 +504,160 @@ msgstr "Ширина контуру прямокутника в пікселях
 msgid "Outline width"
 msgstr "Ширина контуру"
 
-#: transformations.py:207
+#: transformations.py:209
 msgid "Paste an asset (absolute coordinates)"
 msgstr "Вставити ресурс (абсолютні координати)"
 
-#: transformations.py:215
+#: transformations.py:217
 msgid "Paste an asset (percent coordinates)"
 msgstr "Вставити ресурс (координати у відсотках)"
 
-#: transformations.py:229
+#: transformations.py:231
 msgid "Crop"
 msgstr "Обрізати"
 
-#: transformations.py:234
+#: transformations.py:236
 msgid "Number of pixels to remove from the left."
 msgstr "Кількість пікселів, які потрібно видалити зліва."
 
-#: transformations.py:238
+#: transformations.py:240
 msgid "Number of pixels to remove from the top."
 msgstr "Кількість пікселів, які потрібно видалити зверху."
 
-#: transformations.py:243
+#: transformations.py:245
 msgid "Number of pixels to remove from the right."
 msgstr "Кількість пікселів, які потрібно видалити з правого краю."
 
-#: transformations.py:248
+#: transformations.py:250
 msgid "Number of pixels to remove from the bottom."
 msgstr "Кількість пікселів, які потрібно видалити знизу."
 
-#: transformations.py:331
+#: transformations.py:333
 msgid "Draw rectangle"
 msgstr "Намалювати прямокутник"
 
-#: transformations.py:336
+#: transformations.py:338
 msgid "Left side location in pixels."
 msgstr "Розташування зліва в пікселях."
 
-#: transformations.py:340
+#: transformations.py:342
 msgid "Top side location in pixels."
 msgstr "Розташування верхньої сторони в пікселях."
 
-#: transformations.py:344
+#: transformations.py:346
 msgid "Right side location in pixels."
 msgstr "Розташування правого боку в пікселях."
 
-#: transformations.py:348
+#: transformations.py:350
 msgid "Bottom side location in pixels."
 msgstr "Розташування знизу в пікселях."
 
-#: transformations.py:429
+#: transformations.py:431
 msgid "Draw rectangle (percent coordinates)"
 msgstr "Намалювати прямокутник (координати у відсотках)"
 
-#: transformations.py:434
+#: transformations.py:436
 msgid "Left side location in percent."
 msgstr "Розташування зліва у відсотках."
 
-#: transformations.py:438
+#: transformations.py:440
 msgid "Top side location in percent."
 msgstr "Розташування зверху у відсотках."
 
-#: transformations.py:442
+#: transformations.py:444
 msgid "Right side location in percent."
 msgstr "Розташування справа у відсотках."
 
-#: transformations.py:446
+#: transformations.py:448
 msgid "Bottom side location in percent."
 msgstr "Розташування знизу у відсотках."
 
-#: transformations.py:529
+#: transformations.py:531
 msgid "Flip"
 msgstr "Перевернути"
 
-#: transformations.py:540
+#: transformations.py:542
 msgid "Gaussian blur"
 msgstr "Гаусове розмиття"
 
-#: transformations.py:545 transformations.py:708
+#: transformations.py:547 transformations.py:710
 msgid "Radius"
 msgstr "Радіус"
 
-#: transformations.py:557
+#: transformations.py:559
 msgid "Line art"
 msgstr "Лінійне зображення"
 
-#: transformations.py:571
+#: transformations.py:573
 msgid "Mirror"
 msgstr "Дзеркало"
 
-#: transformations.py:582
+#: transformations.py:584
 msgid "Resize"
 msgstr "Змінити розмір"
 
-#: transformations.py:588
+#: transformations.py:590
 msgid "New width in pixels."
 msgstr "Нова ширина в пікселях."
 
-#: transformations.py:589
+#: transformations.py:591
 msgid "Width"
 msgstr "Ширина"
 
-#: transformations.py:593
+#: transformations.py:595
 msgid "New height in pixels."
 msgstr "Нова висота в пікселях."
 
-#: transformations.py:594
+#: transformations.py:596
 msgid "Height"
 msgstr "Висота"
 
-#: transformations.py:626
+#: transformations.py:628
 msgid "Rotate"
 msgstr "Повернути"
 
-#: transformations.py:634
+#: transformations.py:636
 msgid "Degrees"
 msgstr "Градуси"
 
-#: transformations.py:638
+#: transformations.py:640
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 "Колір, який буде використовуватися для області поза поверненим зображенням."
 
-#: transformations.py:670
+#: transformations.py:672
 msgid "Rotate 90 degrees"
 msgstr "Поворот на 90 градусів"
 
-#: transformations.py:681
+#: transformations.py:683
 msgid "Rotate 180 degrees"
 msgstr "Поворот на 180 градусів"
 
-#: transformations.py:692
+#: transformations.py:694
 msgid "Rotate 270 degrees"
 msgstr "Поворот на 270 градусів"
 
-#: transformations.py:702
+#: transformations.py:704
 msgid "Unsharp masking"
 msgstr "Нерізке маскування"
 
-#: transformations.py:707
+#: transformations.py:709
 msgid "The blur radius in pixels."
 msgstr "Радіус розмиття в пікселях."
 
-#: transformations.py:711
+#: transformations.py:713
 msgid "Unsharp strength in percent."
 msgstr "Сила нерізкості у відсотках."
 
-#: transformations.py:712 transformations.py:739
+#: transformations.py:714 transformations.py:741
 msgid "Percent"
 msgstr "Відсоток"
 
-#: transformations.py:716
+#: transformations.py:718
 msgid "Minimum brightness change that will be sharpened."
 msgstr "Мінімальна зміна яскравості, яка буде посилена."
 
-#: transformations.py:717
+#: transformations.py:719
 msgid "Tthreshold"
 msgstr "Tпоріг"
 
@@ -681,38 +679,38 @@ msgstr[1] "Видалити вибрані ресурси?"
 msgstr[2] "Видалити вибрані ресурси?"
 msgstr[3] "Видалити вибрані ресурси?"
 
-#: views/asset_views.py:70
+#: views/asset_views.py:71
 #, python-format
 msgid "Delete asset: %s?"
 msgstr "Видалити ресурс : %s ?"
 
-#: views/asset_views.py:81
+#: views/asset_views.py:83
 #, python-format
 msgid "Asset \"%s\" deleted successfully."
 msgstr "Ресурс \"%s\" успішно видалено."
 
-#: views/asset_views.py:86
+#: views/asset_views.py:89
 #, python-format
 msgid "Error deleting asset \"%(asset)s\": %(error)s"
 msgstr "Помилка при видаленні ресурсу \"%(asset)s\": %(error)s"
 
-#: views/asset_views.py:102
+#: views/asset_views.py:106
 #, python-format
 msgid "Details asset: %s"
 msgstr "Деталі ресурсу: %s"
 
-#: views/asset_views.py:117
+#: views/asset_views.py:121
 #, python-format
 msgid "Edit asset: %s"
 msgstr "Редагувати ресурс: %s"
 
-#: views/asset_views.py:140
+#: views/asset_views.py:144
 msgid ""
 "Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
 
-#: views/asset_views.py:143
+#: views/asset_views.py:147
 msgid "No assets available"
 msgstr "Немає доступних ресурсів"
 
@@ -769,8 +767,8 @@ msgstr "Сторінки"
 
 #: workflow_actions.py:37
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas and/"
-"or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas "
+"and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 "Сторінки, до яких будуть додані нові перетворення. Розділяйте комами та/або "
 "використовуйте тире для діапазонів. Залиште порожнім, щоб вибрати всі "

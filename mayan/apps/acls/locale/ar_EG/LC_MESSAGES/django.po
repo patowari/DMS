@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2024
@@ -9,24 +9,22 @@
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
 # ali ahmed, 2024
 # Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:28+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2024\n"
-"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/"
-"teams/13584/ar_EG/)\n"
-"Language: ar_EG\n"
+"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar_EG\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:26 classes.py:206 links.py:27
+#: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
 msgstr "قوائم التحكم فى الدخول"
 
@@ -180,7 +178,7 @@ msgstr "حذف قائمة التحكم في الدخول : %s"
 msgid "There are no ACLs for this object"
 msgstr "لا توجد قوائم تحكم بالدخول لهذا الكائن"
 
-#: views.py:152 views.py:275
+#: views.py:152 views.py:277
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -203,12 +201,12 @@ msgstr "الأذونات الممنوحة"
 msgid "Available permissions"
 msgstr "الأذونات المتاحة"
 
-#: views.py:222
+#: views.py:223
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "إذن الدور \"%(role)s\" ل\"%(object)s\""
 
-#: views.py:231
+#: views.py:233
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -219,11 +217,11 @@ msgstr ""
 "يمكن إزالتها من هذا العرض. يجب إزالة الصلاحيات الموروثة من قائمة التحكم في "
 "الوصول للكائن الأصلي أو من دورها عبر قائمة الإعداد."
 
-#: views.py:272
+#: views.py:274
 msgid "There are no ACLs"
 msgstr "لا توجد قوائم بحق الوصول ACL"
 
-#: views.py:281
+#: views.py:283
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 
@@ -235,8 +233,9 @@ msgstr "نوع الكائن"
 msgid "Type of the object for which the access will be modified."
 msgstr "نوع الكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:56
-msgid "Numeric identifier of the object for which the access will be modified."
+#: workflow_actions.py:57
+msgid ""
+"Numeric identifier of the object for which the access will be modified."
 msgstr "المعرف الرقمي للكائن الذي سيتم تعديل الوصول إليه."
 
 #: workflow_actions.py:62 workflow_actions.py:198

@@ -2,28 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:21 settings.py:11
 msgid "Views"
@@ -61,8 +57,8 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
-"Виберіть записи, які потрібно додати. Утримуйте клавішу Control, щоб вибрати "
-"кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
+"Виберіть записи, які потрібно додати. Утримуйте клавішу Control, щоб вибрати"
+" кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
 "клацніть по списку, щоб активувати дію."
 
 #: generics.py:327
@@ -105,57 +101,57 @@ msgstr "%(object)s не створено, помилка: %(error)s"
 msgid "%(object)s created successfully."
 msgstr "%(object)s успішно створено."
 
-#: generics.py:723
+#: generics.py:727
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s не видалено, помилка: %(error)s."
 
-#: generics.py:733
+#: generics.py:737
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s успішно видалено."
 
-#: generics.py:796
+#: generics.py:800
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Помилка отримання %(object)s; %(error)s"
 
-#: generics.py:908
+#: generics.py:912
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s не оновлено, помилка: %(error)s."
 
-#: generics.py:918
+#: generics.py:922
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s успішно оновлено."
 
-#: generics.py:985
+#: generics.py:989
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d об'єктів успішно видалено."
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" успішно видалено."
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d об'єкт успішно видалено."
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Видалити %(count)d об'єктів."
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Видалити \"%(object)s\"."
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Видалити об’єкт %(count)d ."

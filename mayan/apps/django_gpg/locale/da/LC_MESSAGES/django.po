@@ -1,24 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Rasmus Kierudsen <tebrasso@gmail.com>, 2024
 # Mads L. Nielsen <sirlundgaard@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mads L. Nielsen <sirlundgaard@gmail.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:33
@@ -53,7 +53,7 @@ msgstr ""
 msgid "User ID"
 msgstr ""
 
-#: dependencies.py:9
+#: dependencies.py:11
 msgid "GNU privacy guard - a PGP implementation."
 msgstr ""
 
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Invalid key data"
 msgstr ""
 
-#: models.py:76
+#: models.py:80
 msgid "Key already exists."
 msgstr ""
 
@@ -282,8 +282,8 @@ msgstr ""
 
 #: views.py:208
 msgid ""
-"Private keys are used to signed documents. Private keys can only be uploaded "
-"by the user. The view to upload private and public keys is the same."
+"Private keys are used to signed documents. Private keys can only be uploaded"
+" by the user. The view to upload private and public keys is the same."
 msgstr ""
 
 #: views.py:213
@@ -292,8 +292,8 @@ msgstr ""
 
 #: views.py:232
 msgid ""
-"Public keys are used to verify signed documents. Public keys can be uploaded "
-"by the user or downloaded from keyservers. The view to upload private and "
+"Public keys are used to verify signed documents. Public keys can be uploaded"
+" by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 

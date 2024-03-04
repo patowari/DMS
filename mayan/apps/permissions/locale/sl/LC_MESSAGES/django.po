@@ -1,28 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/"
-"sl/)\n"
-"Language: sl\n"
+"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:88 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "Pravice"
 
@@ -46,7 +44,7 @@ msgstr ""
 msgid "Role edited"
 msgstr ""
 
-#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:113
+#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:121
 msgid "Roles"
 msgstr "Vloge"
 
@@ -197,42 +195,42 @@ msgstr ""
 msgid "Roles of group: %s"
 msgstr ""
 
-#: views.py:66
+#: views.py:67
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:71
+#: views.py:74
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr ""
 
-#: views.py:72
+#: views.py:77
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:73
+#: views.py:80
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr ""
 
-#: views.py:74
+#: views.py:82
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr ""
 
-#: views.py:75
+#: views.py:83
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr ""
 
-#: views.py:76
+#: views.py:84
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr ""
 
-#: views.py:105
+#: views.py:113
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -240,48 +238,48 @@ msgid ""
 "specific objects which its group members inherit."
 msgstr ""
 
-#: views.py:112
+#: views.py:120
 msgid "There are no roles"
 msgstr ""
 
-#: views.py:118
+#: views.py:126
 msgid "Role groups"
 msgstr ""
 
-#: views.py:119
+#: views.py:127
 msgid "Available groups"
 msgstr ""
 
-#: views.py:137
+#: views.py:145
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr ""
 
-#: views.py:140
+#: views.py:148
 #, python-format
 msgid "Groups of role: %s"
 msgstr ""
 
-#: views.py:145
+#: views.py:153
 msgid "Granted permissions"
 msgstr "Dodeljena dovoljenja"
 
-#: views.py:146
+#: views.py:154
 msgid "Available permissions"
 msgstr "Razpoložljiva dovoljenja"
 
-#: views.py:191
+#: views.py:199
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
 
-#: views.py:194
+#: views.py:202
 #, python-format
 msgid "Permissions for role: %s"
 msgstr ""
 
-#: views.py:214
+#: views.py:222
 #, python-format
 msgid "Details of permission: %s"
 msgstr ""

@@ -1,26 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Mario Jakovina <mario.jakovina@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2024\n"
-"Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/"
-"hr/)\n"
-"Language: hr\n"
+"Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: apps.py:58
 msgid "Mailer"
@@ -36,8 +34,8 @@ msgstr ""
 
 #: classes.py:48
 msgid ""
-"The sender's address. Some system will refuse to send messages if this value "
-"is not set."
+"The sender's address. Some system will refuse to send messages if this value"
+" is not set."
 msgstr ""
 
 #: classes.py:63
@@ -66,8 +64,8 @@ msgstr ""
 
 #: forms.py:60 forms.py:102
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon."
 msgstr ""
 
 #: forms.py:62 forms.py:104
@@ -99,48 +97,48 @@ msgstr ""
 msgid "Backend"
 msgstr ""
 
-#: links.py:35 links.py:40
+#: links.py:34 links.py:39
 msgid "Email document link"
 msgstr ""
 
-#: links.py:50 links.py:55
+#: links.py:49 links.py:54
 msgid "Email document file"
 msgstr ""
 
-#: links.py:61 links.py:66
+#: links.py:60 links.py:65
 msgid "Email document file link"
 msgstr ""
 
-#: links.py:76 links.py:81
+#: links.py:75 links.py:80
 msgid "Email document version"
 msgstr ""
 
-#: links.py:87
+#: links.py:86
 msgid "Email document version link"
 msgstr ""
 
-#: links.py:92
+#: links.py:91
 msgid "Email link version"
 msgstr ""
 
-#: links.py:101
+#: links.py:100
 msgid "Create mailing profile"
 msgstr ""
 
-#: links.py:107
+#: links.py:106
 msgid "Delete"
 msgstr "Izbriši"
 
-#: links.py:111
+#: links.py:110
 msgid "Edit"
 msgstr "Izmijeni"
 
-#: links.py:115 links.py:123 links.py:129 models.py:49
+#: links.py:114 links.py:122 links.py:128 models.py:49
 #: views/mailing_profile_views.py:138
 msgid "Mailing profiles"
 msgstr ""
 
-#: links.py:133 views/mailing_profile_views.py:168
+#: links.py:132 views/mailing_profile_views.py:168
 msgid "Test"
 msgstr ""
 
@@ -210,8 +208,8 @@ msgid ""
 "server. In most email documentation this type of TLS connection is referred "
 "to as SSL. It is generally used on port 465. If you are experiencing "
 "problems, see the explicit TLS setting \"Use TLS\". Note that \"Use TLS\" "
-"and \"Use SSL\" are mutually exclusive, so only set one of those settings to "
-"True."
+"and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
+" True."
 msgstr ""
 
 #: mailers.py:71
@@ -432,8 +430,9 @@ msgstr ""
 
 #: workflow_action_mixins.py:18
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon. A template can be used to reference properties of the document."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon. A template can be used to reference properties of the "
+"document."
 msgstr ""
 
 #: workflow_action_mixins.py:27

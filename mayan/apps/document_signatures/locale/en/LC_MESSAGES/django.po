@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:09+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2020-08-18 04:38+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -355,7 +355,7 @@ msgstr ""
 msgid "Signatures for document file: %s"
 msgstr ""
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr ""
 
@@ -363,15 +363,15 @@ msgstr ""
 msgid "Refresh all signatures information?"
 msgstr ""
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr ""
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr ""
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr ""
 

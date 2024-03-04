@@ -1,30 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
@@ -75,8 +71,8 @@ msgid ""
 "The passphrase to unlock the key and allow it to be used to sign the "
 "document file."
 msgstr ""
-"Фраза для розблокування ключа та дозволу його використання для підпису файлу "
-"документа."
+"Фраза для розблокування ключа та дозволу його використання для підпису файлу"
+" документа."
 
 #: forms.py:24 serializers.py:68 workflow_actions.py:28
 msgid "Passphrase"
@@ -301,8 +297,8 @@ msgstr "URL"
 #: settings.py:20
 msgid "Path to the Storage subclass to use when storing detached signatures."
 msgstr ""
-"Шлях до підкласу сховища, який використовується при збереженні відокремлених "
-"підписів."
+"Шлях до підкласу сховища, який використовується при збереженні відокремлених"
+" підписів."
 
 #: settings.py:27
 msgid "Arguments to pass to the SIGNATURE_STORAGE_BACKEND."
@@ -376,23 +372,24 @@ msgstr "Немає підписів для цього файлу докумен�
 msgid "Signatures for document file: %s"
 msgstr "Підписи для файлу документа: %s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
-msgstr "У великих базах даних виконання цієї операції може зайняти деякий час."
+msgstr ""
+"У великих базах даних виконання цієї операції може зайняти деякий час."
 
 #: views.py:358
 msgid "Refresh all signatures information?"
 msgstr "Оновити всю інформацію про підписи?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr "Оновлення інформації про підпис успішно поставлено в чергу."
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "Перевірити всі документи на наявність підписів?"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "Перевірка підпису успішно поставлена в чергу."
 
@@ -402,7 +399,8 @@ msgstr "Підписати документ (відокремлено)"
 
 #: workflow_actions.py:48
 msgid "Private key that will be used to sign the document file."
-msgstr "Закритий ключ, який використовуватиметься для підпису файлу документа."
+msgstr ""
+"Закритий ключ, який використовуватиметься для підпису файлу документа."
 
 #: workflow_actions.py:55
 msgid "Private key"

@@ -2,29 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Roberto Rosario, 2024
 # Sergey Glita <gsv70@mail.ru>, 2024
+# lilo.panic, 2024
 # Oleg Sizov <olegsm35@gmail.com>, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
-# lilo.panic, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: lilo.panic, 2024\n"
+"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: apps.py:21 settings.py:11
 msgid "Views"
@@ -53,8 +51,8 @@ msgid ""
 "to activate the action."
 msgstr ""
 "Выберите записи для удаления. Удерживайте Control для выбора нескольких "
-"записей. После завершения выбора, нажмите кнопку ниже или дважды щелкните по "
-"списку, чтобы удалить записи."
+"записей. После завершения выбора, нажмите кнопку ниже или дважды щелкните по"
+" списку, чтобы удалить записи."
 
 #: generics.py:173
 msgid ""
@@ -63,8 +61,8 @@ msgid ""
 "to activate the action."
 msgstr ""
 "Выберите записи для добавления. Удерживайте Control для выбора нескольких "
-"записей. После завершения выбора, нажмите кнопку ниже или дважды щелкните по "
-"списку, чтобы добавить записи."
+"записей. После завершения выбора, нажмите кнопку ниже или дважды щелкните по"
+" списку, чтобы добавить записи."
 
 #: generics.py:327
 msgid "Add all"
@@ -106,57 +104,57 @@ msgstr "%(object)s не создан, ошибка: %(error)s"
 msgid "%(object)s created successfully."
 msgstr "%(object)s создан."
 
-#: generics.py:723
+#: generics.py:727
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s не удален, ошибка: %(error)s."
 
-#: generics.py:733
+#: generics.py:737
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s удален."
 
-#: generics.py:796
+#: generics.py:800
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Ошибка при получении %(object)s; %(error)s"
 
-#: generics.py:908
+#: generics.py:912
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s не обновлён, ошибка: %(error)s."
 
-#: generics.py:918
+#: generics.py:922
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s обновлён."
 
-#: generics.py:985
+#: generics.py:989
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d объектов удалено."
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" удален."
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d объект удален."
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Удалить %(count)d объектов."
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Удалить \"%(object)s\"."
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Удалить %(count)d объект."

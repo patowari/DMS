@@ -2,28 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Roberto Rosario, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
@@ -73,113 +72,113 @@ msgstr "Nom"
 msgid "App"
 msgstr "App"
 
-#: classes.py:220 classes.py:961
+#: classes.py:220 classes.py:963
 msgid "Environments"
 msgstr "Environnements"
 
-#: classes.py:329
+#: classes.py:331
 msgid "Need to specify at least one: app_label or module."
 msgstr "Besoin de spécifier au moins un: app_label ou module."
 
-#: classes.py:334
+#: classes.py:336
 #, python-format
 msgid "Dependency \"%s\" already registered."
 msgstr "La dépendance \"%s\" est déjà enregistrée."
 
-#: classes.py:385
+#: classes.py:387
 #, python-format
 msgid "Installing package: %s... "
 msgstr "Installation du paquet: %s ..."
 
-#: classes.py:392
+#: classes.py:394
 msgid "Already installed."
 msgstr "Déjà installé."
 
-#: classes.py:397 classes.py:404 classes.py:410
+#: classes.py:399 classes.py:406 classes.py:412
 msgid "Complete."
 msgstr "Complété."
 
-#: classes.py:437
+#: classes.py:439
 msgid "Installed and correct version"
 msgstr "Version installée et correcte"
 
-#: classes.py:439
+#: classes.py:441
 msgid "Missing or incorrect version"
 msgstr "Version manquante ou incorrecte"
 
-#: classes.py:476
+#: classes.py:478
 msgid "None"
 msgstr "Aucun"
 
-#: classes.py:485
+#: classes.py:487
 msgid "Not specified"
 msgstr "Non spécifié"
 
-#: classes.py:488
+#: classes.py:490
 msgid "Patching files... "
 msgstr "Modification des fichiers ..."
 
-#: classes.py:516
+#: classes.py:518
 msgid "Executables that are called directly by the code."
 msgstr "Des exécutables appelés directement par le code."
 
-#: classes.py:518
+#: classes.py:520
 msgid "Binary"
 msgstr "Binaire"
 
-#: classes.py:535
+#: classes.py:537
 msgid ""
-"JavaScript libraries downloaded the from NPM registry and used for front-end "
-"functionality."
+"JavaScript libraries downloaded the from NPM registry and used for front-end"
+" functionality."
 msgstr ""
 "Les bibliothèques JavaScript sont téléchargées à partir du NPM et utilisé "
 "pour les fonctionnalités front-end."
 
-#: classes.py:538
+#: classes.py:540
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:570 classes.py:864
+#: classes.py:572 classes.py:866
 msgid "Downloading... "
 msgstr "Téléchargement ..."
 
-#: classes.py:575
+#: classes.py:577
 msgid "Verifying... "
 msgstr "Vérification ..."
 
-#: classes.py:580 classes.py:869
+#: classes.py:582 classes.py:871
 msgid "Extracting... "
 msgstr "Extraction ..."
 
-#: classes.py:790
+#: classes.py:792
 msgid "Python packages downloaded from PyPI."
 msgstr "Paquets Python téléchargés depuis PyPI."
 
-#: classes.py:792
+#: classes.py:794
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:844
+#: classes.py:846
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "Polices téléchargées à partir de fonts.googleapis.com."
 
-#: classes.py:846
+#: classes.py:848
 msgid "Google font"
 msgstr "Google Font"
 
-#: classes.py:942
+#: classes.py:944
 msgid "Declared in app"
 msgstr "Déclaré dans l'application"
 
-#: classes.py:943
+#: classes.py:945
 msgid "Show dependencies by the app that declared them."
 msgstr "Afficher les dépendances par l'application qui les a déclarées."
 
-#: classes.py:947
+#: classes.py:949
 msgid "Class"
 msgstr "Classe"
 
-#: classes.py:948
+#: classes.py:950
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -187,11 +186,11 @@ msgstr ""
 "Affiche les différentes classes de dépendances. Les classes sont "
 "généralement divisées par langue ou par type de fichier de la dépendance."
 
-#: classes.py:953
+#: classes.py:955
 msgid "State"
 msgstr "État"
 
-#: classes.py:954
+#: classes.py:956
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -202,13 +201,13 @@ msgstr ""
 "que les dépendances sont manquantes ou qu'une version incorrecte est "
 "présente."
 
-#: classes.py:962
+#: classes.py:964
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
 msgstr ""
-"Les dépendances requises pour un environnement peuvent ne pas l'être pour un "
-"autre. Exemples d'environnements: production, développement."
+"Les dépendances requises pour un environnement peuvent ne pas l'être pour un"
+" autre. Exemples d'environnements: production, développement."
 
 #: environments.py:17
 msgid ""
@@ -327,8 +326,8 @@ msgstr "Il n'est pas possible de déterminer la dernière disponible"
 #: literals.py:21
 #, python-format
 msgid ""
-"Unexpected error trying to determine the latest version available. Make sure "
-"your installation has a connection to the internet; %(exception)s"
+"Unexpected error trying to determine the latest version available. Make sure"
+" your installation has a connection to the internet; %(exception)s"
 msgstr ""
 
 #: management/commands/dependencies_check.py:13
@@ -346,8 +345,8 @@ msgid ""
 "Comma separated names of dependencies to show in the list while excluding "
 "every other one."
 msgstr ""
-"Noms de dépendances à afficher dans la liste en excluant les autres, séparés "
-"par des virgules."
+"Noms de dépendances à afficher dans la liste en excluant les autres, séparés"
+" par des virgules."
 
 #: management/commands/dependencies_install.py:13
 msgid "Process a specific app."
@@ -367,8 +366,8 @@ msgstr ""
 
 #: views.py:31
 msgid ""
-"It does not verify versions of other components like packaging or deployment "
-"technologies, such as container or virtual machine images."
+"It does not verify versions of other components like packaging or deployment"
+" technologies, such as container or virtual machine images."
 msgstr ""
 
 #: views.py:51

@@ -2,29 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Yaman Sanobar <yman.snober@gmail.com>, 2024
 # Ali Alahnomy <ashari@open-alt.com>, 2024
 # Roberto Rosario, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
 # WM Shinkada <shinkadawasim@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: WM Shinkada <shinkadawasim@gmail.com>, 2024\n"
-"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/"
-"teams/13584/ar_EG/)\n"
-"Language: ar_EG\n"
+"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar_EG\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps.py:32 permissions.py:6
 msgid "Task manager"
@@ -45,8 +43,8 @@ msgstr "قائمة الانتظار"
 #: apps.py:128
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non "
-"critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non"
+" critical tasks."
 msgstr ""
 
 #: apps.py:131
@@ -117,8 +115,8 @@ msgstr ""
 
 #: apps.py:208
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers "
-"the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers"
+" the priority. The default value is 0."
 msgstr ""
 
 #: apps.py:211
@@ -159,9 +157,9 @@ msgstr "الدخول المتخصص"
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
-"transport://userid:password@hostname:port/virtual_host Only the scheme part "
-"(transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
 ": \"المكان الإفتراضي المحدد للنقل://\". Default broker URL. This must be a "
@@ -177,11 +175,13 @@ msgstr "الغاء التفعيل الخيار الإفتراضي."
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
-"userguide/configuration.html#result-backend"
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 msgstr ""
-": الخيار الافتراضي http://docs.celeryproject.org/en/v4.1.0/userguide/"
-"configuration.html#result-backend"
+": الخيار الافتراضي "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 
 #: tests/literals.py:11
 msgid "Test queue"

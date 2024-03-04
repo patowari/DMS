@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
@@ -13,20 +13,19 @@
 # Berny <berny@bernhard-marx.de>, 2024
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
-"teams/13584/de_DE/)\n"
-"Language: de_DE\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:128 permissions.py:6 settings.py:15
@@ -69,7 +68,7 @@ msgstr "Forum"
 msgid "Knowledge base"
 msgstr "Wissensbasis"
 
-#: links.py:55 views.py:53
+#: links.py:55 views.py:55
 msgid "License"
 msgstr "Lizenz"
 
@@ -101,25 +100,25 @@ msgstr "Online-Shop"
 msgid "Get support"
 msgstr "Support erhalten"
 
-#: links.py:87 views.py:134
+#: links.py:87 views.py:136
 msgid "Tools"
 msgstr "Werkzeuge"
 
-#: literals.py:24
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Diese Funktion ist veraltet und wird in einer zukünftigen Version entfernt."
 
-#: literals.py:33
+#: literals.py:32
 msgid "Days"
 msgstr "Tage"
 
-#: literals.py:34
+#: literals.py:33
 msgid "Hours"
 msgstr "Stunden"
 
-#: literals.py:35
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minuten"
 
@@ -169,8 +168,8 @@ msgstr ""
 
 #: settings.py:32
 msgid ""
-"In list mode, show the \"object\" menu options as a dropdown menu instead of "
-"individual buttons."
+"In list mode, show the \"object\" menu options as a dropdown menu instead of"
+" individual buttons."
 msgstr ""
 "Zeige im Listenmodus die \"Objekt\"-Menüoptionen als Aufklappmenü anstelle "
 "einzelner Knöpfe."
@@ -189,8 +188,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 "Eine Liste von Zeichenketten der Applikationen, die von der Liste der "
 "üblicherweise von Mayan EDMS installierten Applikationen entfernt werden "
@@ -202,16 +201,17 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
-#: settings.py:69
+#: settings.py:70
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. These apps will be installed before the default "
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 "Eine Liste von Zeichenketten der Applikationen, die zu der Liste der "
@@ -220,20 +220,20 @@ msgstr ""
 "Pythonpfad sein: zu einer Applikationskonfigurationsklasse (bevorzugt) oder "
 "zu einem Paket, das die Applikation enthält. Beispiel: ['app_1', 'app_2']"
 
-#: settings.py:80
+#: settings.py:81
 msgid ""
-"Name of the view attached to the brand anchor in the main menu. This is also "
-"the view to which users will be redirected after log in."
+"Name of the view attached to the brand anchor in the main menu. This is also"
+" the view to which users will be redirected after log in."
 msgstr ""
 "Name des Formulars, das mit dem Markenanker im Hauptmenü verknüpft ist. Zu "
 "diesem Formular werden die Benutzer auch nach dem Anmeldevorgang "
 "weitergeleitet."
 
-#: settings.py:89
+#: settings.py:90
 msgid "Name of the dashboard to display in the home view."
 msgstr "Name des Dashboards in der Heimansicht."
 
-#: settings.py:94
+#: settings.py:95
 msgid "Sets the project's name."
 msgstr "Setzt den Projektnamen."
 

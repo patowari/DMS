@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # John Kawas <john@clinicalclouds.com>, 2024
@@ -11,22 +11,20 @@
 # Yaman Sanobar <yman.snober@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
-"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/"
-"teams/13584/ar_EG/)\n"
-"Language: ar_EG\n"
+"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar_EG\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
 #: queues.py:9 settings.py:12 views/source_views.py:285
@@ -292,8 +290,8 @@ msgstr ""
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process "
-"happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process"
+" happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -412,7 +410,8 @@ msgstr ""
 
 #: views/document_views.py:74
 msgid "New document queued for upload and will be available shortly."
-msgstr "إصدار جديد في قائمة الانتظار من الوثيقة قيد التحميل وسيكون متاحًا قريبًا"
+msgstr ""
+"إصدار جديد في قائمة الانتظار من الوثيقة قيد التحميل وسيكون متاحًا قريبًا"
 
 #: views/document_views.py:94
 #, python-format
@@ -473,8 +472,8 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources "
-"that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources"
+" that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -496,11 +495,11 @@ msgstr "نوع الوثيقة"
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled, "
-"create one before proceeding."
+"No interactive document sources have been defined or none have been enabled,"
+" create one before proceeding."
 msgstr ""
-"لم يتم تحديد أية مصادر تفاعلية للمستندات أو لم يتم تمكين أي منها ، قم بإنشاء "
-"واحدة قبل المتابعة."
+"لم يتم تحديد أية مصادر تفاعلية للمستندات أو لم يتم تمكين أي منها ، قم بإنشاء"
+" واحدة قبل المتابعة."
 
 #: wizards.py:85
 #, python-format

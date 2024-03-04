@@ -2,23 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # pyrotech <anastasios@tutamail.com>, 2024
 # Hmayag Antonian <hmayag@freemail.gr>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:23 events.py:6 permissions.py:6 settings.py:12
@@ -73,19 +73,19 @@ msgstr "Κατάτμηση καταγραφής σφαλμάτων"
 msgid "Error log partitions"
 msgstr "Κατατμήσεις καταγραφής σφαλμάτων"
 
-#: models.py:66
+#: models.py:67
 msgid "Date and time"
 msgstr "Ημερομηνία και ώρα"
 
-#: models.py:69
+#: models.py:71
 msgid "Text"
 msgstr "Κείμενο"
 
-#: models.py:77
+#: models.py:79
 msgid "Error log partition entry"
 msgstr "Καταχώριση κατάτμησης αρχείου καταγραφής σφαλμάτων"
 
-#: models.py:78
+#: models.py:80
 msgid "Error log partition entries"
 msgstr "Καταχωρήσεις κατάτμησης αρχείου καταγραφής σφαλμάτων"
 
@@ -148,7 +148,8 @@ msgstr "Διαγραφή καταχωρίσεων καταγραφής σφαλ�
 
 #: views.py:57
 msgid "Object error log cleared successfully"
-msgstr "Το αρχείο καταγραφής σφαλμάτων του αντικειμένου διαγράφηκε με επιτυχία"
+msgstr ""
+"Το αρχείο καταγραφής σφαλμάτων του αντικειμένου διαγράφηκε με επιτυχία"
 
 #: views.py:74
 #, python-format
@@ -157,7 +158,8 @@ msgstr ""
 
 #: views.py:97
 msgid ""
-"This view displays the error log of an object. An empty list is a good thing."
+"This view displays the error log of an object. An empty list is a good "
+"thing."
 msgstr ""
 
 #: views.py:105

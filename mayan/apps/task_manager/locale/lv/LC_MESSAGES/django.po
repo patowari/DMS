@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Māris Teivāns <maris.teivans@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2024\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
-"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
+"Language: lv\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 #: apps.py:32 permissions.py:6
 msgid "Task manager"
@@ -40,8 +39,8 @@ msgstr ""
 #: apps.py:128
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non "
-"critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non"
+" critical tasks."
 msgstr ""
 
 #: apps.py:131
@@ -112,8 +111,8 @@ msgstr ""
 
 #: apps.py:208
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers "
-"the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers"
+" the priority. The default value is 0."
 msgstr ""
 
 #: apps.py:211
@@ -154,15 +153,15 @@ msgstr ""
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
-"transport://userid:password@hostname:port/virtual_host Only the scheme part "
-"(transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
 "Noklusējums: \"amqp://\". Noklusējuma starpnieka URL. Tam ir jābūt URL šādā "
 "formā: transport://userid:password@hostname:port/virtual_host Nepieciešama "
-"tikai shēmas daļa (transport://), pārējais ir neobligāts, un pēc noklusējuma "
-"konkrētās transportēšanas noklusējuma vērtības."
+"tikai shēmas daļa (transport://), pārējais ir neobligāts, un pēc noklusējuma"
+" konkrētās transportēšanas noklusējuma vērtības."
 
 #: settings.py:32
 msgid ""
@@ -173,8 +172,9 @@ msgstr ""
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
-"userguide/configuration.html#result-backend"
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 msgstr ""
 
 #: tests/literals.py:11

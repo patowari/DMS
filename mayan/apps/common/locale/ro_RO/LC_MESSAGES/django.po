@@ -1,29 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Stefaniu Criste <gupi@hangar.ro>, 2024
 # Badea Gabriel <gcbadea@gmail.com>, 2024
 # Harald Ersch, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
-"Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/"
-"teams/13584/ro_RO/)\n"
-"Language: ro_RO\n"
+"Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
-"2:1));\n"
+"Language: ro_RO\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
@@ -63,15 +61,15 @@ msgstr "Forum"
 
 #: links.py:52
 msgid "Knowledge base"
-msgstr ""
+msgstr "Bază de cunoștințe"
 
-#: links.py:55 views.py:53
+#: links.py:55 views.py:55
 msgid "License"
 msgstr "Licenţă"
 
 #: links.py:58
 msgid "Mailing list"
-msgstr ""
+msgstr "Listă de email-uri"
 
 #: links.py:64
 msgid "Copy"
@@ -79,7 +77,7 @@ msgstr "Copiere"
 
 #: links.py:69
 msgid "Release notes"
-msgstr ""
+msgstr "Note de lansare"
 
 #: links.py:72
 msgid "Setup"
@@ -97,26 +95,26 @@ msgstr "Magazin online"
 msgid "Get support"
 msgstr "Obțineți sprijin"
 
-#: links.py:87 views.py:134
+#: links.py:87 views.py:136
 msgid "Tools"
 msgstr "Unelte"
 
-#: literals.py:24
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Această caracteristică a fost depreciată și va fi eliminată într-o versiune "
 "viitoare."
 
-#: literals.py:33
+#: literals.py:32
 msgid "Days"
 msgstr "Zile"
 
-#: literals.py:34
+#: literals.py:33
 msgid "Hours"
 msgstr "Ore"
 
-#: literals.py:35
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minute"
 
@@ -166,11 +164,11 @@ msgstr ""
 
 #: settings.py:32
 msgid ""
-"In list mode, show the \"object\" menu options as a dropdown menu instead of "
-"individual buttons."
+"In list mode, show the \"object\" menu options as a dropdown menu instead of"
+" individual buttons."
 msgstr ""
-"În modul listă, afișați opțiunile meniului „obiect” ca meniu vertical în loc "
-"de butoane individuale."
+"În modul listă, afișați opțiunile meniului „obiect” ca meniu vertical în loc"
+" de butoane individuale."
 
 #: settings.py:40
 msgid ""
@@ -186,8 +184,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 "O listă de șiruri care desemnează toate aplicațiile care urmează să fie "
 "eliminate din lista instalată în mod normal de Mayan EDMS. Fiecare șir ar "
@@ -199,20 +197,22 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
 "O listă de șiruri care desemnează toate aplicațiile care sunt instalate în "
 "afara celor instalate în mod normal de Mayan EDMS. Fiecare șir ar trebui să "
 "fie o cale Python punctată către: o clasă de configurare a aplicației (de "
-"preferat) sau un pachet care conține o aplicație. Exemplu: ['app_1', 'app_2']"
+"preferat) sau un pachet care conține o aplicație. Aceste aplicații vor fi "
+"instalate după aplicațiile implicite. Exemplu: [';app_1', 'app_2']"
 
-#: settings.py:69
+#: settings.py:70
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package "
-"containing an application. These apps will be installed before the default "
+"Python path to: an application configuration class (preferred), or a package"
+" containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 "O listă de șiruri care desemnează toate aplicațiile care sunt instalate în "
@@ -221,19 +221,19 @@ msgstr ""
 "preferat) sau un pachet care conține o aplicație. Aceste aplicații vor fi "
 "instalate înaintea aplicațiilor implicite. Exemplu: ['app_1', 'app_2']"
 
-#: settings.py:80
+#: settings.py:81
 msgid ""
-"Name of the view attached to the brand anchor in the main menu. This is also "
-"the view to which users will be redirected after log in."
+"Name of the view attached to the brand anchor in the main menu. This is also"
+" the view to which users will be redirected after log in."
 msgstr ""
 "Numele afișării atașate ancorei de marcă din meniul principal. Aceasta este "
 "și perspectiva la care utilizatorii vor fi redirecționați după conectare."
 
-#: settings.py:89
+#: settings.py:90
 msgid "Name of the dashboard to display in the home view."
 msgstr "Numele tabloului de bord de afișat în vizualizarea principală."
 
-#: settings.py:94
+#: settings.py:95
 msgid "Sets the project's name."
 msgstr "Setează numele proiectului."
 

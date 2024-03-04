@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # SadE54 <yannsuisini@gmail.com>, 2024
@@ -13,21 +13,20 @@
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Olivier W, 2024
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
 #: queues.py:9 settings.py:12 views/source_views.py:285
@@ -45,8 +44,8 @@ msgid ""
 "browser."
 msgstr ""
 "Les sources de documents sont les manières par lesquelles les nouveaux "
-"documents seront intégrés dans Mayan EDMS ; créez au moins un formulaire web "
-"pour pouvoir télécharger des documents depuis le navigateur."
+"documents seront intégrés dans Mayan EDMS ; créez au moins un formulaire web"
+" pour pouvoir télécharger des documents depuis le navigateur."
 
 #: apps.py:130
 msgid ""
@@ -90,8 +89,8 @@ msgstr "Action"
 msgid ""
 "The action to take in regards to the pages of the new file being uploaded."
 msgstr ""
-"L'action à exécutée en ce qui concerne les pages du nouveau fichier en cours "
-"de téléversement."
+"L'action à exécutée en ce qui concerne les pages du nouveau fichier en cours"
+" de téléversement."
 
 #: forms.py:54
 msgid "The backend used to create the new source."
@@ -296,8 +295,8 @@ msgstr ""
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process "
-"happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process"
+" happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -412,8 +411,8 @@ msgstr ""
 #, python-format
 msgid "Upload a new file for document \"%(document)s\" from source: %(source)s"
 msgstr ""
-"Téléverser un nouveau fichier pour le document \"%(document)s\", à partir de "
-"la source: %(source)s"
+"Téléverser un nouveau fichier pour le document \"%(document)s\", à partir de"
+" la source: %(source)s"
 
 #: views/document_file_views.py:193
 msgid "Submit"
@@ -490,8 +489,8 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources "
-"that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources"
+" that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -518,8 +517,8 @@ msgstr "Sélectionner le type du document"
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled, "
-"create one before proceeding."
+"No interactive document sources have been defined or none have been enabled,"
+" create one before proceeding."
 msgstr ""
 "Aucune source interactive d'import de documents n'a été définie ou activée, "
 "créez-en une avant de continuer."

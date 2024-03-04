@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
@@ -12,22 +12,20 @@
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # Márcia Ferreira, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:28+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
-"pt/)\n"
-"Language: pt\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
@@ -235,7 +233,8 @@ msgstr ""
 "A localização está correta, mas a sua conta não tem as permissões "
 "necessárias."
 
-#: templates/500.html:5 templates/500.html:30 templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:30
+#: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Erro do servidor"
 
@@ -260,9 +259,7 @@ msgid "Contact your system administrator."
 msgstr "Contacte o seu administrador de sistemas."
 
 #: templates/500.html:47
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "Verifique os logs por mensagens com as etiquetas \"ERROR\", \"CRITICAL\" ou "
 "\"FATAL\"."
@@ -300,8 +297,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -502,18 +499,19 @@ msgstr "Editar tema: 1%s"
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
-"Os temas permitem alterar a aparência visual sem exigir alterações de código."
+"Os temas permitem alterar a aparência visual sem exigir alterações de "
+"código."
 
 #: views.py:99
 msgid "There are no themes"
 msgstr "Não existem temas"
 
-#: views.py:124
+#: views.py:125
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Configurações do tema para o utilizador: %s"
 
-#: views.py:146
+#: views.py:148
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Editar configurações de tema do utilizador %s"

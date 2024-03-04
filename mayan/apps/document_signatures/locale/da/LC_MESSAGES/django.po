@@ -1,24 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Mads L. Nielsen <sirlundgaard@gmail.com>, 2024
 # Rasmus Kierudsen <tebrasso@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Rasmus Kierudsen <tebrasso@gmail.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:52 events.py:6 permissions.py:6 settings.py:12
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Signatures for document file: %s"
 msgstr ""
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr "På store databaser kan denne operation tage lidt tid at udføre."
 
@@ -366,15 +366,15 @@ msgstr "På store databaser kan denne operation tage lidt tid at udføre."
 msgid "Refresh all signatures information?"
 msgstr ""
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr ""
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr ""
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr ""
 

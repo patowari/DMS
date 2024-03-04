@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Siegfried Albrecht, 2024
@@ -13,20 +13,19 @@
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
 # Roberto Rosario, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
-"teams/13584/de_AT/)\n"
-"Language: de_AT\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:52 events.py:6 permissions.py:6 settings.py:12
@@ -342,8 +341,7 @@ msgstr "Dokumentendatei \"%s\" mit einer abgelösten Unterschrift unterzeichnen"
 #: views.py:188
 #, python-format
 msgid "Sign document file \"%s\" with a embedded signature"
-msgstr ""
-"Dokumentendatei \"%s\" mit einer eingebetteten Unterschrift unterzeichnen"
+msgstr "Dokumentendatei \"%s\" mit einer eingebetteten Unterschrift unterzeichnen"
 
 #: views.py:205
 #, python-format
@@ -380,7 +378,7 @@ msgstr "Keine Unterschriften für diese Dokumentendatei vorhanden."
 msgid "Signatures for document file: %s"
 msgstr "Unterschriften für Dokumentendatei %s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr ""
 "Bei großen Datenbanken kann dieser Vorgang einige Zeit in Anspruch nehmen."
@@ -389,17 +387,17 @@ msgstr ""
 msgid "Refresh all signatures information?"
 msgstr "Sämtliche Unterschrifteninformationen aktualisieren?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr ""
 "Aktualisierung der Unterschrifteninformation erfolgreich in die "
 "Warteschlange eingereiht."
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "Alle Dokumentenunterschriften überprüfen?"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "Überprüfung der Unterschriften erfolgreich eingereiht."
 
@@ -422,8 +420,8 @@ msgid ""
 "Document has no file to sign. You might be trying to use this action in an "
 "initial state before the created document is yet to be processed."
 msgstr ""
-"Das Dokument hat keine Datei für eine Unterschrift. Es könnte sein, dass Sie "
-"diese Aktion bereits durchgeführt haben als das Dokument noch nicht "
+"Das Dokument hat keine Datei für eine Unterschrift. Es könnte sein, dass Sie"
+" diese Aktion bereits durchgeführt haben als das Dokument noch nicht "
 "verarbeitet wurde."
 
 #: workflow_actions.py:102

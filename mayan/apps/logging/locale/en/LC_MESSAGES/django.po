@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,19 +69,19 @@ msgstr ""
 msgid "Error log partitions"
 msgstr ""
 
-#: models.py:66
+#: models.py:67
 msgid "Date and time"
 msgstr ""
 
-#: models.py:69
+#: models.py:71
 msgid "Text"
 msgstr ""
 
-#: models.py:77
+#: models.py:79
 msgid "Error log partition entry"
 msgstr ""
 
-#: models.py:78
+#: models.py:80
 msgid "Error log partition entries"
 msgstr ""
 

@@ -1,27 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Jiri Fait <fait@orkasolutions.cz>, 2024
 # Michal Švábík <snadno@lehce.cz>, 2024
 # Jiří Podhorecký, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
-"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: apps.py:33
 msgid "Django GPG"
@@ -55,7 +54,7 @@ msgstr "Délka"
 msgid "User ID"
 msgstr "uživatelské ID"
 
-#: dependencies.py:9
+#: dependencies.py:11
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "Ochrana soukromí GNU - implementace PGP."
 
@@ -188,7 +187,7 @@ msgstr "Klíče"
 msgid "Invalid key data"
 msgstr "Neplatná datadata klíče"
 
-#: models.py:76
+#: models.py:80
 msgid "Key already exists."
 msgstr "Klíč již existuje."
 
@@ -288,8 +287,8 @@ msgstr "Nahrajte nový klíč"
 
 #: views.py:208
 msgid ""
-"Private keys are used to signed documents. Private keys can only be uploaded "
-"by the user. The view to upload private and public keys is the same."
+"Private keys are used to signed documents. Private keys can only be uploaded"
+" by the user. The view to upload private and public keys is the same."
 msgstr ""
 "Soukromé klíče se používají k podepsaným dokumentům. Soukromé klíče může "
 "vkládat pouze uživatel. Pohled na nahrávání soukromých a veřejných klíčů je "
@@ -301,8 +300,8 @@ msgstr "Neexistují žádné soukromé klíče"
 
 #: views.py:232
 msgid ""
-"Public keys are used to verify signed documents. Public keys can be uploaded "
-"by the user or downloaded from keyservers. The view to upload private and "
+"Public keys are used to verify signed documents. Public keys can be uploaded"
+" by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 "Veřejné klíče se používají k ověření podepsaných dokumentů. Veřejné klíče "

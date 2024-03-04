@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/"
-"bg/)\n"
-"Language: bg\n"
+"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 queues.py:7 settings.py:21
@@ -69,8 +68,8 @@ msgid ""
 "Utility from the popper-utils package used to extract pages from PDF files "
 "into PPM format images."
 msgstr ""
-"Помощна програма от пакета popper-utils, използвана за извличане на страници "
-"от PDF файлове в изображения във формат PPM."
+"Помощна програма от пакета popper-utils, използвана за извличане на страници"
+" от PDF файлове в изображения във формат PPM."
 
 #: events.py:10
 msgid "Asset created"
@@ -124,7 +123,8 @@ msgstr "Изтрийте"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21
+#: views/asset_views.py:148
 msgid "Assets"
 msgstr "Активи"
 
@@ -213,8 +213,8 @@ msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
 msgstr ""
-"Въведете аргументите за преобразуването като YAML речник. т.е.: {&quot;"
-"градуси&quot;: 180}"
+"Въведете аргументите за преобразуването като YAML речник. т.е.: "
+"{&quot;градуси&quot;: 180}"
 
 #: models.py:180
 msgid "Layer transformation"
@@ -292,8 +292,8 @@ msgstr ""
 msgid ""
 "Path to the Storage subclass to use when storing the cached asset files."
 msgstr ""
-"Път към подкласа Storage, който да се използва при съхраняване на кешираните "
-"файлове с активи."
+"Път към подкласа Storage, който да се използва при съхраняване на кешираните"
+" файлове с активи."
 
 #: settings.py:47
 msgid "Arguments to pass to the CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
@@ -333,8 +333,8 @@ msgid ""
 "Time in seconds after which the image generation task will stop running and "
 "raise an error."
 msgstr ""
-"Време в секунди, след което задачата за генериране на изображения ще спре да "
-"се изпълнява и ще предизвика грешка."
+"Време в секунди, след което задачата за генериране на изображения ще спре да"
+" се изпълнява и ще предизвика грешка."
 
 #: storages.py:15
 msgid ""
@@ -346,8 +346,8 @@ msgstr ""
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {} "
-"and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {}"
+" and {} for formatting errors."
 msgstr ""
 "Не може да се инициализира кеширането на активи на конвертора. Проверете "
 "настройките {} и {} за грешки при форматирането."
@@ -356,7 +356,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "Кеш на активи"
 
-#: transformation_mixins.py:20 transformations.py:632
+#: transformation_mixins.py:20 transformations.py:634
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -373,11 +373,11 @@ msgstr ""
 msgid "Transparency"
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:738
+#: transformation_mixins.py:29 transformations.py:740
 msgid "Zoom level in percent."
 msgstr ""
 
-#: transformation_mixins.py:30 transformations.py:733
+#: transformation_mixins.py:30 transformations.py:735
 msgid "Zoom"
 msgstr "Увеличаване"
 
@@ -390,8 +390,8 @@ msgid "Horizontal position in pixels from the left."
 msgstr ""
 
 #: transformation_mixins.py:120 transformation_mixins.py:165
-#: transformation_mixins.py:230 transformations.py:235 transformations.py:337
-#: transformations.py:435
+#: transformation_mixins.py:230 transformations.py:237 transformations.py:339
+#: transformations.py:437
 msgid "Left"
 msgstr ""
 
@@ -400,8 +400,8 @@ msgid "Vertical position in pixels from the top."
 msgstr ""
 
 #: transformation_mixins.py:124 transformation_mixins.py:170
-#: transformation_mixins.py:240 transformations.py:239 transformations.py:341
-#: transformations.py:439
+#: transformation_mixins.py:240 transformations.py:241 transformations.py:343
+#: transformations.py:441
 msgid "Top"
 msgstr ""
 
@@ -417,7 +417,7 @@ msgstr ""
 msgid "Vertical position in percent from the top."
 msgstr ""
 
-#: transformation_mixins.py:223 transformations.py:223
+#: transformation_mixins.py:223 transformations.py:225
 msgid "Paste an asset as watermark"
 msgstr "Поставете актив като воден знак"
 
@@ -429,8 +429,8 @@ msgstr ""
 msgid "Horizontal end position in pixels from the right."
 msgstr ""
 
-#: transformation_mixins.py:235 transformations.py:244 transformations.py:345
-#: transformations.py:443
+#: transformation_mixins.py:235 transformations.py:246 transformations.py:347
+#: transformations.py:445
 msgid "Right"
 msgstr ""
 
@@ -442,8 +442,8 @@ msgstr ""
 msgid "Vertical end position in pixels from the top."
 msgstr ""
 
-#: transformation_mixins.py:245 transformations.py:249 transformations.py:349
-#: transformations.py:447
+#: transformation_mixins.py:245 transformations.py:251 transformations.py:351
+#: transformations.py:449
 msgid "Bottom"
 msgstr ""
 
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Color used to fill the rectangle."
 msgstr ""
 
-#: transformation_mixins.py:356 transformations.py:639
+#: transformation_mixins.py:356 transformations.py:641
 msgid "Fill color"
 msgstr ""
 
@@ -499,159 +499,159 @@ msgstr ""
 msgid "Outline width"
 msgstr ""
 
-#: transformations.py:207
+#: transformations.py:209
 msgid "Paste an asset (absolute coordinates)"
 msgstr ""
 
-#: transformations.py:215
+#: transformations.py:217
 msgid "Paste an asset (percent coordinates)"
 msgstr ""
 
-#: transformations.py:229
+#: transformations.py:231
 msgid "Crop"
 msgstr "Изрязване"
 
-#: transformations.py:234
+#: transformations.py:236
 msgid "Number of pixels to remove from the left."
 msgstr ""
 
-#: transformations.py:238
+#: transformations.py:240
 msgid "Number of pixels to remove from the top."
 msgstr ""
 
-#: transformations.py:243
+#: transformations.py:245
 msgid "Number of pixels to remove from the right."
 msgstr ""
 
-#: transformations.py:248
+#: transformations.py:250
 msgid "Number of pixels to remove from the bottom."
 msgstr ""
 
-#: transformations.py:331
+#: transformations.py:333
 msgid "Draw rectangle"
 msgstr "Начертайте правоъгълник"
 
-#: transformations.py:336
+#: transformations.py:338
 msgid "Left side location in pixels."
 msgstr ""
 
-#: transformations.py:340
+#: transformations.py:342
 msgid "Top side location in pixels."
 msgstr ""
 
-#: transformations.py:344
+#: transformations.py:346
 msgid "Right side location in pixels."
 msgstr ""
 
-#: transformations.py:348
+#: transformations.py:350
 msgid "Bottom side location in pixels."
 msgstr ""
 
-#: transformations.py:429
+#: transformations.py:431
 msgid "Draw rectangle (percent coordinates)"
 msgstr ""
 
-#: transformations.py:434
+#: transformations.py:436
 msgid "Left side location in percent."
 msgstr ""
 
-#: transformations.py:438
+#: transformations.py:440
 msgid "Top side location in percent."
 msgstr ""
 
-#: transformations.py:442
+#: transformations.py:444
 msgid "Right side location in percent."
 msgstr ""
 
-#: transformations.py:446
+#: transformations.py:448
 msgid "Bottom side location in percent."
 msgstr ""
 
-#: transformations.py:529
+#: transformations.py:531
 msgid "Flip"
 msgstr "Преобръщане"
 
-#: transformations.py:540
+#: transformations.py:542
 msgid "Gaussian blur"
 msgstr "Гаусово замъгляване"
 
-#: transformations.py:545 transformations.py:708
+#: transformations.py:547 transformations.py:710
 msgid "Radius"
 msgstr ""
 
-#: transformations.py:557
+#: transformations.py:559
 msgid "Line art"
 msgstr "Графично изкуство"
 
-#: transformations.py:571
+#: transformations.py:573
 msgid "Mirror"
 msgstr "Огледало"
 
-#: transformations.py:582
+#: transformations.py:584
 msgid "Resize"
 msgstr "Преоразмеряване"
 
-#: transformations.py:588
+#: transformations.py:590
 msgid "New width in pixels."
 msgstr ""
 
-#: transformations.py:589
+#: transformations.py:591
 msgid "Width"
 msgstr ""
 
-#: transformations.py:593
+#: transformations.py:595
 msgid "New height in pixels."
 msgstr ""
 
-#: transformations.py:594
+#: transformations.py:596
 msgid "Height"
 msgstr ""
 
-#: transformations.py:626
+#: transformations.py:628
 msgid "Rotate"
 msgstr "Завъртане"
 
-#: transformations.py:634
+#: transformations.py:636
 msgid "Degrees"
 msgstr ""
 
-#: transformations.py:638
+#: transformations.py:640
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 
-#: transformations.py:670
+#: transformations.py:672
 msgid "Rotate 90 degrees"
 msgstr "Завъртане на 90 градуса"
 
-#: transformations.py:681
+#: transformations.py:683
 msgid "Rotate 180 degrees"
 msgstr "Въртене на 180 градуса"
 
-#: transformations.py:692
+#: transformations.py:694
 msgid "Rotate 270 degrees"
 msgstr "Въртене на 270 градуса"
 
-#: transformations.py:702
+#: transformations.py:704
 msgid "Unsharp masking"
 msgstr "Размазващо маскиране"
 
-#: transformations.py:707
+#: transformations.py:709
 msgid "The blur radius in pixels."
 msgstr ""
 
-#: transformations.py:711
+#: transformations.py:713
 msgid "Unsharp strength in percent."
 msgstr ""
 
-#: transformations.py:712 transformations.py:739
+#: transformations.py:714 transformations.py:741
 msgid "Percent"
 msgstr ""
 
-#: transformations.py:716
+#: transformations.py:718
 msgid "Minimum brightness change that will be sharpened."
 msgstr ""
 
-#: transformations.py:717
+#: transformations.py:719
 msgid "Tthreshold"
 msgstr ""
 
@@ -671,38 +671,38 @@ msgid_plural "Delete the selected assets?"
 msgstr[0] "Да се изтрие ли избраният актив?"
 msgstr[1] "Да се изтрият ли избраните активи?"
 
-#: views/asset_views.py:70
+#: views/asset_views.py:71
 #, python-format
 msgid "Delete asset: %s?"
 msgstr "Изтриване на актив: %s?"
 
-#: views/asset_views.py:81
+#: views/asset_views.py:83
 #, python-format
 msgid "Asset \"%s\" deleted successfully."
 msgstr "Активът &quot;%s&quot; беше изтрит успешно."
 
-#: views/asset_views.py:86
+#: views/asset_views.py:89
 #, python-format
 msgid "Error deleting asset \"%(asset)s\": %(error)s"
 msgstr "Грешка при изтриването на актив &quot;%(asset)s&quot;: %(error)s"
 
-#: views/asset_views.py:102
+#: views/asset_views.py:106
 #, python-format
 msgid "Details asset: %s"
 msgstr "Подробности за актив: %s"
 
-#: views/asset_views.py:117
+#: views/asset_views.py:121
 #, python-format
 msgid "Edit asset: %s"
 msgstr "Редактиране на актив: %s"
 
-#: views/asset_views.py:140
+#: views/asset_views.py:144
 msgid ""
 "Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
 
-#: views/asset_views.py:143
+#: views/asset_views.py:147
 msgid "No assets available"
 msgstr "Няма налични активи"
 
@@ -717,8 +717,8 @@ msgid ""
 "Create layer \"%(layer)s\" transformation \"%(transformation)s\" for: "
 "%(object)s"
 msgstr ""
-"Създайте слой &quot;%(layer)s&quot; трансформация &quot;"
-"%(transformation)s&quot; за: %(object)s"
+"Създайте слой &quot;%(layer)s&quot; трансформация "
+"&quot;%(transformation)s&quot; за: %(object)s"
 
 #: views/transformation_views.py:131
 #, python-format
@@ -762,8 +762,8 @@ msgstr "Страници"
 
 #: workflow_actions.py:37
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas and/"
-"or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas "
+"and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 "Страници, към които ще бъдат добавени новите трансформации. Разделете със "
 "запетаи и / или използвайте тирета за диапазони. Оставете празно, за да "

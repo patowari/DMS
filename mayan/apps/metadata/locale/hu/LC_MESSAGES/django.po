@@ -1,46 +1,46 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:70 apps.py:208 apps.py:214 apps.py:218 apps.py:223 apps.py:227
-#: events.py:6 links.py:53 permissions.py:6 queues.py:7 workflow_actions.py:159
+#: apps.py:69 apps.py:207 apps.py:213 apps.py:217 apps.py:222 apps.py:226
+#: events.py:6 links.py:53 permissions.py:6 queues.py:7
+#: workflow_actions.py:159
 msgid "Metadata"
 msgstr "Metaadat"
 
-#: apps.py:140
+#: apps.py:139
 msgid "Return the value of a specific document metadata."
 msgstr "Egy adott dokumentum metaadatának értékét adja vissza."
 
-#: apps.py:141
+#: apps.py:140
 msgid "Metadata value of"
 msgstr "Metaadat érték"
 
-#: apps.py:146
+#: apps.py:145
 msgid "Metadata type name"
 msgstr "Metaadat típusnevek"
 
-#: apps.py:150 search.py:14
+#: apps.py:149 search.py:14
 msgid "Metadata value"
 msgstr "Metaadat érték"
 
@@ -261,8 +261,8 @@ msgid ""
 "The validator will reject data entry if the value entered does not conform "
 "to the expected format."
 msgstr ""
-"Az érvényesítő elutasítja az adatbevitelt, ha a megadott érték nem felel meg "
-"az elvárt formátumnak."
+"Az érvényesítő elutasítja az adatbevitelt, ha a megadott érték nem felel meg"
+" az elvárt formátumnak."
 
 #: models.py:63
 msgid "Validator"
@@ -278,7 +278,8 @@ msgstr "Érvényesítő argumentumok"
 
 #: models.py:74
 msgid ""
-"The parser will reformat the value entered to conform to the expected format."
+"The parser will reformat the value entered to conform to the expected "
+"format."
 msgstr ""
 "Az értelmező újraformázza a megadott értéket, hogy megfeleljen a várt "
 "formátumnak."
@@ -429,7 +430,8 @@ msgstr ""
 #: views/document_views.py:162
 #, python-format
 msgid ""
-"Metadata type: %(metadata_type)s successfully added to document %(document)s."
+"Metadata type: %(metadata_type)s successfully added to document "
+"%(document)s."
 msgstr ""
 "Metaadattípus: %(metadata_type)s sikeresen hozzáadva a %(document)s "
 "dokumentumhoz."
@@ -452,7 +454,7 @@ msgstr "Metaadat szerkesztési kérés végrehajtva %(count)d dokumentumon"
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr "Metaadat szerkesztési kérés végrehajtva %(count)d dokumentumokon"
 
-#: views/document_views.py:225
+#: views/document_views.py:227
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -460,73 +462,75 @@ msgstr ""
 "A dokumentumtípushoz rendelkezésre álló metaadattípusok hozzáadása, és a "
 "megfelelő értékek hozzárendelése."
 
-#: views/document_views.py:228
+#: views/document_views.py:230
 msgid "There is no metadata to edit"
 msgstr "Nincsenek szerkeszthető metaadatok"
 
-#: views/document_views.py:230
+#: views/document_views.py:232
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] "Dokumentum metaadatainak szerkesztése"
 msgstr[1] "Dokumentumok metaadatainak szerkesztése"
 
-#: views/document_views.py:241
+#: views/document_views.py:243
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr "A következő dokumentum metaadatainak szerkesztése: %s"
 
-#: views/document_views.py:330
+#: views/document_views.py:332
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr ""
-"Hiba a következő dokumentum metaadatainak szerkesztése során: %(document)s ; "
-"%(exception)s ."
+"Hiba a következő dokumentum metaadatainak szerkesztése során: %(document)s ;"
+" %(exception)s ."
 
-#: views/document_views.py:343
+#: views/document_views.py:345
 #, python-format
 msgid "Metadata for document %s edited successfully."
 msgstr "A %s dokumentum metaadatai sikeresen szerkesztve."
 
-#: views/document_views.py:369
+#: views/document_views.py:371
 msgid ""
-"Add metadata types this document's type to be able to add them to individual "
-"documents. Once added to individual document, you can then edit their values."
+"Add metadata types this document's type to be able to add them to individual"
+" documents. Once added to individual document, you can then edit their "
+"values."
 msgstr ""
 "Metaadattípusok hozzáadása ehhez a dokumentumtípushoz, hogy hozzáadhassa "
 "őket az egyes dokumentumokhoz. Miután hozzáadta az egyes dokumentumokhoz, "
 "szerkesztheti az értékeket."
 
-#: views/document_views.py:375
+#: views/document_views.py:377
 msgid "This document doesn't have any metadata"
 msgstr "Ez a dokumentum nem tartalmaz metaadatokat"
 
-#: views/document_views.py:377
+#: views/document_views.py:379
 #, python-format
 msgid "Metadata for document: %s"
 msgstr "A dokumentum metaadatai: %s"
 
-#: views/document_views.py:392
+#: views/document_views.py:394
 #, python-format
 msgid "Metadata remove request performed on %(count)d document"
 msgstr "A metaadat eltávolítási kérelem végrehajtva %(count)d dokumentumon"
 
-#: views/document_views.py:395
+#: views/document_views.py:397
 #, python-format
 msgid "Metadata remove request performed on %(count)d documents"
-msgstr "A metaadat eltávolítási kérelmet végrehajtották %(count)d dokumentumon"
+msgstr ""
+"A metaadat eltávolítási kérelmet végrehajtották %(count)d dokumentumon"
 
-#: views/document_views.py:405
+#: views/document_views.py:407
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
 msgstr[0] "Távolítsa el a metaadattípusokat a dokumentumból"
 msgstr[1] "Metaadattípusok eltávolítása a dokumentumokból"
 
-#: views/document_views.py:416
+#: views/document_views.py:418
 #, python-format
 msgid "Remove metadata types from the document: %s"
 msgstr "Metaadattípusok eltávolítása a dokumentumból: %s"
 
-#: views/document_views.py:482
+#: views/document_views.py:484
 #, python-format
 msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
@@ -535,7 +539,7 @@ msgstr ""
 "Sikeresen eltávolította a \"%(metadata_type)s\" metaadattípust a következő "
 "dokumentumból: %(document)s ."
 
-#: views/document_views.py:491
+#: views/document_views.py:493
 #, python-format
 msgid ""
 "Error removing metadata type \"%(metadata_type)s\" from document: "
@@ -590,8 +594,8 @@ msgstr "Metaadattípus szerkesztése: %s"
 
 #: views/metadata_type_views.py:108
 msgid ""
-"Metadata types are user defined properties that can be assigned values. Once "
-"created they must be associated to document types, either as optional or "
+"Metadata types are user defined properties that can be assigned values. Once"
+" created they must be associated to document types, either as optional or "
 "required, for each. Setting a metadata type as required for a document type "
 "will block the upload of documents of that type until a metadata value is "
 "provided."
@@ -638,8 +642,8 @@ msgid ""
 "One of more metadata types that are required for this document type are not "
 "available."
 msgstr ""
-"Az ehhez a dokumentumtípushoz szükséges metaadattípusok közül egy nem érhető "
-"el."
+"Az ehhez a dokumentumtípushoz szükséges metaadattípusok közül egy nem érhető"
+" el."
 
 #: workflow_actions.py:46
 msgid "Metadata types to add to the document."

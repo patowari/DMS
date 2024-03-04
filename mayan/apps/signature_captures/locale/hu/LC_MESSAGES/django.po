@@ -2,25 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:41 events.py:6 links.py:34 models.py:71 permissions.py:6
@@ -190,11 +189,12 @@ msgstr "URL"
 msgid ""
 "The threshold at which the "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND will start "
-"deleting the oldest signature capture cache files. Specify the size in bytes."
+"deleting the oldest signature capture cache files. Specify the size in "
+"bytes."
 msgstr ""
 "Az a küszöbérték, amelynél a "
-"SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND elkezdi törölni a "
-"legrégebbi aláírásgyűjtő gyorsítótár-fájlokat. A méret megadása bájtban."
+"SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND elkezdi törölni a"
+" legrégebbi aláírásgyűjtő gyorsítótár-fájlokat. A méret megadása bájtban."
 
 #: settings.py:30
 msgid ""
@@ -214,11 +214,11 @@ msgstr ""
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the converter signature capture cachestorage. Check the "
-"settings {} and {} for formatting errors."
+"Unable to initialize the converter signature capture cachestorage. Check the"
+" settings {} and {} for formatting errors."
 msgstr ""
-"Nem sikerült inicializálni a konverter aláíráskép gyorsítótárát. Ellenőrizze "
-"a beállításokat {} és {} formázási hibákért."
+"Nem sikerült inicializálni a konverter aláíráskép gyorsítótárát. Ellenőrizze"
+" a beállításokat {} és {} formázási hibákért."
 
 #: storages.py:20
 msgid "Signature captures cache"

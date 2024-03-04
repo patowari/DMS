@@ -1,28 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Ali <alimahwer@yahoo.com>, 2024
 # Mohammed ALDOUB <voulnet@gmail.com>, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
 # Yaman Sanobar <yman.snober@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Yaman Sanobar <yman.snober@gmail.com>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps.py:58
 msgid "Mailer"
@@ -38,8 +37,8 @@ msgstr "من عند"
 
 #: classes.py:48
 msgid ""
-"The sender's address. Some system will refuse to send messages if this value "
-"is not set."
+"The sender's address. Some system will refuse to send messages if this value"
+" is not set."
 msgstr "لا يمكن اتمام عملية الإرسال دون تعبئة القيم الإجبارية"
 
 #: classes.py:63
@@ -68,8 +67,8 @@ msgstr ""
 
 #: forms.py:60 forms.py:102
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon."
 msgstr ""
 "يمكن إضافة أكثر من عنوان بريدي مع التأكد من إضافة فاصلة او فاصة منقوطة "
 
@@ -103,48 +102,48 @@ msgstr "برنامج التشغيل الذي يجب استخدامه عند إر
 msgid "Backend"
 msgstr "في الخفاء"
 
-#: links.py:35 links.py:40
+#: links.py:34 links.py:39
 msgid "Email document link"
 msgstr ""
 
-#: links.py:50 links.py:55
+#: links.py:49 links.py:54
 msgid "Email document file"
 msgstr ""
 
-#: links.py:61 links.py:66
+#: links.py:60 links.py:65
 msgid "Email document file link"
 msgstr ""
 
-#: links.py:76 links.py:81
+#: links.py:75 links.py:80
 msgid "Email document version"
 msgstr ""
 
-#: links.py:87
+#: links.py:86
 msgid "Email document version link"
 msgstr ""
 
-#: links.py:92
+#: links.py:91
 msgid "Email link version"
 msgstr ""
 
-#: links.py:101
+#: links.py:100
 msgid "Create mailing profile"
 msgstr "إنشاء قالب للبريد الإلكتروني"
 
-#: links.py:107
+#: links.py:106
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:111
+#: links.py:110
 msgid "Edit"
 msgstr "تعديل"
 
-#: links.py:115 links.py:123 links.py:129 models.py:49
+#: links.py:114 links.py:122 links.py:128 models.py:49
 #: views/mailing_profile_views.py:138
 msgid "Mailing profiles"
 msgstr "قوالب البريد الإلكتروني"
 
-#: links.py:133 views/mailing_profile_views.py:168
+#: links.py:132 views/mailing_profile_views.py:168
 msgid "Test"
 msgstr "اختبار"
 
@@ -203,8 +202,8 @@ msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
 msgstr ""
-"ما إذا كنت تريد استخدام اتصال TLS (آمن) عند التحدث إلى خادم SMTP. يستخدم هذا "
-"لاتصالات TLS الصريحة ، بشكل عام على المنفذ 587."
+"ما إذا كنت تريد استخدام اتصال TLS (آمن) عند التحدث إلى خادم SMTP. يستخدم هذا"
+" لاتصالات TLS الصريحة ، بشكل عام على المنفذ 587."
 
 #: mailers.py:46
 msgid "Use SSL"
@@ -216,14 +215,15 @@ msgid ""
 "server. In most email documentation this type of TLS connection is referred "
 "to as SSL. It is generally used on port 465. If you are experiencing "
 "problems, see the explicit TLS setting \"Use TLS\". Note that \"Use TLS\" "
-"and \"Use SSL\" are mutually exclusive, so only set one of those settings to "
-"True."
+"and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
+" True."
 msgstr ""
 "ما إذا كنت تريد استخدام اتصال TLS ضمني (آمن) عند التحدث إلى خادم SMTP. في "
-"معظم وثائق البريد الإلكتروني ، يُشار إلى هذا النوع من اتصال TLS باسم SSL. يتم "
-"استخدامه بشكل عام على المنفذ 465. إذا كنت تواجه مشكلات ، فراجع إعداد TLS "
-"الصريح &quot;استخدام TLS&quot;. لاحظ أن &quot;Use TLS&quot; و &quot;Use "
-"SSL&quot; هما حصريان متبادلان ، لذلك عيِّن واحدًا فقط من هذه الإعدادات على True."
+"معظم وثائق البريد الإلكتروني ، يُشار إلى هذا النوع من اتصال TLS باسم SSL. "
+"يتم استخدامه بشكل عام على المنفذ 465. إذا كنت تواجه مشكلات ، فراجع إعداد TLS"
+" الصريح &quot;استخدام TLS&quot;. لاحظ أن &quot;Use TLS&quot; و &quot;Use "
+"SSL&quot; هما حصريان متبادلان ، لذلك عيِّن واحدًا فقط من هذه الإعدادات على "
+"True."
 
 #: mailers.py:71
 msgid "Server"
@@ -259,7 +259,8 @@ msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
 msgstr ""
-"سيتم تحديد ملف التعريف هذا مسبقًا في نموذج إرسال االوثائق  بالبريد الإلكتروني."
+"سيتم تحديد ملف التعريف هذا مسبقًا في نموذج إرسال االوثائق  بالبريد "
+"الإلكتروني."
 
 #: models.py:38
 msgid "Default"
@@ -335,7 +336,8 @@ msgstr "قالب لسطر موضوع نموذج البريد الإلكترون�
 
 #: settings.py:23
 msgid "Template for the document email form body text. Can include HTML."
-msgstr "قالب للنص الأساسي لنموذج البريد الإلكتروني للمستند. يمكن أن تشمل HTML."
+msgstr ""
+"قالب للنص الأساسي لنموذج البريد الإلكتروني للمستند. يمكن أن تشمل HTML."
 
 #: settings.py:30
 msgid "Template for the document link email form subject line."
@@ -447,8 +449,9 @@ msgstr "اختبار قالب البريد الإلكتروني: %s"
 
 #: workflow_action_mixins.py:18
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon. A template can be used to reference properties of the document."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon. A template can be used to reference properties of the "
+"document."
 msgstr ""
 "يمكن إضافة أكثر من عنوان بريدي مع التأكد من إضافة فاصلة او فاصة منقوطة كما "
 "يمكن إضافة قالب محدد للإيميل"

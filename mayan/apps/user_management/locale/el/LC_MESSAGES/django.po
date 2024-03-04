@@ -1,24 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Hmayag Antonian <hmayag@freemail.gr>, 2024
 # pyrotech <anastasios@tutamail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:61 events.py:6 permissions.py:6
@@ -34,7 +34,7 @@ msgstr "Ομάδα"
 msgid "Groups"
 msgstr "Ομάδες"
 
-#: apps.py:78 search.py:16
+#: apps.py:79 search.py:16
 msgid "Name"
 msgstr "Όνομα"
 
@@ -303,8 +303,8 @@ msgid ""
 "units of your organization. Groups can't be used for access control. Use "
 "roles for permissions and access control, add groups to them."
 msgstr ""
-"Οι ομάδες χρηστών είναι οργανικές μονάδες. Θα πρέπει να αντικατοπτρίζουν τις "
-"οργανικές μονάδες του οργανισμού σας. Οι ομάδες δεν μπορούν να "
+"Οι ομάδες χρηστών είναι οργανικές μονάδες. Θα πρέπει να αντικατοπτρίζουν τις"
+" οργανικές μονάδες του οργανισμού σας. Οι ομάδες δεν μπορούν να "
 "χρησιμοποιηθούν για έλεγχο πρόσβασης. Χρησιμοποιήστε τους ρόλους για "
 "δικαιώματα και έλεγχο πρόσβασης. Προσθέστε τις ομάδες στους ρόλους."
 
@@ -362,8 +362,8 @@ msgstr ""
 
 #: views/user_views.py:73
 msgid ""
-"Warning! You are about to delete your own user account. You will lose access "
-"to the system. This process is not reversible."
+"Warning! You are about to delete your own user account. You will lose access"
+" to the system. This process is not reversible."
 msgstr ""
 
 #: views/user_views.py:93

@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:32 permissions.py:6
@@ -41,12 +40,12 @@ msgstr "Alapértelmezett várólista?"
 #: apps.py:128
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non "
-"critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non"
+" critical tasks."
 msgstr ""
-"Az átmeneti várólisták nem tartósak. Az átmeneti várólistában lévő feladatok "
-"elvesznek, ha a bróker újraindul. A tranziens várólisták kevesebb erőforrást "
-"használnak, és nem kritikus feladatokat kezelnek."
+"Az átmeneti várólisták nem tartósak. Az átmeneti várólistában lévő feladatok"
+" elvesznek, ha a bróker újraindul. A tranziens várólisták kevesebb "
+"erőforrást használnak, és nem kritikus feladatokat kezelnek."
 
 #: apps.py:131
 msgid "Is transient?"
@@ -122,8 +121,8 @@ msgstr "Egyidejűség"
 
 #: apps.py:208
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers "
-"the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers"
+" the priority. The default value is 0."
 msgstr ""
 "A nice érték határozza meg a folyamat prioritását. A magasabb érték "
 "csökkenti a prioritást. Az alapértelmezett érték 0."
@@ -168,16 +167,16 @@ msgstr ""
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
-"transport://userid:password@hostname:port/virtual_host Only the scheme part "
-"(transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
-"Alapértelmezett: \"amqp://\". Alapértelmezett bróker URL. Ennek az URL-nek a "
-"következő formájúnak kell lennie: transport://userid:password@hostname:port/"
-"virtual_host Csak a séma része (transport://) kötelező, a többi rész "
-"opcionális, és alapértelmezésként az adott szállítás alapértelmezett "
-"értékeit veszi fel."
+"Alapértelmezett: \"amqp://\". Alapértelmezett bróker URL. Ennek az URL-nek a"
+" következő formájúnak kell lennie: "
+"transport://userid:password@hostname:port/virtual_host Csak a séma része "
+"(transport://) kötelező, a többi rész opcionális, és alapértelmezésként az "
+"adott szállítás alapértelmezett értékeit veszi fel."
 
 #: settings.py:32
 msgid ""
@@ -191,13 +190,15 @@ msgstr ""
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
-"userguide/configuration.html#result-backend"
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 msgstr ""
 "Alapértelmezett: Alapértelmezés szerint nincs engedélyezve az "
 "eredményháttér. A feladatok eredményeinek (tombstones) tárolására használt "
-"backend. Lásd: http://docs.celeryproject.org/en/v4.1.0/userguide/"
-"configuration.html#result-backend."
+"backend. Lásd: "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend."
 
 #: tests/literals.py:11
 msgid "Test queue"

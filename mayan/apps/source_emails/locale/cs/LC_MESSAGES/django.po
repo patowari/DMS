@@ -1,25 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Michal Švábík <snadno@lehce.cz>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
-"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: apps.py:13
 msgid "Emails"
@@ -43,8 +42,8 @@ msgid ""
 "specified in https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 msgstr ""
 "Kritéria, která se použijí při vyhledávání zpráv ke zpracování. Použijte "
-"formát uvedený na adrese https://tools.ietf.org/html/rfc2060."
-"html#section-6.4.4"
+"formát uvedený na adrese "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 
 #: source_backends/imap_source_backends.py:66
 msgid "Search criteria"
@@ -53,12 +52,14 @@ msgstr "Kritéria vyhledávání"
 #: source_backends/imap_source_backends.py:74
 msgid ""
 "IMAP STORE command to execute on messages after they are processed. One "
-"command per line. Use the commands specified in https://tools.ietf.org/html/"
-"rfc2060.html#section-6.4.6 or the custom commands for your IMAP server."
+"command per line. Use the commands specified in "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.6 or the custom "
+"commands for your IMAP server."
 msgstr ""
 "Příkaz IMAP STORE, který se má po zpracování zpracovat na zprávy. Jeden "
-"příkaz na řádek. Použijte příkazy uvedené v https://tools.ietf.org/html/"
-"rfc2060.html#section-6.4.6 nebo vlastní příkazy pro váš server IMAP."
+"příkaz na řádek. Použijte příkazy uvedené v "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.6 nebo vlastní příkazy "
+"pro váš server IMAP."
 
 #: source_backends/imap_source_backends.py:80
 msgid "Store commands"

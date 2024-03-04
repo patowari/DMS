@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:48+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2019-04-27 22:53+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: apps.py:32 events.py:11 links.py:53 links.py:94 permissions.py:6
 #: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr ""
@@ -63,15 +63,15 @@ msgstr ""
 msgid "Event type"
 msgstr ""
 
-#: classes.py:93
+#: classes.py:91
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:124
+#: classes.py:122
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:126
+#: classes.py:124
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -102,31 +102,31 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: links.py:55 links.py:100 views/clear_views.py:65
+#: links.py:56 links.py:101 views/clear_views.py:65
 msgid "Clear events"
 msgstr ""
 
-#: links.py:59 links.py:107 views/export_views.py:64
+#: links.py:60 links.py:108 views/export_views.py:64
 msgid "Export events"
 msgstr ""
 
-#: links.py:65 models.py:53 views/subscription_views.py:54
+#: links.py:66 models.py:53 views/subscription_views.py:54
 msgid "Event subscriptions"
 msgstr ""
 
-#: links.py:71 models.py:113 views/subscription_views.py:169
+#: links.py:72 models.py:113 views/subscription_views.py:169
 msgid "Object event subscriptions"
 msgstr ""
 
-#: links.py:83
+#: links.py:84
 msgid "Mark as seen"
 msgstr ""
 
-#: links.py:87
+#: links.py:88
 msgid "Mark all as seen"
 msgstr ""
 
-#: links.py:114
+#: links.py:115
 msgid "Subscriptions"
 msgstr ""
 

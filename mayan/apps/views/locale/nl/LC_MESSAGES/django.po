@@ -2,24 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Roberto Rosario, 2024
 # bwakkie <bwakkie@gmail.com>, 2024
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:21 settings.py:11
@@ -102,57 +102,57 @@ msgstr "%(object)s niet aangemaakt, foutmelding: %(error)s."
 msgid "%(object)s created successfully."
 msgstr "%(object)s met succes aangemaakt."
 
-#: generics.py:723
+#: generics.py:727
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s niet verwijderd, foutmelding: %(error)s."
 
-#: generics.py:733
+#: generics.py:737
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s met succes verwijderd."
 
-#: generics.py:796
+#: generics.py:800
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:908
+#: generics.py:912
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s niet bijgewerkt, foutmelding: %(error)s."
 
-#: generics.py:918
+#: generics.py:922
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s werden met succes bijgewerkt."
 
-#: generics.py:985
+#: generics.py:989
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d objecten succesvol verwijderd."
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "‘%(object)s’ is succesvol verwijderd."
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d object succesvol verwijderd."
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Verwijder %(count)d-objecten."
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Verwijder &quot;%(object)s&quot;."
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Verwijder %(count)d-object."

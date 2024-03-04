@@ -1,29 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Jože Detečnik <joze.detecnik@3tav.si>, 2024
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:28+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/"
-"sl/)\n"
-"Language: sl\n"
+"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: apps.py:26 classes.py:206 links.py:27
+#: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
 msgstr "Pravice"
 
@@ -173,7 +171,7 @@ msgstr "Brisanje ACL: %s"
 msgid "There are no ACLs for this object"
 msgstr ""
 
-#: views.py:152 views.py:275
+#: views.py:152 views.py:277
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -193,12 +191,12 @@ msgstr "Dodeljena dovoljenja"
 msgid "Available permissions"
 msgstr "Razpoložljiva dovoljenja"
 
-#: views.py:222
+#: views.py:223
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr ""
 
-#: views.py:231
+#: views.py:233
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -210,11 +208,11 @@ msgstr ""
 "dovoljenja je treba odstraniti iz nadrejenega predmeta ali vloge v "
 "nastavitvah."
 
-#: views.py:272
+#: views.py:274
 msgid "There are no ACLs"
 msgstr ""
 
-#: views.py:281
+#: views.py:283
 msgid "Global access control lists"
 msgstr ""
 
@@ -226,8 +224,9 @@ msgstr "Vrsta objekta"
 msgid "Type of the object for which the access will be modified."
 msgstr "Vrsta predmeta, za katerega bo dostop spremenjen."
 
-#: workflow_actions.py:56
-msgid "Numeric identifier of the object for which the access will be modified."
+#: workflow_actions.py:57
+msgid ""
+"Numeric identifier of the object for which the access will be modified."
 msgstr "Številčni identifikator predmeta, za katerega bo dostop spremenjen."
 
 #: workflow_actions.py:62 workflow_actions.py:198

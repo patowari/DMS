@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
 # Roberto Rosario, 2024
@@ -10,22 +10,20 @@
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
 # Márcia Ferreira, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
-"pt/)\n"
-"Language: pt\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
@@ -75,113 +73,113 @@ msgstr "Nome"
 msgid "App"
 msgstr "Aplicação"
 
-#: classes.py:220 classes.py:961
+#: classes.py:220 classes.py:963
 msgid "Environments"
 msgstr "Ambientes"
 
-#: classes.py:329
+#: classes.py:331
 msgid "Need to specify at least one: app_label or module."
 msgstr "É necessário especificar pelo menos um: app_label ou module"
 
-#: classes.py:334
+#: classes.py:336
 #, python-format
 msgid "Dependency \"%s\" already registered."
 msgstr "A dependência \"%s\" já está registada."
 
-#: classes.py:385
+#: classes.py:387
 #, python-format
 msgid "Installing package: %s... "
 msgstr "A instalar pacote: %s..."
 
-#: classes.py:392
+#: classes.py:394
 msgid "Already installed."
 msgstr "Já está instalado."
 
-#: classes.py:397 classes.py:404 classes.py:410
+#: classes.py:399 classes.py:406 classes.py:412
 msgid "Complete."
 msgstr "Finalizado."
 
-#: classes.py:437
+#: classes.py:439
 msgid "Installed and correct version"
 msgstr "Instalado e versão correta"
 
-#: classes.py:439
+#: classes.py:441
 msgid "Missing or incorrect version"
 msgstr "Em falta ou versão incorreta"
 
-#: classes.py:476
+#: classes.py:478
 msgid "None"
 msgstr "Nenhum"
 
-#: classes.py:485
+#: classes.py:487
 msgid "Not specified"
 msgstr "Não específicado"
 
-#: classes.py:488
+#: classes.py:490
 msgid "Patching files... "
 msgstr "A atualizar/arranjar ficheiros..."
 
-#: classes.py:516
+#: classes.py:518
 msgid "Executables that are called directly by the code."
 msgstr "Executáveis que são chamados diretamente pelo código."
 
-#: classes.py:518
+#: classes.py:520
 msgid "Binary"
 msgstr "Binário"
 
-#: classes.py:535
+#: classes.py:537
 msgid ""
-"JavaScript libraries downloaded the from NPM registry and used for front-end "
-"functionality."
+"JavaScript libraries downloaded the from NPM registry and used for front-end"
+" functionality."
 msgstr ""
 "Bibliotecas de JavaScript transferidas do registo NPM e utilizadas para "
 "funcionalidade front-end."
 
-#: classes.py:538
+#: classes.py:540
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:570 classes.py:864
+#: classes.py:572 classes.py:866
 msgid "Downloading... "
 msgstr "A transferir..."
 
-#: classes.py:575
+#: classes.py:577
 msgid "Verifying... "
 msgstr "A verificar..."
 
-#: classes.py:580 classes.py:869
+#: classes.py:582 classes.py:871
 msgid "Extracting... "
 msgstr "A extrair..."
 
-#: classes.py:790
+#: classes.py:792
 msgid "Python packages downloaded from PyPI."
 msgstr "Pacotes Python transferidos do PyPI."
 
-#: classes.py:792
+#: classes.py:794
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:844
+#: classes.py:846
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "Fontes transferidas de fonts.googleapis.com."
 
-#: classes.py:846
+#: classes.py:848
 msgid "Google font"
 msgstr "Fonte Google"
 
-#: classes.py:942
+#: classes.py:944
 msgid "Declared in app"
 msgstr "Declarado na aplicação"
 
-#: classes.py:943
+#: classes.py:945
 msgid "Show dependencies by the app that declared them."
 msgstr "Mostrar dependências pela aplicação que as declarou."
 
-#: classes.py:947
+#: classes.py:949
 msgid "Class"
 msgstr "Classe"
 
-#: classes.py:948
+#: classes.py:950
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -189,11 +187,11 @@ msgstr ""
 "Mostrar as classes diferentes das dependências. Normalmente, as classes "
 "dividem-se por linguagem ou pelos tipos de ficheiro da dependência."
 
-#: classes.py:953
+#: classes.py:955
 msgid "State"
 msgstr "Estado"
 
-#: classes.py:954
+#: classes.py:956
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -204,7 +202,7 @@ msgstr ""
 "significa que as dependências estão em falta ou que as suas versões estão "
 "incorretas."
 
-#: classes.py:962
+#: classes.py:964
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
@@ -325,8 +323,8 @@ msgstr "Não é possível determinar a última versão disponível."
 #: literals.py:21
 #, python-format
 msgid ""
-"Unexpected error trying to determine the latest version available. Make sure "
-"your installation has a connection to the internet; %(exception)s"
+"Unexpected error trying to determine the latest version available. Make sure"
+" your installation has a connection to the internet; %(exception)s"
 msgstr ""
 
 #: management/commands/dependencies_check.py:13
@@ -366,8 +364,8 @@ msgstr ""
 
 #: views.py:31
 msgid ""
-"It does not verify versions of other components like packaging or deployment "
-"technologies, such as container or virtual machine images."
+"It does not verify versions of other components like packaging or deployment"
+" technologies, such as container or virtual machine images."
 msgstr ""
 
 #: views.py:51

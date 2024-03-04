@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:52 events.py:6 permissions.py:6 settings.py:12
@@ -365,7 +364,7 @@ msgstr "Nincsenek aláírások ehhez a dokumentumfájlhoz."
 msgid "Signatures for document file: %s"
 msgstr "A dokumentumfájl aláírásai: %s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr "A nagy adatbázisok esetében a művelet sokáig is tarthat."
 
@@ -373,15 +372,15 @@ msgstr "A nagy adatbázisok esetében a művelet sokáig is tarthat."
 msgid "Refresh all signatures information?"
 msgstr "Frissíti az összes aláírási információt?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr "Az aláírási információk frissítése sikeresen sorba került."
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "Ellenőrzi az összes dokumentumot aláírás céljából?"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "Az aláírás-ellenőrzés sikeresen bekerült a sorba."
 

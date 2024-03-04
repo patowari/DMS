@@ -1,27 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:30+0000\n"
+"POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
@@ -294,8 +293,8 @@ msgstr "Dokumentum, amelybe új fájl kerül feltöltésre."
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process "
-"happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process"
+" happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 "Ha engedélyezve van, a dokumentumcsonk azonnal létrejön és visszaküldésre "
@@ -374,8 +373,8 @@ msgid ""
 "There are no enabled sources that support this operation. Create a new one "
 "or enable and existing one."
 msgstr ""
-"Nincs olyan engedélyezett forrás, amely támogatja ezt művelet . Hozzon létre "
-"egy újat, vagy engedélyezze és egy meglévőt."
+"Nincs olyan engedélyezett forrás, amely támogatja ezt művelet . Hozzon létre"
+" egy újat, vagy engedélyezze és egy meglévőt."
 
 #: views/document_file_views.py:43
 msgid ""
@@ -409,7 +408,8 @@ msgstr ""
 
 #: views/document_file_views.py:162
 msgid "New document file queued for upload and will be available shortly."
-msgstr "Új dokumentumfájl várakozik a feltöltésre, és hamarosan elérhető lesz."
+msgstr ""
+"Új dokumentumfájl várakozik a feltöltésre, és hamarosan elérhető lesz."
 
 #: views/document_file_views.py:187
 #, python-format
@@ -477,8 +477,8 @@ msgid ""
 "background without user intervention."
 msgstr ""
 "A források biztosítják a dokumentumok feltöltésének lehetőségét. Egyes "
-"források interaktívak, és működésükhöz felhasználói bevitel szükséges. Mások "
-"automatikusak, és a háttérben futnak felhasználói beavatkozás nélkül."
+"források interaktívak, és működésükhöz felhasználói bevitel szükséges. Mások"
+" automatikusak, és a háttérben futnak felhasználói beavatkozás nélkül."
 
 #: views/source_views.py:284
 msgid "No sources available"
@@ -494,14 +494,14 @@ msgstr ""
 
 #: views/source_views.py:331
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources "
-"that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources"
+" that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
 "Ez akkor is végrehajtja a forráskódot, ha a forrás nincs engedélyezve. Azok "
-"a források, amelyek a letöltés után törölnek tartalmat, nem teszik ezt meg a "
-"tesztelés alatt. A tesztelés során ellenőrizze a forrás hibanaplóját. A "
+"a források, amelyek a letöltés után törölnek tartalmat, nem teszik ezt meg a"
+" tesztelés alatt. A tesztelés során ellenőrizze a forrás hibanaplóját. A "
 "sikeres teszt törli a hibanaplót."
 
 #: views/source_views.py:337
@@ -523,11 +523,11 @@ msgstr "Dokumentumtípus választás"
 
 #: wizards.py:68
 msgid ""
-"No interactive document sources have been defined or none have been enabled, "
-"create one before proceeding."
+"No interactive document sources have been defined or none have been enabled,"
+" create one before proceeding."
 msgstr ""
-"Nincs interaktív dokumentumforrás definiálva, vagy egyik sincs engedélyezve, "
-"hozzon létre egyet a folytatás előtt."
+"Nincs interaktív dokumentumforrás definiálva, vagy egyik sincs engedélyezve,"
+" hozzon létre egyet a folytatás előtt."
 
 #: wizards.py:85
 #, python-format

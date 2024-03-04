@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2020-03-28 07:24+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:30 permissions.py:6 queues.py:13 settings.py:16
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr ""
 
@@ -152,27 +152,27 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: settings.py:22
+#: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
 msgstr ""
 
-#: settings.py:28
+#: settings.py:27
 msgid ""
 "A storage backend that all workers can use to generate and hold files for "
 "download."
 msgstr ""
 
-#: settings.py:39
+#: settings.py:38
 msgid "A storage backend that all workers can use to share files."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
 msgstr ""
 
-#: settings.py:56
+#: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
 

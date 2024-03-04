@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Ford Guo <agile.guo@gmail.com>, 2024
 # Leon Chu, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:28+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/"
-"teams/13584/zh_TW/)\n"
-"Language: zh_TW\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 settings.py:11
@@ -158,63 +157,63 @@ msgstr "登入頁面"
 msgid "Password reset email sent!"
 msgstr "密碼重置郵件已送出！"
 
-#: views/authentication_views.py:159
+#: views/authentication_views.py:160
 msgid "Next"
 msgstr "后"
 
-#: views/authentication_views.py:165
+#: views/authentication_views.py:166
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "步骤%(step)d ：%(step_label)s，总步骤%(total_steps)d"
 
-#: views/authentication_views.py:189
+#: views/authentication_views.py:190
 msgid "Sign in"
 msgstr "登入"
 
-#: views/authentication_views.py:239
+#: views/authentication_views.py:240
 msgid "Your password has been successfully changed."
 msgstr "你已成功變更密碼。"
 
-#: views/authentication_views.py:250
+#: views/authentication_views.py:251
 msgid "Current user password change"
 msgstr "目前使用者變更密碼"
 
-#: views/authentication_views.py:262
+#: views/authentication_views.py:263
 msgid "Changing the password is not allowed for this account."
 msgstr "此帳戶不允許變更密碼。"
 
-#: views/authentication_views.py:361
+#: views/authentication_views.py:362
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "在%(count)d使用者上執行的密碼變更申請"
 
-#: views/authentication_views.py:364
+#: views/authentication_views.py:365
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "在%(count)d複數使用者上執行密碼變更申請"
 
-#: views/authentication_views.py:381
+#: views/authentication_views.py:382
 msgid ""
-"Changing the password of staff or super user accounts via the user interface "
-"is not allowed. Use administration tools to perform this operation."
+"Changing the password of staff or super user accounts via the user interface"
+" is not allowed. Use administration tools to perform this operation."
 msgstr ""
 
-#: views/authentication_views.py:395
+#: views/authentication_views.py:396
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "變更複數使用者密碼"
 
-#: views/authentication_views.py:406
+#: views/authentication_views.py:407
 #, python-format
 msgid "Change password for user: %s"
 msgstr "變更使用者密碼：%s"
 
-#: views/authentication_views.py:430
+#: views/authentication_views.py:431
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "成功重置使用者密碼：%s。"
 
-#: views/authentication_views.py:436
+#: views/authentication_views.py:437
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""

@@ -1,29 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 01:29+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:27
 msgid "Dynamic search"
@@ -115,9 +111,9 @@ msgid ""
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
-"Результати пошуку перевищують налаштування обмеження. Результати можуть бути "
-"ненадійними, якщо використовуються кілька областей. Звужуйте критерії пошуку "
-"або збільшуйте значення налаштування обмеження результатів."
+"Результати пошуку перевищують налаштування обмеження. Результати можуть бути"
+" ненадійними, якщо використовуються кілька областей. Звужуйте критерії "
+"пошуку або збільшуйте значення налаштування обмеження результатів."
 
 #: scoped_queries.py:367
 #, python-format
@@ -227,8 +223,8 @@ msgstr "Оператор пошуку для використання, якщо 
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
-"Вимикає пошук на панелі за одним терміном, залишаючи лише кнопку розширеного "
-"пошуку."
+"Вимикає пошук на панелі за одним терміном, залишаючи лише кнопку розширеного"
+" пошуку."
 
 #: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
@@ -306,7 +302,8 @@ msgstr "До строки"
 #: views.py:59
 msgid "This tool erases and populates the search backend's internal index."
 msgstr ""
-"Цей інструмент стирає та заповнює внутрішній індекс серверної частини пошуку."
+"Цей інструмент стирає та заповнює внутрішній індекс серверної частини "
+"пошуку."
 
 #: views.py:69
 msgid ""

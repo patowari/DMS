@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2020-04-02 07:08+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -23,7 +23,7 @@ msgid "None"
 msgstr ""
 
 #: admin.py:26 links.py:88 models/index_template_models.py:50
-#: serializers.py:281
+#: serializers.py:291
 msgid "Document types"
 msgstr ""
 
@@ -114,11 +114,11 @@ msgstr ""
 msgid "Rebuild indexes"
 msgstr ""
 
-#: links.py:69 views/index_template_views.py:451
+#: links.py:69 views/index_template_views.py:453
 msgid "Reset indexes"
 msgstr ""
 
-#: links.py:78 views/index_template_views.py:100
+#: links.py:78 views/index_template_views.py:101
 msgid "Create index"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 msgid "View index templates"
 msgstr ""
 
-#: permissions.py:25 views/index_template_views.py:413
+#: permissions.py:25 views/index_template_views.py:415
 msgid "Rebuild index templates"
 msgstr ""
 
@@ -552,44 +552,44 @@ msgstr ""
 msgid "Tree template nodes for index: %s"
 msgstr ""
 
-#: views/index_template_views.py:311
+#: views/index_template_views.py:313
 #, python-format
 msgid "Create child node of: %s"
 msgstr ""
 
-#: views/index_template_views.py:338
+#: views/index_template_views.py:340
 #, python-format
 msgid "Delete the index template node: %s?"
 msgstr ""
 
-#: views/index_template_views.py:363
+#: views/index_template_views.py:365
 #, python-format
 msgid "Edit the index template node: %s"
 msgstr ""
 
-#: views/index_template_views.py:384
+#: views/index_template_views.py:386
 #, python-format
 msgid "Rebuild index template: %s"
 msgstr ""
 
-#: views/index_template_views.py:406
+#: views/index_template_views.py:408
 msgid "Index template queued for rebuild."
 msgstr ""
 
-#: views/index_template_views.py:430
+#: views/index_template_views.py:432
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/index_template_views.py:464
+#: views/index_template_views.py:466
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/index_template_views.py:477
+#: views/index_template_views.py:479
 msgid "Index templates for which their instances will be deleted."
 msgstr ""
