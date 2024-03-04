@@ -1,10 +1,7 @@
-4.6.2 (XXXX-XX-XX)
+4.6.2 (2024-03-04)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
 - Update the Debian Docker image from 12.4-slim to 12.5-slim.
-- Separate code/template translation and JavaScript translation handling.
-  Rename the app flag ``has_translations`` to ``has_app_translations``.
-  Add the app flag ``has_javascript_translations`` which defaults to False.
 - Move the flanker dependency from the sources to the source_emails app.
 - Update dependency versions:
 

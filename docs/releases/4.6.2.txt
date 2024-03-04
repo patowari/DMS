@@ -1,22 +1,40 @@
 Version 4.6.2
 =============
 
-Released: XXXX XX, XXXX
+Released: March 04, 2024
+
+This version includes the changes from versions 4.4.13, 4.5.10 plus the
+following:
 
 
 Changes
 -------
 
 
+Dependencies
+^^^^^^^^^^^^
+
+Updated the dependency versions:
+
+- redis from 5.0.1 to 5.0.2.
+- django from 4.2.10 to 4.2.11.
+- ruff from 0.2.1 to 0.3.0.
+- sentry-sdk from 1.40.1 to 1.40.6.
+- jsonschema from 4.20.0 to 4.21.1.
+- extract-msg from 0.47.0 to 0.48.0.
+
+
+Docker
+^^^^^^
+
+Updated the Debian Docker image from 12.4-slim to 12.5-slim.
+
 
 Other
 ^^^^^
 
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
-- Update the Debian Docker image from 12.4-slim to 12.5-slim.
-- Separate code/template translation and JavaScript translation handling.
-  Rename the app flag ``has_translations`` to ``has_app_translations``.
-  Add the app flag ``has_javascript_translations`` which defaults to False.
+- Move the flanker dependency from the sources to the source_emails app.
 
 
 Removals
