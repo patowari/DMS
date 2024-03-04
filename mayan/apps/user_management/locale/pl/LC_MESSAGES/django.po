@@ -41,7 +41,7 @@ msgstr "Grupa"
 msgid "Groups"
 msgstr "Grupy"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Nazwa"
 

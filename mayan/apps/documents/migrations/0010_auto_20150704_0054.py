@@ -1,21 +1,20 @@
 import datetime
 
-from django.db import models, migrations
+from django.db import migrations, models
 from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0009_document_in_trash'),
+        ('documents', '0009_document_in_trash')
     ]
 
     operations = [
         migrations.CreateModel(
             name='DeletedDocument',
-            fields=[
-            ],
+            fields=[],
             options={
-                'proxy': True,
+                'proxy': True
             },
             bases=('documents.document',),
         ),
@@ -28,5 +27,5 @@ class Migration(migrations.Migration):
                 ), verbose_name='Date and time deleted', blank=True
             ),
             preserve_default=False,
-        ),
+        )
     ]

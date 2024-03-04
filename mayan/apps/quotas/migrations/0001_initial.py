@@ -4,8 +4,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -33,11 +32,11 @@ class Migration(migrations.Migration):
                         default=True, help_text='Allow quick disable or '
                         'enable of the quota.', verbose_name='Enabled'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Quota',
-                'verbose_name_plural': 'Quotas',
-            },
-        ),
+                'verbose_name_plural': 'Quotas'
+            }
+        )
     ]

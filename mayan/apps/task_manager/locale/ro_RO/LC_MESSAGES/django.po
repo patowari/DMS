@@ -142,15 +142,15 @@ msgstr "Număr de tipuri de sarcini"
 msgid "Queue count"
 msgstr "Număr de cozi"
 
-#: links.py:14
+#: links.py:13
 msgid "Task type list"
 msgstr "Lista de tipuri de sarcini"
 
-#: links.py:19
+#: links.py:18
 msgid "Worker list"
 msgstr "Lista lucrătorilor"
 
-#: links.py:24
+#: links.py:23
 msgid "Queue list"
 msgstr "Lista cozilor"
 

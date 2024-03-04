@@ -97,7 +97,7 @@ msgstr "Setari temă"
 msgid "Edit theme settings"
 msgstr "Editați setările temei"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Creați o temă nouă"
 
@@ -109,7 +109,7 @@ msgstr "Șterge"
 msgid "Edit"
 msgstr "Editați"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Teme"
 
@@ -492,32 +492,32 @@ msgstr "Verificați conexiunea la rețea și încercați din nou în câteva mom
 msgid "None"
 msgstr "Nici unul"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Ștergeți tema: %s "
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Editați tema: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Temele permit schimbarea aspectului vizual fără a necesita modificări de cod."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Nu există teme"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Configurarea temei pentru utilizator: %s"
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Editați configurația temei pentru utilizator: %s"

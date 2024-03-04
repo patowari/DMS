@@ -3,7 +3,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('converter', '0015_auto_20190814_0014'),
+        ('converter', '0015_auto_20190814_0014')
     ]
 
     operations = [
@@ -17,5 +17,5 @@ class Migration(migrations.Migration):
         ),
         migrations.DeleteModel(
             name='Transformation',
-        ),
+        )
     ]

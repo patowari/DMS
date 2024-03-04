@@ -18,8 +18,8 @@ from .icons import (
 from .links import link_role_create
 from .models import Role, StoredPermission
 from .permissions import (
-    permission_role_view, permission_role_create, permission_role_delete,
-    permission_role_edit
+    permission_role_create, permission_role_delete, permission_role_edit,
+    permission_role_view
 )
 
 
@@ -54,21 +54,31 @@ class RoleCreateView(SingleObjectCreateView):
     view_permission = permission_role_create
 
     def get_extra_context(self):
-        return {'title': _(message='Create new role')}
+        return {
+            'title': _(message='Create new role')
+        }
 
     def get_instance_extra_data(self):
         return {'_event_actor': self.request.user}
 
 
 class RoleDeleteView(MultipleObjectDeleteView):
-    error_message = _(message='Error deleting role "%(instance)s"; %(exception)s')
+    error_message = _(
+        message='Error deleting role "%(instance)s"; %(exception)s'
+    )
     model = Role
     object_permission = permission_role_delete
     pk_url_kwarg = 'role_id'
     post_action_redirect = reverse_lazy(viewname='permissions:role_list')
-    success_message_plural = _(message='%(count)d roles deleted successfully.')
-    success_message_single = _(message='Role "%(object)s" deleted successfully.')
-    success_message_singular = _(message='%(count)d role deleted successfully.')
+    success_message_plural = _(
+        message='%(count)d roles deleted successfully.'
+    )
+    success_message_single = _(
+        message='Role "%(object)s" deleted successfully.'
+    )
+    success_message_singular = _(
+        message='%(count)d role deleted successfully.'
+    )
     title_single = _(message='Delete role: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected role.')
     title_plural = _(message='Delete the %(count)d selected roles.')
@@ -169,11 +179,15 @@ class RolePermissionAddRemoveView(AddRemoveView):
             namespaces_dictionary[
                 str(permission.namespace_label)
             ].append(
-                (permission.pk, str(permission))
+                (
+                    permission.pk, str(permission)
+                )
             )
 
         # Sort permissions by their translatable namespace label.
-        return sorted(namespaces_dictionary.items())
+        return sorted(
+            namespaces_dictionary.items()
+        )
 
     def get_actions_extra_kwargs(self):
         return {'user': self.request.user}

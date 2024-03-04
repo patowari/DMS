@@ -15,15 +15,15 @@ from ..search_fields import SearchFieldVirtualAllFields
 from ..search_models import SearchModel
 from ..search_query_types import (
     BackendQueryType, QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
-    QueryTypeLessThanOrEqual, QueryTypePartial, QueryTypeRange,
-    QueryTypeRangeExclusive, QueryTypeRegularExpression
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
+    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
+    QueryTypeRegularExpression
 )
 
 from .literals.elasticsearch_literals import (
     DEFAULT_ELASTICSEARCH_CLIENT_MAXSIZE,
-    DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_START,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_CONNECTION_FAIL,
+    DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_START,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFFER_TIMEOUT,
     DEFAULT_ELASTICSEARCH_HOST, DEFAULT_ELASTICSEARCH_INDICES_NAMESPACE,
     DJANGO_TO_ELASTICSEARCH_FIELD_MAP, MAXIMUM_API_ATTEMPT_COUNT

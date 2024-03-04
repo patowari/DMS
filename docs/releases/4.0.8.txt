@@ -122,7 +122,7 @@ Testing
 
 Event testing was improved for several apps. Events testing is now performed
 in an unified manner using the provided ``._clear_events()`` and
-``.get_test_events()``. This supersedes the importing the ``Action`` model
+``.get_test_events()``. This supersedes importing the ``Action`` model
 directly.
 
 

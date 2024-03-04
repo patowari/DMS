@@ -62,7 +62,7 @@ msgstr "القوالب المراد تقيمها"
 msgid "Template"
 msgstr "القالب"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "وضع الحماية"
 

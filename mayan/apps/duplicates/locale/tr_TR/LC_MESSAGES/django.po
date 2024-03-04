@@ -32,7 +32,7 @@ msgstr "Yinele"
 msgid "Duplicate backend"
 msgstr "Yinelenen backend"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Boş backend"
 

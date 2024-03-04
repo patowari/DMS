@@ -44,8 +44,9 @@ Logging
 
 The logging configuration was improved to create a log for critical errors
 when running on production mode. The default location for this log file is:
-/mayan/error.log. This path can be changed with the COMMON_PRODUCTION_ERROR_LOG_PATH
-setting. This log file will capture application errors and request exceptions.
+``/mayan/error.log``. This path can be changed with the
+``COMMON_PRODUCTION_ERROR_LOG_PATH`` setting. This log file will capture
+application errors and request exceptions.
 
 
 Cabinets
@@ -75,8 +76,9 @@ ACL changes
 
 The document type permissions namespace was renamed from "Document setup" to
 "Document types" for clarity. Along with that change, support was added
-for granting the document type edit, document type delete, and document type view
-permissions to individual document type instances instead of just globally.
+for granting the document type edit, document type delete, and document type
+view permissions to individual document type instances instead of just
+globally.
 
 
 Testing

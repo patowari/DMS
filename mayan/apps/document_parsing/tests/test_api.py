@@ -82,7 +82,9 @@ class DocumentTypeParsingSettingsAPIViewTestCase(
 
         response = self._request_document_type_parsing_settings_details_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, {'auto_parsing': False})
+        self.assertEqual(
+            response.data, {'auto_parsing': False}
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -106,7 +108,9 @@ class DocumentTypeParsingSettingsAPIViewTestCase(
 
         response = self._request_document_type_parsing_settings_patch_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, {'auto_parsing': True})
+        self.assertEqual(
+            response.data, {'auto_parsing': True}
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -130,7 +134,9 @@ class DocumentTypeParsingSettingsAPIViewTestCase(
 
         response = self._request_document_type_parsing_settings_put_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, {'auto_parsing': True})
+        self.assertEqual(
+            response.data, {'auto_parsing': True}
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

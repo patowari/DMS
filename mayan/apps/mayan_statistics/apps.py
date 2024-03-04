@@ -6,10 +6,10 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.navigation.classes import SourceColumn
 
-from .classes import StatisticType, StatisticNamespace
+from .classes import StatisticNamespace, StatisticType
 from .links import (
     link_statistic_namespace_detail, link_statistic_namespace_list,
-    link_statistic_type_queue, link_statistic_type_detail, link_statistics
+    link_statistic_type_detail, link_statistic_type_queue, link_statistics
 )
 
 
@@ -24,7 +24,7 @@ class StatisticsApp(MayanAppConfig):
         'statistics/node_modules/chart.js/karma.conf.*',
         'statistics/node_modules/chart.js/samples/*',
         'statistics/node_modules/chart.js/src/*',
-        'statistics/node_modules/chart.js/*docs*',
+        'statistics/node_modules/chart.js/*docs*'
     )
     verbose_name = _(message='Statistics')
 

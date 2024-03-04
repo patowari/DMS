@@ -1,4 +1,4 @@
-from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
+from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 
 from ..models import SignatureCapture
 
@@ -9,7 +9,7 @@ from .literals import (
 )
 
 
-class SignatureCaptureTestMixin(TestMixinObjectCreationTrack):
+class SignatureCaptureTestMixin(DocumentTestMixin):
     _test_object_model = SignatureCapture
     _test_object_name = '_test_signature_capture'
     auto_create_test_signature_capture = False

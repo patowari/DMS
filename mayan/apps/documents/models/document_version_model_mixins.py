@@ -269,7 +269,9 @@ class DocumentVersionBusinessLogicMixin:
         latest_file = document_file or self.document.file_latest
 
         if latest_file:
-            content_object_list = list(latest_file.pages.all())
+            content_object_list = list(
+                latest_file.pages.all()
+            )
         else:
             content_object_list = None
 

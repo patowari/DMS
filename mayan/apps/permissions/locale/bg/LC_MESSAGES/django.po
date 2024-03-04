@@ -28,7 +28,7 @@ msgstr ""
 msgid "Permissions"
 msgstr "Разрешения"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "Брой групи"
 
@@ -48,11 +48,11 @@ msgstr "Роля създадена"
 msgid "Role edited"
 msgstr "Роля редактирана"
 
-#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:111
+#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:113
 msgid "Roles"
 msgstr "Роли"
 
-#: links.py:29 views.py:57
+#: links.py:29 views.py:58
 msgid "Create new role"
 msgstr "Създайте нова роля"
 
@@ -199,42 +199,42 @@ msgstr "Налични роли"
 msgid "Roles of group: %s"
 msgstr "Роли на групата: %s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr "Грешка при изтриване на ролята &quot;%(instance)s&quot;; %(exception)s"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr "%(count)d роли са изтрити успешно."
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr "Ролята &quot;%(object)s&quot; е изтрита успешно."
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr "%(count)d роля е изтрита успешно."
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr "Изтриване на роля: %(object)s."
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr "Изтрийте %(count)d избрана роля."
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr "Изтрийте %(count)dизбрани роли."
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -247,19 +247,19 @@ msgstr ""
 "разрешения, предоставени на роля за конкретни обекти, които членовете на "
 "нейната група наследяват."
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "Няма роли"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "Ролеви групи"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "Налични групи"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
@@ -267,32 +267,32 @@ msgstr ""
 "Добавете групи, които да бъдат част от роля. Те ще наследят разрешенията на "
 "ролите и контрола за достъп."
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "Групи за роля: %s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "Дадени разрешения"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "Налични разрешения"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
 "Разрешенията, предоставени тук, ще се прилагат за цялата система и всички "
 "обекти."
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "Разрешения за роля: %s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr "Подробности за разрешението: %s"

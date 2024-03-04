@@ -32,19 +32,19 @@ msgstr ""
 msgid "Common"
 msgstr "Общий"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Используется для разрешения автономного перевода текстовых строк кода."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Обеспечивает проверку стиля."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Среда командной строки с автодополнением."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Проверяет правильность форматирования файла README."
 
@@ -200,11 +200,6 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package "
 "containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
-"Список строк, обозначающих приложения, которые установлены помимо тех, "
-"которые обычно устанавливаются Mayan EDMS. Каждая строка должна быть "
-"разделенным точками путем Python к: классу конфигурации приложения "
-"(предпочтительно) или пакету, содержащему приложение. Пример: ['app_1', "
-"'app_2']"
 
 #: settings.py:69
 msgid ""
@@ -236,15 +231,15 @@ msgstr "Устанавливает название проекта."
 msgid "Click here to fix this."
 msgstr "Щелкните здесь, чтобы исправить это."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Введите допустимое JSON-значение."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Введите допустимое YAML-значение."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -252,29 +247,29 @@ msgstr ""
 "Введите допустимое \"внутреннее имя\", состоящее из латинских букв, цифр и "
 "знака подчеркивания."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "О программе"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Начало"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Будут скопированы поля: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Сделать копию %(object_name)s \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Объект скопирован."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -282,18 +277,18 @@ msgstr ""
 "Отсутствие элементов здесь означает, что у вас нет необходимых разрешений "
 "для выполнения административных задач."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Нет доступных для настройки параметров."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Здесь вы можете настроить все аспекты системы."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Настройки"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Эти модули используются для обслуживания системы."

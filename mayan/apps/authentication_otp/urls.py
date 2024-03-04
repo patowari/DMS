@@ -5,7 +5,6 @@ from .views import (
     UserOTPDataVerifyTokenView
 )
 
-
 urlpatterns = [
     re_path(
         route=r'^otp/$', name='otp_detail',

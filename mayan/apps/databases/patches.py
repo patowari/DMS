@@ -14,7 +14,9 @@ def patch_Migration():
         result = _method_original__apply(self, *args, **kwargs)
 
         time_delta = datetime.datetime.now() - now_start
-        print(' (Time delta: {})'.format(time_delta), end='')
+        print(
+            ' (Time delta: {})'.format(time_delta), end=''
+        )
         return result
 
     def _method_patched__unapply(self, *args, **kwargs):
@@ -23,7 +25,9 @@ def patch_Migration():
         result = _method_original__unapply(self, *args, **kwargs)
 
         time_delta = datetime.datetime.now() - now_start
-        print(' (Time delta: {})'.format(time_delta), end='')
+        print(
+            ' (Time delta: {})'.format(time_delta), end=''
+        )
         return result
 
     if settings.DEBUG:

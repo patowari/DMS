@@ -17,8 +17,7 @@ from ..serializers.document_version_serializers import (
 )
 
 from .api_view_mixins import (
-    ParentObjectDocumentAPIViewMixin,
-    ParentObjectDocumentVersionAPIViewMixin
+    ParentObjectDocumentAPIViewMixin, ParentObjectDocumentVersionAPIViewMixin
 )
 
 logger = logging.getLogger(name=__name__)

@@ -53,13 +53,8 @@ sys.path.append(
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 # extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode', 'sphinx.ext.intersphinx']
 extensions = [
-    'sphinx_sitemap', 'sphinx.ext.extlinks', 'sphinxcontrib.blockdiag',
-    'sphinxcontrib.spelling',
+    'sphinx_sitemap', 'sphinx.ext.extlinks', 'sphinxcontrib.spelling',
 ]
-
-blockdiag_antialias = True
-blockdiag_html_image_format = 'SVG'
-blockdiag_latex_image_format = 'PDF'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -214,16 +209,17 @@ html_show_sphinx = False
 # latex_font_size = '10pt'
 
 # Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
+# (source start file, target name, title, author, documentclass
+# [howto/manual]).
 latex_documents = [
     (
         'index', 'MayanEDMS.tex', 'Mayan EDMS Documentation',
         mayan.__author__, 'manual'
-    ),
+    )
 ]
 
-# The name of an image file (relative to this directory) to place at the top of
-# the title page.
+# The name of an image file (relative to this directory) to place at the
+# top of the title page.
 # latex_logo = None
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
@@ -268,10 +264,12 @@ extlinks = {
         'https://forum.mayan-edms.com/viewtopic.php?t=%s', 'Forum topic #'
     ),
     'github-issue': (
-        'https://github.com/mayan-edms/mayan-edms/issues/%s', 'GitHub issue #'
+        'https://github.com/mayan-edms/mayan-edms/issues/%s',
+        'GitHub issue #'
     ),
     'gitlab-issue': (
-        'https://gitlab.com/mayan-edms/mayan-edms/issues/%s', 'GitLab issue #'
+        'https://gitlab.com/mayan-edms/mayan-edms/issues/%s',
+        'GitLab issue #'
     ),
     'gitlab-merge': (
         'https://gitlab.com/mayan-edms/mayan-edms/merge_requests/%s',
@@ -341,4 +339,6 @@ def setup(app):
             substitutions=substitutions
         )
     )
-    utils.patch_theme_template(app, templates_path=templates_path[0])
+    utils.patch_theme_template(
+        app, templates_path=templates_path[0]
+    )

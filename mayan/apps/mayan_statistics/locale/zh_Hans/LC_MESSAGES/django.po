@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr "统计"
 
@@ -40,39 +40,39 @@ msgstr "安排"
 msgid "Last update"
 msgstr "最后更新"
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr ""
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr "从不"
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr ""
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr ""
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr ""
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr "命名空间详细信息"
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr "命名空间列表"
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr "队列"
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr "视图"
 
@@ -118,42 +118,42 @@ msgstr "最后更新%(datetime)s"
 msgid "Statistic \"%s\" not found."
 msgstr "统计“%s”未找到。"
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr ""
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr "统计命名空间"
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr ""
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr "命名空间详细信息：%s"
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr "结果：%s"
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr "队列统计“%s”有待更新？"
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr "统计“%s”已成功排队等待更新。"

@@ -7,8 +7,7 @@ from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.views import (
     LoginView, LogoutView, PasswordChangeDoneView, PasswordChangeView,
     PasswordResetCompleteView, PasswordResetConfirmView,
-    PasswordResetDoneView, PasswordResetView,
-    RedirectURLMixin
+    PasswordResetDoneView, PasswordResetView, RedirectURLMixin
 )
 from django.core.exceptions import PermissionDenied
 from django.forms import formsets
@@ -33,8 +32,8 @@ from mayan.apps.user_management.querysets import (
     get_all_users_queryset, get_user_queryset
 )
 from mayan.apps.views.generics import MultipleObjectFormActionView
-from mayan.apps.views.view_mixins import ViewIconMixin
 from mayan.apps.views.http import URL
+from mayan.apps.views.view_mixins import ViewIconMixin
 
 from ..classes import AuthenticationBackend
 from ..forms import AuthenticationFormBase
@@ -68,7 +67,9 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
         computed_form_list = OrderedDict()
 
         for form_index, form in enumerate(iterable=form_list):
-            computed_form_list[str(form_index)] = form
+            computed_form_list[
+                str(form_index)
+            ] = form
 
         for form in computed_form_list.values():
             if issubclass(form, formsets.BaseFormSet):
@@ -78,16 +79,16 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
 
     @classonlymethod
     def as_view(cls, *args, **kwargs):
-        # SessionWizardView needs at least one form in order to be
+        # `SessionWizardView` needs at least one form in order to be
         # initialized as a view. Declare one empty form and then change the
-        # form list in the .dispatch() method.
+        # form list in the `.dispatch()` method.
         class EmptyForm(AuthenticationFormBase):
             """Empty form"""
 
         cls.form_list = [EmptyForm]
 
-        # Allow super to initialize and pass the form_list len() assert
-        # before replacing the form_list attribute with our property.
+        # Allow super to initialize and pass the `form_list` `len()` assert
+        # before replacing the `form_list` attribute with our property.
         result = super().as_view(*args, **kwargs)
 
         def null_setter(self, value):
@@ -128,7 +129,7 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
 
     def done(self, form_list=None, **kwargs):
         """
-        Perform the same function as Django's LoginView.form_valid().
+        Perform the same function as Django's `LoginView.form_valid()`.
         """
         kwargs = self.get_all_cleaned_data()
         self.authentication_backend.process(
@@ -229,7 +230,7 @@ class MayanLoginView(StrongholdPublicMixin, LoginView):
 
 
 class MayanLogoutView(LogoutView):
-    """No current change or overrides, left here for future expansion"""
+    """No current change or overrides, left here for future expansion."""
 
 
 class MayanPasswordChangeDoneView(PasswordChangeDoneView):

@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                 '(e.g., lineart, monochrome, or color). If this option is '
                 'not supported by your scanner, leave it blank.',
                 max_length=16, verbose_name='Mode'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='sanescanner',

@@ -5,18 +5,17 @@ from .api_views import (
     APIMailingProfileDetailView, APIMailingProfileListView
 )
 from .views.document_file_views import (
-    MailDocumentFileLinkView, MailDocumentFileAttachmentView
+    MailDocumentFileAttachmentView, MailDocumentFileLinkView
 )
 from .views.document_version_views import (
-    MailDocumentVersionLinkView, MailDocumentVersionAttachmentView
+    MailDocumentVersionAttachmentView, MailDocumentVersionLinkView
 )
 from .views.document_views import MailDocumentLinkView
 from .views.mailing_profile_views import (
     MailingProfileBackendSelectionView, MailingProfileCreateView,
-    MailingProfileDeleteView, MailingProfileEditView,
-    MailingProfileTestView, MailingProfileListView
+    MailingProfileDeleteView, MailingProfileEditView, MailingProfileListView,
+    MailingProfileTestView
 )
-
 
 urlpatterns_document = [
     re_path(

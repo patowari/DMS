@@ -145,15 +145,15 @@ msgstr "Anzahl Tasktyp"
 msgid "Queue count"
 msgstr "Warteschlangenzahl"
 
-#: links.py:14
+#: links.py:13
 msgid "Task type list"
 msgstr "Liste Tasktyp"
 
-#: links.py:19
+#: links.py:18
 msgid "Worker list"
 msgstr "Workerliste"
 
-#: links.py:24
+#: links.py:23
 msgid "Queue list"
 msgstr "Warteschlangenliste"
 

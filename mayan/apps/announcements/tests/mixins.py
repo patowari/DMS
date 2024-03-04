@@ -1,4 +1,4 @@
-from django.db.models import Q
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..models import Announcement
 
@@ -8,11 +8,20 @@ from .literals import (
 )
 
 
-class AnnouncementAPIViewTestMixin:
-    def _request_announcement_create_view(self):
-        pk_list = list(
-            Announcement.objects.values_list('pk', flat=True)
+class AnnouncementTestMixin(TestMixinObjectCreationTrack):
+    _test_object_model = Announcement
+    _test_object_name = '_test_announcement'
+
+    def _create_test_announcement(self):
+        self._test_announcement = Announcement.objects.create(
+            label=TEST_ANNOUNCEMENT_LABEL,
+            text=TEST_ANNOUNCEMENT_TEXT
         )
+
+
+class AnnouncementAPIViewTestMixin(AnnouncementTestMixin):
+    def _request_announcement_create_view(self):
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:announcement-list', data={
@@ -21,12 +30,7 @@ class AnnouncementAPIViewTestMixin:
             }
         )
 
-        try:
-            self._test_announcement = Announcement.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Announcement.DoesNotExist:
-            self._test_announcement = None
+        self._test_object_set()
 
         return response
 
@@ -65,19 +69,9 @@ class AnnouncementAPIViewTestMixin:
         )
 
 
-class AnnouncementTestMixin:
-    def _create_test_announcement(self):
-        self._test_announcement = Announcement.objects.create(
-            label=TEST_ANNOUNCEMENT_LABEL,
-            text=TEST_ANNOUNCEMENT_TEXT
-        )
-
-
-class AnnouncementViewTestMixin:
+class AnnouncementViewTestMixin(AnnouncementTestMixin):
     def _request_test_announcement_create_view(self):
-        pk_list = list(
-            Announcement.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='announcements:announcement_create', data={
@@ -86,12 +80,7 @@ class AnnouncementViewTestMixin:
             }
         )
 
-        try:
-            self._test_announcement = Announcement.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Announcement.DoesNotExist:
-            self._test_announcement = None
+        self._test_object_set()
 
         return response
 

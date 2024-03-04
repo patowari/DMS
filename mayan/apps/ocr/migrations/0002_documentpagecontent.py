@@ -1,10 +1,10 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('documents', '0005_auto_20150617_0358'),
-        ('ocr', '0001_initial'),
+        ('ocr', '0001_initial')
     ]
 
     operations = [
@@ -28,12 +28,12 @@ class Migration(migrations.Migration):
                         to='documents.DocumentPage',
                         verbose_name='Document page'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document page content',
-                'verbose_name_plural': 'Document pages contents',
+                'verbose_name_plural': 'Document pages contents'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

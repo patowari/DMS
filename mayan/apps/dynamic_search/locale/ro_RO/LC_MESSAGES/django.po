@@ -128,7 +128,7 @@ msgstr ""
 "disponibil și că sintaxa de căutare este validă pentru backend-ul de căutare "
 "activ; %s"
 
-#: search_fields.py:311
+#: search_fields.py:313
 msgid "Any"
 msgstr "Orice"
 
@@ -141,43 +141,43 @@ msgstr "Model de căutare necunoscut `%s`."
 msgid "All content"
 msgstr "Tot conținutul"
 
-#: search_query_types.py:167
+#: search_query_types.py:169
 msgid "Exact"
 msgstr "Exact"
 
-#: search_query_types.py:173
+#: search_query_types.py:175
 msgid "Fuzzy"
 msgstr "Aproximativ"
 
-#: search_query_types.py:179
+#: search_query_types.py:181
 msgid "Greater than"
 msgstr "Mai mare ca"
 
-#: search_query_types.py:185
+#: search_query_types.py:187
 msgid "Greater than or equal"
 msgstr "Mai mare sau egal"
 
-#: search_query_types.py:191
+#: search_query_types.py:193
 msgid "Less than"
 msgstr "Mai puțin decât"
 
-#: search_query_types.py:197
+#: search_query_types.py:199
 msgid "Less than or equal"
 msgstr "Mai mic sau egal"
 
-#: search_query_types.py:203
+#: search_query_types.py:205
 msgid "Partial"
 msgstr "Parțial"
 
-#: search_query_types.py:209
+#: search_query_types.py:211
 msgid "Range"
 msgstr "Interval"
 
-#: search_query_types.py:244
+#: search_query_types.py:246
 msgid "Range exclusive"
 msgstr "Interval exclusiv"
 
-#: search_query_types.py:250
+#: search_query_types.py:252
 msgid "Regular expression"
 msgstr "Expresie regulată"
 

@@ -160,7 +160,9 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='documentversiondriverentry',
-            unique_together={('driver', 'document_version')}
+            unique_together={
+                ('driver', 'document_version')
+            }
         ),
         migrations.RunPython(
             code=code_initialize_file_metadata_settings,

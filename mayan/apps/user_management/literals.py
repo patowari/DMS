@@ -6,7 +6,7 @@ FIELDS_USER = ('first_name', 'last_name')
 FIELDSETS_ALL = (
     (
         _(message='Account'), {
-            'fields': ('username', 'email'),
+            'fields': ('username', 'email')
         }
     ), (
         _(message='Personal'), {

@@ -99,7 +99,9 @@ class WatchStorageSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -119,7 +121,9 @@ class WatchStorageSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)
@@ -185,7 +189,9 @@ class WatchStorageSourceTestViewTestCase(
         response = self._request_test_source_test_get_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -216,7 +222,9 @@ class WatchStorageSourceTestViewTestCase(
         response = self._request_test_source_test_get_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -243,7 +251,9 @@ class WatchStorageSourceTestViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -276,7 +286,9 @@ class WatchStorageSourceTestViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -346,7 +358,9 @@ class WatchStorageSourceTestViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertTrue(
             'first document.pdf' in Document.objects.values_list(
@@ -477,7 +491,9 @@ class WatchStorageSourceTestViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(

@@ -80,7 +80,7 @@ class DocumentFileMetadataViewTestMixin(DocumentFileMetadataTestMixin):
         return self.post(
             viewname='file_metadata:document_file_metadata_multiple_submit',
             data={
-                'id_list': self._test_document_file.pk,
+                'id_list': self._test_document_file.pk
             }
         )
 

@@ -33,5 +33,5 @@ class Migration(migrations.Migration):
                 default=DEFAULT_FALSE_OBJECT_ID
             ), model_name='errorlogpartition', name='object_id',
             preserve_default=False
-        ),
+        )
     ]

@@ -30,7 +30,7 @@ msgstr "Dubluri"
 msgid "Duplicate backend"
 msgstr "Backend duplicate"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Backend vid"
 

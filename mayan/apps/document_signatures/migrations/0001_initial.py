@@ -1,12 +1,12 @@
-from django.db import models, migrations
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 import mayan.apps.document_signatures.models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0001_initial'),
+        ('documents', '0001_initial')
     ]
 
     operations = [
@@ -39,12 +39,12 @@ class Migration(migrations.Migration):
                         to='documents.DocumentVersion',
                         verbose_name='Document version'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version signature',
-                'verbose_name_plural': 'Document version signatures',
+                'verbose_name_plural': 'Document version signatures'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

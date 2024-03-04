@@ -195,7 +195,7 @@ User interface
 ^^^^^^^^^^^^^^
 
 Support was added to switch a view from the list mode to item mode and
-vice versa. A new icon is displayed in the list toolbar. Almost all views
+vice-versa. A new icon is displayed in the list toolbar. Almost all views
 support this feature.
 
 The icons of several app were improve using icon composition for a more

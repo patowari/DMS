@@ -215,7 +215,7 @@ msgstr ""
 "Impossible d'initialiser le stockage de fichiers téléchargés partagés. "
 "Vérifiez les paramètres {} et {} pour les erreurs de formatage."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -225,10 +225,10 @@ msgstr ""
 "tel qu'une exportation. Les fichiers téléchargés sont conservés pendant un "
 "certain temps, puis supprimés automatiquement."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Il n'y a aucun fichier à télécharger."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Téléchargements"

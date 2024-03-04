@@ -31,7 +31,7 @@ class AnnouncementCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _(message='Create announcement'),
+            'title': _(message='Create announcement')
         }
 
     def get_instance_extra_data(self):

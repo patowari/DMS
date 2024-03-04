@@ -1,5 +1,4 @@
 from django.conf import settings
-
 from django.utils.translation import gettext_lazy as _
 
 COMMAND_NAME_COMMON_INITIAL_SETUP = 'common_initial_setup'

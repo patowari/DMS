@@ -14,7 +14,7 @@ from ..permissions import (
 )
 
 from .mixins.document_file_mixins import (
-    DocumentFileTestMixin, DocumentFileAPIViewTestMixin
+    DocumentFileAPIViewTestMixin, DocumentFileTestMixin
 )
 from .mixins.document_mixins import DocumentTestMixin
 
@@ -234,7 +234,9 @@ class DocumentFileAPIViewTestCase(
             self._test_document.files.count(), document_file_count + 1
         )
 
-        self.assertEqual(self._test_document.file_latest.exists(), True)
+        self.assertEqual(
+            self._test_document.file_latest.exists(), True
+        )
         self.assertEqual(self._test_document.file_latest.size, 17436)
         self.assertEqual(
             self._test_document.file_latest.mimetype, 'image/png'
@@ -244,7 +246,9 @@ class DocumentFileAPIViewTestCase(
             self._test_document.file_latest.checksum,
             'efa10e6cc21f83078aaa94d5cbe51de67b51af706143bafc7fd6d4c02124879a'
         )
-        self.assertEqual(self._test_document.pages.count(), 1)
+        self.assertEqual(
+            self._test_document.pages.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 5)

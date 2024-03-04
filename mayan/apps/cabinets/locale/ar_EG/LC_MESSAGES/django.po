@@ -103,15 +103,15 @@ msgstr "الوصول الى الخزائن"
 msgid "Full path"
 msgstr "مكان الوصول الكامل"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "وصف الخزانة"
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "العنوان"
 
@@ -119,20 +119,20 @@ msgstr "العنوان"
 msgid "Cabinet"
 msgstr "خزانة"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "الأصل والتسمية"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s مع %(field_labels)s موجود سابقاً."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "خزائنة الوثائق"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "خزائن الوثائق"
 

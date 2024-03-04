@@ -24,27 +24,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr "文档签名"
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr "日期和时间"
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr "密钥ID"
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "没有"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr "签名ID"
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr "类型"
 
@@ -162,7 +162,7 @@ msgstr "重新刷新所有簽章"
 msgid "Verify all documents"
 msgstr "验证所有文档"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr ""
 

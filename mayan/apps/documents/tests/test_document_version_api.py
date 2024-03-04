@@ -17,8 +17,8 @@ from ..permissions import (
 
 from .mixins.document_file_mixins import DocumentFileTestMixin
 from .mixins.document_version_mixins import (
-    DocumentVersionModificationAPIViewTestMixin,
-    DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin
+    DocumentVersionAPIViewTestMixin,
+    DocumentVersionModificationAPIViewTestMixin, DocumentVersionTestMixin
 )
 
 

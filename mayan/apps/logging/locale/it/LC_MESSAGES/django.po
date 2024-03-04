@@ -80,15 +80,15 @@ msgstr "Partizioni del registro degli errori"
 msgid "Date and time"
 msgstr "Data e ora"
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "Testo"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr "Voce di partizione del registro degli errori"
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr "Voci della partizione del registro degli errori"
 

@@ -30,20 +30,20 @@ msgstr ""
 msgid "Common"
 msgstr "Ustawienia wspólne"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Służy do umożliwienia tłumaczenia ciągów tekstowych kodu w trybie offline."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Zapewnia kontrolę stylu."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Środowisko wiersza poleceń z funkcją autouzupełniania."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Sprawdza poprawność formatowania pliku README."
 
@@ -221,44 +221,44 @@ msgstr ""
 msgid "Click here to fix this."
 msgstr "Kliknij, aby to naprawić."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Podaj prawidłową wartość JSON."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Wprowadź poprawną wartość YAML."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Podaj prawidłową 'internal name' składającą się z liter, liczb i podkreśleń."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Informacje"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Strona główna"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Pola przeznaczone do skopiowania: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Czy skopiować %(object_name)s \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Obiekt został skopiowany pomyślnie."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -266,18 +266,18 @@ msgstr ""
 "Brak wyników oznacza, że nie masz wymaganych uprawnień administratora do "
 "wykonania zadania."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Brak opcji konfiguracji."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Tutaj możesz skonfigurować wszystkie ustawienia systemu."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Ustawienia"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Moduły związane z obsługą systemu."

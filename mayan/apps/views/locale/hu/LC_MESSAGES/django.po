@@ -43,7 +43,7 @@ msgstr "Cimke"
 msgid "Relationship"
 msgstr "Kapcsolat"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -53,7 +53,7 @@ msgstr ""
 "tartsa lenyomva a Control billentyűt. A kijelölés befejezése után kattintson "
 "az alábbi gombra, vagy kattintson duplán a listára a művelet aktiválásához."
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -63,42 +63,42 @@ msgstr ""
 "tartsa lenyomva a Control billentyűt. A kijelölés befejezése után kattintson "
 "az alábbi gombra, vagy kattintson duplán a listára a művelet aktiválásához."
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "Az összes hozzáadása"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "Összes eltávolítása"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Hiba a kapcsolat frissítése során; %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "A kapcsolatok frissítése sikeresen megtörtént"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Duplikátum adat hiba: %(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s nem jött létre, hiba: %(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s sikeresen létrehozva."

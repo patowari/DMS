@@ -65,7 +65,7 @@ msgstr "Рядок шаблону для оцінки."
 msgid "Template"
 msgstr "Шаблон"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Пісочниця"
 

@@ -4,10 +4,10 @@ from .api_views import (
     APIResolvedWebLinkListView, APIResolvedWebLinkNavigateView,
     APIResolvedWebLinkView, APIWebLinkDocumentTypeAddView,
     APIWebLinkDocumentTypeListView, APIWebLinkDocumentTypeRemoveView,
-    APIWebLinkView, APIWebLinkListView
+    APIWebLinkListView, APIWebLinkView
 )
 from .views import (
-    DocumentWebLinkListView, DocumentTypeWebLinksView, ResolvedWebLinkView,
+    DocumentTypeWebLinksView, DocumentWebLinkListView, ResolvedWebLinkView,
     WebLinkCreateView, WebLinkDeleteView, WebLinkDocumentTypesView,
     WebLinkEditView, WebLinkListView
 )

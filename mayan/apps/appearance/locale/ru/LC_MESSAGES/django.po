@@ -100,7 +100,7 @@ msgstr "Настройки темы"
 msgid "Edit theme settings"
 msgstr "Редактировать настройки темы"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Создать тему"
 
@@ -112,7 +112,7 @@ msgstr "Удалить"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Темы"
 
@@ -487,31 +487,31 @@ msgstr "Проверьте ваше подключение к сети и пов
 msgid "None"
 msgstr "Нет"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Удалить тему: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Редактировать тему: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "Темы позволяют изменять внешний вид без изменения исходного кода."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Нет тем"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Настройки темы для пользователя: %s"
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Редактировать настройки темы для пользователя: %s"

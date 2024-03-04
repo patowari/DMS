@@ -35,7 +35,7 @@ msgstr ""
 "Objekt, ke kterému je přístup udělen. Při třídění objektů se používá pouze "
 "typ a ne skutečný štítek objektu."
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "Objekt"
 
@@ -59,19 +59,19 @@ msgstr "ACL upraven"
 msgid "Role"
 msgstr "Role"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Nový ACL"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Odstranit"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Práva"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "Globální ACL"
 
@@ -94,7 +94,7 @@ msgstr "Počet oprávnění"
 msgid "Content type"
 msgstr "Typ obsahu"
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "ID objektu"
 
@@ -178,7 +178,7 @@ msgstr "Odstranit ACL: %s"
 msgid "There are no ACLs for this object"
 msgstr "Pro tento objekt neexistují žádné ACL"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -201,12 +201,12 @@ msgstr "Udělení oprávnění"
 msgid "Available permissions"
 msgstr "Dostupná oprávnění"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Role „%(role)s“ má oprávnění „%(object)s“."
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -217,11 +217,11 @@ msgstr ""
 "roli a nelze je z tohoto pohledu odebrat. Zděděná oprávnění je třeba odebrat "
 "z ACL nadřazeného objektu nebo z jeho role prostřednictvím nabídky Nastavení."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "Neexistují žádné seznamy ACL"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "Globální seznamy řízení přístupu"
 
@@ -237,35 +237,35 @@ msgstr "Typ objektu, pro který bude přístup upraven."
 msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "Numerický identifikátor objektu, pro který bude přístup upraven."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "Role"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "Role, jejichž přístup bude upraven."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "Oprávnění udělit / zrušit / z role pro objekt vybraný výše."
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr "Udělte přístup k objektům"
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr "Odvolání přístupu k objektu"
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr "Udělte přístup k dokumentům"
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr "Zrušit přístup k dokumentům"

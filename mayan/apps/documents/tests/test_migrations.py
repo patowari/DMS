@@ -258,9 +258,13 @@ class DocumentVersionActiveMigrationTestCase(
             app_label='documents', model_name='DocumentVersion'
         )
 
-        self.assertEqual(DocumentFile.objects.count(), 2)
+        self.assertEqual(
+            DocumentFile.objects.count(), 2
+        )
 
-        self.assertEqual(DocumentVersion.objects.count(), 2)
+        self.assertEqual(
+            DocumentVersion.objects.count(), 2
+        )
 
         self.assertEqual(
             DocumentVersion.objects.filter(active=True).count(), 1

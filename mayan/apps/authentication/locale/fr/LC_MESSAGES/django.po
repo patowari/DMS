@@ -45,19 +45,19 @@ msgstr "Utilisateur connecté"
 msgid "User logged out"
 msgstr "Utilisateur déconnecté"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "Se souvenir de moi"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "Permanent"
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr "Cette option désactive la fin de l'emprunt d'identité."
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "Utilisateur"
 
@@ -69,7 +69,7 @@ msgstr "Déconnexion"
 msgid "Change password"
 msgstr "Modifier le mot de passe"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Prendre temporairement l'identité de l'utilisateur"
 
@@ -229,7 +229,7 @@ msgstr "Le mot de passe de l'utilisateur : %s a été ré-initialisé avec succ�
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
 msgstr "Prendre l'identité de l'utilisateur : %s"

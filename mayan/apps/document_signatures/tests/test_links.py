@@ -5,7 +5,7 @@ from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 
 from ..links import (
     link_document_file_signature_detached_delete,
-    link_document_file_signature_detail,
+    link_document_file_signature_detail
 )
 from ..permissions import (
     permission_document_file_signature_delete,

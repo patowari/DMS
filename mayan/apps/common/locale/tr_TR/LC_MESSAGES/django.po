@@ -28,20 +28,20 @@ msgstr ""
 msgid "Common"
 msgstr "Ortak"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Kod metin dizelerinin çevrimdışı çevirisine izin vermek için kullanılır."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Stil kontrolü sağlar."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Otomatik tamamlama ile komut satırı ortamı."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "README dosyasının doğru biçimlendirmesini denetler."
 
@@ -201,10 +201,6 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package "
 "containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
-"Normalde Maya edm'leri tarafından yüklenenlerin ötesinde yüklenen tüm "
-"uygulamaları belirten dizelerin listesi. Her dize noktalı bir Python yolu "
-"olmalıdır: bir uygulama yapılandırma sınıfı (tercih edilir) veya bir "
-"uygulama içeren bir paket. Örnek: ['uygulama_1', 'uygulama_2']"
 
 #: settings.py:69
 msgid ""
@@ -240,44 +236,44 @@ msgstr "Projenin adını ayarlar."
 msgid "Click here to fix this."
 msgstr "Click here to fix this."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Geçerli bir JSON değeri girin."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Geçerli bir YAML değeri girin."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Harfler, rakamlar ve alt çizgilerden oluşan geçerli bir 'dahili ad' girin."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Hakkında"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Ana"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Kopyalanacak alanlar:%s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "%(object_name)s%(object)s nin bir kopyasını oluşturun?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Nesne başarıyla kopyalandı."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -285,18 +281,18 @@ msgstr ""
 "Burada sonuç olmaması, yönetim görevini gerçekleştirmek için gerekli "
 "izinlere sahip olmadığı anlamına gelir."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Kurulum seçeneği yok."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Burada sistemin tüm yönlerini yapılandırabilirsiniz."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Kurulum öğeleri"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Bu modüller sistem bakımı yapmak için kullanılır."

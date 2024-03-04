@@ -64,7 +64,7 @@ msgstr "Ciąg szablonu do oceny."
 msgid "Template"
 msgstr "Szablon"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

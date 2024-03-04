@@ -34,20 +34,20 @@ msgstr ""
 msgid "Common"
 msgstr "Commun"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Utilisé pour permettre la traduction hors ligne des chaînes de texte du code."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Fournit une vérification de style."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Environnement de ligne de commande avec autocomplétion."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Vérifie le formatage du fichier README."
 
@@ -241,15 +241,15 @@ msgstr "Définit le nom du projet."
 msgid "Click here to fix this."
 msgstr "Cliquez ici pour résoudre ce problème."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Saisissez une valeur JSON valide."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Saisissez une valeur YAML valide."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -257,29 +257,29 @@ msgstr ""
 "Entrez un 'nom interne' valide composé de lettres, de chiffres et de "
 "soulignement."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "À propos"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Accueil"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Champs à copier : %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Faire une copy de %(object_name)s \"%(object)s\" ?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Objet copié avec succès."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -287,18 +287,18 @@ msgstr ""
 "Aucun résultat ici signifie que vous ne disposez pas des autorisations "
 "requises pour effectuer des tâches administratives."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Aucune option d'installation disponible."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Ici vous pouvez configurer tous les aspects du système."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Paramètres de configuration"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Ces modules sont utilisés pour le système de maintenance."

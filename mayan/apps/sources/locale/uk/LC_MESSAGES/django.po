@@ -28,7 +28,7 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:9 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:12 views/source_views.py:285
 msgid "Sources"
 msgstr "Джерела"
 
@@ -272,17 +272,17 @@ msgstr "Двійковий вміст для нового файлу."
 msgid "Actions URL"
 msgstr "URL-адреса дій"
 
-#: settings.py:20
+#: settings.py:19
 msgid "Arguments to use when creating source backends."
 msgstr "Аргументи для використання при створенні джерелових бекендів."
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 "Шлях до підкласу Storage, який використовується для зберігання кешованих "
 "файлів джерела зображень."
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Аргументи, які потрібно передати до SOURCES_SOURCE_CACHE_STORAGE_BACKEND."

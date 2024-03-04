@@ -32,7 +32,7 @@ msgstr "Verknüpfungen"
 msgid "Label"
 msgstr "Bezeichner"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:51
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Smartlinks"
@@ -49,7 +49,7 @@ msgstr "Smartlink bearbeitet"
 msgid "Foreign document field"
 msgstr "Feld des anderen Dokuments"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Smartlink erstellen"
 
@@ -57,7 +57,7 @@ msgstr "Smartlink erstellen"
 msgid "Delete"
 msgstr "Löschen"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:43
 msgid "Document types"
 msgstr "Dokumententypen"
 
@@ -145,20 +145,20 @@ msgstr "ist in regulärem Ausdruck"
 msgid "is in regular expression (case insensitive)"
 msgstr "ist in regulärem Ausdruck (ohne Groß/Kleinschreibung)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Fehler bei der Generierung des dynamischen Titels: %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr "Dieser Smartlink ist nicht erlaubt für diesen Dokumententyp."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "Nicht"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr "Voller Bezeichner"
 
@@ -178,27 +178,27 @@ msgstr ""
 msgid "Dynamic label"
 msgstr "Dynamische Bezeichnung"
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr "Smartlink"
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr "Die Einbeziehung wird für das erste Element ignoriert."
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr "Repräsentiert die Metadaten aller anderen Dokumente."
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr "Fremddokumentattribut"
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign "
 "document field."
@@ -206,23 +206,23 @@ msgstr ""
 "Der Ausdruck, der Dokumenteigenschaften verwendet, die für das "
 "Fremddokumentfeld ausgewertet werden sollen."
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr "Ausdruck"
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr "Kehrt die Logik der Operation um."
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr "Verneint"
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr "Bedingung"
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr "Bedingungen"
 
@@ -402,12 +402,12 @@ msgstr "Aktivierte Dokumententypen"
 msgid "Document type for which to enable smart link: %s"
 msgstr "Dokumententyp, für den Smartlink aktiviert werden soll: %s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Smartlink %s löschen"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Smartlink %s bearbeiten"

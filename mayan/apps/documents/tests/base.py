@@ -1,9 +1,8 @@
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from mayan.apps.testing.tests.base import (
-    BaseTestCase, BaseTransactionTestCase, GenericViewTestCase,
-    GenericTransactionViewTestCase
+    BaseTestCase, BaseTransactionTestCase, GenericTransactionViewTestCase,
+    GenericViewTestCase
 )
-
 
 from .mixins.document_mixins import DocumentTestMixin
 

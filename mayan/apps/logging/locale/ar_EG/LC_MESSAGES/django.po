@@ -82,15 +82,15 @@ msgstr "خطأ في التقسيمات"
 msgid "Date and time"
 msgstr "الوقت والتاريخ"
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "النص"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr "إدخال خاطيء "
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr "إدخالات خاطئة"
 

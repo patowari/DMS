@@ -490,10 +490,16 @@ class ScopedQueryEntryDataOperator(ScopedQueryEntryData):
         result = []
 
         for operand in self.operand_list:
-            scope_entry = self.scoped_query.get_scope_entry_by_identifier(scope_identifier=operand)
-            result.append(scope_entry.to_explain())
+            scope_entry = self.scoped_query.get_scope_entry_by_identifier(
+                scope_identifier=operand
+            )
+            result.append(
+                scope_entry.to_explain()
+            )
 
-        operator_with_operands = ' {} '.format(self.operator_text).join(result)
+        operator_with_operands = ' {} '.format(self.operator_text).join(
+            result
+        )
 
         context.update(
             {

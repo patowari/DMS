@@ -100,15 +100,15 @@ msgstr "La ruta de gabinete, incluyendo todos los que lo contienen."
 msgid "Full path"
 msgstr "Ruta completa"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr "Padre"
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Un breve texto utilizado para identificar el gabinete."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Etiqueta"
 
@@ -116,20 +116,20 @@ msgstr "Etiqueta"
 msgid "Cabinet"
 msgstr "Gabinete"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Padre y etiqueta"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s con este %(field_labels)s ya existe."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Gabinete del documento"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Gabinetes de documentos"
 

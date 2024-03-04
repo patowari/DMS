@@ -1,17 +1,17 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from .mixins import AnnouncementTestMixin, AnnouncementViewTestMixin
-
 from ..events import event_announcement_created, event_announcement_edited
 from ..models import Announcement
 from ..permissions import (
     permission_announcement_create, permission_announcement_delete,
-    permission_announcement_edit, permission_announcement_view,
+    permission_announcement_edit, permission_announcement_view
 )
+
+from .mixins import AnnouncementViewTestMixin
 
 
 class AnnouncementViewTestCase(
-    AnnouncementTestMixin, AnnouncementViewTestMixin, GenericViewTestCase
+    AnnouncementViewTestMixin, GenericViewTestCase
 ):
     def test_announcement_create_view_no_permission(self):
         announcement_count = Announcement.objects.count()

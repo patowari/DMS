@@ -18,8 +18,8 @@ from .literals import (
     TEST_SETTING_VALIDATION_GOOD_VALUE, TEST_SETTING_VALUE
 )
 from .mocks import (
-    TestNamespaceMigrationOne, TestNamespaceMigrationTwo,
     TestNamespaceMigrationInvalid, TestNamespaceMigrationInvalidDual,
+    TestNamespaceMigrationOne, TestNamespaceMigrationTwo,
     test_validation_function
 )
 

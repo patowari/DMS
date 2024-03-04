@@ -170,7 +170,9 @@ class PermissionTestCase(ACLTestMixin, BaseTestCase):
         self._create_acl_test_object()
         self._create_test_acl()
 
-        self.assertTrue(self._test_acl.get_absolute_url())
+        self.assertTrue(
+            self._test_acl.get_absolute_url()
+        )
 
 
 class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
@@ -242,7 +244,8 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
         child = self.TestModelChild.objects.create(parent=parent)
 
         AccessControlList.objects.grant(
-            obj=parent, permission=self._test_permission, role=self._test_role
+            obj=parent, permission=self._test_permission,
+            role=self._test_role
         )
         queryset = AccessControlList.objects.get_inherited_permissions(
             obj=child, role=self._test_role
@@ -389,7 +392,8 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
         self.TestModelChild = self._create_test_model(
             fields={
                 'content_type_1': models.ForeignKey(
-                    on_delete=models.CASCADE, related_name='object_content_type',
+                    on_delete=models.CASCADE,
+                    related_name='object_content_type',
                     to=ContentType
                 ),
                 'object_id_1': models.PositiveIntegerField(),
@@ -411,7 +415,7 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
         )
 
         ModelPermission.register_inheritance(
-            model=self.TestModelChild, related='content_object_1',
+            model=self.TestModelChild, related='content_object_1'
         )
 
         test_external_object = self.TestModelExternal.objects.create()

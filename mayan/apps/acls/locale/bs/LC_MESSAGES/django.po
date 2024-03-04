@@ -32,7 +32,7 @@ msgid ""
 "is used and not the actual label of the object."
 msgstr ""
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "Objekat"
 
@@ -56,19 +56,19 @@ msgstr ""
 msgid "Role"
 msgstr "Uloga"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Novi ACL"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Obriši"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Dozvole"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "ID objekta"
 
@@ -172,7 +172,7 @@ msgstr "Obriši ACL:%s"
 msgid "There are no ACLs for this object"
 msgstr ""
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -192,12 +192,12 @@ msgstr "Dodjeljene dozvole"
 msgid "Available permissions"
 msgstr "Dostupne dozvole"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr ""
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -205,11 +205,11 @@ msgid ""
 "menu."
 msgstr ""
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr ""
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr ""
 
@@ -225,36 +225,36 @@ msgstr "Tip objekta za koji će se pristup mijenjati."
 msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "Numerički identifikator objekta za koji će se pristup mijenjati."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "Role"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "Uloge čiji će pristup biti modifikovan."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
 "Dozvole za dodeljivanje / poništavanje / od uloge za gore izabrani objekat."
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr ""
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr ""
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr ""
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr ""

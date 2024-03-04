@@ -97,7 +97,7 @@ msgstr "Tema ayarları"
 msgid "Edit theme settings"
 msgstr "Tema ayarlarını düzenle"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Yeni tema oluştur"
 
@@ -109,7 +109,7 @@ msgstr "Sil"
 msgid "Edit"
 msgstr "Düzenle"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Temalar"
 
@@ -484,33 +484,33 @@ msgstr "Ağ bağlantınızı kontrol edin ve birkaç dakika sonra tekrar deneyin
 msgid "None"
 msgstr "Yok"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Şu temayı sil: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Şu temayı düzenle: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Temalar, kod değişikliği gerektirmeden görsel görünümü değiştirmeye izin "
 "verir."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Tema yok"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

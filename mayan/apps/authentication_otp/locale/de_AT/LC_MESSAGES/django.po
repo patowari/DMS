@@ -124,19 +124,19 @@ msgstr "Einmalverschlüsselungsdetails für Benutzer: %s deaktivieren"
 msgid "OTP disable successfully."
 msgstr "Einmalpasswort erfolgreich deaktiviert."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "Einmalpasswort ist bereits aktiviert."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "Einmalpasswort erfolgreich aktiviert."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Einmalverschlüsselungsdetails für Benutzer: %s aktivieren"
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "Validierungsfehler Einmalpasswort."

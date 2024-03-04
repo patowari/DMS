@@ -10,8 +10,8 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_multi_item, menu_object, menu_related,
-    menu_return, menu_secondary, menu_setup, menu_user
+    menu_list_facet, menu_multi_item, menu_object, menu_related, menu_return,
+    menu_secondary, menu_setup, menu_user
 )
 from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
@@ -31,8 +31,8 @@ from .events import (
 from .handlers import handler_initialize_new_user_options
 from .links import (
     link_current_user_details, link_group_create, link_group_edit,
-    link_group_list, link_group_multiple_delete, link_group_user_list,
-    link_group_setup, link_group_single_delete, link_user_create,
+    link_group_list, link_group_multiple_delete, link_group_setup,
+    link_group_single_delete, link_group_user_list, link_user_create,
     link_user_edit, link_user_group_list, link_user_list,
     link_user_multiple_delete, link_user_set_options, link_user_setup,
     link_user_single_delete, separator_user_label, text_user_label

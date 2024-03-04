@@ -122,19 +122,19 @@ msgstr ""
 msgid "OTP disable successfully."
 msgstr "Нэг удаагийн код идэвхгүй боллоо."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "Нэг удаагийн код аль хэдийн идэвхтэй байна."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "Нэг удаагийн код идвэхжлээ."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr ""
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "Нэг удаагийн код баталгаажуулахад алдаа гарлаа."

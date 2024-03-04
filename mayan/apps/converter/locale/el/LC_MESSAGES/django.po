@@ -29,13 +29,13 @@ msgstr "Μετατροπέας"
 msgid "Transformation"
 msgstr "Μετασχηματισμός"
 
-#: backends/python.py:106
+#: backends/python.py:105
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr ""
 "Εξαίρεση που καθορίζει τον αριθμό των σελίδων χρησιμοποιώντας το Pillow. %s"
 
-#: backends/python.py:194 backends/python.py:211
+#: backends/python.py:193 backends/python.py:210
 #, python-format
 msgid "Exception determining PDF page count; %s"
 msgstr "Εξαίρεση που καθορίζει τον αριθμό σελίδων PDF. %s"
@@ -134,7 +134,7 @@ msgstr "Μετασχηματισμοί"
 msgid "Select new transformation"
 msgstr "Επιλογή νέου μετασχηματισμού"
 
-#: model_mixins.py:124 models.py:167
+#: model_mixins.py:124 models.py:169
 msgid "Arguments"
 msgstr "Ορίσματα"
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Object ID"
 msgstr "Αναγνωριστικό αντικειμένου"
 
-#: models.py:120 models.py:170
+#: models.py:120 models.py:172
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
@@ -214,15 +214,15 @@ msgstr ""
 "Εισάγετε τα ορίσματα για τον μετασχηματισμό ως λεξικό YAML. δηλαδή: "
 "{\"degrees\": 180}"
 
-#: models.py:178
+#: models.py:180
 msgid "Layer transformation"
 msgstr "Μετασχηματισμός επιπέδου"
 
-#: models.py:179
+#: models.py:181
 msgid "Layer transformations"
 msgstr "Μετασχηματισμοί επιπέδου"
 
-#: models.py:187
+#: models.py:189
 msgid "Unknown transformation class"
 msgstr "Άγνωστη κλάση μετασχηματισμού"
 

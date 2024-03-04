@@ -104,15 +104,15 @@ msgstr "Il percorso della cartella incluse le cartelle padre."
 msgid "Full path"
 msgstr "Percorso completo"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Un breve testo utilizzato per identificare la cartella."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Etichetta"
 
@@ -120,20 +120,20 @@ msgstr "Etichetta"
 msgid "Cabinet"
 msgstr "Cartella"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Cartella padre ed etichetta"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s chiamato %(field_labels)s esiste già."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Cartella documenti"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Cartelle documenti"
 

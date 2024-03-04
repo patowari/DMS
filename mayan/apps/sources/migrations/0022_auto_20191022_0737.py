@@ -47,6 +47,6 @@ class Migration(migrations.Migration):
                 'format specified in '
                 'https://tools.ietf.org/html/rfc2060.html#section-6.4.4',
                 null=True, verbose_name='Search criteria'
-            ),
+            )
         )
     ]

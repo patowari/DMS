@@ -1,8 +1,6 @@
 from mayan.apps.sources.source_backend_actions.interfaces import (
-    SourceBackendActionInterface,
-    SourceBackendActionInterfaceRequestRESTAPI,
-    SourceBackendActionInterfaceRequestView,
-    SourceBackendActionInterfaceTask
+    SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
+    SourceBackendActionInterfaceRequestView, SourceBackendActionInterfaceTask
 )
 from mayan.apps.sources.source_backend_actions.mixins.callback_mixins import (
     SourceBackendActionMixinCallbackDocumentFileUpload,

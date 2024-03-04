@@ -23,7 +23,7 @@ class TrashedDocumentAPIViewTestMixin:
     def _request_test_trashed_document_image_api_view(self):
         return self.get(
             viewname='rest_api:trasheddocument-image', kwargs={
-                'document_id': self._test_document.pk,
+                'document_id': self._test_document.pk
             }
         )
 

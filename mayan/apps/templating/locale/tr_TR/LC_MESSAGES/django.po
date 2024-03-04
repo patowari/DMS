@@ -64,7 +64,7 @@ msgstr "Değerlendirilecek şablon dizesi."
 msgid "Template"
 msgstr "Şablon"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

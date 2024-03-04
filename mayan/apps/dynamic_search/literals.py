@@ -9,7 +9,7 @@ DEFAULT_SEARCH_BACKEND_ARGUMENTS = {}
 DEFAULT_SEARCH_DISABLE_SIMPLE_SEARCH = False
 DEFAULT_SEARCH_INDEXING_CHUNK_SIZE = 25
 DEFAULT_SEARCH_MATCH_ALL_DEFAULT_VALUE = 'False'
-DEFAULT_SEARCH_QUERY_RESULTS_LIMIT = 100000
+DEFAULT_SEARCH_QUERY_RESULTS_LIMIT = 10000
 DEFAULT_SEARCH_RESULTS_LIMIT = 1000
 DEFAULT_TEST_SEARCH_BACKEND = 'mayan.apps.dynamic_search.backends.django.DjangoSearchBackend'
 
@@ -37,7 +37,9 @@ SCOPE_OPERATOR_OR = 'OR'
 
 
 def scope_operation_and(*args):
-    result = set(args[0])
+    result = set(
+        args[0]
+    )
     for argument in args[1:]:
         result = result.intersection(argument)
 
@@ -45,7 +47,9 @@ def scope_operation_and(*args):
 
 
 def scope_operation_not(*args):
-    result = set(args[0])
+    result = set(
+        args[0]
+    )
     for argument in args[1:]:
         result = result.difference(argument)
 
@@ -53,7 +57,9 @@ def scope_operation_not(*args):
 
 
 def scope_operation_or(*args):
-    result = set(args[0])
+    result = set(
+        args[0]
+    )
     for argument in args[1:]:
         result = result.union(argument)
 

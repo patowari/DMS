@@ -141,8 +141,7 @@ class DocumentTypeViewTestCase(
 
 
 class DocumentTypeQuickLabelViewTestCase(
-    DocumentTypeQuickLabelTestMixin, DocumentTypeQuickLabelViewTestMixin,
-    GenericDocumentViewTestCase
+    DocumentTypeQuickLabelViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -155,7 +154,9 @@ class DocumentTypeQuickLabelViewTestCase(
         response = self._request_test_quick_label_create_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(self._test_document_type.filenames.count(), 0)
+        self.assertEqual(
+            self._test_document_type.filenames.count(), 0
+        )
 
     def test_document_type_quick_label_create_with_access(self):
         self.grant_access(
@@ -166,7 +167,9 @@ class DocumentTypeQuickLabelViewTestCase(
         response = self._request_test_quick_label_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(self._test_document_type.filenames.count(), 1)
+        self.assertEqual(
+            self._test_document_type.filenames.count(), 1
+        )
 
     def test_document_type_quick_label_delete_no_permission(self):
         self._create_test_document_type_quick_label()

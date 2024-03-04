@@ -19,8 +19,12 @@ class TrashedDocumentModelTestCase(GenericDocumentTestCase):
 
         # Trash the document.
         self._test_document.delete()
-        self.assertEqual(TrashedDocument.objects.count(), 1)
-        self.assertEqual(Document.valid.count(), 0)
+        self.assertEqual(
+            TrashedDocument.objects.count(), 1
+        )
+        self.assertEqual(
+            Document.valid.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -42,8 +46,12 @@ class TrashedDocumentModelTestCase(GenericDocumentTestCase):
 
         test_trashed_document.restore(user=self._test_case_user)
 
-        self.assertEqual(TrashedDocument.objects.count(), 0)
-        self.assertEqual(Document.valid.count(), 1)
+        self.assertEqual(
+            TrashedDocument.objects.count(), 0
+        )
+        self.assertEqual(
+            Document.valid.count(), 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -60,8 +68,12 @@ class TrashedDocumentModelTestCase(GenericDocumentTestCase):
 
         # Delete the document.
         self._test_document.delete()
-        self.assertEqual(TrashedDocument.objects.count(), 0)
-        self.assertEqual(Document.valid.count(), 0)
+        self.assertEqual(
+            TrashedDocument.objects.count(), 0
+        )
+        self.assertEqual(
+            Document.valid.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

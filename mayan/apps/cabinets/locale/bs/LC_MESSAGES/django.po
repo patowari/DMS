@@ -100,15 +100,15 @@ msgstr ""
 msgid "Full path"
 msgstr ""
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr ""
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Labela"
 
@@ -116,20 +116,20 @@ msgstr "Labela"
 msgid "Cabinet"
 msgstr "Ormarić"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Roditelj i etiketa"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s sa ovim%(field_labels)s već postoji"
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Kabinet za dokumente"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Kabineti za dokumente"
 

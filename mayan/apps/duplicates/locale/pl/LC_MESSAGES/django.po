@@ -32,7 +32,7 @@ msgstr "Duplikaty"
 msgid "Duplicate backend"
 msgstr ""
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Zerowy backend"
 

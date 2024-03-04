@@ -19,7 +19,7 @@ PROJECT_LANGUAGE_MAPPING = {
     'de': 'de_DE',
     'ro': 'ro_RO',
     'tr': 'tr_TR',
-    'zh-hans': 'zh_Hans',
+    'zh-hans': 'zh_Hans'
 }
 VERSION = '3.0'
 
@@ -84,7 +84,9 @@ class TransifexHelper:
                 )
 
             output.append(
-                'lang_map = {}'.format(', '.join(language_mappings))
+                'lang_map = {}'.format(
+                    ', '.join(language_mappings)
+                )
             )
             output.append('')
 
@@ -151,7 +153,9 @@ class MessageProcessor:
             language = PROJECT_LANGUAGE_MAPPING.get(language, language)
             if '-' in language:
                 elements = language.split('-')
-                language = '{}_{}' .format(elements[0], elements[1].upper())
+                language = '{}_{}' .format(
+                    elements[0], elements[1].upper()
+                )
 
             result.append(language)
 
@@ -212,7 +216,9 @@ class MessageProcessor:
         self.command_transifex_pull_translations = command_transifex_client.bake('pull')
         self.command_transifex_push_translations = command_transifex_client.bake('push')
 
-        self.call_command(command=args[0])
+        self.call_command(
+            command=args[0]
+        )
 
     def _initialize_mayan(self):
         path_current = Path('.')
@@ -231,7 +237,9 @@ class MessageProcessor:
         try:
             method = self.argument_method_map[command]
         except KeyError:
-            self.parser.error('Unknown command "{}"'.format(command))
+            self.parser.error(
+                'Unknown command "{}"'.format(command)
+            )
 
         return getattr(self, method)()
 

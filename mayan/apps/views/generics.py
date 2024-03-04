@@ -22,20 +22,19 @@ from mayan.apps.dynamic_search.view_mixins import SearchFilterEnabledListViewMix
 
 from .forms import ChoiceForm
 from .icons import (
-    icon_add_all, icon_confirm_form_cancel, icon_confirm_form_submit,
-    icon_remove_all, icon_assign_remove_add, icon_assign_remove_remove
+    icon_add_all, icon_assign_remove_add, icon_assign_remove_remove,
+    icon_confirm_form_cancel, icon_confirm_form_submit, icon_remove_all
 )
+from .settings import setting_paginate_by
 from .view_mixins import (
     ExtraDataDeleteViewMixin, DownloadViewMixin,
     DynamicFieldSetFormViewMixin, ExternalObjectViewMixin,
-    ExtraContextViewMixin, FormExtraKwargsViewMixin,
-    ListModeViewMixin, ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
+    ExtraContextViewMixin, FormExtraKwargsViewMixin, ListModeViewMixin,
+    ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
     ObjectActionViewMixin, ObjectNameViewMixin, RedirectionViewMixin,
     RestrictedQuerysetViewMixin, SortingViewMixin, ViewIconMixin,
     ViewPermissionCheckViewMixin
 )
-
-from .settings import setting_paginate_by
 
 logger = logging.getLogger(name=__name__)
 
@@ -148,7 +147,12 @@ class MultiFormView(DjangoFormView):
         return self.prefixes.get(form_name, self.prefix)
 
     def post(self, request, *args, **kwargs):
-        if all([form.is_valid() for form in self.forms.values()]):
+        form_list = self.forms.values()
+        form_list_valid = [
+            form.is_valid() for form in form_list
+        ]
+
+        if all(form_list_valid):
             return self.forms_valid(forms=self.forms)
         else:
             return self.forms_invalid(forms=self.forms)

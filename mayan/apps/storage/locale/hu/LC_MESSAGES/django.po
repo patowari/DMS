@@ -210,7 +210,7 @@ msgstr ""
 "Nem sikerült inicializálni a megosztott feltöltött fájl tárolót. Ellenőrizze "
 "a beállításokat {} és {} formázási hibákért."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -220,10 +220,10 @@ msgstr ""
 "létre. A letöltött fájlokat a rendszer egy bizonyos ideig megőrzi, majd "
 "automatikusan eltávolítja."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Nincsenek letölthető fájlok."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Letöltések"

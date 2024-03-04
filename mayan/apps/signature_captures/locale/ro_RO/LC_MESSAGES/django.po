@@ -139,39 +139,39 @@ msgstr "Editați capturile de semnătură"
 msgid "View signature captures"
 msgstr "Vizualizați capturile de semnătură"
 
-#: search.py:12
+#: search.py:11
 msgid "Signature capture text"
 msgstr "Text de captare a semnăturii"
 
-#: search.py:16
+#: search.py:15
 msgid "Signature capture user first name"
 msgstr "Prenumele utilizatorului  semnăturii capturarate"
 
-#: search.py:20
+#: search.py:19
 msgid "Signature capture user last name"
 msgstr "Numele utilizatorului semnăturii capturate"
 
-#: search.py:24
+#: search.py:23
 msgid "Signature capture user username"
 msgstr "Nume de utilizator pentru semnătura capturarată"
 
-#: search.py:35
+#: search.py:34
 msgid "Document type label"
 msgstr "Etichetă tip document"
 
-#: search.py:38
+#: search.py:37
 msgid "Document label"
 msgstr "Etichetele documentului"
 
-#: search.py:42
+#: search.py:41
 msgid "User first name"
 msgstr "Prenume utilizator"
 
-#: search.py:45
+#: search.py:44
 msgid "User last name"
 msgstr "Numele utilizatorului"
 
-#: search.py:48
+#: search.py:47
 msgid "User username"
 msgstr "Nume utilizator al utilizatorului"
 
@@ -213,7 +213,7 @@ msgstr ""
 "Argumente de transmis către "
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 
-#: storages.py:15
+#: storages.py:14
 msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the "
 "settings {} and {} for formatting errors."
@@ -221,7 +221,7 @@ msgstr ""
 "Nu se poate inițializa stocarea în cache a captării semnăturii "
 "convertorului. Verificați setările {} și {} pentru erori de formatare."
 
-#: storages.py:21
+#: storages.py:20
 msgid "Signature captures cache"
 msgstr "Memorie cache pentru capturi de semnătură"
 

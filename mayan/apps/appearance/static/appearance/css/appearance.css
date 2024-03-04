@@ -795,6 +795,8 @@ Input search clearable
     min-width: 0px;
 }
 
+/* Menu dropdown */
+
 .caret {
     pointer-events: none;
 }

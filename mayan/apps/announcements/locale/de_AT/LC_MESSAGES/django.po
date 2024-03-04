@@ -30,7 +30,7 @@ msgstr ""
 msgid "Announcements"
 msgstr "Ankündigungen"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "Keine"
 
@@ -54,43 +54,43 @@ msgstr "Löschen"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Kurze Beschreibung dieser Ankündigung."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Bezeichner"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Der tatsächlich anzuzeigende Text."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Text"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Datum und Uhrzeit, nach denen diese Ankündigung angezeigt wird."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Startdatum und Uhrzeit"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Datum und Uhrzeit bis der diese Ankündigung angezeigt wird."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Enddatum und Uhrzeit"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Ankündigung"
 

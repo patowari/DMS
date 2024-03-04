@@ -4,75 +4,70 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0068_auto_20201024_1852'),
+        ('documents', '0068_auto_20201024_1852')
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='DocumentFilePageResult',
+            name='DocumentFilePageResult'
         ),
         migrations.DeleteModel(
-            name='DocumentVersionPageResult',
+            name='DocumentVersionPageResult'
         ),
         migrations.CreateModel(
             name='DocumentFilePageSearchResult',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Document file page',
                 'verbose_name_plural': 'Document file pages',
                 'ordering': ('document_file__document', 'page_number'),
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.documentfilepage',),
+            bases=('documents.documentfilepage',)
         ),
         migrations.CreateModel(
             name='DocumentFileSearchResult',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.documentfile',),
+            bases=('documents.documentfile',)
         ),
         migrations.CreateModel(
             name='DocumentSearchResult',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.document',),
+            bases=('documents.document',)
         ),
         migrations.CreateModel(
             name='DocumentVersionPageSearchResult',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Document version page',
                 'verbose_name_plural': 'Document version pages',
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.documentversionpage',),
+            bases=('documents.documentversionpage',)
         ),
         migrations.CreateModel(
             name='DocumentVersionSearchResult',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.documentversion',),
+            bases=('documents.documentversion',)
         ),
         migrations.AlterField(
             model_name='document',
@@ -83,7 +78,7 @@ class Migration(migrations.Migration):
                 'default, will be set to the filename of the first file '
                 'uploaded to the document.', max_length=255,
                 verbose_name='Label'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='document',
@@ -92,14 +87,14 @@ class Migration(migrations.Migration):
                 blank=True, default='eng',
                 help_text='The primary language in the document.',
                 max_length=8, verbose_name='Language'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentfile',
             name='filename',
             field=models.CharField(
                 blank=True, max_length=255, verbose_name='Filename'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentversionpage',
@@ -108,14 +103,14 @@ class Migration(migrations.Migration):
                 help_text='Content type for the source object of the page.',
                 on_delete=django.db.models.deletion.CASCADE,
                 to='contenttypes.ContentType'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentversionpage',
             name='object_id',
             field=models.PositiveIntegerField(
                 help_text='ID for the source object of the page.'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentversionpage',
@@ -124,6 +119,6 @@ class Migration(migrations.Migration):
                 db_index=True, default=1,
                 help_text='Unique integer number for the page. Pages are '
                 'ordered by this number.', verbose_name='Page number'
-            ),
-        ),
+            )
+        )
     ]

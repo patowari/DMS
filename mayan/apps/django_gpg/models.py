@@ -71,7 +71,11 @@ class Key(ExtraDataModelMixin, KeyBusinessLogicMixin, models.Model):
                 message=_(message='Invalid key data')
             )
 
-        if Key.objects.filter(fingerprint=import_results.fingerprints[0]).exists():
+        queryset = Key.objects.filter(
+            fingerprint=import_results.fingerprints[0]
+        )
+
+        if queryset.exists():
             raise ValidationError(
                 message=_(message='Key already exists.')
             )

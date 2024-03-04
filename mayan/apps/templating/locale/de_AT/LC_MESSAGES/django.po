@@ -65,7 +65,7 @@ msgstr "Die zu prüfende Vorlagen-Zeichenfolge."
 msgid "Template"
 msgstr "Vorlage"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

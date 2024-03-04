@@ -125,19 +125,19 @@ msgstr "Désactiver le masque jetable pour l'utilisateur: %s"
 msgid "OTP disable successfully."
 msgstr "OTP désactivé avec succès."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "OTP est déjà activé."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "OTP activé avec succès."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Activer le masque jetable pour l'utilisateur: %s"
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "Erreur de validation du secret OTP."

@@ -105,9 +105,9 @@ class DocumentFileMetadataDriverAttributeListView(
         }
 
     def get_external_object_queryset(self):
-        document_file_queryset = DocumentFile.valid.all()
+        queryset_document_files = DocumentFile.valid.all()
         return DocumentFileDriverEntry.objects.filter(
-            document_file_id__in=document_file_queryset.values('pk')
+            document_file_id__in=queryset_document_files.values('pk')
         )
 
     def get_source_queryset(self):
@@ -188,11 +188,11 @@ class DocumentTypeFileMetadataSubmitView(FormView):
         }
 
     def form_valid(self, form):
-        document_queryset = Document.valid.all()
+        queryset_documents = Document.valid.all()
 
         count = 0
         for document_type in form.cleaned_data['document_type']:
-            for document in document_type.documents.filter(pk__in=document_queryset.values('pk')):
+            for document in document_type.documents.filter(pk__in=queryset_documents.values('pk')):
                 document.submit_for_file_metadata_processing(
                     user=self.request.user
                 )
@@ -203,7 +203,7 @@ class DocumentTypeFileMetadataSubmitView(FormView):
                 '%(count)d documents added to the file metadata processing '
                 'queue.'
             ) % {
-                'count': count,
+                'count': count
             }, request=self.request
         )
 

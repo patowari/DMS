@@ -186,74 +186,74 @@ msgstr "Az OCR beállítások szerkesztése a következő dokumentumtípushoz: %
 msgid "Submit all documents of a type for OCR"
 msgstr "Az összes dokumentumtípus beküldése OCR-re"
 
-#: views.py:85
+#: views.py:88
 #, python-format
 msgid "%(count)d documents added to the OCR queue."
 msgstr "%(count)d dokumentum hozzáadva az OCR-sorhoz."
 
-#: views.py:106
+#: views.py:111
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Hiba az OCR \"%(instance)s\" dokumentumverziójának törlésekor; %(exception)s"
 
-#: views.py:112
+#: views.py:117
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
 msgstr "%(count)d dokumentumverzió OCR tartalma sikeresen törölve."
 
-#: views.py:115
+#: views.py:120
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
 msgstr "A \"%(object)s\" OCR tartalma sikeresen törölve."
 
-#: views.py:118
+#: views.py:123
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
 msgstr "A %(count)d dokumentumverzió OCR tartalma sikeresen törölve."
 
-#: views.py:121
+#: views.py:126
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document versions."
 msgstr "A %(count)d kiválasztott dokumentumverzió OCR tartalmának törlése."
 
-#: views.py:123
+#: views.py:128
 #, python-format
 msgid "Delete the OCR content of: %(object)s."
 msgstr "A következő OCR tartalom törlése: %(object)s ."
 
-#: views.py:125
+#: views.py:130
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document version."
 msgstr "A %(count)d kiválasztott dokumentumverzió OCR tartalmának törlése."
 
-#: views.py:156
+#: views.py:161
 #, python-format
 msgid "OCR result for document: %s"
 msgstr "OCR eredménye a következő dokumentumhoz: %s"
 
-#: views.py:178
+#: views.py:183
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
 msgstr "%(count)d dokumentumverzió elküldve az OCR-sorba."
 
-#: views.py:181
+#: views.py:186
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
 msgstr "Az OCR-sorba elküldött %(count)d dokumentumverzió."
 
-#: views.py:190
+#: views.py:195
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
 msgstr[0] "Elküldi a kiválasztott dokumentumverziót az OCR-sorba?"
 msgstr[1] "Elküldi a kiválasztott dokumentumverziókat az OCR-sorba?"
 
-#: views.py:226
+#: views.py:231
 #, python-format
 msgid "OCR result for document version page: %s"
 msgstr "OCR-eredmény a dokumentum verzióoldalához: %s"
 
-#: views.py:254
+#: views.py:259
 #, python-format
 msgid "Edit OCR for document version page: %s"
 msgstr "OCR szerkesztése a dokumentum verzióoldalához: %s"

@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
 "1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr ""
 
@@ -40,39 +40,39 @@ msgstr ""
 msgid "Last update"
 msgstr ""
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr ""
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr ""
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr ""
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr ""
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr ""
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr ""
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr ""
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr ""
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr ""
 
@@ -118,42 +118,42 @@ msgstr ""
 msgid "Statistic \"%s\" not found."
 msgstr ""
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr ""
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr ""
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr ""
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr ""
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr ""
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr ""
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr ""
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr ""

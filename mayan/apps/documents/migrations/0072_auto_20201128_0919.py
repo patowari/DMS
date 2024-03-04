@@ -3,20 +3,19 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0071_auto_20201128_0330'),
+        ('documents', '0071_auto_20201128_0330')
     ]
 
     operations = [
         migrations.CreateModel(
             name='RecentlyCreatedDocument',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
-            bases=('documents.document',),
+            bases=('documents.document',)
         ),
         migrations.AlterModelOptions(
             name='favoritedocument',
@@ -24,7 +23,7 @@ class Migration(migrations.Migration):
                 'ordering': ('datetime_added',),
                 'verbose_name': 'Favorite document',
                 'verbose_name_plural': 'Favorite documents'
-            },
+            }
         ),
         migrations.AddField(
             model_name='favoritedocument',
@@ -32,7 +31,7 @@ class Migration(migrations.Migration):
             field=models.DateTimeField(
                 auto_now=True, db_index=True,
                 verbose_name='Date and time added'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='document',
@@ -42,6 +41,6 @@ class Migration(migrations.Migration):
                 help_text='The server date and time when the document '
                 'was finally processed and created in the system.',
                 verbose_name='Created'
-            ),
-        ),
+            )
+        )
     ]

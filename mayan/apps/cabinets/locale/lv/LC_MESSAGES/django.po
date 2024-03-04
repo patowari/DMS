@@ -100,15 +100,15 @@ msgstr "Ceļš uz kabinetu, ieskaitot visus senčus."
 msgid "Full path"
 msgstr "Pilns ceļš"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Īss teksts, ko izmanto kabineta identificēšanai."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Etiķete"
 
@@ -116,20 +116,20 @@ msgstr "Etiķete"
 msgid "Cabinet"
 msgstr "Kabinets"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Mātes elements un etiķete"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s ar šo %(field_labels)s jau eksistē."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Dokumentu kabinets"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Dokumentu kabineti"
 

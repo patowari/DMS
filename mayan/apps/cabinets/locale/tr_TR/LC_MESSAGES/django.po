@@ -103,15 +103,15 @@ msgstr "Tüm atalar dahil dolap yolu."
 msgid "Full path"
 msgstr "Tam yol"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr "Ana"
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Dolabı tanımlamak için kullanılan kısa bir metin."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Etiket"
 
@@ -119,20 +119,20 @@ msgstr "Etiket"
 msgid "Cabinet"
 msgstr "Dolap"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Ana ve Etiket"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s ile bu %(field_labels)s zaten var."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Belge Dolabı"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Belge Dolapları"
 

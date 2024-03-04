@@ -106,15 +106,15 @@ msgstr " Le chemin vers le cabinet, y compris tous les cabinets parents."
 msgid "Full path"
 msgstr "Chemin complet"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Un court texte utilisé pour identifier ce classeur"
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Libellé"
 
@@ -122,20 +122,20 @@ msgstr "Libellé"
 msgid "Cabinet"
 msgstr "Classeur"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Parent et Libellé"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s avec ce %(field_labels)s existe déjà"
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Classeur de document"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Classeurs de document"
 

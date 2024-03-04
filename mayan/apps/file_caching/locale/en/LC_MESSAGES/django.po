@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:31 events.py:6 permissions.py:6 queues.py:7 settings.py:11
+#: apps.py:33 events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "File caching"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Object cache partitions submitted for purging."
 msgstr ""
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr ""

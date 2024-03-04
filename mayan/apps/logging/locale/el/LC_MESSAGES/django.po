@@ -77,15 +77,15 @@ msgstr "Κατατμήσεις καταγραφής σφαλμάτων"
 msgid "Date and time"
 msgstr "Ημερομηνία και ώρα"
 
-#: models.py:68
+#: models.py:69
 msgid "Text"
 msgstr "Κείμενο"
 
-#: models.py:75
+#: models.py:77
 msgid "Error log partition entry"
 msgstr "Καταχώριση κατάτμησης αρχείου καταγραφής σφαλμάτων"
 
-#: models.py:76
+#: models.py:78
 msgid "Error log partition entries"
 msgstr "Καταχωρήσεις κατάτμησης αρχείου καταγραφής σφαλμάτων"
 

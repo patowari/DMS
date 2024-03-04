@@ -97,7 +97,9 @@ class PeriodicSourceBackendActionTestCase(
 
         self.assertEqual(mocked_action_file_delete.call_count, 1)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 4)
@@ -140,7 +142,9 @@ class PeriodicSourceBackendActionTestCase(
 
         self.assertEqual(mocked_action_file_delete.call_count, 0)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 4)
@@ -181,7 +185,9 @@ class PeriodicSourceBackendActionTestCase(
 
         self.assertEqual(mocked_action_file_delete.call_count, 1)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 4)

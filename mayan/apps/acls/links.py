@@ -4,11 +4,10 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import get_content_type_kwargs_factory
 
 from .icons import (
-    icon_acl_delete, icon_acl_list, icon_acl_create, icon_acl_permissions,
+    icon_acl_create, icon_acl_delete, icon_acl_list, icon_acl_permissions,
     icon_global_acl_list
 )
-from .permissions import permission_acl_view, permission_acl_edit
-
+from .permissions import permission_acl_edit, permission_acl_view
 
 link_acl_create = Link(
     icon=icon_acl_create, kwargs=get_content_type_kwargs_factory(

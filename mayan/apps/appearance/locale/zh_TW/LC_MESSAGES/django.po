@@ -97,7 +97,7 @@ msgstr "佈景設定"
 msgid "Edit theme settings"
 msgstr "編輯佈景設定"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "建立新的佈景"
 
@@ -109,7 +109,7 @@ msgstr "刪除"
 msgid "Edit"
 msgstr "編輯"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "佈景"
 
@@ -474,31 +474,31 @@ msgstr "請檢查網路連線，並稍後再試。"
 msgid "None"
 msgstr "没有"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "刪除佈景 : %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "編輯佈景 : %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "佈景可以讓你修改畫面的顯示但不需要改變原始碼."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "沒有佈景可以使用"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

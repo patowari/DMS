@@ -12,7 +12,6 @@ from .views.impersonation_views import (
     UserImpersonateStartView
 )
 
-
 urlpatterns_authenticattion = [
     re_path(
         route=r'^login/$', name='login_view',

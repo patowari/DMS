@@ -27,19 +27,19 @@ msgstr ""
 msgid "Common"
 msgstr "Common"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "用來允許離現翻譯程式碼的文字字串"
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "提供格式檢查"
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "含有自動完成之命令列環境"
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "檢查適當的README檔案格式"
 
@@ -223,60 +223,60 @@ msgstr "設定專案名稱"
 msgid "Click here to fix this."
 msgstr "點擊此處來修復此問題。"
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "輸入有效的 JSON 值"
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "輸入有效的YAML值。"
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr "輸入由字母，數字和下底線组成的有效“内部名稱”。"
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "關於"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "首頁"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "將要被複製的區段: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "製作 %(object_name)s的副本 \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "物件複製成功"
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr "此處沒有結果表示没有執行管理任務所需的權限。"
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "沒有可用的設置選項。"
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "你可以對此系統各項的設定"
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "設置項目"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "這些模組通常用來做系統維護使用"

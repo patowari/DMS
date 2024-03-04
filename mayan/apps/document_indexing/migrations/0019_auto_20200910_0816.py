@@ -6,7 +6,7 @@ import mptt.fields
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_indexing', '0018_auto_20200402_0647'),
+        ('document_indexing', '0018_auto_20200402_0647')
     ]
 
     operations = [
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='children',
                 to='document_indexing.IndexInstanceNode'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='indextemplatenode',
@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='children',
                 to='document_indexing.IndexTemplateNode'
-            ),
-        ),
+            )
+        )
     ]

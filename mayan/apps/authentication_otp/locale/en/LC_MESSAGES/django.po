@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 21:13+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,19 +114,19 @@ msgstr ""
 msgid "OTP disable successfully."
 msgstr ""
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr ""
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr ""
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr ""
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr ""

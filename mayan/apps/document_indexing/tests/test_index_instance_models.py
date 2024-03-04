@@ -225,9 +225,11 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
             set(
                 IndexInstanceNode.objects.values_list('value', flat=True)
             ), {
-                '', str(
+                '',
+                str(
                     self._test_documents[1].uuid
-                ), self._test_documents[1].label, str(
+                ), self._test_documents[1].label,
+                str(
                     self._test_documents[0].uuid
                 ), self._test_documents[0].label
             }
@@ -263,13 +265,15 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
         self._test_index_template.rebuild()
 
         self.assertEqual(
-            IndexInstanceNode.objects.last().value, self._test_document.label
+            IndexInstanceNode.objects.last().value,
+            self._test_document.label
         )
         self._test_document.label = TEST_DOCUMENT_LABEL_EDITED
         self._test_document.save()
 
         self.assertEqual(
-            IndexInstanceNode.objects.last().value, self._test_document.label
+            IndexInstanceNode.objects.last().value,
+            self._test_document.label
         )
 
     def test_document_type_index(self):
@@ -342,7 +346,9 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(
             list(
-                IndexTemplateNode.objects.values_list('expression', flat=True)
+                IndexTemplateNode.objects.values_list(
+                    'expression', flat=True
+                )
             ), ['', '{{ document.metadata_value_of.test }}']
         )
 

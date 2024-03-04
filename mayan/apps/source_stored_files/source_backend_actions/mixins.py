@@ -8,14 +8,13 @@ from rest_framework.response import Response
 
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.utils import IndexedDictionary
-from mayan.apps.storage.models import SharedUploadedFile
-
 from mayan.apps.sources.source_backend_actions.interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestView,
     SourceBackendActionInterfaceRequestViewForm,
     SourceBackendActionInterfaceTask
 )
+from mayan.apps.storage.models import SharedUploadedFile
 
 from .arguments import (
     argument_encoded_filename, argument_file_cleanup,

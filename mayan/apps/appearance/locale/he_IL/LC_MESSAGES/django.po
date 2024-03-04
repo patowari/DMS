@@ -95,7 +95,7 @@ msgstr "הגדרות ערכת נושא"
 msgid "Edit theme settings"
 msgstr "עריכת הגדרות ערכת נושא"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "יצירת ערכת נושא חדשה"
 
@@ -107,7 +107,7 @@ msgstr "מחיקה"
 msgid "Edit"
 msgstr "עריכה"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "ערכות נושא"
 
@@ -474,31 +474,31 @@ msgstr "לבדוק את חיבור הרשת ולנסות שוב בעוד כמה 
 msgid "None"
 msgstr "אף אחד/כלום"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "מחיקת ערכת נושא: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "עריכת ערכת נושא: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "ערכות נושא מאפשרות שינוי הניראות ללא צורך בשינויי קוד."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "אין ערכות נושא"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "הגדרות ערכת נושא של משתמש: %s"
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "עריכת הגדרות ערכת נושא למשתמש: %s"

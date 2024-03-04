@@ -15,7 +15,7 @@ from .mixins import TagTestMixin
 
 
 class TagWorkflowActionTestCase(
-    TagTestMixin, WorkflowTemplateStateActionTestMixin, BaseTestCase
+    WorkflowTemplateStateActionTestMixin, TagTestMixin, BaseTestCase
 ):
     auto_create_test_tag = True
 
@@ -70,7 +70,7 @@ class TagWorkflowActionTestCase(
 
 
 class TagWorkflowActionViewTestCase(
-    TagTestMixin, WorkflowTemplateStateActionViewTestMixin,
+    WorkflowTemplateStateActionViewTestMixin, TagTestMixin,
     GenericViewTestCase
 ):
     auto_create_test_tag = True

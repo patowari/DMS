@@ -22,27 +22,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr "Documenthandtekeningen"
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr "Datum en tijd"
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr "Sleutel-ID"
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "Geen"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr "Handtekening-ID"
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr "Type"
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Verify all documents"
 msgstr "Alle documenten verifiëren"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr ""
 

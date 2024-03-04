@@ -195,17 +195,17 @@ msgid ""
 "and {} for formatting errors."
 msgstr "تعذر تهيئة التخزين ، للتحقق من إعدادات {} و {} لأخطاء ."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr ""
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr ""

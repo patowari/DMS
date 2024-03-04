@@ -2,8 +2,8 @@ from mayan.apps.testing.tests.base import BaseTestCase
 
 from .literals import (
     TEST_BOOTSTAP_SETTING_NAME, TEST_CONFIG_FILE_NAME,
-    TEST_CONFIG_FILE_VALUE, TEST_ENVIRONMENT_VARIABLE_NAME,
-    TEST_ENVIRONMENT_VALUE, TEST_GLOBAL_NAME, TEST_GLOBAL_VALUE,
+    TEST_CONFIG_FILE_VALUE, TEST_ENVIRONMENT_VALUE,
+    TEST_ENVIRONMENT_VARIABLE_NAME, TEST_GLOBAL_NAME, TEST_GLOBAL_VALUE,
     TEST_SETTING_VALUE, TEST_SETTING_VALUE_OVERRIDE
 )
 from .mixins import BoostrapSettingTestMixin
@@ -84,7 +84,8 @@ class BoostrapSettingTemplateTestCase(
         self._set_environment_variable(
             name='MAYAN_SETTING_TEMPLATE_{}'.format(TEST_BOOTSTAP_SETTING_NAME),
             value='{{{{ {} }}}}-{{{{ {} }}}}-{{{{ {} }}}}'.format(
-                TEST_GLOBAL_NAME, TEST_CONFIG_FILE_NAME, TEST_ENVIRONMENT_VARIABLE_NAME
+                TEST_GLOBAL_NAME, TEST_CONFIG_FILE_NAME,
+                TEST_ENVIRONMENT_VARIABLE_NAME
             )
         )
 
@@ -140,8 +141,9 @@ class BoostrapSettingTemplateTestCase(
         )
 
         self._set_environment_variable(
-            name='MAYAN_SETTING_TEMPLATE_{}'.format(TEST_BOOTSTAP_SETTING_NAME),
-            value=TEST_SETTING_VALUE_OVERRIDE
+            name='MAYAN_SETTING_TEMPLATE_{}'.format(
+                TEST_BOOTSTAP_SETTING_NAME
+            ), value=TEST_SETTING_VALUE_OVERRIDE
         )
 
         self._test_setting_global_name = TEST_BOOTSTAP_SETTING_NAME

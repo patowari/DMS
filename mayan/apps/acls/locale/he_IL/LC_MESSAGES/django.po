@@ -36,7 +36,7 @@ msgstr ""
 "רכיב שעבורו מותרת הגישה. למיון רכיבים משתמשים ב\"סוג הרכיב\" ולא בתווית של "
 "הרכיב."
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "רכיב"
 
@@ -60,19 +60,19 @@ msgstr "רשימת בקרת גישה (ACL) נערכה"
 msgid "Role"
 msgstr "תפקיד"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "רשימת בקרת גישה (ACL) חדשה"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "מחיקה"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "הרשאות"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "רשימות בקרת גישה (ACL) כלליות"
 
@@ -94,7 +94,7 @@ msgstr "ספירת הרשאה"
 msgid "Content type"
 msgstr "סוג תוכן"
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "מזהה רכיב"
 
@@ -178,7 +178,7 @@ msgstr "מחיקת רשימת בקרת גישה (ACL) %s"
 msgid "There are no ACLs for this object"
 msgstr "אין רשימות בקרת גישה (ACL) לרכיב זה"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -201,12 +201,12 @@ msgstr "הרשאות ניתנו"
 msgid "Available permissions"
 msgstr "הרשאות זמינות "
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "הרשאות תפקיד %(role)s לרכיב %(object)s "
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -217,11 +217,11 @@ msgstr ""
 "להסיר אותן מתצוגה זו. הרשאות בירושה ניתנות להסרה מרשימת בקרת הגישה של הרכיב "
 "או מהתפקיד בעזרת תפריט \"הגדרות\"."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "אין רשימות בקרת גישה (ACL)"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "רשימות בקרת גישה (ACL) כלליות"
 
@@ -237,35 +237,35 @@ msgstr "סוג הרכיב שעבורו הגישה תתעדכן."
 msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "מזהה מספרי של הרכיב שעבורו הגישה תתעדכן."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "תפקידים"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "תפקידים שעבורם הגישה תעודכן."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "הרשאות שניתן לתת ל-/להסיר מ- התפקיד עבור הרכיב שנבחר לעיל. "
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr "נתינת גישה לרכיב"
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr "הסרת גישה לרכיב"
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr "נתינת גישה למסמך"
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr "הסרת גישה למסמך"

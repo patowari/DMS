@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_signatures', '0003_auto_20160325_0052'),
+        ('document_signatures', '0003_auto_20160325_0052')
     ]
 
     operations = [
@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
                 editable=False, on_delete=models.CASCADE,
                 to='documents.DocumentVersion',
                 verbose_name='Document version'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='signaturebasemodel',
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             field=models.DateField(
                 verbose_name='Date signed', null=True, editable=False,
                 blank=True
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='signaturebasemodel',
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 editable=False, on_delete=models.CASCADE,
                 related_name='signatures', to='documents.DocumentVersion',
                 verbose_name='Document version'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='signaturebasemodel',
@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 null=True, editable=False, max_length=40, blank=True,
                 unique=True, verbose_name='Public key fingerprint'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='signaturebasemodel',
@@ -47,6 +47,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 verbose_name='Signature ID', max_length=64, null=True,
                 editable=False, blank=True
-            ),
-        ),
+            )
+        )
     ]

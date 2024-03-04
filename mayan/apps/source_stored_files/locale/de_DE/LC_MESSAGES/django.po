@@ -28,11 +28,11 @@ msgstr ""
 msgid "Source stored files"
 msgstr "Quelle gespeicherte Dateien"
 
-#: classes.py:44
+#: classes.py:46
 msgid "Size"
 msgstr "Größe"
 
-#: classes.py:48
+#: classes.py:50
 msgid "Thumbnail"
 msgstr "Bild"
 
@@ -66,11 +66,11 @@ msgstr ""
 "Eindeutiger Identifikator für die Auswahl, welches Quellenbackend die Datei "
 "zur Verarbeitung gespeichert hat."
 
-#: source_backend_actions/mixins.py:75
+#: source_backend_actions/mixins.py:74
 msgid "Stored file"
 msgstr "Gespeicherte Datei"
 
-#: source_backend_actions/mixins.py:76
+#: source_backend_actions/mixins.py:75
 #, python-format
 msgid "Delete stored file \"%s\"?"
 msgstr "Gespeicherte Datei \"%s\" löschen?"

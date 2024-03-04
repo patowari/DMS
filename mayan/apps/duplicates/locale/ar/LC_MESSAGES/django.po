@@ -30,7 +30,7 @@ msgstr "النسخ المكررة"
 msgid "Duplicate backend"
 msgstr ""
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "خلفية فارغة"
 

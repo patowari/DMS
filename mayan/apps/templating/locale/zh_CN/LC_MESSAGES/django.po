@@ -64,7 +64,7 @@ msgstr "要评估的模板字符串。"
 msgid "Template"
 msgstr "範本"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "沙箱"
 

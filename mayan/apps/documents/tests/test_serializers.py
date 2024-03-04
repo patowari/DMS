@@ -25,7 +25,8 @@ class DocumentFileSerializerTestCase(
 
         self.assertFalse(
             self._test_document.pk == self._test_document_file.pk,
-            msg='Rerun test to ensure document and document file do not have the same ID.'
+            msg='Rerun test to ensure document and document file do not '
+            'have the same ID.'
         )
         self.assertTrue(
             str(self._test_document.pk) in serializer.data['document_url']
@@ -43,7 +44,8 @@ class DocumentVersionSerializerTestCase(
 
         self.assertFalse(
             self._test_document.pk == self._test_document_version.pk,
-            msg='Rerun test to ensure document and document version do not have the same ID.'
+            msg='Rerun test to ensure document and document version do '
+            'not have the same ID.'
         )
         self.assertTrue(
             str(self._test_document.pk) in serializer.data['document_url']

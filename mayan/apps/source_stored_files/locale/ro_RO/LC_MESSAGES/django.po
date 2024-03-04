@@ -29,11 +29,11 @@ msgstr ""
 msgid "Source stored files"
 msgstr ""
 
-#: classes.py:44
+#: classes.py:46
 msgid "Size"
 msgstr "mărime"
 
-#: classes.py:48
+#: classes.py:50
 msgid "Thumbnail"
 msgstr "Miniatură"
 
@@ -66,11 +66,11 @@ msgstr ""
 "Identificator unic pentru a selecta ce sursă de fișiere backend stocate "
 "pentru procesare."
 
-#: source_backend_actions/mixins.py:75
+#: source_backend_actions/mixins.py:74
 msgid "Stored file"
 msgstr "Fișier stocat"
 
-#: source_backend_actions/mixins.py:76
+#: source_backend_actions/mixins.py:75
 #, python-format
 msgid "Delete stored file \"%s\"?"
 msgstr "Ștergeți fișierul stocat\" %s \""

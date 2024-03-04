@@ -103,15 +103,15 @@ msgstr "Calea către fişet, inclusiv toți strămoșii."
 msgid "Full path"
 msgstr "Calea completă"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr "Părinte"
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Un text scurt folosit pentru identificarea cabinetului."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Conținut etichetă"
 
@@ -119,20 +119,20 @@ msgstr "Conținut etichetă"
 msgid "Cabinet"
 msgstr "Fișet"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Părinte și etichetă"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr " Există deja %(model_name)s cu acest %(field_labels)s."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Fișet de documente"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Fișete cu documentul"
 

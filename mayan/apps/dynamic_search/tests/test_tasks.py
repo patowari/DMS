@@ -7,11 +7,10 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..search_backends import SearchBackend
 from ..search_models import SearchModel
 
-from .mixins.base import SearchTestMixin
 from .mixins.task_mixins import SearchTaskTestMixin
 
 
-class SearchTaskTestCase(SearchTaskTestMixin, SearchTestMixin, BaseTestCase):
+class SearchTaskTestCase(SearchTaskTestMixin, BaseTestCase):
     auto_create_test_object_model = True
     auto_create_test_object_fields = {
         'test_field': models.CharField(max_length=8)
@@ -47,7 +46,9 @@ class SearchTaskTestCase(SearchTaskTestMixin, SearchTestMixin, BaseTestCase):
         queryset = self._do_search(
             search_terms=self._test_objects[0].test_field
         )
-        self.assertFalse(self._test_objects[0] in queryset)
+        self.assertFalse(
+            self._test_objects[0] in queryset
+        )
 
         self._execute_task_index_instances()
 
@@ -61,7 +62,9 @@ class SearchTaskTestCase(SearchTaskTestMixin, SearchTestMixin, BaseTestCase):
         queryset = self._do_search(
             search_terms=self._test_objects[0].test_field
         )
-        self.assertFalse(self._test_objects[0] in queryset)
+        self.assertFalse(
+            self._test_objects[0] in queryset
+        )
 
         self._execute_task_reindex_backend()
 

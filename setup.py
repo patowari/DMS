@@ -47,7 +47,11 @@ def find_packages(directory):
             if os.path.basename(dirpath).startswith('.'):
                 continue
             if '__init__.py' in filenames:
-                packages.append('.'.join(fullsplit(dirpath)))
+                packages.append(
+                    '.'.join(
+                        fullsplit(dirpath)
+                    )
+                )
             elif filenames:
                 data_files.append(
                     [
@@ -112,6 +116,7 @@ pytz==2024.1
 qrcode==7.4.2
 requests==2.31.0
 sentry-sdk==1.40.1
+setuptools==69.1.1
 sh==2.0.6
 swagger-spec-validator==3.0.3
 whitenoise==6.6.0
@@ -141,7 +146,7 @@ setup(
         'Programming Language :: Python :: 3.10',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
-        'Topic :: Communications :: File Sharing',
+        'Topic :: Communications :: File Sharing'
     ],
     description=mayan.__description__,
     include_package_data=True,

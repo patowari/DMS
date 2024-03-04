@@ -6,12 +6,11 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
     permission_acl_edit, permission_acl_view
 )
-
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_multi_item, menu_object, menu_related,
-    menu_return, menu_secondary, menu_setup
+    menu_list_facet, menu_multi_item, menu_object, menu_related, menu_return,
+    menu_secondary, menu_setup
 )
 from mayan.apps.common.signals import signal_perform_upgrade
 from mayan.apps.dashboards.dashboards import dashboard_administrator
@@ -23,7 +22,9 @@ from mayan.apps.user_management.links import link_group_list
 from .classes import Permission
 from .dashboard_widgets import DashboardWidgetRoleTotal
 from .events import event_role_created, event_role_edited
-from .handlers import handler_permission_initialize, handler_purge_permissions
+from .handlers import (
+    handler_permission_initialize, handler_purge_permissions
+)
 from .links import (
     link_group_role_list, link_role_create, link_role_delete_single,
     link_role_delete_multiple, link_role_edit, link_role_group_list,

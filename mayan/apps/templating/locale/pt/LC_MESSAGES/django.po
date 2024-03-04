@@ -66,7 +66,7 @@ msgstr "A string do template a ser avaliada."
 msgid "Template"
 msgstr "Template"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

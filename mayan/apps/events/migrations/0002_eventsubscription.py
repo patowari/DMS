@@ -6,7 +6,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('events', '0001_initial'),
+        ('events', '0001_initial')
     ]
 
     operations = [
@@ -31,11 +31,11 @@ class Migration(migrations.Migration):
                         on_delete=django.db.models.deletion.CASCADE,
                         to=settings.AUTH_USER_MODEL, verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Event subscription',
-                'verbose_name_plural': 'Event subscriptions',
-            },
-        ),
+                'verbose_name_plural': 'Event subscriptions'
+            }
+        )
     ]

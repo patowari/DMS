@@ -48,6 +48,6 @@ msgstr "Részletek"
 msgid "View details"
 msgstr "Részletek megjelenítése"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Műszerfal részletei"

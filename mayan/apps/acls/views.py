@@ -178,26 +178,29 @@ class ACLPermissionAddRemoveView(AddRemoveView):
     def generate_choices(self, queryset):
         namespaces_dictionary = {}
 
-        # Sort permissions by their translatable label
+        # Sort permissions by their translatable label.
         object_list = sorted(
             queryset,
             key=lambda permission: permission.volatile_permission.label
         )
 
-        # Group permissions by namespace
+        # Group permissions by namespace.
         for permission in object_list:
             namespaces_dictionary.setdefault(
-                permission.volatile_permission.namespace.label,
-                []
+                permission.volatile_permission.namespace.label, []
             )
             namespaces_dictionary[
                 permission.volatile_permission.namespace.label
             ].append(
-                (permission.pk, force_str(s=permission))
+                (
+                    permission.pk, force_str(s=permission)
+                )
             )
 
-        # Sort permissions by their translatable namespace label
-        return sorted(namespaces_dictionary.items())
+        # Sort permissions by their translatable namespace label.
+        return sorted(
+            namespaces_dictionary.items()
+        )
 
     def get_actions_extra_kwargs(self):
         return {'user': self.request.user}
@@ -216,7 +219,9 @@ class ACLPermissionAddRemoveView(AddRemoveView):
             'acl': self.main_object,
             'object': self.main_object.content_object,
             'navigation_object_list': ('object', 'acl'),
-            'title': _(message='Role "%(role)s" permission\'s for "%(object)s".') % {
+            'title': _(
+                message='Role "%(role)s" permission\'s for "%(object)s".'
+            ) % {
                 'object': self.main_object.content_object,
                 'role': self.main_object.role
             }
@@ -240,8 +245,8 @@ class ACLPermissionAddRemoveView(AddRemoveView):
         hold for this object's parents via another ACL. .distinct() is added
         in case the permission was added to the ACL and then added to a
         parent ACL's and thus inherited and would appear twice. If
-        order to remove the double permission from the ACL it would need to be
-        remove from the parent first to enable the choice in the form,
+        order to remove the double permission from the ACL it would need to
+        be remove from the parent first to enable the choice in the form,
         remove it from the ACL and then re-add it to the parent ACL.
         """
         queryset_acl = super().get_list_added_queryset()

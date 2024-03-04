@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document type'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document type settings',

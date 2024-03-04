@@ -6,17 +6,17 @@ from fuse import FuseOSError
 from django.db import connection
 from django.test import tag
 
-from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
+from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from ..filesystems import MirrorFilesystem
 from ..runtime import cache
 
 from .literals import (
     TEST_NODE_EXPRESSION, TEST_NODE_EXPRESSION_INVALID,
-    TEST_NODE_EXPRESSION_MULTILINE, TEST_NODE_EXPRESSION_MULTILINE_EXPECTED,
-    TEST_NODE_EXPRESSION_MULTILINE_2,
-    TEST_NODE_EXPRESSION_MULTILINE_2_EXPECTED
+    TEST_NODE_EXPRESSION_MULTILINE, TEST_NODE_EXPRESSION_MULTILINE_2,
+    TEST_NODE_EXPRESSION_MULTILINE_2_EXPECTED,
+    TEST_NODE_EXPRESSION_MULTILINE_EXPECTED
 )
 
 
@@ -152,8 +152,9 @@ class IndexInstanceNodeMirroringTestCase(
 
         test_filesystem = self._get_test_filesystem()
         self.assertEqual(
-            list(test_filesystem.readdir('/', ''))[2:],
-            [TEST_NODE_EXPRESSION_MULTILINE_EXPECTED]
+            list(
+                test_filesystem.readdir('/', '')
+            )[2:], [TEST_NODE_EXPRESSION_MULTILINE_EXPECTED]
         )
 
     def test_multiline_indexes_first_and_last(self):
@@ -165,8 +166,9 @@ class IndexInstanceNodeMirroringTestCase(
 
         test_filesystem = self._get_test_filesystem()
         self.assertEqual(
-            list(test_filesystem.readdir('/', ''))[2:],
-            [TEST_NODE_EXPRESSION_MULTILINE_2_EXPECTED]
+            list(
+                test_filesystem.readdir('/', '')
+            )[2:], [TEST_NODE_EXPRESSION_MULTILINE_2_EXPECTED]
         )
 
     def test_stub_documents(self):

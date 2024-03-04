@@ -71,7 +71,9 @@ class DocumentFilePageBusinessLogicMixin:
                         transformation_instance_list=combined_transformation_list
                     )
                     with self.cache_partition.create_file(filename=combined_cache_filename) as file_object:
-                        file_object.write(image.getvalue())
+                        file_object.write(
+                            image.getvalue()
+                        )
                 else:
                     logger.debug(
                         'transformations cache file "%s" found', combined_cache_filename
@@ -161,7 +163,9 @@ class DocumentFilePageBusinessLogicMixin:
         )
 
         # Interactive transformations second.
-        result.extend(transformation_instance_list or [])
+        result.extend(
+            transformation_instance_list or []
+        )
 
         return result
 

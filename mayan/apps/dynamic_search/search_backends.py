@@ -72,10 +72,11 @@ class SearchBackend:
     def _enable():
         # Hidden import.
         from .handlers import (
-            handler_deindex_instance, handler_index_instance,
+            handler_deindex_instance,
             handler_factory_index_related_instance_delete,
             handler_factory_index_related_instance_m2m,
-            handler_factory_index_related_instance_save
+            handler_factory_index_related_instance_save,
+            handler_index_instance
         )
 
         for search_model in SearchModel.all():

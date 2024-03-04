@@ -22,7 +22,9 @@ from .settings import setting_home_view
 
 
 class AboutView(SimpleView):
-    extra_context = {'title': _(message='About')}
+    extra_context = {
+        'title': _(message='About')
+    }
     template_name = 'appearance/about.html'
     view_icon = icon_about
 
@@ -40,7 +42,7 @@ class FaviconRedirectView(RedirectView):
 
 class HomeView(SimpleView):
     extra_context = {
-        'title': _(message='Home'),
+        'title': _(message='Home')
     }
     template_name = 'appearance/home.html'
     view_icon = icon_home
@@ -50,7 +52,7 @@ class LicenseView(SimpleView):
     extra_context = {
         'form': LicenseForm(),
         'read_only': True,
-        'title': _(message='License'),
+        'title': _(message='License')
     }
     template_name = 'appearance/form_container.html'
     view_icon = icon_license

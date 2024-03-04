@@ -4,8 +4,8 @@ from rest_framework import serializers as rest_framework_serializers
 from rest_framework.fields import (  # NOQA
     BooleanField, CharField, ChoiceField, DateField, DateTimeField,
     DecimalField, DictField, DurationField, EmailField, Field, FileField,
-    FilePathField, FloatField, HiddenField, HStoreField, IPAddressField,
-    ImageField, IntegerField, JSONField, ListField, ModelField,
+    FilePathField, FloatField, HiddenField, HStoreField, ImageField,
+    IntegerField, IPAddressField, JSONField, ListField, ModelField,
     MultipleChoiceField, ReadOnlyField, RegexField, SerializerMethodField,
     SlugField, TimeField, URLField, UUIDField
 )

@@ -88,7 +88,9 @@ class MailerViewTestCase(MailingProfileViewTestMixin, GenericViewTestCase):
         response = self._request_test_mailing_profile_delete_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(UserMailer.objects.count(), 0)
+        self.assertEqual(
+            UserMailer.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -227,7 +229,9 @@ class MailerViewTestCase(MailingProfileViewTestMixin, GenericViewTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )

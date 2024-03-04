@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
             field=models.BooleanField(
                 default=True, help_text='Launch workflow when document is '
                 'created.', verbose_name='Auto launch'
-            ),
-        ),
+            )
+        )
     ]

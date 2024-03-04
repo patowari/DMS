@@ -48,8 +48,7 @@ class DjangoSearchBackendFieldTypeQueryTypeTestCase(
 
 @skip(reason='Skip until a Mock ElasticSearch server class is added.')
 class ElasticSearchBackendIndexingTestCase(
-    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    BaseTestCase
+    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, BaseTestCase
 ):
     _test_search_backend_path = 'mayan.apps.dynamic_search.backends.elasticsearch.ElasticSearchBackend'
 
@@ -92,8 +91,7 @@ class WhooshSearchBackendFieldTypeQueryTypeTestCase(
 
 
 class WhooshSearchBackendSpecificTestCase(
-    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    BaseTestCase
+    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, BaseTestCase
 ):
     _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
 
@@ -105,7 +103,9 @@ class WhooshSearchBackendSpecificTestCase(
             value='today'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_datetime_search_raw_parsed_date_human_range(self):
@@ -116,7 +116,9 @@ class WhooshSearchBackendSpecificTestCase(
             value='[\'last tuesday\' to \'next friday\']'
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_datetime_search_raw_parsed_date_numeric_range(self):
@@ -130,7 +132,9 @@ class WhooshSearchBackendSpecificTestCase(
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_integer_search_raw_parsed_numeric_range(self):
@@ -144,7 +148,9 @@ class WhooshSearchBackendSpecificTestCase(
             )
         )
 
-        self.assertEqual(len(id_list), 1)
+        self.assertEqual(
+            len(id_list), 1
+        )
         self.assertTrue(self._test_object.id in id_list)
 
 

@@ -5,8 +5,7 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..settings import setting_organization_url_base_path
 
 from .literals import (
-    TEST_PATH_GOOD, TEST_PATH_WITH_ENDING_SLASH,
-    TEST_PATH_WITH_INITIAL_SLASH
+    TEST_PATH_GOOD, TEST_PATH_WITH_ENDING_SLASH, TEST_PATH_WITH_INITIAL_SLASH
 )
 
 

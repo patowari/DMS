@@ -53,7 +53,7 @@ class SourceBackendMixinRegularExpression:
             (
                 _(message='Content selection'), {
                     'fields': ('include_regex', 'exclude_regex')
-                },
+                }
             ),
         )
 

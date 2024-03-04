@@ -130,7 +130,7 @@ msgstr ""
 "Fehler im Suchbackend. Überprüfen Sie, ob das Suchbackend verfügbar ist und "
 "die Suchsyntax gültig für das aktuelle Suchbackend ist; %s"
 
-#: search_fields.py:311
+#: search_fields.py:313
 msgid "Any"
 msgstr "Beliebig"
 
@@ -143,43 +143,43 @@ msgstr "Unbekanntes Suchmodell `%s`."
 msgid "All content"
 msgstr "Gesamter Inhalt"
 
-#: search_query_types.py:167
+#: search_query_types.py:169
 msgid "Exact"
 msgstr "Exakt"
 
-#: search_query_types.py:173
+#: search_query_types.py:175
 msgid "Fuzzy"
 msgstr "Unscharf"
 
-#: search_query_types.py:179
+#: search_query_types.py:181
 msgid "Greater than"
 msgstr "Größer als"
 
-#: search_query_types.py:185
+#: search_query_types.py:187
 msgid "Greater than or equal"
 msgstr "Größer als oder gleich"
 
-#: search_query_types.py:191
+#: search_query_types.py:193
 msgid "Less than"
 msgstr "Weniger als"
 
-#: search_query_types.py:197
+#: search_query_types.py:199
 msgid "Less than or equal"
 msgstr "Weniger als oder gleich"
 
-#: search_query_types.py:203
+#: search_query_types.py:205
 msgid "Partial"
 msgstr "Teilweise"
 
-#: search_query_types.py:209
+#: search_query_types.py:211
 msgid "Range"
 msgstr "Bereich"
 
-#: search_query_types.py:244
+#: search_query_types.py:246
 msgid "Range exclusive"
 msgstr "Ausschließlicher Bereich"
 
-#: search_query_types.py:250
+#: search_query_types.py:252
 msgid "Regular expression"
 msgstr "Regulärer Ausdruck"
 

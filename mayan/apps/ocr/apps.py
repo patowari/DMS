@@ -13,7 +13,6 @@ from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_version_remap
 from mayan.apps.events.classes import ModelEventType
 
-
 from .events import (
     event_ocr_document_version_content_deleted,
     event_ocr_document_version_page_content_edited,

@@ -41,7 +41,7 @@ msgstr ""
 
 #: apps.py:45 classes.py:218
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: apps.py:49 classes.py:221
 msgid "Other data"

@@ -205,7 +205,7 @@ msgstr ""
 "Nelze inicializovat sdílené úložiště nahraných souborů. Zkontrolujte v "
 "nastavení {} a {} chyby formátování."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -215,10 +215,10 @@ msgstr ""
 "export. Stažené soubory jsou uchovány po určitou dobu a poté automaticky "
 "odstraněny."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Nejsou zde žádné soubory ke stažení."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Soubory ke stažení"

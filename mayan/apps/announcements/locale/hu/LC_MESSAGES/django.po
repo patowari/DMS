@@ -27,7 +27,7 @@ msgstr ""
 msgid "Announcements"
 msgstr "Közlemények"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "Nincs"
 
@@ -51,43 +51,43 @@ msgstr "Törlés"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "A közlemény rövid leírása."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Cimke"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "A ténylegesen megjelenítendő szöveg."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Szöveg"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Engedélyezett"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Dátum és idő, amely után ez a közlemény megjelenik."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Kezdés dátuma és ideje"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Dátum és idő, ameddig ez a közlemény megjelenik."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Befejezés dátuma és ideje"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Közlemény"
 

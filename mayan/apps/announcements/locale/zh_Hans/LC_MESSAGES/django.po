@@ -29,7 +29,7 @@ msgstr ""
 msgid "Announcements"
 msgstr "公告"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "没有"
 
@@ -53,43 +53,43 @@ msgstr "删除"
 msgid "Edit"
 msgstr "编辑"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "簡述此公告內容"
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "标签"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "實際呈現的文字"
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "文字"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "启用"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "此公告將被公布的日期˙與時間"
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "开始日期时间"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "此公告將被終止公布的日期與時間"
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "结束日期时间"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "公告"
 

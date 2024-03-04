@@ -21,7 +21,7 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from ..classes import DocumentVersionModification
 from ..events import event_document_viewed
 from ..forms.document_version_forms import (
-    DocumentVersionModificationBackendForm, DocumentVersionForm,
+    DocumentVersionForm, DocumentVersionModificationBackendForm,
     DocumentVersionPreviewForm
 )
 from ..forms.misc_forms import PageNumberForm
@@ -44,7 +44,7 @@ from ..permissions import (
 from ..settings import setting_preview_height, setting_preview_width
 from ..tasks import task_document_version_delete
 
-from .misc_views import PrintFormView, DocumentPrintBaseView
+from .misc_views import DocumentPrintBaseView, PrintFormView
 from .view_mixins import RecentDocumentViewMixin
 
 logger = logging.getLogger(name=__name__)
@@ -134,7 +134,8 @@ class DocumentVersionDeleteView(MultipleObjectDeleteView):
         return context
 
     def get_post_action_redirect(self):
-        # Use [0] instead of first(). First returns None and it is not usable.
+        # Use [0] instead of first(). First returns None and it is not
+        # usable.
         return reverse(
             viewname='documents:document_version_list', kwargs={
                 'document_id': self.object_list[0].document_id

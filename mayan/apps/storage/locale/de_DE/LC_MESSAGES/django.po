@@ -213,7 +213,7 @@ msgstr ""
 "initialisiert werden. Überprüfen Sie die Einstellungen {} und {} auf "
 "Formatierungsfehler."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -223,10 +223,10 @@ msgstr ""
 "eines Exports erstellt. Downloaddateien werden für eine gewisse Zeitspanne "
 "vorgehalten und dann automatisch gelöscht."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Keine Dateien für Download vorhanden."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Downloads"

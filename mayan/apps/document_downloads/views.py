@@ -104,7 +104,9 @@ class DocumentDownloadView(
 
         task_document_file_compress.apply_async(
             kwargs={
-                'id_list': list(queryset.values_list('pk', flat=True)),
+                'id_list': list(
+                    queryset.values_list('pk', flat=True)
+                ),
                 'organization_installation_url': get_organization_installation_url(
                     request=self.request
                 ),

@@ -211,7 +211,7 @@ msgstr ""
 "No se puede inicializar el almacenamiento de archivos cargados compartidos. "
 "Verifique las configuraciones {} y {} para errores de formato."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -221,10 +221,10 @@ msgstr ""
 "una exportación. Los archivos de descarga se conservan durante un período de "
 "tiempo y luego se eliminan automáticamente."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "No hay archivos para descargar."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Descargas"

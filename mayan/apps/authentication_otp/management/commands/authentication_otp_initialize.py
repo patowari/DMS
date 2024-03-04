@@ -15,4 +15,6 @@ class Command(BaseCommand):
             if created:
                 count += 1
 
-        self.stdout.write(msg='Completed for {} users.'.format(count))
+        self.stdout.write(
+            msg='Completed for {} users.'.format(count)
+        )

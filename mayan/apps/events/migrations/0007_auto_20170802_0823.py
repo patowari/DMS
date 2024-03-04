@@ -3,7 +3,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('events', '0006_objecteventsubscription'),
+        ('events', '0006_objecteventsubscription')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
                 'ordering': ('-action__timestamp',),
                 'verbose_name': 'Notification',
                 'verbose_name_plural': 'Notifications'
-            },
-        ),
+            }
+        )
     ]

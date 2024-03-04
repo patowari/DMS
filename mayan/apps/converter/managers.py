@@ -107,7 +107,8 @@ class LayerTransformationManager(models.Manager):
                         transformation.name
                     )
                 except KeyError:
-                    # Non existent transformation, but we don't raise an error
+                    # Non existent transformation, but we don't raise an
+                    # error.
                     logger.error(
                         'Non existent transformation: %s for %s',
                         transformation.name, obj

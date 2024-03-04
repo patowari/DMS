@@ -95,7 +95,7 @@ msgstr "Nastavení motivu"
 msgid "Edit theme settings"
 msgstr "Upravit nastavení motivu"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Vytvořit nový motiv"
 
@@ -107,7 +107,7 @@ msgstr "Odstranit"
 msgid "Edit"
 msgstr "Upravit"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Motivy"
 
@@ -479,31 +479,31 @@ msgstr "Zkontrolujte připojení k síti a zkuste to znovu za chvíli."
 msgid "None"
 msgstr "Žádný"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Odstranit motiv: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Upravit motiv: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "Motivy umožňují změnu vizuálního vzhledu bez nutnosti změn kódu."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Neexistují žádné motivy"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

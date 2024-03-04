@@ -36,7 +36,7 @@ msgstr "файлова команда не встановлена або не з
 msgid "mimetype not installed or not found."
 msgstr "міме тип не встановлено або не знайдено."
 
-#: dependencies.py:10
+#: dependencies.py:11
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
@@ -45,7 +45,7 @@ msgstr ""
 "намагається реалізувати специфікацію freedesktop для спільної бази даних "
 "MIME."
 
-#: dependencies.py:17
+#: dependencies.py:18
 msgid "determine file type using content tests"
 msgstr "визначити тип файлу за допомогою тестів вмісту"
 

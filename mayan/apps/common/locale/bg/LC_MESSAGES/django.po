@@ -27,19 +27,19 @@ msgstr ""
 msgid "Common"
 msgstr "Общи"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Използва се за разрешаване на офлайн превод на текстови низове в код."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Осигурява проверка на стила."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Команден ред с автоматично довършване."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Проверява правилното форматиране на файла README."
 
@@ -236,44 +236,44 @@ msgstr "Задава името на проекта."
 msgid "Click here to fix this."
 msgstr "Кликнете тук, за да поправите това."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Въведете валидна JSON стойност."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Въведете валидна YAML стойност."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Въведете валидно „вътрешно име“, състоящо се от букви, цифри и долни черти."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Относно"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Начало"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Полета за копиране: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Да направя ли копие на %(object_name)s &quot;%(object)s&quot;?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Обектът е копиран успешно."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -281,18 +281,18 @@ msgstr ""
 "Липса на резултати тук означава, че нямате необходимите разрешения за "
 "изпълнение на административна задача."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Няма опции за настройка."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Тук можете да конфигурирате всички аспекти на системата."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Елементи за настройка"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Тези модули се използват за поддръжка на системата."

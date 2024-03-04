@@ -3,20 +3,19 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_indexing', '0017_auto_20200330_0851'),
+        ('document_indexing', '0017_auto_20200330_0851')
     ]
 
     operations = [
         migrations.CreateModel(
             name='IndexInstanceNodeSearchResult',
-            fields=[
-            ],
+            fields=[],
             options={
                 'verbose_name': 'Index instance node',
                 'verbose_name_plural': 'Index instance nodes',
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
             bases=('document_indexing.indexinstancenode',),
         ),
@@ -26,5 +25,5 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Index instance node',
                 'verbose_name_plural': 'Indexes instances node'
             },
-        ),
+        )
     ]

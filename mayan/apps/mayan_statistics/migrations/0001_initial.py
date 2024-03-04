@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -14,7 +14,9 @@ class Migration(migrations.Migration):
                         primary_key=True
                     )
                 ),
-                ('slug', models.SlugField(verbose_name='Slug')),
+                (
+                    'slug', models.SlugField(verbose_name='Slug')
+                ),
                 (
                     'datetime', models.DateTimeField(
                         auto_now=True, verbose_name='Date time'
@@ -24,12 +26,12 @@ class Migration(migrations.Migration):
                     'serialize_data', models.TextField(
                         verbose_name='Data', blank=True
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Statistics result',
-                'verbose_name_plural': 'Statistics results',
+                'verbose_name_plural': 'Statistics results'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

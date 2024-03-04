@@ -29,7 +29,7 @@ msgstr "Дубликати"
 msgid "Duplicate backend"
 msgstr "Дублиран бекенд"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Нулев бекенд"
 

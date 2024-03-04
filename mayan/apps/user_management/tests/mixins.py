@@ -157,7 +157,7 @@ class GroupUserViewTestMixin:
     def _request_test_group_user_add_view(self):
         return self.post(
             viewname='user_management:group_members', kwargs={
-                'group_id': self._test_group.pk,
+                'group_id': self._test_group.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_user.pk
@@ -167,7 +167,7 @@ class GroupUserViewTestMixin:
     def _request_test_group_user_remove_view(self):
         return self.post(
             viewname='user_management:group_members', kwargs={
-                'group_id': self._test_group.pk,
+                'group_id': self._test_group.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_user.pk
@@ -224,7 +224,7 @@ class UserAPIViewTestMixin:
         result = self.post(
             viewname='rest_api:user-list', data={
                 'email': TEST_USER_EMAIL, 'password': TEST_USER_PASSWORD,
-                'username': TEST_USER_USERNAME,
+                'username': TEST_USER_USERNAME
             }
         )
         if 'id' in result.json():
@@ -267,7 +267,7 @@ class UserAPIViewTestMixin:
             viewname='rest_api:user-detail', kwargs={
                 'user_id': self._test_user.pk
             }, data={
-                'password': TEST_USER_PASSWORD_EDITED,
+                'password': TEST_USER_PASSWORD_EDITED
             }
         )
 
@@ -496,7 +496,7 @@ class UserGroupViewTestMixin:
     def _request_test_user_group_add_view(self):
         return self.post(
             viewname='user_management:user_groups', kwargs={
-                'user_id': self._test_user.pk,
+                'user_id': self._test_user.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_group.pk
@@ -506,7 +506,7 @@ class UserGroupViewTestMixin:
     def _request_test_user_group_remove_view(self):
         return self.post(
             viewname='user_management:user_groups', kwargs={
-                'user_id': self._test_user.pk,
+                'user_id': self._test_user.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_group.pk

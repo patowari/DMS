@@ -32,7 +32,7 @@ msgstr ""
 msgid "Announcements"
 msgstr "Оголошення"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "None"
 
@@ -56,43 +56,43 @@ msgstr "Видалити"
 msgid "Edit"
 msgstr "Редагувати"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Короткий опис цього оголошення."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Мітка"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Фактичний текст, який буде показано."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Активовано"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Дата та час, після яких це оголошення буде показано."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Дата та час початку"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Дата й час, до якого це оголошення має відображатися."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Дата та час закінчення"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Оголошення"
 

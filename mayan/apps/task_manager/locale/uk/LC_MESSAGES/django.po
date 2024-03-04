@@ -143,15 +143,15 @@ msgstr "Підрахунок типу завдання"
 msgid "Queue count"
 msgstr "Підрахунок черги"
 
-#: links.py:14
+#: links.py:13
 msgid "Task type list"
 msgstr "Список типів завдань"
 
-#: links.py:19
+#: links.py:18
 msgid "Worker list"
 msgstr "Список працівників"
 
-#: links.py:24
+#: links.py:23
 msgid "Queue list"
 msgstr "Список черги"
 

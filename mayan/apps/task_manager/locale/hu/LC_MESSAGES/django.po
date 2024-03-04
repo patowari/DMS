@@ -140,15 +140,15 @@ msgstr "Feladattípusok száma"
 msgid "Queue count"
 msgstr "Sorszám"
 
-#: links.py:14
+#: links.py:13
 msgid "Task type list"
 msgstr "Feladattípus lista"
 
-#: links.py:19
+#: links.py:18
 msgid "Worker list"
 msgstr "Worker lista"
 
-#: links.py:24
+#: links.py:23
 msgid "Queue list"
 msgstr "Sorlista"
 

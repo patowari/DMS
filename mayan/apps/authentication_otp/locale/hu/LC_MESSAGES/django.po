@@ -124,19 +124,19 @@ msgstr "Az egyszer használatos kód letiltása a felhasználó számára: %s"
 msgid "OTP disable successfully."
 msgstr "Az OTP letiltása sikeres volt."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "Az OTP már engedélyezve van."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "Az OTP sikeresen engedélyezve."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Engedélyezze az egyszer használatos kódot a felhasználó számára: %s"
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "OTP titok ellenőrzési hiba."

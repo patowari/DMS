@@ -1,10 +1,8 @@
-from django.db.models import Q
-
 from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
 
 from ...models.workflow_models import Workflow, WorkflowRuntimeProxy
 from ...tasks import (
-    task_launch_all_workflows, task_launch_all_workflow_for,
+    task_launch_all_workflow_for, task_launch_all_workflows,
     task_launch_workflow, task_launch_workflow_for
 )
 
@@ -15,6 +13,8 @@ from ..literals import (
 
 
 class WorkflowTemplateTestMixin(DocumentTestMixin):
+    _test_object_model = Workflow
+    _test_object_name = '_test_workflow_template'
     auto_add_test_workflow_template_test_document_type = False
     auto_create_test_workflow_template = False
 
@@ -166,20 +166,13 @@ class WorkflowTemplateAPIViewTestMixin(WorkflowTemplateTestMixin):
         if extra_data:
             data.update(extra_data)
 
-        pk_list = list(
-            Workflow.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:workflow-template-list', data=data
         )
 
-        try:
-            self._test_workflow_template = Workflow.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Workflow.DoesNotExist:
-            self._test_workflow_template = None
+        self._test_object_set()
 
         return response
 
@@ -230,7 +223,7 @@ class WorkflowTemplateDocumentTypeAPIViewMixin(WorkflowTemplateTestMixin):
         return self.post(
             viewname='rest_api:workflow-template-document-type-add',
             kwargs={
-                'workflow_template_id': self._test_workflow_template.pk,
+                'workflow_template_id': self._test_workflow_template.pk
             }, data={
                 'document_type_id': self._test_document_type.pk
             }
@@ -248,7 +241,7 @@ class WorkflowTemplateDocumentTypeAPIViewMixin(WorkflowTemplateTestMixin):
         return self.post(
             viewname='rest_api:workflow-template-document-type-remove',
             kwargs={
-                'workflow_template_id': self._test_workflow_template.pk,
+                'workflow_template_id': self._test_workflow_template.pk
             }, data={
                 'document_type_id': self._test_document_type.pk
             }
@@ -269,20 +262,13 @@ class WorkflowTemplateViewTestMixin(WorkflowTemplateTestMixin):
             'label': TEST_WORKFLOW_TEMPLATE_LABEL,
         }
 
-        pk_list = list(
-            Workflow.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='document_states:workflow_template_create', data=data
         )
 
-        try:
-            self._test_workflow_template = Workflow.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except Workflow.DoesNotExist:
-            self._test_workflow_template = None
+        self._test_object_set()
 
         return response
 

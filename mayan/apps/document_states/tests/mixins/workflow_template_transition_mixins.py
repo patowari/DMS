@@ -1,5 +1,3 @@
-from django.db.models import Q
-
 from ...models.workflow_transition_models import WorkflowTransition
 
 from ..literals import (
@@ -11,6 +9,9 @@ from .workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 
 
 class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
+    _test_object_model = WorkflowTransition
+    _test_object_name = '_test_workflow_template_transition'
+
     def setUp(self):
         super().setUp()
         self._test_workflow_template_transitions = []
@@ -57,9 +58,7 @@ class WorkflowTemplateTransitionAPIViewTestMixin(
         if extra_data:
             data.update(extra_data)
 
-        pk_list = list(
-            WorkflowTransition.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:workflow-template-transition-list', kwargs={
@@ -67,12 +66,7 @@ class WorkflowTemplateTransitionAPIViewTestMixin(
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_transition = WorkflowTransition.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowTransition.DoesNotExist:
-            self._test_workflow_template_transition = None
+        self._test_object_set()
 
         return response
 
@@ -133,9 +127,7 @@ class WorkflowTemplateTransitionViewTestMixin(
     WorkflowTemplateTransitionTestMixin
 ):
     def _request_test_workflow_template_transition_create_view(self):
-        pk_list = list(
-            WorkflowTransition.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='document_states:workflow_template_transition_create',
@@ -148,12 +140,7 @@ class WorkflowTemplateTransitionViewTestMixin(
             }
         )
 
-        try:
-            self._test_workflow_template_transition = WorkflowTransition.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowTransition.DoesNotExist:
-            self._test_workflow_template_transition = None
+        self._test_object_set()
 
         return response
 

@@ -125,19 +125,19 @@ msgstr "Dezactivați OTP pentru utilizator: %s"
 msgid "OTP disable successfully."
 msgstr "OTP dezactivat cu succes."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "OTP este deja activat."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "OTP a fost activat cu succes."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Activați OTP pentru utilizator: %s"
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "Eroare de validare OTP secret."

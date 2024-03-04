@@ -105,15 +105,15 @@ msgstr "Шлях до кабінету, включаючи всіх предкі
 msgid "Full path"
 msgstr "Повний шлях"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr "Родич"
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Короткий текст, який використовується для ідентифікації кабінету."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Мітка"
 
@@ -121,20 +121,20 @@ msgstr "Мітка"
 msgid "Cabinet"
 msgstr "Кабінет"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Батьківський клас і Мітка"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)sз цим %(field_labels)s уже існує."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Кабінет документів"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Кабінети документів"
 

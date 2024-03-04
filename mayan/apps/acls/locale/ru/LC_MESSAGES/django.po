@@ -39,7 +39,7 @@ msgstr ""
 "Объект, к которому предоставлен доступ. При сортировке используется только "
 "тип объекта, а не его заголовок."
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "Объект"
 
@@ -63,19 +63,19 @@ msgstr "Список контроля доступа изменен"
 msgid "Role"
 msgstr "Роль"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Новый список контроля доступа"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Удалить"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Разрешения"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "Глобальные списки контроля доступа"
 
@@ -97,7 +97,7 @@ msgstr "Количество разрешений"
 msgid "Content type"
 msgstr "Тип содержимого"
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "ID объекта"
 
@@ -181,7 +181,7 @@ msgstr "Удалить список контроля доступа: %s"
 msgid "There are no ACLs for this object"
 msgstr "Для этого объекта нет списков контроля доступа"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -205,12 +205,12 @@ msgstr "Предоставленные разрешения"
 msgid "Available permissions"
 msgstr "Доступные разрешения"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Разрешения роли \"%(role)s\" для \"%(object)s\""
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -222,11 +222,11 @@ msgstr ""
 "Унаследованные разрешения должны быть удалены из списка контроля доступа "
 "родительского объекта или из роли через меню Настройки."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "Нет списков контроля доступа"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "Глобальные списки контроля доступа"
 
@@ -242,37 +242,37 @@ msgstr "Тип объекта, к которому будет изменен д�
 msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "Числовой идентификатор объекта, к которому будет изменен доступ."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "Роли"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "Роли, для которых будет изменен доступ к объекту или документу."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
 "Разрешения роли, которые будут предоставлены/отменены для выбранного выше "
 "объекта."
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr "Предоставить доступ к объекту"
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr "Отменить доступ к объекту"
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr "Предоставить доступ к документу"
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr "Отменить доступ к документу"

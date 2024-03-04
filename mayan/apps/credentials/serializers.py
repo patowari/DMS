@@ -9,7 +9,7 @@ class StoredCredentialSerializer(serializers.HyperlinkedModelSerializer):
             'url': {
                 'lookup_url_kwarg': 'credential_id',
                 'view_name': 'rest_api:credential-detail'
-            },
+            }
         }
         fields = (
             'label', 'backend_path', 'backend_data', 'id', 'url'

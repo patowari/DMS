@@ -128,7 +128,11 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[0], parts[1]))
+            value=' '.join(
+                (
+                    parts[0], parts[1]
+                )
+            )
         )
 
         self.assertEqual(
@@ -140,7 +144,11 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[1], parts[0]))
+            value=' '.join(
+                (
+                    parts[1], parts[0]
+                )
+            )
         )
 
         self.assertEqual(
@@ -151,7 +159,11 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[0], parts[2]))
+            value=' '.join(
+                (
+                    parts[0], parts[2]
+                )
+            )
         )
 
         self.assertEqual(
@@ -621,7 +633,11 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
         id_list = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
-            value=''.join((parts[0], parts[1]))
+            value=''.join(
+                (
+                    parts[0], parts[1]
+                )
+            )
         )
 
         self.assertEqual(
@@ -654,7 +670,11 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypeExact,
-            value=' '.join((parts[2], parts[1], parts[0]))
+            value=' '.join(
+                (
+                    parts[2], parts[1], parts[0]
+                )
+            )
         )
 
         self.assertEqual(
@@ -735,7 +755,11 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[0], parts[1]))
+            value=' '.join(
+                (
+                    parts[0], parts[1]
+                )
+            )
         )
 
         self.assertEqual(
@@ -747,7 +771,11 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[1], parts[0]))
+            value=' '.join(
+                (
+                    parts[1], parts[0]
+                )
+            )
         )
 
         self.assertEqual(
@@ -758,7 +786,11 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[0], parts[2]))
+            value=' '.join(
+                (
+                    parts[0], parts[2]
+                )
+            )
         )
 
         self.assertEqual(
@@ -1870,7 +1902,11 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[0], parts[1]))
+            value=' '.join(
+                (
+                    parts[0], parts[1]
+                )
+            )
         )
 
         self.assertEqual(
@@ -1882,7 +1918,11 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[1], parts[0]))
+            value=' '.join(
+                (
+                    parts[1], parts[0]
+                )
+            )
         )
 
         self.assertEqual(
@@ -1893,7 +1933,11 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypePartial,
-            value=' '.join((parts[0], parts[2]))
+            value=' '.join(
+                (
+                    parts[0], parts[2]
+                )
+            )
         )
 
         self.assertEqual(
@@ -1988,7 +2032,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
         id_list = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeRegularExpression,
-            value='{}.*{}.*'.format(parts[0][:5], parts[0][-1])
+            value='{}.*{}.*'.format(
+                parts[0][:5], parts[0][-1]
+            )
         )
 
         self.assertEqual(
@@ -2000,7 +2046,9 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
             field_name='uuid',
             query_type=QueryTypeRegularExpression,
             value='({}|INVALID)'.format(
-                '{}.*{}.*'.format(parts[0][:5], parts[0][-1])
+                '{}.*{}.*'.format(
+                    parts[0][:5], parts[0][-1]
+                )
             )
         )
 

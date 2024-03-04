@@ -58,7 +58,9 @@ class PyPIClient:
             raise PyPIClient.ExceptionUnknownLatestVersion
         else:
             version_local = Version(version_string=mayan.__version__)
-            version_server = Version(version_string=versions[0])
+            version_server = Version(
+                version_string=versions[0]
+            )
 
             if version_local > version_server:
                 raise PyPIClient.ExceptionAheadOfUpstream(

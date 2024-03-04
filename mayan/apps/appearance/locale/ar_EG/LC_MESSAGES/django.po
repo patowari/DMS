@@ -98,7 +98,7 @@ msgstr "إعدادات القوالب"
 msgid "Edit theme settings"
 msgstr "تعديل اعدادات القالب"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "انشاء قالب جديد"
 
@@ -110,7 +110,7 @@ msgstr "حذف"
 msgid "Edit"
 msgstr "تعديل"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "القوالب"
 
@@ -474,31 +474,31 @@ msgstr "مشكلة إتصال ! يرجى مراجعة مدير النظام "
 msgid "None"
 msgstr "لا شيء"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "حذف القالب : %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "تعديل القالب : %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "السماح بتغير قوالب النظام بدون التعديلات البرمجية"
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "لا يوجد قوالب "
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

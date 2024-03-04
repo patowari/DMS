@@ -6,8 +6,8 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
-from mayan.apps.documents.models.document_models import Document
 from mayan.apps.document_states.classes import WorkflowAction
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.permissions.classes import Permission
 from mayan.apps.permissions.models import Role
 
@@ -44,7 +44,8 @@ class GrantAccessAction(WorkflowAction):
             'label': _(message='Object type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
                 'help_text': _(
-                    'Type of the object for which the access will be modified.'
+                    'Type of the object for which the access will be '
+                    'modified.'
                 ),
                 'queryset': ContentType.objects.none(),
                 'required': True
@@ -251,7 +252,8 @@ class GrantDocumentAccessAction(WorkflowAction):
         for role in self.roles:
             for permission in self.permissions:
                 AccessControlList.objects.grant(
-                    obj=context['workflow_instance'].document, permission=permission, role=role
+                    obj=context['workflow_instance'].document,
+                    permission=permission, role=role
                 )
 
 
@@ -264,5 +266,6 @@ class RevokeDocumentAccessAction(GrantDocumentAccessAction):
         for role in self.roles:
             for permission in self.permissions:
                 AccessControlList.objects.revoke(
-                    obj=context['workflow_instance'].document, permission=permission, role=role
+                    obj=context['workflow_instance'].document,
+                    permission=permission, role=role
                 )

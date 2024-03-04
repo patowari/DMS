@@ -88,7 +88,10 @@ class IndexTemplateBusinessLogicMixin:
             index_instance = IndexInstance.objects.get(pk=self.pk)
             index_instance.index_instance_root_node
             # Re-index each document with a type associated with this index.
-            for document in Document.objects.filter(document_type__in=self.document_types.all()):
+            queryset = Document.objects.filter(
+                document_type__in=self.document_types.all()
+            )
+            for document in queryset:
                 # Evaluate each index template node for each document
                 # associated with this index.
                 index_instance.document_add(document=document)

@@ -67,7 +67,9 @@ class MountCommandMixin:
                 'output will be generated.'
             )
 
-        level = getattr(logging, options['log_level'], None)
+        level = getattr(
+            logging, options['log_level'], None
+        )
         if not level:
             self.stderr.write(
                 msg='Unknown log level {}'.format(level)

@@ -31,7 +31,7 @@ msgstr ""
 msgid "Permissions"
 msgstr "Berechtigungen"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "Gruppenanzahl"
 
@@ -51,11 +51,11 @@ msgstr "Rolle erstellt"
 msgid "Role edited"
 msgstr "Rolle bearbeitet"
 
-#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:111
+#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:113
 msgid "Roles"
 msgstr "Rollen"
 
-#: links.py:29 views.py:57
+#: links.py:29 views.py:58
 msgid "Create new role"
 msgstr "Erstellen"
 
@@ -204,42 +204,42 @@ msgstr "Verfügbare Rollen"
 msgid "Roles of group: %s"
 msgstr "Rollen von Gruppe %s"
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr "Fehler bei Löschen der Rolle \"%(instance)s\"; %(exception)s"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr "%(count)d Rollen erfolgreich gelöscht."
 
-#: views.py:70
+#: views.py:72
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr "Rolle \"%(object)s\" erfolgreich gelöscht."
 
-#: views.py:71
+#: views.py:73
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr "%(count)d Rolle erfolgreich gelöscht."
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr "Rolle %(object)s löschen."
 
-#: views.py:73
+#: views.py:75
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr "Die %(count)d  ausgewählte Rolle löschen."
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr "Die %(count)d  ausgewählten Rollen löschen."
 
-#: views.py:103
+#: views.py:105
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -252,19 +252,19 @@ msgstr ""
 "Zugriffsberechtigungslisten beinhalten Berechtigungen für spezifische "
 "Objekte."
 
-#: views.py:110
+#: views.py:112
 msgid "There are no roles"
 msgstr "Keine Rolle vorhanden"
 
-#: views.py:116
+#: views.py:118
 msgid "Role groups"
 msgstr "Rollengruppen"
 
-#: views.py:117
+#: views.py:119
 msgid "Available groups"
 msgstr "Verfügbare Gruppen"
 
-#: views.py:135
+#: views.py:137
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
@@ -273,32 +273,32 @@ msgstr ""
 "Berechtigungen werden ererbt von den Berechtigungen und "
 "Zugriffsberechtigungen der Rolle."
 
-#: views.py:138
+#: views.py:140
 #, python-format
 msgid "Groups of role: %s"
 msgstr "Gruppen für Rolle %s"
 
-#: views.py:143
+#: views.py:145
 msgid "Granted permissions"
 msgstr "Erteilte Berechtigungen"
 
-#: views.py:144
+#: views.py:146
 msgid "Available permissions"
 msgstr "Verfügbare Berechtigungen"
 
-#: views.py:185
+#: views.py:191
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
 "Hier erteilte Berechtigungen gelten für das gesamte System und sämtliche "
 "Objekte."
 
-#: views.py:188
+#: views.py:194
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "Berechtigungen der Rolle %s"
 
-#: views.py:208
+#: views.py:214
 #, python-format
 msgid "Details of permission: %s"
 msgstr "Details für Berechtigung %s"

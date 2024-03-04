@@ -15,5 +15,5 @@ class Migration(migrations.Migration):
                 'will be pre-selected on the document mailing form.',
                 verbose_name='Default'
             )
-        ),
+        )
     ]

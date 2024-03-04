@@ -25,7 +25,9 @@ class QuotaBusinessModelMixin:
 
     def dumps(self, data):
         self.backend_data = json.dumps(obj=data)
-        self.save(update_fields=('backend_data',))
+        self.save(
+            update_fields=('backend_data',)
+        )
 
     def get_backend_class(self):
         """

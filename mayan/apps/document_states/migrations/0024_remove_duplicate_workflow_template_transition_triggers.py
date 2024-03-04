@@ -10,7 +10,9 @@ def code_remove_duplicates(apps, schema_editor):
 
     queryset = WorkflowTransitionTriggerEvent.objects.values(
         'transition', 'event_type'
-    ).annotate(count=Count('id')).order_by().filter(count__gt=1)
+    ).annotate(
+        count=Count('id')
+    ).order_by().filter(count__gt=1)
 
     for workflow_transition_trigger_entry in queryset:
         workflow_transition_trigger_entry.pop('count')

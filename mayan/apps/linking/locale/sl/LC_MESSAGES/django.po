@@ -30,7 +30,7 @@ msgstr ""
 msgid "Label"
 msgstr "Oznaka"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:51
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr ""
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Foreign document field"
 msgstr ""
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr ""
 
@@ -55,7 +55,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Izbriši"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:43
 msgid "Document types"
 msgstr ""
 
@@ -143,20 +143,20 @@ msgstr ""
 msgid "is in regular expression (case insensitive)"
 msgstr ""
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr ""
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr ""
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr ""
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr ""
 
@@ -174,49 +174,49 @@ msgstr ""
 msgid "Dynamic label"
 msgstr ""
 
-#: models.py:38 models.py:110
+#: models.py:39 models.py:112
 msgid "Enabled"
 msgstr ""
 
-#: models.py:48 models.py:87
+#: models.py:50 models.py:89
 msgid "Smart link"
 msgstr ""
 
-#: models.py:91
+#: models.py:93
 msgid "The inclusion is ignored for the first item."
 msgstr ""
 
-#: models.py:95
+#: models.py:97
 msgid "This represents the metadata of all other documents."
 msgstr ""
 
-#: models.py:96
+#: models.py:98
 msgid "Foreign document attribute"
 msgstr ""
 
-#: models.py:101
+#: models.py:103
 msgid ""
 "The expression using document properties to be evaluated against the foreign "
 "document field."
 msgstr ""
 
-#: models.py:103
+#: models.py:105
 msgid "Expression"
 msgstr ""
 
-#: models.py:106
+#: models.py:108
 msgid "Inverts the logic of the operator."
 msgstr ""
 
-#: models.py:107
+#: models.py:109
 msgid "Negated"
 msgstr ""
 
-#: models.py:114
+#: models.py:116
 msgid "Link condition"
 msgstr ""
 
-#: models.py:115
+#: models.py:117
 msgid "Link conditions"
 msgstr ""
 
@@ -382,12 +382,12 @@ msgstr ""
 msgid "Document type for which to enable smart link: %s"
 msgstr ""
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr ""
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr ""

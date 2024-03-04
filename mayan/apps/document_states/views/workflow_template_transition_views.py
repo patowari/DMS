@@ -20,13 +20,13 @@ from ..icons import (
     icon_workflow_template_transition_create,
     icon_workflow_template_transition_delete,
     icon_workflow_template_transition_edit,
-    icon_workflow_template_transition_list,
-    icon_workflow_template_transition_triggers,
     icon_workflow_template_transition_field,
     icon_workflow_template_transition_field_create,
     icon_workflow_template_transition_field_delete,
     icon_workflow_template_transition_field_edit,
-    icon_workflow_template_transition_field_list
+    icon_workflow_template_transition_field_list,
+    icon_workflow_template_transition_list,
+    icon_workflow_template_transition_triggers
 )
 from ..links import (
     link_workflow_template_transition_create,
@@ -378,18 +378,20 @@ class WorkflowTemplateTransitionTriggerEventListView(
         obj = self.external_object
         initial = []
 
-        # Return the queryset by name from the sorted list of the class
-        event_type_ids = [event_type.id for event_type in EventType.all()]
-        event_type_queryset = StoredEventType.objects.filter(
+        # Return the queryset by name from the sorted list of the class.
+        event_type_ids = [
+            event_type.id for event_type in EventType.all()
+        ]
+        queryset_event_types = StoredEventType.objects.filter(
             name__in=event_type_ids
         )
 
-        # Sort queryset in Python by namespace, then by label
-        event_type_queryset = sorted(
-            event_type_queryset, key=lambda x: (x.namespace, x.label)
+        # Sort queryset in Python by namespace, then by label.
+        queryset_event_types = sorted(
+            queryset_event_types, key=lambda x: (x.namespace, x.label)
         )
 
-        for event_type in event_type_queryset:
+        for event_type in queryset_event_types:
             initial.append(
                 {
                     'event_type': event_type,

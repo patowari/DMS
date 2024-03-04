@@ -109,15 +109,15 @@ msgstr ""
 msgid "Full path"
 msgstr "Vollständiger Pfad"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr "Übergeordneter Aktenschrank"
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Ein kurzer Text, der zur Identifizierung des Aktenschrankes dient."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Bezeichner"
 
@@ -125,20 +125,20 @@ msgstr "Bezeichner"
 msgid "Cabinet"
 msgstr "Aktenschrank"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Überebene und Bezeichnung"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s mit diesem %(field_labels)s existiert bereits."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Dokument zu Aktenschrank hinzugefügt"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Dokumenten-Aktenschränke"
 

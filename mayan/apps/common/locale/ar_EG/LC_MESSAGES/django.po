@@ -28,19 +28,19 @@ msgstr ""
 msgid "Common"
 msgstr "المشتركة"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "يستخدم للسماح بالترجمة دون اتصال للسلاسل النصية للتعليمات البرمجية."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "يوفر فحص النمط."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "بيئة سطر الأوامر مع الإكمال التلقائي."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "يتحقق من التنسيق الصحيح لملف إقرأني"
 
@@ -217,61 +217,61 @@ msgstr ""
 msgid "Click here to fix this."
 msgstr "إضغط هنا ، لحل الأخطاء "
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "أدخل قيمة صالحة"
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "أدخل قيمة صالحة."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr "أدخل &quot;اسمًا داخليًا&quot; صالحًا يتكون من أحرف وأرقام وشرطات سفلية."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr " حول النظام"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr ""
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "الحقول المراد نسخها: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "عمل نسخة من %(object_name)s &quot;%(object)s&quot;؟"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "تم نسخ الكائن بنجاح."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
 msgstr ""
 "لا توجد نتائج هنا تعني أنه ليس لديك الأذونات المطلوبة لأداء مهمة إدارية."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "لا توجد خيارات إعداد متاحة."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "هنا يمكنك تكوين جميع جوانب النظام."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "تثبيت العناصر"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "تستخدم هذه الوحدات للقيام بصيانة النظام."

@@ -48,6 +48,6 @@ msgstr "Podrobnosti"
 msgid "View details"
 msgstr "Ogled podrobnosti"
 
-#: views.py:30
+#: views.py:32
 msgid "Dashboard detail"
 msgstr "Podrobnosti nadzorne plošče"

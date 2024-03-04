@@ -105,7 +105,9 @@ def code_document_version_page_create(apps, schema_editor):
                 document_file_id_last = document_file_id
                 if document_version_page_values:
                     final_query = document_version_page_insert_query.format(
-                        ('(%s,%s,%s,%s),' * (page_number - 1))[:-1]
+                        (
+                            '(%s,%s,%s,%s),' * (page_number - 1)
+                        )[:-1]
                     )
 
                     page_number = 1
@@ -126,7 +128,9 @@ def code_document_version_page_create(apps, schema_editor):
 
     if page_number > 1:
         final_query = document_version_page_insert_query.format(
-            ('(%s,%s,%s,%s),' * (page_number - 1))[:-1]
+            (
+                '(%s,%s,%s,%s),' * (page_number - 1)
+            )[:-1]
         )
         cursor_document_version_page.execute(
             final_query, document_version_page_values

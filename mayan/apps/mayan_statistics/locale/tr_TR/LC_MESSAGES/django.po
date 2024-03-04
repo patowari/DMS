@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:29 links.py:35 permissions.py:6 queues.py:7
+#: apps.py:29 links.py:34 permissions.py:6 queues.py:7
 msgid "Statistics"
 msgstr "İstatistikler"
 
@@ -43,39 +43,39 @@ msgstr "Zamanlama"
 msgid "Last update"
 msgstr "Son güncelleme"
 
-#: classes.py:45
+#: classes.py:47
 msgid "Statistics namespace"
 msgstr "İstatistik ad alanı"
 
-#: classes.py:162
+#: classes.py:166
 msgid "Never"
 msgstr "Asla"
 
-#: classes.py:207
+#: classes.py:211
 msgid "Doughnut chart"
 msgstr "Doughnut grafiği"
 
-#: classes.py:212
+#: classes.py:216
 msgid "Line chart"
 msgstr "Çizgi grafiği"
 
-#: classes.py:217
+#: classes.py:221
 msgid "Pie chart"
 msgstr "Pasta grafiği"
 
-#: links.py:15
+#: links.py:14
 msgid "Namespace details"
 msgstr "Namespace ayrıntıları"
 
-#: links.py:20
+#: links.py:19
 msgid "Namespace list"
 msgstr "Namespace listesi"
 
-#: links.py:25
+#: links.py:24
 msgid "Queue"
 msgstr "Kuyruk"
 
-#: links.py:30
+#: links.py:29
 msgid "View"
 msgstr "Görünüm"
 
@@ -121,44 +121,44 @@ msgstr "Son güncelleme: %(datetime)s"
 msgid "Statistic \"%s\" not found."
 msgstr "\"%s\" istatistiği bulunamadı."
 
-#: views.py:24
+#: views.py:23
 msgid "Statistics namespaces group statistics into logical units. "
 msgstr ""
 "İstatistik ad alanları, istatistikleri mantıksal birimler halinde "
 "gruplandırır."
 
-#: views.py:26
+#: views.py:25
 msgid "No statistic namespaces available"
 msgstr "İstatistik ad alanı yok"
 
-#: views.py:27
+#: views.py:26
 msgid "Statistics namespaces"
 msgstr "İstatistik Alanadları"
 
-#: views.py:50
+#: views.py:49
 msgid "Statistics are metrics and chart representations of existing data."
 msgstr "İstatistikler, mevcut verilerin metrikleri ve grafik gösterimleridir."
 
-#: views.py:53
+#: views.py:52
 msgid "No statistic available"
 msgstr "İstatistik yok"
 
-#: views.py:55
+#: views.py:54
 #, python-format
 msgid "Namespace details for: %s"
 msgstr "Namespace detayı: %s"
 
-#: views.py:78
+#: views.py:77
 #, python-format
 msgid "Results for: %s"
 msgstr "%s için Sonuçlar"
 
-#: views.py:98
+#: views.py:97
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
 msgstr "Kuyruktaki istatistik \"%s\" güncellenecek mi?"
 
-#: views.py:106
+#: views.py:105
 #, python-format
 msgid "Statistic \"%s\" queued successfully for update."
 msgstr "%s istatistiği güncelleme için başarıyla sıraya alındı."

@@ -64,16 +64,16 @@ uploaded as documents in Mayan EDMS.
 Vagrant file included
 ^^^^^^^^^^^^^^^^^^^^^
 
-A vagrant file is now included to allow developers to provision a virtual machine
-with the latest development version of Mayan EDMS.
+A vagrant file is now included to allow developers to provision a virtual
+machine with the latest development version of Mayan EDMS.
 
 
 User locale profile (language and timezone)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Interface language and locale setting can now be setup for each user and are not
-installation wide as before. Date and times offsets are automatically adjusted to
-each user's timezone settings.
+Interface language and locale setting can now be setup for each user and are
+not installation wide as before. Date and times offsets are automatically
+adjusted to each user's timezone settings.
 
 
 Document states

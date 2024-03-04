@@ -775,7 +775,9 @@ class WorkflowTemplateViewTestCase(
         response = self._request_test_workflow_template_create_view()
         self.assertEqual(response.status_code, 403)
 
-        self.assertEqual(Workflow.objects.count(), 0)
+        self.assertEqual(
+            Workflow.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -788,7 +790,9 @@ class WorkflowTemplateViewTestCase(
         response = self._request_test_workflow_template_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Workflow.objects.count(), 1)
+        self.assertEqual(
+            Workflow.objects.count(), 1
+        )
         self.assertEqual(
             Workflow.objects.all()[0].label, TEST_WORKFLOW_TEMPLATE_LABEL
         )

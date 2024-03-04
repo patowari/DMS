@@ -43,7 +43,7 @@ class DownloadFile(
     user = models.ForeignKey(
         editable=False, on_delete=models.CASCADE,
         related_name='download_files', to=settings.AUTH_USER_MODEL,
-        verbose_name=_(message='User'),
+        verbose_name=_(message='User')
     )
 
     objects = DownloadFileManager()

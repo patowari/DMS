@@ -26,8 +26,9 @@ from ..forms.misc_forms import PageNumberForm
 from ..icons import (
     icon_document_file_delete, icon_document_file_edit,
     icon_document_file_introspect, icon_document_file_list,
-    icon_document_file_preview, icon_document_file_properties_detail,
-    icon_document_file_print, icon_document_file_transformation_list_clear,
+    icon_document_file_preview, icon_document_file_print,
+    icon_document_file_properties_detail,
+    icon_document_file_transformation_list_clear,
     icon_document_file_transformation_list_clone
 )
 from ..literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
@@ -41,7 +42,7 @@ from ..permissions import (
 from ..settings import setting_preview_height, setting_preview_width
 from ..tasks import task_document_file_delete, task_document_file_size_update
 
-from .misc_views import PrintFormView, DocumentPrintBaseView
+from .misc_views import DocumentPrintBaseView, PrintFormView
 
 logger = logging.getLogger(name=__name__)
 

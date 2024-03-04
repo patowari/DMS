@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
 "1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: apps.py:31 events.py:6 permissions.py:6 queues.py:7 settings.py:11
+#: apps.py:33 events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "File caching"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Object cache partitions submitted for purging."
 msgstr ""
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr ""
@@ -221,4 +221,3 @@ msgid_plural "Submit the selected caches for purging?"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""

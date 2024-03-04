@@ -161,7 +161,9 @@ class ScopedQueryEntryOperatorTestCase(
 
     def test_check_operator_scope_single_operand(self):
         with self.assertRaises(expected_exception=DynamicSearchScopedQueryError):
-            self._add_test_scoped_query_entry_operator(scope_operand_list=('0',))
+            self._add_test_scoped_query_entry_operator(
+                scope_operand_list=('0',)
+            )
 
     def test_check_operator_scope_three_operands(self):
         test_scope_entry_count = len(

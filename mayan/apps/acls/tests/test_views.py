@@ -7,7 +7,7 @@ from ..events import event_acl_created, event_acl_deleted, event_acl_edited
 from ..models import AccessControlList
 from ..permissions import permission_acl_edit, permission_acl_view
 
-from .mixins import ACLTestMixin, AccessControlListViewTestMixin
+from .mixins import AccessControlListViewTestMixin, ACLTestMixin
 
 
 class AccessControlListViewTestCase(
@@ -300,7 +300,7 @@ class OrphanAccessControlListViewTestCase(
     def test_orphan_acl_create_view_with_permission(self):
         """
         Test creating an ACL entry for an object with no model permissions.
-        Result: Should display a blank permissions list (no optgroup)
+        Result: Should display a blank permissions list (no optgroup).
         """
         self._create_acl_test_object()
         EventModelRegistry.register(model=self.TestModel)

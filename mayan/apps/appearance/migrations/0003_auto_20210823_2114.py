@@ -20,7 +20,7 @@ def code_sanitize_themes(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('appearance', '0002_add_theme_for_existing_users'),
+        ('appearance', '0002_add_theme_for_existing_users')
     ]
 
     operations = [

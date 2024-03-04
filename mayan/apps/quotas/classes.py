@@ -5,10 +5,10 @@ from django.apps import apps
 from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
+
 from .exceptions import QuotaExceeded
 from .handlers import handler_process_quota_signal
-
-from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 
 __all__ = ('QuotaBackend',)
 logger = logging.getLogger(name=__name__)

@@ -100,7 +100,7 @@ msgstr ""
 
 #: links.py:50
 msgid "Setup file metadata"
-msgstr ""
+msgstr "Postavi metapodatke datoteke"
 
 #: links.py:56
 msgid "File metadata processing per type"

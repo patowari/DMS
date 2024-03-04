@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0033_auto_20160325_0052'),
+        ('documents', '0033_auto_20160325_0052')
     ]
 
     operations = [
@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
             field=models.BooleanField(
                 default=False, verbose_name='In trash?', db_index=True,
                 editable=False
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='document',
@@ -24,6 +24,6 @@ class Migration(migrations.Migration):
                 'the database but no file uploaded. This could be an '
                 'interrupted upload or a deferred upload via the API.',
                 verbose_name='Is stub?', db_index=True
-            ),
-        ),
+            )
+        )
     ]

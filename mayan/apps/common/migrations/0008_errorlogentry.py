@@ -5,7 +5,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     dependencies = [
         ('contenttypes', '0002_remove_content_type_name'),
-        ('common', '0007_auto_20170118_1758'),
+        ('common', '0007_auto_20170118_1758')
     ]
 
     operations = [
@@ -46,12 +46,12 @@ class Migration(migrations.Migration):
                         related_name='error_log_content_type',
                         to='contenttypes.ContentType'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('datetime',),
                 'verbose_name': 'Error log entry',
-                'verbose_name_plural': 'Error log entries',
-            },
-        ),
+                'verbose_name_plural': 'Error log entries'
+            }
+        )
     ]

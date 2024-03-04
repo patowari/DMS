@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -12,8 +12,8 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     'id', models.AutoField(
-                        verbose_name='ID', serialize=False, auto_created=True,
-                        primary_key=True
+                        verbose_name='ID', serialize=False,
+                        auto_created=True, primary_key=True
                     )
                 ),
                 (
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 'ordering': ['-datetime'],
                 'get_latest_by': 'datetime',
                 'verbose_name': 'Log entry',
-                'verbose_name_plural': 'Log entries',
+                'verbose_name_plural': 'Log entries'
             },
             bases=(models.Model,)
         )

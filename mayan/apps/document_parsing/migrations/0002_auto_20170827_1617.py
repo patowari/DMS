@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_parsing', '0001_initial'),
+        ('document_parsing', '0001_initial')
     ]
 
     operations = [
@@ -17,5 +17,5 @@ class Migration(migrations.Migration):
                 to='documents.DocumentVersion',
                 verbose_name='Document version'
             ),
-        ),
+        )
     ]

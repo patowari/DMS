@@ -1,5 +1,3 @@
-from django.db.models import Q
-
 from ...models.workflow_state_escalation_models import WorkflowStateEscalation
 from ...tasks import (
     task_workflow_instance_check_escalation,
@@ -19,6 +17,9 @@ from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestM
 class WorkflowTemplateStateEscalationTestMixin(
     WorkflowTemplateTransitionTestMixin
 ):
+    _test_object_model = WorkflowStateEscalation
+    _test_object_name = '_test_workflow_template_state_escalation'
+
     def _create_test_workflow_template_state_escalation(self, extra_kwargs=None):
         kwargs = {
             'amount': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_AMOUNT,
@@ -45,9 +46,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
             'workflow_template_transition_id': self._test_workflow_template_transition.pk
         }
 
-        pk_list = list(
-            WorkflowStateEscalation.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:workflow-template-state-escalation-list',
@@ -57,12 +56,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_state_escalation = WorkflowStateEscalation.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowStateEscalation.DoesNotExist:
-            self._test_workflow_template_state_escalation = None
+        self._test_object_set()
 
         return response
 
@@ -152,9 +146,7 @@ class WorkflowTemplateStateEscalationViewTestMixin(
         if extra_data is not None:
             data.update(extra_data)
 
-        pk_list = list(
-            WorkflowStateEscalation.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='document_states:workflow_template_state_escalation_create',
@@ -163,12 +155,7 @@ class WorkflowTemplateStateEscalationViewTestMixin(
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_state_escalation = WorkflowStateEscalation.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowStateEscalation.DoesNotExist:
-            self._test_workflow_template_state_escalation = None
+        self._test_object_set()
 
         return response
 

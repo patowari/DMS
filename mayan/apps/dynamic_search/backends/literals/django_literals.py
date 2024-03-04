@@ -1,9 +1,9 @@
 from django.db import models
 
 from ...search_query_types import (
-    QueryTypeExact, QueryTypeFuzzy, QueryTypePartial, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
-    QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive,
+    QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
+    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
     QueryTypeRegularExpression
 )
 from ...value_transformations import (

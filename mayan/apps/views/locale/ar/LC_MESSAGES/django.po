@@ -46,7 +46,7 @@ msgstr "العنوان"
 msgid "Relationship"
 msgstr "صلة"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -56,7 +56,7 @@ msgstr ""
 "إدخالات. بمجرد اكتمال التحديد ، انقر فوق الزر أدناه أو انقر نقرًا مزدوجًا فوق "
 "القائمة لتنشيط الإجراء"
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -66,42 +66,42 @@ msgstr ""
 "إدخالات ، بمجرد اكتمال التحديد ، انقر فوق الزر أدناه أو انقر نقرًا مزدوجًا فوق "
 "القائمة لتنشيط الإجراء"
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "إضافة الكل"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "إضافة"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "حذف الكل"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "حذف"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "خطأ في تحديث العلاقة ؛ %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "تم تحديث العلاقات بنجاح"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "تكرار خطأ في المعلومات : %(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s لم ينشأ , الخطأ : %(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s الإنشاء الناجح."

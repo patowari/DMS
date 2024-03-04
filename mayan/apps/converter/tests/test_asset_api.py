@@ -5,8 +5,8 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from ..events import event_asset_created, event_asset_edited
 from ..models import Asset
 from ..permissions import (
-    permission_asset_create, permission_asset_delete,
-    permission_asset_edit, permission_asset_view
+    permission_asset_create, permission_asset_delete, permission_asset_edit,
+    permission_asset_view
 )
 
 from .mixins import AssetAPIViewTestMixin
@@ -190,7 +190,9 @@ class AssetAPIViewTestCase(AssetAPIViewTestMixin, BaseAPITestCase):
 
         response = self._request_test_asset_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

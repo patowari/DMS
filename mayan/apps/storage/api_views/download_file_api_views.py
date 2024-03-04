@@ -1,13 +1,14 @@
 from mayan.apps.rest_api import generics
 from mayan.apps.views.generics import DownloadViewMixin
 
-from .api_view_mixins import OwnerPlusFilteredQuerysetAPIViewMixin
-from .models import DownloadFile
-from .permissions import (
+from ..models import DownloadFile
+from ..permissions import (
     permission_download_file_delete, permission_download_file_download,
     permission_download_file_view
 )
-from .serializers import DownloadFileSerializer
+from ..serializers import DownloadFileSerializer
+
+from .mixins import OwnerPlusFilteredQuerysetAPIViewMixin
 
 
 class APIDownloadFileDetailView(
@@ -20,7 +21,7 @@ class APIDownloadFileDetailView(
     lookup_url_kwarg = 'download_file_id'
     mayan_object_permission_map = {
         'DELETE': permission_download_file_delete,
-        'GET': permission_download_file_view,
+        'GET': permission_download_file_view
     }
     serializer_class = DownloadFileSerializer
     source_queryset = DownloadFile.objects.all()

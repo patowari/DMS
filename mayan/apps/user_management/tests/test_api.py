@@ -32,7 +32,9 @@ class GroupAPITestCase(
         response = self._request_test_group_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        self.assertEqual(Group.objects.count(), group_count)
+        self.assertEqual(
+            Group.objects.count(), group_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -47,7 +49,9 @@ class GroupAPITestCase(
         response = self._request_test_group_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self.assertEqual(Group.objects.count(), group_count + 1)
+        self.assertEqual(
+            Group.objects.count(), group_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -66,7 +70,9 @@ class GroupAPITestCase(
         response = self._request_test_group_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Group.objects.count(), group_count)
+        self.assertEqual(
+            Group.objects.count(), group_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -83,7 +89,9 @@ class GroupAPITestCase(
         response = self._request_test_group_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertEqual(Group.objects.count(), group_count - 1)
+        self.assertEqual(
+            Group.objects.count(), group_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -203,7 +211,9 @@ class GroupAPITestCase(
 
         response = self._request_test_group_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -219,7 +229,9 @@ class GroupAPITestCase(
 
         response = self._request_test_group_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['results'][0]['id'], self._test_group.id)
+        self.assertEqual(
+            response.data['results'][0]['id'], self._test_group.id
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -239,7 +251,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_add_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_user not in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user not in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -254,7 +268,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_add_api_view()
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertTrue(self._test_user not in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user not in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -269,7 +285,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_add_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_user not in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user not in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -287,7 +305,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_add_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertTrue(self._test_user in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -319,7 +339,9 @@ class GroupUserAPIViewTestCase(
 
         response = self._request_test_group_user_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -327,7 +349,9 @@ class GroupUserAPIViewTestCase(
     def test_group_user_list_api_view_with_user_access(self):
         self._test_user.groups.add(self._test_group)
 
-        self.grant_access(obj=self._test_user, permission=permission_user_view)
+        self.grant_access(
+            obj=self._test_user, permission=permission_user_view
+        )
 
         self._clear_events()
 
@@ -343,7 +367,9 @@ class GroupUserAPIViewTestCase(
         self.grant_access(
             obj=self._test_group, permission=permission_group_view
         )
-        self.grant_access(obj=self._test_user, permission=permission_user_view)
+        self.grant_access(
+            obj=self._test_user, permission=permission_user_view
+        )
 
         self._clear_events()
 
@@ -364,7 +390,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_user in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -381,7 +409,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertTrue(self._test_user in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -398,7 +428,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertTrue(self._test_user in self._test_group.user_set.all())
+        self.assertTrue(
+            self._test_user in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -418,7 +450,9 @@ class GroupUserAPIViewTestCase(
         response = self._request_test_group_user_remove_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertFalse(self._test_user in self._test_group.user_set.all())
+        self.assertFalse(
+            self._test_user in self._test_group.user_set.all()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -453,7 +487,9 @@ class UserAPIViewTestCase(UserAPIViewTestMixin, BaseAPITestCase):
         response = self._request_test_user_create_api_view()
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        self.assertEqual(get_user_model().objects.count(), user_count + 1)
+        self.assertEqual(
+            get_user_model().objects.count(), user_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -473,7 +509,9 @@ class UserAPIViewTestCase(UserAPIViewTestMixin, BaseAPITestCase):
         response = self._request_test_user_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(get_user_model().objects.count(), user_count)
+        self.assertEqual(
+            get_user_model().objects.count(), user_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -491,7 +529,9 @@ class UserAPIViewTestCase(UserAPIViewTestMixin, BaseAPITestCase):
         response = self._request_test_user_delete_api_view()
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-        self.assertEqual(get_user_model().objects.count(), user_count - 1)
+        self.assertEqual(
+            get_user_model().objects.count(), user_count - 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -678,7 +718,9 @@ class UserGroupAPIViewTestCase(
 
         response = self._request_test_user_group_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

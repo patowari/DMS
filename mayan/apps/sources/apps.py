@@ -14,10 +14,10 @@ from mayan.apps.common.menus import (
 from mayan.apps.common.signals import signal_post_upgrade
 from mayan.apps.converter.links import link_transformation_list
 from mayan.apps.databases.classes import ModelProperty
+from mayan.apps.documents.menus import menu_documents
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
-from mayan.apps.documents.menus import menu_documents
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.navigation.classes import SourceColumn

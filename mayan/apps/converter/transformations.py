@@ -96,7 +96,9 @@ class BaseTransformation(metaclass=BaseTransformationType):
     def get_label(cls):
         arguments = cls.get_arguments()
         if arguments:
-            return format_lazy('{}: {}', cls.label, ', '.join(arguments))
+            return format_lazy(
+                '{}: {}', cls.label, ', '.join(arguments)
+            )
         else:
             return cls.label
 

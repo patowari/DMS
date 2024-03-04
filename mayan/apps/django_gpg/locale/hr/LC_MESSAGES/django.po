@@ -33,7 +33,7 @@ msgstr ""
 
 #: apps.py:65 forms.py:42 models.py:49
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: apps.py:69 forms.py:23 models.py:28
 msgid "Creation date"

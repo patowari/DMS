@@ -26,19 +26,19 @@ msgstr ""
 msgid "Common"
 msgstr "Společný"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Slouží k povolení offline překladu textových řetězců."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Poskytuje kontrolu stylu."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Prostředí příkazového řádku s automatickým dokončováním."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Zkontroluje správné formátování souboru README."
 
@@ -227,44 +227,44 @@ msgstr "Nastavuje název projektu."
 msgid "Click here to fix this."
 msgstr "Klepnutím sem to vyřešíte."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Zadejte platnou hodnotu JSON."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Zadejte platnou hodnotu YAML."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Zadejte platný „interní název“ skládající se z písmen, číslic a podtržítek."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "O nás"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Domů"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Pole ke kopírování: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Vytvořit kopii %(object_name)s &quot;%(object)s&quot;?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Objekt byl úspěšně zkopírován."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -272,18 +272,18 @@ msgstr ""
 "Žádné výsledky zde znamenají, že nemáte potřebná oprávnění k provedení "
 "administrativní úlohy."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Nejsou k dispozici žádné možnosti nastavení."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Zde můžete nakonfigurovat všechny aspekty systému."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Položky nastavení"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Tyto moduly se používají k údržbě systému."

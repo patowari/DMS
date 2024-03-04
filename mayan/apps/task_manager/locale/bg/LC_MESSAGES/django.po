@@ -140,15 +140,15 @@ msgstr "Брой типове задачи"
 msgid "Queue count"
 msgstr "Брой на опашката"
 
-#: links.py:14
+#: links.py:13
 msgid "Task type list"
 msgstr "Списък с типове задачи"
 
-#: links.py:19
+#: links.py:18
 msgid "Worker list"
 msgstr "Списък на работниците"
 
-#: links.py:24
+#: links.py:23
 msgid "Queue list"
 msgstr "Списък на опашка"
 

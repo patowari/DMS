@@ -15,8 +15,8 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..classes import WorkflowAction
 from ..forms.workflow_template_state_forms import (
-    WorkflowTemplateStateActionSelectionForm,
-    WorkflowTemplateStateActionDynamicForm, WorkflowTemplateStateForm
+    WorkflowTemplateStateActionDynamicForm,
+    WorkflowTemplateStateActionSelectionForm, WorkflowTemplateStateForm
 )
 from ..icons import (
     icon_workflow_template_state, icon_workflow_template_state_action,
@@ -25,13 +25,12 @@ from ..icons import (
     icon_workflow_template_state_action_edit,
     icon_workflow_template_state_action_list,
     icon_workflow_template_state_action_selection,
-    icon_workflow_template_state_create,
-    icon_workflow_template_state_delete, icon_workflow_template_state_edit,
-    icon_workflow_template_state_list
+    icon_workflow_template_state_create, icon_workflow_template_state_delete,
+    icon_workflow_template_state_edit, icon_workflow_template_state_list
 )
 from ..links import (
-    link_workflow_template_state_create,
-    link_workflow_template_state_action_selection
+    link_workflow_template_state_action_selection,
+    link_workflow_template_state_create
 )
 from ..models import Workflow, WorkflowState, WorkflowStateAction
 from ..permissions import (

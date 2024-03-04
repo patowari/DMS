@@ -4,7 +4,7 @@ from django.utils.timezone import now
 
 def code_duplicated_document_old_copy(apps, schema_editor):
     # Remove duplicated entries.
-    # DuplicatedDocument allowed duplicates, DuplicateBackendEntry does
+    # `DuplicatedDocument` allowed duplicates, `DuplicateBackendEntry` does
     # not.
     cursor_primary = schema_editor.connection.cursor()
     cursor_secondary = schema_editor.connection.cursor()
@@ -70,16 +70,24 @@ def code_duplicated_document_old_copy(apps, schema_editor):
     for row in cursor_primary.fetchall():
         if last_document_id != row[0]:
             cursor_tertiary.execute(
-                duplicated_document_insert_query, (row[0], now_text)
+                duplicated_document_insert_query, (
+                    row[0], now_text
+                )
             )
             cursor_tertiary.execute(
-                duplicated_document_select_query, (row[0],)
+                duplicated_document_select_query, (
+                    row[0],
+                )
             )
             new_instance_pk = cursor_tertiary.fetchone()[0]
 
             if document_list:
                 final_query = document_insert_query.format(
-                    ('(%s,%s),' * int(len(document_list) / 2))[:-1]
+                    (
+                        '(%s,%s),' * int(
+                            len(document_list) / 2
+                        )
+                    )[:-1]
                 )
                 cursor_secondary.execute(
                     final_query, document_list
@@ -88,11 +96,19 @@ def code_duplicated_document_old_copy(apps, schema_editor):
             document_list = []
             last_document_id = row[0]
         else:
-            document_list.extend((new_instance_pk, row[1]))
+            document_list.extend(
+                (
+                    new_instance_pk, row[1]
+                )
+            )
 
     if document_list:
         final_query = document_insert_query.format(
-            ('(%s,%s),' * int(len(document_list) / 2))[:-1]
+            (
+                '(%s,%s),' * int(
+                    len(document_list) / 2
+                )
+            )[:-1]
         )
         cursor_secondary.execute(
             final_query, document_list
@@ -168,7 +184,11 @@ def code_duplicated_document_old_copy_reverse(apps, schema_editor):
                 name='duplicates_duplicateddocument_documents'
             )
         )
-        cursor_secondary.execute(query, (row[0],))
+        cursor_secondary.execute(
+            query, (
+                row[0],
+            )
+        )
         results = cursor_secondary.fetchall()
 
         if results:
@@ -178,12 +198,16 @@ def code_duplicated_document_old_copy_reverse(apps, schema_editor):
                 ) VALUES {};
             '''
             insert_query_final = insert_query.format(
-                ','.join(['(%s,%s)'] * len(results))
+                ','.join(
+                    ['(%s,%s)'] * len(results)
+                )
             )
             data = []
             for result in results:
                 data.append(new_instance.pk)
-                data.append(result[0])
+                data.append(
+                    result[0]
+                )
 
             cursor_secondary.execute(
                 insert_query_final, data

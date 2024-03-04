@@ -282,7 +282,9 @@ def statistic_document_file_page_count_per_document_type():
     }
 
 
-namespace = StatisticNamespace(slug='documents', label=_(message='Documents'))
+namespace = StatisticNamespace(
+    slug='documents', label=_(message='Documents')
+)
 namespace.add_statistic(
     klass=StatisticTypeLineChart,
     slug='new-documents-per-month',

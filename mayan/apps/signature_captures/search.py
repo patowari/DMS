@@ -5,7 +5,6 @@ from mayan.apps.dynamic_search.search_models import SearchModel
 
 from .permissions import permission_signature_capture_view
 
-
 #  Document
 
 search_model_document.add_model_field(

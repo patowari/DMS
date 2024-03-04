@@ -42,19 +42,19 @@ msgstr "Uživatel se přihlásil"
 msgid "User logged out"
 msgstr "Uživatel se odhlásil"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "Zapamatuj si mě"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "Trvale"
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr "Pokud je vybrána, zakáže ukončení předstírání identity."
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "Uživatel"
 
@@ -66,7 +66,7 @@ msgstr "Odhlásit se"
 msgid "Change password"
 msgstr "Změnit heslo"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Zosobnit uživatele"
 
@@ -224,7 +224,7 @@ msgstr "Úspěšné obnovení hesla pro uživatele: %s."
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
 msgstr "Předstírat identitu uživatele: %s"

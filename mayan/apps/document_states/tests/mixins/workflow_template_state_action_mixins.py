@@ -1,7 +1,5 @@
 import json
 
-from django.db.models import Q
-
 from ...models.workflow_state_action_models import WorkflowStateAction
 
 from ..literals import (
@@ -20,6 +18,8 @@ from .workflow_template_state_mixins import WorkflowTemplateStateTestMixin
 class WorkflowTemplateStateActionTestMixin(
     WorkflowInstanceTestMixin, WorkflowTemplateStateTestMixin
 ):
+    _test_object_model = WorkflowStateAction
+    _test_object_name = '_test_workflow_template_state_action'
     _test_workflow_template_state_action_path = TEST_WORKFLOW_TEMPLATE_STATE_ACTION_GENERIC_DOTTED_PATH
     auto_add_test_workflow_template_test_document_type = True
     auto_create_test_workflow_template = True
@@ -92,9 +92,7 @@ class WorkflowTemplateStateActionAPIViewTestMixin(
     WorkflowTemplateStateActionTestMixin
 ):
     def _request_test_workflow_template_state_action_create_api_view(self):
-        pk_list = list(
-            WorkflowStateAction.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         total_test_workflow_template_state_actions = len(
             self._test_workflow_template_state_actions
@@ -117,12 +115,7 @@ class WorkflowTemplateStateActionAPIViewTestMixin(
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_state_action = WorkflowStateAction.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowStateAction.DoesNotExist:
-            self._test_workflow_template_state_action = None
+        self._test_object_set()
 
         return response
 
@@ -229,9 +222,7 @@ class WorkflowTemplateStateActionViewTestMixin(
         if extra_data:
             data.update(extra_data)
 
-        pk_list = list(
-            WorkflowStateAction.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='document_states:workflow_template_state_action_create',
@@ -241,12 +232,7 @@ class WorkflowTemplateStateActionViewTestMixin(
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_state_action = WorkflowStateAction.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowStateAction.DoesNotExist:
-            self._test_workflow_template_state_action = None
+        self._test_object_set()
 
         return response
 

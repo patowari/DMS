@@ -32,7 +32,7 @@ msgstr "重复"
 msgid "Duplicate backend"
 msgstr "重製後台"
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "空后端"
 

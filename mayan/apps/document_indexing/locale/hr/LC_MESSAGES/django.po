@@ -60,7 +60,7 @@ msgstr ""
 msgid "Nodes"
 msgstr ""
 
-#: apps.py:211 models/index_instance_models.py:66
+#: apps.py:211 models/index_instance_models.py:64
 msgid "Documents"
 msgstr "Dokumenti"
 
@@ -137,7 +137,7 @@ msgstr "Izmijeni"
 
 #: links.py:97
 msgid "Triggers"
-msgstr ""
+msgstr "Okidači"
 
 #: links.py:117
 msgid "Tree template"
@@ -182,39 +182,39 @@ msgstr ""
 msgid "Full path"
 msgstr ""
 
-#: models/index_instance_models.py:30
+#: models/index_instance_models.py:28
 msgid "Index instance"
 msgstr ""
 
-#: models/index_instance_models.py:31
+#: models/index_instance_models.py:29
 msgid "Index instances"
 msgstr ""
 
-#: models/index_instance_models.py:59 models/index_template_models.py:176
+#: models/index_instance_models.py:57 models/index_template_models.py:176
 msgid "Index template node"
 msgstr ""
 
-#: models/index_instance_models.py:62 search.py:17
+#: models/index_instance_models.py:60 search.py:17
 msgid "Value"
-msgstr ""
+msgstr "Vrijednost"
 
-#: models/index_instance_models.py:72 models/index_instance_models.py:103
+#: models/index_instance_models.py:70 models/index_instance_models.py:101
 msgid "Index instance node"
 msgstr ""
 
-#: models/index_instance_models.py:73
+#: models/index_instance_models.py:71
 msgid "Indexes instances node"
 msgstr ""
 
-#: models/index_instance_models.py:96
+#: models/index_instance_models.py:94
 msgid "Document index node instance"
 msgstr ""
 
-#: models/index_instance_models.py:97
+#: models/index_instance_models.py:95
 msgid "Document indexes node instances"
 msgstr ""
 
-#: models/index_instance_models.py:104
+#: models/index_instance_models.py:102
 msgid "Index instance nodes"
 msgstr ""
 
@@ -352,87 +352,87 @@ msgstr "UUID dokumenta"
 msgid "Document checksum"
 msgstr ""
 
-#: serializers.py:18 serializers.py:58 serializers.py:124 serializers.py:185
-#: serializers.py:275
+#: serializers.py:20 serializers.py:60 serializers.py:126 serializers.py:187
+#: serializers.py:285
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:21 serializers.py:264
+#: serializers.py:23 serializers.py:274
 msgid "Nodes URL"
 msgstr ""
 
-#: serializers.py:46
+#: serializers.py:48
 msgid "Children URL"
 msgstr ""
 
-#: serializers.py:49
+#: serializers.py:51
 msgid "Documents URL"
 msgstr ""
 
-#: serializers.py:52 serializers.py:118 serializers.py:176
+#: serializers.py:54 serializers.py:120 serializers.py:178
 msgid "Index URL"
 msgstr ""
 
-#: serializers.py:55 serializers.py:121 serializers.py:182
+#: serializers.py:57 serializers.py:123 serializers.py:184
 msgid "Parent URL"
 msgstr ""
 
-#: serializers.py:115 serializers.py:173
+#: serializers.py:117 serializers.py:175
 msgid "Children"
 msgstr ""
 
-#: serializers.py:179
+#: serializers.py:181
 msgid "Parent"
 msgstr ""
 
-#: serializers.py:237
+#: serializers.py:247
 msgid ""
 "URL of the API endpoint showing the list document types associated with this "
 "index template."
 msgstr ""
 
-#: serializers.py:239
+#: serializers.py:249
 msgid "Document types URL"
 msgstr "URL za vrstu dokumenta"
 
-#: serializers.py:245
+#: serializers.py:255
 msgid "URL of the API endpoint to add document types to this index template."
 msgstr ""
 
-#: serializers.py:247
+#: serializers.py:257
 msgid "Document types add URL"
 msgstr "URL za dodavanje vrste dokumenta"
 
-#: serializers.py:253
+#: serializers.py:263
 msgid ""
 "URL of the API endpoint to remove document types from this index template."
 msgstr ""
 
-#: serializers.py:255
+#: serializers.py:265
 msgid "Document types remove URL"
 msgstr "URL za uklanjanje vrste dokumenta"
 
-#: serializers.py:260
+#: serializers.py:270
 msgid "Index template root node ID"
 msgstr ""
 
-#: serializers.py:267
+#: serializers.py:277
 msgid "Rebuild URL"
 msgstr ""
 
-#: serializers.py:271
+#: serializers.py:281
 msgid "Reset URL"
 msgstr ""
 
-#: serializers.py:317
+#: serializers.py:327
 msgid "Primary key of the document type to add to the index template."
 msgstr ""
 
-#: serializers.py:318 serializers.py:327
+#: serializers.py:328 serializers.py:337
 msgid "Document type ID"
 msgstr "ID vrste dokumenta"
 
-#: serializers.py:326
+#: serializers.py:336
 msgid "Primary key of the document type to remove from the index template."
 msgstr ""
 
@@ -502,57 +502,57 @@ msgstr ""
 msgid "There are no index templates."
 msgstr ""
 
-#: views/index_template_views.py:125
+#: views/index_template_views.py:127
 #, python-format
 msgid "Delete the index: %s?"
 msgstr ""
 
-#: views/index_template_views.py:137
+#: views/index_template_views.py:139
 msgid "Available document types"
 msgstr "Dostupne vrste dokumenata"
 
-#: views/index_template_views.py:138
+#: views/index_template_views.py:140
 msgid "Document types linked"
 msgstr ""
 
-#: views/index_template_views.py:149
+#: views/index_template_views.py:151
 msgid ""
 "Only the documents of the types selected will be shown in the index when "
 "built. Only the events of the documents of the types select will trigger "
 "updates in the index."
 msgstr ""
 
-#: views/index_template_views.py:154
+#: views/index_template_views.py:156
 #, python-format
 msgid "Document types linked to index: %s"
 msgstr ""
 
-#: views/index_template_views.py:172
+#: views/index_template_views.py:174
 #, python-format
 msgid "Edit index: %s"
 msgstr ""
 
-#: views/index_template_views.py:216
+#: views/index_template_views.py:218
 #, python-format
 msgid "Error updating index template event trigger; %s"
 msgstr ""
 
-#: views/index_template_views.py:225
+#: views/index_template_views.py:227
 msgid "Index template event triggers updated successfully."
 msgstr ""
 
-#: views/index_template_views.py:235
+#: views/index_template_views.py:237
 msgid ""
 "Triggers are document events that cause instances of this index template to "
 "be updated."
 msgstr ""
 
-#: views/index_template_views.py:240
+#: views/index_template_views.py:242
 #, python-format
 msgid "Index template event triggers for: %s"
 msgstr ""
 
-#: views/index_template_views.py:285
+#: views/index_template_views.py:287
 #, python-format
 msgid "Tree template nodes for index: %s"
 msgstr ""

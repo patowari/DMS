@@ -42,7 +42,9 @@ def common_get_project_title():
 
 @register.filter
 def common_get_type(value):
-    return force_str(s=type(value))
+    return force_str(
+        s=type(value)
+    )
 
 
 @register.filter

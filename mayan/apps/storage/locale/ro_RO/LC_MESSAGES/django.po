@@ -212,7 +212,7 @@ msgstr ""
 "Imposibil de inițializat stocarea fișierului încărcat partajat. Verificați "
 "setările {} și {} pentru erori de formatare."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -222,10 +222,10 @@ msgstr ""
 "ar fi un export. Fișierele de descărcare sunt păstrate pe o perioadă de timp "
 "și apoi eliminate automat."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Nu există fișiere de descărcat."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Descărcări"

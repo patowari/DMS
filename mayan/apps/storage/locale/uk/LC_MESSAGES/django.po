@@ -212,7 +212,7 @@ msgstr ""
 "Не вдалося ініціалізувати спільне сховище завантажених файлів. Перевірте "
 "налаштування {} і {} на наявність помилок форматування."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -222,10 +222,10 @@ msgstr ""
 "експорту. Завантажені файли зберігаються протягом певного періоду часу, а "
 "потім автоматично видаляються."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Немає файлів для завантаження."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Завантаження"

@@ -6,12 +6,11 @@ from ..events import (
     event_document_trashed, event_trashed_document_deleted,
     event_trashed_document_restored
 )
-
 from ..models.document_models import Document
 from ..permissions import (
-    permission_trashed_document_delete, permission_trashed_document_restore,
     permission_document_trash, permission_document_version_view,
-    permission_document_view
+    permission_document_view, permission_trashed_document_delete,
+    permission_trashed_document_restore
 )
 
 from .mixins.document_mixins import DocumentTestMixin
@@ -217,7 +216,9 @@ class TrashedDocumentAPIViewTestCase(
 
         response = self._request_test_trashed_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -249,7 +250,9 @@ class TrashedDocumentAPIViewTestCase(
 
         response = self._request_test_trashed_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

@@ -599,7 +599,7 @@ class Setting:
     @property
     def pk(self):
         """
-        Compatilibty property for views that expect model instances.
+        Compatibility property for views that expect model instances.
         """
         return self.global_name
 

@@ -19,9 +19,7 @@ from .events import (
 from .handlers import (
     handler_unverify_key_signatures, handler_verify_key_signatures
 )
-from .hooks import (
-    hook_create_embedded_signature, hook_decrypt_document_file
-)
+from .hooks import hook_create_embedded_signature, hook_decrypt_document_file
 from .links import (
     link_document_file_all_signature_refresh,
     link_document_file_all_signature_verify,
@@ -31,7 +29,7 @@ from .links import (
     link_document_file_signature_detail,
     link_document_file_signature_detached_download,
     link_document_file_signature_list,
-    link_document_file_signature_detached_upload,
+    link_document_file_signature_detached_upload
 )
 from .permissions import (
     permission_document_file_sign_detached,
@@ -39,7 +37,7 @@ from .permissions import (
     permission_document_file_signature_delete,
     permission_document_file_signature_download,
     permission_document_file_signature_upload,
-    permission_document_file_signature_view,
+    permission_document_file_signature_view
 )
 
 logger = logging.getLogger(name=__name__)

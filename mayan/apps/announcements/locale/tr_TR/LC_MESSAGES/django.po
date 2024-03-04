@@ -28,7 +28,7 @@ msgstr ""
 msgid "Announcements"
 msgstr "Duyurular"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "Yok"
 
@@ -52,43 +52,43 @@ msgstr "Sil"
 msgid "Edit"
 msgstr "Düzenle"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Duyurunun kısa açıklaması."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Etiket"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Görüntülenecek metin."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Metin"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Etkin"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Bu duyurunun gösterilemeye başlayacağı tarih saat."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Başlangıç tarihi saat"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Bu duyurunun gösterilemesinin bitirileceği tarih ve saat."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Bitiş tarihi saat"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Duyuru"
 

@@ -37,11 +37,11 @@ msgstr "Client Transifex"
 msgid "User locale profile edited"
 msgstr "Profil de paramètres régionaux de l'utilisateur modifié"
 
-#: links.py:15
+#: links.py:14
 msgid "Locale profile"
 msgstr "Paramètres régionaux du profil"
 
-#: links.py:20
+#: links.py:19
 msgid "Edit locale profile"
 msgstr "Modifier les paramètres régionaux du profil"
 

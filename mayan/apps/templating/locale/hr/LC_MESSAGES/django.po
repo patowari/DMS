@@ -58,7 +58,7 @@ msgstr ""
 msgid "Template"
 msgstr "Predložak"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr ""
 

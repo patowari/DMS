@@ -37,7 +37,7 @@ msgstr ""
 "المادة التي تم منح حق الوصول إليها. عند ترتيب المواد، يستخدم النوع فقط و ليس "
 "الاسم الفعلي للمادة."
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "عنصر"
 
@@ -61,19 +61,19 @@ msgstr "تعديل الصلاحيات"
 msgid "Role"
 msgstr "الدور"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "إنشاء صلاحيات جديدة"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "الصلاحيات"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "قوائم حق الوصول ACL شاملة"
 
@@ -95,7 +95,7 @@ msgstr "عدد الأذونات"
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "معرف الكائن"
 
@@ -179,7 +179,7 @@ msgstr "حذف قائمة التحكم في الوصول: %s"
 msgid "There are no ACLs for this object"
 msgstr "لا توجد قوائم تحكم في الوصول لهذا الكائن"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:275
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -200,12 +200,12 @@ msgstr "الصلاحيات الممنوحة"
 msgid "Available permissions"
 msgstr "الصلاحيات المتاحة"
 
-#: views.py:219
+#: views.py:222
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "صلاحية الدور \"%(role)s\" لـ \"%(object)s\"."
 
-#: views.py:228
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -216,11 +216,11 @@ msgstr ""
 "يمكن إزالتها من هذا العرض. يجب إزالة الصلاحيات الموروثة من قائمة التحكم في "
 "الوصول للكائن الأصلي أو من دورها عبر قائمة الإعداد."
 
-#: views.py:269
+#: views.py:272
 msgid "There are no ACLs"
 msgstr "لا توجد قوائم بحق الوصول ACL"
 
-#: views.py:278
+#: views.py:281
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 
@@ -236,35 +236,35 @@ msgstr "نوع الكائن الذي سيتم تعديل الوصول إليه."
 msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "المعرف الرقمي للكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "أدوار"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "الأدوار التي سيتم تعديل الوصول إليها."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "صلاحيات منح / إبطال إلى / من دور الكائن المحدد أعلاه."
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr "إتاحة الوصول إلى الكائن"
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr "إبطال الوصول إلى الكائن"
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr "منح حق الوصول إلى الوثيقة"
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr "إبطال صلاحية الوصول إلى الوثيقة"

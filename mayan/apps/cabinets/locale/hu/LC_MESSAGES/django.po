@@ -102,15 +102,15 @@ msgstr "Az irattartó elérési útja, beleértve az összes őst."
 msgid "Full path"
 msgstr "Teljes elérési út"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr "Fölérendelt"
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "Az irattartó azonosítására szolgáló rövid szöveg."
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "Cimke"
 
@@ -118,20 +118,20 @@ msgstr "Cimke"
 msgid "Cabinet"
 msgstr "Irattartó"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "Fölérendelt és címke"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s a %(field_labels)s-al már létezik."
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "Dokumentum irattartó"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "Dokumentum irattartók"
 

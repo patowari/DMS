@@ -210,7 +210,7 @@ msgstr ""
 "Paylaşılan yüklenen dosya deposu başlatılamıyor. Biçimlendirme hataları için "
 "{} ve {} ayarlarını kontrol edin."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -220,10 +220,10 @@ msgstr ""
 "oluşturulur. İndirilen dosyalar belirli bir süre boyunca tutulur ve ardından "
 "otomatik olarak kaldırılır."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "İndirilecek dosya yok."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "İndirilenler"

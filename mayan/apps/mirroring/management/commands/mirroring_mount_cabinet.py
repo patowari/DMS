@@ -21,7 +21,9 @@ class Command(MountCommandMixin, management.BaseCommand):
         )
 
     def factory_func_document_container_node(self, *args, **options):
-        levels = options[self.node_identifier_argument].split(options['delimiter'])
+        levels = options[self.node_identifier_argument].split(
+            options['delimiter']
+        )
 
         cabinet = None
         for level in levels:
@@ -29,7 +31,9 @@ class Command(MountCommandMixin, management.BaseCommand):
                 if cabinet is None:
                     cabinet = Cabinet.objects.get(label=level)
                 else:
-                    cabinet = Cabinet.objects.get(label=level, parent=cabinet)
+                    cabinet = Cabinet.objects.get(
+                        label=level, parent=cabinet
+                    )
             except Cabinet.DoesNotExist as exception:
                 self.stderr.write(
                     msg='Cabinet level "{}" not found; {}'.format(

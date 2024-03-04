@@ -25,20 +25,30 @@ class InitScanner:
 
         for child in folder.iterdir():
             if child.is_dir():
-                self.check_folder(folder_string=str(child))
+                self.check_folder(
+                    folder_string=str(child)
+                )
 
         if self.regex_pattern and self.regex_pattern.findall(string=str(folder)):
             return
 
-        python_files = list(folder.glob(pattern='*.py'))
+        python_files = list(
+            folder.glob(pattern='*.py')
+        )
         names = [python_file.name for python_file in python_files]
         if len(names) > 0 and '__init__.py' not in names:
-            print('folder: {}; {}'.format(folder, ', '.join(names)))
+            print(
+                'folder: {}; {}'.format(
+                    folder, ', '.join(names)
+                )
+            )
             self.hits += 1
 
 
 if __name__ == '__main__':
-    sys.path.insert(1, os.path.abspath('.'))
+    sys.path.insert(
+        1, os.path.abspath('.')
+    )
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mayan.settings')
 
     django.setup()

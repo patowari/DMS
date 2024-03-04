@@ -24,7 +24,7 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:9 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:12 views/source_views.py:285
 msgid "Sources"
 msgstr "Izvori"
 
@@ -55,7 +55,7 @@ msgstr ""
 
 #: apps.py:157
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: events.py:10
 msgid "Source created"
@@ -144,7 +144,7 @@ msgstr ""
 
 #: models.py:33
 msgid "Value"
-msgstr ""
+msgstr "Vrijednost"
 
 #: models.py:39 models.py:40
 msgid "Document file source metadata"
@@ -216,7 +216,7 @@ msgstr "Ime"
 
 #: serializers.py:25
 msgid "Required"
-msgstr ""
+msgstr "Obavezno"
 
 #: serializers.py:37 serializers.py:52
 msgid "Arguments"
@@ -262,15 +262,15 @@ msgstr ""
 msgid "Actions URL"
 msgstr ""
 
-#: settings.py:20
+#: settings.py:19
 msgid "Arguments to use when creating source backends."
 msgstr ""
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr ""
 

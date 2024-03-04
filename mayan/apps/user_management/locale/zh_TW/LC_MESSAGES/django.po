@@ -39,7 +39,7 @@ msgstr "组"
 msgid "Groups"
 msgstr "用户组"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "名称"
 

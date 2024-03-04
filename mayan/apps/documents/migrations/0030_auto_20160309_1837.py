@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0029_auto_20160122_0755'),
+        ('documents', '0029_auto_20160122_0755')
     ]
 
     operations = [
@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
                 default=30, help_text='Amount of time after which documents '
                 'of this type in the trash will be deleted.', null=True,
                 verbose_name='Delete time period', blank=True
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documenttype',
@@ -25,6 +25,6 @@ class Migration(migrations.Migration):
                     ('minutes', 'Minutes')
                 ], max_length=8, blank=True, null=True,
                 verbose_name='Delete time unit'
-            ),
-        ),
+            )
+        )
     ]

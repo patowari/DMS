@@ -5,10 +5,9 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import OperationalError
 
-from mayan.celery import app
-
 from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.exceptions import LockError
+from mayan.celery import app
 
 from .literals import DEFAULT_SOURCES_LOCK_EXPIRE
 

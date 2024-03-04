@@ -11,8 +11,9 @@ from .classes import Setting, SettingCluster, SettingNamespace
 from .column_widgets import WidgetSettingValue
 from .links import (
     link_setting_cluster_configuration_save,
-    link_setting_cluster_namespace_list, link_setting_namespace_detail,
-    link_setting_namespace_root_list, link_setting_edit, link_setting_revert
+    link_setting_cluster_namespace_list, link_setting_edit,
+    link_setting_namespace_detail, link_setting_namespace_root_list,
+    link_setting_revert
 )
 from .settings import setting_cluster
 from .widgets import setting_widget

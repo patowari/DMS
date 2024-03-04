@@ -176,7 +176,7 @@ class SourceActionView(
 
 class SourceBackendSelectionView(FormView):
     extra_context = {
-        'title': _(message='New source backend selection'),
+        'title': _(message='New source backend selection')
     }
     form_class = SourceBackendSelectionForm
     view_icon = icon_source_backend_selection

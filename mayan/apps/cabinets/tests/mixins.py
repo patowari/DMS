@@ -230,7 +230,7 @@ class CabinetViewTestMixin(CabinetTestMixin):
             viewname='cabinets:document_cabinet_remove', kwargs={
                 'document_id': self._test_document.pk
             }, data={
-                'cabinets': (self._test_cabinet.pk,),
+                'cabinets': (self._test_cabinet.pk,)
             }
         )
 

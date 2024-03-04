@@ -92,7 +92,7 @@ msgstr ""
 msgid "Edit theme settings"
 msgstr ""
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr "Esborrar"
 msgid "Edit"
 msgstr ""
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr ""
 
@@ -466,31 +466,31 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr ""
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr ""
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr ""
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

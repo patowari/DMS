@@ -44,7 +44,7 @@ msgstr "標籤"
 msgid "Relationship"
 msgstr "关系"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -53,7 +53,7 @@ msgstr ""
 "选择要删除的条目。按住Control键可以选择多个条目。选择完成后，单击下面的按钮或"
 "双击列表以激活操作。"
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -62,42 +62,42 @@ msgstr ""
 "选择要添加的条目。按住Control键可以选择多个条目。选择完成后，单击下面的按钮或"
 "双击列表以激活操作。"
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "全部添加"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "新增"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "全部移除"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "移除"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "更新关系时出错; %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "关系已成功更新"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "复制数据错误：%(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s未创建，错误：%(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s创建成功。"

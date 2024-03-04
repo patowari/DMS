@@ -3,7 +3,7 @@ from django.urls import reverse
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..links import (
-    link_acl_delete, link_acl_list, link_acl_create, link_acl_permissions
+    link_acl_create, link_acl_delete, link_acl_list, link_acl_permissions
 )
 from ..permissions import permission_acl_edit, permission_acl_view
 

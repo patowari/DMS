@@ -169,63 +169,63 @@ msgstr ""
 "Шлях до файлу програми pdftotext Poppler, яка використовується для отримання "
 "тексту з файлів PDF."
 
-#: views.py:37
+#: views.py:35
 #, python-format
 msgid "Error deleting document version content \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Помилка видалення вмісту версії документа \"%(instance)s\" %(exception)s"
 
-#: views.py:44
+#: views.py:42
 #, python-format
 msgid "Content of %(count)d document versions deleted successfully."
 msgstr "Вміст %(count)d версій документа успішно видалено."
 
-#: views.py:47
+#: views.py:45
 #, python-format
 msgid "Content of \"%(object)s\" deleted successfully."
 msgstr "Вміст \"%(object)s\" успішно видалено."
 
-#: views.py:50
+#: views.py:48
 #, python-format
 msgid "Content of %(count)d document version deleted successfully."
 msgstr "Вміст %(count)d версії документа успішно видалено."
 
-#: views.py:52
+#: views.py:50
 #, python-format
 msgid "Delete the content of: %(object)s."
 msgstr "Видалити вміст: %(object)s."
 
-#: views.py:54
+#: views.py:52
 #, python-format
 msgid "Delete the content of the %(count)d selected document version."
 msgstr "Видалити вміст %(count)d вибраної версії документа."
 
-#: views.py:57
+#: views.py:55
 #, python-format
 msgid "Delete the content of the %(count)d selected document versions."
 msgstr "Видалити вміст %(count)d вибраних версій документів."
 
-#: views.py:98
+#: views.py:96
 #, python-format
 msgid "Content for document file: %s"
 msgstr "Вміст для файлу документа: %s"
 
-#: views.py:120
+#: views.py:118
 #, python-format
 msgid "Content for document file page: %s"
 msgstr "Зміст для сторінки документа: %s"
 
-#: views.py:135
+#: views.py:133
 #, python-format
 msgid "%(count)d document file added to the parsing queue"
 msgstr "%(count)d документів додано до черги на аналіз"
 
-#: views.py:138
+#: views.py:136
 #, python-format
 msgid "%(count)d documents files added to the parsing queue"
 msgstr "%(count)d документів файлів додано до черги аналізу"
 
-#: views.py:147
+#: views.py:145
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
@@ -234,21 +234,21 @@ msgstr[1] "Подати %(count)d файлів документів до чер�
 msgstr[2] "Подати %(count)d файлів документів до черги на аналіз?"
 msgstr[3] "Подати %(count)d файлів документів до черги на аналіз?"
 
-#: views.py:160
+#: views.py:158
 #, python-format
 msgid "Submit document file \"%s\" to the parsing queue"
 msgstr "Надіслати файл документа \"%s\" до черги аналізу"
 
-#: views.py:190
+#: views.py:188
 #, python-format
 msgid "Edit parsing settings for document type: %s."
 msgstr "Редагувати налаштування аналізу для типу документа: %s."
 
-#: views.py:200
+#: views.py:198
 msgid "Submit all documents of a type for parsing"
 msgstr "Подати всі документи певного типу для аналізу"
 
-#: views.py:222
+#: views.py:220
 #, python-format
 msgid "%(count)d documents added to the parsing queue."
 msgstr "%(count)d документів додано до черги аналізу."

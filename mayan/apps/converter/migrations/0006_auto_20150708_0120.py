@@ -1,11 +1,11 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 import mayan.apps.converter.models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('converter', '0005_auto_20150708_0118'),
+        ('converter', '0005_auto_20150708_0118')
     ]
 
     operations = [
@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
                     mayan.apps.converter.models, 'validators', []
                 )
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

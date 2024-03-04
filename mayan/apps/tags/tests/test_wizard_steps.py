@@ -11,7 +11,7 @@ from mayan.apps.sources.tests.mixins.wizard_mixins import SourceDocumentUploadWi
 from ..events import event_tag_attached
 from ..permissions import permission_tag_attach
 
-from .mixins import TagTestMixin, TaggedDocumentUploadWizardStepViewTestMixin
+from .mixins import TaggedDocumentUploadWizardStepViewTestMixin, TagTestMixin
 
 
 class TaggedDocumentUploadViewTestCase(

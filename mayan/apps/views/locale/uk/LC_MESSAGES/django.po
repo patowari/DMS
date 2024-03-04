@@ -45,7 +45,7 @@ msgstr "Мітка"
 msgid "Relationship"
 msgstr "Зв'язки"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -55,7 +55,7 @@ msgstr ""
 "вибрати кілька записів. Після завершення вибору натисніть кнопку нижче або "
 "двічі клацніть по списку, щоб активувати дію."
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -65,42 +65,42 @@ msgstr ""
 "кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
 "клацніть по списку, щоб активувати дію."
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "Додати все"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "Додати"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "Видалити все"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "Видалити"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Помилка оновлення відношення; %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "Відносини успішно оновлені"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Помилка дублювання даних: %(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s не створено, помилка: %(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s успішно створено."

@@ -22,7 +22,9 @@ class DuplicatedDocumentAPIViewTestCase(
 
         response = self._request_test_duplicated_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -36,7 +38,9 @@ class DuplicatedDocumentAPIViewTestCase(
 
         response = self._request_test_duplicated_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'],
             self._test_document.pk
@@ -72,7 +76,9 @@ class DocumentDuplicatesAPIViewTestCase(
 
         response = self._request_test_document_duplicates_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -102,7 +108,9 @@ class DocumentDuplicatesAPIViewTestCase(
 
         response = self._request_test_document_duplicates_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'],
             self._test_documents[1].pk
@@ -143,7 +151,9 @@ class DocumentDuplicatesAPIViewTestCase(
 
         response = self._request_test_document_duplicates_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

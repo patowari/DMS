@@ -5,7 +5,7 @@ from ..compatibility import RGBColorField
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('tags', '0004_auto_20150717_2336'),
+        ('tags', '0004_auto_20150717_2336')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
             model_name='tag',
             name='color',
             field=RGBColorField(verbose_name='Color'),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

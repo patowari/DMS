@@ -34,7 +34,7 @@ msgstr "Comanda fișier nu este instalată sau nu a fost găsită."
 msgid "mimetype not installed or not found."
 msgstr "mimetype nu este instalat sau nu a fost găsit."
 
-#: dependencies.py:10
+#: dependencies.py:11
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
@@ -43,7 +43,7 @@ msgstr ""
 "Încearcă să implementeze specificația freedesktop pentru o bază de date MIME "
 "partajată."
 
-#: dependencies.py:17
+#: dependencies.py:18
 msgid "determine file type using content tests"
 msgstr "determinați tipul fișierului folosind teste de conținut"
 

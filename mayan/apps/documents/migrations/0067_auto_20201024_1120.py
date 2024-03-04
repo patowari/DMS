@@ -1,4 +1,4 @@
-from django.db import models, migrations, reset_queries
+from django.db import migrations, models, reset_queries
 from django.db.models import Max
 from django.db.models.functions import Concat
 
@@ -59,24 +59,24 @@ def code_set_active_versions(apps, schema_editor):
     cursor_document_version = schema_editor.connection.cursor()
 
     # Select the latest version for each document by date.
-    document_queryset = Document.objects.only('id').annotate(
+    queryset_documents = Document.objects.only('id').annotate(
         latest_version_timestamp=Max('versions__timestamp')
     )
 
     # Exclude documents with no latest version.
-    document_queryset = document_queryset.exclude(
+    queryset_documents = queryset_documents.exclude(
         latest_version_timestamp=None
     )
 
     # Create a new unique version identifier.
-    document_queryset = document_queryset.annotate(
+    queryset_documents = queryset_documents.annotate(
         version_identifier=Concat(
             'id', 'latest_version_timestamp', output_field=models.CharField()
         )
     )
 
     # Get all document versions and add a new unique version identifier.
-    document_version_queryset = DocumentVersion.objects.only('id').annotate(
+    queryset_document_versions = DocumentVersion.objects.only('id').annotate(
         version_identifier=Concat(
             'document_id', 'timestamp', output_field=models.CharField()
         )
@@ -87,16 +87,16 @@ def code_set_active_versions(apps, schema_editor):
 
     # Workaround MySQL: (1093, "You can't specify target table
     # 'documents_documentversion' for update in FROM clause")
-    document_version_queryset = document_version_queryset.filter(
-        version_identifier__in=document_queryset.values('version_identifier')
+    queryset_document_versions = queryset_document_versions.filter(
+        version_identifier__in=queryset_documents.values('version_identifier')
     ).values('id')
 
-    compiler = document_version_queryset.query.get_compiler(
+    compiler = queryset_document_versions.query.get_compiler(
         connection=schema_editor.connection
     )
 
     cursor_main.execute(
-        *document_version_queryset.query.as_sql(
+        *queryset_document_versions.query.as_sql(
             compiler=compiler, connection=schema_editor.connection
         )
     )
@@ -120,10 +120,14 @@ def code_set_active_versions(apps, schema_editor):
             break
 
         for row in rows:
-            document_version_values += (row[0],)
+            document_version_values += (
+                row[0],
+            )
 
         query_argument_placeholders = ('%s',) * len(rows)
-        values_query = '({})'.format(', '.join(query_argument_placeholders))
+        values_query = '({})'.format(
+            ', '.join(query_argument_placeholders)
+        )
         cursor_document_version.execute(
             query_document_version_active_update.format(values_query),
             document_version_values

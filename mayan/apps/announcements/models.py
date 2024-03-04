@@ -16,14 +16,17 @@ class Announcement(ExtraDataModelMixin, models.Model):
     login screen. Announcements can have an activation and deactivation date.
     """
     label = models.CharField(
-        max_length=32, help_text=_(message='Short description of this announcement.'),
-        verbose_name=_(message='Label')
+        max_length=32, help_text=_(
+            message='Short description of this announcement.'
+        ), verbose_name=_(message='Label')
     )
     text = models.TextField(
         help_text=_(message='The actual text to be displayed.'),
         verbose_name=_(message='Text')
     )
-    enabled = models.BooleanField(default=True, verbose_name=_(message='Enabled'))
+    enabled = models.BooleanField(
+        default=True, verbose_name=_(message='Enabled')
+    )
     start_datetime = models.DateTimeField(
         blank=True, help_text=_(
             'Date and time after which this announcement will be displayed.'

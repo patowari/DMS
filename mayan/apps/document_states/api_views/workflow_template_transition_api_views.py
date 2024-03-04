@@ -4,15 +4,15 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 from ..serializers.workflow_template_transition_serializers import (
-    WorkflowTemplateTransitionSerializer, WorkflowTransitionFieldSerializer,
-    WorkflowTemplateTransitionTriggerSerializer
+    WorkflowTemplateTransitionSerializer,
+    WorkflowTemplateTransitionTriggerSerializer,
+    WorkflowTransitionFieldSerializer
 )
 
 from .api_view_mixins import (
     ParentObjectWorkflowTemplateAPIViewMixin,
     ParentObjectWorkflowTemplateTransitionAPIViewMixin
 )
-
 
 # Workflow transition views
 

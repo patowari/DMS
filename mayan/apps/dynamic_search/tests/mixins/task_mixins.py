@@ -1,7 +1,9 @@
-from ...tasks import task_reindex_backend, task_index_instances
+from ...tasks import task_index_instances, task_reindex_backend
+
+from .base import SearchTestMixin
 
 
-class SearchTaskTestMixin:
+class SearchTaskTestMixin(SearchTestMixin):
     def _execute_task_reindex_backend(self):
         task_reindex_backend.apply_async().get()
 

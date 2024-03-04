@@ -1,6 +1,6 @@
 from mayan.apps.documents.permissions import (
-    permission_document_view, permission_document_file_view,
-    permission_document_version_view
+    permission_document_file_view, permission_document_version_view,
+    permission_document_view
 )
 from mayan.apps.documents.search import (
     search_model_document, search_model_document_file,

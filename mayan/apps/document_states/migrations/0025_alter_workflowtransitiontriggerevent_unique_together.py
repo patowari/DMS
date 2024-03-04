@@ -13,6 +13,8 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterUniqueTogether(
             name='workflowtransitiontriggerevent',
-            unique_together={('transition', 'event_type')},
+            unique_together={
+                ('transition', 'event_type')
+            }
         )
     ]

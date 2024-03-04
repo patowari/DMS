@@ -25,7 +25,6 @@ class DocumentUploadViewQuotaHooksTestCase(
         # as the test case user.
         self._upload_test_document(user=self._test_case_user)
         self.test_case_silenced_logger_new_level = logging.CRITICAL + 10
-        self._silence_logger(name='mayan.apps.navigation.class_mixins')
         self._silence_logger(
             name='mayan.apps.documents.models.document_model_mixins'
         )
@@ -33,10 +32,11 @@ class DocumentUploadViewQuotaHooksTestCase(
             name='mayan.apps.documents.models.document_type_model_mixins'
         )
         self._silence_logger(name='mayan.apps.documents.tasks')
-        self._silence_logger(name='mayan.apps.sources.views')
         self._silence_logger(
             name='mayan.apps.logging.middleware.error_logging'
         )
+        self._silence_logger(name='mayan.apps.navigation.class_mixins')
+        self._silence_logger(name='mayan.apps.sources.views')
 
     def tearDown(self):
         QuotaBackend.connect_signals()
@@ -74,8 +74,12 @@ class DocumentUploadViewQuotaHooksTestCase(
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._request_test_source_document_upload_post_view()
 
-        self.assertEqual(DocumentFile.objects.count(), document_file_count)
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            DocumentFile.objects.count(), document_file_count
+        )
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
     def test_document_size_quota_and_document_upload_with_access(self):
         self._test_quota_backend = DocumentSizeQuota
@@ -109,8 +113,12 @@ class DocumentUploadViewQuotaHooksTestCase(
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._request_test_source_document_upload_post_view()
 
-        self.assertEqual(DocumentFile.objects.count(), document_file_count)
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            DocumentFile.objects.count(), document_file_count
+        )
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
 
 class DocumentFileUploadViewQuotaHookTestCase(
@@ -124,7 +132,6 @@ class DocumentFileUploadViewQuotaHookTestCase(
         # as the test case user.
         self._upload_test_document(user=self._test_case_user)
         self.test_case_silenced_logger_new_level = logging.CRITICAL + 10
-        self._silence_logger(name='mayan.apps.navigation.class_mixins')
         self._silence_logger(
             name='mayan.apps.documents.models.document_model_mixins'
         )
@@ -132,10 +139,11 @@ class DocumentFileUploadViewQuotaHookTestCase(
             name='mayan.apps.documents.models.document_type_model_mixins'
         )
         self._silence_logger(name='mayan.apps.documents.tasks')
-        self._silence_logger(name='mayan.apps.sources.views')
         self._silence_logger(
             name='mayan.apps.logging.middleware.error_logging'
         )
+        self._silence_logger(name='mayan.apps.navigation.class_mixins')
+        self._silence_logger(name='mayan.apps.sources.views')
 
     def tearDown(self):
         QuotaBackend.connect_signals()

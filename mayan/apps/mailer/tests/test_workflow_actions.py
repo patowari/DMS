@@ -6,7 +6,6 @@ from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
 from mayan.apps.document_states.permissions import (
     permission_workflow_template_edit
 )
-
 from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
@@ -166,7 +165,15 @@ class DocumentEmailActionTemplateTestCase(
             mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
         )
         self.assertEqual(
-            mail.outbox[0].to, [self._test_document.metadata.first().value]
+            len(mail.outbox), 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
+        self.assertEqual(
+            mail.outbox[0].to, [
+                self._test_document.metadata.first().value
+            ]
         )
 
     def test_email_action_subject_template(self):
@@ -222,7 +229,7 @@ class DocumentEmailActionTemplateTestCase(
                 'subject': TEST_EMAIL_SUBJECT,
                 'body': '{{{{ workflow_instance.document.metadata_value_of.{} }}}}'.format(
                     self._test_metadata_type.name
-                ),
+                )
             }
         )
         self.assertEqual(
@@ -234,7 +241,9 @@ class DocumentEmailActionTemplateTestCase(
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
-        self.assertEqual(mail.outbox[0].body, TEST_EMAIL_BODY)
+        self.assertEqual(
+            mail.outbox[0].body, TEST_EMAIL_BODY
+        )
 
     def test_email_action_attachment(self):
         # This action requires a document with an active version.

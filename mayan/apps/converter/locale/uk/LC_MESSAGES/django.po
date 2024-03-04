@@ -35,13 +35,13 @@ msgstr "Конвертер"
 msgid "Transformation"
 msgstr "Трансформація"
 
-#: backends/python.py:106
+#: backends/python.py:105
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr ""
 "Виникла помилка при визначенні кількості сторінок за допомогою Pillow; %s"
 
-#: backends/python.py:194 backends/python.py:211
+#: backends/python.py:193 backends/python.py:210
 #, python-format
 msgid "Exception determining PDF page count; %s"
 msgstr "Виникла помилка при визначенні кількості сторінок PDF; %s"
@@ -140,7 +140,7 @@ msgstr "Перетворення"
 msgid "Select new transformation"
 msgstr "Виберіть нове перетворення"
 
-#: model_mixins.py:124 models.py:167
+#: model_mixins.py:124 models.py:169
 msgid "Arguments"
 msgstr "Аргументи"
 
@@ -192,7 +192,7 @@ msgstr "Тип вмісту"
 msgid "Object ID"
 msgstr "ID об'єкта"
 
-#: models.py:120 models.py:170
+#: models.py:120 models.py:172
 msgid "Enabled"
 msgstr "Активовано"
 
@@ -220,15 +220,15 @@ msgstr ""
 "Введіть аргументи для перетворення у вигляді словника YAML. тобто: "
 "{\"degrees\": 180}"
 
-#: models.py:178
+#: models.py:180
 msgid "Layer transformation"
 msgstr "Шарове перетворення"
 
-#: models.py:179
+#: models.py:181
 msgid "Layer transformations"
 msgstr "Шарові перетворення"
 
-#: models.py:187
+#: models.py:189
 msgid "Unknown transformation class"
 msgstr "Невідомий клас перетворення"
 

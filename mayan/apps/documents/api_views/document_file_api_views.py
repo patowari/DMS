@@ -104,8 +104,8 @@ class APIDocumentFilePageDetailView(
     get: Returns the selected document page details.
     """
     lookup_url_kwarg = 'document_file_page_id'
-    serializer_class = DocumentFilePageSerializer
     mayan_object_permission_map = {'GET': permission_document_file_view}
+    serializer_class = DocumentFilePageSerializer
 
     def get_source_queryset(self):
         return self.get_document_file().pages.all()

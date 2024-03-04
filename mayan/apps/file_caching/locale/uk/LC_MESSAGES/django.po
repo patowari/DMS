@@ -24,7 +24,7 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:31 events.py:6 permissions.py:6 queues.py:7 settings.py:11
+#: apps.py:33 events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "File caching"
 msgstr "Кешування файлів"
 
@@ -215,7 +215,7 @@ msgstr "Очистити розділи кешу \"%s\"?"
 msgid "Object cache partitions submitted for purging."
 msgstr "Розділи кешу об’єктів надіслано на очищення."
 
-#: views.py:127
+#: views.py:126
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d кеші, подані на очищення."

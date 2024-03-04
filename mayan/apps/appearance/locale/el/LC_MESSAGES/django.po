@@ -93,7 +93,7 @@ msgstr "Ρυθμίσεις θέματος"
 msgid "Edit theme settings"
 msgstr "Τροποποίηση ρυθμίσεων θέματος"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Δημιουργία νέου θέματος"
 
@@ -105,7 +105,7 @@ msgstr "Διαγραφή"
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Θέματα"
 
@@ -478,33 +478,33 @@ msgstr "Ελέγξτε την σύνδεση δικτύου σας και δοκ
 msgid "None"
 msgstr "Κανένα"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Διαγραφή θέματος: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Τροποποίηση θέματος: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Τα θέματα επιτρέπουν την αλλαγή της εμφάνισης χωρίς να απαιτείται  αλλαγή "
 "στον κώδικα."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Δεν υπάρχουν διαθέσιμα θέματα"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

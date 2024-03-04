@@ -131,6 +131,9 @@ PythonDependency(
     module=__name__, name='requests', version_string='==2.31.0'
 )
 PythonDependency(
+    module=__name__, name='setuptools', version_string='==69.1.1'
+)
+PythonDependency(
     legal_text='''
         Copyright (C) 2011-2012 by Andrew Moffat
 

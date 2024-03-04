@@ -20,18 +20,18 @@ from .classes import (
 )
 from .events import event_email_sent, event_mailing_profile_edited
 from .links import (
-    link_send_document_link_single, link_send_document_link_multiple,
-    link_send_document_file_attachment_single,
+    link_mailing_profile_create, link_mailing_profile_delete,
+    link_mailing_profile_edit, link_mailing_profile_list,
+    link_mailing_profile_setup, link_mailing_profile_test,
     link_send_document_file_attachment_multiple,
-    link_send_document_file_link_single,
+    link_send_document_file_attachment_single,
     link_send_document_file_link_multiple,
-    link_send_document_version_attachment_single,
+    link_send_document_file_link_single, link_send_document_link_multiple,
+    link_send_document_link_single,
     link_send_document_version_attachment_multiple,
-    link_send_document_version_link_single,
-    link_send_document_version_link_multiple, link_mailing_profile_create,
-    link_mailing_profile_delete, link_mailing_profile_edit,
-    link_mailing_profile_list, link_mailing_profile_setup,
-    link_mailing_profile_test
+    link_send_document_version_attachment_single,
+    link_send_document_version_link_multiple,
+    link_send_document_version_link_single
 )
 from .literals import (
     DOCUMENT_FILE_CONTENT_FUNCTION_DOTTED_PATH,
@@ -40,8 +40,8 @@ from .literals import (
     DOCUMENT_VERSION_MIME_TYPE_FUNCTION_DOTTED_PATH
 )
 from .permissions import (
-    permission_send_document_link, permission_send_document_file_attachment,
-    permission_send_document_file_link,
+    permission_send_document_file_attachment,
+    permission_send_document_file_link, permission_send_document_link,
     permission_send_document_version_attachment,
     permission_send_document_version_link,
     permission_mailing_profile_delete, permission_mailing_profile_edit,

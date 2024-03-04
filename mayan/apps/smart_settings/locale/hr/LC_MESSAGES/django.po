@@ -37,7 +37,7 @@ msgstr "Ime"
 
 #: apps.py:46 forms.py:30
 msgid "Value"
-msgstr ""
+msgstr "Vrijednost"
 
 #: classes.py:318
 msgid "Settings namespace"

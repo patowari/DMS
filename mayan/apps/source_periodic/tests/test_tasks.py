@@ -27,7 +27,9 @@ class SourceTaskTestCase(
             }
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 4)
@@ -73,7 +75,9 @@ class SourceTaskTestCase(
             }
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

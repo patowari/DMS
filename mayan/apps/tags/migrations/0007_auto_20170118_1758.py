@@ -3,7 +3,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('tags', '0006_documenttag'),
+        ('tags', '0006_documenttag')
     ]
 
     operations = [
@@ -12,6 +12,6 @@ class Migration(migrations.Migration):
             options={
                 'ordering': ('label',), 'verbose_name': 'Tag',
                 'verbose_name_plural': 'Tags'
-            },
-        ),
+            }
+        )
     ]

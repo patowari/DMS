@@ -29,21 +29,21 @@ msgstr ""
 msgid "Common"
 msgstr "Comune"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr ""
 "Usato per consentire la traduzione offline delle stringhe di testo nel "
 "codice."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Fornisce controllo dello stile."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Ambiente a riga di comando con autocompletamento."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Controlla la corretta formattazione del file README."
 
@@ -202,11 +202,6 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package "
 "containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
-"Un elenco di stringhe con tutte le applicazioni installate oltre a quelle "
-"normalmente installate da Mayan EDMS. Ogni stringa dovrebbe essere un "
-"percorso Python puntato a: una classe di configurazione dell'applicazione "
-"(preferita) o un pacchetto contenente un'applicazione. Esempio: ['app_1', "
-"'app_2']"
 
 #: settings.py:69
 msgid ""
@@ -243,44 +238,44 @@ msgstr "Configura il nome del progetto."
 msgid "Click here to fix this."
 msgstr "Clicca qui per risolvere questo problema."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Immettere un valore JSON valido."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Inserisci un valore YAML valido."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
 msgstr ""
 "Inserisci un 'internal name' valido composto da lettere, numeri e underscore."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Informazioni"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Home"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Campi da copiare: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Creare una copia di %(object_name)s \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Oggetto copiato con successo."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -288,19 +283,19 @@ msgstr ""
 "Nessun risultato qui significa che non si hanno le autorizzazioni necessarie "
 "per eseguire l'attività amministrativa."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Nessuna opzione di configurazione disponibile."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Qui puoi configurare tutti gli aspetti del sistema."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Parametri di configurazione"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr ""
 "Questi moduli vengono utilizzati per eseguire la manutenzione del sistema."

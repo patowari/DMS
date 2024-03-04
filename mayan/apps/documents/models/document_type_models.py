@@ -50,7 +50,9 @@ class DocumentType(
         blank=True, help_text=_(
             'The arguments for the filename generator backend as a '
             'YAML dictionary.'
-        ), validators=[YAMLValidator()], verbose_name=_(
+        ), validators=[
+            YAMLValidator()
+        ], verbose_name=_(
             'Filename generator backend arguments'
         )
     )

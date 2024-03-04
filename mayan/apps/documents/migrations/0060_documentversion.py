@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0059_auto_20200918_0616'),
+        ('documents', '0059_auto_20200918_0616')
     ]
     operations = [
         migrations.CreateModel(
@@ -37,12 +37,12 @@ class Migration(migrations.Migration):
                         related_name='versions', to='documents.Document',
                         verbose_name='Document'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version',
                 'verbose_name_plural': 'Document versions',
-                'ordering': ('timestamp',),
-            },
-        ),
+                'ordering': ('timestamp',)
+            }
+        )
     ]

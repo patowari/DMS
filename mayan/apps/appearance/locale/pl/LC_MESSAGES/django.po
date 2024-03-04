@@ -98,7 +98,7 @@ msgstr "Ustawienia motywu"
 msgid "Edit theme settings"
 msgstr "Modyfikuj ustawienia motywu"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Utwórz nowy motyw"
 
@@ -110,7 +110,7 @@ msgstr "Usuń"
 msgid "Edit"
 msgstr "Edytuj"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Motywy"
 
@@ -485,32 +485,32 @@ msgstr "Sprawdź połączenie z siecią i spróbuj za chwilę."
 msgid "None"
 msgstr "Brak"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Usuń motyw: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Modyfikuj motyw: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Motywy umożliwiają zmianę wyglądu bez dokonywania zmian w kodzie aplikacji."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Brak motywów"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Ustawienia motywu dla użytkownika: %s"
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Edytuj ustawienia motywu dla użytkownika: %s"
