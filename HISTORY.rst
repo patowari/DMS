@@ -5,6 +5,7 @@
 - Separate code/template translation and JavaScript translation handling.
   Rename the app flag ``has_translations`` to ``has_app_translations``.
   Add the app flag ``has_javascript_translations`` which defaults to False.
+- Move the flanker dependency from the sources to the source_emails app.
 
 4.6.1 (2024-02-07)
 ==================
