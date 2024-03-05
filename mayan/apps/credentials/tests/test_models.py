@@ -7,7 +7,7 @@ from ..events import event_credential_used
 from .mixins import StoredCredentialTestMixin
 
 
-class StoredCredentialAPIViewTestCase(
+class StoredCredentialModelTestCase(
     StoredCredentialTestMixin, BaseTestCase
 ):
     _test_stored_credential_backend_path = 'mayan.apps.credentials.tests.credential_backends.TestCredentialBackendWithPostProcessing'
