@@ -188,6 +188,10 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
+4.5.11 (XXXX-XX-XX)
+===================
+- Ensure credentials ``post_processing`` method is called.
+
 4.5.10 (2024-03-03)
 ===================
 - Include changes from version 4.4.13.

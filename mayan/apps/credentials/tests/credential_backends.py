@@ -1,7 +1,5 @@
 from ..classes import CredentialBackend
 
-__all__ = ('TestCredentialBackend',)
-
 
 class TestCredentialBackend(CredentialBackend):
     label = 'Test source backend'
@@ -38,3 +36,11 @@ class TestCredentialBackend(CredentialBackend):
 
     def process_documents(self, dry_run=False):
         """Do nothing. This method is added to allow view testing."""
+
+
+class TestCredentialBackendWithPostProcessing(TestCredentialBackend):
+    label = 'Test source backend with post processing'
+
+    @classmethod
+    def post_processing(cls, obj):
+        return obj

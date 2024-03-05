@@ -13,8 +13,8 @@ from .model_mixins import StoredCredentialBusinessLogicMixin
 
 
 class StoredCredential(
-    BackendModelMixin, ExtraDataModelMixin,
-    StoredCredentialBusinessLogicMixin, models.Model
+    StoredCredentialBusinessLogicMixin, BackendModelMixin,
+    ExtraDataModelMixin, models.Model
 ):
     _backend_model_null_backend = CredentialBackendNull
 
