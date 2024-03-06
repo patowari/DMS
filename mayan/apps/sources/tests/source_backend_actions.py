@@ -4,8 +4,7 @@ from ..permissions import permission_sources_edit, permission_sources_view
 from ..source_backend_actions.base import SourceBackendAction
 from ..source_backend_actions.interfaces import (
     SourceBackendActionInterfaceRequestRESTAPI,
-    SourceBackendActionInterfaceRequestView,
-    SourceBackendActionInterfaceTask
+    SourceBackendActionInterfaceRequestView, SourceBackendActionInterfaceTask
 )
 from ..source_backend_actions.mixins.callback_mixins import SourceBackendActionMixinCallbackDocumentUploadBase
 from ..source_backend_actions.mixins.document_mixins import SourceBackendActionMixinDocumentUploadInteractive

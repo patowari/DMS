@@ -6,7 +6,7 @@ Mailer
 ======
 
 The mailer app manages all application level interactions with email systems.
-For adminitration emails check:....
+For administration emails check:....
 
 
 Mailing documents

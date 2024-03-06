@@ -77,7 +77,9 @@ class EmailSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -100,7 +102,9 @@ class EmailSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -166,7 +170,9 @@ class IMAPEmailSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -189,7 +195,9 @@ class IMAPEmailSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -255,7 +263,9 @@ class POP3EmailSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -278,7 +288,9 @@ class POP3EmailSourceBackendActionDocumentUploadAPIViewTestCase(
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

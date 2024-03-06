@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -80,19 +80,19 @@ msgstr "Partition du journal des erreurs"
 msgid "Error log partitions"
 msgstr "Erreur d'enregistrement d'énévement"
 
-#: models.py:66
+#: models.py:67
 msgid "Date and time"
 msgstr "Date et heure"
 
-#: models.py:68
+#: models.py:71
 msgid "Text"
 msgstr "Texte"
 
-#: models.py:75
+#: models.py:79
 msgid "Error log partition entry"
 msgstr "Entrée de partition du journal des erreurs"
 
-#: models.py:76
+#: models.py:80
 msgid "Error log partition entries"
 msgstr "Entrées de partition du journal des erreurs"
 

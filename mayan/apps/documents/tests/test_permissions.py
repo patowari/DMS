@@ -1,7 +1,7 @@
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import permission_acl_edit
 from mayan.apps.acls.tests.mixins import (
-    ACLTestMixin, AccessControlListViewTestMixin
+    AccessControlListViewTestMixin, ACLTestMixin
 )
 from mayan.apps.testing.tests.base import BaseTestCase
 

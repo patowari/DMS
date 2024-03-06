@@ -17,7 +17,7 @@ class CredentialViewTestCase(
 
     def setUp(self):
         super().setUp()
-        # Hidden immport register the test credential backend and
+        # Hidden import register the test credential backend and
         # allow tests to access it.
         from .credential_backends import TestCredentialBackend  # NOQA
 

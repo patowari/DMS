@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: apps.py:32 events.py:11 links.py:53 links.py:94 permissions.py:6
 #: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr "Evenimente"
@@ -67,15 +67,15 @@ msgstr "Obiect"
 msgid "Event type"
 msgstr "Tip eveniment"
 
-#: classes.py:90
+#: classes.py:91
 msgid "Event list export to CSV"
 msgstr "Exportați lista de evenimente în CSV"
 
-#: classes.py:118
+#: classes.py:122
 msgid "Events exported."
 msgstr "Evenimente exportate."
 
-#: classes.py:120
+#: classes.py:124
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -109,31 +109,31 @@ msgstr "Sunteți abonat"
 msgid "System"
 msgstr "Sistem"
 
-#: links.py:55 links.py:100 views/clear_views.py:63
+#: links.py:56 links.py:101 views/clear_views.py:65
 msgid "Clear events"
 msgstr "Ștergere evenimente"
 
-#: links.py:59 links.py:107 views/export_views.py:60
+#: links.py:60 links.py:108 views/export_views.py:64
 msgid "Export events"
 msgstr "Exportați evenimente"
 
-#: links.py:65 models.py:53 views/subscription_views.py:54
+#: links.py:66 models.py:53 views/subscription_views.py:54
 msgid "Event subscriptions"
 msgstr "Abonări la eveniment"
 
-#: links.py:71 models.py:113 views/subscription_views.py:169
+#: links.py:72 models.py:113 views/subscription_views.py:169
 msgid "Object event subscriptions"
 msgstr "Abonări la eveniment de obiect"
 
-#: links.py:83
+#: links.py:84
 msgid "Mark as seen"
 msgstr "Marcați drept văzute"
 
-#: links.py:87
+#: links.py:88
 msgid "Mark all as seen"
 msgstr "Marcați toate drept văzute"
 
-#: links.py:114
+#: links.py:115
 msgid "Subscriptions"
 msgstr "Abonamente"
 
@@ -243,6 +243,9 @@ msgid ""
 "Disables asynchronous events mode. All events will be committed in the same "
 "process that triggers them. This was the behavior prior to version 4.5."
 msgstr ""
+"Dezactivează modul evenimente asincrone. Toate evenimentele vor fi comise în"
+" același proces care le declanșează. Acesta a fost comportamentul anterior "
+"versiunii 4.5."
 
 #: views/clear_views.py:27
 msgid ""
@@ -251,17 +254,17 @@ msgid ""
 msgstr ""
 "Această acțiune nu este reversibilă. Procesul va fi efectuat în fundal."
 
-#: views/clear_views.py:51
+#: views/clear_views.py:53
 msgid "Event list clear task queued successfully."
 msgstr ""
 "Sarcina de ștergere a listei de evenimente a fost pusă în coadă cu succes."
 
-#: views/clear_views.py:84
+#: views/clear_views.py:86
 #, python-format
 msgid "Clear events of: %s"
 msgstr "Ștergeți evenimentele: %s"
 
-#: views/clear_views.py:109
+#: views/clear_views.py:111
 #, python-format
 msgid "Clear events of type: %s"
 msgstr "Ștergeți evenimentele de tip: %s"
@@ -294,7 +297,7 @@ msgstr "Nu există evenimente de acest tip"
 msgid "Events of type: %s"
 msgstr "Evenimente de tip: %s"
 
-#: views/export_views.py:27
+#: views/export_views.py:28
 msgid ""
 "The process will be performed in the background. The exported events will be"
 " available in the downloads area."
@@ -302,17 +305,17 @@ msgstr ""
 "Procesul va fi efectuat în fundal. Evenimentele exportate vor fi disponibile"
 " în zona de descărcări."
 
-#: views/export_views.py:47
+#: views/export_views.py:51
 msgid "Event list export task queued successfully."
 msgstr ""
 "Sarcina de export a listei de evenimente a fost pusă în coadă cu succes."
 
-#: views/export_views.py:81
+#: views/export_views.py:85
 #, python-format
 msgid "Export events of: %s"
 msgstr "Exportați evenimente pentru: %s"
 
-#: views/export_views.py:100
+#: views/export_views.py:104
 #, python-format
 msgid "Export events of type: %s"
 msgstr "Exportați evenimente de tip: %s"

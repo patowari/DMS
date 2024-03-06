@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Faiqul Azmi <kasempurnaningurip@gmail.com>, 2024\n"
 "Language-Team: Indonesian (https://app.transifex.com/rosarior/teams/13584/id/)\n"
@@ -73,19 +73,19 @@ msgstr ""
 msgid "Error log partitions"
 msgstr ""
 
-#: models.py:66
+#: models.py:67
 msgid "Date and time"
 msgstr "Tanggal dan waktu"
 
-#: models.py:68
+#: models.py:71
 msgid "Text"
 msgstr ""
 
-#: models.py:75
+#: models.py:79
 msgid "Error log partition entry"
 msgstr ""
 
-#: models.py:76
+#: models.py:80
 msgid "Error log partition entries"
 msgstr ""
 

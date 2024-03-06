@@ -1,11 +1,10 @@
 from django.urls import re_path
 
 from .api_views.workflow_instance_api_views import (
-    APIWorkflowInstanceListView, APIWorkflowInstanceDetailView,
-    APIWorkflowInstanceLaunchActionView,
-    APIWorkflowInstanceLogEntryDetailView,
+    APIWorkflowInstanceDetailView, APIWorkflowInstanceLaunchActionView,
+    APIWorkflowInstanceListView, APIWorkflowInstanceLogEntryDetailView,
     APIWorkflowInstanceLogEntryListView,
-    APIWorkflowInstanceLogEntryTransitionListView,
+    APIWorkflowInstanceLogEntryTransitionListView
 )
 from .api_views.workflow_template_api_views import (
     APIWorkflowTemplateDetailView, APIWorkflowTemplateDocumentTypeAddView,
@@ -15,45 +14,30 @@ from .api_views.workflow_template_api_views import (
 )
 from .api_views.workflow_template_state_api_views import (
     APIWorkflowTemplateStateActionDetailView,
-    APIWorkflowTemplateStateActionListView, APIWorkflowTemplateStateListView,
-    APIWorkflowTemplateStateView
-)
-from .api_views.workflow_template_transition_api_views import (
-    APIWorkflowTemplateTransitionListView,
-    APIWorkflowTemplateTransitionDetailView,
-    APIWorkflowTemplateTransitionFieldDetailView,
-    APIWorkflowTemplateTransitionFieldListView,
-    APIWorkflowTemplateTransitionTriggerDetailView,
-    APIWorkflowTemplateTransitionTriggerListView
+    APIWorkflowTemplateStateActionListView,
+    APIWorkflowTemplateStateListView, APIWorkflowTemplateStateView
 )
 from .api_views.workflow_template_state_escalation_api_views import (
     APIWorkflowTemplateStateEscalationListView,
     APIWorkflowTemplateStateEscalationDetailView
 )
+from .api_views.workflow_template_transition_api_views import (
+    APIWorkflowTemplateTransitionDetailView,
+    APIWorkflowTemplateTransitionFieldDetailView,
+    APIWorkflowTemplateTransitionFieldListView,
+    APIWorkflowTemplateTransitionListView,
+    APIWorkflowTemplateTransitionTriggerDetailView,
+    APIWorkflowTemplateTransitionTriggerListView
+)
 from .views.workflow_instance_views import (
     WorkflowInstanceDetailView, WorkflowInstanceListView,
-    WorkflowInstanceTransitionSelectView,
-    WorkflowInstanceTransitionExecuteView
+    WorkflowInstanceTransitionExecuteView,
+    WorkflowInstanceTransitionSelectView
 )
 from .views.workflow_proxy_views import (
-    WorkflowRuntimeProxyDocumentListView,
-    WorkflowRuntimeProxyListView, WorkflowRuntimeProxyStateDocumentListView,
+    WorkflowRuntimeProxyDocumentListView, WorkflowRuntimeProxyListView,
+    WorkflowRuntimeProxyStateDocumentListView,
     WorkflowRuntimeProxyStateListView
-)
-from .views.workflow_template_views import (
-    DocumentTypeWorkflowTemplateAddRemoveView, DocumentWorkflowTemplatesLaunchView,
-    ToolLaunchWorkflows, WorkflowTemplateCreateView,
-    WorkflowTemplateDeleteView, WorkflowTemplateEditView,
-    WorkflowTemplateLaunchView, WorkflowTemplateListView,
-    WorkflowTemplatePreviewView, WorkflowTemplateDocumentTypeAddRemoveView
-)
-from .views.workflow_template_state_views import (
-    WorkflowTemplateStateActionCreateView,
-    WorkflowTemplateStateActionDeleteView, WorkflowTemplateStateActionEditView,
-    WorkflowTemplateStateActionListView,
-    WorkflowTemplateStateActionSelectionView, WorkflowTemplateStateCreateView,
-    WorkflowTemplateStateDeleteView, WorkflowTemplateStateEditView,
-    WorkflowTemplateStateListView
 )
 from .views.workflow_template_state_escalation_views import (
     WorkflowTemplateStateEscalationCreateView,
@@ -61,14 +45,31 @@ from .views.workflow_template_state_escalation_views import (
     WorkflowTemplateStateEscalationEditView,
     WorkflowTemplateStateEscalationListView
 )
+from .views.workflow_template_state_views import (
+    WorkflowTemplateStateActionCreateView,
+    WorkflowTemplateStateActionDeleteView,
+    WorkflowTemplateStateActionEditView, WorkflowTemplateStateActionListView,
+    WorkflowTemplateStateActionSelectionView,
+    WorkflowTemplateStateCreateView, WorkflowTemplateStateDeleteView,
+    WorkflowTemplateStateEditView, WorkflowTemplateStateListView
+)
 from .views.workflow_template_transition_views import (
-    WorkflowTemplateTransitionCreateView, WorkflowTemplateTransitionDeleteView,
-    WorkflowTemplateTransitionEditView, WorkflowTemplateTransitionListView,
-    WorkflowTemplateTransitionTriggerEventListView,
+    WorkflowTemplateTransitionCreateView,
+    WorkflowTemplateTransitionDeleteView, WorkflowTemplateTransitionEditView,
     WorkflowTemplateTransitionFieldCreateView,
     WorkflowTemplateTransitionFieldDeleteView,
     WorkflowTemplateTransitionFieldEditView,
-    WorkflowTemplateTransitionFieldListView
+    WorkflowTemplateTransitionFieldListView,
+    WorkflowTemplateTransitionListView,
+    WorkflowTemplateTransitionTriggerEventListView
+)
+from .views.workflow_template_views import (
+    DocumentTypeWorkflowTemplateAddRemoveView,
+    DocumentWorkflowTemplatesLaunchView, ToolLaunchWorkflows,
+    WorkflowTemplateCreateView, WorkflowTemplateDeleteView,
+    WorkflowTemplateDocumentTypeAddRemoveView, WorkflowTemplateEditView,
+    WorkflowTemplateLaunchView, WorkflowTemplateListView,
+    WorkflowTemplatePreviewView
 )
 
 urlpatterns_workflow_instances = [

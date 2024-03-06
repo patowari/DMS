@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -23,90 +23,98 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Comune"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Folosit pentru a permite traducerea offline a șirurilor de text cod."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Oferă verificarea stilului."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Mediul liniei de comandă cu autocompletare."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Verifică formatarea corectă a fișierului README."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "Despre asta"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "Obțineți cartea"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Documentație"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Forum"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
-msgstr ""
+msgstr "Bază de cunoștințe"
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:55
 msgid "License"
 msgstr "Licenţă"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr "Listă de email-uri"
+
+#: links.py:64
 msgid "Copy"
 msgstr "Copiere"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr "Note de lansare"
+
+#: links.py:72
 msgid "Setup"
 msgstr "Configurare"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Cod sursă"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Magazin online"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Obțineți sprijin"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:136
 msgid "Tools"
 msgstr "Unelte"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Această caracteristică a fost depreciată și va fi eliminată într-o versiune "
 "viitoare."
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Zile"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Ore"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minute"
 
@@ -146,7 +154,7 @@ msgstr "Copiați obiectul"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -154,7 +162,7 @@ msgstr ""
 "În modul listă, afișați opțiunile de meniu „listă fațete” ca meniu vertical "
 "în loc de butoane individuale."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -162,7 +170,7 @@ msgstr ""
 "În modul listă, afișați opțiunile meniului „obiect” ca meniu vertical în loc"
 " de butoane individuale."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
@@ -172,7 +180,7 @@ msgstr ""
 "setare, toate aplicațiile trebuie configurate și prin setările backend-ului "
 "de stocare respective pentru a utiliza persistența alternativă."
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -185,18 +193,19 @@ msgstr ""
 "aplicației (de preferat) sau un pachet care conține o aplicație. Exemplu: "
 "['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
 "O listă de șiruri care desemnează toate aplicațiile care sunt instalate în "
 "afara celor instalate în mod normal de Mayan EDMS. Fiecare șir ar trebui să "
 "fie o cale Python punctată către: o clasă de configurare a aplicației (de "
-"preferat) sau un pachet care conține o aplicație. Exemplu: ['app_1', "
-"'app_2']"
+"preferat) sau un pachet care conține o aplicație. Aceste aplicații vor fi "
+"instalate după aplicațiile implicite. Exemplu: [';app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -228,23 +237,19 @@ msgstr "Numele tabloului de bord de afișat în vizualizarea principală."
 msgid "Sets the project's name."
 msgstr "Setează numele proiectului."
 
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "URL-ul paginii de start a proiectului."
-
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."
 msgstr "Faceți clic aici pentru a remedia această problemă."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Introduceți o valoare JSON validă."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Introduceți o valoare validă YAML."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -252,29 +257,29 @@ msgstr ""
 "Introduceți un \"nume intern\" valabil format din litere, numere și "
 "subliniere."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Despre"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "Acasă"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Câmpuri de copiat: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Faceți o copie a %(object_name)s \"%(object)s\"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Obiectul a fost copiat cu succes."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -282,18 +287,18 @@ msgstr ""
 "Niciun rezultat aici înseamnă că nu aveți permisiunile necesare pentru a "
 "efectua o sarcină administrativă."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Nu sunt disponibile opțiuni de configurare."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Aici puteți configura toate aspectele sistemului."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Configurați elemente"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Aceste module sunt folosite pentru întreținerea sistemului."

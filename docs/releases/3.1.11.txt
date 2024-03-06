@@ -12,7 +12,7 @@ Memory usage
 
 The ``DOCUMENTS_HASH_BLOCK_SIZE`` setting was added to limit the number of
 bytes that will be read into memory when calculating the checksum of a new
-document. For compatibility with the current bevahor this setting defaults to
+document. For compatibility with the current behavior this setting defaults to
 0 which means that it is disabled. Disabling the setting will cause the
 entire document's file to be loaded into memory. If documents are not
 processing due to out of memory errors (large documents or devices with
@@ -23,7 +23,7 @@ Limited tests suggest 65535 to be a good alternative.
 Tag wizard step
 ^^^^^^^^^^^^^^^
 
-The tag wizard step was fixed and will now allow attaching multple tags to a
+The tag wizard step was fixed and will now allow attaching multiple tags to a
 new document.
 
 

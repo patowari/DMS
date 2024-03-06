@@ -9,7 +9,6 @@ from .icons import (
     icon_user_locale_profile_detail, icon_user_locale_profile_edit
 )
 
-
 link_user_locale_profile_detail = Link(
     args='object.id', condition=condition_user_is_authenticated,
     icon=icon_user_locale_profile_detail, text=_(message='Locale profile'),

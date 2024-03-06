@@ -24,7 +24,9 @@ class AutoAdminHandlerTestCase(BaseTestCase):
         user = AutoAdminSingleton.objects.get().account
 
         user.set_password(TEST_ADMIN_USER_PASSWORD)
-        user.save(update_fields=('password',))
+        user.save(
+            update_fields=('password',)
+        )
 
         self.assertEqual(AutoAdminSingleton.objects.get().account, None)
 
@@ -32,9 +34,13 @@ class AutoAdminHandlerTestCase(BaseTestCase):
         with mute_stdout():
             AutoAdminSingleton.objects.create_autoadmin()
 
-        self.assertEqual(AutoAdminSingleton.objects.count(), 1)
+        self.assertEqual(
+            AutoAdminSingleton.objects.count(), 1
+        )
 
         logging.disable(logging.ERROR)
 
         AutoAdminSingleton.objects.create_autoadmin()
-        self.assertEqual(AutoAdminSingleton.objects.count(), 1)
+        self.assertEqual(
+            AutoAdminSingleton.objects.count(), 1
+        )

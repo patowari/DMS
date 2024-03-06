@@ -132,8 +132,14 @@ class ReleaseNoteExporter:
             return '\n'.join(
                 (
                     '---',
-                    'date: {}-{:02d}-{:02d}'.format(year, MONTHS_TO_NUMBER[month], int(day[:-1])),
-                    'title: "{}"'.format(tree[0].text),
+                    'date: {}-{:02d}-{:02d}'.format(
+                        year, MONTHS_TO_NUMBER[month], int(
+                            day[:-1]
+                        )
+                    ),
+                    'title: "{}"'.format(
+                        tree[0].text
+                    ),
                     '---',
                     str(result_body)
                 )

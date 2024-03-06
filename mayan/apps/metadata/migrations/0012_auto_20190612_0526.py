@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('metadata', '0011_auto_20180917_0645'),
+        ('metadata', '0011_auto_20180917_0645')
     ]
 
     operations = [
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ], help_text='The parser will reformat the value entered to '
                 'conform to the expected format.', max_length=64,
                 verbose_name='Parser'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='metadatatype',
@@ -45,6 +45,6 @@ class Migration(migrations.Migration):
                 ], help_text='The validator will reject data entry if the '
                 'value entered does not conform to the expected format.',
                 max_length=64, verbose_name='Validator'
-            ),
-        ),
+            )
+        )
     ]

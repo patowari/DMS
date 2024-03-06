@@ -37,13 +37,13 @@ class Migration(migrations.Migration):
                     'backend_data', models.TextField(
                         blank=True, verbose_name='Backend data'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('label',),
                 'verbose_name': 'User mailer',
-                'verbose_name_plural': 'User mailers',
-            },
+                'verbose_name_plural': 'User mailers'
+            }
         ),
         migrations.CreateModel(
             name='UserMailerLogEntry',
@@ -69,13 +69,13 @@ class Migration(migrations.Migration):
                         on_delete=django.db.models.deletion.CASCADE,
                         to='mailer.UserMailer', verbose_name='User mailer'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('-datetime',),
                 'get_latest_by': 'datetime',
                 'verbose_name': 'User mailer log entry',
-                'verbose_name_plural': 'User mailer log entries',
+                'verbose_name_plural': 'User mailer log entries'
             }
         )
     ]

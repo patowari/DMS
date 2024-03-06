@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: apps.py:26 permissions.py:6
+#: apps.py:27 permissions.py:6
 msgid "Smart settings"
 msgstr "Pametne postavke"
 
-#: apps.py:36
+#: apps.py:37
 msgid "Setting count"
 msgstr "Podešavanje brojanja"
 
-#: apps.py:42
+#: apps.py:43
 msgid "Name"
 msgstr "Ime"
 
-#: apps.py:46 forms.py:30
+#: apps.py:47 forms.py:30
 msgid "Value"
 msgstr "Vrijednost"
 

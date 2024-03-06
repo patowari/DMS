@@ -25,7 +25,7 @@ from .mocks import mock_recv_keys
 
 class KeyTestCase(BaseTestCase):
     def test_key_instance_creation(self):
-        # Creating a Key instance is analogous to importing a key
+        # Creating a Key instance is analogous to importing a key.
         key = Key.objects.create(key_data=TEST_KEY_PRIVATE_DATA)
 
         self.assertEqual(key.fingerprint, TEST_KEY_PRIVATE_FINGERPRINT)
@@ -48,7 +48,9 @@ class KeyTestCase(BaseTestCase):
 
         Key.objects.receive_key(key_id=TEST_SEARCH_FINGERPRINT)
 
-        self.assertEqual(Key.objects.all().count(), 1)
+        self.assertEqual(
+            Key.objects.all().count(), 1
+        )
         self.assertEqual(
             Key.objects.first().fingerprint, TEST_SEARCH_FINGERPRINT
         )
@@ -101,7 +103,9 @@ class KeyTestCase(BaseTestCase):
         with open(file=TEST_SIGNED_FILE, mode='rb') as signed_file:
             result = Key.objects.decrypt_file(file_object=signed_file)
 
-        self.assertEqual(result.read(), TEST_SIGNED_FILE_CONTENT)
+        self.assertEqual(
+            result.read(), TEST_SIGNED_FILE_CONTENT
+        )
 
     def test_cleartext_file_decryption(self):
         cleartext_file = TemporaryFile()
@@ -163,7 +167,9 @@ class KeyTestCase(BaseTestCase):
             )
 
         signature_file = io.BytesIO()
-        signature_file.write(force_bytes(s=detached_signature))
+        signature_file.write(
+            force_bytes(s=detached_signature)
+        )
         signature_file.seek(0)
 
         with open(file=TEST_FILE, mode='rb') as test_file:
@@ -178,4 +184,6 @@ class KeyTestCase(BaseTestCase):
     def test_method_get_absolute_url(self):
         key = Key.objects.create(key_data=TEST_KEY_PRIVATE_DATA)
 
-        self.assertTrue(key.get_absolute_url())
+        self.assertTrue(
+            key.get_absolute_url()
+        )

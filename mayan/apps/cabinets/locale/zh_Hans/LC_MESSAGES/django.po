@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -25,14 +25,14 @@ msgstr ""
 "Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:54 apps.py:174 apps.py:178 apps.py:183 apps.py:188 apps.py:193
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:51 models.py:158
+#: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
 #: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "文档柜"
 
-#: apps.py:165 models.py:40
+#: apps.py:164 models.py:41
 msgid "Documents"
 msgstr "文档"
 
@@ -104,36 +104,36 @@ msgstr "文件櫃的路徑, 包含舊版本之文件"
 msgid "Full path"
 msgstr "完整路径"
 
-#: models.py:32 serializers.py:41
+#: models.py:33 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:35
+#: models.py:36
 msgid "A short text used to identify the cabinet."
 msgstr "用于标识文档柜的简短文本。"
 
-#: models.py:36
+#: models.py:37
 msgid "Label"
 msgstr "标签"
 
-#: models.py:50 models.py:132 models.py:157
+#: models.py:51 models.py:133 models.py:158
 msgid "Cabinet"
 msgstr "文档柜"
 
-#: models.py:133
+#: models.py:134
 msgid "Parent and Label"
 msgstr "父级与标签"
 
-#: models.py:140
+#: models.py:141
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s与此%(field_labels)s已存在。"
 
-#: models.py:169
+#: models.py:170
 msgid "Document cabinet"
 msgstr "文档柜"
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinets"
 msgstr "文档柜"
 

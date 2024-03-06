@@ -11,7 +11,7 @@ class SourceActionExceptionUnknown(SourceActionException):
 
 
 class SourceActionExceptionInterface(SourceActionException):
-    """Base exception for all things related to the action interaces."""
+    """Base exception for all things related to the action interfaces."""
 
 
 class SourceActionExceptionInterfaceArgumentMissing(SourceActionExceptionInterface):

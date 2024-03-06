@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "Изгледи"
 
@@ -42,7 +42,7 @@ msgstr "Етикет"
 msgid "Relationship"
 msgstr "Връзка"
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -52,7 +52,7 @@ msgstr ""
 " няколко записа. След като избирането приключи, щракнете върху бутона по-"
 "долу или щракнете двукратно върху списъка, за да активирате действието."
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -62,97 +62,97 @@ msgstr ""
 "записа. След като избирането приключи, щракнете върху бутона по-долу или "
 "щракнете двукратно върху списъка, за да активирате действието."
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr "Добавете всички"
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr "Добавете"
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr "Премахнете всички"
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr "Премахнете"
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Грешка при актуализиране на връзката; %s"
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr "Връзките са актуализирани успешно"
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Грешка в дублиращи данни: %(error)s"
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s не е създаден, грешка: %(error)s"
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s е създаден успешно."
 
-#: generics.py:723
+#: generics.py:727
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s не е изтрит, грешка: %(error)s."
 
-#: generics.py:733
+#: generics.py:737
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s изтрит успешно."
 
-#: generics.py:796
+#: generics.py:800
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Грешка при извличане на %(object)s; %(error)s"
 
-#: generics.py:908
+#: generics.py:912
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s не е актуализиран, грешка: %(error)s."
 
-#: generics.py:918
+#: generics.py:922
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s актуализиран успешно."
 
-#: generics.py:985
+#: generics.py:989
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d обекта бяха изтрити успешно."
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "„%(object)s“ беше изтрит успешно."
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d обект е изтрит успешно."
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Изтрийте %(count)d обекта."
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Изтрийте &quot;%(object)s&quot;."
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Изтрийте %(count)d обект."
@@ -172,35 +172,6 @@ msgid ""
 msgstr ""
 "Покажете бутон за изпращане и изчакайте бутона за изпращане да бъде "
 "натиснат, преди да обработите качването."
-
-#: templates/views/app/foot.html:45
-msgid "Cancel upload"
-msgstr "Прекратете качването"
-
-#: templates/views/app/foot.html:46
-msgid "Are you sure you want to cancel this upload?"
-msgstr "Наистина ли искате да прекратите това качване?"
-
-#: templates/views/app/foot.html:47
-msgid "Drop files or click here to upload files"
-msgstr "Пуснете файлове или щракнете тук, за да качите файлове"
-
-#: templates/views/app/foot.html:48
-msgid "Your browser does not support drag and drop file uploads."
-msgstr "Вашият браузър не поддържа качване на файлове с плъзгане и пускане."
-
-#: templates/views/app/foot.html:49
-msgid "Please use the fallback form below to upload your files."
-msgstr ""
-"Моля, използвайте резервния формуляр по-долу, за да качите вашите файлове."
-
-#: templates/views/app/foot.html:50
-msgid "Clear"
-msgstr "Изчистване"
-
-#: templates/views/app/foot.html:51
-msgid "Server responded with {{statusCode}} code."
-msgstr "Сървърът отговори с {{statusCode}} код."
 
 #: templatetags/views_tags.py:30
 msgid "Confirm delete"

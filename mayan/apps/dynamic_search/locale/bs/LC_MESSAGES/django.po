@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -66,7 +66,7 @@ msgstr "Da"
 msgid "No"
 msgstr "Ne"
 
-#: permissions.py:6 queues.py:7 settings.py:14
+#: permissions.py:6 queues.py:7 settings.py:15
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
@@ -101,21 +101,21 @@ msgstr ""
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
 
-#: scoped_queries.py:352
+#: scoped_queries.py:351
 msgid ""
 "Search results exceed limit setting. Results might not be reliable if "
 "multiple scopes are used. Narrow down the search criteria or increase the "
 "value of the results limit setting."
 msgstr ""
 
-#: scoped_queries.py:368
+#: scoped_queries.py:367
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
 
-#: search_fields.py:311
+#: search_fields.py:313
 msgid "Any"
 msgstr ""
 
@@ -128,43 +128,43 @@ msgstr ""
 msgid "All content"
 msgstr ""
 
-#: search_query_types.py:167
+#: search_query_types.py:169
 msgid "Exact"
 msgstr ""
 
-#: search_query_types.py:173
+#: search_query_types.py:175
 msgid "Fuzzy"
 msgstr ""
 
-#: search_query_types.py:179
+#: search_query_types.py:181
 msgid "Greater than"
 msgstr ""
 
-#: search_query_types.py:185
+#: search_query_types.py:187
 msgid "Greater than or equal"
 msgstr ""
 
-#: search_query_types.py:191
+#: search_query_types.py:193
 msgid "Less than"
 msgstr ""
 
-#: search_query_types.py:197
+#: search_query_types.py:199
 msgid "Less than or equal"
 msgstr ""
 
-#: search_query_types.py:203
+#: search_query_types.py:205
 msgid "Partial"
 msgstr ""
 
-#: search_query_types.py:209
+#: search_query_types.py:211
 msgid "Range"
 msgstr ""
 
-#: search_query_types.py:244
+#: search_query_types.py:246
 msgid "Range exclusive"
 msgstr ""
 
-#: search_query_types.py:250
+#: search_query_types.py:252
 msgid "Regular expression"
 msgstr ""
 
@@ -192,39 +192,39 @@ msgstr ""
 msgid "Search fields"
 msgstr ""
 
-#: settings.py:20
+#: settings.py:21
 msgid "Full path to the backend to be used to handle the search."
 msgstr ""
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
 
-#: settings.py:36
+#: settings.py:37
 msgid "The search operator to use when none is specified."
 msgstr ""
 
-#: settings.py:43
+#: settings.py:44
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
 
-#: settings.py:51
+#: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr ""
 
-#: settings.py:57
+#: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr ""
 
-#: settings.py:63
+#: settings.py:64
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 
-#: settings.py:69
+#: settings.py:70
 msgid "Maximum number of search results to fetch and display."
 msgstr ""
 

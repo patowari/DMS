@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-02-07 11:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -70,7 +70,7 @@ msgstr "Igen"
 msgid "No"
 msgstr "Nem"
 
-#: permissions.py:6 queues.py:7 settings.py:14
+#: permissions.py:6 queues.py:7 settings.py:15
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
 msgid "Search"
@@ -109,7 +109,7 @@ msgstr ""
 "Állítsa vissza a keresési háttértár indexeit, és indexelje újra az összes "
 "példányt."
 
-#: scoped_queries.py:352
+#: scoped_queries.py:351
 msgid ""
 "Search results exceed limit setting. Results might not be reliable if "
 "multiple scopes are used. Narrow down the search criteria or increase the "
@@ -119,7 +119,7 @@ msgstr ""
 "nem megbízhatóak, ha több hatókört használnak. Szűkítse a keresési "
 "feltételeket, vagy növelje a találati korlát beállításának értékét."
 
-#: scoped_queries.py:368
+#: scoped_queries.py:367
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
@@ -129,7 +129,7 @@ msgstr ""
 "elérhető-e, és hogy a keresési szintaxis megfelelő-e az aktív keresési "
 "háttérprogramhoz; %s"
 
-#: search_fields.py:311
+#: search_fields.py:313
 msgid "Any"
 msgstr "Bármely"
 
@@ -142,43 +142,43 @@ msgstr "Ismeretlen keresési modell ` %s `."
 msgid "All content"
 msgstr "Minden tartalom"
 
-#: search_query_types.py:167
+#: search_query_types.py:169
 msgid "Exact"
 msgstr "Egyező"
 
-#: search_query_types.py:173
+#: search_query_types.py:175
 msgid "Fuzzy"
 msgstr "Közelítő"
 
-#: search_query_types.py:179
+#: search_query_types.py:181
 msgid "Greater than"
 msgstr "Nagyobb, mint"
 
-#: search_query_types.py:185
+#: search_query_types.py:187
 msgid "Greater than or equal"
 msgstr "Nagyobb vagy egyenlő"
 
-#: search_query_types.py:191
+#: search_query_types.py:193
 msgid "Less than"
 msgstr "Kevesebb, mint"
 
-#: search_query_types.py:197
+#: search_query_types.py:199
 msgid "Less than or equal"
 msgstr "Kisebb vagy egyenlő"
 
-#: search_query_types.py:203
+#: search_query_types.py:205
 msgid "Partial"
 msgstr "Részleges"
 
-#: search_query_types.py:209
+#: search_query_types.py:211
 msgid "Range"
 msgstr "Tartomány"
 
-#: search_query_types.py:244
+#: search_query_types.py:246
 msgid "Range exclusive"
 msgstr "Exkluzív tartomány"
 
-#: search_query_types.py:250
+#: search_query_types.py:252
 msgid "Regular expression"
 msgstr "Reguláris kifejezés"
 
@@ -206,11 +206,11 @@ msgstr "Elsődleges kulcs"
 msgid "Search fields"
 msgstr "Keresőmezők"
 
-#: settings.py:20
+#: settings.py:21
 msgid "Full path to the backend to be used to handle the search."
 msgstr "A kereséshez használt háttérrendszer teljes elérési útja."
 
-#: settings.py:27
+#: settings.py:28
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
@@ -219,33 +219,33 @@ msgstr ""
 " megváltoztatják a viselkedést, a gazdagépneveket vagy a hitelesítési "
 "argumentumokat."
 
-#: settings.py:36
+#: settings.py:37
 msgid "The search operator to use when none is specified."
 msgstr "A keresési operátor, amelyet akkor használ, ha nincs semmi megadva."
 
-#: settings.py:43
+#: settings.py:44
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
 "Letiltja az egyszavas keresést, csak a speciális keresés gombot hagyja meg."
 
-#: settings.py:51
+#: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr "A tömeges indexelés végrehajtásakor feldolgozandó objektumok száma."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr ""
 "Beállítja az „Összes egyezés” jelölőnégyzet alapértelmezett állapotát."
 
-#: settings.py:63
+#: settings.py:64
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 "A lekérhető és megjeleníthető keresési eredmények maximális száma keresési "
 "lekérdezési egységenként."
 
-#: settings.py:69
+#: settings.py:70
 msgid "Maximum number of search results to fetch and display."
 msgstr "A lekérhető és megjeleníthető keresési eredmények maximális száma."
 

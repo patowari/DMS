@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -65,7 +65,7 @@ msgstr "A string do template a ser avaliada."
 msgid "Template"
 msgstr "Template"
 
-#: links.py:11
+#: links.py:10
 msgid "Sandbox"
 msgstr "Sandbox"
 

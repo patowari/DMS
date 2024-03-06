@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -122,19 +122,19 @@ msgstr "Деактивирайте временната клавиатура з�
 msgid "OTP disable successfully."
 msgstr "OTP деактивиране успешно."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "OTP вече е активиран."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "OTP е активиран успешно."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Активиране на временната клавиатура за потребител: %s"
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "Грешка при валидиране на тайния код на OTP."

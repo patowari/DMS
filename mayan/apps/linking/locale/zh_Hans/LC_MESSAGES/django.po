@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Linking"
 msgstr "链接"
 
-#: apps.py:120 models.py:30 serializers.py:129
+#: apps.py:120 models.py:31 serializers.py:129
 msgid "Label"
 msgstr "标签"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:52
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "智能链接"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Foreign document field"
 msgstr "外部文档字段"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "创建新的智能链接"
 
@@ -54,7 +54,7 @@ msgstr "创建新的智能链接"
 msgid "Delete"
 msgstr "删除"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:44
 msgid "Document types"
 msgstr "文件类型"
 
@@ -142,80 +142,80 @@ msgstr "在正则表达式中"
 msgid "is in regular expression (case insensitive)"
 msgstr "在正则表达式中（不区分大小写）"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "生成动态标签时出错; %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr "所选文档的类型不允许使用此智能链接。"
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "否"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr ""
 
-#: models.py:29
+#: models.py:30
 msgid "A short text describing the smart link."
 msgstr ""
 
-#: models.py:34
+#: models.py:35
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
 msgstr ""
 
-#: models.py:36
+#: models.py:37
 msgid "Dynamic label"
 msgstr "动态标签"
 
-#: models.py:38 models.py:110
+#: models.py:40 models.py:117
 msgid "Enabled"
 msgstr "启用"
 
-#: models.py:48 models.py:87
+#: models.py:51 models.py:90
 msgid "Smart link"
 msgstr "智能链接"
 
-#: models.py:91
+#: models.py:94
 msgid "The inclusion is ignored for the first item."
 msgstr "第一项忽略此包含。"
 
-#: models.py:95
+#: models.py:99
 msgid "This represents the metadata of all other documents."
 msgstr "这表示所有其他文档的元数据。"
 
-#: models.py:96
+#: models.py:101
 msgid "Foreign document attribute"
 msgstr "外部文档属性"
 
-#: models.py:101
+#: models.py:107
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
 msgstr ""
 
-#: models.py:103
+#: models.py:109
 msgid "Expression"
 msgstr "表达式"
 
-#: models.py:106
+#: models.py:113
 msgid "Inverts the logic of the operator."
 msgstr "反转运算符的逻辑。"
 
-#: models.py:107
+#: models.py:114
 msgid "Negated"
 msgstr "否定"
 
-#: models.py:114
+#: models.py:121
 msgid "Link condition"
 msgstr "链接条件"
 
-#: models.py:115
+#: models.py:122
 msgid "Link conditions"
 msgstr "链接条件"
 
@@ -381,12 +381,12 @@ msgstr "文档类型已启用"
 msgid "Document type for which to enable smart link: %s"
 msgstr "要为其启用智能链接的文档类型：%s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "删除智能链接：%s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "编辑智能链接：%s"

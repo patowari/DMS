@@ -10,11 +10,11 @@ Changes
 
 - Fix deprecation warning to prepare upgrade to Django 1.11 and 2.0.
 - Fix zoom feature in document page view.
-- Add support to run tests against a MySQL or Postgres container.
+- Add support to run tests against a MySQL or PostgreSQL container.
 - Improve tag widget customization by moving the markup to its own template.
 - Fix document page widget appearance in the document page list view.
 - Make document version order deterministic.
-- Allow total page number instrospection of encrypted PDF with non ASCII
+- Allow total page number introspection of encrypted PDF with non ASCII
   user properties. GitLab issue #411.
 
 

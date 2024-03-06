@@ -17,8 +17,8 @@ user interface much easier.
 
 The blocks ``content`` and ``content_plain`` were unified.
 
-Templates were moved to sub-folders and they names shorten their based on
-their folder location commonality.
+Templates were moved to sub-folders and their names shorten based on
+the folder location commonality.
 
 
 Cabinets
@@ -63,11 +63,11 @@ Dependencies
 
 With Django 3.2 LTS approaching end-of-life, Mayan EDMS was updated to use
 Django 4.2 LTS. Django 4.2 LTS will reach end-of-life on Apr 2026 providing
-Mayan EDMS 3 years of security updates.
+Mayan EDMS with 3 years of security updates.
 
 With the updated Django, it was also possible to use the new PostgreSQL
 Python client library 3.x version. The library ``psycopg2`` was updated
-from version 2.x to version 3.1.14.
+from version 2.x to version 3.x.
 
 Updated the dependency versions:
 
@@ -115,7 +115,7 @@ Updated the dependency versions:
   - ``psutil`` from 5.8.0 to 5.9.6.
   - ``django-widget-tweaks`` from 1.4.12 to 1.5.0.
 
-The program was added ``ruff`` to the development dependency to perform
+The program ``ruff`` was added to the development dependencies to perform
 code style checking along with ``flake8``.
 
 The support Django series version was added to the setup generation script
@@ -233,8 +233,8 @@ implementation-specific objects using the same app and API.
 
 Each object type that supports emailing just needs to provide two functions:
 
-1- How to extract the MIME type
-2- How to extract the content to be emailed
+- How to extract the MIME type
+- How to extract the content to be emailed
 
 Naming conventions in the mailer were normalized. This replaces uses of
 ``mailer`` and ``user mailer`` with ``mailing profile``.

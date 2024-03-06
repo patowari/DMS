@@ -1,5 +1,5 @@
-import logging
 import json
+import logging
 
 import requests
 
@@ -38,7 +38,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
-            },
+            }
         }, 'document_description': {
             'label': _(message='Document description'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -103,7 +103,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
     form_field_widgets = {
         'workflows': {
             'class': 'django.forms.widgets.SelectMultiple', 'kwargs': {
-                'attrs': {'class': 'select2'},
+                'attrs': {'class': 'select2'}
             }
         }
     }
@@ -185,7 +185,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': True
-            },
+            }
         }, 'method': {
             'label': _(message='Method'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -225,7 +225,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
-            },
+            }
         }, 'password': {
             'label': _(message='Password'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
@@ -247,7 +247,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': False
-            },
+            }
         }, 'headers': {
             'label': _(message='Headers'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',

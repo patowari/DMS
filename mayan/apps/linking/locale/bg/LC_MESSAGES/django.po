@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -27,11 +27,11 @@ msgstr ""
 msgid "Linking"
 msgstr "Свързване"
 
-#: apps.py:120 models.py:30 serializers.py:129
+#: apps.py:120 models.py:31 serializers.py:129
 msgid "Label"
 msgstr "Етикет"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:52
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Умни връзки"
@@ -48,7 +48,7 @@ msgstr "Умна връзка е редактирана"
 msgid "Foreign document field"
 msgstr "Поле за чужд документ"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Създайте нова умна връзка"
 
@@ -56,7 +56,7 @@ msgstr "Създайте нова умна връзка"
 msgid "Delete"
 msgstr "Изтрийте"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:44
 msgid "Document types"
 msgstr "Типове документи"
 
@@ -144,28 +144,28 @@ msgstr "е в редовен израз"
 msgid "is in regular expression (case insensitive)"
 msgstr "е в редовен израз (нечувствително към регистъра)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Грешка при генериране на динамичен етикет; %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr "Тази умна връзка не е разрешена за типа на избрания документ."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "не"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr "Пълен етикет"
 
-#: models.py:29
+#: models.py:30
 msgid "A short text describing the smart link."
 msgstr "Кратък текст, описващ умната връзка."
 
-#: models.py:34
+#: models.py:35
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
@@ -173,31 +173,31 @@ msgstr ""
 "Използвайте това поле, за да покажете уникален етикет в зависимост от "
 "документа, от който се осъществява достъп до умната връзка."
 
-#: models.py:36
+#: models.py:37
 msgid "Dynamic label"
 msgstr "Динамичен етикет"
 
-#: models.py:38 models.py:110
+#: models.py:40 models.py:117
 msgid "Enabled"
 msgstr "Активиран"
 
-#: models.py:48 models.py:87
+#: models.py:51 models.py:90
 msgid "Smart link"
 msgstr "Умна връзка"
 
-#: models.py:91
+#: models.py:94
 msgid "The inclusion is ignored for the first item."
 msgstr "Включването се игнорира за първия елемент."
 
-#: models.py:95
+#: models.py:99
 msgid "This represents the metadata of all other documents."
 msgstr "Това представлява метаданните на всички останали документи."
 
-#: models.py:96
+#: models.py:101
 msgid "Foreign document attribute"
 msgstr "Характеристика на чужд документ"
 
-#: models.py:101
+#: models.py:107
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -205,23 +205,23 @@ msgstr ""
 "Изразът, използващ свойствата на документа, които трябва да бъдат оценени "
 "спрямо чуждото документно поле."
 
-#: models.py:103
+#: models.py:109
 msgid "Expression"
 msgstr "Израз"
 
-#: models.py:106
+#: models.py:113
 msgid "Inverts the logic of the operator."
 msgstr "Обръща логиката на оператора."
 
-#: models.py:107
+#: models.py:114
 msgid "Negated"
 msgstr "Отказано"
 
-#: models.py:114
+#: models.py:121
 msgid "Link condition"
 msgstr "Състояние на връзката"
 
-#: models.py:115
+#: models.py:122
 msgid "Link conditions"
 msgstr "Състояния на връзката"
 
@@ -400,12 +400,12 @@ msgstr "Активирани типове документи"
 msgid "Document type for which to enable smart link: %s"
 msgstr "Тип документ, за който да се даде възможност за умна връзка: %s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Изтриване на умна връзка: %s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Редактиране на умна връзка: %s"

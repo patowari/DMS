@@ -52,5 +52,7 @@ api_urls = [
         route=r'^keys/(?P<key_id>[0-9]+)/$', name='key-detail',
         view=APIKeyView.as_view()
     ),
-    re_path(route=r'^keys/$', name='key-list', view=APIKeyListView.as_view())
+    re_path(
+        route=r'^keys/$', name='key-list', view=APIKeyListView.as_view()
+    )
 ]

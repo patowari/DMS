@@ -1,10 +1,10 @@
-from django.db import models, migrations
 from django.conf import settings
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL)
     ]
 
     operations = [
@@ -13,24 +13,24 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     'id', models.AutoField(
-                        verbose_name='ID', serialize=False, auto_created=True,
-                        primary_key=True
+                        auto_created=True, primary_key=True, serialize=False,
+                        verbose_name='ID'
                     )
                 ),
                 (
                     'query', models.TextField(
-                        verbose_name='Query', editable=False
+                        editable=False, verbose_name='Query'
                     )
                 ),
                 (
                     'datetime_created', models.DateTimeField(
-                        auto_now=True, verbose_name='Datetime created',
-                        db_index=True
+                        auto_now=True, db_index=True,
+                        verbose_name='Datetime created'
                     )
                 ),
                 (
                     'hits', models.IntegerField(
-                        verbose_name='Hits', editable=False
+                        editable=False, verbose_name='Hits'
                     )
                 ),
                 (
@@ -39,13 +39,13 @@ class Migration(migrations.Migration):
                         to=settings.AUTH_USER_MODEL,
                         verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('-datetime_created',),
                 'verbose_name': 'Recent search',
-                'verbose_name_plural': 'Recent searches',
+                'verbose_name_plural': 'Recent searches'
             },
-            bases=(models.Model,),
-        ),
+            bases=(models.Model,)
+        )
     ]

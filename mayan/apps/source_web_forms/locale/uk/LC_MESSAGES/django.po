@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,12 +22,12 @@ msgstr ""
 
 #: apps.py:12
 msgid "Web form sources"
-msgstr ""
+msgstr "Джерела веб-форм"
 
 #: handlers.py:23
 msgid "Default"
-msgstr ""
+msgstr "За замовчуванням"
 
 #: source_backends.py:27
 msgid "Web form"
-msgstr ""
+msgstr "Веб-форма"

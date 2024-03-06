@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -70,7 +70,7 @@ msgstr "Mailprofil erstellt"
 msgid "Mailing profile edited"
 msgstr "Mailprofil bearbeitet"
 
-#: forms.py:63 forms.py:105
+#: forms.py:60 forms.py:102
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
@@ -78,77 +78,77 @@ msgstr ""
 "E-Mailadresse des Empfängers. Es können mehrere Adressen eingetragen werden,"
 " getrennt durch Komma oder Semikolon."
 
-#: forms.py:65 forms.py:107
+#: forms.py:62 forms.py:104
 msgid "Email address"
 msgstr "E-Mailadresse"
 
-#: forms.py:70 serializers.py:41 workflow_action_mixins.py:63
+#: forms.py:67 serializers.py:41 workflow_action_mixins.py:63
 msgid "Subject"
 msgstr "Betreff"
 
-#: forms.py:73 serializers.py:28 workflow_action_mixins.py:73
+#: forms.py:70 serializers.py:28 workflow_action_mixins.py:73
 msgid "Body"
 msgstr "Nachrichtenteil"
 
-#: forms.py:78
+#: forms.py:75
 msgid "The email profile that will be used to send this email."
 msgstr "Das Mailprofil, das für die Versendung dieser E-Mail verwendet wird."
 
-#: forms.py:79 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:48 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Mailprofil"
 
-#: forms.py:87
+#: forms.py:84
 msgid "The driver to use when sending emails."
 msgstr "Der Treiber, der für das Senden von E-Mails verwendet werden soll."
 
-#: forms.py:88
+#: forms.py:85
 msgid "Backend"
 msgstr "Backend"
 
-#: links.py:35 links.py:40
+#: links.py:34 links.py:39
 msgid "Email document link"
 msgstr "Dokumentenlink mailen"
 
-#: links.py:50 links.py:55
+#: links.py:49 links.py:54
 msgid "Email document file"
 msgstr "Dokumentendatei mailen"
 
-#: links.py:61 links.py:66
+#: links.py:60 links.py:65
 msgid "Email document file link"
 msgstr "Dokumentendateilink mailen"
 
-#: links.py:76 links.py:81
+#: links.py:75 links.py:80
 msgid "Email document version"
 msgstr "Dokumentenversion mailen"
 
-#: links.py:87
+#: links.py:86
 msgid "Email document version link"
 msgstr "Dokumentenversionslink mailen"
 
-#: links.py:92
+#: links.py:91
 msgid "Email link version"
 msgstr "Versionslink mailen"
 
-#: links.py:101
+#: links.py:100
 msgid "Create mailing profile"
 msgstr "Mailprofil erstellen"
 
-#: links.py:107
+#: links.py:106
 msgid "Delete"
 msgstr "Löschen"
 
-#: links.py:111
+#: links.py:110
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: links.py:115 links.py:123 links.py:129 models.py:49
+#: links.py:114 links.py:122 links.py:128 models.py:49
 #: views/mailing_profile_views.py:138
 msgid "Mailing profiles"
 msgstr "Mailprofile"
 
-#: links.py:133 views/mailing_profile_views.py:168
+#: links.py:132 views/mailing_profile_views.py:168
 msgid "Test"
 msgstr "Test"
 

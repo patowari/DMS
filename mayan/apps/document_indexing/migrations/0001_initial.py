@@ -1,11 +1,11 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 import mptt.fields
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '__first__'),
+        ('documents', '__first__')
     ]
 
     operations = [
@@ -44,11 +44,11 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document types'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Index',
-                'verbose_name_plural': 'Indexes',
+                'verbose_name_plural': 'Indexes'
             },
             bases=(models.Model,),
         ),
@@ -91,11 +91,11 @@ class Migration(migrations.Migration):
                         related_name='node_instances',
                         verbose_name='Documents', to='documents.Document'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Index node instance',
-                'verbose_name_plural': 'Indexes node instances',
+                'verbose_name_plural': 'Indexes node instances'
             },
             bases=(models.Model,),
         ),
@@ -162,11 +162,11 @@ class Migration(migrations.Migration):
                         blank=True, null=True, on_delete=models.CASCADE,
                         to='document_indexing.IndexTemplateNode'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Index node template',
-                'verbose_name_plural': 'Indexes node template',
+                'verbose_name_plural': 'Indexes node template'
             },
             bases=(models.Model,),
         ),
@@ -188,5 +188,5 @@ class Migration(migrations.Migration):
                 to='document_indexing.IndexInstanceNode'
             ),
             preserve_default=True,
-        ),
+        )
     ]

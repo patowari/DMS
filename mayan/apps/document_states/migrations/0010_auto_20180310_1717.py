@@ -3,7 +3,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_states', '0009_auto_20170807_0612'),
+        ('document_states', '0009_auto_20170807_0612')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
                 'ordering': ('datetime',),
                 'verbose_name': 'Workflow instance log entry',
                 'verbose_name_plural': 'Workflow instance log entries'
-            },
-        ),
+            }
+        )
     ]

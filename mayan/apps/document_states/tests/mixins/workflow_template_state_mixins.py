@@ -1,5 +1,3 @@
-from django.db.models import Q
-
 from ...models.workflow_state_models import (
     WorkflowState, WorkflowStateRuntimeProxy
 )
@@ -14,6 +12,8 @@ from .workflow_template_mixins import WorkflowTemplateTestMixin
 
 
 class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
+    _test_object_model = WorkflowState
+    _test_object_name = '_test_workflow_template_state'
     auto_create_test_workflow_template_state = False
 
     def setUp(self):
@@ -50,9 +50,7 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
 
 class WorkflowTemplateStateAPIViewTestMixin(WorkflowTemplateStateTestMixin):
     def _request_test_workflow_template_state_create_api_view(self):
-        pk_list = list(
-            WorkflowState.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:workflow-template-state-list',
@@ -64,12 +62,7 @@ class WorkflowTemplateStateAPIViewTestMixin(WorkflowTemplateStateTestMixin):
             }
         )
 
-        try:
-            self._test_workflow_template_state = WorkflowState.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowState.DoesNotExist:
-            self._test_workflow_template_state = None
+        self._test_object_set()
 
         return response
 
@@ -123,9 +116,7 @@ class WorkflowTemplateStateAPIViewTestMixin(WorkflowTemplateStateTestMixin):
 
 class WorkflowTemplateStateViewTestMixin(WorkflowTemplateStateTestMixin):
     def _request_test_workflow_template_state_create_view(self, extra_data=None):
-        pk_list = list(
-            WorkflowState.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         data = {
             'label': TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
@@ -141,12 +132,7 @@ class WorkflowTemplateStateViewTestMixin(WorkflowTemplateStateTestMixin):
             }, data=data
         )
 
-        try:
-            self._test_workflow_template_state = WorkflowState.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except WorkflowState.DoesNotExist:
-            self._test_workflow_template_state = None
+        self._test_object_set()
 
         return response
 

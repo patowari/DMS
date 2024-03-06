@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: apps.py:32 events.py:11 links.py:53 links.py:94 permissions.py:6
 #: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr "事件"
@@ -67,15 +67,15 @@ msgstr "物件"
 msgid "Event type"
 msgstr "事件类型"
 
-#: classes.py:90
+#: classes.py:91
 msgid "Event list export to CSV"
 msgstr ""
 
-#: classes.py:118
+#: classes.py:122
 msgid "Events exported."
 msgstr ""
 
-#: classes.py:120
+#: classes.py:124
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -106,31 +106,31 @@ msgstr "已订阅"
 msgid "System"
 msgstr "系统"
 
-#: links.py:55 links.py:100 views/clear_views.py:63
+#: links.py:56 links.py:101 views/clear_views.py:65
 msgid "Clear events"
 msgstr ""
 
-#: links.py:59 links.py:107 views/export_views.py:60
+#: links.py:60 links.py:108 views/export_views.py:64
 msgid "Export events"
 msgstr ""
 
-#: links.py:65 models.py:53 views/subscription_views.py:54
+#: links.py:66 models.py:53 views/subscription_views.py:54
 msgid "Event subscriptions"
 msgstr "活动订阅"
 
-#: links.py:71 models.py:113 views/subscription_views.py:169
+#: links.py:72 models.py:113 views/subscription_views.py:169
 msgid "Object event subscriptions"
 msgstr "对象事件订阅"
 
-#: links.py:83
+#: links.py:84
 msgid "Mark as seen"
 msgstr "标记为已见"
 
-#: links.py:87
+#: links.py:88
 msgid "Mark all as seen"
 msgstr "标记所有为已见"
 
-#: links.py:114
+#: links.py:115
 msgid "Subscriptions"
 msgstr "订阅"
 
@@ -247,16 +247,16 @@ msgid ""
 "background. "
 msgstr ""
 
-#: views/clear_views.py:51
+#: views/clear_views.py:53
 msgid "Event list clear task queued successfully."
 msgstr ""
 
-#: views/clear_views.py:84
+#: views/clear_views.py:86
 #, python-format
 msgid "Clear events of: %s"
 msgstr ""
 
-#: views/clear_views.py:109
+#: views/clear_views.py:111
 #, python-format
 msgid "Clear events of type: %s"
 msgstr ""
@@ -287,22 +287,22 @@ msgstr ""
 msgid "Events of type: %s"
 msgstr "%s类型的事件："
 
-#: views/export_views.py:27
+#: views/export_views.py:28
 msgid ""
 "The process will be performed in the background. The exported events will be"
 " available in the downloads area."
 msgstr ""
 
-#: views/export_views.py:47
+#: views/export_views.py:51
 msgid "Event list export task queued successfully."
 msgstr ""
 
-#: views/export_views.py:81
+#: views/export_views.py:85
 #, python-format
 msgid "Export events of: %s"
 msgstr ""
 
-#: views/export_views.py:100
+#: views/export_views.py:104
 #, python-format
 msgid "Export events of type: %s"
 msgstr ""

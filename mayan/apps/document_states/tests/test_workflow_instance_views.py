@@ -215,7 +215,9 @@ class WorkflowInstanceTransitionViewTestCase(
         )
         self.assertNotContains(
             response=response,
-            text=str(self._test_workflow_template_transitions[0]),
+            text=str(
+                self._test_workflow_template_transitions[0]
+            ),
             status_code=200
         )
 
@@ -264,7 +266,9 @@ class WorkflowInstanceTransitionViewTestCase(
         )
         self.assertContains(
             response=response,
-            text=str(self._test_workflow_template_transitions[0]),
+            text=str(
+                self._test_workflow_template_transitions[0]
+            ),
             status_code=200
         )
 
@@ -313,7 +317,9 @@ class WorkflowInstanceTransitionViewTestCase(
         )
         self.assertContains(
             response=response,
-            text=str(self._test_workflow_template_transitions[0]),
+            text=str(
+                self._test_workflow_template_transitions[0]
+            ),
             status_code=200
         )
 

@@ -150,15 +150,6 @@ been expanding its feature set and provide some functionality from other
 system types.
 
 
-Can I use Mayan EDMS for things other than documents?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Yes. With the exception of the image previewer, every aspect of Mayan is
-file format agnostic. This means the your can upload video and music files
-and still use tagging, indexing, workflows, and digital signatures on those
-files.
-
-
 Technical
 =========
 
@@ -190,17 +181,6 @@ This is a community contributed file. Use the Python settings file method to
 use this file.
 
 
-Operating systems
------------------
-
-How to install Mayan EDMS in Windows operating systems?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Mayan EDMS doesn't run natively on Windows. The best way is to use a virtual
-machine product, install Ubuntu or Debian, and proceed with the standard
-deployment instructions or use Docker inside a GNU/Linux virtual machine.
-
-
 Python
 ------
 
@@ -214,13 +194,6 @@ conflict with the distribution's prepackaged Python libraries messing other
 Django projects or Python programs, or another later Python/Django project
 dependencies coming into conflict causing Mayan to stop working for no
 apparent reason.
-
-
-Does Mayan EDMS work with Python 3?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Yes, version 3.3 ships with Python 3.7 support. Support for Python 2 will
-be removed in version 4.0.
 
 
 Security

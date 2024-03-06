@@ -4,27 +4,26 @@ from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_document_file_attachment_send_single,
-    icon_document_file_link_send_single,
     icon_document_file_attachment_send_multiple,
+    icon_document_file_attachment_send_single,
     icon_document_file_link_send_multiple,
-    icon_document_link_send_single, icon_document_link_send_multiple,
+    icon_document_file_link_send_single, icon_document_link_send_multiple,
+    icon_document_link_send_single,
     icon_document_version_attachment_send_single,
-    icon_document_version_link_send_single,
-    icon_document_version_link_send_multiple,
     icon_document_version_attachment_send_multiple,
-    icon_mailing_profile_create, icon_mailing_profile_delete,
-    icon_mailing_profile_edit, icon_mailing_profile_list,
-    icon_mailing_profile_test
+    icon_document_version_link_send_multiple,
+    icon_document_version_link_send_single, icon_mailing_profile_create,
+    icon_mailing_profile_delete, icon_mailing_profile_edit,
+    icon_mailing_profile_list, icon_mailing_profile_test
 )
 from .permissions import (
-    permission_send_document_file_attachment,
-    permission_send_document_file_link,
-    permission_send_document_version_attachment,
-    permission_send_document_version_link, permission_send_document_link,
     permission_mailing_profile_create, permission_mailing_profile_delete,
     permission_mailing_profile_edit, permission_mailing_profile_use,
-    permission_mailing_profile_view
+    permission_mailing_profile_view,
+    permission_send_document_file_attachment,
+    permission_send_document_file_link, permission_send_document_link,
+    permission_send_document_version_attachment,
+    permission_send_document_version_link
 )
 
 # Document

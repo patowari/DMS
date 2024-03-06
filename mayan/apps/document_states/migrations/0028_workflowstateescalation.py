@@ -1,5 +1,6 @@
 from django.db import migrations, models
 import django.db.models.deletion
+
 import mayan.apps.databases.model_mixins
 
 
@@ -91,7 +92,9 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Workflow state escalation',
                 'verbose_name_plural': 'Workflow state escalations',
                 'ordering': ('priority',),
-                'unique_together': {('state', 'transition')},
+                'unique_together': {
+                    ('state', 'transition')
+                }
             },
             bases=(
                 mayan.apps.databases.model_mixins.ExtraDataModelMixin,

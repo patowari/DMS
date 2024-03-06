@@ -7,14 +7,12 @@ from mptt.models import MPTTModel
 
 from mayan.apps.documents.models.document_models import Document
 
-from ..managers import (
-    DocumentIndexInstanceNodeManager, IndexInstanceManager
-)
+from ..managers import DocumentIndexInstanceNodeManager, IndexInstanceManager
 
-from .index_template_models import IndexTemplate, IndexTemplateNode
 from .index_instance_model_mixins import (
     IndexInstanceBusinessLogicMixin, IndexInstanceNodeBusinessLogicMixin
 )
+from .index_template_models import IndexTemplate, IndexTemplateNode
 
 
 class IndexInstance(IndexInstanceBusinessLogicMixin, IndexTemplate):

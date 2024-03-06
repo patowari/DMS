@@ -35,7 +35,7 @@ Search fields removed:
   - Document version
   - Document version page
 
-- Worfklow transition comments removed from:
+- Workflow transition comments removed from:
 
   - Document file
   - Document file page

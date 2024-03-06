@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Изглед"
 
@@ -94,7 +94,7 @@ msgstr "Настройки на темата"
 msgid "Edit theme settings"
 msgstr "Редактирайте настройките на темата"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Създайте нова тема"
 
@@ -106,7 +106,7 @@ msgstr "Изтрийте"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Теми"
 
@@ -267,59 +267,79 @@ msgstr ""
 "Отворете билет с помощта на <a href=\"%(issue_url)s\">проследяване на "
 "проблем</a> ."
 
-#: templates/appearance/about.html:9
+#: templates/appearance/about.html:10
 msgid "About"
 msgstr "Относно"
 
-#: templates/appearance/about.html:21
+#: templates/appearance/about.html:39
 msgid "Version"
 msgstr "Версия"
 
-#: templates/appearance/about.html:23
+#: templates/appearance/about.html:41
 #, python-format
-msgid "Build number: %(build_number)s"
-msgstr "Номер на конструкцията: %(build_number)s"
+msgid "Build number: %(project_build_number)s"
+msgstr ""
 
-#: templates/appearance/about.html:36
+#: templates/appearance/about.html:48
 msgid "Released under the license:"
 msgstr "Издаден под лиценз:"
 
-#: templates/appearance/about.html:40
+#: templates/appearance/about.html:57
 #, python-format
 msgid ""
-"\n"
-"                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
-"            "
+"To get the latest news subscribe to the <a class=\"new_window\" "
+"href=\"%(link_mailing_list_url)s\"> Mailing list</a>."
 msgstr ""
-"\n"
-"                Пълният списък на промените е наличен чрез <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Бележки към версията %(icon_documentation)s</a> или кратката версия <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Дневник на промените%(icon_documentation)s</a>.\n"
-"            "
 
-#: templates/appearance/about.html:46
+#: templates/appearance/about.html:66
 #, python-format
 msgid ""
-"\n"
-"                For questions check the <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
-"            "
+"For articles, tutorials, troubleshooting, subscribe to the <a "
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
-"\n"
-"За въпроси проверете <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Документация %(icon_documentation)s</a> ."
 
-#: templates/appearance/about.html:52
+#: templates/appearance/about.html:75
 #, python-format
 msgid ""
-"\n"
-"                If you found a bug or have a feature idea, visit the <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> or open a ticket in the <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Source code repository %(icon_source_code)s</a>.\n"
-"            "
+"Need professional help? Check out the <a class=\"new_window\" "
+"href=\"%(link_support_url)s\"> Support</a> offerings."
 msgstr ""
-"\n"
-"                Ако намерите бъг или имате идея за прибавка, посетете <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Форум %(icon_forum)s</a> или направете заявка в <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Хранилище на изходен код %(icon_source_code)s</a>.\n"
-"            "
 
-#: templates/appearance/app/foot.html:70
+#: templates/appearance/about.html:84
+#, python-format
 msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
+"For discussions visit the <a class=\"new_window\" "
+"href=\"%(link_forum_url)s\">Community forum</a>."
+msgstr ""
+
+#: templates/appearance/about.html:93
+#, python-format
+msgid ""
+"The complete list of changes is available via the <a class=\"new_window\" "
+"href=\"%(link_release_notes_url)s\">Release notes</a>."
+msgstr ""
+
+#: templates/appearance/about.html:102
+#, python-format
+msgid ""
+"For questions check the <a class=\"new_window\" "
+"href=\"%(link_documentation_url)s\">Documentation</a>."
+msgstr ""
+
+#: templates/appearance/about.html:111
+#, python-format
+msgid ""
+"If you found a bug or have a feature idea open a ticket in the <a "
+"class=\"new_window\" href=\"%(link_source_code_url)s\">Source code "
+"repository</a>."
+msgstr ""
+
+#: templates/appearance/about.html:117
+#, python-format
+msgid ""
+"%(project_title)s is Free and Open Source software, which is provided as-is "
+"with no warranty."
 msgstr ""
 
 #: templates/appearance/confirm.html:13
@@ -462,33 +482,33 @@ msgstr "Проверете връзката с мрежата и опитайт�
 msgid "None"
 msgstr "Няма"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Изтриване на тема: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Редактиране на тема: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Темите позволяват промяна на визуалния облик, без да се изискват промени в "
 "кода."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Няма теми"
 
-#: views.py:122
+#: views.py:125
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Настройки на темата за потребителя: %s"
 
-#: views.py:144
+#: views.py:148
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Редактиране на настройките на потребителската тема: %s"

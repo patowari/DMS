@@ -1,11 +1,12 @@
-import mayan.apps.common.models
 import django.core.files.storage
 from django.db import migrations, models
+
+import mayan.apps.common.models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('common', '0010_auto_20180403_0702'),
+        ('common', '0010_auto_20180403_0702')
     ]
 
     operations = [
@@ -17,6 +18,6 @@ class Migration(migrations.Migration):
                     location=b'/home/rosarior/development/mayan-edms/mayan/media/shared_files'
                 ), upload_to=mayan.apps.common.models.upload_to,
                 verbose_name='File'
-            ),
-        ),
+            )
+        )
     ]

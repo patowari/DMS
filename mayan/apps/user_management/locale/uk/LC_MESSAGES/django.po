@@ -6,14 +6,15 @@
 # Translators:
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,119 +22,119 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
-msgstr ""
+msgstr "Керування користувачами"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
-msgstr ""
+msgstr "Група"
 
-#: apps.py:78 apps.py:107 links.py:53 links.py:67 links.py:96 search.py:34
+#: apps.py:77 apps.py:113 links.py:53 links.py:67 links.py:96 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
-msgstr ""
+msgstr "Групи"
 
 #: apps.py:79 search.py:16
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:102 models.py:20 search.py:22
 msgid "User"
 msgstr "Користувач"
 
-#: apps.py:100 apps.py:222 links.py:58 links.py:99 links.py:111
+#: apps.py:103 apps.py:230 links.py:58 links.py:99 links.py:111
 #: views/user_views.py:170
 msgid "Users"
-msgstr ""
+msgstr "Користувачі"
 
-#: apps.py:103 search.py:31
+#: apps.py:107 search.py:31
 msgid "Email"
 msgstr "Електронна адреса"
 
-#: apps.py:106 search.py:28
+#: apps.py:111 search.py:28
 msgid "First name"
-msgstr ""
+msgstr "Ім'я"
 
-#: apps.py:110
+#: apps.py:117
 msgid "Is active?"
-msgstr ""
+msgstr "Чи активний?"
 
-#: apps.py:113
+#: apps.py:120
 msgid "Is super user?"
-msgstr ""
+msgstr "Супер користувач?"
 
-#: apps.py:116 search.py:37
+#: apps.py:123 search.py:37
 msgid "Last name"
-msgstr ""
+msgstr "Прізвище"
 
-#: apps.py:119 serializers.py:72
+#: apps.py:126 serializers.py:72
 msgid "Password"
 msgstr "Пароль"
 
-#: apps.py:122 search.py:40
+#: apps.py:129 search.py:40
 msgid "Username"
-msgstr ""
+msgstr "Ім'я користувача"
 
-#: apps.py:125
+#: apps.py:132
 msgid "Last login"
-msgstr ""
-
-#: apps.py:151
-msgid "Has usable password?"
-msgstr ""
+msgstr "Останній вхід"
 
 #: apps.py:158
-msgid "All the groups."
-msgstr ""
+msgid "Has usable password?"
+msgstr "Чи має придатний пароль?"
 
-#: apps.py:162
+#: apps.py:165
+msgid "All the groups."
+msgstr "Усі групи."
+
+#: apps.py:169
 msgid "All the users."
-msgstr ""
+msgstr "Усі користувачі."
 
 #: dashboard_widgets.py:14
 msgid "Total users"
-msgstr ""
+msgstr "Всього користувачів"
 
 #: dashboard_widgets.py:29
 msgid "Total groups"
-msgstr ""
+msgstr "Всього груп"
 
 #: dashboards.py:6
 msgid "User dashboard"
-msgstr ""
+msgstr "Інформаційна панель користувача"
 
 #: events.py:10
 msgid "Group created"
-msgstr ""
+msgstr "Групу створено"
 
 #: events.py:13
 msgid "Group edited"
-msgstr ""
+msgstr "Групу відредаговано"
 
 #: events.py:17
 msgid "User created"
-msgstr ""
+msgstr "Користувача створено"
 
 #: events.py:20
 msgid "User edited"
-msgstr ""
+msgstr "Користувача відредаговано"
 
 #: events.py:25
 msgid "User logged in"
-msgstr ""
+msgstr "Користувач увійшов в систему"
 
 #: events.py:28
 msgid "User logged out"
-msgstr ""
+msgstr "Користувач вийшов із системи"
 
 #: links.py:28
 msgid "User details"
-msgstr ""
+msgstr "Інформація про користувача"
 
 #: links.py:36 views/group_views.py:25
 msgid "Create new group"
-msgstr ""
+msgstr "Створити нову групу"
 
 #: links.py:41 links.py:44 links.py:81 links.py:85
 msgid "Delete"
@@ -145,11 +146,11 @@ msgstr "Редагувати"
 
 #: links.py:75 views/user_views.py:32
 msgid "Create new user"
-msgstr ""
+msgstr "Створити нового користувача"
 
 #: links.py:104
 msgid "User options"
-msgstr ""
+msgstr "Параметри користувача"
 
 #: literals.py:8
 msgid "Account"
@@ -157,144 +158,146 @@ msgstr "Акаунт"
 
 #: literals.py:12 literals.py:23
 msgid "Personal"
-msgstr ""
+msgstr "Особисті"
 
 #: literals.py:16
 msgid "Attributes"
-msgstr ""
+msgstr "Атрибути"
 
 #: models.py:24
 msgid "Forbid this user from changing their password."
-msgstr ""
+msgstr "Заборонити цьому користувачеві змінювати свій пароль."
 
 #: models.py:31
 msgid "User settings"
-msgstr ""
+msgstr "Налаштування користувача"
 
 #: models.py:32
 msgid "Users settings"
-msgstr ""
+msgstr "Налаштування користувачів"
 
 #: permissions.py:10
 msgid "Create new groups"
-msgstr ""
+msgstr "Створити нові групи"
 
 #: permissions.py:13
 msgid "Delete existing groups"
-msgstr ""
+msgstr "Видалити існуючі групи"
 
 #: permissions.py:16
 msgid "Edit existing groups"
-msgstr ""
+msgstr "Редагувати існуючі групи"
 
 #: permissions.py:19
 msgid "View existing groups"
-msgstr ""
+msgstr "Переглянути існуючі групи"
 
 #: permissions.py:22
 msgid "Create new users"
-msgstr ""
+msgstr "Створити нових користувачів"
 
 #: permissions.py:25
 msgid "Delete existing users"
-msgstr ""
+msgstr "Видалити існуючих користувачів"
 
 #: permissions.py:28
 msgid "Edit existing users"
-msgstr ""
+msgstr "Редагувати існуючих користувачів"
 
 #: permissions.py:31
 msgid "View existing users"
-msgstr ""
+msgstr "Переглянути існуючих користувачів"
 
 #: serializers.py:16
 msgid "URL of the API endpoint showing the list users of this group."
-msgstr ""
+msgstr "URL API-точки доступу, яка показує список користувачів цієї групи."
 
 #: serializers.py:18
 msgid "Users URL"
-msgstr ""
+msgstr "URL-адреса користувачів"
 
 #: serializers.py:22
 msgid "Users add URL"
-msgstr ""
+msgstr "Додати URL користувачів"
 
 #: serializers.py:26
 msgid "Users remove URL"
-msgstr ""
+msgstr "Видалити URL користувачів"
 
 #: serializers.py:33 serializers.py:80
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:48
 msgid "Primary key of the user to add to the group."
-msgstr ""
+msgstr "Первинний ключ користувача, який потрібно додати до групи."
 
 #: serializers.py:49 serializers.py:58
 msgid "User ID"
-msgstr ""
+msgstr "ID користувача"
 
 #: serializers.py:57
 msgid "Primary key of the user to remove from the group."
-msgstr ""
+msgstr "Первинний ключ користувача, якого потрібно видалити з групи."
 
 #: serializers.py:66
 msgid "URL of the API endpoint showing the list groups this user belongs to."
 msgstr ""
+"URL API-точки доступу, яка показує список груп, до яких належить цей "
+"користувач."
 
 #: serializers.py:68
 msgid "Groups URL"
-msgstr ""
+msgstr "URL-адреса груп"
 
 #: utils.py:26
 msgid "Anonymous"
-msgstr ""
+msgstr "Анонімний"
 
 #: views/group_views.py:40
 #, python-format
 msgid "Error deleting group \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Помилка видалення групи \"%(instance)s\"; %(exception)s"
 
 #: views/group_views.py:47
 #, python-format
 msgid "%(count)d groups deleted successfully."
-msgstr ""
+msgstr "%(count)d груп успішно видалено."
 
 #: views/group_views.py:48
 #, python-format
 msgid "Group \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Групу \"%(object)s\" успішно видалено."
 
 #: views/group_views.py:49
 #, python-format
 msgid "%(count)d group deleted successfully."
-msgstr ""
+msgstr "%(count)d група успішно видалена."
 
 #: views/group_views.py:50
 #, python-format
 msgid "Delete the %(count)d selected groups."
-msgstr ""
+msgstr "Видалити %(count)d обраних груп."
 
 #: views/group_views.py:51
 #, python-format
 msgid "Delete group: %(object)s."
-msgstr ""
+msgstr "Видалити групу: %(object)s."
 
 #: views/group_views.py:52
 #, python-format
 msgid "Delete the %(count)d selected group."
-msgstr ""
+msgstr "Видалити %(count)d обраних групу."
 
 #: views/group_views.py:66
 #, python-format
 msgid "Details of group: %s"
-msgstr ""
+msgstr "Деталі групи: %s"
 
 #: views/group_views.py:83
 #, python-format
 msgid "Edit group: %s"
-msgstr ""
+msgstr "Редагувати групу: %s"
 
 #: views/group_views.py:104
 msgid ""
@@ -302,101 +305,110 @@ msgid ""
 "units of your organization. Groups can't be used for access control. Use "
 "roles for permissions and access control, add groups to them."
 msgstr ""
+"Групи користувачів є організаційними одиницями. Вони мають відображати "
+"організаційні підрозділи вашої організації. Групи не можна використовувати "
+"для контролю доступу. Використовуйте ролі для дозволів і контролю доступу, "
+"додавайте до них групи."
 
 #: views/group_views.py:110
 msgid "There are no user groups"
-msgstr ""
+msgstr "Немає груп користувачів"
 
 #: views/group_views.py:116
 msgid "Available users"
-msgstr ""
+msgstr "Доступні користувачі"
 
 #: views/group_views.py:117
 msgid "Group users"
-msgstr ""
+msgstr "Користувачі групи"
 
 #: views/group_views.py:132
 #, python-format
 msgid "Users of group: %s"
-msgstr ""
+msgstr "Користувачі групи: %s"
 
 #: views/user_views.py:55
 #, python-format
 msgid "Error deleting user \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Помилка видалення користувача \"%(instance)s\"; %(exception)s"
 
 #: views/user_views.py:61
 #, python-format
 msgid "%(count)d users deleted successfully."
-msgstr ""
+msgstr "%(count)d користувачів успішно видалено."
 
 #: views/user_views.py:62
 #, python-format
 msgid "User \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "Користувач \"%(object)s\" успішно видалений."
 
 #: views/user_views.py:63
 #, python-format
 msgid "%(count)d user deleted successfully."
-msgstr ""
+msgstr "%(count)d користувача успішно видалено."
 
 #: views/user_views.py:64
 #, python-format
 msgid "Delete the %(count)d selected users."
-msgstr ""
+msgstr "Видалити %(count)d вибраних користувачів."
 
 #: views/user_views.py:65
 #, python-format
 msgid "Delete user: %(object)s."
-msgstr ""
+msgstr "Видалити користувача: %(object)s."
 
 #: views/user_views.py:66
 #, python-format
 msgid "Delete the %(count)d selected user."
-msgstr ""
+msgstr "Видалити %(count)d вибраного користувача."
 
 #: views/user_views.py:73
 msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
 msgstr ""
+"УВАГА! Ви збираєтеся видалити свій обліковий запис користувача. Ви втратите "
+"доступ до системи. Цей процес є не оборотним."
 
 #: views/user_views.py:93
 #, python-format
 msgid "Details of user: %s"
-msgstr ""
+msgstr "Відомості про користувача: %s"
 
 #: views/user_views.py:112
 #, python-format
 msgid "Edit user: %s"
-msgstr ""
+msgstr "Редагувати користувача: %s"
 
 #: views/user_views.py:123
 msgid "Available groups"
-msgstr ""
+msgstr "Доступні групи"
 
 #. Translators: "User groups" here refer to the list of groups of a
 #. specific user. The user's group membership.
 #: views/user_views.py:126
 msgid "User groups"
-msgstr ""
+msgstr "Групи користувачів"
 
 #: views/user_views.py:141
 #, python-format
 msgid "Groups of user: %s"
-msgstr ""
+msgstr "Групи користувача: %s"
 
 #: views/user_views.py:166
 msgid ""
 "User accounts can be create from this view. After creating a user account "
 "you will prompted to set a password for it. "
 msgstr ""
+"У цьому поданні можна створювати облікові записи користувачів. Після "
+"створення облікового запису користувача вам буде запропоновано встановити "
+"для нього пароль."
 
 #: views/user_views.py:169
 msgid "There are no user accounts"
-msgstr ""
+msgstr "Немає облікових записів користувачів"
 
 #: views/user_views.py:189
 #, python-format
 msgid "Edit options for user: %s"
-msgstr ""
+msgstr "Редагувати параметри для користувача: %s"

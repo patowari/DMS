@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -22,15 +22,15 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:62 events.py:6 permissions.py:6
+#: apps.py:61 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Felhasználó kezelés"
 
-#: apps.py:77 search.py:10
+#: apps.py:76 search.py:10
 msgid "Group"
 msgstr "Csoport"
 
-#: apps.py:78 apps.py:107 links.py:53 links.py:67 links.py:96 search.py:34
+#: apps.py:77 apps.py:113 links.py:53 links.py:67 links.py:96 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr "Csoportok"
@@ -39,56 +39,56 @@ msgstr "Csoportok"
 msgid "Name"
 msgstr "Név"
 
-#: apps.py:99 models.py:20 search.py:22
+#: apps.py:102 models.py:20 search.py:22
 msgid "User"
 msgstr "Felhasználó"
 
-#: apps.py:100 apps.py:222 links.py:58 links.py:99 links.py:111
+#: apps.py:103 apps.py:230 links.py:58 links.py:99 links.py:111
 #: views/user_views.py:170
 msgid "Users"
 msgstr "Felhasználók"
 
-#: apps.py:103 search.py:31
+#: apps.py:107 search.py:31
 msgid "Email"
 msgstr "Email"
 
-#: apps.py:106 search.py:28
+#: apps.py:111 search.py:28
 msgid "First name"
 msgstr "Keresztnév"
 
-#: apps.py:110
+#: apps.py:117
 msgid "Is active?"
 msgstr "Aktív?"
 
-#: apps.py:113
+#: apps.py:120
 msgid "Is super user?"
 msgstr "Szuper felhasználó?"
 
-#: apps.py:116 search.py:37
+#: apps.py:123 search.py:37
 msgid "Last name"
 msgstr "Vezetéknév"
 
-#: apps.py:119 serializers.py:72
+#: apps.py:126 serializers.py:72
 msgid "Password"
 msgstr "Jelszó"
 
-#: apps.py:122 search.py:40
+#: apps.py:129 search.py:40
 msgid "Username"
 msgstr "Felhasználónév"
 
-#: apps.py:125
+#: apps.py:132
 msgid "Last login"
 msgstr "Utolsó bejelentkezés"
 
-#: apps.py:151
+#: apps.py:158
 msgid "Has usable password?"
 msgstr "Van használható jelszó?"
 
-#: apps.py:158
+#: apps.py:165
 msgid "All the groups."
 msgstr "Minden csoport."
 
-#: apps.py:162
+#: apps.py:169
 msgid "All the users."
 msgstr "Minden felhasználó."
 

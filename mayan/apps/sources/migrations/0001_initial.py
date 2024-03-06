@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                     'enabled', models.BooleanField(
                         default=True, verbose_name='Enabled'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('title',),
@@ -120,7 +120,7 @@ class Migration(migrations.Migration):
                     'password', models.CharField(
                         max_length=96, verbose_name='Password'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Email source',
@@ -142,7 +142,7 @@ class Migration(migrations.Migration):
                     'timeout', models.PositiveIntegerField(
                         default=60, verbose_name='Timeout'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'POP email',
@@ -166,7 +166,7 @@ class Migration(migrations.Migration):
                         'for messages with attached documents.',
                         max_length=64, verbose_name='Mailbox'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'IMAP email',

@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_file_models import DocumentFile
+from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.views.document_file_views import DocumentFileListView
 from mayan.apps.organizations.utils import get_organization_installation_url
 from mayan.apps.views.generics import (
@@ -104,7 +104,9 @@ class DocumentDownloadView(
 
         task_document_file_compress.apply_async(
             kwargs={
-                'id_list': list(queryset.values_list('pk', flat=True)),
+                'id_list': list(
+                    queryset.values_list('pk', flat=True)
+                ),
                 'organization_installation_url': get_organization_installation_url(
                     request=self.request
                 ),

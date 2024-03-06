@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2024\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:26 classes.py:206 links.py:27
+#: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
 msgstr "قوائم التحكم فى الدخول"
 
@@ -36,7 +36,7 @@ msgstr ""
 "الكائن الذي تم منح الوصول إليه. عند فرز الكائنات ، يتم استخدام النوع فقط "
 "وليس التسمية الفعلية للكائن."
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "كائن"
 
@@ -60,19 +60,19 @@ msgstr "تم تحرير قائمة التحكم فى الدخول"
 msgid "Role"
 msgstr "دور"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "قائمة تحكم في الدخول جديدة "
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "أذونات"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr "قوائم التحكم في الدخول العالمية"
 
@@ -94,7 +94,7 @@ msgstr "عدد الأذونات"
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "معرف الكائن"
 
@@ -178,7 +178,7 @@ msgstr "حذف قائمة التحكم في الدخول : %s"
 msgid "There are no ACLs for this object"
 msgstr "لا توجد قوائم تحكم بالدخول لهذا الكائن"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:277
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -201,12 +201,12 @@ msgstr "الأذونات الممنوحة"
 msgid "Available permissions"
 msgstr "الأذونات المتاحة"
 
-#: views.py:219
+#: views.py:223
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "إذن الدور \"%(role)s\" ل\"%(object)s\""
 
-#: views.py:228
+#: views.py:233
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -217,11 +217,11 @@ msgstr ""
 "يمكن إزالتها من هذا العرض. يجب إزالة الصلاحيات الموروثة من قائمة التحكم في "
 "الوصول للكائن الأصلي أو من دورها عبر قائمة الإعداد."
 
-#: views.py:269
+#: views.py:274
 msgid "There are no ACLs"
 msgstr "لا توجد قوائم بحق الوصول ACL"
 
-#: views.py:278
+#: views.py:283
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 
@@ -233,40 +233,40 @@ msgstr "نوع الكائن"
 msgid "Type of the object for which the access will be modified."
 msgstr "نوع الكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:56
+#: workflow_actions.py:57
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr "المعرف الرقمي للكائن الذي سيتم تعديل الوصول إليه."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "أدوار"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "الأدوار التي سيتم تعديل الوصول إليها."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr "صلاحيات منح / إبطال إلى / من دور الكائن المحدد أعلاه."
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr "إتاحة الوصول إلى الكائن"
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr "إبطال الوصول إلى الكائن"
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr "منح حق الوصول إلى الوثيقة"
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr "إبطال صلاحية الوصول إلى الوثيقة"

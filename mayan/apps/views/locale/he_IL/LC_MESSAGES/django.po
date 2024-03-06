@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
-#: apps.py:20 settings.py:11
+#: apps.py:21 settings.py:11
 msgid "Views"
 msgstr "תצוגות"
 
@@ -40,111 +40,111 @@ msgstr "Label"
 msgid "Relationship"
 msgstr ""
 
-#: generics.py:164
+#: generics.py:168
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
 
-#: generics.py:169
+#: generics.py:173
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
 
-#: generics.py:323
+#: generics.py:327
 msgid "Add all"
 msgstr ""
 
-#: generics.py:330
+#: generics.py:334
 msgid "Add"
 msgstr ""
 
-#: generics.py:341
+#: generics.py:345
 msgid "Remove all"
 msgstr ""
 
-#: generics.py:348
+#: generics.py:352
 msgid "Remove"
 msgstr ""
 
-#: generics.py:579
+#: generics.py:583
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr ""
 
-#: generics.py:586
+#: generics.py:590
 msgid "Relationships updated successfully"
 msgstr ""
 
-#: generics.py:649
+#: generics.py:653
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr ""
 
-#: generics.py:668
+#: generics.py:672
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr ""
 
-#: generics.py:679
+#: generics.py:683
 #, python-format
 msgid "%(object)s created successfully."
 msgstr ""
 
-#: generics.py:723
+#: generics.py:727
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr ""
 
-#: generics.py:733
+#: generics.py:737
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr ""
 
-#: generics.py:796
+#: generics.py:800
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:908
+#: generics.py:912
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr ""
 
-#: generics.py:918
+#: generics.py:922
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr ""
 
-#: generics.py:985
+#: generics.py:989
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:986
+#: generics.py:990
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:987
+#: generics.py:991
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:988
+#: generics.py:992
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:989
+#: generics.py:993
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:990
+#: generics.py:994
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -161,34 +161,6 @@ msgstr ""
 msgid ""
 "Display a submit button and wait for the submit button to be pressed before "
 "processing up the upload."
-msgstr ""
-
-#: templates/views/app/foot.html:45
-msgid "Cancel upload"
-msgstr ""
-
-#: templates/views/app/foot.html:46
-msgid "Are you sure you want to cancel this upload?"
-msgstr ""
-
-#: templates/views/app/foot.html:47
-msgid "Drop files or click here to upload files"
-msgstr ""
-
-#: templates/views/app/foot.html:48
-msgid "Your browser does not support drag and drop file uploads."
-msgstr ""
-
-#: templates/views/app/foot.html:49
-msgid "Please use the fallback form below to upload your files."
-msgstr ""
-
-#: templates/views/app/foot.html:50
-msgid "Clear"
-msgstr ""
-
-#: templates/views/app/foot.html:51
-msgid "Server responded with {{statusCode}} code."
 msgstr ""
 
 #: templatetags/views_tags.py:30

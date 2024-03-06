@@ -541,7 +541,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document()
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )
@@ -573,7 +575,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document()
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )
@@ -605,7 +609,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document(user=self._test_case_user)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )
@@ -640,7 +646,9 @@ class DocumentSizeQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
         with self.assertRaises(expected_exception=QuotaExceeded):
             self._upload_test_document(user=self._test_case_user)
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             DocumentFile.objects.count(), test_document_file_count
         )

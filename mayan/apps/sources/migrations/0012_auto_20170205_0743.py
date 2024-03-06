@@ -25,6 +25,6 @@ class Migration(migrations.Migration):
                 help_text='Sets the resolution of the scanned image in '
                 'DPI (dots per inch).',
                 verbose_name='Resolution'
-            ),
+            )
         )
     ]

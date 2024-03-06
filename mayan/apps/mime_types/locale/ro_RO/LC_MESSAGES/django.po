@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -32,7 +32,7 @@ msgstr "Comanda fișier nu este instalată sau nu a fost găsită."
 msgid "mimetype not installed or not found."
 msgstr "mimetype nu este instalat sau nu a fost găsit."
 
-#: dependencies.py:10
+#: dependencies.py:11
 msgid ""
 "This module can be used to determine the MIME type of a file. It tries to "
 "implement the freedesktop specification for a shared MIME database."
@@ -41,7 +41,7 @@ msgstr ""
 "Încearcă să implementeze specificația freedesktop pentru o bază de date MIME"
 " partajată."
 
-#: dependencies.py:17
+#: dependencies.py:18
 msgid "determine file type using content tests"
 msgstr "determinați tipul fișierului folosind teste de conținut"
 

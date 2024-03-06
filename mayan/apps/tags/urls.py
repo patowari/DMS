@@ -1,14 +1,13 @@
 from django.urls import re_path
 
 from .api_views import (
-    APIDocumentTagAttachView, APIDocumentTagRemoveView,
-    APIDocumentTagListView, APITagDocumentListView, APITagListView,
-    APITagDetailView
+    APIDocumentTagAttachView, APIDocumentTagListView,
+    APIDocumentTagRemoveView, APITagDetailView, APITagDocumentListView,
+    APITagListView
 )
 from .views import (
-    DocumentTagListView, TagAttachActionView, TagCreateView,
-    TagDeleteView, TagEditView, TagListView, TagRemoveActionView,
-    TagDocumentListView
+    DocumentTagListView, TagAttachActionView, TagCreateView, TagDeleteView,
+    TagDocumentListView, TagEditView, TagListView, TagRemoveActionView
 )
 
 urlpatterns_documents = [

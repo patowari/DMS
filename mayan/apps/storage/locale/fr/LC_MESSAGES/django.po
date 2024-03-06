@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr "Stockage"
 
@@ -38,7 +38,7 @@ msgstr ""
 "Impossible d'initialiser le stockage : %(name)s. Vérifiez le chemin en "
 "pointillés et les arguments du backend de stockage."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Télécharger les fichiers"
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Nom du stockage à exécuter."
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "Nom de fichier"
 
@@ -105,27 +105,27 @@ msgstr "Fichier sans nom"
 msgid "Size"
 msgstr "Taille"
 
-#: model_mixins.py:110 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:46 serializers.py:15
 msgid "User"
 msgstr "Utilisateur"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "Fichier"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Libellé"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Télécharger le fichier"
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr "Fichier importé partagé"
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Fichiers importés partagés"
 
@@ -214,7 +214,7 @@ msgstr ""
 "Impossible d'initialiser le stockage de fichiers téléchargés partagés. "
 "Vérifiez les paramètres {} et {} pour les erreurs de formatage."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -224,10 +224,10 @@ msgstr ""
 "tel qu'une exportation. Les fichiers téléchargés sont conservés pendant un "
 "certain temps, puis supprimés automatiquement."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "Il n'y a aucun fichier à télécharger."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "Téléchargements"

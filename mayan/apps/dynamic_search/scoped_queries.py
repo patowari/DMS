@@ -7,9 +7,8 @@ from .exceptions import (
     DynamicSearchBackendException, DynamicSearchScopedQueryError
 )
 from .literals import (
-    ERROR_TEXT_NO_RESULT_SCOPE, SCOPE_DELIMITER,
-    SCOPE_MARKER, SCOPE_OPERATOR_CHOICES, SCOPE_RESULT_MARKER,
-    TERM_MARKER_QUOTE
+    ERROR_TEXT_NO_RESULT_SCOPE, SCOPE_DELIMITER, SCOPE_MARKER,
+    SCOPE_OPERATOR_CHOICES, SCOPE_RESULT_MARKER, TERM_MARKER_QUOTE
 )
 from .search_query_terms import QueryToken
 from .search_query_types import QueryType
@@ -491,10 +490,16 @@ class ScopedQueryEntryDataOperator(ScopedQueryEntryData):
         result = []
 
         for operand in self.operand_list:
-            scope_entry = self.scoped_query.get_scope_entry_by_identifier(scope_identifier=operand)
-            result.append(scope_entry.to_explain())
+            scope_entry = self.scoped_query.get_scope_entry_by_identifier(
+                scope_identifier=operand
+            )
+            result.append(
+                scope_entry.to_explain()
+            )
 
-        operator_with_operands = ' {} '.format(self.operator_text).join(result)
+        operator_with_operands = ' {} '.format(self.operator_text).join(
+            result
+        )
 
         context.update(
             {

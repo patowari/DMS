@@ -12,6 +12,6 @@ class Migration(migrations.Migration):
             options={
                 'ordering': ('id',), 'verbose_name': 'Quota',
                 'verbose_name_plural': 'Quotas'
-            },
+            }
         )
     ]

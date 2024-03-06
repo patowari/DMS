@@ -1,11 +1,11 @@
-from django.db import models, migrations
 from django.conf import settings
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('documents', '__first__'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL)
     ]
 
     operations = [
@@ -29,13 +29,13 @@ class Migration(migrations.Migration):
                         verbose_name='Document types',
                         to='documents.DocumentType'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Workflow',
-                'verbose_name_plural': 'Workflows',
+                'verbose_name_plural': 'Workflows'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='WorkflowInstance',
@@ -58,13 +58,13 @@ class Migration(migrations.Migration):
                         to='document_states.Workflow',
                         verbose_name='Workflow'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Workflow instance',
-                'verbose_name_plural': 'Workflow instances',
+                'verbose_name_plural': 'Workflow instances'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='WorkflowInstanceLogEntry',
@@ -85,13 +85,13 @@ class Migration(migrations.Migration):
                     'comment', models.TextField(
                         verbose_name='Comment', blank=True
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Workflow instance log entry',
-                'verbose_name_plural': 'Workflow instance log entries',
+                'verbose_name_plural': 'Workflow instance log entries'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='WorkflowState',
@@ -121,13 +121,13 @@ class Migration(migrations.Migration):
                         to='document_states.Workflow',
                         verbose_name='Workflow'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Workflow state',
-                'verbose_name_plural': 'Workflow states',
+                'verbose_name_plural': 'Workflow states'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='WorkflowTransition',
@@ -165,23 +165,25 @@ class Migration(migrations.Migration):
                         to='document_states.Workflow',
                         verbose_name='Workflow'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Workflow transition',
-                'verbose_name_plural': 'Workflow transitions',
+                'verbose_name_plural': 'Workflow transitions'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.AlterUniqueTogether(
             name='workflowtransition',
             unique_together={
                 ('workflow', 'label', 'origin_state', 'destination_state')
-            },
+            }
         ),
         migrations.AlterUniqueTogether(
             name='workflowstate',
-            unique_together={('workflow', 'label')},
+            unique_together={
+                ('workflow', 'label')
+            }
         ),
         migrations.AddField(
             model_name='workflowinstancelogentry',
@@ -191,7 +193,7 @@ class Migration(migrations.Migration):
                 to='document_states.WorkflowTransition',
                 verbose_name='Transition'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AddField(
             model_name='workflowinstancelogentry',
@@ -200,7 +202,7 @@ class Migration(migrations.Migration):
                 on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL,
                 verbose_name='User'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AddField(
             model_name='workflowinstancelogentry',
@@ -210,10 +212,12 @@ class Migration(migrations.Migration):
                 to='document_states.WorkflowInstance',
                 verbose_name='Workflow instance'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AlterUniqueTogether(
             name='workflowinstance',
-            unique_together={('document', 'workflow')},
-        ),
+            unique_together={
+                ('document', 'workflow')
+            }
+        )
     ]

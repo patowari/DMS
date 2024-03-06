@@ -97,7 +97,7 @@ def reverse_code_update_to_credentials(apps, schema_editor):
 class Migration(migrations.Migration):
     dependencies = [
         ('credentials', '0001_initial'),
-        ('mailer', '0007_auto_20200616_0722'),
+        ('mailer', '0007_auto_20200616_0722')
     ]
 
     operations = [

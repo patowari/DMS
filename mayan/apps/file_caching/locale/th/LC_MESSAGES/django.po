@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Dasapich Thongnopnua <dasapich@gmail.com>, 2024\n"
 "Language-Team: Thai (https://app.transifex.com/rosarior/teams/13584/th/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:31 events.py:6 permissions.py:6 queues.py:7 settings.py:11
+#: apps.py:33 events.py:6 permissions.py:6 queues.py:7 settings.py:11
 msgid "File caching"
 msgstr ""
 

@@ -5,7 +5,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('documents', '0050_auto_20190725_0451'),
+        ('documents', '0050_auto_20190725_0451')
     ]
 
     operations = [
@@ -43,22 +43,21 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document types'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('label',),
                 'verbose_name': 'Web link',
-                'verbose_name_plural': 'Web links',
-            },
+                'verbose_name_plural': 'Web links'
+            }
         ),
         migrations.CreateModel(
             name='ResolvedWebLink',
-            fields=[
-            ],
+            fields=[],
             options={
                 'proxy': True,
-                'indexes': [],
+                'indexes': []
             },
-            bases=('web_links.weblink',),
-        ),
+            bases=('web_links.weblink',)
+        )
     ]

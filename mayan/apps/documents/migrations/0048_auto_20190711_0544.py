@@ -13,7 +13,7 @@ def UUID_FUNCTION(*args, **kwargs):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0047_auto_20180917_0737'),
+        ('documents', '0047_auto_20180917_0737')
     ]
 
     operations = [
@@ -24,6 +24,6 @@ class Migration(migrations.Migration):
                 storage=mayan.apps.storage.classes.FakeStorageSubclass(),
                 upload_to=UUID_FUNCTION,
                 verbose_name='File'
-            ),
-        ),
+            )
+        )
     ]

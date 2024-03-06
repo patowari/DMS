@@ -440,9 +440,13 @@ class Menu(TemplateObjectMixin):
                             set(
                                 self.bound_links[resolved_navigation_object]
                             ) - set(
-                                self.unbound_links.get(resolved_navigation_object, ())
+                                self.unbound_links.get(
+                                    resolved_navigation_object, ()
+                                )
                             ) - set(
-                                self.excluded_links.get(resolved_navigation_object, ())
+                                self.excluded_links.get(
+                                    resolved_navigation_object, ()
+                                )
                             )
                         )
                     except KeyError:
@@ -472,11 +476,17 @@ class Menu(TemplateObjectMixin):
                             # Get model link.
                             matched_links.update(
                                 set(
-                                    self.bound_links.get(model, ())
+                                    self.bound_links.get(
+                                        model, ()
+                                    )
                                 ) - set(
-                                    self.unbound_links.get(model, ())
+                                    self.unbound_links.get(
+                                        model, ()
+                                    )
                                 ) - set(
-                                    self.excluded_links.get(model, ())
+                                    self.excluded_links.get(
+                                        model, ()
+                                    )
                                 )
                             )
 
@@ -495,7 +505,9 @@ class Menu(TemplateObjectMixin):
                                             model._meta.proxy_for_model, ()
                                         )
                                     ) - set(
-                                        self.excluded_links.get(model, ())
+                                        self.excluded_links.get(
+                                            model, ()
+                                        )
                                     )
                                 )
                 else:

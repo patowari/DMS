@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '__first__'),
+        ('documents', '__first__')
     ]
 
     operations = [
@@ -33,13 +33,13 @@ class Migration(migrations.Migration):
                         to='documents.DocumentVersion',
                         verbose_name='Document version'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('datetime_submitted',),
                 'verbose_name': 'Document Version OCR Error',
-                'verbose_name_plural': 'Document Version OCR Errors',
+                'verbose_name_plural': 'Document Version OCR Errors'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

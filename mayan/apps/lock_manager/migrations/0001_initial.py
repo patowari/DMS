@@ -1,9 +1,8 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -29,12 +28,12 @@ class Migration(migrations.Migration):
                     'name', models.CharField(
                         unique=True, max_length=48, verbose_name='Name'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Lock',
-                'verbose_name_plural': 'Locks',
+                'verbose_name_plural': 'Locks'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

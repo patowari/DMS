@@ -13,7 +13,7 @@ from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.decorators import (
-    acquire_lock_class_method, release_lock_class_method, locked_class_method
+    acquire_lock_class_method, locked_class_method, release_lock_class_method
 )
 from mayan.apps.lock_manager.exceptions import LockError
 from mayan.apps.storage.classes import DefinedStorage
@@ -435,8 +435,8 @@ class CachePartitionFileBusinessLogicMixin:
                 )
             except Exception as exception:
                 logger.error(
-                    msg='Unexpected exception opening the cache file; %s',
-                    args=(exception,), exc_info=True
+                    'Unexpected exception opening the cache file; %s',
+                    exception, exc_info=True
                 )
                 raise
             else:

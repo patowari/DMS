@@ -3,13 +3,12 @@ from django.core.files import File
 from rest_framework import status
 from rest_framework.response import Response
 
-from mayan.apps.storage.models import SharedUploadedFile
-
 from mayan.apps.sources.source_backend_actions.interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestViewForm,
     SourceBackendActionInterfaceTask
 )
+from mayan.apps.storage.models import SharedUploadedFile
 
 from .arguments import (
     argument_file, argument_file_object, argument_shared_uploaded_file_id

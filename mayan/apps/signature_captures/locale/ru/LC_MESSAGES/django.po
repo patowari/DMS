@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Sergey Glita <gsv70@mail.ru>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -135,39 +135,39 @@ msgstr ""
 msgid "View signature captures"
 msgstr ""
 
-#: search.py:12
+#: search.py:11
 msgid "Signature capture text"
 msgstr ""
 
-#: search.py:16
+#: search.py:15
 msgid "Signature capture user first name"
 msgstr ""
 
-#: search.py:20
+#: search.py:19
 msgid "Signature capture user last name"
 msgstr ""
 
-#: search.py:24
+#: search.py:23
 msgid "Signature capture user username"
 msgstr ""
 
-#: search.py:35
+#: search.py:34
 msgid "Document type label"
 msgstr "Заголовок типа документа"
 
-#: search.py:38
+#: search.py:37
 msgid "Document label"
 msgstr "Заголовок документа"
 
-#: search.py:42
+#: search.py:41
 msgid "User first name"
 msgstr ""
 
-#: search.py:45
+#: search.py:44
 msgid "User last name"
 msgstr ""
 
-#: search.py:48
+#: search.py:47
 msgid "User username"
 msgstr ""
 
@@ -203,13 +203,13 @@ msgid ""
 "SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND."
 msgstr ""
 
-#: storages.py:15
+#: storages.py:14
 msgid ""
 "Unable to initialize the converter signature capture cachestorage. Check the"
 " settings {} and {} for formatting errors."
 msgstr ""
 
-#: storages.py:21
+#: storages.py:20
 msgid "Signature captures cache"
 msgstr ""
 

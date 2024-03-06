@@ -64,7 +64,9 @@ class LoginViewTestMixin:
             'multi_factor_authentication_view-current_step': '0'
         }
 
-        default_data.update(data or {})
+        default_data.update(
+            data or {}
+        )
 
         return self.post(
             data=default_data, follow=follow, query=query,

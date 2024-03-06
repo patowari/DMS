@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
+#: apps.py:39 events.py:6 links.py:37 links.py:46 models.py:46
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
 msgid "Announcements"
 msgstr "Объявления"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "Нет"
 
@@ -52,43 +52,43 @@ msgstr "Удалить"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Краткое описание объявления."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Заголовок"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "Сообщение, которое будет отображаться."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Текст"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Включено"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Дата и время начала отображения объявления."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Дата и время начала"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Дата и время окончания отображения объявления."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Дата и время окончания"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Объявления"
 
@@ -155,13 +155,10 @@ msgstr "Редактировать объявление: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Объявления отображаются на странице входа в систему. Вы можете использовать "
-"объявления для передачи информации о вашей организации, объявлений или "
-"руководств по использованию для ваших пользователей."
 
-#: views.py:125
+#: views.py:126
 msgid "No announcements available"
 msgstr "Нет доступных объявлений"

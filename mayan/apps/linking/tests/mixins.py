@@ -5,9 +5,9 @@ from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 from ..models import SmartLink, SmartLinkCondition
 
 from .literals import (
-    TEST_SMART_LINK_CONDITION_FOREIGN_DOCUMENT_DATA,
     TEST_SMART_LINK_CONDITION_EXPRESSION,
     TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED,
+    TEST_SMART_LINK_CONDITION_FOREIGN_DOCUMENT_DATA,
     TEST_SMART_LINK_CONDITION_INCLUSION, TEST_SMART_LINK_CONDITION_OPERATOR,
     TEST_SMART_LINK_DYNAMIC_LABEL, TEST_SMART_LINK_LABEL,
     TEST_SMART_LINK_LABEL_EDITED
@@ -39,14 +39,14 @@ class DocumentTypeAddRemoveSmartLinkViewTestMixin(SmartLinkTestMixin):
     def _request_test_document_type_smart_link_add_remove_get_view(self):
         return self.get(
             viewname='linking:document_type_smart_links', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }
         )
 
     def _request_test_document_type_smart_link_add_view(self):
         return self.post(
             viewname='linking:document_type_smart_links', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'available-selection': self._test_smart_link.pk,
                 'available-submit': 'true'
@@ -56,7 +56,7 @@ class DocumentTypeAddRemoveSmartLinkViewTestMixin(SmartLinkTestMixin):
     def _request_test_document_type_smart_link_remove_view(self):
         return self.post(
             viewname='linking:document_type_smart_links', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'added-selection': self._test_smart_link.pk,
                 'added-submit': 'true'
@@ -189,7 +189,7 @@ class SmartLinkConditionAPIViewTestMixin(SmartLinkTestMixin):
                 'smart_link_condition_id': self._test_smart_link_condition.pk,
                 'smart_link_id': self._test_smart_link.pk
             }, data={
-                'expression': TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED,
+                'expression': TEST_SMART_LINK_CONDITION_EXPRESSION_EDITED
             }
         )
 
@@ -280,7 +280,7 @@ class SmartLinkDocumentTypeAPIViewTestMixin(SmartLinkTestMixin):
     def _request_test_smart_link_document_type_list_api_view(self):
         return self.get(
             viewname='rest_api:smartlink-document_type-list', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }
         )
 
@@ -297,14 +297,14 @@ class SmartLinkDocumentTypeViewTestMixin(SmartLinkTestMixin):
     def _request_test_smart_link_document_type_add_remove_get_view(self):
         return self.get(
             viewname='linking:smart_link_document_types', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }
         )
 
     def _request_test_smart_link_document_type_add_view(self):
         return self.post(
             viewname='linking:smart_link_document_types', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }, data={
                 'available-selection': self._test_document_type.pk,
                 'available-submit': 'true'
@@ -314,7 +314,7 @@ class SmartLinkDocumentTypeViewTestMixin(SmartLinkTestMixin):
     def _request_test_smart_link_document_type_remove_view(self):
         return self.post(
             viewname='linking:smart_link_document_types', kwargs={
-                'smart_link_id': self._test_smart_link.pk,
+                'smart_link_id': self._test_smart_link.pk
             }, data={
                 'added-selection': self._test_document_type.pk,
                 'added-submit': 'true'

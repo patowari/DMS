@@ -48,7 +48,9 @@ class DocumentCheckoutTestCase(
 
         self._test_document.check_in()
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
         self.assertFalse(
             DocumentCheckout.objects.is_checked_out(
                 document=self._test_document
@@ -99,7 +101,9 @@ class DocumentCheckoutTestCase(
 
         DocumentCheckout.objects.check_in_expired_check_outs()
 
-        self.assertFalse(self._test_document.is_checked_out())
+        self.assertFalse(
+            self._test_document.is_checked_out()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -116,7 +120,9 @@ class DocumentCheckoutTestCase(
 
         self._clear_events()
 
-        self.assertTrue(self._test_check_out.get_absolute_url())
+        self.assertTrue(
+            self._test_check_out.get_absolute_url()
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

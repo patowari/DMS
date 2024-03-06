@@ -2,7 +2,6 @@ import json
 
 from django.db import migrations
 
-
 SOURCE_BACKEND_MAPPING_LIST = [
     {
         'backend_path': 'mayan.apps.sources.source_backends.SourceBackendIMAPEmail',

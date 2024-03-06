@@ -31,7 +31,9 @@ class SourceBackendCallbackTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(mocked_source_method.call_count, 1)
 
@@ -89,7 +91,9 @@ class SourceBackendCallbackTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(mocked_source_method.call_count, 1)
 
@@ -150,7 +154,9 @@ class SourceBackendCallbackTestCase(
 
         self._execute_test_source_action(action_name='document_file_upload')
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
         self.assertEqual(
             DocumentFile.objects.count(), document_file_count + 1
         )

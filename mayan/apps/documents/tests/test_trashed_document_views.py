@@ -5,9 +5,9 @@ from ..events import (
 from ..models.document_models import Document
 from ..models.trashed_document_models import TrashedDocument
 from ..permissions import (
-    permission_trashed_document_delete, permission_trashed_document_restore,
     permission_document_trash, permission_document_view,
-    permission_trash_empty
+    permission_trash_empty, permission_trashed_document_delete,
+    permission_trashed_document_restore
 )
 
 from .base import GenericDocumentViewTestCase

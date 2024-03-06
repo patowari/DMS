@@ -16,8 +16,8 @@ from mayan.apps.common.utils import (
 from mayan.apps.permissions.classes import Permission
 from mayan.apps.permissions.models import StoredPermission
 
-from .exceptions import PermissionNotValidForClass
 from .classes import ModelPermission
+from .exceptions import PermissionNotValidForClass
 
 logger = logging.getLogger(name=__name__)
 
@@ -265,8 +265,8 @@ class AccessControlListManager(models.Manager):
 
     def check_access(self, obj, permission, user):
         # Allow specific managers for models that have more than one
-        # for example the Document model when checking for access for a trashed
-        # document.
+        # for example the Document model when checking for access for a
+        # trashed document.
 
         meta = getattr(obj, '_meta', None)
 
@@ -280,13 +280,13 @@ class AccessControlListManager(models.Manager):
             return True
         else:
             manager = ModelPermission.get_manager(model=obj._meta.model)
-            source_queryset = manager.all()
+            queryset_source = manager.all()
 
-        restricted_queryset = self.restrict_queryset(
-            permission=permission, queryset=source_queryset, user=user
+        queryset_restricted = self.restrict_queryset(
+            permission=permission, queryset=queryset_source, user=user
         )
 
-        if restricted_queryset.filter(pk=obj.pk).exists():
+        if queryset_restricted.filter(pk=obj.pk).exists():
             return True
         else:
             raise PermissionDenied(
@@ -377,7 +377,7 @@ class AccessControlListManager(models.Manager):
                     pass
 
                 if type(parent_object) is type(obj):
-                    # Object and parent are of the same type. Break
+                    # Object and parent are of the same type, break
                     # recursion.
                     return queryset
                 else:

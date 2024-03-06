@@ -7,7 +7,9 @@ from .literals import TEST_KEY_PRIVATE_DATA, TEST_KEY_PUBLIC_FILE_PATH
 
 class KeyAPIViewTestMixin:
     def _request_test_key_create_api_view(self):
-        pk_list = list(Key.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Key.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='rest_api:key-list', data={
@@ -68,7 +70,9 @@ class KeyViewTestMixin:
         )
 
     def _request_test_key_upload_view(self):
-        pk_list = list(Key.objects.values_list('pk', flat=True))
+        pk_list = list(
+            Key.objects.values_list('pk', flat=True)
+        )
 
         response = self.post(
             viewname='django_gpg:key_upload', data={

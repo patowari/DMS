@@ -1,6 +1,5 @@
-from django.db.models import Q
-
 from mayan.apps.events.classes import EventType
+from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..literals import RELATIONSHIP_NO, RELATIONSHIP_YES
 from ..models.index_instance_models import IndexInstance
@@ -8,8 +7,8 @@ from ..models.index_template_models import IndexTemplate, IndexTemplateNode
 
 from .literals import (
     TEST_INDEX_TEMPLATE_LABEL, TEST_INDEX_TEMPLATE_LABEL_EDITED,
-    TEST_INDEX_TEMPLATE_SLUG, TEST_INDEX_TEMPLATE_NODE_EXPRESSION_EDITED,
-    TEST_INDEX_TEMPLATE_NODE_EXPRESSION
+    TEST_INDEX_TEMPLATE_NODE_EXPRESSION,
+    TEST_INDEX_TEMPLATE_NODE_EXPRESSION_EDITED, TEST_INDEX_TEMPLATE_SLUG
 )
 
 
@@ -42,7 +41,7 @@ class DocumentTypeAddRemoveIndexTemplateViewTestMixin:
     def _request_test_document_type_index_template_add_view(self):
         return self.post(
             viewname='indexing:document_type_index_templates', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_index_template.pk
@@ -52,7 +51,7 @@ class DocumentTypeAddRemoveIndexTemplateViewTestMixin:
     def _request_test_document_type_index_template_remove_view(self):
         return self.post(
             viewname='indexing:document_type_index_templates', kwargs={
-                'document_type_id': self._test_document_type.pk,
+                'document_type_id': self._test_document_type.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_index_template.pk
@@ -163,8 +162,10 @@ class IndexTemplateNodeViewTestMixin:
         )
 
 
-class IndexTemplateTestMixin:
+class IndexTemplateTestMixin(TestMixinObjectCreationTrack):
     _test_index_template_node_expression = None
+    _test_object_model = IndexTemplate
+    _test_object_name = '_test_index_template'
     auto_add_test_index_template_to_test_document_type = True
     auto_create_test_index_template = True
     auto_create_test_index_template_node = True
@@ -251,25 +252,18 @@ class IndexTemplateActionAPIViewTestMixin:
         )
 
 
-class IndexTemplateAPIViewTestMixin:
+class IndexTemplateAPIViewTestMixin(IndexTemplateTestMixin):
     def _request_test_index_template_create_api_view(self):
-        pk_list = list(
-            IndexTemplate.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='rest_api:indextemplate-list', data={
                 'label': TEST_INDEX_TEMPLATE_LABEL,
-                'slug': TEST_INDEX_TEMPLATE_SLUG,
+                'slug': TEST_INDEX_TEMPLATE_SLUG
             }
         )
 
-        try:
-            self._test_index_template = IndexTemplate.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except IndexTemplate.DoesNotExist:
-            self._test_index_template = None
+        self._test_object_set()
 
         return response
 
@@ -399,7 +393,7 @@ class IndexTemplateNodeAPITestMixin:
         return self.delete(
             viewname='rest_api:indextemplatenode-detail', kwargs={
                 'index_template_id': self._test_index_template.pk,
-                'index_template_node_id': self._test_index_template_node.pk,
+                'index_template_node_id': self._test_index_template_node.pk
             }
         )
 
@@ -407,31 +401,36 @@ class IndexTemplateNodeAPITestMixin:
         return self.get(
             viewname='rest_api:indextemplatenode-detail', kwargs={
                 'index_template_id': self._test_index_template.pk,
-                'index_template_node_id': self._test_index_template_node.pk,
+                'index_template_node_id': self._test_index_template_node.pk
             }
         )
 
-    def _request_test_index_template_node_edit_via_patch_api_view(self):
+    def _request_test_index_template_node_edit_via_patch_api_view(
+        self, extra_data=None
+    ):
         data = {
             'enabled': self._test_index_template_node.enabled,
             'expression': self._test_index_template_node.expression,
             'index': self._test_index_template.pk,
             'link_documents': self._test_index_template_node.link_documents,
-            'parent': self._test_index_template_node.parent.pk,
+            'parent': self._test_index_template_node.parent.pk
         }
         data['expression'] = TEST_INDEX_TEMPLATE_NODE_EXPRESSION_EDITED
+
+        if extra_data:
+            data.update(**extra_data)
 
         return self.patch(
             viewname='rest_api:indextemplatenode-detail', kwargs={
                 'index_template_id': self._test_index_template.pk,
-                'index_template_node_id': self._test_index_template_node.pk,
+                'index_template_node_id': self._test_index_template_node.pk
             }, data=data
         )
 
     def _request_test_index_template_node_list_api_view(self):
         return self.get(
             viewname='rest_api:indextemplatenode-list', kwargs={
-                'index_template_id': self._test_index_template.pk,
+                'index_template_id': self._test_index_template.pk
             }
         )
 
@@ -464,9 +463,7 @@ class IndexToolsViewTestMixin:
 
 class IndexTemplateViewTestMixin:
     def _request_test_index_template_create_view(self):
-        pk_list = list(
-            IndexTemplate.objects.values_list('pk', flat=True)
-        )
+        self._test_object_track()
 
         response = self.post(
             viewname='indexing:index_template_create', data={
@@ -475,12 +472,7 @@ class IndexTemplateViewTestMixin:
             }
         )
 
-        try:
-            self._test_index_template = IndexTemplate.objects.get(
-                ~Q(pk__in=pk_list)
-            )
-        except IndexTemplate.DoesNotExist:
-            self._test_index_template = None
+        self._test_object_set()
 
         return response
 
@@ -501,7 +493,7 @@ class IndexTemplateViewTestMixin:
     def _request_test_index_template_document_type_add_view(self):
         return self.post(
             viewname='indexing:index_template_document_types', kwargs={
-                'index_template_id': self._test_index_template.pk,
+                'index_template_id': self._test_index_template.pk
             }, data={
                 'available-submit': 'true',
                 'available-selection': self._test_document_type.pk
@@ -511,7 +503,7 @@ class IndexTemplateViewTestMixin:
     def _request_test_index_template_document_type_remove_view(self):
         return self.post(
             viewname='indexing:index_template_document_types', kwargs={
-                'index_template_id': self._test_index_template.pk,
+                'index_template_id': self._test_index_template.pk
             }, data={
                 'added-submit': 'true',
                 'added-selection': self._test_document_type.pk

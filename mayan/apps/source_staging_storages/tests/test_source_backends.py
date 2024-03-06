@@ -2,14 +2,14 @@ from io import BytesIO
 
 from PIL import Image
 
+from mayan.apps.documents.document_file_actions import (
+    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
+    DocumentFileActionUseNewPages
+)
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
     event_document_version_edited, event_document_version_page_created
-)
-from mayan.apps.documents.document_file_actions import (
-    DocumentFileActionAppendNewPages, DocumentFileActionNothing,
-    DocumentFileActionUseNewPages
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
@@ -49,7 +49,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadTestCase(
 
         self._execute_test_source_action(action_name='document_file_upload')
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -127,7 +129,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadTestCase(
         with self.assertRaises(expected_exception=Document.DoesNotExist):
             self._execute_test_source_action(action_name='document_file_upload')
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count
         )
@@ -170,7 +174,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadTestCase(
             extra_data={'document_file_action_name': DocumentFileActionAppendNewPages.action_id}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -257,7 +263,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadTestCase(
             extra_data={'document_file_action_name': DocumentFileActionNothing.action_id}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -313,7 +321,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadTestCase(
             extra_data={'document_file_action_name': DocumentFileActionUseNewPages.action_id}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -391,7 +401,9 @@ class StagingStorageSourceBackendActionDocumentFileUploadTestCase(
             extra_data={'user': self._test_case_user}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
         self.assertEqual(
             self._test_document.files.count(), test_document_file_count + 1
         )
@@ -470,7 +482,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -539,7 +553,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertEqual(
             len(
@@ -660,7 +676,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'expand': True}
         )
 
-        self.assertEqual(Document.objects.count(), document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), document_count + 2
+        )
 
         self.assertEqual(
             len(
@@ -783,7 +801,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'expand': False}
         )
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -837,7 +857,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -889,7 +911,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -958,7 +982,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM
@@ -1029,7 +1055,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -1057,7 +1085,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1122,7 +1152,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         self.assertEqual(
             len(
@@ -1152,7 +1184,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(
             len(
@@ -1217,7 +1251,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'label': 'test-label'}
         )
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label, 'test-label'
         )
@@ -1289,7 +1325,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'language': 'deu'}
         )
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().language, 'deu'
         )
@@ -1363,7 +1401,9 @@ class StagingStorageSourceBackendActionDocumentUploadTestCase(
             }
         )
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().file_latest.checksum,
             TEST_DOCUMENT_SMALL_CHECKSUM

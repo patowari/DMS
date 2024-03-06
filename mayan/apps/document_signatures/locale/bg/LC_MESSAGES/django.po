@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -23,27 +23,27 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr "Подписване на документи"
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr "Дата и час"
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr "Ключ №"
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "Няма"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr "Подпис №"
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr "Тип"
 
@@ -164,7 +164,7 @@ msgstr "Опреснете всички подписи"
 msgid "Verify all documents"
 msgstr "Проверете всички документи"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr "подписан"
 
@@ -374,7 +374,7 @@ msgstr "Няма подписи за този файл с документи."
 msgid "Signatures for document file: %s"
 msgstr "Подписи за файл с документи: %s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr ""
 "При големи бази данни тази операция може да отнеме известно време за "
@@ -384,15 +384,15 @@ msgstr ""
 msgid "Refresh all signatures information?"
 msgstr "Опресняване на цялата информация за подписите?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr "Опресняването на информацията за подписите е на опашка успешно."
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "Да проверите ли всички документи за подписи?"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "Проверката на подписа успешно е поставена на опашка."
 

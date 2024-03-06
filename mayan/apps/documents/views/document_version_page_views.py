@@ -17,17 +17,17 @@ from mayan.apps.converter.transformations import (
 )
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.views.generics import (
-    FormView, SingleObjectDeleteView, SingleObjectListView, SimpleView
+    FormView, SimpleView, SingleObjectDeleteView, SingleObjectListView
 )
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 from mayan.apps.views.utils import resolve
+from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms.document_version_page_forms import (
     DocumentVersionPageForm, DocumentVersionPageMappingFormSet
 )
 from ..icons import (
-    icon_document_version_page_delete, icon_document_version_page_list,
-    icon_document_version_page_list_remap, icon_document_version_page_detail
+    icon_document_version_page_delete, icon_document_version_page_detail,
+    icon_document_version_page_list, icon_document_version_page_list_remap
 )
 from ..links.document_version_links import link_document_version_modification
 from ..links.document_version_page_links import link_document_version_page_list_remap
@@ -38,8 +38,7 @@ from ..permissions import (
 )
 from ..settings import (
     setting_display_height, setting_display_width, setting_rotation_step,
-    setting_zoom_percent_step, setting_zoom_max_level,
-    setting_zoom_min_level
+    setting_zoom_max_level, setting_zoom_min_level, setting_zoom_percent_step
 )
 
 logger = logging.getLogger(name=__name__)
@@ -59,7 +58,9 @@ class DocumentVersionPageDeleteView(SingleObjectDeleteView):
                 'page remap action instead.'
             ),
             'object': self.object,
-            'title': _(message='Delete document version page %s ?') % self.object
+            'title': _(
+                message='Delete document version page %s ?'
+            ) % self.object
         }
 
     def get_instance_extra_data(self):
@@ -102,7 +103,9 @@ class DocumentVersionPageListView(
                 'Create them using the page remap actions or the version '
                 'modification action.'
             ),
-            'no_results_title': _(message='No document version pages available'),
+            'no_results_title': _(
+                message='No document version pages available'
+            ),
             'object': self.external_object,
             'title': _(
                 'Pages of document version: %s'
@@ -155,7 +158,11 @@ class DocumentVersionPageListRemapView(ExternalObjectViewMixin, FormView):
         return super().form_valid(form=form)
 
     def get_form_extra_kwargs(self):
-        target_page_number_choices = [(0, _(message='None'))]
+        target_page_number_choices = [
+            (
+                0, _(message='None')
+            )
+        ]
 
         page_index = 1
 
@@ -373,7 +380,9 @@ class DocumentVersionPageView(ExternalObjectViewMixin, SimpleView):
             'object': self.external_object,
             'read_only': True,
             'rotation': rotation,
-            'title': ' '.join((base_title, zoom_text)),
+            'title': ' '.join(
+                (base_title, zoom_text)
+            ),
             'transformation_instance_list': transformation_instance_list,
             'zoom': zoom
         }
@@ -419,7 +428,9 @@ class DocumentVersionPageZoomInView(
     DocumentVersionPageInteractiveTransformation
 ):
     def transformation_function(self, query_dict):
-        zoom = int(query_dict['zoom']) + setting_zoom_percent_step.value
+        zoom = int(
+            query_dict['zoom']
+        ) + setting_zoom_percent_step.value
 
         if zoom > setting_zoom_max_level.value:
             zoom = setting_zoom_max_level.value
@@ -431,7 +442,9 @@ class DocumentVersionPageZoomOutView(
     DocumentVersionPageInteractiveTransformation
 ):
     def transformation_function(self, query_dict):
-        zoom = int(query_dict['zoom']) - setting_zoom_percent_step.value
+        zoom = int(
+            query_dict['zoom']
+        ) - setting_zoom_percent_step.value
 
         if zoom < setting_zoom_min_level.value:
             zoom = setting_zoom_min_level.value
@@ -444,7 +457,9 @@ class DocumentVersionPageRotateLeftView(
 ):
     def transformation_function(self, query_dict):
         query_dict['rotation'] = (
-            int(query_dict['rotation']) - setting_rotation_step.value
+            int(
+                query_dict['rotation']
+            ) - setting_rotation_step.value
         ) % 360
 
 
@@ -453,5 +468,7 @@ class DocumentVersionPageRotateRightView(
 ):
     def transformation_function(self, query_dict):
         query_dict['rotation'] = (
-            int(query_dict['rotation']) + setting_rotation_step.value
+            int(
+                query_dict['rotation']
+            ) + setting_rotation_step.value
         ) % 360

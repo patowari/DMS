@@ -25,7 +25,7 @@ class ThemeViewTestMixin(ThemeTestMixin):
 
         response = self.post(
             viewname='appearance:theme_create', data={
-                'label': TEST_THEME_LABEL,
+                'label': TEST_THEME_LABEL
             }
         )
 
@@ -45,7 +45,7 @@ class ThemeViewTestMixin(ThemeTestMixin):
             viewname='appearance:theme_edit', kwargs={
                 'theme_id': self._test_theme.pk
             }, data={
-                'label': TEST_THEME_LABEL_EDITED,
+                'label': TEST_THEME_LABEL_EDITED
             }
         )
 

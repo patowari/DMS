@@ -2,13 +2,14 @@ from mayan.apps.converter.api_view_mixins import APIImageViewMixin
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.permissions import permission_document_type_view
 from mayan.apps.documents.serializers.document_type_serializers import DocumentTypeSerializer
-from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 from mayan.apps.rest_api import generics
+from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 
 from ..models.workflow_models import Workflow
 from ..permissions import (
-    permission_workflow_template_create, permission_workflow_template_delete,
-    permission_workflow_template_edit, permission_workflow_template_view
+    permission_workflow_template_create,
+    permission_workflow_template_delete, permission_workflow_template_edit,
+    permission_workflow_template_view
 )
 from ..serializers.workflow_template_serializers import (
     WorkflowTemplateDocumentTypeAddSerializer,

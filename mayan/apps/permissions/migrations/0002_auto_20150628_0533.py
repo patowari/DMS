@@ -1,34 +1,34 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('auth', '0001_initial'),
-        ('permissions', '0001_initial'),
+        ('permissions', '0001_initial')
     ]
 
     operations = [
         migrations.RemoveField(
             model_name='permissionholder',
-            name='holder_type',
+            name='holder_type'
         ),
         migrations.RemoveField(
             model_name='permissionholder',
-            name='permission',
+            name='permission'
         ),
         migrations.DeleteModel(
-            name='PermissionHolder',
+            name='PermissionHolder'
         ),
         migrations.RemoveField(
             model_name='rolemember',
-            name='member_type',
+            name='member_type'
         ),
         migrations.RemoveField(
             model_name='rolemember',
-            name='role',
+            name='role'
         ),
         migrations.DeleteModel(
-            name='RoleMember',
+            name='RoleMember'
         ),
         migrations.AddField(
             model_name='role',
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 related_name='roles', verbose_name='Groups', to='auth.Group'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AddField(
             model_name='role',
@@ -45,6 +45,6 @@ class Migration(migrations.Migration):
                 related_name='roles', verbose_name='Permissions',
                 to='permissions.StoredPermission'
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

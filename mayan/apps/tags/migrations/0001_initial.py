@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '__first__'),
+        ('documents', '__first__')
     ]
 
     operations = [
@@ -12,8 +12,8 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     'id', models.AutoField(
-                        verbose_name='ID', serialize=False, auto_created=True,
-                        primary_key=True
+                        verbose_name='ID', serialize=False,
+                        auto_created=True, primary_key=True
                     )
                 ),
                 (
@@ -38,12 +38,12 @@ class Migration(migrations.Migration):
                         related_name='tags', verbose_name='Documents',
                         to='documents.Document'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Tag',
-                'verbose_name_plural': 'Tags',
+                'verbose_name_plural': 'Tags'
             },
-            bases=(models.Model,),
-        ),
+            bases=(models.Model,)
+        )
     ]

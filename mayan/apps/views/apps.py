@@ -10,6 +10,7 @@ logger = logging.getLogger(name=__name__)
 class ViewsApp(MayanAppConfig):
     app_namespace = 'views'
     app_url = 'views'
+    has_javascript_translations = True
     has_static_media = True
     has_tests = True
     name = 'mayan.apps.views'

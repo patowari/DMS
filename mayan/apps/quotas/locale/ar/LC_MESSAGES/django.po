@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-02-06 20:31+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -77,9 +77,8 @@ msgstr "جميع أنواع الوثائق"
 #: mixins.py:20
 msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
-"indiviual document type selection."
+"individual document type selection."
 msgstr ""
-"تمكين تطبق على جميع أنواع الوثائق ، سيتم تجاهل النسب وتحديد نوع الوثائق "
 
 #: mixins.py:26
 msgid "Document types"
@@ -113,11 +112,9 @@ msgstr "جميع المستخدمين"
 #: mixins.py:108
 msgid ""
 "Apply the quota to all users in the system, excluding admins and staff. "
-"Enabling this option, the quota will ignore the indiviual user and group "
+"Enabling this option, the quota will ignore the individual user and group "
 "selection."
 msgstr ""
-"تطبيق المحددات على جميع المستخدمين في النظام ، باستثناء المسؤولين والموظفين "
-"، عند تفعيل هذا الخيار ، سيتم تجاهل اسم المستخدم و المجموعة"
 
 #: mixins.py:115
 msgid "Users"

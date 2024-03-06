@@ -35,11 +35,11 @@ msgstr ""
 msgid "User locale profile edited"
 msgstr "Perfil de utilizador local editado"
 
-#: links.py:15
+#: links.py:14
 msgid "Locale profile"
 msgstr "Perfil do locale"
 
-#: links.py:20
+#: links.py:19
 msgid "Edit locale profile"
 msgstr "Editar perfil do locale"
 

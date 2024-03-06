@@ -27,7 +27,8 @@ setting_organization_url_base_path = setting_namespace.do_setting_add(
     global_name='ORGANIZATIONS_URL_BASE_PATH',
     help_text=_(
         'Base URL path to use for all views. Used when hosting using a path '
-        'that is not the root path of the web server. '
-        'Example: /mayan-installations/home/'
+        'that is not the root path of the web server. The path value '
+        'must not include a leading or trailing slash. '
+        'Example: mayan-installations/home'
     ), validation_function=validation_fuction_check_path_format
 )

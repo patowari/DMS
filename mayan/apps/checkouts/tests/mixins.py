@@ -99,7 +99,7 @@ class DocumentCheckoutViewTestMixin:
         return self.get(
             viewname='checkouts:check_out_document', kwargs={
                 'document_id': self._test_document.pk
-            },
+            }
         )
 
     def _request_test_document_check_out_post_view(self, follow=False):

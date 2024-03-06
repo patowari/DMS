@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: apps.py:32 events.py:11 links.py:53 links.py:94 permissions.py:6
 #: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr "Eventos"
@@ -65,15 +65,15 @@ msgstr "Objeto"
 msgid "Event type"
 msgstr "Tipo de evento"
 
-#: classes.py:90
+#: classes.py:91
 msgid "Event list export to CSV"
 msgstr "Exportación de la lista de eventos a CSV"
 
-#: classes.py:118
+#: classes.py:122
 msgid "Events exported."
 msgstr "Eventos exportados."
 
-#: classes.py:120
+#: classes.py:124
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -107,31 +107,31 @@ msgstr "Suscrito"
 msgid "System"
 msgstr "Sistema"
 
-#: links.py:55 links.py:100 views/clear_views.py:63
+#: links.py:56 links.py:101 views/clear_views.py:65
 msgid "Clear events"
 msgstr "Borrar eventos"
 
-#: links.py:59 links.py:107 views/export_views.py:60
+#: links.py:60 links.py:108 views/export_views.py:64
 msgid "Export events"
 msgstr "Exportar eventos"
 
-#: links.py:65 models.py:53 views/subscription_views.py:54
+#: links.py:66 models.py:53 views/subscription_views.py:54
 msgid "Event subscriptions"
 msgstr "Suscripciones de eventos"
 
-#: links.py:71 models.py:113 views/subscription_views.py:169
+#: links.py:72 models.py:113 views/subscription_views.py:169
 msgid "Object event subscriptions"
 msgstr "Suscripciones a eventos de objeto"
 
-#: links.py:83
+#: links.py:84
 msgid "Mark as seen"
 msgstr "Marcar como visto"
 
-#: links.py:87
+#: links.py:88
 msgid "Mark all as seen"
 msgstr "Marcar todos como vistos"
 
-#: links.py:114
+#: links.py:115
 msgid "Subscriptions"
 msgstr "Suscripciones"
 
@@ -253,16 +253,16 @@ msgstr ""
 "Esta acción no es reversible. El proceso se realizará como una tarea de "
 "fondo."
 
-#: views/clear_views.py:51
+#: views/clear_views.py:53
 msgid "Event list clear task queued successfully."
 msgstr "La tarea de borrar de la lista de eventos se puso en cola con éxito."
 
-#: views/clear_views.py:84
+#: views/clear_views.py:86
 #, python-format
 msgid "Clear events of: %s"
 msgstr "Borrar eventos de: %s"
 
-#: views/clear_views.py:109
+#: views/clear_views.py:111
 #, python-format
 msgid "Clear events of type: %s"
 msgstr "Borrar eventos de tipo: %s"
@@ -295,7 +295,7 @@ msgstr "No hay eventos de este tipo"
 msgid "Events of type: %s"
 msgstr "Eventos de tipo: %s"
 
-#: views/export_views.py:27
+#: views/export_views.py:28
 msgid ""
 "The process will be performed in the background. The exported events will be"
 " available in the downloads area."
@@ -303,17 +303,17 @@ msgstr ""
 "El proceso se realizará en segundo plano. Los eventos exportados estarán "
 "disponibles en el área de descargas."
 
-#: views/export_views.py:47
+#: views/export_views.py:51
 msgid "Event list export task queued successfully."
 msgstr ""
 "La tarea de exportación de la lista de eventos se puso en cola con éxito."
 
-#: views/export_views.py:81
+#: views/export_views.py:85
 #, python-format
 msgid "Export events of: %s"
 msgstr "Exportar eventos de: %s"
 
-#: views/export_views.py:100
+#: views/export_views.py:104
 #, python-format
 msgid "Export events of type: %s"
 msgstr "Exportar eventos de tipo: %s"

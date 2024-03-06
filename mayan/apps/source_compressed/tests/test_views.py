@@ -41,7 +41,9 @@ class CompressedSourceBackendActionDocumentUploadViewTestCase(
             response=response, status_code=200, text='source-expand'
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -70,7 +72,9 @@ class CompressedSourceBackendActionDocumentUploadViewTestCase(
             response=response, status_code=200, text='source-expand'
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -99,7 +103,9 @@ class CompressedSourceBackendActionDocumentUploadViewTestCase(
             response=response, status_code=200, text='source-expand'
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count)
+        self.assertEqual(
+            Document.objects.count(), test_document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

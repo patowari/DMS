@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -119,19 +119,19 @@ msgstr ""
 msgid "OTP disable successfully."
 msgstr ""
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr ""
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr ""
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr ""
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr ""

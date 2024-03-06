@@ -5,7 +5,8 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_multi_item, menu_object, menu_secondary, menu_tools
+    menu_list_facet, menu_multi_item, menu_object, menu_secondary,
+    menu_tools
 )
 from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_file_upload
@@ -22,13 +23,12 @@ from .handlers import (
     process_document_file_metadata
 )
 from .links import (
-    link_document_file_metadata_driver_list,
     link_document_file_metadata_driver_attribute_list,
+    link_document_file_metadata_driver_list,
     link_document_file_metadata_single_submit,
     link_document_file_metadata_submit_multiple,
     link_document_type_file_metadata_settings,
-    link_document_type_file_metadata_submit,
-    link_file_metadata_driver_list
+    link_document_type_file_metadata_submit, link_file_metadata_driver_list
 )
 from .methods import (
     method_document_file_metadata_submit,

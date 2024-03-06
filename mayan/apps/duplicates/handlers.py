@@ -1,4 +1,6 @@
-from .tasks import task_duplicates_clean_empty_lists, task_duplicates_scan_for
+from .tasks import (
+    task_duplicates_clean_empty_lists, task_duplicates_scan_for
+)
 
 
 def handler_scan_duplicates_for(sender, instance, **kwargs):

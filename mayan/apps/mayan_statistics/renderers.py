@@ -29,8 +29,8 @@ class RendererChartJSLine(RendererChartJS):
         labels = []
         datasets = []
 
-        for count, serie in enumerate(iterable=self.data['series'].items()):
-            series_name, series_data = serie
+        for count, series in enumerate(iterable=self.data['series'].items()):
+            series_name, series_data = series
             dataset_labels = []
             dataset_values = []
 
@@ -81,12 +81,12 @@ class RendererChartJSDoughnut(RendererChartJS):
         labels = []
         datasets = []
 
-        for count, serie in enumerate(iterable=self.data['series'].items()):
+        for count, series in enumerate(iterable=self.data['series'].items()):
             dataset = {
                 'data': []
             }
 
-            series_name, series_data = serie
+            series_name, series_data = series
 
             for entry in series_data:
                 labels.append(

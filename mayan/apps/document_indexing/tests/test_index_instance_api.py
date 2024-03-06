@@ -1,7 +1,7 @@
 from rest_framework import status
 
-from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 from mayan.apps.documents.permissions import permission_document_view
+from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 
 from ..permissions import permission_index_instance_view
 
@@ -55,7 +55,9 @@ class DocumentIndexAPIViewTestCase(
 
         response = self._request_test_document_index_instance_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -74,7 +76,9 @@ class DocumentIndexAPIViewTestCase(
 
         response = self._request_test_document_index_instance_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'],
             self._test_index_instance_node.pk
@@ -140,7 +144,9 @@ class IndexInstanceAPIViewTestCase(
 
         response = self._request_test_index_instance_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -155,7 +161,9 @@ class IndexInstanceAPIViewTestCase(
 
         response = self._request_test_index_instance_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'], self._test_index_template.pk
         )
@@ -193,7 +201,9 @@ class IndexInstanceNodeAPIViewTestCase(
 
         response = self._request_test_index_instance_node_children_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -245,7 +255,9 @@ class IndexInstanceNodeAPIViewTestCase(
 
         response = self._request_test_index_instance_node_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -278,7 +290,9 @@ class IndexInstanceNodeAPIViewTestCase(
 
         response = self._request_test_index_instance_node_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'], self._test_document.pk
         )
@@ -301,7 +315,9 @@ class IndexInstanceNodeAPIViewTestCase(
 
         response = self._request_test_index_instance_node_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -326,7 +342,9 @@ class IndexInstanceNodeAPIViewTestCase(
 
         response = self._request_test_index_instance_node_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['id'],
             self._test_index_instance_node.pk

@@ -1,11 +1,11 @@
-from django.db import models, migrations
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL)
     ]
 
     operations = [
@@ -397,14 +397,14 @@ class Migration(migrations.Migration):
                             )
                         ]
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ['-date_added'],
                 'verbose_name': 'Document',
-                'verbose_name_plural': 'Documents',
+                'verbose_name_plural': 'Documents'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DocumentPage',
@@ -431,14 +431,14 @@ class Migration(migrations.Migration):
                         default=1, verbose_name='Page number',
                         editable=False, db_index=True
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ['page_number'],
                 'verbose_name': 'Document page',
-                'verbose_name_plural': 'Document pages',
+                'verbose_name_plural': 'Document pages'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DocumentPageTransformation',
@@ -476,14 +476,14 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE, to='documents.DocumentPage',
                         verbose_name='Document page'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('order',),
                 'verbose_name': 'Document page transformation',
-                'verbose_name_plural': 'Document page transformations',
+                'verbose_name_plural': 'Document page transformations'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DocumentType',
@@ -504,14 +504,14 @@ class Migration(migrations.Migration):
                         default=True, verbose_name='Automatically queue '
                         'newly created documents for OCR.'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ['name'],
                 'verbose_name': 'Document type',
-                'verbose_name_plural': 'Documents types',
+                'verbose_name_plural': 'Documents types'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DocumentTypeFilename',
@@ -538,14 +538,14 @@ class Migration(migrations.Migration):
                         to='documents.DocumentType',
                         verbose_name='Document type'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ['filename'],
                 'verbose_name': 'Document type quick rename filename',
-                'verbose_name_plural': 'Document types quick rename filenames',
+                'verbose_name_plural': 'Document types quick rename filenames'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='DocumentVersion',
@@ -594,13 +594,13 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE, related_name='versions',
                         to='documents.Document', verbose_name='Document'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version',
-                'verbose_name_plural': 'Document version',
+                'verbose_name_plural': 'Document version'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.CreateModel(
             name='RecentDocument',
@@ -627,18 +627,20 @@ class Migration(migrations.Migration):
                         editable=False, on_delete=models.CASCADE,
                         to=settings.AUTH_USER_MODEL, verbose_name='User'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('-datetime_accessed',),
                 'verbose_name': 'Recent document',
-                'verbose_name_plural': 'Recent documents',
+                'verbose_name_plural': 'Recent documents'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.AlterUniqueTogether(
             name='documenttypefilename',
-            unique_together={('document_type', 'filename')},
+            unique_together={
+                ('document_type', 'filename')
+            }
         ),
         migrations.AddField(
             model_name='documentpage',
@@ -648,7 +650,7 @@ class Migration(migrations.Migration):
                 to='documents.DocumentVersion',
                 verbose_name='Document version'
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AddField(
             model_name='document',
@@ -657,6 +659,6 @@ class Migration(migrations.Migration):
                 on_delete=models.CASCADE, related_name='documents',
                 to='documents.DocumentType', verbose_name='Document type'
             ),
-            preserve_default=True,
-        ),
+            preserve_default=True
+        )
     ]

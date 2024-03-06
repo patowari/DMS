@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_indexing', '0016_auto_20191005_0647'),
+        ('document_indexing', '0016_auto_20191005_0647')
     ]
 
     operations = [
@@ -36,5 +36,5 @@ class Migration(migrations.Migration):
             model_name='indextemplatenode',
             name='rght',
             field=models.PositiveIntegerField(editable=False),
-        ),
+        )
     ]

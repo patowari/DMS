@@ -5,7 +5,7 @@
 Autoadmin
 =========
 
-The Autoadmin app boostraps Mayan EDMS's system after the initial
+The Autoadmin app bootstraps Mayan EDMS's system after the initial
 installation by creating a super user account following best
 security practices.
 

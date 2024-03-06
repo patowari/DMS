@@ -7,8 +7,8 @@ from mayan.apps.testing.tests.mixins import TestServerTestCaseMixin
 from mayan.apps.testing.tests.mocks import request_method_factory
 
 from ..literals import WORKFLOW_ACTION_ON_ENTRY
-from ..models.workflow_models import Workflow
 from ..models.workflow_instance_models import WorkflowInstance
+from ..models.workflow_models import Workflow
 from ..permissions import permission_workflow_template_edit
 from ..workflow_actions import (
     DocumentPropertiesEditAction, DocumentWorkflowLaunchAction, HTTPAction
@@ -16,15 +16,15 @@ from ..workflow_actions import (
 
 from .literals import (
     TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
-    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL,
-    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION,
-    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DATA,
     TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEMPLATE_DATA,
+    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DATA,
+    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION,
+    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL,
     TEST_HEADERS_AUTHENTICATION_KEY, TEST_HEADERS_AUTHENTICATION_VALUE,
-    TEST_HEADERS_KEY, TEST_HEADERS_JSON, TEST_HEADERS_JSON_TEMPLATE,
-    TEST_HEADERS_JSON_TEMPLATE_KEY, TEST_HEADERS_VALUE, TEST_PAYLOAD_JSON,
-    TEST_PAYLOAD_TEMPLATE_DOCUMENT_LABEL, TEST_SERVER_USERNAME,
-    TEST_SERVER_PASSWORD
+    TEST_HEADERS_JSON, TEST_HEADERS_JSON_TEMPLATE,
+    TEST_HEADERS_JSON_TEMPLATE_KEY, TEST_HEADERS_KEY, TEST_HEADERS_VALUE,
+    TEST_PAYLOAD_JSON, TEST_PAYLOAD_TEMPLATE_DOCUMENT_LABEL,
+    TEST_SERVER_PASSWORD, TEST_SERVER_USERNAME
 )
 from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionLaunchViewTestMixin,

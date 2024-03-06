@@ -138,15 +138,15 @@ msgstr "Cantidad de tipos de tareas"
 msgid "Queue count"
 msgstr "Cantidad de colas de trabajo"
 
-#: links.py:14
+#: links.py:13
 msgid "Task type list"
 msgstr "Lista de tipos de tareas"
 
-#: links.py:19
+#: links.py:18
 msgid "Worker list"
 msgstr "Lista de trabajadores"
 
-#: links.py:24
+#: links.py:23
 msgid "Queue list"
 msgstr "Lista de colas de trabajo"
 

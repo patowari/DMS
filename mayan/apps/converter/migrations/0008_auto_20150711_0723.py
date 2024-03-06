@@ -1,9 +1,9 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('converter', '0007_auto_20150711_0656'),
+        ('converter', '0007_auto_20150711_0656')
     ]
 
     operations = [
@@ -15,10 +15,12 @@ class Migration(migrations.Migration):
                 'will be executed.', db_index=True, verbose_name='Order',
                 blank=True
             ),
-            preserve_default=True,
+            preserve_default=True
         ),
         migrations.AlterUniqueTogether(
             name='transformation',
-            unique_together={('content_type', 'object_id', 'order')},
-        ),
+            unique_together={
+                ('content_type', 'object_id', 'order')
+            }
+        )
     ]

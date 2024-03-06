@@ -5,8 +5,8 @@ from mayan.apps.navigation.classes import Link
 
 from .icons import (
     icon_setting_cluster_configuration_save,
-    icon_setting_cluster_namespace_list, icon_setting_namespace_detail,
-    icon_setting_edit, icon_setting_revert, icon_setting_setup
+    icon_setting_cluster_namespace_list, icon_setting_edit,
+    icon_setting_namespace_detail, icon_setting_revert, icon_setting_setup
 )
 from .permissions import permission_settings_edit, permission_settings_view
 

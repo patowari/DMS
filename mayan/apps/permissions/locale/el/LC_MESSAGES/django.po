@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:44 events.py:6 models.py:31 models.py:88 permissions.py:6
+#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
 msgid "Permissions"
 msgstr "Δικαιώματα"
 
-#: apps.py:106 model_mixins.py:35
+#: apps.py:107 model_mixins.py:35
 msgid "Group count"
 msgstr "Αριθμός ομάδων"
 
@@ -45,11 +45,11 @@ msgstr "Ο ρόλος δημιουργήθηκε"
 msgid "Role edited"
 msgstr "Ο ρόλος τροποποιήθηκε"
 
-#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:111
+#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:121
 msgid "Roles"
 msgstr "Ρόλοι"
 
-#: links.py:29 views.py:57
+#: links.py:29 views.py:58
 msgid "Create new role"
 msgstr "Δημιουργία νέου ρόλου"
 
@@ -196,42 +196,42 @@ msgstr "Διαθέσιμοι ρόλοι"
 msgid "Roles of group: %s"
 msgstr "Ρόλοι ομάδας: %s"
 
-#: views.py:64
+#: views.py:67
 #, python-format
 msgid "Error deleting role \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:69
+#: views.py:74
 #, python-format
 msgid "%(count)d roles deleted successfully."
 msgstr ""
 
-#: views.py:70
+#: views.py:77
 #, python-format
 msgid "Role \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:71
+#: views.py:80
 #, python-format
 msgid "%(count)d role deleted successfully."
 msgstr ""
 
-#: views.py:72
+#: views.py:82
 #, python-format
 msgid "Delete role: %(object)s."
 msgstr ""
 
-#: views.py:73
+#: views.py:83
 #, python-format
 msgid "Delete the %(count)d selected role."
 msgstr ""
 
-#: views.py:74
+#: views.py:84
 #, python-format
 msgid "Delete the %(count)d selected roles."
 msgstr ""
 
-#: views.py:103
+#: views.py:113
 msgid ""
 "Roles are authorization units. They contain user groups which inherit the "
 "role permissions for the entire system. Roles can also part of access "
@@ -244,19 +244,19 @@ msgstr ""
 "πρόσβασης αποτελούν δικαιώματα που εκχωρούνται σε έναν ρόλο για συγκεκριμένα"
 " αντικείμενα που κληρονομούν τα μέλη της ομάδας του."
 
-#: views.py:110
+#: views.py:120
 msgid "There are no roles"
 msgstr "Δεν υπάρχουν ρόλοι"
 
-#: views.py:116
+#: views.py:126
 msgid "Role groups"
 msgstr "Ομάδες ρόλου"
 
-#: views.py:117
+#: views.py:127
 msgid "Available groups"
 msgstr "Διαθέσιμες ομάδες"
 
-#: views.py:135
+#: views.py:145
 msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
@@ -264,32 +264,32 @@ msgstr ""
 "Προσθέστε ομάδες ώστε να ανήκουν σε έναν ρόλο. Θα κληρονομήσουν τα "
 "δικαιώματα του ρόλου και ελέγχους πρόσβασης."
 
-#: views.py:138
+#: views.py:148
 #, python-format
 msgid "Groups of role: %s"
 msgstr "Ομάδες ρόλου: %s"
 
-#: views.py:143
+#: views.py:153
 msgid "Granted permissions"
 msgstr "Εκχωρημένα δικαιώματα"
 
-#: views.py:144
+#: views.py:154
 msgid "Available permissions"
 msgstr "Διαθέσιμα δικαιώματα"
 
-#: views.py:185
+#: views.py:199
 msgid ""
 "Permissions granted here will apply to the entire system and all objects."
 msgstr ""
 "Τα δικαιώματα που χορηγούνται εδώ θα ισχύουν για ολόκληρο το σύστημα και για"
 " όλα τα αντικείμενα."
 
-#: views.py:188
+#: views.py:202
 #, python-format
 msgid "Permissions for role: %s"
 msgstr "Δικαιώματα του ρόλου: %s"
 
-#: views.py:208
+#: views.py:222
 #, python-format
 msgid "Details of permission: %s"
 msgstr ""

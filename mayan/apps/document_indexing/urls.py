@@ -10,21 +10,20 @@ from .api_views.index_template_api_views import (
     APIIndexTemplateDetailView, APIIndexTemplateDocumentTypeAddView,
     APIIndexTemplateDocumentTypeListView,
     APIIndexTemplateDocumentTypeRemoveView, APIIndexTemplateListView,
-    APIIndexTemplateNodeListView, APIIndexTemplateNodeDetailView,
+    APIIndexTemplateNodeDetailView, APIIndexTemplateNodeListView,
     APIIndexTemplateRebuildView, APIIndexTemplateResetView
 )
-
 from .views.index_instance_views import (
-    DocumentIndexInstanceNodeListView, IndexInstanceNodeView,
-    IndexInstanceListView
+    DocumentIndexInstanceNodeListView, IndexInstanceListView,
+    IndexInstanceNodeView
 )
 from .views.index_template_views import (
     DocumentTypeIndexTemplateAddRemoveView, IndexTemplateAllRebuildView,
     IndexTemplateCreateView, IndexTemplateDeleteView,
     IndexTemplateDocumentTypeAddRemoveView, IndexTemplateEditView,
     IndexTemplateEventTriggerListView, IndexTemplateListView,
-    IndexTemplateNodeListView, IndexTemplateNodeCreateView,
-    IndexTemplateNodeDeleteView, IndexTemplateNodeEditView,
+    IndexTemplateNodeCreateView, IndexTemplateNodeDeleteView,
+    IndexTemplateNodeEditView, IndexTemplateNodeListView,
     IndexTemplateRebuildView, IndexTemplateResetView
 )
 

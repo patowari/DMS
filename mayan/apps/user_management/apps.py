@@ -10,8 +10,8 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_multi_item, menu_object, menu_related,
-    menu_return, menu_secondary, menu_setup, menu_user
+    menu_list_facet, menu_multi_item, menu_object, menu_related, menu_return,
+    menu_secondary, menu_setup, menu_user
 )
 from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
@@ -31,8 +31,8 @@ from .events import (
 from .handlers import handler_initialize_new_user_options
 from .links import (
     link_current_user_details, link_group_create, link_group_edit,
-    link_group_list, link_group_multiple_delete, link_group_user_list,
-    link_group_setup, link_group_single_delete, link_user_create,
+    link_group_list, link_group_multiple_delete, link_group_setup,
+    link_group_single_delete, link_group_user_list, link_user_create,
     link_user_edit, link_user_group_list, link_user_list,
     link_user_multiple_delete, link_user_set_options, link_user_setup,
     link_user_single_delete, separator_user_label, text_user_label
@@ -46,9 +46,8 @@ from .methods import (
     method_user_groups_add, method_user_groups_remove
 )
 from .permissions import (
-    permission_group_delete, permission_group_edit,
-    permission_group_view, permission_user_delete, permission_user_edit,
-    permission_user_view
+    permission_group_delete, permission_group_edit, permission_group_view,
+    permission_user_delete, permission_user_edit, permission_user_view
 )
 from .utils import get_groups, get_users
 
@@ -76,7 +75,9 @@ class UserManagementApp(MayanAppConfig):
         Group._meta.ordering = ('name',)
         Group._meta.verbose_name = _(message='Group')
         Group._meta.verbose_name_plural = _(message='Groups')
-        Group._meta.get_field(field_name='name').verbose_name = _(message='Name')
+        Group._meta.get_field(field_name='name').verbose_name = _(
+            message='Name'
+        )
 
         Group.add_to_class(
             name='__init__', value=get_method_group_init()
@@ -93,18 +94,24 @@ class UserManagementApp(MayanAppConfig):
         Group.add_to_class(
             name='users_remove', value=method_group_users_remove
         )
-        Group.add_to_class(name='save', value=get_method_group_save())
+        Group.add_to_class(
+            name='save', value=get_method_group_save()
+        )
 
         User._meta.ordering = ('pk',)
         User._meta.verbose_name = _(message='User')
         User._meta.verbose_name_plural = _(message='Users')
         User._meta.ordering = ('last_name', 'first_name')
 
-        User._meta.get_field(field_name='email').verbose_name = _(message='Email')
+        User._meta.get_field(field_name='email').verbose_name = _(
+            message='Email'
+        )
         User._meta.get_field(
             field_name='first_name'
         ).verbose_name = _(message='First name')
-        User._meta.get_field(field_name='groups').verbose_name = _(message='Groups')
+        User._meta.get_field(field_name='groups').verbose_name = _(
+            message='Groups'
+        )
         User._meta.get_field(
             field_name='is_active'
         ).verbose_name = _(message='Is active?')
@@ -219,8 +226,8 @@ class UserManagementApp(MayanAppConfig):
             source=Group
         )
         SourceColumn(
-            attribute='user_set.count', include_label=True, label=_(message='Users'),
-            source=Group
+            attribute='user_set.count', include_label=True,
+            label=_(message='Users'), source=Group
         )
 
         SourceColumn(

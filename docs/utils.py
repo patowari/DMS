@@ -44,7 +44,12 @@ def patch_files(path=None, replace_list=None):
 
     path_object = Path(path)
     for replace_entry in replace_list or []:
-        for path_entry in path_object.glob('**/{}'.format(replace_entry['filename_pattern'])):
+        path_entries = path_object.glob(
+            '**/{}'.format(
+                replace_entry['filename_pattern']
+            )
+        )
+        for path_entry in path_entries:
             if path_entry.is_file():
                 for pattern in replace_entry['content_patterns']:
                     with path_entry.open(mode=file_open_mode) as source_file_object:
@@ -60,13 +65,23 @@ def patch_files(path=None, replace_list=None):
                                     break
                                 else:
                                     if letter == pattern['search'][0]:
-                                        text = '{}{}'.format(letter, source_file_object.read(len(pattern['search']) - 1))
+                                        text = '{}{}'.format(
+                                            letter, source_file_object.read(
+                                                len(
+                                                    pattern['search']
+                                                ) - 1
+                                            )
+                                        )
 
                                         temporary_file_object.seek(destination_position)
                                         if text == pattern['search']:
                                             text = pattern['replace']
-                                            source_position = source_position + len(pattern['search'])
-                                            destination_position = destination_position + len(pattern['replace'])
+                                            source_position = source_position + len(
+                                                pattern['search']
+                                            )
+                                            destination_position = destination_position + len(
+                                                pattern['replace']
+                                            )
                                             temporary_file_object.write(text)
 
                                         else:
@@ -93,12 +108,12 @@ def patch_theme_template(app, templates_path):
             'content_patterns': [
                 {
                     'search': '{{ _(\'Next\') }}',
-                    'replace': '{{ next.title }}',
+                    'replace': '{{ next.title }}'
                 },
                 {
                     'search': '{{ _(\'Previous\') }}',
-                    'replace': '{{ prev.title }}',
-                },
+                    'replace': '{{ prev.title }}'
+                }
             ]
         },
         {
@@ -106,8 +121,8 @@ def patch_theme_template(app, templates_path):
             'content_patterns': [
                 {
                     'search': '</div>\n    </nav>\n\n    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">',
-                    'replace': '{% include "message_area.html" %}</div>\n    </nav>\n\n    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">',
-                },
+                    'replace': '{% include "message_area.html" %}</div>\n    </nav>\n\n    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">'
+                }
             ]
         }
     ]

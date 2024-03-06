@@ -2,8 +2,7 @@ from django.contrib.auth import get_user_model
 
 from ..interfaces import (
     SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
-    SourceBackendActionInterfaceRequestView,
-    SourceBackendActionInterfaceTask
+    SourceBackendActionInterfaceRequestView, SourceBackendActionInterfaceTask
 )
 
 from .arguments import argument_user, argument_user_id

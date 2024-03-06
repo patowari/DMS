@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -26,89 +26,97 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:132 permissions.py:6 settings.py:16
+#: apps.py:128 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Comum"
 
-#: dependencies.py:186
+#: dependencies.py:189
 msgid "Used to allow offline translation of the code text strings."
 msgstr "Usado para permitir a tradução offline das linhas do texto do código."
 
-#: dependencies.py:195
+#: dependencies.py:198
 msgid "Provides style checking."
 msgstr "Fornece verificação de estilo."
 
-#: dependencies.py:200
+#: dependencies.py:203
 msgid "Command line environment with autocompletion."
 msgstr "Ambiente de linha de comando com auto-completamento."
 
-#: dependencies.py:209
+#: dependencies.py:212
 msgid "Checks proper formatting of the README file."
 msgstr "Verifica a formatação adequada do ficheiro README."
 
-#: links.py:34
+#: links.py:36
 msgid "About this"
 msgstr "Sobre isto"
 
-#: links.py:37
+#: links.py:39
 msgid "Get the book"
 msgstr "Obter o livro"
 
-#: links.py:42
+#: links.py:44
 msgid "Documentation"
 msgstr "Documentação"
 
-#: links.py:45
+#: links.py:47
 msgid "Forum"
 msgstr "Fórum"
 
-#: links.py:50
+#: links.py:52
 msgid "Knowledge base"
 msgstr ""
 
-#: links.py:53 views.py:53
+#: links.py:55 views.py:55
 msgid "License"
 msgstr "Licença"
 
 #: links.py:58
+msgid "Mailing list"
+msgstr ""
+
+#: links.py:64
 msgid "Copy"
 msgstr "Cópia"
 
-#: links.py:62
+#: links.py:69
+msgid "Release notes"
+msgstr ""
+
+#: links.py:72
 msgid "Setup"
 msgstr "Configuração"
 
-#: links.py:65
+#: links.py:75
 msgid "Source code"
 msgstr "Código fonte"
 
-#: links.py:69
+#: links.py:79
 msgid "Online store"
 msgstr "Loja online"
 
-#: links.py:73
+#: links.py:83
 msgid "Get support"
 msgstr "Obtenha ajuda"
 
-#: links.py:77 views.py:134
+#: links.py:87 views.py:136
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: literals.py:27
+#: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 "Esta funcionalidade foi descontinuada e será removida numa versão futura."
 
-#: literals.py:36
+#: literals.py:32
 msgid "Days"
 msgstr "Dias"
 
-#: literals.py:37
+#: literals.py:33
 msgid "Hours"
 msgstr "Horas"
 
-#: literals.py:38
+#: literals.py:34
 msgid "Minutes"
 msgstr "Minutos"
 
@@ -148,7 +156,7 @@ msgstr "Copiar objeto"
 msgid "URL"
 msgstr "URL"
 
-#: settings.py:24
+#: settings.py:23
 msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
@@ -156,7 +164,7 @@ msgstr ""
 "Em modo de lista mostrar o menu de opções de \"Aspetos de lista\" como um "
 "menu suspenso em vez de de botões individuais."
 
-#: settings.py:33
+#: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
@@ -164,14 +172,14 @@ msgstr ""
 "Em modo de lista mostrar o menu de opções de \"Objeto\" como um menu "
 "suspenso em vez de botões individuais."
 
-#: settings.py:41
+#: settings.py:40
 msgid ""
 "Disables the use of the local `media` folder. When using this setting, all "
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
 
-#: settings.py:49
+#: settings.py:48
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
@@ -184,18 +192,14 @@ msgstr ""
 "(preferencialmente|) ou uma pasta que contenha a aplicação. Exemplo:  "
 "['app_1', 'app_2']"
 
-#: settings.py:59
+#: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
 "Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+" containing an application. These apps will be installed after the default "
+"apps. Example: ['app_1', 'app_2']"
 msgstr ""
-"Uma lista de linhas que designam todas as aplicações que se encontram "
-"instaladas, para além daquelas já normalmente instaladas pela Mayan EDMS. "
-"Cada linha deverá conter um caminho Python pontilhado para: uma classe de "
-"configuração da aplicação (preferencialmente|) ou uma pasta que contenha a "
-"aplicação. Exemplo: ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -229,23 +233,19 @@ msgstr "Nome do painel a ser exibido na visualização do início. "
 msgid "Sets the project's name."
 msgstr "Nomeia o projeto."
 
-#: settings.py:99
-msgid "URL of the project's homepage."
-msgstr "url da página inicial do projeto."
-
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."
 msgstr "Clique aqui para arranjar isto."
 
-#: validators.py:41
+#: validators.py:42
 msgid "Enter a valid JSON value."
 msgstr "Insira um valor JSON válido."
 
-#: validators.py:65
+#: validators.py:66
 msgid "Enter a valid YAML value."
 msgstr "Insira um valor YAML válido."
 
-#: validators.py:80
+#: validators.py:81
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
@@ -253,29 +253,29 @@ msgstr ""
 "Insira um \"nome interno\" válido que contenha letras, números e "
 "underscores."
 
-#: views.py:25
+#: views.py:26
 msgid "About"
 msgstr "Sobre"
 
-#: views.py:43
+#: views.py:45
 msgid "Home"
 msgstr "início"
 
-#: views.py:69
+#: views.py:71
 #, python-format
 msgid "Fields to be copied: %s"
 msgstr "Campos a serem copiados: %s"
 
-#: views.py:79
+#: views.py:81
 #, python-format
 msgid "Make a copy of %(object_name)s \"%(object)s\"?"
 msgstr "Copiar %(object_name)s \" %(object)s \"?"
 
-#: views.py:90
+#: views.py:92
 msgid "Object copied successfully."
 msgstr "Objeto copiado com sucesso."
 
-#: views.py:108
+#: views.py:110
 msgid ""
 "No results here means that don't have the required permissions to perform "
 "administrative task."
@@ -283,18 +283,18 @@ msgstr ""
 "Nenhum resultado aqui significa que o usuário não possui as permissões "
 "necessárias para realizar tarefas administrativas."
 
-#: views.py:111
+#: views.py:113
 msgid "No setup options available."
 msgstr "Não há opções de configuração disponíveis."
 
-#: views.py:116
+#: views.py:118
 msgid "Here you can configure all aspects of the system."
 msgstr "Aqui você pode configurar todos os aspectos do sistema."
 
-#: views.py:118
+#: views.py:120
 msgid "Setup items"
 msgstr "Itens de configuração"
 
-#: views.py:132
+#: views.py:134
 msgid "These modules are used to do system maintenance."
 msgstr "Estes módulos são usados para a manutenção do sistema."

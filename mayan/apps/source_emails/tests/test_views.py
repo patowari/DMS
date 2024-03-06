@@ -104,7 +104,9 @@ class EmailSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -123,7 +125,9 @@ class EmailSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)
@@ -251,7 +255,9 @@ class IMAPEmailSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -270,7 +276,9 @@ class IMAPEmailSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)
@@ -398,7 +406,9 @@ class POP3EmailSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -417,7 +427,9 @@ class POP3EmailSourceBackendViewTestCase(
         response = self._request_test_source_test_post_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)

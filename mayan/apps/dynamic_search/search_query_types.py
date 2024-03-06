@@ -23,7 +23,9 @@ class BackendQueryType:
 
     @classmethod
     def register(cls, klass, search_backend):
-        cls._registry.setdefault(search_backend, {})
+        cls._registry.setdefault(
+            search_backend, {}
+        )
 
         search_backend_dictionary = cls._registry[search_backend]
 

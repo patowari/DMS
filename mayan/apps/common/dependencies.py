@@ -36,7 +36,7 @@ PythonDependency(
         ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django', version_string='==4.2.8'
+    ''', module=__name__, name='django', version_string='==4.2.11'
 )
 PythonDependency(
     legal_text='''
@@ -116,19 +116,22 @@ PythonDependency(
         COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
         IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    ''', module=__name__, name='django-mptt', version_string='==0.15.0'
+    ''', module=__name__, name='django-mptt', version_string='==0.16.0'
 )
 PythonDependency(
-    module=__name__, name='importlib-metadata', version_string='==6.8.0'
+    module=__name__, name='importlib-metadata', version_string='==7.0.1'
 )
 PythonDependency(
     legal_text='''
         Author: Christian Theune
         License: LGPL 2.1
-    ''', module=__name__, name='pycountry', version_string='==22.3.5'
+    ''', module=__name__, name='pycountry', version_string='==23.12.11'
 )
 PythonDependency(
     module=__name__, name='requests', version_string='==2.31.0'
+)
+PythonDependency(
+    module=__name__, name='setuptools', version_string='==69.1.1'
 )
 PythonDependency(
     legal_text='''
@@ -188,17 +191,17 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-silk', version_string='==5.0.4'
+    name='django-silk', version_string='==5.1.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
         'Provides style checking.'
-    ), module=__name__, name='flake8', version_string='==6.1.0'
+    ), module=__name__, name='flake8', version_string='==7.0.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==8.18.1'
+    ), module=__name__, name='ipython', version_string='==8.21.0'
 )
 PythonDependency(
     module=__name__, environment=environment_development,
@@ -211,18 +214,18 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='ruff', version_string='==0.1.6'
+    module=__name__, name='ruff', version_string='==0.3.0'
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='safety', version_string='==2.3.5'
+    module=__name__, name='safety', version_string='==3.0.1'
 )
 
 # Documentation
 
 PythonDependency(
     environment=environment_documentation, module=__name__, name='Sphinx',
-    version_string='==4.5.0'
+    version_string='==5.3.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
@@ -234,7 +237,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx_rtd_theme', version_string='==0.5.2'
+    name='sphinx_rtd_theme', version_string='==2.0.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,

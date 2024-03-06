@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -29,7 +29,7 @@ msgstr "Διπλότυπα"
 msgid "Duplicate backend"
 msgstr ""
 
-#: classes.py:90
+#: classes.py:89
 msgid "Null backend"
 msgstr "Υποκείμενο σύστημα κενής τιμής"
 

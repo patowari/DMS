@@ -11,10 +11,9 @@
 - Fix new mailer creation view. GitLab issue #431.
   Thanks to Robert Schöftner (@robert.schoeftner) for the
   report and the solution.
-- Consolidate intial document created event and the first
-  document properties edited events. Preserve the user that
-  initially creates the document. GitLab issue #433. Thanks
-  to Jesaja Everling (@jeverling) for the report.
+- Consolidate initial document created event and the first document properties
+  edited events. Preserve the user that initially creates the document. GitLab
+  issue #433. Thanks to Jesaja Everling (@jeverling) for the report.
 - Sort the list of root cabinets. Thanks to Thomas Plotkowiak
   for the request.
 - Sort the list of a document's cabinets.
@@ -36,8 +35,8 @@
 
 2.7 (2017-08-30)
 ================
-- Add workaround for PDF with IndirectObject as the
-  rotation value. GitHub #261.
+- Add workaround for PDF with ``IndirectObject`` as the rotation value.
+  GitHub #261.
 - Add ACL list link with icon and use it for the document facet menu.
 - Fix mailing app permissions labels.
 - Add ACLs link and ACLs permissions to the mailer profile model.
@@ -47,9 +46,10 @@
 - Add workaround for pycountry versions without the bibliographical key.
   GitHub issue #250.
 - Skip UUID migration on Oracle backends. GitHub issue #251.
-- Allow changing the output format, DPI of the pdftoppm command, and
-  the output format of the converter via the CONVERTER_GRAPHICS_BACKEND_CONFIG
-  setting. GitHub issues #256 #257 GitLab issue #416.
+- Allow changing the output format, DPI of the pdftoppm command, and the
+  output format of the converter via the
+  ``CONVERTER_GRAPHICS_BACKEND_CONFIG`` setting. GitHub issues #256 #257
+  GitLab issue #416.
 - Add support for workflow triggers.
 - Add support for workflow actions.
 - Add support for rendering workflows.
@@ -78,34 +78,34 @@
 
 2.6.4 (2017-07-26)
 ==================
-- Add missing replacements of reverse to resolve_url.
+- Add missing replacements of reverse to ``resolve_url``.
 
 2.6.3 (2017-07-25)
 ==================
 - Add makefile target to launch a PostgreSQL container.
-- Use resolve_url instead of redirect to resolve the post login URL.
-- Make the intialsetup and performupgrade management tasks work
+- Use ``resolve_url`` instead of redirect to resolve the post login URL.
+- Make the ``initialsetup`` and ``performupgrade`` management tasks work
   with signals to allow customization from 3rd party apps.
 - PEP8 cleanups.
-- Add tag_ids keyword argument to the Source.handle_upload
+- Add ``tag_ids`` keyword argument to the ``Source.handle_upload``
   model method. GitLab issue #413.
 - Add overflow wrapping so wrap long titles in Firefox too.
 - Makes Roles searchable. GitLab issue #402.
 - Add line numbers to the debug and production loggers.
   Add date and time to the production logger.
-- Add support for generating setup.py from a template. GitLab
-  #149 #200.
+- Add support for generating ``setup.py`` from a template. GitLab #149 #200.
 - Add fade in animation to document images.
 
 2.6.2 (2017-07-19)
 ==================
 - Fix deprecation warning to prepare upgrade to Django 1.11 and 2.0.
 - Fix document page zoom.
-- Add support to run tests against a MySQL, Postgres or Oracle container.
+- Add support to run tests against a MySQL, PostgreSQL or Oracle container.
 - Improve tag widget customization by moving the markup to its own template.
 - Fix document page widget appearance in the document page list view.
 - Make document version order deterministic.
-- Allow total page number instrospection of encrypted PDF with non ASCII user properties. GitLab issue #411.
+- Allow total page number introspection of encrypted PDF with non ASCII user
+  properties. GitLab issue #411.
 - Oracle database compatibility update in the cabinets app. GitHub #258.
 
 2.6.1 (2017-07-18)
@@ -119,16 +119,18 @@
 - Backport metadata widget changes from @Macrobb. GitLab #377.
 - Make users and group searchable.
 - Add support for logging errors during in production mode.
-  Add COMMON_PRODUCTION_ERROR_LOG_PATH to control path of log file.
-  Defaults to mayan/error.log.
+  Add ``COMMON_PRODUCTION_ERROR_LOG_PATH`` to control path of log file.
+  Defaults to ``mayan/error.log``.
 - Add support logging request exceptions.
 - Add document list item view.
 - Sort setting by namespace label and by global name second.
 - Sort indexes by label.
 - Fix cabinets permission and access control checking.
-- The permission to add or remove documents to cabinets now applies to documents too.
+- The permission to add or remove documents to cabinets now applies to
+  documents too.
 - Equalize dashboard widgets heights.
-- Switch the order of the DEFAULT_AUTHENTICATION_CLASSES of DRF. GitLab #400.
+- Switch the order of the ``DEFAULT_AUTHENTICATION_CLASSES`` of DRF. GitLab
+  #400.
 - Backport document's version list view permission.
 - Improve code to unbind menu entries.
 - Renamed the document type permission namespace from "Document setup" to "Document types".
@@ -152,11 +154,11 @@
 - Add user configurable mailer. GitLab #286.
 - Use Toasts library for screen messages.
 - Reduce verbosity of some debug messages.
-- Add new lineart transformation.
+- Add new ``lineart`` transformation.
 - Fix SANE source resolution field.
 - About and Profile menu reorganization.
 - PDF compatibility improvements.
-- Office document coversion improvements.
+- Office document conversion improvements.
 - New metadata type setup UI.
 - Duplicated document scan support.
 - "Remember me" login support.
@@ -165,10 +167,10 @@
 - Translation improvements.
 - Image loading improvements.
 - Lower JavaScript memory utilization.
-- HTML reponsive layout improvements.
+- HTML responsive layout improvements.
 - Make document deletion a background task.
 - Unicode handling improvements.
-- Python3 compatilibyt improvements.
+- Python3 compatibility improvements.
 - New screen messages using Toastr.
 
 2.4 (2017-06-23)
@@ -181,7 +183,7 @@
 - Fix role creation API endpoint not returning id. GitLab issue #390.
 - Make tags, metadata types and cabinets searchable via the dynamic search API. GitLab issue #344.
 - Add support for updating configuration options from environment variables.
-- Add purgelocks management command. GitLab issue #221.
+- Add ``purgelocks`` management command. GitLab issue #221.
 - Fix index rebuilding for multi value first levels. GitLab issue #391.
 - Truncate views titles via the APPEARANCE_MAXIMUM_TITLE_LENGTH setting. GitLab issue #217.
 - Add background task manager app. GitLab issue #132.
@@ -227,15 +229,15 @@
 - Added a quick rename serializer to the document type API serializer.
 - Added per document type, workflow list API view.
 - Mayan EDMS was adopted a version 1.1 of the Linux Foundation Developer Certificate of Origin.
-- Added the detail url of a permission in the permission serializer.
+- Added the detail URL of a permission in the permission serializer.
 - Added endpoints for the ACL app API.
 - Implemented document workflows transition ACLs. GitLab issue #321.
 - Add document comments API endpoints. GitHub issue #249.
 - Add support for overriding the Celery class.
-- Changed the document upload view in source app to not use the HTTP referer
+- Changed the document upload view in source app to not use the HTTP referrer
   URL blindly, but instead recompose the URL using known view name. Needed
   when integrating Mayan EDMS into other app via using iframes.
-- Addes size field to the document version serializer.
+- Added size field to the document version serializer.
 - Removed the serializer from the deleted document restore API endpoint.
 - Added support for adding or editing document types to smart links via the
   API.
@@ -254,13 +256,16 @@
 - Fixes in the trashed document API endpoints.
 - Improved tags API PUT and PATCH endpoints.
 - Bulk document adding when creating and editing tags.
-- The version of django-mptt is preserved in case mayan-cabinets is installed.
+- The version of django-mptt is preserved in case mayan-cabinets is
+  installed.
 - Add Django GPG API endpoints for singing keys.
 - Add API endpoints for the document states (workflows) app.
-- Add API endpoints for the messsage of the day (MOTD) app.
+- Add API endpoints for the message of the day (MOTD) app.
 - Add Smart link API endpoints.
-- Add writable versions of the Document and Document Type serializers (GitLab issues #348 and #349).
-- Close GitLab issue #310 "Metadata's lookup with chinese messages when new document"
+- Add writable versions of the Document and Document Type serializers
+  (GitLab issues #348 and #349).
+- Close GitLab issue #310 "Metadata's lookup with Chinese messages when
+  new document"
 
 2.1.7 (2017-02-01)
 ==================
@@ -284,12 +289,12 @@
 - Backport trash can navigation link resolution fix (GitLab #331).
 - Improve documentation regarding the use of GPG version 1 (GitLab #333).
 - Fix ACL create view HTML response type. (GitLab #335).
-- Expland staging folder and watch folder explanation.
+- Expand staging folder and watch folder explanation.
 
 2.1.4 (2016-10-28)
 ==================
 - Add missing link to the 2.1.3 release notes in the index file.
-- Improve TempfileCheckMixin.
+- Improve ``TempfileCheckMixin``.
 - Fix statistics namespace list display view.
 - Fix events list display view.
 - Update required Django version to 1.8.15.
@@ -302,8 +307,8 @@
 
 2.1.3 (2016-06-29)
 ==================
-- Add help message when initialsetup migration phase fails. Relates to GitLab issue #296.
-- Start using self.setdout instead of print as per documentation.
+- Add help message when ``initialsetup`` migration phase fails. Relates to GitLab issue #296.
+- Start using ``self.setdout`` instead of print as per documentation.
 - Fix GitLab issue #295, "When editing a user the top bar jumps to the name of the user".
 - Normalize handling of temporary file and directory creation.
 - Fix GitLab issue #309, "Temp files quickly filling-up my /tmp (1GB tmpfs)".
@@ -332,7 +337,8 @@
 - Remove included login required middleware using django-stronghold instead (http://mikegrouchy.com/django-stronghold/).
 - Improve generation of success and error messages for class based views.
 - Remove ownership concept from folders.
-- Replace strip_spaces middleware with the spaceless template tag. GitLab issue #255
+- Replace ``strip_spaces`` middleware with the ``spaceless`` template tag.
+  GitLab issue #255
 - Deselect the update checkbox for optional metadata by default.
 - Silence all Django 1.8 model import warnings.
 - Implement per document type document creation permission. Closes GitLab issue #232.
@@ -343,7 +349,8 @@
 - Add new permission: checkout details view.
 - Add HTML5 upload widget. Issue #162.
 - Add Message of the Day app. Issue #222
-- Update Document model's uuid field to use Django's native UUIDField class.
+- Update Document model's uuid field to use Django's native ``UUIDField``
+  class.
 - Add new split view index navigation
 - Newly uploaded documents appear in the Recent document list of the user.
 - Document indexes now have ACL support.
@@ -352,7 +359,7 @@
 - More tests added.
 - Handle unicode filenames in staging folders.
 - Add staging file deletion permission.
-- New document_signature_view permission.
+- New ``document_signature_view`` permission.
 - Add support for signing documents.
 - Instead of multiple keyservers only one keyserver is now supported.
 - Replace document type selection widget with an opened selection list.
@@ -364,72 +371,76 @@
 2.0.2 (2016-02-09)
 ==================
 - Install testing dependencies when installing development dependencies.
-- Fix GitLab issue #250 "Empty optional lookup metadata trigger validation error".
+- Fix GitLab issue #250 "Empty optional lookup metadata trigger validation
+  error".
 - Fix OCR API test.
-- Move metadata form value validation to .clean() method.
-- Only extract validation error messages from ValidationError exception instances.
+- Move metadata form value validation to ``.clean()`` method.
+- Only extract validation error messages from ``ValidationError`` exception
+  instances.
 - Don't store empty metadata value if the update checkbox is not checked.
-- Add 2 second delay to document version tests to workaround MySQL limitation.
+- Add 2 second delay to document version tests to workaround MySQL
+  limitation.
 - Strip HTML tags from the browser title.
 - Remove Docker and Docker Compose files.
 
 
 2.0.1 (2016-01-22)
 ==================
-- Fix GitLab issue #243, "System allows a user to skip entering values for a required metadata field while uploading a new document"
-- Fix GitLab issue #245, "Add multiple metadata not possible"
+- Fix GitLab issue #243, "System allows a user to skip entering values for
+  a required metadata field while uploading a new document".
+- Fix GitLab issue #245, "Add multiple metadata not possible".
 - Updated Vagrantfile to provision a production box too.
 
 
 2.0 (2015-12-04)
 ================
-- New source homepage: https://gitlab.com/mayan-edms/mayan-edms
-- Update to Django 1.7
-- New Bootstrap Frontend UI
-- Easier theming and rebranding
-- Improved page navigation interface
-- Menu reorganization
-- Removal of famfam icon set
-- Improved document preview generation
-- Document submission for OCR changed to POST
-- New YAML based settings system
-- Removal of auto admin creation as separate app
-- Removal of dependencies
-- ACL system refactor
-- Object access control inheritance
-- Removal of anonymous user support
-- Metadata validators refactor
-- Trash can support
-- Retention policies
-- Support for sharing indexes as FUSE filesystems
-- Clickable preview images titles
-- Removal of eval
-- Smarter OCR, per page parsing or OCR fallback
-- Improve failure tolerance (not all Operational Errors are critical now)
-- RGB tags
-- Default document type and default document source
-- Link unbinding
-- Statistics refactor
-- Apps merge
-- New signals
-- Test improvements
-- Indexes recalculation after document creation too
-- Upgrade command
-- OCR data moved to ocr app from documents app
-- New internal document creation workflow return a document stub
-- Auto console debug logging during development and info during production
-- New class based and menu based navigation system
-- New class based transformations
-- Usage of Font Awesome icons set
-- Management command to remove obsolete permissions: `purgepermissions`
-- Normalization of 'title' and 'name' fields to 'label'
-- Improved API, now at version 1
-- Invert page title/project name order in browser title
-- Django's class based views pagination
-- Reduction of text strings
-- Removal of the CombinedSource class
-- Removal of default class ACLs
-- Removal of the ImageMagick and GraphicsMagick converter backends
-- Remove support for applying roles to new users automatically
-- Removal of the DOCUMENT_RESTRICTIONS_OVERRIDE permission
-- Removed the page_label field
+- New source homepage: https://gitlab.com/mayan-edms/mayan-edms.
+- Update to Django 1.7.
+- New Bootstrap Frontend UI.
+- Easier theming and rebranding.
+- Improved page navigation interface.
+- Menu reorganization.
+- Removal of famfam icon set.
+- Improved document preview generation.
+- Document submission for OCR changed to POST.
+- New YAML based settings system.
+- Removal of auto admin creation as separate app.
+- Removal of dependencies.
+- ACL system refactor.
+- Object access control inheritance.
+- Removal of anonymous user support.
+- Metadata validators refactor.
+- Trash can support.
+- Retention policies.
+- Support for sharing indexes as FUSE filesystems.
+- Clickable preview images titles.
+- Removal of ``eval``.
+- Smarter OCR, per page parsing or OCR fallback.
+- Improve failure tolerance (not all Operational Errors are critical now).
+- RGB tags.
+- Default document type and default document source.
+- Link unbinding.
+- Statistics refactor.
+- Apps merge.
+- New signals.
+- Test improvements.
+- Indexes recalculation after document creation too.
+- Upgrade command.
+- OCR data moved to ocr app from documents app.
+- New internal document creation workflow return a document stub.
+- Auto console debug logging during development and info during production.
+- New class based and menu based navigation system.
+- New class based transformations.
+- Usage of Font Awesome icons set.
+- Management command to remove obsolete permissions: ``purgepermissions``.
+- Normalization of 'title' and 'name' fields to 'label'.
+- Improved API, now at version 1.
+- Invert page title/project name order in browser title.
+- Django's class based views pagination.
+- Reduction of text strings.
+- Removal of the ``CombinedSource`` class.
+- Removal of default class ACLs.
+- Removal of the ImageMagick and GraphicsMagick converter backends.
+- Remove support for applying roles to new users automatically.
+- Removal of the ``DOCUMENT_RESTRICTIONS_OVERRIDE`` permission.
+- Removed the ``page_label`` field.

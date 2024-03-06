@@ -7,12 +7,11 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from ..search_models import SearchModel
 
 from .mixins.api_mixins import SearchAPIViewTestMixin
-from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
+from .mixins.base import TestSearchObjectSimpleTestMixin
 
 
 class SearchAPIViewBackwardCompatilityTestCase(
-    SearchAPIViewTestMixin, SearchTestMixin, TestSearchObjectSimpleTestMixin,
-    BaseAPITestCase
+    SearchAPIViewTestMixin, TestSearchObjectSimpleTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 
@@ -23,7 +22,9 @@ class SearchAPIViewBackwardCompatilityTestCase(
             search_model_name='documents.Document', search_term='_'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -31,14 +32,16 @@ class SearchAPIViewBackwardCompatilityTestCase(
 
 class SearchAPIViewTestCase(
     DocumentTestMixin, SearchAPIViewTestMixin,
-    TestSearchObjectSimpleTestMixin, SearchTestMixin, BaseAPITestCase
+    TestSearchObjectSimpleTestMixin, BaseAPITestCase
 ):
     def test_search_api_view_no_permission(self):
         self._clear_events()
 
         response = self._request_search_simple_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -55,7 +58,9 @@ class SearchAPIViewTestCase(
         self.assertEqual(
             response.data['results'][0]['label'], self._test_document.label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -69,7 +74,9 @@ class SearchAPIViewTestCase(
 
         response = self._request_search_simple_view(search_term='')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -81,12 +88,16 @@ class SearchAPIViewTestCase(
 
         self._clear_events()
 
-        response = self._request_search_simple_view(query={'format': 'json'})
+        response = self._request_search_simple_view(
+            query={'format': 'json'}
+        )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             response.data['results'][0]['label'], self._test_document.label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
     def test_search_api_view_empty_extra_query_with_access(self):
         self.grant_access(
@@ -99,14 +110,18 @@ class SearchAPIViewTestCase(
             search_term='', query={'format': 'json'}
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
     def test_advanced_search_api_view_no_permission(self):
         self._clear_events()
 
         response = self._request_search_advanced_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -123,7 +138,9 @@ class SearchAPIViewTestCase(
         self.assertEqual(
             response.data['results'][0]['label'], self._test_document.label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -131,7 +148,7 @@ class SearchAPIViewTestCase(
 
 class SearchFilterCombinatiomAPITestCase(
     SearchAPIViewTestMixin, DocumentTestMixin,
-    TestSearchObjectSimpleTestMixin, SearchTestMixin, BaseAPITestCase
+    TestSearchObjectSimpleTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 
@@ -154,7 +171,9 @@ class SearchFilterCombinatiomAPITestCase(
             search_model_name='documents.Document', search_term='AAA'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 2)
+        self.assertEqual(
+            response.data['count'], 2
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -164,18 +183,20 @@ class SearchFilterCombinatiomAPITestCase(
         response = self._request_search_simple_view(
             search_model_name='documents.Document', search_term='AAA',
             query={
-                'filter_label': 'BBB',
+                'filter_label': 'BBB'
             }
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
 
 class SearchModelAPIViewTestCase(
-    TestSearchObjectSimpleTestMixin, SearchTestMixin, BaseAPITestCase
+    TestSearchObjectSimpleTestMixin, BaseAPITestCase
 ):
     def test_search_models_api_view(self):
         self._clear_events()
@@ -216,8 +237,7 @@ class SearchModelAPIViewTestCase(
 
 
 class RESTAPISearchFilterTestCase(
-    DocumentTestMixin, TestSearchObjectSimpleTestMixin, SearchTestMixin,
-    BaseAPITestCase
+    DocumentTestMixin, TestSearchObjectSimpleTestMixin, BaseAPITestCase
 ):
     auto_upload_test_document = False
 
@@ -246,7 +266,9 @@ class RESTAPISearchFilterTestCase(
             response.data['results'][0]['label'],
             self._test_documents[0].label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -263,7 +285,9 @@ class RESTAPISearchFilterTestCase(
             response.data['results'][0]['label'],
             self._test_documents[1].label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -288,7 +312,9 @@ class RESTAPISearchFilterTestCase(
             response.data['results'][0]['label'],
             self._test_documents[0].label
         )
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

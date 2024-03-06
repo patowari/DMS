@@ -67,21 +67,26 @@ Current series status
      - Security patches
      - Bug fixes
      - Translations
-   * - 4.5
+   * - 4.6
      - Fully supported
      - Yes
      - Yes
      - Updated
-   * - 4.4
+   * - 4.5
      - Maintenance
      - Yes
      - Yes
      - Updated
-   * - 4.3
+   * - 4.4
      - Extended support
-     - Only sponsored ones
-     - Only sponsored ones
+     - Yes
+     - Yes
      - Updated
+   * - 4.3
+     - End of life
+     - No
+     - No
+     - Not available and not updated
    * - 4.2
      - End of life
      - No

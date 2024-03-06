@@ -1,4 +1,5 @@
 from django.db import migrations, models
+
 import mayan.apps.databases.model_mixins
 
 
@@ -6,7 +7,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('motd', '0005_auto_20160510_0025'),
+        ('motd', '0005_auto_20160510_0025')
     ]
 
     operations = [
@@ -49,15 +50,15 @@ class Migration(migrations.Migration):
                         'this announcement is to be displayed.', null=True,
                         verbose_name='End date time'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Announcement',
-                'verbose_name_plural': 'Announcements',
+                'verbose_name_plural': 'Announcements'
             },
             bases=(
                 mayan.apps.databases.model_mixins.ExtraDataModelMixin,
                 models.Model
-            ),
-        ),
+            )
+        )
     ]

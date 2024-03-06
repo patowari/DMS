@@ -2,8 +2,10 @@ from mayan.apps.documents.search import search_model_document
 
 from ...literals import QUERY_PARAMETER_ANY_FIELD, SEARCH_MODEL_NAME_KWARG
 
+from .base import SearchTestMixin
 
-class SearchAPIViewTestMixin:
+
+class SearchAPIViewTestMixin(SearchTestMixin):
     def _request_search_advanced_view(
         self, search_model_name=None, search_term=None, query=None
     ):

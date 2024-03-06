@@ -17,14 +17,14 @@ from .icons import (
 from .links import link_quota_create
 from .models import Quota
 from .permissions import (
-    permission_quota_create, permission_quota_delete,
-    permission_quota_edit, permission_quota_view
+    permission_quota_create, permission_quota_delete, permission_quota_edit,
+    permission_quota_view
 )
 
 
 class QuotaBackendSelectionView(FormView):
     extra_context = {
-        'title': _(message='New quota backend selection'),
+        'title': _(message='New quota backend selection')
     }
     form_class = QuotaBackendSelectionForm
     view_icon = icon_quota_backend_selection

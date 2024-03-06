@@ -10,7 +10,7 @@ Sending documents to multiple recipients
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Support was added to send a document as an attachment, or a link to a document
-to multiple email recipients. To use this feature enter a comman separated
+to multiple email recipients. To use this feature enter a comma separated
 list of email recipients in the "Email address" field.
 
 
@@ -20,14 +20,14 @@ Visual changes
 Several patches to change and improve the user interface landed on this release.
 The first, by Macrobb Simpson @Macrobb, makes the content area width, match
 window area. This means that on almost all device screen sizes the content area
-will be almost fullscreen. Another path from Macrobb Simpson, improves the
+will be almost full screen. Another path from Macrobb Simpson, improves the
 visual appearance of the document metadata widget. The other big change is the
 new list item view template which lists documents in an column, row layout.
 With this layout document thumbnails are more clearly visible, much more
 information can be displayed for each document, and works much better on small
 screen devices like tablets and smartphone than a responsive table which
 requires two axis navigation on small screens. The height of the dashboard
-items is now adjusted via javascript to ensure correct layout regardless of
+items is now adjusted via JavaScript to ensure correct layout regardless of
 screen size of message length when translated.
 
 
@@ -44,8 +44,9 @@ Logging
 
 The logging configuration was improved to create a log for critical errors
 when running on production mode. The default location for this log file is:
-/mayan/error.log. This path can be changed with the COMMON_PRODUCTION_ERROR_LOG_PATH
-setting. This log file will capture application errors and request exceptions.
+``/mayan/error.log``. This path can be changed with the
+``COMMON_PRODUCTION_ERROR_LOG_PATH`` setting. This log file will capture
+application errors and request exceptions.
 
 
 Cabinets
@@ -57,14 +58,14 @@ individual root cabinets instead of globally for a role. Also, the permission
 to add or remove documents from cabinets must also now be granted to a document
 or document type. In other words, to add a document to a cabinet, the user's
 role must have the permission to add documents to cabinet, for the cabinet
-to recieve the document and for the document about to be added.
+to receive the document and for the document about to be added.
 
 
 New permission
 ^^^^^^^^^^^^^^
 
 The patch to add a permission to view a document's version list was backported
-from the development branch to make it accesible now. Like cabinets, the tag
+from the development branch to make it accessible now. Like cabinets, the tag
 access control now works on two levels. Now to attach a tag to a document,
 the permission to attach tags must be granted to the tag to attach and to the
 document that will receive the tag.
@@ -75,8 +76,9 @@ ACL changes
 
 The document type permissions namespace was renamed from "Document setup" to
 "Document types" for clarity. Along with that change, support was added
-for granting the document type edit, document type delete, and document type view
-permissions to individual document type instances instead of just globally.
+for granting the document type edit, document type delete, and document type
+view permissions to individual document type instances instead of just
+globally.
 
 
 Testing

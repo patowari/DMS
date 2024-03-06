@@ -1,7 +1,7 @@
 from django.template import Library
 
 from ..literals import (
-    FILTER_PREFIX, SEARCH_MODEL_NAME_KWARG, QUERY_PARAMETER_ANY_FIELD
+    FILTER_PREFIX, QUERY_PARAMETER_ANY_FIELD, SEARCH_MODEL_NAME_KWARG
 )
 from ..search_models import SearchModel
 

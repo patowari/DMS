@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Linking"
 msgstr "Propojení"
 
-#: apps.py:120 models.py:30 serializers.py:129
+#: apps.py:120 models.py:31 serializers.py:129
 msgid "Label"
 msgstr "Jmenovka"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:52
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Chytré odkazy"
@@ -47,7 +47,7 @@ msgstr "Chytrý odkaz byl upraven"
 msgid "Foreign document field"
 msgstr "Pole cizího dokumentu"
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Vytvořit nový chytrý odkaz"
 
@@ -55,7 +55,7 @@ msgstr "Vytvořit nový chytrý odkaz"
 msgid "Delete"
 msgstr "Odstranit"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:44
 msgid "Document types"
 msgstr "Typy dokumentů"
 
@@ -143,28 +143,28 @@ msgstr "je v regulárním výrazu"
 msgid "is in regular expression (case insensitive)"
 msgstr "je v regulárním výrazu (velká a malá písmena)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Chyba při generování dynamického štítku; %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr "Tento chytrý odkaz není povolen pro typ vybraného dokumentu."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "ne"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr "Úplný štítek"
 
-#: models.py:29
+#: models.py:30
 msgid "A short text describing the smart link."
 msgstr "Krátký text popisující inteligentní odkaz."
 
-#: models.py:34
+#: models.py:35
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
@@ -172,31 +172,31 @@ msgstr ""
 "Toto pole použijte k zobrazení jedinečného názvu v závislosti na dokumentu, "
 "ze kterého je inteligentní odkaz přístupný."
 
-#: models.py:36
+#: models.py:37
 msgid "Dynamic label"
 msgstr "Dynamický štítek"
 
-#: models.py:38 models.py:110
+#: models.py:40 models.py:117
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: models.py:48 models.py:87
+#: models.py:51 models.py:90
 msgid "Smart link"
 msgstr "Chytrý odkaz"
 
-#: models.py:91
+#: models.py:94
 msgid "The inclusion is ignored for the first item."
 msgstr "Zahrnutí se u první položky ignoruje."
 
-#: models.py:95
+#: models.py:99
 msgid "This represents the metadata of all other documents."
 msgstr "To představuje metadata všech ostatních dokumentů."
 
-#: models.py:96
+#: models.py:101
 msgid "Foreign document attribute"
 msgstr "Atribut cizího dokumentu"
 
-#: models.py:101
+#: models.py:107
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -204,23 +204,23 @@ msgstr ""
 "Výraz používající vlastnosti dokumentu, které má být vyhodnoceny proti poli "
 "cizího dokumentu."
 
-#: models.py:103
+#: models.py:109
 msgid "Expression"
 msgstr "Výraz"
 
-#: models.py:106
+#: models.py:113
 msgid "Inverts the logic of the operator."
 msgstr "Obrací logiku operátora."
 
-#: models.py:107
+#: models.py:114
 msgid "Negated"
 msgstr "Vyloučeno"
 
-#: models.py:114
+#: models.py:121
 msgid "Link condition"
 msgstr "Podmínka odkazu"
 
-#: models.py:115
+#: models.py:122
 msgid "Link conditions"
 msgstr "Podmínky odkazu"
 
@@ -394,12 +394,12 @@ msgstr "Typy dokumentů povoleny"
 msgid "Document type for which to enable smart link: %s"
 msgstr "Typ dokumentu, pro který chcete povolit chytré propojení: %s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Smazat chytrý odkaz: %s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Upravit chytrý odkaz: %s"

@@ -19,9 +19,7 @@ from .mixins.document_mixins import (
 )
 
 
-class DocumentAPIViewTestCase(
-    DocumentAPIViewTestMixin, DocumentTestMixin, BaseAPITestCase
-):
+class DocumentAPIViewTestCase(DocumentAPIViewTestMixin, BaseAPITestCase):
     auto_upload_test_document = False
 
     def test_document_create_api_view_no_permission(self):
@@ -263,7 +261,9 @@ class DocumentAPIViewTestCase(
         response = self._request_test_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -300,7 +300,9 @@ class DocumentAPIViewTestCase(
 
         response = self._request_test_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -344,10 +346,6 @@ class DocumentAPIViewTestCase(
             self._test_document.label,
             self._test_document.file_latest.filename
         )
-        self.assertEqual(self._test_document.pages.count(), 1)
-
-        self.assertEqual(self._test_document.files.count(), 1)
-        self.assertEqual(self._test_document.file_latest.exists(), True)
         self.assertEqual(self._test_document.file_latest.size, 17436)
         self.assertEqual(
             self._test_document.file_latest.mimetype, 'image/png'

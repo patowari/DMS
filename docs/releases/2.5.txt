@@ -154,15 +154,15 @@ Support for restoring forgotten password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Views and templates were added to enable the typical "Forgotten
-password" worflow using a signed token via email.
+password" workflow using a signed token via email.
 
 
 Other Changes
 ^^^^^^^^^^^^^
 
 - Add missing OCR migration.
-- Improve error output of the performupgrade command to debug upgrade errors
-  that could stop an upgrade (missing document files, etc).
+- Improve error output of the ``performupgrade`` command to debug upgrade
+  errors that could stop an upgrade (missing document files, etc).
 - Enable the django-mathfilters app added in version 2.4.
 - Do a complete pull and synchronization of the translations to fix missing
   translations for Polish. Thanks to Wojtek Warczakowski for the report.
@@ -172,15 +172,15 @@ Other Changes
 - Rename the mayan_task_manager app to task_manager.
 - Make the task manager translatable.
 - Add Turkish to the list of processes languages.
-- Use Toastr libary for screen messages.
-- Reduce verbosity of some debug messages in the MayanAppConfig, settings and,
-  mailing discovery.
+- Use Toastr library for screen messages.
+- Reduce verbosity of some debug messages in the ``MayanAppConfig``, settings
+  and, mailing discovery.
 - Make sure lookup selection widgets also trigger the metadata update
   checkbox on change.
 - Usability improvements on small displays.
-- Removal of the ``CONVERTER_LIBREOFFICE_PATH`` and ``CONVERTER_PDFTOPPM_PATH``
-  settings. These setting have been consolidated into
-  ``CONVERTER_GRAPHICS_BACKEND_CONFIG``.
+- Removal of the ``CONVERTER_LIBREOFFICE_PATH`` and
+  ``CONVERTER_PDFTOPPM_PATH`` settings. These setting have been
+  consolidated into ``CONVERTER_GRAPHICS_BACKEND_CONFIG``.
 - Improve the documentation of the document creation API endpoint.
   GitHub issue #255. Thanks to @lcerliani opening the issue.
 - Libre Office conversion improvements. Give every libreoffice instance
@@ -201,7 +201,7 @@ Other Changes
   tablets and smartphones.
 - Do hard word break on form titles to avoid horizontal scroll on
   small displays.
-- Python3 compatilibty improvements by removing all explicit conversion
+- Python3 compatibility improvements by removing all explicit conversion
   using the unicode() function.
 - Unicode handling improvements.
 - Update required versions of Pillow and django-suit.

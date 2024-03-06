@@ -81,7 +81,7 @@ Use the official Helm chart located at: https://gitlab.com/mayan-edms/helm-chart
 
 .. note::
 
-    For more information about installating Mayan EDMS on Kubernetes read
+    For more information about installation Mayan EDMS on Kubernetes read
     Knowledge Base tutorials:
 
     - Deploy Mayan EDMS on Kubernetes using a MicroK8s cluster and shared storage

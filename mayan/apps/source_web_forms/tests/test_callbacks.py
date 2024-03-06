@@ -34,7 +34,9 @@ class SourceBackendCallbackTestCase(
                 extra_data={'file_object': file_object}
             )
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(mocked_source_method.call_count, 1)
 
@@ -94,7 +96,9 @@ class SourceBackendCallbackTestCase(
                 extra_data={'file_object': file_object}
             )
 
-        self.assertEqual(Document.objects.count(), document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
 
         self.assertEqual(mocked_source_method.call_count, 1)
 
@@ -157,7 +161,9 @@ class SourceBackendCallbackTestCase(
                 extra_data={'file_object': file_object}
             )
 
-        self.assertEqual(Document.objects.count(), document_count)
+        self.assertEqual(
+            Document.objects.count(), document_count
+        )
         self.assertEqual(
             DocumentFile.objects.count(), document_file_count + 1
         )

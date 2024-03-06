@@ -44,7 +44,7 @@ class RESTAPISearchFilter(BaseFilterBackend):
 
                 if query_dict_cleaned:
                     try:
-                        search_queryset = SearchBackend.get_instance().search(
+                        queryset_search = SearchBackend.get_instance().search(
                             search_model=search_model,
                             query=query_dict_cleaned, user=request.user
                         )
@@ -58,7 +58,7 @@ class RESTAPISearchFilter(BaseFilterBackend):
                         )
                         return search_model.model._meta.default_manager.none()
                     else:
-                        return queryset.filter(pk__in=search_queryset)
+                        return queryset.filter(pk__in=queryset_search)
                 else:
                     return queryset
             else:

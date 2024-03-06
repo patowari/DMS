@@ -10,7 +10,6 @@ from mayan.apps.events.event_managers import EventManagerSave
 from .classes import GPGBackend
 from .events import event_key_created
 from .literals import KEY_TYPE_CHOICES
-
 from .managers import KeyManager
 from .model_mixins import KeyBusinessLogicMixin
 
@@ -72,7 +71,11 @@ class Key(ExtraDataModelMixin, KeyBusinessLogicMixin, models.Model):
                 message=_(message='Invalid key data')
             )
 
-        if Key.objects.filter(fingerprint=import_results.fingerprints[0]).exists():
+        queryset = Key.objects.filter(
+            fingerprint=import_results.fingerprints[0]
+        )
+
+        if queryset.exists():
             raise ValidationError(
                 message=_(message='Key already exists.')
             )

@@ -2,7 +2,7 @@ from django.apps import apps
 from django.utils.html import escape, mark_safe
 
 from .icons import (
-    icon_index, icon_index_level_up, icon_index_instance_node_with_documents
+    icon_index, icon_index_instance_node_with_documents, icon_index_level_up
 )
 
 

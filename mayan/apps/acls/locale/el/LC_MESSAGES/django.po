@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:26 classes.py:206 links.py:27
+#: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
 msgstr "ΛΕΠ"
 
@@ -31,7 +31,7 @@ msgid ""
 "is used and not the actual label of the object."
 msgstr ""
 
-#: apps.py:65 workflow_actions.py:128
+#: apps.py:65 workflow_actions.py:129
 msgid "Object"
 msgstr "Αντικείμενο"
 
@@ -55,19 +55,19 @@ msgstr "Τροποποιήθηκε ΛΕΠ"
 msgid "Role"
 msgstr "Ρόλος"
 
-#: links.py:16
+#: links.py:15
 msgid "New ACL"
 msgstr "Νέα ΛΕΠ"
 
-#: links.py:21
+#: links.py:20
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: links.py:32 models.py:50 workflow_actions.py:67 workflow_actions.py:203
+#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Δικαιώματα"
 
-#: links.py:35
+#: links.py:34
 msgid "Global ACLs"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr "Αριθμός αδειών"
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:53
+#: models.py:43 workflow_actions.py:54
 msgid "Object ID"
 msgstr "Αναγνωριστικό αντικειμένου"
 
@@ -175,7 +175,7 @@ msgstr "Διαγραφή ΛΕΠ: %s"
 msgid "There are no ACLs for this object"
 msgstr "Δεν υπάρχουν ΛΕΠ για αυτό το αντικείμενο"
 
-#: views.py:152 views.py:272
+#: views.py:152 views.py:277
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -199,12 +199,12 @@ msgstr "Εκχωρημένα δικαιώματα"
 msgid "Available permissions"
 msgstr "Διαθέσιμα δικαιώματα"
 
-#: views.py:219
+#: views.py:223
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Τα δικαιώματα του ρόλου \"%(role)s\" για \"%(object)s\""
 
-#: views.py:228
+#: views.py:233
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -216,11 +216,11 @@ msgstr ""
 "προβολή. Τα μεταβιβασμένα δικαιώματα πρέπει να αφαιρεθούν είτε από την ΛΕΠ "
 "του αντικειμένου γονέα ή από τον ρόλο μέσω του μενού Ρυθμίσεις."
 
-#: views.py:269
+#: views.py:274
 msgid "There are no ACLs"
 msgstr ""
 
-#: views.py:278
+#: views.py:283
 msgid "Global access control lists"
 msgstr ""
 
@@ -232,44 +232,44 @@ msgstr "Τύπος αντικειμένου"
 msgid "Type of the object for which the access will be modified."
 msgstr "Τύπος του αντικειμένου για το οποίο η πρόσβαση θα τροποποιηθεί."
 
-#: workflow_actions.py:56
+#: workflow_actions.py:57
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
 "Αριθμητικό αναγνωριστικό του αντικειμένου για το οποίο η πρόσβαση θα "
 "τροποποιηθεί."
 
-#: workflow_actions.py:61 workflow_actions.py:197
+#: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
 msgstr "Ρόλοι"
 
-#: workflow_actions.py:63 workflow_actions.py:199
+#: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
 msgstr "Ρόλοι των οποίων η πρόσβαση θα τροποποιηθει."
 
-#: workflow_actions.py:70 workflow_actions.py:206
+#: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
 "Δικαιώματα προς παραχώρηση/ανάκληση προς/από τον ρόλο για το άνωθεν "
 "επιλεγμένο αντικείμενο."
 
-#: workflow_actions.py:77
+#: workflow_actions.py:78
 msgid "Grant object access"
 msgstr "Παραχώρηση πρόσβασης σε αντικείμενο"
 
-#: workflow_actions.py:132 workflow_actions.py:231
+#: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"
 msgstr ""
 
-#: workflow_actions.py:170
+#: workflow_actions.py:171
 msgid "Revoke object access"
 msgstr "Ανάκληση πρόσβασης σε αντικείμενο"
 
-#: workflow_actions.py:213
+#: workflow_actions.py:214
 msgid "Grant document access"
 msgstr "Παραχώρηση πρόσβασης σε έγγραφο"
 
-#: workflow_actions.py:259
+#: workflow_actions.py:261
 msgid "Revoke document access"
 msgstr "Ανάκληση πρόσβασης σε αντικείμενο"

@@ -3,12 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,29 +22,32 @@ msgstr ""
 
 #: apps.py:13
 msgid "Emails"
-msgstr ""
+msgstr "Електронні листи"
 
 #: source_backends/imap_source_backends.py:21
 msgid "IMAP email"
-msgstr ""
+msgstr "Електронна пошта IMAP"
 
 #: source_backends/imap_source_backends.py:50
 msgid "IMAP Mailbox from which to check for messages."
-msgstr ""
+msgstr "Поштова скринька IMAP для перевірки повідомлень."
 
 #: source_backends/imap_source_backends.py:55
 msgid "Mailbox"
-msgstr ""
+msgstr "Поштова скринька"
 
 #: source_backends/imap_source_backends.py:62
 msgid ""
 "Criteria to use when searching for messages to process. Use the format "
 "specified in https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 msgstr ""
+"Критерії, які слід використовувати при пошуку повідомлень для обробки. "
+"Використовуйте формат, вказаний за адресою "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 
 #: source_backends/imap_source_backends.py:66
 msgid "Search criteria"
-msgstr ""
+msgstr "Критерії пошуку"
 
 #: source_backends/imap_source_backends.py:74
 msgid ""
@@ -49,77 +56,86 @@ msgid ""
 "https://tools.ietf.org/html/rfc2060.html#section-6.4.6 or the custom "
 "commands for your IMAP server."
 msgstr ""
+"IMAP STORE команда для виконання над повідомленнями після їх обробки. Одна "
+"команда на рядок. Використовуйте команди, вказані в "
+"https://tools.ietf.org/html/rfc2060.html#section-6.4.6 або власні команди "
+"для вашого IMAP-сервера."
 
 #: source_backends/imap_source_backends.py:80
 msgid "Store commands"
-msgstr ""
+msgstr "Команди сховища"
 
 #: source_backends/imap_source_backends.py:87
 msgid "Execute the IMAP expunge command after processing each email message."
 msgstr ""
+"Виконувати команду видалення IMAP після обробки кожного повідомлення "
+"електронної пошти."
 
 #: source_backends/imap_source_backends.py:90
 msgid "Execute expunge"
-msgstr ""
+msgstr "Виконати видалення"
 
 #: source_backends/imap_source_backends.py:97
 msgid "IMAP Mailbox to which processed messages will be copied."
 msgstr ""
+"Поштова скринька IMAP, до якої буде скопійовано оброблені повідомлення."
 
 #: source_backends/imap_source_backends.py:100
 msgid "Destination mailbox"
-msgstr ""
+msgstr "Поштова скринька призначення"
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr ""
+msgstr "IMAP протокол"
 
 #: source_backends/mixins.py:31
 msgid "Host"
-msgstr ""
+msgstr "Хост"
 
 #: source_backends/mixins.py:40
 msgid "SSL"
-msgstr ""
+msgstr "SSL"
 
 #: source_backends/mixins.py:46
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
 msgstr ""
+"Типовими варіантами є 110 для POP3, 995 для POP3 з використанням SSL, 143 "
+"для IMAP, 993 для IMAP з використанням SSL."
 
 #: source_backends/mixins.py:52
 msgid "Port"
-msgstr ""
+msgstr "Порт"
 
 #: source_backends/mixins.py:58
 msgid "Store the body of the email as a text document."
-msgstr ""
+msgstr "Зберігти тіло електронного листа як текстовий документ."
 
 #: source_backends/mixins.py:60
 msgid "Store email body"
-msgstr ""
+msgstr "Зберігати тіло електронної пошти"
 
 #: source_backends/mixins.py:74
 msgid "Common email options"
-msgstr ""
+msgstr "Загальні параметри електронної пошти"
 
 #: source_backends/pop3_source_backends.py:18
 msgid "POP3 email"
-msgstr ""
+msgstr "Електронна пошта POP3"
 
 #: source_backends/pop3_source_backends.py:32
 msgid "Timeout"
-msgstr ""
+msgstr "Таймаут"
 
 #: source_backends/pop3_source_backends.py:45
 msgid "POP3 protocol"
-msgstr ""
+msgstr "POP3 протокол"
 
 #: tests/source_backends.py:58
 msgid "Test IMAP email"
-msgstr ""
+msgstr "Тест IMAP електронної пошти"
 
 #: tests/source_backends.py:73
 msgid "Test POP3 email"
-msgstr ""
+msgstr "Тест POP3 електронної пошти"

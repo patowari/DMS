@@ -264,7 +264,7 @@ Bugs fixed or issues closed
 - :gitlab-issue:`713` Unexpected exception while trying to create version for new document - 'Layer' object has no attribute 'add_to_object'
 - :gitlab-issue:`715` Deleting a document type removes a watch folder associated with it without removing the check interval
 - :gitlab-issue:`717` Check For Updates Failure
-- :gitlab-merge:`63` Improve the executables paths on FreeBSD/OpenBSD.
+- :gitlab-merge:`63` Improve the executable paths on FreeBSD/OpenBSD.
 - :gitlab-merge:`64` Fix page count on some PDF files, and fix a Python 3 incompatibility.
 - :gitlab-merge:`65` Settings: Display overridden instead of overrided
 

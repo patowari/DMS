@@ -189,7 +189,7 @@ how logging is managed turn off automatic logging by setting
             },
             'simple': {
                 'format': '%(levelname)s %(message)s'
-            },
+            }
         },
         'handlers': {
             'console':{
@@ -202,13 +202,13 @@ how logging is managed turn off automatic logging by setting
             'documents': {
                 'handlers':['console'],
                 'propagate': True,
-                'level':'DEBUG',
+                'level':'DEBUG'
             },
             'common': {
                 'handlers':['console'],
                 'propagate': True,
-                'level':'DEBUG',
-            },
+                'level':'DEBUG'
+            }
         }
     }
 
@@ -219,5 +219,5 @@ Likewise, to see the debug output of the ``tags`` app, just add the following in
     'tags': {
         'handlers':['console'],
         'propagate': True,
-        'level':'DEBUG',
+        'level':'DEBUG'
     },

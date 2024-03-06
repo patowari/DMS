@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:9 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:12 views/source_views.py:285
 msgid "Sources"
 msgstr "Sorgenti"
 
@@ -267,15 +267,15 @@ msgstr "Contenuto binario per il nuovo file."
 msgid "Actions URL"
 msgstr ""
 
-#: settings.py:20
+#: settings.py:19
 msgid "Arguments to use when creating source backends."
 msgstr ""
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr ""
 

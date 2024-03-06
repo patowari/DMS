@@ -7,11 +7,11 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..events import event_email_sent
 
 from .literals import (
-    TEST_EMAIL_BODY_HTML, TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS,
+    TEST_EMAIL_ADDRESS, TEST_EMAIL_BODY_HTML, TEST_EMAIL_FROM_ADDRESS,
     TEST_RECIPIENTS_MULTIPLE_COMMA, TEST_RECIPIENTS_MULTIPLE_COMMA_RESULT,
+    TEST_RECIPIENTS_MULTIPLE_MIXED, TEST_RECIPIENTS_MULTIPLE_MIXED_RESULT,
     TEST_RECIPIENTS_MULTIPLE_SEMICOLON,
-    TEST_RECIPIENTS_MULTIPLE_SEMICOLON_RESULT,
-    TEST_RECIPIENTS_MULTIPLE_MIXED, TEST_RECIPIENTS_MULTIPLE_MIXED_RESULT
+    TEST_RECIPIENTS_MULTIPLE_SEMICOLON_RESULT
 )
 from .mixins import MailingProfileTestMixin
 
@@ -31,8 +31,12 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
 
         self._test_mailing_profile.send(to=TEST_EMAIL_ADDRESS)
 
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -54,8 +58,12 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
             to=TEST_EMAIL_ADDRESS, body=TEST_EMAIL_BODY_HTML
         )
 
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            len(mail.outbox), 1
+        )
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -81,7 +89,9 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, TEST_RECIPIENTS_MULTIPLE_COMMA_RESULT
         )
@@ -106,7 +116,9 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, TEST_RECIPIENTS_MULTIPLE_SEMICOLON_RESULT
         )
@@ -129,7 +141,9 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, TEST_RECIPIENTS_MULTIPLE_MIXED_RESULT
         )
@@ -154,7 +168,9 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -182,7 +198,9 @@ class MailingModelTestCase(MailingProfileTestMixin, BaseTestCase):
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -244,7 +262,9 @@ class DocumentMailingTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -276,7 +296,9 @@ class DocumentFileMailingTestCase(
         self.assertEqual(
             len(mail.outbox), 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )

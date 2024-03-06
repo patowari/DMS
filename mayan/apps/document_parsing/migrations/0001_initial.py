@@ -6,7 +6,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('documents', '0041_auto_20170823_1855'),
+        ('documents', '0041_auto_20170823_1855')
     ]
 
     operations = [
@@ -30,12 +30,12 @@ class Migration(migrations.Migration):
                         related_name='content', to='documents.DocumentPage',
                         verbose_name='Document page'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document page content',
-                'verbose_name_plural': 'Document pages contents',
-            },
+                'verbose_name_plural': 'Document pages contents'
+            }
         ),
         migrations.CreateModel(
             name='DocumentVersionParseError',
@@ -64,12 +64,12 @@ class Migration(migrations.Migration):
                         to='documents.DocumentVersion',
                         verbose_name='Document version'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('datetime_submitted',),
                 'verbose_name': 'Document version parse error',
-                'verbose_name_plural': 'Document version parse errors',
-            },
-        ),
+                'verbose_name_plural': 'Document version parse errors'
+            }
+        )
     ]

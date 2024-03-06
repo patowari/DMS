@@ -42,7 +42,7 @@ from .permissions import (
     permission_document_file_signature_download,
     permission_document_file_signature_upload,
     permission_document_file_signature_verify,
-    permission_document_file_signature_view,
+    permission_document_file_signature_view
 )
 from .tasks import (
     task_refresh_signature_information,
@@ -214,10 +214,10 @@ class DocumentFileDetachedSignatureDeleteView(SingleObjectDeleteView):
         )
 
     def get_source_queryset(self):
-        document_file_queryset = DocumentFile.valid.all()
+        queryset_document_files = DocumentFile.valid.all()
 
         return DetachedSignature.objects.filter(
-            document_file_id__in=document_file_queryset.values('pk')
+            document_file_id__in=queryset_document_files.values('pk')
         )
 
 
@@ -233,10 +233,10 @@ class DocumentFileDetachedSignatureDownloadView(SingleObjectDownloadView):
         return force_str(s=self.object)
 
     def get_source_queryset(self):
-        document_file_queryset = DocumentFile.valid.all()
+        queryset_document_files = DocumentFile.valid.all()
 
         return DetachedSignature.objects.filter(
-            document_file_id__in=document_file_queryset.values('pk')
+            document_file_id__in=queryset_document_files.values('pk')
         )
 
 
@@ -289,10 +289,10 @@ class DocumentFileSignatureDetailView(SingleObjectDetailView):
         }
 
     def get_source_queryset(self):
-        document_file_queryset = DocumentFile.valid.all()
+        queryset_document_files = DocumentFile.valid.all()
 
         return SignatureBaseModel.objects.select_subclasses().filter(
-            document_file_id__in=document_file_queryset.values('pk')
+            document_file_id__in=queryset_document_files.values('pk')
         )
 
 
@@ -335,7 +335,7 @@ class DocumentFileSignatureListView(
                             'object': self.external_object
                         }, request=self.request
                     )
-                ),
+                )
             ],
             'no_results_title': _(
                 'There are no signatures for this document file.'
@@ -355,7 +355,7 @@ class AllDocumentSignatureRefreshView(ConfirmView):
         'message': _(
             'On large databases this operation may take some time '
             'to execute.'
-        ), 'title': _(message='Refresh all signatures information?'),
+        ), 'title': _(message='Refresh all signatures information?')
     }
     view_icon = icon_document_file_all_signature_refresh
     view_permission = permission_document_file_signature_verify
@@ -366,8 +366,9 @@ class AllDocumentSignatureRefreshView(ConfirmView):
     def view_action(self):
         task_refresh_signature_information.apply_async()
         messages.success(
-            message=_(message='Signature information refresh queued successfully.'),
-            request=self.request
+            message=_(
+                message='Signature information refresh queued successfully.'
+            ), request=self.request
         )
 
 
@@ -376,7 +377,7 @@ class AllDocumentSignatureVerifyView(ConfirmView):
         'message': _(
             'On large databases this operation may take some time to '
             'execute.'
-        ), 'title': _(message='Verify all document for signatures?'),
+        ), 'title': _(message='Verify all document for signatures?')
     }
     view_icon = icon_document_file_all_signature_verify
     view_permission = permission_document_file_signature_verify

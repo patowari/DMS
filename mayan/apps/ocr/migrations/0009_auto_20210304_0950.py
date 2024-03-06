@@ -59,7 +59,9 @@ def code_remap_document_version_pages_ocr_content(apps, schema_editor):
             break
 
         insert_query_final = insert_query.format(
-            ('(%s,%s),' * len(rows))[:-1]
+            (
+                '(%s,%s),' * len(rows)
+            )[:-1]
         )
 
         tuples = []
@@ -73,7 +75,7 @@ def code_remap_document_version_pages_ocr_content(apps, schema_editor):
 class Migration(migrations.Migration):
     dependencies = [
         ('documents', '0075_delete_duplicateddocumentold'),
-        ('ocr', '0008_auto_20180917_0646'),
+        ('ocr', '0008_auto_20180917_0646')
     ]
 
     operations = [
@@ -100,15 +102,15 @@ class Migration(migrations.Migration):
                         to='documents.DocumentVersionPage',
                         verbose_name='Document version page'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Document version page OCR content',
-                'verbose_name_plural': 'Document version pages OCR contents',
-            },
+                'verbose_name_plural': 'Document version pages OCR contents'
+            }
         ),
         migrations.RunPython(
             code=code_remap_document_version_pages_ocr_content,
             reverse_code=migrations.RunPython.noop
-        ),
+        )
     ]

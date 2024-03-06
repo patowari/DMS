@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -21,12 +21,12 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:37 events.py:6 links.py:37 links.py:46 models.py:43
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:126
+#: apps.py:39 events.py:6 links.py:37 links.py:46 models.py:46
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
 msgid "Announcements"
 msgstr "Anuncios"
 
-#: apps.py:79 apps.py:83
+#: apps.py:81 apps.py:85
 msgid "None"
 msgstr "Ninguno"
 
@@ -50,43 +50,43 @@ msgstr "Eliminar"
 msgid "Edit"
 msgstr "Editar"
 
-#: models.py:19
+#: models.py:20
 msgid "Short description of this announcement."
 msgstr "Breve descripción de este anuncio."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Etiqueta"
 
-#: models.py:23
+#: models.py:24
 msgid "The actual text to be displayed."
 msgstr "El texto que se mostrará."
 
-#: models.py:24
+#: models.py:25
 msgid "Text"
 msgstr "Texto"
 
-#: models.py:26
+#: models.py:28
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: models.py:29
+#: models.py:32
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Fecha y hora después de las cuales se mostrará este anuncio."
 
-#: models.py:30
+#: models.py:33
 msgid "Start date time"
 msgstr "Fecha y hora de comienzo"
 
-#: models.py:34
+#: models.py:37
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Fecha y hora hasta la cuál se mostrará este anuncio."
 
-#: models.py:35
+#: models.py:38
 msgid "End date time"
 msgstr "Fecha y hora final"
 
-#: models.py:42
+#: models.py:45
 msgid "Announcement"
 msgstr "Anuncio"
 
@@ -153,13 +153,13 @@ msgstr "Editar anuncio: %s"
 #: views.py:121
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
-"convery information about your organzation, announcements or usage "
+"convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"Los anuncios se muestran en la vista de inicio de sesión. Puede utilizarlos "
-"para transmitir información sobre su organización, anuncios o pautas de uso "
-"para sus usuarios."
+"Los anuncios se muestran en la vista de inicio de sesión. Puede utilizar "
+"anuncios para transmitir información sobre su organización, anuncios o "
+"pautas de uso para sus usuarios."
 
-#: views.py:125
+#: views.py:126
 msgid "No announcements available"
 msgstr "No hay anuncios disponibles"

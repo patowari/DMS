@@ -1,13 +1,13 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from .mixins import MessageViewTestMixin
-
 from ..events import event_message_created, event_message_edited
 from ..models import Message
 from ..permissions import (
     permission_message_create, permission_message_delete,
     permission_message_edit, permission_message_view
 )
+
+from .mixins import MessageViewTestMixin
 
 
 class MessageViewTestCase(MessageViewTestMixin, GenericViewTestCase):
@@ -154,7 +154,8 @@ class MessageViewTestCase(MessageViewTestMixin, GenericViewTestCase):
 
         response = self._request_test_message_list_view()
         self.assertNotContains(
-            response=response, text=self._test_message.subject, status_code=200
+            response=response, status_code=200,
+            text=self._test_message.subject
         )
 
         events = self._get_test_events()
@@ -171,7 +172,8 @@ class MessageViewTestCase(MessageViewTestMixin, GenericViewTestCase):
 
         response = self._request_test_message_list_view()
         self.assertContains(
-            response=response, text=self._test_message.subject, status_code=200
+            response=response, status_code=200,
+            text=self._test_message.subject
         )
 
         events = self._get_test_events()

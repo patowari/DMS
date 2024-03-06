@@ -70,7 +70,7 @@ class SourceBackendActionMixinImmediateMode(SourceBackendActionMixinDocumentOpti
                 super().process_interface_context()
 
                 # Provide a static default for HTTP views. This way
-                # a default does not need to be added in the methdo argument.
+                # a default does not need to be added in the method argument.
                 # Avoids `(immediate_mode=DEFAULT_IMMEDIATE_MODE)`.
                 self.action_kwargs['immediate_mode'] = DEFAULT_IMMEDIATE_MODE
 

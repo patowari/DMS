@@ -4,7 +4,7 @@ from ..exceptions import (
     DynamicSearchInterpreterUnknownSearchType, DynamicSearchScopedQueryError
 )
 from ..literals import (
-    SCOPE_OPERATOR_AND, SCOPE_OPERATOR_OR, QUERY_PARAMETER_ANY_FIELD
+    QUERY_PARAMETER_ANY_FIELD, SCOPE_OPERATOR_AND, SCOPE_OPERATOR_OR
 )
 from ..scoped_queries import (
     ScopedQueryEntryControlResult, ScopedQueryEntryDataFilter,
@@ -14,8 +14,8 @@ from ..search_interpreters import (
     SearchInterpreter, SearchInterpreterAdvanced, SearchInterpreterScoped
 )
 
-from .mixins.search_interpreter_mixins import SearchInterpreterTestMixin
 from .mixins.base import SearchTestMixin
+from .mixins.search_interpreter_mixins import SearchInterpreterTestMixin
 
 
 class SearchInterpreterAdvancedDecodeTestCase(
@@ -32,8 +32,14 @@ class SearchInterpreterAdvancedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 1)
-        self.assertEqual(len(scoped_query.scope_entry_list), 2)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 1
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 2
+        )
         self.assertTrue(
             isinstance(
                 scoped_query.scope_entry_list[0], ScopedQueryEntryDataFilter
@@ -75,8 +81,14 @@ class SearchInterpreterAdvancedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 0)
-        self.assertEqual(len(scoped_query.scope_entry_list), 0)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 0
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 0
+        )
         self.assertTrue(search_interpreter.is_empty)
 
     def test_advanced_match_all_off_decode(self):
@@ -90,8 +102,14 @@ class SearchInterpreterAdvancedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 3)
-        self.assertEqual(len(scoped_query.scope_entry_list), 4)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 3
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 4
+        )
 
         self.assertTrue(
             isinstance(
@@ -178,8 +196,14 @@ class SearchInterpreterAdvancedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 3)
-        self.assertEqual(len(scoped_query.scope_entry_list), 4)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 3
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 4
+        )
 
         self.assertTrue(
             isinstance(
@@ -233,8 +257,9 @@ class SearchInterpreterAdvancedDecodeTestCase(
         )
 
         self.assertEqual(
-            tuple(scoped_query.scope_entry_list[2].operand_list),
-            ('0', '1')
+            tuple(
+                scoped_query.scope_entry_list[2].operand_list
+            ), ('0', '1')
         )
         self.assertEqual(
             scoped_query.scope_entry_list[2].operator_text,
@@ -251,22 +276,27 @@ class SearchInterpreterAdvancedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[3].result_scope_identifier,
-            '2'
+            scoped_query.scope_entry_list[3].result_scope_identifier, '2'
         )
 
     def test_advanced_literal_decode(self):
         kwargs = {
             'query': {
-                'field_1': 'term_1 AND term_2',
+                'field_1': 'term_1 AND term_2'
             }, 'search_model': self._test_search_model
         }
 
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 3)
-        self.assertEqual(len(scoped_query.scope_entry_list), 4)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 3
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 4
+        )
 
         self.assertTrue(
             isinstance(
@@ -274,8 +304,7 @@ class SearchInterpreterAdvancedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[0].field_name,
-            'field_1'
+            scoped_query.scope_entry_list[0].field_name, 'field_1'
         )
         self.assertEqual(
             scoped_query.scope_entry_list[0].is_quoted_value, False
@@ -296,8 +325,7 @@ class SearchInterpreterAdvancedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[1].field_name,
-            'field_1'
+            scoped_query.scope_entry_list[1].field_name, 'field_1'
         )
         self.assertEqual(
             scoped_query.scope_entry_list[1].is_quoted_value, False
@@ -338,22 +366,27 @@ class SearchInterpreterAdvancedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[3].result_scope_identifier,
-            '2'
+            scoped_query.scope_entry_list[3].result_scope_identifier, '2'
         )
 
     def test_advanced_literal_single_decode(self):
         kwargs = {
             'query': {
-                'field_1': '"term_1 AND term_2"',
+                'field_1': '"term_1 AND term_2"'
             }, 'search_model': self._test_search_model
         }
 
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 1)
-        self.assertEqual(len(scoped_query.scope_entry_list), 2)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 1
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 2
+        )
 
         self.assertTrue(
             isinstance(
@@ -384,22 +417,27 @@ class SearchInterpreterAdvancedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[1].result_scope_identifier,
-            '0'
+            scoped_query.scope_entry_list[1].result_scope_identifier, '0'
         )
 
     def test_advanced_literal_dual_with_operator_decode(self):
         kwargs = {
             'query': {
-                'field_1': '"term_1" AND "term_2"',
+                'field_1': '"term_1" AND "term_2"'
             }, 'search_model': self._test_search_model
         }
 
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 3)
-        self.assertEqual(len(scoped_query.scope_entry_list), 4)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 3
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 4
+        )
 
         self.assertTrue(
             isinstance(
@@ -453,8 +491,9 @@ class SearchInterpreterAdvancedDecodeTestCase(
         )
 
         self.assertEqual(
-            tuple(scoped_query.scope_entry_list[2].operand_list),
-            ('0', '1')
+            tuple(
+                scoped_query.scope_entry_list[2].operand_list
+            ), ('0', '1')
         )
         self.assertEqual(
             scoped_query.scope_entry_list[2].operator_text,
@@ -471,8 +510,7 @@ class SearchInterpreterAdvancedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[3].result_scope_identifier,
-            '2'
+            scoped_query.scope_entry_list[3].result_scope_identifier, '2'
         )
 
 
@@ -551,8 +589,14 @@ class SearchInterpreterScopedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 3)
-        self.assertEqual(len(scoped_query.scope_entry_list), 4)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 3
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 4
+        )
 
         self.assertTrue(
             isinstance(
@@ -582,8 +626,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[1].field_name,
-            'field_2'
+            scoped_query.scope_entry_list[1].field_name, 'field_2'
         )
         self.assertEqual(
             scoped_query.scope_entry_list[1].is_quoted_value, False
@@ -606,8 +649,9 @@ class SearchInterpreterScopedDecodeTestCase(
         )
 
         self.assertEqual(
-            tuple(scoped_query.scope_entry_list[2].operand_list),
-            ('0', '1')
+            tuple(
+                scoped_query.scope_entry_list[2].operand_list
+            ), ('0', '1')
         )
         self.assertEqual(
             scoped_query.scope_entry_list[2].operator_text,
@@ -624,8 +668,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[3].result_scope_identifier,
-            '2'
+            scoped_query.scope_entry_list[3].result_scope_identifier, '2'
         )
 
     def test_multiple_terms(self):
@@ -654,8 +697,14 @@ class SearchInterpreterScopedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 1)
-        self.assertEqual(len(scoped_query.scope_entry_list), 2)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 1
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 2
+        )
 
         self.assertTrue(
             isinstance(
@@ -663,8 +712,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[0].field_name,
-            'field_1'
+            scoped_query.scope_entry_list[0].field_name, 'field_1'
         )
         self.assertEqual(
             scoped_query.scope_entry_list[0].is_quoted_value, True
@@ -686,8 +734,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[1].result_scope_identifier,
-            '0'
+            scoped_query.scope_entry_list[1].result_scope_identifier, '0'
         )
 
     def test_literal_dual_term(self):
@@ -716,8 +763,14 @@ class SearchInterpreterScopedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 1)
-        self.assertEqual(len(scoped_query.scope_entry_list), 2)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 1
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 2
+        )
 
         self.assertTrue(
             isinstance(
@@ -748,8 +801,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[1].result_scope_identifier,
-            '0'
+            scoped_query.scope_entry_list[1].result_scope_identifier, '0'
         )
 
     def test_scoped_term_empty(self):
@@ -764,8 +816,14 @@ class SearchInterpreterScopedDecodeTestCase(
         search_interpreter = SearchInterpreter.init(**kwargs)
         scoped_query = search_interpreter.do_query_decode()
 
-        self.assertEqual(len(scoped_query.get_scope_identifier_list()), 1)
-        self.assertEqual(len(scoped_query.scope_entry_list), 2)
+        self.assertEqual(
+            len(
+                scoped_query.get_scope_identifier_list()
+            ), 1
+        )
+        self.assertEqual(
+            len(scoped_query.scope_entry_list), 2
+        )
 
         self.assertTrue(
             isinstance(
@@ -773,8 +831,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[0].field_name,
-            'field_1'
+            scoped_query.scope_entry_list[0].field_name, 'field_1'
         )
         self.assertEqual(
             scoped_query.scope_entry_list[0].is_quoted_value, True
@@ -796,8 +853,7 @@ class SearchInterpreterScopedDecodeTestCase(
             )
         )
         self.assertEqual(
-            scoped_query.scope_entry_list[1].result_scope_identifier,
-            '0'
+            scoped_query.scope_entry_list[1].result_scope_identifier, '0'
         )
 
 
@@ -844,7 +900,7 @@ class SearchInterpreterScopedErrorCheckTestCase(
             'query': {
                 '__0_{}'.format(self._test_search_field.field_name): 'term1',
                 '__1_{}'.format(self._test_search_field.field_name): 'term1',
-                '__2': 'AND',
+                '__2': 'AND'
             },
             'search_model': self._test_search_model
         }
@@ -859,7 +915,7 @@ class SearchInterpreterScopedErrorCheckTestCase(
             'query': {
                 '__0_{}'.format(self._test_search_field.field_name): 'term1',
                 '__1_INVALID': '',
-                '__2': 'OR_0_1',
+                '__2': 'OR_0_1'
             },
             'search_model': self._test_search_model
         }
@@ -874,7 +930,7 @@ class SearchInterpreterScopedErrorCheckTestCase(
             'query': {
                 '__0_{}'.format(self._test_search_field.field_name): 'term1',
                 '__1_{}'.format(self._test_search_field.field_name): 'term1',
-                '__2': 'INVALID_0_1',
+                '__2': 'INVALID_0_1'
             }, 'search_model': self._test_search_model
         }
 
@@ -888,7 +944,7 @@ class SearchInterpreterScopedErrorCheckTestCase(
             'query': {
                 '__0_{}'.format(self._test_search_field.field_name): 'term1',
                 '__1_{}'.format(self._test_search_field.field_name): 'term1',
-                '__2': 'XOR_0_1',
+                '__2': 'XOR_0_1'
             }, 'search_model': self._test_search_model
         }
 
@@ -902,7 +958,7 @@ class SearchInterpreterScopedErrorCheckTestCase(
             'query': {
                 '__0_{}'.format(self._test_search_field.field_name): 'term1',
                 '__1_{}'.format(self._test_search_field.field_name): 'term1',
-                '__1': 'OR_0_1',
+                '__1': 'OR_0_1'
             }, 'search_model': self._test_search_model
         }
 
@@ -916,7 +972,7 @@ class SearchInterpreterScopedErrorCheckTestCase(
             'query': {
                 '__0_{}'.format(self._test_search_field.field_name): 'term1',
                 '__1_{}'.format(self._test_search_field.field_name): '',
-                '__1': 'OR_0_1',
+                '__1': 'OR_0_1'
             }, 'search_model': self._test_search_model
         }
 

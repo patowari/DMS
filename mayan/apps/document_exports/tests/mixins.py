@@ -6,7 +6,7 @@ class DocumentVersionExportAPIViewTestMixin(DocumentTestMixin):
         return self.get(
             viewname='rest_api:documentversion-export', kwargs={
                 'document_id': self._test_document.pk,
-                'document_version_id': self._test_document.version_active.pk,
+                'document_version_id': self._test_document.version_active.pk
             }
         )
 
@@ -14,7 +14,7 @@ class DocumentVersionExportAPIViewTestMixin(DocumentTestMixin):
         return self.post(
             viewname='rest_api:documentversion-export', kwargs={
                 'document_id': self._test_document.pk,
-                'document_version_id': self._test_document.version_active.pk,
+                'document_version_id': self._test_document.version_active.pk
             }
         )
 

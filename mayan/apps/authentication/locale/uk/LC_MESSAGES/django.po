@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:36 events.py:6 permissions.py:6 settings.py:11
+#: apps.py:35 events.py:6 permissions.py:6 settings.py:11
 msgid "Authentication"
 msgstr "Аутентифікація"
 
@@ -34,25 +35,25 @@ msgstr "Дії від імені користувача розпочато"
 
 #: events.py:16
 msgid "User logged in"
-msgstr ""
+msgstr "Користувач увійшов в систему"
 
 #: events.py:19
 msgid "User logged out"
-msgstr ""
+msgstr "Користувач вийшов із системи"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "Запам'ятати мене"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "На постійній основі."
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr "Якщо вибрано, то виключає закінчення дій від імені."
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "Користувач"
 
@@ -64,13 +65,13 @@ msgstr "Вихід"
 msgid "Change password"
 msgstr "Змінити пароль"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Діяти від імені користувача"
 
 #: links.py:50
 msgid "Impersonate"
-msgstr ""
+msgstr "Видавати себе за іншу особу"
 
 #: links.py:55 links.py:60
 msgid "Set password"
@@ -91,10 +92,12 @@ msgstr ""
 #: settings.py:25
 msgid "Dotted path to the backend used to process user authentication."
 msgstr ""
+"Шлях до модуля (розширення), який використовується для обробки "
+"автентифікації користувача."
 
 #: settings.py:31
 msgid "Arguments for the AUTHENTICATION_BACKEND."
-msgstr ""
+msgstr "Аргументи для AUTHENTICATION_BACKEND."
 
 #: templates/authentication/app/viewport.html:13
 #, python-format
@@ -103,6 +106,8 @@ msgid ""
 "                Impersonating user \"%(user)s\".\n"
 "            "
 msgstr ""
+"\n"
+"Видавати себе за користувача \"%(user)s\"."
 
 #: templates/authentication/app/viewport.html:16
 msgid "Click here when finished"
@@ -112,29 +117,25 @@ msgstr "Клацніть сюди, коли закінчите"
 msgid "Login"
 msgstr "Вхід"
 
-#: templates/authentication/login.html:21
-msgid "Sign in"
-msgstr "Увійти"
-
-#: templates/authentication/login.html:67
-#: templates/authentication/login.html:77
-#: templates/authentication/login.html:91
+#: templates/authentication/login.html:65
+#: templates/authentication/login.html:75
+#: templates/authentication/login.html:89
 msgid "Save"
 msgstr "Зберегти"
 
-#: templates/authentication/login.html:67
-#: templates/authentication/login.html:77
-#: templates/authentication/login.html:91
+#: templates/authentication/login.html:65
+#: templates/authentication/login.html:75
+#: templates/authentication/login.html:89
 #: templates/authentication/password_reset_confirm.html:29
 #: templates/authentication/password_reset_form.html:29
 msgid "Submit"
 msgstr "Прийняти"
 
-#: templates/authentication/login.html:81
+#: templates/authentication/login.html:79
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: templates/authentication/login.html:103
+#: templates/authentication/login.html:106
 msgid "Forgot your password?"
 msgstr "Забули пароль?"
 
@@ -161,65 +162,72 @@ msgstr "Електронний лист для скидання пароля в�
 
 #: views/authentication_views.py:160
 msgid "Next"
-msgstr ""
+msgstr "Наступний"
 
 #: views/authentication_views.py:166
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
-msgstr ""
+msgstr "Крок %(step)d з %(total_steps)d : %(step_label)s"
 
-#: views/authentication_views.py:238
+#: views/authentication_views.py:190
+msgid "Sign in"
+msgstr "Увійти"
+
+#: views/authentication_views.py:240
 msgid "Your password has been successfully changed."
 msgstr "Ваш пароль успішно змінено."
 
-#: views/authentication_views.py:249
+#: views/authentication_views.py:251
 msgid "Current user password change"
 msgstr "Пароль поточного користувача змінено"
 
-#: views/authentication_views.py:261
+#: views/authentication_views.py:263
 msgid "Changing the password is not allowed for this account."
 msgstr "Зміна пароля не дозволена для цього акаунта."
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:362
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Запит на зміну пароля виконується %(count)dкористувачем"
 
-#: views/authentication_views.py:337
+#: views/authentication_views.py:365
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Запит на зміну пароля виконується %(count)dкористувачами"
 
-#: views/authentication_views.py:354
+#: views/authentication_views.py:382
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
 msgstr ""
+"Змінювати пароль облікових записів персоналу або суперкористувача через "
+"інтерфейс користувача заборонено. Для виконання цієї операції використовуйте"
+" інструменти адміністрування."
 
-#: views/authentication_views.py:368
+#: views/authentication_views.py:396
 msgid "Change user password"
 msgid_plural "Change users passwords"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Змінити пароль користувача"
+msgstr[1] "Змінити паролі користувачів"
+msgstr[2] "Змінити паролі користувачів"
+msgstr[3] "Змінити паролі користувачів"
 
-#: views/authentication_views.py:379
+#: views/authentication_views.py:407
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Змінити пароль для користувача: %s"
 
-#: views/authentication_views.py:403
+#: views/authentication_views.py:431
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Успішно скинуто пароль для користувача %s."
 
-#: views/authentication_views.py:409
+#: views/authentication_views.py:437
 #, python-format
-msgid "Error reseting password for user \"%(user)s\": %(error)s"
-msgstr "Помилка скидання пароля для користувача %(user)s: %(error)s"
+msgid "Error resetting password for user \"%(user)s\": %(error)s"
+msgstr ""
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
-msgstr ""
+msgstr "Видавати себе за користувача: %s"

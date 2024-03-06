@@ -34,7 +34,7 @@ from ..permissions import (
 
 class MailingProfileBackendSelectionView(FormView):
     extra_context = {
-        'title': _(message='New mailing profile backend selection'),
+        'title': _(message='New mailing profile backend selection')
     }
     form_class = UserMailerBackendSelectionForm
     view_icon = icon_mailing_profile_backend_select

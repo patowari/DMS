@@ -2,7 +2,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.files import File
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.permissions.tests.mixins import PermissionTestMixin
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..classes import Layer
@@ -11,8 +10,8 @@ from ..tasks import task_content_object_image_generate
 from ..transformations import BaseTransformation
 
 from .literals import (
-    TEST_ASSET_LABEL, TEST_ASSET_LABEL_EDITED, TEST_ASSET_INTERNAL_NAME,
-    TEST_ASSET_PATH, TEST_LAYER_LABEL, TEST_LAYER_ORDER, TEST_LAYER_NAME,
+    TEST_ASSET_INTERNAL_NAME, TEST_ASSET_LABEL, TEST_ASSET_LABEL_EDITED,
+    TEST_ASSET_PATH, TEST_LAYER_LABEL, TEST_LAYER_NAME, TEST_LAYER_ORDER,
     TEST_TRANSFORMATION_ARGUMENT, TEST_TRANSFORMATION_ARGUMENT_EDITED,
     TEST_TRANSFORMATION_LABEL, TEST_TRANSFORMATION_NAME
 )
@@ -132,7 +131,7 @@ class AssetViewTestMixin(AssetTestMixin):
                 'asset_id': self._test_asset.pk
             }, data={
                 'label': TEST_ASSET_LABEL_EDITED,
-                'internal_name': TEST_ASSET_INTERNAL_NAME,
+                'internal_name': TEST_ASSET_INTERNAL_NAME
             }
         )
 
@@ -146,7 +145,7 @@ class LayerTestCaseMixin:
         Layer.invalidate_cache()
 
 
-class LayerTestMixin(PermissionTestMixin):
+class LayerTestMixin:
     _test_transformation_object = None
     _test_transformation_object_parent = None
     auto_create_test_layer = True

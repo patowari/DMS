@@ -28,7 +28,9 @@ from .permissions import (
 
 
 class ThemeCreateView(SingleObjectCreateView):
-    extra_context = {'title': _(message='Create new theme')}
+    extra_context = {
+        'title': _(message='Create new theme')
+    }
     form_class = ThemeForm
     post_action_redirect = reverse_lazy(
         viewname='appearance:theme_list'
@@ -119,7 +121,9 @@ class UserThemeSettingsDetailsView(
             ),
             'object': self.external_object,
             'read_only': True,
-            'title': _(message='Theme settings for user: %s') % self.external_object
+            'title': _(
+                message='Theme settings for user: %s'
+            ) % self.external_object
         }
 
     def get_object(self):

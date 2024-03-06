@@ -9,13 +9,12 @@ from .icons import (
     icon_index_template_create, icon_index_template_delete,
     icon_index_template_document_types, icon_index_template_edit,
     icon_index_template_event_triggers, icon_index_template_list,
-    icon_index_template_node_tree_view, icon_index_template_node_create,
-    icon_index_template_node_delete, icon_index_template_node_edit
+    icon_index_template_node_create, icon_index_template_node_delete,
+    icon_index_template_node_edit, icon_index_template_node_tree_view
 )
 from .permissions import (
-    permission_index_template_create, permission_index_template_edit,
-    permission_index_template_delete,
-    permission_index_instance_view,
+    permission_index_instance_view, permission_index_template_create,
+    permission_index_template_delete, permission_index_template_edit,
     permission_index_template_rebuild, permission_index_template_view
 )
 

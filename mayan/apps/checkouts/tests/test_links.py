@@ -3,7 +3,6 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.sources.links import link_document_file_upload
 from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 
-
 from ..links import link_check_out_document, link_check_out_info
 from ..permissions import (
     permission_document_check_out, permission_document_check_out_detail_view

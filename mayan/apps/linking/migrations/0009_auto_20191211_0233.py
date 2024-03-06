@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('linking', '0008_auto_20190429_1922'),
+        ('linking', '0008_auto_20190429_1922')
     ]
 
     operations = [
@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
                 'label depending on the document from which the smart '
                 'link is being accessed.', max_length=96,
                 verbose_name='Dynamic label'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='smartlinkcondition',
@@ -24,6 +24,6 @@ class Migration(migrations.Migration):
                 help_text='The expression using document properties to '
                 'be evaluated against the foreign document field.',
                 verbose_name='Expression'
-            ),
-        ),
+            )
+        )
     ]

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -73,19 +73,19 @@ msgstr "Partición del registro de errores"
 msgid "Error log partitions"
 msgstr "Particiones de registro de errores"
 
-#: models.py:66
+#: models.py:67
 msgid "Date and time"
 msgstr "Fecha y hora"
 
-#: models.py:68
+#: models.py:71
 msgid "Text"
 msgstr "Texto"
 
-#: models.py:75
+#: models.py:79
 msgid "Error log partition entry"
 msgstr "Entrada de partición de registro de errores"
 
-#: models.py:76
+#: models.py:80
 msgid "Error log partition entries"
 msgstr "Entradas de la partición del registro de errores"
 

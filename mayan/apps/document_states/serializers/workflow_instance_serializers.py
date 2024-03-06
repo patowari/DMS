@@ -37,7 +37,7 @@ class WorkflowInstanceLogEntrySerializer(serializers.ModelSerializer):
         label=_(message='Document URL'), view_kwargs=(
             {
                 'lookup_field': 'workflow_instance.document.pk',
-                'lookup_url_kwarg': 'document_id',
+                'lookup_url_kwarg': 'document_id'
             },
         ), view_name='rest_api:document-detail'
     )
@@ -173,7 +173,9 @@ class WorkflowInstanceSerializer(serializers.ModelSerializer):
         )
 
     def get_context(self, instance):
-        return {'workflow_instance_context': instance.loads()}
+        return {
+            'workflow_instance_context': instance.loads()
+        }
 
     def get_log_entries_url(self, instance):
         return reverse(

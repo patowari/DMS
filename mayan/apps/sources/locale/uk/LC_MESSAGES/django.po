@@ -7,6 +7,7 @@
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,13 +24,13 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:9 settings.py:13 views/source_views.py:285
+#: queues.py:9 settings.py:12 views/source_views.py:285
 msgid "Sources"
-msgstr ""
+msgstr "Джерела"
 
 #: apps.py:104
 msgid "Create a document source"
-msgstr ""
+msgstr "Створити джерело документа"
 
 #: apps.py:106
 msgid ""
@@ -37,77 +38,83 @@ msgid ""
 "create at least a web form source to be able to upload documents from a "
 "browser."
 msgstr ""
+"Джерела документів - це спосіб, за допомогою якого нові документи подаються "
+"до Mayan EDMS. Створіть принаймні джерело у вигляді веб-форми, щоб мати "
+"змогу завантажувати документи з браузера."
 
 #: apps.py:130
 msgid ""
 "Return the value of a specific source metadata for the document's latest "
 "file."
 msgstr ""
+"Повернути значення конкретного джерела метаданих для останнього файлу "
+"документа."
 
 #: apps.py:132 apps.py:139
 msgid "Source metadata value of"
-msgstr ""
+msgstr "Джерело значення метаданих"
 
 #: apps.py:138
 msgid "Return the value of a specific source metadata."
-msgstr ""
+msgstr "Повернути значення конкретного джерела метаданих."
 
 #: apps.py:157
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: events.py:10
 msgid "Source created"
-msgstr ""
+msgstr "Джерело створено"
 
 #: events.py:13
 msgid "Source edited"
-msgstr ""
+msgstr "Джерело відредаговано"
 
 #: forms.py:25
 msgid "An optional comment to explain the upload."
-msgstr ""
+msgstr "Додатковий коментар для пояснення завантаження."
 
 #: forms.py:26
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 #: forms.py:32
 msgid "Action"
-msgstr ""
+msgstr "Дія"
 
 #: forms.py:33
 msgid ""
 "The action to take in regards to the pages of the new file being uploaded."
 msgstr ""
+"Дія, яку потрібно виконати щодо сторінок нового файлу, який завантажується."
 
 #: forms.py:54
 msgid "The backend used to create the new source."
-msgstr ""
+msgstr "Бекенд, що використовується для створення нового джерела."
 
 #: forms.py:55
 msgid "Backend"
-msgstr ""
+msgstr "Backend"
 
 #: forms.py:71
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 #: links.py:116
 msgid "New document"
-msgstr ""
+msgstr "Новий документ"
 
 #: links.py:122
 msgid "Upload new file"
-msgstr ""
+msgstr "Завантажте новий файл"
 
 #: links.py:130
 msgid "Source metadata"
-msgstr ""
+msgstr "Джерело метаданих"
 
 #: links.py:139
 msgid "Create source"
-msgstr ""
+msgstr "Створити джерело"
 
 #: links.py:144
 msgid "Delete"
@@ -119,39 +126,39 @@ msgstr "Редагувати"
 
 #: links.py:165
 msgid "Test"
-msgstr ""
+msgstr "Тест"
 
 #: models.py:19 models.py:61
 msgid "Source"
-msgstr ""
+msgstr "Джерело"
 
 #: models.py:23
 msgid "Document file"
-msgstr ""
+msgstr "Файл документа"
 
 #: models.py:26
 msgid "Name of the source metadata entry."
-msgstr ""
+msgstr "Ім'я запису метаданих джерела."
 
 #: models.py:27
 msgid "Key"
-msgstr ""
+msgstr "Ключ"
 
 #: models.py:31
 msgid "The actual value stored in the source metadata for the document."
-msgstr ""
+msgstr "Фактичне значення, збережене в початкових метаданих для документа."
 
 #: models.py:33
 msgid "Value"
-msgstr ""
+msgstr "Значення"
 
 #: models.py:39 models.py:40
 msgid "Document file source metadata"
-msgstr ""
+msgstr "Файл документу джерела метаданих"
 
 #: models.py:50
 msgid "A short text to describe this source."
-msgstr ""
+msgstr "Короткий текст для опису цього джерела."
 
 #: models.py:51
 msgid "Label"
@@ -163,123 +170,128 @@ msgstr "Активовано"
 
 #: permissions.py:6
 msgid "Sources setup"
-msgstr ""
+msgstr "Налаштування джерел"
 
 #: permissions.py:12
 msgid "View document source metadata"
-msgstr ""
+msgstr "Переглянути метадані джерела документа"
 
 #: permissions.py:18
 msgid "Create new document sources"
-msgstr ""
+msgstr "Створити нові джерела документів"
 
 #: permissions.py:21
 msgid "Delete document sources"
-msgstr ""
+msgstr "Видалити джерела документа"
 
 #: permissions.py:24
 msgid "Edit document sources"
-msgstr ""
+msgstr "Редагувати джерела документа"
 
 #: permissions.py:27
 msgid "View existing document sources"
-msgstr ""
+msgstr "Переглянути існуючі джерела документів"
 
 #: queues.py:12
 msgid "Sources periodic"
-msgstr ""
+msgstr "Джерела періодів"
 
 #: queues.py:18
 msgid "Handle source backend action background task"
-msgstr ""
+msgstr "Обробка дії джерела фонового завдання бекенду"
 
 #: queues.py:22
 msgid "Check interval source"
-msgstr ""
+msgstr "Перевірити джерело інтервалу"
 
 #: serializers.py:13
 msgid "Default"
-msgstr ""
+msgstr "За замовчуванням"
 
 #: serializers.py:16
 msgid "Has default?"
-msgstr ""
+msgstr "Чи є значення за замовчуванням?"
 
 #: serializers.py:19
 msgid "Help text"
-msgstr ""
+msgstr "Текст довідки"
 
 #: serializers.py:22 serializers.py:41
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: serializers.py:25
 msgid "Required"
-msgstr ""
+msgstr "Обов'язково"
 
 #: serializers.py:37 serializers.py:52
 msgid "Arguments"
-msgstr ""
+msgstr "Аргументи"
 
 #: serializers.py:47
 msgid "Accept files"
-msgstr ""
+msgstr "Приймати файли"
 
 #: serializers.py:51
 msgid "Optional arguments for the action. Must be JSON formatted."
-msgstr ""
+msgstr "Необов'язкові аргументи для дії. Мають бути у форматі JSON."
 
 #: serializers.py:56
 msgid "Confirmation"
-msgstr ""
+msgstr "Підтвердження"
 
 #: serializers.py:59
 msgid "Execute URL"
-msgstr ""
+msgstr "Виконати URL"
 
 #: serializers.py:62
 msgid "Interfaces"
-msgstr ""
+msgstr "Інтерфейси"
 
 #: serializers.py:66
 msgid "name"
-msgstr ""
+msgstr "назва"
 
 #: serializers.py:69
 msgid "Permission"
-msgstr ""
+msgstr "Дозвіл"
 
 #: serializers.py:74
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers.py:85
 msgid "Binary content for the new file."
-msgstr ""
+msgstr "Двійковий вміст для нового файлу."
 
 #: serializers.py:121
 msgid "Actions URL"
-msgstr ""
+msgstr "URL-адреса дій"
 
-#: settings.py:20
+#: settings.py:19
 msgid "Arguments to use when creating source backends."
-msgstr ""
+msgstr "Аргументи для використання при створенні джерелових бекендів."
 
-#: settings.py:26
+#: settings.py:25
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
+"Шлях до підкласу Storage, який використовується для зберігання кешованих "
+"файлів джерела зображень."
 
-#: settings.py:34
+#: settings.py:33
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr ""
+"Аргументи, які потрібно передати до SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 
 #: source_backend_actions/interfaces.py:161
 msgid "Forms containing the upload data generated by the upload views."
 msgstr ""
+"Форми, що містять дані для вивантаження, згенеровані поданнями для "
+"вивантаження."
 
 #: source_backend_actions/mixins/arguments.py:13
 msgid "Document to which a new file will be uploaded to."
-msgstr ""
+msgstr "Документ, до якого буде вивантажено новий файл."
 
 #: source_backend_actions/mixins/arguments.py:19
 msgid ""
@@ -288,108 +300,127 @@ msgid ""
 " happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
+"Якщо увімкнено, заглушка документа створюється негайно і повертається. Файл "
+"документа обробляється асинхронно. Якщо вимкнено, весь процес відбувається "
+"асинхронно без повернення даних. Увімкнення негайного режиму вимикає обробку"
+" стиснених файлів."
 
 #: source_backend_actions/mixins/arguments.py:41
 msgid "ID of the document to which a new file will be uploaded to."
-msgstr ""
+msgstr "ID документа, до якого буде завантажено новий файл."
 
 #: source_backend_actions/mixins/arguments.py:62
 msgid "ID of the document type."
-msgstr ""
+msgstr "ID типу документа."
 
 #: source_backend_actions/mixins/arguments.py:75
 msgid "User that will feature as the actor in the events."
-msgstr ""
+msgstr "Користувач, який буде фігурувати як актор у подіях."
 
 #: source_backend_actions/mixins/arguments.py:80
 msgid "ID of the user that will feature as the actor in the events."
-msgstr ""
+msgstr "ID користувача, який виступатиме як учасник подій."
 
 #: source_backends/base.py:101
 msgid "General"
-msgstr ""
+msgstr "Загальний"
 
 #: source_backends/base.py:134
 msgid "Null backend"
-msgstr ""
+msgstr "Null backend"
 
 #: source_backends/mixins.py:27
 msgid "Regular expression used to select which files to upload."
 msgstr ""
+"Регулярний вираз, який використовується для вибору файлів для завантаження."
 
 #: source_backends/mixins.py:30
 msgid "Include regular expression"
-msgstr ""
+msgstr "Додати регулярний вираз"
 
 #: source_backends/mixins.py:37
 msgid "Regular expression used to exclude which files to upload."
 msgstr ""
+"Регулярний вираз, який використовується для виключення файлів для "
+"завантаження."
 
 #: source_backends/mixins.py:40
 msgid "Exclude regular expression"
-msgstr ""
+msgstr "Виключити регулярний вираз"
 
 #: source_backends/mixins.py:54
 msgid "Content selection"
-msgstr ""
+msgstr "Вибір вмісту"
 
 #: storages.py:14
 msgid ""
 "Unable to initialize the staging folder file image storage. Check the "
 "settings {} and {} for formatting errors."
 msgstr ""
+"Неможливо ініціалізувати сховище файлів проміжної папки. Перевірте параметри"
+" {} і {} на наявність помилок форматування."
 
 #: storages.py:21
 msgid "Staging folder files"
-msgstr ""
+msgstr "Файли проміжної папки"
 
 #: tests/arguments.py:6
 msgid "Python file like object."
-msgstr ""
+msgstr "Python файл як об'єкт."
 
 #: tests/arguments.py:10
 msgid "ID of the shared uploaded file to be processed."
-msgstr ""
+msgstr "ID спільного завантаженого файлу, який потрібно обробити."
 
 #: views/base.py:33
 msgid ""
 "There are no enabled sources that support this operation. Create a new one "
 "or enable and existing one."
 msgstr ""
+"Немає увімкнених джерел, які підтримують цю операцію. Створіть нове або "
+"увімкніть існуюче."
 
 #: views/document_file_views.py:43
 msgid ""
 "This means that the sources system did not record any information about the "
 "creation of the document file."
 msgstr ""
+"Це означає, що система джерел не записала жодної інформації про створення "
+"файлу документа."
 
 #: views/document_file_views.py:47
 msgid "No source metadata available for this document file."
-msgstr ""
+msgstr "Для цього файлу документа немає метаданих джерела."
 
 #: views/document_file_views.py:51
 #, python-format
 msgid "Source metadata for: %(document_file)s"
-msgstr ""
+msgstr "Джерело метаданих для: %(document_file)s"
 
 #: views/document_file_views.py:96
 #, python-format
 msgid "Unable to upload new files for document \"%(document)s\". %(exception)s"
 msgstr ""
+"Неможливо завантажити нові файли для документа \"%(document)s\". "
+"%(exception)s"
 
 #: views/document_file_views.py:141
 #, python-format
 msgid "Error executing document file upload task; %(exception)s"
 msgstr ""
+"Помилка виконання завдання завантаження файлу документа; %(exception)s"
 
 #: views/document_file_views.py:162
 msgid "New document file queued for upload and will be available shortly."
 msgstr ""
+"Новий файл документа поставлений у чергу для завантаження і незабаром буде "
+"доступний."
 
 #: views/document_file_views.py:187
 #, python-format
 msgid "Upload a new file for document \"%(document)s\" from source: %(source)s"
 msgstr ""
+"Завантажити новий файл для документа \"%(document)s\" з джерела: %(source)s"
 
 #: views/document_file_views.py:193
 msgid "Submit"
@@ -398,49 +429,51 @@ msgstr "Прийняти"
 #: views/document_views.py:53
 #, python-format
 msgid "Error processing source document upload; %(exception)s"
-msgstr ""
+msgstr "Помилка обробки завантаження вихідного документа; %(exception)s"
 
 #: views/document_views.py:74
 msgid "New document queued for upload and will be available shortly."
 msgstr ""
+"Новий документ поставлений у чергу для завантаження і незабаром буде "
+"доступний."
 
 #: views/document_views.py:94
 #, python-format
 msgid "Upload a document of type \"%(document_type)s\" from source: %(source)s"
-msgstr ""
+msgstr "Завантажити документ типу \"%(document_type)s\" з джерела: %(source)s"
 
 #: views/source_views.py:76
 #, python-format
 msgid "Unable to execute action; %s."
-msgstr ""
+msgstr "Неможливо виконати дію; %s."
 
 #: views/source_views.py:155
 #, python-format
 msgid "Error processing source action; %(exception)s"
-msgstr ""
+msgstr "Помилка обробки джерела дії; %(exception)s"
 
 #: views/source_views.py:170
 msgid "Source action executed successfully."
-msgstr ""
+msgstr "Джерело дії успішно виконано."
 
 #: views/source_views.py:179
 msgid "New source backend selection"
-msgstr ""
+msgstr "Вибір нового джерела"
 
 #: views/source_views.py:207
 #, python-format
 msgid "Create a \"%s\" source"
-msgstr ""
+msgstr "Створити джерело \"%s\""
 
 #: views/source_views.py:235
 #, python-format
 msgid "Delete the source: %s?"
-msgstr ""
+msgstr "Видалити джерело: %s?"
 
 #: views/source_views.py:251
 #, python-format
 msgid "Edit source: %s"
-msgstr ""
+msgstr "Редагувати джерело: %s"
 
 #: views/source_views.py:279
 msgid ""
@@ -448,10 +481,13 @@ msgid ""
 "and require user input to operate. Others are automatic and run in the "
 "background without user intervention."
 msgstr ""
+"Джерела надають засоби для завантаження документів. Деякі джерела є "
+"інтерактивними і вимагають введення користувача для роботи. Інші є "
+"автоматичними і працюють у фоновому режимі без втручання користувача."
 
 #: views/source_views.py:284
 msgid "No sources available"
-msgstr ""
+msgstr "Немає доступних джерел"
 
 #: views/source_views.py:309
 #, python-format
@@ -459,6 +495,7 @@ msgid ""
 "The selected action \"%s\" does not require confirmation and cannot be "
 "tested."
 msgstr ""
+"Вибрана дія \"%s\" не потребує підтвердження та не може бути протестована."
 
 #: views/source_views.py:331
 msgid ""
@@ -467,45 +504,53 @@ msgid ""
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
+"Це виконає вихідний код навіть якщо вихідний код не включений. Джерела, які "
+"видаляють вміст після завантаження, не роблять цього під час тестування. "
+"Перевірте журнал помилок джерела для отримання інформації під час "
+"тестування. Успішне тестування очистить журнал помилок."
 
 #: views/source_views.py:337
 #, python-format
 msgid "Trigger check for source \"%s\"?"
-msgstr ""
+msgstr "Тригер перевірки для джерела \"%s\"?"
 
 #: views/source_views.py:353
 msgid ""
 "Source test queued. Check for newly created documents or for error log "
 "entries."
 msgstr ""
+"Джерело тесту поставлено в чергу. Перевірте наявність новостворених "
+"документів або записів у журналі помилок."
 
 #: wizard_steps.py:11
 msgid "Select document type"
-msgstr ""
+msgstr "Виберати тип документа"
 
 #: wizards.py:68
 msgid ""
 "No interactive document sources have been defined or none have been enabled,"
 " create one before proceeding."
 msgstr ""
+"Інтерактивні джерела документів не визначено або не ввімкнено. Перш ніж "
+"продовжити, створіть їх."
 
 #: wizards.py:85
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
-msgstr ""
+msgstr "Крок %(step)d з %(total_steps)d : %(step_label)s"
 
 #: wizards.py:91
 msgid "Document upload wizard"
-msgstr ""
+msgstr "Майстер завантаження документів"
 
 #: wizards.py:100
 msgid "First"
-msgstr ""
+msgstr "Перший"
 
 #: wizards.py:106
 msgid "Previous"
-msgstr ""
+msgstr "Попередній"
 
 #: wizards.py:113
 msgid "Next"
-msgstr ""
+msgstr "Наступний"

@@ -1,8 +1,8 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import (
     TEST_FILE_HYBRID_PDF_CONTENT, TEST_FILE_HYBRID_PDF_PATH,
-    TEST_FILE_OFFICE_CONTENT, TEST_FILE_OFFICE_PATH,
-    TEST_FILE_TEXT_CONTENT, TEST_FILE_TEXT_PATH
+    TEST_FILE_OFFICE_CONTENT, TEST_FILE_OFFICE_PATH, TEST_FILE_TEXT_CONTENT,
+    TEST_FILE_TEXT_PATH
 )
 
 from ..parsers import OfficePopplerParser, PopplerParser

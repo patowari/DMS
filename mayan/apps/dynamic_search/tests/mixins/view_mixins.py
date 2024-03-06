@@ -1,9 +1,12 @@
+from .base import SearchTestMixin
+
+
 class SearchToolsViewTestMixin:
     def _request_search_backend_reindex_view(self):
         return self.post(viewname='search:search_backend_reindex')
 
 
-class SearchViewTestMixin:
+class SearchViewTestMixin(SearchTestMixin):
     def _request_search_advanced_get_view(self):
         return self.get(
             viewname='search:search_advanced', kwargs={

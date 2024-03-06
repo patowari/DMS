@@ -13,11 +13,11 @@ from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_version_remap
 from mayan.apps.events.classes import ModelEventType
 
-
 from .events import (
     event_ocr_document_version_content_deleted,
     event_ocr_document_version_page_content_edited,
-    event_ocr_document_version_finished, event_ocr_document_version_submitted
+    event_ocr_document_version_finished,
+    event_ocr_document_version_submitted
 )
 from .handlers import (
     handler_initialize_new_ocr_settings, handler_ocr_document_version

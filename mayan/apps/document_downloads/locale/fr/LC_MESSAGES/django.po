@@ -7,14 +7,15 @@
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
+# Benoît GROUSSET <benoit@grousset.xyz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Guillaume Trottier <gui.trottier@gmail.com>, 2024\n"
+"Last-Translator: Benoît GROUSSET <benoit@grousset.xyz>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr "Fichier de document téléchargé"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "ID de fichier"
 
 #: forms.py:11
 msgid "Document"
@@ -75,7 +76,7 @@ msgstr ""
 
 #: literals.py:10
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Fichiers prêts à être téléchargé."
 
 #: permissions.py:10
 msgid "Download document files"
@@ -138,3 +139,5 @@ msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."
 msgstr ""
+"Le processus sera exécuté en arrière-plan. Les fichiers seront disponible "
+"dans la zone de téléchargement."

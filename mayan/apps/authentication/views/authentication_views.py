@@ -7,8 +7,7 @@ from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.views import (
     LoginView, LogoutView, PasswordChangeDoneView, PasswordChangeView,
     PasswordResetCompleteView, PasswordResetConfirmView,
-    PasswordResetDoneView, PasswordResetView,
-    RedirectURLMixin
+    PasswordResetDoneView, PasswordResetView, RedirectURLMixin
 )
 from django.core.exceptions import PermissionDenied
 from django.forms import formsets
@@ -26,16 +25,15 @@ from stronghold.decorators import public
 from stronghold.views import StrongholdPublicMixin
 
 import mayan
-from mayan.apps.common.settings import (
-    setting_home_view, setting_project_title, setting_project_url
-)
+from mayan.apps.common.settings import setting_home_view
+from mayan.apps.organizations.utils import get_organization_installation_url
 from mayan.apps.user_management.permissions import permission_user_edit
 from mayan.apps.user_management.querysets import (
     get_all_users_queryset, get_user_queryset
 )
 from mayan.apps.views.generics import MultipleObjectFormActionView
-from mayan.apps.views.view_mixins import ViewIconMixin
 from mayan.apps.views.http import URL
+from mayan.apps.views.view_mixins import ViewIconMixin
 
 from ..classes import AuthenticationBackend
 from ..forms import AuthenticationFormBase
@@ -69,7 +67,9 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
         computed_form_list = OrderedDict()
 
         for form_index, form in enumerate(iterable=form_list):
-            computed_form_list[str(form_index)] = form
+            computed_form_list[
+                str(form_index)
+            ] = form
 
         for form in computed_form_list.values():
             if issubclass(form, formsets.BaseFormSet):
@@ -79,16 +79,16 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
 
     @classonlymethod
     def as_view(cls, *args, **kwargs):
-        # SessionWizardView needs at least one form in order to be
+        # `SessionWizardView` needs at least one form in order to be
         # initialized as a view. Declare one empty form and then change the
-        # form list in the .dispatch() method.
+        # form list in the `.dispatch()` method.
         class EmptyForm(AuthenticationFormBase):
             """Empty form"""
 
         cls.form_list = [EmptyForm]
 
-        # Allow super to initialize and pass the form_list len() assert
-        # before replacing the form_list attribute with our property.
+        # Allow super to initialize and pass the `form_list` `len()` assert
+        # before replacing the `form_list` attribute with our property.
         result = super().as_view(*args, **kwargs)
 
         def null_setter(self, value):
@@ -129,7 +129,7 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
 
     def done(self, form_list=None, **kwargs):
         """
-        Perform the same function as Django's LoginView.form_valid().
+        Perform the same function as Django's `LoginView.form_valid()`.
         """
         kwargs = self.get_all_cleaned_data()
         self.authentication_backend.process(
@@ -230,7 +230,7 @@ class MayanLoginView(StrongholdPublicMixin, LoginView):
 
 
 class MayanLogoutView(LogoutView):
-    """No current change or overrides, left here for future expansion"""
+    """No current change or overrides, left here for future expansion."""
 
 
 class MayanPasswordChangeDoneView(PasswordChangeDoneView):
@@ -304,22 +304,48 @@ class MayanPasswordResetView(StrongholdPublicMixin, PasswordResetView):
     extra_context = {
         'appearance_type': 'plain'
     }
-    extra_email_context = {
-        'project_copyright': mayan.__copyright__,
-        'project_license': mayan.__license__,
-        'project_title': setting_project_title.value,
-        'project_website': setting_project_url.value
-    }
     subject_template_name = 'authentication/password_reset_subject.txt'
     success_url = reverse_lazy(
         viewname='authentication:password_reset_done_view'
     )
     template_name = 'authentication/password_reset_form.html'
 
+    # Hardcoded overloaded method to allow adding extra email context from
+    # a method and not just the Django provided `self.extra_email_context`.
+    # On each new Django version, verify if this method has changed and
+    # update this overloading.
+    def form_valid(self, form):
+        opts = {
+            'email_template_name': self.email_template_name,
+            'extra_email_context': self.get_extra_email_context(),
+            'from_email': self.from_email,
+            'html_email_template_name': self.html_email_template_name,
+            'request': self.request,
+            'subject_template_name': self.subject_template_name,
+            'token_generator': self.token_generator,
+            'use_https': self.request.is_secure()
+        }
+        form.save(**opts)
+        # Specify the super class `PasswordResetView` explicitly to avoid
+        # executing `form_valid` again.
+        return super(PasswordResetView, self).form_valid(form=form)
+
     def get(self, *args, **kwargs):
         if setting_disable_password_reset.value:
             return redirect(to=setting_home_view.value)
         return super().get(*args, **kwargs)
+
+    def get_extra_email_context(self):
+        extra_email_context_project_website = get_organization_installation_url(
+            request=self.request
+        )
+        extra_email_context = {
+            'project_copyright': mayan.__copyright__,
+            'project_license': mayan.__license__,
+            'project_title': mayan.__title__,
+            'project_website': str(extra_email_context_project_website)
+        }
+        return extra_email_context
 
     def post(self, *args, **kwargs):
         if setting_disable_password_reset.value:
@@ -408,7 +434,7 @@ class UserSetPasswordView(MultipleObjectFormActionView):
         except Exception as exception:
             messages.error(
                 message=_(
-                    message='Error reseting password for user '
+                    message='Error resetting password for user '
                     '"%(user)s": %(error)s'
                 ) % {
                     'error': exception, 'user': instance

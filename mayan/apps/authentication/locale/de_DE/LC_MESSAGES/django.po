@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:36 events.py:6 permissions.py:6 settings.py:11
+#: apps.py:35 events.py:6 permissions.py:6 settings.py:11
 msgid "Authentication"
 msgstr "Authentifizierung"
 
@@ -46,21 +46,21 @@ msgstr "Benutzer ist angemeldet"
 msgid "User logged out"
 msgstr "Benutzer ist abgemeldet"
 
-#: forms.py:31
+#: forms.py:34
 msgid "Remember me"
 msgstr "Angemeldet bleiben"
 
-#: forms.py:77
+#: forms.py:81
 msgid "Permanent"
 msgstr "Permanent"
 
-#: forms.py:78
+#: forms.py:82
 msgid "If selected, disables ending impersonation."
 msgstr ""
 "Wenn diese Option ausgewählt ist, wird das Beenden des Identitätswechsels "
 "deaktiviert."
 
-#: forms.py:89
+#: forms.py:93
 msgid "User"
 msgstr "Benutzer"
 
@@ -72,7 +72,7 @@ msgstr "Abmelden"
 msgid "Change password"
 msgstr "Passwort ändern"
 
-#: links.py:45 views/impersonation_views.py:52
+#: links.py:45 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Benutzeridentität annehmen"
 
@@ -121,29 +121,25 @@ msgstr "Klicken Sie hier, wenn Sie fertig sind"
 msgid "Login"
 msgstr "Login"
 
-#: templates/authentication/login.html:21
-msgid "Sign in"
-msgstr "Anmelden"
-
-#: templates/authentication/login.html:67
-#: templates/authentication/login.html:77
-#: templates/authentication/login.html:91
+#: templates/authentication/login.html:65
+#: templates/authentication/login.html:75
+#: templates/authentication/login.html:89
 msgid "Save"
 msgstr "Speichern"
 
-#: templates/authentication/login.html:67
-#: templates/authentication/login.html:77
-#: templates/authentication/login.html:91
+#: templates/authentication/login.html:65
+#: templates/authentication/login.html:75
+#: templates/authentication/login.html:89
 #: templates/authentication/password_reset_confirm.html:29
 #: templates/authentication/password_reset_form.html:29
 msgid "Submit"
 msgstr "Absenden"
 
-#: templates/authentication/login.html:81
+#: templates/authentication/login.html:79
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: templates/authentication/login.html:103
+#: templates/authentication/login.html:106
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
@@ -179,29 +175,33 @@ msgstr "Nächste Seite"
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "Schritt %(step)d von %(total_steps)d: %(step_label)s"
 
-#: views/authentication_views.py:238
+#: views/authentication_views.py:190
+msgid "Sign in"
+msgstr "Anmelden"
+
+#: views/authentication_views.py:240
 msgid "Your password has been successfully changed."
 msgstr "Das Passwort wurde erfolgreich geändert."
 
-#: views/authentication_views.py:249
+#: views/authentication_views.py:251
 msgid "Current user password change"
 msgstr "Passwortänderung für aktuellen Benutzer"
 
-#: views/authentication_views.py:261
+#: views/authentication_views.py:263
 msgid "Changing the password is not allowed for this account."
 msgstr "Ein Passwortwechsel ist für diesen Account nicht erlaubt."
 
-#: views/authentication_views.py:334
+#: views/authentication_views.py:362
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Passwortwechsel für %(count)d Benutzer durchgeführt"
 
-#: views/authentication_views.py:337
+#: views/authentication_views.py:365
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Passwortwechsel für %(count)d Benutzer durchgeführt"
 
-#: views/authentication_views.py:354
+#: views/authentication_views.py:382
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
@@ -210,30 +210,28 @@ msgstr ""
 " die Benutzeroberfläche zu ändern. Benutzen Sie stattdessen "
 "Administrationswerkzeuge."
 
-#: views/authentication_views.py:368
+#: views/authentication_views.py:396
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "Ändern Sie das Benutzerpasswort"
 msgstr[1] "Benutzerpasswörter ändern"
 
-#: views/authentication_views.py:379
+#: views/authentication_views.py:407
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Passwort ändern für Benutzer: %s"
 
-#: views/authentication_views.py:403
+#: views/authentication_views.py:431
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Passwort für Benutzer %s erfolgreich zurückgesetzt."
 
-#: views/authentication_views.py:409
+#: views/authentication_views.py:437
 #, python-format
-msgid "Error reseting password for user \"%(user)s\": %(error)s"
+msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
-"Fehler beim Zurücksetzen des Passworts für den Benutzer  \"%(user)s\": "
-"%(error)s"
 
-#: views/impersonation_views.py:81
+#: views/impersonation_views.py:87
 #, python-format
 msgid "Impersonate user: %s"
 msgstr "Benutzeridentität annehmen: %s"

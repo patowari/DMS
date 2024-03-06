@@ -7,7 +7,7 @@ import mayan.apps.common.validators
 class Migration(migrations.Migration):
     dependencies = [
         ('contenttypes', '0002_remove_content_type_name'),
-        ('converter', '0013_auto_20180823_2353'),
+        ('converter', '0013_auto_20180823_2353')
     ]
 
     operations = [
@@ -61,13 +61,13 @@ class Migration(migrations.Migration):
                     'enabled', models.BooleanField(
                         default=True, verbose_name='Enabled'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('object_layer__stored_layer__order', 'order'),
                 'verbose_name': 'Layer transformation',
-                'verbose_name_plural': 'Layer transformations',
-            },
+                'verbose_name_plural': 'Layer transformations'
+            }
         ),
         migrations.CreateModel(
             name='ObjectLayer',
@@ -78,7 +78,9 @@ class Migration(migrations.Migration):
                         serialize=False, verbose_name='ID'
                     )
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'enabled', models.BooleanField(
                         default=True, verbose_name='Enabled'
@@ -89,13 +91,13 @@ class Migration(migrations.Migration):
                         on_delete=django.db.models.deletion.CASCADE,
                         to='contenttypes.ContentType'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('stored_layer__order',),
                 'verbose_name': 'Object layer',
-                'verbose_name_plural': 'Object layers',
-            },
+                'verbose_name_plural': 'Object layers'
+            }
         ),
         migrations.CreateModel(
             name='StoredLayer',
@@ -115,13 +117,13 @@ class Migration(migrations.Migration):
                     'order', models.PositiveIntegerField(
                         db_index=True, unique=True, verbose_name='Order'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('order',),
                 'verbose_name': 'Stored layer',
-                'verbose_name_plural': 'Stored layers',
-            },
+                'verbose_name_plural': 'Stored layers'
+            }
         ),
         migrations.AlterField(
             model_name='transformation',
@@ -143,7 +145,7 @@ class Migration(migrations.Migration):
                     ('unsharpmask', 'Unsharp masking: radius, percent, threshold'),
                     ('zoom', 'Zoom: percent')
                 ], max_length=128, verbose_name='Name'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='objectlayer',
@@ -152,7 +154,7 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='object_layers', to='converter.StoredLayer',
                 verbose_name='Stored layer'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='layertransformation',
@@ -161,16 +163,18 @@ class Migration(migrations.Migration):
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name='transformations', to='converter.ObjectLayer',
                 verbose_name='Object layer'
-            ),
+            )
         ),
         migrations.AlterUniqueTogether(
             name='objectlayer',
             unique_together={
                 ('content_type', 'object_id', 'stored_layer')
-            },
+            }
         ),
         migrations.AlterUniqueTogether(
             name='layertransformation',
-            unique_together={('object_layer', 'order')},
-        ),
+            unique_together={
+                ('object_layer', 'order')
+            }
+        )
     ]

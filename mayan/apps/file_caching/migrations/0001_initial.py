@@ -5,8 +5,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -38,12 +37,12 @@ class Migration(migrations.Migration):
                         max_length=255, unique=True,
                         verbose_name='Storage instance path'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Cache',
-                'verbose_name_plural': 'Caches',
-            },
+                'verbose_name_plural': 'Caches'
+            }
         ),
         migrations.CreateModel(
             name='CachePartition',
@@ -65,12 +64,12 @@ class Migration(migrations.Migration):
                         related_name='partitions', to='file_caching.Cache',
                         verbose_name='Cache'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Cache partition',
-                'verbose_name_plural': 'Cache partitions',
-            },
+                'verbose_name_plural': 'Cache partitions'
+            }
         ),
         migrations.CreateModel(
             name='CachePartitionFile',
@@ -104,20 +103,24 @@ class Migration(migrations.Migration):
                         to='file_caching.CachePartition',
                         verbose_name='Cache partition'
                     )
-                ),
+                )
             ],
             options={
                 'get_latest_by': 'datetime',
                 'verbose_name': 'Cache partition file',
-                'verbose_name_plural': 'Cache partition files',
-            },
+                'verbose_name_plural': 'Cache partition files'
+            }
         ),
         migrations.AlterUniqueTogether(
             name='cachepartitionfile',
-            unique_together={('partition', 'filename')},
+            unique_together={
+                ('partition', 'filename')
+            }
         ),
         migrations.AlterUniqueTogether(
             name='cachepartition',
-            unique_together={('cache', 'name')},
-        ),
+            unique_together={
+                ('cache', 'name')
+            }
+        )
     ]

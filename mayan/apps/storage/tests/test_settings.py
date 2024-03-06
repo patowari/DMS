@@ -1,9 +1,9 @@
 import importlib
 import logging
 
+from mayan.apps.storage import storages
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from mayan.apps.storage import storages
 from ..classes import DefinedStorage
 from ..literals import STORAGE_NAME_SHARED_UPLOADED_FILE
 from ..settings import setting_shared_storage_arguments

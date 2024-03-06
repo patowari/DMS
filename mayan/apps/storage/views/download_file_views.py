@@ -5,16 +5,17 @@ from mayan.apps.views.generics import (
     MultipleObjectDeleteView, SingleObjectDownloadView, SingleObjectListView
 )
 
-from .icons import (
+from ..icons import (
     icon_download_file_delete, icon_download_file_download,
     icon_download_file_list
 )
-from .models import DownloadFile
-from .permissions import (
+from ..models import DownloadFile
+from ..permissions import (
     permission_download_file_delete, permission_download_file_download,
     permission_download_file_view
 )
-from .view_mixins import OwnerPlusFilteredQuerysetViewMixin
+
+from .mixins import OwnerPlusFilteredQuerysetViewMixin
 
 
 class DownloadFileDeleteView(

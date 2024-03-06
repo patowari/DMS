@@ -7,8 +7,8 @@ from ..literals import (
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
 from ..settings import (
-    setting_document_file_page_image_cache_storage_backend_arguments,
     setting_document_file_page_image_cache_maximum_size,
+    setting_document_file_page_image_cache_storage_backend_arguments,
     setting_document_file_storage_backend_arguments,
     setting_document_version_page_image_cache_maximum_size,
     setting_document_version_page_image_cache_storage_backend_arguments,
@@ -50,8 +50,12 @@ class DocumentFileStorageSettingsTestCase(
             storage_name=STORAGE_NAME_DOCUMENT_FILES
         )
 
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
-        self.assertTrue('document file storage' in str(assertion.exception))
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
+        self.assertTrue(
+            'document file storage' in str(assertion.exception)
+        )
 
     def test_setting_document_file_page_image_cache_maximum_size(self):
         old_value = setting_document_file_page_image_cache_maximum_size.value
@@ -70,7 +74,9 @@ class DocumentFileStorageSettingsTestCase(
             storage_name=STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
         )
 
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
         self.assertTrue(
             'document file image storage' in str(assertion.exception)
         )
@@ -86,7 +92,9 @@ class DocumentVersionStorageSettingsTestCase(
             storage_name=STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
         )
 
-        self.assertTrue('Unable to initialize' in str(assertion.exception))
+        self.assertTrue(
+            'Unable to initialize' in str(assertion.exception)
+        )
         self.assertTrue(
             'document version image storage' in str(assertion.exception)
         )

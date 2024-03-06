@@ -5,7 +5,7 @@ from mayan.apps.storage.classes import DefinedStorage
 from .literals import STORAGE_NAME_WORKFLOW_CACHE
 from .settings import (
     setting_workflow_image_cache_storage_backend,
-    setting_workflow_image_cache_storage_backend_arguments,
+    setting_workflow_image_cache_storage_backend_arguments
 )
 
 storage_workflow_image = DefinedStorage(

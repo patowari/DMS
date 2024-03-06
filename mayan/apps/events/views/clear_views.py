@@ -42,7 +42,9 @@ class EventClearBaseView(ConfirmView):
             'user_id': self.request.user.pk
         }
 
-        task_kwargs.update(self.get_task_extra_kwargs())
+        task_kwargs.update(
+            self.get_task_extra_kwargs()
+        )
 
         task_event_queryset_clear.apply_async(kwargs=task_kwargs)
 

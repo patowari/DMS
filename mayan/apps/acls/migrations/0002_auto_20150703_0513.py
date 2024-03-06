@@ -1,11 +1,11 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
         ('contenttypes', '0001_initial'),
         ('permissions', '0002_auto_20150628_0533'),
-        ('acls', '0001_initial'),
+        ('acls', '0001_initial')
     ]
 
     operations = [
@@ -18,7 +18,9 @@ class Migration(migrations.Migration):
                         primary_key=True
                     )
                 ),
-                ('object_id', models.PositiveIntegerField()),
+                (
+                    'object_id', models.PositiveIntegerField()
+                ),
                 (
                     'content_type', models.ForeignKey(
                         on_delete=models.CASCADE,
@@ -37,49 +39,51 @@ class Migration(migrations.Migration):
                         on_delete=models.CASCADE, related_name='acls',
                         to='permissions.Role', verbose_name='Role'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Access entry',
-                'verbose_name_plural': 'Access entries',
+                'verbose_name_plural': 'Access entries'
             },
-            bases=(models.Model,),
+            bases=(models.Model,)
         ),
         migrations.RemoveField(
             model_name='accessentry',
-            name='content_type',
+            name='content_type'
         ),
         migrations.RemoveField(
             model_name='accessentry',
-            name='holder_type',
+            name='holder_type'
         ),
         migrations.RemoveField(
             model_name='accessentry',
-            name='permission',
+            name='permission'
         ),
         migrations.DeleteModel(
-            name='AccessEntry',
+            name='AccessEntry'
         ),
         migrations.DeleteModel(
-            name='CreatorSingleton',
+            name='CreatorSingleton'
         ),
         migrations.RemoveField(
             model_name='defaultaccessentry',
-            name='content_type',
+            name='content_type'
         ),
         migrations.RemoveField(
             model_name='defaultaccessentry',
-            name='holder_type',
+            name='holder_type'
         ),
         migrations.RemoveField(
             model_name='defaultaccessentry',
-            name='permission',
+            name='permission'
         ),
         migrations.DeleteModel(
-            name='DefaultAccessEntry',
+            name='DefaultAccessEntry'
         ),
         migrations.AlterUniqueTogether(
             name='accesscontrollist',
-            unique_together={('content_type', 'object_id', 'role')},
-        ),
+            unique_together={
+                ('content_type', 'object_id', 'role')
+            }
+        )
     ]

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Linking"
 msgstr "Spojni"
 
-#: apps.py:120 models.py:30 serializers.py:129
+#: apps.py:120 models.py:31 serializers.py:129
 msgid "Label"
 msgstr "Labela"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:49
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:52
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Smart linkovi"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Foreign document field"
 msgstr ""
 
-#: links.py:45 views/smart_link_views.py:247
+#: links.py:45 views/smart_link_views.py:248
 msgid "Create new smart link"
 msgstr "Kreiraj novi smart link"
 
@@ -53,7 +53,7 @@ msgstr "Kreiraj novi smart link"
 msgid "Delete"
 msgstr "Obriši"
 
-#: links.py:54 models.py:41
+#: links.py:54 models.py:44
 msgid "Document types"
 msgstr "Tipovi dokumenta"
 
@@ -141,80 +141,80 @@ msgstr "je u regularnom izrazu"
 msgid "is in regular expression (case insensitive)"
 msgstr "je u regularnom izrazu (nije bitno velika ili mala slova)"
 
-#: model_mixins.py:43
+#: model_mixins.py:45
 #, python-format
 msgid "Error generating dynamic label; %s"
 msgstr "Greška u generisanju dinamičke oznake; %s"
 
-#: model_mixins.py:58
+#: model_mixins.py:60
 msgid "This smart link is not allowed for the selected document's type."
 msgstr "Ovaj pametni link nije dozvoljen za tip izabranog dokumenta."
 
-#: model_mixins.py:108
+#: model_mixins.py:112
 msgid "not"
 msgstr "ne"
 
-#: model_mixins.py:112
+#: model_mixins.py:116
 msgid "Full label"
 msgstr ""
 
-#: models.py:29
+#: models.py:30
 msgid "A short text describing the smart link."
 msgstr ""
 
-#: models.py:34
+#: models.py:35
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
 msgstr ""
 
-#: models.py:36
+#: models.py:37
 msgid "Dynamic label"
 msgstr "Dinamička oznaka"
 
-#: models.py:38 models.py:110
+#: models.py:40 models.py:117
 msgid "Enabled"
 msgstr "Omogućeno"
 
-#: models.py:48 models.py:87
+#: models.py:51 models.py:90
 msgid "Smart link"
 msgstr "Pametni link"
 
-#: models.py:91
+#: models.py:94
 msgid "The inclusion is ignored for the first item."
 msgstr "Inkluzija je ignorisana za prvu stavku"
 
-#: models.py:95
+#: models.py:99
 msgid "This represents the metadata of all other documents."
 msgstr "Ovo predstavlja metapodatke svih ostalih dokumenata."
 
-#: models.py:96
+#: models.py:101
 msgid "Foreign document attribute"
 msgstr "Atribut inostranih dokumenata"
 
-#: models.py:101
+#: models.py:107
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
 msgstr ""
 
-#: models.py:103
+#: models.py:109
 msgid "Expression"
 msgstr "Izraz"
 
-#: models.py:106
+#: models.py:113
 msgid "Inverts the logic of the operator."
 msgstr "Obrće logiku operatora"
 
-#: models.py:107
+#: models.py:114
 msgid "Negated"
 msgstr "Negiran"
 
-#: models.py:114
+#: models.py:121
 msgid "Link condition"
 msgstr "Stanje veze"
 
-#: models.py:115
+#: models.py:122
 msgid "Link conditions"
 msgstr "Link uslovi"
 
@@ -380,12 +380,12 @@ msgstr "Tipovi dokumenata su omogućeni"
 msgid "Document type for which to enable smart link: %s"
 msgstr "Tip dokumenta za omogućavanje pametna veza:%s"
 
-#: views/smart_link_views.py:271
+#: views/smart_link_views.py:273
 #, python-format
 msgid "Delete smart link: %s"
 msgstr "Izbriši smart link:%s"
 
-#: views/smart_link_views.py:288
+#: views/smart_link_views.py:290
 #, python-format
 msgid "Edit smart link: %s"
 msgstr "Izmjeni smart link: %s"

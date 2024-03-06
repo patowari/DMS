@@ -22,7 +22,9 @@ class DocumentFileActionTestCase(
 
         test_document_version_page_content_objects = self._test_document_version.page_content_objects
 
-        self.assertEqual(self._test_document.versions.count(), 1)
+        self.assertEqual(
+            self._test_document.versions.count(), 1
+        )
 
         self._clear_events()
 
@@ -39,8 +41,12 @@ class DocumentFileActionTestCase(
             test_document_version_count + 1
         )
 
-        self.assertEqual(self._test_document_version_list[0].active, False)
-        self.assertEqual(self._test_document_version_list[1].active, True)
+        self.assertEqual(
+            self._test_document_version_list[0].active, False
+        )
+        self.assertEqual(
+            self._test_document_version_list[1].active, True
+        )
 
         self.assertNotEqual(
             self._test_document_version.page_content_objects,
@@ -91,7 +97,9 @@ class DocumentFileActionTestCase(
 
         test_document_version_page_content_objects = self._test_document_version.page_content_objects
 
-        self.assertEqual(self._test_document.versions.count(), 1)
+        self.assertEqual(
+            self._test_document.versions.count(), 1
+        )
 
         self._clear_events()
 
@@ -108,7 +116,9 @@ class DocumentFileActionTestCase(
             test_document_version_count
         )
 
-        self.assertEqual(self._test_document_version_list[0].active, True)
+        self.assertEqual(
+            self._test_document_version_list[0].active, True
+        )
 
         self.assertEqual(
             self._test_document_version.page_content_objects,
@@ -263,8 +273,12 @@ class DocumentVersionBusinessLogicTestCase(
         self._test_document_version_list[0].refresh_from_db()
         self._test_document_version_list[1].refresh_from_db()
 
-        self.assertEqual(self._test_document_version_list[0].active, True)
-        self.assertEqual(self._test_document_version_list[1].active, False)
+        self.assertEqual(
+            self._test_document_version_list[0].active, True
+        )
+        self.assertEqual(
+            self._test_document_version_list[1].active, False
+        )
 
         self._clear_events()
 
@@ -275,8 +289,12 @@ class DocumentVersionBusinessLogicTestCase(
         self._test_document_version_list[0].refresh_from_db()
         self._test_document_version_list[1].refresh_from_db()
 
-        self.assertEqual(self._test_document_version_list[0].active, False)
-        self.assertEqual(self._test_document_version_list[1].active, True)
+        self.assertEqual(
+            self._test_document_version_list[0].active, False
+        )
+        self.assertEqual(
+            self._test_document_version_list[1].active, True
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)

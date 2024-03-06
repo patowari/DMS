@@ -6,8 +6,8 @@ from mayan.apps.templating.fields import ModelTemplateField
 
 from ..classes import WorkflowAction
 from ..models import (
-    WorkflowStateEscalation, WorkflowInstance, WorkflowState,
-    WorkflowStateAction
+    WorkflowInstance, WorkflowState, WorkflowStateAction,
+    WorkflowStateEscalation
 )
 
 
@@ -51,11 +51,11 @@ class WorkflowTemplateStateEscalationForm(forms.ModelForm):
         self.workflow_template_state = workflow_template_state
         super().__init__(*args, **kwargs)
 
-        self.fields[
-            'transition'
-        ].queryset = self.workflow_template_state.workflow.transitions.filter(
+        queryset_transitions = self.workflow_template_state.workflow.transitions.filter(
             origin_state=self.workflow_template_state
         )
+
+        self.fields['transition'].queryset = queryset_transitions
 
         self.fields['condition'] = ModelTemplateField(
             initial_help_text=self.fields['condition'].help_text,

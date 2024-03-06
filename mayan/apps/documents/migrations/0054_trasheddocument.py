@@ -3,7 +3,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0053_auto_20200129_0926'),
+        ('documents', '0053_auto_20200129_0926')
     ]
 
     operations = [
@@ -13,8 +13,8 @@ class Migration(migrations.Migration):
             options={
                 'proxy': True,
                 'indexes': [],
-                'constraints': [],
+                'constraints': []
             },
             bases=('documents.document',),
-        ),
+        )
     ]

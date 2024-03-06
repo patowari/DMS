@@ -20,7 +20,7 @@ class MayanImage {
             animationDuration : 100,
             buttons : [
                 'fullScreen',
-                'close',
+                'close'
             ],
             idleTime: false,
             infobar: true,
@@ -28,7 +28,7 @@ class MayanImage {
         });
     }
 
-    static async intialize () {
+    static async initialize () {
         $('img.lazy-load').lazyload({
             appear: async function(elements_left, settings) {
                 new MayanImage({element: $(this)});

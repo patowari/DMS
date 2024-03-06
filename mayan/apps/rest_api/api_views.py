@@ -9,12 +9,12 @@ from mayan.apps.organizations.settings import setting_organization_url_base_path
 from mayan.apps.rest_api import generics
 
 from .classes import BatchRequestCollection, Endpoint
-from .generics import RetrieveAPIView, ListAPIView
+from .generics import ListAPIView, RetrieveAPIView
+from .schemas import openapi_info
 from .serializers import (
     BatchAPIRequestResponseSerializer, EndpointSerializer,
     ProjectInformationSerializer
 )
-from .schemas import openapi_info
 
 
 class APIRoot(ListAPIView):

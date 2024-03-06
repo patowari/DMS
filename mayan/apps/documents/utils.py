@@ -33,4 +33,6 @@ def get_language_choices():
         else:
             logger.warning('Unknown language code "%s".', iso639_3)
 
-    return sorted(result, key=lambda x: x[1])
+    return sorted(
+        result, key=lambda x: x[1]
+    )

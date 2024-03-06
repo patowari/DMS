@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_indexing', '0010_documentindexinstancenode_indexinstance'),
+        ('document_indexing', '0010_documentindexinstancenode_indexinstance')
     ]
 
     operations = [
@@ -16,5 +16,5 @@ class Migration(migrations.Migration):
                 "ref/templates/builtins/)",
                 verbose_name='Indexing expression'
             ),
-        ),
+        )
     ]

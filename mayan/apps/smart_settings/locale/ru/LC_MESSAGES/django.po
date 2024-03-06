@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Sergey Glita <gsv70@mail.ru>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -23,19 +23,19 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:26 permissions.py:6
+#: apps.py:27 permissions.py:6
 msgid "Smart settings"
 msgstr "Умные настройки"
 
-#: apps.py:36
+#: apps.py:37
 msgid "Setting count"
 msgstr "Количество параметров"
 
-#: apps.py:42
+#: apps.py:43
 msgid "Name"
 msgstr "Имя"
 
-#: apps.py:46 forms.py:30
+#: apps.py:47 forms.py:30
 msgid "Value"
 msgstr "Значение"
 

@@ -106,14 +106,15 @@ class WorkflowTransitionField(
     )
     name = models.CharField(
         help_text=_(
-            'The name that will be used to identify this field in other parts '
-            'of the workflow system.'
+            'The name that will be used to identify this field in other '
+            'parts of the workflow system.'
         ), max_length=128, verbose_name=_(message='Internal name')
     )
     label = models.CharField(
         help_text=_(
             'The field name that will be shown on the user interface.'
-        ), max_length=128, verbose_name=_(message='Label'))
+        ), max_length=128, verbose_name=_(message='Label')
+    )
     help_text = models.TextField(
         blank=True, help_text=_(
             'An optional message that will help users better understand the '
@@ -127,15 +128,17 @@ class WorkflowTransitionField(
     )
     widget = models.PositiveIntegerField(
         blank=True, choices=WIDGET_CLASS_CHOICES, help_text=_(
-            'An optional class to change the default presentation of the field.'
+            'An optional class to change the default presentation of the '
+            'field.'
         ), null=True, verbose_name=_(message='Widget class')
     )
     widget_kwargs = models.TextField(
         blank=True, help_text=_(
             'A group of keyword arguments to customize the widget. '
             'Use YAML format.'
-        ), validators=[YAMLValidator()],
-        verbose_name=_(message='Widget keyword arguments')
+        ), validators=[
+            YAMLValidator()
+        ], verbose_name=_(message='Widget keyword arguments')
     )
 
     class Meta:
@@ -189,7 +192,9 @@ class WorkflowTransitionTriggerEvent(
         ordering = ('event_type__name',)
         unique_together = ('transition', 'event_type')
         verbose_name = _(message='Workflow transition trigger event')
-        verbose_name_plural = _(message='Workflow transitions trigger events')
+        verbose_name_plural = _(
+            message='Workflow transitions trigger events'
+        )
 
     def __str__(self):
         return str(self.transition)

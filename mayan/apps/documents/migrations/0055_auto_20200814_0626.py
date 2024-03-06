@@ -8,7 +8,7 @@ import mayan.apps.storage.classes
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('documents', '0054_trasheddocument'),
+        ('documents', '0054_trasheddocument')
     ]
 
     operations = [
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 help_text='The class responsible for producing the actual '
                 'filename used to store the uploaded documents.',
                 max_length=224, verbose_name='Filename generator backend'
-            ),
+            )
         ),
         migrations.AddField(
             model_name='documenttype',
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 'generator backend as a YAML dictionary.', validators=[
                     mayan.apps.common.validators.YAMLValidator()
                 ], verbose_name='Filename generator backend arguments'
-            ),
+            )
         ),
         migrations.AlterField(
             model_name='documentversion',
@@ -40,6 +40,6 @@ class Migration(migrations.Migration):
                     name='documents__documentversion'
                 ), upload_to=mayan.apps.documents.models.document_file_models.upload_to,
                 verbose_name='File'
-            ),
-        ),
+            )
+        )
     ]

@@ -3,7 +3,7 @@ class FormOptions:
         """
         Option definitions will be iterated. The option value will be
         determined in the following order: as passed via keyword
-        arguments during form intialization, as form get_... method or
+        arguments during form initialization, as form get_... method or
         finally as static Meta options. This is to allow a form with
         Meta options or method to be overridden at initialization
         and increase the usability of a single class.

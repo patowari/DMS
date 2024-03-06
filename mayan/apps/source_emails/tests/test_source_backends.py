@@ -13,8 +13,7 @@ from .literals import (
     TEST_EMAIL_ZERO_LENGTH_ATTACHMENT
 )
 from .mixins import (
-    EmailSourceTestMixin, IMAPEmailSourceTestMixin,
-    POP3EmailSourceTestMixin
+    EmailSourceTestMixin, IMAPEmailSourceTestMixin, POP3EmailSourceTestMixin
 )
 
 
@@ -37,7 +36,9 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
 
         self.assertEqual(
             Document.objects.first().label,
@@ -148,7 +149,9 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), 0)
+        self.assertEqual(
+            Document.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -167,7 +170,9 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), 2)
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
         self.assertQuerySetEqual(
             ordered=False, qs=Document.objects.all(), transform=repr, values=(
                 '<Document: test-01.png>', '<Document: email_body.html>'
@@ -252,7 +257,9 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), 2)
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
         self.assertQuerySetEqual(
             ordered=False, qs=Document.objects.all(), transform=repr, values=(
                 '<Document: test-01.png>', '<Document: email_body.html>',
@@ -335,7 +342,9 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self._execute_test_source_action(action_name='document_upload')
 
         # Only two attachments, no body document.
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 4)
@@ -381,13 +390,23 @@ class EmailSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), test_document_count + 2)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 2
+        )
 
         # Only two attachments and a body document.
-        self.assertEqual(Document.objects.count(), 2)
-        self.assertEqual(Document.objects.first().label, 'email_body.html')
-        self.assertEqual(Document.objects.all()[0].label, 'email_body.html')
-        self.assertEqual(Document.objects.all()[1].label, 'test-01.png')
+        self.assertEqual(
+            Document.objects.count(), 2
+        )
+        self.assertEqual(
+            Document.objects.first().label, 'email_body.html'
+        )
+        self.assertEqual(
+            Document.objects.all()[0].label, 'email_body.html'
+        )
+        self.assertEqual(
+            Document.objects.all()[1].label, 'test-01.png'
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 10)
@@ -470,7 +489,9 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -535,7 +556,9 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'dry_run': False}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -600,7 +623,9 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'dry_run': None}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -665,7 +690,9 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'dry_run': True}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -735,7 +762,9 @@ class POP3SourceBackendActionDocumentUploadTestCase(
 
         self._execute_test_source_action(action_name='document_upload')
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -800,7 +829,9 @@ class POP3SourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'dry_run': False}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -865,7 +896,9 @@ class POP3SourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'dry_run': None}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME
@@ -930,7 +963,9 @@ class POP3SourceBackendActionDocumentUploadTestCase(
             action_name='document_upload', extra_data={'dry_run': True}
         )
 
-        self.assertEqual(Document.objects.count(), test_document_count + 1)
+        self.assertEqual(
+            Document.objects.count(), test_document_count + 1
+        )
         self.assertEqual(
             Document.objects.first().label,
             TEST_EMAIL_BASE64_FILENAME_ATTACHMENT_FILENAME

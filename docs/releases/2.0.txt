@@ -32,8 +32,8 @@ Theming and re-branding
 All the presentation logic and markup has been moved into it's own app, the
 'appearance' app. All modifications required to customize the entire look of
 the Mayan EDMS can now be done in a single app. Very little markup remains
-in the other apps, and it's usually because of necessity, namely the widgets.py
-modules.
+in the other apps, and it's usually because of necessity, namely the
+``widgets.py`` modules.
 
 
 Improved page navigation interface
@@ -63,7 +63,7 @@ Document preview generation
 
 The image conversion system was re-factored from the ground up and uses a much
 smarted caching system. The document image cache has it's own Django file
-storage driver and no longer default to the system /tmp directory. By moving
+storage driver and no longer default to the system ``/tmp`` directory. By moving
 the document image cache to a Django file storage, the cache doesn't need to
 reside in the same filesystem or even computer serving the document images.
 This change also allows nodes in a clustered install to share the document
@@ -89,7 +89,7 @@ settings. Setting that related to a class or function, now specify the path to
 those classes or functions and they are imported dynamically at runtime.
 Example::
 
-    DOCUMENTS_STORAGE_BACKEND = 'storage.backends.filebasedstorage.FileBasedStorage'
+    ``DOCUMENTS_STORAGE_BACKEND = 'storage.backends.filebasedstorage.FileBasedStorage'``
 
 
 Removal of auto admin creation
@@ -213,7 +213,7 @@ titles are now clickable and will take the user straight to the document view.
 Removal of eval
 ^^^^^^^^^^^^^^^
 
-Use of Python's eval statement has been completely removed. Metadata type
+Use of Python's ``eval`` statement has been completely removed. Metadata type
 defaults, lookup fields, smart links and indexes templates now use Django's
 own template language.
 
@@ -253,8 +253,8 @@ RGB tags
 
 Previously tags could only choose from a predetermined number of color. This
 release changes that and tags be of any color. Tags now store the color
-selected in HTML RGB format. Existing tags are automatically converted to this
-new scheme.
+selected in HTML RGB format. Existing tags are automatically converted to
+this new scheme.
 
 
 Default document type and default document source
@@ -269,7 +269,7 @@ default document type and default document source are both called 'Default'.
 Link unbinding
 ^^^^^^^^^^^^^^
 
-Support for allowing 3rd party apps to unbind links binded by the core apps
+Support for allowing 3rd party apps to unbind links bound by the core apps
 was added to further improve re-branding and customization.
 
 
@@ -280,15 +280,15 @@ Statistics gathering and generation has been overhauled to allow for the
 creation of scheduled statistics. This allows statistics computation to be
 scheduled during low load times. A new management command was added to
 purge stale or orphan schedules left behind by the editing of statistics
-scheduled. The command is `purgestatistics` and has no parameters.
+scheduled. The command is ``purgestatistics`` and has no parameters.
 
 
 Apps merge
 ^^^^^^^^^^
 
 Several app were merge to reduce complexity of the code based on function.
-These are: the `home`, `common`, `project_tools` and `project_setup` apps,
-as well as the `documents` and `document_acls` apps.
+These are: the ``home``, ``common``, ``project_tools`` and ``project_setup``
+apps, as well as the ``documents`` and ``document_acls`` apps.
 
 
 New signals
@@ -297,13 +297,13 @@ New signals
 Two new signals are provided to better trigger processing documents at the
 correct moment, these are:
 
-* common/perform_upgrade - Launched on the `performupgrade` management command
-  to allow 3rd party apps to execute custom upgrade procedures in an unified
-  manner.
-* common/post_initial_setup - Launched on the `initialsetup` management command
-  to allow for post install initialization or setup.
-* common/post_upgrade - Launched after the `performupgrade` management command
-  finishes.
+* common/perform_upgrade - Launched on the ``performupgrade`` management
+  command to allow 3rd party apps to execute custom upgrade procedures in
+  an unified manner.
+* common/post_initial_setup - Launched on the ``initialsetup`` management
+  command to allow for post install initialization or setup.
+* common/post_upgrade - Launched after the ``performupgrade`` management
+  command finishes.
 * documents/post_version_upload = Launched after a new document version is
   uploaded.
 * document/post_document_type_change = Launched after the document type of a
@@ -317,10 +317,10 @@ correct moment, these are:
 Test improvements
 ^^^^^^^^^^^^^^^^^
 
-Instead of a flat tests.py file, each app now has a tests/ directory containing
-tests modules for each particular aspect of an apps, ie: test_models.py,
-test_views.py, test_classes.py. The total number and coverage of tests has been
-greatly increased.
+Instead of a flat tests.py file, each app now has a tests/ directory
+containing tests modules for each particular aspect of an apps, ie:
+``test_models.py``, ``test_views.py``, ``test_classes.py``. The total
+number and coverage of tests has been greatly increased.
 
 
 Indexes recalculation
@@ -373,7 +373,7 @@ App logging to the console is now automatically enabled. If Django's ``DEBUG``
 flag is ``True`` the default level for auto logging is ``DEBUG``. If Django's
 ``DEBUG`` flag is ``False`` (as in production), the default level changes to
 ``INFO``. This should make it easier to add relevant messages to issue tickets
-as well as a adecuate logging during production.
+as well as a adequate logging during production.
 
 
 Other changes
@@ -410,10 +410,13 @@ Other changes
 * Thumbnails for documents in trash.
 * Production deployment documentation chapter.
 * Command line to create an initial settings file: ``createsettings``.
-* Initialsetup now continues even is a settings/local.py exists.
-* default_app_config for each app.
-* Natural key support for many models allowing database migrations using dumped data.
-* Separate documentation requirements file to allow for contributor who only want to work on documentation.
+* The command ``initialsetup`` now continues even is a ``settings/local.py``
+  exists.
+* ``default_app_config`` for each app.
+* Natural key support for many models allowing database migrations using
+  dumped data.
+* Separate documentation requirements file to allow for contributor who
+  only want to work on documentation.
 * Centralized testing with a new management command, ``runtests``.
 * Addition of a tox testing configuration.
 * Email test body capture.
@@ -522,7 +525,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`59` New bootstrap based UI
 * :gitlab-issue:`60` Backport class based navigation code from the unstable branch
 * :gitlab-issue:`62` Simplify and reduce code in templates
-* :gitlab-issue:`67` Python 3 compatibility: Update models __unicode__ methdo to __str__ methods (using Django's six library)
+* :gitlab-issue:`67` Python 3 compatibility: Update models __unicode__ method to __str__ methods (using Django's six library)
 * :gitlab-issue:`121` Twitter Bootstrap theme for Mayan EDMS
 * :gitlab-issue:`155` Header does not fit list on documents/list on small screens (laptop)
 * :gitlab-issue:`170` Remove use of python-hkp
@@ -545,7 +548,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`164` Keep fancybox prev & next buttons enabled all the time
 * :gitlab-issue:`167` Add workflow completion number to states
 * :gitlab-issue:`168` Add field to store last error of source during execution
-* :gitlab-issue:`171` tesseract fails with german language (wrong abbreviation)
+* :gitlab-issue:`171` Tesseract fails with German language (wrong abbreviation)
 * :gitlab-issue:`173` Add post_document_upload signal
 * :gitlab-issue:`174` Bootstrap UI with master branch
 * :gitlab-issue:`176` Replace default email domain
@@ -564,7 +567,7 @@ Bugs fixed or issues closed
 * :gitlab-issue:`201` Untranslated items
 * :gitlab-issue:`202` AutoAdminSingleton matching query does not exist.
 * :gitlab-issue:`203` KeyError at /sources/upload/document/new/interactive/
-* :gitlab-issue:`204` Problems to add required metadata after changin the document type
+* :gitlab-issue:`204` Problems to add required metadata after changing the document type
 * :gitlab-issue:`216` Add default_app_config value to each app
 * :gitlab-issue:`223` [Documents] Trigger event_document_type_change on the model not on the view
 * :gitlab-issue:`227` decoder zip not available

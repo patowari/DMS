@@ -18,8 +18,8 @@ from ..icons import (
 from ..links import link_asset_create
 from ..models import Asset
 from ..permissions import (
-    permission_asset_create, permission_asset_delete,
-    permission_asset_edit, permission_asset_view
+    permission_asset_create, permission_asset_delete, permission_asset_edit,
+    permission_asset_view
 )
 
 logger = logging.getLogger(name=__name__)
@@ -33,7 +33,7 @@ class AssetCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _(message='Create asset'),
+            'title': _(message='Create asset')
         }
 
     def get_instance_extra_data(self):
@@ -67,7 +67,9 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
             result.update(
                 {
                     'object': self.object_list.first(),
-                    'title': _(message='Delete asset: %s?') % self.object_list.first()
+                    'title': _(
+                        message='Delete asset: %s?'
+                    ) % self.object_list.first()
                 }
             )
 
@@ -83,7 +85,9 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
             )
         except Exception as exception:
             messages.error(
-                message=_(message='Error deleting asset "%(asset)s": %(error)s') % {
+                message=_(
+                    message='Error deleting asset "%(asset)s": %(error)s'
+                ) % {
                     'asset': instance, 'error': exception
                 }, request=self.request
             )
@@ -137,9 +141,9 @@ class AssetListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Assets are files that can be used in conjuction with '
+                'Assets are files that can be used in conjunction with '
                 'certain transformations.'
             ),
             'no_results_title': _(message='No assets available'),
-            'title': _(message='Assets'),
+            'title': _(message='Assets')
         }

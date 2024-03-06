@@ -198,11 +198,14 @@ translations-transifex-check: ## Check that all app have a Transifex entry
 translations-transifex-generate: ## Check that all app have a Transifex entry
 	contrib/scripts/translations_helper.py transifex_generate_config > ./.tx/config
 
-translations-make: ## Refresh all translation files.
-	contrib/scripts/translations_helper.py make
+translations-django-make: ## Refresh all translation files.
+	contrib/scripts/translations_helper.py django_make
 
-translations-compile: ## Compile all translation files.
-	contrib/scripts/translations_helper.py compile
+translations-django-make-javascript: ## Refresh all JavaScript translation files.
+	contrib/scripts/translations_helper.py django_make_javascript
+
+translations-django-compile: ## Compile all translation files.
+	contrib/scripts/translations_helper.py django_compile
 
 translations-transifex-push: ## Upload all translation files to Transifex.
 	tx push -s
@@ -211,7 +214,7 @@ translations-transifex-pull: ## Download all translation files from Transifex.
 	tx pull -f
 
 translations-all: ## Execute all translations targets.
-translations-all: translations-source-clear translations-source-fuzzy-remove translations-transifex-generate translations-make translations-transifex-push translations-transifex-pull translations-compile
+translations-all: translations-source-clear translations-source-fuzzy-remove translations-transifex-generate translations-django-make translations-django-make-javascript translations-transifex-push translations-transifex-pull translations-django-compile
 
 # Releases
 
@@ -273,7 +276,7 @@ generate-setup: generate-requirements
 	@./contrib/scripts/generate_setup.py
 	@echo "Complete."
 
-generate-requirements: ## Generate all requirements files from the project depedency declarations.
+generate-requirements: ## Generate all requirements files from the project dependency declarations.
 	@./manage.py dependencies_generate_requirements build > requirements/build.txt
 	@./manage.py dependencies_generate_requirements development > requirements/development.txt
 	@./manage.py dependencies_generate_requirements documentation > requirements/documentation.txt
@@ -333,7 +336,7 @@ setup-dev-environment: ## Bootstrap a virtualenv by install all dependencies to 
 setup-dev-environment: setup-dev-operating-system-packages setup-dev-python-libraries
 
 setup-dev-operating-system-packages:  ## Install the operating system packages needed for development.
-	sudo apt-get install --yes exiftool gcc gettext gnupg1 graphviz libcairo2 libffi-dev libfuse2 libjpeg-dev libldap2-dev libpng-dev libsasl2-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
+	sudo apt-get install --yes clamav exiftool gcc gettext gnupg1 graphviz libcairo2 libffi-dev libfuse2 libjpeg-dev libldap2-dev libpng-dev libsasl2-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
 
 setup-dev-python-libraries: ## Install the Python libraries needed for development.
 	pip install --requirement requirements.txt --requirement requirements/development.txt --requirement requirements/testing-base.txt --requirement requirements/documentation.txt --requirement requirements/build.txt

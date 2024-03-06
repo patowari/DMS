@@ -30,8 +30,9 @@ class DecorationTestCase(AssetTestMixin, GenericDocumentTestCase):
 
         test_document_version_page_image = self._get_test_document_version_page_image()
         self.assertNotEqual(
-            test_document_version_page_image.getpixel(xy=(0, 0)),
-            test_asset_pixel_color
+            test_document_version_page_image.getpixel(
+                xy=(0, 0)
+            ), test_asset_pixel_color
         )
 
         self.assertNotEqual(

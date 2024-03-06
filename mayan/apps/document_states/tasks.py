@@ -46,10 +46,10 @@ def task_launch_workflow(workflow_id, user_id=None):
     workflow = Workflow.objects.get(pk=workflow_id)
 
     logger.info('Start launching workflow: %d', workflow_id)
-    documents_queryset = Document.valid.filter(
+    queryset_documents = Document.valid.filter(
         document_type__in=workflow.document_types.all()
     )
-    for document in documents_queryset:
+    for document in queryset_documents:
         workflow.launch_for(document=document, user=user)
 
     logger.info('Finished launching workflow: %d', workflow_id)

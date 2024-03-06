@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -26,19 +26,19 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:26 permissions.py:6
+#: apps.py:27 permissions.py:6
 msgid "Smart settings"
 msgstr "Ajustes inteligentes"
 
-#: apps.py:36
+#: apps.py:37
 msgid "Setting count"
 msgstr "Contagem de ajustes"
 
-#: apps.py:42
+#: apps.py:43
 msgid "Name"
 msgstr "Nome"
 
-#: apps.py:46 forms.py:30
+#: apps.py:47 forms.py:30
 msgid "Value"
 msgstr "Valor"
 

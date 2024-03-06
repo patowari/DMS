@@ -44,10 +44,14 @@ class Command(management.BaseCommand):
                 exit(1)
 
             try:
-                template = PlatformTemplate.get(name=options['name'])
+                template = PlatformTemplate.get(
+                    name=options['name']
+                )
             except KeyError:
                 self.stderr.write(
-                    msg='Unknown template "{}".'.format(options['name'])
+                    msg='Unknown template "{}".'.format(
+                        options['name']
+                    )
                 )
                 exit(1)
             else:

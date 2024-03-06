@@ -12,28 +12,27 @@ from actstream import action
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.menus import menu_list_facet
-from mayan.apps.common.settings import setting_project_url
+from mayan.apps.organizations.utils import get_organization_installation_url
 
-from .literals import (
-    DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_TYPE_NAMESPACE_NAME,
-    EVENT_EVENTS_CLEARED_NAME, EVENT_EVENTS_EXPORTED_NAME
-)
 from .links import (
     link_object_event_list, link_object_event_type_user_subscription_list
 )
+from .literals import (
+    DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_EVENTS_CLEARED_NAME,
+    EVENT_EVENTS_EXPORTED_NAME, EVENT_TYPE_NAMESPACE_NAME
+)
 from .permissions import (
-    permission_events_clear, permission_events_export, permission_events_view
+    permission_events_clear, permission_events_export,
+    permission_events_view
 )
 from .settings import setting_disable_asynchronous_mode
-
-logger = logging.getLogger(name=__name__)
-
 
 DEFAULT_ACTION_EXPORTER_FIELD_NAMES = (
     'timestamp', 'id', 'actor_content_type', 'actor_object_id', 'actor',
     'target_content_type', 'target_object_id', 'target', 'verb',
     'action_object_content_type', 'action_object_object_id', 'action_object'
 )
+logger = logging.getLogger(name=__name__)
 
 
 class ActionExporter:
@@ -70,7 +69,9 @@ class ActionExporter:
             ]
             writer.writerow(row)
 
-    def export_to_download_file(self, user=None):
+    def export_to_download_file(
+        self, organization_installation_url=None, user=None
+    ):
         event_type_namespace = EventTypeNamespace.get(
             name=EVENT_TYPE_NAMESPACE_NAME
         )
@@ -100,12 +101,15 @@ class ActionExporter:
         )
 
         if user:
-            download_list_url = furl(setting_project_url.value).join(
+            if not organization_installation_url:
+                organization_installation_url = get_organization_installation_url()
+
+            download_list_url = furl(organization_installation_url).join(
                 reverse(
                     viewname='storage:download_file_list'
                 )
             ).tostr()
-            download_url = furl(setting_project_url.value).join(
+            download_url = furl(organization_installation_url).join(
                 reverse(
                     viewname='storage:download_file_download',
                     kwargs={'download_file_id': download_file.pk}
@@ -138,6 +142,7 @@ class EventModelRegistry:
     ):
         # Hidden imports.
         from actstream import registry
+
         from mayan.apps.acls.classes import ModelPermission
 
         AccessControlList = apps.get_model(
@@ -307,7 +312,7 @@ class EventType:
         # Create notifications for the actions created by the event committed.
 
         # Gather the users subscribed globally to the event.
-        user_queryset = User.objects.filter(
+        queryset_users = User.objects.filter(
             id__in=EventSubscription.objects.filter(
                 stored_event_type__name=result.verb
             ).values('user')
@@ -315,7 +320,7 @@ class EventType:
 
         # Gather the users subscribed to the target object event.
         if result.target:
-            user_queryset = user_queryset | User.objects.filter(
+            queryset_users = queryset_users | User.objects.filter(
                 id__in=ObjectEventSubscription.objects.filter(
                     content_type=result.target_content_type,
                     object_id=result.target.pk,
@@ -325,7 +330,7 @@ class EventType:
 
         # Gather the users subscribed to the action object event.
         if result.action_object:
-            user_queryset = user_queryset | User.objects.filter(
+            queryset_users = queryset_users | User.objects.filter(
                 id__in=ObjectEventSubscription.objects.filter(
                     content_type=result.action_object_content_type,
                     object_id=result.action_object.pk,
@@ -333,7 +338,7 @@ class EventType:
                 ).values('user')
             )
 
-        for user in user_queryset:
+        for user in queryset_users:
             if result.action_object:
                 Notification.objects.create(action=result, user=user)
                 # Don't check or add any other notification for the
@@ -348,8 +353,8 @@ class EventType:
 
     def commit(self, action_object=None, actor=None, target=None):
         # Hidden import.
-        from .tasks import task_event_commit
         # This circular import is necessary.
+        from .tasks import task_event_commit
 
         task_kwargs = {'event_id': self.id}
 

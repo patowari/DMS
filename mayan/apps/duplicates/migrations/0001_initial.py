@@ -6,7 +6,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('documents', '0074_auto_20201130_0341'),
+        ('documents', '0074_auto_20201130_0341')
     ]
 
     operations = [
@@ -36,11 +36,11 @@ class Migration(migrations.Migration):
                         to='documents.Document',
                         verbose_name='Duplicated documents'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Duplicated document',
-                'verbose_name_plural': 'Duplicated documents',
-            },
-        ),
+                'verbose_name_plural': 'Duplicated documents'
+            }
+        )
     ]

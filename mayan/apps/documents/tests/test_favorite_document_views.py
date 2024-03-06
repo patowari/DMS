@@ -3,7 +3,7 @@ from ..permissions import permission_document_view
 
 from .base import GenericDocumentViewTestCase
 from .mixins.favorite_document_mixins import (
-    FavoriteDocumentTestMixin, FavoriteDocumentsViewTestMixin
+    FavoriteDocumentsViewTestMixin, FavoriteDocumentTestMixin
 )
 
 

@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('converter', '0011_auto_20170118_1758'),
+        ('converter', '0011_auto_20170118_1758')
     ]
 
     operations = [
@@ -27,5 +27,5 @@ class Migration(migrations.Migration):
                     ), ('zoom', 'Zoom: percent')
                 ], max_length=128, verbose_name='Name'
             ),
-        ),
+        )
     ]

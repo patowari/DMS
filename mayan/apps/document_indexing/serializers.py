@@ -1,5 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 
+from mptt.exceptions import InvalidMove
+from rest_framework.exceptions import ValidationError
 from rest_framework.reverse import reverse
 from rest_framework_recursive.fields import RecursiveField
 
@@ -29,14 +31,14 @@ class IndexInstanceSerializer(serializers.ModelSerializer):
     def get_url(self, obj):
         return reverse(
             viewname='rest_api:indexinstance-detail', kwargs={
-                'index_instance_id': obj.pk,
+                'index_instance_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
     def get_nodes_url(self, obj):
         return reverse(
             viewname='rest_api:indexinstancenode-list', kwargs={
-                'index_instance_id': obj.pk,
+                'index_instance_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -85,7 +87,7 @@ class IndexInstanceNodeSerializer(serializers.ModelSerializer):
     def get_index_url(self, obj):
         return reverse(
             viewname='rest_api:indexinstance-detail', kwargs={
-                'index_instance_id': obj.index().pk,
+                'index_instance_id': obj.index().pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -143,7 +145,7 @@ class IndexTemplateNodeSerializer(serializers.ModelSerializer):
     def get_index_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplate-detail', kwargs={
-                'index_template_id': obj.index.pk,
+                'index_template_id': obj.index.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -203,7 +205,7 @@ class IndexTemplateNodeWriteSerializer(serializers.ModelSerializer):
     def get_index_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplate-detail', kwargs={
-                'index_template_id': obj.index.pk,
+                'index_template_id': obj.index.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
@@ -229,6 +231,14 @@ class IndexTemplateNodeWriteSerializer(serializers.ModelSerializer):
                 'index_template_node_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
+
+    def update(self, instance, validated_data):
+        try:
+            return super().update(
+                instance=instance, validated_data=validated_data
+            )
+        except InvalidMove as exception:
+            raise ValidationError(detail=exception)
 
 
 class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):
@@ -281,7 +291,7 @@ class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):
                 'label': _(message='Document types'),
                 'lookup_url_kwarg': 'document_type_id',
                 'view_name': 'rest_api:documenttype-detail'
-            },
+            }
         }
         fields = (
             'document_types_add_url', 'document_types_url',
@@ -299,14 +309,14 @@ class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):
     def get_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplate-detail', kwargs={
-                'index_template_id': obj.pk,
+                'index_template_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 
     def get_nodes_url(self, obj):
         return reverse(
             viewname='rest_api:indextemplatenode-list', kwargs={
-                'index_template_id': obj.pk,
+                'index_template_id': obj.pk
             }, format=self.context['format'], request=self.context['request']
         )
 

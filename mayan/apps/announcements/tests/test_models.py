@@ -17,7 +17,9 @@ class AnnouncementModelTestCase(AnnouncementTestMixin, BaseTestCase):
     def test_basic(self):
         queryset = Announcement.objects.get_for_now()
 
-        self.assertEqual(queryset.exists(), True)
+        self.assertEqual(
+            queryset.exists(), True
+        )
 
     def test_end_datetime(self):
         self._test_announcement.start_datetime = timezone.now() - timedelta(days=2)
@@ -26,7 +28,9 @@ class AnnouncementModelTestCase(AnnouncementTestMixin, BaseTestCase):
 
         queryset = Announcement.objects.get_for_now()
 
-        self.assertEqual(queryset.exists(), False)
+        self.assertEqual(
+            queryset.exists(), False
+        )
 
     def test_enable(self):
         self._test_announcement.enabled = False
@@ -34,7 +38,9 @@ class AnnouncementModelTestCase(AnnouncementTestMixin, BaseTestCase):
 
         queryset = Announcement.objects.get_for_now()
 
-        self.assertEqual(queryset.exists(), False)
+        self.assertEqual(
+            queryset.exists(), False
+        )
 
     def test_start_datetime(self):
         self._test_announcement.start_datetime = timezone.now() - timedelta(days=1)
@@ -45,4 +51,6 @@ class AnnouncementModelTestCase(AnnouncementTestMixin, BaseTestCase):
         self.assertEqual(queryset.first(), self._test_announcement)
 
     def test_method_get_absolute_url(self):
-        self.assertTrue(self._test_announcement.get_absolute_url())
+        self.assertTrue(
+            self._test_announcement.get_absolute_url()
+        )

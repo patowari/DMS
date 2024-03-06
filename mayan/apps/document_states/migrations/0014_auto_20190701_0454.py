@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_states', '0013_auto_20190423_0810'),
+        ('document_states', '0013_auto_20190423_0810')
     ]
 
     operations = [
@@ -59,25 +59,27 @@ class Migration(migrations.Migration):
                         to='document_states.WorkflowTransition',
                         verbose_name='Transition'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Workflow transition trigger event',
-                'verbose_name_plural': 'Workflow transitions trigger events',
-            },
+                'verbose_name_plural': 'Workflow transitions trigger events'
+            }
         ),
         migrations.AddField(
             model_name='workflowinstance',
             name='context',
-            field=models.TextField(blank=True, verbose_name='Backend data'),
+            field=models.TextField(blank=True, verbose_name='Backend data')
         ),
         migrations.AddField(
             model_name='workflowinstancelogentry',
             name='extra_data',
-            field=models.TextField(blank=True, verbose_name='Extra data'),
+            field=models.TextField(blank=True, verbose_name='Extra data')
         ),
         migrations.AlterUniqueTogether(
             name='workflowtransitionfield',
-            unique_together={('transition', 'name')},
-        ),
+            unique_together={
+                ('transition', 'name')
+            }
+        )
     ]

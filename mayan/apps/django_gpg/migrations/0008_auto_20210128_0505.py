@@ -20,12 +20,18 @@ def code_save_keys(apps, schema_editor):
         )
 
         key.creation_date = make_aware(
-            value=datetime.fromtimestamp(int(key_info['date']))
+            value=datetime.fromtimestamp(
+                int(
+                    key_info['date']
+                )
+            )
         )
         if key_info['expires']:
             key.expiration_date = make_aware(
                 value=datetime.fromtimestamp(
-                    int(key_info['expires'])
+                    int(
+                        key_info['expires']
+                    )
                 )
             )
         key.save()
@@ -44,12 +50,18 @@ def code_save_keys_reverse(apps, schema_editor):
         )
 
         key.creation_date = make_aware(
-            value=datetime.fromtimestamp(int(key_info['date']))
+            value=datetime.fromtimestamp(
+                int(
+                    key_info['date']
+                )
+            )
         ).date()
         if key_info['expires']:
             key.expiration_date = make_aware(
                 value=datetime.fromtimestamp(
-                    int(key_info['expires'])
+                    int(
+                        key_info['expires']
+                    )
                 )
             ).date()
         key.save()

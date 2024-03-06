@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('django_gpg', '0003_auto_20160322_1810'),
+        ('django_gpg', '0003_auto_20160322_1810')
     ]
 
     operations = [
@@ -19,5 +19,5 @@ class Migration(migrations.Migration):
                 verbose_name='Type', max_length=3, editable=False,
                 choices=[('pub', 'Public'), ('sec', 'Secret')]
             ),
-        ),
+        )
     ]

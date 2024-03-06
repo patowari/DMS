@@ -8,7 +8,7 @@ from ..permissions import (
     permission_document_type_edit, permission_document_type_view
 )
 from ..serializers.document_type_serializers import (
-    DocumentTypeQuickLabelSerializer, DocumentTypeSerializer,
+    DocumentTypeQuickLabelSerializer, DocumentTypeSerializer
 )
 
 from .api_view_mixins import ParentObjectDocumentTypeAPIViewMixin

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -37,12 +37,12 @@ msgstr "Conversor"
 msgid "Transformation"
 msgstr "Transformação"
 
-#: backends/python.py:106
+#: backends/python.py:105
 #, python-format
 msgid "Exception determining page count using Pillow; %s"
 msgstr "Exceção a determinar o número de páginas usando Pillow; %s"
 
-#: backends/python.py:194 backends/python.py:211
+#: backends/python.py:193 backends/python.py:210
 #, python-format
 msgid "Exception determining PDF page count; %s"
 msgstr "Exceção a determinar o número de páginas PDF; %s"
@@ -129,7 +129,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: links.py:52 links.py:60 models.py:54 storages.py:21
-#: views/asset_views.py:144
+#: views/asset_views.py:148
 msgid "Assets"
 msgstr "Recursos"
 
@@ -141,7 +141,7 @@ msgstr "Transformações"
 msgid "Select new transformation"
 msgstr "Selecionar nova transformação"
 
-#: model_mixins.py:124 models.py:167
+#: model_mixins.py:124 models.py:169
 msgid "Arguments"
 msgstr "Argumentos"
 
@@ -193,7 +193,7 @@ msgstr "Tipo de conteúdo"
 msgid "Object ID"
 msgstr "ID do Objeto"
 
-#: models.py:120 models.py:170
+#: models.py:120 models.py:172
 msgid "Enabled"
 msgstr "Ativado"
 
@@ -221,15 +221,15 @@ msgstr ""
 "Insira os argumentos para a transformação como um dicionário YAML. ie:  "
 "{\"degrees\": 180}"
 
-#: models.py:178
+#: models.py:180
 msgid "Layer transformation"
 msgstr "Camada de transformação"
 
-#: models.py:179
+#: models.py:181
 msgid "Layer transformations"
 msgstr "Transformações de camada"
 
-#: models.py:187
+#: models.py:189
 msgid "Unknown transformation class"
 msgstr "Classe de transformação desconhecida"
 
@@ -362,7 +362,7 @@ msgstr ""
 msgid "Assets cache"
 msgstr "Cache de recursos"
 
-#: transformation_mixins.py:20 transformations.py:632
+#: transformation_mixins.py:20 transformations.py:634
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
@@ -379,11 +379,11 @@ msgstr ""
 msgid "Transparency"
 msgstr ""
 
-#: transformation_mixins.py:29 transformations.py:738
+#: transformation_mixins.py:29 transformations.py:740
 msgid "Zoom level in percent."
 msgstr ""
 
-#: transformation_mixins.py:30 transformations.py:733
+#: transformation_mixins.py:30 transformations.py:735
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -396,8 +396,8 @@ msgid "Horizontal position in pixels from the left."
 msgstr ""
 
 #: transformation_mixins.py:120 transformation_mixins.py:165
-#: transformation_mixins.py:230 transformations.py:235 transformations.py:337
-#: transformations.py:435
+#: transformation_mixins.py:230 transformations.py:237 transformations.py:339
+#: transformations.py:437
 msgid "Left"
 msgstr ""
 
@@ -406,8 +406,8 @@ msgid "Vertical position in pixels from the top."
 msgstr ""
 
 #: transformation_mixins.py:124 transformation_mixins.py:170
-#: transformation_mixins.py:240 transformations.py:239 transformations.py:341
-#: transformations.py:439
+#: transformation_mixins.py:240 transformations.py:241 transformations.py:343
+#: transformations.py:441
 msgid "Top"
 msgstr ""
 
@@ -423,7 +423,7 @@ msgstr ""
 msgid "Vertical position in percent from the top."
 msgstr ""
 
-#: transformation_mixins.py:223 transformations.py:223
+#: transformation_mixins.py:223 transformations.py:225
 msgid "Paste an asset as watermark"
 msgstr "Colar um recurso como marca d´água"
 
@@ -435,8 +435,8 @@ msgstr ""
 msgid "Horizontal end position in pixels from the right."
 msgstr ""
 
-#: transformation_mixins.py:235 transformations.py:244 transformations.py:345
-#: transformations.py:443
+#: transformation_mixins.py:235 transformations.py:246 transformations.py:347
+#: transformations.py:445
 msgid "Right"
 msgstr ""
 
@@ -448,8 +448,8 @@ msgstr ""
 msgid "Vertical end position in pixels from the top."
 msgstr ""
 
-#: transformation_mixins.py:245 transformations.py:249 transformations.py:349
-#: transformations.py:447
+#: transformation_mixins.py:245 transformations.py:251 transformations.py:351
+#: transformations.py:449
 msgid "Bottom"
 msgstr ""
 
@@ -477,7 +477,7 @@ msgstr ""
 msgid "Color used to fill the rectangle."
 msgstr ""
 
-#: transformation_mixins.py:356 transformations.py:639
+#: transformation_mixins.py:356 transformations.py:641
 msgid "Fill color"
 msgstr ""
 
@@ -505,159 +505,159 @@ msgstr ""
 msgid "Outline width"
 msgstr ""
 
-#: transformations.py:207
+#: transformations.py:209
 msgid "Paste an asset (absolute coordinates)"
 msgstr ""
 
-#: transformations.py:215
+#: transformations.py:217
 msgid "Paste an asset (percent coordinates)"
 msgstr ""
 
-#: transformations.py:229
+#: transformations.py:231
 msgid "Crop"
 msgstr "Cortar"
 
-#: transformations.py:234
+#: transformations.py:236
 msgid "Number of pixels to remove from the left."
 msgstr ""
 
-#: transformations.py:238
+#: transformations.py:240
 msgid "Number of pixels to remove from the top."
 msgstr ""
 
-#: transformations.py:243
+#: transformations.py:245
 msgid "Number of pixels to remove from the right."
 msgstr ""
 
-#: transformations.py:248
+#: transformations.py:250
 msgid "Number of pixels to remove from the bottom."
 msgstr ""
 
-#: transformations.py:331
+#: transformations.py:333
 msgid "Draw rectangle"
 msgstr "Desenhar retângulo"
 
-#: transformations.py:336
+#: transformations.py:338
 msgid "Left side location in pixels."
 msgstr ""
 
-#: transformations.py:340
+#: transformations.py:342
 msgid "Top side location in pixels."
 msgstr ""
 
-#: transformations.py:344
+#: transformations.py:346
 msgid "Right side location in pixels."
 msgstr ""
 
-#: transformations.py:348
+#: transformations.py:350
 msgid "Bottom side location in pixels."
 msgstr ""
 
-#: transformations.py:429
+#: transformations.py:431
 msgid "Draw rectangle (percent coordinates)"
 msgstr ""
 
-#: transformations.py:434
+#: transformations.py:436
 msgid "Left side location in percent."
 msgstr ""
 
-#: transformations.py:438
+#: transformations.py:440
 msgid "Top side location in percent."
 msgstr ""
 
-#: transformations.py:442
+#: transformations.py:444
 msgid "Right side location in percent."
 msgstr ""
 
-#: transformations.py:446
+#: transformations.py:448
 msgid "Bottom side location in percent."
 msgstr ""
 
-#: transformations.py:529
+#: transformations.py:531
 msgid "Flip"
 msgstr "Girar"
 
-#: transformations.py:540
+#: transformations.py:542
 msgid "Gaussian blur"
 msgstr "Mancha Gaussiana"
 
-#: transformations.py:545 transformations.py:708
+#: transformations.py:547 transformations.py:710
 msgid "Radius"
 msgstr ""
 
-#: transformations.py:557
+#: transformations.py:559
 msgid "Line art"
 msgstr "Desenho em linhas"
 
-#: transformations.py:571
+#: transformations.py:573
 msgid "Mirror"
 msgstr "Espelhar"
 
-#: transformations.py:582
+#: transformations.py:584
 msgid "Resize"
 msgstr "Redimensionar"
 
-#: transformations.py:588
+#: transformations.py:590
 msgid "New width in pixels."
 msgstr ""
 
-#: transformations.py:589
+#: transformations.py:591
 msgid "Width"
 msgstr "largura"
 
-#: transformations.py:593
+#: transformations.py:595
 msgid "New height in pixels."
 msgstr ""
 
-#: transformations.py:594
+#: transformations.py:596
 msgid "Height"
 msgstr "altura"
 
-#: transformations.py:626
+#: transformations.py:628
 msgid "Rotate"
 msgstr "Rodar"
 
-#: transformations.py:634
+#: transformations.py:636
 msgid "Degrees"
 msgstr "graus"
 
-#: transformations.py:638
+#: transformations.py:640
 msgid "Color to be used for area outside of the rotated image."
 msgstr ""
 
-#: transformations.py:670
+#: transformations.py:672
 msgid "Rotate 90 degrees"
 msgstr "Girar 90 graus"
 
-#: transformations.py:681
+#: transformations.py:683
 msgid "Rotate 180 degrees"
 msgstr "Girar 180 graus"
 
-#: transformations.py:692
+#: transformations.py:694
 msgid "Rotate 270 degrees"
 msgstr "Girar 270 graus"
 
-#: transformations.py:702
+#: transformations.py:704
 msgid "Unsharp masking"
 msgstr "Unsharp masking"
 
-#: transformations.py:707
+#: transformations.py:709
 msgid "The blur radius in pixels."
 msgstr ""
 
-#: transformations.py:711
+#: transformations.py:713
 msgid "Unsharp strength in percent."
 msgstr ""
 
-#: transformations.py:712 transformations.py:739
+#: transformations.py:714 transformations.py:741
 msgid "Percent"
 msgstr "Percentual"
 
-#: transformations.py:716
+#: transformations.py:718
 msgid "Minimum brightness change that will be sharpened."
 msgstr ""
 
-#: transformations.py:717
+#: transformations.py:719
 msgid "Tthreshold"
 msgstr ""
 
@@ -678,40 +678,38 @@ msgstr[0] "Remover recurso selecionado?"
 msgstr[1] "Remover os recursos selecionados?"
 msgstr[2] "Remover os recursos selecionados?"
 
-#: views/asset_views.py:70
+#: views/asset_views.py:71
 #, python-format
 msgid "Delete asset: %s?"
 msgstr "Remover recurso: %s ?"
 
-#: views/asset_views.py:81
+#: views/asset_views.py:83
 #, python-format
 msgid "Asset \"%s\" deleted successfully."
 msgstr "Recurso \" %s \" removido com sucesso."
 
-#: views/asset_views.py:86
+#: views/asset_views.py:89
 #, python-format
 msgid "Error deleting asset \"%(asset)s\": %(error)s"
 msgstr "Erro ao remover \" %(asset)s \": %(error)s"
 
-#: views/asset_views.py:102
+#: views/asset_views.py:106
 #, python-format
 msgid "Details asset: %s"
 msgstr "Detalhes do recurso: %s"
 
-#: views/asset_views.py:117
+#: views/asset_views.py:121
 #, python-format
 msgid "Edit asset: %s"
 msgstr "Editar recurso: %s"
 
-#: views/asset_views.py:140
+#: views/asset_views.py:144
 msgid ""
-"Assets are files that can be used in conjuction with certain "
+"Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
-"Recursos são ficheiros que podem ser utilizados e conjunto com certas "
-"transformações."
 
-#: views/asset_views.py:143
+#: views/asset_views.py:147
 msgid "No assets available"
 msgstr "Nenhum recurso disponível"
 

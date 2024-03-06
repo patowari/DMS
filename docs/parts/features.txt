@@ -86,7 +86,7 @@ Features
     to practically any language spoken in the world. For a list of translated
     languages have a look at the Transifex_ project location.
 
-- :ref:`Plugable storage backends<apps-storage>`.
+- :ref:`Pluggable storage backends<apps-storage>`.
 
   - Built in support for file system storage.
   - It is very easy to use 3rd party plugins such as the ones available for

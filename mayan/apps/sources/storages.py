@@ -5,7 +5,7 @@ from mayan.apps.storage.classes import DefinedStorage
 from .literals import STORAGE_NAME_SOURCE_CACHE_FOLDER
 from .settings import (
     setting_source_cache_storage_backend,
-    setting_source_cache_storage_backend_arguments,
+    setting_source_cache_storage_backend_arguments
 )
 
 storage_source_cache = DefinedStorage(

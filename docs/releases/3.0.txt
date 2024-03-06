@@ -53,9 +53,9 @@ Notification improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These work by allowing users to subscribe to a particular event like Document
-Uploads or to an event of a particular document like when an invoice is edited.
-If these events occurs, the user gets a reminder next to the bell icon in the
-main menu bar.
+Uploads or to an event of a particular document like when an invoice is
+edited. If these events occurs, the user gets a reminder next to the bell
+icon in the main menu bar.
 
 
 Dependencies upgrades
@@ -80,7 +80,9 @@ their latest release.
 - pytz: 2018.3
 - sh: 1.12.14
 - rest_framework_swagger replaced with drf-yasg: 1.5.0
-- FancyBox was upgraded to version 3, Font Awesome to version 5, jQuery to version 3.3.1. ajaxForm version 4.2.2, URI.js 1.19.1 and pace 0.7.8 were added as part of the conversion to single page app.
+- FancyBox was upgraded to version 3, Font Awesome to version 5, jQuery
+  to version 3.3.1. ajaxForm version 4.2.2, URI.js 1.19.1 and pace 0.7.8
+  were added as part of the conversion to single page app.
 
 
 Search syntax
@@ -148,24 +150,26 @@ resolution.
 
 The settings are now:
 
-``DOCUMENTS_DISPLAY_WIDTH``, ``DOCUMENTS_DISPLAY_HEIGHT``, ``DOCUMENTS_PREVIEW_WIDTH``,
-``DOCUMENTS_PREVIEW_HEIGHT``, ``DOCUMENTS_PRINT_WIDTH``, ``DOCUMENTS_PRINT_HEIGHT``,
+``DOCUMENTS_DISPLAY_WIDTH``, ``DOCUMENTS_DISPLAY_HEIGHT``,
+``DOCUMENTS_PREVIEW_WIDTH``, ``DOCUMENTS_PREVIEW_HEIGHT``,
+``DOCUMENTS_PRINT_WIDTH``, ``DOCUMENTS_PRINT_HEIGHT``,
 ``DOCUMENTS_THUMBNAIL_WIDTH``, ``DOCUMENTS_THUMBNAIL_HEIGHT``
 
 
 Dynamic upload wizard steps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The steps needed to upgrade a document using form-tools' SessionWizard
-were hardcoded in the source app. This made it very difficult to add or remove
-wizard steps.
+were hardcoded in the source app. This made it very difficult to add or
+remove wizard steps.
 
 The steps of the wizard are now defined by a new class called
 ``sources.wizard.WizardStep``. The existing steps to select a document type,
 enter metadata and tag the document, have been converted to function as
 WizardSteps subclasses. The converted steps now live in
 
-``sources.wizards.WizardStepDocumentType``, ``tag.wizard_steps.WizardStepTags``,
-and ``metadata.wizard_steps.WizardStepMetadata``.
+``sources.wizards.WizardStepDocumentType``,
+``tag.wizard_steps.WizardStepTags``, and
+``metadata.wizard_steps.WizardStepMetadata``.
 
 The steps need to define the following methods:
 
@@ -267,7 +271,8 @@ New proposal system
 The Mayan EDMS Request for Comments or MERCs will be use to propose and or
 document the new features, the existing code, and the processes governing the
 project. MERCs 1 and 2 have been approved. MERC-1 outlines the MERC process
-itself and MERC-2 documents the way API tests are to be written for Mayan EDMS.
+itself and MERC-2 documents the way API tests are to be written for
+Mayan EDMS.
 
 
 Duplicated documents
@@ -278,9 +283,9 @@ the duplicate of a primary document has been move to the trash. In this
 instance the duplicate count of the primary document would be zero and will
 cause the primary document to not show in the duplicated document list view.
 
-If the duplicated document is deleted from the trash the system now will launch
-a background clean up task to permanently delete the empty primary document's
-duplicate document entry from the database.
+If the duplicated document is deleted from the trash the system now will
+launch a background clean up task to permanently delete the empty primary
+document's duplicate document entry from the database.
 
 
 Storage
@@ -289,24 +294,28 @@ Storage
 It is now possible to pass arguments to the document, document cache and
 document signatures storage backends. To pass the arguments, use the new
 settings: ``DOCUMENTS_STORAGE_BACKEND_ARGUMENTS``,
-``DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS``, and ``SIGNATURES_STORAGE_BACKEND_ARGUMENTS``.
+``DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS``, and
+``SIGNATURES_STORAGE_BACKEND_ARGUMENTS``.
 
 The ``FileBasedStorage`` driver originally provided has been removed.
-With this change the setting ``STORAGE_FILESTORAGE_LOCATION`` has also been removed.
-The storage driver now default to Django's own ``FileSystemStorage`` driver.
-By using this driver each app is responsible of specifying their storage
-path. The path path (or location) is configure via the
-``DOCUMENTS_STORAGE_BACKEND_ARGUMENTS``, ``DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS``, or
-``SIGNATURES_STORAGE_BACKEND_ARGUMENTS`` for the documents, document cache and document signatures respectively.
+With this change the setting ``STORAGE_FILESTORAGE_LOCATION`` has also been
+removed. The storage driver now default to Django's own
+``FileSystemStorage`` driver. By using this driver each app is responsible
+of specifying their storage path. The path path (or location) is configure
+via the ``DOCUMENTS_STORAGE_BACKEND_ARGUMENTS``,
+``DOCUMENTS_CACHE_STORAGE_BACKEND_ARGUMENTS``, or
+``SIGNATURES_STORAGE_BACKEND_ARGUMENTS`` for the documents, document cache
+and document signatures respectively.
 
 For example, to change the document storage location use::
 
     DOCUMENTS_STORAGE_BACKEND_ARGUMENTS = '{ location: <specific_path> }'
 
-If no path is specified the backend will default to ``mayan/media/document_storage``.
+If no path is specified the backend will default to
+``mayan/media/document_storage``.
 
-Finally, to standardize the way app use storage, the ``storages.py`` modules is now used
-instead of the ``runtime.py`` module.
+Finally, to standardize the way app use storage, the ``storages.py``
+modules is now used instead of the ``runtime.py`` module.
 
 
 User event filtering
@@ -322,28 +331,29 @@ menu.
 Smart checkbox selection
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-A faster way to select multiple item has been added. Click the checkbox of the first,
-hold the Shift key, and then click the checkbox of the last item of the selection.
-This will select the first, the last and all items in between. To deselect multiple
-items the same procedure is used. This code was donated by the Paperattor
-project (www.paperattor.com).
+A faster way to select multiple item has been added. Click the checkbox of
+the first, hold the Shift key, and then click the checkbox of the last
+item of the selection. This will select the first, the last and all items
+in between. To deselect multiple items the same procedure is used. This
+code was donated by the Paperattor project (www.paperattor.com).
 
 
 Add JavaScript dependency manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An internal utility to install and upgrade the JavaScript dependencies was added.
-This depency manager allows for the easier maintenance of the JavaScript libraries
-used through the project.
+An internal utility to install and upgrade the JavaScript dependencies was
+added. This dependency manager allows for the easier maintenance of the
+JavaScript libraries used through the project.
 
-Previously JavaScript libraries we downloaded and installed by manually. These
-libraries were them checked into the Git repository. Finally to enable them
-the corresponding imports were added to the base templates in the appeance app.
+Previously JavaScript libraries we downloaded and installed by manually.
+These libraries were them checked into the Git repository. Finally to enable
+them the corresponding imports were added to the base templates in the
+appearance app.
 
-This new manager is the first step to start resolving these issues. The manager
-allows apps to specify their own dependencies. These dependencies are then
-downloaded when the project is installed or upgraded. As such they are not
-part of the repository and lower the file size of the project.
+This new manager is the first step to start resolving these issues. The
+manager allows apps to specify their own dependencies. These dependencies
+are then downloaded when the project is installed or upgraded. As such they
+are not part of the repository and lower the file size of the project.
 
 
 Workflow changes
@@ -368,12 +378,13 @@ SQLite
 ^^^^^^
 
 Starting with version 3.0, a warning message will be shown in the console and
-in the user interface when using SQLite as the database engine. When it comes to
-Mayan EDMS, SQLite should only be used for development or testing, never for
-production. This is due to Mayan EDMS exceeding the concurrency capabilities of
-SQLite. The results are duplicated documents, frequency database locked errors,
-among other issues. Suggested database backends are PostgreSQL and MySQL
-(or MariaDB) using a transaction aware storage engine like InnoDB.
+in the user interface when using SQLite as the database engine. When it
+comes to Mayan EDMS, SQLite should only be used for development or testing,
+never for production. This is due to Mayan EDMS exceeding the concurrency
+capabilities of SQLite. The results are duplicated documents, frequency
+database locked errors, among other issues. Suggested database backends
+are PostgreSQL and MySQL (or MariaDB) using a transaction aware storage
+engine like InnoDB.
 
 
 Received email processing
@@ -383,8 +394,8 @@ Parsing email messages is a complex task. To increase compatibility with the
 many interpretations of the standards that govern email messaging, Mayan EDMS
 now uses Mailgun's flanker library (https://github.com/mailgun/flanker).
 Thanks to flanker, Mayan EDMS now gains new capabilities when it comes to
-parsing incoming email. For example, in addition to mail attachments, it is now
-possible to process files included in emails as inline content.
+parsing incoming email. For example, in addition to mail attachments, it
+is now possible to process files included in emails as inline content.
 
 
 Other changes worth mentioning
@@ -392,11 +403,11 @@ Other changes worth mentioning
 
 - Add Makefile target to check the format of the README.rst file.
 - Fix permission filtering when performing document page searching
-- base.js was splitted into mayan_app.js, mayan_image.js, and
+- base.js was split into mayan_app.js, mayan_image.js, and
   partial_navigation.js.
 - Cabinet detail view pagination was fixed.
 - Improve permission handling in the workflow app.
-- The checkedout detail view permission is now required for the checked out
+- The checked out detail view permission is now required for the checked out
   document detail API view.
 - Add missing services for the checkout API.
 - Fix existing checkout APIs.
@@ -411,7 +422,7 @@ Other changes worth mentioning
   returns the result_set value. Use the queryset returned instead.
 - Remove the unused scrollable_content internal feature.
 - Remove unused animate.css package.
-- Add the MERC specifying javascript library usage.
+- Add the MERC specifying JavaScript library usage.
 - Documents without at least a version are not scanned for duplicates.
 - Convert document thumbnails, preview, image preview and staging files to
   template base widgets.
@@ -438,7 +449,7 @@ Other changes worth mentioning
 - Add upload wizard step documentation chapter.
 - Improve and add additional diagrams.
 - Change documentation theme to rtd.
-- Add the "to=" keyword argument to all ForeignKey, ManayToMany and
+- Add the "to=" keyword argument to all ForeignKey, ManyToMany and
   OneToOne Fields.
 - Rename the role groups link label from "Members" to "Groups".
 - Rename the group users link label from "Members" to "Users".
@@ -463,8 +474,9 @@ Other changes worth mentioning
   - Downloading a document version now requires the document download
     permission instead of just the document view permission.
   - Creating a new document no longer works by having the document create
-    permission in a global manner. It is now possible to create a document via
-    the API by having the document permission for a specific document type.
+    permission in a global manner. It is now possible to create a document
+    via the API by having the document permission for a specific document
+    type.
   - Viewing the version list of a document now required the document version
     view permission instead of the document view permission. Not having the
     document version view permission for a document will not return a 403
@@ -536,14 +548,15 @@ Other changes worth mentioning
   the app and the static media.
 - All installation artifact are now created and read from the media folder.
 - Debian is now the Linux distribution used for the Docker image.
-- Most Docker Celery workers are now execute using a lower OS priority number.
+- Most Docker Celery workers are now execute using a lower OS priority
+  number.
 - Add ``COMMON_PRODUCTION_ERROR_LOGGING`` setting to control the logging of
   errors in production. Defaults to False.
-- Change the error log file handle class to RotatingFileHandle to avoid an
-  indefinitely growing log file.
+- Change the error log file handle class to ``RotatingFileHandle`` to avoid
+  an indefinitely growing log file.
 - Disable embedded signature verification during the perform upgrade command.
-- Replace the ``DOCUMENTS_LANGUAGE_CHOICES`` setting option. Replaced with the
-  new ``DOCUMENTS_LANGUAGE_CODES``.
+- Replace the ``DOCUMENTS_LANGUAGE_CHOICES`` setting option. Replaced with
+  the new ``DOCUMENTS_LANGUAGE_CODES``.
 - Reduce default language code choice from 7800 to the top 100 spoken
   languages and related
   (https://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers)
@@ -575,11 +588,12 @@ Known issues
 ------------
 
 The newly added 'flanker' dependency used to process email, produces a number
-of warnings on the console that are imposible to turn off. These are not
+of warnings on the console that are impossible to turn off. These are not
 critical and are related to coding practices in the library. All warning
 from flanker can be ignored.
 
-Example: "WARNING:flanker.addresslib._parser.parser:Symbol 'domain' is unreachable"
+Example: "WARNING:flanker.addresslib._parser.parser:Symbol 'domain' is
+unreachable"
 
 
 Upgrading from a previous version

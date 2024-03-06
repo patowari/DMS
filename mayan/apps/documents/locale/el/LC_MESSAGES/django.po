@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -21,17 +21,17 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:215 apps.py:653 events.py:6 menus.py:8
-#: models/document_models.py:116 permissions.py:6 settings.py:33
+#: apps.py:218 apps.py:655 events.py:6 menus.py:8
+#: models/document_models.py:116 permissions.py:6 settings.py:34
 #: statistics.py:286
 msgid "Documents"
 msgstr "Έγγραφα"
 
-#: apps.py:296
+#: apps.py:299
 msgid "Create a document type"
 msgstr "Δημιουργία τύπου εγγράφου"
 
-#: apps.py:298
+#: apps.py:301
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
@@ -39,47 +39,47 @@ msgstr ""
 "Σε κάθε αναρτημένο έγγραφο πρέπει να ανατεθεί ένας τύπος εγγράφου. Αυτός "
 "είναι ο βασικός τρόπος κατηγοριοποίησης που χρησιμοποιεί το Mayan ΕDMS."
 
-#: apps.py:393
+#: apps.py:395
 msgid "File comments"
 msgstr ""
 
-#: apps.py:397
+#: apps.py:399
 msgid "File encodings"
 msgstr ""
 
-#: apps.py:401
+#: apps.py:403
 msgid "File MIME types"
 msgstr ""
 
-#: apps.py:405
+#: apps.py:407
 msgid "File timestamps"
 msgstr ""
 
-#: apps.py:410 links/document_file_page_links.py:77
+#: apps.py:412 links/document_file_page_links.py:77
 #: models/document_file_models.py:106 models/document_file_page_models.py:26
 #: search.py:49
 msgid "Document file"
 msgstr ""
 
-#: apps.py:414 models/document_file_page_models.py:30
+#: apps.py:416 models/document_file_page_models.py:30
 #: models/document_version_page_models.py:40
 msgid "Page number"
 msgstr "Αριθμός σελίδας"
 
-#: apps.py:419
+#: apps.py:421
 msgid "Return the latest file of the document."
 msgstr ""
 
-#: apps.py:420
+#: apps.py:422
 msgid "Latest file"
 msgstr ""
 
-#: apps.py:424
+#: apps.py:426
 msgid "Return the document instance."
 msgstr "Επαναφορά του στιγμιοτύπου εγγράφου."
 
-#: apps.py:425 links/document_file_links.py:70
-#: links/document_file_page_links.py:71 links/document_version_links.py:74
+#: apps.py:427 links/document_file_links.py:71
+#: links/document_file_page_links.py:71 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:115 models/document_version_models.py:28
 #: models/favorite_document_models.py:30
@@ -89,25 +89,25 @@ msgstr "Επαναφορά του στιγμιοτύπου εγγράφου."
 msgid "Document"
 msgstr "Έγγραφο"
 
-#: apps.py:556 apps.py:610 apps.py:639 apps.py:674 apps.py:699
+#: apps.py:558 apps.py:612 apps.py:641 apps.py:676 apps.py:701
 msgid "Thumbnail"
 msgstr "Μικρογραφία"
 
-#: apps.py:562
+#: apps.py:564
 msgid "Type"
 msgstr "Τύπος"
 
-#: apps.py:567 apps.py:615 apps.py:679 forms/document_file_forms.py:89
+#: apps.py:569 apps.py:617 apps.py:681 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:120
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Σελίδες"
 
-#: apps.py:577 models/favorite_document_models.py:33
+#: apps.py:579 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr ""
 
-#: apps.py:588
+#: apps.py:590
 msgid "Access date and time"
 msgstr ""
 
@@ -137,29 +137,29 @@ msgid ""
 " original filename of the uploaded file."
 msgstr ""
 
-#: dashboard_widgets.py:32
+#: dashboard_widgets.py:29
 msgid "Total pages"
 msgstr "Σύνολο σελίδων"
 
-#: dashboard_widgets.py:55
+#: dashboard_widgets.py:52
 msgid "Total documents"
 msgstr "Σύνολο εγγράφων"
 
-#: dashboard_widgets.py:73 views/trashed_document_views.py:156
+#: dashboard_widgets.py:70 views/trashed_document_views.py:156
 msgid "Documents in trash"
 msgstr "Έγγραφα στα απορρίμματα"
 
-#: dashboard_widgets.py:91 links/document_type_links.py:68
-#: links/document_type_links.py:83 permissions.py:78
+#: dashboard_widgets.py:88 links/document_type_links.py:67
+#: links/document_type_links.py:82 permissions.py:78
 #: views/document_type_views.py:81
 msgid "Document types"
 msgstr "Τύποι εγγράφων"
 
-#: dashboard_widgets.py:109
+#: dashboard_widgets.py:106
 msgid "New documents this month"
 msgstr "Νέα έγγραφα αυτό τον μήνα"
 
-#: dashboard_widgets.py:123
+#: dashboard_widgets.py:120
 msgid "New pages this month"
 msgstr "Νέες σελίδες αυτό τον μήνα"
 
@@ -359,7 +359,7 @@ msgid "Language"
 msgstr "Γλώσσα"
 
 #: forms/document_type_forms.py:42 models/document_models.py:59
-#: models/document_type_models.py:100 models/document_type_models.py:148
+#: models/document_type_models.py:102 models/document_type_models.py:150
 #: serializers/document_serializers.py:28 workflow_actions.py:18
 #: workflow_actions.py:34
 msgid "Document type"
@@ -411,46 +411,46 @@ msgstr ""
 "Αριθμός σελίδας από την οποία θα κλωνοποιηθούν όλοι οι μετασχηματισμοί. "
 "Υπάρχοντες μετασχηματισμοί θα χαθούν."
 
-#: links/document_file_links.py:26 links/document_file_links.py:31
-#: links/document_type_links.py:28 links/document_type_links.py:46
-#: links/document_version_links.py:40 links/document_version_links.py:44
-#: links/document_version_page_links.py:46 links/trashed_document_links.py:19
-#: links/trashed_document_links.py:41
+#: links/document_file_links.py:27 links/document_file_links.py:32
+#: links/document_type_links.py:27 links/document_type_links.py:45
+#: links/document_version_links.py:39 links/document_version_links.py:43
+#: links/document_version_page_links.py:46 links/trashed_document_links.py:18
+#: links/trashed_document_links.py:40
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: links/document_file_links.py:36 links/document_type_links.py:32
-#: links/document_type_links.py:53 links/document_version_links.py:49
+#: links/document_file_links.py:37 links/document_type_links.py:31
+#: links/document_type_links.py:52 links/document_version_links.py:48
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: links/document_file_links.py:40 links/document_file_links.py:47
+#: links/document_file_links.py:41 links/document_file_links.py:48
 msgid "Introspect"
 msgstr ""
 
-#: links/document_file_links.py:54 links/document_file_links.py:76
+#: links/document_file_links.py:55 links/document_file_links.py:77
 msgid "Files"
 msgstr ""
 
-#: links/document_file_links.py:58 links/document_version_links.py:68
+#: links/document_file_links.py:59 links/document_version_links.py:67
 msgid "Print"
 msgstr "Εκτύπωση"
 
-#: links/document_file_links.py:65 links/document_links.py:43
+#: links/document_file_links.py:66 links/document_links.py:43
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: links/document_file_links.py:83 links/document_links.py:38
-#: links/document_version_links.py:64
+#: links/document_file_links.py:84 links/document_links.py:38
+#: links/document_version_links.py:63
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: links/document_file_links.py:89 links/document_file_links.py:95
-#: links/document_version_links.py:87 links/document_version_links.py:93
+#: links/document_file_links.py:90 links/document_file_links.py:96
+#: links/document_version_links.py:86 links/document_version_links.py:92
 msgid "Clear transformations"
 msgstr "Εκκαθάριση μετασχηματισμών"
 
-#: links/document_file_links.py:102 links/document_version_links.py:100
+#: links/document_file_links.py:103 links/document_version_links.py:99
 msgid "Clone transformations"
 msgstr "Κλωνοποίηση μετασχηματισμών"
 
@@ -529,39 +529,39 @@ msgstr "Προσφάτως δημιουργηθέντα"
 msgid "Edit properties"
 msgstr "Τροποποίηση ιδιοτήτων"
 
-#: links/document_type_links.py:23 views/document_type_views.py:96
+#: links/document_type_links.py:22 views/document_type_views.py:96
 msgid "Create document type"
 msgstr "Δημιουργία τύπου εγγράφου"
 
-#: links/document_type_links.py:39
+#: links/document_type_links.py:38
 msgid "Add quick label to document type"
 msgstr "Προσθήκη γρήγορης ετικέτας στον τύπο εγγράφου"
 
-#: links/document_type_links.py:59 models/document_type_models.py:161
+#: links/document_type_links.py:58 models/document_type_models.py:163
 msgid "Quick labels"
 msgstr "Γρήγορες ετικέτες"
 
-#: links/document_type_links.py:64
+#: links/document_type_links.py:63
 msgid "Filename generation"
 msgstr "Δημιουργία ονόματος αρχείου"
 
-#: links/document_type_links.py:75
+#: links/document_type_links.py:74
 msgid "Retention policies"
 msgstr ""
 
-#: links/document_version_links.py:28
+#: links/document_version_links.py:27
 msgid "Make active"
 msgstr ""
 
-#: links/document_version_links.py:33
+#: links/document_version_links.py:32
 msgid "Create document version"
 msgstr ""
 
-#: links/document_version_links.py:53 links/document_version_links.py:80
+#: links/document_version_links.py:52 links/document_version_links.py:79
 msgid "Versions"
 msgstr "Εκδόσεις"
 
-#: links/document_version_links.py:58
+#: links/document_version_links.py:57
 msgid "Modify"
 msgstr ""
 
@@ -597,19 +597,19 @@ msgstr "Αφαίρεση από τα αγαπημένα"
 msgid "Decorations"
 msgstr "Διακοσμήσεις"
 
-#: links/trashed_document_links.py:24 links/trashed_document_links.py:37
+#: links/trashed_document_links.py:23 links/trashed_document_links.py:36
 msgid "Move to trash"
 msgstr "Μεταφορά στα απορρίμματα"
 
-#: links/trashed_document_links.py:27
+#: links/trashed_document_links.py:26
 msgid "Trash can"
 msgstr "Απορρίμματα"
 
-#: links/trashed_document_links.py:32 links/trashed_document_links.py:44
+#: links/trashed_document_links.py:31 links/trashed_document_links.py:43
 msgid "Restore"
 msgstr "Επαναφορά"
 
-#: links/trashed_document_links.py:49 permissions.py:105
+#: links/trashed_document_links.py:48 permissions.py:105
 msgid "Empty trash"
 msgstr "Άδεισμα απορριμάτων"
 
@@ -670,9 +670,9 @@ msgid "All pages"
 msgstr "Όλες οι σελίδες"
 
 #: models/document_file_model_mixins.py:299
-#: models/document_file_page_model_mixins.py:240
+#: models/document_file_page_model_mixins.py:244
 #: models/document_model_mixins.py:176 models/document_models.py:67
-#: models/document_type_models.py:41 models/document_type_models.py:151
+#: models/document_type_models.py:41 models/document_type_models.py:153
 #: models/document_version_model_mixins.py:128
 #: models/document_version_page_model_mixins.py:290
 #: serializers/document_serializers.py:22
@@ -725,7 +725,7 @@ msgstr ""
 msgid "Document files"
 msgstr ""
 
-#: models/document_file_page_model_mixins.py:234
+#: models/document_file_page_model_mixins.py:238
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr ""
@@ -839,11 +839,11 @@ msgid "The arguments for the filename generator backend as a YAML dictionary."
 msgstr ""
 "Τα ορίσματα για το backend δημιουργίας ονονομάτων αρχείου ως λεξικό YAML."
 
-#: models/document_type_models.py:54
+#: models/document_type_models.py:56
 msgid "Filename generator backend arguments"
 msgstr "Ορίσματα δημιουργίας ονόματος αρχείου"
 
-#: models/document_type_models.py:62
+#: models/document_type_models.py:64
 msgid ""
 "Amount of time after which documents of this type will be moved to the "
 "trash."
@@ -851,15 +851,15 @@ msgstr ""
 "Χρονική περίοδος πέραν της οποίας έγγραφα αυτού του τύπου θα μετακινούνται "
 "στα απορρίμματα."
 
-#: models/document_type_models.py:64
+#: models/document_type_models.py:66
 msgid "Trash time period"
 msgstr "Περίοδος αποθήκευσης στα απορρίματα"
 
-#: models/document_type_models.py:68
+#: models/document_type_models.py:70
 msgid "Trash time unit"
 msgstr "Μονάδα μέτρησης χρόνου για μεταφορά στα απορρίμματα"
 
-#: models/document_type_models.py:72
+#: models/document_type_models.py:74
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
@@ -867,44 +867,44 @@ msgstr ""
 "Χρονική περίοδος πέραν της οποίας έγγραφα αυτού του τύπου θα διαγράφονται "
 "από τα απορρίμματα"
 
-#: models/document_type_models.py:74
+#: models/document_type_models.py:76
 msgid "Delete time period"
 msgstr "Περίοδος για διαγραφή"
 
-#: models/document_type_models.py:79
+#: models/document_type_models.py:81
 msgid "Delete time unit"
 msgstr "Μονάδα μέτρησης χρόνου διαγραφής"
 
-#: models/document_type_models.py:83
+#: models/document_type_models.py:85
 msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
 msgstr ""
 
-#: models/document_type_models.py:85
+#: models/document_type_models.py:87
 msgid "Document stub pruning"
 msgstr ""
 
-#: models/document_type_models.py:89
+#: models/document_type_models.py:91
 msgid ""
 "Time (in seconds) after which a document stub will be considered invalid and"
 " deleted, if pruning is enabled. This an optimization setting and should "
 "only be changed for specific circumstances."
 msgstr ""
 
-#: models/document_type_models.py:93
+#: models/document_type_models.py:95
 msgid "Document stub expiration interval"
 msgstr ""
 
-#: models/document_type_models.py:101
+#: models/document_type_models.py:103
 msgid "Documents types"
 msgstr "Τύποι εγγράφων"
 
-#: models/document_type_models.py:154
+#: models/document_type_models.py:156
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
-#: models/document_type_models.py:160
+#: models/document_type_models.py:162
 msgid "Quick label"
 msgstr "Γρήγορη ετικέτα"
 
@@ -1329,39 +1329,39 @@ msgstr ""
 msgid "Restore URL"
 msgstr ""
 
-#: settings.py:49
+#: settings.py:50
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
 "will start deleting the oldest document file page image cache files. Specify"
 " the size in bytes."
 msgstr ""
 
-#: settings.py:57
+#: settings.py:58
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr ""
 "Διαδρομή προς την υποκλάση Storage για χρήση κατά την αποθήκευση αρχείων "
 "εγγράφων."
 
-#: settings.py:64
+#: settings.py:65
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
 msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
 msgstr ""
 
-#: settings.py:78
+#: settings.py:79
 msgid ""
 "Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 
-#: settings.py:84
+#: settings.py:85
 msgid "Maximum number of favorite documents to remember per user."
 msgstr "Μέγιστος αριθμός αγαπημένων εγγράφων ανά χρήστη."
 
-#: settings.py:90
+#: settings.py:91
 msgid ""
 "Size of blocks to use when calculating the document file's checksum. A value"
 " of 0 disables the block calculation and the entire file will be loaded into"
@@ -1371,33 +1371,33 @@ msgstr ""
 "αρχείου εγγράφου. Η τιμή 0 απενεργοποιεί τον υπολογισμό του μπλοκ και "
 "ολόκληρο το αρχείο θα φορτωθεί στη μνήμη."
 
-#: settings.py:97
+#: settings.py:98
 msgid "Default documents language (in ISO639-3 format)."
 msgstr "Προεπιλεγμένη γλώσσα εγγράφων (σε μορφή ISO639-3)."
 
-#: settings.py:101
+#: settings.py:102
 msgid "List of supported document languages. In ISO639-3 format."
 msgstr "Λίστα υποστηριζόμενων γλωσσών εγγράφων. Σε μορφή ISO639-3."
 
-#: settings.py:107
+#: settings.py:108
 msgid ""
 "The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
 " will start deleting the oldest document version page image cache versions. "
 "Specify the size in bytes."
 msgstr ""
 
-#: settings.py:116
+#: settings.py:117
 msgid ""
 "Path to the Storage subclass to use when storing the cached document version"
 " page image versions."
 msgstr ""
 
-#: settings.py:124
+#: settings.py:125
 msgid ""
 "Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 
-#: settings.py:146
+#: settings.py:147
 msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
@@ -1405,21 +1405,21 @@ msgstr ""
 "Μέγιστος αριθμός εγγράφων που προσπελάστηκαν πρόσφατα (δημιουργήθηκαν, "
 "επεξεργάστηκαν, προβλήθηκαν) προς απομνημόνευση ανά χρήστη."
 
-#: settings.py:153
+#: settings.py:154
 msgid "Maximum number of recently created documents to show."
 msgstr "Μέγιστος αριθμός εγγράφων που δημιουργήθηκαν πρόσφατα για εμφάνιση."
 
-#: settings.py:159
+#: settings.py:160
 msgid "Amount in degrees to rotate a document page per user interaction."
 msgstr ""
 "Αριθμός μοιρών για περιστροφή μιας σελίδας εγγράφου ανά αλληλεπίδραση "
 "χρήστη."
 
-#: settings.py:165
+#: settings.py:166
 msgid "Height in pixels of the document thumbnail image."
 msgstr "Ύψος σε pixel της εικόνας μικρογραφίας εγγράφου."
 
-#: settings.py:184
+#: settings.py:185
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
@@ -1427,7 +1427,7 @@ msgstr ""
 "Μέγιστο ποσοστό σε (%) που θα επιτρέπεται να κάνει μεγέθυνση προβολής ένας "
 "χρήστης."
 
-#: settings.py:191
+#: settings.py:192
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
@@ -1435,44 +1435,44 @@ msgstr ""
 "Ελάχιστο ποσοστό σε (%) που θα επιτρέπεται να κάνει σμίκρυνση προβολής ένας "
 "χρήστης."
 
-#: settings.py:198
+#: settings.py:199
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
 "Βαθμός μεγένθυνσης / σμίκρυνσης σε μια σελίδα εγγράφου ανά διάδραση χρήστη."
 
-#: statistics.py:290
+#: statistics.py:291
 msgid "New documents per month"
 msgstr "Νέα έγγραφα ανά μήνα"
 
-#: statistics.py:297
+#: statistics.py:298
 msgid "New document files per month"
 msgstr ""
 
-#: statistics.py:304
+#: statistics.py:305
 msgid "New document pages per month"
 msgstr "Νέες σελίδες εγγράφων ανά μήνα"
 
-#: statistics.py:311
+#: statistics.py:312
 msgid "Total documents at each month"
 msgstr "Σύνολο εγγράφων κάθε μήνα"
 
-#: statistics.py:318
+#: statistics.py:319
 msgid "Total document files at each month"
 msgstr ""
 
-#: statistics.py:325
+#: statistics.py:326
 msgid "Total document pages at each month"
 msgstr "Σύνολο σελίδων εγγράφων κάθε μήνα"
 
-#: statistics.py:332
+#: statistics.py:333
 msgid "Total documents per document type"
 msgstr ""
 
-#: statistics.py:339
+#: statistics.py:340
 msgid "Total document files per document type"
 msgstr ""
 
-#: statistics.py:346
+#: statistics.py:347
 msgid "Total document file pages per document type"
 msgstr ""
 
@@ -1542,179 +1542,179 @@ msgstr "Δεν υπάρχουν σελίδες για εμφάνιση"
 msgid "Unknown language \"%s\""
 msgstr "Άγνωστη γλώσσα \"%s\""
 
-#: views/document_file_page_views.py:54
+#: views/document_file_page_views.py:55
 msgid ""
 "This could mean that the document file is of a format that is not supported,"
 " that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 
-#: views/document_file_page_views.py:60
+#: views/document_file_page_views.py:61
 msgid "No document file pages available"
 msgstr ""
 
-#: views/document_file_page_views.py:62
+#: views/document_file_page_views.py:63
 #, python-format
 msgid "Pages of document file: %s"
 msgstr ""
 
-#: views/document_file_page_views.py:143
-#: views/document_version_page_views.py:308
+#: views/document_file_page_views.py:144
+#: views/document_version_page_views.py:315
 msgid "There are no more pages in this document"
 msgstr "Το έγγραφο δεν έχει άλλες σελίδες"
 
-#: views/document_file_page_views.py:159
-#: views/document_version_page_views.py:324
+#: views/document_file_page_views.py:160
+#: views/document_version_page_views.py:331
 msgid "You are already at the first page of this document"
 msgstr "Βρίσκεστε ήδη στην πρώτη σελίδα του εγγράφου"
 
-#: views/document_file_page_views.py:194
-#: views/document_version_page_views.py:363
+#: views/document_file_page_views.py:195
+#: views/document_version_page_views.py:370
 #, python-format
 msgid "Image of: %s"
 msgstr "Εικόνα του: %s"
 
-#: views/document_file_views.py:51
+#: views/document_file_views.py:52
 #, python-format
 msgid "Error deleting document file \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views/document_file_views.py:57
+#: views/document_file_views.py:58
 #, python-format
 msgid "Document file \"%(object)s\" deletion queued successfully."
 msgstr ""
 
-#: views/document_file_views.py:60
+#: views/document_file_views.py:61
 #, python-format
 msgid "%(count)d document file deletion queued successfully."
 msgstr ""
 
-#: views/document_file_views.py:63
+#: views/document_file_views.py:64
 #, python-format
 msgid "%(count)d document files deletions queued successfully."
 msgstr ""
 
-#: views/document_file_views.py:65
+#: views/document_file_views.py:66
 #, python-format
 msgid "Delete document file: %(object)s."
 msgstr ""
 
-#: views/document_file_views.py:66
+#: views/document_file_views.py:67
 #, python-format
 msgid "Delete the %(count)d selected document file."
 msgstr ""
 
-#: views/document_file_views.py:67
+#: views/document_file_views.py:68
 #, python-format
 msgid "Delete the %(count)d selected document files."
 msgstr ""
 
-#: views/document_file_views.py:73
+#: views/document_file_views.py:74
 msgid ""
 "All document files pages from this document file and the document version "
 "pages linked to them will be deleted too. The process will be performed in "
 "the background."
 msgstr ""
 
-#: views/document_file_views.py:113
+#: views/document_file_views.py:114
 #, python-format
 msgid "Edit document file: %s"
 msgstr ""
 
-#: views/document_file_views.py:134
+#: views/document_file_views.py:135
 #, python-format
 msgid "%(count)d document file queued for introspection."
 msgstr ""
 
-#: views/document_file_views.py:137
+#: views/document_file_views.py:138
 #, python-format
 msgid "%(count)d document files queued for introspection."
 msgstr ""
 
-#: views/document_file_views.py:146
+#: views/document_file_views.py:147
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/document_file_views.py:157
+#: views/document_file_views.py:158
 #, python-format
 msgid "Introspect the document file: %s?"
 msgstr ""
 
-#: views/document_file_views.py:163
+#: views/document_file_views.py:164
 msgid ""
 "The document file will be re-examined for file size, page count, checksum, "
 "and its related document version pages re-created. All transformations will "
 "be lost."
 msgstr ""
 
-#: views/document_file_views.py:192
+#: views/document_file_views.py:193
 msgid ""
 "File are the actual files that were uploaded for each document. Their "
 "contents needs to be mapped to a version before it can be used."
 msgstr ""
 
-#: views/document_file_views.py:196
+#: views/document_file_views.py:197
 msgid "No files available"
 msgstr ""
 
-#: views/document_file_views.py:221
+#: views/document_file_views.py:222
 #, python-format
 msgid "Files of document: %s"
 msgstr ""
 
-#: views/document_file_views.py:257
+#: views/document_file_views.py:258
 #, python-format
 msgid "Preview of document file: %s"
 msgstr ""
 
-#: views/document_file_views.py:317
+#: views/document_file_views.py:318
 #, python-format
 msgid "Properties of document file: %s"
 msgstr ""
 
-#: views/document_file_views.py:326
+#: views/document_file_views.py:327
 #, python-format
 msgid "Transformation clear request processed for %(count)d document file."
 msgstr ""
 
-#: views/document_file_views.py:329
+#: views/document_file_views.py:330
 #, python-format
 msgid "Transformation clear request processed for %(count)d document files."
 msgstr ""
 
-#: views/document_file_views.py:336
+#: views/document_file_views.py:337
 msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/document_file_views.py:347
+#: views/document_file_views.py:348
 #, python-format
 msgid "Clear all the page transformations for the document file: %s?"
 msgstr ""
 
-#: views/document_file_views.py:364
+#: views/document_file_views.py:365
 #, python-format
 msgid ""
 "Error deleting the page transformations for document file: "
 "%(document_file)s; %(error)s."
 msgstr ""
 
-#: views/document_file_views.py:401
+#: views/document_file_views.py:402
 #, python-format
 msgid ""
 "Error cloning the page transformations for document file: %(document_file)s;"
 " %(error)s."
 msgstr ""
 
-#: views/document_file_views.py:410 views/document_version_views.py:411
+#: views/document_file_views.py:411 views/document_version_views.py:412
 msgid "Transformations cloned successfully."
 msgstr "Οι μετασχηματισμοί κλωνοποιήθηκαν με επιτυχία."
 
-#: views/document_file_views.py:425
+#: views/document_file_views.py:426
 #, python-format
 msgid "Clone page transformations of document file: %s"
 msgstr ""
@@ -1816,7 +1816,7 @@ msgstr "Γρήγορες ετικέτες για τον τύπο εγγράφο�
 msgid "Filename generation setup for document type: %s"
 msgstr "Ρύθμιση δημιουργίας ονόματος αρχείου για τύπο εγγράφου: %s"
 
-#: views/document_version_page_views.py:57
+#: views/document_version_page_views.py:56
 msgid ""
 "The page number of this page will be skipped. If you want to achieve "
 "sequential page numbering, use the page remap action instead."
@@ -1827,34 +1827,34 @@ msgstr ""
 msgid "Delete document version page %s ?"
 msgstr ""
 
-#: views/document_version_page_views.py:101
+#: views/document_version_page_views.py:102
 msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
 msgstr ""
 
-#: views/document_version_page_views.py:105
+#: views/document_version_page_views.py:107
 msgid "No document version pages available"
 msgstr ""
 
-#: views/document_version_page_views.py:108
+#: views/document_version_page_views.py:111
 #, python-format
 msgid "Pages of document version: %s"
 msgstr ""
 
-#: views/document_version_page_views.py:158
+#: views/document_version_page_views.py:163
 msgid "None"
 msgstr "Κανένα"
 
-#: views/document_version_page_views.py:183
+#: views/document_version_page_views.py:190
 msgid "There are no sources available to remap for this document version."
 msgstr ""
 
-#: views/document_version_page_views.py:186
+#: views/document_version_page_views.py:193
 msgid "No page sources available"
 msgstr ""
 
-#: views/document_version_page_views.py:189
+#: views/document_version_page_views.py:196
 #, python-format
 msgid "Remap pages of document version: %s"
 msgstr ""
@@ -1907,78 +1907,78 @@ msgstr ""
 msgid "The process will be performed in the background."
 msgstr ""
 
-#: views/document_version_views.py:162
+#: views/document_version_views.py:163
 #, python-format
 msgid "Edit document version: %s"
 msgstr ""
 
-#: views/document_version_views.py:199
+#: views/document_version_views.py:200
 msgid ""
 "Versions are views that can display document file pages as they are, remap "
 "or merge them into different layouts."
 msgstr ""
 
-#: views/document_version_views.py:202
+#: views/document_version_views.py:203
 msgid "No versions available"
 msgstr ""
 
-#: views/document_version_views.py:205
+#: views/document_version_views.py:206
 #, python-format
 msgid "Versions of document: %s"
 msgstr "Εκδόσεις του εγγράφου: %s"
 
-#: views/document_version_views.py:237
+#: views/document_version_views.py:238
 msgid "Document version modification backend queued successfully."
 msgstr ""
 
-#: views/document_version_views.py:247
+#: views/document_version_views.py:248
 #, python-format
 msgid "Execute version modification action for document version: %s"
 msgstr ""
 
-#: views/document_version_views.py:278
+#: views/document_version_views.py:279
 #, python-format
 msgid "Preview of document version: %s"
 msgstr "Προεπισκόπηση της έκδοσης εγγράφου: %s"
 
-#: views/document_version_views.py:325
+#: views/document_version_views.py:326
 #, python-format
 msgid "Transformation clear request processed for %(count)d document version."
 msgstr ""
 
-#: views/document_version_views.py:329
+#: views/document_version_views.py:330
 #, python-format
 msgid ""
 "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 
-#: views/document_version_views.py:337
+#: views/document_version_views.py:338
 msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/document_version_views.py:348
+#: views/document_version_views.py:349
 #, python-format
 msgid "Clear all the page transformations for the document version: %s?"
 msgstr ""
 
-#: views/document_version_views.py:365
+#: views/document_version_views.py:366
 #, python-format
 msgid ""
 "Error deleting the page transformations for document version: "
 "%(document_version)s; %(error)s."
 msgstr ""
 
-#: views/document_version_views.py:402
+#: views/document_version_views.py:403
 #, python-format
 msgid ""
 "Error cloning the page transformations for document version: "
 "%(document_version)s; %(error)s."
 msgstr ""
 
-#: views/document_version_views.py:426
+#: views/document_version_views.py:427
 #, python-format
 msgid "Clone page transformations of document version: %s"
 msgstr ""

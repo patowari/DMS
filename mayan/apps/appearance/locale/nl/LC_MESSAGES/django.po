@@ -5,15 +5,15 @@
 # Translators:
 # Translators:
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
-# e6bc1d20d3f0031709c3c11db1061ebc_be0a371 <8b4e580508477646e97982ebad39e3af_312311>, 2024
 # Roberto Rosario, 2024
+# e6bc1d20d3f0031709c3c11db1061ebc_be0a371 <8b4e580508477646e97982ebad39e3af_312311>, 2024
 # bwakkie <bwakkie@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: bwakkie <bwakkie@gmail.com>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Uiterlijk"
 
@@ -95,7 +95,7 @@ msgstr "Thema instellingen"
 msgid "Edit theme settings"
 msgstr "Bewerk thema instellingen"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Maak nieuw thema aan"
 
@@ -107,7 +107,7 @@ msgstr "Verwijderen"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Thema's"
 
@@ -261,57 +261,79 @@ msgstr "Bekijk de logs voor berichten met de labels \"ERROR\", \"CRITICAL\" of \
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr "Open een ticket in de <a href=\"%(issue_url)s\">issue tracker</a>."
 
-#: templates/appearance/about.html:9
+#: templates/appearance/about.html:10
 msgid "About"
 msgstr "Over"
 
-#: templates/appearance/about.html:21
+#: templates/appearance/about.html:39
 msgid "Version"
 msgstr "Versie"
 
-#: templates/appearance/about.html:23
+#: templates/appearance/about.html:41
 #, python-format
-msgid "Build number: %(build_number)s"
-msgstr "Build nummer: %(build_number)s"
+msgid "Build number: %(project_build_number)s"
+msgstr ""
 
-#: templates/appearance/about.html:36
+#: templates/appearance/about.html:48
 msgid "Released under the license:"
 msgstr "Uitgegeven onder de licentie:"
 
-#: templates/appearance/about.html:40
+#: templates/appearance/about.html:57
 #, python-format
 msgid ""
-"\n"
-"                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
-"            "
+"To get the latest news subscribe to the <a class=\"new_window\" "
+"href=\"%(link_mailing_list_url)s\"> Mailing list</a>."
 msgstr ""
-"\n"
-"De complete lijst met aanpassingen is beschikbaar via de <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> of de verkorte versie <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>."
 
-#: templates/appearance/about.html:46
+#: templates/appearance/about.html:66
 #, python-format
 msgid ""
-"\n"
-"                For questions check the <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
-"            "
+"For articles, tutorials, troubleshooting, subscribe to the <a "
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
-"\n"
-"Voor vragen bekijk de  <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentatie %(icon_documentation)s</a>."
 
-#: templates/appearance/about.html:52
+#: templates/appearance/about.html:75
 #, python-format
 msgid ""
-"\n"
-"                If you found a bug or have a feature idea, visit the <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> or open a ticket in the <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Source code repository %(icon_source_code)s</a>.\n"
-"            "
+"Need professional help? Check out the <a class=\"new_window\" "
+"href=\"%(link_support_url)s\"> Support</a> offerings."
 msgstr ""
-"\n"
-"Ziet u een fout of heeft u ideeën? Bezoek het <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> of open een melding via het <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Broncode opslagplaats %(icon_source_code)s</a>."
 
-#: templates/appearance/app/foot.html:70
+#: templates/appearance/about.html:84
+#, python-format
 msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
+"For discussions visit the <a class=\"new_window\" "
+"href=\"%(link_forum_url)s\">Community forum</a>."
+msgstr ""
+
+#: templates/appearance/about.html:93
+#, python-format
+msgid ""
+"The complete list of changes is available via the <a class=\"new_window\" "
+"href=\"%(link_release_notes_url)s\">Release notes</a>."
+msgstr ""
+
+#: templates/appearance/about.html:102
+#, python-format
+msgid ""
+"For questions check the <a class=\"new_window\" "
+"href=\"%(link_documentation_url)s\">Documentation</a>."
+msgstr ""
+
+#: templates/appearance/about.html:111
+#, python-format
+msgid ""
+"If you found a bug or have a feature idea open a ticket in the <a "
+"class=\"new_window\" href=\"%(link_source_code_url)s\">Source code "
+"repository</a>."
+msgstr ""
+
+#: templates/appearance/about.html:117
+#, python-format
+msgid ""
+"%(project_title)s is Free and Open Source software, which is provided as-is "
+"with no warranty."
 msgstr ""
 
 #: templates/appearance/confirm.html:13
@@ -456,33 +478,33 @@ msgstr "Controleer uw netwerkverbinding en probeer het later nog eens."
 msgid "None"
 msgstr "Geen"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Verwijder thema: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Bewerk thema: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Thema's maken het mogelijk om het visuele uiterlijk te wijzigen zonder dat "
 "codewijzigingen nodig zijn."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "Er zijn geen thema's"
 
-#: views.py:122
+#: views.py:125
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Thema-instellingen voor gebruiker: %s"
 
-#: views.py:144
+#: views.py:148
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Bewerk thema-instellingen voor gebruiker: %s"

@@ -25,7 +25,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -45,7 +47,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 200)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -65,7 +69,9 @@ class MailDocumentFileViewTestCase(
         response = self._request_test_document_file_link_send_single_view()
         self.assertEqual(response.status_code, 404)
 
-        self.assertEqual(len(mail.outbox), mail_messages)
+        self.assertEqual(
+            len(mail.outbox), mail_messages
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -92,7 +98,9 @@ class MailDocumentFileViewTestCase(
         self.assertEqual(
             len(mail.outbox), mail_messages + 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -216,7 +224,9 @@ class MailDocumentFileViewTestCase(
         self.assertEqual(
             len(mail.outbox), mail_messages + 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -340,7 +350,9 @@ class MailDocumentFileViewTestCase(
         self.assertEqual(
             len(mail.outbox), mail_messages + 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
@@ -467,7 +479,9 @@ class MailDocumentFileViewTestCase(
         self.assertEqual(
             len(mail.outbox), mail_messages + 1
         )
-        self.assertEqual(mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS)
+        self.assertEqual(
+            mail.outbox[0].from_email, TEST_EMAIL_FROM_ADDRESS
+        )
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )

@@ -14,8 +14,9 @@ from mayan.apps.events.event_managers import (
 )
 
 from .events import (
-    event_cabinet_created, event_cabinet_deleted, event_cabinet_edited,
-    event_cabinet_document_added, event_cabinet_document_removed
+    event_cabinet_created, event_cabinet_deleted,
+    event_cabinet_document_added, event_cabinet_document_removed,
+    event_cabinet_edited
 )
 from .model_mixins import CabinetBusinessLogicMixin
 

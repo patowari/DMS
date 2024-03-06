@@ -119,7 +119,9 @@ class ResolvedSmartLinkAPIViewTestCase(
         response = self._request_resolved_smart_link_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -153,7 +155,9 @@ class ResolvedSmartLinkAPIViewTestCase(
 
         response = self._request_resolved_smart_link_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['label'],
             str(self._test_documents[0].uuid)
@@ -234,7 +238,9 @@ class ResolvedSmartLinkAPIViewTestCase(
 
         response = self._request_resolved_smart_link_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -276,7 +282,9 @@ class ResolvedSmartLinkAPIViewTestCase(
 
         response = self._request_resolved_smart_link_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 1)
+        self.assertEqual(
+            response.data['count'], 1
+        )
         self.assertEqual(
             response.data['results'][0]['label'],
             self._test_documents[1].label
@@ -304,7 +312,9 @@ class ResolvedSmartLinkAPIViewTestCase(
 
         response = self._request_resolved_smart_link_document_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['count'], 0)
+        self.assertEqual(
+            response.data['count'], 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

@@ -4,7 +4,7 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ..classes import (
-    EventModelRegistry, EventTypeNamespace, EventType, ModelEventType
+    EventModelRegistry, EventType, EventTypeNamespace, ModelEventType
 )
 from ..models import Notification, ObjectEventSubscription
 from ..permissions import permission_events_view

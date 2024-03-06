@@ -3,7 +3,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_signatures', '0005_auto_20160325_0748'),
+        ('document_signatures', '0005_auto_20160325_0748')
     ]
 
     operations = [
@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 verbose_name='Public key fingerprint', max_length=40,
                 null=True, editable=False, blank=True
-            ),
-        ),
+            )
+        )
     ]

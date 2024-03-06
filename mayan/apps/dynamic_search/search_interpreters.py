@@ -1,6 +1,6 @@
 from .exceptions import (
-    DynamicSearchInterpreterError, DynamicSearchInterpreterUnknownSearchType,
-    DynamicSearchScopedQueryError
+    DynamicSearchInterpreterError,
+    DynamicSearchInterpreterUnknownSearchType, DynamicSearchScopedQueryError
 )
 from .literals import MATCH_ALL_FIELD_NAME, SCOPE_MARKER
 from .scoped_queries import (
@@ -50,7 +50,9 @@ class SearchInterpreter:
         if priority in cls._registry:
             raise DynamicSearchInterpreterError(
                 'Search interpreter `{}` is already registered for '
-                'priority `{}`.'.format(cls._registry[priority], priority)
+                'priority `{}`.'.format(
+                    cls._registry[priority], priority
+                )
             )
         else:
             cls._registry[priority] = klass
@@ -221,7 +223,9 @@ class SearchInterpreterAdvanced(SearchInterpreter):
                 operand_right = scope_id
 
                 scoped_query_entry = ScopedQueryEntryDataOperator(
-                    operand_list=(str(operand_left), str(operand_right)),
+                    operand_list=(
+                        str(operand_left), str(operand_right)
+                    ),
                     operator_text=operator_text,
                     scope_identifier=str(result_scope),
                     scoped_query=scoped_query

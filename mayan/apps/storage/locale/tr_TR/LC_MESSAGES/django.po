@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr "Depolama"
 
@@ -38,7 +38,7 @@ msgstr ""
 "Depolama başlatılamıyor: %(name)s. Depolama yolunu ve bağımsız değişkenleri "
 "kontrol edin."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Dosyaları indir"
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "İşlenecek depolamanın adı."
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "Dosya adı"
 
@@ -105,27 +105,27 @@ msgstr "Adsız dosya"
 msgid "Size"
 msgstr "Boyut"
 
-#: model_mixins.py:110 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:46 serializers.py:15
 msgid "User"
 msgstr "Kullanıcı"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "Dosya"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Etiket"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Dosyayı indir"
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr "Paylaşılan yüklenen dosya"
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Paylaşılan yüklenen dosyalar"
 
@@ -211,7 +211,7 @@ msgstr ""
 "Paylaşılan yüklenen dosya deposu başlatılamıyor. Biçimlendirme hataları için"
 " {} ve {} ayarlarını kontrol edin."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -221,10 +221,10 @@ msgstr ""
 "oluşturulur. İndirilen dosyalar belirli bir süre boyunca tutulur ve ardından"
 " otomatik olarak kaldırılır."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr "İndirilecek dosya yok."
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr "İndirilenler"

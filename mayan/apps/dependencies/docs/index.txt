@@ -10,7 +10,7 @@ Mayan EDMS app.
 These dependencies can be operating system, JavaScript, Fonts, or Python
 dependencies.
 
-The Dependencies app perform download, valiation, installation, and
+The Dependencies app perform download, validation, installation, and
 reporting of dependencies.
 
 

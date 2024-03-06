@@ -11,9 +11,7 @@ from ..permissions import (
 )
 
 from .mixins.document_mixins import DocumentTestMixin
-from .mixins.document_version_mixins import (
-    DocumentVersionPageAPIViewTestMixin
-)
+from .mixins.document_version_mixins import DocumentVersionPageAPIViewTestMixin
 
 
 class DocumentVersionPageAPIViewTestCase(

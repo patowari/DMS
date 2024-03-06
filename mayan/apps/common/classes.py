@@ -22,7 +22,9 @@ class ModelCopy:
 
     @classmethod
     def add_fields_lazy(cls, model, **kwargs):
-        cls._lazy.setdefault(model, [])
+        cls._lazy.setdefault(
+            model, []
+        )
         cls._lazy[model].append(kwargs)
 
     @classmethod
@@ -176,7 +178,9 @@ class ModelCopy:
 
         # Base fields whose values are copied.
         for field in self.fields_copy:
-            value = values.get(field, getattr(instance, field))
+            value = values.get(
+                field, getattr(instance, field)
+            )
 
             value = self._evaluate_field_get_for_field(
                 field=field, instance=instance, value=value, values=values
@@ -190,7 +194,10 @@ class ModelCopy:
 
             while True:
                 value = '{}_{}'.format(base_value, counter)
-                if not self.model._meta.default_manager.filter(**{field: value}).exists():
+                queryset = self.model._meta.default_manager.filter(
+                    **{field: value}
+                )
+                if not queryset.exists():
                     break
 
                 counter += 1
@@ -222,7 +229,10 @@ class ModelCopy:
 
                 while True:
                     value = '{}_{}'.format(base_value, counter)
-                    if not self.model._meta.default_manager.filter(**{field: value}).exists():
+                    queryset = self.model._meta.default_manager.filter(
+                        **{field: value}
+                    )
+                    if not queryset.exists():
                         break
 
                     counter += 1

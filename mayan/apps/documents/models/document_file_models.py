@@ -4,8 +4,8 @@ from django.db import models, transaction
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.signals import signal_mayan_pre_save
+from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.storage.classes import DefinedStorageLazy

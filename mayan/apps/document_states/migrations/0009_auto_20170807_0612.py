@@ -4,7 +4,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_states', '0008_auto_20170803_0752'),
+        ('document_states', '0008_auto_20170803_0752')
     ]
 
     operations = [
@@ -53,16 +53,18 @@ class Migration(migrations.Migration):
                         to='document_states.WorkflowState',
                         verbose_name='Workflow state'
                     )
-                ),
+                )
             ],
             options={
                 'ordering': ('label',),
                 'verbose_name': 'Workflow state action',
-                'verbose_name_plural': 'Workflow state actions',
-            },
+                'verbose_name_plural': 'Workflow state actions'
+            }
         ),
         migrations.AlterUniqueTogether(
             name='workflowstateaction',
-            unique_together={('state', 'label')},
-        ),
+            unique_together={
+                ('state', 'label')
+            }
+        )
     ]

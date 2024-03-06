@@ -6,7 +6,7 @@ import mayan.apps.document_signatures.models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('document_signatures', '0006_auto_20160326_0616'),
+        ('document_signatures', '0006_auto_20160326_0616')
     ]
 
     operations = [
@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
                     location=b'mayan/media/document_storage'
                 ), upload_to=mayan.apps.document_signatures.models.upload_to,
                 verbose_name='Signature file'
-            ),
-        ),
+            )
+        )
     ]

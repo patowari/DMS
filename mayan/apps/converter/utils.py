@@ -68,7 +68,9 @@ class IndexedDictionary:
 
                     result_dictionary.setdefault(
                         index, {}
-                    ).setdefault('arguments', {})
+                    ).setdefault(
+                        'arguments', {}
+                    )
                     result_dictionary[index]['arguments'].update(
                         {key: value}
                     )

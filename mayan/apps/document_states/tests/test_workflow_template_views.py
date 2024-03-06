@@ -1,5 +1,5 @@
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.permissions import permission_document_type_edit
+from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (
@@ -8,9 +8,9 @@ from ..events import (
 )
 from ..models.workflow_models import Workflow
 from ..permissions import (
-    permission_workflow_template_create, permission_workflow_template_delete,
-    permission_workflow_template_edit, permission_workflow_template_view,
-    permission_workflow_tools
+    permission_workflow_template_create,
+    permission_workflow_template_delete, permission_workflow_template_edit,
+    permission_workflow_template_view, permission_workflow_tools
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_LABEL
@@ -775,7 +775,9 @@ class WorkflowTemplateViewTestCase(
         response = self._request_test_workflow_template_create_view()
         self.assertEqual(response.status_code, 403)
 
-        self.assertEqual(Workflow.objects.count(), 0)
+        self.assertEqual(
+            Workflow.objects.count(), 0
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -788,7 +790,9 @@ class WorkflowTemplateViewTestCase(
         response = self._request_test_workflow_template_create_view()
         self.assertEqual(response.status_code, 302)
 
-        self.assertEqual(Workflow.objects.count(), 1)
+        self.assertEqual(
+            Workflow.objects.count(), 1
+        )
         self.assertEqual(
             Workflow.objects.all()[0].label, TEST_WORKFLOW_TEMPLATE_LABEL
         )

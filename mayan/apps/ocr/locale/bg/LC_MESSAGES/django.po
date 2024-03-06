@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -183,75 +183,75 @@ msgstr "Редактиране на настройките на OCR за тип�
 msgid "Submit all documents of a type for OCR"
 msgstr "Изпратете всички документи от даден тип за OCR"
 
-#: views.py:85
+#: views.py:88
 #, python-format
 msgid "%(count)d documents added to the OCR queue."
 msgstr "%(count)d документа, добавени към OCR опашката."
 
-#: views.py:106
+#: views.py:111
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Грешка при изтриване на OCR версия на документа &quot;%(instance)s&quot;; "
 "%(exception)s"
 
-#: views.py:112
+#: views.py:117
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
 msgstr "OCR съдържанието на %(count)d версии на документи е изтрито успешно."
 
-#: views.py:115
+#: views.py:120
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
 msgstr "OCR съдържанието на „%(object)s“ е изтрито успешно."
 
-#: views.py:118
+#: views.py:123
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
 msgstr "OCR съдържанието на %(count)d версия на документа е изтрито успешно."
 
-#: views.py:121
+#: views.py:126
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document versions."
 msgstr "Изтрийте OCR съдържанието на  %(count)dизбрани версии."
 
-#: views.py:123
+#: views.py:128
 #, python-format
 msgid "Delete the OCR content of: %(object)s."
 msgstr "Изтрийте съдържанието на OCR на: %(object)s."
 
-#: views.py:125
+#: views.py:130
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document version."
 msgstr "Изтрийте OCR съдържанието на  на %(count)dизбрана версия."
 
-#: views.py:156
+#: views.py:161
 #, python-format
 msgid "OCR result for document: %s"
 msgstr "OCR резултат за документ: %s"
 
-#: views.py:178
+#: views.py:183
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
 msgstr ""
 
-#: views.py:181
+#: views.py:186
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
 msgstr ""
 
-#: views.py:190
+#: views.py:195
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
 msgstr[0] "Изпратете избраната версия на документа на OCR опашката?"
 msgstr[1] "Да се изпратят ли избраните версии на документа на OCR опашката?"
 
-#: views.py:226
+#: views.py:231
 #, python-format
 msgid "OCR result for document version page: %s"
 msgstr "OCR резултат за страница с версия на документа: %s"
 
-#: views.py:254
+#: views.py:259
 #, python-format
 msgid "Edit OCR for document version page: %s"
 msgstr "Редактирайте OCR за страницата с версия на документа: %s"

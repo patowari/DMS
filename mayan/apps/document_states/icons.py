@@ -80,7 +80,7 @@ icon_workflow_template_state_delete = Icon(
 icon_workflow_template_state_edit = Icon(
     driver_name='fontawesome', symbol='pencil-alt'
 )
-link_workflow_template_state_list = Icon(
+icon_workflow_template_state_list = Icon(
     driver_name='fontawesome', symbol='circle'
 )
 

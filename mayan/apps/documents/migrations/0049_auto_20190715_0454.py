@@ -6,7 +6,7 @@ from mayan.apps.storage.utils import get_storage_subclass
 
 from ..settings import (
     setting_document_file_page_image_cache_storage_backend,
-    setting_document_file_page_image_cache_storage_backend_arguments,
+    setting_document_file_page_image_cache_storage_backend_arguments
 )
 
 logger = logging.getLogger(name=__name__)

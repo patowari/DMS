@@ -1,8 +1,6 @@
 from django.urls import re_path
 
-from .views import (
-    QueueTaskTypeListView, WorkerListView, WorkerQueueListView
-)
+from .views import QueueTaskTypeListView, WorkerListView, WorkerQueueListView
 
 urlpatterns = [
     re_path(

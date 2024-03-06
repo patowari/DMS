@@ -8,8 +8,7 @@ from .literals import (
     DEFAULT_COMMON_DISABLE_LOCAL_STORAGE, DEFAULT_COMMON_DISABLED_APPS,
     DEFAULT_COMMON_EXTRA_APPS, DEFAULT_COMMON_EXTRA_APPS_PRE,
     DEFAULT_COMMON_HOME_VIEW, DEFAULT_COMMON_HOME_VIEW_DASHBOARD_NAME,
-    DEFAULT_COMMON_PROJECT_TITLE,
-    DEFAULT_COMMON_PROJECT_URL
+    DEFAULT_COMMON_PROJECT_TITLE
 )
 
 setting_namespace = setting_cluster.do_namespace_add(
@@ -60,10 +59,11 @@ setting_extra_apps = setting_namespace.do_setting_add(
         'beyond those normally installed by Mayan EDMS. Each string '
         'should be a dotted Python path to: an application configuration '
         'class (preferred), or a package containing an application. '
+        'These apps will be installed after the default apps. '
         'Example: [\'app_1\', \'app_2\']'
     )
 )
-setting_extra_apps = setting_namespace.do_setting_add(
+setting_extra_apps_pre = setting_namespace.do_setting_add(
     default=DEFAULT_COMMON_EXTRA_APPS_PRE,
     global_name='COMMON_EXTRA_APPS_PRE',
     help_text=_(
@@ -93,8 +93,4 @@ setting_home_view_dashboard = setting_namespace.do_setting_add(
 setting_project_title = setting_namespace.do_setting_add(
     default=DEFAULT_COMMON_PROJECT_TITLE, global_name='COMMON_PROJECT_TITLE',
     help_text=_(message='Sets the project\'s name.')
-)
-setting_project_url = setting_namespace.do_setting_add(
-    default=DEFAULT_COMMON_PROJECT_URL, global_name='COMMON_PROJECT_URL',
-    help_text=_(message='URL of the project\'s homepage.')
 )

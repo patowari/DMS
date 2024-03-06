@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-03 15:09+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -121,19 +121,19 @@ msgstr "Deshabilitar el código de un solo uso para el usuario: %s"
 msgid "OTP disable successfully."
 msgstr "OTP deshabilitado con éxito."
 
-#: views.py:78
+#: views.py:80
 msgid "OTP is already enabled."
 msgstr "OTP ya está habilitado."
 
-#: views.py:94
+#: views.py:96
 msgid "OTP enabled successfully."
 msgstr "OTP habilitado con éxito."
 
-#: views.py:103
+#: views.py:105
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Habilitar código de un solo uso para el usuario: %s"
 
-#: views.py:115
+#: views.py:117
 msgid "OTP secret validation error."
 msgstr "Error de validación de secreto OTP."

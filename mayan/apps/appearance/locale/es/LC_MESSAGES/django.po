@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -92,7 +92,7 @@ msgstr "Ajustes de tema"
 msgid "Edit theme settings"
 msgstr "Editar los ajustes de tema"
 
-#: links.py:33 views.py:31
+#: links.py:33 views.py:32
 msgid "Create new theme"
 msgstr "Crear nuevo tema"
 
@@ -104,7 +104,7 @@ msgstr "Eliminar"
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:46 links.py:54 models.py:32 views.py:99
+#: links.py:46 links.py:54 models.py:32 views.py:101
 msgid "Themes"
 msgstr "Temas"
 
@@ -269,63 +269,99 @@ msgstr ""
 "Abra un ticket utilizando el <a href=\"%(issue_url)s\">monitor de "
 "problemas</a> ."
 
-#: templates/appearance/about.html:9
+#: templates/appearance/about.html:10
 msgid "About"
 msgstr "Sobre"
 
-#: templates/appearance/about.html:21
+#: templates/appearance/about.html:39
 msgid "Version"
 msgstr "Versión"
 
-#: templates/appearance/about.html:23
+#: templates/appearance/about.html:41
 #, python-format
-msgid "Build number: %(build_number)s"
-msgstr "Número de compilación: %(build_number)s"
+msgid "Build number: %(project_build_number)s"
+msgstr "Número de compilación: %(project_build_number)s"
 
-#: templates/appearance/about.html:36
+#: templates/appearance/about.html:48
 msgid "Released under the license:"
 msgstr "Publicado bajo la licencia:"
 
-#: templates/appearance/about.html:40
+#: templates/appearance/about.html:57
 #, python-format
 msgid ""
-"\n"
-"                The complete list of changes is available via the <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\">Release notes %(icon_documentation)s</a> or the short version <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\">Changelog %(icon_documentation)s</a>.\n"
-"            "
+"To get the latest news subscribe to the <a class=\"new_window\" "
+"href=\"%(link_mailing_list_url)s\"> Mailing list</a>."
 msgstr ""
-"\n"
-"                La lista completa de cambios está disponible a través de <a class=\"new_window\" href=\"https://docs.mayan-edms.com/releases/index.html\"> Notas de la versión %(icon_documentation)s </a> o la versión corta <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms/blob/master/HISTORY.rst\"> Changelog %(icon_documentation)s </a>.\n"
-"            "
+"Para recibir las últimas noticias suscríbete a la <a class=\"new_window\" "
+"href=\"%(link_mailing_list_url)s\">lista de correo</a> ."
 
-#: templates/appearance/about.html:46
+#: templates/appearance/about.html:66
 #, python-format
 msgid ""
-"\n"
-"                For questions check the <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentation %(icon_documentation)s</a>.\n"
-"            "
+"For articles, tutorials, troubleshooting, subscribe to the <a "
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
-"\n"
-"Para preguntas, consulte la <a class=\"new_window\" href=\"https://docs.mayan-edms.com\">Documentación %(icon_documentation)s</a> ."
+"Para artículos, tutoriales y solución de problemas, suscríbase a la <a "
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\">base de "
+"conocimientos</a> ."
 
-#: templates/appearance/about.html:52
+#: templates/appearance/about.html:75
 #, python-format
 msgid ""
-"\n"
-"                If you found a bug or have a feature idea, visit the <a class=\"new_window\" href=\"https://forum.mayan-edms.com\">Forum %(icon_forum)s</a> or open a ticket in the <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\">Source code repository %(icon_source_code)s</a>.\n"
-"            "
+"Need professional help? Check out the <a class=\"new_window\" "
+"href=\"%(link_support_url)s\"> Support</a> offerings."
 msgstr ""
-"\n"
-"                Si encontró un error o tiene una idea característica, visite el <a class=\"new_window\" href=\"https://forum.mayan-edms.com\"> Forum %(icon_forum)s </a> o abra un ticket en el <a class=\"new_window\" href=\"https://gitlab.com/mayan-edms/mayan-edms\"> Repositorio de código fuente %(icon_source_code)s </a>\n"
-"            "
+"¿Necesitas ayuda profesional? Consulte las ofertas de <a "
+"class=\"new_window\" href=\"%(link_support_url)s\">Apoyo técnico</a> ."
 
-#: templates/appearance/app/foot.html:70
+#: templates/appearance/about.html:84
+#, python-format
 msgid ""
-"Too many pending requests. Additional requests will be blocked until a "
-"pending one is completed or after the cooling off period ends."
+"For discussions visit the <a class=\"new_window\" "
+"href=\"%(link_forum_url)s\">Community forum</a>."
 msgstr ""
-"Demasiadas solicitudes pendientes. Las solicitudes adicionales se bloquearán"
-" hasta que se complete una pendiente o después de que finalice el período de"
-" limitación."
+"Para discusiones visite el <a class=\"new_window\" "
+"href=\"%(link_forum_url)s\">Foro de la comunidad</a> ."
+
+#: templates/appearance/about.html:93
+#, python-format
+msgid ""
+"The complete list of changes is available via the <a class=\"new_window\" "
+"href=\"%(link_release_notes_url)s\">Release notes</a>."
+msgstr ""
+"La lista completa de cambios está disponible a través de las <a "
+"class=\"new_window\" href=\"%(link_release_notes_url)s\">Notas de la "
+"versión</a> ."
+
+#: templates/appearance/about.html:102
+#, python-format
+msgid ""
+"For questions check the <a class=\"new_window\" "
+"href=\"%(link_documentation_url)s\">Documentation</a>."
+msgstr ""
+"Si tienes dudas consulta la <a class=\"new_window\" "
+"href=\"%(link_documentation_url)s\">Documentación</a> ."
+
+#: templates/appearance/about.html:111
+#, python-format
+msgid ""
+"If you found a bug or have a feature idea open a ticket in the <a "
+"class=\"new_window\" href=\"%(link_source_code_url)s\">Source code "
+"repository</a>."
+msgstr ""
+"Si encontró un error o tiene una idea sobre una función, abra un ticket en "
+"el <a class=\"new_window\" href=\"%(link_source_code_url)s\">Repositorio de "
+"código fuente</a> ."
+
+#: templates/appearance/about.html:117
+#, python-format
+msgid ""
+"%(project_title)s is Free and Open Source software, which is provided as-is "
+"with no warranty."
+msgstr ""
+"%(project_title)s es un software gratuito y de código abierto, que se "
+"proporciona tal como está sin garantía."
 
 #: templates/appearance/confirm.html:13
 msgid "Are you sure?"
@@ -467,33 +503,33 @@ msgstr "Verifique su conexión de red y vuelva a intentarlo en unos momentos."
 msgid "None"
 msgstr "Ninguno"
 
-#: views.py:55
+#: views.py:57
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Eliminar tema: %s"
 
-#: views.py:72
+#: views.py:74
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Editar tema: %s"
 
-#: views.py:93
+#: views.py:95
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Los temas permiten cambiar la apariencia visual sin requerir cambios de "
 "código."
 
-#: views.py:97
+#: views.py:99
 msgid "There are no themes"
 msgstr "No hay temas"
 
-#: views.py:122
+#: views.py:125
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Configuración de tema para el usuario: %s"
 
-#: views.py:144
+#: views.py:148
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Editar la configuración de tema para el usuario: %s"

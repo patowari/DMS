@@ -1,4 +1,4 @@
-from django.db import models, migrations
+from django.db import migrations, models
 
 import mayan.apps.common.validators
 
@@ -16,7 +16,9 @@ class Migration(migrations.Migration):
                 help_text='Enter the arguments for the transformation as a '
                 'YAML dictionary. ie: {"degrees": 180}', blank=True,
                 verbose_name='Arguments',
-                validators=[mayan.apps.common.validators.YAMLValidator()]
+                validators=[
+                    mayan.apps.common.validators.YAMLValidator()
+                ]
             ),
             preserve_default=True,
         ),

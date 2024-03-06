@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:20+0000\n"
+"POT-Creation-Date: 2024-03-03 15:10+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Source stored files"
 msgstr ""
 
-#: classes.py:44
+#: classes.py:46
 msgid "Size"
 msgstr ""
 
-#: classes.py:48
+#: classes.py:50
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
@@ -58,11 +58,11 @@ msgid ""
 "Unique identifier to select which source backend stored file to process."
 msgstr ""
 
-#: source_backend_actions/mixins.py:75
+#: source_backend_actions/mixins.py:74
 msgid "Stored file"
 msgstr ""
 
-#: source_backend_actions/mixins.py:76
+#: source_backend_actions/mixins.py:75
 #, python-format
 msgid "Delete stored file \"%s\"?"
 msgstr ""

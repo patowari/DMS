@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -22,19 +22,19 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:26 permissions.py:6
+#: apps.py:27 permissions.py:6
 msgid "Smart settings"
 msgstr "Setări inteligente"
 
-#: apps.py:36
+#: apps.py:37
 msgid "Setting count"
 msgstr "Numărul setării"
 
-#: apps.py:42
+#: apps.py:43
 msgid "Name"
 msgstr "Nume"
 
-#: apps.py:46 forms.py:30
+#: apps.py:47 forms.py:30
 msgid "Value"
 msgstr "Valoare"
 
@@ -52,7 +52,7 @@ msgstr "Valori posibile permise pentru această setare."
 
 #: classes.py:519
 msgid "Cannot revert setting. Setting value has not been updated."
-msgstr ""
+msgstr "Nu se poate reveni la setare. Valoarea setării nu a fost actualizată."
 
 #: classes.py:556
 msgid "Default"
@@ -60,11 +60,11 @@ msgstr "Implicit"
 
 #: classes.py:569
 msgid "Modified"
-msgstr ""
+msgstr "Modificat"
 
 #: classes.py:571
 msgid "The value of this setting being modified since the last restart."
-msgstr ""
+msgstr "Valoarea acestei setări a fost modificată de la ultima repornire."
 
 #: classes.py:577
 msgid "Overridden"
@@ -73,7 +73,7 @@ msgstr "Suprascris"
 #: classes.py:579
 msgid ""
 "The value of the setting is being overridden by an environment variable."
-msgstr ""
+msgstr "Valoarea setării este suprascrisă de o variabilă de mediu."
 
 #: forms.py:32
 msgid "Enter the new setting value."
@@ -109,6 +109,9 @@ msgid ""
 "Local storage is currently disabled, changes to settings will not be saved. "
 "Instead, use environment variables to modify settings."
 msgstr ""
+"Stocarea locală este în prezent dezactivată, modificările aduse setărilor nu"
+" vor fi salvate. În schimb, utilizați variabilele de mediu pentru a modifica"
+" setările."
 
 #: models.py:8
 msgid "A short text used as the tag name."
@@ -116,23 +119,23 @@ msgstr "Un text scurt folosit ca nume de etichetă."
 
 #: models.py:9
 msgid "Global name"
-msgstr ""
+msgstr "Nume global"
 
 #: models.py:12
 msgid "New value"
-msgstr ""
+msgstr "Valoare nouă"
 
 #: models.py:15
 msgid "Old value"
-msgstr ""
+msgstr "Valoare veche"
 
 #: models.py:19
 msgid "Updated setting"
-msgstr ""
+msgstr "Setare actualizată"
 
 #: models.py:20
 msgid "Updated settings"
-msgstr ""
+msgstr "Setări actualizate"
 
 #: permissions.py:10
 msgid "Edit settings"
@@ -214,6 +217,11 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_COOKIE_SECURE"
 msgstr ""
+"Dacă să utilizați un cookie securizat pentru cookie-ul CSRF. Dacă acesta "
+"este setat la True, cookie-ul va fi marcat ca „securizat”, ceea ce înseamnă "
+"că browserele se pot asigura că cookie-ul este trimis numai cu o conexiune "
+"HTTPS. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_COOKIE_SECURE"
 
 #: settings.py:87
 msgid ""
@@ -221,6 +229,9 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_TRUSTED_ORIGINS"
 msgstr ""
+"O listă de origini de încredere pentru solicitările nesigure (de ex. POST). "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_TRUSTED_ORIGINS"
 
 #: settings.py:94
 msgid ""
@@ -228,6 +239,9 @@ msgid ""
 "cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_USE_SESSIONS"
 msgstr ""
+"Dacă trebuie să stocați jetonul CSRF în sesiunea utilizatorului și nu într-"
+"un cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_USE_SESSIONS"
 
 #: settings.py:101
 msgid ""
@@ -530,6 +544,10 @@ msgid ""
 "Django. It is a nested dictionary whose contents map a storage alias to a "
 "dictionary containing the options for an individual storage."
 msgstr ""
+"Un dicționar care conține setările pentru toate stocările care vor fi "
+"utilizate cu Django. Este un dicționar imbricat al cărui conținut mapează un"
+" alias de stocare la un dicționar care conține opțiuni pentru o stocare "
+"individuală."
 
 #: settings.py:325
 msgid ""
@@ -586,6 +604,8 @@ msgid ""
 "Settings updated. Save and restart your installation for changes to take "
 "effect."
 msgstr ""
+"Setările aduse la zi. Salvați și reporniți instalarea pentru ca modificările"
+" să intre în vigoare."
 
 #: tests/test_classes.py:190
 msgid "English"
@@ -593,15 +613,15 @@ msgstr "Engleză"
 
 #: views.py:41
 msgid "This will overwrite the content of the configuration file."
-msgstr ""
+msgstr "Aceasta va suprascrie conținutul fișierului de configurare."
 
 #: views.py:44
 msgid "Save settings to the configuration file?"
-msgstr ""
+msgstr "Salvați setările în fișierul de configurare?"
 
 #: views.py:52
 msgid "Settings saved to configuration file successfully."
-msgstr ""
+msgstr "Setările au fost salvate în fișierul de configurare."
 
 #: views.py:60
 msgid "Setting namespaces"
@@ -616,6 +636,8 @@ msgid ""
 "This setting is overridden by an environment variable, changing its value "
 "will have no effect."
 msgstr ""
+"Această setare este suprascrisă de o variabilă de mediu, modificarea valorii"
+" acesteia nu va avea niciun efect."
 
 #: views.py:108
 #, python-format
@@ -625,28 +647,28 @@ msgstr "Editați setarea: %s"
 #: views.py:130
 #, python-format
 msgid "%(count)d settings value reverted."
-msgstr ""
+msgstr "Valoarea setărilor %(count)d a fost inversată."
 
 #: views.py:133
 #, python-format
 msgid "Value of setting \"%(object)s\" reverted."
-msgstr ""
+msgstr "Valoarea setarii  \" %(object)s \" a fost inversată."
 
 #: views.py:135
 #, python-format
 msgid "%(count)d setting value reverted."
-msgstr ""
+msgstr "Valoarea setării %(count)d a fost adusă la valoarea inițială."
 
 #: views.py:144
 msgid "Unsaved changes will be lost."
-msgstr ""
+msgstr "Modificările nesalvate se vor pierde."
 
 #: views.py:147
 msgid "Revert the selected setting value?"
 msgid_plural "Revert the selected settings value?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Reveniți valoarea setării selectate?"
+msgstr[1] "Reveniți la valoarea setărilor selectate?"
+msgstr[2] "Reveniți la valoarea inițială a setărilor selectate?"
 
 #: views.py:186
 msgid ""

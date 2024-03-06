@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -22,17 +22,17 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:215 apps.py:653 events.py:6 menus.py:8
-#: models/document_models.py:116 permissions.py:6 settings.py:33
+#: apps.py:218 apps.py:655 events.py:6 menus.py:8
+#: models/document_models.py:116 permissions.py:6 settings.py:34
 #: statistics.py:286
 msgid "Documents"
 msgstr "Dokumentumok"
 
-#: apps.py:296
+#: apps.py:299
 msgid "Create a document type"
 msgstr "Dokumentumtípus létrehozása"
 
-#: apps.py:298
+#: apps.py:301
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
@@ -40,47 +40,47 @@ msgstr ""
 "Minden betöltött dokumentumhoz hozzá kell rendelni egy típust, ez az "
 "alapvető kategorizálási elv a Mayan EDMS-ben."
 
-#: apps.py:393
+#: apps.py:395
 msgid "File comments"
 msgstr "Fájl hozzászólások"
 
-#: apps.py:397
+#: apps.py:399
 msgid "File encodings"
 msgstr "Fájlkódolások"
 
-#: apps.py:401
+#: apps.py:403
 msgid "File MIME types"
 msgstr "Fájl MIME típusok"
 
-#: apps.py:405
+#: apps.py:407
 msgid "File timestamps"
 msgstr "Fájl időbélyegek"
 
-#: apps.py:410 links/document_file_page_links.py:77
+#: apps.py:412 links/document_file_page_links.py:77
 #: models/document_file_models.py:106 models/document_file_page_models.py:26
 #: search.py:49
 msgid "Document file"
 msgstr "Dokumentumfájl"
 
-#: apps.py:414 models/document_file_page_models.py:30
+#: apps.py:416 models/document_file_page_models.py:30
 #: models/document_version_page_models.py:40
 msgid "Page number"
 msgstr "Oldalszám"
 
-#: apps.py:419
+#: apps.py:421
 msgid "Return the latest file of the document."
 msgstr "Visszaadja a dokumentum legújabb fájlját."
 
-#: apps.py:420
+#: apps.py:422
 msgid "Latest file"
 msgstr "Legújabb fájl"
 
-#: apps.py:424
+#: apps.py:426
 msgid "Return the document instance."
 msgstr "Visszaadja a dokumentumpéldányt."
 
-#: apps.py:425 links/document_file_links.py:70
-#: links/document_file_page_links.py:71 links/document_version_links.py:74
+#: apps.py:427 links/document_file_links.py:71
+#: links/document_file_page_links.py:71 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:57
 #: models/document_models.py:115 models/document_version_models.py:28
 #: models/favorite_document_models.py:30
@@ -90,25 +90,25 @@ msgstr "Visszaadja a dokumentumpéldányt."
 msgid "Document"
 msgstr "Dokumentum"
 
-#: apps.py:556 apps.py:610 apps.py:639 apps.py:674 apps.py:699
+#: apps.py:558 apps.py:612 apps.py:641 apps.py:676 apps.py:701
 msgid "Thumbnail"
 msgstr "Miniatűr"
 
-#: apps.py:562
+#: apps.py:564
 msgid "Type"
 msgstr "Típus"
 
-#: apps.py:567 apps.py:615 apps.py:679 forms/document_file_forms.py:89
+#: apps.py:569 apps.py:617 apps.py:681 forms/document_file_forms.py:89
 #: links/document_file_page_links.py:120
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Oldalak"
 
-#: apps.py:577 models/favorite_document_models.py:33
+#: apps.py:579 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr "Hozzáadott dátum és idő"
 
-#: apps.py:588
+#: apps.py:590
 msgid "Access date and time"
 msgstr "Hozzáférés dátuma és ideje"
 
@@ -141,29 +141,29 @@ msgstr ""
 "Minden egyes fájlhoz egy megváltoztathatatlan, véletlenszerű UUID-t (RFC "
 "4122) generál, és hozzáfűzi a feltöltött fájl eredeti fájlnevét."
 
-#: dashboard_widgets.py:32
+#: dashboard_widgets.py:29
 msgid "Total pages"
 msgstr "Összes oldal"
 
-#: dashboard_widgets.py:55
+#: dashboard_widgets.py:52
 msgid "Total documents"
 msgstr "Dokumentumok száma"
 
-#: dashboard_widgets.py:73 views/trashed_document_views.py:156
+#: dashboard_widgets.py:70 views/trashed_document_views.py:156
 msgid "Documents in trash"
 msgstr "Dokumentumok a kukában"
 
-#: dashboard_widgets.py:91 links/document_type_links.py:68
-#: links/document_type_links.py:83 permissions.py:78
+#: dashboard_widgets.py:88 links/document_type_links.py:67
+#: links/document_type_links.py:82 permissions.py:78
 #: views/document_type_views.py:81
 msgid "Document types"
 msgstr "Dokumentumtípusok"
 
-#: dashboard_widgets.py:109
+#: dashboard_widgets.py:106
 msgid "New documents this month"
 msgstr "Új dokumentumok a hónapban"
 
-#: dashboard_widgets.py:123
+#: dashboard_widgets.py:120
 msgid "New pages this month"
 msgstr "Új oldalak a hónapban"
 
@@ -367,7 +367,7 @@ msgid "Language"
 msgstr "Nyelv"
 
 #: forms/document_type_forms.py:42 models/document_models.py:59
-#: models/document_type_models.py:100 models/document_type_models.py:148
+#: models/document_type_models.py:102 models/document_type_models.py:150
 #: serializers/document_serializers.py:28 workflow_actions.py:18
 #: workflow_actions.py:34
 msgid "Document type"
@@ -419,46 +419,46 @@ msgstr ""
 "Oldalszám, amelyről az összes átalakítás klónozásra kerül. A meglévő "
 "átalakítások elvesznek."
 
-#: links/document_file_links.py:26 links/document_file_links.py:31
-#: links/document_type_links.py:28 links/document_type_links.py:46
-#: links/document_version_links.py:40 links/document_version_links.py:44
-#: links/document_version_page_links.py:46 links/trashed_document_links.py:19
-#: links/trashed_document_links.py:41
+#: links/document_file_links.py:27 links/document_file_links.py:32
+#: links/document_type_links.py:27 links/document_type_links.py:45
+#: links/document_version_links.py:39 links/document_version_links.py:43
+#: links/document_version_page_links.py:46 links/trashed_document_links.py:18
+#: links/trashed_document_links.py:40
 msgid "Delete"
 msgstr "Törlés"
 
-#: links/document_file_links.py:36 links/document_type_links.py:32
-#: links/document_type_links.py:53 links/document_version_links.py:49
+#: links/document_file_links.py:37 links/document_type_links.py:31
+#: links/document_type_links.py:52 links/document_version_links.py:48
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: links/document_file_links.py:40 links/document_file_links.py:47
+#: links/document_file_links.py:41 links/document_file_links.py:48
 msgid "Introspect"
 msgstr "Önellenőrzés"
 
-#: links/document_file_links.py:54 links/document_file_links.py:76
+#: links/document_file_links.py:55 links/document_file_links.py:77
 msgid "Files"
 msgstr "Fájlok"
 
-#: links/document_file_links.py:58 links/document_version_links.py:68
+#: links/document_file_links.py:59 links/document_version_links.py:67
 msgid "Print"
 msgstr "Nyomtatás"
 
-#: links/document_file_links.py:65 links/document_links.py:43
+#: links/document_file_links.py:66 links/document_links.py:43
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: links/document_file_links.py:83 links/document_links.py:38
-#: links/document_version_links.py:64
+#: links/document_file_links.py:84 links/document_links.py:38
+#: links/document_version_links.py:63
 msgid "Preview"
 msgstr "Előnézet"
 
-#: links/document_file_links.py:89 links/document_file_links.py:95
-#: links/document_version_links.py:87 links/document_version_links.py:93
+#: links/document_file_links.py:90 links/document_file_links.py:96
+#: links/document_version_links.py:86 links/document_version_links.py:92
 msgid "Clear transformations"
 msgstr "Átalakítások törlése"
 
-#: links/document_file_links.py:102 links/document_version_links.py:100
+#: links/document_file_links.py:103 links/document_version_links.py:99
 msgid "Clone transformations"
 msgstr "Átalakítások klónozása"
 
@@ -537,39 +537,39 @@ msgstr "Nemrég létrehozott"
 msgid "Edit properties"
 msgstr "Tulajdonságok szerkesztése"
 
-#: links/document_type_links.py:23 views/document_type_views.py:96
+#: links/document_type_links.py:22 views/document_type_views.py:96
 msgid "Create document type"
 msgstr "Dokumentumtípus létrehozása"
 
-#: links/document_type_links.py:39
+#: links/document_type_links.py:38
 msgid "Add quick label to document type"
 msgstr "Gyorscímke dokumentumtípushoz adása"
 
-#: links/document_type_links.py:59 models/document_type_models.py:161
+#: links/document_type_links.py:58 models/document_type_models.py:163
 msgid "Quick labels"
 msgstr "Gyorscímkék"
 
-#: links/document_type_links.py:64
+#: links/document_type_links.py:63
 msgid "Filename generation"
 msgstr "Fájlnév generálás"
 
-#: links/document_type_links.py:75
+#: links/document_type_links.py:74
 msgid "Retention policies"
 msgstr "Adatmegőrzési szabályzatok"
 
-#: links/document_version_links.py:28
+#: links/document_version_links.py:27
 msgid "Make active"
 msgstr "Aktívvá tevés"
 
-#: links/document_version_links.py:33
+#: links/document_version_links.py:32
 msgid "Create document version"
 msgstr "Dokumentumverzió létrehozása"
 
-#: links/document_version_links.py:53 links/document_version_links.py:80
+#: links/document_version_links.py:52 links/document_version_links.py:79
 msgid "Versions"
 msgstr "Verziók"
 
-#: links/document_version_links.py:58
+#: links/document_version_links.py:57
 msgid "Modify"
 msgstr "Módosítás"
 
@@ -605,19 +605,19 @@ msgstr "Eltávolítás a kedvencekből"
 msgid "Decorations"
 msgstr "Dekorációk"
 
-#: links/trashed_document_links.py:24 links/trashed_document_links.py:37
+#: links/trashed_document_links.py:23 links/trashed_document_links.py:36
 msgid "Move to trash"
 msgstr "Áthelyezés a kukába"
 
-#: links/trashed_document_links.py:27
+#: links/trashed_document_links.py:26
 msgid "Trash can"
 msgstr "Kuka"
 
-#: links/trashed_document_links.py:32 links/trashed_document_links.py:44
+#: links/trashed_document_links.py:31 links/trashed_document_links.py:43
 msgid "Restore"
 msgstr "Visszaállítás"
 
-#: links/trashed_document_links.py:49 permissions.py:105
+#: links/trashed_document_links.py:48 permissions.py:105
 msgid "Empty trash"
 msgstr "Kuka ürítése"
 
@@ -678,9 +678,9 @@ msgid "All pages"
 msgstr "Minden oldal"
 
 #: models/document_file_model_mixins.py:299
-#: models/document_file_page_model_mixins.py:240
+#: models/document_file_page_model_mixins.py:244
 #: models/document_model_mixins.py:176 models/document_models.py:67
-#: models/document_type_models.py:41 models/document_type_models.py:151
+#: models/document_type_models.py:41 models/document_type_models.py:153
 #: models/document_version_model_mixins.py:128
 #: models/document_version_page_model_mixins.py:290
 #: serializers/document_serializers.py:22
@@ -738,7 +738,7 @@ msgstr ""
 msgid "Document files"
 msgstr "Dokumentumfájlok"
 
-#: models/document_file_page_model_mixins.py:234
+#: models/document_file_page_model_mixins.py:238
 #, python-format
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "%(document_file)s – oldal%(page_num)d a %(total_pages)d-ból"
@@ -852,41 +852,41 @@ msgstr "Fájlnévgenerátor háttérrendszer"
 msgid "The arguments for the filename generator backend as a YAML dictionary."
 msgstr "A fájlnév-generátor háttérrendszerének argumentumai YAML-szótárként."
 
-#: models/document_type_models.py:54
+#: models/document_type_models.py:56
 msgid "Filename generator backend arguments"
 msgstr "Fájlnévgenerátor háttérrendszer argumentumai"
 
-#: models/document_type_models.py:62
+#: models/document_type_models.py:64
 msgid ""
 "Amount of time after which documents of this type will be moved to the "
 "trash."
 msgstr ""
 "Az az idő, amely után az ilyen típusú dokumentumok a kukából is törlődnek."
 
-#: models/document_type_models.py:64
+#: models/document_type_models.py:66
 msgid "Trash time period"
 msgstr "Kukában tartás időszak"
 
-#: models/document_type_models.py:68
+#: models/document_type_models.py:70
 msgid "Trash time unit"
 msgstr "Kukában tartás időegysége"
 
-#: models/document_type_models.py:72
+#: models/document_type_models.py:74
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
 msgstr ""
 "Az az idő, amely után az ilyen típusú dokumentumok a kukából is törlődnek."
 
-#: models/document_type_models.py:74
+#: models/document_type_models.py:76
 msgid "Delete time period"
 msgstr "Törlési időtartam"
 
-#: models/document_type_models.py:79
+#: models/document_type_models.py:81
 msgid "Delete time unit"
 msgstr "Törlési időegység"
 
-#: models/document_type_models.py:83
+#: models/document_type_models.py:85
 msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
@@ -894,11 +894,11 @@ msgstr ""
 "Törölje azokat a dokumentumokat, amelyek nem tartalmaznak fájlokat egy "
 "beállított lejárati idő után."
 
-#: models/document_type_models.py:85
+#: models/document_type_models.py:87
 msgid "Document stub pruning"
 msgstr "Dokumentumcsonk törlése"
 
-#: models/document_type_models.py:89
+#: models/document_type_models.py:91
 msgid ""
 "Time (in seconds) after which a document stub will be considered invalid and"
 " deleted, if pruning is enabled. This an optimization setting and should "
@@ -908,19 +908,19 @@ msgstr ""
 "minősül és törlődik, ha a metszés engedélyezve van. Ez egy optimalizálási "
 "beállítás, és csak meghatározott körülmények esetén módosítható."
 
-#: models/document_type_models.py:93
+#: models/document_type_models.py:95
 msgid "Document stub expiration interval"
 msgstr "Dokumentumcsonk lejárati időköz"
 
-#: models/document_type_models.py:101
+#: models/document_type_models.py:103
 msgid "Documents types"
 msgstr "Dokumentum típusok"
 
-#: models/document_type_models.py:154
+#: models/document_type_models.py:156
 msgid "Enabled"
 msgstr "Engedélyezett"
 
-#: models/document_type_models.py:160
+#: models/document_type_models.py:162
 msgid "Quick label"
 msgstr "Gyorscímke"
 
@@ -1350,7 +1350,7 @@ msgstr "Dokumentumazonosító"
 msgid "Restore URL"
 msgstr "URL visszaállítása"
 
-#: settings.py:49
+#: settings.py:50
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
 "will start deleting the oldest document file page image cache files. Specify"
@@ -1360,15 +1360,15 @@ msgstr ""
 " megkezdi a legrégebbi dokumentumfájl-oldal kép-gyorsítótár fájljainak "
 "törlését. Adja meg a méretet bájtban."
 
-#: settings.py:57
+#: settings.py:58
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr "A Tárolás alosztály elérési útja a dokumentumfájlok tárolásakor."
 
-#: settings.py:64
+#: settings.py:65
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
 msgstr "A DOCUMENT_FILE_STORAGE_BACKEND fájlba átadandó argumentumok."
 
-#: settings.py:70
+#: settings.py:71
 msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
@@ -1376,18 +1376,18 @@ msgstr ""
 "A Tárolás alosztály elérési útja a gyorsítótárazott dokumentumfájl "
 "oldalképfájlok tárolásakor."
 
-#: settings.py:78
+#: settings.py:79
 msgid ""
 "Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "A DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND-be továbbítandó "
 "argumentumok."
 
-#: settings.py:84
+#: settings.py:85
 msgid "Maximum number of favorite documents to remember per user."
 msgstr "Felhasználónként felvehető kedvenc dokumentumok maximális száma."
 
-#: settings.py:90
+#: settings.py:91
 msgid ""
 "Size of blocks to use when calculating the document file's checksum. A value"
 " of 0 disables the block calculation and the entire file will be loaded into"
@@ -1397,15 +1397,15 @@ msgstr ""
 "mérete. A 0 érték letiltja a blokkszámítást, és a teljes fájl betöltődik a "
 "memóriába."
 
-#: settings.py:97
+#: settings.py:98
 msgid "Default documents language (in ISO639-3 format)."
 msgstr "A dokumentumok alapértelmezett nyelve (ISO639-3 formátumban)."
 
-#: settings.py:101
+#: settings.py:102
 msgid "List of supported document languages. In ISO639-3 format."
 msgstr "A támogatott dokumentumnyelvek listája. ISO639-3 formátumban."
 
-#: settings.py:107
+#: settings.py:108
 msgid ""
 "The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
 " will start deleting the oldest document version page image cache versions. "
@@ -1416,7 +1416,7 @@ msgstr ""
 "dokumentumverzió-oldal kép-gyorsítótár verzióinak törlését. Adja meg a "
 "méretet bájtban."
 
-#: settings.py:116
+#: settings.py:117
 msgid ""
 "Path to the Storage subclass to use when storing the cached document version"
 " page image versions."
@@ -1424,14 +1424,14 @@ msgstr ""
 "A Tárolás alosztály elérési útja, amelyet a gyorsítótárazott "
 "dokumentumverzió oldal képverzióinak tárolásakor használ."
 
-#: settings.py:124
+#: settings.py:125
 msgid ""
 "Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "A DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND-hez továbbítandó "
 "argumentumok."
 
-#: settings.py:146
+#: settings.py:147
 msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
@@ -1439,72 +1439,72 @@ msgstr ""
 "A közelmúltban hozzáfért (létrehozott, szerkesztett, megtekintett) "
 "dokumentumok maximális száma felhasználónként."
 
-#: settings.py:153
+#: settings.py:154
 msgid "Maximum number of recently created documents to show."
 msgstr "A legutóbb létrehozott dokumentumok maximális száma."
 
-#: settings.py:159
+#: settings.py:160
 msgid "Amount in degrees to rotate a document page per user interaction."
 msgstr ""
 "A felhasználó ennyi fokkal lesz képes elforgatni a dokumentumoldalt egy "
 "lépésben."
 
-#: settings.py:165
+#: settings.py:166
 msgid "Height in pixels of the document thumbnail image."
 msgstr "A dokumentum indexképének magassága pixelben."
 
-#: settings.py:184
+#: settings.py:185
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
 msgstr "Egy dokumentum oldal százalékos (%) nagyításának aránya egy lépésben."
 
-#: settings.py:191
+#: settings.py:192
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
 msgstr ""
 "Egy dokumentum oldal százalékos (%) kicsinyítésének aránya egy lépésben."
 
-#: settings.py:198
+#: settings.py:199
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
 "Egy dokumentum oldal százalékos nagyításának vagy kicsinyítésének aránya egy"
 " lépésben."
 
-#: statistics.py:290
+#: statistics.py:291
 msgid "New documents per month"
 msgstr "Új dokumentumok havonta"
 
-#: statistics.py:297
+#: statistics.py:298
 msgid "New document files per month"
 msgstr "Új dokumentumfájlok havonta"
 
-#: statistics.py:304
+#: statistics.py:305
 msgid "New document pages per month"
 msgstr "Új dokumentum oldalak havonta"
 
-#: statistics.py:311
+#: statistics.py:312
 msgid "Total documents at each month"
 msgstr "Dokumentumok számossága havonta"
 
-#: statistics.py:318
+#: statistics.py:319
 msgid "Total document files at each month"
 msgstr "Összes dokumentumfájl minden hónapban"
 
-#: statistics.py:325
+#: statistics.py:326
 msgid "Total document pages at each month"
 msgstr "Dokumentum oldalak számossága havonta"
 
-#: statistics.py:332
+#: statistics.py:333
 msgid "Total documents per document type"
 msgstr "Összes dokumentum dokumentumtípusonként"
 
-#: statistics.py:339
+#: statistics.py:340
 msgid "Total document files per document type"
 msgstr "Összes dokumentumfájl dokumentumtípusonként"
 
-#: statistics.py:346
+#: statistics.py:347
 msgid "Total document file pages per document type"
 msgstr "Összes dokumentumfájl oldal dokumentumtípusonként"
 
@@ -1580,7 +1580,7 @@ msgstr "Nincs megjeleníthető oldal"
 msgid "Unknown language \"%s\""
 msgstr "Ismeretlen nyelv \"%s\""
 
-#: views/document_file_page_views.py:54
+#: views/document_file_page_views.py:55
 msgid ""
 "This could mean that the document file is of a format that is not supported,"
 " that it is corrupted, or that the upload process was interrupted. Use the "
@@ -1590,67 +1590,67 @@ msgstr ""
 "vagy a feltöltési folyamat megszakadt. Használja a dokumentumfájl "
 "betekintési hivatkozását az oldalszám ismételt észleléséhez."
 
-#: views/document_file_page_views.py:60
+#: views/document_file_page_views.py:61
 msgid "No document file pages available"
 msgstr "Nincsenek elérhető dokumentumoldalak"
 
-#: views/document_file_page_views.py:62
+#: views/document_file_page_views.py:63
 #, python-format
 msgid "Pages of document file: %s"
 msgstr "A dokumentumfájl oldalai: %s"
 
-#: views/document_file_page_views.py:143
-#: views/document_version_page_views.py:308
+#: views/document_file_page_views.py:144
+#: views/document_version_page_views.py:315
 msgid "There are no more pages in this document"
 msgstr "A dokumentumnak nincs több oldala"
 
-#: views/document_file_page_views.py:159
-#: views/document_version_page_views.py:324
+#: views/document_file_page_views.py:160
+#: views/document_version_page_views.py:331
 msgid "You are already at the first page of this document"
 msgstr "Ez már a dokumentum első oldala"
 
-#: views/document_file_page_views.py:194
-#: views/document_version_page_views.py:363
+#: views/document_file_page_views.py:195
+#: views/document_version_page_views.py:370
 #, python-format
 msgid "Image of: %s"
 msgstr "%s képe"
 
-#: views/document_file_views.py:51
+#: views/document_file_views.py:52
 #, python-format
 msgid "Error deleting document file \"%(instance)s\"; %(exception)s"
 msgstr "Hiba a \"%(instance)s\" dokumentumfájl törlésekor; %(exception)s"
 
-#: views/document_file_views.py:57
+#: views/document_file_views.py:58
 #, python-format
 msgid "Document file \"%(object)s\" deletion queued successfully."
 msgstr "A \"%(object)s\" dokumentumfájl törlése sikeresen sorba került."
 
-#: views/document_file_views.py:60
+#: views/document_file_views.py:61
 #, python-format
 msgid "%(count)d document file deletion queued successfully."
 msgstr "%(count)d dokumentumfájl törlése sikeresen sorba került."
 
-#: views/document_file_views.py:63
+#: views/document_file_views.py:64
 #, python-format
 msgid "%(count)d document files deletions queued successfully."
 msgstr "%(count)d dokumentumfájl törlése sikeresen sorba került."
 
-#: views/document_file_views.py:65
+#: views/document_file_views.py:66
 #, python-format
 msgid "Delete document file: %(object)s."
 msgstr "Dokumentumfájl törlése: %(object)s ."
 
-#: views/document_file_views.py:66
+#: views/document_file_views.py:67
 #, python-format
 msgid "Delete the %(count)d selected document file."
 msgstr "%(count)d kiválasztott dokumentumfájl törlése."
 
-#: views/document_file_views.py:67
+#: views/document_file_views.py:68
 #, python-format
 msgid "Delete the %(count)d selected document files."
 msgstr "%(count)d kiválasztott dokumentumfájl törlése."
 
-#: views/document_file_views.py:73
+#: views/document_file_views.py:74
 msgid ""
 "All document files pages from this document file and the document version "
 "pages linked to them will be deleted too. The process will be performed in "
@@ -1659,33 +1659,33 @@ msgstr ""
 "A dokumentumfájl összes dokumentumfájl-oldala és a hozzájuk kapcsolódó "
 "dokumentumverziós oldalak is törlődnek. A folyamat a háttérben történik."
 
-#: views/document_file_views.py:113
+#: views/document_file_views.py:114
 #, python-format
 msgid "Edit document file: %s"
 msgstr "Dokumentumfájl szerkesztése: %s"
 
-#: views/document_file_views.py:134
+#: views/document_file_views.py:135
 #, python-format
 msgid "%(count)d document file queued for introspection."
 msgstr "%(count)d dokumentumfájl várakozik az önellenőrzésre."
 
-#: views/document_file_views.py:137
+#: views/document_file_views.py:138
 #, python-format
 msgid "%(count)d document files queued for introspection."
 msgstr "%(count)d dokumentumfájl várakozik az önellenőrzésre."
 
-#: views/document_file_views.py:146
+#: views/document_file_views.py:147
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
 msgstr[0] "Megnézi a kiválasztott dokumentumfájlt?"
 msgstr[1] "Ellenőrzi a kiválasztott dokumentumfájlokat?"
 
-#: views/document_file_views.py:157
+#: views/document_file_views.py:158
 #, python-format
 msgid "Introspect the document file: %s?"
 msgstr "Ellenőrzi a dokumentumfájlt: %s ?"
 
-#: views/document_file_views.py:163
+#: views/document_file_views.py:164
 msgid ""
 "The document file will be re-examined for file size, page count, checksum, "
 "and its related document version pages re-created. All transformations will "
@@ -1695,7 +1695,7 @@ msgstr ""
 " összeg és a kapcsolódó dokumentumverzió oldalainak újbóli létrehozása "
 "szempontjából. Minden átalakítás elveszik."
 
-#: views/document_file_views.py:192
+#: views/document_file_views.py:193
 msgid ""
 "File are the actual files that were uploaded for each document. Their "
 "contents needs to be mapped to a version before it can be used."
@@ -1703,48 +1703,48 @@ msgstr ""
 "A fájl az egyes dokumentumokhoz feltöltött tényleges fájlok. Tartalmukat "
 "hozzá kell rendelni egy verzióhoz, mielőtt felhasználható lenne."
 
-#: views/document_file_views.py:196
+#: views/document_file_views.py:197
 msgid "No files available"
 msgstr "Nincsenek elérhető fájlok"
 
-#: views/document_file_views.py:221
+#: views/document_file_views.py:222
 #, python-format
 msgid "Files of document: %s"
 msgstr "A dokumentum fájljai: %s"
 
-#: views/document_file_views.py:257
+#: views/document_file_views.py:258
 #, python-format
 msgid "Preview of document file: %s"
 msgstr "A dokumentumfájl előnézete: %s"
 
-#: views/document_file_views.py:317
+#: views/document_file_views.py:318
 #, python-format
 msgid "Properties of document file: %s"
 msgstr "A dokumentumfájl tulajdonságai: %s"
 
-#: views/document_file_views.py:326
+#: views/document_file_views.py:327
 #, python-format
 msgid "Transformation clear request processed for %(count)d document file."
 msgstr "Átalakítás törlési kérelem feldolgozva a %(count)d dokumentumfájlhoz."
 
-#: views/document_file_views.py:329
+#: views/document_file_views.py:330
 #, python-format
 msgid "Transformation clear request processed for %(count)d document files."
 msgstr "Átalakítás törlési kérelem feldolgozva a %(count)d dokumentumfájlhoz."
 
-#: views/document_file_views.py:336
+#: views/document_file_views.py:337
 msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
 msgstr[0] "Törli a kiválasztott dokumentumfájl összes oldalátalakítását?"
 msgstr[1] "Törli a kiválasztott dokumentumfájlok összes oldalátalakítását?"
 
-#: views/document_file_views.py:347
+#: views/document_file_views.py:348
 #, python-format
 msgid "Clear all the page transformations for the document file: %s?"
 msgstr "Törli a következő dokumentumfájl összes oldalátalakítását: %s ?"
 
-#: views/document_file_views.py:364
+#: views/document_file_views.py:365
 #, python-format
 msgid ""
 "Error deleting the page transformations for document file: "
@@ -1753,7 +1753,7 @@ msgstr ""
 "Hiba az oldalátalakítások törlésekor a következő dokumentumfájlhoz: "
 "%(document_file)s ; %(error)s ."
 
-#: views/document_file_views.py:401
+#: views/document_file_views.py:402
 #, python-format
 msgid ""
 "Error cloning the page transformations for document file: %(document_file)s;"
@@ -1762,11 +1762,11 @@ msgstr ""
 "Hiba a dokumentumfájl oldalátalakításainak klónozása során: "
 "%(document_file)s ; %(error)s ."
 
-#: views/document_file_views.py:410 views/document_version_views.py:411
+#: views/document_file_views.py:411 views/document_version_views.py:412
 msgid "Transformations cloned successfully."
 msgstr "Az átalakítások sikeresen klónozva"
 
-#: views/document_file_views.py:425
+#: views/document_file_views.py:426
 #, python-format
 msgid "Clone page transformations of document file: %s"
 msgstr "A dokumentumfájl oldalátalakításainak klónozása: %s"
@@ -1867,7 +1867,7 @@ msgstr "Dokumentumtípushoz tartozó gyorscímkék:%s "
 msgid "Filename generation setup for document type: %s"
 msgstr "Fájlnév-generálás beállítása a dokumentumtípushoz: %s"
 
-#: views/document_version_page_views.py:57
+#: views/document_version_page_views.py:56
 msgid ""
 "The page number of this page will be skipped. If you want to achieve "
 "sequential page numbering, use the page remap action instead."
@@ -1880,7 +1880,7 @@ msgstr ""
 msgid "Delete document version page %s ?"
 msgstr "Törli a dokumentumverzió %s oldalát ?"
 
-#: views/document_version_page_views.py:101
+#: views/document_version_page_views.py:102
 msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
@@ -1889,28 +1889,28 @@ msgstr ""
 " Hozza létre őket az oldal-újratérképezési műveletekkel vagy a "
 "verziómódosítási művelettel."
 
-#: views/document_version_page_views.py:105
+#: views/document_version_page_views.py:107
 msgid "No document version pages available"
 msgstr "Nem állnak rendelkezésre dokumentumverzió oldalak"
 
-#: views/document_version_page_views.py:108
+#: views/document_version_page_views.py:111
 #, python-format
 msgid "Pages of document version: %s"
 msgstr "A dokumentumverzió oldalai: %s"
 
-#: views/document_version_page_views.py:158
+#: views/document_version_page_views.py:163
 msgid "None"
 msgstr "Nincs"
 
-#: views/document_version_page_views.py:183
+#: views/document_version_page_views.py:190
 msgid "There are no sources available to remap for this document version."
 msgstr "Ehhez a dokumentumverzióhoz nem állnak rendelkezésre források."
 
-#: views/document_version_page_views.py:186
+#: views/document_version_page_views.py:193
 msgid "No page sources available"
 msgstr "Nem állnak rendelkezésre oldalforrások"
 
-#: views/document_version_page_views.py:189
+#: views/document_version_page_views.py:196
 #, python-format
 msgid "Remap pages of document version: %s"
 msgstr "A dokumentumverzió oldalainak újratérképezése: %s"
@@ -1963,12 +1963,12 @@ msgstr " %(count)d dokumentumverzió törlése."
 msgid "The process will be performed in the background."
 msgstr "A folyamat a háttérben történik."
 
-#: views/document_version_views.py:162
+#: views/document_version_views.py:163
 #, python-format
 msgid "Edit document version: %s"
 msgstr "A dokumentum verziójának szerkesztése: %s"
 
-#: views/document_version_views.py:199
+#: views/document_version_views.py:200
 msgid ""
 "Versions are views that can display document file pages as they are, remap "
 "or merge them into different layouts."
@@ -1976,45 +1976,45 @@ msgstr ""
 "A verziók olyan nézetek, amelyek a dokumentumfájl oldalait úgy jelenítik "
 "meg, ahogy vannak, újraképezik vagy egyesítik különböző elrendezésekbe."
 
-#: views/document_version_views.py:202
+#: views/document_version_views.py:203
 msgid "No versions available"
 msgstr "Nem állnak rendelkezésre verziók"
 
-#: views/document_version_views.py:205
+#: views/document_version_views.py:206
 #, python-format
 msgid "Versions of document: %s"
 msgstr "%s dokumentum verziói"
 
-#: views/document_version_views.py:237
+#: views/document_version_views.py:238
 msgid "Document version modification backend queued successfully."
 msgstr ""
 "A dokumentumverzió módosítási háttérrendszer sikeresen várólistára került."
 
-#: views/document_version_views.py:247
+#: views/document_version_views.py:248
 #, python-format
 msgid "Execute version modification action for document version: %s"
 msgstr ""
 "Verziómódosítási művelet végrehajtása a következő dokumentumverzióhoz: %s"
 
-#: views/document_version_views.py:278
+#: views/document_version_views.py:279
 #, python-format
 msgid "Preview of document version: %s"
 msgstr "A dokumentumverzió előnézete: %s"
 
-#: views/document_version_views.py:325
+#: views/document_version_views.py:326
 #, python-format
 msgid "Transformation clear request processed for %(count)d document version."
 msgstr ""
 "Átalakítás törlési kérelem feldolgozva a %(count)d dokumentumverzióhoz."
 
-#: views/document_version_views.py:329
+#: views/document_version_views.py:330
 #, python-format
 msgid ""
 "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 "Átalakítás törlési kérelem feldolgozva %(count)d dokumentumverziókhoz."
 
-#: views/document_version_views.py:337
+#: views/document_version_views.py:338
 msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
@@ -2023,13 +2023,13 @@ msgstr[0] ""
 msgstr[1] ""
 "Törli az összes oldalátalakítást a kiválasztott dokumentumverzióhoz?"
 
-#: views/document_version_views.py:348
+#: views/document_version_views.py:349
 #, python-format
 msgid "Clear all the page transformations for the document version: %s?"
 msgstr ""
 "Törölje az összes oldalátalakítást a következő dokumentumverzióhoz: %s ?"
 
-#: views/document_version_views.py:365
+#: views/document_version_views.py:366
 #, python-format
 msgid ""
 "Error deleting the page transformations for document version: "
@@ -2038,7 +2038,7 @@ msgstr ""
 "Hiba az oldalátalakítások törlésekor a következő dokumentumverzióhoz: "
 "%(document_version)s ; %(error)s ."
 
-#: views/document_version_views.py:402
+#: views/document_version_views.py:403
 #, python-format
 msgid ""
 "Error cloning the page transformations for document version: "
@@ -2047,7 +2047,7 @@ msgstr ""
 "Hiba az oldalátalakítások klónozásánál a következő dokumentumverzióhoz: "
 "%(document_version)s ; %(error)s ."
 
-#: views/document_version_views.py:426
+#: views/document_version_views.py:427
 #, python-format
 msgid "Clone page transformations of document version: %s"
 msgstr "A következő dokumentumverzió oldalátalakításainak klónozása: %s"

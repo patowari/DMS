@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-from django.db import models, migrations
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.db import migrations, models
 
 import mayan.apps.common.models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL)
     ]
 
     operations = [
@@ -20,11 +20,11 @@ class Migration(migrations.Migration):
                         verbose_name='ID', serialize=False, auto_created=True,
                         primary_key=True
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Anonymous user',
-                'verbose_name_plural': 'Anonymous user',
+                'verbose_name_plural': 'Anonymous user'
             },
             bases=(models.Model,),
         ),
@@ -55,11 +55,11 @@ class Migration(migrations.Migration):
                         related_name='auto_admin_account',
                         to=settings.AUTH_USER_MODEL, verbose_name='Account'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Auto admin properties',
-                'verbose_name_plural': 'Auto admin properties',
+                'verbose_name_plural': 'Auto admin properties'
             },
             bases=(models.Model,),
         ),
@@ -88,11 +88,11 @@ class Migration(migrations.Migration):
                     'datatime', models.DateTimeField(
                         auto_now_add=True, verbose_name='Date time'
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'Shared uploaded file',
-                'verbose_name_plural': 'Shared uploaded files',
+                'verbose_name_plural': 'Shared uploaded files'
             },
             bases=(models.Model,),
         ),
@@ -676,12 +676,12 @@ class Migration(migrations.Migration):
                         to=settings.AUTH_USER_MODEL,
                         verbose_name='User',
                     )
-                ),
+                )
             ],
             options={
                 'verbose_name': 'User locale profile',
-                'verbose_name_plural': 'User locale profiles',
+                'verbose_name_plural': 'User locale profiles'
             },
             bases=(models.Model,),
-        ),
+        )
     ]

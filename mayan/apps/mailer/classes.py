@@ -1,10 +1,10 @@
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.backends.class_mixins import DynamicFormBackendMixin
 from mayan.apps.backends.classes import ModelBaseBackend
 from mayan.apps.credentials.class_mixins import BackendMixinCredentials
+from mayan.apps.events.classes import EventModelRegistry
 
 from .exceptions import MailerError
 
@@ -15,9 +15,9 @@ class MailerBackend(DynamicFormBackendMixin, ModelBaseBackend):
     for other Django backends that adds a few metadata to specify the
     fields it needs to be instantiated at runtime.
     """
-    _loader_module_name = 'mailers'
     _backend_app_label = 'mailer'
     _backend_model_name = 'UserMailer'
+    _loader_module_name = 'mailers'
     class_path = ''  # Dot path to the actual class that will handle the mail.
 
     @classmethod

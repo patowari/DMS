@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -23,27 +23,27 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:54 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:52 events.py:6 permissions.py:6 settings.py:12
 msgid "Document signatures"
 msgstr "文档签名"
 
-#: apps.py:112
+#: apps.py:110
 msgid "Date and time"
 msgstr "日期和时间"
 
-#: apps.py:116 models.py:52 serializers.py:61
+#: apps.py:114 models.py:52 serializers.py:61
 msgid "Key ID"
 msgstr "密钥ID"
 
-#: apps.py:120 forms.py:78
+#: apps.py:118 forms.py:78
 msgid "None"
 msgstr "没有"
 
-#: apps.py:121 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:57
 msgid "Signature ID"
 msgstr "签名ID"
 
-#: apps.py:126
+#: apps.py:124
 msgid "Type"
 msgstr "類型"
 
@@ -161,7 +161,7 @@ msgstr "重新刷新所有簽章"
 msgid "Verify all documents"
 msgstr "验证所有文档"
 
-#: managers.py:94
+#: managers.py:93
 msgid "signed"
 msgstr ""
 
@@ -360,7 +360,7 @@ msgstr "這份文件檔案沒有簽章"
 msgid "Signatures for document file: %s"
 msgstr "文件檔案的簽章 :%s"
 
-#: views.py:356 views.py:377
+#: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
 msgstr "在大型数据库上，此操作可能需要一些时间才能执行。"
 
@@ -368,15 +368,15 @@ msgstr "在大型数据库上，此操作可能需要一些时间才能执行。
 msgid "Refresh all signatures information?"
 msgstr "刷新所有簽章資訊?"
 
-#: views.py:369
+#: views.py:370
 msgid "Signature information refresh queued successfully."
 msgstr "簽章資訊刷新隊列成功"
 
-#: views.py:379
+#: views.py:380
 msgid "Verify all document for signatures?"
 msgstr "验证签名的所有文档？"
 
-#: views.py:390
+#: views.py:391
 msgid "Signature verification queued successfully."
 msgstr "签名验证成功排队。"
 

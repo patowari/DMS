@@ -36,7 +36,9 @@ class URL:
         query_string = query_string or ''
 
         self.query_dict.update(
-            QueryDict(query_string=query_string.encode('utf-8'))
+            QueryDict(
+                query_string=query_string.encode('utf-8')
+            )
         )
 
         query = query or {}

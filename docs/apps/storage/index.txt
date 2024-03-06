@@ -22,7 +22,7 @@ Storage
 
     Tutorials:
 
-    - Seting up and migrating to object storage
+    - Setting up and migrating to object storage
 
     Troubleshooting:
 

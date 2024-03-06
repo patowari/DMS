@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-07 07:19+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,76 +24,76 @@ msgstr ""
 #: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
 #: search.py:18 settings.py:11 workflow_actions.py:50
 msgid "OCR"
-msgstr ""
+msgstr "OCR"
 
 #: apps.py:116
 msgid "The OCR content."
-msgstr ""
+msgstr "OCR вміст."
 
 #: apps.py:121
 msgid "A generator returning the document's version pages OCR content."
-msgstr ""
+msgstr "Генератор, що повертає OCR-вміст сторінок версії документа."
 
 #: apps.py:123
 msgid "OCR content"
-msgstr ""
+msgstr "OCR вміст"
 
 #: backends/tesseract.py:84
 msgid "Tesseract OCR not found."
-msgstr ""
+msgstr "Tesseract OCR не знайдено."
 
 #: dependencies.py:24
 msgid "Free Open Source OCR Engine"
-msgstr ""
+msgstr "Безкоштовний OCR-двигун з відкритим вихідним кодом."
 
 #: events.py:10
 msgid "Document version OCR content deleted"
-msgstr ""
+msgstr "Вміст OCR версії документа видалено"
 
 #: events.py:14
 msgid "Document version page OCR content edited"
-msgstr ""
+msgstr "Вміст OCR сторінки версії документа відредаговано"
 
 #: events.py:18
 msgid "Document version submitted for OCR"
-msgstr ""
+msgstr "Версія документа надіслана для OCR"
 
 #: events.py:22
 msgid "Document version OCR finished"
-msgstr ""
+msgstr "Розпізнавання версії документа завершено"
 
 #: forms.py:13 forms.py:44 forms.py:64
 msgid "Contents"
-msgstr ""
+msgstr "Зміст"
 
 #: forms.py:99
 #, python-format
 msgid "Page %(page_number)d"
-msgstr ""
+msgstr "Сторінка %(page_number)d"
 
 #: links.py:27
 msgid "Setup OCR"
-msgstr ""
+msgstr "Налаштувати OCR"
 
 #: links.py:33
 msgid "OCR documents per type"
-msgstr ""
+msgstr "OCR документи за типом"
 
 #: links.py:40 links.py:47
 msgid "Delete OCR content"
-msgstr ""
+msgstr "Видалити вміст OCR"
 
 #: links.py:60
 msgid "Download OCR text"
-msgstr ""
+msgstr "Завантажити OCR текст"
 
 #: links.py:65 links.py:70
 msgid "Submit for OCR"
-msgstr ""
+msgstr "Надіслати для OCR"
 
 #: links.py:86
 msgid "Edit OCR"
-msgstr ""
+msgstr "Редагувати OCR"
 
 #: models.py:22
 msgid "Document type"
@@ -100,161 +101,163 @@ msgstr "Тип документа"
 
 #: models.py:26
 msgid "Automatically queue newly created documents for OCR."
-msgstr ""
+msgstr "Автоматично ставити в чергу новостворені документи для OCR."
 
 #: models.py:27
 msgid "Auto OCR"
-msgstr ""
+msgstr "Автоматичне OCR"
 
 #: models.py:33
 msgid "Document type settings"
-msgstr ""
+msgstr "Параметри типу документа"
 
 #: models.py:34
 msgid "Document types settings"
-msgstr ""
+msgstr "Налаштування типів документів"
 
 #: models.py:47
 msgid "Document version page"
-msgstr ""
+msgstr "Сторінка версії документа"
 
 #: models.py:51
 msgid "The actual text content extracted by the OCR backend."
-msgstr ""
+msgstr "Фактичний текстовий вміст, отриманий серверною частиною OCR."
 
 #: models.py:52
 msgid "Content"
-msgstr ""
+msgstr "Зміст"
 
 #: models.py:58
 msgid "Document version page OCR content"
-msgstr ""
+msgstr "Вміст OCR сторінки версії документа"
 
 #: models.py:59
 msgid "Document version pages OCR contents"
-msgstr ""
+msgstr "Вміст OCR сторінки версії документа"
 
 #: permissions.py:10
 msgid "Submit documents for OCR"
-msgstr ""
+msgstr "Подати документи для OCR"
 
 #: permissions.py:13
 msgid "Edit the transcribed text from document"
-msgstr ""
+msgstr "Редагувати транскрибований текст із документа"
 
 #: permissions.py:17
 msgid "View the transcribed text from document"
-msgstr ""
+msgstr "Переглянути транскрибований текст із документа"
 
 #: permissions.py:21
 msgid "Change document type OCR settings"
-msgstr ""
+msgstr "Змінити параметри OCR типу документа"
 
 #: queues.py:10
 msgid "Finish document version OCR"
-msgstr ""
+msgstr "Готова версія документа OCR"
 
 #: queues.py:14
 msgid "Document version page OCR"
-msgstr ""
+msgstr "OCR сторінки версії документа"
 
 #: queues.py:18 search.py:12 search.py:24
 msgid "Document version OCR"
-msgstr ""
+msgstr "Версія документа OCR"
 
 #: settings.py:18
 msgid "Set new document types to perform OCR automatically by default."
 msgstr ""
+"Встановити нові типи документів для автоматичного виконання OCR за "
+"замовчуванням."
 
 #: settings.py:23
 msgid "Full path to the backend to be used to do OCR."
-msgstr ""
+msgstr "Повний шлях до серверної частини, яка буде використовуватися для OCR."
 
 #: views.py:57
 #, python-format
 msgid "Edit OCR settings for document type: %s."
-msgstr ""
+msgstr "Редагувати налаштування OCR для типу документу: %s."
 
 #: views.py:67
 msgid "Submit all documents of a type for OCR"
-msgstr ""
+msgstr "Надіслати всі документи певного типу для OCR"
 
-#: views.py:85
+#: views.py:88
 #, python-format
 msgid "%(count)d documents added to the OCR queue."
-msgstr ""
+msgstr "%(count)d документів додано до черги OCR."
 
-#: views.py:106
+#: views.py:111
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "Помилка видалення версії документа OCR \"%(instance)s\"; %(exception)s"
 
-#: views.py:112
+#: views.py:117
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
-msgstr ""
+msgstr "OCR вміст %(count)d версій документів успішно видалено."
 
-#: views.py:115
+#: views.py:120
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
-msgstr ""
-
-#: views.py:118
-#, python-format
-msgid "OCR content of %(count)d document version deleted successfully."
-msgstr ""
-
-#: views.py:121
-#, python-format
-msgid "Delete the OCR content of the %(count)d selected document versions."
-msgstr ""
+msgstr "OCR вміст \"%(object)s\" успішно видалено."
 
 #: views.py:123
 #, python-format
-msgid "Delete the OCR content of: %(object)s."
-msgstr ""
+msgid "OCR content of %(count)d document version deleted successfully."
+msgstr "OCR вміст %(count)d версії документа успішно видалено."
 
-#: views.py:125
+#: views.py:126
+#, python-format
+msgid "Delete the OCR content of the %(count)d selected document versions."
+msgstr "Видалити OCR-вміст %(count)d вибраних версій документів."
+
+#: views.py:128
+#, python-format
+msgid "Delete the OCR content of: %(object)s."
+msgstr "Видалити OCR-вміст: %(object)s."
+
+#: views.py:130
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document version."
-msgstr ""
+msgstr "Видалити OCR-вміст %(count)d вибраної версії документа."
 
-#: views.py:156
+#: views.py:161
 #, python-format
 msgid "OCR result for document: %s"
-msgstr ""
+msgstr "OCR результат для документа: %s"
 
-#: views.py:178
+#: views.py:183
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
-msgstr ""
+msgstr "%(count)d версія документа надіслана в чергу OCR."
 
-#: views.py:181
+#: views.py:186
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
-msgstr ""
+msgstr "%(count)d версій документів надіслано в чергу OCR."
 
-#: views.py:190
+#: views.py:195
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Подати вибрану версію документа в чергу OCR?"
+msgstr[1] "Подати вибрані версії документів у чергу OCR?"
+msgstr[2] "Подати вибрані версії документів у чергу OCR?"
+msgstr[3] "Подати вибрані версії документів у чергу OCR?"
 
-#: views.py:226
+#: views.py:231
 #, python-format
 msgid "OCR result for document version page: %s"
-msgstr ""
+msgstr "OCR результат для сторінки версії документа: %s"
 
-#: views.py:254
+#: views.py:259
 #, python-format
 msgid "Edit OCR for document version page: %s"
-msgstr ""
+msgstr "Редагувати OCR для сторінки версії документа: %s"
 
 #: workflow_actions.py:15
 msgid "Page condition"
-msgstr ""
+msgstr "Стан сторінки"
 
 #: workflow_actions.py:19
 msgid ""
@@ -264,15 +267,20 @@ msgid ""
 "logical None, or an empty string ('') are considered to be logical false, "
 "any other value is considered to be the logical true."
 msgstr ""
+"Умова, яка визначатиме, чи буде змінено OCR-вміст сторінки документа чи ні. "
+"Умова оцінюється відносно ітерованої сторінки документа. Умови, які не "
+"повертають жодного значення, які повертають логічне значення None у Python "
+"або порожній рядок (''), вважаються логічним хибним, будь-яке інше значення "
+"вважається логічним істинним."
 
 #: workflow_actions.py:31
 msgid "Page content"
-msgstr ""
+msgstr "Вміст сторінки"
 
 #: workflow_actions.py:35
 msgid "A template that will generate the OCR content to be saved."
-msgstr ""
+msgstr "Шаблон, який генеруватиме OCR-вміст для збереження."
 
 #: workflow_actions.py:42
 msgid "Update document page OCR content"
-msgstr ""
+msgstr "Оновити вміст OCR сторінки документа"

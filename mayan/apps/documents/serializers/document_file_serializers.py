@@ -120,7 +120,7 @@ class DocumentFileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         create_only_fields = ('action_name', 'file_new',)
         extra_kwargs = {
-            'file': {'use_url': False},
+            'file': {'use_url': False}
         }
         fields = (
             'action_name', 'checksum', 'comment', 'document_id', 'document_url',

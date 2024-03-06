@@ -1,6 +1,6 @@
 from mayan.apps.common.tests.mixins import ManagementCommandTestMixin
-from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.storages import storage_document_files
+from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.mime_types.tests.mixins import MIMETypeBackendMixin
 
 from ..literals import COMMAND_NAME_STORAGE_PROCESS

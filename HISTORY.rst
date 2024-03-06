@@ -2,6 +2,51 @@
 ================
 - Remove local version from the platform cache identifiers.
 
+4.6.2 (2024-03-04)
+==================
+- Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
+- Update the Debian Docker image from 12.4-slim to 12.5-slim.
+- Move the flanker dependency from the sources to the source_emails app.
+- Update dependency versions:
+
+  - redis from 5.0.1 to 5.0.2.
+  - django from 4.2.10 to 4.2.11.
+  - ruff from 0.2.1 to 0.3.0.
+  - sentry-sdk from 1.40.1 to 1.40.6.
+  - jsonschema from 4.20.0 to 4.21.1.
+  - extract-msg from 0.47.0 to 0.48.0.
+
+4.6.1 (2024-02-07)
+==================
+- Merge changes from versions 4.5.9 and 4.4.12.
+- Update dependency versions:
+
+  - django from 4.2.8 to 4.2.10 due to CVE-2024-24680.
+  - django-mptt from 0.15.0 to 0.16.0.
+  - importlib-metadata from 6.8.0 to 7.0.1.
+  - pycountry from 22.3.5 to 23.12.11.
+  - django-silk from 5.0.4 to 5.1.0.
+  - ruff from 0.2.1 to 0.1.6.
+  - jstree from 3.3.16. 3.3.12.
+  - django-solo from 2.1.0 to 2.2.0.
+  - pytz from 2023.3.post1 to 2024.1.
+  - greenlet from 3.0.1 to 3.0.3.
+  - sentry-sdk from 1.40.0 to 1.40.1.
+  - psutil from 5.9.6 to 5.9.8.
+  - sphinx from 4.5.0 to 5.3.0.
+  - sphinx_rtd_theme from 0.5.2 to 2.0.0.
+
+- Code style updates.
+
+  - Sort imports
+  - Collapse long import lines
+  - Expand import lines that are too short
+  - Fix variable names
+
+- Update translation files.
+- Fix sources app class method name.
+- Fix typos.
+
 4.6 (2024-01-11)
 ================
 - Improve the index mirroring profile. Add ``MAYAN_MIRROR_INDEX_NAME`` to
@@ -143,9 +188,57 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
-4.5.9 (XXXX-XX-XX)
+4.5.10 (2024-03-03)
+===================
+- Include changes from version 4.4.13.
+- Minor code style fixes.
+- Fix typos.
+- Updated the download file API to handle anonymous user gracefully.
+- Update Docker container image versions:
+
+  - Debian from 12.4-slim to 12.5-slim
+  - PostgreSQL from 13.12-alpine to 13.13-alpine
+  - Python from 3.11.7-slim to 3.11.8-slim
+  - RabbitMQ from 3.12.12-alpine to 3.12.13-alpine
+
+- Test updates:
+
+  - Remove more direct uses of ``values_list``.
+  - Remove more direct imports of base test mixins.
+  - Sort test mixins.
+  - Testing style updates.
+
+- Update Django from version 3.2.23 to 3.2.24.
+
+4.5.9 (2024-02-05)
 ==================
 - Minor query optimizations.
+- Changes from version 4.4.12.
+- Update dependency version:
+
+  - django-test-migrations from 1.1.0 to 1.3.0.
+  - pypdf from 3.14.0 to 3.17.4 due to CVE-2023-46250.
+  - safety from 2.3.5 to 3.0.1.
+
+- Don't raise an error if a form view has no form defined. This can be the
+  case for dynamic forms based on ACL where the current user has no access
+  for any of the fields.
+- Complete the changes started in version 4.5 to normalize how the
+  project/installation title and URL are calculated. The setting
+  ``COMMON_PROJECT_URL`` is now removed as its intended purpose is now
+  performed by the settings ``ORGANIZATIONS_INSTALLATION_URL`` and
+  ``ORGANIZATIONS_URL_BASE_PATH``. This change also fixes the title of the
+  REST API documentation showing the text 'None' when the
+  ``COMMON_PROJECT_TITLE`` setting was left to its default value.
+- Update Docker image tags:
+
+  - debian from 12.2-slim to 12.4-slim.
+  - elastic from 7.17.9 to 7.17.17.
+  - keycloak from 20.0.1 to 20.0.5-0.
+  - postgresql from 13.11-alpine to 13.13-alpine.
+  - python from 3.11.4-slim to 3.11.7-slim.
+  - rabbitmq from 3.12.2-alpine to 3.12.12-alpine.
+  - redis from 7.0.12-alpine to 7.0.15-alpine.
 
 4.5.8 (2023-12-07)
 ==================
@@ -582,6 +675,73 @@
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
 
+4.4.13 (2024-03-01)
+===================
+- Update PIP from version 23.3.2 to 24.0.
+- Fix source class and JavaScript ``MayanImage`` class ``.initialize()``
+  method name.
+- Fix typos and text formatting.
+- Encapsulate MPTT exceptions as validation errors when users attempt
+  to perform invalid index template node tree manipulations.
+- Update ``DEFAULT_SEARCH_QUERY_RESULTS_LIMIT`` from 100000 to 10000 to
+  workaround conflicting with ElasticSearch non scroll search limit.
+- Minor code style fixes.
+- Add an extra line to ``COMMON_EXTRA_APPS`` help text to clarify the apps
+  inclusion order.
+- Changed the internal variable name of ``COMMON_EXTRA_APPS_PRE`` to avoid
+  possible conflicts.
+- Add extra logging to report storage errors when deleting trashed documents
+  as part of the retention policies.
+- Minor test fixes.
+- Fix workflow icon variable name.
+- Replace distutils with setuptool.
+
+  - Add setuptool as an explicit dependency.
+  - Replace distutils with setuptools following the deprecation
+    of distutils.
+    https://docs.python.org/3.10/whatsnew/3.10.html#distutils-deprecated
+  - Remove distutils from the Docker image.
+
+- Update dependency versions:
+
+  - sphinx from 4.5.0 to 5.3.0.
+  - sphinx_rtd_theme from 0.5.2 to 2.0.0.
+
+- Remove diagram generator markup. The library used to generate diagrams is
+  not longer maintained and breaks after the last Pillow upgrade. Removed
+  all diagram markup until a replacement can be found.
+- Update the Debian Docker image from 11.8-slim to 11.9-slim.
+- Separate code/template translation and JavaScript translation handling.
+  Rename the app flag ``has_translations`` to ``has_app_translations``.
+  Add the app flag ``has_javascript_translations`` which defaults to False.
+
+4.4.12 (2024-02-03)
+===================
+- Translation file updates.
+- Fix logging issue when unexpected cache file access problems are
+  encountered.
+- Backport minor query optimizations.
+- Update dependency versions:
+
+  - wheel from 0.37.0 to 0.42.0 due to CVE-2022-40898.
+  - sentry-sdk from 1.12.1 to 1.40.0 due to CVE-2023-28117.
+  - redis from 4.2.2 to 4.6.0 due to CVE-2023-28858.
+  - pycryptodome from 3.10.4 to 3.20.0 due to PVE-2021-42084.
+  - pip from 23.2.1 to 23.3.2 due to CVE-2023-5752.
+  - dateparser from 1.1.1 to 1.2.0 due to PVE-2023-62361.
+  - extract-msg from 0.36.4 to 0.47.0.
+  - PyPDF2 from 1.28.4 to 1.28.6.
+  - Pillow from 9.4.0 to 10.2.0 due to CVE-2023-44271.
+  - twine from 3.8.0 to 4.0.2.
+  - Update CairoSVG from 2.5.2 to 2.7.1 due to CVE-2023-27586.
+  - ipython from 8.21.0 to 7.32.0 due to CVE-2023-24816.
+  - amqp from 5.1.0 to 5.2.0.
+  - flake8 from 4.0.1 to 7.0.0.
+
+- Update the deprecated/removed Pillow constants:
+  https://pillow.readthedocs.io/en/stable/deprecations.html#constants
+  Replace ANTIALIASING with LANCZOS.
+
 4.4.11 (2023-12-10)
 ===================
 - Fix test asserts. Fix test that were asserting for True values instead of
@@ -887,7 +1047,7 @@
   - Configurable Traefik Let's Encrypt certificate volume location.
   - Support Let's Encrypt DNS challenge.
 
-- Isolate compressed file MIME type matchin exception catching to the
+- Isolate compressed file MIME type matching exception catching to the
   pertinent code.
 - Download file updates:
 
@@ -1420,7 +1580,7 @@
 - Add API endpoint called ``document_file_actions`` to list the available
   actions and their properties. API endpoint URL: /api/v4/document_file_actions/
 - Add document version modification backend. Convert the document version
-  page reset and append functions into document version modication backends.
+  page reset and append functions into document version modification backends.
   Update document version views and API endpoints to use document version
   modification backends.
   Adds new API endpoints:
@@ -1822,7 +1982,7 @@
 4.2.17 (2023-07-10)
 ===================
 - Ensure only the filename of the uploaded file is used as the document
-  label, omiting all path content.
+  label, omitting all path content.
 - Backport MIME type file command backend improvements to make it more
   usable in series 4.2.
 - Only clear the source error log if the source is enabled or was
@@ -2248,7 +2408,7 @@
 - Move the ``docker-dockerfile-update`` target to the Docker makefile.
 - Update Docker image tags:
 
-  - Postgresq from 10.18-alpine to 12.9-alpine.
+  - PostgreSQL from 10.18-alpine to 12.9-alpine.
   - Python from 3.8-slim to 3.11-slim.
 
 - Update psycopg2 from version 2.8.6 to 2.9.2.
@@ -2379,7 +2539,7 @@
 
     - ``authentication_otp_disable``: disables OTP for a user
     - ``authentication_otp_initialize``: initializes the OTP state data for
-      all users. This command is for debuging and maintenance in case the
+      all users. This command is for debugging and maintenance in case the
       database migration does not correctly initialize the OTP state data
       for existing users.
     - ``authentication_otp_status``: display the OTP status for a user
@@ -2766,7 +2926,7 @@
   - Show interactive source processing as a message.
 
 - Fix the copying of the bootstrap alert style.
-- Optimize the copying of the boostrap alert style by executing it only
+- Optimize the copying of the Bootstrap alert style by executing it only
   in the root template. This runs the code just once instead of running it
   on each page refresh. The element ``#div-javascript-dynamic-content`` was
   also remove and it is now created and destroyed dynamically once just.

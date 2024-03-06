@@ -2,7 +2,7 @@
 Troubleshooting
 ===============
 
-.. include::  ../../../partials/kb_migration.txt
+.. include::  ../../partials/kb_migration.txt
 
 .. note::
 

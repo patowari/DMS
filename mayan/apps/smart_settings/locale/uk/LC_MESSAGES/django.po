@@ -5,14 +5,15 @@
 # Translators:
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,67 +21,69 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:26 permissions.py:6
+#: apps.py:27 permissions.py:6
 msgid "Smart settings"
-msgstr ""
+msgstr "Смарт налаштування"
 
-#: apps.py:36
+#: apps.py:37
 msgid "Setting count"
-msgstr ""
+msgstr "Налаштування лічильника"
 
-#: apps.py:42
+#: apps.py:43
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
-#: apps.py:46 forms.py:30
+#: apps.py:47 forms.py:30
 msgid "Value"
-msgstr ""
+msgstr "Значення"
 
 #: classes.py:318
 msgid "Settings namespace"
-msgstr ""
+msgstr "Налаштування простору імен"
 
 #: classes.py:496
 msgid "Choices"
-msgstr ""
+msgstr "Вибори"
 
 #: classes.py:498
 msgid "Possible values allowed for this setting."
-msgstr ""
+msgstr "Можливі значення, дозволені для цього параметра."
 
 #: classes.py:519
 msgid "Cannot revert setting. Setting value has not been updated."
 msgstr ""
+"Не вдається скасувати налаштування. Значення налаштування не було оновлено."
 
 #: classes.py:556
 msgid "Default"
-msgstr ""
+msgstr "За замовчуванням"
 
 #: classes.py:569
 msgid "Modified"
-msgstr ""
+msgstr "Змінено"
 
 #: classes.py:571
 msgid "The value of this setting being modified since the last restart."
 msgstr ""
+"Значення цього параметра змінюється з моменту останнього перезавантаження."
 
 #: classes.py:577
 msgid "Overridden"
-msgstr ""
+msgstr "Перевизначено"
 
 #: classes.py:579
 msgid ""
 "The value of the setting is being overridden by an environment variable."
-msgstr ""
+msgstr "Значення налаштування перезаписується змінною середовища."
 
 #: forms.py:32
 msgid "Enter the new setting value."
-msgstr ""
+msgstr "Ввести нове значення налаштування."
 
 #: forms.py:44
 #, python-format
 msgid "\"%s\" not a valid entry."
-msgstr ""
+msgstr "\"%s\" не є дійсним записом."
 
 #: links.py:33
 msgid "Save"
@@ -88,7 +91,7 @@ msgstr "Зберегти"
 
 #: links.py:39 links.py:56
 msgid "Settings"
-msgstr ""
+msgstr "Налаштування"
 
 #: links.py:45
 msgid "Edit"
@@ -96,53 +99,56 @@ msgstr "Редагувати"
 
 #: links.py:52
 msgid "Revert"
-msgstr ""
+msgstr "Повернути"
 
 #: links.py:63
 msgid "Namespaces"
-msgstr ""
+msgstr "Простори імен"
 
 #: literals.py:47
 msgid ""
 "Local storage is currently disabled, changes to settings will not be saved. "
 "Instead, use environment variables to modify settings."
 msgstr ""
+"Локальне сховище в даний час вимкнено, зміни до налаштувань не будуть "
+"збережені. Замість цього використовуйте змінні середовища для зміни "
+"налаштувань."
 
 #: models.py:8
 msgid "A short text used as the tag name."
-msgstr ""
+msgstr "Короткий текст, який використовується як назва тегу."
 
 #: models.py:9
 msgid "Global name"
-msgstr ""
+msgstr "Глобальне ім'я"
 
 #: models.py:12
 msgid "New value"
-msgstr ""
+msgstr "Нове значення"
 
 #: models.py:15
 msgid "Old value"
-msgstr ""
+msgstr "Старе значення"
 
 #: models.py:19
 msgid "Updated setting"
-msgstr ""
+msgstr "Оновлене налаштування"
 
 #: models.py:20
 msgid "Updated settings"
-msgstr ""
+msgstr "Оновлені налаштування"
 
 #: permissions.py:10
 msgid "Edit settings"
-msgstr ""
+msgstr "Редагувати налаштування"
 
 #: permissions.py:13
 msgid "View settings"
-msgstr ""
+msgstr "Переглянути налаштування"
 
 #: settings.py:29
 msgid "Django"
-msgstr ""
+msgstr "Django"
 
 #: settings.py:34
 msgid ""
@@ -158,6 +164,18 @@ msgid ""
 "validation of the Host header (perhaps in a middleware; if so this "
 "middleware must be listed first in MIDDLEWARE)."
 msgstr ""
+"Список рядків, що представляють імена хостів/доменів, які цей сайт може "
+"обслуговувати. Це захисний захід, що запобігає атакам на заголовок HTTP "
+"Host, які можливі навіть за наявності багатьох видимо безпечних конфігурацій"
+" веб-сервера. Значення в цьому списку можуть бути повністю кваліфікованими "
+"іменами (наприклад, 'www.example.com'), в такому випадку вони будуть "
+"порівнюватися з заголовком Host запиту точно (без урахування регістру, без "
+"врахування порту). Значення, що починається з крапки, може бути використане "
+"як шаблон піддомену: '.example.com' буде відповідати example.com, "
+"www.example.com та будь-якому іншому піддомену example.com. Значення '*', "
+"відповідатиме будь-чому; в цьому випадку ви самі відповідаєте за перевірку "
+"заголовка Host (можливо, в середній програмній забезпечення; якщо так, це "
+"середнє програмне забезпечення повинно бути першим у списку MIDDLEWARE)."
 
 #: settings.py:51
 msgid ""
@@ -168,18 +186,28 @@ msgid ""
 "used if CommonMiddleware is installed (see Middleware). See also "
 "PREPEND_WWW."
 msgstr ""
+"Коли встановлено значення True, якщо URL-запит не відповідає жодному зразку "
+"в URLconf і не закінчується слешем, відбувається HTTP-перенаправлення на той"
+" самий URL з доданим слешем. Зверніть увагу, що перенаправлення може "
+"призвести до втрати будь-яких даних, надісланих у запиті POST. Налаштування "
+"APPEND_SLASH використовується лише в разі встановлення CommonMiddleware "
+"(див. Middleware). Див. також PREPEND_WWW."
 
 #: settings.py:63
 msgid ""
 "The list of validators that are used to check the strength of user's "
 "passwords."
 msgstr ""
+"Список перевіряючих програм, які використовуються для перевірки надійності "
+"паролів користувачів."
 
 #: settings.py:70
 msgid ""
 "A list of authentication backend classes (as strings) to use when attempting"
 " to authenticate a user."
 msgstr ""
+"Список класів аутентифікації (у вигляді рядків), які слід використовувати "
+"при спробі аутентифікації користувача."
 
 #: settings.py:77
 msgid ""
@@ -189,6 +217,11 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_COOKIE_SECURE"
 msgstr ""
+"Чи використовувати безпечний cookie для CSRF cookie. Якщо це встановлено на "
+"True, cookie буде позначено як \"безпечний\", що означає, що браузери можуть"
+" впевненими, що cookie надсилається лише з HTTPS-з'єднанням. "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_COOKIE_SECURE"
 
 #: settings.py:87
 msgid ""
@@ -196,6 +229,9 @@ msgid ""
 "https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_TRUSTED_ORIGINS"
 msgstr ""
+"Список довірених джерел для небезпечних запитів (наприклад, POST). "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_TRUSTED_ORIGINS"
 
 #: settings.py:94
 msgid ""
@@ -203,6 +239,9 @@ msgid ""
 "cookie. https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
 "CSRF_USE_SESSIONS"
 msgstr ""
+"Чи зберігати токен CSRF у сесії користувача замість кукі. "
+"https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-"
+"CSRF_USE_SESSIONS"
 
 #: settings.py:101
 msgid ""
@@ -212,6 +251,11 @@ msgid ""
 "setting must configure a default database; any number of additional "
 "databases may also be specified."
 msgstr ""
+"Словник, що містить налаштування для всіх баз даних, які будуть "
+"використовуватися з Django. Це вкладений словник, вміст якого відображає "
+"псевдонім бази даних на словник, що містить параметри для окремої бази "
+"даних. Налаштування DATABASES повинно налаштовувати базу даних за "
+"замовчуванням; також можна вказати будь-яку кількість додаткових баз даних."
 
 #: settings.py:112
 msgid ""
@@ -227,6 +271,18 @@ msgid ""
 "typically perform deep request inspection, it's not possible to perform a "
 "similar check at that level. See also FILE_UPLOAD_MAX_MEMORY_SIZE."
 msgstr ""
+"Default: 2621440 (тобто 2,5 МБ). Максимальний розмір у байтах, який може "
+"мати запит перед підвищенням SuspiciousOperation (RequestDataTooBig). "
+"Перевірка виконується при доступі до request.body або request.POST і "
+"обчислюється відносно загального розміру запиту, за винятком будь-яких даних"
+" завантаження файлів. Ви можете встановити це значення на None, щоб вимкнути"
+" перевірку. Додатки, які очікують надзвичайно великих повідомлень форми, "
+"повинні налаштувати це значення. Кількість даних запиту корелює з кількістю "
+"пам'яті, необхідної для обробки запиту та заповнення словників GET і POST. "
+"Великі запити можуть бути використані як вектор атаки з відмовою в "
+"обслуговуванні, якщо їх не перевіряти. Оскільки веб-сервери зазвичай не "
+"виконують глибоку перевірку запиту, неможливо виконати подібну перевірку на "
+"цьому рівні. Див. також FILE_UPLOAD_MAX_MEMORY_SIZE."
 
 #: settings.py:131
 msgid ""
@@ -234,6 +290,10 @@ msgid ""
 "automated correspondence from the site manager(s). This doesn't include "
 "error messages sent to ADMINS and MANAGERS; for that, see SERVER_EMAIL."
 msgstr ""
+"За замовчуванням: 'webmaster@localhost' За замовчуванням електронна адреса, "
+"яка використовується для різних автоматизованих листувань від керівників "
+"сайту. Це не включає повідомлення про помилки, відправлені АДМІНІСТРАТОРАМ "
+"та КЕРІВНИКАМ; для цього див. SERVER_EMAIL."
 
 #: settings.py:140
 msgid ""
@@ -242,16 +302,25 @@ msgid ""
 "systemwide. Use this for bad robots/crawlers. This is only used if "
 "CommonMiddleware is installed (see Middleware)."
 msgstr ""
+"За замовчуванням: [] (Порожній список). Список скомпільованих об'єктів "
+"регулярних виразів, що представляють рядки User-Agent, яким заборонено "
+"відвідувати будь-яку сторінку в системі. Використовуйте це для поганих "
+"роботів/павуків. Це використовується лише у випадку встановлення "
+"CommonMiddleware (див. Middleware)."
 
 #: settings.py:149
 msgid ""
 "Default: 'django.core.mail.backends.smtp.EmailBackend'. The backend to use "
 "for sending emails."
 msgstr ""
+"За замовчуванням: 'django.core.mail.backends.smtp.EmailBackend'. Бекенд для "
+"відправки електронних листів."
 
 #: settings.py:155
 msgid "Default: 'localhost'. The host to use for sending email."
 msgstr ""
+"За замовчуванням: 'localhost'. Хост, який використовується для відправки "
+"електронної пошти."
 
 #: settings.py:161
 msgid ""
@@ -260,22 +329,33 @@ msgid ""
 "authenticating to the SMTP server. If either of these settings is empty, "
 "Django won't attempt authentication."
 msgstr ""
+"За замовчуванням: '' (Порожній рядок). Пароль для використання на SMTP-"
+"сервері, визначеному в EMAIL_HOST. Цей параметр використовується разом з "
+"EMAIL_HOST_USER при аутентифікації на SMTP-сервері. Якщо будь-який з цих "
+"параметрів порожній, Django не спробує аутентифікацію."
 
 #: settings.py:171
 msgid ""
 "Default: '' (Empty string). Username to use for the SMTP server defined in "
 "EMAIL_HOST. If empty, Django won't attempt authentication."
 msgstr ""
+"За замовчуванням: '' (Порожній рядок). Ім'я користувача, яке "
+"використовується для SMTP-сервера, визначеного в EMAIL_HOST. Якщо порожнє, "
+"Django не буде намагатися аутентифікуватися."
 
 #: settings.py:178
 msgid "Default: 25. Port to use for the SMTP server defined in EMAIL_HOST."
 msgstr ""
+"За замовчуванням: 25. Порт, який використовується для SMTP-сервера, "
+"визначеного в EMAIL_HOST."
 
 #: settings.py:183
 msgid ""
 "Default: None. Specifies a timeout in seconds for blocking operations like "
 "the connection attempt."
 msgstr ""
+"За замовчуванням: None. Вказує тайм-аут у секундах для блокуючих операцій, "
+"таких як спроба підключення."
 
 #: settings.py:189
 msgid ""
@@ -286,6 +366,12 @@ msgid ""
 "that EMAIL_USE_TLS/EMAIL_USE_SSL are mutually exclusive, so only set one of "
 "those settings to True."
 msgstr ""
+"Default: False. Чи використовувати неявне TLS (безпечне) з'єднання при "
+"спілкуванні з SMTP-сервером. У більшості документації електронної пошти цей "
+"тип з'єднання TLS називається SSL. Зазвичай використовується на порту 465. "
+"Якщо у вас виникають проблеми, див. налаштування явного TLS EMAIL_USE_TLS. "
+"Зверніть увагу, що EMAIL_USE_TLS/EMAIL_USE_SSL взаємовиключні, тому "
+"встановлюйте лише одне з цих налаштувань в значення True."
 
 #: settings.py:199
 msgid ""
@@ -294,6 +380,10 @@ msgid ""
 "587. If you are experiencing hanging connections, see the implicit TLS "
 "setting EMAIL_USE_SSL."
 msgstr ""
+"За замовчуванням: False. Чи слід використовувати захищене з'єднання TLS при "
+"спілкуванні з SMTP-сервером. Це використовується для явних з'єднань TLS, як "
+"правило, на порту 587. Якщо у вас виникають проблеми з підвішуванням "
+"з'єднань, див. налаштування неявного TLS EMAIL_USE_SSL."
 
 #: settings.py:208
 msgid ""
@@ -301,6 +391,10 @@ msgid ""
 "will be before it gets streamed to the file system. See Managing files for "
 "details. See also DATA_UPLOAD_MAX_MEMORY_SIZE."
 msgstr ""
+"За замовчуванням: 2621440 (тобто 2,5 МБ). Максимальний розмір (у байтах), "
+"перед яким завантаження буде потоково записано на файлову систему. Див. "
+"Управління файлами для отримання деталей. Див. також "
+"DATA_UPLOAD_MAX_MEMORY_SIZE."
 
 #: settings.py:216
 msgid ""
@@ -310,6 +404,11 @@ msgid ""
 "duplication since you don't have to define the URL in two places (settings "
 "and URLconf)."
 msgstr ""
+"Default: '/accounts/login/' URL, на який перенаправляються запити для входу,"
+" особливо при використанні декоратора login_required(). Ця настройка також "
+"приймає іменовані шаблони URL, які можуть бути використані для зменшення "
+"дублювання конфігурації, оскільки вам не потрібно визначати URL на двох "
+"місцях (у налаштуваннях та URLconf)."
 
 #: settings.py:227
 msgid ""
@@ -319,6 +418,12 @@ msgid ""
 "named URL patterns which can be used to reduce configuration duplication "
 "since you don't have to define the URL in two places (settings and URLconf)."
 msgstr ""
+"За замовчуванням: '/accounts/profile/' URL, на який перенаправляються запити"
+" після входу, коли в представленні contrib.auth.login не вказано параметр "
+"next. Це використовується декоратором login_required(), наприклад. Ця "
+"настройка також приймає іменовані шаблони URL, які можуть використовуватися "
+"для зменшення дублювання конфігурації, оскільки вам не потрібно визначати "
+"URL в двох місцях (настройки та URLconf)."
 
 #: settings.py:238
 msgid ""
@@ -329,6 +434,12 @@ msgid ""
 "configuration duplication since you don't have to define the URL in two "
 "places (settings and URLconf)."
 msgstr ""
+"За замовчуванням: None. URL, на який перенаправляються запити після виходу "
+"користувача за допомогою LogoutView (якщо у представленні відсутній аргумент"
+" next_page). Якщо None, перенаправлення не виконується, і відображається "
+"представлення виходу. Ця настройка також приймає іменовані шаблони URL, які "
+"можуть бути використані для зменшення дублювання конфігурації, оскільки вам "
+"не потрібно визначати URL на двох місцях (настройки та URLconf)."
 
 #: settings.py:249
 msgid ""
@@ -337,6 +448,11 @@ msgid ""
 "admindocs bookmarklets even if not logged in as a staff user. Are marked as "
 "\"internal\" (as opposed to \"EXTERNAL\") in AdminEmailHandler emails."
 msgstr ""
+"Список IP-адрес, у вигляді рядків, які: дозволяють контекстному процесору "
+"debug() додавати деякі змінні до контексту шаблону. Можуть використовувати "
+"закладки admindocs навіть якщо користувач не увійшов як співробітник. "
+"Позначені як \"internal\" (на відміну від \"EXTERNAL\") в електронних листах"
+" AdminEmailHandler."
 
 #: settings.py:258
 msgid ""
@@ -346,6 +462,11 @@ msgid ""
 "the default value should suffice. Only set this setting if you want to "
 "restrict language selection to a subset of the Django-provided languages. "
 msgstr ""
+"Список усіх доступних мов. Список є списком двох-кортежів у форматі (код "
+"мови, назва мови), наприклад, ('ja', 'Японська'). Це вказує, які мови "
+"доступні для вибору мови. Загалом, значення за замовчуванням повинно "
+"вистачати. Встановлюйте цей параметр лише якщо ви хочете обмежити вибір мови"
+" до підмножини мов, наданих Django."
 
 #: settings.py:269
 msgid ""
@@ -358,6 +479,14 @@ msgid ""
 "provides the fallback translation when a translation for a given literal "
 "doesn't exist for the user's preferred language."
 msgstr ""
+"Рядок, що представляє код мови для цієї установки. Він повинен бути у "
+"стандартному форматі ідентифікатора мови. Наприклад, англійська США - \"en-"
+"us\". Він виконує дві функції: якщо не використовується проміжний програмний"
+" засіб локалі, він вирішує, який переклад надсилається всім користувачам. "
+"Якщо проміжний програмний засіб локалі активний, він надає резервну мову в "
+"разі, якщо користувач не може визначити або не підтримується його бажана "
+"мова на веб-сайті. Він також надає резервний переклад, коли переклад для "
+"певного літерала не існує для бажаної мови користувача."
 
 #: settings.py:283
 msgid ""
@@ -365,12 +494,17 @@ msgid ""
 " whatever you want (as long as it's different from the other cookie names in"
 " your application)."
 msgstr ""
+"За замовчуванням: 'sessionid'. Назва cookie, яку використовувати для сесій. "
+"Це може бути будь-що, що ви хочете (лише відрізняється від інших назв cookie"
+" у вашому додатку)."
 
 #: settings.py:291
 msgid ""
 "Default: 'django.contrib.sessions.backends.db'. Controls where Django stores"
 " session data."
 msgstr ""
+"За замовчуванням: 'django.contrib.sessions.backends.db'. Контролює, де "
+"Django зберігає дані сесій."
 
 #: settings.py:298
 msgid ""
@@ -379,6 +513,10 @@ msgid ""
 "is_secure() method. Warning: Modifying this setting can compromise your "
 "site’s security. Ensure you fully understand your setup before changing it."
 msgstr ""
+"Кортеж, що представляє комбінацію заголовка/значення HTTP, яка позначає "
+"безпечний запит. Це контролює поведінку методу is_secure() об'єкта запиту. "
+"Попередження: Зміна цього параметра може підірвати безпеку вашого сайту. "
+"Переконайтеся, що повністю розумієте свою конфігурацію перед зміною."
 
 #: settings.py:307
 msgid ""
@@ -387,6 +525,11 @@ msgid ""
 "used as the base path for asset definitions (the Media class) and the "
 "staticfiles app. It must end in a slash if set to a non-empty value."
 msgstr ""
+"URL для використання при посиланні на статичні файли, розташовані в "
+"STATIC_ROOT. Приклад: \"/static/\" або \"http://static.example.com/\". Якщо "
+"не None, це буде використовуватися як базовий шлях для визначень активів "
+"(клас Media) та додатку staticfiles. Він повинен закінчуватися слешем, якщо "
+"встановлено непорожнє значення."
 
 #: settings.py:317
 msgid ""
@@ -394,6 +537,9 @@ msgid ""
 "Django. It is a nested dictionary whose contents map a storage alias to a "
 "dictionary containing the options for an individual storage."
 msgstr ""
+"Словник, що містить налаштування для всіх сховищ, які будуть "
+"використовуватися з Django. Це вкладений словник, вміст якого відображає "
+"псевдонім сховища на словник, що містить параметри для окремого сховища."
 
 #: settings.py:325
 msgid ""
@@ -401,6 +547,10 @@ msgid ""
 "isn't necessarily the time zone of the server. For example, one server may "
 "serve multiple Django-powered sites, each with a separate time zone setting."
 msgstr ""
+"Рядок, що представляє часовий пояс для цієї установки. Зверніть увагу, що це"
+" не обов'язково часовий пояс сервера. Наприклад, один сервер може "
+"обслуговувати кілька сайтів, що працюють на Django, кожен з окремим "
+"налаштуванням часового поясу."
 
 #: settings.py:334
 msgid ""
@@ -408,6 +558,9 @@ msgid ""
 "preference to the Host header. This should only be enabled if a proxy which "
 "sets this header is in use."
 msgstr ""
+"Булеве значення, яке вказує, чи використовувати заголовок X-Forwarded-Host "
+"замість заголовка Host. Це слід включати лише у випадку, якщо "
+"використовується проксі, яка встановлює цей заголовок."
 
 #: settings.py:342
 msgid ""
@@ -416,6 +569,10 @@ msgid ""
 "a proxy which sets this header is in use. USE_X_FORWARDED_HOST takes "
 "priority over this setting."
 msgstr ""
+"Булеве значення, яке вказує, чи використовувати заголовок X-Forwarded-Port "
+"замість змінної META SERVER_PORT. Це слід включати лише у випадку, якщо "
+"використовується проксі, який встановлює цей заголовок. USE_X_FORWARDED_HOST"
+" має пріоритет над цим налаштуванням."
 
 #: settings.py:351
 msgid ""
@@ -424,6 +581,10 @@ msgid ""
 "command will create a simple wsgi.py file with an application callable in "
 "it, and point this setting to that application."
 msgstr ""
+"Повний шлях Python до об'єкта додатку WSGI, який використовуватимуть "
+"вбудовані сервери Django (наприклад, runserver). Команда управління django-"
+"admin startproject створить простий файл wsgi.py з викликом додатку в ньому "
+"і встановить цю настройку на цей додаток."
 
 #: templates/smart_settings/app/viewport.html:11
 msgid "Warning"
@@ -434,81 +595,87 @@ msgid ""
 "Settings updated. Save and restart your installation for changes to take "
 "effect."
 msgstr ""
+"Налаштування оновлено. Збережіть і перезапустіть вашу установку, щоб зміни "
+"набрали чинності."
 
 #: tests/test_classes.py:190
 msgid "English"
-msgstr ""
+msgstr "Англійська"
 
 #: views.py:41
 msgid "This will overwrite the content of the configuration file."
-msgstr ""
+msgstr "Це перезапише вміст файлу конфігурації."
 
 #: views.py:44
 msgid "Save settings to the configuration file?"
-msgstr ""
+msgstr "Зберегти налаштування у файл конфігурації?"
 
 #: views.py:52
 msgid "Settings saved to configuration file successfully."
-msgstr ""
+msgstr "Налаштування успішно збережено у конфігураційному файлі."
 
 #: views.py:60
 msgid "Setting namespaces"
-msgstr ""
+msgstr "Встановлення просторів імен"
 
 #: views.py:89
 msgid "Setting updated successfully."
-msgstr ""
+msgstr "Налаштування успішно оновлено."
 
 #: views.py:98
 msgid ""
 "This setting is overridden by an environment variable, changing its value "
 "will have no effect."
 msgstr ""
+"Це налаштування перевизначається змінною середовища, зміна її значення не "
+"матиме жодного ефекту."
 
 #: views.py:108
 #, python-format
 msgid "Edit setting: %s"
-msgstr ""
+msgstr "Редагувати налаштування: %s"
 
 #: views.py:130
 #, python-format
 msgid "%(count)d settings value reverted."
-msgstr ""
+msgstr "%(count)d значень налаштувань скасовано."
 
 #: views.py:133
 #, python-format
 msgid "Value of setting \"%(object)s\" reverted."
-msgstr ""
+msgstr "Значення налаштування \"%(object)s\" відновлено."
 
 #: views.py:135
 #, python-format
 msgid "%(count)d setting value reverted."
-msgstr ""
+msgstr "%(count)d значення налаштування скасовано."
 
 #: views.py:144
 msgid "Unsaved changes will be lost."
-msgstr ""
+msgstr "Незбережені зміни будуть втрачені."
 
 #: views.py:147
 msgid "Revert the selected setting value?"
 msgid_plural "Revert the selected settings value?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Повернути обране значення налаштування?"
+msgstr[1] "Повернути обране значення налаштувань?"
+msgstr[2] "Повернути обране значення налаштувань?"
+msgstr[3] "Повернути обране значення налаштувань?"
 
 #: views.py:186
 msgid ""
 "Settings inherited from an environment variable take precedence and cannot "
 "be changed in this view. "
 msgstr ""
+"Налаштування, успадковані від змінної середовища, мають пріоритет і не "
+"можуть бути змінені в цьому перегляді."
 
 #: views.py:189
 #, python-format
 msgid "Settings in namespace: %s"
-msgstr ""
+msgstr "Налаштування в просторі імен: %s"
 
 #: views.py:199
 #, python-format
 msgid "Namespace: %s, not found"
-msgstr ""
+msgstr "Простір імен: %s, не знайдено"

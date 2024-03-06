@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -73,19 +73,19 @@ msgstr "Κατάτμηση καταγραφής σφαλμάτων"
 msgid "Error log partitions"
 msgstr "Κατατμήσεις καταγραφής σφαλμάτων"
 
-#: models.py:66
+#: models.py:67
 msgid "Date and time"
 msgstr "Ημερομηνία και ώρα"
 
-#: models.py:68
+#: models.py:71
 msgid "Text"
 msgstr "Κείμενο"
 
-#: models.py:75
+#: models.py:79
 msgid "Error log partition entry"
 msgstr "Καταχώριση κατάτμησης αρχείου καταγραφής σφαλμάτων"
 
-#: models.py:76
+#: models.py:80
 msgid "Error log partition entries"
 msgstr "Καταχωρήσεις κατάτμησης αρχείου καταγραφής σφαλμάτων"
 

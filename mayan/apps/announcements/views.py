@@ -10,8 +10,8 @@ from mayan.apps.views.generics import (
 )
 
 from .icons import (
-    icon_announcement_create, icon_announcement_delete, icon_announcement_edit,
-    icon_announcement_list
+    icon_announcement_create, icon_announcement_delete,
+    icon_announcement_edit, icon_announcement_list
 )
 from .links import link_announcement_create
 from .models import Announcement
@@ -31,7 +31,7 @@ class AnnouncementCreateView(SingleObjectCreateView):
 
     def get_extra_context(self):
         return {
-            'title': _(message='Create announcement'),
+            'title': _(message='Create announcement')
         }
 
     def get_instance_extra_data(self):
@@ -119,8 +119,9 @@ class AnnouncementListView(SingleObjectListView):
             ),
             'no_results_text': _(
                 'Announcements are displayed in the login view. You can use '
-                'announcements to convery information about your organzation, '
-                'announcements or usage guidelines for your users.'
+                'announcements to convey information about your '
+                'organization, announcements or usage guidelines for '
+                'your users.'
             ),
             'no_results_title': _(message='No announcements available'),
             'title': _(message='Announcements')

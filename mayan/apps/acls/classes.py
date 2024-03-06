@@ -43,7 +43,9 @@ class ModelPermission:
             )
 
         # Sort by namespace label.
-        result.sort(key=lambda entry: entry[0].label)
+        result.sort(
+            key=lambda entry: entry[0].label
+        )
         return result
 
     @classmethod
@@ -146,8 +148,9 @@ class ModelPermission:
         Match a model class to a set of permissions. And connect the model
         to the ACLs via a GenericRelation field.
         """
-        # Hidden imports
+        # Hidden imports.
         from django.contrib.contenttypes.fields import GenericRelation
+
         from mayan.apps.common.classes import ModelCopy
         from mayan.apps.events.classes import (
             EventModelRegistry, ModelEventType
@@ -225,7 +228,9 @@ class ModelPermission:
         )
         cls._inheritances_reverse[model_reverse].append(model)
 
-        cls._inheritances.setdefault(model, [])
+        cls._inheritances.setdefault(
+            model, []
+        )
         cls._inheritances[model].append(
             {'field_name': related, 'fk_field_cast': fk_field_cast}
         )

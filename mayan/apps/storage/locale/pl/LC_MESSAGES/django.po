@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-04 17:05+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:28 permissions.py:6 queues.py:13 settings.py:15
+#: apps.py:30 permissions.py:6 queues.py:13 settings.py:15
 msgid "Storage"
 msgstr "Magazyn"
 
@@ -37,7 +37,7 @@ msgstr ""
 "Nie można zainicjować pamięci: %(name)s. Sprawdź kropkowaną ścieżkę zaplecza"
 " pamięci i argumenty."
 
-#: events.py:6 links.py:20 models.py:56 storages.py:22
+#: events.py:6 links.py:20 models.py:54 storages.py:22
 msgid "Download files"
 msgstr "Pobierz pliki"
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Nazwa magazynu do przetworzenia."
 
-#: model_mixins.py:18 models.py:95
+#: model_mixins.py:18 models.py:93
 msgid "Filename"
 msgstr "Nazwa"
 
@@ -104,27 +104,27 @@ msgstr ""
 msgid "Size"
 msgstr "Rozmiar"
 
-#: model_mixins.py:110 models.py:48 serializers.py:15
+#: model_mixins.py:110 models.py:46 serializers.py:15
 msgid "User"
 msgstr "Użytkownik"
 
-#: models.py:40 models.py:92
+#: models.py:38 models.py:90
 msgid "File"
 msgstr "Plik"
 
-#: models.py:43
+#: models.py:41
 msgid "Label"
 msgstr "Etykieta"
 
-#: models.py:55
+#: models.py:53
 msgid "Download file"
 msgstr "Pobieranie pliku"
 
-#: models.py:101
+#: models.py:99
 msgid "Shared uploaded file"
 msgstr "Udostępniony plik"
 
-#: models.py:102 storages.py:36
+#: models.py:100 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Pliki udostępnione"
 
@@ -206,7 +206,7 @@ msgstr ""
 "Nie można zainicjować udostępnionego miejsca na przesyłane pliki. Sprawdź "
 "ustawienia {} i {} pod kątem błędów formatowania."
 
-#: views.py:67
+#: views/download_file_views.py:68
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -216,10 +216,10 @@ msgstr ""
 "eksport. Pobrane pliki są przechowywane przez pewien czas, a następnie "
 "automatycznie usuwane."
 
-#: views.py:71
+#: views/download_file_views.py:72
 msgid "There are no files to download."
 msgstr ""
 
-#: views.py:72
+#: views/download_file_views.py:73
 msgid "Downloads"
 msgstr ""

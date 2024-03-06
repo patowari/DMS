@@ -3,7 +3,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('acls', '0002_auto_20150703_0513'),
+        ('acls', '0002_auto_20150703_0513')
     ]
 
     operations = [
@@ -12,6 +12,6 @@ class Migration(migrations.Migration):
             options={
                 'ordering': ('pk',), 'verbose_name': 'Access entry',
                 'verbose_name_plural': 'Access entries'
-            },
-        ),
+            }
+        )
     ]
