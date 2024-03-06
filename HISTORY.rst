@@ -1,6 +1,7 @@
 4.7 (XXXX-XX-XX)
 ================
 - Remove local version from the platform cache identifiers.
+- Add credentials backend for Google Service accounts.
 
 4.6.2 (2024-03-04)
 ==================
