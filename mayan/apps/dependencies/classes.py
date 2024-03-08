@@ -1,5 +1,5 @@
-import json
 from io import BytesIO
+import json
 import logging
 from packaging import version
 import pkg_resources

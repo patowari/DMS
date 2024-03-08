@@ -411,7 +411,7 @@ class WhooshSearchBackend(SearchBackend):
                                 'id', str(instance.pk)
                             )
                         except Exception as exception:
-                            # The parenthesis is used to defined a multi
+                            # The parenthesis is used to define a multi
                             # line error message not a translatable string.
                             error_text = (
                                 'Unexpected exception while '
@@ -443,7 +443,7 @@ class WhooshSearchBackend(SearchBackend):
                             try:
                                 writer.add_document(**kwargs)
                             except Exception as exception:
-                                # The parenthesis is used to defined a multi
+                                # The parenthesis is used to define a multi
                                 # line error message not a translatable
                                 # string.
                                 error_text = (
@@ -497,7 +497,7 @@ class WhooshSearchBackend(SearchBackend):
                         try:
                             writer.update_document(**kwargs)
                         except Exception as exception:
-                            # The parenthesis is used to defined a multi
+                            # The parenthesis is used to define a multi
                             # line error message not a translatable string.
                             error_text = (
                                 'Unexpected exception while '

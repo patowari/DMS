@@ -43,7 +43,7 @@ class DocumentMetadataAddAction(WorkflowAction):
             try:
                 context['document'].metadata.create(metadata_type=metadata_type)
             except IntegrityError as exception:
-                """This document already has the metadata type added"""
+                """This document already has the metadata type added."""
                 raise WorkflowStateActionError(
                     _(
                         'Unable to add metadata type "%(metadata_type)s" '
@@ -124,7 +124,9 @@ class DocumentMetadataEditAction(WorkflowAction):
                 metadata_type=metadata_type
             )
         except DocumentMetadata.DoesNotExist as exception:
-            """Non fatal, we just ignore the action to edit the metadata value"""
+            """
+            Non fatal, we just ignore the action to edit the metadata value.
+            """
             raise WorkflowStateActionError(
                 _(
                     'Unable to edit metadata type "%(metadata_type)s" '
@@ -190,7 +192,7 @@ class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
                     metadata_type=metadata_type
                 ).delete()
             except DocumentMetadata.DoesNotExist:
-                """This document does not have the metadata type added"""
+                """This document does not have the metadata type added."""
             except ValidationError as exception:
                 raise WorkflowStateActionError(
                     _(
