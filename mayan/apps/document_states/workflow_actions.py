@@ -30,8 +30,10 @@ class DocumentPropertiesEditAction(WorkflowAction):
             'kwargs': {
                 'initial_help_text': _(
                     format_lazy(
-                        '{} {}',
-                        _(message='The new label to be assigned to the document.'),
+                        '{} {}', _(
+                            message='The new label to be assigned to the '
+                            'document.'
+                        ),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
@@ -96,6 +98,9 @@ class DocumentPropertiesEditAction(WorkflowAction):
             document.label = new_label or document.label
             document.description = new_description or document.description
 
+            model_instance = self.get_model_instance()
+
+            document._event_action_object = model_instance
             document.save()
 
 
@@ -348,7 +353,8 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
     def execute(self, context):
         authentication_context = context.copy()
 
-        credential = self.get_credential()
+        model_instance = self.get_model_instance()
+        credential = self.get_credential(action_object=model_instance)
         if credential:
             authentication_context['credential'] = credential
 
