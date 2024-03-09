@@ -7,9 +7,9 @@ from mayan.apps.acls.models import AccessControlList
 from mayan.apps.organizations.utils import get_organization_installation_url
 from mayan.apps.views.generics import MultipleObjectFormActionView
 
-from ..classes import ModelMailingAction
 from ..exceptions import MailerError
 from ..forms import ObjectMailForm
+from ..mailing_actions import ModelMailingAction
 from ..models import UserMailer
 from ..permissions import permission_mailing_profile_use
 from ..tasks import task_send_object

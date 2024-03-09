@@ -15,9 +15,7 @@ from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import TwoStateWidget
 
-from .classes import (
-    MailerBackend, ModelMailingActionAttachment, ModelMailingActionLink
-)
+from .classes import MailerBackend
 from .events import event_email_sent, event_mailing_profile_edited
 from .links import (
     link_mailing_profile_create, link_mailing_profile_delete,
@@ -38,6 +36,9 @@ from .literals import (
     DOCUMENT_FILE_MIME_TYPE_FUNCTION_DOTTED_PATH,
     DOCUMENT_VERSION_CONTENT_FUNCTION_DOTTED_PATH,
     DOCUMENT_VERSION_MIME_TYPE_FUNCTION_DOTTED_PATH
+)
+from .mailing_actions import (
+    ModelMailingActionAttachment, ModelMailingActionLink
 )
 from .permissions import (
     permission_send_document_file_attachment,

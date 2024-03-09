@@ -24,6 +24,8 @@
   storage backend and the Google Cloud Storage signed URLs backend. Update
   the document downloads app to support download backends for quick downloads
   of document files.
+- Moved mailing actions from the ``class`` module to their own
+  ``mailing_actions`` module.
 
 4.6.2 (2024-03-04)
 ==================

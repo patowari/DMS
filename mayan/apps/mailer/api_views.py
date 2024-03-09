@@ -5,8 +5,8 @@ from mayan.apps.rest_api import generics
 from rest_framework.settings import api_settings
 from rest_framework.exceptions import ValidationError
 
-from .classes import ModelMailingAction
 from .exceptions import MailerError
+from .mailing_actions import ModelMailingAction
 from .models import UserMailer
 from .permissions import (
     permission_mailing_profile_create, permission_mailing_profile_delete,

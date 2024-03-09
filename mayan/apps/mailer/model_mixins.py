@@ -9,8 +9,8 @@ from django.utils.translation import gettext_lazy as _
 import mayan
 from mayan.apps.templating.classes import Template
 
-from .classes import ModelMailingAction
 from .events import event_email_sent
+from .mailing_actions import ModelMailingAction
 from .utils import split_recipient_list
 
 
