@@ -93,15 +93,15 @@ class DocumentSignatureDetachedAction(WorkflowAction):
         }
 
     def execute(self, context):
-        DetachedSignature.objects.sign_document_file(
-            **self.get_arguments(context=context)
-        )
+        kwargs = self.get_arguments(context=context)
+
+        DetachedSignature.objects.sign_document_file(**kwargs)
 
 
 class DocumentSignatureEmbeddedAction(DocumentSignatureDetachedAction):
     label = _(message='Sign document (embedded)')
 
     def execute(self, context):
-        EmbeddedSignature.objects.sign_document_file(
-            **self.get_arguments(context=context)
-        )
+        kwargs = self.get_arguments(context=context)
+
+        EmbeddedSignature.objects.sign_document_file(**kwargs)

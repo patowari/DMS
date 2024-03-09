@@ -195,7 +195,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -216,14 +216,14 @@ class WorkflowInstanceTransitionViewTestCase(
         self.assertNotContains(
             response=response,
             text=str(
-                self._test_workflow_template_transitions[0]
+                self._test_workflow_template_transition_list[0]
             ),
             status_code=200
         )
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -242,7 +242,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -267,14 +267,14 @@ class WorkflowInstanceTransitionViewTestCase(
         self.assertContains(
             response=response,
             text=str(
-                self._test_workflow_template_transitions[0]
+                self._test_workflow_template_transition_list[0]
             ),
             status_code=200
         )
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -293,7 +293,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -318,14 +318,14 @@ class WorkflowInstanceTransitionViewTestCase(
         self.assertContains(
             response=response,
             text=str(
-                self._test_workflow_template_transitions[0]
+                self._test_workflow_template_transition_list[0]
             ),
             status_code=200
         )
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -350,7 +350,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -364,7 +364,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -383,7 +383,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -406,7 +406,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -425,7 +425,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -448,7 +448,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -473,7 +473,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -487,7 +487,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -506,7 +506,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -525,7 +525,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -548,7 +548,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
 
         events = self._get_test_events()
@@ -576,7 +576,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -599,7 +599,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
 
         events = self._get_test_events()
@@ -633,7 +633,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -676,7 +676,7 @@ class WorkflowInstanceTransitionFieldViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
 
         events = self._get_test_events()
@@ -710,7 +710,7 @@ class WorkflowInstanceTransitionFieldViewTestCase(
 
         self.assertEqual(
             self._test_workflow_instance.get_current_state(),
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()

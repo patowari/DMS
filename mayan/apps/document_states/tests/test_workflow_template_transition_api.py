@@ -201,11 +201,11 @@ class WorkflowTemplateTransitionAPIViewTestCase(
         )
         self.assertEqual(
             self._test_workflow_template_transition.origin_state,
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
         self.assertEqual(
             self._test_workflow_template_transition.destination_state,
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
 
         events = self._get_test_events()
@@ -233,11 +233,11 @@ class WorkflowTemplateTransitionAPIViewTestCase(
         )
         self.assertEqual(
             self._test_workflow_template_transition.origin_state,
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
         self.assertEqual(
             self._test_workflow_template_transition.destination_state,
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()
@@ -267,11 +267,11 @@ class WorkflowTemplateTransitionAPIViewTestCase(
         )
         self.assertEqual(
             self._test_workflow_template_transition.origin_state,
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
         self.assertEqual(
             self._test_workflow_template_transition.destination_state,
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
 
         events = self._get_test_events()
@@ -298,11 +298,11 @@ class WorkflowTemplateTransitionAPIViewTestCase(
         )
         self.assertEqual(
             self._test_workflow_template_transition.origin_state,
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
         self.assertEqual(
             self._test_workflow_template_transition.destination_state,
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()

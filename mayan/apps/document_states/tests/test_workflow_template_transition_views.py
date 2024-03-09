@@ -52,11 +52,11 @@ class WorkflowTemplateTransitionViewTestCase(
         )
         self.assertEqual(
             WorkflowTransition.objects.all()[0].origin_state,
-            self._test_workflow_template_states[0]
+            self._test_workflow_template_state_list[0]
         )
         self.assertEqual(
             WorkflowTransition.objects.all()[0].destination_state,
-            self._test_workflow_template_states[1]
+            self._test_workflow_template_state_list[1]
         )
 
         events = self._get_test_events()

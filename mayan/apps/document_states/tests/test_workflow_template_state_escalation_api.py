@@ -22,7 +22,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
         self._create_test_workflow_template_transition()
 
     def test_workflow_template_state_escalation_create_api_view_no_permission(self):
-        test_workflow_template_state_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_template_state_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -31,7 +31,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
 
         self._test_workflow_template.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_template_state_count
         )
 
@@ -44,7 +44,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        test_workflow_template_state_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_template_state_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -53,7 +53,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
 
         self._test_workflow_template.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_template_state_count + 1
         )
 
@@ -75,7 +75,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        test_workflow_template_state_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_template_state_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -84,7 +84,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
 
         self._test_workflow_template.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_template_state_count
         )
 
@@ -96,8 +96,8 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition(
             extra_kwargs={
-                'origin_state': self._test_workflow_template_states[2],
-                'destination_state': self._test_workflow_template_states[3]
+                'origin_state': self._test_workflow_template_state_list[2],
+                'destination_state': self._test_workflow_template_state_list[3]
             }
         )
 
@@ -106,7 +106,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        test_workflow_template_state_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_template_state_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -115,7 +115,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
 
         self._test_workflow_template.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_template_state_count
         )
 
@@ -125,7 +125,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
     def test_workflow_template_state_escalation_delete_api_view_no_permission(self):
         self._create_test_workflow_template_state_escalation()
 
-        test_workflow_template_state_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_template_state_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -134,7 +134,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
 
         self._test_workflow_template.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_template_state_count
         )
 
@@ -149,7 +149,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        test_workflow_template_state_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_template_state_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -158,7 +158,7 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
 
         self._test_workflow_template.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_template_state_count - 1)
 
         events = self._get_test_events()
@@ -257,8 +257,8 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition(
             extra_kwargs={
-                'origin_state': self._test_workflow_template_states[2],
-                'destination_state': self._test_workflow_template_states[3]
+                'origin_state': self._test_workflow_template_state_list[2],
+                'destination_state': self._test_workflow_template_state_list[3]
             }
         )
 
@@ -354,8 +354,8 @@ class WorkflowTemplateStateEscalationsAPIViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition(
             extra_kwargs={
-                'origin_state': self._test_workflow_template_states[2],
-                'destination_state': self._test_workflow_template_states[3]
+                'origin_state': self._test_workflow_template_state_list[2],
+                'destination_state': self._test_workflow_template_state_list[3]
             }
         )
 

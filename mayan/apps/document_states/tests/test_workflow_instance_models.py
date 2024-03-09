@@ -4,7 +4,9 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.permissions import permission_document_change_type
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from ..events import event_workflow_instance_created
+from ..events import (
+    event_workflow_instance_created, event_workflow_template_edited
+)
 
 from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
 
@@ -50,16 +52,14 @@ class WorkflowInstanceModelTestCase(
             self._test_document.workflows.count(), 1
         )
 
+        _test_workflow_instance = self._test_document.workflows.first()
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, self._test_document)
-        self.assertEqual(
-            events[0].actor, self._test_document.workflows.first()
-        )
-        self.assertEqual(
-            events[0].target, self._test_document.workflows.first()
-        )
+        self.assertEqual(events[0].actor, _test_workflow_instance)
+        self.assertEqual(events[0].target, _test_workflow_instance)
         self.assertEqual(events[0].verb, event_workflow_instance_created.id)
 
         self.assertEqual(
@@ -74,7 +74,12 @@ class WorkflowInstanceModelTestCase(
 
         self._test_workflow_instance = self._test_document.workflows.first()
 
+        self._clear_events()
+
         self._test_workflow_instance.get_absolute_url()
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
     def test_workflow_template_auto_launch(self):
         self._test_workflow_template.auto_launch = True
@@ -88,24 +93,22 @@ class WorkflowInstanceModelTestCase(
             self._test_document.workflows.count(), 1
         )
 
+        _test_workflow_instance = self._test_document.workflows.first()
+
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
-        self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(
-            events[0].actor, self._test_document.workflows.first()
+            events[0].action_object, self._test_document.document_type
         )
-        self.assertEqual(
-            events[0].target, self._test_document.workflows.first()
-        )
-        self.assertEqual(events[0].verb, event_workflow_instance_created.id)
+        self.assertEqual(events[0].actor, self._test_document)
+        self.assertEqual(events[0].target, self._test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(
-            events[1].action_object, self._test_document.document_type
-        )
-        self.assertEqual(events[1].actor, self._test_document)
-        self.assertEqual(events[1].target, self._test_document)
-        self.assertEqual(events[1].verb, event_document_created.id)
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(events[1].actor, _test_workflow_instance)
+        self.assertEqual(events[1].target, _test_workflow_instance)
+        self.assertEqual(events[1].verb, event_workflow_instance_created.id)
 
     def test_workflow_template_no_auto_launch(self):
         self._test_workflow_template.auto_launch = False
@@ -142,23 +145,25 @@ class WorkflowInstanceModelTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
-        self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(
-            events[0].actor, self._test_document.workflows.first()
+            events[0].action_object, self._test_document.document_type
         )
-        self.assertEqual(
-            events[0].target, self._test_document.workflows.first()
-        )
-        self.assertEqual(events[0].verb, event_workflow_instance_created.id)
+        self.assertEqual(events[0].actor, self._test_document)
+        self.assertEqual(events[0].target, self._test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
 
+        self.assertEqual(events[1].action_object, self._test_document)
         self.assertEqual(
-            events[1].action_object, self._test_document.document_type
+            events[1].actor, self._test_workflow_instance
         )
-        self.assertEqual(events[1].actor, self._test_document)
-        self.assertEqual(events[1].target, self._test_document)
-        self.assertEqual(events[1].verb, event_document_created.id)
+        self.assertEqual(
+            events[1].target, self._test_workflow_instance
+        )
+        self.assertEqual(events[1].verb, event_workflow_instance_created.id)
 
     def test_workflow_template_transition_false_condition(self):
+        self._clear_events()
+
         self._create_test_document_stub()
 
         self._test_workflow_instance = self._test_document.workflows.first()
@@ -169,6 +174,36 @@ class WorkflowInstanceModelTestCase(
         self.assertEqual(
             self._test_workflow_instance.get_transition_choices().count(), 0
         )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 3)
+
+        self.assertEqual(
+            events[0].action_object, self._test_document.document_type
+        )
+        self.assertEqual(events[0].actor, self._test_document)
+        self.assertEqual(events[0].target, self._test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(
+            events[1].actor, self._test_workflow_instance
+        )
+        self.assertEqual(
+            events[1].target, self._test_workflow_instance
+        )
+        self.assertEqual(events[1].verb, event_workflow_instance_created.id)
+
+        self.assertEqual(
+            events[2].action_object, self._test_workflow_template_transition
+        )
+        self.assertEqual(
+            events[2].actor, self._test_workflow_template
+        )
+        self.assertEqual(
+            events[2].target, self._test_workflow_template
+        )
+        self.assertEqual(events[2].verb, event_workflow_template_edited.id)
 
     def test_workflow_template_transition_true_condition(self):
         self._clear_events()
@@ -187,11 +222,29 @@ class WorkflowInstanceModelTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 3)
 
-        self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(
-            events[0].actor, self._test_document.workflows.first()
+            events[0].action_object, self._test_document.document_type
+        )
+        self.assertEqual(events[0].actor, self._test_document)
+        self.assertEqual(events[0].target, self._test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(
+            events[1].actor, self._test_workflow_instance
         )
         self.assertEqual(
-            events[0].target, self._test_document.workflows.first()
+            events[1].target, self._test_workflow_instance
         )
-        self.assertEqual(events[0].verb, event_workflow_instance_created.id)
+        self.assertEqual(events[1].verb, event_workflow_instance_created.id)
+
+        self.assertEqual(
+            events[2].action_object, self._test_workflow_template_transition
+        )
+        self.assertEqual(
+            events[2].actor, self._test_workflow_template
+        )
+        self.assertEqual(
+            events[2].target, self._test_workflow_template
+        )
+        self.assertEqual(events[2].verb, event_workflow_template_edited.id)

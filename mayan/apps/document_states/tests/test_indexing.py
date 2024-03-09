@@ -162,7 +162,7 @@ class WorkflowTemplateIndexingTestCase(
         self._create_test_workflow_states_and_transitions()
         self._create_test_document_stub()
 
-        self._test_workflow_template_states[0].delete()
+        self._test_workflow_template_state_list[0].delete()
 
         self.assertFalse(
             IndexInstanceNode.objects.filter(
@@ -181,8 +181,8 @@ class WorkflowTemplateIndexingTestCase(
             test_workflow_instance.get_current_state()
         )
 
-        self._test_workflow_template_states[0].label = TEST_WORKFLOW_TEMPLATE_STATE_LABEL_EDITED
-        self._test_workflow_template_states[0].save()
+        self._test_workflow_template_state_list[0].label = TEST_WORKFLOW_TEMPLATE_STATE_LABEL_EDITED
+        self._test_workflow_template_state_list[0].save()
 
         value_edited = '{}-{}'.format(
             self._test_workflow_template.label,

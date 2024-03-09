@@ -143,16 +143,16 @@ class WorkflowTemplateStateViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_state()
 
-        workflow_state_label = self._test_workflow_template_states[0].label
+        workflow_state_label = self._test_workflow_template_state_list[0].label
 
         self._clear_events()
 
         response = self._request_test_workflow_template_state_edit_view()
         self.assertEqual(response.status_code, 404)
 
-        self._test_workflow_template_states[0].refresh_from_db()
+        self._test_workflow_template_state_list[0].refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_states[0].label, workflow_state_label
+            self._test_workflow_template_state_list[0].label, workflow_state_label
         )
 
         events = self._get_test_events()
@@ -167,22 +167,22 @@ class WorkflowTemplateStateViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        workflow_state_label = self._test_workflow_template_states[0].label
+        workflow_state_label = self._test_workflow_template_state_list[0].label
 
         self._clear_events()
 
         response = self._request_test_workflow_template_state_edit_view()
         self.assertEqual(response.status_code, 302)
 
-        self._test_workflow_template_states[0].refresh_from_db()
+        self._test_workflow_template_state_list[0].refresh_from_db()
         self.assertNotEquals(
-            self._test_workflow_template_states[0].label, workflow_state_label
+            self._test_workflow_template_state_list[0].label, workflow_state_label
         )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
         self.assertEqual(
-            events[0].action_object, self._test_workflow_template_states[0]
+            events[0].action_object, self._test_workflow_template_state_list[0]
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_workflow_template)
@@ -214,7 +214,7 @@ class WorkflowTemplateStateViewTestCase(
 
         response = self._request_test_workflow_template_state_list_view()
         self.assertContains(
-            response=response, text=self._test_workflow_template_states[0].label,
+            response=response, text=self._test_workflow_template_state_list[0].label,
             status_code=200
         )
 

@@ -18,6 +18,8 @@
   and managed.
 - Improvements to the ``WorkflowInstanceTestMixin`` class to track test
   workflow instances.
+- Add event checking to workflow template state action tests in multiple
+  apps.
 
 4.6.2 (2024-03-04)
 ==================

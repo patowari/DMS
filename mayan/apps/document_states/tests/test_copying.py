@@ -9,6 +9,7 @@ class WorkflowTemplateCopyTestCase(
 ):
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False
+    auto_create_test_workflow_template_state_action = False
     auto_upload_test_document = False
 
     def setUp(self):

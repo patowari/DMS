@@ -2,6 +2,9 @@ import json
 
 from django.core import mail
 
+from mayan.apps.document_states.events import (
+    event_workflow_instance_created, event_workflow_template_edited
+)
 from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
 from mayan.apps.document_states.permissions import (
     permission_workflow_template_edit
@@ -10,9 +13,11 @@ from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixi
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
+from mayan.apps.documents.events import event_document_created
 from mayan.apps.metadata.tests.mixins.metadata_type_mixins import MetadataTypeTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 
+from ..events import event_email_sent
 from ..permissions import permission_mailing_profile_use
 from ..workflow_actions import DocumentEmailAction
 
@@ -29,6 +34,8 @@ class DocumentEmailActionTestCase(
 ):
     def test_email_action_literal_text(self):
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -48,8 +55,18 @@ class DocumentEmailActionTestCase(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
     def test_email_action_literal_text_cc_field(self):
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -73,8 +90,18 @@ class DocumentEmailActionTestCase(
             mail.outbox[0].cc, [TEST_EMAIL_ADDRESS]
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
     def test_email_action_literal_text_bcc_field(self):
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -98,6 +125,14 @@ class DocumentEmailActionTestCase(
             mail.outbox[0].bcc, [TEST_EMAIL_ADDRESS]
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
     def test_email_action_workflow_execute(self):
         self._create_test_mailing_profile()
 
@@ -120,6 +155,8 @@ class DocumentEmailActionTestCase(
             self._test_document_type
         )
 
+        self._clear_events()
+
         self._create_test_document_stub()
 
         self.assertEqual(
@@ -131,6 +168,24 @@ class DocumentEmailActionTestCase(
         self.assertEqual(
             mail.outbox[0].to, [TEST_EMAIL_ADDRESS]
         )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 3)
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, self._test_document)
+        self.assertEqual(events[0].target, self._test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, self._test_document)
+        self.assertEqual(events[1].actor, self._test_workflow_instance)
+        self.assertEqual(events[1].target, self._test_workflow_instance)
+        self.assertEqual(events[1].verb, event_workflow_instance_created.id)
+
+        self.assertEqual(events[2].action_object, self._test_document)
+        self.assertEqual(events[2].actor, self._test_mailing_profile)
+        self.assertEqual(events[2].target, self._test_mailing_profile)
+        self.assertEqual(events[2].verb, event_email_sent.id)
 
 
 class DocumentEmailActionTemplateTestCase(
@@ -147,6 +202,8 @@ class DocumentEmailActionTemplateTestCase(
         )
 
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -176,6 +233,14 @@ class DocumentEmailActionTemplateTestCase(
             ]
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
     def test_email_action_subject_template(self):
         self._create_test_metadata_type()
         self._test_document_type.metadata.create(
@@ -186,6 +251,8 @@ class DocumentEmailActionTemplateTestCase(
         )
 
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -211,6 +278,14 @@ class DocumentEmailActionTemplateTestCase(
             self._test_document.metadata.first().value
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
     def test_email_action_body_template(self):
         self._create_test_metadata_type()
         self._test_document_type.metadata.create(
@@ -221,6 +296,8 @@ class DocumentEmailActionTemplateTestCase(
         )
 
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -245,6 +322,14 @@ class DocumentEmailActionTemplateTestCase(
             mail.outbox[0].body, TEST_EMAIL_BODY
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
     def test_email_action_attachment(self):
         # This action requires a document with an active version.
         self._upload_test_document()
@@ -258,6 +343,8 @@ class DocumentEmailActionTemplateTestCase(
         )
 
         self._create_test_mailing_profile()
+
+        self._clear_events()
 
         self._execute_workflow_template_state_action(
             klass=DocumentEmailAction, kwargs={
@@ -287,12 +374,26 @@ class DocumentEmailActionTemplateTestCase(
             len(mail.outbox[0].attachments), 1
         )
 
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document_version)
+        self.assertEqual(events[0].actor, self._test_mailing_profile)
+        self.assertEqual(events[0].target, self._test_mailing_profile)
+        self.assertEqual(events[0].verb, event_email_sent.id)
+
 
 class DocumentEmailActionViewTestCase(
-    MailingProfileTestMixin, WorkflowTemplateStateActionViewTestMixin,
+    WorkflowTemplateStateActionViewTestMixin, MailingProfileTestMixin,
     GenericViewTestCase
 ):
+    """
+    `WorkflowTemplateStateActionViewTestMixin` must precede
+    `MailingProfileTestMixin` to allow `self._test_object_track` to work for
+    the right model.
+    """
     auto_upload_test_document = False
+    auto_create_test_workflow_template_state_action = False
 
     def test_email_action_create_get_view(self):
         self._create_test_mailing_profile()
@@ -300,6 +401,8 @@ class DocumentEmailActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
+
+        self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_get_view(
             backend_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction'
@@ -309,6 +412,9 @@ class DocumentEmailActionViewTestCase(
         self.assertEqual(
             self._test_workflow_template_state.actions.count(), 0
         )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
     def test_email_action_create_post_view(self):
         self._create_test_mailing_profile()
@@ -320,6 +426,8 @@ class DocumentEmailActionViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit
         )
+
+        self._clear_events()
 
         response = self._request_test_workflow_template_state_action_create_post_view(
             backend_path='mayan.apps.mailer.workflow_actions.DocumentEmailAction',
@@ -335,3 +443,14 @@ class DocumentEmailActionViewTestCase(
         self.assertEqual(
             self._test_workflow_template_state.actions.count(), 1
         )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(
+            events[0].action_object,
+            self._test_workflow_template_state_action
+        )
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_workflow_template)
+        self.assertEqual(events[0].verb, event_workflow_template_edited.id)

@@ -50,7 +50,7 @@ class WorkflowTemplateStateActionTransitionTestCase(
 
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
-        self._test_workflow_template_states[1].actions.create(
+        self._test_workflow_template_state_list[1].actions.create(
             backend_data=json.dumps(
                 obj={'document_type': self._test_document_types[1].pk}
             ),
@@ -75,7 +75,7 @@ class WorkflowTemplateStateActionTransitionTestCase(
     def test_trash_document_action_workflow_execution(self):
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
-        self._test_workflow_template_states[1].actions.create(
+        self._test_workflow_template_state_list[1].actions.create(
             backend_path=TEST_TRASH_DOCUMENT_WORKFLOW_ACTION_DOTTED_PATH,
             label='', when=WORKFLOW_ACTION_ON_ENTRY,
         )

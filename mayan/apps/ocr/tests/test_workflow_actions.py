@@ -77,6 +77,8 @@ class UpdateDocumentPageOCRActionTestCase(
 class TransitionUpdateDocumentPageOCRActionTestCase(
     WorkflowTemplateStateActionTestMixin, BaseTestCase
 ):
+    auto_create_test_workflow_template_state_action = False
+
     def setUp(self):
         super().setUp()
         self._test_document.delete()
@@ -87,7 +89,7 @@ class TransitionUpdateDocumentPageOCRActionTestCase(
     def test_workflow_action_update_document_version_page_execution(self):
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
-        self._test_workflow_template_states[1].actions.create(
+        self._test_workflow_template_state_list[1].actions.create(
             backend_data=json.dumps(
                 obj={
                     'page_condition': True,

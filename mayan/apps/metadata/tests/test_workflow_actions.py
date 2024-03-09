@@ -127,6 +127,7 @@ class DocumentMetadataAddActionViewTestCase(
 ):
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False
+    auto_create_test_workflow_template_state_action = False
     auto_upload_test_document = False
 
     def setUp(self):
@@ -248,6 +249,7 @@ class DocumentMetadataEditActionViewTestCase(
 ):
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False
+    auto_create_test_workflow_template_state_action = False
     auto_upload_test_document = False
 
     def setUp(self):
@@ -375,6 +377,7 @@ class DocumentMetadataRemoveActionViewTestCase(
 ):
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False
+    auto_create_test_workflow_template_state_action = False
     auto_upload_test_document = False
 
     def setUp(self):

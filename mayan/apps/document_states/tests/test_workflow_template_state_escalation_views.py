@@ -19,7 +19,7 @@ class WorkflowStateEscalationViewTestCase(
         self._create_test_workflow_template_transition()
 
     def test_workflow_state_escalation_create_view_no_permission(self):
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -27,7 +27,7 @@ class WorkflowStateEscalationViewTestCase(
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count
         )
 
@@ -40,7 +40,7 @@ class WorkflowStateEscalationViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -48,7 +48,7 @@ class WorkflowStateEscalationViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count + 1
         )
 
@@ -73,12 +73,12 @@ class WorkflowStateEscalationViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition(
             extra_kwargs={
-                'origin_state': self._test_workflow_template_states[2],
-                'destination_state': self._test_workflow_template_states[3]
+                'origin_state': self._test_workflow_template_state_list[2],
+                'destination_state': self._test_workflow_template_state_list[3]
             }
         )
 
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -86,7 +86,7 @@ class WorkflowStateEscalationViewTestCase(
         self.assertEqual(response.status_code, 200)
 
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count
         )
 
@@ -96,7 +96,7 @@ class WorkflowStateEscalationViewTestCase(
     def test_workflow_state_escalation_delete_view_no_permission(self):
         self._create_test_workflow_template_state_escalation()
 
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -104,7 +104,7 @@ class WorkflowStateEscalationViewTestCase(
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count
 
         )
@@ -120,7 +120,7 @@ class WorkflowStateEscalationViewTestCase(
             permission=permission_workflow_template_edit
         )
 
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -128,7 +128,7 @@ class WorkflowStateEscalationViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count - 1
 
         )
@@ -199,8 +199,8 @@ class WorkflowStateEscalationViewTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition(
             extra_kwargs={
-                'origin_state': self._test_workflow_template_states[2],
-                'destination_state': self._test_workflow_template_states[3]
+                'origin_state': self._test_workflow_template_state_list[2],
+                'destination_state': self._test_workflow_template_state_list[3]
             }
         )
 
@@ -232,7 +232,7 @@ class WorkflowStateEscalationViewTestCase(
     def test_workflow_state_escalation_list_view_no_permission(self):
         self._create_test_workflow_template_state_escalation()
 
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -240,7 +240,7 @@ class WorkflowStateEscalationViewTestCase(
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count
         )
 
@@ -255,7 +255,7 @@ class WorkflowStateEscalationViewTestCase(
             permission=permission_workflow_template_view
         )
 
-        test_workflow_escalation_count = self._test_workflow_template_states[0].escalations.count()
+        test_workflow_escalation_count = self._test_workflow_template_state_list[0].escalations.count()
 
         self._clear_events()
 
@@ -266,7 +266,7 @@ class WorkflowStateEscalationViewTestCase(
             )
         )
         self.assertEqual(
-            self._test_workflow_template_states[0].escalations.count(),
+            self._test_workflow_template_state_list[0].escalations.count(),
             test_workflow_escalation_count
         )
 

@@ -13,6 +13,8 @@ from .mixins.workflow_template_state_action_mixins import WorkflowTemplateStateA
 class WorkflowTemplateStateActionsAPIViewTestCase(
     WorkflowTemplateStateActionAPIViewTestMixin, BaseAPITestCase
 ):
+    auto_create_test_workflow_template_state_action = False
+
     def test_workflow_template_state_action_create_api_view_no_permission(self):
         self._clear_events()
 

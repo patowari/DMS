@@ -20,6 +20,7 @@ class WorkflowTemplateStateActionModelTestCase(
     auto_upload_test_document = False
     auto_create_test_workflow_template = False
     auto_create_test_workflow_template_state = False
+    auto_create_test_workflow_template_state_action = False
 
     def setUp(self):
         super().setUp()
@@ -101,8 +102,8 @@ class WorkflowTemplateStateActionModelTestCase(
         )
 
     def test_workflow_state_action_event_trigger(self):
-        # actions 1 and 2 both trigger the transition event, to make this
-        # test case independent of the order of execution of actions 1 and 2
+        # Actions 1 and 2 both trigger the transition event, to make this
+        # test case independent of the order of execution of actions 1 and 2.
         state_1_backend_data = json.dumps(
             obj={
                 'document_label': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL
