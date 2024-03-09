@@ -26,6 +26,8 @@
   of document files.
 - Moved mailing actions from the ``class`` module to their own
   ``mailing_actions`` module.
+- Remove flanker from the source_emails apps. Use pure Python libraries
+  to parse emails.
 
 4.6.2 (2024-03-04)
 ==================

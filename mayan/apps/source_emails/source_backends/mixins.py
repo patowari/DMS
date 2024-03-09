@@ -1,12 +1,12 @@
+import email
 import logging
 import random
-
-from flanker import mime
 
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_bytes
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.common.utils import convert_to_internal_name
 from mayan.apps.credentials.class_mixins import BackendMixinCredentials
 from mayan.apps.source_periodic.source_backends.mixins import SourceBackendMixinPeriodicCompressed
 
@@ -84,7 +84,9 @@ class SourceBackendMixinEmail(
     def process_message(self, message):
         bytes_message = force_bytes(s=message)
 
-        message = mime.from_string(string=bytes_message)
+        message = email.message_from_bytes(
+            policy=email.policy.default, s=bytes_message
+        )
 
         return self._process_message_content(message=message)
 
@@ -92,48 +94,48 @@ class SourceBackendMixinEmail(
         counter = 1
         # Messages are tree based, do nested processing of message parts until
         # a message with no children is found, then work our way up.
-        if message.parts:
-            for part in message.parts:
-                yield from self._process_message_content(
-                    message=part
-                )
+        if message.is_multipart():
+            for part in message.iter_parts():
+                yield from self._process_message_content(message=part)
         else:
             # Treat inlines as attachments, both are extracted and saved as
             # documents.
+            source_metadata = {}
+            for key, value in message.items():
+                internal_name = convert_to_internal_name(value=key)
+                source_metadata[
+                    'email_{}'.format(internal_name)
+                ] = value
 
-            source_metadata = {
-                'email_date': message.headers.get('Date'),
-                'email_delivered_to': message.headers.get('Delivered-To'),
-                'email_from': message.headers.get('From'),
-                'email_message_id': message.headers.get('Message-ID'),
-                'email_received': message.headers.get('Received'),
-                'email_subject': message.headers.get('Subject'),
-                'email_to': message.headers.get('To')
-            }
-
-            if message.is_attachment() or message.is_inline():
-                # Reject zero length attachments.
-                if len(message.body) != 0:
-                    label = message.detected_file_name or 'attachment-{}'.format(counter)
-                    counter += 1
+            if message.is_attachment() or message.get_content_disposition() == 'inline':
+                content = message.get_content()
+                if len(content) != 0:
+                    detected_filename = message.get_filename()
+                    if detected_filename:
+                        label = detected_filename
+                    else:
+                        label = 'attachment-{}'.format(counter)
+                        counter += 1
 
                     yield {
                         'file': ContentFile(
-                            content=message.body, name=label,
+                            content=content, name=label,
                         ), 'source_metadata': source_metadata
                     }
             else:
                 # If it is not an attachment then it should be a body message
-                # part. Another option is to use message.is_body().
-                if message.detected_content_type == 'text/html':
+                # part.
+                if message.get_content_type() == 'text/html':
                     label = 'email_body.html'
                 else:
                     label = 'email_body.txt'
 
                 if self.kwargs['store_body']:
+                    content = message.get_content()
+                    bytes_content = force_bytes(s=content)
                     yield {
                         'file': ContentFile(
-                            content=force_bytes(s=message.body), name=label
+                            content=bytes_content, name=label
                         ), 'source_metadata': source_metadata
                     }
 

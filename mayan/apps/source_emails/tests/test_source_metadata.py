@@ -10,8 +10,10 @@ from .literals import (
     TEST_EMAIL_NO_CONTENT_TYPE, TEST_EMAIL_NO_CONTENT_TYPE_DATE,
     TEST_EMAIL_NO_CONTENT_TYPE_DEVELIVERED_TO,
     TEST_EMAIL_NO_CONTENT_TYPE_FROM, TEST_EMAIL_NO_CONTENT_TYPE_MESSAGE_ID,
+    TEST_EMAIL_NO_CONTENT_TYPE_MIME_VERSION,
     TEST_EMAIL_NO_CONTENT_TYPE_RECEIVED, TEST_EMAIL_NO_CONTENT_TYPE_STRING,
-    TEST_EMAIL_NO_CONTENT_TYPE_SUBJECT, TEST_EMAIL_NO_CONTENT_TYPE_TO
+    TEST_EMAIL_NO_CONTENT_TYPE_SUBJECT, TEST_EMAIL_NO_CONTENT_TYPE_TO,
+    TEST_EMAIL_NO_CONTENT_TYPE_X_ORIGINATING_IP
 )
 from .mixins import EmailSourceTestMixin
 
@@ -42,8 +44,7 @@ class EmailSourceBackendDocumentUploadSourceMetadataTestCase(
         self.assertTrue(
             TEST_EMAIL_NO_CONTENT_TYPE_STRING in test_document_file.open().read()
         )
-
-        self.assertEqual(test_document_file.source_metadata.count(), 8)
+        self.assertEqual(test_document_file.source_metadata.count(), 10)
 
         self.assertEqual(
             test_document_file.source_metadata.get(key='email_date').value,
@@ -62,6 +63,10 @@ class EmailSourceBackendDocumentUploadSourceMetadataTestCase(
             TEST_EMAIL_NO_CONTENT_TYPE_MESSAGE_ID
         )
         self.assertEqual(
+            test_document_file.source_metadata.get(key='email_mime_version').value,
+            TEST_EMAIL_NO_CONTENT_TYPE_MIME_VERSION
+        )
+        self.assertEqual(
             test_document_file.source_metadata.get(key='email_received').value,
             TEST_EMAIL_NO_CONTENT_TYPE_RECEIVED
         )
@@ -72,6 +77,10 @@ class EmailSourceBackendDocumentUploadSourceMetadataTestCase(
         self.assertEqual(
             test_document_file.source_metadata.get(key='email_to').value,
             TEST_EMAIL_NO_CONTENT_TYPE_TO
+        )
+        self.assertEqual(
+            test_document_file.source_metadata.get(key='email_x_originating_ip').value,
+            TEST_EMAIL_NO_CONTENT_TYPE_X_ORIGINATING_IP
         )
         self.assertEqual(
             test_document_file.source_metadata.get(key='source_id').value,

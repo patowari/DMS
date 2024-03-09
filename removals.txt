@@ -13,6 +13,7 @@ django-rest-swagger
 django-suit
 django-test-without-migrations
 django-timezone-field
+flanker
 librabbitmq
 mock
 pathlib2
