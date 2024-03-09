@@ -9,6 +9,8 @@
   by the backend.
 - Track credential usage by objects. Added to sources, workflow actions and
   mailing profiles.
+- Commit the workflow instance transitioned event before the workflow
+  template state action execute.
 
 4.6.2 (2024-03-04)
 ==================

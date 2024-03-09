@@ -120,28 +120,23 @@ class WorkflowInstanceLogEntry(
                 message=_(message='Not a valid transition choice.')
             )
 
-    @method_event(
-        event_manager_class=EventManagerSave,
-        created={
-            'action_object': 'workflow_instance.document',
-            'event': event_workflow_instance_transitioned,
-            'target': 'workflow_instance'
-        }
-    )
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)
+
+        actor = getattr(self, '_event_actor', None)
+        event_workflow_instance_transitioned.commit(
+            action_object=self.workflow_instance.document, actor=actor,
+            target=self.workflow_instance
+        )
+
         context = self.workflow_instance.get_context()
         context.update(
-            {
-                'entry_log': self
-            }
+            {'entry_log': self}
         )
 
         for action in self.transition.origin_state.exit_actions.filter(enabled=True):
             context.update(
-                {
-                    'action': action,
-                }
+                {'action': action}
             )
             action.execute(
                 context=context, workflow_instance=self.workflow_instance
@@ -149,9 +144,7 @@ class WorkflowInstanceLogEntry(
 
         for action in self.transition.destination_state.entry_actions.filter(enabled=True):
             context.update(
-                {
-                    'action': action,
-                }
+                {'action': action}
             )
             action.execute(
                 context=context, workflow_instance=self.workflow_instance
