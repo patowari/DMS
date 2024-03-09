@@ -311,7 +311,7 @@ class DocumentFileBusinessLogicMixin:
 
     def mimetype_update(self, save=True):
         """
-        Read a document verions's file and determine the mimetype by using
+        Read a document versions's file and determine the mime type by using
         the MIME type backend.
         """
         if self.exists():
