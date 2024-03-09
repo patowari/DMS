@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 13:59+0000\n"
+"POT-Creation-Date: 2024-03-08 23:26+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2023\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -153,13 +153,13 @@ msgstr "Добавить метаданные"
 msgid "Edit metadata"
 msgstr "Редактировать метаданные"
 
-#: links.py:42 links.py:48 workflow_actions.py:182
+#: links.py:42 links.py:48 workflow_actions.py:184
 msgid "Remove metadata"
 msgstr "Удалить метаданные"
 
 #: links.py:62 links.py:96 models.py:92 permissions.py:24
 #: views/metadata_type_views.py:116 workflow_actions.py:23
-#: workflow_actions.py:174
+#: workflow_actions.py:176
 msgid "Metadata types"
 msgstr "Типы метаданных"
 
@@ -663,7 +663,7 @@ msgstr ""
 "Значение, присваиваемое типу метаданных. Может быть буквальным значением или"
 " кодом шаблона."
 
-#: workflow_actions.py:130
+#: workflow_actions.py:132
 #, python-format
 msgid ""
 "Unable to edit metadata type \"%(metadata_type)s\" from document: "
@@ -671,11 +671,11 @@ msgid ""
 "Exception: %(exception)s"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:179
 msgid "Metadata types to remove from the document."
 msgstr "Типы метаданных, которые нужно удалить из документа."
 
-#: workflow_actions.py:197
+#: workflow_actions.py:199
 #, python-format
 msgid ""
 "Unable to remove metadata type \"%(metadata_type)s\" from document: "

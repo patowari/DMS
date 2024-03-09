@@ -6,7 +6,7 @@
 # Translators:
 # Roberto Rosario, 2023
 # Stefaniu Criste <gupi@hangar.ro>, 2023
-# Harald Ersch, 2023
+# Harald Ersch, 2024
 # 
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:55+0000\n"
-"Last-Translator: Harald Ersch, 2023\n"
+"Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,7 +60,7 @@ msgstr "Suprascris"
 
 #: classes.py:412
 msgid "Is this setting being overridden by an environment variable?"
-msgstr ""
+msgstr "Această setare este suprascrisă de o variabilă de mediu?"
 
 #: forms.py:28
 msgid "Enter the new setting value."

@@ -10,6 +10,7 @@
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2023
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -17,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-01 14:00+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023\n"
+"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -214,32 +215,32 @@ msgstr ""
 #: view_mixins.py:442
 #, python-format
 msgid "Operation performed on %(count)d objects."
-msgstr ""
+msgstr "Operację przeprowadzono na %(count)d obiektach."
 
 #: view_mixins.py:443
 #, python-format
 msgid "Operation performed on %(object)s."
-msgstr ""
+msgstr "Operacja wykonana na %(object)s."
 
 #: view_mixins.py:444
 #, python-format
 msgid "Operation performed on %(count)d object."
-msgstr ""
+msgstr "Operację przeprowadzono na %(count)d obiekcie."
 
 #: view_mixins.py:445
 #, python-format
 msgid "Perform operation on %(count)d objects."
-msgstr ""
+msgstr "Wykonaj operację na %(count)d obiektach."
 
 #: view_mixins.py:446
 #, python-format
 msgid "Perform operation on %(object)s."
-msgstr ""
+msgstr "Wykonaj operację na %(object)s."
 
 #: view_mixins.py:447
 #, python-format
 msgid "Perform operation on %(count)d object."
-msgstr ""
+msgstr "Wykonaj operację na %(count)d obiekcie."
 
 #: view_mixins.py:531
 msgid "Object"

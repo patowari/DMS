@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 13:59+0000\n"
+"POT-Creation-Date: 2024-03-08 23:26+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: Roberto Rosario, 2023\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
@@ -155,13 +155,13 @@ msgstr "添加元数据"
 msgid "Edit metadata"
 msgstr "编辑元数据"
 
-#: links.py:42 links.py:48 workflow_actions.py:182
+#: links.py:42 links.py:48 workflow_actions.py:184
 msgid "Remove metadata"
 msgstr "删除元数据"
 
 #: links.py:62 links.py:96 models.py:92 permissions.py:24
 #: views/metadata_type_views.py:116 workflow_actions.py:23
-#: workflow_actions.py:174
+#: workflow_actions.py:176
 msgid "Metadata types"
 msgstr "元数据类型"
 
@@ -631,7 +631,7 @@ msgid ""
 "Value to assign to the metadata. Can be a literal value or template code."
 msgstr "赋给元数据的值。可以是文字值或模板代码。"
 
-#: workflow_actions.py:130
+#: workflow_actions.py:132
 #, python-format
 msgid ""
 "Unable to edit metadata type \"%(metadata_type)s\" from document: "
@@ -639,11 +639,11 @@ msgid ""
 "Exception: %(exception)s"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:179
 msgid "Metadata types to remove from the document."
 msgstr "要从文档中删除的元数据类型。"
 
-#: workflow_actions.py:197
+#: workflow_actions.py:199
 #, python-format
 msgid ""
 "Unable to remove metadata type \"%(metadata_type)s\" from document: "

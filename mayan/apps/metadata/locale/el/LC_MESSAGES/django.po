@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 13:59+0000\n"
+"POT-Creation-Date: 2024-03-08 23:26+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -150,13 +150,13 @@ msgstr "Προσθήκη μεταδεδομένων"
 msgid "Edit metadata"
 msgstr "Τροποποίηση μεταδεδομένων"
 
-#: links.py:42 links.py:48 workflow_actions.py:182
+#: links.py:42 links.py:48 workflow_actions.py:184
 msgid "Remove metadata"
 msgstr "Κατάργηση μεταδεδομένων"
 
 #: links.py:62 links.py:96 models.py:92 permissions.py:24
 #: views/metadata_type_views.py:116 workflow_actions.py:23
-#: workflow_actions.py:174
+#: workflow_actions.py:176
 msgid "Metadata types"
 msgstr "Τύποι μεταδεδομένων"
 
@@ -665,7 +665,7 @@ msgstr ""
 "Τιμή για εκχώρηση στα μεταδεδομένα. Μπορεί να είναι κυριολεκτική τιμή ή "
 "κωδικός προτύπου."
 
-#: workflow_actions.py:130
+#: workflow_actions.py:132
 #, python-format
 msgid ""
 "Unable to edit metadata type \"%(metadata_type)s\" from document: "
@@ -673,11 +673,11 @@ msgid ""
 "Exception: %(exception)s"
 msgstr ""
 
-#: workflow_actions.py:177
+#: workflow_actions.py:179
 msgid "Metadata types to remove from the document."
 msgstr "Τύποι μεταδεδομένων για κατάργηση από το έγγραφο."
 
-#: workflow_actions.py:197
+#: workflow_actions.py:199
 #, python-format
 msgid ""
 "Unable to remove metadata type \"%(metadata_type)s\" from document: "
