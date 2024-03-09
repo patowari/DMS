@@ -14,11 +14,11 @@ class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
 
     def setUp(self):
         super().setUp()
-        self._test_workflow_template_transitions = []
+        self._test_workflow_template_transition_list = []
 
     def _create_test_workflow_template_transition(self, extra_kwargs=None):
         total_test_workflow_template_transitions = len(
-            self._test_workflow_template_transitions
+            self._test_workflow_template_transition_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
@@ -27,8 +27,8 @@ class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
 
         kwargs = {
             'label': label,
-            'origin_state': self._test_workflow_template_states[0],
-            'destination_state': self._test_workflow_template_states[1]
+            'origin_state': self._test_workflow_template_state_list[0],
+            'destination_state': self._test_workflow_template_state_list[1]
         }
 
         if extra_kwargs is not None:
@@ -38,7 +38,7 @@ class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
             **kwargs
         )
 
-        self._test_workflow_template_transitions.append(
+        self._test_workflow_template_transition_list.append(
             self._test_workflow_template_transition
         )
 
@@ -50,9 +50,9 @@ class WorkflowTemplateTransitionAPIViewTestMixin(
         self, extra_data=None
     ):
         data = {
+            'destination_state_id': self._test_workflow_template_state_list[1].pk,
             'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
-            'origin_state_id': self._test_workflow_template_states[0].pk,
-            'destination_state_id': self._test_workflow_template_states[1].pk
+            'origin_state_id': self._test_workflow_template_state_list[0].pk
         }
 
         if extra_data:
@@ -103,9 +103,9 @@ class WorkflowTemplateTransitionAPIViewTestMixin(
                 'workflow_template_id': self._test_workflow_template.pk,
                 'workflow_template_transition_id': self._test_workflow_template_transition.pk
             }, data={
+                'destination_state_id': self._test_workflow_template_state_list[0].pk,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED,
-                'origin_state_id': self._test_workflow_template_states[1].pk,
-                'destination_state_id': self._test_workflow_template_states[0].pk
+                'origin_state_id': self._test_workflow_template_state_list[1].pk
             }
         )
 
@@ -116,9 +116,9 @@ class WorkflowTemplateTransitionAPIViewTestMixin(
                 'workflow_template_id': self._test_workflow_template.pk,
                 'workflow_template_transition_id': self._test_workflow_template_transition.pk
             }, data={
+                'destination_state_id': self._test_workflow_template_state_list[0].pk,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED,
-                'origin_state_id': self._test_workflow_template_states[1].pk,
-                'destination_state_id': self._test_workflow_template_states[0].pk
+                'origin_state_id': self._test_workflow_template_state_list[1].pk
             }
         )
 
@@ -134,9 +134,9 @@ class WorkflowTemplateTransitionViewTestMixin(
             kwargs={
                 'workflow_template_id': self._test_workflow_template.pk
             }, data={
+                'destination_state': self._test_workflow_template_state_list[1].pk,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
-                'origin_state': self._test_workflow_template_states[0].pk,
-                'destination_state': self._test_workflow_template_states[1].pk
+                'origin_state': self._test_workflow_template_state_list[0].pk
             }
         )
 
@@ -158,9 +158,9 @@ class WorkflowTemplateTransitionViewTestMixin(
             kwargs={
                 'workflow_template_transition_id': self._test_workflow_template_transition.pk
             }, data={
+                'destination_state': self._test_workflow_template_state_list[1].pk,
                 'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED,
-                'origin_state': self._test_workflow_template_states[0].pk,
-                'destination_state': self._test_workflow_template_states[1].pk
+                'origin_state': self._test_workflow_template_state_list[0].pk
             }
         )
 

@@ -11,6 +11,13 @@
   mailing profiles.
 - Commit the workflow instance transitioned event before the workflow
   template state action execute.
+- Workflow template state action test mixin improvements.
+- Rename ``._test_workflow_template_states`` to
+  ``._test_workflow_template_state_list`` for uniformity.
+- Improve how test workflow template state actions are created
+  and managed.
+- Improvements to the ``WorkflowInstanceTestMixin`` class to track test
+  workflow instances.
 
 4.6.2 (2024-03-04)
 ==================

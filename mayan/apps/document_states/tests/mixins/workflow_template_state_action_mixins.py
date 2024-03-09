@@ -24,20 +24,29 @@ class WorkflowTemplateStateActionTestMixin(
     auto_add_test_workflow_template_test_document_type = True
     auto_create_test_workflow_template = True
     auto_create_test_workflow_template_state = True
+    auto_create_test_workflow_template_state_action = True
     auto_create_test_document_stub = False
     auto_upload_test_document = False
 
     def setUp(self):
         super().setUp()
-        self._test_workflow_template_state_actions = []
+        self._test_workflow_template_state_action = None
+        self._test_workflow_template_state_action_list = []
+
+        if self.auto_create_test_workflow_template_state_action:
+            self._create_test_workflow_template_state_action()
+
         self._create_test_document_stub()
 
     def _create_test_workflow_template_state_action(
         self, extra_backend_data=None, extra_data=None,
         workflow_state_index=0
     ):
+        if not self._test_workflow_template_state:
+            self._create_test_workflow_template_state()
+
         total_test_workflow_template_state_actions = len(
-            self._test_workflow_template_state_actions
+            self._test_workflow_template_state_action_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL,
@@ -58,11 +67,11 @@ class WorkflowTemplateStateActionTestMixin(
         if extra_data:
             data.update(extra_data)
 
-        self._test_workflow_template_state_action = self._test_workflow_template_states[
+        self._test_workflow_template_state_action = self._test_workflow_template_state_list[
             workflow_state_index
         ].actions.create(**data)
 
-        self._test_workflow_template_state_actions.append(
+        self._test_workflow_template_state_action_list.append(
             self._test_workflow_template_state_action
         )
 
@@ -77,7 +86,7 @@ class WorkflowTemplateStateActionTestMixin(
             final_context.update(context)
 
         final_kwargs = {
-            'model_instance_id': 1  # Fake ID to allow direct instance.
+            'model_instance_id': self._test_workflow_template_state_action.pk
         }
 
         if kwargs:
@@ -95,7 +104,7 @@ class WorkflowTemplateStateActionAPIViewTestMixin(
         self._test_object_track()
 
         total_test_workflow_template_state_actions = len(
-            self._test_workflow_template_state_actions
+            self._test_workflow_template_state_action_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL,
@@ -188,13 +197,19 @@ class WorkflowTemplateStateActionLaunchViewTestMixin(
         if extra_data:
             data.update(extra_data)
 
-        return self.post(
+        self._test_object_track()
+
+        response = self.post(
             viewname='document_states:workflow_template_state_action_create',
             kwargs={
                 'workflow_template_state_id': self._test_workflow_template_state.pk,
                 'backend_path': DOCUMENT_WORKFLOW_LAUNCH_ACTION_CLASS_PATH
             }, data=data
         )
+
+        self._test_object_set()
+
+        return response
 
 
 class WorkflowTemplateStateActionViewTestMixin(

@@ -17,7 +17,9 @@ class WorkflowTemplateTransitionFieldTestMixin(
     _test_object_model = WorkflowTransitionField
     _test_object_name = '_test_workflow_template_transition_field'
 
-    def _create_test_workflow_template_transition_field(self, extra_data=None):
+    def _create_test_workflow_template_transition_field(
+        self, extra_data=None
+    ):
         kwargs = {
             'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
             'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,

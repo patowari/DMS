@@ -20,9 +20,12 @@ class WorkflowTemplateTestMixin(DocumentTestMixin):
 
     def setUp(self):
         super().setUp()
-        self._test_workflow_runtime_proxies = []
-        self._test_workflow_template_state_runtime_proxies = []
-        self._test_workflow_templates = []
+        self._test_workflow_runtime_proxy = None
+        self._test_workflow_runtime_proxy_list = []
+        self._test_workflow_template_state_runtime_proxy = None
+        self._test_workflow_template_state_runtime_proxy_list = []
+        self._test_workflow_template = None
+        self._test_workflow_template_list = []
 
         if self.auto_create_test_workflow_template:
             self._create_test_workflow_template(
@@ -32,7 +35,7 @@ class WorkflowTemplateTestMixin(DocumentTestMixin):
     def _create_test_workflow_template(
         self, add_test_document_type=False, auto_launch=True
     ):
-        total_test_workflow_templates = len(self._test_workflow_templates)
+        total_test_workflow_templates = len(self._test_workflow_template_list)
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_LABEL, total_test_workflow_templates
         )
@@ -45,13 +48,13 @@ class WorkflowTemplateTestMixin(DocumentTestMixin):
             auto_launch=auto_launch, label=label,
             internal_name=internal_name
         )
-        self._test_workflow_templates.append(
+        self._test_workflow_template_list.append(
             self._test_workflow_template
         )
         self._test_workflow_runtime_proxy = WorkflowRuntimeProxy.objects.get(
             pk=self._test_workflow_template.pk
         )
-        self._test_workflow_runtime_proxies.append(
+        self._test_workflow_runtime_proxy_list.append(
             self._test_workflow_runtime_proxy
         )
 

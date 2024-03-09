@@ -6,6 +6,11 @@ from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestM
 class WorkflowInstanceTestMixin(WorkflowTemplateTransitionTestMixin):
     auto_upload_test_document = False
 
+    def setUp(self):
+        super().setUp()
+        self._test_workflow_instance = None
+        self._test_workflow_instance_list = []
+
     def _create_test_document_stub(self, *args, **kwargs):
         super()._create_test_document_stub(*args, **kwargs)
         self._inject_test_workflow_instance()
@@ -14,6 +19,7 @@ class WorkflowInstanceTestMixin(WorkflowTemplateTransitionTestMixin):
         self._test_workflow_instance = self._test_workflow_template.launch_for(
             document=self._test_document
         )
+        self._test_workflow_instance_list.append(self._test_workflow_instance)
 
     def _create_test_workflow_template_instance_log_entry(self):
         self._test_document.workflows.first().log_entries.create(

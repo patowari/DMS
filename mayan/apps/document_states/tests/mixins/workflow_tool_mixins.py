@@ -4,5 +4,5 @@ from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestM
 class WorkflowToolViewTestMixin(WorkflowTemplateTransitionTestMixin):
     def _request_workflow_launch_view(self):
         return self.post(
-            viewname='document_states:tool_launch_workflows',
+            viewname='document_states:tool_launch_workflows'
         )

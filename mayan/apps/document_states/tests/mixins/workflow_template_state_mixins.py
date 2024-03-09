@@ -18,14 +18,18 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
 
     def setUp(self):
         super().setUp()
-        self._test_workflow_template_states = []
+        self._test_workflow_template_state = None
+        self._test_workflow_template_state_list = []
 
         if self.auto_create_test_workflow_template_state:
             self._create_test_workflow_template_state()
 
     def _create_test_workflow_template_state(self):
+        if not self._test_workflow_template:
+            self._create_test_workflow_template()
+
         total_test_workflow_template_states = len(
-            self._test_workflow_template_states
+            self._test_workflow_template_state_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
@@ -37,13 +41,13 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
             completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
             initial=initial, label=label
         )
-        self._test_workflow_template_states.append(
+        self._test_workflow_template_state_list.append(
             self._test_workflow_template_state
         )
         self._test_workflow_template_state_runtime_proxy = WorkflowStateRuntimeProxy.objects.get(
             pk=self._test_workflow_template_state.pk
         )
-        self._test_workflow_template_state_runtime_proxies.append(
+        self._test_workflow_template_state_runtime_proxy_list.append(
             self._test_workflow_template_state_runtime_proxy
         )
 
@@ -140,7 +144,7 @@ class WorkflowTemplateStateViewTestMixin(WorkflowTemplateStateTestMixin):
         return self.post(
             viewname='document_states:workflow_template_state_delete',
             kwargs={
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk
             }
         )
 
@@ -148,7 +152,7 @@ class WorkflowTemplateStateViewTestMixin(WorkflowTemplateStateTestMixin):
         return self.post(
             viewname='document_states:workflow_template_state_edit',
             kwargs={
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk
             }, data={
                 'label': TEST_WORKFLOW_TEMPLATE_STATE_LABEL_EDITED
             }

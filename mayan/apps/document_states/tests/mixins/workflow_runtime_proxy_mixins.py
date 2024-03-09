@@ -6,7 +6,7 @@ class WorkflowRuntimeProxyStateViewTestMixin(WorkflowInstanceTestMixin):
         return self.get(
             viewname='document_states:workflow_runtime_proxy_state_document_list',
             kwargs={
-                'workflow_runtime_proxy_state_id': self._test_workflow_template_states[0].pk
+                'workflow_runtime_proxy_state_id': self._test_workflow_template_state_list[0].pk
             }
         )
 

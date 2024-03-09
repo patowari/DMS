@@ -20,7 +20,9 @@ class WorkflowTemplateStateEscalationTestMixin(
     _test_object_model = WorkflowStateEscalation
     _test_object_name = '_test_workflow_template_state_escalation'
 
-    def _create_test_workflow_template_state_escalation(self, extra_kwargs=None):
+    def _create_test_workflow_template_state_escalation(
+        self, extra_kwargs=None
+    ):
         kwargs = {
             'amount': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_AMOUNT,
             'comment': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_COMMENT,
@@ -31,7 +33,7 @@ class WorkflowTemplateStateEscalationTestMixin(
         if extra_kwargs:
             kwargs.update(extra_kwargs)
 
-        self._test_workflow_template_state_escalation = self._test_workflow_template_states[0].escalations.create(
+        self._test_workflow_template_state_escalation = self._test_workflow_template_state_list[0].escalations.create(
             **kwargs
         )
 
@@ -52,7 +54,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
             viewname='rest_api:workflow-template-state-escalation-list',
             kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk
             }, data=data
         )
 
@@ -64,7 +66,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
         return self.delete(
             viewname='rest_api:workflow-template-state-escalation-detail', kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk,
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk,
                 'workflow_template_state_escalation_id': self._test_workflow_template_state_escalation.pk
             }
         )
@@ -73,7 +75,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
         return self.get(
             viewname='rest_api:workflow-template-state-escalation-detail', kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk,
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk,
                 'workflow_template_state_escalation_id': self._test_workflow_template_state_escalation.pk
             }
         )
@@ -89,7 +91,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
         return self.patch(
             viewname='rest_api:workflow-template-state-escalation-detail', kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk,
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk,
                 'workflow_template_state_escalation_id': self._test_workflow_template_state_escalation.pk
             }, data=data
         )
@@ -97,7 +99,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
     def _request_test_workflow_template_state_escalation_edit_via_put_api_view(self, extra_data=None):
         data = {
             'amount': TEST_WORKFLOW_TEMPLATE_STATE_ESCALATION_AMOUNT_EDITED,
-            'workflow_template_transition_id': self._test_workflow_template_transitions[0].pk
+            'workflow_template_transition_id': self._test_workflow_template_transition_list[0].pk
         }
 
         if extra_data is not None:
@@ -106,7 +108,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
         return self.put(
             viewname='rest_api:workflow-template-state-escalation-detail', kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk,
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk,
                 'workflow_template_state_escalation_id': self._test_workflow_template_state_escalation.pk
             }, data=data
         )
@@ -116,7 +118,7 @@ class WorkflowTemplateStateEscalationAPIViewTestMixin(
             viewname='rest_api:workflow-template-state-escalation-list',
             kwargs={
                 'workflow_template_id': self._test_workflow_template.pk,
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk
             }
         )
 
@@ -151,7 +153,7 @@ class WorkflowTemplateStateEscalationViewTestMixin(
         response = self.post(
             viewname='document_states:workflow_template_state_escalation_create',
             kwargs={
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk
             }, data=data
         )
 
@@ -187,6 +189,6 @@ class WorkflowTemplateStateEscalationViewTestMixin(
         return self.get(
             viewname='document_states:workflow_template_state_escalation_list',
             kwargs={
-                'workflow_template_state_id': self._test_workflow_template_states[0].pk
+                'workflow_template_state_id': self._test_workflow_template_state_list[0].pk
             }
         )
