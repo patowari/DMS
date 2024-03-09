@@ -14,9 +14,7 @@ logger = logging.getLogger(name=__name__)
 
 class BackendMetaclass(type):
     def __new__(mcs, name, bases, attrs):
-        new_class = super().__new__(
-            mcs, name, bases, attrs
-        )
+        new_class = super().__new__(mcs, name, bases, attrs)
 
         base_backend_class = BackendMetaclass._get_base_backend_class(
             klass=new_class
@@ -33,7 +31,7 @@ class BackendMetaclass(type):
                 new_class_full_name = get_class_full_name(klass=new_class)
                 if _loader_module_name in new_class_full_name:
                     # Only load classes defined in the loader module.
-                    # This ensures miscellaneous classes like NullBackends
+                    # This ensures miscellaneous classes like `NullBackends`
                     # are not registered.
                     base_backend_class.register(klass=new_class)
 
