@@ -2,7 +2,9 @@ from rest_framework import status
 
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
-from ..events import event_mailing_profile_created, event_mailing_profile_edited
+from ..events import (
+    event_mailing_profile_created, event_mailing_profile_edited
+)
 from ..models import UserMailer
 from ..permissions import (
     permission_mailing_profile_create, permission_mailing_profile_delete,

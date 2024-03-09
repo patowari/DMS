@@ -48,7 +48,7 @@ class CredentialBackendGoogleServiceAccount(CredentialBackend):
     )
     form_field_widgets = {
         'private_key': {
-            'class': 'django.forms.widgets.Textarea',
+            'class': 'django.forms.widgets.Textarea'
         }
     }
     form_fields = {
@@ -68,7 +68,7 @@ class CredentialBackendGoogleServiceAccount(CredentialBackend):
         },
         'private_key': {
             'label': _('Private Key'),
-            'class': 'django.forms.CharField', 'default': '',
+            'class': 'django.forms.CharField', 'default': ''
         },
         'client_email': {
             'label': _('Client email'),
@@ -111,7 +111,7 @@ class CredentialBackendGoogleServiceAccount(CredentialBackend):
             'kwargs': {
                 'max_length': 254
             }, 'required': True
-        },
+        }
     }
     label = _('Google Service Account')
 
@@ -137,9 +137,11 @@ class CredentialBackendGoogleServiceAccount(CredentialBackend):
             ),
             (
                 _('Certificate'), {
-                    'fields': ('auth_provider_x509_cert_url', 'client_x509_cert_url')
+                    'fields': (
+                        'auth_provider_x509_cert_url', 'client_x509_cert_url'
+                    )
                 }
-            ),
+            )
         )
 
         return fieldsets

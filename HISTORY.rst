@@ -4,6 +4,11 @@
 - Add credentials backend for Google Service accounts.
 - Enforce stricter document creation event committing order.
 - Move the ``_save`` method to the ``document.model_mixins`` module.
+- Commit the credentials used event only when credentials are retrieved via
+  the ``get_credential`` method, not when they are loaded from the database
+  by the backend.
+- Track credential usage by objects. Added to sources, workflow actions and
+  mailing profiles.
 
 4.6.2 (2024-03-04)
 ==================

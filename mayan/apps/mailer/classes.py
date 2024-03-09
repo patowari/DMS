@@ -84,15 +84,13 @@ class MailerBackendCredentials(
     def get_connection_kwargs(self):
         result = super().get_connection_kwargs()
 
-        credential = self.get_credential()
-
+        model_instance = self.get_model_instance()
+        credential = self.get_credential(action_object=model_instance)
         password = credential.get('password')
         username = credential['username']
 
         result.update(
-            {
-                'password': password, 'username': username
-            }
+            {'password': password, 'username': username}
         )
 
         return result

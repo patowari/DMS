@@ -1,15 +1,4 @@
-from mayan.apps.events.decorators import method_event
-from mayan.apps.events.event_managers import EventManagerMethodAfter
-
-from .events import event_credential_used
-
-
 class StoredCredentialBusinessLogicMixin:
-    @method_event(
-        event_manager_class=EventManagerMethodAfter,
-        event=event_credential_used,
-        target='self'
-    )
     def get_backend_data(self):
         obj = super().get_backend_data()
 

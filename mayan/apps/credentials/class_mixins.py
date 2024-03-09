@@ -18,7 +18,8 @@ class BackendMixinCredentials:
                 'stored_credential_id': {
                     'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
                     'help_text': _(
-                        'The credential entry to use for authentication.'
+                        message='The credential entry to use for '
+                        'authentication.'
                     ),
                     'kwargs': {
                         'source_model': StoredCredential,
@@ -48,7 +49,7 @@ class BackendMixinCredentials:
 
         return fieldsets
 
-    def get_credential(self):
+    def get_credential(self, action_object=None, user=None):
         StoredCredential = apps.get_model(
             app_label='credentials', model_name='StoredCredential'
         )
@@ -59,7 +60,12 @@ class BackendMixinCredentials:
             stored_credential = StoredCredential.objects.get(
                 pk=stored_credential_id
             )
-            return stored_credential.get_backend_data()
+
+            backend_instance = stored_credential.get_backend_instance()
+
+            return backend_instance.get_credential(
+                action_object=action_object, user=user
+            )
 
 
 class BackendMixinCredentialsOptional(BackendMixinCredentials):
@@ -69,7 +75,7 @@ class BackendMixinCredentialsOptional(BackendMixinCredentials):
 
         fields['stored_credential_id']['required'] = False
         fields['stored_credential_id']['help_text'] = _(
-            'Optional credential entry to use for authentication.'
+            message='Optional credential entry to use for authentication.'
         )
 
         return fields

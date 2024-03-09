@@ -19,8 +19,8 @@ class StoredCredential(
     _backend_model_null_backend = CredentialBackendNull
 
     label = models.CharField(
-        help_text=_(message='Short description of this credential.'), max_length=128,
-        unique=True, verbose_name=_(message='Label')
+        help_text=_(message='Short description of this credential.'),
+        max_length=128, unique=True, verbose_name=_(message='Label')
     )
     internal_name = models.CharField(
         db_index=True, help_text=_(

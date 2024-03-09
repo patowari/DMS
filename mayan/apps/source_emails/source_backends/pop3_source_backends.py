@@ -74,7 +74,8 @@ class SourceBackendPOP3Email(SourceBackendMixinEmail, SourceBackend):
 
         server = pop3_module(**kwargs)
 
-        credential = self.get_credential()
+        model_instance = self.get_model_instance()
+        credential = self.get_credential(action_object=model_instance)
         password = credential.get('password')
         username = credential.get('username')
 
