@@ -24,10 +24,10 @@ class DocumentFileCompressor:
             for document_file in self.queryset.all():
                 document_file._event_action_object = _event_action_object
                 document_file._event_actor = _event_actor
-                with document_file.get_download_file_object() as file_object:
+                with document_file.open(mode='rb', raw=True) as entry_file_object:
                     archive.write(
                         arcname=str(document_file),
-                        filename=file_object.name
+                        filename=entry_file_object.name
                     )
 
     def compress_to_download_file(

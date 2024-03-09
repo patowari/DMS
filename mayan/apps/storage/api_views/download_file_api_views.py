@@ -1,6 +1,6 @@
 from mayan.apps.rest_api import generics
-from mayan.apps.views.generics import DownloadViewMixin
 
+from ..events import event_download_file_downloaded
 from ..models import DownloadFile
 from ..permissions import (
     permission_download_file_delete, permission_download_file_download,
@@ -8,6 +8,7 @@ from ..permissions import (
 )
 from ..serializers import DownloadFileSerializer
 
+from .base import APIObjectDownloadView
 from .mixins import OwnerPlusFilteredQuerysetAPIViewMixin
 
 
@@ -33,20 +34,22 @@ class APIDownloadFileDetailView(
 
 
 class APIDownloadFileDownloadView(
-    DownloadViewMixin, OwnerPlusFilteredQuerysetAPIViewMixin,
-    generics.RetrieveAPIView
+    OwnerPlusFilteredQuerysetAPIViewMixin, APIObjectDownloadView
 ):
     """
     get: Download a download file.
     """
+    download_event_type = event_download_file_downloaded
     lookup_url_kwarg = 'download_file_id'
     mayan_object_permission_map = {'GET': permission_download_file_download}
     model = DownloadFile
 
+    def get_download_event_target(self):
+        return self.get_object()
+
     def get_download_file_object(self):
         instance = self.get_object()
-        instance._event_actor = self.request.user
-        return instance.get_download_file_object()
+        return instance.open(mode='rb')
 
     def get_download_filename(self):
         return self.get_object().filename

@@ -8,9 +8,10 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.models.document_version_models import DocumentVersion
 from mayan.apps.documents.models.document_version_page_models import DocumentVersionPage
+from mayan.apps.storage.views.download_views import ViewSingleObjectDownload
 from mayan.apps.views.generics import (
     FormView, MultipleObjectConfirmActionView, MultipleObjectDeleteView,
-    SingleObjectDetailView, SingleObjectDownloadView, SingleObjectEditView
+    SingleObjectDetailView, SingleObjectEditView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
@@ -162,7 +163,7 @@ class DocumentVersionOCRContentView(SingleObjectDetailView):
         }
 
 
-class DocumentVersionOCRDownloadView(SingleObjectDownloadView):
+class DocumentVersionOCRDownloadView(ViewSingleObjectDownload):
     object_permission = permission_document_version_ocr_content_view
     pk_url_kwarg = 'document_version_id'
     source_queryset = DocumentVersion.valid.all()

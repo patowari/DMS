@@ -9,9 +9,10 @@ from mayan.apps.documents.forms.document_type_forms import (
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_file_page_models import DocumentFilePage
 from mayan.apps.documents.models.document_type_models import DocumentType
+from mayan.apps.storage.views.download_views import ViewSingleObjectDownload
 from mayan.apps.views.generics import (
     FormView, MultipleObjectConfirmActionView, MultipleObjectDeleteView,
-    SingleObjectDetailView, SingleObjectDownloadView, SingleObjectEditView
+    SingleObjectDetailView, SingleObjectEditView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
@@ -62,7 +63,7 @@ class DocumentFileContentDeleteView(MultipleObjectDeleteView):
         )
 
 
-class DocumentFileContentDownloadView(SingleObjectDownloadView):
+class DocumentFileContentDownloadView(ViewSingleObjectDownload):
     object_permission = permission_document_file_content_view
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()

@@ -58,7 +58,9 @@ class KeyBusinessLogicMixin:
         else:
             self.key_type = key_info['type']
 
-    def open(self):
+    def open(self, **kwargs):
+        # Discard any keyword arguments. Key content is always served in the
+        # same format.
         output_buffer = BytesIO(
             initial_bytes=force_bytes(s=self.key_data)
         )

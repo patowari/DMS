@@ -7,10 +7,10 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
+from mayan.apps.storage.views.download_views import ViewSingleObjectDownload
 from mayan.apps.views.generics import (
     ConfirmView, SingleObjectCreateView, SingleObjectDeleteView,
-    SingleObjectDetailView, SingleObjectDownloadView, SingleObjectListView,
-    SimpleView
+    SingleObjectDetailView, SingleObjectListView, SimpleView
 )
 
 from .events import event_key_downloaded
@@ -62,7 +62,7 @@ class KeyDetailView(SingleObjectDetailView):
         }
 
 
-class KeyDownloadView(SingleObjectDownloadView):
+class KeyDownloadView(ViewSingleObjectDownload):
     model = Key
     object_permission = permission_key_download
     pk_url_kwarg = 'key_id'

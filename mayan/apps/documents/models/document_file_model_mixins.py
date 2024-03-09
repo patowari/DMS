@@ -17,6 +17,7 @@ from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.mime_types.classes import MIMETypeBackend
+from mayan.apps.storage.model_mixins import ModelMixinFileFieldOpen
 
 from ..classes import DocumentFileAction
 from ..events import event_document_file_created, event_document_file_edited
@@ -30,7 +31,7 @@ from ..signals import signal_post_document_file_upload
 logger = logging.getLogger(name=__name__)
 
 
-class DocumentFileBusinessLogicMixin:
+class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
     @staticmethod
     def hash_function():
         return hashlib.sha256()
@@ -152,6 +153,30 @@ class DocumentFileBusinessLogicMixin:
             raise
         else:
             self.upload_complete()
+
+    def _open(self, raw=False, **kwargs):
+        """
+        Return a file descriptor to a document file's file irrespective of
+        the storage backend.
+        """
+        DocumentFile = apps.get_model(
+            app_label='documents', model_name='DocumentFile'
+        )
+
+        if raw:
+            return self.file.storage.open(**kwargs)
+        else:
+            file_object = self.file.storage.open(**kwargs)
+
+            result = DocumentFile._execute_hooks(
+                hook_list=DocumentFile._pre_open_hooks,
+                instance=self, file_object=file_object
+            )
+
+            if result:
+                return result['file_object']
+            else:
+                return file_object
 
     @method_event(
         action_object='document',
@@ -351,39 +376,13 @@ class DocumentFileBusinessLogicMixin:
                         file_object=file_object
                     )
             except Exception:
-                self.mimetype = ''
                 self.encoding = ''
+                self.mimetype = ''
             finally:
                 if save:
                     self.save(
                         update_fields=('encoding', 'mimetype')
                     )
-
-    def open(self, raw=False):
-        """
-        Return a file descriptor to a document file's file irrespective of
-        the storage backend.
-        """
-        DocumentFile = apps.get_model(
-            app_label='documents', model_name='DocumentFile'
-        )
-
-        name = self.file.name
-        self.file.close()
-        if raw:
-            return self.file.storage.open(name=name)
-        else:
-            file_object = self.file.storage.open(name=name)
-
-            result = DocumentFile._execute_hooks(
-                hook_list=DocumentFile._pre_open_hooks,
-                instance=self, file_object=file_object
-            )
-
-            if result:
-                return result['file_object']
-            else:
-                return file_object
 
     def page_count_update(self, save=True, user=None):
         try:

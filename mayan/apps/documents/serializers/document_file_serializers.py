@@ -72,18 +72,6 @@ class DocumentFileSerializer(serializers.HyperlinkedModelSerializer):
         label=_(message='Document URL'), lookup_field='document_id',
         lookup_url_kwarg='document_id', view_name='rest_api:document-detail'
     )
-    download_url = MultiKwargHyperlinkedIdentityField(
-        label=_(message='Download URL'), view_kwargs=(
-            {
-                'lookup_field': 'document_id',
-                'lookup_url_kwarg': 'document_id'
-            },
-            {
-                'lookup_field': 'pk',
-                'lookup_url_kwarg': 'document_file_id'
-            }
-        ), view_name='rest_api:documentfile-download'
-    )
     file_new = serializers.FileField(
         help_text=_(message='Binary content for the new file.'),
         label=_(message='File new'), use_url=False, write_only=True
@@ -123,14 +111,14 @@ class DocumentFileSerializer(serializers.HyperlinkedModelSerializer):
             'file': {'use_url': False}
         }
         fields = (
-            'action_name', 'checksum', 'comment', 'document_id', 'document_url',
-            'download_url', 'encoding', 'file', 'file_new', 'filename', 'id',
+            'action_name', 'checksum', 'comment', 'document_id',
+            'document_url', 'encoding', 'file', 'file_new', 'filename', 'id',
             'mimetype', 'page_list_url', 'pages_first', 'size', 'timestamp',
             'url'
         )
         model = DocumentFile
         read_only_fields = (
-            'checksum', 'document_id', 'document_url', 'download_url',
-            'encoding', 'file', 'id', 'mimetype', 'page_list_url',
-            'pages_first', 'size', 'timestamp', 'url'
+            'checksum', 'document_id', 'document_url', 'encoding', 'file',
+            'id', 'mimetype', 'page_list_url', 'pages_first', 'size',
+            'timestamp', 'url'
         )

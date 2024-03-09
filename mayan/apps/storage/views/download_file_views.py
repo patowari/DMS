@@ -2,9 +2,10 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
-    MultipleObjectDeleteView, SingleObjectDownloadView, SingleObjectListView
+    MultipleObjectDeleteView, SingleObjectListView
 )
 
+from ..events import event_download_file_downloaded
 from ..icons import (
     icon_download_file_delete, icon_download_file_download,
     icon_download_file_list
@@ -15,11 +16,12 @@ from ..permissions import (
     permission_download_file_view
 )
 
-from .mixins import OwnerPlusFilteredQuerysetViewMixin
+from .download_views import ViewSingleObjectDownload
+from .mixins import ViewMixinOwnerPlusFilteredQueryset
 
 
 class DownloadFileDeleteView(
-    OwnerPlusFilteredQuerysetViewMixin, MultipleObjectDeleteView
+    ViewMixinOwnerPlusFilteredQueryset, MultipleObjectDeleteView
 ):
     model = DownloadFile
     optional_object_permission = permission_download_file_delete
@@ -35,9 +37,10 @@ class DownloadFileDeleteView(
         }
 
 
-class DownloadFileDownloadViewView(
-    OwnerPlusFilteredQuerysetViewMixin, SingleObjectDownloadView
+class DownloadFileDownloadView(
+    ViewMixinOwnerPlusFilteredQueryset, ViewSingleObjectDownload
 ):
+    download_event_type = event_download_file_downloaded
     model = DownloadFile
     optional_object_permission = permission_download_file_download
     pk_url_kwarg = 'download_file_id'
@@ -46,14 +49,14 @@ class DownloadFileDownloadViewView(
     def get_download_file_object(self):
         instance = self.get_object()
         instance._event_actor = self.request.user
-        return instance.get_download_file_object()
+        return instance.open(mode='rb')
 
     def get_download_filename(self):
         return self.object.filename or str(self.object)
 
 
 class DownloadFileListView(
-    OwnerPlusFilteredQuerysetViewMixin, SingleObjectListView
+    ViewMixinOwnerPlusFilteredQueryset, SingleObjectListView
 ):
     model = DownloadFile
     optional_object_permission = permission_download_file_view

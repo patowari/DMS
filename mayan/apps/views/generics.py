@@ -10,8 +10,6 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
     FormView as DjangoFormView, DetailView, TemplateView
 )
-from django.views.generic.base import View
-from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.edit import (
     CreateView, DeleteView, FormMixin, UpdateView
 )
@@ -27,10 +25,9 @@ from .icons import (
 )
 from .settings import setting_paginate_by
 from .view_mixins import (
-    ExtraDataDeleteViewMixin, DownloadViewMixin,
-    DynamicFieldSetFormViewMixin, ExternalObjectViewMixin,
-    ExtraContextViewMixin, FormExtraKwargsViewMixin, ListModeViewMixin,
-    ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
+    ExtraDataDeleteViewMixin, DynamicFieldSetFormViewMixin,
+    ExternalObjectViewMixin, ExtraContextViewMixin, FormExtraKwargsViewMixin,
+    ListModeViewMixin, ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
     ObjectActionViewMixin, ObjectNameViewMixin, RedirectionViewMixin,
     RestrictedQuerysetViewMixin, SortingViewMixin, ViewIconMixin,
     ViewPermissionCheckViewMixin
@@ -807,57 +804,6 @@ class SingleObjectDetailView(
                         )
                     }, request=self.request
                 )
-
-    def get_queryset(self):
-        try:
-            return super().get_queryset()
-        except ImproperlyConfigured:
-            self.queryset = self.get_source_queryset()
-            return super().get_queryset()
-
-
-class BaseDownloadView(
-    DownloadViewMixin, ViewPermissionCheckViewMixin, View
-):
-    def get(self, request, *args, **kwargs):
-        return self.render_to_response()
-
-
-class SingleObjectDownloadView(
-    RestrictedQuerysetViewMixin, SingleObjectMixin, BaseDownloadView
-):
-    def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        return super().get(
-            request, *args, **kwargs
-        )
-
-    def get_download_file_object(self):
-        return self.object.open()
-
-    def get_download_filename(self):
-        return str(self.object)
-
-
-class MultipleObjectDownloadView(
-    RestrictedQuerysetViewMixin, MultipleObjectViewMixin, BaseDownloadView
-):
-    """
-    View that support receiving multiple objects via a pk_list query.
-    """
-    def __init__(self, *args, **kwargs):
-        result = super().__init__(*args, **kwargs)
-
-        if self.__class__.mro()[0].get_queryset != MultipleObjectDownloadView.get_queryset:
-            raise ImproperlyConfigured(
-                '%(cls)s is overloading the `get_queryset` method. '
-                'Subclasses should implement the `get_source_queryset` '
-                'method instead. ' % {
-                    'cls': self.__class__.__name__
-                }
-            )
-
-        return result
 
     def get_queryset(self):
         try:

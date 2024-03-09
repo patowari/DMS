@@ -402,7 +402,7 @@ class EmbeddedSignaturesTestCase(
             test_document_file_signed.size
         )
 
-        with test_document_file_signed.get_download_file_object() as file_object:
+        with test_document_file_signed.open(mode='rb', raw=True) as file_object:
             test_document_file_signed_download_file_checksum = hashlib.sha256(
                 string=file_object.read()
             ).hexdigest()

@@ -6,7 +6,6 @@ from mayan.apps.storage.events import event_download_file_created
 from mayan.apps.storage.models import DownloadFile
 
 from ..classes import DocumentFileCompressor
-from ..events import event_document_file_downloaded
 
 from .literals import TEST_DOCUMENT_FILE_DOWNLOAD_MESSAGE_SUBJECT
 
@@ -45,22 +44,17 @@ class DocumentFileCompressorClassTestCase(GenericDocumentTestCase):
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 2)
 
         self.assertEqual(events[0].action_object, None)
         self.assertEqual(events[0].actor, self._test_user)
         self.assertEqual(events[0].target, test_download_file)
         self.assertEqual(events[0].verb, event_download_file_created.id)
 
-        self.assertEqual(events[1].action_object, test_download_file)
-        self.assertEqual(events[1].actor, self._test_user)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_downloaded.id)
-
-        self.assertEqual(events[2].action_object, None)
-        self.assertEqual(events[2].actor, test_message)
-        self.assertEqual(events[2].target, test_message)
-        self.assertEqual(events[2].verb, event_message_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, test_message)
+        self.assertEqual(events[1].target, test_message)
+        self.assertEqual(events[1].verb, event_message_created.id)
 
     def test_document_file_empty_content_type_download(self):
         self._create_test_user()

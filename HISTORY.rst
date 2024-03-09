@@ -20,6 +20,10 @@
   workflow instances.
 - Add event checking to workflow template state action tests in multiple
   apps.
+- Add support for download backends. Include the normal HTTP with direct
+  storage backend and the Google Cloud Storage signed URLs backend. Update
+  the document downloads app to support download backends for quick downloads
+  of document files.
 
 4.6.2 (2024-03-04)
 ==================

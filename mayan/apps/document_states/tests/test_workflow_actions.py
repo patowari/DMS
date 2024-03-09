@@ -659,4 +659,3 @@ class DocumentWorkflowLaunchActionViewTestCase(
         self.assertEqual(events[2].actor, self._test_workflow_instance)
         self.assertEqual(events[2].target, self._test_workflow_instance)
         self.assertEqual(events[2].verb, event_workflow_instance_created.id)
-

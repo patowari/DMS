@@ -169,8 +169,6 @@ class DocumentSignatureWorkflowActionTransitionTestCase(
         )
 
         _test_document_file = self._test_document.file_latest
-        _test_document_version = self._test_document.version_active
-        _test_document_version_page = _test_document_version.pages.first()
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)

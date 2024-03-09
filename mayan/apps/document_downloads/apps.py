@@ -11,7 +11,6 @@ from .links import (
     link_document_download_multiple, link_document_download_single,
     link_document_file_download_quick
 )
-from .methods import method_document_get_download_file_object
 from .permissions import permission_document_file_download
 
 
@@ -31,11 +30,6 @@ class DocumentDownloadsApp(MayanAppConfig):
         )
         DocumentFile = apps.get_model(
             app_label='documents', model_name='DocumentFile'
-        )
-
-        DocumentFile.add_to_class(
-            name='get_download_file_object',
-            value=method_document_get_download_file_object
         )
 
         ModelEventType.register(

@@ -5,8 +5,7 @@ from .api_views.download_file_api_views import (
     APIDownloadFileListView
 )
 from .views.download_file_views import (
-    DownloadFileDeleteView, DownloadFileDownloadViewView,
-    DownloadFileListView
+    DownloadFileDeleteView, DownloadFileDownloadView, DownloadFileListView
 )
 
 urlpatterns = [
@@ -18,7 +17,7 @@ urlpatterns = [
     re_path(
         route=r'^downloads/(?P<download_file_id>\d+)/download/$',
         name='download_file_download',
-        view=DownloadFileDownloadViewView.as_view()
+        view=DownloadFileDownloadView.as_view()
     ),
     re_path(
         route=r'^downloads/$', name='download_file_list',

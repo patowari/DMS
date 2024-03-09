@@ -3,7 +3,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ImproperlyConfigured
 from django.db.models.query import QuerySet
 from django.http import Http404
-from django.http.response import FileResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, ngettext
@@ -14,7 +13,6 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.common.settings import setting_home_view
 from mayan.apps.databases.utils import check_queryset
-from mayan.apps.mime_types.classes import MIMETypeBackend
 from mayan.apps.permissions.classes import Permission
 
 from .exceptions import ActionError
@@ -58,55 +56,6 @@ class ExtraDataDeleteViewMixin:
                 setattr(self.object, key, value)
 
         return super().form_valid(form=form)
-
-
-class DownloadViewMixin:
-    as_attachment = True
-
-    def get_as_attachment(self):
-        return self.as_attachment
-
-    def get_download_file_object(self):
-        raise NotImplementedError(
-            'Class must provide a .get_download_file_object() method that '
-            'return a file like object.'
-        )
-
-    def get_download_filename(self):
-        return None
-
-    def get_download_mime_type_and_encoding(self, file_object):
-        mime_type, encoding = MIMETypeBackend.get_backend_instance().get_mime_type(
-            file_object=file_object, mime_type_only=True
-        )
-
-        return (mime_type, encoding)
-
-    def render_to_response(self, **response_kwargs):
-        response = FileResponse(
-            as_attachment=self.get_as_attachment(),
-            filename=self.get_download_filename(),
-            streaming_content=self.get_download_file_object()
-        )
-
-        encoding_map = {
-            'bzip2': 'application/x-bzip',
-            'gzip': 'application/gzip',
-            'xz': 'application/x-xz'
-        }
-
-        if response.file_to_stream:
-            mime_type, encoding = self.get_download_mime_type_and_encoding(
-                file_object=response.file_to_stream
-            )
-            # Encoding isn't set to prevent browsers from automatically
-            # uncompressing files.
-            content_type = encoding_map.get(encoding, mime_type)
-            response.headers['Content-Type'] = content_type or 'application/octet-stream'
-        else:
-            response.headers['Content-Type'] = 'application/octet-stream'
-
-        return response
 
 
 class DynamicFormViewMixin:

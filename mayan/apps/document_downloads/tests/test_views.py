@@ -116,7 +116,7 @@ class DocumentDownloadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 2)
 
         test_download_file = DownloadFile.objects.first()
         test_message = Message.objects.first()
@@ -126,15 +126,10 @@ class DocumentDownloadViewTestCase(
         self.assertEqual(events[0].target, test_download_file)
         self.assertEqual(events[0].verb, event_download_file_created.id)
 
-        self.assertEqual(events[1].action_object, test_download_file)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_downloaded.id)
-
-        self.assertEqual(events[2].action_object, None)
-        self.assertEqual(events[2].actor, test_message)
-        self.assertEqual(events[2].target, test_message)
-        self.assertEqual(events[2].verb, event_message_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, test_message)
+        self.assertEqual(events[1].target, test_message)
+        self.assertEqual(events[1].verb, event_message_created.id)
 
     def test_trashed_document_download_post_view_no_permission(self):
         self.grant_access(
@@ -176,7 +171,7 @@ class DocumentDownloadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 2)
 
         test_download_file = DownloadFile.objects.first()
         test_message = Message.objects.first()
@@ -186,15 +181,10 @@ class DocumentDownloadViewTestCase(
         self.assertEqual(events[0].target, test_download_file)
         self.assertEqual(events[0].verb, event_download_file_created.id)
 
-        self.assertEqual(events[1].action_object, test_download_file)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_downloaded.id)
-
-        self.assertEqual(events[2].action_object, None)
-        self.assertEqual(events[2].actor, test_message)
-        self.assertEqual(events[2].target, test_message)
-        self.assertEqual(events[2].verb, event_message_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, test_message)
+        self.assertEqual(events[1].target, test_message)
+        self.assertEqual(events[1].verb, event_message_created.id)
 
 
 class DocumentMultipleDownloadViewTestCase(
@@ -302,7 +292,7 @@ class DocumentMultipleDownloadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 2)
 
         test_download_file = DownloadFile.objects.first()
         test_message = Message.objects.first()
@@ -312,15 +302,10 @@ class DocumentMultipleDownloadViewTestCase(
         self.assertEqual(events[0].target, test_download_file)
         self.assertEqual(events[0].verb, event_download_file_created.id)
 
-        self.assertEqual(events[1].action_object, test_download_file)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_downloaded.id)
-
-        self.assertEqual(events[2].action_object, None)
-        self.assertEqual(events[2].actor, test_message)
-        self.assertEqual(events[2].target, test_message)
-        self.assertEqual(events[2].verb, event_message_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, test_message)
+        self.assertEqual(events[1].target, test_message)
+        self.assertEqual(events[1].verb, event_message_created.id)
 
     def test_trashed_document_multiple_download_post_view_no_permission(self):
         self.grant_access(
@@ -362,7 +347,7 @@ class DocumentMultipleDownloadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 3)
+        self.assertEqual(events.count(), 2)
 
         test_download_file = DownloadFile.objects.first()
         test_message = Message.objects.first()
@@ -372,15 +357,10 @@ class DocumentMultipleDownloadViewTestCase(
         self.assertEqual(events[0].target, test_download_file)
         self.assertEqual(events[0].verb, event_download_file_created.id)
 
-        self.assertEqual(events[1].action_object, test_download_file)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_downloaded.id)
-
-        self.assertEqual(events[2].action_object, None)
-        self.assertEqual(events[2].actor, test_message)
-        self.assertEqual(events[2].target, test_message)
-        self.assertEqual(events[2].verb, event_message_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, test_message)
+        self.assertEqual(events[1].target, test_message)
+        self.assertEqual(events[1].verb, event_message_created.id)
 
 
 class DocumentFileDownloadViewTestCase(

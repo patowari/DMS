@@ -9,9 +9,10 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.django_gpg.exceptions import NeedPassphrase, PassphraseError
 from mayan.apps.documents.models.document_file_models import DocumentFile
+from mayan.apps.storage.views.download_views import ViewSingleObjectDownload
 from mayan.apps.views.generics import (
     ConfirmView, FormView, SingleObjectCreateView, SingleObjectDeleteView,
-    SingleObjectDetailView, SingleObjectDownloadView, SingleObjectListView
+    SingleObjectDetailView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
@@ -221,7 +222,7 @@ class DocumentFileDetachedSignatureDeleteView(SingleObjectDeleteView):
         )
 
 
-class DocumentFileDetachedSignatureDownloadView(SingleObjectDownloadView):
+class DocumentFileDetachedSignatureDownloadView(ViewSingleObjectDownload):
     object_permission = permission_document_file_signature_download
     pk_url_kwarg = 'signature_id'
     view_icon = icon_document_file_signature_detached_download
