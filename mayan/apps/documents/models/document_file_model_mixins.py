@@ -7,6 +7,7 @@ from django.apps import apps
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.common.signals import signal_mayan_pre_save
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.exceptions import (
     InvalidOfficeFormat, PageCountError
@@ -151,6 +152,41 @@ class DocumentFileBusinessLogicMixin:
             raise
         else:
             self.upload_complete()
+
+    @method_event(
+        action_object='document',
+        event_manager_class=EventManagerMethodAfter,
+        event=event_document_file_edited,
+        target='self'
+    )
+    def _save(self, *args, **kwargs):
+        DocumentFile = apps.get_model(
+            app_label='documents', model_name='DocumentFile'
+        )
+
+        user = getattr(self, '_event_actor', None)
+
+        try:
+            self.execute_pre_save_hooks()
+
+            signal_mayan_pre_save.send(
+                instance=self, sender=DocumentFile, user=user
+            )
+
+            result = super().save(*args, **kwargs)
+
+            DocumentFile._execute_hooks(
+                hook_list=DocumentFile._post_save_hooks,
+                instance=self
+            )
+        except Exception as exception:
+            logger.error(
+                'Error saving document file for document "%s"; %s',
+                self.document, exception, exc_info=True
+            )
+            raise
+        else:
+            return result
 
     @cached_property
     def cache(self):

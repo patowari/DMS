@@ -33,8 +33,7 @@ class TrashedDocumentBusinessLogicMixin:
 
     @method_event(
         event_manager_class=EventManagerMethodAfter,
-        event=event_trashed_document_restored,
-        target='document'
+        event=event_trashed_document_restored, target='document'
     )
     def restore(self, user):
         self._event_actor = user

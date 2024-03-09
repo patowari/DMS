@@ -112,6 +112,11 @@ INSTALLED_APPS = (
     'mayan.apps.announcements.apps.AnnouncementsApp',
     'mayan.apps.motd.apps.MOTDApp',
     # Document apps.
+    # The documents app must be first since Django does not support signal
+    # priorities.
+    # https://docs.djangoproject.com/en/4.2/topics/signals/#listening-to-signals
+    # https://code.djangoproject.com/ticket/16547
+    'mayan.apps.documents.apps.DocumentsApp',
     'mayan.apps.cabinets.apps.CabinetsApp',
     'mayan.apps.checkouts.apps.CheckoutsApp',
     'mayan.apps.document_comments.apps.DocumentCommentsApp',
@@ -121,7 +126,6 @@ INSTALLED_APPS = (
     'mayan.apps.document_parsing.apps.DocumentParsingApp',
     'mayan.apps.document_signatures.apps.DocumentSignaturesApp',
     'mayan.apps.document_states.apps.DocumentStatesApp',
-    'mayan.apps.documents.apps.DocumentsApp',
     'mayan.apps.duplicates.apps.DuplicatesApp',
     'mayan.apps.file_metadata.apps.FileMetadataApp',
     'mayan.apps.file_metadata_clamav.apps.FileMetadataClamAVApp',

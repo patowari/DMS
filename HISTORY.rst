@@ -2,6 +2,8 @@
 ================
 - Remove local version from the platform cache identifiers.
 - Add credentials backend for Google Service accounts.
+- Enforce stricter document creation event committing order.
+- Move the ``_save`` method to the ``document.model_mixins`` module.
 
 4.6.2 (2024-03-04)
 ==================

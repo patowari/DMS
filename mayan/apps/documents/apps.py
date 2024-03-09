@@ -1,4 +1,4 @@
-from django.db.models.signals import post_migrate
+from django.db.models.signals import post_migrate, post_save
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
@@ -81,7 +81,8 @@ from .events import (
 from .handlers import (
     handler_create_default_document_type,
     handler_create_document_file_page_image_cache,
-    handler_create_document_version_page_image_cache
+    handler_create_document_version_page_image_cache,
+    handler_document_event_on_save
 )
 from .links.document_file_links import (
     link_document_file_delete, link_document_file_edit,
@@ -1012,11 +1013,15 @@ class DocumentsApp(MayanAppConfig):
 
         post_migrate.connect(
             dispatch_uid='documents_handler_create_document_file_page_image_cache',
-            receiver=handler_create_document_file_page_image_cache,
+            receiver=handler_create_document_file_page_image_cache
         )
         post_migrate.connect(
             dispatch_uid='documents_handler_create_document_version_page_image_cache',
-            receiver=handler_create_document_version_page_image_cache,
+            receiver=handler_create_document_version_page_image_cache
+        )
+        post_save.connect(
+            dispatch_uid='documents_handler_document_event_on_save',
+            receiver=handler_document_event_on_save, sender=Document
         )
         signal_post_initial_setup.connect(
             dispatch_uid='documents_handler_create_default_document_type',

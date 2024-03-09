@@ -17,7 +17,7 @@ class DocumentFilePage(
     DocumentFilePageBusinessLogicMixin, PagedModelMixin, models.Model
 ):
     """
-    Model that describes a document file page
+    Model that describes a document file page.
     """
     _paged_model_parent_field = 'document_file'
 

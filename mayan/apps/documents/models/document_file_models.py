@@ -4,13 +4,12 @@ from django.db import models, transaction
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.signals import signal_mayan_pre_save
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
 from mayan.apps.storage.classes import DefinedStorageLazy
 
-from ..events import event_document_file_deleted, event_document_file_edited
+from ..events import event_document_file_deleted
 from ..literals import STORAGE_NAME_DOCUMENT_FILES
 from ..managers import DocumentFileManager, ValidDocumentFileManager
 
@@ -111,37 +110,6 @@ class DocumentFile(
 
     def __str__(self):
         return self.get_label()
-
-    @method_event(
-        action_object='document',
-        event_manager_class=EventManagerMethodAfter,
-        event=event_document_file_edited,
-        target='self'
-    )
-    def _save(self, *args, **kwargs):
-        user = getattr(self, '_event_actor', None)
-
-        try:
-            self.execute_pre_save_hooks()
-
-            signal_mayan_pre_save.send(
-                instance=self, sender=DocumentFile, user=user
-            )
-
-            result = super().save(*args, **kwargs)
-
-            DocumentFile._execute_hooks(
-                hook_list=DocumentFile._post_save_hooks,
-                instance=self
-            )
-        except Exception as exception:
-            logger.error(
-                'Error saving document file for document "%s"; %s',
-                self.document, exception, exc_info=True
-            )
-            raise
-        else:
-            return result
 
     @method_event(
         event_manager_class=EventManagerMethodAfter,

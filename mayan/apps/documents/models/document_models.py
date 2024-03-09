@@ -7,13 +7,8 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.signals import signal_mayan_pre_save
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
-from mayan.apps.events.decorators import method_event
-from mayan.apps.events.event_managers import EventManagerSave
 
-from ..events import (
-    event_document_created, event_document_edited, event_document_trashed,
-    event_trashed_document_deleted
-)
+from ..events import event_document_trashed, event_trashed_document_deleted
 from ..literals import DEFAULT_LANGUAGE
 from ..managers import (
     DocumentManager, TrashCanManager, ValidDocumentManager,
@@ -154,31 +149,19 @@ class Document(
         return (self.uuid,)
     natural_key.dependencies = ['documents.DocumentType']
 
-    @method_event(
-        event_manager_class=EventManagerSave,
-        created={
-            'event': event_document_created,
-            'action_object': 'document_type',
-            'target': 'self'
-        },
-        edited={
-            'event': event_document_edited,
-            'target': 'self'
-        }
-    )
     def save(self, *args, **kwargs):
-        user = self.__dict__.pop('_event_actor', None)
+        user = getattr(self, '_event_actor', None)
         new_document = not self.pk
 
         self.description = self.description or ''
         self.label = self.label or ''
         self.language = self.language or setting_language.value
 
-        signal_mayan_pre_save.send(
-            instance=self, sender=Document, user=user
-        )
+        signal_mayan_pre_save.send(instance=self, sender=Document, user=user)
 
         super().save(*args, **kwargs)
+
+        self.__dict__.pop('_event_ignore', False)
 
         if new_document:
             if user:
