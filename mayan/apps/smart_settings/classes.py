@@ -8,8 +8,8 @@ import sys
 import yaml
 
 from django.apps import apps
-from django.db.utils import OperationalError, ProgrammingError
 from django.conf import settings
+from django.db.utils import OperationalError, ProgrammingError
 from django.utils.encoding import force_str
 from django.utils.functional import Promise
 from django.utils.translation import gettext_lazy as _
