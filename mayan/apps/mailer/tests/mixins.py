@@ -6,7 +6,9 @@ from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsername
 from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
-from ..classes import ModelMailingActionAttachment, ModelMailingActionLink
+from ..mailing_actions import (
+    ModelMailingActionAttachment, ModelMailingActionLink
+)
 from ..models import UserMailer
 
 from .literals import (
