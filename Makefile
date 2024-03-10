@@ -178,9 +178,6 @@ docs-html: ## Run the html documentation target. Use optional FILENAMES to speci
 docs-html: docs-generate-app-documentation
 	cd docs;make html
 
-docs-serve: ## Run the livehtml documentation generator.
-	cd docs;make livehtml
-
 docs-spellcheck: ## Spellcheck the documentation.
 	cd docs;sphinx-build -b spelling -d _build/ . _build/spelling
 

@@ -229,10 +229,6 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx-autobuild', version_string='==2021.3.14'
-)
-PythonDependency(
-    environment=environment_documentation, module=__name__,
     name='sphinx-sitemap', version_string='==2.2.0'
 )
 PythonDependency(
@@ -246,10 +242,6 @@ PythonDependency(
 PythonDependency(
     environment=environment_documentation, module=__name__,
     name='sphinxcontrib-spelling', version_string='==7.1.0'
-)
-PythonDependency(
-    environment=environment_documentation, module=__name__, name='tornado',
-    version_string='==6.1'
 )
 PythonDependency(
     environment=environment_documentation_override, module=__name__,

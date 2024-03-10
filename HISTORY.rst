@@ -44,6 +44,9 @@
   - extract-msg from 0.48.0 to 0.48.2.
   - django-celery-beat from 2.5.0 to 2.6.0.
 
+- Remove live documentation auto build.
+- Remove tornado and sphinx-autobuild libraries.
+
 4.6.2 (2024-03-04)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
