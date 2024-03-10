@@ -91,7 +91,7 @@ PythonDependency(
         THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
         OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django-model-utils', version_string='==4.3.1'
+    ''', module=__name__, name='django-model-utils', version_string='==4.4.0'
 )
 PythonDependency(
     legal_text='''
@@ -119,7 +119,7 @@ PythonDependency(
     ''', module=__name__, name='django-mptt', version_string='==0.16.0'
 )
 PythonDependency(
-    module=__name__, name='importlib-metadata', version_string='==7.0.1'
+    module=__name__, name='importlib-metadata', version_string='==7.0.2'
 )
 PythonDependency(
     legal_text='''
@@ -161,7 +161,7 @@ PythonDependency(
 
 PythonDependency(
     environment=environment_build, module=__name__, name='twine',
-    version_string='==4.0.2'
+    version_string='==5.0.0'
 )
 PythonDependency(
     environments=(environment_build, environment_documentation),
@@ -174,11 +174,11 @@ PythonDependency(
 
 PythonDependency(
     module=__name__, environment=environment_development,
-    name='devpi-server', version_string='==6.5.0'
+    name='devpi-server', version_string='==6.10.0'
 )
 PythonDependency(
     environment=environment_development, module=__name__,
-    name='django-debug-toolbar', version_string='==4.2.0'
+    name='django-debug-toolbar', version_string='==4.3.0'
 )
 PythonDependency(
     environment=environment_development, module=__name__,
@@ -201,7 +201,7 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==8.21.0'
+    ), module=__name__, name='ipython', version_string='==8.22.2'
 )
 PythonDependency(
     module=__name__, environment=environment_development,

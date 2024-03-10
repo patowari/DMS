@@ -74,7 +74,7 @@ class DocumentCreateWizardStepMetadata(DocumentCreateWizardStep):
     @classmethod
     def condition(cls, wizard):
         """
-        Skip step if document type has no associated metadata
+        Skip step if document type has no associated metadata.
         """
         cleaned_data = wizard.get_cleaned_data_for_step(
             step=DocumentCreateWizardStepDocumentType.name

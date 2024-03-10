@@ -28,6 +28,21 @@
   ``mailing_actions`` module.
 - Remove flanker from the source_emails apps. Use pure Python libraries
   to parse emails.
+- Update dependency versions:
+
+  - mozilla-django-oidc from 3.0.0 to 4.0.0.
+  - django-model-utils from 4.3.1 to 4.4.0.
+  - importlib-metadata from 7.0.1 to 7.0.2.
+  - twine from 4.0.2 to 5.0.0.
+  - devpi-server from 6.5.0 to 6.10.0.
+  - django-debug-toolbar from 4.2.0 to 4.3.0.
+  - ipython from 8.21.0 to 8.22.2.
+  - pypdf from 3.17.4 to 4.1.0.
+  - python_gnupg from 0.4.9 to 0.5.2.
+  - python-dateutil from 2.8.2 to 2.9.0.post0.
+  - sentry-sdk from 1.40.6 to 1.41.0.
+  - extract-msg from 0.48.0 to 0.48.2.
+  - django-celery-beat from 2.5.0 to 2.6.0.
 
 4.6.2 (2024-03-04)
 ==================

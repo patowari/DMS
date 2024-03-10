@@ -25,6 +25,10 @@ class DocumentCreateWizardStep(AppsModuleLoaderMixin):
             if name == step.name:
                 return step
 
+        raise KeyError(
+            'Wizard step `{}` not found.'.format(name)
+        )
+
     @classmethod
     def get_all(cls):
         step_list = [

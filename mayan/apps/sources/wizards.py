@@ -1,6 +1,5 @@
 from furl import furl
 
-from django import forms
 from django.apps import apps
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -10,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 from formtools.wizard.views import SessionWizardView
 
+from mayan.apps.views.forms import Form
 from mayan.apps.views.view_mixins import ViewIconMixin
 
 from .classes import DocumentCreateWizardStep
@@ -29,8 +29,8 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
         # SessionWizardView needs at least one form in order to be
         # initialized as a view. Declare one empty form and then change the
         # form list in the .dispatch() method.
-        class EmptyForm(forms.Form):
-            """Empty form"""
+        class EmptyForm(Form):
+            """Empty form."""
 
         cls.form_list = [EmptyForm]
         return super().as_view(*args, **kwargs)
@@ -127,14 +127,18 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
         return context
 
     def get_form_initial(self, step):
-        return DocumentCreateWizardStep.get(
-            name=step
-        ).get_form_initial(wizard=self) or {}
+        wizard_step = DocumentCreateWizardStep.get(name=step)
+
+        initial = wizard_step.get_form_initial(wizard=self) or {}
+
+        return initial
 
     def get_form_kwargs(self, step):
-        return DocumentCreateWizardStep.get(
-            name=step
-        ).get_form_kwargs(wizard=self) or {}
+        wizard_step = DocumentCreateWizardStep.get(name=step)
+
+        kwargs = wizard_step.get_form_kwargs(wizard=self) or {}
+
+        return kwargs
 
     def done(self, form_list, **kwargs):
         query_dict = {}

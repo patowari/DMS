@@ -21,7 +21,7 @@ class ViewMixinBackendDownload:
                 'The download view `{}` was not able to load download '
                 'backend `{}`. Ensure the download backend path and the '
                 'arguments are correct.'.format(
-                    cls.__name__, cls.get_backend_path(), exception
+                    cls.__name__, cls.get_backend_path()
                 )
             ) from exception
 

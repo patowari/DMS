@@ -22,7 +22,7 @@ class PythonGNUPGBackend(GPGBackend):
                 key_data=key['key_data']
             )
 
-        return gpg.decrypt_file(file=file_object)
+        return gpg.decrypt_file(fileobj_or_path=file_object)
 
     @staticmethod
     def _import_and_list_keys(gpg, **kwargs):
@@ -63,7 +63,7 @@ class PythonGNUPGBackend(GPGBackend):
 
         return gpg.sign_file(
             binary=binary, clearsign=clearsign, detach=detached,
-            file=file_object, keyid=import_results.fingerprints[0],
+            fileobj_or_path=file_object, keyid=import_results.fingerprints[0],
             output=output, passphrase=passphrase
         )
 
@@ -75,7 +75,7 @@ class PythonGNUPGBackend(GPGBackend):
             )
 
         return gpg.verify_file(
-            file=file_object, data_filename=data_filename
+            fileobj_or_path=file_object, data_filename=data_filename
         )
 
     def decrypt_file(self, file_object, keys):
