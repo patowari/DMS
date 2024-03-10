@@ -11,7 +11,7 @@ else:
 
 DEFAULT_SIGNATURES_BACKEND = 'mayan.apps.django_gpg.backends.python_gnupg.PythonGNUPGBackend'
 DEFAULT_DEFAULT_GPG_PATH = {
-    'gpg_path': DEFAULT_GPG_PATH,
+    'gpg_path': DEFAULT_GPG_PATH
 }
 DEFAULT_SIGNATURES_KEYSERVER = 'pool.sks-keyservers.net'
 
