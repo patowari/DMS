@@ -52,6 +52,8 @@
   - ruff
   - pdbpp
 
+- Remove the tox testing dependency.
+
 4.6.2 (2024-03-04)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
