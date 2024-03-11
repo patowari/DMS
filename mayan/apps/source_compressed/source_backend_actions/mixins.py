@@ -26,7 +26,7 @@ class SourceBackendActionMixinCompressedBase:
 
         if result:
             # Make this optional in case another mixin interrupted the MRO,
-            # And called a background task.
+            # and called a background task.
 
             SharedUploadedFile = apps.get_model(
                 app_label='storage', model_name='SharedUploadedFile'

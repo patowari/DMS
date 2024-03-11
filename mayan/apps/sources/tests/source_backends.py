@@ -1,14 +1,14 @@
 from ..source_backends.base import SourceBackend
 
 from .source_backend_actions import (
-    SourceBackendActionDocumentUploadBasic,
+    SourceBackendActionDocumentUploadBasicInteractive,
     SourceBackendActionTestConfirmFalse, SourceBackendActionTestConfirmTrue
 )
 
 
 class SourceBackendDocumentUploadTest(SourceBackend):
     action_class_list = (
-        SourceBackendActionDocumentUploadBasic,
+        SourceBackendActionDocumentUploadBasicInteractive,
     )
     label = 'Test source backend document upload'
 

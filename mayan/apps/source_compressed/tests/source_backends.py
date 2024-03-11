@@ -1,17 +1,20 @@
+from mayan.apps.source_interactive.source_backends.mixins import (
+    SourceBackendMixinInteractive
+)
 from mayan.apps.sources.source_backends.base import SourceBackend
 
 from ..source_backends.mixins import SourceBackendMixinCompressed
 
 from .source_backend_actions import (
-    SourceBackendActionDocumentUploadBasicCompressed
+    SourceBackendActionDocumentUploadBasicInteractiveCompressed
 )
 
 
 class SourceBackendTestCompressed(
-    SourceBackendMixinCompressed, SourceBackend
+    SourceBackendMixinCompressed, SourceBackendMixinInteractive, SourceBackend
 ):
     action_class_list = (
-        SourceBackendActionDocumentUploadBasicCompressed,
+        SourceBackendActionDocumentUploadBasicInteractiveCompressed,
     )
     label = 'Test source backend compressed'
 

@@ -6,25 +6,15 @@ from mayan.apps.documents.models.document_models import Document
 
 from ..interface_arguments import SourceBackendActionInterfaceArgument
 
+from .argument_help_texts import (
+    argument_help_text_document, argument_help_text_immediate_mode
+)
 from .literals import DEFAULT_IMMEDIATE_MODE
 
-
-argument_document_help_text = _(
-    message='Document to which a new file will be uploaded to.'
-)
-argument_document_type = SourceBackendActionInterfaceArgument(
-    help_text=Document.description.field.help_text
-)
-argument_immediate_mode_help_text = _(
-    message='When enabled, a document stub is created immediately and '
-    'returned. The document file is processed asynchronously. When '
-    'disabled, the entire process happens asynchronously with no '
-    'returned data. Enabling immediate mode, disables compressed file '
-    'processing.'
-)
+# Document
 
 argument_document = SourceBackendActionInterfaceArgument(
-    help_text=argument_document_help_text
+    help_text=argument_help_text_document
 )
 argument_document_description = SourceBackendActionInterfaceArgument(
     default=None, help_text=Document.description.field.help_text,
@@ -42,8 +32,10 @@ argument_document_id = SourceBackendActionInterfaceArgument(
     )
 )
 argument_document_id_optional = SourceBackendActionInterfaceArgument(
-    default=None, help_text=argument_document_help_text, required=False
+    default=None, help_text=argument_help_text_document, required=False
 )
+
+# Document file
 
 argument_document_file_action_name = SourceBackendActionInterfaceArgument(
     default=DEFAULT_DOCUMENT_FILE_ACTION_NAME,
@@ -58,17 +50,26 @@ argument_document_file_filename = SourceBackendActionInterfaceArgument(
     required=False
 )
 
+# Document type
+
+argument_document_type = SourceBackendActionInterfaceArgument(
+    help_text=Document.description.field.help_text
+)
 argument_document_type_id = SourceBackendActionInterfaceArgument(
     help_text=_(message='ID of the document type.')
 )
 
+# Immediate mode
+
 argument_immediate_mode_optional = SourceBackendActionInterfaceArgument(
     default=DEFAULT_IMMEDIATE_MODE,
-    help_text=argument_immediate_mode_help_text, required=False
+    help_text=argument_help_text_immediate_mode, required=False
 )
 argument_immediate_mode_required = SourceBackendActionInterfaceArgument(
-    help_text=argument_immediate_mode_help_text
+    help_text=argument_help_text_immediate_mode
 )
+
+# User
 
 argument_user = SourceBackendActionInterfaceArgument(
     default=None, help_text=_(
