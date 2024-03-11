@@ -8,9 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import RedirectView
 
 from mayan.apps.common.settings import setting_home_view
-from mayan.apps.converter.literals import (
-    DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
-)
+from mayan.apps.converter.literals import DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
 from mayan.apps.converter.transformations import (
     TransformationResize, TransformationRotate, TransformationZoom
 )
@@ -52,7 +50,7 @@ class DocumentFilePageListView(
                 request=self.request, resolved_object=self.external_object
             ),
             'no_results_text': _(
-                'This could mean that the document file is of a format that '
+                message='This could mean that the document file is of a format that '
                 'is not supported, that it is corrupted, or that the upload '
                 'process was interrupted. Use the document file '
                 'introspection link to attempt detection the page '
@@ -141,7 +139,7 @@ class DocumentFilePageNavigationNext(DocumentFilePageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    'There are no more pages in this document'
+                    message='There are no more pages in this document'
                 ), request=self.request
             )
             return {'document_file_page_id': self.external_object.pk}
@@ -157,7 +155,7 @@ class DocumentFilePageNavigationPrevious(DocumentFilePageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    'You are already at the first page of this document'
+                    message='You are already at the first page of this document'
                 ), request=self.request
             )
             return {'document_file_page_id': self.external_object.pk}

@@ -12,7 +12,9 @@ from mayan.apps.common.menus import (
     menu_list_facet, menu_main, menu_object, menu_related, menu_return,
     menu_secondary, menu_setup, menu_tools
 )
-from mayan.apps.documents.links.document_type_links import link_document_type_list
+from mayan.apps.documents.links.document_type_links import (
+    link_document_type_list
+)
 from mayan.apps.documents.signals import signal_post_initial_document_type
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
@@ -171,7 +173,7 @@ class DocumentIndexingApp(MayanAppConfig):
                 user=context['request'].user
             ), include_label=True, label=_(message='Total documents'),
             help_text=_(
-                'Number of unique documents this item contains.'
+                message='Number of unique documents this item contains.'
             ), source=IndexInstance
         )
 
@@ -210,7 +212,7 @@ class DocumentIndexingApp(MayanAppConfig):
                 user=context['request'].user
             ), include_label=True, label=_(message='Documents'),
             help_text=_(
-                'Number of unique documents this item contains.'
+                message='Number of unique documents this item contains.'
             ), source=IndexInstanceNode
         )
         column_index_instance_node_document_count.add_exclude(

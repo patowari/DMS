@@ -41,7 +41,7 @@ class SignatureCaptureCreateView(
         return {
             'object': self.external_object,
             'title': _(
-                'Create signature capture for document: %s'
+                message='Create signature capture for document: %s'
             ) % self.external_object
         }
 
@@ -142,13 +142,13 @@ class SignatureCaptureListView(
                 )
             ),
             'no_results_text': _(
-                'Signature captures are electronic versions of a '
+                message='Signature captures are electronic versions of a '
                 'persons\'s handwritten signature.'
             ),
             'no_results_title': _(message='Document has no signature captures'),
             'object': self.external_object,
             'title': _(
-                'Signature captures for document: %s'
+                message='Signature captures for document: %s'
             ) % self.external_object
         }
 

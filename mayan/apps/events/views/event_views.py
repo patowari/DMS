@@ -22,7 +22,7 @@ class EventListBaseView(SingleObjectListView):
             'hide_object': True,
             'no_results_icon': icon_event_list,
             'no_results_text': _(
-                'Events track actions that have been performed on, to, '
+                message='Events track actions that have been performed on, to, '
                 'or with objects.'
             ),
             'no_results_title': _(message='There are no events'),
@@ -66,7 +66,7 @@ class VerbEventListView(VerbEventViewMixin, EventListBaseView):
             {
                 'no_results_title': _(message='There are no events of this type'),
                 'title': _(
-                    'Events of type: %s'
+                    message='Events of type: %s'
                 ) % self.event_type
             }
         )

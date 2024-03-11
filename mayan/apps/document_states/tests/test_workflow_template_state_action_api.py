@@ -7,7 +7,9 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionAPIViewTestMixin
+from .mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionAPIViewTestMixin
+)
 
 
 class WorkflowTemplateStateActionsAPIViewTestCase(

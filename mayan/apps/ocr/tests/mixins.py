@@ -1,4 +1,6 @@
-from mayan.apps.documents.tests.mixins.document_version_mixins import DocumentVersionTestMixin
+from mayan.apps.documents.tests.mixins.document_version_mixins import (
+    DocumentVersionTestMixin
+)
 
 from ..events import event_ocr_document_version_finished
 from ..models import DocumentVersionPageOCRContent

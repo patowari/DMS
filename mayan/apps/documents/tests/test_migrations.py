@@ -6,7 +6,9 @@ from django.core.files import File
 from django.core.files.storage import FileSystemStorage
 from django.db.models.signals import post_migrate, post_save
 
-from mayan.apps.databases.literals import DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE
+from mayan.apps.databases.literals import (
+    DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE
+)
 from mayan.apps.documents.signals import signal_post_document_file_upload
 from mayan.apps.documents.tests.literals import TEST_FILE_PDF_PATH
 from mayan.apps.testing.tests.base import MayanMigratorTestCase

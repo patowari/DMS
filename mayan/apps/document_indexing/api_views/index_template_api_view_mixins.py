@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404
 
 from mayan.apps.acls.models import AccessControlList
-from mayan.apps.rest_api.api_view_mixins import AsymmetricSerializerAPIViewMixin
+from mayan.apps.rest_api.api_view_mixins import (
+    AsymmetricSerializerAPIViewMixin
+)
 
 from ..models.index_template_models import IndexTemplate
 from ..permissions import (

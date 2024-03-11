@@ -14,8 +14,8 @@ from .api_views.workflow_template_api_views import (
 )
 from .api_views.workflow_template_state_api_views import (
     APIWorkflowTemplateStateActionDetailView,
-    APIWorkflowTemplateStateActionListView,
-    APIWorkflowTemplateStateListView, APIWorkflowTemplateStateView
+    APIWorkflowTemplateStateActionListView, APIWorkflowTemplateStateListView,
+    APIWorkflowTemplateStateView
 )
 from .api_views.workflow_template_state_escalation_api_views import (
     APIWorkflowTemplateStateEscalationListView,
@@ -49,9 +49,9 @@ from .views.workflow_template_state_views import (
     WorkflowTemplateStateActionCreateView,
     WorkflowTemplateStateActionDeleteView,
     WorkflowTemplateStateActionEditView, WorkflowTemplateStateActionListView,
-    WorkflowTemplateStateActionSelectionView,
-    WorkflowTemplateStateCreateView, WorkflowTemplateStateDeleteView,
-    WorkflowTemplateStateEditView, WorkflowTemplateStateListView
+    WorkflowTemplateStateActionSelectionView, WorkflowTemplateStateCreateView,
+    WorkflowTemplateStateDeleteView, WorkflowTemplateStateEditView,
+    WorkflowTemplateStateListView
 )
 from .views.workflow_template_transition_views import (
     WorkflowTemplateTransitionCreateView,

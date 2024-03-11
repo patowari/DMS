@@ -6,13 +6,14 @@ import requests
 from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.credentials.class_mixins import BackendMixinCredentialsOptional
+from mayan.apps.credentials.class_mixins import (
+    BackendMixinCredentialsOptional
+)
 
 from .classes import WorkflowAction
 from .exceptions import WorkflowStateActionError
 from .literals import (
-    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
-    DEFAULT_HTTP_ACTION_TIMEOUT
+    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT, DEFAULT_HTTP_ACTION_TIMEOUT
 )
 from .models.workflow_instance_models import WorkflowInstance
 from .models.workflow_models import Workflow
@@ -49,7 +50,7 @@ class DocumentPropertiesEditAction(WorkflowAction):
                     format_lazy(
                         '{} {}',
                         _(
-                            'The new description to be assigned to the '
+                            message='The new description to be assigned to the '
                             'document.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
@@ -129,7 +130,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
                 'workflows': {
                     'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'help_text': _(
-                        'Additional workflows to launch for the document.'
+                        message='Additional workflows to launch for the document.'
                     ),
                     'kwargs': {
                         'source_queryset': workflows_union,
@@ -199,7 +200,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                     format_lazy(
                         '{} {}',
                         _(
-                            'The HTTP method to use for the request. '
+                            message='The HTTP method to use for the request. '
                             'Typical choices are OPTIONS, HEAD, POST, GET, '
                             'PUT, PATCH, DELETE.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
@@ -217,11 +218,11 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                     format_lazy(
                         '{} {} {}',
                         _(
-                            'Username to use for making the request with '
+                            message='Username to use for making the request with '
                             'HTTP Basic Auth.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
                         _(
-                            'The credential object is available as '
+                            message='The credential object is available as '
                             '{{ credential }}.'
                         )
                     )
@@ -239,11 +240,11 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                     format_lazy(
                         '{} {} {}',
                         _(
-                            'Password to use for making the request with '
+                            message='Password to use for making the request with '
                             'HTTP Basic Auth.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
                         _(
-                            'The credential object is available as '
+                            message='The credential object is available as '
                             '{{ credential }}.'
                         )
                     )
@@ -261,11 +262,11 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                     format_lazy(
                         '{} {} {}',
                         _(
-                            'Headers to send with the HTTP request. Must '
+                            message='Headers to send with the HTTP request. Must '
                             'be in JSON format.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
                         _(
-                            'The credential object is available as '
+                            message='The credential object is available as '
                             '{{ credential }}.'
                         )
                     )

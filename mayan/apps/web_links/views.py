@@ -48,7 +48,7 @@ class DocumentTypeWebLinksView(AddRemoveView):
         return {
             'object': self.main_object,
             'title': _(
-                'Web links to enable for document type: %s'
+                message='Web links to enable for document type: %s'
             ) % self.main_object
         }
 
@@ -126,7 +126,7 @@ class WebLinkDocumentTypesView(AddRemoveView):
         return {
             'object': self.main_object,
             'title': _(
-                'Document type for which to enable web link: %s'
+                message='Document type for which to enable web link: %s'
             ) % self.main_object
         }
 
@@ -162,12 +162,12 @@ class WebLinkListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Web links allow generating HTTP links from documents to '
+                message='Web links allow generating HTTP links from documents to '
                 'external resources. The link URL\'s can contain document '
                 'properties values.'
             ),
             'no_results_title': _(
-                'There are no web links'
+                message='There are no web links'
             ),
             'title': _(message='Web links')
         }
@@ -192,12 +192,12 @@ class DocumentWebLinkListView(ExternalObjectViewMixin, WebLinkListView):
             'hide_object': True,
             'no_results_icon': icon_web_link_setup,
             'no_results_text': _(
-                'Web links allow generating HTTP links from documents to '
+                message='Web links allow generating HTTP links from documents to '
                 'external resources. The link URL\'s can contain document '
                 'properties values.'
             ),
             'no_results_title': _(
-                'There are no web links for this document'
+                message='There are no web links for this document'
             ),
             'object': self.external_object,
             'title': _(message='Web links for document: %s') % self.external_object

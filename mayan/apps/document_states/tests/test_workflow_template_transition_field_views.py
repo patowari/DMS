@@ -5,7 +5,9 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldViewTestMixin
+from .mixins.workflow_template_transition_field_mixins import (
+    WorkflowTemplateTransitionFieldViewTestMixin
+)
 
 
 class WorkflowTemplateTransitionFieldViewTestCase(
@@ -162,9 +164,8 @@ class WorkflowTemplateTransitionFieldViewTestCase(
 
         response = self._request_test_workflow_template_transition_field_list_view()
         self.assertNotContains(
-            response=response,
-            text=self._test_workflow_template_transition_field.label,
-            status_code=404
+            response=response, status_code=404,
+            text=self._test_workflow_template_transition_field.label
         )
 
         events = self._get_test_events()
@@ -181,9 +182,8 @@ class WorkflowTemplateTransitionFieldViewTestCase(
 
         response = self._request_test_workflow_template_transition_field_list_view()
         self.assertContains(
-            response=response,
-            text=self._test_workflow_template_transition_field.label,
-            status_code=200
+            response=response, status_code=200,
+            text=self._test_workflow_template_transition_field.label
         )
 
         events = self._get_test_events()

@@ -7,8 +7,7 @@ from mayan.apps.documents.models.document_type_models import DocumentType
 
 from .managers import DocumentTypeSettingsManager
 from .model_mixins import (
-    DocumentFileDriverEntryBusinessLogicMixin,
-    StoredDriverBusinessLogicMixin
+    DocumentFileDriverEntryBusinessLogicMixin, StoredDriverBusinessLogicMixin
 )
 
 
@@ -44,7 +43,8 @@ class DocumentTypeSettings(models.Model):
     )
     auto_process = models.BooleanField(
         default=True, help_text=_(
-            'Automatically queue newly created documents for processing.'
+            message='Automatically queue newly created documents for '
+            'processing.'
         ), verbose_name=_(message='Auto process')
     )
 

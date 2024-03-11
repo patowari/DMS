@@ -1,4 +1,6 @@
-from mayan.apps.common.tests.literals import TEST_ARCHIVE_MSG_STRANGE_DATE_PATH
+from mayan.apps.common.tests.literals import (
+    TEST_ARCHIVE_MSG_STRANGE_DATE_PATH
+)
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_PDF_FILENAME
 

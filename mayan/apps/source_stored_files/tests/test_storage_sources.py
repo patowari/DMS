@@ -1,4 +1,6 @@
-from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
+from mayan.apps.credentials.tests.mixins import (
+    StoredCredentialPasswordUsernameTestMixin
+)
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from .mixins import SourceTestMixinStoredFile

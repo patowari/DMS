@@ -3,7 +3,9 @@ from mayan.apps.documents.events import (
     event_document_version_edited, event_document_version_created
 )
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.documents.tests.mixins.document_type_mixins import DocumentTypeTestMixin
+from mayan.apps.documents.tests.mixins.document_type_mixins import (
+    DocumentTypeTestMixin
+)
 from mayan.apps.sources.tasks import task_source_backend_action_execute
 from mayan.apps.testing.tests.base import BaseTestCase
 

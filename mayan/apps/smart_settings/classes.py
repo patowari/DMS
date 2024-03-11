@@ -8,8 +8,8 @@ import sys
 import yaml
 
 from django.apps import apps
-from django.db.utils import OperationalError, ProgrammingError
 from django.conf import settings
+from django.db.utils import OperationalError, ProgrammingError
 from django.utils.encoding import force_str
 from django.utils.functional import Promise
 from django.utils.translation import gettext_lazy as _
@@ -495,7 +495,7 @@ class Setting:
 
     get_value_choices.short_description = _(message='Choices')
     get_value_choices.help_text = _(
-        'Possible values allowed for this setting.'
+        message='Possible values allowed for this setting.'
     )
 
     def do_value_raw_set(self, raw_value):
@@ -516,7 +516,7 @@ class Setting:
         if not self.get_has_value_new():
             raise SettingsExceptionRevert(
                 _(
-                    'Cannot revert setting. Setting value has not been '
+                    message='Cannot revert setting. Setting value has not been '
                     'updated.'
                 )
             )
@@ -568,7 +568,7 @@ class Setting:
 
     get_has_value_new.short_description = _(message='Modified')
     get_has_value_new.help_text = _(
-        'The value of this setting being modified since the last restart.'
+        message='The value of this setting being modified since the last restart.'
     )
 
     def get_is_overridden(self):
@@ -576,7 +576,7 @@ class Setting:
 
     get_is_overridden.short_description = _(message='Overridden')
     get_is_overridden.help_text = _(
-        'The value of the setting is being overridden by an environment '
+        message='The value of the setting is being overridden by an environment '
         'variable.'
     )
 

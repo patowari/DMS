@@ -65,7 +65,7 @@ class StoredCredentialCreateView(ViewSingleObjectDynamicFormModelBackendCreate):
 
         return {
             'title': _(
-                'Create a "%s" credential'
+                message='Create a "%s" credential'
             ) % backend_class.label
         }
 
@@ -122,7 +122,7 @@ class StoredCredentialListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Credentials represent an identity. '
+                message='Credentials represent an identity. '
                 'These are used to when accessing external systems or '
                 'services.'
             ),

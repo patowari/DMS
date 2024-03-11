@@ -46,7 +46,7 @@ class MetadataTypeCreateView(SingleObjectCreateView):
 
 class MetadataTypeDeleteView(MultipleObjectDeleteView):
     error_message = _(
-        'Error deleting metadata type "%(instance)s"; %(exception)s'
+        message='Error deleting metadata type "%(instance)s"; %(exception)s'
     )
     model = MetadataType
     object_permission = permission_metadata_type_delete
@@ -55,13 +55,13 @@ class MetadataTypeDeleteView(MultipleObjectDeleteView):
         viewname='metadata:metadata_type_list'
     )
     success_message_plural = _(
-        '%(count)d metadata types deleted successfully.'
+        message='%(count)d metadata types deleted successfully.'
     )
     success_message_single = _(
-        'Metadata type "%(object)s" deleted successfully.'
+        message='Metadata type "%(object)s" deleted successfully.'
     )
     success_message_singular = _(
-        '%(count)d metadata type deleted successfully.'
+        message='%(count)d metadata type deleted successfully.'
     )
     title_plural = _(message='Delete the %(count)d selected metadata types.')
     title_single = _(message='Delete metadata type: %(object)s.')
@@ -105,7 +105,7 @@ class MetadataTypeListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Metadata types are user defined properties that can be '
+                message='Metadata types are user defined properties that can be '
                 'assigned values. Once created they must be associated to '
                 'document types, either as optional or required, for each. '
                 'Setting a metadata type as required for a document type '
@@ -136,15 +136,15 @@ class DocumentTypeMetadataTypeRelationshipView(RelationshipView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Create metadata type relationships to be able to associate '
+                message='Create metadata type relationships to be able to associate '
                 'them to this document type.'
             ),
             'no_results_title': _(
-                'There are no metadata type relationships available'
+                message='There are no metadata type relationships available'
             ),
             'object': self.get_object(),
             'title': _(
-                'Metadata type relationships for document type: %s'
+                message='Metadata type relationships for document type: %s'
             ) % self.get_object()
         }
 
@@ -189,7 +189,7 @@ class MetadataTypesDocumentTypeRelationshipView(
             'form_display_mode_table': True,
             'object': self.get_object(),
             'title': _(
-                'Document type relationships for metadata type: %s'
+                message='Document type relationships for metadata type: %s'
             ) % self.get_object()
         }
 

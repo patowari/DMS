@@ -1,9 +1,7 @@
 from mayan.apps.documents.permissions import permission_document_type_edit
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 
-from ..events import (
-    event_index_template_created, event_index_template_edited
-)
+from ..events import event_index_template_created, event_index_template_edited
 from ..models.index_instance_models import IndexInstanceNode, IndexTemplate
 from ..permissions import (
     permission_index_template_create, permission_index_template_delete,

@@ -1,7 +1,9 @@
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
-from mayan.apps.documents.models.document_version_page_models import DocumentVersionPage
+from mayan.apps.documents.models.document_version_page_models import (
+    DocumentVersionPage
+)
 from mayan.apps.templating.classes import Template
 
 from .models import DocumentVersionPageOCRContent
@@ -16,7 +18,7 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    'The condition that will determine if a document '
+                    message='The condition that will determine if a document '
                     'page\'s OCR content will be modified or not. The '
                     'condition is evaluated against the iterated document '
                     'page. Conditions that do not return any value, '
@@ -32,8 +34,8 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    'A template that will generate the OCR content to be '
-                    'saved.'
+                    message='A template that will generate the OCR content '
+                    'to be saved.'
                 ), 'required': False, 'model': DocumentVersionPage,
                 'model_variable': 'document_page'
             }

@@ -1,8 +1,14 @@
 from mayan.apps.documents.tasks import task_document_file_create
 
-from .document_file_action_mixins import SourceBackendActionMixinDocumentFileActionInteractive
-from .document_file_comment_mixins import SourceBackendActionMixinDocumentFileCommentInteractive
-from .document_file_filename_mixins import SourceBackendActionMixinDocumentFileFilenameInteractive
+from .document_file_action_mixins import (
+    SourceBackendActionMixinDocumentFileActionInteractive
+)
+from .document_file_comment_mixins import (
+    SourceBackendActionMixinDocumentFileCommentInteractive
+)
+from .document_file_filename_mixins import (
+    SourceBackendActionMixinDocumentFileFilenameInteractive
+)
 from .user_mixins import SourceBackendActionMixinUserInteractive
 
 

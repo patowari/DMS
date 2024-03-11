@@ -39,13 +39,13 @@ class TagAttachActionView(MultipleObjectFormActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_plural = _(
-        'Tags attached to %(count)d documents successfully.'
+        message='Tags attached to %(count)d documents successfully.'
     )
     success_message_single = _(
-        'Tags attached to document "%(object)s" successfully.'
+        message='Tags attached to document "%(object)s" successfully.'
     )
     success_message_singular = _(
-        'Tags attached to %(count)d document successfully.'
+        message='Tags attached to %(count)d document successfully.'
     )
     title_plural = _(message='Attach tags to %(count)d documents.')
     title_single = _(message='Attach tags to document: %(object)s')
@@ -180,7 +180,7 @@ class TagListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Tags are color coded properties that can be attached or '
+                message='Tags are color coded properties that can be attached or '
                 'removed from documents.'
             ),
             'no_results_title': _(message='No tags available'),
@@ -250,7 +250,7 @@ class DocumentTagListView(ExternalObjectViewMixin, TagListView):
                 ),
                 'object': self.external_object,
                 'title': _(
-                    'Tags for document: %s'
+                    message='Tags for document: %s'
                 ) % self.external_object
             }
         )
@@ -268,13 +268,13 @@ class TagRemoveActionView(MultipleObjectFormActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_plural = _(
-        'Tags removed from %(count)d documents successfully.'
+        message='Tags removed from %(count)d documents successfully.'
     )
     success_message_single = _(
-        'Tags removed from document "%(object)s" successfully.'
+        message='Tags removed from document "%(object)s" successfully.'
     )
     success_message_singular = _(
-        'Tags removed from %(count)d document successfully.'
+        message='Tags removed from %(count)d document successfully.'
     )
     title_plural = _(message='Remove tags from %(count)d documents.')
     title_single = _(message='Remove tags from document: %(object)s')

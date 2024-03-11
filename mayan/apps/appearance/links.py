@@ -1,6 +1,8 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.authentication.link_conditions import condition_user_is_authenticated
+from mayan.apps.authentication.link_conditions import (
+    condition_user_is_authenticated
+)
 from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 

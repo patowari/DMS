@@ -1,6 +1,8 @@
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
-from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
+from mayan.apps.source_compressed.source_backends.literals import (
+    SOURCE_UNCOMPRESS_CHOICE_NEVER
+)
 from mayan.apps.sources.tests.literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_MODEL,
     TEST_CASE_INTERFACE_NAME_REST_API, TEST_CASE_INTERFACE_NAME_VIEW

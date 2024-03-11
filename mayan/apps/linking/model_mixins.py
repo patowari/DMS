@@ -42,7 +42,7 @@ class SmartLinkBusinessLogicMixin:
                 )
             except Exception as exception:
                 return _(
-                    'Error generating dynamic label; %s' % str(
+                    message='Error generating dynamic label; %s' % str(
                         exception
                     )
                 )
@@ -57,7 +57,7 @@ class SmartLinkBusinessLogicMixin:
         if document.document_type.pk not in self.document_types.values_list('pk', flat=True):
             raise Exception(
                 _(
-                    'This smart link is not allowed for the selected '
+                    message='This smart link is not allowed for the selected '
                     'document\'s type.'
                 )
             )

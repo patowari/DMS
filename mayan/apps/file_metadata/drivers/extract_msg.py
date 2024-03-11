@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class ExtractMSGToolDriver(FileMetadataDriver):
     description = _(
-        'Extracts information from emails saved in Microsoft Outlook\'s '
+        message='Extracts information from emails saved in Microsoft Outlook\'s '
         '.msg files.'
     )
     label = _(message='Extract msg')

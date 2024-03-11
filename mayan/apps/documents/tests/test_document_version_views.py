@@ -1,6 +1,8 @@
 from mayan.apps.file_caching.events import event_cache_partition_purged
 from mayan.apps.file_caching.models import CachePartitionFile
-from mayan.apps.file_caching.permissions import permission_cache_partition_purge
+from mayan.apps.file_caching.permissions import (
+    permission_cache_partition_purge
+)
 from mayan.apps.file_caching.tests.mixins import CachePartitionViewTestMixin
 
 from ..document_file_actions import (

@@ -1,4 +1,6 @@
-from mayan.apps.documents.api_views.api_view_mixins import ParentObjectDocumentFileAPIViewMixin
+from mayan.apps.documents.api_views.api_view_mixins import (
+    ParentObjectDocumentFileAPIViewMixin
+)
 from mayan.apps.rest_api import generics
 
 from .models import DetachedSignature, EmbeddedSignature

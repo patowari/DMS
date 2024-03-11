@@ -515,7 +515,7 @@ class Dependency(AppsModuleLoaderMixin):
 class BinaryDependency(Dependency):
     class_name = 'binary'
     class_name_help_text = _(
-        'Executables that are called directly by the code.'
+        message='Executables that are called directly by the code.'
     )
     class_name_verbose_name = _(message='Binary')
     provider_class = OperatingSystemProvider
@@ -534,7 +534,7 @@ class BinaryDependency(Dependency):
 class JavaScriptDependency(Dependency):
     class_name = 'javascript'
     class_name_help_text = _(
-        'JavaScript libraries downloaded the from NPM registry and used for '
+        message='JavaScript libraries downloaded the from NPM registry and used for '
         'front-end functionality.'
     )
     class_name_verbose_name = _(message='JavaScript')
@@ -789,7 +789,7 @@ class PythonVersion:
 class PythonDependency(Dependency):
     class_name = 'python'
     class_name_help_text = _(
-        'Python packages downloaded from PyPI.'
+        message='Python packages downloaded from PyPI.'
     )
     class_name_verbose_name = _(message='Python')
     provider_class = PyPIRespository
@@ -843,7 +843,7 @@ class PythonDependency(Dependency):
 class GoogleFontDependency(Dependency):
     class_name = 'google_font'
     class_name_help_text = _(
-        'Fonts downloaded from fonts.googleapis.com.'
+        message='Fonts downloaded from fonts.googleapis.com.'
     )
     class_name_verbose_name = _(message='Google font')
     provider_class = GoogleFontsProvider
@@ -942,18 +942,18 @@ class GoogleFontDependency(Dependency):
 
 DependencyGroup(
     attribute_name='app_label', label=_(message='Declared in app'), help_text=_(
-        'Show dependencies by the app that declared them.'
+        message='Show dependencies by the app that declared them.'
     ), name='app'
 )
 DependencyGroup(
     attribute_name='class_name', label=_(message='Class'), help_text=_(
-        'Show the different classes of dependencies. Classes are usually '
+        message='Show the different classes of dependencies. Classes are usually '
         'divided by language or the file types of the dependency.'
     ), name='class'
 )
 DependencyGroup(
     attribute_name='check_string', label=_(message='State'), help_text=_(
-        'Show the different states of the dependencies. True means that the '
+        message='Show the different states of the dependencies. True means that the '
         'dependencies is installed and is of a correct version. False means '
         'the dependencies is missing or an incorrect version is present.'
     ), name='state'
@@ -961,7 +961,7 @@ DependencyGroup(
 DependencyGroup(
     allow_multiple=True, attribute_name='get_environments',
     label=_(message='Environments'), help_text=_(
-        'Dependencies required for an environment might not be required for '
+        message='Dependencies required for an environment might not be required for '
         'another. Example environments: Production, Development.'
     ), name='environment'
 )

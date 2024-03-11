@@ -6,7 +6,9 @@ from mayan.apps.user_management.permissions import (
     permission_user_edit, permission_user_view
 )
 from mayan.apps.user_management.querysets import get_user_queryset
-from mayan.apps.user_management.views.view_mixins import DynamicExternalUserViewMixin
+from mayan.apps.user_management.views.view_mixins import (
+    DynamicExternalUserViewMixin
+)
 from mayan.apps.views.generics import (
     SingleObjectCreateView, SingleObjectDeleteView, SingleObjectDetailView,
     SingleObjectEditView, SingleObjectListView
@@ -92,11 +94,11 @@ class ThemeListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Themes allow changing the visual appearance without '
+                message='Themes allow changing the visual appearance without '
                 'requiring code changes.'
             ),
             'no_results_title': _(
-                'There are no themes'
+                message='There are no themes'
             ),
             'title': _(message='Themes')
         }
@@ -145,7 +147,7 @@ class UserThemeSettingsEditView(
     def get_extra_context(self):
         return {
             'title': _(
-                'Edit theme settings for user: %s'
+                message='Edit theme settings for user: %s'
             ) % self.external_object,
             'object': self.external_object
         }

@@ -28,7 +28,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
             'label': _(message='Passphrase'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
-                    'The passphrase to unlock the key and allow it to be '
+                    message='The passphrase to unlock the key and allow it to be '
                     'used to sign the document file.'
                 ), 'required': False
             }
@@ -45,7 +45,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
                 'key': {
                     'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
                     'help_text': _(
-                        'Private key that will be used to sign the document '
+                        message='Private key that will be used to sign the document '
                         'file.'
                     ),
                     'kwargs': {
@@ -78,7 +78,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
         if not latest_file:
             raise WorkflowStateActionError(
                 _(
-                    'Document has no file to sign. You might be trying to '
+                    message='Document has no file to sign. You might be trying to '
                     'use this action in an initial state before the '
                     'created document is yet to be processed.'
                 )

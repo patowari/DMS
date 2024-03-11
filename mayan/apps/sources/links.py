@@ -8,7 +8,9 @@ from mayan.apps.documents.permissions import (
 )
 from mayan.apps.navigation.classes import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
-from mayan.apps.source_periodic.source_backends.mixins import SourceBackendMixinPeriodic
+from mayan.apps.source_periodic.source_backends.mixins import (
+    SourceBackendMixinPeriodic
+)
 
 from .icons import (
     icon_document_file_source_metadata_list, icon_document_upload_wizard,

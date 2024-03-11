@@ -6,9 +6,15 @@ from django.db import migrations
 def code_change_bibliographic_to_terminology(apps, schema_editor):
     Document = apps.get_model(app_label='documents', model_name='Document')
 
-    for document in Document.objects.using(alias=schema_editor.connection.alias).all():
+    queryset = Document.objects.using(
+        alias=schema_editor.connection.alias
+    ).all()
+
+    for document in queryset:
         try:
-            language = pycountry.languages.get(bibliographic=document.language)
+            language = pycountry.languages.get(
+                bibliographic=document.language
+            )
         except KeyError:
             # The pycountry version used doesn't support the 'bibliographic'
             # key. Reset the document's language to English.

@@ -2,7 +2,9 @@ import json
 from unittest import mock
 
 from mayan.apps.credentials.events import event_credential_used
-from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
+from mayan.apps.credentials.tests.mixins import (
+    StoredCredentialPasswordUsernameTestMixin
+)
 from mayan.apps.documents.events import (
     event_document_created, event_document_edited
 )
@@ -39,7 +41,9 @@ from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin
 )
-from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+from .mixins.workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionTestMixin
+)
 
 
 class HTTPWorkflowActionTestCase(

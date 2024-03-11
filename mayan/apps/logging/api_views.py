@@ -1,5 +1,7 @@
 from mayan.apps.rest_api import generics
-from mayan.apps.rest_api.api_view_mixins import ExternalContentTypeObjectAPIViewMixin
+from mayan.apps.rest_api.api_view_mixins import (
+    ExternalContentTypeObjectAPIViewMixin
+)
 
 from .permissions import (
     permission_error_log_entry_delete, permission_error_log_entry_view

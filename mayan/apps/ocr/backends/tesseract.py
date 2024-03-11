@@ -8,9 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from ..classes import OCRBackendBase
 from ..exceptions import OCRError
 
-from .literals import (
-    DEFAULT_TESSERACT_BINARY_PATH, DEFAULT_TESSERACT_TIMEOUT
-)
+from .literals import DEFAULT_TESSERACT_BINARY_PATH, DEFAULT_TESSERACT_TIMEOUT
 
 logger = logging.getLogger(name=__name__)
 

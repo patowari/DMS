@@ -9,8 +9,12 @@ from .literals import (
     TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION,
     TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL
 )
-from .mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionTestMixin
-from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+from .mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionTestMixin
+)
+from .mixins.workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionTestMixin
+)
 
 
 class WorkflowTemplateStateActionModelTestCase(

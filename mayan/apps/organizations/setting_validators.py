@@ -10,7 +10,7 @@ def validation_fuction_check_path_format(setting, raw_value):
             if cleaned_raw_value[0] == '/' or cleaned_raw_value[-1] == '/':
                 raise ValidationError(
                     message=_(
-                        'The path value must not include a leading or '
+                        message='The path value must not include a leading or '
                         'trailing slash.'
                     )
                 )

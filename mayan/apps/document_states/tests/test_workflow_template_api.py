@@ -10,15 +10,13 @@ from ..events import (
 )
 from ..models import Workflow
 from ..permissions import (
-    permission_workflow_template_create,
-    permission_workflow_template_delete, permission_workflow_template_edit,
-    permission_workflow_template_view
+    permission_workflow_template_create, permission_workflow_template_delete,
+    permission_workflow_template_edit, permission_workflow_template_view
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_LABEL
 from .mixins.workflow_template_mixins import (
-    WorkflowTemplateAPIViewTestMixin,
-    WorkflowTemplateDocumentTypeAPIViewMixin
+    WorkflowTemplateAPIViewTestMixin, WorkflowTemplateDocumentTypeAPIViewMixin
 )
 
 

@@ -7,9 +7,7 @@ import yaml
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.templating.classes import Template
 
-from .literals import (
-    CONFIGURATION_FILENAME, CONFIGURATION_FILENAME_LAST_GOOD
-)
+from .literals import CONFIGURATION_FILENAME, CONFIGURATION_FILENAME_LAST_GOOD
 
 
 class SettingNamespaceSingleton:

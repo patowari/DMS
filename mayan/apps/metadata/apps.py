@@ -17,7 +17,9 @@ from mayan.apps.common.menus import (
 from mayan.apps.databases.classes import (
     ModelFieldRelated, ModelProperty, ModelQueryFields
 )
-from mayan.apps.documents.links.document_type_links import link_document_type_list
+from mayan.apps.documents.links.document_type_links import (
+    link_document_type_list
+)
 from mayan.apps.documents.signals import signal_post_document_type_change
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
@@ -136,7 +138,7 @@ class MetadataApp(MayanAppConfig):
         ModelProperty(
             model=Document, name='metadata_value_of.< metadata type name >',
             description=_(
-                'Return the value of a specific document metadata.'
+                message='Return the value of a specific document metadata.'
             ), label=_(message='Metadata value of')
         )
 

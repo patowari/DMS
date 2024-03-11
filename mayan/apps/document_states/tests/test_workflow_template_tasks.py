@@ -2,7 +2,9 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from .mixins.workflow_template_mixins import WorkflowTemplateTaskTestMixin
-from .mixins.workflow_template_state_mixins import WorkflowTemplateStateTestMixin
+from .mixins.workflow_template_state_mixins import (
+    WorkflowTemplateStateTestMixin
+)
 
 
 class WorkflowTemplateTaskTestCase(

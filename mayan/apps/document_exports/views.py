@@ -1,6 +1,8 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.documents.models.document_version_models import DocumentVersion
+from mayan.apps.documents.models.document_version_models import (
+    DocumentVersion
+)
 from mayan.apps.organizations.utils import get_organization_installation_url
 from mayan.apps.views.generics import MultipleObjectConfirmActionView
 
@@ -14,13 +16,13 @@ class DocumentVersionExportView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'document_version_id'
     source_queryset = DocumentVersion.valid.all()
     success_message_single = _(
-        'Document version "%(object)s" export successfully queued.'
+        message='Document version "%(object)s" export successfully queued.'
     )
     success_message_singular = _(
-        '%(count)d document version export successfully queued.'
+        message='%(count)d document version export successfully queued.'
     )
     success_message_plural = _(
-        '%(count)d document versions exports successfully queued.'
+        message='%(count)d document versions exports successfully queued.'
     )
     title_plural = _(message='Export %(count)d document versions.')
     title_single = _(message='Export document version "%(object)s".')
@@ -30,7 +32,7 @@ class DocumentVersionExportView(MultipleObjectConfirmActionView):
     def get_extra_context(self):
         context = {
             'message': _(
-                'The process will be performed in the background. '
+                message='The process will be performed in the background. '
                 'The exported file will be available in the downloads area.'
             )
         }

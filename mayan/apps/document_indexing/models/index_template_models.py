@@ -13,9 +13,7 @@ from mayan.apps.events.event_managers import (
 )
 from mayan.apps.events.models import StoredEventType
 
-from ..events import (
-    event_index_template_created, event_index_template_edited
-)
+from ..events import event_index_template_created, event_index_template_edited
 from ..managers import IndexTemplateManager
 
 from .index_template_model_mixins import (
@@ -36,12 +34,12 @@ class IndexTemplate(
     )
     slug = models.SlugField(
         help_text=_(
-            'This value will be used by other apps to reference this index.'
+            message='This value will be used by other apps to reference this index.'
         ), max_length=128, unique=True, verbose_name=_(message='Slug')
     )
     enabled = models.BooleanField(
         default=True, help_text=_(
-            'Causes this index to be visible and updated when document data '
+            message='Causes this index to be visible and updated when document data '
             'changes.'
         ), verbose_name=_(message='Enabled')
     )
@@ -150,7 +148,7 @@ class IndexTemplateNode(IndexTemplateNodeBusinessLogicMixin, MPTTModel):
     )
     expression = models.TextField(
         help_text=_(
-            'Enter a template to render. Use Django\'s default templating '
+            message='Enter a template to render. Use Django\'s default templating '
             'language.'
         ),
         verbose_name=_(message='Indexing expression')
@@ -158,7 +156,7 @@ class IndexTemplateNode(IndexTemplateNodeBusinessLogicMixin, MPTTModel):
     enabled = models.BooleanField(
         default=True,
         help_text=_(
-            'Causes this node to be visible and updated when document data '
+            message='Causes this node to be visible and updated when document data '
             'changes.'
         ),
         verbose_name=_(message='Enabled')
@@ -166,7 +164,7 @@ class IndexTemplateNode(IndexTemplateNodeBusinessLogicMixin, MPTTModel):
     link_documents = models.BooleanField(
         default=False,
         help_text=_(
-            'Check this option to have this node act as a container for '
+            message='Check this option to have this node act as a container for '
             'documents and not as a parent for further nodes.'
         ),
         verbose_name=_(message='Link documents')

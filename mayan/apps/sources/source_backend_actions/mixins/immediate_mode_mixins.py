@@ -1,7 +1,9 @@
 from rest_framework import status
 from rest_framework.response import Response
 
-from mayan.apps.documents.serializers.document_serializers import DocumentSerializer
+from mayan.apps.documents.serializers.document_serializers import (
+    DocumentSerializer
+)
 from mayan.apps.documents.tasks import task_document_file_create
 
 from ..interfaces import (

@@ -1,4 +1,6 @@
-from mayan.apps.storage.download_backends.http import DownloadBackendFileDirectStorage
+from mayan.apps.storage.download_backends.http import (
+    DownloadBackendFileDirectStorage
+)
 
 from .mixins import DownloadBackendMixinDocumentFile
 

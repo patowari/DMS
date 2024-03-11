@@ -1,9 +1,13 @@
 from django.core.files import File
 
-from mayan.apps.sources.source_backend_actions.interfaces import SourceBackendActionInterface
+from mayan.apps.sources.source_backend_actions.interfaces import (
+    SourceBackendActionInterface
+)
 from mayan.apps.storage.models import SharedUploadedFile
 
-from ..source_backend_actions.interfaces import SourceBackendActionInterfaceTask
+from ..source_backend_actions.interfaces import (
+    SourceBackendActionInterfaceTask
+)
 
 from .arguments import argument_file_object, argument_shared_uploaded_file_id
 

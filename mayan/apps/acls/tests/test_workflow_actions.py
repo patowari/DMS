@@ -1,6 +1,8 @@
 from django.contrib.contenttypes.models import ContentType
 
-from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import WorkflowTemplateStateActionTestMixin
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionTestMixin
+)
 from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.testing.tests.base import BaseTestCase
 

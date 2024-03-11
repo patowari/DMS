@@ -17,7 +17,7 @@ class MailDocumentFileAttachmentView(MailingObjectAttachmentSendView):
         message='%(count)d document file queued for email delivery'
     )
     success_message_plural = _(
-        '%(count)d document files queued for email delivery'
+        message='%(count)d document files queued for email delivery'
     )
     title = 'Email document file'
     title_document = 'Email document file: %s'
@@ -29,10 +29,10 @@ class MailDocumentFileLinkView(MailingObjectLinkSendView):
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()
     success_message = _(
-        '%(count)d document file link queued for email delivery'
+        message='%(count)d document file link queued for email delivery'
     )
     success_message_plural = _(
-        '%(count)d document file links queued for email delivery'
+        message='%(count)d document file links queued for email delivery'
     )
     title = 'Email document file link'
     title_document = 'Email link for document file: %s'

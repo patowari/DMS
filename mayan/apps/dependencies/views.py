@@ -24,11 +24,11 @@ class CheckVersionView(SimpleView):
             'paragraphs': (
                 PyPIClient().check_version_verbose(),
                 _(
-                    'This process only checks the Python component of '
+                    message='This process only checks the Python component of '
                     'Mayan EDMS.'
                 ),
                 _(
-                    'It does not verify versions of other '
+                    message='It does not verify versions of other '
                     'components like packaging or deployment technologies, '
                     'such as container or virtual machine images.'
                 ),
@@ -48,7 +48,7 @@ class DependencyGroupEntryListView(SingleObjectListView):
             'object': self.get_object(),
             'subtitle': self.get_object().help_text,
             'title': _(
-                'Entries for dependency group: %s'
+                message='Entries for dependency group: %s'
             ) % self.get_object()
         }
 
@@ -98,7 +98,7 @@ class DependencyGroupEntryDetailView(SingleObjectListView):
             'hide_object': True,
             'navigation_object_list': ('group', 'entry'),
             'title': _(
-                'Dependency group and entry: %(group)s, %(entry)s'
+                message='Dependency group and entry: %(group)s, %(entry)s'
             ) % {
                 'group': group, 'entry': entry
             }

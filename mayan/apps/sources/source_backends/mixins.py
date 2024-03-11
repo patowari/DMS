@@ -24,7 +24,7 @@ class SourceBackendMixinRegularExpression:
                     'class': 'django.forms.CharField',
                     'default': '',
                     'help_text': _(
-                        'Regular expression used to select which files '
+                        message='Regular expression used to select which files '
                         'to upload.'
                     ),
                     'label': _(message='Include regular expression'),
@@ -34,7 +34,7 @@ class SourceBackendMixinRegularExpression:
                     'class': 'django.forms.CharField',
                     'default': '',
                     'help_text': _(
-                        'Regular expression used to exclude which files '
+                        message='Regular expression used to exclude which files '
                         'to upload.'
                     ),
                     'label': _(message='Exclude regular expression'),

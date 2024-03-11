@@ -7,7 +7,9 @@ from ..exceptions import (
 from ..tasks import task_source_backend_action_background_task
 
 from .interfaces import SourceBackendActionInterface
-from .mixins.source_metadata_mixins import SourceBackendActionMixinSourceMetadata
+from .mixins.source_metadata_mixins import (
+    SourceBackendActionMixinSourceMetadata
+)
 
 
 class SourceBackendActionMetaclass(type):

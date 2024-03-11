@@ -7,7 +7,7 @@ from .literals import DEFAULT_BINARY_SCANIMAGE_PATH
 
 BinaryDependency(
     label='SANE scanimage', help_text=_(
-        'Utility provided by the SANE package. Used to control the scanner '
+        message='Utility provided by the SANE package. Used to control the scanner '
         'and obtained the scanned document image.'
     ), module=__name__, name='scanimage',
     path=setting_backend_arguments.value.get(

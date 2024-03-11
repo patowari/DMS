@@ -25,7 +25,7 @@ class PrintFormView(ExternalObjectViewMixin, FormView):
         )
 
     def dispatch(self, request, *args, **kwargs):
-        result = super().dispatch(request, *args, **kwargs)
+        result = super().dispatch(request=request, *args, **kwargs)
 
         self._add_recent_document()
 
@@ -52,7 +52,7 @@ class DocumentPrintBaseView(ExternalObjectViewMixin, SimpleView):
     template_name = 'documents/document_print.html'
 
     def dispatch(self, request, *args, **kwargs):
-        result = super().dispatch(request, *args, **kwargs)
+        result = super().dispatch(request=request, *args, **kwargs)
 
         self._add_recent_document()
 

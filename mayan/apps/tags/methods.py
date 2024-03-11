@@ -16,6 +16,6 @@ def method_document_get_tags(self, permission, user):
 
 
 method_document_get_tags.help_text = _(
-    'Return the tags attached to the document.'
+    message='Return the tags attached to the document.'
 )
 method_document_get_tags.short_description = _(message='get_tags()')

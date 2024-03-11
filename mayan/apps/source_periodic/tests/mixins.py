@@ -1,4 +1,6 @@
-from mayan.apps.sources.tests.literals import TEST_CASE_ACTION_NAME_SOURCE_CREATE
+from mayan.apps.sources.tests.literals import (
+    TEST_CASE_ACTION_NAME_SOURCE_CREATE
+)
 from mayan.apps.sources.tests.mixins.base_mixins import SourceTestMixin
 
 from ..source_backends.literals import DEFAULT_PERIOD_INTERVAL

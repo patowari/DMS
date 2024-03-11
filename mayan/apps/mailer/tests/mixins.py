@@ -2,7 +2,9 @@ import json
 
 from django.core.files.base import ContentFile
 
-from mayan.apps.credentials.tests.mixins import StoredCredentialPasswordUsernameTestMixin
+from mayan.apps.credentials.tests.mixins import (
+    StoredCredentialPasswordUsernameTestMixin
+)
 from mayan.apps.events.classes import EventModelRegistry
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
@@ -12,10 +14,9 @@ from ..mailing_actions import (
 from ..models import UserMailer
 
 from .literals import (
-    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS,
-    TEST_MAILING_OBJECT_CONTENT, TEST_MAILING_OBJECT_MIME_TYPE,
-    TEST_MAILING_PROFILE_BACKEND_PATH, TEST_MAILING_PROFILE_LABEL,
-    TEST_MAILING_PROFILE_LABEL_EDITED
+    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS, TEST_MAILING_OBJECT_CONTENT,
+    TEST_MAILING_OBJECT_MIME_TYPE, TEST_MAILING_PROFILE_BACKEND_PATH,
+    TEST_MAILING_PROFILE_LABEL, TEST_MAILING_PROFILE_LABEL_EDITED
 )
 
 

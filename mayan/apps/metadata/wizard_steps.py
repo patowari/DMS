@@ -6,7 +6,9 @@ from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.sources.classes import DocumentCreateWizardStep
-from mayan.apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
+from mayan.apps.sources.wizard_steps import (
+    DocumentCreateWizardStepDocumentType
+)
 
 from .forms import DocumentMetadataFormSet
 from .models import MetadataType

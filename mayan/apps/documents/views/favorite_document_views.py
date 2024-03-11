@@ -31,7 +31,7 @@ class FavoriteDocumentListView(DocumentListView):
             {
                 'no_results_icon': icon_favorite_document_list,
                 'no_results_text': _(
-                    'Favorited documents will be listed in this view. '
+                    message='Favorited documents will be listed in this view. '
                     'Up to %(count)d documents can be favorited per user. '
                 ) % {'count': setting_favorite_count.value},
                 'no_results_title': _(message='There are no favorited documents.'),
@@ -46,10 +46,10 @@ class FavoriteAddView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message = _(
-        '%(count)d document added to favorites.'
+        message='%(count)d document added to favorites.'
     )
     success_message_plural = _(
-        '%(count)d documents added to favorites.'
+        message='%(count)d documents added to favorites.'
     )
     view_icon = icon_favorite_document_add
 
@@ -79,10 +79,10 @@ class FavoriteRemoveView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message = _(
-        '%(count)d document removed from favorites.'
+        message='%(count)d document removed from favorites.'
     )
     success_message_plural = _(
-        '%(count)d documents removed from favorites.'
+        message='%(count)d documents removed from favorites.'
     )
     view_icon = icon_favorite_document_remove
 

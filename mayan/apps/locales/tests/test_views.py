@@ -1,4 +1,6 @@
-from mayan.apps.authentication.tests.mixins import LoginViewTestMixin, LogoutViewTestMixin
+from mayan.apps.authentication.tests.mixins import (
+    LoginViewTestMixin, LogoutViewTestMixin
+)
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.permissions import (
     permission_user_edit, permission_user_view

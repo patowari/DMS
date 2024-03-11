@@ -64,7 +64,7 @@ class OriginalDocumentFilenameGenerator(BaseDocumentFilenameGenerator):
     name = 'original'
     label = _(message='Original')
     description = _(
-        'Keeps the original filename of the uploaded file.'
+        message='Keeps the original filename of the uploaded file.'
     )
 
     def upload_to(self, instance, filename):
@@ -76,7 +76,7 @@ class UUIDDocumentFilenameGenerator(BaseDocumentFilenameGenerator):
     name = 'uuid'
     label = _(message='UUID')
     description = _(
-        'Generates an immutable, random UUID (RFC 4122) for each file.'
+        message='Generates an immutable, random UUID (RFC 4122) for each file.'
     )
 
     def upload_to(self, instance, filename):
@@ -89,7 +89,7 @@ class UUIDPlusOriginalFilename(BaseDocumentFilenameGenerator):
     name = 'uuid_plus_original'
     label = _(message='UUID plus original')
     description = _(
-        'Generates an immutable, random UUID (RFC 4122) for each file and '
+        message='Generates an immutable, random UUID (RFC 4122) for each file and '
         'appends the original filename of the uploaded file.'
     )
 

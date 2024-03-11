@@ -1,4 +1,6 @@
-from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_NEVER
+from mayan.apps.source_compressed.source_backends.literals import (
+    SOURCE_UNCOMPRESS_CHOICE_NEVER
+)
 from mayan.apps.sources.tests.literals import (
     TEST_CASE_ACTION_NAME_SOURCE_CREATE, TEST_CASE_INTERFACE_NAME_MODEL,
     TEST_CASE_INTERFACE_NAME_REST_API

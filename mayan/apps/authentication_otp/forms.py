@@ -7,7 +7,9 @@ from django.utils.translation import gettext_lazy as _
 
 import mayan
 from mayan.apps.authentication.forms import AuthenticationFormBase
-from mayan.apps.authentication.literals import SESSION_MULTI_FACTOR_USER_ID_KEY
+from mayan.apps.authentication.literals import (
+    SESSION_MULTI_FACTOR_USER_ID_KEY
+)
 from mayan.apps.converter.fields import QRCodeImageField
 from mayan.apps.views.forms import DetailForm
 
@@ -17,7 +19,7 @@ from .models import UserOTPData
 class AuthenticationFormTOTP(AuthenticationFormBase):
     error_messages = {
         'invalid_token': _(
-            'Token is either invalid or expired.'
+            message='Token is either invalid or expired.'
         )
     }
 
@@ -101,7 +103,7 @@ class FormUserOTPDataEdit(forms.Form):
     secret = forms.CharField(
         disabled=True,
         help_text=_(
-            'Scan the QR code or enter the secret in your authentication '
+            message='Scan the QR code or enter the secret in your authentication '
             'device. Do not share this secret, treat it like a password.'
         ), label=_(message='Secret'), required=False, widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
@@ -114,7 +116,7 @@ class FormUserOTPDataEdit(forms.Form):
     )
     token = forms.CharField(
         help_text=_(
-            'Enter the corresponding token to validate that the secret '
+            message='Enter the corresponding token to validate that the secret '
             'was saved correct.'
         ),
         label=_(message='Token'), widget=forms.TextInput(
@@ -134,7 +136,7 @@ class FormUserOTPDataEdit(forms.Form):
         if secret:
             topt = pyotp.totp.TOTP(s=secret)
             url = topt.provisioning_uri(
-                name=user.email, issuer_name=mayan.__title__
+                issuer_name=mayan.__title__, name=user.email
             )
 
             self.fields['qr_code'].initial = url
@@ -152,7 +154,9 @@ class FormUserOTPDataEdit(forms.Form):
         if token.strip() != totp.now():
             raise ValidationError(
                 code='token_invalid',
-                message=_(message='Token is incorrect for the specified secret.')
+                message=_(
+                    message='Token is incorrect for the specified secret.'
+                )
             )
 
         return token

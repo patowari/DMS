@@ -1,6 +1,8 @@
 from django.core import mail
 
-from mayan.apps.document_exports.literals import DOCUMENT_VERSION_EXPORT_MIMETYPE
+from mayan.apps.document_exports.literals import (
+    DOCUMENT_VERSION_EXPORT_MIMETYPE
+)
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.testing.tests.base import BaseTestCase
 

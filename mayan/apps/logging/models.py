@@ -9,8 +9,7 @@ from mayan.apps.events.event_managers import EventManagerMethodAfter
 from .events import event_error_log_deleted
 from .managers import ErrorLogPartitionEntryManager
 from .model_mixins import (
-    ErrorLogPartitionEntryBusinessLogicMixin,
-    StoredErrorLogBusinessLogicMixin
+    ErrorLogPartitionEntryBusinessLogicMixin, StoredErrorLogBusinessLogicMixin
 )
 
 

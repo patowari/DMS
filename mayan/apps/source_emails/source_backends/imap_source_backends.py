@@ -47,7 +47,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                     'class': 'django.forms.fields.CharField',
                     'default': DEFAULT_EMAIL_IMAP_MAILBOX,
                     'help_text': _(
-                        'IMAP Mailbox from which to check for messages.'
+                        message='IMAP Mailbox from which to check for messages.'
                     ),
                     'kwargs': {
                         'max_length': 64,
@@ -59,7 +59,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                     'class': 'django.forms.fields.CharField',
                     'default': DEFAULT_EMAIL_IMAP_SEARCH_CRITERIA,
                     'help_text': _(
-                        'Criteria to use when searching for messages to '
+                        message='Criteria to use when searching for messages to '
                         'process. Use the format specified in '
                         'https://tools.ietf.org/html/rfc2060.html#section-6.4.4'
                     ),
@@ -71,7 +71,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                     'class': 'django.forms.fields.CharField',
                     'default': DEFAULT_EMAIL_IMAP_STORE_COMMANDS,
                     'help_text': _(
-                        'IMAP STORE command to execute on messages after '
+                        message='IMAP STORE command to execute on messages after '
                         'they are processed. One command per line. Use '
                         'the commands specified in '
                         'https://tools.ietf.org/html/rfc2060.html#section-6.4.6 '
@@ -84,7 +84,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                     'class': 'django.forms.fields.BooleanField',
                     'default': True,
                     'help_text': _(
-                        'Execute the IMAP expunge command after processing '
+                        message='Execute the IMAP expunge command after processing '
                         'each email message.'
                     ),
                     'label': _(message='Execute expunge'),
@@ -94,7 +94,7 @@ class SourceBackendIMAPEmail(SourceBackendMixinEmail, SourceBackend):
                     'blank': True,
                     'class': 'django.forms.fields.CharField',
                     'help_text': _(
-                        'IMAP Mailbox to which processed messages will '
+                        message='IMAP Mailbox to which processed messages will '
                         'be copied.'
                     ),
                     'label': _(message='Destination mailbox'),

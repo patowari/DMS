@@ -43,7 +43,7 @@ class DocumentFileActionAppendNewPages(DocumentFileAction):
 class DocumentFileActionNothing(DocumentFileAction):
     action_id = 'keep'
     label = _(
-        'Keep. Do not create a new version and keep the current '
+        message='Keep. Do not create a new version and keep the current '
         'version pages.'
     )
 

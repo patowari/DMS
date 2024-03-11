@@ -10,7 +10,9 @@ from .literals import (
     TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
     TEST_WORKFLOW_TEMPLATE_STATE_LABEL
 )
-from .mixins.workflow_template_state_mixins import WorkflowTemplateStateViewTestMixin
+from .mixins.workflow_template_state_mixins import (
+    WorkflowTemplateStateViewTestMixin
+)
 
 
 class WorkflowTemplateStateViewTestCase(
@@ -214,8 +216,8 @@ class WorkflowTemplateStateViewTestCase(
 
         response = self._request_test_workflow_template_state_list_view()
         self.assertContains(
-            response=response, text=self._test_workflow_template_state_list[0].label,
-            status_code=200
+            response=response, status_code=200,
+            text=self._test_workflow_template_state_list[0].label
         )
 
         events = self._get_test_events()

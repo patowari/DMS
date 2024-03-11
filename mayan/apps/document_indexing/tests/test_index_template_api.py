@@ -5,9 +5,7 @@ from mayan.apps.documents.permissions import (
 )
 from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 
-from ..events import (
-    event_index_template_created, event_index_template_edited
-)
+from ..events import event_index_template_created, event_index_template_edited
 from ..models.index_instance_models import (
     IndexInstanceNode, IndexTemplate, IndexTemplateNode
 )

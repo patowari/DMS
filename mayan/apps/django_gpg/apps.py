@@ -15,8 +15,8 @@ from .classes import KeyStub
 from .events import event_key_downloaded
 from .links import (
     link_key_delete, link_key_detail, link_key_download, link_key_query,
-    link_key_receive, link_key_setup, link_key_upload,
-    link_private_key_list, link_public_key_list
+    link_key_receive, link_key_setup, link_key_upload, link_private_key_list,
+    link_public_key_list
 )
 from .permissions import (
     permission_key_delete, permission_key_download, permission_key_sign,
@@ -71,7 +71,7 @@ class DjangoGPGApp(MayanAppConfig):
         )
         SourceColumn(
             func=lambda context: context['object'].expires or _(
-                'No expiration'
+                message='No expiration'
             ), include_label=True, label=_(message='Expiration date'),
             source=KeyStub
         )

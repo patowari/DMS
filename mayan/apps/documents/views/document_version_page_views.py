@@ -9,9 +9,7 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import RedirectView
 
 from mayan.apps.common.settings import setting_home_view
-from mayan.apps.converter.literals import (
-    DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
-)
+from mayan.apps.converter.literals import DEFAULT_ROTATION, DEFAULT_ZOOM_LEVEL
 from mayan.apps.converter.transformations import (
     TransformationResize, TransformationRotate, TransformationZoom
 )
@@ -30,7 +28,9 @@ from ..icons import (
     icon_document_version_page_list, icon_document_version_page_list_remap
 )
 from ..links.document_version_links import link_document_version_modification
-from ..links.document_version_page_links import link_document_version_page_list_remap
+from ..links.document_version_page_links import (
+    link_document_version_page_list_remap
+)
 from ..models.document_version_models import DocumentVersion
 from ..models.document_version_page_models import DocumentVersionPage
 from ..permissions import (
@@ -53,7 +53,7 @@ class DocumentVersionPageDeleteView(SingleObjectDeleteView):
     def get_extra_context(self):
         return {
             'message': _(
-                'The page number of this page will be skipped. If you '
+                message='The page number of this page will be skipped. If you '
                 'want to achieve sequential page numbering, use the '
                 'page remap action instead.'
             ),
@@ -99,7 +99,7 @@ class DocumentVersionPageListView(
                 ),
             ),
             'no_results_text': _(
-                'Document version pages are links to actual content pages. '
+                message='Document version pages are links to actual content pages. '
                 'Create them using the page remap actions or the version '
                 'modification action.'
             ),
@@ -108,7 +108,7 @@ class DocumentVersionPageListView(
             ),
             'object': self.external_object,
             'title': _(
-                'Pages of document version: %s'
+                message='Pages of document version: %s'
             ) % self.external_object
         }
 
@@ -187,13 +187,13 @@ class DocumentVersionPageListRemapView(ExternalObjectViewMixin, FormView):
             'list_as_items': True,
             'no_results_icon': icon_document_version_page_list_remap,
             'no_results_text': _(
-                'There are no sources available to remap for this document '
+                message='There are no sources available to remap for this document '
                 'version.'
             ),
             'no_results_title': _(message='No page sources available'),
             'object': self.external_object,
             'title': _(
-                'Remap pages of document version: %s'
+                message='Remap pages of document version: %s'
             ) % self.external_object
         }
 
@@ -312,7 +312,7 @@ class DocumentVersionPageNavigationNext(DocumentVersionPageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    'There are no more pages in this document'
+                    message='There are no more pages in this document'
                 ), request=self.request
             )
             return {'document_version_page_id': self.external_object.pk}
@@ -328,7 +328,7 @@ class DocumentVersionPageNavigationPrevious(DocumentVersionPageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    'You are already at the first page of this document'
+                    message='You are already at the first page of this document'
                 ), request=self.request
             )
             return {'document_version_page_id': self.external_object.pk}

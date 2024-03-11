@@ -1,5 +1,7 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.documents.tests.mixins.document_version_mixins import DocumentVersionTestMixin
+from mayan.apps.documents.tests.mixins.document_version_mixins import (
+    DocumentVersionTestMixin
+)
 
 from .literals import TEST_DOCUMENT_VERSION_OCR_CONTENT
 from .mixins import DocumentVersionOCRTestMixin

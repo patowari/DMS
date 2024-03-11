@@ -6,7 +6,9 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.document_states.exceptions import WorkflowStateActionError
-from mayan.apps.document_states.models.workflow_instance_models import WorkflowInstance
+from mayan.apps.document_states.models.workflow_instance_models import (
+    WorkflowInstance
+)
 
 from .models import DocumentMetadata, MetadataType
 from .permissions import (
@@ -43,7 +45,7 @@ class DocumentMetadataAddAction(WorkflowAction):
                 'metadata_types': {
                     'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoiceMultiple',
                     'help_text': _(
-                        'Metadata types to add to the document.'
+                        message='Metadata types to add to the document.'
                     ),
                     'kwargs': {
                         'source_queryset': metadata_type_queryset,
@@ -78,7 +80,7 @@ class DocumentMetadataAddAction(WorkflowAction):
                 """This document already has the metadata type added."""
                 raise WorkflowStateActionError(
                     _(
-                        'Unable to add metadata type "%(metadata_type)s" '
+                        message='Unable to add metadata type "%(metadata_type)s" '
                         'from document: %(document)s. Exception: '
                         '%(exception)s'
                     ) % {
@@ -110,7 +112,7 @@ class DocumentMetadataEditAction(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    'Value to assign to the metadata. '
+                    message='Value to assign to the metadata. '
                     'Can be a literal value or template code.'
                 ),
                 'model': WorkflowInstance,
@@ -136,7 +138,7 @@ class DocumentMetadataEditAction(WorkflowAction):
                 'metadata_type': {
                     'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
                     'help_text': _(
-                        'Metadata types to edit.'
+                        message='Metadata types to edit.'
                     ),
                     'kwargs': {
                         'source_queryset': metadata_type_queryset,
@@ -175,7 +177,7 @@ class DocumentMetadataEditAction(WorkflowAction):
             """
             raise WorkflowStateActionError(
                 _(
-                    'Unable to edit metadata type "%(metadata_type)s" '
+                    message='Unable to edit metadata type "%(metadata_type)s" '
                     'from document: %(document)s. Document does not have '
                     'the metadata type to be edited. Exception: '
                     '%(exception)s'
@@ -206,7 +208,7 @@ class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
         fields = super().get_form_fields()
 
         fields['metadata_types']['help_text'] = _(
-            'Metadata types to remove from the document.'
+            message='Metadata types to remove from the document.'
         )
 
         return fields
@@ -222,7 +224,7 @@ class DocumentMetadataRemoveAction(DocumentMetadataAddAction):
             except ValidationError as exception:
                 raise WorkflowStateActionError(
                     _(
-                        'Unable to remove metadata type "%(metadata_type)s" '
+                        message='Unable to remove metadata type "%(metadata_type)s" '
                         'from document: %(document)s. Exception: '
                         '%(exception)s'
                     ) % {

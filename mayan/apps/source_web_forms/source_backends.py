@@ -3,12 +3,16 @@ import logging
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
+from mayan.apps.source_compressed.source_backends.mixins import (
+    SourceBackendMixinCompressed
+)
 from mayan.apps.source_interactive.source_backend_actions.interactive_actions import (
     SourceBackendActionInteractiveDocumentUpload,
     SourceBackendActionInteractiveDocumentFileUpload
 )
-from mayan.apps.source_interactive.source_backends.mixins import SourceBackendMixinInteractive
+from mayan.apps.source_interactive.source_backends.mixins import (
+    SourceBackendMixinInteractive
+)
 from mayan.apps.sources.forms import WebFormUploadFormHTML5
 from mayan.apps.sources.source_backends.base import SourceBackend
 from mayan.apps.views.settings import setting_show_dropzone_submit_button

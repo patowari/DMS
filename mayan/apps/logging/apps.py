@@ -8,8 +8,7 @@ from mayan.apps.views.column_widgets import ObjectLinkWidget
 
 from .links import (
     link_global_error_log_partition_entry_list,
-    link_object_error_log_entry_list_clear,
-    link_object_error_log_entry_delete
+    link_object_error_log_entry_list_clear, link_object_error_log_entry_delete
 )
 from .mixins import LoggingAppConfigMixin
 

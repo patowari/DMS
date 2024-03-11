@@ -281,7 +281,7 @@ class DocumentVersionPageBusinessLogicMixin:
 
     def get_label(self):
         return _(
-            '%(document_version)s page %(page_number)d of %(total_pages)d'
+            message='%(document_version)s page %(page_number)d of %(total_pages)d'
         ) % {
             'document_version': str(self.document_version),
             'page_number': self.page_number,

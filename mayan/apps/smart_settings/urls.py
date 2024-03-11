@@ -2,8 +2,7 @@ from django.urls import re_path
 
 from .views import (
     SettingClusterConfigurationFileSave, SettingClusterNamespaceListView,
-    SettingNamespaceDetailView, SettingValueEditView,
-    SettingValueRevertView
+    SettingNamespaceDetailView, SettingValueEditView, SettingValueRevertView
 )
 
 urlpatterns = [

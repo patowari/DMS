@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404
 
-from rest_framework.generics import get_object_or_404 as rest_get_object_or_404
+from rest_framework.generics import (
+    get_object_or_404 as rest_get_object_or_404
+)
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
@@ -16,9 +18,13 @@ from ..interfaces import (
 from .arguments import (
     argument_document, argument_document_id, argument_document_id_optional
 )
-from .document_description_mixins import SourceBackendActionMixinDocumentDescriptionInteractive
+from .document_description_mixins import (
+    SourceBackendActionMixinDocumentDescriptionInteractive
+)
 from .document_label_mixins import SourceBackendActionMixinLabelInteractive
-from .document_language_mixins import SourceBackendActionMixinLanguageInteractive
+from .document_language_mixins import (
+    SourceBackendActionMixinLanguageInteractive
+)
 from .user_mixins import SourceBackendActionMixinUserInteractive
 
 

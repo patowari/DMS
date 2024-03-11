@@ -4,7 +4,7 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT = _(
-    'Can be a static value or a template. '
+    message='Can be a static value or a template. '
     'In addition to the workflow instance, the template '
     'receives the workflow instance context which itself '
     'includes the "entry_log" (containing '

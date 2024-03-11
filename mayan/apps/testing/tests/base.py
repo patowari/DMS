@@ -18,8 +18,7 @@ from .mixins import (
     DescriptorLeakCheckTestCaseMixin, DownloadTestCaseMixin,
     ModelTestCaseMixin, OpenFileCheckTestCaseMixin,
     RandomPrimaryKeyModelMonkeyPatchMixin, SilenceLoggerTestCaseMixin,
-    TempfileCheckTestCasekMixin, TestModelTestCaseMixin,
-    TestViewTestCaseMixin
+    TempfileCheckTestCasekMixin, TestModelTestCaseMixin, TestViewTestCaseMixin
 )
 
 

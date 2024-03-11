@@ -8,7 +8,9 @@ from django.urls import include, re_path
 from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.organizations.settings import setting_organization_url_base_path
+from mayan.apps.organizations.settings import (
+    setting_organization_url_base_path
+)
 from mayan.apps.templating.classes import AJAXTemplate
 
 from .handlers import handler_pre_initial_setup, handler_pre_upgrade

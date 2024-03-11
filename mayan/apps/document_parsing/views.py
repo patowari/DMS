@@ -7,7 +7,9 @@ from mayan.apps.documents.forms.document_type_forms import (
     DocumentTypeFilteredSelectForm
 )
 from mayan.apps.documents.models.document_file_models import DocumentFile
-from mayan.apps.documents.models.document_file_page_models import DocumentFilePage
+from mayan.apps.documents.models.document_file_page_models import (
+    DocumentFilePage
+)
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.storage.views.download_views import ViewSingleObjectDownload
 from mayan.apps.views.generics import (
@@ -33,27 +35,27 @@ from .permissions import (
 
 class DocumentFileContentDeleteView(MultipleObjectDeleteView):
     error_message = _(
-        'Error deleting document version content "%(instance)s"; '
+        message='Error deleting document version content "%(instance)s"; '
         '%(exception)s'
     )
     object_permission = permission_document_file_parse
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()
     success_message_plural = _(
-        'Content of %(count)d document versions deleted successfully.'
+        message='Content of %(count)d document versions deleted successfully.'
     )
     success_message_single = _(
-        'Content of "%(object)s" deleted successfully.'
+        message='Content of "%(object)s" deleted successfully.'
     )
     success_message_singular = _(
-        'Content of %(count)d document version deleted successfully.'
+        message='Content of %(count)d document version deleted successfully.'
     )
     title_single = _(message='Delete the content of: %(object)s.')
     title_singular = _(
-        'Delete the content of the %(count)d selected document version.'
+        message='Delete the content of the %(count)d selected document version.'
     )
     title_plural = _(
-        'Delete the content of the %(count)d selected document versions.'
+        message='Delete the content of the %(count)d selected document versions.'
     )
     view_icon = icon_document_file_content_single_delete
 
@@ -131,10 +133,10 @@ class DocumentFileSubmitView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()
     success_message = _(
-        '%(count)d document file added to the parsing queue'
+        message='%(count)d document file added to the parsing queue'
     )
     success_message_plural = _(
-        '%(count)d documents files added to the parsing queue'
+        message='%(count)d documents files added to the parsing queue'
     )
     view_icon = icon_document_file_parsing_single_submit
 
@@ -156,7 +158,7 @@ class DocumentFileSubmitView(MultipleObjectConfirmActionView):
                 {
                     'object': queryset.first(),
                     'title': _(
-                        'Submit document file "%s" to the parsing queue'
+                        message='Submit document file "%s" to the parsing queue'
                     ) % queryset.first()
                 }
             )
@@ -186,7 +188,7 @@ class DocumentTypeSettingsEditView(
         return {
             'object': self.get_document_type(),
             'title': _(
-                'Edit parsing settings for document type: %s.'
+                message='Edit parsing settings for document type: %s.'
             ) % self.get_document_type()
         }
 
@@ -218,7 +220,7 @@ class DocumentTypeSubmitView(FormView):
 
         messages.success(
             message=_(
-                '%(count)d documents added to the parsing queue.'
+                message='%(count)d documents added to the parsing queue.'
             ) % {
                 'count': count
             }, request=self.request

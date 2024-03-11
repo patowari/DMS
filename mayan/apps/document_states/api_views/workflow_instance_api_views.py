@@ -12,7 +12,9 @@ from ..serializers.workflow_instance_serializers import (
     WorkflowInstanceLaunchSerializer, WorkflowInstanceLogEntrySerializer,
     WorkflowInstanceSerializer
 )
-from ..serializers.workflow_template_transition_serializers import WorkflowTemplateTransitionSerializer
+from ..serializers.workflow_template_transition_serializers import (
+    WorkflowTemplateTransitionSerializer
+)
 
 
 class APIWorkflowInstanceLaunchActionView(generics.ObjectActionAPIView):

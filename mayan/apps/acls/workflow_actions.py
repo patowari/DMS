@@ -44,7 +44,7 @@ class GrantAccessAction(WorkflowAction):
             'label': _(message='Object type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
                 'help_text': _(
-                    'Type of the object for which the access will be '
+                    message='Type of the object for which the access will be '
                     'modified.'
                 ),
                 'queryset': ContentType.objects.none(),
@@ -54,7 +54,7 @@ class GrantAccessAction(WorkflowAction):
             'label': _(message='Object ID'),
             'class': 'django.forms.IntegerField', 'kwargs': {
                 'help_text': _(
-                    'Numeric identifier of the object for which the access '
+                    message='Numeric identifier of the object for which the access '
                     'will be modified.'
                 ), 'required': True
             }
@@ -68,7 +68,7 @@ class GrantAccessAction(WorkflowAction):
             'label': _(message='Permissions'),
             'class': 'django.forms.MultipleChoiceField', 'kwargs': {
                 'help_text': _(
-                    'Permissions to grant/revoke to/from the role for the '
+                    message='Permissions to grant/revoke to/from the role for the '
                     'object selected above.'
                 ), 'choices': (),
                 'required': True
@@ -204,7 +204,7 @@ class GrantDocumentAccessAction(WorkflowAction):
             'label': _(message='Permissions'),
             'class': 'django.forms.MultipleChoiceField', 'kwargs': {
                 'help_text': _(
-                    'Permissions to grant/revoke to/from the role for the '
+                    message='Permissions to grant/revoke to/from the role for the '
                     'object selected above.'
                 ), 'choices': (),
                 'required': True

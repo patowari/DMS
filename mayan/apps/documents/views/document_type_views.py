@@ -71,7 +71,7 @@ class DocumentTypeListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Document types are the most basic units of configuration. '
+                message='Document types are the most basic units of configuration. '
                 'Everything in the system will depend on them. '
                 'Define a document type for each type of physical '
                 'document you intend to upload. Example document types: '
@@ -155,7 +155,7 @@ class DocumentTypeFilenameCreateView(
             'document_type': self.external_object,
             'navigation_object_list': ('document_type',),
             'title': _(
-                'Create quick label for document type: %s'
+                message='Create quick label for document type: %s'
             ) % self.external_object
         }
 
@@ -175,7 +175,7 @@ class DocumentTypeFilenameDeleteView(SingleObjectDeleteView):
             'filename': self.object,
             'navigation_object_list': ('document_type', 'filename',),
             'title': _(
-                'Delete the quick label: %(label)s, from document type '
+                message='Delete the quick label: %(label)s, from document type '
                 '"%(document_type)s"?'
             ) % {
                 'document_type': self.object.document_type,
@@ -204,7 +204,7 @@ class DocumentTypeFilenameEditView(SingleObjectEditView):
             'filename': self.object,
             'navigation_object_list': ('document_type', 'filename',),
             'title': _(
-                'Edit quick label "%(filename)s" from document type '
+                message='Edit quick label "%(filename)s" from document type '
                 '"%(document_type)s"'
             ) % {
                 'document_type': self.object.document_type,
@@ -243,16 +243,16 @@ class DocumentTypeFilenameListView(
                 )
             ),
             'no_results_text': _(
-                'Quick labels are predetermined filenames that allow '
+                message='Quick labels are predetermined filenames that allow '
                 'the quick renaming of documents as they are uploaded '
                 'by selecting them from a list. Quick labels can also '
                 'be used after the documents have been uploaded.'
             ),
             'no_results_title': _(
-                'There are no quick labels for this document type'
+                message='There are no quick labels for this document type'
             ),
             'title': _(
-                'Quick labels for document type: %s'
+                message='Quick labels for document type: %s'
             ) % self.external_object
         }
 
@@ -274,7 +274,7 @@ class DocumentTypeFilenameGeneratorEditView(SingleObjectEditView):
         return {
             'object': self.object,
             'title': _(
-                'Filename generation setup for document type: %s'
+                message='Filename generation setup for document type: %s'
             ) % self.object
         }
 

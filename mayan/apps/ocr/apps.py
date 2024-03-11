@@ -16,8 +16,7 @@ from mayan.apps.events.classes import ModelEventType
 from .events import (
     event_ocr_document_version_content_deleted,
     event_ocr_document_version_page_content_edited,
-    event_ocr_document_version_finished,
-    event_ocr_document_version_submitted
+    event_ocr_document_version_finished, event_ocr_document_version_submitted
 )
 from .handlers import (
     handler_initialize_new_ocr_settings, handler_ocr_document_version
@@ -118,8 +117,8 @@ class OCRApp(MayanAppConfig):
         )
         ModelProperty(
             description=_(
-                'A generator returning the document\'s version pages OCR '
-                'content.'
+                message='A generator returning the document\'s version pages '
+                'OCR content.'
             ), label=_(message='OCR content'), model=Document,
             name='ocr_content'
         )

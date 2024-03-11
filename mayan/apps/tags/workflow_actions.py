@@ -31,7 +31,7 @@ class AttachTagAction(WorkflowAction):
                 'tags': {
                     'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
                     'help_text': _(
-                        'Tags to attach to the document.'
+                        message='Tags to attach to the document.'
                     ),
                     'kwargs': {
                         'source_model': Tag,

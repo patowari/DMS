@@ -1,7 +1,9 @@
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.navigation.classes import Link
-from mayan.apps.user_management.link_conditions import condition_user_is_not_super_user
+from mayan.apps.user_management.link_conditions import (
+    condition_user_is_not_super_user
+)
 from mayan.apps.user_management.permissions import permission_user_edit
 
 from .icons import icon_impersonate_start, icon_logout, icon_password_change

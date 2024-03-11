@@ -10,7 +10,7 @@ from .tasks import (
 class DocumentVersionModificationPagesAppend(DocumentVersionModification):
     label = _(message='Append all file pages')
     description = _(
-        'The current pages will be deleted and then all the '
+        message='The current pages will be deleted and then all the '
         'document file pages will be appended as pages of this '
         'document version.'
     )

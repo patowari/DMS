@@ -5,8 +5,8 @@ from .api_views import (
     APIDocumentCheckoutView
 )
 from .views import (
-    DocumentCheckInView, DocumentCheckOutDetailView,
-    DocumentCheckOutListView, DocumentCheckOutView
+    DocumentCheckInView, DocumentCheckOutDetailView, DocumentCheckOutListView,
+    DocumentCheckOutView
 )
 
 urlpatterns = [

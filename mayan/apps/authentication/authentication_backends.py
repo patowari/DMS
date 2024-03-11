@@ -7,7 +7,9 @@ from mayan.apps.common.utils import get_class_full_name
 from .classes import (
     AuthenticationBackend, AuthenticationBackendRememberMeMixin
 )
-from .django_authentication_backends import DjangoAuthenticationBackendModelEmail
+from .django_authentication_backends import (
+    DjangoAuthenticationBackendModelEmail
+)
 from .forms import (
     AuthenticationFormEmailPassword, AuthenticationFormUsernamePassword
 )

@@ -2,15 +2,15 @@ from django.shortcuts import get_object_or_404
 
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_view
-from mayan.apps.documents.serializers.document_serializers import DocumentSerializer
+from mayan.apps.documents.serializers.document_serializers import (
+    DocumentSerializer
+)
 from mayan.apps.rest_api import generics
 from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 
 from ..models.index_instance_models import IndexInstance
 from ..permissions import permission_index_instance_view
-from ..serializers import (
-    IndexInstanceNodeSerializer, IndexInstanceSerializer
-)
+from ..serializers import IndexInstanceNodeSerializer, IndexInstanceSerializer
 
 from .index_instance_api_view_mixins import APIIndexInstanceNodeViewMixin
 

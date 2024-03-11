@@ -2,7 +2,9 @@ from mayan.apps.documents.api_views.api_view_mixins import (
     ParentObjectDocumentAPIViewMixin
 )
 from mayan.apps.documents.permissions import permission_document_view
-from mayan.apps.documents.serializers.document_serializers import DocumentSerializer
+from mayan.apps.documents.serializers.document_serializers import (
+    DocumentSerializer
+)
 from mayan.apps.rest_api import generics
 
 from .models import DuplicateBackendEntry

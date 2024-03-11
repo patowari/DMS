@@ -3,10 +3,14 @@ from mayan.apps.converter.permissions import (
     permission_transformation_delete, permission_transformation_edit
 )
 from mayan.apps.converter.tests.mixins import LayerTestMixin
-from mayan.apps.documents.tests.literals import TEST_FILE_MULTI_PAGE_TIFF_FILENAME
+from mayan.apps.documents.tests.literals import (
+    TEST_FILE_MULTI_PAGE_TIFF_FILENAME
+)
 from mayan.apps.file_caching.events import event_cache_partition_purged
 from mayan.apps.file_caching.models import CachePartitionFile
-from mayan.apps.file_caching.permissions import permission_cache_partition_purge
+from mayan.apps.file_caching.permissions import (
+    permission_cache_partition_purge
+)
 from mayan.apps.file_caching.tests.mixins import CachePartitionViewTestMixin
 
 from ..events import (

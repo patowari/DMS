@@ -1,5 +1,7 @@
 from mayan.apps.documents.permissions import permission_document_view
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin
+)
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..events import event_tag_attached, event_tag_removed

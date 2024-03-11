@@ -25,17 +25,17 @@ from .permissions import (
 
 class DocumentCheckInView(MultipleObjectConfirmActionView):
     error_message = _(
-        'Unable to check in document "%(instance)s"; %(exception)s'
+        message='Unable to check in document "%(instance)s"; %(exception)s'
     )
     pk_url_kwarg = 'document_id'
     success_message_plural = _(
-        '%(count)d documents checked in successfully.'
+        message='%(count)d documents checked in successfully.'
     )
     success_message_single = _(
-        'Document "%(object)s" checked in successfully.'
+        message='Document "%(object)s" checked in successfully.'
     )
     success_message_singular = _(
-        '%(count)d document checked in successfully.'
+        message='%(count)d document checked in successfully.'
     )
     title_plural = _(message='Check in %(count)d documents.')
     title_single = _(message='Check in document "%(object)s".')
@@ -92,20 +92,20 @@ class DocumentCheckInView(MultipleObjectConfirmActionView):
 
 class DocumentCheckOutView(MultipleObjectFormActionView):
     error_message = _(
-        'Unable to checkout document "%(instance)s"; %(exception)s'
+        message='Unable to checkout document "%(instance)s"; %(exception)s'
     )
     form_class = DocumentCheckOutForm
     object_permission = permission_document_check_out
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_plural = _(
-        '%(count)d documents checked out successfully.'
+        message='%(count)d documents checked out successfully.'
     )
     success_message_single = _(
-        'Document "%(object)s" checked out successfully.'
+        message='Document "%(object)s" checked out successfully.'
     )
     success_message_singular = _(
-        '%(count)d document checked out successfully.'
+        message='%(count)d document checked out successfully.'
     )
     title_plural = _(message='Checkout %(count)d documents.')
     title_single = _(message='Checkout document "%(object)s".')
@@ -157,7 +157,7 @@ class DocumentCheckOutDetailView(SingleObjectDetailView):
         return {
             'object': self.object,
             'title': _(
-                'Check out details for document: %s'
+                message='Check out details for document: %s'
             ) % self.object
         }
 
@@ -178,7 +178,7 @@ class DocumentCheckOutListView(DocumentListView):
             {
                 'no_results_icon': icon_check_out_info,
                 'no_results_text': _(
-                    'Checking out a document, blocks certain operations '
+                    message='Checking out a document, blocks certain operations '
                     'for a predetermined amount of time.'
                 ),
                 'no_results_title': _(message='No documents have been checked out'),

@@ -11,8 +11,7 @@ from rest_framework.fields import (  # NOQA
 )
 from rest_framework.relations import (  # NOQA
     HyperlinkedIdentityField, HyperlinkedRelatedField, ManyRelatedField,
-    PrimaryKeyRelatedField, RelatedField, SlugRelatedField,
-    StringRelatedField
+    PrimaryKeyRelatedField, RelatedField, SlugRelatedField, StringRelatedField
 )
 from rest_framework.reverse import reverse
 from rest_framework.serializers import (

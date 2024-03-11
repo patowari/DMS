@@ -62,7 +62,7 @@ class DocumentTemplateSandboxView(ExternalObjectViewMixin, FormView):
         except exception_list as exception:
             result = ''
             error_message = _(
-                'Template error; %(exception)s'
+                message='Template error; %(exception)s'
             ) % {
                 'exception': exception
             }

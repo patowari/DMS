@@ -15,9 +15,7 @@ from ..permissions import (
     permission_document_type_edit, permission_document_type_view
 )
 
-from .literals import (
-    TEST_DOCUMENT_TYPE_LABEL, TEST_DOCUMENT_TYPE_QUICK_LABEL
-)
+from .literals import TEST_DOCUMENT_TYPE_LABEL, TEST_DOCUMENT_TYPE_QUICK_LABEL
 from .mixins.document_type_mixins import (
     DocumentTypeAPIViewTestMixin, DocumentTypeQuickLabelAPIViewTestMixin
 )

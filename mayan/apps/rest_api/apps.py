@@ -5,7 +5,9 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_tools
-from mayan.apps.organizations.settings import setting_organization_url_base_path
+from mayan.apps.organizations.settings import (
+    setting_organization_url_base_path
+)
 
 from .links import (
     link_api, link_api_documentation, link_api_documentation_redoc

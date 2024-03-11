@@ -59,7 +59,7 @@ class ACLsApp(MayanAppConfig):
             attribute='content_object',
             is_identifier=True,
             help_text=_(
-                'Object for which the access is granted. When sorting '
+                message='Object for which the access is granted. When sorting '
                 'objects, only the type is used and not the actual label of '
                 'the object.'
             ), include_label=True, is_sortable=True, label=_(message='Object'),

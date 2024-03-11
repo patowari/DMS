@@ -18,9 +18,7 @@ from ..permissions import (
     permission_document_file_signature_view
 )
 
-from .mixins import (
-    DetachedSignatureViewTestMixin, DetachedSignatureTestMixin
-)
+from .mixins import DetachedSignatureViewTestMixin, DetachedSignatureTestMixin
 
 
 class DetachedSignaturesViewTestCase(

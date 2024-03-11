@@ -5,8 +5,8 @@ from mayan.apps.navigation.classes import Link
 from ..icons import (
     icon_document_list, icon_document_preview,
     icon_document_properties_detail, icon_document_properties_edit,
-    icon_document_recently_accessed_list,
-    icon_document_recently_created_list, icon_document_type_change
+    icon_document_recently_accessed_list, icon_document_recently_created_list,
+    icon_document_type_change
 )
 from ..permissions import (
     permission_document_properties_edit, permission_document_view
@@ -14,20 +14,23 @@ from ..permissions import (
 
 link_document_type_change = Link(
     args='resolved_object.id', icon=icon_document_type_change,
-    permission=permission_document_properties_edit, text=_(message='Change type'),
-    view='documents:document_type_change'
+    permission=permission_document_properties_edit, text=_(
+        message='Change type'
+    ), view='documents:document_type_change'
 )
 link_document_list = Link(
     icon=icon_document_list,
     text=_(message='All documents'), view='documents:document_list'
 )
 link_document_recently_accessed_list = Link(
-    icon=icon_document_recently_accessed_list, text=_(message='Recently accessed'),
-    view='documents:document_recently_accessed_list'
+    icon=icon_document_recently_accessed_list, text=_(
+        message='Recently accessed'
+    ), view='documents:document_recently_accessed_list'
 )
 link_document_recently_created_list = Link(
-    icon=icon_document_recently_created_list, text=_(message='Recently created'),
-    view='documents:document_recently_created_list'
+    icon=icon_document_recently_created_list, text=_(
+        message='Recently created'
+    ), view='documents:document_recently_created_list'
 )
 link_document_multiple_type_change = Link(
     text=_(message='Change type'), icon=icon_document_type_change,
@@ -47,5 +50,6 @@ link_document_properties_edit = Link(
     args='resolved_object.id',
     icon=icon_document_properties_edit,
     permission=permission_document_properties_edit,
-    text=_(message='Edit properties'), view='documents:document_properties_edit'
+    text=_(message='Edit properties'),
+    view='documents:document_properties_edit'
 )

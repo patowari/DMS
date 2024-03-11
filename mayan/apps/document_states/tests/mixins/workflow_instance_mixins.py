@@ -1,6 +1,8 @@
 from ..literals import TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT
 
-from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+from .workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionTestMixin
+)
 
 
 class WorkflowInstanceTestMixin(WorkflowTemplateTransitionTestMixin):

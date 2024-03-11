@@ -32,7 +32,7 @@ class SmartLink(
     )
     dynamic_label = models.CharField(
         blank=True, max_length=96, help_text=_(
-            'Use this field to show a unique label depending on the '
+            message='Use this field to show a unique label depending on the '
             'document from which the smart link is being accessed.'
         ), verbose_name=_(message='Dynamic label')
     )
@@ -104,7 +104,7 @@ class SmartLinkCondition(
     operator = models.CharField(choices=OPERATOR_CHOICES, max_length=16)
     expression = models.TextField(
         help_text=_(
-            'The expression using document properties to be evaluated '
+            message='The expression using document properties to be evaluated '
             'against the foreign document field.'
         ), verbose_name=_(message='Expression')
     )

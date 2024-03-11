@@ -8,7 +8,9 @@ from ..permissions import (
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_STATE_LABEL
-from .mixins.workflow_template_state_mixins import WorkflowTemplateStateAPIViewTestMixin
+from .mixins.workflow_template_state_mixins import (
+    WorkflowTemplateStateAPIViewTestMixin
+)
 
 
 class WorkflowTemplateStatesAPIViewTestCase(

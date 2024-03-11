@@ -8,7 +8,9 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms.workflow_template_state_forms import WorkflowTemplateStateEscalationForm
+from ..forms.workflow_template_state_forms import (
+    WorkflowTemplateStateEscalationForm
+)
 from ..icons import (
     icon_workflow_template_state_escalation,
     icon_workflow_template_state_escalation_create,
@@ -38,7 +40,7 @@ class WorkflowTemplateStateEscalationCreateView(
                 'workflow_template_state', 'workflow_template',
             ),
             'title': _(
-                'Create escalation for workflow state: %s'
+                message='Create escalation for workflow state: %s'
             ) % self.external_object,
             'workflow_template': self.external_object.workflow,
             'workflow_template_state': self.external_object
@@ -152,14 +154,14 @@ class WorkflowTemplateStateEscalationListView(
                 )
             ),
             'no_results_text': _(
-                'Workflow state escalation allow workflows to execute a '
+                message='Workflow state escalation allow workflows to execute a '
                 'a transition automatically after a specific amount of time.'
             ),
             'no_results_title': _(
-                'There are no escalations for this workflow state'
+                message='There are no escalations for this workflow state'
             ),
             'title': _(
-                'Escalations for workflow template state: %s'
+                message='Escalations for workflow template state: %s'
             ) % self.external_object,
             'workflow_template': self.external_object.workflow,
             'workflow_template_state': self.external_object

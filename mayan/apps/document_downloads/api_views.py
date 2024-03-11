@@ -1,4 +1,6 @@
-from mayan.apps.documents.api_views.api_view_mixins import ParentObjectDocumentAPIViewMixin
+from mayan.apps.documents.api_views.api_view_mixins import (
+    ParentObjectDocumentAPIViewMixin
+)
 from mayan.apps.storage.api_views.base import APIObjectDownloadView
 from mayan.apps.storage.views.mixins import ViewMixinBackendDownload
 

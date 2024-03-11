@@ -2,7 +2,9 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from ..events import event_workflow_instance_transitioned
 
-from .mixins.workflow_template_state_escalation_mixins import WorkflowTemplateStateEscalationTestMixin
+from .mixins.workflow_template_state_escalation_mixins import (
+    WorkflowTemplateStateEscalationTestMixin
+)
 
 
 class WorkflowTemplateStateEscalationModelTestCase(

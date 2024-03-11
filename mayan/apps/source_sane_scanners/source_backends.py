@@ -11,7 +11,9 @@ from mayan.apps.source_generated_files.source_backend_actions.generated_file_act
     SourceBackendActionGenerateFileDocumentFileUpload,
     SourceBackendActionGenerateFileDocumentUpload
 )
-from mayan.apps.source_interactive.source_backends.mixins import SourceBackendMixinInteractive
+from mayan.apps.source_interactive.source_backends.mixins import (
+    SourceBackendMixinInteractive
+)
 from mayan.apps.sources.settings import setting_backend_arguments
 from mayan.apps.sources.source_backends.base import SourceBackend
 from mayan.apps.storage.utils import NamedTemporaryFile, touch
@@ -45,7 +47,7 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                 'device_name': {
                     'class': 'django.forms.CharField',
                     'help_text': _(
-                        'Device name as returned by the SANE backend.'
+                        message='Device name as returned by the SANE backend.'
                     ),
                     'kwargs': {'max_length': 255},
                     'label': _(message='Device name'),
@@ -54,10 +56,11 @@ class SourceBackendSANEScanner(SourceBackendMixinInteractive, SourceBackend):
                 'arguments': {
                     'class': 'django.forms.CharField',
                     'help_text': _(
-                        'YAML formatted arguments to pass to the `scanimage` '
-                        'command. The arguments will change depending on the '
-                        'device. Execute `scanimage --help --device-name=DEVICE` '
-                        'for the list of supported arguments.'
+                        message='YAML formatted arguments to pass to the '
+                        '`scanimage` command. The arguments will change '
+                        'depending on the device. Execute `scanimage --help '
+                        '--device-name=DEVICE` for the list of supported '
+                        'arguments.'
                     ),
                     'label': _(message='Arguments'),
                     'required': False

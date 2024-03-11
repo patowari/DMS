@@ -3,8 +3,7 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..events import (
-    event_tag_attached, event_tag_created, event_tag_edited,
-    event_tag_removed
+    event_tag_attached, event_tag_created, event_tag_edited, event_tag_removed
 )
 from ..links import link_tag_edit
 from ..models import Tag

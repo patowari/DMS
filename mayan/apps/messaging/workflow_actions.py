@@ -4,8 +4,12 @@ from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
-from mayan.apps.document_states.literals import BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-from mayan.apps.document_states.models.workflow_instance_models import WorkflowInstance
+from mayan.apps.document_states.literals import (
+    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+)
+from mayan.apps.document_states.models.workflow_instance_models import (
+    WorkflowInstance
+)
 from mayan.apps.user_management.querysets import get_user_queryset
 
 from .models import Message
@@ -23,7 +27,7 @@ class WorkflowActionMessageSend(WorkflowAction):
                     format_lazy(
                         '{}. {}',
                         _(
-                            'Comma separated list of usernames that will '
+                            message='Comma separated list of usernames that will '
                             'receive the message.'
                         ),
                         BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
@@ -42,7 +46,7 @@ class WorkflowActionMessageSend(WorkflowAction):
                     format_lazy(
                         '{}. {}',
                         _(
-                            'Subject of the message to be sent.'
+                            message='Subject of the message to be sent.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),
@@ -59,7 +63,7 @@ class WorkflowActionMessageSend(WorkflowAction):
                     format_lazy(
                         '{}. {}',
                         _(
-                            'The actual text to send.'
+                            message='The actual text to send.'
                         ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
                     )
                 ),

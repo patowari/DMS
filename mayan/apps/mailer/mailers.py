@@ -68,7 +68,7 @@ class DjangoSMTP(MailerBackendCredentials):
 
         fieldsets += (
             (
-                _('Server'), {
+                _(message='Server'), {
                     'fields': ('host', 'port', 'use_ssl', 'use_tls')
                 }
             ),

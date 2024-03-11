@@ -1,5 +1,7 @@
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.documents.tests.mixins.document_version_mixins import DocumentVersionLinkTestMixin
+from mayan.apps.documents.tests.mixins.document_version_mixins import (
+    DocumentVersionLinkTestMixin
+)
 
 from ..links import link_document_version_ocr_content_single_delete
 from ..permissions import permission_document_version_ocr
@@ -16,7 +18,8 @@ class DocumentOCRLinkTestCase(
 
     def test_document_version_ocr_content_single_delete_link_with_access(self):
         self.grant_access(
-            obj=self._test_document, permission=permission_document_version_ocr
+            obj=self._test_document,
+            permission=permission_document_version_ocr
         )
         resolved_link = self._resolve_test_document_version_link(
             test_link=link_document_version_ocr_content_single_delete

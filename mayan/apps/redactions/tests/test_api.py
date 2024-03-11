@@ -5,11 +5,17 @@ from PIL import Image
 from rest_framework import status
 
 from mayan.apps.converter.layers import layer_saved_transformations
-from mayan.apps.converter.tests.literals import TEST_TRANSFORMATION_DOCUMENT_PATH
+from mayan.apps.converter.tests.literals import (
+    TEST_TRANSFORMATION_DOCUMENT_PATH
+)
 from mayan.apps.converter.transformations import TransformationRotate270
 from mayan.apps.documents.permissions import permission_document_file_view
-from mayan.apps.documents.tests.mixins.document_file_mixins import DocumentFilePageAPIViewTestMixin
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.documents.tests.mixins.document_file_mixins import (
+    DocumentFilePageAPIViewTestMixin
+)
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin
+)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..layers import layer_redactions

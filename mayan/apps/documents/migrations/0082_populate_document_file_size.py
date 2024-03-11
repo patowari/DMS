@@ -1,6 +1,8 @@
 from django.db import migrations
 
-from mayan.apps.databases.literals import DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE
+from mayan.apps.databases.literals import (
+    DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE
+)
 
 
 def code_document_file_size_update(apps, schema_editor):
@@ -13,7 +15,11 @@ def code_document_file_size_update(apps, schema_editor):
         app_label='documents', model_name='DocumentFile'
     )
 
-    for document_file in DocumentFile.objects.filter(size=DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE):
+    queryset = DocumentFile.objects.filter(
+        size=DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE
+    )
+
+    for document_file in queryset:
         name = document_file.file.name
         document_file.file.close()
 
@@ -29,7 +35,11 @@ def reverse_code_document_file_size_update(apps, schema_editor):
         app_label='documents', model_name='DocumentFile'
     )
 
-    for document_file in DocumentFile.objects.filter(size__gt=DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE):
+    queryset = DocumentFile.objects.filter(
+        size__gt=DJANGO_POSITIVE_INTEGER_FIELD_MAX_VALUE
+    )
+
+    for document_file in queryset:
         name = document_file.file.name
         document_file.file.close()
 

@@ -6,9 +6,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext, gettext_lazy as _
 
-from mayan.apps.common.validators import (
-    YAMLValidator, validate_internal_name
-)
+from mayan.apps.common.validators import YAMLValidator, validate_internal_name
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
@@ -38,7 +36,7 @@ class Asset(AssetBusinessLogicMixin, ExtraDataModelMixin, models.Model):
     )
     internal_name = models.CharField(
         db_index=True, help_text=_(
-            'This value will be used when referencing this asset. '
+            message='This value will be used when referencing this asset. '
             'Can only contain letters, numbers, and underscores.'
         ), max_length=255, unique=True, validators=[validate_internal_name],
         verbose_name=_(message='Internal name')
@@ -153,7 +151,7 @@ class LayerTransformation(
     )
     order = models.PositiveIntegerField(
         blank=True, db_index=True, default=0, help_text=_(
-            'Order in which the transformations will be executed. If left '
+            message='Order in which the transformations will be executed. If left '
             'unchanged, an automatic order value will be assigned.'
         ), verbose_name=_(message='Order')
     )
@@ -162,7 +160,7 @@ class LayerTransformation(
     )
     arguments = models.TextField(
         blank=True, help_text=_(
-            'Enter the arguments for the transformation as a YAML '
+            message='Enter the arguments for the transformation as a YAML '
             'dictionary. ie: {"degrees": 180}'
         ), validators=[
             YAMLValidator()

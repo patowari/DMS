@@ -12,7 +12,9 @@ from mayan.apps.sources.models import Source
 from mayan.apps.sources.permissions import (
     permission_sources_create, permission_sources_edit
 )
-from mayan.apps.sources.tests.mixins.source_view_mixins import SourceViewTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import (
+    SourceViewTestMixin
+)
 
 from .literals import TEST_EMAIL_BASE64_FILENAME
 from .mixins import (

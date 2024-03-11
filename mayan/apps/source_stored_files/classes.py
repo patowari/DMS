@@ -14,9 +14,7 @@ from rest_framework.reverse import reverse as rest_framework_reverse
 
 from mayan.apps.common.menus import menu_object
 from mayan.apps.converter.classes import AppImageErrorImage, ConverterBase
-from mayan.apps.converter.exceptions import (
-    AppImageError, InvalidOfficeFormat
-)
+from mayan.apps.converter.exceptions import AppImageError, InvalidOfficeFormat
 from mayan.apps.converter.transformations import TransformationResize
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.sources.literals import STORAGE_NAME_SOURCE_CACHE_FOLDER

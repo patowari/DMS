@@ -22,7 +22,7 @@ class SourceBackendMixinStoredFileLocationFilesystem:
                     'class': 'django.forms.CharField',
                     'default': '',
                     'help_text': _(
-                        'Server side filesystem path.'
+                        message='Server side filesystem path.'
                     ),
                     'kwargs': {
                         'max_length': 255,
@@ -34,7 +34,7 @@ class SourceBackendMixinStoredFileLocationFilesystem:
                     'class': 'django.forms.BooleanField',
                     'default': '',
                     'help_text': _(
-                        'If checked, not only will the folder path be '
+                        message='If checked, not only will the folder path be '
                         'scanned for files but also its subdirectories.'
                     ),
                     'label': _(message='Include subdirectories?'),
@@ -77,7 +77,7 @@ class SourceBackendMixinStoredFileLocationFilesystem:
             return storage_backend_class(**storage_backend_arguments)
         except Exception as exception:
             message = _(
-                'Unable to initialize storage; %s'
+                message='Unable to initialize storage; %s'
             ) % exception
 
             logger.fatal(message)

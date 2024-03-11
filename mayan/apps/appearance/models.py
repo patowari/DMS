@@ -21,7 +21,7 @@ class Theme(models.Model):
     )
     stylesheet = models.TextField(
         blank=True, help_text=_(
-            'The CSS stylesheet to change the appearance of the different '
+            message='The CSS stylesheet to change the appearance of the different '
             'user interface elements.'
         ), verbose_name=_(message='Stylesheet')
     )

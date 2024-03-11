@@ -1,4 +1,6 @@
-from mayan.apps.storage.download_backends.google import DownloadBackendGoogleCloudStorageSignedURL
+from mayan.apps.storage.download_backends.google import (
+    DownloadBackendGoogleCloudStorageSignedURL
+)
 
 from .mixins import DownloadBackendMixinDocumentFile
 

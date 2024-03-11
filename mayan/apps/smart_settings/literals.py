@@ -44,7 +44,7 @@ DEFAULT_USE_X_FORWARDED_PORT = global_settings.USE_X_FORWARDED_PORT
 DEFAULT_WSGI_APPLICATION = global_settings.WSGI_APPLICATION
 
 MESSAGE_LOCAL_STORAGE_DISABLED = _(
-    'Local storage is currently disabled, changes to settings will not be '
+    message='Local storage is currently disabled, changes to settings will not be '
     'saved. Instead, use environment variables to modify settings.'
 )
 

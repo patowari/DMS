@@ -3,7 +3,9 @@ from django.http import Http404
 from actstream.models import Action, any_stream
 
 from mayan.apps.rest_api import generics
-from mayan.apps.rest_api.api_view_mixins import ExternalContentTypeObjectAPIViewMixin
+from mayan.apps.rest_api.api_view_mixins import (
+    ExternalContentTypeObjectAPIViewMixin
+)
 
 from .classes import EventType, EventTypeNamespace
 from .models import Notification

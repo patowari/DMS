@@ -33,8 +33,8 @@ from .handlers import (
 from .links import (
     link_document_file_source_metadata_list, link_document_file_upload,
     link_document_upload_wizard, link_source_backend_selection,
-    link_source_delete, link_source_edit, link_source_list,
-    link_source_setup, link_source_test
+    link_source_delete, link_source_edit, link_source_list, link_source_setup,
+    link_source_test
 )
 from .permissions import (
     permission_sources_delete, permission_sources_edit,
@@ -103,7 +103,7 @@ class SourcesApp(MayanAppConfig):
         MissingItem(
             label=_(message='Create a document source'),
             description=_(
-                'Document sources are the way in which new documents are '
+                message='Document sources are the way in which new documents are '
                 'feed to Mayan EDMS, create at least a web form source to '
                 'be able to upload documents from a browser.'
             ),
@@ -127,7 +127,7 @@ class SourcesApp(MayanAppConfig):
 
         ModelProperty(
             description=_(
-                'Return the value of a specific source metadata for '
+                message='Return the value of a specific source metadata for '
                 'the document\'s latest file.'
             ), label=_(message='Source metadata value of'), model=Document,
             name='source_metadata_value_of.< key >'
@@ -135,7 +135,7 @@ class SourcesApp(MayanAppConfig):
 
         ModelProperty(
             description=_(
-                'Return the value of a specific source metadata.'
+                message='Return the value of a specific source metadata.'
             ), label=_(message='Source metadata value of'), model=DocumentFile,
             name='source_metadata_value_of.< key >'
         )

@@ -14,7 +14,7 @@ setting_namespace = setting_cluster.do_namespace_add(
 setting_disable_password_reset = setting_namespace.do_setting_add(
     default=DEFAULT_AUTHENTICATION_DISABLE_PASSWORD_RESET,
     global_name='AUTHENTICATION_DISABLE_PASSWORD_RESET', help_text=_(
-        'Remove the "Forgot your password?" link on the login form used to '
+        message='Remove the "Forgot your password?" link on the login form used to '
         'trigger the password reset.'
     )
 )
@@ -22,7 +22,7 @@ setting_authentication_backend = setting_namespace.do_setting_add(
     default=DEFAULT_AUTHENTICATION_BACKEND,
     global_name='AUTHENTICATION_BACKEND',
     help_text=_(
-        'Dotted path to the backend used to process user authentication.'
+        message='Dotted path to the backend used to process user authentication.'
     )
 )
 setting_authentication_backend_arguments = setting_namespace.do_setting_add(

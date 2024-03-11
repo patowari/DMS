@@ -1,4 +1,6 @@
-from mayan.apps.source_periodic.source_backend_actions.periodic_actions import SourceBackendActionPeriodicDocumentUpload
+from mayan.apps.source_periodic.source_backend_actions.periodic_actions import (
+    SourceBackendActionPeriodicDocumentUpload
+)
 
 
 class SourceBackendActionEmailDocumentUpload(

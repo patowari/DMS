@@ -30,10 +30,10 @@ class FilteredSimplePrimaryKeyRelatedField(
     """
     default_error_messages = {
         'does_not_exist': _(
-            'Invalid pk "{pk_value}" - object does not exist.'
+            message='Invalid pk "{pk_value}" - object does not exist.'
         ),
         'incorrect_type': _(
-            'Incorrect type. Expected pk value, received {data_type}.'
+            message='Incorrect type. Expected pk value, received {data_type}.'
         ),
         'required': _(message='This field is required.')
     }

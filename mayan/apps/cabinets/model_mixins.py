@@ -61,6 +61,6 @@ class CabinetBusinessLogicMixin:
 
         return ' / '.join(result)
     get_full_path.help_text = _(
-        'The path to the cabinet including all ancestors.'
+        message='The path to the cabinet including all ancestors.'
     )
     get_full_path.short_description = _(message='Full path')

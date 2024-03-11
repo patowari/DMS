@@ -1,11 +1,12 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.file_metadata.tests.mixins import DocumentFileMetadataTestMixin
+from mayan.apps.file_metadata.tests.mixins import (
+    DocumentFileMetadataTestMixin
+)
 
 from ..drivers import ClamScanDriver
 
 from .literals import (
-    TEST_CLAMSCAN_FILE_METADATA_DOTTED_NAME,
-    TEST_CLAMSCAN_FILE_METADATA_VALUE
+    TEST_CLAMSCAN_FILE_METADATA_DOTTED_NAME, TEST_CLAMSCAN_FILE_METADATA_VALUE
 )
 
 

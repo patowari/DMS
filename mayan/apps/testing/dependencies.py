@@ -1,6 +1,4 @@
-from mayan.apps.dependencies.classes import (
-    BinaryDependency, PythonDependency
-)
+from mayan.apps.dependencies.classes import BinaryDependency, PythonDependency
 from mayan.apps.dependencies.environments import environment_testing
 
 from .literals import DEFAULT_FIREFOX_GECKODRIVER_PATH

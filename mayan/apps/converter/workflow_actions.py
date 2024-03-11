@@ -2,8 +2,8 @@ import logging
 
 import yaml
 
-from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.common.utils import parse_range
@@ -34,7 +34,7 @@ class TransformationAddAction(WorkflowAction):
             'label': _(message='Pages'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
-                    'Pages to which the new transformations will be added. '
+                    message='Pages to which the new transformations will be added. '
                     'Separate by commas and/or use a dashes for a ranges. '
                     'Leave blank to select all pages.'
                 ), 'required': False
@@ -46,7 +46,7 @@ class TransformationAddAction(WorkflowAction):
                 'choices': BaseTransformation.get_transformation_choices(
                     group_by_layer=True
                 ), 'help_text': _(
-                    'Type of transformation to add.'
+                    message='Type of transformation to add.'
                 ), 'required': True
             }
         },
@@ -54,7 +54,7 @@ class TransformationAddAction(WorkflowAction):
             'label': _(message='Transformation arguments'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
-                    'Enter the arguments for the transformation as a YAML '
+                    message='Enter the arguments for the transformation as a YAML '
                     'dictionary. ie: {"degrees": 180}'
                 ), 'required': False
             }
@@ -71,7 +71,7 @@ class TransformationAddAction(WorkflowAction):
         except yaml.YAMLError:
             raise ValidationError(
                 message=_(
-                    '"%s" not a valid entry.'
+                    message='"%s" not a valid entry.'
                 ) % form_data['action_data']['transformation_arguments']
             )
 

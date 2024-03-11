@@ -2,7 +2,9 @@ from django.db import models
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.documents.models.document_file_page_models import DocumentFilePage
+from mayan.apps.documents.models.document_file_page_models import (
+    DocumentFilePage
+)
 from mayan.apps.documents.models.document_type_models import DocumentType
 
 from .managers import (
@@ -20,7 +22,7 @@ class DocumentFilePageContent(models.Model):
     )
     content = models.TextField(
         blank=True, help_text=_(
-            'The actual text content as extracted by the document '
+            message='The actual text content as extracted by the document '
             'parsing backend.'
         ), verbose_name=_(message='Content')
     )
@@ -45,7 +47,7 @@ class DocumentTypeSettings(models.Model):
     )
     auto_parsing = models.BooleanField(
         default=True, help_text=_(
-            'Automatically queue newly created documents for parsing.'
+            message='Automatically queue newly created documents for parsing.'
         ), verbose_name=_(message='Auto parsing')
     )
 

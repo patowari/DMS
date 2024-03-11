@@ -29,9 +29,9 @@ from ..search_fields import SearchFieldVirtualAllFields
 from ..search_models import SearchModel
 from ..search_query_types import (
     BackendQueryType, QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
-    QueryTypeLessThanOrEqual, QueryTypePartial, QueryTypeRange,
-    QueryTypeRangeExclusive, QueryTypeRegularExpression
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
+    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
+    QueryTypeRegularExpression
 )
 
 from .literals.whoosh_literals import (

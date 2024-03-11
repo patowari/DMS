@@ -12,7 +12,9 @@ from ..permissions import (
 from .mixins.workflow_instance_mixins import (
     WorkflowInstanceViewTestMixin, WorkflowToolViewTestMixin
 )
-from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldTestMixin
+from .mixins.workflow_template_transition_field_mixins import (
+    WorkflowTemplateTransitionFieldTestMixin
+)
 
 
 class WorkflowInstanceTransitionViewTestCase(
@@ -47,8 +49,8 @@ class WorkflowInstanceTransitionViewTestCase(
 
         response = self._request_test_document_workflow_instance_list_view()
         self.assertNotContains(
-            response=response, text=self._test_workflow_template.label,
-            status_code=200
+            response=response, status_code=200,
+            text=self._test_workflow_template.label
         )
 
         events = self._get_test_events()
@@ -82,8 +84,8 @@ class WorkflowInstanceTransitionViewTestCase(
 
         response = self._request_test_document_workflow_instance_list_view()
         self.assertContains(
-            response=response, text=self._test_workflow_template.label,
-            status_code=200
+            response=response, status_code=200,
+            text=self._test_workflow_template.label
         )
 
         events = self._get_test_events()
@@ -160,8 +162,8 @@ class WorkflowInstanceTransitionViewTestCase(
 
         response = self._request_test_workflow_instance_detail_view()
         self.assertContains(
-            response=response, text=self._test_workflow_template.label,
-            status_code=200
+            response=response, status_code=200,
+            text=self._test_workflow_template.label
         )
 
         events = self._get_test_events()
@@ -211,14 +213,12 @@ class WorkflowInstanceTransitionViewTestCase(
 
         response = self._request_test_workflow_instance_transition_selection_get_view()
         self.assertContains(
-            response=response, text=str(self._test_document), status_code=200
+            response=response, status_code=200, text=str(self._test_document)
         )
         self.assertNotContains(
-            response=response,
-            text=str(
+            response=response, status_code=200, text=str(
                 self._test_workflow_template_transition_list[0]
-            ),
-            status_code=200
+            )
         )
 
         self.assertEqual(
@@ -262,14 +262,12 @@ class WorkflowInstanceTransitionViewTestCase(
 
         response = self._request_test_workflow_instance_transition_selection_get_view()
         self.assertContains(
-            response=response, text=str(self._test_document), status_code=200
+            response=response, status_code=200, text=str(self._test_document)
         )
         self.assertContains(
-            response=response,
-            text=str(
+            response=response, status_code=200, text=str(
                 self._test_workflow_template_transition_list[0]
-            ),
-            status_code=200
+            )
         )
 
         self.assertEqual(
@@ -313,14 +311,12 @@ class WorkflowInstanceTransitionViewTestCase(
 
         response = self._request_test_workflow_instance_transition_selection_get_view()
         self.assertContains(
-            response=response, text=str(self._test_document), status_code=200
+            response=response, status_code=200, text=str(self._test_document)
         )
         self.assertContains(
-            response=response,
-            text=str(
+            response=response, status_code=200, text=str(
                 self._test_workflow_template_transition_list[0]
-            ),
-            status_code=200
+            )
         )
 
         self.assertEqual(

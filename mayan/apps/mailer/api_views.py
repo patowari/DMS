@@ -1,6 +1,6 @@
 from mayan.apps.organizations.utils import get_organization_installation_url
-from mayan.apps.rest_api.api_view_mixins import ContentTypeAPIViewMixin
 from mayan.apps.rest_api import generics
+from mayan.apps.rest_api.api_view_mixins import ContentTypeAPIViewMixin
 
 from rest_framework.settings import api_settings
 from rest_framework.exceptions import ValidationError
@@ -12,7 +12,9 @@ from .permissions import (
     permission_mailing_profile_create, permission_mailing_profile_delete,
     permission_mailing_profile_edit, permission_mailing_profile_view
 )
-from .serializers import MailingProfileActionSerializer, MailingProfileSerializer
+from .serializers import (
+    MailingProfileActionSerializer, MailingProfileSerializer
+)
 from .tasks import task_send_object
 
 

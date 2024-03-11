@@ -6,9 +6,15 @@ from ..source_backend_actions.interfaces import (
     SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestView, SourceBackendActionInterfaceTask
 )
-from ..source_backend_actions.mixins.callback_mixins import SourceBackendActionMixinCallbackDocumentUploadBase
-from ..source_backend_actions.mixins.document_mixins import SourceBackendActionMixinDocumentUploadInteractive
-from ..source_backend_actions.mixins.document_type_mixins import SourceBackendActionMixinDocumentTypeInteractive
+from ..source_backend_actions.mixins.callback_mixins import (
+    SourceBackendActionMixinCallbackDocumentUploadBase
+)
+from ..source_backend_actions.mixins.document_mixins import (
+    SourceBackendActionMixinDocumentUploadInteractive
+)
+from ..source_backend_actions.mixins.document_type_mixins import (
+    SourceBackendActionMixinDocumentTypeInteractive
+)
 
 from .literals import (
     TEST_SOURCE_ACTION_CONFIRM_FALSE_NAME,

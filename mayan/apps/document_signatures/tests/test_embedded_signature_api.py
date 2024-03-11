@@ -8,7 +8,9 @@ from mayan.apps.documents.events import (
     event_document_version_created, event_document_version_edited,
     event_document_version_page_created
 )
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin
+)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import event_embedded_signature_created

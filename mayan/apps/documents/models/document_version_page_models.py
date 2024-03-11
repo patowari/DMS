@@ -17,7 +17,9 @@ from ..events import (
 from ..managers import ValidDocumentVersionPageManager
 
 from .document_version_models import DocumentVersion
-from .document_version_page_model_mixins import DocumentVersionPageBusinessLogicMixin
+from .document_version_page_model_mixins import (
+    DocumentVersionPageBusinessLogicMixin
+)
 from .model_mixins import PagedModelMixin
 
 __all__ = ('DocumentVersionPage', 'DocumentVersionPageSearchResult')
@@ -35,13 +37,14 @@ class DocumentVersionPage(
     )
     page_number = models.PositiveIntegerField(
         db_index=True, default=1, help_text=_(
-            'Unique integer number for the page. Pages are ordered by '
-            'this number.'
+            message='Unique integer number for the page. Pages are ordered '
+            'by this number.'
         ), verbose_name=_(message='Page number')
     )
     content_type = models.ForeignKey(
-        help_text=_(message='Content type for the source object of the page.'),
-        on_delete=models.CASCADE, to=ContentType
+        help_text=_(
+            message='Content type for the source object of the page.'
+        ), on_delete=models.CASCADE, to=ContentType
     )
     object_id = models.PositiveIntegerField(
         help_text=_(message='ID for the source object of the page.')

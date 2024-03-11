@@ -4,8 +4,12 @@ import logging
 from django.apps import apps
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
-from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
+from mayan.apps.source_compressed.source_backends.literals import (
+    SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
+)
+from mayan.apps.source_compressed.source_backends.mixins import (
+    SourceBackendMixinCompressed
+)
 from mayan.apps.sources.literals import SOURCE_ACTION_EXECUTE_TASK_PATH
 
 from .literals import DEFAULT_PERIOD_INTERVAL, SOURCE_PERIODIC_ACTION_NAME
@@ -27,8 +31,8 @@ class SourceBackendMixinPeriodic:
                     'class': 'django.forms.ChoiceField',
                     'default': '',
                     'help_text': _(
-                        'Assign a document type to documents uploaded from this '
-                        'source.'
+                        message='Assign a document type to documents '
+                        'uploaded from this source.'
                     ),
                     'kwargs': {
                         'choices': [
@@ -42,7 +46,7 @@ class SourceBackendMixinPeriodic:
                     'class': 'django.forms.IntegerField',
                     'default': DEFAULT_PERIOD_INTERVAL,
                     'help_text': _(
-                        'Interval in seconds between checks for new '
+                        message='Interval in seconds between checks for new '
                         'documents.'
                     ),
                     'kwargs': {

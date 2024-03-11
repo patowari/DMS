@@ -101,7 +101,7 @@ class GroupListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'User groups are organizational units. They should '
+                message='User groups are organizational units. They should '
                 'mirror the organizational units of your organization. '
                 'Groups can\'t be used for access control. Use roles '
                 'for permissions and access control, add groups to '

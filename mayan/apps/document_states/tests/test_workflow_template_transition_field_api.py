@@ -1,6 +1,8 @@
 from rest_framework import status
 
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin
+)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import event_workflow_template_edited
@@ -8,7 +10,9 @@ from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
-from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldAPIViewTestMixin
+from .mixins.workflow_template_transition_field_mixins import (
+    WorkflowTemplateTransitionFieldAPIViewTestMixin
+)
 
 
 class WorkflowTemplateTransitionFieldAPIViewTestCase(
@@ -159,7 +163,8 @@ class WorkflowTemplateTransitionFieldAPIViewTestCase(
 
         self._test_workflow_template_transition_field.refresh_from_db()
         self.assertEqual(
-            self._test_workflow_template_transition_field.label, transition_field_label
+            self._test_workflow_template_transition_field.label,
+            transition_field_label
         )
 
         events = self._get_test_events()
@@ -182,7 +187,8 @@ class WorkflowTemplateTransitionFieldAPIViewTestCase(
 
         self._test_workflow_template_transition_field.refresh_from_db()
         self.assertNotEqual(
-            self._test_workflow_template_transition_field.label, transition_field_label
+            self._test_workflow_template_transition_field.label,
+            transition_field_label
         )
 
         events = self._get_test_events()

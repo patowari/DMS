@@ -44,10 +44,11 @@ from .views.document_file_views import (
     DocumentFileDeleteView, DocumentFileEditView, DocumentFileIntrospectView,
     DocumentFileListView, DocumentFilePreviewView, DocumentFilePrintFormView,
     DocumentFilePrintView, DocumentFilePropertiesView,
-    DocumentFileTransformationsClearView,
-    DocumentFileTransformationsCloneView
+    DocumentFileTransformationsClearView, DocumentFileTransformationsCloneView
 )
-from .views.document_type_retention_policy_views import DocumentTypeRetentionPoliciesEditView
+from .views.document_type_retention_policy_views import (
+    DocumentTypeRetentionPoliciesEditView
+)
 from .views.document_type_views import (
     DocumentTypeCreateView, DocumentTypeDeleteView,
     DocumentTypeDocumentListView, DocumentTypeEditView,

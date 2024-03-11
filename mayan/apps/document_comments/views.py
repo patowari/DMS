@@ -155,7 +155,7 @@ class DocumentCommentListView(ExternalObjectViewMixin, SingleObjectListView):
                 )
             ),
             'no_results_text': _(
-                'Document comments are timestamped text entries from users. '
+                message='Document comments are timestamped text entries from users. '
                 'They are great for collaboration.'
             ),
             'no_results_title': _(message='There are no comments'),

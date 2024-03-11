@@ -8,13 +8,15 @@ from ..events import (
 )
 from ..models.workflow_models import Workflow
 from ..permissions import (
-    permission_workflow_template_create,
-    permission_workflow_template_delete, permission_workflow_template_edit,
-    permission_workflow_template_view, permission_workflow_tools
+    permission_workflow_template_create, permission_workflow_template_delete,
+    permission_workflow_template_edit, permission_workflow_template_view,
+    permission_workflow_tools
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_LABEL
-from .mixins.workflow_instance_mixins import DocumentWorkflowTemplateViewTestMixin
+from .mixins.workflow_instance_mixins import (
+    DocumentWorkflowTemplateViewTestMixin
+)
 from .mixins.workflow_template_mixins import (
     DocumentTypeAddRemoveWorkflowTemplateViewTestMixin,
     WorkflowTemplateDocumentTypeViewTestMixin, WorkflowTemplateViewTestMixin

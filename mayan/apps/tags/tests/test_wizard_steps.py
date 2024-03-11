@@ -6,7 +6,9 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_create
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.sources.tests.mixins.wizard_mixins import SourceDocumentUploadWizardTestMixin
+from mayan.apps.sources.tests.mixins.wizard_mixins import (
+    SourceDocumentUploadWizardTestMixin
+)
 
 from ..events import event_tag_attached
 from ..permissions import permission_tag_attach

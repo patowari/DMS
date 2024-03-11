@@ -14,7 +14,9 @@ from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixi
     WorkflowTemplateStateActionViewTestMixin
 )
 from mayan.apps.documents.events import event_document_created
-from mayan.apps.metadata.tests.mixins.metadata_type_mixins import MetadataTypeTestMixin
+from mayan.apps.metadata.tests.mixins.metadata_type_mixins import (
+    MetadataTypeTestMixin
+)
 from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
 
 from ..events import event_email_sent

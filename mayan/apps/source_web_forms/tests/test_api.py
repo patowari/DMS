@@ -16,7 +16,9 @@ from mayan.apps.documents.permissions import (
 from mayan.apps.documents.tests.literals import (
     TEST_DOCUMENT_SMALL_CHECKSUM, TEST_FILE_COMPRESSED_PATH
 )
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin
+)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from mayan.apps.source_compressed.source_backends.literals import (
     SOURCE_UNCOMPRESS_CHOICE_ALWAYS, SOURCE_UNCOMPRESS_CHOICE_ASK,

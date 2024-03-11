@@ -7,7 +7,9 @@ from mayan.apps.common.settings import setting_home_view
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.events import event_user_edited
 from mayan.apps.user_management.permissions import permission_user_edit
-from mayan.apps.user_management.tests.literals import TEST_USER_PASSWORD_EDITED
+from mayan.apps.user_management.tests.literals import (
+    TEST_USER_PASSWORD_EDITED
+)
 
 from .literals import TEST_PASSWORD_NEW
 from .mixins import PasswordResetViewTestMixin, UserPasswordViewTestMixin

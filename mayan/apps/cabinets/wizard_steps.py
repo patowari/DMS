@@ -5,7 +5,9 @@ from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.sources.classes import DocumentCreateWizardStep
-from mayan.apps.sources.wizard_steps import DocumentCreateWizardStepDocumentType
+from mayan.apps.sources.wizard_steps import (
+    DocumentCreateWizardStepDocumentType
+)
 from mayan.apps.views.http import URL
 
 from .forms import CabinetListForm
@@ -38,8 +40,8 @@ class DocumentCreateWizardStepCabinets(DocumentCreateWizardStep):
 
             if user:
                 queryset_cabinets = AccessControlList.objects.restrict_queryset(
-                    permission=permission_cabinet_add_document, queryset=queryset_cabinets,
-                    user=user
+                    permission=permission_cabinet_add_document,
+                    queryset=queryset_cabinets, user=user
                 )
 
         return queryset_cabinets
@@ -74,7 +76,9 @@ class DocumentCreateWizardStepCabinets(DocumentCreateWizardStep):
         user = wizard.request.user
 
         kwargs = {
-            'help_text': _(message='Cabinets to which the document will be added.'),
+            'help_text': _(
+                message='Cabinets to which the document will be added.'
+            ),
             'permission': permission_cabinet_add_document,
             'queryset': Cabinet.objects.none(),
             'user': user

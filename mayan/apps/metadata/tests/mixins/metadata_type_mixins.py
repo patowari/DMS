@@ -1,4 +1,6 @@
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTypeTestMixin
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTypeTestMixin
+)
 from mayan.apps.testing.tests.mixins import TestMixinObjectCreationTrack
 
 from ...models import MetadataType

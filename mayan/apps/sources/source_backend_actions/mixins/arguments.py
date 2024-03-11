@@ -10,13 +10,13 @@ from .literals import DEFAULT_IMMEDIATE_MODE
 
 
 argument_document_help_text = _(
-    'Document to which a new file will be uploaded to.'
+    message='Document to which a new file will be uploaded to.'
 )
 argument_document_type = SourceBackendActionInterfaceArgument(
     help_text=Document.description.field.help_text
 )
 argument_immediate_mode_help_text = _(
-    'When enabled, a document stub is created immediately and '
+    message='When enabled, a document stub is created immediately and '
     'returned. The document file is processed asynchronously. When '
     'disabled, the entire process happens asynchronously with no '
     'returned data. Enabling immediate mode, disables compressed file '
@@ -38,7 +38,7 @@ argument_document_language = SourceBackendActionInterfaceArgument(
 )
 argument_document_id = SourceBackendActionInterfaceArgument(
     help_text=_(
-        'ID of the document to which a new file will be uploaded to.'
+        message='ID of the document to which a new file will be uploaded to.'
     )
 )
 argument_document_id_optional = SourceBackendActionInterfaceArgument(
@@ -72,12 +72,12 @@ argument_immediate_mode_required = SourceBackendActionInterfaceArgument(
 
 argument_user = SourceBackendActionInterfaceArgument(
     default=None, help_text=_(
-        'User that will feature as the actor in the events.'
+        message='User that will feature as the actor in the events.'
     ), required=False
 )
 argument_user_id = SourceBackendActionInterfaceArgument(
     default=None, help_text=_(
-        'ID of the user that will feature as the actor in '
+        message='ID of the user that will feature as the actor in '
         'the events.'
     ), required=False
 )

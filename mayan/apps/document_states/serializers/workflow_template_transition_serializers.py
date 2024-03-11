@@ -15,7 +15,9 @@ from ..models.workflow_transition_models import (
     WorkflowTransitionTriggerEvent
 )
 
-from .workflow_template_state_serializers import WorkflowTemplateStateSerializer
+from .workflow_template_state_serializers import (
+    WorkflowTemplateStateSerializer
+)
 
 
 class WorkflowTransitionFieldSerializer(
@@ -83,7 +85,7 @@ class WorkflowTemplateTransitionSerializer(
     )
     destination_state_id = FilteredPrimaryKeyRelatedField(
         help_text=_(
-            'Primary key of the destination state to be added.'
+            message='Primary key of the destination state to be added.'
         ), label=_(message='Destination state ID'),
         source_queryset_method='get_workflow_template_state_queryset',
         write_only=True
@@ -96,7 +98,7 @@ class WorkflowTemplateTransitionSerializer(
     )
     origin_state_id = FilteredPrimaryKeyRelatedField(
         help_text=_(
-            'Primary key of the origin state to be added.'
+            message='Primary key of the origin state to be added.'
         ), label=_(message='Origin state ID'),
         source_queryset_method='get_workflow_template_state_queryset',
         write_only=True

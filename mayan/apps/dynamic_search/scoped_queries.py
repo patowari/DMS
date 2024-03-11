@@ -348,7 +348,7 @@ class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
                 if len(results) >= limit:
                     raise DynamicSearchScopedQueryError(
                         _(
-                            'Search results exceed limit setting. Results '
+                            message='Search results exceed limit setting. Results '
                             'might not be reliable if multiple scopes are '
                             'used. Narrow down the search criteria or '
                             'increase the value of the results limit '
@@ -364,7 +364,7 @@ class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
                 """Wrap any other exception raised by the backend."""
                 raise DynamicSearchBackendException(
                     _(
-                        'Search backend error. Verify that the search '
+                        message='Search backend error. Verify that the search '
                         'service is available and that the search syntax '
                         'is valid for the active search backend; %s'
                     ) % exception

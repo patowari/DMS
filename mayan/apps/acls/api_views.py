@@ -4,7 +4,9 @@ from django.shortcuts import get_object_or_404
 from mayan.apps.permissions.models import StoredPermission
 from mayan.apps.permissions.serializers import PermissionSerializer
 from mayan.apps.rest_api import generics
-from mayan.apps.rest_api.api_view_mixins import ExternalContentTypeObjectAPIViewMixin
+from mayan.apps.rest_api.api_view_mixins import (
+    ExternalContentTypeObjectAPIViewMixin
+)
 
 from .classes import ModelPermission
 from .permissions import permission_acl_edit, permission_acl_view

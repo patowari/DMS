@@ -11,7 +11,9 @@ from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_related, menu_return, menu_secondary,
     menu_setup
 )
-from mayan.apps.documents.links.document_type_links import link_document_type_list
+from mayan.apps.documents.links.document_type_links import (
+    link_document_type_list
+)
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
@@ -24,8 +26,7 @@ from .links import (
     link_smart_link_condition_edit, link_smart_link_condition_list,
     link_smart_link_create, link_smart_link_delete,
     link_smart_link_document_types, link_smart_link_edit,
-    link_smart_link_instance_view, link_smart_link_list,
-    link_smart_link_setup
+    link_smart_link_instance_view, link_smart_link_list, link_smart_link_setup
 )
 from .methods import (
     method_document_type_smart_links_add,

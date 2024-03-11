@@ -44,15 +44,15 @@ class SmartLinkConditionListView(
                 )
             ),
             'no_results_text': _(
-                'Conditions are small logic units that when combined '
+                message='Conditions are small logic units that when combined '
                 'define how the smart link will behave.'
             ),
             'no_results_title': _(
-                'There are no conditions for this smart link'
+                message='There are no conditions for this smart link'
             ),
             'object': self.external_object,
             'title': _(
-                'Conditions for smart link: %s'
+                message='Conditions for smart link: %s'
             ) % self.external_object
         }
 
@@ -72,7 +72,7 @@ class SmartLinkConditionCreateView(
     def get_extra_context(self):
         return {
             'title': _(
-                'Add new conditions to smart link: "%s"'
+                message='Add new conditions to smart link: "%s"'
             ) % self.external_object,
             'object': self.external_object
         }
@@ -106,7 +106,7 @@ class SmartLinkConditionDeleteView(SingleObjectDeleteView):
             'navigation_object_list': ('object', 'condition'),
             'object': self.object.smart_link,
             'title': _(
-                'Delete smart link condition: "%s"?'
+                message='Delete smart link condition: "%s"?'
             ) % self.object
         }
 

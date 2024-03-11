@@ -2,7 +2,9 @@ from collections import OrderedDict
 
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import REDIRECT_FIELD_NAME, login as django_auth_login
+from django.contrib.auth import (
+    REDIRECT_FIELD_NAME, login as django_auth_login
+)
 from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.views import (
     LoginView, LogoutView, PasswordChangeDoneView, PasswordChangeView,
@@ -125,7 +127,7 @@ class MultiFactorAuthenticationView(RedirectURLMixin, SessionWizardView):
                     )
                 )
         else:
-            return super().dispatch(request, *args, **kwargs)
+            return super().dispatch(request=request, *args, **kwargs)
 
     def done(self, form_list=None, **kwargs):
         """
@@ -187,7 +189,7 @@ class MayanLoginView(StrongholdPublicMixin, LoginView):
     extra_context = {
         'appearance_type': 'plain',
         'submit_icon': icon_login,
-        'submit_label': _('Sign in')
+        'submit_label': _(message='Sign in')
     }
     redirect_authenticated_user = True
     template_name = 'authentication/login.html'
@@ -292,7 +294,9 @@ class MayanPasswordResetConfirmView(
     template_name = 'authentication/password_reset_confirm.html'
 
 
-class MayanPasswordResetDoneView(StrongholdPublicMixin, PasswordResetDoneView):
+class MayanPasswordResetDoneView(
+    StrongholdPublicMixin, PasswordResetDoneView
+):
     extra_context = {
         'appearance_type': 'plain'
     }

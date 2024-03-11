@@ -1,4 +1,6 @@
-from ..models.recently_accessed_document_models import RecentlyAccessedDocument
+from ..models.recently_accessed_document_models import (
+    RecentlyAccessedDocument
+)
 
 from .base import GenericDocumentTestCase
 

@@ -1,7 +1,9 @@
 from ..permissions import permission_document_view
 
 from .base import GenericDocumentViewTestCase
-from .mixins.recently_accessed_document_mixins import RecentlyAccessedDocumentViewTestMixin
+from .mixins.recently_accessed_document_mixins import (
+    RecentlyAccessedDocumentViewTestMixin
+)
 
 
 class RecentlyAccessedDocumentViewTestCase(

@@ -17,7 +17,7 @@ class DocumentTypesQuotaMixin:
                     'label': _(message='All document types'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
-                        'Apply to all document types. Enabling this, '
+                        message='Apply to all document types. Enabling this, '
                         'the quota will ignore the individual document type'
                         ' selection.'
                     ), 'required': False,
@@ -30,7 +30,7 @@ class DocumentTypesQuotaMixin:
                         'required': False,
                         'source_queryset': DocumentType.objects.all()
                     }, 'help_text': _(
-                        'Document types to which the quota will be applied.'
+                        message='Document types to which the quota will be applied.'
                     )
                 }
             }
@@ -67,7 +67,7 @@ class DocumentTypesQuotaMixin:
             document_type_filter_text = _(message='all document types')
         else:
             document_type_filter_text = _(
-                'document types: %(document_types)s'
+                message='document types: %(document_types)s'
             ) % {
                 'document_types': QuotaBackend._queryset_to_text_list(
                     queryset=self._get_document_types()
@@ -98,14 +98,14 @@ class GroupsUsersQuotaMixin:
                         'required': False,
                         'source_model': Group
                     }, 'help_text': _(
-                        'Groups to which the quota will be applied.'
+                        message='Groups to which the quota will be applied.'
                     )
                 },
                 'user_all': {
                     'label': _(message='All users'),
                     'class': 'django.forms.BooleanField', 'default': False,
                     'help_text': _(
-                        'Apply the quota to all users in the system, '
+                        message='Apply the quota to all users in the system, '
                         'excluding admins and staff. '
                         'Enabling this option, the quota will ignore the '
                         'individual user and group selection.'
@@ -119,7 +119,7 @@ class GroupsUsersQuotaMixin:
                         'required': False,
                         'source_queryset': get_user_queryset()
                     }, 'help_text': _(
-                        'Users to which the quota will be applied.'
+                        message='Users to which the quota will be applied.'
                     )
                 }
             }

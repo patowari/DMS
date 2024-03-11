@@ -235,7 +235,7 @@ class DocumentFilePageBusinessLogicMixin:
 
     def get_label(self):
         return _(
-            '%(document_file)s - page %(page_num)d of %(total_pages)d'
+            message='%(document_file)s - page %(page_num)d of %(total_pages)d'
         ) % {
             'document_file': self.document_file,
             'page_num': self.page_number,

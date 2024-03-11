@@ -11,13 +11,13 @@ class Command(management.BaseCommand):
         parser.add_argument('environment', nargs='?', help='Environment name')
         parser.add_argument(
             '--exclude', action='store', dest='exclude', help=_(
-                'Comma separated names of dependencies to exclude from the '
+                message='Comma separated names of dependencies to exclude from the '
                 'list generated.'
             ),
         )
         parser.add_argument(
             '--only', action='store', dest='only', help=_(
-                'Comma separated names of dependencies to show in the list '
+                message='Comma separated names of dependencies to show in the list '
                 'while excluding every other one.'
             ),
         )

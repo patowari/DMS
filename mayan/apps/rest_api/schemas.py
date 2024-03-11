@@ -7,7 +7,7 @@ import mayan
 from .literals import API_VERSION
 
 openapi_info_default_version = 'v{}'.format(API_VERSION)
-openapi_info_title = _('%s API') % mayan.__title__
+openapi_info_title = _(message='%s API') % mayan.__title__
 openapi_license = openapi.License(name=mayan.__license__)
 
 openapi_info = openapi.Info(

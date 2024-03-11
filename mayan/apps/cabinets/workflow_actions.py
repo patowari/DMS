@@ -30,7 +30,7 @@ class CabinetAddAction(WorkflowAction):
                 'cabinets': {
                     'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoiceMultiple',
                     'help_text': _(
-                        'Cabinets to which the document will be added.'
+                        message='Cabinets to which the document will be added.'
                     ),
                     'kwargs': {
                         'source_model': Cabinet,
@@ -80,7 +80,7 @@ class CabinetRemoveAction(CabinetAddAction):
         fields = super().get_form_fields()
 
         fields['cabinets']['help_text'] = _(
-            'Cabinets from which the document will be removed'
+            message='Cabinets from which the document will be removed'
         )
 
         return fields

@@ -7,7 +7,9 @@ from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
-from mayan.apps.credentials.class_mixins import BackendMixinCredentialsOptional
+from mayan.apps.credentials.class_mixins import (
+    BackendMixinCredentialsOptional
+)
 from mayan.apps.templating.classes import Template
 
 from ..classes import SourceStoredFile
@@ -32,7 +34,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
                     'class': 'django.forms.CharField',
                     'default': DEFAULT_STORAGE_BACKEND,
                     'help_text': _(
-                        'Python path to the Storage subclass used to '
+                        message='Python path to the Storage subclass used to '
                         'access the source files.'
                     ),
                     'kwargs': {
@@ -46,9 +48,9 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
                     'default': DEFAULT_STORAGE_BACKEND_ARGUMENTS,
                     'kwargs': {
                         'initial_help_text': _(
-                            'Arguments to pass to the storage backend. Use '
-                            'YAML format. The credential object is '
-                            'available as {{ credential }}.'
+                            message='Arguments to pass to the storage '
+                            'backend. Use YAML format. The credential object '
+                            'is available as {{ credential }}.'
                         ),
                         'max_length': 255,
                     },
@@ -99,7 +101,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
         except yaml.YAMLError:
             raise ValidationError(
                 _(
-                    'Unable to initialize storage. Check the storage '
+                    message='Unable to initialize storage. Check the storage '
                     'backend arguments.'
                 )
             )
@@ -111,7 +113,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
             )
         except Exception as exception:
             message = _(
-                'Unable to initialize storage. Check the storage '
+                message='Unable to initialize storage. Check the storage '
                 'backend dotted path.'
             )
             raise ValueError(message) from exception
@@ -124,7 +126,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
             return storage_backend_class(**storage_backend_arguments)
         except Exception as exception:
             message = _(
-                'Unable to initialize storage; %s'
+                message='Unable to initialize storage; %s'
             ) % exception
 
             logger.fatal(message)

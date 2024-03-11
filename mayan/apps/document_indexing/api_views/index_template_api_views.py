@@ -1,5 +1,7 @@
 from mayan.apps.documents.permissions import permission_document_type_view
-from mayan.apps.documents.serializers.document_type_serializers import DocumentTypeSerializer
+from mayan.apps.documents.serializers.document_type_serializers import (
+    DocumentTypeSerializer
+)
 from mayan.apps.rest_api import generics
 from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 

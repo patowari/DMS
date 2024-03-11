@@ -20,7 +20,7 @@ EMPTY_LABEL = '---------'
 DJANGO_SQLITE_BACKEND = 'django.db.backends.sqlite3'
 
 MESSAGE_DEPRECATION_WARNING = _(
-    'This feature has been deprecated and will be removed in a future '
+    message='This feature has been deprecated and will be removed in a future '
     'version.'
 )
 

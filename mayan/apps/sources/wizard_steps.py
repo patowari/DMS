@@ -1,6 +1,8 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.documents.forms.document_type_forms import DocumentTypeFilteredSelectForm
+from mayan.apps.documents.forms.document_type_forms import (
+    DocumentTypeFilteredSelectForm
+)
 from mayan.apps.documents.permissions import permission_document_create
 
 from .classes import DocumentCreateWizardStep

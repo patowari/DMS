@@ -4,7 +4,9 @@ from django.core.files.base import File
 
 from mayan.apps.mime_types.classes import MIMETypeBackend
 from mayan.apps.rest_api import generics
-from mayan.apps.rest_api.api_view_mixins import ExternalContentTypeObjectAPIViewMixin
+from mayan.apps.rest_api.api_view_mixins import (
+    ExternalContentTypeObjectAPIViewMixin
+)
 
 from .api_view_mixins import APIImageViewMixin
 from .classes import AppImageErrorImage

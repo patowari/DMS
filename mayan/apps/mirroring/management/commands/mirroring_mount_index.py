@@ -1,6 +1,8 @@
 from django.core import management
 
-from mayan.apps.document_indexing.models.index_instance_models import IndexInstance
+from mayan.apps.document_indexing.models.index_instance_models import (
+    IndexInstance
+)
 
 from ..base import MountCommandMixin
 
@@ -14,7 +16,9 @@ class Command(MountCommandMixin, management.BaseCommand):
     def factory_func_document_container_node(self, *args, **options):
         index_instance = IndexInstance.objects.get(
             **{
-                self.node_identifier_argument: options[self.node_identifier_argument]
+                self.node_identifier_argument: options[
+                    self.node_identifier_argument
+                ]
             }
         )
 

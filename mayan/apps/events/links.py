@@ -18,8 +18,7 @@ from .icons import (
     icon_user_object_subscriptions_list
 )
 from .permissions import (
-    permission_events_clear, permission_events_export,
-    permission_events_view
+    permission_events_clear, permission_events_export, permission_events_view
 )
 
 

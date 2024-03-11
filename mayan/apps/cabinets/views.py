@@ -18,8 +18,8 @@ from .forms import CabinetListForm
 from .icons import (
     icon_cabinet, icon_cabinet_child_add, icon_cabinet_create,
     icon_cabinet_delete, icon_cabinet_detail, icon_cabinet_edit,
-    icon_cabinet_list, icon_document_cabinet_add,
-    icon_document_cabinet_list, icon_document_cabinet_remove
+    icon_cabinet_list, icon_document_cabinet_add, icon_document_cabinet_list,
+    icon_document_cabinet_remove
 )
 from .links import (
     link_cabinet_child_add, link_cabinet_create, link_document_cabinet_add
@@ -61,7 +61,7 @@ class CabinetChildAddView(ExternalObjectViewMixin, SingleObjectCreateView):
     def get_extra_context(self):
         return {
             'title': _(
-                'Add new level to: %s'
+                message='Add new level to: %s'
             ) % self.external_object.get_full_path(),
             'object': self.external_object
         }
@@ -125,14 +125,14 @@ class CabinetDetailView(ExternalObjectViewMixin, DocumentListView):
                     )
                 ),
                 'no_results_text': _(
-                    'Cabinet levels can contain documents or other '
+                    message='Cabinet levels can contain documents or other '
                     'cabinet sub levels. To add documents to a cabinet, '
                     'select the cabinet view of a document view.'
                 ),
                 'no_results_title': _(message='This cabinet level is empty'),
                 'object': self.external_object,
                 'title': _(
-                    'Details of cabinet: %s'
+                    message='Details of cabinet: %s'
                 ) % self.external_object.get_full_path()
             }
         )
@@ -172,7 +172,7 @@ class CabinetListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Cabinets are a multi-level method to organize '
+                message='Cabinets are a multi-level method to organize '
                 'documents. Each cabinet can contain documents as '
                 'well as other sub level cabinets.'
             ),
@@ -189,13 +189,13 @@ class DocumentCabinetAddView(MultipleObjectFormActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_single = _(
-        'Document "%(object)s" added to cabinets successfully.'
+        message='Document "%(object)s" added to cabinets successfully.'
     )
     success_message_singular = _(
-        '%(count)d document added to cabinets successfully.'
+        message='%(count)d document added to cabinets successfully.'
     )
     success_message_plural = _(
-        '%(count)d documents added to cabinets successfully.'
+        message='%(count)d documents added to cabinets successfully.'
     )
     title_plural = _(message='Add %(count)d documents to cabinets.')
     title_single = _(message='Add document "%(object)s" to cabinets.')
@@ -217,7 +217,7 @@ class DocumentCabinetAddView(MultipleObjectFormActionView):
     def get_form_extra_kwargs(self):
         kwargs = {
             'help_text': _(
-                'Cabinets to which the selected documents will be added.'
+                message='Cabinets to which the selected documents will be added.'
             ),
             'permission': permission_cabinet_add_document,
             'queryset': Cabinet.objects.all(),
@@ -263,14 +263,14 @@ class DocumentCabinetListView(ExternalObjectViewMixin, CabinetListView):
                 )
             ),
             'no_results_text': _(
-                'Documents can be added to many cabinets.'
+                message='Documents can be added to many cabinets.'
             ),
             'no_results_title': _(
-                'This document is not in any cabinet'
+                message='This document is not in any cabinet'
             ),
             'object': self.external_object,
             'title': _(
-                'Cabinets containing document: %s'
+                message='Cabinets containing document: %s'
             ) % self.external_object
         }
 
@@ -286,13 +286,13 @@ class DocumentCabinetRemoveView(MultipleObjectFormActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_single = _(
-        'Document "%(object)s" removed from cabinets successfully.'
+        message='Document "%(object)s" removed from cabinets successfully.'
     )
     success_message_singular = _(
-        '%(count)d document removed from cabinets successfully.'
+        message='%(count)d document removed from cabinets successfully.'
     )
     success_message_plural = _(
-        '%(count)d documents removed from cabinets successfully.'
+        message='%(count)d documents removed from cabinets successfully.'
     )
     title_plural = _(message='Remove %(count)d documents from cabinets.')
     title_single = _(message='Remove document "%(object)s" from cabinets.')
@@ -314,7 +314,7 @@ class DocumentCabinetRemoveView(MultipleObjectFormActionView):
     def get_form_extra_kwargs(self):
         kwargs = {
             'help_text': _(
-                'Cabinets from which the selected documents will be removed.'
+                message='Cabinets from which the selected documents will be removed.'
             ),
             'permission': permission_cabinet_remove_document,
             'queryset': Cabinet.objects.all(),

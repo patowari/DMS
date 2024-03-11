@@ -1,4 +1,6 @@
-from mayan.apps.source_compressed.source_backends.mixins import SourceBackendMixinCompressed
+from mayan.apps.source_compressed.source_backends.mixins import (
+    SourceBackendMixinCompressed
+)
 from mayan.apps.sources.source_backends.base import SourceBackend
 
 from ..source_backend_actions.interactive_actions import (

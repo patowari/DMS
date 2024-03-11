@@ -4,8 +4,7 @@ from django.apps import apps
 from django.core.files import File
 
 from mayan.apps.sources.source_backend_actions.interfaces import (
-    SourceBackendActionInterface,
-    SourceBackendActionInterfaceRequestRESTAPI,
+    SourceBackendActionInterface, SourceBackendActionInterfaceRequestRESTAPI,
     SourceBackendActionInterfaceRequestViewForm,
     SourceBackendActionInterfaceTask
 )

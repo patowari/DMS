@@ -85,7 +85,7 @@ class DefinedStorage(AppsModuleLoaderMixin):
             return self.get_storage_subclass()(**self.kwargs)
         except Exception as exception:
             message = self.error_message or _(
-                'Unable to initialize storage: %(name)s. Check the storage '
+                message='Unable to initialize storage: %(name)s. Check the storage '
                 'backend dotted path and arguments.'
             ) % {
                 'name': self.name
@@ -106,7 +106,7 @@ class DefinedStorage(AppsModuleLoaderMixin):
             )
         except Exception as exception:
             message = self.error_message or _(
-                'Unable to initialize storage: %(name)s. Check the storage '
+                message='Unable to initialize storage: %(name)s. Check the storage '
                 'backend dotted path and arguments.'
             ) % {
                 'name': self.name

@@ -47,7 +47,7 @@ class WorkflowTransitionBusinessLogicMixin:
     def has_condition(self):
         return self.condition.strip()
     has_condition.help_text = _(
-        'The transition will be available, depending on the condition '
+        message='The transition will be available, depending on the condition '
         'return value.'
     )
     has_condition.short_description = _(message='Has a condition?')

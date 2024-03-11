@@ -19,8 +19,7 @@ from .icons import (
 from .permissions import (
     permission_mailing_profile_create, permission_mailing_profile_delete,
     permission_mailing_profile_edit, permission_mailing_profile_use,
-    permission_mailing_profile_view,
-    permission_send_document_file_attachment,
+    permission_mailing_profile_view, permission_send_document_file_attachment,
     permission_send_document_file_link, permission_send_document_link,
     permission_send_document_version_attachment,
     permission_send_document_version_link

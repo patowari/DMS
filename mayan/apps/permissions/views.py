@@ -110,7 +110,7 @@ class RoleListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Roles are authorization units. They contain '
+                message='Roles are authorization units. They contain '
                 'user groups which inherit the role permissions for the '
                 'entire system. Roles can also part of access '
                 'controls lists. Access controls list are permissions '
@@ -142,7 +142,7 @@ class RoleGroupAddRemoveView(AddRemoveView):
         return {
             'object': self.main_object,
             'subtitle': _(
-                'Add groups to be part of a role. They will '
+                message='Add groups to be part of a role. They will '
                 'inherit the role\'s permissions and access controls.'
             ),
             'title': _(message='Groups of role: %s') % self.main_object
@@ -196,7 +196,7 @@ class RolePermissionAddRemoveView(AddRemoveView):
         return {
             'object': self.main_object,
             'subtitle': _(
-                'Permissions granted here will apply to the entire system '
+                message='Permissions granted here will apply to the entire system '
                 'and all objects.'
             ),
             'title': _(message='Permissions for role: %s') % self.main_object

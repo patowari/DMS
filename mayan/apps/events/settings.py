@@ -12,7 +12,7 @@ setting_disable_asynchronous_mode = setting_namespace.do_setting_add(
     default=DEFAULT_EVENTS_DISABLE_ASYNCHRONOUS_MODE,
     global_name='EVENTS_DISABLE_ASYNCHRONOUS_MODE',
     help_text=_(
-        'Disables asynchronous events mode. All events will be committed '
+        message='Disables asynchronous events mode. All events will be committed '
         'in the same process that triggers them. This was the behavior '
         'prior to version 4.5.'
     )

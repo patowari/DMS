@@ -1,7 +1,9 @@
 from django.apps import apps
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.source_compressed.source_backends.literals import SOURCE_UNCOMPRESS_CHOICE_ASK
+from mayan.apps.source_compressed.source_backends.literals import (
+    SOURCE_UNCOMPRESS_CHOICE_ASK
+)
 
 from .source_backends import SourceBackendWebForm
 

@@ -57,7 +57,7 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
             try:
                 action = source.get_action(name='document_upload')
                 if action.has_interface(interface_name='View'):
-                    return super().dispatch(request, *args, **kwargs)
+                    return super().dispatch(request=request, *args, **kwargs)
             except SourceActionExceptionUnknown:
                 """
                 Non fatal. Ignore and try the next source.
@@ -65,7 +65,7 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
 
         messages.error(
             message=_(
-                'No interactive document sources have been defined or '
+                message='No interactive document sources have been defined or '
                 'none have been enabled, create one before proceeding.'
             ), request=request
         )
@@ -82,7 +82,7 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
             {
                 'form_css_classes': 'form-hotkey-enter form-hotkey-double-click',
                 'step_title': _(
-                    'Step %(step)d of %(total_steps)d: %(step_label)s'
+                    message='Step %(step)d of %(total_steps)d: %(step_label)s'
                 ) % {
                     'step': self.steps.step1,
                     'step_label': wizard_step.label,

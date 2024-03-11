@@ -12,7 +12,9 @@ from ..permissions import (
     permission_document_version_view, permission_document_view,
     permission_trashed_document_delete, permission_trashed_document_restore
 )
-from ..serializers.trashed_document_serializers import TrashedDocumentSerializer
+from ..serializers.trashed_document_serializers import (
+    TrashedDocumentSerializer
+)
 from ..tasks import task_trashed_document_delete
 
 logger = logging.getLogger(name=__name__)

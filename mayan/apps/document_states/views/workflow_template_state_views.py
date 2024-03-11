@@ -53,7 +53,7 @@ class WorkflowTemplateStateActionCreateView(
             'navigation_object_list': ('object', 'workflow'),
             'object': self.external_object,
             'title': _(
-                'Create a "%(backend_label)s" workflow action for: %(workflow_state)s'
+                message='Create a "%(backend_label)s" workflow action for: %(workflow_state)s'
             ) % {
                 'backend_label': self.get_backend_class().label,
                 'workflow_state': self.external_object
@@ -185,15 +185,15 @@ class WorkflowTemplateStateActionListView(
                 )
             ),
             'no_results_text': _(
-                'Workflow state actions are macros that get executed when '
+                message='Workflow state actions are macros that get executed when '
                 'documents enters or leaves the state in which they reside.'
             ),
             'no_results_title': _(
-                'There are no actions for this workflow state'
+                message='There are no actions for this workflow state'
             ),
             'object': self.external_object,
             'title': _(
-                'Actions for workflow state: %s'
+                message='Actions for workflow state: %s'
             ) % self.external_object,
             'workflow': self.external_object.workflow
         }
@@ -247,7 +247,7 @@ class WorkflowTemplateStateCreateView(
         return {
             'object': self.external_object,
             'title': _(
-                'Create states for workflow: %s'
+                message='Create states for workflow: %s'
             ) % self.external_object,
             'workflow': self.external_object
         }
@@ -281,7 +281,7 @@ class WorkflowTemplateStateDeleteView(SingleObjectDeleteView):
             'navigation_object_list': ('object', 'workflow'),
             'object': self.object,
             'title': _(
-                'Delete workflow state: %s?'
+                message='Delete workflow state: %s?'
             ) % self.object,
             'workflow': self.object.workflow
         }
@@ -312,7 +312,7 @@ class WorkflowTemplateStateEditView(SingleObjectEditView):
             'navigation_object_list': ('object', 'workflow'),
             'object': self.object,
             'title': _(
-                'Edit workflow state: %s'
+                message='Edit workflow state: %s'
             ) % self.object,
             'workflow': self.object.workflow
         }
@@ -348,10 +348,10 @@ class WorkflowTemplateStateListView(
                 )
             ),
             'no_results_text': _(
-                'Create states and link them using transitions.'
+                message='Create states and link them using transitions.'
             ),
             'no_results_title': _(
-                'This workflow doesn\'t have any states'
+                message='This workflow doesn\'t have any states'
             ),
             'object': self.external_object,
             'title': _(message='States of workflow: %s') % self.external_object,

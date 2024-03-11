@@ -62,7 +62,7 @@ class QuotaCreateView(SingleObjectDynamicFormCreateView):
     def get_extra_context(self):
         return {
             'title': _(
-                'Create a "%s" quota'
+                message='Create a "%s" quota'
             ) % self.get_backend().label
         }
 
@@ -144,7 +144,7 @@ class QuotaListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Quotas restrict usage of system resources. '
+                message='Quotas restrict usage of system resources. '
             ),
             'no_results_title': _(message='No quotas available'),
             'title': _(message='Quotas')

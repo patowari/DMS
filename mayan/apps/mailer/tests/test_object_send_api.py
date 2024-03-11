@@ -2,21 +2,22 @@ from rest_framework import status
 
 from django.core import mail
 
-from mayan.apps.documents.tests.mixins.document_mixins import DocumentTestMixin
+from mayan.apps.documents.tests.mixins.document_mixins import (
+    DocumentTestMixin
+)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import event_email_sent
 from ..permissions import (
-    permission_mailing_profile_use,
-    permission_send_document_file_attachment,
+    permission_mailing_profile_use, permission_send_document_file_attachment,
     permission_send_document_file_link, permission_send_document_link,
     permission_send_document_version_attachment,
     permission_send_document_version_link
 )
 
 from .literals import (
-    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS,
-    TEST_MAILING_OBJECT_CONTENT, TEST_MAILING_OBJECT_MIME_TYPE
+    TEST_EMAIL_ADDRESS, TEST_EMAIL_FROM_ADDRESS, TEST_MAILING_OBJECT_CONTENT,
+    TEST_MAILING_OBJECT_MIME_TYPE
 )
 from .mixins import MailObjectSendAPIViewTestMixin
 

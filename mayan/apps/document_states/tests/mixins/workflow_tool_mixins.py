@@ -1,4 +1,6 @@
-from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+from .workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionTestMixin
+)
 
 
 class WorkflowToolViewTestMixin(WorkflowTemplateTransitionTestMixin):

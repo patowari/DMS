@@ -25,13 +25,10 @@ from mayan.apps.storage.utils import (
     NamedTemporaryFile, TemporaryDirectory, fs_cleanup
 )
 
-from .exceptions import (
-    InvalidOfficeFormat, LayerError, OfficeConversionError
-)
+from .exceptions import InvalidOfficeFormat, LayerError, OfficeConversionError
 from .literals import (
     CONVERTER_OFFICE_FILE_MIMETYPES, DEFAULT_LIBREOFFICE_PATH,
-    DEFAULT_PAGE_NUMBER, DEFAULT_PILLOW_FORMAT,
-    MAP_PILLOW_FORMAT_TO_MIME_TYPE
+    DEFAULT_PAGE_NUMBER, DEFAULT_PILLOW_FORMAT, MAP_PILLOW_FORMAT_TO_MIME_TYPE
 )
 from .settings import (
     setting_graphics_backend, setting_graphics_backend_arguments
@@ -412,7 +409,7 @@ class Layer:
             return self.empty_results_text
         else:
             return _(
-                'Transformations allow changing the visual appearance '
+                message='Transformations allow changing the visual appearance '
                 'of documents without making permanent changes to the '
                 'document file themselves.'
             )

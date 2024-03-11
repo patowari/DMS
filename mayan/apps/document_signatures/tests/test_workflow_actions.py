@@ -2,17 +2,21 @@ import json
 
 from mayan.apps.django_gpg.tests.literals import TEST_KEY_PRIVATE_PASSPHRASE
 from mayan.apps.django_gpg.tests.mixins import KeyTestMixin
+from mayan.apps.document_states.events import (
+    event_workflow_instance_transitioned
+)
+from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
+from mayan.apps.document_states.permissions import (
+    permission_workflow_template_edit
+)
+from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
+    WorkflowTemplateStateActionTestMixin,
+    WorkflowTemplateStateActionViewTestMixin
+)
 from mayan.apps.documents.events import (
     event_document_file_created, event_document_file_edited,
     event_document_version_created, event_document_version_edited,
     event_document_version_page_created
-)
-from mayan.apps.document_states.events import event_workflow_instance_transitioned
-from mayan.apps.document_states.literals import WORKFLOW_ACTION_ON_ENTRY
-from mayan.apps.document_states.permissions import permission_workflow_template_edit
-from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
-    WorkflowTemplateStateActionTestMixin,
-    WorkflowTemplateStateActionViewTestMixin
 )
 from mayan.apps.documents.tests.base import BaseTestCase, GenericViewTestCase
 

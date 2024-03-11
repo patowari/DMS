@@ -76,7 +76,7 @@ class DocumentCountQuota(
             'label': _(message='Documents limit'),
             'class': 'django.forms.IntegerField',
             'help_text': _(
-                'Maximum number of documents.'
+                message='Maximum number of documents.'
             )
         }
     }

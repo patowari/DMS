@@ -70,7 +70,7 @@ class UserDeleteView(MultipleObjectDeleteView):
         if self.request.user in self.object_list:
             return {
                 'message': _(
-                    'Warning! You are about to delete your own user '
+                    message='Warning! You are about to delete your own user '
                     'account. You will lose access to the system. This '
                     'process is not reversible.'
                 )
@@ -163,7 +163,7 @@ class UserListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'User accounts can be create from this view. After creating '
+                message='User accounts can be create from this view. After creating '
                 'a user account you will prompted to set a password for it. '
             ),
             'no_results_title': _(message='There are no user accounts'),
@@ -186,7 +186,7 @@ class UserOptionsEditView(ExternalObjectViewMixin, SingleObjectEditView):
     def get_extra_context(self):
         return {
             'title': _(
-                'Edit options for user: %s'
+                message='Edit options for user: %s'
             ) % self.external_object,
             'object': self.external_object
         }

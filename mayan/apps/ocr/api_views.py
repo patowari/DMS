@@ -2,9 +2,13 @@ from rest_framework import status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from mayan.apps.documents.api_views.api_view_mixins import ParentObjectDocumentVersionPageAPIViewMixin
+from mayan.apps.documents.api_views.api_view_mixins import (
+    ParentObjectDocumentVersionPageAPIViewMixin
+)
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.documents.models.document_version_models import DocumentVersion
+from mayan.apps.documents.models.document_version_models import (
+    DocumentVersion
+)
 from mayan.apps.rest_api import generics
 
 from .models import DocumentVersionPageOCRContent, DocumentTypeOCRSettings
@@ -14,8 +18,7 @@ from .permissions import (
     permission_document_version_ocr_content_view
 )
 from .serializers import (
-    DocumentVersionPageOCRContentSerializer,
-    DocumentTypeOCRSettingsSerializer
+    DocumentVersionPageOCRContentSerializer, DocumentTypeOCRSettingsSerializer
 )
 
 

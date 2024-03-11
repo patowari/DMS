@@ -18,7 +18,7 @@ class TemplateField(forms.CharField):
         self.help_text = format_lazy(
             '{} {}', self.initial_help_text,
             _(
-                'Use Django\'s default templating language '
+                message='Use Django\'s default templating language '
                 '(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/). '
             ) % {
                 'django_version': mayan.__django_version__
@@ -38,7 +38,7 @@ class ModelTemplateField(TemplateField):
         self.help_text = format_lazy(
             '{} {}', self.initial_help_text,
             _(
-                'Use Django\'s default templating language '
+                message='Use Django\'s default templating language '
                 '(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/). '
                 'The {{ %(variable)s }} variable is available to the template.'
             ) % {

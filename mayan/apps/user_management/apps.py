@@ -40,10 +40,9 @@ from .links import (
 from .methods import (
     get_method_group_init, get_method_group_save, get_method_user_init,
     get_method_user_save, method_group_get_absolute_url,
-    method_group_get_users, method_group_users_add,
-    method_group_users_remove, method_user_get_absolute_api_url,
-    method_user_get_absolute_url, method_user_get_groups,
-    method_user_groups_add, method_user_groups_remove
+    method_group_get_users, method_group_users_add, method_group_users_remove,
+    method_user_get_absolute_api_url, method_user_get_absolute_url,
+    method_user_get_groups, method_user_groups_add, method_user_groups_remove
 )
 from .permissions import (
     permission_group_delete, permission_group_edit, permission_group_view,
@@ -155,7 +154,7 @@ class UserManagementApp(MayanAppConfig):
         )
 
         User.has_usable_password.short_description = _(
-            'Has usable password?'
+            message='Has usable password?'
         )
 
         EventModelRegistry.register(model=Group)

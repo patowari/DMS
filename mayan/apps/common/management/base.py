@@ -4,7 +4,9 @@ from django.conf import settings
 from django.core import management
 from django.core.management.utils import get_random_secret_key
 
-from mayan.apps.appearance.literals import COMMAND_NAME_APPEARANCE_PREPARE_STATIC
+from mayan.apps.appearance.literals import (
+    COMMAND_NAME_APPEARANCE_PREPARE_STATIC
+)
 from mayan.apps.autoadmin.literals import COMMAND_NAME_AUTOADMIN_CREATE
 from mayan.apps.dependencies.literals import COMMAND_NAME_DEPENDENCIES_INSTALL
 from mayan.apps.smart_settings.literals import COMMAND_NAME_SETTINGS_SAVE

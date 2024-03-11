@@ -1,13 +1,15 @@
 import whoosh
-from whoosh import qparser  # NOQA Used to initialize the whoosh.fields module.
+from whoosh import (  # NOQA Used to initialize the whoosh.fields module.
+    qparser
+)
 
 from django.db import models
 
 from ...search_query_types import (
     QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
-    QueryTypeLessThanOrEqual, QueryTypePartial, QueryTypeRange,
-    QueryTypeRangeExclusive, QueryTypeRegularExpression
+    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
+    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
+    QueryTypeRegularExpression
 )
 from ...value_transformations import (
     ValueTransformationAccentReplace, ValueTransformationAtReplace,

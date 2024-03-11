@@ -18,11 +18,11 @@ class RecentCreatedDocumentListView(DocumentListView):
             {
                 'no_results_icon': icon_document_recently_created_list,
                 'no_results_text': _(
-                    'This view will list the latest documents created '
+                    message='This view will list the latest documents created '
                     'in the system.'
                 ),
                 'no_results_title': _(
-                    'There are no recently created documents'
+                    message='There are no recently created documents'
                 ),
                 'title': _(message='Recently created')
             }

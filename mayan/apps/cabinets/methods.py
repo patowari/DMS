@@ -18,6 +18,6 @@ def method_document_get_cabinets(self, permission, user):
 
 
 method_document_get_cabinets.help_text = _(
-    'Return a list of cabinets containing the document.'
+    message='Return a list of cabinets containing the document.'
 )
 method_document_get_cabinets.short_description = _(message='get_cabinets()')

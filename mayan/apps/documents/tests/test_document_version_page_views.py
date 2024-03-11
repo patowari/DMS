@@ -5,7 +5,9 @@ from mayan.apps.converter.permissions import (
     permission_transformation_delete, permission_transformation_edit
 )
 from mayan.apps.converter.tests.mixins import LayerTestMixin
-from mayan.apps.documents.tests.literals import TEST_FILE_MULTI_PAGE_TIFF_FILENAME
+from mayan.apps.documents.tests.literals import (
+    TEST_FILE_MULTI_PAGE_TIFF_FILENAME
+)
 
 from ..events import (
     event_document_version_edited, event_document_version_page_created,

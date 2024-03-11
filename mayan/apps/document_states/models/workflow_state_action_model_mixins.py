@@ -51,7 +51,7 @@ class WorkflowStateActionBusinessLogicMixin:
         return self.condition.strip()
 
     has_condition.help_text = _(
-        'The state action will be executed, depending on the condition '
+        message='The state action will be executed, depending on the condition '
         'return value.'
     )
     has_condition.short_description = _(message='Has a condition?')

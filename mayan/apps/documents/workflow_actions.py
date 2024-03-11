@@ -18,7 +18,7 @@ class DocumentTypeChangeAction(WorkflowAction):
             'label': _(message='Document type'),
             'class': 'django.forms.ModelChoiceField', 'kwargs': {
                 'help_text': _(
-                    'New document type for the workflow document.'
+                    message='New document type for the workflow document.'
                 ), 'queryset': DocumentType.objects.all(), 'required': True
             }
         }

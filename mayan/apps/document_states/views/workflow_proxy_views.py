@@ -34,15 +34,15 @@ class WorkflowRuntimeProxyDocumentListView(
         context.update(
             {
                 'no_results_text': _(
-                    'Associate a workflow with some document types and '
+                    message='Associate a workflow with some document types and '
                     'documents of those types will be listed in this view.'
                 ),
                 'no_results_title': _(
-                    'There are no documents executing this workflow'
+                    message='There are no documents executing this workflow'
                 ),
                 'object': self.external_object,
                 'title': _(
-                    'Documents with the workflow: %s'
+                    message='Documents with the workflow: %s'
                 ) % self.external_object
             }
         )
@@ -62,7 +62,7 @@ class WorkflowRuntimeProxyListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Create some workflows and associated them with a document '
+                message='Create some workflows and associated them with a document '
                 'type. Active workflows will be shown here and the documents '
                 'for which they are executing.'
             ),
@@ -89,10 +89,10 @@ class WorkflowRuntimeProxyStateDocumentListView(
                 'object': self.external_object,
                 'navigation_object_list': ('object', 'workflow'),
                 'no_results_title': _(
-                    'There are no documents in this workflow state'
+                    message='There are no documents in this workflow state'
                 ),
                 'title': _(
-                    'Documents in the workflow "%s", state "%s"'
+                    message='Documents in the workflow "%s", state "%s"'
                 ) % (
                     self.external_object.workflow, self.external_object
                 ),
@@ -123,10 +123,10 @@ class WorkflowRuntimeProxyStateListView(
                 )
             ),
             'no_results_text': _(
-                'Create states and link them using transitions.'
+                message='Create states and link them using transitions.'
             ),
             'no_results_title': _(
-                'This workflow doesn\'t have any state'
+                message='This workflow doesn\'t have any state'
             ),
             'object': self.external_object,
             'title': _(message='States of workflow: %s') % self.external_object

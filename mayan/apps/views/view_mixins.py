@@ -389,7 +389,7 @@ class ObjectActionViewMixin:
     Mixin that performs a user action on a queryset.
     """
     error_message = _(
-        'Unable to perform operation on object %(instance)s; %(exception)s.'
+        message='Unable to perform operation on object %(instance)s; %(exception)s.'
     )
     post_object_action_url = None
     success_message_plural = _(
@@ -644,7 +644,7 @@ class ViewPermissionCheckViewMixin:
                 permission=view_permission, user=self.request.user
             )
 
-        return super().dispatch(request, *args, **kwargs)
+        return super().dispatch(request=request, *args, **kwargs)
 
     def get_view_permission(self):
         return self.view_permission

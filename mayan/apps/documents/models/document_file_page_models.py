@@ -6,7 +6,9 @@ from django.utils.translation import gettext_lazy as _
 from ..managers import DocumentFilePageManager, ValidDocumentFilePageManager
 
 from .document_file_models import DocumentFile
-from .document_file_page_model_mixins import DocumentFilePageBusinessLogicMixin
+from .document_file_page_model_mixins import (
+    DocumentFilePageBusinessLogicMixin
+)
 from .document_version_page_models import DocumentVersionPage
 from .model_mixins import PagedModelMixin
 

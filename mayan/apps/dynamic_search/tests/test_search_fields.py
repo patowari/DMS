@@ -1,9 +1,7 @@
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..exceptions import DynamicSearchModelException
-from ..search_fields import (
-    SearchField, SearchFieldDirect, SearchFieldRelated
-)
+from ..search_fields import SearchField, SearchFieldDirect, SearchFieldRelated
 
 from .mixins.base import SearchTestMixin, TestSearchObjectHierarchyTestMixin
 

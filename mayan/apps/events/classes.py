@@ -22,8 +22,7 @@ from .literals import (
     EVENT_EVENTS_EXPORTED_NAME, EVENT_TYPE_NAMESPACE_NAME
 )
 from .permissions import (
-    permission_events_clear, permission_events_export,
-    permission_events_view
+    permission_events_clear, permission_events_export, permission_events_view
 )
 from .settings import setting_disable_asynchronous_mode
 
@@ -121,7 +120,7 @@ class ActionExporter:
                 user=user,
                 subject=_(message='Events exported.'),
                 body=_(
-                    'The event list has been exported and is available '
+                    message='The event list has been exported and is available '
                     'for download using the link: %(download_url)s or from '
                     'the downloads area (%(download_list_url)s).'
                 ) % {

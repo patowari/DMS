@@ -48,7 +48,7 @@ class DocumentTypeRetentionPoliciesEditView(SingleObjectEditView):
         return {
             'object': self.object,
             'title': _(
-                'Retention policies for document type: %s'
+                message='Retention policies for document type: %s'
             ) % self.object
         }
 

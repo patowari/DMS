@@ -1,4 +1,6 @@
-from mayan.apps.documents.tests.base import GenericTransactionDocumentViewTestCase
+from mayan.apps.documents.tests.base import (
+    GenericTransactionDocumentViewTestCase
+)
 from mayan.apps.messaging.events import event_message_created
 from mayan.apps.messaging.models import Message
 from mayan.apps.storage.events import event_download_file_created

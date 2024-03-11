@@ -8,7 +8,9 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import convert_to_internal_name
 from mayan.apps.credentials.class_mixins import BackendMixinCredentials
-from mayan.apps.source_periodic.source_backends.mixins import SourceBackendMixinPeriodicCompressed
+from mayan.apps.source_periodic.source_backends.mixins import (
+    SourceBackendMixinPeriodicCompressed
+)
 
 from ..source_backend_actions import SourceBackendActionEmailDocumentUpload
 
@@ -43,8 +45,8 @@ class SourceBackendMixinEmail(
                 'port': {
                     'class': 'django.forms.IntegerField',
                     'help_text': _(
-                        'Typical choices are 110 for POP3, 995 for POP3 '
-                        'over SSL, 143 for IMAP, 993 for IMAP over SSL.'
+                        message='Typical choices are 110 for POP3, 995 for '
+                        'POP3 over SSL, 143 for IMAP, 993 for IMAP over SSL.'
                     ),
                     'kwargs': {
                         'min_value': 0
@@ -55,7 +57,8 @@ class SourceBackendMixinEmail(
                     'class': 'django.forms.BooleanField',
                     'default': True,
                     'help_text': _(
-                        'Store the body of the email as a text document.'
+                        message='Store the body of the email as a text '
+                        'document.'
                     ),
                     'label': _(message='Store email body'),
                     'required': False

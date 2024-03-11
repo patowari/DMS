@@ -22,9 +22,7 @@ from mayan.apps.user_management.links import link_group_list
 from .classes import Permission
 from .dashboard_widgets import DashboardWidgetRoleTotal
 from .events import event_role_created, event_role_edited
-from .handlers import (
-    handler_permission_initialize, handler_purge_permissions
-)
+from .handlers import handler_permission_initialize, handler_purge_permissions
 from .links import (
     link_group_role_list, link_role_create, link_role_delete_single,
     link_role_delete_multiple, link_role_edit, link_role_group_list,
@@ -47,8 +45,8 @@ class PermissionsApp(MayanAppConfig):
     def ready(self):
         super().ready()
 
-        Role = self.get_model('Role')
-        StoredPermission = self.get_model('StoredPermission')
+        Role = self.get_model(model_name='Role')
+        StoredPermission = self.get_model(model_name='StoredPermission')
         Group = apps.get_model(app_label='auth', model_name='Group')
 
         DynamicSerializerField.add_serializer(
@@ -57,7 +55,9 @@ class PermissionsApp(MayanAppConfig):
         )
 
         Group.add_to_class(name='roles_add', value=method_group_roles_add)
-        Group.add_to_class(name='roles_remove', value=method_group_roles_remove)
+        Group.add_to_class(
+            name='roles_remove', value=method_group_roles_remove
+        )
 
         EventModelRegistry.register(model=Role)
         EventModelRegistry.register(
@@ -104,7 +104,8 @@ class PermissionsApp(MayanAppConfig):
         SourceColumn(
             func=lambda context: context['object'].get_group_count(
                 user=context['request'].user
-            ), include_label=True, label=_(message='Group count'), source=Role
+            ), include_label=True, label=_(message='Group count'),
+            source=Role
         )
 
         dashboard_administrator.add_widget(

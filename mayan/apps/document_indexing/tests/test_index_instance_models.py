@@ -1,6 +1,8 @@
 from django.db.utils import IntegrityError
 
-from mayan.apps.documents.models.trashed_document_models import TrashedDocument
+from mayan.apps.documents.models.trashed_document_models import (
+    TrashedDocument
+)
 from mayan.apps.documents.tests.base import (
     GenericDocumentTestCase, GenericTransactionDocumentTestCase
 )

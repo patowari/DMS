@@ -12,7 +12,9 @@ from ..classes import WorkflowActionNull
 from ..events import event_workflow_template_edited
 from ..literals import WORKFLOW_ACTION_ON_ENTRY, WORKFLOW_ACTION_WHEN_CHOICES
 
-from .workflow_state_action_model_mixins import WorkflowStateActionBusinessLogicMixin
+from .workflow_state_action_model_mixins import (
+    WorkflowStateActionBusinessLogicMixin
+)
 from .workflow_state_models import WorkflowState
 
 __all__ = ('WorkflowStateAction',)
@@ -38,12 +40,12 @@ class WorkflowStateAction(
     when = models.PositiveIntegerField(
         choices=WORKFLOW_ACTION_WHEN_CHOICES,
         default=WORKFLOW_ACTION_ON_ENTRY, help_text=_(
-            'At which moment of the state this action will execute.'
+            message='At which moment of the state this action will execute.'
         ), verbose_name=_(message='When')
     )
     condition = models.TextField(
         blank=True, help_text=_(
-            'The condition that will determine if this state action '
+            message='The condition that will determine if this state action '
             'is executed or not. The condition is evaluated against the '
             'workflow instance. Conditions that do not return any value, '
             'that return the Python logical None, or an empty string (\'\') '

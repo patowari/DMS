@@ -13,7 +13,9 @@ from django.urls import resolve
 from django.urls.exceptions import Resolver404
 from django.utils.encoding import force_bytes, force_str
 
-from mayan.apps.organizations.settings import setting_organization_url_base_path
+from mayan.apps.organizations.settings import (
+    setting_organization_url_base_path
+)
 from mayan.apps.templating.classes import Template
 
 from .literals import API_VERSION

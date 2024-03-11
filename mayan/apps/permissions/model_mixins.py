@@ -99,7 +99,7 @@ class StoredPermissionBusinessLogicMixin:
             )
         except KeyError:
             return _(
-                'Unknown or obsolete permission namespace: %s'
+                message='Unknown or obsolete permission namespace: %s'
             ) % self.namespace
         else:
             return permission_namespace.label

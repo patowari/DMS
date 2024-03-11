@@ -77,7 +77,7 @@ SIGNATURE_STATES = {
     },
     SIGNATURE_STATE_NO_PUBLIC_KEY: {
         'text': _(
-            'Document is signed but no public key is available for '
+            message='Document is signed but no public key is available for '
             'verification.'
         )
     },

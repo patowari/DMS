@@ -24,7 +24,9 @@ from mayan.apps.databases.classes import (
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.file_caching.links import link_cache_partition_purge
-from mayan.apps.file_caching.permissions import permission_cache_partition_purge
+from mayan.apps.file_caching.permissions import (
+    permission_cache_partition_purge
+)
 from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
@@ -38,8 +40,7 @@ from .dashboard_widgets import (
     DashboardWidgetDocumentFilePagesTotal, DashboardWidgetDocumentsInTrash,
     DashboardWidgetDocumentsNewThisMonth,
     DashboardWidgetDocumentsPagesNewThisMonth, DashboardWidgetDocumentsTotal,
-    DashboardWidgetDocumentsTypesTotal,
-    DashboardWidgetUserFavoriteDocuments,
+    DashboardWidgetDocumentsTypesTotal, DashboardWidgetUserFavoriteDocuments,
     DashboardWidgetUserRecentlyAccessedDocuments,
     DashboardWidgetUserRecentlyCreatedDocuments
 )
@@ -104,10 +105,9 @@ from .links.document_file_page_links import (
     link_document_file_page_return_to_document,
     link_document_file_page_return_to_document_file,
     link_document_file_page_return_to_document_file_page_list,
-    link_document_file_page_rotate_left,
-    link_document_file_page_rotate_right, link_document_file_page_view,
-    link_document_file_page_view_reset, link_document_file_page_zoom_in,
-    link_document_file_page_zoom_out
+    link_document_file_page_rotate_left, link_document_file_page_rotate_right,
+    link_document_file_page_view, link_document_file_page_view_reset,
+    link_document_file_page_zoom_in, link_document_file_page_zoom_out
 )
 from .links.document_links import (
     link_document_list, link_document_multiple_type_change,
@@ -126,8 +126,7 @@ from .links.document_type_links import (
 from .links.document_version_links import (
     link_document_version_active, link_document_version_create,
     link_document_version_edit, link_document_version_list,
-    link_document_version_modification,
-    link_document_version_multiple_delete,
+    link_document_version_modification, link_document_version_multiple_delete,
     link_document_version_multiple_transformations_clear,
     link_document_version_preview, link_document_version_print_form,
     link_document_version_return_list,
@@ -148,8 +147,8 @@ from .links.document_version_page_links import (
     link_document_version_page_return_to_document_version_page_list,
     link_document_version_page_rotate_left,
     link_document_version_page_rotate_right, link_document_version_page_view,
-    link_document_version_page_view_reset,
-    link_document_version_page_zoom_in, link_document_version_page_zoom_out
+    link_document_version_page_view_reset, link_document_version_page_zoom_in,
+    link_document_version_page_zoom_out
 )
 from .links.favorite_links import (
     link_document_favorites_add, link_document_favorites_add_multiple,
@@ -160,8 +159,8 @@ from .links.miscellaneous_links import link_decorations_list
 from .links.trashed_document_links import (
     link_document_delete, link_document_list_deleted,
     link_document_multiple_delete, link_document_multiple_restore,
-    link_document_multiple_trash, link_document_restore,
-    link_document_trash, link_trash_can_empty
+    link_document_multiple_trash, link_document_restore, link_document_trash,
+    link_trash_can_empty
 )
 from .literals import (
     IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR,
@@ -299,7 +298,7 @@ class DocumentsApp(MayanAppConfig):
         MissingItem(
             label=_(message='Create a document type'),
             description=_(
-                'Every uploaded document must be assigned a document type, '
+                message='Every uploaded document must be assigned a document type, '
                 'it is the basic way Mayan EDMS categorizes documents.'
             ), condition=lambda: not DocumentType.objects.exists(),
             view='documents:document_type_list'

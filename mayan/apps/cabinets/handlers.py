@@ -1,6 +1,8 @@
 import logging
 
-from mayan.apps.document_indexing.tasks import task_index_instance_document_add
+from mayan.apps.document_indexing.tasks import (
+    task_index_instance_document_add
+)
 
 logger = logging.getLogger(name=__name__)
 

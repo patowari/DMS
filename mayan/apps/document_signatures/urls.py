@@ -5,8 +5,8 @@ from .api_views import (
     APIDocumentFileDetachedSignatureListView,
     APIDocumentFileDetachedSignatureUploadView,
     APIDocumentFileEmbeddedSignatureDetailView,
-    APIDocumentFileEmbeddedSignatureListView,
-    APIDocumentFileSignDetachedView, APIDocumentFileSignEmbeddedView
+    APIDocumentFileEmbeddedSignatureListView, APIDocumentFileSignDetachedView,
+    APIDocumentFileSignEmbeddedView
 )
 from .views import (
     AllDocumentSignatureRefreshView, AllDocumentSignatureVerifyView,

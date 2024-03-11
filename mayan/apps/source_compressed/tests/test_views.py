@@ -5,7 +5,9 @@ from mayan.apps.source_compressed.source_backends.literals import (
     SOURCE_UNCOMPRESS_CHOICE_ALWAYS, SOURCE_UNCOMPRESS_CHOICE_ASK,
     SOURCE_UNCOMPRESS_CHOICE_NEVER
 )
-from mayan.apps.sources.tests.mixins.source_view_mixins import SourceActionViewTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import (
+    SourceActionViewTestMixin
+)
 
 from .mixins import CompressedSourceTestMixin
 

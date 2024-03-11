@@ -1,4 +1,6 @@
-from mayan.apps.document_states.permissions import permission_workflow_template_edit
+from mayan.apps.document_states.permissions import (
+    permission_workflow_template_edit
+)
 from mayan.apps.document_states.tests.mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionTestMixin,
     WorkflowTemplateStateActionViewTestMixin

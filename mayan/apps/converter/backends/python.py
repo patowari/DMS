@@ -102,7 +102,7 @@ class Python(ConverterBase):
             image = Image.open(fp=self.file_object)
         except IOError as exception:
             error_message = _(
-                'Exception determining page count using Pillow; %s'
+                message='Exception determining page count using Pillow; %s'
             ) % exception
             logger.error(error_message)
             raise PageCountError(error_message)
@@ -190,7 +190,7 @@ class Python(ConverterBase):
                         return page_count
                     else:
                         error_message = _(
-                            'Exception determining PDF page count; %s'
+                            message='Exception determining PDF page count; %s'
                         ) % exception
                         logger.error(error_message, exc_info=True)
                         raise PageCountError(error_message)
@@ -207,7 +207,7 @@ class Python(ConverterBase):
                 return page_count
             else:
                 error_message = _(
-                    'Exception determining PDF page count; %s'
+                    message='Exception determining PDF page count; %s'
                 ) % exception
                 logger.error(error_message, exc_info=True)
                 raise PageCountError(error_message)

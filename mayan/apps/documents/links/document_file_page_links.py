@@ -11,9 +11,8 @@ from ..icons import (
     icon_document_file_page_return_to_document,
     icon_document_file_page_return_to_document_file,
     icon_document_file_page_return_to_document_file_page_list,
-    icon_document_file_page_rotate_left,
-    icon_document_file_page_rotate_right, icon_document_file_page_zoom_in,
-    icon_document_file_page_zoom_out
+    icon_document_file_page_rotate_left, icon_document_file_page_rotate_right,
+    icon_document_file_page_zoom_in, icon_document_file_page_zoom_out
 )
 from ..permissions import (
     permission_document_file_view, permission_document_view
@@ -81,17 +80,20 @@ link_document_file_page_return_to_document_file_page_list = Link(
     args='resolved_object.document_file.pk',
     icon=icon_document_file_page_return_to_document_file_page_list,
     permission=permission_document_file_view,
-    text=_(message='Document file pages'), view='documents:document_file_page_list'
+    text=_(message='Document file pages'),
+    view='documents:document_file_page_list'
 )
 link_document_file_page_rotate_left = Link(
     args='resolved_object.pk', icon=icon_document_file_page_rotate_left,
     keep_query=True, permission=permission_document_file_view,
-    text=_(message='Rotate left'), view='documents:document_file_page_rotate_left'
+    text=_(message='Rotate left'),
+    view='documents:document_file_page_rotate_left'
 )
 link_document_file_page_rotate_right = Link(
     args='resolved_object.pk', icon=icon_document_file_page_rotate_right,
     keep_query=True, permission=permission_document_file_view,
-    text=_(message='Rotate right'), view='documents:document_file_page_rotate_right'
+    text=_(message='Rotate right'),
+    view='documents:document_file_page_rotate_right'
 )
 link_document_file_page_view = Link(
     args='resolved_object.pk', icon=icon_document_file_page_detail,

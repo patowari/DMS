@@ -138,7 +138,7 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
                         NON_FIELD_ERRORS: [
                             ValidationError(
                                 message=_(
-                                    '%(model_name)s with this %(field_labels)s already '
+                                    message='%(model_name)s with this %(field_labels)s already '
                                     'exists.'
                                 ), code='unique_together', params=params
                             )

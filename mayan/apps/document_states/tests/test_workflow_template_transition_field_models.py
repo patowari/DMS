@@ -1,7 +1,9 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
-from .mixins.workflow_template_transition_field_mixins import WorkflowTemplateTransitionFieldTestMixin
+from .mixins.workflow_template_transition_field_mixins import (
+    WorkflowTemplateTransitionFieldTestMixin
+)
 
 
 class WorkflowTemplateTransitionFieldModelTestCase(

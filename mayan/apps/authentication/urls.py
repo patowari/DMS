@@ -4,8 +4,7 @@ from .views.authentication_views import (
     MayanLoginView, MayanLogoutView, MayanPasswordChangeDoneView,
     MayanPasswordChangeView, MayanPasswordResetCompleteView,
     MayanPasswordResetConfirmView, MayanPasswordResetDoneView,
-    MayanPasswordResetView, MultiFactorAuthenticationView,
-    UserSetPasswordView
+    MayanPasswordResetView, MultiFactorAuthenticationView, UserSetPasswordView
 )
 from .views.impersonation_views import (
     UserImpersonateEndView, UserImpersonateFormStartView,

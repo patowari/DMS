@@ -1,4 +1,6 @@
-from mayan.apps.document_indexing.models.index_instance_models import IndexInstanceNode
+from mayan.apps.document_indexing.models.index_instance_models import (
+    IndexInstanceNode
+)
 from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
@@ -10,7 +12,9 @@ from .literals import (
     TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL_EDITED
 )
 from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
-from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+from .mixins.workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionTestMixin
+)
 
 
 class WorkflowInstanceIndexingTestCase(

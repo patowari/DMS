@@ -2,7 +2,9 @@ from django.core.files.base import ContentFile
 
 from mayan.apps.sources.source_backends.base import SourceBackend
 
-from ..source_backend_actions.periodic_actions import SourceBackendActionPeriodicDocumentUpload
+from ..source_backend_actions.periodic_actions import (
+    SourceBackendActionPeriodicDocumentUpload
+)
 from ..source_backends.mixins import SourceBackendMixinPeriodic
 
 

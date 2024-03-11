@@ -55,5 +55,5 @@ def method_get_document_file_file_metadata(self, dotted_name):
 
 
 method_get_document_file_file_metadata.help_text = _(
-    'Return the specified document file file metadata entry.'
+    message='Return the specified document file file metadata entry.'
 )

@@ -1,7 +1,9 @@
 from django.urls import reverse
 
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.documents.tests.mixins.document_file_mixins import DocumentFileTestMixin
+from mayan.apps.documents.tests.mixins.document_file_mixins import (
+    DocumentFileTestMixin
+)
 
 from ..links import link_document_file_download_quick
 from ..permissions import permission_document_file_download

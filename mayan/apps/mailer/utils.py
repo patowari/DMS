@@ -1,5 +1,7 @@
 from mayan.apps.document_exports.classes import DocumentVersionExporter
-from mayan.apps.document_exports.literals import DOCUMENT_VERSION_EXPORT_MIMETYPE
+from mayan.apps.document_exports.literals import (
+    DOCUMENT_VERSION_EXPORT_MIMETYPE
+)
 from mayan.apps.storage.utils import NamedTemporaryFile
 
 from .literals import EMAIL_SEPARATORS

@@ -42,7 +42,7 @@ class AnnouncementCreateView(SingleObjectCreateView):
 
 class AnnouncementDeleteView(MultipleObjectConfirmActionView):
     error_message = _(
-        'Error deleting announcement "%(instance)s"; %(exception)s'
+        message='Error deleting announcement "%(instance)s"; %(exception)s'
     )
     model = Announcement
     object_permission = permission_announcement_delete
@@ -51,13 +51,13 @@ class AnnouncementDeleteView(MultipleObjectConfirmActionView):
         viewname='announcements:announcement_list'
     )
     success_message_plural = _(
-        '%(count)d announcements deleted successfully.'
+        message='%(count)d announcements deleted successfully.'
     )
     success_message_single = _(
-        'Announcement "%(object)s" deleted successfully.'
+        message='Announcement "%(object)s" deleted successfully.'
     )
     success_message_singular = _(
-        '%(count)d announcement deleted successfully.'
+        message='%(count)d announcement deleted successfully.'
     )
     title_plural = _(message='Delete the %(count)d selected announcements.')
     title_single = _(message='Delete announcement: %(object)s.')
@@ -118,7 +118,7 @@ class AnnouncementListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Announcements are displayed in the login view. You can use '
+                message='Announcements are displayed in the login view. You can use '
                 'announcements to convey information about your '
                 'organization, announcements or usage guidelines for '
                 'your users.'

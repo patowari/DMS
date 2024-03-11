@@ -11,7 +11,9 @@ from mayan.apps.views.forms import DynamicForm
 from mayan.apps.views.generics import FormView, SingleObjectListView
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms.workflow_instance_forms import WorkflowInstanceTransitionSelectForm
+from ..forms.workflow_instance_forms import (
+    WorkflowInstanceTransitionSelectForm
+)
 from ..icons import (
     icon_workflow_instance_detail, icon_workflow_instance_list,
     icon_workflow_instance_transition,
@@ -21,8 +23,7 @@ from ..links import link_workflow_instance_transition
 from ..literals import FIELD_TYPE_MAPPING, WIDGET_CLASS_MAPPING
 from ..models import WorkflowInstance
 from ..permissions import (
-    permission_workflow_instance_transition,
-    permission_workflow_template_view
+    permission_workflow_instance_transition, permission_workflow_template_view
 )
 
 
@@ -38,15 +39,15 @@ class WorkflowInstanceListView(ExternalObjectViewMixin, SingleObjectListView):
             'hide_link': True,
             'no_results_icon': icon_workflow_template_list,
             'no_results_text': _(
-                'Assign workflows to the document type of this document '
+                message='Assign workflows to the document type of this document '
                 'to have this document execute those workflows. '
             ),
             'no_results_title': _(
-                'There are no workflows for this document'
+                message='There are no workflows for this document'
             ),
             'object': self.external_object,
             'title': _(
-                'Workflows for document: %s'
+                message='Workflows for document: %s'
             ) % self.external_object
         }
 
@@ -74,11 +75,11 @@ class WorkflowInstanceDetailView(
                 )
             ),
             'no_results_text': _(
-                'This view will show the state changes as a workflow '
+                message='This view will show the state changes as a workflow '
                 'instance is transitioned.'
             ),
             'no_results_title': _(
-                'There are no details for this workflow instance'
+                message='There are no details for this workflow instance'
             ),
             'object': self.external_object.document,
             'title': _(message='Detail of workflow: %(workflow)s') % {
@@ -122,7 +123,7 @@ class WorkflowInstanceTransitionExecuteView(
         )
         messages.success(
             message=_(
-                'Document "%s" transitioned successfully'
+                message='Document "%s" transitioned successfully'
             ) % self.external_object.document, request=self.request
         )
         return HttpResponseRedirect(
@@ -146,7 +147,7 @@ class WorkflowInstanceTransitionExecuteView(
             'navigation_object_list': ('object', 'workflow_instance'),
             'object': self.external_object.document,
             'title': _(
-                'Execute transition "%(transition)s" for workflow: '
+                message='Execute transition "%(transition)s" for workflow: '
                 '%(workflow)s'
             ) % {
                 'transition': self.get_workflow_template_transition(),
@@ -162,7 +163,7 @@ class WorkflowInstanceTransitionExecuteView(
                     'label': _(message='Comment'),
                     'class': 'django.forms.CharField', 'kwargs': {
                         'help_text': _(
-                            'Optional comment to attach to the transition.'
+                            message='Optional comment to attach to the transition.'
                         ),
                         'required': False,
                     }
@@ -232,7 +233,7 @@ class WorkflowInstanceTransitionSelectView(
             'object': self.external_object.document,
             'submit_label': _(message='Select'),
             'title': _(
-                'Select transition for workflow "%(workflow)s" of document "%(document)s"'
+                message='Select transition for workflow "%(workflow)s" of document "%(document)s"'
             ) % {
                 'document': self.external_object.document,
                 'workflow': self.external_object

@@ -9,7 +9,9 @@ from mayan.apps.documents.search import (
 )
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.dynamic_search.literals import SEARCH_MODEL_NAME_KWARG
-from mayan.apps.dynamic_search.tests.mixins.view_mixins import SearchViewTestMixin
+from mayan.apps.dynamic_search.tests.mixins.view_mixins import (
+    SearchViewTestMixin
+)
 
 from ..permissions import permission_document_metadata_view
 

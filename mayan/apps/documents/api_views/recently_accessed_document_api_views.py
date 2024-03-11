@@ -1,6 +1,8 @@
 from mayan.apps.rest_api import generics
 
-from ..models.recently_accessed_document_models import RecentlyAccessedDocument
+from ..models.recently_accessed_document_models import (
+    RecentlyAccessedDocument
+)
 from ..permissions import permission_document_view
 from ..serializers.recently_accessed_document_serializers import (
     RecentlyAccessedDocumentSerializer

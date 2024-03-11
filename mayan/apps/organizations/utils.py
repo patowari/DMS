@@ -1,8 +1,7 @@
 from mayan.apps.views.http import URL
 
 from .settings import (
-    setting_organization_installation_url,
-    setting_organization_url_base_path
+    setting_organization_installation_url, setting_organization_url_base_path
 )
 
 

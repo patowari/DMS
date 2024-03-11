@@ -5,7 +5,9 @@ from mayan.apps.documents.events import (
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.sources.permissions import permission_sources_edit
-from mayan.apps.sources.tests.mixins.source_view_mixins import SourceViewTestMixin
+from mayan.apps.sources.tests.mixins.source_view_mixins import (
+    SourceViewTestMixin
+)
 
 from .mixins import PeriodicSourceBackendTestMixin
 

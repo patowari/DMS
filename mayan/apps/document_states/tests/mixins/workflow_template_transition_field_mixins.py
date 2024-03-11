@@ -8,7 +8,9 @@ from ..literals import (
     TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE
 )
 
-from .workflow_template_transition_mixins import WorkflowTemplateTransitionTestMixin
+from .workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionTestMixin
+)
 
 
 class WorkflowTemplateTransitionFieldTestMixin(

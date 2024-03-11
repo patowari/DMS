@@ -7,7 +7,9 @@ from ..permissions import (
 )
 
 from .literals import TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL
-from .mixins.workflow_template_transition_mixins import WorkflowTemplateTransitionViewTestMixin
+from .mixins.workflow_template_transition_mixins import (
+    WorkflowTemplateTransitionViewTestMixin
+)
 
 
 class WorkflowTemplateTransitionViewTestCase(
@@ -162,9 +164,8 @@ class WorkflowTemplateTransitionViewTestCase(
 
         response = self._request_test_workflow_template_transition_list_view()
         self.assertNotContains(
-            response=response,
-            text=self._test_workflow_template_transition.label,
-            status_code=404
+            response=response, status_code=404,
+            text=self._test_workflow_template_transition.label
         )
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
@@ -181,9 +182,8 @@ class WorkflowTemplateTransitionViewTestCase(
 
         response = self._request_test_workflow_template_transition_list_view()
         self.assertContains(
-            response=response,
-            text=self._test_workflow_template_transition.label,
-            status_code=200
+            response=response, status_code=200,
+            text=self._test_workflow_template_transition.label
         )
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

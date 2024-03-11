@@ -2,7 +2,9 @@ from mayan.apps.sources.source_backends.base import SourceBackend
 
 from ..source_backends.mixins import SourceBackendMixinCompressed
 
-from .source_backend_actions import SourceBackendActionDocumentUploadBasicCompressed
+from .source_backend_actions import (
+    SourceBackendActionDocumentUploadBasicCompressed
+)
 
 
 class SourceBackendTestCompressed(
