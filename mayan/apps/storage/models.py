@@ -87,7 +87,9 @@ class SharedUploadedFile(DatabaseFileModelMixin, models.Model):
     file = models.FileField(
         storage=DefinedStorageLazy(
             name=STORAGE_NAME_SHARED_UPLOADED_FILE
-        ), upload_to=shared_uploaded_file_upload_to, verbose_name=_(message='File')
+        ), upload_to=shared_uploaded_file_upload_to, verbose_name=_(
+            message='File'
+        )
     )
     filename = models.CharField(
         blank=True, max_length=255, verbose_name=_(message='Filename')
