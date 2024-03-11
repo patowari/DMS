@@ -669,8 +669,29 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
 
 
 class TestMixinObjectCreationTrack:
+    _test_object_list_name = None
     _test_object_model = None
     _test_object_name = None
+
+    def _test_object_get_object_list_name(self, test_object_list_name=None):
+        test_object_list_name = test_object_list_name or self._test_object_list_name or '{}_list'.format(
+            self._test_object_name
+        )
+
+        return test_object_list_name
+
+    def _test_object_list_set(self, test_object_list_name=None):
+        self._test_object_list_name = self._test_object_get_object_list_name(
+            test_object_list_name=test_object_list_name
+        )
+
+        _test_object_list = self._test_object_model.objects.filter(
+            ~Q(pk__in=self._test_object_pk_list)
+        )
+
+        setattr(
+            self, self._test_object_list_name, _test_object_list
+        )
 
     def _test_object_set(self, test_object_name=None):
         test_object_name = test_object_name or self._test_object_name

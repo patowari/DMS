@@ -1,16 +1,51 @@
 from django.utils.encoding import force_bytes
 
 from mayan.apps.common.tests.literals import (
-    TEST_ARCHIVE_MSG_STRANGE_DATE_PATH, TEST_ARCHIVE_ZIP_CP437_MEMBER_PATH,
+    TEST_ARCHIVE_EML_SAMPLE_PATH, TEST_ARCHIVE_MSG_STRANGE_DATE_PATH,
+    TEST_ARCHIVE_ZIP_CP437_MEMBER_PATH,
     TEST_ARCHIVE_ZIP_SPECIAL_CHARACTERS_FILENAME_MEMBER_PATH,
     TEST_TAR_BZ2_FILE_PATH, TEST_TAR_FILE_PATH, TEST_TAR_GZ_FILE_PATH,
     TEST_ZIP_FILE_PATH
 )
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from ..compressed_files import Archive, MsgArchive, TarArchive, ZipArchive
+from ..compressed_files import (
+    Archive, EMLArchive, MsgArchive, TarArchive, ZipArchive
+)
 
 from .mixins import ArchiveClassTestCaseMixin
+
+
+class EMLArchiveClassTestCase(ArchiveClassTestCaseMixin, BaseTestCase):
+    archive_path = TEST_ARCHIVE_EML_SAMPLE_PATH
+    cls = EMLArchive
+    member_contents_partial = 'testtest'
+    member_name = 'body'
+    members_list = ['body', 'sha1hash.txt', 'manifest.json']
+
+    def test_add_file(self):
+        '''Skip this test for the class.'''
+
+    def test_member_contents(self):
+        with open(file=self.archive_path, mode='rb') as file_object:
+            archive = Archive.open(file_object=file_object)
+            self.assertTrue(
+                archive.member_contents(
+                    filename=self.member_name
+                ).startswith(
+                    force_bytes(s=self.member_contents_partial)
+                )
+            )
+
+    def test_open_member(self):
+        with open(file=self.archive_path, mode='rb') as file_object:
+            archive = Archive.open(file_object=file_object)
+            file_object = archive.open_member(filename=self.member_name)
+            self.assertTrue(
+                file_object.read().startswith(
+                    force_bytes(s=self.member_contents_partial)
+                )
+            )
 
 
 class MsgArchiveClassTestCase(ArchiveClassTestCaseMixin, BaseTestCase):
@@ -38,7 +73,7 @@ Zealand. '''.replace('\n', '\r\n')
     members_list = ['message.txt']
 
     def test_add_file(self):
-        '''Skip this test for the class'''
+        '''Skip this test for the class.'''
 
     def test_member_contents(self):
         with open(file=self.archive_path, mode='rb') as file_object:
