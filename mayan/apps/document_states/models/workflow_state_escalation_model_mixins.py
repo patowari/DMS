@@ -4,8 +4,34 @@ from django.conf import settings
 from django.core import serializers
 from django.utils.translation import gettext_lazy as _
 
+from ..literals import GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TIME
+
 
 class WorkflowStateEscalationBusinessLogicMixin:
+    def do_diagram_generate(self, diagram):
+        if self.enabled:
+            escalation_label = '{} {}'.format(
+                GRAPHVIZ_SYMBOL_TIME, self.get_time_display()
+            )
+            if self.has_condition():
+                escalation_label = '{} {}'.format(
+                    escalation_label, GRAPHVIZ_SYMBOL_CONDITIONAL
+                )
+
+            edge_kwargs = {
+                'head_name': self.transition.destination_state.get_graph_id(),
+                'label': '''<
+                    <table border="3" cellborder="0" color="white">
+                        <tr>
+                            <td bgcolor="white">{}</td>
+                        </tr>
+                    </table>
+                >'''.format(escalation_label,),
+                'style': 'dashed',
+                'tail_name': self.state.get_graph_id()
+            }
+            diagram.edge(**edge_kwargs)
+
     def execute(self, context, workflow_instance):
         if self.evaluate_condition(workflow_instance=workflow_instance):
             try:

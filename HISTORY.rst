@@ -53,6 +53,7 @@
   - pdbpp
 
 - Remove the tox testing dependency.
+- Refactor workflow preview diagram generator.
 
 4.6.2 (2024-03-04)
 ==================

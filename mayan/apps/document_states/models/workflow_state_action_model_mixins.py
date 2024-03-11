@@ -6,8 +6,51 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.classes import Template
 
+from ..literals import (
+    GRAPHVIZ_ID_STATE_ACTION, GRAPHVIZ_SYMBOL_CONDITIONAL,
+    WORKFLOW_ACTION_WHEN_CHOICES
+)
+
 
 class WorkflowStateActionBusinessLogicMixin:
+    def do_diagram_generate(self, diagram):
+        if self.enabled:
+            if self.has_condition():
+                markup_state_action_label = '{} {}'.format(
+                    self.label, GRAPHVIZ_SYMBOL_CONDITIONAL
+                )
+            else:
+                markup_state_action_label = self.label
+
+            markup_state_action_name = self.get_graph_id()
+            markup_state_action_state = self.state.get_graph_id()
+
+            node_kwargs = {
+                'label': markup_state_action_label,
+                'name': markup_state_action_name,
+                'shape': 'box'
+            }
+            diagram.node(**node_kwargs)
+
+            state_action_choice_dict = dict(WORKFLOW_ACTION_WHEN_CHOICES)
+            edge_label = str(
+                state_action_choice_dict[self.when]
+            )
+            edge_kwargs = {
+                'arrowhead': 'dot',
+                'arrowtail': 'dot',
+                'dir': 'both',
+                'label': edge_label,
+                'head_name': markup_state_action_name,
+                'style': 'dashed',
+                'tail_name': markup_state_action_state
+            }
+
+            diagram.edge(**edge_kwargs)
+
+    def get_graph_id(self):
+        return '{}{}'.format(GRAPHVIZ_ID_STATE_ACTION, self.pk)
+
     def get_hash(self):
         return hashlib.sha256(
             string=serializers.serialize(

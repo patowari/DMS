@@ -6,8 +6,36 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.templating.classes import Template
 
+from ..literals import GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TRIGGER
+
 
 class WorkflowTransitionBusinessLogicMixin:
+    def do_diagram_generate(self, diagram):
+        if self.has_condition():
+            transition_label = '{} {}'.format(
+                self.label, GRAPHVIZ_SYMBOL_CONDITIONAL
+            )
+        else:
+            transition_label = self.label
+
+        if self.trigger_events.exists():
+            transition_label = '{} {}'.format(
+                transition_label, GRAPHVIZ_SYMBOL_TRIGGER
+            )
+
+        edge_kwargs = {
+            'head_name': self.destination_state.get_graph_id(),
+            'label': '''<
+                <table border="3" cellborder="0" color="white">
+                    <tr>
+                        <td bgcolor="white">{}</td>
+                    </tr>
+                </table>
+            >'''.format(transition_label),
+            'tail_name': self.origin_state.get_graph_id()
+        }
+        diagram.edge(**edge_kwargs)
+
     def evaluate_condition(self, workflow_instance):
         if self.has_condition():
             return Template(template_string=self.condition).render(
