@@ -46,6 +46,11 @@
 
 - Remove live documentation auto build.
 - Remove tornado and sphinx-autobuild libraries.
+- Remove the development dependencies:
+
+  - flake8
+  - ruff
+  - pdbpp
 
 4.6.2 (2024-03-04)
 ==================

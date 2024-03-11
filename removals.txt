@@ -13,14 +13,17 @@ django-rest-swagger
 django-suit
 django-test-without-migrations
 django-timezone-field
+flake8
 flanker
 librabbitmq
 mock
 pathlib2
+pdbpp
 pdfminer
 PyPDF2
 pyocr
 pytesseract
+ruff
 sphinx-autobuild
 tornado
 transifex-client
