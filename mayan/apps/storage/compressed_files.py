@@ -10,6 +10,7 @@ try:
 except ImportError:
     COMPRESSION = zipfile.ZIP_STORED
 
+from django.core.files import File
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.utils.encoding import force_bytes, force_text
 
@@ -115,14 +116,18 @@ class MsgArchive(Archive):
 
     def open_member(self, filename):
         if filename == 'message.txt':
-            return BytesIO(
-                initial_bytes=force_bytes(s=self._archive.body)
+            return File(
+                file=BytesIO(
+                    initial_bytes=force_bytes(s=self._archive.body)
+                ), name='message.txt'
             )
 
         for member in self._archive.attachments:
             if member.longFilename == filename:
-                return BytesIO(
-                    initial_bytes=force_bytes(s=member.data)
+                return File(
+                    file=BytesIO(
+                        initial_bytes=force_bytes(s=member.data)
+                    ), name=filename
                 )
 
 

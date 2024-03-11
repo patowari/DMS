@@ -4,6 +4,7 @@
 - Fix periodic source document type field to use the intended Select2 widget.
 - Fix workflow transition field model typo.
 - Merge changes from version 4.4.14.
+- Fix MSG file uncompressed uploads.
 
 4.5.10 (2024-03-03)
 ===================

@@ -17,12 +17,11 @@ from .literals import (
 from .source_backend_mixins import SourceBackendActionMixinFileUser
 
 
-class SourceBackendActionDocumentUploadBasic(
+class SourceBackendActionDocumentUploadBasicInteractive(
     SourceBackendActionMixinDocumentUploadInteractive,
     SourceBackendActionMixinCallbackDocumentUploadBase,
     SourceBackendActionMixinFileUser,
-    SourceBackendActionMixinDocumentTypeInteractive,
-    SourceBackendAction
+    SourceBackendActionMixinDocumentTypeInteractive, SourceBackendAction
 ):
     name = 'document_upload'
     permission = permission_document_create
