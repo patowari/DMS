@@ -71,9 +71,10 @@ class DocumentFileDeleteView(MultipleObjectDeleteView):
     def get_extra_context(self):
         context = {
             'message': _(
-                message='All document files pages from this document file and the '
-                'document version pages linked to them will be deleted too. '
-                'The process will be performed in the background.'
+                message='All document files pages from this document file '
+                'and the document version pages linked to them will be '
+                'deleted too. The process will be performed in the '
+                'background.'
             )
         }
 
@@ -88,9 +89,9 @@ class DocumentFileDeleteView(MultipleObjectDeleteView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_file_list', kwargs={
+            kwargs={
                 'document_id': self.object_list.first().document.pk
-            }
+            }, viewname='documents:document_file_list'
         )
 
     def object_action(self, instance, form=None):
@@ -115,15 +116,12 @@ class DocumentFileEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_file_preview', kwargs={
-                'document_file_id': self.object.pk
-            }
+            kwargs={'document_file_id': self.object.pk},
+            viewname='documents:document_file_preview'
         )
 
 
@@ -161,8 +159,8 @@ class DocumentFileIntrospectView(MultipleObjectConfirmActionView):
             )
 
         result['message'] = _(
-            message='The document file will be re-examined for file size, page '
-            'count, checksum, and its related document version pages '
+            message='The document file will be re-examined for file size, '
+            'page count, checksum, and its related document version pages '
             're-created. All transformations will be lost.'
         )
 
@@ -190,9 +188,9 @@ class DocumentFileListView(ExternalObjectViewMixin, SingleObjectListView):
         context = {
             'no_results_icon': icon_document_file_list,
             'no_results_text': _(
-                message='File are the actual files that were uploaded for each '
-                'document. Their contents needs to be mapped to a version '
-                'before it can be used.'
+                message='File are the actual files that were uploaded for '
+                'each document. Their contents needs to be mapped to a '
+                'version before it can be used.'
             ),
             'no_results_title': _(message='No files available')
         }
@@ -266,9 +264,7 @@ class DocumentFilePreviewView(SingleObjectDetailView):
             ),
         )
 
-        return {
-            'transformation_instance_list': transformation_instance_list
-        }
+        return {'transformation_instance_list': transformation_instance_list}
 
 
 class DocumentFilePrintFormView(PrintFormView):
@@ -324,10 +320,12 @@ class DocumentFileTransformationsClearView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'document_file_id'
     source_queryset = DocumentFile.valid.all()
     success_message = _(
-        message='Transformation clear request processed for %(count)d document file.'
+        message='Transformation clear request processed for %(count)d '
+        'document file.'
     )
     success_message_plural = _(
-        message='Transformation clear request processed for %(count)d document files.'
+        message='Transformation clear request processed for %(count)d '
+        'document files.'
     )
     view_icon = icon_document_file_transformation_list_clear
 
@@ -415,9 +413,7 @@ class DocumentFileTransformationsCloneView(ExternalObjectViewMixin, FormView):
         return super().form_valid(form=form)
 
     def get_form_extra_kwargs(self):
-        return {
-            'instance': self.external_object
-        }
+        return {'instance': self.external_object}
 
     def get_extra_context(self):
         context = {

@@ -49,8 +49,9 @@ class DocumentFileCompressor:
             filename = filename or _(message='Document_file_bundle.zip')
 
             download_file = DownloadFile(
-                filename=filename, label=_(message='Compressed document files'),
-                user=user
+                filename=filename, label=_(
+                    message='Compressed document files'
+                ), user=user
             )
             download_file._event_actor = user
             download_file.save()
@@ -63,9 +64,7 @@ class DocumentFileCompressor:
 
             if user:
                 download_list_url = furl(organization_installation_url).join(
-                    reverse(
-                        viewname='storage:download_file_list'
-                    )
+                    reverse(viewname='storage:download_file_list')
                 ).tostr()
 
                 download_url = furl(organization_installation_url).join(

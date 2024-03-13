@@ -200,9 +200,7 @@ class APISmartLinkListView(generics.ListCreateAPIView):
     source_queryset = SmartLink.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APISmartLinkDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -224,9 +222,7 @@ class APISmartLinkDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = SmartLink.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APISmartLinkDocumentTypeAddView(generics.ObjectActionAPIView):

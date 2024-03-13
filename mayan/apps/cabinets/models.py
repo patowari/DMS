@@ -91,9 +91,8 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='cabinets:cabinet_view', kwargs={
-                'cabinet_id': self.pk
-            }
+            kwargs={'cabinet_id': self.pk},
+            viewname='cabinets:cabinet_view'
         )
 
     @method_event(
@@ -130,16 +129,16 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
 
             if queryset.exists():
                 params = {
-                    'model_name': _(message='Cabinet'),
-                    'field_labels': _(message='Parent and Label')
+                    'field_labels': _(message='Parent and Label'),
+                    'model_name': _(message='Cabinet')
                 }
                 raise ValidationError(
                     message={
                         NON_FIELD_ERRORS: [
                             ValidationError(
                                 message=_(
-                                    message='%(model_name)s with this %(field_labels)s already '
-                                    'exists.'
+                                    message='%(model_name)s with this '
+                                    '%(field_labels)s already exists.'
                                 ), code='unique_together', params=params
                             )
                         ]

@@ -62,9 +62,9 @@ class DocumentTypeIndexTemplateAddRemoveView(AddRemoveView):
         return {
             'object': self.main_object,
             'subtitle': _(
-                message='Documents of this type will appear in the indexes linked '
-                'when these are updated. Events of the documents of this '
-                'type will trigger updates in the linked indexes.'
+                message='Documents of this type will appear in the indexes '
+                'linked when these are updated. Events of the documents of '
+                'this type will trigger updates in the linked indexes.'
             ),
             'title': _(
                 message='Indexes linked to document type: %s'
@@ -148,9 +148,10 @@ class IndexTemplateDocumentTypeAddRemoveView(AddRemoveView):
         return {
             'object': self.main_object,
             'subtitle': _(
-                message='Only the documents of the types selected will be shown '
-                'in the index when built. Only the events of the documents '
-                'of the types select will trigger updates in the index.'
+                message='Only the documents of the types selected will be '
+                'shown in the index when built. Only the events of the '
+                'documents of the types select will trigger updates in the '
+                'index.'
             ),
             'title': _(
                 message='Document types linked to index: %s'
@@ -310,14 +311,14 @@ class IndexTemplateNodeCreateView(SingleObjectCreateView):
     def get_extra_context(self):
         return {
             'object': self.get_parent_node().index,
-            'title': _(message='Create child node of: %s') % self.get_parent_node()
+            'title': _(
+                message='Create child node of: %s'
+            ) % self.get_parent_node()
         }
 
     def get_initial(self):
         parent_node = self.get_parent_node()
-        return {
-            'index': parent_node.index, 'parent': parent_node
-        }
+        return {'index': parent_node.index, 'parent': parent_node}
 
     def get_parent_node(self):
         return get_object_or_404(
@@ -343,9 +344,8 @@ class IndexTemplateNodeDeleteView(SingleObjectDeleteView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='indexing:index_template_view', kwargs={
-                'index_template_id': self.object.index.pk
-            }
+            kwargs={'index_template_id': self.object.index.pk},
+            viewname='indexing:index_template_view'
         )
 
 
@@ -368,9 +368,8 @@ class IndexTemplateNodeEditView(SingleObjectEditView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='indexing:index_template_view', kwargs={
-                'index_template_id': self.object.index.pk
-            }
+            kwargs={'index_template_id': self.object.index.pk},
+            viewname='indexing:index_template_view'
         )
 
 
@@ -383,7 +382,9 @@ class IndexTemplateRebuildView(ConfirmView):
     def get_extra_context(self):
         return {
             'object': self.get_object(),
-            'title': _(message='Rebuild index template: %s') % self.get_object()
+            'title': _(
+                message='Rebuild index template: %s'
+            ) % self.get_object()
         }
 
     def get_object(self):
@@ -440,9 +441,7 @@ class IndexTemplateAllRebuildView(FormView):
         return super().form_valid(form=form)
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(viewname='common:tools_list')
@@ -476,7 +475,8 @@ class IndexTemplateResetView(FormView):
     def get_form_extra_kwargs(self):
         return {
             'help_text': _(
-                message='Index templates for which their instances will be deleted.'
+                message='Index templates for which their instances will be '
+                'deleted.'
             ),
             'user': self.request.user
         }

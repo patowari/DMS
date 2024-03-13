@@ -32,9 +32,7 @@ class APIIndexTemplateListView(generics.ListCreateAPIView):
     source_queryset = IndexTemplate.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIIndexTemplateDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -55,9 +53,7 @@ class APIIndexTemplateDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = IndexTemplate.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIIndexTemplateDocumentTypeListView(

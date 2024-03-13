@@ -51,7 +51,9 @@ class DocumentTypeDocumentListView(
         context.update(
             {
                 'object': self.external_object,
-                'title': _(message='Documents of type: %s') % self.external_object
+                'title': _(
+                    message='Documents of type: %s'
+                ) % self.external_object
             }
         )
         return context
@@ -97,9 +99,7 @@ class DocumentTypeCreateView(SingleObjectCreateView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class DocumentTypeDeleteView(SingleObjectDeleteView):
@@ -113,7 +113,9 @@ class DocumentTypeDeleteView(SingleObjectDeleteView):
 
     def get_extra_context(self):
         return {
-            'message': _(message='All documents of this type will be deleted too.'),
+            'message': _(
+                message='All documents of this type will be deleted too.'
+            ),
             'object': self.object,
             'title': _(message='Delete the document type: %s?') % self.object
         }
@@ -136,9 +138,7 @@ class DocumentTypeEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class DocumentTypeFilenameCreateView(
@@ -185,9 +185,8 @@ class DocumentTypeFilenameDeleteView(SingleObjectDeleteView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_type_filename_list', kwargs={
-                'document_type_id': self.object.document_type.pk
-            }
+            kwargs={'document_type_id': self.object.document_type.pk},
+            viewname='documents:document_type_filename_list'
         )
 
 
@@ -214,9 +213,8 @@ class DocumentTypeFilenameEditView(SingleObjectEditView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_type_filename_list', kwargs={
-                'document_type_id': self.object.document_type.pk
-            }
+            kwargs={'document_type_id': self.object.document_type.pk},
+            viewname='documents:document_type_filename_list'
         )
 
 
@@ -279,6 +277,4 @@ class DocumentTypeFilenameGeneratorEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}

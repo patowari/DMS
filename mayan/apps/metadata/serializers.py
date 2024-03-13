@@ -68,10 +68,11 @@ class DocumentTypeMetadataTypeSerializer(
 
     def get_url(self, instance):
         return reverse(
-            viewname='rest_api:documenttypemetadatatype-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'document_type_id': instance.document_type.pk,
                 'metadata_type_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:documenttypemetadatatype-detail'
         )
 
     def validate(self, attrs):
@@ -97,7 +98,8 @@ class DocumentMetadataSerializer(
 ):
     metadata_type_id = FilteredPrimaryKeyRelatedField(
         help_text=_(
-            message='Primary key of the metadata type to be added to the document.'
+            message='Primary key of the metadata type to be added to the '
+            'document.'
         ), label=_(message='Metadata type ID'), source_model=MetadataType,
         source_permission=permission_document_metadata_add, write_only=True
     )
@@ -122,10 +124,11 @@ class DocumentMetadataSerializer(
 
     def get_url(self, instance):
         return reverse(
-            viewname='rest_api:documentmetadata-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'document_id': instance.document.pk,
                 'metadata_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:documentmetadata-detail'
         )
 
     def validate(self, attrs):

@@ -18,9 +18,7 @@ class APIKeyListView(generics.ListCreateAPIView):
     source_queryset = Key.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIKeyView(generics.RetrieveDestroyAPIView):

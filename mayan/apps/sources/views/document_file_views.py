@@ -49,9 +49,7 @@ class DocumentFileSourceMetadataList(
             'object': self.external_object,
             'title': _(
                 message='Source metadata for: %(document_file)s'
-            ) % {
-                'document_file': self.external_object
-            }
+            ) % {'document_file': self.external_object}
         }
 
     def get_source_queryset(self):
@@ -95,22 +93,21 @@ class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):
                 message=_(
                     message='Unable to upload new files for document '
                     '"%(document)s". %(exception)s'
-                ) % {'document': self.external_object, 'exception': exception},
-                request=self.request
+                ) % {
+                    'document': self.external_object, 'exception': exception
+                }, request=self.request
             )
             return HttpResponseRedirect(
                 redirect_to=reverse(
-                    viewname='documents:document_file_list',
-                    kwargs={'document_id': self.external_object.pk}
+                    kwargs={'document_id': self.external_object.pk},
+                    viewname='documents:document_file_list'
                 )
             )
 
         return result
 
     def forms_valid(self, forms):
-        action = self.source.get_action(
-            name='document_file_upload'
-        )
+        action = self.source.get_action(name='document_file_upload')
 
         interface_load_kwargs = {
             'document': self.external_object, 'forms': forms,
@@ -140,9 +137,7 @@ class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):
             message = _(
                 message='Error executing document file upload task; '
                 '%(exception)s'
-            ) % {
-                'exception': exception,
-            }
+            ) % {'exception': exception}
             logger.critical(msg=message, exc_info=True)
             if request_is_ajax(request=self.request):
                 return JsonResponse(
@@ -166,9 +161,8 @@ class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):
 
             return HttpResponseRedirect(
                 redirect_to=reverse(
-                    viewname='documents:document_file_list', kwargs={
-                        'document_id': self.external_object.pk
-                    }
+                    kwargs={'document_id': self.external_object.pk},
+                    viewname='documents:document_file_list'
                 )
             )
 
@@ -178,8 +172,8 @@ class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):
             {
                 'form_action': '{}?{}'.format(
                     reverse(
-                        viewname=self.request.resolver_match.view_name,
-                        kwargs=self.request.resolver_match.kwargs
+                        kwargs=self.request.resolver_match.kwargs,
+                        viewname=self.request.resolver_match.view_name
                     ), self.request.META['QUERY_STRING']
                 ),
                 'object': self.external_object,
@@ -202,9 +196,7 @@ class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):
         return context
 
     def get_form_extra_kwargs__source_form(self, **kwargs):
-        return {
-            'source': self.source
-        }
+        return {'source': self.source}
 
     def get_initial__document_form(self):
         return {'action': DEFAULT_DOCUMENT_FILE_ACTION_NAME}

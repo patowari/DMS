@@ -112,9 +112,7 @@ class SourceBackendMixinStoredFileUploadBase:
             }
         ]
 
-        return {
-            'subtemplates_list': subtemplates_list
-        }
+        return {'subtemplates_list': subtemplates_list}
 
 
 class SourceBackendMixinStoredFileDocumentFileUpload(

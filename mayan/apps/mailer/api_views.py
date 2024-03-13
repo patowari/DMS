@@ -36,9 +36,7 @@ class APIMailingProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = UserMailer.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIMailingProfileListView(generics.ListCreateAPIView):
@@ -53,9 +51,7 @@ class APIMailingProfileListView(generics.ListCreateAPIView):
     source_queryset = UserMailer.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIMailObjectBaseView(

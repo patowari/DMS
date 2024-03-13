@@ -109,9 +109,7 @@ class APIWebLinkListView(generics.ListCreateAPIView):
     source_queryset = WebLink.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIWebLinkView(generics.RetrieveUpdateDestroyAPIView):
@@ -132,9 +130,7 @@ class APIWebLinkView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = WebLink.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIWebLinkDocumentTypeAddView(generics.ObjectActionAPIView):

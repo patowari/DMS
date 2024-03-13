@@ -77,7 +77,8 @@ class UserOTPDataVerifyTokenView(OTPBackendEnabledViewMixin, FormView):
 
         if request.user.otp_data.is_enabled():
             messages.info(
-                message=_(message='OTP is already enabled.'), request=self.request
+                message=_(message='OTP is already enabled.'),
+                request=self.request
             )
             return HttpResponseRedirect(
                 redirect_to=reverse(
@@ -93,7 +94,8 @@ class UserOTPDataVerifyTokenView(OTPBackendEnabledViewMixin, FormView):
         self.request.user.otp_data.enable(secret=secret, token=token)
 
         messages.success(
-            message=_(message='OTP enabled successfully.'), request=self.request
+            message=_(message='OTP enabled successfully.'),
+            request=self.request
         )
 
         return super().form_valid(form=form)

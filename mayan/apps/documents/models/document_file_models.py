@@ -146,9 +146,8 @@ class DocumentFile(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='documents:document_file_preview', kwargs={
-                'document_file_id': self.pk
-            }
+            kwargs={'document_file_id': self.pk},
+            viewname='documents:document_file_preview'
         )
 
     def natural_key(self):

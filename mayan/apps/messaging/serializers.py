@@ -83,8 +83,8 @@ class MessageSerializer(serializers.HyperlinkedModelSerializer):
                     resolved_match = resolve(path=path)
 
                     return reverse(
-                        viewname=resolved_match.view_name,
+                        format=self.context['format'],
                         kwargs=resolved_match.kwargs,
                         request=self.context['request'],
-                        format=self.context['format']
+                        viewname=resolved_match.view_name
                     )

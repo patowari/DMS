@@ -104,14 +104,12 @@ class ActionExporter:
                 organization_installation_url = get_organization_installation_url()
 
             download_list_url = furl(organization_installation_url).join(
-                reverse(
-                    viewname='storage:download_file_list'
-                )
+                reverse(viewname='storage:download_file_list')
             ).tostr()
             download_url = furl(organization_installation_url).join(
                 reverse(
-                    viewname='storage:download_file_download',
-                    kwargs={'download_file_id': download_file.pk}
+                    kwargs={'download_file_id': download_file.pk},
+                    viewname='storage:download_file_download'
                 )
             ).tostr()
 

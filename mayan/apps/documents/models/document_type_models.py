@@ -117,9 +117,8 @@ class DocumentType(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='documents:document_type_document_list', kwargs={
-                'document_type_id': self.pk
-            }
+            kwargs={'document_type_id': self.pk},
+            viewname='documents:document_type_document_list'
         )
 
     def natural_key(self):

@@ -219,11 +219,11 @@ class WorkflowInstanceTransitionSelectView(
     def form_valid(self, form):
         return HttpResponseRedirect(
             redirect_to=reverse(
-                viewname='document_states:workflow_instance_transition_execute',
                 kwargs={
                     'workflow_instance_id': self.external_object.pk,
                     'workflow_template_transition_id': form.cleaned_data['transition'].pk
-                }
+                },
+                viewname='document_states:workflow_instance_transition_execute'
             )
         )
 

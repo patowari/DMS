@@ -96,12 +96,12 @@ class TransformationCreateView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='converter:transformation_list', kwargs={
+            kwargs={
                 'app_label': self.kwargs['app_label'],
                 'model_name': self.kwargs['model_name'],
                 'object_id': self.kwargs['object_id'],
                 'layer_name': self.kwargs['layer_name']
-            }
+            }, viewname='converter:transformation_list'
         )
 
     def get_transformation_class(self):
@@ -139,12 +139,12 @@ class TransformationDeleteView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='converter:transformation_list', kwargs={
+            kwargs={
                 'app_label': self.object.object_layer.content_type.app_label,
                 'model_name': self.object.object_layer.content_type.model,
                 'object_id': self.object.object_layer.object_id,
                 'layer_name': self.object.object_layer.stored_layer.name
-            }
+            }, viewname='converter:transformation_list'
         )
 
     def get_source_queryset(self):
@@ -201,12 +201,12 @@ class TransformationEditView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='converter:transformation_list', kwargs={
+            kwargs={
                 'app_label': self.object.object_layer.content_type.app_label,
                 'model_name': self.object.object_layer.content_type.model,
                 'object_id': self.object.object_layer.object_id,
                 'layer_name': self.object.object_layer.stored_layer.name
-            }
+            }, viewname='converter:transformation_list'
         )
 
     def get_source_queryset(self):
@@ -274,7 +274,6 @@ class TransformationSelectView(
         if transformation_class.arguments:
             return HttpResponseRedirect(
                 redirect_to=reverse(
-                    viewname='converter:transformation_create',
                     kwargs={
                         'app_label': self.kwargs['app_label'],
                         'model_name': self.kwargs['model_name'],
@@ -283,7 +282,7 @@ class TransformationSelectView(
                         'transformation_name': form.cleaned_data[
                             'transformation'
                         ]
-                    }
+                    }, viewname='converter:transformation_create'
                 )
             )
         else:
@@ -301,12 +300,12 @@ class TransformationSelectView(
 
             return HttpResponseRedirect(
                 redirect_to=reverse(
-                    viewname='converter:transformation_list', kwargs={
+                    kwargs={
                         'app_label': self.kwargs['app_label'],
                         'model_name': self.kwargs['model_name'],
                         'object_id': self.kwargs['object_id'],
                         'layer_name': self.kwargs['layer_name']
-                    }
+                    }, viewname='converter:transformation_list'
                 )
             )
 
@@ -330,6 +329,4 @@ class TransformationSelectView(
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'layer': self.layer
-        }
+        return {'layer': self.layer}

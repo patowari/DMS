@@ -53,6 +53,4 @@ class DocumentTypeRetentionPoliciesEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}

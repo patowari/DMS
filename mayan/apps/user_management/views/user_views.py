@@ -41,9 +41,9 @@ class UserCreateView(SingleObjectCreateView):
         super().form_valid(form=form)
         return HttpResponseRedirect(
             redirect_to=reverse(
-                viewname='authentication:user_set_password', kwargs={
+                kwargs={
                     'user_id': self.object.pk
-                }
+                }, viewname='authentication:user_set_password'
             )
         )
 
@@ -52,15 +52,23 @@ class UserCreateView(SingleObjectCreateView):
 
 
 class UserDeleteView(MultipleObjectDeleteView):
-    error_message = _(message='Error deleting user "%(instance)s"; %(exception)s')
+    error_message = _(
+        message='Error deleting user "%(instance)s"; %(exception)s'
+    )
     object_permission = permission_user_delete
     pk_url_kwarg = 'user_id'
     post_action_redirect = reverse_lazy(
         viewname='user_management:user_list'
     )
-    success_message_plural = _(message='%(count)d users deleted successfully.')
-    success_message_single = _(message='User "%(object)s" deleted successfully.')
-    success_message_singular = _(message='%(count)d user deleted successfully.')
+    success_message_plural = _(
+        message='%(count)d users deleted successfully.'
+    )
+    success_message_single = _(
+        message='User "%(object)s" deleted successfully.'
+    )
+    success_message_singular = _(
+        message='%(count)d user deleted successfully.'
+    )
     title_plural = _(message='Delete the %(count)d selected users.')
     title_single = _(message='Delete user: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected user.')
@@ -192,9 +200,7 @@ class UserOptionsEditView(ExternalObjectViewMixin, SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_object(self):
         return self.external_object.user_options

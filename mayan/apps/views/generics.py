@@ -425,8 +425,8 @@ class AddRemoveView(
     def get_success_url(self):
         # Redirect to the same view.
         return reverse(
-            viewname=self.request.resolver_match.view_name,
-            kwargs=self.request.resolver_match.kwargs
+            kwargs=self.request.resolver_match.kwargs,
+            viewname=self.request.resolver_match.view_name
         )
 
 

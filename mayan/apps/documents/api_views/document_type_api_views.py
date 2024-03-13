@@ -28,9 +28,7 @@ class APIDocumentTypeListView(generics.ListCreateAPIView):
     source_queryset = DocumentType.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIDocumentTypeDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -51,9 +49,7 @@ class APIDocumentTypeDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = DocumentType.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIDocumentTypeQuickLabelDetailView(
@@ -77,9 +73,7 @@ class APIDocumentTypeQuickLabelDetailView(
     serializer_class = DocumentTypeQuickLabelSerializer
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user,
-        }
+        return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
         return self.get_document_type().filenames.all()

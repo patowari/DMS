@@ -28,9 +28,7 @@ class APIWorkflowInstanceLaunchActionView(generics.ObjectActionAPIView):
 
     def get_serializer_extra_context(self):
         obj = self.get_object()
-        return {
-            'document': obj, 'document_type': obj.document_type
-        }
+        return {'document': obj, 'document_type': obj.document_type}
 
     def object_action(self, obj, request, serializer):
         workflow_template = serializer.validated_data['workflow_template_id']

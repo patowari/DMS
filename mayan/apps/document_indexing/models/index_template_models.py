@@ -60,9 +60,8 @@ class IndexTemplate(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='indexing:index_template_view', kwargs={
-                'index_template_id': self.pk
-            }
+            kwargs={'index_template_id': self.pk},
+            viewname='indexing:index_template_view'
         )
 
     def natural_key(self):
@@ -138,9 +137,10 @@ class IndexTemplateNode(IndexTemplateNodeBusinessLogicMixin, MPTTModel):
     documents but not both.
     """
     parent = TreeForeignKey(
-        blank=True, help_text=_(message='Parent index template node of this node.'),
-        null=True, on_delete=models.CASCADE,
-        related_name='children', to='self'
+        blank=True, help_text=_(
+            message='Parent index template node of this node.'
+        ), null=True, on_delete=models.CASCADE, related_name='children',
+        to='self'
     )
     index = models.ForeignKey(
         on_delete=models.CASCADE, related_name='index_template_nodes',
@@ -148,24 +148,24 @@ class IndexTemplateNode(IndexTemplateNodeBusinessLogicMixin, MPTTModel):
     )
     expression = models.TextField(
         help_text=_(
-            message='Enter a template to render. Use Django\'s default templating '
-            'language.'
+            message='Enter a template to render. Use Django\'s default '
+            'templating language.'
         ),
         verbose_name=_(message='Indexing expression')
     )
     enabled = models.BooleanField(
         default=True,
         help_text=_(
-            message='Causes this node to be visible and updated when document data '
-            'changes.'
+            message='Causes this node to be visible and updated when '
+            'document data changes.'
         ),
         verbose_name=_(message='Enabled')
     )
     link_documents = models.BooleanField(
         default=False,
         help_text=_(
-            message='Check this option to have this node act as a container for '
-            'documents and not as a parent for further nodes.'
+            message='Check this option to have this node act as a container '
+            'for documents and not as a parent for further nodes.'
         ),
         verbose_name=_(message='Link documents')
     )

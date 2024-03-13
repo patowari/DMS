@@ -101,9 +101,7 @@ class ImagePasteTransformationMixin:
             lut=lambda pixel: int(pixel * self.transparency / 100)
         )
 
-        return {
-            'instance_image': instance_image, 'paste_mask': paste_mask
-        }
+        return {'instance_image': instance_image, 'paste_mask': paste_mask}
 
 
 class ImagePasteCoordinatesAbsoluteTransformationMixin(

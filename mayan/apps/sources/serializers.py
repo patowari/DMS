@@ -88,11 +88,11 @@ class SourceBackendActionSerializer(serializers.Serializer):
 
     def get_execute_url(self, instance):
         return reverse(
-            viewname='rest_api:source_action-execute', kwargs={
+            format=self.context['format'], kwargs={
                 'source_id': instance.source.pk,
                 'action_name': instance.name
             }, request=self.context['request'],
-            format=self.context['format']
+            viewname='rest_api:source_action-execute'
         )
 
     def get_source_id(self, instance):
@@ -100,19 +100,19 @@ class SourceBackendActionSerializer(serializers.Serializer):
 
     def get_source_url(self, instance):
         return reverse(
-            viewname='rest_api:source-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'source_id': instance.source.pk,
             }, request=self.context['request'],
-            format=self.context['format']
+            viewname='rest_api:source-detail'
         )
 
     def get_url(self, instance):
         return reverse(
-            viewname='rest_api:source_action-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'source_id': instance.source.pk,
                 'action_name': instance.name
             }, request=self.context['request'],
-            format=self.context['format']
+            viewname='rest_api:source_action-detail'
         )
 
 
@@ -137,8 +137,8 @@ class SourceSerializer(serializers.HyperlinkedModelSerializer):
 
     def get_actions_url(self, instance):
         return reverse(
-            viewname='rest_api:source_action-list', kwargs={
+            format=self.context['format'], kwargs={
                 'source_id': instance.pk,
             }, request=self.context['request'],
-            format=self.context['format']
+            viewname='rest_api:source_action-list'
         )

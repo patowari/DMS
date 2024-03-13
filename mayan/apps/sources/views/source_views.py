@@ -209,9 +209,7 @@ class SourceCreateView(ViewSingleObjectDynamicFormModelBackendCreate):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_instance_extra_data(self):
         return {
@@ -252,14 +250,10 @@ class SourceEditView(ViewSingleObjectDynamicFormModelBackendEdit):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class SourceListView(SingleObjectListView):
@@ -317,9 +311,7 @@ class SourceTestView(ExternalObjectViewMixin, ConfirmView):
             return result
 
     def get_action_interface_kwargs(self):
-        return {
-            'dry_run': True
-        }
+        return {'dry_run': True}
 
     def get_action_name(self):
         return 'document_upload'

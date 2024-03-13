@@ -35,9 +35,7 @@ class AnnouncementCreateView(SingleObjectCreateView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class AnnouncementDeleteView(MultipleObjectConfirmActionView):
@@ -65,9 +63,7 @@ class AnnouncementDeleteView(MultipleObjectConfirmActionView):
     view_icon = icon_announcement_delete
 
     def get_extra_context(self):
-        context = {
-            'delete_view': True
-        }
+        context = {'delete_view': True}
 
         if self.object_list.count() == 1:
             context.update(
@@ -99,9 +95,7 @@ class AnnouncementEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class AnnouncementListView(SingleObjectListView):

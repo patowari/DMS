@@ -46,10 +46,10 @@ class BaseSignatureSerializer(serializers.HyperlinkedModelSerializer):
 
         if key:
             return reverse(
-                viewname='rest_api:key-detail', kwargs={
+                format=self.context['format'], kwargs={
                     'key_id': key.pk
                 }, request=self.context['request'],
-                format=self.context['format']
+                viewname='rest_api:key-detail'
             )
 
 
@@ -63,8 +63,8 @@ class BaseSignSerializer(serializers.HyperlinkedModelSerializer):
     )
     passphrase = serializers.CharField(
         help_text=_(
-            message='The passphrase to unlock the key and allow it to be used to '
-            'sign the document file.'
+            message='The passphrase to unlock the key and allow it to be '
+            'used to sign the document file.'
         ), label=_(message='Passphrase'), required=False, write_only=True
     )
 

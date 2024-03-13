@@ -76,21 +76,20 @@ class DocumentVersionPage(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='documents:document_version_page_view', kwargs={
-                'document_version_page_id': self.pk
-            }
+            kwargs={'document_version_page_id': self.pk},
+            viewname='documents:document_version_page_view'
         )
 
     @method_event(
         event_manager_class=EventManagerSave,
         created={
-            'event': event_document_version_page_created,
             'action_object': 'document_version',
+            'event': event_document_version_page_created,
             'target': 'self'
         },
         edited={
-            'event': event_document_version_page_edited,
             'action_object': 'document_version',
+            'event': event_document_version_page_edited,
             'target': 'self'
         }
     )

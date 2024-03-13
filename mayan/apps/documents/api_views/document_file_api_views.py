@@ -86,9 +86,7 @@ class APIDocumentFileDetailView(
         return Response(status=status.HTTP_202_ACCEPTED)
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
         return self.get_document().files.all()

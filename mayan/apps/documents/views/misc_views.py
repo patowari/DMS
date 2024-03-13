@@ -34,9 +34,8 @@ class PrintFormView(ExternalObjectViewMixin, FormView):
     def get_extra_context(self):
         return {
             'form_action': reverse(
-                viewname=self.print_view_name, kwargs={
-                    self.print_view_kwarg: self.external_object.pk
-                }
+                kwargs={self.print_view_kwarg: self.external_object.pk},
+                viewname=self.print_view_name
             ),
             'object': self.external_object,
             'submit_method': 'GET',

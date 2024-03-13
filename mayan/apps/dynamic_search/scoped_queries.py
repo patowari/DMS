@@ -255,9 +255,7 @@ class ScopedQueryEntryData(ScopedQueryEntry):
             )
 
     def get_template_key_context(self):
-        return {
-            'scope_identifier': self.scope_identifier
-        }
+        return {'scope_identifier': self.scope_identifier}
 
 
 class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
@@ -401,9 +399,7 @@ class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
         return context
 
     def get_template_value_context(self):
-        return {
-            'value': self.value
-        }
+        return {'value': self.value}
 
     @property
     def is_empty(self):
@@ -550,9 +546,7 @@ class ScopedQueryEntryControlResult(ScopedQueryEntryControl):
         if key == '{}{}'.format(
             cls.scoped_query.scope_marker, SCOPE_RESULT_MARKER
         ):
-            return {
-                'result_scope_identifier': value
-            }
+            return {'result_scope_identifier': value}
 
     def __init__(self, result_scope_identifier, **kwargs):
         super().__init__(**kwargs)

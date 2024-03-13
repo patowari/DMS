@@ -143,28 +143,29 @@ class WorkflowTemplateTransitionSerializer(
 
     def get_field_list_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-template-transition-field-list',
-            kwargs={
+            format=self.context['format'], kwargs={
                 'workflow_template_id': instance.workflow_id,
                 'workflow_template_transition_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-template-transition-field-list'
         )
 
     def get_trigger_list_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-template-transition-trigger-list',
-            kwargs={
+            format=self.context['format'], kwargs={
                 'workflow_template_id': instance.workflow_id,
                 'workflow_template_transition_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-template-transition-trigger-list'
         )
 
     def get_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-template-transition-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'workflow_template_id': instance.workflow.pk,
                 'workflow_template_transition_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-template-transition-detail'
         )
 
     def get_workflow_template_state_queryset(self):
@@ -172,9 +173,10 @@ class WorkflowTemplateTransitionSerializer(
 
     def get_workflow_template_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-template-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'workflow_template_id': instance.workflow.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-template-detail'
         )
 
     def update(self, instance, validated_data):
@@ -290,7 +292,9 @@ class WorkflowTemplateTransitionTriggerSerializer(
             EventType.get(id=data)
         except KeyError:
             raise ValidationError(
-                message=_(message='Unknown or invalid event type ID `%s`') % data
+                message=_(
+                    message='Unknown or invalid event type ID `%s`'
+                ) % data
             )
         else:
             return data

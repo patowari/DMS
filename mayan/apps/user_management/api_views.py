@@ -46,9 +46,7 @@ class APIGroupDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = Group.objects.order_by('id')
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIGroupListView(generics.ListCreateAPIView):
@@ -63,9 +61,7 @@ class APIGroupListView(generics.ListCreateAPIView):
     source_queryset = Group.objects.order_by('id')
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIGroupUserAddView(generics.ObjectActionAPIView):

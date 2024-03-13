@@ -34,9 +34,8 @@ class QuotaBackendSelectionView(FormView):
         backend = form.cleaned_data['backend']
         return HttpResponseRedirect(
             reverse(
-                viewname='quotas:quota_create', kwargs={
-                    'class_path': backend
-                }
+                kwargs={'class_path': backend},
+                viewname='quotas:quota_create'
             )
         )
 
@@ -67,9 +66,7 @@ class QuotaCreateView(SingleObjectDynamicFormCreateView):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_form_schema(self):
         backend = self.get_backend()
@@ -115,9 +112,7 @@ class QuotaEditView(SingleObjectDynamicFormEditView):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_form_schema(self):
         backend = self.object.get_backend_class()

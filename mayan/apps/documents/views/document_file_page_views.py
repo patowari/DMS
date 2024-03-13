@@ -50,15 +50,17 @@ class DocumentFilePageListView(
                 request=self.request, resolved_object=self.external_object
             ),
             'no_results_text': _(
-                message='This could mean that the document file is of a format that '
-                'is not supported, that it is corrupted, or that the upload '
-                'process was interrupted. Use the document file '
-                'introspection link to attempt detection the page '
-                'count again.'
+                message='This could mean that the document file is of a '
+                'format that is not supported, that it is corrupted, or that '
+                'the upload process was interrupted. Use the document file '
+                'introspection link to attempt detection the page count '
+                'again.'
             ),
             'no_results_title': _(message='No document file pages available'),
             'object': self.external_object,
-            'title': _(message='Pages of document file: %s') % self.external_object
+            'title': _(
+                message='Pages of document file: %s'
+            ) % self.external_object
         }
 
     def get_source_queryset(self):
@@ -101,9 +103,9 @@ class DocumentFilePageNavigationBase(ExternalObjectViewMixin, RedirectView):
 
         if set(new_kwargs) == set(resolver_match.kwargs):
             # It is the same type of object, reuse the URL to stay in the
-            # same kind of view but pointing to a new object
+            # same kind of view but pointing to a new object.
             url = reverse(
-                viewname=resolver_match.view_name, kwargs=new_kwargs
+                kwargs=new_kwargs, viewname=resolver_match.view_name
             )
         else:
             url = parsed_url.path
@@ -155,7 +157,8 @@ class DocumentFilePageNavigationPrevious(DocumentFilePageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    message='You are already at the first page of this document'
+                    message='You are already at the first page of this '
+                    'document'
                 ), request=self.request
             )
             return {'document_file_page_id': self.external_object.pk}
@@ -232,9 +235,8 @@ class DocumentFilePageInteractiveTransformation(
 
         url = furl(
             args=query_dict, path=reverse(
-                viewname='documents:document_file_page_view', kwargs={
-                    'document_file_page_id': self.external_object.pk
-                }
+                kwargs={'document_file_page_id': self.external_object.pk},
+                viewname='documents:document_file_page_view'
             )
 
         )

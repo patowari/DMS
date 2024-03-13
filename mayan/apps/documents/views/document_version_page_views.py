@@ -64,15 +64,12 @@ class DocumentVersionPageDeleteView(SingleObjectDeleteView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_version_page_list', kwargs={
-                'document_version_id': self.object.document_version_id
-            }
+            kwargs={'document_version_id': self.object.document_version_id},
+            viewname='documents:document_version_page_list'
         )
 
 
@@ -99,9 +96,9 @@ class DocumentVersionPageListView(
                 ),
             ),
             'no_results_text': _(
-                message='Document version pages are links to actual content pages. '
-                'Create them using the page remap actions or the version '
-                'modification action.'
+                message='Document version pages are links to actual content '
+                'pages. Create them using the page remap actions or the '
+                'version modification action.'
             ),
             'no_results_title': _(
                 message='No document version pages available'
@@ -187,8 +184,8 @@ class DocumentVersionPageListRemapView(ExternalObjectViewMixin, FormView):
             'list_as_items': True,
             'no_results_icon': icon_document_version_page_list_remap,
             'no_results_text': _(
-                message='There are no sources available to remap for this document '
-                'version.'
+                message='There are no sources available to remap for this '
+                'document version.'
             ),
             'no_results_title': _(message='No page sources available'),
             'object': self.external_object,
@@ -236,9 +233,8 @@ class DocumentVersionPageListRemapView(ExternalObjectViewMixin, FormView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_version_page_list', kwargs={
-                'document_version_id': self.external_object.pk
-            }
+            kwargs={'document_version_id': self.external_object.pk},
+            viewname='documents:document_version_page_list'
         )
 
 
@@ -276,7 +272,7 @@ class DocumentVersionPageNavigationBase(
             # It is the same type of object, reuse the URL to stay in the
             # same kind of view but pointing to a new object.
             url = reverse(
-                viewname=resolver_match.view_name, kwargs=new_kwargs
+                kwargs=new_kwargs, viewname=resolver_match.view_name
             )
         else:
             url = parsed_url.path
@@ -312,7 +308,7 @@ class DocumentVersionPageNavigationNext(DocumentVersionPageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    message='There are no more pages in this document'
+                    message='There are no more pages in this document.'
                 ), request=self.request
             )
             return {'document_version_page_id': self.external_object.pk}
@@ -328,7 +324,8 @@ class DocumentVersionPageNavigationPrevious(DocumentVersionPageNavigationBase):
         else:
             messages.warning(
                 message=_(
-                    message='You are already at the first page of this document'
+                    message='You are already at the first page of this '
+                    'document.'
                 ), request=self.request
             )
             return {'document_version_page_id': self.external_object.pk}
@@ -354,12 +351,8 @@ class DocumentVersionPageView(ExternalObjectViewMixin, SimpleView):
                 height=setting_display_height.value,
                 width=setting_display_width.value
             ),
-            TransformationRotate(
-                degrees=rotation,
-            ),
-            TransformationZoom(
-                percent=zoom,
-            )
+            TransformationRotate(degrees=rotation),
+            TransformationZoom(percent=zoom)
         )
 
         document_version_page_form = DocumentVersionPageForm(
@@ -410,15 +403,14 @@ class DocumentVersionPageInteractiveTransformation(
 
         url = furl(
             args=query_dict, path=reverse(
-                viewname='documents:document_version_page_view', kwargs={
-                    'document_version_page_id': self.external_object.pk
-                }
+                kwargs={'document_version_page_id': self.external_object.pk},
+                viewname='documents:document_version_page_view'
             )
 
         )
 
         self.transformation_function(query_dict=query_dict)
-        # Refresh query_dict to args reference
+        # Refresh query_dict to args reference.
         url.args = query_dict
 
         return url.tostr()

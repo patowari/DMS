@@ -30,16 +30,18 @@ class IndexInstanceSerializer(serializers.ModelSerializer):
 
     def get_url(self, obj):
         return reverse(
-            viewname='rest_api:indexinstance-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_instance_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indexinstance-detail'
         )
 
     def get_nodes_url(self, obj):
         return reverse(
-            viewname='rest_api:indexinstancenode-list', kwargs={
+            format=self.context['format'], kwargs={
                 'index_instance_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indexinstancenode-list'
         )
 
 
@@ -70,45 +72,49 @@ class IndexInstanceNodeSerializer(serializers.ModelSerializer):
 
     def get_children_url(self, obj):
         return reverse(
-            viewname='rest_api:indexinstancenode-children-list', kwargs={
+            format=self.context['format'], kwargs={
                 'index_instance_id': obj.index().pk,
                 'index_instance_node_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indexinstancenode-children-list'
         )
 
     def get_documents_url(self, obj):
         return reverse(
-            viewname='rest_api:indexinstancenode-document-list', kwargs={
+            format=self.context['format'], kwargs={
                 'index_instance_id': obj.index().pk,
                 'index_instance_node_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indexinstancenode-document-list'
         )
 
     def get_index_url(self, obj):
         return reverse(
-            viewname='rest_api:indexinstance-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_instance_id': obj.index().pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indexinstance-detail'
         )
 
     def get_parent_url(self, obj):
         if obj.parent and not obj.parent.is_root_node():
             return reverse(
-                viewname='rest_api:indexinstancenode-detail', kwargs={
+                format=self.context['format'], kwargs={
                     'index_instance_id': obj.index().pk,
                     'index_instance_node_id': obj.parent.pk
-                }, format=self.context['format'],
-                request=self.context['request']
+                }, request=self.context['request'],
+                viewname='rest_api:indexinstancenode-detail'
             )
         else:
             return ''
 
     def get_url(self, obj):
         return reverse(
-            viewname='rest_api:indexinstancenode-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_instance_id': obj.index().pk,
                 'index_instance_node_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indexinstancenode-detail'
         )
 
 
@@ -144,29 +150,31 @@ class IndexTemplateNodeSerializer(serializers.ModelSerializer):
 
     def get_index_url(self, obj):
         return reverse(
-            viewname='rest_api:indextemplate-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_template_id': obj.index.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indextemplate-detail'
         )
 
     def get_parent_url(self, obj):
         if obj.parent and not obj.parent.is_root_node():
             return reverse(
-                viewname='rest_api:indextemplatenode-detail', kwargs={
+                format=self.context['format'], kwargs={
                     'index_template_id': obj.index.pk,
                     'index_template_node_id': obj.parent.pk
-                }, format=self.context['format'],
-                request=self.context['request']
+                }, request=self.context['request'],
+                viewname='rest_api:indextemplatenode-detail'
             )
         else:
             return ''
 
     def get_url(self, obj):
         return reverse(
-            viewname='rest_api:indextemplatenode-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_template_id': obj.index.pk,
                 'index_template_node_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indextemplatenode-detail'
         )
 
 
@@ -204,9 +212,10 @@ class IndexTemplateNodeWriteSerializer(serializers.ModelSerializer):
 
     def get_index_url(self, obj):
         return reverse(
-            viewname='rest_api:indextemplate-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_template_id': obj.index.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indextemplate-detail'
         )
 
     def get_parent_queryset(self):
@@ -215,21 +224,22 @@ class IndexTemplateNodeWriteSerializer(serializers.ModelSerializer):
     def get_parent_url(self, obj):
         if obj.parent:
             return reverse(
-                viewname='rest_api:indextemplatenode-detail', kwargs={
+                format=self.context['format'], kwargs={
                     'index_template_id': obj.index.pk,
                     'index_template_node_id': obj.parent.pk
-                }, format=self.context['format'],
-                request=self.context['request']
+                }, request=self.context['request'],
+                viewname='rest_api:indextemplatenode-detail'
             )
         else:
             return ''
 
     def get_url(self, obj):
         return reverse(
-            viewname='rest_api:indextemplatenode-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_template_id': obj.index.pk,
                 'index_template_node_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indextemplatenode-detail'
         )
 
     def update(self, instance, validated_data):
@@ -308,23 +318,26 @@ class IndexTemplateSerializer(serializers.HyperlinkedModelSerializer):
 
     def get_url(self, obj):
         return reverse(
-            viewname='rest_api:indextemplate-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'index_template_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indextemplate-detail'
         )
 
     def get_nodes_url(self, obj):
         return reverse(
-            viewname='rest_api:indextemplatenode-list', kwargs={
+            format=self.context['format'], kwargs={
                 'index_template_id': obj.pk
-            }, format=self.context['format'], request=self.context['request']
+            }, request=self.context['request'],
+            viewname='rest_api:indextemplatenode-list'
         )
 
 
 class DocumentTypeAddSerializer(serializers.Serializer):
     document_type = FilteredPrimaryKeyRelatedField(
         help_text=_(
-            message='Primary key of the document type to add to the index template.'
+            message='Primary key of the document type to add to the index '
+            'template.'
         ), label=_(message='Document type ID'), source_model=DocumentType,
         source_permission=permission_document_type_edit
     )
@@ -333,7 +346,8 @@ class DocumentTypeAddSerializer(serializers.Serializer):
 class DocumentTypeRemoveSerializer(serializers.Serializer):
     document_type = FilteredPrimaryKeyRelatedField(
         help_text=_(
-            message='Primary key of the document type to remove from the index template.'
+            message='Primary key of the document type to remove from the '
+            'index template.'
         ), label=_(message='Document type ID'), source_model=DocumentType,
         source_permission=permission_document_type_edit
     )

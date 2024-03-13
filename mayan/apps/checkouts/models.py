@@ -38,7 +38,8 @@ class DocumentCheckout(ExtraDataModelMixin, models.Model):
     )
     expiration_datetime = models.DateTimeField(
         help_text=_(
-            message='Amount of time to hold the document checked out in minutes.'
+            message='Amount of time to hold the document checked out in '
+            'minutes.'
         ), verbose_name=_(message='Check out expiration date and time')
     )
     user = models.ForeignKey(
@@ -88,9 +89,8 @@ class DocumentCheckout(ExtraDataModelMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='checkouts:check_out_info', kwargs={
-                'document_id': self.document_id
-            }
+            kwargs={'document_id': self.document_id},
+            viewname='checkouts:check_out_info'
         )
 
     def natural_key(self):

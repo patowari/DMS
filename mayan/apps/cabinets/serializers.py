@@ -15,20 +15,20 @@ from .permissions import (
 
 class CabinetSerializer(serializers.ModelSerializer):
     children = RecursiveField(
-        help_text=_(message='List of children cabinets.'), label=_(message='Children'),
-        many=True, read_only=True
+        help_text=_(message='List of children cabinets.'),
+        label=_(message='Children'), many=True, read_only=True
     )
     documents_url = serializers.HyperlinkedIdentityField(
         help_text=_(
-            message='URL of the API endpoint showing the list documents inside this '
-            'cabinet.'
+            message='URL of the API endpoint showing the list documents '
+            'inside this cabinet.'
         ), label=_(message='Documents URL'), lookup_url_kwarg='cabinet_id',
         view_name='rest_api:cabinet-document-list'
     )
     full_path = serializers.SerializerMethodField(
         help_text=_(
-            message='The name of this cabinet level appended to the names of its '
-            'ancestors.'
+            message='The name of this cabinet level appended to the names of '
+            'its ancestors.'
         ), label=_(message='Full path'), read_only=True
     )
     parent_url = serializers.SerializerMethodField(
@@ -38,8 +38,8 @@ class CabinetSerializer(serializers.ModelSerializer):
     # This is here because parent is optional in the model but the serializer
     # sets it as required.
     parent = serializers.PrimaryKeyRelatedField(
-        allow_null=True, label=_(message='Parent'), queryset=Cabinet.objects.all(),
-        required=False
+        allow_null=True, label=_(message='Parent'),
+        queryset=Cabinet.objects.all(), required=False
     )
 
     # DEPRECATION: Version 5.0, remove 'parent' fields from GET request as
@@ -69,10 +69,10 @@ class CabinetSerializer(serializers.ModelSerializer):
     def get_parent_url(self, obj):
         if obj.parent:
             return reverse(
-                viewname='rest_api:cabinet-detail',
-                kwargs={'cabinet_id': obj.parent.pk},
                 format=self.context['format'],
-                request=self.context.get('request')
+                kwargs={'cabinet_id': obj.parent.pk},
+                request=self.context.get('request'),
+                viewname='rest_api:cabinet-detail'
             )
         else:
             return ''
@@ -82,7 +82,8 @@ class CabinetDocumentAddSerializer(serializers.Serializer):
     document = FilteredPrimaryKeyRelatedField(
         help_text=_(
             message='Primary key of the document to add to the cabinet.'
-        ), label=_(message='Document ID'), source_queryset=Document.valid.all(),
+        ), label=_(message='Document ID'),
+        source_queryset=Document.valid.all(),
         source_permission=permission_cabinet_add_document
     )
 
@@ -91,6 +92,7 @@ class CabinetDocumentRemoveSerializer(serializers.Serializer):
     document = FilteredPrimaryKeyRelatedField(
         help_text=_(
             message='Primary key of the document to remove from the cabinet.'
-        ), label=_(message='Document ID'), source_queryset=Document.valid.all(),
+        ), label=_(message='Document ID'),
+        source_queryset=Document.valid.all(),
         source_permission=permission_cabinet_remove_document
     )

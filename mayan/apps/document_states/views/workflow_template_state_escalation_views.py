@@ -47,9 +47,7 @@ class WorkflowTemplateStateEscalationCreateView(
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'workflow_template_state': self.external_object
-        }
+        return {'workflow_template_state': self.external_object}
 
     def get_instance_extra_data(self):
         return {
@@ -62,12 +60,12 @@ class WorkflowTemplateStateEscalationCreateView(
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_state_escalation_list',
             kwargs={
                 'workflow_template_state_id': self.kwargs[
                     'workflow_template_state_id'
                 ]
-            }
+            },
+            viewname='document_states:workflow_template_state_escalation_list'
         )
 
 
@@ -89,16 +87,14 @@ class WorkflowTemplateStateEscalationDeleteView(SingleObjectDeleteView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_escalation_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_state_escalation_list',
             kwargs={
                 'workflow_template_state_id': self.object.state.pk
-            }
+            },
+            viewname='document_states:workflow_template_state_escalation_list'
         )
 
 
@@ -115,20 +111,18 @@ class WorkflowTemplateStateEscalationEditView(SingleObjectEditView):
                 'object', 'workflow_template_state', 'workflow_template',
             ),
             'object': self.object,
-            'title': _(message='Edit workflow state escalation: %s') % self.object,
+            'title': _(
+                message='Edit workflow state escalation: %s'
+            ) % self.object,
             'workflow_template': self.object.state.workflow,
             'workflow_template_state': self.object.state
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'workflow_template_state': self.object.state
-        }
+        return {'workflow_template_state': self.object.state}
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class WorkflowTemplateStateEscalationListView(
@@ -154,11 +148,12 @@ class WorkflowTemplateStateEscalationListView(
                 )
             ),
             'no_results_text': _(
-                message='Workflow state escalation allow workflows to execute a '
-                'a transition automatically after a specific amount of time.'
+                message='Workflow state escalation allow workflows to '
+                'execute a transition automatically after a specific amount '
+                'of time.'
             ),
             'no_results_title': _(
-                message='There are no escalations for this workflow state'
+                message='There are no escalations for this workflow state.'
             ),
             'title': _(
                 message='Escalations for workflow template state: %s'

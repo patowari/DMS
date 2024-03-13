@@ -40,9 +40,7 @@ class APIDocumentDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = Document.valid.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIDocumentFileActionListView(generics.ListAPIView):
@@ -87,9 +85,7 @@ class APIDocumentListView(generics.ListCreateAPIView):
         super().perform_create(serializer=serializer)
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIDocumentChangeTypeView(generics.ObjectActionAPIView):
@@ -129,6 +125,4 @@ class APIDocumentUploadView(generics.CreateAPIView):
         super().perform_create(serializer=serializer)
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}

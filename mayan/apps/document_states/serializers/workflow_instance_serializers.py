@@ -171,9 +171,10 @@ class WorkflowInstanceSerializer(serializers.ModelSerializer):
 
     def get_document_url(self, instance):
         return reverse(
-            viewname='rest_api:document-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'document_id': instance.document.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:document-detail'
         )
 
     def get_context(self, instance):
@@ -183,32 +184,35 @@ class WorkflowInstanceSerializer(serializers.ModelSerializer):
 
     def get_log_entries_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-instance-log-entry-list', kwargs={
+            format=self.context['format'], kwargs={
                 'document_id': instance.document.pk,
                 'workflow_instance_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-instance-log-entry-list'
         )
 
     def get_log_entry_transitions_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-instance-log-entry-transition-list',
-            kwargs={
+            format=self.context['format'], kwargs={
                 'document_id': instance.document.pk,
                 'workflow_instance_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-instance-log-entry-transition-list'
         )
 
     def get_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-instance-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'document_id': instance.document.pk,
                 'workflow_instance_id': instance.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-instance-detail'
         )
 
     def get_workflow_template_url(self, instance):
         return reverse(
-            viewname='rest_api:workflow-template-detail', kwargs={
+            format=self.context['format'], kwargs={
                 'workflow_template_id': instance.workflow.pk
-            }, request=self.context['request'], format=self.context['format']
+            }, request=self.context['request'],
+            viewname='rest_api:workflow-template-detail'
         )

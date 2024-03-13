@@ -124,9 +124,7 @@ class APIWorkflowTemplateTransitionFieldDetailView(
     serializer_class = WorkflowTransitionFieldSerializer
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
         return self.get_workflow_template_transition().fields.all()
@@ -180,9 +178,7 @@ class APIWorkflowTemplateTransitionTriggerDetailView(
     serializer_class = WorkflowTemplateTransitionTriggerSerializer
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
         return self.get_workflow_template_transition().trigger_events.all()

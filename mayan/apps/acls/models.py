@@ -82,7 +82,7 @@ class AccessControlList(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='acls:acl_permissions', kwargs={'acl_id': self.pk}
+            kwargs={'acl_id': self.pk}, viewname='acls:acl_permissions'
         )
 
     @method_event(

@@ -44,9 +44,9 @@ class MailingProfileBackendSelectionView(FormView):
         backend = form.cleaned_data['backend']
         return HttpResponseRedirect(
             redirect_to=reverse(
-                viewname='mailer:mailing_profile_create', kwargs={
+                kwargs={
                     'backend_path': backend
-                }
+                }, viewname='mailer:mailing_profile_create'
             )
         )
 
@@ -70,9 +70,7 @@ class MailingProfileCreateView(ViewSingleObjectDynamicFormModelBackendCreate):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_instance_extra_data(self):
         return {
@@ -109,9 +107,7 @@ class MailingProfileEditView(ViewSingleObjectDynamicFormModelBackendEdit):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_instance_extra_data(self):
         return {'_event_actor': self.request.user}
@@ -140,9 +136,7 @@ class MailingProfileListView(SingleObjectListView):
 
     def get_form_schema(self):
         backend_class = self.get_backend_class()
-        return {
-            'fields': backend_class.fields
-        }
+        return {'fields': backend_class.fields}
 
 
 class MailingProfileTestView(ExternalObjectViewMixin, FormView):

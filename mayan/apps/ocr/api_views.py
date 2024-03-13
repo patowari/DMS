@@ -75,9 +75,7 @@ class APIDocumentVersionPageOCRContentDetailView(
     serializer_class = DocumentVersionPageOCRContentSerializer
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_object(self):
         document_version_page = self.get_document_version_page(

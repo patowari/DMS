@@ -86,9 +86,9 @@ class TagAttachActionView(MultipleObjectFormActionView):
     def get_post_action_redirect(self):
         if self.object_list.count() == 1:
             return reverse(
-                viewname='tags:document_tag_list', kwargs={
+                kwargs={
                     'document_id': self.object_list.first().pk
-                }
+                }, viewname='tags:document_tag_list'
             )
         else:
             return super().get_post_action_redirect()
@@ -113,9 +113,7 @@ class TagCreateView(SingleObjectCreateView):
     view_permission = permission_tag_create
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class TagDeleteView(MultipleObjectDeleteView):
@@ -161,9 +159,7 @@ class TagEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class TagListView(SingleObjectListView):
@@ -313,9 +309,9 @@ class TagRemoveActionView(MultipleObjectFormActionView):
     def get_post_action_redirect(self):
         if self.object_list.count() == 1:
             return reverse(
-                viewname='tags:document_tag_list', kwargs={
+                kwargs={
                     'document_id': self.object_list.first().pk
-                }
+                }, viewname='tags:document_tag_list'
             )
         else:
             return super().get_post_action_redirect()

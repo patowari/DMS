@@ -29,8 +29,9 @@ class Message(ExtraDataModelMixin, MessageBusinessLogicMixin, models.Model):
         to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     subject = models.CharField(
-        max_length=255, help_text=_(message='Short description of this message.'),
-        verbose_name=_(message='Subject')
+        max_length=255, help_text=_(
+            message='Short description of this message.'
+        ), verbose_name=_(message='Subject')
     )
     body = models.TextField(
         help_text=_(message='The actual content of the message.'),
@@ -38,7 +39,8 @@ class Message(ExtraDataModelMixin, MessageBusinessLogicMixin, models.Model):
     )
     read = models.BooleanField(
         default=False, help_text=_(
-            message='This field determines if the message has been read or not.'
+            message='This field determines if the message has been read or '
+            'not.'
         ), verbose_name=_(message='Read')
     )
     date_time = models.DateTimeField(
@@ -57,9 +59,8 @@ class Message(ExtraDataModelMixin, MessageBusinessLogicMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='messaging:message_detail', kwargs={
-                'message_id': self.pk
-            }
+            kwargs={'message_id': self.pk},
+            viewname='messaging:message_detail'
         )
 
     @method_event(

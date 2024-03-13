@@ -71,12 +71,11 @@ class WorkflowTemplateTransitionCreateView(
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_list',
             kwargs={
                 'workflow_template_id': self.kwargs[
                     'workflow_template_id'
                 ]
-            }
+            }, viewname='document_states:workflow_template_transition_list'
         )
 
 
@@ -97,14 +96,12 @@ class WorkflowTemplateTransitionDeleteView(SingleObjectDeleteView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_list',
-            kwargs={'workflow_template_id': self.object.workflow.pk}
+            kwargs={'workflow_template_id': self.object.workflow.pk},
+            viewname='document_states:workflow_template_transition_list'
         )
 
 
@@ -131,14 +128,12 @@ class WorkflowTemplateTransitionEditView(SingleObjectEditView):
         return kwargs
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_list',
-            kwargs={'workflow_template_id': self.object.workflow.pk}
+            kwargs={'workflow_template_id': self.object.workflow.pk},
+            viewname='document_states:workflow_template_transition_list'
         )
 
 
@@ -162,8 +157,8 @@ class WorkflowTemplateTransitionListView(
                 )
             ),
             'no_results_text': _(
-                message='Create a transition and use it to move a workflow from '
-                ' one state to another.'
+                message='Create a transition and use it to move a workflow '
+                'from one state to another.'
             ),
             'no_results_title': _(
                 message='This workflow doesn\'t have any transitions'
@@ -212,10 +207,10 @@ class WorkflowTemplateTransitionFieldCreateView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_field_list',
             kwargs={
                 'workflow_template_transition_id': self.external_object.pk
-            }
+            },
+            viewname='document_states:workflow_template_transition_field_list'
         )
 
 
@@ -231,22 +226,22 @@ class WorkflowTemplateTransitionFieldDeleteView(SingleObjectDeleteView):
                 'object', 'workflow_template_transition', 'workflow'
             ),
             'object': self.object,
-            'title': _(message='Delete workflow transition field: %s') % self.object,
+            'title': _(
+                message='Delete workflow transition field: %s'
+            ) % self.object,
             'workflow': self.object.transition.workflow,
             'workflow_template_transition': self.object.transition
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_field_list',
             kwargs={
                 'workflow_template_transition_id': self.object.transition.pk
-            }
+            },
+            viewname='document_states:workflow_template_transition_field_list'
         )
 
 
@@ -272,16 +267,14 @@ class WorkflowTemplateTransitionFieldEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_field_list',
             kwargs={
                 'workflow_template_transition_id': self.object.transition.pk
-            }
+            },
+            viewname='document_states:workflow_template_transition_field_list'
         )
 
 
@@ -345,14 +338,16 @@ class WorkflowTemplateTransitionTriggerEventListView(
         except Exception as exception:
             messages.error(
                 message=_(
-                    message='Error updating workflow transition trigger events; %s'
+                    message='Error updating workflow transition trigger '
+                    'events; %s'
                 ) % exception, request=self.request
 
             )
         else:
             messages.success(
                 message=_(
-                    message='Workflow transition trigger events updated successfully'
+                    message='Workflow transition trigger events updated '
+                    'successfully'
                 ), request=self.request
             )
 
@@ -364,8 +359,8 @@ class WorkflowTemplateTransitionTriggerEventListView(
             'navigation_object_list': ('object', 'workflow'),
             'object': self.external_object,
             'subtitle': _(
-                message='Triggers are events that cause this transition to execute '
-                'automatically.'
+                message='Triggers are events that cause this transition to '
+                'execute automatically.'
             ),
             'title': _(
                 message='Workflow transition trigger events for: %s'
@@ -401,6 +396,6 @@ class WorkflowTemplateTransitionTriggerEventListView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_transition_list',
-            kwargs={'workflow_template_id': self.external_object.workflow.pk}
+            kwargs={'workflow_template_id': self.external_object.workflow.pk},
+            viewname='document_states:workflow_template_transition_list'
         )

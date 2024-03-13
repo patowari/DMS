@@ -82,7 +82,7 @@ class Key(ExtraDataModelMixin, KeyBusinessLogicMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='django_gpg:key_detail', kwargs={'key_id': self.pk}
+            kwargs={'key_id': self.pk}, viewname='django_gpg:key_detail'
         )
 
     @method_event(

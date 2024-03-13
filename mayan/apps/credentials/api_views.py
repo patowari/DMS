@@ -19,9 +19,7 @@ class APIStoredCredentialListView(generics.ListCreateAPIView):
     source_queryset = StoredCredential.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIStoredCredentialDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -42,6 +40,4 @@ class APIStoredCredentialDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = StoredCredential.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}

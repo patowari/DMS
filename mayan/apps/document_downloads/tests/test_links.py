@@ -37,7 +37,7 @@ class DocumentsLinksTestCase(
         self.assertEqual(
             resolved_link.url,
             reverse(
-                viewname=link_document_file_download_quick.view,
-                args=(self._test_document.file_latest.pk,)
+                args=(self._test_document.file_latest.pk,),
+                viewname=link_document_file_download_quick.view
             )
         )

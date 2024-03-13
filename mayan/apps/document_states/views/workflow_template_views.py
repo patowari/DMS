@@ -97,9 +97,9 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
     def get_extra_context(self):
         return {
             'subtitle': _(
-                message='Workflows already launched or workflows not applicable to '
-                'some documents when multiple documents are selected, '
-                'will be silently ignored.'
+                message='Workflows already launched or workflows not '
+                'applicable to some documents when multiple documents are '
+                'selected, will be silently ignored.'
             )
         }
 
@@ -146,9 +146,7 @@ class WorkflowTemplateCreateView(SingleObjectCreateView):
     view_permission = permission_workflow_template_create
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class WorkflowTemplateDeleteView(MultipleObjectDeleteView):
@@ -161,9 +159,15 @@ class WorkflowTemplateDeleteView(MultipleObjectDeleteView):
     post_action_redirect = reverse_lazy(
         viewname='document_states:workflow_template_list'
     )
-    success_message_plural = _(message='%(count)d workflows deleted successfully.')
-    success_message_single = _(message='Workflow "%(object)s" deleted successfully.')
-    success_message_singular = _(message='%(count)d workflow deleted successfully.')
+    success_message_plural = _(
+        message='%(count)d workflows deleted successfully.'
+    )
+    success_message_single = _(
+        message='Workflow "%(object)s" deleted successfully.'
+    )
+    success_message_singular = _(
+        message='%(count)d workflow deleted successfully.'
+    )
     title_plural = _(message='Delete the %(count)d selected workflows.')
     title_single = _(message='Delete workflow: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected workflow.')
@@ -171,7 +175,9 @@ class WorkflowTemplateDeleteView(MultipleObjectDeleteView):
 
     def get_extra_context(self):
         return {
-            'message': _(message='All workflow instances will also be deleted.')
+            'message': _(
+                message='All workflow instances will also be deleted.'
+            )
         }
 
     def object_action(self, instance, form=None):
@@ -190,15 +196,11 @@ class WorkflowTemplateEditView(SingleObjectEditView):
 
     def get_extra_context(self):
         return {
-            'title': _(
-                message='Edit workflow: %s'
-            ) % self.object
+            'title': _(message='Edit workflow: %s') % self.object
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class WorkflowTemplateDocumentTypeAddRemoveView(AddRemoveView):
@@ -240,8 +242,8 @@ class WorkflowTemplateLaunchView(ExternalObjectViewMixin, ConfirmView):
     def get_extra_context(self):
         return {
             'subtitle': _(
-                message='This will launch the workflow for documents that have '
-                'already been uploaded.'
+                message='This will launch the workflow for documents that '
+                'have already been uploaded.'
             ),
             'title': _(message='Launch workflow?')
         }
@@ -272,9 +274,9 @@ class WorkflowTemplateListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                message='Workflows store a series of states and keep track of the '
-                'current state of a document. Transitions are used to change the '
-                'current state to a new one.'
+                message='Workflows store a series of states and keep track '
+                'of the current state of a document. Transitions are used to '
+                'change the current state to a new one.'
             ),
             'no_results_title': _(
                 message='No workflows have been defined'
@@ -301,8 +303,8 @@ class WorkflowTemplatePreviewView(SingleObjectDetailView):
 class ToolLaunchWorkflows(ConfirmView):
     extra_context = {
         'subtitle': _(
-            message='This will launch all workflows created after documents have '
-            'already been uploaded.'
+            message='This will launch all workflows created after documents '
+            'have already been uploaded.'
         ),
         'title': _(message='Launch all workflows?')
     }

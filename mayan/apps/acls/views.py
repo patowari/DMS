@@ -104,17 +104,15 @@ class ACLDeleteView(SingleObjectDeleteView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='acls:acl_list', kwargs={
+            kwargs={
                 'app_label': self.object.content_type.app_label,
                 'model_name': self.object.content_type.model,
                 'object_id': self.object.object_id
-            }
+            }, viewname='acls:acl_list'
         )
 
 
@@ -149,9 +147,9 @@ class ACLListView(
                 message='There are no ACLs for this object'
             ),
             'no_results_text': _(
-                message='ACL stands for Access Control List and is a precise method '
-                'to control user access to objects in the system. ACLs '
-                'allow granting a permission to a role but only for a '
+                message='ACL stands for Access Control List and is a precise '
+                'method to control user access to objects in the system. '
+                'ACLs allow granting a permission to a role but only for a '
                 'specific object or set of objects.'
             ),
             'object': self.external_object,
@@ -230,11 +228,11 @@ class ACLPermissionAddRemoveView(AddRemoveView):
     def get_list_added_help_text(self):
         if self.main_object.get_inherited_permissions():
             return _(
-                message='Disabled permissions are inherited from a parent object or '
-                'directly granted to the role and can\'t be removed from '
-                'this view. Inherited permissions need to be removed from '
-                'the parent object\'s ACL or from them role via the '
-                'Setup menu.'
+                message='Disabled permissions are inherited from a parent '
+                'object or directly granted to the role and can\'t be '
+                'removed from this view. Inherited permissions need to be '
+                'removed from the parent object\'s ACL or from them role via '
+                'the Setup menu.'
             )
         else:
             return super().get_list_added_help_text()
@@ -270,16 +268,12 @@ class GlobalACLListView(SingleObjectListView):
         return {
             'hide_object': True,
             'no_results_icon': icon_acl_list,
-            'no_results_title': _(
-                message='There are no ACLs'
-            ),
+            'no_results_title': _(message='There are no ACLs'),
             'no_results_text': _(
-                message='ACL stands for Access Control List and is a precise method '
-                'to control user access to objects in the system. ACLs '
-                'allow granting a permission to a role but only for a '
+                message='ACL stands for Access Control List and is a precise '
+                'method to control user access to objects in the system. '
+                'ACLs allow granting a permission to a role but only for a '
                 'specific object or set of objects.'
             ),
-            'title': _(
-                message='Global access control lists'
-            )
+            'title': _(message='Global access control lists')
         }

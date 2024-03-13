@@ -146,8 +146,8 @@ class DocumentVersionPageBusinessLogicMixin:
 
             final_url = furl()
             final_url.path = reverse(
-                viewname=viewname or 'rest_api:documentversionpage-image',
-                kwargs=view_kwargs
+                kwargs=view_kwargs,
+                viewname=viewname or 'rest_api:documentversionpage-image'
             )
             # Remove leading '?' character.
             final_url.query = BaseTransformation.list_as_query_string(

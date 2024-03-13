@@ -36,9 +36,7 @@ class APIFavoriteDocumentListView(generics.ListCreateAPIView):
     serializer_class = FavoriteDocumentSerializer
 
     def get_instance_extra_data(self):
-        return {
-            'user': self.request.user
-        }
+        return {'user': self.request.user}
 
     def get_source_queryset(self):
         return FavoriteDocument.valid.filter(user=self.request.user)

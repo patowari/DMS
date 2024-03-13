@@ -44,9 +44,8 @@ class StoredCredentialBackendSelectionView(FormView):
         backend = form.cleaned_data['backend']
         return HttpResponseRedirect(
             redirect_to=reverse(
-                viewname='credentials:stored_credential_create', kwargs={
-                    'backend_path': backend
-                }
+                kwargs={'backend_path': backend},
+                viewname='credentials:stored_credential_create'
             )
         )
 
@@ -104,9 +103,7 @@ class StoredCredentialEditView(ViewSingleObjectDynamicFormModelBackendEdit):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class StoredCredentialListView(SingleObjectListView):

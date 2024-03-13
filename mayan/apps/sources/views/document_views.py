@@ -79,8 +79,8 @@ class DocumentUploadView(ExternalObjectViewMixin, UploadBaseView):
             return HttpResponseRedirect(
                 redirect_to='{}?{}'.format(
                     reverse(
-                        viewname=self.request.resolver_match.view_name,
-                        kwargs=self.request.resolver_match.kwargs
+                        kwargs=self.request.resolver_match.kwargs,
+                        viewname=self.request.resolver_match.view_name
                     ), self.request.META['QUERY_STRING']
                 ),
             )
@@ -91,8 +91,8 @@ class DocumentUploadView(ExternalObjectViewMixin, UploadBaseView):
             {
                 'document_type': self.external_object,
                 'title': _(
-                    message='Upload a document of type "%(document_type)s" from '
-                    'source: %(source)s'
+                    message='Upload a document of type "%(document_type)s" '
+                    'from source: %(source)s'
                 ) % {
                     'document_type': self.external_object,
                     'source': self.source.label
@@ -103,14 +103,10 @@ class DocumentUploadView(ExternalObjectViewMixin, UploadBaseView):
         return context
 
     def get_form_extra_kwargs__document_form(self):
-        return {
-            'document_type': self.external_object
-        }
+        return {'document_type': self.external_object}
 
     def get_form_extra_kwargs__source_form(self):
-        return {
-            'source': self.source
-        }
+        return {'source': self.source}
 
     def get_pk_url_kwargs(self):
         return {

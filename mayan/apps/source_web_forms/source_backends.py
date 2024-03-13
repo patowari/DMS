@@ -44,8 +44,8 @@ class SourceBackendWebForm(
                         'forms': context['forms'],
                         'form_action': '{}?{}'.format(
                             reverse(
-                                viewname=request.resolver_match.view_name,
-                                kwargs=request.resolver_match.kwargs
+                                kwargs=request.resolver_match.kwargs,
+                                viewname=request.resolver_match.view_name
                             ), request.META['QUERY_STRING']
                         ),
                         'form_disable_submit': form_disable_submit,

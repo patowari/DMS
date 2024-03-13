@@ -34,9 +34,7 @@ class APITagDetailView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = Tag.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APITagListView(generics.ListCreateAPIView):
@@ -51,9 +49,7 @@ class APITagListView(generics.ListCreateAPIView):
     source_queryset = Tag.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APITagDocumentListView(

@@ -102,17 +102,17 @@ class DocumentMetadataAddView(
     def get_post_object_action_url(self):
         if self.action_count == 1:
             return reverse(
-                viewname='metadata:metadata_edit', kwargs={
+                kwargs={
                     'document_id': self.action_id_list[0]
-                }
+                }, viewname='metadata:metadata_edit'
             )
         elif self.action_count > 1:
             url = furl(
-                path=reverse(
-                    viewname='metadata:metadata_multiple_edit'
-                ), args={
+                args={
                     'id_list': convert_to_id_list(items=self.action_id_list)
-                }
+                }, path=reverse(
+                    viewname='metadata:metadata_multiple_edit'
+                )
             )
 
             return url.tostr()
@@ -147,11 +147,11 @@ class DocumentMetadataAddView(
                         '"%(metadata_type)s" to document: '
                         '%(document)s; %(exception)s'
                     ) % {
-                        'metadata_type': metadata_type,
                         'document': instance,
                         'exception': ', '.join(
                             getattr(exception, 'messages', exception)
-                        )
+                        ),
+                        'metadata_type': metadata_type
                     }, request=self.request
                 )
             else:
@@ -161,18 +161,18 @@ class DocumentMetadataAddView(
                             message='Metadata type: %(metadata_type)s '
                             'successfully added to document %(document)s.'
                         ) % {
-                            'metadata_type': metadata_type,
-                            'document': instance
+                            'document': instance,
+                            'metadata_type': metadata_type
                         }, request=self.request
                     )
                 else:
                     messages.warning(
                         message=_(
-                            message='Metadata type: %(metadata_type)s already '
-                            'present in document %(document)s.'
+                            message='Metadata type: %(metadata_type)s '
+                            'already present in document %(document)s.'
                         ) % {
-                            'metadata_type': metadata_type,
-                            'document': instance
+                            'document': instance,
+                            'metadata_type': metadata_type
                         }, request=self.request
                     )
 
@@ -283,17 +283,15 @@ class DocumentMetadataEditView(
     def get_post_object_action_url(self):
         if self.action_count == 1:
             return reverse(
-                viewname='metadata:metadata_list', kwargs={
+                kwargs={
                     'document_id': self.action_id_list[0]
-                }
+                }, viewname='metadata:metadata_list'
             )
         elif self.action_count > 1:
             url = furl(
-                path=reverse(
-                    viewname='metadata:metadata_multiple_edit'
-                ), args={
+                args={
                     'id_list': convert_to_id_list(items=self.action_id_list)
-                }
+                }, path=reverse(viewname='metadata:metadata_multiple_edit')
             )
             return url.tostr()
 
@@ -361,21 +359,21 @@ class DocumentMetadataListView(ExternalObjectViewMixin, SingleObjectListView):
             'no_results_icon': icon_metadata,
             'no_results_main_link': link_metadata_add.resolve(
                 context=RequestContext(
-                    dict_={
-                        'object': self.external_object
-                    }, request=self.request
+                    dict_={'object': self.external_object},
+                    request=self.request
                 )
             ),
             'no_results_text': _(
-                message='Add metadata types this document\'s type '
-                'to be able to add them to individual documents. '
-                'Once added to individual document, you can then edit their '
-                'values.'
+                message='Add metadata types this document\'s type to be able '
+                'to add them to individual documents. Once added to '
+                'individual document, you can then edit their values.'
             ),
             'no_results_title': _(
                 message='This document doesn\'t have any metadata'
             ),
-            'title': _(message='Metadata for document: %s') % self.external_object
+            'title': _(
+                message='Metadata for document: %s'
+            ) % self.external_object
         }
 
     def get_source_queryset(self):
@@ -456,9 +454,9 @@ class DocumentMetadataRemoveView(
     def get_post_object_action_url(self):
         if self.action_count == 1:
             return reverse(
-                viewname='metadata:metadata_list', kwargs={
+                kwargs={
                     'document_id': self.action_id_list[0]
-                }
+                }, viewname='metadata:metadata_list'
             )
 
     def object_action(self, form, instance):
@@ -480,19 +478,22 @@ class DocumentMetadataRemoveView(
                     document_metadata.delete()
                     messages.success(
                         message=_(
-                            message='Successfully remove metadata type "%(metadata_type)s" from document: %(document)s.'
+                            message='Successfully remove metadata type '
+                            '"%(metadata_type)s" from document: %(document)s.'
                         ) % {
-                            'metadata_type': metadata_type,
-                            'document': instance
+                            'document': instance,
+                            'metadata_type': metadata_type
                         }, request=self.request
                     )
                 except ValidationError as exception:
                     messages.error(
                         message=_(
-                            message='Error removing metadata type "%(metadata_type)s" from document: %(document)s; %(exception)s'
+                            message='Error removing metadata type '
+                            '"%(metadata_type)s" from document: '
+                            '%(document)s; %(exception)s'
                         ) % {
-                            'metadata_type': metadata_type,
                             'document': instance,
-                            'exception': ', '.join(exception.messages)
+                            'exception': ', '.join(exception.messages),
+                            'metadata_type': metadata_type
                         }, request=self.request
                     )

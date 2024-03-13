@@ -63,9 +63,8 @@ class Asset(AssetBusinessLogicMixin, ExtraDataModelMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='converter:asset_detail', kwargs={
-                'asset_id': self.pk
-            }
+            kwargs={'asset_id': self.pk},
+            viewname='converter:asset_detail'
         )
 
     @method_event(
@@ -151,8 +150,8 @@ class LayerTransformation(
     )
     order = models.PositiveIntegerField(
         blank=True, db_index=True, default=0, help_text=_(
-            message='Order in which the transformations will be executed. If left '
-            'unchanged, an automatic order value will be assigned.'
+            message='Order in which the transformations will be executed. If '
+            'left unchanged, an automatic order value will be assigned.'
         ), verbose_name=_(message='Order')
     )
     name = models.CharField(

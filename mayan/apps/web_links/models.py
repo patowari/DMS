@@ -20,8 +20,9 @@ class WebLink(ExtraDataModelMixin, WebLinkBusinessLogicMixin, models.Model):
     generating links from documents to external resources.
     """
     label = models.CharField(
-        db_index=True, help_text=_(message='A short text describing the web link.'),
-        max_length=96, unique=True, verbose_name=_(message='Label')
+        db_index=True, help_text=_(
+            message='A short text describing the web link.'
+        ), max_length=96, unique=True, verbose_name=_(message='Label')
     )
     template = models.TextField(
         help_text=_(
@@ -47,9 +48,8 @@ class WebLink(ExtraDataModelMixin, WebLinkBusinessLogicMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='web_links:web_link_edit', kwargs={
-                'web_link_id': self.pk
-            }
+            kwargs={'web_link_id': self.pk},
+            viewname='web_links:web_link_edit'
         )
 
     @method_event(

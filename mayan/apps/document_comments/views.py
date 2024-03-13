@@ -34,7 +34,9 @@ class DocumentCommentCreateView(
     def get_extra_context(self):
         return {
             'object': self.external_object,
-            'title': _(message='Add comment to document: %s') % self.external_object
+            'title': _(
+                message='Add comment to document: %s'
+            ) % self.external_object
         }
 
     def get_instance_extra_data(self):
@@ -45,9 +47,9 @@ class DocumentCommentCreateView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='comments:comments_for_document', kwargs={
+            kwargs={
                 'document_id': self.kwargs['document_id']
-            }
+            }, viewname='comments:comments_for_document'
         )
 
     def get_queryset(self):
@@ -68,15 +70,12 @@ class DocumentCommentDeleteView(SingleObjectDeleteView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='comments:comments_for_document', kwargs={
-                'document_id': self.object.document_id
-            }
+            kwargs={'document_id': self.object.document_id},
+            viewname='comments:comments_for_document'
         )
 
     def get_source_queryset(self):
@@ -120,15 +119,12 @@ class DocumentCommentEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user,
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='comments:comments_for_document', kwargs={
-                'document_id': self.object.document_id
-            }
+            kwargs={'document_id': self.object.document_id},
+            viewname='comments:comments_for_document'
         )
 
     def get_source_queryset(self):
@@ -155,12 +151,14 @@ class DocumentCommentListView(ExternalObjectViewMixin, SingleObjectListView):
                 )
             ),
             'no_results_text': _(
-                message='Document comments are timestamped text entries from users. '
-                'They are great for collaboration.'
+                message='Document comments are timestamped text entries from '
+                'users. They are great for collaboration.'
             ),
             'no_results_title': _(message='There are no comments'),
             'object': self.external_object,
-            'title': _(message='Comments for document: %s') % self.external_object
+            'title': _(
+                message='Comments for document: %s'
+            ) % self.external_object
         }
 
     def get_source_queryset(self):

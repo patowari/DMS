@@ -118,9 +118,8 @@ class SettingValueEditView(FormView):
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='settings:setting_namespace_detail', kwargs={
-                'namespace_name': self.object.namespace.name
-            }
+            kwargs={'namespace_name': self.object.namespace.name},
+            viewname='settings:setting_namespace_detail'
         )
 
 
@@ -183,8 +182,8 @@ class SettingNamespaceDetailView(SingleObjectListView):
             'hide_object': True,
             'object': namespace,
             'subtitle': _(
-                message='Settings inherited from an environment variable take '
-                'precedence and cannot be changed in this view. '
+                message='Settings inherited from an environment variable '
+                'take precedence and cannot be changed in this view. '
             ),
             'title': _(message='Settings in namespace: %s') % namespace
         }

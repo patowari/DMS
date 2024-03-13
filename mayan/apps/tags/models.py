@@ -39,7 +39,7 @@ class Tag(ExtraDataModelMixin, TagBusinessLogicMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='tags:tag_document_list', kwargs={'tag_id': self.pk}
+            kwargs={'tag_id': self.pk}, viewname='tags:tag_document_list'
         )
 
     @method_event(

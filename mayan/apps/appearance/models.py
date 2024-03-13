@@ -16,13 +16,14 @@ from .events import (
 
 class Theme(models.Model):
     label = models.CharField(
-        db_index=True, help_text=_(message='A short text describing the theme.'),
-        max_length=128, unique=True, verbose_name=_(message='Label')
+        db_index=True, help_text=_(
+            message='A short text describing the theme.'
+        ), max_length=128, unique=True, verbose_name=_(message='Label')
     )
     stylesheet = models.TextField(
         blank=True, help_text=_(
-            message='The CSS stylesheet to change the appearance of the different '
-            'user interface elements.'
+            message='The CSS stylesheet to change the appearance of the '
+            'different user interface elements.'
         ), verbose_name=_(message='Stylesheet')
     )
 
@@ -36,9 +37,8 @@ class Theme(models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='appearance:theme_edit', kwargs={
-                'theme_id': self.pk
-            }
+            kwargs={'theme_id': self.pk},
+            viewname='appearance:theme_edit'
         )
 
     @method_event(

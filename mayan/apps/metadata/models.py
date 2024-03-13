@@ -36,8 +36,8 @@ class MetadataType(
     name = models.CharField(
         max_length=48,
         help_text=_(
-            message='Name used by other apps to reference this metadata type. '
-            'Do not use python reserved words, or spaces.'
+            message='Name used by other apps to reference this metadata '
+            'type. Do not use python reserved words, or spaces.'
         ),
         unique=True, verbose_name=_(message='Name')
     )
@@ -52,14 +52,14 @@ class MetadataType(
     )
     lookup = models.TextField(
         blank=True, null=True, help_text=_(
-            message='Enter a template to render. Must result in a comma delimited '
-            'string.'
+            message='Enter a template to render. Must result in a comma '
+            'delimited string.'
         ), verbose_name=_(message='Lookup')
     )
     validation = models.CharField(
         blank=True, help_text=_(
-            message='The validator will reject data entry if the value entered does '
-            'not conform to the expected format.'
+            message='The validator will reject data entry if the value '
+            'entered does not conform to the expected format.'
         ), max_length=224, verbose_name=_(message='Validator')
     )
     validation_arguments = models.TextField(
@@ -71,8 +71,8 @@ class MetadataType(
     )
     parser = models.CharField(
         blank=True, help_text=_(
-            message='The parser will reformat the value entered to conform to the '
-            'expected format.'
+            message='The parser will reformat the value entered to conform '
+            'to the expected format.'
         ), max_length=224, verbose_name=_(message='Parser')
     )
     parser_arguments = models.TextField(
@@ -80,9 +80,7 @@ class MetadataType(
             message='Enter the arguments for the parser in YAML format.'
         ), validators=[
             YAMLValidator()
-        ], verbose_name=_(
-            message='Parser arguments'
-        )
+        ], verbose_name=_(message='Parser arguments')
     )
 
     objects = MetadataTypeManager()
@@ -97,9 +95,8 @@ class MetadataType(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='metadata:metadata_type_edit', kwargs={
-                'metadata_type_id': self.pk
-            }
+            kwargs={'metadata_type_id': self.pk},
+            viewname='metadata:metadata_type_edit'
         )
 
     def natural_key(self):
@@ -136,7 +133,9 @@ class MetadataType(
 
             if value and value not in lookup_options:
                 raise ValidationError(
-                    message=_(message='Value is not one of the provided options.')
+                    message=_(
+                        message='Value is not one of the provided options.'
+                    )
                 )
 
         if self.validation:
@@ -150,7 +149,8 @@ class MetadataType(
             except ValidationError as exception:
                 raise ValidationError(
                     message=_(
-                        message='Metadata type validation error; %(exception)s'
+                        message='Metadata type validation error; '
+                        '%(exception)s'
                     ) % {
                         'exception': ','.join(exception)
                     }
@@ -179,7 +179,9 @@ class DocumentMetadata(
         verbose_name=_(message='Document')
     )
     metadata_type = models.ForeignKey(
-        on_delete=models.CASCADE, to=MetadataType, verbose_name=_(message='Type')
+        on_delete=models.CASCADE, to=MetadataType, verbose_name=_(
+            message='Type'
+        )
     )
     value = models.TextField(
         blank=True, help_text=_(
@@ -228,7 +230,8 @@ class DocumentMetadata(
         if is_required_for_document_type:
             raise ValidationError(
                 message=_(
-                    message='Metadata type is required for this document type.'
+                    message='Metadata type is required for this document '
+                    'type.'
                 )
             )
 
@@ -261,7 +264,8 @@ class DocumentMetadata(
         if is_not_valid_for_document_type:
             raise ValidationError(
                 message=_(
-                    message='Metadata type is not valid for this document type.'
+                    message='Metadata type is not valid for this document '
+                    'type.'
                 )
             )
 
@@ -291,7 +295,9 @@ class DocumentTypeMetadataType(ExtraDataModelMixin, models.Model):
         ordering = ('metadata_type',)
         unique_together = ('document_type', 'metadata_type')
         verbose_name = _(message='Document type metadata type options')
-        verbose_name_plural = _(message='Document type metadata types options')
+        verbose_name_plural = _(
+            message='Document type metadata types options'
+        )
 
     def __str__(self):
         return str(self.metadata_type)

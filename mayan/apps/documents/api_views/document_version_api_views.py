@@ -42,9 +42,7 @@ class APIDocumentVersionDetailView(
     serializer_class = DocumentVersionSerializer
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
         return self.get_document().versions.all()
@@ -137,9 +135,7 @@ class APIDocumentVersionPageDetailView(
     serializer_class = DocumentVersionPageSerializer
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
         return self.get_document_version().pages.all()

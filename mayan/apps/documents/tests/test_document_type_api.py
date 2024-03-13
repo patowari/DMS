@@ -166,8 +166,8 @@ class DocumentTypeAPIViewTestCase(
         self.assertTrue(
             response.data['quick_label_list_url'].endswith(
                 reverse(
-                    viewname='rest_api:documenttype-quicklabel-list',
-                    kwargs={'document_type_id': self._test_document_type.pk}
+                    kwargs={'document_type_id': self._test_document_type.pk},
+                    viewname='rest_api:documenttype-quicklabel-list'
                 )
             )
         )
@@ -184,8 +184,8 @@ class DocumentTypeAPIViewTestCase(
         self.assertTrue(
             response.data['url'].endswith(
                 reverse(
-                    viewname='rest_api:documenttype-detail',
-                    kwargs={'document_type_id': self._test_document_type.pk}
+                    kwargs={'document_type_id': self._test_document_type.pk},
+                    viewname='rest_api:documenttype-detail'
                 )
             )
         )

@@ -53,7 +53,8 @@ class WorkflowTemplateStateActionCreateView(
             'navigation_object_list': ('object', 'workflow'),
             'object': self.external_object,
             'title': _(
-                message='Create a "%(backend_label)s" workflow action for: %(workflow_state)s'
+                message='Create a "%(backend_label)s" workflow action for: '
+                '%(workflow_state)s'
             ) % {
                 'backend_label': self.get_backend_class().label,
                 'workflow_state': self.external_object
@@ -68,9 +69,7 @@ class WorkflowTemplateStateActionCreateView(
         }
 
     def get_form_schema_extra_kwargs(self):
-        return {
-            'workflow_template_state': self.external_object
-        }
+        return {'workflow_template_state': self.external_object}
 
     def get_instance_extra_data(self):
         return {
@@ -81,10 +80,10 @@ class WorkflowTemplateStateActionCreateView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_state_action_list',
             kwargs={
                 'workflow_template_state_id': self.external_object.pk
-            }
+            },
+            viewname='document_states:workflow_template_state_action_list'
         )
 
 
@@ -100,22 +99,22 @@ class WorkflowTemplateStateActionDeleteView(SingleObjectDeleteView):
                 'object', 'workflow_state', 'workflow'
             ),
             'object': self.object,
-            'title': _(message='Delete workflow state action: %s') % self.object,
+            'title': _(
+                message='Delete workflow state action: %s'
+            ) % self.object,
             'workflow': self.object.state.workflow,
-            'workflow_state': self.object.state,
+            'workflow_state': self.object.state
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_state_action_list',
             kwargs={
                 'workflow_template_state_id': self.object.state.pk
-            }
+            },
+            viewname='document_states:workflow_template_state_action_list'
         )
 
 
@@ -134,9 +133,11 @@ class WorkflowTemplateStateActionEditView(
                 'object', 'workflow_state', 'workflow'
             ),
             'object': self.object,
-            'title': _(message='Edit workflow state action: %s') % self.object,
+            'title': _(
+                message='Edit workflow state action: %s'
+            ) % self.object,
             'workflow': self.object.state.workflow,
-            'workflow_state': self.object.state,
+            'workflow_state': self.object.state
         }
 
     def get_form_extra_kwargs(self):
@@ -146,21 +147,17 @@ class WorkflowTemplateStateActionEditView(
         }
 
     def get_form_schema_extra_kwargs(self):
-        return {
-            'workflow_template_state': self.object.state
-        }
+        return {'workflow_template_state': self.object.state}
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='document_states:workflow_template_state_action_list',
             kwargs={
                 'workflow_template_state_id': self.object.state.pk
-            }
+            },
+            viewname='document_states:workflow_template_state_action_list'
         )
 
 
@@ -185,8 +182,9 @@ class WorkflowTemplateStateActionListView(
                 )
             ),
             'no_results_text': _(
-                message='Workflow state actions are macros that get executed when '
-                'documents enters or leaves the state in which they reside.'
+                message='Workflow state actions are macros that get executed '
+                'when documents enters or leaves the state in which they '
+                'reside.'
             ),
             'no_results_title': _(
                 message='There are no actions for this workflow state'
@@ -217,7 +215,9 @@ class WorkflowTemplateStateActionSelectionView(
                 'object', 'workflow'
             ),
             'object': self.external_object,
-            'title': _(message='New workflow state action selection for: %s') % self.external_object,
+            'title': _(
+                message='New workflow state action selection for: %s'
+            ) % self.external_object,
             'workflow': self.external_object.workflow
         }
 
@@ -225,11 +225,11 @@ class WorkflowTemplateStateActionSelectionView(
         klass = form.cleaned_data['klass']
         return HttpResponseRedirect(
             redirect_to=reverse(
-                viewname='document_states:workflow_template_state_action_create',
                 kwargs={
                     'workflow_template_state_id': self.external_object.pk,
                     'backend_path': klass
-                }
+                },
+                viewname='document_states:workflow_template_state_action_create'
             )
         )
 
@@ -263,10 +263,10 @@ class WorkflowTemplateStateCreateView(
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_state_list',
             kwargs={
                 'workflow_template_id': self.kwargs['workflow_template_id']
-            }
+            },
+            viewname='document_states:workflow_template_state_list'
         )
 
 
@@ -287,16 +287,14 @@ class WorkflowTemplateStateDeleteView(SingleObjectDeleteView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_state_list',
             kwargs={
                 'workflow_template_id': self.object.workflow.pk
-            }
+            },
+            viewname='document_states:workflow_template_state_list'
         )
 
 
@@ -318,14 +316,12 @@ class WorkflowTemplateStateEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_success_url(self):
         return reverse(
-            viewname='document_states:workflow_template_state_list',
-            kwargs={'workflow_template_id': self.object.workflow.pk}
+            kwargs={'workflow_template_id': self.object.workflow.pk},
+            viewname='document_states:workflow_template_state_list'
         )
 
 
@@ -354,7 +350,9 @@ class WorkflowTemplateStateListView(
                 message='This workflow doesn\'t have any states'
             ),
             'object': self.external_object,
-            'title': _(message='States of workflow: %s') % self.external_object,
+            'title': _(
+                message='States of workflow: %s'
+            ) % self.external_object,
             'workflow': self.external_object
         }
 

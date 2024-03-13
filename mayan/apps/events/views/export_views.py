@@ -67,9 +67,7 @@ class EventListExportView(EventExportBaseView):
         return context
 
     def get_queryset_parameters(self):
-        return {
-            '_method_name': 'all'
-        }
+        return {'_method_name': 'all'}
 
 
 class ObjectEventExportView(
@@ -82,15 +80,15 @@ class ObjectEventExportView(
         context.update(
             {
                 'object': self.external_object,
-                'title': _(message='Export events of: %s') % self.external_object
+                'title': _(
+                    message='Export events of: %s'
+                ) % self.external_object
             }
         )
         return context
 
     def get_queryset_parameters(self):
-        return {
-            '_method_name': 'any', 'obj': self.external_object
-        }
+        return {'_method_name': 'any', 'obj': self.external_object}
 
 
 class VerbEventExportView(VerbEventViewMixin, EventExportBaseView):
@@ -108,6 +106,4 @@ class VerbEventExportView(VerbEventViewMixin, EventExportBaseView):
         return context
 
     def get_queryset_parameters(self):
-        return {
-            '_method_name': 'filter', 'verb': self.event_type.id
-        }
+        return {'_method_name': 'filter', 'verb': self.event_type.id}

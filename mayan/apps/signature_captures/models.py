@@ -87,9 +87,8 @@ class SignatureCapture(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='signature_captures:signature_capture_detail', kwargs={
-                'signature_capture_id': self.pk
-            }
+            kwargs={'signature_capture_id': self.pk},
+            viewname='signature_captures:signature_capture_detail'
         )
 
     @method_event(

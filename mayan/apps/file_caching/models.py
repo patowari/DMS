@@ -41,9 +41,8 @@ class Cache(CacheBusinessLogicMixin, ValueChangeModelMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='file_caching:cache_detail', kwargs={
-                'cache_id': self.pk
-            }
+            kwargs={'cache_id': self.pk},
+            viewname='file_caching:cache_detail'
         )
 
     @method_event(
@@ -93,9 +92,8 @@ class CachePartition(CachePartitionBusinessLogicMixin, models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='file_caching:cache_partition_detail', kwargs={
-                'cache_partition_id': self.pk
-            }
+            kwargs={'cache_partition_id': self.pk},
+            viewname='file_caching:cache_partition_detail'
         )
 
 

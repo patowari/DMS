@@ -28,9 +28,7 @@ class APIDownloadFileDetailView(
     source_queryset = DownloadFile.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APIDownloadFileDownloadView(
@@ -76,6 +74,4 @@ class APIDownloadFileListView(
     source_queryset = DownloadFile.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}

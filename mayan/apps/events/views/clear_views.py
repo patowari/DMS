@@ -68,9 +68,7 @@ class EventListClearView(EventClearBaseView):
         return context
 
     def get_queryset_parameters(self):
-        return {
-            '_method_name': 'all'
-        }
+        return {'_method_name': 'all'}
 
 
 class ObjectEventClearView(
@@ -83,15 +81,15 @@ class ObjectEventClearView(
         context.update(
             {
                 'object': self.external_object,
-                'title': _(message='Clear events of: %s') % self.external_object
+                'title': _(
+                    message='Clear events of: %s'
+                ) % self.external_object
             }
         )
         return context
 
     def get_queryset_parameters(self):
-        return {
-            '_method_name': 'any', 'obj': self.external_object
-        }
+        return {'_method_name': 'any', 'obj': self.external_object}
 
     def get_task_extra_kwargs(self):
         return {
@@ -115,6 +113,4 @@ class VerbEventClearView(VerbEventViewMixin, EventClearBaseView):
         return context
 
     def get_queryset_parameters(self):
-        return {
-            '_method_name': 'filter', 'verb': self.event_type.id
-        }
+        return {'_method_name': 'filter', 'verb': self.event_type.id}

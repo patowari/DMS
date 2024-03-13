@@ -113,11 +113,11 @@ class DocumentFilePageBusinessLogicMixin:
 
         final_url = furl()
         final_url.path = reverse(
-            viewname='rest_api:documentfilepage-image', kwargs={
+            kwargs={
                 'document_id': self.document_file.document_id,
                 'document_file_id': self.document_file_id,
                 'document_file_page_id': self.pk
-            }
+            }, viewname='rest_api:documentfilepage-image'
         )
         # Remove leading '?' character.
         final_url.query = BaseTransformation.list_as_query_string(

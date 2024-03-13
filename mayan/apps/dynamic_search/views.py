@@ -66,14 +66,14 @@ class SearchBackendReindexView(ConfirmView):
 
         if search_backend_class.feature_reindex:
             context['message'] = _(
-                message='This tool is required only for some search backends. '
-                'Search results will be affected while the backend is '
-                'being reindexed.'
+                message='This tool is required only for some search '
+                'backends. Search results will be affected while the '
+                'backend is being reindexed.'
             )
         else:
             context['message'] = _(
-                message='The currently selected search backend does not support or '
-                'requires reindexing.'
+                message='The currently selected search backend does not '
+                'support or requires reindexing.'
             )
 
         return context
@@ -99,9 +99,9 @@ class SearchSimpleView(SearchModelViewMixin, SearchQueryViewMixin, FormView):
         return {
             'form': self.get_form(),
             'form_action': reverse(
-                viewname='search:search_results', kwargs={
+                kwargs={
                     SEARCH_MODEL_NAME_KWARG: self.search_model.full_name
-                }
+                }, viewname='search:search_results'
             ),
             'search_model': self.search_model,
             'submit_icon': icon_search_submit,
@@ -119,9 +119,7 @@ class SearchSimpleView(SearchModelViewMixin, SearchQueryViewMixin, FormView):
 
         if search_term_any_field:
             return SearchForm(
-                initial={
-                    QUERY_PARAMETER_ANY_FIELD: search_term_any_field
-                }
+                initial={QUERY_PARAMETER_ANY_FIELD: search_term_any_field}
             )
         else:
             return SearchForm()

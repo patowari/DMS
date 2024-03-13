@@ -39,9 +39,7 @@ class MetadataTypeCreateView(SingleObjectCreateView):
     view_permission = permission_metadata_type_create
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class MetadataTypeDeleteView(MultipleObjectDeleteView):
@@ -86,9 +84,7 @@ class MetadataTypeEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class MetadataTypeListView(SingleObjectListView):
@@ -149,9 +145,7 @@ class DocumentTypeMetadataTypeRelationshipView(RelationshipView):
         }
 
     def get_form_extra_kwargs(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_initial(self):
         obj = self.get_object()

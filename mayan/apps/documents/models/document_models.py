@@ -140,9 +140,8 @@ class Document(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='documents:document_preview', kwargs={
-                'document_id': self.pk
-            }
+            kwargs={'document_id': self.pk},
+            viewname='documents:document_preview'
         )
 
     def natural_key(self):

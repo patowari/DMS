@@ -63,9 +63,9 @@ class DocumentListView(SingleObjectListView):
             'list_as_items': True,
             'no_results_icon': icon_document_list,
             'no_results_text': _(
-                message='This could mean that no documents have been uploaded or '
-                'that your user account has not been granted the view '
-                'permission for any document or document type.'
+                message='This could mean that no documents have been '
+                'uploaded or that your user account has not been granted the '
+                'view permission for any document or document type.'
             ),
             'no_results_title': _(message='No documents available'),
             'title': _(message='All documents')
@@ -82,18 +82,20 @@ class DocumentTypeChangeView(MultipleObjectFormActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message = _(
-        message='Document type change request performed on %(count)d document'
+        message='Document type change request performed on %(count)d '
+        'document.'
     )
     success_message_plural = _(
-        message='Document type change request performed on %(count)d documents'
+        message='Document type change request performed on %(count)d '
+        'documents.'
     )
     view_icon = icon_document_type_change
 
     def get_extra_context(self):
         result = {
             'title': ngettext(
-                singular='Change the type of the selected document',
-                plural='Change the type of the selected documents',
+                singular='Change the type of the selected document.',
+                plural='Change the type of the selected documents.',
                 number=self.object_list.count()
             )
         }
@@ -182,15 +184,12 @@ class DocumentPropertiesEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='documents:document_properties', kwargs={
-                'document_id': self.object.pk
-            }
+            kwargs={'document_id': self.object.pk},
+            viewname='documents:document_properties'
         )
 
 

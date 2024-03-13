@@ -53,9 +53,8 @@ class SignatureCaptureCreateView(
 
     def get_post_action_redirect(self):
         return reverse(
-            viewname='signature_captures:signature_capture_list', kwargs={
-                'document_id': self.external_object.pk
-            }
+            kwargs={'document_id': self.external_object.pk},
+            viewname='signature_captures:signature_capture_list'
         )
 
 
@@ -66,9 +65,7 @@ class SignatureCaptureDeleteView(SingleObjectDeleteView):
     view_icon = icon_signature_capture_single_delete
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_extra_context(self):
         return {
@@ -117,9 +114,7 @@ class SignatureCaptureEditView(SingleObjectEditView):
         }
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class SignatureCaptureListView(

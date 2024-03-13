@@ -49,9 +49,7 @@ class APICabinetListView(generics.ListCreateAPIView):
     source_queryset = Cabinet.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
     def get_mayan_view_permission_map(self):
         if self.request.method == 'POST':
@@ -102,9 +100,7 @@ class APICabinetView(generics.RetrieveUpdateDestroyAPIView):
     source_queryset = Cabinet.objects.all()
 
     def get_instance_extra_data(self):
-        return {
-            '_event_actor': self.request.user
-        }
+        return {'_event_actor': self.request.user}
 
 
 class APICabinetDocumentAddView(generics.ObjectActionAPIView):

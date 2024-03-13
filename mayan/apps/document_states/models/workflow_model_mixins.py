@@ -101,8 +101,8 @@ class WorkflowBusinessLogicMixin:
         final_url = furl()
         final_url.args = kwargs
         final_url.path = reverse(
-            viewname='rest_api:workflow-template-image',
-            kwargs={'workflow_template_id': self.pk}
+            kwargs={'workflow_template_id': self.pk},
+            viewname='rest_api:workflow-template-image'
         )
         final_url.args['_hash'] = self.get_hash()
 

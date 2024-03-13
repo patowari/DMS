@@ -29,7 +29,8 @@ class DocumentVersion(
     )
     timestamp = models.DateTimeField(
         auto_now_add=True, db_index=True, help_text=_(
-            message='The server date and time when the document version was created.'
+            message='The server date and time when the document version was '
+            'created.'
         ), verbose_name=_(message='Timestamp')
     )
     comment = models.TextField(
@@ -69,21 +70,20 @@ class DocumentVersion(
 
     def get_absolute_url(self):
         return reverse(
-            viewname='documents:document_version_preview', kwargs={
-                'document_version_id': self.pk
-            }
+            kwargs={'document_version_id': self.pk},
+            viewname='documents:document_version_preview'
         )
 
     @method_event(
         event_manager_class=EventManagerSave,
         created={
-            'event': event_document_version_created,
             'action_object': 'document',
+            'event': event_document_version_created,
             'target': 'self'
         },
         edited={
-            'event': event_document_version_edited,
             'action_object': 'document',
+            'event': event_document_version_edited,
             'target': 'self'
         }
     )
