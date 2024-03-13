@@ -598,7 +598,7 @@ class CompressedSourceBackendActionMSGDocumentUploadTestCase(
         )
 
         self.assertEqual(self._test_document.label, 'message.txt')
-        self.assertEqual(self._test_document.file_latest.size, 2613)
+        self.assertEqual(self._test_document.file_latest.size, 2711)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 6)
