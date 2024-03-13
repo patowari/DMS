@@ -152,8 +152,6 @@ class EMLArchive(Archive):
                     ), name=filename
                 )
 
-        raise KeyError
-
 
 class MsgArchive(Archive):
     def _open(self, file_object):

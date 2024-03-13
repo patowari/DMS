@@ -2,60 +2,61 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:48+0000\n"
+"POT-Creation-Date: 2024-03-13 14:31+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
-#: admin.py:13 apps.py:168
+#: admin.py:13 apps.py:167
 msgid "Label"
 msgstr "Etichetta"
 
-#: apps.py:52 events.py:6 links.py:22 permissions.py:6 queues.py:7
+#: apps.py:51 events.py:6 links.py:22 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
 msgstr "Metadati del file"
 
-#: apps.py:106
+#: apps.py:105
 msgid "File metadata internal name"
 msgstr ""
 
-#: apps.py:110 search.py:15 search.py:26
+#: apps.py:109 search.py:15 search.py:26
 msgid "File metadata value"
 msgstr "Valore dei metadati del file"
 
-#: apps.py:136 apps.py:142
+#: apps.py:135 apps.py:141
 msgid "Return the value of a specific file metadata."
 msgstr "Restituisce il valore dei metadati di un file specifico."
 
-#: apps.py:137 apps.py:143
+#: apps.py:136 apps.py:142
 msgid "File metadata value of"
 msgstr "Valore dei metadati del file di"
 
-#: apps.py:173
+#: apps.py:172
 msgid "MIME types"
 msgstr "Tipi MIME"
 
-#: apps.py:178 models.py:71 models.py:122
+#: apps.py:177 models.py:71 models.py:122
 msgid "Internal name"
 msgstr "Nome interno"
 
-#: apps.py:182
+#: apps.py:181
 msgid "Description"
 msgstr "Descrizione "
 
@@ -70,7 +71,7 @@ msgstr ""
 msgid "Read meta information stored in files."
 msgstr ""
 
-#: drivers/exiftool.py:21
+#: drivers/exiftool.py:22
 msgid "EXIF Tool"
 msgstr "EXIF Tool"
 
@@ -79,7 +80,7 @@ msgid ""
 "Extracts information from emails saved in Microsoft Outlook's .msg files."
 msgstr ""
 
-#: drivers/extract_msg.py:19
+#: drivers/extract_msg.py:20
 msgid "Extract msg"
 msgstr ""
 
@@ -107,7 +108,7 @@ msgstr "Impostazione di metadati del file"
 msgid "File metadata processing per type"
 msgstr "Elaborazione dei metadati dei file per tipo"
 
-#: links.py:65 views.py:232
+#: links.py:65 views.py:234
 msgid "File metadata drivers"
 msgstr ""
 
@@ -119,27 +120,27 @@ msgstr ""
 msgid "Attribute count"
 msgstr "Conteggio attributi"
 
-#: models.py:20 models.py:127
+#: models.py:19 models.py:127
 msgid "Driver"
 msgstr "Driver"
 
-#: models.py:24
+#: models.py:23
 msgid "Document file"
 msgstr "File di documento"
 
-#: models.py:30 models.py:66
+#: models.py:29 models.py:66
 msgid "Document file driver entry"
 msgstr ""
 
-#: models.py:31
+#: models.py:30
 msgid "Document file driver entries"
 msgstr ""
 
-#: models.py:43
+#: models.py:42
 msgid "Document type"
 msgstr "Tipo documento "
 
-#: models.py:47
+#: models.py:46
 msgid "Automatically queue newly created documents for processing."
 msgstr "Accoda automaticamente i documenti appena creati per l'elaborazione."
 
@@ -193,8 +194,7 @@ msgstr "Drivers"
 
 #: permissions.py:10
 msgid "Change document type file metadata settings"
-msgstr ""
-"Modificare le impostazioni dei metadati del file del tipo di documento"
+msgstr "Modificare le impostazioni dei metadati del file del tipo di documento"
 
 #: permissions.py:15
 msgid "Submit document for file metadata processing"
@@ -232,92 +232,90 @@ msgstr ""
 msgid "Arguments to pass to the drivers."
 msgstr "Argomenti da passare agli autisti."
 
-#: views.py:53
+#: views.py:55
 msgid ""
-"File metadata are the attributes of the document's file. They can range from"
-" camera information used to take a photo to the author that created a file. "
+"File metadata are the attributes of the document's file. They can range from "
+"camera information used to take a photo to the author that created a file. "
 "File metadata are set when the document's file was first created. File "
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
 msgstr ""
 "I metadati del file sono gli attributi del file del documento. Possono "
-"variare dalle informazioni sulla fotocamera utilizzate per scattare una foto"
-" all'autore che ha creato un file. I metadati del file vengono impostati "
+"variare dalle informazioni sulla fotocamera utilizzate per scattare una foto "
+"all'autore che ha creato un file. I metadati del file vengono impostati "
 "quando il file del documento è stato creato per la prima volta. Gli "
 "attributi dei metadati del file risiedono nel file stesso. Non sono gli "
-"stessi dei metadati del documento, che sono definiti dall'utente e risiedono"
-" nel database."
+"stessi dei metadati del documento, che sono definiti dall'utente e risiedono "
+"nel database."
 
-#: views.py:61
+#: views.py:63
 msgid "No file metadata available."
 msgstr "Nessun metadato del file disponibile."
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "File metadata drivers for: %s"
 msgstr "Driver dei metadati dei file per: %s"
 
-#: views.py:91
+#: views.py:93
 msgid ""
 "This could mean that the file metadata detection has not completed or that "
 "the driver does not support any metadata field for the file type of this "
 "document."
 msgstr ""
 "Ciò potrebbe significare che il rilevamento dei metadati del file non è "
-"stato completato o che il driver non supporta alcun campo di metadati per il"
-" tipo di file di questo documento."
+"stato completato o che il driver non supporta alcun campo di metadati per il "
+"tipo di file di questo documento."
 
-#: views.py:96
+#: views.py:98
 msgid "No file metadata available for this driver."
 msgstr ""
 
-#: views.py:100
+#: views.py:102
 #, python-format
-msgid ""
-"File metadata attributes for: %(document_file)s with driver: %(driver)s"
+msgid "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
 
-#: views.py:125
+#: views.py:127
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
 msgstr ""
 
-#: views.py:134
+#: views.py:136
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: views.py:165
+#: views.py:167
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr ""
 "Modifica le impostazioni dei metadati del file per il tipo di documento: %s"
 
-#: views.py:176
+#: views.py:178
 msgid "Submit all documents of a type for file metadata processing."
 msgstr ""
 "Invia tutti i documenti di un tipo per l'elaborazione dei metadati dei file."
 
-#: views.py:203
+#: views.py:205
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
 msgstr ""
-"%(count)d documenti aggiunti alla coda di elaborazione dei metadati del "
-"file."
+"%(count)d documenti aggiunti alla coda di elaborazione dei metadati del file."
 
-#: views.py:224
+#: views.py:226
 msgid ""
-"File metadata drivers extract embedded information from document files. File"
-" metadata drivers are configure in code only."
+"File metadata drivers extract embedded information from document files. File "
+"metadata drivers are configure in code only."
 msgstr ""
 
-#: views.py:229
+#: views.py:231
 msgid "No file metadata drivers available."
 msgstr ""

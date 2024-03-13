@@ -2,59 +2,63 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:48+0000\n"
+"POT-Creation-Date: 2024-03-13 14:31+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
+"uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: admin.py:13 apps.py:168
+#: admin.py:13 apps.py:167
 msgid "Label"
 msgstr "Мітка"
 
-#: apps.py:52 events.py:6 links.py:22 permissions.py:6 queues.py:7
+#: apps.py:51 events.py:6 links.py:22 permissions.py:6 queues.py:7
 #: settings.py:12
 msgid "File metadata"
 msgstr "Метадані файлу"
 
-#: apps.py:106
+#: apps.py:105
 msgid "File metadata internal name"
 msgstr "Внутрішня назва метаданих файлу"
 
-#: apps.py:110 search.py:15 search.py:26
+#: apps.py:109 search.py:15 search.py:26
 msgid "File metadata value"
 msgstr "Значення метаданих файлу"
 
-#: apps.py:136 apps.py:142
+#: apps.py:135 apps.py:141
 msgid "Return the value of a specific file metadata."
 msgstr "Повертає значення певних метаданих файлу."
 
-#: apps.py:137 apps.py:143
+#: apps.py:136 apps.py:142
 msgid "File metadata value of"
 msgstr "Значення метаданих файлу"
 
-#: apps.py:173
+#: apps.py:172
 msgid "MIME types"
 msgstr "MIME типи"
 
-#: apps.py:178 models.py:71 models.py:122
+#: apps.py:177 models.py:71 models.py:122
 msgid "Internal name"
 msgstr "Внутрішнє ім'я"
 
-#: apps.py:182
+#: apps.py:181
 msgid "Description"
 msgstr "Опис"
 
@@ -62,14 +66,14 @@ msgstr "Опис"
 msgid ""
 "Library and program to read and write meta information in multimedia files."
 msgstr ""
-"Бібліотека та програма для читання та запису метаінформації в мультимедійних"
-" файлах."
+"Бібліотека та програма для читання та запису метаінформації в мультимедійних "
+"файлах."
 
 #: drivers/exiftool.py:20
 msgid "Read meta information stored in files."
 msgstr "Читати метаінформацію, що зберігається у файлах."
 
-#: drivers/exiftool.py:21
+#: drivers/exiftool.py:22
 msgid "EXIF Tool"
 msgstr "Інструмент EXIF"
 
@@ -80,7 +84,7 @@ msgstr ""
 "Добути інформацію з електронних листів, збережених у файлі .msg Microsoft "
 "Outlook."
 
-#: drivers/extract_msg.py:19
+#: drivers/extract_msg.py:20
 msgid "Extract msg"
 msgstr "Витягнути повідомлення"
 
@@ -108,7 +112,7 @@ msgstr "Налаштувати метадані файлу"
 msgid "File metadata processing per type"
 msgstr "Обробка метаданих файлів за типом"
 
-#: links.py:65 views.py:232
+#: links.py:65 views.py:234
 msgid "File metadata drivers"
 msgstr "Драйвери метаданих файлу"
 
@@ -120,27 +124,27 @@ msgstr "Повернути вказаний запис метаданих фай
 msgid "Attribute count"
 msgstr "Кількість атрибутів"
 
-#: models.py:20 models.py:127
+#: models.py:19 models.py:127
 msgid "Driver"
 msgstr "Носій"
 
-#: models.py:24
+#: models.py:23
 msgid "Document file"
 msgstr "Файл документа"
 
-#: models.py:30 models.py:66
+#: models.py:29 models.py:66
 msgid "Document file driver entry"
 msgstr "Запис драйвера файлу документа"
 
-#: models.py:31
+#: models.py:30
 msgid "Document file driver entries"
 msgstr "Записи драйвера файлу документа"
 
-#: models.py:43
+#: models.py:42
 msgid "Document type"
 msgstr "Тип документа"
 
-#: models.py:47
+#: models.py:46
 msgid "Automatically queue newly created documents for processing."
 msgstr "Автоматично ставити новостворені документи в чергу для обробки."
 
@@ -225,17 +229,17 @@ msgid ""
 "Set new document types to perform file metadata processing automatically by "
 "default."
 msgstr ""
-"Встановити нові типи документів для автоматичної обробки метаданих файлів за"
-" замовчуванням."
+"Встановити нові типи документів для автоматичної обробки метаданих файлів за "
+"замовчуванням."
 
 #: settings.py:26
 msgid "Arguments to pass to the drivers."
 msgstr "Аргументи що передаються драйверам."
 
-#: views.py:53
+#: views.py:55
 msgid ""
-"File metadata are the attributes of the document's file. They can range from"
-" camera information used to take a photo to the author that created a file. "
+"File metadata are the attributes of the document's file. They can range from "
+"camera information used to take a photo to the author that created a file. "
 "File metadata are set when the document's file was first created. File "
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
@@ -247,16 +251,16 @@ msgstr ""
 "тими самими, що й метадані документа, які визначаються користувачем і "
 "знаходяться в базі даних."
 
-#: views.py:61
+#: views.py:63
 msgid "No file metadata available."
 msgstr "Немає доступних метаданих файлу."
 
-#: views.py:64
+#: views.py:66
 #, python-format
 msgid "File metadata drivers for: %s"
 msgstr "Драйвери файлу метаданих для: %s"
 
-#: views.py:91
+#: views.py:93
 msgid ""
 "This could mean that the file metadata detection has not completed or that "
 "the driver does not support any metadata field for the file type of this "
@@ -265,28 +269,27 @@ msgstr ""
 "Це може означати, що виявлення метаданих файлу не завершено або драйвер не "
 "підтримує жодного поля метаданих для типу файлу цього документа."
 
-#: views.py:96
+#: views.py:98
 msgid "No file metadata available for this driver."
 msgstr "Немає доступних метаданих файлу для цього драйвера."
 
-#: views.py:100
+#: views.py:102
 #, python-format
-msgid ""
-"File metadata attributes for: %(document_file)s with driver: %(driver)s"
+msgid "File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 "Атрибути метаданих файлу для: %(document_file)s з драйвером: %(driver)s"
 
-#: views.py:122
+#: views.py:124
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr "%(count)d документів файлів подано до черги метаданих файлу."
 
-#: views.py:125
+#: views.py:127
 #, python-format
 msgid "%(count)d document file submitted to the file metadata queue."
 msgstr "%(count)d документів файлів надіслано до черги метаданих файлу."
 
-#: views.py:134
+#: views.py:136
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] "Надіслати вибраний файл документа до черги метаданих?"
@@ -294,28 +297,28 @@ msgstr[1] "Надіслати вибрані файли документів д�
 msgstr[2] "Надіслати вибрані файли документів до черги метаданих?"
 msgstr[3] "Надіслати вибрані файли документів до черги метаданих?"
 
-#: views.py:165
+#: views.py:167
 #, python-format
 msgid "Edit file metadata settings for document type: %s"
 msgstr "Редагувати налаштування метаданих файлу для типу документу: %s"
 
-#: views.py:176
+#: views.py:178
 msgid "Submit all documents of a type for file metadata processing."
 msgstr "Надіслати усі документи певного типу для обробки метаданих файлів."
 
-#: views.py:203
+#: views.py:205
 #, python-format
 msgid "%(count)d documents added to the file metadata processing queue."
 msgstr "%(count)d документів додано до черги обробки метаданих файлу."
 
-#: views.py:224
+#: views.py:226
 msgid ""
-"File metadata drivers extract embedded information from document files. File"
-" metadata drivers are configure in code only."
+"File metadata drivers extract embedded information from document files. File "
+"metadata drivers are configure in code only."
 msgstr ""
 "Файлові драйвери метаданих витягують вбудовану інформацію з файлів "
 "документів. Файлові драйвери метаданих налаштовуються лише в коді."
 
-#: views.py:229
+#: views.py:231
 msgid "No file metadata drivers available."
 msgstr "Немає доступних драйверів метаданих файлу."

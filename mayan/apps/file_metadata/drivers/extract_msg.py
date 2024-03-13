@@ -13,11 +13,11 @@ logger = logging.getLogger(__name__)
 
 class ExtractMSGToolDriver(FileMetadataDriver):
     description = _(
-        message='Extracts information from emails saved in Microsoft Outlook\'s '
-        '.msg files.'
+        message='Extracts information from emails saved in Microsoft '
+        'Outlook\'s .msg files.'
     )
-    label = _(message='Extract msg')
     internal_name = 'extract_msg'
+    label = _(message='Extract msg')
     mime_type_list = list(MSG_MIME_TYPES)
 
     def _process(self, document_file):
