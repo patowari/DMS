@@ -242,6 +242,21 @@ def flatten_list(value):
                     yield ''
 
 
+def flatten_map(dictionary, result, prefix=None, separator='_'):
+    if prefix:
+        prefix_base = '{}{}'.format(prefix, separator)
+    else:
+        prefix_base = ''
+
+    for key, value in dictionary.items():
+        prefix_string = '{}{}'.format(prefix_base, key)
+
+        if isinstance(value, dict):
+            flatten_map(dictionary=value, prefix=prefix_string, result=result)
+        else:
+            result[prefix_string] = value
+
+
 def get_class_full_name(klass):
     return '{klass.__module__}.{klass.__qualname__}'.format(klass=klass)
 
