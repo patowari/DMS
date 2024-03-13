@@ -2,6 +2,8 @@ from .. import *  # NOQA
 
 ALLOWED_HOSTS = ['*']
 
+APPEARANCE_MENU_POLLING_INTERVAL = None
+
 DEBUG = True
 
 CELERY_BROKER_URL = 'memory://'
