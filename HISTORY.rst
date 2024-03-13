@@ -57,6 +57,7 @@
 - Fix MSG file uncompressed uploads.
 - Add support for decompressing EML files.
 - Disable automated menu refresh on development mode.
+- Add support for EML file metadata extraction.
 
 4.6.2 (2024-03-04)
 ==================
