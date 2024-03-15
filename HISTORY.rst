@@ -67,6 +67,8 @@
 - Support settings the document language for periodic sources. Thanks to
   forum user @jeverling for the request.
   https://forum.mayan-edms.com/t/feature-suggestion-allow-specifying-default-language-for-sources/762
+- Staging sources now have a default preview value of 640 pixels.
+- Improve the help text of the staging source preview fields.
 
 4.6.2 (2024-03-04)
 ==================

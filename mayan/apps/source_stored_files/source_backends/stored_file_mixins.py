@@ -19,6 +19,8 @@ from ..source_backend_actions.stored_file_actions import (
 )
 from ..views import SourceBackendStoredFileSourceFileListView
 
+from .literals import DEFAULT_PREVIEW_WIDTH
+
 logger = logging.getLogger(name=__name__)
 
 
@@ -184,8 +186,10 @@ class SourceBackendMixinStoredFileImage:
             {
                 'preview_width': {
                     'class': 'django.forms.IntegerField',
+                    'default': DEFAULT_PREVIEW_WIDTH,
                     'help_text': _(
-                        message='Width value to be passed to the converter backend.'
+                        message='Width value to be passed to the image '
+                        'converter backend.'
                     ),
                     'kwargs': {
                         'min_value': 0
@@ -196,7 +200,10 @@ class SourceBackendMixinStoredFileImage:
                 'preview_height': {
                     'class': 'django.forms.IntegerField',
                     'help_text': _(
-                        message='Height value to be passed to the converter backend.'
+                        message='Height value to be passed to the image '
+                        'converter backend. Leave blank to have the image '
+                        'converter calculate the correct aspect ratio for '
+                        'the specified preview width.'
                     ),
                     'kwargs': {
                         'min_value': 0
@@ -208,8 +215,8 @@ class SourceBackendMixinStoredFileImage:
                     'class': 'django.forms.IntegerField',
                     'default': SourceStoredFile.DEFAULT_PREVIEW_MAX_SIZE,
                     'help_text': _(
-                        message='Maximum size in bytes for which previews will be '
-                        'generated. Example: 20000 = 20KB.'
+                        message='Maximum file size in bytes for which '
+                        'previews will be generated. Example: 20000 = 20KB.'
                     ),
                     'label': _(message='Max size preview'),
                     'required': True
