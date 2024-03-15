@@ -1,3 +1,9 @@
+4.4.14 (XXXX-XX-XX)
+===================
+- Fix the document file and the user API list view ordering fields. The
+  fields were ``mime_type`` to ``mimetype`` and remove
+  ``has_usable_password`` which is method and not a field.
+
 4.4.13 (2024-03-01)
 ===================
 - Update PIP from version 23.3.2 to 24.0.
