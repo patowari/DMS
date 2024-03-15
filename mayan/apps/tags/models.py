@@ -16,6 +16,8 @@ class Tag(ExtraDataModelMixin, TagBusinessLogicMixin, models.Model):
     This model represents a binary property that can be applied to a document.
     The tag can have a label and a color.
     """
+    _ordering_fields = ('id', 'label')
+
     label = models.CharField(
         db_index=True, help_text=_(
             message='A short text used as the tag name.'

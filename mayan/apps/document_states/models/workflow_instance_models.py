@@ -26,6 +26,8 @@ __all__ = ('WorkflowInstance', 'WorkflowInstanceLogEntry')
 class WorkflowInstance(
     ExtraDataModelMixin, WorkflowInstanceBusinessLogicMixin, models.Model
 ):
+    _ordering_fields = ('datetime',)
+
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='instances', to=Workflow,
         verbose_name=_(message='Workflow')
@@ -84,6 +86,8 @@ class WorkflowInstanceLogEntry(
     * datetime - Date Time - The date and time when the last user transitioned
     the document state to the Actual state.
     """
+    _ordering_fields = ('comment', 'datetime')
+
     workflow_instance = models.ForeignKey(
         on_delete=models.CASCADE, related_name='log_entries',
         to=WorkflowInstance, verbose_name=_(message='Workflow instance')

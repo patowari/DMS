@@ -31,6 +31,8 @@ class Asset(AssetBusinessLogicMixin, ExtraDataModelMixin, models.Model):
     This model keeps track of files that will be available for use with
     transformations.
     """
+    _ordering_fields = ('internal_name', 'label')
+
     label = models.CharField(
         max_length=96, unique=True, verbose_name=_(message='Label')
     )

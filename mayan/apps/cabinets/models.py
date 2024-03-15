@@ -28,6 +28,8 @@ class Cabinet(CabinetBusinessLogicMixin, ExtraDataModelMixin, MPTTModel):
     the top level container is can have an ACL. All child container's
     access is delegated to their corresponding root container.
     """
+    _ordering_fields = ('label',)
+
     parent = TreeForeignKey(
         blank=True, db_index=True, null=True, on_delete=models.CASCADE,
         related_name='children', to='self', verbose_name=_(message='Parent')

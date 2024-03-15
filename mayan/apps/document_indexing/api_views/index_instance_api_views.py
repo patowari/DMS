@@ -59,8 +59,6 @@ class APIIndexInstanceNodeListView(
     """
     get: Returns a list of all the nodes for the selected index instance.
     """
-    ordering_fields = ('id', 'values')
-
     def get_source_queryset(self):
         return self.get_index_instance().get_children()
 

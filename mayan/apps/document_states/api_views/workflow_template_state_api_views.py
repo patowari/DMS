@@ -24,7 +24,6 @@ class APIWorkflowTemplateStateListView(
         'GET': permission_workflow_template_view,
         'POST': permission_workflow_template_edit
     }
-    ordering_fields = ('completion', 'id', 'initial', 'label')
     serializer_class = WorkflowTemplateStateSerializer
 
     def get_instance_extra_data(self):
@@ -74,7 +73,6 @@ class APIWorkflowTemplateStateActionListView(
         'GET': permission_workflow_template_view,
         'POST': permission_workflow_template_edit
     }
-    ordering_fields = ('label', 'enabled', 'id')
     serializer_class = WorkflowTemplateStateActionSerializer
 
     def get_instance_extra_data(self):

@@ -23,6 +23,7 @@ class Comment(CommentBusinessLogicMixin, ExtraDataModelMixin, models.Model):
     """
     _event_created_event = event_document_comment_created
     _event_edited_event = event_document_comment_created
+    _ordering_fields = ('submit_date',)
 
     document = models.ForeignKey(
         db_index=True, on_delete=models.CASCADE, related_name='comments',

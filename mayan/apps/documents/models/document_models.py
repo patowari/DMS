@@ -35,6 +35,7 @@ class Document(
     This ID is generated automatically.
     """
     _hooks_pre_create = []
+    _ordering_fields = ('datetime_created', 'label')
 
     file_latest = models.OneToOneField(
         blank=True, null=True, on_delete=models.SET_NULL, to='DocumentFile',

@@ -69,7 +69,6 @@ class APIDownloadFileListView(
     get: Returns a list of all the download files.
     """
     mayan_object_permission_map = {'GET': permission_download_file_view}
-    ordering_fields = ('filename', 'datetime', 'id', 'label')
     serializer_class = DownloadFileSerializer
     source_queryset = DownloadFile.objects.all()
 

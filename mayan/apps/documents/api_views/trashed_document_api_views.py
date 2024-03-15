@@ -52,7 +52,6 @@ class APITrashedDocumentListView(generics.ListAPIView):
     get: Returns a list of all the trashed documents.
     """
     mayan_object_permission_map = {'GET': permission_document_view}
-    ordering_fields = ('id', 'label')
     serializer_class = TrashedDocumentSerializer
     source_queryset = TrashedDocument.objects.all()
 

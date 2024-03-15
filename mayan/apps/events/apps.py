@@ -45,6 +45,10 @@ class EventsApp(MayanAppConfig):
 
         EventTypeNamespace.load_modules()
 
+        Action.add_to_class(
+            name='_ordering_fields', value=('timestamp',)
+        )
+
         # Typecast the related field because actstream uses CharFields for
         # the object_id the action_object, actor, and target fields.
         ModelPermission.register_inheritance(

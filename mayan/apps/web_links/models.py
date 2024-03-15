@@ -19,6 +19,8 @@ class WebLink(ExtraDataModelMixin, WebLinkBusinessLogicMixin, models.Model):
     This model stores the basic fields for a web link. Web links allow
     generating links from documents to external resources.
     """
+    _ordering_fields = ('enabled', 'label')
+
     label = models.CharField(
         db_index=True, help_text=_(
             message='A short text describing the web link.'

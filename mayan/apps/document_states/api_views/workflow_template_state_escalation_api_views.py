@@ -21,7 +21,6 @@ class APIWorkflowTemplateStateEscalationListView(
         'GET': permission_workflow_template_view,
         'POST': permission_workflow_template_edit
     }
-    ordering_fields = ('priority', 'id')
     serializer_class = WorkflowTemplateStateEscalationSerializer
 
     def get_instance_extra_data(self):

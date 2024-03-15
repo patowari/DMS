@@ -18,7 +18,6 @@ class APIErrorLogPartitionEntryListView(
     mayan_external_object_permission_map = {
         'GET': permission_error_log_entry_view
     }
-    ordering_fields = ('id', 'datetime')
     serializer_class = ErrorLogPartitionEntrySerializer
 
     def get_source_queryset(self):

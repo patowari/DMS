@@ -12,17 +12,13 @@ class RESTAPILinkTestCase(GenericViewTestCase):
     def test_api_link_false(self):
         response = self.get(viewname='common:tools_list')
 
-        self.assertContains(
-            response=response, text=link_api.text
-        )
+        self.assertContains(response=response, text=link_api.text)
 
     @override_settings(REST_API_DISABLE_LINKS=True)
     def test_api_link_true(self):
         response = self.get(viewname='common:tools_list')
 
-        self.assertNotContains(
-            response=response, text=link_api.text
-        )
+        self.assertNotContains(response=response, text=link_api.text)
 
     @override_settings(REST_API_DISABLE_LINKS=False)
     def test_redoc_documentation_link_false(self):

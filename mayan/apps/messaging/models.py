@@ -14,6 +14,8 @@ from .model_mixins import MessageBusinessLogicMixin
 
 
 class Message(ExtraDataModelMixin, MessageBusinessLogicMixin, models.Model):
+    _ordering_fields = ('date_time', 'id')
+
     sender_content_type = models.ForeignKey(
         blank=True, null=True, on_delete=models.CASCADE, to=ContentType,
         verbose_name=_(message='Sender content type')

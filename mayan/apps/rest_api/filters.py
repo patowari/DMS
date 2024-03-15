@@ -1,6 +1,7 @@
 from rest_framework.filters import BaseFilterBackend, OrderingFilter
 
 from mayan.apps.acls.models import AccessControlList
+from mayan.apps.databases.utils import get_model_ordering_fields
 
 
 class MayanObjectPermissionsFilter(BaseFilterBackend):
@@ -41,3 +42,16 @@ class MayanSortingFilter(OrderingFilter):
 
     def get_default_valid_fields(self, queryset, view, context=None):
         return ()
+
+    def get_valid_fields(self, queryset, view, context={}):
+        view_ordering_fields = getattr(view, 'ordering_fields', None)
+
+        if not view_ordering_fields:
+            model = getattr(queryset, 'model', None)
+
+            if model:
+                view.ordering_fields = get_model_ordering_fields(model=model)
+
+        return super().get_valid_fields(
+            context=context, queryset=queryset, view=view
+        )

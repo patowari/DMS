@@ -25,6 +25,7 @@ class WorkflowStateAction(
     ExtraDataModelMixin, models.Model
 ):
     _backend_model_null_backend = WorkflowActionNull
+    _ordering_fields = ('label', 'enabled')
 
     state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='actions', to=WorkflowState,

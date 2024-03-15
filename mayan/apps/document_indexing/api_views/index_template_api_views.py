@@ -27,7 +27,6 @@ class APIIndexTemplateListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_index_template_view}
     mayan_view_permission_map = {'POST': permission_index_template_create}
-    ordering_fields = ('enabled', 'id', 'label', 'slug')
     serializer_class = IndexTemplateSerializer
     source_queryset = IndexTemplate.objects.all()
 
@@ -113,8 +112,6 @@ class APIIndexTemplateNodeListView(
     get: Returns a list of all the template nodes for the selected index.
     post: Create a new index template node.
     """
-    ordering_fields = ('enabled', 'id', 'link_documents')
-
     def get_source_queryset(self):
         return self.get_index_template().index_template_root_node.get_children()
 

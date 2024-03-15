@@ -26,7 +26,6 @@ class APIACLListView(
         'GET': permission_acl_view,
         'POST': permission_acl_edit
     }
-    ordering_fields = ('id', 'role')
     serializer_class = ACLSerializer
 
     def get_instance_extra_data(self):

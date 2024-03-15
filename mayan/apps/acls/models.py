@@ -35,6 +35,8 @@ class AccessControlList(
     * Role - Custom role that is being granted a permission. Roles are created
     in the Setup menu.
     """
+    _ordering_fields = ('object_id',)
+
     content_type = models.ForeignKey(
         on_delete=models.CASCADE, related_name='object_content_type',
         to=ContentType, verbose_name=_(message='Content type')

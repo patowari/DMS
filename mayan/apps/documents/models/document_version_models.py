@@ -23,6 +23,8 @@ __all__ = ('DocumentVersion', 'DocumentVersionSearchResult')
 class DocumentVersion(
     DocumentVersionBusinessLogicMixin, ExtraDataModelMixin, models.Model
 ):
+    _ordering_fields = ('active', 'comment')
+
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='versions', to=Document,
         verbose_name=_(message='Document')

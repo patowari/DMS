@@ -15,6 +15,8 @@ class Announcement(ExtraDataModelMixin, models.Model):
     Model to store an information announcement that will be displayed at the
     login screen. Announcements can have an activation and deactivation date.
     """
+    _ordering_fields = ('enabled', 'end_datetime', 'label', 'start_datetime')
+
     label = models.CharField(
         max_length=32, help_text=_(
             message='Short description of this announcement.'

@@ -1,12 +1,14 @@
 import json
 import unittest
 
+from django.apps import apps
 from django.db import connection, models
 
 from rest_framework import status
 from rest_framework.reverse import reverse
 
 from mayan.apps.acls.classes import ModelPermission
+from mayan.apps.databases.utils import get_model_ordering_fields
 from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
@@ -66,15 +68,11 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
         )
 
         ModelPermission.register(
-            model=self.TestModel, permissions=(
-                self._test_permission,
-            )
+            model=self.TestModel, permissions=(self._test_permission,)
         )
 
         self._create_test_object(
-            instance_kwargs={
-                'label': TEST_OBJECT_LABEL
-            }
+            instance_kwargs={'label': TEST_OBJECT_LABEL}
         )
 
         class TestModelSerializer(serializers.ModelSerializer):
@@ -84,19 +82,14 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
 
         def _test_view_factory():
             class TestView(generics.ListCreateAPIView):
-                mayan_object_permission_map = {
-                    'GET': self._test_permission
-                }
-                mayan_view_permission_map = {
-                    'POST': self._test_permission
-                }
+                mayan_object_permission_map = {'GET': self._test_permission}
+                mayan_view_permission_map = {'POST': self._test_permission}
                 serializer_class = TestModelSerializer
                 source_queryset = self.TestModel.objects.all()
 
             return TestView.as_view()
 
         self.add_test_view(
-            test_object=self._test_object,
             test_view_factory=_test_view_factory,
             test_view_url=r'^test-view-url/$'
         )
@@ -119,7 +112,6 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
             return TestView.as_view()
 
         self.add_test_view(
-            test_object=self._test_object,
             test_view_factory=_test_view_factory,
             test_view_url=r'^test-view-url/(?P<test_object_id>\d+)/$'
         )
@@ -592,3 +584,42 @@ class DynamicFieldSerializerWithMixinAPIViewTestCase(
         )
         self.assertTrue('test_field_3' not in data)
         self.assertTrue('test_field_4' not in data)
+
+
+class ModelOrderingAPIViewTestCase(BaseAPITestCase):
+    def _test_view_factory(self, test_model):
+        class TestModelSerializer(serializers.ModelSerializer):
+            class Meta:
+                fields = (test_model._meta.pk.name,)
+                model = test_model
+
+        class TestAPIViewList(generics.ListAPIView):
+            serializer_class = TestModelSerializer
+
+            def get_source_queryset(self):
+                manager = getattr(test_model, 'objects')
+                return manager.all()
+
+        return TestAPIViewList.as_view()
+
+    def test_ordering_fields(self):
+        models = apps.get_models()
+
+        for model in models:
+            ordering_field_list = get_model_ordering_fields(model=model)
+
+            # Only test models with ordering fields beyond the primary key.
+            if len(ordering_field_list) > 1:
+                self.add_test_view(
+                    test_view_factory_kwargs={'test_model': model}
+                )
+                viewname = 'rest_api:{}'.format(self._test_view_name)
+
+                for ordering_field in ordering_field_list:
+                    response = self.get(
+                        query={'_ordering': ordering_field},
+                        viewname=viewname
+                    )
+                    self.assertEqual(response.status_code, 200)
+
+                self.remove_view_test()

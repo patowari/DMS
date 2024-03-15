@@ -28,6 +28,8 @@ class IndexTemplate(
     Parent model that defines an index and hold all the relationship for its
     template and instance when resolved.
     """
+    _ordering_fields = ('enabled', 'label', 'slug')
+
     label = models.CharField(
         help_text=_(message='Short description of this index.'),
         max_length=128, unique=True, verbose_name=_(message='Label')
@@ -136,6 +138,8 @@ class IndexTemplateNode(IndexTemplateNodeBusinessLogicMixin, MPTTModel):
     hierarchy of levels. Each level can contain further levels or a list of
     documents but not both.
     """
+    _ordering_fields = ('enabled', 'link_documents')
+
     parent = TreeForeignKey(
         blank=True, help_text=_(
             message='Parent index template node of this node.'

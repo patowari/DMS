@@ -31,6 +31,7 @@ class DownloadFile(
     Keep a database link to a stored file. Used for generated files meant
     to be downloaded at a later time.
     """
+    _ordering_fields = ('filename', 'datetime', 'label')
 
     file = models.FileField(
         storage=DefinedStorageLazy(

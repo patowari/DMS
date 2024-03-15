@@ -33,6 +33,8 @@ class MetadataType(
     that can be assigned a value for each document. Metadata types need
     to be assigned to a document type before they can be used.
     """
+    _ordering_fields = ('label', 'name')
+
     name = models.CharField(
         max_length=48,
         help_text=_(
@@ -174,6 +176,8 @@ class DocumentMetadata(
     Model used to link an instance of a metadata type with a value to a
     document.
     """
+    _ordering_fields = ('value',)
+
     document = models.ForeignKey(
         on_delete=models.CASCADE, related_name='metadata', to=Document,
         verbose_name=_(message='Document')

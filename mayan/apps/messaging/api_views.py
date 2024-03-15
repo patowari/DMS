@@ -37,7 +37,6 @@ class APIMessageListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_message_view}
     mayan_view_permission_map = {'POST': permission_message_create}
-    ordering_fields = ('date_time', 'id')
     serializer_class = MessageSerializer
 
     def get_instance_extra_data(self):

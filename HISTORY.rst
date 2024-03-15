@@ -58,6 +58,11 @@
 - Add support for decompressing EML files.
 - Disable automated menu refresh on development mode.
 - Add support for EML file metadata extraction.
+- Improve how the test views are managed.
+- Refactor the API field ordering feature
+
+  - Support automatic nested field ordering.
+  - Add testing for field ordering.
 
 4.6.2 (2024-03-04)
 ==================

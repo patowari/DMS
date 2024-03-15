@@ -36,6 +36,8 @@ class DocumentType(
     Define document types or classes to which a specific set of
     properties can be attached.
     """
+    _ordering_fields = ('label',)
+
     label = models.CharField(
         help_text=_(message='A short text identifying the document type.'),
         max_length=196, unique=True, verbose_name=_(message='Label')
@@ -144,6 +146,8 @@ class DocumentTypeFilename(ExtraDataModelMixin, models.Model):
     List of labels available to a specific document type for the
     quick rename functionality.
     """
+    _ordering_fields = ('filename', 'enabled')
+
     document_type = models.ForeignKey(
         on_delete=models.CASCADE, related_name='filenames', to=DocumentType,
         verbose_name=_(message='Document type')

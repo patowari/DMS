@@ -15,9 +15,6 @@ class APIAnnouncementListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_announcement_view}
     mayan_view_permission_map = {'POST': permission_announcement_create}
-    ordering_fields = (
-        'enabled', 'end_datetime', 'id', 'label', 'start_datetime'
-    )
     serializer_class = AnnouncementSerializer
     source_queryset = Announcement.objects.all()
 

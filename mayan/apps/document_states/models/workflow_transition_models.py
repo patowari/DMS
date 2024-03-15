@@ -29,6 +29,8 @@ __all__ = (
 class WorkflowTransition(
     ExtraDataModelMixin, WorkflowTransitionBusinessLogicMixin, models.Model
 ):
+    _ordering_fields = ('label',)
+
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='transitions', to=Workflow,
         verbose_name=_(message='Workflow')
@@ -97,6 +99,8 @@ class WorkflowTransitionField(
     ExtraDataModelMixin, WorkflowTransitionFieldBusinessLogicMixin,
     models.Model
 ):
+    _ordering_fields = ('label', 'name', 'required', 'widget_kwargs')
+
     transition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='fields',
         to=WorkflowTransition, verbose_name=_(message='Transition')

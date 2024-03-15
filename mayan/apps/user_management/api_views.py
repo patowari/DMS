@@ -56,7 +56,6 @@ class APIGroupListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_group_view}
     mayan_view_permission_map = {'POST': permission_group_create}
-    ordering_fields = ('id', 'name')
     serializer_class = GroupSerializer
     source_queryset = Group.objects.order_by('id')
 
@@ -121,10 +120,6 @@ class APIUserListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_user_view}
     mayan_view_permission_map = {'POST': permission_user_create}
-    ordering_fields = (
-        'email', 'first_name', 'last_name', 'has_usable_password',
-        'id', 'is_active', 'username'
-    )
     serializer_class = UserSerializer
     source_queryset = get_user_queryset()
 

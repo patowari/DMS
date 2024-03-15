@@ -23,7 +23,6 @@ class APIObjectEventListView(
     get: Return a list of events for the specified object.
     """
     mayan_external_object_permission_map = {'GET': permission_events_view}
-    ordering_fields = ('id', 'timestamp')
     serializer_class = EventSerializer
 
     def get_source_queryset(self):
@@ -104,7 +103,6 @@ class APIEventListView(generics.ListAPIView):
     get: Returns a list of all the available events.
     """
     mayan_view_permission_map = {'GET': permission_events_view}
-    ordering_fields = ('id', 'timestamp')
     serializer_class = EventSerializer
     source_queryset = Action.objects.all()
 
@@ -120,7 +118,6 @@ class APINotificationListView(generics.ListAPIView):
     """
     get: Return a list of notifications for the current user.
     """
-    ordering_fields = ('action__timestamp', 'id', 'read')
     serializer_class = NotificationSerializer
 
     def get_source_queryset(self):

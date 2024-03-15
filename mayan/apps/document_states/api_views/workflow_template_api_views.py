@@ -97,7 +97,6 @@ class APIWorkflowTemplateListView(generics.ListCreateAPIView):
     mayan_view_permission_map = {
         'POST': permission_workflow_template_create
     }
-    ordering_fields = ('id', 'internal_name', 'label')
     serializer_class = WorkflowTemplateSerializer
     source_queryset = Workflow.objects.all()
 

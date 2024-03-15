@@ -82,6 +82,9 @@ class UserManagementApp(MayanAppConfig):
             name='__init__', value=get_method_group_init()
         )
         Group.add_to_class(
+            name='_ordering_fields', value=('name',)
+        )
+        Group.add_to_class(
             name='get_absolute_url', value=method_group_get_absolute_url
         )
         Group.add_to_class(
@@ -132,6 +135,12 @@ class UserManagementApp(MayanAppConfig):
 
         User.add_to_class(
             name='__init__', value=get_method_user_init()
+        )
+        User.add_to_class(
+            name='_ordering_fields', value=(
+                'email', 'first_name', 'last_name', 'is_active', 'last_login',
+                'username'
+            )
         )
         User.add_to_class(
             name='get_absolute_api_url',

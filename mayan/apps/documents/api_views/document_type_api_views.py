@@ -23,7 +23,6 @@ class APIDocumentTypeListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_document_type_view}
     mayan_view_permission_map = {'POST': permission_document_type_create}
-    ordering_fields = ('id', 'label')
     serializer_class = DocumentTypeSerializer
     source_queryset = DocumentType.objects.all()
 
@@ -69,7 +68,6 @@ class APIDocumentTypeQuickLabelDetailView(
         'PATCH': permission_document_type_edit,
         'PUT': permission_document_type_edit
     }
-    ordering_fields = ('filename', 'enabled', 'id')
     serializer_class = DocumentTypeQuickLabelSerializer
 
     def get_instance_extra_data(self):

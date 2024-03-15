@@ -25,6 +25,8 @@ class SmartLink(
     linking documents using a programmatic method of conditions that mirror
     Django's database filter operations.
     """
+    _ordering_fields = ('dynamic_label', 'enabled', 'label')
+
     label = models.CharField(
         db_index=True, help_text=_(
             message='A short text describing the smart link.'
@@ -85,6 +87,8 @@ class SmartLinkCondition(
     This model stores a single smart link condition. A smart link is a
     collection of one of more smart link conditions.
     """
+    _ordering_fields = ('enabled',)
+
     smart_link = models.ForeignKey(
         on_delete=models.CASCADE, related_name='conditions', to=SmartLink,
         verbose_name=_(message='Smart link')

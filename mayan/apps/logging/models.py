@@ -14,6 +14,8 @@ from .model_mixins import (
 
 
 class StoredErrorLog(StoredErrorLogBusinessLogicMixin, models.Model):
+    _ordering_fields = ('name',)
+
     name = models.CharField(
         max_length=128, unique=True, verbose_name=_(message='Internal name')
     )
@@ -28,6 +30,8 @@ class StoredErrorLog(StoredErrorLogBusinessLogicMixin, models.Model):
 
 
 class ErrorLogPartition(models.Model):
+    _ordering_fields = ('name', 'object_id')
+
     error_log = models.ForeignKey(
         on_delete=models.CASCADE, related_name='partitions',
         to=StoredErrorLog, verbose_name=_(message='Error log')
@@ -57,6 +61,8 @@ class ErrorLogPartition(models.Model):
 class ErrorLogPartitionEntry(
     ErrorLogPartitionEntryBusinessLogicMixin, models.Model
 ):
+    _ordering_fields = ('datetime',)
+
     error_log_partition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='entries',
         to=ErrorLogPartition, verbose_name=_(message='Error log partition')

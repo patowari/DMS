@@ -112,10 +112,6 @@ class APIWorkflowInstanceLogEntryListView(
         'POST': permission_workflow_instance_transition
     }
     mayan_object_permission_map = {'GET': permission_workflow_template_view}
-    ordering_fields = (
-        'comment', 'id', 'transition', 'transition__destination_state',
-        'transition__origin_state'
-    )
     serializer_class = WorkflowInstanceLogEntrySerializer
 
     def get_serializer_extra_context(self):
@@ -150,7 +146,6 @@ class APIWorkflowInstanceLogEntryTransitionListView(
         'GET': permission_workflow_template_view
     }
     mayan_object_permission_map = {'GET': permission_workflow_template_view}
-    ordering_fields = ('destination_state', 'id', 'origin_state')
     serializer_class = WorkflowTemplateTransitionSerializer
 
     def get_serializer_context(self):

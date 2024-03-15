@@ -34,7 +34,6 @@ class APIDocumentMetadataListView(
         'POST': permission_document_metadata_add
     }
     mayan_object_permission_map = {'GET': permission_document_metadata_view}
-    ordering_fields = ('id', 'metadata_type', 'value')
     serializer_class = DocumentMetadataSerializer
 
     def get_instance_extra_data(self):
@@ -93,7 +92,6 @@ class APIMetadataTypeListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_metadata_type_view}
     mayan_view_permission_map = {'POST': permission_metadata_type_create}
-    ordering_fields = ('id', 'label', 'name')
     serializer_class = MetadataTypeSerializer
     source_queryset = MetadataType.objects.all()
 

@@ -26,6 +26,7 @@ class UserMailer(
     ACLs to restrict their use.
     """
     _backend_model_null_backend = MailerBackendNull
+    _ordering_fields = ('default', 'enabled', 'label')
 
     label = models.CharField(
         help_text=_(message='A short text describing the mailing profile.'),

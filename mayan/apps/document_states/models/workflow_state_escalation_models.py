@@ -27,6 +27,8 @@ class WorkflowStateEscalation(
     ExtraDataModelMixin, ModelMixinConditionField,
     WorkflowStateEscalationBusinessLogicMixin, models.Model
 ):
+    _ordering_fields = ('priority',)
+
     state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='escalations',
         to=WorkflowState, verbose_name=_(message='Workflow state')

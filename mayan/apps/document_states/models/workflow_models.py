@@ -28,6 +28,8 @@ class Workflow(
     Fields:
     * label - Identifier. A name/label to call the workflow
     """
+    _ordering_fields = ('internal_name', 'label')
+
     auto_launch = models.BooleanField(
         default=True, help_text=_(
             message='Launch workflow when document is created.'

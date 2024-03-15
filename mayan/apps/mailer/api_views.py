@@ -46,7 +46,6 @@ class APIMailingProfileListView(generics.ListCreateAPIView):
     """
     mayan_object_permission_map = {'GET': permission_mailing_profile_view}
     mayan_view_permission_map = {'POST': permission_mailing_profile_create}
-    ordering_fields = ('default', 'enabled', 'id', 'label')
     serializer_class = MailingProfileSerializer
     source_queryset = UserMailer.objects.all()
 

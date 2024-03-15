@@ -19,6 +19,8 @@ class StoredEventType(StoredEventTypeBusinessLogicMixin, models.Model):
     """
     Model to mirror the real event classes as database objects.
     """
+    _ordering_fields = ('name',)
+
     name = models.CharField(
         max_length=64, unique=True, verbose_name=_(message='Name')
     )
@@ -62,6 +64,8 @@ class Notification(NotificationBusinessLogicMixin, models.Model):
     created when an event to which this user has been subscribed, are
     committed elsewhere in the system.
     """
+    _ordering_fields = ('read',)
+
     user = models.ForeignKey(
         db_index=True, on_delete=models.CASCADE,
         related_name='notifications', to=settings.AUTH_USER_MODEL,

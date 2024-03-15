@@ -22,6 +22,8 @@ class Role(ExtraDataModelMixin, RoleBusinessLogicMixin, models.Model):
     are the basic method to grant a permission to a group. Permissions granted
     to a group using a role, are granted for the entire system.
     """
+    _ordering_fields = ('label',)
+
     label = models.CharField(
         help_text=_(message='A short text describing the role.'),
         max_length=128, unique=True, verbose_name=_(message='Label')
@@ -55,11 +57,11 @@ class Role(ExtraDataModelMixin, RoleBusinessLogicMixin, models.Model):
         event_manager_class=EventManagerSave,
         created={
             'event': event_role_created,
-            'target': 'self',
+            'target': 'self'
         },
         edited={
             'event': event_role_edited,
-            'target': 'self',
+            'target': 'self'
         }
     )
     def save(self, *args, **kwargs):

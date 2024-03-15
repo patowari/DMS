@@ -45,6 +45,7 @@ class Source(
     models.Model
 ):
     _backend_model_null_backend = SourceBackendNull
+    _ordering_fields = ('label', 'enabled')
 
     label = models.CharField(
         db_index=True, help_text=_(message='A short text to describe this source.'),

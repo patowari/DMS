@@ -22,7 +22,6 @@ class APICommentListView(
         'GET': permission_document_comment_view,
         'POST': permission_document_comment_create
     }
-    ordering_fields = ('id', 'submit_date')
     serializer_class = CommentSerializer
 
     def get_instance_extra_data(self):

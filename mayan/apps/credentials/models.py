@@ -17,6 +17,7 @@ class StoredCredential(
     ExtraDataModelMixin, models.Model
 ):
     _backend_model_null_backend = CredentialBackendNull
+    _ordering_fields = ('label', 'internal_name')
 
     label = models.CharField(
         help_text=_(message='Short description of this credential.'),

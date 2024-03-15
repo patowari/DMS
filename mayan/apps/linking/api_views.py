@@ -146,7 +146,6 @@ class APISmartLinkConditionListView(
         'GET': permission_smart_link_view,
         'POST': permission_smart_link_edit
     }
-    ordering_fields = ('enabled', 'id')
     serializer_class = SmartLinkConditionSerializer
 
     def get_instance_extra_data(self):
@@ -217,7 +216,6 @@ class APISmartLinkDetailView(generics.RetrieveUpdateDestroyAPIView):
         'PATCH': permission_smart_link_edit,
         'PUT': permission_smart_link_edit
     }
-    ordering_fields = ('dynamic_label', 'enabled', 'id', 'label')
     serializer_class = SmartLinkSerializer
     source_queryset = SmartLink.objects.all()
 

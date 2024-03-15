@@ -22,9 +22,8 @@ class ExternalObjectAPIViewMixinTestCase(
                 'HTTP_AUTHORIZATION': 'Token {}'.format(
                     self._test_case_user_token
                 )
-            }, viewname='rest_api:{}'.format(self._test_view_name), kwargs={
-                'test_object_id': self._test_object.pk
-            }
+            }, kwargs={'test_object_id': self._test_object.pk},
+            viewname='rest_api:{}'.format(self._test_view_name)
         )
 
     def _test_view_factory(self, test_object=None):

@@ -35,9 +35,9 @@ class IndexInstance(IndexInstanceBusinessLogicMixin, IndexTemplate):
             return '#'
         else:
             return reverse(
-                viewname='indexing:index_instance_node_view', kwargs={
+                kwargs={
                     'index_instance_node_id': index_instance_root_node.pk
-                }
+                }, viewname='indexing:index_instance_node_view'
             )
 
 
@@ -48,6 +48,8 @@ class IndexInstanceNode(IndexInstanceNodeBusinessLogicMixin, MPTTModel):
     from that evaluation is this node's stored values. Instances of this
     model also point to the original node template.
     """
+    _ordering_fields = ('value',)
+
     parent = TreeForeignKey(
         blank=True, null=True, on_delete=models.CASCADE,
         related_name='children', to='self'
@@ -57,7 +59,8 @@ class IndexInstanceNode(IndexInstanceNodeBusinessLogicMixin, MPTTModel):
         to=IndexTemplateNode, verbose_name=_(message='Index template node')
     )
     value = models.CharField(
-        blank=True, db_index=True, max_length=255, verbose_name=_(message='Value')
+        blank=True, db_index=True, max_length=255,
+        verbose_name=_(message='Value')
     )
     documents = models.ManyToManyField(
         related_name='index_instance_nodes', to=Document,
@@ -75,9 +78,8 @@ class IndexInstanceNode(IndexInstanceNodeBusinessLogicMixin, MPTTModel):
 
     def get_absolute_url(self):
         return reverse(
-            viewname='indexing:index_instance_node_view', kwargs={
-                'index_instance_node_id': self.pk
-            }
+            kwargs={'index_instance_node_id': self.pk},
+            viewname='indexing:index_instance_node_view'
         )
 
 

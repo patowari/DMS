@@ -28,7 +28,6 @@ class APIWorkflowTemplateTransitionListView(
         'GET': permission_workflow_template_view,
         'POST': permission_workflow_template_edit
     }
-    ordering_fields = ('destination_state', 'id', 'label', 'origin_state')
     serializer_class = WorkflowTemplateTransitionSerializer
 
     def get_instance_extra_data(self):
@@ -89,7 +88,6 @@ class APIWorkflowTemplateTransitionFieldListView(
         'GET': permission_workflow_template_view,
         'POST': permission_workflow_template_edit
     }
-    ordering_fields = ('id', 'label', 'name', 'required', 'widget_kwargs')
     serializer_class = WorkflowTransitionFieldSerializer
 
     def get_instance_extra_data(self):
@@ -145,7 +143,6 @@ class APIWorkflowTemplateTransitionTriggerListView(
         'GET': permission_workflow_template_view,
         'POST': permission_workflow_template_edit
     }
-    ordering_fields = ('event_type', 'id')
     serializer_class = WorkflowTemplateTransitionTriggerSerializer
 
     def get_instance_extra_data(self):

@@ -30,6 +30,8 @@ class WorkflowState(
     states: 33%, 66%, 100%. If the Actual State of the document if approved,
     the Completion Amount will show 66%.
     """
+    _ordering_fields = ('completion', 'initial', 'label')
+
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='states', to=Workflow,
         verbose_name=_(message='Workflow')
