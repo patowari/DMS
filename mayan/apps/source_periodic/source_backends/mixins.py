@@ -71,8 +71,8 @@ class SourceBackendMixinPeriodic:
         return fieldsets
 
     @classmethod
-    def get_form_widgets(cls):
-        widgets = super().get_form_widgets()
+    def get_form_field_widgets(cls):
+        widgets = super().get_form_field_widgets()
 
         widgets.update(
             {
