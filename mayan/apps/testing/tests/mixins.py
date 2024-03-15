@@ -749,6 +749,7 @@ class TestViewTestCaseMixin:
         super().setUp()
         self._test_view_count = 0
         self._test_view_names = []
+        self._test_view_url_patterns = []
 
         if self.auto_add_test_view:
             self.add_test_view(test_object=self.test_view_object)
@@ -757,15 +758,15 @@ class TestViewTestCaseMixin:
         self.client.logout()
 
         for _ in range(self._test_view_count):
-            self._get_test_view_urlpatterns().pop(0)
+            self.remove_view_test()
 
         super().tearDown()
 
     def _get_context_from_test_response(self, response):
         if isinstance(response.context, ContextList):
             # Template widget rendering causes test client response to be
-            # ContextList rather than RequestContext. Typecast to dictionary
-            # before updating.
+            # `ContextList` rather than `RequestContext`. Typecast to
+            # dictionary before updating.
             result = dict(response.context).copy()
             result.update(
                 {'request': response.wsgi_request}
@@ -780,6 +781,11 @@ class TestViewTestCaseMixin:
 
         context.request = response.wsgi_request
         return context
+
+    def _get_test_view_urlpatterns(self):
+        root_url_module = importlib.import_module(name=settings.ROOT_URLCONF)
+
+        return root_url_module.urlpatterns
 
     def _test_view_factory(self, test_object=None):
         def test_view(request):
@@ -796,39 +802,53 @@ class TestViewTestCaseMixin:
         else:
             return test_view
 
-    def _get_test_view_urlpatterns(self):
-        return importlib.import_module(
-            name=settings.ROOT_URLCONF
-        ).urlpatterns
-
     def add_test_view(
         self, test_object=None, test_view_factory=None, test_view_name=None,
-        test_view_url=None
+        test_view_url=None, test_view_factory_kwargs=None
     ):
+        test_view_factory_kwargs = test_view_factory_kwargs or {}
+
+        # For compatibility with the previous interface.
+        if test_object:
+            test_view_factory_kwargs['test_object'] = test_object
+
         if test_view_factory:
-            view = test_view_factory()
+            view = test_view_factory(**test_view_factory_kwargs)
         else:
-            view = self._test_view_factory(
-                test_object=test_object
-            )
+            view = self._test_view_factory(**test_view_factory_kwargs)
 
         if test_view_name:
             self._test_view_name = test_view_name
         else:
             self._test_view_name = '{}_{}'.format(
-                TEST_VIEW_NAME, len(self._test_view_names)
+                TEST_VIEW_NAME, self._test_view_count
             )
 
-        self._get_test_view_urlpatterns().insert(
-            0, re_path(
-                route=test_view_url or self.test_view_url, view=view,
-                name=self._test_view_name
-            )
+        url_pattern = re_path(
+            route=test_view_url or self.test_view_url, view=view,
+            name=self._test_view_name
         )
+
+        self._test_view_url_patterns.append(url_pattern)
+
+        self._get_test_view_urlpatterns().insert(0, url_pattern)
         clear_url_caches()
+
         self._test_view_count += 1
         self._test_view_names.append(self._test_view_name)
 
     def get_test_view(self):
         response = self.get(viewname=self._test_view_name)
         return self._get_context_from_test_response(response=response)
+
+    def remove_view_test(self):
+        self._test_view_count -= 1
+        self._test_view_name = self._test_view_names.pop(
+            self._test_view_count
+        )
+        url_pattern = self._test_view_url_patterns.pop(self._test_view_count)
+
+        app_urlpatterns = self._get_test_view_urlpatterns()
+
+        index = app_urlpatterns.index(url_pattern)
+        self._get_test_view_urlpatterns().pop(index)
