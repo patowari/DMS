@@ -9,6 +9,9 @@ from mayan.apps.sources.source_backend_actions.base import SourceBackendAction
 from mayan.apps.sources.source_backend_actions.mixins.callback_mixins import (
     SourceBackendActionMixinCallbackDocumentUpload
 )
+from mayan.apps.sources.source_backend_actions.mixins.document_language_mixins import (
+    SourceBackendActionMixinLanguageInteractiveNot
+)
 from mayan.apps.sources.source_backend_actions.mixins.document_mixins import (
     SourceBackendActionMixinDocumentUploadInteractiveNot
 )
@@ -25,6 +28,7 @@ from .mixins import SourceBackendActionMixinPeriodic
 class SourceBackendActionPeriodicDocumentUpload(
     SourceBackendActionMixinDocumentUploadInteractiveNot,
     SourceBackendActionMixinDocumentTypeInteractiveNot,
+    SourceBackendActionMixinLanguageInteractiveNot,
     SourceBackendActionMixinCompressedInteractiveNot,
     SourceBackendActionMixinFileStoredInteractiveNot,
     SourceBackendActionMixinUserInteractiveNot,

@@ -94,7 +94,7 @@ class SourceBackendActionMixinCallbackPostDocumentUploadQueryStringInteractive:
         query_dict = request.GET.copy()
         query_dict.update(request.POST)
 
-        # Convert into a string. Make sure it is a QueryDict object from a
+        # Convert into a string. Make sure it is a `QueryDict` object from a
         # request and not just a simple dictionary.
         if hasattr(query_dict, 'urlencode'):
             query_string = query_dict.urlencode()

@@ -12,6 +12,7 @@ from mayan.apps.sources.events import (
     event_source_created, event_source_edited
 )
 
+from .literals import TEST_DOCUMENT_LANGUAGE
 from .mixins import PeriodicSourceBackendTestMixin
 
 
@@ -193,6 +194,62 @@ class PeriodicSourceBackendActionTestCase(
         self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
+        test_document_file = test_document.file_latest
+        test_document_version = test_document.version_active
+
+        self.assertEqual(events[0].action_object, self._test_document_type)
+        self.assertEqual(events[0].actor, test_document)
+        self.assertEqual(events[0].target, test_document)
+        self.assertEqual(events[0].verb, event_document_created.id)
+
+        self.assertEqual(events[1].action_object, test_document)
+        self.assertEqual(events[1].actor, test_document_file)
+        self.assertEqual(events[1].target, test_document_file)
+        self.assertEqual(events[1].verb, event_document_file_created.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, test_document_version)
+        self.assertEqual(events[2].target, test_document_version)
+        self.assertEqual(events[2].verb, event_document_version_created.id)
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_version)
+        self.assertEqual(events[3].target, test_document_version)
+        self.assertEqual(events[3].verb, event_document_version_edited.id)
+
+
+class PeriodicSourceBackendConfigActionTestCase(
+    PeriodicSourceBackendTestMixin, GenericDocumentTestCase
+):
+    _test_source_create_auto = False
+    auto_upload_test_document = False
+
+    def test_document_language(self):
+        self._silence_logger(name='mayan.apps.converter.backends')
+
+        self._test_source_create(
+            extra_data={'language': TEST_DOCUMENT_LANGUAGE}
+        )
+
+        document_count = Document.objects.count()
+
+        self._clear_events()
+
+        self._execute_test_source_action(
+            action_name='document_upload', extra_data={'dry_run': False}
+        )
+
+        self.assertEqual(
+            Document.objects.count(), document_count + 1
+        )
+
+        test_document = Document.objects.first()
+
+        self.assertEqual(test_document.language, TEST_DOCUMENT_LANGUAGE)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 4)
+
         test_document_file = test_document.file_latest
         test_document_version = test_document.version_active
 

@@ -4,6 +4,7 @@ import logging
 from django.apps import apps
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.documents.utils import get_language_choices
 from mayan.apps.source_compressed.source_backends.literals import (
     SOURCE_UNCOMPRESS_NON_INTERACTIVE_CHOICES
 )
@@ -20,8 +21,17 @@ logger = logging.getLogger(name=__name__)
 class SourceBackendMixinPeriodic:
     @classmethod
     def get_form_fields(cls):
+        Document = apps.get_model(
+            app_label='documents', model_name='Document'
+        )
         DocumentType = apps.get_model(
             app_label='documents', model_name='DocumentType'
+        )
+
+        field_document_language = Document.language.field.formfield()
+
+        choices_document_types = (
+            (document_type.id, document_type) for document_type in DocumentType.objects.all()
         )
 
         fields = super().get_form_fields()
@@ -35,12 +45,20 @@ class SourceBackendMixinPeriodic:
                         'uploaded from this source.'
                     ),
                     'kwargs': {
-                        'choices': [
-                            (document_type.id, document_type) for document_type in DocumentType.objects.all()
-                        ],
+                        'choices': choices_document_types,
                     },
                     'label': _(message='Document type'),
                     'required': True
+                },
+                'language': {
+                    'class': 'django.forms.ChoiceField',
+                    'default': field_document_language.initial,
+                    'help_text': field_document_language.help_text,
+                    'kwargs': {
+                        'choices': get_language_choices(),
+                    },
+                    'label': field_document_language.label,
+                    'required': False
                 },
                 'interval': {
                     'class': 'django.forms.IntegerField',
@@ -67,7 +85,7 @@ class SourceBackendMixinPeriodic:
         fieldsets += (
             (
                 _(message='Unattended'), {
-                    'fields': ('document_type_id', 'interval')
+                    'fields': ('document_type_id', 'language', 'interval')
                 },
             ),
         )
@@ -75,12 +93,17 @@ class SourceBackendMixinPeriodic:
         return fieldsets
 
     @classmethod
-    def get_form_widgets(cls):
-        widgets = super().get_form_widgets()
+    def get_form_field_widgets(cls):
+        widgets = super().get_form_field_widgets()
 
         widgets.update(
             {
                 'document_type_id': {
+                    'class': 'django.forms.widgets.Select', 'kwargs': {
+                        'attrs': {'class': 'select2'}
+                    }
+                },
+                'language': {
                     'class': 'django.forms.widgets.Select', 'kwargs': {
                         'attrs': {'class': 'select2'}
                     }
@@ -144,6 +167,9 @@ class SourceBackendMixinPeriodic:
 
     def get_allow_action_execute(self, action, action_execute_kwargs=None):
         return self.get_model_instance().enabled or action_execute_kwargs.get('dry_run', False)
+
+    def get_document_language(self):
+        return self.kwargs.get('language')
 
     def get_document_type(self):
         DocumentType = apps.get_model(

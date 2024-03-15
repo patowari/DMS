@@ -209,8 +209,8 @@ class SourceBackendActionBase(metaclass=SourceBackendActionMetaclass):
 
     def get_task_kwargs(self):
         return {
-            'action_interface_kwargs': {},
             'action_name': self.name,
+            'action_interface_kwargs': {},
             'source_id': self.source.pk
         }
 
