@@ -69,6 +69,8 @@
   https://forum.mayan-edms.com/t/feature-suggestion-allow-specifying-default-language-for-sources/762
 - Staging sources now have a default preview value of 640 pixels.
 - Improve the help text of the staging source preview fields.
+- Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
+  and avoid JavaScript errors for non authenticated users.
 
 4.6.2 (2024-03-04)
 ==================
