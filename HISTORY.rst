@@ -4,6 +4,8 @@
   fields were ``mime_type`` to ``mimetype`` and remove
   ``has_usable_password`` which is method and not a field.
 - Restore the root logging handlers after every test.
+- Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
+  and avoid JavaScript errors for non authenticated users.
 
 4.4.13 (2024-03-01)
 ===================

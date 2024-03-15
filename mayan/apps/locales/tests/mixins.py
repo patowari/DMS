@@ -1,6 +1,11 @@
 from .literals import TEST_USER_LOCALE_LANGUAGE, TEST_USER_LOCALE_TIMEZONE
 
 
+class JavaScriptCatalogViewTestMixin:
+    def _request_javascript_catalog_view(self):
+        return self.get(viewname='locales:javascript_catalog')
+
+
 class UserLocaleProfileViewMixin:
     def _request_test_current_user_locale_profile_detail_view(self):
         return self._request_test_user_locale_profile_detail_view(
