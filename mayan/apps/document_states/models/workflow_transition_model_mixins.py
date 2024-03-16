@@ -3,7 +3,6 @@ import hashlib
 from django.core import serializers
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.serialization import yaml_load
 from mayan.apps.templating.classes import Template
 
 from ..literals import GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TRIGGER
@@ -75,30 +74,7 @@ class WorkflowTransitionBusinessLogicMixin:
     def has_condition(self):
         return self.condition.strip()
     has_condition.help_text = _(
-        message='The transition will be available, depending on the condition '
-        'return value.'
+        message='The transition will be available, depending on the '
+        'condition return value.'
     )
     has_condition.short_description = _(message='Has a condition?')
-
-
-class WorkflowTransitionFieldBusinessLogicMixin:
-    def get_hash(self):
-        return hashlib.sha256(
-            string=serializers.serialize(
-                format='json', queryset=(self,)
-            ).encode()
-        ).hexdigest()
-
-    def get_widget_kwargs(self):
-        return yaml_load(
-            stream=self.widget_kwargs or '{}'
-        )
-
-
-class WorkflowTransitionTriggerEventBusinessLogicMixin:
-    def get_hash(self):
-        return hashlib.sha256(
-            string=serializers.serialize(
-                format='json', queryset=(self,)
-            ).encode()
-        ).hexdigest()

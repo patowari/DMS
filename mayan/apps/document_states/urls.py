@@ -23,9 +23,13 @@ from .api_views.workflow_template_state_escalation_api_views import (
 )
 from .api_views.workflow_template_transition_api_views import (
     APIWorkflowTemplateTransitionDetailView,
+    APIWorkflowTemplateTransitionListView
+)
+from .api_views.workflow_template_transition_field_api_views import (
     APIWorkflowTemplateTransitionFieldDetailView,
-    APIWorkflowTemplateTransitionFieldListView,
-    APIWorkflowTemplateTransitionListView,
+    APIWorkflowTemplateTransitionFieldListView
+)
+from .api_views.workflow_template_transition_trigger_api_views import (
     APIWorkflowTemplateTransitionTriggerDetailView,
     APIWorkflowTemplateTransitionTriggerListView
 )
@@ -53,15 +57,19 @@ from .views.workflow_template_state_views import (
     WorkflowTemplateStateDeleteView, WorkflowTemplateStateEditView,
     WorkflowTemplateStateListView
 )
-from .views.workflow_template_transition_views import (
-    WorkflowTemplateTransitionCreateView,
-    WorkflowTemplateTransitionDeleteView, WorkflowTemplateTransitionEditView,
+from .views.workflow_template_transition_field_views import (
     WorkflowTemplateTransitionFieldCreateView,
     WorkflowTemplateTransitionFieldDeleteView,
     WorkflowTemplateTransitionFieldEditView,
-    WorkflowTemplateTransitionFieldListView,
-    WorkflowTemplateTransitionListView,
+    WorkflowTemplateTransitionFieldListView
+)
+from .views.workflow_template_transition_trigger_views import (
     WorkflowTemplateTransitionTriggerEventListView
+)
+from .views.workflow_template_transition_views import (
+    WorkflowTemplateTransitionCreateView,
+    WorkflowTemplateTransitionDeleteView, WorkflowTemplateTransitionEditView,
+    WorkflowTemplateTransitionListView
 )
 from .views.workflow_template_views import (
     DocumentTypeWorkflowTemplateAddRemoveView,

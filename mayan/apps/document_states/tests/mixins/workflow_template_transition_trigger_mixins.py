@@ -1,7 +1,7 @@
 from mayan.apps.events.classes import EventType
 from mayan.apps.events.tests.mixins import EventTypeTestMixin
 
-from ...models.workflow_transition_models import (
+from ...models.workflow_transition_trigger_models import (
     WorkflowTransitionTriggerEvent
 )
 

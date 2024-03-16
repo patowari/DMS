@@ -313,6 +313,8 @@ class DocumentStatesApp(MayanAppConfig):
             name='get_last_transition'
         )
 
+        # Workflow template
+
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
             source=Workflow
@@ -328,9 +330,21 @@ class DocumentStatesApp(MayanAppConfig):
             attribute='get_initial_state', empty_value=_(message='None'),
             include_label=True, source=Workflow
         )
+
+        # Workflow runtime template
+
         column_workflow_get_initial_state.add_exclude(
             source=WorkflowRuntimeProxy
         )
+        SourceColumn(
+            func=lambda context: context['object'].get_document_count(
+                user=context['request'].user
+            ), include_label=True, label=_(message='Documents'), order=99,
+            source=WorkflowRuntimeProxy
+        )
+
+        # Workflow instance
+
         SourceColumn(
             attribute='get_current_state', include_label=True,
             label=_(message='Current state'), source=WorkflowInstance,
@@ -361,6 +375,8 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowInstance
         )
 
+        # Workflow template log entry
+
         SourceColumn(
             attribute='datetime', is_identifier=True,
             label=_(message='Date and time'), source=WorkflowInstanceLogEntry
@@ -387,9 +403,11 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='get_extra_data', include_label=True,
-            label=_(message='Additional details'), source=WorkflowInstanceLogEntry,
-            widget=WorkflowLogExtraDataWidget
+            label=_(message='Additional details'),
+            source=WorkflowInstanceLogEntry, widget=WorkflowLogExtraDataWidget
         )
+
+        # Workflow template state
 
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
@@ -407,16 +425,28 @@ class DocumentStatesApp(MayanAppConfig):
             attribute='get_actions_display', include_label=True,
             source=WorkflowState
         )
-        column_workflow_actions.add_exclude(
-            source=WorkflowStateRuntimeProxy
-        )
         column_workflow_escalations = SourceColumn(
             attribute='get_escalations_display', include_label=True,
             source=WorkflowState
         )
+
+        # Workflow template state runtime proxy
+
+        column_workflow_actions.add_exclude(
+            source=WorkflowStateRuntimeProxy
+        )
         column_workflow_escalations.add_exclude(
             source=WorkflowStateRuntimeProxy
         )
+
+        SourceColumn(
+            func=lambda context: context['object'].get_document_count(
+                user=context['request'].user
+            ), include_label=True, label=_(message='Documents'), order=99,
+            source=WorkflowStateRuntimeProxy
+        )
+
+        # Workflow template state action
 
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
@@ -439,7 +469,7 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowStateAction, widget=TwoStateWidget
         )
 
-        # Workflow Template State Escalation
+        # Workflow template state escalation
 
         SourceColumn(
             attribute='priority', is_identifier=True, is_sortable=True,
@@ -466,7 +496,7 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowStateEscalation, widget=TwoStateWidget
         )
 
-        # Workflow transition
+        # Workflow template transition
 
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
@@ -492,11 +522,13 @@ class DocumentStatesApp(MayanAppConfig):
             func=lambda context: widget_transition_events(
                 transition=context['object']
             ), help_text=_(
-                message='Triggers are system events that will cause the transition '
-                'to be applied.'
+                message='Triggers are system events that will cause the '
+                'transition to be applied.'
             ), include_label=True, label=_(message='Triggers'),
             source=WorkflowTransition
         )
+
+        # Workflow template transition field
 
         SourceColumn(
             attribute='name', is_identifier=True, is_sortable=True,
@@ -522,19 +554,6 @@ class DocumentStatesApp(MayanAppConfig):
         SourceColumn(
             attribute='widget_kwargs', include_label=True, is_sortable=True,
             source=WorkflowTransitionField
-        )
-
-        SourceColumn(
-            func=lambda context: context['object'].get_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'), order=99,
-            source=WorkflowRuntimeProxy
-        )
-        SourceColumn(
-            func=lambda context: context['object'].get_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'), order=99,
-            source=WorkflowStateRuntimeProxy
         )
 
         # Workflow instance
