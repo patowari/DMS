@@ -228,6 +228,7 @@ msgstr "Sikeres jelszó-visszaállítás a következő felhasználóhoz: %s ."
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
+"Hiba a \"%(user)s\" felhasználó jelszavának visszaállítása során: %(error)s"
 
 #: views/impersonation_views.py:87
 #, python-format

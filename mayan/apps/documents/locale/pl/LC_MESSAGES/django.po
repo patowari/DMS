@@ -1281,7 +1281,7 @@ msgstr "ID dokumentu dla nowego dokumentu."
 #: serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
 msgid "Document type ID"
-msgstr ""
+msgstr "ID Typu dokumentu"
 
 #: serializers/document_serializers.py:35
 msgid "Document change type URL"

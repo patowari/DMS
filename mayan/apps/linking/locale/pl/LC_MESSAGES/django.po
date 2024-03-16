@@ -259,7 +259,7 @@ msgstr ""
 
 #: serializers.py:50 serializers.py:59
 msgid "Document type ID"
-msgstr ""
+msgstr "ID Typu dokumentu"
 
 #: serializers.py:58
 msgid "Primary key of the document type to remove from the smart link."
@@ -271,15 +271,15 @@ msgstr ""
 
 #: serializers.py:70
 msgid "Document types URL"
-msgstr ""
+msgstr "Typy dokumentów URL"
 
 #: serializers.py:74
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adres URL dodawania typów dokumentów"
 
 #: serializers.py:78
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adres URL usuwania typów dokumentów"
 
 #: serializers.py:105
 msgid "Resolved smart link URL"

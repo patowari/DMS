@@ -9,6 +9,7 @@
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # tomkolp, 2024
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -174,7 +175,7 @@ msgstr "Wyświetlono maksymalną liczbę znaków"
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Pozycja, w której będą wyświetlane komunikaty systemowe."
 
 #: settings.py:40
 msgid ""
@@ -187,12 +188,16 @@ msgstr ""
 msgid ""
 "Maximum number of requests that can be made before throttling is enabled."
 msgstr ""
+"Maksymalna liczba żądań, które mogą być wykonane przed włączeniem "
+"ograniczenia przepustowości."
 
 #: settings.py:54
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Czas w milisekundach, po którym ograniczone żądanie zostanie wyczyszczone, "
+"umożliwiając wykonanie dodatkowego żądania."
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"

@@ -816,15 +816,15 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:13
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adres URL dodawania typów dokumentów"
 
 #: serializers/workflow_template_serializers.py:18
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adres URL usuwania typów dokumentów"
 
 #: serializers/workflow_template_serializers.py:23
 msgid "Document types URL"
-msgstr ""
+msgstr "Typy dokumentów URL"
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"
@@ -845,7 +845,7 @@ msgstr ""
 #: serializers/workflow_template_serializers.py:66
 #: serializers/workflow_template_serializers.py:75
 msgid "Document type ID"
-msgstr ""
+msgstr "ID Typu dokumentu"
 
 #: serializers/workflow_template_serializers.py:74
 msgid "Primary key of the document type to remove from the workflow."

@@ -38,7 +38,7 @@ msgid ""
 "way Mayan EDMS categorizes documents."
 msgstr ""
 "Mỗi tài liệu tải lên phải được gán vào một kiểu tài liệu, đây là cách cơ bản"
-" Mayan EDMS phân loại tài liệu"
+" Mayan EDMS phân loại tài liệu."
 
 #: apps.py:395
 msgid "File comments"

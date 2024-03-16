@@ -156,6 +156,9 @@ msgid ""
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"Ogłoszenia wyświetlane są w widoku logowania. Za pomocą ogłoszeń możesz "
+"przekazywać użytkownikom informacje na temat organizacji, ogłoszenia lub "
+"wskazówki dotyczące użytkowania."
 
 #: views.py:126
 msgid "No announcements available"
