@@ -5,6 +5,7 @@
 # 
 # Translators:
 # tomkolp, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -22,15 +23,15 @@ msgstr ""
 
 #: apps.py:17 settings.py:8
 msgid "Authentication OIDC"
-msgstr ""
+msgstr "Uwierzytelnianie OIDC"
 
 #: authentication_backends.py:97
 msgid "Login via OIDC"
-msgstr ""
+msgstr "Logowanie przez OIDC"
 
 #: links.py:22
 msgid "OIDC user details"
-msgstr ""
+msgstr "Szczegóły użytkownika OIDC"
 
 #: settings.py:14
 msgid "URL for the OIDC user profile page."

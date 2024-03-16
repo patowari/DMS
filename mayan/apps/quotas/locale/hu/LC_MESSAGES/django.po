@@ -5,7 +5,7 @@
 # 
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -79,6 +79,8 @@ msgid ""
 "Apply to all document types. Enabling this, the quota will ignore the "
 "individual document type selection."
 msgstr ""
+"Minden dokumentumtípusra vonatkozik. Ennek engedélyezésével a kvóta "
+"figyelmen kívül hagyja az egyedi dokumentumtípus kiválasztását."
 
 #: mixins.py:26
 msgid "Document types"

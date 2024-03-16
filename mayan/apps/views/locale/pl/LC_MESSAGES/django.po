@@ -214,32 +214,32 @@ msgstr ""
 #: view_mixins.py:455
 #, python-format
 msgid "Operation performed on %(count)d objects."
-msgstr ""
+msgstr "Operację przeprowadzono na %(count)d obiektach."
 
 #: view_mixins.py:456
 #, python-format
 msgid "Operation performed on %(object)s."
-msgstr ""
+msgstr "Operacja wykonana na %(object)s."
 
 #: view_mixins.py:457
 #, python-format
 msgid "Operation performed on %(count)d object."
-msgstr ""
+msgstr "Operację przeprowadzono na %(count)d obiekcie."
 
 #: view_mixins.py:458
 #, python-format
 msgid "Perform operation on %(count)d objects."
-msgstr ""
+msgstr "Wykonaj operację na %(count)d obiektach."
 
 #: view_mixins.py:459
 #, python-format
 msgid "Perform operation on %(object)s."
-msgstr ""
+msgstr "Wykonaj operację na %(object)s."
 
 #: view_mixins.py:460
 #, python-format
 msgid "Perform operation on %(count)d object."
-msgstr ""
+msgstr "Wykonaj operację na %(count)d obiekcie."
 
 #: view_mixins.py:544
 msgid "Object"

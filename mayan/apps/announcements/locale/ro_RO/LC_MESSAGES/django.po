@@ -158,6 +158,9 @@ msgid ""
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"Anunțurile sunt afișate în ecranul de conectare. Puteți folosi anunțuri "
+"pentru a transmite informații despre organizația dvs., anunțuri sau ghiduri "
+"de utilizare pentru utilizatorii dvs."
 
 #: views.py:125
 msgid "No announcements available"

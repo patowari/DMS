@@ -60,7 +60,7 @@ msgstr "Suprascris"
 
 #: classes.py:417
 msgid "Is this setting being overridden by an environment variable?"
-msgstr ""
+msgstr "Această setare este suprascrisă de o variabilă de mediu?"
 
 #: forms.py:28
 msgid "Enter the new setting value."

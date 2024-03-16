@@ -114,27 +114,27 @@ msgstr "Wyświetl instancje linków"
 
 #: serializers.py:16
 msgid "Primary key of the document type to add to the web link."
-msgstr ""
+msgstr "Podstawowy klucz typu dokumentu do dodania do linku internetowego."
 
 #: serializers.py:17 serializers.py:26
 msgid "Document type ID"
-msgstr ""
+msgstr "ID Typu dokumentu"
 
 #: serializers.py:25
 msgid "Primary key of the document type to remove from the web link."
-msgstr ""
+msgstr "Podstawowy klucz typu dokumentu do usunięcia z linku internetowego."
 
 #: serializers.py:33
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adres URL dodawania typów dokumentów"
 
 #: serializers.py:37
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adres URL usuwania typów dokumentów"
 
 #: serializers.py:41
 msgid "Document types URL"
-msgstr ""
+msgstr "Typy dokumentów URL"
 
 #: serializers.py:48 serializers.py:63
 msgid "URL"
@@ -142,7 +142,7 @@ msgstr "URL"
 
 #: serializers.py:66
 msgid "Navigation URL"
-msgstr ""
+msgstr "Adres URL nawigacji"
 
 #: views.py:33
 msgid "Web links enabled"

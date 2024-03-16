@@ -700,6 +700,8 @@ msgid ""
 "Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
+"Az tartalmak olyan fájlok, amelyek bizonyos átalakításokkal együtt "
+"használhatók."
 
 #: views/asset_views.py:143
 msgid "No assets available"

@@ -7,6 +7,7 @@
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # tomkolp, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -24,7 +25,7 @@ msgstr ""
 
 #: apps.py:23 events.py:6
 msgid "Authentication OTP"
-msgstr ""
+msgstr "Uwierzytelnianie OTP"
 
 #: events.py:10
 msgid "OTP disabled"
@@ -44,7 +45,7 @@ msgstr "Token TOTP"
 
 #: forms.py:86
 msgid "OTP enabled?"
-msgstr ""
+msgstr "Hasło jednorazowe OTP włączone?"
 
 #: forms.py:87
 msgid "Yes"
@@ -59,6 +60,8 @@ msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
 msgstr ""
+"Skanuj kod QR lub wprowadź sekret w swoim urządzeniu uwierzytelniającym. Nie"
+" udostępniaj tego sekretu, traktuj go jak hasło."
 
 #: forms.py:106 forms.py:111
 msgid "Secret"
@@ -68,26 +71,28 @@ msgstr "Sekret"
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr ""
+"Wprowadź odpowiedni token, aby potwierdzić, że sekret został poprawnie "
+"zapisany."
 
 #: forms.py:120
 msgid "Token"
-msgstr ""
+msgstr "Token"
 
 #: forms.py:155
 msgid "Token is incorrect for the specified secret."
-msgstr ""
+msgstr "Token jest nieprawidłowy dla określonego sekretu."
 
 #: links.py:29
 msgid "OTP details"
-msgstr ""
+msgstr "Szczegóły OTP"
 
 #: links.py:33
 msgid "Disable OTP"
-msgstr ""
+msgstr "Wyłącz OTP"
 
 #: links.py:37
 msgid "Enable OTP"
-msgstr ""
+msgstr "Włącz OTP"
 
 #: models.py:17
 msgid "User"
@@ -95,15 +100,15 @@ msgstr "Użytkownik"
 
 #: models.py:21
 msgid "16 character, base32 encoded random string."
-msgstr ""
+msgstr "16-znakowy, zakodowany w base32 losowy ciąg."
 
 #: models.py:26
 msgid "User OTP data"
-msgstr ""
+msgstr "Dane OTP użytkownika"
 
 #: models.py:27
 msgid "Users OTP data"
-msgstr ""
+msgstr "Dane OTP użytkowników"
 
 #: views.py:28
 #, python-format
@@ -117,15 +122,15 @@ msgstr ""
 
 #: views.py:56
 msgid "OTP disable successfully."
-msgstr ""
+msgstr "OTP wyłączono pomyślnie."
 
 #: views.py:80
 msgid "OTP is already enabled."
-msgstr ""
+msgstr "OTP jest już włączone."
 
 #: views.py:96
 msgid "OTP enabled successfully."
-msgstr ""
+msgstr "OTP włączono pomyślnie."
 
 #: views.py:105
 #, python-format

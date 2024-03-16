@@ -61,7 +61,7 @@ msgstr "Forum"
 
 #: links.py:50
 msgid "Knowledge base"
-msgstr ""
+msgstr "Bază de cunoștințe"
 
 #: links.py:53 views.py:55
 msgid "License"
@@ -193,6 +193,11 @@ msgid ""
 " containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"O listă de șiruri care desemnează toate aplicațiile care sunt instalate în "
+"afara celor instalate în mod normal de Mayan EDMS. Fiecare șir ar trebui să "
+"fie o cale Python punctată către: o clasă de configurare a aplicației (de "
+"preferat) sau un pachet care conține o aplicație. Aceste aplicații vor fi "
+"instalate după aplicațiile implicite. Exemplu: [';app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""

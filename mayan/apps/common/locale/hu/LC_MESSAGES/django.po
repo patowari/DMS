@@ -191,6 +191,12 @@ msgid ""
 " containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"Az összes olyan alkalmazást jelölő karakterláncok listája, amelyek a Mayan "
+"EDMS által szokásosan telepítetteken kívül telepítve vannak. Minden "
+"karakterláncnak egy pontozott Python-útvonalnak kell lennie: egy alkalmazás "
+"konfigurációs osztályához (előnyben részesített), vagy egy alkalmazást "
+"tartalmazó csomaghoz. Ezek az alkalmazások az alapértelmezett alkalmazások "
+"után lesznek telepítve. Példa: [&#39;app_1&#39;, &#39;app_2&#39;]"
 
 #: settings.py:70
 msgid ""

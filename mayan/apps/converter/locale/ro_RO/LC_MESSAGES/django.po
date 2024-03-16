@@ -508,7 +508,7 @@ msgstr "Inserați un activ (coordonate absolute)"
 
 #: transformations.py:210
 msgid "Paste an asset (percent coordinates)"
-msgstr ""
+msgstr "Inserați un activ (coordonate procentuale)"
 
 #: transformations.py:224
 msgid "Crop"
@@ -552,7 +552,7 @@ msgstr "Poziția din partea de jos în pixeli."
 
 #: transformations.py:422
 msgid "Draw rectangle (percent coordinates)"
-msgstr ""
+msgstr "Desenați dreptunghi (coordonate procentuale)"
 
 #: transformations.py:427
 msgid "Left side location in percent."
@@ -706,6 +706,8 @@ msgid ""
 "Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
+"Activele sunt fișiere care pot fi utilizate împreună cu anumite "
+"transformări."
 
 #: views/asset_views.py:143
 msgid "No assets available"

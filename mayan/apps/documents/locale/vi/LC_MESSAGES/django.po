@@ -38,7 +38,7 @@ msgid ""
 "way Mayan EDMS categorizes documents."
 msgstr ""
 "Mỗi tài liệu tải lên phải được gán vào một kiểu tài liệu, đây là cách cơ bản"
-" Mayan EDMS phân loại tài liệu"
+" Mayan EDMS phân loại tài liệu."
 
 #: apps.py:401
 msgid "File comments"
@@ -857,7 +857,8 @@ msgstr "Đơn vị thời gian đưa vào thùng rác"
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
-msgstr "Thời lượng mà sau đó các tài liệu của kiểu này sẽ bị xóa."
+msgstr ""
+"Thời lượng mà sau đó các tài liệu của kiểu này trong thùng rác sẽ bị xóa."
 
 #: models/document_type_models.py:76
 msgid "Delete time period"

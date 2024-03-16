@@ -6,7 +6,7 @@
 # Translators:
 # Stefaniu Criste <gupi@hangar.ro>, 2023
 # Badea Gabriel <gcbadea@gmail.com>, 2023
-# Harald Ersch, 2023
+# Harald Ersch, 2024
 # 
 msgid ""
 msgstr ""
@@ -229,6 +229,7 @@ msgstr "Resetarea reușită a parolei pentru utilizatorul: %s."
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""
+"Eroare la resetarea parolei pentru utilizatorul  \" %(user)s ”: %(error)s"
 
 #: views/impersonation_views.py:87
 #, python-format

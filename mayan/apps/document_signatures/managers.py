@@ -77,7 +77,7 @@ class EmbeddedSignatureManager(models.Manager):
                 raise
             else:
                 # The result of key.sign_file does not contain the
-                # signtarure ID.
+                # signtature ID.
                 # Verify the signed file to obtain the signature ID.
                 temporary_file_object.seek(0)
                 result = Key.objects.verify_file(

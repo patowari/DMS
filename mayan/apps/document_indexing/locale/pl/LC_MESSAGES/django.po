@@ -9,6 +9,7 @@
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # tomkolp, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -406,7 +407,7 @@ msgstr ""
 
 #: serializers.py:249
 msgid "Document types URL"
-msgstr ""
+msgstr "Typy dokumentów URL"
 
 #: serializers.py:255
 msgid "URL of the API endpoint to add document types to this index template."
@@ -414,7 +415,7 @@ msgstr ""
 
 #: serializers.py:257
 msgid "Document types add URL"
-msgstr ""
+msgstr "Adres URL dodawania typów dokumentów"
 
 #: serializers.py:263
 msgid ""
@@ -423,7 +424,7 @@ msgstr ""
 
 #: serializers.py:265
 msgid "Document types remove URL"
-msgstr ""
+msgstr "Adres URL usuwania typów dokumentów"
 
 #: serializers.py:270
 msgid "Index template root node ID"
@@ -443,7 +444,7 @@ msgstr ""
 
 #: serializers.py:328 serializers.py:337
 msgid "Document type ID"
-msgstr ""
+msgstr "ID Typu dokumentu"
 
 #: serializers.py:336
 msgid "Primary key of the document type to remove from the index template."

@@ -5,7 +5,7 @@
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2023
-# Csaba Tarjányi, 2023
+# Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
@@ -156,6 +156,9 @@ msgid ""
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"A közleményeka bejelentkezési nézetben jelennek meg. A közlemények "
+"segítségével információkat közölhet szervezetéről, bejelentéseket vagy "
+"használati irányelveket a felhasználók számára."
 
 #: views.py:125
 msgid "No announcements available"
