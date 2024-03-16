@@ -126,8 +126,7 @@ class APIUserListView(generics.ListCreateAPIView):
     mayan_object_permission_map = {'GET': permission_user_view}
     mayan_view_permission_map = {'POST': permission_user_create}
     ordering_fields = (
-        'email', 'first_name', 'last_name', 'has_usable_password',
-        'id', 'is_active', 'username'
+        'email', 'first_name', 'last_name', 'id', 'is_active', 'username'
     )
     serializer_class = UserSerializer
     source_queryset = get_user_queryset()

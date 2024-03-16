@@ -123,7 +123,7 @@ class WorkflowTransitionField(
     )
     required = models.BooleanField(
         default=False, help_text=_(
-            'Whether this fields needs to be filled out or not to proceed.'
+            'Whether this field needs to be filled out or not to proceed.'
         ), verbose_name=_(message='Required')
     )
     widget = models.PositiveIntegerField(

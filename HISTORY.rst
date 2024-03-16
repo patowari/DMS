@@ -184,6 +184,11 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
+4.5.11 (XXXX-XX-XX)
+===================
+- Ensure credentials ``post_processing`` method is called.
+- Fix periodic source document type field to use the intended Select2 widget.
+
 4.5.10 (2024-03-03)
 ===================
 - Include changes from version 4.4.13.
@@ -670,6 +675,13 @@
   - Test improvements.
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
+
+4.4.14 (XXXX-XX-XX)
+===================
+- Fix the document file and the user API list view ordering fields. The
+  fields were ``mime_type`` to ``mimetype`` and remove
+  ``has_usable_password`` which is method and not a field.
+- Fix workflow transition field model typo.
 
 4.4.13 (2024-03-01)
 ===================
