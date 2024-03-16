@@ -71,6 +71,7 @@
 - Improve the help text of the staging source preview fields.
 - Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
   and avoid JavaScript errors for non authenticated users.
+- Add thousand separator to list header number details.
 
 4.6.2 (2024-03-04)
 ==================
