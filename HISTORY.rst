@@ -2,6 +2,7 @@
 ===================
 - Ensure credentials ``post_processing`` method is called.
 - Fix periodic source document type field to use the intended Select2 widget.
+- Fix workflow transition field model typo.
 
 4.5.10 (2024-03-03)
 ===================
