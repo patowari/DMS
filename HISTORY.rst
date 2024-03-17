@@ -681,7 +681,6 @@
 - Fix the document file and the user API list view ordering fields. The
   fields were ``mime_type`` to ``mimetype`` and remove
   ``has_usable_password`` which is method and not a field.
-- Fix workflow transition field model typo.
 
 4.4.13 (2024-03-01)
 ===================
