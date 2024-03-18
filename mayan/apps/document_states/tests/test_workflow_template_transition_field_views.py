@@ -1,10 +1,20 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from ..events import event_workflow_template_edited
+from ..events import (
+    event_workflow_template_edited, event_workflow_instance_transitioned
+)
 from ..permissions import (
+    permission_workflow_instance_transition,
     permission_workflow_template_edit, permission_workflow_template_view
 )
 
+from .literals import (
+    TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_DATA,
+    TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_LIST,
+    TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_MARK_UP
+)
+
+from .mixins.workflow_instance_mixins import WorkflowInstanceViewTestMixin
 from .mixins.workflow_template_transition_field_mixins import (
     WorkflowTemplateTransitionFieldViewTestMixin
 )
@@ -184,6 +194,131 @@ class WorkflowTemplateTransitionFieldViewTestCase(
         self.assertContains(
             response=response, status_code=200,
             text=self._test_workflow_template_transition_field.label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+
+class WorkflowTemplateTransitionFieldLookupViewTestCase(
+    WorkflowInstanceViewTestMixin,
+    WorkflowTemplateTransitionFieldViewTestMixin, GenericViewTestCase
+):
+    def setUp(self):
+        super().setUp()
+        self._create_test_workflow_template(add_test_document_type=True)
+        self._create_test_workflow_template_state()
+        self._create_test_workflow_template_state()
+        self._create_test_workflow_template_transition()
+
+    def test_lookup_field(self):
+        self._create_test_workflow_template_transition_field(
+            extra_data={
+                'lookup': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_DATA
+            }
+        )
+
+        self._create_test_document_stub()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_workflow_instance_transition
+        )
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_instance_transition
+        )
+
+        self._clear_events()
+
+        response = self._request_test_workflow_instance_transition_execute_post_view(
+            extra_data={
+                self._test_workflow_template_transition_field.name: TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_LIST[0]
+            }
+        )
+        self.assertEqual(response.status_code, 302)
+
+        self.assertEqual(
+            self._test_workflow_instance.get_current_state(),
+            self._test_workflow_template_state_list[1]
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, self._test_document)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(
+            events[0].target, self._test_document.workflows.first()
+        )
+        self.assertEqual(
+            events[0].verb, event_workflow_instance_transitioned.id
+        )
+
+    def test_lookup_field_get_options(self):
+        self._create_test_workflow_template_transition_field(
+            extra_data={
+                'lookup': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_DATA
+            }
+        )
+
+        self._create_test_document_stub()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_workflow_instance_transition
+        )
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_instance_transition
+        )
+
+        self._clear_events()
+
+        response = self._request_test_workflow_instance_transition_execute_get_view()
+        self.assertContains(
+            response=response, status_code=200,
+            text=TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_MARK_UP
+        )
+
+        self.assertEqual(
+            self._test_workflow_instance.get_current_state(),
+            self._test_workflow_template_state_list[0]
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_lookup_field_incorrect_value(self):
+        self._create_test_workflow_template_transition_field(
+            extra_data={
+                'lookup': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LOOKUP_CHOICE_DATA
+            }
+        )
+
+        self._create_test_document_stub()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_workflow_instance_transition
+        )
+        self.grant_access(
+            obj=self._test_workflow_template,
+            permission=permission_workflow_instance_transition
+        )
+
+        self._clear_events()
+
+        response = self._request_test_workflow_instance_transition_execute_post_view(
+            extra_data={
+                self._test_workflow_template_transition_field.name: 'bad-value'
+            }
+        )
+        self.assertEqual(response.status_code, 200)
+
+        self.assertEqual(
+            self._test_workflow_instance.get_current_state(),
+            self._test_workflow_template_state_list[0]
         )
 
         events = self._get_test_events()

@@ -8,6 +8,9 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
+from ..forms.workflow_template_transition_field_forms import (
+    WorkflowTransitionFieldForm
+)
 from ..icons import (
     icon_workflow_template_transition_field,
     icon_workflow_template_transition_field_create,
@@ -28,10 +31,7 @@ class WorkflowTemplateTransitionFieldCreateView(
     external_object_class = WorkflowTransition
     external_object_permission = permission_workflow_template_edit
     external_object_pk_url_kwarg = 'workflow_template_transition_id'
-    fields = (
-        'name', 'label', 'field_type', 'help_text', 'required', 'widget',
-        'widget_kwargs'
-    )
+    form_class = WorkflowTransitionFieldForm
     view_icon = icon_workflow_template_transition_field_create
 
     def get_extra_context(self):
@@ -94,10 +94,7 @@ class WorkflowTemplateTransitionFieldDeleteView(SingleObjectDeleteView):
 
 
 class WorkflowTemplateTransitionFieldEditView(SingleObjectEditView):
-    fields = (
-        'name', 'label', 'field_type', 'help_text', 'required', 'widget',
-        'widget_kwargs'
-    )
+    form_class = WorkflowTransitionFieldForm
     model = WorkflowTransitionField
     object_permission = permission_workflow_template_edit
     pk_url_kwarg = 'workflow_template_transition_field_id'

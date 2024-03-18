@@ -72,8 +72,6 @@ class WorkflowInstanceModelTestCase(
     def test_workflow_instance_method_get_absolute_url(self):
         self._create_test_document_stub()
 
-        self._test_workflow_instance = self._test_document.workflows.first()
-
         self._clear_events()
 
         self._test_workflow_instance.get_absolute_url()
@@ -93,8 +91,6 @@ class WorkflowInstanceModelTestCase(
             self._test_document.workflows.count(), 1
         )
 
-        _test_workflow_instance = self._test_document.workflows.first()
-
         events = self._get_test_events()
         self.assertEqual(events.count(), 2)
 
@@ -106,8 +102,8 @@ class WorkflowInstanceModelTestCase(
         self.assertEqual(events[0].verb, event_document_created.id)
 
         self.assertEqual(events[1].action_object, self._test_document)
-        self.assertEqual(events[1].actor, _test_workflow_instance)
-        self.assertEqual(events[1].target, _test_workflow_instance)
+        self.assertEqual(events[1].actor, self._test_workflow_instance)
+        self.assertEqual(events[1].target, self._test_workflow_instance)
         self.assertEqual(events[1].verb, event_workflow_instance_created.id)
 
     def test_workflow_template_no_auto_launch(self):
@@ -137,7 +133,6 @@ class WorkflowInstanceModelTestCase(
 
         self._create_test_document_stub()
 
-        self._test_workflow_instance = self._test_document.workflows.first()
         self.assertEqual(
             self._test_workflow_instance.get_transition_choices().count(), 1
         )
@@ -165,8 +160,6 @@ class WorkflowInstanceModelTestCase(
         self._clear_events()
 
         self._create_test_document_stub()
-
-        self._test_workflow_instance = self._test_document.workflows.first()
 
         self._test_workflow_template_transition.condition = '{{ invalid_variable }}'
         self._test_workflow_template_transition.save()
@@ -209,8 +202,6 @@ class WorkflowInstanceModelTestCase(
         self._clear_events()
 
         self._create_test_document_stub()
-
-        self._test_workflow_instance = self._test_document.workflows.first()
 
         self._test_workflow_template_transition.condition = '{{ workflow_instance }}'
         self._test_workflow_template_transition.save()

@@ -19,6 +19,7 @@ from .workflow_instance_model_mixins import (
     WorkflowInstanceLogEntryBusinessLogicMixin
 )
 from .workflow_models import Workflow
+from .workflow_transition_field_models import WorkflowTransitionField
 
 __all__ = ('WorkflowInstance', 'WorkflowInstanceLogEntry')
 
@@ -119,10 +120,28 @@ class WorkflowInstanceLogEntry(
         return str(self.transition)
 
     def clean(self):
-        if self.transition not in self.workflow_instance.get_transition_choices(user=self.user):
+        queryset = self.workflow_instance.get_transition_choices(
+            user=self.user
+        )
+        if self.transition not in queryset:
             raise ValidationError(
                 message=_(message='Not a valid transition choice.')
             )
+
+        extra_data = self.loads()
+
+        for field_name, value in extra_data.items():
+            try:
+                field = self.transition.fields.get(name=field_name)
+            except WorkflowTransitionField.DoesNotExist:
+                """
+                Allow extra data keys that do not match to a know field
+                to allow backward compatibility. This may change in the
+                future.
+                Possible deprecation.
+                """
+            else:
+                field.validate_value(value=value, workflow_instance=self)
 
     def save(self, *args, **kwargs):
         result = super().save(*args, **kwargs)

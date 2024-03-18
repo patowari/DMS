@@ -2,7 +2,8 @@ from django import forms
 
 from mayan.apps.templating.fields import ModelTemplateField
 
-from ..models import WorkflowInstance, WorkflowTransition
+from ..models.workflow_instance_models import WorkflowInstance
+from ..models.workflow_transition_models import WorkflowTransition
 
 
 class WorkflowTransitionForm(forms.ModelForm):

@@ -212,17 +212,16 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 0
+            self._test_workflow_instance.log_entries.count(), 0
         )
 
         events = self._get_test_events()
@@ -233,17 +232,16 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template_transition,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 0
+            self._test_workflow_instance.log_entries.count(), 0
         )
 
         events = self._get_test_events()
@@ -258,17 +256,16 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template_transition,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 1
+            self._test_workflow_instance.log_entries.count(), 1
         )
 
         events = self._get_test_events()
@@ -292,19 +289,18 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template_transition,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._test_document.delete()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 0
+            self._test_workflow_instance.log_entries.count(), 0
         )
 
         events = self._get_test_events()
@@ -315,17 +311,16 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 0
+            self._test_workflow_instance.log_entries.count(), 0
         )
 
         events = self._get_test_events()
@@ -340,17 +335,16 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 1
+            self._test_workflow_instance.log_entries.count(), 1
         )
 
         events = self._get_test_events()
@@ -374,19 +368,18 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._test_document.delete()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
-            workflow_instance=workflow_instance
+            workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 0
+            self._test_workflow_instance.log_entries.count(), 0
         )
 
         events = self._get_test_events()
@@ -401,24 +394,24 @@ class WorkflowInstanceAPIViewTestCase(
             obj=self._test_workflow_template,
             permission=permission_workflow_instance_transition
         )
-        workflow_instance = self._test_document.workflows.first()
 
         self._clear_events()
 
         response = self._request_test_workflow_instance_log_entry_create_api_view(
             extra_data={
                 'extra_data': TEST_WORKFLOW_INSTANCE_LOG_ENTRY_EXTRA_DATA
-            }, workflow_instance=workflow_instance
+            }, workflow_instance=self._test_workflow_instance
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(
-            workflow_instance.log_entries.count(), 1
+            self._test_workflow_instance.log_entries.count(), 1
         )
-        workflow_instance.refresh_from_db()
+
+        self._test_workflow_instance.refresh_from_db()
 
         self.assertEqual(
-            workflow_instance.get_context()['workflow_instance_context'],
+            self._test_workflow_instance.get_context()['workflow_instance_context'],
             json.loads(s=TEST_WORKFLOW_INSTANCE_LOG_ENTRY_EXTRA_DATA)
         )
 

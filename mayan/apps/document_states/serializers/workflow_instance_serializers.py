@@ -1,7 +1,9 @@
 import json
 
+from django.core.exceptions import ValidationError as DjangoValidationError
 from django.utils.translation import gettext_lazy as _
 
+from rest_framework.exceptions import ValidationError
 from rest_framework.reverse import reverse
 
 from mayan.apps.rest_api import serializers
@@ -121,16 +123,35 @@ class WorkflowInstanceLogEntrySerializer(serializers.ModelSerializer):
             user=self.context['request'].user
         )
 
+    def validate(self, attrs):
+        attrs['workflow_instance'] = self.context['workflow_instance']
+
+        transition = attrs['transition_id']
+        attrs['transition_id'] = transition.pk
+
+        instance = WorkflowInstanceLogEntry(**attrs)
+        try:
+            instance.full_clean()
+        except DjangoValidationError as exception:
+            raise ValidationError(detail=exception)
+        else:
+            # Restore the original value.
+            attrs['transition_id'] = transition
+
+        return attrs
+
 
 class WorkflowInstanceSerializer(serializers.ModelSerializer):
     workflow_template = WorkflowTemplateSerializer(
-        label=_(message='Workflow template'), read_only=True, source='workflow'
+        label=_(message='Workflow template'), read_only=True,
+        source='workflow'
     )
     context = serializers.SerializerMethodField(
         label=_(message='Context')
     )
     current_state = WorkflowTemplateStateSerializer(
-        label=_(message='Current state'), read_only=True, source='get_current_state'
+        label=_(message='Current state'), read_only=True,
+        source='get_current_state'
     )
     document_url = serializers.SerializerMethodField(
         label=_(message='Document URL')

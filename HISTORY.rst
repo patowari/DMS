@@ -74,6 +74,8 @@
 - Add thousand separator to list header number details.
 - Split workflow template fields and workflow template triggers into their
   own modules.
+- Support workflow template field lookups. Specifying a list of options
+  automatically changes the widget of the field to a select.
 
 4.6.2 (2024-03-04)
 ==================
@@ -265,6 +267,7 @@
 ===================
 - Ensure credentials ``post_processing`` method is called.
 - Fix periodic source document type field to use the intended Select2 widget.
+- Fix workflow transition field model typo.
 
 4.5.10 (2024-03-03)
 ===================
@@ -758,7 +761,6 @@
 - Fix the document file and the user API list view ordering fields. The
   fields were ``mime_type`` to ``mimetype`` and remove
   ``has_usable_password`` which is method and not a field.
-- Fix workflow transition field model typo.
 
 4.4.13 (2024-03-01)
 ===================

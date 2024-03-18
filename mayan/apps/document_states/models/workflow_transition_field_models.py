@@ -34,8 +34,8 @@ class WorkflowTransitionField(
     )
     name = models.CharField(
         help_text=_(
-            message='The name that will be used to identify this field in other '
-            'parts of the workflow system.'
+            message='The name that will be used to identify this field in '
+            'other parts of the workflow system.'
         ), max_length=128, verbose_name=_(message='Internal name')
     )
     label = models.CharField(
@@ -43,21 +43,28 @@ class WorkflowTransitionField(
             message='The field name that will be shown on the user interface.'
         ), max_length=128, verbose_name=_(message='Label')
     )
+    lookup = models.TextField(
+        blank=True, null=True, help_text=_(
+            message='Enter a template to render. Must result in a comma '
+            'delimited string.'
+        ), verbose_name=_(message='Lookup')
+    )
     help_text = models.TextField(
         blank=True, help_text=_(
-            message='An optional message that will help users better understand the '
-            'purpose of the field and data to provide.'
+            message='An optional message that will help users better '
+            'understand the purpose of the field and data to provide.'
         ), verbose_name=_(message='Help text')
     )
     required = models.BooleanField(
         default=False, help_text=_(
-            message='Whether this field needs to be filled out or not to proceed.'
+            message='Whether this field needs to be filled out or not to '
+            'proceed.'
         ), verbose_name=_(message='Required')
     )
     widget = models.PositiveIntegerField(
         blank=True, choices=WIDGET_CLASS_CHOICES, help_text=_(
-            message='An optional class to change the default presentation of the '
-            'field.'
+            message='An optional class to change the default presentation of '
+            'the field.'
         ), null=True, verbose_name=_(message='Widget class')
     )
     widget_kwargs = models.TextField(

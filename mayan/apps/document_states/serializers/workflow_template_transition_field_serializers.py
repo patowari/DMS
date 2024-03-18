@@ -52,9 +52,10 @@ class WorkflowTransitionFieldSerializer(
 
     class Meta:
         fields = (
-            'field_type', 'name', 'help_text', 'id', 'label', 'required',
-            'url', 'widget', 'widget_kwargs', 'workflow_template_url',
-            'workflow_transition_id', 'workflow_transition_url'
+            'field_type', 'name', 'help_text', 'id', 'label', 'lookup',
+            'required', 'url', 'widget', 'widget_kwargs',
+            'workflow_template_url', 'workflow_transition_id',
+            'workflow_transition_url'
         )
         model = WorkflowTransitionField
         read_only_fields = (

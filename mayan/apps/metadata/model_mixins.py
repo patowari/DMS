@@ -1,5 +1,3 @@
-import shlex
-
 from django.apps import apps
 
 from mayan.apps.templating.classes import Template
@@ -20,16 +18,6 @@ class DocumentMetadataBusinessLogicMixin:
 
 
 class MetadataTypeBusinessLogicMixin:
-    @staticmethod
-    def comma_splitter(string):
-        splitter = shlex.shlex(string, posix=True)
-        splitter.whitespace = ','
-        splitter.whitespace_split = True
-        splitter.commenters = ''
-        return [
-            str(e) for e in splitter
-        ]
-
     def get_default_value(self):
         template = Template(template_string=self.default)
         return template.render()

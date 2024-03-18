@@ -107,19 +107,26 @@ class WorkflowTemplateTransitionFieldAPIViewTestMixin(
 class WorkflowTemplateTransitionFieldViewTestMixin(
     WorkflowTemplateTransitionFieldTestMixin
 ):
-    def _request_workflow_template_transition_field_create_view(self):
+    def _request_workflow_template_transition_field_create_view(
+        self, extra_data=None
+    ):
         self._test_object_track()
+
+        data = {
+            'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
+            'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,
+            'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
+            'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME
+        }
+
+        if extra_data:
+            data.update(extra_data)
 
         response = self.post(
             viewname='document_states:workflow_template_transition_field_create',
             kwargs={
                 'workflow_template_transition_id': self._test_workflow_template_transition.pk
-            }, data={
-                'field_type': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_TYPE,
-                'help_text': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_HELP_TEXT,
-                'label': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_LABEL,
-                'name': TEST_WORKFLOW_TEMPLATE_TRANSITION_FIELD_NAME
-            }
+            }, data=data
         )
 
         self._test_object_set()

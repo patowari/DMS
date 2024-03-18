@@ -478,7 +478,7 @@ class WorkflowInstanceTransitionViewTestCase(
     def test_workflow_instance_transition_execute_view_no_permission(self):
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
@@ -497,7 +497,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
@@ -516,7 +516,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
@@ -539,7 +539,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
@@ -567,7 +567,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
@@ -590,7 +590,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
@@ -624,7 +624,7 @@ class WorkflowInstanceTransitionViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
@@ -667,7 +667,7 @@ class WorkflowInstanceTransitionFieldViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
@@ -701,7 +701,7 @@ class WorkflowInstanceTransitionFieldViewTestCase(
 
         self._clear_events()
 
-        response = self._request_test_workflow_instance_transition_execute_view()
+        response = self._request_test_workflow_instance_transition_execute_post_view()
         self.assertEqual(response.status_code, 404)
 
         self.assertEqual(
