@@ -77,6 +77,7 @@ class WorkflowTransitionField(
     )
 
     class Meta:
+        ordering = ('label',)
         unique_together = ('transition', 'name')
         verbose_name = _(message='Workflow transition field')
         verbose_name_plural = _(message='Workflow transition fields')
