@@ -1,5 +1,4 @@
-from django.apps import apps
-
+from mayan.apps.common.utils import comma_splitter
 from mayan.apps.templating.classes import Template
 
 from .classes import MetadataLookup
@@ -23,22 +22,21 @@ class MetadataTypeBusinessLogicMixin:
         return template.render()
 
     def get_lookup_values(self):
-        MetadataType = apps.get_model(
-            app_label='metadata', model_name='MetadataType'
-        )
-
         template = Template(template_string=self.lookup)
-        return MetadataType.comma_splitter(
-            template.render(
-                context=MetadataLookup.get_as_context()
-            )
-        )
+
+        metadata_lookup_context = MetadataLookup.get_as_context()
+
+        template_result = template.render(context=metadata_lookup_context)
+
+        return comma_splitter(string=template_result)
 
     def get_required_for(self, document_type):
         """
         Determine if the metadata type is required for the
         specified document type.
         """
-        return document_type.metadata.filter(
+        queryset = document_type.metadata.filter(
             required=True, metadata_type=self
-        ).exists()
+        )
+
+        return queryset.exists()
