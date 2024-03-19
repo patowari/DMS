@@ -143,7 +143,8 @@ class WorkflowBusinessLogicMixin:
     get_initial_state.short_description = _(message='Initial state')
 
     def launch_for(self, document, user=None):
-        if document.document_type in self.document_types.all():
+        queryset = self.document_types.all()
+        if queryset.filter(pk=document.document_type.pk).exists():
             try:
                 logger.info(
                     'Launching workflow %s for document %s', self, document

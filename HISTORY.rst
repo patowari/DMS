@@ -76,6 +76,7 @@
   own modules.
 - Support workflow template field lookups. Specifying a list of options
   automatically changes the widget of the field to a select.
+- Workflow query optimizations.
 
 4.6.2 (2024-03-04)
 ==================

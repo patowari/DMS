@@ -123,7 +123,7 @@ class WorkflowInstanceLogEntry(
         queryset = self.workflow_instance.get_transition_choices(
             user=self.user
         )
-        if self.transition not in queryset:
+        if not queryset.filter(pk=self.transition.pk).exists():
             raise ValidationError(
                 message=_(message='Not a valid transition choice.')
             )

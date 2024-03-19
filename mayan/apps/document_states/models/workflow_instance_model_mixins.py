@@ -24,7 +24,9 @@ class WorkflowInstanceBusinessLogicMixin:
                 }
             )
 
-            if now() > self.get_last_log_entry_datetime() + timedelta:
+            expiration_datetime = self.get_last_log_entry_datetime() + timedelta
+
+            if now() > expiration_datetime:
                 condition_context = {'workflow_instance': self}
 
                 if escalation.evaluate_condition(context=condition_context):
@@ -42,7 +44,8 @@ class WorkflowInstanceBusinessLogicMixin:
 
         try:
             queryset_transitions = self.get_transition_choices(user=user).all()
-            if transition in queryset_transitions:
+
+            if queryset_transitions.filter(pk=transition.pk).exists():
                 if extra_data:
                     context = self.loads()
                     context.update(extra_data)
