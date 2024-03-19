@@ -9,7 +9,7 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
 )
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from ..models import DocumentMetadata
+from ..models.metadata_instance_models import DocumentMetadata
 
 from .literals import (
     TEST_DEFAULT_VALUE, TEST_LOOKUP_TEMPLATE, TEST_LOOKUP_VALUE_CORRECT,

@@ -78,6 +78,7 @@
   automatically changes the widget of the field to a select.
 - Workflow query optimizations.
 - Sort workflow transition fields by their label.
+- Split metadata models.
 
 4.6.2 (2024-03-04)
 ==================

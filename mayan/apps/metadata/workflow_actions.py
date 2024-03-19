@@ -10,7 +10,8 @@ from mayan.apps.document_states.models.workflow_instance_models import (
     WorkflowInstance
 )
 
-from .models import DocumentMetadata, MetadataType
+from .models.metadata_instance_models import DocumentMetadata
+from .models.metadata_type_models import MetadataType
 from .permissions import (
     permission_document_metadata_add, permission_document_metadata_edit,
     permission_document_metadata_remove

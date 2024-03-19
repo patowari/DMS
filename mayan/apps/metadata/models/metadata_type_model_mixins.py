@@ -1,19 +1,7 @@
 from mayan.apps.common.utils import comma_splitter
 from mayan.apps.templating.classes import Template
 
-from .classes import MetadataLookup
-
-
-class DocumentMetadataBusinessLogicMixin:
-    @property
-    def is_required(self):
-        """
-        Return a boolean value of True of this metadata instance's parent
-        type is required for the stored document type.
-        """
-        return self.metadata_type.get_required_for(
-            document_type=self.document.document_type
-        )
+from ..classes import MetadataLookup
 
 
 class MetadataTypeBusinessLogicMixin:
@@ -32,8 +20,8 @@ class MetadataTypeBusinessLogicMixin:
 
     def get_required_for(self, document_type):
         """
-        Determine if the metadata type is required for the
-        specified document type.
+        Determine if the metadata type is required for the specified document
+        type.
         """
         queryset = document_type.metadata.filter(
             required=True, metadata_type=self

@@ -6,7 +6,7 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
 )
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from ..models import DocumentMetadata
+from ..models.metadata_instance_models import DocumentMetadata
 
 from .literals import (
     TEST_DATE_INVALID, TEST_PARSER_DATE_VALID, TEST_VALID_DATE,
