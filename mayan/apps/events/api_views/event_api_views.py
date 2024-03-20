@@ -7,12 +7,10 @@ from mayan.apps.rest_api.api_view_mixins import (
     ExternalContentTypeObjectAPIViewMixin
 )
 
-from .classes import EventType, EventTypeNamespace
-from .models import Notification
-from .permissions import permission_events_view
-from .serializers import (
-    EventSerializer, EventTypeNamespaceSerializer, EventTypeSerializer,
-    NotificationSerializer
+from ..classes import EventType, EventTypeNamespace
+from ..permissions import permission_events_view
+from ..serializers import (
+    EventSerializer, EventTypeNamespaceSerializer, EventTypeSerializer
 )
 
 
@@ -112,25 +110,3 @@ class APIEventListView(generics.ListAPIView):
             'request': self.request,
             'view': self
         }
-
-
-class APINotificationListView(generics.ListAPIView):
-    """
-    get: Return a list of notifications for the current user.
-    """
-    serializer_class = NotificationSerializer
-
-    def get_source_queryset(self):
-        parameter_read = self.request.GET.get('read')
-
-        if self.request.user.is_authenticated:
-            queryset = Notification.objects.filter(user=self.request.user)
-        else:
-            queryset = Notification.objects.none()
-
-        if parameter_read == 'True':
-            queryset = queryset.filter(read=True)
-        elif parameter_read == 'False':
-            queryset = queryset.filter(read=False)
-
-        return queryset

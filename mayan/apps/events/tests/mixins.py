@@ -179,6 +179,32 @@ class NotificationTestMixin(EventTestMixin):
         )
 
 
+class NotificationAPIViewTestMixin(NotificationTestMixin):
+    def _request_test_notification_detail_api_view(self):
+        return self.get(
+            viewname='rest_api:notification-detail',
+            kwargs={'notification_id': self._test_notification.pk}
+        )
+
+    def _request_test_notification_edit_api_view(
+        self, extra_data=None, verb='patch'
+    ):
+        data = {'read': True}
+
+        if extra_data:
+            data.update(extra_data)
+
+        verb_method = getattr(self, verb)
+
+        return verb_method(
+            data=data, kwargs={'notification_id': self._test_notification.pk},
+            viewname='rest_api:notification-detail'
+        )
+
+    def _request_test_notification_list_api_view(self):
+        return self.get(viewname='rest_api:notification-list')
+
+
 class NotificationViewTestMixin(NotificationTestMixin):
     def _request_test_notification_list_view(self):
         return self.get(viewname='events:user_notifications_list')

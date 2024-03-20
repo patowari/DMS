@@ -89,6 +89,7 @@
   8.3MB to 6.9MB, 16% less.
 - Display loading message when user cancels a pending request and the backend
   is still processing the previous one.
+- Add notification detail API view.
 
 4.6.2 (2024-03-04)
 ==================

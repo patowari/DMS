@@ -95,7 +95,7 @@ class EventSerializer(serializers.ModelSerializer):
         )
 
 
-class NotificationSerializer(serializers.ModelSerializer):
+class NotificationSerializer(serializers.HyperlinkedModelSerializer):
     action = EventSerializer(
         label=_(message='Action'), read_only=True
     )
@@ -104,6 +104,13 @@ class NotificationSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        fields = ('action', 'read', 'user')
+        extra_kwargs = {
+            'url': {
+                'label': _(message='URL'),
+                'lookup_url_kwarg': 'notification_id',
+                'view_name': 'rest_api:notification-detail'
+            }
+        }
+        fields = ('action', 'read', 'url', 'user')
         model = Notification
-        read_only_fields = ('action', 'user')
+        read_only_fields = ('action', 'url', 'user')

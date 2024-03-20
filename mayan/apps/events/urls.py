@@ -1,9 +1,12 @@
 from django.urls import re_path
 
-from .api_views import (
+from .api_views.event_api_views import (
     APIEventListView, APIEventTypeListView, APIEventTypeNamespaceDetailView,
     APIEventTypeNamespaceEventTypeListView, APIEventTypeNamespaceListView,
-    APINotificationListView, APIObjectEventListView
+    APIObjectEventListView
+)
+from .api_views.notification_api_views import (
+    APINotificationDetailView, APINotificationListView
 )
 from .views.clear_views import (
     EventListClearView, ObjectEventClearView, VerbEventClearView
@@ -133,6 +136,10 @@ api_urls = [
     re_path(
         route=r'^notifications/$', name='notification-list',
         view=APINotificationListView.as_view()
+    ),
+    re_path(
+        route=r'^notifications/(?P<notification_id>[0-9]+)/$',
+        name='notification-detail', view=APINotificationDetailView.as_view()
     ),
     re_path(
         route=r'^objects/(?P<app_label>[-\w]+)/(?P<model_name>[-\w]+)/(?P<object_id>\d+)/events/$',
