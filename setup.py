@@ -96,7 +96,7 @@ extract-msg==0.48.2
 flex==6.14.1
 furl==2.1.3
 fusepy==3.0.1
-gevent==23.9.1
+gevent==24.2.1
 google-cloud-storage==2.15.0
 graphviz==0.20.1
 greenlet==3.0.3

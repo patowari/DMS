@@ -43,6 +43,7 @@
   - sentry-sdk from 1.40.6 to 1.41.0.
   - extract-msg from 0.48.0 to 0.48.2.
   - django-celery-beat from 2.5.0 to 2.6.0.
+  - gevent from 23.9.1 to 24.2.1.
 
 - Remove live documentation auto build.
 - Remove tornado and sphinx-autobuild libraries.
