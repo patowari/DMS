@@ -59,7 +59,7 @@ update_uid_gid() {
 
     if [ "${result}" ]; then
         echo "mayan: skipping uid and gid update."
-    else 
+    else
         # Change the owner of the /var/lib/mayan always to allow adding the
         # initial files. Top level only.
         chown mayan:mayan ${MAYAN_MEDIA_ROOT}
