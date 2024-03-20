@@ -82,6 +82,8 @@
 - Split metadata models.
 - Split Python targets into their own makefile.
 - Make gevent the default worker for gunicorn.
+- Remove ``--without-gossip --without-heartbeat`` from the all-in-one
+  deployment workers.
 
 4.6.2 (2024-03-04)
 ==================

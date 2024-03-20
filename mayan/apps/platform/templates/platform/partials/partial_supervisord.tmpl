@@ -20,7 +20,7 @@ autorestart = {{ autorestart }}
 autostart = true
 command = nice -n {{ worker.nice_level }} %(ENV_COMMAND)s
 environment =
-  COMMAND = "%(ENV_MAYAN_PYTHON_BIN_DIR)scelery -A mayan worker %(ENV_MAYAN_{{ worker.name|upper }}_CONCURRENCY)s --hostname=mayan-edms-{{ worker.name }}.%%h --loglevel=ERROR -Ofair --queues={% for queue in worker.queues %}{{ queue.name }}{% if not forloop.last %},{% endif %}{% endfor %} %(ENV_MAYAN_{{ worker.name|upper }}_MAX_MEMORY_PER_CHILD)s %(ENV_MAYAN_{{ worker.name|upper }}_MAX_TASKS_PER_CHILD)s --without-gossip --without-heartbeat",
+  COMMAND = "%(ENV_MAYAN_PYTHON_BIN_DIR)scelery -A mayan worker %(ENV_MAYAN_{{ worker.name|upper }}_CONCURRENCY)s --hostname=mayan-edms-{{ worker.name }}.%%h --loglevel=ERROR -Ofair --queues={% for queue in worker.queues %}{{ queue.name }}{% if not forloop.last %},{% endif %}{% endfor %} %(ENV_MAYAN_{{ worker.name|upper }}_MAX_MEMORY_PER_CHILD)s %(ENV_MAYAN_{{ worker.name|upper }}_MAX_TASKS_PER_CHILD)s",
   DJANGO_SETTINGS_MODULE=%(ENV_MAYAN_SETTINGS_MODULE)s
 killasgroup = true
 numprocs = 1
