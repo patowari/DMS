@@ -84,6 +84,9 @@
 - Make gevent the default worker for gunicorn.
 - Remove ``--without-gossip --without-heartbeat`` from the all-in-one
   deployment workers.
+- Remove tests from Python and Docker images. Python source package size
+  reduced from 5.4MB to 4.2MB, 22% less. Wheel package size reduced from
+  8.3MB to 6.9MB, 16% less.
 
 4.6.2 (2024-03-04)
 ==================
