@@ -116,7 +116,7 @@ class PartialNavigation {
             this.currentAjaxRequest.abort();
             // Clear the content area to avoid a '0' status server error
             // message.
-            $('#ajax-content').empty('');
+            $('#ajax-content').html($('#template-server-busy').html());
         }
 
         this.currentAjaxRequest = $.ajax({
