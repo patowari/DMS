@@ -81,6 +81,7 @@
 - Sort workflow transition fields by their label.
 - Split metadata models.
 - Split Python targets into their own makefile.
+- Make gevent the default worker for gunicorn.
 
 4.6.2 (2024-03-04)
 ==================
