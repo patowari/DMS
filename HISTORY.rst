@@ -79,6 +79,7 @@
 - Workflow query optimizations.
 - Sort workflow transition fields by their label.
 - Split metadata models.
+- Split Python targets into their own makefile.
 
 4.6.2 (2024-03-04)
 ==================
