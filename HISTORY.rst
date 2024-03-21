@@ -87,8 +87,6 @@
 - Remove tests from Python and Docker images. Python source package size
   reduced from 5.4MB to 4.2MB, 22% less. Wheel package size reduced from
   8.3MB to 6.9MB, 16% less.
-- Display loading message when user cancels a pending request and the backend
-  is still processing the previous one.
 - Add notification detail API view.
 - Unify condition field model mixin and helper methods.
 - Remove URI.js. Instead use the JavaScript native URL class.
@@ -96,6 +94,8 @@
 - Remove jquery-scrollstop.
 - Stricter UI throttling defaults. From 10 requests in 5 seconds to 5 requests
   in 4 seconds.
+- Keep content when user cancels a pending request and the backend is still
+  processing the previous one. Change icon to the progress state.
 
 4.6.2 (2024-03-04)
 ==================

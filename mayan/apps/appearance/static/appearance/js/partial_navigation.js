@@ -113,6 +113,7 @@ class PartialNavigation {
             let options = {};
 
             options['timeOut'] = 10000;
+            $('body').css('cursor', 'progress');
 
             toastr['warning'](app.ajaxThrottlingMessage, '', options);
             return;
@@ -121,10 +122,14 @@ class PartialNavigation {
         // Another AJAX request is being processed. Cancel the previous
         // one.
         if (this.currentAjaxRequest) {
+            // Store and repaint the content area to avoid a '0' status
+            // server error message.
+            const html = $('#ajax-content').html();
+
             this.currentAjaxRequest.abort();
-            // Clear the content area to avoid a '0' status server error
-            // message.
-            $('#ajax-content').html($('#template-server-busy').html());
+            $('body').css('cursor', 'progress');
+
+            $('#ajax-content').html(html).change();
         }
 
         this.currentAjaxRequest = $.ajax({
@@ -146,6 +151,7 @@ class PartialNavigation {
                         window.location = this.url;
                     } else {
                         $('#ajax-content').html(data).change();
+                        $('body').css('cursor', 'default');
                     }
                 }
 
