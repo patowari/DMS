@@ -43,10 +43,6 @@ JavaScriptDependency(
     version_string='=4.3.0'
 )
 JavaScriptDependency(
-    label=_(message='jQuery Lazy Load'), module=__name__, name='jquery-lazyload',
-    version_string='=1.9.7'
-)
-JavaScriptDependency(
     label=_(message='JQuery Match Height'), module=__name__,
     name='jquery-match-height', version_string='=0.7.2'
 )
