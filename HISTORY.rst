@@ -94,6 +94,8 @@
 - Remove URI.js. Instead use the JavaScript native URL class.
 - Remove jQuery Lazy Load libary ``jquery-lazyload``.
 - Remove jquery-scrollstop.
+- Stricter UI throttling defaults. From 10 requests in 5 seconds to 5 requests
+  in 4 seconds.
 
 4.6.2 (2024-03-04)
 ==================
