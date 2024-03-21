@@ -18,21 +18,23 @@ class WorkflowInstanceBusinessLogicMixin:
         current_state = self.get_current_state()
 
         for escalation in current_state.escalations.filter(enabled=True):
-            timedelta = datetime.timedelta(
-                **{
-                    escalation.unit: escalation.amount
-                }
-            )
+            kwargs = {escalation.unit: escalation.amount}
+            timedelta = datetime.timedelta(**kwargs)
 
             expiration_datetime = self.get_last_log_entry_datetime() + timedelta
 
             if now() > expiration_datetime:
                 condition_context = {'workflow_instance': self}
 
-                if escalation.evaluate_condition(context=condition_context):
+                condition_result = escalation.evaluate_condition(
+                    context=condition_context
+                )
+                if condition_result:
+                    escalation_comment = escalation.get_comment()
+
                     self.do_transition(
-                        transition=escalation.transition,
-                        comment=escalation.get_comment()
+                        comment=escalation_comment,
+                        transition=escalation.transition
                     )
 
     def do_transition(
@@ -61,6 +63,7 @@ class WorkflowInstanceBusinessLogicMixin:
                 )
                 workflow_instance_log_entry._event_actor = user
                 workflow_instance_log_entry.save()
+
                 return workflow_instance_log_entry
         except AttributeError:
             # No initial state has been set for this workflow.
@@ -91,6 +94,7 @@ class WorkflowInstanceBusinessLogicMixin:
         document is right now.
         """
         last_transition = self.get_last_transition()
+
         if last_transition:
             return last_transition.destination_state
         else:
@@ -101,6 +105,7 @@ class WorkflowInstanceBusinessLogicMixin:
 
     def get_last_log_entry_datetime(self):
         last_log_entry = self.get_last_log_entry()
+
         if last_log_entry:
             return last_log_entry.datetime
         else:
@@ -139,8 +144,12 @@ class WorkflowInstanceBusinessLogicMixin:
                 )
 
             # Remove the transitions with a false return value.
+            condition_context = {'workflow_instance': self}
             for entry in queryset:
-                if not entry.evaluate_condition(workflow_instance=self):
+                condition_result = entry.evaluate_condition(
+                    context=condition_context
+                )
+                if not condition_result:
                     queryset = queryset.exclude(id=entry.pk)
 
             return queryset
@@ -166,7 +175,9 @@ class WorkflowInstanceLogEntryBusinessLogicMixin:
         )
 
         result = {}
-        for key, value in self.loads().items():
+        extra_data = self.loads()
+
+        for key, value in extra_data.items():
             try:
                 field = self.transition.fields.get(name=key)
             except WorkflowTransitionField.DoesNotExist:

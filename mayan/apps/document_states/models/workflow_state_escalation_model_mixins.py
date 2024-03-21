@@ -33,7 +33,10 @@ class WorkflowStateEscalationBusinessLogicMixin:
             diagram.edge(**edge_kwargs)
 
     def execute(self, context, workflow_instance):
-        if self.evaluate_condition(workflow_instance=workflow_instance):
+        condition_context = {'workflow_instance': workflow_instance}
+        condition_result = self.evaluate_condition(context=condition_context)
+
+        if condition_result:
             try:
                 self.get_class_instance().execute(context=context)
             except Exception as exception:

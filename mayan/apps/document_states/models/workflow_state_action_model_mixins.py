@@ -2,9 +2,6 @@ import hashlib
 
 from django.conf import settings
 from django.core import serializers
-from django.utils.translation import gettext_lazy as _
-
-from mayan.apps.templating.classes import Template
 
 from ..literals import (
     GRAPHVIZ_ID_STATE_ACTION, GRAPHVIZ_SYMBOL_CONDITIONAL,
@@ -58,20 +55,13 @@ class WorkflowStateActionBusinessLogicMixin:
             ).encode()
         ).hexdigest()
 
-    def evaluate_condition(self, workflow_instance):
-        if self.has_condition():
-            template = Template(template_string=self.condition)
-            context = {'workflow_instance': workflow_instance}
-            return template.render(context=context).strip()
-        else:
-            return True
-
     def execute(self, context, workflow_instance):
-        if self.evaluate_condition(workflow_instance=workflow_instance):
+        condition_context = {'workflow_instance': workflow_instance}
+        condition_result = self.evaluate_condition(context=condition_context)
+
+        if condition_result:
             context.update(
-                {
-                    'workflow_instance': workflow_instance
-                }
+                {'workflow_instance': workflow_instance}
             )
 
             try:
@@ -89,12 +79,3 @@ class WorkflowStateActionBusinessLogicMixin:
             else:
                 queryset_error_log = self.error_log.all()
                 queryset_error_log.delete()
-
-    def has_condition(self):
-        return self.condition.strip()
-
-    has_condition.help_text = _(
-        message='The state action will be executed, depending on the condition '
-        'return value.'
-    )
-    has_condition.short_description = _(message='Has a condition?')

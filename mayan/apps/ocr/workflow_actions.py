@@ -1,5 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.databases.class_mixins import MixinConditionTemplate
 from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.documents.models.document_version_page_models import (
     DocumentVersionPage
@@ -11,7 +12,7 @@ from .models import DocumentVersionPageOCRContent
 __all__ = ('UpdateDocumentPageOCRAction',)
 
 
-class UpdateDocumentPageOCRAction(WorkflowAction):
+class UpdateDocumentPageOCRAction(MixinConditionTemplate, WorkflowAction):
     form_fields = {
         'page_condition': {
             'label': _(message='Page condition'),
@@ -56,29 +57,25 @@ class UpdateDocumentPageOCRAction(WorkflowAction):
         )
         return fieldsets
 
-    def evaluate_condition(self, context, condition=None):
-        if condition:
-            return Template(template_string=condition).render(
-                context=context
-            ).strip()
-        else:
-            return False
-
     def execute(self, context):
         document = context['workflow_instance'].document
+        template = Template(
+            template_string=self.kwargs['page_content']
+        )
 
         for document_version_page in document.pages:
             context['document_version_page'] = document_version_page
 
-            condition_result = self.evaluate_condition(
-                context=context, condition=self.kwargs['page_condition']
-            )
+            condition_result = self.evaluate_condition(context=context)
 
             if condition_result:
+                template_result = template.render(context=context)
+
                 DocumentVersionPageOCRContent.objects.update_or_create(
                     document_version_page=document_version_page, defaults={
-                        'content': Template(
-                            template_string=self.kwargs['page_content']
-                        ).render(context=context)
+                        'content': template_result
                     }
                 )
+
+    def get_condition_template(self):
+        return self.kwargs['page_condition']

@@ -2,7 +2,9 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.model_mixins import BackendModelMixin
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
+from mayan.apps.databases.model_mixins import (
+    ExtraDataModelMixin, ModelMixinConditionField
+)
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave
@@ -21,10 +23,18 @@ __all__ = ('WorkflowStateAction',)
 
 
 class WorkflowStateAction(
-    WorkflowStateActionBusinessLogicMixin, BackendModelMixin,
-    ExtraDataModelMixin, models.Model
+    ModelMixinConditionField, WorkflowStateActionBusinessLogicMixin,
+    BackendModelMixin, ExtraDataModelMixin, models.Model
 ):
     _backend_model_null_backend = WorkflowActionNull
+    _condition_help_text = _(
+        message='The condition that will determine if this state action '
+        'is executed or not. The condition is evaluated against the '
+        'workflow instance. Conditions that do not return any value, '
+        'that return the Python logical None, or an empty string (\'\') '
+        'are considered to be logical false, any other value is '
+        'considered to be the logical true.'
+    )
     _ordering_fields = ('label', 'enabled')
 
     state = models.ForeignKey(
@@ -43,16 +53,6 @@ class WorkflowStateAction(
         default=WORKFLOW_ACTION_ON_ENTRY, help_text=_(
             message='At which moment of the state this action will execute.'
         ), verbose_name=_(message='When')
-    )
-    condition = models.TextField(
-        blank=True, help_text=_(
-            message='The condition that will determine if this state action '
-            'is executed or not. The condition is evaluated against the '
-            'workflow instance. Conditions that do not return any value, '
-            'that return the Python logical None, or an empty string (\'\') '
-            'are considered to be logical false, any other value is '
-            'considered to be the logical true.'
-        ), verbose_name=_(message='Condition')
     )
 
     class Meta:

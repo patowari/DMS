@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.databases.model_mixins import ExtraDataModelMixin
+from mayan.apps.databases.model_mixins import (
+    ExtraDataModelMixin, ModelMixinConditionField
+)
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave
@@ -19,8 +21,17 @@ __all__ = ('WorkflowTransition',)
 
 
 class WorkflowTransition(
-    ExtraDataModelMixin, WorkflowTransitionBusinessLogicMixin, models.Model
+    ExtraDataModelMixin, ModelMixinConditionField,
+    WorkflowTransitionBusinessLogicMixin, models.Model
 ):
+    _condition_help_text = _(
+        message='The condition that will determine if this transition '
+        'is enabled or not. The condition is evaluated against the '
+        'workflow instance. Conditions that do not return any value, '
+        'that return the Python logical None, or an empty string (\'\') '
+        'are considered to be logical false, any other value is '
+        'considered to be the logical true.'
+    )
     _ordering_fields = ('label',)
 
     workflow = models.ForeignKey(
@@ -38,16 +49,6 @@ class WorkflowTransition(
     destination_state = models.ForeignKey(
         on_delete=models.CASCADE, related_name='destination_transitions',
         to=WorkflowState, verbose_name=_(message='Destination state')
-    )
-    condition = models.TextField(
-        blank=True, help_text=_(
-            message='The condition that will determine if this transition '
-            'is enabled or not. The condition is evaluated against the '
-            'workflow instance. Conditions that do not return any value, '
-            'that return the Python logical None, or an empty string (\'\') '
-            'are considered to be logical false, any other value is '
-            'considered to be the logical true.'
-        ), verbose_name=_(message='Condition')
     )
 
     class Meta:

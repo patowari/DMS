@@ -29,11 +29,26 @@ class UpdateDocumentPageOCRActionTestCase(
     def test_workflow_action_document_version_page_update_action_no_page_condition_execution(self):
         self._create_test_document_version_ocr_content()
 
+        self._execute_workflow_template_state_action(
+            klass=UpdateDocumentPageOCRAction, kwargs={
+                'page_condition': '',
+                'page_content': TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
+            }
+        )
+        self._test_document_version_page.refresh_from_db()
+        self.assertEqual(
+            self._test_document_version_page.ocr_content.content,
+            TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
+        )
+
+    def test_workflow_action_document_version_page_update_action_false_page_condition_execution(self):
+        self._create_test_document_version_ocr_content()
+
         test_document_version_page_ocr_content = self._test_document_version_page.ocr_content.content
 
         self._execute_workflow_template_state_action(
             klass=UpdateDocumentPageOCRAction, kwargs={
-                'page_condition': '',
+                'page_condition': ' ',
                 'page_content': TEST_DOCUMENT_VERSION_PAGE_OCR_CONTENT_UPDATED
             }
         )
@@ -94,7 +109,7 @@ class TransitionUpdateDocumentPageOCRActionTestCase(
         self._test_workflow_template_state_list[1].actions.create(
             backend_data=json.dumps(
                 obj={
-                    'page_condition': True,
+                    'page_condition': 'True',
                     'page_content': '{{ workflow_instance.document.label }}'
                 }
             ), backend_path=TEST_UPDATE_DOCUMENT_PAGE_OCR_ACTION_DOTTED_PATH,

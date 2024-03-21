@@ -90,6 +90,7 @@
 - Display loading message when user cancels a pending request and the backend
   is still processing the previous one.
 - Add notification detail API view.
+- Unify condition field model mixin and helper methods.
 
 4.6.2 (2024-03-04)
 ==================

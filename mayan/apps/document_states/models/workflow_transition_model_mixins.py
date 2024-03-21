@@ -3,8 +3,6 @@ import hashlib
 from django.core import serializers
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.templating.classes import Template
-
 from ..literals import GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TRIGGER
 
 
@@ -35,14 +33,6 @@ class WorkflowTransitionBusinessLogicMixin:
         }
         diagram.edge(**edge_kwargs)
 
-    def evaluate_condition(self, workflow_instance):
-        if self.has_condition():
-            return Template(template_string=self.condition).render(
-                context={'workflow_instance': workflow_instance}
-            ).strip()
-        else:
-            return True
-
     def get_field_display(self):
         field_list = [
             str(field) for field in self.fields.all()
@@ -70,11 +60,3 @@ class WorkflowTransitionBusinessLogicMixin:
             )
 
         return result.hexdigest()
-
-    def has_condition(self):
-        return self.condition.strip()
-    has_condition.help_text = _(
-        message='The transition will be available, depending on the '
-        'condition return value.'
-    )
-    has_condition.short_description = _(message='Has a condition?')

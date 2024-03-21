@@ -1,9 +1,10 @@
 import logging
 
 from django.db import models
+from django.db.models.base import ModelBase
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.templating.classes import Template
+from .class_mixins import MixinConditionTemplate
 
 logger = logging.getLogger(name=__name__)
 
@@ -20,39 +21,34 @@ class ExtraDataModelMixin:
         return result
 
 
-class ModelMixinConditionField(models.Model):
+class MetaClassModelMixinConditionField(ModelBase):
+    def __new__(mcs, name, bases, attrs):
+        cls = super().__new__(mcs, name, bases, attrs)
+
+        field = cls._meta.get_field('condition')
+        field.help_text = cls._condition_help_text
+
+        return cls
+
+
+class ModelMixinConditionField(
+    MixinConditionTemplate, models.Model,
+    metaclass=MetaClassModelMixinConditionField
+):
+    _condition_help_text = _(
+        message='The condition that will determine if this object '
+        'is executed or not. Conditions that do not return any value, '
+        'that return the Python logical None, or an empty string (\'\') '
+        'are considered to be logical false, any other value is '
+        'considered to be the logical true.'
+    )
+
     condition = models.TextField(
-        blank=True, help_text=_(
-            message='The condition that will determine if this object '
-            'is executed or not. Conditions that do not return any value, '
-            'that return the Python logical None, or an empty string (\'\') '
-            'are considered to be logical false, any other value is '
-            'considered to be the logical true.'
-        ), verbose_name=_(message='Condition')
+        blank=True, verbose_name=_(message='Condition')
     )
 
     class Meta:
         abstract = True
-
-    def evaluate_condition(self, context):
-        if self.has_condition():
-            result = Template(template_string=self.condition).render(
-                context=context
-            ).strip()
-            return result
-        else:
-            return True
-
-    def has_condition(self):
-        if self.condition.strip():
-            return True
-        else:
-            return False
-    has_condition.help_text = _(
-        message='The object will be executed, depending on the condition '
-        'return value.'
-    )
-    has_condition.short_description = _(message='Has a condition?')
 
 
 class ValueChangeModelMixin:
