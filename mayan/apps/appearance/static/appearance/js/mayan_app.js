@@ -76,8 +76,7 @@ class MayanApp {
     }
 
     static async updateNavbarState () {
-        const uri = new URI(window.location.hash);
-        const uriFragment = uri.fragment();
+        const uriFragment = window.location.hash.substring(1);
         $('#accordion-sidebar a').each(function (index, value) {
             if (value.pathname === uriFragment) {
                 const $this = $(this);

@@ -91,6 +91,7 @@
   is still processing the previous one.
 - Add notification detail API view.
 - Unify condition field model mixin and helper methods.
+- Remove URI.js. Instead use the JavaScript native URL class.
 
 4.6.2 (2024-03-04)
 ==================

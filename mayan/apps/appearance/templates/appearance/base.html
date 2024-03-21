@@ -13,12 +13,12 @@
     if (typeof partialNavigation === 'undefined') {
         /* Check if the template was not loaded via AJAX
          * If not then reload the root path passing the
-         * current location's path as the new hash
+         * current location's path as the new hash.
          */
         document.write('<script type="text/undefined">')
-        const currentPath = window.location.pathname + window.location.search;
-        {% smart_setting "ORGANIZATIONS_URL_BASE_PATH" as base_url %}
-        window.location = '/{{ base_url|default:"" }}#' + currentPath;
+        const currentLocation = '#' + window.location.pathname + window.location.search;
+        const url = new URL(currentLocation, window.location.origin)
+        window.location = url;
     }
 </script>
 
