@@ -12,8 +12,8 @@ from .utils import get_language_choices, get_timezone_choices
 
 class UserLocaleProfile(models.Model):
     """
-    Stores the locale preferences of a user. Stores timezone and language
-    at the moment.
+    Stores the locale preferences of a user. Stores timezone and language at
+    the moment.
     """
     user = models.OneToOneField(
         on_delete=models.CASCADE, related_name='locale_profile',
@@ -35,9 +35,9 @@ class UserLocaleProfile(models.Model):
         verbose_name_plural = _(message='User locale profiles')
 
     def __str__(self):
-        return '{} ({}, {})'.format(
-            self.user, self.language or _(message='None'), self.timezone or _(message='None')
-        )
+        language = self.language or _(message='None')
+        timezone = self.timezone or _(message='None')
+        return '{} ({}, {})'.format(self.user, language, timezone)
 
     def natural_key(self):
         return self.user.natural_key()

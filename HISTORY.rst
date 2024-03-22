@@ -96,6 +96,7 @@
   in 4 seconds.
 - Keep content when user cancels a pending request and the backend is still
   processing the previous one. Change icon to the progress state.
+- Support setting user locale default language and default timezone.
 
 4.6.2 (2024-03-04)
 ==================

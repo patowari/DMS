@@ -4,6 +4,10 @@ from django.conf import settings
 from django.utils import translation
 
 
+def get_language_option_list():
+    return dict(settings.LANGUAGES).keys()
+
+
 def get_language_choices():
     return sorted(
         settings.LANGUAGES, key=lambda entry: entry[1]
@@ -19,5 +23,14 @@ def to_language(promise, language):
     return result
 
 
+def get_timezone_option_list():
+    """
+    Compatibility function.
+    """
+    return common_timezones
+
+
 def get_timezone_choices():
-    return zip(common_timezones, common_timezones)
+    return zip(
+        get_timezone_option_list(), get_timezone_option_list()
+    )
