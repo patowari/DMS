@@ -10,7 +10,8 @@ class AppImageError(ConvertError):
     need additional handling and that are not just a generic unknown format
     error.
     """
-    def __init__(self, error_name):
+    def __init__(self, error_name, details=None):
+        self.details = details
         self.error_name = error_name
         super().__init__()
 
