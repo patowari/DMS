@@ -12,6 +12,7 @@ from django.apps import apps
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.core.exceptions import ImproperlyConfigured
 from django.db import transaction
+from django.template import loader
 from django.utils.functional import cached_property
 from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
@@ -64,11 +65,15 @@ class AppImageErrorImage:
         self.name = name
         self.image_path = image_path
         self.template_name = template_name
+        self.template = loader.get_template(template_name=self.template_name)
 
         self.__class__._registry[name] = self
 
     def open(self):
         return staticfiles_storage.open(name=self.image_path, mode='rb')
+
+    def render(self):
+        return self.template.render()
 
 
 class ConverterBase:
