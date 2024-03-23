@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
-from django.core.files.base import File
 from django.http import StreamingHttpResponse
 from django.views.decorators.cache import patch_cache_control
 
@@ -11,7 +10,7 @@ from .settings import (
     setting_image_cache_time, setting_image_generation_timeout
 )
 from .tasks import task_content_object_image_generate
-from .utils import IndexedDictionary
+from .utils import IndexedDictionary, factory_file_generator
 
 
 class APIImageViewMixin:
@@ -22,16 +21,7 @@ class APIImageViewMixin:
         return ContentType.objects.get_for_model(model=self.obj)
 
     def get_file_generator(self):
-        def file_generator():
-            with self.cache_file.open() as file_object:
-                while True:
-                    chunk = file_object.read(File.DEFAULT_CHUNK_SIZE)
-                    if not chunk:
-                        break
-                    else:
-                        yield chunk
-
-        return file_generator
+        return factory_file_generator(image_object=self.cache_file)
 
     def get_serializer(self, *args, **kwargs):
         return None
