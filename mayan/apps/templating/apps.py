@@ -25,13 +25,9 @@ class TemplatingApp(MayanAppConfig):
         )
 
         ModelPermission.register(
-            model=Document, permissions=(
-                permission_template_sandbox,
-            )
+            model=Document, permissions=(permission_template_sandbox,)
         )
 
         menu_list_facet.bind_links(
-            links=(
-                link_document_template_sandbox,
-            ), sources=(Document,)
+            links=(link_document_template_sandbox,), sources=(Document,)
         )

@@ -69,7 +69,9 @@ class Template:
         return engine_handler['django']
 
     def __init__(self, template_string):
-        self._template = Template.get_backend().from_string(
+        self._template_backend = Template.get_backend()
+
+        self._template_backend.from_string(
             template_code=template_string
         )
 
