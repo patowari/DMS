@@ -98,6 +98,14 @@
   processing the previous one. Change icon to the progress state.
 - Support setting user locale default language and default timezone.
 - When loading a lazy load image, try to obtain the reason for the failure.
+- Sources updates:
+
+  - Place the sources app storage cache under the control of the file caching
+    app. This allows monitoring cache usage, purging the cache, and doing
+    automatic pruning when space runs out. Add the setting
+    ``SOURCES_CACHE_MAXIMUM_SIZE`` which defaults to 100MB.
+  - Improve how staging storage files are retrieved and cached. Indicate
+    preview errors with a dedicated ``AppImageErrorImage`` instance.
 
 4.6.2 (2024-03-04)
 ==================

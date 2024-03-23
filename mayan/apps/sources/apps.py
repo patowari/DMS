@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.db.models.signals import pre_delete
+from django.db.models.signals import post_migrate, pre_delete
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
@@ -27,7 +27,7 @@ from mayan.apps.views.column_widgets import TwoStateWidget
 from .classes import DocumentCreateWizardStep
 from .events import event_source_edited
 from .handlers import (
-    handler_delete_interval_source_periodic_task,
+    handler_create_source_cache, handler_delete_interval_source_periodic_task,
     handler_initialize_periodic_tasks
 )
 from .links import (
@@ -201,6 +201,10 @@ class SourcesApp(MayanAppConfig):
         )
         menu_setup.bind_links(
             links=(link_source_setup,)
+        )
+        post_migrate.connect(
+            dispatch_uid='sources_handler_create_source_cache',
+            receiver=handler_create_source_cache
         )
         pre_delete.connect(
             dispatch_uid='sources_handler_delete_interval_source_periodic_task',

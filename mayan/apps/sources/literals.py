@@ -4,6 +4,7 @@ from django.conf import settings
 
 DEFAULT_SOURCES_BACKEND_ARGUMENTS = {}
 
+DEFAULT_SOURCES_CACHE_MAXIMUM_SIZE = 100 * 2 ** 20  # 100 Megabytes
 DEFAULT_SOURCES_CACHE_STORAGE_BACKEND = 'django.core.files.storage.FileSystemStorage'
 DEFAULT_SOURCES_CACHE_STORAGE_BACKEND_ARGUMENTS = {
     'location': str(

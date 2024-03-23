@@ -4,7 +4,7 @@ from urllib.parse import quote_plus, unquote_plus
 
 from furl import furl
 
-from django.core.files.base import ContentFile
+from django.apps import apps
 from django.template.defaultfilters import filesizeformat
 from django.utils.encoding import force_str
 from django.utils.functional import cached_property
@@ -22,6 +22,7 @@ from mayan.apps.storage.classes import DefinedStorage
 
 from .column_widgets import StoredFileThumbnailWidget
 from .links import link_storage_file_delete, link_source_file_select
+from .literals import IMAGE_ERROR_NAME_BASE_ERROR
 
 logger = logging.getLogger(name=__name__)
 
@@ -86,54 +87,62 @@ class SourceStoredFile:
     def __str__(self):
         return force_str(s=self.filename)
 
+    @cached_property
+    def cache(self):
+        Cache = apps.get_model(app_label='file_caching', model_name='Cache')
+
+        return Cache.objects.get(
+            defined_storage_name=STORAGE_NAME_SOURCE_CACHE_FOLDER
+        )
+
     @property
     def cache_filename(self):
         return '{}-{}'.format(
             self.source.model_instance_id, self.encoded_filename
         )
 
+    @cached_property
+    def cache_partition(self):
+        partition, created = self.cache.partitions.get_or_create(
+            name='{}'.format(self.source.model_instance_id)
+        )
+        return partition
+
     def delete(self):
-        # Don't include kwargs in .delete() as some backends might not
-        # support them.
-        try:
-            self.image_cache_storage.delete(self.cache_filename)
-        except FileNotFoundError:
-            """No preview was yet generated."""
+        cache_partition_file = self.cache_partition.get_file(
+            filename=self.encoded_filename
+        )
+
+        cache_partition_file.delete()
 
         self.storage_backend_instance.delete(
             name=self.get_full_path()
         )
 
     def generate_image(self, transformation_instance_list=None):
-        # Check is transformed image is available.
-        logger.debug(
-            'transformations cache filename: %s', self.cache_filename
+        CachePartitionFile = apps.get_model(
+            app_label='file_caching', model_name='CachePartitionFile'
         )
 
-        if self.image_cache_storage.exists(self.cache_filename):
-            logger.debug(
-                'staging file cache file "%s" found', self.cache_filename
-            )
-        else:
-            logger.debug(
-                'staging file cache file "%s" not found', self.cache_filename
-            )
+        cache_filename = self.encoded_filename
+
+        try:
+            self.cache_partition.get_file(filename=cache_filename)
+        except CachePartitionFile.DoesNotExist:
+            logger.debug('source cache file "%s" not found', cache_filename)
+
             image = self.get_image(
                 transformation_instance_list=transformation_instance_list
             )
 
-            # Since open "wb+" doesn't create files, check if the file
-            # exists, if not then create it.
-            self.image_cache_storage.save(
-                content=ContentFile(content=b''), name=self.cache_filename
-            )
-
-            with self.image_cache_storage.open(name=self.cache_filename, mode='wb+') as file_object:
+            with self.cache_partition.create_file(filename=cache_filename) as file_object:
                 file_object.write(
                     image.getvalue()
                 )
+        else:
+            logger.debug('source cache file "%s" found', cache_filename)
 
-        return self.cache_filename
+        return cache_filename
 
     def get_api_image_url(
         self, maximum_layer_order=None, transformation_instance_list=None,
@@ -207,7 +216,9 @@ class SourceStoredFile:
                 'Error getting staging file image for file "%s"; %s',
                 self.get_full_path(), exception
             )
-            raise
+            raise AppImageError(
+                details=str(exception), error_name=IMAGE_ERROR_NAME_BASE_ERROR
+            ) from exception
         else:
             return page_image
 

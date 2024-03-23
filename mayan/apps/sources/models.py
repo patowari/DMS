@@ -23,8 +23,9 @@ class DocumentFileSourceMetadata(models.Model):
         to=DocumentFile, verbose_name=_(message='Document file')
     )
     key = models.CharField(
-        db_index=True, help_text=_(message='Name of the source metadata entry.'),
-        max_length=255, verbose_name=_(message='Key')
+        db_index=True, help_text=_(
+            message='Name of the source metadata entry.'
+        ), max_length=255, verbose_name=_(message='Key')
     )
     value = models.TextField(
         blank=True, help_text=_(
@@ -48,8 +49,9 @@ class Source(
     _ordering_fields = ('label', 'enabled')
 
     label = models.CharField(
-        db_index=True, help_text=_(message='A short text to describe this source.'),
-        max_length=128, unique=True, verbose_name=_(message='Label')
+        db_index=True, help_text=_(
+            message='A short text to describe this source.'
+        ), max_length=128, unique=True, verbose_name=_(message='Label')
     )
     enabled = models.BooleanField(
         default=True, verbose_name=_(message='Enabled')

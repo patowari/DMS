@@ -2,11 +2,13 @@ import logging
 
 from django.conf import settings
 from django.contrib import messages
-from django.core.files import File
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.sources.literals import STORAGE_NAME_SOURCE_CACHE_FOLDER
-from mayan.apps.storage.classes import DefinedStorage
+from rest_framework.exceptions import APIException
+
+from mayan.apps.converter.classes import AppImageErrorImage
+from mayan.apps.converter.exceptions import AppImageError
+from mayan.apps.converter.utils import factory_file_generator
 
 from ..classes import SourceStoredFile
 from ..forms import StoredFileUploadForm
@@ -36,8 +38,8 @@ class SourceBackendMixinStoredFileUploadBase:
                 'delete_after_upload': {
                     'class': 'django.forms.BooleanField',
                     'help_text': _(
-                        message='Delete the file after is has been successfully '
-                        'uploaded.'
+                        message='Delete the file after is has been '
+                        'successfully uploaded.'
                     ),
                     'label': _(message='Delete after upload'),
                     'required': False
@@ -54,9 +56,7 @@ class SourceBackendMixinStoredFileUploadBase:
         fieldsets += (
             (
                 _(message='File content'), {
-                    'fields': (
-                        'delete_after_upload',
-                    )
+                    'fields': ('delete_after_upload',)
                 },
             ),
         )
@@ -89,10 +89,10 @@ class SourceBackendMixinStoredFileUploadBase:
             'hide_link': True,
             'no_results_icon': self.icon,
             'no_results_text': _(
-                message='This could mean that the source file list is empty. It '
-                'could also mean that the operating system user account '
-                'being used for Mayan EDMS doesn\'t have the necessary '
-                'file system permissions to access the source files.'
+                message='This could mean that the source file list is empty. '
+                'It could also mean that the operating system user account '
+                'being used for Mayan EDMS doesn\'t have the necessary file '
+                'system permissions to access the source files.'
             ),
             'no_results_title': _(message='No source files available')
         }
@@ -260,24 +260,27 @@ class SourceBackendMixinStoredFileImage:
             user=user
         )
 
-        cache_filename = source_stored_file.generate_image(
-            transformation_instance_list=combined_transformation_list
-        )
+        try:
+            cache_filename = source_stored_file.generate_image(
+                transformation_instance_list=combined_transformation_list
+            )
+        except AppImageError as exception:
+            app_image_error_image = AppImageErrorImage.get(
+                name=exception.error_name
+            )
 
-        storage_source_stored_file_image_cache = DefinedStorage.get(
-            name=STORAGE_NAME_SOURCE_CACHE_FOLDER
-        ).get_storage_instance()
+            error_image_template_result = app_image_error_image.render()
 
-        def file_generator():
-            with storage_source_stored_file_image_cache.open(name=cache_filename) as file_object:
-                while True:
-                    chunk = file_object.read(File.DEFAULT_CHUNK_SIZE)
-                    if not chunk:
-                        break
-                    else:
-                        yield chunk
+            detail = {
+                'app_image_error_image_template': error_image_template_result
+            }
 
-        return file_generator
+            raise APIException(detail=detail)
+        else:
+            cache_partition_file = source_stored_file.cache_partition.get_file(
+                filename=cache_filename
+            )
+            return factory_file_generator(image_object=cache_partition_file)
 
     def get_action_class_list(self):
         action_class_list = super().get_action_class_list()

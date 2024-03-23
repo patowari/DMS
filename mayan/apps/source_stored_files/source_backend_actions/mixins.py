@@ -72,7 +72,9 @@ class SourceBackendActionMixinFileStoredDeleteInteractive(
                     'delete_view': True,
                     'object': stored_file,
                     'object_name': _(message='Stored file'),
-                    'title': _(message='Delete stored file "%s"?') % stored_file,
+                    'title': _(
+                        message='Delete stored file "%s"?'
+                    ) % stored_file,
                 }
 
                 return context
@@ -223,7 +225,9 @@ class SourceBackendActionMixinFileStoredBase:
 
         result['server_upload_entry_list'] = []
 
-        server_upload_entry_generator = source_stored_file_get_method(**kwargs)
+        server_upload_entry_generator = source_stored_file_get_method(
+            **kwargs
+        )
 
         if server_upload_entry_generator is None:
             raise ImproperlyConfigured(
