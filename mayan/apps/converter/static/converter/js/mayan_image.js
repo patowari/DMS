@@ -27,22 +27,32 @@ class MayanImage {
     }
 
     static async initialize () {
-        $('img.lazy-load').each(async function(index) {
+        $('img.lazy-load,img.lazy-load-carousel').each(async function(index) {
             const $this = $(this);
 
             $this.attr('loading', 'lazy');
             const dataURL = $this.attr('data-url');
             const url = new URL(dataURL, window.location.origin);
             $this.attr('src', url);
-        });
+            $this.on("error", function () {
+                $.ajax({
+                    async: true,
+                    dataType: 'json',
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        if (jqXHR.responseJSON.hasOwnProperty('app_image_error_image_template')) {
+                            const $container = $this.parent().parent().parent();
 
-        $('img.lazy-load-carousel').each(async function(index) {
-            const $this = $(this);
-
-            $this.attr('loading', 'lazy');
-            const dataURL = $this.attr('data-url');
-            const url = new URL(dataURL, window.location.origin);
-            $this.attr('src', url);
+                            $container.html(
+                                jqXHR.responseJSON['app_image_error_image_template']
+                            );
+                        }
+                    },
+                    // Need to set mimeType only when run from local file.
+                    mimeType: 'text/html; charset=utf-8',
+                    type: 'GET',
+                    url: $this.attr('src'),
+                });
+            });
         });
 
         $('.lazy-load').on('load', async function() {

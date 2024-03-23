@@ -97,6 +97,7 @@
 - Keep content when user cancels a pending request and the backend is still
   processing the previous one. Change icon to the progress state.
 - Support setting user locale default language and default timezone.
+- When loading a lazy load image, try to obtain the reason for the failure.
 
 4.6.2 (2024-03-04)
 ==================
