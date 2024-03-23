@@ -547,7 +547,11 @@ class DocumentsApp(MayanAppConfig):
         )
 
         # Document
-
+        SourceColumn(
+            attribute='datetime_created', include_label=True,
+            is_sortable=True, name='datetime_created',
+            source=Document
+        )
         SourceColumn(
             attribute='get_label', is_object_absolute_url=True,
             is_identifier=True, is_sortable=True, name='label',
@@ -558,7 +562,6 @@ class DocumentsApp(MayanAppConfig):
             label=_(message='Thumbnail'), order=-99, source=Document,
             widget=ThumbnailWidget
         )
-
         SourceColumn(
             attribute='document_type', include_label=True, is_sortable=True,
             label=_(message='Type'), name='document_type', order=-9,
@@ -591,14 +594,6 @@ class DocumentsApp(MayanAppConfig):
             name='datetime_accessed',
             sort_field='recent__datetime_accessed',
             source=RecentlyAccessedDocumentProxy
-        )
-
-        # RecentlyCreatedDocument
-
-        SourceColumn(
-            attribute='datetime_created', include_label=True,
-            is_sortable=True, name='datetime_created',
-            source=RecentlyCreatedDocument
         )
 
         # DocumentFile

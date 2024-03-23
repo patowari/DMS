@@ -107,6 +107,8 @@
   - Improve how staging storage files are retrieved and cached. Indicate
     preview errors with a dedicated ``AppImageErrorImage`` instance.
 
+- Support sorting documents by creation date in all view.
+
 4.6.2 (2024-03-04)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
