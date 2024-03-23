@@ -322,7 +322,7 @@ job_python_build:
     - tests/python/upgrade
   script:
     - pip install --requirement requirements/build.txt
-    - make python-wheel
+    - make python-wheel-production
   stage: stage_build_python
   variables:
     APT_CACHE_DIR: ${CI_PROJECT_DIR}/.cache/apt
