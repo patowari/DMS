@@ -17,7 +17,7 @@ from mayan.apps.documents.links.document_type_links import (
 )
 from mayan.apps.documents.signals import signal_post_document_type_change
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.logging.classes import ErrorLog
+from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.logging.permissions import permission_error_log_entry_view
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
@@ -74,6 +74,7 @@ from .links import (
     link_workflow_template_transition_field_edit,
     link_workflow_template_transition_field_list
 )
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .methods import (
     method_document_type_workflow_templates_add,
     method_document_type_workflow_templates_remove
@@ -142,6 +143,10 @@ class DocumentStatesApp(MayanAppConfig):
 
         error_log = ErrorLog(app_config=self)
         error_log.register_model(model=WorkflowStateAction)
+
+        ErrorLogDomain(
+            label=_(message='Workflows'), name=ERROR_LOG_DOMAIN_NAME
+        )
 
         EventModelRegistry.register(model=WorkflowInstance)
         EventModelRegistry.register(

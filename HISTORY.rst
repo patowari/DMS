@@ -109,6 +109,7 @@
 
 - Support sorting documents by creation date in all view.
 - Add ``AppImageErrorImage`` indicator for when a document file has no pages.
+- Add support for error logging domains.
 
 4.6.2 (2024-03-04)
 ==================

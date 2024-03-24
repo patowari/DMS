@@ -18,6 +18,8 @@ DEFAULT_LINK_SUBJECT_TEMPLATE = _(
 )
 EMAIL_SEPARATORS = (',', ';')
 
+ERROR_LOG_DOMAIN_NAME = 'mailer'
+
 DOCUMENT_FILE_CONTENT_FUNCTION_DOTTED_PATH = 'mayan.apps.mailer.utils.get_document_file_content'
 DOCUMENT_FILE_MIME_TYPE_FUNCTION_DOTTED_PATH = 'mayan.apps.mailer.utils.get_document_file_mime_type'
 

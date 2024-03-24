@@ -11,7 +11,7 @@ from mayan.apps.common.menus import (
     menu_multi_item, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.logging.classes import ErrorLog
+from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import TwoStateWidget
 
@@ -35,7 +35,7 @@ from .literals import (
     DOCUMENT_FILE_CONTENT_FUNCTION_DOTTED_PATH,
     DOCUMENT_FILE_MIME_TYPE_FUNCTION_DOTTED_PATH,
     DOCUMENT_VERSION_CONTENT_FUNCTION_DOTTED_PATH,
-    DOCUMENT_VERSION_MIME_TYPE_FUNCTION_DOTTED_PATH
+    DOCUMENT_VERSION_MIME_TYPE_FUNCTION_DOTTED_PATH, ERROR_LOG_DOMAIN_NAME
 )
 from .mailing_actions import (
     ModelMailingActionAttachment, ModelMailingActionLink
@@ -75,6 +75,10 @@ class MailerApp(MayanAppConfig):
 
         error_log = ErrorLog(app_config=self)
         error_log.register_model(model=UserMailer, register_permission=True)
+
+        ErrorLogDomain(
+            label=_(message='Mailer'), name=ERROR_LOG_DOMAIN_NAME
+        )
 
         EventModelRegistry.register(model=UserMailer)
 

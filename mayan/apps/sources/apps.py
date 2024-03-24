@@ -19,7 +19,7 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.logging.classes import ErrorLog
+from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.views.column_widgets import TwoStateWidget
@@ -36,6 +36,7 @@ from .links import (
     link_source_delete, link_source_edit, link_source_list, link_source_setup,
     link_source_test
 )
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .permissions import (
     permission_sources_delete, permission_sources_edit,
     permission_sources_metadata_view, permission_sources_view
@@ -93,6 +94,10 @@ class SourcesApp(MayanAppConfig):
 
         error_log = ErrorLog(app_config=self)
         error_log.register_model(model=Source)
+
+        ErrorLogDomain(
+            label=_(message='Sources'), name=ERROR_LOG_DOMAIN_NAME
+        )
 
         EventModelRegistry.register(model=Source)
 

@@ -10,6 +10,7 @@ from .events import (
     event_parsing_document_file_content_deleted,
     event_parsing_document_file_finished
 )
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .parsers import Parser
 
 logger = logging.getLogger(name=__name__)
@@ -33,16 +34,6 @@ class DocumentFilePageContentManager(models.Manager):
         logger.debug('document file: %d', document_file.pk)
         try:
             Parser.parse_document_file(document_file=document_file)
-
-            logger.info(
-                'Parsing complete for document file: %s', document_file
-            )
-            document_file.error_log.all().delete()
-
-            event_parsing_document_file_finished.commit(
-                action_object=document_file.document, actor=user,
-                target=document_file
-            )
         except Exception as exception:
             logger.error(
                 'Parsing error for document file: %d; %s',
@@ -58,11 +49,27 @@ class DocumentFilePageContentManager(models.Manager):
                 result.extend(
                     traceback.format_tb(tb)
                 )
-                document_file.error_log.create(
-                    text='\n'.join(result)
-                )
+
+                error_log_text = '\n'.join(result)
             else:
-                document_file.error_log.create(text=exception)
+                error_log_text = exception
+
+            document_file.error_log.create(
+                domain_name=ERROR_LOG_DOMAIN_NAME, text=error_log_text
+            )
+        else:
+            logger.info(
+                'Parsing complete for document file: %s', document_file
+            )
+            queryset_error_logs = document_file.error_log.filter(
+                domain_name=ERROR_LOG_DOMAIN_NAME
+            )
+            queryset_error_logs.delete()
+
+            event_parsing_document_file_finished.commit(
+                action_object=document_file.document, actor=user,
+                target=document_file
+            )
 
 
 class DocumentTypeSettingsManager(models.Manager):

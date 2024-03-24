@@ -12,6 +12,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_file_upload
 from mayan.apps.events.classes import ModelEventType
+from mayan.apps.logging.classes import ErrorLogDomain
 
 from .events import (
     event_parsing_document_file_content_deleted,
@@ -30,6 +31,7 @@ from .links import (
     link_document_file_parsing_single_submit,
     link_document_type_parsing_settings, link_document_type_parsing_submit
 )
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .methods import (
     method_document_content, method_document_file_content,
     method_document_file_parsing_submit, method_document_parsing_submit
@@ -81,6 +83,10 @@ class DocumentParsingApp(MayanAppConfig):
         DocumentFile.add_to_class(
             name='submit_for_parsing',
             value=method_document_file_parsing_submit
+        )
+
+        ErrorLogDomain(
+            label=_(message='Document parsing'), name=ERROR_LOG_DOMAIN_NAME
         )
 
         ModelEventType.register(

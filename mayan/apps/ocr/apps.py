@@ -12,6 +12,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_version_remap
 from mayan.apps.events.classes import ModelEventType
+from mayan.apps.logging.classes import ErrorLogDomain
 
 from .events import (
     event_ocr_document_version_content_deleted,
@@ -32,6 +33,7 @@ from .links import (
     link_document_version_ocr_multiple_submit,
     link_document_type_ocr_settings, link_document_type_submit
 )
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .methods import (
     method_document_ocr_content, method_document_ocr_submit,
     method_document_version_ocr_content, method_document_version_ocr_submit
@@ -83,6 +85,10 @@ class OCRApp(MayanAppConfig):
         )
         DocumentVersion.add_to_class(
             name='submit_for_ocr', value=method_document_version_ocr_submit
+        )
+
+        ErrorLogDomain(
+            label=_(message='OCR'), name=ERROR_LOG_DOMAIN_NAME
         )
 
         ModelEventType.register(

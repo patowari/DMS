@@ -47,6 +47,8 @@ GRAPHVIZ_SYMBOL_CONDITIONAL = '(&fnof;)'
 GRAPHVIZ_SYMBOL_TIME = '(&tau;)'
 GRAPHVIZ_SYMBOL_TRIGGER = '(!)'
 
+ERROR_LOG_DOMAIN_NAME = 'workflows'
+
 STORAGE_NAME_WORKFLOW_CACHE = 'document_states__workflowimagecache'
 
 WIDGET_CLASS_TEXTAREA = 1

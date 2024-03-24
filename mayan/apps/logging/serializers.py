@@ -38,7 +38,8 @@ class ErrorLogPartitionEntrySerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = (
-            'content_type', 'datetime', 'id', 'object_id', 'text', 'url'
+            'content_type', 'datetime', 'domain_name', 'id', 'object_id',
+            'text', 'url'
         )
         model = ErrorLogPartitionEntry
         read_only_fields = fields

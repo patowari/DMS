@@ -4,8 +4,8 @@ from django.conf import settings
 from django.core import serializers
 
 from ..literals import (
-    GRAPHVIZ_ID_STATE_ACTION, GRAPHVIZ_SYMBOL_CONDITIONAL,
-    WORKFLOW_ACTION_WHEN_CHOICES
+    ERROR_LOG_DOMAIN_NAME, GRAPHVIZ_ID_STATE_ACTION,
+    GRAPHVIZ_SYMBOL_CONDITIONAL, WORKFLOW_ACTION_WHEN_CHOICES
 )
 
 
@@ -69,6 +69,7 @@ class WorkflowStateActionBusinessLogicMixin:
                 backend_instance.execute(context=context)
             except Exception as exception:
                 self.error_log.create(
+                    domain_name=ERROR_LOG_DOMAIN_NAME,
                     text='{}; {}'.format(
                         exception.__class__.__name__, exception
                     )
@@ -77,5 +78,7 @@ class WorkflowStateActionBusinessLogicMixin:
                 if settings.DEBUG or settings.TESTING:
                     raise
             else:
-                queryset_error_log = self.error_log.all()
-                queryset_error_log.delete()
+                queryset_error_logs = self.error_log.filter(
+                    domain_name=ERROR_LOG_DOMAIN_NAME
+                )
+                queryset_error_logs.delete()

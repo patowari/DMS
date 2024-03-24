@@ -9,7 +9,7 @@ from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.exceptions import LockError
 from mayan.celery import app
 
-from .literals import DEFAULT_SOURCES_LOCK_EXPIRE
+from .literals import DEFAULT_SOURCES_LOCK_EXPIRE, ERROR_LOG_DOMAIN_NAME
 
 logger = logging.getLogger(name=__name__)
 
@@ -81,6 +81,7 @@ def task_source_backend_action_execute(
                 exc_info=True
             )
             source.error_log.create(
+                domain_name=ERROR_LOG_DOMAIN_NAME,
                 text='{}; {}'.format(
                     exception.__class__.__name__, exception
                 )
@@ -88,6 +89,9 @@ def task_source_backend_action_execute(
             if settings.DEBUG:
                 raise
         else:
-            source.error_log.all().delete()
+            queryset_error_logs = source.error_log.filter(
+                domain_name=ERROR_LOG_DOMAIN_NAME
+            )
+            queryset_error_logs.delete()
         finally:
             lock.release()

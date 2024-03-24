@@ -6,10 +6,12 @@ from mayan.apps.common.menus import menu_object, menu_secondary, menu_tools
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import ObjectLinkWidget
 
+from .classes import ErrorLogDomain
 from .links import (
     link_global_error_log_partition_entry_list,
     link_object_error_log_entry_list_clear, link_object_error_log_entry_delete
 )
+from .literals import DEFAULT_ERROR_LOG_DOMAIN_NAME
 from .mixins import LoggingAppConfigMixin
 
 
@@ -34,6 +36,10 @@ class LoggingApp(LoggingAppConfigMixin, MayanAppConfig):
             model_name='ErrorLogPartitionEntry'
         )
 
+        ErrorLogDomain(
+            name=DEFAULT_ERROR_LOG_DOMAIN_NAME, label=_(message='System')
+        )
+
         ModelPermission.register_inheritance(
             model=ErrorLogPartitionEntry, related='error_log_partition'
         )
@@ -49,8 +55,13 @@ class LoggingApp(LoggingAppConfigMixin, MayanAppConfig):
             attribute='get_object', source=GlobalErrorLogPartitionEntry,
             widget=ObjectLinkWidget
         )
+
         SourceColumn(
             attribute='datetime', is_identifier=True, is_sortable=True,
+            source=ErrorLogPartitionEntry
+        )
+        SourceColumn(
+            attribute='get_domain_label', label=_(message='Domain'),
             source=ErrorLogPartitionEntry
         )
         SourceColumn(

@@ -4,7 +4,9 @@ from django.conf import settings
 from django.core import serializers
 from django.utils.translation import gettext_lazy as _
 
-from ..literals import GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TIME
+from ..literals import (
+    ERROR_LOG_DOMAIN_NAME, GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TIME
+)
 
 
 class WorkflowStateEscalationBusinessLogicMixin:
@@ -41,6 +43,7 @@ class WorkflowStateEscalationBusinessLogicMixin:
                 self.get_class_instance().execute(context=context)
             except Exception as exception:
                 self.error_log.create(
+                    domain_name=ERROR_LOG_DOMAIN_NAME,
                     text='{}; {}'.format(
                         exception.__class__.__name__, exception
                     )
@@ -49,7 +52,10 @@ class WorkflowStateEscalationBusinessLogicMixin:
                 if settings.DEBUG or settings.TESTING:
                     raise
             else:
-                self.error_log.all().delete()
+                queryset_error_logs = self.error_log.filter(
+                    domain_name=ERROR_LOG_DOMAIN_NAME
+                )
+                queryset_error_logs.delete()
 
     def get_comment(self):
         return self.comment or _(message='Workflow escalation.')

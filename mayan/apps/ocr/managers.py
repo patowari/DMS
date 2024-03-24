@@ -12,6 +12,7 @@ from .events import (
     event_ocr_document_version_finished
 )
 from .exceptions import OCRError
+from .literals import ERROR_LOG_DOMAIN_NAME
 
 logger = logging.getLogger(name=__name__)
 
@@ -71,6 +72,7 @@ class DocumentVersionPageOCRContentManager(models.Manager):
                         )
                     except OCRError as exception:
                         document_version_page.error_log.create(
+                            domain_name=ERROR_LOG_DOMAIN_NAME,
                             text=str(exception)
                         )
                     else:
@@ -80,7 +82,10 @@ class DocumentVersionPageOCRContentManager(models.Manager):
                                 'content': ocr_content
                             }
                         )
-                        document_version_page.error_log.all().delete()
+                        queryset_error_logs = document_version_page.error_log.filter(
+                            domain_name=ERROR_LOG_DOMAIN_NAME
+                        )
+                        queryset_error_logs.delete()
             except Exception as exception:
                 logger.error(
                     'OCR error for document version page: %d; %s',

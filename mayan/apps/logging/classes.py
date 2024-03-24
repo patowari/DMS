@@ -155,3 +155,23 @@ class ErrorLog:
             )
 
         return stored_error_log
+
+
+class ErrorLogDomain:
+    _registry = {}
+
+    @classmethod
+    def get(cls, name):
+        return cls._registry[name]
+
+    def __init__(self, name, label):
+        self.name = name
+        self.label = label
+
+        if name in self.__class__._registry:
+            raise ImproperlyConfigured(
+                'An error log domain with the name `{}` already '
+                'exists.'.format(name)
+            )
+        else:
+            self.__class__._registry[name] = self

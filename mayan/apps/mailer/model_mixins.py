@@ -10,6 +10,7 @@ import mayan
 from mayan.apps.templating.classes import Template
 
 from .events import event_email_sent
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .mailing_actions import ModelMailingAction
 from .utils import split_recipient_list
 
@@ -86,12 +87,16 @@ class UserMailerBusinessLogicMixin:
 
         except Exception as exception:
             self.error_log.create(
+                domain_name=ERROR_LOG_DOMAIN_NAME,
                 text='{}; {}'.format(
                     exception.__class__.__name__, exception
                 )
             )
         else:
-            self.error_log.all().delete()
+            queryset_error_logs = self.error_log.filter(
+                domain_name=ERROR_LOG_DOMAIN_NAME
+            )
+            queryset_error_logs.delete()
 
             event_email_sent.commit(
                 action_object=_event_action_object, actor=user,
@@ -175,6 +180,7 @@ class UserMailerBusinessLogicMixin:
             )
         except Exception as exception:
             self.error_log.create(
+                domain_name=ERROR_LOG_DOMAIN_NAME,
                 text='{}; {}'.format(
                     exception.__class__.__name__, exception
                 )
@@ -182,4 +188,7 @@ class UserMailerBusinessLogicMixin:
             if settings.DEBUG:
                 raise
         else:
-            self.error_log.all().delete()
+            queryset_error_logs = self.error_log.filter(
+                domain_name=ERROR_LOG_DOMAIN_NAME
+            )
+            queryset_error_logs.delete()

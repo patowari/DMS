@@ -7,6 +7,7 @@ from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
 
 from .events import event_error_log_deleted
+from .literals import DEFAULT_ERROR_LOG_DOMAIN_NAME
 from .managers import ErrorLogPartitionEntryManager
 from .model_mixins import (
     ErrorLogPartitionEntryBusinessLogicMixin, StoredErrorLogBusinessLogicMixin
@@ -27,6 +28,22 @@ class StoredErrorLog(StoredErrorLogBusinessLogicMixin, models.Model):
 
     def __str__(self):
         return str(self.app_label)
+
+
+# ~ class StoredErrorLogDomain(models.Model):
+    # ~ _ordering_fields = ('name',)
+
+    # ~ name = models.CharField(
+        # ~ max_length=128, unique=True, verbose_name=_(message='Internal name')
+    # ~ )
+
+    # ~ class Meta:
+        # ~ ordering = ('name',)
+        # ~ verbose_name = _(message='Error log domain')
+        # ~ verbose_name_plural = _(message='Error log domains')
+
+    # ~ def __str__(self):
+        # ~ return str(self.label)
 
 
 class ErrorLogPartition(models.Model):
@@ -61,7 +78,7 @@ class ErrorLogPartition(models.Model):
 class ErrorLogPartitionEntry(
     ErrorLogPartitionEntryBusinessLogicMixin, models.Model
 ):
-    _ordering_fields = ('datetime',)
+    _ordering_fields = ('datetime', 'domain_name')
 
     error_log_partition = models.ForeignKey(
         on_delete=models.CASCADE, related_name='entries',
@@ -71,6 +88,10 @@ class ErrorLogPartitionEntry(
         auto_now_add=True, db_index=True, verbose_name=_(
             message='Date and time'
         )
+    )
+    domain_name = models.CharField(
+        db_index=True, default=DEFAULT_ERROR_LOG_DOMAIN_NAME, max_length=128,
+        verbose_name=_(message='Domain name')
     )
     text = models.TextField(
         blank=True, null=True, verbose_name=_(message='Text')
