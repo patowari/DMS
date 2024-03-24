@@ -114,6 +114,7 @@
   errors are tracked in the document file error log as reported by the
   converter.
 - Add list toolbar widget to control the sorting.
+- Fix display of build number.
 
 4.6.2 (2024-03-04)
 ==================
