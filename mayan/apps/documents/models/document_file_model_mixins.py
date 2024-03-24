@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.common.signals import signal_mayan_pre_save
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.exceptions import (
-    InvalidOfficeFormat, PageCountError
+    AppImageError, InvalidOfficeFormat, PageCountError
 )
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.events.decorators import method_event
@@ -23,6 +23,7 @@ from ..classes import DocumentFileAction
 from ..events import event_document_file_created, event_document_file_edited
 from ..literals import (
     DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE,
+    IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
     STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
 )
 from ..settings import setting_hash_block_size
@@ -265,9 +266,6 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
 
             return self.checksum
 
-    def get_document_file_latest(self):
-        return self.document.files.exclude(pk=self.pk).order_by('timestamp').only('id').last()
-
     def execute_pre_save_hooks(self):
         """
         Helper method to allow checking if new files are possible from
@@ -305,6 +303,10 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
                 transformation_instance_list=transformation_instance_list,
                 user=user
             )
+        else:
+            raise AppImageError(
+                error_name=IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES
+            )
 
     def get_cache_partitions(self):
         result = [self.cache_partition]
@@ -312,6 +314,9 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
             result.append(page.cache_partition)
 
         return result
+
+    def get_document_file_latest(self):
+        return self.document.files.exclude(pk=self.pk).order_by('timestamp').only('id').last()
 
     def get_intermediate_file(self):
         cache_filename = 'intermediate_file'

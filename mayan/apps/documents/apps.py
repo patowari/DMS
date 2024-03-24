@@ -163,6 +163,7 @@ from .links.trashed_document_links import (
     link_trash_can_empty
 )
 from .literals import (
+    IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
     IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR,
     IMAGE_ERROR_NO_ACTIVE_VERSION, IMAGE_ERROR_NO_VERSION_PAGES,
     IMAGE_ERROR_VERSION_PAGE_TRANSFORMATION_ERROR
@@ -256,6 +257,10 @@ class DocumentsApp(MayanAppConfig):
         AppImageErrorImage(
             name=IMAGE_ERROR_NO_VERSION_PAGES,
             template_name='documents/errors/no_version_pages.html'
+        )
+        AppImageErrorImage(
+            name=IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
+            template_name='documents/errors/document_file_has_no_pages.html'
         )
         AppImageErrorImage(
             name=IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR,
