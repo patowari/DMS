@@ -109,11 +109,18 @@ class SourceStoredFile:
         return partition
 
     def delete(self):
-        cache_partition_file = self.cache_partition.get_file(
-            filename=self.encoded_filename
+        CachePartitionFile = apps.get_model(
+            app_label='file_caching', model_name='CachePartitionFile'
         )
 
-        cache_partition_file.delete()
+        try:
+            cache_partition_file = self.cache_partition.get_file(
+                filename=self.encoded_filename
+            )
+        except CachePartitionFile.DoesNotExist:
+            """Non fatal. Means that the file never cached a preview."""
+        else:
+            cache_partition_file.delete()
 
         self.storage_backend_instance.delete(
             name=self.get_full_path()
