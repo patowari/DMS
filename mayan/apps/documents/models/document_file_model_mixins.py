@@ -22,7 +22,7 @@ from mayan.apps.storage.model_mixins import ModelMixinFileFieldOpen
 from ..classes import DocumentFileAction
 from ..events import event_document_file_created, event_document_file_edited
 from ..literals import (
-    DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE,
+    DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE, ERROR_LOG_DOMAIN_NAME,
     IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
     STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
 )
@@ -392,16 +392,25 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
     def page_count_update(self, save=True, user=None):
         try:
             with self.open() as file_object:
-                converter = ConverterBase.get_converter_class()(
+                converter_class = ConverterBase.get_converter_class()
+                converter = converter_class(
                     file_object=file_object, mime_type=self.mimetype
                 )
                 detected_pages = converter.get_page_count()
-        except PageCountError:
+        except PageCountError as exception:
             """Converter backend doesn't understand the format."""
+            self.error_log.create(
+                domain_name=ERROR_LOG_DOMAIN_NAME, text=exception
+            )
         else:
             DocumentFilePage = apps.get_model(
                 app_label='documents', model_name='DocumentFilePage'
             )
+
+            queryset_error_logs = self.error_log.filter(
+                domain_name=ERROR_LOG_DOMAIN_NAME
+            )
+            queryset_error_logs.delete()
 
             for page in self.pages.all():
                 page._event_actor = user

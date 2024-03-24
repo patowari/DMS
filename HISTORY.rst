@@ -110,6 +110,9 @@
 - Support sorting documents by creation date in all view.
 - Add ``AppImageErrorImage`` indicator for when a document file has no pages.
 - Add support for error logging domains.
+- Track document file page count calculation errors. Page count detection
+  errors are tracked in the document file error log as reported by the
+  converter.
 
 4.6.2 (2024-03-04)
 ==================

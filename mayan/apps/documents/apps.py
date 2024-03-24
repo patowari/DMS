@@ -27,7 +27,7 @@ from mayan.apps.file_caching.links import link_cache_partition_purge
 from mayan.apps.file_caching.permissions import (
     permission_cache_partition_purge
 )
-from mayan.apps.logging.classes import ErrorLog
+from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import AJAXTemplate
@@ -163,7 +163,7 @@ from .links.trashed_document_links import (
     link_trash_can_empty
 )
 from .literals import (
-    IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
+    ERROR_LOG_DOMAIN_NAME, IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
     IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR,
     IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING,
     IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES,
@@ -283,6 +283,10 @@ class DocumentsApp(MayanAppConfig):
         error_log.register_model(model=DocumentFilePage)
         error_log.register_model(model=DocumentVersion)
         error_log.register_model(model=DocumentVersionPage)
+
+        ErrorLogDomain(
+            label=_(message='Documents'), name=ERROR_LOG_DOMAIN_NAME
+        )
 
         DocumentFileAction.load_modules()
         DocumentVersionModification.load_modules()
