@@ -32,9 +32,9 @@ class MayanImage {
 
             $this.attr('loading', 'lazy');
             const dataURL = $this.attr('data-url');
-            const url = new URL(dataURL, window.location.origin);
-            $this.attr('src', url);
-            $this.on("error", function () {
+            $this.attr('src', dataURL);
+
+            $this.on('error', function () {
                 $.ajax({
                     async: true,
                     dataType: 'json',
