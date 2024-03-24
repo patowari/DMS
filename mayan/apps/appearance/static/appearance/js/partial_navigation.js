@@ -124,12 +124,12 @@ class PartialNavigation {
         if (this.currentAjaxRequest) {
             // Store and repaint the content area to avoid a '0' status
             // server error message.
-            const html = $('#ajax-content').html();
+            const htmlContent = $('#ajax-content').html();
 
             this.currentAjaxRequest.abort();
             $('body').css('cursor', 'progress');
 
-            $('#ajax-content').html(html).change();
+            $('#ajax-content').html(htmlContent);
         }
 
         this.currentAjaxRequest = $.ajax({
