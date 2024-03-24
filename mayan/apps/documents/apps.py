@@ -164,9 +164,10 @@ from .links.trashed_document_links import (
 )
 from .literals import (
     IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
-    IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR,
-    IMAGE_ERROR_NO_ACTIVE_VERSION, IMAGE_ERROR_NO_VERSION_PAGES,
-    IMAGE_ERROR_VERSION_PAGE_TRANSFORMATION_ERROR
+    IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR,
+    IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING,
+    IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES,
+    IMAGE_ERROR_DOCUMENT_VERSION_PAGE_TRANSFORMATION_ERROR
 )
 from .menus import menu_documents
 
@@ -251,23 +252,23 @@ class DocumentsApp(MayanAppConfig):
         TrashedDocument = self.get_model(model_name='TrashedDocument')
 
         AppImageErrorImage(
-            name=IMAGE_ERROR_NO_ACTIVE_VERSION,
-            template_name='documents/errors/no_valid_version.html'
-        )
-        AppImageErrorImage(
-            name=IMAGE_ERROR_NO_VERSION_PAGES,
-            template_name='documents/errors/no_version_pages.html'
+            name=IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR,
+            template_name='documents/errors/document_file_page_transformation_error.html'
         )
         AppImageErrorImage(
             name=IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
             template_name='documents/errors/document_file_has_no_pages.html'
         )
         AppImageErrorImage(
-            name=IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR,
-            template_name='documents/errors/document_file_page_transformation_error.html'
+            name=IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING,
+            template_name='documents/errors/no_valid_version.html'
         )
         AppImageErrorImage(
-            name=IMAGE_ERROR_VERSION_PAGE_TRANSFORMATION_ERROR,
+            name=IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES,
+            template_name='documents/errors/no_version_pages.html'
+        )
+        AppImageErrorImage(
+            name=IMAGE_ERROR_DOCUMENT_VERSION_PAGE_TRANSFORMATION_ERROR,
             template_name='documents/errors/document_version_page_transformation_error.html'
         )
 

@@ -14,7 +14,7 @@ from mayan.apps.converter.transformations import BaseTransformation
 from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.lock_manager.backends.base import LockingBackend
 
-from ..literals import IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR
+from ..literals import IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR
 
 logger = logging.getLogger(name=__name__)
 
@@ -108,7 +108,7 @@ class DocumentFilePageBusinessLogicMixin:
             )
         except Exception as exception:
             raise AppImageError(
-                error_name=IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR
+                error_name=IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR
             ) from exception
 
         final_url = furl()

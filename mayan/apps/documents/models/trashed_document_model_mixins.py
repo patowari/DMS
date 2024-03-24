@@ -5,7 +5,7 @@ from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
 
 from ..events import event_trashed_document_restored
-from ..literals import IMAGE_ERROR_NO_VERSION_PAGES
+from ..literals import IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES
 
 
 class TrashedDocumentBusinessLogicMixin:
@@ -29,7 +29,9 @@ class TrashedDocumentBusinessLogicMixin:
                 viewname='rest_api:trasheddocument-image', user=user
             )
         else:
-            raise AppImageError(error_name=IMAGE_ERROR_NO_VERSION_PAGES)
+            raise AppImageError(
+                error_name=IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES
+            )
 
     @method_event(
         event_manager_class=EventManagerMethodAfter,

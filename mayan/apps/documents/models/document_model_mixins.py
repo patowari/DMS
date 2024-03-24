@@ -12,7 +12,8 @@ from mayan.apps.storage.exceptions import NoMIMETypeMatch
 
 from ..events import event_document_type_changed
 from ..literals import (
-    DEFAULT_DOCUMENT_FILE_ACTION_NAME, IMAGE_ERROR_NO_ACTIVE_VERSION
+    DEFAULT_DOCUMENT_FILE_ACTION_NAME,
+    IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING
 )
 from ..permissions import permission_document_change_type
 from ..signals import signal_post_document_type_change
@@ -166,7 +167,9 @@ class DocumentBusinessLogicMixin:
         if version_active:
             return version_active.get_api_image_url(*args, **kwargs)
         else:
-            raise AppImageError(error_name=IMAGE_ERROR_NO_ACTIVE_VERSION)
+            raise AppImageError(
+                error_name=IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING
+            )
 
     def get_label(self):
         return self.label or gettext(

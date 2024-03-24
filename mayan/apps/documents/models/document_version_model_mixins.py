@@ -19,7 +19,8 @@ from ..events import (
     event_document_version_page_created, event_document_version_edited
 )
 from ..literals import (
-    DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE, IMAGE_ERROR_NO_VERSION_PAGES,
+    DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE,
+    IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
 from ..signals import signal_post_document_version_remap
@@ -98,7 +99,9 @@ class DocumentVersionBusinessLogicMixin:
                 user=user
             )
         else:
-            raise AppImageError(error_name=IMAGE_ERROR_NO_VERSION_PAGES)
+            raise AppImageError(
+                error_name=IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES
+            )
 
     def get_cache_partitions(self):
         result = [self.cache_partition]

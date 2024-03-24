@@ -78,10 +78,10 @@ DOCUMENT_FILE_PAGE_CREATE_BATCH_SIZE = 100
 DOCUMENT_VERSION_PAGE_CREATE_BATCH_SIZE = 100
 
 IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES = 'document_file_has_no_pages'
-IMAGE_ERROR_FILE_PAGE_TRANSFORMATION_ERROR = 'document_file_page_transformation_error'
-IMAGE_ERROR_NO_ACTIVE_VERSION = 'document_no_active_version'
-IMAGE_ERROR_NO_VERSION_PAGES = 'document_no_version_pages'
-IMAGE_ERROR_VERSION_PAGE_TRANSFORMATION_ERROR = 'document_version_page_transformation_error'
+IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR = 'document_file_page_transformation_error'
+IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING = 'document_no_active_version'
+IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES = 'document_no_version_pages'
+IMAGE_ERROR_DOCUMENT_VERSION_PAGE_TRANSFORMATION_ERROR = 'document_version_page_transformation_error'
 
 INTERVAL_TASK_STUBS_DELETION = 60 * 10  # 10 minutes
 
