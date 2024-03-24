@@ -1,7 +1,10 @@
+exclude mayan/urls/development.py
 include README.md LICENSE HISTORY.rst mayan/LICENSE
-recursive-include mayan/apps *.asc *.bz2 *.css *.doc *.eot *.gif *.gpg *.gz *.html *.ico *.jpg *.js *.mo *.msg *.pdf *.png *.sig *.svg *.tar *.tiff *.tmpl *.ttf *.txt *.woff *.woff2 *.zip
+recursive-include mayan/apps *.css *.eot *.gif *.html *.ico *.jpg *.js *.mo *.png *.svg *.tiff *.tmpl *.ttf *.txt *.woff *.woff2
 global-exclude mayan/settings/local.py *.po
 prune mayan/apps/*/static/*/node_modules/*
 prune mayan/apps/*/tests/
-prune mayan/settings/travis/*
 prune mayan/media/*
+prune mayan/settings/development/
+prune mayan/settings/staging/
+prune mayan/settings/testing/
