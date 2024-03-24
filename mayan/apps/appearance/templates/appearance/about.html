@@ -37,7 +37,7 @@
                 <p></p>
 
                 <p class="text-center">{% trans 'Version' %} {{ project_version }}</p>
-                {% if build_number %}
+                {% if project_build_number %}
                     <p class='text-center'>{% blocktrans with project_build_number as project_build_number %}Build number: {{ project_build_number }}{% endblocktrans %}</p>
                 {% endif %}
                 <p class="text-center">

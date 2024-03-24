@@ -3,6 +3,7 @@
 - Merge changes from 4.5.11.
 - Add path support to the URL class.
 - Fix document print and password reset templates.
+- Fix display of build number.
 
 4.6.2 (2024-03-04)
 ==================
