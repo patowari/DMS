@@ -48,8 +48,9 @@ class SignatureBaseModel(SignatureBaseModelBusinessLogicMixin, models.Model):
         )
     )
     key_id = models.CharField(
-        help_text=_(message='ID of the key that will be used to sign the document.'),
-        max_length=40, verbose_name=_(message='Key ID')
+        help_text=_(
+            message='ID of the key that will be used to sign the document.'
+        ), max_length=40, verbose_name=_(message='Key ID')
     )
     # With proper key
     signature_id = models.CharField(
