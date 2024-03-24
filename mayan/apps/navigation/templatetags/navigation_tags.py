@@ -16,12 +16,15 @@ def _navigation_resolve_menu(context, name, source=None, sort_results=None):
 
     if link_groups:
         result.append(
-            {
-                'link_groups': link_groups, 'menu': menu
-            }
+            {'link_groups': link_groups, 'menu': menu}
         )
 
     return result
+
+
+@register.simple_tag(takes_context=True)
+def navigation_get_is_active_sort_field(context, column, reverse=None):
+    return column.get_is_active_sort_field(context=context, reverse=reverse)
 
 
 @register.simple_tag
@@ -30,8 +33,12 @@ def navigation_get_link(dotted_path):
 
 
 @register.simple_tag(takes_context=True)
-def navigation_get_sort_field_querystring(context, column):
-    return column.get_sort_field_querystring(context=context)
+def navigation_get_sort_field_querystring(
+    context, column, order=None, single_column=None
+):
+    return column.get_sort_field_querystring(
+        context=context, order=order, single_column=single_column
+    )
 
 
 @register.simple_tag
@@ -42,6 +49,11 @@ def navigation_get_source_columns(
         source=source, exclude_identifier=exclude_identifier,
         names=names, only_identifier=only_identifier
     )
+
+
+@register.simple_tag
+def navigation_get_source_columns_sortable(source,):
+    return SourceColumn.get_sortable_for_source(source=source)
 
 
 @register.simple_tag(takes_context=True)

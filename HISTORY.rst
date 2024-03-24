@@ -113,6 +113,7 @@
 - Track document file page count calculation errors. Page count detection
   errors are tracked in the document file error log as reported by the
   converter.
+- Add list toolbar widget to control the sorting.
 
 4.6.2 (2024-03-04)
 ==================

@@ -1,3 +1,4 @@
+from functools import cache
 import logging
 
 from furl import furl
@@ -877,6 +878,15 @@ class SourceColumn(TemplateObjectMixin):
 
         return columns
 
+    @classmethod
+    def get_sortable_for_source(cls, source):
+        result = []
+        for column in cls.get_for_source(source=source):
+            if column.is_sortable:
+                result.append(column)
+
+        return result
+
     def __init__(
         self, source, attribute=None, empty_value=None, func=None,
         help_text=None, html_extra_classes=None, include_label=False,
@@ -994,6 +1004,16 @@ class SourceColumn(TemplateObjectMixin):
             if result:
                 return result.get_absolute_url()
 
+    def get_is_active_sort_field(self, context, reverse=False):
+        previous_sort_fields = self.get_previous_sort_fields(context=context)
+        sort_field = self.get_sort_field()
+
+        if len(previous_sort_fields) == 1:
+            if reverse:
+                return '-{}'.format(sort_field) in previous_sort_fields
+            else:
+                return sort_field in previous_sort_fields
+
     def get_previous_sort_fields(self, context):
         previous_sort_fields = context.get(
             TEXT_SORT_FIELD_VARIABLE_NAME, None
@@ -1012,20 +1032,37 @@ class SourceColumn(TemplateObjectMixin):
         else:
             return self.attribute
 
-    def get_sort_field_querystring(self, context):
+    def get_sort_field_querystring(
+        self, context, order=None, single_column=False
+    ):
         request = self.get_request(context=context)
 
         # Get an mutable copy that can be modified.
         querystring = request.GET.copy()
 
-        previous_sort_fields = list(
-            self.get_previous_sort_fields(context=context)
-        )
-
         sort_field = self.get_sort_field()
 
         ascending = sort_field
         descending = '-{}'.format(sort_field)
+
+        previous_sort_fields = list(
+            self.get_previous_sort_fields(context=context)
+        )
+
+        if single_column:
+            # Create a new list Remove all other fields from the list.
+            if order == 'ascending':
+                previous_sort_fields = []
+            elif order == 'descending':
+                previous_sort_fields = [ascending]
+            elif order == 'clear':
+                previous_sort_fields = [descending]
+            else:
+                previous_sort_fields = list(
+                    set(previous_sort_fields).intersection(
+                        (ascending, descending)
+                    )
+                )
 
         if ascending not in previous_sort_fields and descending not in previous_sort_fields:
             previous_sort_fields.append(ascending)
