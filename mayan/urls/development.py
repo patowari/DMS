@@ -3,19 +3,6 @@ from django.urls import include, re_path
 
 from .base import *  # NOQA
 
-if 'rosetta' in settings.INSTALLED_APPS:
-    try:
-        import rosetta  # NOQA
-    except ImportError:
-        pass
-    else:
-        urlpatterns += [  # NOQA
-            re_path(
-                route=r'^rosetta/', view=include('rosetta.urls'),
-                name='rosetta'
-            )
-        ]
-
 if 'debug_toolbar' in settings.INSTALLED_APPS:
     try:
         import debug_toolbar

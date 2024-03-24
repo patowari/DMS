@@ -185,11 +185,6 @@ PythonDependency(
     name='django-extensions', version_string='==3.2.3'
 )
 PythonDependency(
-    environment=environment_development, help_text=_(
-        'Used to allow offline translation of the code text strings.'
-    ), module=__name__, name='django-rosetta', version_string='==0.10.0'
-)
-PythonDependency(
     environment=environment_development, module=__name__,
     name='django-silk', version_string='==5.1.0'
 )

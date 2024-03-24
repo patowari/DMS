@@ -10,6 +10,7 @@ django-environ
 django-filetransfers
 django-pure-pagination
 django-rest-swagger
+django-rosetta
 django-suit
 django-test-without-migrations
 django-timezone-field

@@ -115,6 +115,7 @@
   converter.
 - Add list toolbar widget to control the sorting.
 - Fix display of build number.
+- Remove Django Rosetta from dependencies.
 
 4.6.2 (2024-03-04)
 ==================
