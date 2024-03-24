@@ -71,7 +71,7 @@ class Template:
     def __init__(self, template_string):
         self._template_backend = Template.get_backend()
 
-        self._template_backend.from_string(
+        self._template = self._template_backend.from_string(
             template_code=template_string
         )
 
