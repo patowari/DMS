@@ -1,3 +1,5 @@
+import logging
+
 from django.apps import apps
 from django.test import TestCase, TransactionTestCase, tag
 
@@ -49,6 +51,15 @@ class BaseTestCase(BaseTestCaseMixin, TestCase):
     """
     All the project test mixin on top of Django test case class.
     """
+    def setUp(self):
+        super().setUp()
+        self._logger_root_handlers_old = logging.root.handlers.copy()
+
+    def tearDown(self):
+        for handler in logging.root.handlers:
+            if handler not in self._logger_root_handlers_old:
+                logging.root.handlers.remove(handler)
+        super().tearDown()
 
 
 class BaseTransactionTestCase(BaseTestCaseMixin, TransactionTestCase):
