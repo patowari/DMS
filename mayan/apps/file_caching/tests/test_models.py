@@ -182,18 +182,18 @@ class CacheModelTestCase(CacheTestMixin, BaseTestCase):
 
         self._clear_events()
 
-        with self._test_cache_partition_files[0].open():
+        with self._test_cache_partition_file_list[0].open():
             """Do nothing"""
 
         self._create_test_cache_partition_file(file_size=1)
 
         # Older but more hits was kept.
         self.assertTrue(
-            self._test_cache_partition_files[0] in CachePartitionFile.objects.all()
+            self._test_cache_partition_file_list[0] in CachePartitionFile.objects.all()
         )
         # Newer but less hits was purged.
         self.assertTrue(
-            self._test_cache_partition_files[1] not in CachePartitionFile.objects.all()
+            self._test_cache_partition_file_list[1] not in CachePartitionFile.objects.all()
         )
 
         events = self._get_test_events()
@@ -275,21 +275,21 @@ class CacheModelTestCase(CacheTestMixin, BaseTestCase):
 
         self._clear_events()
 
-        with self._test_cache_partition_files[1].open():
+        with self._test_cache_partition_file_list[1].open():
             """Increase hits of file #1"""
 
-        with self._test_cache_partition_files[0].open():
+        with self._test_cache_partition_file_list[0].open():
             """Lock and increase hits of file #0"""
             self._create_test_cache_partition_file(file_size=1)
 
         self.assertTrue(
-            self._test_cache_partition_files[0] in CachePartitionFile.objects.all()
+            self._test_cache_partition_file_list[0] in CachePartitionFile.objects.all()
         )
         self.assertTrue(
-            self._test_cache_partition_files[1] not in CachePartitionFile.objects.all()
+            self._test_cache_partition_file_list[1] not in CachePartitionFile.objects.all()
         )
         self.assertTrue(
-            self._test_cache_partition_files[2] in CachePartitionFile.objects.all()
+            self._test_cache_partition_file_list[2] in CachePartitionFile.objects.all()
         )
 
         events = self._get_test_events()
@@ -301,7 +301,7 @@ class CacheModelTestCase(CacheTestMixin, BaseTestCase):
         test_case_instance = self
 
         def fake_method_delete(self, *args, **kwargs):
-            if self.pk == test_case_instance._test_cache_partition_files[0].pk:
+            if self.pk == test_case_instance._test_cache_partition_file_list[0].pk:
                 raise Exception
 
             return super(CachePartitionFile, self).delete(*args, **kwargs)
@@ -356,7 +356,7 @@ class CachePartitionModelTestCase(CacheTestMixin, BaseTestCase):
         test_case_instance = self
 
         def fake_method_delete(self, *args, **kwargs):
-            if self.pk == test_case_instance._test_cache_partition_files[0].pk:
+            if self.pk == test_case_instance._test_cache_partition_file_list[0].pk:
                 raise Exception
 
             return super(CachePartitionFile, self).delete(*args, **kwargs)

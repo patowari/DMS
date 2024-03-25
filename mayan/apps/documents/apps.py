@@ -246,9 +246,6 @@ class DocumentsApp(MayanAppConfig):
         RecentlyAccessedDocumentProxy = self.get_model(
             model_name='RecentlyAccessedDocumentProxy'
         )
-        RecentlyCreatedDocument = self.get_model(
-            model_name='RecentlyCreatedDocument'
-        )
         TrashedDocument = self.get_model(model_name='TrashedDocument')
 
         AppImageErrorImage(

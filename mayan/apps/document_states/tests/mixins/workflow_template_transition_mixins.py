@@ -17,12 +17,12 @@ class WorkflowTemplateTransitionTestMixin(WorkflowTemplateStateTestMixin):
         self._test_workflow_template_transition_list = []
 
     def _create_test_workflow_template_transition(self, extra_kwargs=None):
-        total_test_workflow_template_transitions = len(
+        total_test_workflow_template_transition_count = len(
             self._test_workflow_template_transition_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_TRANSITION_LABEL,
-            total_test_workflow_template_transitions
+            total_test_workflow_template_transition_count
         )
 
         kwargs = {

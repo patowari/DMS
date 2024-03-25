@@ -1,4 +1,3 @@
-from functools import cache
 import logging
 
 from furl import furl

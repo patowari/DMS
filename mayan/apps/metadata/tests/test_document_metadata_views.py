@@ -282,11 +282,11 @@ class DocumentMetadataViewTestCase(
         self._create_test_document_stub()
 
         self.grant_access(
-            obj=self._test_documents[0],
+            obj=self._test_document_list[0],
             permission=permission_document_metadata_add
         )
         self.grant_access(
-            obj=self._test_documents[1],
+            obj=self._test_document_list[1],
             permission=permission_document_metadata_add
         )
         self.grant_access(
@@ -294,8 +294,8 @@ class DocumentMetadataViewTestCase(
             permission=permission_document_metadata_add
         )
 
-        self._test_documents = instance_list_to_queryset(
-            instance_list=self._test_documents
+        self._test_document_list = instance_list_to_queryset(
+            instance_list=self._test_document_list
         )
 
         self._clear_events()
@@ -315,7 +315,7 @@ class DocumentMetadataViewTestCase(
                 )
             ),
             {
-                self._test_documents[0].pk, self._test_documents[1].pk
+                self._test_document_list[0].pk, self._test_document_list[1].pk
             }
         )
 
@@ -324,26 +324,26 @@ class DocumentMetadataViewTestCase(
 
         self.assertEqual(events[0].action_object, self._test_metadata_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_documents[0])
+        self.assertEqual(events[0].target, self._test_document_list[0])
         self.assertEqual(events[0].verb, event_document_metadata_added.id)
 
         self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_documents[1])
+        self.assertEqual(events[1].target, self._test_document_list[1])
         self.assertEqual(events[1].verb, event_document_metadata_added.id)
 
     def test_document_multiple_metadata_add_post_view_with_document_access(self):
         self._create_test_document_stub()
 
-        document_0_metadata_count = self._test_documents[0].metadata.count()
-        document_1_metadata_count = self._test_documents[1].metadata.count()
+        document_0_metadata_count = self._test_document_list[0].metadata.count()
+        document_1_metadata_count = self._test_document_list[1].metadata.count()
 
         self.grant_access(
-            obj=self._test_documents[0],
+            obj=self._test_document_list[0],
             permission=permission_document_metadata_add
         )
         self.grant_access(
-            obj=self._test_documents[1],
+            obj=self._test_document_list[1],
             permission=permission_document_metadata_add
         )
 
@@ -353,11 +353,11 @@ class DocumentMetadataViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_documents[0].metadata.count(),
+            self._test_document_list[0].metadata.count(),
             document_0_metadata_count
         )
         self.assertEqual(
-            self._test_documents[1].metadata.count(),
+            self._test_document_list[1].metadata.count(),
             document_1_metadata_count
         )
 
@@ -552,12 +552,12 @@ class DocumentMetadataViewTestCase(
         self._create_test_document_type()
         self._create_test_metadata_type()
 
-        test_document_metadata_2 = self._test_document_types[1].metadata.create(
+        test_document_metadata_2 = self._test_document_type_list[1].metadata.create(
             metadata_type=self._test_metadata_type_list[1], required=True
         )
 
         self._test_document._document_type_change(
-            document_type=self._test_document_types[1]
+            document_type=self._test_document_type_list[1]
         )
 
         response = self.get(
@@ -622,11 +622,11 @@ class DocumentMetadataViewTestCase(
         self._create_test_document_stub()
 
         self.grant_access(
-            obj=self._test_documents[0],
+            obj=self._test_document_list[0],
             permission=permission_document_metadata_edit
         )
         self.grant_access(
-            obj=self._test_documents[1],
+            obj=self._test_document_list[1],
             permission=permission_document_metadata_edit
         )
         self.grant_access(
@@ -651,7 +651,7 @@ class DocumentMetadataViewTestCase(
                 )
             ),
             {
-                self._test_documents[0].pk, self._test_documents[1].pk
+                self._test_document_list[0].pk, self._test_document_list[1].pk
             }
         )
 
@@ -999,19 +999,19 @@ class DocumentMetadataViewTestCase(
     def test_document_multiple_metadata_remove_redirect(self):
         self._create_test_document_stub()
 
-        self._test_documents[0].metadata.create(
+        self._test_document_list[0].metadata.create(
             metadata_type=self._test_metadata_type
         )
-        self._test_documents[1].metadata.create(
+        self._test_document_list[1].metadata.create(
             metadata_type=self._test_metadata_type
         )
 
         self.grant_access(
-            obj=self._test_documents[0],
+            obj=self._test_document_list[0],
             permission=permission_document_metadata_remove
         )
         self.grant_access(
-            obj=self._test_documents[1],
+            obj=self._test_document_list[1],
             permission=permission_document_metadata_remove
         )
         self.grant_access(
@@ -1019,8 +1019,8 @@ class DocumentMetadataViewTestCase(
             permission=permission_document_metadata_remove
         )
 
-        self._test_documents = instance_list_to_queryset(
-            instance_list=self._test_documents
+        self._test_document_list = instance_list_to_queryset(
+            instance_list=self._test_document_list
         )
 
         self._clear_events()
@@ -1037,12 +1037,12 @@ class DocumentMetadataViewTestCase(
 
         self.assertEqual(events[0].action_object, self._test_metadata_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_documents[0])
+        self.assertEqual(events[0].target, self._test_document_list[0])
         self.assertEqual(events[0].verb, event_document_metadata_removed.id)
 
         self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_documents[1])
+        self.assertEqual(events[1].target, self._test_document_list[1])
         self.assertEqual(events[1].verb, event_document_metadata_removed.id)
 
     def test_document_multiple_metadata_remove_view_with_access(self):
@@ -1051,18 +1051,18 @@ class DocumentMetadataViewTestCase(
 
         self._create_test_document_stub()
 
-        self._test_documents[0].metadata.create(
+        self._test_document_list[0].metadata.create(
             metadata_type=self._test_metadata_type
         )
-        self._test_documents[1].metadata.create(
+        self._test_document_list[1].metadata.create(
             metadata_type=self._test_metadata_type
         )
 
         response = self._request_test_document_multiple_metadata_remove_get_view()
         self.assertEqual(response.status_code, 200)
 
-        self._test_documents = instance_list_to_queryset(
-            instance_list=self._test_documents
+        self._test_document_list = instance_list_to_queryset(
+            instance_list=self._test_document_list
         )
 
         self._clear_events()
@@ -1073,10 +1073,10 @@ class DocumentMetadataViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_documents[0].metadata.count(), 0
+            self._test_document_list[0].metadata.count(), 0
         )
         self.assertEqual(
-            self._test_documents[1].metadata.count(), 0
+            self._test_document_list[1].metadata.count(), 0
         )
 
         events = self._get_test_events()
@@ -1084,12 +1084,12 @@ class DocumentMetadataViewTestCase(
 
         self.assertEqual(events[0].action_object, self._test_metadata_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_documents[0])
+        self.assertEqual(events[0].target, self._test_document_list[0])
         self.assertEqual(events[0].verb, event_document_metadata_removed.id)
 
         self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_documents[1])
+        self.assertEqual(events[1].target, self._test_document_list[1])
         self.assertEqual(events[1].verb, event_document_metadata_removed.id)
 
     def test_multiple_document_metadata_edit(self):
@@ -1099,18 +1099,18 @@ class DocumentMetadataViewTestCase(
         self.grant_permission(permission=permission_document_metadata_add)
         self.grant_permission(permission=permission_document_metadata_edit)
 
-        self._test_documents[0].metadata.create(
+        self._test_document_list[0].metadata.create(
             metadata_type=self._test_metadata_type
         )
-        self._test_documents[1].metadata.create(
+        self._test_document_list[1].metadata.create(
             metadata_type=self._test_metadata_type
         )
 
         response = self._request_test_document_multiple_metadata_edit_get_view()
         self.assertContains(response=response, status_code=200, text='Edit')
 
-        self._test_documents = instance_list_to_queryset(
-            instance_list=self._test_documents
+        self._test_document_list = instance_list_to_queryset(
+            instance_list=self._test_document_list
         )
 
         self._clear_events()
@@ -1121,11 +1121,11 @@ class DocumentMetadataViewTestCase(
         self.assertEqual(response.status_code, 302)
 
         self.assertEqual(
-            self._test_documents[0].metadata.first().value,
+            self._test_document_list[0].metadata.first().value,
             TEST_METADATA_VALUE_EDITED
         )
         self.assertEqual(
-            self._test_documents[1].metadata.first().value,
+            self._test_document_list[1].metadata.first().value,
             TEST_METADATA_VALUE_EDITED
         )
 
@@ -1134,12 +1134,12 @@ class DocumentMetadataViewTestCase(
 
         self.assertEqual(events[0].action_object, self._test_metadata_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_documents[0])
+        self.assertEqual(events[0].target, self._test_document_list[0])
         self.assertEqual(events[0].verb, event_document_metadata_edited.id)
 
         self.assertEqual(events[1].action_object, self._test_metadata_type)
         self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, self._test_documents[1])
+        self.assertEqual(events[1].target, self._test_document_list[1])
         self.assertEqual(events[1].verb, event_document_metadata_edited.id)
 
 
@@ -1279,10 +1279,10 @@ class DocumentMetadataRequiredTestCase(
 
         response = self._request_test_document_metadata_edit_post_view(
             extra_data={
-                'form-0-metadata_type_id': self._test_document_type_metadata_type_relationships[0].metadata_type.pk,
+                'form-0-metadata_type_id': self._test_document_type_metadata_type_relationship_list[0].metadata_type.pk,
                 'form-0-update': True,
                 'form-0-value': TEST_METADATA_VALUE_EDITED,
-                'form-1-metadata_type_id': self._test_document_type_metadata_type_relationships[1].metadata_type.pk,  # Required
+                'form-1-metadata_type_id': self._test_document_type_metadata_type_relationship_list[1].metadata_type.pk,  # Required
                 'form-1-update': False,
                 'form-1-value': TEST_METADATA_VALUE_EDITED,
                 'form-TOTAL_FORMS': '2',

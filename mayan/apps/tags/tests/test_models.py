@@ -48,7 +48,7 @@ class TagDocumentTestCase(DocumentTestMixin, TagTestMixin, BaseTestCase):
 
         self.assertEqual(
             self._test_tag.get_document_count(user=self._test_case_user),
-            len(self._test_documents)
+            len(self._test_document_list)
         )
 
         events = self._get_test_events()
@@ -66,7 +66,7 @@ class TagDocumentTestCase(DocumentTestMixin, TagTestMixin, BaseTestCase):
 
         self.assertEqual(
             self._test_tag.get_document_count(user=self._test_case_user),
-            len(self._test_documents) - 1
+            len(self._test_document_list) - 1
         )
 
         events = self._get_test_events()

@@ -35,11 +35,11 @@ class TaskManagerTestMixin:
             test_queue.remove()
 
     def _create_test_queue(self, label=None, name=None):
-        total_test_queue_list = len(self._test_queue_list)
+        total_test_queue_count = len(self._test_queue_list)
         label = label or '{}_{}'.format(
-            TEST_QUEUE_LABEL, total_test_queue_list
+            TEST_QUEUE_LABEL, total_test_queue_count
         )
-        name = name or '{}_{}'.format(TEST_QUEUE_NAME, total_test_queue_list)
+        name = name or '{}_{}'.format(TEST_QUEUE_NAME, total_test_queue_count)
 
         self._test_queue = CeleryQueue(
             label=label, name=name, worker=self._test_worker

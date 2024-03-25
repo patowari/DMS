@@ -161,10 +161,10 @@ class SearchFilterCombinatiomAPITestCase(
 
     def test_document_list_filter_with_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
         self._clear_events()
@@ -250,23 +250,23 @@ class RESTAPISearchFilterTestCase(
 
     def test_document_list_filter_with_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
         self._clear_events()
 
         response = self.get(
             viewname='rest_api:document-list', query={
-                'filter_label': self._test_documents[0].label
+                'filter_label': self._test_document_list[0].label
             }
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             response.data['results'][0]['label'],
-            self._test_documents[0].label
+            self._test_document_list[0].label
         )
         self.assertEqual(
             response.data['count'], 1
@@ -279,13 +279,13 @@ class RESTAPISearchFilterTestCase(
 
         response = self.get(
             viewname='rest_api:document-list', query={
-                'filter_label': self._test_documents[1].label
+                'filter_label': self._test_document_list[1].label
             }
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             response.data['results'][0]['label'],
-            self._test_documents[1].label
+            self._test_document_list[1].label
         )
         self.assertEqual(
             response.data['count'], 1
@@ -296,23 +296,23 @@ class RESTAPISearchFilterTestCase(
 
     def test_document_list_filter_any_field_with_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
         self._clear_events()
 
         response = self.get(
             viewname='rest_api:document-list', query={
-                'filter_q': self._test_documents[0].label
+                'filter_q': self._test_document_list[0].label
             }
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             response.data['results'][0]['label'],
-            self._test_documents[0].label
+            self._test_document_list[0].label
         )
         self.assertEqual(
             response.data['count'], 1

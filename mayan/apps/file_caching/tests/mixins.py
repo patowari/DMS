@@ -31,7 +31,7 @@ class CacheTestMixin:
             name=TEST_STORAGE_NAME_FILE_CACHING_TEST_STORAGE,
             kwargs={'location': self.temporary_directory}
         )
-        self._test_cache_partition_files = []
+        self._test_cache_partition_file_list = []
 
     def tearDown(self):
         fs_cleanup(filename=self.temporary_directory)
@@ -56,11 +56,12 @@ class CacheTestMixin:
     def _create_test_cache_partition_file(
         self, filename=None, file_size=None
     ):
-        cache_partition_file_total = len(self._test_cache_partition_files)
+        total_test_cache_partition_file_count = len(self._test_cache_partition_file_list)
 
         file_size = file_size or TEST_CACHE_PARTITION_FILE_SIZE
         filename = filename or '{}_{}'.format(
-            TEST_CACHE_PARTITION_FILE_FILENAME, cache_partition_file_total
+            TEST_CACHE_PARTITION_FILE_FILENAME,
+            total_test_cache_partition_file_count
         )
 
         with self._test_cache_partition.create_file(filename=filename) as file_object:
@@ -72,7 +73,7 @@ class CacheTestMixin:
             filename=filename
         )
 
-        self._test_cache_partition_files.append(
+        self._test_cache_partition_file_list.append(
             self._test_cache_partition_file
         )
 

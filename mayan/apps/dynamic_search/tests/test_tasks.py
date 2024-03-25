@@ -44,31 +44,31 @@ class SearchTaskTestCase(SearchTaskTestMixin, BaseTestCase):
     @skip(reason='Test with a backend that supports reindexing.')
     def test_task_index_instances(self):
         queryset = self._do_search(
-            search_terms=self._test_objects[0].test_field
+            search_terms=self._test_object_list[0].test_field
         )
         self.assertFalse(
-            self._test_objects[0] in queryset
+            self._test_object_list[0] in queryset
         )
 
         self._execute_task_index_instances()
 
         queryset = self._do_search(
-            search_terms=self._test_objects[0].test_field
+            search_terms=self._test_object_list[0].test_field
         )
-        self.assertTrue(self._test_objects[0] in queryset)
+        self.assertTrue(self._test_object_list[0] in queryset)
 
     @skip(reason='Test with a backend that supports reindexing.')
     def test_task_reindex_backend(self):
         queryset = self._do_search(
-            search_terms=self._test_objects[0].test_field
+            search_terms=self._test_object_list[0].test_field
         )
         self.assertFalse(
-            self._test_objects[0] in queryset
+            self._test_object_list[0] in queryset
         )
 
         self._execute_task_reindex_backend()
 
         queryset = self._do_search(
-            search_terms=self._test_objects[0].test_field
+            search_terms=self._test_object_list[0].test_field
         )
-        self.assertTrue(self._test_objects[0] in queryset)
+        self.assertTrue(self._test_object_list[0] in queryset)

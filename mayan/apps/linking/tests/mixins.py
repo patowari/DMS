@@ -69,7 +69,7 @@ class ResolvedSmartLinkAPIViewTestMixin(SmartLinkTestMixin):
         return self.get(
             viewname='rest_api:resolvedsmartlink-detail',
             kwargs={
-                'document_id': self._test_documents[0].pk,
+                'document_id': self._test_document_list[0].pk,
                 'resolved_smart_link_id': self._test_smart_link.pk
             }
         )
@@ -78,7 +78,7 @@ class ResolvedSmartLinkAPIViewTestMixin(SmartLinkTestMixin):
     def _request_resolved_smart_link_list_api_view(self):
         return self.get(
             viewname='rest_api:resolvedsmartlink-list', kwargs={
-                'document_id': self._test_documents[0].pk
+                'document_id': self._test_document_list[0].pk
             }
         )
 
@@ -86,7 +86,7 @@ class ResolvedSmartLinkAPIViewTestMixin(SmartLinkTestMixin):
         return self.get(
             viewname='rest_api:resolvedsmartlinkdocument-list',
             kwargs={
-                'document_id': self._test_documents[0].pk,
+                'document_id': self._test_document_list[0].pk,
                 'resolved_smart_link_id': self._test_smart_link.pk
             }
         )
@@ -326,7 +326,7 @@ class ResolvedSmartLinkDocumentViewTestMixin(SmartLinkTestMixin):
     def _request_test_document_resolved_smart_link_document_list_view(self):
         return self.get(
             viewname='linking:smart_link_instance_view', kwargs={
-                'document_id': self._test_documents[0].pk,
+                'document_id': self._test_document_list[0].pk,
                 'smart_link_id': self._test_smart_link.pk
             }
         )
@@ -334,7 +334,7 @@ class ResolvedSmartLinkDocumentViewTestMixin(SmartLinkTestMixin):
     def _request_test_document_resolved_smart_link_list_view(self):
         return self.get(
             viewname='linking:document_smart_link_instance_list', kwargs={
-                'document_id': self._test_documents[0].pk
+                'document_id': self._test_document_list[0].pk
             }
         )
 

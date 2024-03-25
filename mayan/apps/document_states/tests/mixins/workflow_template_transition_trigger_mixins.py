@@ -18,7 +18,7 @@ class WorkflowTemplateTransitionTriggerTestMixin(
 
     def setUp(self):
         super().setUp()
-        self._test_workflow_template_transition_triggers = []
+        self._test_workflow_template_transition_trigger_list = []
 
     def _create_test_workflow_template_transition_trigger(self):
         event_type = EventType.get(id=self._test_event_type.id)
@@ -26,7 +26,7 @@ class WorkflowTemplateTransitionTriggerTestMixin(
         self._test_workflow_template_transition_trigger = self._test_workflow_template_transition.trigger_events.create(
             event_type=event_type.get_stored_event_type()
         )
-        self._test_workflow_template_transition_triggers.append(
+        self._test_workflow_template_transition_trigger_list.append(
             self._test_workflow_template_transition_trigger
         )
 
@@ -35,9 +35,7 @@ class WorkflowTemplateTransitionTriggerAPIViewTestMixin(
     WorkflowTemplateTransitionTriggerTestMixin
 ):
     def _request_test_workflow_template_transition_trigger_create_api_view(self):
-        data = {
-            'event_type_id': self._test_event_type.id
-        }
+        data = {'event_type_id': self._test_event_type.id}
 
         self._test_object_track()
 

@@ -175,7 +175,7 @@ class IndexTemplateTestMixin(TestMixinObjectCreationTrack):
 
         EventType.refresh()
 
-        self._test_index_templates = []
+        self._test_index_template_list = []
         self._test_index_template_data = [
             {
                 'label': TEST_INDEX_TEMPLATE_LABEL,
@@ -200,7 +200,7 @@ class IndexTemplateTestMixin(TestMixinObjectCreationTrack):
         self, add_test_document_type=False, extra_data=None
     ):
         data = self._test_index_template_data[
-            len(self._test_index_templates)
+            len(self._test_index_template_list)
         ]
 
         if extra_data:
@@ -209,7 +209,7 @@ class IndexTemplateTestMixin(TestMixinObjectCreationTrack):
         # Create empty index.
         self._test_index_template = IndexTemplate.objects.create(**data)
 
-        self._test_index_templates.append(self._test_index_template)
+        self._test_index_template_list.append(self._test_index_template)
 
         self._test_index_template_root_node = self._test_index_template.index_template_root_node
 

@@ -137,7 +137,9 @@ class ContentTypeCheckTestCaseMixin:
                     test_instance.assertTrue(
                         content_type in test_instance.expected_content_types,
                         msg='Unexpected response content type: {}, expected: {}.'.format(
-                            content_type, ' or '.join(test_instance.expected_content_types)
+                            content_type, ' or '.join(
+                                test_instance.expected_content_types
+                            )
                         )
                     )
 
@@ -233,16 +235,16 @@ class DownloadTestCaseMixin:
 class EnvironmentTestCaseMixin:
     def setUp(self):
         super().setUp()
-        self._test_environment_variables = []
+        self._test_environment_variable_list = []
 
     def tearDown(self):
-        for name in self._test_environment_variables:
+        for name in self._test_environment_variable_list:
             os.environ.pop(name)
 
         super().tearDown()
 
     def _set_environment_variable(self, name, value):
-        self._test_environment_variables.append(name)
+        self._test_environment_variable_list.append(name)
         os.environ[name] = value
 
 
@@ -534,22 +536,21 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         # Clear previous model registration before re-registering it again to
         # avoid conflict with test models with the same name, in the same app
         # but from another test module.
-        self._test_models.reverse()
+        self._test_model_list.reverse()
 
-        for model in self._test_models:
+        for model in self._test_model_list:
             model.objects.all().delete()
 
-        for model in self._test_models:
+        for model in self._test_model_list:
             TestModelTestCaseMixin._delete_test_model(model=model)
 
-        for model in self._test_models_extra:
+        for model in self._test_model_list_extra:
             TestModelTestCaseMixin._delete_test_model(model=model)
 
     def setUp(self):
-        self._test_models = []
-        self._test_models_extra = set()
-        self._test_objects = []
-        self._test_migrations = []
+        self._test_model_list = []
+        self._test_model_list_extra = set()
+        self._test_object_list = []
 
         super().setUp()
 
@@ -589,7 +590,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         options=None
     ):
         base_class = base_class or models.Model
-        test_model_count = len(self._test_models)
+        test_model_count = len(self._test_model_list)
         self._test_model_name = model_name or '{}_{}'.format(
             'TestModel', test_model_count
         )
@@ -626,13 +627,13 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
             with connection.schema_editor() as schema_editor:
                 schema_editor.create_model(model=model)
 
-        self._test_models_extra.update(
+        self._test_model_list_extra.update(
             set(
                 apps.app_configs[self.app_config.label].models.values()
             ) - model_list_previous - {model}
         )
 
-        self._test_models.append(model)
+        self._test_model_list.append(model)
 
         ContentType.objects.clear_cache()
         apps.clear_cache()
@@ -648,7 +649,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         self._test_object = self.TestModel.objects.create(**instance_kwargs)
         self._inject_test_object_content_type()
 
-        self._test_objects.append(self._test_object)
+        self._test_object_list.append(self._test_object)
 
     def _get_test_model_meta(self):
         self._test_db_table = '{}_{}'.format(
@@ -748,8 +749,8 @@ class TestViewTestCaseMixin:
     def setUp(self):
         super().setUp()
         self._test_view_count = 0
-        self._test_view_names = []
-        self._test_view_url_patterns = []
+        self._test_view_name_list = []
+        self._test_view_url_pattern_list = []
 
         if self.auto_add_test_view:
             self.add_test_view(test_object=self.test_view_object)
@@ -829,13 +830,13 @@ class TestViewTestCaseMixin:
             name=self._test_view_name
         )
 
-        self._test_view_url_patterns.append(url_pattern)
+        self._test_view_url_pattern_list.append(url_pattern)
 
         self._get_test_view_urlpatterns().insert(0, url_pattern)
         clear_url_caches()
 
         self._test_view_count += 1
-        self._test_view_names.append(self._test_view_name)
+        self._test_view_name_list.append(self._test_view_name)
 
     def get_test_view(self):
         response = self.get(viewname=self._test_view_name)
@@ -843,10 +844,12 @@ class TestViewTestCaseMixin:
 
     def remove_view_test(self):
         self._test_view_count -= 1
-        self._test_view_name = self._test_view_names.pop(
+        self._test_view_name = self._test_view_name_list.pop(
             self._test_view_count
         )
-        url_pattern = self._test_view_url_patterns.pop(self._test_view_count)
+        url_pattern = self._test_view_url_pattern_list.pop(
+            self._test_view_count
+        )
 
         app_urlpatterns = self._get_test_view_urlpatterns()
 

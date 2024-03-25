@@ -37,13 +37,15 @@ class WorkflowTemplateTestMixin(DocumentTestMixin):
     def _create_test_workflow_template(
         self, add_test_document_type=False, auto_launch=True
     ):
-        total_test_workflow_templates = len(self._test_workflow_template_list)
+        total_test_workflow_template_count = len(
+            self._test_workflow_template_list
+        )
         label = '{}_{}'.format(
-            TEST_WORKFLOW_TEMPLATE_LABEL, total_test_workflow_templates
+            TEST_WORKFLOW_TEMPLATE_LABEL, total_test_workflow_template_count
         )
         internal_name = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_INTERNAL_NAME,
-            total_test_workflow_templates
+            total_test_workflow_template_count
         )
 
         self._test_workflow_template = Workflow.objects.create(

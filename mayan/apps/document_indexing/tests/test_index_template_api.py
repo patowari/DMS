@@ -601,7 +601,7 @@ class IndexTemplateNodeAPIViewTestCase(
 
         response = self._request_test_index_template_node_create_api_view(
             extra_data={
-                'parent': self._test_index_templates[0].index_template_root_node.pk
+                'parent': self._test_index_template_list[0].index_template_root_node.pk
             }
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
@@ -626,7 +626,7 @@ class IndexTemplateNodeAPIViewTestCase(
 
         response = self._request_test_index_template_node_create_api_view(
             extra_data={
-                'parent': self._test_index_templates[0].index_template_root_node.pk
+                'parent': self._test_index_template_list[0].index_template_root_node.pk
             }
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

@@ -13,7 +13,7 @@ class SourceTestMixinStoredFile(SourceTestMixin):
     _test_source_test_file_path = TEST_FILE_SMALL_PATH
 
     def setUp(self):
-        self._test_source_temporary_folders = []
+        self._test_source_temporary_folder_list = []
         super().setUp()
 
         self._test_source_path_test_file = Path(self._test_source_test_file_path)
@@ -21,14 +21,14 @@ class SourceTestMixinStoredFile(SourceTestMixin):
         self._test_source_stored_test_file_list = []
 
     def tearDown(self):
-        for test_source_temporary_folders in self._test_source_temporary_folders:
+        for test_source_temporary_folders in self._test_source_temporary_folder_list:
             fs_cleanup(filename=test_source_temporary_folders)
 
         super().tearDown()
 
     def _test_source_create_temporary_folder(self):
         self._test_source_temporary_folder = mkdtemp()
-        self._test_source_temporary_folders.append(
+        self._test_source_temporary_folder_list.append(
             self._test_source_temporary_folder
         )
 

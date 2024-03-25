@@ -351,23 +351,23 @@ class DocumentVersionPageRemapViewTestCase(
     def setUp(self):
         super().setUp()
         self._upload_test_document_file()
-        self._test_document_file_pages = []
-        self.source_content_types = []
-        self.source_object_ids = []
+        self._test_document_file_page_list = []
+        self.source_content_type_list = []
+        self.source_object_id_list = []
 
         for test_document_file in self._test_document.files.all():
             for test_document_file_page in test_document_file.pages.all():
-                self._test_document_file_pages.append(test_document_file_page)
-                self.source_content_types.append(
+                self._test_document_file_page_list.append(test_document_file_page)
+                self.source_content_type_list.append(
                     ContentType.objects.get_for_model(
                         model=test_document_file_page
                     )
                 )
-                self.source_object_ids.append(test_document_file_page.pk)
+                self.source_object_id_list.append(test_document_file_page.pk)
 
         self.single_page_remap_data = {
-            'form-0-source_content_type': self.source_content_types[0].pk,
-            'form-0-source_object_id': self.source_object_ids[0],
+            'form-0-source_content_type': self.source_content_type_list[0].pk,
+            'form-0-source_object_id': self.source_object_id_list[0],
             'form-0-source_page_number': '1',
             'form-0-target_page_number': '1',
             'form-TOTAL_FORMS': '1',
@@ -375,12 +375,12 @@ class DocumentVersionPageRemapViewTestCase(
             'form-MAX_NUM_FORMS': '',
         }
         self.repeated_page_number_remap_data = {
-            'form-0-source_content_type': self.source_content_types[0].pk,
-            'form-0-source_object_id': self.source_object_ids[0],
+            'form-0-source_content_type': self.source_content_type_list[0].pk,
+            'form-0-source_object_id': self.source_object_id_list[0],
             'form-0-source_page_number': '1',
             'form-0-target_page_number': '1',
-            'form-1-source_content_type': self.source_content_types[1].pk,
-            'form-1-source_object_id': self.source_object_ids[1],
+            'form-1-source_content_type': self.source_content_type_list[1].pk,
+            'form-1-source_object_id': self.source_object_id_list[1],
             'form-1-source_page_number': '1',
             'form-1-target_page_number': '1',
             'form-TOTAL_FORMS': '2',
@@ -400,11 +400,11 @@ class DocumentVersionPageRemapViewTestCase(
 
         self.assertNotEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[0]
+            self._test_document_file_page_list[0]
         )
         self.assertEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[1]
+            self._test_document_file_page_list[1]
         )
 
         events = self._get_test_events()
@@ -427,11 +427,11 @@ class DocumentVersionPageRemapViewTestCase(
 
         self.assertEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[0]
+            self._test_document_file_page_list[0]
         )
         self.assertNotEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[1]
+            self._test_document_file_page_list[1]
         )
 
         events = self._get_test_events()
@@ -477,11 +477,11 @@ class DocumentVersionPageRemapViewTestCase(
 
         self.assertNotEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[0]
+            self._test_document_file_page_list[0]
         )
         self.assertEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[1]
+            self._test_document_file_page_list[1]
         )
 
         events = self._get_test_events()
@@ -504,11 +504,11 @@ class DocumentVersionPageRemapViewTestCase(
 
         self.assertNotEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[0]
+            self._test_document_file_page_list[0]
         )
         self.assertEqual(
             self._test_document_version.pages.first().content_object,
-            self._test_document_file_pages[1]
+            self._test_document_file_page_list[1]
         )
 
         events = self._get_test_events()

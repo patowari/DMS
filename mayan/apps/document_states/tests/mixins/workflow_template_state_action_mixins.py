@@ -45,12 +45,12 @@ class WorkflowTemplateStateActionTestMixin(
         if not self._test_workflow_template_state:
             self._create_test_workflow_template_state()
 
-        total_test_workflow_template_state_actions = len(
+        total_test_workflow_template_state_action_count = len(
             self._test_workflow_template_state_action_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL,
-            total_test_workflow_template_state_actions
+            total_test_workflow_template_state_action_count
         )
 
         backend_data = {}
@@ -103,12 +103,12 @@ class WorkflowTemplateStateActionAPIViewTestMixin(
     def _request_test_workflow_template_state_action_create_api_view(self):
         self._test_object_track()
 
-        total_test_workflow_template_state_actions = len(
+        total_test_workflow_template_state_action_count = len(
             self._test_workflow_template_state_action_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL,
-            total_test_workflow_template_state_actions
+            total_test_workflow_template_state_action_count
         )
 
         data = {

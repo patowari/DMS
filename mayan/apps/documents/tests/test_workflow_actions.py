@@ -25,7 +25,7 @@ class WorkflowTemplateStateActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=DocumentTypeChangeAction, kwargs={
-                'document_type': self._test_document_types[1].pk
+                'document_type': self._test_document_type_list[1].pk
             }
         )
 
@@ -54,14 +54,14 @@ class WorkflowTemplateStateActionTransitionTestCase(
         self._create_test_workflow_template_transition()
         self._test_workflow_template_state_list[1].actions.create(
             backend_data=json.dumps(
-                obj={'document_type': self._test_document_types[1].pk}
+                obj={'document_type': self._test_document_type_list[1].pk}
             ),
             backend_path=TEST_DOCUMENT_TYPE_CHANGE_ACTION_DOTTED_PATH,
             label='', when=WORKFLOW_ACTION_ON_ENTRY,
 
         )
         self._test_workflow_template.document_types.add(
-            self._test_document_types[0]
+            self._test_document_type_list[0]
         )
 
         document_type = self._test_document.document_type

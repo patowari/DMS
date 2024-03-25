@@ -32,7 +32,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
         super().setUp()
         Layer.invalidate_cache()
 
-        self._test_documents = []
+        self._test_document_list = []
         self._test_document_file_list = []
         self._test_document_file_page_list = []
         self._test_document_id_list = []
@@ -69,7 +69,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
     def _create_test_document_stub(self, document_type=None, label=None):
         if label is None:
             label = '{}_{}'.format(
-                DEFAULT_DOCUMENT_STUB_LABEL, len(self._test_documents)
+                DEFAULT_DOCUMENT_STUB_LABEL, len(self._test_document_list)
             )
 
         self._test_document_stub = Document.objects.create(
@@ -77,7 +77,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
             label=label
         )
         self._test_document = self._test_document_stub
-        self._test_documents.append(self._test_document)
+        self._test_document_list.append(self._test_document)
         self._test_document_id_list.append(self._test_document.pk)
         self._test_document_id_list_string.append(
             str(self._test_document.pk)
@@ -92,7 +92,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
             self._upload_test_document(
                 label='{}_{}'.format(
                     TEST_DOCUMENT_LABEL,
-                    len(self._test_documents)
+                    len(self._test_document_list)
                 )
             )
 
@@ -107,7 +107,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
             label = self._test_document_filename
 
         test_document_description = description or '{}_{}'.format(
-            TEST_DOCUMENT_DESCRIPTION, len(self._test_documents)
+            TEST_DOCUMENT_DESCRIPTION, len(self._test_document_list)
         )
 
         document_type = document_type or self._test_document_type
@@ -120,7 +120,7 @@ class DocumentTestMixin(DocumentTypeTestMixin):
             )
 
         self._test_document = document
-        self._test_documents.append(self._test_document)
+        self._test_document_list.append(self._test_document)
         self._test_document_id_list.append(self._test_document.pk)
         self._test_document_id_list_string.append(
             str(self._test_document.pk)
@@ -158,7 +158,7 @@ class DocumentAPIViewTestMixin(DocumentTestMixin):
             viewname='rest_api:document-change-type', kwargs={
                 'document_id': self._test_document.pk
             }, data={
-                'document_type_id': self._test_document_types[1].pk
+                'document_type_id': self._test_document_type_list[1].pk
             }
         )
 
@@ -269,7 +269,7 @@ class DocumentViewTestMixin(DocumentTestMixin):
         return self.post(
             viewname='documents:document_type_change', kwargs={
                 'document_id': self._test_document.pk
-            }, data={'document_type': self._test_document_types[1].pk}
+            }, data={'document_type': self._test_document_type_list[1].pk}
         )
 
     def _request_test_document_multiple_type_change(self):
@@ -277,6 +277,6 @@ class DocumentViewTestMixin(DocumentTestMixin):
             viewname='documents:document_multiple_type_change',
             data={
                 'id_list': self._test_document.pk,
-                'document_type': self._test_document_types[1].pk
+                'document_type': self._test_document_type_list[1].pk
             }
         )

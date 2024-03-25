@@ -180,23 +180,23 @@ class CabinetMirroringTestCase(
         self._create_test_document_stub()
         self._create_test_document_stub(label=self._test_document.label)
         self._test_cabinet.documents.add(
-            self._test_documents[0]
+            self._test_document_list[0]
         )
         self._test_cabinet.documents.add(
-            self._test_documents[1]
+            self._test_document_list[1]
         )
 
         test_filesystem = self._get_test_filesystem()
         self.assertTrue(
             '{}({})'.format(
-                self._test_documents[0].label, self._test_documents[0].pk
+                self._test_document_list[0].label, self._test_document_list[0].pk
             ) in list(
                 test_filesystem.readdir('/level_1', '')
             )
         )
         self.assertTrue(
             '{}({})'.format(
-                self._test_documents[0].label, self._test_documents[1].pk
+                self._test_document_list[0].label, self._test_document_list[1].pk
             ) in list(
                 test_filesystem.readdir('/level_1', '')
             )
@@ -207,19 +207,19 @@ class CabinetMirroringTestCase(
         self._upload_test_document()
         self._upload_test_document()
         self._test_cabinet.documents.add(
-            self._test_documents[0]
+            self._test_document_list[0]
         )
         self._test_cabinet.documents.add(
-            self._test_documents[1]
+            self._test_document_list[1]
         )
 
         test_filesystem = self._get_test_filesystem()
 
         test_document_1_path = '/level_1/{}({})'.format(
-            self._test_documents[0].label, self._test_documents[0].pk
+            self._test_document_list[0].label, self._test_document_list[0].pk
         )
         test_document_2_path = '/level_1/{}({})'.format(
-            self._test_documents[1].label, self._test_documents[1].pk
+            self._test_document_list[1].label, self._test_document_list[1].pk
         )
 
         file_handle = test_filesystem.open(
@@ -229,7 +229,7 @@ class CabinetMirroringTestCase(
         self.assertEqual(
             test_filesystem.read(
                 path=None, size=-1, offset=0, fh=file_handle
-            ), self._test_documents[0].file_latest.open().read()
+            ), self._test_document_list[0].file_latest.open().read()
         )
 
         test_filesystem.release(path=None, fh=file_handle)
@@ -241,7 +241,7 @@ class CabinetMirroringTestCase(
         self.assertEqual(
             test_filesystem.read(
                 path=None, size=-1, offset=0, fh=file_handle
-            ), self._test_documents[1].file_latest.open().read()
+            ), self._test_document_list[1].file_latest.open().read()
         )
 
         test_filesystem.release(path=None, fh=file_handle)

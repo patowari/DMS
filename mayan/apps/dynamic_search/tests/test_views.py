@@ -30,7 +30,7 @@ class FilterViewMixinTestCase(
     def test_document_list_filter_view_with_access(self):
         self._create_test_document_stubs(count=4)
 
-        for test_document in self._test_documents:
+        for test_document in self._test_document_list:
             self.grant_access(
                 obj=test_document, permission=permission_document_view
             )
@@ -51,19 +51,19 @@ class FilterViewMixinTestCase(
         response = self._request_test_document_list_view()
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[0].label
+            text=self._test_document_list[0].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[1].label
+            text=self._test_document_list[1].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[2].label
+            text=self._test_document_list[2].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[3].label
+            text=self._test_document_list[3].label
         )
 
         events = self._get_test_events()
@@ -76,19 +76,19 @@ class FilterViewMixinTestCase(
         )
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_documents[0].label
+            text=self._test_document_list[0].label
         )
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_documents[1].label
+            text=self._test_document_list[1].label
         )
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_documents[2].label
+            text=self._test_document_list[2].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[3].label
+            text=self._test_document_list[3].label
         )
 
         events = self._get_test_events()
@@ -105,7 +105,7 @@ class SearchAdvancedViewTestCase(
     def test_advanced_search_past_first_page_view_with_access(self):
         self._create_test_document_stubs(count=4)
 
-        for test_document in self._test_documents:
+        for test_document in self._test_document_list:
             self.grant_access(
                 obj=test_document, permission=permission_document_view
             )
@@ -186,7 +186,7 @@ class SearchFilterViewTestCase(
     def test_basic_search_filter_list_with_access(self):
         self._create_test_document_stubs(count=4)
 
-        for test_document in self._test_documents:
+        for test_document in self._test_document_list:
             self.grant_access(
                 obj=test_document, permission=permission_document_view
             )
@@ -202,19 +202,19 @@ class SearchFilterViewTestCase(
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[0].label
+            text=self._test_document_list[0].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[1].label
+            text=self._test_document_list[1].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[2].label
+            text=self._test_document_list[2].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[3].label
+            text=self._test_document_list[3].label
         )
 
         events = self._get_test_events()
@@ -232,19 +232,19 @@ class SearchFilterViewTestCase(
         )
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_documents[0].label
+            text=self._test_document_list[0].label
         )
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_documents[1].label
+            text=self._test_document_list[1].label
         )
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_documents[2].label
+            text=self._test_document_list[2].label
         )
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_documents[3].label
+            text=self._test_document_list[3].label
         )
 
         events = self._get_test_events()

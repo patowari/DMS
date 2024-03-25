@@ -104,15 +104,15 @@ class GroupLinkTestMixin:
 class GroupTestMixin:
     def setUp(self):
         super().setUp()
-        self._test_groups = []
+        self._test_group_list = []
 
     def _create_test_group(self, add_users=None):
-        total_test_groups = len(self._test_groups)
-        name = '{}_{}'.format(TEST_GROUP_NAME, total_test_groups)
+        total_test_group_count = len(self._test_group_list)
+        name = '{}_{}'.format(TEST_GROUP_NAME, total_test_group_count)
 
         self._test_group = Group.objects.create(name=name)
 
-        self._test_groups.append(self._test_group)
+        self._test_group_list.append(self._test_group)
 
         for user in add_users or []:
             self._test_group.user_set.add(user)
@@ -375,7 +375,7 @@ class UserTestMixin:
 
     def setUp(self):
         super().setUp()
-        self._test_users = []
+        self._test_user_list = []
 
         if self.auto_create_test_super_user:
             self._create_test_super_user()
@@ -392,15 +392,15 @@ class UserTestMixin:
         self._test_super_user.cleartext_password = TEST_USER_PASSWORD
 
     def _create_test_user(self):
-        total_test_users = len(self._test_users)
-        username = '{}_{}'.format(TEST_USER_USERNAME, total_test_users)
+        total_test_user_count = len(self._test_user_list)
+        username = '{}_{}'.format(TEST_USER_USERNAME, total_test_user_count)
 
         self._test_user = get_user_model().objects.create_user(
             email=TEST_USER_EMAIL, password=TEST_USER_PASSWORD,
             username=username
         )
         self._test_user.cleartext_password = TEST_USER_PASSWORD
-        self._test_users.append(self._test_user)
+        self._test_user_list.append(self._test_user)
 
 
 class UserViewTestMixin:

@@ -18,14 +18,14 @@ class SignatureCaptureTestMixin(DocumentTestMixin):
 
     def setUp(self):
         super().setUp()
-        self._test_signature_captures = []
+        self._test_signature_capture_list = []
         if self.auto_create_test_signature_capture:
             self._create_test_signature_capture()
 
     def _create_test_signature_capture(self):
-        total_test_signature_captures = len(self._test_signature_captures)
+        total_test_signature_capture_count = len(self._test_signature_capture_list)
         text = '{}_{}'.format(
-            TEST_SIGNATURE_CAPTURE_TEXT, total_test_signature_captures
+            TEST_SIGNATURE_CAPTURE_TEXT, total_test_signature_capture_count
         )
 
         self._test_signature_capture = SignatureCapture.objects.create(
@@ -35,7 +35,7 @@ class SignatureCaptureTestMixin(DocumentTestMixin):
             user=self._test_case_user
         )
 
-        self._test_signature_captures.append(self._test_signature_capture)
+        self._test_signature_capture_list.append(self._test_signature_capture)
 
 
 class SignatureCaptureAPIViewTestMixin(SignatureCaptureTestMixin):

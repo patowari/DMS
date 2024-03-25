@@ -81,7 +81,7 @@ class EventTestMixin(TestMixinObjectCreationTrack):
 
     def setUp(self):
         super().setUp()
-        self._test_events = []
+        self._test_event_list = []
 
     def _create_test_event(self, action_object=None, actor=None, target=None):
         self._test_object_track()
@@ -93,7 +93,7 @@ class EventTestMixin(TestMixinObjectCreationTrack):
 
         self._test_object_set()
 
-        self._test_events.append(self._test_event)
+        self._test_event_list.append(self._test_event)
 
 
 class EventTestCaseMixin:
@@ -111,21 +111,21 @@ class EventTestCaseMixin:
 class EventTypeTestMixin:
     def setUp(self):
         super().setUp()
-        self._test_event_types = []
+        self._test_event_type_list = []
 
     def _create_test_event_type(self):
-        total_test_event_types = len(self._test_event_types)
+        total_test_event_type_count = len(self._test_event_type_list)
         test_namespace_label = '{}_{}'.format(
-            TEST_EVENT_TYPE_NAMESPACE_LABEL, total_test_event_types
+            TEST_EVENT_TYPE_NAMESPACE_LABEL, total_test_event_type_count
         )
         test_namespace_name = '{}_{}'.format(
-            TEST_EVENT_TYPE_NAMESPACE_NAME, total_test_event_types
+            TEST_EVENT_TYPE_NAMESPACE_NAME, total_test_event_type_count
         )
         test_event_label = '{}_{}'.format(
-            TEST_EVENT_TYPE_LABEL, total_test_event_types
+            TEST_EVENT_TYPE_LABEL, total_test_event_type_count
         )
         test_event_name = '{}_{}'.format(
-            TEST_EVENT_TYPE_NAME, total_test_event_types
+            TEST_EVENT_TYPE_NAME, total_test_event_type_count
         )
 
         self._test_event_type_namespace = EventTypeNamespace(
@@ -134,7 +134,7 @@ class EventTypeTestMixin:
         self._test_event_type = self._test_event_type_namespace.add_event_type(
             label=test_event_label, name=test_event_name
         )
-        self._test_event_types.append(self._test_event_type)
+        self._test_event_type_list.append(self._test_event_type)
 
 
 class EventTypeNamespaceAPITestMixin(EventTypeTestMixin):

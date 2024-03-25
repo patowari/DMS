@@ -28,8 +28,8 @@ class TagTestMixin(TestMixinObjectCreationTrack):
             )
 
     def _create_test_tag(self, add_test_document=False):
-        total_test_labels = len(self._test_tag_list)
-        label = '{}_{}'.format(TEST_TAG_LABEL, total_test_labels)
+        total_test_label_count = len(self._test_tag_list)
+        label = '{}_{}'.format(TEST_TAG_LABEL, total_test_label_count)
 
         self._test_tag = Tag.objects.create(
             color=TEST_TAG_COLOR, label=label

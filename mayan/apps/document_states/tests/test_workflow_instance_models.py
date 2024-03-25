@@ -33,7 +33,7 @@ class WorkflowInstanceModelTestCase(
             permission=permission_document_change_type
         )
         self.grant_access(
-            obj=self._test_document_types[0],
+            obj=self._test_document_type_list[0],
             permission=permission_document_change_type
         )
 
@@ -44,7 +44,7 @@ class WorkflowInstanceModelTestCase(
         )
 
         self._test_document.document_type_change(
-            document_type=self._test_document_types[0],
+            document_type=self._test_document_type_list[0],
             user=self._test_case_user
         )
 
@@ -63,7 +63,7 @@ class WorkflowInstanceModelTestCase(
         self.assertEqual(events[0].verb, event_workflow_instance_created.id)
 
         self.assertEqual(
-            events[1].action_object, self._test_document_types[0]
+            events[1].action_object, self._test_document_type_list[0]
         )
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, self._test_document)

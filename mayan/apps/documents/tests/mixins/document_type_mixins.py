@@ -19,7 +19,7 @@ class DocumentTypeTestMixin(TestMixinObjectCreationTrack):
     def setUp(self):
         super().setUp()
 
-        self._test_document_types = []
+        self._test_document_type_list = []
 
         if self.auto_create_test_document_type:
             self._create_test_document_type()
@@ -32,11 +32,11 @@ class DocumentTypeTestMixin(TestMixinObjectCreationTrack):
 
     def _create_test_document_type(self, label=None):
         label = label or '{}_{}'.format(
-            TEST_DOCUMENT_TYPE_LABEL, len(self._test_document_types)
+            TEST_DOCUMENT_TYPE_LABEL, len(self._test_document_type_list)
         )
 
         self._test_document_type = DocumentType.objects.create(label=label)
-        self._test_document_types.append(self._test_document_type)
+        self._test_document_type_list.append(self._test_document_type)
 
 
 class DocumentTypeQuickLabelTestMixin(DocumentTypeTestMixin):

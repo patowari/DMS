@@ -28,12 +28,12 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
         if not self._test_workflow_template:
             self._create_test_workflow_template()
 
-        total_test_workflow_template_states = len(
+        total_test_workflow_template_state_count = len(
             self._test_workflow_template_state_list
         )
         label = '{}_{}'.format(
             TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
-            total_test_workflow_template_states
+            total_test_workflow_template_state_count
         )
         initial = not self._test_workflow_template.states.exists()
 

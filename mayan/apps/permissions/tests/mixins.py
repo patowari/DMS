@@ -46,15 +46,15 @@ class PermissionTestCaseMixin:
 class RoleTestMixin:
     def setUp(self):
         super().setUp()
-        self._test_roles = []
+        self._test_role_list = []
 
     def _create_test_role(self, add_groups=None):
-        total_test_roles = len(self._test_roles)
-        label = '{}_{}'.format(TEST_ROLE_LABEL, total_test_roles)
+        total_test_role_count = len(self._test_role_list)
+        label = '{}_{}'.format(TEST_ROLE_LABEL, total_test_role_count)
 
         self._test_role = Role.objects.create(label=label)
 
-        self._test_roles.append(self._test_role)
+        self._test_role_list.append(self._test_role)
 
         for group in add_groups or []:
             self._test_role.groups.add(group)

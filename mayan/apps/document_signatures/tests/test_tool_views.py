@@ -250,8 +250,8 @@ class SignatureToolsViewTestCase(
         signature.date_time = None
         signature.save()
 
-        self._test_documents[0].delete()
-        self._test_documents[1].delete()
+        self._test_document_list[0].delete()
+        self._test_document_list[1].delete()
 
         self.grant_permission(
             permission=permission_document_file_signature_verify

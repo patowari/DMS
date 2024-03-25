@@ -23,7 +23,7 @@ class MetadataTypeTestMixin(
     def setUp(self):
         super().setUp()
         self._test_metadata_type_list = []
-        self._test_document_type_metadata_type_relationships = []
+        self._test_document_type_metadata_type_relationship_list = []
 
         if self.auto_create_test_metadata_type:
             self._create_test_metadata_type(
@@ -41,12 +41,12 @@ class MetadataTypeTestMixin(
     def _create_test_metadata_type(
         self, add_test_document_type=False, extra_kwargs=None, required=False
     ):
-        total_test_metadata_type_list = len(self._test_metadata_type_list)
+        total_test_metadata_type_count = len(self._test_metadata_type_list)
         name = '{}_{}'.format(
-            TEST_METADATA_TYPE_NAME, total_test_metadata_type_list
+            TEST_METADATA_TYPE_NAME, total_test_metadata_type_count
         )
         label = '{}_{}'.format(
-            TEST_METADATA_TYPE_LABEL, total_test_metadata_type_list
+            TEST_METADATA_TYPE_LABEL, total_test_metadata_type_count
         )
 
         kwargs = {'name': name, 'label': label}
@@ -58,7 +58,7 @@ class MetadataTypeTestMixin(
         self._test_metadata_type_list.append(self._test_metadata_type)
 
         if add_test_document_type:
-            self._test_document_type_metadata_type_relationships.append(
+            self._test_document_type_metadata_type_relationship_list.append(
                 self._test_document_type.metadata.create(
                     metadata_type=self._test_metadata_type, required=required
                 )

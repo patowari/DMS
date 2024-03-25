@@ -179,7 +179,7 @@ class DocumentMetadataViewTestMixin(DocumentMetadataMixin):
         return self.post(
             viewname='metadata:metadata_multiple_add', data={
                 'id_list': '{},{}'.format(
-                    self._test_documents[0].pk, self._test_documents[1].pk
+                    self._test_document_list[0].pk, self._test_document_list[1].pk
                 ), 'metadata_type': self._test_metadata_type.pk
             }
         )
@@ -188,7 +188,7 @@ class DocumentMetadataViewTestMixin(DocumentMetadataMixin):
         return self.get(
             viewname='metadata:metadata_multiple_edit', data={
                 'id_list': '{},{}'.format(
-                    self._test_documents[0].pk, self._test_documents[1].pk
+                    self._test_document_list[0].pk, self._test_document_list[1].pk
                 )
             }
         )
@@ -197,7 +197,7 @@ class DocumentMetadataViewTestMixin(DocumentMetadataMixin):
         return self.post(
             viewname='metadata:metadata_multiple_edit', data={
                 'id_list': '{},{}'.format(
-                    self._test_documents[0].pk, self._test_documents[1].pk
+                    self._test_document_list[0].pk, self._test_document_list[1].pk
                 ),
                 'form-0-metadata_type_id': self._test_metadata_type.pk,
                 'form-0-update': True,
@@ -212,7 +212,7 @@ class DocumentMetadataViewTestMixin(DocumentMetadataMixin):
         return self.get(
             viewname='metadata:metadata_multiple_remove', data={
                 'id_list': '{},{}'.format(
-                    self._test_documents[0].pk, self._test_documents[0].pk
+                    self._test_document_list[0].pk, self._test_document_list[0].pk
                 )
             }
         )
@@ -221,7 +221,7 @@ class DocumentMetadataViewTestMixin(DocumentMetadataMixin):
         return self.post(
             viewname='metadata:metadata_multiple_remove', data={
                 'id_list': '{},{}'.format(
-                    self._test_documents[0].pk, self._test_documents[1].pk
+                    self._test_document_list[0].pk, self._test_document_list[1].pk
                 ),
                 'form-0-metadata_type_id': self._test_metadata_type.pk,
                 'form-0-update': True,

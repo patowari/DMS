@@ -71,7 +71,7 @@ class DocumentDuplicatesAPIViewTestCase(
 
     def test_document_duplicates_list_api_view_with_source_document_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
 
         self._clear_events()
@@ -87,7 +87,7 @@ class DocumentDuplicatesAPIViewTestCase(
 
     def test_document_duplicates_list_api_view_with_target_document_access(self):
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
         self._clear_events()
@@ -100,10 +100,10 @@ class DocumentDuplicatesAPIViewTestCase(
 
     def test_document_duplicates_list_api_view_with_full_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
         self._clear_events()
@@ -115,7 +115,7 @@ class DocumentDuplicatesAPIViewTestCase(
         )
         self.assertEqual(
             response.data['results'][0]['id'],
-            self._test_documents[1].pk
+            self._test_document_list[1].pk
         )
 
         events = self._get_test_events()
@@ -123,13 +123,13 @@ class DocumentDuplicatesAPIViewTestCase(
 
     def test_trashed_source_document_duplicates_list_api_view_with_full_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
-        self._test_documents[0].delete()
+        self._test_document_list[0].delete()
 
         self._clear_events()
 
@@ -141,13 +141,13 @@ class DocumentDuplicatesAPIViewTestCase(
 
     def test_trashed_target_document_duplicates_list_api_view_with_full_access(self):
         self.grant_access(
-            obj=self._test_documents[0], permission=permission_document_view
+            obj=self._test_document_list[0], permission=permission_document_view
         )
         self.grant_access(
-            obj=self._test_documents[1], permission=permission_document_view
+            obj=self._test_document_list[1], permission=permission_document_view
         )
 
-        self._test_documents[1].delete()
+        self._test_document_list[1].delete()
 
         self._clear_events()
 

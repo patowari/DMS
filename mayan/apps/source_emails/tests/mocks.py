@@ -100,7 +100,7 @@ class MockIMAPServer:
     def _fetch(self, messages):
         flag = '\\Seen'
         flag_modified = []
-        message_numbers = []
+        message_number_list = []
         results = []
         uids = []
 
@@ -110,7 +110,7 @@ class MockIMAPServer:
                 flag_modified.append(message)
 
             message_number = message.get_number()
-            message_numbers.append(
+            message_number_list.append(
                 force_str(s=message_number)
             )
             uid = message.uid
@@ -130,7 +130,7 @@ class MockIMAPServer:
         )
         results.append(
             '{} (UID {} FLAGS ({}))'.format(
-                ' '.join(message_numbers), ' '.join(uids), flag
+                ' '.join(message_number_list), ' '.join(uids), flag
             )
         )
         return results

@@ -511,7 +511,7 @@ class DocumentChangeTypeAPIViewTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object, self._test_document_types[1]
+            events[0].action_object, self._test_document_type_list[1]
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)

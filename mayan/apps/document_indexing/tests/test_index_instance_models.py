@@ -151,15 +151,15 @@ class IndexInstanceNodeMaintenanceTestCase(
 
         IndexTemplate.objects.rebuild()
 
-        self._test_documents[1].label = 'test_label'
-        self._test_documents[1].save()
+        self._test_document_list[1].label = 'test_label'
+        self._test_document_list[1].save()
 
         self.assertEqual(IndexInstanceNode.objects.count(), 2)
         self.assertTrue(
-            self._test_documents[0] in IndexInstanceNode.objects.last().documents.all()
+            self._test_document_list[0] in IndexInstanceNode.objects.last().documents.all()
         )
         self.assertTrue(
-            self._test_documents[1] not in IndexInstanceNode.objects.last().documents.all()
+            self._test_document_list[1] not in IndexInstanceNode.objects.last().documents.all()
         )
 
 
@@ -232,11 +232,11 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
             ), {
                 '',
                 str(
-                    self._test_documents[1].uuid
-                ), self._test_documents[1].label,
+                    self._test_document_list[1].uuid
+                ), self._test_document_list[1].label,
                 str(
-                    self._test_documents[0].uuid
-                ), self._test_documents[0].label
+                    self._test_document_list[0].uuid
+                ), self._test_document_list[0].label
             }
         )
 
@@ -290,7 +290,7 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(
             IndexInstanceNode.objects.last().value,
-            self._test_document_types[0].label
+            self._test_document_type_list[0].label
         )
 
         self._create_test_document_type()
@@ -304,7 +304,7 @@ class IndexInstanceTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(
             IndexInstanceNode.objects.last().value,
-            self._test_document_types[1].label
+            self._test_document_type_list[1].label
         )
 
     def test_method_get_absolute_url(self):

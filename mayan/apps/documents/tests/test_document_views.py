@@ -269,7 +269,7 @@ class DocumentChangeTypeViewTestCase(
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(
             response=response, status_code=200,
-            text=self._test_document_types[1]
+            text=self._test_document_type_list[1]
         )
 
         self._test_document.refresh_from_db()
@@ -319,7 +319,7 @@ class DocumentChangeTypeViewTestCase(
         self.assertEqual(response.status_code, 200)
         self.assertContains(
             response=response, status_code=200,
-            text=self._test_document_types[1]
+            text=self._test_document_type_list[1]
         )
 
         self._test_document.refresh_from_db()
@@ -441,7 +441,7 @@ class DocumentChangeTypeViewTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object, self._test_document_types[1]
+            events[0].action_object, self._test_document_type_list[1]
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)
@@ -558,7 +558,7 @@ class DocumentChangeTypeViewTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object, self._test_document_types[1]
+            events[0].action_object, self._test_document_type_list[1]
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document)

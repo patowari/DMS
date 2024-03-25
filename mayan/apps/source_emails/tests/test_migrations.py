@@ -12,7 +12,7 @@ class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
 
     def prepare(self):
         # Manually initialize the SourceTestMixin.
-        self._test_sources = []
+        self._test_source_list = []
 
         Source = self.old_state.apps.get_model(
             app_label='sources', model_name='Source'
@@ -48,7 +48,7 @@ class SourceBackendCredentialMigrationTestCase(MayanMigratorTestCase):
 
     def prepare(self):
         # Manually initialize the SourceTestMixin.
-        self._test_sources = []
+        self._test_source_list = []
 
         Source = self.old_state.apps.get_model(
             app_label='sources', model_name='Source'

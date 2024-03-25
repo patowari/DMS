@@ -20,7 +20,7 @@ class WatchStorageSourceTestMixin(SourceTestMixinStoredFile):
     def setUp(self):
         super().setUp()
 
-        self._test_source_stored_files = []
+        self._test_source_stored_file_list = []
 
     def _get_test_source_backend_data(self, action_name, interface_name):
         result = super()._get_test_source_backend_data(

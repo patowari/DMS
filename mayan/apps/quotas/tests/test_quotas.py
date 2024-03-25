@@ -336,20 +336,20 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_documents[0])
+        self.assertEqual(events[0].target, self._test_document_list[0])
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, self._test_documents[0])
+        self.assertEqual(events[1].action_object, self._test_document_list[0])
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, self._test_document_file_list[0])
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
-        self.assertEqual(events[2].action_object, self._test_documents[0])
+        self.assertEqual(events[2].action_object, self._test_document_list[0])
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, self._test_document_file_list[0])
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[3].action_object, self._test_documents[0])
+        self.assertEqual(events[3].action_object, self._test_document_list[0])
         self.assertEqual(events[3].actor, self._test_case_user)
         self.assertEqual(
             events[3].target, self._test_document_version_list[0]
@@ -367,7 +367,7 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
             events[4].verb, event_document_version_page_created.id
         )
 
-        self.assertEqual(events[5].action_object, self._test_documents[0])
+        self.assertEqual(events[5].action_object, self._test_document_list[0])
         self.assertEqual(events[5].actor, self._test_case_user)
         self.assertEqual(
             events[5].target, self._test_document_version_list[0]
@@ -432,20 +432,20 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_documents[0])
+        self.assertEqual(events[0].target, self._test_document_list[0])
         self.assertEqual(events[0].verb, event_document_created.id)
 
-        self.assertEqual(events[1].action_object, self._test_documents[0])
+        self.assertEqual(events[1].action_object, self._test_document_list[0])
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, self._test_document_file_list[0])
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
-        self.assertEqual(events[2].action_object, self._test_documents[0])
+        self.assertEqual(events[2].action_object, self._test_document_list[0])
         self.assertEqual(events[2].actor, self._test_case_user)
         self.assertEqual(events[2].target, self._test_document_file_list[0])
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
-        self.assertEqual(events[3].action_object, self._test_documents[0])
+        self.assertEqual(events[3].action_object, self._test_document_list[0])
         self.assertEqual(events[3].actor, self._test_case_user)
         self.assertEqual(
             events[3].target, self._test_document_version_list[0]
@@ -463,7 +463,7 @@ class DocumentCountQuotaTestCase(GroupTestMixin, GenericDocumentTestCase):
             events[4].verb, event_document_version_page_created.id
         )
 
-        self.assertEqual(events[5].action_object, self._test_documents[0])
+        self.assertEqual(events[5].action_object, self._test_document_list[0])
         self.assertEqual(events[5].actor, self._test_case_user)
         self.assertEqual(
             events[5].target, self._test_document_version_list[0]
