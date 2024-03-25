@@ -93,6 +93,8 @@ DEFAULT_CONVERTER_GRAPHICS_BACKEND_ARGUMENTS = {
     'pillow_maximum_image_pixels': DEFAULT_PILLOW_MAXIMUM_IMAGE_PIXELS
 }
 
+IMAGE_ERROR_BROKEN_FILE = 'converter_image_error_broken_file'
+
 MAP_PILLOW_FORMAT_TO_MIME_TYPE = {
     'JPEG': 'image/jpeg'
 }

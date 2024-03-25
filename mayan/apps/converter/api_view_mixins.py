@@ -3,9 +3,12 @@ from django.contrib.contenttypes.models import ContentType
 from django.http import StreamingHttpResponse
 from django.views.decorators.cache import patch_cache_control
 
+from rest_framework.exceptions import APIException
+
 from mayan.apps.mime_types.classes import MIMETypeBackend
 
-from .classes import ConverterBase
+from .classes import AppImageErrorImage, ConverterBase
+from .exceptions import AppImageError
 from .settings import (
     setting_image_cache_time, setting_image_generation_timeout
 )
@@ -39,25 +42,44 @@ class APIImageViewMixin:
 
     def retrieve(self, request, **kwargs):
         self.set_object()
-        self.set_cache_file(request=request)
 
-        file_generator = self.get_file_generator()
-
-        content_type = ConverterBase.get_output_content_type()
-
-        if not content_type:
-            content_type = self.get_stream_mime_type()
-
-        response = StreamingHttpResponse(
-            content_type=content_type, streaming_content=file_generator()
-        )
-
-        if '_hash' in request.GET:
-            patch_cache_control(
-                max_age=setting_image_cache_time.value,
-                response=response
+        try:
+            self.set_cache_file(request=request)
+        except AppImageError as exception:
+            app_image_error_image = AppImageErrorImage.get(
+                name=exception.error_name
             )
-        return response
+
+            error_image_template_result = app_image_error_image.render(
+                context={'details': exception.details}
+            )
+
+            detail = {
+                'app_image_error_image_template': error_image_template_result
+            }
+
+            if exception.details:
+                detail['details'] = exception.details
+
+            raise APIException(detail=detail)
+        else:
+            file_generator = self.get_file_generator()
+
+            content_type = ConverterBase.get_output_content_type()
+
+            if not content_type:
+                content_type = self.get_stream_mime_type()
+
+            response = StreamingHttpResponse(
+                content_type=content_type, streaming_content=file_generator()
+            )
+
+            if '_hash' in request.GET:
+                patch_cache_control(
+                    max_age=setting_image_cache_time.value,
+                    response=response
+                )
+            return response
 
     def set_cache_file(self, request):
         query_dict = request.GET

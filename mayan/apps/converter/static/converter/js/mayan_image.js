@@ -34,17 +34,20 @@ class MayanImage {
             const dataURL = $this.attr('data-url');
             $this.attr('src', dataURL);
 
-            $this.on('error', function () {
+            $this.on('error', function (event) {
+                $this.siblings('.lazyload-spinner-container').remove();
+                $this.removeClass('pull-left');
+
                 $.ajax({
                     async: true,
                     dataType: 'json',
                     error: function(jqXHR, textStatus, errorThrown) {
-                        if (jqXHR.responseJSON.hasOwnProperty('app_image_error_image_template')) {
-                            const $container = $this.parent().parent().parent();
-
-                            $container.html(
-                                jqXHR.responseJSON['app_image_error_image_template']
-                            );
+                        if (jqXHR.hasOwnProperty('responseJSON')) {
+                            if (jqXHR.responseJSON.hasOwnProperty('app_image_error_image_template')) {
+                                const $container = $this.parent().parent().parent();
+                                const template = jqXHR.responseJSON['app_image_error_image_template']
+                                $container.html(template);
+                            }
                         }
                     },
                     // Need to set mimeType only when run from local file.

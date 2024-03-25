@@ -121,6 +121,14 @@
 - Update image converter to load damaged and truncated images. Adds the
   setting ``CONVERTER_LOAD_TRUNCATED_IMAGES`` which defaults to ``False``
   for backwards compatibility.
+- Image converter updates:
+
+  - Support catching ``AppImageError`` exceptions and returning the error
+    template.
+  - Add the ``context`` argument to the ``AppImageErrorImage`` class to
+    allow passing context to the template such as error details.
+  - Add a general purpose ``AppImageErrorImage`` to the converter for most
+    image errors.
 
 4.6.2 (2024-03-04)
 ==================

@@ -12,6 +12,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
 
+from .classes import AppImageErrorImage
 from .events import event_asset_edited
 from .handlers import handler_create_asset_cache
 from .links import (
@@ -20,6 +21,7 @@ from .links import (
     link_transformation_delete, link_transformation_edit,
     link_transformation_select
 )
+from .literals import IMAGE_ERROR_BROKEN_FILE
 from .permissions import (
     permission_asset_delete, permission_asset_edit, permission_asset_view
 )
@@ -42,6 +44,10 @@ class ConverterApp(MayanAppConfig):
             model_name='LayerTransformation'
         )
 
+        AppImageErrorImage(
+            name=IMAGE_ERROR_BROKEN_FILE,
+            template_name='converter/errors/broken_file.html'
+        )
         EventModelRegistry.register(model=Asset)
 
         ModelEventType.register(

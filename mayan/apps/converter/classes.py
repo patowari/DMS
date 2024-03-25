@@ -26,11 +26,14 @@ from mayan.apps.storage.utils import (
     NamedTemporaryFile, TemporaryDirectory, fs_cleanup
 )
 
-from .exceptions import InvalidOfficeFormat, LayerError, OfficeConversionError
+from .exceptions import (
+    AppImageError, InvalidOfficeFormat, LayerError, OfficeConversionError
+)
 from .literals import (
     CONVERTER_OFFICE_FILE_MIMETYPES, DEFAULT_LIBREOFFICE_PATH,
     DEFAULT_PAGE_NUMBER, DEFAULT_PILLOW_FORMAT, MAP_PILLOW_FORMAT_TO_MIME_TYPE
 )
+from .literals import IMAGE_ERROR_BROKEN_FILE
 from .settings import (
     setting_graphics_backend, setting_graphics_backend_arguments,
     setting_load_truncated_images
@@ -73,8 +76,8 @@ class AppImageErrorImage:
     def open(self):
         return staticfiles_storage.open(name=self.image_path, mode='rb')
 
-    def render(self):
-        return self.template.render()
+    def render(self, context=None):
+        return self.template.render(context=context)
 
 
 class ConverterBase:
@@ -158,16 +161,36 @@ class ConverterBase:
             # Cannot identify image file.
             self.image = self.convert(page_number=page_number)
         except PIL.Image.DecompressionBombError as exception:
-            logger.error(
-                msg='Unable to seek document page. Increase the value of '
-                'the argument "pillow_maximum_image_pixels" in the '
-                'CONVERTER_GRAPHICS_BACKEND_ARGUMENTS setting; %s',
-                args=(exception,)
+            error_message = 'Unable to seek document page. Increase the '
+            'value of the argument "pillow_maximum_image_pixels" in the '
+            'CONVERTER_GRAPHICS_BACKEND_ARGUMENTS setting; {}'.format(
+                exception
             )
-            raise
+            logger.error(error_message)
+            raise AppImageError(
+                details=error_message, error_name=IMAGE_ERROR_BROKEN_FILE
+            )
         else:
-            self.image.seek(frame=page_number)
-            self.image.load()
+            try:
+                self.image.seek(frame=page_number)
+            except Exception as exception:
+                error_message = 'Unable to seek document page; {}'.format(
+                    exception
+                )
+                raise AppImageError(
+                    details=error_message, error_name=IMAGE_ERROR_BROKEN_FILE
+                )
+            else:
+                try:
+                    self.image.load()
+                except Exception as exception:
+                    error_message = 'Unable to load document page; {}'.format(
+                        exception
+                    )
+                    raise AppImageError(
+                        details=error_message,
+                        error_name=IMAGE_ERROR_BROKEN_FILE
+                    )
 
     def soffice(self):
         """
