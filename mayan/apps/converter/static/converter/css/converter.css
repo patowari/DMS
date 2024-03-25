@@ -30,15 +30,17 @@
 }
 
 img.lazy-load {
+    height: 0px;
+    min-height: 1px;
     visibility: hidden;
     width: 0px;
-    height: 0px;
 }
 
 img.lazy-load-carousel {
-    visibility: hidden;
-    width: 0px;
+    min-height: 1px;
     height: 0px;
+    width: 0px;
+    visibility: hidden;
 }
 
 .img-nolazyload {
@@ -54,8 +56,8 @@ img.lazy-load-carousel {
 }
 
 .instance-image-widget {
-    text-align: center;
     height: 100%;
+    text-align: center;
 }
 
 .thin_border-thumbnail {
@@ -70,7 +72,5 @@ img.lazy-load-carousel {
 /* Must go after .thin_border-thumbnail */
 .thin_border {
     border: 1px solid black;
-    display: inline;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: auto;
 }

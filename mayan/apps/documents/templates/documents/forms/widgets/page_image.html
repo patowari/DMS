@@ -18,18 +18,18 @@
             {% include object_image_data.app_image_error_image.template_name %}
         </span>
     {% else %}
+        <img
+            alt="{{ image_alt }}"
+            class="thin_border {{ image_classes }}"
+            data-src="{{ object_image_data.url }}"
+            src="#"
+            style="{% if image_max_height %}max-height: {{ image_max_height }}; {% endif %}"
+         />
         <span
             class="lazyload-spinner-container text-primary"
             style="height: {% if display_full_height %}100%{% else %}{{ display_height|default:150 }}px{% endif %}; display: block;"
         >
             {% appearance_get_icon 'mayan.apps.documents.icons.icon_document_image_loading' %}
         </span>
-        <img
-            alt="{{ image_alt }}"
-            class="thin_border {{ image_classes }}"
-            data-url="{{ object_image_data.url }}"
-            src="#"
-            style="{% if image_max_height %}max-height: {{ image_max_height }}; {% endif %}"
-         />
     {% endif %}
 </span>

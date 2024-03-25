@@ -27,35 +27,49 @@ class MayanImage {
     }
 
     static async initialize () {
-        $('img.lazy-load,img.lazy-load-carousel').each(async function(index) {
+        const eventHandlerImageError = function (event) {
             const $this = $(this);
 
-            $this.attr('loading', 'lazy');
-            const dataURL = $this.attr('data-url');
-            $this.attr('src', dataURL);
+            $this.siblings('.lazyload-spinner-container').remove();
+            $this.removeClass('pull-left');
 
-            $this.on('error', function (event) {
-                $this.siblings('.lazyload-spinner-container').remove();
-                $this.removeClass('pull-left');
+            $.ajax({
+                async: true,
+                dataType: 'json',
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $this.off('error', eventHandlerImageError);
 
-                $.ajax({
-                    async: true,
-                    dataType: 'json',
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        if (jqXHR.hasOwnProperty('responseJSON')) {
-                            if (jqXHR.responseJSON.hasOwnProperty('app_image_error_image_template')) {
-                                const $container = $this.parent().parent().parent();
-                                const template = jqXHR.responseJSON['app_image_error_image_template']
-                                $container.html(template);
-                            }
+                    if (jqXHR.hasOwnProperty('responseJSON')) {
+                        if (jqXHR.responseJSON.hasOwnProperty('app_image_error_image_template')) {
+                            const $container = $this.parent().parent().parent();
+                            const template = jqXHR.responseJSON['app_image_error_image_template']
+                            $container.html(template);
                         }
-                    },
-                    // Need to set mimeType only when run from local file.
-                    mimeType: 'text/html; charset=utf-8',
-                    type: 'GET',
-                    url: $this.attr('src'),
-                });
+                    }
+                },
+                // Need to set mimeType only when run from local file.
+                mimeType: 'text/html; charset=utf-8',
+                type: 'GET',
+                url: $this.attr('src'),
             });
+        }
+
+        const observer = new IntersectionObserver(function(items) {
+            items.forEach((item) => {
+                if (item.isIntersecting) {
+                    const $this = $(item.target);
+                    const dataSrc = $this.attr('data-src');
+
+                    $this.attr('src', dataSrc);
+                    $this.on('error', eventHandlerImageError);
+                    observer.unobserve(item.target);
+                }
+            });
+        });
+
+        $('img.lazy-load,img.lazy-load-carousel').each(async function(index) {
+            const $this = $(this);
+            observer.observe(this);
         });
 
         $('.lazy-load').on('load', async function() {
