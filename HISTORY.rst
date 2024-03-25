@@ -116,6 +116,7 @@
 - Add list toolbar widget to control the sorting.
 - Fix display of build number.
 - Remove Django Rosetta from dependencies.
+- Remove the testing app from the production build.
 
 4.6.2 (2024-03-04)
 ==================

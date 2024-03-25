@@ -27,6 +27,13 @@ INSTALLED_APPS = [
     cls for cls in INSTALLED_APPS if cls != 'whitenoise.runserver_nostatic'  # NOQA: F405
 ]
 
+templating_app_index = INSTALLED_APPS.index(
+    'mayan.apps.templating.apps.TemplatingApp'
+)
+INSTALLED_APPS.insert(
+    templating_app_index + 1, 'mayan.apps.testing.apps.TestingApp'
+)
+
 LOGGING_LOG_FILE_PATH = '/tmp/mayan-errors.log'
 LOGGING_LEVEL = 'WARNING'
 
@@ -48,7 +55,7 @@ MIDDLEWARE = [
 
 OCR_AUTO_OCR = False
 
-# User a simpler password hasher
+# User a simpler password hasher.
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.MD5PasswordHasher',
 )
@@ -59,7 +66,7 @@ STORAGES['staticfiles'] = {
     'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage'
 }
 
-# Cache templates in memory
+# Cache templates in memory.
 TEMPLATES[0]['OPTIONS']['loaders'] = (  # NOQA: F405
     (
         'django.template.loaders.cached.Loader', (
@@ -69,4 +76,4 @@ TEMPLATES[0]['OPTIONS']['loaders'] = (  # NOQA: F405
     ),
 )
 
-TESTING = True  # Silence the error logger for non critical HTTP404 and PermissionDenied
+TESTING = True  # Silence the error logger for non critical `Http404` and `PermissionDenied`.

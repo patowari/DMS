@@ -107,7 +107,6 @@ INSTALLED_APPS = (
     'mayan.apps.smart_settings.apps.SmartSettingsApp',
     'mayan.apps.storage.apps.StorageApp',
     'mayan.apps.templating.apps.TemplatingApp',
-    'mayan.apps.testing.apps.TestingApp',
     'mayan.apps.views.apps.ViewsApp',
     # Obsolete apps. Need to remain to allow migrations to execute.
     'mayan.apps.announcements.apps.AnnouncementsApp',
