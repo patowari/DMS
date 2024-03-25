@@ -117,6 +117,7 @@
 - Fix display of build number.
 - Remove Django Rosetta from dependencies.
 - Remove the testing app from the production build.
+- Restore the root logging handlers after every test.
 
 4.6.2 (2024-03-04)
 ==================
