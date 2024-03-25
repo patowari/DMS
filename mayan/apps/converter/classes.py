@@ -5,7 +5,7 @@ import os
 import shutil
 
 import PIL
-from PIL import Image
+from PIL import Image, ImageFile
 import sh
 
 from django.apps import apps
@@ -32,7 +32,8 @@ from .literals import (
     DEFAULT_PAGE_NUMBER, DEFAULT_PILLOW_FORMAT, MAP_PILLOW_FORMAT_TO_MIME_TYPE
 )
 from .settings import (
-    setting_graphics_backend, setting_graphics_backend_arguments
+    setting_graphics_backend, setting_graphics_backend_arguments,
+    setting_load_truncated_images
 )
 
 logger = logging.getLogger(name=__name__)
@@ -90,6 +91,8 @@ class ConverterBase:
         return MAP_PILLOW_FORMAT_TO_MIME_TYPE.get(output_format)
 
     def __init__(self, file_object, mime_type=None):
+        ImageFile.LOAD_TRUNCATED_IMAGES = setting_load_truncated_images.value
+
         self.file_object = file_object
         self.image = None
 

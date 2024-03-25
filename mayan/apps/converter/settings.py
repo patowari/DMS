@@ -12,7 +12,8 @@ from .literals import (
     DEFAULT_CONVERTER_GRAPHICS_BACKEND_ARGUMENTS,
     DEFAULT_CONVERTER_IMAGE_CACHE_TIME,
     DEFAULT_CONVERTER_IMAGE_GENERATION_MAX_RETRIES,
-    DEFAULT_CONVERTER_IMAGE_GENERATION_TIMEOUT
+    DEFAULT_CONVERTER_IMAGE_GENERATION_TIMEOUT,
+    DEFAULT_CONVERTER_LOAD_TRUNCATED_IMAGES
 )
 from .setting_callbacks import callback_update_asset_cache_size
 from .setting_migrations import ConvertSettingMigration
@@ -94,5 +95,12 @@ setting_image_generation_timeout = setting_namespace.do_setting_add(
     help_text=_(
         message='Time in seconds after which the image generation task '
         'will stop running and raise an error.'
+    )
+)
+setting_load_truncated_images = setting_namespace.do_setting_add(
+    default=DEFAULT_CONVERTER_LOAD_TRUNCATED_IMAGES,
+    global_name='CONVERTER_LOAD_TRUNCATED_IMAGES',
+    help_text=_(
+        message='Whether or not to load truncated image files.'
     )
 )

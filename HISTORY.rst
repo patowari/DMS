@@ -118,6 +118,9 @@
 - Remove Django Rosetta from dependencies.
 - Remove the testing app from the production build.
 - Restore the root logging handlers after every test.
+- Update image converter to load damaged and truncated images. Adds the
+  setting ``CONVERTER_LOAD_TRUNCATED_IMAGES`` which defaults to ``False``
+  for backwards compatibility.
 
 4.6.2 (2024-03-04)
 ==================
