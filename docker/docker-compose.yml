@@ -155,6 +155,8 @@ services:
       - "-c"
       - "maintenance_work_mem=128MB"
       - "-c"
+      - "max_connections=${MAYAN_DOCKER_POSTGRESQL_MAX_CONNECTIONS:-150}"
+      - "-c"
       - "shared_buffers=512MB"
       - "-c"
       - "work_mem=32MB"
@@ -174,6 +176,7 @@ services:
     shm_size: 128m
     volumes:
       - ${MAYAN_POSTGRESQL_VOLUME:-postgres}:/var/lib/postgresql/data
+      - ${MAYAN_POSTGRESQL_VOLUME_INITDB:-postgres-initdb}:/docker-entrypoint-initdb.d/
 
   rabbitmq:
     environment:
@@ -402,6 +405,7 @@ volumes:
   elasticsearch:
   keycloak-postgres:
   postgres:
+  postgres-initdb:
   mountindex:
   rabbitmq:
   redis:

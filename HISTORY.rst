@@ -130,6 +130,12 @@
   - Add a general purpose ``AppImageErrorImage`` to the converter for most
     image errors.
 
+- Docker Compose file updates:
+
+  - Support configurable PostgreSQL ``max_connections``.
+  - Default PostgreSQL ``max_connections`` to 150.
+  - Add PostgreSQL configurable ``initdb.d`` volume.
+
 4.6.2 (2024-03-04)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
