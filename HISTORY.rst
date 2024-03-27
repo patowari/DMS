@@ -1,8 +1,8 @@
-4.4.14 (XXXX-XX-XX)
+4.4.14 (2024-03-27)
 ===================
 - Fix the document file and the user API list view ordering fields. The
   fields were ``mime_type`` to ``mimetype`` and remove
-  ``has_usable_password`` which is method and not a field.
+  ``has_usable_password`` which is a method and not a field.
 - Restore the root logging handlers after every test.
 - Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
   and avoid JavaScript errors for non authenticated users.
