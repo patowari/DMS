@@ -54,7 +54,7 @@ Other
 ^^^^^
 
 - Merge version 4.4.9 changes.
-- Load test mailers classes by path and not my import.
+- Load test mailers classes by path and not by import.
 
 
 Removals
