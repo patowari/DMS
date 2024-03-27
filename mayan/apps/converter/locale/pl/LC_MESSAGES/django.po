@@ -9,14 +9,15 @@
 # Roberto Rosario, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # tomkolp, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 13:59+0000\n"
+"POT-Creation-Date: 2024-03-27 06:58+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -264,7 +265,7 @@ msgstr "Wygeneruj obraz obiektu."
 
 #: serializers.py:10
 msgid "Image URL"
-msgstr ""
+msgstr "Adres URL obrazu"
 
 #: serializers.py:17
 msgid "URL"
@@ -275,15 +276,20 @@ msgid ""
 "The threshold at which the CONVERTER_ASSET_CACHE_STORAGE_BACKEND will start "
 "deleting the oldest asset cache files. Specify the size in bytes."
 msgstr ""
+"Próg, poniżej którego CONVERTER_ASSET_CACHE_STORAGE_BACKEND rozpocznie "
+"usuwanie najstarszych plików pamięci podręcznej zasobów. Określ rozmiar w "
+"bajtach."
 
 #: settings.py:38
 msgid ""
 "Path to the Storage subclass to use when storing the cached asset files."
 msgstr ""
+"Ścieżka do podklasy Storage, która ma być używana podczas przechowywania "
+"buforowanych plików zasobów."
 
 #: settings.py:46
 msgid "Arguments to pass to the CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
-msgstr ""
+msgstr "Argumenty do przekazania do CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
 
 #: settings.py:52
 msgid "Path to the Storage subclass to use when storing assets."
@@ -304,18 +310,24 @@ msgstr "Opcje konfiguracji dla silnika konwersji grafiki."
 #: settings.py:77
 msgid "Time in seconds that the browser should cache the supplied image. "
 msgstr ""
+"Czas w sekundach, przez który przeglądarka powinna buforować dostarczony "
+"obraz."
 
 #: settings.py:84
 msgid ""
 "Maximum number of retries before giving up. A value of None means the task "
 "will retry forever."
 msgstr ""
+"Maksymalna liczba prób przed zaprestaniem. Wartość None oznacza, że zadanie "
+"będzie próbować w nieskończoność."
 
 #: settings.py:92
 msgid ""
 "Time in seconds after which the image generation task will stop running and "
 "raise an error."
 msgstr ""
+"Czas w sekundach, po którym zadanie generowania obrazu przestanie działać i "
+"zgłosi błąd."
 
 #: storages.py:15
 msgid ""
@@ -330,31 +342,35 @@ msgid ""
 "Unable to initialize the converter asset cachestorage. Check the settings {}"
 " and {} for formatting errors."
 msgstr ""
+"Nie można zainicjować pamięci podręcznej zasobów konwertera. Sprawdź "
+"ustawienia {} i {} z powodu błędów formatowania."
 
 #: storages.py:34
 msgid "Assets cache"
-msgstr ""
+msgstr "Pamięć podręczna zasobów"
 
 #: transformation_mixins.py:20 transformations.py:626
 msgid ""
 "Number of degrees to rotate the image counter clockwise around its center."
 msgstr ""
+"Liczba stopni do obrócenia obrazu przeciwnie do ruchu wskazówek zegara wokół"
+" jego środka."
 
 #: transformation_mixins.py:22
 msgid "Rotation"
-msgstr ""
+msgstr "Rotacja"
 
 #: transformation_mixins.py:25
 msgid "Opacity level of the image in percent"
-msgstr ""
+msgstr "Poziom przezroczystości obrazu w procentach"
 
 #: transformation_mixins.py:26
 msgid "Transparency"
-msgstr ""
+msgstr "Przejrzystość"
 
 #: transformation_mixins.py:29 transformations.py:731
 msgid "Zoom level in percent."
-msgstr ""
+msgstr "Poziom powiększenia w procentach."
 
 #: transformation_mixins.py:29 transformations.py:726
 msgid "Zoom"
@@ -362,39 +378,39 @@ msgstr "Powiększenie"
 
 #: transformation_mixins.py:113
 msgid "Paste an image"
-msgstr ""
+msgstr "Wklej obraz"
 
 #: transformation_mixins.py:118
 msgid "Horizontal position in pixels from the left."
-msgstr ""
+msgstr "Pozycja pozioma w pikselach od lewej."
 
 #: transformation_mixins.py:119 transformation_mixins.py:163
 #: transformation_mixins.py:227 transformations.py:230 transformations.py:329
 #: transformations.py:428
 msgid "Left"
-msgstr ""
+msgstr "Lewo"
 
 #: transformation_mixins.py:122
 msgid "Vertical position in pixels from the top."
-msgstr ""
+msgstr "Pionowa pozycja w pikselach od góry."
 
 #: transformation_mixins.py:123 transformation_mixins.py:167
 #: transformation_mixins.py:235 transformations.py:234 transformations.py:333
 #: transformations.py:432
 msgid "Top"
-msgstr ""
+msgstr "Góra"
 
 #: transformation_mixins.py:157
 msgid "Paste an image (percents coordinates)"
-msgstr ""
+msgstr "Wklej obraz (współrzędne procentowe)"
 
 #: transformation_mixins.py:162
 msgid "Horizontal position in percent from the left."
-msgstr ""
+msgstr "Pozycja pozioma w procentach od lewej."
 
 #: transformation_mixins.py:166
 msgid "Vertical position in percent from the top."
-msgstr ""
+msgstr "Pionowa pozycja w procentach od góry."
 
 #: transformation_mixins.py:220 transformations.py:218
 msgid "Paste an asset as watermark"
@@ -402,89 +418,89 @@ msgstr "Wklej zasób jako znak wodny"
 
 #: transformation_mixins.py:226
 msgid "Horizontal start position in pixels from the left."
-msgstr ""
+msgstr "Pozioma  pozycja startowa w pikselach od lewej."
 
 #: transformation_mixins.py:230
 msgid "Horizontal end position in pixels from the right."
-msgstr ""
+msgstr "Pozioma pozycja końcowa w pikselach od prawej."
 
 #: transformation_mixins.py:231 transformations.py:238 transformations.py:337
 #: transformations.py:436
 msgid "Right"
-msgstr ""
+msgstr "Prawo"
 
 #: transformation_mixins.py:234
 msgid "Vertical start position in pixels from the top."
-msgstr ""
+msgstr "Pionowa pozycja początkowa w pikselach od góry."
 
 #: transformation_mixins.py:238
 msgid "Vertical end position in pixels from the top."
-msgstr ""
+msgstr "Pionowa pozycja końcowa w pikselach od góry."
 
 #: transformation_mixins.py:239 transformations.py:242 transformations.py:342
 #: transformations.py:440
 msgid "Bottom"
-msgstr ""
+msgstr "Dół"
 
 #: transformation_mixins.py:242
 msgid "Horizontal position increments in pixels."
-msgstr ""
+msgstr "Przyrost poziomej pozycji w pikselach."
 
 #: transformation_mixins.py:243
 msgid "Horizontal increment"
-msgstr ""
+msgstr "Przyrost poziomy"
 
 #: transformation_mixins.py:246
 msgid "Vertical position increments in pixels."
-msgstr ""
+msgstr "Przyrost pionowej pozycji w pikselach."
 
 #: transformation_mixins.py:247
 msgid "Vertical increment"
-msgstr ""
+msgstr "Przyrost pionowy"
 
 #: transformation_mixins.py:306
 msgid "Asset name"
-msgstr ""
+msgstr "Nazwa zasobu"
 
 #: transformation_mixins.py:349
 msgid "Color used to fill the rectangle."
-msgstr ""
+msgstr "Kolor używany do wypełnienia prostokąta."
 
 #: transformation_mixins.py:350 transformations.py:633
 msgid "Fill color"
-msgstr ""
+msgstr "Kolor wypełnienia"
 
 #: transformation_mixins.py:353
 msgid "Opacity level of the fill color in percent"
-msgstr ""
+msgstr "Poziom krycia koloru wypełnienia w procentach"
 
 #: transformation_mixins.py:354
 msgid "Fill transparency"
-msgstr ""
+msgstr "Przezroczystość wypełnienia"
 
 #: transformation_mixins.py:357
 msgid "Color used for the outline of the rectangle."
-msgstr ""
+msgstr "Kolor używany do obrysu prostokąta."
 
 #: transformation_mixins.py:358
 msgid "Outline color"
-msgstr ""
+msgstr "Kolor obrysu"
 
 #: transformation_mixins.py:361
 msgid "Width in pixels of the rectangle outline."
-msgstr ""
+msgstr "Szerokość obrysu prostokąta w pikselach."
 
 #: transformation_mixins.py:362
 msgid "Outline width"
-msgstr ""
+msgstr "Szerokość konturu"
 
 #: transformations.py:202
 msgid "Paste an asset (absolute coordinates)"
-msgstr ""
+msgstr "Wklej zasób (współrzędne bezwzględne)"
 
 #: transformations.py:210
 msgid "Paste an asset (percent coordinates)"
-msgstr ""
+msgstr "Wklej zasób (współrzędne procentowe)"
 
 #: transformations.py:224
 msgid "Crop"
@@ -492,19 +508,19 @@ msgstr "Przycięcie"
 
 #: transformations.py:229
 msgid "Number of pixels to remove from the left."
-msgstr ""
+msgstr "Liczba pikseli do usunięcia z lewej strony."
 
 #: transformations.py:233
 msgid "Number of pixels to remove from the top."
-msgstr ""
+msgstr "Liczba pikseli do usunięcia od góry."
 
 #: transformations.py:237
 msgid "Number of pixels to remove from the right."
-msgstr ""
+msgstr "Liczba pikseli do usunięcia z prawej strony."
 
 #: transformations.py:241
 msgid "Number of pixels to remove from the bottom."
-msgstr ""
+msgstr "Liczba pikseli do usunięcia od dołu."
 
 #: transformations.py:324
 msgid "Draw rectangle"
@@ -512,39 +528,39 @@ msgstr "Narysuj prostokąt"
 
 #: transformations.py:329
 msgid "Left side location in pixels."
-msgstr ""
+msgstr "Lokalizacja lewej strony w pikselach."
 
 #: transformations.py:333
 msgid "Top side location in pixels."
-msgstr ""
+msgstr "Lokalizacja górnej strony w pikselach."
 
 #: transformations.py:337
 msgid "Right side location in pixels."
-msgstr ""
+msgstr "Lokalizacja prawej strony w pikselach."
 
 #: transformations.py:341
 msgid "Bottom side location in pixels."
-msgstr ""
+msgstr "Lokalizacja dolnej strony w pikselach."
 
 #: transformations.py:422
 msgid "Draw rectangle (percent coordinates)"
-msgstr ""
+msgstr "Narysuj prostokąt (współrzędne procentowe)"
 
 #: transformations.py:427
 msgid "Left side location in percent."
-msgstr ""
+msgstr "Lokalizacja lewej strony w procentach."
 
 #: transformations.py:431
 msgid "Top side location in percent."
-msgstr ""
+msgstr "Lokalizacja górnej strony w procentach."
 
 #: transformations.py:435
 msgid "Right side location in percent."
-msgstr ""
+msgstr "Lokalizacja prawej strony w procentach."
 
 #: transformations.py:439
 msgid "Bottom side location in percent."
-msgstr ""
+msgstr "Lokalizacja dolnej strony w procentach."
 
 #: transformations.py:522
 msgid "Flip"
@@ -556,7 +572,7 @@ msgstr "Rozmycie Gaussa"
 
 #: transformations.py:538 transformations.py:701
 msgid "Radius"
-msgstr ""
+msgstr "Stopień"
 
 #: transformations.py:550
 msgid "Line art"
@@ -572,7 +588,7 @@ msgstr "Zmiana rozmiaru"
 
 #: transformations.py:581
 msgid "New width in pixels."
-msgstr ""
+msgstr "Nowa szerokość w pikselach."
 
 #: transformations.py:582
 msgid "Width"
@@ -580,7 +596,7 @@ msgstr "Szerokość"
 
 #: transformations.py:586
 msgid "New height in pixels."
-msgstr ""
+msgstr "Nowa wysokość w pikselach."
 
 #: transformations.py:587
 msgid "Height"
@@ -596,7 +612,7 @@ msgstr "Stopnie"
 
 #: transformations.py:632
 msgid "Color to be used for area outside of the rotated image."
-msgstr ""
+msgstr "Kolor do użycia dla obszaru poza obróconym obrazem."
 
 #: transformations.py:663
 msgid "Rotate 90 degrees"
@@ -616,11 +632,11 @@ msgstr "Maska wyostrzająca"
 
 #: transformations.py:700
 msgid "The blur radius in pixels."
-msgstr ""
+msgstr "Stopień rozmycia w pikselach."
 
 #: transformations.py:704
 msgid "Unsharp strength in percent."
-msgstr ""
+msgstr "Siła wyostrzania w procentach."
 
 #: transformations.py:705 transformations.py:732
 msgid "Percent"
@@ -628,11 +644,11 @@ msgstr "Procent"
 
 #: transformations.py:709
 msgid "Minimum brightness change that will be sharpened."
-msgstr ""
+msgstr "Minimalna zmiana jasności, która zostanie wyostrzona."
 
 #: transformations.py:710
 msgid "Tthreshold"
-msgstr ""
+msgstr "Próg"
 
 #: views/asset_views.py:50
 #, python-format
@@ -670,7 +686,7 @@ msgstr "Błąd podczas usuwania zasobu \"%(asset)s\": %(error)s"
 #: views/asset_views.py:102
 #, python-format
 msgid "Details asset: %s"
-msgstr ""
+msgstr "Szczegóły zasobu: %s"
 
 #: views/asset_views.py:117
 #, python-format
@@ -682,6 +698,8 @@ msgid ""
 "Assets are files that can be used in conjunction with certain "
 "transformations."
 msgstr ""
+"Zasoby to pliki, które mogą być wykorzystane w połączeniu z właściwymi "
+"przekształceniami."
 
 #: views/asset_views.py:143
 msgid "No assets available"

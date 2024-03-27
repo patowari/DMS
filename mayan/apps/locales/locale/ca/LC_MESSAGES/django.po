@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 13:59+0000\n"
+"POT-Creation-Date: 2024-03-27 06:58+0000\n"
 "PO-Revision-Date: 2023-01-05 02:53+0000\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -56,12 +56,12 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: views.py:40
+#: views.py:50
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr ""
 
-#: views.py:88
+#: views.py:98
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr ""
