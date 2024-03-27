@@ -7,7 +7,7 @@ from mayan.apps.user_management.permissions import (
 from ..events import event_user_locale_profile_edited
 
 from .literals import TEST_TRANSLATED_WORD
-from .mixins import UserLocaleProfileViewMixin
+from .mixins import JavaScriptCatalogViewTestMixin, UserLocaleProfileViewMixin
 
 
 class CurrentUserViewTestCase(
@@ -46,6 +46,18 @@ class CurrentUserViewTestCase(
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_case_user)
         self.assertEqual(events[0].verb, event_user_locale_profile_edited.id)
+
+
+class JavaScriptCatalogViewTestCase(
+    JavaScriptCatalogViewTestMixin, GenericViewTestCase
+):
+    auto_login_user = False
+
+    def test_javascript_catalog_view(self):
+        self.expected_content_types = ('text/javascript; charset="utf-8"',)
+
+        response = self._request_javascript_catalog_view()
+        self.assertEqual(response.status_code, 200)
 
 
 class SuperUserLocaleViewTestCase(

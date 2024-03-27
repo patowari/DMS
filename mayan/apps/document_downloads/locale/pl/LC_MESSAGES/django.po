@@ -7,6 +7,7 @@
 # Marcin Lozynski <mlozynski@wp.pl>, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # tomkolp, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -28,11 +29,11 @@ msgstr "Pobieranie dokumenów"
 
 #: classes.py:49
 msgid "Document_file_bundle.zip"
-msgstr ""
+msgstr "Document_file_bundle.zip"
 
 #: classes.py:52
 msgid "Compressed document files"
-msgstr ""
+msgstr "Skompresowane pliki dokumentów"
 
 #: events.py:6 queues.py:7
 msgid "Documents downloads"
@@ -44,7 +45,7 @@ msgstr "Dokument został pobrany"
 
 #: forms.py:8
 msgid "Document file ID"
-msgstr ""
+msgstr "ID pliku dokumentu"
 
 #: forms.py:11
 msgid "Document"
@@ -56,7 +57,7 @@ msgstr "Plik dokumentu"
 
 #: forms.py:27
 msgid "Include"
-msgstr ""
+msgstr "Dołącz"
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -72,6 +73,8 @@ msgid ""
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
+"Pliki dokumentów zostały skompresowane i są dostępne do pobrania za pomocą "
+"linku: %(download_url)s lub z obszaru pobierania (%(download_list_url)s)."
 
 #: literals.py:10
 msgid "Document files ready for download."
@@ -102,11 +105,13 @@ msgstr ""
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
 msgstr ""
+"Nie można umieścić dokumentu \"%(instance)s\" w kolejce do pobrania pliku; "
+"%(exception)s."
 
 #: views.py:33
 #, python-format
 msgid "%(count)d document files queued for download."
-msgstr ""
+msgstr "%(count)d plików dokumentów oczekuje na pobranie."
 
 #: views.py:36
 #, python-format
@@ -116,12 +121,12 @@ msgstr "Plik dokumentu \" %(object)s\" w kolejce do pobrania."
 #: views.py:39
 #, python-format
 msgid "%(count)d document file queued for download."
-msgstr ""
+msgstr "%(count)d plik dokumentu oczekuje na pobranie."
 
 #: views.py:41
 #, python-format
 msgid "Download files of %(count)d documents"
-msgstr ""
+msgstr "Pobierz pliki %(count)d dokumentów"
 
 #: views.py:42
 #, python-format
@@ -131,7 +136,7 @@ msgstr "Pobierz pliki dokumentu: %(object)s"
 #: views.py:43
 #, python-format
 msgid "Download files of %(count)d document"
-msgstr ""
+msgstr "Pobierz pliki %(count)d dokumentu"
 
 #: views.py:50
 msgid ""

@@ -139,4 +139,4 @@ msgstr ""
 
 #: views.py:117
 msgid "OTP secret validation error."
-msgstr ""
+msgstr "Błąd weryfikacji tajnego kodu OTP."

@@ -1224,7 +1224,7 @@ msgstr ""
 #: serializers/document_version_serializers.py:57
 #: serializers/trashed_document_serializers.py:12
 msgid "Image URL"
-msgstr ""
+msgstr "Adres URL obrazu"
 
 #: serializers/document_file_serializers.py:40
 #: serializers/document_file_serializers.py:107

@@ -74,7 +74,7 @@ msgstr "App"
 
 #: classes.py:219 classes.py:962
 msgid "Environments"
-msgstr ""
+msgstr "Środowiska"
 
 #: classes.py:330
 msgid "Need to specify at least one: app_label or module."
@@ -250,10 +250,14 @@ msgid ""
 "unpinned or immutable dependency bugs in third party libraries. End users "
 "can ignore missing dependencies under this environment."
 msgstr ""
+"Środowisko używane do określania bezpośrednich zależności dokumentacji w "
+"celu obejścia błędów nieprzypiętych lub niezmiennych zależności w "
+"bibliotekach innych firm. Użytkownicy końcowi mogą ignorować w brakujące "
+"zależności w tym środowisku."
 
 #: environments.py:40
 msgid "Documentation (override)"
-msgstr ""
+msgstr "Dokumentacja (nadpisz)"
 
 #: environments.py:44
 msgid ""

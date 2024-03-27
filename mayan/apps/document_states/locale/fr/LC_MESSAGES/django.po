@@ -12,6 +12,7 @@
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
+# Luc Didry, 2024
 # 
 msgid ""
 msgstr ""
@@ -55,6 +56,9 @@ msgid ""
 "Return the last workflow instance log entry. The log entry itself has the "
 "following fields: datetime, transition, user, and comment."
 msgstr ""
+"Renvoie la dernière entrée du journal de l’instance de flux de travail. "
+"L’entrée de journal elle-même comporte les champs suivants : date, "
+"transition, utilisateur et commentaire."
 
 #: apps.py:293
 msgid "Get last log entry"
@@ -65,6 +69,8 @@ msgid ""
 "Return the current context dictionary which includes runtime data from the "
 "workflow transition fields."
 msgstr ""
+"Renvoie le dictionnaire de contexte actuel qui comprend les données "
+"d’exécution des champs de transition du flux de travail."
 
 #: apps.py:300
 msgid "Get the context"
@@ -153,11 +159,11 @@ msgstr "Back-back sans valeur"
 
 #: events.py:10
 msgid "Workflow instance created"
-msgstr ""
+msgstr "Instance du flux de travail créée"
 
 #: events.py:13
 msgid "Workflow instance transitioned"
-msgstr ""
+msgstr "L’instance du flux de travail a transitionné"
 
 #: events.py:18
 msgid "Workflow created"
@@ -182,7 +188,7 @@ msgstr "Transition"
 
 #: forms/workflow_template_forms.py:27
 msgid "Workflow template preview image"
-msgstr ""
+msgstr "Aperçu en image du flux de travail"
 
 #: forms/workflow_template_state_forms.py:36
 msgid "The action type for this action entry."
@@ -258,11 +264,11 @@ msgstr "Créer une action"
 
 #: links.py:146
 msgid "Create escalation"
-msgstr ""
+msgstr "Créer une escalade"
 
 #: links.py:167 models/workflow_state_model_mixins.py:40
 msgid "Escalations"
-msgstr ""
+msgstr "Escalades"
 
 #: links.py:176
 msgid "Create state"

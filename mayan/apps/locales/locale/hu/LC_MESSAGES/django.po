@@ -66,12 +66,12 @@ msgstr "Felhasználói területi beállítások"
 msgid "None"
 msgstr "Nincs"
 
-#: views.py:40
+#: views.py:50
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr "A felhasználó nyelvi profilja: %s"
 
-#: views.py:88
+#: views.py:98
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "A következő felhasználó területi beállításainak szerkesztése: %s"

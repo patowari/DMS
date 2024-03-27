@@ -9,6 +9,7 @@
 # kicior kicior <kiciorek+github@gmail.com>, 2023
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2023
 # tomkolp, 2023
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -226,7 +227,7 @@ msgstr "Hasło użytkownika %s zostało pomyślnie zresetowane."
 #: views/authentication_views.py:432
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
-msgstr ""
+msgstr "Błąd resetowania hasła dla użytkownika \"%(user)s\": %(error)s"
 
 #: views/impersonation_views.py:87
 #, python-format

@@ -66,12 +66,12 @@ msgstr "Benutzerlokalisierungsprofile"
 msgid "None"
 msgstr "Keine"
 
-#: views.py:40
+#: views.py:50
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr "Lokalisierungsprofil für Benutzer %s"
 
-#: views.py:88
+#: views.py:98
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "Lokalisierungsprofil für Benutzer %s bearbeiten"

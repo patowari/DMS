@@ -829,7 +829,7 @@ msgstr "Typy dokumentów URL"
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"
-msgstr ""
+msgstr "Adres URL obrazu"
 
 #: serializers/workflow_template_serializers.py:32
 msgid "States URL"

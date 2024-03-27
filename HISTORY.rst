@@ -3,6 +3,7 @@
 - Ensure credentials ``post_processing`` method is called.
 - Fix periodic source document type field to use the intended Select2 widget.
 - Fix workflow transition field model typo.
+- Merge changes from version 4.4.14.
 
 4.5.10 (2024-03-03)
 ===================
@@ -491,11 +492,18 @@
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
 
-4.4.14 (XXXX-XX-XX)
+4.4.14 (2024-03-27)
 ===================
 - Fix the document file and the user API list view ordering fields. The
   fields were ``mime_type`` to ``mimetype`` and remove
-  ``has_usable_password`` which is method and not a field.
+  ``has_usable_password`` which is a method and not a field.
+- Restore the root logging handlers after every test.
+- Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
+  and avoid JavaScript errors for non authenticated users.
+- Update dependency versions:
+
+  - Django from 3.2.23 to 3.2.25.
+  - pytz from 2022.1 to 2024.1
 
 4.4.13 (2024-03-01)
 ===================
