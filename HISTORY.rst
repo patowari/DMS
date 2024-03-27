@@ -6,6 +6,10 @@
 - Restore the root logging handlers after every test.
 - Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
   and avoid JavaScript errors for non authenticated users.
+- Update dependency versions:
+
+  - Django from 3.2.23 to 3.2.25.
+  - pytz from 2022.1 to 2024.1
 
 4.4.13 (2024-03-01)
 ===================

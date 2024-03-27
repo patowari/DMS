@@ -65,7 +65,7 @@ def find_packages(directory):
 
 
 install_requires = """
-django==3.2.23
+django==3.2.25
 CairoSVG==2.7.1
 Pillow==10.2.0
 PyPDF2==1.28.6
@@ -112,7 +112,7 @@ pyotp==2.6.0
 python-dateutil==2.8.2
 python-magic==0.4.26
 python_gnupg==0.4.8
-pytz==2022.1
+pytz==2024.1
 qrcode==7.3.1
 requests==2.29
 sentry-sdk==1.40.0
