@@ -5,6 +5,8 @@
 - Fix workflow transition field model typo.
 - Merge changes from version 4.4.14.
 - Fix MSG file uncompressed uploads.
+- Add additional sources migrations for users that skipped the previous
+  migrations during the upgrade.
 
 4.5.10 (2024-03-03)
 ===================
