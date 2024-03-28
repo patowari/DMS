@@ -1,4 +1,4 @@
-4.5.11 (XXXX-XX-XX)
+4.5.11 (2024-03-28)
 ===================
 - Ensure credentials ``post_processing`` method is called.
 - Fix periodic source document type field to use the intended Select2 widget.
