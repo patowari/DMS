@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:10+0000\n"
+"POT-Creation-Date: 2024-03-28 08:30+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -293,11 +293,11 @@ msgstr ""
 "Durch die Hochladeansichten generierte Formulare, die die hochgeladenen "
 "Daten beinhalten."
 
-#: source_backend_actions/mixins/arguments.py:13
+#: source_backend_actions/mixins/argument_help_texts.py:4
 msgid "Document to which a new file will be uploaded to."
 msgstr "Dokument, zu dem eine neue Datei hochgeladen wird."
 
-#: source_backend_actions/mixins/arguments.py:19
+#: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
 "document file is processed asynchronously. When disabled, the entire process"
@@ -310,19 +310,19 @@ msgstr ""
 "durchgeführt. Bei Aktivierung des Sofortmodus wird die Verarbeitung "
 "komprimierter Dateien deaktiviert."
 
-#: source_backend_actions/mixins/arguments.py:41
+#: source_backend_actions/mixins/arguments.py:29
 msgid "ID of the document to which a new file will be uploaded to."
 msgstr "ID des Dokuments, für das eine neue Datei hochgeladen wird."
 
-#: source_backend_actions/mixins/arguments.py:62
+#: source_backend_actions/mixins/arguments.py:57
 msgid "ID of the document type."
 msgstr "ID des Dokumententyps."
 
-#: source_backend_actions/mixins/arguments.py:75
+#: source_backend_actions/mixins/arguments.py:74
 msgid "User that will feature as the actor in the events."
 msgstr "Benutzer, der als Akteur in den Ereignissen verzeichnet wird."
 
-#: source_backend_actions/mixins/arguments.py:80
+#: source_backend_actions/mixins/arguments.py:79
 msgid "ID of the user that will feature as the actor in the events."
 msgstr "ID des Benutzers, der als Akteur in den Ereignissen verzeichnet wird."
 

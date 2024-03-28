@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:09+0000\n"
+"POT-Creation-Date: 2024-03-28 08:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
@@ -645,8 +645,8 @@ msgid "Help text"
 msgstr "Texto de ajuda"
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
-msgstr "Se este campo precisa ser preenchido para prosseguir."
+msgid "Whether this field needs to be filled out or not to proceed."
+msgstr ""
 
 #: models/workflow_transition_models.py:127
 msgid "Required"

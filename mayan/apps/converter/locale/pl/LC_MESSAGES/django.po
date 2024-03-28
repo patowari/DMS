@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:09+0000\n"
+"POT-Creation-Date: 2024-03-28 08:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -427,7 +427,7 @@ msgstr "Wklej zasób jako znak wodny"
 
 #: transformation_mixins.py:226
 msgid "Horizontal start position in pixels from the left."
-msgstr "Pozioma  pozycja startowa w pikselach od lewej."
+msgstr "Pozycja startowa pozioma w pikselach od lewej."
 
 #: transformation_mixins.py:230
 msgid "Horizontal end position in pixels from the right."
@@ -581,7 +581,7 @@ msgstr "Rozmycie Gaussa"
 
 #: transformations.py:538 transformations.py:700
 msgid "Radius"
-msgstr "Stopień"
+msgstr "Promień"
 
 #: transformations.py:550
 msgid "Line art"

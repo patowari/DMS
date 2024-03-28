@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:09+0000\n"
+"POT-Creation-Date: 2024-03-28 08:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
-"Last-Translator: tomkolp, 2023\n"
+"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr "Token TOTP"
 
 #: forms.py:86
 msgid "OTP enabled?"
-msgstr "Hasło jednorazowe OTP włączone?"
+msgstr "Hasło jednorazowe ITP włączone?"
 
 #: forms.py:87
 msgid "Yes"
@@ -113,7 +113,7 @@ msgstr "Dane OTP użytkowników"
 #: views.py:28
 #, python-format
 msgid "One time pad details for user: %s"
-msgstr ""
+msgstr "Jednorazowe szczegóły blokady dla użytkownika: %s"
 
 #: views.py:45
 #, python-format

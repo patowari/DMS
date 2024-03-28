@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:10+0000\n"
+"POT-Creation-Date: 2024-03-28 08:30+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Harald Ersch, 2023\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -288,11 +288,11 @@ msgstr ""
 "Formulare care conțin datele de încărcare generate de vizualizările de "
 "încărcare."
 
-#: source_backend_actions/mixins/arguments.py:13
+#: source_backend_actions/mixins/argument_help_texts.py:4
 msgid "Document to which a new file will be uploaded to."
 msgstr "Document în care va fi încărcat un fișier nou."
 
-#: source_backend_actions/mixins/arguments.py:19
+#: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
 "document file is processed asynchronously. When disabled, the entire process"
@@ -304,19 +304,19 @@ msgstr ""
 " proces are loc asincron, fără date returnate. Activarea modului imediat, "
 "dezactivează procesarea fișierelor comprimate."
 
-#: source_backend_actions/mixins/arguments.py:41
+#: source_backend_actions/mixins/arguments.py:29
 msgid "ID of the document to which a new file will be uploaded to."
 msgstr "ID-ul documentului în care va fi încărcat un fișier nou."
 
-#: source_backend_actions/mixins/arguments.py:62
+#: source_backend_actions/mixins/arguments.py:57
 msgid "ID of the document type."
 msgstr "ID-ul tipului de document."
 
-#: source_backend_actions/mixins/arguments.py:75
+#: source_backend_actions/mixins/arguments.py:74
 msgid "User that will feature as the actor in the events."
 msgstr "Utilizator care va apărea ca actor în evenimente."
 
-#: source_backend_actions/mixins/arguments.py:80
+#: source_backend_actions/mixins/arguments.py:79
 msgid "ID of the user that will feature as the actor in the events."
 msgstr "ID-ul utilizatorului care va apărea ca actor în evenimente."
 

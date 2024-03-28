@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 15:09+0000\n"
+"POT-Creation-Date: 2024-03-28 08:28+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Bilgutei Erdenebayar <beke0130@gmail.com>, 2023\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
@@ -602,7 +602,7 @@ msgid "Help text"
 msgstr ""
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
+msgid "Whether this field needs to be filled out or not to proceed."
 msgstr ""
 
 #: models/workflow_transition_models.py:127
