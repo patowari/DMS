@@ -27,7 +27,7 @@ msgstr ""
 
 #: dependencies.py:12
 msgid "Transifex Client"
-msgstr ""
+msgstr "Klient Transifex"
 
 #: events.py:10
 msgid "User locale profile edited"

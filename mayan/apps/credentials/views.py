@@ -72,6 +72,7 @@ class StoredCredentialCreateView(ViewSingleObjectDynamicFormModelBackendCreate):
     def get_instance_extra_data(self):
         return {
             '_event_actor': self.request.user,
+            '_event_ignore_credential_used': True,
             'backend_path': self.kwargs['backend_path']
         }
 
@@ -105,7 +106,8 @@ class StoredCredentialEditView(ViewSingleObjectDynamicFormModelBackendEdit):
 
     def get_instance_extra_data(self):
         return {
-            '_event_actor': self.request.user
+            '_event_actor': self.request.user,
+            '_event_ignore_credential_used': True
         }
 
 

@@ -624,8 +624,8 @@ msgid "Help text"
 msgstr ""
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
-msgstr "האם נדרש למלא שדה זה בכדי להמשיך או לא."
+msgid "Whether this field needs to be filled out or not to proceed."
+msgstr ""
 
 #: models/workflow_transition_models.py:127
 msgid "Required"

@@ -44,7 +44,7 @@ msgstr "Token TOTP"
 
 #: forms.py:86
 msgid "OTP enabled?"
-msgstr "Hasło jednorazowe OTP włączone?"
+msgstr "Hasło jednorazowe ITP włączone?"
 
 #: forms.py:87
 msgid "Yes"
@@ -112,7 +112,7 @@ msgstr "Dane OTP użytkowników"
 #: views.py:28
 #, python-format
 msgid "One time pad details for user: %s"
-msgstr ""
+msgstr "Jednorazowe szczegóły blokady dla użytkownika: %s"
 
 #: views.py:45
 #, python-format
@@ -138,4 +138,4 @@ msgstr ""
 
 #: views.py:117
 msgid "OTP secret validation error."
-msgstr ""
+msgstr "Błąd weryfikacji tajnego kodu OTP."

@@ -291,11 +291,11 @@ msgstr ""
 "Formularios que contienen los datos de carga generados por las vistas de "
 "carga."
 
-#: source_backend_actions/mixins/arguments.py:13
+#: source_backend_actions/mixins/argument_help_texts.py:4
 msgid "Document to which a new file will be uploaded to."
 msgstr "Documento al que se cargará un nuevo archivo."
 
-#: source_backend_actions/mixins/arguments.py:19
+#: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
 "document file is processed asynchronously. When disabled, the entire process"
@@ -308,19 +308,19 @@ msgstr ""
 "asincrónica sin datos devueltos. Al habilitar el modo inmediato, se "
 "deshabilita el procesamiento de archivos comprimidos."
 
-#: source_backend_actions/mixins/arguments.py:41
+#: source_backend_actions/mixins/arguments.py:29
 msgid "ID of the document to which a new file will be uploaded to."
 msgstr "ID del documento en el que se cargará un nuevo archivo."
 
-#: source_backend_actions/mixins/arguments.py:62
+#: source_backend_actions/mixins/arguments.py:57
 msgid "ID of the document type."
 msgstr "ID del tipo de documento."
 
-#: source_backend_actions/mixins/arguments.py:75
+#: source_backend_actions/mixins/arguments.py:74
 msgid "User that will feature as the actor in the events."
 msgstr "Usuario que aparecerá como actor en los eventos."
 
-#: source_backend_actions/mixins/arguments.py:80
+#: source_backend_actions/mixins/arguments.py:79
 msgid "ID of the user that will feature as the actor in the events."
 msgstr "ID del usuario que aparecerá como actor en los eventos."
 

@@ -35,7 +35,7 @@ msgstr "Ścieżka backend"
 
 #: model_mixins.py:27
 msgid "JSON encoded data for the backend class."
-msgstr ""
+msgstr "Dane zakodowane w formacie JSON dla klasy backendowej."
 
 #: model_mixins.py:28
 msgid "Backend data"

@@ -1,5 +1,8 @@
 from django.utils import timezone, translation
 from django.utils.translation import gettext_lazy as _
+from django.views.i18n import JavaScriptCatalog
+
+from stronghold.views import StrongholdPublicMixin
 
 from mayan.apps.user_management.permissions import (
     permission_user_edit, permission_user_view
@@ -15,6 +18,13 @@ from .forms import LocaleProfileForm, LocaleProfileForm_view
 from .icons import (
     icon_user_locale_profile_detail, icon_user_locale_profile_edit
 )
+
+
+class JavaScriptCatalogPublic(StrongholdPublicMixin, JavaScriptCatalog):
+    """
+    Sub class of `JavaScriptCatalog` to bypass authentication and avoid
+    JavaScript errors for non authentication users.
+    """
 
 
 class UserLocaleProfileDetailView(

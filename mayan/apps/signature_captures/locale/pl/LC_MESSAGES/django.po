@@ -176,7 +176,7 @@ msgstr ""
 
 #: serializers.py:15
 msgid "Image URL"
-msgstr ""
+msgstr "Adres URL obrazu"
 
 #: serializers.py:27
 msgid "URL"

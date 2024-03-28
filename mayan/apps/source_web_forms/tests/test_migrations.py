@@ -1,9 +1,11 @@
 from mayan.apps.testing.tests.base import MayanMigratorTestCase
 
+from ..source_backends import SourceBackendWebForm
+
 
 class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
     migrate_from = ('sources', '0028_auto_20210905_0558')
-    migrate_to = ('source_web_forms', '0001_update_source_backend_paths')
+    migrate_to = ('source_web_forms', '0003_fix_backend_paths')
 
     def prepare(self):
         Source = self.old_state.apps.get_model(
@@ -22,5 +24,5 @@ class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
 
         self.assertEqual(
             Source.objects.get(label='test source web form').backend_path,
-            'mayan.apps.source_web_forms.source_backends.SourceBackendWebForm'
+            SourceBackendWebForm.get_class_path()
         )

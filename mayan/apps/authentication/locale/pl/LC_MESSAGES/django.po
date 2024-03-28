@@ -227,7 +227,7 @@ msgstr "Hasło użytkownika %s zostało pomyślnie zresetowane."
 #: views/authentication_views.py:437
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
-msgstr ""
+msgstr "Błąd resetowania hasła dla użytkownika \"%(user)s\": %(error)s"
 
 #: views/impersonation_views.py:87
 #, python-format

@@ -2,13 +2,15 @@ import json
 
 from mayan.apps.testing.tests.base import MayanMigratorTestCase
 
+from ..source_backends import SourceBackendIMAPEmail, SourceBackendPOP3Email
+
 from .literals import TEST_EMAIL_SOURCE_PASSWORD, TEST_EMAIL_SOURCE_USERNAME
 
 
 class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
     auto_create_test_source = False
     migrate_from = ('sources', '0028_auto_20210905_0558')
-    migrate_to = ('source_emails', '0001_update_source_backend_paths')
+    migrate_to = ('source_emails', '0004_fix_backend_paths')
 
     def prepare(self):
         # Manually initialize the SourceTestMixin.
@@ -34,11 +36,11 @@ class SourceBackendPathMigrationTestCase(MayanMigratorTestCase):
 
         self.assertEqual(
             Source.objects.get(label='test source IMAP').backend_path,
-            'mayan.apps.source_emails.source_backends.email_backends.SourceBackendIMAPEmail'
+            SourceBackendIMAPEmail.get_class_path()
         )
         self.assertEqual(
             Source.objects.get(label='test source POP3').backend_path,
-            'mayan.apps.source_emails.source_backends.email_backends.SourceBackendPOP3Email'
+            SourceBackendPOP3Email.get_class_path()
         )
 
 

@@ -31,7 +31,7 @@ msgstr "Mailer"
 
 #: classes.py:27
 msgid "General"
-msgstr ""
+msgstr "Ogólne"
 
 #: classes.py:45
 msgid "From"

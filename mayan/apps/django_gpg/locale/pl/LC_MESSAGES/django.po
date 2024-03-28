@@ -64,11 +64,11 @@ msgstr "Zarządzanie kluczami"
 
 #: events.py:10
 msgid "Key created"
-msgstr ""
+msgstr "Klucz utworzony"
 
 #: events.py:14
 msgid "Key downloaded"
-msgstr ""
+msgstr "Klucz pobrany"
 
 #: forms.py:27
 msgid "None"

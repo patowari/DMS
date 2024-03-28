@@ -634,8 +634,8 @@ msgid "Help text"
 msgstr "Κείμενο βοήθειας"
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
-msgstr "Εάν απαιτείται η συμπλήρωση αυτών των πεδίων για συνέχεια ή όχι. "
+msgid "Whether this field needs to be filled out or not to proceed."
+msgstr ""
 
 #: models/workflow_transition_models.py:127
 msgid "Required"

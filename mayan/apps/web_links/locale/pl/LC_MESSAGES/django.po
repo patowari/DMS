@@ -40,7 +40,7 @@ msgstr "Otwarto link"
 
 #: forms.py:14
 msgid "General"
-msgstr ""
+msgstr "Ogólne"
 
 #: forms.py:19
 msgid "Templating"
