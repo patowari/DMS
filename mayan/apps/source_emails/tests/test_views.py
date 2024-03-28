@@ -1,3 +1,4 @@
+from mayan.apps.credentials.events import event_credential_used
 from mayan.apps.credentials.permissions import permission_credential_use
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
@@ -276,38 +277,48 @@ class IMAPEmailSourceBackendViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 7)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
         test_document_version = test_document.version_active
         test_document_version_page = test_document_version.pages.first()
 
-        self.assertEqual(events[0].action_object, self._test_document_type)
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, test_document)
-        self.assertEqual(events[0].verb, event_document_created.id)
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self._test_stored_credential)
+        self.assertEqual(events[0].target, self._test_stored_credential)
+        self.assertEqual(events[0].verb, event_credential_used.id)
 
-        self.assertEqual(events[1].action_object, test_document)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, self._test_stored_credential)
+        self.assertEqual(events[1].target, self._test_stored_credential)
+        self.assertEqual(events[1].verb, event_credential_used.id)
 
-        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].action_object, self._test_document_type)
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_created.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version_page)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[6].verb, event_document_version_page_created.id
         )
 
 
@@ -422,36 +433,46 @@ class POP3EmailSourceBackendViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 7)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
         test_document_version = test_document.version_active
         test_document_version_page = test_document_version.pages.first()
 
-        self.assertEqual(events[0].action_object, self._test_document_type)
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, test_document)
-        self.assertEqual(events[0].verb, event_document_created.id)
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self._test_stored_credential)
+        self.assertEqual(events[0].target, self._test_stored_credential)
+        self.assertEqual(events[0].verb, event_credential_used.id)
 
-        self.assertEqual(events[1].action_object, test_document)
-        self.assertEqual(events[1].actor, self._test_case_user)
-        self.assertEqual(events[1].target, test_document_file)
-        self.assertEqual(events[1].verb, event_document_file_created.id)
+        self.assertEqual(events[1].action_object, None)
+        self.assertEqual(events[1].actor, self._test_stored_credential)
+        self.assertEqual(events[1].target, self._test_stored_credential)
+        self.assertEqual(events[1].verb, event_credential_used.id)
 
-        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].action_object, self._test_document_type)
         self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_file)
-        self.assertEqual(events[2].verb, event_document_file_edited.id)
+        self.assertEqual(events[2].target, test_document)
+        self.assertEqual(events[2].verb, event_document_created.id)
 
         self.assertEqual(events[3].action_object, test_document)
         self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(events[3].verb, event_document_file_created.id)
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(events[4].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version_page)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[6].verb, event_document_version_page_created.id
         )

@@ -4,7 +4,7 @@ from mayan.apps.common.tests.literals import (
 from mayan.apps.documents.events import (
     event_document_created, event_document_file_created,
     event_document_file_edited, event_document_version_created,
-    event_document_version_edited, event_document_version_page_created
+    event_document_version_page_created
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
@@ -50,7 +50,7 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(self._test_document.file_latest.size, 2711)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 5)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_document)
@@ -84,11 +84,6 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
-
-        self.assertEqual(events[5].action_object, self._test_document)
-        self.assertEqual(events[5].actor, self._test_document.version_active)
-        self.assertEqual(events[5].target, self._test_document.version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_compressed_ask_false(self):
         self._silence_logger(name='mayan.apps.converter.backends')
@@ -124,7 +119,7 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(self._test_document.file_latest.size, 31744)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 5)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_document)
@@ -158,11 +153,6 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
-
-        self.assertEqual(events[5].action_object, self._test_document)
-        self.assertEqual(events[5].actor, self._test_document.version_active)
-        self.assertEqual(events[5].target, self._test_document.version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_compressed_ask_true(self):
         self._test_source_create(
@@ -194,7 +184,7 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(self._test_document.file_latest.size, 2711)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 5)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_document)
@@ -228,11 +218,6 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
-
-        self.assertEqual(events[5].action_object, self._test_document)
-        self.assertEqual(events[5].actor, self._test_document.version_active)
-        self.assertEqual(events[5].target, self._test_document.version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_compressed_never(self):
         self._silence_logger(name='mayan.apps.converter.backends')
@@ -265,7 +250,7 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(self._test_document.file_latest.size, 31744)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 5)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_document)
@@ -299,8 +284,3 @@ class CompressedSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(
             events[4].verb, event_document_version_page_created.id
         )
-
-        self.assertEqual(events[5].action_object, self._test_document)
-        self.assertEqual(events[5].actor, self._test_document.version_active)
-        self.assertEqual(events[5].target, self._test_document.version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)

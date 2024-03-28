@@ -7,6 +7,7 @@
 - Fix MSG file uncompressed uploads.
 - Add additional sources migrations for users that skipped the previous
   migrations during the upgrade.
+- Fine tune the commit of the credential used event.
 
 4.5.10 (2024-03-03)
 ===================
