@@ -127,7 +127,7 @@ class TemplateContextEntry:
             help_text = entry.get_help_text()
             result.append(help_text)
 
-        return ' '.join(result)
+        return ', '.join(result)
 
     def __init__(self, description, name, value, always_available=False):
         self.always_available = always_available

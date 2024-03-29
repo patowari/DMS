@@ -170,11 +170,11 @@ class UserManagementApp(MayanAppConfig):
         EventModelRegistry.register(model=User)
 
         TemplateContextEntry(
-            description=_(message='All the groups.'), name='groups',
+            description=_(message='All the groups'), name='groups',
             value=get_groups
         )
         TemplateContextEntry(
-            description=_(message='All the users.'), name='users',
+            description=_(message='All the users'), name='users',
             value=get_users
         )
 
