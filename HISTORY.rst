@@ -1,4 +1,4 @@
-4.6.3 (XXXX-XX-XX)
+4.6.3 (2024-03-28)
 ==================
 - Merge changes from 4.5.11.
 - Add path support to the URL class.
