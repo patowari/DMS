@@ -137,6 +137,8 @@
   - Add PostgreSQL configurable ``initdb.d`` volume.
   - Add ``MAYAN_DATABASE_EXTRA_OPTIONS`` to allow adding any custom extra
     options to the database connection configuration.
+  - Update the default PostgreSQL Docker image from 13.14-alpine to
+    14.11-alpine.
 
 4.6.2 (2024-03-04)
 ==================
