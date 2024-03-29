@@ -8,6 +8,7 @@ from mayan.apps.file_caching.events import event_cache_partition_purged
 from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.file_caching.permissions import permission_cache_partition_purge
 from mayan.apps.file_caching.tests.mixins import CachePartitionViewTestMixin
+from mayan.apps.views.http import URL
 
 from ..events import (
     event_document_file_deleted, event_document_file_edited,
@@ -588,10 +589,17 @@ class DocumentFileViewTestCase(
             permission=permission_document_file_print
         )
 
+        test_file_page_image_url = URL(
+            url=self._test_document_file_page.get_api_image_url()
+        )
+
         self._clear_events()
 
         response = self._request_test_document_file_print_view()
-        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response=response, text=test_file_page_image_url.path,
+            status_code=200
+        )
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

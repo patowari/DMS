@@ -13,13 +13,12 @@ def converter_get_object_image_data(
     user=None
 ):
     try:
-        return {
-            'url': obj.get_api_image_url(
-                maximum_layer_order=maximum_layer_order,
-                transformation_instance_list=transformation_instance_list or (),
-                user=context.get('user', user)
-            )
-        }
+        url = obj.get_api_image_url(
+            maximum_layer_order=maximum_layer_order,
+            transformation_instance_list=transformation_instance_list or (),
+            user=context.get('user', user)
+        )
+        return {'url': url}
     except AppImageError as exception:
         app_image_error_image = AppImageErrorImage.get(
             name=exception.error_name
