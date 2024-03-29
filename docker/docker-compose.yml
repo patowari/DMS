@@ -164,6 +164,12 @@ services:
       POSTGRES_DB: ${MAYAN_DATABASE_NAME:-mayan}
       POSTGRES_PASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
       POSTGRES_USER: ${MAYAN_DATABASE_USER:-mayan}
+    healthcheck:
+      test: ["CMD", "pg_isready", "--username", "${MAYAN_DATABASE_USER:-mayan}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.11-alpine}
     networks:
       - mayan
@@ -177,6 +183,28 @@ services:
     volumes:
       - ${MAYAN_POSTGRESQL_VOLUME:-postgres}:/var/lib/postgresql/data
       - ${MAYAN_POSTGRESQL_VOLUME_INITDB:-postgres-initdb}:/docker-entrypoint-initdb.d/
+
+  postgresql-backup:
+    command:
+      - /bin/sh
+      - -c
+      - pg_dump -F p | gzip > /backups/$(date +%Y-%m-%d_%H-%M).sql.gz
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment:
+      PGDATABASE: mayan
+      PGHOST: postgresql
+      PGPASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
+      PGUSER: ${MAYAN_DATABASE_USER:-mayan}
+    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.11-alpine}
+    networks:
+      - mayan
+    profiles:
+      - postgresql-backup
+    restart: no
+    volumes:
+      - ${MAYAN_POSTGRESQL_BACKUPS_VOLUME:-postgres-backups}:/backups
 
   rabbitmq:
     environment:
@@ -405,6 +433,7 @@ volumes:
   elasticsearch:
   keycloak-postgres:
   postgres:
+  postgres-backups:
   postgres-initdb:
   mountindex:
   rabbitmq:

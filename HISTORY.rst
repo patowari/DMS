@@ -139,6 +139,8 @@
     options to the database connection configuration.
   - Update the default PostgreSQL Docker image from 13.14-alpine to
     14.11-alpine.
+  - Add health check to the PostgreSQL service.
+  - Add service to backup PostgreSQL.
 
 4.6.2 (2024-03-04)
 ==================
