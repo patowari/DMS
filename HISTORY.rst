@@ -135,6 +135,8 @@
   - Support configurable PostgreSQL ``max_connections``.
   - Default PostgreSQL ``max_connections`` to 150.
   - Add PostgreSQL configurable ``initdb.d`` volume.
+  - Add ``MAYAN_DATABASE_EXTRA_OPTIONS`` to allow adding any custom extra
+    options to the database connection configuration.
 
 4.6.2 (2024-03-04)
 ==================
