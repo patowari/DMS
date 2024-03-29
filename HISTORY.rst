@@ -142,6 +142,13 @@
   - Add health check to the PostgreSQL service.
   - Add service to backup PostgreSQL.
 
+4.6.3 (2024-03-28)
+==================
+- Merge changes from 4.5.11.
+- Add path support to the URL class.
+- Fix document print and password reset templates.
+- Fix display of build number.
+
 4.6.2 (2024-03-04)
 ==================
 - Add clamav to the makefile ``setup-dev-operating-system-packages`` target.
@@ -328,11 +335,22 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
-4.5.11 (XXXX-XX-XX)
+4.5.11 (2024-03-28)
 ===================
 - Ensure credentials ``post_processing`` method is called.
 - Fix periodic source document type field to use the intended Select2 widget.
 - Fix workflow transition field model typo.
+<<<<<<< HEAD
+=======
+- Merge changes from version 4.4.14.
+- Fix MSG file uncompressed uploads.
+- Add additional sources migrations for users that skipped the previous
+  migrations during the upgrade.
+- Fine tune the commit of the credential used event.
+- Lower the severity of searching indexing problems to ``INFO``. This
+  reduces user confusion between normal messages when processing the
+  asynchronous task queue and actual coding errors.
+>>>>>>> internal/series/4.6
 
 4.5.10 (2024-03-03)
 ===================
@@ -821,11 +839,22 @@
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
 
-4.4.14 (XXXX-XX-XX)
+4.4.14 (2024-03-27)
 ===================
 - Fix the document file and the user API list view ordering fields. The
   fields were ``mime_type`` to ``mimetype`` and remove
+<<<<<<< HEAD
   ``has_usable_password`` which is method and not a field.
+=======
+  ``has_usable_password`` which is a method and not a field.
+- Restore the root logging handlers after every test.
+- Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
+  and avoid JavaScript errors for non authenticated users.
+- Update dependency versions:
+
+  - Django from 3.2.23 to 3.2.25.
+  - pytz from 2022.1 to 2024.1
+>>>>>>> internal/series/4.6
 
 4.4.13 (2024-03-01)
 ===================

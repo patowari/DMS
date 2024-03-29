@@ -289,11 +289,11 @@ msgstr ""
 "Форми, що містять дані для вивантаження, згенеровані поданнями для "
 "вивантаження."
 
-#: source_backend_actions/mixins/arguments.py:13
+#: source_backend_actions/mixins/argument_help_texts.py:4
 msgid "Document to which a new file will be uploaded to."
 msgstr "Документ, до якого буде вивантажено новий файл."
 
-#: source_backend_actions/mixins/arguments.py:19
+#: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
 "document file is processed asynchronously. When disabled, the entire process"
@@ -305,19 +305,19 @@ msgstr ""
 "асинхронно без повернення даних. Увімкнення негайного режиму вимикає обробку"
 " стиснених файлів."
 
-#: source_backend_actions/mixins/arguments.py:41
+#: source_backend_actions/mixins/arguments.py:29
 msgid "ID of the document to which a new file will be uploaded to."
 msgstr "ID документа, до якого буде завантажено новий файл."
 
-#: source_backend_actions/mixins/arguments.py:62
+#: source_backend_actions/mixins/arguments.py:57
 msgid "ID of the document type."
 msgstr "ID типу документа."
 
-#: source_backend_actions/mixins/arguments.py:75
+#: source_backend_actions/mixins/arguments.py:74
 msgid "User that will feature as the actor in the events."
 msgstr "Користувач, який буде фігурувати як актор у подіях."
 
-#: source_backend_actions/mixins/arguments.py:80
+#: source_backend_actions/mixins/arguments.py:79
 msgid "ID of the user that will feature as the actor in the events."
 msgstr "ID користувача, який виступатиме як учасник подій."
 

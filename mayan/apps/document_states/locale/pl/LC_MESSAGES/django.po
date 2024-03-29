@@ -10,6 +10,7 @@
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # tomkolp, 2024
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -17,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
+"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -141,7 +142,7 @@ msgstr "Dokumenty"
 
 #: classes.py:33
 msgid "General"
-msgstr ""
+msgstr "Ogólne"
 
 #: classes.py:107
 #, python-format
@@ -632,8 +633,8 @@ msgid "Help text"
 msgstr "Tekst pomocy"
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
-msgstr "Czy pola te należy wypełnić, aby kontynuować."
+msgid "Whether this field needs to be filled out or not to proceed."
+msgstr ""
 
 #: models/workflow_transition_models.py:127
 msgid "Required"
@@ -828,7 +829,7 @@ msgstr "Typy dokumentów URL"
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"
-msgstr ""
+msgstr "Adres URL obrazu"
 
 #: serializers/workflow_template_serializers.py:32
 msgid "States URL"

@@ -12,6 +12,7 @@
 # Roberto Rosario, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
+# Luc Didry, 2024
 # 
 msgid ""
 msgstr ""
@@ -19,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
+"Last-Translator: Luc Didry, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,6 +56,9 @@ msgid ""
 "Return the last workflow instance log entry. The log entry itself has the "
 "following fields: datetime, transition, user, and comment."
 msgstr ""
+"Renvoie la dernière entrée du journal de l’instance de flux de travail. "
+"L’entrée de journal elle-même comporte les champs suivants : date, "
+"transition, utilisateur et commentaire."
 
 #: apps.py:294
 msgid "Get last log entry"
@@ -65,6 +69,8 @@ msgid ""
 "Return the current context dictionary which includes runtime data from the "
 "workflow transition fields."
 msgstr ""
+"Renvoie le dictionnaire de contexte actuel qui comprend les données "
+"d’exécution des champs de transition du flux de travail."
 
 #: apps.py:301
 msgid "Get the context"
@@ -153,11 +159,11 @@ msgstr "Back-back sans valeur"
 
 #: events.py:10
 msgid "Workflow instance created"
-msgstr ""
+msgstr "Instance du flux de travail créée"
 
 #: events.py:13
 msgid "Workflow instance transitioned"
-msgstr ""
+msgstr "L’instance du flux de travail a transitionné"
 
 #: events.py:18
 msgid "Workflow created"
@@ -182,7 +188,7 @@ msgstr "Transition"
 
 #: forms/workflow_template_forms.py:27
 msgid "Workflow template preview image"
-msgstr ""
+msgstr "Aperçu en image du flux de travail"
 
 #: forms/workflow_template_state_forms.py:37
 msgid "The action type for this action entry."
@@ -258,11 +264,11 @@ msgstr "Créer une action"
 
 #: links.py:146
 msgid "Create escalation"
-msgstr ""
+msgstr "Créer une escalade"
 
 #: links.py:167 models/workflow_state_model_mixins.py:40
 msgid "Escalations"
-msgstr ""
+msgstr "Escalades"
 
 #: links.py:176
 msgid "Create state"
@@ -626,8 +632,8 @@ msgid "Help text"
 msgstr "Texte d'aide"
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
-msgstr "Que ces champs doivent être remplis ou non pour continuer."
+msgid "Whether this field needs to be filled out or not to proceed."
+msgstr ""
 
 #: models/workflow_transition_models.py:127
 msgid "Required"

@@ -300,6 +300,9 @@ msgid ""
 "To get the latest news subscribe to the <a class=\"new_window\" "
 "href=\"%(link_mailing_list_url)s\"> Mailing list</a>."
 msgstr ""
+"Pour recevoir les dernières nouvelles, abonnez-vous à la <a "
+"class=\"new_window\" href=\"%(link_mailing_list_url)s\">liste de "
+"diffusion</a> ."
 
 #: templates/appearance/about.html:66
 #, python-format

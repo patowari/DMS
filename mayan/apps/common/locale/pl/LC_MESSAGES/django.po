@@ -9,6 +9,7 @@
 # Marcin Lozynski <mlozynski@wp.pl>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
+# edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-04 17:04+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
+"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,7 +64,7 @@ msgstr "Forum"
 
 #: links.py:52
 msgid "Knowledge base"
-msgstr ""
+msgstr "Baza wiedzy"
 
 #: links.py:55 views.py:55
 msgid "License"
@@ -160,12 +161,16 @@ msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
+"W trybie listy pokaż opcje menu \"lista aspektów\" jako menu rozwijane "
+"zamiast pojedynczych przycisków."
 
 #: settings.py:32
 msgid ""
 "In list mode, show the \"object\" menu options as a dropdown menu instead of"
 " individual buttons."
 msgstr ""
+"W trybie listy pokaż opcje menu \"obiekt\" jako menu rozwijane zamiast "
+"pojedynczych przycisków."
 
 #: settings.py:40
 msgid ""
@@ -173,6 +178,9 @@ msgid ""
 "apps must be also configured via their respective storage backend settings "
 "to use alternate persistence."
 msgstr ""
+"Wyłącza korzystanie z lokalnego folderu `media`. Korzystając z tej opcji, "
+"wszystkie aplikacje muszą być również skonfigurowane za pomocą odpowiednich "
+"ustawień backendu przechowywania, aby korzystać z alternatywnej trwałości."
 
 #: settings.py:48
 msgid ""
@@ -181,6 +189,11 @@ msgid ""
 "Python path to: an application configuration class (preferred), or a package"
 " containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
+"Lista ciągów znaków wskazujących wszystkie aplikacje, które mają zostać "
+"usunięte z listy normalnie instalowanej przez Mayan EDMS. Każdy ciąg "
+"powinien być kropkowaną ścieżką Pythona do: klasy konfiguracji aplikacji "
+"(preferowane) lub pakietu zawierającego aplikację. Przykład: ['app_1', "
+"'app_2']"
 
 #: settings.py:58
 msgid ""
@@ -190,6 +203,11 @@ msgid ""
 " containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"Lista ciągów znaków określających wszystkie aplikacje zainstalowane poza "
+"tymi, które są normalnie instalowane przez Mayan EDMS. Każdy ciąg powinien "
+"być kropkową ścieżką Pythona do: klasy konfiguracji aplikacji (preferowanej)"
+" lub pakietu zawierającego aplikację. Te aplikacje zostaną zainstalowane po "
+"domyślnych aplikacjach. Przykład: ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""
@@ -199,6 +217,11 @@ msgid ""
 " containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
+"Lista ciągów znaków określających wszystkie aplikacje zainstalowane poza "
+"tymi, które są normalnie instalowane przez Mayan EDMS. Każdy ciąg powinien "
+"być kropkową ścieżką Pythona do: klasy konfiguracji aplikacji (preferowanej)"
+" lub pakietu zawierającego aplikację. Te aplikacje zostaną zainstalowane "
+"przed domyślnymi aplikacjami. Przykład: ['app_1', 'app_2']"
 
 #: settings.py:81
 msgid ""
@@ -210,11 +233,11 @@ msgstr ""
 
 #: settings.py:90
 msgid "Name of the dashboard to display in the home view."
-msgstr ""
+msgstr "Nazwa pulpitu nawigacyjnego do wyświetlenia w widoku głównym."
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr ""
+msgstr "Ustawia nazwę projektu."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

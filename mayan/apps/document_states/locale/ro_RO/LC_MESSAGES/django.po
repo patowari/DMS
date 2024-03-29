@@ -648,8 +648,8 @@ msgid "Help text"
 msgstr "Text de ajutor"
 
 #: models/workflow_transition_models.py:126
-msgid "Whether this fields needs to be filled out or not to proceed."
-msgstr "Specificați dacă aceste câmpuri trebuie completate sau nu."
+msgid "Whether this field needs to be filled out or not to proceed."
+msgstr ""
 
 #: models/workflow_transition_models.py:127
 msgid "Required"
