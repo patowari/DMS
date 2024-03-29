@@ -8,12 +8,12 @@ from .models import Cache, CachePartition
 class CacheDetailForm(DetailForm):
     fieldsets = (
         (
-            _(message='Storage'), {
-                'fields': ('defined_storage_name',)
-            }
-        ), (
             _(message='Identification'), {
                 'fields': ('label',)
+            }
+        ), (
+            _(message='Storage'), {
+                'fields': ('defined_storage_name',)
             }
         ), (
             _(message='Configuration'), {
