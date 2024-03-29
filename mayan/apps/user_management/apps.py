@@ -16,7 +16,6 @@ from mayan.apps.common.menus import (
 from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.logging.classes import ErrorLog
-# ~ from mayan.apps.metadata.classes import MetadataLookup
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import TemplateContextEntry

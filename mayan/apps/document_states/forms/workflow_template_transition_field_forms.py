@@ -1,7 +1,5 @@
-from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
-# ~ from mayan.apps.metadata.classes import MetadataLookup
 from mayan.apps.templating.fields import ModelTemplateField
 from mayan.apps.views.forms import ModelForm
 
