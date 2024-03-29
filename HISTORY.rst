@@ -147,6 +147,7 @@
 - Add templating support to the sources inclusion and exclusion regular
   expression fields.
 - Improve how detail form field labels are extracted.
+- Add the cache source column for the defined storage name.
 
 4.6.3 (2024-03-28)
 ==================

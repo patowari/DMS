@@ -57,9 +57,10 @@ class FileCachingConfig(MayanAppConfig):
         )
 
         SourceColumn(
-            attribute='label', is_identifier=True,
-            is_object_absolute_url=True, source=Cache
+            attribute='defined_storage_name', is_identifier=True,
+            is_object_absolute_url=True, is_sortable=True, source=Cache
         )
+        SourceColumn(attribute='label', source=Cache)
         SourceColumn(
             attribute='get_maximum_size_display', include_label=True,
             is_sortable=True, sort_field='maximum_size', source=Cache
