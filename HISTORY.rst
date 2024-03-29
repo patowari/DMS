@@ -149,6 +149,8 @@
 - Improve how detail form field labels are extracted.
 - Add the cache source column for the defined storage name.
 - Improve the file caching cache detail form. Add fieldsets to the form.
+- Add management command to purge a cache. The command name is
+  ``file_caching_purge_cache`` and requires the cache's storage name.
 
 4.6.3 (2024-03-28)
 ==================

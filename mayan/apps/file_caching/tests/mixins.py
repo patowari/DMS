@@ -22,16 +22,29 @@ class CachePartitionViewTestMixin:
 
 
 class CacheTestMixin:
+    auto_create_test_cache = False
+    auto_create_test_cache_partition = False
+    auto_create_test_cache_partition_file = False
+
     def setUp(self):
         super().setUp()
         self.temporary_directory = mkdtemp()
-        DefinedStorage(
+        self._test_defined_storage = DefinedStorage(
             dotted_path='django.core.files.storage.FileSystemStorage',
             label='File caching test storage',
             name=TEST_STORAGE_NAME_FILE_CACHING_TEST_STORAGE,
             kwargs={'location': self.temporary_directory}
         )
         self._test_cache_partition_file_list = []
+
+        if self.auto_create_test_cache:
+            self._create_test_cache()
+
+            if self.auto_create_test_cache_partition:
+                self._create_test_cache_partition()
+
+                if self.auto_create_test_cache_partition_file:
+                    self._create_test_cache_partition_file()
 
     def tearDown(self):
         fs_cleanup(filename=self.temporary_directory)
