@@ -146,6 +146,7 @@
   registry. Add support for always available entries.
 - Add templating support to the sources inclusion and exclusion regular
   expression fields.
+- Improve how detail form field labels are extracted.
 
 4.6.3 (2024-03-28)
 ==================

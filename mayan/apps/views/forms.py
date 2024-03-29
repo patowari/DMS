@@ -91,10 +91,9 @@ class DetailForm(ModelForm):
                         fields = get_fields_from_path(model=obj, path=field)
                     except FieldDoesNotExist:
                         # Might be property of a method.
-                        label = getattr(
-                            getattr(obj, field), 'short_description',
-                            field
-                        )
+                        attribute = getattr(obj.__class__, field)
+
+                        label = getattr(attribute, 'short_description', field)
                     else:
                         label = label_for_field(
                             model=obj, name=fields[-1].name
@@ -107,9 +106,8 @@ class DetailForm(ModelForm):
                         fields = get_fields_from_path(model=obj, path=field)
                     except FieldDoesNotExist:
                         # Might be property of a method.
-                        help_text = getattr(
-                            getattr(obj, field), 'help_text', None
-                        )
+                        attribute = getattr(obj, field)
+                        help_text = getattr(attribute, 'help_text', None)
                     else:
                         help_text = help_text_for_field(
                             model=obj, name=fields[-1].name
