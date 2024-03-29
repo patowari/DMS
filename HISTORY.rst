@@ -142,6 +142,9 @@
   - Add health check to the PostgreSQL service.
   - Add service to backup PostgreSQL.
 
+- Convert the ``MetadataLookup`` class into a general purpose template context
+  registry. Add support for always available entries.
+
 4.6.3 (2024-03-28)
 ==================
 - Merge changes from 4.5.11.

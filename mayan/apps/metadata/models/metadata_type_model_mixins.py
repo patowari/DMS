@@ -1,8 +1,6 @@
 from mayan.apps.common.utils import comma_splitter
 from mayan.apps.templating.classes import Template
 
-from ..classes import MetadataLookup
-
 
 class MetadataTypeBusinessLogicMixin:
     def get_default_value(self):
@@ -10,11 +8,12 @@ class MetadataTypeBusinessLogicMixin:
         return template.render()
 
     def get_lookup_values(self):
-        template = Template(template_string=self.lookup)
+        template = Template(
+            context_entry_name_list=('groups', 'users'),
+            template_string=self.lookup
+        )
 
-        metadata_lookup_context = MetadataLookup.get_as_context()
-
-        template_result = template.render(context=metadata_lookup_context)
+        template_result = template.render()
 
         return comma_splitter(string=template_result)
 

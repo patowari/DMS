@@ -1,7 +1,7 @@
 from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.metadata.classes import MetadataLookup
+# ~ from mayan.apps.metadata.classes import MetadataLookup
 from mayan.apps.templating.fields import ModelTemplateField
 from mayan.apps.views.forms import ModelForm
 
@@ -32,13 +32,11 @@ class WorkflowTransitionFieldForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         self.fields['lookup'] = ModelTemplateField(
-            initial_help_text=format_lazy(
-                '{}{}{}',
-                self.fields['lookup'].help_text,
-                _(message=' Available template context variables: '),
-                MetadataLookup.get_as_help_text()
-            ), model=WorkflowInstance, model_variable='workflow_instance',
+            context_entry_name_list=('groups', 'users'),
+            initial_help_text=self.fields['lookup'].help_text,
+            model=WorkflowInstance, model_variable='workflow_instance',
             required=False
         )
 

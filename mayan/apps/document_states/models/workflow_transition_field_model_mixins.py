@@ -18,7 +18,10 @@ class WorkflowTransitionFieldBusinessLogicMixin:
         ).hexdigest()
 
     def get_lookup_values(self, workflow_instance):
-        template = Template(template_string=self.lookup)
+        template = Template(
+            context_entry_name_list=('groups', 'users'),
+            template_string=self.lookup
+        )
         return comma_splitter(
             template.render(
                 context={'workflow_instance': workflow_instance}

@@ -1,13 +1,12 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.forms.formsets import formset_factory
-from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.templating.fields import TemplateField
 from mayan.apps.views.forms import ModelForm, RelationshipForm
 
-from .classes import MetadataLookup, MetadataParser, MetadataValidator
+from .classes import MetadataParser, MetadataValidator
 from .models.metadata_type_models import MetadataType
 
 
@@ -204,12 +203,9 @@ class MetadataTypeForm(ModelForm):
             required=False
         )
         self.fields['lookup'] = TemplateField(
-            initial_help_text=format_lazy(
-                '{}{}{}',
-                self.fields['lookup'].help_text,
-                _(message=' Available template context variables: '),
-                MetadataLookup.get_as_help_text()
-            ), required=False
+            context_entry_name_list=('groups', 'users'),
+            initial_help_text=self.fields['lookup'].help_text,
+            required=False
         )
         self.fields['parser'].widget = forms.widgets.Select(
             choices=MetadataParser.get_choices(add_blank=True)

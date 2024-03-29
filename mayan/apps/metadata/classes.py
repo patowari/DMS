@@ -5,37 +5,6 @@ from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.literals import EMPTY_LABEL
 
 
-class MetadataLookup:
-    _registry = []
-
-    @classmethod
-    def get_as_context(cls):
-        result = {}
-        for entry in cls._registry:
-            try:
-                result[entry.name] = entry.value()
-            except TypeError:
-                result[entry.name] = entry.value
-
-        return result
-
-    @classmethod
-    def get_as_help_text(cls):
-        result = []
-        for entry in cls._registry:
-            result.append(
-                '{{{{ {0} }}}} = "{1}"'.format(entry.name, entry.description)
-            )
-
-        return ' '.join(result)
-
-    def __init__(self, description, name, value):
-        self.description = description
-        self.name = name
-        self.value = value
-        self.__class__._registry.append(self)
-
-
 class MetadataTypeParserMetaclass(type):
     _registry = {}
 
