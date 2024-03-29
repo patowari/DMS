@@ -148,6 +148,7 @@
   expression fields.
 - Improve how detail form field labels are extracted.
 - Add the cache source column for the defined storage name.
+- Improve the file caching cache detail form. Add fieldsets to the form.
 
 4.6.3 (2024-03-28)
 ==================

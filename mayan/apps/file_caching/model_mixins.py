@@ -120,6 +120,8 @@ class CacheBusinessLogicMixin:
         defined_storage_class = self.get_defined_storage()
         return defined_storage_class.label
 
+    label.short_description = _(message='Label')
+
     def prune(self):
         """
         Deletes files until the total size of the cache is below the allowed

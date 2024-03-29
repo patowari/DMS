@@ -25,19 +25,6 @@ from .tasks import task_cache_partition_purge, task_cache_purge
 
 class CacheDetailView(SingleObjectDetailView):
     form_class = CacheDetailForm
-    form_extra_kwargs = {
-        'extra_fields': [
-            {
-                'field': 'label'
-            },
-            {
-                'field': 'get_maximum_size_display'
-            },
-            {
-                'field': 'get_total_size_display'
-            }
-        ]
-    }
     model = Cache
     object_permission = permission_cache_view
     pk_url_kwarg = 'cache_id'
