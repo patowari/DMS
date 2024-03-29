@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-29 01:48+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -65,12 +65,12 @@ msgstr "Локальні профілі користувача"
 msgid "None"
 msgstr "None"
 
-#: views.py:39
+#: views.py:49
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr "Профіль локалізації для користувача: %s"
 
-#: views.py:72
+#: views.py:82
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "Редагувати локальний профіль для користувача: %s"

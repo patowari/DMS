@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-29 01:48+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -65,12 +65,12 @@ msgstr "Profiluri de localizare pentru utilizatori"
 msgid "None"
 msgstr "Nici unul"
 
-#: views.py:39
+#: views.py:49
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr "Profil local pentru utilizator: %s"
 
-#: views.py:72
+#: views.py:82
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "Editați profilul local pentru utilizator: %s"

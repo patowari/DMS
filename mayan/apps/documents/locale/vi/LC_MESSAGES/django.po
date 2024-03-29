@@ -857,7 +857,8 @@ msgstr "Đơn vị thời gian đưa vào thùng rác"
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
-msgstr "Thời lượng mà sau đó các tài liệu của kiểu này sẽ bị xóa."
+msgstr ""
+"Thời lượng mà sau đó các tài liệu của kiểu này trong thùng rác sẽ bị xóa."
 
 #: models/document_type_models.py:76
 msgid "Delete time period"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-03-29 01:48+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -66,12 +66,12 @@ msgstr "Kullanıcı yerel ayar profilleri"
 msgid "None"
 msgstr "Yok"
 
-#: views.py:39
+#: views.py:49
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr "Kullanıcı için yerel ayar profili: %s"
 
-#: views.py:72
+#: views.py:82
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "Kullanıcı için yerel ayar profilini düzenle: %s"

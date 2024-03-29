@@ -156,7 +156,7 @@ msgid ""
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
-"A közleményeka bejelentkezési nézetben jelennek meg. A közlemények "
+"A közlemények a bejelentkezési nézetben jelennek meg. A közlemények "
 "segítségével információkat közölhet szervezetéről, bejelentéseket vagy "
 "használati irányelveket a felhasználók számára."
 

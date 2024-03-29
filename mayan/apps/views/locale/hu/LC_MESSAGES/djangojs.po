@@ -22,11 +22,11 @@ msgstr ""
 
 #: templates/views/app/foot.html:14
 msgid "Cancel upload"
-msgstr ""
+msgstr "Feltöltés megszakítása"
 
 #: templates/views/app/foot.html:15
 msgid "Are you sure you want to cancel this upload?"
-msgstr ""
+msgstr "Biztosan megszakítja ezt a feltöltést?"
 
 #: templates/views/app/foot.html:16
 msgid "Drop files or click here to upload files"
@@ -34,11 +34,11 @@ msgstr "Húzza ide a fájlokat, vagy kattintson ide a fájlok feltöltéséhez"
 
 #: templates/views/app/foot.html:17
 msgid "Your browser does not support drag and drop file uploads."
-msgstr ""
+msgstr "Az Ön böngészője nem támogatja a drag and drop fájlfeltöltést."
 
 #: templates/views/app/foot.html:18
 msgid "Please use the fallback form below to upload your files."
-msgstr ""
+msgstr "Kérjük, használja az alábbi tartalék űrlapot a fájlok feltöltéséhez."
 
 #: templates/views/app/foot.html:19
 msgid "Clear"
@@ -46,4 +46,4 @@ msgstr "Törlés"
 
 #: templates/views/app/foot.html:20
 msgid "Server responded with {{statusCode}} code."
-msgstr ""
+msgstr "A szerver {{statusCode}} kóddal válaszolt."

@@ -68,7 +68,7 @@ msgstr "Licenc"
 
 #: links.py:58
 msgid "Mailing list"
-msgstr ""
+msgstr "Levelezőlista"
 
 #: links.py:64
 msgid "Copy"
@@ -76,7 +76,7 @@ msgstr "Másolás"
 
 #: links.py:69
 msgid "Release notes"
-msgstr ""
+msgstr "Kiadási megjegyzések"
 
 #: links.py:72
 msgid "Setup"
@@ -203,7 +203,7 @@ msgstr ""
 "karakterláncnak egy pontozott Python-útvonalnak kell lennie: egy alkalmazás "
 "konfigurációs osztályához (előnyben részesített), vagy egy alkalmazást "
 "tartalmazó csomaghoz. Ezek az alkalmazások az alapértelmezett alkalmazások "
-"után lesznek telepítve. Példa: [&#39;app_1&#39;, &#39;app_2&#39;]"
+"után lesznek telepítve. Példa: ['app_1', 'app_2']"
 
 #: settings.py:70
 msgid ""

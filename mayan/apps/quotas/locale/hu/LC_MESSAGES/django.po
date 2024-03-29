@@ -117,6 +117,9 @@ msgid ""
 "Enabling this option, the quota will ignore the individual user and group "
 "selection."
 msgstr ""
+"Alkalmazza a kvótát a rendszer összes felhasználójára, kivéve az "
+"adminisztrátorokat és a személyzetet. Ha engedélyezi ezt az opciót, a kvóta "
+"figyelmen kívül hagyja az egyéni felhasználó és csoport kiválasztását."
 
 #: mixins.py:115
 msgid "Users"
