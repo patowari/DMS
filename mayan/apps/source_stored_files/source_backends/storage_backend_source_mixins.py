@@ -93,7 +93,7 @@ class SourceBackendMixinStoredFileLocationStorageBackend(
             template_arguments.render(context=context)
         )
 
-        # Typecast SafeString to str.
+        # Typecast `SafeString` to `str`.
         arguments = arguments.strip()
 
         try:

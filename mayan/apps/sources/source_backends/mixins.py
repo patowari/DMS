@@ -5,6 +5,8 @@ import re
 from django.apps import apps
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.templating.classes import Template
+
 from .literals import (
     DOCUMENT_FILE_SOURCE_METADATA_BATCH_SIZE,
     REGULAR_EXPRESSION_MATCH_EVERYTHING, REGULAR_EXPRESSION_MATCH_NOTHING
@@ -21,22 +23,26 @@ class SourceBackendMixinRegularExpression:
         fields.update(
             {
                 'include_regex': {
-                    'class': 'django.forms.CharField',
+                    'class': 'mayan.apps.templating.fields.TemplateField',
                     'default': '',
-                    'help_text': _(
-                        message='Regular expression used to select which files '
-                        'to upload.'
-                    ),
+                    'kwargs': {
+                        'initial_help_text': _(
+                            message='Regular expression used to select which '
+                            'files to upload.'
+                        )
+                    },
                     'label': _(message='Include regular expression'),
                     'required': False
                 },
                 'exclude_regex': {
-                    'class': 'django.forms.CharField',
+                    'class': 'mayan.apps.templating.fields.TemplateField',
                     'default': '',
-                    'help_text': _(
-                        message='Regular expression used to exclude which files '
-                        'to upload.'
-                    ),
+                    'kwargs': {
+                        'initial_help_text': _(
+                            message='Regular expression used to exclude '
+                            'which files to upload.'
+                        )
+                    },
                     'label': _(message='Exclude regular expression'),
                     'required': False
                 }
@@ -60,18 +66,26 @@ class SourceBackendMixinRegularExpression:
         return fieldsets
 
     def get_regex_exclude(self):
-        return re.compile(
-            pattern=self.kwargs.get(
-                'exclude_regex', REGULAR_EXPRESSION_MATCH_NOTHING
-            ) or REGULAR_EXPRESSION_MATCH_NOTHING
-        )
+        template_string = self.kwargs.get(
+            'exclude_regex', REGULAR_EXPRESSION_MATCH_NOTHING
+        ) or REGULAR_EXPRESSION_MATCH_NOTHING
+
+        template = Template(template_string=template_string)
+
+        template_result = template.render()
+
+        return re.compile(pattern=template_result)
 
     def get_regex_include(self):
-        return re.compile(
-            pattern=self.kwargs.get(
-                'include_regex', REGULAR_EXPRESSION_MATCH_EVERYTHING
-            )
+        template_string = self.kwargs.get(
+            'include_regex', REGULAR_EXPRESSION_MATCH_EVERYTHING
         )
+
+        template = Template(template_string=template_string)
+
+        template_result = template.render()
+
+        return re.compile(pattern=template_result)
 
 
 class SourceBackendMixinSourceMetadata:
