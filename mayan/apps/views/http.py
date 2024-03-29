@@ -18,7 +18,7 @@ class URL:
         if viewname:
             path = reverse(viewname=viewname)
 
-        # `url` argument defaults to '' to force urlsplit to return empty
+        # `url` argument defaults to '' to force `urlsplit` to return empty
         # strings and not bytes.
         self._split_result = urlsplit(url=url or '')
 
@@ -26,6 +26,16 @@ class URL:
         self._path = path
         self._port = port
         self._scheme = scheme
+
+        if self._split_result:
+            if not self._netloc:
+                self._netloc = self._split_result.netloc
+
+            if not self._path:
+                self._path = self._split_result.path
+
+            if not self._scheme:
+                self._scheme = self._split_result.scheme
 
         self.query_dict = QueryDict(mutable=True)
 
@@ -68,6 +78,22 @@ class URL:
     @property
     def args(self):
         return self.query_dict
+
+    @property
+    def path(self):
+        return self._path
+
+    @path.setter
+    def path(self, value):
+        if value.startswith('/'):
+            root = ''
+        else:
+            root = '/'
+
+        split_result = urlsplit(
+            url='{}{}'.format(root, value)
+        )
+        self._path = split_result.path
 
     def to_string(self):
         if self.query_dict.keys():

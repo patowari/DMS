@@ -1,7 +1,7 @@
 4.6.3 (XXXX-XX-XX)
 ==================
 - Merge changes from 4.5.11.
-
+- Add path support to the URL class.
 
 4.6.2 (2024-03-04)
 ==================

@@ -109,6 +109,18 @@ class URLTestCase(BaseTestCase):
 
         self.assertEqual(url.to_string(), 'http://example.com?a=1')
 
+    def test_path_get(self):
+        url = URL(url='http://example.com/test_path', query_string='a=1')
+
+        self.assertEqual(url.path, '/test_path')
+
+    def test_path_set(self):
+        url = URL(url='http://example.com/test_path', query_string='a=1')
+
+        url.path = 'test_path_2'
+
+        self.assertEqual(url.path, '/test_path_2')
+
     def test_port_set(self):
         url = URL(scheme='http', netloc='127.0.0.1', port='9999')
 
