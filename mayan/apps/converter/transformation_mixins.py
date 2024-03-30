@@ -17,8 +17,8 @@ class ImagePasteTransformationMixin:
     class Form(Form):
         rotation = forms.IntegerField(
             help_text=_(
-                message='Number of degrees to rotate the image counter clockwise '
-                'around its center.'
+                message='Number of degrees to rotate the image counter '
+                'clockwise around its center.'
             ), label=_(message='Rotation'), required=False
         )
         transparency = forms.FloatField(
@@ -55,6 +55,11 @@ class ImagePasteTransformationMixin:
         super().execute_on(*args, **kwargs)
         return self._execute_on(self, *args, **kwargs)
 
+    def get_image(self):
+        instance = self.get_model_instance()
+
+        return instance.get_image()
+
     def get_images(self):
         try:
             self.transparency = float(self.transparency or '100.0')
@@ -76,9 +81,7 @@ class ImagePasteTransformationMixin:
         except ValueError:
             self.zoom = 100.0
 
-        instance = self.get_model_instance()
-
-        instance_image = instance.get_image()
+        instance_image = self.get_image()
 
         if instance_image.mode != 'RGBA':
             instance_image.putalpha(alpha=255)

@@ -3,9 +3,10 @@ from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..transformations import (
     BaseTransformation, TransformationAssetPaste, TransformationCrop,
-    TransformationDrawRectangle, TransformationLineArt, TransformationResize,
-    TransformationRotate, TransformationRotate90, TransformationRotate180,
-    TransformationRotate270, TransformationZoom
+    TransformationDrawRectangle, TransformationLineArt,
+    TransformationQRCodePercent, TransformationResize, TransformationRotate,
+    TransformationRotate90, TransformationRotate180, TransformationRotate270,
+    TransformationZoom
 )
 
 from .literals import (
@@ -244,6 +245,23 @@ class TransformationTestCase(LayerTestMixin, GenericDocumentTestCase):
         self._test_layer.add_transformation_to(
             obj=document_page, transformation_class=TransformationLineArt,
             arguments={}
+        )
+
+        self.assertTrue(
+            document_page.generate_image()
+        )
+
+    def test_qrcode_transformations(self):
+        BaseTransformation.register(
+            layer=self._test_layer, transformation=TransformationQRCodePercent
+        )
+
+        document_page = self._test_document.pages.first()
+
+        self._test_layer.add_transformation_to(
+            obj=document_page,
+            transformation_class=TransformationQRCodePercent,
+            arguments={'top': '0', 'left': '0', 'code_value': 'test'}
         )
 
         self.assertTrue(

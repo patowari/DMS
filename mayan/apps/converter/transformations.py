@@ -2,6 +2,7 @@ import hashlib
 import logging
 
 from PIL import Image, ImageColor, ImageFilter
+import qrcode
 
 from django import forms
 from django.utils.encoding import force_bytes
@@ -17,7 +18,8 @@ from .transformation_mixins import (
     AssetTransformationMixin,
     ImagePasteCoordinatesAbsoluteTransformationMixin,
     ImagePasteCoordinatesPercentTransformationMixin,
-    ImageWatermarkPercentTransformationMixin, TransformationDrawRectangleMixin
+    ImagePasteTransformationMixin, ImageWatermarkPercentTransformationMixin,
+    TransformationDrawRectangleMixin
 )
 
 logger = logging.getLogger(name=__name__)
@@ -578,6 +580,44 @@ class TransformationMirror(BaseTransformation):
         return self.image.transpose(method=Image.FLIP_LEFT_RIGHT)
 
 
+class TransformationQRCodePercent(
+    ImagePasteCoordinatesPercentTransformationMixin,
+    BaseTransformation
+):
+    label = _(message='Draw a QRCode (percent coordinates)')
+    name = 'qr_code_percent'
+
+    @classmethod
+    def get_arguments(cls):
+        arguments = super().get_arguments() + ('code_value',)
+        return arguments
+
+    class Form(ImagePasteCoordinatesPercentTransformationMixin.Form):
+        code_value = forms.CharField(
+            help_text=_(message='QRCode to display.'),
+            label=_(message='Code value'), required=True
+        )
+
+    def _update_hash(self):
+        result = super(ImagePasteTransformationMixin, self)._update_hash()
+        bytes_code_value = force_bytes(s=self.code_value)
+        result.update(bytes_code_value)
+
+        return result
+
+    def get_image(self):
+        qrcode_instance = qrcode.QRCode()
+        qrcode_instance.add_data(data=self.code_value)
+        qrcode_instance.make(fit=True)
+
+        qrcode_image = qrcode_instance.make_image()
+
+        image = qrcode_image.get_image()
+        image = image.convert(mode='RGB')
+
+        return image
+
+
 class TransformationResize(BaseTransformation):
     arguments = ('width', 'height')
     label = _(message='Resize')
@@ -763,6 +803,8 @@ class TransformationZoom(BaseTransformation):
         )
 
 
+# Decorations
+
 BaseTransformation.register(
     layer=layer_decorations, transformation=TransformationAssetPaste
 )
@@ -773,15 +815,21 @@ BaseTransformation.register(
     layer=layer_decorations, transformation=TransformationAssetWatermark
 )
 BaseTransformation.register(
-    layer=layer_saved_transformations, transformation=TransformationCrop
-)
-BaseTransformation.register(
     layer=layer_decorations,
     transformation=TransformationDrawRectangle
 )
 BaseTransformation.register(
     layer=layer_decorations,
     transformation=TransformationDrawRectanglePercent
+)
+BaseTransformation.register(
+    layer=layer_decorations, transformation=TransformationQRCodePercent
+)
+
+# Saved transformations
+
+BaseTransformation.register(
+    layer=layer_saved_transformations, transformation=TransformationCrop
 )
 BaseTransformation.register(
     layer=layer_saved_transformations, transformation=TransformationFlip

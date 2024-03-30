@@ -158,6 +158,7 @@
 - Store workflow state action errors into the error log of the document.
 - Update the convert workflow action to add transformations to support
   templating for the argument of the transformation.
+- Add a QRCode document version decoration transformation.
 
 4.6.3 (2024-03-28)
 ==================
