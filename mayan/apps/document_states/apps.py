@@ -574,11 +574,13 @@ class DocumentStatesApp(MayanAppConfig):
         menu_list_facet.bind_links(
             links=(link_workflow_instance_list,), sources=(Document,)
         )
+        menu_list_facet.bind_links(
+            links=(link_workflow_instance_detail,),
+            sources=(WorkflowInstance,)
+        )
         menu_object.bind_links(
-            links=(
-                link_workflow_instance_detail,
-                link_workflow_instance_transition
-            ), sources=(WorkflowInstance,)
+            links=(link_workflow_instance_transition,),
+            sources=(WorkflowInstance,)
         )
         menu_secondary.bind_links(
             links=(link_document_single_workflow_templates_launch,),
