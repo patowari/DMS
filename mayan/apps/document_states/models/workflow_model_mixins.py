@@ -161,17 +161,9 @@ class WorkflowBusinessLogicMixin:
 
                 initial_state = self.get_initial_state()
                 if initial_state:
-                    for action in initial_state.entry_actions.filter(enabled=True):
-                        context = workflow_instance.get_context()
-                        context.update(
-                            {
-                                'action': action
-                            }
-                        )
-                        action.execute(
-                            context=context,
-                            workflow_instance=workflow_instance
-                        )
+                    initial_state.do_active_set(
+                        workflow_instance=workflow_instance
+                    )
             except IntegrityError:
                 logger.info(
                     'Workflow %s already launched for document %s',

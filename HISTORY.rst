@@ -153,6 +153,9 @@
   ``file_caching_purge_cache`` and requires the cache's storage name.
 - Add workflow API views that return the documents attached to a workflow and
   the documents at a particular workflow state.
+- Consolidate the workflow state action code into a subset of the Workflow
+  State model.
+- Store workflow state action errors into the error log of the document.
 
 4.6.3 (2024-03-28)
 ==================

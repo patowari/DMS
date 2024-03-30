@@ -157,20 +157,11 @@ class WorkflowInstanceLogEntry(
             {'entry_log': self}
         )
 
-        for action in self.transition.origin_state.exit_actions.filter(enabled=True):
-            context.update(
-                {'action': action}
-            )
-            action.execute(
-                context=context, workflow_instance=self.workflow_instance
-            )
-
-        for action in self.transition.destination_state.entry_actions.filter(enabled=True):
-            context.update(
-                {'action': action}
-            )
-            action.execute(
-                context=context, workflow_instance=self.workflow_instance
-            )
+        self.transition.origin_state.do_active_unset(
+            workflow_instance=self.workflow_instance
+        )
+        self.transition.destination_state.do_active_set(
+            workflow_instance=self.workflow_instance
+        )
 
         return result

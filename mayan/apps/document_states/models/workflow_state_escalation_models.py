@@ -46,8 +46,9 @@ class WorkflowStateEscalation(
     )
     enabled = models.BooleanField(
         default=True, help_text=_(
-            message='Enable automatic transition the workflow after a specified '
-            'amount of time has elapsed in the state without change.'
+            message='Enable automatic transition the workflow after a '
+            'specified amount of time has elapsed in the state without '
+            'change.'
         ), verbose_name=_(message='Enabled')
     )
     unit = models.CharField(
@@ -63,8 +64,8 @@ class WorkflowStateEscalation(
     )
     comment = models.TextField(
         blank=True, help_text=_(
-            message='Comment to save to the workflow instance when the escalation '
-            'is executed.'
+            message='Comment to save to the workflow instance when the '
+            'escalation is executed.'
         ), verbose_name=_(message='Comment')
     )
 
