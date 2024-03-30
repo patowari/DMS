@@ -164,6 +164,8 @@
 - Add extra columns to show if a transition field has a default and a lookup.
 - Move the workflow instance detail link from the actions menu to the list
   facet menu.
+- Update the datetime field of the workflow instance entry list to be
+  sortable.
 
 4.6.3 (2024-03-28)
 ==================

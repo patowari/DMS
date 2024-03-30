@@ -384,7 +384,8 @@ class DocumentStatesApp(MayanAppConfig):
 
         SourceColumn(
             attribute='datetime', is_identifier=True,
-            label=_(message='Date and time'), source=WorkflowInstanceLogEntry
+            is_sortable=True, label=_(message='Date and time'),
+            source=WorkflowInstanceLogEntry
         )
         SourceColumn(
             attribute='user', include_label=True, label=_(message='User'),
