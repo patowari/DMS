@@ -1,5 +1,11 @@
 from mayan.apps.rest_api import generics
 
+from mayan.apps.documents.permissions import permission_document_view
+from mayan.apps.documents.serializers.document_serializers import (
+    DocumentSerializer
+)
+
+from ..models.workflow_state_models import WorkflowStateRuntimeProxy
 from ..permissions import (
     permission_workflow_template_edit, permission_workflow_template_view
 )
@@ -11,6 +17,28 @@ from .api_view_mixins import (
     ParentObjectWorkflowTemplateAPIViewMixin,
     ParentObjectWorkflowTemplateStateAPIViewMixin
 )
+
+
+class APIWorkflowTemplateStateDocumentListView(
+    ParentObjectWorkflowTemplateStateAPIViewMixin, generics.ListAPIView
+):
+    """
+    get: Return a list of all the documents at a specific workflow template state.
+    """
+    mayan_external_object_permission_map = {
+        'GET': permission_workflow_template_view
+    }
+    mayan_object_permission_map = {'GET': permission_document_view}
+    serializer_class = DocumentSerializer
+
+    def get_source_queryset(self):
+        workflow_template_state = self.get_workflow_template_state()
+
+        workflow_template_state_runtime_proxy = WorkflowStateRuntimeProxy.objects.get(
+            pk=workflow_template_state.pk
+        )
+
+        return workflow_template_state_runtime_proxy.get_documents().all()
 
 
 class APIWorkflowTemplateStateListView(

@@ -19,6 +19,18 @@ class WorkflowTemplateStateSerializer(serializers.HyperlinkedModelSerializer):
             }
         ), view_name='rest_api:workflow-template-state-action-list'
     )
+    documents_url = MultiKwargHyperlinkedIdentityField(
+        label=_(message='Documents URL'), view_kwargs=(
+            {
+                'lookup_field': 'workflow_id',
+                'lookup_url_kwarg': 'workflow_template_id'
+            },
+            {
+                'lookup_field': 'pk',
+                'lookup_url_kwarg': 'workflow_template_state_id'
+            }
+        ), view_name='rest_api:workflow-template-state-document-list'
+    )
     escalations_url = MultiKwargHyperlinkedIdentityField(
         label=_(message='Escalations URL'), view_kwargs=(
             {
@@ -54,13 +66,14 @@ class WorkflowTemplateStateSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         fields = (
-            'actions_url', 'completion', 'escalations_url', 'id', 'initial',
-            'label', 'url', 'workflow_template_id', 'workflow_template_url'
+            'actions_url', 'completion', 'documents_url', 'escalations_url',
+            'id', 'initial', 'label', 'url', 'workflow_template_id',
+            'workflow_template_url'
         )
         model = WorkflowState
         read_only_fields = (
-            'escalations_url', 'id', 'url', 'workflow_template_id',
-            'workflow_template_url'
+            'documents_url', 'escalations_url', 'id', 'url',
+            'workflow_template_id', 'workflow_template_url'
         )
 
 

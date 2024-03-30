@@ -1,13 +1,18 @@
 from mayan.apps.converter.api_view_mixins import APIImageViewMixin
 from mayan.apps.documents.models.document_type_models import DocumentType
-from mayan.apps.documents.permissions import permission_document_type_view
+from mayan.apps.documents.permissions import (
+    permission_document_type_view, permission_document_view
+)
+from mayan.apps.documents.serializers.document_serializers import (
+    DocumentSerializer
+)
 from mayan.apps.documents.serializers.document_type_serializers import (
     DocumentTypeSerializer
 )
 from mayan.apps.rest_api import generics
 from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 
-from ..models.workflow_models import Workflow
+from ..models.workflow_models import Workflow, WorkflowRuntimeProxy
 from ..permissions import (
     permission_workflow_template_create, permission_workflow_template_delete,
     permission_workflow_template_edit, permission_workflow_template_view
@@ -16,6 +21,24 @@ from ..serializers.workflow_template_serializers import (
     WorkflowTemplateDocumentTypeAddSerializer,
     WorkflowTemplateDocumentTypeRemoveSerializer, WorkflowTemplateSerializer
 )
+
+
+class APIWorkflowTemplateDocumentListView(
+    ExternalObjectAPIViewMixin, generics.ListAPIView
+):
+    """
+    get: Return a list of all the document executing a specific workflow template.
+    """
+    external_object_class = WorkflowRuntimeProxy
+    external_object_pk_url_kwarg = 'workflow_template_id'
+    mayan_external_object_permission_map = {
+        'GET': permission_workflow_template_view
+    }
+    mayan_object_permission_map = {'GET': permission_document_view}
+    serializer_class = DocumentSerializer
+
+    def get_source_queryset(self):
+        return self.get_external_object().get_documents().all()
 
 
 class APIWorkflowTemplateDocumentTypeListView(

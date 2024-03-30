@@ -24,6 +24,11 @@ class WorkflowTemplateSerializer(serializers.HyperlinkedModelSerializer):
         lookup_url_kwarg='workflow_template_id',
         view_name='rest_api:workflow-template-document-type-list'
     )
+    documents_url = serializers.HyperlinkedIdentityField(
+        label=_(message='Documents URL'),
+        lookup_url_kwarg='workflow_template_id',
+        view_name='rest_api:workflow-template-document-list'
+    )
     image_url = serializers.HyperlinkedIdentityField(
         label=_(message='Image URL'), lookup_url_kwarg='workflow_template_id',
         view_name='rest_api:workflow-template-image'
@@ -47,15 +52,15 @@ class WorkflowTemplateSerializer(serializers.HyperlinkedModelSerializer):
         }
         fields = (
             'auto_launch', 'document_types_add_url',
-            'document_types_remove_url', 'document_types_url', 'id',
-            'image_url', 'internal_name', 'label', 'states_url',
-            'transitions_url', 'url'
+            'document_types_remove_url', 'document_types_url',
+            'documents_url', 'id', 'image_url', 'internal_name', 'label',
+            'states_url', 'transitions_url', 'url'
         )
         model = Workflow
         read_only_fields = (
             'document_types_add_url', 'document_types_remove_url',
-            'document_types_url', 'id', 'image_url', 'states_url',
-            'transitions_url', 'url'
+            'document_types_url', 'documents_url', 'id', 'image_url',
+            'states_url', 'transitions_url', 'url'
         )
 
 

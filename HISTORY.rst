@@ -151,6 +151,8 @@
 - Improve the file caching cache detail form. Add fieldsets to the form.
 - Add management command to purge a cache. The command name is
   ``file_caching_purge_cache`` and requires the cache's storage name.
+- Add workflow API views that return the documents attached to a workflow and
+  the documents at a particular workflow state.
 
 4.6.3 (2024-03-28)
 ==================

@@ -7,15 +7,17 @@ from .api_views.workflow_instance_api_views import (
     APIWorkflowInstanceLogEntryTransitionListView
 )
 from .api_views.workflow_template_api_views import (
-    APIWorkflowTemplateDetailView, APIWorkflowTemplateDocumentTypeAddView,
+    APIWorkflowTemplateDetailView, APIWorkflowTemplateDocumentListView,
+    APIWorkflowTemplateDocumentTypeAddView,
     APIWorkflowTemplateDocumentTypeListView,
     APIWorkflowTemplateDocumentTypeRemoveView, APIWorkflowTemplateImageView,
     APIWorkflowTemplateListView
 )
 from .api_views.workflow_template_state_api_views import (
     APIWorkflowTemplateStateActionDetailView,
-    APIWorkflowTemplateStateActionListView, APIWorkflowTemplateStateListView,
-    APIWorkflowTemplateStateView
+    APIWorkflowTemplateStateActionListView,
+    APIWorkflowTemplateStateDocumentListView,
+    APIWorkflowTemplateStateListView, APIWorkflowTemplateStateView
 )
 from .api_views.workflow_template_state_escalation_api_views import (
     APIWorkflowTemplateStateEscalationListView,
@@ -336,6 +338,11 @@ api_urls = [
         name='workflow-template-detail', view=APIWorkflowTemplateDetailView.as_view()
     ),
     re_path(
+        route=r'^workflow_templates/(?P<workflow_template_id>[0-9]+)/documents/$',
+        name='workflow-template-document-list',
+        view=APIWorkflowTemplateDocumentListView.as_view()
+    ),
+    re_path(
         route=r'^workflow_templates/(?P<workflow_template_id>[0-9]+)/document_types/$',
         name='workflow-template-document-type-list',
         view=APIWorkflowTemplateDocumentTypeListView.as_view()
@@ -374,6 +381,11 @@ api_urls = [
         route=r'^workflow_templates/(?P<workflow_template_id>[0-9]+)/states/(?P<workflow_template_state_id>[0-9]+)/actions/(?P<workflow_template_state_action_id>[0-9]+)/$',
         name='workflow-template-state-action-detail',
         view=APIWorkflowTemplateStateActionDetailView.as_view()
+    ),
+    re_path(
+        route=r'^workflow_templates/(?P<workflow_template_id>[0-9]+)/states/(?P<workflow_template_state_id>[0-9]+)/documents/$',
+        name='workflow-template-state-document-list',
+        view=APIWorkflowTemplateStateDocumentListView.as_view()
     ),
     re_path(
         route=r'^workflow_templates/(?P<workflow_template_id>[0-9]+)/states/(?P<workflow_template_state_id>[0-9]+)/escalations/$',
