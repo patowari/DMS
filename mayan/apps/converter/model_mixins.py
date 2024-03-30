@@ -78,9 +78,10 @@ class AssetBusinessLogicMixin:
 
     def get_hash(self):
         with self.open() as file_object:
-            return hashlib.sha256(
+            hash_object = hashlib.sha256(
                 string=file_object.read()
-            ).hexdigest()
+            )
+            return hash_object.hexdigest()
 
     def get_image(self):
         with self.open() as file_object:
@@ -112,7 +113,13 @@ class ObjectLayerBusinessLogicMixin:
 
 class LayerTransformationBusinessLogicMixin:
     def get_arguments_column(self):
-        arguments = yaml_load(stream=self.arguments or '{}')
+        try:
+            arguments = yaml_load(stream=self.arguments or '{}')
+        except Exception:
+            arguments = {
+                'error': _(message='Badly formatted arguments YAML')
+            }
+
         result = []
         for key, value in arguments.items():
             result.append(

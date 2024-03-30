@@ -24,7 +24,7 @@ class QRCodeImageField(ReadOnlyImageField):
 
     def prepare_value(self, value):
         instance = qrcode.QRCode()
-        instance.add_data(value)
+        instance.add_data(data=value)
         instance.make(fit=True)
 
         qrcode_image = instance.make_image()

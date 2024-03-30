@@ -56,7 +56,12 @@ class LayerTransformationForm(ModelForm):
         super().__init__(*args, **kwargs)
         transformation_class = self.get_transformation_class()
         if self.instance:
-            for key, value in yaml_load(stream=self.instance.arguments or '{}').items():
+            try:
+                obj = yaml_load(stream=self.instance.arguments or '{}')
+            except Exception:
+                obj = {}
+
+            for key, value in obj.items():
                 self.initial[key] = value
 
         self.transformation_template_name = transformation_class.get_template_name()

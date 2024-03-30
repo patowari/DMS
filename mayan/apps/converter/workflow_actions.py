@@ -1,13 +1,13 @@
 import logging
 
-import yaml
-
-from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.serialization import yaml_load
 from mayan.apps.common.utils import parse_range
 from mayan.apps.document_states.classes import WorkflowAction
+from mayan.apps.document_states.models.workflow_instance_models import (
+    WorkflowInstance
+)
+from mayan.apps.templating.classes import Template
 
 from .models import ObjectLayer
 from .transformations import BaseTransformation
@@ -22,11 +22,6 @@ class TransformationAddAction(WorkflowAction):
             'class': 'django.forms.widgets.Select', 'kwargs': {
                 'attrs': {'class': 'select2'}
             }
-        },
-        'transformation_arguments': {
-            'class': 'django.forms.widgets.Textarea', 'kwargs': {
-                'attrs': {'rows': 5}
-            }
         }
     }
     form_fields = {
@@ -34,9 +29,9 @@ class TransformationAddAction(WorkflowAction):
             'label': _(message='Pages'),
             'class': 'django.forms.CharField', 'kwargs': {
                 'help_text': _(
-                    message='Pages to which the new transformations will be added. '
-                    'Separate by commas and/or use a dashes for a ranges. '
-                    'Leave blank to select all pages.'
+                    message='Pages to which the new transformations will be '
+                    'added. Separate by commas and/or use a dashes for a '
+                    'ranges. Leave blank to select all pages.'
                 ), 'required': False
             }
         },
@@ -52,30 +47,20 @@ class TransformationAddAction(WorkflowAction):
         },
         'transformation_arguments': {
             'label': _(message='Transformation arguments'),
-            'class': 'django.forms.CharField', 'kwargs': {
-                'help_text': _(
-                    message='Enter the arguments for the transformation as a YAML '
-                    'dictionary. ie: {"degrees": 180}'
-                ), 'required': False
+            'class': 'mayan.apps.templating.fields.ModelTemplateField',
+            'kwargs': {
+                'initial_help_text': _(
+                    message='Enter a template that will generate the '
+                    'arguments for the transformation as a '
+                    'YAML dictionary. ie: {"degrees": 180}. The document '
+                    'version page is available as '
+                    '{{ document_version_page }}.'
+                ), 'model': WorkflowInstance,
+                'model_variable': 'workflow_instance', 'required': False
             }
         }
     }
     label = _(message='Add transformation')
-
-    @classmethod
-    def clean(cls, form_data, request):
-        try:
-            yaml_load(
-                stream=form_data['action_data']['transformation_arguments']
-            )
-        except yaml.YAMLError:
-            raise ValidationError(
-                message=_(
-                    message='"%s" not a valid entry.'
-                ) % form_data['action_data']['transformation_arguments']
-            )
-
-        return form_data
 
     @classmethod
     def get_form_fieldsets(cls):
@@ -113,11 +98,18 @@ class TransformationAddAction(WorkflowAction):
         )
         layer = transformation_class.get_assigned_layer()
 
+        template = Template(
+            template_string=self.kwargs['transformation_arguments']
+        )
+
         for document_page in queryset.all():
+            context['document_version_page'] = document_page
+
+            template_result = template.render(context=context)
+
             object_layer, created = ObjectLayer.objects.get_for(
                 layer=layer, obj=document_page
             )
             object_layer.transformations.create(
-                arguments=self.kwargs['transformation_arguments'],
-                name=transformation_class.name
+                arguments=template_result, name=transformation_class.name
             )
