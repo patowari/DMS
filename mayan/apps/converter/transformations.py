@@ -594,7 +594,7 @@ class TransformationQRCodePercent(
 
     class Form(ImagePasteCoordinatesPercentTransformationMixin.Form):
         code_value = forms.CharField(
-            help_text=_(message='QRCode to display.'),
+            help_text=_(message='Value to encode in the QRCode.'),
             label=_(message='Code value'), required=True
         )
 
