@@ -43,6 +43,11 @@ class WorkflowTransitionField(
             message='The field name that will be shown on the user interface.'
         ), max_length=128, verbose_name=_(message='Label')
     )
+    default = lookup = models.TextField(
+        blank=True, null=True, help_text=_(
+            message='Optional default value for the field. Can be a template.'
+        ), verbose_name=_(message='Default')
+    )
     lookup = models.TextField(
         blank=True, null=True, help_text=_(
             message='Enter a template to render. Must result in a comma '

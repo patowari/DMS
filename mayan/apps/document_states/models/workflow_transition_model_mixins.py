@@ -43,6 +43,12 @@ class WorkflowTransitionBusinessLogicMixin:
 
     get_field_display.short_description = _(message='Fields')
 
+    def get_form_schema(self, schema, workflow_instance):
+        for field in self.fields.all():
+            field.get_form_schema(
+                schema=schema, workflow_instance=workflow_instance
+            )
+
     def get_hash(self):
         result = hashlib.sha256(
             string=serializers.serialize(

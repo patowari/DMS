@@ -20,7 +20,6 @@ from ..icons import (
     icon_workflow_instance_transition_select, icon_workflow_template_list
 )
 from ..links import link_workflow_instance_transition
-from ..literals import FIELD_TYPE_MAPPING, WIDGET_CLASS_MAPPING
 from ..models import WorkflowInstance
 from ..permissions import (
     permission_workflow_instance_transition, permission_workflow_template_view
@@ -181,60 +180,9 @@ class WorkflowInstanceTransitionExecuteView(
         }
 
         workflow_template_transition = self.get_workflow_template_transition()
-
-        for field in workflow_template_transition.fields.all():
-            schema['fields'][field.name] = {
-                'class': FIELD_TYPE_MAPPING[field.field_type],
-                'help_text': field.help_text,
-                'label': field.label,
-                'required': field.required
-            }
-
-            schema_field = schema['fields'][field.name]
-
-            if field.widget:
-                schema['widgets'][field.name] = {
-                    'class': WIDGET_CLASS_MAPPING[field.widget],
-                    'kwargs': field.get_widget_kwargs()
-                }
-
-            if field.lookup:
-                try:
-                    lookup_choices = field.get_lookup_values(
-                        workflow_instance=self.external_object
-                    )
-
-                    field_choices = list(
-                        zip(lookup_choices, lookup_choices)
-                    )
-
-                    if not field.required:
-                        field_choices.insert(
-                            0, ('', '------')
-                        )
-
-                    schema_field['class'] = 'django.forms.fields.ChoiceField'
-                    schema_field['kwargs'] = {'choices': field_choices}
-
-                    schema['widgets'][field.name] = {
-                        'class': 'django.forms.fields.Select',
-                        'kwargs': {
-                            'attrs': {'class': 'select2'}
-                        }
-                    }
-                except Exception as exception:
-                    schema_field['class'] = 'django.forms.fields.CharField'
-                    schema_field['kwargs'] = {
-                        'initial': _(
-                            message='Lookup value error: %s'
-                        ) % exception
-                    }
-                    schema['widgets'][field.name] = {
-                        'class': 'django.forms.fields.TextInput',
-                        'kwargs': {
-                            'attrs': {'readonly': 'readonly'}
-                        }
-                    }
+        workflow_template_transition.get_form_schema(
+            schema=schema, workflow_instance=self.external_object
+        )
 
         return {'schema': schema}
 

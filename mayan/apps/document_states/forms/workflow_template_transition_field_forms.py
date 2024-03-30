@@ -19,7 +19,7 @@ class WorkflowTransitionFieldForm(ModelForm):
             }
         ), (
             _(message='Value'), {
-                'fields': ('lookup', 'required')
+                'fields': ('default', 'lookup', 'required')
             }
         ), (
             _(message='Appearance'), {
@@ -31,6 +31,11 @@ class WorkflowTransitionFieldForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.fields['default'] = ModelTemplateField(
+            initial_help_text=self.fields['default'].help_text,
+            model=WorkflowInstance, model_variable='workflow_instance',
+            required=False
+        )
         self.fields['lookup'] = ModelTemplateField(
             context_entry_name_list=('groups', 'users'),
             initial_help_text=self.fields['lookup'].help_text,
@@ -40,7 +45,7 @@ class WorkflowTransitionFieldForm(ModelForm):
 
     class Meta:
         fields = (
-            'name', 'label', 'field_type', 'lookup', 'help_text', 'required',
-            'widget', 'widget_kwargs'
+            'default', 'field_type', 'help_text', 'label', 'lookup', 'name',
+            'required', 'widget', 'widget_kwargs'
         )
         model = WorkflowTransitionField

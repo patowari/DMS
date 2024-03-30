@@ -159,6 +159,9 @@
 - Update the convert workflow action to add transformations to support
   templating for the argument of the transformation.
 - Add a QRCode document version decoration transformation.
+- Add support for workflow transition field defaults.
+- Consolidate workflow transition field code into the transition model.
+- Add extra columns to show if a transition field has a default and a lookup.
 
 4.6.3 (2024-03-28)
 ==================

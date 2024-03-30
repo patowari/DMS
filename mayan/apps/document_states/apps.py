@@ -552,6 +552,14 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowTransitionField, widget=TwoStateWidget
         )
         SourceColumn(
+            attribute='has_default', include_label=True,
+            source=WorkflowTransitionField
+        )
+        SourceColumn(
+            attribute='has_lookup', include_label=True,
+            source=WorkflowTransitionField
+        )
+        SourceColumn(
             attribute='get_widget_display', include_label=True,
             label=_(message='Widget'), is_sortable=False,
             source=WorkflowTransitionField
