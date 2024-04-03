@@ -1,3 +1,7 @@
+4.4.15 (XXXX-XX-XX)
+==================
+- Remove local version from the platform cache identifiers.
+
 4.4.14 (2024-03-27)
 ===================
 - Fix the document file and the user API list view ordering fields. The
