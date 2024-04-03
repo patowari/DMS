@@ -379,8 +379,6 @@
 - Ensure credentials ``post_processing`` method is called.
 - Fix periodic source document type field to use the intended Select2 widget.
 - Fix workflow transition field model typo.
-<<<<<<< HEAD
-=======
 - Merge changes from version 4.4.14.
 - Fix MSG file uncompressed uploads.
 - Add additional sources migrations for users that skipped the previous
@@ -389,7 +387,6 @@
 - Lower the severity of searching indexing problems to ``INFO``. This
   reduces user confusion between normal messages when processing the
   asynchronous task queue and actual coding errors.
->>>>>>> internal/series/4.6
 
 4.5.10 (2024-03-03)
 ===================
@@ -887,9 +884,6 @@
 ===================
 - Fix the document file and the user API list view ordering fields. The
   fields were ``mime_type`` to ``mimetype`` and remove
-<<<<<<< HEAD
-  ``has_usable_password`` which is method and not a field.
-=======
   ``has_usable_password`` which is a method and not a field.
 - Restore the root logging handlers after every test.
 - Allow the ``JavaScriptCatalogPublic`` sub class to bypass authentication
@@ -898,7 +892,6 @@
 
   - Django from 3.2.23 to 3.2.25.
   - pytz from 2022.1 to 2024.1
->>>>>>> internal/series/4.6
 
 4.4.13 (2024-03-01)
 ===================
