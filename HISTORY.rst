@@ -171,6 +171,7 @@
 - Make the source metadata key sortable.
 - Optimize and convert the batch source metadata code into a reusable
   corotine with batch model creation.
+- Add source metadata search definitions.
 
 4.6.3 (2024-03-28)
 ==================
