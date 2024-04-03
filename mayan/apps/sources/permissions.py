@@ -9,7 +9,7 @@ namespace = PermissionNamespace(
 # Documents
 
 permission_sources_metadata_view = namespace.add_permission(
-    label=_('View document source metadata'), name='source_metadata_view'
+    label=_('View document file source metadata'), name='source_metadata_view'
 )
 
 # Sources

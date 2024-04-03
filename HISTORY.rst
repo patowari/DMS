@@ -1,6 +1,7 @@
 4.5.12 (XXXX-XX-XX)
 ===================
 - Optimize documents apps migrations 0086 and 0088.
+- Update document file source metadata permission label for correctness.
 
 4.5.11 (2024-03-28)
 ===================
