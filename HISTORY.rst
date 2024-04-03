@@ -4,6 +4,7 @@
 - Minor optimization to documents app migration 0080.
 - Update ``mayan.apps.dependencies.versions.py`` to support local and
   upstream version calculations.
+- Add makefile target to refresh the Docker and Python module versions.
 
 4.4.14 (2024-03-27)
 ===================
