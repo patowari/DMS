@@ -2,6 +2,7 @@
 ===================
 - Optimize documents apps migrations 0086 and 0088.
 - Update document file source metadata permission label for correctness.
+- Fix source metadata help text.
 
 4.5.11 (2024-03-28)
 ===================
