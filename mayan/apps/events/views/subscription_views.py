@@ -161,7 +161,7 @@ class UserObjectSubscriptionList(SingleObjectListView):
             'hide_object': True,
             'no_results_icon': icon_user_object_subscriptions_list,
             'no_results_text': _(
-                'Subscribe to the events of an object to received '
+                'Subscribe to the events of an object to receive '
                 'notifications when those events occur.'
             ),
             'no_results_title': _('There are no object event subscriptions'),

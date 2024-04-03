@@ -154,7 +154,7 @@ class ImagePasteCoordinatesPercentTransformationMixin(
     ImagePasteTransformationMixin
 ):
     arguments = ('left', 'top')
-    label = _('Paste an image (percents coordinates)')
+    label = _('Paste an image (percent coordinates)')
     name = 'paste_image_percent'
 
     class Form(ImagePasteTransformationMixin.Form):
