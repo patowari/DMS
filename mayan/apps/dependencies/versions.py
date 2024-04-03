@@ -548,7 +548,7 @@ if __name__ == '__main__':
 
     if len(sys.argv) == 1:
         print(
-            'usage: [version] <part to retrieve [major, minor, micro]> <-test>'
+            'usage: [version] <part to retrieve [major, minor, micro, upstream]> <-test>'
         )
         exit(0)
 
