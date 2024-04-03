@@ -1,6 +1,7 @@
 4.4.15 (XXXX-XX-XX)
 ==================
 - Remove local version from the platform cache identifiers.
+- Minor optimization to documents app migration 0080.
 
 4.4.14 (2024-03-27)
 ===================
