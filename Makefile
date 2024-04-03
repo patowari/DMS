@@ -219,13 +219,11 @@ translations-all: translations-source-clear translations-source-fuzzy-remove tra
 # Releases
 
 increase-version: ## Increase the version number of the entire project's files.
-	@VERSION=`grep "__version__ =" mayan/__init__.py| cut -d\' -f 2|./contrib/scripts/increase_version.py - $(PART)`; \
-	VERSION_PYTHON=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}+${LOCAL_VERSION}"; fi` \
-	VERSION_DOCKER=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}-${LOCAL_VERSION}"; fi` \
-	BUILD=`echo $$VERSION_PYTHON|awk '{split($$VERSION_PYTHON,a,"."); printf("0x%02d%02d%02d\n", a[1],a[2], a[3])}'`; \
-	sed -i -e "s/__build__ = 0x[0-9]*/__build__ = $${BUILD}/g" mayan/__init__.py; \
-	sed -i -e "s/__version__ = '[0-9\.]*'/__version__ = '$$VERSION_PYTHON'/g" mayan/__init__.py; \
-	echo $$VERSION_DOCKER > docker/rootfs/version
+	@VERSION_BASE=`grep "__version__ =" mayan/__init__.py| cut -d\' -f 2|./contrib/scripts/increase_version.py - $(PART)`; \
+	VERSION=`mayan/apps/dependencies/versions.py $${VERSION_BASE} upstream`; \
+	VERSION_PYTHON=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}+${LOCAL_VERSION}"; fi`; \
+	sed -i -e "s/__version__ = '[0-9\.a-zA-Z\+]*'/__version__ = '$$VERSION_PYTHON'/g" mayan/__init__.py; \
+	make versions-update; \
 	make generate-setup
 
 python-test-release: ## Package (sdist and wheel) and upload to the PyPI test server.
@@ -339,6 +337,17 @@ generate-requirements: ## Generate all requirements files from the project depen
 	@./manage.py dependencies_generate_requirements testing > requirements/testing-base.txt
 	@./manage.py dependencies_generate_requirements production --exclude=django > requirements/base.txt
 	@./manage.py dependencies_generate_requirements production --only=django > requirements/common.txt
+
+versions-update: ## Update the version number of the entire project's files.
+versions-update: copy-config-env
+	@VERSION_BASE=`grep "__version__ =" mayan/__init__.py| cut -d\' -f 2`; \
+	VERSION=`mayan/apps/dependencies/versions.py $${VERSION_BASE} upstream;` \
+	VERSION_PYTHON=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}+${LOCAL_VERSION}"; fi`; \
+	VERSION_DOCKER=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}-${LOCAL_VERSION}"; fi`; \
+	BUILD=`echo $$VERSION_PYTHON|awk '{split($$VERSION_PYTHON,a,"."); printf("0x%02d%02d%02d\n", a[1],a[2], a[3])}'`; \
+	sed -i -e "s/__build__ = 0x[0-9]*/__build__ = $${BUILD}/g" mayan/__init__.py; \
+	sed -i -e "s/__version__ = '[0-9\.a-zA-Z\+]*'/__version__ = '$$VERSION_PYTHON'/g" mayan/__init__.py; \
+	echo $$VERSION_DOCKER > docker/rootfs/version
 
 # Dev server
 
