@@ -169,6 +169,8 @@
 - Don't run the ``initial_setup_or_perform_upgrade`` services when enabling
   the ``extra_worker_custom`` profile.
 - Make the source metadata key sortable.
+- Optimize and convert the batch source metadata code into a reusable
+  corotine with batch model creation.
 
 4.6.3 (2024-03-28)
 ==================

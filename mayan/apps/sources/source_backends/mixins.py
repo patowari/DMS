@@ -1,4 +1,3 @@
-from itertools import chain, islice
 import logging
 import re
 
@@ -8,7 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.templating.classes import Template
 
 from .literals import (
-    DOCUMENT_FILE_SOURCE_METADATA_BATCH_SIZE,
     REGULAR_EXPRESSION_MATCH_EVERYTHING, REGULAR_EXPRESSION_MATCH_NOTHING
 )
 
@@ -102,35 +100,21 @@ class SourceBackendMixinSourceMetadata:
         source_id = kwargs['source_id']
         source_metadata = source_metadata or {}
 
-        document_file_source_metadata_list = (
-            DocumentFileSourceMetadata(
-                document_file=document_file, key=key, source_id=source_id,
-                value=value
-            ) for key, value in source_metadata.items()
+        coroutine = DocumentFileSourceMetadata.objects.create_bulk()
+        next(coroutine)
+
+        coroutine.send(
+            {
+                'document_file': document_file, 'key': 'source_id',
+                'value': source_id
+            }
         )
 
-        document_file_source_metadata_source_id = DocumentFileSourceMetadata(
-            document_file=document_file, key='source_id',
-            source_id=source_id, value=source_id
-        )
-
-        document_file_source_metadata_list = chain(
-            (document_file_source_metadata_source_id,),
-            document_file_source_metadata_list
-        )
-
-        while True:
-            batch = list(
-                islice(
-                    document_file_source_metadata_list,
-                    DOCUMENT_FILE_SOURCE_METADATA_BATCH_SIZE
-                )
+        for key, value in source_metadata.items():
+            coroutine.send(
+                {
+                    'document_file': document_file, 'key': key, 'value': value
+                }
             )
 
-            if not batch:
-                break
-
-            DocumentFileSourceMetadata.objects.bulk_create(
-                batch_size=DOCUMENT_FILE_SOURCE_METADATA_BATCH_SIZE,
-                objs=batch
-            )
+        coroutine.close()
