@@ -191,6 +191,12 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
+4.5.12 (XXXX-XX-XX)
+===================
+- Optimize documents apps migrations 0086 and 0088.
+- Update document file source metadata permission label for correctness.
+- Fix source metadata help text.
+
 4.5.11 (2024-03-28)
 ===================
 - Ensure credentials ``post_processing`` method is called.
@@ -691,6 +697,11 @@
   - Test improvements.
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
+
+4.4.15 (XXXX-XX-XX)
+==================
+- Remove local version from the platform cache identifiers.
+- Minor optimization to documents app migration 0080.
 
 4.4.14 (2024-03-27)
 ===================
