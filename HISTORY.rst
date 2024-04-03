@@ -172,6 +172,8 @@
 - Optimize and convert the batch source metadata code into a reusable
   corotine with batch model creation.
 - Add source metadata search definitions.
+- Add source metadata API.
+- Remove the ``source`` field from the source metadata model.
 
 4.6.3 (2024-03-28)
 ==================

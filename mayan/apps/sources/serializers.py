@@ -2,10 +2,43 @@ from django.utils.translation import gettext_lazy as _
 
 from rest_framework.reverse import reverse
 
+from mayan.apps.documents.serializers.document_file_serializers import (
+    DocumentFileSerializer
+)
 from mayan.apps.permissions.serializers import PermissionSerializer
 from mayan.apps.rest_api import serializers
+from mayan.apps.rest_api.relations import MultiKwargHyperlinkedIdentityField
 
-from .models import Source
+from .models import DocumentFileSourceMetadata, Source
+
+
+class DocumentFileSourceMetadataSerializer(
+    serializers.HyperlinkedModelSerializer
+):
+    document_file = DocumentFileSerializer(
+        label=_(message='Document file'), read_only=True
+    )
+    url = MultiKwargHyperlinkedIdentityField(
+        label=_('URL'), view_kwargs=(
+            {
+                'lookup_field': 'document_file.document_id',
+                'lookup_url_kwarg': 'document_id'
+            },
+            {
+                'lookup_field': 'document_file_id',
+                'lookup_url_kwarg': 'document_file_id'
+            },
+            {
+                'lookup_field': 'pk',
+                'lookup_url_kwarg': 'document_file_source_metadata_id'
+            }
+        ), view_name='rest_api:document_file_source_metadata-detail'
+    )
+
+    class Meta:
+        fields = ('document_file', 'id', 'key', 'url', 'value')
+        model = DocumentFileSourceMetadata
+        read_only_fields = ('document_file', 'id', 'key', 'url', 'value')
 
 
 class SourceBackendActionInterfaceArgumentSerializer(serializers.Serializer):

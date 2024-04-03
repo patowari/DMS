@@ -6,16 +6,90 @@ from ..events import event_source_created, event_source_edited
 from ..models import Source
 from ..permissions import (
     permission_sources_create, permission_sources_delete,
-    permission_sources_edit, permission_sources_view
+    permission_sources_edit, permission_sources_metadata_view,#RENAME
+    permission_sources_view
 )
 
 from .literals import (
     TEST_SOURCE_ACTION_CONFIRM_FALSE_NAME,
     TEST_SOURCE_ACTION_CONFIRM_TRUE_NAME
 )
+from .mixins.document_file_source_metadata_mixins import (
+    DocumentFileSourceMetadataAPIViewTestMixin
+)
 from .mixins.source_api_view_mixins import (
     SourceActionAPIViewTestMixin, SourceAPIViewTestMixin
 )
+
+
+class DocumentFileSourceMetadataTestCase(
+    DocumentFileSourceMetadataAPIViewTestMixin, BaseAPITestCase
+):
+    def test_document_file_source_metadata_detail_api_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_detail_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_source_metadata_detail_api_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_sources_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_detail_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.assertEqual(
+            response.data['key'], self._test_document_file_source_metadata.key
+        )
+        self.assertEqual(
+            response.data['value'],
+            self._test_document_file_source_metadata.value
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_source_metadata_list_api_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_list_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_source_metadata_list_api_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_sources_metadata_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_source_metadata_list_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.assertEqual(
+            response.data['count'], 1
+        )
+        self.assertEqual(
+            response.data['results'][0]['key'],
+            self._test_document_file_source_metadata.key
+        )
+        self.assertEqual(
+            response.data['results'][0]['value'],
+            self._test_document_file_source_metadata.value
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class SourceActionAPIViewTestCase(

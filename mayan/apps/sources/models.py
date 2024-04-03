@@ -8,16 +8,14 @@ from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
 
 from .events import event_source_created, event_source_edited
-from .managers import SourceManager
+from .managers import DocumentFileSourceMetadataManager, SourceManager
 from .model_mixins import SourceBusinessLogicMixin
 from .source_backends.base import SourceBackendNull
 
 
 class DocumentFileSourceMetadata(models.Model):
-    source = models.ForeignKey(
-        on_delete=models.CASCADE, related_name='metadata', to='Source',
-        verbose_name=_(message='Source')
-    )
+    _ordering_fields = ('key',)
+
     document_file = models.ForeignKey(
         on_delete=models.CASCADE, related_name='source_metadata',
         to=DocumentFile, verbose_name=_(message='Document file')
@@ -34,9 +32,11 @@ class DocumentFileSourceMetadata(models.Model):
         ), null=True, verbose_name=_(message='Value')
     )
 
+    objects = DocumentFileSourceMetadataManager()
+
     class Meta:
         ordering = ('key',)
-        unique_together = ('source', 'document_file', 'key')
+        unique_together = ('document_file', 'key')
         verbose_name = _(message='Document file source metadata')
         verbose_name_plural = _(message='Document file source metadata')
 

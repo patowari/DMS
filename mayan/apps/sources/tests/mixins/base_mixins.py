@@ -118,6 +118,5 @@ class SourceMetadataTestmixin(DocumentTestMixin, SourceTestMixin):
 
     def _test_source_metadata_create(self):
         self._test_source_metadata = self._test_document_file.source_metadata.create(
-            key=TEST_SOURCE_METADATA_KEY, source=self._test_source,
-            value=TEST_SOURCE_METADATA_VALUE
+            key=TEST_SOURCE_METADATA_KEY, value=TEST_SOURCE_METADATA_VALUE
         )

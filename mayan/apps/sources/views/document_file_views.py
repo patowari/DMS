@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.literals import DEFAULT_DOCUMENT_FILE_ACTION_NAME
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_models import Document
@@ -19,7 +18,6 @@ from ..forms import NewDocumentFileForm
 from ..icons import (
     icon_document_file_source_metadata_list, icon_document_file_upload
 )
-from ..models import Source
 from ..permissions import permission_sources_metadata_view
 
 from .base import UploadBaseView
@@ -53,17 +51,7 @@ class DocumentFileSourceMetadataList(
         }
 
     def get_source_queryset(self):
-        queryset_document_source_metadata = self.external_object.source_metadata.all()
-
-        queryset_sources = AccessControlList.objects.restrict_queryset(
-            permission=permission_sources_metadata_view,
-            queryset=Source.objects.all(),
-            user=self.request.user
-        )
-
-        return queryset_document_source_metadata.filter(
-            source__in=queryset_sources
-        )
+        return queryset_document_source_metadata.all()
 
 
 class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):

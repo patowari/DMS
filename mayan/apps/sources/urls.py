@@ -1,5 +1,9 @@
 from django.urls import re_path
 
+from .api_views.document_file_metadata_api_views import (
+    APIDocumentFileSourceMetadataDetailView,
+    APIDocumentFileSourceMetadataListView
+)
 from .api_views.source_action_api_views import (
     APISourceActionDetailView, APISourceActionExecuteView,
     APISourceActionListView
@@ -85,6 +89,16 @@ urlpatterns.extend(urlpatterns_document_files)
 urlpatterns.extend(urlpatterns_sources)
 
 api_urls = [
+    re_path(
+        route=r'^documents/(?P<document_id>[0-9]+)/files/(?P<document_file_id>[0-9]+)/source_metadata/$',
+        name='document_file_source_metadata-list',
+        view=APIDocumentFileSourceMetadataListView.as_view()
+    ),
+    re_path(
+        route=r'^documents/(?P<document_id>[0-9]+)/files/(?P<document_file_id>[0-9]+)/source_metadata/(?P<document_file_source_metadata_id>[0-9]+)/$',
+        name='document_file_source_metadata-detail',
+        view=APIDocumentFileSourceMetadataDetailView.as_view()
+    ),
     re_path(
         route=r'^sources/$', name='source-list',
         view=APISourceListView.as_view()
