@@ -1,3 +1,7 @@
+4.5.12 (XXXX-XX-XX)
+===================
+- Optimize documents apps migrations 0086 and 0088.
+
 4.5.11 (2024-03-28)
 ===================
 - Ensure credentials ``post_processing`` method is called.
