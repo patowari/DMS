@@ -166,6 +166,8 @@
   facet menu.
 - Update the datetime field of the workflow instance entry list to be
   sortable.
+- Don't run the ``initial_setup_or_perform_upgrade`` services when enabling
+  the ``extra_worker_custom`` profile.
 
 4.6.3 (2024-03-28)
 ==================
