@@ -145,14 +145,19 @@ class SourcesApp(MayanAppConfig):
             name='source_metadata_value_of.< key >'
         )
 
+        # Document file source metadata
+
         SourceColumn(
-            attribute='key', is_identifier=True,
+            attribute='key', is_identifier=True, is_sortable=True,
             source=DocumentFileSourceMetadata
         )
         SourceColumn(
             attribute='value', include_label=True,
             source=DocumentFileSourceMetadata
         )
+
+        # Sources
+
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
             source=Source
