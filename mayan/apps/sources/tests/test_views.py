@@ -3,8 +3,8 @@ from mayan.apps.testing.tests.base import GenericViewTestCase
 from ..events import event_source_created, event_source_edited
 from ..models import Source
 from ..permissions import (
-    permission_sources_create, permission_sources_delete,
-    permission_sources_edit, permission_sources_metadata_view,
+    permission_document_file_sources_metadata_view, permission_sources_create,
+    permission_sources_delete, permission_sources_edit,
     permission_sources_view
 )
 
@@ -31,49 +31,10 @@ class DocumentSourceMetadataViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_document_file_source_metadata_list_view_with_document_access(self):
+    def test_document_file_source_metadata_list_view_with_access(self):
         self.grant_access(
             obj=self._test_document,
-            permission=permission_sources_metadata_view
-        )
-
-        self._clear_events()
-
-        response = self._request_test_document_file_source_metadata_list_view()
-        self.assertNotContains(
-            response=response, status_code=200,
-            text=TEST_SOURCE_METADATA_KEY
-        )
-        self.assertNotContains(
-            response=response, status_code=200,
-            text=TEST_SOURCE_METADATA_VALUE
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_source_metadata_list_view_with_source_access(self):
-        self.grant_access(
-            obj=self._test_source,
-            permission=permission_sources_metadata_view
-        )
-
-        self._clear_events()
-
-        response = self._request_test_document_file_source_metadata_list_view()
-        self.assertEqual(response.status_code, 404)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_source_metadata_list_view_with_full_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_sources_metadata_view
-        )
-        self.grant_access(
-            obj=self._test_source,
-            permission=permission_sources_metadata_view
+            permission=permission_document_file_sources_metadata_view
         )
 
         self._clear_events()

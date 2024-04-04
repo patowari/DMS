@@ -38,8 +38,8 @@ from .links import (
 )
 from .literals import ERROR_LOG_DOMAIN_NAME
 from .permissions import (
-    permission_sources_delete, permission_sources_edit,
-    permission_sources_metadata_view, permission_sources_view
+    permission_document_file_sources_metadata_view, permission_sources_delete,
+    permission_sources_edit, permission_sources_view
 )
 from .property_helpers import (
     DocumentSourceMetadataHelper, DocumentFileSourceMetadataHelper
@@ -118,7 +118,7 @@ class SourcesApp(MayanAppConfig):
 
         ModelPermission.register(
             model=DocumentFile, permissions=(
-                permission_sources_metadata_view,
+                permission_document_file_sources_metadata_view,
             )
         )
         ModelPermission.register(
@@ -126,7 +126,7 @@ class SourcesApp(MayanAppConfig):
                 permission_acl_edit, permission_acl_view,
                 permission_document_create, permission_document_file_new,
                 permission_sources_delete, permission_sources_edit,
-                permission_sources_metadata_view, permission_sources_view
+                permission_sources_view
             )
         )
 

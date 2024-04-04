@@ -18,7 +18,7 @@ from ..forms import NewDocumentFileForm
 from ..icons import (
     icon_document_file_source_metadata_list, icon_document_file_upload
 )
-from ..permissions import permission_sources_metadata_view
+from ..permissions import permission_document_file_sources_metadata_view
 
 from .base import UploadBaseView
 
@@ -28,7 +28,7 @@ logger = logging.getLogger(name=__name__)
 class DocumentFileSourceMetadataList(
     ExternalObjectViewMixin, SingleObjectListView
 ):
-    external_object_permission = permission_sources_metadata_view
+    external_object_permission = permission_document_file_sources_metadata_view
     external_object_pk_url_kwarg = 'document_file_id'
     external_object_queryset = DocumentFile.valid.all()
     view_icon = icon_document_file_source_metadata_list
@@ -51,7 +51,7 @@ class DocumentFileSourceMetadataList(
         }
 
     def get_source_queryset(self):
-        return queryset_document_source_metadata.all()
+        return self.external_object.source_metadata.all()
 
 
 class DocumentFileUploadView(ExternalObjectViewMixin, UploadBaseView):

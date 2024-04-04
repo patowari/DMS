@@ -3,7 +3,7 @@ from mayan.apps.documents.api_views.api_view_mixins import (
 )
 from mayan.apps.rest_api import generics
 
-from ..permissions import permission_sources_metadata_view
+from ..permissions import permission_document_file_sources_metadata_view
 from ..serializers import DocumentFileSourceMetadataSerializer
 
 
@@ -17,7 +17,7 @@ class APIDocumentFileSourceMetadataListView(
 
     def get_source_queryset(self):
         document_file = self.get_document_file(
-            permission=permission_sources_metadata_view
+            permission=permission_document_file_sources_metadata_view
         )
         return document_file.source_metadata.all()
 
@@ -33,6 +33,6 @@ class APIDocumentFileSourceMetadataDetailView(
 
     def get_source_queryset(self):
         document_file = self.get_document_file(
-            permission=permission_sources_metadata_view
+            permission=permission_document_file_sources_metadata_view
         )
         return document_file.source_metadata.all()
