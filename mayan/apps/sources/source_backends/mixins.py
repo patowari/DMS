@@ -112,9 +112,7 @@ class SourceBackendMixinSourceMetadata:
 
         for key, value in source_metadata.items():
             coroutine.send(
-                {
-                    'document_file': document_file, 'key': key, 'value': value
-                }
+                {'document_file': document_file, 'key': key, 'value': value}
             )
 
         coroutine.close()
