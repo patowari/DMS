@@ -445,6 +445,309 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         )
 
 
+
+class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
+    def test_search_field_type_biginteger_null_search_exact_empty_non_quoted(self):
+        self._test_object_biginteger_set = False
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeExact,
+            value=''
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        self._test_object.biginteger = TEST_OBJECT_INTEGER_VALUE
+        self._test_object.save()
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeExact,
+            value=''
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+    def test_search_field_type_biginteger_null_search_exact_empty_quoted(self):
+        self._test_object_biginteger_set = False
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            is_quoted_value=True,
+            query_type=QueryTypeExact,
+            value=''
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        self._test_object.biginteger = TEST_OBJECT_INTEGER_VALUE
+        self._test_object.save()
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            is_quoted_value=True,
+            query_type=QueryTypeExact,
+            value=''
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+    def test_search_field_type_biginteger_search_exact(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeExact,
+            value=self._test_object.biginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeExact,
+            value=str(self._test_object.biginteger)
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        # Test valid value ranges.
+        self._test_object.biginteger = -2 ** 63
+        self._test_object.save()
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeExact,
+            value=str(self._test_object.biginteger)
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        self._test_object.biginteger = 2 ** 63 - 1
+        self._test_object.save()
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeExact,
+            value=str(self._test_object.biginteger)
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_biginteger_search_greater_than(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeGreaterThan,
+            value=self._test_object.biginteger - 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_biginteger_search_greater_than_or_equal(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeGreaterThanOrEqual,
+            value=self._test_object.biginteger - 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeGreaterThanOrEqual,
+            value=self._test_object.biginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_biginteger_search_less_than(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeLessThan,
+            value=self._test_object.biginteger + 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_biginteger_search_less_than_or_equal(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeLessThanOrEqual,
+            value=self._test_object.biginteger + 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeLessThanOrEqual,
+            value=self._test_object.biginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_biginteger_search_range(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.biginteger - 1, self._test_object.biginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.biginteger, self._test_object.biginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.biginteger - 1, self._test_object.biginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.biginteger, self._test_object.biginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_biginteger_search_range_exclusive(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.biginteger - 1, self._test_object.biginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.biginteger, self._test_object.biginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.biginteger - 1, self._test_object.biginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.biginteger, self._test_object.biginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+    def test_search_field_type_biginteger_search_range_exclusive_invalid(self):
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='INVALID'
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        id_list = self._do_backend_search(
+            field_name='biginteger',
+            query_type=QueryTypeRangeExclusive,
+            value=True
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+
 class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
     def test_search_field_type_boolean_search_empty_non_quoted(self):
         id_list = self._do_backend_search(
@@ -1532,6 +1835,256 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         )
 
 
+class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
+    def test_search_field_type_positivebiginteger_search_exact_empty_non_quoted(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeExact,
+            value=''
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+    def test_search_field_type_positivebiginteger_search_exact(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeExact,
+            value=self._test_object.positivebiginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeExact,
+            value=str(self._test_object.positivebiginteger)
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        # Test valid value range.
+        self._test_object.positivebiginteger = 2 ** 63 - 1
+        self._test_object.save()
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeExact,
+            value=self._test_object.positivebiginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_positivebiginteger_search_greater_than(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeGreaterThan,
+            value=self._test_object.positivebiginteger - 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_positivebiginteger_search_greater_than_or_equal(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeGreaterThanOrEqual,
+            value=self._test_object.positivebiginteger - 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeGreaterThanOrEqual,
+            value=self._test_object.positivebiginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_positivebiginteger_search_less_than(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeLessThan,
+            value=self._test_object.positivebiginteger + 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_positivebiginteger_search_less_than_or_equal(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeLessThanOrEqual,
+            value=self._test_object.positivebiginteger + 1
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeLessThanOrEqual,
+            value=self._test_object.positivebiginteger
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_positivebiginteger_search_range(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger - 1, self._test_object.positivebiginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger, self._test_object.positivebiginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger - 1, self._test_object.positivebiginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRange,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger,
+                self._test_object.positivebiginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+    def test_search_field_type_positivebiginteger_search_range_exclusive(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger - 1,
+                self._test_object.positivebiginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 1
+        )
+        self.assertTrue(self._test_object.id in id_list)
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger,
+                self._test_object.positivebiginteger + 1
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger - 1,
+                self._test_object.positivebiginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='{}..{}'.format(
+                self._test_object.positivebiginteger,
+                self._test_object.positivebiginteger
+            )
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+    def test_search_field_type_positivebiginteger_search_range_exclusive_invalid(self):
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRangeExclusive,
+            value='INVALID'
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+        id_list = self._do_backend_search(
+            field_name='positivebiginteger',
+            query_type=QueryTypeRangeExclusive,
+            value=True
+        )
+
+        self.assertEqual(
+            len(id_list), 0
+        )
+
+
 class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
     def test_search_field_type_positiveinteger_search_exact_empty_non_quoted(self):
         id_list = self._do_backend_search(
@@ -2083,11 +2636,13 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
 class BackendFieldTypeQueryTypeTestCaseMixin(
     BackendFieldTypeQueryTypeAnyTestCaseMixin,
     BackendFieldTypeQueryTypeAutoFieldTestCaseMixin,
+    BackendFieldTypeQueryTypeBigIntegerTestCaseMixin,
     BackendFieldTypeQueryTypeBooleanTestCaseMixin,
     BackendFieldTypeQueryTypeCharTestCaseMixin,
     BackendFieldTypeQueryTypeDateTimeTestCaseMixin,
     BackendFieldTypeQueryTypeEmailTestCaseMixin,
     BackendFieldTypeQueryTypeIntegerTestCaseMixin,
+    BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin,
     BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin,
     BackendFieldTypeQueryTypeTextTestCaseMixin,
     BackendFieldTypeQueryTypeUUIDTestCaseMixin,

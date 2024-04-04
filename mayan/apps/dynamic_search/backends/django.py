@@ -41,10 +41,16 @@ class BackendQueryTypeExact(BackendQueryType):
             elif self.get_search_backend_field_type() == models.UUIDField:
                 lookup_template = '{field_name}_clean__exact'
                 value_template = '{}'
+            elif self.get_search_backend_field_type() == models.BigIntegerField:
+                lookup_template = '{field_name}__exact'
+                value_template = '{}'
             elif self.get_search_backend_field_type() == models.IntegerField:
                 lookup_template = '{field_name}__exact'
                 value_template = '{}'
             elif self.get_search_backend_field_type() == models.PositiveIntegerField:
+                lookup_template = '{field_name}__exact'
+                value_template = '{}'
+            elif self.get_search_backend_field_type() == models.PositiveBigIntegerField:
                 lookup_template = '{field_name}__exact'
                 value_template = '{}'
             else:

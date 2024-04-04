@@ -63,6 +63,17 @@ DJANGO_TO_WHOOSH_FIELD_MAP = {
             'index': [ValueTransformationToString]
         }
     },
+    models.BigIntegerField: {
+        'field': whoosh.fields.NUMERIC(bits=64),
+        'query_type_list': [
+            QueryTypeExact, QueryTypeGreaterThan,
+            QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+            QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive
+        ],
+        'transformations': {
+            'search': [ValueTransformationToInteger]
+        }
+    },
     models.BooleanField: {
         'field': whoosh.fields.BOOLEAN,
         'query_type_list': [
@@ -129,6 +140,17 @@ DJANGO_TO_WHOOSH_FIELD_MAP = {
     },
     models.IntegerField: {
         'field': whoosh.fields.NUMERIC,
+        'query_type_list': [
+            QueryTypeExact, QueryTypeGreaterThan,
+            QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+            QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive
+        ],
+        'transformations': {
+            'search': [ValueTransformationToInteger]
+        }
+    },
+    models.PositiveBigIntegerField: {
+        'field': whoosh.fields.NUMERIC(bits=64, signed=False),
         'query_type_list': [
             QueryTypeExact, QueryTypeGreaterThan,
             QueryTypeGreaterThanOrEqual, QueryTypeLessThan,

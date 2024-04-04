@@ -6,8 +6,9 @@ from ...search_query_types import QueryType, QueryTypeExact
 
 from ..backends import TestSearchBackendProxy
 from ..literals import (
-    TEST_OBJECT_BOOLEAN_VALUE, TEST_OBJECT_CHAR_VALUE,
-    TEST_OBJECT_EMAIL_VALUE, TEST_OBJECT_INTEGER_VALUE,
+    TEST_OBJECT_BIG_INTEGER_VALUE, TEST_OBJECT_BOOLEAN_VALUE,
+    TEST_OBJECT_CHAR_VALUE, TEST_OBJECT_EMAIL_VALUE,
+    TEST_OBJECT_INTEGER_VALUE, TEST_OBJECT_POSITIVE_BIG_INTEGER_VALUE,
     TEST_OBJECT_POSITIVE_INTEGER_VALUE, TEST_OBJECT_TEXT_VALUE,
     TEST_OBJECT_UUID_VALUE
 )
@@ -211,11 +212,13 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
 
 class TestSearchObjectSimpleTestMixin(SearchTestMixin):
     _test_object_integer_set = True
+    _test_object_biginteger_set = True
     auto_test_search_objects_create = True
 
     def _create_test_models(self):
         self.TestModel = self._create_test_model(
             fields={
+                'biginteger': models.BigIntegerField(blank=True, null=True),
                 'boolean': models.BooleanField(blank=True, null=True),
                 'char': models.CharField(
                     blank=True, max_length=32, null=True
@@ -225,6 +228,9 @@ class TestSearchObjectSimpleTestMixin(SearchTestMixin):
                 ),
                 'email': models.EmailField(blank=True, null=True),
                 'integer': models.IntegerField(blank=True, null=True),
+                'positivebiginteger': models.PositiveBigIntegerField(
+                    blank=True, null=True
+                ),
                 'positiveinteger': models.PositiveIntegerField(
                     blank=True, null=True
                 ),
@@ -239,10 +245,14 @@ class TestSearchObjectSimpleTestMixin(SearchTestMixin):
             'boolean': TEST_OBJECT_BOOLEAN_VALUE,
             'char': TEST_OBJECT_CHAR_VALUE,
             'email': TEST_OBJECT_EMAIL_VALUE,
+            'positivebiginteger': TEST_OBJECT_POSITIVE_BIG_INTEGER_VALUE,
             'positiveinteger': TEST_OBJECT_POSITIVE_INTEGER_VALUE,
             'text': TEST_OBJECT_TEXT_VALUE,
             'uuid': TEST_OBJECT_UUID_VALUE
         }
+
+        if self._test_object_biginteger_set:
+            kwargs['biginteger'] = TEST_OBJECT_BIG_INTEGER_VALUE
 
         if self._test_object_integer_set:
             kwargs['integer'] = TEST_OBJECT_INTEGER_VALUE
@@ -255,11 +265,13 @@ class TestSearchObjectSimpleTestMixin(SearchTestMixin):
             model_name=self.TestModel._meta.model_name
         )
 
+        self._test_search_model.add_model_field(field='biginteger')
         self._test_search_model.add_model_field(field='boolean')
         self._test_search_model.add_model_field(field='char')
         self._test_search_model.add_model_field(field='datetime')
         self._test_search_model.add_model_field(field='email')
         self._test_search_model.add_model_field(field='integer')
+        self._test_search_model.add_model_field(field='positivebiginteger')
         self._test_search_model.add_model_field(field='positiveinteger')
         self._test_search_model.add_model_field(field='text')
         self._test_search_model.add_model_field(field='uuid')

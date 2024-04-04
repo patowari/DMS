@@ -26,6 +26,17 @@ DJANGO_TO_DJANGO_FIELD_MAP = {
             'search': [ValueTransformationToInteger]
         }
     },
+    models.BigIntegerField: {
+        'field': models.BigIntegerField,
+        'query_type_list': [
+            QueryTypeExact, QueryTypeGreaterThan,
+            QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+            QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive
+        ],
+        'transformations': {
+            'search': [ValueTransformationToInteger]
+        }
+    },
     models.BooleanField: {
         'field': models.BooleanField,
         'query_type_list': [
@@ -73,6 +84,17 @@ DJANGO_TO_DJANGO_FIELD_MAP = {
     },
     models.IntegerField: {
         'field': models.IntegerField,
+        'query_type_list': [
+            QueryTypeExact, QueryTypeGreaterThan,
+            QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+            QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive
+        ],
+        'transformations': {
+            'search': [ValueTransformationToInteger]
+        }
+    },
+    models.PositiveBigIntegerField: {
+        'field': models.PositiveBigIntegerField,
         'query_type_list': [
             QueryTypeExact, QueryTypeGreaterThan,
             QueryTypeGreaterThanOrEqual, QueryTypeLessThan,

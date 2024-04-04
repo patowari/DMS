@@ -68,6 +68,17 @@ DJANGO_TO_ELASTICSEARCH_FIELD_MAP = {
             ]
         }
     },
+    models.BigIntegerField: {
+        'field': elasticsearch_dsl.field.Long,
+        'query_type_list': [
+            QueryTypeExact, QueryTypeGreaterThan,
+            QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+            QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive
+        ],
+        'transformations': {
+            'search': [ValueTransformationToInteger]
+        }
+    },
     models.BooleanField: {
         'field': elasticsearch_dsl.field.Boolean,
         'query_type_list': [
@@ -135,6 +146,17 @@ DJANGO_TO_ELASTICSEARCH_FIELD_MAP = {
     },
     models.IntegerField: {
         'field': elasticsearch_dsl.field.Integer,
+        'query_type_list': [
+            QueryTypeExact, QueryTypeGreaterThan,
+            QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
+            QueryTypeLessThanOrEqual, QueryTypeRange, QueryTypeRangeExclusive
+        ],
+        'transformations': {
+            'search': [ValueTransformationToInteger]
+        }
+    },
+    models.PositiveBigIntegerField: {
+        'field': elasticsearch_dsl.field.Long(signed=False),
         'query_type_list': [
             QueryTypeExact, QueryTypeGreaterThan,
             QueryTypeGreaterThanOrEqual, QueryTypeLessThan,
