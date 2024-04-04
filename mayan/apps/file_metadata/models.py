@@ -5,7 +5,7 @@ from mayan.apps.common.utils import convert_to_internal_name
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_type_models import DocumentType
 
-from .managers import DocumentTypeSettingsManager
+from .managers import DocumentTypeSettingsManager, FileMetadataEntryManager
 from .model_mixins import (
     DocumentFileDriverEntryBusinessLogicMixin, StoredDriverBusinessLogicMixin
 )
@@ -86,6 +86,8 @@ class FileMetadataEntry(models.Model):
         unique_together = ('document_file_driver_entry', 'internal_name')
         verbose_name = _(message='File metadata entry')
         verbose_name_plural = _(message='File metadata entries')
+
+    objects = FileMetadataEntryManager()
 
     def __str__(self):
         return '{}: {}: {}'.format(

@@ -3,7 +3,16 @@ import logging
 from django.apps import apps
 from django.db import models
 
+from mayan.apps.databases.manager_mixins import ManagerMinixCreateBulk
+
 logger = logging.getLogger(name=__name__)
+
+
+class FileMetadataEntryManager(ManagerMinixCreateBulk, models.Manager):
+    """
+    Leave empty as no other methods are necessary at the moment. This is just
+    to allow the mixin into the manager class.
+    """
 
 
 class DocumentTypeSettingsManager(models.Manager):

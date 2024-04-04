@@ -239,6 +239,24 @@ def convert_to_internal_name(value):
     return slug
 
 
+def deduplicate_dictionary_values(dictionary):
+    result = {}
+
+    for key, value in dictionary.items():
+        value_test = value
+
+        count = 1
+        while True:
+            if value_test in result.values():
+                value_test = '{}_{}'.format(value, count)
+                count += 1
+            else:
+                result[key] = value_test
+                break
+
+    return result
+
+
 def flatten_list(value):
     if isinstance(value, (str, bytes)):
         yield value

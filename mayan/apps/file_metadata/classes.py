@@ -5,7 +5,10 @@ from django.db.utils import OperationalError, ProgrammingError
 from django.utils.functional import classproperty
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
-from mayan.apps.common.utils import get_class_full_name
+from mayan.apps.common.utils import (
+    convert_to_internal_name, deduplicate_dictionary_values,
+    get_class_full_name
+)
 
 from .exceptions import FileMetadataError
 
@@ -102,8 +105,8 @@ class FileMetadataDriver(
 ):
     _loader_module_name = 'drivers'
     description = ''
-    label = None
     internal_name = None
+    label = None
     mime_type_list = ()
 
     @classproperty
@@ -164,27 +167,49 @@ class FileMetadataDriver(
         """
 
     def process(self, document_file):
-        logger.info(
-            'Starting processing document file: %s', document_file
+        logger.info('Starting processing document file: %s', document_file)
+
+        FileMetadataEntry = apps.get_model(
+            app_label='file_metadata', model_name='FileMetadataEntry'
         )
 
-        self.model_instance.driver_entries.filter(
+        file_metadata_dictionary = self._process(document_file=document_file) or {}
+
+        internal_name_dictionary = {}
+        for key in file_metadata_dictionary.keys():
+            internal_name_dictionary[key] = convert_to_internal_name(
+                value=key
+            )
+
+        internal_name_dictionary_deduplicated = deduplicate_dictionary_values(
+            dictionary=internal_name_dictionary
+        )
+
+        queryset_document_file_metadata = self.model_instance.driver_entries.filter(
             document_file=document_file
-        ).delete()
+        )
+        queryset_document_file_metadata.delete()
 
         document_file_driver_entry = self.model_instance.driver_entries.create(
             document_file=document_file
         )
 
-        results = self._process(document_file=document_file) or {}
+        coroutine = FileMetadataEntry.objects.create_bulk()
+        next(coroutine)
 
-        for key, value in results.items():
-            document_file_driver_entry.entries.create(
-                key=key, value=value
+        for key, value in file_metadata_dictionary.items():
+            internal_name = internal_name_dictionary_deduplicated[key]
+            coroutine.send(
+                {
+                    'document_file_driver_entry': document_file_driver_entry,
+                    'internal_name': internal_name, 'key': key, 'value': value
+                }
             )
+
+        coroutine.close()
 
     def _process(self, document_file):
         raise NotImplementedError(
-            'Your %s class has not defined the required '
-            '_process() method.' % self.__class__.__name__
+            'Your %s class has not defined the required _process() '
+            'method.' % self.__class__.__name__
         )

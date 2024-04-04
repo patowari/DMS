@@ -176,6 +176,7 @@
 - Remove the ``source`` field from the source metadata model.
 - Add support for searching big integers and positive big integers.
 - Support searching document files by size.
+- Convert the file metadata app to use the the bulk create manager mixin.
 
 4.6.3 (2024-03-28)
 ==================
