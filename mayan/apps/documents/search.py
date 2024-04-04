@@ -73,6 +73,7 @@ search_model_document_file.add_model_field(field='checksum')
 search_model_document_file.add_model_field(field='comment')
 search_model_document_file.add_model_field(field='filename')
 search_model_document_file.add_model_field(field='mimetype')
+search_model_document_file.add_model_field(field='size')
 
 # Document file page
 

@@ -554,6 +554,7 @@ class DocumentsApp(MayanAppConfig):
         )
 
         # Document
+
         SourceColumn(
             attribute='datetime_created', include_label=True,
             is_sortable=True, name='datetime_created',
@@ -630,6 +631,10 @@ class DocumentsApp(MayanAppConfig):
         SourceColumn(
             attribute='mimetype', include_label=True, is_sortable=True,
             order=-9, source=DocumentFile
+        )
+        SourceColumn(
+            attribute='size', include_label=True, is_sortable=True,
+            source=DocumentFile
         )
 
         # DocumentFilePage

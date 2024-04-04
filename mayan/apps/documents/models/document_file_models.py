@@ -31,9 +31,7 @@ class DocumentFile(
     DocumentFileBusinessLogicMixin, ExtraDataModelMixin, HooksModelMixin,
     models.Model
 ):
-    _ordering_fields = (
-        'comment', 'encoding', 'filename', 'mimetype', 'size'
-    )
+    _ordering_fields = ('comment', 'encoding', 'filename', 'mimetype', 'size')
 
     """
     Model that describes a document file and its properties
