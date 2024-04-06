@@ -10,7 +10,8 @@ from mayan.apps.acls.permissions import (
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_return, menu_secondary, menu_setup
+    menu_list_facet, menu_object, menu_return, menu_secondary, menu_setup,
+    menu_topbar
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
@@ -18,8 +19,8 @@ from mayan.apps.navigation.classes import SourceColumn
 from .events import event_theme_edited, event_user_theme_settings_edited
 from .handlers import handler_user_theme_setting_create
 from .links import (
-    link_theme_create, link_theme_delete, link_theme_edit, link_theme_list,
-    link_theme_setup, link_user_theme_settings_detail,
+    link_ajax_refresh, link_theme_create, link_theme_delete, link_theme_edit,
+    link_theme_list, link_theme_setup, link_user_theme_settings_detail,
     link_user_theme_settings_edit
 )
 from .permissions import (
@@ -123,6 +124,9 @@ class AppearanceApp(MayanAppConfig):
         )
         menu_setup.bind_links(
             links=(link_theme_setup,)
+        )
+        menu_topbar.bind_links(
+            links=(link_ajax_refresh,)
         )
 
         # User

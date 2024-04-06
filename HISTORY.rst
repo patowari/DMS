@@ -177,6 +177,7 @@
 - Add support for searching big integers and positive big integers.
 - Support searching document files by size.
 - Convert the file metadata app to use the the bulk create manager mixin.
+- Add a button to refresh the AJAX view port.
 
 4.6.3 (2024-03-28)
 ==================

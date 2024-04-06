@@ -1,5 +1,9 @@
 from mayan.apps.appearance.classes import Icon
 
+icon_ajax_refresh = Icon(
+    driver_name='fontawesome', symbol='sync'
+)
+
 icon_user_theme_settings_detail = Icon(
     driver_name='fontawesome', symbol='palette'
 )

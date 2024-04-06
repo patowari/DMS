@@ -801,11 +801,9 @@ Input search clearable
     pointer-events: none;
 }
 
-
 .panel-item > .panel-body {
     padding: 8px;
 }
-
 
 .panel-footer hr {
     border-top: 1px solid rgb(121, 141, 143);
@@ -846,4 +844,10 @@ Input search clearable
     margin-left: -20px;
     margin-right: -20px;
     margin-top: -20px;
+}
+
+/* AJAX refresh button */
+
+.appearance-link-ajax-refresh {
+    padding-right: 10px !important;
 }

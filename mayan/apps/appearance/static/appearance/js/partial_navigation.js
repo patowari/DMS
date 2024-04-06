@@ -53,12 +53,18 @@ class PartialNavigation {
 
         this.currentAjaxRequest = null;
         this.AjaxRequestTimeOutList = [];
+
+        // AJAX Refresh button.
+        this.ajaxRefreshButtonAnimationSpeed = 1000;
+        this.ajaxRefreshButtonEnabled = true;
+        this.ajaxRefreshButtonTimer = setTimeout(null);;
     }
 
     initialize () {
         this.setupAjaxAnchors();
         this.setupAjaxNavigation();
         this.setupAjaxForm();
+        this.setupAjaxRefreshButton();
     }
 
     filterLocation (newLocation) {
@@ -361,6 +367,35 @@ class PartialNavigation {
                     history.pushState({}, '', urlCurrent);
                     $('#ajax-content').html(data).change();
                 }
+            }
+        });
+    }
+
+    setupAjaxRefreshButton () {
+        const app = this;
+
+        $('body').on('click', 'a.appearance-link-ajax-refresh', function (event) {
+            const $this = $(this);
+
+            $this.blur();
+
+            event.preventDefault();
+
+            if (app.ajaxRefreshButtonEnabled) {
+                app.ajaxRefreshButtonEnabled = false;
+
+                clearTimeout(app.ajaxRefreshButtonTimer);
+                app.setLocation(window.location.hash.substring(1));
+                $this.addClass('fa-spin');
+                $this.css(
+                    'animation-duration',
+                    app.ajaxRefreshButtonAnimationSpeed + 'ms'
+                );
+
+                app.ajaxRefreshButtonTimer = setTimeout(function () {
+                    $this.removeClass('fa-spin');
+                    app.ajaxRefreshButtonEnabled = true;
+                }, app.ajaxRefreshButtonAnimationSpeed);
             }
         });
     }
