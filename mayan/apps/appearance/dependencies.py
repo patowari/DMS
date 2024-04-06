@@ -32,7 +32,7 @@ JavaScriptDependency(
 )
 JavaScriptDependency(
     label=_(message='FontAwesome'), module=__name__,
-    name='@fortawesome/fontawesome-free', version_string='=5.15.4'
+    name='@fortawesome/fontawesome-free', version_string='=6.5.2'
 )
 JavaScriptDependency(
     label=_(message='jQuery'), module=__name__, name='jquery',
