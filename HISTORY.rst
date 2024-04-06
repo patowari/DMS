@@ -170,7 +170,7 @@
   the ``extra_worker_custom`` profile.
 - Make the source metadata key sortable.
 - Optimize and convert the batch source metadata code into a reusable
-  corotine with batch model creation.
+  coroutine with batch model creation.
 - Add source metadata search definitions.
 - Add source metadata API.
 - Remove the ``source`` field from the source metadata model.
