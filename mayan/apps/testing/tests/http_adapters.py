@@ -4,14 +4,17 @@ import requests
 
 
 class TestClientAdapter(requests.adapters.BaseAdapter):
-    def __init__(self, test_case):
+    def __init__(self, test_case, response_content=None):
+        self.response_content = response_content
         self.test_case = test_case
 
     def build_response(self, request, django_response):
         """
-        Build a requests response from a Django response
+        Build a requests response from a Django response.
         """
         response = requests.Response()
+
+        response._content = self.response_content
 
         # Fallback to None if there's no status_code, for whatever reason.
         response.status_code = getattr(
@@ -55,7 +58,7 @@ class TestClientAdapter(requests.adapters.BaseAdapter):
     def close(self):
         """
         No connection needs to be closed, but the method must exists
-        or a NotImplementedError is raised.
+        or a `NotImplementedError` is raised.
         """
 
     def send(
@@ -72,11 +75,11 @@ class TestClientAdapter(requests.adapters.BaseAdapter):
         # Expose the timeout value so that the test case can assert it.
         self.test_case.timeout = timeout
 
+        django_response = self.test_case.generic(
+            data=request.body, headers=request.headers, method=request.method,
+            viewname=self.test_case._test_view_name
+        )
+
         return self.build_response(
-            django_response=self.test_case.generic(
-                data=request.body,
-                headers=request.headers,
-                method=request.method,
-                viewname=self.test_case._test_view_name
-            ), request=request
+            django_response=django_response, request=request
         )
