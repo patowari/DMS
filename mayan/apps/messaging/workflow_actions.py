@@ -1,12 +1,9 @@
 import logging
 
-from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_states.classes import WorkflowAction
-from mayan.apps.document_states.literals import (
-    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-)
+
 from mayan.apps.document_states.models.workflow_instance_models import (
     WorkflowInstance
 )
@@ -19,19 +16,44 @@ logger = logging.getLogger(name=__name__)
 
 class WorkflowActionMessageSend(WorkflowAction):
     form_fields = {
+        'group_name_list': {
+            'label': _(message='Group name list'),
+            'class': 'mayan.apps.templating.fields.ModelTemplateField',
+            'kwargs': {
+                'initial_help_text': _(
+                    message='Comma separated list of user group names '
+                    'that will receive the message. Can be a static value or '
+                    'a template.'
+                ),
+                'model': WorkflowInstance,
+                'model_variable': 'workflow_instance',
+                'required': True
+            }
+        },
+        'role_name_list': {
+            'label': _(message='Role name list'),
+            'class': 'mayan.apps.templating.fields.ModelTemplateField',
+            'kwargs': {
+                'initial_help_text': _(
+                    message='Comma separated list of role labels '
+                    'that will receive the message. Can be a static value or '
+                    'a template.'
+                ),
+                'model': WorkflowInstance,
+                'model_variable': 'workflow_instance',
+                'required': True
+            }
+        },
         'username_list': {
             'label': _(message='Username list'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{}. {}',
-                        _(
-                            message='Comma separated list of usernames that will '
-                            'receive the message.'
-                        ),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
+                    _(
+                        message='Comma separated list of usernames that will '
+                        'receive the message. Can be a static value or '
+                        'a template.'
+                    ),
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
@@ -43,11 +65,9 @@ class WorkflowActionMessageSend(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{}. {}',
-                        _(
-                            message='Subject of the message to be sent.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                    _(
+                        message='Subject of the message to be sent. Can be a '
+                        'static value or a template.'
                     )
                 ),
                 'model': WorkflowInstance,
@@ -60,11 +80,9 @@ class WorkflowActionMessageSend(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{}. {}',
-                        _(
-                            message='The actual text to send.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
+                    _(
+                        message='The actual text to send. Can be a static '
+                        'value or a template.'
                     )
                 ),
                 'model': WorkflowInstance,
@@ -82,7 +100,9 @@ class WorkflowActionMessageSend(WorkflowAction):
         fieldsets += (
             (
                 _(message='Recipients'), {
-                    'fields': ('username_list',)
+                    'fields': (
+                        'group_name_list', 'role_name_list', 'username_list'
+                    )
                 },
             ), (
                 _(message='Content'), {
@@ -93,10 +113,47 @@ class WorkflowActionMessageSend(WorkflowAction):
         return fieldsets
 
     def execute(self, context):
+        final_username_list = []
+        queryset_users = get_user_queryset()
+
+        # Group name list.
+
+        group_name_list = self.render_field(
+            field_name='group_name_list', context=context
+        ) or ''
+        group_name_list = group_name_list.split(',')
+
+        if group_name_list:
+            queyset_group_users = queryset_users.filter(
+                groups__name__in=group_name_list
+            )
+            final_username_list.extend(
+                queyset_group_users.values_list('username', flat=True)
+            )
+
+        # Role label list.
+
+        role_label_list = self.render_field(
+            field_name='role_label_list', context=context
+        ) or ''
+        role_label_list = role_label_list.split(',')
+
+        if role_label_list:
+            queyset_role_users = queryset_users.filter(
+                groups__roles__label__in=role_label_list
+            )
+            final_username_list.extend(
+                queyset_role_users.values_list('username', flat=True)
+            )
+
+        # Username list.
+
         username_list = self.render_field(
             field_name='username_list', context=context
         ) or ''
         username_list = username_list.split(',')
+        if username_list:
+            final_username_list.extend(username_list)
 
         subject = self.render_field(
             field_name='subject', context=context
@@ -106,7 +163,9 @@ class WorkflowActionMessageSend(WorkflowAction):
             field_name='body', context=context
         ) or ''
 
-        for user in get_user_queryset().filter(username__in=username_list):
-            Message.objects.create(
-                user=user, body=body, subject=subject
-            )
+        queryset_users_to_message = queryset_users.filter(
+            username__in=final_username_list
+        )
+
+        for user in queryset_users_to_message:
+            Message.objects.create(body=body, subject=subject, user=user)

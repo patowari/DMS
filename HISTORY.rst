@@ -183,6 +183,8 @@
 - Convert the action to move a document to the trash into a background task.
   Breaking change: A ``DELETE`` request now returns 202 ACCEPTED, instead of
   204 NO CONTENT.
+- Update the messaging app workflow action to support sending messages to
+  users by group and by roles.
 
 4.6.3 (2024-03-28)
 ==================
