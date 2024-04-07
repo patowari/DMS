@@ -13,6 +13,34 @@ from .utils import execute_callback
 logger = logging.getLogger(name=__name__)
 
 
+@app.task(bind=True, ignore_result=True, retry_backoff=True)
+def task_document_move_to_trash(self, document_id, user_id=None):
+    Document = apps.get_model(
+        app_label='documents', model_name='Document'
+    )
+    User = get_user_model()
+
+    try:
+        if user_id:
+            user = User.objects.get(pk=user_id)
+        else:
+            user = None
+    except OperationalError as exception:
+        raise self.retry(exc=exception)
+
+    logger.debug(msg='Executing')
+    try:
+        document = Document.objects.get(
+            pk=document_id
+        )
+        document._event_actor = user
+        document.delete()
+    except OperationalError as exception:
+        raise self.retry(exc=exception)
+
+    logger.debug(msg='Finished')
+
+
 @app.task(bind=True, ignore_results=True, retry_backoff=True)
 def task_document_upload(
     self, document_type_id, shared_uploaded_file_id,

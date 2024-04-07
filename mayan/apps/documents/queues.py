@@ -13,6 +13,9 @@ from .literals import (
 queue_documents_fast = CeleryQueue(
     name='documents_fast', label=_(message='Documents fast'), worker=worker_b
 )
+queue_documents_slow = CeleryQueue(
+    name='documents_slow', label=_(message='Documents slow'), worker=worker_b
+)
 queue_documents_file = CeleryQueue(
     name='documents_file', label=_(message='Documents file'), worker=worker_b
 )
@@ -21,25 +24,31 @@ queue_documents_file_slow = CeleryQueue(
     worker=worker_b
 )
 queue_documents_periodic = CeleryQueue(
-    name='documents_periodic', label=_(message='Documents periodic'), transient=True,
-    worker=worker_c
+    name='documents_periodic', label=_(message='Documents periodic'),
+    transient=True, worker=worker_c
 )
 queue_documents_trash = CeleryQueue(
-    name='documents_trash', label=_(message='Documents trash'), worker=worker_c
+    name='documents_trash', label=_(message='Documents trash'),
+    worker=worker_c
 )
 queue_documents_version = CeleryQueue(
-    name='documents_version', label=_(message='Documents version'), worker=worker_b
+    name='documents_version', label=_(message='Documents version'),
+    worker=worker_b
 )
 
 queue_documents_fast.add_task_type(
     dotted_path='mayan.apps.documents.tasks.document_file_tasks.task_document_file_create',
     label=_(message='Create new document file')
 )
-queue_documents_fast.add_task_type(
+queue_documents_slow.add_task_type(
     dotted_path='mayan.apps.documents.tasks.document_file_tasks.task_document_file_upload',
     label=_(message='Upload new document file')
 )
-queue_documents_fast.add_task_type(
+queue_documents_slow.add_task_type(
+    dotted_path='mayan.apps.documents.tasks.document_tasks.task_document_move_to_trash',
+    label=_(message='Move a document to the trash')
+)
+queue_documents_slow.add_task_type(
     dotted_path='mayan.apps.documents.tasks.document_tasks.task_document_upload',
     label=_(message='Upload new document')
 )

@@ -199,6 +199,13 @@ class DocumentAPIViewTestMixin(DocumentTestMixin):
     def _request_test_document_list_api_view(self):
         return self.get(viewname='rest_api:document-list')
 
+    def _request_test_document_move_to_trash_api_view(self):
+        return self.delete(
+            viewname='rest_api:document-detail', kwargs={
+                'document_id': self._test_document.pk
+            }
+        )
+
     def _request_test_document_upload_api_view(self):
         self._test_object_track()
 
@@ -254,6 +261,20 @@ class DocumentViewTestMixin(DocumentTestMixin):
     def _request_test_document_properties_view(self):
         return self.get(
             viewname='documents:document_properties', kwargs={
+                'document_id': self._test_document.pk
+            }
+        )
+
+    def _request_test_document_trash_get_view(self):
+        return self.get(
+            viewname='documents:document_trash', kwargs={
+                'document_id': self._test_document.pk
+            }
+        )
+
+    def _request_test_document_trash_post_view(self):
+        return self.post(
+            viewname='documents:document_trash', kwargs={
                 'document_id': self._test_document.pk
             }
         )

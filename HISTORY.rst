@@ -180,6 +180,9 @@
 - Add a button to refresh the AJAX view port.
 - Update FontAwesome from version 5.15.4 to 6.5.2.
 - Remove ``Link`` class argument ``link.html_extra_attributes``.
+- Convert the action to move a document to the trash into a background task.
+  Breaking change: A ``DELETE`` request now returns 202 ACCEPTED, instead of
+  204 NO CONTENT.
 
 4.6.3 (2024-03-28)
 ==================

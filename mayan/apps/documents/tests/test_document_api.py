@@ -5,18 +5,94 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from ..events import (
     event_document_created, event_document_edited,
     event_document_file_created, event_document_file_edited,
-    event_document_type_changed, event_document_version_created,
-    event_document_version_edited, event_document_version_page_created
+    event_document_trashed, event_document_type_changed,
+    event_document_version_created, event_document_version_edited,
+    event_document_version_page_created
 )
 from ..models.document_models import Document
+from ..models.trashed_document_models import TrashedDocument
 from ..permissions import (
     permission_document_change_type, permission_document_create,
-    permission_document_properties_edit, permission_document_view
+    permission_document_properties_edit, permission_document_trash,
+    permission_document_view
 )
 
 from .mixins.document_mixins import (
     DocumentAPIViewTestMixin, DocumentTestMixin
 )
+
+
+class DocumentTrashAPIViewTestCase(DocumentAPIViewTestMixin, BaseAPITestCase):
+    auto_upload_test_document = False
+    auto_create_test_document_stub = True
+
+    def test_document_move_to_trash_api_view_no_permission(self):
+        document_count = Document.valid.count()
+        trashed_document_count = TrashedDocument.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_document_move_to_trash_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        self.assertEqual(Document.valid.count(), document_count)
+        self.assertEqual(
+            TrashedDocument.objects.count(), trashed_document_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_move_to_trash_api_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_trash
+        )
+
+        document_count = Document.valid.count()
+        trashed_document_count = TrashedDocument.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_document_move_to_trash_api_view()
+        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
+
+        self.assertEqual(Document.valid.count(), document_count - 1)
+        self.assertEqual(
+            TrashedDocument.objects.count(), trashed_document_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].action_object, None)
+        self.assertEqual(events[0].actor, self._test_case_user)
+        self.assertEqual(events[0].target, self._test_document)
+        self.assertEqual(events[0].verb, event_document_trashed.id)
+
+    def test_trashed_document_move_to_trash_api_view_with_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_trash
+        )
+
+        self._test_document.delete()
+
+        document_count = Document.valid.count()
+        trashed_document_count = TrashedDocument.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_document_move_to_trash_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        self.assertEqual(Document.valid.count(), document_count)
+        self.assertEqual(
+            TrashedDocument.objects.count(), trashed_document_count
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class DocumentAPIViewTestCase(DocumentAPIViewTestMixin, BaseAPITestCase):

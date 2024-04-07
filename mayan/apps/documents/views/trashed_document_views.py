@@ -22,7 +22,10 @@ from ..permissions import (
     permission_trash_empty, permission_trashed_document_delete,
     permission_trashed_document_restore
 )
-from ..tasks import task_trash_can_empty, task_trashed_document_delete
+from ..tasks import (
+    task_document_move_to_trash, task_trash_can_empty,
+    task_trashed_document_delete
+)
 
 from .document_views import DocumentListView
 
@@ -66,8 +69,11 @@ class DocumentTrashView(MultipleObjectConfirmActionView):
             return None
 
     def object_action(self, form, instance):
-        instance._event_actor = self.request.user
-        instance.delete()
+        task_document_move_to_trash.apply_async(
+            kwargs={
+                'document_id': instance.pk, 'user_id': self.request.user.pk
+            }
+        )
 
 
 class EmptyTrashCanView(ConfirmView):

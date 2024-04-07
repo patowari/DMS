@@ -1,6 +1,8 @@
 import logging
 
+from rest_framework import status
 from rest_framework.generics import get_object_or_404
+from rest_framework.response import Response
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.rest_api import generics
@@ -17,6 +19,7 @@ from ..serializers.document_serializers import (
     DocumentFileActionSerializer, DocumentSerializer,
     DocumentChangeTypeSerializer, DocumentUploadSerializer
 )
+from ..tasks.document_tasks import task_document_move_to_trash
 
 logger = logging.getLogger(name=__name__)
 
@@ -38,6 +41,17 @@ class APIDocumentDetailView(generics.RetrieveUpdateDestroyAPIView):
     }
     serializer_class = DocumentSerializer
     source_queryset = Document.valid.all()
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+
+        task_document_move_to_trash.apply_async(
+            kwargs={
+                'document_id': instance.pk, 'user_id': self.request.user.pk
+            }
+        )
+
+        return Response(status=status.HTTP_202_ACCEPTED)
 
     def get_instance_extra_data(self):
         return {'_event_actor': self.request.user}

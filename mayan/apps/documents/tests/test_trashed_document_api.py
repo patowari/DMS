@@ -3,14 +3,12 @@ from rest_framework import status
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
-    event_document_trashed, event_trashed_document_deleted,
-    event_trashed_document_restored
+    event_trashed_document_deleted, event_trashed_document_restored
 )
 from ..models.document_models import Document
 from ..permissions import (
-    permission_document_trash, permission_document_version_view,
-    permission_document_view, permission_trashed_document_delete,
-    permission_trashed_document_restore
+    permission_document_version_view, permission_document_view,
+    permission_trashed_document_delete, permission_trashed_document_restore
 )
 
 from .mixins.document_mixins import DocumentTestMixin
@@ -25,66 +23,6 @@ class TrashedDocumentAPIViewTestCase(
     def setUp(self):
         super().setUp()
         self._create_test_document_stub()
-
-    def test_document_trash_api_view_no_permission(self):
-        trashed_document_count = Document.trash.count()
-        document_count = Document.valid.count()
-
-        self._clear_events()
-
-        response = self._request_test_document_trash_api_view()
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-        self.assertEqual(Document.trash.count(), trashed_document_count)
-        self.assertEqual(Document.valid.count(), document_count)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_trash_api_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_trash
-        )
-
-        trashed_document_count = Document.trash.count()
-        document_count = Document.valid.count()
-
-        self._clear_events()
-
-        response = self._request_test_document_trash_api_view()
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-
-        self.assertEqual(Document.trash.count(), trashed_document_count + 1)
-        self.assertEqual(Document.valid.count(), document_count - 1)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 1)
-
-        self.assertEqual(events[0].action_object, None)
-        self.assertEqual(events[0].actor, self._test_case_user)
-        self.assertEqual(events[0].target, self._test_document)
-        self.assertEqual(events[0].verb, event_document_trashed.id)
-
-    def test_trashed_document_trash_api_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document, permission=permission_document_trash
-        )
-
-        self._test_document.delete()
-
-        trashed_document_count = Document.trash.count()
-        document_count = Document.valid.count()
-
-        self._clear_events()
-
-        response = self._request_test_document_trash_api_view()
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-        self.assertEqual(Document.trash.count(), trashed_document_count)
-        self.assertEqual(Document.valid.count(), document_count)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
 
     def test_trashed_document_delete_api_view_no_permission(self):
         self._test_document.delete()
