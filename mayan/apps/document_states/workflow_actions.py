@@ -13,7 +13,6 @@ from mayan.apps.credentials.class_mixins import (
 from .classes import WorkflowAction
 from .exceptions import WorkflowStateActionError
 from .literals import (
-    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
     DEFAULT_HTTP_ACTION_TIMEOUT,
     WORKFLOW_ACTION_HTTP_REQUEST_DEFAULT_RESPONSE_STORE_NAME
 )
@@ -32,13 +31,8 @@ class DocumentPropertiesEditAction(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {}', _(
-                            message='The new label to be assigned to the '
-                            'document.'
-                        ),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
+                    message='The new label to be assigned to the '
+                    'document.'
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
@@ -49,13 +43,8 @@ class DocumentPropertiesEditAction(WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {}',
-                        _(
-                            message='The new description to be assigned to the '
-                            'document.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
+                    message='The new description to be assigned to the '
+                    'document.'
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
@@ -183,13 +172,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'label': _(message='URL'),
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
-                'initial_help_text': _(
-                    format_lazy(
-                        '{} {}',
-                        _(message='The URL to access.'),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
-                ),
+                'initial_help_text': _(message='The URL to access.'),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
                 'required': True
@@ -199,14 +182,9 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {}',
-                        _(
-                            message='The HTTP method to use for the request. '
-                            'Typical choices are OPTIONS, HEAD, POST, GET, '
-                            'PUT, PATCH, DELETE.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
+                    message='The HTTP method to use for the request. '
+                    'Typical choices are OPTIONS, HEAD, POST, GET, '
+                    'PUT, PATCH, DELETE.'
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
@@ -217,17 +195,9 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {} {}',
-                        _(
-                            message='Username to use for making the request with '
-                            'HTTP Basic Auth.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
-                        _(
-                            message='The credential object is available as '
-                            '{{ credential }}.'
-                        )
-                    )
+                    message='Username to use for making the request with '
+                    'HTTP Basic Auth. The credential object is available as '
+                    '{{ credential }}.'
                 ),
                 'max_length': 192,
                 'model': WorkflowInstance,
@@ -239,17 +209,9 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {} {}',
-                        _(
-                            message='Password to use for making the request with '
-                            'HTTP Basic Auth.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
-                        _(
-                            message='The credential object is available as '
-                            '{{ credential }}.'
-                        )
-                    )
+                    message='Password to use for making the request with '
+                    'HTTP Basic Auth. The credential object is available as '
+                    '{{ credential }}.'
                 ),
                 'max_length': 255,
                 'model': WorkflowInstance,
@@ -261,17 +223,9 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {} {}',
-                        _(
-                            message='Headers to send with the HTTP request. Must '
-                            'be in JSON format.'
-                        ), BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
-                        _(
-                            message='The credential object is available as '
-                            '{{ credential }}.'
-                        )
-                    )
+                    message='Headers to send with the HTTP request. Must '
+                    'be in JSON format. The credential object is available as '
+                    '{{ credential }}.'
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
@@ -282,11 +236,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'class': 'mayan.apps.templating.fields.ModelTemplateField',
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {}',
-                        _(message='A JSON document to include in the request.'),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
+                    message='A JSON document to include in the request.'
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
@@ -298,11 +248,7 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
             'default': DEFAULT_HTTP_ACTION_TIMEOUT,
             'kwargs': {
                 'initial_help_text': _(
-                    format_lazy(
-                        '{} {}',
-                        _(message='Time in seconds to wait for a response.'),
-                        BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT
-                    )
+                    message='Time in seconds to wait for a response.'
                 ),
                 'model': WorkflowInstance,
                 'model_variable': 'workflow_instance',
