@@ -47,10 +47,9 @@ class Link(TemplateObjectMixin):
     def __init__(
         self, text=None, view=None, args=None, badge_text=None,
         condition=None, conditional_active=None, conditional_disable=None,
-        description=None, html_data=None, html_extra_attributes=None,
-        html_extra_classes=None, icon=None, keep_query=False, kwargs=None,
-        name=None, permission=None, query=None, remove_from_query=None,
-        tags=None, url=None
+        description=None, html_data=None, html_extra_classes=None, icon=None,
+        keep_query=False, kwargs=None, name=None, permission=None, query=None,
+        remove_from_query=None, tags=None, url=None
     ):
         self.args = args or []
         self.badge_text = badge_text
@@ -60,7 +59,6 @@ class Link(TemplateObjectMixin):
         self.description = description
         self.html_data = html_data
         self.html_data_resolved = None
-        self.html_extra_attributes = html_extra_attributes
         self.html_extra_classes = html_extra_classes
         self._icon = icon
         self.keep_query = keep_query
@@ -268,7 +266,6 @@ class Link(TemplateObjectMixin):
             resolved_link.url = new_url.url
 
         resolved_link.context = context
-        resolved_link.html_extra_attributes = self.html_extra_attributes
 
         return resolved_link
 
@@ -672,11 +669,10 @@ class Menu(TemplateObjectMixin):
 
 
 class ResolvedLink:
-    def __init__(self, link, current_view_name, html_extra_attributes=None):
+    def __init__(self, link, current_view_name):
         self.context = None
         self.current_view_name = current_view_name
         self.disabled = False
-        self.html_extra_attributes = html_extra_attributes
         self.link = link
         self.request = None
         self.url = '#'

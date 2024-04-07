@@ -15,8 +15,6 @@
             {% for key,value in link.html_data.items %}
                 data-{{ key }}={{ value }}
             {% endfor %}
-
-        {% if link.html_extra_attributes %}{{ link.html_extra_attributes }}{% endif %}
         {% if link.url %}href="{{ link.url }}"{% endif %}
         >{% if link_icon and not hide_icon %}{{ link_icon.render }}{% endif %}
         {{ link.text|default:'' }}{% if link.badge_text %}&nbsp;<span class="badge">{{ link.badge_text }}</span>

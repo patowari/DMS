@@ -179,6 +179,7 @@
 - Convert the file metadata app to use the the bulk create manager mixin.
 - Add a button to refresh the AJAX view port.
 - Update FontAwesome from version 5.15.4 to 6.5.2.
+- Remove ``Link`` class argument ``link.html_extra_attributes``.
 
 4.6.3 (2024-03-28)
 ==================
