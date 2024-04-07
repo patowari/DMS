@@ -56,9 +56,13 @@ class TemplateField(forms.CharField):
 class ModelTemplateField(TemplateField):
     widget = ModelTemplateWidget
 
-    def __init__(self, model, model_variable, *args, **kwargs):
+    def __init__(
+        self, model, model_variable, model_variable_help_text=None, *args,
+        **kwargs
+    ):
         self.model = model
         self.model_variable = model_variable
+        self.model_variable_help_text = model_variable_help_text
 
         super().__init__(*args, **kwargs)
 
@@ -67,7 +71,19 @@ class ModelTemplateField(TemplateField):
         self.widget.attrs['data-model-variable'] = self.model_variable
 
     def get_context_variable_help_text(self, **kwargs):
-        variable_help_text = '{{{{ {} }}}}'.format(self.model_variable)
+        model_verbose_name = getattr(self.model._meta, 'verbose_name', None)
+
+        model_variable_help_text = self.model_variable_help_text or model_verbose_name
+
+        if model_variable_help_text:
+            format_variable_help_text = '{{{{ {model_variable} }}}} - {model_variable_help_text}'
+        else:
+            format_variable_help_text = '{{{{ {model_variable} }}}}'
+
+        variable_help_text = format_variable_help_text.format(
+            model_variable=self.model_variable,
+            model_variable_help_text=model_variable_help_text
+        )
 
         result = '{}, {}'.format(
             super().get_context_variable_help_text(**kwargs),
