@@ -13,7 +13,9 @@ from mayan.apps.credentials.class_mixins import (
 from .classes import WorkflowAction
 from .exceptions import WorkflowStateActionError
 from .literals import (
-    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT, DEFAULT_HTTP_ACTION_TIMEOUT
+    BASE_WORKFLOW_TEMPLATE_STATE_ACTION_HELP_TEXT,
+    DEFAULT_HTTP_ACTION_TIMEOUT,
+    WORKFLOW_ACTION_HTTP_REQUEST_DEFAULT_RESPONSE_STORE_NAME
 )
 from .models.workflow_instance_models import WorkflowInstance
 from .models.workflow_models import Workflow
@@ -306,8 +308,28 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 'model_variable': 'workflow_instance',
                 'required': True
             }
+        }, 'response_store': {
+            'label': _(message='Store response'),
+            'class': 'django.forms.fields.BooleanField',
+            'default': False,
+            'kwargs': {
+                'help_text': _(
+                    'Store the response in the workflow context.'
+                ),
+                'required': False
+            }
+        }, 'response_store_name': {
+            'label': _(message='Response variable name'),
+            'class': 'django.forms.fields.CharField',
+            'default': WORKFLOW_ACTION_HTTP_REQUEST_DEFAULT_RESPONSE_STORE_NAME,
+            'kwargs': {
+                'help_text': _(
+                    'Variable used to store the response in the workflow '
+                    'instance context.'
+                ),
+                'required': False
+            }
         }
-
     }
     label = _(message='Perform an HTTP request')
     previous_dotted_paths = (
@@ -320,10 +342,17 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
 
         fieldsets += (
             (
-                _(message='HTTP'), {
+                _(message='Request'), {
                     'fields': (
                         'url', 'username', 'password', 'headers', 'timeout',
                         'method', 'payload'
+                    )
+                },
+            ),
+            (
+                _(message='Response'), {
+                    'fields': (
+                        'response_store', 'response_store_name'
                     )
                 },
             ),
@@ -353,8 +382,9 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
 
     def execute(self, context):
         authentication_context = context.copy()
-
         model_instance = self.get_model_instance()
+        workflow_instance = context['workflow_instance']
+
         credential = self.get_credential(action_object=model_instance)
         if credential:
             authentication_context['credential'] = credential
@@ -388,7 +418,37 @@ class HTTPAction(BackendMixinCredentialsOptional, WorkflowAction):
                 password=password, username=username
             )
 
-        requests.request(
+        response = requests.request(
             auth=authentication, headers=headers, json=payload,
             method=method, timeout=timeout, url=url
         )
+
+        if self.kwargs.get('response_store', False):
+            try:
+                json = response.json()
+            except requests.exceptions.JSONDecodeError:
+                json = {}
+
+            response_variable_name = self.kwargs.get(
+                'response_store_name',
+                WORKFLOW_ACTION_HTTP_REQUEST_DEFAULT_RESPONSE_STORE_NAME
+            )
+
+            try:
+                apparent_encoding = response.apparent_encoding
+            except TypeError:
+                apparent_encoding = None
+
+            response_context = {
+                response_variable_name: {
+                    'apparent_encoding': apparent_encoding,
+                    'encoding': response.encoding,
+                    'headers': dict(response.headers),
+                    'json': json,
+                    'reason': response.reason,
+                    'status_code': response.status_code,
+                    'text': response.text
+                }
+            }
+
+            workflow_instance.do_context_update(context=response_context)

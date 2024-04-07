@@ -185,6 +185,8 @@
   204 NO CONTENT.
 - Update the messaging app workflow action to support sending messages to
   users by group and by roles.
+- HTTP request workflow action now supports storing the response in the
+  workflow context.
 
 4.6.3 (2024-03-28)
 ==================

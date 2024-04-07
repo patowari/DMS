@@ -46,6 +46,96 @@ from .mixins.workflow_template_transition_mixins import (
 )
 
 
+class HTTPResponseStoreWorkflowActionTestCase(
+    TestServerTestCaseMixin, WorkflowTemplateStateActionTestMixin,
+    GenericViewTestCase
+):
+    auto_add_test_view = True
+
+    @mock.patch('requests.sessions.Session.get_adapter')
+    def test_response_store_false(self, mock_object):
+        mock_object.side_effect = request_method_factory(
+            content=b'{"test": 1}', test_case=self
+        )
+
+        self._clear_events()
+
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
+                'payload': TEST_PAYLOAD_JSON,
+                'response_store': False,
+                'url': self.testserver_url
+            }
+        )
+
+        context = self._test_workflow_instance.get_runtime_context()
+        self.assertFalse('last_http_request' in context)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    @mock.patch('requests.sessions.Session.get_adapter')
+    def test_response_store_name(self, mock_object):
+        mock_object.side_effect = request_method_factory(test_case=self)
+
+        self._clear_events()
+
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
+                'payload': TEST_PAYLOAD_JSON,
+                'response_store': True,
+                'response_store_name': 'last_http_request_custom',
+                'url': self.testserver_url
+            }
+        )
+
+        context = self._test_workflow_instance.get_runtime_context()
+        self.assertTrue('last_http_request_custom' in context)
+
+    @mock.patch('requests.sessions.Session.get_adapter')
+    def test_response_store_true(self, mock_object):
+        mock_object.side_effect = request_method_factory(
+            content=b'{"test": 1}', test_case=self
+        )
+
+        self._clear_events()
+
+        self._execute_workflow_template_state_action(
+            klass=HTTPAction, kwargs={
+                'method': 'POST',
+                'payload': TEST_PAYLOAD_JSON,
+                'response_store': True,
+                'url': self.testserver_url
+            }
+        )
+
+        context = self._test_workflow_instance.get_runtime_context()
+        self.assertTrue('last_http_request' in context)
+
+        response = context['last_http_request']
+
+        self.assertEqual(
+            response['encoding'], 'utf-8'
+        )
+        self.assertEqual(
+            response['json'], {'test': 1}
+        )
+        self.assertEqual(
+            response['reason'], 'OK'
+        )
+        self.assertEqual(
+            response['status_code'], 200
+        )
+        self.assertEqual(
+            response['text'], '{"test": 1}'
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+
 class HTTPWorkflowActionTestCase(
     TestServerTestCaseMixin, WorkflowTemplateStateActionTestMixin,
     GenericViewTestCase
@@ -60,8 +150,7 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'url': self.testserver_url
+                'method': 'POST', 'url': self.testserver_url
             }
         )
 
@@ -78,15 +167,13 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'payload': TEST_PAYLOAD_JSON,
+                'method': 'POST', 'payload': TEST_PAYLOAD_JSON,
                 'url': self.testserver_url
             }
         )
 
         self.assertEqual(
-            json.loads(s=self.test_view_request.body),
-            {'label': 'label'}
+            json.loads(s=self.test_view_request.body), {'label': 'label'}
         )
 
         events = self._get_test_events()
@@ -124,8 +211,7 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'headers': TEST_HEADERS_JSON,
+                'method': 'POST', 'headers': TEST_HEADERS_JSON,
                 'url': self.testserver_url
             }
         )
@@ -150,8 +236,7 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'headers': TEST_HEADERS_JSON_TEMPLATE,
+                'method': 'POST', 'headers': TEST_HEADERS_JSON_TEMPLATE,
                 'url': self.testserver_url
             }
         )
@@ -174,10 +259,8 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'password': TEST_SERVER_PASSWORD,
-                'url': self.testserver_url,
-                'username': TEST_SERVER_USERNAME,
+                'method': 'POST', 'password': TEST_SERVER_PASSWORD,
+                'url': self.testserver_url, 'username': TEST_SERVER_USERNAME
             }
         )
         self.assertTrue(
@@ -199,9 +282,7 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'timeout': '1',
-                'url': self.testserver_url
+                'method': 'POST', 'timeout': '1', 'url': self.testserver_url
             }
         )
         self.assertEqual(self.timeout, 1)
@@ -217,9 +298,7 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'timeout': '1.5',
-                'url': self.testserver_url
+                'method': 'POST', 'timeout': '1.5', 'url': self.testserver_url
             }
         )
         self.assertEqual(self.timeout, 1.5)
@@ -235,8 +314,7 @@ class HTTPWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'url': self.testserver_url
+                'method': 'POST', 'url': self.testserver_url
             }
         )
         self.assertEqual(self.timeout, None)
@@ -263,8 +341,7 @@ class HTTPCredentialTemplateWorkflowActionTestCase(
             klass=HTTPAction, kwargs={
                 'headers': '{{"{}": "{}"}}'.format(
                     TEST_HEADERS_JSON_TEMPLATE_KEY, '{{ credential.password }}'
-                ),
-                'method': 'POST',
+                ), 'method': 'POST',
                 'stored_credential_id': self._test_stored_credential.pk,
                 'url': self.testserver_url
             }
@@ -296,8 +373,7 @@ class HTTPCredentialTemplateWorkflowActionTestCase(
 
         self._execute_workflow_template_state_action(
             klass=HTTPAction, kwargs={
-                'method': 'POST',
-                'password': '{{ credential.password }}',
+                'method': 'POST', 'password': '{{ credential.password }}',
                 'stored_credential_id': self._test_stored_credential.pk,
                 'url': self.testserver_url,
                 'username': '{{ credential.username }}'
@@ -416,8 +492,7 @@ class DocumentPropertiesEditActionTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object,
-            self._test_workflow_template_state_action
+            events[0].action_object, self._test_workflow_template_state_action
         )
         self.assertEqual(events[0].actor, self._test_document)
         self.assertEqual(events[0].target, self._test_document)
@@ -436,13 +511,9 @@ class DocumentPropertiesEditActionTestCase(
         )
 
         self.assertEqual(
-            self._test_document.label,
-            '{} new'.format(label)
+            self._test_document.label, '{} new'.format(label)
         )
-        self.assertEqual(
-            self._test_document.description,
-            label
-        )
+        self.assertEqual(self._test_document.description, label)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 1)
@@ -629,8 +700,7 @@ class DocumentWorkflowLaunchActionViewTestCase(
         self.assertEqual(events.count(), 1)
 
         self.assertEqual(
-            events[0].action_object,
-            self._test_workflow_template_state_action
+            events[0].action_object, self._test_workflow_template_state_action
         )
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_workflow_template)

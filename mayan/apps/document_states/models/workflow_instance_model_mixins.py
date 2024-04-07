@@ -37,29 +37,30 @@ class WorkflowInstanceBusinessLogicMixin:
                         transition=escalation.transition
                     )
 
+    def do_context_update(self, context):
+        workflow_instance_context = self.loads()
+        workflow_instance_context.update(context)
+        self.dumps(context=workflow_instance_context)
+
     def do_transition(
         self, transition, comment=None, extra_data=None, user=None
     ):
         WorkflowInstanceLogEntry = apps.get_model(
             app_label='document_states', model_name='WorkflowInstanceLogEntry'
         )
+        comment = comment or ''
+        extra_data = extra_data or {}
 
         try:
             queryset_transitions = self.get_transition_choices(user=user).all()
 
             if queryset_transitions.filter(pk=transition.pk).exists():
                 if extra_data:
-                    context = self.loads()
-                    context.update(extra_data)
-                    self.dumps(context=context)
+                    self.do_context_update(context=extra_data)
 
                 workflow_instance_log_entry = WorkflowInstanceLogEntry(
-                    comment=comment or '',
-                    extra_data=json.dumps(
-                        obj=extra_data or {}
-                    ),
-                    transition=transition, user=user,
-                    workflow_instance=self
+                    comment=comment, extra_data=json.dumps(obj=extra_data),
+                    transition=transition, user=user, workflow_instance=self
                 )
                 workflow_instance_log_entry._event_actor = user
                 workflow_instance_log_entry.save()
