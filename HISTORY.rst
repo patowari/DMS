@@ -21,6 +21,8 @@
   - Redis Docker image from 7.0.10-alpine to 7.0.15-alpine.
   - Traefik Docker image from 2.5 to 2.5.7.
 
+- Improve unconfigured task error message.
+
 4.4.14 (2024-03-27)
 ===================
 - Fix the document file and the user API list view ordering fields. The

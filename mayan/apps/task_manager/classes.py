@@ -79,9 +79,8 @@ class CeleryQueue(AppsModuleLoaderMixin):
         for task_name, task in celery_app.tasks.items():
             if not task_name.startswith('celery') and task_name not in cls._registry_task_types:
                 raise ImproperlyConfigured(
-                    'Task `{}` is not properly configured.'.format(
-                        task_name
-                    )
+                    'Task `{}` is not properly configured and/or missing '
+                    'from the queue definition.'.format(task_name)
                 )
 
     @classmethod
