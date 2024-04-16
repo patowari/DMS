@@ -102,7 +102,7 @@ class DocumentType(
     class Meta:
         ordering = ('label',)
         verbose_name = _(message='Document type')
-        verbose_name_plural = _(message='Documents types')
+        verbose_name_plural = _(message='Document types')
 
     def __str__(self):
         return self.label

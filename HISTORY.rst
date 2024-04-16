@@ -197,6 +197,8 @@
   - Add support to store search results into resultsets.
   - Convert the search backends into folder modules.
 
+- Fix document type model verbose name.
+
 4.6.3 (2024-03-28)
 ==================
 - Merge changes from 4.5.11.
