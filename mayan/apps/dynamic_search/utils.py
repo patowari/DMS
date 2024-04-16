@@ -1,6 +1,6 @@
-from .literals import MATCH_ALL_VALUES
+from .literals import URL_QUERY_POSITIVE_VALUES
 
 
-def get_match_all_value(value):
+def is_url_query_positive(value):
     if value is not None:
-        return value.lower() in MATCH_ALL_VALUES
+        return value.lower() in URL_QUERY_POSITIVE_VALUES

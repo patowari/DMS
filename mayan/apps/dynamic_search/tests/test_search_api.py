@@ -8,7 +8,7 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..search_models import SearchModel
 
-from .mixins.api_mixins import SearchAPIViewTestMixin
+from .mixins.search_api_mixins import SearchAPIViewTestMixin
 from .mixins.base import TestSearchObjectSimpleTestMixin
 
 

@@ -4,14 +4,14 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import Http404
 
-from .exceptions import (
+from ..exceptions import (
     DynamicSearchException, DynamicSearchInterpreterUnknownSearchType
 )
-from .literals import FILTER_PREFIX, SEARCH_MODEL_NAME_KWARG
-from .mixins import QuerysetSearchModelMixin
-from .search_backends import SearchBackend
-from .search_interpreters import SearchInterpreter
-from .search_models import SearchModel
+from ..literals import FILTER_PREFIX, SEARCH_MODEL_NAME_KWARG
+from ..mixins import QuerysetSearchModelMixin
+from ..search_backends import SearchBackend
+from ..search_interpreters import SearchInterpreter
+from ..search_models import SearchModel
 
 logger = logging.getLogger(name=__name__)
 
@@ -50,7 +50,8 @@ class QuerysetSearchFilterMixin(SearchQueryViewMixin):
                     filter_query_is_empty = self.search_interpreter_filter.is_empty
 
                     if filter_query_clean and not filter_query_is_empty:
-                        filter_queryset = SearchBackend.get_instance().search(
+                        search_backend = SearchBackend.get_instance()
+                        saved_resultset, filter_queryset = search_backend.search(
                             search_model=search_model,
                             query=filter_query_clean, queryset=queryset,
                             user=request.user
@@ -160,7 +161,7 @@ class SearchModelViewMixin:
 
 
 class SearchResultViewMixin(SearchQueryViewMixin):
-    def get_search_queryset(self):
+    def do_search_execute(self, store_resultset=False):
         query_dict = self.get_search_query()
 
         self.search_interpreter = SearchInterpreter.init(
@@ -168,13 +169,14 @@ class SearchResultViewMixin(SearchQueryViewMixin):
         )
 
         query_clean = self.search_interpreter.do_query_cleanup()
-
         query_is_empty = self.search_interpreter.is_empty
 
         if query_clean and not query_is_empty:
             try:
-                queryset = SearchBackend.get_instance().search(
-                    search_model=self.search_model, query=query_clean,
+                search_backend = SearchBackend.get_instance()
+                saved_resultset, queryset = search_backend.search(
+                    search_model=self.search_model,
+                    store_resultset=store_resultset, query=query_clean,
                     user=self.request.user
                 )
             except DynamicSearchException as exception:
@@ -182,8 +184,15 @@ class SearchResultViewMixin(SearchQueryViewMixin):
                     raise
 
                 messages.error(message=exception, request=self.request)
-                return self.search_model.get_queryset().none()
+                queryset = self.search_model.get_queryset().none()
+                return (None, queryset)
             else:
-                return queryset
+                return (saved_resultset, queryset)
         else:
-            return self.search_model.get_queryset().none()
+            queryset = self.search_model.get_queryset().none()
+            return (None, queryset)
+
+    def get_search_queryset(self):
+        saved_resultset, queryset = self.do_search_execute()
+
+        return queryset

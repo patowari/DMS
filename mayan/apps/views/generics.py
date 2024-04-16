@@ -16,7 +16,7 @@ from django.views.generic.edit import (
 from django.views.generic.list import ListView
 
 from mayan.apps.acls.models import AccessControlList
-from mayan.apps.dynamic_search.view_mixins import (
+from mayan.apps.dynamic_search.views.view_mixins import (
     SearchFilterEnabledListViewMixin
 )
 

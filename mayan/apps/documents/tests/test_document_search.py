@@ -14,7 +14,7 @@ class DocumentFieldsSearchTestCase(
     def test_search_model_document_by_datetime_created_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'datetime_created': '>={}'.format(
                     self._test_document.datetime_created.isoformat()
@@ -33,7 +33,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'datetime_created': '>={}'.format(
                     self._test_document.datetime_created.isoformat()
@@ -54,7 +54,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'datetime_created': '>={}'.format(
                     self._test_document.datetime_created.isoformat()
@@ -70,7 +70,7 @@ class DocumentFieldsSearchTestCase(
     def test_search_model_document_by_description_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'description': self._test_document.description}
         )
         self.assertFalse(self._test_document in queryset)
@@ -85,7 +85,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'description': self._test_document.description}
         )
         self.assertTrue(self._test_document in queryset)
@@ -102,7 +102,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'description': self._test_document.description}
         )
         self.assertTrue(self._test_document not in queryset)
@@ -113,7 +113,7 @@ class DocumentFieldsSearchTestCase(
     def test_search_model_document_by_label_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'label': self._test_document.label}
         )
         self.assertFalse(self._test_document in queryset)
@@ -128,7 +128,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'label': self._test_document.label}
         )
         self.assertTrue(self._test_document in queryset)
@@ -145,7 +145,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'label': self._test_document.label}
         )
         self.assertTrue(self._test_document not in queryset)
@@ -156,7 +156,7 @@ class DocumentFieldsSearchTestCase(
     def test_search_model_document_by_uuid_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'uuid': str(self._test_document.uuid)
             }
@@ -173,7 +173,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'uuid': str(self._test_document.uuid)
             }
@@ -192,7 +192,7 @@ class DocumentFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'uuid': str(self._test_document.uuid)
             }
@@ -211,7 +211,7 @@ class DocumentFileFieldsSearchTestCase(
     def test_search_model_document_by_document_file_checksum_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__checksum': self._test_document_file.checksum}
         )
         self.assertFalse(self._test_document in queryset)
@@ -226,7 +226,7 @@ class DocumentFileFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__checksum': self._test_document_file.checksum}
         )
         self.assertTrue(self._test_document in queryset)
@@ -243,7 +243,7 @@ class DocumentFileFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__checksum': self._test_document_file.checksum}
         )
         self.assertTrue(self._test_document not in queryset)
@@ -254,7 +254,7 @@ class DocumentFileFieldsSearchTestCase(
     def test_search_model_document_by_document_file_filename_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__filename': self._test_document_file.filename}
         )
         self.assertFalse(self._test_document in queryset)
@@ -269,7 +269,7 @@ class DocumentFileFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__filename': self._test_document_file.filename}
         )
         self.assertTrue(self._test_document in queryset)
@@ -286,7 +286,7 @@ class DocumentFileFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__filename': self._test_document_file.filename}
         )
         self.assertTrue(self._test_document not in queryset)
@@ -297,7 +297,7 @@ class DocumentFileFieldsSearchTestCase(
     def test_search_model_document_by_document_file_mime_type_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__mimetype': self._test_document_file.mimetype}
         )
         self.assertFalse(self._test_document in queryset)
@@ -312,7 +312,7 @@ class DocumentFileFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__mimetype': self._test_document_file.mimetype}
         )
         self.assertTrue(self._test_document in queryset)
@@ -329,7 +329,7 @@ class DocumentFileFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={'files__mimetype': self._test_document_file.mimetype}
         )
         self.assertTrue(self._test_document not in queryset)
@@ -352,7 +352,7 @@ class DocumentTypeFieldsSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_type__label': self._test_document.document_type.label
             }

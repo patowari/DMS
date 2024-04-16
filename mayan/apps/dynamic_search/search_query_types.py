@@ -73,7 +73,9 @@ class QueryType(metaclass=QueryTypeMetaclass):
     @classmethod
     def check(cls, value):
         if value.startswith(cls.alias):
-            return value[len(cls.alias):]
+            return value[
+                len(cls.alias):
+            ]
 
     @classmethod
     def check_all(cls, value):

@@ -1,4 +1,4 @@
-from .view_mixins import SearchModelViewMixin
+from ..views.view_mixins import SearchModelViewMixin
 
 
 class SearchModelAPIViewMixin(SearchModelViewMixin):

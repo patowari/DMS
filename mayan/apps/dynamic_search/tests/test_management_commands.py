@@ -27,7 +27,7 @@ class SearchReindexManagementCommandTestCaseMixin(
     def test_artifacts(self):
         self._test_search_backend.reset()
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[0].char
             }
@@ -38,7 +38,7 @@ class SearchReindexManagementCommandTestCaseMixin(
 
         self._call_test_management_command()
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[0].char
             }
@@ -92,14 +92,14 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
         )
 
     def test_artifacts(self):
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={'char': self._test_object_list[0].char}
         )
         self.assertTrue(
             self._test_object_list[0] in queryset
         )
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={'char': self._test_object_list[1].char}
         )
         self.assertTrue(
@@ -109,7 +109,7 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
         backend = SearchBackend.get_instance()
         backend.reset()
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[0].char
             }
@@ -118,7 +118,7 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
             self._test_object_list[0] not in queryset
         )
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={'char': self._test_object_list[1].char}
         )
         self.assertTrue(
@@ -129,7 +129,7 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
             self._test_search_model.full_name, self._test_object_list[0].pk
         )
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[0].char
             }
@@ -138,7 +138,7 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
             self._test_object_list[0] in queryset
         )
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[1].char
             }
@@ -151,7 +151,7 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
             self._test_search_model.full_name, self._test_object_list[1].pk
         )
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[0].char
             }
@@ -160,7 +160,7 @@ class SearchIndexObjectManagementCommandTestCaseMixin(
             self._test_object_list[0] in queryset
         )
 
-        queryset = self._do_search(
+        saved_resultset, queryset = self._do_search(
             query={
                 'char': self._test_object_list[1].char
             }

@@ -187,6 +187,15 @@
   users by group and by roles.
 - HTTP request workflow action now supports storing the response in the
   workflow context.
+- Update ElasticSearch Docker image tag from 7.17.17 to 7.17.19.
+- Search updates:
+
+  - Update the ElasticSearch backend search method.
+  - Use generators to yield the ID list of scope results.
+  - Stop yielding results after the count exceeds the search limit setting.
+  - Increase scope result limit to 100000.
+  - Add support to store search results into resultsets.
+  - Convert the search backends into folder modules.
 
 4.6.3 (2024-03-28)
 ==================

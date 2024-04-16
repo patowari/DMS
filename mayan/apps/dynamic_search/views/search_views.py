@@ -2,6 +2,7 @@ import logging
 
 from django.conf import settings
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -12,18 +13,20 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.literals import LIST_MODE_CHOICE_ITEM
 
-from .exceptions import DynamicSearchException
-from .forms import AdvancedSearchForm, SearchForm
-from .icons import (
+from ..exceptions import DynamicSearchException
+from ..forms import AdvancedSearchForm, SearchForm
+from ..icons import (
     icon_result_list, icon_search, icon_search_advanced,
     icon_search_backend_reindex, icon_search_submit
 )
-from .links import link_search_again
-from .literals import QUERY_PARAMETER_ANY_FIELD, SEARCH_MODEL_NAME_KWARG
-from .permissions import permission_search_tools
-from .search_backends import SearchBackend
-from .settings import setting_match_all_default_value
-from .tasks import task_reindex_backend
+from ..links import link_search_again
+from ..literals import QUERY_PARAMETER_ANY_FIELD, SEARCH_MODEL_NAME_KWARG
+from ..permissions import permission_search_tools
+from ..search_backends import SearchBackend
+from ..settings import setting_match_all_default_value
+from ..tasks import task_reindex_backend
+from ..utils import is_url_query_positive
+
 from .view_mixins import (
     SearchModelViewMixin, SearchQueryViewMixin, SearchResultViewMixin
 )
@@ -95,7 +98,6 @@ class SearchSimpleView(SearchModelViewMixin, SearchQueryViewMixin, FormView):
     view_icon = icon_search
 
     def get_extra_context(self):
-        self.search_model = self.get_search_model()
         return {
             'form': self.get_form(),
             'form_action': reverse(
@@ -147,15 +149,36 @@ class SearchAdvancedView(SearchSimpleView):
             '_match_all', setting_match_all_default_value.value
         )
 
-        return AdvancedSearchForm(
-            data=data, search_model=self.get_search_model()
-        )
+        return AdvancedSearchForm(data=data, search_model=self.search_model)
 
 
-class SearchResultsView(
+class SearchResultView(
     SearchModelViewMixin, SearchResultViewMixin, SingleObjectListView
 ):
     view_icon = icon_result_list
+
+    def dispatch(self, request, *args, **kwargs):
+        result = super().dispatch(request=request, *args, **kwargs)
+
+        query_dict = self.get_search_query()
+
+        query_value_save_results = query_dict.get('_save_results', 'False')
+
+        save_results = is_url_query_positive(value=query_value_save_results)
+
+        if save_results:
+            saved_resultset, queryset = self.do_search_execute(
+                store_resultset=True
+            )
+
+            if saved_resultset:
+                return HttpResponseRedirect(
+                    redirect_to=saved_resultset.get_absolute_url()
+                )
+            else:
+                return result
+        else:
+            return result
 
     def get_extra_context(self):
         context = {
@@ -176,7 +199,9 @@ class SearchResultsView(
             'subtitle': _(
                 message='Search query: %s'
             ) % self.search_interpreter.to_explain(),
-            'title': _(message='Search results for: %s') % self.search_model.label
+            'title': _(
+                message='Search results for: %s'
+            ) % self.search_model.label
         }
 
         if self.search_model.list_mode == LIST_MODE_CHOICE_ITEM:

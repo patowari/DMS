@@ -12,7 +12,7 @@ from .literals import (
 )
 from .search_query_terms import QueryToken
 from .search_query_types import QueryType
-from .settings import setting_query_results_limit, setting_results_limit
+from .settings import setting_query_results_limit
 
 logger = logging.getLogger(name=__name__)
 
@@ -40,13 +40,13 @@ class ScopedQuery:
             )
             if id_list is None:
                 raise DynamicSearchScopedQueryError(
-                    _(ERROR_TEXT_NO_RESULT_SCOPE)
+                    _(message=ERROR_TEXT_NO_RESULT_SCOPE)
                 )
             else:
                 return id_list
         else:
             raise DynamicSearchScopedQueryError(
-                _(ERROR_TEXT_NO_RESULT_SCOPE)
+                _(message=ERROR_TEXT_NO_RESULT_SCOPE)
             )
 
     def do_scope_entry_add(self, scope_entry):
@@ -322,39 +322,38 @@ class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
         )
 
     def do_resolve(self, search_backend):
-        if len(
-            [
-                scope_entry for scope_entry in self.scoped_query.scope_entry_list if isinstance(
-                    scope_entry, ScopedQueryEntryDataFilter
-                )
-            ]
-        ) > 1:
-            limit = setting_query_results_limit.value
-        else:
-            limit = setting_results_limit.value
+        scope_limit = setting_query_results_limit.value
 
         if self.value:
             query_type, value = QueryType.check_all(value=self.value)
 
             try:
                 results = search_backend._search(
-                    limit=limit, is_quoted_value=self.is_quoted_value,
+                    is_quoted_value=self.is_quoted_value,
                     is_raw_value=self.is_raw_value, query_type=query_type,
                     search_field=self.search_field, value=value
                 )
 
-                if len(results) >= limit:
-                    raise DynamicSearchScopedQueryError(
-                        _(
-                            message='Search results exceed limit setting. Results '
-                            'might not be reliable if multiple scopes are '
-                            'used. Narrow down the search criteria or '
-                            'increase the value of the results limit '
-                            'setting.'
-                        )
-                    )
+                count = 0
 
-                return results
+                for item in results:
+                    count += 1
+
+                    if count > scope_limit:
+                        raise DynamicSearchScopedQueryError(
+                            _(
+                                message='Query results exceed the current '
+                                'limit of %d. Results will not be reliable '
+                                'if multiple scopes are used. Narrow down '
+                                'the search criteria or increase the value '
+                                'of the results limit setting `%s`.'
+                            ) % (
+                                setting_query_results_limit.value,
+                                setting_query_results_limit.global_name
+                            )
+                        )
+
+                    yield item
             except DynamicSearchBackendException:
                 """Raise `DynamicSearchBackendException` as is."""
                 raise
@@ -362,9 +361,9 @@ class ScopedQueryEntryDataFilter(ScopedQueryEntryData):
                 """Wrap any other exception raised by the backend."""
                 raise DynamicSearchBackendException(
                     _(
-                        message='Search backend error. Verify that the search '
-                        'service is available and that the search syntax '
-                        'is valid for the active search backend; %s'
+                        message='Search backend error. Verify that the '
+                        'search service is available and that the search '
+                        'syntax is valid for the active search backend; %s'
                     ) % exception
                 ) from exception
         else:

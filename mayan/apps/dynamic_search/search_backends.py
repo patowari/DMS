@@ -329,9 +329,14 @@ class SearchBackend:
         Optional method to clear all search indices.
         """
 
-    def search(self, query, search_model, user, queryset=None):
+    def search(
+        self, query, search_model, user, store_resultset=False, queryset=None
+    ):
         AccessControlList = apps.get_model(
             app_label='acls', model_name='AccessControlList'
+        )
+        SavedResultset = apps.get_model(
+            app_label='dynamic_search', model_name='SavedResultset'
         )
 
         search_interpreter = SearchInterpreter.init(
@@ -350,7 +355,20 @@ class SearchBackend:
                 user=user
             )
 
-        return SearchBackend.limit_queryset(queryset=queryset)
+        queryset = SearchBackend.limit_queryset(queryset=queryset)
+
+        if store_resultset:
+            search_explainer_text = search_interpreter.to_explain()
+
+            saved_resultset = SavedResultset.objects.queryset_save(
+                queryset=queryset,
+                search_explainer_text=search_explainer_text,
+                search_query=query, user=user
+            )
+        else:
+            saved_resultset = None
+
+        return (saved_resultset, queryset)
 
     def tear_down(self):
         """

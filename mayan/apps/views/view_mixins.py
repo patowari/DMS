@@ -628,6 +628,38 @@ class ViewIconMixin:
         return self.view_icon
 
 
+class ViewMixinExternalObjectOwnerPlusFilteredQueryset:
+    def get_external_object_queryset(self):
+        queryset = super().get_external_object_queryset()
+        queryset_user = queryset.filter(user=self.request.user)
+
+        if self.external_object_optional_permission:
+            queryset = queryset_user | AccessControlList.objects.restrict_queryset(
+                permission=self.external_object_optional_permission, queryset=queryset,
+                user=self.request.user
+            )
+        else:
+            queryset = queryset_user
+
+        return queryset.distinct()
+
+
+class ViewMixinOwnerPlusFilteredQueryset:
+    def get_source_queryset(self):
+        queryset = super().get_source_queryset()
+        queryset_user = queryset.filter(user=self.request.user)
+
+        if self.optional_object_permission:
+            queryset = queryset_user | AccessControlList.objects.restrict_queryset(
+                permission=self.optional_object_permission, queryset=queryset,
+                user=self.request.user
+            )
+        else:
+            queryset = queryset_user
+
+        return queryset.distinct()
+
+
 class ViewPermissionCheckViewMixin:
     """
     Restrict access to the view based on the user's direct permissions from

@@ -1,203 +1,26 @@
 from collections import deque
 import functools
-import logging
 
 import elasticsearch
 from elasticsearch import Elasticsearch, helpers
-import elasticsearch_dsl
-from elasticsearch_dsl import MultiSearch, Q, Search
+from elasticsearch_dsl import Search
 
-from ..exceptions import (
+from ...exceptions import (
     DynamicSearchBackendException, DynamicSearchValueTransformationError
 )
-from ..search_backends import SearchBackend
-from ..search_fields import SearchFieldVirtualAllFields
-from ..search_models import SearchModel
-from ..search_query_types import (
-    BackendQueryType, QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
-    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
-    QueryTypeRegularExpression
-)
+from ...search_backends import SearchBackend
+from ...search_fields import SearchFieldVirtualAllFields
+from ...search_models import SearchModel
 
-from .literals.elasticsearch_literals import (
+from .literals import (
     DEFAULT_ELASTICSEARCH_CLIENT_MAXSIZE,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_CONNECTION_FAIL,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_START,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFFER_TIMEOUT, DEFAULT_ELASTICSEARCH_HOST,
     DEFAULT_ELASTICSEARCH_INDICES_NAMESPACE,
-    DJANGO_TO_ELASTICSEARCH_FIELD_MAP, MAXIMUM_API_ATTEMPT_COUNT
+    DEFAULT_ELASTICSEARCH_SEARCH_PAGE_SIZE, DJANGO_TO_ELASTICSEARCH_FIELD_MAP,
+    MAXIMUM_API_ATTEMPT_COUNT
 )
-
-logger = logging.getLogger(name=__name__)
-
-
-class BackendQueryTypeExact(BackendQueryType):
-    query_type = QueryTypeExact
-
-    def do_resolve(self):
-        if self.value is not None:
-            if self.is_quoted_value:
-                template = '"{}"'
-            else:
-                template = '{}'
-
-            if not self.value:
-                # Empty values cannot be quoted.
-                template = '{}'
-
-                if self.is_quoted_value:
-                    if self.get_search_backend_field_type() == elasticsearch_dsl.field.Text:
-                        return Q(
-                            'bool', must_not=(
-                                Q(
-                                    'wildcard',
-                                    **{self.search_field.field_name: '*'}
-                                )
-                            )
-                        )
-
-            if self.is_quoted_value:
-                return Q(
-                    name_or_query='match_phrase', _expand__to_dot=False,
-                    **{
-                        self.search_field.field_name: template.format(self.value)
-                    }
-                )
-            else:
-                return Q(
-                    name_or_query='match', _expand__to_dot=False,
-                    **{
-                        self.search_field.field_name: template.format(self.value)
-                    }
-                )
-
-
-class BackendQueryFuzzy(BackendQueryType):
-    query_type = QueryTypeFuzzy
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='fuzzy', _expand__to_dot=False,
-                **{self.search_field.field_name: self.value}
-            )
-
-
-class BackendQueryTypeGreaterThan(BackendQueryType):
-    query_type = QueryTypeGreaterThan
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='range', _expand__to_dot=False,
-                **{
-                    self.search_field.field_name: {'gt': self.value}
-                }
-            )
-
-
-class BackendQueryTypeGreaterThanOrEqual(BackendQueryType):
-    query_type = QueryTypeGreaterThanOrEqual
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='range', _expand__to_dot=False,
-                **{
-                    self.search_field.field_name: {'gte': self.value}
-                }
-            )
-
-
-class BackendQueryTypeLessThan(BackendQueryType):
-    query_type = QueryTypeLessThan
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='range', _expand__to_dot=False,
-                **{
-                    self.search_field.field_name: {'lt': self.value}
-                }
-            )
-
-
-class BackendQueryTypeLessThanOrEqual(BackendQueryType):
-    query_type = QueryTypeLessThanOrEqual
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='range', _expand__to_dot=False,
-                **{
-                    self.search_field.field_name: {'lte': self.value}
-                }
-            )
-
-
-class BackendQueryTypePartial(BackendQueryType):
-    query_type = QueryTypePartial
-
-    def do_resolve(self):
-        if self.value is not None:
-            if self.get_search_backend_field_type() != elasticsearch_dsl.field.Date:
-                if self.is_quoted_value:
-                    return Q(
-                        name_or_query='match_phrase', _expand__to_dot=False,
-                        **{
-                            self.search_field.field_name: '{}'.format(self.value)
-                        }
-                    )
-                else:
-                    if self.get_search_backend_field_type() != elasticsearch_dsl.field.Integer:
-                        return Q(
-                            name_or_query='wildcard', _expand__to_dot=False,
-                            **{
-                                self.search_field.field_name: '*{}*'.format(self.value)
-                            }
-                        )
-
-
-class BackendQueryTypeRange(BackendQueryType):
-    query_type = QueryTypeRange
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='range', _expand__to_dot=False,
-                **{
-                    self.search_field.field_name: {
-                        'gte': self.value[0], 'lte': self.value[1]
-                    }
-                }
-            )
-
-
-class BackendQueryTypeRangeExclusive(BackendQueryType):
-    query_type = QueryTypeRangeExclusive
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='range', _expand__to_dot=False,
-                **{
-                    self.search_field.field_name: {
-                        'gt': self.value[0], 'lt': self.value[1]
-                    }
-                }
-            )
-
-
-class BackendQueryTypeRegularExpression(BackendQueryType):
-    query_type = QueryTypeRegularExpression
-
-    def do_resolve(self):
-        if self.value is not None:
-            return Q(
-                name_or_query='regexp', _expand__to_dot=False,
-                **{self.search_field.field_name: self.value}
-            )
 
 
 class ElasticSearchBackend(SearchBackend):
@@ -231,21 +54,44 @@ class ElasticSearchBackend(SearchBackend):
         if self._test_mode:
             self.indices_namespace = 'mayan-test'
 
-    def _do_response_process(self, response):
-        result = set()
+    def do_search_execute(self, index_name, search):
+        point_in_time_keep_alive = '5m'
 
-        for hit in response:
-            result.add(
-                int(
-                    hit['id']
-                )
-            )
+        client = self._get_client()
 
-        return result
+        point_in_time = client.open_point_in_time(
+            index=index_name, keep_alive=point_in_time_keep_alive
+        )
 
-    def do_search_execute(self, search):
+        search = search.extra(pit=point_in_time)
+        search = search.extra(size=DEFAULT_ELASTICSEARCH_SEARCH_PAGE_SIZE)
+        search = search.index()
+        search = search.sort('_doc')
+        search = search.source(False)
+
+        search_after = 0
+
         try:
-            return search.execute()
+            while True:
+                search = search.extra(
+                    search_after=[search_after]
+                )
+                response = search.execute()
+
+                if not len(response):
+                    break
+
+                for entry in response:
+                    result_id = entry.meta.id
+                    yield result_id
+
+                search_after = response[-1].meta.sort[0]
+
+            client.close_point_in_time(
+                body={
+                    'id': point_in_time['id']
+                }
+            )
         except elasticsearch.exceptions.NotFoundError as exception:
             raise DynamicSearchBackendException(
                 'Index not found. Make sure the search engine '
@@ -284,7 +130,9 @@ class ElasticSearchBackend(SearchBackend):
 
         title = 'Elastic Search search model indexing status'
         result.append(title)
-        result.append(len(title) * '=')
+        result.append(
+            len(title) * '='
+        )
 
         self.refresh()
 
@@ -307,7 +155,7 @@ class ElasticSearchBackend(SearchBackend):
         self._update_mappings()
 
     def _search(
-        self, limit, search_field, query_type, value, is_quoted_value=False,
+        self, search_field, query_type, value, is_quoted_value=False,
         is_raw_value=False
     ):
         self.do_query_type_verify(
@@ -320,8 +168,6 @@ class ElasticSearchBackend(SearchBackend):
         )
 
         if isinstance(search_field, SearchFieldVirtualAllFields):
-            multi_search = MultiSearch(index=index_name, using=client)
-
             for search_field in search_field.field_composition:
                 try:
                     search_field_query = query_type.resolve_for_backend(
@@ -333,26 +179,18 @@ class ElasticSearchBackend(SearchBackend):
                     """Skip the search field."""
                 else:
                     if search_field_query is not None:
+
                         index_name = self._get_index_name(
                             search_model=search_field.search_model
                         )
 
-                        multi_search = multi_search.add(
-                            Search().query(
-                                search_field_query
-                            )
+                        search = Search(index=index_name, using=client)
+                        search = search.filter(search_field_query)
+
+                        result = self.do_search_execute(
+                            index_name=index_name, search=search
                         )
-
-            if multi_search.to_dict():
-                responses = self.do_search_execute(search=multi_search)
-                result = set()
-
-                for response in responses:
-                    result.update(
-                        self._do_response_process(response=response)
-                    )
-
-                return result
+                        yield from result
             else:
                 return ()
         else:
@@ -370,11 +208,11 @@ class ElasticSearchBackend(SearchBackend):
                 if search_field_query is None:
                     return ()
                 else:
-                    search = search.source(None).query(search_field_query)
-                    response = self.do_search_execute(
-                        search=search[0:limit]
+                    search = search.filter(search_field_query)
+
+                    yield from self.do_search_execute(
+                        index_name=index_name, search=search
                     )
-                    return self._do_response_process(response=response)
 
     def _update_mappings(self, search_model=None):
         client = self._get_client()
@@ -517,40 +355,3 @@ class ElasticSearchBackend(SearchBackend):
                 )
             except elasticsearch.exceptions.NotFoundError:
                 """Ignore non existent indexes."""
-
-
-BackendQueryType.register(
-    klass=BackendQueryTypeExact, search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryFuzzy, search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeGreaterThan, search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeGreaterThanOrEqual,
-    search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeLessThan, search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeLessThanOrEqual,
-    search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypePartial, search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeRange,
-    search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeRangeExclusive,
-    search_backend=ElasticSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeRegularExpression,
-    search_backend=ElasticSearchBackend
-)

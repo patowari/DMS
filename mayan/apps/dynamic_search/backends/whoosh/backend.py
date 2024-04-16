@@ -6,10 +6,7 @@ import whoosh
 from whoosh import qparser
 from whoosh.filedb.filestore import FileStorage
 from whoosh.index import EmptyIndexError
-from whoosh.qparser import (
-    FuzzyTermPlugin, GtLtPlugin, MultifieldParser, OrGroup, RegexPlugin
-)
-from whoosh.qparser.dateparse import DateParserPlugin
+from whoosh.qparser import MultifieldParser, OrGroup
 from whoosh.query import Every
 from whoosh.writing import BufferedWriter
 
@@ -20,159 +17,20 @@ from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.exceptions import LockError
 from mayan.apps.storage.utils import TemporaryDirectory
 
-from ..exceptions import (
+from ...exceptions import (
     DynamicSearchBackendException, DynamicSearchRetry,
     DynamicSearchValueTransformationError
 )
-from ..search_backends import SearchBackend
-from ..search_fields import SearchFieldVirtualAllFields
-from ..search_models import SearchModel
-from ..search_query_types import (
-    BackendQueryType, QueryTypeExact, QueryTypeFuzzy, QueryTypeGreaterThan,
-    QueryTypeGreaterThanOrEqual, QueryTypeLessThan, QueryTypeLessThanOrEqual,
-    QueryTypePartial, QueryTypeRange, QueryTypeRangeExclusive,
-    QueryTypeRegularExpression
-)
+from ...search_backends import SearchBackend
+from ...search_fields import SearchFieldVirtualAllFields
+from ...search_models import SearchModel
 
-from .literals.whoosh_literals import (
+from .literals import (
     DJANGO_TO_WHOOSH_FIELD_MAP, TEXT_LOCK_INSTANCE_DEINDEX,
     TEXT_LOCK_INSTANCE_INDEX, WHOOSH_INDEX_DIRECTORY_NAME
 )
 
 logger = logging.getLogger(name=__name__)
-
-
-class BackendQueryTypeWhoosh(BackendQueryType):
-    def do_resolve(self):
-        if self.get_search_backend_field_type() == whoosh.fields.DATETIME:
-
-            self.extra_kwargs['parser'].add_plugin(
-                DateParserPlugin()
-            )
-
-        return self._do_resolve()
-
-
-class BackendQueryTypeExact(BackendQueryTypeWhoosh):
-    query_type = QueryTypeExact
-
-    def _do_resolve(self):
-        if self.value is not None:
-            if not self.value and self.is_quoted_value:
-                return 'NOT *'
-            else:
-                if self.is_quoted_value:
-                    template = '{}:("{}")'
-                else:
-                    template = '{}:({})'
-
-                return template.format(
-                    self.search_field.field_name, self.value
-                )
-
-
-class BackendQueryTypeFuzzy(BackendQueryTypeWhoosh):
-    query_type = QueryTypeFuzzy
-
-    def _do_resolve(self):
-        self.extra_kwargs['parser'].add_plugin(
-            FuzzyTermPlugin()
-        )
-
-        if self.value is not None:
-            if self.is_quoted_value:
-                template = '{}:"{}"~2'
-            else:
-                template = '{}:{}~2'
-
-            return template.format(
-                self.search_field.field_name, self.value
-            )
-
-
-class BackendQueryTypeComparison(BackendQueryTypeWhoosh):
-    def _do_resolve(self):
-        self.extra_kwargs['parser'].add_plugin(
-            GtLtPlugin()
-        )
-
-        if self.value is not None:
-            return self.template.format(
-                self.search_field.field_name, self.value
-            )
-
-
-class BackendQueryTypeGreaterThan(BackendQueryTypeComparison):
-    query_type = QueryTypeGreaterThan
-    template = '{}:>{}'
-
-
-class BackendQueryTypeGreaterThanOrEqual(BackendQueryTypeComparison):
-    query_type = QueryTypeGreaterThanOrEqual
-    template = '{}:>={}'
-
-
-class BackendQueryTypeLessThan(BackendQueryTypeComparison):
-    query_type = QueryTypeLessThan
-    template = '{}:<{}'
-
-
-class BackendQueryTypeLessThanOrEqual(BackendQueryTypeComparison):
-    query_type = QueryTypeLessThanOrEqual
-    template = '{}:<={}'
-
-
-class BackendQueryTypePartial(BackendQueryTypeWhoosh):
-    query_type = QueryTypePartial
-
-    def _do_resolve(self):
-        if self.value is not None:
-            if self.is_quoted_value:
-                template = '{}:"{}"'
-            else:
-                template = '{}:(*{}*)'
-
-            if self.get_search_backend_field_type() == whoosh.fields.BOOLEAN:
-                template = '{}:({})'
-
-            if self.value is not None:
-                return template.format(
-                    self.search_field.field_name, self.value
-                )
-
-
-class BackendQueryTypeRange(BackendQueryTypeWhoosh):
-    query_type = QueryTypeRange
-
-    def _do_resolve(self):
-        if self.value is not None:
-            return '{}:[{} TO {}]'.format(
-                self.search_field.field_name, *self.value
-            )
-
-
-class BackendQueryTypeRangeExclusive(BackendQueryTypeWhoosh):
-    query_type = QueryTypeRangeExclusive
-
-    def _do_resolve(self):
-        if self.value is not None:
-            return '{}:{{{} TO {}}}'.format(
-                self.search_field.field_name, *self.value
-            )
-
-
-class BackendQueryTypeRegularExpression(BackendQueryTypeWhoosh):
-    query_type = QueryTypeRegularExpression
-
-    def _do_resolve(self):
-        self.extra_kwargs['parser'].add_plugin(
-            RegexPlugin()
-        )
-
-        if self.value is not None:
-            return '{}:r"{}"'.format(
-                self.search_field.field_name, self.value
-            )
 
 
 class WhooshSearchBackend(SearchBackend):
@@ -220,15 +78,15 @@ class WhooshSearchBackend(SearchBackend):
                 indexname=search_model.full_name, schema=schema
             )
 
-    def _do_query_resolve(self, index, limit, query):
+    def _do_query_resolve(self, index, query):
         with index.searcher() as searcher:
-            results = searcher.search(q=query, limit=limit)
+            results = searcher.search(q=query)
             logger.debug('results: %s', results)
-            return [
-                int(
+
+            for result in results:
+                yield int(
                     result['id']
-                ) for result in results
-            ]
+                )
 
     def _get_or_create_index(self, search_model):
         storage = self._get_storage()
@@ -292,7 +150,7 @@ class WhooshSearchBackend(SearchBackend):
             self.index_path.mkdir(exist_ok=True)
 
     def _search(
-        self, limit, search_field, query_type, value, is_quoted_value=False,
+        self, search_field, query_type, value, is_quoted_value=False,
         is_raw_value=False
     ):
         self.do_query_type_verify(
@@ -355,9 +213,7 @@ class WhooshSearchBackend(SearchBackend):
 
                 query = parser.parse(text=search_string)
 
-            return self._do_query_resolve(
-                index=index, limit=limit, query=query
-            )
+            return self._do_query_resolve(index=index, query=query)
         else:
             return ()
 
@@ -545,37 +401,3 @@ class WhooshSearchBackend(SearchBackend):
 
     def test_mode_stop(self):
         self.__class__._local_attribute_backend_temporary_directory.cleanup()
-
-
-BackendQueryType.register(
-    klass=BackendQueryTypeExact, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeFuzzy, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypePartial, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeGreaterThan, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeGreaterThanOrEqual,
-    search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeLessThan, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeLessThanOrEqual, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeRange, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeRangeExclusive, search_backend=WhooshSearchBackend
-)
-BackendQueryType.register(
-    klass=BackendQueryTypeRegularExpression,
-    search_backend=WhooshSearchBackend
-)

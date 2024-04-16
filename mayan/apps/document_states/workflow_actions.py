@@ -3,7 +3,6 @@ import logging
 
 import requests
 
-from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.credentials.class_mixins import (

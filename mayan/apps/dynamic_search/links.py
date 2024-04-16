@@ -3,8 +3,9 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.navigation.classes import Link
 
 from .icons import (
-    icon_search, icon_search_advanced, icon_search_again,
-    icon_search_backend_reindex
+    icon_saved_resultset_delete_single, icon_saved_resultset_list,
+    icon_saved_resultset_result_list, icon_search, icon_search_advanced,
+    icon_search_again, icon_search_backend_reindex
 )
 from .permissions import permission_search_tools
 from .search_backends import SearchBackend
@@ -14,6 +15,20 @@ def condition_search_backend_supports_reindexing(context, resolved_object):
     search_backend_class = SearchBackend.get_class()
     return search_backend_class.feature_reindex
 
+
+link_saved_resultset_list = Link(
+    icon=icon_saved_resultset_list, text=_(message='Saved resultsets'),
+    view='search:saved_resultset_list'
+)
+link_saved_resultset_delete_single = Link(
+    args=('resolved_object.pk',), icon=icon_saved_resultset_delete_single,
+    tags='dangerous', text=_(message='Delete'),
+    view='search:saved_resultset_delete_single'
+)
+link_saved_resultset_result_list = Link(
+    args=('resolved_object.pk',), icon=icon_saved_resultset_result_list,
+    text=_(message='Results'), view='search:saved_resultset_result_list'
+)
 
 link_search = Link(
     args='search_model.full_name', icon=icon_search,

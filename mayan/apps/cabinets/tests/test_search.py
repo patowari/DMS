@@ -54,7 +54,7 @@ class CabinetSearchFieldSizeLimitTestCase(
 
         self._test_search_backend.index_instance(instance=self._test_cabinet)
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'documents__uuid': str(self._test_document_stub_list[0].uuid)
             }
@@ -75,7 +75,7 @@ class CabinetSearchTestCase(
     def test_search_model_cabinet_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'documents__label': self._test_document.label
             }
@@ -92,7 +92,7 @@ class CabinetSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'documents__label': self._test_document.label
             }
@@ -111,7 +111,7 @@ class CabinetSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'documents__label': self._test_document.label
             }
@@ -132,7 +132,7 @@ class DocumentCabinetSearchTestCase(
     def test_search_model_document_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'cabinets__label': self._test_cabinet.label
             }
@@ -149,7 +149,7 @@ class DocumentCabinetSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'cabinets__label': self._test_cabinet.label
             }
@@ -168,7 +168,7 @@ class DocumentCabinetSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'cabinets__label': self._test_cabinet.label
             }

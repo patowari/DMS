@@ -14,34 +14,37 @@ from .base import SearchTestMixin, TestSearchObjectSimpleTestMixin
 
 class BackendFieldTypeQueryTypeAnyTestCaseMixin:
     def test_search_field_type_any_search_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_any_search_empty_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_any_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypeExact,
             value=self._test_object.char
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -52,11 +55,12 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
         self._test_object.char = self._test_object.char.upper()
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypeExact,
             value=self._test_object.char.lower()
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -66,11 +70,12 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
         self._test_object.char = self._test_object.char.lower()
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypeExact,
             value=self._test_object.char.upper()
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -80,51 +85,55 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
     def test_search_field_type_any_search_partial(self):
         parts = self._test_object.char.split(' ')
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value=parts[0][:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value=parts[0][1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value=parts[0].upper()[:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value=parts[0].upper()[1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -134,13 +143,14 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -150,12 +160,13 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -165,27 +176,30 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value=self._test_object.email[1:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value=str(self._test_object.uuid).split('-')[0]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -193,22 +207,24 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_any_search_exact_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypeExact,
             value=1.1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_any_search_partial_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name=QUERY_PARAMETER_ANY_FIELD,
             query_type=QueryTypePartial,
             value='1970-01'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -217,33 +233,36 @@ class BackendFieldTypeQueryTypeAnyTestCaseMixin:
 
 class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
     def test_search_field_type_autofield_search_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_autofield_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeExact,
             value=self._test_object.id
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeExact,
             value=str(self._test_object.id)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -251,11 +270,12 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_greater_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeGreaterThan,
             value=self._test_object.id - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -263,22 +283,24 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_greater_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.id - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.id
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -286,11 +308,12 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_less_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeLessThan,
             value=self._test_object.id + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -298,22 +321,24 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_less_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.id + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.id
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -321,52 +346,56 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.id - 1, self._test_object.id + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.id, self._test_object.id + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.id - 1, self._test_object.id
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.id, self._test_object.id
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -374,87 +403,93 @@ class BackendFieldTypeQueryTypeAutoFieldTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_autofield_search_range_exclusive(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.id - 1, self._test_object.id + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.id, self._test_object.id + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.id - 1, self._test_object.id
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.id, self._test_object.id
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_autofield_search_range_exclusive_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRangeExclusive,
             value='INVALID'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='id',
             query_type=QueryTypeRangeExclusive,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
-
 
 
 class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
     def test_search_field_type_biginteger_null_search_exact_empty_non_quoted(self):
         self._test_object_biginteger_set = False
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -463,11 +498,12 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self._test_object.biginteger = TEST_OBJECT_INTEGER_VALUE
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -476,12 +512,13 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
     def test_search_field_type_biginteger_null_search_exact_empty_quoted(self):
         self._test_object_biginteger_set = False
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -490,34 +527,37 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self._test_object.biginteger = TEST_OBJECT_INTEGER_VALUE
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_biginteger_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeExact,
             value=self._test_object.biginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeExact,
             value=str(self._test_object.biginteger)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -528,11 +568,12 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self._test_object.biginteger = -2 ** 63
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeExact,
             value=str(self._test_object.biginteger)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -542,11 +583,12 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self._test_object.biginteger = 2 ** 63 - 1
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeExact,
             value=str(self._test_object.biginteger)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -554,11 +596,12 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_biginteger_search_greater_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeGreaterThan,
             value=self._test_object.biginteger - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -566,22 +609,24 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_biginteger_search_greater_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.biginteger - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.biginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -589,11 +634,12 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_biginteger_search_less_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeLessThan,
             value=self._test_object.biginteger + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -601,22 +647,24 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_biginteger_search_less_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.biginteger + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.biginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -624,52 +672,56 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_biginteger_search_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.biginteger - 1, self._test_object.biginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.biginteger, self._test_object.biginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.biginteger - 1, self._test_object.biginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.biginteger, self._test_object.biginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -677,71 +729,77 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_biginteger_search_range_exclusive(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.biginteger - 1, self._test_object.biginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.biginteger, self._test_object.biginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.biginteger - 1, self._test_object.biginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.biginteger, self._test_object.biginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_biginteger_search_range_exclusive_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRangeExclusive,
             value='INVALID'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='biginteger',
             query_type=QueryTypeRangeExclusive,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -750,11 +808,12 @@ class BackendFieldTypeQueryTypeBigIntegerTestCaseMixin:
 
 class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
     def test_search_field_type_boolean_search_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -763,75 +822,82 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
         self._test_object.boolean = False
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_boolean_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value='true'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value='TRUE'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value=False
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value='false'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value='FALSE'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -840,11 +906,12 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
         self._test_object.boolean = False
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='boolean',
             query_type=QueryTypeExact,
             value='FALSE'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -854,11 +921,12 @@ class BackendFieldTypeQueryTypeBooleanTestCaseMixin:
 
 class BackendFieldTypeQueryTypeCharTestCaseMixin:
     def test_search_field_type_char_search_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -867,23 +935,25 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
         self._test_object.char = ''
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_char_search_empty_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -892,12 +962,13 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
         self._test_object.char = ''
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -908,11 +979,12 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
         self._test_object.char = 'café'
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value='cafe'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -922,18 +994,19 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
     def test_search_field_type_char_search_exact(self):
         parts = self._test_object.char.split(' ')
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value=parts[0]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value=''.join(
@@ -942,34 +1015,37 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value=parts[0][1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=self._test_object.char
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypeExact,
@@ -979,29 +1055,32 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_char_search_fuzzy(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeFuzzy,
             value='chra'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypeFuzzy,
             value='test chra'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1010,51 +1089,55 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
     def test_search_field_type_char_search_partial(self):
         parts = self._test_object.char.split(' ')
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypePartial,
             value=parts[0][:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypePartial,
             value=parts[0][1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypePartial,
             value=parts[0].upper()[:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypePartial,
             value=parts[0].upper()[1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -1064,13 +1147,14 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -1080,12 +1164,13 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -1095,28 +1180,31 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_char_search_regular_expression(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeRegularExpression,
             value='c.*r'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeRegularExpression,
             value='(test|INVALID)'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1124,11 +1212,12 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_char_search_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='char',
             query_type=QueryTypeExact,
             value=99
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1137,11 +1226,12 @@ class BackendFieldTypeQueryTypeCharTestCaseMixin:
 
 class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
     def test_search_field_type_datetime_search_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1150,23 +1240,25 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self._test_object.datetime = None
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_datetime_search_empty_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1175,19 +1267,20 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self._test_object.datetime = None
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_datetime_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeExact,
             value='{year}-{month}-{day}T{hour}:{minute}:{second}'.format(
@@ -1199,6 +1292,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
                 second=self._test_object.datetime.second
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1206,13 +1300,14 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeGreaterThan, value='{year}-{month}'.format(
                 year=self._test_object.datetime.year - 1,
                 month=self._test_object.datetime.month
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1220,12 +1315,13 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than_humanized_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_quoted_value=True,
             query_type=QueryTypeGreaterThan,
             value='last month'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1233,11 +1329,12 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than_humanized_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeGreaterThan,
             value='last month'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1245,7 +1342,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_greater_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeGreaterThanOrEqual,
             value='{year}-{month}'.format(
@@ -1253,6 +1350,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
                 month=self._test_object.datetime.month
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1260,13 +1358,14 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_less_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeLessThan, value='{year}-{month}'.format(
                 year=self._test_object.datetime.year + 1,
                 month=self._test_object.datetime.month
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1274,10 +1373,11 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_less_than_humanized(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeLessThan, value='tomorrow'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1285,7 +1385,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_less_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeLessThanOrEqual,
             value='{year}-{month}'.format(
@@ -1293,6 +1393,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
                 month=self._test_object.datetime.month
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1300,7 +1401,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeRange,
             value='{year_low}-{month_low}..{year_high}-{month_high}'.format(
@@ -1310,6 +1411,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
                 month_high=self._test_object.datetime.month
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1317,24 +1419,26 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_humanized(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_quoted_value=True,
             query_type=QueryTypeRange,
             value='last year..tomorrow'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_quoted_value=True,
             query_type=QueryTypeRange,
             value='yesterday..in two months'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1342,11 +1446,12 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_humanized_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeRange,
             value='last year..tomorrow'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1354,7 +1459,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_exclusive(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeRangeExclusive,
             value='{year_low}-{month_low}..{year_high}-{month_high}'.format(
@@ -1364,6 +1469,7 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
                 month_high=self._test_object.datetime.month
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1371,31 +1477,34 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_datetime_search_range_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeRangeExclusive,
             value=11111
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeRangeExclusive,
             value='invalid'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             query_type=QueryTypeRangeExclusive,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1404,11 +1513,12 @@ class BackendFieldTypeQueryTypeDateTimeTestCaseMixin:
 
 class BackendFieldTypeQueryTypeEmailTestCaseMixin:
     def test_search_field_type_email_search_exact_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1417,23 +1527,25 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
         self._test_object.email = ''
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_email_search_exact_empty_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1442,12 +1554,13 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
         self._test_object.email = ''
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1455,11 +1568,12 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_email_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypeExact,
             value=self._test_object.email
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1467,44 +1581,48 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_email_search_partial(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypePartial,
             value='user'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypePartial,
             value='user@'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypePartial,
             value='example.org'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypePartial,
             value=self._test_object.email[1:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1512,21 +1630,23 @@ class BackendFieldTypeQueryTypeEmailTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_email_search_exact_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypeExact,
             value=99
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='email',
             query_type=QueryTypeExact,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1537,11 +1657,12 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
     def test_search_field_type_integer_null_search_exact_empty_non_quoted(self):
         self._test_object_integer_set = False
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1550,11 +1671,12 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self._test_object.integer = TEST_OBJECT_INTEGER_VALUE
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1563,12 +1685,13 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
     def test_search_field_type_integer_null_search_exact_empty_quoted(self):
         self._test_object_integer_set = False
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1577,34 +1700,37 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self._test_object.integer = TEST_OBJECT_INTEGER_VALUE
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_integer_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeExact,
             value=self._test_object.integer
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeExact,
             value=str(self._test_object.integer)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1615,11 +1741,12 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self._test_object.integer = -2 ** 31
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeExact,
             value=str(self._test_object.integer)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1629,11 +1756,12 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self._test_object.integer = 2 ** 31 - 1
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeExact,
             value=str(self._test_object.integer)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1641,11 +1769,12 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_greater_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeGreaterThan,
             value=self._test_object.integer - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1653,22 +1782,24 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_greater_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.integer - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.integer
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1676,11 +1807,12 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_less_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeLessThan,
             value=self._test_object.integer + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1688,22 +1820,24 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_less_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.integer + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.integer
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1711,52 +1845,56 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.integer - 1, self._test_object.integer + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.integer, self._test_object.integer + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.integer - 1, self._test_object.integer
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.integer, self._test_object.integer
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1764,71 +1902,77 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_integer_search_range_exclusive(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.integer - 1, self._test_object.integer + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.integer, self._test_object.integer + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.integer - 1, self._test_object.integer
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.integer, self._test_object.integer
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_integer_search_range_exclusive_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRangeExclusive,
             value='INVALID'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             query_type=QueryTypeRangeExclusive,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -1837,33 +1981,36 @@ class BackendFieldTypeQueryTypeIntegerTestCaseMixin:
 
 class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
     def test_search_field_type_positivebiginteger_search_exact_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_positivebiginteger_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeExact,
             value=self._test_object.positivebiginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeExact,
             value=str(self._test_object.positivebiginteger)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1874,11 +2021,12 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self._test_object.positivebiginteger = 2 ** 63 - 1
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeExact,
             value=self._test_object.positivebiginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1886,11 +2034,12 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positivebiginteger_search_greater_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeGreaterThan,
             value=self._test_object.positivebiginteger - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1898,22 +2047,24 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positivebiginteger_search_greater_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.positivebiginteger - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.positivebiginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1921,11 +2072,12 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positivebiginteger_search_less_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeLessThan,
             value=self._test_object.positivebiginteger + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1933,22 +2085,24 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positivebiginteger_search_less_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.positivebiginteger + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.positivebiginteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -1956,46 +2110,49 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positivebiginteger_search_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positivebiginteger - 1, self._test_object.positivebiginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positivebiginteger, self._test_object.positivebiginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positivebiginteger - 1, self._test_object.positivebiginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
@@ -2003,6 +2160,7 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
                 self._test_object.positivebiginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2010,7 +2168,7 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positivebiginteger_search_range_exclusive(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
@@ -2018,13 +2176,14 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
                 self._test_object.positivebiginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
@@ -2032,12 +2191,13 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
                 self._test_object.positivebiginteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
@@ -2045,12 +2205,13 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
                 self._test_object.positivebiginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
@@ -2058,27 +2219,30 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
                 self._test_object.positivebiginteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_positivebiginteger_search_range_exclusive_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRangeExclusive,
             value='INVALID'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positivebiginteger',
             query_type=QueryTypeRangeExclusive,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -2087,33 +2251,36 @@ class BackendFieldTypeQueryTypePositiveBigIntegerTestCaseMixin:
 
 class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
     def test_search_field_type_positiveinteger_search_exact_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_positiveinteger_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeExact,
             value=self._test_object.positiveinteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeExact,
             value=str(self._test_object.positiveinteger)
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2124,11 +2291,12 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self._test_object.positiveinteger = 2 ** 31 - 1
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeExact,
             value=self._test_object.positiveinteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2136,11 +2304,12 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_greater_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeGreaterThan,
             value=self._test_object.positiveinteger - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2148,22 +2317,24 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_greater_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.positiveinteger - 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeGreaterThanOrEqual,
             value=self._test_object.positiveinteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2171,11 +2342,12 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_less_than(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeLessThan,
             value=self._test_object.positiveinteger + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2183,22 +2355,24 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_less_than_or_equal(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.positiveinteger + 1
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeLessThanOrEqual,
             value=self._test_object.positiveinteger
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2206,52 +2380,56 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positiveinteger - 1, self._test_object.positiveinteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positiveinteger, self._test_object.positiveinteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positiveinteger - 1, self._test_object.positiveinteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRange,
             value='{}..{}'.format(
                 self._test_object.positiveinteger, self._test_object.positiveinteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2259,71 +2437,77 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_positiveinteger_search_range_exclusive(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.positiveinteger - 1, self._test_object.positiveinteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.positiveinteger, self._test_object.positiveinteger + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.positiveinteger - 1, self._test_object.positiveinteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRangeExclusive,
             value='{}..{}'.format(
                 self._test_object.positiveinteger, self._test_object.positiveinteger
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_positiveinteger_search_range_exclusive_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRangeExclusive,
             value='INVALID'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='positiveinteger',
             query_type=QueryTypeRangeExclusive,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -2332,23 +2516,25 @@ class BackendFieldTypeQueryTypePositiveIntegerTestCaseMixin:
 
 class BackendFieldTypeQueryTypeTextTestCaseMixin:
     def test_search_field_type_text_search_exact_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_text_search_exact_empty_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -2357,12 +2543,13 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
         self._test_object.text = ''
         self._test_object.save()
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2370,11 +2557,12 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_text_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypeExact,
             value=self._test_object.text
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2382,23 +2570,25 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_text_search_fuzzy(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypeFuzzy,
             value='tetx'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypeFuzzy,
             value='test tetx'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -2407,51 +2597,55 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
     def test_search_field_type_text_search_partial(self):
         parts = self._test_object.text.split(' ')
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypePartial,
             value=parts[0][:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypePartial,
             value=parts[0][1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypePartial,
             value=parts[0].upper()[:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypePartial,
             value=parts[0].upper()[1:]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -2461,13 +2655,14 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -2477,12 +2672,13 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             is_quoted_value=True,
             query_type=QueryTypePartial,
@@ -2492,28 +2688,31 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_text_search_regular_expression(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypeRegularExpression,
             value='t.*t'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypeRegularExpression,
             value='(text|INVALID)'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2521,11 +2720,12 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_text_search_regular_expression_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='text',
             query_type=QueryTypeRegularExpression,
             value=99
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
@@ -2534,22 +2734,24 @@ class BackendFieldTypeQueryTypeTextTestCaseMixin:
 
 class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
     def test_search_field_type_uuid_search_exact_empty_non_quoted(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeExact,
             value=''
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_uuid_search_exact(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeExact,
             value=self._test_object.uuid
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2557,22 +2759,24 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_uuid_search_partial(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypePartial,
             value=str(self._test_object.uuid)[1:-1]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypePartial,
             value=str(self._test_object.uuid).split('-')[0]
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2582,20 +2786,21 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
     def test_search_field_type_uuid_search_regular_expression(self):
         parts = str(self._test_object.uuid).split('-')
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeRegularExpression,
             value='{}.*{}.*'.format(
                 parts[0][:5], parts[0][-1]
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
         )
         self.assertTrue(self._test_object.id in id_list)
 
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeRegularExpression,
             value='({}|INVALID)'.format(
@@ -2604,6 +2809,7 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
                 )
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -2611,22 +2817,24 @@ class BackendFieldTypeQueryTypeUUIDTestCaseMixin:
         self.assertTrue(self._test_object.id in id_list)
 
     def test_search_field_type_uuid_search_exact_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeExact,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0
         )
 
     def test_search_field_type_uuid_search_regular_expression_invalid(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='uuid',
             query_type=QueryTypeRegularExpression,
             value=True
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 0

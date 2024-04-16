@@ -304,9 +304,8 @@ class SearchFieldVirtual(SearchField):
         return models.TextField
 
     def get_model_field(self):
-        return get_fields_from_path(
-            model=self.model, path='id'
-        )[-1]
+        field_list = get_fields_from_path(model=self.model, path='id')
+        return field_list[-1]
 
 
 class SearchFieldVirtualAllFields(SearchFieldVirtual):

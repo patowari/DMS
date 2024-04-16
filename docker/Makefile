@@ -100,7 +100,7 @@ docker-compose-up:
 
 docker-elastic-start: ## Start an Elastic Search test container.
 docker-elastic-start:
-	@docker run --detach -e ES_JAVA_OPTS="-Xms256m -Xmx256m" -e "discovery.type=single-node" -e "network.host=0.0.0.0" -e "ingest.geoip.downloader.enabled=false" --name $(CONTAINER_NAME_TEST_ELASTIC) --publish 9200:9200 --publish 9300:9300 $(DOCKER_ELASTIC_IMAGE_VERSION)
+	@docker run --detach -e ES_JAVA_OPTS="-Xms256m -Xmx256m" -e "discovery.type=single-node" -e "network.host=0.0.0.0" -e "ingest.geoip.downloader.enabled=false" --name $(CONTAINER_NAME_TEST_ELASTIC) --publish 9200:9200 --publish 9300:9300 $(DOCKER_ELASTIC_IMAGE_NAME):$(DOCKER_ELASTIC_IMAGE_TAG)
 	@while ! nc -z 127.0.0.1 9200; do echo -n .; sleep 1; done
 
 docker-elastic-stop: ## Stop and delete the Elastic Search container.

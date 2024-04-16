@@ -24,7 +24,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_checksum_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'checksum': self._test_document_file.checksum
             }
@@ -42,7 +42,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'checksum': self._test_document_file.checksum
             }
@@ -62,7 +62,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'checksum': self._test_document_file.checksum
             }
@@ -75,7 +75,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_comment_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'comment': self._test_document_file.comment
             }
@@ -93,7 +93,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'comment': self._test_document_file.comment
             }
@@ -113,7 +113,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'comment': self._test_document_file.comment
             }
@@ -126,7 +126,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_filename_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'filename': self._test_document_file.filename
             }
@@ -144,7 +144,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'filename': self._test_document_file.filename
             }
@@ -164,7 +164,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'filename': self._test_document_file.filename
             }
@@ -177,7 +177,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_mime_type_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'mimetype': self._test_document_file.mimetype
             }
@@ -195,7 +195,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'mimetype': self._test_document_file.mimetype
             }
@@ -215,7 +215,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'mimetype': self._test_document_file.mimetype
             }
@@ -228,7 +228,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_document_description_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__description': self._test_document.description
             }
@@ -246,7 +246,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__description': self._test_document.description
             }
@@ -266,7 +266,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__description': self._test_document.description
             }
@@ -279,7 +279,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_document_label_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__label': self._test_document.label
             }
@@ -297,7 +297,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__label': self._test_document.label
             }
@@ -317,7 +317,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__label': self._test_document.label
             }
@@ -330,7 +330,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_document_uuid_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__uuid': str(self._test_document.uuid)
             }
@@ -348,7 +348,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__uuid': str(self._test_document.uuid)
             }
@@ -368,7 +368,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__uuid': str(self._test_document.uuid)
             }
@@ -381,7 +381,7 @@ class DocumentFileSearchTestCase(
     def test_search_model_document_file_by_document_type_label_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__document_type__label': self._test_document_type.label
             }
@@ -399,7 +399,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__document_type__label': self._test_document_type.label
             }
@@ -419,7 +419,7 @@ class DocumentFileSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document__document_type__label': self._test_document_type.label
             }
@@ -443,7 +443,7 @@ class DocumentFilePageSearchTestCase(
     def test_search_model_document_file_page_by_document_label_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__label': self._test_document.label
             }
@@ -461,7 +461,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__label': self._test_document.label
             }
@@ -481,7 +481,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__label': self._test_document.label
             }
@@ -494,7 +494,7 @@ class DocumentFilePageSearchTestCase(
     def test_search_model_document_file_page_by_document_file_checksum_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__checksum': self._test_document_file.checksum
             }
@@ -512,7 +512,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__checksum': self._test_document_file.checksum
             }
@@ -532,7 +532,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__checksum': self._test_document_file.checksum
             }
@@ -545,7 +545,7 @@ class DocumentFilePageSearchTestCase(
     def test_search_model_document_file_page_by_document_uuid_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__uuid': str(
                     self._test_document.uuid
@@ -565,7 +565,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__uuid': str(
                     self._test_document.uuid
@@ -587,7 +587,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__uuid': str(
                     self._test_document.uuid
@@ -602,7 +602,7 @@ class DocumentFilePageSearchTestCase(
     def test_search_model_document_file_page_by_document_type_label_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__document_type__label': self._test_document_type.label
             }
@@ -620,7 +620,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__document_type__label': self._test_document_type.label
             }
@@ -640,7 +640,7 @@ class DocumentFilePageSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'document_file__document__document_type__label': self._test_document_type.label
             }

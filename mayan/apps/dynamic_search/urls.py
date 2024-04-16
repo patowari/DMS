@@ -1,9 +1,17 @@
 from django.urls import re_path
 
-from .api_views import APISearchModelList, APISearchView
-from .views import (
+from .api_views.saved_resultset_api_views import (
+    APISavedResultsetCreateView, APISavedResultsetDetailView,
+    APISavedResultsetListView, APISavedResultsetResultListView
+)
+from .api_views.search_api_views import APISearchModelList, APISearchView
+from .views.saved_resultset_views import (
+    SavedResultsetDeleteView, SavedResultsetListView,
+    SavedResultsetResultListView
+)
+from .views.search_views import (
     SearchAdvancedView, SearchAgainView, SearchBackendReindexView,
-    SearchResultsView, SearchSimpleView
+    SearchResultView, SearchSimpleView
 )
 
 urlpatterns_search = [
@@ -21,15 +29,32 @@ urlpatterns_search = [
     ),
     re_path(
         route=r'^results/$', name='search_results',
-        view=SearchResultsView.as_view()
+        view=SearchResultView.as_view()
     ),
     re_path(
         route=r'^results/(?P<search_model_pk>[\.\w]+)/$',
-        name='search_results', view=SearchResultsView.as_view()
+        name='search_results', view=SearchResultView.as_view()
     ),
     re_path(
         route=r'^simple/(?P<search_model_pk>[\.\w]+)/$',
         name='search_simple', view=SearchSimpleView.as_view()
+    )
+]
+
+urlpatterns_saved_resultset = [
+    re_path(
+        route=r'^saved_resultsets/$',
+        name='saved_resultset_list', view=SavedResultsetListView.as_view()
+    ),
+    re_path(
+        route=r'^saved_resultsets/(?P<saved_resultset_id>\d+)/delete/$',
+        name='saved_resultset_delete_single',
+        view=SavedResultsetDeleteView.as_view()
+    ),
+    re_path(
+        route=r'^saved_resultsets/(?P<saved_resultset_id>\d+)/results/$',
+        name='saved_resultset_result_list',
+        view=SavedResultsetResultListView.as_view()
     )
 ]
 
@@ -41,10 +66,33 @@ urlpatterns_tools = [
 ]
 
 urlpatterns = []
+urlpatterns.extend(urlpatterns_saved_resultset)
 urlpatterns.extend(urlpatterns_search)
 urlpatterns.extend(urlpatterns_tools)
 
-api_urls = [
+api_urls_saved_resultset = [
+    re_path(
+        route=r'^saved_resultsets/(?P<saved_resultset_id>[0-9]+)/$',
+        view=APISavedResultsetDetailView.as_view(),
+        name='saved_resultset-detail'
+    ),
+    re_path(
+        route=r'^saved_resultsets/(?P<saved_resultset_id>[0-9]+)/results/$',
+        view=APISavedResultsetResultListView.as_view(),
+        name='saved_resultset-result-list'
+    ),
+    re_path(
+        route=r'^saved_resultsets/$', name='saved_resultset-list',
+        view=APISavedResultsetListView.as_view()
+    ),
+    re_path(
+        route=r'^saved_resultsets/(?P<search_model_pk>[\.\w]+)/$',
+        name='saved_resultset-create',
+        view=APISavedResultsetCreateView.as_view()
+    )
+]
+
+api_urls_search = [
     re_path(
         route=r'^search/(?P<search_model_pk>[\.\w]+)/$', name='search-view',
         view=APISearchView.as_view()
@@ -58,3 +106,7 @@ api_urls = [
         view=APISearchModelList.as_view()
     )
 ]
+
+api_urls = []
+api_urls.extend(api_urls_saved_resultset)
+api_urls.extend(api_urls_search)

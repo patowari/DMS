@@ -16,7 +16,7 @@ class DocumentTagSearchTestCase(
     def test_search_model_document_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'tags__label': self._test_tag.label
             }
@@ -33,7 +33,7 @@ class DocumentTagSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'tags__label': self._test_tag.label
             }
@@ -52,7 +52,7 @@ class DocumentTagSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'tags__label': self._test_tag.label
             }

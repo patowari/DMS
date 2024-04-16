@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.views.generics import (
     MultipleObjectDeleteView, SingleObjectListView
 )
+from mayan.apps.views.view_mixins import ViewMixinOwnerPlusFilteredQueryset
 
 from ..events import event_download_file_downloaded
 from ..icons import (
@@ -17,7 +18,6 @@ from ..permissions import (
 )
 
 from .download_views import ViewSingleObjectDownload
-from .mixins import ViewMixinOwnerPlusFilteredQueryset
 
 
 class DownloadFileDeleteView(

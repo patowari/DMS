@@ -13,7 +13,7 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
 )
 from mayan.apps.dynamic_search.literals import SEARCH_MODEL_NAME_KWARG
 from mayan.apps.dynamic_search.tests.mixins.base import SearchTestMixin
-from mayan.apps.dynamic_search.tests.mixins.view_mixins import (
+from mayan.apps.dynamic_search.tests.mixins.search_view_mixins import (
     SearchViewTestMixin
 )
 

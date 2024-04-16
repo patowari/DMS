@@ -7,7 +7,7 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from ..search_backends import SearchBackend
 from ..search_models import SearchModel
 
-from .mixins.task_mixins import SearchTaskTestMixin
+from .mixins.search_task_mixins import SearchTaskTestMixin
 
 
 class SearchTaskTestCase(SearchTaskTestMixin, BaseTestCase):

@@ -102,12 +102,13 @@ class WhooshSearchBackendSpecificTestCase(
     _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
 
     def test_whoosh_datetime_search_raw_parsed_date_human_today(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_raw_value=True,
             query_type=QueryTypeExact,
             value='today'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -115,12 +116,13 @@ class WhooshSearchBackendSpecificTestCase(
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_datetime_search_raw_parsed_date_human_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_raw_value=True,
             query_type=QueryTypeExact,
             value='[\'last tuesday\' to \'next friday\']'
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -128,7 +130,7 @@ class WhooshSearchBackendSpecificTestCase(
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_datetime_search_raw_parsed_date_numeric_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='datetime',
             is_raw_value=True,
             query_type=QueryTypeExact,
@@ -137,6 +139,7 @@ class WhooshSearchBackendSpecificTestCase(
                 self._test_object.datetime.year + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1
@@ -144,7 +147,7 @@ class WhooshSearchBackendSpecificTestCase(
         self.assertTrue(self._test_object.id in id_list)
 
     def test_whoosh_integer_search_raw_parsed_numeric_range(self):
-        id_list = self._do_backend_search(
+        generator = self._do_backend_search(
             field_name='integer',
             is_raw_value=True,
             query_type=QueryTypeExact,
@@ -153,6 +156,7 @@ class WhooshSearchBackendSpecificTestCase(
                 self._test_object.integer + 1
             )
         )
+        id_list = tuple(generator)
 
         self.assertEqual(
             len(id_list), 1

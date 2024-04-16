@@ -2,13 +2,27 @@ from rest_framework.exceptions import ParseError
 
 from mayan.apps.rest_api import generics
 
-from .api_view_mixins import SearchModelAPIViewMixin
-from .exceptions import DynamicSearchException
-from .search_models import SearchModel
-from .serializers import (
+from ..exceptions import DynamicSearchException
+from ..search_models import SearchModel
+from ..serializers import (
     DummySearchResultModelSerializer, SearchModelSerializer
 )
-from .view_mixins import SearchResultViewMixin
+from ..views.view_mixins import SearchResultViewMixin
+
+from .api_view_mixins import SearchModelAPIViewMixin
+
+
+class APISearchModelList(generics.ListAPIView):
+    """
+    get: Returns a list of all the available search models.
+    """
+
+    serializer_class = SearchModelSerializer
+
+    def get_source_queryset(self):
+        # This changes after the initial startup as search models are
+        # automatically loaded.
+        return SearchModel.all()
 
 
 class APISearchView(
@@ -31,16 +45,3 @@ class APISearchView(
             raise ParseError(
                 detail=str(exception)
             )
-
-
-class APISearchModelList(generics.ListAPIView):
-    """
-    get: Returns a list of all the available search models.
-    """
-
-    serializer_class = SearchModelSerializer
-
-    def get_source_queryset(self):
-        # This changes after the initial startup as search models are
-        # automatically loaded.
-        return SearchModel.all()

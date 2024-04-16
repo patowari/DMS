@@ -4,9 +4,29 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.views.forms import Form
 
 from .literals import MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME
+from .settings import setting_store_results_default_value
 
 
-class AdvancedSearchForm(Form):
+class SearchFormBase(Form):
+    _save_results = forms.BooleanField(
+        help_text=_(
+            message='Store the search results to speed up paging and for '
+            'later browsing.'
+        ), initial=setting_store_results_default_value.value, required=False,
+        label=_(message='Save results')
+    )
+
+    def get_fieldsets(self):
+        return (
+            (
+                _(message='Persistency'), {
+                    'fields': ('_save_results',)
+                },
+            ),
+        )
+
+
+class AdvancedSearchForm(SearchFormBase):
     def __init__(self, *args, **kwargs):
         kwargs['data'] = kwargs['data'].copy()
         self.search_model = kwargs.pop('search_model')
@@ -15,10 +35,9 @@ class AdvancedSearchForm(Form):
         fieldsets_dict = {}
 
         self.fields[MATCH_ALL_FIELD_NAME] = forms.ChoiceField(
-            choices=MATCH_ALL_FIELD_CHOICES, widget=forms.RadioSelect,
-            label=_(message='Match all'), help_text=_(
-                message='Return only results that match all fields.'
-            ), required=False
+            choices=MATCH_ALL_FIELD_CHOICES, label=_(message='Match all'),
+            help_text=_(message='Return only results that match all fields.'),
+            required=False, widget=forms.RadioSelect,
         )
 
         for search_field in self.search_model.search_fields_label_sorted:
@@ -49,10 +68,12 @@ class AdvancedSearchForm(Form):
         fieldsets = ()
 
         fieldsets += (
-            _(message='Search logic'), {
-                'fields': (MATCH_ALL_FIELD_NAME,)
-            }
-        ),
+            (
+                _(message='Search logic'), {
+                    'fields': (MATCH_ALL_FIELD_NAME,)
+                }
+            ),
+        )
 
         keys = list(
             fieldsets_dict.keys()
@@ -64,13 +85,35 @@ class AdvancedSearchForm(Form):
                 key, fieldsets_dict[key]
             ),
 
-        self.fieldsets = fieldsets
+        self._fieldsets = fieldsets
+
+    def get_fieldsets(self):
+        fieldsets = super().get_fieldsets()
+
+        fieldsets += self._fieldsets
+
+        return fieldsets
 
 
-class SearchForm(Form):
+class SearchForm(SearchFormBase):
     q = forms.CharField(
         max_length=128, label=_(message='Search terms'), required=False,
         widget=forms.widgets.TextInput(
             attrs={'type': 'search'}
         )
     )
+
+    def get_fieldsets(self):
+        fieldsets_super = super().get_fieldsets()
+
+        fieldsets = (
+            (
+                _(message='Criteria'), {
+                    'fields': ('q',)
+                },
+            ),
+        )
+
+        fieldsets += fieldsets_super
+
+        return fieldsets

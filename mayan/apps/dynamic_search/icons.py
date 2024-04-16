@@ -1,6 +1,17 @@
 from mayan.apps.appearance.classes import Icon
 
 icon_result_list = Icon(driver_name='fontawesome', symbol='search')
+
+icon_saved_resultset_delete_single = Icon(
+    driver_name='fontawesome', symbol='times'
+)
+icon_saved_resultset_list = Icon(
+    driver_name='fontawesome', symbol='diagram-next'
+)
+icon_saved_resultset_result_list = Icon(
+    driver_name='fontawesome', symbol='diagram-next'
+)
+
 icon_search = Icon(driver_name='fontawesome', symbol='search')
 icon_search_advanced = Icon(driver_name='fontawesome', symbol='search-plus')
 icon_search_again = Icon(driver_name='fontawesome', symbol='sync')

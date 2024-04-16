@@ -14,6 +14,38 @@ from .literals import (
 )
 
 
+class APIViewMixinOwnerPlusFilteredQueryset:
+    def filter_queryset(self, queryset):
+        user = self.request.user
+
+        if user.is_authenticated:
+            queryset_user_owner = queryset.filter(user=self.request.user)
+        else:
+            queryset_user_owner = queryset.none()
+
+        queryset = super().filter_queryset(queryset=queryset)
+
+        queryset = queryset_user_owner | queryset
+
+        return queryset.distinct()
+
+
+class APIViewMixinExternalObjectOwnerPlusFilteredQueryset:
+    def get_external_object_queryset_filtered(self):
+        queryset = super().get_external_object_queryset_filtered()
+
+        user = self.request.user
+
+        if user.is_authenticated:
+            queryset_user_owner = queryset.filter(user=self.request.user)
+        else:
+            queryset_user_owner = queryset.none()
+
+        queryset_final = queryset_user_owner | queryset
+
+        return queryset_final.distinct()
+
+
 class AsymmetricSerializerAPIViewMixin:
     _write_methods = ('PATCH', 'POST', 'PUT')
     read_serializer_class = None
@@ -168,14 +200,6 @@ class InstanceExtraDataAPIViewMixin:
         return super().perform_update(serializer=serializer)
 
 
-class SchemaInspectionAPIViewMixin:
-    def get_serializer_context(self, *args, **kwargs):
-        if getattr(self, 'swagger_fake_view', False):
-            return {'request': self.request}
-        else:
-            return super().get_serializer_context(*args, **kwargs)
-
-
 class QuerySetOverrideCheckAPIViewMixin:
     source_queryset = None
 
@@ -231,6 +255,14 @@ class QuerySetOverrideCheckAPIViewMixin:
             except ImproperlyConfigured:
                 self.queryset = self.get_source_queryset()
                 return super().get_queryset()
+
+
+class SchemaInspectionAPIViewMixin:
+    def get_serializer_context(self, *args, **kwargs):
+        if getattr(self, 'swagger_fake_view', False):
+            return {'request': self.request}
+        else:
+            return super().get_serializer_context(*args, **kwargs)
 
 
 class SerializerActionAPIViewMixin:

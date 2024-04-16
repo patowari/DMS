@@ -3,7 +3,7 @@ import logging
 from rest_framework.filters import BaseFilterBackend
 
 from .mixins import QuerysetSearchModelMixin
-from .view_mixins import QuerysetSearchFilterMixin
+from .views.view_mixins import QuerysetSearchFilterMixin
 
 logger = logging.getLogger(name=__name__)
 

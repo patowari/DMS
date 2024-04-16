@@ -20,7 +20,7 @@ class DocumentOCRSearchTestCase(
     def test_search_model_document_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'versions__version_pages__ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -37,7 +37,7 @@ class DocumentOCRSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'versions__version_pages__ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -56,7 +56,7 @@ class DocumentOCRSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'versions__version_pages__ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -76,7 +76,7 @@ class DocumentVersionOCRSearchTestCase(
     def test_search_model_document_version_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'version_pages__ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -94,7 +94,7 @@ class DocumentVersionOCRSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'version_pages__ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -114,7 +114,7 @@ class DocumentVersionOCRSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'version_pages__ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -134,7 +134,7 @@ class DocumentVersionPageOCRSearchTestCase(
     def test_search_model_document_version_no_permission(self):
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -152,7 +152,7 @@ class DocumentVersionPageOCRSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'ocr_content__content': self._test_document_version_page.ocr_content.content
             }
@@ -172,7 +172,7 @@ class DocumentVersionPageOCRSearchTestCase(
 
         self._clear_events()
 
-        queryset = self._do_test_search(
+        saved_resultset, queryset = self._do_test_search(
             query={
                 'ocr_content__content': self._test_document_version_page.ocr_content.content
             }

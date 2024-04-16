@@ -10,14 +10,16 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..literals import (
-    MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME, MATCH_ALL_VALUES,
+    MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME, URL_QUERY_POSITIVE_VALUES,
     QUERY_PARAMETER_ANY_FIELD, SEARCH_MODEL_NAME_KWARG
 )
 from ..permissions import permission_search_tools
 
 from .literals import TEST_SEARCH_OBJECT_TERM
 from .mixins.base import TestSearchObjectSimpleTestMixin
-from .mixins.view_mixins import SearchToolsViewTestMixin, SearchViewTestMixin
+from .mixins.search_view_mixins import (
+    SearchToolsViewTestMixin, SearchViewTestMixin
+)
 
 
 class FilterViewMixinTestCase(
@@ -111,7 +113,7 @@ class SearchAdvancedViewTestCase(
             )
 
         # Make sure all documents are returned by the search.
-        queryset = self._test_search_backend.search(
+        saved_resultset, queryset = self._test_search_backend.search(
             search_model=search_model_document,
             query={
                 'label': '*{}'.format(TEST_SEARCH_OBJECT_TERM)
@@ -321,7 +323,7 @@ class SearchViewTestCase(
 
         response = self._request_search_again_view(
             follow=True, query={
-                'label': 'test', MATCH_ALL_FIELD_NAME: MATCH_ALL_VALUES[0]
+                'label': 'test', MATCH_ALL_FIELD_NAME: URL_QUERY_POSITIVE_VALUES[0]
             }
         )
 
