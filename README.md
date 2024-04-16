@@ -1,13 +1,13 @@
+[![Support][support]][support-url]
+[![Donation](https://img.shields.io/badge/donation-PayPal-brightgreen)](https://paypal.me/MayanEDMS)
+[![docker_version][docker_version]][docker_url]
 [![pypi][pypi]][pypi-url]
-![python][python]
-![license][license]
 [![Docker pulls](https://img.shields.io/docker/pulls/mayanedms/mayanedms.svg)](https://hub.docker.com/r/mayanedms/mayanedms/)
 [![Docker Stars](https://img.shields.io/docker/stars/mayanedms/mayanedms.svg)](https://hub.docker.com/r/mayanedms/mayanedms/)
-[![Commits][commits]][commits-url]
-[![Support][support]][support-url]
-[![Store](https://img.shields.io/badge/Online_store-black)](https://teespring.com/stores/mayan-edms)
-[![Donation](https://img.shields.io/badge/donation-PayPal-brightgreen)](https://paypal.me/MayanEDMS)
+![license][license]
 
+[docker_version]: https://img.shields.io/docker/v/mayanedms/mayanedms?label=Docker
+[docker_url]: https://hub.docker.com/r/mayanedms/mayanedms
 
 [pypi]: https://img.shields.io/pypi/v/mayan-edms.svg
 [pypi-url]: https://pypi.org/project/mayan-edms/
@@ -15,14 +15,8 @@
 [builds]: https://gitlab.com/mayan-edms/mayan-edms/badges/master/build.svg
 [builds-url]: https://gitlab.com/mayan-edms/mayan-edms/pipelines
 
-[python]: https://img.shields.io/pypi/pyversions/mayan-edms.svg
-[python-url]: https://img.shields.io/pypi/l/mayan-edms.svg?style=flat
-
 [license]: https://img.shields.io/pypi/l/mayan-edms.svg?style=flat
 [license-url]: https://gitlab.com/mayan-edms/mayan-edms/blob/master/LICENSE
-
-[commits]:  https://img.shields.io/github/commit-activity/y/mayan-edms/mayan-edms.svg
-[commits-url]: https://gitlab.com/mayan-edms/mayan-edms/
 
 [support]: https://img.shields.io/badge/Get_support-brightgreen
 [support-url]: https://www.mayan-edms.com/support/
@@ -34,22 +28,23 @@
   <br>
   <br>
   <p>
-    Mayan EDMS is a document management system. Its main purpose is to store,
-    introspect, and categorize files, with a strong emphasis on preserving the
-    contextual and business information of documents. It can also OCR, preview,
-    label, sign, send, and receive those files. Other features of interest
-    are its workflow system, role based access control, and REST API.
+    The most advanced open source document management system.
   <p>
 
 <p align="center">
     <img width="400" src="https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/overview.gif">
 </p>
 
-</div>
+It is very easy to get started with Mayan EDMS, just deploy the official
+Docker Compose file.
 
-<h2 align="center">Knowledge Base</h2>
+    curl https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/docker-compose.yml -O
+    curl https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/.env -O
+    docker compose up --detach
 
-Get exclusive access to the Knowledge Base!
+The complete documentation is available at: https://docs.mayan-edms.com/parts/installation.html
+
+For more in-depth articles, tutorials, and troubleshooting available in the Knowledge Base.
 
 <p align="center">
     <a href="https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q">
@@ -58,27 +53,6 @@ Get exclusive access to the Knowledge Base!
 </p>
 
 Click the image or visit: https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q
-
-<h2 align="center">Book</h2>
-
-The final version of the book "Exploring Mayan EDMS" is available now!
-
-<p align="center">
-    <a href="https://sellfy.com/p/um2fkx/">
-        <img width="400" src="https://d12swbtw719y4s.cloudfront.net/images/v6RpxW40/aP0qKLjkPiAuXZhYuB45/wDAULAzFyx.jpeg?w=548">
-    </a>
-</p>
-
-The link is https://sellfy.com/p/um2fkx/
-
-<h2 align="center">Installation</h2>
-
-The easiest way to use Mayan EDMS is by using the official
-[Docker](https://www.docker.com/) image. Make sure Docker is properly installed
-and working before attempting to install Mayan EDMS.
-
-For the complete set of installation instructions visit the Mayan EDMS documentation
-at: https://docs.mayan-edms.com/parts/installation.html
 
 <h2 align="center">Important links</h2>
 

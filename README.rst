@@ -1,4 +1,4 @@
-|pypi| |python| |license| |docker_pulls| |docker_stars| |commit_activity| |support| |store| |donation|
+|support| |donation| |docker_version| |pypi| |docker_pulls| |docker_stars| |license|
 
 
 .. image:: https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png
@@ -6,27 +6,26 @@
     :width: 200
     :height: 200
 
-Mayan EDMS is a document management system. Its main purpose is to store,
-introspect, and categorize files, with a strong emphasis on preserving the
-contextual and business information of documents. It can also OCR, preview,
-label, sign, send, and receive those files. Other features of interest
-are its workflow system, role based access control, and REST API.
+The most advanced open source document management system.
+
 
 .. image:: https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/overview.gif
     :align: center
     :width: 300
 
-The easiest way to use Mayan EDMS is by using the official Docker_ image.
-Make sure Docker is properly installed and working before attempting to install
-Mayan EDMS.
+It is very easy to get started with Mayan EDMS, just deploy the official
+Docker Compose file.
 
-For the complete set of installation instructions visit the Mayan EDMS documentation
-at: https://docs.mayan-edms.com/parts/installation.html
+   .. code-block:: console
 
-.. _Docker: https://www.docker.com/
+       curl https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/docker-compose.yml -O
+       curl https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/.env -O
+       docker compose up --detach
 
 
-Get exclusive access to the Knowledge Base!
+The complete documentation is available at: https://docs.mayan-edms.com/parts/installation.html
+
+For more in-depth articles, tutorials, and troubleshooting available in the Knowledge Base.
 
 .. image:: https://docs.mayan-edms.com/_static/knowledge-base.jpg
     :align: center
@@ -34,16 +33,6 @@ Get exclusive access to the Knowledge Base!
     :target: https://sellfy.com/p/um2fkx/
 
 Click the image or visit: https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q
-
-
-The final version of the book "Exploring Mayan EDMS" available now!
-
-.. image:: https://camo.githubusercontent.com/89d2fe787507c9247aa7bb406e2682b53eb7a5f9/68747470733a2f2f64313273776274773731397934732e636c6f756466726f6e742e6e65742f696d616765732f76365270785734302f615030714b4c6a6b50694175585a6859754234352f774441554c417a4679782e6a7065673f773d353438
-    :align: center
-    :width: 300
-    :target: https://sellfy.com/p/um2fkx/
-
-Click the image or visit: https://sellfy.com/p/um2fkx/
 
 Important links
 
@@ -56,14 +45,14 @@ Important links
 - `Translations <https://www.transifex.com/rosarior/mayan-edms/>`__
 - `Videos <https://www.youtube.com/channel/UCJOOXHP1MJ9lVA7d8ZTlHPw>`__
 
-
+.. |docker_version| image:: https://img.shields.io/docker/v/mayanedms/mayanedms?label=Docker
+   :target: https://hub.docker.com/r/mayanedms/mayanedms
 .. |donation| image:: https://img.shields.io/badge/donation-PayPal-brightgreen
    :target: https://paypal.me/MayanEDMS
 .. |pypi| image:: https://img.shields.io/pypi/v/mayan-edms.svg
    :target: https://pypi.org/project/mayan-edms/
 .. |builds| image:: https://gitlab.com/mayan-edms/mayan-edms/badges/master/build.svg
    :target: https://gitlab.com/mayan-edms/mayan-edms/pipelines
-.. |python| image:: https://img.shields.io/pypi/pyversions/mayan-edms.svg
 .. |license| image:: https://img.shields.io/pypi/l/mayan-edms.svg?style=flat
    :target: https://gitlab.com/mayan-edms/mayan-edms/blob/master/LICENSE
 .. |docker_pulls| image:: https://img.shields.io/docker/pulls/mayanedms/mayanedms.svg
@@ -72,9 +61,5 @@ Important links
    :target: https://hub.docker.com/r/mayanedms/mayanedms/
 .. |docker_layers| image:: https://images.microbadger.com/badges/image/mayanedms/mayanedms.svg
    :target: https://microbadger.com/images/mayanedms/mayanedms
-.. |commit_activity| image:: https://img.shields.io/github/commit-activity/y/mayan-edms/mayan-edms.svg
-   :target: https://gitlab.com/mayan-edms/mayan-edms/
 .. |support| image:: https://img.shields.io/badge/Get_support-brightgreen
    :target: https://www.mayan-edms.com/support/
-.. |store| image:: https://img.shields.io/badge/Online_store-black
-   :target: https://teespring.com/stores/mayan-edms
