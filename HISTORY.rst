@@ -198,6 +198,7 @@
   - Convert the search backends into folder modules.
 
 - Fix document type model verbose name.
+- Fix detached signature link object reference.
 
 4.6.3 (2024-03-28)
 ==================
