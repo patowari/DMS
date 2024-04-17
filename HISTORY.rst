@@ -9,6 +9,7 @@
 - Lower the severity of searching indexing problems to ``INFO``. This
   reduces user confusion between normal messages when processing the
   asynchronous task queue and actual coding errors.
+- Fix detached signature link object reference.
 
 4.4.14 (2024-03-27)
 ===================
