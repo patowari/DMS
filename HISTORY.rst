@@ -23,6 +23,7 @@
   - Update psycopg2 from 2.9.3 to 2.9.9.
 
 - Improve unconfigured task error message.
+- Support ignoring SSL certificates for ElasticSearch.
 
 4.4.14 (2024-03-27)
 ===================
