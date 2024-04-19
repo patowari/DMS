@@ -18,8 +18,9 @@ from .literals import (
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_START,
     DEFAULT_ELASTICSEARCH_CLIENT_SNIFFER_TIMEOUT, DEFAULT_ELASTICSEARCH_HOST,
     DEFAULT_ELASTICSEARCH_INDICES_NAMESPACE,
-    DEFAULT_ELASTICSEARCH_SEARCH_PAGE_SIZE, DJANGO_TO_ELASTICSEARCH_FIELD_MAP,
-    MAXIMUM_API_ATTEMPT_COUNT
+    DEFAULT_ELASTICSEARCH_SEARCH_PAGE_SIZE,
+    DEFAULT_ELASTICSEARCH_CLIENT_VERIFY_CERTS,
+    DJANGO_TO_ELASTICSEARCH_FIELD_MAP, MAXIMUM_API_ATTEMPT_COUNT
 )
 
 
@@ -35,6 +36,7 @@ class ElasticSearchBackend(SearchBackend):
         client_sniff_on_connection_fail=DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_CONNECTION_FAIL,
         client_sniff_on_start=DEFAULT_ELASTICSEARCH_CLIENT_SNIFF_ON_START,
         client_sniffer_timeout=DEFAULT_ELASTICSEARCH_CLIENT_SNIFFER_TIMEOUT,
+        client_verify_certs=DEFAULT_ELASTICSEARCH_CLIENT_VERIFY_CERTS,
         indices_namespace=DEFAULT_ELASTICSEARCH_INDICES_NAMESPACE,
         **kwargs
     ):
@@ -48,7 +50,8 @@ class ElasticSearchBackend(SearchBackend):
             'port': client_port, 'scheme': client_scheme,
             'sniff_on_start': client_sniff_on_start,
             'sniff_on_connection_fail': client_sniff_on_connection_fail,
-            'sniffer_timeout': client_sniffer_timeout
+            'sniffer_timeout': client_sniffer_timeout,
+            'verify_certs': client_verify_certs
         }
 
         if self._test_mode:

@@ -196,6 +196,7 @@
   - Increase scope result limit to 100000.
   - Add support to store search results into resultsets.
   - Convert the search backends into folder modules.
+  - Support ignoring SSL certificates for ElasticSearch.
 
 - Fix document type model verbose name.
 - Fix detached signature link object reference.
