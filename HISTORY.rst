@@ -20,6 +20,7 @@
   - RabbitMQ Docker image from 3.11.13-alpine to 3.11.28-alpine.
   - Redis Docker image from 7.0.10-alpine to 7.0.15-alpine.
   - Traefik Docker image from 2.5 to 2.5.7.
+  - Update psycopg2 from 2.9.3 to 2.9.9.
 
 - Improve unconfigured task error message.
 
