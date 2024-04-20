@@ -79,7 +79,7 @@ job_docker_test:
     - docker run --rm --add-host="postgres:${SERVICE_POSTGRES_IP}" -e MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql_psycopg2','NAME':'mayan','USER':'mayan','PASSWORD':'mayanuserpass','HOST':'postgres'}}" "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" run_tests
   services:
     - docker:23.0.6-dind
-    - postgres:13.10-alpine
+    - postgres:13.14-alpine
   stage: stage_test_container
   tags:
     - postgres
@@ -426,7 +426,7 @@ job_postgres_upgrade_test:
     - pip install dist/mayan_edms-*.whl
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
-    - postgres:13.10-alpine
+    - postgres:13.14-alpine
   tags:
     - postgres
   variables:
@@ -493,7 +493,7 @@ job_postgres_test:
     - make test-all SETTINGS=mayan.settings.testing.gitlab-ci
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
-    - postgres:13.10-alpine
+    - postgres:13.14-alpine
   tags:
     - postgres
   variables:

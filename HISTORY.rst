@@ -10,6 +10,16 @@
   reduces user confusion between normal messages when processing the
   asynchronous task queue and actual coding errors.
 - Fix detached signature link object reference.
+- Update dependencies:
+
+  - ElasticSearch Docker image from 7.17.9 to 7.17.20.
+  - KeyCloak Docker image from 20.0.1 to 20.0.5.
+  - MySQL Docker image from 8.0.32 to 8.0.36.
+  - PostgreSQL Docker image from 13.10-alpine to 13.14-alpine.
+  - Python Docker image from 3.10.11-slim to 3.10.14-slim.
+  - RabbitMQ Docker image from 3.11.13-alpine to 3.11.28-alpine.
+  - Redis Docker image from 7.0.10-alpine to 7.0.15-alpine.
+  - Traefik Docker image from 2.5 to 2.5.7.
 
 4.4.14 (2024-03-27)
 ===================
