@@ -3,6 +3,10 @@ from django.urls import reverse
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 
+from mayan.apps.django_gpg.tests.mixins import KeyTestMixin
+from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
+from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
+
 from ..links import (
     link_document_file_signature_detached_delete,
     link_document_file_signature_detail
@@ -11,8 +15,9 @@ from ..permissions import (
     permission_document_file_signature_delete,
     permission_document_file_signature_view
 )
+
 from .literals import TEST_SIGNED_DOCUMENT_PATH
-from .mixins import DetachedSignatureTestMixin
+from .mixins import DetachedSignatureTestMixin, SignatureViewTestMixin
 
 
 class DocumentSignatureLinksTestCase(
@@ -104,15 +109,6 @@ class DocumentSignatureLinksTestCase(
             )
         )
 
-
-
-from mayan.apps.django_gpg.tests.mixins import KeyTestMixin
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
-
-from ..permissions import permission_document_file_signature_view
-
-from .mixins import DetachedSignatureTestMixin, SignatureViewTestMixin
 
 class DocumentSignatureViewLinksTestCase(
     KeyTestMixin, DetachedSignatureTestMixin, SignatureViewTestMixin,
