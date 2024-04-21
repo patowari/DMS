@@ -152,7 +152,6 @@ class DetachedSignatureTestMixin:
 
 
 class SignatureViewTestMixin:
-
     def _request_test_document_file_signature_detail_view(self):
         return self.get(
             viewname='signatures:document_file_signature_detail',
