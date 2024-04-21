@@ -1,8 +1,5 @@
 from django.urls import reverse
 
-from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
-from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
-
 from mayan.apps.django_gpg.tests.mixins import KeyTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
