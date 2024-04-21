@@ -1,5 +1,5 @@
-4.4.15 (XXXX-XX-XX)
-==================
+4.4.15 (2024-04-20)
+===================
 - Remove local version from the platform cache identifiers.
 - Minor optimization to documents app migration 0080.
 - Update ``mayan.apps.dependencies.versions.py`` to support local and
