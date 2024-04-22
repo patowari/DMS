@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
+"POT-Creation-Date: 2024-04-22 22:08+0000\n"
 "PO-Revision-Date: 2020-05-25 06:18+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -134,7 +134,7 @@ msgid "Key"
 msgstr ""
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
+msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
 
 #: models.py:33
@@ -162,7 +162,7 @@ msgid "Sources setup"
 msgstr ""
 
 #: permissions.py:12
-msgid "View document source metadata"
+msgid "View document file source metadata"
 msgstr ""
 
 #: permissions.py:18
