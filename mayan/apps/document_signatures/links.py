@@ -31,7 +31,7 @@ def condition_is_detached_signature(context, resolved_object):
     )
 
     return SignatureBaseModel.objects.select_subclasses().get(
-        pk=context['object'].pk
+        pk=context['resolved_object'].pk
     ).is_detached
 
 

@@ -11,6 +11,7 @@
   - graphviz from 0.20.1 to 0.20.3
   - python-dateutil from 2.8.2 to 2.9.0.post0
   - extract-msg from 0.48.0 to 0.48.5
+  - redis from 5.0.2 to 5.0.3
 
 4.6.3 (2024-03-28)
 ==================
@@ -712,13 +713,32 @@
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
 
-4.4.15 (XXXX-XX-XX)
-==================
+4.4.15 (2024-04-20)
+===================
 - Remove local version from the platform cache identifiers.
 - Minor optimization to documents app migration 0080.
 - Update ``mayan.apps.dependencies.versions.py`` to support local and
   upstream version calculations.
 - Add makefile target to refresh the Docker and Python module versions.
+- Ensure Tools and Setup view buttons are rendered with consistent heights.
+- Lower the severity of searching indexing problems to ``INFO``. This
+  reduces user confusion between normal messages when processing the
+  asynchronous task queue and actual coding errors.
+- Fix detached signature link object reference.
+- Update dependencies:
+
+  - ElasticSearch Docker image from 7.17.9 to 7.17.20.
+  - KeyCloak Docker image from 20.0.1 to 20.0.5.
+  - MySQL Docker image from 8.0.32 to 8.0.36.
+  - PostgreSQL Docker image from 13.10-alpine to 13.14-alpine.
+  - Python Docker image from 3.10.11-slim to 3.10.14-slim.
+  - RabbitMQ Docker image from 3.11.13-alpine to 3.11.28-alpine.
+  - Redis Docker image from 7.0.10-alpine to 7.0.15-alpine.
+  - Traefik Docker image from 2.5 to 2.5.7.
+  - Update psycopg2 from 2.9.3 to 2.9.9.
+
+- Improve unconfigured task error message.
+- Support ignoring SSL certificates for ElasticSearch.
 
 4.4.14 (2024-03-27)
 ===================

@@ -1,5 +1,6 @@
 from django.urls import reverse
 
+from mayan.apps.django_gpg.tests.mixins import KeyTestMixin
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_SMALL_PATH
 
@@ -11,8 +12,9 @@ from ..permissions import (
     permission_document_file_signature_delete,
     permission_document_file_signature_view
 )
+
 from .literals import TEST_SIGNED_DOCUMENT_PATH
-from .mixins import DetachedSignatureTestMixin
+from .mixins import DetachedSignatureTestMixin, SignatureViewTestMixin
 
 
 class DocumentSignatureLinksTestCase(
@@ -103,3 +105,41 @@ class DocumentSignatureLinksTestCase(
                 }
             )
         )
+
+
+class DocumentSignatureViewLinksTestCase(
+    KeyTestMixin, DetachedSignatureTestMixin, SignatureViewTestMixin,
+    GenericDocumentViewTestCase
+):
+    """
+    Test the delete view in the list view context which has two main objects:
+    the document file and the signature.
+    """
+
+    auto_upload_test_document = False
+
+    def test_document_file_signature_detached_delete_link_in_view_with_full_permission(self):
+        self._test_document_path = TEST_FILE_SMALL_PATH
+        self._upload_test_document()
+
+        self._upload_test_detached_signature()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_file_signature_delete
+        )
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_file_signature_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_signature_list_view(
+            document=self._test_document
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['object_list'].count(), 1)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
