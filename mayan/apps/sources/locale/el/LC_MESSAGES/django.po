@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
@@ -140,7 +140,7 @@ msgid "Key"
 msgstr "Κλειδί"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
+msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
 
 #: models.py:33
@@ -168,22 +168,22 @@ msgid "Sources setup"
 msgstr "Ρύθμηση πηγών"
 
 #: permissions.py:12
-msgid "View document source metadata"
+msgid "View document file source metadata"
 msgstr ""
 
-#: permissions.py:18
+#: permissions.py:19
 msgid "Create new document sources"
 msgstr "Δημιουργία νέων πηγών εγγράφου"
 
-#: permissions.py:21
+#: permissions.py:22
 msgid "Delete document sources"
 msgstr "Διαγρφή πηγών εγγράφου"
 
-#: permissions.py:24
+#: permissions.py:25
 msgid "Edit document sources"
 msgstr "Τροποποίηση πηγών εγγράφων"
 
-#: permissions.py:27
+#: permissions.py:28
 msgid "View existing document sources"
 msgstr "εμφάνηση υπαρχόντων πηγών εγγράφου"
 

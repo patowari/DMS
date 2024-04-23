@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -130,11 +130,11 @@ msgstr ""
 msgid "Nice level"
 msgstr "Nivel de amistad"
 
-#: classes.py:185
+#: classes.py:184
 msgid "Task type count"
 msgstr "Cantidad de tipos de tareas"
 
-#: classes.py:227
+#: classes.py:226
 msgid "Queue count"
 msgstr "Cantidad de colas de tareas"
 

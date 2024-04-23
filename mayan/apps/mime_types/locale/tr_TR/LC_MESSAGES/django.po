@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Paylaşılan bir MIME veritabanı için freedesktop belirtimini uygulamaya "
 "çalışır."
 
-#: dependencies.py:18
+#: dependencies.py:19
 msgid "determine file type using content tests"
 msgstr "içerik testleri kullanarak dosya türünü belirleyin"
 

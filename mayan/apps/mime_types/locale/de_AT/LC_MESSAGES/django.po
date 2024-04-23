@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
@@ -41,7 +41,7 @@ msgstr ""
 "werden. Es versucht die Freedesktop Spezifikation für eine geteilte "
 "Datenbank zu implementieren."
 
-#: dependencies.py:18
+#: dependencies.py:19
 msgid "determine file type using content tests"
 msgstr "Dateityp mittels Test von Inhalt bestimmen"
 

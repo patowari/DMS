@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -132,11 +132,11 @@ msgstr ""
 msgid "Nice level"
 msgstr "Nivel nice"
 
-#: classes.py:185
+#: classes.py:184
 msgid "Task type count"
 msgstr "Număr de tipuri de sarcini"
 
-#: classes.py:227
+#: classes.py:226
 msgid "Queue count"
 msgstr "Număr de cozi"
 

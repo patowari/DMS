@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -145,8 +145,8 @@ msgid "Key"
 msgstr "Ключ"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
-msgstr "Фактичне значення, збережене в початкових метаданих для документа."
+msgid "The actual value stored in the source metadata for the document file."
+msgstr ""
 
 #: models.py:33
 msgid "Value"
@@ -173,22 +173,22 @@ msgid "Sources setup"
 msgstr "Налаштування джерел"
 
 #: permissions.py:12
-msgid "View document source metadata"
-msgstr "Переглянути метадані джерела документа"
+msgid "View document file source metadata"
+msgstr ""
 
-#: permissions.py:18
+#: permissions.py:19
 msgid "Create new document sources"
 msgstr "Створити нові джерела документів"
 
-#: permissions.py:21
+#: permissions.py:22
 msgid "Delete document sources"
 msgstr "Видалити джерела документа"
 
-#: permissions.py:24
+#: permissions.py:25
 msgid "Edit document sources"
 msgstr "Редагувати джерела документа"
 
-#: permissions.py:27
+#: permissions.py:28
 msgid "View existing document sources"
 msgstr "Переглянути існуючі джерела документів"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
@@ -144,9 +144,8 @@ msgid "Key"
 msgstr "Llave"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
+msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
-"El valor real almacenado en los metadatos de fuente de origen del documento."
 
 #: models.py:33
 msgid "Value"
@@ -173,22 +172,22 @@ msgid "Sources setup"
 msgstr "Configuración de fuentes de documentos"
 
 #: permissions.py:12
-msgid "View document source metadata"
-msgstr "Ver metadatos de fuente de origen del documento"
+msgid "View document file source metadata"
+msgstr ""
 
-#: permissions.py:18
+#: permissions.py:19
 msgid "Create new document sources"
 msgstr "Crear nuevas fuentes de documentos"
 
-#: permissions.py:21
+#: permissions.py:22
 msgid "Delete document sources"
 msgstr "Eliminar fuentes de documentos"
 
-#: permissions.py:24
+#: permissions.py:25
 msgid "Edit document sources"
 msgstr "Editar fuentes de documentos"
 
-#: permissions.py:27
+#: permissions.py:28
 msgid "View existing document sources"
 msgstr "Ver fuentes de documento existentes"
 

@@ -369,11 +369,9 @@ msgstr "Suscripciones de eventos para: %s"
 
 #: views/subscription_views.py:164
 msgid ""
-"Subscribe to the events of an object to received notifications when those "
+"Subscribe to the events of an object to receive notifications when those "
 "events occur."
 msgstr ""
-"Suscríbase a los eventos de un objeto para recibir notificaciones cuando "
-"ocurran esos eventos."
 
 #: views/subscription_views.py:167
 msgid "There are no object event subscriptions"

@@ -646,7 +646,7 @@ msgstr "Súgó szöveg"
 
 #: models/workflow_transition_models.py:126
 msgid "Whether this field needs to be filled out or not to proceed."
-msgstr ""
+msgstr "A folytatáshoz ki kell-e tölteni ezt a mezőt vagy sem."
 
 #: models/workflow_transition_models.py:127
 msgid "Required"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -131,11 +131,11 @@ msgstr ""
 msgid "Nice level"
 msgstr "Nice szint"
 
-#: classes.py:185
+#: classes.py:184
 msgid "Task type count"
 msgstr "Feladattípusok száma"
 
-#: classes.py:227
+#: classes.py:226
 msgid "Queue count"
 msgstr "Sorszám"
 

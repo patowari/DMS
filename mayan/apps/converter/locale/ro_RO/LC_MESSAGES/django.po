@@ -409,8 +409,8 @@ msgid "Top"
 msgstr "Partea de sus"
 
 #: transformation_mixins.py:158
-msgid "Paste an image (percents coordinates)"
-msgstr "Lipiți o imagine (coordonate procente)"
+msgid "Paste an image (percent coordinates)"
+msgstr ""
 
 #: transformation_mixins.py:164
 msgid "Horizontal position in percent from the left."
