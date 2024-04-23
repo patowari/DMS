@@ -1,3 +1,17 @@
+4.6.4 (2024-04-23)
+==================
+- Merge changes from 4.5.12.
+- Update dependency versions:
+
+  - setuptools from 69.1.1 to 69.5.1
+  - twine from 4.0.2 to 5.0.0
+  - ruff from 0.3.0 to 0.4.1
+  - safety from 3.0.1 to 3.1.0
+  - Pillow from 10.2.0 to 10.3.0
+  - graphviz from 0.20.1 to 0.20.3
+  - python-dateutil from 2.8.2 to 2.9.0.post0
+  - extract-msg from 0.48.0 to 0.48.5
+
 4.6.3 (2024-03-28)
 ==================
 - Merge changes from 4.5.11.

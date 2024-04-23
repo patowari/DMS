@@ -15,8 +15,9 @@ BinaryDependency(
     path=DEFAULT_MIMETYPE_PATH
 )
 BinaryDependency(
-    label='file', help_text=_(message='determine file type using content tests'),
-    module=__name__, name='file', path=DEFAULT_FILE_PATH
+    label='file', help_text=_(
+        message='determine file type using content tests'
+    ), module=__name__, name='file', path=DEFAULT_FILE_PATH
 )
 PythonDependency(
     legal_text='''

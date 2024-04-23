@@ -131,7 +131,7 @@ PythonDependency(
     module=__name__, name='requests', version_string='==2.31.0'
 )
 PythonDependency(
-    module=__name__, name='setuptools', version_string='==69.1.1'
+    module=__name__, name='setuptools', version_string='==69.5.1'
 )
 PythonDependency(
     legal_text='''
@@ -161,7 +161,7 @@ PythonDependency(
 
 PythonDependency(
     environment=environment_build, module=__name__, name='twine',
-    version_string='==4.0.2'
+    version_string='==5.0.0'
 )
 PythonDependency(
     environments=(environment_build, environment_documentation),
@@ -214,11 +214,11 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='ruff', version_string='==0.3.0'
+    module=__name__, name='ruff', version_string='==0.4.1'
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='safety', version_string='==3.0.1'
+    module=__name__, name='safety', version_string='==3.1.0'
 )
 
 # Documentation
