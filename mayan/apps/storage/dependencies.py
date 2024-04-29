@@ -7,7 +7,7 @@ PythonDependency(
     module=__name__, name='django-storages', version_string='==1.14.2'
 )
 PythonDependency(
-    module=__name__, name='extract-msg', version_string='==0.48.2'
+    module=__name__, name='extract-msg', version_string='==0.48.5'
 )
 PythonDependency(
     module=__name__, name='google-cloud-storage', version_string='==2.15.0'

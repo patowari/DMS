@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
@@ -145,8 +145,8 @@ msgid "Key"
 msgstr "Cheie"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
-msgstr "Valoarea reală stocată în metadatele sursă pentru document."
+msgid "The actual value stored in the source metadata for the document file."
+msgstr ""
 
 #: models.py:33
 msgid "Value"
@@ -173,22 +173,22 @@ msgid "Sources setup"
 msgstr "Configurare surse"
 
 #: permissions.py:12
-msgid "View document source metadata"
-msgstr "Vizualizați metadatele sursă a documentului"
+msgid "View document file source metadata"
+msgstr ""
 
-#: permissions.py:18
+#: permissions.py:19
 msgid "Create new document sources"
 msgstr "Creaza noi surse de documente"
 
-#: permissions.py:21
+#: permissions.py:22
 msgid "Delete document sources"
 msgstr "Ștergeți din surse de documente"
 
-#: permissions.py:24
+#: permissions.py:25
 msgid "Edit document sources"
 msgstr "Editare de documente din surse"
 
-#: permissions.py:27
+#: permissions.py:28
 msgid "View existing document sources"
 msgstr "Vezi sursele existente de documente"
 

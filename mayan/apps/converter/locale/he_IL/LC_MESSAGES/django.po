@@ -381,8 +381,8 @@ msgid "Top"
 msgstr ""
 
 #: transformation_mixins.py:158
-msgid "Paste an image (percents coordinates)"
-msgstr "הדבקת תמונה (אחוזים קואורדינטות)"
+msgid "Paste an image (percent coordinates)"
+msgstr ""
 
 #: transformation_mixins.py:164
 msgid "Horizontal position in percent from the left."

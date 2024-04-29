@@ -388,7 +388,7 @@ msgid "Top"
 msgstr ""
 
 #: transformation_mixins.py:158
-msgid "Paste an image (percents coordinates)"
+msgid "Paste an image (percent coordinates)"
 msgstr ""
 
 #: transformation_mixins.py:164

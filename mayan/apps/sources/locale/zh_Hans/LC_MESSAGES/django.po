@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-23 04:57+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
@@ -139,7 +139,7 @@ msgid "Key"
 msgstr "密钥"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
+msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
 
 #: models.py:33
@@ -167,22 +167,22 @@ msgid "Sources setup"
 msgstr "来源设置"
 
 #: permissions.py:12
-msgid "View document source metadata"
+msgid "View document file source metadata"
 msgstr ""
 
-#: permissions.py:18
+#: permissions.py:19
 msgid "Create new document sources"
 msgstr "创建新的文档源"
 
-#: permissions.py:21
+#: permissions.py:22
 msgid "Delete document sources"
 msgstr "删除文档源"
 
-#: permissions.py:24
+#: permissions.py:25
 msgid "Edit document sources"
 msgstr "编辑文档源"
 
-#: permissions.py:27
+#: permissions.py:28
 msgid "View existing document sources"
 msgstr "查看现有文档源"
 

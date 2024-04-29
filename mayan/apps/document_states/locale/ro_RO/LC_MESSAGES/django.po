@@ -649,7 +649,7 @@ msgstr "Text de ajutor"
 
 #: models/workflow_transition_models.py:126
 msgid "Whether this field needs to be filled out or not to proceed."
-msgstr ""
+msgstr "Dacă acest câmp trebuie completat sau nu pentru a continua."
 
 #: models/workflow_transition_models.py:127
 msgid "Required"
