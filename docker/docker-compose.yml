@@ -193,8 +193,8 @@ services:
       postgresql:
         condition: service_healthy
     environment:
-      PGDATABASE: mayan
-      PGHOST: postgresql
+      PGDATABASE: ${MAYAN_DATABASE_NAME:-mayan}
+      PGHOST: ${MAYAN_DATABASE_HOST:-postgresql}
       PGPASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
       PGUSER: ${MAYAN_DATABASE_USER:-mayan}
     image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.11-alpine}
