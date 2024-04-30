@@ -409,11 +409,12 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
-4.5.12 (XXXX-XX-XX)
+4.5.12 (2024-04-22)
 ===================
 - Optimize documents apps migrations 0086 and 0088.
 - Update document file source metadata permission label for correctness.
 - Fix source metadata help text.
+- Changes from version 4.4.15.
 
 4.5.11 (2024-03-28)
 ===================
