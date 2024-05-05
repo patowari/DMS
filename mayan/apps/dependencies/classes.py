@@ -2,6 +2,7 @@ from io import BytesIO
 import json
 import logging
 from packaging import version
+from pathlib import Path
 import pkg_resources
 import shutil
 import sys
@@ -19,7 +20,6 @@ from django.utils.translation import gettext, gettext_lazy as _
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.exceptions import ResolverPipelineError
 from mayan.apps.common.utils import ResolverPipelineObjectAttribute
-from mayan.apps.storage.compat import Path
 from mayan.apps.storage.compressed_files import TarArchive
 from mayan.apps.storage.utils import (
     TemporaryDirectory, mkdtemp, patch_files as storage_patch_files
@@ -602,7 +602,7 @@ class JavaScriptDependency(Dependency):
                 for member in archive.members():
                     member_path = (path_temporary / member).resolve()
 
-                    if member_path.parent.is_relative_to(path_temporary):
+                    if member_path.parent.relative_to(path_temporary):
                         with archive.open_member(filename=str(member)) as member_archive_file_object:
                             member_path.parent.mkdir(exist_ok=True, parents=True)
                             with member_path.open(mode='wb+') as member_storage_file_object:
