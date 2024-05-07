@@ -203,6 +203,7 @@
 - Add search model detail API view.
 - Add the ID field of primary models as search fields.
 - Expose the document index instance depth and node count values via the API.
+- Add a document type API view to return all documents of that type.
 
 4.6.4 (2024-04-23)
 ==================

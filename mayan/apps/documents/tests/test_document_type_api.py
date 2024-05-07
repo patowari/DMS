@@ -9,16 +9,112 @@ from ..events import (
     event_document_type_quick_label_deleted,
     event_document_type_quick_label_edited
 )
+from ..models.document_models import Document
 from ..models.document_type_models import DocumentType, DocumentTypeFilename
 from ..permissions import (
     permission_document_type_create, permission_document_type_delete,
-    permission_document_type_edit, permission_document_type_view
+    permission_document_type_edit, permission_document_type_view,
+    permission_document_view
 )
 
 from .literals import TEST_DOCUMENT_TYPE_LABEL, TEST_DOCUMENT_TYPE_QUICK_LABEL
+from .mixins.document_type_document_mixins import (
+    DocumentTypeDocumentAPIViewTestMixin
+)
 from .mixins.document_type_mixins import (
     DocumentTypeAPIViewTestMixin, DocumentTypeQuickLabelAPIViewTestMixin
 )
+
+
+class DocumentTypeDocumentAPIViewTestCase(
+    DocumentTypeDocumentAPIViewTestMixin, BaseAPITestCase
+):
+    def test_document_type_document_list_api_view_no_permssion(self):
+        self._clear_events()
+
+        response = self._request_test_document_type_document_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_type_document_list_api_view_with_document_type_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_type_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_type_document_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.assertEqual(response.data['count'], 0)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_type_document_list_api_view_with_document_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_type_document_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_type_document_list_api_view_with_full_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_type_view
+        )
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_view
+        )
+
+        document_count = Document.objects.count()
+
+        self._clear_events()
+
+        response = self._request_test_document_type_document_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.assertEqual(response.data['count'], document_count)
+        self.assertEqual(
+            response.data['results'][0]['label'],
+            self._test_document.label
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_document_document_type_document_list_api_view_with_full_access(self):
+        self.grant_access(
+            obj=self._test_document_type,
+            permission=permission_document_type_view
+        )
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_view
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_test_document_type_document_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.assertEqual(response.data['count'], 0)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class DocumentTypeAPIViewTestCase(

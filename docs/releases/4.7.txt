@@ -150,6 +150,8 @@ REST API this endpoint now returns 202 ACCEPTED instead of 204 NO CONTENT.
 Support searching document by ID, the ID of the document type, the ID of the
 tag, or the ID of the cabinet.
 
+An API view that returns all documents of a type was added.
+
 
 Document indexing
 ^^^^^^^^^^^^^^^^^

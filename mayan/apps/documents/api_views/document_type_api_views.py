@@ -1,12 +1,16 @@
 import logging
 
 from mayan.apps.rest_api import generics
+from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 
+from ..models.document_models import Document
 from ..models.document_type_models import DocumentType
 from ..permissions import (
     permission_document_type_create, permission_document_type_delete,
-    permission_document_type_edit, permission_document_type_view
+    permission_document_type_edit, permission_document_type_view,
+    permission_document_view
 )
+from ..serializers.document_serializers import DocumentSerializer
 from ..serializers.document_type_serializers import (
     DocumentTypeQuickLabelSerializer, DocumentTypeSerializer
 )
@@ -14,6 +18,26 @@ from ..serializers.document_type_serializers import (
 from .api_view_mixins import ParentObjectDocumentTypeAPIViewMixin
 
 logger = logging.getLogger(name=__name__)
+
+
+class APIDocumentTypeDocumentListView(
+    ExternalObjectAPIViewMixin, generics.ListAPIView
+):
+    """
+    get: Returns a list of all the documents of the selected document types.
+    """
+    external_object_class = DocumentType
+    external_object_pk_url_kwarg = 'document_type_id'
+    mayan_external_object_permission_map={
+        'GET': permission_document_type_view
+    }
+    mayan_object_permission_map = {'GET': permission_document_view}
+    serializer_class = DocumentSerializer
+
+    def get_source_queryset(self):
+        external_object = self.get_external_object()
+        queryset_documents_all = external_object.documents.values('id')
+        return Document.valid.filter(pk__in=queryset_documents_all)
 
 
 class APIDocumentTypeListView(generics.ListCreateAPIView):
