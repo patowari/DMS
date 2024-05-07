@@ -311,8 +311,6 @@ job_postgres_upgrade_test:
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
     - {{ DOCKER_POSTGRESQL_IMAGE_NAME }}:{{ DOCKER_POSTGRESQL_IMAGE_TAG }}
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "{{ DEFAULT_DATABASE_NAME }}"
     POSTGRES_PASSWORD: "{{ DEFAULT_DATABASE_PASSWORD }}"
@@ -368,8 +366,6 @@ job_postgres_test:
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
     - {{ DOCKER_POSTGRESQL_IMAGE_NAME }}:{{ DOCKER_POSTGRESQL_IMAGE_TAG }}
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "{{ DEFAULT_DATABASE_NAME }}"
     POSTGRES_PASSWORD: "{{ DEFAULT_DATABASE_PASSWORD }}"

@@ -374,8 +374,6 @@ job_postgres_upgrade_test:
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
     - postgres:14.11-alpine
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "mayan"
     POSTGRES_PASSWORD: "mayandbpass"
@@ -441,8 +439,6 @@ job_postgres_test:
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
     - postgres:14.11-alpine
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "mayan"
     POSTGRES_PASSWORD: "mayandbpass"
