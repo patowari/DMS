@@ -71,8 +71,6 @@ job_docker_push_major:
       paths:
         - ${APK_CACHE_DIR}
   image: docker:23.0.6-dind
-  needs:
-    - job_docker_test
   only:
     - releases/all/major
     - releases/docker/major
@@ -110,8 +108,6 @@ job_docker_push_minor:
       paths:
         - ${APK_CACHE_DIR}
   image: docker:23.0.6-dind
-  needs:
-    - job_docker_test
   only:
     - releases/all/minor
     - releases/docker/minor
@@ -147,27 +143,6 @@ job_docker_nightly:
     - docker login --username "${DOCKER_HUB_USERNAME}" --password "${DOCKER_HUB_PASSWORD}" https://registry-1.docker.io
     - docker tag "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" "registry-1.docker.io/mayanedms/mayanedms:${CI_COMMIT_REF_SLUG}"
     - docker push "registry-1.docker.io/mayanedms/mayanedms:${CI_COMMIT_REF_SLUG}"
-  services:
-    - docker:23.0.6-dind
-  stage: stage_push
-  variables:
-    DOCKER_DRIVER: overlay2
-
-job_docker_testing:
-  before_script:
-    - set -a && . ./config.env && set +a
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
-  image: docker:23.0.6-dind
-  needs:
-    - job_docker_test
-  only:
-    - releases/testing
-  script:
-    - DOCKER_VERSION=`cat docker/rootfs/version`
-    - docker pull "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}"
-    - docker login --username "${DOCKER_HUB_USERNAME}" --password "${DOCKER_HUB_PASSWORD}" https://registry-1.docker.io
-    - docker tag "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" "registry-1.docker.io/mayanedms/mayanedms:t${DOCKER_VERSION}"
-    - docker push "registry-1.docker.io/mayanedms/mayanedms:t${DOCKER_VERSION}"
   services:
     - docker:23.0.6-dind
   stage: stage_push
