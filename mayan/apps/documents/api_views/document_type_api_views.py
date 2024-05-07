@@ -28,7 +28,7 @@ class APIDocumentTypeDocumentListView(
     """
     external_object_class = DocumentType
     external_object_pk_url_kwarg = 'document_type_id'
-    mayan_external_object_permission_map={
+    mayan_external_object_permission_map = {
         'GET': permission_document_type_view
     }
     mayan_object_permission_map = {'GET': permission_document_view}

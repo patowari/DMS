@@ -1,16 +1,11 @@
 from rest_framework import status
 from rest_framework.reverse import reverse
 
-from mayan.apps.documents.permissions import permission_document_view
-from mayan.apps.documents.tests.mixins.document_mixins import (
-    DocumentTestMixin
-)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..search_models import SearchModel
 
 from .mixins.base import TestSearchObjectSimpleTestMixin
-from .mixins.search_api_mixins import SearchAPIViewTestMixin
 from .mixins.search_model_api_mixins import SearchModelAPIViewTestMixin
 
 

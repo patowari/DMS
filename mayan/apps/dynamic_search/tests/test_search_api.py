@@ -6,11 +6,8 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
 )
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
-from ..search_models import SearchModel
-
 from .mixins.base import TestSearchObjectSimpleTestMixin
 from .mixins.search_api_mixins import SearchAPIViewTestMixin
-from .mixins.search_model_api_mixins import SearchModelAPIViewTestMixin
 
 
 class SearchAPIViewBackwardCompatilityTestCase(

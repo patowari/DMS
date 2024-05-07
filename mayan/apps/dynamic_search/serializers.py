@@ -88,4 +88,3 @@ class SearchModelSerializer(serializers.Serializer):
                 'search_model_pk': instance.full_name
             }, request=self.context['request'], format=self.context['format']
         )
-
