@@ -201,6 +201,8 @@
 - Fix document type model verbose name.
 - Fix detached signature link object reference.
 - Add search model detail API view.
+- Add the ID field of primary models as search fields.
+- Expose the document index instance depth and node count values via the API.
 
 4.6.4 (2024-04-23)
 ==================

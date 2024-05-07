@@ -151,6 +151,13 @@ Support searching document by ID, the ID of the document type, the ID of the
 tag, or the ID of the cabinet.
 
 
+Document indexing
+^^^^^^^^^^^^^^^^^
+
+The document index instance depth and node count values are now exposed via
+the API.
+
+
 Events
 ^^^^^^
 

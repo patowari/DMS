@@ -16,15 +16,22 @@ from .models import (
 
 
 class IndexInstanceSerializer(serializers.ModelSerializer):
-    url = serializers.SerializerMethodField(
-        label=_(message='URL'), read_only=True
+    depth = serializers.IntegerField(
+        label=_(message='Depth'), read_only=True, source='get_level_count'
+    )
+    node_count = serializers.IntegerField(
+        label=_(message='Node count'), read_only=True,
+        source='get_descendants_count'
     )
     nodes_url = serializers.SerializerMethodField(
         label=_(message='Nodes URL'), read_only=True
     )
+    url = serializers.SerializerMethodField(
+        label=_(message='URL'), read_only=True
+    )
 
     class Meta:
-        fields = ('label', 'id', 'nodes_url', 'url')
+        fields = ('depth', 'label', 'id', 'nodes_url', 'node_count', 'url')
         model = IndexInstance
         read_only_fields = fields
 
@@ -49,11 +56,18 @@ class IndexInstanceNodeSerializer(serializers.ModelSerializer):
     children_url = serializers.SerializerMethodField(
         label=_(message='Children URL'), read_only=True
     )
+    depth = serializers.IntegerField(
+        label=_(message='Depth'), read_only=True, source='get_level_count'
+    )
     documents_url = serializers.SerializerMethodField(
         label=_(message='Documents URL'), read_only=True
     )
     index_url = serializers.SerializerMethodField(
         label=_(message='Index URL'), read_only=True
+    )
+    node_count = serializers.IntegerField(
+        label=_(message='Node count'), read_only=True,
+        source='get_descendants_count'
     )
     parent_url = serializers.SerializerMethodField(
         label=_(message='Parent URL'), read_only=True
@@ -64,8 +78,8 @@ class IndexInstanceNodeSerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = (
-            'documents_url', 'children_url', 'id', 'index_url', 'level',
-            'parent_id', 'parent_url', 'value', 'url'
+            'depth', 'documents_url', 'children_url', 'id', 'index_url',
+            'level', 'node_count', 'parent_id', 'parent_url', 'value', 'url'
         )
         model = IndexInstanceNode
         read_only_fields = fields
