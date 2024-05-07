@@ -1,7 +1,7 @@
 Version 4.7
 ===========
 
-Released: May XX, 2024
+Released: May 07, 2024
 
 
 Changes

@@ -1,4 +1,4 @@
-4.7 (2024-XX-XX)
+4.7 (2024-05-07)
 ================
 - Remove local version from the platform cache identifiers.
 - Add credentials backend for Google Service accounts.
