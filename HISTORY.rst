@@ -200,6 +200,7 @@
 
 - Fix document type model verbose name.
 - Fix detached signature link object reference.
+- Add search model detail API view.
 
 4.6.4 (2024-04-23)
 ==================

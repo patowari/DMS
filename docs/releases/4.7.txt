@@ -244,6 +244,8 @@ ECK (Elastic Cloud for Kubernetes).
 It is now possible to support searching for 64 bit big integers and positive
 big integers.
 
+A search model detail API view was added.
+
 
 Storage
 ^^^^^^^

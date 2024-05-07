@@ -12,6 +12,19 @@ from ..views.view_mixins import SearchResultViewMixin
 from .api_view_mixins import SearchModelAPIViewMixin
 
 
+class APISearchModelDetailView(
+    SearchModelAPIViewMixin, generics.RetrieveAPIView
+):
+    """
+    get: Returns the details of the selected search models.
+    """
+
+    serializer_class = SearchModelSerializer
+
+    def get_object(self):
+        return self.get_search_model()
+
+
 class APISearchModelList(generics.ListAPIView):
     """
     get: Returns a list of all the available search models.

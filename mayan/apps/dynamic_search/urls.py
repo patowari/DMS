@@ -4,7 +4,9 @@ from .api_views.saved_resultset_api_views import (
     APISavedResultsetCreateView, APISavedResultsetDetailView,
     APISavedResultsetListView, APISavedResultsetResultListView
 )
-from .api_views.search_api_views import APISearchModelList, APISearchView
+from .api_views.search_api_views import (
+    APISearchModelDetailView, APISearchModelList, APISearchView
+)
 from .views.saved_resultset_views import (
     SavedResultsetDeleteView, SavedResultsetListView,
     SavedResultsetResultListView
@@ -104,6 +106,10 @@ api_urls_search = [
     re_path(
         route=r'^search_models/$', name='searchmodel-list',
         view=APISearchModelList.as_view()
+    ),
+    re_path(
+        route=r'^search_models/(?P<search_model_pk>[\.\w]+)/$',
+        name='searchmodel-detail', view=APISearchModelDetailView.as_view()
     )
 ]
 

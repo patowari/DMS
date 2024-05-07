@@ -1,4 +1,5 @@
 from rest_framework.exceptions import ValidationError
+from rest_framework.reverse import reverse
 
 from django.utils.translation import gettext_lazy as _
 
@@ -77,3 +78,14 @@ class SearchModelSerializer(serializers.Serializer):
     search_fields = SearchFieldSerializer(
         label=_(message='Search fields'), many=True, read_only=True
     )
+    url = serializers.SerializerMethodField(
+        label=_(message='URL')
+    )
+
+    def get_url(self, instance):
+        return reverse(
+            viewname='rest_api:searchmodel-detail', kwargs={
+                'search_model_pk': instance.full_name
+            }, request=self.context['request'], format=self.context['format']
+        )
+
