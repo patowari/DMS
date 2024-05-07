@@ -602,19 +602,22 @@ class JavaScriptDependency(Dependency):
                 for member in archive.members():
                     member_path = (path_temporary / member).resolve()
 
-                    if member_path.parent.relative_to(path_temporary):
-                        with archive.open_member(filename=str(member)) as member_archive_file_object:
+                    try:
+                        member_path.parent.relative_to(path_temporary)
+                    except ValueError:
+                        raise DependenciesException(
+                            'Suspicious path traversal: {}. Dependency '
+                            'might be compromised'.format(member)
+                        )
+                    else:
+                        member_filename = str(member)
+                        with archive.open_member(filename=member_filename) as member_archive_file_object:
                             member_path.parent.mkdir(exist_ok=True, parents=True)
                             with member_path.open(mode='wb+') as member_storage_file_object:
                                 shutil.copyfileobj(
                                     fsrc=member_archive_file_object,
                                     fdst=member_storage_file_object
                                 )
-                    else:
-                        raise DependenciesException(
-                            'Suspicious path traversal: {}. Dependency '
-                            'might be compromised'.format(member)
-                        )
 
             self.patch_files(
                 path=temporary_directory, replace_list=replace_list
