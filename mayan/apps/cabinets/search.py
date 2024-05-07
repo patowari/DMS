@@ -16,6 +16,7 @@ search_model_cabinet.add_proxy_model(
     app_label='cabinets', model_name='Cabinet'
 )
 
+search_model_cabinet.add_model_field(field='id')
 search_model_cabinet.add_model_field(field='label')
 
 # Cabinet documents
@@ -44,6 +45,11 @@ search_model_cabinet.add_model_field(
 
 # Document
 
+search_model_document.add_model_field(
+    field='cabinets__id',
+    help_text=_(message='The database ID of the cabinet.'),
+    label=_(message='Cabinet ID')
+)
 search_model_document.add_model_field(
     field='cabinets__label', label=_(message='Cabinets')
 )

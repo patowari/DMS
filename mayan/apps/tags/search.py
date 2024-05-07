@@ -8,10 +8,14 @@ from .permissions import permission_tag_view
 # Document
 
 search_model_document.add_model_field(
-    field='tags__label', label=_(message='Tag label')
+    field='tags__color', label=_(message='Tag color')
 )
 search_model_document.add_model_field(
-    field='tags__color', label=_(message='Tag color')
+    field='tags__id', help_text=_(message='The database ID of the tag.'),
+    label=_(message='Tag ID')
+)
+search_model_document.add_model_field(
+    field='tags__label', label=_(message='Tag label')
 )
 
 # Tag
